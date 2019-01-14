@@ -51,7 +51,12 @@ const PaymentAgentWithdraw = () => (
                     <Fieldset>
                         <FormRow label={it.L('Transfer to Payment Agent')} id='ddlAgents' type='select' />
                         <FormRow label={it.L('Amount')} id='txtAmount' type='text' />
-                        <FormRow label={it.L('Further Instructions')} id='txtDescription' type='text' attributes={{ maxLength: '250' }} />
+                        <FormRow
+                            label={it.L('Further Instructions')}
+                            id='txtDescription'
+                            type='textarea'
+                            attributes={{ rows: 4, cols: 19, maxLength: 250 }}
+                        />
                         <SubmitButton msg_id='withdrawFormMessage' type='submit' text={it.L('Submit')} />
                     </Fieldset>
                 </form>
