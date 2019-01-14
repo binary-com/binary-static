@@ -105,7 +105,7 @@ export const FormRow = ({
         } else if (has_geovalidator) {
             return 'gr-3 gr-12-m';
         }
-        return 'gr-4 gr-12-m';
+        return 'gr-8 gr-12-m';
     };
 
     if (type === 'checkbox' && !spaced) {
