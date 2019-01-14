@@ -22,7 +22,7 @@ const DigitTicker = (() => {
 
     const populateContainer = (container_element) => {
         // remove previous elements and start fresh.
-        while (container_element.firstChild) {
+        while (container_element && container_element.firstChild) {
             container_element.removeChild(container_element.firstChild);
         }
 
@@ -188,6 +188,10 @@ const DigitTicker = (() => {
 
     const remove = () => {
         window.onresize = null;
+        while (el_container && el_container.firstChild) {
+            el_container.removeChild(el_container.firstChild);
+        }
+        if (el_container) el_container.classList.add('invisible');
     };
 
     const countDecimals = (value) => {

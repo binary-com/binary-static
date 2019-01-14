@@ -153,22 +153,22 @@ const Purchase = (() => {
             }
 
             CommonFunctions.elementTextContent(CommonFunctions.getElementById('contract_highlowtick'), '');
+            const arr_shortcode = purchase_data.buy.shortcode.split('_');
+            tick_config = {
+                is_tick_high        : /^tickhigh$/i.test(contract_type),
+                is_tick_low         : /^ticklow$/i.test(contract_type),
+                is_digit            : /^digit/i.test(contract_type),
+                selected_tick_number: arr_shortcode[arr_shortcode.length - 1],
+                winning_tick_quote  : '',
+                winning_tick_number : '',
+            };
+
             if (has_chart) {
                 spots.hide();
             } else {
                 CommonFunctions.elementTextContent(spots, '');
                 spots.className = '';
                 spots.show();
-
-                const arr_shortcode = purchase_data.buy.shortcode.split('_');
-                tick_config = {
-                    is_tick_high        : /^tickhigh$/i.test(contract_type),
-                    is_tick_low         : /^ticklow$/i.test(contract_type),
-                    is_digit            : /^digit/i.test(contract_type),
-                    selected_tick_number: arr_shortcode[arr_shortcode.length - 1],
-                    winning_tick_quote  : '',
-                    winning_tick_number : '',
-                };
             }
 
             if (has_chart && !show_chart) {
@@ -184,6 +184,8 @@ const Purchase = (() => {
 
         if (tick_config.is_digit) {
             DigitTicker.init('digit_ticker_table', passthrough.contract_type, passthrough.barrier, passthrough.duration, status);
+        } else {
+            DigitTicker.remove();
         }
 
         if (show_chart && has_chart) {
