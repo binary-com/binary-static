@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-01-11 11:22\n"
+"PO-Revision-Date: 2019-01-14 07:40\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Korean\n"
 "MIME-Version: 1.0\n"
@@ -3835,9 +3835,6 @@ msgstr "우수한 바이너리 트레이딩 기술"
 msgid "Execute your trade in seconds."
 msgstr "불과 몇초안으로 거래를 실행하세요."
 
-msgid "Execute your trading strategy using the Rise/Fall trade type with a duration of 5 ticks, 10 ticks, 1 minute or 5 minutes. With Rise/Fall contracts, you must predict whether the market will rise or fall from its current level."
-msgstr ""
-
 msgid "Execution model and counterparty risk"
 msgstr "실행 모델 및 거래상대방에 관한 위험"
 
@@ -4664,6 +4661,9 @@ msgid "High Barrier"
 msgstr ""
 
 msgid "High Tick"
+msgstr ""
+
+msgid "High Tick/Low Tick"
 msgstr ""
 
 msgid "High Tick/Low Tick contracts have a strict duration of five ticks."
@@ -7822,7 +7822,22 @@ msgstr "시장이 계약 기간동안의 그 어느때에 목표를 터치 또�
 msgid "Predict the direction<br />and purchase"
 msgstr ""
 
+msgid "Predict the highest or lowest tick among the next 5 ticks."
+msgstr ""
+
 msgid "Predict the last decimal digit of the spot price with Digits. There are three types of Digits trades:"
+msgstr ""
+
+msgid "Predict whether the exit spot will be higher or lower than the entry spot within a selected duration from 5 ticks to 10 ticks, or 1 minute to 5 minutes."
+msgstr ""
+
+msgid "Predict whether the last digit of the last tick will be even or odd within a selected duration from 5 ticks to 10 ticks."
+msgstr ""
+
+msgid "Predict whether the last digit of the last tick will be greater or less than your prediction within a selected duration from 5 ticks to 10 ticks."
+msgstr ""
+
+msgid "Predict whether the last digit of the last tick will match or differ from your prediction within a selected duration from 5 ticks to 10 ticks."
 msgstr ""
 
 msgid "Preferably a native speaker with good command of English (oral and written)"
@@ -9386,7 +9401,7 @@ msgid "The Agent may provide its services to clients of the Company who desire t
 msgstr "에이전트는 해당 에이전트를 통해 자금을 입금 및/또는 인출을 희망하는 본 회사의 고객에게 서비스를 제공할 수 있습니다. 에이전트는 본 회사에 의해 사용되는 방식을 제외한 전자지갑 또는 전자결제방식을 사용하고자 하거나(이하 \"전자 결제\"를 나타냄) 또는 본 회사에 의해 수락된 화폐를 제외한 지역 화폐를 사용하는(이하 \"지역 화폐\"를 나타냄), 그리고 지역 전신송금(이하 \"지역 전신송금\"을 나타냄) 사용하고자 하는 고객에게 본 서비스를 제공할 수 있습니다."
 
 msgid "The Agent represents and warrants that it is currently and it will be in compliance with all laws related to Anti-Money Laundering as well as any financial or economic sanction programmes in a jurisdiction in which he operates."
-msgstr ""
+msgstr "본 에이전트는 본 에이전트가 운영하는 곳에 해당하는 관할권 내에서의 금융 또는 경제 재제조치 프로그램뿐만 아니라 자금세탁방지와 관련한 모든 법률을 따르고 미래에도 따를 것임을 보증하고 나타냅니다."
 
 msgid "The Agent shall further undertake to perform all necessary due diligence measures on its clients and the Company shall be entitiled, at any time, to request from the Agent to provide all information and documentation relating to its clients for the purposes of the Company's AML compliance."
 msgstr "본 에이전트는 고객에 대하여 필요한 모든 주의 판단을 수행할 것이며 본 회사는 언제든지 에이전트로 하여금 본 회사의 AML 준수의 목적으로 고객과 관련한 모든 정보 및 서류 제공을 요청할 것입니다."
@@ -9401,7 +9416,7 @@ msgid "The Agent shall not:"
 msgstr "에이전트는 다음사항을 하지 않습니다:"
 
 msgid "The Agent shall provide any and all information and documentation, required in the context of the due diligence that the Company shall conduct, from time to time. The Company, complying with the law and providing its services under this Agreement, shall be entitled, at any time, to request from the Agent to provide all and any due diligence information and documentation related to itself and any other person connected or associated with it for the purposes of this Agreement."
-msgstr ""
+msgstr "에이전트는 본 회사가 수행하는 상당한 주의적인 내용에서 요구하는 그 어떠한 그리고 모든 정보 및 서류들을 때때로 제공할 것입니다. 본 계약 아래 서비스를 제공하고 법률을 따르는 본 회사는, 그 언제라도, 에이전트로 하여금 본 계약의 목적으로 해당 에이전트와 관계있는 또는 연관된 사람 및 해당 에이전트에 관한 정보 및 서류를 충실히 모두 제공할 것을 요구할 수 있는 자격이 있습니다."
 
 msgid "The Agent shall submit an application including the following information:"
 msgstr "에이전트는 다음의 정보를 포함하여 지원서를 제출해야 합니다:"
@@ -10128,6 +10143,9 @@ msgstr "%1 API를 사용하는 것은 귀하 스스로 위험을 감수하는 �
 
 msgid "The use, operation or combination of the %1 API with non-%1 API(s), data, equipment or documentation if liability would have been avoided but for such use, operation, or combination; or"
 msgstr "이용, 운용, 또는 결합을 제외하고는 법적 책임을 방지할 수 있는 경우 %1 API와 비 %1 API(들), 데이터, 장비 또는 문서의 사용, 운용, 결합; 또는"
+
+msgid "The various trade types available on our MT5 platform."
+msgstr ""
 
 msgid "The volatility indices simulate various real market situations and provide an ideal platform for getting used to trading and testing strategies under various market conditions. These indices depend on volatility and drift, and help users to try out scenarios like - high volatility, low volatility, bullish and bearish trends."
 msgstr ""
@@ -11471,6 +11489,9 @@ msgid "We offer a market-based salary, annual performance bonus, health benefits
 msgstr ""
 
 msgid "We offer all four precious metals – gold, silver, palladium, and platinum – as well as energy in our list of commodities."
+msgstr ""
+
+msgid "We offer the following trade types on our MT5 platform:"
 msgstr ""
 
 msgid "We offer three types of lookbacks:"
