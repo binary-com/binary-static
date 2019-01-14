@@ -2,6 +2,8 @@ const showPopup        = require('./popup');
 const elementInnerHtml = require('../../../_common/common_functions').elementInnerHtml;
 const urlFor           = require('../../../_common/url').urlFor;
 
+// use this function if you need a simple popup with just a confirm or also a cancel button
+// if you need to show a form with some validations, use showPopup() instead
 const Dialog = (() => {
     const baseDialog = (options, is_alert = false) => (
         new Promise((resolve) => {

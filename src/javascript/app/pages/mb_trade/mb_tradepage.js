@@ -10,6 +10,7 @@ const Client              = require('../../base/client');
 const Header              = require('../../base/header');
 const BinarySocket        = require('../../base/socket');
 const getDecimalPlaces    = require('../../common/currency').getDecimalPlaces;
+const TopUpVirtualPopup   = require('../../pages/user/account/top_up_virtual/pop_up');
 const getElementById      = require('../../../_common/common_functions').getElementById;
 const State               = require('../../../_common/storage').State;
 const urlFor              = require('../../../_common/url').urlFor;
@@ -52,6 +53,10 @@ const MBTradePage = (() => {
         State.set('is_chart_allowed', true);
         State.set('ViewPopup.onDisplayed', MBPrice.hidePriceOverlay);
         $('.container').css('max-width', '1200px');
+        // if not loaded by pjax, balance update function calls TopUpVirtualPopup
+        if (State.get('is_loaded_by_pjax')) {
+            TopUpVirtualPopup.init(State.getResponse('balance.balance'));
+        }
     };
 
     const showCurrency = (currency) => {
