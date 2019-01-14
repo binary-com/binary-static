@@ -19,17 +19,27 @@ const ApiToken = () => (
                         <FormRow type='text' id='txt_name' label={it.L('Choose token Name')} attributes={{ maxLength: 32 }} />
 
                         <FormRow type='custom' label={it.L('Choose Scopes:')}>
-                            <input id='chk_scopes_read' type='checkbox' value='read' checked='checked' readOnly='readonly' />
-                            <label htmlFor='chk_scopes_read'><span data-balloon={it.L('Can be used to view account activity, including settings, limits, balance sheets, trade purchase history, and more.')} data-balloon-length='xlarge'>{it.L('Read')}</span></label>
+                            <div className='gr-row token-list'>
+                                <div className='gr-6-m token-type'>
+                                    <input id='chk_scopes_read' type='checkbox' value='read' checked='checked' readOnly='readonly' />
+                                    <label htmlFor='chk_scopes_read'><span data-balloon={it.L('Can be used to view account activity, including settings, limits, balance sheets, trade purchase history, and more.')} data-balloon-length='xlarge'>{it.L('Read')}</span></label>
+                                </div>
 
-                            <input id='chk_scopes_trade' type='checkbox' value='trade' />
-                            <label htmlFor='chk_scopes_trade'><span data-balloon={it.L('Can be used to buy and sell contracts, renew expired purchases, and top-up virtual-money accounts.')} data-balloon-length='xlarge'>{it.L('Trade')}</span></label>
+                                <div className='gr-6-m token-type'>
+                                    <input id='chk_scopes_trade' type='checkbox' value='trade' />
+                                    <label htmlFor='chk_scopes_trade'><span data-balloon={it.L('Can be used to buy and sell contracts, renew expired purchases, and top-up virtual-money accounts.')} data-balloon-length='xlarge'>{it.L('Trade')}</span></label>
+                                </div>
 
-                            <input id='chk_scopes_payments' type='checkbox' value='payments' />
-                            <label htmlFor='chk_scopes_payments'><span data-balloon={it.L('Can be used to withdraw to payment agents, transfer funds between accounts, and set / clear cashier passwords.')} data-balloon-length='xlarge'>{it.L('Payments')}</span></label>
+                                <div className='gr-6-m token-type'>
+                                    <input id='chk_scopes_payments' type='checkbox' value='payments' />
+                                    <label htmlFor='chk_scopes_payments'><span data-balloon={it.L('Can be used to withdraw to payment agents, transfer funds between accounts, and set / clear cashier passwords.')} data-balloon-length='xlarge'>{it.L('Payments')}</span></label>
+                                </div>
 
-                            <input id='chk_scopes_admin' type='checkbox' value='admin' />
-                            <label htmlFor='chk_scopes_admin'><span data-balloon={it.L('Can be used to open accounts, set settings, manage token usage, and more.')} data-balloon-length='xlarge'>{it.L('Admin')}</span></label>
+                                <div className='gr-6-m token-type'>
+                                    <input id='chk_scopes_admin' type='checkbox' value='admin' />
+                                    <label htmlFor='chk_scopes_admin'><span data-balloon={it.L('Can be used to open accounts, set settings, manage token usage, and more.')} data-balloon-length='xlarge'>{it.L('Admin')}</span></label>
+                                </div>
+                            </div>
                         </FormRow>
 
                         <SubmitButton text={it.L('Create')} type='submit' />

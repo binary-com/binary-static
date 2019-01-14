@@ -761,6 +761,19 @@ label + input {
     }
 }
 
+#token_form {
+    .token-list {
+        .token-type {
+            @media screen and (max-width: 480px) {
+                padding-top: 10px;
+                padding-bottom: 10px;
+                display: flex;
+                align-items: center;
+            }
+        }
+    }
+}
+
 /* TODO: remove when UX research is finished */
 #interview_popup_container {
     height: 100vh;
