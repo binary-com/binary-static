@@ -39,7 +39,7 @@
                 border-color: $COLOR_BLUE;
             }
         }
-        &__increment, &__decrement {
+        &__button {
             position: absolute;
             z-index: 1;
             height: calc(100% - 2px);
@@ -51,6 +51,12 @@
             padding: initial;
             background-color: initial;
 
+            &--increment {
+                right: 1px;
+            }
+            &--decrement {
+                left: 1px;
+            }
             &:hover {
                 cursor: pointer;
                 background: $COLOR_GRAY;
@@ -59,12 +65,6 @@
                 cursor: not-allowed;
                 background: transparent;
             }
-        }
-        &__increment {
-            right: 1px;
-        }
-        &__decrement {
-            left: 1px;
         }
         &__icon {
             padding-top: 4px;

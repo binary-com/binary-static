@@ -108,14 +108,14 @@ const InputField = ({
     const input_increment =
         <div className='input-wrapper'>
             <Button
-                className={'input-wrapper__increment'}
+                className={'input-wrapper__button input-wrapper__button--increment'}
                 is_disabled={max_is_disabled}
                 onClick={incrementValue}
             >
                 <IconPlus className={'input-wrapper__icon input-wrapper__icon--plus' } is_disabled={max_is_disabled} />
             </Button>
             <Button
-                className={'input-wrapper__decrement'}
+                className={'input-wrapper__button input-wrapper__button--decrement'}
                 is_disabled={min_is_disabled}
                 onClick={decrementValue}
             >

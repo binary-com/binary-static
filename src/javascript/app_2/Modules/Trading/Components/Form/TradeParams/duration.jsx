@@ -12,8 +12,8 @@ import Fieldset                 from 'App/Components/Form/fieldset.jsx';
 import InputField               from 'App/Components/Form/input_field.jsx';
 import TimePicker               from 'App/Components/Form/time_picker.jsx';
 import {
-    convertDurationUnit,
-    convertDurationLimit }      from 'Stores/Modules/Trading/Helpers/duration';
+    convertDurationLimit,
+    convertDurationUnit }       from 'Stores/Modules/Trading/Helpers/duration';
 
 /* TODO:
       1. disable days other than today and tomorrow if start date is forward starting
