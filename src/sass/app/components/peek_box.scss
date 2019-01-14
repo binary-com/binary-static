@@ -31,7 +31,7 @@ $COLOR_PEEK_LIGHT_GRAY: #c2c2c2;
         justify-items: center;
         transition: all 0.9s ease;
         position: absolute;
-        top: 3px;
+        top: 2px;
         left: 0;
         z-index: 5;
 
@@ -39,12 +39,12 @@ $COLOR_PEEK_LIGHT_GRAY: #c2c2c2;
             grid-area: bottomright;
             border-bottom-right-radius: 4px;
             width: 4px;
-            height: 4px;
+            height: 5px;
             background-color: $COLOR_PEEK_RED;
         }
         .bottom {
             grid-area: bottom;
-            height: 4px;
+            height: 5px;
             width: 100%;
             background-color: $COLOR_PEEK_RED;
         }
@@ -52,7 +52,7 @@ $COLOR_PEEK_LIGHT_GRAY: #c2c2c2;
             grid-area: bottomleft;
             border-bottom-left-radius: 4px;
             width: 4px;
-            height: 4px;
+            height: 5px;
             background-color: $COLOR_PEEK_RED;
         }
         .left {
