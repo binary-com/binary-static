@@ -18,6 +18,7 @@ export const FormRow = ({
     checked,
     row_class,
     row_id,
+    sub_row_class,
     label_row_id,
     is_two_rows,
     is_bold,
@@ -105,7 +106,7 @@ export const FormRow = ({
         } else if (has_geovalidator) {
             return 'gr-3 gr-12-m';
         }
-        return 'gr-8 gr-12-m';
+        return `gr-8 gr-12-m ${sub_row_class || ''}`;
     };
 
     if (type === 'checkbox' && !spaced) {
