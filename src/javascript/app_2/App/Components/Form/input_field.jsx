@@ -4,7 +4,8 @@ import {
     PropTypes as MobxPropTypes } from 'mobx-react';
 import PropTypes                 from 'prop-types';
 import React                     from 'react';
-import { IconMinus, IconPlus }   from 'Assets/Common';
+import { IconMinus }             from 'Assets/Common/icon_minus.jsx'; // implicit import here { IconMinus, IconPlus } from 'Assets/Common' breaks compilation
+import { IconPlus }              from 'Assets/Common/icon_plus.jsx';
 import Button                    from './button.jsx';
 import Tooltip                   from '../Elements/tooltip.jsx';
 
