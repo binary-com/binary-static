@@ -13,6 +13,7 @@ const urlLang             = require('../../_common/language').urlLang;
 const localizeForLang     = require('../../_common/localize').forLang;
 const localize            = require('../../_common/localize').localize;
 const ScrollToAnchor      = require('../../_common/scroll_to_anchor');
+const State               = require('../../_common/storage').State;
 const isStorageSupported  = require('../../_common/storage').isStorageSupported;
 const ThirdPartyLinks     = require('../../_common/third_party_links');
 const urlFor              = require('../../_common/url').urlFor;
@@ -74,14 +75,15 @@ const BinaryLoader = (() => {
         ContentVisibility.init();
 
         BinarySocket.wait('authorize', 'website_status', 'landing_company').then(() => {
-            const images = $('#content img');
-            if (images) {
-                images.on('load', () => {
+            // first time load.
+            const last_image = $('#content img').last();
+            if (last_image) {
+                last_image.on('load', () => {
                     ScrollToAnchor.init();
                 });
-            } else {
-                ScrollToAnchor.init();
             }
+
+            ScrollToAnchor.init();
         });
     };
 
