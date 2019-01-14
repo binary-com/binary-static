@@ -762,8 +762,13 @@ label + input {
 }
 
 #token_form {
-    .scope-list {
-        @media screen and (max-width: 480px) {
+    @media screen and (max-width: 480px) {
+        p.error-msg {
+            display: flex;
+            justify-content: center;
+        }
+        .scope-list {
+            position: relative;
             display: flex;
             justify-content: center;
 
@@ -774,14 +779,17 @@ label + input {
                 align-items: center;
             }
             p.error-msg {
-                display: flex;
-                justify-content: center;
-                max-width: 110px;
+                position: absolute;
+                left: 0;
             }
             .scope-types {
                 flex-basis: unset;
                 max-width: unset;
                 flex: unset;
+
+                &:last-child {
+                    margin-bottom: 16px;
+                }
             }
         }
     }
