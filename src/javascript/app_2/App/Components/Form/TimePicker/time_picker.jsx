@@ -8,7 +8,7 @@ import { localize }                   from '_common/localize';
 import { isSessionAvailable }         from 'Stores/Modules/Trading/Helpers/start_date';
 import TimePickerDropdown             from './time_picker_dropdown';
 
-class TimePicker extends React.Component {
+class TimePicker extends React.PureComponent {
     constructor (props) {
         super(props);
         this.state = {

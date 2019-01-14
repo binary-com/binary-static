@@ -2,7 +2,7 @@ import { PropTypes as MobxPropTypes } from 'mobx-react';
 import PropTypes                      from 'prop-types';
 import React                          from 'react';
 
-class TimePickerDropdown extends React.Component {
+class TimePickerDropdown extends React.PureComponent {
     constructor(props) {
         super(props);
         this.hours    = [...Array(24).keys()].map((a)=>`0${a}`.slice(-2));
