@@ -8,7 +8,8 @@ const IconMinus = ({ className, is_disabled }) => (
 );
 
 IconMinus.propTypes = {
-    className: PropTypes.string,
+    className  : PropTypes.string,
+    is_disabled: PropTypes.bool,
 };
 
 export { IconMinus };

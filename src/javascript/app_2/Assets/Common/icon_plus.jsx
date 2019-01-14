@@ -9,7 +9,8 @@ const IconPlus = ({ className, is_disabled }) => (
 );
 
 IconPlus.propTypes = {
-    className: PropTypes.string,
+    className  : PropTypes.string,
+    is_disabled: PropTypes.bool,
 };
 
 export { IconPlus };
