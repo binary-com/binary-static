@@ -471,11 +471,14 @@
                         display: inline-block;
                     }
                     &:disabled {
+                        background-color: $COLOR_GRAY_DISABLED;
+                        color: $COLOR_GRAY;
+
                         .btn-purchase-rec {
-                            background: $COLOR_BLACK_DISABLED;
+                            background: $COLOR_GRAY_DISABLED;
                         }
                         .btn-purchase-tri {
-                            border-color: transparent transparent transparent $COLOR_BLACK_DISABLED;
+                            border-color: transparent transparent transparent $COLOR_GRAY_DISABLED;
                         }
                         .trade-type svg {
                             opacity: 0.16;

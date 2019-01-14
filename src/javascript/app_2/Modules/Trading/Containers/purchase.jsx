@@ -1,3 +1,4 @@
+import { PropTypes as MobxPropTypes } from 'mobx-react';
 import PropTypes                  from 'prop-types';
 import React                      from 'react';
 import { localize }               from '_common/localize';
@@ -11,11 +12,12 @@ import { connect }                from 'Stores/connect';
 import ContractInfo               from '../Components/Form/Purchase/contract_info.jsx';
 import MessageBox                 from '../Components/Form/Purchase/MessageBox';
 import PurchaseLock               from '../Components/Form/Purchase/PurchaseLock';
-import { IconTradeTypeButton }    from '../../../Assets/Trading/Types';
+import { IconTradeType }          from '../../../Assets/Trading/Types';
 
 const Purchase = ({
     barrier_count,
     basis,
+    basis_list,
     currency,
     is_client_allowed_to_visit,
     is_purchase_confirm_on,
@@ -48,7 +50,7 @@ const Purchase = ({
                     <div className='btn-purchase-tri' />
                     <div className='trade-type-container'>
                         <div className='trade-type'>
-                            <IconTradeTypeButton type={type.toLowerCase()} />
+                            <IconTradeType type={type.toLowerCase()} />
                             <span>{localize('[_1]', trade_types[type])}</span>
                         </div>
                     </div>
@@ -88,6 +90,7 @@ const Purchase = ({
                         <ContractInfo
                             barrier_count={barrier_count}
                             basis={basis}
+                            basis_list={basis_list}
                             contract_title={trade_types[type]}
                             contract_type={type}
                             currency={currency}
@@ -115,6 +118,7 @@ const Purchase = ({
 Purchase.propTypes = {
     barrier_count             : PropTypes.number,
     basis                     : PropTypes.string,
+    basis_list                : MobxPropTypes.arrayOrObservableArray,
     currency                  : PropTypes.string,
     is_client_allowed_to_visit: PropTypes.bool,
     is_purchase_confirm_on    : PropTypes.bool,
@@ -136,6 +140,7 @@ export default connect(
         is_client_allowed_to_visit: client.is_client_allowed_to_visit,
         barrier_count             : modules.trade.barrier_count,
         basis                     : modules.trade.basis,
+        basis_list                : modules.trade.basis_list,
         is_purchase_enabled       : modules.trade.is_purchase_enabled,
         is_trade_enabled          : modules.trade.is_trade_enabled,
         onClickPurchase           : modules.trade.onPurchase,

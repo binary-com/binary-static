@@ -1,3 +1,4 @@
+import { PropTypes as MobxPropTypes } from 'mobx-react';
 import PropTypes         from 'prop-types';
 import React             from 'react';
 import { localize }      from '_common/localize';
@@ -6,11 +7,12 @@ import Tooltip           from 'App/Components/Elements/tooltip.jsx';
 
 const ContractInfo = ({
     basis,
-    contract_title,
-    contract_type,
+    basis_list,
     currency,
     proposal_info,
 }) => {
+    const contract_info_basis = (basis_list.find(o => o.value !== basis));
+
     return (
         <React.Fragment>
             {(proposal_info.has_error || !proposal_info.id) ?
@@ -20,8 +22,8 @@ const ContractInfo = ({
                 :
                 <div className='purchase-info-wrapper'>
                     <div className='info-wrapper'>
-                        <div>{localize('Stake')}:</div>
-                        <div><Money amount={proposal_info.stake} currency={currency} /></div>
+                        <div>{localize('[_1]', contract_info_basis.text)}</div>
+                        <div><Money amount={proposal_info[contract_info_basis.value]} currency={currency} /></div>
                     </div>
                     <span className='purchase-tooltip'>
                         <Tooltip alignment='left' icon='info' message={proposal_info.message} />
@@ -33,12 +35,11 @@ const ContractInfo = ({
 };
 
 ContractInfo.propTypes = {
-    barrier_count : PropTypes.number,
-    basis         : PropTypes.string,
-    contract_title: PropTypes.string,
-    contract_type : PropTypes.string,
-    currency      : PropTypes.string,
-    proposal_info : PropTypes.object,
+    barrier_count: PropTypes.number,
+    basis        : PropTypes.string,
+    basis_list   : MobxPropTypes.arrayOrObservableArray,
+    currency     : PropTypes.string,
+    proposal_info: PropTypes.object,
 };
 
 export default ContractInfo;
