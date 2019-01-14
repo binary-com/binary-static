@@ -91,9 +91,6 @@ const PersonalDetails = (() => {
             fnc_additional_check: additionalCheck,
             enable_button       : true,
         });
-        if (!is_virtual) {
-            Geocoder.validate(form_id);
-        }
         showHideMissingDetails();
     };
 
@@ -256,6 +253,7 @@ const PersonalDetails = (() => {
                 if (additionalCheck(get_settings)) {
                     getDetailsResponse(get_settings);
                     showFormMessage(localize('Your settings have been updated successfully.'), true);
+                    Geocoder.validate(form_id);
                 }
             });
         } else { // is_error
@@ -379,6 +377,9 @@ const PersonalDetails = (() => {
                             BinarySocket.send({ states_list: residence }).then(response_state => {
                                 populateStates(response_state).then(() => {
                                     getDetailsResponse(get_settings_data, response.residence_list);
+                                    if (!is_virtual) {
+                                        Geocoder.validate(form_id);
+                                    }
                                 });
                             });
                         } else {
