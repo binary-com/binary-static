@@ -91,6 +91,7 @@ div.contracts-popup-container {
 
             .tooltip {
                 display: block;
+                transition: all 0.2s;
             }
         }
         &.disabled {
@@ -105,10 +106,6 @@ div.contracts-popup-container {
 
             .contract-title {
                 color: $COLOR_WHITE;
-            }
-            .tooltip {
-                display: block;
-                transition: all 0.2s;
             }
         }
         .contract-icon {
