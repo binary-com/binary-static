@@ -64,7 +64,7 @@ class TimePicker extends React.PureComponent {
             is_align_right,
             placeholder,
             start_date,
-            sessions,
+            available_range,
         } = this.props;
         return (
             <div
@@ -100,7 +100,7 @@ class TimePicker extends React.PureComponent {
                                     preClass={prefix_class}
                                     start_date={start_date}
                                     value={value}
-                                    sessions={sessions}
+                                    available_range={available_range}
                                     is_clearable={this.props.is_clearable}
                                 />
                             </React.Fragment>
@@ -119,7 +119,7 @@ TimePicker.propTypes = {
     onChange       : PropTypes.func,
     padding        : PropTypes.string,
     placeholder    : PropTypes.string,
-    sessions       : MobxPropTypes.arrayOrObservableArray,
+    available_range       : MobxPropTypes.arrayOrObservableArray,
     start_date     : PropTypes.number,
     value          : PropTypes.string,
 };
