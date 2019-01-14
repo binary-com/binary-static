@@ -1,12 +1,9 @@
 import {
     observer,
     PropTypes as MobxPropTypes }      from 'mobx-react';
-import moment                         from 'moment';
 import PropTypes                      from 'prop-types';
 import React                          from 'react';
-import { localize }                   from '_common/localize';
-import { isSessionAvailable }         from 'Stores/Modules/Trading/Helpers/start_date';
-import TimePickerDropdown             from './time_picker_dropdown';
+import TimePickerDropdown             from './time_picker_dropdown.jsx';
 
 class TimePicker extends React.PureComponent {
     constructor (props) {

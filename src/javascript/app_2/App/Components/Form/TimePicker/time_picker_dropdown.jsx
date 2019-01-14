@@ -1,6 +1,9 @@
 import { PropTypes as MobxPropTypes } from 'mobx-react';
+import moment                         from 'moment';
 import PropTypes                      from 'prop-types';
 import React                          from 'react';
+import { localize }                   from '_common/localize';
+import { isSessionAvailable }         from 'Stores/Modules/Trading/Helpers/start_date';
 
 class TimePickerDropdown extends React.PureComponent {
     constructor(props) {
@@ -83,7 +86,11 @@ class TimePickerDropdown extends React.PureComponent {
                         <div className='list-container'>
                             {this.hours.map((h, key) => {
                                 start_moment_clone.hour(h);
-                                const is_enabled = isSessionAvailable(available_range, start_moment_clone, start_moment, true);
+                                const is_enabled = isSessionAvailable(
+                                    available_range,
+                                    start_moment_clone,
+                                    start_moment,
+                                    true);
                                 return (
                                     <div
                                         className={`list-item${hour === h ? ' selected' : ''}${is_enabled ? '' : ' disabled'}`}
@@ -104,7 +111,10 @@ class TimePickerDropdown extends React.PureComponent {
                         <div className='list-container'>
                             {this.minutes.map((mm, key) => {
                                 start_moment_clone.hour(hour).minute(mm);
-                                const is_enabled = isSessionAvailable(available_range, start_moment_clone, start_moment);
+                                const is_enabled = isSessionAvailable(
+                                    available_range,
+                                    start_moment_clone,
+                                    start_moment);
                                 return (
                                     <div
                                         className={`list-item${minute === mm ? ' selected' : ''}${is_enabled ? '' : ' disabled'}`}
@@ -122,17 +132,16 @@ class TimePickerDropdown extends React.PureComponent {
     }
 }
 
-
 TimePickerDropdown.propTypes = {
-    className   : PropTypes.string,
-    is_clearable: PropTypes.bool,
-    onChange    : PropTypes.func,
-    preClass    : PropTypes.string,
-    available_range    : MobxPropTypes.arrayOrObservableArray,
-    start_date  : PropTypes.number,
-    toggle      : PropTypes.func,
-    value       : PropTypes.string,
-    value_split : PropTypes.bool,
+    available_range: MobxPropTypes.arrayOrObservableArray,
+    className      : PropTypes.string,
+    is_clearable   : PropTypes.bool,
+    onChange       : PropTypes.func,
+    preClass       : PropTypes.string,
+    start_date     : PropTypes.number,
+    toggle         : PropTypes.func,
+    value          : PropTypes.string,
+    value_split    : PropTypes.bool,
 };
 
 export default TimePickerDropdown;
