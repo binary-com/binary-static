@@ -42,10 +42,6 @@ const Amount = ({
         'three-columns': !is_single_currency,
     });
 
-    const handleChange = (e) => {
-        state.checked = !e.target.checked;
-    };
-
     return (
         <div>
             <Fieldset
@@ -83,7 +79,7 @@ const Amount = ({
                     />
                 </div>
                 <div className='input-field'>
-                    <CheckBox onChange={handleChange} checked={state.checked} />
+                    <input type='checkbox' checked />
                     <label>{localize('Allow equals')}</label>
                     <Tooltip icon='info' message={localize('ll')} />
                 </div>
