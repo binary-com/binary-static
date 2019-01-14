@@ -46,8 +46,14 @@ const TopUpVirtualPopup = (() => {
                     getElementById('top_up_message').textContent = message;
                     getElementById('chk_hide_top_up').parentNode.setVisibility(0);
                 }
+                const el_redirect = getElementById('top_up_cashier_redirect');
+                const el_popup    = getElementById(popup_id);
+                el_redirect.addEventListener('click', () => {
+                    if (el_popup) {
+                        el_popup.remove();
+                    }
+                });
                 const el_cancel = getElementById('btn_cancel');
-                const el_popup  = getElementById(popup_id);
                 el_cancel.addEventListener('click', () => {
                     Client.set('hide_virtual_top_up_until', moment.utc().add(1, 'day').unix());
                     if (el_popup) {
@@ -81,7 +87,7 @@ const TopUpVirtualPopup = (() => {
                         Dialog.confirm({
                             id               : 'top_up_success',
                             localized_title  : localize('Top-up successful'),
-                            localized_message: localize('[_1] has been credited into your Virtual Account: [_2].', '$10,000.00', Client.get('loginid')),
+                            localized_message: localize('[_1] has been credited into your Virtual Account: [_2].', ['$10,000.00', Client.get('loginid')]),
                             cancel_text      : localize('Go to statement'),
                             ok_text          : localize('Continue trading'),
                             onAbort          : () => {
