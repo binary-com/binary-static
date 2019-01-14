@@ -22,7 +22,7 @@ import {
     SecretAnswer,
     ClientMessage,
     Tnc,
-    GeocodeResponse,
+    GeocodeValidation,
 } from '../../_common/components/forms_common_rows.jsx';
 
 const Real = () => (
@@ -37,6 +37,7 @@ const Real = () => (
                 <Citizenship className='invisible' />
                 <FormRow type='select' id='place_of_birth' label={it.L('Place of birth')} attributes={{ single: 'single' }} />
                 <Residence />
+                <Phone />
                 <AccountOpeningReason />
             </Fieldset>
 
@@ -46,9 +47,9 @@ const Real = () => (
                 <AddressLine2 />
                 <AddressCity />
                 <AddressState />
-                <AddressPostcode />
-                <Phone />
-                <GeocodeResponse />
+                <AddressPostcode>
+                    <GeocodeValidation className='gr-5 geocode-container' />
+                </AddressPostcode>
             </Fieldset>
 
             <Fieldset legend={it.L('Security')}>
