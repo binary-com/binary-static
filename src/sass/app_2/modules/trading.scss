@@ -484,6 +484,9 @@
                             opacity: 0.16;
                         }
                     }
+                    &:hover {
+                        box-shadow: none;
+                    }
                 }
             }
             span.tooltip:before {
