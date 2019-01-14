@@ -101,8 +101,7 @@ const Geocoder = (() => {
         return states_list_el.options[states_list_el.selectedIndex].text;
     };
 
-    const validate = (form_id, authenticated_status) => {
-        if (authenticated_status) return;
+    const validate = (form_id) => {
         const address = init(form_id).address;
         validator(address).then(() => {
             validated = true;

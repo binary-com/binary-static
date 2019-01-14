@@ -255,7 +255,7 @@ const PersonalDetails = (() => {
                 if (additionalCheck(get_settings)) {
                     getDetailsResponse(get_settings);
                     showFormMessage(localize('Your settings have been updated successfully.'), true);
-                    Geocoder.validate(form_id, is_fully_authenticated);
+                    if (!is_fully_authenticated) Geocoder.validate(form_id);
                 }
             });
         } else { // is_error
@@ -380,8 +380,8 @@ const PersonalDetails = (() => {
                             BinarySocket.send({ states_list: residence }).then(response_state => {
                                 populateStates(response_state).then(() => {
                                     getDetailsResponse(get_settings_data, response.residence_list);
-                                    if (!is_virtual) {
-                                        Geocoder.validate(form_id, is_fully_authenticated);
+                                    if (!is_virtual && !is_fully_authenticated) {
+                                        Geocoder.validate(form_id);
                                     }
                                 });
                             });
