@@ -17,6 +17,7 @@ const InputField = ({
     is_disabled,
     is_float,
     is_incrementable,
+    is_read_only = false,
     is_signed = false,
     label,
     max_length,
@@ -24,6 +25,7 @@ const InputField = ({
     min_value,
     name,
     onChange,
+    onClick,
     placeholder,
     prefix,
     required,
@@ -99,10 +101,12 @@ const InputField = ({
             name={name}
             onKeyDown={is_incrementable ? onKeyPressed : undefined}
             onChange={changeValue}
+            onClick={onClick}
             placeholder={placeholder || undefined}
+            readOnly={is_read_only}
             required={required || undefined}
             type={type === 'number' ? 'text' : type}
-            value={value}
+            value={value || ''}
         />;
 
     const input_increment =
@@ -155,11 +159,13 @@ InputField.propTypes = {
     is_disabled      : PropTypes.string,
     is_float         : PropTypes.bool,
     is_incrementable : PropTypes.bool,
+    is_read_only     : PropTypes.bool,
     is_signed        : PropTypes.bool,
     label            : PropTypes.string,
     max_length       : PropTypes.number,
     name             : PropTypes.string,
     onChange         : PropTypes.func,
+    onClick          : PropTypes.func,
     placeholder      : PropTypes.string,
     prefix           : PropTypes.string,
     required         : PropTypes.bool,
