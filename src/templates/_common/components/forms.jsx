@@ -18,11 +18,13 @@ export const FormRow = ({
     checked,
     row_class,
     row_id,
+    sub_row_class,
     label_row_id,
     is_two_rows,
     is_bold,
     tooltip,
     hint,
+    has_geovalidator,
     attributes = {},
     input_prefix,
     children,
@@ -98,6 +100,15 @@ export const FormRow = ({
         return type === 'custom' ? children : undefined;
     };
 
+    const inner_el_classname = () => {
+        if (is_two_rows) {
+            return 'gr-12';
+        } else if (has_geovalidator) {
+            return 'gr-3 gr-12-m';
+        }
+        return `gr-8 gr-12-m ${sub_row_class || ''}`;
+    };
+
     if (type === 'checkbox' && !spaced) {
         return (
             <div className={`gr-row ${row_class || ''}`} id={row_id}>
@@ -124,12 +135,13 @@ export const FormRow = ({
                     }
                 </label>
             </div>
-            <div className={is_two_rows ? 'gr-12' : 'gr-8 gr-12-m'}>
+            <div className={inner_el_classname()}>
                 {getInnerElement()}
                 {hint &&
                     <p className='hint no-margin'>{hint}</p>
                 }
             </div>
+            {has_geovalidator ? children : undefined}
         </div>
     );
 };

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-01-08 11:15\n"
+"PO-Revision-Date: 2019-01-15 05:44\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Indonesian\n"
 "MIME-Version: 1.0\n"
@@ -174,8 +174,8 @@ msgstr "%1 memberi cara mudah untuk berpartisipasi pada pasar keuangan. Trading 
 msgid "%1 gives everyone an easy way to participate in the financial markets. Trade with as little as $1 USD on major currencies, stocks, indices, and commodities."
 msgstr "%1 memberi cara mudah untuk berpartisipasi pada pasar keuangan. Trading dengan modal serendah $1 pada pasangan valuta asing, saham, indeks dan komoditas."
 
-msgid "%1 has been credited into your virtual account: %2."
-msgstr "%1 telah dikreditkan kedalam akun virtual Anda: %2."
+msgid "%1 has been credited into your Virtual Account: %2."
+msgstr ""
 
 msgid "%1 has earned an enviable reputation for our commitment to high ethical standards and the quality of the trading experience we provide."
 msgstr "%1 telah memperoleh reputasi tinggi untuk komitmen kami yang memenuhi standar etika dan kualitas pengalaman trading yang kami sediakan."
@@ -2259,6 +2259,9 @@ msgstr "Charting untuk underlying ini tertunda"
 msgid "Charting platforms"
 msgstr "Platform charting"
 
+msgid "Check address"
+msgstr ""
+
 msgid "Check our systems against the latest attacks, vulnerabilities, and mitigations"
 msgstr "Periksa sistem kami terhadap serangan, kerentanan, dan mitigasi terbaru"
 
@@ -3339,6 +3342,9 @@ msgstr "Apakah Anda ingin mempelajari lebih lanjut mengenai pasar dan cara bertr
 msgid "Do you want to see %1 in other languages, or can you suggest improvements to our current translations?"
 msgstr "Apakah Anda ingin melihat %1 dalam bahasa lain, atau Anda dapat menyarankan perbaikan pada terjemahan kami saat ini?"
 
+msgid "Do you want to top up for another %1? If not, you can do this later on the %2Cashier page%3, too."
+msgstr ""
+
 msgid "Do you wish to continue?"
 msgstr "Apakah Anda ingin melanjutkan?"
 
@@ -3356,6 +3362,9 @@ msgstr "Does Not Touch"
 
 msgid "Don't have an account?"
 msgstr "Belum memiliki akun?"
+
+msgid "Don't show again"
+msgstr ""
 
 msgid "Don’t share your %1 account or payment methods with any other person."
 msgstr "Jangan berbagi informasi mengenai akun %1 atau metode pembayaran Anda kepada siapapun."
@@ -3830,9 +3839,6 @@ msgstr "Teknologi eksklusif trading binary."
 
 msgid "Execute your trade in seconds."
 msgstr "Mengeksekusi trading dalam detik."
-
-msgid "Execute your trading strategy using the Rise/Fall trade type with a duration of 5 ticks, 10 ticks, 1 minute or 5 minutes. With Rise/Fall contracts, you must predict whether the market will rise or fall from its current level."
-msgstr "Gunakan strategi trading Anda menggunakan jenis kontrak Rise/Fall dengan durasi 5 tik, 10 tik, 1 menit atau 5 menit. Pada kontrak Rise/Fall, Anda perlu menganalisa apakah pasar akan bergerak naik atau turun dari posisi saat ini."
 
 msgid "Execution model and counterparty risk"
 msgstr "Model eksekusi dan risiko rekanan"
@@ -4548,6 +4554,9 @@ msgstr "Kunjungi halaman unduh MT5"
 msgid "Go to MetaTrader 5 dashboard"
 msgstr "Kunjungi dashboard MetaTrader 5"
 
+msgid "Go to statement"
+msgstr ""
+
 msgid "Go with the leader"
 msgstr "Ikuti pemimpin"
 
@@ -4662,8 +4671,14 @@ msgstr "Batasan Tinggi"
 msgid "High Tick"
 msgstr "High Tik"
 
+msgid "High Tick/Low Tick"
+msgstr ""
+
 msgid "High Tick/Low Tick contracts have a strict duration of five ticks."
 msgstr "Kontrak High Tik/Low Tik memiliki durasi lima tik yang tetap."
+
+msgid "High Ticks/Low Ticks"
+msgstr "High Ticks/Low Ticks"
 
 msgid "High barrier"
 msgstr "Batasan Tinggi"
@@ -4826,6 +4841,9 @@ msgstr "Bagaimana cara menggunakan agen pembayaran?"
 
 msgid "However, if the asset price falls by 10 points, that represents a USD 10 loss for you."
 msgstr "Namun, jika harga aset jatuh lebih dari 10 poin, ini mewakili kerugian USD 10 untuk Anda."
+
+msgid "However, we will require further documentation to authenticate your account in the future."
+msgstr ""
 
 msgid "However, with leverage you can purchase those 100 units at a fraction of the typical cost – depending on the leverage afforded to you by your broker or trading platform."
 msgstr "Namun, dengan leverage Anda dapat membeli seluruh 100 unit tersebut pada fraksi dengan biaya tertentu - tergantung pada leverage yang diberikan oleh broker atau platform trading Anda."
@@ -7245,8 +7263,8 @@ msgstr "Lebih dari $1.000.000"
 msgid "Over $500,000"
 msgstr "Lebih dari $500.000"
 
-msgid "Over %1 %2staff%3 and contractors worldwide"
-msgstr "Lebih dari %1 %2staf%3 dan kontraktor di seluruh dunia"
+msgid "Over %1 <a href='%2'>staff</a> and contractors worldwide"
+msgstr ""
 
 msgid "Over 1 million registered accounts worldwide"
 msgstr "Lebih dari 1 juta akun yang terdaftar di seluruh dunia"
@@ -7605,8 +7623,8 @@ msgstr "Silahkan masuk."
 msgid "Please make sure that you first agree with the Agent on the terms of payment before submitting your request."
 msgstr "Pastikan Anda telah setuju dengan Agen mengenai syarat pembayaran sebelum mengajukan permohonan Anda."
 
-msgid "Please note that Asians, Digits, Reset Call/Put and High/Low Ticks are available exclusively with our Volatility Indices."
-msgstr "Mohon diketahui bahwa Asian, Digit, Reset Call/Put dan High/Low Tik hanya tersedia pada Indeks Volatilitas kami."
+msgid "Please note that Asians, Digits, Reset Call/Reset Put and High Ticks/Low Ticks are available exclusively with our Volatility Indices."
+msgstr "Mohon diketahui bahwa Asians, Digits, Reset Call/Reset Put dan High Ticks/Low Ticks hanya tersedia pada Indeks Volatilitas."
 
 msgid "Please note that actual trading results may not correspond to optimized or back-tested results."
 msgstr "Mohon diketahui bahwa hasil trading mungkin tidak sesuai dengan hasil yang dioptimalkan atau di uji."
@@ -7812,8 +7830,23 @@ msgstr "Menganalisa dimana pasar akan menyentuh atau tidak menyentuh target kapa
 msgid "Predict the direction<br />and purchase"
 msgstr "Analisa arah<br />dan beli"
 
+msgid "Predict the highest or lowest tick among the next 5 ticks."
+msgstr ""
+
 msgid "Predict the last decimal digit of the spot price with Digits. There are three types of Digits trades:"
 msgstr "Prediksikan angka desimal terakhir dari harga spot dengan Digit. Ada tiga jenis perdagangan Digit:"
+
+msgid "Predict whether the exit spot will be higher or lower than the entry spot within a selected duration from 5 ticks to 10 ticks, or 1 minute to 5 minutes."
+msgstr ""
+
+msgid "Predict whether the last digit of the last tick will be even or odd within a selected duration from 5 ticks to 10 ticks."
+msgstr ""
+
+msgid "Predict whether the last digit of the last tick will be greater or less than your prediction within a selected duration from 5 ticks to 10 ticks."
+msgstr ""
+
+msgid "Predict whether the last digit of the last tick will match or differ from your prediction within a selected duration from 5 ticks to 10 ticks."
+msgstr ""
 
 msgid "Preferably a native speaker with good command of English (oral and written)"
 msgstr "Diutamakan seorang penutur asli dengan bahasa Inggris yang baik (lisan dan tulisan)"
@@ -8019,8 +8052,8 @@ msgstr "Diterbitkan dalam bahasa Cina, Inggris, Perancis, Jerman, Indonesia, Ita
 msgid "Purchase"
 msgstr "Beli"
 
-msgid "Purchase High/Low Tick contracts to predict the highest or lowest tick among the next five ticks."
-msgstr "Beli kontrak High/Low Tik untuk menganalisa tik tertinggi atau terendah antara lima tik selanjutnya."
+msgid "Purchase High Tick/Low Tick contracts to predict the highest or lowest tick among the next five ticks."
+msgstr "Beli kontrak High Tick/Low Tick untuk menganalisa tik tertinggi atau terendah antara lima tik selanjutnya."
 
 msgid "Purchase Price"
 msgstr "Harga Beli"
@@ -8295,9 +8328,6 @@ msgstr "Batasan Reset"
 msgid "Reset Call"
 msgstr "Reset Call"
 
-msgid "Reset Call/Put"
-msgstr "Reset Call/Put"
-
 msgid "Reset Call/Reset Put"
 msgstr "Reset Call/Reset Put"
 
@@ -8318,12 +8348,6 @@ msgstr "Reset kata sandi"
 
 msgid "Reset to original settings"
 msgstr "Reset ke pengaturan awal"
-
-msgid "Reset-Call"
-msgstr "Reset-Call"
-
-msgid "Reset-Put"
-msgstr "Reset-Put"
 
 msgid "Residents of countries which have been identified by the FATF as having strategic deficiencies shall be restricted from opening an account with Binary Investments (Europe) Ltd."
 msgstr "Penduduk tetap yang telah ditentukan oleh FATF yang memiliki keterbatasan adalah tidak dapat mendaftar akun pada Binary Investments (Europe) Ltd."
@@ -8894,9 +8918,6 @@ msgstr "Mulai trading"
 
 msgid "Start trading MT5 on web platform"
 msgstr "Memulai trading MT5 pada platform situs"
-
-msgid "Start/End Time"
-msgstr "Waktu Mulai/Akhir"
 
 msgid "State Benefits"
 msgstr "Manfaat Negara"
@@ -10131,6 +10152,9 @@ msgstr "Penggunaan API %1 adalah risiko Anda sendiri, dan Anda bertanggung jawab
 msgid "The use, operation or combination of the %1 API with non-%1 API(s), data, equipment or documentation if liability would have been avoided but for such use, operation, or combination; or"
 msgstr "Penggunaan, operasi atau kombinasi dari API %1 dengan bukan API %1 baik itu data, peralatan atau dokumentasi jika kewajiban dihindari tetapi untuk penggunaan tersebut, operasi atau kombinasi atau"
 
+msgid "The various trade types available on our MT5 platform."
+msgstr ""
+
 msgid "The volatility indices simulate various real market situations and provide an ideal platform for getting used to trading and testing strategies under various market conditions. These indices depend on volatility and drift, and help users to try out scenarios like - high volatility, low volatility, bullish and bearish trends."
 msgstr "Indeks volatilitas mensimulasikan berbagai situasi pasar riil dan menyediakan platform yang ideal untuk digunakan bertrading dan mencoba strategi pada berbagai kondisi pasar. Indeks ini tergantung kepada volatilitas dan pergerakan cepat yang membantu pengguna untuk mencoba skenario seperti – volatilitas tinggi, volatilitas rendah, trend bullish dan bearish."
 
@@ -10563,11 +10587,23 @@ msgstr "Token"
 msgid "Top Up Virtual Account"
 msgstr "Isi Ulang Akun Virtual"
 
+msgid "Top up"
+msgstr ""
+
+msgid "Top up Virtual Account"
+msgstr ""
+
+msgid "Top up error"
+msgstr ""
+
 msgid "Top up virtual account"
 msgstr "Isi ulang akun virtual"
 
 msgid "Top-tier liquidity"
 msgstr "Likuiditas teratas"
+
+msgid "Top-up successful"
+msgstr ""
 
 msgid "Total"
 msgstr "Total"
@@ -11046,6 +11082,9 @@ msgstr "Memahami tentang kriptografi, termasuk asimetris, simetris, fungsi hash,
 msgid "Understanding of encryption fundamentals and the OWASP Top 10"
 msgstr "Memahami dasar-dasar enkripsi dan OWASP Top 10"
 
+msgid "Understood"
+msgstr ""
+
 msgid "Unemployed"
 msgstr "Pengangguran"
 
@@ -11172,9 +11211,6 @@ msgstr "App VPN"
 msgid "VPN app"
 msgstr "app VPN"
 
-msgid "Validate address"
-msgstr "Pengesahan alamat"
-
 msgid "Variable"
 msgstr "Variabel"
 
@@ -11253,8 +11289,8 @@ msgstr "Lihat daftar lengkap aset, jenis kontrak dan durasi."
 msgid "View the operating hours of the markets you can trade."
 msgstr "Lihat waktu operasi dan pasar yang dapat anda tradingkan."
 
-msgid "View updated portfolio"
-msgstr "Lihat portopolio terbaru"
+msgid "View updated statement"
+msgstr ""
 
 msgid "View your account's authentication status."
 msgstr "Melihat status otentikasi akun Anda."
@@ -11412,6 +11448,9 @@ msgstr "Kami percaya bahwa kami harus selalu melakukan hal yang benar. Hal ini t
 msgid "We collect and assess your data to profile you, as our client, in relation to our products. We do this manually through the assistance of automated processing. Through categorisation, we will be able to provide the most appropriate products and services to you."
 msgstr "Kami mengumpulkan dan menilai data Anda untuk profil Anda, sebagai klien kami, dalam kaitannya dengan produk kami. Kami melakukan ini secara manual melalui bantuan pemrosesan otomatis. Melalui kategorisasi, kami akan dapat menyediakan produk dan layanan yang paling tepat untuk Anda."
 
+msgid "We could not recognise your address. You may proceed but please ensure that your address is complete and accurate."
+msgstr ""
+
 msgid "We delete an order with the largest margin reserved"
 msgstr "Kami akan menghapus order dengan margin terbesar"
 
@@ -11474,6 +11513,9 @@ msgstr "Kami menawarkan gaji berdasarkan pasar, bonus kinerja tahunan, manfaat k
 
 msgid "We offer all four precious metals – gold, silver, palladium, and platinum – as well as energy in our list of commodities."
 msgstr "Kami menawarkan keempat logam mulia - emas, perak, paladium, dan platina - serta energi dalam daftar komoditas kami."
+
+msgid "We offer the following trade types on our MT5 platform:"
+msgstr ""
 
 msgid "We offer three types of lookbacks:"
 msgstr "Kami menawarkan tiga jenis lookbacks:"
@@ -12640,8 +12682,8 @@ msgstr "Akun Anda sebaiknya tidak digunakan sebagai fasilitas perbankan dan depo
 msgid "Your account will be opened with %1, and will be subject to the jurisdiction and laws of %2."
 msgstr "Akun Anda akan didaftarkan pada %1, dan akan tunduk pada yurisdiksi dan hukum dari %2."
 
-msgid "Your address could not be verified by our automated system. You may proceed but please ensure that your address is complete."
-msgstr "Alamat Anda tidak dapat disahkan menggunakan sistem otomatis yang kami gunakan. Silahkan lanjutkan namun pastikan alamat Anda lengkap."
+msgid "Your address has been recognised by our system."
+msgstr ""
 
 msgid "Your application to be treated as a professional client is being processed."
 msgstr "Aplikasi Anda sebagai klien profesional sedang diproses."
@@ -12708,6 +12750,9 @@ msgstr "Informasi pribadi Anda digunakan terutama sebagai cara memvalidasi Anda 
 
 msgid "Your profit or loss is calculated as follows:"
 msgstr "Laba dan rugi Anda dihitung sebagai berikut:"
+
+msgid "Your request to be treated as a professional client has been rejected. Please check your inbox for more details. Your account remains categorised as a retail client account."
+msgstr "Permintaan Anda untuk diperlakukan sebagai klien profesional telah mengalami penolakan. Silakan periksa kotak masuk email Anda untuk rincian lebih lanjut. Akun Anda tetap dikategorikan sebagai akun klien ritel."
 
 msgid "Your request to transfer %1 %2 from %3 to %4 has been successfully processed."
 msgstr "Permintaan Anda untuk mentransfer %1 %2 dari %3 ke %4 berhasil diproses."
