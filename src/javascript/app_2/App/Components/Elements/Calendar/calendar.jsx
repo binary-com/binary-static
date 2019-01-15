@@ -1,6 +1,6 @@
-import moment         from 'moment';
 import PropTypes      from 'prop-types';
 import React          from 'react';
+import { toMoment }   from 'Utils/Date';
 import CalendarFooter from './calendar_footer.jsx';
 import CalendarHeader from './calendar_header.jsx';
 import CalendarPanel  from './calendar_panel.jsx';
@@ -9,7 +9,7 @@ class Calendar extends React.PureComponent {
     constructor(props) {
         super(props);
         const { date_format, start_date } = props;
-        const current_date = moment.utc(start_date).format(date_format);
+        const current_date = toMoment(start_date).format(date_format);
         this.state = {
             calendar_date: current_date, // calendar date reference
             selected_date: '',           // selected date
@@ -48,7 +48,7 @@ class Calendar extends React.PureComponent {
     navigateTo = (value, unit, is_add) => {
         const { date_format, max_date, min_date } = this.props;
 
-        let new_date = moment.utc(this.state.calendar_date, date_format)[is_add ? 'add' : 'subtract'](value, unit).format(date_format);
+        let new_date = toMoment(this.state.calendar_date)[is_add ? 'add' : 'subtract'](value, unit).format(date_format);
 
         if (unit === 'months' && this.isPeriodDisabled(new_date, 'month')) return;
 
@@ -56,7 +56,7 @@ class Calendar extends React.PureComponent {
             new_date = is_add ? max_date : min_date;
         }
 
-        this.setState({ calendar_date: moment.utc(new_date, date_format).format(date_format) }); // formatted date
+        this.setState({ calendar_date: toMoment(new_date).format(date_format) }); // formatted date
     };
 
     updateSelectedDate = (e, is_disabled) => {
@@ -66,9 +66,9 @@ class Calendar extends React.PureComponent {
 
         const { date_format, max_date, min_date, onSelect } = this.props;
 
-        const moment_date = moment.utc(e.target.dataset.date).startOf('day');
-        const is_before   = moment_date.isBefore(moment.utc(min_date));
-        const is_after    = moment_date.isAfter(moment.utc(max_date));
+        const moment_date = toMoment(e.target.dataset.date).startOf('day');
+        const is_before   = moment_date.isBefore(toMoment(min_date));
+        const is_after    = moment_date.isAfter(toMoment(max_date));
 
         if (is_before || is_after) {
             return;
@@ -91,7 +91,7 @@ class Calendar extends React.PureComponent {
             year  : 'month',
             decade: 'year',
         };
-        const date = moment.utc(this.state.calendar_date, this.props.date_format)[type === 'decade' ? 'year' : type](e.target.dataset[type].split('-')[0]).format(this.props.date_format);
+        const date = toMoment(this.state.calendar_date)[type === 'decade' ? 'year' : type](e.target.dataset[type].split('-')[0]).format(this.props.date_format);
 
         if (this.isPeriodDisabled(date, type)) return;
 
@@ -104,7 +104,7 @@ class Calendar extends React.PureComponent {
     resetCalendar = () => {
         const { date_format, start_date } = this.props;
 
-        const default_date = moment.utc(start_date).format(date_format);
+        const default_date = toMoment(start_date).format(date_format);
         this.setState({
             calendar_date: default_date,
             selected_date: '',
@@ -115,7 +115,7 @@ class Calendar extends React.PureComponent {
     setToday = () => {
         const { date_format, onSelect } = this.props;
 
-        const now = moment().utc().format(date_format);
+        const now = toMoment().format(date_format);
         this.setState({
             calendar_date: now,
             selected_date: now,
@@ -130,10 +130,10 @@ class Calendar extends React.PureComponent {
     isPeriodDisabled = (date, unit) => {
         const { max_date, min_date } = this.props;
 
-        const start_of_period = moment.utc(date).startOf(unit);
-        const end_of_period   = moment.utc(date).endOf(unit);
-        return end_of_period.isBefore(moment.utc(min_date))
-            || start_of_period.isAfter(moment.utc(max_date));
+        const start_of_period = toMoment(date).startOf(unit);
+        const end_of_period   = toMoment(date).endOf(unit);
+        return end_of_period.isBefore(toMoment(min_date))
+            || start_of_period.isAfter(toMoment(max_date));
     };
 
     render() {
@@ -173,8 +173,8 @@ class Calendar extends React.PureComponent {
 
 Calendar.defaultProps = {
     date_format: 'YYYY-MM-DD',
-    min_date   : moment(0).utc().format('YYYY-MM-DD'),              // by default, min_date is set to Unix Epoch (January 1st 1970)
-    max_date   : moment().utc().add(120, 'y').format('YYYY-MM-DD'), // by default, max_date is set to 120 years after today
+    min_date   : toMoment().format('YYYY-MM-DD'),               // by default, min_date is set to Unix Epoch (January 1st 1970)
+    max_date   : toMoment().add(120, 'y').format('YYYY-MM-DD'), // by default, max_date is set to 120 years after today
 };
 
 Calendar.propTypes = {

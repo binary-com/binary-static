@@ -1,7 +1,7 @@
 import classNames     from 'classnames';
-import moment         from 'moment';
 import PropTypes      from 'prop-types';
 import React          from 'react';
+import { toMoment }   from 'Utils/Date';
 import CalendarButton from './calendar_button.jsx';
 
 export default function CalendarHeader({ calendar_date, isPeriodDisabled, onClick, onSelect, calendar_view }) {
@@ -9,7 +9,7 @@ export default function CalendarHeader({ calendar_date, isPeriodDisabled, onClic
     const is_month_view  = calendar_view === 'month';
     const is_year_view   = calendar_view === 'year';
     const is_decade_view = calendar_view === 'decade';
-    const moment_date    = moment.utc(calendar_date);
+    const moment_date    = toMoment(calendar_date);
 
     return (
         <div className='calendar-header'>
