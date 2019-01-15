@@ -5,18 +5,29 @@ const DigitTicker = (() => {
         el_mask,
         total_tick_count,
         contract_status,
+        type,
         current_spot;
     let style_offset_correction = 5;
 
+    let is_lazy_numbers = false;
+
     const array_of_digits         = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
+    const isBarrierMissing = (contract_type, barrier) => contract_type !== 'DIGITDIFF' && contract_type !== 'DIGITMATCH' && !barrier;
+
     const init = (container_id, contract_type, barrier, tick_count, status = 'open') => {
+        if (isBarrierMissing(contract_type, barrier)) {
+            is_lazy_numbers = true;
+        }
         contract_status      = status;
         total_tick_count     = tick_count;
+        type                 = contract_type;
         current_spot         = '-';
         el_container         = document.querySelector(`#${container_id}`);
         populateContainer(el_container);
-        highlightWinningNumbers(getWinningNumbers(contract_type, barrier));
+        if (!is_lazy_numbers) {
+            highlightWinningNumbers(getWinningNumbers(contract_type, barrier));
+        }
         observeResize();
     };
 
@@ -172,7 +183,11 @@ const DigitTicker = (() => {
         el_mask     = el_peek_box.querySelector('.peek-box > .mask');
     };
 
-    const update = (current_tick_count, { quote, epoch }) => {
+    const update = (current_tick_count, { quote, epoch, barrier }) => {
+        if (!isBarrierMissing(type, barrier) && is_lazy_numbers) {
+            highlightWinningNumbers(getWinningNumbers(type, barrier));
+            is_lazy_numbers = false;
+        }
         setElements(epoch);
         el_container.classList.remove('invisible');
         adjustBoxSizes();
@@ -202,8 +217,8 @@ const DigitTicker = (() => {
     const calculateDistance = (old_digit, new_digit) => Math.abs(old_digit - new_digit);
 
     const countUp = (start, end, duration, element, render) => {
-        const decimal_points = countDecimals(start);
-        const f_start = parseFloat(start);
+        const decimal_points = countDecimals(start.replace('/,+/', ''));
+        const f_start = parseFloat(start.replace(/,+/, ''));
         const range = calculateDistance(f_start, end);
         const step = Math.abs(range / 60);
         const increment = end > f_start ? (1 * step) : (-1 * step);

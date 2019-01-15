@@ -71,7 +71,8 @@ const DigitDisplay = (() => {
         DigitTicker.update(
             tick_count,
             {
-                quote: last_digit,
+                quote        : last_digit,
+                contract_type: contract.contract_type,
             }
         );
     };

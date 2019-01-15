@@ -1,3 +1,5 @@
+import { addComma } from '../../../_common/base/currency_base';
+
 const moment                   = require('moment');
 const Contract                 = require('./contract');
 const getLookBackFormula       = require('./lookback').getFormula;
@@ -45,10 +47,10 @@ const Purchase = (() => {
                 const prev_quote_el = this_quote_el.parentElement.parentElement.previousSibling.querySelector('.quote');
                 const prev_quote = prev_quote_el.innerText;
                 DigitTicker.countUp(prev_quote,
-                    parseFloat(this_quote_el.innerText),
+                    parseFloat(this_quote_el.innerText.replace(/,+/, '')),
                     700,
                     this_quote_el,
-                    (content) => `<div class='quote'>${content.replace(/\d$/, makeBold)}</div>`,
+                    (content) => `<div class='quote'>${addComma(content).replace(/\d$/, makeBold)}</div>`,
                 );
             }
         } else {
@@ -345,11 +347,9 @@ const Purchase = (() => {
                 if (!tick_config.is_digit) {
                     fragment.appendChild(el2);
                 }
-
                 const tick = (tick_config.is_tick_high || tick_config.is_tick_low) ?
-                    tick_d.quote : `<div class='quote'>${tick_d.quote.replace(/\d$/, makeBold)}</div>`;
+                    tick_d.quote : `<div class='quote'>${(addComma(tick_d.quote)).replace(/\d$/, makeBold)}</div>`;
                 const el3  = createElement('div', { class: 'col' });
-
                 CommonFunctions.elementInnerHtml(el3, tick);
                 if (tick_config.is_digit) {
                     const el_epoch = document.createElement('div');
@@ -364,7 +364,12 @@ const Purchase = (() => {
 
                     replaceElement(fragment, el3);
                     replaceElement(spots, fragment);
-                    DigitTicker.update(current_tick_count, tick_d);
+
+                    DigitTicker.update(current_tick_count, {
+                        quote        : tick_d.quote,
+                        epoch        : tick_d.epoch,
+                        contract_type: tick_config.contract_type,
+                    });
                 } else {
                     fragment.appendChild(el3);
                     spots.appendChild(fragment);
