@@ -17,15 +17,16 @@ export const CalendarDecades = ({ calendar_date, isPeriodDisabled, onClick, sele
     }
 
     return (
-        <div className='calendar-decade-panel'>
+        <div className='calendar__body calendar__body--decade'>
             {decades.map((range, idx) => {
                 const [start_year, end_year] = range.split('-');
                 return (
                     <span
                         key={idx}
-                        className={classNames('calendar-decade', {
-                            disabled: isPeriodDisabled(moment_date.year(start_year), 'year') && isPeriodDisabled(moment_date.year(end_year), 'year'),
-                            active  : start_year === selected_year,
+                        className={classNames('calendar__body__cell', {
+                            'calendar__body__cell--is-active'  : start_year === selected_year,
+                            'calendar__body__cell--is-disabled': isPeriodDisabled(moment_date.year(start_year), 'year')
+                                && isPeriodDisabled(moment_date.year(end_year), 'year'),
                         })}
                         onClick={onClick.decade}
                         data-decade={range}

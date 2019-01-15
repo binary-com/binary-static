@@ -1,6 +1,9 @@
 import classNames      from 'classnames';
 import React           from 'react';
-import { IconArrow }   from 'Assets/Common';
+import {
+    IconArrow,
+    IconCalendar,
+    IconClear }        from 'Assets/Common';
 import {
     daysFromTodayTo,
     formatDate,
@@ -13,7 +16,7 @@ class DatePicker extends React.PureComponent {
     state = {
         value                : '',
         is_datepicker_visible: false,
-        is_close_btn_visible : false,
+        is_clear_btn_visible : false,
     };
 
     componentDidMount() {
@@ -41,12 +44,12 @@ class DatePicker extends React.PureComponent {
 
     onMouseEnter = () => {
         if (this.state.value && (!('is_clearable' in this.props) || this.props.is_clearable)) {
-            this.setState({ is_close_btn_visible: true });
+            this.setState({ is_clear_btn_visible: true });
         }
     }
 
     onMouseLeave = () => {
-        this.setState({ is_close_btn_visible: false });
+        this.setState({ is_clear_btn_visible: false });
     }
 
     onSelectCalendar = (selected_date, is_datepicker_visible) => {
@@ -105,11 +108,11 @@ class DatePicker extends React.PureComponent {
     render() {
         if (this.props.is_nativepicker) {
             return (
-                <div ref={node => { this.mainNode = node; }} className='datepicker-container'>
+                <div ref={node => { this.mainNode = node; }} className='datepicker'>
                     <input
                         id={this.props.name}
                         name={this.props.name}
-                        className='datepicker-display'
+                        className='datepicker__input'
                         type='date'
                         value={this.state.value}
                         min={this.props.min_date}
@@ -124,46 +127,44 @@ class DatePicker extends React.PureComponent {
                             this.onSelectCalendar(e.target.value);
                         }}
                     />
-                    <label className='datepicker-native-overlay' htmlFor={this.props.name}>
+                    <label className='datepicker__native-overlay' htmlFor={this.props.name}>
                         {this.state.value || this.props.placeholder}
-                        <IconArrow className='datepicker-native-overlay__arrowhead' />
+                        <IconArrow className='datepicker__native-overlay__arrowhead' />
                     </label>
                 </div>
             );
         }
 
         return (
-            <div ref={node => { this.mainNode = node; }} className='datepicker-container'>
+            <div
+                id={this.props.id || undefined}
+                ref={node => { this.mainNode = node; }}
+                className='datepicker'
+                onMouseEnter={this.onMouseEnter}
+                onMouseLeave={this.onMouseLeave}
+                data-value={this.state.value || undefined}
+                name={this.props.name}
+            >
+                <DatePickerInput
+                    class_name='datepicker__input'
+                    mode={this.props.mode}
+                    name={this.props.name}
+                    placeholder={this.props.placeholder}
+                    onClick={this.handleVisibility}
+                    is_read_only={true}
+                    value={this.state.value}
+                />
+                <IconCalendar className='datepicker__input__icon datepicker__input__icon--calendar' />
+                <IconClear
+                    className={classNames('datepicker__input__icon datepicker__input__icon--clear', {
+                        'datepicker__input__icon--is-hidden': !this.state.is_clear_btn_visible,
+                    })}
+                    onClick={this.clearDatePickerInput}
+                />
                 <div
-                    className='datepicker-display-wrapper'
-                    onMouseEnter={this.onMouseEnter}
-                    onMouseLeave={this.onMouseLeave}
-                >
-                    <DatePickerInput
-                        class_name='datepicker-display'
-                        mode={this.props.mode}
-                        name={this.props.name}
-                        placeholder={this.props.placeholder}
-                        onClick={this.handleVisibility}
-                        is_read_only={true}
-                        value={this.state.value}
-                    />
-                    <span
-                        className={classNames('picker-calendar-icon', {
-                            show: !this.state.is_close_btn_visible,
-                        })}
-                        onClick={this.handleVisibility}
-                    />
-                    <span
-                        className={classNames('close-circle-icon', {
-                            show: this.state.is_close_btn_visible,
-                        })}
-                        onClick={this.clearDatePickerInput}
-                    />
-                </div>
-                <div
-                    className={classNames('datepicker-calendar', {
-                        show: this.state.is_datepicker_visible,
+                    className={classNames('datepicker__picker', {
+                        'datepicker__picker--show'                           : this.state.is_datepicker_visible,
+                        [`datepicker__picker--align-${this.props.alignment}`]: this.props.alignment,
                     })}
                 >
                     <Calendar
@@ -172,7 +173,7 @@ class DatePicker extends React.PureComponent {
                         {...this.props}
                     >
                         <DatePickerInput
-                            class_name='calendar-input'
+                            class_name='calendar__input'
                             mode={this.props.mode}
                             name={this.props.name}
                             onChange={this.onChangeInput}

@@ -37,13 +37,15 @@ const getDays = ({ calendar_date, date_format, max_date, min_date, start_date, o
             // for forward starting accounts, only show same day as start date and the day after
             (start_date && (moment_date.isBefore(moment_start_date) || moment_date.isAfter(moment_start_date.clone().add(1, 'day'))));
 
+        // disabled dates that is not in the same calendar month
+        const is_different_month = moment_date.month() !== moment_cur_date.month();
         days.push(
             <span
                 key={date}
-                className={classNames('calendar-date', {
-                    active  : is_active && !is_disabled,
-                    today   : is_today,
-                    disabled: is_disabled,
+                className={classNames('calendar__body__cell', {
+                    'calendar__body__cell--is-active'  : is_active && !is_disabled,
+                    'calendar__body__cell--is-today'   : is_today,
+                    'calendar__body__cell--is-disabled': is_disabled || is_different_month,
                 })}
                 onClick={(e) => { onClick.date(e, is_disabled); }}
                 data-date={date}
@@ -62,8 +64,8 @@ export const CalendarDays = (props) => {
     const days = getDays(props).map(day => day);
 
     return (
-        <div className='calendar-date-panel'>
-            {week_headers.map((item, idx) => (<span key={idx} className='calendar-date-header'>{item}</span>))}
+        <div className='calendar__body calendar__body--date'>
+            {week_headers.map((item, idx) => (<span key={idx} className='calendar__body__header'>{item}</span>))}
             {days}
         </div>
     );

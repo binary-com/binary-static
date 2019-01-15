@@ -1,8 +1,13 @@
-import classNames     from 'classnames';
-import PropTypes      from 'prop-types';
-import React          from 'react';
-import { toMoment }   from 'Utils/Date';
-import CalendarButton from './calendar_button.jsx';
+import classNames           from 'classnames';
+import PropTypes            from 'prop-types';
+import React                from 'react';
+import {
+    IconChevronDoubleLeft,
+    IconChevronDoubleRight,
+    IconChevronLeft,
+    IconChevronRight }      from 'Assets/Common';
+import { toMoment }         from 'Utils/Date';
+import CalendarButton       from './calendar_button.jsx';
 
 export default function CalendarHeader({ calendar_date, isPeriodDisabled, onClick, onSelect, calendar_view }) {
     const is_date_view   = calendar_view === 'date';
@@ -12,10 +17,10 @@ export default function CalendarHeader({ calendar_date, isPeriodDisabled, onClic
     const moment_date    = toMoment(calendar_date);
 
     return (
-        <div className='calendar-header'>
+        <div className='calendar__header'>
             <CalendarButton
-                className={classNames('calendar-prev-year-btn', {
-                    hidden: isPeriodDisabled(moment_date.clone().subtract(1, 'month'), 'month'),
+                className={classNames('calendar__header__nav calendar__header__nav--prev-year', {
+                    'calendar__header__nav--is-disabled': isPeriodDisabled(moment_date.clone().subtract(1, 'month'), 'month'),
                 })}
                 onClick={() => (
                     (is_date_view || is_month_view) && onClick.previousYear())
@@ -23,26 +28,30 @@ export default function CalendarHeader({ calendar_date, isPeriodDisabled, onClic
                     || (is_decade_view && onClick.previousCentury()
                     )
                 }
-            />
+            >
+                <IconChevronDoubleLeft />
+            </CalendarButton>
             <CalendarButton
-                className={classNames('calendar-prev-month-btn', {
-                    hidden: isPeriodDisabled(moment_date.clone().subtract(1, 'month'), 'month'),
+                className={classNames('calendar__header__nav calendar__header__nav--prev-month', {
+                    'calendar__header__nav--is-disabled': isPeriodDisabled(moment_date.clone().subtract(1, 'month'), 'month'),
                 })}
                 is_hidden={!is_date_view}
                 onClick={onClick.previousMonth}
-            />
+            >
+                <IconChevronLeft />
+            </CalendarButton>
 
-            <div className='calendar-select'>
+            <div className='calendar__header__select'>
                 { is_date_view &&
                     <CalendarButton
-                        className='calendar-select-month-btn'
+                        className='calendar__header__select__btn'
                         is_hidden={!is_date_view}
                         label={moment_date.format('MMM')}
                         onClick={onSelect.month}
                     />
                 }
                 <CalendarButton
-                    className='calendar-select-year-btn'
+                    className='calendar__header__select__btn'
                     onClick={() => ((is_date_view || is_month_view) ? onSelect.year() : onSelect.decade())}
                 >
                     { (is_date_view || is_month_view) && moment_date.year() }
@@ -52,22 +61,26 @@ export default function CalendarHeader({ calendar_date, isPeriodDisabled, onClic
             </div>
 
             <CalendarButton
-                className={classNames('calendar-next-month-btn', {
-                    hidden: isPeriodDisabled(moment_date.clone().add(1, 'month'), 'month'),
+                className={classNames('calendar__header__nav calendar__header__nav--next-month', {
+                    'calendar__header__nav--is-disabled': isPeriodDisabled(moment_date.clone().add(1, 'month'), 'month'),
                 })}
                 is_hidden={!is_date_view}
                 onClick={onClick.nextMonth}
-            />
+            >
+                <IconChevronRight />
+            </CalendarButton>
             <CalendarButton
-                className={classNames('calendar-next-year-btn', {
-                    hidden: isPeriodDisabled(moment_date.clone().add(1, 'month'), 'month'),
+                className={classNames('calendar__header__nav calendar__header__nav--next-year', {
+                    'calendar__header__nav--is-disabled': isPeriodDisabled(moment_date.clone().add(1, 'month'), 'month'),
                 })}
                 onClick={() => (
                     ((is_date_view || is_month_view) && onClick.nextYear())
                     || (is_year_view   && onClick.nextDecade())
                     || (is_decade_view && onClick.nextCentury())
                 )}
-            />
+            >
+                <IconChevronDoubleRight />
+            </CalendarButton>
         </div>
     );
 }

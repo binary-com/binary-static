@@ -12,13 +12,13 @@ export const CalendarYears = ({ calendar_date, isPeriodDisabled, onClick, select
         years.push(year);
     }
     return (
-        <div className='calendar-year-panel'>
+        <div className='calendar__body calendar__body--year'>
             {years.map((year, idx) => (
                 <span
                     key={idx}
-                    className={classNames('calendar-year', {
-                        disabled: isPeriodDisabled(moment_date.year(year), 'year'),
-                        active  : year === selected_year,
+                    className={classNames('calendar__body__cell', {
+                        'calendar__body__cell--is-active'  : year === selected_year,
+                        'calendar__body__cell--is-disabled': isPeriodDisabled(moment_date.year(year), 'year'),
                     })}
                     onClick={onClick.year}
                     data-year={year}

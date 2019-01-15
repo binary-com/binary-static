@@ -162,6 +162,7 @@ const Duration = ({
                             is_read_only
                             is_clearable={false}
                             is_nativepicker={is_nativepicker}
+                            alignment='left'
                         />
                         {is_same_day &&
                             <TimePicker

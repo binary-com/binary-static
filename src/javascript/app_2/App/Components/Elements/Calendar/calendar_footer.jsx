@@ -5,10 +5,10 @@ import CalendarButton from './calendar_button.jsx';
 
 export default function CalendarFooter({ footer, has_today_btn, onClick }) {
     return (
-        <div className='calendar-footer'>
-            { footer && <span className='calendar-footer-extra'>{footer}</span> }
+        <div className='calendar__footer'>
+            { footer && <span className='calendar__footer__extra'>{footer}</span> }
             { has_today_btn &&
-                <CalendarButton className='calendar-footer-btn'>
+                <CalendarButton className='calendar__footer__btn'>
                     <a role='button' onClick={onClick}>{localize('Today')}</a>
                 </CalendarButton>
             }

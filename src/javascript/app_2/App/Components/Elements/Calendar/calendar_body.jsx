@@ -6,8 +6,8 @@ import {
     CalendarYears,
     CalendarDecades } from './panels';
 
-export default function CalendarPanel(props) {
-    const calendar_panel = {
+export default function CalendarBody(props) {
+    const calendar_body = {
         date  : <CalendarDays    {...props} />,
         month : <CalendarMonths  {...props} />,
         year  : <CalendarYears   {...props} />,
@@ -15,12 +15,12 @@ export default function CalendarPanel(props) {
     };
 
     return (
-        <div className='calendar-panel'>
-            { calendar_panel[props.calendar_view] }
-        </div>
+        <React.Fragment>
+            { calendar_body[props.calendar_view] }
+        </React.Fragment>
     );
 }
 
-CalendarPanel.propTypes = {
+CalendarBody.propTypes = {
     calendar_view: PropTypes.string,
 };

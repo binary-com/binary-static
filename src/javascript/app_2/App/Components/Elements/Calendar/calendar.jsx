@@ -1,9 +1,9 @@
 import PropTypes      from 'prop-types';
 import React          from 'react';
 import { toMoment }   from 'Utils/Date';
+import CalendarBody   from './calendar_body.jsx';
 import CalendarFooter from './calendar_footer.jsx';
 import CalendarHeader from './calendar_header.jsx';
-import CalendarPanel  from './calendar_panel.jsx';
 
 class Calendar extends React.PureComponent {
     constructor(props) {
@@ -141,7 +141,7 @@ class Calendar extends React.PureComponent {
         const { calendar_date, calendar_view, selected_date  } = this.state;
 
         return (
-            <div id={id} className='calendar' value={selected_date}>
+            <div id={id || undefined} className='calendar' data-value={selected_date}>
                 { children }
                 <CalendarHeader
                     calendar_date={calendar_date}
@@ -150,7 +150,7 @@ class Calendar extends React.PureComponent {
                     onSelect={this.calendarViews}
                     calendar_view={calendar_view}
                 />
-                <CalendarPanel
+                <CalendarBody
                     calendar_date={calendar_date}
                     date_format={date_format}
                     isPeriodDisabled={this.isPeriodDisabled}
