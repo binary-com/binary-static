@@ -12,10 +12,12 @@ const DigitSelector = ({
         }
     };
 
+    const arr_five = [...Array(5).keys()];
+
     return (
-        <div className='digit-selector center-text'>
+        <div className='digit-selector'>
             <div>
-                {[...Array(5).keys()].map(i =>
+                {arr_five.map(i =>
                     <span
                         key={i}
                         className={`digit-selector__selection${selected_digit === i ? ' selected' : ''}`}
@@ -27,7 +29,7 @@ const DigitSelector = ({
                 )}
             </div>
             <div>
-                {[...Array(5).keys()].map(i => i + 5).map(i =>
+                {arr_five.map(i => i + 5).map(i =>
                     <span
                         key={i}
                         className={`digit-selector__selection${selected_digit === i ? ' selected' : ''}`}
