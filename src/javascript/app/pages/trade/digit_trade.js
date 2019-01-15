@@ -3,6 +3,7 @@ const DigitTicker          = require('./digit_ticker');
 const ViewPopupUI          = require('../user/view_popup/view_popup.ui');
 const showLocalTimeOnHover = require('../../base/clock').showLocalTimeOnHover;
 const BinarySocket         = require('../../base/socket');
+const addComma             = require('../../../_common/base/currency_base').addComma;
 const localize             = require('../../../_common/localize').localize;
 const getPropertyValue     = require('../../../_common/utility').getPropertyValue;
 
@@ -60,18 +61,18 @@ const DigitDisplay = (() => {
             spot,
             time,
         });
+        const csv_spot = addComma(spot);
 
-        const last_digit = spot.slice(-1);
         $container
             .find('#table_digits')
             .append($('<p />', { class: 'gr-3', text: tick_count }))
-            .append($('<p />', { class: 'gr-3 gray', html: tick_count === contract.tick_count ? `${spot.slice(0, spot.length - 1)}<strong>${last_digit}</strong>` : spot }))
+            .append($('<p />', { class: 'gr-3 gray', html: tick_count === contract.tick_count ? `${csv_spot.slice(0, csv_spot.length - 1)}<strong>${csv_spot.substr(-1)}</strong>` : csv_spot }))
             .append($('<p />', { class: 'gr-6 gray digit-spot-time no-underline', text: moment(+time * 1000).utc().format('YYYY-MM-DD HH:mm:ss') }));
 
         DigitTicker.update(
             tick_count,
             {
-                quote        : last_digit,
+                quote        : spot,
                 contract_type: contract.contract_type,
             }
         );
