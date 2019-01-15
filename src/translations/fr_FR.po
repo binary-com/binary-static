@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-01-11 11:21\n"
+"PO-Revision-Date: 2019-01-15 05:42\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: French\n"
 "MIME-Version: 1.0\n"
@@ -175,8 +175,8 @@ msgstr "%1 offre une plateforme de trading simple, permettant à chacun de profi
 msgid "%1 gives everyone an easy way to participate in the financial markets. Trade with as little as $1 USD on major currencies, stocks, indices, and commodities."
 msgstr "%1 offre à chacun une manière facile de participer aux marchés financiers. Tradez les devises, les actions, les indices, et les matières premières à partir de 1 USD seulement."
 
-msgid "%1 has been credited into your virtual account: %2."
-msgstr "%1 ont été crédités sur votre compte virtuel: %2."
+msgid "%1 has been credited into your Virtual Account: %2."
+msgstr ""
 
 msgid "%1 has earned an enviable reputation for our commitment to high ethical standards and the quality of the trading experience we provide."
 msgstr "%1 a acquis une réputation solide en adhérant à des normes éthiques élevées et en offrant une expérience de trading de haute qualité."
@@ -3343,6 +3343,9 @@ msgstr "Vous voulez en apprendre davantage sur les marchés ou comment effectuer
 msgid "Do you want to see %1 in other languages, or can you suggest improvements to our current translations?"
 msgstr "Vous désirez voir %1 en d'autres langues, ou vous pouvez suggérer des améliorations à nos traductions actuelles ?"
 
+msgid "Do you want to top up for another %1? If not, you can do this later on the %2Cashier page%3, too."
+msgstr ""
+
 msgid "Do you wish to continue?"
 msgstr "Voulez-vous continuer ?"
 
@@ -3360,6 +3363,9 @@ msgstr "Ne touche pas"
 
 msgid "Don't have an account?"
 msgstr "Vous n’avez pas encore de compte ?"
+
+msgid "Don't show again"
+msgstr ""
 
 msgid "Don’t share your %1 account or payment methods with any other person."
 msgstr "Ne partagez pas votre compte ou méthodes de paiement %1 avec toute autre personne."
@@ -3834,9 +3840,6 @@ msgstr "Une technologie de trading exclusive conçue pour les options binaires."
 
 msgid "Execute your trade in seconds."
 msgstr "Exécutez vos ordres en quelques secondes."
-
-msgid "Execute your trading strategy using the Rise/Fall trade type with a duration of 5 ticks, 10 ticks, 1 minute or 5 minutes. With Rise/Fall contracts, you must predict whether the market will rise or fall from its current level."
-msgstr "Exécutez votre stratégie de trading en utilisant le type de trade Hausse/Baisse d’une durée de 5 ticks, 10 ticks, 1 minute, ou 5 minutes. Avec les contrats Hausse/Baisse, vous devez prédire si le marché va augmenter ou diminuer par rapport à son niveau actuel."
 
 msgid "Execution model and counterparty risk"
 msgstr "Modèle d'execution et risque de contrepartie"
@@ -4552,6 +4555,9 @@ msgstr "Allez sur la page de téléchargement MT5"
 msgid "Go to MetaTrader 5 dashboard"
 msgstr "Aller au tableau de bord de MetaTrader 5"
 
+msgid "Go to statement"
+msgstr ""
+
 msgid "Go with the leader"
 msgstr "Faites confiance au leader du marché"
 
@@ -4665,6 +4671,9 @@ msgstr "Barrière supérieure"
 
 msgid "High Tick"
 msgstr "Tick Haut"
+
+msgid "High Tick/Low Tick"
+msgstr ""
 
 msgid "High Tick/Low Tick contracts have a strict duration of five ticks."
 msgstr "Les contrats de Tick Bas/Haut ont une durée stricte de cinq ticks."
@@ -7255,7 +7264,7 @@ msgstr "Plus de $1 000 000"
 msgid "Over $500,000"
 msgstr "Plus de 500 000 $"
 
-msgid "Over %1 %2staff%3 and contractors worldwide"
+msgid "Over %1 <a href='%2'>staff</a> and contractors worldwide"
 msgstr ""
 
 msgid "Over 1 million registered accounts worldwide"
@@ -7822,8 +7831,23 @@ msgstr "Prédisez que le marché touche ou ne touche pas une cible à tout momen
 msgid "Predict the direction<br />and purchase"
 msgstr "Prédire la direction<br />et acheter"
 
+msgid "Predict the highest or lowest tick among the next 5 ticks."
+msgstr ""
+
 msgid "Predict the last decimal digit of the spot price with Digits. There are three types of Digits trades:"
 msgstr "Prédisez la dernière décimale de votre prix spot. Il y a trois types d'option « Chiffres » :"
+
+msgid "Predict whether the exit spot will be higher or lower than the entry spot within a selected duration from 5 ticks to 10 ticks, or 1 minute to 5 minutes."
+msgstr ""
+
+msgid "Predict whether the last digit of the last tick will be even or odd within a selected duration from 5 ticks to 10 ticks."
+msgstr ""
+
+msgid "Predict whether the last digit of the last tick will be greater or less than your prediction within a selected duration from 5 ticks to 10 ticks."
+msgstr ""
+
+msgid "Predict whether the last digit of the last tick will match or differ from your prediction within a selected duration from 5 ticks to 10 ticks."
+msgstr ""
 
 msgid "Preferably a native speaker with good command of English (oral and written)"
 msgstr "Préférablement un locuteur natif avec une bonne maîtrise de l’anglais (écrit et oral)"
@@ -10129,6 +10153,9 @@ msgstr "Vous utilisez l'API %1 à vos risques et périls, et vous assumez l'enti
 msgid "The use, operation or combination of the %1 API with non-%1 API(s), data, equipment or documentation if liability would have been avoided but for such use, operation, or combination; or"
 msgstr "L'utilisation, l'exploitation ou l'utilisation combinée de l'API %1 avec des données, des équipements ou de la documentation externes à l'API %1"
 
+msgid "The various trade types available on our MT5 platform."
+msgstr ""
+
 msgid "The volatility indices simulate various real market situations and provide an ideal platform for getting used to trading and testing strategies under various market conditions. These indices depend on volatility and drift, and help users to try out scenarios like - high volatility, low volatility, bullish and bearish trends."
 msgstr "Les indices de volatilité simulent différentes situations de marché réelles et constituent un tremplin idéal pour s'entraîner au trading et tester des stratégies dans différentes conditions de marché. Ces indices reflètent la volatilité et les phases de marché latéral. Ils permettent aux utilisateurs de mettre en pratique des scénarios adaptés aux différentes conditions de marché : forte volatilité, faible volatilité, tendances haussières et baissières."
 
@@ -10561,11 +10588,23 @@ msgstr "Jeton"
 msgid "Top Up Virtual Account"
 msgstr "Recharger le Compte Virtuel"
 
+msgid "Top up"
+msgstr ""
+
+msgid "Top up Virtual Account"
+msgstr ""
+
+msgid "Top up error"
+msgstr ""
+
 msgid "Top up virtual account"
 msgstr "Recharger le compte virtuel"
 
 msgid "Top-tier liquidity"
 msgstr "Haut niveau de liquidité"
+
+msgid "Top-up successful"
+msgstr ""
 
 msgid "Total"
 msgstr "Total"
@@ -11044,6 +11083,9 @@ msgstr "Compréhension de la cryptographie, y compris les fonctions de hachage a
 msgid "Understanding of encryption fundamentals and the OWASP Top 10"
 msgstr "Compréhension des fondements du chiffrement et de l’OWASP Top 10"
 
+msgid "Understood"
+msgstr ""
+
 msgid "Unemployed"
 msgstr "Unemployed"
 
@@ -11248,8 +11290,8 @@ msgstr "Consultez la liste complète des actifs, des types de contrat et des dur
 msgid "View the operating hours of the markets you can trade."
 msgstr "Consultez les heures d'ouverture des marchés sur lesquels tu peux effectuer des trades."
 
-msgid "View updated portfolio"
-msgstr "Voir le portefeuille actualisé"
+msgid "View updated statement"
+msgstr ""
 
 msgid "View your account's authentication status."
 msgstr "Afficher l’état d’authentification de votre compte."
@@ -11472,6 +11514,9 @@ msgstr "Nous offrons un salaire basé sur le marché, un bonus annuel lié à la
 
 msgid "We offer all four precious metals – gold, silver, palladium, and platinum – as well as energy in our list of commodities."
 msgstr "Nous offrons les quatre métaux précieux – or, argent, palladium et platine – ainsi que de l’énergie dans notre liste de matières de premières."
+
+msgid "We offer the following trade types on our MT5 platform:"
+msgstr ""
 
 msgid "We offer three types of lookbacks:"
 msgstr "Nous vous proposons trois types de lookback :"
