@@ -10,22 +10,6 @@
     font-size: 14px;
     box-sizing: border-box;
 
-    &__input {
-        margin: 0;
-        border: none;
-        outline: none;
-        width: 100%;
-        box-sizing: border-box;
-        font-size: 12px;
-        font-weight: 400;
-        height: 34px;
-        padding: 6px 10px;
-        color: #333333; /* stylelint-disable-line color-no-hex */
-
-        &[readonly] {
-            cursor: default;
-        }
-    }
     &__footer {
         border-top: 1px solid $COLOR_GRAY;
         display: grid;
@@ -53,7 +37,6 @@
         justify-content: center;
         align-items: center;
         height: 36px;
-        border-top: 1px solid $COLOR_GRAY;
         border-bottom: 1px solid $COLOR_GRAY;
         box-sizing: border-box;
 
@@ -159,16 +142,6 @@
         background: $COLOR_BRANDBLUE_95;
         border: 1px solid $COLOR_BRANDBLUE_85;
 
-        &__input {
-            border-radius: 0;
-            background: $COLOR_BRANDBLUE_95 !important;
-            border-color: $COLOR_BRANDBLUE_85;
-            color: $COLOR_WHITE;
-
-            &:hover, &:focus, &:active {
-                border-color: $COLOR_WHITE;
-            }
-        }
         &__header, &__footer {
             border-color: $COLOR_BRANDBLUE_85;
             color: $COLOR_WHITE;

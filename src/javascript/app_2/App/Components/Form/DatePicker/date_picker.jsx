@@ -171,17 +171,7 @@ class DatePicker extends React.PureComponent {
                         ref={node => { this.calendar = node; }}
                         onSelect={this.onSelectCalendar}
                         {...this.props}
-                    >
-                        <DatePickerInput
-                            class_name='calendar__input'
-                            mode={this.props.mode}
-                            name={this.props.name}
-                            onChange={this.onChangeInput}
-                            placeholder={this.props.placeholder}
-                            is_read_only={'is_read_only' in this.props ? this.props.is_read_only : false}
-                            value={this.state.value}
-                        />
-                    </Calendar>
+                    />
                 </div>
             </div>
         );
