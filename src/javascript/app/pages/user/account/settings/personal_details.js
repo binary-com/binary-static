@@ -19,6 +19,7 @@ const PersonalDetails = (() => {
 
     let editable_fields,
         is_virtual,
+        is_fully_authenticated,
         residence,
         get_settings_data;
 
@@ -28,6 +29,8 @@ const PersonalDetails = (() => {
         is_virtual        = Client.get('is_virtual');
         residence         = Client.get('residence');
     };
+
+    const checkStatus = (status, string) => status.findIndex(s => s === string) < 0 ? Boolean(false) : Boolean(true);
 
     const showHideTaxMessage = () => {
         const $tax_info_declaration = $('#tax_information_declaration');
@@ -104,7 +107,7 @@ const PersonalDetails = (() => {
             const should_show_label = has_label && get_settings[key];
             const element_id        = `${should_show_label ? 'lbl_' : ''}${key}`;
             const element_key       = CommonFunctions.getElementById(element_id);
-            
+
             if (element_key) {
                 editable_fields[key] = (get_settings[key] !== null ? get_settings[key] : '');
                 if (populate) {
@@ -126,7 +129,6 @@ const PersonalDetails = (() => {
                             localized_text = getOptionText(get_settings[key]);
                         }
                         CommonFunctions.elementInnerHtml(element_key, localized_text || '-');
-                        
                     }
                     if (should_update_value || should_show_label) {
                         // if should show label, set the value of the non-label so that it doesn't count as missing information
@@ -253,7 +255,7 @@ const PersonalDetails = (() => {
                 if (additionalCheck(get_settings)) {
                     getDetailsResponse(get_settings);
                     showFormMessage(localize('Your settings have been updated successfully.'), true);
-                    Geocoder.validate(form_id);
+                    if (!is_fully_authenticated) Geocoder.validate(form_id);
                 }
             });
         } else { // is_error
@@ -364,8 +366,9 @@ const PersonalDetails = (() => {
     const onLoad = () => {
         BinarySocket.wait('get_account_status', 'get_settings').then(() => {
             init();
+            const account_status = State.getResponse('get_account_status').status;
             get_settings_data = State.getResponse('get_settings');
-
+            is_fully_authenticated = checkStatus(account_status , 'authenticated');
             if (is_virtual) {
                 getDetailsResponse(get_settings_data);
             }
@@ -377,7 +380,7 @@ const PersonalDetails = (() => {
                             BinarySocket.send({ states_list: residence }).then(response_state => {
                                 populateStates(response_state).then(() => {
                                     getDetailsResponse(get_settings_data, response.residence_list);
-                                    if (!is_virtual) {
+                                    if (!is_virtual && !is_fully_authenticated) {
                                         Geocoder.validate(form_id);
                                     }
                                 });
