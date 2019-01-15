@@ -111,6 +111,7 @@ const SetCurrency = (() => {
                 const $clicked_currency = $(this);
                 const currency          = $clicked_currency.attr('id');
                 let localized_message   = '';
+                $error.setVisibility(0);
                 $currency_list.find('> div').removeClass('selected');
                 $clicked_currency.addClass('selected');
                 if (isCryptocurrency(currency)) {
