@@ -1,7 +1,7 @@
 import ContractType from '../Helpers/contract_type';
 
 export const onChangeStartDate = (store) => {
-    const { contract_type, start_date, duration_unit, expiry_time } = store;
+    const { contract_type, start_date, duration_unit, expiry_time, expiry_type } = store;
     let { start_time, expiry_date } = store;
 
     const obj_contract_start_type = ContractType.getStartType(start_date);
@@ -14,7 +14,7 @@ export const onChangeStartDate = (store) => {
     const obj_duration_units_list = ContractType.getDurationUnitsList(contract_type, contract_start_type);
     const obj_duration_unit       = ContractType.getDurationUnit(duration_unit, contract_type, contract_start_type);
 
-    const obj_expiry_date = ContractType.getExpiryDate(expiry_date, start_date);
+    const obj_expiry_date = ContractType.getExpiryDate(expiry_date, start_date, expiry_type);
     expiry_date           = obj_expiry_date.expiry_date;
     const obj_expiry_time = ContractType.getExpiryTime(sessions, start_date, start_time, expiry_date, expiry_time);
 
