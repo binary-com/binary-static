@@ -78,7 +78,7 @@ const Amount = ({
             <div className='allow-equals'>
                 <InputField
                     type='checkbox'
-                    name='allowequals'
+                    name='is_equal'
                     onChange={onChange}
                 />
                 <label>{localize('Allow equals')}</label>

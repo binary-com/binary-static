@@ -138,15 +138,19 @@
             display: inline-block;
             color: $COLOR_LIGHT_GRAY_2;
 
+            label {
+                vertical-align: middle;
+            }
             .input-field, label {
                 display: inline-block;
                 padding-left: 8px;
             }
             .tooltip {
                 display: inline-block;
-                padding-top: 2px;
 
                 .info {
+                    vertical-align: middle;
+
                     &:after {
                         transform: scale(0.8);
                     }

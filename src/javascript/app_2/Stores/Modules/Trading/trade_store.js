@@ -37,6 +37,7 @@ export default class TradeStore extends BaseStore {
     @observable is_trade_component_mounted = false;
     @observable is_purchase_enabled        = false;
     @observable is_trade_enabled           = false;
+    @observable is_equal                   = false;
 
     // Underlying
     @observable symbol;
@@ -168,7 +169,9 @@ export default class TradeStore extends BaseStore {
 
     @action.bound
     onChange(e) {
-        const { name, value } = e.target;
+        const { name, value, checked } = e.target;
+        console.log(name); // eslint-disable-line
+        console.log(checked); // eslint-disable-line
         if (name === 'currency') {
             this.root_store.client.selectCurrency(value);
         } else if (!(name in this)) {

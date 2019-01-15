@@ -49,39 +49,6 @@
         border-radius: $BORDER_RADIUS;
         transition: all 0.3s;
 
-        &[type=checkbox] {
-            cursor: pointer;
-            display: inline-block;
-            vertical-align: middle;
-            width: 12px;
-            height: 12px;
-            border-color: $COLOR_GRAY_2;
-            border-radius: 1px;
-
-            &:hover {
-                border-color: $COLOR_ORANGE_3;
-            }
-            &:checked {
-                background: $COLOR_ORANGE_3;
-                border-color: $COLOR_ORANGE_3;
-
-                &:after {
-                    display: inline-block;
-                }
-            }
-            &:after {
-                content: '';
-                position: relative;
-                left: 25%;
-                top: -85%;
-                width: 40%;
-                height: 100%;
-                border: solid $COLOR_WHITE;
-                border-width: 0 1px 1px 0;
-                transform: rotate(45deg);
-                display: none;
-            }
-        }
         &:hover {
             border-color: $COLOR_BLUE;
         }
@@ -130,10 +97,8 @@
                 height: 12px;
                 border-color: $COLOR_GRAY_2;
                 border-radius: 1px;
+                border-width: 0.5px;
 
-                .info:after {
-                    transform: scale(0.8);
-                }
                 &:hover {
                     border-color: $COLOR_ORANGE_3;
                 }
@@ -146,15 +111,12 @@
                     }
                 }
                 &:after {
-                    content: '';
-                    position: relative;
-                    left: 25%;
-                    top: -95%;
-                    width: 40%;
-                    height: 100%;
-                    border: solid $COLOR_WHITE;
-                    border-width: 0 1px 1px 0;
-                    transform: rotate(45deg);
+                    content: 'L';
+                    font-size: 10px;
+                    transform: scaleX(-1) rotate(-40deg);
+                    position: absolute;
+                    top: -5%;
+                    left: 30%;
                     display: none;
                 }
             }
