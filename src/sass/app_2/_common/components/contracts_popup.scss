@@ -237,7 +237,7 @@ div.contracts-popup-container {
         color: $COLOR_GRAY;
     }
     .categories-container {
-        margin-bottom: 4px;
+        margin-bottom: 6px;
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -253,6 +253,7 @@ div.contracts-popup-container {
     div.contracts-popup-container {
         background: $COLOR_BLUE;
         border-color: $COLOR_BRANDBLUE_85;
+        padding: 4px;
 
         &.mobile-only {
             .contracts-popup-display span {
