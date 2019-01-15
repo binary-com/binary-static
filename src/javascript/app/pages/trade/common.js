@@ -25,7 +25,6 @@ const commonTrading = (() => {
 
         const all_contracts = cloneObject(elements);
         delete all_contracts.callputequal; // don't include callputequal in contract drop-down
-
         const contracts_tree   = getContractCategoryTree(all_contracts);
         const contract_to_show = /^(callputequal)$/.test(selected) ? 'risefall' : selected;
 
@@ -148,6 +147,7 @@ const commonTrading = (() => {
             'reset',
             'callputspread',
             'highlowticks',
+            'runs',
         ];
 
         if (elements) {

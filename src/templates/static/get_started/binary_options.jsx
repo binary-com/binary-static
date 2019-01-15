@@ -242,6 +242,10 @@ const BinaryOptions = () => {
                             <p>{it.L('At reset time, if the spot is in the opposite direction of your prediction, the barrier is reset to that spot.')}</p>
                         </SectionLarge>
                         <SectionLarge dataAnchor='high-low-ticks' header={it.L('High Ticks/Low Ticks')} image='types-of-trades/high_low_ticks' text={it.L('Purchase High Tick/Low Tick contracts to predict the highest or lowest tick among the next five ticks.')} />
+                        <SectionLarge dataAnchor='runs-high-low' header={it.L('Run High/Run Low')} image='types-of-trades/runhigh_runlow' text={it.L('There are two types of Run trades:')}>
+                            <ListStrong header={it.L('Run High')} text={it.L('Win payout if consecutive ticks rise successively. Contract is lost when at least one tick falls or is equal to entry spot.')} />
+                            <ListStrong header={it.L('Run Low')} text={it.L('Win payout if consecutive ticks fall successively. Contract is lost when at least one tick rises or is equal to entry spot.')} />
+                        </SectionLarge>
                         <p>{it.L('Please note that Asians, Digits, Reset Call/Reset Put and High Ticks/Low Ticks are available exclusively with our Volatility Indices.')}</p>
                     </Section>
                     <Section id='range-of-markets' header={it.L('Range of markets')}>
