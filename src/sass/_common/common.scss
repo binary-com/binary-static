@@ -761,6 +761,40 @@ label + input {
     }
 }
 
+#token_form {
+    @media screen and (max-width: 480px) {
+        p.error-msg {
+            display: flex;
+            justify-content: center;
+        }
+        .scope-list {
+            position: relative;
+            display: flex;
+            justify-content: center;
+
+            input[type='checkbox'] + label {
+                padding-top: 10px;
+                padding-bottom: 10px;
+                display: flex;
+                align-items: center;
+            }
+            p.error-msg {
+                position: absolute;
+                left: 0;
+            }
+            .scope-types {
+                flex-basis: unset;
+                max-width: unset;
+                flex: unset;
+
+                &:last-child {
+                    margin-bottom: 16px;
+                }
+            }
+        }
+    }
+}
+
 /* TODO: remove when UX research is finished */
 #interview_popup_container {
     height: 100vh;
