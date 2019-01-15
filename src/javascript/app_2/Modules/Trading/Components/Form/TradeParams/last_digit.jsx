@@ -1,9 +1,9 @@
-import { observer }  from 'mobx-react';
-import PropTypes     from 'prop-types';
-import React         from 'react';
-import { localize }  from '_common/localize';
-import DigitSelector from 'App/Components/Form/digit_selector.jsx';
-import Fieldset      from 'App/Components/Form/fieldset.jsx';
+import { observer }   from 'mobx-react';
+import PropTypes      from 'prop-types';
+import React          from 'react';
+import { localize }   from '_common/localize';
+import NumberSelector from 'App/Components/Form/number_selector.jsx';
+import Fieldset       from 'App/Components/Form/fieldset.jsx';
 
 const LastDigit = ({
     is_minimized,
@@ -18,15 +18,17 @@ const LastDigit = ({
             </div>
         );
     }
+    const arr_five = [...Array(5).keys()];
     return (
         <Fieldset
             header={localize('Last Digit Prediction')}
             is_center
         >
-            <DigitSelector
+            <NumberSelector
+                arr_arr_numbers={[arr_five, arr_five.map(i => i + 5)]}
                 name='last_digit'
                 onChange={onChange}
-                selected_digit={+last_digit}
+                selected_number={+last_digit}
             />
         </Fieldset>
     );
