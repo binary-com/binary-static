@@ -1,10 +1,10 @@
 import { expect }   from 'chai';
-import { setURL }                       from '../../tests_common.js';
+import { setURL }   from '../../../../_common/__tests__/tests_common';
+import Url          from '../../../../_common/url';
 import URLHelper    from '../url_helper';
 
 describe('URLHelper', () => {
-    // We don't use setQueryParam because we are testing it.
-    const url = setURL(`${Url.websiteUrl()}en/home.html`) + '?currency=USD&market=forex';
+    const url = 'https://binary.com/en/home.html?currency=USD&market=forex';
 
     describe('.getQueryParams', () => {
         const params = URLHelper.getQueryParams(url);
@@ -31,7 +31,7 @@ describe('URLHelper', () => {
             expect(URLHelper.setQueryParam(params, url).searchParams.get('currency')).to.eql(params.currency);
         });
         it('should return an object market key witht he value of params.market', () => {
-            expect(URLHelper.setQueryParam(params, url).searchParams.get('market')).to.eql(params.currency);
+            expect(URLHelper.setQueryParam(params, url).searchParams.get('market')).to.eql(params.market);
         });
 
     });

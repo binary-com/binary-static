@@ -1,8 +1,8 @@
 import { expect }                       from 'chai';
-import { formatStatementTransaction }   from '../format_response.js';
+import { formatStatementTransaction }   from '../format_response';
 
 describe('formatStatementTransaction', () => {
-    const constants = {
+    const constant = {
         id: 1234,
         action_type: 'Buy',
     }
