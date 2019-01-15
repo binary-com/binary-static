@@ -204,6 +204,10 @@ const TradingAnalysis = (() => {
                 image1: 'stays-between.svg',
                 image2: 'goes-outside.svg',
             },
+            digits: {
+                image1: 'matches.svg',
+                image2: 'differs.svg',
+            },
             evenodd: {
                 image1: 'even.svg',
                 image2: 'odd.svg',
