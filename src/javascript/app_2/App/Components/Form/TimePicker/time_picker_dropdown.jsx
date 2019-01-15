@@ -59,9 +59,7 @@ class TimePickerDropdown extends React.PureComponent {
     };
 
     render() {
-        const { preClass, value, toggle, start_date, available_range } = this.props;
-        const start_moment       = moment(start_date * 1000 || undefined).utc();
-        const start_moment_clone = start_moment.clone().minute(0).second(0);
+        const { preClass, value, toggle, min_time, max_time, available_range } = this.props;
         const [ hour, minute ]   = value.split(':');
         return (
             <div className={`${preClass}-dropdown ${this.props.className}`}>
@@ -86,11 +84,7 @@ class TimePickerDropdown extends React.PureComponent {
                         <div className='list-container'>
                             {this.hours.map((h, key) => {
                                 start_moment_clone.hour(h);
-                                const is_enabled = isSessionAvailable(
-                                    available_range,
-                                    start_moment_clone,
-                                    start_moment,
-                                    true);
+                                const is_enabled = 
                                 return (
                                     <div
                                         className={`list-item${hour === h ? ' selected' : ''}${is_enabled ? '' : ' disabled'}`}
@@ -111,10 +105,6 @@ class TimePickerDropdown extends React.PureComponent {
                         <div className='list-container'>
                             {this.minutes.map((mm, key) => {
                                 start_moment_clone.hour(hour).minute(mm);
-                                const is_enabled = isSessionAvailable(
-                                    available_range,
-                                    start_moment_clone,
-                                    start_moment);
                                 return (
                                     <div
                                         className={`list-item${minute === mm ? ' selected' : ''}${is_enabled ? '' : ' disabled'}`}

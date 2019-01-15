@@ -2,7 +2,6 @@ import classNames               from 'classnames';
 import {
     PropTypes as MobxPropTypes,
     observer }                  from 'mobx-react';
-import moment                   from 'moment';
 import PropTypes                from 'prop-types';
 import React                    from 'react';
 import { localize }             from '_common/localize';
@@ -12,6 +11,9 @@ import Fieldset                 from 'App/Components/Form/fieldset.jsx';
 import InputField               from 'App/Components/Form/input_field.jsx';
 import TimePicker               from 'App/Components/Form/TimePicker';
 import { convertDurationUnit }  from 'Stores/Modules/Trading/Helpers/duration';
+import {
+    isTimeValid,
+    toMoment }                  from 'Utils/Date';
 
 /* TODO:
       1. disable days other than today and tomorrow if start date is forward starting
@@ -48,7 +50,7 @@ const Duration = ({
     validation_errors,
 }) => {
     if (duration_min_max[contract_expiry_type]) {
-        const moment_now  = moment(server_time);
+        const moment_now  = toMoment(server_time);
         const new_min_day = convertDurationUnit(duration_min_max[contract_expiry_type].min, 's', 'd');
         const new_max_day = convertDurationUnit(duration_min_max[contract_expiry_type].max, 's', 'd');
         if (!now_date || moment_now.date() !== now_date.date() || (duration_unit === 'd' && (min_day !== new_min_day || max_day !== new_max_day))) {
@@ -66,16 +68,16 @@ const Duration = ({
         }
     }
 
-    const moment_expiry = moment.utc(expiry_date);
-    const is_same_day   = moment_expiry.isSame(moment(start_date * 1000 || undefined).utc(), 'day');
+    const moment_expiry = toMoment(expiry_date);
+    const is_same_day   = moment_expiry.isSame(toMoment(start_date), 'day');
     if (is_same_day) {
-        const date_time = moment.utc(start_date * 1000 || undefined);
-        if (start_date) {
+        const date_time = toMoment(start_date);
+        if (start_date && isTimeValid(start_time)) {
             const [ hour, minute ] = start_time.split(':');
             date_time.hour(hour).minute(minute).second(0).add(5, 'minutes');
         }
         // only update start time every five minutes, since time picker shows five minute durations
-        const moment_start_date_time = moment.unix(start_date_time);
+        const moment_start_date_time = toMoment(start_date_time);
         if (!start_date_time || moment_start_date_time.isAfter(date_time) || moment_start_date_time.clone().add(5, 'minutes').isBefore(date_time) ||
             (moment_start_date_time.minutes() !== date_time.minutes() && date_time.minutes() % 5 === 0)) {
             start_date_time = date_time.unix();
@@ -182,6 +184,7 @@ const Duration = ({
                                 sessions={sessions}
                                 is_clearable={false}
                                 is_nativepicker={is_nativepicker}
+                                // validation_errors={validation_errors.end_time} TODO: add validation_errors for end time
                             />
                         }
                     </div>
