@@ -134,6 +134,25 @@
                 border-radius: $BORDER_RADIUS;
             }
         }
+        .allow-equals {
+            display: inline-block;
+            color: $COLOR_LIGHT_GRAY_2;
+
+            .input-field, label {
+                display: inline-block;
+                padding-left: 8px;
+            }
+            .tooltip {
+                display: inline-block;
+                padding-top: 2px;
+
+                .info {
+                    &:after {
+                        transform: scale(0.8);
+                    }
+                }
+            }
+        }
         .purchase-info-wrapper {
             line-height: 0.9rem;
             padding-bottom: 1vh;

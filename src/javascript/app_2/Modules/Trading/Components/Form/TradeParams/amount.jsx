@@ -11,7 +11,6 @@ import { localize }              from '_common/localize';
 import Dropdown                  from 'App/Components/Form/DropDown';
 import Fieldset                  from 'App/Components/Form/fieldset.jsx';
 import InputField                from 'App/Components/Form/input_field.jsx';
-import CheckBox                  from 'App/Components/Form/check_box.jsx';
 import Tooltip                   from 'App/Components/Elements/tooltip.jsx';
 
 const Amount = ({
@@ -26,7 +25,6 @@ const Amount = ({
     onChange,
     validation_errors,
 }) => {
-    const state = { checked: false };
     if (is_minimized) {
         return (
             <div className='fieldset-minimized amount'>
@@ -43,49 +41,50 @@ const Amount = ({
     });
 
     return (
-        <div>
-            <Fieldset
-                header={localize('Invest Amount')}
-                icon='invest-amount'
-            >
-                <div className={amount_container_class}>
+        <Fieldset
+            header={localize('Invest Amount')}
+            icon='invest-amount'
+        >
+            <div className={amount_container_class}>
+                <Dropdown
+                    list={basis_list}
+                    value={basis}
+                    name='basis'
+                    onChange={onChange}
+                    is_nativepicker={is_nativepicker}
+                />
+                {!is_single_currency &&
                     <Dropdown
-                        list={basis_list}
-                        value={basis}
-                        name='basis'
+                        list={currencies_list}
+                        value={currency}
+                        name='currency'
                         onChange={onChange}
                         is_nativepicker={is_nativepicker}
                     />
-                    {!is_single_currency &&
-                        <Dropdown
-                            list={currencies_list}
-                            value={currency}
-                            name='currency'
-                            onChange={onChange}
-                            is_nativepicker={is_nativepicker}
-                        />
-                    }
-                    <InputField
-                        error_messages={validation_errors.amount}
-                        fractional_digits={getDecimalPlaces(currency)}
-                        is_float
-                        is_nativepicker={is_nativepicker}
-                        max_length={10}
-                        name='amount'
-                        onChange={onChange}
-                        prefix={is_single_currency ? currency : null}
-                        type='number'
-                        value={amount}
-                    />
-                </div>
-                <div className='input-field'>
-                    <input type='checkbox' checked />
-                    <label>{localize('Allow equals')}</label>
-                    <Tooltip icon='info' message={localize('ll')} />
-                </div>
-            </Fieldset>
-            
-        </div>
+                }
+                <InputField
+                    error_messages={validation_errors.amount}
+                    fractional_digits={getDecimalPlaces(currency)}
+                    is_float
+                    is_nativepicker={is_nativepicker}
+                    max_length={10}
+                    name='amount'
+                    onChange={onChange}
+                    prefix={is_single_currency ? currency : null}
+                    type='number'
+                    value={amount}
+                />
+            </div>
+            <div className='allow-equals'>
+                <InputField
+                    type='checkbox'
+                    name='allowequals'
+                    onChange={onChange}
+                />
+                <label>{localize('Allow equals')}</label>
+                <Tooltip icon='info' message={localize('Win payout if exit spot is also equal to entry spot.')} alignment='left' />
+            </div>
+        </Fieldset>
     );
 };
 
