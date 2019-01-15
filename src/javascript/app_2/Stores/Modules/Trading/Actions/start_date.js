@@ -25,7 +25,7 @@ export const onChangeStartDate = (store) => {
         ...obj_duration_units_list,
         ...obj_duration_min_max,
         ...obj_duration_unit,
-        ...sessions,
+        ...obj_sessions,
         ...obj_start_time,
         ...obj_expiry_date,
         ...obj_expiry_time,
