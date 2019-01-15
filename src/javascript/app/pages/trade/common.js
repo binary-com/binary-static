@@ -111,6 +111,8 @@ const commonTrading = (() => {
         PUTSPREAD   : 'bottom',
         TICKHIGH    : 'top',
         TICKLOW     : 'bottom',
+        RUNHIGH     : 'top',
+        RUNLOW      : 'bottom',
     };
 
     const contractTypeDisplayMapping = type => (type ? obj[type] : 'top');

@@ -145,6 +145,15 @@ const Explanation = () => (
                 <p>{it.L('If you select [_1]"High Tick"[_2], you win the payout if the selected tick is the [_1]highest among the next five ticks[_2].', '<strong>', '</strong>')}</p>
                 <p>{it.L('If you select [_1]"Low Tick"[_2], you win the payout if the selected tick is the [_1]lowest among the next five ticks[_2].', '<strong>', '</strong>')}</p>
             </div>
+            <div id='winning_runs' className='invisible'>
+                <h3>{it.L('Winning the contract')}</h3>
+                <p>{it.L('If you select <strong>“Run High”</strong>, you win the payout if consecutive ticks are higher than the previous tick.')}</p>
+                <p>{it.L('No payout if any tick falls or is equal to any of the previous ticks.')}</p>
+                <br />
+                <p>{it.L('If you select <strong>“Run Low”</strong>, you win the payout if consecutive ticks are lower than the previous tick.')}</p>
+                <p>{it.L('No payout if any tick rises or is equal to any of the previous ticks.')}</p>
+                <br />
+            </div>
         </div>
 
         {/* ========== Image ========== */}
@@ -294,6 +303,14 @@ const Explanation = () => (
             <div id='explain_highlowticks' className='invisible'>
                 <h3>{it.L('The First Tick')}</h3>
                 <p>{it.L('The entry spot is the first tick after the contract is processed by our servers.')}</p>
+            </div>
+            <div id='explain_runs' className='invisible'>
+                <h3>{it.L('Entry spot')}</h3>
+                <p>{it.L('The start time is when the contract has been processed by our servers.')}</p>
+                <p>{it.L('The entry spot is the next tick after the start time.')}</p>
+                <h3>{it.L('Exit Spot')}</h3>
+                <p>{it.L('The exit spot is the latest tick at or before the end time.')}</p>
+                <p>{it.L('The minimum duration for this trade type is one tick, while the maximum is five ticks.')}</p>
             </div>
         </div>
 
