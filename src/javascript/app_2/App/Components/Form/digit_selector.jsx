@@ -14,16 +14,30 @@ const DigitSelector = ({
 
     return (
         <div className='digit-selector center-text'>
-            {[...Array(10).keys()].map(i =>
-                <div
-                    key={i}
-                    className={`digit-selection${selected_digit === i ? ' selected' : ''}`}
-                    data-value={i}
-                    onClick={handleSelect}
-                >
-                    {i}
-                </div>
-            )}
+            <div>
+                {[...Array(5).keys()].map(i =>
+                    <span
+                        key={i}
+                        className={`digit-selector__selection${selected_digit === i ? ' selected' : ''}`}
+                        data-value={i}
+                        onClick={handleSelect}
+                    >
+                        {i}
+                    </span>
+                )}
+            </div>
+            <div>
+                {[...Array(5).keys()].map(i => i + 5).map(i =>
+                    <span
+                        key={i}
+                        className={`digit-selector__selection${selected_digit === i ? ' selected' : ''}`}
+                        data-value={i}
+                        onClick={handleSelect}
+                    >
+                        {i}
+                    </span>
+                )}
+            </div>
         </div>
     );
 };

@@ -163,8 +163,8 @@
         .digit-selector {
             margin-top: 15px;
 
-            .digit-selection {
-                width: 40px;
+            &__selection {
+                width: calc(20% - 5px);
                 height: 24px;
                 border-radius: $BORDER_RADIUS;
                 display: inline-flex;
@@ -178,6 +178,9 @@
                 }
                 &:hover {
                     cursor: pointer;
+                }
+                &:last-child {
+                    margin-right: 0;
                 }
             }
         }
