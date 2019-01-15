@@ -13,7 +13,7 @@ const DigitTicker = (() => {
 
     const array_of_digits         = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-    const isBarrierMissing = (contract_type, barrier) => contract_type !== 'DIGITDIFF' && contract_type !== 'DIGITMATCH' && !barrier;
+    const isBarrierMissing = (contract_type, barrier) => contract_type !== 'DIGITEVEN' && contract_type !== 'DIGITODD' && !barrier;
 
     const init = (container_id, contract_type, barrier, tick_count, status = 'open') => {
         if (isBarrierMissing(contract_type, barrier)) {
