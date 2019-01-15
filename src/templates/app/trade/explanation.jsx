@@ -310,7 +310,6 @@ const Explanation = () => (
                 <p>{it.L('The entry spot is the next tick after the start time.')}</p>
                 <h3>{it.L('Exit Spot')}</h3>
                 <p>{it.L('The exit spot is the latest tick at or before the end time.')}</p>
-                <p>{it.L('The minimum duration for this trade type is one tick, while the maximum is five ticks.')}</p>
             </div>
         </div>
 
@@ -373,6 +372,9 @@ const Explanation = () => (
 
             <div id='note_highlowticks' className='invisible'>
                 <Note text={it.L('High Tick/Low Tick contracts have a strict duration of five ticks.')} />
+            </div>
+            <div id='note_runs' className='invisible'>
+                <Note text={it.L('The minimum duration for this trade type is one tick, while the maximum is five ticks.')} />
             </div>
         </div>
     </div>

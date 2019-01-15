@@ -233,6 +233,10 @@ const TradingAnalysis = (() => {
                 image1: 'high-tick.svg',
                 image2: 'low-tick.svg',
             },
+            runs: {
+                image1: 'run_high.svg',
+                image2: 'run_low.svg',
+            },
         };
 
         if (images[form_name]) {
