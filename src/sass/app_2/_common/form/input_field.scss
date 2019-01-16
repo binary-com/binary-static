@@ -49,6 +49,39 @@
         border-radius: $BORDER_RADIUS;
         transition: all 0.3s;
 
+        &[type=checkbox] {
+            cursor: pointer;
+            display: inline-block;
+            vertical-align: middle;
+            width: 12px;
+            height: 12px;
+            border-color: $COLOR_GRAY;
+            border-radius: 1px;
+            border-width: 0.5px;
+
+            &:hover, &:focus, &:active {
+                border-color: $COLOR_ORANGE_2 !important;
+                border-radius: 1px;
+            }
+            &:checked {
+                background: $COLOR_ORANGE_2;
+                border-color: $COLOR_ORANGE_2;
+
+                &:after {
+                    display: inline-block;
+                }
+            }
+            &:after {
+                color: $COLOR_WHITE;
+                content: 'L';
+                font-size: 10px;
+                transform: scaleX(-1) rotate(-40deg);
+                position: absolute;
+                top: -5%;
+                left: 30%;
+                display: none;
+            }
+        }
         &:hover {
             border-color: $COLOR_BLUE;
         }
@@ -95,16 +128,16 @@
                 vertical-align: middle;
                 width: 12px;
                 height: 12px;
-                border-color: $COLOR_GRAY_2;
+                border-color: $COLOR_BRANDBLUE_85;
                 border-radius: 1px;
                 border-width: 0.5px;
 
-                &:hover {
-                    border-color: $COLOR_ORANGE_3;
+                &:hover, &:focus, &:active {
+                    border-color: $COLOR_ORANGE_2;
                 }
                 &:checked {
-                    background: $COLOR_ORANGE_3;
-                    border-color: $COLOR_ORANGE_3;
+                    background: $COLOR_ORANGE_2;
+                    border-color: $COLOR_ORANGE_2;
 
                     &:after {
                         display: inline-block;
@@ -121,7 +154,7 @@
                 }
             }
             &:hover, &:focus, &:active {
-                border-color: $COLOR_ORANGE_3;
+                border-color: $COLOR_WHITE;
             }
         }
     }
