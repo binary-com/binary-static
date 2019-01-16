@@ -240,13 +240,13 @@ const BinaryOptions = () => {
                             <ListStrong header={it.L('Even/Odd')}        text={it.L('Predict that the last digit is an even number or odd number after the last tick')} />
                             <ListStrong header={it.L('Over/Under')}      text={it.L('Predict that the last digit is higher or lower')} />
                         </SectionLarge>
-                        <SectionLarge dataAnchor='reset-callput' header={it.L('Reset Call/Put')} image='types-of-trades/reset' text={it.L('There are two types of reset trades:')}>
-                            <ListStrong header={it.L('Reset-Call')} text={it.L('Predict that the market will end up higher than either the current level or the level at a predetermined time (reset time)')} />
-                            <ListStrong header={it.L('Reset-Put')}  text={it.L('Predict that the market will end up lower than either the current level or the level at a predetermined time (reset time)')} />
+                        <SectionLarge dataAnchor='reset-callput' header={it.L('Reset Call/Reset Put')} image='types-of-trades/reset' text={it.L('There are two types of reset trades:')}>
+                            <ListStrong header={it.L('Reset Call')} text={it.L('Predict that the market will end up higher than either the current level or the level at a predetermined time (reset time)')} />
+                            <ListStrong header={it.L('Reset Put')}  text={it.L('Predict that the market will end up lower than either the current level or the level at a predetermined time (reset time)')} />
                             <p>{it.L('At reset time, if the spot is in the opposite direction of your prediction, the barrier is reset to that spot.')}</p>
                         </SectionLarge>
-                        <SectionLarge dataAnchor='high-low-ticks' header={it.L('High/Low Ticks')} image='types-of-trades/high_low_ticks' text={it.L('Purchase High/Low Tick contracts to predict the highest or lowest tick among the next five ticks.')} />
-                        <p>{it.L('Please note that Asians, Digits, Reset Call/Put and High/Low Ticks are available exclusively with our Volatility Indices.')}</p>
+                        <SectionLarge dataAnchor='high-low-ticks' header={it.L('High Ticks/Low Ticks')} image='types-of-trades/high_low_ticks' text={it.L('Purchase High Tick/Low Tick contracts to predict the highest or lowest tick among the next five ticks.')} />
+                        <p>{it.L('Please note that Asians, Digits, Reset Call/Reset Put and High Ticks/Low Ticks are available exclusively with our Volatility Indices.')}</p>
                     </Section>
                     <Section id='range-of-markets' header={it.L('Range of markets')}>
                         <p>{it.L('Binary options allow you to trade on a wide range of underlying markets. One of the advantages of trading binary options is that you are not buying or selling an actual asset, only a contract that determines how that asset performs over a period of time. This limits your risk and makes it easy for anyone to start trading.')}</p>

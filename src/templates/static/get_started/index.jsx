@@ -288,6 +288,13 @@ const Index = () => (
                                     header={it.L('How to trade binary options on MT5')}
                                     text={it.L('Follow our step-by-step guide to start trading binary options on MT5.')}
                                 />
+                                <GetStartedSection
+                                    link='get-started/binary-options-mt5'
+                                    hash='types-of-trades'
+                                    image='binary-options/types-of-trades'
+                                    header={it.L('Types of trades')}
+                                    text={it.L('The various trade types available on our MT5 platform.')}
+                                />
                             </div>
                             <div className='center-text gr-padding-20'>
                                 <Button

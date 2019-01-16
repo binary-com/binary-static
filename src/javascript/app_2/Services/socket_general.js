@@ -7,6 +7,7 @@ import { State }            from '_common/storage';
 import { getPropertyValue } from '_common/utility';
 import { requestLogout }    from './logout';
 import WS                   from './ws_methods';
+import GTM                  from '../Utils/gtm';
 
 let client_store,
     common_store;
@@ -93,6 +94,9 @@ const BinarySocketGeneral = (() => {
                 break;
             case 'payout_currencies':
                 client_store.responsePayoutCurrencies(response.payout_currencies);
+                break;
+            case 'transaction':
+                GTM.pushTransactionData(response, { bom_ui: 'new' });
                 break;
             // no default
         }
