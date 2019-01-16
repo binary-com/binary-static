@@ -24,11 +24,11 @@
             margin: 0 -12px;
         }
         &__btn {
-            cursor: pointer;
             text-align: center;
             padding: 8px;
 
             a {
+                cursor: pointer;
                 color: $COLOR_BLUE;
                 line-height: 1.5;
                 font-size: 12px;
@@ -36,8 +36,7 @@
             }
         }
         &__icon {
-            position: absolute;
-            top: 22%;
+            @extend .absolute-center-v;
             right: 5%;
 
             &--today:hover {

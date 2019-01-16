@@ -11,9 +11,7 @@
         }
     }
     &__input__icon {
-        position: absolute;
-        top: 35%;
-        right: 5%;
+        opacity: 1;
         transition: opacity 0.1s;
 
         &--clear:not(&--is-hidden):hover {
@@ -68,6 +66,7 @@
     }
     &__picker {
         .calendar {
+            top: 8px;
             opacity: 0;
             transform: scale(1, 0);
             transform-origin: top;
@@ -77,16 +76,13 @@
                 user-select: none;
             }
         }
-        &--align-left > div.calendar {
+        // align picker calendar to the left
+        &--align-left > .calendar {
             transform: scale(0, 0);
             transform-origin: top right;
-            left: -290px;
+            left: -295px;
         }
-        &--show > div.calendar {
-            opacity: 1;
-            transform: scale(1, 1);
-        }
-        &--show &--align-left > div.calendar {
+        &--show > .calendar {
             opacity: 1;
             transform: scale(1, 1);
         }
