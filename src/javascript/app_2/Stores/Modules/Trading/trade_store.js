@@ -118,6 +118,7 @@ export default class TradeStore extends BaseStore {
                 this.changeDurationValidationRules();
             },
         );
+        // TODO: add reaction to duration min_max as a boolean to hide allow equals
         reaction(
             () => [this.symbol, this.contract_type, this.duration_unit, this.expiry_type],
             () => {
