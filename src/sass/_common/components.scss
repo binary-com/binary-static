@@ -78,6 +78,25 @@
         overflow: auto;
         text-align: left;
     }
+    &#set_currency_popup_container {
+        #dialog_content {
+            max-width: 24em;
+            padding: 25px 15px;
+        }
+        #frm_confirm {
+            width: 100%;
+        }
+        a#btn_cancel, a#btn_ok {
+            width: 45%;
+            width: calc(50% - 5px);
+            display: inline-block;
+
+            span {
+                width: 45%;
+                width: calc(100% - 50px);
+            }
+        }
+    }
 }
 
 .image-slider {

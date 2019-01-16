@@ -1,7 +1,7 @@
 import classNames         from 'classnames';
-import moment             from 'moment';
 import React              from 'react';
 import { localize }       from '_common/localize';
+import { toMoment }       from 'Utils/Date';
 import CalendarPanelTypes from './types';
 
 const getMonthHeaders = () => ({
@@ -20,8 +20,8 @@ const getMonthHeaders = () => ({
 });
 
 export const CalendarMonths = ({ calendar_date, isPeriodDisabled, onClick, selected_date }) => {
-    const moment_date    = moment.utc(calendar_date);
-    const selected_month = moment.utc(selected_date).month();
+    const moment_date    = toMoment(calendar_date);
+    const selected_month = toMoment(selected_date).month();
     const month_headers  = getMonthHeaders();
 
     return (
