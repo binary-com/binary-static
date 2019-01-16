@@ -12,6 +12,7 @@ import Tooltip                   from '../Elements/tooltip.jsx';
 const InputField = ({
     className,
     data_tip,
+    data_value,
     error_messages,
     fractional_digits,
     helper,
@@ -98,6 +99,7 @@ const InputField = ({
             disabled={is_disabled}
             data-for={`error_tooltip_${name}`}
             data-tip={data_tip}
+            data-value={data_value}
             maxLength={fractional_digits ? max_length + fractional_digits + 1 : max_length}
             name={name}
             onKeyDown={is_incrementable ? onKeyPressed : undefined}

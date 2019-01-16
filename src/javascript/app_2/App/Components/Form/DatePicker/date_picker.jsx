@@ -106,6 +106,37 @@ class DatePicker extends React.PureComponent {
         }
     };
 
+    renderDurationPickerInputField = (value) => (
+        <InputField
+            className='datepicker__input'
+            data-tip={false}
+            data-value={value || undefined}
+            error_messages={this.props.validation_errors}
+            is_read_only={this.props.is_read_only}
+            name={this.props.name}
+            onClick={this.handleVisibility}
+            onChange={this.onChangeInput} // TODO: handle duration == days
+            placeholder={this.props.placeholder || localize('Select a duration')}
+            type='number'
+            value={value}
+        />
+    );
+
+    renderDatePickerInputField = (value) => (
+        <InputField
+            className='datepicker__input'
+            data-tip={false}
+            data-value={value || undefined}
+            error_messages={this.props.validation_errors}
+            is_read_only
+            name={this.props.name}
+            onClick={this.handleVisibility}
+            placeholder={this.props.placeholder || localize('Select date')}
+            type='text'
+            value={toMoment(value).format('DD MMM YYYY')}
+        />
+    );
+
     render() {
         if (this.props.is_nativepicker) {
             return (
@@ -143,21 +174,13 @@ class DatePicker extends React.PureComponent {
                 className='datepicker'
                 onMouseEnter={this.onMouseEnter}
                 onMouseLeave={this.onMouseLeave}
-                data-value={this.state.value || undefined}
             >
-                <InputField
-                    error_messages={this.props.validation_errors}
-                    type='text'
-                    className='datepicker__input'
-                    placeholder={this.props.placeholder
-                        || (this.props.mode === 'duration' ? localize('Select a duration') : localize('Select date'))}
-                    onClick={this.handleVisibility}
-                    onChange={this.props.is_read_only ? undefined : this.onChangeInput}
-                    is_read_only={this.props.is_read_only}
-                    value={this.state.value}
-                    name={this.props.name}
-                    data-tip={false}
-                />
+                {
+                    this.props.mode === 'duration' ?
+                        this.renderDurationPickerInputField(this.state.value)
+                        :
+                        this.renderDatePickerInputField(this.state.value)
+                }
                 <IconCalendar
                     className={classNames('datepicker__input__icon datepicker__input__icon--calendar', {
                         'datepicker__input__icon--is-hidden': this.state.is_clear_btn_visible,
