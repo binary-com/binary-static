@@ -65,6 +65,7 @@ const Purchase = ({
         );
 
         const is_purchase_error = (!isEmptyObject(purchase_info) && purchase_info.echo_req.buy === info.id);
+        const contract_basis = (basis_list.find(o => o.value !== basis));
 
         return (
             <Fieldset
@@ -90,7 +91,7 @@ const Purchase = ({
                         <ContractInfo
                             barrier_count={barrier_count}
                             basis={basis}
-                            basis_list={basis_list}
+                            contract_basis={contract_basis}
                             contract_title={trade_types[type]}
                             contract_type={type}
                             currency={currency}

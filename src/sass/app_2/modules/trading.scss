@@ -153,11 +153,20 @@
                 justify-self: left;
                 font-size: 12px;
 
-                div:last-child {
+                div {
                     margin-left: 4px;
+                }
+                div:first-child {
+                    margin-left: 0;
                 }
                 .symbols {
                     display: inline-block;
+                    position: relative;
+                }
+                .icon_price_move_container {
+                    width: 16px;
+                    height: 16px;
+                    bottom: 1px;
                     position: relative;
                 }
             }
