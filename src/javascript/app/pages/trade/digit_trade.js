@@ -29,13 +29,15 @@ const DigitDisplay = (() => {
                     .append($('<strong />', { class: 'gr-6', text: localize('Spot Time (GMT)') }))))
             .append($('<div />', { class: 'digit-ticker invisible', id: 'digit_ticker_container' }));
 
-        DigitTicker.init(
-            'digit_ticker_container',
-            contract.contract_type,
-            contract.barrier,
-            contract.tick_count,
-            contract.status
-        );
+        if (!DigitTicker.isBarrierMissing(contract.contract_type, contract.barrier)) {
+            DigitTicker.init(
+                'digit_ticker_container',
+                contract.contract_type,
+                contract.barrier,
+                contract.tick_count,
+                contract.status
+            );
+        }
 
         const request = {
             ticks_history: contract.underlying,

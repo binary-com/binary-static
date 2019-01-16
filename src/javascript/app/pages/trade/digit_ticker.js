@@ -246,6 +246,7 @@ const DigitTicker = (() => {
         init,
         update,
         countUp,
+        isBarrierMissing,
         markAsWon,
         markAsLost,
         markDigitAsLost,

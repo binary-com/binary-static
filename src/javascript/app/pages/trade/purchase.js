@@ -185,7 +185,7 @@ const Purchase = (() => {
             }
         }
 
-        if (tick_config.is_digit) {
+        if (tick_config.is_digit && !DigitTicker.isBarrierMissing(passthrough.contract_type, passthrough.barrier)) {
             DigitTicker.init('digit_ticker_table', passthrough.contract_type, passthrough.barrier, passthrough.duration, status);
         } else {
             DigitTicker.remove();
