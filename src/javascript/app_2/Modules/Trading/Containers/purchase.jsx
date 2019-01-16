@@ -1,18 +1,18 @@
 import { PropTypes as MobxPropTypes } from 'mobx-react';
-import PropTypes                  from 'prop-types';
-import React                      from 'react';
-import { localize }               from '_common/localize';
-import { isEmptyObject }          from '_common/utility';
-import Money                      from 'App/Components/Elements/money.jsx';
-import { PopConfirm }             from 'App/Components/Elements/PopConfirm';
-import UILoader                   from 'App/Components/Elements/ui_loader.jsx';
-import Button                     from 'App/Components/Form/button.jsx';
-import Fieldset                   from 'App/Components/Form/fieldset.jsx';
-import { connect }                from 'Stores/connect';
-import ContractInfo               from '../Components/Form/Purchase/contract_info.jsx';
-import MessageBox                 from '../Components/Form/Purchase/MessageBox';
-import PurchaseLock               from '../Components/Form/Purchase/PurchaseLock';
-import { IconTradeType }          from '../../../Assets/Trading/Types';
+import PropTypes                      from 'prop-types';
+import React                          from 'react';
+import { localize }                   from '_common/localize';
+import { isEmptyObject }              from '_common/utility';
+import Money                          from 'App/Components/Elements/money.jsx';
+import { PopConfirm }                 from 'App/Components/Elements/PopConfirm';
+import UILoader                       from 'App/Components/Elements/ui_loader.jsx';
+import Button                         from 'App/Components/Form/button.jsx';
+import Fieldset                       from 'App/Components/Form/fieldset.jsx';
+import { IconTradeType }              from 'Assets/Trading/Types';
+import { connect }                    from 'Stores/connect';
+import ContractInfo                   from '../Components/Form/Purchase/contract_info.jsx';
+import MessageBox                     from '../Components/Form/Purchase/MessageBox';
+import PurchaseLock                   from '../Components/Form/Purchase/PurchaseLock';
 
 const Purchase = ({
     barrier_count,
