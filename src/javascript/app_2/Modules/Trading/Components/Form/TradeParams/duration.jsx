@@ -2,7 +2,6 @@ import classNames               from 'classnames';
 import {
     PropTypes as MobxPropTypes,
     observer }                  from 'mobx-react';
-import moment                   from 'moment';
 import PropTypes                from 'prop-types';
 import React                    from 'react';
 import { localize }             from '_common/localize';
@@ -11,7 +10,12 @@ import Dropdown                 from 'App/Components/Form/DropDown';
 import Fieldset                 from 'App/Components/Form/fieldset.jsx';
 import InputField               from 'App/Components/Form/input_field.jsx';
 import TimePicker               from 'App/Components/Form/time_picker.jsx';
-import { convertDurationUnit }  from 'Stores/Modules/Trading/Helpers/duration';
+import {
+    convertDurationLimit,
+    convertDurationUnit }       from 'Stores/Modules/Trading/Helpers/duration';
+import {
+    isTimeValid,
+    toMoment }                  from 'Utils/Date';
 
 /* TODO:
       1. disable days other than today and tomorrow if start date is forward starting
@@ -22,12 +26,13 @@ const expiry_list = [
 ];
 
 let now_date,
-    min_date_duration,
     max_date_duration,
     min_date_expiry,
     min_day,
     max_day,
-    start_date_time;
+    start_date_time,
+    max_duration,
+    min_duration;
 
 const Duration = ({
     contract_expiry_type,
@@ -48,7 +53,9 @@ const Duration = ({
     validation_errors,
 }) => {
     if (duration_min_max[contract_expiry_type]) {
-        const moment_now  = moment(server_time);
+        min_duration = convertDurationLimit(+duration_min_max[contract_expiry_type].min, duration_unit);
+        max_duration = convertDurationLimit(+duration_min_max[contract_expiry_type].max, duration_unit);
+        const moment_now  = toMoment(server_time);
         const new_min_day = convertDurationUnit(duration_min_max[contract_expiry_type].min, 's', 'd');
         let new_max_day = convertDurationUnit(duration_min_max[contract_expiry_type].max, 's', 'd');
 
@@ -65,39 +72,38 @@ const Duration = ({
             const moment_today = moment_now.clone().startOf('day');
 
             now_date          = moment_now.clone();
-            min_date_duration = moment_today.clone().add(min_day || 1, 'd');
             max_date_duration = moment_today.clone().add(max_day || 365, 'd');
             min_date_expiry   = moment_today.clone();
         }
     }
 
-    const moment_expiry = moment.utc(expiry_date);
-    const is_within_24_hours   = moment_expiry.diff(moment(start_date * 1000 || undefined).utc(), 'hour') <= 24;
+    const moment_expiry = toMoment(expiry_date);
+    const is_within_24_hours   = moment_expiry.diff(toMoment(start_date || server_time).utc(), 'hour') <= 24;
     let should_show_time_picker = false;
     let expiry_time_sessions = sessions;
 
-    if (start_date === 0 && moment_expiry.isSame(moment(start_date * 1000 || undefined).utc(), 'day')) {
+    if (start_date === 0 && moment_expiry.isSame(toMoment(start_date || server_time).utc(), 'day')) {
         should_show_time_picker = true;
     }
 
     if (expiry_type === 'endtime') {
         if (is_within_24_hours) {
-            const date_time = moment.utc(start_date * 1000 || undefined);
-            if (start_date) {
+            const date_time = toMoment(start_date || server_time);
+            if (start_date && isTimeValid(start_time)) {
                 should_show_time_picker = true;
                 const [ hour, minute ] = start_time.split(':');
                 date_time.hour(hour).minute(minute).second(0).add(5, 'minutes');
             }
             // only update start time every five minutes, since time picker shows five minute durations
-            const moment_start_date_time = moment.unix(start_date_time);
+            const moment_start_date_time = toMoment(start_date_time);
             if (!start_date_time || moment_start_date_time.isAfter(date_time) || moment_start_date_time.clone().add(5, 'minutes').isBefore(date_time) ||
                 (moment_start_date_time.minutes() !== date_time.minutes() && date_time.minutes() % 5 === 0)) {
                 start_date_time = date_time.unix();
             }
 
-            const [ start_hour, start_minute ] = start_time.split(':');
+            const [ start_hour, start_minute ] = isTimeValid(start_time) ? start_time.split(':') : [0, 0];
             const moment_contract_start_date_time =
-                moment.utc(start_date * 1000 || undefined).hour(start_hour).minute(start_minute);
+                toMoment(start_date || server_time).hour(start_hour).minute(start_minute);
             expiry_time_sessions = [{
                 open : moment_contract_start_date_time,
                 close: moment_contract_start_date_time.clone().add(24, 'hour'),
@@ -116,9 +122,6 @@ const Duration = ({
             </div>
         );
     }
-    const datepicker_footer = min_day > 1 ?
-        localize('The minimum duration is [_1] days', [min_day]) :
-        localize('The minimum duration is [_1] day',  [min_day]);
 
     const has_end_time = expiry_list.find(expiry => expiry.value === 'endtime');
     if (duration_units_list.length === 1 && duration_unit === 't') {
@@ -149,34 +152,23 @@ const Duration = ({
             {expiry_type === 'duration' ?
                 <React.Fragment>
                     <div className='duration-container'>
-                        {duration_unit === 'd' && !is_nativepicker ?
-                            <Datepicker
-                                name='duration'
-                                min_date={min_date_duration}
-                                max_date={max_date_duration}
-                                mode='duration'
-                                onChange={onChange}
-                                value={duration || min_day}
-                                is_read_only
-                                is_clearable={false}
-                                is_nativepicker={is_nativepicker}
-                                footer={datepicker_footer}
-                            /> :
-                            <InputField
-                                type='number'
-                                name='duration'
-                                value={duration}
-                                onChange={onChange}
-                                is_nativepicker={is_nativepicker}
-                                error_messages = {validation_errors.duration || []}
-                            />
-                        }
                         <Dropdown
                             list={duration_units_list}
                             value={duration_unit}
                             name='duration_unit'
                             onChange={onChange}
                             is_nativepicker={is_nativepicker}
+                        />
+                        <InputField
+                            type='number'
+                            max_value={max_duration}
+                            min_value={min_duration}
+                            name='duration'
+                            value={duration}
+                            onChange={onChange}
+                            is_nativepicker={is_nativepicker}
+                            is_incrementable={true}
+                            error_messages = {validation_errors.duration || []}
                         />
                     </div>
                 </React.Fragment> :
@@ -205,6 +197,7 @@ const Duration = ({
                                 sessions={expiry_time_sessions}
                                 is_clearable={false}
                                 is_nativepicker={is_nativepicker}
+                                // validation_errors={validation_errors.end_time} TODO: add validation_errors for end time
                             />
                         }
                     </div>

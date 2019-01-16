@@ -160,7 +160,7 @@ msgstr ""
 msgid "%1 gives everyone an easy way to participate in the financial markets. Trade with as little as $1 USD on major currencies, stocks, indices, and commodities."
 msgstr ""
 
-msgid "%1 has been credited into your virtual account: %2."
+msgid "%1 has been credited into your Virtual Account: %2."
 msgstr ""
 
 msgid "%1 has earned an enviable reputation for our commitment to high ethical standards and the quality of the trading experience we provide."
@@ -3328,6 +3328,9 @@ msgstr ""
 msgid "Do you want to see %1 in other languages, or can you suggest improvements to our current translations?"
 msgstr ""
 
+msgid "Do you want to top up for another %1? If not, you can do this later on the %2Cashier page%3, too."
+msgstr ""
+
 msgid "Do you wish to continue?"
 msgstr ""
 
@@ -3344,6 +3347,9 @@ msgid "Does Not Touch"
 msgstr ""
 
 msgid "Don't have an account?"
+msgstr ""
+
+msgid "Don't show again"
 msgstr ""
 
 msgid "Don’t share your %1 account or payment methods with any other person."
@@ -3818,9 +3824,6 @@ msgid "Exclusive binary trading technology."
 msgstr ""
 
 msgid "Execute your trade in seconds."
-msgstr ""
-
-msgid "Execute your trading strategy using the Rise/Fall trade type with a duration of 5 ticks, 10 ticks, 1 minute or 5 minutes. With Rise/Fall contracts, you must predict whether the market will rise or fall from its current level."
 msgstr ""
 
 msgid "Execution model and counterparty risk"
@@ -4537,6 +4540,9 @@ msgstr ""
 msgid "Go to MetaTrader 5 dashboard"
 msgstr ""
 
+msgid "Go to statement"
+msgstr ""
+
 msgid "Go with the leader"
 msgstr ""
 
@@ -4649,6 +4655,9 @@ msgid "High Barrier"
 msgstr ""
 
 msgid "High Tick"
+msgstr ""
+
+msgid "High Tick/Low Tick"
 msgstr ""
 
 msgid "High Tick/Low Tick contracts have a strict duration of five ticks."
@@ -7240,7 +7249,7 @@ msgstr ""
 msgid "Over $500,000"
 msgstr ""
 
-msgid "Over %1 %2staff%3 and contractors worldwide"
+msgid "Over %1 <a href='%2'>staff</a> and contractors worldwide"
 msgstr ""
 
 msgid "Over 1 million registered accounts worldwide"
@@ -7807,7 +7816,22 @@ msgstr ""
 msgid "Predict the direction<br />and purchase"
 msgstr ""
 
+msgid "Predict the highest or lowest tick among the next 5 ticks."
+msgstr ""
+
 msgid "Predict the last decimal digit of the spot price with Digits. There are three types of Digits trades:"
+msgstr ""
+
+msgid "Predict whether the exit spot will be higher or lower than the entry spot within a selected duration from 5 ticks to 10 ticks, or 1 minute to 5 minutes."
+msgstr ""
+
+msgid "Predict whether the last digit of the last tick will be even or odd within a selected duration from 5 ticks to 10 ticks."
+msgstr ""
+
+msgid "Predict whether the last digit of the last tick will be greater or less than your prediction within a selected duration from 5 ticks to 10 ticks."
+msgstr ""
+
+msgid "Predict whether the last digit of the last tick will match or differ from your prediction within a selected duration from 5 ticks to 10 ticks."
 msgstr ""
 
 msgid "Preferably a native speaker with good command of English (oral and written)"
@@ -10114,6 +10138,9 @@ msgstr ""
 msgid "The use, operation or combination of the %1 API with non-%1 API(s), data, equipment or documentation if liability would have been avoided but for such use, operation, or combination; or"
 msgstr ""
 
+msgid "The various trade types available on our MT5 platform."
+msgstr ""
+
 msgid "The volatility indices simulate various real market situations and provide an ideal platform for getting used to trading and testing strategies under various market conditions. These indices depend on volatility and drift, and help users to try out scenarios like - high volatility, low volatility, bullish and bearish trends."
 msgstr ""
 
@@ -10546,10 +10573,22 @@ msgstr ""
 msgid "Top Up Virtual Account"
 msgstr ""
 
+msgid "Top up"
+msgstr ""
+
+msgid "Top up Virtual Account"
+msgstr ""
+
+msgid "Top up error"
+msgstr ""
+
 msgid "Top up virtual account"
 msgstr ""
 
 msgid "Top-tier liquidity"
+msgstr ""
+
+msgid "Top-up successful"
 msgstr ""
 
 msgid "Total"
@@ -11029,6 +11068,9 @@ msgstr ""
 msgid "Understanding of encryption fundamentals and the OWASP Top 10"
 msgstr ""
 
+msgid "Understood"
+msgstr ""
+
 msgid "Unemployed"
 msgstr ""
 
@@ -11233,7 +11275,7 @@ msgstr ""
 msgid "View the operating hours of the markets you can trade."
 msgstr ""
 
-msgid "View updated portfolio"
+msgid "View updated statement"
 msgstr ""
 
 msgid "View your account's authentication status."
@@ -11456,6 +11498,9 @@ msgid "We offer a market-based salary, annual performance bonus, health benefits
 msgstr ""
 
 msgid "We offer all four precious metals – gold, silver, palladium, and platinum – as well as energy in our list of commodities."
+msgstr ""
+
+msgid "We offer the following trade types on our MT5 platform:"
 msgstr ""
 
 msgid "We offer three types of lookbacks:"

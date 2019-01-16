@@ -1,7 +1,7 @@
-const Client       = require('../../../base/client');
-const BinarySocket = require('../../../base/socket');
-const formatMoney  = require('../../../common/currency').formatMoney;
-const localize     = require('../../../../_common/localize').localize;
+const Client       = require('../../../../base/client');
+const BinarySocket = require('../../../../base/socket');
+const formatMoney  = require('../../../../common/currency').formatMoney;
+const localize     = require('../../../../../_common/localize').localize;
 
 const TopUpVirtual = (() => {
     let $views;
@@ -20,7 +20,7 @@ const TopUpVirtual = (() => {
                 showMessage(response.error.message, false);
             } else {
                 showMessage(
-                    localize('[_1] has been credited into your virtual account: [_2].', [
+                    localize('[_1] has been credited into your Virtual Account: [_2].', [
                         formatMoney(response.topup_virtual.currency, response.topup_virtual.amount),
                         Client.get('loginid'),
                     ]),

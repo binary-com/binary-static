@@ -1,9 +1,9 @@
-import moment                    from 'moment';
 import { localize }              from '_common/localize';
 import {
     cloneObject,
     getPropertyValue }           from '_common/utility';
 import { WS }                    from 'Services';
+import { isTimeValid, toMoment } from 'Utils/Date';
 import { buildBarriersConfig }   from './barrier';
 import { buildDurationConfig }   from './duration';
 import {
@@ -233,20 +233,20 @@ const ContractType = (() => {
     };
 
     const buildMoment = (date, time) => {
-        const [ hour, minute ] = time ? time.split(':') : [0, 0];
-        return moment.utc(isNaN(date) ? date : +date * 1000).hour(hour).minute(minute);
+        const [ hour, minute ] = isTimeValid(time) ? time.split(':') : [0, 0];
+        return toMoment(date).hour(hour).minute(minute);
     };
 
     const getStartTime = (sessions, start_date, start_time) => ({
-        start_time: getValidTime(sessions, buildMoment(start_date, start_time)),
+        start_time: start_date ? getValidTime(sessions, buildMoment(start_date, start_time)) : null,
     });
 
     const getExpiryDate = (expiry_date, start_date, expiry_type) => {
         let proper_expiry_date = null;
 
         if (expiry_type === 'endtime') {
-            const moment_start  = moment.utc(start_date ? start_date * 1000 : undefined);
-            const moment_expiry = moment.utc(expiry_date || undefined);
+            const moment_start  = toMoment(start_date);
+            const moment_expiry = toMoment(expiry_date);
             // forward starting contracts should only show today and tomorrow as expiry date
             const is_invalid = moment_expiry.isBefore(moment_start, 'day') || (start_date && moment_expiry.isAfter(moment_start.clone().add(1, 'day')));
             proper_expiry_date = (is_invalid ? moment_start : moment_expiry).format('YYYY-MM-DD');
@@ -262,7 +262,7 @@ const ContractType = (() => {
         let end_time = null;
 
         if (expiry_type === 'endtime') {
-            const start_moment = start_date ? buildMoment(start_date, start_time) : moment().utc();
+            const start_moment = start_date ? buildMoment(start_date, start_time) : toMoment();
             const end_moment   = buildMoment(expiry_date, expiry_time);
             const expiry_sessions = [{
                 open : start_moment,
