@@ -41,15 +41,16 @@ const getDays = ({ calendar_date, date_format, max_date, min_date, start_date, o
             // for forward starting accounts, only show same day as start date and the day after
             (start_date && (moment_date.isBefore(moment_start_date) || moment_date.isAfter(moment_start_date.clone().add(1, 'day'))));
 
-        // disabled dates that is not in the same calendar month
-        const is_different_month = moment_date.month() !== moment_cur_date.month();
+        // show 'disabled' style for dates that is not in the same calendar month, and the date should still be clickable
+        const is_other_month = moment_date.month() !== moment_cur_date.month();
         days.push(
             <span
                 key={date}
                 className={classNames('calendar__body__cell', {
-                    'calendar__body__cell--is-active'  : is_active && !is_disabled,
-                    'calendar__body__cell--is-today'   : is_today,
-                    'calendar__body__cell--is-disabled': is_disabled || is_different_month,
+                    'calendar__body__cell--is-active'     : is_active && !is_disabled,
+                    'calendar__body__cell--is-today'      : is_today,
+                    'calendar__body__cell--is-disabled'   : is_disabled,
+                    'calendar__body__cell--is-other-month': is_other_month,
                 })}
                 onClick={(e) => { onClick.date(e, is_disabled); }}
                 data-date={date}
