@@ -22,6 +22,7 @@ const Amount = ({
     is_minimized,
     is_nativepicker,
     is_single_currency,
+    is_allow_equal,
     onChange,
     validation_errors,
 }) => {
@@ -75,16 +76,18 @@ const Amount = ({
                     value={amount}
                 />
             </div>
-            <div className='allow-equals'>
-                <InputField
-                    type='checkbox'
-                    name='contract_type'
-                    value='is_equal'
-                    onChange={onChange}
-                />
-                <label>{localize('Allow equals')}</label>
-                <Tooltip icon='info' message={localize('Win payout if exit spot is also equal to entry spot.')} alignment='left' />
-            </div>
+            {is_allow_equal &&
+                <div className='allow-equals'>
+                    <InputField
+                        type='checkbox'
+                        name='contract_type'
+                        value='is_equal'
+                        onChange={onChange}
+                    />
+                    <label>{localize('Allow equals')}</label>
+                    <Tooltip icon='info' message={localize('Win payout if exit spot is also equal to entry spot.')} alignment='left' />
+                </div>
+            }
         </Fieldset>
     );
 };
