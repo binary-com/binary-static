@@ -55,13 +55,14 @@ export default class TradeStore extends BaseStore {
     @observable basis_list      = [];
 
     // Duration
-    @observable duration            = 5;
-    @observable duration_unit       = '';
-    @observable duration_units_list = [];
-    @observable duration_min_max    = {};
-    @observable expiry_date         = '';
-    @observable expiry_time         = '09:40';
-    @observable expiry_type         = 'duration';
+    @observable duration             = 5;
+    @observable duration_unit        = '';
+    @observable duration_units_list  = [];
+    @observable duration_min_max     = {};
+    @observable expiry_date          = '';
+    @observable expiry_time          = '09:40';
+    @observable expiry_type          = 'duration';
+    @observable is_advanced_duration = false;
 
     // Barrier
     @observable barrier_1     = '';
