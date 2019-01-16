@@ -118,7 +118,6 @@ export default class TradeStore extends BaseStore {
                 this.changeDurationValidationRules();
             },
         );
-        // TODO: add reaction to duration min_max as a boolean to hide allow equals
         reaction(
             () => [this.symbol, this.contract_type, this.duration_unit, this.expiry_type],
             () => {
@@ -419,6 +418,23 @@ export default class TradeStore extends BaseStore {
 
     @action.bound
     changeAllowEquals() {
+        /*
+                TODO: create validation through contract durations whether they are available or not
+                const displayEquals = (expiry_type = 'duration') => {
+                    const formname = Defaults.get('formname');
+                    const el_equals = document.getElementById('callputequal');
+                    const durations = getPropertyValue(Contract.durations(), [commonTrading.durationType(Defaults.get('duration_units'))]) || [];
+                    if (/^(callputequal|risefall)$/.test(formname) && (('callputequal' in durations || expiry_type === 'endtime') && hasCallPutEqual())) {
+                        if (+Defaults.get('is_equal')) {
+                            el_equals.checked = true;
+                        }
+                        el_equals.parentElement.setVisibility(1);
+                    } else {
+                        el_equals.parentElement.setVisibility(0);
+                    }
+                };
+        */
+        // TODO: remove this entire if statement
         if (['rise_fall', 'rise_fall_equal'].includes(this.contract_type)) {
             this.is_allow_equal = false;
 
@@ -434,6 +450,7 @@ export default class TradeStore extends BaseStore {
                 }
             }
         }
+    
     }
 
     @action.bound
