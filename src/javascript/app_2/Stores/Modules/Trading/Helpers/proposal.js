@@ -22,7 +22,6 @@ export const getProposalInfo = (store, response) => {
 
 export const createProposalRequests = (store) => {
     const requests = {};
-    console.log(store.contract_type) //eslint-disable-line
 
     Object.keys(store.trade_types).forEach((type) => {
         const new_req     = createProposalRequestForContract(store, type);

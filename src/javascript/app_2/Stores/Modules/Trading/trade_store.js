@@ -170,8 +170,7 @@ export default class TradeStore extends BaseStore {
     onChange(e) {
         const { name, checked } = e.target;
         let { value } = e.target;
-        console.log(name); // eslint-disable-line
-        console.log(checked); // eslint-disable-line
+
         if (name === 'currency') {
             this.root_store.client.selectCurrency(value);
         } else if (value === 'is_equal') {
@@ -187,7 +186,7 @@ export default class TradeStore extends BaseStore {
         } else if (!(name in this)) {
             throw new Error(`Invalid Argument: ${name}`);
         }
-        console.log(value); // eslint-disable-line
+
         this.processNewValuesAsync({ [name]: value }, true);
     }
 
@@ -268,8 +267,6 @@ export default class TradeStore extends BaseStore {
     async processNewValuesAsync(obj_new_values = {}, is_changed_by_user = false) {
         // Sets the default value to Amount when Currency has changed from Fiat to Crypto and vice versa.
         // The source of default values is the website_status response.
-        console.log(obj_new_values); // eslint-disable-line
-        console.log(is_changed_by_user); // eslint-disable-line
         if (is_changed_by_user &&
             /\bcurrency\b/.test(Object.keys(obj_new_values)) &&
             isCryptocurrency(obj_new_values.currency) !== isCryptocurrency(this.currency)
@@ -319,7 +316,7 @@ export default class TradeStore extends BaseStore {
 
     @action.bound
     requestProposal() {
-        const requests = createProposalRequests(this); //
+        const requests = createProposalRequests(this);
 
         if (Object.values(this.validation_errors).some(e => e.length)) {
             this.proposal_info = {};
