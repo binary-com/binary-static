@@ -4,13 +4,17 @@
     margin-bottom: 8px;
     padding: 0 4px;
 
+    label[for=range] {
+        position: relative;
+    }
     &__range {
         position: relative;
+        // pending refactor in main trading sass file that overrides rules for all input els
         appearance: none !important;
         width: 100% !important;
-        height: 4px !important;
+        height: 2px !important;
         border-radius: 5px;
-        background: $COLOR_GRAY !important;
+        background: $COLOR_DARK_GRAY !important;
         outline: none;
         border: none;
         padding: 0;
@@ -24,21 +28,47 @@
             border-radius: 100%;
             background: $COLOR_DARK_GRAY;
             cursor: pointer;
-            transition: background 0.15s ease-in-out;
-            z-index: 3;
+            transition: box-shadow 0.5s;
+            box-shadow: 0 0 0 0px rgba(0, 0, 0, 0);
         }
         &:hover, &:focus, &:active {
             border: none;
             outline: none;
         }
         &:active::-webkit-slider-thumb {
-            width: 12px;
-            height: 12px;
-            background: $COLOR_DARK_GRAY;
             box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.3);
         }
     }
-    &__label {
+    &__ticks {
+        width: 100%;
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        top: 6px;
+
+        &__tick {
+            height: 3px;
+            width: 3px;
+            border: 2px solid $COLOR_DARK_GRAY;
+            background: $COLOR_DARK_GRAY;
+            border-radius: 50%;
+            margin: 0 3px;
+            transition: box-shadow 0.5s;
+            box-shadow: 0 0 0 0px rgba(0, 0, 0, 0);
+            cursor: pointer;
+
+            &:hover:not(.active) {
+                box-shadow: 0 0 0 6px rgba(0, 0, 0, 0.3);
+            }
+            &:first-child {
+                margin-left: 0;
+            }
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+    &__caption {
         display: flex;
         padding: 4px;
         justify-content: space-between;

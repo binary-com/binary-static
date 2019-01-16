@@ -130,14 +130,6 @@ const Duration = ({
             {expiry_type === 'duration' ?
                 <React.Fragment>
                     <div className='duration-container'>
-                        <RangeSlider
-                            min={1}
-                            max={10}
-                            steps={1}
-                            name='duration'
-                            value={duration}
-                            onChange={onChange}
-                        />
                         <Dropdown
                             list={duration_units_list}
                             value={duration_unit}
@@ -145,17 +137,29 @@ const Duration = ({
                             onChange={onChange}
                             is_nativepicker={is_nativepicker}
                         />
-                        <InputField
-                            type='number'
-                            max_value={max_duration}
-                            min_value={min_duration}
-                            name='duration'
-                            value={duration}
-                            onChange={onChange}
-                            is_nativepicker={is_nativepicker}
-                            is_incrementable={true}
-                            error_messages = {validation_errors.duration || []}
-                        />
+                        {
+                            duration_unit === 't' ?
+                                <RangeSlider
+                                    min={1}
+                                    max={10}
+                                    name='duration'
+                                    value={duration}
+                                    onChange={onChange}
+                                />
+                                :
+                                <InputField
+                                    type='number'
+                                    max_value={max_duration}
+                                    min_value={min_duration}
+                                    name='duration'
+                                    value={duration}
+                                    onChange={onChange}
+                                    is_nativepicker={is_nativepicker}
+                                    is_incrementable={true}
+                                    error_messages = {validation_errors.duration || []}
+                                />
+                        }
+
                     </div>
                 </React.Fragment> :
                 <React.Fragment>
