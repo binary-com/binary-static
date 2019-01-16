@@ -418,24 +418,19 @@ export default class TradeStore extends BaseStore {
 
     @action.bound
     changeAllowEquals() {
-        if (this.contract_type === 'rise_fall' || this.contract_type === 'rise_fall_equal') {
+        if (['rise_fall', 'rise_fall_equal'].includes(this.contract_type)) {
+            this.is_allow_equal = false;
             if (this.symbol[0] === 'R') {
                 this.is_allow_equal = true;
             } else {
-                this.is_allow_equal = false;
                 if (this.expiry_type === 'endtime') {
                     this.is_allow_equal = true;
                 } else {
-                    this.is_allow_equal = false;
                     if (this.duration_unit !== 't') {
                         this.is_allow_equal = true;
-                    } else {
-                        this.is_allow_equal = false;
                     }
                 }
             }
-        } else {
-            this.is_allow_equal = false;
         }
     }
 
