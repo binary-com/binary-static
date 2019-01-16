@@ -3,7 +3,6 @@
 
     &__input {
         text-align: center;
-        cursor: pointer;
 
         &:focus, &:hover {
             outline: none;
@@ -14,9 +13,13 @@
         position: absolute;
         top: 20%;
         right: 5%;
+        transition: opacity 0.1s;
 
+        &--clear:not(&--is-hidden):hover {
+            cursor: pointer;
+        }
         &--is-hidden {
-            @extend .hidden;
+            opacity: 0;
         }
     }
     // TODO: update datepicker UI in mobile 
