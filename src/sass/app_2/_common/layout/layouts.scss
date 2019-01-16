@@ -309,7 +309,7 @@
                 grid-column: col-start 1 / span 9 !important;
             }
             .sidebar-container, .contract-container {
-                grid-column: col-start 10 / span 3 !important;
+                grid-column: col-start 10 / span 9 !important;
             }
         }
     }
@@ -317,17 +317,13 @@
         pointer-events: none;
     }
     .category-wrapper, .type-wrapper {
-        width: 30px;
-        height: 30px;
+        width: 24px;
+        height: 24px;
         background: $COLOR_GRAY;
-        border-radius: 100%;
+        border-radius: 3px;
         display: flex;
         align-items: center;
         justify-content: center;
-
-        .category-type, .type {
-            transform: scale(1.2, 1.2);
-        }
     }
 }
 

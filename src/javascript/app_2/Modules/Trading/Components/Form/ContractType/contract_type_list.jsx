@@ -11,6 +11,8 @@ const ContractTypeList = ({
 }) =>
     (
         Object.keys(list).map(key => (
+            // TODO: Remove this line after other contracts are ready to be served
+            !['In/Out', 'Asians'].includes(key) &&
             <React.Fragment key={key}>
                 <div className='list-group'>
                     <div className='list-label'><span>{key}</span></div>
