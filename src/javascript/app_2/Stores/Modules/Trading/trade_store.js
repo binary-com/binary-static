@@ -174,16 +174,14 @@ export default class TradeStore extends BaseStore {
         console.log(checked); // eslint-disable-line
         if (name === 'currency') {
             this.root_store.client.selectCurrency(value);
-        } else if (name === 'contract_type') {
+        } else if (value === 'is_equal') {
             if (this.contract_type === 'rise_fall' || this.contract_type === 'rise_fall_equal') {
-                if (value === 'is_equal') {
-                    if (checked) {
-                        value = 'rise_fall_equal';
-                        this.contract_type = 'rise_fall_equal';
-                    } else {
-                        value = 'rise_fall';
-                        this.contract_type = 'rise_fall';
-                    }
+                if (checked) {
+                    value = 'rise_fall_equal';
+                    this.contract_type = 'rise_fall_equal';
+                } else {
+                    value = 'rise_fall';
+                    this.contract_type = 'rise_fall';
                 }
             }
         } else if (!(name in this)) {

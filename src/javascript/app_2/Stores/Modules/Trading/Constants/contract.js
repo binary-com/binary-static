@@ -13,7 +13,7 @@ export const getLocalizedBasis = () => ({
 export const getContractTypesConfig = () => (
     {
         rise_fall      : { title: localize('Rise/Fall'),                  trade_types: ['CALL', 'PUT'],               basis: ['payout', 'stake'], components: ['start_date'], barrier_count: 0 },
-        rise_fall_equal: { title: localize('Rise/Fall Equal'),            trade_types: ['CALLE', 'PUTE'],             basis: ['payout', 'stake'], components: ['start_date'], barrier_count: 0 },
+        rise_fall_equal: { title: localize('Rise/Fall'),                  trade_types: ['CALLE', 'PUTE'],             basis: ['payout', 'stake'], components: ['start_date'], barrier_count: 0 },
         high_low       : { title: localize('Higher/Lower'),               trade_types: ['CALL', 'PUT'],               basis: ['payout', 'stake'], components: ['barrier'],    barrier_count: 1 },
         touch          : { title: localize('Touch/No Touch'),             trade_types: ['ONETOUCH', 'NOTOUCH'],       basis: ['payout', 'stake'], components: ['barrier'] },
         end            : { title: localize('Ends Between/Ends Outside'),  trade_types: ['EXPIRYMISS', 'EXPIRYRANGE'], basis: ['payout', 'stake'], components: ['barrier'] },
@@ -30,7 +30,7 @@ export const getContractTypesConfig = () => (
 
 export const getContractCategoriesConfig = () => (
     {
-        [localize('Up/Down')]       : ['rise_fall', 'high_low'],
+        [localize('Up/Down')]       : ['rise_fall', 'high_low', 'rise_fall_equal'],
         [localize('Touch/No Touch')]: ['touch'],
         [localize('In/Out')]        : ['end', 'stay'],
         [localize('Asians')]        : ['asian'],

@@ -10,6 +10,7 @@ const ContractTypeItem = ({
     handleSelect,
 }) => (
     contracts.map((contract, idx) => (
+        (contract.value !== 'rise_fall_equal') &&
         <div
             key={idx}
             className={`list-item ${value === contract.value ? 'selected' : ''}`}
