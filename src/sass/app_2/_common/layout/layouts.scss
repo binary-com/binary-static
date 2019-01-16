@@ -229,7 +229,6 @@
 
                     div.duration-container, div.amount-container {
                         display: grid;
-                        grid-gap: 8px;
                         grid-template-columns: 1fr;
                         grid-auto-columns: auto;
                     }
@@ -248,7 +247,7 @@
                     }
                     @media (min-width: 979px) {
                         div.duration-container {
-                            grid-template-columns: 1fr 1.5fr;
+                            grid-template-columns: 1fr;
                         }
                         div.amount-container {
                             grid-template-columns: 1fr 1.5fr;
