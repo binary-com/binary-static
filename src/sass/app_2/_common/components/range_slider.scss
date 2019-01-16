@@ -1,0 +1,56 @@
+// Range Slider
+.range-slider {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    padding: 0 4px;
+
+    &__range {
+        position: relative;
+        appearance: none !important;
+        width: 100% !important;
+        height: 4px !important;
+        border-radius: 5px;
+        background: $COLOR_GRAY !important;
+        outline: none;
+        border: none;
+        padding: 0;
+        margin: 0;
+
+        // Range Handle
+        &::-webkit-slider-thumb {
+            appearance: none;
+            width: 12px;
+            height: 12px;
+            border-radius: 100%;
+            background: $COLOR_DARK_GRAY;
+            cursor: pointer;
+            transition: background 0.15s ease-in-out;
+            z-index: 3;
+        }
+        &:hover, &:focus, &:active {
+            border: none;
+            outline: none;
+        }
+        &:active::-webkit-slider-thumb {
+            width: 12px;
+            height: 12px;
+            background: $COLOR_DARK_GRAY;
+            box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.3);
+        }
+    }
+    &__label {
+        display: flex;
+        padding: 4px;
+        justify-content: space-between;
+
+        &--min {
+            text-align: left;
+        }
+        &--max {
+            text-align: right;
+        }
+        &--current {
+            text-align: center;
+        }
+    }
+}

@@ -11,6 +11,7 @@ import Dropdown                 from 'App/Components/Form/DropDown';
 import Fieldset                 from 'App/Components/Form/fieldset.jsx';
 import InputField               from 'App/Components/Form/input_field.jsx';
 import TimePicker               from 'App/Components/Form/time_picker.jsx';
+import RangeSlider              from 'App/Components/Form/RangeSlider';
 import { convertDurationUnit }  from 'Stores/Modules/Trading/Helpers/duration';
 
 /* TODO:
@@ -110,6 +111,33 @@ const Duration = ({
         'has-time': is_same_day,
     });
 
+    const duration_component = (unit_type) => (
+        <React.Fragment>
+            {unit_type === 'd' && !is_nativepicker ?
+                <Datepicker
+                    name='duration'
+                    min_date={min_date_duration}
+                    max_date={max_date_duration}
+                    mode='duration'
+                    onChange={onChange}
+                    value={duration || min_day}
+                    is_read_only
+                    is_clearable={false}
+                    is_nativepicker={is_nativepicker}
+                    footer={datepicker_footer}
+                /> :
+                <InputField
+                    type='number'
+                    name='duration'
+                    value={duration}
+                    onChange={onChange}
+                    is_nativepicker={is_nativepicker}
+                    error_messages = {validation_errors.duration || []}
+                />
+            }
+        </React.Fragment>
+    );
+
     return (
         <Fieldset
             header={localize('Trade Duration')}
@@ -122,32 +150,18 @@ const Duration = ({
                 onChange={onChange}
                 is_nativepicker={is_nativepicker}
             />
-
-            {expiry_type === 'duration' ?
+            <RangeSlider
+                min={1}
+                max={10}
+                steps={1}
+                name='duration'
+                value={duration}
+                onChange={onChange}
+            />
+            { expiry_type === 'duration' ?
                 <React.Fragment>
                     <div className='duration-container'>
-                        {duration_unit === 'd' && !is_nativepicker ?
-                            <Datepicker
-                                name='duration'
-                                min_date={min_date_duration}
-                                max_date={max_date_duration}
-                                mode='duration'
-                                onChange={onChange}
-                                value={duration || min_day}
-                                is_read_only
-                                is_clearable={false}
-                                is_nativepicker={is_nativepicker}
-                                footer={datepicker_footer}
-                            /> :
-                            <InputField
-                                type='number'
-                                name='duration'
-                                value={duration}
-                                onChange={onChange}
-                                is_nativepicker={is_nativepicker}
-                                error_messages = {validation_errors.duration || []}
-                            />
-                        }
+                        {duration_component(duration_unit)}
                         <Dropdown
                             list={duration_units_list}
                             value={duration_unit}
