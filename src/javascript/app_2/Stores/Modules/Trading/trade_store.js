@@ -420,6 +420,7 @@ export default class TradeStore extends BaseStore {
     changeAllowEquals() {
         if (['rise_fall', 'rise_fall_equal'].includes(this.contract_type)) {
             this.is_allow_equal = false;
+
             if (this.symbol[0] === 'R') {
                 this.is_allow_equal = true;
             } else {
