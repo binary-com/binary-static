@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-01-15 05:42\n"
+"PO-Revision-Date: 2019-01-16 01:43\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: German\n"
 "MIME-Version: 1.0\n"
@@ -1325,6 +1325,9 @@ msgstr "Sind Sie sicher, dass Sie den Token endgültig löschen möchten"
 
 msgid "Are you sure that you want to permanently revoke access to the application"
 msgstr "Sind Sie sicher, dass Sie den Zugang zur Anwendung endgültig widerrufen möchten"
+
+msgid "Are you sure?"
+msgstr ""
 
 msgid "Armed Forces"
 msgstr "Streitkräfte"
@@ -12326,6 +12329,12 @@ msgstr "Sie haben bereits den Gegenwert von %1 %2  abgehoben, der sich in den le
 
 msgid "You have already withdrawn the equivalent of %1 %2."
 msgstr "Sie haben bereits den Gegenwert von %1 %2 abgehoben."
+
+msgid "You have chosen %1 as the currency for this account. You cannot change this later. You can have more than one cryptocurrency account."
+msgstr ""
+
+msgid "You have chosen %1 as the currency for this account. You cannot change this later. You can have one fiat currency account only."
+msgstr ""
 
 msgid "You have created all accounts available to you."
 msgstr "Sie haben alle für Sie verfügbaren Konten erstellt."
