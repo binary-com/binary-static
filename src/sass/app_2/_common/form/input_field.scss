@@ -33,6 +33,10 @@
 
         input {
             text-align: center;
+
+            &::-ms-clear { // Edge: hide clear icon for increment input
+                display: none;
+            }
         }
         &:hover {
             input {
