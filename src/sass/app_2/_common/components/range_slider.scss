@@ -26,7 +26,7 @@
             width: 12px;
             height: 12px;
             border-radius: 100%;
-            background: $COLOR_DARK_GRAY;
+            background: $COLOR_BLUE;
             cursor: pointer;
             transition: box-shadow 0.5s;
             box-shadow: 0 0 0 0px rgba(0, 0, 0, 0);
@@ -47,18 +47,28 @@
         top: 6px;
 
         &__tick {
-            height: 3px;
-            width: 3px;
+            height: 4px;
+            width: 4px;
             border: 2px solid $COLOR_DARK_GRAY;
             background: $COLOR_DARK_GRAY;
             border-radius: 50%;
             margin: 0 3px;
-            transition: box-shadow 0.5s;
+            transition: background 0.5s, border-color 0.5s, box-shadow 0.5s;
             box-shadow: 0 0 0 0px rgba(0, 0, 0, 0);
             cursor: pointer;
 
             &:hover:not(.active) {
+                background: $COLOR_BLUE;
+                border-color: $COLOR_BLUE;
                 box-shadow: 0 0 0 6px rgba(0, 0, 0, 0.3);
+            }
+            &.active {
+                background: $COLOR_BLUE;
+                border-color: $COLOR_BLUE;
+            }
+            &:hover.active {
+                opacity: 0;
+                pointer-events: none;
             }
             &:first-child {
                 margin-left: 0;
