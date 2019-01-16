@@ -118,6 +118,13 @@ export default class TradeStore extends BaseStore {
                 this.changeDurationValidationRules();
             },
         );
+        reaction(
+            () => [this.symbol, this.contract_type, this.duration_unit, this.expiry_type],
+            () => {
+                this.changeAllowEquals();
+            },
+            { delay: 500 }
+        );
     }
 
     @action.bound
@@ -171,6 +178,9 @@ export default class TradeStore extends BaseStore {
     onChange(e) {
         const { name, checked } = e.target;
         let { value } = e.target;
+        // console.log(name); // eslint-disable-line
+        // console.log(value); // eslint-disable-line
+        // console.log('try2'); // eslint-disable-line
 
         if (name === 'currency') {
             this.root_store.client.selectCurrency(value);
@@ -407,6 +417,36 @@ export default class TradeStore extends BaseStore {
             }
             this.validateProperty('duration', this.duration);
         }
+    }
+
+    @action.bound
+    changeAllowEquals() {
+        console.log('try1'); //eslint-disable-line
+        console.log(this.symbol[0]); //eslint-disable-line
+        console.log(this.contract_type); //eslint-disable-line
+        console.log(this.expiry_type); //eslint-disable-line
+        console.log(this.duration_unit); //eslint-disable-line
+        if (this.contract_type === 'rise_fall' || this.contract_type === 'rise_fall_equal') {
+            if (this.symbol[0] === 'R') {
+                this.is_allow_equal = true;
+            } else {
+                this.is_allow_equal = false;
+                if (this.expiry_type === 'endtime') {
+                    this.is_allow_equal = true;
+                } else {
+                    this.is_allow_equal = false;
+                    if (this.duration_unit !== 't') {
+                        this.is_allow_equal = true;
+                    } else {
+                        this.is_allow_equal = false;
+                    }
+                }
+            }
+        } else {
+            this.is_allow_equal = false;
+        }
+
+        console.log(this.is_allow_equal); //eslint-disable-line
     }
 
     @action.bound

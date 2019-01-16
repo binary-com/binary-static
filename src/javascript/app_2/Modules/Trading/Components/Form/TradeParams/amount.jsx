@@ -19,10 +19,10 @@ const Amount = ({
     basis_list,
     currencies_list,
     currency,
+    is_allow_equal,
     is_minimized,
     is_nativepicker,
     is_single_currency,
-    is_allow_equal,
     onChange,
     validation_errors,
 }) => {
@@ -76,7 +76,7 @@ const Amount = ({
                     value={amount}
                 />
             </div>
-            {is_allow_equal &&
+            {!!is_allow_equal &&
                 <div className='allow-equals'>
                     <InputField
                         type='checkbox'
@@ -101,6 +101,7 @@ Amount.propTypes = {
     basis_list        : MobxPropTypes.arrayOrObservableArray,
     currencies_list   : MobxPropTypes.observableObject,
     currency          : PropTypes.string,
+    is_allow_equal    : PropTypes.bool,
     is_minimized      : PropTypes.bool,
     is_nativepicker   : PropTypes.bool,
     is_single_currency: PropTypes.bool,
