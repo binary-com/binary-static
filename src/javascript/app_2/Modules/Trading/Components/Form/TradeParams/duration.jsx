@@ -9,6 +9,7 @@ import Datepicker               from 'App/Components/Form/DatePicker';
 import Dropdown                 from 'App/Components/Form/DropDown';
 import Fieldset                 from 'App/Components/Form/fieldset.jsx';
 import InputField               from 'App/Components/Form/input_field.jsx';
+import RangeSlider              from 'App/Components/Form/RangeSlider';
 import TimePicker               from 'App/Components/Form/time_picker.jsx';
 import {
     convertDurationLimit,
@@ -129,6 +130,14 @@ const Duration = ({
             {expiry_type === 'duration' ?
                 <React.Fragment>
                     <div className='duration-container'>
+                        <RangeSlider
+                            min={1}
+                            max={10}
+                            steps={1}
+                            name='duration'
+                            value={duration}
+                            onChange={onChange}
+                        />
                         <Dropdown
                             list={duration_units_list}
                             value={duration_unit}

@@ -33,6 +33,7 @@ const RangeSlider = ({
                     steps={steps}
                     onChange={handleChange}
                     tabIndex='0'
+                    value={value}
                 />
             </label>
             <div className='range-slider__label'>
