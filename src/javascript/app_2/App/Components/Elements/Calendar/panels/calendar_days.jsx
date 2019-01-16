@@ -5,6 +5,10 @@ import { toMoment }       from 'Utils/Date';
 import CalendarPanelTypes from './types';
 
 const getDays = ({ calendar_date, date_format, max_date, min_date, start_date, onClick, selected_date }) => {
+    // adjust Calendar week by 1 day so that Calendar week starts on Monday
+    // change to zero to set Calendar week to start on Sunday
+    const day_offset = 1;
+
     const dates = [];
     const days  = [];
     const moment_today       = toMoment().startOf('day');
@@ -12,8 +16,8 @@ const getDays = ({ calendar_date, date_format, max_date, min_date, start_date, o
     const num_of_days        = moment_cur_date.daysInMonth() + 1;
     const moment_month_start = moment_cur_date.clone().startOf('month');
     const moment_month_end   = moment_cur_date.clone().endOf('month');
-    const first_day          = moment_month_start.day();
-    const last_day           = moment_month_end.day();
+    const first_day          = moment_month_start.day() - day_offset;
+    const last_day           = moment_month_end.day() - day_offset;
     const moment_min_date    = toMoment(min_date);
     const moment_max_date    = toMoment(max_date);
     const moment_selected    = toMoment(selected_date);
@@ -58,7 +62,7 @@ const getDays = ({ calendar_date, date_format, max_date, min_date, start_date, o
     return days;
 };
 
-const week_headers = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
+const week_headers = ['M', 'T', 'W', 'T', 'F', 'S', 'S'];
 
 export const CalendarDays = (props) => {
     const days = getDays(props).map(day => day);
