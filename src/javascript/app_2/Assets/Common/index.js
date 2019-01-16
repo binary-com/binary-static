@@ -1,5 +1,6 @@
 export * from './icon_arrow.jsx';
 export * from './icon_back.jsx';
+export * from './icon_calendar_today.jsx';
 export * from './icon_calendar.jsx';
 export * from './icon_chevron_double_left.jsx';
 export * from './icon_chevron_double_right.jsx';

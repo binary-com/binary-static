@@ -14,7 +14,11 @@
         border-top: 1px solid $COLOR_GRAY;
         display: grid;
         align-items: center;
+        position: relative;
 
+        &__extra {
+            padding: 8px;
+        }
         &__extra + &__btn {
             border-top: 1px solid $COLOR_GRAY;
             margin: 0 -12px;
@@ -29,6 +33,15 @@
                 line-height: 1.5;
                 font-size: 12px;
                 font-weight: bold;
+            }
+        }
+        &__icon {
+            position: absolute;
+            top: 22%;
+            right: 5%;
+
+            &--today:hover {
+                cursor: pointer;
             }
         }
     }
@@ -165,6 +178,9 @@
         &__footer {
             &__btn {
                 color: $COLOR_BRANDBLUE_40;
+            }
+            &__icon path {
+                stroke: $COLOR_WHITE;
             }
         }
         &__body {
