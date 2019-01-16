@@ -4,12 +4,13 @@ import {
     IconArrow,
     IconCalendar,
     IconClear }        from 'Assets/Common';
+import InputField      from 'App/Components/Form/input_field.jsx';
 import {
     daysFromTodayTo,
     formatDate,
     isDateValid,
     toMoment }         from 'Utils/Date';
-import DatePickerInput from './date_picker_input.jsx';
+import { localize }    from '_common/localize';
 import Calendar        from '../../Elements/Calendar';
 
 class DatePicker extends React.PureComponent {
@@ -143,17 +144,19 @@ class DatePicker extends React.PureComponent {
                 onMouseEnter={this.onMouseEnter}
                 onMouseLeave={this.onMouseLeave}
                 data-value={this.state.value || undefined}
-                name={this.props.name}
             >
-                <DatePickerInput
-                    class_name='datepicker__input'
-                    mode={this.props.mode}
-                    name={this.props.name}
-                    placeholder={this.props.placeholder}
+                <InputField
+                    error_messages={this.props.validation_errors}
+                    type='text'
+                    className='datepicker__input'
+                    placeholder={this.props.placeholder
+                        || (this.props.mode === 'duration' ? localize('Select a duration') : localize('Select date'))}
                     onClick={this.handleVisibility}
                     onChange={this.props.is_read_only ? undefined : this.onChangeInput}
                     is_read_only={this.props.is_read_only}
                     value={this.state.value}
+                    name={this.props.name}
+                    data-tip={false}
                 />
                 <IconCalendar
                     className={classNames('datepicker__input__icon datepicker__input__icon--calendar', {
@@ -164,7 +167,7 @@ class DatePicker extends React.PureComponent {
                     className={classNames('datepicker__input__icon datepicker__input__icon--clear', {
                         'datepicker__input__icon--is-hidden': !this.state.is_clear_btn_visible,
                     })}
-                    onClick={this.clearDatePickerInput}
+                    onClick={this.state.is_clear_btn_visible ? this.clearDatePickerInput : undefined}
                 />
                 <div
                     className={classNames('datepicker__picker', {
@@ -189,7 +192,6 @@ DatePicker.defaultProps = {
 };
 
 DatePicker.propTypes = {
-    ...DatePickerInput.propTypes,
     ...Calendar.propTypes,
 };
 
