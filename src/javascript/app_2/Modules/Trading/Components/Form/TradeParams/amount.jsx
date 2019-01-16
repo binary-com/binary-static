@@ -79,12 +79,13 @@ const Amount = ({
             {!!is_allow_equal &&
                 <div className='allow-equals'>
                     <InputField
-                        type='checkbox'
+                        id='allow_equals'
                         name='contract_type'
-                        value='is_equal'
                         onChange={onChange}
+                        value='is_equal'
+                        type='checkbox'
                     />
-                    <label>{localize('Allow equals')}</label>
+                    <label htmlFor='allow_equals'>{localize('Allow equals')}</label>
                     <Tooltip icon='info' message={localize('Win payout if exit spot is also equal to entry spot.')} alignment='left' />
                 </div>
             }

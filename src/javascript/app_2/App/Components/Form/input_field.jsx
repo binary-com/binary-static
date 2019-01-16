@@ -14,6 +14,7 @@ const InputField = ({
     error_messages,
     fractional_digits,
     helper,
+    id,
     is_disabled,
     is_float,
     is_incrementable,
@@ -97,6 +98,7 @@ const InputField = ({
             disabled={is_disabled}
             data-for={`error_tooltip_${name}`}
             data-tip
+            id={id}
             maxLength={fractional_digits ? max_length + fractional_digits + 1 : max_length}
             name={name}
             onKeyDown={is_incrementable ? onKeyPressed : undefined}
@@ -156,6 +158,7 @@ InputField.propTypes = {
     error_messages   : MobxPropTypes.arrayOrObservableArray,
     fractional_digits: PropTypes.number,
     helper           : PropTypes.string,
+    id               : PropTypes.string,
     is_disabled      : PropTypes.string,
     is_float         : PropTypes.bool,
     is_incrementable : PropTypes.bool,
