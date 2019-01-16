@@ -29,16 +29,13 @@ const DigitDisplay = (() => {
                     .append($('<strong />', { class: 'gr-6', text: localize('Spot Time (GMT)') }))))
             .append($('<div />', { class: 'digit-ticker invisible', id: 'digit_ticker_container' }));
 
-        if (!DigitTicker.isBarrierMissing(contract.contract_type, contract.barrier)) {
-            DigitTicker.init(
-                'digit_ticker_container',
-                contract.contract_type,
-                contract.barrier,
-                contract.tick_count,
-                contract.status
-            );
-        }
-
+        DigitTicker.init(
+            'digit_ticker_container',
+            contract.contract_type,
+            contract.shortcode,
+            contract.tick_count,
+            contract.status
+        );
         const request = {
             ticks_history: contract.underlying,
             start        : contract.date_start,
@@ -63,6 +60,7 @@ const DigitDisplay = (() => {
             spot,
             time,
         });
+
         const csv_spot = addComma(spot);
 
         $container
@@ -74,8 +72,9 @@ const DigitDisplay = (() => {
         DigitTicker.update(
             tick_count,
             {
-                quote        : spot,
-                contract_type: contract.contract_type,
+                quote      : spot,
+                epoch      : contract.current_spot,
+                date_expiry: contract.date_expiry,
             }
         );
     };

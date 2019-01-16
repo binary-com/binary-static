@@ -1,5 +1,6 @@
 const DigitTicker = (() => {
-    let el_container,
+    let barrier,
+        el_container,
         el_peek,
         el_peek_box,
         el_mask,
@@ -9,25 +10,18 @@ const DigitTicker = (() => {
         current_spot;
     let style_offset_correction = 5;
 
-    let is_lazy_numbers = false;
-
     const array_of_digits         = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-    const isBarrierMissing = (contract_type, barrier) => contract_type !== 'DIGITEVEN' && contract_type !== 'DIGITODD' && !barrier;
-
-    const init = (container_id, contract_type, barrier, tick_count, status = 'open') => {
-        if (isBarrierMissing(contract_type, barrier)) {
-            is_lazy_numbers = true;
-        }
+    const init = (container_id, contract_type, shortcode, tick_count, status = 'open') => {
         contract_status      = status;
         total_tick_count     = tick_count;
         type                 = contract_type;
         current_spot         = '-';
         el_container         = document.querySelector(`#${container_id}`);
+
+        setBarrierFromShortcode(type, shortcode);
         populateContainer(el_container);
-        if (!is_lazy_numbers) {
-            highlightWinningNumbers(getWinningNumbers(contract_type, barrier));
-        }
+        highlightWinningNumbers(getWinningNumbers(contract_type, barrier));
         observeResize();
     };
 
@@ -107,16 +101,16 @@ const DigitTicker = (() => {
     };
 
     // Detect winning numbers against the barrier with the given contract type.
-    const getWinningNumbers = (contract_type, barrier) => {
+    const getWinningNumbers = (contract_type, spot) => {
         switch (contract_type) {
             case 'DIGITOVER':
-                return array_of_digits.filter(digit => +digit > +barrier);
+                return array_of_digits.filter(digit => +digit > +spot);
             case 'DIGITUNDER':
-                return array_of_digits.filter(digit => +digit < +barrier);
+                return array_of_digits.filter(digit => +digit < +spot);
             case 'DIGITMATCH':
-                return array_of_digits.filter(digit => +digit === +barrier);
+                return array_of_digits.filter(digit => +digit === +spot);
             case 'DIGITDIFF':
-                return array_of_digits.filter(digit => +digit !== +barrier);
+                return array_of_digits.filter(digit => +digit !== +spot);
             case 'DIGITODD':
                 return array_of_digits.filter(digit => +digit % 2 !== 0);
             case 'DIGITEVEN':
@@ -160,11 +154,15 @@ const DigitTicker = (() => {
     };
 
     const markDigitAsWon = (digit) => {
-        el_container.querySelector(`.digit-${digit}`).classList.add('digit-won');
+        if (el_container && el_container.querySelector(`.digit-${digit}`)) {
+            el_container.querySelector(`.digit-${digit}`).classList.add('digit-won');
+        }
     };
 
     const markDigitAsLost = (digit) => {
-        el_container.querySelector(`.digit-${digit}`).classList.add('digit-lost');
+        if (el_container && el_container.querySelector(`.digit-${digit}`)) {
+            el_container.querySelector(`.digit-${digit}`).classList.add('digit-lost');
+        }
     };
 
     const markAsWon = () => {
@@ -183,11 +181,17 @@ const DigitTicker = (() => {
         el_mask     = el_peek_box.querySelector('.peek-box > .mask');
     };
 
-    const update = (current_tick_count, { quote, epoch, barrier }) => {
-        if (!isBarrierMissing(type, barrier) && is_lazy_numbers) {
-            highlightWinningNumbers(getWinningNumbers(type, barrier));
-            is_lazy_numbers = false;
+    const isBarrierMissing = (contract_type, bar) => !/digit(even|odd)/i.test(type) && !bar;
+
+    const setBarrierFromShortcode = (contract_type, shortcode) => {
+        barrier = '';
+        if (!/^(digiteven|digitodd)_/i.test(shortcode)) {
+            const arr_shortcode = shortcode.split('_');
+            barrier = arr_shortcode[arr_shortcode.length - 2];
         }
+    };
+
+    const update = (current_tick_count, { quote, epoch }) => {
         setElements(epoch);
         el_container.classList.remove('invisible');
         adjustBoxSizes();

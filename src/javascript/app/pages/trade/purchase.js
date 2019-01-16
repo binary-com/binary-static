@@ -1,5 +1,3 @@
-import { addComma } from '../../../_common/base/currency_base';
-
 const moment                   = require('moment');
 const Contract                 = require('./contract');
 const getLookBackFormula       = require('./lookback').getFormula;
@@ -50,7 +48,7 @@ const Purchase = (() => {
                     parseFloat(this_quote_el.innerText.replace(/,+/, '')),
                     700,
                     this_quote_el,
-                    (content) => `<div class='quote'>${addComma(content).replace(/\d$/, makeBold)}</div>`,
+                    (content) => `<div class='quote'>${content.replace(/\d$/, makeBold)}</div>`,
                 );
             }
         } else {
@@ -164,6 +162,7 @@ const Purchase = (() => {
                 selected_tick_number: arr_shortcode[arr_shortcode.length - 1],
                 winning_tick_quote  : '',
                 winning_tick_number : '',
+                exit_tick_time      : false,
             };
 
             if (has_chart) {
@@ -185,8 +184,8 @@ const Purchase = (() => {
             }
         }
 
-        if (tick_config.is_digit && !DigitTicker.isBarrierMissing(passthrough.contract_type, passthrough.barrier)) {
-            DigitTicker.init('digit_ticker_table', passthrough.contract_type, passthrough.barrier, passthrough.duration, status);
+        if (tick_config.is_digit && show_chart) {
+            DigitTicker.init('digit_ticker_table', passthrough.contract_type, receipt.shortcode, passthrough.duration, status);
         } else {
             DigitTicker.remove();
         }
@@ -240,10 +239,13 @@ const Purchase = (() => {
                     status = contract.status;
                     profit_value = contract.profit;
                     TickDisplay.setStatus(contract);
-                    if (contract.exit_tick_time && /^digit/i.test(contract.contract_type)) {
-                        digitShowExitTime(contract.status, contract.exit_tick);
+                    if (/^digit/i.test(contract.contract_type)) {
+                        if (contract.status !== 'open') {
+                            tick_config.exit_tick_time = +contract.exit_tick_time;
+                            digitShowExitTime(contract.status, contract.exit_tick);
+                        }
                     }
-                    if (contract.exit_tick_time && +contract.exit_tick_time < contract.date_expiry) {
+                    if (!/^digit/i.test(contract.contract_type) && contract.exit_tick_time && +contract.exit_tick_time < contract.date_expiry) {
                         TickDisplay.updateChart({ is_sold: true }, contract);
                     }
 
@@ -306,7 +308,6 @@ const Purchase = (() => {
         const spots2  = Tick.spots();
         const epoches = Object.keys(spots2).sort((a, b) => a - b);
         CommonFunctions.elementTextContent(spots, '');
-
         for (let s = 0; s < epoches.length; s++) {
             const tick_d = {
                 epoch: epoches[s],
@@ -348,10 +349,12 @@ const Purchase = (() => {
                     fragment.appendChild(el2);
                 }
                 const tick = (tick_config.is_tick_high || tick_config.is_tick_low) ?
-                    tick_d.quote : `<div class='quote'>${(addComma(tick_d.quote)).replace(/\d$/, makeBold)}</div>`;
+                    tick_d.quote : `<div class='quote'>${tick_d.quote.replace(/\d$/, makeBold)}</div>`;
                 const el3  = createElement('div', { class: 'col' });
                 CommonFunctions.elementInnerHtml(el3, tick);
-                if (tick_config.is_digit) {
+
+                if (tick_config.is_digit && tick_config.exit_tick_time === false) {
+                    DigitTicker.update(current_tick_count, tick_d);
                     const el_epoch = document.createElement('div');
                     el_epoch.className = 'digit-tick-epoch';
                     el_epoch.style.right = (el3.offsetWidth - tick.offsetWidth) / 2;
@@ -364,13 +367,7 @@ const Purchase = (() => {
 
                     replaceElement(fragment, el3);
                     replaceElement(spots, fragment);
-
-                    DigitTicker.update(current_tick_count, {
-                        quote        : tick_d.quote,
-                        epoch        : tick_d.epoch,
-                        contract_type: tick_config.contract_type,
-                    });
-                } else {
+                } else if (!tick_config.is_digit) {
                     fragment.appendChild(el3);
                     spots.appendChild(fragment);
                 }
@@ -400,15 +397,17 @@ const Purchase = (() => {
         const el_container = CommonFunctions.getElementById('contract_purchase_spots');
         const el_epoch = Array.from(el_container.querySelectorAll('.digit-tick-epoch')).pop();
         const adjustment = 5;
-        el_epoch.classList.add('is-visible');
-        el_epoch.setAttribute('style', `position: absolute; right: ${((el_epoch.parentElement.offsetWidth - el_epoch.nextSibling.offsetWidth) / 2) + adjustment}px`);
-        if (contract_status === 'won') {
-            DigitTicker.markAsWon();
-            DigitTicker.markDigitAsWon(last_tick_quote.slice(-1));
-        }
-        if (contract_status === 'lost') {
-            DigitTicker.markAsLost();
-            DigitTicker.markDigitAsLost(last_tick_quote.slice(-1));
+        if (el_epoch && el_epoch.classList) {
+            el_epoch.classList.add('is-visible');
+            el_epoch.setAttribute('style', `position: absolute; right: ${((el_epoch.parentElement.offsetWidth - el_epoch.nextSibling.offsetWidth) / 2) + adjustment}px`);
+            if (contract_status === 'won') {
+                DigitTicker.markAsWon();
+                DigitTicker.markDigitAsWon(last_tick_quote.slice(-1));
+            }
+            if (contract_status === 'lost') {
+                DigitTicker.markAsLost();
+                DigitTicker.markDigitAsLost(last_tick_quote.slice(-1));
+            }
         }
     };
 
