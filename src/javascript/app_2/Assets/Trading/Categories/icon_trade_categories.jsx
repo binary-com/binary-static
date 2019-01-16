@@ -102,13 +102,13 @@ const IconTradeCategory = ({ category }) => {
                         <div className='category-wrapper'>
                             <IconTradeType
                                 className='category-type'
-                                type='digitodd'
+                                type='digiteven'
                             />
                         </div>
                         <div className='category-wrapper'>
                             <IconTradeType
                                 className='category-type'
-                                type='digiteven'
+                                type='digitodd'
                             />
                         </div>
                     </React.Fragment>

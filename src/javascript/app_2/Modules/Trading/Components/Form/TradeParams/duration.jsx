@@ -10,7 +10,9 @@ import Dropdown                 from 'App/Components/Form/DropDown';
 import Fieldset                 from 'App/Components/Form/fieldset.jsx';
 import InputField               from 'App/Components/Form/input_field.jsx';
 import TimePicker               from 'App/Components/Form/time_picker.jsx';
-import { convertDurationUnit }  from 'Stores/Modules/Trading/Helpers/duration';
+import {
+    convertDurationLimit,
+    convertDurationUnit }       from 'Stores/Modules/Trading/Helpers/duration';
 import {
     isTimeValid,
     toMoment }                  from 'Utils/Date';
@@ -24,12 +26,13 @@ const expiry_list = [
 ];
 
 let now_date,
-    min_date_duration,
     max_date_duration,
     min_date_expiry,
     min_day,
     max_day,
-    start_date_time;
+    start_date_time,
+    max_duration,
+    min_duration;
 
 const Duration = ({
     contract_expiry_type,
@@ -50,6 +53,8 @@ const Duration = ({
     validation_errors,
 }) => {
     if (duration_min_max[contract_expiry_type]) {
+        min_duration = convertDurationLimit(+duration_min_max[contract_expiry_type].min, duration_unit);
+        max_duration = convertDurationLimit(+duration_min_max[contract_expiry_type].max, duration_unit);
         const moment_now  = toMoment(server_time);
         const new_min_day = convertDurationUnit(duration_min_max[contract_expiry_type].min, 's', 'd');
         const new_max_day = convertDurationUnit(duration_min_max[contract_expiry_type].max, 's', 'd');
@@ -62,7 +67,6 @@ const Duration = ({
             const moment_today = moment_now.clone().startOf('day');
 
             now_date          = moment_now.clone();
-            min_date_duration = moment_today.clone().add(min_day || 1, 'd');
             max_date_duration = moment_today.clone().add(max_day || 365, 'd');
             min_date_expiry   = moment_today.clone();
         }
@@ -95,9 +99,6 @@ const Duration = ({
             </div>
         );
     }
-    const datepicker_footer = min_day > 1 ?
-        localize('The minimum duration is [_1] days', [min_day]) :
-        localize('The minimum duration is [_1] day',  [min_day]);
 
     const has_end_time = expiry_list.find(expiry => expiry.value === 'endtime');
     if (duration_units_list.length === 1 && duration_unit === 't') {
@@ -128,34 +129,23 @@ const Duration = ({
             {expiry_type === 'duration' ?
                 <React.Fragment>
                     <div className='duration-container'>
-                        {duration_unit === 'd' && !is_nativepicker ?
-                            <Datepicker
-                                name='duration'
-                                min_date={min_date_duration}
-                                max_date={max_date_duration}
-                                mode='duration'
-                                onChange={onChange}
-                                value={duration || min_day}
-                                is_read_only
-                                is_clearable={false}
-                                is_nativepicker={is_nativepicker}
-                                footer={datepicker_footer}
-                            /> :
-                            <InputField
-                                type='number'
-                                name='duration'
-                                value={duration}
-                                onChange={onChange}
-                                is_nativepicker={is_nativepicker}
-                                error_messages = {validation_errors.duration || []}
-                            />
-                        }
                         <Dropdown
                             list={duration_units_list}
                             value={duration_unit}
                             name='duration_unit'
                             onChange={onChange}
                             is_nativepicker={is_nativepicker}
+                        />
+                        <InputField
+                            type='number'
+                            max_value={max_duration}
+                            min_value={min_duration}
+                            name='duration'
+                            value={duration}
+                            onChange={onChange}
+                            is_nativepicker={is_nativepicker}
+                            is_incrementable={true}
+                            error_messages = {validation_errors.duration || []}
                         />
                     </div>
                 </React.Fragment> :
