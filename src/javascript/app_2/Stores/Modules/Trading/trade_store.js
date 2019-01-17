@@ -78,8 +78,9 @@ export default class TradeStore extends BaseStore {
     @observable last_digit = 5;
 
     // Purchase
-    @observable proposal_info = {};
-    @observable purchase_info = {};
+    @observable proposal_info        = {};
+    @observable proposal_info_req_id = 0;
+    @observable purchase_info        = {};
 
     // Chart
     chart_id = 1;
@@ -270,8 +271,9 @@ export default class TradeStore extends BaseStore {
             }
 
             this.updateStore({ // disable purchase button(s), clear contract info
-                is_purchase_enabled: false,
-                proposal_info      : {},
+                is_purchase_enabled : false,
+                proposal_info       : {},
+                proposal_info_req_id: 0,
             });
 
             if (!this.smart_chart.is_contract_mode) {
@@ -307,8 +309,9 @@ export default class TradeStore extends BaseStore {
         const requests = createProposalRequests(this);
 
         if (Object.values(this.validation_errors).some(e => e.length)) {
-            this.proposal_info = {};
-            this.purchase_info = {};
+            this.proposal_info        = {};
+            this.proposal_info_req_id = 0;
+            this.purchase_info        = {};
             WS.forgetAll('proposal');
             return;
         }
@@ -323,9 +326,10 @@ export default class TradeStore extends BaseStore {
                 ],
             );
 
-            this.proposal_requests = requests;
-            this.proposal_info     = {};
-            this.purchase_info     = {};
+            this.proposal_requests    = requests;
+            this.proposal_info        = {};
+            this.proposal_info_req_id = 0;
+            this.purchase_info        = {};
 
             WS.forgetAll('proposal').then(() => {
                 Object.keys(this.proposal_requests).forEach((type) => {
@@ -342,6 +346,8 @@ export default class TradeStore extends BaseStore {
             ...this.proposal_info,
             [contract_type]: getProposalInfo(this, response),
         };
+
+        this.proposal_info_req_id = response.echo_req.req_id;
 
         if (!this.smart_chart.is_contract_mode) {
             setChartBarrier(this.smart_chart, response, this.onChartBarrierChange);

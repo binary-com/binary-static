@@ -29,6 +29,7 @@ const Purchase = ({
     togglePurchaseLock,
     resetPurchase,
     proposal_info,
+    proposal_info_req_id,
     purchase_info,
     trade_types,
 }) => (
@@ -46,17 +47,17 @@ const Purchase = ({
                 wrapperClassName='submit-section'
             >
                 <React.Fragment>
-                    <div className='btn-purchase-rec' />
-                    <div className='btn-purchase-tri' />
-                    <div className='trade-type-container'>
-                        <div className='trade-type'>
+                    <div className='btn-purchase__rec' />
+                    <div className='btn-purchase__tri' />
+                    <div className='btn-purchase__content'>
+                        <div className='btn-purchase__content__trade-type'>
                             <IconTradeType type={type.toLowerCase()} />
                             <span>{localize('[_1]', trade_types[type])}</span>
                         </div>
                     </div>
-                    <div className='info-container'>
-                        <div className='return'>{info.returns}</div>
-                        <div className='profit'>
+                    <div className='btn-purchase__info'>
+                        <div className='btn-purchase__info__return'>{info.returns}</div>
+                        <div className='btn-purchase__info__profit'>
                             <Money amount={info.payout} currency={currency} />
                         </div>
                     </div>
@@ -65,7 +66,7 @@ const Purchase = ({
         );
 
         const is_purchase_error = (!isEmptyObject(purchase_info) && purchase_info.echo_req.buy === info.id);
-        const contract_basis = (basis_list.find(o => o.value !== basis));
+        const contract_basis    = (basis_list.find(o => o.value !== basis));
 
         return (
             <Fieldset
@@ -96,6 +97,7 @@ const Purchase = ({
                             contract_type={type}
                             currency={currency}
                             proposal_info={info}
+                            proposal_info_req_id={proposal_info_req_id}
                         />
                         {is_purchase_confirm_on ?
                             <PopConfirm
@@ -129,6 +131,7 @@ Purchase.propTypes = {
     onClickPurchase           : PropTypes.func,
     onHoverPurchase           : PropTypes.func,
     proposal_info             : PropTypes.object,
+    proposal_info_req_id      : PropTypes.number,
     purchase_info             : PropTypes.object,
     resetPurchase             : PropTypes.func,
     togglePurchaseLock        : PropTypes.func,
@@ -148,6 +151,7 @@ export default connect(
         onHoverPurchase           : modules.trade.onHoverPurchase,
         resetPurchase             : modules.trade.requestProposal,
         proposal_info             : modules.trade.proposal_info,
+        proposal_info_req_id      : modules.trade.proposal_info_req_id,
         purchase_info             : modules.trade.purchase_info,
         trade_types               : modules.trade.trade_types,
         is_purchase_confirm_on    : ui.is_purchase_confirm_on,

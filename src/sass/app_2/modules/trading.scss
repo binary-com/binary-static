@@ -428,7 +428,7 @@
                 display: grid;
                 grid-template-columns: 1fr;
 
-                button.btn-purchase {
+                .btn-purchase {
                     position: relative;
                     background-color: $COLOR_DARK_GREEN;
                     overflow: hidden;
@@ -439,7 +439,7 @@
                     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
                     margin-top: 5px;
 
-                    .info-container {
+                    &__info {
                         width: 30%;
                         float: right;
                         text-align: right;
@@ -451,20 +451,19 @@
                             display: flex;
                             flex-grow: 1;
                             justify-content: flex-end;
-
-                            &.return {
-                                font-size: 14px;
-                                align-items: flex-end;
-                                font-weight: bold;
-                            }
-                            &.profit {
-                                font-size: 10px;
-                                align-items: flex-start;
-                                font-weight: bold;
-                            }
+                        }
+                        &__return {
+                            font-size: 14px;
+                            align-items: flex-end;
+                            font-weight: bold;
+                        }
+                        &__profit {
+                            font-size: 10px;
+                            align-items: flex-start;
+                            font-weight: bold;
                         }
                     }
-                    .trade-type-container {
+                    &__content {
                         max-width: 50%;
                         float: left;
                         text-align: left;
@@ -472,7 +471,7 @@
                         display: flex;
                         flex-direction: column;
 
-                        .trade-type {
+                        &__trade-type {
                             position: relative;
                             display: flex;
                             flex-grow: 1;
@@ -487,7 +486,7 @@
                         background: none;
                         position: relative;
                     }
-                    .btn-purchase-rec {
+                    &__rec {
                         width: 60%;
                         height: 56px;
                         position: absolute;
@@ -500,7 +499,7 @@
                         float: left;
                         text-align: left;
                     }
-                    .btn-purchase-tri {
+                    &__tri {
                         width: 0;
                         height: 0;
                         border-style: solid;
@@ -552,24 +551,24 @@
                         opacity: 1;
                     }
                 }
-            }
-            span.tooltip:before {
-                background: $COLOR_DARK_BLUE;
-                color: $COLOR_WHITE;
-                box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
-                max-width: unset;
-                width: 290px;
-                white-space: normal;
-                margin-right: 32px;
-                font-size: 12px;
-                padding-left: 40px;
-            }
-            span.tooltip:after {
-                border-left-color: $COLOR_DARK_BLUE;
-                margin-right: 20px;
-            }
-            span.tooltip:hover:after, span.tooltip:hover:before {
-                opacity: 1;
+                &:before {
+                    background: $COLOR_DARK_BLUE;
+                    color: $COLOR_WHITE;
+                    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+                    max-width: unset;
+                    width: 290px;
+                    white-space: normal;
+                    margin-right: 32px;
+                    font-size: 12px;
+                    padding-left: 40px;
+                }
+                &:after {
+                    border-left-color: $COLOR_DARK_BLUE;
+                    margin-right: 20px;
+                }
+                &:hover:after, &:hover:before {
+                    opacity: 1;
+                }
             }
             &:not(:only-child) {
                 &:nth-last-child(2) {
