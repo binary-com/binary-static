@@ -1,11 +1,10 @@
 // Range Slider Thumb styling is set here
-@mixin thumbStyle {
+@mixin thumbStyle() {
     appearance: none;
     width: 0.75rem;
     height: 0.75rem;
     border-radius: 100%;
     border: 0;
-    background: $COLOR_BLUE;
     cursor: pointer;
     transition: box-shadow 0.5s;
     box-shadow: 0 0 0 0px rgba(0, 0, 0, 0);
@@ -42,10 +41,12 @@
         // Range Handle Thumb - Chrome / Webkit based browsers
         &::-webkit-slider-thumb {
             @include thumbStyle();
+            background: $COLOR_BLUE;
         }
         // Range Handle Thumb - Firefox / Gecko based browsers
         &::-moz-range-thumb {
             @include thumbStyle();
+            background: $COLOR_BLUE;
         }
         &:hover, &:focus, &:active {
             border: 0;
@@ -76,16 +77,16 @@
             box-shadow: 0 0 0 0px rgba(0, 0, 0, 0);
             cursor: pointer;
 
-            &:hover:not(.active) {
+            &:hover:not(.range-slider__ticks_tick--active) {
                 background: $COLOR_BLUE;
                 border-color: $COLOR_BLUE;
                 box-shadow: 0 0 0 6px rgba(0, 0, 0, 0.3);
             }
-            &.active, &.marked {
+            &--active, &--marked {
                 background: $COLOR_BLUE;
                 border-color: $COLOR_BLUE;
             }
-            &:hover.active {
+            &--active {
                 visibility: hidden;
                 pointer-events: none;
             }
@@ -119,6 +120,38 @@
         }
         &--current {
             text-align: center;
+        }
+    }
+}
+
+.theme-wrapper.dark {
+    .range-slider {
+        &__range {
+            background: $COLOR_BRANDBLUE_85 !important;
+
+            &::-webkit-slider-thumb {
+                background: $COLOR_WHITE;
+            }
+            &::-moz-range-thumb {
+                background: $COLOR_WHITE;
+            }
+        }
+        &__ticks__tick {
+            border: 2px solid $COLOR_BRANDBLUE_85;
+            background: $COLOR_BRANDBLUE_85;
+
+            &:hover:not(.range-slider__ticks_tick--active) {
+                background: $COLOR_WHITE;
+                border-color: $COLOR_WHITE;
+                box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.3);
+            }
+            &--active, &--marked {
+                background: $COLOR_WHITE;
+                border-color: $COLOR_WHITE;
+            }
+        }
+        &__line {
+            background: $COLOR_WHITE;
         }
     }
 }

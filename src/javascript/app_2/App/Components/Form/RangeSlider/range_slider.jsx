@@ -25,6 +25,10 @@ const RangeSlider = ({
         }
     };
 
+    const handleOnHover = (index) => {
+        if (index > value) console.log(index);
+    };
+
     const renderTickSteps = (ticks) => {
         const arr_ticks_el = [];
         for (let idx = 0; idx < (ticks) ; idx++) {
@@ -32,10 +36,11 @@ const RangeSlider = ({
                 <span
                     key={idx}
                     className={classNames('range-slider__ticks__tick', {
-                        'active': (idx + 1) === parseInt(value),
-                        'marked': (idx + 1) < parseInt(value),
+                        'range-slider__ticks__tick--active': (idx + 1) === parseInt(value),
+                        'range-slider__ticks__tick--marked': (idx + 1) < parseInt(value),
                     })}
                     onClick={(e) => handleClick(e, idx + 1)}
+                    onMouseEnter={() => handleOnHover(idx + 1)}
                 />);
         }
         return arr_ticks_el;
