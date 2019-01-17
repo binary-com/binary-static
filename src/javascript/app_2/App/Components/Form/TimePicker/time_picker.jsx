@@ -1,11 +1,12 @@
 import {
     observer,
-    PropTypes as MobxPropTypes }      from 'mobx-react';
-import PropTypes                      from 'prop-types';
-import React                          from 'react';
-import TimePickerDropdown             from './time_picker_dropdown.jsx';
+    PropTypes as MobxPropTypes } from 'mobx-react';
+import PropTypes                 from 'prop-types';
+import React                     from 'react';
+import TimePickerDropdown        from './time_picker_dropdown.jsx';
+import InputField                from './input_field.jsx';
 
-class TimePicker extends React.PureComponent {
+class TimePicker extends React.Component {
     constructor (props) {
         super(props);
         this.state = {
@@ -62,6 +63,7 @@ class TimePicker extends React.PureComponent {
             placeholder,
             start_date,
             sessions,
+            validation_errors,
         } = this.props;
         return (
             <div
@@ -79,10 +81,10 @@ class TimePicker extends React.PureComponent {
                         />
                         : (
                             <React.Fragment>
-                                <input
-                                    ref={this.saveRef}
+                                <InputField
+                                    error_messages={validation_errors}
                                     type='text'
-                                    readOnly
+                                    is_read_only
                                     id={`${prefix_class}-input`}
                                     className={`${prefix_class}-input ${this.state.is_open ? 'active' : ''}`}
                                     value={value}

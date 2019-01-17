@@ -4,8 +4,9 @@ import PropTypes                      from 'prop-types';
 import React                          from 'react';
 import { localize }                   from '_common/localize';
 import { isSessionAvailable }         from 'Stores/Modules/Trading/Helpers/start_date';
+import { toMoment }                   from 'Utils/Date';
 
-class TimePickerDropdown extends React.PureComponent {
+class TimePickerDropdown extends React.Component {
     constructor(props) {
         super(props);
         this.hours    = [...Array(24).keys()].map((a)=>`0${a}`.slice(-2));
@@ -39,7 +40,7 @@ class TimePickerDropdown extends React.PureComponent {
     }
 
     selectOption = (type, value, is_enabled = true) => {
-        if (is_enabled) {
+        if (is_enabled && this.props.value) {
             const [ prev_hour, prev_minute ] = this.props.value.split(':');
             if ((type === 'h' && value !== prev_hour) || (type === 'm' && value !== prev_minute)) {
                 const is_type_selected = type === 'h' ? 'is_hour_selected' : 'is_minute_selected';
@@ -59,8 +60,8 @@ class TimePickerDropdown extends React.PureComponent {
     };
 
     render() {
-        const { preClass, value, toggle, start_date, available_range } = this.props;
-        const start_moment       = moment(start_date * 1000 || undefined).utc();
+        const { preClass, value, toggle, start_date, sessions } = this.props;
+        const start_moment       = toMoment(start_date);
         const start_moment_clone = start_moment.clone().minute(0).second(0);
         const [ hour, minute ]   = value.split(':');
         return (
@@ -86,11 +87,7 @@ class TimePickerDropdown extends React.PureComponent {
                         <div className='list-container'>
                             {this.hours.map((h, key) => {
                                 start_moment_clone.hour(h);
-                                const is_enabled = isSessionAvailable(
-                                    available_range,
-                                    start_moment_clone,
-                                    start_moment,
-                                    true);
+                                const is_enabled = isSessionAvailable(sessions, start_moment_clone, start_moment, true);
                                 return (
                                     <div
                                         className={`list-item${hour === h ? ' selected' : ''}${is_enabled ? '' : ' disabled'}`}
@@ -111,10 +108,7 @@ class TimePickerDropdown extends React.PureComponent {
                         <div className='list-container'>
                             {this.minutes.map((mm, key) => {
                                 start_moment_clone.hour(hour).minute(mm);
-                                const is_enabled = isSessionAvailable(
-                                    available_range,
-                                    start_moment_clone,
-                                    start_moment);
+                                const is_enabled = isSessionAvailable(sessions, start_moment_clone, start_moment);
                                 return (
                                     <div
                                         className={`list-item${minute === mm ? ' selected' : ''}${is_enabled ? '' : ' disabled'}`}
@@ -133,15 +127,15 @@ class TimePickerDropdown extends React.PureComponent {
 }
 
 TimePickerDropdown.propTypes = {
-    available_range: MobxPropTypes.arrayOrObservableArray,
-    className      : PropTypes.string,
-    is_clearable   : PropTypes.bool,
-    onChange       : PropTypes.func,
-    preClass       : PropTypes.string,
-    start_date     : PropTypes.number,
-    toggle         : PropTypes.func,
-    value          : PropTypes.string,
-    value_split    : PropTypes.bool,
+    className   : PropTypes.string,
+    is_clearable: PropTypes.bool,
+    onChange    : PropTypes.func,
+    preClass    : PropTypes.string,
+    sessions    : MobxPropTypes.arrayOrObservableArray,
+    start_date  : PropTypes.number,
+    toggle      : PropTypes.func,
+    value       : PropTypes.string,
+    value_split : PropTypes.bool,
 };
 
 export default TimePickerDropdown;
