@@ -17,6 +17,8 @@ import {
     isTimeValid,
     toMoment }                  from 'Utils/Date';
 import ButtonToggleMenu         from 'App/Components/Form/button_toggle_menu.jsx';
+import { IconArrow }            from 'Assets/Common';
+
 /* TODO:
       1. disable days other than today and tomorrow if start date is forward starting
 */
@@ -116,13 +118,12 @@ const Duration = ({
 
     return (
         <Fieldset>
-            <AdvancedSimpleSwitch value={is_advanced_duration} onChange={onChange} />
             {
                 is_advanced_duration &&
                     <React.Fragment>
                         <ButtonToggleMenu
                             name='expiry_type'
-                            value={expiry_list}
+                            value={expiry_type}
                             onChange={onChange}
                             buttons_for={expiry_list}
                         />
@@ -209,6 +210,7 @@ const Duration = ({
                         }
                     </React.Fragment>
             }
+            <AdvancedSimpleSwitch value={is_advanced_duration} onChange={onChange} />
         </Fieldset>
     );
 };
@@ -219,9 +221,16 @@ const AdvancedSimpleSwitch = ({
 }) => {
     const toggleDurationMode = () => {
         onChange({ target: { value: 'duration', name: 'expiry_type' } });
+        onChange({ target: { value: 't', name: 'duration_unit' } });
         onChange({ target: { value: !value, name: 'is_advanced_duration' } });
     };
-    return <div onClick={toggleDurationMode}>Icon</div>;
+    const className = classNames('advanced-simple-switch__icon select-arrow', {
+        'advanced-simple-switch__icon--active': value,
+    });
+    return (
+        <div onClick={toggleDurationMode} className='advanced-simple-switch'>
+            <IconArrow className={className} />
+        </div>);
 };
 
 // ToDo: Refactor Duration.jsx and date_picker.jsx

@@ -313,6 +313,24 @@
             }
         }
     }
+    .advanced-simple-switch {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 32px;
+        margin-top: 10px;
+
+        &__icon {
+            transition: transform 0.2s ease;
+
+            &--active {
+                transform: rotate(180deg);
+            }
+        }
+        &:hover {
+            cursor: pointer;
+        }
+    }
     .inline-icon {
         pointer-events: none;
     }
