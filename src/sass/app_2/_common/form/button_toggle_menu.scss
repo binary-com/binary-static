@@ -19,10 +19,12 @@
         height: 32px;
         text-transform: capitalize;
 
-        &:hover {
+        &--active:not():hover {
             background: $COLOR_GRAY;
         }
         &--active {
+            font-weight: bold;
+            color: $COLOR_WHITE;
             background: $COLOR_DARK_GRAY;
         }
     }

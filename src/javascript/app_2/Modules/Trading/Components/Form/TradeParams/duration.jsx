@@ -115,100 +115,102 @@ const Duration = ({
     const endtime_container_class = classNames('endtime-container', {
         'has-time': is_same_day,
     });
-
+    const filterMenu = (arr) => {
+        if (arr.length === 1) return [];
+        if (!is_advanced_duration) return arr.filter(du => du.value === 't' || du.value === 'm');
+        return arr;
+    };
     return (
         <Fieldset>
-            {
-                is_advanced_duration &&
-                    <React.Fragment>
-                        <ButtonToggleMenu
-                            name='expiry_type'
-                            value={expiry_type}
-                            onChange={onChange}
-                            buttons_for={expiry_list}
-                        />
-                        {expiry_type === 'duration' ?
-                            <React.Fragment>
-                                <div className='duration-container'>
-                                    <Dropdown
-                                        list={duration_units_list}
-                                        value={duration_unit}
-                                        name='duration_unit'
+            { is_advanced_duration &&
+                <React.Fragment>
+                    <ButtonToggleMenu
+                        name='expiry_type'
+                        value={expiry_type}
+                        onChange={onChange}
+                        buttons_for={filterMenu(expiry_list)}
+                    />
+                    {expiry_type === 'duration' ?
+                        <React.Fragment>
+                            <div className='duration-container'>
+                                <Dropdown
+                                    list={duration_units_list}
+                                    value={duration_unit}
+                                    name='duration_unit'
+                                    onChange={onChange}
+                                    is_nativepicker={is_nativepicker}
+                                />
+                                <InputField
+                                    type='number'
+                                    max_value={max_duration}
+                                    min_value={min_duration}
+                                    name='duration'
+                                    value={duration}
+                                    onChange={onChange}
+                                    is_nativepicker={is_nativepicker}
+                                    is_incrementable={true}
+                                    error_messages = {validation_errors.duration || []}
+                                />
+                            </div>
+                        </React.Fragment> :
+                        <React.Fragment>
+                            <div className={endtime_container_class}>
+                                <Datepicker
+                                    name='expiry_date'
+                                    has_today_btn
+                                    min_date={min_date_expiry}
+                                    max_date={max_date_duration}
+                                    start_date={start_date}
+                                    onChange={onChange}
+                                    value={expiry_date}
+                                    is_read_only
+                                    is_clearable={false}
+                                    is_nativepicker={is_nativepicker}
+                                />
+                                {is_same_day &&
+                                    <TimePicker
                                         onChange={onChange}
-                                        is_nativepicker={is_nativepicker}
-                                    />
-                                    <InputField
-                                        type='number'
-                                        max_value={max_duration}
-                                        min_value={min_duration}
-                                        name='duration'
-                                        value={duration}
-                                        onChange={onChange}
-                                        is_nativepicker={is_nativepicker}
-                                        is_incrementable={true}
-                                        error_messages = {validation_errors.duration || []}
-                                    />
-                                </div>
-                            </React.Fragment> :
-                            <React.Fragment>
-                                <div className={endtime_container_class}>
-                                    <Datepicker
-                                        name='expiry_date'
-                                        has_today_btn
-                                        min_date={min_date_expiry}
-                                        max_date={max_date_duration}
-                                        start_date={start_date}
-                                        onChange={onChange}
-                                        value={expiry_date}
-                                        is_read_only
+                                        is_align_right
+                                        name='expiry_time'
+                                        value={expiry_time}
+                                        placeholder='12:00'
+                                        start_date={start_date_time}
+                                        sessions={sessions}
                                         is_clearable={false}
                                         is_nativepicker={is_nativepicker}
+                                        // validation_errors={validation_errors.end_time} TODO: add validation_errors for end time
                                     />
-                                    {is_same_day &&
-                                        <TimePicker
-                                            onChange={onChange}
-                                            is_align_right
-                                            name='expiry_time'
-                                            value={expiry_time}
-                                            placeholder='12:00'
-                                            start_date={start_date_time}
-                                            sessions={sessions}
-                                            is_clearable={false}
-                                            is_nativepicker={is_nativepicker}
-                                            // validation_errors={validation_errors.end_time} TODO: add validation_errors for end time
-                                        />
-                                    }
-                                </div>
-                            </React.Fragment>
-                        }
-                    </React.Fragment>
+                                }
+                            </div>
+                        </React.Fragment>
+                    }
+                </React.Fragment>
             }
-            {
-                !is_advanced_duration &&
-                    <React.Fragment>
-                        <ButtonToggleMenu
-                            value={duration_unit}
-                            name='duration_unit'
+            { !is_advanced_duration &&
+                <React.Fragment>
+                    <ButtonToggleMenu
+                        value={duration_unit}
+                        name='duration_unit'
+                        onChange={onChange}
+                        buttons_for={filterMenu(expiry_list)}
+                    />
+                    {duration_unit === 't' &&
+                        <span>Range slider</span>
+                    }
+                    {duration_unit !== 't' &&
+                        <InputField
+                            type='number'
+                            max_value={max_duration}
+                            min_value={min_duration}
+                            name='duration'
+                            value={duration}
                             onChange={onChange}
-                            buttons_for={duration_units_list.filter((du) => du.value === 't' || du.value === 'm')}
+                            is_nativepicker={is_nativepicker}
+                            is_incrementable={true}
+                            error_messages = {validation_errors.duration || []}
                         />
-                        {duration_unit === 't' &&
-                            <span>Range slider</span>
-                        }
-                        {duration_unit !== 't' &&
-                            <InputField
-                                type='number'
-                                max_value={max_duration}
-                                min_value={min_duration}
-                                name='duration'
-                                value={duration}
-                                onChange={onChange}
-                                is_nativepicker={is_nativepicker}
-                                is_incrementable={true}
-                                error_messages = {validation_errors.duration || []}
-                            />
-                        }
-                    </React.Fragment>
+                    }
+                </React.Fragment>
             }
             <AdvancedSimpleSwitch value={is_advanced_duration} onChange={onChange} />
         </Fieldset>
