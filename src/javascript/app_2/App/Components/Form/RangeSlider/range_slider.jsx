@@ -30,8 +30,10 @@ const RangeSlider = ({
         for (let idx = 0; idx < (ticks) ; idx++) {
             arr_ticks_el.push(
                 <span
+                    key={idx}
                     className={classNames('range-slider__ticks__tick', {
                         'active': (idx + 1) === parseInt(value),
+                        'marked': (idx + 1) < parseInt(value),
                     })}
                     onClick={(e) => handleClick(e, idx + 1)}
                 />);
@@ -57,6 +59,7 @@ const RangeSlider = ({
                 <div className='range-slider__ticks'>
                     {renderTickSteps(max)}
                 </div>
+                <div className='range-slider__line' style={{ width: `calc(${value * 10}% - 5px)` }} />
             </label>
             <div className='range-slider__caption'>
                 <span className='range-slider__caption--min'>
