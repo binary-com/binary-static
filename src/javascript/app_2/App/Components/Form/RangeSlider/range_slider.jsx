@@ -43,7 +43,7 @@ const RangeSlider = ({
 
     return (
         <div className={classNames('range-slider', className)}>
-            <label className='' htmlFor='range'>
+            <label htmlFor='range'>
                 <input
                     id='range'
                     className='range-slider__range'
