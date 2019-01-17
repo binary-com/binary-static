@@ -4,9 +4,9 @@ import {
 import PropTypes                 from 'prop-types';
 import React                     from 'react';
 import TimePickerDropdown        from './time_picker_dropdown.jsx';
-import InputField                from './input_field.jsx';
+import InputField                from '../input_field.jsx';
 
-class TimePicker extends React.Component {
+class TimePicker extends React.PureComponent {
     constructor (props) {
         super(props);
         this.state = {
@@ -61,8 +61,8 @@ class TimePicker extends React.Component {
             name,
             is_align_right,
             placeholder,
-            start_date,
-            sessions,
+            start_time,
+            end_time,
             validation_errors,
         } = this.props;
         return (
@@ -97,9 +97,8 @@ class TimePicker extends React.Component {
                                     toggle={this.toggleDropDown}
                                     onChange={this.handleChange}
                                     preClass={prefix_class}
-                                    start_date={start_date}
+                                    start_time={start_time}
                                     value={value}
-                                    sessions={sessions}
                                     is_clearable={this.props.is_clearable}
                                 />
                             </React.Fragment>
@@ -118,7 +117,7 @@ TimePicker.propTypes = {
     onChange       : PropTypes.func,
     padding        : PropTypes.string,
     placeholder    : PropTypes.string,
-    sessions       : MobxPropTypes.arrayOrObservableArray,
+    available_time_range       : MobxPropTypes.arrayOrObservableArray,
     start_date     : PropTypes.number,
     value          : PropTypes.string,
 };

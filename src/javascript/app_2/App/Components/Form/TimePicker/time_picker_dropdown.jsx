@@ -3,10 +3,12 @@ import moment                         from 'moment';
 import PropTypes                      from 'prop-types';
 import React                          from 'react';
 import { localize }                   from '_common/localize';
-import { isSessionAvailable }         from 'Stores/Modules/Trading/Helpers/start_date';
 import { toMoment }                   from 'Utils/Date';
 
-class TimePickerDropdown extends React.Component {
+// TODO :
+// Find a way to make sure we are able to disable buttons that are between
+// start_time and end_time.
+class TimePickerDropdown extends React.PureComponent {
     constructor(props) {
         super(props);
         this.hours    = [...Array(24).keys()].map((a)=>`0${a}`.slice(-2));
@@ -60,10 +62,14 @@ class TimePickerDropdown extends React.Component {
     };
 
     render() {
-        const { preClass, value, toggle, start_date, sessions } = this.props;
-        const start_moment       = toMoment(start_date);
-        const start_moment_clone = start_moment.clone().minute(0).second(0);
-        const [ hour, minute ]   = value.split(':');
+        const { preClass, value, toggle, start_time, end_time } = this.props;
+        const start_time_moment     = start_time ? toMoment(start_time) : toMoment();
+        // add one hour because isBetween only checks until the start of the
+        // specified end time.
+        const end_time_moment       = end_time ? toMoment(end_time).add(1, 'hours')
+                                                : toMoment().hour('23').add(1, 'hours');
+        const to_compare_moment     = toMoment();
+        const [ hour, minute ]      = value.split(':');
         return (
             <div className={`${preClass}-dropdown ${this.props.className}`}>
                 <div
@@ -86,8 +92,8 @@ class TimePickerDropdown extends React.Component {
                         <div className='list-title center-text'><strong>{localize('Hour')}</strong></div>
                         <div className='list-container'>
                             {this.hours.map((h, key) => {
-                                start_moment_clone.hour(h);
-                                const is_enabled = isSessionAvailable(sessions, start_moment_clone, start_moment, true);
+                                to_compare_moment.hour(h);
+                                const is_enabled = to_compare_moment.isBetween(start_time_moment, end_time_moment);
                                 return (
                                     <div
                                         className={`list-item${hour === h ? ' selected' : ''}${is_enabled ? '' : ' disabled'}`}
@@ -107,8 +113,8 @@ class TimePickerDropdown extends React.Component {
                         <div className='list-title center-text'><strong>{localize('Minute')}</strong></div>
                         <div className='list-container'>
                             {this.minutes.map((mm, key) => {
-                                start_moment_clone.hour(hour).minute(mm);
-                                const is_enabled = isSessionAvailable(sessions, start_moment_clone, start_moment);
+                                to_compare_moment.hour(hour).minute(mm);
+                                const is_enabled = to_compare_moment.isBetween(start_time_moment, end_time_moment);
                                 return (
                                     <div
                                         className={`list-item${minute === mm ? ' selected' : ''}${is_enabled ? '' : ' disabled'}`}
@@ -131,7 +137,7 @@ TimePickerDropdown.propTypes = {
     is_clearable: PropTypes.bool,
     onChange    : PropTypes.func,
     preClass    : PropTypes.string,
-    sessions    : MobxPropTypes.arrayOrObservableArray,
+    available_time_range    : MobxPropTypes.arrayOrObservableArray,
     start_date  : PropTypes.number,
     toggle      : PropTypes.func,
     value       : PropTypes.string,
