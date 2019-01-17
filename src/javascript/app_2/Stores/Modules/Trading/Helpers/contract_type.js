@@ -243,6 +243,17 @@ const ContractType = (() => {
         start_time: start_date ? getValidTime(sessions, buildMoment(start_date, start_time)) : null,
     });
 
+    const getContractsForThisDuration = (contract_type_list, duration_unit, contract_start_type) => {
+        const contract_list = Object.keys(contract_type_list || {})
+            .reduce((key, list) => ([...key, ...contract_type_list[list].map(contract => contract.value)]), []);
+        
+        const contract_duration_list = contract_list
+            .map(list => ({ [list]: getPropertyValue(available_contract_types, [list, 'config', 'durations', 'units_display', contract_start_type]) }));
+
+        return contract_duration_list.filter(contract => contract.rise_fall_equal)[0].rise_fall_equal
+            .filter(duration => duration.value === duration_unit);
+    };
+
     const getExpiryDate = (expiry_date, start_date, expiry_type) => {
         const moment_start  = toMoment(start_date);
         const moment_expiry = toMoment(expiry_date);
@@ -306,6 +317,7 @@ const ContractType = (() => {
         getBarriers,
         getContractType,
         getContractValues,
+        getContractsForThisDuration,
         getDurationMinMax,
         getDurationUnit,
         getDurationUnitsList,

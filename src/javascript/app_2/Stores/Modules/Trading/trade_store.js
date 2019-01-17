@@ -8,7 +8,8 @@ import BinarySocket                      from '_common/base/socket_base';
 import { localize }                      from '_common/localize';
 import {
     cloneObject,
-    isEmptyObject }                      from '_common/utility';
+    isEmptyObject,
+    getPropertyValue }                      from '_common/utility';
 import {
     getMinPayout,
     isCryptocurrency }                   from '_common/base/currency_base';
@@ -119,7 +120,14 @@ export default class TradeStore extends BaseStore {
             },
         );
         reaction(
-            () => [this.symbol, this.contract_type, this.duration_unit, this.expiry_type],
+            () => [
+                this.symbol,
+                this.contract_type,
+                this.duration_unit,
+                this.expiry_type,
+                this.duration_units_list,
+                this.contract_types_list,
+            ],
             () => {
                 this.changeAllowEquals();
             },
@@ -418,39 +426,17 @@ export default class TradeStore extends BaseStore {
 
     @action.bound
     changeAllowEquals() {
-        /*
-                TODO: create validation through contract durations whether they are available or not
-                const displayEquals = (expiry_type = 'duration') => {
-                    const formname = Defaults.get('formname');
-                    const el_equals = document.getElementById('callputequal');
-                    const durations = getPropertyValue(Contract.durations(), [commonTrading.durationType(Defaults.get('duration_units'))]) || [];
-                    if (/^(callputequal|risefall)$/.test(formname) && (('callputequal' in durations || expiry_type === 'endtime') && hasCallPutEqual())) {
-                        if (+Defaults.get('is_equal')) {
-                            el_equals.checked = true;
-                        }
-                        el_equals.parentElement.setVisibility(1);
-                    } else {
-                        el_equals.parentElement.setVisibility(0);
-                    }
-                };
-        */
-        // TODO: remove this entire if statement
-        if (['rise_fall', 'rise_fall_equal'].includes(this.contract_type)) {
+        const hasCallPutEqual = () => {
+            const up_down_contracts = getPropertyValue(this.contract_types_list, 'Up/Down');
+            return up_down_contracts.find(contract => contract.value === 'rise_fall_equal');
+        };
+        const check_callput_equal_duration = ContractType
+            .getContractsForThisDuration(this.contract_types_list, this.duration_unit, this.contract_start_type);
+        if (/^(rise_fall|rise_fall_equal)$/.test(this.contract_type) && (check_callput_equal_duration.length || this.expiry_type === 'endtime') && hasCallPutEqual()) {
+            this.is_allow_equal = true;
+        } else {
             this.is_allow_equal = false;
-
-            if (this.symbol[0] === 'R') {
-                this.is_allow_equal = true;
-            } else {
-                if (this.expiry_type === 'endtime') {
-                    this.is_allow_equal = true;
-                } else {
-                    if (this.duration_unit !== 't') {
-                        this.is_allow_equal = true;
-                    }
-                }
-            }
         }
-    
     }
 
     @action.bound
