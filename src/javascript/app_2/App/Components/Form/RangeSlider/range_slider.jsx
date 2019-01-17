@@ -46,7 +46,7 @@ const RangeSlider = ({
             <label htmlFor='range'>
                 <input
                     id='range'
-                    className='range-slider__range'
+                    className='range-slider__track'
                     type='range'
                     min={min}
                     max={max}
@@ -63,16 +63,16 @@ const RangeSlider = ({
                 <div className='range-slider__line' style={{ width: `calc(${value * 10}% - 0.5rem)` }} />
             </label>
             <div className='range-slider__caption'>
-                <span className='range-slider__caption__min'>
+                <span className='range-slider__caption--min'>
                     {min}
                 </span>
                 {
                     !!value &&
-                    <span className='range-slider__caption__current'>
+                    <span className='range-slider__caption--current'>
                         {localize('[_1] Ticks', value || '')}
                     </span>
                 }
-                <span className='range-slider__caption__max'>
+                <span className='range-slider__caption--max'>
                     {max}
                 </span>
             </div>

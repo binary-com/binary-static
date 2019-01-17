@@ -24,9 +24,9 @@
     input[type=range]::-moz-focus-outer {
         border: 0;
     }
-    &__range {
+    &__track {
         position: relative;
-        // pending refactor in main trading sass file that overrides rules for all input els
+        // removal of !important is pending refactor in main trading sass file that overrides rules for input els
         appearance: none !important;
         width: 100% !important;
         height: 2px !important;
@@ -109,16 +109,16 @@
     }
     &__caption {
         display: flex;
-        padding: 4px;
+        padding: 4px 0;
         justify-content: space-between;
 
-        &__min {
+        &--min {
             text-align: left;
         }
-        &__max {
+        &--max {
             text-align: right;
         }
-        &__current {
+        &--current {
             text-align: center;
         }
     }
@@ -126,7 +126,7 @@
 
 .theme-wrapper.dark {
     .range-slider {
-        &__range {
+        &__track {
             background: $COLOR_BRANDBLUE_85 !important;
 
             &::-webkit-slider-thumb {
@@ -152,6 +152,12 @@
         }
         &__line {
             background: $COLOR_WHITE;
+        }
+        &:active::-webkit-slider-thumb {
+            box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.3);
+        }
+        &:active::-moz-range-thumb {
+            box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.3);
         }
     }
 }
