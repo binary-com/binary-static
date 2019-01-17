@@ -6,7 +6,7 @@ import {
     CalendarYears,
     CalendarDecades } from './panels';
 
-export default function CalendarBody(props) {
+const CalendarBody = (props) => {
     const calendar_body = {
         date  : <CalendarDays    {...props} />,
         month : <CalendarMonths  {...props} />,
@@ -19,8 +19,10 @@ export default function CalendarBody(props) {
             { calendar_body[props.calendar_view] }
         </React.Fragment>
     );
-}
+};
 
 CalendarBody.propTypes = {
     calendar_view: PropTypes.string,
 };
+
+export default CalendarBody;

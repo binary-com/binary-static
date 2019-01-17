@@ -9,7 +9,13 @@ import {
 import { toMoment }         from 'Utils/Date';
 import CalendarButton       from './calendar_button.jsx';
 
-export default function CalendarHeader({ calendar_date, isPeriodDisabled, onClick, onSelect, calendar_view }) {
+const CalendarHeader = ({
+    calendar_date,
+    calendar_view,
+    isPeriodDisabled,
+    onClick,
+    onSelect,
+}) => {
     const is_date_view   = calendar_view === 'date';
     const is_month_view  = calendar_view === 'month';
     const is_year_view   = calendar_view === 'year';
@@ -85,7 +91,7 @@ export default function CalendarHeader({ calendar_date, isPeriodDisabled, onClic
             </CalendarButton>
         </div>
     );
-}
+};
 
 CalendarHeader.propTypes = {
     calendar_date   : PropTypes.string,
@@ -94,3 +100,5 @@ CalendarHeader.propTypes = {
     onClick         : PropTypes.object,
     onSelect        : PropTypes.object,
 };
+
+export default CalendarHeader;

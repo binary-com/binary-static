@@ -3,7 +3,12 @@ import React              from 'react';
 import { toMoment }       from 'Utils/Date';
 import CalendarPanelTypes from './types';
 
-export const CalendarDecades = ({ calendar_date, isPeriodDisabled, onClick, selected_date }) => {
+export const CalendarDecades = ({
+    calendar_date,
+    isPeriodDisabled,
+    onClick,
+    selected_date,
+}) => {
     const selected_year = toMoment(selected_date).year();
     const moment_date   = toMoment(calendar_date);
 
@@ -18,28 +23,27 @@ export const CalendarDecades = ({ calendar_date, isPeriodDisabled, onClick, sele
 
     return (
         <div className='calendar__body calendar__body--decade'>
-            {
-                decades.map((range, idx) => {
-                    const [start, end] = range.split('-');
-                    const is_active    = +start === selected_year;
-                    const is_disabled  = isPeriodDisabled(moment_date.year(start), 'year') &&
-                        isPeriodDisabled(moment_date.year(end), 'year');
-                    const is_other_century = idx === 0 || idx === 11;
-                    return (
-                        <span
-                            key={idx}
-                            className={classNames('calendar__body__cell', {
-                                'calendar__body__cell--is-active'       : is_active,
-                                'calendar__body__cell--is-disabled'     : is_disabled,
-                                'calendar__body__cell--is-other-century': is_other_century,
-                            })}
-                            onClick={onClick.decade}
-                            data-decade={range}
-                        >
-                            {range}
-                        </span>
-                    );
-                })
+            { decades.map((range, idx) => {
+                const [start, end] = range.split('-');
+                const is_active    = +start === selected_year;
+                const is_disabled  = isPeriodDisabled(moment_date.year(start), 'year') &&
+                    isPeriodDisabled(moment_date.year(end), 'year');
+                const is_other_century = idx === 0 || idx === 11;
+                return (
+                    <span
+                        key={idx}
+                        className={classNames('calendar__body__cell', {
+                            'calendar__body__cell--is-active'       : is_active,
+                            'calendar__body__cell--is-disabled'     : is_disabled,
+                            'calendar__body__cell--is-other-century': is_other_century,
+                        })}
+                        onClick={onClick.decade}
+                        data-decade={range}
+                    >
+                        {range}
+                    </span>
+                );
+            })
             }
         </div>
     );

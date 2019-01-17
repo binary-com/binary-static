@@ -19,31 +19,35 @@ const getMonthHeaders = () => ({
     Dec: localize('Dec'),
 });
 
-export const CalendarMonths = ({ calendar_date, isPeriodDisabled, onClick, selected_date }) => {
+export const CalendarMonths = ({
+    calendar_date,
+    isPeriodDisabled,
+    onClick,
+    selected_date,
+}) => {
     const moment_date    = toMoment(calendar_date);
     const selected_month = toMoment(selected_date).month();
     const month_headers  = getMonthHeaders();
 
     return (
         <div className='calendar__body calendar__body--month'>
-            {
-                Object.keys(month_headers).map((month, idx) => {
-                    const is_active   = idx === selected_month;
-                    const is_disabled = isPeriodDisabled(moment_date.month(month), 'month');
-                    return (
-                        <span
-                            key={idx}
-                            className={classNames('calendar__body__cell', {
-                                'calendar__body__cell--is-active'  : is_active,
-                                'calendar__body__cell--is-disabled': is_disabled,
-                            })}
-                            onClick={onClick.month}
-                            data-month={idx}
-                        >
-                            {month_headers[month]}
-                        </span>
-                    );
-                })
+            { Object.keys(month_headers).map((month, idx) => {
+                const is_active   = idx === selected_month;
+                const is_disabled = isPeriodDisabled(moment_date.month(month), 'month');
+                return (
+                    <span
+                        key={idx}
+                        className={classNames('calendar__body__cell', {
+                            'calendar__body__cell--is-active'  : is_active,
+                            'calendar__body__cell--is-disabled': is_disabled,
+                        })}
+                        onClick={onClick.month}
+                        data-month={idx}
+                    >
+                        {month_headers[month]}
+                    </span>
+                );
+            })
             }
         </div>
     );
