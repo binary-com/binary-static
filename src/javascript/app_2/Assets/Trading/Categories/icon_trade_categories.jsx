@@ -30,13 +30,13 @@ const IconTradeCategory = ({ category }) => {
                         <div className='category-wrapper'>
                             <IconTradeType
                                 className='category-type'
-                                type='call'
+                                type='calle'
                             />
                         </div>
                         <div className='category-wrapper'>
                             <IconTradeType
                                 className='category-type'
-                                type='put'
+                                type='pute'
                             />
                         </div>
                     </React.Fragment>

@@ -141,13 +141,13 @@
         .allow-equals {
             display: inline-block;
 
-            label {
-                vertical-align: middle;
-                cursor: pointer;
-            }
             .input-field, label {
                 display: inline-block;
+            }
+            label {
+                vertical-align: middle;
                 padding-left: 8px;
+                cursor: pointer;
             }
             .tooltip {
                 display: inline-block;

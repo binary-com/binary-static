@@ -193,10 +193,8 @@ export default class TradeStore extends BaseStore {
             if (this.contract_type === 'rise_fall' || this.contract_type === 'rise_fall_equal') {
                 if (checked) {
                     value = 'rise_fall_equal';
-                    this.contract_type = 'rise_fall_equal';
                 } else {
                     value = 'rise_fall';
-                    this.contract_type = 'rise_fall';
                 }
             }
         } else if (!(name in this)) {
