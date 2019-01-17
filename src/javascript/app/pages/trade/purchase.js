@@ -301,12 +301,19 @@ const Purchase = (() => {
         }
 
         let duration = +getPropertyValue(purchase_data, ['echo_req', 'passthrough', 'duration']);
+
         if (!duration) {
             return;
         }
 
         const spots2  = Tick.spots();
-        const epoches = Object.keys(spots2).sort((a, b) => a - b);
+        let epoches = Object.keys(spots2).sort((a, b) => a - b);
+
+        // I've added this part to prevent race condition.
+        if (tick_config.is_digit && epoches.length > duration) {
+            epoches = epoches.slice(+getPropertyValue(purchase_data, ['echo_req', 'passthrough', 'duration']));
+        }
+
         CommonFunctions.elementTextContent(spots, '');
         for (let s = 0; s < epoches.length; s++) {
             const tick_d = {
