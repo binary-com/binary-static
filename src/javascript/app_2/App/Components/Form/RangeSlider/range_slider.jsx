@@ -3,6 +3,7 @@ import { observer } from 'mobx-react';
 import PropTypes    from 'prop-types';
 import React        from 'react';
 import { localize } from '_common/localize';
+import TickSteps    from './tick_steps.jsx';
 
 const RangeSlider = ({
     className,
@@ -25,22 +26,6 @@ const RangeSlider = ({
         }
     };
 
-    const renderTickSteps = (ticks) => {
-        const arr_ticks_el = [];
-        for (let idx = 0; idx < ticks; idx++) {
-            arr_ticks_el.push(
-                <span
-                    key={idx}
-                    className={classNames('ticks__step', {
-                        'ticks__step--active': (idx + 1) === parseInt(value),
-                        'ticks__step--marked': (idx + 1) < parseInt(value),
-                    })}
-                    onClick={(e) => handleClick(e, idx + 1)}
-                />);
-        }
-        return arr_ticks_el;
-    };
-
     return (
         <div className={classNames('range-slider', className)}>
             <label htmlFor='range'>
@@ -57,7 +42,11 @@ const RangeSlider = ({
                     value={value}
                 />
                 <div className='ticks'>
-                    {renderTickSteps(max)}
+                    <TickSteps
+                        value={value}
+                        ticks={max}
+                        onClick={handleClick}
+                    />
                 </div>
                 {/* Calculate line width based on active value and size of range thumb */}
                 <div className='range-slider__line' style={{ width: `calc(${value * 10}% - 0.5rem)` }} />
