@@ -60,7 +60,7 @@ const Purchase = (() => {
         const button              = CommonFunctions.getElementById('contract_purchase_button');
 
         const error      = details.error;
-        const has_chart  = !/^(digits|highlowticks)$/.test(Contract.form());
+        const has_chart  = !/^(digits|highlowticks|runs)$/.test(Contract.form());
         const show_chart = !error && passthrough.duration <= 10 && passthrough.duration_unit === 't';
 
         if (error) {
@@ -150,12 +150,17 @@ const Purchase = (() => {
                 spots.show();
 
                 const arr_shortcode = purchase_data.buy.shortcode.split('_');
+
                 tick_config = {
                     is_tick_high        : /^tickhigh$/i.test(contract_type),
                     is_tick_low         : /^ticklow$/i.test(contract_type),
+                    is_run_high         : /^runhigh$/i.test(contract_type),
+                    is_run_low          : /^runlow$/i.test(contract_type),
                     selected_tick_number: arr_shortcode[arr_shortcode.length - 1],
                     winning_tick_quote  : '',
                     winning_tick_number : '',
+                    previous_tick_quote : '',
+                    losing_tick_number  : '',
                 };
             }
 
@@ -250,6 +255,15 @@ const Purchase = (() => {
                 } else if (status === 'lost') {
                     updateValues.updatePurchaseStatus(0, -cost_value, profit_value, localize('This contract lost'));
                 }
+                if (tick_config.is_run_high || tick_config.is_run_high && +tick_config.losing_tick_number > 1) {
+                    let localized_text;
+                    if (tick_config.is_run_high) {
+                        localized_text = localizeKeepPlaceholders('Tick [_1] is not consecutively higher');
+                    } else {
+                        localized_text = localizeKeepPlaceholders('Tick [_1] is not consecutively lower than the previous one');
+                    }
+                    CommonFunctions.elementTextContent(CommonFunctions.getElementById('contract_highlowtick'), template(localized_text, [tick_config.selected_tick_number]));
+                }
                 if (tick_config.is_tick_high || tick_config.is_tick_low) {
                     const is_won = +tick_config.selected_tick_number === +tick_config.winning_tick_number;
                     let localized_text;
@@ -299,6 +313,30 @@ const Purchase = (() => {
                     }
                 }
 
+                let is_losing_tick = false;
+                if (tick_config.is_run_high || tick_config.is_run_low) {
+                    const $winning_row  = $spots.find('.winning-tick-row');
+                    if (
+                        (
+                            current_tick_count > 1 &&
+                            tick_config.is_run_high &&
+                            +tick_d.quote < tick_config.previous_tick_quote
+                        ) ||
+                        (
+                            current_tick_count > 1 &&
+                            tick_config.is_run_low &&
+                            +tick_d.quote > tick_config.previous_tick_quote
+                        )
+                    ) {
+                        is_losing_tick = true;
+                        tick_config.previous_tick_quote  = tick_d.quote;
+                        tick_config.losing_tick_number = current_tick_count;
+                        $winning_row.removeClass('winning-tick-row');
+                    } else {
+                        tick_config.previous_tick_quote = tick_d.quote;
+                    }
+                }
+
                 const fragment = createElement('div', { class: `row${is_winning_tick ? ' winning-tick-row' : ''}` });
 
                 const el1 = createElement('div', { class: 'col', text: `${localize('Tick')} ${current_tick_count}` });
@@ -312,7 +350,7 @@ const Purchase = (() => {
                 CommonFunctions.elementTextContent(el2, [hours, minutes, seconds].join(':'));
                 fragment.appendChild(el2);
 
-                const tick = (tick_config.is_tick_high || tick_config.is_tick_low) ? tick_d.quote : tick_d.quote.replace(/\d$/, makeBold);
+                const tick = (tick_config.is_tick_high || tick_config.is_tick_low || tick_config.is_run_high || tick_config.is_run_low) ? tick_d.quote : tick_d.quote.replace(/\d$/, makeBold);
                 const el3  = createElement('div', { class: 'col' });
                 CommonFunctions.elementInnerHtml(el3, tick);
                 fragment.appendChild(el3);
@@ -330,6 +368,10 @@ const Purchase = (() => {
                     if (lost_on_selected_tick || lost_after_selected_tick) {
                         duration = 0; // no need to keep drawing ticks
                     }
+                }
+
+                if ((tick_config.is_run_high || tick_config.is_run_low) && is_losing_tick) {
+                    duration = 0; // no need to keep drawing ticks
                 }
 
                 if (!duration) {
