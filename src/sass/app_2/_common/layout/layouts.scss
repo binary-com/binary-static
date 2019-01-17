@@ -232,16 +232,6 @@
                         grid-template-columns: 1fr;
                         grid-auto-columns: auto;
                     }
-                    div.endtime-container {
-                        display: grid;
-                        grid-gap: 8px;
-                        grid-template-columns: 1fr;
-                        grid-auto-columns: auto;
-
-                        &.has-time {
-                            grid-template-columns: 1.5fr 1fr;
-                        }
-                    }
                     .time-picker {
                         margin-top: 8px;
                     }

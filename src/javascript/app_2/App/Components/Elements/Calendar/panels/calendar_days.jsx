@@ -4,7 +4,15 @@ import { padLeft }        from '_common/string_util';
 import { toMoment }       from 'Utils/Date';
 import CalendarPanelTypes from './types';
 
-const getDays = ({ calendar_date, date_format, max_date, min_date, start_date, onClick, selected_date }) => {
+const getDays = ({
+    calendar_date,
+    date_format,
+    max_date,
+    min_date,
+    start_date,
+    onClick,
+    selected_date,
+}) => {
     // adjust Calendar week by 1 day so that Calendar week starts on Monday
     // change to zero to set Calendar week to start on Sunday
     const day_offset = 1;
@@ -22,17 +30,21 @@ const getDays = ({ calendar_date, date_format, max_date, min_date, start_date, o
     const moment_max_date    = toMoment(max_date);
     const moment_selected    = toMoment(selected_date);
 
+    // populate previous months' dates
     for (let i = first_day; i > 0; i--) {
         dates.push(moment_month_start.clone().subtract(i, 'day').format(date_format));
     }
+    // populate current months' dates
     for (let idx = 1; idx < num_of_days; idx += 1) {
         dates.push(moment_cur_date.clone().format(date_format.replace('DD', padLeft(idx, 2, '0'))));
     }
+    // populate next months' dates
     for (let i = 1; i <= 6 - last_day; i++) {
         dates.push(moment_month_end.clone().add(i, 'day').format(date_format));
     }
 
     const moment_start_date = toMoment(start_date).startOf('day');
+
     dates.map((date) => {
         const moment_date = toMoment(date).startOf('day');
         const is_active   = selected_date && moment_date.isSame(moment_selected);

@@ -1,5 +1,8 @@
 .datepicker {
     position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 280px;
 
     &__input input {
         text-align: center;

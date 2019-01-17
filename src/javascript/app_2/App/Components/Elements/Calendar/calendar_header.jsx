@@ -51,12 +51,14 @@ export default function CalendarHeader({ calendar_date, isPeriodDisabled, onClic
                     />
                 }
                 <CalendarButton
-                    className='calendar__header__select__btn'
+                    className={classNames('calendar__header__select__btn', {
+                        'calendar__header__select__btn--is-decade': is_decade_view,
+                    })}
                     onClick={() => ((is_date_view || is_month_view) ? onSelect.year() : onSelect.decade())}
                 >
                     { (is_date_view || is_month_view) && moment_date.year() }
-                    { is_year_view   && `${moment_date.clone().subtract(1, 'years').year()}-${moment_date.clone().add(10, 'years').year()}`  }
-                    { is_decade_view && `${moment_date.clone().subtract(10, 'years').year()}-${moment_date.clone().add(109, 'years').year()}` }
+                    { is_year_view   && `${moment_date.clone().year()}-${moment_date.clone().add(9, 'years').year()}`  }
+                    { is_decade_view && `${moment_date.clone().year()}-${moment_date.clone().add(99, 'years').year()}` }
                 </CalendarButton>
             </div>
 

@@ -55,10 +55,14 @@
         border-bottom: 1px solid $COLOR_GRAY;
 
         &__select__btn {
-            padding: 0 4px;
+            padding: 0 3px;
             font-size: 14px;
-            font-weight: 500;
+            font-weight: bold;
             cursor: pointer;
+
+            &--is-decade {
+                cursor: default;
+            }
         }
         &__nav {
             position: absolute;
@@ -115,6 +119,9 @@
                 height: 32px;
             }
         }
+        &--decade span {
+            width: 100%;
+        }
         &__header {
             font-size: 14px;
             font-weight: bold;
@@ -132,7 +139,7 @@
             &:hover:not(&--is-active) {
                 background: $COLOR_LIGHT_GRAY;
             }
-            &--is-disabled, &--is-other-month {
+            &--is-disabled, &--is-other-month, &--is-other-decade, &--is-other-century {
                 color: $COLOR_GRAY;
                 transition: none;
             }

@@ -13,19 +13,26 @@ export const CalendarYears = ({ calendar_date, isPeriodDisabled, onClick, select
     }
     return (
         <div className='calendar__body calendar__body--year'>
-            {years.map((year, idx) => (
-                <span
-                    key={idx}
-                    className={classNames('calendar__body__cell', {
-                        'calendar__body__cell--is-active'  : year === selected_year,
-                        'calendar__body__cell--is-disabled': isPeriodDisabled(moment_date.year(year), 'year'),
-                    })}
-                    onClick={onClick.year}
-                    data-year={year}
-                >
-                    {year}
-                </span>
-            ))}
+            {
+                years.map((year, idx) => {
+                    const is_other_decade = idx === 0 || idx === 11;
+                    const is_disabled     = isPeriodDisabled(moment_date.year(year), 'year');
+                    return (
+                        <span
+                            key={idx}
+                            className={classNames('calendar__body__cell', {
+                                'calendar__body__cell--is-active'      : year === selected_year,
+                                'calendar__body__cell--is-other-decade': is_other_decade,
+                                'calendar__body__cell--is-disabled'    : is_disabled,
+                            })}
+                            onClick={onClick.year}
+                            data-year={year}
+                        >
+                            {year}
+                        </span>
+                    );
+                })
+            }
         </div>
     );
 };
