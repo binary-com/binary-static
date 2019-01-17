@@ -27,7 +27,7 @@ const RangeSlider = ({
 
     const renderTickSteps = (ticks) => {
         const arr_ticks_el = [];
-        for (let idx = 0; idx < (ticks) ; idx++) {
+        for (let idx = 0; idx < ticks; idx++) {
             arr_ticks_el.push(
                 <span
                     key={idx}
