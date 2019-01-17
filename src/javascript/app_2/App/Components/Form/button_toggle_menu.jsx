@@ -4,7 +4,7 @@ import React      from 'react';
 import Button     from './button.jsx';
 
 const ButtonToggleMenu = ({
-    buttons_for,
+    buttons_arr,
     onChange,
     value,
     name,
@@ -13,7 +13,7 @@ const ButtonToggleMenu = ({
         if (value === selected_value) return;
         onChange({ target: { value: selected_value, name } });
     };
-    const menu = buttons_for.map((val, idx) => {
+    const menu = buttons_arr.map((val, idx) => {
         const className = classNames('button-menu__button', {
             'button-menu__button--active': val.value === value,
         });
@@ -30,7 +30,7 @@ const ButtonToggleMenu = ({
 };
 
 ButtonToggleMenu.propTypes = {
-    buttons_for: PropTypes.array,
+    buttons_arr: PropTypes.array,
     onChange   : PropTypes.func,
 };
 

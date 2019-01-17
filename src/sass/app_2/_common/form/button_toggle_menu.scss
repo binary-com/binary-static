@@ -19,13 +19,29 @@
         height: 32px;
         text-transform: capitalize;
 
-        &--active:not():hover {
+        &:not(&--active):hover {
             background: $COLOR_GRAY;
         }
         &--active {
             font-weight: bold;
             color: $COLOR_WHITE;
             background: $COLOR_DARK_GRAY;
+        }
+    }
+}
+
+.theme-wrapper.dark {
+    .button-menu {
+        &__button {
+            background-color: $COLOR_WHITE;
+
+            &:not(&--active):hover {
+                background: $COLOR_GRAY;
+            }
+            &--active {
+                color: $COLOR_WHITE;
+                background: $COLOR_DARK_GRAY;
+            }
         }
     }
 }
