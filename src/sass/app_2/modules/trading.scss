@@ -154,9 +154,10 @@
 
                 .info {
                     vertical-align: middle;
+                    padding-left: 2px;
 
                     &:after {
-                        transform: scale(0.8);
+                        transform: scale(0.75);
                     }
                 }
             }
