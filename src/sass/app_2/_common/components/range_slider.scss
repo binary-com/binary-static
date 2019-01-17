@@ -59,14 +59,14 @@
             box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.3);
         }
     }
-    &__ticks {
+    .ticks {
         width: 100%;
         position: absolute;
         display: flex;
         justify-content: space-between;
         top: 6px;
 
-        &__tick {
+        &__step {
             height: 4px;
             width: 4px;
             border: 2px solid $COLOR_DARK_GRAY;
@@ -77,11 +77,6 @@
             box-shadow: 0 0 0 0px rgba(0, 0, 0, 0);
             cursor: pointer;
 
-            &:hover:not(.range-slider__ticks_tick--active) {
-                background: $COLOR_BLUE;
-                border-color: $COLOR_BLUE;
-                box-shadow: 0 0 0 6px rgba(0, 0, 0, 0.3);
-            }
             &--active, &--marked {
                 background: $COLOR_BLUE;
                 border-color: $COLOR_BLUE;
@@ -89,6 +84,11 @@
             &--active {
                 visibility: hidden;
                 pointer-events: none;
+            }
+            &:hover:not(&--active) {
+                background: $COLOR_BLUE;
+                border-color: $COLOR_BLUE;
+                box-shadow: 0 0 0 6px rgba(0, 0, 0, 0.3);
             }
             &:first-child {
                 margin-left: 0;
@@ -112,13 +112,13 @@
         padding: 4px;
         justify-content: space-between;
 
-        &--min {
+        &__min {
             text-align: left;
         }
-        &--max {
+        &__max {
             text-align: right;
         }
-        &--current {
+        &__current {
             text-align: center;
         }
     }
@@ -136,18 +136,18 @@
                 background: $COLOR_WHITE;
             }
         }
-        &__ticks__tick {
+        .ticks__step {
             border: 2px solid $COLOR_BRANDBLUE_85;
             background: $COLOR_BRANDBLUE_85;
 
-            &:hover:not(.range-slider__ticks_tick--active) {
-                background: $COLOR_WHITE;
-                border-color: $COLOR_WHITE;
-                box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.3);
-            }
             &--active, &--marked {
                 background: $COLOR_WHITE;
                 border-color: $COLOR_WHITE;
+            }
+            &:hover:not(&--active) {
+                background: $COLOR_WHITE;
+                border-color: $COLOR_WHITE;
+                box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.3);
             }
         }
         &__line {

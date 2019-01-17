@@ -31,9 +31,9 @@ const RangeSlider = ({
             arr_ticks_el.push(
                 <span
                     key={idx}
-                    className={classNames('range-slider__ticks__tick', {
-                        'range-slider__ticks__tick--active': (idx + 1) === parseInt(value),
-                        'range-slider__ticks__tick--marked': (idx + 1) < parseInt(value),
+                    className={classNames('ticks__step', {
+                        'ticks__step--active': (idx + 1) === parseInt(value),
+                        'ticks__step--marked': (idx + 1) < parseInt(value),
                     })}
                     onClick={(e) => handleClick(e, idx + 1)}
                 />);
@@ -56,23 +56,23 @@ const RangeSlider = ({
                     tabIndex='0'
                     value={value}
                 />
-                <div className='range-slider__ticks'>
+                <div className='ticks'>
                     {renderTickSteps(max)}
                 </div>
                 {/* Calculate line width based on active value and size of range thumb */}
                 <div className='range-slider__line' style={{ width: `calc(${value * 10}% - 0.5rem)` }} />
             </label>
             <div className='range-slider__caption'>
-                <span className='range-slider__caption--min'>
+                <span className='range-slider__caption__min'>
                     {min}
                 </span>
                 {
                     !!value &&
-                    <span className='range-slider__caption--current'>
+                    <span className='range-slider__caption__current'>
                         {localize('[_1] Ticks', value || '')}
                     </span>
                 }
-                <span className='range-slider__caption--max'>
+                <span className='range-slider__caption__max'>
                     {max}
                 </span>
             </div>
