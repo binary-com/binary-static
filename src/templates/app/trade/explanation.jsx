@@ -147,10 +147,10 @@ const Explanation = () => (
             </div>
             <div id='winning_runs' className='invisible'>
                 <h3>{it.L('Winning the contract')}</h3>
-                <p>{it.L('If you select <strong>“Run High”</strong>, you win the payout if consecutive ticks are higher than the previous tick.')}</p>
+                <p>{it.L('If you select [_1]“Run High”[_2], you win the payout if consecutive ticks are higher than the previous tick.', '<strong>', '</strong>')}</p>
                 <p>{it.L('No payout if any tick falls or is equal to any of the previous ticks.')}</p>
                 <br />
-                <p>{it.L('If you select <strong>“Run Low”</strong>, you win the payout if consecutive ticks are lower than the previous tick.')}</p>
+                <p>{it.L('If you select [_1]“Run Low”[_2], you win the payout if consecutive ticks are lower than the previous tick.', '<strong>', '</strong>')}</p>
                 <p>{it.L('No payout if any tick rises or is equal to any of the previous ticks.')}</p>
                 <br />
             </div>
