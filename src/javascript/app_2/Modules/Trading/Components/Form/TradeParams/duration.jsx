@@ -159,7 +159,6 @@ const Duration = ({
                                     error_messages = {validation_errors.duration || []}
                                 />
                         }
-
                     </div>
                 </React.Fragment> :
                 <React.Fragment>

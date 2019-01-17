@@ -59,15 +59,19 @@ const RangeSlider = ({
                 <div className='range-slider__ticks'>
                     {renderTickSteps(max)}
                 </div>
-                <div className='range-slider__line' style={{ width: `calc(${value * 10}% - 5px)` }} />
+                {/* Calculate line width based on active value and size of range thumb */}
+                <div className='range-slider__line' style={{ width: `calc(${value * 10}% - 0.5rem)` }} />
             </label>
             <div className='range-slider__caption'>
                 <span className='range-slider__caption--min'>
                     {min}
                 </span>
-                <span className='range-slider__caption--current'>
-                    {localize('[_1] Ticks', value || '0')}
-                </span>
+                {
+                    !!value &&
+                    <span className='range-slider__caption--current'>
+                        {localize('[_1] Ticks', value || '')}
+                    </span>
+                }
                 <span className='range-slider__caption--max'>
                     {max}
                 </span>
