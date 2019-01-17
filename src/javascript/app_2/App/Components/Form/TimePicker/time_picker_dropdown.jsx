@@ -6,8 +6,12 @@ import { localize }                   from '_common/localize';
 import { toMoment }                   from 'Utils/Date';
 
 // TODO :
-// Find a way to make sure we are able to disable buttons that are between
+// Find a way to make sure we are able to disable time that are between
 // start_time and end_time.
+//
+// Example :
+// Trading times sometime opens and close twice in the same day.
+// Having a range won't fix that.
 class TimePickerDropdown extends React.PureComponent {
     constructor(props) {
         super(props);
@@ -63,7 +67,7 @@ class TimePickerDropdown extends React.PureComponent {
 
     render() {
         const { preClass, value, toggle, start_time, end_time } = this.props;
-        const start_time_moment     = start_time ? toMoment(start_time) : toMoment();
+        const start_time_moment     = start_time ? toMoment(start_time) : toMoment(); // Where does this start time come from?
         // add one hour because isBetween only checks until the start of the
         // specified end time.
         const end_time_moment       = end_time ? toMoment(end_time).add(1, 'hours')
@@ -113,7 +117,7 @@ class TimePickerDropdown extends React.PureComponent {
                         <div className='list-title center-text'><strong>{localize('Minute')}</strong></div>
                         <div className='list-container'>
                             {this.minutes.map((mm, key) => {
-                                to_compare_moment.hour(hour).minute(mm);
+                                to_compare_moment.hour(hour).minute(mm); // Might be wrong as it also checks for hours and not only minutes.
                                 const is_enabled = to_compare_moment.isBetween(start_time_moment, end_time_moment);
                                 return (
                                     <div
