@@ -3,6 +3,7 @@ const updateContractBalance = require('../trade/update_values').updateContractBa
 const Client                = require('../../base/client');
 const BinarySocket          = require('../../base/socket');
 const formatMoney           = require('../../common/currency').formatMoney;
+const TopUpVirtualPopup     = require('../../pages/user/account/top_up_virtual/pop_up');
 const getPropertyValue      = require('../../../_common/utility').getPropertyValue;
 
 const updateBalance = (response) => {
@@ -21,6 +22,7 @@ const updateBalance = (response) => {
         updateContractBalance(balance);
         $('.topMenuBalance, .binary-balance').html(view)
             .css('visibility', 'visible');
+        TopUpVirtualPopup.init(balance);
     });
 };
 

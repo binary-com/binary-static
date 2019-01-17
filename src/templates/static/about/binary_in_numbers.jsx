@@ -4,7 +4,7 @@ const Numbers = ({ className, header, text, image }) => (
     <div className={className}>
         <span className='icon' />
         <div className='inner center-text'>
-            <h2>{header}</h2>
+            <h2 data-anchor={className}>{header}</h2>
             <p>{text}</p>
             <img className='chart' src={it.url_for(`images/pages/binary_in_numbers/charts/${image}.svg`)} />
         </div>

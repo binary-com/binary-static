@@ -28,6 +28,62 @@
             padding-left: 35px !important;
         }
     }
+    .input-wrapper {
+        position: relative;
+
+        input {
+            text-align: center;
+
+            &::-ms-clear { // Edge: hide clear icon for increment input
+                display: none;
+            }
+        }
+        &:hover {
+            input {
+                border-color: $COLOR_BLUE;
+            }
+        }
+        &__button {
+            position: absolute;
+            z-index: 1;
+            height: calc(100% - 2px);
+            margin: initial;
+            margin-top: 1px;
+            margin-bottom: 1px;
+            min-width: 32px;
+            border-radius: 3px;
+            padding: initial;
+            background-color: initial;
+
+            &--increment {
+                right: 1px;
+            }
+            &--decrement {
+                left: 1px;
+            }
+            &:hover {
+                cursor: pointer;
+                background: $COLOR_GRAY;
+            }
+            &:disabled:hover {
+                cursor: not-allowed;
+                background: transparent;
+            }
+        }
+        &__icon {
+            padding-top: 4px;
+
+            path {
+                fill: $COLOR_DARK_GRAY;
+            }
+            &--plus.disabled path {
+                fill: $COLOR_DARK_GRAY;
+            }
+            &--minus.disabled path {
+                fill: $COLOR_DARK_GRAY;
+            }
+        }
+    }
     input {
         box-sizing: border-box;
         margin: 0;
@@ -46,9 +102,6 @@
         border-radius: $BORDER_RADIUS;
         transition: all 0.3s;
 
-        &:hover {
-            border-color: $COLOR_BLUE;
-        }
         &:active, &:focus {
             outline: 0;
             border-radius: $BORDER_RADIUS;
@@ -83,6 +136,24 @@
 
         &:hover, &:focus, &:active {
             border-color: $COLOR_WHITE;
+        }
+    }
+    .input-wrapper {
+        &:hover {
+            input {
+                border-color: $COLOR_WHITE;
+            }
+        }
+        &__icon {
+            path {
+                fill: $COLOR_DARK_WHITE;
+            }
+            &--plus.disabled path {
+                fill: $COLOR_BRANDBLUE_85;
+            }
+            &--minus.disabled path {
+                fill: $COLOR_BRANDBLUE_85;
+            }
         }
     }
 }

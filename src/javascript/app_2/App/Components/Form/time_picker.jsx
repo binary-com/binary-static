@@ -1,11 +1,12 @@
 import {
     observer,
-    PropTypes as MobxPropTypes }      from 'mobx-react';
-import moment                         from 'moment';
-import PropTypes                      from 'prop-types';
-import React                          from 'react';
-import { localize }                   from '_common/localize';
-import { isSessionAvailable }         from 'Stores/Modules/Trading/Helpers/start_date';
+    PropTypes as MobxPropTypes } from 'mobx-react';
+import PropTypes                 from 'prop-types';
+import React                     from 'react';
+import { localize }              from '_common/localize';
+import { isSessionAvailable }    from 'Stores/Modules/Trading/Helpers/start_date';
+import { toMoment }              from 'Utils/Date';
+import InputField                from './input_field.jsx';
 
 class TimePickerDropdown extends React.Component {
     constructor(props) {
@@ -41,7 +42,7 @@ class TimePickerDropdown extends React.Component {
     }
 
     selectOption = (type, value, is_enabled = true) => {
-        if (is_enabled) {
+        if (is_enabled && this.props.value) {
             const [ prev_hour, prev_minute ] = this.props.value.split(':');
             if ((type === 'h' && value !== prev_hour) || (type === 'm' && value !== prev_minute)) {
                 const is_type_selected = type === 'h' ? 'is_hour_selected' : 'is_minute_selected';
@@ -62,7 +63,7 @@ class TimePickerDropdown extends React.Component {
 
     render() {
         const { preClass, value, toggle, start_date, sessions } = this.props;
-        const start_moment       = moment(start_date * 1000 || undefined).utc();
+        const start_moment       = toMoment(start_date);
         const start_moment_clone = start_moment.clone().minute(0).second(0);
         const [ hour, minute ]   = value.split(':');
         return (
@@ -184,6 +185,7 @@ class TimePicker extends React.Component {
             placeholder,
             start_date,
             sessions,
+            validation_errors,
         } = this.props;
         return (
             <div
@@ -201,10 +203,10 @@ class TimePicker extends React.Component {
                         />
                         : (
                             <React.Fragment>
-                                <input
-                                    ref={this.saveRef}
+                                <InputField
+                                    error_messages={validation_errors}
                                     type='text'
-                                    readOnly
+                                    is_read_only
                                     id={`${prefix_class}-input`}
                                     className={`${prefix_class}-input ${this.state.is_open ? 'active' : ''}`}
                                     value={value}

@@ -19,7 +19,7 @@ import { processPurchase }               from './Actions/purchase';
 import * as Symbol                       from './Actions/symbol';
 import {
     allowed_query_string_variables,
-    non_proposal_query_string_variable } from './Constants/query_string';
+    getNonProposalQueryStringVariables } from './Constants/query_string';
 import getValidationRules                from './Constants/validation_rules';
 import { setChartBarrier }               from './Helpers/chart';
 import ContractType                      from './Helpers/contract_type';
@@ -71,7 +71,7 @@ export default class TradeStore extends BaseStore {
     // Start Time
     @observable start_date       = Number(0); // Number(0) refers to 'now'
     @observable start_dates_list = [];
-    @observable start_time       = '12:30';
+    @observable start_time       = null;
     @observable sessions         = [];
 
     // Last Digit
@@ -319,7 +319,7 @@ export default class TradeStore extends BaseStore {
             URLHelper.pruneQueryString(
                 [
                     ...proper_proposal_params_for_query_string,
-                    ...non_proposal_query_string_variable,
+                    ...getNonProposalQueryStringVariables(this),
                 ],
             );
 

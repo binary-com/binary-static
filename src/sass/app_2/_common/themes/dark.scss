@@ -71,8 +71,10 @@ body.dark, .theme-wrapper.dark {
             border-color: $COLOR_BRANDBLUE_85;
 
             div.fieldset-header {
-                span.field-info.left {
-                    color: $COLOR_BRANDBLUE_40;
+                span.field-info {
+                    &.left, &.center {
+                        color: $COLOR_BRANDBLUE_40;
+                    }
                 }
             }
             input, select {
@@ -121,8 +123,9 @@ body.dark, .theme-wrapper.dark {
 
                 .type {
                     path, rect {
-                        fill: $COLOR_WHITE;
-
+                        &:not(.important) {
+                            fill: $COLOR_WHITE;
+                        }
                         &.transparent {
                             fill: $COLOR_BRANDBLUE_75;
                         }
@@ -305,8 +308,9 @@ body.dark, .theme-wrapper.dark {
 
         .type {
             path, rect {
-                fill: $COLOR_WHITE;
-
+                &:not(.important) {
+                    fill: $COLOR_WHITE;
+                }
                 &.transparent {
                     fill: $COLOR_BRANDBLUE_75;
                 }

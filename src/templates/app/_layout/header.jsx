@@ -39,7 +39,9 @@ const Topbar = () => (
                 </div>
                 <div className='gr-6 gr-7-t gr-12-p gr-12-m' id='topbar-info'>
                     <div className='gr-row'>
-                        <div className='gr-8 gr-6-m no-underline nowrap' id='gmt-clock' data-balloon-pos='down' />
+                        <div className='gr-8 gr-6-m align-self-center'>
+                            <span className='no-underline nowrap' id='gmt-clock' data-balloon-pos='down' />
+                        </div>
                         <div className='gr-1 align-self-center no-underline' data-balloon-pos='down'>
                             <div id='network_status' />
                         </div>

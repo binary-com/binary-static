@@ -133,7 +133,10 @@ export default class BaseStore {
      *
      */
     saveToStorage(properties, storage) {
-        const snapshot = JSON.stringify(this.getSnapshot(properties));
+        const snapshot = JSON.stringify(this.getSnapshot(properties), (key, value) => {
+            if (value !== null) return value;
+            return undefined;
+        });
 
         if (storage === BaseStore.STORAGES.LOCAL_STORAGE) {
             localStorage.setItem(this.constructor.name, snapshot);
@@ -280,6 +283,4 @@ export default class BaseStore {
     onUnmount() {
         this.disposeSwitchAccount();
     }
-
 }
-

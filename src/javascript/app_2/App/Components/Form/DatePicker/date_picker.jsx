@@ -1,10 +1,11 @@
 import classNames      from 'classnames';
-import moment          from 'moment';
 import React           from 'react';
 import { IconArrow }   from 'Assets/Common';
 import {
+    daysFromTodayTo,
     formatDate,
-    daysFromTodayTo }  from 'Utils/Date';
+    isDateValid,
+    toMoment }         from 'Utils/Date';
 import DatePickerInput from './date_picker_input.jsx';
 import Calendar        from '../../Elements/Calendar';
 
@@ -50,7 +51,7 @@ class DatePicker extends React.PureComponent {
 
     onSelectCalendar = (selected_date, is_datepicker_visible) => {
         let value = selected_date;
-        if (!moment.utc(value).isValid) { value = ''; }
+        if (!isDateValid(value)) { value = ''; }
 
         if (this.props.mode === 'duration') {
             this.updateDatePickerValue(daysFromTodayTo(value), 'duration');
@@ -76,10 +77,10 @@ class DatePicker extends React.PureComponent {
 
         // update Calendar
         const { date_format, start_date } = this.props;
-        const new_date = (mode === 'duration') ? moment.utc().add(value, 'days').format(date_format) : value;
-        if (this.calendar && (moment.utc(new_date, date_format).isValid() || !new_date)) {
+        const new_date = (mode === 'duration') ? toMoment().add(value, 'days').format(date_format) : value;
+        if (this.calendar && (isDateValid(new_date) || !new_date)) {
             if (!new_date) {
-                const current_date = moment.utc(start_date).format(date_format);
+                const current_date = toMoment(start_date).format(date_format);
                 this.calendar.setState({
                     calendar_date: current_date,
                     selected_date: current_date,

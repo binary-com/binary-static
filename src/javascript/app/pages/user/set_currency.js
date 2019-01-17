@@ -3,6 +3,7 @@ const BinaryPjax       = require('../../base/binary_pjax');
 const Client           = require('../../base/client');
 const Header           = require('../../base/header');
 const BinarySocket     = require('../../base/socket');
+const Dialog           = require('../../common/attach_dom/dialog');
 const getCurrencyName  = require('../../common/currency').getCurrencyName;
 const isCryptocurrency = require('../../common/currency').isCryptocurrency;
 const localize         = require('../../../_common/localize').localize;
@@ -33,6 +34,7 @@ const SetCurrency = (() => {
         BinarySocket.wait('payout_currencies', 'landing_company').then(() => {
             const landing_company = State.getResponse('landing_company');
             let currencies        = State.getResponse('payout_currencies');
+
             if (Client.get('landing_company_shortcode') === 'costarica') {
                 currencies = getCurrencies(landing_company);
             }
@@ -59,15 +61,9 @@ const SetCurrency = (() => {
             $('#set_currency, .select_currency').setVisibility(1);
 
             const $currency_list = $('.currency_list');
-            $('.currency_wrapper').on('click', function () {
-                $currency_list.find('> div').removeClass('selected');
-                $(this).addClass('selected');
-            });
+            const $error         = $('#set_currency').find('.error-msg');
 
-            const $form  = $('#frm_set_currency');
-            const $error = $form.find('.error-msg');
-            $form.on('submit', (evt) => {
-                evt.preventDefault();
+            const onConfirm = () => {
                 $error.setVisibility(0);
                 const $selected_currency = $currency_list.find('.selected');
                 if ($selected_currency.length) {
@@ -109,6 +105,30 @@ const SetCurrency = (() => {
                 } else {
                     $error.text(localize('Please choose a currency')).setVisibility(1);
                 }
+            };
+
+            $('.currency_wrapper').on('click', function () {
+                const $clicked_currency = $(this);
+                const currency          = $clicked_currency.attr('id');
+                let localized_message   = '';
+                $error.setVisibility(0);
+                $currency_list.find('> div').removeClass('selected');
+                $clicked_currency.addClass('selected');
+                if (isCryptocurrency(currency)) {
+                    localized_message = localize('You have chosen [_1] as the currency for this account. You cannot change this later. You can have more than one cryptocurrency account.', `<strong>${getCurrencyName(currency)} (${currency})</strong>`);
+                } else {
+                    localized_message = localize('You have chosen [_1] as the currency for this account. You cannot change this later. You can have one fiat currency account only.', `<strong>${currency}</strong>`);
+                }
+
+                Dialog.confirm({
+                    id             : 'set_currency_popup_container',
+                    ok_text        : localize('Confirm'),
+                    cancel_text    : localize('Back'),
+                    localized_title: localize('Are you sure?'),
+                    localized_message,
+                    onConfirm,
+                    onAbort        : () => $currency_list.find('> div').removeClass('selected'),
+                });
             });
         });
     };
