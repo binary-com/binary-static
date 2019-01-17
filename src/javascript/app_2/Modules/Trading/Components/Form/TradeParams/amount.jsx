@@ -11,7 +11,7 @@ import { localize }              from '_common/localize';
 import Dropdown                  from 'App/Components/Form/DropDown';
 import Fieldset                  from 'App/Components/Form/fieldset.jsx';
 import InputField                from 'App/Components/Form/input_field.jsx';
-import Tooltip                   from 'App/Components/Elements/tooltip.jsx';
+import AllowEquals                from './allow_equals.jsx';
 
 const Amount = ({
     amount,
@@ -76,19 +76,7 @@ const Amount = ({
                     value={amount}
                 />
             </div>
-            {!!is_allow_equal &&
-                <div className='allow-equals'>
-                    <InputField
-                        id='allow_equals'
-                        name='contract_type'
-                        onChange={onChange}
-                        value='is_equal'
-                        type='checkbox'
-                    />
-                    <label htmlFor='allow_equals'>{localize('Allow equals')}</label>
-                    <Tooltip icon='info' message={localize('Win payout if exit spot is also equal to entry spot.')} alignment='left' />
-                </div>
-            }
+            <AllowEquals is_allow_equal={is_allow_equal} onChange={onChange} />
         </Fieldset>
     );
 };
