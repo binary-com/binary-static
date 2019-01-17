@@ -4,6 +4,9 @@ import {
     PropTypes as MobxPropTypes } from 'mobx-react';
 import PropTypes                 from 'prop-types';
 import React                     from 'react';
+import { IconMinus }             from 'Assets/Common/icon_minus.jsx'; // implicit import here { IconMinus, IconPlus } from 'Assets/Common' breaks compilation
+import { IconPlus }              from 'Assets/Common/icon_plus.jsx';
+import Button                    from './button.jsx';
 import Tooltip                   from '../Elements/tooltip.jsx';
 
 const InputField = ({
@@ -13,10 +16,13 @@ const InputField = ({
     helper,
     is_disabled,
     is_float,
+    is_incrementable,
     is_read_only = false,
     is_signed = false,
     label,
     max_length,
+    max_value,
+    min_value,
     name,
     onChange,
     onClick,
@@ -28,6 +34,8 @@ const InputField = ({
 }) => {
     const has_error = error_messages && error_messages.length;
     let has_valid_length = true;
+    const max_is_disabled = max_value && +value >= +max_value;
+    const min_is_disabled = min_value && +value <= +min_value;
 
     const changeValue = (e) => {
         if (type === 'number') {
@@ -64,6 +72,25 @@ const InputField = ({
         onChange(e);
     };
 
+    const incrementValue = () => {
+        if  (max_is_disabled) return;
+
+        const increment_value = (+value) + 1;
+        onChange({ target: { value: increment_value, name } });
+    };
+
+    const decrementValue = () => {
+        if (!value || min_is_disabled) return;
+
+        const decrement_value = (+value) - 1;
+        onChange({ target: { value: decrement_value, name } });
+    };
+
+    const onKeyPressed = (e) => {
+        if (e.keyCode === 38) incrementValue(); // up-arrow pressed
+        if (e.keyCode === 40) decrementValue(); // down-arrow pressed
+    };
+
     const input =
         <input
             className={classNames({ error: has_error })}
@@ -72,6 +99,7 @@ const InputField = ({
             data-tip
             maxLength={fractional_digits ? max_length + fractional_digits + 1 : max_length}
             name={name}
+            onKeyDown={is_incrementable ? onKeyPressed : undefined}
             onChange={changeValue}
             onClick={onClick}
             placeholder={placeholder || undefined}
@@ -80,6 +108,25 @@ const InputField = ({
             type={type === 'number' ? 'text' : type}
             value={value || ''}
         />;
+
+    const input_increment =
+        <div className='input-wrapper'>
+            <Button
+                className={'input-wrapper__button input-wrapper__button--increment'}
+                is_disabled={max_is_disabled}
+                onClick={incrementValue}
+            >
+                <IconPlus className={'input-wrapper__icon input-wrapper__icon--plus' } is_disabled={max_is_disabled} />
+            </Button>
+            <Button
+                className={'input-wrapper__button input-wrapper__button--decrement'}
+                is_disabled={min_is_disabled}
+                onClick={decrementValue}
+            >
+                <IconMinus className={'input-wrapper__icon input-wrapper__icon--minus'} is_disabled={min_is_disabled} />
+            </Button>
+            { input }
+        </div>;
 
     return (
         <div
@@ -95,7 +142,7 @@ const InputField = ({
                 {!!helper &&
                     <span className='input-helper'>{helper}</span>
                 }
-                { input }
+                {is_incrementable  &&  type === 'number' ? input_increment : input}
             </Tooltip>
         </div>
     );
@@ -111,6 +158,7 @@ InputField.propTypes = {
     helper           : PropTypes.string,
     is_disabled      : PropTypes.string,
     is_float         : PropTypes.bool,
+    is_incrementable : PropTypes.bool,
     is_read_only     : PropTypes.bool,
     is_signed        : PropTypes.bool,
     label            : PropTypes.string,
