@@ -119,7 +119,7 @@ class TimePickerDropdown extends React.PureComponent {
                         <div className='list-title center-text'><strong>{localize('Minute')}</strong></div>
                         <div className='list-container'>
                             {this.minutes.map((mm, key) => {
-                                to_compare_moment.minute(mm);
+                                to_compare_moment.hour(hour).minute(mm);
                                 const is_enabled = to_compare_moment.isBetween(start_time_moment, end_time_moment, 'minute');
                                 return (
                                     <div
@@ -140,11 +140,11 @@ class TimePickerDropdown extends React.PureComponent {
 
 TimePickerDropdown.propTypes = {
     className           : PropTypes.string,
+    end_time            : PropTypes.number,
     is_clearable        : PropTypes.bool,
     onChange            : PropTypes.func,
     preClass            : PropTypes.string,
     start_time          : PropTypes.number,
-    end_time            : PropTypes.number,
     toggle              : PropTypes.func,
     value               : PropTypes.string,
     value_split         : PropTypes.bool,

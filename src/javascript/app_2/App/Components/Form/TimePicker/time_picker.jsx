@@ -56,13 +56,13 @@ class TimePicker extends React.PureComponent {
     render() {
         const prefix_class = 'time-picker';
         const {
-            is_nativepicker,
+            end_time,
             value,
             name,
             is_align_right,
+            is_nativepicker,
             placeholder,
             start_time,
-            end_time,
             validation_errors,
         } = this.props;
         return (
@@ -78,6 +78,8 @@ class TimePicker extends React.PureComponent {
                             value={value}
                             onChange={this.handleChange}
                             name={name}
+                            min={start_time}
+                            max={end_time}
                         />
                         : (
                             <React.Fragment>
@@ -98,6 +100,7 @@ class TimePicker extends React.PureComponent {
                                     onChange={this.handleChange}
                                     preClass={prefix_class}
                                     start_time={start_time}
+                                    end_time={end_time}
                                     value={value}
                                     is_clearable={this.props.is_clearable}
                                 />
@@ -110,6 +113,7 @@ class TimePicker extends React.PureComponent {
 }
 
 TimePicker.propTypes = {
+    end_time       : PropTypes.number,
     is_align_right : PropTypes.bool,
     is_clearable   : PropTypes.bool,
     is_nativepicker: PropTypes.bool,
@@ -117,8 +121,7 @@ TimePicker.propTypes = {
     onChange       : PropTypes.func,
     padding        : PropTypes.string,
     placeholder    : PropTypes.string,
-    available_time_range       : MobxPropTypes.arrayOrObservableArray,
-    start_date     : PropTypes.number,
+    start_time     : PropTypes.number,
     value          : PropTypes.string,
 };
 
