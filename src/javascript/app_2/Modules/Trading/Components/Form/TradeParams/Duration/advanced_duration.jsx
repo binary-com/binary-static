@@ -18,21 +18,21 @@ let now_date,
     start_date_time;
 
 const AdvancedDuration = ({
-    duration_input_props,
-    duration_min_max,
     contract_expiry_type,
-    expiry_type,
-    onChange,
-    expiry_list,
+    duration_min_max,
+    duration_input_props,
     duration_unit,
     duration_units_list,
-    is_nativepicker,
-    start_date,
     expiry_date,
+    expiry_list,
     expiry_time,
-    sessions,
-    start_time,
+    expiry_type,
+    is_nativepicker,
+    onChange,
     server_time,
+    sessions,
+    start_date,
+    start_time,
 }) => {
     if (duration_min_max[contract_expiry_type]) {
         const moment_now  = toMoment(server_time);
@@ -69,17 +69,13 @@ const AdvancedDuration = ({
     const endtime_container_class = classNames('endtime-container', {
         'has-time': is_same_day,
     });
-    const filterMenu = (arr) => {
-        if (arr.length === 1) return [];
-        return arr;
-    };
     return (
         <Fragment>
             <ButtonToggleMenu
                 name='expiry_type'
                 value={expiry_type}
                 onChange={onChange}
-                buttons_arr={filterMenu(expiry_list)}
+                buttons_arr={expiry_list.length > 1 && expiry_list}
             />
             {expiry_type === 'duration' ?
                 <Fragment>
@@ -91,9 +87,8 @@ const AdvancedDuration = ({
                             onChange={onChange}
                             is_nativepicker={is_nativepicker}
                         />}
-                        <InputField
-                            {...duration_input_props}
-                        />
+                        { duration_unit === 't' && <span>Range slider</span> }
+                        { duration_unit !== 't' && <InputField {...duration_input_props} />}
                     </div>
                 </Fragment> :
                 <Fragment>
@@ -130,5 +125,23 @@ const AdvancedDuration = ({
         </Fragment>
     );
 };
+
+// AdvancedDuration.propTypes = {
+//     contract_expiry_type,
+//     duration_min_max,
+//     duration_input_props,
+//     duration_unit,
+//     duration_units_list,
+//     expiry_date,
+//     expiry_list,
+//     expiry_time,
+//     expiry_type,
+//     is_nativepicker,
+//     onChange,
+//     server_time,
+//     sessions,
+//     start_date,
+//     start_time,
+// };
 
 export default AdvancedDuration;

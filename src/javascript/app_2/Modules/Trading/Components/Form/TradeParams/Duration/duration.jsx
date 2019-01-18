@@ -85,51 +85,57 @@ const Duration = ({
             server_time,
         },
     };
-    // digit contracts only has range slide - does not have toggle between advanced / simple
+    // e.g. digit contracts only has range slider - does not have toggle between advanced / simple
     const has_advanced_simple_toggle = expiry_list.length > 1 || duration_units_list.length > 1;
     return (
         <Fieldset>
-            { has_advanced_simple_toggle ?
+            { !has_advanced_simple_toggle && <span>Range slider</span> }
+            { has_advanced_simple_toggle &&
                 <Fragment>
-                    { is_advanced_duration ?
+                    { is_advanced_duration &&
                         <AdvancedDuration
                             duration_unit={duration_unit}
                             duration_units_list={duration_units_list}
                             duration_input_props={props.duration_input}
                             onChange={onChange}
                             {...props.advanced}
-                        />
-                        :
+                        /> }
+                    { !is_advanced_duration &&
                         <SimpleDuration
                             duration_unit={duration_unit}
                             duration_units_list={duration_units_list}
                             duration_input_props={props.duration_input}
+                            expiry_type={expiry_type}
                             onChange={onChange}
                         /> }
-                    <AdvancedSimpleSwitch value={is_advanced_duration} onChange={onChange} />
-                </Fragment> :
-                <span>Range slider</span>
+                    <AdvancedSimpleToggle value={is_advanced_duration} onChange={onChange} name={'is_advanced_duration'} />
+                </Fragment>
             }
         </Fieldset>
     );
 };
 
-const AdvancedSimpleSwitch = ({
+const AdvancedSimpleToggle = ({
+    name,
     onChange,
     value,
 }) => {
-    const toggleDurationMode = () => {
-        onChange({ target: { value: 'duration', name: 'expiry_type' } });
-        onChange({ target: { value: 't', name: 'duration_unit' } });
-        onChange({ target: { value: !value, name: 'is_advanced_duration' } });
+    const toggle = () => {
+        onChange({ target: { value: !value, name } });
     };
-    const className = classNames('advanced-simple-switch__icon select-arrow', {
-        'advanced-simple-switch__icon--active': value,
+    const icon_className = classNames('advanced-simple-toggle__icon select-arrow', {
+        'advanced-simple-toggle__icon--active': value,
     });
     return (
-        <div onClick={toggleDurationMode} className='advanced-simple-switch'>
-            <IconArrow className={className} />
+        <div onClick={toggle} className='advanced-simple-toggle'>
+            <IconArrow className={icon_className} />
         </div>);
+};
+
+AdvancedSimpleToggle.propTypes = {
+    name    : PropTypes.string,
+    onChange: PropTypes.func,
+    value   : PropTypes.bool,
 };
 
 // ToDo: Refactor Duration.jsx and date_picker.jsx

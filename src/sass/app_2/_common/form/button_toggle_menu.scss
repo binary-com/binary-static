@@ -12,6 +12,9 @@
         border-bottom-right-radius: 4px;
     }
     &__button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         margin: 0;
         background-color: $COLOR_WHITE;
         border-radius: 0px;
