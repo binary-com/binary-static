@@ -24,10 +24,10 @@ export const CalendarYears = ({
                 return (
                     <span
                         key={idx}
-                        className={classNames('calendar__body__cell', {
-                            'calendar__body__cell--is-active'      : year === selected_year,
-                            'calendar__body__cell--is-other-decade': is_other_decade,
-                            'calendar__body__cell--is-disabled'    : is_disabled,
+                        className={classNames('calendar__cell', {
+                            'calendar__cell--is-active'      : year === selected_year,
+                            'calendar__cell--is-other-decade': is_other_decade,
+                            'calendar__cell--is-disabled'    : is_disabled,
                         })}
                         onClick={onClick.year}
                         data-year={year}

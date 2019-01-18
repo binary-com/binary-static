@@ -25,8 +25,8 @@ const CalendarHeader = ({
     return (
         <div className='calendar__header'>
             <CalendarButton
-                className={classNames('calendar__header__nav calendar__header__nav--prev-year', {
-                    'calendar__header__nav--is-disabled': isPeriodDisabled(moment_date.clone().subtract(1, 'month'), 'month'),
+                className={classNames('calendar__nav calendar__nav--prev-year', {
+                    'calendar__nav--is-disabled': isPeriodDisabled(moment_date.clone().subtract(1, 'month'), 'month'),
                 })}
                 onClick={() => (
                     (is_date_view || is_month_view) && onClick.previousYear())
@@ -38,8 +38,8 @@ const CalendarHeader = ({
                 <IconChevronDoubleLeft />
             </CalendarButton>
             <CalendarButton
-                className={classNames('calendar__header__nav calendar__header__nav--prev-month', {
-                    'calendar__header__nav--is-disabled': isPeriodDisabled(moment_date.clone().subtract(1, 'month'), 'month'),
+                className={classNames('calendar__nav calendar__nav--prev-month', {
+                    'calendar__nav--is-disabled': isPeriodDisabled(moment_date.clone().subtract(1, 'month'), 'month'),
                 })}
                 is_hidden={!is_date_view}
                 onClick={onClick.previousMonth}
@@ -47,18 +47,18 @@ const CalendarHeader = ({
                 <IconChevronLeft />
             </CalendarButton>
 
-            <div className='calendar__header__select'>
+            <React.Fragment>
                 { is_date_view &&
                     <CalendarButton
-                        className='calendar__header__select__btn'
+                        className='calendar__btn calendar__btn--select'
                         is_hidden={!is_date_view}
                         label={moment_date.format('MMM')}
                         onClick={onSelect.month}
                     />
                 }
                 <CalendarButton
-                    className={classNames('calendar__header__select__btn', {
-                        'calendar__header__select__btn--is-decade': is_decade_view,
+                    className={classNames('calendar__btn calendar__btn--select', {
+                        'calendar__btn--is-disabled': is_decade_view,
                     })}
                     onClick={() => ((is_date_view || is_month_view) ? onSelect.year() : onSelect.decade())}
                 >
@@ -66,11 +66,11 @@ const CalendarHeader = ({
                     { is_year_view   && `${moment_date.clone().year()}-${moment_date.clone().add(9, 'years').year()}`  }
                     { is_decade_view && `${moment_date.clone().year()}-${moment_date.clone().add(99, 'years').year()}` }
                 </CalendarButton>
-            </div>
+            </React.Fragment>
 
             <CalendarButton
-                className={classNames('calendar__header__nav calendar__header__nav--next-month', {
-                    'calendar__header__nav--is-disabled': isPeriodDisabled(moment_date.clone().add(1, 'month'), 'month'),
+                className={classNames('calendar__nav calendar__nav--next-month', {
+                    'calendar__nav--is-disabled': isPeriodDisabled(moment_date.clone().add(1, 'month'), 'month'),
                 })}
                 is_hidden={!is_date_view}
                 onClick={onClick.nextMonth}
@@ -78,8 +78,8 @@ const CalendarHeader = ({
                 <IconChevronRight />
             </CalendarButton>
             <CalendarButton
-                className={classNames('calendar__header__nav calendar__header__nav--next-year', {
-                    'calendar__header__nav--is-disabled': isPeriodDisabled(moment_date.clone().add(1, 'month'), 'month'),
+                className={classNames('calendar__nav calendar__nav--next-year', {
+                    'calendar__nav--is-disabled': isPeriodDisabled(moment_date.clone().add(1, 'month'), 'month'),
                 })}
                 onClick={() => (
                     ((is_date_view || is_month_view) && onClick.nextYear())

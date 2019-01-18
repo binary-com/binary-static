@@ -182,13 +182,13 @@ class DatePicker extends React.PureComponent {
                         this.renderDatePickerInputField(this.state.value)
                 }
                 <IconCalendar
-                    className={classNames('datepicker__input__icon datepicker__input__icon--calendar', {
-                        'datepicker__input__icon--is-hidden': this.state.is_clear_btn_visible,
+                    className={classNames('datepicker__icon datepicker__icon--calendar', {
+                        'datepicker__icon--is-hidden': this.state.is_clear_btn_visible,
                     })}
                 />
                 <IconClear
-                    className={classNames('datepicker__input__icon datepicker__input__icon--clear', {
-                        'datepicker__input__icon--is-hidden': !this.state.is_clear_btn_visible,
+                    className={classNames('datepicker__icon datepicker__icon--clear', {
+                        'datepicker__icon--is-hidden': !this.state.is_clear_btn_visible,
                     })}
                     onClick={this.state.is_clear_btn_visible ? this.clearDatePickerInput : undefined}
                 />

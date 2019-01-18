@@ -13,7 +13,7 @@
             border-color: $COLOR_BLUE;
         }
     }
-    &__input__icon {
+    &__icon {
         opacity: 1;
         transition: opacity 0.1s;
 
@@ -104,7 +104,7 @@
                 border-color: $COLOR_WHITE;
             }
         }
-        &__input__icon path {
+        &__icon path {
             fill: $COLOR_WHITE;
         }
         &__native-overlay {

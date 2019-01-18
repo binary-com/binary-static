@@ -37,9 +37,9 @@ export const CalendarMonths = ({
                 return (
                     <span
                         key={idx}
-                        className={classNames('calendar__body__cell', {
-                            'calendar__body__cell--is-active'  : is_active,
-                            'calendar__body__cell--is-disabled': is_disabled,
+                        className={classNames('calendar__cell', {
+                            'calendar__cell--is-active'  : is_active,
+                            'calendar__cell--is-disabled': is_disabled,
                         })}
                         onClick={onClick.month}
                         data-month={idx}

@@ -11,7 +11,6 @@ const CalendarButton = ({
     <React.Fragment>
         { !is_hidden &&
             <span
-                type='button'
                 className={className}
                 onClick={onClick}
             >

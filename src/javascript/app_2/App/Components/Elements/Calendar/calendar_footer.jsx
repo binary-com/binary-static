@@ -12,17 +12,17 @@ const CalendarFooter = ({
     <React.Fragment>
         { (has_today_btn || footer) &&
             <div className='calendar__footer'>
-                { footer && <span className='calendar__footer__extra'>{footer}</span> }
+                { footer && <span className='calendar__text calendar__text--bold'>{footer}</span> }
                 { has_today_btn &&
-                <React.Fragment>
-                    <CalendarButton className='calendar__footer__btn'>
-                        <a role='button' onClick={onClick}>{localize('Today')}</a>
-                    </CalendarButton>
-                    <IconCalendarToday
-                        className='calendar__footer__icon calendar__footer__icon--today'
-                        onClick={onClick}
-                    />
-                </React.Fragment>
+                    <React.Fragment>
+                        <CalendarButton className='calendar__btn'>
+                            <a onClick={onClick}>{localize('Today')}</a>
+                        </CalendarButton>
+                        <IconCalendarToday
+                            className='calendar__icon calendar__icon--today'
+                            onClick={onClick}
+                        />
+                    </React.Fragment>
                 }
             </div>
         }

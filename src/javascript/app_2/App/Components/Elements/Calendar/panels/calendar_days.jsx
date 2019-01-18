@@ -53,16 +53,17 @@ const getDays = ({
             // for forward starting accounts, only show same day as start date and the day after
             (start_date && (moment_date.isBefore(moment_start_date) || moment_date.isAfter(moment_start_date.clone().add(1, 'day'))));
 
-        // show 'disabled' style for dates that is not in the same calendar month, and the date should still be clickable
+        // show 'disabled' style for dates that is not in the same calendar month,
+        // but the date should still be clickable
         const is_other_month = moment_date.month() !== moment_cur_date.month();
         days.push(
             <span
                 key={date}
-                className={classNames('calendar__body__cell', {
-                    'calendar__body__cell--is-active'     : is_active && !is_disabled,
-                    'calendar__body__cell--is-today'      : is_today,
-                    'calendar__body__cell--is-disabled'   : is_disabled,
-                    'calendar__body__cell--is-other-month': is_other_month,
+                className={classNames('calendar__cell', {
+                    'calendar__cell--is-active'     : is_active && !is_disabled,
+                    'calendar__cell--is-today'      : is_today,
+                    'calendar__cell--is-disabled'   : is_disabled,
+                    'calendar__cell--is-other-month': is_other_month,
                 })}
                 onClick={(e) => { onClick.date(e, is_disabled); }}
                 data-date={date}
@@ -82,7 +83,7 @@ export const CalendarDays = (props) => {
 
     return (
         <div className='calendar__body calendar__body--date'>
-            {week_headers.map((item, idx) => (<span key={idx} className='calendar__body__header'>{item}</span>))}
+            {week_headers.map((item, idx) => (<span key={idx} className='calendar__text calendar__text--bold'>{item}</span>))}
             {days}
         </div>
     );

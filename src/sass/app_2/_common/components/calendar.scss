@@ -1,5 +1,4 @@
 .calendar {
-    $self: &;
     position: absolute;
     top: 0;
     background: $COLOR_WHITE;
@@ -12,83 +11,17 @@
     &, * {
         box-sizing: border-box;
     }
-    &__footer {
-        border-top: 1px solid $COLOR_GRAY;
-        display: grid;
-        align-items: center;
+    &__header, &__footer {
         position: relative;
-        height: 50px;
-
-        &__extra {
-            padding: 8px;
-        }
-        &__extra + &__btn {
-            border-top: 1px solid $COLOR_GRAY;
-            margin: 0 -12px;
-        }
-        &__btn {
-            text-align: center;
-            padding: 8px;
-
-            a {
-                cursor: pointer;
-                color: $COLOR_BLUE;
-                line-height: 1.5;
-                font-size: 12px;
-                font-weight: bold;
-            }
-        }
-        &__icon {
-            @extend .absolute-center-v;
-            right: 5%;
-
-            &--today:hover {
-                cursor: pointer;
-            }
-        }
-    }
-    &__header {
         display: flex;
         justify-content: center;
         align-items: center;
         height: 50px;
-        border-bottom: 1px solid $COLOR_GRAY;
-
-        &__select__btn {
-            padding: 0 3px;
-            font-size: 14px;
-            font-weight: bold;
-            cursor: pointer;
-
-            &--is-decade {
-                cursor: default;
-            }
-        }
-        &__nav {
-            position: absolute;
-            padding: 0 5px;
-
-            &:hover:not(&--is-disabled) {
-                cursor: pointer;
-            }
-            &--prev-year {
-                left: 7%;
-            }
-            &--next-year {
-                right: 7%;
-            }
-            &--prev-month {
-                left: 14%;
-            }
-            &--next-month {
-                right: 14%;
-            }
-            &--is-disabled svg path {
-                fill: $COLOR_GRAY;
-            }
-        }
     }
     &__body {
+        border-top: 1px solid $COLOR_GRAY;
+        border-bottom: 1px solid $COLOR_GRAY;
+
         &--date, &--month, &--year, &--decade {
             display: grid;
             grid-gap: 12px;
@@ -122,41 +55,102 @@
         &--decade span {
             width: 100%;
         }
-        &__header {
+    }
+    &__icon {
+        @extend .absolute-center-v;
+        right: 5%;
+
+        &--today:hover {
+            cursor: pointer;
+        }
+    }
+    &__nav {
+        position: absolute;
+        padding: 0 5px;
+
+        &:hover:not(&--is-disabled) {
+            cursor: pointer;
+        }
+        &--prev-year {
+            left: 7%;
+        }
+        &--next-year {
+            right: 7%;
+        }
+        &--prev-month {
+            left: 14%;
+        }
+        &--next-month {
+            right: 14%;
+        }
+        &--is-disabled path {
+            fill: $COLOR_GRAY;
+        }
+    }
+    &__btn {
+        text-align: center;
+        padding: 8px 2px;
+        font-weight: bold;
+        cursor: pointer;
+
+        &--is-disabled {
+            cursor: default;
+            color: $COLOR_GRAY;
+            transition: none;
+        }
+        a {
+            cursor: inherit;
+            color: inherit;
+            font-size: 12px;
+        }
+    }
+    &__text {
+        font-size: 14px;
+        line-height: 1.5;
+        color: $COLOR_LIGHT_BLACK;
+
+        &--bold {
+            font-weight: bold;
+        }
+        & + &__btn {
+            border-top: 1px solid $COLOR_GRAY;
+            margin: 0 -12px;
+        }
+    }
+    &__cell {
+        font-size: 12px;
+        align-self: center;
+        justify-self: center;
+        transition: background 0.2s;
+
+        &:hover {
+            cursor: pointer;
+        }
+        &:hover:not(&--is-active) {
+            background: $COLOR_LIGHT_GRAY;
+        }
+        &--bold {
             font-size: 14px;
             font-weight: bold;
             color: $COLOR_LIGHT_BLACK;
         }
-        &__cell {
-            font-size: 12px;
-            align-self: center;
-            justify-self: center;
-            transition: background 0.2s;
-
-            &:hover {
-                cursor: pointer;
-            }
-            &:hover:not(&--is-active) {
-                background: $COLOR_LIGHT_GRAY;
-            }
-            &--is-disabled, &--is-other-month, &--is-other-decade, &--is-other-century {
-                color: $COLOR_GRAY;
-                transition: none;
-            }
-            &--is-disabled:hover {
-                cursor: default;
-            }
-            &--is-today {
-                font-weight: 400;
-                border: 1px solid $COLOR_BLUE;
-                border-radius: 5px;
-            }
-            &--is-active {
-                color: $COLOR_WHITE;
-                background: $COLOR_BLUE;
-                font-weight: bold;
-                box-shadow: 0 2px 8px 0 rgba(42, 48, 82, 0.14);
-            }
+        &--is-disabled, &--is-other-month, &--is-other-decade, &--is-other-century {
+            color: $COLOR_GRAY;
+            transition: none;
+        }
+        &--is-disabled:hover {
+            cursor: default;
+        }
+        &--is-today {
+            font-weight: 400;
+            border: 1px solid $COLOR_BLUE;
+            border-radius: 5px;
+        }
+        &--is-active {
+            color: $COLOR_WHITE;
+            background: $COLOR_BLUE;
+            font-weight: bold;
+            box-shadow: 0 2px 8px 0 rgba(42, 48, 82, 0.14);
         }
     }
 }
@@ -164,7 +158,6 @@
 // Dark theme
 .theme-wrapper.dark {
     .calendar {
-        $self: &;
         background: $COLOR_BRANDBLUE_95;
         border: 1px solid $COLOR_BRANDBLUE_85;
 
@@ -176,49 +169,50 @@
                 color: $COLOR_WHITE;
             }
         }
-        &__header {
-            background: $COLOR_BLUE;
-
-            &__nav {
-                svg path {
-                    fill: $COLOR_BRANDBLUE_40;
-                }
-                &--is-disabled svg path {
-                    fill: $COLOR_BRANDBLUE_75;
-                }
+        &__nav {
+            path {
+                fill: $COLOR_BRANDBLUE_40;
+            }
+            &--is-disabled path {
+                fill: $COLOR_BRANDBLUE_75;
             }
         }
-        &__footer {
-            &__btn {
-                color: $COLOR_BRANDBLUE_40;
+        &__text {
+            color: $COLOR_WHITE;
+        }
+        &__header {
+            background: $COLOR_BLUE;
+        }
+        &__btn {
+            color: $COLOR_BRANDBLUE_40;
+
+            &--select {
+                color: $COLOR_WHITE;
             }
-            &__icon path {
-                stroke: $COLOR_WHITE;
-            }
+        }
+        &__icon path {
+            stroke: $COLOR_WHITE;
         }
         &__body {
             background: $COLOR_BRANDBLUE_95;
+            border-color: $COLOR_BRANDBLUE_85;
+        }
+        &__cell {
+            color: $COLOR_BRANDBLUE_40;
 
-            &__header {
+            &:hover:not(&--is-active) {
+                background: $COLOR_BRANDBLUE_85;
+            }
+            &--is-disabled, &--is-other-month {
+                color: $COLOR_BRANDBLUE_75;
+            }
+            &--is-today {
+                border: 1px solid $COLOR_WHITE;
                 color: $COLOR_WHITE;
             }
-            &__cell {
-                color: $COLOR_BRANDBLUE_40;
-
-                &:hover:not(&--is-active) {
-                    background: $COLOR_BRANDBLUE_85;
-                }
-                &--is-disabled, &--is-other-month {
-                    color: $COLOR_BRANDBLUE_75;
-                }
-                &--is-today {
-                    border: 1px solid $COLOR_WHITE;
-                    color: $COLOR_WHITE;
-                }
-                &--is-active {
-                    color: $COLOR_BLUE;
-                    background: $COLOR_WHITE !important;
-                }
+            &--is-active {
+                color: $COLOR_BLUE;
+                background: $COLOR_WHITE !important;
             }
         }
     }

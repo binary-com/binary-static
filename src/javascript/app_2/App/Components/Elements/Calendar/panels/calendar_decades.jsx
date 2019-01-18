@@ -32,10 +32,10 @@ export const CalendarDecades = ({
                 return (
                     <span
                         key={idx}
-                        className={classNames('calendar__body__cell', {
-                            'calendar__body__cell--is-active'       : is_active,
-                            'calendar__body__cell--is-disabled'     : is_disabled,
-                            'calendar__body__cell--is-other-century': is_other_century,
+                        className={classNames('calendar__cell', {
+                            'calendar__cell--is-active'       : is_active,
+                            'calendar__cell--is-disabled'     : is_disabled,
+                            'calendar__cell--is-other-century': is_other_century,
                         })}
                         onClick={onClick.decade}
                         data-decade={range}
