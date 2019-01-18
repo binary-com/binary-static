@@ -49,19 +49,19 @@ const RangeSlider = ({
                     />
                 </div>
                 {/* Calculate line width based on active value and size of range thumb */}
-                <div className='range-slider__line' style={{ width: `calc(${value * 10}% - 0.5rem)` }} />
+                <div className='range-slider__line' style={{ width: `calc(${value * 10}% - ${value < 4 ? '0.7rem' : '0.5rem'})` }} />
             </label>
             <div className='range-slider__caption'>
-                <span className='range-slider__caption--min'>
+                <span>
                     {min}
                 </span>
                 {
                     !!value &&
-                    <span className='range-slider__caption--current'>
+                    <span>
                         {localize('[_1] Ticks', value || '')}
                     </span>
                 }
-                <span className='range-slider__caption--max'>
+                <span>
                     {max}
                 </span>
             </div>

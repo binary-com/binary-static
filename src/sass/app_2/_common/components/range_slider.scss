@@ -111,16 +111,6 @@
         display: flex;
         padding: 4px 0;
         justify-content: space-between;
-
-        &--min {
-            text-align: left;
-        }
-        &--max {
-            text-align: right;
-        }
-        &--current {
-            text-align: center;
-        }
     }
 }
 
