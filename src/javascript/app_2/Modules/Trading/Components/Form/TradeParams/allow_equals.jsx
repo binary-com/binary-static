@@ -17,7 +17,7 @@ const AllowEquals = ({
                 onChange={onChange}
                 value='is_equal'
                 type='checkbox'
-                checked={checked ? 'checked' : ''}
+                checked={checked}
             />
             <label htmlFor='allow_equals'>{localize('Allow equals')}</label>
             <Tooltip icon='info' message={localize('Win payout if exit spot is also equal to entry spot.')} alignment='left' />
