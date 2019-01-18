@@ -121,6 +121,9 @@ const Duration = ({
         return arr;
     };
     const has_advanced_toggle = expiry_list.length > 1 || duration_units_list.length > 1;
+    if (!is_advanced_duration && duration_units_list.length > 1 && duration_unit !== 't' && duration_unit !== 'm') {
+        onChange({ target: { value: 't', name: 'duration_unit' } });
+    }
 
     return (
         <Fieldset>
