@@ -67,11 +67,13 @@ class TimePickerDropdown extends React.PureComponent {
 
     render() {
         const { preClass, value, toggle, start_time, end_time } = this.props;
-        const start_time_moment     = start_time ? toMoment(start_time) : toMoment(); // Where does this start time come from?
-        // add one hour because isBetween only checks until the start of the
-        // specified end time.
-        const end_time_moment       = end_time ? toMoment(end_time).add(1, 'hours')
-                                                : toMoment().hour('23').add(1, 'hours');
+        const start_time_moment     = start_time ? toMoment(start_time) : toMoment();
+        const end_time_moment       = end_time ? toMoment(end_time)
+                                                : toMoment()
+                                                    .hour('23')
+                                                    .minute('59')
+                                                    .seconds('59')
+                                                    .milliseconds('999');
         const to_compare_moment     = toMoment();
         const [ hour, minute ]      = value.split(':');
         return (
@@ -117,8 +119,8 @@ class TimePickerDropdown extends React.PureComponent {
                         <div className='list-title center-text'><strong>{localize('Minute')}</strong></div>
                         <div className='list-container'>
                             {this.minutes.map((mm, key) => {
-                                to_compare_moment.hour(hour).minute(mm); // Might be wrong as it also checks for hours and not only minutes.
-                                const is_enabled = to_compare_moment.isBetween(start_time_moment, end_time_moment);
+                                to_compare_moment.minute(mm);
+                                const is_enabled = to_compare_moment.isBetween(start_time_moment, end_time_moment, 'minute');
                                 return (
                                     <div
                                         className={`list-item${minute === mm ? ' selected' : ''}${is_enabled ? '' : ' disabled'}`}
@@ -137,15 +139,15 @@ class TimePickerDropdown extends React.PureComponent {
 }
 
 TimePickerDropdown.propTypes = {
-    className   : PropTypes.string,
-    is_clearable: PropTypes.bool,
-    onChange    : PropTypes.func,
-    preClass    : PropTypes.string,
-    available_time_range    : MobxPropTypes.arrayOrObservableArray,
-    start_date  : PropTypes.number,
-    toggle      : PropTypes.func,
-    value       : PropTypes.string,
-    value_split : PropTypes.bool,
+    className           : PropTypes.string,
+    is_clearable        : PropTypes.bool,
+    onChange            : PropTypes.func,
+    preClass            : PropTypes.string,
+    start_time          : PropTypes.number,
+    end_time            : PropTypes.number,
+    toggle              : PropTypes.func,
+    value               : PropTypes.string,
+    value_split         : PropTypes.bool,
 };
 
 export default TimePickerDropdown;
