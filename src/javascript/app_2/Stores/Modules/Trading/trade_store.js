@@ -9,7 +9,7 @@ import { localize }                      from '_common/localize';
 import {
     cloneObject,
     isEmptyObject,
-    getPropertyValue }                      from '_common/utility';
+    getPropertyValue }                   from '_common/utility';
 import {
     getMinPayout,
     isCryptocurrency }                   from '_common/base/currency_base';
@@ -190,12 +190,8 @@ export default class TradeStore extends BaseStore {
         if (name === 'currency') {
             this.root_store.client.selectCurrency(value);
         } else if (value === 'is_equal') {
-            if (this.contract_type === 'rise_fall' || this.contract_type === 'rise_fall_equal') {
-                if (checked) {
-                    value = 'rise_fall_equal';
-                } else {
-                    value = 'rise_fall';
-                }
+            if (/^(rise_fall|rise_fall_equal)$/.test(this.contract_type)) {
+                value = checked ? 'rise_fall_equal' : 'rise_fall';
             }
         } else if (!(name in this)) {
             throw new Error(`Invalid Argument: ${name}`);
@@ -426,11 +422,23 @@ export default class TradeStore extends BaseStore {
     changeAllowEquals() {
         const hasCallPutEqual = () => {
             const up_down_contracts = getPropertyValue(this.contract_types_list, 'Up/Down');
-            return up_down_contracts.find(contract => contract.value === 'rise_fall_equal');
+            return up_down_contracts.some(contract => contract.value === 'rise_fall_equal');
         };
-        const check_callput_equal_duration = ContractType
-            .getContractsForThisDuration(this.contract_types_list, this.duration_unit, this.contract_start_type);
-        if (/^(rise_fall|rise_fall_equal)$/.test(this.contract_type) && (check_callput_equal_duration.length || this.expiry_type === 'endtime') && hasCallPutEqual()) {
+        const hasDurationForCallPutEqual = (contract_type_list, duration_unit, contract_start_type) => {
+            const contract_list = Object.keys(contract_type_list || {})
+                .reduce((key, list) => ([...key, ...contract_type_list[list].map(contract => contract.value)]), []);
+            
+            const contract_duration_list = contract_list
+                .map(list => ({ [list]: getPropertyValue(ContractType.getFullContractTypes(), [list, 'config', 'durations', 'units_display', contract_start_type]) }));
+    
+            return contract_duration_list
+                .filter(contract => contract.rise_fall_equal)[0].rise_fall_equal
+                .some(duration => duration.value === duration_unit);
+        };
+        const check_callput_equal_duration = hasDurationForCallPutEqual(this.contract_types_list,
+            this.duration_unit, this.contract_start_type);
+
+        if (/^(rise_fall|rise_fall_equal)$/.test(this.contract_type) && (check_callput_equal_duration || this.expiry_type === 'endtime') && hasCallPutEqual()) {
             this.is_allow_equal = true;
         } else {
             this.is_allow_equal = false;

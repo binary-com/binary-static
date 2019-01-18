@@ -11,7 +11,7 @@ import { localize }              from '_common/localize';
 import Dropdown                  from 'App/Components/Form/DropDown';
 import Fieldset                  from 'App/Components/Form/fieldset.jsx';
 import InputField                from 'App/Components/Form/input_field.jsx';
-import AllowEquals                from './allow_equals.jsx';
+import AllowEquals               from './allow_equals.jsx';
 
 const Amount = ({
     amount,
