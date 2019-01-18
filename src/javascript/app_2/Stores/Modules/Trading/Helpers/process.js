@@ -7,10 +7,12 @@ import * as StartDate     from '../Actions/start_date';
 
 export const processTradeParams = async(store, new_state) => {
     const snapshot = store.getSnapshot();
+    const functions = getMethodsList(store, new_state);
 
-    getMethodsList(store, new_state).forEach((fnc) => {
-        extendOrReplace(snapshot, fnc(snapshot));
-    });
+    // To make sure that every function is invoked and affects the snapshot respectively, we have to use for instead of forEach
+    for (let i = 0; i < functions.length; i++){
+        extendOrReplace(snapshot, await functions[i](snapshot)); // eslint-disable-line no-await-in-loop
+    }
 
     return snapshot;
 };
@@ -26,7 +28,7 @@ const getMethodsList = (store, new_state) => ([
 
 // Some values need to be replaced, not extended
 const extendOrReplace = (source, new_values) => {
-    const to_replace = ['contract_types_list', 'duration_units_list', 'form_components', 'trade_types'];
+    const to_replace = ['contract_types_list', 'duration_units_list', 'form_components', 'market_close_times', 'trade_types'];
 
     to_replace.forEach((key) => {
         if (key in new_values) {

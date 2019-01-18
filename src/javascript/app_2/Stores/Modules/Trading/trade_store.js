@@ -60,7 +60,7 @@ export default class TradeStore extends BaseStore {
     @observable duration_units_list = [];
     @observable duration_min_max    = {};
     @observable expiry_date         = '';
-    @observable expiry_time         = '09:40';
+    @observable expiry_time         = '';
     @observable expiry_type         = 'duration';
 
     // Barrier
@@ -73,6 +73,15 @@ export default class TradeStore extends BaseStore {
     @observable start_dates_list = [];
     @observable start_time       = null;
     @observable sessions         = [];
+
+    // End Date Time
+    /**
+     * An array that contains market closing time.
+     *
+     * e.g. ["04:00:00", "08:00:00"]
+     *
+     */
+    @observable market_close_times = [];
 
     // Last Digit
     @observable last_digit = 5;
@@ -218,7 +227,7 @@ export default class TradeStore extends BaseStore {
     @action.bound
     updateStore(new_state) {
         Object.keys(cloneObject(new_state)).forEach((key) => {
-            if (key === 'root_store' || ['validation_rules', 'validation_errors', 'currency'].indexOf(key) > -1) return;
+            if (key === 'root_store' || ['validation_rules', 'validation_errors', 'currency', 'smart_chart'].indexOf(key) > -1) return;
             if (JSON.stringify(this[key]) === JSON.stringify(new_state[key])) {
                 delete new_state[key];
             } else {

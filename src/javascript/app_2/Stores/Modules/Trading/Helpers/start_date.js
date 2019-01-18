@@ -41,5 +41,5 @@ export const isSessionAvailable = (
     !isBeforeDate(compare_moment, start_moment, should_only_check_hour) &&
         (!sessions.length ||
             !!sessions.find(session =>
-                compare_moment.isBetween(should_only_check_hour ? session.open.clone().minute(0) : session.open, session.close, null, '[]')))
+                compare_moment.isBetween(session.open, session.close, should_only_check_hour ? 'hour' : null, '[]')))
 );
