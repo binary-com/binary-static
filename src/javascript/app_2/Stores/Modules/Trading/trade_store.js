@@ -39,6 +39,7 @@ export default class TradeStore extends BaseStore {
     @observable is_purchase_enabled        = false;
     @observable is_trade_enabled           = false;
     @observable is_allow_equal             = false;
+    @observable is_equal_checked           = 0;
 
     // Underlying
     @observable symbol;
@@ -191,7 +192,13 @@ export default class TradeStore extends BaseStore {
             this.root_store.client.selectCurrency(value);
         } else if (value === 'is_equal') {
             if (/^(rise_fall|rise_fall_equal)$/.test(this.contract_type)) {
-                value = checked ? 'rise_fall_equal' : 'rise_fall';
+                if (checked) {
+                    this.is_equal_checked = 1;
+                    value = 'rise_fall_equal';
+                } else {
+                    this.is_equal_checked = 0;
+                    value = 'rise_fall';
+                }
             }
         } else if (!(name in this)) {
             throw new Error(`Invalid Argument: ${name}`);
