@@ -462,6 +462,12 @@
                         font-size: 10px;
                         align-items: flex-start;
                         font-weight: bold;
+
+                        .symbols {
+                            background: none;
+                            position: relative;
+                            color: $COLOR_WHITE;
+                        }
                     }
                     &__content {
                         max-width: 50%;
@@ -480,10 +486,6 @@
                         span {
                             margin-left: 10px;
                         }
-                    }
-                    .symbols {
-                        background: none;
-                        position: relative;
                     }
                     &__effect-main {
                         width: 60%;
@@ -550,8 +552,8 @@
                     }
                 }
                 &:before {
-                    background: $COLOR_DARK_BLUE;
-                    color: $COLOR_WHITE;
+                    background: $COLOR_WHITE;
+                    color: $COLOR_BLUE;
                     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
                     max-width: unset;
                     width: 290px;
@@ -561,7 +563,7 @@
                     padding-left: 40px;
                 }
                 &:after {
-                    border-left-color: $COLOR_DARK_BLUE;
+                    border-left-color: $COLOR_WHITE;
                     margin-right: 20px;
                 }
                 &:hover:after, &:hover:before {
@@ -678,3 +680,34 @@
         }
     }
 }
+
+// Dark Theme
+.theme-wrapper.dark {
+    div.purchase-wrapper {
+        .purchase-tooltip {
+            span.tooltip {
+                position: unset;
+
+                i {
+                    &:before {
+                        content: url('../images/common/tooltip/ic_tooltip_info_dark.svg ');
+                    }
+                    &:hover:before {
+                        opacity: 1;
+                    }
+                }
+                &:before {
+                    background: $COLOR_DARK_BLUE;
+                    color: $COLOR_WHITE;
+                }
+                &:after {
+                    border-left-color: $COLOR_DARK_BLUE;
+                }
+                &:hover:after, &:hover:before {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
