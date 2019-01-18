@@ -430,7 +430,8 @@ export default class TradeStore extends BaseStore {
             
             const contract_duration_list = contract_list
                 .map(list => ({ [list]: getPropertyValue(ContractType.getFullContractTypes(), [list, 'config', 'durations', 'units_display', contract_start_type]) }));
-    
+            
+            // Check whether rise fall equal has the current store duration unit
             return contract_duration_list
                 .filter(contract => contract.rise_fall_equal)[0].rise_fall_equal
                 .some(duration => duration.value === duration_unit);
