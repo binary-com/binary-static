@@ -3,38 +3,19 @@ import {
     PropTypes as MobxPropTypes,
     observer }                  from 'mobx-react';
 import PropTypes                from 'prop-types';
-import React                    from 'react';
+import React, { Fragment }      from 'react';
 import { localize }             from '_common/localize';
-import Datepicker               from 'App/Components/Form/DatePicker';
-import Dropdown                 from 'App/Components/Form/DropDown';
-import Fieldset                 from 'App/Components/Form/fieldset.jsx';
-import InputField               from 'App/Components/Form/input_field.jsx';
-import TimePicker               from 'App/Components/Form/time_picker.jsx';
-import {
-    convertDurationLimit,
-    convertDurationUnit }       from 'Stores/Modules/Trading/Helpers/duration';
-import {
-    isTimeValid,
-    toMoment }                  from 'Utils/Date';
-import ButtonToggleMenu         from 'App/Components/Form/button_toggle_menu.jsx';
-import { IconArrow }            from 'Assets/Common';
 
-/* TODO:
-      1. disable days other than today and tomorrow if start date is forward starting
-*/
+import Fieldset                 from 'App/Components/Form/fieldset.jsx';
+import { convertDurationLimit }       from 'Stores/Modules/Trading/Helpers/duration';
+import { toMoment }                  from 'Utils/Date';
+import { IconArrow }            from 'Assets/Common';
+import AdvancedDuration         from './advanced_duration.jsx';
+import SimpleDuration           from './simple_duration.jsx';
 
 const expiry_list = [
     { text: localize('Duration'), value: 'duration' },
 ];
-
-let now_date,
-    max_date_duration,
-    min_date_expiry,
-    min_day,
-    max_day,
-    start_date_time,
-    max_duration,
-    min_duration;
 
 const Duration = ({
     contract_expiry_type,
@@ -55,42 +36,18 @@ const Duration = ({
     start_time,
     validation_errors,
 }) => {
-    if (duration_min_max[contract_expiry_type]) {
-        min_duration = convertDurationLimit(+duration_min_max[contract_expiry_type].min, duration_unit);
-        max_duration = convertDurationLimit(+duration_min_max[contract_expiry_type].max, duration_unit);
-        const moment_now  = toMoment(server_time);
-        const new_min_day = convertDurationUnit(duration_min_max[contract_expiry_type].min, 's', 'd');
-        const new_max_day = convertDurationUnit(duration_min_max[contract_expiry_type].max, 's', 'd');
-        if (!now_date || moment_now.date() !== now_date.date() || (duration_unit === 'd' && (min_day !== new_min_day || max_day !== new_max_day))) {
-            if (duration_unit === 'd') {
-                min_day = new_min_day;
-                max_day = new_max_day;
-            }
-
-            const moment_today = moment_now.clone().startOf('day');
-
-            now_date          = moment_now.clone();
-            max_date_duration = moment_today.clone().add(max_day || 365, 'd');
-            min_date_expiry   = moment_today.clone();
+    const has_end_time = expiry_list.find(expiry => expiry.value === 'endtime');
+    if (duration_units_list.length === 1 && duration_unit === 't') {
+        if (has_end_time) {
+            expiry_list.pop(); // remove end time for contracts with only tick duration
         }
+    } else if (!has_end_time) {
+        expiry_list.push({ text: localize('End Time'), value: 'endtime' });
     }
 
-    const moment_expiry = toMoment(expiry_date);
-    const is_same_day   = moment_expiry.isSame(toMoment(start_date), 'day');
-    if (is_same_day) {
-        const date_time = toMoment(start_date);
-        if (start_date && isTimeValid(start_time)) {
-            const [ hour, minute ] = start_time.split(':');
-            date_time.hour(hour).minute(minute).second(0).add(5, 'minutes');
-        }
-        // only update start time every five minutes, since time picker shows five minute durations
-        const moment_start_date_time = toMoment(start_date_time);
-        if (!start_date_time || moment_start_date_time.isAfter(date_time) || moment_start_date_time.clone().add(5, 'minutes').isBefore(date_time) ||
-            (moment_start_date_time.minutes() !== date_time.minutes() && date_time.minutes() % 5 === 0)) {
-            start_date_time = date_time.unix();
-        }
-    }
+    // TODO: Move to MobileComponent
     if (is_minimized) {
+        const moment_expiry = toMoment(expiry_date);
         const duration_unit_text = (duration_units_list.find(o => o.value === duration_unit) || {}).text;
         return (
             <div className='fieldset-minimized duration'>
@@ -103,126 +60,55 @@ const Duration = ({
         );
     }
 
-    const has_end_time = expiry_list.find(expiry => expiry.value === 'endtime');
-    if (duration_units_list.length === 1 && duration_unit === 't') {
-        if (has_end_time) {
-            expiry_list.pop(); // remove end time for contracts with only tick duration
-        }
-    } else if (!has_end_time) {
-        expiry_list.push({ text: localize('End Time'), value: 'endtime' });
-    }
-
-    const endtime_container_class = classNames('endtime-container', {
-        'has-time': is_same_day,
-    });
-    const filterMenu = (arr) => {
-        if (arr.length === 1) return [];
-        if (!is_advanced_duration) return arr.filter(du => du.value === 't' || du.value === 'm');
-        return arr;
+    const props = {
+        duration_input: {
+            type            : 'number',
+            max_value       : convertDurationLimit(+duration_min_max[contract_expiry_type].max, duration_unit),
+            min_value       : convertDurationLimit(+duration_min_max[contract_expiry_type].min, duration_unit),
+            name            : 'duration',
+            value           : duration,
+            onChange,
+            is_nativepicker,
+            is_incrementable: true,
+            error_messages  : validation_errors.duration || [],
+        },
+        advanced: {
+            duration_min_max,
+            contract_expiry_type,
+            expiry_type,
+            expiry_list,
+            start_date,
+            expiry_date,
+            expiry_time,
+            sessions,
+            start_time,
+            server_time,
+        },
     };
-    const has_advanced_toggle = expiry_list.length > 1 || duration_units_list.length > 1;
-    if (!is_advanced_duration && duration_units_list.length > 1 && duration_unit !== 't' && duration_unit !== 'm') {
-        onChange({ target: { value: 't', name: 'duration_unit' } });
-    }
-
+    // digit contracts only has range slide - does not have toggle between advanced / simple
+    const has_advanced_simple_toggle = expiry_list.length > 1 || duration_units_list.length > 1;
     return (
         <Fieldset>
-            {
-                has_advanced_toggle ?
-                    <React.Fragment>
-                        { is_advanced_duration &&
-                            <React.Fragment>
-                                <ButtonToggleMenu
-                                    name='expiry_type'
-                                    value={expiry_type}
-                                    onChange={onChange}
-                                    buttons_arr={filterMenu(expiry_list)}
-                                />
-                                {expiry_type === 'duration' ?
-                                    <React.Fragment>
-                                        <div className='duration-container'>
-                                            {duration_units_list.length > 1 && <Dropdown
-                                                list={duration_units_list}
-                                                value={duration_unit}
-                                                name='duration_unit'
-                                                onChange={onChange}
-                                                is_nativepicker={is_nativepicker}
-                                            />}
-                                            <InputField
-                                                type='number'
-                                                max_value={max_duration}
-                                                min_value={min_duration}
-                                                name='duration'
-                                                value={duration}
-                                                onChange={onChange}
-                                                is_nativepicker={is_nativepicker}
-                                                is_incrementable={true}
-                                                error_messages = {validation_errors.duration || []}
-                                            />
-                                        </div>
-                                    </React.Fragment> :
-                                    <React.Fragment>
-                                        <div className={endtime_container_class}>
-                                            <Datepicker
-                                                name='expiry_date'
-                                                has_today_btn
-                                                min_date={min_date_expiry}
-                                                max_date={max_date_duration}
-                                                start_date={start_date}
-                                                onChange={onChange}
-                                                value={expiry_date}
-                                                is_read_only
-                                                is_clearable={false}
-                                                is_nativepicker={is_nativepicker}
-                                            />
-                                            {is_same_day &&
-                                                <TimePicker
-                                                    onChange={onChange}
-                                                    is_align_right
-                                                    name='expiry_time'
-                                                    value={expiry_time}
-                                                    placeholder='12:00'
-                                                    start_date={start_date_time}
-                                                    sessions={sessions}
-                                                    is_clearable={false}
-                                                    is_nativepicker={is_nativepicker}
-                                                    // validation_errors={validation_errors.end_time} TODO: add validation_errors for end time
-                                                />
-                                            }
-                                        </div>
-                                    </React.Fragment>
-                                }
-                            </React.Fragment>
-                        }
-                        { !is_advanced_duration &&
-                            <React.Fragment>
-                                <ButtonToggleMenu
-                                    value={duration_unit}
-                                    name='duration_unit'
-                                    onChange={onChange}
-                                    buttons_arr={filterMenu(duration_units_list)}
-                                />
-                                {duration_unit === 't' &&
-                                    <span>Range slider</span>
-                                }
-                                {duration_unit !== 't' &&
-                                    <InputField
-                                        type='number'
-                                        max_value={max_duration}
-                                        min_value={min_duration}
-                                        name='duration'
-                                        value={duration}
-                                        onChange={onChange}
-                                        is_nativepicker={is_nativepicker}
-                                        is_incrementable={true}
-                                        error_messages = {validation_errors.duration || []}
-                                    />
-                                }
-                            </React.Fragment>
-                        }
-                        <AdvancedSimpleSwitch value={is_advanced_duration} onChange={onChange} />
-                    </React.Fragment> :
-                    <span>Range slider</span>
+            { has_advanced_simple_toggle ?
+                <Fragment>
+                    { is_advanced_duration ?
+                        <AdvancedDuration
+                            duration_unit={duration_unit}
+                            duration_units_list={duration_units_list}
+                            duration_input_props={props.duration_input}
+                            onChange={onChange}
+                            {...props.advanced}
+                        />
+                        :
+                        <SimpleDuration
+                            duration_unit={duration_unit}
+                            duration_units_list={duration_units_list}
+                            duration_input_props={props.duration_input}
+                            onChange={onChange}
+                        /> }
+                    <AdvancedSimpleSwitch value={is_advanced_duration} onChange={onChange} />
+                </Fragment> :
+                <span>Range slider</span>
             }
         </Fieldset>
     );
