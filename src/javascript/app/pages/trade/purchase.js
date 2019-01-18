@@ -162,7 +162,6 @@ const Purchase = (() => {
                 selected_tick_number: arr_shortcode[arr_shortcode.length - 1],
                 winning_tick_quote  : '',
                 winning_tick_number : '',
-                exit_tick_time      : false,
             };
 
             if (has_chart) {
@@ -241,7 +240,6 @@ const Purchase = (() => {
                     TickDisplay.setStatus(contract);
                     if (/^digit/i.test(contract.contract_type)) {
                         if (contract.status !== 'open') {
-                            tick_config.exit_tick_time = +contract.exit_tick_time;
                             digitShowExitTime(contract.status, contract.exit_tick);
                         }
                     }
@@ -307,12 +305,7 @@ const Purchase = (() => {
         }
 
         const spots2  = Tick.spots();
-        let epoches = Object.keys(spots2).sort((a, b) => a - b);
-
-        // I've added this part to prevent race condition.
-        if (tick_config.is_digit && epoches.length > duration) {
-            epoches = epoches.slice(+getPropertyValue(purchase_data, ['echo_req', 'passthrough', 'duration']));
-        }
+        const epoches = Object.keys(spots2).sort((a, b) => a - b);
 
         CommonFunctions.elementTextContent(spots, '');
         for (let s = 0; s < epoches.length; s++) {
@@ -360,7 +353,7 @@ const Purchase = (() => {
                 const el3  = createElement('div', { class: 'col' });
                 CommonFunctions.elementInnerHtml(el3, tick);
 
-                if (tick_config.is_digit && tick_config.exit_tick_time === false) {
+                if (tick_config.is_digit) {
                     DigitTicker.update(current_tick_count, tick_d);
                     const el_epoch = document.createElement('div');
                     el_epoch.className = 'digit-tick-epoch';
@@ -401,6 +394,11 @@ const Purchase = (() => {
     };
 
     const digitShowExitTime = (contract_status, last_tick_quote) => {
+        const are_spots_rendered = CommonFunctions.getElementById('contract_purchase_spots')
+            .getElementsByClassName('row').length;
+        if (!are_spots_rendered) {
+            updateSpotList();
+        }
         const el_container = CommonFunctions.getElementById('contract_purchase_spots');
         const el_epoch = Array.from(el_container.querySelectorAll('.digit-tick-epoch')).pop();
         const adjustment = 5;
