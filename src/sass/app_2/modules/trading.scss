@@ -452,16 +452,16 @@
                             flex-grow: 1;
                             justify-content: flex-end;
                         }
-                        &__return {
-                            font-size: 14px;
-                            align-items: flex-end;
-                            font-weight: bold;
-                        }
-                        &__profit {
-                            font-size: 10px;
-                            align-items: flex-start;
-                            font-weight: bold;
-                        }
+                    }
+                    &__return {
+                        font-size: 14px;
+                        align-items: flex-end;
+                        font-weight: bold;
+                    }
+                    &__profit {
+                        font-size: 10px;
+                        align-items: flex-start;
+                        font-weight: bold;
                     }
                     &__content {
                         max-width: 50%;
@@ -470,23 +470,22 @@
                         height: 56px;
                         display: flex;
                         flex-direction: column;
+                    }
+                    &__trade-type {
+                        position: relative;
+                        display: flex;
+                        flex-grow: 1;
+                        align-items: center;
 
-                        &__trade-type {
-                            position: relative;
-                            display: flex;
-                            flex-grow: 1;
-                            align-items: center;
-
-                            span {
-                                margin-left: 10px;
-                            }
+                        span {
+                            margin-left: 10px;
                         }
                     }
                     .symbols {
                         background: none;
                         position: relative;
                     }
-                    &__rec {
+                    &__effect-main {
                         width: 60%;
                         height: 56px;
                         position: absolute;
@@ -499,7 +498,7 @@
                         float: left;
                         text-align: left;
                     }
-                    &__tri {
+                    &__effect-detail {
                         width: 0;
                         height: 0;
                         border-style: solid;
@@ -514,23 +513,22 @@
                     &:disabled {
                         background-color: $COLOR_GRAY_DISABLED;
                         color: $COLOR_GRAY;
-
-                        .btn-purchase-rec {
-                            background: $COLOR_GRAY_DISABLED;
-                        }
-                        .btn-purchase-tri {
-                            border-color: transparent transparent transparent $COLOR_GRAY_DISABLED;
-                        }
-                        .trade-type svg {
-                            opacity: 0.16;
-                        }
-                        .symbols {
-                            color: $COLOR_GRAY_DISABLED;
-                        }
                     }
                     &:hover {
                         box-shadow: none;
                     }
+                }
+                .btn-purchase:disabled .btn-purchase__effect-main {
+                    background: $COLOR_GRAY_DISABLED;
+                }
+                .btn-purchase:disabled .btn-purchase__effect-detail {
+                    border-color: transparent transparent transparent $COLOR_GRAY_DISABLED;
+                }
+                .btn-purchase:disabled .btn-purchase__trade-type svg {
+                    opacity: 0.16;
+                }
+                .btn-purchase:disabled .symbols {
+                    color: $COLOR_GRAY_DISABLED;
                 }
             }
             span.tooltip {

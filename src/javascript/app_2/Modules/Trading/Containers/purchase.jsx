@@ -47,18 +47,18 @@ const Purchase = ({
                 wrapperClassName='submit-section'
             >
                 <React.Fragment>
-                    <div className='btn-purchase__rec' />
-                    <div className='btn-purchase__tri' />
+                    <div className='btn-purchase__effect-main' />
+                    <div className='btn-purchase__effect-detail' />
                     <div className='btn-purchase__content'>
-                        <div className='btn-purchase__content__trade-type'>
+                        <div className='btn-purchase__trade-type'>
                             <IconTradeType type={type.toLowerCase()} />
                             <span>{localize('[_1]', trade_types[type])}</span>
                         </div>
                     </div>
                     <div className='btn-purchase__info'>
-                        <div className='btn-purchase__info__return'>{info.returns}</div>
-                        <div className='btn-purchase__info__profit'>
-                            <Money amount={info.payout} currency={currency} />
+                        <div className='btn-purchase__return'>{is_disabled ? '---,-' : info.returns}</div>
+                        <div className='btn-purchase__profit'>
+                            {is_disabled ? '--,--' : <Money amount={info.payout} currency={currency} />}
                         </div>
                     </div>
                 </React.Fragment>
