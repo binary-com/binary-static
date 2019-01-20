@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-01-14 07:42\n"
+"PO-Revision-Date: 2019-01-15 05:44\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Vietnamese\n"
 "MIME-Version: 1.0\n"
@@ -174,8 +174,8 @@ msgstr "%1 giúp mọi người dễ dàng tham gia vào các thị trường t�
 msgid "%1 gives everyone an easy way to participate in the financial markets. Trade with as little as $1 USD on major currencies, stocks, indices, and commodities."
 msgstr "%1 mang lại cho mọi người một cách gia nhập thị trường tài chính dễ dàng. Bắt đầu giao dịch chỉ với $1 đô la Mỹ với nhiều loại tiền tệ, chứng khoán, chỉ số, và hàng hóa khác."
 
-msgid "%1 has been credited into your virtual account: %2."
-msgstr "%1 đã được ghi có vào tài khoản ảo của bạn: %2."
+msgid "%1 has been credited into your Virtual Account: %2."
+msgstr "%1 đã được ghi vào tài khoản ảo của bạn: %2."
 
 msgid "%1 has earned an enviable reputation for our commitment to high ethical standards and the quality of the trading experience we provide."
 msgstr "%1 được đánh giá cao trong việc cam kết cung cấp những giao dịch có chất lượng cao và uy tín."
@@ -3342,6 +3342,9 @@ msgstr "Bạn có muốn tìm hiểu thêm về thị trường và các
 msgid "Do you want to see %1 in other languages, or can you suggest improvements to our current translations?"
 msgstr "Bạn có muốn xem %1 bằng ngôn ngữ khác, hoặc bạn có đề nghị cải tiến bản dịch hiện tại của chúng tôi?"
 
+msgid "Do you want to top up for another %1? If not, you can do this later on the %2Cashier page%3, too."
+msgstr "Bạn có muốn nạp thêm cho một %1 khác? Nếu không, bạn cũng có thể nạp thêm trên trang %2CThu Ngân%3."
+
 msgid "Do you wish to continue?"
 msgstr "Bạn có muốn tiếp tục?"
 
@@ -3359,6 +3362,9 @@ msgstr "Không Chạm"
 
 msgid "Don't have an account?"
 msgstr "Không có tài khoản?"
+
+msgid "Don't show again"
+msgstr "Không hiển thị lại"
 
 msgid "Don’t share your %1 account or payment methods with any other person."
 msgstr "Không chia sẻ tài khoản %1 hoặc phương thức thanh toán của bạn với bất kỳ người nào khác."
@@ -4548,6 +4554,9 @@ msgstr "Vào trang tải MT5"
 msgid "Go to MetaTrader 5 dashboard"
 msgstr "Đi đến bảng điều khiển MetaTrader 5"
 
+msgid "Go to statement"
+msgstr "Xem sao kê"
+
 msgid "Go with the leader"
 msgstr "Đồng hành cùng đơn vị giao dịch hàng đầu"
 
@@ -4663,7 +4672,7 @@ msgid "High Tick"
 msgstr "Tick cao"
 
 msgid "High Tick/Low Tick"
-msgstr ""
+msgstr "Tick Cao/Tick Thấp"
 
 msgid "High Tick/Low Tick contracts have a strict duration of five ticks."
 msgstr "Hợp đồng Tick cao/Tick thấp có thời lượng quy định gồm năm tick."
@@ -7256,8 +7265,8 @@ msgstr "Hơn $1.000.000"
 msgid "Over $500,000"
 msgstr "Hơn $500,000"
 
-msgid "Over %1 %2staff%3 and contractors worldwide"
-msgstr "Hơn %1 %2s nhân viên %3 và nhà thầu trên toàn thế giới"
+msgid "Over %1 <a href='%2'>staff</a> and contractors worldwide"
+msgstr "Trên %1<a href='%2'>nhân viên</a> và nhà thầu trên toàn thế giới"
 
 msgid "Over 1 million registered accounts worldwide"
 msgstr "Hơn một triệu tài khoản được đăng kí trên toàn thế giới"
@@ -7617,7 +7626,7 @@ msgid "Please make sure that you first agree with the Agent on the terms of paym
 msgstr "Vui lòng chắc chắn rằng trước hết bạn đồng ý với Đại lý các điều khoản thanh toán trước khi gửi yêu cầu."
 
 msgid "Please note that Asians, Digits, Reset Call/Reset Put and High Ticks/Low Ticks are available exclusively with our Volatility Indices."
-msgstr "Xin lưu ý rằng các phần thuộc về Châu Á, Chữ số, Đặt lại Call/Put và Tick Cao/Tick Thấp được cung cấp độc quyền với Chỉ Số Biến Động của chúng tôi."
+msgstr "Xin lưu ý rằng công cụ Châu Á, Chữ số, Gọi lại/ Đặt lại và Tick Cao/Tick Thấp được cung cấp độc quyền với Chỉ Số Biến Động của chúng tôi."
 
 msgid "Please note that actual trading results may not correspond to optimized or back-tested results."
 msgstr "Xin lưu ý rằng kết quả giao dịch thực tế có thể không tương ứng với kết quả được tối ưu hóa hoặc được kiểm tra lại."
@@ -7824,22 +7833,22 @@ msgid "Predict the direction<br />and purchase"
 msgstr "Dự đoán khuynh hướng<br />và thu mua"
 
 msgid "Predict the highest or lowest tick among the next 5 ticks."
-msgstr ""
+msgstr "Dự đoán tick cao nhất hoặc thấp nhất trong 5 tick tiếp theo."
 
 msgid "Predict the last decimal digit of the spot price with Digits. There are three types of Digits trades:"
 msgstr "Dự đoán chữ số cuối của số thập phân trong giá tại điểm giao dịch Chữ Số. Có ba loại giao dịch Chữ số:"
 
 msgid "Predict whether the exit spot will be higher or lower than the entry spot within a selected duration from 5 ticks to 10 ticks, or 1 minute to 5 minutes."
-msgstr ""
+msgstr "Dự đoán xem điểm chốt sẽ cao hơn hay thấp hơn điểm khởi đầu vào trong khoảng thời gian đã chọn từ 5 tick đến 10 tick, hoặc 1 phút đến 5 phút."
 
 msgid "Predict whether the last digit of the last tick will be even or odd within a selected duration from 5 ticks to 10 ticks."
-msgstr ""
+msgstr "Dự đoán liệu chữ số cuối cùng của tick cuối cùng sẽ là số chẵn hay lẻ trong khoảng thời gian đã chọn từ 5 tick đến 10 tick."
 
 msgid "Predict whether the last digit of the last tick will be greater or less than your prediction within a selected duration from 5 ticks to 10 ticks."
-msgstr ""
+msgstr "Dự đoán liệu chữ số cuối cùng của tick cuối cùng sẽ lớn hơn hoặc nhỏ hơn dự đoán của bạn trong khoảng thời gian đã chọn từ 5 tick đến 10 tick."
 
 msgid "Predict whether the last digit of the last tick will match or differ from your prediction within a selected duration from 5 ticks to 10 ticks."
-msgstr ""
+msgstr "Dự đoán liệu chữ số cuối cùng của tick cuối cùng sẽ khớp hay khác với dự đoán của bạn trong khoảng thời gian đã chọn từ 5 tick đến 10 tick."
 
 msgid "Preferably a native speaker with good command of English (oral and written)"
 msgstr "Ưu tiên người bản xứ với khả năng giao tiếp tiếng Anh tốt ( cả nói lẫn viết)"
@@ -8046,7 +8055,7 @@ msgid "Purchase"
 msgstr "Mua"
 
 msgid "Purchase High Tick/Low Tick contracts to predict the highest or lowest tick among the next five ticks."
-msgstr "Mua các hợp đồng Tick Cao/Thấp để dự đoán Tick cao nhất hoặc thấp nhất trong số năm Tick tiếp theo."
+msgstr "Mua các hợp đồng Tick Cao/Tick Thấp để dự đoán Tick cao nhất hoặc thấp nhất trong số năm Tick tiếp theo."
 
 msgid "Purchase Price"
 msgstr "Giá Mua"
@@ -8685,7 +8694,7 @@ msgid "Set Currency"
 msgstr "Thiết lập tiền tệ"
 
 msgid "Set a %1cashier lock password%2 to prevent unauthorised access to your cashier."
-msgstr "Đặt mật khẩu thu ngân%2 để ngăn truy cập trái phép vào thu ngân của bạn."
+msgstr "Đặt mật khẩu thu ngân để ngăn truy cập trái phép vào thu ngân của bạn."
 
 msgid "Set barrier(s) to define your position and trigger the payout you'll receive."
 msgstr "Thiết lập giới hạn để xác định vị trí của bạn và kích hoạt thanh toán bạn sẽ nhận được."
@@ -10146,7 +10155,7 @@ msgid "The use, operation or combination of the %1 API with non-%1 API(s), data,
 msgstr "Việc sử dụng, thao tác hoặc sự kết hợp của %1 API với không %1 API(s), dữ liệu, thiết bị hoặc tài liệu hướng dẫn nếu trách nhiệm pháp lý nào có tránh được, cho hoạt động, hoặc kết hợp; hoặc"
 
 msgid "The various trade types available on our MT5 platform."
-msgstr ""
+msgstr "Các hình thức giao dịch khác nhau có sẵn trên sàn MT5 của chúng tôi."
 
 msgid "The volatility indices simulate various real market situations and provide an ideal platform for getting used to trading and testing strategies under various market conditions. These indices depend on volatility and drift, and help users to try out scenarios like - high volatility, low volatility, bullish and bearish trends."
 msgstr "Chỉ số biến động mô phỏng các tình huống thực tế thị trường khác nhau và cung cấp một nền tảng lý tưởng cho việc sử dụng để kinh doanh và thử nghiệm các chiến lược theo các điều kiện thị trường. Những chỉ số phụ thuộc vào biến động và trôi dạt, và giúp người sử dụng để thử ra các tình huống như - biến động cao, biến động thấp, xu hướng tăng và xu hướng giảm."
@@ -10580,11 +10589,23 @@ msgstr "Mã Token"
 msgid "Top Up Virtual Account"
 msgstr "Bổ Sung Tài Khoản Ảo"
 
+msgid "Top up"
+msgstr "Nạp"
+
+msgid "Top up Virtual Account"
+msgstr "Nạp tài khoản ảo"
+
+msgid "Top up error"
+msgstr "Lỗi nạp"
+
 msgid "Top up virtual account"
 msgstr "Bổ sung tài khoản ảo"
 
 msgid "Top-tier liquidity"
 msgstr "Thanh khoản hàng đầu"
+
+msgid "Top-up successful"
+msgstr "Nạp thành công"
 
 msgid "Total"
 msgstr "Tổng"
@@ -11063,6 +11084,9 @@ msgstr "Hiểu cách đọc biểu đồ tiền điện tử, bao gồm các hà
 msgid "Understanding of encryption fundamentals and the OWASP Top 10"
 msgstr "Hiểu biết về các nguyên tắc cơ bản về mã hóa và Top 10 của OWASP"
 
+msgid "Understood"
+msgstr "Đã hiểu"
+
 msgid "Unemployed"
 msgstr "Không có việc làm"
 
@@ -11267,8 +11291,8 @@ msgstr "Xem danh sách đầy đủ của tài sản, loại hợp đồng 
 msgid "View the operating hours of the markets you can trade."
 msgstr "Xem giờ hoạt động của thị trường bạn có thể giao dịch."
 
-msgid "View updated portfolio"
-msgstr "Xem portfolio đã được cập nhật"
+msgid "View updated statement"
+msgstr "Xem cập nhật sao kê mới"
 
 msgid "View your account's authentication status."
 msgstr "Xem trạng thái xác thực tài khoản của bạn."
@@ -11493,7 +11517,7 @@ msgid "We offer all four precious metals – gold, silver, palladium, and platin
 msgstr "Chúng tôi cung cấp tất cả bốn các kim loại quý - vàng, bạc, Paladi và bạch kim-cũng như năng lượng trong danh sách các loại hàng hóa."
 
 msgid "We offer the following trade types on our MT5 platform:"
-msgstr ""
+msgstr "Chúng tôi cung cấp các hình thức giao dịch sau đây trên sàn MT5:"
 
 msgid "We offer three types of lookbacks:"
 msgstr "Chúng tôi cung cấp ba loại lookbacks:"
@@ -12730,7 +12754,7 @@ msgid "Your profit or loss is calculated as follows:"
 msgstr "Lợi nhuận hoặc thua lỗ của bạn được tính như sau:"
 
 msgid "Your request to be treated as a professional client has been rejected. Please check your inbox for more details. Your account remains categorised as a retail client account."
-msgstr "Yêu cầu của bạn để được coi như là một khách hàng chuyên nghiệp đã bị từ chối. Vui lòng kiểm tra hộp thư của bạn để biết chi tiết. Tài khoản của bạn hiện vẫn được xếp hạng là tài khoản khách hàng lẻ."
+msgstr "Yêu cầu của bạn để được trở thành khách hàng chuyên nghiệp đã bị từ chối. Vui lòng kiểm tra hộp thư của bạn để biết chi tiết. Tài khoản của bạn hiện vẫn được xem là là tài khoản khách hàng bán lẻ."
 
 msgid "Your request to transfer %1 %2 from %3 to %4 has been successfully processed."
 msgstr "Yêu cầu chuyển %1 %2 từ %3 sang %4 đã được xử lý thành công."
