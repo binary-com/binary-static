@@ -1,5 +1,5 @@
-const isCallputspread          = require('./callputspread').isCallputspread;
 const moment                   = require('moment');
+const isCallputspread          = require('./callputspread').isCallputspread;
 const Contract                 = require('./contract');
 const hidePriceOverlay         = require('./common').hidePriceOverlay;
 const getLookBackFormula       = require('./lookback').getFormula;
