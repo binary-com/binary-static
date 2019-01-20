@@ -58,7 +58,7 @@ const TickDisplay = (() => {
         display_symbol       = data.display_symbol;
         contract_start_ms    = parseInt(data.contract_start) * 1000;
         contract_category    = data.contract_category;
-        should_set_barrier   = !contract_category.match('digits');
+        should_set_barrier   = !contract_category.match('digits|runs');
         barrier              = data.barrier;
         display_decimals     = data.display_decimals || 2;
         show_contract_result = data.show_contract_result;
@@ -158,6 +158,11 @@ const TickDisplay = (() => {
                 label    : localize('Exit Spot'),
                 id       : 'exit_tick',
                 dashStyle: 'Dash',
+            };
+        } else if (contract_category.match('runs')) {
+            ticks_needed = number_of_ticks + 1;
+            x_indicators = {
+                _0: { label: localize('Entry Spot'), id: 'entry_tick' },
             };
         } else {
             x_indicators = {};

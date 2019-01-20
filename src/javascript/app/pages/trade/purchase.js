@@ -60,7 +60,7 @@ const Purchase = (() => {
         const button              = CommonFunctions.getElementById('contract_purchase_button');
 
         const error      = details.error;
-        const has_chart  = !/^(digits|highlowticks|runs)$/.test(Contract.form());
+        const has_chart  = !/^(digits|highlowticks)$/.test(Contract.form());
         const show_chart = !error && passthrough.duration <= 10 && passthrough.duration_unit === 't';
 
         if (error) {
@@ -161,8 +161,11 @@ const Purchase = (() => {
                     winning_tick_number : '',
                     previous_tick_quote : '',
                     losing_tick_number  : '',
+                    is_runs             : false,
                 };
             }
+
+            tick_config.is_runs = tick_config.is_run_high || tick_config.is_run_low;
 
             if (has_chart && !show_chart) {
                 CommonFunctions.elementTextContent(button, localize('View'));
@@ -255,7 +258,7 @@ const Purchase = (() => {
                 } else if (status === 'lost') {
                     updateValues.updatePurchaseStatus(0, -cost_value, profit_value, localize('This contract lost'));
                 }
-                if (tick_config.is_run_high || tick_config.is_run_high && +tick_config.losing_tick_number > 1) {
+                if (tick_config.is_runs && +tick_config.losing_tick_number > 1) {
                     let localized_text;
                     if (tick_config.is_run_high) {
                         localized_text = localizeKeepPlaceholders('Tick [_1] is not consecutively higher');
@@ -314,7 +317,7 @@ const Purchase = (() => {
                 }
 
                 let is_losing_tick = false;
-                if (tick_config.is_run_high || tick_config.is_run_low) {
+                if (tick_config.is_runs) {
                     const $winning_row  = $spots.find('.winning-tick-row');
                     if (
                         (
@@ -350,7 +353,7 @@ const Purchase = (() => {
                 CommonFunctions.elementTextContent(el2, [hours, minutes, seconds].join(':'));
                 fragment.appendChild(el2);
 
-                const tick = (tick_config.is_tick_high || tick_config.is_tick_low || tick_config.is_run_high || tick_config.is_run_low) ? tick_d.quote : tick_d.quote.replace(/\d$/, makeBold);
+                const tick = (tick_config.is_tick_high || tick_config.is_tick_low || tick_config.is_runs) ? tick_d.quote : tick_d.quote.replace(/\d$/, makeBold);
                 const el3  = createElement('div', { class: 'col' });
                 CommonFunctions.elementInnerHtml(el3, tick);
                 fragment.appendChild(el3);
@@ -370,7 +373,7 @@ const Purchase = (() => {
                     }
                 }
 
-                if ((tick_config.is_run_high || tick_config.is_run_low) && is_losing_tick) {
+                if ((tick_config.is_runs) && is_losing_tick) {
                     duration = 0; // no need to keep drawing ticks
                 }
 
