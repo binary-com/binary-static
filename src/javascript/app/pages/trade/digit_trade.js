@@ -13,6 +13,16 @@ const DigitDisplay = (() => {
         tick_count,
         spot_times;
 
+    const subscribe = (request) => {
+        // Subscribe if contract is still ongoing/running.
+        if (contract.current_spot_time < contract.date_expiry) {
+            request.subscribe = 1;
+            request.end       = 'latest';
+        } else {
+            request.end = contract.date_expiry;
+        }
+    };
+
     const init = (id_render, proposal_open_contract) => {
         tick_count = 1;
         contract   = proposal_open_contract;
@@ -41,13 +51,7 @@ const DigitDisplay = (() => {
             start        : contract.date_start,
         };
 
-        // Subscribe if contract is still ongoing/running.
-        if (contract.current_spot_time < contract.date_expiry) {
-            request.subscribe = 1;
-            request.end       = 'latest';
-        } else {
-            request.end = contract.date_expiry;
-        }
+        subscribe(request);
 
         BinarySocket.send(request, { callback: update });
     };
@@ -72,9 +76,8 @@ const DigitDisplay = (() => {
         DigitTicker.update(
             tick_count,
             {
-                quote      : spot,
-                epoch      : contract.current_spot,
-                date_expiry: contract.date_expiry,
+                quote: contract.status !== 'open' ? contract.exit_tick : spot,
+                epoch: contract.status !== 'open' ? contract.exit_tick_time : contract.date_expiry,
             }
         );
     };
@@ -97,7 +100,9 @@ const DigitDisplay = (() => {
                 return tick_count > contract.tick_count;
             });
         } else if (response.tick) {
-            if (tick_count <= contract.tick_count) {
+            if (tick_count <= contract.tick_count &&
+                +response.tick.epoch <= +contract.date_expiry &&
+                +response.tick.epoch >= +contract.entry_tick_time) {
                 updateTable(response.tick.quote, response.tick.epoch);
                 tick_count += 1;
             }
@@ -106,6 +111,21 @@ const DigitDisplay = (() => {
     };
 
     const end = (proposal_open_contract) => {
+        if (proposal_open_contract.status !== 'open') {
+            DigitTicker.update(proposal_open_contract.tick_count, {
+                quote: proposal_open_contract.exit_tick,
+                epoch: proposal_open_contract.exit_tick_time,
+            });
+            if ($container.find('#digit_table').length < proposal_open_contract.tick_count) {
+                const request = {
+                    ticks_history: contract.underlying,
+                    start        : contract.entry_tick_time,
+                    end          : contract.exit_tick_time,
+                };
+                // force rerender the table by sending the history
+                BinarySocket.send(request, { callback: update });
+            }
+        }
         if (proposal_open_contract.status === 'won') {
             DigitTicker.markAsWon();
             DigitTicker.markDigitAsWon(proposal_open_contract.exit_tick.slice(-1));
