@@ -68,17 +68,29 @@
             @include thumbStyle();
             background: $COLOR_BLUE;
         }
+        // Range Handle Thumb - Microsoft Edge
+        &::-ms-thumb {
+            @include thumbStyle();
+            background: $COLOR_BLUE;
+        }
         &:hover, &:focus, &:active {
             border: 0;
             outline: none;
         }
+        // Browser active classes for slider thumb
         &:active::-webkit-slider-thumb {
             box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.3);
         }
         &:active::-moz-range-thumb {
             box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.3);
         }
+        &:active::-ms-thumb {
+            box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.3);
+        }
         &::-moz-range-track {
+            background: $COLOR_DARK_GRAY;
+        }
+        &::-ms-track {
             background: $COLOR_DARK_GRAY;
         }
     }
