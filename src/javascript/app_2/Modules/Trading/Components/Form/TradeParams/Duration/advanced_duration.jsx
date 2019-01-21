@@ -145,7 +145,7 @@ AdvancedDuration.propTypes = {
     expiry_type    : PropTypes.string,
     is_nativepicker: PropTypes.bool,
     onChange       : PropTypes.func,
-    server_time    : PropTypes.bool,
+    server_time    : PropTypes.object,
     sessions       : MobxPropTypes.arrayOrObservableArray,
     start_date     : PropTypes.oneOfType([
         PropTypes.number,

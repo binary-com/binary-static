@@ -11,7 +11,12 @@ const SimpleDuration = ({
     expiry_type,
     onChange,
 }) => {
-    const filterMinutesAndTicks = (arr) => arr.length > 1 && arr.filter(du => du.value === 't' || du.value === 'm');
+    const filterMinutesAndTicks = (arr) => {
+        const filtered_arr = arr.filter(du => du.value === 't' || du.value === 'm');
+        if (filtered_arr.length <= 1) return [];
+
+        return filtered_arr;
+    };
 
     if (expiry_type !== 'duration') {
         onChange({ target: { value: 'duration', name: 'expiry_type' } });

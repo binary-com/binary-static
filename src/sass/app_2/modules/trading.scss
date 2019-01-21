@@ -520,6 +520,10 @@
     div.datepicker-container {
         .datepicker-display, .datepicker-native-overlay {
             font-size: 12px;
+            margin-top: 8px;
+        }
+        .picker-calendar-icon {
+            margin-top: 3px;
         }
     }
     .time-picker #time-picker-input.time-picker-input {
