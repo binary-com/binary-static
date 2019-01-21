@@ -1,14 +1,16 @@
-import React, { Fragment }      from 'react';
-import classNames               from 'classnames';
-import TimePicker               from 'App/Components/Form/time_picker.jsx';
-import Datepicker               from 'App/Components/Form/DatePicker';
-import Dropdown                 from 'App/Components/Form/DropDown';
-import ButtonToggleMenu         from 'App/Components/Form/button_toggle_menu.jsx';
-import InputField               from 'App/Components/Form/input_field.jsx';
-import { convertDurationUnit }  from 'Stores/Modules/Trading/Helpers/duration';
+import classNames                       from 'classnames';
+import { PropTypes as MobxPropTypes }   from 'mobx-react';
+import PropTypes                        from 'prop-types';
+import React, { Fragment }              from 'react';
+import TimePicker                       from 'App/Components/Form/time_picker.jsx';
+import Datepicker                       from 'App/Components/Form/DatePicker';
+import Dropdown                         from 'App/Components/Form/DropDown';
+import ButtonToggleMenu                 from 'App/Components/Form/button_toggle_menu.jsx';
+import InputField                       from 'App/Components/Form/input_field.jsx';
+import { convertDurationUnit }          from 'Stores/Modules/Trading/Helpers/duration';
 import {
     isTimeValid,
-    toMoment }                  from 'Utils/Date';
+    toMoment }                          from 'Utils/Date';
 
 let now_date,
     max_date_duration,
@@ -19,8 +21,8 @@ let now_date,
 
 const AdvancedDuration = ({
     contract_expiry_type,
-    duration_min_max,
     duration_input_props,
+    duration_min_max,
     duration_unit,
     duration_units_list,
     expiry_date,
@@ -80,13 +82,15 @@ const AdvancedDuration = ({
             {expiry_type === 'duration' ?
                 <Fragment>
                     <div className='duration-container'>
-                        {duration_units_list.length > 1 && <Dropdown
-                            list={duration_units_list}
-                            value={duration_unit}
-                            name='duration_unit'
-                            onChange={onChange}
-                            is_nativepicker={is_nativepicker}
-                        />}
+                        {duration_units_list.length > 1 &&
+                            <Dropdown
+                                list={duration_units_list}
+                                value={duration_unit}
+                                name='duration_unit'
+                                onChange={onChange}
+                                is_nativepicker={is_nativepicker}
+                            />
+                        }
                         { duration_unit === 't' && <span>Range slider</span> }
                         { duration_unit !== 't' && <InputField {...duration_input_props} />}
                     </div>
@@ -126,22 +130,28 @@ const AdvancedDuration = ({
     );
 };
 
-// AdvancedDuration.propTypes = {
-//     contract_expiry_type,
-//     duration_min_max,
-//     duration_input_props,
-//     duration_unit,
-//     duration_units_list,
-//     expiry_date,
-//     expiry_list,
-//     expiry_time,
-//     expiry_type,
-//     is_nativepicker,
-//     onChange,
-//     server_time,
-//     sessions,
-//     start_date,
-//     start_time,
-// };
+AdvancedDuration.propTypes = {
+    contract_expiry_type: PropTypes.string,
+    duration_input_props: PropTypes.object,
+    duration_min_max    : PropTypes.object,
+    duration_unit       : PropTypes.string,
+    duration_units_list : MobxPropTypes.arrayOrObservableArray,
+    expiry_date         : PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.number,
+    ]),
+    expiry_list    : PropTypes.array,
+    expiry_time    : PropTypes.string,
+    expiry_type    : PropTypes.string,
+    is_nativepicker: PropTypes.bool,
+    onChange       : PropTypes.func,
+    server_time    : PropTypes.bool,
+    sessions       : MobxPropTypes.arrayOrObservableArray,
+    start_date     : PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
+    ]),
+    start_time: PropTypes.string,
+};
 
 export default AdvancedDuration;

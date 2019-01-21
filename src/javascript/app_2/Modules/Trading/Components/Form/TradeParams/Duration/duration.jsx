@@ -7,8 +7,8 @@ import React, { Fragment }      from 'react';
 import { localize }             from '_common/localize';
 
 import Fieldset                 from 'App/Components/Form/fieldset.jsx';
-import { convertDurationLimit }       from 'Stores/Modules/Trading/Helpers/duration';
-import { toMoment }                  from 'Utils/Date';
+import { convertDurationLimit } from 'Stores/Modules/Trading/Helpers/duration';
+import { toMoment }             from 'Utils/Date';
 import { IconArrow }            from 'Assets/Common';
 import AdvancedDuration         from './advanced_duration.jsx';
 import SimpleDuration           from './simple_duration.jsx';
@@ -86,11 +86,11 @@ const Duration = ({
         },
     };
     // e.g. digit contracts only has range slider - does not have toggle between advanced / simple
-    const has_advanced_simple_toggle = expiry_list.length > 1 || duration_units_list.length > 1;
+    const has_toggle = expiry_list.length > 1 || duration_units_list.length > 1;
     return (
         <Fieldset>
-            { !has_advanced_simple_toggle && <span>Range slider</span> }
-            { has_advanced_simple_toggle &&
+            { !has_toggle && <span>Range slider</span> }
+            { has_toggle &&
                 <Fragment>
                     { is_advanced_duration &&
                         <AdvancedDuration

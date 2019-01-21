@@ -5,9 +5,9 @@ import Button     from './button.jsx';
 
 const ButtonToggleMenu = ({
     buttons_arr,
+    name,
     onChange,
     value,
-    name,
 }) => {
     const changeValue = (selected_value) => {
         if (value === selected_value) return;
@@ -31,7 +31,12 @@ const ButtonToggleMenu = ({
 
 ButtonToggleMenu.propTypes = {
     buttons_arr: PropTypes.array,
+    name       : PropTypes.string,
     onChange   : PropTypes.func,
+    value      : PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
+    ]),
 };
 
 export default ButtonToggleMenu;
