@@ -114,6 +114,7 @@
             border-color: $COLOR_GRAY;
             border-radius: 1px;
             border-width: 0.5px;
+            padding: 0;
 
             &:hover, &:focus, &:active {
                 border-color: $COLOR_ORANGE_2 !important;
@@ -187,6 +188,7 @@
                 border-color: $COLOR_BRANDBLUE_85;
                 border-radius: 1px;
                 border-width: 0.5px;
+                padding: 0;
 
                 &:hover, &:focus, &:active {
                     border-color: $COLOR_ORANGE_2;
