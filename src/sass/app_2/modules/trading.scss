@@ -138,6 +138,30 @@
                 border-radius: $BORDER_RADIUS;
             }
         }
+        .allow-equals {
+            display: inline-block;
+
+            .input-field, label {
+                display: inline-block;
+            }
+            label {
+                vertical-align: middle;
+                padding-left: 8px;
+                cursor: pointer;
+            }
+            .tooltip {
+                display: inline-block;
+
+                .info {
+                    vertical-align: middle;
+                    padding-left: 2px;
+
+                    &:after {
+                        transform: scale(0.75);
+                    }
+                }
+            }
+        }
         .purchase-info-wrapper {
             line-height: 0.9rem;
             border: 0;
@@ -175,11 +199,6 @@
                 margin-top: -4px;
                 justify-self: right;
             }
-        }
-        &.trade-types {
-            border: 0;
-            padding: 0;
-            background: transparent;
         }
         .number-selector {
             margin-top: 15px;
