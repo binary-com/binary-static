@@ -7,13 +7,12 @@ import TickSteps    from './tick_steps.jsx';
 
 const RangeSlider = ({
     className,
-    min_value,
+    ticks,
     max_value,
-    first_tick,
-    last_tick,
+    min_value,
     name,
-    onChange,
     value,
+    onChange,
 }) => {
 
     const handleChange = (e) => {
@@ -28,6 +27,8 @@ const RangeSlider = ({
         }
     };
 
+    const first_tick = ticks - (ticks - 1);
+
     const is_error = ((value < min_value) || (value > max_value)) ? 'error' : '';
 
     return (
@@ -38,7 +39,7 @@ const RangeSlider = ({
                     className='range-slider__track'
                     type='range'
                     min={first_tick}
-                    max={last_tick}
+                    max={ticks}
                     min_value={min_value}
                     max_value={max_value}
                     name={name}
@@ -50,12 +51,15 @@ const RangeSlider = ({
                 <div className='ticks'>
                     <TickSteps
                         value={value}
-                        ticks={last_tick}
+                        ticks={ticks}
                         onClick={handleClick}
                     />
                 </div>
                 {/* Calculate line width based on active value and size of range thumb */}
-                <div className='range-slider__line' style={{ width: `calc(${value * 10}% - ${value < 4 ? '0.8rem' : '0.5rem'})` }} />
+                <div
+                    className='range-slider__line'
+                    style={{ width: `calc(${value * 10}% - ${value < 4 ? '0.8rem' : '0.5rem'})` }}
+                />
             </label>
             <div className='range-slider__caption'>
                 <span>
@@ -68,7 +72,7 @@ const RangeSlider = ({
                     </span>
                 }
                 <span>
-                    {last_tick}
+                    {ticks}
                 </span>
             </div>
         </div>
@@ -77,15 +81,8 @@ const RangeSlider = ({
 
 RangeSlider.propTypes = {
     className : PropTypes.string,
-    first_tick: PropTypes.oneOfType([
-        PropTypes.number,
-        PropTypes.string,
-    ]),
-    last_tick: PropTypes.oneOfType([
-        PropTypes.number,
-        PropTypes.string,
-    ]),
-    max_value: PropTypes.oneOfType([
+    first_tick: PropTypes.number,
+    max_value : PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
     ]),

@@ -24,6 +24,7 @@
     input[type=range]::-moz-focus-outer {
         border: 0;
     }
+    // TODO: remove once we have proper styling for input slider validation error
     &.error {
         input[type=range] {
             // Range Handle Thumb - Chrome / Webkit based browsers
@@ -88,7 +89,7 @@
         justify-content: space-between;
         top: 6px;
         height: 0;
-        /* fix for safari bug with input range slider width */
+        // fix for safari bug with input range slider width
         @media not all and (min-resolution:.001dpcm) { // stylelint-disable-line
             @supports (-webkit-appearance:none) {
                 margin: 0 4px;
