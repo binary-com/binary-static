@@ -5,7 +5,6 @@ import {
 import PropTypes                from 'prop-types';
 import React, { Fragment }      from 'react';
 import { localize }             from '_common/localize';
-
 import Fieldset                 from 'App/Components/Form/fieldset.jsx';
 import { convertDurationLimit } from 'Stores/Modules/Trading/Helpers/duration';
 import { toMoment }             from 'Utils/Date';
@@ -88,7 +87,7 @@ const Duration = ({
     // e.g. digit contracts only has range slider - does not have toggle between advanced / simple
     const has_toggle = expiry_list.length > 1 || duration_units_list.length > 1;
     return (
-        <Fieldset>
+        <Fieldset className={'position-relative'}>
             { !has_toggle && <span>Range slider</span> }
             { has_toggle &&
                 <Fragment>
@@ -127,9 +126,12 @@ const AdvancedSimpleToggle = ({
         'advanced-simple-toggle__icon--active': value,
     });
     return (
-        <div onClick={toggle} className='advanced-simple-toggle'>
-            <IconArrow className={icon_className} />
-        </div>);
+        <Fragment>
+            <div className='divider' />
+            <button className='advanced-simple-toggle' onClick={toggle}>
+                <IconArrow className={icon_className} />
+            </button>
+        </Fragment>);
 };
 
 AdvancedSimpleToggle.propTypes = {
