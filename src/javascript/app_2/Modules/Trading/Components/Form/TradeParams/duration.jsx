@@ -140,8 +140,10 @@ const Duration = ({
                         {
                             duration_unit === 't' ?
                                 <RangeSlider
-                                    min={1}
-                                    max={10}
+                                    first_tick={1}
+                                    last_tick={10}
+                                    max_value={max_duration}
+                                    min_value={min_duration}
                                     name='duration'
                                     value={duration}
                                     onChange={onChange}

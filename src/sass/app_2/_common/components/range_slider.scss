@@ -58,6 +58,9 @@
         &:active::-moz-range-thumb {
             box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.3);
         }
+        &::-moz-range-track {
+            background: $COLOR_DARK_GRAY;
+        }
     }
     .ticks {
         width: 100%;
@@ -65,6 +68,13 @@
         display: flex;
         justify-content: space-between;
         top: 6px;
+        height: 0;
+        /* fix for safari bug with input range slider width */
+        @media not all and (min-resolution:.001dpcm) { // stylelint-disable-line
+            @supports (-webkit-appearance:none) {
+                margin: 0 4px;
+            }
+        }
 
         &__step {
             height: 4px;
@@ -125,6 +135,9 @@
             &::-moz-range-thumb {
                 background: $COLOR_WHITE;
             }
+            &::-moz-range-track {
+                background: $COLOR_BRANDBLUE_85;
+            }
         }
         .ticks__step {
             border: 2px solid $COLOR_BRANDBLUE_85;
@@ -139,15 +152,15 @@
                 border-color: $COLOR_WHITE;
                 box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.3);
             }
+            &:active::-webkit-slider-thumb {
+                box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.3);
+            }
+            &:active::-moz-range-thumb {
+                box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.3);
+            }
         }
         &__line {
             background: $COLOR_WHITE;
-        }
-        &:active::-webkit-slider-thumb {
-            box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.3);
-        }
-        &:active::-moz-range-thumb {
-            box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.3);
         }
     }
 }
