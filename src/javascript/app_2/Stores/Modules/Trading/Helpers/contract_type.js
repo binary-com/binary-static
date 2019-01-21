@@ -185,6 +185,8 @@ const ContractType = (() => {
         return { duration_min_max };
     };
 
+    const getFullContractTypes = () => available_contract_types;
+
     const getStartType = (start_date) => ({
         // Number(0) refers to 'now'
         contract_start_type: start_date === Number(0) ? 'spot' : 'forward',
@@ -309,6 +311,7 @@ const ContractType = (() => {
         getDurationMinMax,
         getDurationUnit,
         getDurationUnitsList,
+        getFullContractTypes,
         getExpiryDate,
         getExpiryTime,
         getSessions,
