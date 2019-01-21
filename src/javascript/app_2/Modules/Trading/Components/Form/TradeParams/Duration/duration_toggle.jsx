@@ -11,9 +11,11 @@ const DurationToggle = ({
     const toggle = () => {
         onChange({ target: { value: !value, name } });
     };
-    const icon_className = classNames('advanced-simple-toggle__icon select-arrow', {
-        'advanced-simple-toggle__icon--active': value,
-    });
+    const icon_className = classNames(
+        'advanced-simple-toggle__icon',
+        'select-arrow',
+        { 'advanced-simple-toggle__icon--active': value }
+    );
     return (
         <Fragment>
             <div className='divider' />
