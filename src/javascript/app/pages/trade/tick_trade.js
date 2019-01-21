@@ -374,6 +374,8 @@ const TickDisplay = (() => {
                     category = 'reset';
                 } else if (/^(tickhigh|ticklow)_/i.test(contract.shortcode)) {
                     category = 'highlowticks';
+                } else if (/^(runhigh|runlow)/i.test(contract.shortcode)) {
+                    category = 'runs';
                 }
                 initialize({
                     symbol              : contract.underlying,

@@ -147,10 +147,10 @@ const Explanation = () => (
             </div>
             <div id='winning_runs' className='invisible'>
                 <h3>{it.L('Winning the contract')}</h3>
-                <p>{it.L('If you select [_1]“Run High”[_2], you win the payout if consecutive ticks are higher than the previous tick.', '<strong>', '</strong>')}</p>
+                <p>{it.L('If you select [_1]“Run High”[_2], you win the payout if consecutive ticks rise successively after the entry spot.', '<strong>', '</strong>')}</p>
                 <p>{it.L('No payout if any tick falls or is equal to any of the previous ticks.')}</p>
                 <br />
-                <p>{it.L('If you select [_1]“Run Low”[_2], you win the payout if consecutive ticks are lower than the previous tick.', '<strong>', '</strong>')}</p>
+                <p>{it.L('If you select [_1]“Run Low”[_2], you win the payout if consecutive ticks fall successively after the entry spot.', '<strong>', '</strong>')}</p>
                 <p>{it.L('No payout if any tick rises or is equal to any of the previous ticks.')}</p>
                 <br />
             </div>
@@ -330,6 +330,11 @@ const Explanation = () => (
             <div id='duration_volidx' className='invisible'>
                 <Duration link='market-volidx' />
             </div>
+
+            <div id='duration_runs' className='invisible'>
+                <h3>{it.L('Contract duration')}</h3>
+                <p>{it.L('The minimum duration for this trade type is one tick, while the maximum is five ticks.')}</p>
+            </div>
         </div>
 
         {/* ========== Note ========== */}
@@ -372,9 +377,6 @@ const Explanation = () => (
 
             <div id='note_highlowticks' className='invisible'>
                 <Note text={it.L('High Tick/Low Tick contracts have a strict duration of five ticks.')} />
-            </div>
-            <div id='note_runs' className='invisible'>
-                <Note text={it.L('The minimum duration for this trade type is one tick, while the maximum is five ticks.')} />
             </div>
         </div>
     </div>
