@@ -1,4 +1,3 @@
-import classNames               from 'classnames';
 import {
     PropTypes as MobxPropTypes,
     observer }                  from 'mobx-react';
@@ -8,7 +7,7 @@ import { localize }             from '_common/localize';
 import Fieldset                 from 'App/Components/Form/fieldset.jsx';
 import { convertDurationLimit } from 'Stores/Modules/Trading/Helpers/duration';
 import { toMoment }             from 'Utils/Date';
-import { IconArrow }            from 'Assets/Common';
+import DurationToggle           from './duration_toggle.jsx';
 import AdvancedDuration         from './advanced_duration.jsx';
 import SimpleDuration           from './simple_duration.jsx';
 
@@ -107,37 +106,15 @@ const Duration = ({
                             expiry_type={expiry_type}
                             onChange={onChange}
                         /> }
-                    <AdvancedSimpleToggle value={is_advanced_duration} onChange={onChange} name={'is_advanced_duration'} />
+                    <DurationToggle
+                        name={'is_advanced_duration'}
+                        onChange={onChange}
+                        value={is_advanced_duration}
+                    />
                 </Fragment>
             }
         </Fieldset>
     );
-};
-
-const AdvancedSimpleToggle = ({
-    name,
-    onChange,
-    value,
-}) => {
-    const toggle = () => {
-        onChange({ target: { value: !value, name } });
-    };
-    const icon_className = classNames('advanced-simple-toggle__icon select-arrow', {
-        'advanced-simple-toggle__icon--active': value,
-    });
-    return (
-        <Fragment>
-            <div className='divider' />
-            <button className='advanced-simple-toggle' onClick={toggle}>
-                <IconArrow className={icon_className} />
-            </button>
-        </Fragment>);
-};
-
-AdvancedSimpleToggle.propTypes = {
-    name    : PropTypes.string,
-    onChange: PropTypes.func,
-    value   : PropTypes.bool,
 };
 
 // ToDo: Refactor Duration.jsx and date_picker.jsx
