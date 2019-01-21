@@ -28,8 +28,10 @@ const RangeSlider = ({
         }
     };
 
+    const is_error = ((value < min_value) || (value > max_value)) ? 'error' : '';
+
     return (
-        <div className={classNames('range-slider', className)}>
+        <div className={classNames('range-slider', className, { 'error': is_error })}>
             <label htmlFor='range'>
                 <input
                     id='range'

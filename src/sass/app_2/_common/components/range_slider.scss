@@ -24,6 +24,25 @@
     input[type=range]::-moz-focus-outer {
         border: 0;
     }
+    &.error {
+        input[type=range] {
+            // Range Handle Thumb - Chrome / Webkit based browsers
+            &::-webkit-slider-thumb {
+                background: $COLOR_LIGHT_RED;
+            }
+            // Range Handle Thumb - Firefox / Gecko based browsers
+            &::-moz-range-thumb {
+                background: $COLOR_LIGHT_RED;
+            }
+        }
+        .range-slider__line {
+            background: $COLOR_LIGHT_RED !important;
+        }
+        .ticks__step--marked {
+            background: $COLOR_LIGHT_RED !important;
+            border-color: $COLOR_LIGHT_RED !important;
+        }
+    }
     &__track {
         position: relative;
         // removal of !important is pending refactor in main trading sass file that overrides rules for input els
@@ -138,6 +157,12 @@
             &::-moz-range-track {
                 background: $COLOR_BRANDBLUE_85;
             }
+            &:active::-webkit-slider-thumb {
+                box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.3);
+            }
+            &:active::-moz-range-thumb {
+                box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.3);
+            }
         }
         .ticks__step {
             border: 2px solid $COLOR_BRANDBLUE_85;
@@ -151,12 +176,6 @@
                 background: $COLOR_WHITE;
                 border-color: $COLOR_WHITE;
                 box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.3);
-            }
-            &:active::-webkit-slider-thumb {
-                box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.3);
-            }
-            &:active::-moz-range-thumb {
-                box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.3);
             }
         }
         &__line {
