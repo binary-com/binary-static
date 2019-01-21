@@ -128,6 +128,11 @@
                     display: inline-block;
                 }
             }
+            &::-ms-check { // IE/EDGE support
+                background: transparent;
+                border-color: transparent;
+                color: $COLOR_WHITE;
+            }
             &:after {
                 color: $COLOR_WHITE;
                 content: 'L';
