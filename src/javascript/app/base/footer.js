@@ -38,6 +38,10 @@ const Footer = (() => {
         BinarySocket.wait('time').then((response) => {
             const $dialog_notification = $('#dialog_notification');
             const $dialog_notification_accept = $('#dialog_notification_accept');
+            const $elevio_button = $('#_elev_io ._6byvm');
+            const $scrollup = $('#scrollup');
+            $elevio_button.attr('style', `bottom: ${$dialog_notification.height()}px !important`);
+            $scrollup.attr('style', `bottom: ${$dialog_notification.height() + $elevio_button.height() + 10}px`);
             $dialog_notification.css('display', 'flex');
             $dialog_notification_accept
                 .off('click')
