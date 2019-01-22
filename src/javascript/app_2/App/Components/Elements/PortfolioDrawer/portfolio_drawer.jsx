@@ -53,9 +53,8 @@ class PortfolioDrawer extends React.Component {
                 </div>
                 <div className='portfolio-drawer__body'>
                     <Scrollbars
-                        autoHeight
+                        style={{ width: '100%', height: 'calc(100vh - 35px)' }}
                         autoHide
-                        autoHeightMax={555}
                     >
                         {body_content}
                     </Scrollbars>

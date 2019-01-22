@@ -59,9 +59,8 @@ class DataTable extends React.PureComponent {
                         TableData
                         :
                         <Scrollbars
-                            autoHeight
+                            style={{ width: '100%', height: 'calc(100vh - 35px)' }}
                             autoHide
-                            autoHeightMax={515}
                         >
                             {TableData}
                         </Scrollbars>
