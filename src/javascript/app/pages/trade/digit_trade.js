@@ -82,6 +82,33 @@ const DigitDisplay = (() => {
         );
     };
 
+    const redrawFromHistory = (response) => {
+        tick_count = 1;
+        if (!$container.is(':visible') || !response || (!response.history)) {
+            return;
+        }
+        $container.find('#table_digits').empty();
+
+        response.history.times.some((time, idx) => {
+            if (+time >= +contract.entry_tick_time && +contract.exit_tick_time) {
+                const spot = response.history.prices[idx];
+                const csv_spot = addComma(spot);
+
+                $container
+                    .find('#table_digits')
+                    .append($('<p />', { class: 'gr-3', text: tick_count }))
+                    .append($('<p />', { class: 'gr-3 gray', html: tick_count === contract.tick_count ? `${csv_spot.slice(0, csv_spot.length - 1)}<strong>${csv_spot.substr(-1)}</strong>` : csv_spot }))
+                    .append($('<p />', { class: 'gr-6 gray digit-spot-time no-underline', text: moment(+time * 1000).utc().format('YYYY-MM-DD HH:mm:ss') }));
+
+                tick_count += 1;
+            }
+            return tick_count > contract.tick_count;
+        });
+
+        showLocalTimeOnHover('.digit-spot-time');
+
+    };
+
     const update = (response) => {
         if (!$container.is(':visible') || !response || (!response.tick && !response.history)) {
             return;
@@ -101,7 +128,6 @@ const DigitDisplay = (() => {
             });
         } else if (response.tick) {
             if (tick_count <= contract.tick_count &&
-                +response.tick.epoch <= +contract.date_expiry &&
                 +response.tick.epoch >= +contract.entry_tick_time) {
                 updateTable(response.tick.quote, response.tick.epoch);
                 tick_count += 1;
@@ -122,8 +148,9 @@ const DigitDisplay = (() => {
                     start        : contract.entry_tick_time,
                     end          : contract.exit_tick_time,
                 };
+
                 // force rerender the table by sending the history
-                BinarySocket.send(request, { callback: update });
+                BinarySocket.send(request, { callback: redrawFromHistory });
             }
         }
         if (proposal_open_contract.status === 'won') {
