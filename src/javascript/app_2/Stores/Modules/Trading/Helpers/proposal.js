@@ -8,12 +8,13 @@ import {
     removable_proposal_properties }        from '../Constants/query_string';
 
 export const getProposalInfo = (store, response, obj_prev_contract_basis) => {
-    const proposal = response.proposal || {};
-    const profit   = (proposal.payout - proposal.ask_price) || 0;
-    const returns  = profit * 100 / (proposal.ask_price || 1);
-    const stake    = proposal.display_value;
+    const proposal   = response.proposal || {};
+    const profit     = (proposal.payout - proposal.ask_price) || 0;
+    const returns    = profit * 100 / (proposal.ask_price || 1);
+    const stake      = proposal.display_value;
+    const basis_list = store.basis_list;
 
-    const contract_basis = (store.basis_list.find(o => o.value !== store.basis));
+    const contract_basis = (basis_list ? basis_list.find(o => o.value !== store.basis) : {});
     let has_increased    = proposal[contract_basis.value] > obj_prev_contract_basis.value;
 
     if (proposal[contract_basis.value] === obj_prev_contract_basis.value) {
@@ -21,8 +22,8 @@ export const getProposalInfo = (store, response, obj_prev_contract_basis) => {
     }
 
     const obj_contract_basis = {
-        text : contract_basis.text,
-        value: contract_basis.text === 'Stake' ? stake : proposal[contract_basis.value],
+        text : contract_basis.text || '',
+        value: (contract_basis.text === 'Stake' ? stake : proposal[contract_basis.value]) || '',
     };
 
     return {
