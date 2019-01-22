@@ -32,7 +32,7 @@ const StatusNotification = () => (
 
 const DialogNotification = () => (
     <div id='dialog_notification' className='primary-bg-color'>
-        <p id='dialog_notification_text'>{it.L('Our website uses cookies to give you the best user experience. For more information, [_1].', '<a href="#" target="_blank" rel="noopener noreferrer">view our policy</a>')}</p>
+        <p id='dialog_notification_text'>{it.L('Our website uses cookies to give you the best user experience. For more information, [_1].', `<a href="${it.url_for('terms-and-conditions')}?anchor=cookies-and-device-information#privacy" target="_blank" rel="noopener noreferrer">${it.L('view our policy')}</a>`)}</p>
         <a className='button-secondary gr-gutter-left gr-no-gutter-m' id='dialog_notification_accept' type='button'><span>{it.L('OK')}</span></a>
     </div>
 );
