@@ -124,7 +124,7 @@ div.contracts-popup-container {
             transition: all 0.2s;
         }
     }
-    .contracts-popup-list {
+    .contracts-popup-list, .trade-type-info-popup {
         right: 4px;
         width: 100%;
         pointer-events: none;
@@ -136,7 +136,7 @@ div.contracts-popup-container {
         height: 0;
         z-index: 999;
 
-        .list-container {
+        .list-container, .trade-type-info {
             position: absolute;
             width: 290px;
             right: calc(100% + 10px);
@@ -271,7 +271,7 @@ div.contracts-popup-container {
             border-color: $COLOR_WHITE;
             box-shadow: 0 0 0 0.2rem rgba(127, 131, 151, 0.3) // stylelint-disable-line number-leading-zero
         }
-        .list-container {
+        .list-container, .trade-type-info {
             border-color: $COLOR_BRANDBLUE_85;
             background: $COLOR_BRANDBLUE_95;
 

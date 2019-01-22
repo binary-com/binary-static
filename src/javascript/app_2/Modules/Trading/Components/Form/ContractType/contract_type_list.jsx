@@ -5,6 +5,7 @@ import ContractTypeItem               from './contract_type_item.jsx';
 
 const ContractTypeList = ({
     handleSelect,
+    handleInfoClick,
     list,
     name,
     value,
@@ -22,6 +23,7 @@ const ContractTypeList = ({
                             name={name}
                             value={value}
                             handleSelect={handleSelect}
+                            handleInfoClick={handleInfoClick}
                         />
                     </div>
                 </div>
@@ -31,6 +33,7 @@ const ContractTypeList = ({
 
 ContractTypeList.propTypes = {
     handleSelect: PropTypes.func,
+    handleInfoClick: PropTypes.func,
     list        : MobxPropTypes.objectOrObservableObject,
     name        : PropTypes.string,
     value       : PropTypes.string,
