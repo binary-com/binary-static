@@ -14,7 +14,6 @@ import MessageBox        from '../Components/Form/Purchase/MessageBox';
 import PurchaseLock      from '../Components/Form/Purchase/PurchaseLock';
 
 const Purchase = ({
-    basis,
     currency,
     is_client_allowed_to_visit,
     is_purchase_confirm_on,
@@ -54,7 +53,7 @@ const Purchase = ({
                     <div className='btn-purchase__info'>
                         <div className='btn-purchase__return'>{is_disabled ? '---,-' : info.returns}</div>
                         <div className='btn-purchase__profit'>
-                            {is_disabled ? '--,--' : <Money amount={info[basis]} currency={currency} />}
+                            {is_disabled ? '--,--' : <Money amount={info.profit} currency={currency} />}
                         </div>
                     </div>
                 </React.Fragment>
@@ -109,7 +108,6 @@ const Purchase = ({
 );
 
 Purchase.propTypes = {
-    basis                     : PropTypes.string,
     currency                  : PropTypes.string,
     is_client_allowed_to_visit: PropTypes.bool,
     is_purchase_confirm_on    : PropTypes.bool,
@@ -129,7 +127,6 @@ export default connect(
     ({ client, modules, ui }) => ({
         currency                  : client.currency,
         is_client_allowed_to_visit: client.is_client_allowed_to_visit,
-        basis                     : modules.trade.basis,
         is_purchase_enabled       : modules.trade.is_purchase_enabled,
         is_trade_enabled          : modules.trade.is_trade_enabled,
         onClickPurchase           : modules.trade.onPurchase,
