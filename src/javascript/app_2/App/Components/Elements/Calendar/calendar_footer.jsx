@@ -1,8 +1,6 @@
 import PropTypes             from 'prop-types';
 import React                 from 'react';
-import { localize }          from '_common/localize';
 import { IconCalendarToday } from 'Assets/Common';
-import CalendarButton        from './calendar_button.jsx';
 
 const CalendarFooter = ({
     footer,
@@ -12,17 +10,12 @@ const CalendarFooter = ({
     <React.Fragment>
         { (has_today_btn || footer) &&
             <div className='calendar__footer'>
-                { footer && <span className='calendar__text calendar__text--bold'>{footer}</span> }
+                { footer && <span className='calendar__text'>{footer}</span> }
                 { has_today_btn &&
-                    <React.Fragment>
-                        <CalendarButton className='calendar__btn'>
-                            <a onClick={onClick}>{localize('Today')}</a>
-                        </CalendarButton>
-                        <IconCalendarToday
-                            className='calendar__icon calendar__icon--today'
-                            onClick={onClick}
-                        />
-                    </React.Fragment>
+                    <IconCalendarToday
+                        className='calendar__icon calendar__icon--today'
+                        onClick={onClick}
+                    />
                 }
             </div>
         }

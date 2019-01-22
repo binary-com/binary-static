@@ -14,9 +14,12 @@
     &__header, &__footer {
         position: relative;
         display: flex;
-        justify-content: center;
         align-items: center;
         height: 50px;
+        padding: 8px;
+    }
+    &__header {
+        justify-content: center;
     }
     &__body {
         border-top: 1px solid $COLOR_GRAY;
@@ -191,7 +194,7 @@
             }
         }
         &__icon path {
-            stroke: $COLOR_WHITE;
+            fill: $COLOR_WHITE;
         }
         &__body {
             background: $COLOR_BRANDBLUE_95;

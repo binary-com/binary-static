@@ -7,10 +7,8 @@
         @extend .absolute-center-v; // centers input-field icons vertically
         top: 8px;
         right: 5%;
-    &:has(input[type=checkbox]) {
-        display: inline-block;
     }
-    span.tooltip {
+    &:has(input[type=checkbox]) {
         display: inline-block;
     }
     i {

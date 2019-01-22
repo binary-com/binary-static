@@ -102,7 +102,7 @@ const InputField = ({
             disabled={is_disabled}
             data-for={`error_tooltip_${name}`}
             data-value={data_value}
-            data-tip
+            data-tip={data_tip}
             id={id}
             maxLength={fractional_digits ? max_length + fractional_digits + 1 : max_length}
             name={name}
