@@ -72,7 +72,6 @@ const TickDisplay = (() => {
             price  = parseFloat(data.price);
             payout = parseFloat(data.payout);
         }
-
         setXIndicators();
         requireHighstock((Highstock) => {
             Highcharts = Highstock;
@@ -377,6 +376,7 @@ const TickDisplay = (() => {
                 } else if (/^(runhigh|runlow)/i.test(contract.shortcode)) {
                     category = 'runs';
                 }
+
                 initialize({
                     symbol              : contract.underlying,
                     number_of_ticks     : contract.tick_count,
@@ -392,6 +392,7 @@ const TickDisplay = (() => {
                 return;
             }
         }
+
         if (data.tick) {
             spots2  = Tick.spots();
             epoches = Object.keys(spots2).sort((a, b) => a - b);
@@ -399,7 +400,10 @@ const TickDisplay = (() => {
             epoches = data.history.times;
         }
 
-        const has_finished = applicable_ticks && ticks_needed && applicable_ticks.length >= ticks_needed;
+        let has_finished = applicable_ticks && ticks_needed && applicable_ticks.length >= ticks_needed;
+        if (contract_category.match('run')) {
+            has_finished = applicable_ticks.length && contract.exit_tick_time || false;
+        }
         const has_sold     = contract && contract.exit_tick_time && applicable_ticks
             && applicable_ticks.find(({ epoch }) => +epoch === +contract.exit_tick_time) !== undefined;
 
@@ -543,7 +547,6 @@ const TickDisplay = (() => {
             label    : localize('Exit Spot'),
             dashStyle: 'Dash',
         };
-
         add(x_indicators[indicator_key]);
     };
 
@@ -580,6 +583,8 @@ const TickDisplay = (() => {
                 request.subscribe = 1;
                 subscribe         = 'true';
             } else if (!/^(tickhigh|ticklow)_/i.test(contract.shortcode) && contract.exit_tick_time && +contract.exit_tick_time < +contract.date_expiry) {
+                request.end = contract.exit_tick_time;
+            } else if (!/^(runhigh|runlow)/i.test(contract.shortcode) && contract.exit_tick_time) {
                 request.end = contract.exit_tick_time;
             } else {
                 request.end = contract.date_expiry;
