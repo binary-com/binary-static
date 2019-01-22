@@ -12,6 +12,7 @@ class ContractTypeWidget extends React.PureComponent {
         this.state = {
             is_dialog_open: false,
             is_info_dialog_open: false,
+            item: {},
         };
     }
 
@@ -31,6 +32,8 @@ class ContractTypeWidget extends React.PureComponent {
     };
 
     handleInfoClick = (item) => {
+        console.log(item.value);
+        this.setState({ item });
         this.handleInfoVisibility();
         this.handleVisibility();
     };
@@ -56,6 +59,10 @@ class ContractTypeWidget extends React.PureComponent {
     };
 
     onWidgetClick = () => {
+        this.setState({ is_dialog_open: !this.state.is_dialog_open, is_info_dialog_open: false });
+    };
+
+    onBackButtonClick = () => {
         this.setState({ is_dialog_open: !this.state.is_dialog_open, is_info_dialog_open: false });
     };
 
@@ -123,8 +130,8 @@ class ContractTypeWidget extends React.PureComponent {
                 >
                     {/*<TradeTypeInfoItem />*/}
                     <TradeTypeInfoItem
-                        name={this.props.name}
-                        value={this.props.value}
+                        item={this.state.item}
+                        onBackButtonClick={this.onBackButtonClick}
                     />
                 </TradeTypeInfoDialog>
             </div>

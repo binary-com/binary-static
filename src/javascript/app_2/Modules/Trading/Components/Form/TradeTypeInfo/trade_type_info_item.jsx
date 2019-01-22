@@ -1,20 +1,29 @@
-import { PropTypes as MobxPropTypes } from 'mobx-react';
-import PropTypes                      from 'prop-types';
-import React                          from 'react';
+import PropTypes                    from 'prop-types';
+import React                        from 'react';
+import { ComponentTradeCategories } from 'Assets/Trading/Categories/components_trade_categories.jsx';
+import { IconBack }                 from 'Assets/Common/icon_back.jsx';
 
 const ContractTypeItem = ({
-    name,
-    value,
+    item,
+    onBackButtonClick,
 }) => (
     <React.Fragment>
-        <h1>{name}</h1>
-        <p>{value}</p>
+        <div onClick={() => onBackButtonClick()}>
+            <IconBack />
+        </div>
+        <h1>
+            {item.text}
+        </h1>
+        <div>
+            gif explanation
+        </div>
+        <ComponentTradeCategories category={item.value} />
     </React.Fragment>
 );
 
 ContractTypeItem.propTypes = {
-    name : PropTypes.string,
-    value: PropTypes.string,
+    item: PropTypes.object,
+    onBackButtonClick: PropTypes.func,
 };
 
 export default ContractTypeItem;
