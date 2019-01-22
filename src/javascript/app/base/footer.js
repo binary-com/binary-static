@@ -1,3 +1,4 @@
+const Cookies      = require('js-cookie');
 const BinarySocket = require('./socket');
 const Client       = require('../base/client');
 const isEuCountry  = require('../common/country_base').isEuCountry;
@@ -26,6 +27,25 @@ const Footer = (() => {
     const clearNotification = () => {
         const $status_notification = $('#status_notification');
         $status_notification.slideUp(200);
+    };
+
+    const clearDialogMessage = () => {
+        const $dialog_notification = $('#dialog_notification');
+        $dialog_notification.slideUp(200);
+    };
+
+    const displayDialogMessage = () => {
+        BinarySocket.wait('time').then((response) => {
+            const $dialog_notification = $('#dialog_notification');
+            const $dialog_notification_accept = $('#dialog_notification_accept');
+            $dialog_notification.css('display', 'flex');
+            $dialog_notification_accept
+                .off('click')
+                .on('click', () => {
+                    $dialog_notification.slideUp(200);
+                    Cookies.set('CookieConsent', response.time);
+                });
+        });
     };
     
     const displayNotification = (message) => {
@@ -57,6 +77,8 @@ const Footer = (() => {
         onLoad,
         clearNotification,
         displayNotification,
+        displayDialogMessage,
+        clearDialogMessage,
     };
 })();
 
