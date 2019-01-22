@@ -133,7 +133,7 @@ class DatePicker extends React.PureComponent {
                 type={type}
                 value={value}
             />
-        )
+        );
     };
 
     render() {
