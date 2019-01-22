@@ -10,12 +10,14 @@ import Button                    from './button.jsx';
 import Tooltip                   from '../Elements/tooltip.jsx';
 
 const InputField = ({
+    checked,
     className,
     data_tip,
     data_value,
     error_messages,
     fractional_digits,
     helper,
+    id,
     is_disabled,
     is_float,
     is_incrementable,
@@ -95,11 +97,13 @@ const InputField = ({
 
     const input =
         <input
+            checked={checked ? 'checked' : ''}
             className={classNames({ error: has_error })}
             disabled={is_disabled}
             data-for={`error_tooltip_${name}`}
-            data-tip={data_tip}
             data-value={data_value}
+            data-tip
+            id={id}
             maxLength={fractional_digits ? max_length + fractional_digits + 1 : max_length}
             name={name}
             onKeyDown={is_incrementable ? onKeyPressed : undefined}
@@ -155,10 +159,12 @@ const InputField = ({
 // supports more than two different types of 'value' as a prop.
 // Quick Solution - Pass two different props to input field.
 InputField.propTypes = {
+    checked          : PropTypes.number,
     className        : PropTypes.string,
     error_messages   : MobxPropTypes.arrayOrObservableArray,
     fractional_digits: PropTypes.number,
     helper           : PropTypes.string,
+    id               : PropTypes.string,
     is_disabled      : PropTypes.string,
     is_float         : PropTypes.bool,
     is_incrementable : PropTypes.bool,

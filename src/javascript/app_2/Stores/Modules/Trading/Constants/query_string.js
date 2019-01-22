@@ -12,6 +12,7 @@ export const allowed_query_string_variables = [
     'duration_unit',
     'expiry_date',
     'expiry_type',
+    'is_equal_checked',
     'last_digit',
     'start_date',
     'start_time',
