@@ -44,22 +44,24 @@ const Footer = (() => {
     };
 
     const displayDialogMessage = () => {
-        BinarySocket.wait('time').then((response) => {
-            const $dialog_notification = $('#dialog_notification');
-            const $dialog_notification_accept = $('#dialog_notification_accept');
+        BinarySocket.wait('website_status', 'authorize', 'landing_company').then(() => {
+            if (isEuCountry()) {
+                const $dialog_notification = $('#dialog_notification');
+                const $dialog_notification_accept = $('#dialog_notification_accept');
 
-            $dialog_notification.css('display', 'flex');
-            adjustElevioAndScrollup($dialog_notification.height() + 30, $dialog_notification.height() + 40);
-            $dialog_notification_accept
-                .off('click')
-                .on('click', () => {
-                    adjustElevioAndScrollup(8, 18);
-                    $dialog_notification.slideUp(200);
-                    Cookies.set('CookieConsent', response.time);
-                });
-            $(window).resize(() => {
+                $dialog_notification.css('display', 'flex');
                 adjustElevioAndScrollup($dialog_notification.height() + 30, $dialog_notification.height() + 40);
-            });
+                $dialog_notification_accept
+                    .off('click')
+                    .on('click', () => {
+                        adjustElevioAndScrollup(8, 18);
+                        $dialog_notification.slideUp(200);
+                        Cookies.set('CookieConsent', 1);
+                    });
+                $(window).resize(() => {
+                    adjustElevioAndScrollup($dialog_notification.height() + 30, $dialog_notification.height() + 40);
+                });
+            }
         });
     };
     
