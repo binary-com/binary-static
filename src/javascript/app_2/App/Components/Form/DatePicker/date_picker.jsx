@@ -106,36 +106,35 @@ class DatePicker extends React.PureComponent {
         }
     };
 
-    renderDurationPickerInputField = (value) => (
-        <InputField
-            className='datepicker__input'
-            data-tip={false}
-            data-value={value || undefined}
-            error_messages={this.props.validation_errors}
-            is_read_only={this.props.is_read_only}
-            name={this.props.name}
-            onClick={this.handleVisibility}
-            onChange={this.onChangeInput} // TODO: handle duration == days
-            placeholder={this.props.placeholder || localize('Select a duration')}
-            type='number'
-            value={value}
-        />
-    );
+    renderInputField = () => {
+        const { is_read_only, mode, name, validation_errors } = this.props;
 
-    renderDatePickerInputField = (value) => (
-        <InputField
-            className='datepicker__input'
-            data-tip={false}
-            data-value={value || undefined}
-            error_messages={this.props.validation_errors}
-            is_read_only
-            name={this.props.name}
-            onClick={this.handleVisibility}
-            placeholder={this.props.placeholder || localize('Select date')}
-            type='text'
-            value={toMoment(value).format('DD MMM YYYY')}
-        />
-    );
+        let { value } = this.state;
+        value = mode === 'duration' ? value : toMoment(value).format('DD MMM YYYY');
+
+        let { placeholder } = this.props;
+        placeholder = placeholder || (mode === 'duration' ? localize('Select a duration') : localize('Select a date'));
+
+        // attach onChange event for Duration DatePicker
+        const onChange = mode === 'duration' ? this.onChangeInput : undefined;
+        const type = mode === 'duration' ? 'number' : 'text';
+
+        return (
+            <InputField
+                className='datepicker__input'
+                data-tip={false}
+                data-value={this.state.value}
+                error_messages={validation_errors}
+                is_read_only={is_read_only}
+                name={name}
+                onChange={onChange}
+                onClick={this.handleVisibility}
+                placeholder={placeholder}
+                type={type}
+                value={value}
+            />
+        )
+    };
 
     render() {
         if (this.props.is_nativepicker) {
@@ -175,12 +174,7 @@ class DatePicker extends React.PureComponent {
                 onMouseEnter={this.onMouseEnter}
                 onMouseLeave={this.onMouseLeave}
             >
-                {
-                    this.props.mode === 'duration' ?
-                        this.renderDurationPickerInputField(this.state.value)
-                        :
-                        this.renderDatePickerInputField(this.state.value)
-                }
+                { this.renderInputField() }
                 <IconCalendar
                     className={classNames('datepicker__icon datepicker__icon--calendar', {
                         'datepicker__icon--is-hidden': this.state.is_clear_btn_visible,
