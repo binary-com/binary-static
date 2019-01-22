@@ -22,13 +22,13 @@
         height: 32px;
         text-transform: capitalize;
 
-        &:not(&--active):hover {
-            background: $COLOR_GRAY;
+        &:hover:not(&--active) {
+            background-color: $COLOR_GRAY;
         }
         &--active {
             font-weight: bold;
             color: $COLOR_WHITE;
-            background: $COLOR_DARK_GRAY;
+            background-color: $COLOR_DARK_GRAY;
         }
     }
 }
@@ -36,14 +36,14 @@
 .theme-wrapper.dark {
     .button-menu {
         &__button {
-            background-color: $COLOR_WHITE;
+            color: $COLOR_WHITE;
+            background-color: $COLOR_BLUE;
 
-            &:not(&--active):hover {
-                background: $COLOR_GRAY;
+            &:hover:not(&--active) {
+                background-color: $COLOR_GRAY;
             }
             &--active {
-                color: $COLOR_WHITE;
-                background: $COLOR_DARK_GRAY;
+                background-color: $COLOR_BRANDBLUE_85;
             }
         }
     }

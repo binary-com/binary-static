@@ -362,6 +362,12 @@
     }
 }
 
+.theme-wrapper.dark {
+    .divider {
+        display: none;
+    }
+}
+
 /* flexbox fallback is if the browser does not support display:grid */
 @supports not (display: grid) {
     .trade-container {
