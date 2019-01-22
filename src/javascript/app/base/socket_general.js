@@ -59,10 +59,10 @@ const BinarySocketGeneral = (() => {
                     BinarySocket.availability(is_available);
                     setCurrencies(response.website_status);
                     // for logged out clients send landing company with IP address as residence
-                    if (!Client.isLoggedIn() && !State.getResponse('landing_company') && isEuCountry()) {
+                    if (!Client.isLoggedIn() && !State.getResponse('landing_company')) {
                         BinarySocket.send({ landing_company: response.website_status.clients_country });
                     }
-                    if (!Client.isLoggedIn() && !Cookies.get('CookieConsent')) {
+                    if (!Client.isLoggedIn() && !Cookies.get('CookieConsent') && isEuCountry()) {
                         Footer.displayDialogMessage();
                     } else {
                         Footer.clearDialogMessage();
