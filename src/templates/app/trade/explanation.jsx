@@ -306,10 +306,10 @@ const Explanation = () => (
             </div>
             <div id='explain_runs' className='invisible'>
                 <h3>{it.L('Entry spot')}</h3>
-                <p>{it.L('The start time is when the contract has been processed by our servers.')}</p>
-                <p>{it.L('The entry spot is the next tick after the start time.')}</p>
+                <p>{it.L('The [_1]start time[_2] is when the contract has been processed by our servers.', '<strong>', '</strong>')}</p>
+                <p>{it.L('The [_1]entry spot[_2] is the next tick after the [_1]start time[_2].', '<strong>', '</strong>')}</p>
                 <h3>{it.L('Exit Spot')}</h3>
-                <p>{it.L('The exit spot is the latest tick at or before the end time.')}</p>
+                <p>{it.L('The [_1]exit spot[_2] is the latest tick at or before the end time.', '<strong>', '</strong>')}</p>
             </div>
         </div>
 
