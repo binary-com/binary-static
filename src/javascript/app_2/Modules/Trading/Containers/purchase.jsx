@@ -30,8 +30,8 @@ const Purchase = ({
     trade_types,
 }) => (
     Object.keys(trade_types).map((type, idx) => {
-        const info               = proposal_info[type] || {};
-        const is_disabled        = !is_purchase_enabled || !is_trade_enabled || !info.id || !is_client_allowed_to_visit;
+        const info        = proposal_info[type] || {};
+        const is_disabled = !is_purchase_enabled || !is_trade_enabled || !info.id || !is_client_allowed_to_visit;
 
         const purchase_button = (
             <Button
@@ -61,7 +61,7 @@ const Purchase = ({
             </Button>
         );
 
-        const is_purchase_error  = (!isEmptyObject(purchase_info) && purchase_info.echo_req.buy === info.id);
+        const is_purchase_error = (!isEmptyObject(purchase_info) && purchase_info.echo_req.buy === info.id);
 
         return (
             <Fieldset

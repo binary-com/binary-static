@@ -1,6 +1,6 @@
-import { expect }                from 'chai';
-import React                     from 'react';
-import * as Proposal             from '../proposal';
+import { expect }    from 'chai';
+import React         from 'react';
+import * as Proposal from '../proposal';
 
 describe('Proposal', () => {
     describe('getProposalInfo', () => {
