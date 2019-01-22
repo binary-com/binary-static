@@ -1,9 +1,10 @@
-const Cookies      = require('js-cookie');
-const BinarySocket = require('./socket');
-const Client       = require('../base/client');
-const isEuCountry  = require('../common/country_base').isEuCountry;
-const LocalStore   = require('../../_common/storage').LocalStore;
-const State        = require('../../_common/storage').State;
+const Cookies        = require('js-cookie');
+const BinarySocket   = require('./socket');
+const Client         = require('../base/client');
+const isEuCountry    = require('../common/country_base').isEuCountry;
+const getElementById = require('../../_common/common_functions').getElementById;
+const LocalStore     = require('../../_common/storage').LocalStore;
+const State          = require('../../_common/storage').State;
 
 const Footer = (() => {
     const onLoad = () => {
@@ -29,7 +30,8 @@ const Footer = (() => {
         $status_notification.slideUp(200);
     };
 
-    const adjustElevioAndScrollup = (elevio_height, scrollup_height) => {
+    // by default elevio is 8px above bottom of page, and scrollup is 18px above elevio
+    const adjustElevioAndScrollup = (elevio_height = 8, scrollup_height = 18) => {
         const $elevio_button = $('#_elev_io ._6byvm');
         const $scrollup = $('#scrollup');
         $elevio_button.attr('style', `bottom: ${elevio_height}px !important`);
@@ -40,26 +42,30 @@ const Footer = (() => {
         const $dialog_notification = $('#dialog_notification');
 
         $dialog_notification.slideUp(200);
-        adjustElevioAndScrollup(8, 18);
+        adjustElevioAndScrollup();
     };
 
     const displayDialogMessage = () => {
         BinarySocket.wait('website_status', 'authorize', 'landing_company').then(() => {
             if (isEuCountry()) {
                 const $dialog_notification = $('#dialog_notification');
-                const $dialog_notification_accept = $('#dialog_notification_accept');
+                const el_dialog_notification_accept = getElementById('#dialog_notification_accept');
+                const gap_dialog_to_elevio = 30;
+                const gap_elevio_to_scrollup = 10;
 
                 $dialog_notification.css('display', 'flex');
-                adjustElevioAndScrollup($dialog_notification.height() + 30, $dialog_notification.height() + 40);
-                $dialog_notification_accept
-                    .off('click')
-                    .on('click', () => {
-                        adjustElevioAndScrollup(8, 18);
+                adjustElevioAndScrollup($dialog_notification.height() + gap_dialog_to_elevio,
+                    $dialog_notification.height() + gap_dialog_to_elevio + gap_elevio_to_scrollup);
+
+                el_dialog_notification_accept
+                    .addEventListener('click', () => {
+                        adjustElevioAndScrollup();
                         $dialog_notification.slideUp(200);
                         Cookies.set('CookieConsent', 1);
                     });
-                $(window).resize(() => {
-                    adjustElevioAndScrollup($dialog_notification.height() + 30, $dialog_notification.height() + 40);
+                window.addEventListener('resize', () => {
+                    adjustElevioAndScrollup($dialog_notification.height() + gap_dialog_to_elevio,
+                        $dialog_notification.height() + gap_dialog_to_elevio + gap_elevio_to_scrollup);
                 });
             }
         });
