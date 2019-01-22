@@ -24,7 +24,7 @@ import {
     ClientMessage,
     Tnc,
     TaxInformationForm,
-    GeocodeResponse,
+    GeocodeValidation,
 } from '../../_common/components/forms_common_rows.jsx';
 
 const Financial = () => (
@@ -55,7 +55,7 @@ const Financial = () => (
                 <AddressState />
                 <AddressPostcode />
                 <Phone />
-                <GeocodeResponse />
+                <GeocodeValidation />
             </Fieldset>
 
             <Fieldset legend={it.L('Security')} className='security'>

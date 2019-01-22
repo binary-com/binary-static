@@ -160,7 +160,7 @@ msgstr ""
 msgid "%1 gives everyone an easy way to participate in the financial markets. Trade with as little as $1 USD on major currencies, stocks, indices, and commodities."
 msgstr ""
 
-msgid "%1 has been credited into your virtual account: %2."
+msgid "%1 has been credited into your Virtual Account: %2."
 msgstr ""
 
 msgid "%1 has earned an enviable reputation for our commitment to high ethical standards and the quality of the trading experience we provide."
@@ -217,7 +217,7 @@ msgstr ""
 msgid "%1 is not available in Costa Rica and is not regulated or supervised by any regulatory body in the Costa Rican financial system."
 msgstr ""
 
-msgid "%1 is owned and operated by the Binary Group Ltd. group of companies. For more information, <a href='%2'>visit our history page</a>."
+msgid "%1 is owned and operated by the Binary Group Ltd. group of companies. For more information, %2visit our history page%3."
 msgstr ""
 
 msgid "%1 is seeking a qualified proofreader with a flair for language and a meticulous eye for detail. You must be able to interact with our staff using a web-based translator interface."
@@ -388,6 +388,9 @@ msgstr ""
 msgid "%1Download MAM for Windows%2 after you’ve set up your master account. Your login credentials will be provided"
 msgstr ""
 
+msgid "%1Founded%2 October 1999"
+msgstr ""
+
 msgid "%1Your Proof of Identity or Proof of Address%2 did not meet our requirements. Please check your email for further instructions."
 msgstr ""
 
@@ -497,9 +500,6 @@ msgid "<< Back to job descriptions"
 msgstr ""
 
 msgid "<a href=\"%1\">Return to trading page</a>"
-msgstr ""
-
-msgid "<a href='%1'>Founded</a> October 1999"
 msgstr ""
 
 msgid "<strong>Appropriateness Test: WARNING:</strong> In providing our services to you, we are required to obtain information from you in order to assess whether a given product or service is appropriate for you (that is, whether you possess the experience and knowledge to understand the risks involved)."
@@ -1310,6 +1310,9 @@ msgid "Are you sure that you want to permanently delete the token"
 msgstr ""
 
 msgid "Are you sure that you want to permanently revoke access to the application"
+msgstr ""
+
+msgid "Are you sure?"
 msgstr ""
 
 msgid "Armed Forces"
@@ -2200,6 +2203,9 @@ msgstr ""
 msgid "Cashier password"
 msgstr ""
 
+msgid "Cashier session expired"
+msgstr ""
+
 msgid "Certain limits are imposed as to the acceptable levels for barrier/strike prices of contracts. Typically, the barrier/strike may not be too close nor too far from the current underlying market level."
 msgstr ""
 
@@ -2240,6 +2246,9 @@ msgid "Charting for this underlying is delayed"
 msgstr ""
 
 msgid "Charting platforms"
+msgstr ""
+
+msgid "Check address"
 msgstr ""
 
 msgid "Check our systems against the latest attacks, vulnerabilities, and mitigations"
@@ -3322,6 +3331,9 @@ msgstr ""
 msgid "Do you want to see %1 in other languages, or can you suggest improvements to our current translations?"
 msgstr ""
 
+msgid "Do you want to top up for another %1? If not, you can do this later on the %2Cashier page%3, too."
+msgstr ""
+
 msgid "Do you wish to continue?"
 msgstr ""
 
@@ -3338,6 +3350,9 @@ msgid "Does Not Touch"
 msgstr ""
 
 msgid "Don't have an account?"
+msgstr ""
+
+msgid "Don't show again"
 msgstr ""
 
 msgid "Don’t share your %1 account or payment methods with any other person."
@@ -3812,9 +3827,6 @@ msgid "Exclusive binary trading technology."
 msgstr ""
 
 msgid "Execute your trade in seconds."
-msgstr ""
-
-msgid "Execute your trading strategy using the Rise/Fall trade type with a duration of 5 ticks, 10 ticks, 1 minute or 5 minutes. With Rise/Fall contracts, you must predict whether the market will rise or fall from its current level."
 msgstr ""
 
 msgid "Execution model and counterparty risk"
@@ -4531,6 +4543,9 @@ msgstr ""
 msgid "Go to MetaTrader 5 dashboard"
 msgstr ""
 
+msgid "Go to statement"
+msgstr ""
+
 msgid "Go with the leader"
 msgstr ""
 
@@ -4645,7 +4660,13 @@ msgstr ""
 msgid "High Tick"
 msgstr ""
 
+msgid "High Tick/Low Tick"
+msgstr ""
+
 msgid "High Tick/Low Tick contracts have a strict duration of five ticks."
+msgstr ""
+
+msgid "High Ticks/Low Ticks"
 msgstr ""
 
 msgid "High barrier"
@@ -4808,6 +4829,9 @@ msgid "How to use a payment agent?"
 msgstr ""
 
 msgid "However, if the asset price falls by 10 points, that represents a USD 10 loss for you."
+msgstr ""
+
+msgid "However, we will require further documentation to authenticate your account in the future."
 msgstr ""
 
 msgid "However, with leverage you can purchase those 100 units at a fraction of the typical cost – depending on the leverage afforded to you by your broker or trading platform."
@@ -4982,9 +5006,6 @@ msgid "If you are entering into this Agreement on behalf of your employer or oth
 msgstr ""
 
 msgid "If you are not located in the above-mentioned countries, simply dial any of our contact numbers for help."
-msgstr ""
-
-msgid "If you are shortlisted, we will send you a talent test to be completed."
 msgstr ""
 
 msgid "If you are unable to scan the QR code, you can manually enter this code instead:"
@@ -5168,6 +5189,9 @@ msgid "If you're a broker we'd like to work with you. You will be introducing yo
 msgstr ""
 
 msgid "If you're shortlisted, we'll invite you to a hackathon or send you a talent test."
+msgstr ""
+
+msgid "If you're shortlisted, we'll send you a talent test to be completed."
 msgstr ""
 
 msgid "If your %1 account is closed, your MT5 Real Account will automatically be closed as well."
@@ -5899,7 +5923,7 @@ msgstr ""
 msgid "Liaise with governmental authorities such as the Immigration Department, and Inland Revenue Board on a regular basis on behalf of the company and employees"
 msgstr ""
 
-msgid "Licensed and regulated in Malta, the United Kingdom, the Isle of Man, and Ireland"
+msgid "Licensed and regulated in Malta, the United Kingdom, the Isle of Man, and Ireland. %1Learn more%2"
 msgstr ""
 
 msgid "Licensed, trusted, and secure"
@@ -7588,7 +7612,7 @@ msgstr ""
 msgid "Please make sure that you first agree with the Agent on the terms of payment before submitting your request."
 msgstr ""
 
-msgid "Please note that Asians, Digits, Reset Call/Put and High/Low Ticks are available exclusively with our Volatility Indices."
+msgid "Please note that Asians, Digits, Reset Call/Reset Put and High Ticks/Low Ticks are available exclusively with our Volatility Indices."
 msgstr ""
 
 msgid "Please note that actual trading results may not correspond to optimized or back-tested results."
@@ -7609,7 +7633,7 @@ msgstr ""
 msgid "Please note that you are currently using your %1Bitcoin Cash%2 account. You can only fund your account in %1Bitcoin Cash%2, and not Bitcoin."
 msgstr ""
 
-msgid "Please provide the tax identification number for each country where you are a tax resident. If you cannot provide this information, kindly contact our customer support team for help."
+msgid "Please provide the tax identification number for the country where you are a tax resident. If you cannot provide this information, kindly contact our customer support team."
 msgstr ""
 
 msgid "Please provide us with the following information:"
@@ -7642,13 +7666,13 @@ msgstr ""
 msgid "Please select a valid time."
 msgstr ""
 
-msgid "Please select all the countries where you are a tax resident. If you have any doubts, kindly consult your tax advisor."
-msgstr ""
-
 msgid "Please select at least one scope"
 msgstr ""
 
 msgid "Please select the checkbox."
+msgstr ""
+
+msgid "Please select the country where you are a tax resident. If you have any doubts, kindly consult your tax advisor."
 msgstr ""
 
 msgid "Please select the currency of this account:"
@@ -7795,7 +7819,22 @@ msgstr ""
 msgid "Predict the direction<br />and purchase"
 msgstr ""
 
+msgid "Predict the highest or lowest tick among the next 5 ticks."
+msgstr ""
+
 msgid "Predict the last decimal digit of the spot price with Digits. There are three types of Digits trades:"
+msgstr ""
+
+msgid "Predict whether the exit spot will be higher or lower than the entry spot within a selected duration from 5 ticks to 10 ticks, or 1 minute to 5 minutes."
+msgstr ""
+
+msgid "Predict whether the last digit of the last tick will be even or odd within a selected duration from 5 ticks to 10 ticks."
+msgstr ""
+
+msgid "Predict whether the last digit of the last tick will be greater or less than your prediction within a selected duration from 5 ticks to 10 ticks."
+msgstr ""
+
+msgid "Predict whether the last digit of the last tick will match or differ from your prediction within a selected duration from 5 ticks to 10 ticks."
 msgstr ""
 
 msgid "Preferably a native speaker with good command of English (oral and written)"
@@ -8002,7 +8041,7 @@ msgstr ""
 msgid "Purchase"
 msgstr ""
 
-msgid "Purchase High/Low Tick contracts to predict the highest or lowest tick among the next five ticks."
+msgid "Purchase High Tick/Low Tick contracts to predict the highest or lowest tick among the next five ticks."
 msgstr ""
 
 msgid "Purchase Price"
@@ -8048,6 +8087,9 @@ msgid "Quote currency"
 msgstr ""
 
 msgid "R. Interpretation of Terms"
+msgstr ""
+
+msgid "RTS 27"
 msgstr ""
 
 msgid "Range of markets"
@@ -8275,9 +8317,6 @@ msgstr ""
 msgid "Reset Call"
 msgstr ""
 
-msgid "Reset Call/Put"
-msgstr ""
-
 msgid "Reset Call/Reset Put"
 msgstr ""
 
@@ -8297,12 +8336,6 @@ msgid "Reset password"
 msgstr ""
 
 msgid "Reset to original settings"
-msgstr ""
-
-msgid "Reset-Call"
-msgstr ""
-
-msgid "Reset-Put"
 msgstr ""
 
 msgid "Residents of countries which have been identified by the FATF as having strategic deficiencies shall be restricted from opening an account with Binary Investments (Europe) Ltd."
@@ -8875,9 +8908,6 @@ msgstr ""
 msgid "Start trading MT5 on web platform"
 msgstr ""
 
-msgid "Start/End Time"
-msgstr ""
-
 msgid "State Benefits"
 msgstr ""
 
@@ -9158,6 +9188,18 @@ msgid "Synthetic indices that mimic market volatility."
 msgstr ""
 
 msgid "System Administrator"
+msgstr ""
+
+msgid "Table 1 - Type of execution venue"
+msgstr ""
+
+msgid "Table 3 - Intra-Day Price information"
+msgstr ""
+
+msgid "Table 4 - Daily Price information"
+msgstr ""
+
+msgid "Table 6 - Likelihood of execution information"
 msgstr ""
 
 msgid "Take a short-term or long-term view with trade durations from 10 seconds to 365 days."
@@ -9736,7 +9778,7 @@ msgstr ""
 msgid "The Republic of Malta is an island country in Southern Europe — located approximately 80km south of Italy. Its rich, colourful history can be traced back thousands of years to the Neolithic period."
 msgstr ""
 
-msgid "The Standard account is suitable for a wide range of traders, both new and experienced. It gives you mid-range leverage and variable spreads that give you a great deal of flexibility for whatever position you wish to take in the market."
+msgid "The Standard account is suitable for a wide range of traders, both new and experienced. It offers you the maximum allowed leverage and variable spreads that give you a great deal of flexibility for whatever position you wish to take in the market."
 msgstr ""
 
 msgid "The Standard account is suitable for a wide range of traders, both new or experienced. It is available in EUR and GBP and offers tight and variable spreads without commissions and a minimum deposit."
@@ -10099,6 +10141,9 @@ msgstr ""
 msgid "The use, operation or combination of the %1 API with non-%1 API(s), data, equipment or documentation if liability would have been avoided but for such use, operation, or combination; or"
 msgstr ""
 
+msgid "The various trade types available on our MT5 platform."
+msgstr ""
+
 msgid "The volatility indices simulate various real market situations and provide an ideal platform for getting used to trading and testing strategies under various market conditions. These indices depend on volatility and drift, and help users to try out scenarios like - high volatility, low volatility, bullish and bearish trends."
 msgstr ""
 
@@ -10453,7 +10498,7 @@ msgstr ""
 msgid "To be able to trade OTC instruments available on the MT5 Trading Platform, you have to first:"
 msgstr ""
 
-msgid "To change your name, date of birth, country of residence, or email, please contact <a href=\"%1\">Customer Support</a>."
+msgid "To change your name, date of birth, country of residence, email, or tax information, please contact %1Customer Support%2."
 msgstr ""
 
 msgid "To create a MAM real account, please:"
@@ -10531,10 +10576,22 @@ msgstr ""
 msgid "Top Up Virtual Account"
 msgstr ""
 
+msgid "Top up"
+msgstr ""
+
+msgid "Top up Virtual Account"
+msgstr ""
+
+msgid "Top up error"
+msgstr ""
+
 msgid "Top up virtual account"
 msgstr ""
 
 msgid "Top-tier liquidity"
+msgstr ""
+
+msgid "Top-up successful"
 msgstr ""
 
 msgid "Total"
@@ -11014,6 +11071,9 @@ msgstr ""
 msgid "Understanding of encryption fundamentals and the OWASP Top 10"
 msgstr ""
 
+msgid "Understood"
+msgstr ""
+
 msgid "Unemployed"
 msgstr ""
 
@@ -11140,9 +11200,6 @@ msgstr ""
 msgid "VPN app"
 msgstr ""
 
-msgid "Validate address"
-msgstr ""
-
 msgid "Variable"
 msgstr ""
 
@@ -11221,7 +11278,7 @@ msgstr ""
 msgid "View the operating hours of the markets you can trade."
 msgstr ""
 
-msgid "View updated portfolio"
+msgid "View updated statement"
 msgstr ""
 
 msgid "View your account's authentication status."
@@ -11380,6 +11437,9 @@ msgstr ""
 msgid "We collect and assess your data to profile you, as our client, in relation to our products. We do this manually through the assistance of automated processing. Through categorisation, we will be able to provide the most appropriate products and services to you."
 msgstr ""
 
+msgid "We could not recognise your address. You may proceed but please ensure that your address is complete and accurate."
+msgstr ""
+
 msgid "We delete an order with the largest margin reserved"
 msgstr ""
 
@@ -11441,6 +11501,9 @@ msgid "We offer a market-based salary, annual performance bonus, health benefits
 msgstr ""
 
 msgid "We offer all four precious metals – gold, silver, palladium, and platinum – as well as energy in our list of commodities."
+msgstr ""
+
+msgid "We offer the following trade types on our MT5 platform:"
 msgstr ""
 
 msgid "We offer three types of lookbacks:"
@@ -12253,6 +12316,12 @@ msgstr ""
 msgid "You have already withdrawn the equivalent of %1 %2."
 msgstr ""
 
+msgid "You have chosen %1 as the currency for this account. You cannot change this later. You can have more than one cryptocurrency account."
+msgstr ""
+
+msgid "You have chosen %1 as the currency for this account. You cannot change this later. You can have one fiat currency account only."
+msgstr ""
+
 msgid "You have created all accounts available to you."
 msgstr ""
 
@@ -12329,9 +12398,6 @@ msgid "You irrevocably, non-exclusively license to the Company rights to use you
 msgstr ""
 
 msgid "You make the following representations and warranties to us at the time you enter into this Agreement, and agree that such representations and warranties are deemed repeated each time you open or close a Transaction:"
-msgstr ""
-
-msgid "You may be considered a tax resident in more than one jurisdiction. Please consult your tax advisor and verify that your tax information is accurate."
 msgstr ""
 
 msgid "You may cache the Content for up to 24 hours from a request for that Content through the %1 API."
@@ -12610,7 +12676,7 @@ msgstr ""
 msgid "Your account will be opened with %1, and will be subject to the jurisdiction and laws of %2."
 msgstr ""
 
-msgid "Your address could not be verified by our automated system. You may proceed but please ensure that your address is complete."
+msgid "Your address has been recognised by our system."
 msgstr ""
 
 msgid "Your application to be treated as a professional client is being processed."
@@ -12632,6 +12698,9 @@ msgid "Your cashier is locked as per your request - to unlock it, please enter t
 msgstr ""
 
 msgid "Your cashier is locked."
+msgstr ""
+
+msgid "Your cashier session has expired. Please try again."
 msgstr ""
 
 msgid "Your changes have been updated successfully."
@@ -12674,6 +12743,9 @@ msgid "Your personal information is used primarily as a way of validating you as
 msgstr ""
 
 msgid "Your profit or loss is calculated as follows:"
+msgstr ""
+
+msgid "Your request to be treated as a professional client has been rejected. Please check your inbox for more details. Your account remains categorised as a retail client account."
 msgstr ""
 
 msgid "Your request to transfer %1 %2 from %3 to %4 has been successfully processed."

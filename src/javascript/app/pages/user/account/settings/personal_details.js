@@ -19,6 +19,7 @@ const PersonalDetails = (() => {
 
     let editable_fields,
         is_virtual,
+        is_fully_authenticated,
         residence,
         get_settings_data;
 
@@ -28,6 +29,8 @@ const PersonalDetails = (() => {
         is_virtual        = Client.get('is_virtual');
         residence         = Client.get('residence');
     };
+
+    const checkStatus = (status, string) => status.findIndex(s => s === string) < 0 ? Boolean(false) : Boolean(true);
 
     const showHideTaxMessage = () => {
         const $tax_info_declaration = $('#tax_information_declaration');
@@ -91,45 +94,54 @@ const PersonalDetails = (() => {
             fnc_additional_check: additionalCheck,
             enable_button       : true,
         });
-        if (!is_virtual) {
-            Geocoder.validate(form_id);
-        }
         showHideMissingDetails();
     };
 
-    const show_label_if_any_value = ['account_opening_reason', 'citizen', 'place_of_birth'];
+    const show_label_if_any_value   = ['account_opening_reason', 'citizen', 'place_of_birth', 'tax_residence', 'tax_identification_number'];
+    const force_update_fields       = ['tax_residence', 'tax_identification_number'];
 
     const displayGetSettingsData = (get_settings, populate = true) => {
-        let el_id,
-            el_key,
-            has_label,
-            should_show_label,
-            should_update_value;
         Object.keys(get_settings).forEach((key) => {
-            has_label           = show_label_if_any_value.indexOf(key) !== -1;
-            should_show_label   = has_label && get_settings[key];               // if we have a value for any of these fields, show them as label
-            el_id               = `${should_show_label ? 'lbl_' : ''}${key}`;
-            el_key              = CommonFunctions.getElementById(el_id);
-            if (el_key) {
+            const has_label         = show_label_if_any_value.includes(key);
+            const force_update      = force_update_fields.includes(key);
+            const should_show_label = has_label && get_settings[key];
+            const element_id        = `${should_show_label ? 'lbl_' : ''}${key}`;
+            const element_key       = CommonFunctions.getElementById(element_id);
+
+            if (element_key) {
                 editable_fields[key] = (get_settings[key] !== null ? get_settings[key] : '');
                 if (populate) {
-                    should_update_value = /select|text/i.test(el_key.type);
+                    const should_update_value = /select|text/i.test(element_key.type);
                     if (has_label) {
-                        CommonFunctions.getElementById(`row_${el_id}`).setVisibility(1);
+                        CommonFunctions.getElementById(`row_${element_id}`).setVisibility(1);
                     }
-                    if (el_key.type === 'checkbox') {
-                        el_key.checked = !!get_settings[key];
+                    if (element_key.type === 'checkbox') {
+                        element_key.checked = !!get_settings[key];
                     } else if (!should_update_value) { // for all non (checkbox|select|text) elements
-                        const localized_text = (document.querySelector(`#${key} option[value="${get_settings[key]}"]`) || {}).innerText || get_settings[key];
-                        CommonFunctions.elementInnerHtml(el_key, localized_text || '-');
+                        const getOptionText = (value) =>  (document.querySelector(`#${key} option[value="${value}"]`) || {}).innerText || value;
+                        let localized_text;
+                        if (key === 'tax_residence') { // Resolve comma-separated country codes to country names
+                            localized_text = get_settings[key] ? get_settings[key]
+                                .split(',')
+                                .map((value) => getOptionText(value))
+                                .join(', ') : '';
+                        } else {
+                            localized_text = getOptionText(get_settings[key]);
+                        }
+                        CommonFunctions.elementInnerHtml(element_key, localized_text || '-');
                     }
                     if (should_update_value || should_show_label) {
                         // if should show label, set the value of the non-label so that it doesn't count as missing information
-                        $(should_show_label ? `#${key}` : el_key)
-                            .val(get_settings[key] ? get_settings[key].split(',') : '')
+                        const $element = $(should_show_label ? `#${key}` : element_key);
+                        const el_value = get_settings[key] ? get_settings[key].split(',') : '';
+                        $element
+                            .val(el_value)
                             .trigger('change');
-                        if (should_show_label) {
+                        if (should_show_label) { // If we show label, (input) row should be hidden
                             CommonFunctions.getElementById(`row_${key}`).setVisibility(0);
+                        }
+                        if (force_update) { // Force pushing values, used for (API-)expected values
+                            $element.attr({ 'data-force': true, 'data-value': el_value });
                         }
                     }
                 }
@@ -243,6 +255,7 @@ const PersonalDetails = (() => {
                 if (additionalCheck(get_settings)) {
                     getDetailsResponse(get_settings);
                     showFormMessage(localize('Your settings have been updated successfully.'), true);
+                    if (!is_fully_authenticated) Geocoder.validate(form_id);
                 }
             });
         } else { // is_error
@@ -279,8 +292,10 @@ const PersonalDetails = (() => {
                     const $tax_residence = $('#tax_residence');
                     $tax_residence.html($options_with_disabled.html()).promise().done(() => {
                         setTimeout(() => {
+                            const residence_value = get_settings_data.tax_residence ?
+                                get_settings_data.tax_residence.split(',') : Client.get('residence') || '';
                             $tax_residence.select2()
-                                .val(get_settings_data.tax_residence ? get_settings_data.tax_residence.split(',') : '')
+                                .val(residence_value)
                                 .trigger('change')
                                 .setVisibility(1);
                         }, 500);
@@ -351,8 +366,9 @@ const PersonalDetails = (() => {
     const onLoad = () => {
         BinarySocket.wait('get_account_status', 'get_settings').then(() => {
             init();
+            const account_status = State.getResponse('get_account_status').status;
             get_settings_data = State.getResponse('get_settings');
-
+            is_fully_authenticated = checkStatus(account_status , 'authenticated');
             if (is_virtual) {
                 getDetailsResponse(get_settings_data);
             }
@@ -364,6 +380,9 @@ const PersonalDetails = (() => {
                             BinarySocket.send({ states_list: residence }).then(response_state => {
                                 populateStates(response_state).then(() => {
                                     getDetailsResponse(get_settings_data, response.residence_list);
+                                    if (!is_virtual && !is_fully_authenticated) {
+                                        Geocoder.validate(form_id);
+                                    }
                                 });
                             });
                         } else {

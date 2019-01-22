@@ -108,7 +108,9 @@ const createDirectories = (section = '', idx) => {
         if (common.sections_config[section].has_pjax) {
             mkdir(Path.join(base_path, `${language}/pjax`));
         }
-        compileManifests(config.dist_path, language, config.branch);
+        if (section === 'app_2') {
+            compileManifests(config.dist_path, language, config.branch);
+        }
     });
 };
 

@@ -31,6 +31,7 @@ const AccountOpening = (() => {
 
     const populateForm = (form_id, getValidations, is_financial) => {
         getResidence(form_id, getValidations);
+        handleTaxIdentificationNumber();
         generateBirthDate();
         const landing_company  = State.getResponse('landing_company');
         const lc_to_upgrade_to = landing_company[is_financial ? 'financial_company' : 'gaming_company'] || landing_company.financial_company;
@@ -39,7 +40,6 @@ const AccountOpening = (() => {
         if (getPropertyValue(landing_company, ['financial_company', 'shortcode']) === 'maltainvest') {
             professionalClient.init(is_financial, false);
         }
-        Geocoder.init(form_id);
     };
 
     const getResidence = (form_id, getValidations) => {
@@ -51,7 +51,6 @@ const AccountOpening = (() => {
     const handleResidenceList = (residence_list, form_id, getValidations) => {
         if (residence_list.length > 0) {
             const $place_of_birth = $('#place_of_birth');
-            const $tax_residence  = $('#tax_residence');
             const $phone          = $('#phone');
             const residence_value = Client.get('residence') || '';
             let residence_text    = '';
@@ -76,12 +75,15 @@ const AccountOpening = (() => {
 
             $('#lbl_residence').html($('<strong/>', { text: residence_text }));
 
-            if ($place_of_birth.length) {
-                BinarySocket.wait('get_settings').then((response) => {
-                    const place_of_birth = response.get_settings.place_of_birth;
+            BinarySocket.wait('get_settings').then((response) => {
+                const citizen = response.get_settings.citizen;
+                const place_of_birth = response.get_settings.place_of_birth;
+                const tax_residence = response.get_settings.tax_residence;
+
+                if ($place_of_birth.length) {
                     if (place_of_birth) {
                         const txt_place_of_birth =
-                              (residence_list.find(obj => obj.value === place_of_birth) || {}).text;
+                            (residence_list.find(obj => obj.value === place_of_birth) || {}).text;
                         $place_of_birth.replaceWith($('<span/>', { text: txt_place_of_birth || place_of_birth, 'data-value': place_of_birth }));
                     } else {
                         $place_of_birth.html($options.html()).val(residence_value);
@@ -91,15 +93,12 @@ const AccountOpening = (() => {
                             return SelectMatcher(params, data);
                         },
                     });
-                });
-            }
+                }
 
-            if (/^(malta|maltainvest|iom)$/.test(State.getResponse('authorize.upgradeable_landing_companies'))) {
-                const $citizen = $('#citizen');
-                CommonFunctions.getElementById('citizen_row').setVisibility(1);
-                if ($citizen.length) {
-                    BinarySocket.wait('get_settings').then((response) => {
-                        const citizen = response.get_settings.citizen;
+                if (/^(malta|maltainvest|iom)$/.test(State.getResponse('authorize.upgradeable_landing_companies'))) {
+                    const $citizen = $('#citizen');
+                    CommonFunctions.getElementById('citizen_row').setVisibility(1);
+                    if ($citizen.length) {
                         if (citizen) {
                             const txt_citizen = (residence_list.find(obj => obj.value === citizen) || {}).text;
                             $citizen.replaceWith($('<span/>', { text: txt_citizen || citizen, 'data-value': citizen }));
@@ -111,27 +110,51 @@ const AccountOpening = (() => {
                                 return SelectMatcher(params, data);
                             },
                         });
-                    });
+                    }
                 }
-            }
 
-            if ($tax_residence) {
-                $tax_residence.html($options_with_disabled.html()).promise().done(() => {
-                    setTimeout(() => {
-                        $tax_residence.select2()
-                            .val(getTaxResidence() || residence_value).trigger('change')
-                            .setVisibility(1);
-                    }, 500);
-                });
-            }
+                const $tax_residence_select = $('#tax_residence');
+                $tax_residence_select.html($options_with_disabled.html());
 
+                if (tax_residence) {
+                    const tax_residences_arr = tax_residence.split(',');
+                    const txt_tax_residence = tax_residences_arr
+                        .map((current_residence) =>
+                            (residence_list.find(obj => obj.value === current_residence) || {}).text)
+                        .join(', ') || tax_residence;
+                    $('#lbl_tax_residence').text(txt_tax_residence);
+
+                    $tax_residence_select
+                        .select2(tax_residences_arr.length > 1 ? { multiple: true } : {}) // Multiple in some cases, users could prev select more than 1 residence
+                        .val(tax_residences_arr) // Set value for validation
+                        .attr({ 'data-force': true, 'data-value': tax_residence })
+                        .trigger('change');
+                    CommonFunctions.getElementById('row_lbl_tax_residence').setVisibility(1);
+                } else {
+                    $tax_residence_select
+                        .select2()
+                        .val(residence_value) // Attempt auto-assign country_residence to tax_residence if none set
+                        .trigger('change');
+                    CommonFunctions.getElementById('row_tax_residence').setVisibility(1);
+                }
+            });
             BinarySocket.send({ states_list: Client.get('residence') }).then(data => handleState(data.states_list, form_id, getValidations));
         }
     };
 
-    const getTaxResidence = () => {
-        const tax_residence = State.getResponse('get_settings.tax_residence');
-        return (tax_residence ? tax_residence.split(',') : '');
+    const handleTaxIdentificationNumber = () => {
+        BinarySocket.wait('get_settings').then((response) => {
+            const tax_identification_number = response.get_settings.tax_identification_number;
+            if (tax_identification_number) {
+                $('#lbl_tax_identification_number').text(tax_identification_number);
+                CommonFunctions.getElementById('row_lbl_tax_identification_number').setVisibility(1);
+                $('#tax_identification_number')
+                    .val(tax_identification_number) // Set value for validation
+                    .attr({ 'data-force': true, 'data-value': tax_identification_number });
+            } else {
+                CommonFunctions.getElementById('row_tax_identification_number').setVisibility(1);
+            }
+        });
     };
 
     const handleState = (states_list, form_id, getValidations) => {
@@ -168,9 +191,9 @@ const AccountOpening = (() => {
             if (form_id && typeof getValidations === 'function') {
                 FormManager.init(form_id, getValidations());
             }
+            Geocoder.init(form_id);
         });
     };
-
     const handleNewAccount = (response, message_type) => {
         if (response.error) {
             const errorMessage = response.error.message;
@@ -190,19 +213,21 @@ const AccountOpening = (() => {
 
     const commonValidations = () => {
         const req = [
-            { selector: '#salutation',       validations: ['req'] },
-            { selector: '#first_name',       validations: ['req', 'letter_symbol', ['length', { min: 2, max: 30 }]] },
-            { selector: '#last_name',        validations: ['req', 'letter_symbol', ['length', { min: 2, max: 30 }]] },
-            { selector: '#date_of_birth',    validations: ['req'] },
-            { selector: '#address_line_1',   validations: ['req', 'address', ['length', { min: 1, max: 70 }]] },
-            { selector: '#address_line_2',   validations: ['address', ['length', { min: 0, max: 70 }]] },
-            { selector: '#address_city',     validations: ['req', 'letter_symbol', ['length', { min: 1, max: 35 }]] },
-            { selector: '#address_state',    validations: $('#address_state').prop('nodeName') === 'SELECT' ? '' : ['letter_symbol', ['length', { min: 0, max: 35 }]] },
-            { selector: '#address_postcode', validations: [Client.get('residence') === 'gb' ? 'req' : '', 'postcode', ['length', { min: 0, max: 20 }]] },
-            { selector: '#phone',            validations: ['req', 'phone', ['length', { min: 8, max: 35, value: () => $('#phone').val().replace(/\D/g,'') }]] },
-            { selector: '#secret_question',  validations: ['req'] },
-            { selector: '#secret_answer',    validations: ['req', 'general', ['length', { min: 4, max: 50 }]] },
-            { selector: '#tnc',              validations: [['req', { message: localize('Please accept the terms and conditions.') }]], exclude_request: 1 },
+            { selector: '#salutation',                  validations: ['req'] },
+            { selector: '#first_name',                  validations: ['req', 'letter_symbol', ['length', { min: 2, max: 30 }]] },
+            { selector: '#last_name',                   validations: ['req', 'letter_symbol', ['length', { min: 2, max: 30 }]] },
+            { selector: '#date_of_birth',               validations: ['req'] },
+            { selector: '#address_line_1',              validations: ['req', 'address', ['length', { min: 1, max: 70 }]] },
+            { selector: '#address_line_2',              validations: ['address', ['length', { min: 0, max: 70 }]] },
+            { selector: '#address_city',                validations: ['req', 'letter_symbol', ['length', { min: 1, max: 35 }]] },
+            { selector: '#address_state',               validations: $('#address_state').prop('nodeName') === 'SELECT' ? '' : ['letter_symbol', ['length', { min: 0, max: 35 }]] },
+            { selector: '#address_postcode',            validations: [Client.get('residence') === 'gb' ? 'req' : '', 'postcode', ['length', { min: 0, max: 20 }]] },
+            { selector: '#phone',                       validations: ['req', 'phone', ['length', { min: 8, max: 35, value: () => $('#phone').val().replace(/\D/g,'') }]] },
+            { selector: '#secret_question',             validations: ['req'] },
+            { selector: '#secret_answer',               validations: ['req', 'general', ['length', { min: 4, max: 50 }]] },
+            { selector: '#tnc',                         validations: [['req', { message: localize('Please accept the terms and conditions.') }]], exclude_request: 1 },
+            { selector: '#tax_residence',               validations: ['req', ['length', { min: 1, max: 20 }]] },
+            { selector: '#tax_identification_number',   validations: ['req'] },
 
             { request_field: 'residence',   value: Client.get('residence') },
             { request_field: 'client_type', value: () => ($('#chk_professional').is(':checked') ? 'professional' : 'retail') },

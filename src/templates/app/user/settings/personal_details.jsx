@@ -10,7 +10,7 @@ import {
     AddressPostcode,
     Phone,
     TaxInformationForm,
-    GeocodeResponse,
+    GeocodeValidation,
 } from '../../../_common/components/forms_common_rows.jsx';
 import Loading from '../../../_common/components/loading.jsx';
 
@@ -50,6 +50,7 @@ const PersonalDetails = () => (
                 <FormRow type='label'  label={it.L('Country of Residence')} is_bold id='country' row_id='row_country' />
                 <FormRow type='label'  label={it.L('Email address')} is_bold id='email' row_id='row_email' />
                 <FormRow type='label'  label={it.L('Account Opening Reason')} id='lbl_account_opening_reason' row_id='row_lbl_account_opening_reason' row_class='invisible' />
+                <Phone row_class='invisible RealAcc' />
                 <AccountOpeningReason row_id='row_account_opening_reason' row_class='invisible' />
             </Fieldset>
 
@@ -63,9 +64,9 @@ const PersonalDetails = () => (
                 <AddressLine2 />
                 <AddressCity />
                 <AddressState />
-                <AddressPostcode />
-                <Phone />
-                <GeocodeResponse />
+                <AddressPostcode>
+                    <GeocodeValidation className='gr-5 geocode-container' />
+                </AddressPostcode>
             </Fieldset>
 
             <Fieldset id='fieldset_email_consent' legend={it.L('Email Preferences')}>
@@ -75,7 +76,7 @@ const PersonalDetails = () => (
             <SubmitButton is_centered id='btn_update' msg_id='formMessage' type='submit' text={it.L('Update')} className='gr-6 gr-centered' />
         </form>
 
-        <p className='required invisible RealAcc rowCustomerSupport'>{it.L('To change your name, date of birth, country of residence, or email, please contact <a href="[_1]">Customer Support</a>.', it.url_for('contact'))}</p>
+        <p className='required invisible RealAcc rowCustomerSupport'>{it.L('To change your name, date of birth, country of residence, email, or tax information, please contact [_1]Customer Support[_2].', `<a href='${it.url_for('contact')}'>`, '</a>')}</p>
     </React.Fragment>
 );
 

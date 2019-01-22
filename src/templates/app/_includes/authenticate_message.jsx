@@ -158,7 +158,7 @@ const AuthenticateMessage = () => (
 
         <FileSelector
             heading={it.L('3. Selfie or self-portrait photo')}
-            data_show='mt5fin:vanuatu'
+            data_show='mt5fin:vanuatu, labuan'
             instructions={[
                 it.L('Must be a clear, colour photo'),
                 it.L('Proof of identity in your selfie must be clear, identifiable, and same as the one you submitted previously'),

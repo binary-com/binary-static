@@ -24,6 +24,24 @@ const IconTradeCategory = ({ category }) => {
                     </React.Fragment>
                 );
                 break;
+            case 'rise_fall_equal':
+                IconCategory = (
+                    <React.Fragment>
+                        <div className='category-wrapper'>
+                            <IconTradeType
+                                className='category-type'
+                                type='calle'
+                            />
+                        </div>
+                        <div className='category-wrapper'>
+                            <IconTradeType
+                                className='category-type'
+                                type='pute'
+                            />
+                        </div>
+                    </React.Fragment>
+                );
+                break;
             case 'high_low':
                 IconCategory = (
                     <React.Fragment>
@@ -102,13 +120,13 @@ const IconTradeCategory = ({ category }) => {
                         <div className='category-wrapper'>
                             <IconTradeType
                                 className='category-type'
-                                type='digitodd'
+                                type='digiteven'
                             />
                         </div>
                         <div className='category-wrapper'>
                             <IconTradeType
                                 className='category-type'
-                                type='digiteven'
+                                type='digitodd'
                             />
                         </div>
                     </React.Fragment>

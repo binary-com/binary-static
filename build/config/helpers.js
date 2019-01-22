@@ -13,10 +13,10 @@ const getReleaseTarget = (grunt) => {
 };
 
 const validateSection = (grunt, section) => {
-    let valid_sections = Constants.config.valid_sections;
+    let { valid_sections } = Constants.config;
 
     if (isRelease(grunt)) {
-        valid_sections = global.release_info.valid_sections;
+        valid_sections = [...global.release_config[global.release_target].valid_sections];
 
         if (!grunt.option('section')) { // To prevent mistakes, section is mandatory when releasing
             grunt.fail.fatal(`It is mandatory to specify the section when releasing. (--section=...)\nValid sections are: ${valid_sections.join(', ')}`);
