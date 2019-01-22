@@ -33,9 +33,9 @@ export const CalendarDecades = ({
                     <span
                         key={idx}
                         className={classNames('calendar__cell', {
-                            'calendar__cell--is-active'       : is_active,
-                            'calendar__cell--is-disabled'     : is_disabled,
-                            'calendar__cell--is-other-century': is_other_century,
+                            'calendar__cell--active'  : is_active,
+                            'calendar__cell--disabled': is_disabled,
+                            'calendar__cell--other'   : is_other_century,
                         })}
                         onClick={onClick.decade}
                         data-decade={range}

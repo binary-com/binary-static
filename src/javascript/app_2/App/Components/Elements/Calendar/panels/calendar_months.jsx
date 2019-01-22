@@ -38,8 +38,8 @@ export const CalendarMonths = ({
                     <span
                         key={idx}
                         className={classNames('calendar__cell', {
-                            'calendar__cell--is-active'  : is_active,
-                            'calendar__cell--is-disabled': is_disabled,
+                            'calendar__cell--active'  : is_active,
+                            'calendar__cell--disabled': is_disabled,
                         })}
                         onClick={onClick.month}
                         data-month={idx}

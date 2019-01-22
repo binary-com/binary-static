@@ -60,10 +60,10 @@ const getDays = ({
             <span
                 key={date}
                 className={classNames('calendar__cell', {
-                    'calendar__cell--is-active'     : is_active && !is_disabled,
-                    'calendar__cell--is-today'      : is_today,
-                    'calendar__cell--is-disabled'   : is_disabled,
-                    'calendar__cell--is-other-month': is_other_month,
+                    'calendar__cell--active'  : is_active && !is_disabled,
+                    'calendar__cell--today'   : is_today,
+                    'calendar__cell--disabled': is_disabled,
+                    'calendar__cell--other'   : is_other_month,
                 })}
                 onClick={(e) => { onClick.date(e, is_disabled); }}
                 data-date={date}

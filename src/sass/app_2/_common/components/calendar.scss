@@ -11,6 +11,10 @@
     &, * {
         box-sizing: border-box;
     }
+    button {
+        border: none;
+        outline: none;
+    }
     &__header, &__footer {
         position: relative;
         display: flex;
@@ -71,7 +75,7 @@
         position: absolute;
         padding: 0 5px;
 
-        &:hover:not(&--is-disabled) {
+        &:hover:not(&--disabled) {
             cursor: pointer;
         }
         &--prev-year {
@@ -86,7 +90,7 @@
         &--next-month {
             right: 14%;
         }
-        &--is-disabled path {
+        &--disabled path {
             fill: $COLOR_GRAY;
         }
     }
@@ -96,7 +100,7 @@
         font-weight: bold;
         cursor: pointer;
 
-        &--is-disabled {
+        &--disabled {
             cursor: default;
             color: $COLOR_GRAY;
             transition: none;
@@ -129,7 +133,7 @@
         &:hover {
             cursor: pointer;
         }
-        &:hover:not(&--is-active) {
+        &:hover:not(&--active) {
             background: $COLOR_LIGHT_GRAY;
         }
         &--bold {
@@ -137,19 +141,19 @@
             font-weight: bold;
             color: $COLOR_LIGHT_BLACK;
         }
-        &--is-disabled, &--is-other-month, &--is-other-decade, &--is-other-century {
+        &--disabled, &--other {
             color: $COLOR_GRAY;
             transition: none;
         }
-        &--is-disabled:hover {
+        &--disabled:hover {
             cursor: default;
         }
-        &--is-today {
+        &--today {
             font-weight: 400;
             border: 1px solid $COLOR_BLUE;
             border-radius: 5px;
         }
-        &--is-active {
+        &--active {
             color: $COLOR_WHITE;
             background: $COLOR_BLUE;
             font-weight: bold;
@@ -176,7 +180,7 @@
             path {
                 fill: $COLOR_BRANDBLUE_40;
             }
-            &--is-disabled path {
+            &--disabled path {
                 fill: $COLOR_BRANDBLUE_75;
             }
         }
@@ -203,17 +207,17 @@
         &__cell {
             color: $COLOR_BRANDBLUE_40;
 
-            &:hover:not(&--is-active) {
+            &:hover:not(&--active) {
                 background: $COLOR_BRANDBLUE_85;
             }
-            &--is-disabled, &--is-other-month {
+            &--disabled, &--other {
                 color: $COLOR_BRANDBLUE_75;
             }
-            &--is-today {
+            &--today {
                 border: 1px solid $COLOR_WHITE;
                 color: $COLOR_WHITE;
             }
-            &--is-active {
+            &--active {
                 color: $COLOR_BLUE;
                 background: $COLOR_WHITE !important;
             }

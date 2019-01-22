@@ -26,7 +26,7 @@ const CalendarHeader = ({
         <div className='calendar__header'>
             <CalendarButton
                 className={classNames('calendar__nav calendar__nav--prev-year', {
-                    'calendar__nav--is-disabled': isPeriodDisabled(moment_date.clone().subtract(1, 'month'), 'month'),
+                    'calendar__nav--disabled': isPeriodDisabled(moment_date.clone().subtract(1, 'month'), 'month'),
                 })}
                 onClick={() => (
                     (is_date_view || is_month_view) && onClick.previousYear())
@@ -39,7 +39,7 @@ const CalendarHeader = ({
             </CalendarButton>
             <CalendarButton
                 className={classNames('calendar__nav calendar__nav--prev-month', {
-                    'calendar__nav--is-disabled': isPeriodDisabled(moment_date.clone().subtract(1, 'month'), 'month'),
+                    'calendar__nav--disabled': isPeriodDisabled(moment_date.clone().subtract(1, 'month'), 'month'),
                 })}
                 is_hidden={!is_date_view}
                 onClick={onClick.previousMonth}
@@ -58,7 +58,7 @@ const CalendarHeader = ({
                 }
                 <CalendarButton
                     className={classNames('calendar__btn calendar__btn--select', {
-                        'calendar__btn--is-disabled': is_decade_view,
+                        'calendar__btn--disabled': is_decade_view,
                     })}
                     onClick={() => ((is_date_view || is_month_view) ? onSelect.year() : onSelect.decade())}
                 >
@@ -70,7 +70,7 @@ const CalendarHeader = ({
 
             <CalendarButton
                 className={classNames('calendar__nav calendar__nav--next-month', {
-                    'calendar__nav--is-disabled': isPeriodDisabled(moment_date.clone().add(1, 'month'), 'month'),
+                    'calendar__nav--disabled': isPeriodDisabled(moment_date.clone().add(1, 'month'), 'month'),
                 })}
                 is_hidden={!is_date_view}
                 onClick={onClick.nextMonth}
@@ -79,7 +79,7 @@ const CalendarHeader = ({
             </CalendarButton>
             <CalendarButton
                 className={classNames('calendar__nav calendar__nav--next-year', {
-                    'calendar__nav--is-disabled': isPeriodDisabled(moment_date.clone().add(1, 'month'), 'month'),
+                    'calendar__nav--disabled': isPeriodDisabled(moment_date.clone().add(1, 'month'), 'month'),
                 })}
                 onClick={() => (
                     ((is_date_view || is_month_view) && onClick.nextYear())

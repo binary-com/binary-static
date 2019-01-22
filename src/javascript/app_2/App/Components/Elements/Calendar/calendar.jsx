@@ -141,7 +141,7 @@ class Calendar extends React.PureComponent {
         const { calendar_date, calendar_view, selected_date  } = this.state;
 
         return (
-            <div id={id || undefined} className='calendar' data-value={selected_date}>
+            <div id={id} className='calendar' data-value={selected_date}>
                 { children }
                 <CalendarHeader
                     calendar_date={calendar_date}
