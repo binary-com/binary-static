@@ -7,6 +7,7 @@ import Datepicker                       from 'App/Components/Form/DatePicker';
 import Dropdown                         from 'App/Components/Form/DropDown';
 import ButtonToggleMenu                 from 'App/Components/Form/button_toggle_menu.jsx';
 import InputField                       from 'App/Components/Form/input_field.jsx';
+import RangeSlider                      from 'App/Components/Form/RangeSlider';
 import { convertDurationUnit }          from 'Stores/Modules/Trading/Helpers/duration';
 import {
     isTimeValid,
@@ -21,7 +22,6 @@ let now_date,
 
 const AdvancedDuration = ({
     contract_expiry_type,
-    duration_input_props,
     duration_min_max,
     duration_unit,
     duration_units_list,
@@ -30,9 +30,11 @@ const AdvancedDuration = ({
     expiry_time,
     expiry_type,
     is_nativepicker,
+    number_input_props,
     onChange,
     server_time,
     sessions,
+    shared_input_props,
     start_date,
     start_time,
 }) => {
@@ -91,8 +93,8 @@ const AdvancedDuration = ({
                                 is_nativepicker={is_nativepicker}
                             />
                         }
-                        { duration_unit === 't' && <span>Range slider</span> }
-                        { duration_unit !== 't' && <InputField {...duration_input_props} />}
+                        { duration_unit === 't' && <RangeSlider ticks={10} {...shared_input_props} /> }
+                        { duration_unit !== 't' && <InputField {...number_input_props} {...shared_input_props} />}
                     </div>
                 </Fragment> :
                 <Fragment>
@@ -132,7 +134,6 @@ const AdvancedDuration = ({
 
 AdvancedDuration.propTypes = {
     contract_expiry_type: PropTypes.string,
-    duration_input_props: PropTypes.object,
     duration_min_max    : PropTypes.object,
     duration_unit       : PropTypes.string,
     duration_units_list : MobxPropTypes.arrayOrObservableArray,
@@ -140,14 +141,16 @@ AdvancedDuration.propTypes = {
         PropTypes.string,
         PropTypes.number,
     ]),
-    expiry_list    : PropTypes.array,
-    expiry_time    : PropTypes.string,
-    expiry_type    : PropTypes.string,
-    is_nativepicker: PropTypes.bool,
-    onChange       : PropTypes.func,
-    server_time    : PropTypes.object,
-    sessions       : MobxPropTypes.arrayOrObservableArray,
-    start_date     : PropTypes.oneOfType([
+    expiry_list       : PropTypes.array,
+    expiry_time       : PropTypes.string,
+    expiry_type       : PropTypes.string,
+    is_nativepicker   : PropTypes.bool,
+    number_input_props: PropTypes.object,
+    onChange          : PropTypes.func,
+    server_time       : PropTypes.object,
+    sessions          : MobxPropTypes.arrayOrObservableArray,
+    shared_input_props: PropTypes.object,
+    start_date        : PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
     ]),

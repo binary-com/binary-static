@@ -5,6 +5,7 @@ import PropTypes                from 'prop-types';
 import React, { Fragment }      from 'react';
 import { localize }             from '_common/localize';
 import Fieldset                 from 'App/Components/Form/fieldset.jsx';
+import RangeSlider              from 'App/Components/Form/RangeSlider';
 import { convertDurationLimit } from 'Stores/Modules/Trading/Helpers/duration';
 import { toMoment }             from 'Utils/Date';
 import DurationToggle           from './duration_toggle.jsx';
@@ -59,50 +60,52 @@ const Duration = ({
     }
 
     const props = {
-        duration_input: {
-            type            : 'number',
-            max_value       : convertDurationLimit(+duration_min_max[contract_expiry_type].max, duration_unit),
-            min_value       : convertDurationLimit(+duration_min_max[contract_expiry_type].min, duration_unit),
-            name            : 'duration',
-            value           : duration,
+        shared_input: {
+            max_value: convertDurationLimit(+duration_min_max[contract_expiry_type].max, duration_unit),
+            min_value: convertDurationLimit(+duration_min_max[contract_expiry_type].min, duration_unit),
             onChange,
+            value    : duration,
+            name     : 'duration',
+        },
+        number_input: {
+            type            : 'number',
             is_nativepicker,
             is_incrementable: true,
             error_messages  : validation_errors.duration || [],
-        },
-        advanced: {
-            duration_min_max,
-            contract_expiry_type,
-            expiry_type,
-            expiry_list,
-            start_date,
-            expiry_date,
-            expiry_time,
-            sessions,
-            start_time,
-            server_time,
         },
     };
     // e.g. digit contracts only has range slider - does not have toggle between advanced / simple
     const has_toggle = expiry_list.length > 1 || duration_units_list.length > 1;
     return (
         <Fieldset className={'position-relative'}>
-            { !has_toggle && <span>Range slider</span> }
+            { !has_toggle && <RangeSlider {...props.shared_input} ticks={10} /> }
             { has_toggle &&
                 <Fragment>
                     { is_advanced_duration &&
                         <AdvancedDuration
+                            contract_expiry_type={contract_expiry_type}
+                            duration_min_max={duration_min_max}
                             duration_unit={duration_unit}
                             duration_units_list={duration_units_list}
-                            duration_input_props={props.duration_input}
+                            expiry_date={expiry_date}
+                            expiry_list={expiry_list}
+                            expiry_time={expiry_time}
+                            expiry_type={expiry_type}
+                            is_nativepicker={is_nativepicker}
+                            number_input_props={props.number_input}
                             onChange={onChange}
-                            {...props.advanced}
+                            server_time={server_time}
+                            sessions={sessions}
+                            shared_input_props={props.shared_input}
+                            start_date={start_date}
+                            start_time={start_time}
                         /> }
                     { !is_advanced_duration &&
                         <SimpleDuration
                             duration_unit={duration_unit}
                             duration_units_list={duration_units_list}
-                            duration_input_props={props.duration_input}
+                            number_input_props={props.number_input}
+                            shared_input_props={props.shared_input}
                             expiry_type={expiry_type}
                             onChange={onChange}
                         /> }
