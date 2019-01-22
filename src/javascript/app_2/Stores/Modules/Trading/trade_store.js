@@ -82,7 +82,6 @@ export default class TradeStore extends BaseStore {
 
     // Purchase
     @observable proposal_info        = {};
-    @observable proposal_info_req_id = 0;
     @observable purchase_info        = {};
 
     // Chart
@@ -300,9 +299,8 @@ export default class TradeStore extends BaseStore {
             }
 
             this.updateStore({ // disable purchase button(s), clear contract info
-                is_purchase_enabled : false,
-                proposal_info       : {},
-                proposal_info_req_id: 0,
+                is_purchase_enabled: false,
+                proposal_info      : {},
             });
 
             if (!this.smart_chart.is_contract_mode) {
@@ -338,9 +336,8 @@ export default class TradeStore extends BaseStore {
         const requests = createProposalRequests(this);
 
         if (Object.values(this.validation_errors).some(e => e.length)) {
-            this.proposal_info        = {};
-            this.proposal_info_req_id = 0;
-            this.purchase_info        = {};
+            this.proposal_info = {};
+            this.purchase_info = {};
             WS.forgetAll('proposal');
             return;
         }
@@ -355,10 +352,9 @@ export default class TradeStore extends BaseStore {
                 ],
             );
 
-            this.proposal_requests    = requests;
-            this.proposal_info        = {};
-            this.proposal_info_req_id = 0;
-            this.purchase_info        = {};
+            this.proposal_requests = requests;
+            this.proposal_info     = {};
+            this.purchase_info     = {};
 
             WS.forgetAll('proposal').then(() => {
                 Object.keys(this.proposal_requests).forEach((type) => {
@@ -370,13 +366,14 @@ export default class TradeStore extends BaseStore {
 
     @action.bound
     onProposalResponse(response) {
-        const contract_type = response.echo_req.contract_type;
+        const contract_type           = response.echo_req.contract_type;
+        const prev_proposal_info      = getPropertyValue(this.proposal_info, contract_type) || {};
+        const obj_prev_contract_basis = getPropertyValue(prev_proposal_info, 'obj_contract_basis') || {};
+
         this.proposal_info  = {
             ...this.proposal_info,
-            [contract_type]: getProposalInfo(this, response),
+            [contract_type]: getProposalInfo(this, response, obj_prev_contract_basis),
         };
-
-        this.proposal_info_req_id = response.echo_req.req_id;
 
         if (!this.smart_chart.is_contract_mode) {
             setChartBarrier(this.smart_chart, response, this.onChartBarrierChange);

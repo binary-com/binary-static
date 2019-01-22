@@ -7,19 +7,34 @@ import {
     proposal_properties_alternative_names,
     removable_proposal_properties }        from '../Constants/query_string';
 
-export const getProposalInfo = (store, response) => {
+export const getProposalInfo = (store, response, obj_prev_contract_basis) => {
     const proposal = response.proposal || {};
     const profit   = (proposal.payout - proposal.ask_price) || 0;
     const returns  = profit * 100 / (proposal.ask_price || 1);
+    const stake    = proposal.display_value;
+
+    const contract_basis = (store.basis_list.find(o => o.value !== store.basis));
+    let has_increased    = proposal[contract_basis.value] > obj_prev_contract_basis.value;
+
+    if (proposal[contract_basis.value] === obj_prev_contract_basis.value) {
+        has_increased = null;
+    }
+
+    const obj_contract_basis = {
+        text : contract_basis.text,
+        value: contract_basis.text === 'Stake' ? stake : proposal[contract_basis.value],
+    };
 
     return {
+        id       : proposal.id || '',
+        has_error: !!response.error,
+        has_increased,
+        message  : proposal.longcode || response.error.message,
+        obj_contract_basis,
+        payout   : proposal.payout,
         profit   : profit.toFixed(getDecimalPlaces(store.currency)),
         returns  : `${returns.toFixed(2)}%`,
-        stake    : proposal.display_value,
-        payout   : proposal.payout,
-        id       : proposal.id || '',
-        message  : proposal.longcode || response.error.message,
-        has_error: !!response.error,
+        stake,
     };
 };
 
