@@ -366,83 +366,6 @@
             padding-bottom: 1.5vh;
             min-height: 100px;
 
-            div.box {
-                display: grid;
-                grid-template-columns: 2fr 1fr;
-                position: relative;
-                min-height: 71px;
-
-                .left-column, .right-column {
-                    position: relative;
-                    align-self: flex-start;
-                    display: flex;
-                    justify-content: center;
-
-                    span {
-                        display: block;
-                    }
-                }
-                h4.trade-type {
-                    position: absolute;
-                    display: flex;
-                    padding: 0;
-                    font-weight: 300;
-                    text-transform: capitalize;
-                    text-align: center;
-                    top: 24px;
-                    margin-top: 0.7rem;
-                    line-height: 16px;
-                    max-width: 50px;
-                    word-spacing: 0;
-                }
-                div.amount {
-                    position: relative;
-
-                    &.down {
-                        color: $COLOR_LIGHT_RED;
-
-                        &:after {
-                            content: url('../images/purchase/ic_pricedown.svg');
-                            position: absolute;
-                            top: 2px;
-                            right: 0.5rem;
-                        }
-                    }
-                    &.up {
-                        color: $COLOR_LIGHT_BLUE;
-
-                        &:after {
-                            content: url('../images/purchase/ic_priceup.svg');
-                            position: absolute;
-                            top: 2px;
-                            right: 0.5rem;
-                        }
-                    }
-                    span.symbols {
-                        left: 0;
-                        top: 6px;
-                        font-size: 0.88rem;
-                        color: inherit;
-                    }
-                    span.payout {
-                        font-weight: 600;
-                    }
-                }
-                span:not(.purchase-return):not(.symbols) {
-                    position: relative;
-                }
-                span.purchase-return {
-                    color: $COLOR_ORANGE;
-                }
-                .symbols {
-                    position: relative;
-                    display: inline;
-
-                    &:before {
-                        margin-right: 1px;
-                    }
-                }
-            }
             div.submit-section {
                 display: grid;
                 grid-template-columns: 1fr;
@@ -465,19 +388,19 @@
                         height: 56px;
                         display: flex;
                         flex-direction: column;
-
-                        div {
-                            display: flex;
-                            flex-grow: 1;
-                            justify-content: flex-end;
-                        }
                     }
                     &__return {
+                        display: flex;
+                        justify-content: flex-end;
+                        flex-grow: 1;
                         font-size: 14px;
                         align-items: flex-end;
                         font-weight: bold;
                     }
                     &__profit {
+                        display: flex;
+                        justify-content: flex-end;
+                        flex-grow: 1;
                         font-size: 10px;
                         align-items: flex-start;
                         font-weight: bold;
@@ -501,9 +424,11 @@
                         display: flex;
                         flex-grow: 1;
                         align-items: center;
+                        width: 100%;
 
                         span {
-                            margin-left: 10px;
+                            margin-left: 26px;
+                            position: absolute;
                         }
                     }
                     &__effect-main {
