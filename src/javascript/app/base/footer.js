@@ -29,26 +29,37 @@ const Footer = (() => {
         $status_notification.slideUp(200);
     };
 
+    const adjustElevioAndScrollup = (elevio_height, scrollup_height) => {
+        const $elevio_button = $('#_elev_io ._6byvm');
+        const $scrollup = $('#scrollup');
+        $elevio_button.attr('style', `bottom: ${elevio_height}px !important`);
+        $scrollup.attr('style', `bottom: ${$elevio_button.height() + scrollup_height}px`);
+    };
+
     const clearDialogMessage = () => {
         const $dialog_notification = $('#dialog_notification');
+
         $dialog_notification.slideUp(200);
+        adjustElevioAndScrollup(8, 18);
     };
 
     const displayDialogMessage = () => {
         BinarySocket.wait('time').then((response) => {
             const $dialog_notification = $('#dialog_notification');
             const $dialog_notification_accept = $('#dialog_notification_accept');
-            const $elevio_button = $('#_elev_io ._6byvm');
-            const $scrollup = $('#scrollup');
-            $elevio_button.attr('style', `bottom: ${$dialog_notification.height()}px !important`);
-            $scrollup.attr('style', `bottom: ${$dialog_notification.height() + $elevio_button.height() + 10}px`);
+
             $dialog_notification.css('display', 'flex');
+            adjustElevioAndScrollup($dialog_notification.height() + 30, $dialog_notification.height() + 40);
             $dialog_notification_accept
                 .off('click')
                 .on('click', () => {
+                    adjustElevioAndScrollup(8, 18);
                     $dialog_notification.slideUp(200);
                     Cookies.set('CookieConsent', response.time);
                 });
+            $(window).resize(() => {
+                adjustElevioAndScrollup($dialog_notification.height() + 30, $dialog_notification.height() + 40);
+            });
         });
     };
     

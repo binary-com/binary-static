@@ -9,6 +9,7 @@ const createLanguageDropDown = require('../common/attach_dom/language_dropdown')
 const showPopup              = require('../common/attach_dom/popup');
 const setCurrencies          = require('../common/currency').setCurrencies;
 const SessionDurationLimit   = require('../common/session_duration_limit');
+const isEuCountry            = require('../common/country_base').isEuCountry;
 const updateBalance          = require('../pages/user/update_balance');
 const GTM                    = require('../../_common/base/gtm');
 const Login                  = require('../../_common/base/login');
@@ -58,7 +59,7 @@ const BinarySocketGeneral = (() => {
                     BinarySocket.availability(is_available);
                     setCurrencies(response.website_status);
                     // for logged out clients send landing company with IP address as residence
-                    if (!Client.isLoggedIn() && !State.getResponse('landing_company')) {
+                    if (!Client.isLoggedIn() && !State.getResponse('landing_company') && isEuCountry()) {
                         BinarySocket.send({ landing_company: response.website_status.clients_country });
                     }
                     if (!Client.isLoggedIn() && !Cookies.get('CookieConsent')) {
