@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-01-21 13:19\n"
+"PO-Revision-Date: 2019-01-23 05:00\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Thai\n"
 "MIME-Version: 1.0\n"
@@ -175,7 +175,7 @@ msgid "%1 gives everyone an easy way to participate in the financial markets. Tr
 msgstr "%1 ให้วิธีการที่ง่ายสำหรับทุกคนในการเป็นส่วนหนึ่งของตลาดการเงิน ท่านสามารถซื้อขายด้วยเงินเริ่มต้นขั้นต่ำเพียง 1 เหรียญสหรัฐ กับสกุลเงินหลัก หลักทรัพย์ ดัชนี และสินค้าโภคภัณฑ์ต่างๆ"
 
 msgid "%1 has been credited into your Virtual Account: %2."
-msgstr ""
+msgstr "%1 ได้ถูกเพิ่มเข้าในบัญชีเสมือนของท่านแล้ว: %2"
 
 msgid "%1 has earned an enviable reputation for our commitment to high ethical standards and the quality of the trading experience we provide."
 msgstr "%1 ซึ่งมีชื่อเสียงอย่างกว้างขวางจากพันธสัญญาของเราที่มีมาตรฐานระดับสูงและคุณภาพจากประสบการณ์ความเชี่ยวชาญในการซื้อขายที่เรามี"
@@ -1328,7 +1328,7 @@ msgid "Are you sure that you want to permanently revoke access to the applicatio
 msgstr "ท่านแน่ใจใช่ไหมที่จะยกเลิกการเข้าใช้ระบบถาวร"
 
 msgid "Are you sure?"
-msgstr ""
+msgstr "ท่านแน่ใจแล้วหรือ?"
 
 msgid "Armed Forces"
 msgstr "เหล่าทัพ"
@@ -3347,7 +3347,7 @@ msgid "Do you want to see %1 in other languages, or can you suggest improvements
 msgstr "ท่านต้องการรับชม %1 ในภาษาอื่น หรือ ท่านสามารถแนะนำเราเพื่อการปรับปรุงการแปลของเรา ในขณะนี้ ใช่หรือไม่?"
 
 msgid "Do you want to top up for another %1? If not, you can do this later on the %2Cashier page%3, too."
-msgstr ""
+msgstr "ท่านต้องการเติมเงินสำหรับ %1 อื่นๆ ไหม? หากไม่ต้องการ ท่านสามารถทำได้ภายหลังเช่นกัน ที่ %2หน้าแคชเชียร์%3 "
 
 msgid "Do you wish to continue?"
 msgstr "ท่านต้องการดำเนินการต่อหรือไม่?"
@@ -3368,7 +3368,7 @@ msgid "Don't have an account?"
 msgstr "ยังไม่มีบัญชีใช่ไหม?"
 
 msgid "Don't show again"
-msgstr ""
+msgstr "ไม่ต้องแสดงอีก"
 
 msgid "Don’t share your %1 account or payment methods with any other person."
 msgstr "อย่าแบ่งปันบัญชี %1 หรือวิธีการชำระเงินให้แก่ผู้อื่น"
@@ -4559,7 +4559,7 @@ msgid "Go to MetaTrader 5 dashboard"
 msgstr "ไปยังรายงานสรุปภาพรวม MetaTrader 5"
 
 msgid "Go to statement"
-msgstr ""
+msgstr "กลับไปที่รายงานเดินบัญชี"
 
 msgid "Go with the leader"
 msgstr "ก้าวไปกับผู้นำ"
@@ -4676,7 +4676,7 @@ msgid "High Tick"
 msgstr "ราคาสูง"
 
 msgid "High Tick/Low Tick"
-msgstr ""
+msgstr "ช่วงราคาสูง/ช่วงราคาต่ำ"
 
 msgid "High Tick/Low Tick contracts have a strict duration of five ticks."
 msgstr "สัญญาราคาสูง/ราคาต่ำมีระยะเวลาที่แน่นอนเพียง 5 ช่วงราคา"
@@ -7268,7 +7268,7 @@ msgid "Over $500,000"
 msgstr "มากกว่า 500,000 เหรียญสหรัฐ"
 
 msgid "Over %1 <a href='%2'>staff</a> and contractors worldwide"
-msgstr ""
+msgstr "<a href='%2'>พนักงาน</a> มากกว่า %1 และผู้ปฏิบัติงานสัญญาจ้างทั่วโลก"
 
 msgid "Over 1 million registered accounts worldwide"
 msgstr "มากกว่าหนึ่งล้านบัญชีที่ลงทะเบียนทั่วโลก"
@@ -7805,7 +7805,7 @@ msgid "Predict that the last digit is higher or lower"
 msgstr "คาดการณ์ว่า เลขหลักสุดท้ายจะสูงกว่า หรือ ต่ำกว่า"
 
 msgid "Predict that the last digit will match or not match"
-msgstr "คาดการณ์ว่า เลขหลักสุดท้ายจะจับคู่ได้ หรือไม่"
+msgstr "คาดการณ์ว่า เลขหลักสุดท้ายจะพ้องกัน หรือไม่"
 
 msgid "Predict that the market stays inside or goes outside two price targets any time during the contract period"
 msgstr "คาดการณ์ว่า ตลาดจะอยู่ภายใน หรือ ออกนอกขอบเขต 2 ราคาเป้าหมายในระหว่างช่วงเวลาของสัญญา"
@@ -7835,22 +7835,22 @@ msgid "Predict the direction<br />and purchase"
 msgstr "พยากรณ์ทิศทาง<br />และซื้อ"
 
 msgid "Predict the highest or lowest tick among the next 5 ticks."
-msgstr ""
+msgstr "พยากรณ์ช่วงราคาสูงสุด หรือ ช่วงราคาต่ำสุดใน 5 ราคาถัดไป"
 
 msgid "Predict the last decimal digit of the spot price with Digits. There are three types of Digits trades:"
 msgstr "คาดการณ์ถึงตัวเลขหลักทศนิยมสุดท้ายของราคาสปอตที่มีหลักตัวเลข มีการซื้อขายแบบหลักตัวเลขอยู่สามประเภท"
 
 msgid "Predict whether the exit spot will be higher or lower than the entry spot within a selected duration from 5 ticks to 10 ticks, or 1 minute to 5 minutes."
-msgstr ""
+msgstr "พยากรณ์ว่า จุดสิ้นสุดจะอยู่สูงกว่า หรือ ต่ำกว่า จุดเริ่มต้นภายในระยะเวลาที่เลือกจาก 5 ช่วงราคา ถึง 10 ช่วงราคา หรือ 1 นาที ถึง 5 นาที"
 
 msgid "Predict whether the last digit of the last tick will be even or odd within a selected duration from 5 ticks to 10 ticks."
-msgstr ""
+msgstr "พยากรณ์ว่า ตัวเลขสุดท้ายของช่วงราคาสุดท้าย จะเป็น เลขคู่ หรือ เลขคี่ภายในระยะเวลาที่เลือกจาก 5 ช่วงราคา ถึง 10 ช่วงราคา"
 
 msgid "Predict whether the last digit of the last tick will be greater or less than your prediction within a selected duration from 5 ticks to 10 ticks."
-msgstr ""
+msgstr "พยากรณ์ว่า ตัวเลขสุดท้ายของช่วงราคาสุดท้าย จะเป็น มากกว่า หรือ น้อยกว่าค่าที่ท่านพยากรณ์ ภายในระยะเวลาที่เลือกจาก 5 ช่วงราคา ถึง 10 ช่วงราคา"
 
 msgid "Predict whether the last digit of the last tick will match or differ from your prediction within a selected duration from 5 ticks to 10 ticks."
-msgstr ""
+msgstr "พยากรณ์ว่า ตัวเลขสุดท้ายของช่วงราคาสุดท้าย จะเป็น พ้องกัน หรือ แตกต่างจากค่าที่ท่านพยากรณ์ ภายในระยะเวลาที่เลือกจาก 5 ช่วงราคา ถึง 10 ช่วงราคา"
 
 msgid "Preferably a native speaker with good command of English (oral and written)"
 msgstr "โดยเฉพาะอย่างยิ่งเจ้าของภาษาที่มีทักษะภาษาอังกฤษดี (ทั้งพูดและเขียน)"
@@ -10167,7 +10167,7 @@ msgid "The use, operation or combination of the %1 API with non-%1 API(s), data,
 msgstr "การใช้งาน ปฏิบัติการ หรือ การผสมผสาน API ของ %1 กับ API อื่นๆ ข้อมูล อุปกรณ์ หรือ เอกสารต่างๆ หากมีพฤติกรรมการหลีกเลี่ยงความรับผิดชอบใน การใช้งาน ปฏิบัติการ หรือ การผสมผสาน API หรือ"
 
 msgid "The various trade types available on our MT5 platform."
-msgstr ""
+msgstr "การซื้อขายประเภทต่าง ๆ มีพร้อมให้บริการบนแพลตฟอร์ม MT5 ของเรา"
 
 msgid "The volatility indices simulate various real market situations and provide an ideal platform for getting used to trading and testing strategies under various market conditions. These indices depend on volatility and drift, and help users to try out scenarios like - high volatility, low volatility, bullish and bearish trends."
 msgstr "ดัชนีความผันผวนจำลองความหลากหลายของสถานการณ์ตลาดจริงและมีแพลตฟอร์มในอุดมคติสำหรับการซื้อขายและการทดสอบกลยุทธ์ภายใต้เงื่อนไขทางตลาดที่หลากหลาย ดัชนีเหล่านี้ขึ้นกับความผันผวน การเคลื่อนไหว และช่วยผู้ใช้งานให้ใช้รูปแบบต่างๆ เช่น ความผันผวนระดับสูง ความผันผวนระดับต่ำ แนวโน้มตลาดหมีและตลาดกระทิง"
@@ -10457,9 +10457,6 @@ msgstr "วันพฤหัสบดี"
 msgid "Tick"
 msgstr "ช่วงห่างของราคา"
 
-msgid "Tick %1"
-msgstr "ช่วงราคา %1"
-
 msgid "Tick %1 is not the highest tick"
 msgstr "ช่วงราคา %1 ไม่ใช่ราคาสูงสุด"
 
@@ -10602,13 +10599,13 @@ msgid "Top Up Virtual Account"
 msgstr "เพิ่มเงินในบัญชีทดลองใช้"
 
 msgid "Top up"
-msgstr ""
+msgstr "เติมเงิน"
 
 msgid "Top up Virtual Account"
-msgstr ""
+msgstr "เพิ่มเงินไปยังบัญชีทดลอง"
 
 msgid "Top up error"
-msgstr ""
+msgstr "มีข้อผิดพลาดในการเติมเงิน"
 
 msgid "Top up virtual account"
 msgstr "เพิ่มเงินในบัญชีทดลองใช้"
@@ -10617,7 +10614,7 @@ msgid "Top-tier liquidity"
 msgstr "สภาพคล่องในระดับสูง"
 
 msgid "Top-up successful"
-msgstr ""
+msgstr "การเติมเงินสำเร็จ"
 
 msgid "Total"
 msgstr "ผลรวม"
@@ -11097,7 +11094,7 @@ msgid "Understanding of encryption fundamentals and the OWASP Top 10"
 msgstr "มีความเข้าใจในพื้นฐานของการเข้ารหัส และ 10 อันดับสูงสุดของ OWASP"
 
 msgid "Understood"
-msgstr ""
+msgstr "เข้าใจ"
 
 msgid "Unemployed"
 msgstr "ว่างงาน"
@@ -11304,7 +11301,7 @@ msgid "View the operating hours of the markets you can trade."
 msgstr "ดูเวลาในของตลาดที่ท่านสามารถซื้อขาย"
 
 msgid "View updated statement"
-msgstr ""
+msgstr "ดูรายการเดินบัญชีล่าสุด"
 
 msgid "View your account's authentication status."
 msgstr "ดูสถานะการรับรองความถูกต้องของบัญชีของท่าน"
@@ -11529,7 +11526,7 @@ msgid "We offer all four precious metals – gold, silver, palladium, and platin
 msgstr "เรามีโลหะมีค่าทั้งสี่ คือ ทอง เงิน พาลาเดียม และ แพลทินัม และพลังงานในรายการสินค้าโภคภัณฑ์ของเรา"
 
 msgid "We offer the following trade types on our MT5 platform:"
-msgstr ""
+msgstr "เรานำเสนอการซื้อขายประเภทต่างๆ ที่มีในแพลตฟอร์ม MT5 ของเรา:"
 
 msgid "We offer three types of lookbacks:"
 msgstr "เราแนะนำ Lookback 3 ประเภท:"
@@ -12342,10 +12339,10 @@ msgid "You have already withdrawn the equivalent of %1 %2."
 msgstr "ท่านได้ถอน %1 %2 หรือเทียบเท่า"
 
 msgid "You have chosen %1 as the currency for this account. You cannot change this later. You can have more than one cryptocurrency account."
-msgstr ""
+msgstr "ท่านได้เลือก %1 เป็นสกุลเงินของบัญชีนี้ ท่านไม่สามารถเปลี่ยนแปลงในภายหลัง ทั้งนี้ท่านสามารถมีบัญชีเงินดิจิทัลได้มากกว่า 1 บัญชี"
 
 msgid "You have chosen %1 as the currency for this account. You cannot change this later. You can have one fiat currency account only."
-msgstr ""
+msgstr "ท่านได้เลือก %1 เป็นสกุลเงินของบัญชีนี้ ท่านไม่สามารถเปลี่ยนแปลงในภายหลัง ทั้งนี้ท่านสามารถมีบัญชีเงินกระดาษ (ธนบัตรเงินสด) ได้เพียง 1 บัญชี"
 
 msgid "You have created all accounts available to you."
 msgstr "ท่านได้สร้างบัญชีทั้งหมดแล้ว"
