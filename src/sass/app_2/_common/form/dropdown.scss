@@ -113,6 +113,20 @@
             transform: scale(1, 1);
             opacity: 1;
         }
+        &--left {
+            left: calc(-100% - 16px);
+            top: -1px;
+
+            &.dropdown__list--enter, &.dropdown__list--exit {
+                transform: scale(1, 1) translateX(20%);
+                opacity: 0;
+
+            }
+            &.dropdown__list--enter--done {
+                transform: scale(1, 1) translateX(0);
+                opacity: 1;
+            }
+        }
     }
     .select-arrow {
         display: inline-block;

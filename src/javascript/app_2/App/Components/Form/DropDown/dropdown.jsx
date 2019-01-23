@@ -148,7 +148,10 @@ class Dropdown extends React.Component {
                     }}
                     unmountOnExit
                 >
-                    <div className={classNames('dropdown__list', this.props.position)}>
+                    <div className={classNames('dropdown__list', {
+                        'dropdown__list--left': this.props.position === 'left',
+                    })}
+                    >
                         <div className='list'>
                             <SimpleBar style={{ 'height': '100%' }}>
                                 {isArrayLike(this.props.list) ?
