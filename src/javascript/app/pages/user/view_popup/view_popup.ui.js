@@ -1,7 +1,6 @@
 const setExternalTimer  = require('../../../base/clock').setExternalTimer;
 const BinarySocket      = require('../../../base/socket');
 const getHighestZIndex  = require('../../../../_common/utility').getHighestZIndex;
-const removeDigitTicker = require('../../trade/digit_ticker').remove;
 
 const ViewPopupUI = (() => {
     let $container,
@@ -27,7 +26,6 @@ const ViewPopupUI = (() => {
                 cleanup(true);
                 $(document).off('keydown');
                 $(window).off('popstate', onClose);
-                removeDigitTicker();
             };
             $con.find('a.close').on('click', onClose);
             $(document).on('keydown', (e) => {
