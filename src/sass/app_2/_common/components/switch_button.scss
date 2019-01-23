@@ -1,4 +1,4 @@
-.toggle-button {
+.switch-button {
     background: $COLOR_GRAY;
     border-radius: 32px;
     transition: all 0.4s ease;
@@ -63,7 +63,7 @@
 
 // Dark Theme
 .theme-wrapper.dark {
-    .toggle-button:not(.toggled) {
+    .switch-button:not(.toggled) {
         background: $COLOR_BRANDBLUE_85;
     }
     .toggle-chart-layout {
