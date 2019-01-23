@@ -26,7 +26,7 @@ const NativeSelect = ({
         </select>
     </div>
 );
-// ToDo: Refactor NativeSelect
+
 NativeSelect.propTypes = {
     list: PropTypes.oneOfType([
         PropTypes.object,
