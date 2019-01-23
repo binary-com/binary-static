@@ -3,8 +3,8 @@ import React     from 'react';
 
 const NativeSelect = ({
     name,
-    value,
     list,
+    value,
     onChange,
 }) => (
     <div className='select-wrapper'>
