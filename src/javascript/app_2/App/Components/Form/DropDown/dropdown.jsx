@@ -4,7 +4,7 @@ import { observer }      from 'mobx-react';
 import PropTypes         from 'prop-types';
 import React             from 'react';
 import { CSSTransition } from 'react-transition-group';
-import SimpleBar         from 'simplebar-react';
+import { Scrollbars }    from 'tt-react-custom-scrollbars';
 import { IconArrow }     from 'Assets/Common';
 import Items             from './items.jsx';
 import NativeSelect      from './native_select.jsx';
@@ -153,7 +153,11 @@ class Dropdown extends React.Component {
                     })}
                     >
                         <div className='list'>
-                            <SimpleBar style={{ 'height': '100%' }}>
+                            <Scrollbars
+                                autoHeight
+                                autoHide
+                                autoHeightMax={200}
+                            >
                                 {isArrayLike(this.props.list) ?
                                     <Items
                                         highlightedIdx={this.state.curr_index}
@@ -175,7 +179,7 @@ class Dropdown extends React.Component {
                                         </React.Fragment>
                                     ))
                                 }
-                            </SimpleBar>
+                            </Scrollbars>
                         </div>
                     </div>
                 </CSSTransition>
