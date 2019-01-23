@@ -192,7 +192,7 @@ class Dropdown extends React.Component {
 // It's now too risky to refactor Dropdown for 'list' and 'value' prop types.
 Dropdown.propTypes = {
     className        : PropTypes.string,
-    is_alignment_left: PropTypes.string,
+    is_alignment_left: PropTypes.bool,
     is_nativepicker  : PropTypes.bool,
     list             : PropTypes.oneOfType([
         PropTypes.array,

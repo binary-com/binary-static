@@ -27,7 +27,10 @@ Items.propTypes = {
     handleSelect  : PropTypes.func,
     highlightedIdx: PropTypes.number,
     name          : PropTypes.string,
-    value         : PropTypes.string,
+    value         : PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
+    ]),
 };
 
 export default Items;
