@@ -22,18 +22,18 @@ const getMonthHeaders = () => ({
 export const CalendarMonths = ({
     calendar_date,
     isPeriodDisabled,
-    onClick,
     selected_date,
+    updateSelected,
 }) => {
-    const moment_date    = toMoment(calendar_date);
-    const selected_month = toMoment(selected_date).month();
-    const month_headers  = getMonthHeaders();
+    const moment_date          = toMoment(calendar_date);
+    const moment_selected_date = toMoment(selected_date);
+    const month_headers        = getMonthHeaders();
 
     return (
         <div className='calendar__body calendar__body--month'>
             { Object.keys(month_headers).map((month, idx) => {
-                const is_active   = idx === selected_month;
-                const is_disabled = isPeriodDisabled(moment_date.month(month), 'month');
+                const is_active   = month === moment_selected_date.clone().format('MMM') && moment_selected_date.isSame(moment_date, 'year');
+                const is_disabled = isPeriodDisabled(moment_date.clone().month(month), 'month');
                 return (
                     <span
                         key={idx}
@@ -41,8 +41,8 @@ export const CalendarMonths = ({
                             'calendar__cell--active'  : is_active,
                             'calendar__cell--disabled': is_disabled,
                         })}
-                        onClick={onClick.month}
-                        data-month={idx}
+                        onClick={is_disabled ? undefined : (e) => updateSelected(e, 'month')}
+                        data-month={month}
                     >
                         {month_headers[month]}
                     </span>

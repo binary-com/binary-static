@@ -7,11 +7,10 @@ import CalendarPanelTypes from './types';
 const getDays = ({
     calendar_date,
     date_format,
-    max_date,
-    min_date,
+    isPeriodDisabled,
     start_date,
-    onClick,
     selected_date,
+    updateSelected,
 }) => {
     // adjust Calendar week by 1 day so that Calendar week starts on Monday
     // change to zero to set Calendar week to start on Sunday
@@ -24,14 +23,11 @@ const getDays = ({
     const num_of_days        = moment_cur_date.daysInMonth() + 1;
     const moment_month_start = moment_cur_date.clone().startOf('month');
     const moment_month_end   = moment_cur_date.clone().endOf('month');
-    const first_day          = moment_month_start.day() - day_offset;
-    const last_day           = moment_month_end.day() - day_offset;
-    const moment_min_date    = toMoment(min_date);
-    const moment_max_date    = toMoment(max_date);
     const moment_selected    = toMoment(selected_date);
 
     // populate previous months' dates
-    for (let i = first_day; i > 0; i--) {
+    const end_of_prev_month = moment_cur_date.clone().subtract(1, 'month').endOf('month').day();
+    for (let i = end_of_prev_month; i > 0; i--) {
         dates.push(moment_month_start.clone().subtract(i, 'day').format(date_format));
     }
     // populate current months' dates
@@ -39,8 +35,15 @@ const getDays = ({
         dates.push(moment_cur_date.clone().format(date_format.replace('DD', padLeft(idx, 2, '0'))));
     }
     // populate next months' dates
-    for (let i = 1; i <= 6 - last_day; i++) {
-        dates.push(moment_month_end.clone().add(i, 'day').format(date_format));
+    const start_of_next_month = moment_cur_date.clone().add(1, 'month').startOf('month').day();
+    if (start_of_next_month - day_offset > 0 || dates.length <= 28) {
+        // if start_of_next_month doesn't falls on Monday, append rest of the week
+        for (let i = 1; i <= 7 - start_of_next_month + day_offset; i++) {
+            dates.push(moment_month_end.clone().add(i, 'day').format(date_format));
+        }
+    } else if (!start_of_next_month) {
+        // if start_of_next_month falls on Sunday, append 1 day
+        dates.push(moment_month_end.clone().add(1, 'day').format(date_format));
     }
 
     const moment_start_date = toMoment(start_date).startOf('day');
@@ -49,13 +52,14 @@ const getDays = ({
         const moment_date = toMoment(date).startOf('day');
         const is_active   = selected_date && moment_date.isSame(moment_selected);
         const is_today    = moment_date.isSame(moment_today, 'day');
-        const is_disabled = moment_date.isBefore(moment_min_date) || moment_date.isAfter(moment_max_date) ||
+        const is_disabled = isPeriodDisabled(moment_date, 'day') ||
             // for forward starting accounts, only show same day as start date and the day after
             (start_date && (moment_date.isBefore(moment_start_date) || moment_date.isAfter(moment_start_date.clone().add(1, 'day'))));
 
         // show 'disabled' style for dates that is not in the same calendar month,
         // but the date should still be clickable
         const is_other_month = moment_date.month() !== moment_cur_date.month();
+
         days.push(
             <span
                 key={date}
@@ -65,7 +69,7 @@ const getDays = ({
                     'calendar__cell--disabled': is_disabled,
                     'calendar__cell--other'   : is_other_month,
                 })}
-                onClick={(e) => { onClick.date(e, is_disabled); }}
+                onClick={is_disabled ? undefined : (e) => updateSelected(e, 'day') }
                 data-date={date}
             >
                 {moment_date.date()}

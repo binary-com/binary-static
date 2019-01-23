@@ -2,32 +2,32 @@ import classNames         from 'classnames';
 import React              from 'react';
 import { toMoment }       from 'Utils/Date';
 import CalendarPanelTypes from './types';
+import { getCentury, getDecade }      from '../helper';
 
 export const CalendarDecades = ({
     calendar_date,
     isPeriodDisabled,
-    onClick,
     selected_date,
+    updateSelected,
 }) => {
-    const selected_year = toMoment(selected_date).year();
-    const moment_date   = toMoment(calendar_date);
+    const moment_selected = toMoment(selected_date);
+    const moment_date     = toMoment(calendar_date);
+    const start_year      = getCentury(moment_date).split('-')[0];
 
     const decades = [];
-    let min_year  = moment_date.year() - 10;
+    let min_year = +start_year - 10;
     for (let i = 0; i < 12; i++) {
-        const max_year = min_year + 9;
-        const range    = `${min_year}-${max_year}`;
-        decades.push(range);
-        min_year = max_year + 1;
+        const decade = getDecade(toMoment().year(min_year));
+        decades.push(decade);
+        min_year = +decade.split('-')[1] + 1;
     }
-
     return (
         <div className='calendar__body calendar__body--decade'>
-            { decades.map((range, idx) => {
-                const [start, end] = range.split('-');
-                const is_active    = +start === selected_year;
-                const is_disabled  = isPeriodDisabled(moment_date.year(start), 'year') &&
-                    isPeriodDisabled(moment_date.year(end), 'year');
+            { decades.map((decade, idx) => {
+                const [start_of_decade, end_of_decade] = decade.split('-');
+                const is_active    = +start_of_decade === moment_selected.year();
+                const is_disabled  = isPeriodDisabled(moment_date.clone().year(start_of_decade), 'year') &&
+                    isPeriodDisabled(moment_date.clone().year(end_of_decade), 'year');
                 const is_other_century = idx === 0 || idx === 11;
                 return (
                     <span
@@ -37,10 +37,10 @@ export const CalendarDecades = ({
                             'calendar__cell--disabled': is_disabled,
                             'calendar__cell--other'   : is_other_century,
                         })}
-                        onClick={onClick.decade}
-                        data-decade={range}
+                        onClick={is_disabled ? undefined : (e) => updateSelected(e, 'decade')}
+                        data-decade={decade}
                     >
-                        {range}
+                        {decade}
                     </span>
                 );
             })

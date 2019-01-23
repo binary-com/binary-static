@@ -110,7 +110,7 @@ class DatePicker extends React.PureComponent {
         const { is_read_only, mode, name, validation_errors } = this.props;
 
         let { value } = this.state;
-        value = mode === 'duration' ? value : toMoment(value).format('DD MMM YYYY');
+        if (value) value = mode === 'duration' ? value : toMoment(value).format('DD MMM YYYY');
 
         let { placeholder } = this.props;
         placeholder = placeholder || (mode === 'duration' ? localize('Select a duration') : localize('Select a date'));
