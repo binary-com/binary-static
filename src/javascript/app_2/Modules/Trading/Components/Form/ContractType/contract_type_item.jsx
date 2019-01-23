@@ -24,9 +24,9 @@ const ContractTypeItem = ({
             <span className='contract-title'>
                 {contract.text}
             </span>
-            <span id='info-icon' className='trade-type-info-icon' onClick={() => handleInfoClick(contract)}>
+            <div id='info-icon' className='trade-type-info-icon' onClick={() => handleInfoClick(contract)}>
                 <IconExclamation />
-            </span>
+            </div>
         </div>
     ))
 );

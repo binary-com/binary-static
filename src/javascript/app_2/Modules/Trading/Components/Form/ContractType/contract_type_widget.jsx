@@ -122,7 +122,18 @@ class ContractTypeWidget extends React.PureComponent {
         }
         if (this.state.is_dialog_open) container_classes.push('show');
         return container_classes;
-    }
+    };
+
+    getPaginationList = () => {
+        const paginationList = [];
+        const list = this.props.list;
+        Object.keys(list).map(key => {
+            !['In/Out', 'Asians'].includes(key) && list[key].map(contract => {
+                (contract.value !== 'rise_fall_equal') && paginationList.push(contract);
+            });
+        });
+        return paginationList;
+    };
 
     render() {
         const container_classes = this.getStyles();
@@ -163,13 +174,13 @@ class ContractTypeWidget extends React.PureComponent {
                     is_mobile={this.props.is_mobile}
                 >
                     <TradeTypeInfoItem
-                        list={this.props.list}
+                        handleNextClick={this.handleNextClick}
+                        handlePaginationClick={this.handlePaginationClick}
+                        handlePrevClick={this.handlePrevClick}
                         item={this.state.item}
                         onBackButtonClick={this.onBackButtonClick}
                         onSubmitButtonClick={this.onSubmitButtonClick}
-                        handlePaginationClick={this.handlePaginationClick}
-                        handleNextClick={this.handleNextClick}
-                        handlePrevClick={this.handlePrevClick}
+                        paginationList={this.getPaginationList()}
                     />
                 </TradeTypeInfoDialog>
             </div>

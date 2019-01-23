@@ -118,10 +118,12 @@ div.contracts-popup-container {
             font-size: 0.875rem; /* stylelint-disable-line number-max-precision */
         }
         .trade-type-info-icon {
-            display: none;
+            display: block;
             float: right;
+            height: 16px;
+            width: 16px;
+            margin-left: auto;
             text-align: right;
-            flex-grow: 1;
 
             svg {
                 pointer-events: none;
@@ -241,6 +243,7 @@ div.contracts-popup-container {
             background: $COLOR_GRAY_LIGHT;
             border-radius: 4px;
             padding: 8px;
+            box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.5);
 
             .info-header {
                 display: flex;
@@ -273,8 +276,14 @@ div.contracts-popup-container {
             .info-choose {
                 background: $COLOR_LIGHT_ORANGE;
                 color: $COLOR_WHITE;
+                font-weight: bold;
+            }
+            .info-pagination-container {
+                display: flex;
             }
             .info-pagination {
+                display: inline-block;
+                text-align: center;
                 margin: 0 auto;
 
                 .circle-button {
@@ -283,8 +292,26 @@ div.contracts-popup-container {
                     border-radius: 50%;
                     display: inline-block;
                     margin: 0 5px;
-                    background-color: $COLOR_WHITE;
+                    background-color: $COLOR_DARK_GRAY;
                     cursor: pointer;
+
+                    &.active {
+                        background-color: $COLOR_GRAY;
+                    }
+                }
+            }
+            .prev {
+                width: 16px;
+
+                &:before {
+                    content: url('../images/common/ic-chevron-right.svg ');
+                }
+            }
+            .next {
+                width: 16px;
+
+                &:before {
+                    content: url('../images/common/ic-chevron-right.svg ');
                 }
             }
         }
@@ -358,7 +385,7 @@ div.contracts-popup-container {
             border-color: $COLOR_WHITE;
             box-shadow: 0 0 0 0.2rem rgba(127, 131, 151, 0.3) // stylelint-disable-line number-leading-zero
         }
-        .list-container, .trade-type-info {
+        .list-container {
             border-color: $COLOR_BRANDBLUE_85;
             background: $COLOR_BRANDBLUE_95;
 
@@ -401,7 +428,7 @@ div.contracts-popup-container {
     }
     .trade-type-info-popup {
         .trade-type-info {
-            background: $COLOR_BRANDBLUE_5;
+            background-color: $COLOR_BLUE;
 
             .info-header {
                 .title {
@@ -413,6 +440,15 @@ div.contracts-popup-container {
             }
             .info-content {
                 color: $COLOR_GRAY;
+            }
+            .info-pagination {
+                .circle-button {
+                    background-color: $COLOR_WHITE;
+
+                    &.active {
+                        background-color: $COLOR_LIGHT_GRAY;
+                    }
+                }
             }
         }
     }

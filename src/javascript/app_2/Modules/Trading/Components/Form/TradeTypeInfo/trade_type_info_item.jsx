@@ -6,28 +6,14 @@ import Button                       from 'App/Components/Form/button.jsx';
 import { localize }                 from '_common/localize';
 
 const ContractTypeItem = ({
-    list,
-    item,
-    onBackButtonClick,
-    onSubmitButtonClick,
     handleNextClick,
     handlePaginationClick,
     handlePrevClick,
-}) => {
-    const paginationList = [];
-    const getPaginationList = () => {
-        Object.keys(list).map((key, index) => {
-            !['In/Out', 'Asians'].includes(key) &&
-                list[key].map((contract, idx) => {
-                    (contract.value !== 'rise_fall_equal') && paginationList.push(contract);
-                });
-            }
-        );
-        return getPaginationList;
-    };
-    getPaginationList();
-
-    return (
+    item,
+    onBackButtonClick,
+    onSubmitButtonClick,
+    paginationList,
+}) => (
     <React.Fragment>
         <div className='info-header'>
             <span onClick={() => onBackButtonClick()}>
@@ -41,36 +27,34 @@ const ContractTypeItem = ({
         <div className='info-content'>
             <ComponentTradeCategories category={item.value} />
         </div>
-        <Button text={localize('CHOOSE')} className='info-choose' onClick={() => onSubmitButtonClick(item)} />
-        <div onClick={() => handlePrevClick(paginationList)}>
-            prev
+        <Button className='info-choose' text={localize('CHOOSE')} onClick={() => onSubmitButtonClick(item)} />
+        <div className='info-pagination-container'>
+            <span className='prev' onClick={() => handlePrevClick(paginationList)} />
+            <div className='info-pagination'>
+                {
+                    paginationList.map((contract, idx) => (
+                        <React.Fragment key={idx}>
+                            <div
+                                className={`circle-button ${contract.value === item.value ? 'active' : ''}`}
+                                onClick={() => handlePaginationClick(contract)}
+                            />
+                        </React.Fragment>
+                    ))
+                }
+            </div>
+            <span className='next' onClick={() => handleNextClick(paginationList)} />
         </div>
-        <div className='info-pagination'>
-            {
-                paginationList.map((contract, idx) => (
-                    <React.Fragment key={idx}>
-                        <div onClick={() => handlePaginationClick(contract)}
-                             className='circle-button'/>
-                    </React.Fragment>
-                ))
-            }
-
-        </div>
-        <div onClick={() => handleNextClick(paginationList)}>
-            next
-        </div>
-
     </React.Fragment>
-)};
+);
 
 ContractTypeItem.propTypes = {
-    list                 : PropTypes.object,
-    item                 : PropTypes.object,
-    onBackButtonClick    : PropTypes.func,
-    onSubmitButtonClick  : PropTypes.func,
     handleNextClick      : PropTypes.func,
     handlePaginationClick: PropTypes.func,
     handlePrevClick      : PropTypes.func,
+    item                 : PropTypes.object,
+    onBackButtonClick    : PropTypes.func,
+    onSubmitButtonClick  : PropTypes.func,
+    paginationList       : PropTypes.array,
 };
 
 export default ContractTypeItem;
