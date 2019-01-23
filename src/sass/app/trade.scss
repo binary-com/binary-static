@@ -1,5 +1,3 @@
-@import 'components/peek_box';
-
 @mixin ul_segmented_navigation {
     box-shadow: inset 0 0 0 1px rgba($COLOR_BLUE, 0.2);
     background-color: $COLOR_LIGHT_GRAY;
@@ -514,7 +512,7 @@
         }
         #contract_purchase_profit_list, #contract_purchase_spots .row {
             padding: 3px 0;
-            flex-direction: row;
+            flex-direction: row !important;
 
             &.winning-tick-row {
                 font-weight: bold;
@@ -528,6 +526,11 @@
                 flex-direction: column;
                 line-height: 1.4em;
                 padding: 0 10px;
+
+                > p {
+                    margin: auto 0 5px;
+                    padding-top: 10px;
+                }
             }
         }
         #contract_purchase_spots {
