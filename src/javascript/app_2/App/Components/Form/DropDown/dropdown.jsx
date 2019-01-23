@@ -13,8 +13,7 @@ import {
     getItemFromValue,
     getValueFromIndex,
     getPrevIndex,
-    getNextIndex,
-}  from './helpers';
+    getNextIndex }       from './helpers';
 
 class Dropdown extends React.Component {
     state = {
