@@ -1,3 +1,4 @@
+import classNames        from 'classnames';
 import { isArrayLike }   from 'mobx';
 import { observer }      from 'mobx-react';
 import PropTypes         from 'prop-types';
@@ -5,6 +6,8 @@ import React             from 'react';
 import { CSSTransition } from 'react-transition-group';
 import SimpleBar         from 'simplebar-react';
 import { IconArrow }     from 'Assets/Common';
+import Items             from './items.jsx';
+import NativeSelect      from './native_select.jsx';
 import {
     getDisplayText,
     getItemFromValue,
@@ -14,19 +17,12 @@ import {
 }  from './helpers';
 
 class Dropdown extends React.Component {
-    constructor(props) {
-        super(props);
-        this.handleVisibility   = this.handleVisibility.bind(this);
-        this.handleSelect       = this.handleSelect.bind(this);
-        this.setWrapperRef      = this.setWrapperRef.bind(this);
-        this.handleClickOutside = this.handleClickOutside.bind(this);
-        this.state = {
-            is_list_visible: false,
-            curr_index     : getItemFromValue(this.props.list, this.props.value).number,
-        };
+    state = {
+        is_list_visible: false,
+        curr_index     : getItemFromValue(this.props.list, this.props.value).number,
     }
 
-    componentDidMount() {
+    componentDidMount () {
         document.addEventListener('mousedown', this.handleClickOutside);
     }
 
@@ -34,7 +30,7 @@ class Dropdown extends React.Component {
         document.removeEventListener('mousedown', this.handleClickOutside);
     }
 
-    handleSelect(item) {
+    handleSelect = (item) => {
         if (item.value !== this.props.value) {
             this.props.onChange({ target: { name: this.props.name, value: item.value } });
         }
@@ -95,40 +91,33 @@ class Dropdown extends React.Component {
         }
     }
 
-    setWrapperRef(node) {
-        this.wrapper_ref = node;
-    }
+    setWrapperRef = (node) => this.wrapper_ref = node;
 
-    scrollToggle(state) {
-        this.is_open = state;
-        // Used to disable y-scroll on body - disabled in this component for now
-        // document.body.classList.toggle('no-scroll', this.is_open);
-    }
+    scrollToggle = (state) => this.is_open = state;
 
-    handleClickOutside(event) {
+    handleClickOutside = (event) => {
         if (this.wrapper_ref && !this.wrapper_ref.contains(event.target) && this.state.is_list_visible) {
             this.setState({ is_list_visible: false });
             this.scrollToggle(this.state.is_list_visible);
         }
     }
 
-    handleVisibility() {
+    handleVisibility = () => {
         this.setState({ is_list_visible: !this.state.is_list_visible });
         this.scrollToggle(!this.state.is_list_visible);
     }
 
     render() {
-        // TODO: Fix list not being populated in native picker dropdown before re-enabling
-        // if (this.props.is_nativepicker) {
-        //     return (
-        //         <NativeSelect
-        //             name={this.props.name}
-        //             value={this.props.value}
-        //             list={this.props.list}
-        //             onChange={this.props.onChange}
-        //         />
-        //     );
-        // }
+        if (this.props.is_nativepicker) {
+            return (
+                <NativeSelect
+                    name={this.props.name}
+                    value={this.props.value}
+                    list={this.props.list}
+                    onChange={this.props.onChange}
+                />
+            );
+        }
         return (
             <div
                 ref={this.setWrapperRef}
@@ -148,10 +137,10 @@ class Dropdown extends React.Component {
                 <CSSTransition
                     in={this.state.is_list_visible}
                     timeout={100}
-                    classNames='dropdown-list'
+                    classNames={classNames('dropdown-list', this.props.position)}
                     unmountOnExit
                 >
-                    <div className='dropdown-list'>
+                    <div className={classNames('dropdown-list', this.props.position)}>
                         <div className='list-container'>
                             <SimpleBar style={{ 'height': '100%' }}>
                                 {isArrayLike(this.props.list) ?
@@ -184,54 +173,6 @@ class Dropdown extends React.Component {
     }
 }
 
-const Items = ({
-    items,
-    name,
-    value,
-    handleSelect,
-    highlightedIdx,
-}) => (
-    items.map((item, idx) => (
-        <React.Fragment key={idx}>
-            <div
-                className={`list-item ${ value === item.value ? 'selected' : ''} ${highlightedIdx === idx ? 'highlighted' : ''}`}
-                key={idx}
-                name={name}
-                value={item.value}
-                onClick={handleSelect.bind(null, item)}
-            >
-                <span>{item.text}</span>
-            </div>
-        </React.Fragment>
-    ))
-);
-
-const NativeSelect = ({
-    name,
-    value,
-    list,
-    onChange,
-}) => (
-    <div className='select-wrapper'>
-        <select name={name} value={value} onChange={onChange}>
-            {Array.isArray(list) ?
-                list.map((item, idx) => (
-                    <option key={idx} value={item.value}>{item.text}</option>
-                ))
-                :
-                Object.keys(list).map(key => (
-                    <React.Fragment key={key}>
-                        <optgroup label={key}>
-                            {list[key].map((item, idx) => (
-                                <option key={idx} value={item.value}>{item.text}</option>
-                            ))}
-                        </optgroup>
-                    </React.Fragment>
-                ))}
-        </select>
-    </div>
-);
-
 // ToDo: Refactor Drop-down.
 // It's now too risky to refactor Dropdown for 'list' and 'value' prop types.
 Dropdown.propTypes = {
@@ -243,21 +184,8 @@ Dropdown.propTypes = {
     ]),
     name    : PropTypes.string,
     onChange: PropTypes.func,
+    position: PropTypes.string,
     type    : PropTypes.string,
-    value   : PropTypes.oneOfType([
-        PropTypes.number,
-        PropTypes.string,
-    ]),
-};
-
-// ToDo: Refactor NativeSelect
-NativeSelect.propTypes = {
-    list: PropTypes.oneOfType([
-        PropTypes.object,
-        PropTypes.array,
-    ]),
-    name    : PropTypes.string,
-    onChange: PropTypes.func,
     value   : PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
