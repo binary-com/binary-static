@@ -215,8 +215,10 @@ const PersonalDetails = (() => {
         if (!is_error) {
             const redirect_url = localStorage.getItem('personal_details_redirect');
             // to update tax information message for financial clients
-            showHideTaxMessage();
-            Header.displayAccountStatus();
+            BinarySocket.send({ get_account_status: 1 }, { forced: true }).then(() => {
+                showHideTaxMessage();
+                Header.displayAccountStatus();
+            });
 
             // to update the State with latest get_settings data
             BinarySocket.send({ get_settings: 1 }, { forced: true }).then((data) => {
