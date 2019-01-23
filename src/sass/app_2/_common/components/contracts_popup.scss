@@ -89,7 +89,7 @@ div.contracts-popup-container {
         &:hover {
             background-color: #f2f3f8; /* stylelint-disable-line color-no-hex */
 
-            .tooltip {
+            .trade-type-info-icon {
                 display: block;
             }
         }
@@ -117,11 +117,15 @@ div.contracts-popup-container {
             font-weight: 300;
             font-size: 0.875rem; /* stylelint-disable-line number-max-precision */
         }
-        .tooltip {
-            margin-left: auto;
-            margin-top: 3px;
+        .trade-type-info-icon {
             display: none;
-            transition: all 0.2s;
+            float: right;
+            text-align: right;
+            flex-grow: 1;
+
+            svg {
+                pointer-events: none;
+            }
         }
     }
     .contracts-popup-list, .trade-type-info-popup {
@@ -199,6 +203,76 @@ div.contracts-popup-container {
                     width: 24px;
                     height: 24px;
                 }
+            }
+        }
+        &-enter, &-exit {
+            transform: translateX(50%);
+            pointer-events: none;
+            opacity: 0;
+            height: 0;
+        }
+        &-enter-done {
+            transform: translateX(0);
+            max-height: 100%;
+            opacity: 1;
+            pointer-events: auto;
+        }
+    }
+    .trade-type-info-popup {
+        right: 4px;
+        width: 100%;
+        pointer-events: none;
+        position: absolute;
+        transition: transform 0.25s ease, opacity 0.25s;
+        transform: translateX(50%);
+        user-select: none;
+        opacity: 0;
+        height: 0;
+        z-index: 999;
+
+        .trade-type-info {
+            position: absolute;
+            width: 290px;
+            right: calc(100% + 10px);
+            top: -54px;
+            display: grid;
+            grid-auto-columns: 1fr;
+            z-index: 2;
+            background: $COLOR_GRAY_LIGHT;
+            border-radius: 4px;
+            padding: 8px;
+
+            .info-header {
+                display: flex;
+                padding: 8px;
+
+                .title {
+                    margin-left: 15px;
+                    font-size: 14px;
+                    color: $COLOR_LIGHT_BLACK;
+                }
+                span {
+                    align-self: center;
+                }
+            }
+            .info-gif {
+                padding: 8px;
+                width: 258px;
+                height: 140px;
+                background-color: $COLOR_WHITE;
+                border-radius: 4px;
+                margin: 0 auto;
+            }
+            .info-content {
+                padding: 8px;
+                margin: 0 auto;
+                font-size: 14px;
+                line-height: 20px;
+                color: $COLOR_LIGHT_BLACK;
+            }
+            .info-choose {
+                background: $COLOR_LIGHT_ORANGE;
+                color: $COLOR_WHITE;
             }
         }
         &-enter, &-exit {
@@ -309,6 +383,23 @@ div.contracts-popup-container {
                 .stroke-white {
                     stroke: $COLOR_WHITE;
                 }
+            }
+        }
+    }
+    .trade-type-info-popup {
+        .trade-type-info {
+            background: $COLOR_BRANDBLUE_5;
+
+            .info-header {
+                .title {
+                    color: $COLOR_BRANDBLUE_40;
+                }
+            }
+            .info-gif {
+                background-color: $COLOR_BRANDBLUE_75;
+            }
+            .info-content {
+                color: $COLOR_GRAY;
             }
         }
     }

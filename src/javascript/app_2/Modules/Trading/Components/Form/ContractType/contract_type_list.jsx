@@ -4,8 +4,8 @@ import React                          from 'react';
 import ContractTypeItem               from './contract_type_item.jsx';
 
 const ContractTypeList = ({
-    handleSelect,
     handleInfoClick,
+    handleSelect,
     list,
     name,
     value,
@@ -32,11 +32,11 @@ const ContractTypeList = ({
     );
 
 ContractTypeList.propTypes = {
-    handleSelect: PropTypes.func,
     handleInfoClick: PropTypes.func,
-    list        : MobxPropTypes.objectOrObservableObject,
-    name        : PropTypes.string,
-    value       : PropTypes.string,
+    handleSelect   : PropTypes.func,
+    list           : MobxPropTypes.objectOrObservableObject,
+    name           : PropTypes.string,
+    value          : PropTypes.string,
 };
 
 export default ContractTypeList;

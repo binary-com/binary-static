@@ -10,9 +10,9 @@ class ContractTypeWidget extends React.PureComponent {
     constructor(props) {
         super(props);
         this.state = {
-            is_dialog_open: false,
+            is_dialog_open     : false,
             is_info_dialog_open: false,
-            item: {},
+            item               : {},
         };
     }
 
@@ -24,15 +24,21 @@ class ContractTypeWidget extends React.PureComponent {
         document.removeEventListener('mousedown', this.handleClickOutside);
     }
 
-    handleSelect = (item) => {
+    handleSelect = (item, e) => {
         if (item.value !== this.props.value && e.target.id !== 'info-icon') {
             this.props.onChange({ target: { name: this.props.name, value: item.value } });
         }
         this.handleVisibility();
     };
 
+    onSubmitButtonClick = (item) => {
+        if (item.value !== this.props.value) {
+            this.props.onChange({ target: { name: this.props.name, value: item.value } });
+        }
+        this.handleInfoVisibility();
+    };
+
     handleInfoClick = (item) => {
-        console.log(item.value);
         this.setState({ item });
         this.handleInfoVisibility();
         this.handleVisibility();
@@ -128,10 +134,10 @@ class ContractTypeWidget extends React.PureComponent {
                     onClose={this.handleInfoClick}
                     is_mobile={this.props.is_mobile}
                 >
-                    {/*<TradeTypeInfoItem />*/}
                     <TradeTypeInfoItem
                         item={this.state.item}
                         onBackButtonClick={this.onBackButtonClick}
+                        onSubmitButtonClick={this.onSubmitButtonClick}
                     />
                 </TradeTypeInfoDialog>
             </div>

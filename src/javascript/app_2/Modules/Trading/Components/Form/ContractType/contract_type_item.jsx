@@ -8,8 +8,8 @@ const ContractTypeItem = ({
     contracts,
     name,
     value,
-    handleSelect,
     handleInfoClick,
+    handleSelect,
 }) => (
     contracts.map((contract, idx) => (
         (contract.value !== 'rise_fall_equal') &&
@@ -18,25 +18,25 @@ const ContractTypeItem = ({
             className={`list-item ${value === contract.value ? 'selected' : ''}`}
             name={name}
             value={contract.value}
-            onClick={(e) => e.target.id !== 'info-icon' ? handleSelect(contract) : null}
+            onClick={(e) => handleSelect(contract, e)}
         >
             <IconTradeCategory category={contract.value} />
             <span className='contract-title'>
                 {contract.text}
             </span>
-            <div id='info-icon' onClick={() => handleInfoClick(contract)}>
-                abcd
-            </div>
+            <span id='info-icon' className='trade-type-info-icon' onClick={() => handleInfoClick(contract)}>
+                <IconExclamation />
+            </span>
         </div>
     ))
 );
 
 ContractTypeItem.propTypes = {
-    contracts   : MobxPropTypes.arrayOrObservableArray,
-    handleSelect: PropTypes.func,
+    contracts      : MobxPropTypes.arrayOrObservableArray,
     handleInfoClick: PropTypes.func,
-    name        : PropTypes.string,
-    value       : PropTypes.string,
+    handleSelect   : PropTypes.func,
+    name           : PropTypes.string,
+    value          : PropTypes.string,
 };
 
 export default ContractTypeItem;
