@@ -196,8 +196,6 @@ class Dropdown extends React.Component {
     }
 }
 
-// ToDo: Refactor Drop-down.
-// It's now too risky to refactor Dropdown for 'list' and 'value' prop types.
 Dropdown.propTypes = {
     className        : PropTypes.string,
     is_alignment_left: PropTypes.bool,
@@ -208,7 +206,6 @@ Dropdown.propTypes = {
     ]),
     name    : PropTypes.string,
     onChange: PropTypes.func,
-    type    : PropTypes.string,
     value   : PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
