@@ -468,7 +468,7 @@ export default class TradeStore extends BaseStore {
         const new_state = { [name]: value };
 
         if (this.duration_units_list.length === 1 && this.duration_unit === 'd') {
-            if (value) new_state.advanced_duration_unit = '';
+            if (value) new_state.advanced_duration_unit = 'd';
             else new_state.simple_duration_unit = 'd';
         }
         if (name === 'simple_duration' || name === 'advanced_duration') {
@@ -477,6 +477,10 @@ export default class TradeStore extends BaseStore {
         if (name === 'simple_duration_unit' || name === 'advanced_duration_unit') {
             new_state.duration_unit = value;
         }
+        if (this.duration_units_list.length > 1 && this.simple_duration_unit !== 't' && this.simple_duration_unit !== 'm') {
+            if (this.is_advanced_duration) new_state.advanced_duration_unit = 't';
+            else new_state.simple_duration_unit = 't';
+        }
         if (name === 'is_advanced_duration') {
             if (value) { // advanced
                 new_state.duration = this.advanced_duration;
@@ -484,9 +488,6 @@ export default class TradeStore extends BaseStore {
             } else { // simple
                 if (this.expiry_type !== 'duration') {
                     new_state.expiry_type = 'duration'; // simple duration only has duration expiry_type
-                }
-                if (this.duration_units_list.length > 1 && this.simple_duration_unit !== 't' && this.simple_duration_unit !== 'm') {
-                    new_state.simple_duration_unit = 't';
                 }
                 new_state.duration = this.simple_duration;
                 new_state.duration_unit = this.simple_duration_unit;

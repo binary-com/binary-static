@@ -27,7 +27,6 @@ const Duration = ({
     expiry_date,
     expiry_time,
     expiry_type,
-    onChange,
     onChangeDuration,
     is_advanced_duration,
     is_minimized,

@@ -10,7 +10,6 @@ const SimpleDuration = ({
     simple_duration_unit,
     simple_duration,
     duration_units_list,
-    expiry_type,
     onChange,
     shared_input_props,
 }) => {
@@ -55,7 +54,7 @@ SimpleDuration.propTypes = {
     number_input_props : PropTypes.object,
     onChange           : PropTypes.func,
     shared_input_props : PropTypes.object,
-    simple_duration     : PropTypes.oneOfType([
+    simple_duration    : PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
     ]),
