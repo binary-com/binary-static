@@ -67,7 +67,7 @@ const Footer = (() => {
                 }
 
                 $dialog_notification.css('display', 'flex');
-                el_footer.style.paddingBottom = `${$dialog_notification.height()}px`;
+                el_footer.style.paddingBottom = `${$dialog_notification.height() + gap_dialog_to_elevio}px`;
                 adjustElevioAndScrollup($dialog_notification.height() + gap_dialog_to_elevio,
                     $dialog_notification.height() + gap_dialog_to_elevio + gap_elevio_to_scrollup);
 
@@ -82,7 +82,7 @@ const Footer = (() => {
                 window.addEventListener('resize', () => {
                     adjustElevioAndScrollup($dialog_notification.height() + gap_dialog_to_elevio,
                         $dialog_notification.height() + gap_dialog_to_elevio + gap_elevio_to_scrollup);
-                    $status_notification.css('bottom', `${$dialog_notification.height()}px`);
+                    $status_notification.css('bottom', `${$dialog_notification.height() + gap_dialog_to_elevio}px`);
                 });
             }
         });
