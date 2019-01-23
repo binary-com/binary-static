@@ -584,8 +584,9 @@ const TickDisplay = (() => {
                 subscribe         = 'true';
             } else if (!/^(tickhigh|ticklow)_/i.test(contract.shortcode) && contract.exit_tick_time && +contract.exit_tick_time < +contract.date_expiry) {
                 request.end = contract.exit_tick_time;
-            } else if (!/^(runhigh|runlow)/i.test(contract.shortcode) && contract.exit_tick_time) {
-                request.end = contract.exit_tick_time;
+            } else if (!/^(runhigh|runlow)$/i.test(contract.contract_category)) {
+                request.subscribe = 1;
+                request.end       = contract.exit_tick_time || 'latest';
             } else {
                 request.end = contract.date_expiry;
             }
