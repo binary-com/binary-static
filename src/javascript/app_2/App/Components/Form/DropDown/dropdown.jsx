@@ -30,6 +30,11 @@ class Dropdown extends React.Component {
         document.removeEventListener('mousedown', this.handleClickOutside);
     }
 
+    isSingleOption = isArrayLike(this.props.list) ?
+        !!(this.props.list.length < 2)
+        :
+        !!(Object.keys(this.props.list).length < 2);
+
     handleSelect = (item) => {
         if (item.value !== this.props.value) {
             this.props.onChange({ target: { name: this.props.name, value: item.value } });
@@ -37,7 +42,25 @@ class Dropdown extends React.Component {
         this.handleVisibility();
     }
 
+    setWrapperRef = (node) => this.wrapper_ref = node;
+
+    scrollToggle = (state) => this.is_open = state;
+
+    handleClickOutside = (event) => {
+        if (this.wrapper_ref && !this.wrapper_ref.contains(event.target) && this.state.is_list_visible) {
+            this.setState({ is_list_visible: false });
+            this.scrollToggle(this.state.is_list_visible);
+        }
+    }
+
+    handleVisibility = () => {
+        if (this.isSingleOption) return;
+        this.setState({ is_list_visible: !this.state.is_list_visible });
+        this.scrollToggle(!this.state.is_list_visible);
+    }
+
     onKeyPressed = (event) => {
+        if (this.isSingleOption) return;
         if (event.keyCode === 9) { // Tab is pressed
             if (this.state.is_list_visible) {
                 this.handleVisibility();
@@ -91,22 +114,6 @@ class Dropdown extends React.Component {
         }
     }
 
-    setWrapperRef = (node) => this.wrapper_ref = node;
-
-    scrollToggle = (state) => this.is_open = state;
-
-    handleClickOutside = (event) => {
-        if (this.wrapper_ref && !this.wrapper_ref.contains(event.target) && this.state.is_list_visible) {
-            this.setState({ is_list_visible: false });
-            this.scrollToggle(this.state.is_list_visible);
-        }
-    }
-
-    handleVisibility = () => {
-        this.setState({ is_list_visible: !this.state.is_list_visible });
-        this.scrollToggle(!this.state.is_list_visible);
-    }
-
     render() {
         if (this.props.is_nativepicker) {
             return (
@@ -122,22 +129,23 @@ class Dropdown extends React.Component {
             <div
                 ref={this.setWrapperRef}
                 className={classNames('dropdown-container', this.props.className, {
-                    'dropdown-container--show': this.state.is_list_visible,
+                    'dropdown-container--show'    : this.state.is_list_visible,
+                    'dropdown-container--disabled': this.isSingleOption,
                 })}
             >
                 <div
                     className={classNames('dropdown__display', {
                         'dropdown__display--clicked': this.state.is_list_visible,
                     })}
+                    tabIndex={this.isSingleOption ? '-1' : '0'}
                     onClick={this.handleVisibility}
-                    tabIndex='0'
                     onKeyDown={this.onKeyPressed}
                 >
                     <span name={this.props.name} value={this.props.value}>
                         {getDisplayText(this.props.list, this.props.value)}
                     </span>
                 </div>
-                <IconArrow className='select-arrow' />
+                {!this.isSingleOption && <IconArrow className='select-arrow' />}
                 <CSSTransition
                     in={this.state.is_list_visible}
                     timeout={100}
