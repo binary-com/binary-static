@@ -120,10 +120,10 @@ const Duration = ({
             icon='trade-duration'
         >
             <Dropdown
+                is_alignment_left
                 is_nativepicker={is_nativepicker}
                 list={expiry_list}
                 name='expiry_type'
-                position='left'
                 value={expiry_type}
                 onChange={onChange}
             />
@@ -132,6 +132,7 @@ const Duration = ({
                 <React.Fragment>
                     <div className='duration-container'>
                         <Dropdown
+                            is_alignment_left
                             is_nativepicker={is_nativepicker}
                             list={duration_units_list}
                             name='duration_unit'

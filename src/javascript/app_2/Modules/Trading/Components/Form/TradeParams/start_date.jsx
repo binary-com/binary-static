@@ -42,6 +42,7 @@ const StartDate = ({
             icon='start-time'
         >
             <Dropdown
+                is_alignment_left
                 is_nativepicker={is_nativepicker}
                 list={start_dates_list}
                 name='start_date'

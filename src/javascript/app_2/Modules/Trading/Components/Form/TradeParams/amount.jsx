@@ -49,6 +49,7 @@ const Amount = ({
         >
             <div className={amount_container_class}>
                 <Dropdown
+                    is_alignment_left
                     is_nativepicker={is_nativepicker}
                     list={basis_list}
                     name='basis'
@@ -58,6 +59,7 @@ const Amount = ({
                 />
                 {!is_single_currency &&
                     <Dropdown
+                        is_alignment_left
                         is_nativepicker={is_nativepicker}
                         list={currencies_list}
                         name='currency'

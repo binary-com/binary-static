@@ -149,7 +149,7 @@ class Dropdown extends React.Component {
                     unmountOnExit
                 >
                     <div className={classNames('dropdown__list', {
-                        'dropdown__list--left': this.props.position === 'left',
+                        'dropdown__list--left': this.props.is_alignment_left,
                     })}
                     >
                         <div className='list'>
@@ -187,15 +187,15 @@ class Dropdown extends React.Component {
 // ToDo: Refactor Drop-down.
 // It's now too risky to refactor Dropdown for 'list' and 'value' prop types.
 Dropdown.propTypes = {
-    className      : PropTypes.string,
-    is_nativepicker: PropTypes.bool,
-    list           : PropTypes.oneOfType([
+    className        : PropTypes.string,
+    is_alignment_left: PropTypes.string,
+    is_nativepicker  : PropTypes.bool,
+    list             : PropTypes.oneOfType([
         PropTypes.array,
         PropTypes.object,
     ]),
     name    : PropTypes.string,
     onChange: PropTypes.func,
-    position: PropTypes.string,
     type    : PropTypes.string,
     value   : PropTypes.oneOfType([
         PropTypes.number,
