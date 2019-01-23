@@ -31,10 +31,13 @@ const Footer = (() => {
     };
 
     // by default elevio is 8px above bottom of page, and scrollup is 18px above elevio
-    const adjustElevioAndScrollup = (elevio_height = 8, scrollup_height = 18) => {
+    const adjustNotifElevioAndScrollup = (elevio_height = 8, scrollup_height = 18, status_height = 8) => {
         const $elevio_button = $('#_elev_io ._6byvm');
         const $scrollup = $('#scrollup');
+        const $status_notification = $('#status_notification');
+        
         $elevio_button.attr('style', `bottom: ${elevio_height}px !important`);
+        $status_notification.attr('style', `bottom: ${status_height}px !important`);
         $scrollup.attr('style', `bottom: ${$elevio_button.height() + scrollup_height}px`);
     };
 
@@ -44,7 +47,7 @@ const Footer = (() => {
 
         el_footer.style.paddingBottom = '0px';
         $dialog_notification.slideUp(200);
-        adjustElevioAndScrollup();
+        adjustNotifElevioAndScrollup();
     };
 
     const displayDialogMessage = () => {
@@ -58,18 +61,19 @@ const Footer = (() => {
 
                 $dialog_notification.css('display', 'flex');
                 el_footer.style.paddingBottom = `${$dialog_notification.height()}px`;
-                adjustElevioAndScrollup($dialog_notification.height() + gap_dialog_to_elevio,
-                    $dialog_notification.height() + gap_dialog_to_elevio + gap_elevio_to_scrollup);
+                adjustNotifElevioAndScrollup($dialog_notification.height() + gap_dialog_to_elevio,
+                    $dialog_notification.height() + gap_dialog_to_elevio + gap_elevio_to_scrollup,
+                    $dialog_notification.height() + gap_dialog_to_elevio);
 
                 el_dialog_notification_accept
                     .addEventListener('click', () => {
-                        adjustElevioAndScrollup();
+                        adjustNotifElevioAndScrollup();
                         $dialog_notification.slideUp(200);
                         el_footer.style.paddingBottom = '0px';
                         Cookies.set('CookieConsent', 1);
                     });
                 window.addEventListener('resize', () => {
-                    adjustElevioAndScrollup($dialog_notification.height() + gap_dialog_to_elevio,
+                    adjustNotifElevioAndScrollup($dialog_notification.height() + gap_dialog_to_elevio,
                         $dialog_notification.height() + gap_dialog_to_elevio + gap_elevio_to_scrollup);
                 });
             }
