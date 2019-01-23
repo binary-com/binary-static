@@ -125,11 +125,6 @@ const FinancialAssessment = (() => {
             $.scrollTo($('h1#heading'), 500, { offset: -10 });
             $(form_selector).setVisibility(0);
             $('#msg_main').setVisibility(1);
-            BinarySocket.send({ get_account_status: 1 }).then((response_status) => {
-                if (+response_status.get_account_status.prompt_client_to_authenticate && Client.isAccountOfType('financial')) {
-                    $('#msg_authenticate').setVisibility(1);
-                }
-            });
         } else {
             $('#msg_form')
                 .attr('class', is_success ? 'success-msg' : 'errorfield')
