@@ -128,7 +128,7 @@ div.contracts-popup-container {
             }
         }
     }
-    .contracts-popup-list, .trade-type-info-popup {
+    .contracts-popup-list {
         right: 4px;
         width: 100%;
         pointer-events: none;
@@ -140,7 +140,7 @@ div.contracts-popup-container {
         height: 0;
         z-index: 999;
 
-        .list-container, .trade-type-info {
+        .list-container {
             position: absolute;
             width: 290px;
             right: calc(100% + 10px);
@@ -273,6 +273,19 @@ div.contracts-popup-container {
             .info-choose {
                 background: $COLOR_LIGHT_ORANGE;
                 color: $COLOR_WHITE;
+            }
+            .info-pagination {
+                margin: 0 auto;
+
+                .circle-button {
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    display: inline-block;
+                    margin: 0 5px;
+                    background-color: $COLOR_WHITE;
+                    cursor: pointer;
+                }
             }
         }
         &-enter, &-exit {

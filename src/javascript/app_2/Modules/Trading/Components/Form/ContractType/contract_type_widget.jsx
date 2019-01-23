@@ -44,6 +44,34 @@ class ContractTypeWidget extends React.PureComponent {
         this.handleVisibility();
     };
 
+    handlePaginationClick = (item) => {
+        this.setState({ item });
+    };
+
+    handleNextClick = (paginationList) => {
+        const paginationLength = paginationList.length;
+        const item = this.state.item;
+        const currentIndex = paginationList.findIndex((list_item) => list_item.value === item.value);
+        const nextIndex = currentIndex + 1;
+        if (nextIndex < paginationLength) {
+            this.handlePaginationClick(paginationList[nextIndex]);
+        } else {
+            this.handlePaginationClick(paginationList[0]);
+        }
+    };
+
+    handlePrevClick = (paginationList) => {
+        const paginationLength = paginationList.length;
+        const item = this.state.item;
+        const currentIndex = paginationList.findIndex((list_item) => list_item.value === item.value);
+        const prevIndex = currentIndex - 1;
+        if (prevIndex > -1) {
+            this.handlePaginationClick(paginationList[prevIndex]);
+        } else {
+            this.handlePaginationClick(paginationList[paginationLength - 1]);
+        }
+    };
+
     setWrapperRef = (node) => {
         this.wrapper_ref = node;
     };
@@ -135,9 +163,13 @@ class ContractTypeWidget extends React.PureComponent {
                     is_mobile={this.props.is_mobile}
                 >
                     <TradeTypeInfoItem
+                        list={this.props.list}
                         item={this.state.item}
                         onBackButtonClick={this.onBackButtonClick}
                         onSubmitButtonClick={this.onSubmitButtonClick}
+                        handlePaginationClick={this.handlePaginationClick}
+                        handleNextClick={this.handleNextClick}
+                        handlePrevClick={this.handlePrevClick}
                     />
                 </TradeTypeInfoDialog>
             </div>
