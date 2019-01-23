@@ -8,6 +8,7 @@
     }
     span.tooltip {
         display: inline-block;
+        width: 100%;
     }
     i {
         position: relative;
@@ -180,7 +181,6 @@
         }
         .tooltip {
             display: inline-block;
-            width: 100%;
         }
         input {
             color: $COLOR_WHITE;

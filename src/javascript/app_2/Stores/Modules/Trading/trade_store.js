@@ -67,6 +67,11 @@ export default class TradeStore extends BaseStore {
     @observable expiry_type          = 'duration';
     @observable is_advanced_duration = false;
 
+    @observable advanced_duration      = 5;
+    @observable advanced_duration_unit = 't';
+    @observable simple_duration        = 5;
+    @observable simple_duration_unit   = 't';
+
     // Barrier
     @observable barrier_1     = '';
     @observable barrier_2     = '';
@@ -454,6 +459,40 @@ export default class TradeStore extends BaseStore {
         }
     }
 
+    @action.bound
+    onChangeDuration(e) {
+        const { value, name } = e.target;
+        const new_state = { [name]: value };
+
+        if (this.duration_units_list.length === 1 && this.duration_unit === 'd') {
+            if (value) new_state.advanced_duration_unit = '';
+            else new_state.simple_duration_unit = 'd';
+        }
+        if (name === 'simple_duration' || name === 'advanced_duration') {
+            new_state.duration = value;
+        }
+        if (name === 'simple_duration_unit' || name === 'advanced_duration_unit') {
+            new_state.duration_unit = value;
+        }
+        if (name === 'is_advanced_duration') {
+            if (value) { // advanced
+                new_state.duration = this.advanced_duration;
+                new_state.duration_unit = this.advanced_duration_unit;
+            } else { // simple
+                if (this.expiry_type !== 'duration') {
+                    new_state.expiry_type = 'duration'; // simple duration only has duration expiry_type
+                }
+                if (this.duration_units_list.length > 1 && this.simple_duration_unit !== 't' && this.simple_duration_unit !== 'm') {
+                    new_state.simple_duration_unit = 't';
+                }
+                new_state.duration = this.simple_duration;
+                new_state.duration_unit = this.simple_duration_unit;
+            }
+        }
+
+        this.processNewValuesAsync(new_state, true);
+    }
+    
     @action.bound
     accountSwitcherListener() {
         return new Promise(async (resolve) => {

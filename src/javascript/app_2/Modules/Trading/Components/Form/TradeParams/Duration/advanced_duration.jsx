@@ -21,9 +21,10 @@ let now_date,
     start_date_time;
 
 const AdvancedDuration = ({
+    advanced_duration,
+    advanced_duration_unit,
     contract_expiry_type,
     duration_min_max,
-    duration_unit,
     duration_units_list,
     expiry_date,
     expiry_list,
@@ -42,8 +43,8 @@ const AdvancedDuration = ({
         const moment_now  = toMoment(server_time);
         const new_min_day = convertDurationUnit(duration_min_max[contract_expiry_type].min, 's', 'd');
         const new_max_day = convertDurationUnit(duration_min_max[contract_expiry_type].max, 's', 'd');
-        if (!now_date || moment_now.date() !== now_date.date() || (duration_unit === 'd' && (min_day !== new_min_day || max_day !== new_max_day))) {
-            if (duration_unit === 'd') {
+        if (!now_date || moment_now.date() !== now_date.date() || (advanced_duration_unit === 'd' && (min_day !== new_min_day || max_day !== new_max_day))) {
+            if (advanced_duration_unit === 'd') {
                 min_day = new_min_day;
                 max_day = new_max_day;
             }
@@ -87,14 +88,14 @@ const AdvancedDuration = ({
                         {duration_units_list.length > 1 &&
                             <Dropdown
                                 list={duration_units_list}
-                                value={duration_unit}
-                                name='duration_unit'
+                                value={advanced_duration_unit}
+                                name='advanced_duration_unit'
                                 onChange={onChange}
                                 is_nativepicker={is_nativepicker}
                             />
                         }
-                        { duration_unit === 't' && <RangeSlider ticks={10} {...shared_input_props} /> }
-                        { duration_unit !== 't' && <InputField {...number_input_props} {...shared_input_props} />}
+                        { advanced_duration_unit === 't' && <RangeSlider value={advanced_duration} name='advanced_duration' ticks={10} {...shared_input_props} /> }
+                        { advanced_duration_unit !== 't' && <InputField value={advanced_duration} name='advanced_duration' {...number_input_props} {...shared_input_props} />}
                     </div>
                 </Fragment> :
                 <Fragment>
@@ -133,11 +134,16 @@ const AdvancedDuration = ({
 };
 
 AdvancedDuration.propTypes = {
-    contract_expiry_type: PropTypes.string,
-    duration_min_max    : PropTypes.object,
-    duration_unit       : PropTypes.string,
-    duration_units_list : MobxPropTypes.arrayOrObservableArray,
-    expiry_date         : PropTypes.oneOfType([
+    advanced_duration: PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
+    ]),
+    advanced_duration_unit: PropTypes.string,
+    contract_expiry_type  : PropTypes.string,
+    duration_min_max      : PropTypes.object,
+    duration_unit         : PropTypes.string,
+    duration_units_list   : MobxPropTypes.arrayOrObservableArray,
+    expiry_date           : PropTypes.oneOfType([
         PropTypes.string,
         PropTypes.number,
     ]),

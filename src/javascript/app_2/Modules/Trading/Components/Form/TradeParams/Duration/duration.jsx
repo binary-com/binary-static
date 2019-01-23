@@ -17,6 +17,8 @@ const expiry_list = [
 ];
 
 const Duration = ({
+    advanced_duration,
+    advanced_duration_unit,
     contract_expiry_type,
     duration,
     duration_unit,
@@ -26,11 +28,14 @@ const Duration = ({
     expiry_time,
     expiry_type,
     onChange,
+    onChangeDuration,
     is_advanced_duration,
     is_minimized,
     is_nativepicker,
     server_time,
     sessions,
+    simple_duration,
+    simple_duration_unit,
     start_date,
     start_time,
     validation_errors,
@@ -59,13 +64,17 @@ const Duration = ({
         );
     }
 
+    let max_value, min_value;
+    if (duration_min_max[contract_expiry_type]) {
+        max_value = convertDurationLimit(+duration_min_max[contract_expiry_type].max, duration_unit);
+        min_value = convertDurationLimit(+duration_min_max[contract_expiry_type].min, duration_unit);
+    }
+
     const props = {
         shared_input: {
-            max_value: convertDurationLimit(+duration_min_max[contract_expiry_type].max, duration_unit),
-            min_value: convertDurationLimit(+duration_min_max[contract_expiry_type].min, duration_unit),
-            onChange,
-            value    : duration,
-            name     : 'duration',
+            max_value,
+            min_value,
+            onChange: onChangeDuration,
         },
         number_input: {
             type            : 'number',
@@ -78,14 +87,22 @@ const Duration = ({
     const has_toggle = expiry_list.length > 1 || duration_units_list.length > 1;
     return (
         <Fieldset className={'position-relative'}>
-            { !has_toggle && <RangeSlider {...props.shared_input} ticks={10} /> }
+            { !has_toggle &&
+                <RangeSlider
+                    {...props.shared_input}
+                    ticks={10}
+                    value={simple_duration}
+                    name='simple_duration'
+                />
+            }
             { has_toggle &&
                 <Fragment>
                     { is_advanced_duration &&
                         <AdvancedDuration
                             contract_expiry_type={contract_expiry_type}
+                            advanced_duration={advanced_duration}
                             duration_min_max={duration_min_max}
-                            duration_unit={duration_unit}
+                            advanced_duration_unit={advanced_duration_unit}
                             duration_units_list={duration_units_list}
                             expiry_date={expiry_date}
                             expiry_list={expiry_list}
@@ -93,7 +110,7 @@ const Duration = ({
                             expiry_type={expiry_type}
                             is_nativepicker={is_nativepicker}
                             number_input_props={props.number_input}
-                            onChange={onChange}
+                            onChange={onChangeDuration}
                             server_time={server_time}
                             sessions={sessions}
                             shared_input_props={props.shared_input}
@@ -102,16 +119,17 @@ const Duration = ({
                         /> }
                     { !is_advanced_duration &&
                         <SimpleDuration
-                            duration_unit={duration_unit}
+                            simple_duration={simple_duration}
+                            simple_duration_unit={simple_duration_unit}
                             duration_units_list={duration_units_list}
                             number_input_props={props.number_input}
                             shared_input_props={props.shared_input}
                             expiry_type={expiry_type}
-                            onChange={onChange}
+                            onChange={onChangeDuration}
                         /> }
                     <DurationToggle
                         name={'is_advanced_duration'}
-                        onChange={onChange}
+                        onChange={onChangeDuration}
                         value={is_advanced_duration}
                     />
                 </Fragment>
@@ -122,8 +140,13 @@ const Duration = ({
 
 // ToDo: Refactor Duration.jsx and date_picker.jsx
 Duration.propTypes = {
-    contract_expiry_type: PropTypes.string,
-    duration            : PropTypes.oneOfType([
+    advanced_duration: PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
+    ]),
+    advanced_duration_unit: PropTypes.string,
+    contract_expiry_type  : PropTypes.string,
+    duration              : PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
     ]),
@@ -140,8 +163,14 @@ Duration.propTypes = {
     is_minimized        : PropTypes.bool,
     is_nativepicker     : PropTypes.bool,
     onChange            : PropTypes.func,
+    onChangeDuration    : PropTypes.func,
     server_time         : PropTypes.object,
     sessions            : MobxPropTypes.arrayOrObservableArray,
+    simple_duration     : PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
+    ]),
+    simple_duration_unit: PropTypes.string,
     start_date          : PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
