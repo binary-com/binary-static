@@ -437,7 +437,7 @@ const ViewPopup = (() => {
         'reset'           : 'reset',
         '(call|put)spread': 'callputspread',
         'tick(high|low)'  : 'highlowticks',
-        'runs'            : 'runs',
+        'run(high|low)'   : 'runs',
         'call|put'        : () => +contract.entry_tick === +contract.barrier ? 'risefall' : 'higherlower',
     };
 
