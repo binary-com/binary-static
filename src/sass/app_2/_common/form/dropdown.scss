@@ -28,6 +28,30 @@
             }
         }
     }
+    .select-arrow {
+        display: inline-block;
+        font-style: normal;
+        vertical-align: baseline;
+        text-align: center;
+        text-transform: none;
+        text-rendering: optimizeLegibility;
+        position: absolute;
+        pointer-events: none;
+        top: 9px;
+        right: 6px;
+        line-height: 1;
+        transition: transform 0.2s ease;
+        transform: rotate(0deg);
+        transform-origin: 50% 45%;
+        color: $COLOR_GRAY;
+        font-size: 1.1rem;
+
+        &:before {
+            content: '\002303';
+            display: block;
+            height: 0.53em; // center content glyph
+        }
+    }
     &:active, &:focus, &--show {
         outline: none;
         border-radius: $BORDER_RADIUS;
@@ -40,7 +64,7 @@
         border-color: $COLOR_BLUE;
     }
     &--show > .select-arrow {
-        transform: rotate(180deg);
+        transform: rotate(-90deg);
     }
     .dropdown__list {
         left: 0;
@@ -126,30 +150,6 @@
                 transform: scale(1, 1) translateX(0);
                 opacity: 1;
             }
-        }
-    }
-    .select-arrow {
-        display: inline-block;
-        font-style: normal;
-        vertical-align: baseline;
-        text-align: center;
-        text-transform: none;
-        text-rendering: optimizeLegibility;
-        position: absolute;
-        pointer-events: none;
-        top: 9px;
-        right: 6px;
-        line-height: 1;
-        transition: transform 0.2s ease;
-        transform: rotate(0deg);
-        transform-origin: 50% 45%;
-        color: $COLOR_GRAY;
-        font-size: 1.1rem;
-
-        &:before {
-            content: '\002303';
-            display: block;
-            height: 0.53em; // center content glyph
         }
     }
 }
