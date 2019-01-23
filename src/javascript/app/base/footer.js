@@ -62,14 +62,13 @@ const Footer = (() => {
                 const gap_elevio_to_scrollup = 10;
                 const gap_to_notification = 8;
 
-                if ($status_notification.css('display') !== 'none') {
-                    $status_notification.css('bottom', `${$dialog_notification.height() + gap_dialog_to_elevio}px`);
-                }
-
                 $dialog_notification.css('display', 'flex');
                 el_footer.style.paddingBottom = `${$dialog_notification.height()}px`;
                 adjustElevioAndScrollup($dialog_notification.height() + gap_dialog_to_elevio,
                     $dialog_notification.height() + gap_dialog_to_elevio + gap_elevio_to_scrollup);
+                if ($status_notification.css('display') !== 'none') {
+                    $status_notification.css('bottom', `${$dialog_notification.height() + gap_dialog_to_elevio}px`);
+                }
 
                 el_dialog_notification_accept
                     .addEventListener('click', () => {
@@ -96,17 +95,17 @@ const Footer = (() => {
             const $status_notification = $('#status_notification');
             const time_difference = (parseInt(response.time) - (parseInt(notification_storage.close_time) || 0));
             const required_difference = 30 * 60;
+            const gap_dialog_to_elevio = 30;
 
             if (time_difference > required_difference || notification_storage.message !== message) {
                 const $status_message_text = $('#status_notification_text');
                 const $close_icon = $('#status_notification_close');
 
-                if ($dialog_notification.css('display') !== 'none') {
-                    $status_notification.css('bottom', `${$dialog_notification.height()}px`);
-                }
-
                 $status_notification.css('display', 'flex');
                 $status_message_text.html(message);
+                if ($dialog_notification.css('display') !== 'none') {
+                    $status_notification.css('bottom', `${$dialog_notification.height() + gap_dialog_to_elevio}px`);
+                }
                 $close_icon
                     .off('click')
                     .on('click', () => {
