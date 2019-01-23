@@ -1,10 +1,8 @@
-import {
-    observer,
-    PropTypes as MobxPropTypes } from 'mobx-react';
-import PropTypes                 from 'prop-types';
-import React                     from 'react';
-import TimePickerDropdown        from './time_picker_dropdown.jsx';
-import InputField                from '../input_field.jsx';
+import { observer }       from 'mobx-react';
+import PropTypes          from 'prop-types';
+import React              from 'react';
+import TimePickerDropdown from './time_picker_dropdown.jsx';
+import InputField         from '../input_field.jsx';
 
 class TimePicker extends React.PureComponent {
     constructor (props) {

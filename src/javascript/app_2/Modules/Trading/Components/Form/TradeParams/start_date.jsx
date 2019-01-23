@@ -16,7 +16,6 @@ const StartDate = ({
     is_minimized,
     is_nativepicker,
     onChange,
-    sessions,
     start_date,
     start_dates_list,
     start_time,

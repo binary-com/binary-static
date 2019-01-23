@@ -1,5 +1,3 @@
-import { PropTypes as MobxPropTypes } from 'mobx-react';
-import moment                         from 'moment';
 import PropTypes                      from 'prop-types';
 import React                          from 'react';
 import { localize }                   from '_common/localize';
@@ -68,12 +66,7 @@ class TimePickerDropdown extends React.PureComponent {
     render() {
         const { preClass, value, toggle, start_time, end_time } = this.props;
         const start_time_moment     = start_time ? toMoment(start_time) : toMoment();
-        const end_time_moment       = end_time ? toMoment(end_time)
-                                                : toMoment()
-                                                    .hour('23')
-                                                    .minute('59')
-                                                    .seconds('59')
-                                                    .milliseconds('999');
+        const end_time_moment       = end_time ? toMoment(end_time) : toMoment().hour('23').minute('59').seconds('59').milliseconds('999');
         const to_compare_moment     = toMoment();
         const [ hour, minute ]      = value.split(':');
         return (
@@ -139,15 +132,15 @@ class TimePickerDropdown extends React.PureComponent {
 }
 
 TimePickerDropdown.propTypes = {
-    className           : PropTypes.string,
-    end_time            : PropTypes.number,
-    is_clearable        : PropTypes.bool,
-    onChange            : PropTypes.func,
-    preClass            : PropTypes.string,
-    start_time          : PropTypes.number,
-    toggle              : PropTypes.func,
-    value               : PropTypes.string,
-    value_split         : PropTypes.bool,
+    className   : PropTypes.string,
+    end_time    : PropTypes.number,
+    is_clearable: PropTypes.bool,
+    onChange    : PropTypes.func,
+    preClass    : PropTypes.string,
+    start_time  : PropTypes.number,
+    toggle      : PropTypes.func,
+    value       : PropTypes.string,
+    value_split : PropTypes.bool,
 };
 
 export default TimePickerDropdown;

@@ -48,7 +48,6 @@ const Duration = ({
     is_minimized,
     is_nativepicker,
     server_time,
-    sessions,
     start_date,
     start_time,
     validation_errors,
