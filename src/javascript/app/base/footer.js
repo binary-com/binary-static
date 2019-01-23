@@ -49,7 +49,7 @@ const Footer = (() => {
         BinarySocket.wait('website_status', 'authorize', 'landing_company').then(() => {
             if (isEuCountry()) {
                 const $dialog_notification = $('#dialog_notification');
-                const el_dialog_notification_accept = getElementById('#dialog_notification_accept');
+                const el_dialog_notification_accept = getElementById('dialog_notification_accept');
                 const gap_dialog_to_elevio = 30;
                 const gap_elevio_to_scrollup = 10;
 
