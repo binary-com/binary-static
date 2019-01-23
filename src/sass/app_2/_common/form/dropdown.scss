@@ -1,3 +1,6 @@
+// Set the fixed width for dropdown list element when alignment is set to left
+$ALIGNMENT_LEFT_WIDTH: 128px;
+
 .dropdown-container {
     position: relative;
     margin: 8px 0 0;
@@ -64,7 +67,11 @@
         border-color: $COLOR_BLUE;
     }
     &--show > .select-arrow {
-        transform: rotate(-90deg);
+        transform: rotate(-180deg);
+
+        &--left {
+            transform: rotate(-90deg);
+        }
     }
     .dropdown__list {
         left: 0;
@@ -138,7 +145,8 @@
             opacity: 1;
         }
         &--left {
-            left: calc(-100% - 16px);
+            width: $ALIGNMENT_LEFT_WIDTH;
+            left: calc(-#{$ALIGNMENT_LEFT_WIDTH} - 16px);
             top: -1px;
 
             &.dropdown__list--enter, &.dropdown__list--exit {

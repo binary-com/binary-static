@@ -144,7 +144,12 @@ class Dropdown extends React.Component {
                         {getDisplayText(this.props.list, this.props.value)}
                     </span>
                 </div>
-                {!this.isSingleOption && <IconArrow className='select-arrow' />}
+                {
+                    !this.isSingleOption && <IconArrow className={classNames('select-arrow', {
+                        'select-arrow--left': this.props.is_alignment_left,
+                    })}
+                    />
+                }
                 <CSSTransition
                     in={this.state.is_list_visible}
                     timeout={100}

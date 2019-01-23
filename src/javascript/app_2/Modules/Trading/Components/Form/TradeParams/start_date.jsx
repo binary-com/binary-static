@@ -46,7 +46,6 @@ const StartDate = ({
                 is_nativepicker={is_nativepicker}
                 list={start_dates_list}
                 name='start_date'
-                position='left'
                 value={start_date}
                 onChange={onChange}
             />

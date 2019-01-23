@@ -136,7 +136,6 @@ const Duration = ({
                             is_nativepicker={is_nativepicker}
                             list={duration_units_list}
                             name='duration_unit'
-                            position='left'
                             value={duration_unit}
                             onChange={onChange}
                         />

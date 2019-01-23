@@ -53,17 +53,14 @@ const Amount = ({
                     is_nativepicker={is_nativepicker}
                     list={basis_list}
                     name='basis'
-                    position='left'
                     value={basis}
                     onChange={onChange}
                 />
                 {!is_single_currency &&
                     <Dropdown
-                        is_alignment_left
                         is_nativepicker={is_nativepicker}
                         list={currencies_list}
                         name='currency'
-                        position='left'
                         value={currency}
                         onChange={onChange}
                     />
