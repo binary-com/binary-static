@@ -81,8 +81,8 @@ export default class TradeStore extends BaseStore {
     @observable last_digit = 5;
 
     // Purchase
-    @observable proposal_info = {};
-    @observable purchase_info = {};
+    @observable proposal_info        = {};
+    @observable purchase_info        = {};
 
     // Chart
     chart_id = 1;
@@ -366,10 +366,13 @@ export default class TradeStore extends BaseStore {
 
     @action.bound
     onProposalResponse(response) {
-        const contract_type = response.echo_req.contract_type;
+        const contract_type           = response.echo_req.contract_type;
+        const prev_proposal_info      = getPropertyValue(this.proposal_info, contract_type) || {};
+        const obj_prev_contract_basis = getPropertyValue(prev_proposal_info, 'obj_contract_basis') || {};
+
         this.proposal_info  = {
             ...this.proposal_info,
-            [contract_type]: getProposalInfo(this, response),
+            [contract_type]: getProposalInfo(this, response, obj_prev_contract_basis),
         };
 
         if (!this.smart_chart.is_contract_mode) {

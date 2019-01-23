@@ -78,6 +78,7 @@ const RangeSlider = ({
         </div>
     );
 };
+// Keypress events do not trigger on Safari due to the way it handles input type='range' elements, using focus on the input element also doesn't work for Safari.
 
 RangeSlider.propTypes = {
     className : PropTypes.string,
