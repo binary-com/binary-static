@@ -1,5 +1,6 @@
-import PropTypes from 'prop-types';
-import React     from 'react';
+import classNames from 'classnames';
+import PropTypes  from 'prop-types';
+import React      from 'react';
 
 const Items = ({
     items,
@@ -11,7 +12,10 @@ const Items = ({
     items.map((item, idx) => (
         <React.Fragment key={idx}>
             <div
-                className={`list__item ${ value === item.value ? 'list__item--selected' : ''} ${highlightedIdx === idx ? 'list__item--highlighted' : ''}`}
+                className={classNames('list__item', {
+                    'list__item--selected'   : value === item.value,
+                    'list__item--highlighted': highlightedIdx === idx,
+                })}
                 key={idx}
                 name={name}
                 value={item.value}
