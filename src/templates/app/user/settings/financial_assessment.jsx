@@ -1,5 +1,4 @@
 import React from 'react';
-import AuthenticateMessageFinancial from '../../_includes/authenticate_message_financial.jsx';
 import FinancialForm from '../../_includes/financial_form.jsx';
 import Loading from '../../../_common/components/loading.jsx';
 import { SubmitButton } from '../../../_common/components/forms.jsx';
