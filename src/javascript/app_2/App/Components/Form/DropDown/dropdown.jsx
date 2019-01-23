@@ -3,7 +3,7 @@ import { observer }      from 'mobx-react';
 import PropTypes         from 'prop-types';
 import React             from 'react';
 import { CSSTransition } from 'react-transition-group';
-import SimpleBar         from 'simplebar-react';
+import { Scrollbars }    from 'tt-react-custom-scrollbars';
 import { IconArrow }     from 'Assets/Common';
 import {
     getDisplayText,
@@ -153,7 +153,11 @@ class Dropdown extends React.Component {
                 >
                     <div className='dropdown-list'>
                         <div className='list-container'>
-                            <SimpleBar style={{ 'height': '100%' }}>
+                            <Scrollbars
+                                autoHeight
+                                autoHide
+                                autoHeightMax={200}
+                            >
                                 {isArrayLike(this.props.list) ?
                                     <Items
                                         highlightedIdx={this.state.curr_index}
@@ -175,7 +179,7 @@ class Dropdown extends React.Component {
                                         </React.Fragment>
                                     ))
                                 }
-                            </SimpleBar>
+                            </Scrollbars>
                         </div>
                     </div>
                 </CSSTransition>
