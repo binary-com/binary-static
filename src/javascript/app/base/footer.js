@@ -40,7 +40,9 @@ const Footer = (() => {
 
     const clearDialogMessage = () => {
         const $dialog_notification = $('#dialog_notification');
+        const el_footer = getElementById('footer');
 
+        el_footer.style.paddingBottom = '0px';
         $dialog_notification.slideUp(200);
         adjustElevioAndScrollup();
     };
@@ -50,10 +52,12 @@ const Footer = (() => {
             if (isEuCountry()) {
                 const $dialog_notification = $('#dialog_notification');
                 const el_dialog_notification_accept = getElementById('dialog_notification_accept');
+                const el_footer = getElementById('footer');
                 const gap_dialog_to_elevio = 30;
                 const gap_elevio_to_scrollup = 10;
 
                 $dialog_notification.css('display', 'flex');
+                el_footer.style.paddingBottom = `${$dialog_notification.height()}px`;
                 adjustElevioAndScrollup($dialog_notification.height() + gap_dialog_to_elevio,
                     $dialog_notification.height() + gap_dialog_to_elevio + gap_elevio_to_scrollup);
 
@@ -61,6 +65,7 @@ const Footer = (() => {
                     .addEventListener('click', () => {
                         adjustElevioAndScrollup();
                         $dialog_notification.slideUp(200);
+                        el_footer.style.paddingBottom = '0px';
                         Cookies.set('CookieConsent', 1);
                     });
                 window.addEventListener('resize', () => {
