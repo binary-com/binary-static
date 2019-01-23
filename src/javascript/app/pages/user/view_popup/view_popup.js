@@ -2,6 +2,7 @@ const moment         = require('moment');
 const ViewPopupUI    = require('./view_popup.ui');
 const Highchart      = require('../../trade/charts/highchart');
 const Callputspread  = require('../../trade/callputspread');
+const DigitDisplay   = require('../../trade/digit_trade');
 const Lookback       = require('../../trade/lookback');
 const Reset          = require('../../trade/reset');
 const TickDisplay    = require('../../trade/tick_trade');
@@ -29,9 +30,10 @@ const ViewPopup = (() => {
         $container,
         $loading;
 
-    const popupbox_id  = 'inpage_popup_content_box';
-    const wrapper_id   = 'sell_content_wrapper';
-    const hidden_class = 'invisible';
+    const popupbox_id   = 'inpage_popup_content_box';
+    const wrapper_id    = 'sell_content_wrapper';
+    const hidden_class  = 'invisible';
+    const id_tick_chart = 'tick_chart';
 
     const init = (button, onClose) => {
         btn_view             = button;
@@ -256,7 +258,13 @@ const ViewPopup = (() => {
             containerSetText('trade_details_message', contract.validation_error ? contract.validation_error : '&nbsp;');
         }
 
-        if (!chart_started && !contract.tick_count) {
+        const is_digit = /digit/i.test(contract.contract_type);
+        if (is_digit) {
+            if (!chart_started) {
+                DigitDisplay.init(id_tick_chart, contract);
+                chart_started = true;
+            }
+        } else if (!chart_started && !contract.tick_count) {
             if (!chart_init) {
                 chart_init = true;
                 Highchart.showChart(contract);
@@ -266,7 +274,7 @@ const ViewPopup = (() => {
                 chart_started = true;
             }
         } else if (contract.tick_count && !chart_updated) {
-            TickDisplay.updateChart({ id_render: 'tick_chart', request_ticks: !ticks_requested }, contract);
+            TickDisplay.updateChart({ id_render: id_tick_chart, request_ticks: !ticks_requested }, contract);
             ticks_requested = true;
             if ('barrier' in contract) {
                 chart_updated = true;
@@ -286,8 +294,13 @@ const ViewPopup = (() => {
         }
         if (is_ended) {
             contractEnded();
-            if (!contract.tick_count) Highchart.showChart(contract, 'update');
-            else TickDisplay.updateChart({ is_sold: true }, contract);
+            if (is_digit) {
+                DigitDisplay.end(contract);
+            } else if (!contract.tick_count) {
+                Highchart.showChart(contract, 'update');
+            } else {
+                TickDisplay.updateChart({ is_sold: true }, contract);
+            }
             containerSetText('trade_details_live_remaining', '-');
             Clock.setExternalTimer(); // stop timer
         } else {
@@ -587,6 +600,8 @@ const ViewPopup = (() => {
             barrier_text = localize('Selected Tick');
         }
 
+        const should_show_entry_spot = !Lookback.isLookback(contract.contract_type) && !/digit/i.test(contract.contract_type);
+
         $sections.find('#sell_details_table').append($(
             `<table>
             <tr id="contract_tabs"><th colspan="2" id="contract_information_tab">${localize('Contract Information')}</th></tr><tbody id="contract_information_content">
@@ -595,7 +610,7 @@ const ViewPopup = (() => {
             ${createRow(localize('Start Time'), '', 'trade_details_start_date', true)}
             ${createRow(localize('Purchase Time'), '', 'trade_details_purchase_time', true)}
             ${(!contract.tick_count ? createRow(localize('Remaining Time'), '', 'trade_details_live_remaining') : '')}
-            ${!Lookback.isLookback(contract.contract_type) ? createRow(localize('Entry Spot'), '', 'trade_details_entry_spot', 0, '<span></span>') : ''}
+            ${should_show_entry_spot ? createRow(localize('Entry Spot'), '', 'trade_details_entry_spot', 0, '<span></span>') : ''}
             ${createRow(barrier_text, '', 'trade_details_barrier', true)}
             ${Reset.isReset(contract.contract_type) ? createRow(localize('Reset Barrier'), '', 'trade_details_reset_barrier', true) : ''}
             ${(contract.barrier_count > 1 ? createRow(low_barrier_text, '', 'trade_details_barrier_low', true) : '')}
@@ -617,7 +632,7 @@ const ViewPopup = (() => {
             <div id="errMsg" class="notice-msg ${hidden_class}"></div>
             <div id="trade_details_bottom"><div id="contract_sell_wrapper" class="${hidden_class}"></div><div id="contract_sell_message"></div><div id="contract_win_status" class="${hidden_class}"></div></div>`));
 
-        $sections.find('#sell_details_chart_wrapper').html($('<div/>', { id: (contract.tick_count ? 'tick_chart' : 'analysis_live_chart'), class: 'live_chart_wrapper' }));
+        $sections.find('#sell_details_chart_wrapper').html($('<div/>', { id: (contract.tick_count ? id_tick_chart : 'analysis_live_chart'), class: 'live_chart_wrapper' }));
 
         $container.find(`#${wrapper_id}`)
             .append($sections.html())
