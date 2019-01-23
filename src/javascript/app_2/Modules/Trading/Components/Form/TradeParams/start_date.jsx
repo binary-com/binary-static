@@ -42,11 +42,12 @@ const StartDate = ({
             icon='start-time'
         >
             <Dropdown
-                name='start_date'
-                value={start_date}
-                list={start_dates_list}
-                onChange={onChange}
                 is_nativepicker={is_nativepicker}
+                list={start_dates_list}
+                name='start_date'
+                position='left'
+                value={start_date}
+                onChange={onChange}
             />
             {(!is_today && start_time) &&
                 <TimePicker

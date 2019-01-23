@@ -121,10 +121,14 @@ class Dropdown extends React.Component {
         return (
             <div
                 ref={this.setWrapperRef}
-                className={`dropdown-container ${this.props.className ? this.props.className : ''} ${this.state.is_list_visible ? 'show' : ''}`}
+                className={classNames('dropdown-container', this.props.className, {
+                    'dropdown-container--show': this.state.is_list_visible,
+                })}
             >
                 <div
-                    className={`dropdown-display ${this.state.is_list_visible ? 'clicked' : ''}`}
+                    className={classNames('dropdown__display', {
+                        'dropdown__display--clicked': this.state.is_list_visible,
+                    })}
                     onClick={this.handleVisibility}
                     tabIndex='0'
                     onKeyDown={this.onKeyPressed}
@@ -137,11 +141,15 @@ class Dropdown extends React.Component {
                 <CSSTransition
                     in={this.state.is_list_visible}
                     timeout={100}
-                    classNames={classNames('dropdown-list', this.props.position)}
+                    classNames={{
+                        enter    : 'dropdown__list--enter',
+                        enterDone: 'dropdown__list--enter--done',
+                        exit     : 'dropdown__list--exit',
+                    }}
                     unmountOnExit
                 >
-                    <div className={classNames('dropdown-list', this.props.position)}>
-                        <div className='list-container'>
+                    <div className={classNames('dropdown__list', this.props.position)}>
+                        <div className='list'>
                             <SimpleBar style={{ 'height': '100%' }}>
                                 {isArrayLike(this.props.list) ?
                                     <Items
@@ -153,7 +161,7 @@ class Dropdown extends React.Component {
                                     /> :
                                     Object.keys(this.props.list).map(key => (
                                         <React.Fragment key={key}>
-                                            <div className='list-label'><span>{key}</span></div>
+                                            <div className='list__label'><span>{key}</span></div>
                                             <Items
                                                 highlightedIdx={this.state.curr_index}
                                                 items={this.props.list[key]}

@@ -49,19 +49,21 @@ const Amount = ({
         >
             <div className={amount_container_class}>
                 <Dropdown
-                    list={basis_list}
-                    value={basis}
-                    name='basis'
-                    onChange={onChange}
                     is_nativepicker={is_nativepicker}
+                    list={basis_list}
+                    name='basis'
+                    position='left'
+                    value={basis}
+                    onChange={onChange}
                 />
                 {!is_single_currency &&
                     <Dropdown
-                        list={currencies_list}
-                        value={currency}
-                        name='currency'
-                        onChange={onChange}
                         is_nativepicker={is_nativepicker}
+                        list={currencies_list}
+                        name='currency'
+                        position='left'
+                        value={currency}
+                        onChange={onChange}
                     />
                 }
                 <InputField

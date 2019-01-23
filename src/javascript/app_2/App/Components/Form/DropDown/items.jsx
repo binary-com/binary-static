@@ -11,7 +11,7 @@ const Items = ({
     items.map((item, idx) => (
         <React.Fragment key={idx}>
             <div
-                className={`list-item ${ value === item.value ? 'selected' : ''} ${highlightedIdx === idx ? 'highlighted' : ''}`}
+                className={`list__item ${ value === item.value ? 'list__item--selected' : ''} ${highlightedIdx === idx ? 'list__item--highlighted' : ''}`}
                 key={idx}
                 name={name}
                 value={item.value}
