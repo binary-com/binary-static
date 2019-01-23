@@ -1,18 +1,19 @@
-import PropTypes                  from 'prop-types';
-import React                      from 'react';
-import { localize }               from '_common/localize';
-import { isEmptyObject }          from '_common/utility';
-import { PopConfirm }             from 'App/Components/Elements/PopConfirm';
-import UILoader                   from 'App/Components/Elements/ui_loader.jsx';
-import Button                     from 'App/Components/Form/button.jsx';
-import Fieldset                   from 'App/Components/Form/fieldset.jsx';
-import { connect }                from 'Stores/connect';
-import ContractInfo               from '../Components/Form/Purchase/contract_info.jsx';
-import MessageBox                 from '../Components/Form/Purchase/MessageBox';
-import PurchaseLock               from '../Components/Form/Purchase/PurchaseLock';
+import PropTypes         from 'prop-types';
+import React             from 'react';
+import { localize }      from '_common/localize';
+import { isEmptyObject } from '_common/utility';
+import Money             from 'App/Components/Elements/money.jsx';
+import { PopConfirm }    from 'App/Components/Elements/PopConfirm';
+import UILoader          from 'App/Components/Elements/ui_loader.jsx';
+import Button            from 'App/Components/Form/button.jsx';
+import Fieldset          from 'App/Components/Form/fieldset.jsx';
+import { IconTradeType } from 'Assets/Trading/Types';
+import { connect }       from 'Stores/connect';
+import ContractInfo      from '../Components/Form/Purchase/contract_info.jsx';
+import MessageBox        from '../Components/Form/Purchase/MessageBox';
+import PurchaseLock      from '../Components/Form/Purchase/PurchaseLock';
 
 const Purchase = ({
-    barrier_count,
     currency,
     is_client_allowed_to_visit,
     is_purchase_confirm_on,
@@ -35,12 +36,28 @@ const Purchase = ({
             <Button
                 is_disabled={is_disabled}
                 id={`purchase_${type}`}
-                className='primary green'
+                className='primary green btn-purchase'
                 has_effect
-                text={localize('Purchase')}
                 onClick={() => { onClickPurchase(info.id, info.stake, type); }}
                 wrapperClassName='submit-section'
-            />
+            >
+                <React.Fragment>
+                    <div className='btn-purchase__effect-main' />
+                    <div className='btn-purchase__effect-detail' />
+                    <div className='btn-purchase__content'>
+                        <div className='btn-purchase__trade-type'>
+                            <IconTradeType type={type.toLowerCase()} />
+                            <span>{localize('[_1]', trade_types[type])}</span>
+                        </div>
+                    </div>
+                    <div className='btn-purchase__info'>
+                        <div className='btn-purchase__return'>{is_disabled ? '---,-' : info.returns}</div>
+                        <div className='btn-purchase__profit'>
+                            {is_disabled ? '--,--' : <Money amount={info.profit} currency={currency} />}
+                        </div>
+                    </div>
+                </React.Fragment>
+            </Button>
         );
 
         const is_purchase_error = (!isEmptyObject(purchase_info) && purchase_info.echo_req.buy === info.id);
@@ -67,11 +84,9 @@ const Purchase = ({
                         <UILoader />
                         }
                         <ContractInfo
-                            barrier_count={barrier_count}
-                            contract_title={trade_types[type]}
-                            contract_type={type}
                             currency={currency}
                             proposal_info={info}
+                            has_increased={info.has_increased}
                         />
                         {is_purchase_confirm_on ?
                             <PopConfirm
@@ -93,7 +108,6 @@ const Purchase = ({
 );
 
 Purchase.propTypes = {
-    barrier_count             : PropTypes.number,
     currency                  : PropTypes.string,
     is_client_allowed_to_visit: PropTypes.bool,
     is_purchase_confirm_on    : PropTypes.bool,
@@ -113,7 +127,6 @@ export default connect(
     ({ client, modules, ui }) => ({
         currency                  : client.currency,
         is_client_allowed_to_visit: client.is_client_allowed_to_visit,
-        barrier_count             : modules.trade.barrier_count,
         is_purchase_enabled       : modules.trade.is_purchase_enabled,
         is_trade_enabled          : modules.trade.is_trade_enabled,
         onClickPurchase           : modules.trade.onPurchase,
