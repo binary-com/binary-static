@@ -63,7 +63,7 @@ const Footer = (() => {
                 const gap_to_notification = 8;
 
                 if ($status_notification.css('display') !== 'none') {
-                    $status_notification.css('bottom', `${$dialog_notification.height()}px`);
+                    $status_notification.css('bottom', `${$dialog_notification.height() + gap_dialog_to_elevio}px`);
                 }
 
                 $dialog_notification.css('display', 'flex');
