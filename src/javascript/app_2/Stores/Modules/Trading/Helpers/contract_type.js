@@ -306,20 +306,19 @@ const ContractType = (() => {
     // It has to follow the correct order of checks:
     // first check if end time is within available sessions
     // then confirm that end time is at least 5 minute after start time
-    const getExpiryTime = async (
-        sessions,
-        start_date,
-        start_time,
+    const getExpiryTime = (
         expiry_date,
         expiry_time,
         expiry_type,
-        symbol
+        market_close_times,
+        sessions,
+        start_date,
+        start_time
     ) => {
         let end_time = null;
 
         if (expiry_type === 'endtime') {
             let market_close_time = '23:59:59';
-            const market_close_times = await getTradingTimes(expiry_date, symbol);
 
             if (market_close_times && market_close_times.length && market_close_times[0] !== '--') {
                 // Some of underlyings (e.g. Australian Index) have two close time during a day so we always select the further one as the end time of the contract.
