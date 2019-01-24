@@ -501,7 +501,7 @@ export default class TradeStore extends BaseStore {
         const { value, name }  = e.target;
         const new_state        = {
             [name]: value,
-            // don't update trade_store if new value is the same as current value
+            // prevents the update of trade_store if new value is the same as current value
             set(trade_store, prop, val) {
                 if (trade_store[prop] !== val) this[prop] = val;
             },
