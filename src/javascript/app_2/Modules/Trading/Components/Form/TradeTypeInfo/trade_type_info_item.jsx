@@ -16,12 +16,14 @@ const ContractTypeItem = ({
     paginationList,
 }) => (
     <React.Fragment>
-        {!is_mobile && <div className='info-header'>
+        {!is_mobile &&
+        <div className='info-header'>
             <span onClick={() => onBackButtonClick()}>
                 <IconBack />
             </span>
             <span className='title'>{item.text}</span>
-        </div>}
+        </div>
+        }
         <div className='info-gif'>
             gif explanation
         </div>
