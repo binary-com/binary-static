@@ -70,7 +70,7 @@ export default class TradeStore extends BaseStore {
     // Advanced / simple duration
     @observable advanced_duration      = 5;
     @observable advanced_duration_unit = 't';
-    @observable advanced_expiry_type   = '';
+    @observable advanced_expiry_type   = 'duration';
     @observable simple_duration        = 5;
     @observable simple_duration_unit   = 't';
 
@@ -141,6 +141,12 @@ export default class TradeStore extends BaseStore {
                 this.changeAllowEquals();
             },
             { delay: 500 }
+        );
+        reaction(
+            () => [ this.contract_type, this.duration_units_list ],
+            () => {
+                this.changeDuration();
+            },
         );
     }
 
@@ -465,54 +471,60 @@ export default class TradeStore extends BaseStore {
     }
 
     @action.bound
-    onChangeDuration(e) {
-        const { value, name } = e.target;
-        const new_state = { [name]: value };
+    changeDuration() {
+        const new_state                    = {};
+        const contract_only_has_days       = this.duration_units_list.length === 1 && this.duration_unit === 'd';
+        const should_reset_simple_to_ticks = this.duration_units_list.length > 1 && this.simple_duration_unit !== 't' && this.simple_duration_unit !== 'm';
 
-        if (this.duration_units_list.length === 1 && this.duration_unit === 'd') {
-            if (value) new_state.advanced_duration_unit = 'd';
-            else new_state.simple_duration_unit = 'd';
+        if (contract_only_has_days) {
+            new_state[`${this.is_advanced_duration ? 'advanced' : 'simple'}_duration_unit`] = 'd';
         }
-        if (name === 'simple_duration' || name === 'advanced_duration') {
+
+        if (should_reset_simple_to_ticks) {
+            new_state.simple_duration_unit = 't';
+            new_state.contract_expiry_type = 'tick';
+        }
+
+        if (this.duration_unit !== 'd') {
+            new_state.expiry_time = '';
+        }
+        console.log(new_state);
+        this.processNewValuesAsync(new_state, true);
+    }
+
+    @action.bound
+    onChangeDuration(e) {
+        const { value, name }  = e.target;
+        const new_state        = { [name]: value };
+        let advanced_or_simple = this.is_advanced_duration ? 'advanced' : 'simple';
+
+        if (name === `${advanced_or_simple}_duration` && this.duration !== value) {
             new_state.duration = value;
         }
 
-        if (name === 'advanced_expiry_type') {
-            new_state.expiry_type = value;
-        }
-
-        if (name === 'simple_duration_unit' || name === 'advanced_duration_unit') {
+        if (name === `${advanced_or_simple}_duration_unit`) {
             new_state.duration_unit = value;
             if (value === 't') {
-                let max_value;
-                if (this.duration_min_max[this.contract_expiry_type]) {
-                    max_value = convertDurationLimit(+this.duration_min_max.tick.max, value);
-                    if (+this.duration > max_value && !this.is_advanced_duration) {
-                        new_state.duration = max_value;
-                        new_state.simple_duration = max_value;
-                    }
-                    if (+this.duration > max_value && !this.is_advanced_duration) {
-                        new_state.duration = max_value;
-                        new_state.advanced_duration = max_value;
-                    }
+                // prevent overflowing of range slider by setting duration to max
+                const max_tick_value = convertDurationLimit(+this.duration_min_max.tick.max, value);
+                if (+this.duration > max_tick_value) {
+                    new_state.duration = max_tick_value;
+                    new_state[`${advanced_or_simple}_duration`] = max_tick_value;
                 }
             }
         }
-        if (this.duration_units_list.length > 1 && this.simple_duration_unit !== 't' && this.simple_duration_unit !== 'm') {
-            if (this.is_advanced_duration) new_state.advanced_duration_unit = 't';
-            else new_state.simple_duration_unit = 't';
-        }
+
         if (name === 'is_advanced_duration') {
-            if (value) { // advanced
-                new_state.duration = this.advanced_duration;
-                new_state.duration_unit = this.advanced_duration_unit;
-            } else { // simple
-                if (this.expiry_type !== 'duration') {
-                    new_state.expiry_type = 'duration'; // simple duration only has duration expiry_type
-                }
-                new_state.duration = this.simple_duration;
-                new_state.duration_unit = this.simple_duration_unit;
+            advanced_or_simple = value ? 'advanced' : 'simple';
+            new_state.duration = this[`${advanced_or_simple}_duration`];
+            new_state.duration_unit = this[`${advanced_or_simple}_duration_unit`];
+            if (advanced_or_simple === 'simple' && this.expiry_type !== 'duration') {
+                new_state.expiry_type = 'duration'; // simple only has duration as expiry_type
             }
+        }
+
+        if (name === 'advanced_expiry_type' && this.expiry_type !== value) {
+            new_state.expiry_type = value;
         }
 
         this.processNewValuesAsync(new_state, true);
