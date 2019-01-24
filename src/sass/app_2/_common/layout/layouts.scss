@@ -71,9 +71,12 @@
 
         .sidebar-container {
             position: relative;
+            width: 240px;
+            margin-left: 16px;
 
             .sidebar-items {
                 opacity: 1;
+                width: 240px;
                 transform: none;
                 transition: transform 0.4s ease, opacity 0.2s linear;
 
@@ -104,22 +107,38 @@
                     pointer-events: none;
                 }
             }
+            fieldset {
+                margin-bottom: 4px;
+
+                div.duration-container, div.amount-container {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    grid-auto-columns: auto;
+                }
+                div.endtime-container {
+                    display: grid;
+                    grid-gap: 8px;
+                    grid-template-columns: 1fr;
+                    grid-auto-columns: auto;
+                }
+                .time-picker, .datepicker-container {
+                    margin-top: 8px;
+                }
+            }
         }
     }
     /* trade-app layout */
     .trade-container {
         position: relative;
         padding: 8px 12px 0;
-        display: grid;
-        grid-template-columns: repeat(12, [col-start] 1fr);
-        grid-template-rows: 1fr;
-        grid-gap: 4px;
+        display: flex;
         min-height: calc(100vh - 91px);
         transition: transform 0.25s ease;
         will-change: transform;
 
         .chart-container {
             position: relative;
+            width: 100%;
 
             // smartchart library style fixes
             .cq-context {
@@ -168,8 +187,6 @@
             grid-column: col-start / span 12;
         }
         @media (max-width: 768px) {
-            grid-template-rows: 1fr auto auto;
-
             .chart-container {
                 // smartchart library style fixes
                 .cq-context {
@@ -220,46 +237,6 @@
             .contract-container {
                 grid-column: col-start 11 / span 2;
             }
-            .sidebar-container {
-                grid-column: col-start 11 / span 2;
-                transition: all 0.25s;
-
-                fieldset {
-                    margin-bottom: 5px;
-
-                    div.duration-container, div.amount-container {
-                        display: grid;
-                        grid-template-columns: 1fr;
-                        grid-auto-columns: auto;
-                    }
-                    div.endtime-container {
-                        display: grid;
-                        grid-gap: 8px;
-                        grid-template-columns: 1fr;
-                        grid-auto-columns: auto;
-
-                        &.has-time {
-                            grid-template-columns: 1.5fr 1fr;
-                        }
-                    }
-                    .time-picker, .datepicker-container {
-                        margin-top: 8px;
-                    }
-                    @media (min-width: 979px) {
-                        div.duration-container, div.amount-container {
-                            grid-template-columns: 1fr;
-                        }
-                    }
-                }
-            }
-        }
-        @media (min-width: 769px) and (max-width: 1050px) {
-            .chart-container {
-                grid-column: col-start 1 / span 9 !important;
-            }
-            .sidebar-container, .contract-container {
-                grid-column: col-start 10 / span 9 !important;
-            }
         }
     }
     .inline-icon {
@@ -273,28 +250,6 @@
         display: flex;
         align-items: center;
         justify-content: center;
-    }
-}
-
-/* flexbox fallback is if the browser does not support display:grid */
-@supports not (display: grid) {
-    .trade-container {
-        display: flex;
-        flex-flow: row wrap;
-        padding: 20px;
-
-        @media screen and (min-width: 769px) {
-            .chart-container {
-                flex: 0 1 calc(75% - 1.5vw);
-            }
-            .sidebar-container {
-                flex: 0 1 calc(25% - 1.5vw);
-
-                fieldset {
-                    margin: 10px 0;
-                }
-            }
-        }
     }
 }
 

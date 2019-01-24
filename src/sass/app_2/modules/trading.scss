@@ -41,7 +41,7 @@
         background-color: $COLOR_LIGHT_GRAY;
         border-radius: $BORDER_RADIUS;
         border: 1px solid $COLOR_GRAY;
-        padding: 1vh 8px;
+        padding: 4px 8px 8px;
 
         input, select {
             width: 100%;
@@ -223,33 +223,6 @@
                 &:last-child {
                     margin-right: 0;
                 }
-            }
-        }
-        @media screen and (max-height: 800px) {
-            .fieldset-header {
-                margin-bottom: -8px;
-            }
-            input, input.datepicker-display, .time-picker #time-picker-input.time-picker-input {
-                height: 26px;
-            }
-            .input-field i .symbols {
-                top: 0;
-                left: 0;
-                height: 24px;
-                line-height: 24px;
-                align-items: center;
-                justify-content: center;
-                display: flex;
-            }
-            .dropdown__display {
-                height: 24px;
-
-                span {
-                    line-height: 25px;
-                }
-            }
-            .select-arrow {
-                top: 6px;
             }
         }
     }
@@ -654,4 +627,3 @@
         }
     }
 }
-

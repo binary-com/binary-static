@@ -37,10 +37,7 @@ const StartDate = ({
         );
     }
     return (
-        <Fieldset
-            header={localize('Start time')}
-            icon='start-time'
-        >
+        <Fieldset>
             <Dropdown
                 is_alignment_left
                 is_nativepicker={is_nativepicker}

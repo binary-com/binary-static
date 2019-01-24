@@ -115,10 +115,7 @@ const Duration = ({
     });
 
     return (
-        <Fieldset
-            header={localize('Trade Duration')}
-            icon='trade-duration'
-        >
+        <Fieldset>
             <Dropdown
                 is_alignment_left
                 is_nativepicker={is_nativepicker}

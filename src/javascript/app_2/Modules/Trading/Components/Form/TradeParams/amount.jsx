@@ -7,7 +7,6 @@ import React                     from 'react';
 import {
     addComma,
     getDecimalPlaces }           from '_common/base/currency_base';
-import { localize }              from '_common/localize';
 import Dropdown                  from 'App/Components/Form/DropDown';
 import Fieldset                  from 'App/Components/Form/fieldset.jsx';
 import InputField                from 'App/Components/Form/input_field.jsx';
@@ -43,10 +42,7 @@ const Amount = ({
     });
 
     return (
-        <Fieldset
-            header={localize('Invest Amount')}
-            icon='invest-amount'
-        >
+        <Fieldset>
             <div className={amount_container_class}>
                 <Dropdown
                     is_alignment_left
