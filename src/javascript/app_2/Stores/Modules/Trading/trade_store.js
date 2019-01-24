@@ -482,13 +482,9 @@ export default class TradeStore extends BaseStore {
 
         if (should_reset_simple_to_ticks) {
             new_state.simple_duration_unit = 't';
-            new_state.contract_expiry_type = 'tick';
+            new_state.duration_unit = 't';
         }
 
-        if (this.duration_unit !== 'd') {
-            new_state.expiry_time = '';
-        }
-        console.log(new_state);
         this.processNewValuesAsync(new_state, true);
     }
 
