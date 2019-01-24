@@ -509,11 +509,15 @@ export default class TradeStore extends BaseStore {
             new_state.duration_unit = value;
 
             if (value === 't') {
-                // prevent overflowing of range slider by setting duration to max
+                // prevent overflowing of range slider by setting duration to max or 1
                 const max_tick_value = convertDurationLimit(+this.duration_min_max.tick.max, value);
                 if (+this.duration > max_tick_value) {
                     new_state.duration                          = max_tick_value;
                     new_state[`${advanced_or_simple}_duration`] = max_tick_value;
+                }
+                if (+this.duration <= 0) {
+                    new_state.duration                          = 1;
+                    new_state[`${advanced_or_simple}_duration`] = 1;
                 }
             }
         }
