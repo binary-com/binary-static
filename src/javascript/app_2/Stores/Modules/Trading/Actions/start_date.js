@@ -34,7 +34,6 @@ export const onChangeStartDate = async (store) => {
         expiry_date,
         expiry_time,
         expiry_type,
-        server_time,
         symbol
     );
 

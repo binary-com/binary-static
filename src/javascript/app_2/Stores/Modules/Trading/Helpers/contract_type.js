@@ -1,3 +1,4 @@
+import ServerTime               from '_common/base/server_time';
 import { localize }             from '_common/localize';
 import {
     cloneObject,
@@ -240,7 +241,7 @@ const ContractType = (() => {
 
     const buildMoment = (date, time) => {
         const [ hour, minute ] = isTimeValid(time) ? time.split(':') : [0, 0];
-        return toMoment(date).hour(hour).minute(minute);
+        return toMoment(date || ServerTime.get()).hour(hour).minute(minute);
     };
 
     const getStartTime = (sessions, start_date, start_time) => ({
@@ -304,7 +305,6 @@ const ContractType = (() => {
         expiry_date,
         expiry_time,
         expiry_type,
-        server_time,
         symbol
     ) => {
         let end_time = null;
@@ -318,12 +318,12 @@ const ContractType = (() => {
                 market_close_time = market_close_times.slice(-1)[0];
             }
 
-            // For contracts with a duration of more that 24 hours must set the expiry_time to the end of the day or the market's close time on that day.
-            if (!start_date && server_time.isBefore(buildMoment(expiry_date), 'day')) {
+            // For contracts with a duration of more that 24 hours must set the expiry_time to the market's close time on the expiry date.
+            if (!start_date && ServerTime.get().isBefore(buildMoment(expiry_date), 'day')) {
                 end_time = market_close_time;
             } else {
 
-                const start_moment = start_date ? buildMoment(start_date, start_time) : server_time;
+                const start_moment = start_date ? buildMoment(start_date, start_time) : ServerTime.get();
                 const end_moment   = buildMoment(expiry_date, expiry_time);
                 end_time = buildMoment(end_moment, expiry_time).format('HH:mm');
 
