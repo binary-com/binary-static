@@ -209,6 +209,8 @@ export default class TradeStore extends BaseStore {
                     value = 'rise_fall';
                 }
             }
+        } else if (name  === 'expiry_date') {
+            this.expiry_time = null;
         } else if (!(name in this)) {
             throw new Error(`Invalid Argument: ${name}`);
         }
