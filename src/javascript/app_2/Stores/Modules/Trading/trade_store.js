@@ -67,8 +67,10 @@ export default class TradeStore extends BaseStore {
     @observable expiry_type          = 'duration';
     @observable is_advanced_duration = false;
 
+    // Advanced / simple duration
     @observable advanced_duration      = 5;
     @observable advanced_duration_unit = 't';
+    @observable advanced_expiry_type   = '';
     @observable simple_duration        = 5;
     @observable simple_duration_unit   = 't';
 
@@ -405,7 +407,7 @@ export default class TradeStore extends BaseStore {
 
         // update state values from query string
         const config = {};
-        [...query_params].forEach(param => config[param[0]] = param[1]);
+        [...query_params].forEach((param) => config[param[0]] = param[1] === 'true' ? true : param[1]);
         return config;
     }
 
@@ -474,8 +476,27 @@ export default class TradeStore extends BaseStore {
         if (name === 'simple_duration' || name === 'advanced_duration') {
             new_state.duration = value;
         }
+
+        if (name === 'advanced_expiry_type') {
+            new_state.expiry_type = value;
+        }
+
         if (name === 'simple_duration_unit' || name === 'advanced_duration_unit') {
             new_state.duration_unit = value;
+            if (value === 't') {
+                let max_value;
+                if (this.duration_min_max[this.contract_expiry_type]) {
+                    max_value = convertDurationLimit(+this.duration_min_max.tick.max, value);
+                    if (+this.duration > max_value && !this.is_advanced_duration) {
+                        new_state.duration = max_value;
+                        new_state.simple_duration = max_value;
+                    }
+                    if (+this.duration > max_value && !this.is_advanced_duration) {
+                        new_state.duration = max_value;
+                        new_state.advanced_duration = max_value;
+                    }
+                }
+            }
         }
         if (this.duration_units_list.length > 1 && this.simple_duration_unit !== 't' && this.simple_duration_unit !== 'm') {
             if (this.is_advanced_duration) new_state.advanced_duration_unit = 't';

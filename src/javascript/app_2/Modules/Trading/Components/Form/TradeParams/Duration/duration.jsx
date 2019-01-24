@@ -19,6 +19,7 @@ const expiry_list = [
 const Duration = ({
     advanced_duration,
     advanced_duration_unit,
+    advanced_expiry_type,
     contract_expiry_type,
     duration,
     duration_unit,
@@ -106,7 +107,7 @@ const Duration = ({
                             expiry_date={expiry_date}
                             expiry_list={expiry_list}
                             expiry_time={expiry_time}
-                            expiry_type={expiry_type}
+                            advanced_expiry_type={advanced_expiry_type}
                             is_nativepicker={is_nativepicker}
                             number_input_props={props.number_input}
                             onChange={onChangeDuration}
@@ -123,7 +124,6 @@ const Duration = ({
                             duration_units_list={duration_units_list}
                             number_input_props={props.number_input}
                             shared_input_props={props.shared_input}
-                            expiry_type={expiry_type}
                             onChange={onChangeDuration}
                         /> }
                     <DurationToggle
@@ -144,6 +144,7 @@ Duration.propTypes = {
         PropTypes.string,
     ]),
     advanced_duration_unit: PropTypes.string,
+    advanced_expiry_type  : PropTypes.string,
     contract_expiry_type  : PropTypes.string,
     duration              : PropTypes.oneOfType([
         PropTypes.number,

@@ -23,13 +23,13 @@ let now_date,
 const AdvancedDuration = ({
     advanced_duration,
     advanced_duration_unit,
+    advanced_expiry_type,
     contract_expiry_type,
     duration_min_max,
     duration_units_list,
     expiry_date,
     expiry_list,
     expiry_time,
-    expiry_type,
     is_nativepicker,
     number_input_props,
     onChange,
@@ -77,12 +77,12 @@ const AdvancedDuration = ({
     return (
         <Fragment>
             <ButtonToggleMenu
-                name='expiry_type'
-                value={expiry_type}
+                name='advanced_expiry_type'
+                value={advanced_expiry_type}
                 onChange={onChange}
                 buttons_arr={expiry_list.length > 1 && expiry_list}
             />
-            {expiry_type === 'duration' ?
+            {advanced_expiry_type === 'duration' ?
                 <Fragment>
                     <div className='duration-container'>
                         {duration_units_list.length > 1 &&
@@ -139,6 +139,7 @@ AdvancedDuration.propTypes = {
         PropTypes.string,
     ]),
     advanced_duration_unit: PropTypes.string,
+    advanced_expiry_type  : PropTypes.string,
     contract_expiry_type  : PropTypes.string,
     duration_min_max      : PropTypes.object,
     duration_unit         : PropTypes.string,
@@ -149,7 +150,6 @@ AdvancedDuration.propTypes = {
     ]),
     expiry_list       : PropTypes.array,
     expiry_time       : PropTypes.string,
-    expiry_type       : PropTypes.string,
     is_nativepicker   : PropTypes.bool,
     number_input_props: PropTypes.object,
     onChange          : PropTypes.func,

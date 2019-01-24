@@ -4,6 +4,7 @@ import ContractType from '../Helpers/contract_type';
 export const allowed_query_string_variables = [
     'advanced_duration',
     'advanced_duration_unit',
+    'advanced_expiry_type',
     'amount',
     'barrier_1',
     'barrier_2',
@@ -28,6 +29,7 @@ export const getNonProposalQueryStringVariables = (store) => {
     const non_proposal_query_string_variables = [
         'advanced_duration',
         'advanced_duration_unit',
+        'advanced_expiry_type',
         'contract_start_type',
         'expiry_type',
         'is_advanced_duration',
