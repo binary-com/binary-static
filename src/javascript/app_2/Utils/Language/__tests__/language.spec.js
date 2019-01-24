@@ -6,18 +6,18 @@ describe('getAllowedLanguages', () => {
     it('It Returns the desired allowed languages', () => {
         expect(getAllowedLanguages()).to.eql({
             EN   : 'English',
-            DE   : 'Deutsch',
-            ES   : 'Español',
-            FR   : 'Français',
-            ID   : 'Indonesia',
-            IT   : 'Italiano',
-            PL   : 'Polish',
-            PT   : 'Português',
-            RU   : 'Русский',
-            TH   : 'Thai',
-            VI   : 'Tiếng Việt',
-            ZH_CN: '简体中文',
-            ZH_TW: '繁體中文',
+            // DE   : 'Deutsch',
+            // ES   : 'Español',
+            // FR   : 'Français',
+            // ID   : 'Indonesia',
+            // IT   : 'Italiano',
+            // PL   : 'Polish',
+            // PT   : 'Português',
+            // RU   : 'Русский',
+            // TH   : 'Thai',
+            // VI   : 'Tiếng Việt',
+            // ZH_CN: '简体中文',
+            // ZH_TW: '繁體中文',
         });
     });
 });
