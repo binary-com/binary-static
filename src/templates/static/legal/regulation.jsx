@@ -154,11 +154,11 @@ const Regulation = () => {
                     <div>
                         <p>{it.L('These documents provide you with key information about our investment products. This information is required by law to help you understand the nature, risks, costs, potential gains and losses of these products and to help you compare them with other products.')}</p>
                         <div className='gr-row'>
-                            <FillBox padding='4' center border='border-dark-gray' href={it.url_for(`/download/key_information_document/${lang}/Up_Down.pdf`)}        target='_blank' text={it.L('Up/Down')} />
-                            <FillBox padding='4' center border='border-dark-gray' href={it.url_for(`/download/key_information_document/${lang}/Touch_No_Touch.pdf`)} target='_blank' text={it.L('Touch/No Touch')} />
-                            <FillBox padding='4' center border='border-dark-gray' href={it.url_for(`/download/key_information_document/${lang}/In_and_Out.pdf`)}     target='_blank' text={it.L('In/Out')} />
-                            <FillBox padding='4' center className='margin-right-0' border='border-dark-gray' href={it.url_for(`/download/key_information_document/${lang}/CFD.pdf`)} target='_blank' text={it.L('CFD')} />
-                            <FillBox padding='4' center className='margin-left-0'  border='border-dark-gray' href={it.url_for(`/download/key_information_document/${lang}/FX.pdf`)}  target='_blank' text={it.L('FX')} />
+                            <FillBox id='up-down_fillbox' padding='4' center border='border-dark-gray' href={it.url_for(`/download/key_information_document/${lang}/Up_Down.pdf`)}        target='_blank' text={it.L('Up/Down')} />
+                            <FillBox id='touch-no-touch_fillbox' padding='4' center border='border-dark-gray' href={it.url_for(`/download/key_information_document/${lang}/Touch_No_Touch.pdf`)} target='_blank' text={it.L('Touch/No Touch')} />
+                            <FillBox id='in-and-out_fillbox' padding='4' center border='border-dark-gray' href={it.url_for(`/download/key_information_document/${lang}/In_and_Out.pdf`)}     target='_blank' text={it.L('In/Out')} />
+                            <FillBox id='cfd_fillbox' padding='4' center className='margin-right-0' border='border-dark-gray' href={it.url_for(`/download/key_information_document/${lang}/CFD.pdf`)} target='_blank' text={it.L('CFD')} />
+                            <FillBox id='fx_fillbox' padding='4' center className='margin-left-0'  border='border-dark-gray' href={it.url_for(`/download/key_information_document/${lang}/FX.pdf`)}  target='_blank' text={it.L('FX')} />
                         </div>
                     </div>
 
