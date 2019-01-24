@@ -18,15 +18,16 @@ const isEuCountry = () => {
     );
 };
 
-const isFrance    = () => {
-    const clients_country = Client.get('residence') || State.getResponse('website_status.clients_country');
-    return /^fr$/.test(clients_country);
-};
-
 const isIndonesia = () => State.getResponse('website_status.clients_country') === 'id';
+
+const hasCFD = () => {
+    const cfd_excluded_regex = new RegExp('^fr$');
+    const clients_country = Client.get('residence') || State.getResponse('website_status.clients_country');
+    return !cfd_excluded_regex.test(clients_country);
+};
 
 module.exports = {
     isEuCountry,
     isIndonesia,
-    isFrance,
+    hasCFD,
 };

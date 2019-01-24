@@ -1,5 +1,5 @@
-const isFrance      = require('../../app/common/country_base').isFrance;
 const BinarySocket  = require('../../app/base/socket');
+const hasCFD        = require('../../app/common/country_base').hasCFD;
 
 const Regulation = (() => {
     const onLoad = () => {
@@ -26,9 +26,8 @@ const Regulation = (() => {
             });
 
             BinarySocket.wait('website_status').then(() => {
-                if (isFrance()) {
-                    const $cfd_selector = $('#cfd_fillbox');
-                    $cfd_selector.remove();
+                if (hasCFD()) {
+                    document.querySelectorAll('#cfd_fillbox').remove();
                 }
             });
         });
