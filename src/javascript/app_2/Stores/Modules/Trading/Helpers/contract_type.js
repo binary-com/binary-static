@@ -329,10 +329,15 @@ const ContractType = (() => {
             if (!start_date && ServerTime.get().isBefore(buildMoment(expiry_date), 'day')) {
                 end_time = market_close_time;
             } else {
-
                 const start_moment = start_date ? buildMoment(start_date, start_time) : ServerTime.get();
                 const end_moment   = buildMoment(expiry_date, expiry_time);
-                end_time = buildMoment(end_moment, expiry_time).format('HH:mm');
+
+                // Set the expiry_time to 5 minute less than start_time for forwading contracts when the expiry_time is null and the expiry_date is tomorrow.
+                if (!expiry_time && start_moment.isBefore(end_moment, 'day')) {
+                    end_time = start_moment.clone().subtract(5, 'minute').format('HH:mm');
+                } else {
+                    end_time = end_moment.format('HH:mm');
+                }
 
                 // When the contract is forwarding, and the duration is endtime, users can purchase the contract within 24 hours.
                 const expiry_sessions = [{
