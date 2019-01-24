@@ -3,6 +3,7 @@ import { get, getAll, urlFor } from '_common/language';
 export const currentLanguage = get();
 
 export const getAllowedLanguages = () => {
+    // TODO Remove all language frome exclude_languages except for ACH when design is ready.
     const exclude_languages = [
         'ACH',
         'DE',

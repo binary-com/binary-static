@@ -5,6 +5,7 @@ import { getAllowedLanguages } from '../language';
 describe('getAllowedLanguages', () => {
     it('It Returns the desired allowed languages', () => {
         expect(getAllowedLanguages()).to.eql({
+            // TODO uncomment this part when the design is ready.
             EN   : 'English',
             // DE   : 'Deutsch',
             // ES   : 'Español',
