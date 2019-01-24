@@ -18,9 +18,15 @@ const isEuCountry = () => {
     );
 };
 
+const isFrance    = () => {
+    const clients_country = Client.get('residence') || State.getResponse('website_status.clients_country');
+    return /^fr$/.test(clients_country);
+};
+
 const isIndonesia = () => State.getResponse('website_status.clients_country') === 'id';
 
 module.exports = {
     isEuCountry,
     isIndonesia,
+    isFrance,
 };

@@ -1,3 +1,6 @@
+const isFrance      = require('../../app/common/country_base').isFrance;
+const BinarySocket  = require('../../app/base/socket');
+
 const Regulation = (() => {
     const onLoad = () => {
         $(() => {
@@ -19,6 +22,13 @@ const Regulation = (() => {
                 // if EU passport rights tab is active, call relocateLinks to initialize map coordinates
                 if (!$accordion.accordion('option', 'active')) {
                     relocateLinks();
+                }
+            });
+
+            BinarySocket.wait('website_status').then(() => {
+                if (isFrance()) {
+                    const $cfd_selector = $('#cfd_fillbox');
+                    $cfd_selector.remove();
                 }
             });
         });
