@@ -73,6 +73,7 @@
     .dropdown__list {
         left: 0;
         bottom: -8px;
+        height: 0;
         width: 100%;
         position: absolute;
         transition: transform 0.25s ease, opacity 0.25s linear;
