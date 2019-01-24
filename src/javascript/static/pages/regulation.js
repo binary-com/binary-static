@@ -1,4 +1,4 @@
-const isFrance = require('../../app/common/country_base').isFrance;
+const isFrance      = require('../../app/common/country_base').isFrance;
 const BinarySocket  = require('../../app/base/socket');
 
 const Regulation = (() => {

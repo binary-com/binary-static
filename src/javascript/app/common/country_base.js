@@ -18,7 +18,7 @@ const isEuCountry = () => {
     );
 };
 
-const isFrance = () => {
+const isFrance    = () => {
     const clients_country = Client.get('residence') || State.getResponse('website_status.clients_country');
     return /^fr$/.test(clients_country);
 };
