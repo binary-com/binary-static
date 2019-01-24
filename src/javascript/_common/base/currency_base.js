@@ -109,6 +109,11 @@ const getCurrencyName = currency => getPropertyValue(CryptoConfig.get(), [curren
 
 const getMinPayout = currency => getPropertyValue(currencies_config, [currency, 'stake_default']);
 
+const getMaxTransfer = currency => {
+    const max_transfer = getPropertyValue(currencies_config, [currency, 'transfer_between_accounts', 'limits', 'max']);
+    return max_transfer ? max_transfer.toFixed(getDecimalPlaces(currency)) : undefined;
+};
+
 module.exports = {
     formatMoney,
     formatCurrency,
@@ -118,6 +123,7 @@ module.exports = {
     isCryptocurrency,
     getCurrencyName,
     getMinWithdrawal,
+    getMaxTransfer,
     getMinTransfer,
     getTransferFee,
     getMinimumTransferFee,

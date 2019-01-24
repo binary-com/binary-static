@@ -30,10 +30,13 @@ const AccountTransfer = (() => {
         el_fee_minimum,
         el_transfer_info,
         el_success_form,
+        el_explain_dynamic_limits,
         client_balance,
         client_currency,
         client_loginid,
-        withdrawal_limit;
+        withdrawal_limit,
+        max_amount,
+        transferable_amount;
 
     const populateAccounts = (accounts) => {
         client_loginid   = Client.get('loginid');
@@ -116,7 +119,7 @@ const AccountTransfer = (() => {
         getElementById(form_id).setVisibility(1);
 
         FormManager.init(form_id_hash, [
-            { selector: '#amount', validations: [['req', { hide_asterisk: true }], ['number', { type: 'float', decimals: Currency.getDecimalPlaces(client_currency), min: Currency.getMinTransfer(client_currency), max: Math.min(+withdrawal_limit, +client_balance), format_money: true }]] },
+            { selector: '#amount', validations: [['req', { hide_asterisk: true }], ['number', { type: 'float', decimals: Currency.getDecimalPlaces(client_currency), min: Currency.getMinTransfer(client_currency), max: transferable_amount, format_money: true }]] },
 
             { request_field: 'transfer_between_accounts', value: 1 },
             { request_field: 'account_from',              value: client_loginid },
@@ -182,6 +185,7 @@ const AccountTransfer = (() => {
         el_transfer_info  = getElementById('transfer_info');
         el_success_form   = getElementById('success_form');
         el_reset_transfer = getElementById('reset_transfer');
+        el_explain_dynamic_limits = document.querySelector('.explain-dynamic-limit');
         el_reset_transfer.addEventListener('click', onClickReset);
 
         BinarySocket.wait('balance').then((response) => {
@@ -215,12 +219,30 @@ const AccountTransfer = (() => {
                         return;
                     }
                     withdrawal_limit = +response_limits.get_limits.remainder;
+
                     if (withdrawal_limit < +min_amount) {
                         getElementById(messages.limit).setVisibility(1);
                         getElementById(messages.parent).setVisibility(1);
                         return;
                     }
-                    getElementById('range_hint').textContent = `${localize('Min')}: ${min_amount} ${localize('Max')}: ${client_balance <= withdrawal_limit ? localize('Current balance') : localize('Withdrawal limit')}`;
+                    max_amount = Currency.getMaxTransfer(
+                        Client.get('currency')
+                    );
+                    transferable_amount = max_amount ?
+                        Math.min(max_amount, withdrawal_limit, client_balance) :
+                        Math.min(withdrawal_limit, client_balance);
+
+                    getElementById('range_hint').textContent = `${localize('Min')}: ${min_amount} ${localize('Max')}: ${transferable_amount.toFixed(Currency.getDecimalPlaces(Client.get('currency')))}`;
+
+                    el_explain_dynamic_limits.innerHTML = localize(
+                        'Maximum transferable amount will be chosen from a minimum value of:[_4] Current balance: [_1][_4]Daily withdrawal limit: [_2][_4]Current account\'s maximum allowed amount: [_3]]',
+                        [
+                            Currency.formatMoney(Client.get('currency'), client_balance),
+                            Currency.formatMoney(Client.get('currency'), withdrawal_limit),
+                            max_amount ? Currency.formatMoney(Client.get('currency'), max_amount) : localize('Not announced for this currency.'),
+                            '<br />',
+                        ],
+                    );
                     populateAccounts(accounts);
                 });
             }

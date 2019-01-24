@@ -51,8 +51,8 @@ const AccountTransfer = () => (
                 <FormRow label={it.L('Transfer from')} type='label'  id='lbl_transfer_from' />
                 <FormRow label={it.L('Transfer to')}   type='select' id='transfer_to' />
                 <FormRow label={it.L('Amount')}        type='custom' id='transfer_amount'>
-                    <label id='currency' />
                     <input id='amount' name='amount' type='text' maxLength='20' autoComplete='off' />
+                    <p className='font-xs explain-dynamic-limit' />
                     <div className='hint' id='range_hint' />
                 </FormRow>
             </Fieldset>
