@@ -127,11 +127,13 @@ class ContractTypeWidget extends React.PureComponent {
     getPaginationList = () => {
         const paginationList = [];
         const list = this.props.list;
+        /* eslint-disable */
         Object.keys(list).map(key => {
             !['In/Out', 'Asians'].includes(key) && list[key].map(contract => {
                 (contract.value !== 'rise_fall_equal') && paginationList.push(contract);
             });
         });
+        /* eslint-disable */
         return paginationList;
     };
 
@@ -167,16 +169,17 @@ class ContractTypeWidget extends React.PureComponent {
                         handleInfoClick={this.handleInfoClick}
                     />
                 </ContractTypeDialog>
-                {/* add contarct trade type dialog */}
                 <TradeTypeInfoDialog
                     open={this.state.is_info_dialog_open}
                     onClose={this.handleInfoClick}
                     is_mobile={this.props.is_mobile}
+                    title={this.state.item.text}
                 >
                     <TradeTypeInfoItem
                         handleNextClick={this.handleNextClick}
                         handlePaginationClick={this.handlePaginationClick}
                         handlePrevClick={this.handlePrevClick}
+                        is_mobile={this.props.is_mobile}
                         item={this.state.item}
                         onBackButtonClick={this.onBackButtonClick}
                         onSubmitButtonClick={this.onSubmitButtonClick}

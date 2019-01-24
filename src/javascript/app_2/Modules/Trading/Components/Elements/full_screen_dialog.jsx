@@ -4,7 +4,7 @@ import React         from 'react';
 import { IconClose } from 'Assets/Common';
 
 const FullScreenDialog = (props) => {
-    const { title, visible, children } = props;
+    const { title, visible, children, wrapperClassName } = props;
 
     const checkVisibility = () => {
         if (props.visible) {
@@ -61,7 +61,7 @@ const FullScreenDialog = (props) => {
             <div className='fullscreen-dialog__header-shadow-cover' />
             <div className='fullscreen-dialog__header-shadow' />
             <div className='fullscreen-dialog__content'>
-                <div className='contracts-modal-list'>
+                <div className={`${wrapperClassName ? wrapperClassName : 'contracts-modal-list'}`}>
                     {children}
                 </div>
             </div>
@@ -70,10 +70,11 @@ const FullScreenDialog = (props) => {
 };
 
 FullScreenDialog.propTypes = {
-    children: PropTypes.any,
-    onClose : PropTypes.func,
-    title   : PropTypes.string,
-    visible : PropTypes.bool,
+    children        : PropTypes.any,
+    onClose         : PropTypes.func,
+    title           : PropTypes.string,
+    visible         : PropTypes.bool,
+    wrapperClassName: PropTypes.string,
 };
 
 export default FullScreenDialog;

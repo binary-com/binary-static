@@ -9,18 +9,19 @@ const ContractTypeItem = ({
     handleNextClick,
     handlePaginationClick,
     handlePrevClick,
+    is_mobile,
     item,
     onBackButtonClick,
     onSubmitButtonClick,
     paginationList,
 }) => (
     <React.Fragment>
-        <div className='info-header'>
+        {!is_mobile && <div className='info-header'>
             <span onClick={() => onBackButtonClick()}>
                 <IconBack />
             </span>
             <span className='title'>{item.text}</span>
-        </div>
+        </div>}
         <div className='info-gif'>
             gif explanation
         </div>
@@ -51,6 +52,7 @@ ContractTypeItem.propTypes = {
     handleNextClick      : PropTypes.func,
     handlePaginationClick: PropTypes.func,
     handlePrevClick      : PropTypes.func,
+    is_mobile            : PropTypes.bool,
     item                 : PropTypes.object,
     onBackButtonClick    : PropTypes.func,
     onSubmitButtonClick  : PropTypes.func,

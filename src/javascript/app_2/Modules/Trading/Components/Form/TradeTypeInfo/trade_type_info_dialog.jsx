@@ -8,11 +8,14 @@ const TradeTypeInfoDialog = ({
     is_mobile,
     open,
     onClose,
+    title,
 }) => (
     is_mobile ?
         <FullScreenDialog
             visible={open}
             onClose={onClose}
+            title={title}
+            wrapperClassName='trade-type-info-modal'
         >
             {children}
         </FullScreenDialog>
@@ -36,6 +39,7 @@ TradeTypeInfoDialog.propTypes = {
     is_mobile: PropTypes.bool,
     onClose  : PropTypes.func,
     open     : PropTypes.bool,
+    title    : PropTypes.string,
 };
 
 export default TradeTypeInfoDialog;
