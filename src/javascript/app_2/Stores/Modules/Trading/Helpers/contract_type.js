@@ -1,9 +1,9 @@
-import moment                    from 'moment';
 import { localize }              from '_common/localize';
 import {
     cloneObject,
     getPropertyValue }           from '_common/utility';
 import { WS }                    from 'Services';
+import { isTimeValid, toMoment } from 'Utils/Date';
 import { buildBarriersConfig }   from './barrier';
 import { buildDurationConfig }   from './duration';
 import {
@@ -185,6 +185,8 @@ const ContractType = (() => {
         return { duration_min_max };
     };
 
+    const getFullContractTypes = () => available_contract_types;
+
     const getStartType = (start_date) => ({
         // Number(0) refers to 'now'
         contract_start_type: start_date === Number(0) ? 'spot' : 'forward',
@@ -233,21 +235,23 @@ const ContractType = (() => {
     };
 
     const buildMoment = (date, time) => {
+        const moment_date = toMoment(date);
+        if (!time || !isTimeValid(time)) return moment_date;
         const [ hour, minute ] = time.split(':');
-        return moment.utc(isNaN(date) ? date : +date * 1000).hour(hour).minute(minute);
+        return moment_date.hour(hour).minute(minute);
     };
 
     const getStartTime = (sessions, start_date, start_time) => ({
-        start_time: getValidTime(sessions, buildMoment(start_date, start_time)),
+        start_time: start_date ? getValidTime(sessions, buildMoment(start_date, start_time)) : null,
     });
 
-    const getExpiryDate = (expiry_date, start_date) => {
-        const moment_start  = moment.utc(start_date ? start_date * 1000 : undefined);
-        const moment_expiry = moment.utc(expiry_date || undefined);
+    const getExpiryDate = (expiry_date, start_date, expiry_type) => {
+        const moment_start  = toMoment(start_date);
+        const moment_expiry = toMoment(expiry_date);
         // forward starting contracts should only show today and tomorrow as expiry date
         const is_invalid = moment_expiry.isBefore(moment_start, 'day') || (start_date && moment_expiry.isAfter(moment_start.clone().add(1, 'day')));
         return {
-            expiry_date: (is_invalid ? moment_start : moment_expiry).format('YYYY-MM-DD'),
+            expiry_date: expiry_type === 'endtime' ? (is_invalid ? moment_start : moment_expiry).format('YYYY-MM-DD') : null,
         };
     };
 
@@ -255,7 +259,7 @@ const ContractType = (() => {
     // first check if end time is within available sessions
     // then confirm that end time is after start time
     const getExpiryTime = (sessions, start_date, start_time, expiry_date, expiry_time) => {
-        const start_moment = start_date ? buildMoment(start_date, start_time) : moment().utc();
+        const start_moment = start_date ? buildMoment(start_date, start_time) : toMoment();
         const end_moment   = buildMoment(expiry_date, expiry_time);
 
         let end_time = expiry_time;
@@ -307,6 +311,7 @@ const ContractType = (() => {
         getDurationMinMax,
         getDurationUnit,
         getDurationUnitsList,
+        getFullContractTypes,
         getExpiryDate,
         getExpiryTime,
         getSessions,
