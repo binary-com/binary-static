@@ -9,6 +9,7 @@ import Datepicker               from 'App/Components/Form/DatePicker';
 import Dropdown                 from 'App/Components/Form/DropDown';
 import Fieldset                 from 'App/Components/Form/fieldset.jsx';
 import InputField               from 'App/Components/Form/input_field.jsx';
+import RangeSlider              from 'App/Components/Form/RangeSlider';
 import TimePicker               from 'App/Components/Form/time_picker.jsx';
 import { convertDurationLimit } from 'Stores/Modules/Trading/Helpers/duration';
 import {
@@ -132,17 +133,29 @@ const Duration = ({
                             onChange={onChange}
                             is_nativepicker={is_nativepicker}
                         />
-                        <InputField
-                            type='number'
-                            max_value={max_duration}
-                            min_value={min_duration}
-                            name='duration'
-                            value={duration}
-                            onChange={onChange}
-                            is_nativepicker={is_nativepicker}
-                            is_incrementable={true}
-                            error_messages = {validation_errors.duration || []}
-                        />
+                        {
+                            duration_unit === 't' ?
+                                <RangeSlider
+                                    max_value={max_duration}
+                                    min_value={min_duration}
+                                    name='duration'
+                                    ticks={10}
+                                    value={duration}
+                                    onChange={onChange}
+                                />
+                                :
+                                <InputField
+                                    type='number'
+                                    max_value={max_duration}
+                                    min_value={min_duration}
+                                    name='duration'
+                                    value={duration}
+                                    onChange={onChange}
+                                    is_nativepicker={is_nativepicker}
+                                    is_incrementable={true}
+                                    error_messages = {validation_errors.duration || []}
+                                />
+                        }
                     </div>
                 </React.Fragment> :
                 <React.Fragment>

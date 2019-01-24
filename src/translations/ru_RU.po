@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-01-15 05:43\n"
+"PO-Revision-Date: 2019-01-23 10:59\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
@@ -1325,6 +1325,9 @@ msgstr "Вы уверены, что хотите навсегда удалить
 
 msgid "Are you sure that you want to permanently revoke access to the application"
 msgstr "Вы уверены, что хотите навсегда отказаться от доступа к приложению"
+
+msgid "Are you sure?"
+msgstr "Вы уверены?"
 
 msgid "Armed Forces"
 msgstr "Вооруженные Силы"
@@ -7254,6 +7257,9 @@ msgstr "Наши ценности"
 msgid "Our website contains links to other websites and may contain banner or icon advertisements related to third-party websites. These websites and their advertisements may submit cookies to your web browser which is beyond our control. We are not responsible for the privacy practices or the content of such websites. We encourage you to read the privacy policies of these websites because their practices may differ from ours."
 msgstr "Наш сайт содержит ссылки на другие сайты и может содержать баннеры или рекламные объявления, имеющие отношение к третьим лицам. Эти сайты и объявления могут сохранить куки на Вашем браузере, и мы не имеем контроля над возможностью таких действий. Мы не несем ответственности за политику конфиденциальности или содержание таких сайтов. Мы рекомендуем ознакомиться с правилами и политикой таких сайтов, так как их правила могут отличаться от наших."
 
+msgid "Our website uses cookies to give you the best user experience. For more information, %1."
+msgstr ""
+
 msgid "Outside the EU, financial products are offered by Binary (C.R.) S.A., 5th Floor, Building 6 Centro Ejecutivo La Sabana, Sabana Sur, San José, Costa Rica, Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, regulated by the Vanuatu Financial Services Commission (%1view licence%2), Binary (BVI) Ltd, 2nd Floor, O’Neal Marketing Associates Building, Wickham’s Cay II, P.O. Box 3174, Road Town, Tortola VB1110, British Virgin Islands, regulated by the British Virgin Islands Financial Services Commission (%3licence no. SIBA/L/18/1114%4), and Binary (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Labuan, Malaysia, regulated by the Labuan Financial Services Authority to carry on a money-broking business (%5licence no. MB/18/0024%6)"
 msgstr "За пределами ЕС финансовые процедуры осуществляются компанией Binary (C.R.) S.A., 5th Floor, Building 6 Centro Ejecutivo La Sabana, Sabana Sur, San José, Costa Rica, компанией Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, деятельность которой регулируется Комиссией по предоставлению финансовых услуг Вануату (%1см. лицензию%2), компанией Binary (BVI) Ltd, 2nd Floor, O’Neal Marketing Associates Building, Wickham’s Cay II, P.O. Box 3174, Road Town, Tortola VB1110, British Virgin Islands, деятельность которой регулируется Комиссией по предоставлению финансовых услуг на Британских Виргинских островах (%3лицензия номер SIBA/L/18/1114%4), а также Binary (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Labuan, Malaysia, регулируемой Управлением финансовых услуг Лабуана для ведения брокерской деятельности (%5лицензия номер MB/18/0024%6)"
 
@@ -7595,6 +7601,9 @@ msgstr "Пожалуйста подтвердите, что Вы не являе
 
 msgid "Please confirm the transaction details in order to complete the transfer:"
 msgstr "Просим подтвердить данные транзакции для завершения перевода:"
+
+msgid "Please do not share your bank account, credit card, or e-wallet with another client, as this may cause delays in your withdrawals."
+msgstr ""
 
 msgid "Please ensure that you have the Telegram app installed on your device."
 msgstr "Пожалуйста, убелитесь, что Вы установили приложение Telegram на телефон."
@@ -10444,7 +10453,7 @@ msgid "Tick"
 msgstr "Тики"
 
 msgid "Tick %1"
-msgstr "Тик %1"
+msgstr ""
 
 msgid "Tick %1 is not the highest tick"
 msgstr "Тик %1 не является наибольшим"
@@ -12327,6 +12336,12 @@ msgstr "Вы уже вывели общую сумму, эквивалентну
 msgid "You have already withdrawn the equivalent of %1 %2."
 msgstr "Вы уже вывели со счета сумму, эквивалентную %1 %2."
 
+msgid "You have chosen %1 as the currency for this account. You cannot change this later. You can have more than one cryptocurrency account."
+msgstr "Вы выбрали %1 валютой Вашего счёта. Вы не сможете изменить валюту позже, но можете открыть несколько криптовалютных счетов."
+
+msgid "You have chosen %1 as the currency for this account. You cannot change this later. You can have one fiat currency account only."
+msgstr "Вы выбрали %1 валютой своего счёта. Вы не сможете изменить валюту позже и можете открыть лишь один счёт в фидуциарных валютах."
+
 msgid "You have created all accounts available to you."
 msgstr "Вы открыли все доступные счета."
 
@@ -13226,6 +13241,9 @@ msgstr "использовать API %1 в любых целях, нарушаю
 
 msgid "use the Company’s name or Trademark in its advertising activities without a written authorisation to be given by the Company;"
 msgstr "пользоваться именем или торговой маркой компании в рамках рекламной деятельности без получения предварительного письменного разрешения Компании;"
+
+msgid "view our policy"
+msgstr ""
 
 msgid "virtual money credit to account"
 msgstr "виртуальных денег на счёт"

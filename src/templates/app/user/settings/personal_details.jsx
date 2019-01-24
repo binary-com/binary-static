@@ -1,5 +1,4 @@
 import React from 'react';
-import AuthenticateMessageFinancial from '../../_includes/authenticate_message_financial.jsx';
 import { FormRow, SubmitButton, Fieldset } from '../../../_common/components/forms.jsx';
 import {
     AccountOpeningReason,
@@ -28,10 +27,6 @@ const PersonalDetails = () => (
 
         <div id='msg_main' className='invisible'>
             <p>{it.L('Thank you for completing your Personal Details. You can now deposit funds and trade Forex with real money on MetaTrader 5.')}</p>
-            <div id='msg_authenticate' className='invisible'>
-                <div><strong>{it.L('Important')}</strong></div>
-                <AuthenticateMessageFinancial />
-            </div>
             <div className='center-text'>
                 <a className='button' href={it.url_for('user/metatrader')}>
                     <span>{it.L('Go to MetaTrader 5 dashboard')}</span>
