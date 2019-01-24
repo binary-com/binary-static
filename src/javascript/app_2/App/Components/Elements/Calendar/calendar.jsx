@@ -17,25 +17,12 @@ class Calendar extends React.PureComponent {
         };
     }
 
-    switchView = (e, view) => {
-        if (e) e.stopPropagation();
+    switchView = (view) => {
         this.setState({ calendar_view: view });
     };
 
-    navigateTo = (e, value, unit, is_add) => {
-        if (e) e.stopPropagation();
-
-        const { date_format, max_date, min_date } = this.props;
-
-        let new_date = toMoment(this.state.calendar_date)[is_add ? 'add' : 'subtract'](value, unit).format(date_format);
-
-        if (unit === 'month' && this.isPeriodDisabled(new_date, 'month')) return;
-
-        if (unit === 'year'  && this.isPeriodDisabled(new_date, 'year')) {
-            new_date = is_add ? max_date : min_date;
-        }
-
-        this.setState({ calendar_date: toMoment(new_date).format(date_format) }); // formatted date
+    navigateTo = (new_date) => {
+        this.setState({ calendar_date: toMoment(new_date).format(this.props.date_format) });
     };
 
     updateSelectedDate = (e) => {
@@ -140,6 +127,7 @@ class Calendar extends React.PureComponent {
                     start_date={start_date}
                     selected_date={selected_date}
                     updateSelected={this.updateSelected}
+                    sessions={this.props.sessions}
                 />
                 <CalendarFooter
                     footer={footer}

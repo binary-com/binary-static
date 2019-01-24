@@ -1,4 +1,5 @@
 import classNames      from 'classnames';
+import { observer }    from 'mobx-react';
 import React           from 'react';
 import {
     IconArrow,
@@ -6,6 +7,7 @@ import {
     IconClear }        from 'Assets/Common';
 import InputField      from 'App/Components/Form/input_field.jsx';
 import {
+    addDays,
     daysFromTodayTo,
     formatDate,
     isDateValid,
@@ -13,7 +15,7 @@ import {
 import { localize }    from '_common/localize';
 import Calendar        from '../../Elements/Calendar';
 
-class DatePicker extends React.PureComponent {
+class DatePicker extends React.Component {
     state = {
         value                : '',
         is_datepicker_visible: false,
@@ -22,8 +24,12 @@ class DatePicker extends React.PureComponent {
 
     componentDidMount() {
         document.addEventListener('click', this.onClickOutside, true);
-        const { value, mode } = this.props;
-        this.updateDatePickerValue(value, mode);
+        const { mode, value } = this.props;
+        if (mode === 'duration') {
+            this.updateDatePickerValue(daysFromTodayTo(value));
+        } else {
+            this.updateDatePickerValue(formatDate(value, 'DD MMM YYYY'));
+        }
     }
 
     componentWillUnmount() {
@@ -58,33 +64,34 @@ class DatePicker extends React.PureComponent {
         if (!isDateValid(value)) { value = ''; }
 
         if (this.props.mode === 'duration') {
-            this.updateDatePickerValue(daysFromTodayTo(value), 'duration');
+            this.updateDatePickerValue(daysFromTodayTo(value));
         } else {
-            this.updateDatePickerValue(value);
+            this.updateDatePickerValue(formatDate(value, 'DD MMM YYYY'));
         }
         this.setState({ is_datepicker_visible });
     }
 
     onChangeInput = (e) => {
         const value = e.target.value;
-        this.updateDatePickerValue(value, this.props.mode);
+        this.updateDatePickerValue(value);
     }
 
     clearDatePickerInput = () => {
-        this.setState({ value: '' }, this.updateStore);
+        this.setState({ value: null }, this.updateStore);
         this.calendar.resetCalendar();
     };
 
     // TODO: handle cases where user inputs date before min_date and date after max_date
-    updateDatePickerValue = (value, mode) => {
+    updateDatePickerValue = (value) => {
+        const { date_format, mode, start_date } = this.props;
+
         this.setState({ value }, this.updateStore);
 
         // update Calendar
-        const { date_format, start_date } = this.props;
-        const new_date = (mode === 'duration') ? toMoment().add(value, 'days').format(date_format) : value;
+        const new_date = (mode === 'duration') ? addDays(toMoment(), value) : value;
         if (this.calendar && (isDateValid(new_date) || !new_date)) {
             if (!new_date) {
-                const current_date = toMoment(start_date).format(date_format);
+                const current_date = formatDate(start_date, date_format);
                 this.calendar.setState({
                     calendar_date: current_date,
                     selected_date: current_date,
@@ -108,16 +115,19 @@ class DatePicker extends React.PureComponent {
 
     renderInputField = () => {
         const { is_read_only, mode, name, validation_errors } = this.props;
-
-        let { value } = this.state;
-        if (value) value = mode === 'duration' ? value : toMoment(value).format('DD MMM YYYY');
-
         let { placeholder } = this.props;
-        placeholder = placeholder || (mode === 'duration' ? localize('Select a duration') : localize('Select a date'));
+        let type, onChange;
 
-        // attach onChange event for Duration DatePicker
-        const onChange = mode === 'duration' ? this.onChangeInput : undefined;
-        const type = mode === 'duration' ? 'number' : 'text';
+        switch (mode) {
+            case 'duration':
+                onChange = this.onChangeInput;
+                placeholder = placeholder || localize('Select a duration');
+                type = 'number';
+                break;
+            default:
+                placeholder = placeholder || localize('Select a date');
+                type = 'text';
+        }
 
         return (
             <InputField
@@ -131,7 +141,7 @@ class DatePicker extends React.PureComponent {
                 onClick={this.handleVisibility}
                 placeholder={placeholder}
                 type={type}
-                value={value}
+                value={this.state.value}
             />
         );
     };
@@ -168,7 +178,7 @@ class DatePicker extends React.PureComponent {
 
         return (
             <div
-                id={this.props.id || undefined}
+                id={this.props.id}
                 ref={node => { this.mainNode = node; }}
                 className='datepicker'
                 onMouseEnter={this.onMouseEnter}
@@ -179,6 +189,7 @@ class DatePicker extends React.PureComponent {
                     className={classNames('datepicker__icon datepicker__icon--calendar', {
                         'datepicker__icon--is-hidden': this.state.is_clear_btn_visible,
                     })}
+                    onClick={this.handleVisibility}
                 />
                 <IconClear
                     className={classNames('datepicker__icon datepicker__icon--clear', {
@@ -212,4 +223,4 @@ DatePicker.propTypes = {
     ...Calendar.propTypes,
 };
 
-export default DatePicker;
+export default observer(DatePicker);

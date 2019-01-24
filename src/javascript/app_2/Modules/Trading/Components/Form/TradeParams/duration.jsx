@@ -173,9 +173,11 @@ const Duration = ({
                             onChange={onChange}
                             value={expiry_date}
                             is_read_only
-                            is_clearable={false}
+                            is_clearable
                             is_nativepicker={is_nativepicker}
                             alignment='left'
+                            // sessions={expiry_date_sessions} TODO: add expiry date sessions. e.g. disable days if market closes on weekend
+                            // validation_errors={validation_errors.expiry_date} TODO: add validation_errors for expiry date
                         />
                         {is_same_day &&
                             <TimePicker

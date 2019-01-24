@@ -6,7 +6,12 @@ import {
     IconChevronDoubleRight,
     IconChevronLeft,
     IconChevronRight }      from 'Assets/Common';
-import { toMoment }         from 'Utils/Date';
+import {
+    addMonths,
+    addYears,
+    subMonths,
+    subYears,
+    toMoment }              from 'Utils/Date';
 import CalendarButton       from './calendar_button.jsx';
 import { month_headers }    from './constants';
 import {
@@ -34,10 +39,10 @@ const CalendarHeader = ({
     const decade  = getDecade(moment_date.clone());
     const end_of_decade = (is_year_view ? decade : century).split('-')[1];
 
-    const is_prev_month_disabled  = isPeriodDisabled(moment_date.clone().subtract(1, 'month'), 'month');
-    const is_prev_year_disabled   = isPeriodDisabled(moment_date.clone().subtract(num_of_years, 'year'), 'month');
-    const is_next_month_disabled  = isPeriodDisabled(moment_date.clone().add(1, 'month'), 'month');
-    const is_next_year_disabled   = isPeriodDisabled(moment_date.clone().add(num_of_years, 'year'), 'month');
+    const is_prev_month_disabled  = isPeriodDisabled(subMonths(moment_date, 1), 'month');
+    const is_prev_year_disabled   = isPeriodDisabled(subYears(moment_date, num_of_years), 'month');
+    const is_next_month_disabled  = isPeriodDisabled(addMonths(moment_date, 1), 'month');
+    const is_next_year_disabled   = isPeriodDisabled(addYears(moment_date, num_of_years), 'month');
     const is_select_year_disabled = isPeriodDisabled(moment_date.clone().year(end_of_decade), 'year');
 
     return (
@@ -46,7 +51,7 @@ const CalendarHeader = ({
                 className={classNames('calendar__nav calendar__nav--prev-year', {
                     'calendar__nav--disabled': is_prev_year_disabled,
                 })}
-                onClick={is_prev_year_disabled ? undefined : (e) => navigateTo(e, num_of_years, 'year', false)}
+                onClick={is_prev_year_disabled ? undefined : () => navigateTo(subYears(calendar_date, num_of_years))}
             >
                 <IconChevronDoubleLeft />
             </CalendarButton>
@@ -55,7 +60,7 @@ const CalendarHeader = ({
                     'calendar__nav--disabled': is_prev_month_disabled,
                 })}
                 is_hidden={!is_date_view}
-                onClick={is_prev_month_disabled ? undefined : (e) => navigateTo(e, 1, 'month', false)}
+                onClick={is_prev_month_disabled ? undefined : () => navigateTo(subMonths(calendar_date, 1))}
             >
                 <IconChevronLeft />
             </CalendarButton>
@@ -66,14 +71,14 @@ const CalendarHeader = ({
                         className='calendar__btn calendar__btn--select'
                         is_hidden={!is_date_view}
                         label={month_headers[moment_date.format('MMM')]}
-                        onClick={(e) => switchView(e, 'month')}
+                        onClick={() => switchView('month')}
                     />
                 }
                 { (is_date_view || is_month_view) &&
                     <CalendarButton
                         className='calendar__btn calendar__btn--select'
                         label={moment_date.format('YYYY')}
-                        onClick={(e) => switchView(e, 'year')}
+                        onClick={() => switchView('year')}
                     />
                 }
                 { (is_year_view || is_decade_view) &&
@@ -81,7 +86,7 @@ const CalendarHeader = ({
                         className={classNames('calendar__btn calendar__btn--select', {
                             'calendar__btn--disabled': is_select_year_disabled,
                         })}
-                        onClick={is_select_year_disabled ? undefined : (e) => switchView(e, 'decade')}
+                        onClick={is_select_year_disabled ? undefined : () => switchView('decade')}
                     >
                         { is_year_view   && `${decade}`  }
                         { is_decade_view && `${century}` }
@@ -94,7 +99,7 @@ const CalendarHeader = ({
                     'calendar__nav--disabled': is_next_month_disabled,
                 })}
                 is_hidden={!is_date_view}
-                onClick={is_next_month_disabled ? undefined : (e) => navigateTo(e, 1, 'month', true)}
+                onClick={is_next_month_disabled ? undefined : () => navigateTo(addMonths(calendar_date, 1))}
             >
                 <IconChevronRight />
             </CalendarButton>
@@ -102,7 +107,7 @@ const CalendarHeader = ({
                 className={classNames('calendar__nav calendar__nav--next-year', {
                     'calendar__nav--disabled': is_next_year_disabled,
                 })}
-                onClick={is_next_year_disabled ? undefined : (e) => navigateTo(e, num_of_years, 'year', true)}
+                onClick={is_next_year_disabled ? undefined : () => navigateTo(addYears(calendar_date, num_of_years))}
             >
                 <IconChevronDoubleRight />
             </CalendarButton>

@@ -15,6 +15,7 @@ const IconCalendarToday = ({ className, onClick }) => (
 
 IconCalendarToday.propTypes = {
     className: PropTypes.string,
+    onClick  : PropTypes.func,
 };
 
 export { IconCalendarToday };
