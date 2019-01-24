@@ -23,11 +23,12 @@ export const onChangeStartDate = async (store) => {
     start_time                    = obj_start_time.start_time;
 
     const obj_duration_units_list = ContractType.getDurationUnitsList(contract_type, contract_start_type);
+    const duration_units_list     = obj_duration_units_list.duration_units_list;
     const obj_duration_unit       = ContractType.getDurationUnit(duration_unit, contract_type, contract_start_type);
 
-    const obj_expiry_type = ContractType.getExpiryType(obj_duration_units_list.duration_units_list, expiry_type);
+    const obj_expiry_type = ContractType.getExpiryType(duration_units_list, expiry_type);
     expiry_type           = obj_expiry_type.expiry_type;
-    const obj_expiry_date = ContractType.getExpiryDate(expiry_date, start_date, expiry_type);
+    const obj_expiry_date = ContractType.getExpiryDate(duration_units_list, expiry_date, expiry_type, start_date);
     expiry_date           = obj_expiry_date.expiry_date;
 
     const obj_market_close_times = { market_close_times: await ContractType.getTradingTimes(expiry_date, symbol) };

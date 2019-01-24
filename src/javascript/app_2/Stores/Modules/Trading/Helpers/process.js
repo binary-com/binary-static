@@ -22,8 +22,8 @@ const getMethodsList = (store, new_state) => ([
     ContractType.onChangeContractTypeList,
     ...(/\b(symbol|contract_type)\b/.test(Object.keys(new_state)) || !store.contract_type ? // symbol/contract_type changed or contract_type not set yet
         [ContractType.onChangeContractType] : []),
-    Duration.onChangeExpiry,
     StartDate.onChangeStartDate,
+    Duration.onChangeExpiry, // it should be always after StartDate.onChangeStartDate
 ]);
 
 // Some values need to be replaced, not extended

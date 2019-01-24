@@ -11,7 +11,9 @@ import Fieldset                 from 'App/Components/Form/fieldset.jsx';
 import InputField               from 'App/Components/Form/input_field.jsx';
 import RangeSlider              from 'App/Components/Form/RangeSlider';
 import TimePicker               from 'App/Components/Form/time_picker.jsx';
-import { convertDurationLimit } from 'Stores/Modules/Trading/Helpers/duration';
+import {
+    convertDurationLimit,
+    hasIntradayDurationUnit }   from 'Stores/Modules/Trading/Helpers/duration';
 import {
     isTimeValid,
     minDate,
@@ -61,9 +63,10 @@ const Duration = ({
         const max_daily_duration = duration_min_max.daily ? duration_min_max.daily.max : 365 * 24 * 3600;
         const moment_contract_start_date_time =
             setTime(toMoment(start_date || server_time), (isTimeValid(start_time) ? start_time : server_time.format('HH:mm')));
+        const has_intraday_duration_unit = hasIntradayDurationUnit(duration_units_list);
 
         // When the contract start is forwarding or is not forwarding but the expiry date is as same as start date, the contract should be expired within 24 hours
-        is_24_hours_contract = !!start_date || moment_expiry.isSame(toMoment(server_time), 'day');
+        is_24_hours_contract = (!!start_date || moment_expiry.isSame(toMoment(server_time), 'day')) && has_intraday_duration_unit;
 
         if (is_24_hours_contract) {
             const expiry_date_time         = setTime(moment_expiry.clone(), moment_contract_start_date_time.clone().add(5, 'minute').format('HH:mm'));
@@ -82,6 +85,10 @@ const Duration = ({
         } else {
             min_date_expiry = moment_contract_start_date_time.clone().startOf('day');
             max_date_duration = moment_contract_start_date_time.clone().add(max_daily_duration, 'second');
+
+            if (!has_intraday_duration_unit) {
+                min_date_expiry.add(1, 'day');
+            }
         }
     }
     if (is_minimized) {

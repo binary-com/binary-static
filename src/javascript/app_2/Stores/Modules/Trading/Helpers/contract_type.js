@@ -9,7 +9,9 @@ import {
     minDate,
     toMoment }                  from 'Utils/Date';
 import { buildBarriersConfig }  from './barrier';
-import { buildDurationConfig }  from './duration';
+import {
+    buildDurationConfig,
+    hasIntradayDurationUnit }   from './duration';
 import {
     buildForwardStartingConfig,
     isSessionAvailable }        from './start_date';
@@ -289,15 +291,22 @@ const ContractType = (() => {
         return { expiry_type };
     };
 
-    const getExpiryDate = (expiry_date, start_date, expiry_type) => {
+    const getExpiryDate = (duration_units_list, expiry_date, expiry_type, start_date) => {
         let proper_expiry_date = null;
 
         if (expiry_type === 'endtime') {
             const moment_start  = toMoment(start_date);
             const moment_expiry = toMoment(expiry_date);
-            // forward starting contracts should only show today and tomorrow as expiry date
-            const is_invalid = moment_expiry.isBefore(moment_start, 'day') || (start_date && moment_expiry.isAfter(moment_start.clone().add(1, 'day')));
-            proper_expiry_date = (is_invalid ? moment_start : moment_expiry).format('YYYY-MM-DD');
+
+            if (!hasIntradayDurationUnit(duration_units_list)) {
+                const is_invalid = moment_expiry.isSameOrBefore(moment_start, 'day');
+                proper_expiry_date = (is_invalid ? moment_start.clone().add(1, 'day') : moment_expiry).format('YYYY-MM-DD');
+            } else {
+                // forward starting contracts should only show today and tomorrow as expiry date
+                const is_invalid =
+                    moment_expiry.isBefore(moment_start, 'day') || (start_date && moment_expiry.isAfter(moment_start.clone().add(1, 'day')));
+                proper_expiry_date = (is_invalid ? moment_start : moment_expiry).format('YYYY-MM-DD');
+            }
         }
 
         return { expiry_date: proper_expiry_date };
