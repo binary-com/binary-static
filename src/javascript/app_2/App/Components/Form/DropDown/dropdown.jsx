@@ -16,9 +16,10 @@ import {
     getNextIndex }       from './helpers';
 
 class Dropdown extends React.Component {
+    list_ref = React.createRef();
     state = {
-        is_list_visible: false,
         curr_index     : getItemFromValue(this.props.list, this.props.value).number,
+        is_list_visible: false,
     }
 
     componentDidMount () {
@@ -124,6 +125,15 @@ class Dropdown extends React.Component {
                 />
             );
         }
+
+        // we are calculating the offset for the dropdown list based on it's width here
+        const left_alignment_style = {
+            left: `calc(-${this.state.list_width}px - 16px)`,
+        };
+
+        // upon render via css transition group, we use this as a callback to set the width of the dropdown list in the state
+        const setListWidth = () => this.setState({ list_width: this.list_ref.current.offsetWidth });
+
         return (
             <div
                 ref={this.setWrapperRef}
@@ -158,13 +168,20 @@ class Dropdown extends React.Component {
                         enterDone: 'dropdown__list--enter--done',
                         exit     : 'dropdown__list--exit',
                     }}
+                    onEnter={setListWidth}
                     unmountOnExit
                 >
                     <div className={classNames('dropdown__list', {
                         'dropdown__list--left': this.props.is_alignment_left,
                     })}
                     >
-                        <div className='list'>
+                        <div
+                            className={classNames('list', {
+                                'list--left': this.props.is_alignment_left,
+                            })}
+                            ref={this.list_ref}
+                            style={this.props.is_alignment_left ? left_alignment_style : undefined}
+                        >
                             <Scrollbars
                                 autoHeight
                                 autoHide
