@@ -281,6 +281,14 @@ const ContractType = (() => {
         return underlying ? trading_times[date][underlying] : trading_times[date];
     };
 
+    const getExpiryType = (duration_units_list, expiry_type) => {
+        if (duration_units_list && duration_units_list.length === 1 && duration_units_list[0].value === 't') {
+            return { expiry_type: 'duration' };
+        }
+
+        return { expiry_type };
+    };
+
     const getExpiryDate = (expiry_date, start_date, expiry_type) => {
         let proper_expiry_date = null;
 
@@ -387,6 +395,7 @@ const ContractType = (() => {
         getFullContractTypes,
         getExpiryDate,
         getExpiryTime,
+        getExpiryType,
         getSessions,
         getStartTime,
         getStartType,

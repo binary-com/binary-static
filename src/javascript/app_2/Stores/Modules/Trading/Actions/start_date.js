@@ -5,13 +5,13 @@ export const onChangeStartDate = async (store) => {
         contract_type,
         duration_unit,
         expiry_time,
-        expiry_type,
         start_date,
         symbol } = store;
     const server_time = store.root_store.common.server_time;
     let {
         start_time,
-        expiry_date } = store;
+        expiry_date,
+        expiry_type } = store;
 
     start_time = start_time || server_time.clone().add(6, 'minute').format('HH:mm'); // when there is not a default value for start_time, it should be set more than 5 min after server_time
 
@@ -25,6 +25,8 @@ export const onChangeStartDate = async (store) => {
     const obj_duration_units_list = ContractType.getDurationUnitsList(contract_type, contract_start_type);
     const obj_duration_unit       = ContractType.getDurationUnit(duration_unit, contract_type, contract_start_type);
 
+    const obj_expiry_type = ContractType.getExpiryType(obj_duration_units_list.duration_units_list, expiry_type);
+    expiry_type           = obj_expiry_type.expiry_type;
     const obj_expiry_date = ContractType.getExpiryDate(expiry_date, start_date, expiry_type);
     expiry_date           = obj_expiry_date.expiry_date;
     const obj_expiry_time = await ContractType.getExpiryTime(
@@ -49,6 +51,7 @@ export const onChangeStartDate = async (store) => {
         ...obj_start_time,
         ...obj_expiry_date,
         ...obj_expiry_time,
+        ...obj_expiry_type,
         ...obj_market_close_times,
     };
 };
