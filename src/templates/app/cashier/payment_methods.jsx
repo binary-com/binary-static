@@ -1,4 +1,5 @@
 import React from 'react';
+import { CashierNote } from './index.jsx';
 import { Table } from '../../_common/components/elements.jsx';
 
 const Button = ({ url, real, className, text }) => (
@@ -107,6 +108,7 @@ const PaymentMethods = () => {
                     <Button url='cashier/forwardws?action=deposit'  real className='deposit'  text={it.L('Deposit')} />
                     <Button url='cashier/forwardws?action=withdraw' real className='withdraw' text={it.L('Withdraw')} />
                 </p>
+                <CashierNote className='gr-parent' text={it.L('Please do not share your bank account, credit card, or e-wallet with another client, as this may cause delays in your withdrawals.')} />
             </div>
 
             <div id='payment_methods' className='table-container'>
@@ -477,7 +479,7 @@ const PaymentMethods = () => {
                                 row: [
                                     { text: <PaymentLogo logo='litecoin' /> },
                                     { attributes: { colSpan: 5, className: 'toggler' }, custom_td : <CustomTableData data={[
-                                        { td: it.L('Litecoin is a cryptocurrency similar to Bitcoin, but capable of a higher transaction volume and faster confirmation times. For more info, please visit [_1].', '<a href="https://litecoin.org" target="_blank">https://litecoin.org</a>') },
+                                        { td: it.L('Litecoin is a cryptocurrency similar to Bitcoin, but capable of a higher transaction volume and faster confirmation times. For more info, please visit [_1].', `${createLink('https://www.litecoin.org')}`) },
                                         { td_list: [
                                             { text: 'LTC' },
                                             { text: '0.1' },
@@ -496,13 +498,13 @@ const PaymentMethods = () => {
                                 row: [
                                     { text: <PaymentLogo logo='tether' /> },
                                     { attributes: { colSpan: 5, className: 'toggler' }, custom_td : <CustomTableData data={[
-                                        { td: it.L('Tether is a blockchain-based cryptocurrency whose cryptocoins in circulation are backed by an equivalent amount of traditional fiat currencies. For more info, please visit [_1].', '<a href="https://litecoin.org" target="_blank">https://tether.to</a>') },
+                                        { td: it.L('Tether is a blockchain-based cryptocurrency whose cryptocoins in circulation are backed by an equivalent amount of traditional fiat currencies. For more info, please visit [_1].', `${createLink('https://www.tether.to')}`) },
                                         { td_list: [
                                             { text: 'UST' },
                                             { text: '1' },
                                             { text: '1' },
                                             { text: <TableValues value={[it.L(`${deposit}${blockchain_confirmations}`, 3), it.L(`${withdrawal}${working_day}`, 1)]} /> },
-                                            { text: <ReferenceLinks /> },
+                                            { text: <ReferenceLinks pdf_file='Binary.com_Tether.pdf' video_link='https://youtu.be/N1WPsq67290' /> },
                                         ],
                                         },
                                     ]}

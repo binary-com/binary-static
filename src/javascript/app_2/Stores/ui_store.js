@@ -143,8 +143,7 @@ export default class UIStore extends BaseStore {
 
     @action.bound
     showInstallButton() {
-        // TODO The value should be change to `True` whenever the design of showing installation prompt gets ready.
-        this.is_install_button_visible = false;
+        this.is_install_button_visible = true;
     }
 
     @action.bound

@@ -30,6 +30,13 @@ const StatusNotification = () => (
     </div>
 );
 
+const DialogNotification = () => (
+    <div id='dialog_notification' className='primary-bg-color'>
+        <p id='dialog_notification_text'>{it.L('Our website uses cookies to give you the best user experience. For more information, [_1].', `<a href="${it.url_for('terms-and-conditions')}?anchor=cookies-and-device-information#privacy" target="_blank" rel="noopener noreferrer">${it.L('view our policy')}</a>`)}</p>
+        <a className='button-secondary gr-gutter-left gr-no-gutter-m' id='dialog_notification_accept' type='button'><span>{it.L('OK')}</span></a>
+    </div>
+);
+
 const Footer = () => (
     <div id='footer' className='no-print'>
         <div id='footer-menu' className='primary-bg-color gr-padding-10'>
@@ -227,6 +234,7 @@ const Footer = () => (
         </div>
         <div id='end-note' className='invisible content-inverse-color center-text' />
         <StatusNotification />
+        <DialogNotification />
     </div>
 );
 

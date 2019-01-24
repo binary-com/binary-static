@@ -413,6 +413,7 @@ class Markets extends React.Component {
                             type='text'
                             maxLength={20}
                             onInput={searchSymbols}
+                            onChange={searchSymbols}
                             placeholder={localize('Search...')}
                             value={query}
                         />

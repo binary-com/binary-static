@@ -1,6 +1,6 @@
 import BinarySocket        from '_common/base/socket_base';
+import SubscriptionManager from '_common/base/subscription_manager';
 import { isEmptyObject }   from '_common/utility';
-import SubscriptionManager from './subscription_manager';
 
 const WS = (() => {
     const activeSymbols = () =>

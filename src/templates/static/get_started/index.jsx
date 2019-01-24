@@ -187,7 +187,7 @@ const Index = () => (
                                     link='get-started/cryptocurrencies'
                                     hash='contract-specification'
                                     image='mt5/contract-specification'
-                                    header={it.L('Cryptocurrency contract specifications')}
+                                    header={it.L('Cryptocurrency contract specifications and commission scheme')}
                                     text={it.L('Find out more about the costs and details of every cryptocurrency pair we offer.')}
                                 />
                             </div>
@@ -283,6 +283,13 @@ const Index = () => (
                                     image='mt5/how-trade-binary'
                                     header={it.L('How to trade binary options on MT5')}
                                     text={it.L('Follow our step-by-step guide to start trading binary options on MT5.')}
+                                />
+                                <GetStartedSection
+                                    link='get-started/binary-options-mt5'
+                                    hash='types-of-trades'
+                                    image='binary-options/types-of-trades'
+                                    header={it.L('Types of trades')}
+                                    text={it.L('The various trade types available on our MT5 platform.')}
                                 />
                             </div>
                             <div className='center-text gr-padding-20'>

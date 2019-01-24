@@ -3,62 +3,39 @@ import React             from 'react';
 import { localize }      from '_common/localize';
 import Money             from 'App/Components/Elements/money.jsx';
 import Tooltip           from 'App/Components/Elements/tooltip.jsx';
-import { IconTradeType } from 'Assets/Trading/Types';
+import { IconPriceMove } from 'Assets/Trading/icon_price_move.jsx';
 
 const ContractInfo = ({
-    barrier_count,
-    contract_title,
-    contract_type,
     currency,
+    has_increased,
     proposal_info,
-}) => {
-    const icon_type = `${contract_type}${/^(call|put)$/i.test(contract_type) && barrier_count > 0 ? '_barrier' : ''}`.toLowerCase();
-
-    return (
-        <div className='box'>
-            <div className='left-column'>
-                <div className='type-wrapper'>
-                    <IconTradeType type={icon_type} className='type' />
-                </div>
-                <h4 className='trade-type'>{contract_title}</h4>
+}) => (
+    <React.Fragment>
+        {(proposal_info.has_error || !proposal_info.id) ?
+            <div className={proposal_info.has_error ? 'error-info-wrapper' : ''}>
+                <span>{proposal_info.message}</span>
             </div>
-            {(proposal_info.has_error || !proposal_info.id) ?
-                <div className={proposal_info.has_error ? 'error-info-wrapper' : ''}>
-                    <span>{proposal_info.message}</span>
-                </div>
-                :
-                <div className='purchase-info-wrapper'>
-                    <span className='purchase-tooltip'>
-                        <Tooltip alignment='left' icon='info' message={proposal_info.message} />
-                    </span>
-                    <div className='info-wrapper'>
-                        <div>{localize('Stake')}:</div>
-                        <div><Money amount={proposal_info.stake} currency={currency} /></div>
-                    </div>
-                    <div className='info-wrapper'>
-                        <div>{localize('Payout')}:</div>
-                        <div><Money amount={proposal_info.payout} currency={currency} /></div>
-                    </div>
-                    <div className='info-wrapper'>
-                        <div>{localize('Net Profit')}:</div>
-                        <div><Money amount={proposal_info.profit} currency={currency} /></div>
-                    </div>
-                    <div className='info-wrapper'>
-                        <div>{localize('Return')}:</div>
-                        <div>{proposal_info.returns}</div>
+            :
+            <div className='purchase-info-wrapper'>
+                <div className='info-wrapper'>
+                    <div>{localize('[_1]', proposal_info.obj_contract_basis.text)}</div>
+                    <div><Money amount={proposal_info.obj_contract_basis.value} currency={currency} /></div>
+                    <div className='icon_price_move_container'>
+                        {has_increased !== null && <IconPriceMove type={has_increased ? 'profit' : 'loss'} />}
                     </div>
                 </div>
-            }
-        </div>
-    );
-};
+                <span className='purchase-tooltip'>
+                    <Tooltip alignment='left' icon='info' message={proposal_info.message} />
+                </span>
+            </div>
+        }
+    </React.Fragment>
+);
 
 ContractInfo.propTypes = {
-    barrier_count : PropTypes.number,
-    contract_title: PropTypes.string,
-    contract_type : PropTypes.string,
-    currency      : PropTypes.string,
-    proposal_info : PropTypes.object,
+    currency     : PropTypes.string,
+    has_increased: PropTypes.bool,
+    proposal_info: PropTypes.object,
 };
 
 export default ContractInfo;

@@ -4,6 +4,7 @@ div.contracts-popup-container {
     background: $COLOR_WHITE;
     border: solid 1px $COLOR_GRAY;
     border-radius: 4px;
+    transition: all 0.2s;
 
     &:hover {
         border-color: $COLOR_BLUE;
@@ -59,6 +60,8 @@ div.contracts-popup-container {
     &:active, &:focus, &.show {
         outline: none;
         border-radius: 4px;
+        border-color: $COLOR_BLUE;
+        box-shadow: 0 0 0 0.2rem rgba(127, 131, 151, .3); // stylelint-disable-line number-leading-zero
     }
     &.show {
         &.mobile-only {
@@ -80,9 +83,15 @@ div.contracts-popup-container {
         align-items: center;
         padding: 8px;
         box-sizing: border-box;
+        margin-bottom: 1px;
+        transition: all 0.2s;
 
         &:hover {
             background-color: #f2f3f8; /* stylelint-disable-line color-no-hex */
+
+            .tooltip {
+                display: block;
+            }
         }
         &.disabled {
             pointer-events: none;
@@ -93,6 +102,8 @@ div.contracts-popup-container {
         }
         &.selected {
             background-color: $COLOR_BLUE;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            transition: all 0.3s;
 
             .contract-title {
                 color: $COLOR_WHITE;
@@ -106,9 +117,15 @@ div.contracts-popup-container {
             font-weight: 300;
             font-size: 0.875rem; /* stylelint-disable-line number-max-precision */
         }
+        .tooltip {
+            margin-left: auto;
+            margin-top: 3px;
+            display: none;
+            transition: all 0.2s;
+        }
     }
     .contracts-popup-list {
-        right: 0;
+        right: 4px;
         width: 100%;
         pointer-events: none;
         position: absolute;
@@ -121,36 +138,28 @@ div.contracts-popup-container {
 
         .list-container {
             position: absolute;
-            width: 560px;
+            width: 290px;
             right: calc(100% + 10px);
             top: -54px;
             display: grid;
             grid-auto-columns: 1fr;
             z-index: 2;
             background: $COLOR_LIGHT_GRAY;
-            border: solid 1px $COLOR_GRAY;
             border-radius: 4px;
 
             .list-group {
-                padding: 1rem;
+                padding: 1rem 1rem 0rem;
 
                 .list-label span {
                     font-size: 0.875rem; /* stylelint-disable-line number-max-precision */
                     padding: 8px;
                     display: block;
-
                 }
-                &:nth-child(odd) {
-                    grid-column: 1;
-                    padding: 1rem 0.5rem 1rem 1rem;
-                }
-                &:nth-child(even) {
-                    grid-column: 2;
-                    padding: 1rem 1rem 1rem 0.5rem;
+                &:last-child {
+                    padding-bottom: 1rem;
                 }
                 .list-items {
                     .list-item {
-                        border: 1px solid $COLOR_GRAY;
                         background-color: $COLOR_WHITE;
 
                         span.contract-title {
@@ -168,10 +177,6 @@ div.contracts-popup-container {
                         }
                         &:only-child {
                             border-radius: 4px;
-                            border: 1px solid $COLOR_GRAY;
-                        }
-                        &:first-child:nth-last-child(2) {
-                            border-bottom: 1px solid $COLOR_GRAY;
                         }
                         &.selected {
                             background: $COLOR_BLUE;
@@ -193,10 +198,6 @@ div.contracts-popup-container {
                 .category-wrapper {
                     width: 24px;
                     height: 24px;
-
-                    .category-type {
-                        transform: scale(1, 1);
-                    }
                 }
             }
         }
@@ -236,7 +237,7 @@ div.contracts-popup-container {
         color: $COLOR_GRAY;
     }
     .categories-container {
-        margin-bottom: 4px;
+        margin-bottom: 6px;
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -252,6 +253,7 @@ div.contracts-popup-container {
     div.contracts-popup-container {
         background: $COLOR_BLUE;
         border-color: $COLOR_BRANDBLUE_85;
+        padding: 4px;
 
         &.mobile-only {
             .contracts-popup-display span {
@@ -261,8 +263,13 @@ div.contracts-popup-container {
                 background: $COLOR_BLUE;
             }
         }
-        &:hover, &:focus, &:active {
+        &:hover {
             border-color: $COLOR_WHITE;
+        }
+        &:focus, &:active {
+            outline: 0;
+            border-color: $COLOR_WHITE;
+            box-shadow: 0 0 0 0.2rem rgba(127, 131, 151, 0.3) // stylelint-disable-line number-leading-zero
         }
         .list-container {
             border-color: $COLOR_BRANDBLUE_85;
@@ -292,8 +299,9 @@ div.contracts-popup-container {
 
             .category-type {
                 path, rect {
-                    fill: $COLOR_WHITE;
-
+                    &:not(.important) {
+                        fill: $COLOR_WHITE;
+                    }
                     &.transparent {
                         fill: $COLOR_BRANDBLUE_75;
                     }

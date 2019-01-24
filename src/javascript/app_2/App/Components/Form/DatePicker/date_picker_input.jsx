@@ -13,7 +13,7 @@ export default function DatePickerInput(props) {
                 || (props.mode === 'duration' ? localize('Select a duration') : localize('Select date'))}
             onChange={props.onChange}
             onClick={props.onClick}
-            value={props.value}
+            value={props.value || ''}
         />
     );
 }

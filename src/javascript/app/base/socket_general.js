@@ -1,3 +1,4 @@
+const Cookies                = require('js-cookie');
 const Client                 = require('./client');
 const Clock                  = require('./clock');
 const Footer                 = require('./footer');
@@ -11,6 +12,7 @@ const SessionDurationLimit   = require('../common/session_duration_limit');
 const updateBalance          = require('../pages/user/update_balance');
 const GTM                    = require('../../_common/base/gtm');
 const Login                  = require('../../_common/base/login');
+const SubscriptionManager    = require('../../_common/base/subscription_manager').default;
 const Crowdin                = require('../../_common/crowdin');
 const localize               = require('../../_common/localize').localize;
 const LocalStore             = require('../../_common/storage').LocalStore;
@@ -59,6 +61,11 @@ const BinarySocketGeneral = (() => {
                     if (!Client.isLoggedIn() && !State.getResponse('landing_company')) {
                         BinarySocket.send({ landing_company: response.website_status.clients_country });
                     }
+                    if (!Client.isLoggedIn() && !Cookies.get('CookieConsent')) {
+                        Footer.displayDialogMessage();
+                    } else {
+                        Footer.clearDialogMessage();
+                    }
                 }
                 break;
             case 'authorize':
@@ -79,6 +86,7 @@ const BinarySocketGeneral = (() => {
                         BinarySocket.send({ get_account_status: 1 });
                         BinarySocket.send({ payout_currencies: 1 });
                         BinarySocket.send({ mt5_login_list: 1 });
+                        SubscriptionManager.subscribe('transaction', { transaction: 1, subscribe: 1 }, () => false);
                         const clients_country = response.authorize.country || Client.get('residence');
                         setResidence(clients_country);
                         // for logged in clients send landing company with IP address as residence
@@ -128,6 +136,9 @@ const BinarySocketGeneral = (() => {
                         $('#topMenuPaymentAgent').setVisibility(1);
                     }
                 }
+                break;
+            case 'transaction':
+                GTM.pushTransactionData(response, { bom_ui: 'new' });
                 break;
             // no default
         }

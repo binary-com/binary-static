@@ -8,7 +8,8 @@ module.exports = [
     ['cashier/forwardws',                       'app/cashier/deposit_withdraw',                'default',    'Cashier'],
     ['cashier/payment_agent_listws',            'app/cashier/payment_agent_list',              'default',    'Payment Agent Deposit'],
     ['cashier/payment_methods',                 'app/cashier/payment_methods',                 'default',    'Payment Methods'],
-    ['cashier/top_up_virtualws',                'app/user/top_up_virtual',                     'default',    'Top Up Virtual Account'],
+    ['cashier/session_expired',                 'app/cashier/session_expired',                 null,         'Cashier session expired'],
+    ['cashier/top_up_virtualws',                'app/user/top_up_virtual/top_up_virtual',      'default',    'Top Up Virtual Account'],
 
     ['paymentagent/transferws',                 'app/cashier/paymentagent_transfer',           'default',    'Payment Agent Transfer'],
     ['paymentagent/withdrawws',                 'app/cashier/paymentagent_withdraw',           'default',    'Payment Agent Withdrawal'],
@@ -53,6 +54,7 @@ module.exports = [
     ['user/settings/professional',              'app/user/settings/professional',              'default',    'Professional Client'],
     ['user/statementws',                        'app/user/statement',                          'default',    'Statement'],
     ['user/telegram-bot',                       'app/user/telegram_bot',                       'default',    'Telegram Bot'],
+    ['user/top_up_virtual_pop_up',              'app/user/top_up_virtual/pop_up',              'default',    'Top Up Virtual Account'],
     ['user/tnc_approvalws',                     'app/user/tnc_approval',                       'default',    'Terms and Conditions Approval'],
     ['user/video-facility',                     'app/user/video_facility',                     'default',    'Video Room Facility'],
     ['user/warning',                            'app/user/warning',                            'default',    'Warning'],

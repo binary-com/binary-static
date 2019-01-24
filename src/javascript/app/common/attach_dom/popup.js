@@ -5,6 +5,8 @@ const createElement  = require('../../../_common/utility').createElement;
 const cache = {};
 const popup_queue = [];
 
+// use this function if you need to show a form with some validations in popup
+// if you need a simple popup with just a confirm or also a cancel button use Dialog instead
 const showPopup = (options) => {
     if (cache[options.url]) {
         callback(options);

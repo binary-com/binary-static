@@ -1,7 +1,7 @@
 import PropTypes    from 'prop-types';
 import React        from 'react';
 import { localize } from '_common/localize';
-import Button       from '../../Form/button.jsx';
+import Button       from 'App/Components/Form/button.jsx';
 
 const UpgradeButton = ({ onClick }) => (
     <Button

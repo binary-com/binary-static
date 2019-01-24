@@ -3,9 +3,11 @@ import {
     intercept,
     observable,
     reaction,
-    toJS }               from 'mobx';
+    toJS,
+    when }               from 'mobx';
 import { isEmptyObject } from '_common/utility';
 import Validator         from 'Utils/Validator';
+import { isProduction }  from '../../config';
 
 /**
  * BaseStore class is the base class for all defined stores in the application. It handles some stuff such as:
@@ -14,12 +16,6 @@ import Validator         from 'Utils/Validator';
  */
 export default class BaseStore {
 
-    @observable
-    validation_errors = {};
-
-    @observable
-    validation_rules = {};
-
     /**
      * An enum object to define LOCAL_STORAGE and SESSION_STORAGE
      */
@@ -27,6 +23,15 @@ export default class BaseStore {
         LOCAL_STORAGE  : Symbol('LOCAL_STORAGE'),
         SESSION_STORAGE: Symbol('SESSION_STORAGE'),
     });
+
+    @observable
+    validation_errors = {};
+
+    @observable
+    validation_rules = {};
+
+    switchAccountDisposer = null;
+    switch_account_listener = null;
 
     /**
      * Constructor of the base class that gets properties' name of child which should be saved in storages
@@ -58,7 +63,7 @@ export default class BaseStore {
             writable  : true,
         });
 
-        this.root_store = root_store;
+        this.root_store                 = root_store;
         this.local_storage_properties   = local_storage_properties || [];
         this.session_storage_properties = session_storage_properties || [];
         this.setValidationRules(validation_rules);
@@ -85,7 +90,7 @@ export default class BaseStore {
         if (properties && properties.length) {
             snapshot = properties.reduce(
                 (result, p) => Object.assign(result, { [p]: snapshot[p] }),
-                {}
+                {},
             );
         }
 
@@ -101,7 +106,7 @@ export default class BaseStore {
         if (this.local_storage_properties.length) {
             reaction(
                 () => this.local_storage_properties.map(i => this[i]),
-                () => this.saveToStorage(this.local_storage_properties, BaseStore.STORAGES.LOCAL_STORAGE)
+                () => this.saveToStorage(this.local_storage_properties, BaseStore.STORAGES.LOCAL_STORAGE),
             );
         }
     }
@@ -115,7 +120,7 @@ export default class BaseStore {
         if (this.session_storage_properties.length) {
             reaction(
                 () => this.session_storage_properties.map(i => this[i]),
-                () => this.saveToStorage(this.session_storage_properties, BaseStore.STORAGES.SESSION_STORAGE)
+                () => this.saveToStorage(this.session_storage_properties, BaseStore.STORAGES.SESSION_STORAGE),
             );
         }
     }
@@ -128,7 +133,10 @@ export default class BaseStore {
      *
      */
     saveToStorage(properties, storage) {
-        const snapshot = JSON.stringify(this.getSnapshot(properties));
+        const snapshot = JSON.stringify(this.getSnapshot(properties), (key, value) => {
+            if (value !== null) return value;
+            return undefined;
+        });
 
         if (storage === BaseStore.STORAGES.LOCAL_STORAGE) {
             localStorage.setItem(this.constructor.name, snapshot);
@@ -143,7 +151,7 @@ export default class BaseStore {
      */
     @action
     retrieveFromStorage() {
-        const local_storage_snapshot = JSON.parse(localStorage.getItem(this.constructor.name, {}));
+        const local_storage_snapshot   = JSON.parse(localStorage.getItem(this.constructor.name, {}));
         const session_storage_snapshot = JSON.parse(sessionStorage.getItem(this.constructor.name, {}));
 
         const snapshot = { ...local_storage_snapshot, ...session_storage_snapshot };
@@ -170,7 +178,7 @@ export default class BaseStore {
      *
      */
     @action
-    setValidationRules(rules = {}){
+    setValidationRules(rules = {}) {
         Object.keys(rules).forEach(key => {
             this.addRule(key, rules[key]);
         });
@@ -184,7 +192,7 @@ export default class BaseStore {
      *
      */
     @action
-    addRule(property, rules){
+    addRule(property, rules) {
         this.validation_rules[property] = rules;
 
         intercept(this, property, change => {
@@ -202,19 +210,19 @@ export default class BaseStore {
      */
     @action
     validateProperty(property, value) {
-        const trigger = this.validation_rules[property].trigger;
-        const inputs = { [property]: value !== undefined ? value : this[property] };
+        const trigger          = this.validation_rules[property].trigger;
+        const inputs           = { [property]: value !== undefined ? value : this[property] };
         const validation_rules = { [property]: (this.validation_rules[property].rules || []) };
 
         if (!!trigger && Object.hasOwnProperty.call(this, trigger)) {
-            inputs[trigger] = this[trigger];
+            inputs[trigger]           = this[trigger];
             validation_rules[trigger] = this.validation_rules[trigger].rules || [];
         }
 
         const validator = new Validator(
             inputs,
             validation_rules,
-            this
+            this,
         );
 
         validator.isPassed();
@@ -235,5 +243,44 @@ export default class BaseStore {
             this.validateProperty(p, this[p]);
         });
     }
-}
 
+    @action.bound
+    onSwitchAccount(listener) {
+        this.switchAccountDisposer = when(
+            () => this.root_store.client.switch_broadcast,
+            async () => {
+                try {
+                    const result = this.switch_account_listener();
+                    if (result && result.then && typeof result.then === 'function') {
+                        result.then(() => {
+                            this.root_store.client.switchEndSignal();
+                            this.onSwitchAccount(this.switch_account_listener);
+                        });
+                    } else {
+                        throw new Error('Switching account listeners are required to return a promise.');
+                    }
+                } catch (error) {
+                    // there is no listener currently active. so we can just ignore the error raised from treating
+                    // a null object as a function. Although, in development mode, we throw a console error.
+                    if (!isProduction()) {
+                        console.error(error); // eslint-disable-line
+                    }
+                }
+            },
+        );
+        this.switch_account_listener = listener;
+    }
+
+    @action.bound
+    disposeSwitchAccount() {
+        if (typeof this.switchAccountDisposer === 'function') {
+            this.switchAccountDisposer();
+        }
+        this.switch_account_listener = null;
+    }
+
+    @action.bound
+    onUnmount() {
+        this.disposeSwitchAccount();
+    }
+}

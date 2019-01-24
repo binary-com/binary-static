@@ -1,11 +1,11 @@
 import classNames         from 'classnames';
-import moment             from 'moment';
 import React              from 'react';
+import { toMoment }       from 'Utils/Date';
 import CalendarPanelTypes from './types';
 
 export const CalendarDecades = ({ calendar_date, isPeriodDisabled, onClick, selected_date }) => {
-    const selected_year = moment.utc(selected_date).year();
-    const moment_date   = moment.utc(calendar_date);
+    const selected_year = toMoment(selected_date).year();
+    const moment_date   = toMoment(calendar_date);
 
     const decades = [];
     let min_year  = moment_date.year() - 10;

@@ -62,7 +62,7 @@ const FileSelector = ({
                                                             <label htmlFor={`exp_date_${j}`}>{it.L('Expiry date')}:</label>
                                                         </div>
                                                         <div className='gr-8 gr-12-m'>
-                                                            <input className='date-picker' id={`exp_date_${j}`} type='text' maxLength='200' readOnly='true' />
+                                                            <input className='date-picker' id={`exp_date_${j}`} type='text' maxLength='200' readOnly='readonly' />
                                                         </div>
                                                     </div>
                                                     <div className='gr-row form-row center-text-m'>
@@ -158,7 +158,7 @@ const AuthenticateMessage = () => (
 
         <FileSelector
             heading={it.L('3. Selfie or self-portrait photo')}
-            data_show='mt5fin:vanuatu'
+            data_show='mt5fin:vanuatu, labuan'
             instructions={[
                 it.L('Must be a clear, colour photo'),
                 it.L('Proof of identity in your selfie must be clear, identifiable, and same as the one you submitted previously'),

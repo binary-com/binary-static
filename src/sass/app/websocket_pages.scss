@@ -200,6 +200,51 @@
     }
 }
 
+.lightbox {
+    &#top_up_virtual_pop_up, &#top_up_error, &#top_up_success {
+        > div {
+            max-width: 25em;
+            padding: 32px;
+
+            #btn_cancel {
+                span {
+                    width: calc(100% - 50px);
+                }
+            }
+            #btn_ok {
+                width: calc(100% - 25px);
+            }
+            &#dialog_content {
+                padding: 22px 12px;
+            }
+        }
+    }
+    &#top_up_error {
+        > div {
+            #frm_confirm {
+                width: 100%;
+                text-align: center;
+
+                .button span {
+                    width: 40%;
+                }
+            }
+        }
+    }
+    &#top_up_success {
+        > div {
+            #frm_confirm {
+                width: 100%;
+                text-align: center;
+
+                .button span {
+                    width: calc(50% - 55px);
+                }
+            }
+        }
+    }
+}
+
 @media screen and (max-width: 480px) {
     .api_token, #applications-container {
         table td, table th {

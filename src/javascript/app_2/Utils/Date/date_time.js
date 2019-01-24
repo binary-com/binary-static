@@ -6,7 +6,20 @@ import { localize } from '_common/localize';
  * @param  {Number} epoch
  * @return {moment} the moment object of provided epoch
  */
-export const toMoment = epoch => moment.unix(epoch).utc();
+export const epochToMoment = epoch => moment.unix(epoch).utc();
+
+/**
+ * Convert date string or epoch to moment object
+ * @param  {Number} value   the date in epoch format
+ * @param  {String} value   the date in string format
+ * @return {moment} the moment object of 'now' or the provided date epoch or string
+ */
+export const toMoment = value => {
+    if (!value) return moment().utc(); // returns 'now' moment object
+    if (value instanceof moment && value.isValid() && value.isUTC()) return value; // returns if already a moment object
+    const moment_obj = epochToMoment(value);
+    return moment_obj.isValid() ? moment_obj : moment.utc(value);
+};
 
 /**
  * Set specified time on moment object
@@ -67,3 +80,27 @@ export const formatDuration = (duration) => {
     }
     return formatted_str;
 };
+
+/**
+ * return true if the time_str is in "HH:MM" format, else return false
+ * @param {String} time_str time
+ */
+export const isTimeValid = time_str => /^(\d{1,2}):(\d{2})(:00)?$/.test(time_str);
+
+/**
+ * return true if the time_str's hour is between 0 and 23, else return false
+ * @param {String} time_str time
+ */
+export const isHourValid = time_str => isTimeValid(time_str) && /^([01][0-9]|2[0-3])$/.test(time_str.split(':')[0]);
+
+/**
+ * return true if the time_str's minute is between 0 and 59, else return false
+ * @param {String} time_str time
+ */
+export const isMinuteValid = time_str => isTimeValid(time_str) && /^[0-5][0-9]$/.test(time_str.split(':')[1]);
+
+/**
+ * return true if the date is typeof string and a valid moment date, else return false
+ * @param {String} date_str date
+ */
+export const isDateValid = date_str => typeof date_str === 'string' && moment(date_str).isValid();

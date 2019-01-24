@@ -1,4 +1,5 @@
-import React from 'react';
+import React                 from 'react';
+import Loading               from './loading.jsx';
 import { Fieldset, FormRow } from './forms.jsx';
 
 export const Salutation = ({ className }) => (
@@ -103,23 +104,28 @@ export const AddressState = () => (
     <FormRow type='select' id='address_state' label={it.L('State/Province')} attributes={{ single: 'single' }} />
 );
 
-export const AddressPostcode = ({ hint }) => (
+export const AddressPostcode = ({ children, hint }) => (
     <FormRow
         type='text'
         id='address_postcode'
         label={it.L('Postal code/ZIP')}
         attributes={{ maxLength: '20', 'data-lpignore': true }}
         hint={hint}
-    />
+        has_geovalidator
+        row_class='postcode-form-row'
+    >
+        {children}
+    </FormRow>
 );
 
-export const Phone = ({ hint }) => (
+export const Phone = ({ hint, row_class }) => (
     <FormRow
         type='text'
         id='phone'
         label={it.L('Telephone')}
         attributes={{ 'data-lpignore': true }}
         hint={hint}
+        row_class={row_class}
     />
 );
 
@@ -204,21 +210,41 @@ export const TaxInformationForm = () => (
                 <p>{it.L('If we have reason to believe that your tax information is incomplete, we may contact you for clarification.')}</p>
             </div>
         </div>
+
+        <FormRow
+            type='label'
+            label={it.L('Tax residence')}
+            id='lbl_tax_residence'
+            row_id='row_lbl_tax_residence'
+            row_class='invisible'
+        />
         <FormRow
             type='select'
-            id='tax_residence'
             label={it.L('Tax residence')}
-            tooltip={it.L('Please select all the countries where you are a tax resident. If you have any doubts, kindly consult your tax advisor.')}
-            className='invisible'
-            attributes={{ multiple: 'multiple' }}
+            tooltip={it.L('Please select the country where you are a tax resident. If you have any doubts, kindly consult your tax advisor.')}
+            id='tax_residence'
+            row_id='row_tax_residence'
+            row_class='invisible'
+            attributes={{ single: 'single' }}
+        />
+
+        <FormRow
+            type='label'
+            label={it.L('Tax identification number')}
+            id='lbl_tax_identification_number'
+            row_id='row_lbl_tax_identification_number'
+            row_class='invisible'
         />
         <FormRow
             type='text'
             label={it.L('Tax identification number')}
-            tooltip={it.L('Please provide the tax identification number for each country where you are a tax resident. If you cannot provide this information, kindly contact our customer support team for help.')}
+            tooltip={it.L('Please provide the tax identification number for the country where you are a tax resident. If you cannot provide this information, kindly contact our customer support team.')}
             id='tax_identification_number'
+            row_id='row_tax_identification_number'
+            row_class='invisible'
             attributes={{ maxLength: 20, 'data-lpignore': true }}
         />
+
         <div id='tax_information_declaration'>
             <div className='gr-12 gr-padding-10'>
                 <input type='checkbox' id='chk_tax_id' />
@@ -226,22 +252,32 @@ export const TaxInformationForm = () => (
                     {it.L('I hereby confirm that the tax information I provided is true and complete. I will also inform Binary Investments (Europe) Ltd. about any changes to this information.')}
                 </label>
             </div>
-            <div className='gr-12 gr-padding-10'>
-                <p className='no-margin hint'>
-                    <span className='required_field_asterisk no-margin'>* </span>
-                    {it.L('You may be considered a tax resident in more than one jurisdiction. Please consult your tax advisor and verify that your tax information is accurate.')}
-                </p>
-            </div>
         </div>
     </React.Fragment>
 );
 
-export const GeocodeResponse = () => (
-    <div className='gr-row'>
-        <div className='gr-12 gr-padding-10 center-text'>
-            <p id='geocode_error' className='notice-msg no-margin invisible'>
-                {it.L('Your address could not be verified by our automated system. You may proceed but please ensure that your address is complete.')}
-            </p>
+export const GeocodeValidation = ({ className }) => (
+    <React.Fragment>
+        <div className={className}>
+            <div className='geocode-btn-container'>
+                <a href='javascript:;' id='geocode_validate' className='geocode-btn invisible' ><span>{it.L('Check address')}</span></a>
+            </div>
         </div>
-    </div>
+        <div id='geocode_status' className='gr-row'>
+            <div className='gr-10 gr-centered gr-padding-10 center-text'>
+                <Loading is_invisible />
+                <p id='geocode_error' className='notice-msg invisible'>
+                    {it.L('We could not recognise your address. You may proceed but please ensure that your address is complete and accurate.')}
+                </p>
+                <div id='geocode_success' className='invisible'>
+                    <div className='success-msg'>
+                        <ul className='checked'>
+                            <li>{it.L('Your address has been recognised by our system.')}</li>
+                        </ul>
+                        <p>{it.L('However, we will require further documentation to authenticate your account in the future.')}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </React.Fragment>
 );

@@ -50,12 +50,9 @@ const SetCurrency = () => (
                 <form id='frm_set_currency'>
                     <Currencies id='fiat' text={it.L('Fiat Currency')} />
                     <Currencies id='crypto' text={it.L('Cryptocurrency')} />
-
-                    <p className='invisible error-msg' />
-                    <button type='submit'>{it.L('Confirm')}</button>
                 </form>
             </div>
-
+            <p className='invisible error-msg center-text' />
         </div>
     </React.Fragment>
 );
