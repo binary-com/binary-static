@@ -246,59 +246,8 @@
                         margin-top: 8px;
                     }
                     @media (min-width: 979px) {
-                        div.duration-container {
+                        div.duration-container, div.amount-container {
                             grid-template-columns: 1fr;
-                        }
-                        div.amount-container {
-                            grid-template-columns: 1fr 1.5fr;
-                            grid-gap: 0;
-
-                            div:first-child {
-                                border-right-width: 0;
-                                border-left-width: 1px;
-                                border-radius: $BORDER_RADIUS 0 0 $BORDER_RADIUS;
-
-                                &:hover, &:focus, &:active, &.clicked {
-                                    border-right-width: 1px;
-                                    border-left-width: 1px;
-                                }
-                                &.dropdown-container {
-                                    &:hover, &:active, &:focus, &.show {
-                                        border-top-left-radius: $BORDER_RADIUS;
-                                        border-bottom-left-radius: $BORDER_RADIUS;
-                                    }
-                                }
-                                &.list-container {
-                                    border-right-width: 1px;
-                                    border-radius: $BORDER_RADIUS;
-                                }
-                            }
-                            input:last-child {
-                                border-right-width: 1px;
-                                border-left-width: 1px;
-                                border-radius: 0 $BORDER_RADIUS $BORDER_RADIUS 0;
-                            }
-                            &.three-columns {
-                                grid-template-columns: 1.5fr 1.2fr 1.5fr;
-
-                                div, input {
-                                    border-radius: 0;
-                                    border-left-width: 0;
-                                    border-right-width: 0;
-
-                                    &:first-child div, &:first-child input {
-                                        border-right-width: 1px;
-                                        border-left-width: 1px;
-                                        border-top-left-radius: $BORDER_RADIUS;
-                                        border-bottom-left-radius: $BORDER_RADIUS;
-                                    }
-                                    &:last-child div, &:last-child input {
-                                        border-right-width: 1px;
-                                        border-left-width: 1px;
-                                        border-radius: 0 $BORDER_RADIUS $BORDER_RADIUS 0;
-                                    }
-                                }
-                            }
                         }
                     }
                 }

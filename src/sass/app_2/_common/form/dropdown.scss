@@ -8,13 +8,13 @@
         cursor: pointer;
         border: solid 1px $COLOR_GRAY;
         border-radius: $BORDER_RADIUS;
+        text-align: center;
 
         span {
             font-size: inherit;
             text-transform: capitalize;
             line-height: 32px;
             vertical-align: middle;
-            padding-left: 8px;
             font-weight: 300;
         }
         &:active, &:focus {
@@ -38,7 +38,7 @@
         position: absolute;
         pointer-events: none;
         top: 9px;
-        right: 6px;
+        left: 6px;
         line-height: 1;
         transition: transform 0.2s ease;
         transform: rotate(0deg);
@@ -86,6 +86,7 @@
             position: absolute;
             width: 100%;
             max-height: 200px;
+            overflow-x: hidden;
             overflow-y: auto;
             z-index: 2;
             cursor: pointer;
@@ -104,7 +105,7 @@
             }
             &__label {
                 pointer-events: none;
-                padding-left: 8px;
+                padding-left: 16px;
                 line-height: 32px;
                 height: 32px;
 
@@ -124,7 +125,7 @@
                     display: block;
                     pointer-events: none;
                     vertical-align: middle;
-                    padding-left: 8px;
+                    padding-left: 16px;
                     font-weight: 300;
                 }
                 * {
