@@ -102,6 +102,7 @@ export const FillBox = ({
     text,
     dataShow,
     children,
+    id,
 }) => {
     let classes1 = '';
     if (padding) {
@@ -115,7 +116,7 @@ export const FillBox = ({
     classes2 += `${border || ''}`;
 
     return (
-        <div data-show={dataShow} className={[classes1, className].join(' ')}>
+        <div data-show={dataShow} id={id} className={[classes1, className].join(' ')}>
             <div className={classes2}>
                 <div className='inline-flex center-align gr-gutter'>
                     { image &&
