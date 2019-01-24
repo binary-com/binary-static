@@ -475,6 +475,7 @@ export default class TradeStore extends BaseStore {
         const new_state                    = {};
         const contract_only_has_days       = this.duration_units_list.length === 1 && this.duration_unit === 'd';
         const should_reset_simple_to_ticks = this.duration_units_list.length > 1 && this.simple_duration_unit !== 't' && this.simple_duration_unit !== 'm';
+        const only_simple_duration         = this.duration_units_list.length === 1 && this.duration_unit === 't';
 
         if (contract_only_has_days) {
             new_state[`${this.is_advanced_duration ? 'advanced' : 'simple'}_duration_unit`] = 'd';
@@ -485,6 +486,12 @@ export default class TradeStore extends BaseStore {
             new_state.duration_unit = 't';
         }
 
+        // contracts that have no toggle between advanced/simple are treated as simple (e.g. digits)
+        if (only_simple_duration) {
+            new_state.duration = this.simple_duration;
+            new_state.simple_duration_unit = 't';
+            new_state.is_advanced_duration = false;
+        }
         this.processNewValuesAsync(new_state, true);
     }
 
@@ -500,20 +507,22 @@ export default class TradeStore extends BaseStore {
 
         if (name === `${advanced_or_simple}_duration_unit`) {
             new_state.duration_unit = value;
+
             if (value === 't') {
                 // prevent overflowing of range slider by setting duration to max
                 const max_tick_value = convertDurationLimit(+this.duration_min_max.tick.max, value);
                 if (+this.duration > max_tick_value) {
-                    new_state.duration = max_tick_value;
+                    new_state.duration                          = max_tick_value;
                     new_state[`${advanced_or_simple}_duration`] = max_tick_value;
                 }
             }
         }
 
         if (name === 'is_advanced_duration') {
-            advanced_or_simple = value ? 'advanced' : 'simple';
-            new_state.duration = this[`${advanced_or_simple}_duration`];
-            new_state.duration_unit = this[`${advanced_or_simple}_duration_unit`];
+            advanced_or_simple       = value ? 'advanced' : 'simple';
+            new_state.duration       = this[`${advanced_or_simple}_duration`];
+            new_state.duration_unit  = this[`${advanced_or_simple}_duration_unit`];
+
             if (advanced_or_simple === 'simple' && this.expiry_type !== 'duration') {
                 new_state.expiry_type = 'duration'; // simple only has duration as expiry_type
             }
