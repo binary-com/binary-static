@@ -22,7 +22,7 @@ class Dropdown extends React.Component {
         is_list_visible: false,
     }
 
-    componentDidMount () {
+    componentDidMount() {
         document.addEventListener('mousedown', this.handleClickOutside);
     }
 
