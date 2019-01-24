@@ -501,8 +501,9 @@ export default class TradeStore extends BaseStore {
         const { value, name }  = e.target;
         const new_state        = {
             [name]: value,
-            set(curr_state, prop, val) {
-                if (curr_state[prop] !== val) this[prop] = val;
+            // don't update trade_store if new value is the same as current value
+            set(trade_store, prop, val) {
+                if (trade_store[prop] !== val) this[prop] = val;
             },
         };
 
@@ -532,8 +533,9 @@ export default class TradeStore extends BaseStore {
             new_state.set(this, 'duration', this[`${advanced_or_simple}_duration`]);
             new_state.set(this, 'duration_unit', this[`${advanced_or_simple}_duration_unit`]);
 
+            // simple only has duration as expiry_type
             if (advanced_or_simple === 'simple' && this.expiry_type !== 'duration') {
-                new_state.set(this, 'expiry_type', 'duration'); // simple only has duration as expiry_type
+                new_state.set(this, 'expiry_type', 'duration');
             }
         }
 

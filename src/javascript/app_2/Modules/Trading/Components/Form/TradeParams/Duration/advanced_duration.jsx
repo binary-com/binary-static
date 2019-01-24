@@ -77,25 +77,39 @@ const AdvancedDuration = ({
     return (
         <Fragment>
             <ButtonToggleMenu
-                name='advanced_expiry_type'
-                value={advanced_expiry_type}
-                onChange={onChange}
                 buttons_arr={expiry_list.length > 1 && expiry_list}
+                name='advanced_expiry_type'
+                onChange={onChange}
+                value={advanced_expiry_type}
             />
             {advanced_expiry_type === 'duration' ?
                 <Fragment>
                     <div className='duration-container'>
                         {duration_units_list.length > 1 &&
                             <Dropdown
+                                is_nativepicker={is_nativepicker}
                                 list={duration_units_list}
-                                value={advanced_duration_unit}
                                 name='advanced_duration_unit'
                                 onChange={onChange}
-                                is_nativepicker={is_nativepicker}
+                                value={advanced_duration_unit}
                             />
                         }
-                        { advanced_duration_unit === 't' && <RangeSlider value={advanced_duration} name='advanced_duration' ticks={10} {...shared_input_props} /> }
-                        { advanced_duration_unit !== 't' && <InputField value={advanced_duration} name='advanced_duration' {...number_input_props} {...shared_input_props} />}
+                        { advanced_duration_unit === 't' &&
+                            <RangeSlider
+                                name='advanced_duration'
+                                ticks={10}
+                                value={advanced_duration}
+                                {...shared_input_props}
+                            />
+                        }
+                        { advanced_duration_unit !== 't' &&
+                            <InputField
+                                name='advanced_duration'
+                                value={advanced_duration}
+                                {...number_input_props}
+                                {...shared_input_props}
+                            />
+                        }
                     </div>
                 </Fragment> :
                 <Fragment>

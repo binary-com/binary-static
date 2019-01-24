@@ -23,10 +23,10 @@ const SimpleDuration = ({
     return (
         <Fragment>
             <ButtonToggleMenu
-                value={simple_duration_unit}
+                buttons_arr={filterMinutesAndTicks(duration_units_list)}
                 name='simple_duration_unit'
                 onChange={onChange}
-                buttons_arr={filterMinutesAndTicks(duration_units_list)}
+                value={simple_duration_unit}
             />
             { simple_duration_unit === 't' &&
                 <RangeSlider

@@ -89,25 +89,25 @@ const Duration = ({
         <Fieldset className={'position-relative'}>
             { !has_toggle &&
                 <RangeSlider
-                    {...props.shared_input}
+                    name='simple_duration'
                     ticks={10}
                     value={simple_duration}
-                    name='simple_duration'
+                    {...props.shared_input}
                 />
             }
             { has_toggle &&
                 <Fragment>
                     { is_advanced_duration &&
                         <AdvancedDuration
-                            contract_expiry_type={contract_expiry_type}
                             advanced_duration={advanced_duration}
-                            duration_min_max={duration_min_max}
                             advanced_duration_unit={advanced_duration_unit}
+                            advanced_expiry_type={advanced_expiry_type}
+                            contract_expiry_type={contract_expiry_type}
+                            duration_min_max={duration_min_max}
                             duration_units_list={duration_units_list}
                             expiry_date={expiry_date}
                             expiry_list={expiry_list}
                             expiry_time={expiry_time}
-                            advanced_expiry_type={advanced_expiry_type}
                             is_nativepicker={is_nativepicker}
                             number_input_props={props.number_input}
                             onChange={onChangeDuration}
@@ -119,12 +119,12 @@ const Duration = ({
                         /> }
                     { !is_advanced_duration &&
                         <SimpleDuration
-                            simple_duration={simple_duration}
-                            simple_duration_unit={simple_duration_unit}
                             duration_units_list={duration_units_list}
                             number_input_props={props.number_input}
-                            shared_input_props={props.shared_input}
                             onChange={onChangeDuration}
+                            simple_duration={simple_duration}
+                            simple_duration_unit={simple_duration_unit}
+                            shared_input_props={props.shared_input}
                         /> }
                     <DurationToggle
                         name={'is_advanced_duration'}
