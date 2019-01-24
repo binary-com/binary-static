@@ -1,23 +1,8 @@
 import classNames         from 'classnames';
 import React              from 'react';
-import { localize }       from '_common/localize';
 import { toMoment }       from 'Utils/Date';
 import CalendarPanelTypes from './types';
-
-const getMonthHeaders = () => ({
-    Jan: localize('Jan'),
-    Feb: localize('Feb'),
-    Mar: localize('Mar'),
-    Apr: localize('Apr'),
-    May: localize('May'),
-    Jun: localize('Jun'),
-    Jul: localize('Jul'),
-    Aug: localize('Aug'),
-    Sep: localize('Sep'),
-    Oct: localize('Oct'),
-    Nov: localize('Nov'),
-    Dec: localize('Dec'),
-});
+import { month_headers }  from '../constants';
 
 export const CalendarMonths = ({
     calendar_date,
@@ -27,7 +12,6 @@ export const CalendarMonths = ({
 }) => {
     const moment_date          = toMoment(calendar_date);
     const moment_selected_date = toMoment(selected_date);
-    const month_headers        = getMonthHeaders();
 
     return (
         <div className='calendar__body calendar__body--month'>

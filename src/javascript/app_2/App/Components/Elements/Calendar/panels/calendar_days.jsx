@@ -1,8 +1,9 @@
-import classNames         from 'classnames';
-import React              from 'react';
-import { padLeft }        from '_common/string_util';
-import { toMoment }       from 'Utils/Date';
-import CalendarPanelTypes from './types';
+import classNames            from 'classnames';
+import React                 from 'react';
+import { padLeft }           from '_common/string_util';
+import { toMoment }          from 'Utils/Date';
+import CalendarPanelTypes    from './types';
+import { week_headers_abbr } from '../constants';
 
 const getDays = ({
     calendar_date,
@@ -80,14 +81,12 @@ const getDays = ({
     return days;
 };
 
-const week_headers = ['M', 'T', 'W', 'T', 'F', 'S', 'S'];
-
 export const CalendarDays = (props) => {
     const days = getDays(props).map(day => day);
 
     return (
         <div className='calendar__body calendar__body--date'>
-            {week_headers.map((item, idx) => (<span key={idx} className='calendar__text calendar__text--bold'>{item}</span>))}
+            {Object.keys(week_headers_abbr).map((item, idx) => (<span key={idx} className='calendar__text calendar__text--bold'>{week_headers_abbr[item]}</span>))}
             {days}
         </div>
     );

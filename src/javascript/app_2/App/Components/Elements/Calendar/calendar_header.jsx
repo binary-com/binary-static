@@ -1,7 +1,6 @@
 import classNames           from 'classnames';
 import PropTypes            from 'prop-types';
 import React                from 'react';
-import { localize }         from '_common/localize';
 import {
     IconChevronDoubleLeft,
     IconChevronDoubleRight,
@@ -9,6 +8,7 @@ import {
     IconChevronRight }      from 'Assets/Common';
 import { toMoment }         from 'Utils/Date';
 import CalendarButton       from './calendar_button.jsx';
+import { month_headers }    from './constants';
 import {
     getCentury,
     getDecade }             from './helper';
@@ -65,7 +65,7 @@ const CalendarHeader = ({
                     <CalendarButton
                         className='calendar__btn calendar__btn--select'
                         is_hidden={!is_date_view}
-                        label={localize(`${moment_date.format('MMM')}`)}
+                        label={month_headers[moment_date.format('MMM')]}
                         onClick={(e) => switchView(e, 'month')}
                     />
                 }
