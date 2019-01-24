@@ -65,7 +65,7 @@ const CalendarHeader = ({
                     <CalendarButton
                         className='calendar__btn calendar__btn--select'
                         is_hidden={!is_date_view}
-                        label={localize(moment_date.format('MMM'))}
+                        label={localize(`${moment_date.format('MMM')}`)}
                         onClick={(e) => switchView(e, 'month')}
                     />
                 }
