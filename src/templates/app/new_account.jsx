@@ -19,7 +19,7 @@ const NewAccount = () => (
                 </form>
                 <SeparatorLineWithText text={it.L('or')} className='gr-padding-20' />
             </div>
-            <p className='no-margin gr-padding-10 gr-parent'>{it.L('Create with')}</p>
+            <p className='no-margin gr-padding-10 gr-parent'>{it.L('Create free account with')}</p>
             <div className='gr-row gr-row-align-center'>
                 <SocialButton provider='google' />
                 <SocialButton provider='facebook' />
