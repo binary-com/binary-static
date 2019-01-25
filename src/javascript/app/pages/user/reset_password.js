@@ -34,7 +34,7 @@ const ResetPassword = (() => {
         generateBirthDate();
 
         $('#have_real_account').off('click').on('click', function () {
-            if ($(this).is(':checked')) {
+            if ($('#have_real_account_option_0').is(':checked')) {
                 $('#dob_field').setVisibility(1);
             } else {
                 $('#dob_field').setVisibility(0);

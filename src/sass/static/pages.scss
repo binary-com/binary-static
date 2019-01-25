@@ -1480,3 +1480,17 @@ body #not_authenticated_financial ul.checked > li {
         color: $COLOR_BLUE;
     }
 }
+
+#have_real_account {
+    display: flex;
+    align-items: center;
+    height: 100%;
+
+    div {
+        margin-right: 10px;
+    }
+
+    @media screen and (max-width: 480px) {
+        justify-content: center;
+    }
+}
