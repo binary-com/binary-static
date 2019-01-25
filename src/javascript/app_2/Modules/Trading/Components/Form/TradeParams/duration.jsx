@@ -5,7 +5,7 @@ import {
 import PropTypes                from 'prop-types';
 import React                    from 'react';
 import { localize }             from '_common/localize';
-import Datepicker               from 'App/Components/Form/DatePicker';
+import DatePicker               from 'App/Components/Form/DatePicker';
 import Dropdown                 from 'App/Components/Form/DropDown';
 import Fieldset                 from 'App/Components/Form/fieldset.jsx';
 import InputField               from 'App/Components/Form/input_field.jsx';
@@ -167,7 +167,7 @@ const Duration = ({
                 </React.Fragment> :
                 <React.Fragment>
                     <div className={endtime_container_class}>
-                        <Datepicker
+                        <DatePicker
                             name='expiry_date'
                             has_today_btn
                             min_date={min_date_expiry}
@@ -176,8 +176,12 @@ const Duration = ({
                             onChange={onChange}
                             value={expiry_date}
                             is_read_only
-                            is_clearable={false}
+                            is_clearable
                             is_nativepicker={is_nativepicker}
+                            alignment='left'
+                            disabled_selector={['year']}
+                            // sessions={expiry_date_sessions} TODO: add expiry date sessions. e.g. disable days if market closes on weekend
+                            // validation_errors={validation_errors.expiry_date} TODO: add validation_errors for expiry date
                         />
                         {is_24_hours_contract &&
                             <TimePicker
