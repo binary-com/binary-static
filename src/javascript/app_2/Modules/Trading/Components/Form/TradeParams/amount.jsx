@@ -54,6 +54,7 @@ const Amount = ({
                 />
                 {!is_single_currency &&
                     <Dropdown
+                        is_alignment_left
                         is_nativepicker={is_nativepicker}
                         list={currencies_list}
                         name='currency'

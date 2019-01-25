@@ -165,11 +165,10 @@
         .purchase-info-wrapper {
             line-height: 0.9rem;
             border: 0;
-            margin: 16px 16px 0;
-            width: 90%;
-            width: calc(100% - 32px);
-            display: grid;
-            grid-template-columns: 1fr 1fr;
+            margin: 8px 0 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
             position: relative;
 
             .info-wrapper {
@@ -232,7 +231,7 @@
         div.purchase-error {
             position: absolute;
             top: 0;
-            min-height: 245px;
+            min-height: 202px;
             height: calc(100% - 2px);
             width: calc(100% - 6px);
             left: 2px;
@@ -335,23 +334,20 @@
             }
         }
         fieldset.purchase-option {
-            padding-top: 1.5vh;
-            padding-bottom: 1.5vh;
-            min-height: 100px;
+            padding-top: 8px;
+            padding-bottom: 8px;
 
             div.submit-section {
-                display: grid;
-                grid-template-columns: 1fr;
-
                 .btn-purchase {
                     position: relative;
                     background-color: $COLOR_DARK_GREEN;
                     overflow: hidden;
                     height: 56px;
-                    width: 90%;
-                    width: calc(100% - 32px);
+                    width: 100%;
+                    margin: 0;
                     text-align: left;
-                    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+                    transition: box-shadow 0.5s;
+                    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.24);
                     margin-top: 5px;
 
                     &__info {
@@ -489,15 +485,17 @@
             }
             &:not(:only-child) {
                 &:nth-last-child(2) {
-                    border-bottom: 1px;
+                    border-bottom-width: 0;
                     border-bottom-left-radius: 0;
                     border-bottom-right-radius: 0;
                     margin-bottom: 0 !important;
                 }
                 &:nth-last-child(1) {
+                    border-top-width: 0;
                     border-top-left-radius: 0;
                     border-top-right-radius: 0;
                     margin-bottom: 0 !important;
+                    margin-top: -8px;
                 }
             }
             div.block-ui {
@@ -514,7 +512,7 @@
                 align-items: center;
                 background: $COLOR_LIGHT_GRAY;
                 opacity: 0.95;
-                min-height: 245px;
+                min-height: 202px;
                 width: calc(100% - 6px);
                 height: calc(100% - 2px);
                 z-index: 3;

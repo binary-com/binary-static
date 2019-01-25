@@ -8,7 +8,6 @@
         cursor: pointer;
         border: solid 1px $COLOR_GRAY;
         border-radius: $BORDER_RADIUS;
-        text-align: center;
 
         span {
             font-size: inherit;
@@ -16,6 +15,7 @@
             line-height: 32px;
             vertical-align: middle;
             font-weight: 300;
+            padding-left: 16px;
         }
         &:active, &:focus {
             outline: none;
@@ -38,7 +38,7 @@
         position: absolute;
         pointer-events: none;
         top: 9px;
-        left: 6px;
+        right: 6px;
         line-height: 1;
         transition: transform 0.2s ease;
         transform: rotate(0deg);
@@ -58,6 +58,19 @@
 
         .select-arrow {
             color: $COLOR_BLUE;
+        }
+    }
+    &--left {
+        .dropdown__display {
+            text-align: center;
+
+            span {
+                padding-left: unset;
+            }
+        }
+        .select-arrow {
+            left: 6px;
+            right: unset;
         }
     }
     &--show > .dropdown__display--clicked {
