@@ -27,8 +27,8 @@ export const toMoment = value => {
  * @param  {String} time        24 hours format, may or may not include seconds
  * @return {moment} a new moment object of result
  */
-const setTime = (moment_obj, time) => {
-    const [hour, minute, second] = time.split(':');
+export const setTime = (moment_obj, time) => {
+    const [hour, minute, second] = time ? time.split(':') : [0, 0, 0];
     moment_obj.hour(hour).minute(minute || 0).second(second || 0);
     return moment_obj;
 };
@@ -85,7 +85,7 @@ export const formatDuration = (duration) => {
  * return true if the time_str is in "HH:MM" format, else return false
  * @param {String} time_str time
  */
-export const isTimeValid = time_str => /^(\d{1,2}):(\d{2})(:00)?$/.test(time_str);
+export const isTimeValid = time_str => /^([0-9]|[0-1][0-9]|2[0-3]):([0-9]|[0-5][0-9])(:([0-9]|[0-5][0-9]))?$/.test(time_str);
 
 /**
  * return true if the time_str's hour is between 0 and 23, else return false
@@ -104,3 +104,10 @@ export const isMinuteValid = time_str => isTimeValid(time_str) && /^[0-5][0-9]$/
  * @param {String} date_str date
  */
 export const isDateValid = date_str => typeof date_str === 'string' && moment(date_str).isValid();
+
+/**
+ * returns the minimum moment between the two passing parameters
+ * @param {moment|string|epoch} first datetime parameter
+ * @param {moment|string|epoch} second datetime parameter
+ */
+export const minDate = (date_1, date_2) => moment.min(toMoment(date_1), toMoment(date_2));
