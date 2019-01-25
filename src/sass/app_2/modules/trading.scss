@@ -471,13 +471,13 @@
                     max-width: unset;
                     width: 290px;
                     white-space: normal;
-                    margin-right: 32px;
+                    margin-right: 20px;
                     font-size: 12px;
                     padding-left: 40px;
                 }
                 &:after {
                     border-left-color: $COLOR_WHITE;
-                    margin-right: 20px;
+                    margin-right: 8px;
                 }
                 &:hover:after, &:hover:before {
                     opacity: 1;
