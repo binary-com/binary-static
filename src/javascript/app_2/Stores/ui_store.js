@@ -12,6 +12,7 @@ export default class UIStore extends BaseStore {
     @observable is_main_drawer_on          = false;
     @observable is_notifications_drawer_on = false;
     @observable is_portfolio_drawer_on     = false;
+    @observable is_positions_drawer_on     = false;
 
     @observable is_dark_mode_on         = true;
     @observable is_language_dialog_on   = false;
@@ -123,6 +124,12 @@ export default class UIStore extends BaseStore {
     @action.bound
     togglePortfolioDrawer() { // show and hide Portfolio Drawer
         this.is_portfolio_drawer_on = !this.is_portfolio_drawer_on;
+    }
+
+    @action.bound
+    togglePositionsDrawer() {
+        console.log(this.is_positions_drawer_on);
+        this.is_positions_drawer_on = !this.is_positions_drawer_on;
     }
 
     @action.bound

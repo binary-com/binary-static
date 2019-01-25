@@ -1,0 +1,67 @@
+$header-height: 40px;
+
+// Trade page animation performance fix #perfmatters
+.trade-container + .positions-drawer {
+    transition: opacity 0.4s ease;
+}
+
+.positions-drawer {
+    width: $PORTFOLIO_DRAWER_WIDTH;
+    height: calc(100vh - #{$HEADER_HEIGHT} - #{$FOOTER_HEIGHT});
+    position: fixed;
+    z-index: 2;
+    top: $HEADER_HEIGHT;
+    left: 0;
+    border-left: 1px solid $COLOR_GRAY;
+    background-color: $COLOR_WHITE;
+    box-sizing: border-box;
+    opacity: 0;
+    color: $COLOR_BLUE;
+    transform: translateX(100%);
+    will-change: transform, opacity;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+
+    &--open {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    &__header {
+        height: $header-height;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0 10px;
+    }
+    &__body {
+        height: calc(100% - #{$header-height});
+        padding: 8px 0;
+        box-sizing: border-box;
+        overflow-y: auto;
+    }
+    &__title {
+        font-size: 12px;
+        font-weight: bold;
+    }
+    &__icon-main {
+        margin-right: 8px;
+    }
+    &__icon-close {
+        display: inline-block;
+        margin-left: auto;
+        cursor: pointer;
+
+        svg {
+            height: 16px;
+            width: 16px;
+        }
+    }
+}
+
+// Dark Theme
+.theme-wrapper.dark {
+    .positions-drawer {
+        background: $COLOR_BLUE;
+        border-color: $COLOR_BRANDBLUE_85;
+        color: $COLOR_WHITE;
+    }
+}

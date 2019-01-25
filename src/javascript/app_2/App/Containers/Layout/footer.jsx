@@ -6,7 +6,8 @@ import {
     NetworkStatus,
     ToggleFullScreen,
     TogglePortfolio,
-    ToggleSettings }  from '../../Components/Layout/Footer';
+    ToggleSettings,
+    TogglePositions }  from '../../Components/Layout/Footer';
 
 const Footer = ({
     is_logged_in,
@@ -16,6 +17,8 @@ const Footer = ({
     network_status,
     toggleSettingsDialog,
     togglePortfolioDrawer,
+                    togglePositionsDrawer,
+                    is_positions_drawer_on,
 }) => (
     <React.Fragment>
         <NetworkStatus status={network_status} />
@@ -34,6 +37,10 @@ const Footer = ({
                 is_language_visible={is_language_dialog_visible}
                 toggleSettings={toggleSettingsDialog}
             />
+            <TogglePositions
+                is_positions_drawer_on={is_positions_drawer_on}
+                togglePositionsDrawer={togglePositionsDrawer}
+            />
         </div>
     </React.Fragment>
 );
@@ -46,6 +53,8 @@ Footer.propTypes = {
     network_status            : PropTypes.object,
     togglePortfolioDrawer     : PropTypes.func,
     toggleSettingsDialog      : PropTypes.func,
+    togglePositionsDrawer     : PropTypes.func,
+    is_positions_drawer_on    : PropTypes.bool,
 };
 
 export default connect(
@@ -56,6 +65,7 @@ export default connect(
         is_settings_dialog_on     : ui.is_settings_dialog_on,
         network_status            : common.network_status,
         togglePortfolioDrawer     : ui.togglePortfolioDrawer,
+        togglePositionsDrawer     : ui.togglePositionsDrawer,
         toggleSettingsDialog      : ui.toggleSettingsDialog,
     })
 )(Footer);
