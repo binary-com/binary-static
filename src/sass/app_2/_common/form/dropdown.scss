@@ -80,7 +80,7 @@
         transform: rotate(-180deg);
 
         &--left {
-            transform: rotate(-90deg);
+            transform: rotate(90deg);
         }
     }
     .dropdown__list {
@@ -111,9 +111,11 @@
                 width: unset;
 
                 .list__item span {
-                    padding-right: 32px;
+                    padding-left: 16px;
+                    padding-right: 16px;
                     overflow: hidden;
                     white-space: nowrap;
+                    text-align: center;
                 }
             }
             &__label {

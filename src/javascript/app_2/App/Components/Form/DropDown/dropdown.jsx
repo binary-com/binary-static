@@ -52,7 +52,7 @@ class Dropdown extends React.Component {
 
     handleVisibility = () => {
         if (this.isSingleOption) return;
-        this.setState({ is_list_visible: !this.state.is_list_visible });
+        this.setState((state) =>({  is_list_visible: !state.is_list_visible }));
     }
 
     onKeyPressed = (event) => {
