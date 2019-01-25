@@ -24,13 +24,13 @@ const FAQ = () => (
                 <Section id='general' header={it.L('General')}>
                     <h3>{it.L('What is the [_1] Affiliate Programme all about?', it.website_name)}</h3>
                     <p>{it.L('The [_1] Affiliate Programme allows you to benefit from referring new clients to our site.', it.website_name)}</p>
-                    <p>{it.L('If you\'re a broker we\'d like to work with you. You will be introducing your clients to a unique and innovative product: the [_1] trading platform. Your clients will love the [_1] trading platform because we offer a complete binary options trading experience tailored to the needs of an exceptionally wide range of traders.', it.website_name)}</p>
-                    <p>{it.L('Novice traders can use our intuitive platform to learn about trading, practise trading, and gain trading experiences. Seasoned traders can use the [_1] platform and take full advantage of the wide range of trading and analysis tools we have to offer.', it.website_name)}</p>
+                    <p>{it.L('If you\'re a broker, we\'d like to work with you. You will be introducing your clients to a unique and innovative product: the [_1] trading platform. Your clients will love the [_1] trading platform because we offer a complete binary options trading experience tailored to the needs of an exceptionally wide range of traders.', it.website_name)}</p>
+                    <p>{it.L('New traders can use our intuitive platform to learn about trading, practise trading, and gain trading experience. Seasoned traders can use the [_1] platform and take full advantage of the wide range of trading and analysis tools we have to offer.', it.website_name)}</p>
 
                     <h3>{it.L('Why should I become a [_1] affiliate?', it.website_name)}</h3>
-                    <p>{it.L('[_1] is a licensed and regulated binary options trading platform that’s been operating since 2000. It has:', it.website_name)}</p>
+                    <p>{it.L('[_1] is a licensed and regulated binary options trading platform that’s been operating since 2000. By becoming an affiliate, you can benefit from:', it.website_name)}</p>
                     <ul className='bullet'>
-                        <li>{it.L('An international appeal with multilingual support in English, Spanish, French, German, Portuguese, Chinese, Italian, Thai, Polish, and Russian')}</li>
+                        <li>{it.L('Localisation with multilingual support in English, Spanish, French, German, Portuguese, Chinese, Italian, Thai, Polish, and Russian')}</li>
                         <li>{it.L('An intuitive, web-based platform that’s instantly available to traders of all levels – anytime, anywhere')}</li>
                         <li>{it.L('A competitive and flexible affiliate programme that can be adapted to your needs')}</li>
                     </ul>
@@ -41,7 +41,7 @@ const FAQ = () => (
                     <h3>{it.L('What is the definition of a referred client?')}</h3>
                     <p>{it.L('A referred client is someone who has been referred through your unique affiliate link and who has deposited money into their [_1] account. They must fulfil the following criteria:', it.website_name)}</p>
                     <ul className='bullet'>
-                        <li>{it.L('Have not previously been a [_1] customer', it.website_name)}</li>
+                        <li>{it.L('First-time [_1] customer', it.website_name)}</li>
                         <li>{it.L('Aged 18 years old and above')}</li>
                     </ul>
 
@@ -53,8 +53,8 @@ const FAQ = () => (
                     <h3>{it.L('How can I become an affiliate?')}</h3>
                     <p>{it.L('It’s easy. Just go to the signup page and complete the <a href=\'[_1]\'>affiliate registration form</a>. We’ll review your application and get back to you if your application is successful.', it.affiliate_signup_url)}</p>
 
-                    <h3>{it.L('I forgot my password, what should I do?')}</h3>
-                    <p>{it.L('Don’t worry, you can simply <a href=\'[_1]\'>reset your password</a>.', it.affiliate_password_url)}</p>
+                    <h3>{it.L('I’ve forgotten my password. What should I do?')}</h3>
+                    <p>{it.L('Don’t worry; you can simply <a href=\'[_1]\'>reset your password</a>.', it.affiliate_password_url)}</p>
 
                     <h3>{it.L('How can I change my payment method?')}</h3>
                     <p>{it.L('Log in to your [_1] affiliate account and go to: Finances → Payment instructions.', it.website_name)}</p>
@@ -74,7 +74,10 @@ const FAQ = () => (
                     </ul>
 
                     <h3>{it.L('Can I offer my referrals an incentive to sign up through my unique affiliate link rather than sign up directly?')}</h3>
-                    <p>{it.L('We prohibit the use of unauthorised incentives, gifts, and payments to encourage customer signups. If we have reason to believe that you have engaged in such activity, we reserve the right to withhold any payments due to you. However, if you have a specific incentive in mind, then please contact your account manager for further discussion and approval.')}</p>
+                    <ul className="bullet">
+                        <li>{it.L('If your referrals reside in the EU, no incentives of any kind can be offered to them.')}</li>
+                        <li>{it.L('If your referrals reside outside the EU, certain kinds of incentives may be permitted. You must check with your account manager for approval before offering any incentive(s).')}</li>
+                    </ul>
                 </Section>
 
                 <Section id='referral-tools' header={it.L('Referral tools')}>

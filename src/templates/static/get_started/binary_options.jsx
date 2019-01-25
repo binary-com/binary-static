@@ -119,44 +119,44 @@ const BinaryOptions = () => {
                         <HeaderSecondary header={it.L('Advantages of binary options trading')} />
                         <p>{it.L('Aside from the simplicity of its \'yes or no\' proposition, binary options trading is also very flexible. It gives you the ability to trade:')}</p>
                         <div className='gr-row gr-parent gr-padding-10'>
-                            <SectionTicked header={it.L('All markets')}           text={it.L('Trade on underlying markets that include Forex, indices, commodities, and more.')} />
+                            <SectionTicked header={it.L('A wide range of markets')}           text={it.L('Trade on underlying markets that include Forex, indices, commodities, and more.')} />
                             <SectionTicked header={it.L('All market conditions')} text={it.L('Predict market movement using up/down, touch/no touch, and in/out trade types.')} />
-                            <SectionTicked header={it.L('All durations')}         text={it.L('Take a short-term or long-term view with trade durations from 10 seconds to 365 days.')} />
-                            <SectionTicked header={it.L('All payouts')}           text={it.L('Earn payouts up to USD 50,000. Losses are limited to your initial stake and nothing more.')} />
+                            <SectionTicked header={it.L('All durations')}         text={it.L('Take a short-term or long-term view with trade durations from a few seconds to 365 days.')} />
+                            <SectionTicked header={it.L('All payouts')}           text={it.L('Earn payouts of varying amounts, even up to USD 50,000 for Volatility Indices. Losses are limited to your initial stake and nothing more.')} />
                         </div>
 
                         <HeaderSecondary header={it.L('Why you should trade binary options with [_1]', it.website_name)} />
-                        <p>{it.L('Enjoy an award-winning online trading platform with trading conditions that are ideal for new and experienced traders.')}</p>
+                        <p>{it.L('Enjoy an award-winning, intuitive online trading experience.')}</p>
                         <strong>{it.L('Award-winning online trading platform')}</strong>
                         <ul className='bullet'>
                             <ListStrong header={it.L('Simple and intuitive')} text={it.L('Enjoy a trading platform that\'s easy to navigate and use')} />
                             <ListStrong header={it.L('Instant access')}       text={it.L('Open an account and start trading in minutes')} />
                             <ListStrong header={it.L('Available 24/7')}       text={it.L('Trade when you want. Our Volatility Indices are available even on weekends')} />
                             <ListStrong header={it.L('Patented technology')}  text={it.L('Trade with the industry pioneer and holder of a patented pricing technology')} />
-                            <ListStrong header={it.L('Security and privacy')} text={it.L('Trade confidently, knowing that your personal data, transactions, and funds are always secure')} />
+                            <ListStrong header={it.L('Security and privacy')} text={it.L('Trade confidently, knowing that your personal data and transactions are always secure and your funds are kept separate from company assets.')} />
                         </ul>
                         <strong>{it.L('All conditions and durations')}</strong>
                         <ul className='bullet'>
-                            <ListStrong header={it.L('All markets and conditions')}   text={it.L('Trade currencies, indices, commodities and more in rising, falling, sideways, quiet, and volatile markets')} />
-                            <ListStrong header={it.L('Short to long-term durations')} text={it.L('Choose timeframes from 10 seconds to 365 days')} />
+                            <ListStrong header={it.L('A wide range of markets and conditions')}   text={it.L('Trade currencies, indices, commodities and more in rising, falling, sideways, quiet, and volatile markets')} />
+                            <ListStrong header={it.L('Short to long-term durations')} text={it.L('Choose durations from a few seconds to 365 days.')} />
                         </ul>
                         <strong>{it.L('Competitive and transparent pricing')}</strong>
                         <ul className='bullet'>
                             <ListStrong header={it.L('Sharp, benchmarked prices')}             text={it.L('Receive prices that are benchmarked against interbank rates')} />
                             <ListStrong header={it.L('Transparent risk and potential reward')} text={it.L('Know how much you will win or lose before you purchase the contract')} />
-                            <ListStrong header={it.L('Protect your profits')}                  text={it.L('Sell your long-term contracts before expiry to protect any profits you may have made or to minimise your losses')} />
+                            <ListStrong header={it.L('Protect your profits')}                  text={it.L('In most cases, you can sell your contract before expiry to keep any profit or  minimise your loss.')} />
                             <ListStrong header={it.L('Two-way pricing')}                       text={it.L('Receive quotes for a trade and countertrade, so you always get unbiased, transparent rates')} />
                         </ul>
-                        <strong>{it.L('Ideal for new and experienced traders')}</strong>
+                        <strong>{it.L('Intuitive online  trading experience')}</strong>
                         <ul className='bullet'>
-                            <ListStrong header={it.L('Low minimum stakes')}                         text={it.L('Deposit as little as USD 5 to start trading')} />
-                            <ListStrong header={it.L('Trade according to your preferred strategy')} text={it.L('Trade based on "gut feel" or rely on technical and fundamental analysis')} />
-                            <ListStrong header={it.L('Flexible')}                                   text={it.L('Choose from over one million possible trade variations at any time, and customise your trades according to your preferred strategy')} />
-                            <ListStrong header={it.L('Scalable')}                                   text={it.L('Earn the same proportional return on stakes of all values')} />
+                            <ListStrong header={it.L('Low minimum stakes')}                         text={it.L('Deposit as little as USD 5 to start trading.')} />
+                            <ListStrong header={it.L('Trade according to your preferred strategy')} text={it.L('Trade based on your "gut feeling" or rely on technical and fundamental analysis.')} />
+                            <ListStrong header={it.L('Flexible')}                                   text={it.L('Choose from over one million possible trade variations at any time, and customise your trades according to your preferred strategy.')} />
+                            <ListStrong header={it.L('Scalable')}                                   text={it.L('Earn the same proportional return on stakes of all values.')} />
                         </ul>
                     </Section>
                     <Section id='how-to-trade-binary' header={it.L('How to trade binary options')}>
-                        <p>{it.L('Binary options trading is relatively easy. You can purchase a contract in just three steps:')}</p>
+                        <p>{it.L('It is easy to place a trade on our platform. You can purchase a contract in just three steps:')}</p>
 
                         <SeparatorLine invisible show_mobile className='gr-padding-10' />
 
@@ -183,16 +183,16 @@ const BinaryOptions = () => {
 
                         <CircleHeader header={it.L('Trade type')} text={it.L('Choose from three main trade types:')}>
                             <ul className='bullet'>
-                                <ListStrong header={it.L('Up/Down')}        text={it.L('Predict if the market will rise or fall from its current level, or if it will end higher or lower than a price target')} />
-                                <ListStrong header={it.L('Touch/No touch')} text={it.L('Predict if the market will touch or not touch a price target')} />
-                                <ListStrong header={it.L('In/Out')}         text={it.L('Predict if the market will stay between or go outside two price targets')} />
+                                <ListStrong header={it.L('Up/Down')}        text={it.L('Predict if the market will rise or fall from its current level, or if it will end higher or lower than a price target.')} />
+                                <ListStrong header={it.L('Touch/No touch')} text={it.L('Predict if the market will touch or not touch a price target.')} />
+                                <ListStrong header={it.L('In/Out')}         text={it.L('Predict if the market will stay between or go outside two price targets.')} />
                             </ul>
                             <p>{it.L('Aside from the three main trade types above, you also get Asians and Digits trade types exclusively with our Volatility Indices.')}</p>
                         </CircleHeader>
 
                         <CircleHeader
                             header={it.L('Duration')}
-                            text={it.L('Set the length of your trade from 10 seconds to 365 days, whether you have a short-term or long-term view of the markets.')}
+                            text={it.L('Set your trade duration, depending on your short-term or long-term view of the market.')}
                         />
 
                         <CircleHeader
@@ -202,7 +202,7 @@ const BinaryOptions = () => {
 
                         <CircleHeader
                             header={it.L('Payout')}
-                            text={it.L('Choose the payout you wish to receive from correctly predicting this contract.')}
+                            text={it.L('Choose the payout you wish to receive by correctly predicting this contract.')}
                         />
 
                         <HeaderSecondary header={it.L('Step 2: Get your price')} />
@@ -215,10 +215,10 @@ const BinaryOptions = () => {
                         <div className='gr-padding-20 gr-10'>
                             <img className='responsive' src={it.url_for('images/pages/get-started/binary-options/how-to-trade-binary/step-3.svg')} />
                         </div>
-                        <p>{it.L('When you are satisfied with the price that you receive, execute your trade immediately. With our unique platform, there\'s no risk of \'slippage\' or gaping markets. And most importantly, there are no hidden fees. You can also sell back any long-term trades at any time to profit from favourable market conditions.')}</p>
+                        <p>{it.L('When you are satisfied with the price that you receive, execute your trade immediately. And most importantly, there are no hidden fees. In most cases, you can sell back any long-term trades at any time to profit from favourable market conditions.')}</p>
                     </Section>
                     <Section id='types-of-trades' header={it.L('Types of trades')}>
-                        <p>{it.L('[_1] offers the following trade types that will help you execute your market view or strategy:', it.website_name)}</p>
+                        <p>{it.L('[_1] offers the following trade types, which can help you execute your market view or strategy:', it.website_name)}</p>
                         <SectionLarge dataAnchor='up-down' header={it.L('Up/Down')} image='types-of-trades/up_down' text={it.L('There are two types of Up/Down trades:')}>
                             <ListStrong header={it.L('Rise/Fall')}    text={it.L('Predict that the market will rise or fall from its current level')} />
                             <ListStrong header={it.L('Higher/Lower')} text={it.L('Predict that the market will end higher or lower than a price target')} />
@@ -227,14 +227,14 @@ const BinaryOptions = () => {
                         <SectionLarge dataAnchor='touch-no-touch' header={it.L('Touch/No touch')} image='types-of-trades/touch_notouch' text={it.L('Predict that the market will touch or not touch a target any time during the contract period.')} />
 
                         <SectionLarge dataAnchor='in-out' header={it.L('In/Out')} image='types-of-trades/in_out' text={it.L('There are two types of In/Out trades:')}>
-                            <ListStrong header={it.L('Ends Between/Ends Outside')}  text={it.L('Predict that the market stops inside or outside two price targets at the end of the time period')} />
-                            <ListStrong header={it.L('Stays Between/Goes Outside')} text={it.L('Predict that the market stays inside or goes outside two price targets any time during the contract period')} />
+                            <ListStrong header={it.L('Ends Between/Ends Outside')}  text={it.L('Predict that the market stops inside or outside two price targets at the end of the time period.')} />
+                            <ListStrong header={it.L('Stays Between/Goes Outside')} text={it.L('Predict that the market stays inside or goes outside two price targets any time during the contract period.')} />
                         </SectionLarge>
                         <SectionLarge dataAnchor='asians' header={it.L('Asians')} image='types-of-trades/asians' text={it.L('Predict that the market will end higher or lower than the average price.')} />
                         <SectionLarge dataAnchor='digits' header={it.L('Digits')} image='types-of-trades/digits' text={it.L('Predict the last decimal digit of the spot price with Digits. There are three types of Digits trades:')}>
-                            <ListStrong header={it.L('Matches/Differs')} text={it.L('Predict that the last digit will match or not match')} />
-                            <ListStrong header={it.L('Even/Odd')}        text={it.L('Predict that the last digit is an even number or odd number after the last tick')} />
-                            <ListStrong header={it.L('Over/Under')}      text={it.L('Predict that the last digit is higher or lower')} />
+                            <ListStrong header={it.L('Matches/Differs')} text={it.L('Predict that the last digit will match or not match.')} />
+                            <ListStrong header={it.L('Even/Odd')}        text={it.L('Predict that the last digit is an even number or odd number after the last tick.')} />
+                            <ListStrong header={it.L('Over/Under')}      text={it.L('Predict that the last digit is higher or lower.')} />
                         </SectionLarge>
                         <SectionLarge dataAnchor='reset-callput' header={it.L('Reset Call/Reset Put')} image='types-of-trades/reset' text={it.L('There are two types of reset trades:')}>
                             <ListStrong header={it.L('Reset Call')} text={it.L('Predict that the market will end up higher than either the current level or the level at a predetermined time (reset time)')} />
