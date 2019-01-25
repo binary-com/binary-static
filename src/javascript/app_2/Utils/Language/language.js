@@ -15,7 +15,7 @@ export const getAllowedLanguages = () => {
         }, {});
 
     // TODO Remove this one line below when design is ready.
-    language_list = ['en'];
+    language_list = { EN: 'English' };
     return language_list;
 };
 
