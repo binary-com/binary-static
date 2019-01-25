@@ -478,7 +478,8 @@ export default class TradeStore extends BaseStore {
         const only_simple_duration         = this.duration_units_list.length === 1 && this.duration_unit === 't';
 
         if (contract_only_has_days) {
-            new_state[`${this.is_advanced_duration ? 'advanced' : 'simple'}_duration_unit`] = 'd';
+            new_state.simple_duration_unit = 'd';
+            new_state.advanced_duration_unit = 'd';
         }
 
         if (should_reset_simple_to_ticks) {
