@@ -9,6 +9,11 @@
     span.tooltip {
         width: 100%;
     }
+    & ~ [class*='__icon'] {
+        @extend .absolute-center-v; // centers input-field icons vertically
+        top: 8px;
+        right: 5%;
+    }
     i {
         position: relative;
 
@@ -177,9 +182,6 @@
 .theme-wrapper.dark {
     .input-field {
         &:has(input[type=checkbox]) {
-            display: inline-block;
-        }
-        .tooltip {
             display: inline-block;
         }
         input {

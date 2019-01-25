@@ -93,7 +93,13 @@ describe('getExpiryType', () => {
             common: {
                 server_time: '2018-12-25 23:59:59',
             }
-        }
+        },
+        duration_units_list: [ 
+            { "text": "ticks", "value": "t" },
+            { "text": "minutes", "value": "m" },
+            { "text": "hours", "value": "h" },
+            { "text": "days", "value": "d" }
+        ],
     }
 
     it('Return intraday if expiry date is today', () => {
