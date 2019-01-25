@@ -180,7 +180,8 @@ const Home = () => {
                             <p className='center-text no-margin gr-padding-10 gr-parent'>{it.L('Create free account with')}</p>
                             <div className='gr-row gr-row-align-center'>
                                 <SocialButton provider='google' />
-                                <SocialButton provider='facebook' />
+                                {/* TODO: uncomment to enable FB */}
+                                {/* <SocialButton provider='facebook' /> */}
                             </div>
                         </div>
                     </div>
