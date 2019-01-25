@@ -171,12 +171,11 @@
             top: -1px;
 
             &.dropdown__list--enter, &.dropdown__list--exit {
-                transform: scale(1, 1) translateX(20%);
+                transform: scale(1, 1) translate3d(20px, 0, 0px);
                 opacity: 0;
 
             }
             &.dropdown__list--enter--done {
-                transform: scale(1, 1) translateX(0);
                 opacity: 1;
             }
         }
