@@ -141,7 +141,7 @@
         .allow-equals {
             display: inline-block;
 
-            .input-field, label {
+            .input-field {
                 display: inline-block;
             }
             label {
@@ -153,7 +153,7 @@
                 display: inline-block;
 
                 .info {
-                    vertical-align: baseline;
+                    vertical-align: middle;
                     padding-left: 2px;
 
                     &:after {
@@ -162,17 +162,16 @@
                 }
             }
             span.tooltip {
-                position: unset;
-
                 i {
                     &:before {
                         content: url('../images/common/tooltip/ic_tooltip_info_light.svg ');
-                        right: 90%;
                         position: absolute;
-                        margin-right: 338px;
+                        right: 100%;
                         z-index: 10;
                         opacity: 0;
                         transition: all 0.18s ease-out 0.17s;
+                        margin-right: 380px;
+                        margin-top: 2px;
                     }
                     &:hover:before {
                         opacity: 1;
@@ -182,18 +181,12 @@
                     background: $COLOR_WHITE;
                     color: $COLOR_BLUE;
                     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
-                    max-width: unset;
-                    width: 290px;
-                    white-space: normal;
-                    font-size: 12px;
                     padding-left: 40px;
-                    margin-right: 5px;
-                    margin-top: 35px;
+                    margin-right: 102px;
                 }
                 &:after {
                     border-left-color: $COLOR_WHITE;
-                    margin-right: -7px;
-                    margin-top: 35px;
+                    margin-right: 90px;
                 }
                 &:hover:after, &:hover:before {
                     opacity: 1;
@@ -693,24 +686,21 @@
     }
     .allow-equals {
         span.tooltip {
-            position: unset;
-
             i {
                 &:before {
                     content: url('../images/common/tooltip/ic_tooltip_info_dark.svg ');
                 }
                 &:hover:before {
                     opacity: 1;
+                    margin-bottom: 3px;
                 }
             }
             &:before {
                 background: $COLOR_DARK_BLUE;
                 color: $COLOR_WHITE;
-                margin-top: 40px;
             }
             &:after {
                 border-left-color: $COLOR_DARK_BLUE;
-                margin-top: 40px;
             }
             &:hover:after, &:hover:before {
                 opacity: 1;
