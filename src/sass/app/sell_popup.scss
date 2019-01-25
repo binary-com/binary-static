@@ -70,6 +70,31 @@
                     text-align: center;
                     margin: 1em 0;
                 }
+                #tick_chart.normal-font {
+                    font-size: $FONT_SIZE_S;
+
+                    h5 {
+                        font-size: $FONT_SIZE_N;
+                        margin-top: 5px;
+                        margin-bottom: 20px;
+                    }
+                    #table_digits {
+                        strong {
+                            margin-bottom: 10px;
+                        }
+                        p {
+                            margin: 10px 0;
+
+                            &.gray {
+                                color: $COLOR_GRAY_SHADE;
+
+                                strong {
+                                    color: $COLOR_BLACK;
+                                }
+                            }
+                        }
+                    }
+                }
                 @media screen and (max-width: 768px) {
                     border-right: none;
                 }
