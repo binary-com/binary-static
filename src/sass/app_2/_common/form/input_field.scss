@@ -3,10 +3,12 @@
     margin: 8px 0 0;
     font-weight: 300;
 
-    &:has(input[type=checkbox]) {
-        display: inline-block;
+    & ~ [class*='__icon'] {
+        @extend .absolute-center-v; // centers input-field icons vertically
+        top: 8px;
+        right: 5%;
     }
-    span.tooltip {
+    &:has(input[type=checkbox]) {
         display: inline-block;
         width: 100%;
     }
@@ -177,9 +179,6 @@
 .theme-wrapper.dark {
     .input-field {
         &:has(input[type=checkbox]) {
-            display: inline-block;
-        }
-        .tooltip {
             display: inline-block;
         }
         input {

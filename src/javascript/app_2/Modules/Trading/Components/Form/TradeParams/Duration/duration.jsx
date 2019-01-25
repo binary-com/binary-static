@@ -39,6 +39,7 @@ const Duration = ({
     start_date,
     start_time,
     validation_errors,
+    market_close_times,
 }) => {
     const has_end_time = expiry_list.find(expiry => expiry.value === 'endtime');
     if (duration_units_list.length === 1 && duration_unit === 't') {
@@ -109,6 +110,7 @@ const Duration = ({
                             expiry_list={expiry_list}
                             expiry_time={expiry_time}
                             is_nativepicker={is_nativepicker}
+                            market_close_times={market_close_times}
                             number_input_props={props.number_input}
                             onChange={onChangeDuration}
                             server_time={server_time}
@@ -162,6 +164,7 @@ Duration.propTypes = {
     is_advanced_duration: PropTypes.bool,
     is_minimized        : PropTypes.bool,
     is_nativepicker     : PropTypes.bool,
+    market_close_times  : PropTypes.array,
     onChange            : PropTypes.func,
     onChangeDuration    : PropTypes.func,
     server_time         : PropTypes.object,
