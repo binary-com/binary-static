@@ -394,7 +394,6 @@ module.exports = [
     'This symbol is not active. Please try another symbol.',
     'Thursday',
     'Tick',
-    'Tick [_1]',
     'Tick [_1] is not the highest tick',
     'Tick [_1] is not the lowest tick',
     'Tick [_1] is the highest tick',
