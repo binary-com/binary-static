@@ -161,6 +161,44 @@
                     }
                 }
             }
+            span.tooltip {
+                position: unset;
+
+                i {
+                    &:before {
+                        content: url('../images/common/tooltip/ic_tooltip_info_light.svg ');
+                        right: 90%;
+                        position: absolute;
+                        margin-right: 338px;
+                        z-index: 10;
+                        opacity: 0;
+                        transition: all 0.18s ease-out 0.17s;
+                    }
+                    &:hover:before {
+                        opacity: 1;
+                    }
+                }
+                &:before {
+                    background: $COLOR_WHITE;
+                    color: $COLOR_BLUE;
+                    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+                    max-width: unset;
+                    width: 290px;
+                    white-space: normal;
+                    font-size: 12px;
+                    padding-left: 40px;
+                    margin-right: 5px;
+                    margin-top: 40px;
+                }
+                &:after {
+                    border-left-color: $COLOR_WHITE;
+                    margin-right: -7px;
+                    margin-top: 40px;
+                }
+                &:hover:after, &:hover:before {
+                    opacity: 1;
+                }
+            }
         }
         .purchase-info-wrapper {
             line-height: 0.9rem;
@@ -650,6 +688,30 @@
                 &:hover:after, &:hover:before {
                     opacity: 1;
                 }
+            }
+        }
+    }
+    .allow-equals {
+        span.tooltip {
+            position: unset;
+
+            i {
+                &:before {
+                    content: url('../images/common/tooltip/ic_tooltip_info_dark.svg ');
+                }
+                &:hover:before {
+                    opacity: 1;
+                }
+            }
+            &:before {
+                background: $COLOR_DARK_BLUE;
+                color: $COLOR_WHITE;
+            }
+            &:after {
+                border-left-color: $COLOR_DARK_BLUE;
+            }
+            &:hover:after, &:hover:before {
+                opacity: 1;
             }
         }
     }
