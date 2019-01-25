@@ -44,19 +44,15 @@ class Dropdown extends React.Component {
 
     setWrapperRef = (node) => this.wrapper_ref = node;
 
-    scrollToggle = (state) => this.is_open = state;
-
     handleClickOutside = (event) => {
         if (this.wrapper_ref && !this.wrapper_ref.contains(event.target) && this.state.is_list_visible) {
             this.setState({ is_list_visible: false });
-            this.scrollToggle(this.state.is_list_visible);
         }
     }
 
     handleVisibility = () => {
         if (this.isSingleOption) return;
         this.setState({ is_list_visible: !this.state.is_list_visible });
-        this.scrollToggle(!this.state.is_list_visible);
     }
 
     onKeyPressed = (event) => {
