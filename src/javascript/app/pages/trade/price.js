@@ -61,8 +61,9 @@ const Price = (() => {
         }
 
         if (multiplier && CommonFunctions.isVisible(multiplier) && multiplier.value) {
-            proposal.amount = multiplier.value;
-            if (multiplier.value > 1000) {
+            const multiplier_value = parseFloat(multiplier.value);
+            proposal.amount = multiplier_value;
+            if (multiplier_value > 1000) {
                 proposal.error = {
                     message: localize('Maximum multiplier of 1000.'),
                 };
