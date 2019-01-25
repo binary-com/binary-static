@@ -493,6 +493,7 @@ export default class TradeStore extends BaseStore {
             new_state.simple_duration_unit = 't';
             new_state.is_advanced_duration = false;
         }
+
         this.processNewValuesAsync(new_state, true);
     }
 
@@ -537,6 +538,13 @@ export default class TradeStore extends BaseStore {
             // simple only has duration as expiry_type
             if (advanced_or_simple === 'simple' && this.expiry_type !== 'duration') {
                 new_state.set(this, 'expiry_type', 'duration');
+            }
+
+            // For contracts without ticks but with minutes - set duration unit to minute e.g. forex rise/fall
+            const contract_has_no_tick = this.duration_units_list.length > 1 && !this.duration_units_list.some(du => du.value === 't');
+            if (contract_has_no_tick && this[`${advanced_or_simple}_duration_unit`] === 't') {
+                new_state[`${advanced_or_simple}_duration_unit`] = 'm';
+                new_state.duration_unit                          = 'm';
             }
         }
 
