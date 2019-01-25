@@ -16,7 +16,14 @@ import {
     getNextIndex }       from './helpers';
 
 class Dropdown extends React.Component {
+
+    is_single_option = isArrayLike(this.props.list) ?
+        !!(this.props.list.length < 2)
+        :
+        !!(Object.keys(this.props.list).length < 2);
+
     list_ref = React.createRef();
+
     state = {
         curr_index     : getItemFromValue(this.props.list, this.props.value).number,
         is_list_visible: false,
@@ -29,11 +36,6 @@ class Dropdown extends React.Component {
     componentWillUnmount() {
         document.removeEventListener('mousedown', this.handleClickOutside);
     }
-
-    isSingleOption = isArrayLike(this.props.list) ?
-        !!(this.props.list.length < 2)
-        :
-        !!(Object.keys(this.props.list).length < 2);
 
     handleSelect = (item) => {
         if (item.value !== this.props.value) {
@@ -51,12 +53,12 @@ class Dropdown extends React.Component {
     }
 
     handleVisibility = () => {
-        if (this.isSingleOption) return;
+        if (this.is_single_option) return;
         this.setState((state) =>({  is_list_visible: !state.is_list_visible }));
     }
 
     onKeyPressed = (event) => {
-        if (this.isSingleOption) return;
+        if (this.is_single_option) return;
         if (event.keyCode === 9) { // Tab is pressed
             if (this.state.is_list_visible) {
                 this.handleVisibility();
@@ -136,14 +138,14 @@ class Dropdown extends React.Component {
                 className={classNames('dropdown-container', this.props.className, {
                     'dropdown-container--left'    : this.props.is_alignment_left,
                     'dropdown-container--show'    : this.state.is_list_visible,
-                    'dropdown-container--disabled': this.isSingleOption,
+                    'dropdown-container--disabled': this.is_single_option,
                 })}
             >
                 <div
                     className={classNames('dropdown__display', {
                         'dropdown__display--clicked': this.state.is_list_visible,
                     })}
-                    tabIndex={this.isSingleOption ? '-1' : '0'}
+                    tabIndex={this.is_single_option ? '-1' : '0'}
                     onClick={this.handleVisibility}
                     onKeyDown={this.onKeyPressed}
                 >
@@ -152,7 +154,7 @@ class Dropdown extends React.Component {
                     </span>
                 </div>
                 {
-                    !this.isSingleOption && <IconArrow className={classNames('select-arrow', {
+                    !this.is_single_option && <IconArrow className={classNames('select-arrow', {
                         'select-arrow--left': this.props.is_alignment_left,
                     })}
                     />
