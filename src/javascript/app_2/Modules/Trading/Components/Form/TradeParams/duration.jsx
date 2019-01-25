@@ -176,6 +176,7 @@ const Duration = ({
                             is_clearable
                             is_nativepicker={is_nativepicker}
                             alignment='left'
+                            disabled_selector={['year']}
                             // sessions={expiry_date_sessions} TODO: add expiry date sessions. e.g. disable days if market closes on weekend
                             // validation_errors={validation_errors.expiry_date} TODO: add validation_errors for expiry date
                         />

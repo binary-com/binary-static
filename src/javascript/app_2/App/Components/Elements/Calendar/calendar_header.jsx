@@ -24,6 +24,7 @@ const CalendarHeader = ({
     isPeriodDisabled,
     navigateTo,
     switchView,
+    disabled_selector,
 }) => {
     const is_date_view   = calendar_view === 'date';
     const is_month_view  = calendar_view === 'month';
@@ -43,7 +44,7 @@ const CalendarHeader = ({
     const is_prev_year_disabled   = isPeriodDisabled(subYears(moment_date, num_of_years), 'month');
     const is_next_month_disabled  = isPeriodDisabled(addMonths(moment_date, 1), 'month');
     const is_next_year_disabled   = isPeriodDisabled(addYears(moment_date, num_of_years), 'month');
-    const is_select_year_disabled = isPeriodDisabled(moment_date.clone().year(end_of_decade), 'year');
+    const is_select_year_disabled = isPeriodDisabled(moment_date.clone().year(end_of_decade), 'year') || disabled_selector.some(selector => selector === 'year');
 
     return (
         <div className='calendar__header'>
@@ -76,9 +77,11 @@ const CalendarHeader = ({
                 }
                 { (is_date_view || is_month_view) &&
                     <CalendarButton
-                        className='calendar__btn calendar__btn--select'
+                        className={classNames('calendar__btn calendar__btn--select', {
+                            'calendar__btn--disabled': is_select_year_disabled,
+                        })}
                         label={moment_date.format('YYYY')}
-                        onClick={() => switchView('year')}
+                        onClick={() => is_select_year_disabled ? undefined : switchView('year')}
                     />
                 }
                 { (is_year_view || is_decade_view) &&
