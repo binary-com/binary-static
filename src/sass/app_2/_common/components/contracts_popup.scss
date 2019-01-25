@@ -240,7 +240,7 @@ div.contracts-popup-container {
             display: grid;
             grid-auto-columns: 1fr;
             z-index: 2;
-            background: $COLOR_GRAY_LIGHT;
+            background: $COLOR_BRANDBLUE_5;
             border-radius: 4px;
             padding: 8px;
             box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.5);
@@ -278,40 +278,30 @@ div.contracts-popup-container {
                 color: $COLOR_WHITE;
                 font-weight: bold;
             }
-            .info-pagination-container {
+            .info-navigation {
                 display: flex;
-            }
-            .info-pagination {
-                display: inline-block;
-                text-align: center;
-                margin: 0 auto;
 
-                .circle-button {
-                    width: 10px;
-                    height: 10px;
-                    border-radius: 50%;
+                &__list {
                     display: inline-block;
-                    margin: 0 5px;
-                    background-color: $COLOR_DARK_GRAY;
-                    cursor: pointer;
+                    text-align: center;
+                    margin: 0 auto;
 
-                    &.active {
-                        background-color: $COLOR_GRAY;
+                    .circle-button {
+                        width: 10px;
+                        height: 10px;
+                        border-radius: 50%;
+                        display: inline-block;
+                        margin: 0 5px;
+                        background-color: $COLOR_DARK_GRAY;
+                        cursor: pointer;
+
+                        &.active {
+                            background-color: $COLOR_GRAY;
+                        }
                     }
                 }
-            }
-            .prev {
-                width: 16px;
-
-                &:before {
-                    content: url('../images/common/ic-chevron-right.svg ');
-                }
-            }
-            .next {
-                width: 16px;
-
-                &:before {
-                    content: url('../images/common/ic-chevron-right.svg ');
+                &__icon {
+                    cursor: pointer;
                 }
             }
         }
@@ -434,6 +424,9 @@ div.contracts-popup-container {
                 .title {
                     color: $COLOR_BRANDBLUE_40;
                 }
+                span {
+                    cursor: pointer;
+                }
             }
             .info-gif {
                 background-color: $COLOR_BRANDBLUE_75;
@@ -441,12 +434,14 @@ div.contracts-popup-container {
             .info-content {
                 color: $COLOR_GRAY;
             }
-            .info-pagination {
-                .circle-button {
-                    background-color: $COLOR_WHITE;
+            .info-navigation {
+                &___list {
+                    .circle-button {
+                        background-color: $COLOR_WHITE;
 
-                    &.active {
-                        background-color: $COLOR_LIGHT_GRAY_2;
+                        &.active {
+                            background-color: $COLOR_LIGHT_GRAY_2;
+                        }
                     }
                 }
             }

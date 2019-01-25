@@ -4,33 +4,24 @@ import { localize }      from '_common/localize';
 
 // Templates are from Binary 1.0, it should be checked if they need change or not and add all of trade types
 
-const ComponentTradeCategories = ({ category }) => {
-    let TradeTypeComponent;
+const TradeCategories = ({ category }) => {
+    let TradeTypeTemplate;
     if (category) {
         switch (category) {
             case 'rise_fall':
-                TradeTypeComponent = (
+                TradeTypeTemplate = (
                     <React.Fragment>
                         <p>
-                            { localize('If you select "Rise", you win the payout if the exit spot is strictly higher than the barrier.') }
+                            { localize('If you select "Higher", you win the payout if the exit spot is strictly higher than the entry spot.') }
                         </p>
                         <p>
-                            { localize('If you select "Fall", you win the payout if the exit spot is strictly lower than the barrier.') }
+                            { localize('If you select "Lower", you win the payout if the exit spot is strictly lower than the entry spot.') }
                         </p>
                     </React.Fragment>
                 );
                 break;
             case 'rise_fall_equal':
-                TradeTypeComponent = (
-                    <React.Fragment>
-                        <p>{ localize('If you select "Rise", you win the payout if the exit spot is strictly higher than the barrier.') }</p>
-                        <p>{ localize('If you select "Fall", you win the payout if the exit spot is strictly lower than the barrier.') }</p>
-                        <p>{ localize('If the exit spot is equal to the barrier, you don\'t win the payout.') }</p>
-                    </React.Fragment>
-                );
-                break;
-            case 'high_low':
-                TradeTypeComponent = (
+                TradeTypeTemplate = (
                     <React.Fragment>
                         <p>{ localize('If you select "Higher", you win the payout if the exit spot is strictly higher than the entry spot.') }</p>
                         <p>{ localize('If you select "Lower", you win the payout if the exit spot is strictly lower than the entry spot.') }</p>
@@ -38,8 +29,17 @@ const ComponentTradeCategories = ({ category }) => {
                     </React.Fragment>
                 );
                 break;
+            case 'high_low':
+                TradeTypeTemplate = (
+                    <React.Fragment>
+                        <p>{ localize('If you select "Higher", you win the payout if the exit spot is strictly higher than the barrier.') }</p>
+                        <p>{ localize('If you select "Lower", you win the payout if the exit spot is strictly lower than the barrier.') }</p>
+                        <p>{ localize('If the exit spot is equal to the barrier, you don\'t win the payout.') }</p>
+                    </React.Fragment>
+                );
+                break;
             case 'end':
-                TradeTypeComponent = (
+                TradeTypeTemplate = (
                     <React.Fragment>
                         <p>{ localize('If you select "Ends Between", you win the payout if the exit spot is strictly higher than the Low barrier AND strictly lower than the High barrier.') }</p>
                         <p>{ localize('If you select "Ends Outside", you win the payout if the exit spot is EITHER strictly higher than the High barrier, OR strictly lower than the Low barrier.') }</p>
@@ -48,7 +48,7 @@ const ComponentTradeCategories = ({ category }) => {
                 );
                 break;
             case 'stay':
-                TradeTypeComponent = (
+                TradeTypeTemplate = (
                     <React.Fragment>
                         <p>{ localize('If you select "Stays Between", you win the payout if the market stays between (does not touch) either the High barrier or the Low barrier at any time during the contract period') }</p>
                         <p>{ localize('If you select "Goes Outside", you win the payout if the market touches either the High barrier or the Low barrier at any time during the contract period.') }</p>
@@ -56,7 +56,7 @@ const ComponentTradeCategories = ({ category }) => {
                 );
                 break;
             case 'match_diff':
-                TradeTypeComponent = (
+                TradeTypeTemplate = (
                     <React.Fragment>
                         <p>{ localize('If you select "Matches", you will win the payout if the last digit of the last tick is the same as your prediction.') }</p>
                         <p>{ localize('If you select "Differs", you will win the payout if the last digit of the last tick is not the same as your prediction.') }</p>
@@ -64,7 +64,7 @@ const ComponentTradeCategories = ({ category }) => {
                 );
                 break;
             case 'even_odd':
-                TradeTypeComponent = (
+                TradeTypeTemplate = (
                     <React.Fragment>
                         <p>{ localize('If you select "Even", you will win the payout if the last digit of the last tick is an even number (i.e., 2, 4, 6, 8, or 0).') }</p>
                         <p>{ localize('If you select "Odd", you will win the payout if the last digit of the last tick is an odd number (i.e., 1, 3, 5, 7, or 9).') }</p>
@@ -72,7 +72,7 @@ const ComponentTradeCategories = ({ category }) => {
                 );
                 break;
             case 'over_under':
-                TradeTypeComponent = (
+                TradeTypeTemplate = (
                     <React.Fragment>
                         <p>{ localize('If you select "Over", you will win the payout if the last digit of the last tick is greater than your prediction.') }</p>
                         <p>{ localize('If you select "Under", you will win the payout if the last digit of the last tick is less than your prediction.') }</p>
@@ -80,7 +80,7 @@ const ComponentTradeCategories = ({ category }) => {
                 );
                 break;
             case 'touch':
-                TradeTypeComponent = (
+                TradeTypeTemplate = (
                     <React.Fragment>
                         <p>{ localize('If you select "Touches", you win the payout if the market touches the barrier at any time during the contract period.') }</p>
                         <p>{ localize('If you select "Does Not Touch", you win the payout if the market never touches the barrier at any time during the contract period.') }</p>
@@ -88,7 +88,7 @@ const ComponentTradeCategories = ({ category }) => {
                 );
                 break;
             case 'asian':
-                TradeTypeComponent = (
+                TradeTypeTemplate = (
                     <React.Fragment>
                         <p>{ localize('Asian options settle by comparing the last tick with the average spot over the period.') }</p>
                         <p>{ localize('If you select "Asian Rise", you will win the payout if the last tick is higher than the average of the ticks.') }</p>
@@ -98,7 +98,7 @@ const ComponentTradeCategories = ({ category }) => {
                 );
                 break;
             default:
-                TradeTypeComponent = (
+                TradeTypeTemplate = (
                     <p>
                         not found
                     </p>
@@ -108,13 +108,13 @@ const ComponentTradeCategories = ({ category }) => {
     }
     return (
         <div>
-            {TradeTypeComponent}
+            {TradeTypeTemplate}
         </div>
     );
 };
 
-ComponentTradeCategories.propTypes = {
+TradeCategories.propTypes = {
     category: PropTypes.string,
 };
 
-export { ComponentTradeCategories };
+export { TradeCategories };

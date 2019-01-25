@@ -44,31 +44,31 @@ class ContractTypeWidget extends React.PureComponent {
         this.handleVisibility();
     };
 
-    handlePaginationClick = (item) => {
+    handleNavigationClick = (item) => {
         this.setState({ item });
     };
 
-    handleNextClick = (paginationList) => {
-        const paginationLength = paginationList.length;
+    handleNextClick = (navigationList) => {
+        const navigationLength = navigationList.length;
         const item = this.state.item;
-        const currentIndex = paginationList.findIndex((list_item) => list_item.value === item.value);
+        const currentIndex = navigationList.findIndex((list_item) => list_item.value === item.value);
         const nextIndex = currentIndex + 1;
-        if (nextIndex < paginationLength) {
-            this.handlePaginationClick(paginationList[nextIndex]);
+        if (nextIndex < navigationLength) {
+            this.handleNavigationClick(navigationList[nextIndex]);
         } else {
-            this.handlePaginationClick(paginationList[0]);
+            this.handleNavigationClick(navigationList[0]);
         }
     };
 
-    handlePrevClick = (paginationList) => {
-        const paginationLength = paginationList.length;
+    handlePrevClick = (navigationList) => {
+        const navigationLength = navigationList.length;
         const item = this.state.item;
-        const currentIndex = paginationList.findIndex((list_item) => list_item.value === item.value);
+        const currentIndex = navigationList.findIndex((list_item) => list_item.value === item.value);
         const prevIndex = currentIndex - 1;
         if (prevIndex > -1) {
-            this.handlePaginationClick(paginationList[prevIndex]);
+            this.handleNavigationClick(navigationList[prevIndex]);
         } else {
-            this.handlePaginationClick(paginationList[paginationLength - 1]);
+            this.handleNavigationClick(navigationList[navigationLength - 1]);
         }
     };
 
@@ -85,7 +85,9 @@ class ContractTypeWidget extends React.PureComponent {
     };
 
     handleInfoVisibility = () => {
-        this.setState({ is_info_dialog_open: !this.state.is_info_dialog_open });
+        this.setState((state) => ({
+            is_info_dialog_open: !state.is_info_dialog_open,
+        }));
     };
 
     handleVisibility = () => {
@@ -93,11 +95,11 @@ class ContractTypeWidget extends React.PureComponent {
     };
 
     onWidgetClick = () => {
-        this.setState({ is_dialog_open: !this.state.is_dialog_open, is_info_dialog_open: false });
+        this.setState((state) => ({ is_dialog_open: !state.is_dialog_open, is_info_dialog_open: false }));
     };
 
     onBackButtonClick = () => {
-        this.setState({ is_dialog_open: !this.state.is_dialog_open, is_info_dialog_open: false });
+        this.setState((state) => ({ is_dialog_open: !state.is_dialog_open, is_info_dialog_open: false }));
     };
 
     getDisplayText = () => {
@@ -124,17 +126,17 @@ class ContractTypeWidget extends React.PureComponent {
         return container_classes;
     };
 
-    getPaginationList = () => {
-        const paginationList = [];
+    getNavigationList = () => {
+        const navigationList = [];
         const list = this.props.list;
         /* eslint-disable */
         Object.keys(list).map(key => {
             !['In/Out', 'Asians'].includes(key) && list[key].map(contract => {
-                (contract.value !== 'rise_fall_equal') && paginationList.push(contract);
+                (contract.value !== 'rise_fall_equal') && navigationList.push(contract);
             });
         });
         /* eslint-disable */
-        return paginationList;
+        return navigationList;
     };
 
     render() {
@@ -170,20 +172,20 @@ class ContractTypeWidget extends React.PureComponent {
                     />
                 </ContractTypeDialog>
                 <TradeTypeInfoDialog
-                    open={this.state.is_info_dialog_open}
-                    onClose={this.handleInfoClick}
                     is_mobile={this.props.is_mobile}
+                    onClose={this.handleInfoClick}
+                    open={this.state.is_info_dialog_open}
                     title={this.state.item.text}
                 >
                     <TradeTypeInfoItem
+                        handleNavigationClick={this.handleNavigationClick}
                         handleNextClick={this.handleNextClick}
-                        handlePaginationClick={this.handlePaginationClick}
                         handlePrevClick={this.handlePrevClick}
                         is_mobile={this.props.is_mobile}
                         item={this.state.item}
+                        navigationList={this.getNavigationList()}
                         onBackButtonClick={this.onBackButtonClick}
                         onSubmitButtonClick={this.onSubmitButtonClick}
-                        paginationList={this.getPaginationList()}
                     />
                 </TradeTypeInfoDialog>
             </div>

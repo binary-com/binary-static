@@ -131,41 +131,28 @@ $content-index: 1;
             margin: 0 auto;
             display: block;
         }
-        .info-pagination-container {
+        .info-navigation {
             display: flex;
             margin-top: 16px;
-        }
-        .info-pagination {
-            display: inline-block;
-            text-align: center;
-            margin: 0 auto;
 
-            .circle-button {
-                width: 10px;
-                height: 10px;
-                border-radius: 50%;
+            &__list {
                 display: inline-block;
-                margin: 0 5px;
-                background-color: $COLOR_DARK_GRAY;
-                cursor: pointer;
+                text-align: center;
+                margin: 0 auto;
 
-                &.active {
-                    background-color: $COLOR_GRAY;
+                .circle-button {
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    display: inline-block;
+                    margin: 0 5px;
+                    background-color: $COLOR_DARK_GRAY;
+                    cursor: pointer;
+
+                    &.active {
+                        background-color: $COLOR_GRAY;
+                    }
                 }
-            }
-        }
-        .prev {
-            width: 16px;
-
-            &:before {
-                content: url('../images/common/ic-chevron-right.svg ');
-            }
-        }
-        .next {
-            width: 16px;
-
-            &:before {
-                content: url('../images/common/ic-chevron-right.svg ');
             }
         }
     }
@@ -197,12 +184,14 @@ $content-index: 1;
             .info-content {
                 color: $COLOR_GRAY;
             }
-            .info-pagination {
-                .circle-button {
-                    background-color: $COLOR_WHITE;
+            .info-navigation {
+                &__list {
+                    .circle-button {
+                        background-color: $COLOR_WHITE;
 
-                    &.active {
-                        background-color: $COLOR_GRAY;
+                        &.active {
+                            background-color: $COLOR_GRAY;
+                        }
                     }
                 }
             }
