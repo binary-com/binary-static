@@ -21,6 +21,9 @@ const WS = (() => {
     const getSettings = () =>
         BinarySocket.send({ get_settings: 1 });
 
+    const getTradingTimes = (date) =>
+        BinarySocket.send({ trading_times: date });
+
     const landingCompany = (residence) =>
         BinarySocket.send({ landing_company: residence });
 
@@ -89,6 +92,7 @@ const WS = (() => {
         getAccountStatus,
         getSelfExclusion,
         getSettings,
+        getTradingTimes,
         landingCompany,
         logout,
         mt5LoginList,
