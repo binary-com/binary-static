@@ -171,7 +171,6 @@
                         opacity: 0;
                         transition: all 0.18s ease-out 0.17s;
                         margin-right: 380px;
-                        margin-top: 2px;
                     }
                     &:hover:before {
                         opacity: 1;
@@ -182,11 +181,11 @@
                     color: $COLOR_BLUE;
                     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
                     padding-left: 40px;
-                    margin-right: 102px;
+                    margin-right: 103px;
                 }
                 &:after {
                     border-left-color: $COLOR_WHITE;
-                    margin-right: 90px;
+                    margin-right: 91px;
                 }
                 &:hover:after, &:hover:before {
                     opacity: 1;
@@ -692,7 +691,7 @@
                 }
                 &:hover:before {
                     opacity: 1;
-                    margin-bottom: 3px;
+                    margin-bottom: 5px;
                 }
             }
             &:before {
