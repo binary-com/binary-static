@@ -22,7 +22,7 @@ const Login = (() => {
         const marketing_queries   = `&signup_device=${signup_device}${date_first_contact ? `&date_first_contact=${date_first_contact}` : ''}`;
 
         return ((server_url && /qa/.test(server_url)) ?
-            `https://www.${server_url.split('.')[1]}.com/oauth2/authorize?app_id=${getAppId()}&l=${language}${marketing_queries}` :
+            `https://${server_url}/oauth2/authorize?app_id=${getAppId()}&l=${language}${marketing_queries}` :
             urlForCurrentDomain(`https://oauth.binary.com/oauth2/authorize?app_id=${getAppId()}&l=${language}${marketing_queries}`)
         );
     };
