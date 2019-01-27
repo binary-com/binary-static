@@ -79,11 +79,24 @@ const CryptoConfig = (() => {
 
 const getMinWithdrawal = currency => (isCryptocurrency(currency) ? (getPropertyValue(CryptoConfig.get(), [currency, 'min_withdrawal']) || 0.002) : 1);
 
-// returns in a string format, e.g. '0.00000001'
-const getMinTransfer = currency => {
-    const min_transfer = getPropertyValue(currencies_config, [currency, 'transfer_between_accounts', 'limits', 'min']) || getMinWithdrawal(currency);
+/**
+ * Returns the transfer limits for the account.
+ * @param currency
+ * @param which
+ * @returns {min: numeric, ?max: numeric}
+ */
+const getTransferLimits = (currency, which) => {
+    const transfer_limits = getPropertyValue(currencies_config, [currency, 'transfer_between_accounts', 'limits']) || getMinWithdrawal(currency);
     const decimals     = getDecimalPlaces(currency);
-    return min_transfer.toFixed(decimals); // we need toFixed() so that it doesn't display in scientific notation, e.g. 1e-8 for currencies with 8 decimal places
+
+    switch (which) {
+        case 'max':
+            return transfer_limits.max.toFixed(decimals) || undefined;
+        case 'all':
+            return transfer_limits;
+        default:
+            return transfer_limits.min.toFixed(decimals) || undefined;
+    }
 };
 
 const getTransferFee = (currency_from, currency_to) => {
@@ -109,11 +122,6 @@ const getCurrencyName = currency => getPropertyValue(CryptoConfig.get(), [curren
 
 const getMinPayout = currency => getPropertyValue(currencies_config, [currency, 'stake_default']);
 
-const getMaxTransfer = currency => {
-    const max_transfer = getPropertyValue(currencies_config, [currency, 'transfer_between_accounts', 'limits', 'max']);
-    return max_transfer ? max_transfer.toFixed(getDecimalPlaces(currency)) : undefined;
-};
-
 module.exports = {
     formatMoney,
     formatCurrency,
@@ -123,8 +131,7 @@ module.exports = {
     isCryptocurrency,
     getCurrencyName,
     getMinWithdrawal,
-    getMaxTransfer,
-    getMinTransfer,
+    getTransferLimits,
     getTransferFee,
     getMinimumTransferFee,
     getMinPayout,

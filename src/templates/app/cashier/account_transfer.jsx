@@ -52,9 +52,28 @@ const AccountTransfer = () => (
                 <FormRow label={it.L('Transfer to')}   type='select' id='transfer_to' />
                 <FormRow label={it.L('Amount')}        type='custom' id='transfer_amount'>
                     <input id='amount' name='amount' type='text' maxLength='20' autoComplete='off' />
-                    <p className='font-xs explain-dynamic-limit' />
-                    <div className='hint' id='range_hint' />
                 </FormRow>
+                <div className='gr-row'>
+                    <div className='gr-4 gr-12-m' />
+                    <div className='gr-8 gr-12-m'>
+                        <div className='account_transfer font-s' id='range_hint'>
+                            <h3 className='account_transfer__header'>
+                                {it.L('Min')}: <span id='range_hint_min' />
+                                &nbsp;{it.L('Max')}: <span id='range_hint_max' />
+                            </h3>
+                            <div>
+                                <p className='explain-dynamic-limit font-s'>
+                                    {it.L('Maximum transferable amount will be chosen from a minimum value of:')}
+                                </p>
+                                <ul className='bullet font-s'>
+                                    <li>{it.L('Current balance: [_1]', '<span id=\'limit_current_balance\' />')}</li>
+                                    <li>{it.L('Daily withdrawal limit: [_1]', '<span id=\'limit_daily_withdrawal\' />')}</li>
+                                    <li>{it.L('Maximum allowed amount: [_1]', '<span id=\'limit_max_amount\' />')}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </Fieldset>
 
             <SubmitButton msg_id='form_error' type='submit' text={it.L('Transfer')} />
