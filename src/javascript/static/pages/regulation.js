@@ -1,5 +1,6 @@
-const BinarySocket  = require('../../app/base/socket');
-const hasCFD        = require('../../app/common/country_base').hasCFD;
+const BinarySocket      = require('../../app/base/socket');
+const getElementById   = require('../../../javascript/_common/common_functions').getElementById;
+const isExcludedFromCfd = require('../../app/common/country_base').isExcludedFromCfd;
 
 const Regulation = (() => {
     const onLoad = () => {
@@ -26,8 +27,8 @@ const Regulation = (() => {
             });
 
             BinarySocket.wait('website_status').then(() => {
-                if (hasCFD()) {
-                    document.querySelectorAll('#cfd_fillbox').remove();
+                if (isExcludedFromCfd()) {
+                    getElementById('cfd_fillbox').remove();
                 }
             });
         });
