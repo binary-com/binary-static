@@ -29,7 +29,7 @@ const Cfds = () => (
             </div>
             <div className='gr-9 gr-12-m'>
                 <Section id='what-cfds-trading' header={it.L('What is CFD trading')}>
-                    <p>{it.L('A Contract for Difference (CFD) is a financial derivative that allows you to potentially profit by speculating on the rise or fall of an underlying asset, without actually owning that asset.')}</p>
+                    <p>{it.L('A contract for difference (CFD) is a financial derivative that allows you to potentially profit by speculating on the rise or fall of an underlying asset, without actually owning that asset.')}</p>
                     <p>{it.L('The movement of the underlying asset determines your profit or loss – depending on the position that you have taken.')}</p>
                     <HeaderSecondary header={it.L('Advantages of CFD trading')} />
                     <ul className='checked'>
@@ -39,18 +39,18 @@ const Cfds = () => (
                     </ul>
 
                     <HeaderSecondary header={it.L('What you can trade with CFDs')} />
-                    <p>{it.L('Contracts for difference (CFDs) allow you to speculate on a number of markets, including indices, shares, and commodities. At Binary.com, we offer popular cash indices, cryptocurrencies, as well as proprietary Volatility Indices that simulate market movement.')}</p>
+                    <p>{it.L('Contracts for difference (CFDs) allow you to speculate on a number of markets, including indices, shares, and commodities. At [_1], we offer popular cash indices, cryptocurrencies, and proprietary Volatility Indices, which simulate market movement.', it.website_name)}</p>
                 </Section>
 
                 <Section id='how-trade-cfds' header={it.L('How to trade CFDs')}>
-                    <p>{it.L('New to CFD trading? We explain a few basics that all CFD traders need to know before they start trading.')}</p>
+                    <p>{it.L('New to CFD trading? Below are a few basics that all CFD traders need to know before they start trading.')}</p>
 
                     <HeaderSecondary header={it.L('When to buy and sell')} />
                     <p>{it.L('When you are trading CFDs, you can choose to open a buy position (if you think that the price will rise) or a sell position (if you think that the price will fall).')}</p>
                     <BuySellImage />
                     <p>{it.L('Let\'s use the US 100 index as an example:')}</p>
-                    <p>{it.L('If you decide to buy or \'go long\' on the US 100 index, your profit will continue to increase as long as the price of the US 100 index keeps rising. However, if the price falls, the losses you incur will also increase.')}</p>
-                    <p>{it.L('The opposite is true if you decide to sell or \'go short\' on the US 100 index. This means that your profit will continue to increase as long as the price of the US 100 index keeps falling. However, if the price rises, the losses you incur will also increase.')}</p>
+                    <p>{it.L('If you decide to buy or \'go long\' on Gold, you will profit if Gold price rises. However, if the price falls below your entry price, you will incur losses which will increase the further the price falls.')}</p>
+                    <p>{it.L('The opposite is true if you decide to sell or \'go short\' on Gold: you will profit if Gold price falls. However, if the price rises above your entry price, you will incur losses which will increase the further the price rises.')}</p>
 
                     <HeaderSecondary header={it.L('How to calculate your profits and losses')} />
                     <p>{it.L('Let\'s say a US 100 contract is worth USD 1 per point in the underlying asset. If you decide to \'go long\' on the US 100, and the asset price rises by 10 points, that represents a USD 10 profit for you.')}</p>
@@ -64,7 +64,7 @@ const Cfds = () => (
 
                 <Section id='margin-policy' header={it.L('CFD margin policy')}>
                     <p>{it.L('Margin allows you to trade on leverage – giving you the same level of market exposure using much less capital.')}</p>
-                    <p>{it.L('For example, if you wanted to purchase 100 units of a particular asset trading at USD 50 per unit through a traditional broker, it would cost you USD 5,000 for this transaction.')}</p>
+                    <p>{it.L('For example, if you wanted to purchase 100 units of a particular asset trading at USD 50 per unit through a traditional broker, this transaction would cost you USD 5,000.')}</p>
                     <p>{it.L('With leverage, you can purchase 100 units of the same asset at a fraction of the cost.')}</p>
 
                     <HeaderSecondary header={it.L('How to calculate margin')} />
@@ -75,13 +75,13 @@ const Cfds = () => (
                     <p>{it.L('Equity is the sum of your balance and floating profit and loss (PnL). Margin level is the ratio of equity to margin. When that ratio reaches a specified percentage (usually 100%), your account will be placed under margin call. This does not affect your ability to open new positions; it serves to alert you that your floating PnL is moving lower. However, it is recommended to add funds to your account in order to keep your positions open. Alternatively, you may close losing positions.')}</p>
 
                     <HeaderSecondary header={it.L('What\'s a stop out level and how is it applied')} />
-                    <p>{it.L('If your margin level reaches an even lower level (usually 50%), it will reach the stop out level where it is unable to sustain an open position. This will lead to some, or all your open positions being forcibly closed (also known as "forced liquidation").')}</p>
+                    <p>{it.L('If your margin level reaches an even lower level (usually 50%), it will be at the stop out level where an open position is no longer possible. Some or all of your open positions will then get forcibly closed (also known as "forced liquidation").')}</p>
                     <p>{it.L('When your account hits the forced liquidation level, your orders and positions are forcibly closed in the following sequence:')}</p>
                     <ol>
-                        <li>{it.L('We delete an order with the largest margin reserved')}</li>
-                        <li>{it.L('If your margin level is still under the stop out level, your next order will be deleted. However, orders without margin requirements will not be deleted')}</li>
-                        <li>{it.L('If your margin level is still under the stop out level, we will close an open position with the largest loss')}</li>
-                        <li>{it.L('We will continue to close open positions until your margin level becomes higher than the stop out level')}</li>
+                        <li>{it.L('We delete an order with the largest margin reserved.')}</li>
+                        <li>{it.L('If your margin level is still under the stop out level, your next order will be deleted. However, orders without margin requirements will not be deleted.')}</li>
+                        <li>{it.L('If your margin level is still under the stop out level, we will close an open position with the largest loss.')}</li>
+                        <li>{it.L('We will continue to close open positions until your margin level becomes higher than the stop out level.')}</li>
                     </ol>
                 </Section>
 
@@ -145,7 +145,7 @@ const Cfds = () => (
                     />
 
                     <HeaderSecondary header={it.L('How to read the table above')} />
-                    <p>{it.L('A Contract for Difference (CFD) is a financial derivative that allows you to profit by speculating on the rise or fall of an underlying asset. Your profit and loss is calculated through the difference in the buy and sell prices of the underlying asset.')}</p>
+                    <p>{it.L('A contract for difference (CFD) is a financial derivative that allows you to speculate on the rise or fall of an underlying asset, without actually owning that asset. Your profit and loss is calculated through the difference in the buy and sell prices of the underlying asset.')}</p>
                     <p>{it.L('For example, a CFD on Binary.com\'s US 30 index offers a USD 1 per point contract. If you buy a Volume 1.0 contract for the US 30 with a current ask price of USD 20,000 and later sell it at a bid price of USD 20,010, your net profit will be calculated as follows:')}</p>
 
                     <Box
@@ -157,7 +157,7 @@ const Cfds = () => (
                     <p>{it.L('To learn more, read our [_1]Margin Policy[_2] that further explains our margin requirements.', '<a href="#margin-policy">', '</a>')}</p>
 
                     <HeaderSecondary header={it.L('Important notes on our swap rates (overnight funding)')} />
-                    <p>{it.L('If you keep any positions open overnight, an interest adjustment will be made to your trading account as indication of the cost required to keep your position open.')}</p>
+                    <p>{it.L('If you keep any positions open overnight, an interest adjustment will be made to your trading account as an indication of the cost required to keep your position open.')}</p>
                     <p>{it.L('This interest adjustment (or swap rate) is based on market rates, on top of a 2% fee.')}</p>
                     <p>{it.L('The interest adjustment is calculated in points, meaning we will convert the relevant market rates to points in the base instrument.')}</p>
                     <p>{it.L('Please take note that our swap rate also depends on the time and days you hold your positions open:')}</p>

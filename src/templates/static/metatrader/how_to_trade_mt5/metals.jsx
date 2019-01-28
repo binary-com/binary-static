@@ -4,9 +4,9 @@ import { List, Table } from '../../../_common/components/elements.jsx';
 
 const Equation = ({ operand_1, operand_2, operand_3, operand_4 }) => (
     <React.Fragment>
-        {operand_1}
+        ({operand_1}
         <img className='math-sign' src={it.url_for('images/pages/metatrader/how-to/minus.svg')} />
-        {operand_2}
+        {operand_2})
         <img className='math-sign' src={it.url_for('images/pages/metatrader/how-to/multiply.svg')} />
         {operand_3}
         <img className='math-sign' src={it.url_for('images/pages/metatrader/how-to/equal.svg')} />
@@ -18,7 +18,7 @@ const Metals = () => (
     <div id='metals_how_to'>
         <div className='gr-row'>
             <div className='gr-8 gr-push-2 center-text'>
-                <h2>{it.L('How to trade Metals?')}</h2>
+                <h2>{it.L('How to trade Metals')}</h2>
                 <p>{it.L('Learn the basic concepts of trading Meta assets on MetaTrader 5.')}</p>
                 <p className='border-box'>{it.L('When you are trading metals, you can choose to open a buy position if you think that the price of an asset will rise or a sell position if you think that the price of an asset will fall.')}</p>
             </div>
@@ -27,7 +27,7 @@ const Metals = () => (
         <SeparatorLine className='gr-padding-30' />
 
         <div className='center-text'>
-            <h2>{it.L('When to buy and sell?')}</h2>
+            <h2>{it.L('When to buy and sell')}</h2>
             <p>{it.L('Can\'t figure it out on when to buy and sell? Here is a simple way of looking at it:')}</p>
             <div className='gr-row'>
                 <div className='gr-8 gr-push-2 gr-12-m gr-push-0-m'>
@@ -53,8 +53,8 @@ const Metals = () => (
             <div className='gr-row'>
                 <div className='gr-10 gr-push-1'>
                     <p>{it.L('Example: XAU/USD (Gold vs US Dollar) symbol pair')}</p>
-                    <p>{it.L('If you decide to buy or \'go long\' on the XAU/USD, you will profit if the price of the XAU/USD rises, and incur losses if the price falls.')}</p>
-                    <p>{it.L('If you decide to sell or \'go short\' on XAU/USD, you will profit if the price of the XAU/USD falls, and incur losses if the price rises.')}</p>
+                    <p>{it.L('If you decide to buy or \'go long\' on the XAU/USD, you will profit if the price of the XAU/USD rises and incur losses if the price falls.')}</p>
+                    <p>{it.L('If you decide to sell or \'go short\' on XAU/USD, you will profit if the price of the XAU/USD falls and incur losses if the price rises.')}</p>
                 </div>
             </div>
         </div>
@@ -73,7 +73,7 @@ const Metals = () => (
                         { text: it.L('Market volatility – Political, economic, or social instability may lead to more volatile financial markets that affect the prices of certain metals') },
                     ]}
                 />
-                <p>{it.L('As conclusion, keeping up with market news and trends in a certain sector can help you always ')}</p>
+                <p>{it.L('Keeping up with the market news and staying aware of business trends can be helpful.')}</p>
             </div>
         </div>
 
@@ -81,7 +81,7 @@ const Metals = () => (
 
         <div className='gr-row'>
             <div className='gr-10 gr-push-1 center-text'>
-                <h2>{it.L('How to calculate your profit and losses?')}</h2>
+                <h2>{it.L('How to calculate your profit and loss')}</h2>
                 <p>{it.L('Example: XAU/USD (Gold vs US Dollar) symbol pair')}</p>
                 <p>{it.L('Please note that one lot is equivalent to 100 units, based on our contract specifications. Your profit or loss will be calculated as follows:')}</p>
                 <p className='border-box'>{it.L('When you are trading metals, you can choose to open a buy position if you think that the price of an asset will rise or a sell position if you think that the price of an asset will fall.')}</p>

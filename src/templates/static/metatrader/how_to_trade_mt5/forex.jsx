@@ -66,7 +66,7 @@ const Forex = () => (
             <List
                 className='checked'
                 items={[
-                    { text: it.L('The base currency is always equal to one unit') },
+                    { text: it.L('The base currency is always equal to one unit.') },
                     { text: it.L('The price of the currency pair indicates how much of the quote currency is required to buy one unit of base currency. This is more commonly known as the exchange rate.') },
                 ]}
             />
@@ -78,25 +78,25 @@ const Forex = () => (
             <div>{it.L('You want to buy a certain currency pair if you think the base currency will go up. The reverse holds true:')}</div>
             <p className='border-box'>{it.L('You want to sell that currency pair if you think the base currency will go down.')}</p>
             <p>{it.L('You have probably seen the terms \'going long\' and \'going short\' being used by a lot of Forex brokers and traders. Let\'s compare the differences between the two terms:')}</p>
-            <p>{it.L('Long:')}</p>
+            <p>{it.L('Long')}</p>
             <List
                 className='checked'
                 items={[
-                    { text: it.L('Go long = buy') },
+                    { text: it.L('Go long = buy.') },
                     { text: it.L('You are buying the base currency and selling the quote currency.') },
                     { text: it.L('You are expecting the base currency to rise in value so you can sell it back for a profit.') },
                 ]}
             />
-            <p>{it.L('Short:')}</p>
+            <p>{it.L('Short')}</p>
             <List
                 className='checked'
                 items={[
-                    { text: it.L('Go short = sell') },
+                    { text: it.L('Go short = sell.') },
                     { text: it.L('You are selling the base currency and buying the quote currency.') },
                     { text: it.L('You are expecting the base currency to fall in value so you can buy it back at a lower price and make profit.') },
                 ]}
             />
-            <p>{it.L('Example:')}</p>
+            <p>{it.L('Example')}</p>
             <p>{it.L('After your analysis, you have come to the conclusion that the British economy will outperform its U.S. counterpart. Thus, you decide to go long and buy into the GBP/USD, expecting the GBP to rise in value.')}</p>
             <p>{it.L('If you decided that the British economy will underperform instead, then you will go short on the GBP/USD.')}</p>
         </Step>
