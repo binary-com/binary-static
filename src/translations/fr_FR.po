@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-01-25 09:37\n"
+"PO-Revision-Date: 2019-01-28 08:27\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: French\n"
 "MIME-Version: 1.0\n"
@@ -6889,9 +6889,6 @@ msgstr "N.B. Les transferts par l'intermédiaire d'un Agent de paiement ne sont 
 msgid "Note: This feature is not available if you logged in using a social network."
 msgstr "Remarque : Cette fonctionnalité n’est pas disponible si vous vous connectez en utilisant un réseau social."
 
-msgid "Note: Transfer between accounts is not available on weekends."
-msgstr "Remarque : Le transfert entre comptes n’est pas disponible durant les week-ends."
-
 msgid "Note: You can only have one fiat currency account and one of each cryptocurrency account."
 msgstr "Remarque : Vous ne pouvez avoir qu'un compte en monnaie fiduciaire et un pour chaque monnaie digitale."
 
@@ -10204,6 +10201,9 @@ msgstr "Il existe deux types de trade de réinitialisation :"
 msgid "There is any amount outstanding from you to us; and/or"
 msgstr "Il y a un montant en suspens de vous à nous; et/ou"
 
+msgid "There may be times when transfers are not available because the market is closed (weekends or holidays), there is high volatility in the market or because of technical issues."
+msgstr ""
+
 msgid "There was a problem accessing the server during purchase."
 msgstr "Il y a eu un problème d'accès au serveur durant l'achat."
 
@@ -10857,9 +10857,6 @@ msgstr "Transfert"
 
 msgid "Transfer Between Accounts"
 msgstr "Transfert Entre Comptes"
-
-msgid "Transfer between accounts is not available on weekends"
-msgstr "Le transfert entre comptes n’est pas disponible durant les week-ends"
 
 msgid "Transfer from"
 msgstr "Virement depuis"
