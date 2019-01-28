@@ -28,7 +28,9 @@ const Regulation = (() => {
 
             BinarySocket.wait('website_status').then(() => {
                 if (isExcludedFromCfd()) {
-                    getElementById('cfd_fillbox').remove();
+                    const el_cfd_fillbox = getElementById('cfd_fillbox');
+                    el_cfd_fillbox.nextSibling.classList.remove('margin-left-0');
+                    el_cfd_fillbox.remove();
                 }
             });
         });
