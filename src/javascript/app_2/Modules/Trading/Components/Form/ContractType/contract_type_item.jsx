@@ -2,6 +2,7 @@ import { PropTypes as MobxPropTypes } from 'mobx-react';
 import PropTypes                      from 'prop-types';
 import React                          from 'react';
 import { IconTradeCategory }          from 'Assets/Trading/Categories';
+import Tooltip                        from 'App/Components/Elements/tooltip.jsx';
 
 const ContractTypeItem = ({
     contracts,
@@ -10,6 +11,7 @@ const ContractTypeItem = ({
     handleSelect,
 }) => (
     contracts.map((contract, idx) => (
+        (contract.value !== 'rise_fall_equal') &&
         <div
             key={idx}
             className={`list-item ${value === contract.value ? 'selected' : ''}`}
@@ -21,6 +23,10 @@ const ContractTypeItem = ({
             <span className='contract-title'>
                 {contract.text}
             </span>
+            <Tooltip
+                alignment='left'
+                icon='info'
+            />
         </div>
     ))
 );

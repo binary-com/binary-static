@@ -18,6 +18,9 @@ const Professional = () => (
             <div className='invisible' id='professional'>
                 <p>{it.L('You are categorised as a professional client.')}</p>
             </div>
+            <div className='invisible' id='rejected'>
+                <p>{it.L('Your request to be treated as a professional client has been rejected. Please check your inbox for more details. Your account remains categorised as a retail client account.')}</p>
+            </div>
 
             <form className='form gr-padding-10 invisible' id='frm_professional'>
                 <ProfessionalClient />

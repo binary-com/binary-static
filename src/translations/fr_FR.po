@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-01-03 05:49\n"
+"PO-Revision-Date: 2019-01-25 09:37\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: French\n"
 "MIME-Version: 1.0\n"
@@ -175,8 +175,8 @@ msgstr "%1 offre une plateforme de trading simple, permettant à chacun de profi
 msgid "%1 gives everyone an easy way to participate in the financial markets. Trade with as little as $1 USD on major currencies, stocks, indices, and commodities."
 msgstr "%1 offre à chacun une manière facile de participer aux marchés financiers. Tradez les devises, les actions, les indices, et les matières premières à partir de 1 USD seulement."
 
-msgid "%1 has been credited into your virtual account: %2."
-msgstr "%1 ont été crédités sur votre compte virtuel: %2."
+msgid "%1 has been credited into your Virtual Account: %2."
+msgstr "%1 ont été crédités sur votre Compte Virtuel: %2."
 
 msgid "%1 has earned an enviable reputation for our commitment to high ethical standards and the quality of the trading experience we provide."
 msgstr "%1 a acquis une réputation solide en adhérant à des normes éthiques élevées et en offrant une expérience de trading de haute qualité."
@@ -233,7 +233,7 @@ msgid "%1 is not available in Costa Rica and is not regulated or supervised by a
 msgstr "%1 n'est pas disponible au Costa Rica et n'est soumise à la réglementation ou à la supervision d'aucun organisme de réglementation dans le système financier du Costa Rica."
 
 msgid "%1 is owned and operated by the Binary Group Ltd. group of companies. For more information, %2visit our history page%3."
-msgstr ""
+msgstr "%1 appartient et est exploité par le groupe d'entreprises Binary Group Ltd. Pour obtenir des informations supplémentaires, %2consultez notre historique%3."
 
 msgid "%1 is seeking a qualified proofreader with a flair for language and a meticulous eye for detail. You must be able to interact with our staff using a web-based translator interface."
 msgstr "%1 cherche un correcteur qualifié avec un flair pour la langue et un oeil méticuleux pour le détail. Vous devez être en mesure d’interagir avec notre personnel à l’aide d’une interface web de traduction."
@@ -404,7 +404,7 @@ msgid "%1Download MAM for Windows%2 after you’ve set up your master account. Y
 msgstr "%1Télécharger MAM pour Windows%2 après que vous ayez configuré votre compte principal. Vos identifiants seront fournis"
 
 msgid "%1Founded%2 October 1999"
-msgstr ""
+msgstr "%1FFondé%2 en Octobre 1999"
 
 msgid "%1Your Proof of Identity or Proof of Address%2 did not meet our requirements. Please check your email for further instructions."
 msgstr "%1Votre preuve d’Identité ou Preuve de Domicile%2 ne satisfont pas nos exigences. Veuillez vérifier votre email pour obtenir des instructions supplémentaires."
@@ -1326,6 +1326,9 @@ msgstr "Voulez-vous vraiment supprimer ce jeton de façon permanente"
 
 msgid "Are you sure that you want to permanently revoke access to the application"
 msgstr "Voulez-vous vraiment révoquer l'accès à cette application de façon permanente"
+
+msgid "Are you sure?"
+msgstr "Êtes vous sûr?"
 
 msgid "Armed Forces"
 msgstr "Les Forces Armées"
@@ -2259,6 +2262,9 @@ msgstr "Les graphiques sont retardés pour ce sous-jacent"
 
 msgid "Charting platforms"
 msgstr "Plateformes graphiques"
+
+msgid "Check address"
+msgstr "Vérifier l’adresse"
 
 msgid "Check our systems against the latest attacks, vulnerabilities, and mitigations"
 msgstr "Vérifiez nos systèmes contre les dernières attaques, vulnérabilités et mesures d’atténuation"
@@ -3340,6 +3346,9 @@ msgstr "Vous voulez en apprendre davantage sur les marchés ou comment effectuer
 msgid "Do you want to see %1 in other languages, or can you suggest improvements to our current translations?"
 msgstr "Vous désirez voir %1 en d'autres langues, ou vous pouvez suggérer des améliorations à nos traductions actuelles ?"
 
+msgid "Do you want to top up for another %1? If not, you can do this later on the %2Cashier page%3, too."
+msgstr "Vous voulez faire un versement complémentaire pour un autre %1? Sinon, vous pouvez le faire aussi par la suite sur la %2page Caisse%3."
+
 msgid "Do you wish to continue?"
 msgstr "Voulez-vous continuer ?"
 
@@ -3357,6 +3366,9 @@ msgstr "Ne touche pas"
 
 msgid "Don't have an account?"
 msgstr "Vous n’avez pas encore de compte ?"
+
+msgid "Don't show again"
+msgstr "Ne plus afficher à nouveau"
 
 msgid "Don’t share your %1 account or payment methods with any other person."
 msgstr "Ne partagez pas votre compte ou méthodes de paiement %1 avec toute autre personne."
@@ -3831,9 +3843,6 @@ msgstr "Une technologie de trading exclusive conçue pour les options binaires."
 
 msgid "Execute your trade in seconds."
 msgstr "Exécutez vos ordres en quelques secondes."
-
-msgid "Execute your trading strategy using the Rise/Fall trade type with a duration of 5 ticks, 10 ticks, 1 minute or 5 minutes. With Rise/Fall contracts, you must predict whether the market will rise or fall from its current level."
-msgstr "Exécutez votre stratégie de trading en utilisant le type de trade Hausse/Baisse d’une durée de 5 ticks, 10 ticks, 1 minute, ou 5 minutes. Avec les contrats Hausse/Baisse, vous devez prédire si le marché va augmenter ou diminuer par rapport à son niveau actuel."
 
 msgid "Execution model and counterparty risk"
 msgstr "Modèle d'execution et risque de contrepartie"
@@ -4549,6 +4558,9 @@ msgstr "Allez sur la page de téléchargement MT5"
 msgid "Go to MetaTrader 5 dashboard"
 msgstr "Aller au tableau de bord de MetaTrader 5"
 
+msgid "Go to statement"
+msgstr "Aller sur le relevé"
+
 msgid "Go with the leader"
 msgstr "Faites confiance au leader du marché"
 
@@ -4663,8 +4675,14 @@ msgstr "Barrière supérieure"
 msgid "High Tick"
 msgstr "Tick Haut"
 
+msgid "High Tick/Low Tick"
+msgstr "Tick Haut/ Tick Bas"
+
 msgid "High Tick/Low Tick contracts have a strict duration of five ticks."
 msgstr "Les contrats de Tick Bas/Haut ont une durée stricte de cinq ticks."
+
+msgid "High Ticks/Low Ticks"
+msgstr "Ticks Haut/ Ticks Bas"
 
 msgid "High barrier"
 msgstr "Barrière supérieure"
@@ -4827,6 +4845,9 @@ msgstr "Comment utiliser un agent de paiement ?"
 
 msgid "However, if the asset price falls by 10 points, that represents a USD 10 loss for you."
 msgstr "Toutefois, si le prix de l’actif baisse de 10 points, cela représente une perte de 10 USD pour vous."
+
+msgid "However, we will require further documentation to authenticate your account in the future."
+msgstr "Cependant, nous exigerons plus de documentation pour authentifier votre compte à l’avenir."
 
 msgid "However, with leverage you can purchase those 100 units at a fraction of the typical cost – depending on the leverage afforded to you by your broker or trading platform."
 msgstr "Cependant, avec un effet de levier, vous pouvez acheter ces 100 unités à une fraction du coût typique – selon l’effet de levier que vous assurent votre courtier ou votre plateforme de trading."
@@ -5918,7 +5939,7 @@ msgid "Liaise with governmental authorities such as the Immigration Department, 
 msgstr "Assurer la liaison avec les autorités gouvernementales comme le département de l’Immigration et l'Inland Revenue Board sur une base régulière au nom de l’entreprise et des salariés"
 
 msgid "Licensed and regulated in Malta, the United Kingdom, the Isle of Man, and Ireland. %1Learn more%2"
-msgstr ""
+msgstr "Autorisé et régulé à Malte, au Royaume Uni, à l’Île de Man, et en Irlande. %1En apprendre plus%2"
 
 msgid "Licensed, trusted, and secure"
 msgstr "Autorisée sous licence, fiable et sûre"
@@ -7237,6 +7258,9 @@ msgstr "Nos valeurs"
 msgid "Our website contains links to other websites and may contain banner or icon advertisements related to third-party websites. These websites and their advertisements may submit cookies to your web browser which is beyond our control. We are not responsible for the privacy practices or the content of such websites. We encourage you to read the privacy policies of these websites because their practices may differ from ours."
 msgstr "Notre site Web contient des liens vers d'autres sites et peut contenir des bannières ou icônes publicitaires relatives à des sites Web de tiers. Ces sites Web et leurs publicités peuvent envoyer des cookies sur votre navigateur Web et ces envois échappent donc à notre contrôle. Nous n'assumons aucune responsabilité concernant les politiques de confidentialité ou les contenus de ces sites Web. Nous vous encourageons à lire les politiques de confidentialité des sites concernés, car leurs pratiques peuvent différer des nôtres."
 
+msgid "Our website uses cookies to give you the best user experience. For more information, %1."
+msgstr ""
+
 msgid "Outside the EU, financial products are offered by Binary (C.R.) S.A., 5th Floor, Building 6 Centro Ejecutivo La Sabana, Sabana Sur, San José, Costa Rica, Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, regulated by the Vanuatu Financial Services Commission (%1view licence%2), Binary (BVI) Ltd, 2nd Floor, O’Neal Marketing Associates Building, Wickham’s Cay II, P.O. Box 3174, Road Town, Tortola VB1110, British Virgin Islands, regulated by the British Virgin Islands Financial Services Commission (%3licence no. SIBA/L/18/1114%4), and Binary (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Labuan, Malaysia, regulated by the Labuan Financial Services Authority to carry on a money-broking business (%5licence no. MB/18/0024%6)"
 msgstr "Hors de l’UE, les produits financiers sont offerts par Binary (C.R.) S.A., 5e étage, immeuble 6 Centro Ejecutivo La Sabana, Sabana Sur, San José, Costa Rica, Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, réglementée par la Commission des Services Financiers de Vanuatu (%1voir licence%2), Binary (BVI) Ltd, 2e étage, O'Neal Marketing Associates Building, Wickham’s Cay II, P.O. Box 3174, Road Town, Tortola VB1110, îles Vierges britanniques, réglementée par la Commission des Services Financiers des îles Vierges Britanniques (%3licence no. SIBA/L/18/1114%4) et Binary (FX) Ltd., Lot No. F16, Premier Etage, Paragon Labuan, Jalan Tun Mustapha, 87000 Labuan, Malaisie, réglementée par l'autorité des Services Financiers de Labuan afin d’exploiter une entreprise de courtage monétaire (%5licence no. MB/18/0024%6)"
 
@@ -7246,8 +7270,8 @@ msgstr "Plus de $1 000 000"
 msgid "Over $500,000"
 msgstr "Plus de 500 000 $"
 
-msgid "Over %1 %2staff%3 and contractors worldwide"
-msgstr ""
+msgid "Over %1 <a href='%2'>staff</a> and contractors worldwide"
+msgstr "Plus de %1 <a href='%2'>employés</a> et prestataires dans le monde entier"
 
 msgid "Over 1 million registered accounts worldwide"
 msgstr "Plus d'un million de comptes enregistrés dans le monde entier"
@@ -7579,6 +7603,9 @@ msgstr "Veuillez confirmer que vous n’êtes pas une personne politiquement exp
 msgid "Please confirm the transaction details in order to complete the transfer:"
 msgstr "Veuillez confirmer les détails de la transaction afin de compléter le transfert:"
 
+msgid "Please do not share your bank account, credit card, or e-wallet with another client, as this may cause delays in your withdrawals."
+msgstr ""
+
 msgid "Please ensure that you have the Telegram app installed on your device."
 msgstr "Veuillez vous assurer que vous avez l'app Telegram installée sur votre appareil."
 
@@ -7606,7 +7633,7 @@ msgstr "Veuillez vous connecter."
 msgid "Please make sure that you first agree with the Agent on the terms of payment before submitting your request."
 msgstr "Veuillez vous assurer d'abord que vous êtes d'accord avec l'Agent sur les délais de paiement avant de soumettre votre demande."
 
-msgid "Please note that Asians, Digits, Reset Call/Put and High/Low Ticks are available exclusively with our Volatility Indices."
+msgid "Please note that Asians, Digits, Reset Call/Reset Put and High Ticks/Low Ticks are available exclusively with our Volatility Indices."
 msgstr "Veuillez noter que les Asiatiques, Reset Call/Put et Ticks Haut/Bas sont disponibles exclusivement avec nos Indices de Volatilité."
 
 msgid "Please note that actual trading results may not correspond to optimized or back-tested results."
@@ -7813,8 +7840,23 @@ msgstr "Prédisez que le marché touche ou ne touche pas une cible à tout momen
 msgid "Predict the direction<br />and purchase"
 msgstr "Prédire la direction<br />et acheter"
 
+msgid "Predict the highest or lowest tick among the next 5 ticks."
+msgstr "Prédire le plus haut ou plus bas tick parmi les 5 ticks suivants."
+
 msgid "Predict the last decimal digit of the spot price with Digits. There are three types of Digits trades:"
 msgstr "Prédisez la dernière décimale de votre prix spot. Il y a trois types d'option « Chiffres » :"
+
+msgid "Predict whether the exit spot will be higher or lower than the entry spot within a selected duration from 5 ticks to 10 ticks, or 1 minute to 5 minutes."
+msgstr "Prédire si la sortie spot sera supérieure ou inférieure à l’entrée spot au sein d’une durée choisie à partir des 5 à 10 ticks ou 1 minute à 5 minutes."
+
+msgid "Predict whether the last digit of the last tick will be even or odd within a selected duration from 5 ticks to 10 ticks."
+msgstr "Prédire si le dernier chiffre du dernier tick sera pair ou impair dans une durée choisie à partir de 5 à 10 ticks."
+
+msgid "Predict whether the last digit of the last tick will be greater or less than your prediction within a selected duration from 5 ticks to 10 ticks."
+msgstr "Prédire si le dernier chiffre du dernier tick sera supérieur ou inférieur par rapport à votre prédiction dans une durée choisie à partir de 5 à 10 ticks."
+
+msgid "Predict whether the last digit of the last tick will match or differ from your prediction within a selected duration from 5 ticks to 10 ticks."
+msgstr "Prédire si le dernier chiffre du dernier tick sera égal ou différent par rapport à votre prédiction dans une durée choisie à partir de 5 à 10 ticks."
 
 msgid "Preferably a native speaker with good command of English (oral and written)"
 msgstr "Préférablement un locuteur natif avec une bonne maîtrise de l’anglais (écrit et oral)"
@@ -8020,8 +8062,8 @@ msgstr "Publiée en chinois, anglais, français, allemand, indonésien, italien,
 msgid "Purchase"
 msgstr "Achat"
 
-msgid "Purchase High/Low Tick contracts to predict the highest or lowest tick among the next five ticks."
-msgstr "Achat de contrats tick Haut/Bas pour prédire le tick le plus haut ou le plus bas parmi les cinq prochains ticks."
+msgid "Purchase High Tick/Low Tick contracts to predict the highest or lowest tick among the next five ticks."
+msgstr "Achat de contrats Tick Haut/ Tick Bas pour prédire le tick le plus haut ou le plus bas parmi les cinq prochains ticks."
 
 msgid "Purchase Price"
 msgstr "Prix d'achat"
@@ -8296,9 +8338,6 @@ msgstr "Barrière de Réinitialisation"
 msgid "Reset Call"
 msgstr "Reset Call"
 
-msgid "Reset Call/Put"
-msgstr "Reset Call/Put"
-
 msgid "Reset Call/Reset Put"
 msgstr "Reset Call/Reset Put"
 
@@ -8319,12 +8358,6 @@ msgstr "Réinitialiser le mot de passe"
 
 msgid "Reset to original settings"
 msgstr "Réinitialiser les paramètres"
-
-msgid "Reset-Call"
-msgstr "Reset-Call"
-
-msgid "Reset-Put"
-msgstr "Reset-Put"
 
 msgid "Residents of countries which have been identified by the FATF as having strategic deficiencies shall be restricted from opening an account with Binary Investments (Europe) Ltd."
 msgstr "Les résidents des pays qui ont été identifiés par le FATF comme ayant des lacunes stratégiques doivent être empêchés d’ouvrir un compte auprès de Binary Investments (Europe) Ltd."
@@ -8895,9 +8928,6 @@ msgstr "Commencez à trader"
 
 msgid "Start trading MT5 on web platform"
 msgstr "Commencez à trader sur la plateforme web MT5"
-
-msgid "Start/End Time"
-msgstr "Heure de Début/de Fin"
 
 msgid "State Benefits"
 msgstr "Allocations Gouvernementales"
@@ -10132,6 +10162,9 @@ msgstr "Vous utilisez l'API %1 à vos risques et périls, et vous assumez l'enti
 msgid "The use, operation or combination of the %1 API with non-%1 API(s), data, equipment or documentation if liability would have been avoided but for such use, operation, or combination; or"
 msgstr "L'utilisation, l'exploitation ou l'utilisation combinée de l'API %1 avec des données, des équipements ou de la documentation externes à l'API %1"
 
+msgid "The various trade types available on our MT5 platform."
+msgstr "Les différents types de trades disponibles sur notre plateforme MT5."
+
 msgid "The volatility indices simulate various real market situations and provide an ideal platform for getting used to trading and testing strategies under various market conditions. These indices depend on volatility and drift, and help users to try out scenarios like - high volatility, low volatility, bullish and bearish trends."
 msgstr "Les indices de volatilité simulent différentes situations de marché réelles et constituent un tremplin idéal pour s'entraîner au trading et tester des stratégies dans différentes conditions de marché. Ces indices reflètent la volatilité et les phases de marché latéral. Ils permettent aux utilisateurs de mettre en pratique des scénarios adaptés aux différentes conditions de marché : forte volatilité, faible volatilité, tendances haussières et baissières."
 
@@ -10420,9 +10453,6 @@ msgstr "jeudi"
 msgid "Tick"
 msgstr "Tick"
 
-msgid "Tick %1"
-msgstr "Tick %1"
-
 msgid "Tick %1 is not the highest tick"
 msgstr "Le tick %1 n’est pas le tick le plus haut"
 
@@ -10487,7 +10517,7 @@ msgid "To be able to trade OTC instruments available on the MT5 Trading Platform
 msgstr "Pour être en mesure de trader des instruments OTC disponibles sur la plateforme de Trading MT5, vous devez d’abord :"
 
 msgid "To change your name, date of birth, country of residence, email, or tax information, please contact %1Customer Support%2."
-msgstr ""
+msgstr "Pour modifier votre nom, date de naissance, pays de résidence, adresse e-mail, ou informations fiscales, veuillez contacter %1le Service Clientèle%2."
 
 msgid "To create a MAM real account, please:"
 msgstr "Pour créer un compte réel MAM, veuillez s’il vous plaît :"
@@ -10564,11 +10594,23 @@ msgstr "Jeton"
 msgid "Top Up Virtual Account"
 msgstr "Recharger le Compte Virtuel"
 
+msgid "Top up"
+msgstr "Recharger"
+
+msgid "Top up Virtual Account"
+msgstr "Recharger le Compte Virtuel"
+
+msgid "Top up error"
+msgstr "Erreur de rechargement"
+
 msgid "Top up virtual account"
 msgstr "Recharger le compte virtuel"
 
 msgid "Top-tier liquidity"
 msgstr "Haut niveau de liquidité"
+
+msgid "Top-up successful"
+msgstr "Succès du rechargement"
 
 msgid "Total"
 msgstr "Total"
@@ -11047,6 +11089,9 @@ msgstr "Compréhension de la cryptographie, y compris les fonctions de hachage a
 msgid "Understanding of encryption fundamentals and the OWASP Top 10"
 msgstr "Compréhension des fondements du chiffrement et de l’OWASP Top 10"
 
+msgid "Understood"
+msgstr "Compris"
+
 msgid "Unemployed"
 msgstr "Unemployed"
 
@@ -11173,9 +11218,6 @@ msgstr "App VPN"
 msgid "VPN app"
 msgstr "App VPN"
 
-msgid "Validate address"
-msgstr "Valider l’adresse"
-
 msgid "Variable"
 msgstr "Variable"
 
@@ -11254,8 +11296,8 @@ msgstr "Consultez la liste complète des actifs, des types de contrat et des dur
 msgid "View the operating hours of the markets you can trade."
 msgstr "Consultez les heures d'ouverture des marchés sur lesquels tu peux effectuer des trades."
 
-msgid "View updated portfolio"
-msgstr "Voir le portefeuille actualisé"
+msgid "View updated statement"
+msgstr "Afficher le relevé mis à jour"
 
 msgid "View your account's authentication status."
 msgstr "Afficher l’état d’authentification de votre compte."
@@ -11413,6 +11455,9 @@ msgstr "Nous pensons que nous devrions toujours faire les choses de façon juste
 msgid "We collect and assess your data to profile you, as our client, in relation to our products. We do this manually through the assistance of automated processing. Through categorisation, we will be able to provide the most appropriate products and services to you."
 msgstr "Nous collectons et évaluons vos données pour vous profiler en tant que client, en ce qui concerne nos produits. Nous faisons cela manuellement grâce à l’aide d’un traitement automatisé. Par le biais de catégorisation, nous serons en mesure de vous fournir les produits et les services les plus appropriés."
 
+msgid "We could not recognise your address. You may proceed but please ensure that your address is complete and accurate."
+msgstr "Nous ne reconnaissons pas votre adresse. Vous pouvez procéder, mais veuillez vous assurer que votre adresse est complète et exacte."
+
 msgid "We delete an order with the largest margin reserved"
 msgstr "Nous supprimons un ordre avec la plus grande marge réservée"
 
@@ -11475,6 +11520,9 @@ msgstr "Nous offrons un salaire basé sur le marché, un bonus annuel lié à la
 
 msgid "We offer all four precious metals – gold, silver, palladium, and platinum – as well as energy in our list of commodities."
 msgstr "Nous offrons les quatre métaux précieux – or, argent, palladium et platine – ainsi que de l’énergie dans notre liste de matières de premières."
+
+msgid "We offer the following trade types on our MT5 platform:"
+msgstr "Nous offrons les types suivants de trades sur notre plateforme MT5 :"
 
 msgid "We offer three types of lookbacks:"
 msgstr "Nous vous proposons trois types de lookback :"
@@ -12286,6 +12334,12 @@ msgstr "Vous avez déjà retiré l'équivalent de %2 %1 au total au cours des %3
 msgid "You have already withdrawn the equivalent of %1 %2."
 msgstr "Vous avez déjà retiré l'équivalent de %2 %1."
 
+msgid "You have chosen %1 as the currency for this account. You cannot change this later. You can have more than one cryptocurrency account."
+msgstr "Vous avez sélectionné %1 comme la devise de ce compte. Vous ne pouvez pas changer cela plus tard. Vous pouvez avoir plusieurs comptes crypto devise."
+
+msgid "You have chosen %1 as the currency for this account. You cannot change this later. You can have one fiat currency account only."
+msgstr "Vous avez sélectionné %1 comme la devise de ce compte. Vous ne pouvez pas changer cela plus tard. Vous ne pouvez avoir qu'un seul compte fiat."
+
 msgid "You have created all accounts available to you."
 msgstr "Vous avez créé tous les comptes mis à votre disposition."
 
@@ -12640,8 +12694,8 @@ msgstr "Votre compte ne sera pas utilisé comme un service bancaire et les dép�
 msgid "Your account will be opened with %1, and will be subject to the jurisdiction and laws of %2."
 msgstr "Votre compte sera ouvert avec %1 et sera soumis à la juridiction et aux lois de %2."
 
-msgid "Your address could not be verified by our automated system. You may proceed but please ensure that your address is complete."
-msgstr "Votre adresse n’a pas pu être vérifiée par notre système automatisé. Vous pouvez aller de l’avant, mais s’il vous plaît assurez-vous que votre adresse est complète."
+msgid "Your address has been recognised by our system."
+msgstr "Votre adresse a été reconnue par notre système."
 
 msgid "Your application to be treated as a professional client is being processed."
 msgstr "Votre application doit être traitée comme un client professionnel est en cours de traitement."
@@ -12708,6 +12762,9 @@ msgstr "Vos informations personelles sont utilisées principalement comme une fa
 
 msgid "Your profit or loss is calculated as follows:"
 msgstr "Votre profit ou perte est calculé comme suit :"
+
+msgid "Your request to be treated as a professional client has been rejected. Please check your inbox for more details. Your account remains categorised as a retail client account."
+msgstr "Votre demande pour être traité comme un client professionnel a été rejetée. S’il vous plaît vérifier votre boîte de réception pour plus de détails. Votre compte reste structuré comme un compte de client de détail."
 
 msgid "Your request to transfer %1 %2 from %3 to %4 has been successfully processed."
 msgstr "Votre demande de transférer %1 %2 de %3 à %4 a été traitée avec succès."
@@ -13182,6 +13239,9 @@ msgstr "ne pas utiliser l'API %1 à toute fin constituant une violation de toute
 
 msgid "use the Company’s name or Trademark in its advertising activities without a written authorisation to be given by the Company;"
 msgstr "utiliser le nom ou la marque de la Compagnie dans ses activités publicitaires sans une autorisation écrite donnée par la Société;"
+
+msgid "view our policy"
+msgstr ""
 
 msgid "virtual money credit to account"
 msgstr "crédit de fonds virtuels sur le compte"
