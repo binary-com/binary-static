@@ -106,6 +106,7 @@ const AdvancedDuration = ({
                         }
                         { advanced_duration_unit !== 't' &&
                             <InputField
+                                label={duration_units_list.length === 1 && duration_units_list[0].text}
                                 name='advanced_duration'
                                 value={advanced_duration}
                                 {...number_input_props}
