@@ -16,14 +16,7 @@ import {
     getNextIndex }       from './helpers';
 
 class Dropdown extends React.Component {
-
-    is_single_option = isArrayLike(this.props.list) ?
-        !!(this.props.list.length < 2)
-        :
-        !!(Object.keys(this.props.list).length < 2);
-
     list_ref = React.createRef();
-
     state = {
         curr_index     : getItemFromValue(this.props.list, this.props.value).number,
         is_list_visible: false,
@@ -53,7 +46,6 @@ class Dropdown extends React.Component {
     }
 
     handleVisibility = () => {
-        if (this.is_single_option) return;
         this.setState((state) =>({  is_list_visible: !state.is_list_visible }));
     }
 
@@ -89,7 +81,17 @@ class Dropdown extends React.Component {
                 if (this.state.is_list_visible) {
                     const next_index = getNextIndex(this.state.curr_index, index.length);
                     this.setState({ curr_index: next_index });
-                } else {
+                } else if (!this.is_alignment_left) {
+                    this.handleVisibility();
+                }
+                break;
+            case 37: // Left arrow is pressed
+                if (!this.state.is_list_visible && this.props.is_alignment_left) {
+                    this.handleVisibility();
+                }
+                break;
+            case 39: // Right Arrow is pressed
+                if (this.state.is_list_visible && this.props.is_alignment_left) {
                     this.handleVisibility();
                 }
                 break;
@@ -134,20 +136,25 @@ class Dropdown extends React.Component {
         // upon render via css transition group, we use this as a callback to set the width of the dropdown list in the state
         const setListWidth = () => this.setState({ list_width: this.list_ref.current.offsetWidth });
 
+        const is_single_option = isArrayLike(this.props.list) ?
+            !!(this.props.list.length < 2)
+            :
+            !!(Object.keys(this.props.list).length < 2);
+
         return (
             <div
                 ref={this.setWrapperRef}
                 className={classNames('dropdown-container', this.props.className, {
                     'dropdown-container--left'    : this.props.is_alignment_left,
                     'dropdown-container--show'    : this.state.is_list_visible,
-                    'dropdown-container--disabled': this.is_single_option,
+                    'dropdown-container--disabled': is_single_option,
                 })}
             >
                 <div
                     className={classNames('dropdown__display', {
                         'dropdown__display--clicked': this.state.is_list_visible,
                     })}
-                    tabIndex={this.is_single_option ? '-1' : '0'}
+                    tabIndex={is_single_option ? '-1' : '0'}
                     onClick={this.handleVisibility}
                     onKeyDown={this.onKeyPressed}
                 >
@@ -156,7 +163,7 @@ class Dropdown extends React.Component {
                     </span>
                 </div>
                 {
-                    !this.is_single_option && <IconArrow className={classNames('select-arrow', {
+                    !is_single_option && <IconArrow className={classNames('select-arrow', {
                         'select-arrow--left': this.props.is_alignment_left,
                     })}
                     />
@@ -187,6 +194,8 @@ class Dropdown extends React.Component {
                                 autoHeight
                                 autoHide
                                 autoHeightMax={200}
+                                renderTrackHorizontal={props => <div {...props} className='track-horizontal' style={{ display: 'none' }} />}
+                                renderThumbHorizontal={props => <div {...props} className='thumb-horizontal' style={{ display: 'none' }} />}
                             >
                                 {isArrayLike(this.props.list) ?
                                     <Items

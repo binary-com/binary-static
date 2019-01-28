@@ -69,6 +69,7 @@
             }
         }
         .select-arrow {
+            transform: rotate(90deg);
             left: 6px;
             right: unset;
         }
@@ -80,7 +81,7 @@
         transform: rotate(-180deg);
 
         &--left {
-            transform: rotate(90deg);
+            transform: rotate(-90deg);
         }
     }
     .dropdown__list {
@@ -158,6 +159,20 @@
                     font-weight: 500;
                 }
             }
+            // fix for safari bug with overflow-x not working in dropdown
+            @media not all and (min-resolution:.001dpcm) { // stylelint-disable-line
+                @supports (-webkit-appearance:none) {
+                    & > div:nth-child(1) > div:nth-child(1) {
+                        overflow-y: scroll !important;
+                        overflow-x: hidden !important;
+
+                        & > div:nth-child(1) {
+                            padding-bottom: 115px !important;
+                        }
+                    }
+                }
+            }
+
         }
         &--enter, &--exit {
             transform: scale(1, 0);
