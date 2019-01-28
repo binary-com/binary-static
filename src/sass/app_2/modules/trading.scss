@@ -693,8 +693,9 @@
                 }
                 &:hover:before {
                     opacity: 1;
-                    bottom: -30%;
-                    right: 95%;
+                }
+                &:hover:after {
+                    content: url('../images/common/tooltip/ic_tooltip_info_dark_active.svg ');
                 }
             }
             &:before {
