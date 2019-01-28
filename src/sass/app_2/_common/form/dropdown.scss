@@ -166,6 +166,9 @@
                         overflow-y: scroll !important;
                         overflow-x: hidden !important;
 
+                        &::-webkit-scrollbar {
+                            -webkit-appearance: none;
+                        }
                         & > div:nth-child(1) {
                             padding-bottom: 115px !important;
                         }
