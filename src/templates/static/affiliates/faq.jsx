@@ -27,6 +27,16 @@ const FAQ = () => (
                     <p>{it.L('If you\'re a broker we\'d like to work with you. You will be introducing your clients to a unique and innovative product: the [_1] trading platform. Your clients will love the [_1] trading platform because we offer a complete binary options trading experience tailored to the needs of an exceptionally wide range of traders.', it.website_name)}</p>
                     <p>{it.L('Novice traders can use our intuitive platform to learn about trading, practise trading, and gain trading experiences. Seasoned traders can use the [_1] platform and take full advantage of the wide range of trading and analysis tools we have to offer.', it.website_name)}</p>
 
+                    <h3>{it.L('Who can apply as a [_1] affiliate?', it.website_name)}</h3>
+                    <ul className='bullet'>
+                        <li>{it.L('Webmaster')}</li>
+                        <li>{it.L('Trading guru')}</li>
+                        <li>{it.L('Webinar speaker')}</li>
+                        <li>{it.L('Web and software developer')}</li>
+                        <li>{it.L('Social media admin')}</li>
+                        <li>{it.L('Blogger and vlogger')}</li>
+                    </ul>
+
                     <h3>{it.L('Why should I become a [_1] affiliate?', it.website_name)}</h3>
                     <p>{it.L('[_1] is a licensed and regulated binary options trading platform that’s been operating since 2000. It has:', it.website_name)}</p>
                     <ul className='bullet'>
