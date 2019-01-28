@@ -91,11 +91,11 @@ const getTransferLimits = (currency, which) => {
 
     switch (which) {
         case 'max':
-            return transfer_limits.max.toFixed(decimals) || undefined;
+            return transfer_limits.max ? transfer_limits.max.toFixed(decimals) : undefined;
         case 'all':
             return transfer_limits;
         default:
-            return transfer_limits.min.toFixed(decimals) || undefined;
+            return transfer_limits.min ? transfer_limits.min.toFixed(decimals) : transfer_limits;
     }
 };
 
