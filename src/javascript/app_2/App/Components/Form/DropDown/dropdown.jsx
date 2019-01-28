@@ -81,7 +81,7 @@ class Dropdown extends React.Component {
                 if (this.state.is_list_visible) {
                     const next_index = getNextIndex(this.state.curr_index, index.length);
                     this.setState({ curr_index: next_index });
-                } else if (!this.is_alignment_left) {
+                } else if (!this.props.is_alignment_left) {
                     this.handleVisibility();
                 }
                 break;
