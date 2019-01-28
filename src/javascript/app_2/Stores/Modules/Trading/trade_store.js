@@ -482,6 +482,11 @@ export default class TradeStore extends BaseStore {
         const check_callput_equal_duration = hasDurationForCallPutEqual(this.contract_types_list,
             this.duration_unit, this.contract_start_type);
 
+        if (!(/^(rise_fall|rise_fall_equal)$/.test(this.contract_type))) {
+            this.is_allow_equal = false;
+            this.is_equal_checked = 0;
+        }
+
         if (/^(rise_fall|rise_fall_equal)$/.test(this.contract_type) && (check_callput_equal_duration || this.expiry_type === 'endtime') && hasCallPutEqual()) {
             this.is_allow_equal = true;
         } else {
