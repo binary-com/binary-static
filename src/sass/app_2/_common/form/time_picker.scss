@@ -6,7 +6,6 @@
     }
     .time-picker-input {
         height: 32px;
-        padding: 0 8px;
         border-radius: 4px;
         box-sizing: border-box;
         font-size: 16px;
@@ -22,6 +21,9 @@
         }
         &.active {
             border-color: $COLOR_BLUE;
+        }
+        input {
+            text-align: center;
         }
     }
     .time-picker-dropdown {
@@ -52,6 +54,9 @@
         }
         &.from-right {
             right: 0;
+        }
+        &.from-left {
+            left: -245px;
         }
         .time-picker-panel {
             height: 0;
