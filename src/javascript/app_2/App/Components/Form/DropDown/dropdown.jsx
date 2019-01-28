@@ -85,10 +85,17 @@ class Dropdown extends React.Component {
                     this.setState({ curr_index: prev_index });
                 }
                 break;
+            case 39: // Right Arrow is pressed
+                if (this.state.is_list_visible) {
+                    this.handleVisibility();
+                }
+                break;
             case 40: // Down Arrow is pressed
                 if (this.state.is_list_visible) {
                     const next_index = getNextIndex(this.state.curr_index, index.length);
                     this.setState({ curr_index: next_index });
+                } else {
+                    this.handleVisibility();
                 }
                 break;
             default:
@@ -167,7 +174,7 @@ class Dropdown extends React.Component {
                         enterDone: 'dropdown__list--enter--done',
                         exit     : 'dropdown__list--exit',
                     }}
-                    onEnter={setListWidth}
+                    onEntered={setListWidth}
                     unmountOnExit
                 >
                     <div className={classNames('dropdown__list', {
