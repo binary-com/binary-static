@@ -229,6 +229,14 @@ export default class TradeStore extends BaseStore {
             throw new Error(`Invalid Argument: ${name}`);
         }
 
+        if (name === 'contract_type' || name === 'symbol') {
+            // reset duration_unit to ticks when changing from days only contract to ticks/minutes contract
+            const should_reset_simple_to_ticks = !this.is_advanced_duration && this.simple_duration_unit !== 'm' && this.simple_duration_unit !== 't';
+            if (should_reset_simple_to_ticks) {
+                this.updateStore({ simple_duration_unit: 't', duration_unit: 't' });
+            }
+        }
+
         this.processNewValuesAsync({ [name]: value }, true);
     }
 
