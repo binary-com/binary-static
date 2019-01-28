@@ -37,6 +37,7 @@ const Duration = ({
     is_minimized,
     is_nativepicker,
     server_time,
+    sessions,
     start_date,
     start_time,
     market_close_times,
@@ -188,7 +189,9 @@ const Duration = ({
                                 is_align_right
                                 name='expiry_time'
                                 placeholder='12:00'
-                                start_time={start_date_time}
+                                start_time={expiry_time_sessions[0].open}
+                                end_time={expiry_time_sessions[0].close}
+                                value={expiry_time || min_date_expiry.format('HH:mm')}
                                 is_clearable={false}
                                 is_nativepicker={is_nativepicker}
                                 // validation_errors={validation_errors.end_time} TODO: add validation_errors for end time

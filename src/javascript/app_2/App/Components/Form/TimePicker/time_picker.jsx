@@ -54,13 +54,13 @@ class TimePicker extends React.PureComponent {
     render() {
         const prefix_class = 'time-picker';
         const {
-            end_time,
             value,
             name,
             is_align_right,
             is_nativepicker,
             placeholder,
             start_time,
+            end_time,
             validation_errors,
         } = this.props;
         return (

@@ -3,13 +3,6 @@ import React                          from 'react';
 import { localize }                   from '_common/localize';
 import { toMoment }                   from 'Utils/Date';
 
-// TODO :
-// Find a way to make sure we are able to disable time that are between
-// start_time and end_time.
-//
-// Example :
-// Trading times sometime opens and close twice in the same day.
-// Having a range won't fix that.
 class TimePickerDropdown extends React.PureComponent {
     constructor(props) {
         super(props);
