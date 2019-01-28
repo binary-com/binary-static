@@ -17,7 +17,7 @@ $header-height: 40px;
     box-sizing: border-box;
     opacity: 0;
     color: $COLOR_BLUE;
-    transform: translateX(100%);
+    transform: translateX(-100%);
     will-change: transform, opacity;
     transition: opacity 0.25s ease, transform 0.25s ease;
 

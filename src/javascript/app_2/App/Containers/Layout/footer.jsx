@@ -17,8 +17,8 @@ const Footer = ({
     network_status,
     toggleSettingsDialog,
     togglePortfolioDrawer,
-                    togglePositionsDrawer,
-                    is_positions_drawer_on,
+    togglePositionsDrawer,
+    is_positions_drawer_on,
 }) => (
     <React.Fragment>
         <NetworkStatus status={network_status} />
@@ -37,10 +37,15 @@ const Footer = ({
                 is_language_visible={is_language_dialog_visible}
                 toggleSettings={toggleSettingsDialog}
             />
-            <TogglePositions
-                is_positions_drawer_on={is_positions_drawer_on}
-                togglePositionsDrawer={togglePositionsDrawer}
-            />
+        </div>
+        <div className='footer-links footer-links-left'>
+            {
+                is_logged_in &&
+                <TogglePositions
+                    is_positions_drawer_on={is_positions_drawer_on}
+                    togglePositionsDrawer={togglePositionsDrawer}
+                />
+            }
         </div>
     </React.Fragment>
 );
@@ -67,5 +72,6 @@ export default connect(
         togglePortfolioDrawer     : ui.togglePortfolioDrawer,
         togglePositionsDrawer     : ui.togglePositionsDrawer,
         toggleSettingsDialog      : ui.toggleSettingsDialog,
+        is_positions_drawer_on    : ui.is_positions_drawer_on,
     })
 )(Footer);

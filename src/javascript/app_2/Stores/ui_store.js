@@ -128,7 +128,6 @@ export default class UIStore extends BaseStore {
 
     @action.bound
     togglePositionsDrawer() {
-        console.log(this.is_positions_drawer_on);
         this.is_positions_drawer_on = !this.is_positions_drawer_on;
     }
 

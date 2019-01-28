@@ -1,13 +1,13 @@
 import classNames             from 'classnames';
 import PropTypes              from 'prop-types';
 import React                  from 'react';
-import { IconQuickPortfolio } from 'Assets/Footer';
+import { IconPositions }      from 'Assets/Footer/icon_positions.jsx';
 
 const TogglePositions = ({
                              is_positions_drawer_on,
                              togglePositionsDrawer,
                          }) => {
-    const toggle_positions_class = classNames('ic-portfolio', {
+    const toggle_positions_class = classNames('ic-positions', {
         'active': is_positions_drawer_on,
     });
     return (
@@ -16,7 +16,7 @@ const TogglePositions = ({
             className={toggle_positions_class}
             onClick={togglePositionsDrawer}
         >
-            <IconQuickPortfolio className='footer-icon' />
+            <IconPositions className='footer-icon' type={is_positions_drawer_on ? 'active' : null} />
         </a>
     );
 };
