@@ -557,7 +557,7 @@ export default class TradeStore extends BaseStore {
                 new_state.set(this, 'expiry_type', 'duration');
             }
 
-            // For contracts without ticks but with minutes - set duration unit to minute e.g. forex rise/fall
+            // For contracts without ticks but with minutes - set duration unit to minute e.g. forex rise/fall equals
             const contract_has_no_tick = this.duration_units_list.length > 1 && !this.duration_units_list.some(du => du.value === 't');
             if (contract_has_no_tick && this[`${advanced_or_simple}_duration_unit`] === 't') {
                 new_state[`${advanced_or_simple}_duration_unit`] = 'm';
