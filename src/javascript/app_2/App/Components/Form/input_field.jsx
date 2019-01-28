@@ -12,6 +12,8 @@ import Tooltip                   from '../Elements/tooltip.jsx';
 const InputField = ({
     checked,
     className,
+    data_tip,
+    data_value,
     error_messages,
     fractional_digits,
     helper,
@@ -99,7 +101,8 @@ const InputField = ({
             className={classNames({ error: has_error })}
             disabled={is_disabled}
             data-for={`error_tooltip_${name}`}
-            data-tip
+            data-value={data_value}
+            data-tip={data_tip}
             id={id}
             maxLength={fractional_digits ? max_length + fractional_digits + 1 : max_length}
             name={name}
@@ -119,6 +122,7 @@ const InputField = ({
                 className={'input-wrapper__button input-wrapper__button--increment'}
                 is_disabled={max_is_disabled}
                 onClick={incrementValue}
+                tabIndex='-1'
             >
                 <IconPlus className={'input-wrapper__icon input-wrapper__icon--plus' } is_disabled={max_is_disabled} />
             </Button>
@@ -126,6 +130,7 @@ const InputField = ({
                 className={'input-wrapper__button input-wrapper__button--decrement'}
                 is_disabled={min_is_disabled}
                 onClick={decrementValue}
+                tabIndex='-1'
             >
                 <IconMinus className={'input-wrapper__icon input-wrapper__icon--minus'} is_disabled={min_is_disabled} />
             </Button>

@@ -205,6 +205,7 @@ const Trading = () => (
                                 </div>
                                 <div id='contract_purchase_spots' />
                                 <div id='trade_tick_chart' />
+                                <div id='digit_ticker_table' className='digit-ticker invisible' />
                                 <div id='contract_purchase_balance' />
                             </div>
                             <div id='confirmation_error' className='center-text invisible' />

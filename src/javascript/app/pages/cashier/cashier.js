@@ -73,7 +73,7 @@ const Cashier = (() => {
                         const list = getPropertyValue(response, ['paymentagent_list', 'list']);
                         if (list && list.length) {
                             const regex_currency = new RegExp(currency);
-                            if (!/^(UST|DAI)$/.test(currency) || list.find(pa => regex_currency.test(pa.currencies))) {
+                            if (!/^UST$/.test(currency) || list.find(pa => regex_currency.test(pa.currencies))) {
                                 $('#payment-agent-section').setVisibility(1);
                             }
                         }
