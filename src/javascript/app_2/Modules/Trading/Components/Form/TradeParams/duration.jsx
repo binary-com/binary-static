@@ -5,6 +5,9 @@ import {
 import PropTypes                from 'prop-types';
 import React                    from 'react';
 import { localize }             from '_common/localize';
+import {
+    ToggleButton,
+    ToggleButtonGroup }         from 'App/Components/Elements/ToggleButton';
 import DatePicker               from 'App/Components/Form/DatePicker';
 import Dropdown                 from 'App/Components/Form/DropDown';
 import Fieldset                 from 'App/Components/Form/fieldset.jsx';
@@ -117,19 +120,34 @@ const Duration = ({
         'has-time': is_24_hours_contract,
     });
 
+    const handleExpiryTypeChange = (event, value) => {
+        const target = {
+            name: 'expiry_type',
+            value,
+        };
+        onChange({ target });
+    };
+
     return (
         <Fieldset
             header={localize('Trade Duration')}
             icon='trade-duration'
         >
-            <Dropdown
-                list={expiry_list}
+            <ToggleButtonGroup
                 value={expiry_type}
-                name='expiry_type'
-                onChange={onChange}
-                is_nativepicker={is_nativepicker}
-            />
-
+                onChange={handleExpiryTypeChange}
+            >
+                {
+                    expiry_list.map(item => (
+                        <ToggleButton
+                            value={item.value}
+                            key={item.value}
+                        >
+                            {item.text}
+                        </ToggleButton>)
+                    )
+                }
+            </ToggleButtonGroup>
             {expiry_type === 'duration' ?
                 <React.Fragment>
                     <div className='duration-container'>
