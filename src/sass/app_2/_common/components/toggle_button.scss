@@ -1,0 +1,32 @@
+.toggle-button {
+    border-radius: 4px;
+    background-color: $COLOR_WHITE;
+    color: $COLOR_LIGHT_BLACK;
+
+    &_selected: {
+        box-shadow: 0 2px 8px 0 rgba(153, 156, 172, 0.56);
+        background-color: $COLOR_DARK_GRAY;
+        color: $COLOR_WHITE;
+    }
+
+    &:not(:first-child): {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+    &:not(:last-child): {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+}
+
+.theme-wrapper.dark {
+    .toggle-button {
+        background-color: $COLOR_DARK_BLUE;
+        color: $COLOR_GRAY;
+
+        &_selected: {
+            background-color: $COLOR_BLUE;
+            color: $COLOR_WHITE;
+        }
+    }
+}
