@@ -151,6 +151,8 @@
             }
             .tooltip {
                 display: inline-block;
+                height: 12px;
+                width: 12px;
 
                 .info {
                     vertical-align: middle;
@@ -169,8 +171,9 @@
                         right: 100%;
                         z-index: 10;
                         opacity: 0;
-                        transition: all 0.18s ease-out 0.18s;
+                        transition: opacity 0.18s ease-out 0.17s;
                         margin-right: 390px;
+                        margin-top: -3px;
                     }
                     &:hover:before {
                         opacity: 1;
