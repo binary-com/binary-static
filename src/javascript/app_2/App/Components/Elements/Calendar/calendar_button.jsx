@@ -1,22 +1,25 @@
 import PropTypes from 'prop-types';
 import React     from 'react';
 
-export default function CalendarButton({ children, className, is_hidden, label, onClick }) {
-    return (
-        <React.Fragment>
-            { !is_hidden &&
-                <span
-                    type='button'
-                    className={className}
-                    onClick={onClick}
-                >
-                    {label}
-                    {children}
-                </span>
-            }
-        </React.Fragment>
-    );
-}
+const CalendarButton = ({
+    children,
+    className,
+    is_hidden,
+    label,
+    onClick,
+}) => (
+    <React.Fragment>
+        { !is_hidden &&
+            <button
+                className={className}
+                onClick={onClick}
+            >
+                {label}
+                {children}
+            </button>
+        }
+    </React.Fragment>
+);
 
 CalendarButton.propTypes = {
     children: PropTypes.oneOfType([
@@ -29,3 +32,5 @@ CalendarButton.propTypes = {
     label    : PropTypes.string,
     onClick  : PropTypes.func,
 };
+
+export default CalendarButton;

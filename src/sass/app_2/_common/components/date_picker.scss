@@ -1,0 +1,119 @@
+.datepicker {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 280px;
+
+    &__input input {
+        text-align: center;
+        pointer-events: auto;
+
+        &:focus, &:hover {
+            outline: none;
+            border-color: $COLOR_BLUE;
+        }
+    }
+    &__icon {
+        opacity: 1;
+        transition: opacity 0.1s;
+
+        &:hover {
+            cursor: pointer;
+        }
+        &--is-hidden {
+            opacity: 0;
+        }
+    }
+    // TODO: update datepicker UI in mobile 
+    &__native-overlay {
+        background: $COLOR_WHITE;
+        height: 32px;
+        cursor: pointer;
+        border: 1px solid $COLOR_GRAY;
+        border-radius: $BORDER_RADIUS;
+        font-size: 14px;
+        box-sizing: border-box;
+        font-weight: 300;
+        transition: border 0.25s;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        padding-top: 0;
+        padding-bottom: 0;
+        border-color: transparent;
+        background-clip: padding-box;
+        text-align: left;
+
+        &__arrowhead {
+            display: block;
+            position: absolute;
+            top: 8px;
+            right: 6px;
+
+            & .arrow-path {
+                fill: $COLOR_GRAY;
+            }
+        }
+    }
+    // TODO: style native date picker
+    input[type=date] {
+        appearance: none;
+        // sometimes we have 2 different elements with hover and focus in chrome mobile
+        &:hover:not(:focus) {
+            border-color: $COLOR_GRAY;
+        }
+        &::-webkit-date-and-time-value {
+            margin: 0;
+        }
+    }
+    &__picker {
+        .calendar {
+            top: 8px;
+            opacity: 0;
+            transform: scale(1, 0);
+            transform-origin: top;
+            transition: all 0.2s;
+
+            & span {
+                user-select: none;
+            }
+        }
+        // align picker calendar to the left
+        &--align-left > .calendar {
+            transform: scale(0, 0);
+            transform-origin: top right;
+            left: -295px;
+        }
+        &--show > .calendar {
+            opacity: 1;
+            transform: scale(1, 1);
+        }
+    }
+}
+
+// Dark Theme
+.theme-wrapper.dark {
+    .datepicker {
+        &__input {
+            background: $COLOR_BLUE;
+            border-color: $COLOR_BRANDBLUE_85;
+            color: $COLOR_WHITE;
+
+            &:hover, &:focus, &:active {
+                border-color: $COLOR_WHITE;
+            }
+        }
+        &__icon path {
+            fill: $COLOR_WHITE;
+        }
+        &__native-overlay {
+            background: $COLOR_BLUE;
+            border-color: $COLOR_BRANDBLUE_85;
+
+            &:hover, &:focus, &:active {
+                border-color: $COLOR_WHITE;
+            }
+        }
+    }
+}
