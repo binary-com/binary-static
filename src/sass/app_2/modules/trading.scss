@@ -169,8 +169,8 @@
                         right: 100%;
                         z-index: 10;
                         opacity: 0;
-                        transition: all 0.18s ease-out 0.17s;
-                        margin-right: 49vh;
+                        transition: all 0.18s ease-out 0.18s;
+                        margin-right: 390px;
                     }
                     &:hover:before {
                         opacity: 1;
@@ -181,11 +181,11 @@
                     color: $COLOR_WHITE;
                     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
                     padding-left: 40px;
-                    margin-right: 13.5vh;
+                    margin-right: 110px;
                 }
                 &:after {
                     border-left-color: $COLOR_DARK_BLUE !important;
-                    margin-right: 12vh;
+                    margin-right: 98px;
                 }
                 &:hover:after, &:hover:before {
                     opacity: 1;
