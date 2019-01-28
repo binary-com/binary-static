@@ -40,7 +40,7 @@ const SimpleDuration = ({
             { simple_duration_unit !== 't' &&
                 <InputField
                     name='simple_duration'
-                    label={has_label && duration_units_list[0].text}
+                    label={has_label ? duration_units_list[0].text : null}
                     value={simple_duration}
                     {...number_input_props}
                     {...shared_input_props}

@@ -152,7 +152,7 @@ export default class TradeStore extends BaseStore {
             { delay: 500 }
         );
         reaction(
-            () => [ this.contract_type, this.duration_units_list ],
+            () => [ this.contract_type, this.duration_units_list, this.symbol ],
             () => {
                 this.changeDuration();
             },
@@ -497,8 +497,11 @@ export default class TradeStore extends BaseStore {
     @action.bound
     changeDuration() {
         const new_state = {};
-        const contract_only_has_days = this.duration_units_list.length < 2 && this.duration_unit === 'd';
-        const only_simple_duration   = this.duration_units_list.length === 1 && this.duration_unit === 't';
+        const contract_only_has_days   = this.duration_units_list.length < 2 && this.duration_unit === 'd';
+        const is_only_simple_duration  = this.duration_units_list.length === 1 && this.duration_unit === 't';
+        const active_duration_unit     = this.is_advanced_duration ?
+            this.advanced_duration_unit : this.simple_duration_unit;
+        const is_missing_duration_unit = !this.duration_units_list.some(du => du.value === active_duration_unit);
 
         if (contract_only_has_days) {
             new_state.simple_duration_unit = 'd';
@@ -506,10 +509,15 @@ export default class TradeStore extends BaseStore {
         }
 
         // contracts that have no toggle between advanced/simple are treated as simple (e.g. digits)
-        if (only_simple_duration) {
+        if (is_only_simple_duration) {
             new_state.duration = this.simple_duration;
             new_state.simple_duration_unit = 't';
             new_state.is_advanced_duration = false;
+        }
+
+        if (is_missing_duration_unit) {
+            new_state.simple_duration_unit = this.duration_unit;
+            new_state.advanced_duration_unit = this.duration_unit;
         }
         this.updateStore(new_state);
     }
@@ -557,8 +565,16 @@ export default class TradeStore extends BaseStore {
                 new_state.set(this, 'expiry_type', 'duration');
             }
 
+            const duration_list_has_ticks = this.duration_units_list.some(du => du.value === 't');
+            const should_be_tick = this.simple_duration_unit !== 't' && this.simple_duration_unit !== 'm' && duration_list_has_ticks
+                && this.duration_units_list.some(du => du.value === 'm');
+            if (advanced_or_simple === 'simple' && should_be_tick) {
+                new_state.simple_duration_unit = 't';
+                new_state.duration_unit = 't';
+            }
+
             // For contracts without ticks but with minutes - set duration unit to minute e.g. forex rise/fall equals
-            const contract_has_no_tick = this.duration_units_list.length > 1 && !this.duration_units_list.some(du => du.value === 't');
+            const contract_has_no_tick = this.duration_units_list.length > 1 && !duration_list_has_ticks;
             if (contract_has_no_tick && this[`${advanced_or_simple}_duration_unit`] === 't') {
                 new_state[`${advanced_or_simple}_duration_unit`] = 'm';
                 new_state.duration_unit                          = 'm';
