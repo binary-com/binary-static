@@ -30,11 +30,17 @@ const FAQ = () => (
                     <h3>{it.L('Who can apply as a [_1] affiliate?', it.website_name)}</h3>
                     <ul className='bullet'>
                         <li>{it.L('Webmaster')}</li>
+                        <p className='no-padding'>{it.L('Do you run a website that promotes Forex or binary options? Join our global network of affiliates and turn your online traffic into revenue.')}</p>
                         <li>{it.L('Trading guru')}</li>
+                        <p className='no-padding'>{it.L('Earn additional income with us as you grow your community of potential and existing online traders through useful trading insights and mentorship.')}</p>
                         <li>{it.L('Webinar speaker')}</li>
+                        <p className='no-padding'>{it.L('Monetise your online trading discussions with your audience of trading enthusiasts while helping them improve their trading experience.')}</p>
                         <li>{it.L('Web and software developer')}</li>
+                        <p className='no-padding'>{it.L('Receive commission when you bring in new clients through trading applications and interfaces you build using the Binary.com API.')}</p>
                         <li>{it.L('Social media admin')}</li>
+                        <p className='no-padding'>{it.L('Do you manage a social media page that’s dedicated to online trading? Partner with us and convert your audience into potential profit.')}</p>
                         <li>{it.L('Blogger and vlogger')}</li>
+                        <p className='no-padding'>{it.L('Maintaining a page or video channel about online trading? Get rewarded when you refer your followers and viewers to trade on our award-winning binary options platform.')}</p>
                     </ul>
 
                     <h3>{it.L('Why should I become a [_1] affiliate?', it.website_name)}</h3>
