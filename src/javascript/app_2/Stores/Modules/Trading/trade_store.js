@@ -483,8 +483,8 @@ export default class TradeStore extends BaseStore {
 
     @action.bound
     changeDuration() {
-        const new_state                    = {};
-        const contract_only_has_days       = this.duration_units_list.length === 1 && this.duration_unit === 'd';
+        const new_state = {};
+        const contract_only_has_days       = this.duration_units_list.length < 2 && this.duration_unit === 'd';
         const should_reset_simple_to_ticks = this.duration_units_list.length > 1 && this.simple_duration_unit !== 't' && this.simple_duration_unit !== 'm';
         const only_simple_duration         = this.duration_units_list.length === 1 && this.duration_unit === 't';
 
@@ -504,8 +504,7 @@ export default class TradeStore extends BaseStore {
             new_state.simple_duration_unit = 't';
             new_state.is_advanced_duration = false;
         }
-
-        this.processNewValuesAsync(new_state, true);
+        this.updateStore(new_state);
     }
 
     @action.bound
