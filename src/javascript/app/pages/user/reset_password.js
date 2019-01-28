@@ -33,7 +33,7 @@ const ResetPassword = (() => {
     const onLoad = () => {
         generateBirthDate();
 
-        $('#have_real_account').off('click').on('click', function () {
+        $('#have_real_account').off('click').on('click', () => {
             if ($('#have_real_account_option_0').is(':checked')) {
                 $('#dob_field').setVisibility(1);
             } else {
