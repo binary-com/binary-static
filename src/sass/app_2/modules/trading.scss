@@ -454,14 +454,16 @@
                         content: url('../images/common/tooltip/ic_tooltip_info_light.svg ');
                         right: 100%;
                         position: absolute;
-                        margin-right: 338px;
+                        margin-right: 328px;
                         z-index: 10;
                         opacity: 0;
                         transition: all 0.18s ease-out 0.17s;
+                        transform: translateX(20%);
                         top: 0;
                     }
                     &:hover:before {
                         opacity: 1;
+                        transform: translateX(0);
                     }
                 }
                 &:before {
