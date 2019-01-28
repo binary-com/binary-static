@@ -1,3 +1,4 @@
+import ServerTime   from '_common/base/server_time';
 import { toMoment } from 'Utils/Date';
 
 export const buildForwardStartingConfig = (contract, forward_starting_dates) => {
@@ -33,13 +34,13 @@ const isBeforeDate = (compare_moment, start_moment, should_only_check_hour) => {
 
 export const isSessionAvailable = (
     sessions               = [],
-    compare_moment         = toMoment(),
-    start_moment           = toMoment(),
+    compare_moment         = toMoment(ServerTime.get()),
+    start_moment           = toMoment(ServerTime.get()),
     should_only_check_hour = false,
 ) => (
-    !isBeforeDate(compare_moment, undefined, should_only_check_hour) &&
+    !isBeforeDate(compare_moment, ServerTime.get(), should_only_check_hour) &&
     !isBeforeDate(compare_moment, start_moment, should_only_check_hour) &&
         (!sessions.length ||
             !!sessions.find(session =>
-                compare_moment.isBetween(should_only_check_hour ? session.open.clone().minute(0) : session.open, session.close, null, '[]')))
+                compare_moment.isBetween(session.open, session.close, should_only_check_hour ? 'hour' : null, '[]')))
 );
