@@ -1,3 +1,4 @@
+import classNames           from 'classnames';
 import PropTypes            from 'prop-types';
 import React                from 'react';
 import { isButtonSelected } from './helpers';
@@ -48,7 +49,7 @@ const ToggleButtonGroup = ({
     });
 
     return (
-        <div className={className} {...others}>
+        <div className={classNames('toggle-button-group', className)} {...others}>
             {toggle_buttons}
         </div>
     );
