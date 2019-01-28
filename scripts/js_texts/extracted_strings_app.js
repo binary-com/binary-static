@@ -80,7 +80,6 @@ module.exports = [
     'Current Time',
     'Current balance',
     'Current password',
-    'Dai',
     'Date',
     'Date and Time',
     'Day',
