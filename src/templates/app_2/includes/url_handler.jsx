@@ -5,21 +5,17 @@ const URLHandler = () => (
         <script
             type='text/javascript'
             dangerouslySetInnerHTML={{ __html: `
-                if (location.protocol !== 'https:') {
-                    location.protocol = 'https:';
-                    location.reload();
-                }
                 (function(l) {
                     if (l.search) {
                         var query = {};
-
+                        
                         // Gets query strings of the url
                         l.search.slice(1).split('&').forEach(function(v) {
                             var a = v.split('=');
 
                             query[a[0]] = a.slice(1).join('=').replace(/~and~/g, '&');
                         });
-
+ 
                         // Converts paths in query string to HTML5 route and refresh the url
                         if (query.p !== undefined) {
                             window.history.replaceState(null, null,

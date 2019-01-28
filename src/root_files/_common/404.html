@@ -51,7 +51,7 @@
                 // https://www.binary.com/app/en/statement -> https://www.binary.com/app/en?p=/statement
 
                 var pathname = location.pathname.toLowerCase().replace(/\/index(\.html)?/, '');
-                var base = 'https://' + location.hostname + (location.port ? ':' + location.port : '');
+                var base = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '');
                 var path_name_split = pathname.split('/');
                 var app_url_segment_idx = path_name_split.findIndex(function(path_segment) { return path_segment.toLowerCase() === 'app' });
 
