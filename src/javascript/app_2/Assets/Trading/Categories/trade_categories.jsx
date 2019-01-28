@@ -17,6 +17,9 @@ const TradeCategories = ({ category }) => {
                         <p>
                             { localize('If you select "Lower", you win the payout if the exit spot is strictly lower than the entry spot.') }
                         </p>
+                        <p>
+                            { localize('If you select "Allow equals", you win the payout if exit spot is higher than or equal to entry spot for "Higher". Similarly, you win the payout if exit spot is lower than or equal to entry spot for "Lower".') }
+                        </p>
                     </React.Fragment>
                 );
                 break;
