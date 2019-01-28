@@ -28,7 +28,6 @@ const AccountTransfer = (() => {
         el_transfer_fee,
         el_fee_amount,
         el_fee_minimum,
-        el_transfer_info,
         el_success_form,
         client_balance,
         client_currency,
@@ -61,7 +60,7 @@ const AccountTransfer = (() => {
             el_transfer_to.innerHTML = fragment_transfer_to.innerHTML;
             el_transfer_to.onchange = () => {
                 const to_currency = el_transfer_to.options[el_transfer_to.selectedIndex].getAttribute('data-currency');
-                el_transfer_info.setVisibility(client_currency !== to_currency);
+                el_transfer_fee.setVisibility(client_currency !== to_currency);
                 setTransferFeeAmount();
             };
         } else {
@@ -84,7 +83,7 @@ const AccountTransfer = (() => {
             el_transfer_fee.setVisibility(1);
         } else {
             const to_currency = el_transfer_to.getAttribute('data-currency');
-            el_transfer_info.setVisibility(client_currency !== to_currency);
+            el_transfer_fee.setVisibility(client_currency !== to_currency);
         }
     };
 
@@ -160,7 +159,6 @@ const AccountTransfer = (() => {
         });
 
         el_transfer_fee.setVisibility(0);
-        el_transfer_info.setVisibility(0);
         el_success_form.setVisibility(1);
     };
 
@@ -179,7 +177,6 @@ const AccountTransfer = (() => {
         el_transfer_fee   = getElementById('transfer_fee');
         el_fee_amount     = getElementById('transfer_fee_amount');
         el_fee_minimum    = getElementById('transfer_fee_minimum');
-        el_transfer_info  = getElementById('transfer_info');
         el_success_form   = getElementById('success_form');
         el_reset_transfer = getElementById('reset_transfer');
         el_reset_transfer.addEventListener('click', onClickReset);
