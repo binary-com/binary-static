@@ -2,7 +2,7 @@ import PropTypes         from 'prop-types';
 import React             from 'react';
 import classNames        from 'classnames';
 
-const IconPositions = ({ type, className }) => {
+const IconPositions = ({ className, type }) => {
     let IconType;
     switch (type) {
         case 'active':
@@ -14,12 +14,12 @@ const IconPositions = ({ type, className }) => {
             break;
         default:
             IconType = (
-                    <g fill='none' fillRule='evenodd'>
-                        <path fill='#000' fillOpacity='.8' fillRule='evenodd' d='M1 2h14a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zm0 1v10h2V3H1zm3 0v10h11V3H4z'/>
-                    </g>
-                );
-             break;
-        };
+                <g fill='none' fillRule='evenodd'>
+                    <path fill='#000' fillOpacity='.8' fillRule='evenodd' d='M1 2h14a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zm0 1v10h2V3H1zm3 0v10h11V3H4z' />
+                </g>
+            );
+            break;
+    }
 
     return (
         <div>
@@ -31,8 +31,8 @@ const IconPositions = ({ type, className }) => {
 };
 
 IconPositions.propTypes = {
-    type: PropTypes.string,
     className: PropTypes.string,
+    type     : PropTypes.string,
 };
 
 export { IconPositions };

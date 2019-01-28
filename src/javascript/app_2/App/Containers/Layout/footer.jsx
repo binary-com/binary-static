@@ -10,15 +10,15 @@ import {
     TogglePositions }  from '../../Components/Layout/Footer';
 
 const Footer = ({
+    is_language_dialog_visible,
     is_logged_in,
     is_portfolio_drawer_on,
-    is_language_dialog_visible,
+    is_positions_drawer_on,
     is_settings_dialog_on,
     network_status,
-    toggleSettingsDialog,
     togglePortfolioDrawer,
     togglePositionsDrawer,
-    is_positions_drawer_on,
+    toggleSettingsDialog,
 }) => (
     <React.Fragment>
         <NetworkStatus status={network_status} />
@@ -54,24 +54,24 @@ Footer.propTypes = {
     is_language_dialog_visible: PropTypes.bool,
     is_logged_in              : PropTypes.bool,
     is_portfolio_drawer_on    : PropTypes.bool,
+    is_positions_drawer_on    : PropTypes.bool,
     is_settings_dialog_on     : PropTypes.bool,
     network_status            : PropTypes.object,
     togglePortfolioDrawer     : PropTypes.func,
-    toggleSettingsDialog      : PropTypes.func,
     togglePositionsDrawer     : PropTypes.func,
-    is_positions_drawer_on    : PropTypes.bool,
+    toggleSettingsDialog      : PropTypes.func,
 };
 
 export default connect(
     ({ client, common, ui }) => ({
         is_logged_in              : client.is_logged_in,
+        network_status            : common.network_status,
         is_language_dialog_visible: ui.is_language_dialog_on,
         is_portfolio_drawer_on    : ui.is_portfolio_drawer_on,
+        is_positions_drawer_on    : ui.is_positions_drawer_on,
         is_settings_dialog_on     : ui.is_settings_dialog_on,
-        network_status            : common.network_status,
         togglePortfolioDrawer     : ui.togglePortfolioDrawer,
         togglePositionsDrawer     : ui.togglePositionsDrawer,
         toggleSettingsDialog      : ui.toggleSettingsDialog,
-        is_positions_drawer_on    : ui.is_positions_drawer_on,
     })
 )(Footer);

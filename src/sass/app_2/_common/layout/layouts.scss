@@ -36,6 +36,31 @@
                 }
             }
         }
+        &--show-positions-drawer {
+            .chart-container {
+                .ciq-chart {
+                    .cq-top-ui-widgets, .cq-chart-controls {
+                        transform: translateX(#{$POSITIONS_DRAWER_WIDTH});
+                    }
+                    .cq-top-ui-widgets .info-box {
+                        transform: translateX(#{$POSITIONS_DRAWER_WIDTH});
+                    }
+                }
+                .cq-chart-controls {
+                    will-change: max-width;
+                    max-width: calc(100% - #{$POSITIONS_DRAWER_WIDTH});
+                    transform: translateX(#{$POSITIONS_DRAWER_WIDTH});
+                }
+                .cq-chart-control-left {
+                    .cq-chart-controls {
+                        transform: translateX(#{$POSITIONS_DRAWER_WIDTH}) !important;
+                    }
+                    .info-box {
+                        transform: translateX(-#{$POSITIONS_DRAWER_WIDTH}) !important;
+                    }
+                }
+            }
+        }
         .chart-container {
             .cq-chart-control-left {
                 .cq-chart-controls {

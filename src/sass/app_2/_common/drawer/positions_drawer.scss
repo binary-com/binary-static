@@ -6,7 +6,7 @@ $header-height: 40px;
 }
 
 .positions-drawer {
-    width: $PORTFOLIO_DRAWER_WIDTH;
+    width: $POSITIONS_DRAWER_WIDTH;
     height: calc(100vh - #{$HEADER_HEIGHT} - #{$FOOTER_HEIGHT});
     position: fixed;
     z-index: 2;

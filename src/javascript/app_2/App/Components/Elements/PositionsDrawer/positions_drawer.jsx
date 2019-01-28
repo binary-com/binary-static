@@ -50,7 +50,7 @@ PositionsDrawer.propTypes = {
 };
 
 export default connect(
-    ({ modules, client, ui }) => ({
+    ({ modules, ui }) => ({
         onMount               : modules.portfolio.onMount,
         onUnmount             : modules.portfolio.onUnmount,
         is_positions_drawer_on: ui.is_positions_drawer_on,
