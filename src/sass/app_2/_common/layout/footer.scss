@@ -4,8 +4,7 @@ footer {
     padding: 0 10px;
     width: 100%;
     height: $FOOTER_HEIGHT;
-    border-top: 1px solid $COLOR_GRAY;
-    background-color: $COLOR_WHITE;
+    background-color: $COLOR_LIGHT_BLACK_4_SOLID;
     box-sizing: border-box;
     z-index: 3;
     display: flex;
@@ -18,9 +17,6 @@ footer {
         font-size: 0.75rem;
         margin-right: 10px;
         padding: 0 10px;
-        border-width: 0 1px;
-        border-style: solid;
-        border-color: $COLOR_DARK_WHITE;
     }
     .footer-links {
         display: flex;
@@ -43,12 +39,12 @@ footer {
             span {
                 font-size: 0.8rem;
                 text-transform: capitalize;
-                color: $COLOR_DARK_BLUE;
+                color: $COLOR_LIGHT_BLACK_1;
                 vertical-align: middle;
                 display: inline-block;
             }
             &:hover {
-                background: $COLOR_BRANDBLUE_5;
+                background: $COLOR_LIGHT_BLACK_4;
 
                 .inline-icon {
                     @extend .inline-icon.active;
@@ -63,37 +59,36 @@ footer {
 
 .network-status {
     &-wrapper {
-        border-left: 1px solid $COLOR_DARK_WHITE;
         height: 14px;
     }
     &-circle {
-        background: $COLOR_DARK_GRAY;
+        background: $COLOR_LIGHT_BLACK_3;
         width: 10px;
         height: 10px;
         margin: 2px 16px;
         border-radius: 50%;
 
         &.online {
-            background: $COLOR_LIGHT_GREEN;
+            background: $COLOR_GREEN_1;
         }
         &.offline {
-            background: $COLOR_LIGHT_RED;
+            background: $COLOR_RED;
         }
         &.blinker {
-            background: $COLOR_DARK_GRAY;
+            background: $COLOR_LIGHT_BLACK_3;
         }
     }
 }
 
 .ic-settings {
     &.active {
-        background: $COLOR_GRAY;
+        background: $COLOR_LIGHT_BLACK_4;
 
         &:after {
             content: '';
             height: 2px;
             width: 100%;
-            background: $COLOR_BLUE;
+            background: $COLOR_DARK_BLUE_5;
             position: absolute;
             top: 0;
             left: 0;

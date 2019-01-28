@@ -3,7 +3,7 @@
     height: 100%;
 
     &--card-view {
-        background: $COLOR_LIGHT_GRAY;
+        background: $COLOR_LIGHT_BLACK_4_SOLID;
     }
     .table {
         height: 100%;
@@ -27,14 +27,14 @@
             padding: 5px;
             margin-bottom: 3px;
             border-radius: 100%;
-            background-color: $COLOR_GRAY;
+            background-color: $COLOR_LIGHT_BLACK_4;
             display: flex;
             justify-content: center;
             align-items: center;
         }
     }
     .reference a {
-        color: $COLOR_LIGHT_BLUE;
+        color: $COLOR_SKY_BLUE;
         text-decoration: none;
     }
     .table__body .indicative {
@@ -44,10 +44,10 @@
         text-align: right;
 
         &--price-moved-up {
-            color: $COLOR_LIGHT_GREEN;
+            color: $COLOR_GREEN_1;
         }
         &--price-moved-down {
-            color: $COLOR_LIGHT_RED;
+            color: $COLOR_RED;
         }
         &--no-resale {
             color: $COLOR_LIGHT_GRAY_2;
@@ -80,12 +80,12 @@
         &__header {
             font-size: 10px;
             padding: 0.5rem;
-            border-bottom: 1px solid $COLOR_GRAY;
+            border-bottom: 1px solid $COLOR_LIGHT_BLACK_4;
             display: flex;
             justify-content: space-between;
         }
         &__refid a {
-            color: $COLOR_LIGHT_BLUE;
+            color: $COLOR_SKY_BLUE;
             text-decoration: none;
         }
         &__body {
@@ -120,14 +120,14 @@
         }
         &__indicative {
             &--price-moved-up {
-                color: $COLOR_LIGHT_GREEN;
+                color: $COLOR_GREEN_1;
 
                 &:before {
                     background-image: url('../images/portfolio/ic_price_up.svg');
                 }
             }
             &--price-moved-down {
-                color: $COLOR_LIGHT_RED;
+                color: $COLOR_RED;
 
                 &:before {
                     background-image: url('../images/portfolio/ic_price_down.svg');
@@ -139,7 +139,7 @@
                 }
             }
             &--no-resale {
-                color: $COLOR_GRAY;
+                color: $COLOR_LIGHT_BLACK_4;
 
                 &:before {
                     background-image: url('../images/portfolio/ic_no_resale.svg');
