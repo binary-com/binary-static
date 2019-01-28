@@ -19,6 +19,7 @@ const SimpleDuration = ({
 
         return filtered_arr;
     };
+    const has_label = duration_units_list.length < 4 && !duration_units_list.some(du => du.value === 't');
 
     return (
         <Fragment>
@@ -39,6 +40,7 @@ const SimpleDuration = ({
             { simple_duration_unit !== 't' &&
                 <InputField
                     name='simple_duration'
+                    label={has_label && duration_units_list[0].text}
                     value={simple_duration}
                     {...number_input_props}
                     {...shared_input_props}

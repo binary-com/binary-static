@@ -497,8 +497,8 @@ export default class TradeStore extends BaseStore {
     @action.bound
     changeDuration() {
         const new_state = {};
-        const contract_only_has_days       = this.duration_units_list.length < 2 && this.duration_unit === 'd';
-        const only_simple_duration         = this.duration_units_list.length === 1 && this.duration_unit === 't';
+        const contract_only_has_days = this.duration_units_list.length < 2 && this.duration_unit === 'd';
+        const only_simple_duration   = this.duration_units_list.length === 1 && this.duration_unit === 't';
 
         if (contract_only_has_days) {
             new_state.simple_duration_unit = 'd';
