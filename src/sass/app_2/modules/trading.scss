@@ -686,12 +686,15 @@
     .allow-equals {
         span.tooltip {
             i {
+                vertical-align: baseline;
+
                 &:before {
                     content: url('../images/common/tooltip/ic_tooltip_info_dark.svg ');
                 }
                 &:hover:before {
                     opacity: 1;
-                    margin-bottom: 5px;
+                    bottom: -30%;
+                    right: 95%;
                 }
             }
             &:before {
