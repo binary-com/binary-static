@@ -1,7 +1,7 @@
-import React             from 'react';
-import { Section }       from '../get_started/common.jsx';
-import { List }          from '../../_common/components/elements.jsx';
-import { SeparatorLine } from '../../_common/components/separator_line.jsx';
+import React                   from 'react';
+import { Section, ListStrong } from '../get_started/common.jsx';
+import { List }                from '../../_common/components/elements.jsx';
+import SeparatorLine           from '../../_common/components/separator_line.jsx';
 
 const FAQ = () => (
     <div className='static_full affiliates-faq-page'>
@@ -26,6 +26,16 @@ const FAQ = () => (
                     <p>{it.L('The [_1] Affiliate Programme allows you to benefit from referring new clients to our site.', it.website_name)}</p>
                     <p>{it.L('If you\'re a broker we\'d like to work with you. You will be introducing your clients to a unique and innovative product: the [_1] trading platform. Your clients will love the [_1] trading platform because we offer a complete binary options trading experience tailored to the needs of an exceptionally wide range of traders.', it.website_name)}</p>
                     <p>{it.L('Novice traders can use our intuitive platform to learn about trading, practise trading, and gain trading experiences. Seasoned traders can use the [_1] platform and take full advantage of the wide range of trading and analysis tools we have to offer.', it.website_name)}</p>
+
+                    <h3>{it.L('Who can apply as a [_1] affiliate?', it.website_name)}</h3>
+                    <ul className='bullet'>
+                        <ListStrong header={it.L('Webmaster')}                  text={it.L('Do you run a website that promotes Forex or binary options? Join our global network of affiliates and turn your online traffic into revenue.')} />
+                        <ListStrong header={it.L('Trading guru')}               text={it.L('Earn additional income with us as you grow your community of potential and existing online traders through useful trading insights and mentorship.')} />
+                        <ListStrong header={it.L('Webinar speaker')}            text={it.L('Monetise your online trading discussions with your audience of trading enthusiasts while helping them improve their trading experience.')} />
+                        <ListStrong header={it.L('Web and software developer')} text={it.L('Receive commission when you bring in new clients through trading applications and interfaces you build using the [_1] API.', it.website_name)} />
+                        <ListStrong header={it.L('Social media admin')}         text={it.L('Do you manage a social media page that’s dedicated to online trading? Partner with us and convert your audience into potential profit.')} />
+                        <ListStrong header={it.L('Blogger and vlogger')}        text={it.L('Maintaining a page or video channel about online trading? Get rewarded when you refer your followers and viewers to trade on our award-winning binary options platform.')} />
+                    </ul>
 
                     <h3>{it.L('Why should I become a [_1] affiliate?', it.website_name)}</h3>
                     <p>{it.L('[_1] is a licensed and regulated binary options trading platform that’s been operating since 2000. It has:', it.website_name)}</p>
