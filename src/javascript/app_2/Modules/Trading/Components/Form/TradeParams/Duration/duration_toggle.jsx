@@ -18,7 +18,6 @@ const DurationToggle = ({
     );
     return (
         <Fragment>
-            <div className='divider' />
             <button className='advanced-simple-toggle' onClick={toggle}>
                 <IconArrow className={icon_className} />
             </button>

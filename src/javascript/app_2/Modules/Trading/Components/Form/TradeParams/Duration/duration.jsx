@@ -87,7 +87,7 @@ const Duration = ({
     // e.g. digit contracts only has range slider - does not have toggle between advanced / simple
     const has_toggle = expiry_list.length > 1 || duration_units_list.length > 1;
     return (
-        <Fieldset className={'position-relative'}>
+        <Fieldset>
             { !has_toggle &&
                 <RangeSlider
                     name='simple_duration'
