@@ -1,7 +1,7 @@
-import classNames             from 'classnames';
-import PropTypes              from 'prop-types';
-import React                  from 'react';
-import { IconPositions }      from 'Assets/Footer/icon_positions.jsx';
+import classNames        from 'classnames';
+import PropTypes         from 'prop-types';
+import React             from 'react';
+import { IconPositions } from 'Assets/Footer/icon_positions.jsx';
 
 const TogglePositions = ({
     is_positions_drawer_on,

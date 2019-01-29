@@ -26,7 +26,7 @@ const InfoBox = ({
     });
 
     let Contents = is_ended ? InfoBoxExpired : InfoBoxGeneral;
-    if (is_digit && is_trade_page) { // we don't display digit info in Statement/Portfolio because of API shortages
+    if (is_digit && is_trade_page) { // we don't display digit info in Statement/Positions because of API shortages
         Contents = InfoBoxDigit;
     }
 

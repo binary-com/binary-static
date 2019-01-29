@@ -10,7 +10,7 @@ const routes = {
     index           : '/index',
     limits          : '/settings/limits',
     personal        : '/settings/personal',
-    portfolio       : '/portfolio',
+    positions       : '/positions',
     root            : '/',
     settings        : '/settings',
     statement       : '/statement',

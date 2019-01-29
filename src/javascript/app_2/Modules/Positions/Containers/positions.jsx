@@ -7,11 +7,11 @@ import DataTable                      from 'App/Components/Elements/DataTable';
 import { getContractPath }            from 'App/Components/Routes/helpers';
 import { connect }                    from 'Stores/connect';
 import CardList                       from '../Components/card_list.jsx';
-import EmptyPortfolioMessage          from '../Components/empty_portfolio_message.jsx';
+import EmptyPositionsMessage          from '../Components/empty_positions_message.jsx';
 import { getTableColumnsTemplate }    from '../Constants/data_table_constants';
 import Loading                        from '../../../../../templates/_common/components/loading.jsx';
 
-class Portfolio extends React.Component {
+class Positions extends React.Component {
     componentDidMount()    { this.props.onMount(); }
     componentWillUnmount() { this.props.onUnmount(); }
 
@@ -36,13 +36,13 @@ class Portfolio extends React.Component {
         }
 
         if (is_empty) {
-            return <EmptyPortfolioMessage />;
+            return <EmptyPositionsMessage />;
         }
 
         const should_show_cards = is_mobile || is_tablet;
 
         return (
-            <div className={classnames('portfolio container', { 'portfolio--card-view': should_show_cards })}>
+            <div className={classnames('positions container', { 'positions--card-view': should_show_cards })}>
                 {
                     should_show_cards ?
                         <CardList data={active_positions} currency={currency} />
@@ -60,7 +60,7 @@ class Portfolio extends React.Component {
     }
 }
 
-Portfolio.propTypes = {
+Positions.propTypes = {
     active_positions: MobxPropTypes.arrayOrObservableArray,
     currency        : PropTypes.string,
     error           : PropTypes.string,
@@ -77,14 +77,14 @@ Portfolio.propTypes = {
 export default connect(
     ({ modules, client, ui }) => ({
         currency        : client.currency,
-        active_positions: modules.portfolio.active_positions,
-        error           : modules.portfolio.error,
-        is_empty        : modules.portfolio.is_empty,
-        is_loading      : modules.portfolio.is_loading,
-        totals          : modules.portfolio.totals,
-        onMount         : modules.portfolio.onMount,
-        onUnmount       : modules.portfolio.onUnmount,
+        active_positions: modules.positions.active_positions,
+        error           : modules.positions.error,
+        is_empty        : modules.positions.is_empty,
+        is_loading      : modules.positions.is_loading,
+        totals          : modules.positions.totals,
+        onMount         : modules.positions.onMount,
+        onUnmount       : modules.positions.onUnmount,
         is_mobile       : ui.is_mobile,
         is_tablet       : ui.is_tablet,
     })
-)(withRouter(Portfolio));
+)(withRouter(Positions));

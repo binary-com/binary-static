@@ -1,7 +1,7 @@
 import React        from 'react';
 import { localize } from '_common/localize';
 import {
-    IconPortfolio,
+    IconPositions,
     IconStatement,
     IconTrade }     from 'Assets/Header/NavBar/index';
 import { routes }   from 'Constants/index';
@@ -13,9 +13,9 @@ const header_links = [
         link_to: routes.trade,
     },
     {
-        icon   : <IconPortfolio className='ic-header__portfolio' />,
-        text   : localize('Portfolio'),
-        link_to: routes.portfolio,
+        icon   : <IconPositions className='ic-header__positions' />,
+        text   : localize('Positions'),
+        link_to: routes.positions,
     },
     {
         icon   : <IconStatement className='ic-header__statement' />,

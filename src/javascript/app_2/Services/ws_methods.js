@@ -39,7 +39,7 @@ const WS = (() => {
     const payoutCurrencies = () =>
         BinarySocket.send({ payout_currencies: 1 });
 
-    const portfolio = () =>
+    const positions = () =>
         BinarySocket.send({ portfolio: 1 });
 
     const proposalOpenContract = (contract_id) =>
@@ -97,7 +97,7 @@ const WS = (() => {
         logout,
         mt5LoginList,
         oauthApps,
-        portfolio,
+        positions,
         payoutCurrencies,
         proposalOpenContract,
         sell,
