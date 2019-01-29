@@ -67,7 +67,7 @@ button::-moz-focus-inner, input[type='submit']::-moz-focus-inner {
     border: 0;
 }
 
-a.button:hover, a.button-white:hover {
+a.button:hover, a.button-social:hover {
     text-decoration: none;
 }
 
@@ -640,39 +640,58 @@ li strong.margin-right {
     }
 }
 
-.button-white {
+.button-social {
     cursor: pointer;
-    margin-bottom: 0.5em;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    height: 40px;
+    width: 200px;
+    border: 1px solid $COLOR_GRAY;
+    background-position-x: 7px;
+    background-position-y: center;
+    background-repeat: no-repeat;
+    text-transform: none;
+    box-sizing: border-box;
 
-    span {
-        @include link-button;
-        overflow: visible;
-        border: 1px solid $COLOR_GRAY;
+    &#button_google {
+        background-image: url('../images/social/google.svg');
+    }
+    &#button_facebook {
+        background-image: url('../images/social/facebook.svg');
+    }
+    & + .button-social {
+        margin-left: 10px;
+    }
+    &:hover {
+        background-color: $COLOR_GRAY;
+    }
+    .name {
+        text-transform: capitalize;
         color: $COLOR_BLACK;
-        background: $COLOR_WHITE;
         font-weight: 400;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        letter-spacing: 0;
+        padding-left: 1rem;
+    }
+    @media screen and (max-width: 480px) {
+        width: 30%;
+        background-position-x: center;
 
-        &:hover {
-            text-decoration: none;
-            background: $COLOR_GRAY;
-        }
-        &.icon-google:before {
-            margin-right: 10px;
+        .name {
+            padding-left: 0;
+            opacity: 0; // hide text in mobile
         }
     }
-}
-
-.icon-google:before {
-    content: url('../images/pages/applications/icon-google.svg');
 }
 
 .section-divider {
     .circle {
         padding: 7px 5px !important;
+    }
+    &.full-width {
+        max-width: unset;
+        width: 100%;
     }
 }
 

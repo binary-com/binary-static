@@ -1,3 +1,7 @@
+const BinarySocket      = require('../../app/base/socket');
+const isExcludedFromCfd = require('../../app/common/country_base').isExcludedFromCfd;
+const getElementById    = require('../../../javascript/_common/common_functions').getElementById;
+
 const Regulation = (() => {
     const onLoad = () => {
         $(() => {
@@ -19,6 +23,14 @@ const Regulation = (() => {
                 // if EU passport rights tab is active, call relocateLinks to initialize map coordinates
                 if (!$accordion.accordion('option', 'active')) {
                     relocateLinks();
+                }
+            });
+
+            BinarySocket.wait('website_status', 'authorize').then(() => {
+                if (isExcludedFromCfd()) {
+                    const el_cfd_fillbox = getElementById('cfd_fillbox');
+                    el_cfd_fillbox.nextSibling.classList.remove('margin-left-0');
+                    el_cfd_fillbox.remove();
                 }
             });
         });

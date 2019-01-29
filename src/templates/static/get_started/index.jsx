@@ -1,7 +1,11 @@
-import React from 'react';
-import { Button } from '../../_common/components/elements.jsx';
-import SeparatorLine from '../../_common/components/separator_line.jsx';
-import { TabContainer, TabContent, TabContentContainer, TabsSubtabs } from '../../_common/components/tabs.jsx';
+import React             from 'react';
+import { Button }        from '../../_common/components/elements.jsx';
+import { SeparatorLine } from '../../_common/components/separator_line.jsx';
+import {
+    TabContainer,
+    TabContent,
+    TabContentContainer,
+    TabsSubtabs }        from '../../_common/components/tabs.jsx';
 
 const GetStartedSection = ({ link, hash, image, header, text }) => {
     const href = `${it.url_for(link)}#${hash}`;

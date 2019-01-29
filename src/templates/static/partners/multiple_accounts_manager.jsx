@@ -1,7 +1,9 @@
-import React from 'react';
-import { BoxRow, Box } from '../../_common/components/box_row.jsx';
-import SeparatorLine from '../../_common/components/separator_line.jsx';
-import Step from '../../_common/components/step.jsx';
+import React             from 'react';
+import {
+    BoxRow,
+    Box }                from '../../_common/components/box_row.jsx';
+import { SeparatorLine } from '../../_common/components/separator_line.jsx';
+import Step              from '../../_common/components/step.jsx';
 
 const MAMBox = ({ image, ...props }) => (
     <Box img_src={it.url_for(`images/pages/mam/${image}.svg`)} {...props} />

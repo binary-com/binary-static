@@ -141,7 +141,7 @@
         .allow-equals {
             display: inline-block;
 
-            .input-field, label {
+            .input-field {
                 display: inline-block;
             }
             label {
@@ -151,6 +151,8 @@
             }
             .tooltip {
                 display: inline-block;
+                height: 12px;
+                width: 12px;
 
                 .info {
                     vertical-align: middle;
@@ -159,6 +161,38 @@
                     &:after {
                         transform: scale(0.75);
                     }
+                }
+            }
+            span.tooltip {
+                i {
+                    &:before {
+                        content: url('../images/common/tooltip/ic_tooltip_info_dark.svg');
+                        position: absolute;
+                        right: 100%;
+                        z-index: 10;
+                        opacity: 0;
+                        transition: all 0.18s ease-out 0.18s;
+                        margin-right: 380px;
+                        margin-top: -3px;
+                    }
+                    &:hover:before {
+                        opacity: 1;
+                        transform: translate(-50%, 0);
+                    }
+                }
+                &:before {
+                    background: $COLOR_DARK_BLUE !important;
+                    color: $COLOR_WHITE;
+                    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+                    padding-left: 40px;
+                    margin-right: 110px;
+                }
+                &:after {
+                    border-left-color: $COLOR_DARK_BLUE !important;
+                    margin-right: 98px;
+                }
+                &:hover:after, &:hover:before {
+                    opacity: 1;
                 }
             }
         }
@@ -336,6 +370,7 @@
         fieldset.purchase-option {
             padding-top: 8px;
             padding-bottom: 8px;
+            position: relative;
 
             div.submit-section {
                 .btn-purchase {
@@ -427,7 +462,7 @@
                     }
                     &:disabled {
                         background-color: $COLOR_GRAY_DISABLED;
-                        color: $COLOR_GRAY;
+                        color: $COLOR_DARK_GRAY_2;
                     }
                     &:hover {
                         box-shadow: none;
