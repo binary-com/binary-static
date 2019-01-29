@@ -80,8 +80,8 @@ export const getExpiryType = (store) => {
     const server_time = store.root_store.common.server_time;
 
     const duration_is_day       = expiry_type === 'duration' && duration_unit === 'd';
-    const expiry_is_after_today = (expiry_type === 'endtime' && toMoment(expiry_date).isAfter(toMoment(server_time), 'day')) ||
-        !hasIntradayDurationUnit(duration_units_list);
+    const expiry_is_after_today = expiry_type === 'endtime' && (toMoment(expiry_date).isAfter(toMoment(server_time), 'day') ||
+        !hasIntradayDurationUnit(duration_units_list));
 
     let contract_expiry_type = 'daily';
     if (!duration_is_day && !expiry_is_after_today) {
