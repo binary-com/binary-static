@@ -7,7 +7,6 @@ import React                     from 'react';
 import {
     addComma,
     getDecimalPlaces }           from '_common/base/currency_base';
-import { localize }              from '_common/localize';
 import Dropdown                  from 'App/Components/Form/DropDown';
 import Fieldset                  from 'App/Components/Form/fieldset.jsx';
 import InputField                from 'App/Components/Form/input_field.jsx';
@@ -43,25 +42,24 @@ const Amount = ({
     });
 
     return (
-        <Fieldset
-            header={localize('Invest Amount')}
-            icon='invest-amount'
-        >
+        <Fieldset>
             <div className={amount_container_class}>
                 <Dropdown
-                    list={basis_list}
-                    value={basis}
-                    name='basis'
-                    onChange={onChange}
+                    is_alignment_left
                     is_nativepicker={is_nativepicker}
+                    list={basis_list}
+                    name='basis'
+                    value={basis}
+                    onChange={onChange}
                 />
                 {!is_single_currency &&
                     <Dropdown
-                        list={currencies_list}
-                        value={currency}
-                        name='currency'
-                        onChange={onChange}
+                        is_alignment_left
                         is_nativepicker={is_nativepicker}
+                        list={currencies_list}
+                        name='currency'
+                        value={currency}
+                        onChange={onChange}
                     />
                 }
                 <InputField
