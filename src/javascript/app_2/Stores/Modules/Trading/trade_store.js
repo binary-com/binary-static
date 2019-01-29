@@ -229,14 +229,6 @@ export default class TradeStore extends BaseStore {
             throw new Error(`Invalid Argument: ${name}`);
         }
 
-        if (name === 'contract_type' || name === 'symbol') {
-            // reset duration_unit to ticks when changing from days only contract to ticks/minutes contract
-            const should_reset_simple_to_ticks = !this.is_advanced_duration && this.simple_duration_unit !== 'm' && this.simple_duration_unit !== 't';
-            if (should_reset_simple_to_ticks) {
-                this.updateStore({ simple_duration_unit: 't', duration_unit: 't' });
-            }
-        }
-
         this.processNewValuesAsync({ [name]: value }, true);
     }
 
@@ -510,15 +502,24 @@ export default class TradeStore extends BaseStore {
 
         // contracts that have no toggle between advanced/simple are treated as simple (e.g. digits)
         if (is_only_simple_duration) {
-            new_state.duration = this.simple_duration;
+            new_state.duration             = this.simple_duration;
             new_state.simple_duration_unit = 't';
             new_state.is_advanced_duration = false;
         }
 
         if (is_missing_duration_unit) {
-            new_state.simple_duration_unit = this.duration_unit;
-            new_state.advanced_duration_unit = this.duration_unit;
+            new_state.simple_duration_unit   = this.duration_units_list[0].value;
+            new_state.advanced_duration_unit = this.duration_units_list[0].value;
+            new_state.duration_unit          = this.duration_units_list[0].value;
         }
+
+        const should_reset_simple_to_ticks = !this.is_advanced_duration && this.simple_duration_unit !== 'm' && this.simple_duration_unit !== 't';
+        if (should_reset_simple_to_ticks && this.duration_units_list.length > 3) {
+            new_state.simple_duration_unit   =  't';
+            new_state.duration_unit          = 't';
+            new_state.contract_expiry_type   = 'tick';
+        }
+
         this.updateStore(new_state);
     }
 
