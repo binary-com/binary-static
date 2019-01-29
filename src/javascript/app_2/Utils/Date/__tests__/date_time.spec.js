@@ -40,12 +40,12 @@ describe('toGMTFormat', () => {
 describe('formatDate', () => {
     const date_format = 'YYYY-MM-DD'
     it('return correct response when no argument passed', () => {
-        expect(DateTime.formatDate()).to.eql('Invalid date');
+        expect(DateTime.formatDate()).to.eql(moment().utc().format(date_format));
     });
 
     it('return correct date value when argument passed', () => {
         // get today date
-        const date = moment();
+        const date = moment().utc();
         expect(DateTime.formatDate(date, date_format)).to.deep.equal(moment(date).format(date_format));
     });
 });
@@ -57,13 +57,13 @@ describe('daysFromTodayTo', () => {
 
     it('return empty string if the user selected previous day', () => {
         //get previous day
-        const date = moment().subtract(1, 'days').format('YYYY-MM-DD');
+        const date = moment().utc().startOf('day').subtract(1, 'days').format('YYYY-MM-DD');
         expect(DateTime.daysFromTodayTo(date)).to.be.empty;
     });
 
     it('return difference value between selected date and today', () => {
         //get date three days from now
-        const date = moment().add('3', 'days').format('YYYY-MM-DD');
+        const date = moment().utc().startOf('day').add('3', 'days').format('YYYY-MM-DD');
         expect(DateTime.daysFromTodayTo(date)).to.deep.equal(3);
     });
 });
