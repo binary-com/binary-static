@@ -1,6 +1,10 @@
-import React from 'react';
-import { TabContainer, TabContent, TabContentContainer, TabsSubtabs } from '../_common/components/tabs.jsx';
-import SeparatorLine from '../_common/components/separator_line.jsx';
+import React            from 'react';
+import {
+    TabContainer,
+    TabContent,
+    TabContentContainer,
+    TabsSubtabs }        from '../_common/components/tabs.jsx';
+import { SeparatorLine } from '../_common/components/separator_line.jsx';
 
 const Platforms = ({
     className,
