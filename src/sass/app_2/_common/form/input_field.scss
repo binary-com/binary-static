@@ -109,7 +109,7 @@
         border: 1px solid $COLOR_GRAY;
         border-radius: $BORDER_RADIUS;
         text-align: center;
-        transition: transform 0.3s;
+        transition: transform 0.3s, box-shadow 0.18s;
 
         &[type=checkbox] {
             cursor: pointer;
@@ -157,6 +157,7 @@
             outline: 0;
             border-radius: $BORDER_RADIUS;
             border-color: $COLOR_BLUE;
+            box-shadow: 0 0 0 0.2rem rgba(127, 131, 151, 0.3) // stylelint-disable-line number-leading-zero
         }
         &:not([type=range]), label, textarea {
             touch-action: manipulation;
@@ -185,6 +186,8 @@
             display: inline-block;
         }
         input {
+            background: $COLOR_BLUE;
+            border-color: $COLOR_BRANDBLUE_85;
             color: $COLOR_WHITE;
 
             &[type=checkbox] {
@@ -219,8 +222,13 @@
                     display: none;
                 }
             }
-            &:hover, &:focus, &:active {
+            &:hover {
                 border-color: $COLOR_WHITE;
+            }
+            &:focus, &:active {
+                outline: 0;
+                border-color: $COLOR_WHITE;
+                box-shadow: 0 0 0 0.2rem rgba(127, 131, 151, 0.3) // stylelint-disable-line number-leading-zero
             }
         }
     }
