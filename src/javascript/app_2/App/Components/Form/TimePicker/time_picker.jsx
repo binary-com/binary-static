@@ -56,7 +56,6 @@ class TimePicker extends React.PureComponent {
         const {
             value,
             name,
-            is_align_right,
             is_nativepicker,
             placeholder,
             start_time,
@@ -93,7 +92,7 @@ class TimePicker extends React.PureComponent {
                                     placeholder={placeholder}
                                 />
                                 <TimePickerDropdown
-                                    className={`${this.state.is_open ? 'active' : ''}${is_align_right ? ' from-right' : ' from-left' }`}
+                                    className={`${this.state.is_open ? 'active' : ''} from-left`}
                                     toggle={this.toggleDropDown}
                                     onChange={this.handleChange}
                                     preClass={prefix_class}

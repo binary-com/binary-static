@@ -35,7 +35,6 @@
         max-height: 261px;
         opacity: 0;
         border-radius: 4px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
         transition: all 0.2s ease 0.15s;
         transform: scale(0, 0);
         transform-origin: top right;
@@ -51,30 +50,8 @@
         &.from-left {
             left: -245px;
         }
-        .time-picker-panel {
-            height: 30px;
-            background: $COLOR_WHITE;
-            border-bottom: 1px solid $COLOR_GRAY;
-            border-radius: 4px 4px 0 0;
-            padding: 2px 8px 0 9px;
-            line-height: 30px;
-            font-weight: 300;
-
-            .time-picker-clear {
-                background: url('../images/common/close_circle.svg') no-repeat;
-                position: relative;
-                float: right;
-                display: none;
-                top: 8px;
-                width: 12px;
-                height: 12px;
-                cursor: pointer;
-            }
-            .placeholder {
-                color: $COLOR_GRAY;
-            }
-        }
         .time-picker-selector {
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
             display: flex;
             flex-direction: row;
 
@@ -135,8 +112,6 @@
 // Dark Theme
 .theme-wrapper.dark {
     .time-picker .time-picker-dropdown {
-        border: 1px solid $COLOR_BRANDBLUE_85;
-
         .time-picker-panel, .time-picker-selector {
             background: $COLOR_BLUE;
             border-color: $COLOR_BRANDBLUE_85;

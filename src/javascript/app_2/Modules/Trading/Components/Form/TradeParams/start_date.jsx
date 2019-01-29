@@ -48,7 +48,6 @@ const StartDate = ({
             {(!is_today && start_time) &&
                 <TimePicker
                     onChange={onChange}
-                    is_align_right={false}
                     name='start_time'
                     value={start_time}
                     placeholder='12:00'

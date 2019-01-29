@@ -64,18 +64,6 @@ class TimePickerDropdown extends React.PureComponent {
         const [ hour, minute ]      = value.split(':');
         return (
             <div className={`${preClass}-dropdown ${this.props.className}`}>
-                <div
-                    className={`${preClass}-panel`}
-                    onClick={toggle}
-                >
-                    <span className={value ? '' : 'placeholder'}>{value || localize('Select time')}</span>
-                    {(!('is_clearable' in this.props) || this.props.is_clearable) &&
-                        <span
-                            className={`${preClass}-clear`}
-                            onClick={this.clear}
-                        />
-                    }
-                </div>
                 <div className={`${preClass}-selector`}>
                     <div
                         ref={this.saveHourRef}

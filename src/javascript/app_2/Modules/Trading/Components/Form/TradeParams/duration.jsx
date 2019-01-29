@@ -185,7 +185,6 @@ const Duration = ({
                         {is_24_hours_contract &&
                             <TimePicker
                                 onChange={onChange}
-                                is_align_right={false}
                                 name='expiry_time'
                                 placeholder='12:00'
                                 start_time={expiry_time_sessions[0].open}
