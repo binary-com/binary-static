@@ -121,6 +121,10 @@ const Duration = ({
     });
 
     const handleExpiryTypeChange = (event, value) => {
+        if (!value) {
+            return;
+        }
+
         const target = {
             name: 'expiry_type',
             value,
