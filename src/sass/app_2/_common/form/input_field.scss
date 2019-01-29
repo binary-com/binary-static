@@ -3,6 +3,12 @@
     margin: 8px 0 0;
     font-weight: 300;
 
+    &:has(input[type=checkbox]), span.tooltip {
+        display: inline-block;
+    }
+    span.tooltip {
+        width: 100%;
+    }
     & ~ [class*='__icon'] {
         @extend .absolute-center-v; // centers input-field icons vertically
         top: 8px;
@@ -106,7 +112,8 @@
         color: $COLOR_LIGHT_BLACK;
         border: 1px solid $COLOR_GRAY;
         border-radius: $BORDER_RADIUS;
-        transition: all 0.3s;
+        text-align: center;
+        transition: transform 0.3s;
 
         &[type=checkbox] {
             cursor: pointer;

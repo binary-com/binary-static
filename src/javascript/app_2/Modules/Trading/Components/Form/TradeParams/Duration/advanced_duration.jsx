@@ -89,6 +89,7 @@ const AdvancedDuration = ({
                     <div className='duration-container'>
                         {duration_units_list.length > 1 &&
                             <Dropdown
+                                is_alignment_left
                                 is_nativepicker={is_nativepicker}
                                 list={duration_units_list}
                                 name='advanced_duration_unit'
