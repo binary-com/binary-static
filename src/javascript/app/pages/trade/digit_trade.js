@@ -11,7 +11,10 @@ const DigitDisplay = (() => {
     let $container,
         contract,
         tick_count,
-        spot_times;
+        spot_times,
+        is_redraw_possible;
+
+    is_redraw_possible = false;
 
     const subscribe = (request) => {
         // Subscribe if contract is still ongoing/running.
@@ -135,6 +138,7 @@ const DigitDisplay = (() => {
                 return tick_count > contract.tick_count;
             });
         } else if (response.tick) {
+            is_redraw_possible = true;
             if (tick_count <= contract.tick_count &&
                 +response.tick.epoch >= +contract.entry_tick_time) {
                 updateTable(response.tick.quote, response.tick.epoch);
@@ -156,9 +160,10 @@ const DigitDisplay = (() => {
                 start        : contract.entry_tick_time,
                 end          : contract.exit_tick_time,
             };
-
-            // force rerender the table by sending the history
-            BinarySocket.send(request, { callback: redrawFromHistory });
+            if (is_redraw_possible) {
+                // force rerender the table by sending the history
+                BinarySocket.send(request, { callback: redrawFromHistory });
+            }
         }
         if (proposal_open_contract.status === 'won') {
             DigitTicker.markAsWon();
