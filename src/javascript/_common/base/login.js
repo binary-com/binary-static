@@ -31,10 +31,19 @@ const Login = (() => {
 
     const socialLoginUrl = brand => (`${loginUrl()}&social_signup=${brand}`);
 
+    const initOneAll = () => {
+        ['google', 'facebook'].forEach(provider => {
+            $(`#button_${provider}`).off('click').on('click', e => {
+                e.preventDefault();
+                window.location.href = socialLoginUrl(provider);
+            });
+        });
+    };
+
     return {
         redirectToLogin,
         isLoginPages,
-        socialLoginUrl,
+        initOneAll,
     };
 })();
 
