@@ -4,6 +4,7 @@ import { withRouter }           from 'react-router';
 import { formatMoney }          from '_common/base/currency_base';
 import {
     AccountInfo,
+    DepositButton,
     LoginButton,
     InstallPWAButton,
     MenuLinks,
@@ -67,6 +68,7 @@ const Header = ({
                                     is_dialog_on={is_acc_switcher_on}
                                     toggleDialog={toggleAccountsDialog}
                                 />
+                                <DepositButton />
                             </React.Fragment>
                             :
                             <LoginButton />

@@ -1,7 +1,6 @@
 import PropTypes      from 'prop-types';
 import React          from 'react';
 import Symbol         from 'Images/app_2/header/symbol.svg';
-import InkBarDiv      from '../../Elements/InkBar';
 import { BinaryLink } from '../../Routes';
 
 const MenuLinks = ({ items }) => (
@@ -10,13 +9,13 @@ const MenuLinks = ({ items }) => (
             <Symbol width='30px' height='30px' />
         </div>
         {!!items.length &&
-        <InkBarDiv className='menu-links'>
+        <div className='menu-links'>
             {items.map((item, idx) => (
                 <BinaryLink key={idx} to={item.link_to}>
                     <span title={item.text}>{item.icon}{item.text}</span>
                 </BinaryLink>
             ))}
-        </InkBarDiv>
+        </div>
         }
     </React.Fragment>
 );

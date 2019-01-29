@@ -17,44 +17,55 @@
         .acc-info {
             display: flex;
             height: 100%;
-            flex-direction: column;
-            align-items: flex-end;
+            flex-direction: row;
+            align-items: center;
             justify-content: center;
             cursor: pointer;
 
             &:hover:not(.show) {
                 background: $COLOR_BRANDBLUE_5;
             }
-            &.show {
+            &--show {
                 .select-arrow {
-                    transform: rotate(180deg);
+                    transform: rotate(0deg);
                 }
-                p.acc-balance-id, p.acc-balance-type {
+                p.acc-balance-id {
                     font-weight: 500;
                 }
-                &:after {
-                    content: '';
-                    height: 2px;
-                    width: 100%;
-                    background: $COLOR_BLUE;
-                    position: absolute;
-                    top: calc(100% - 2px);
-                    left: 0;
+            }
+            &--is-virtual {
+                p.acc-balance-id, p.acc-balance-amount {
+                    color: $COLOR_LIGHT_ORANGE;
+                }
+                &:before {
+                    display: block;
+                    content: 'demo';
+                    font-size: 0.875rem; //stylelint-disable-line number-max-precision
+                    border: 2px solid $COLOR_LIGHT_ORANGE;
+                    color: $COLOR_LIGHT_ORANGE;
+                    padding: 4px;
+                    border-radius: 16px;
                 }
             }
-            p.acc-balance-id, p.acc-balance-type {
+            p.acc-balance-id {
                 pointer-events: none;
                 line-height: 0.5;
                 color: $COLOR_LIGHT_BLACK;
-                font-size: 0.875rem; //stylelint-disable-line number-max-precision
+                font-size: 1rem;
                 margin: 0.5em 1rem;
                 font-weight: 300;
                 text-align: center;
                 padding-right: 16px;
-
-                @media (max-width: 768px) {
-                    @include interpolate(font-size, 320px, 1440px, 10px, 14px);
-                }
+            }
+            p.acc-balance-amount {
+                line-height: 100%;
+                color: $COLOR_LIGHT_BLACK;
+                font-size: 1rem;
+                padding: 8px 1rem;
+                font-weight: 500;
+                margin: 0 12px 0 0;
+                text-align: center;
+                pointer-events: none;
             }
             .select-arrow {
                 pointer-events: none;
@@ -63,24 +74,10 @@
                 right: 8px;
                 line-height: 1;
                 transition: transform 0.25s ease;
-                transform: rotate(0);
+                transform: rotate(180deg);
                 transform-origin: 50% 45%;
                 color: $COLOR_GRAY;
                 font-size: 1.1rem;
-            }
-        }
-        p.acc-balance-amount {
-            line-height: 100%;
-            color: $COLOR_LIGHT_BLACK;
-            font-size: 1rem;
-            padding: 8px 1rem;
-            font-weight: 500;
-            margin: 0;
-            text-align: center;
-            border-left: 1px solid $COLOR_GRAY;
-
-            @media (max-width: 768px) {
-                @include interpolate(font-size, 320px, 1440px, 10px, 14px);
             }
         }
     }
@@ -95,25 +92,23 @@
 .acc-switcher {
     &-wrapper {
         position: absolute;
-        opacity: 0;
-        pointer-events: none;
+        opacity: 1;
         background: $COLOR_WHITE;
         border: 1px solid $COLOR_GRAY;
-        transform: translateY(-20px);
+        transform: translateY(0);
         transition: transform 0.25s ease, opacity 0.25s linear;
+        box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.8);
         right: 0;
         top: calc(100% + 4px);
         width: 185px;
         border-radius: $BORDER_RADIUS;
 
-        &-enter, &-enter-done {
+        &--enter-done {
             opacity: 1;
-            pointer-events: auto;
             transform: translateY(0);
         }
-        &-exit {
+        &--enter, &--exit {
             opacity: 0;
-            pointer-events: none;
             transform: translateY(-20px);
         }
     }
@@ -222,6 +217,43 @@
         }
         &-header {
             color: $COLOR_BRANDBLUE_40;
+        }
+    }
+    .acc-balance-container {
+        .acc-balance {
+            .acc-info {
+                p {
+                    color: $COLOR_BRANDBLUE_40;
+                }
+                &:hover:not(.show) {
+                    background-color: $COLOR_BRANDBLUE_85;
+
+                    .symbols {
+                        background: $COLOR_BRANDBLUE_85;
+                    }
+                }
+                .acc-balance-amount {
+                    border-color: $COLOR_BRANDBLUE_85;
+                    color: $COLOR_WHITE;
+
+                    .symbols {
+                        background: $COLOR_BLUE;
+                    }
+                }
+                &--show {
+                    p {
+                        color: $COLOR_WHITE;
+                    }
+                    &:after {
+                        background: $COLOR_WHITE;
+                    }
+                }
+                &--is-virtual {
+                    .acc-balance-amount, .symbols {
+                        color: $COLOR_LIGHT_ORANGE;
+                    }
+                }
+            }
         }
     }
 }

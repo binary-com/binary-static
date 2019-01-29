@@ -2,13 +2,13 @@ import classNames          from 'classnames';
 import PropTypes           from 'prop-types';
 import React               from 'react';
 import { CSSTransition }   from 'react-transition-group';
-import Localize            from 'App/Components/Elements/localize.jsx';
 import { AccountSwitcher } from 'App/Containers/AccountSwitcher';
 import { IconArrow }       from 'Assets/Common';
 
 // todo fix absolute path
 
 const AccountInfo = ({
+    account_type,
     balance,
     currency,
     loginid,
@@ -16,41 +16,50 @@ const AccountInfo = ({
     is_upgrade_enabled,
     onClickUpgrade,
     toggleDialog,
-    account_type,
-}) => (
-    <div className='acc-balance'>
-        <div className='acc-switcher-container'>
-            <div className={classNames('acc-info', { 'show': is_dialog_on })} onClick={toggleDialog}>
-                <p className='acc-balance-type'>
-                    <Localize str={`${account_type} Account`} />
-                </p>
-                <p className='acc-balance-id'>{loginid}</p>
-                <IconArrow className='select-arrow' />
-            </div>
-            <CSSTransition
-                in={is_dialog_on}
-                timeout={400}
-                classNames='acc-switcher-wrapper'
-                unmountOnExit
-            >
-                <div className='acc-switcher-wrapper'>
-                    <AccountSwitcher
-                        is_visible={is_dialog_on}
-                        toggle={toggleDialog}
-                        is_upgrade_enabled={is_upgrade_enabled}
-                        onClickUpgrade={onClickUpgrade}
-                    />
+}) => {
+    const is_virtual = (account_type.toLowerCase() === 'virtual');
+    return (
+        <div className='acc-balance'>
+            <div className='acc-switcher-container'>
+                <div
+                    className={classNames('acc-info', {
+                        'acc-info--show'      : is_dialog_on,
+                        'acc-info--is-virtual': is_virtual,
+                    })}
+                    onClick={toggleDialog}
+                >
+                    <p className='acc-balance-id'>{loginid}</p>
+                    {typeof balance !== 'undefined' &&
+                    <p className='acc-balance-amount'>
+                        <span className={`symbols ${(currency || '').toLowerCase()}`} />
+                        {balance}
+                    </p>
+                    }
+                    <IconArrow className='select-arrow' />
                 </div>
-            </CSSTransition>
+                <CSSTransition
+                    in={is_dialog_on}
+                    timeout={200}
+                    classNames={{
+                        enter    : 'acc-switcher-wrapper--enter',
+                        enterDone: 'acc-switcher-wrapper--enter--done',
+                        exit     : 'acc-switcher-wrapper--exit',
+                    }}
+                    unmountOnExit
+                >
+                    <div className='acc-switcher-wrapper'>
+                        <AccountSwitcher
+                            is_visible={is_dialog_on}
+                            toggle={toggleDialog}
+                            is_upgrade_enabled={is_upgrade_enabled}
+                            onClickUpgrade={onClickUpgrade}
+                        />
+                    </div>
+                </CSSTransition>
+            </div>
         </div>
-        {typeof balance !== 'undefined' &&
-        <p className='acc-balance-amount'>
-            <i><span className={`symbols ${(currency || '').toLowerCase()}`} /></i>
-            {balance}
-        </p>
-        }
-    </div>
-);
+    );
+};
 
 AccountInfo.propTypes = {
     account_type      : PropTypes.string,
