@@ -1,4 +1,4 @@
-import classNames     from 'classnames';
+import classNames                     from 'classnames';
 import { PropTypes as MobxPropTypes } from 'mobx-react';
 import PropTypes                      from 'prop-types';
 import React                          from 'react';
@@ -10,7 +10,7 @@ import { connect }                    from 'Stores/connect';
 import PositionsDrawerCard            from './positions_drawer_card.jsx';
 
 class PositionsDrawer extends React.Component {
-    componentDidMount()    {
+    componentDidMount() {
         this.props.onMount();
     }
 

@@ -12,8 +12,13 @@ import { getTableColumnsTemplate }    from '../Constants/data_table_constants';
 import Loading                        from '../../../../../templates/_common/components/loading.jsx';
 
 class Positions extends React.Component {
-    componentDidMount()    { this.props.onMount(); }
-    componentWillUnmount() { this.props.onUnmount(); }
+    componentDidMount() {
+        this.props.onMount();
+    }
+
+    componentWillUnmount() {
+        this.props.onUnmount();
+    }
 
     render() {
         const {
