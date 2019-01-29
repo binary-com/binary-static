@@ -102,7 +102,7 @@ const WhyUs = () => (
                             <p>{it.L('With [_1], you can count on us to serve you with integrity and reliability.', it.website_name)}</p>
                             <ul className='checked'>
                                 <li>{it.L('We have a proven track record since we launched our platform in 2000.')}</li>
-                                <li>{it.L('We have been licensed and regulated in Malta to provide financial services since 2015')}</li>
+                                <li>{it.L('We have been licensed and regulated in Malta to provide financial services since 2015.')}</li>
                                 <li>{it.L('We segregate your funds and keep them in secure and licensed financial institutions.')}</li>
                             </ul>
                         </div>
@@ -159,7 +159,7 @@ const WhyUs = () => (
                     </div>
                     <p>{it.L('[_1] is the award-winning industry pioneer in online options trading. We boast', it.website_name)}</p>
                     <ul className='checked'>
-                        <li>{it.L('Over two billion dollars trades to date')}</li>
+                        <li>{it.L('Over two billion dollars in trades to date')}</li>
                         <li>{it.L('First-class client service')}</li>
                         <li>{it.L('Multi award-winning trading platform')}</li>
                         <li>{it.L('Exclusive binary trading technology')}</li>
