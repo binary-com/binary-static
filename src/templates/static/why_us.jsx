@@ -42,7 +42,7 @@ const WhyUs = () => (
                             <ul className='checked'>
                                 <li>{it.L('Real-time prices, benchmarked against interbank options markets')}</li>
                                 <li>{it.L('High returns on [_1]rise/fall[_2] contracts', `<a href='${it.url_for('trading?market=forex&formname=risefall')}'>`, '</a>')}</li>
-                                <li>{it.L('Returns above 1000% on [_1]higher/lower[_2] and [_3]touch/no-touch[_4] trades.', `<a href='${it.url_for('trading?market=forex&formname=higherlower')}'>`, '</a>', `<a href='${it.url_for('trading?market=forex&formname=touchnotouch')}'>`, '</a>')}</li>
+                                <li>{it.L('Returns above 1000% on [_1]higher/lower[_2] and [_3]touch/no-touch[_2] trades.', `<a href='${it.url_for('trading?market=forex&formname=higherlower')}'>`, '</a>', `<a href='${it.url_for('trading?market=forex&formname=touchnotouch')}'>`)}</li>
                                 <li>{it.L('No hidden fees or commissions')}</li>
                             </ul>
                         </div>
