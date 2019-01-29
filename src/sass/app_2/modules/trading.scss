@@ -41,7 +41,7 @@
         background-color: $COLOR_LIGHT_GRAY;
         border-radius: $BORDER_RADIUS;
         border: 1px solid $COLOR_GRAY;
-        padding: 1vh 8px;
+        padding: 4px 8px 8px;
 
         input, select {
             width: 100%;
@@ -199,11 +199,10 @@
         .purchase-info-wrapper {
             line-height: 0.9rem;
             border: 0;
-            margin: 16px 16px 0;
-            width: 90%;
-            width: calc(100% - 32px);
-            display: grid;
-            grid-template-columns: 1fr 1fr;
+            margin: 8px 0 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
             position: relative;
 
             .info-wrapper {
@@ -259,33 +258,6 @@
                 }
             }
         }
-        @media screen and (max-height: 800px) {
-            .fieldset-header {
-                margin-bottom: -8px;
-            }
-            input, input.datepicker-display, .time-picker #time-picker-input.time-picker-input {
-                height: 26px;
-            }
-            .input-field i .symbols {
-                top: 0;
-                left: 0;
-                height: 24px;
-                line-height: 24px;
-                align-items: center;
-                justify-content: center;
-                display: flex;
-            }
-            .dropdown-display {
-                height: 24px;
-
-                span {
-                    line-height: 25px;
-                }
-            }
-            .select-arrow {
-                top: 6px;
-            }
-        }
     }
     div.purchase-wrapper {
         position: relative;
@@ -293,7 +265,7 @@
         div.purchase-error {
             position: absolute;
             top: 0;
-            min-height: 245px;
+            min-height: 202px;
             height: calc(100% - 2px);
             width: calc(100% - 6px);
             left: 2px;
@@ -396,23 +368,21 @@
             }
         }
         fieldset.purchase-option {
-            padding-top: 1.5vh;
-            padding-bottom: 1.5vh;
-            min-height: 100px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            position: relative;
 
             div.submit-section {
-                display: grid;
-                grid-template-columns: 1fr;
-
                 .btn-purchase {
                     position: relative;
                     background-color: $COLOR_DARK_GREEN;
                     overflow: hidden;
                     height: 56px;
-                    width: 90%;
-                    width: calc(100% - 32px);
+                    width: 100%;
+                    margin: 0;
                     text-align: left;
-                    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+                    transition: box-shadow 0.5s;
+                    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.24);
                     margin-top: 5px;
 
                     &__info {
@@ -522,12 +492,13 @@
                         margin-right: 328px;
                         z-index: 10;
                         opacity: 0;
-                        transition: all 0.18s ease-out 0.18s;
+                        transition: all 0.18s ease-out 0.17s;
+                        transform: translateX(20%);
                         top: 0;
                     }
                     &:hover:before {
                         opacity: 1;
-                        transform: translate(-50%, 0);
+                        transform: translateX(0);
                     }
                 }
                 &:before {
@@ -537,13 +508,13 @@
                     max-width: unset;
                     width: 290px;
                     white-space: normal;
-                    margin-right: 32px;
+                    margin-right: 20px;
                     font-size: 12px;
                     padding-left: 40px;
                 }
                 &:after {
                     border-left-color: $COLOR_WHITE;
-                    margin-right: 20px;
+                    margin-right: 8px;
                 }
                 &:hover:after, &:hover:before {
                     opacity: 1;
@@ -551,15 +522,17 @@
             }
             &:not(:only-child) {
                 &:nth-last-child(2) {
-                    border-bottom: 1px;
+                    border-bottom-width: 0;
                     border-bottom-left-radius: 0;
                     border-bottom-right-radius: 0;
                     margin-bottom: 0 !important;
                 }
                 &:nth-last-child(1) {
+                    border-top-width: 0;
                     border-top-left-radius: 0;
                     border-top-right-radius: 0;
                     margin-bottom: 0 !important;
+                    margin-top: -8px;
                 }
             }
             div.block-ui {
@@ -576,7 +549,7 @@
                 align-items: center;
                 background: $COLOR_LIGHT_GRAY;
                 opacity: 0.95;
-                min-height: 245px;
+                min-height: 202px;
                 width: calc(100% - 6px);
                 height: calc(100% - 2px);
                 z-index: 3;
@@ -611,35 +584,6 @@
                     font-size: 10px;
                 }
             }
-        }
-    }
-    .calendar {
-        width: 192px;
-
-        .calendar-input, .calendar-footer {
-            font-size: 12px;
-        }
-        .calendar-date-panel, .calendar-month-panel, .calendar-year-panel, .calendar-decade-panel, .calendar-century-panel {
-            display: grid;
-            grid-gap: 2px;
-            padding: 8px 12px;
-            height: 226px;
-
-            .calendar-date, .calendar-month, .calendar-year, .calendar-decade {
-                font-size: 10px;
-
-                &.calendar-date {
-                    width: 20px;
-                }
-                &-header {
-                    width: 20px;
-                }
-            }
-        }
-    }
-    div.datepicker-container {
-        .datepicker-display, .datepicker-native-overlay {
-            font-size: 12px;
         }
     }
     .time-picker #time-picker-input.time-picker-input {
