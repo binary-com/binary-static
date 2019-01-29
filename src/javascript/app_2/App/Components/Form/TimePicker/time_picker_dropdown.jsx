@@ -8,56 +8,19 @@ class TimePickerDropdown extends React.PureComponent {
         super(props);
         this.hours    = [...Array(24).keys()].map((a)=>`0${a}`.slice(-2));
         this.minutes  = [...Array(12).keys()].map((a)=>`0${a * 5}`.slice(-2));
-        this.state    = {
-            is_hour_selected  : false,
-            is_minute_selected: false,
-            last_updated_type : null,
-        };
-    }
-
-    componentDidUpdate(prevProps, prevState) {
-        const { is_hour_selected, is_minute_selected } = this.state;
-        if (is_hour_selected && is_minute_selected) {
-            this.resetValues();
-            this.props.toggle();
-        }
-        if (!prevProps.className && this.props.className === 'active') {
-            this.resetValues();
-        }
-        if (prevState.last_updated_type !== this.state.last_updated_type && this.state.last_updated_type) {
-            this.setState({ last_updated_type: null });
-        }
-    }
-
-    resetValues() {
-        this.setState({
-            is_hour_selected  : false,
-            is_minute_selected: false,
-        });
     }
 
     selectOption = (type, value, is_enabled = true) => {
         if (is_enabled && this.props.value) {
             const [ prev_hour, prev_minute ] = this.props.value.split(':');
             if ((type === 'h' && value !== prev_hour) || (type === 'm' && value !== prev_minute)) {
-                const is_type_selected = type === 'h' ? 'is_hour_selected' : 'is_minute_selected';
-                this.setState({
-                    last_updated_type : type,
-                    [is_type_selected]: true,
-                });
                 this.props.onChange(`${type === 'h' ? value : prev_hour}:${type === 'm' ? value : prev_minute}`);
             }
         }
     };
 
-    clear = (event) => {
-        event.stopPropagation();
-        this.resetValues();
-        this.props.onChange('');
-    };
-
     render() {
-        const { preClass, value, toggle, start_time, end_time } = this.props;
+        const { preClass, value, start_time, end_time } = this.props;
         const start_time_moment     = start_time ? toMoment(start_time) : toMoment();
         const end_time_moment       = end_time ? toMoment(end_time) : toMoment().hour('23').minute('59').seconds('59').milliseconds('999');
         const to_compare_moment     = toMoment();
@@ -115,13 +78,10 @@ class TimePickerDropdown extends React.PureComponent {
 TimePickerDropdown.propTypes = {
     className   : PropTypes.string,
     end_time    : PropTypes.number,
-    is_clearable: PropTypes.bool,
     onChange    : PropTypes.func,
     preClass    : PropTypes.string,
     start_time  : PropTypes.number,
-    toggle      : PropTypes.func,
     value       : PropTypes.string,
-    value_split : PropTypes.bool,
 };
 
 export default TimePickerDropdown;
