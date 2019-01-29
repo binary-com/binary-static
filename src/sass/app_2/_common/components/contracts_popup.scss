@@ -4,7 +4,9 @@ div.contracts-popup-container {
     background: $COLOR_WHITE;
     border: solid 1px $COLOR_GRAY;
     border-radius: 4px;
-    transition: all 0.2s;
+    transition: transform 0.3s opacity 0.3s;
+    margin-top: 4px;
+    padding: 4px;
 
     &:hover {
         border-color: $COLOR_BLUE;
@@ -84,7 +86,7 @@ div.contracts-popup-container {
         padding: 8px;
         box-sizing: border-box;
         margin-bottom: 1px;
-        transition: all 0.2s;
+        transition: transform 0.3s opacity 0.3s;
 
         &:hover {
             background-color: #f2f3f8; /* stylelint-disable-line color-no-hex */
@@ -103,7 +105,7 @@ div.contracts-popup-container {
         &.selected {
             background-color: $COLOR_BLUE;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-            transition: all 0.3s;
+            transition: transform 0.3s opacity 0.3s;
 
             .contract-title {
                 color: $COLOR_WHITE;
@@ -253,7 +255,6 @@ div.contracts-popup-container {
     div.contracts-popup-container {
         background: $COLOR_BLUE;
         border-color: $COLOR_BRANDBLUE_85;
-        padding: 4px;
 
         &.mobile-only {
             .contracts-popup-display span {

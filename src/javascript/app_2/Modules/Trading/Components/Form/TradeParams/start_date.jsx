@@ -36,16 +36,14 @@ const StartDate = ({
         );
     }
     return (
-        <Fieldset
-            header={localize('Start time')}
-            icon='start-time'
-        >
+        <Fieldset>
             <Dropdown
+                is_alignment_left
+                is_nativepicker={is_nativepicker}
+                list={start_dates_list}
                 name='start_date'
                 value={start_date}
-                list={start_dates_list}
                 onChange={onChange}
-                is_nativepicker={is_nativepicker}
             />
             {(!is_today && start_time) &&
                 <TimePicker
