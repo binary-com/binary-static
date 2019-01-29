@@ -1,6 +1,6 @@
-import React from 'react';
-import { FillBox } from '../../_common/components/elements.jsx';
-import SeparatorLine from '../../_common/components/separator_line.jsx';
+import React             from 'react';
+import { FillBox }       from '../../_common/components/elements.jsx';
+import { SeparatorLine } from '../../_common/components/separator_line.jsx';
 
 const TimelineFirst = () => (
     <div className='gr-1 gr-2-m gr-centered'>
