@@ -7,11 +7,15 @@ import RangeSlider                      from 'App/Components/Form/RangeSlider';
 
 const SimpleDuration = ({
     number_input_props,
-    simple_duration_unit,
-    simple_duration,
     duration_units_list,
     onChange,
     shared_input_props,
+    sim_duration_unit,
+    onChangeDurationU,
+    duration_t,
+    duration_m,
+    duration_d,
+    duration_unit,
 }) => {
     const filterMinutesAndTicks = (arr) => {
         const filtered_arr = arr.filter(du => du.value === 't' || du.value === 'm');
@@ -19,31 +23,69 @@ const SimpleDuration = ({
 
         return filtered_arr;
     };
-    const has_label = duration_units_list.length < 4 && !duration_units_list.some(du => du.value === 't');
+    const has_label = !duration_units_list.some(du => du.value === 't');
 
+    const get_duration_value = du => {
+        const duration_obj = {
+            t: duration_t,
+            m: duration_m,
+            d: duration_d,
+        };
+        return duration_obj[du];
+    };
+
+    const changeDurationUnit = ({ target }) => {
+        const { name, value } = target;
+        const duration_value  = get_duration_value(value);
+        
+        onChangeDurationU({ name, value });
+        onChange({ target: { name: 'duration_unit', value } });
+        onChange({ target: { name: 'duration', value: duration_value } });
+    };
+
+    const changeDurationValue = ({ target }) => {
+        const { name, value } = target;
+        const duration_name   = `duration_${sim_duration_unit}`;
+
+        onChangeDurationU({ name: duration_name, value });
+        onChange({ target: { name, value } });
+    };
+    
     return (
         <Fragment>
             <ButtonToggleMenu
                 buttons_arr={filterMinutesAndTicks(duration_units_list)}
-                name='simple_duration_unit'
-                onChange={onChange}
-                value={simple_duration_unit}
+                name='sim_duration_unit'
+                onChange={changeDurationUnit}
+                value={sim_duration_unit}
             />
-            { simple_duration_unit === 't' &&
+            { sim_duration_unit === 't' &&
                 <RangeSlider
-                    name='simple_duration'
-                    value={simple_duration}
+                    name='duration'
+                    value={duration_t}
                     ticks={10}
                     {...shared_input_props}
+                    onChange={changeDurationValue}
                 />
             }
-            { simple_duration_unit !== 't' &&
+            { sim_duration_unit === 'm' &&
                 <InputField
-                    name='simple_duration'
+                    name='duration'
                     label={has_label ? duration_units_list[0].text : null}
-                    value={simple_duration}
+                    value={duration_m}
                     {...number_input_props}
                     {...shared_input_props}
+                    onChange={changeDurationValue}
+                />
+            }
+            { sim_duration_unit === 'd' &&
+                <InputField
+                    name='duration'
+                    label={duration_units_list[0].text}
+                    value={duration_d}
+                    {...number_input_props}
+                    {...shared_input_props}
+                    onChange={changeDurationValue}
                 />
             }
         </Fragment>
@@ -56,6 +98,7 @@ SimpleDuration.propTypes = {
     number_input_props : PropTypes.object,
     onChange           : PropTypes.func,
     shared_input_props : PropTypes.object,
+    sim_duration_unit  : PropTypes.string,
     simple_duration    : PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,

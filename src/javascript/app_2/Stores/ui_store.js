@@ -35,8 +35,21 @@ export default class UIStore extends BaseStore {
 
     @observable toast_messages = [];
 
+    // Duration config ---- updated based from component
+    // Duration --> updated from these
+    @observable du_is_advanced         = false;
+    @observable adv_duration_unit = 't';
+    @observable advanced_expiry_type   = 'duration';
+    @observable sim_duration_unit      = 't';
+    @observable duration_t         = 5;
+    @observable duration_s       = 15;
+    @observable duration_m       = 3;
+    @observable duration_h         = 1;
+    @observable duration_d         = 1;
+
     constructor() {
         const local_storage_properties = [
+            'du_is_advanced',
             'is_chart_asset_info_visible',
             'is_chart_countdown_visible',
             'is_chart_layout_default',
@@ -49,6 +62,15 @@ export default class UIStore extends BaseStore {
         super({ local_storage_properties });
         window.addEventListener('resize', this.handleResize);
         autorun(() => document.body.classList[this.is_dark_mode_on ? 'add' : 'remove']('dark'));
+    }
+
+    @action.bound
+    onChangeDurationU({ name, value }) {
+        console.log(name, value);
+        
+        // TODO: add duration check
+        // TODO: add to local_storage
+        this[name] = value;
     }
 
     @action.bound

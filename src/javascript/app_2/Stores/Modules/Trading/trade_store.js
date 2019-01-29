@@ -65,9 +65,10 @@ export default class TradeStore extends BaseStore {
     @observable expiry_date          = '';
     @observable expiry_time          = '09:40';
     @observable expiry_type          = 'duration';
-    @observable is_advanced_duration = false;
 
     // Advanced / simple duration
+    // duration_ticks, duration_seconds, duration_minutes, duration_hours, duration_days
+    @observable is_advanced_duration   = false;
     @observable advanced_duration      = 5;
     @observable advanced_duration_unit = 't';
     @observable advanced_expiry_type   = 'duration';

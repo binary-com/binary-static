@@ -16,6 +16,7 @@ import {
     toMoment }                          from 'Utils/Date';
 
 const AdvancedDuration = ({
+    adv_duration_unit,
     advanced_duration,
     advanced_duration_unit,
     advanced_expiry_type,
@@ -76,6 +77,7 @@ const AdvancedDuration = ({
     const endtime_container_class = classNames('endtime-container', {
         'has-time': is_24_hours_contract,
     });
+
     return (
         <Fragment>
             <ButtonToggleMenu
@@ -94,7 +96,7 @@ const AdvancedDuration = ({
                                 list={duration_units_list}
                                 name='advanced_duration_unit'
                                 onChange={onChange}
-                                value={advanced_duration_unit}
+                                value={adv_duration_unit}
                             />
                         }
                         { advanced_duration_unit === 't' &&
@@ -156,6 +158,7 @@ const AdvancedDuration = ({
 };
 
 AdvancedDuration.propTypes = {
+    adu              : PropTypes.number,
     advanced_duration: PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
