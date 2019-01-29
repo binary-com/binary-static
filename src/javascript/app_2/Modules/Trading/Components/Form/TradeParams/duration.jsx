@@ -129,10 +129,7 @@ const Duration = ({
     };
 
     return (
-        <Fieldset
-            header={localize('Trade Duration')}
-            icon='trade-duration'
-        >
+        <Fieldset>
             <ToggleButtonGroup
                 value={expiry_type}
                 onChange={handleExpiryTypeChange}
@@ -148,15 +145,17 @@ const Duration = ({
                     )
                 }
             </ToggleButtonGroup>
+
             {expiry_type === 'duration' ?
                 <React.Fragment>
                     <div className='duration-container'>
                         <Dropdown
-                            list={duration_units_list}
-                            value={duration_unit}
-                            name='duration_unit'
-                            onChange={onChange}
+                            is_alignment_left
                             is_nativepicker={is_nativepicker}
+                            list={duration_units_list}
+                            name='duration_unit'
+                            value={duration_unit}
+                            onChange={onChange}
                         />
                         {
                             duration_unit === 't' ?

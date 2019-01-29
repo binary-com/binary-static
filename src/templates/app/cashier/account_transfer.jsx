@@ -60,14 +60,10 @@ const AccountTransfer = () => (
             <SubmitButton msg_id='form_error' type='submit' text={it.L('Transfer')} />
         </form>
 
-        <div className='hint invisible' id='transfer_info'>
-            <p>{it.L('Note: Transfer between accounts is not available on weekends.')}</p>
-        </div>
-
         <div className='hint invisible' id='transfer_fee'>
             {it.L('Notes:')}
             <ul className='bullet'>
-                <li>{it.L('Transfer between accounts is not available on weekends')}</li>
+                <li>{it.L('There may be times when transfers are not available because the market is closed (weekends or holidays), there is high volatility in the market or because of technical issues.')}</li>
                 <li>{it.L('You may only transfer funds between a fiat account and a cryptocurrency account')}</li>
                 <li>{it.L('Each transfer is subject to a [_1] transfer fee or a minimum fee of [_2], whichever is higher.', '<span id="transfer_fee_amount"></span>', '<span id="transfer_fee_minimum"></span>')}</li>
                 <li>{it.L('Authorised payment agents are exempted from paying any transfer fees')}</li>
