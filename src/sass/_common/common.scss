@@ -689,6 +689,10 @@ li strong.margin-right {
     .circle {
         padding: 7px 5px !important;
     }
+    &.full-width {
+        max-width: unset;
+        width: 100%;
+    }
 }
 
 .no-capitalize, .no-capitalize > a {
