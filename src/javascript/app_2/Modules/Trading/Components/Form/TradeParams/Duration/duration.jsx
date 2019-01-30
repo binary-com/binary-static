@@ -212,7 +212,6 @@ const Duration = ({
     );
 };
 
-// ToDo: Refactor Duration.jsx and date_picker.jsx
 Duration.propTypes = {
     advanced_duration_unit: PropTypes.string,
     advanced_expiry_type  : PropTypes.string,

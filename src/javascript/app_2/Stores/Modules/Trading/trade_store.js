@@ -58,13 +58,13 @@ export default class TradeStore extends BaseStore {
     @observable basis_list      = [];
 
     // Duration
-    @observable duration             = 5;
-    @observable duration_unit        = '';
-    @observable duration_units_list  = [];
-    @observable duration_min_max     = {};
-    @observable expiry_date          = '';
-    @observable expiry_time          = '09:40';
-    @observable expiry_type          = 'duration';
+    @observable duration            = 5;
+    @observable duration_unit       = '';
+    @observable duration_units_list = [];
+    @observable duration_min_max    = {};
+    @observable expiry_date         = '';
+    @observable expiry_time         = '';
+    @observable expiry_type         = 'duration';
 
     // Barrier
     @observable barrier_1     = '';
@@ -410,7 +410,7 @@ export default class TradeStore extends BaseStore {
 
         // update state values from query string
         const config = {};
-        [...query_params].forEach((param) => config[param[0]] = param[1] === 'true' ? true : param[1]);
+        [...query_params].forEach(param => config[param[0]] = param[1]);
         return config;
     }
 
