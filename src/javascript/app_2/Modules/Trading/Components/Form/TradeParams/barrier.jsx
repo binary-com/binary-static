@@ -13,7 +13,7 @@ const Barrier = ({
     onChange,
     validation_errors,
 }) =>  {
-    const barrier_title = barrier_count === 2 ? localize('Barriers') : localize('Barrier');
+    const barrier_title = barrier_count === 1 ? localize('Barrier') : localize('Barriers');
 
     if (is_minimized) {
         if (barrier_count !== 2) {
@@ -38,7 +38,10 @@ const Barrier = ({
         );
     }
     return (
-        <Fieldset className='barriers' header={barrier_title}>
+        <Fieldset
+            className='barriers'
+            header={barrier_title}
+        >
             <InputField
                 type='number'
                 name='barrier_1'
