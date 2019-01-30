@@ -42,7 +42,7 @@
             }
             p.acc-balance-amount {
                 line-height: 100%;
-                color: $COLOR_LIGHT_BLACK;
+                color: $COLOR_GREEN;
                 font-size: 1rem;
                 padding: 0 16px 0 8px;
                 font-weight: 500;
@@ -355,8 +355,7 @@
                     }
                 }
                 .acc-balance-amount {
-                    border-color: $COLOR_BRANDBLUE_85;
-                    color: $COLOR_WHITE;
+                    color: $COLOR_GREEN;
 
                     .symbols {
                         background: $COLOR_BLUE;

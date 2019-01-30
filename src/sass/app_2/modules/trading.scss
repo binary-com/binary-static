@@ -532,7 +532,10 @@
                     border-top-left-radius: 0;
                     border-top-right-radius: 0;
                     margin-bottom: 0 !important;
-                    margin-top: -8px;
+
+                    .purchase-info-wrapper {
+                        margin-top: -4px;
+                    }
                 }
             }
             div.block-ui {

@@ -132,7 +132,6 @@ div.contracts-popup-container {
         pointer-events: none;
         position: absolute;
         transition: transform 0.25s ease, opacity 0.25s;
-        transform: translateX(50%);
         user-select: none;
         opacity: 0;
         height: 0;
@@ -204,7 +203,7 @@ div.contracts-popup-container {
             }
         }
         &-enter, &-exit {
-            transform: translateX(50%);
+            transform: translateX(20%);
             pointer-events: none;
             opacity: 0;
             height: 0;

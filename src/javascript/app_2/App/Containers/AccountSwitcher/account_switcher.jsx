@@ -20,6 +20,11 @@ class AccountSwitcher extends React.Component {
         }
     };
 
+    handleLogout = () => {
+        this.props.toggle();
+        requestLogout();
+    }
+
     componentDidMount() {
         document.addEventListener('mousedown', this.handleClickOutside);
     }
@@ -98,7 +103,7 @@ class AccountSwitcher extends React.Component {
                         <UpgradeButton onClick={this.props.onClickUpgrade} />
                     </div>
                 }
-                <div className='acc-logout' onClick={requestLogout}>
+                <div className='acc-logout' onClick={this.handleLogout}>
                     <span className='acc-logout__text'>{localize('Log out')}</span>
                     <IconLogout className='drawer-icon' />
                 </div>
