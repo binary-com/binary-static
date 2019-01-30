@@ -28,7 +28,7 @@ const AccountInfo = ({
                     })}
                     onClick={toggleDialog}
                 >
-                    <p className='acc-balance-id'>{loginid}</p>
+                    <p className='acc-balance-id' title={loginid}>{loginid}</p>
                     {typeof balance !== 'undefined' &&
                     <p className='acc-balance-amount'>
                         <span className={`symbols ${(currency || '').toLowerCase()}`} />

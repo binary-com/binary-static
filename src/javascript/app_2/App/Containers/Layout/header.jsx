@@ -1,17 +1,16 @@
-import PropTypes                from 'prop-types';
-import React                    from 'react';
-import { withRouter }           from 'react-router';
-import { formatMoney }          from '_common/base/currency_base';
+import PropTypes       from 'prop-types';
+import React           from 'react';
+import { withRouter }  from 'react-router';
+import { formatMoney } from '_common/base/currency_base';
 import {
     AccountInfo,
     DepositButton,
     LoginButton,
     InstallPWAButton,
     MenuLinks,
-    ToggleMenuDrawer,
-    ToggleNotificationsDrawer } from 'App/Components/Layout/Header';
-import header_links             from 'App/Constants/header_links';
-import { connect }              from 'Stores/connect';
+    ToggleMenuDrawer } from 'App/Components/Layout/Header';
+import header_links    from 'App/Constants/header_links';
+import { connect }     from 'Stores/connect';
 
 const Header = ({
     account_type,
@@ -75,7 +74,6 @@ const Header = ({
                         }
                     </div>
                 </div>
-                <ToggleNotificationsDrawer />
             </div>
         </header>
     );

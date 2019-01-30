@@ -22,48 +22,31 @@
             justify-content: center;
             cursor: pointer;
 
-            &:hover:not(.show) {
-                background: $COLOR_BRANDBLUE_5;
-            }
-            &--show {
-                .select-arrow {
-                    transform: rotate(0deg);
-                }
-                p.acc-balance-id {
-                    font-weight: 500;
-                }
-            }
-            &--is-virtual {
-                p.acc-balance-id, p.acc-balance-amount {
-                    color: $COLOR_LIGHT_ORANGE;
-                }
-                &:before {
-                    display: block;
-                    content: 'demo';
-                    font-size: 0.875rem; //stylelint-disable-line number-max-precision
-                    border: 2px solid $COLOR_LIGHT_ORANGE;
-                    color: $COLOR_LIGHT_ORANGE;
-                    padding: 4px;
-                    border-radius: 16px;
-                }
-            }
             p.acc-balance-id {
                 pointer-events: none;
                 line-height: 0.5;
                 color: $COLOR_LIGHT_BLACK;
                 font-size: 1rem;
-                margin: 0.5em 1rem;
+                padding: 0 8px 0 16px;
                 font-weight: 300;
                 text-align: center;
-                padding-right: 16px;
+
+                &:after {
+                    display: block;
+                    content: attr(title);
+                    font-weight: 500;
+                    height: 0;
+                    overflow: hidden;
+                    visibility: hidden;
+                }
             }
             p.acc-balance-amount {
                 line-height: 100%;
                 color: $COLOR_LIGHT_BLACK;
                 font-size: 1rem;
-                padding: 8px 1rem;
+                padding: 0 16px 0 8px;
                 font-weight: 500;
-                margin: 0 12px 0 0;
+                margin: 0 16px 0 0;
                 text-align: center;
                 pointer-events: none;
             }
@@ -79,13 +62,39 @@
                 color: $COLOR_GRAY;
                 font-size: 1.1rem;
             }
+            &:hover:not(.show) {
+                background: $COLOR_BRANDBLUE_5;
+            }
+            &--is-virtual {
+                p.acc-balance-id, p.acc-balance-amount {
+                    color: $COLOR_ORANGE;
+                }
+                &:before {
+                    display: flex;
+                    position: absolute;
+                    content: 'demo';
+                    font-size: 0.875rem; //stylelint-disable-line number-max-precision
+                    border: 2px solid $COLOR_ORANGE;
+                    color: $COLOR_ORANGE;
+                    padding: 4px;
+                    border-radius: 16px;
+                    align-items: center;
+                    left: -3.5rem;
+                }
+            }
+            &--show {
+                .select-arrow {
+                    transform: rotate(0deg);
+                }
+                p.acc-balance-id {
+                    font-weight: 500;
+                }
+            }
         }
     }
     button.btn {
-        margin: 0 16px 0 4px;
-        @media (max-width: 768px) {
-            margin: 0 8px 0 4px;
-        }
+        margin: 8px 16px;
+        height: 32px;
     }
 }
 
@@ -250,7 +259,7 @@
                 }
                 &--is-virtual {
                     .acc-balance-amount, .symbols {
-                        color: $COLOR_LIGHT_ORANGE;
+                        color: $COLOR_ORANGE;
                     }
                 }
             }
