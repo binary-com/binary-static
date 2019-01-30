@@ -52,8 +52,11 @@ const SimpleDuration = ({
 };
 
 SimpleDuration.propTypes = {
-    changeDurationUnit  : PropTypes.func,
-    duration_t          : PropTypes.number,
+    changeDurationUnit: PropTypes.func,
+    duration_t        : PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
+    ]),
     duration_units_list : MobxPropTypes.arrayOrObservableArray,
     getDurationValue    : PropTypes.func,
     number_input_props  : PropTypes.object,

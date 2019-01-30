@@ -1,16 +1,14 @@
-import {
-    PropTypes as MobxPropTypes,
-    observer }                  from 'mobx-react';
-import PropTypes                from 'prop-types';
-import React, { Fragment }      from 'react';
-import { localize }             from '_common/localize';
-import Fieldset                 from 'App/Components/Form/fieldset.jsx';
-import RangeSlider              from 'App/Components/Form/RangeSlider';
-import { convertDurationLimit } from 'Stores/Modules/Trading/Helpers/duration';
-import { toMoment }             from 'Utils/Date';
-import DurationToggle           from './duration_toggle.jsx';
-import AdvancedDuration         from './advanced_duration.jsx';
-import SimpleDuration           from './simple_duration.jsx';
+import { PropTypes as MobxPropTypes } from 'mobx-react';
+import PropTypes                      from 'prop-types';
+import React, { Fragment }            from 'react';
+import { localize }                   from '_common/localize';
+import Fieldset                       from 'App/Components/Form/fieldset.jsx';
+import RangeSlider                    from 'App/Components/Form/RangeSlider';
+import { convertDurationLimit }       from 'Stores/Modules/Trading/Helpers/duration';
+import { toMoment }                   from 'Utils/Date';
+import DurationToggle                 from './duration_toggle.jsx';
+import AdvancedDuration               from './advanced_duration.jsx';
+import SimpleDuration                 from './simple_duration.jsx';
 
 const expiry_list = [
     { text: localize('Duration'), value: 'duration' },
@@ -19,6 +17,7 @@ const expiry_list = [
 const Duration = ({
     advanced_duration_unit,
     advanced_expiry_type,
+    c_has_duration_unit,
     contract_expiry_type,
     duration,
     duration_unit,
@@ -27,6 +26,7 @@ const Duration = ({
     expiry_date,
     expiry_time,
     expiry_type,
+    getDurationValue,
     onChange,
     onChangeUiStore,
     is_advanced_duration,
@@ -40,10 +40,6 @@ const Duration = ({
     market_close_times,
     simple_duration_unit,
     duration_t,
-    duration_s,
-    duration_m,
-    duration_h,
-    duration_d,
 }) => {
     const has_end_time = expiry_list.find(expiry => expiry.value === 'endtime');
     if (duration_units_list.length === 1 && duration_unit === 't') {
@@ -69,17 +65,6 @@ const Duration = ({
         );
     }
 
-    const getDurationValue = selected_duration => {
-        const duration_obj = {
-            t: duration_t,
-            s: duration_s,
-            m: duration_m,
-            h: duration_h,
-            d: duration_d,
-        };
-        return duration_obj[selected_duration];
-    };
-
     const changeDurationUnit = ({ target }) => {
         const { name, value } = target;
         const duration_value  = getDurationValue(value);
@@ -97,29 +82,19 @@ const Duration = ({
         onChange({ target: { name, value } });
     };
 
-    const contract_has_duration_unit = (duration_type) => duration_units_list.some(du => du.value === duration_type);
-
     const onToggleDurationType = ({ target }) => {
         const { name, value } = target;
         onChangeUiStore({ name, value });
 
         // replace selected duration unit and duration if it's missing in the contract
         let duration_type = is_advanced_duration ? advanced_duration_unit : simple_duration_unit;
-        if (contract_has_duration_unit(duration_type)) {
+        if (c_has_duration_unit(duration_type)) {
             duration_type = duration_units_list[0].value;
             onChangeUiStore({ name: `${value ? 'advanced' : 'simple'}_duration_unit`, value: duration_type });
         }
 
         const duration_value  = getDurationValue(duration_type);
         onChange({ target: { name: 'duration_unit', value: duration_type } });
-        onChange({ target: { name: 'duration', value: duration_value } });
-    };
-
-    const setDurationUnit = () => {
-        const current_duration_unit = duration_units_list[0].value;
-        const duration_value  = getDurationValue(current_duration_unit);
-        onChangeUiStore({ name: `${is_advanced_duration ? 'advanced' : 'simple'}_duration_unit`, value: current_duration_unit });
-        onChange({ target: { name: 'duration_unit', value: current_duration_unit } });
         onChange({ target: { name: 'duration', value: duration_value } });
     };
 
@@ -144,15 +119,9 @@ const Duration = ({
     };
     // e.g. digit contracts only has range slider - does not have toggle between advanced / simple
     const has_toggle = expiry_list.length > 1 || duration_units_list.length > 1;
-    const simple_is_missing_duration_unit   = simple_duration_unit === 'd' && duration_units_list.length === 4;
 
     return (
         <Fieldset>
-            {
-                (!contract_has_duration_unit(is_advanced_duration ? advanced_duration_unit : simple_duration_unit)
-                    || simple_is_missing_duration_unit) &&
-                    setDurationUnit()
-            }
             { !has_toggle &&
                 <RangeSlider
                     name='duration'
@@ -213,17 +182,17 @@ const Duration = ({
 Duration.propTypes = {
     advanced_duration_unit: PropTypes.string,
     advanced_expiry_type  : PropTypes.string,
+    c_has_duration_unit   : PropTypes.func,
     contract_expiry_type  : PropTypes.string,
     duration              : PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
     ]),
-    duration_d         : PropTypes.number,
-    duration_h         : PropTypes.number,
-    duration_m         : PropTypes.number,
-    duration_min_max   : PropTypes.object,
-    duration_s         : PropTypes.number,
-    duration_t         : PropTypes.number,
+    duration_min_max: PropTypes.object,
+    duration_t      : PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
+    ]),
     duration_unit      : PropTypes.string,
     duration_units_list: MobxPropTypes.arrayOrObservableArray,
     expiry_date        : PropTypes.oneOfType([
@@ -232,6 +201,7 @@ Duration.propTypes = {
     ]),
     expiry_time         : PropTypes.string,
     expiry_type         : PropTypes.string,
+    getDurationValue    : PropTypes.func,
     is_advanced_duration: PropTypes.bool,
     is_minimized        : PropTypes.bool,
     is_nativepicker     : PropTypes.bool,
@@ -249,4 +219,4 @@ Duration.propTypes = {
     validation_errors: PropTypes.object,
 };
 
-export default observer(Duration);
+export default Duration;
