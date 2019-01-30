@@ -82,22 +82,16 @@ const getMinWithdrawal = currency => (isCryptocurrency(currency) ? (getPropertyV
  * Returns the transfer limits for the account.
  * @param currency
  * @param which
- * @returns numeric - all -> {min: numeric, ?max: numeric}
+ * @returns numeric
  */
 const getTransferLimits = (currency, which) => {
     const transfer_limits = getPropertyValue(currencies_config, [currency, 'transfer_between_accounts', 'limits']) || getMinWithdrawal(currency);
-    const decimals     = getDecimalPlaces(currency);
-    if (!(transfer_limits instanceof Object)) {
-        return transfer_limits;
-    }
-
+    const decimals        = getDecimalPlaces(currency);
     switch (which) {
         case 'max':
             return transfer_limits.max ? transfer_limits.max.toFixed(decimals) : undefined;
-        case 'all':
-            return transfer_limits;
         default:
-            return transfer_limits.min ? transfer_limits.min.toFixed(decimals) : undefined;
+            return transfer_limits.min ? transfer_limits.min.toFixed(decimals) : transfer_limits;
     }
 };
 
