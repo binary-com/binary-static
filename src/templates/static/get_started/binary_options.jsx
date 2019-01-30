@@ -133,23 +133,23 @@ const BinaryOptions = () => {
                         <p>{it.L('Enjoy an award-winning, intuitive online trading experience.')}</p>
                         <strong>{it.L('Award-winning online trading platform')}</strong>
                         <ul className='bullet'>
-                            <ListStrong header={it.L('Simple and intuitive')} text={it.L('Enjoy a trading platform that\'s easy to navigate and use')} />
-                            <ListStrong header={it.L('Instant access')}       text={it.L('Open an account and start trading in minutes')} />
-                            <ListStrong header={it.L('Available 24/7')}       text={it.L('Trade when you want. Our Volatility Indices are available even on weekends')} />
-                            <ListStrong header={it.L('Patented technology')}  text={it.L('Trade with the industry pioneer and holder of a patented pricing technology')} />
+                            <ListStrong header={it.L('Simple and intuitive')} text={it.L('Enjoy a trading platform that\'s easy to navigate and use.')} />
+                            <ListStrong header={it.L('Instant access')}       text={it.L('Open an account and start trading in minutes.')} />
+                            <ListStrong header={it.L('Available 24/7')}       text={it.L('Trade when you want. Our Volatility Indices are available even on weekends.')} />
+                            <ListStrong header={it.L('Patented technology')}  text={it.L('Trade with the industry pioneer and holder of a patented pricing technology.')} />
                             <ListStrong header={it.L('Security and privacy')} text={it.L('Trade confidently, knowing that your personal data and transactions are always secure and your funds are kept separate from company assets.')} />
                         </ul>
                         <strong>{it.L('All conditions and durations')}</strong>
                         <ul className='bullet'>
-                            <ListStrong header={it.L('A wide range of markets and conditions')}   text={it.L('Trade currencies, indices, commodities and more in rising, falling, sideways, quiet, and volatile markets')} />
+                            <ListStrong header={it.L('A wide range of markets and conditions')}   text={it.L('Trade currencies, indices, commodities and more in rising, falling, sideways, quiet, and volatile markets.')} />
                             <ListStrong header={it.L('Short to long-term durations')} text={it.L('Choose durations from a few seconds to 365 days.')} />
                         </ul>
                         <strong>{it.L('Competitive and transparent pricing')}</strong>
                         <ul className='bullet'>
-                            <ListStrong header={it.L('Sharp, benchmarked prices')}             text={it.L('Receive prices that are benchmarked against interbank rates')} />
-                            <ListStrong header={it.L('Transparent risk and potential reward')} text={it.L('Know how much you will win or lose before you purchase the contract')} />
+                            <ListStrong header={it.L('Sharp, benchmarked prices')}             text={it.L('Receive prices that are benchmarked against interbank rates.')} />
+                            <ListStrong header={it.L('Transparent risk and potential reward')} text={it.L('Know how much you will win or lose before you purchase the contract.')} />
                             <ListStrong header={it.L('Protect your profits')}                  text={it.L('In most cases, you can sell your contract before expiry to keep any profit or minimise your loss.')} />
-                            <ListStrong header={it.L('Two-way pricing')}                       text={it.L('Receive quotes for a trade and countertrade, so you always get unbiased, transparent rates')} />
+                            <ListStrong header={it.L('Two-way pricing')}                       text={it.L('Receive quotes for a trade and countertrade, so you always get unbiased, transparent rates.')} />
                         </ul>
                         <strong>{it.L('Intuitive online trading experience')}</strong>
                         <ul className='bullet'>
@@ -224,8 +224,8 @@ const BinaryOptions = () => {
                     <Section id='types-of-trades' header={it.L('Types of trades')}>
                         <p>{it.L('[_1] offers the following trade types, which can help you execute your market view or strategy:', it.website_name)}</p>
                         <SectionLarge dataAnchor='up-down' header={it.L('Up/Down')} image='types-of-trades/up_down' text={it.L('There are two types of Up/Down trades:')}>
-                            <ListStrong header={it.L('Rise/Fall')}    text={it.L('Predict that the market will rise or fall from its current level')} />
-                            <ListStrong header={it.L('Higher/Lower')} text={it.L('Predict that the market will end higher or lower than a price target')} />
+                            <ListStrong header={it.L('Rise/Fall')}    text={it.L('Predict that the market will rise or fall from its current level.')} />
+                            <ListStrong header={it.L('Higher/Lower')} text={it.L('Predict that the market will end higher or lower than a price target.')} />
                         </SectionLarge>
 
                         <SectionLarge dataAnchor='touch-no-touch' header={it.L('Touch/No touch')} image='types-of-trades/touch_notouch' text={it.L('Predict that the market will touch or not touch a target any time during the contract period.')} />
@@ -264,10 +264,10 @@ const BinaryOptions = () => {
                         <p>{it.L('Trade popular major and minor currency pairs, plus Smart FX indices – weighted indices that measure the value of a currency against a basket of major currencies.')}</p>
                         <p>{it.L('There are four types of Smart FX indices that you can trade:')}</p>
                         <ul className='bullet'>
-                            <li>{it.L('AUD Index – Measures the value of the Australian dollar against a basket of five global currencies (USD, EUR, GBP, JPY, CAD), each weighted by 20%')}</li>
-                            <li>{it.L('EUR Index – Measures the value of the euro against a basket of five global currencies (USD, AUD, GBP, JPY, CAD), each weighted by 20%')}</li>
-                            <li>{it.L('GBP Index – Measures the value of the British pound against a basket of five global currencies (USD, EUR, AUD, JPY, CAD), each weighted by 20%')}</li>
-                            <li>{it.L('USD Index – Measures the value of the US dollar against a basket of five global currencies (EUR, GBP, JPY, CAD, AUD), each weighted by 20%')}</li>
+                            <li>{it.L('AUD Index – Measures the value of the Australian dollar against a basket of five global currencies (USD, EUR, GBP, JPY, CAD), each weighted by 20%.')}</li>
+                            <li>{it.L('EUR Index – Measures the value of the euro against a basket of five global currencies (USD, AUD, GBP, JPY, CAD), each weighted by 20%.')}</li>
+                            <li>{it.L('GBP Index – Measures the value of the British pound against a basket of five global currencies (USD, EUR, AUD, JPY, CAD), each weighted by 20%.')}</li>
+                            <li>{it.L('USD Index – Measures the value of the US dollar against a basket of five global currencies (EUR, GBP, JPY, CAD, AUD), each weighted by 20%.')}</li>
                         </ul>
 
                         <HeaderSecondary header={it.L('Indices')} data-anchor='indices' />
@@ -282,8 +282,8 @@ const BinaryOptions = () => {
                         <p>{it.L('You can trade Volatility Indices on all three main trade types: Up/Down, Touch/No Touch, and In/Out. That\'s not all – Volatility Indices also give you exclusive access to two additional trade types: Asians and Digits.')}</p>
                         <p>{it.L('Volatility Indices are further categorised into two classes:')}</p>
                         <ul className='bullet'>
-                            <li>{it.L('Continuous Indices – Choose from the Volatility 10 Index, Volatility 25 Index, Volatility 50 Index, Volatility 75 Index, and Volatility 100 Index. These indices correspond to simulated markets with constant volatilities of 10%, 25%, 50%, 75%, and 100% respectively')}</li>
-                            <li>{it.L('Daily Reset Indices – Daily Reset Indices replicate markets with a bullish and bearish trend with a constant volatility. The Bull Market and Bear Market indices start at 00:00 GMT each day, replicating bullish and bearish markets respectively')}</li>
+                            <li>{it.L('Continuous Indices – Choose from the Volatility 10 Index, Volatility 25 Index, Volatility 50 Index, Volatility 75 Index, and Volatility 100 Index. These indices correspond to simulated markets with constant volatilities of 10%, 25%, 50%, 75%, and 100% respectively.')}</li>
+                            <li>{it.L('Daily Reset Indices – Daily Reset Indices replicate markets with a bullish and bearish trend with a constant volatility. The Bull Market and Bear Market indices start at 00:00 GMT each day, replicating bullish and bearish markets respectively.')}</li>
                         </ul>
                     </Section>
                     <Section id='glossary' header={it.L('Glossary')}>
