@@ -9,13 +9,13 @@ import {
     ToggleSettings }  from '../../Components/Layout/Footer';
 
 const Footer = ({
+    is_language_dialog_visible,
     is_logged_in,
     is_positions_drawer_on,
-    is_language_dialog_visible,
     is_settings_dialog_on,
     network_status,
-    toggleSettingsDialog,
     togglePositionsDrawer,
+    toggleSettingsDialog,
 }) => (
     <React.Fragment>
         <NetworkStatus status={network_status} />
@@ -23,8 +23,8 @@ const Footer = ({
         <div className='footer-links'>
             <ToggleFullScreen />
             <ToggleSettings
-                is_settings_visible={is_settings_dialog_on}
                 is_language_visible={is_language_dialog_visible}
+                is_settings_visible={is_settings_dialog_on}
                 toggleSettings={toggleSettingsDialog}
             />
         </div>
@@ -53,10 +53,10 @@ Footer.propTypes = {
 export default connect(
     ({ client, common, ui }) => ({
         is_logged_in              : client.is_logged_in,
+        network_status            : common.network_status,
         is_language_dialog_visible: ui.is_language_dialog_on,
         is_positions_drawer_on    : ui.is_positions_drawer_on,
         is_settings_dialog_on     : ui.is_settings_dialog_on,
-        network_status            : common.network_status,
         togglePositionsDrawer     : ui.togglePositionsDrawer,
         toggleSettingsDialog      : ui.toggleSettingsDialog,
     })

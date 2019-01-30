@@ -9,7 +9,7 @@ import EmptyPortfolioMessage          from 'Modules/Portfolio/Components/empty_p
 import { connect }                    from 'Stores/connect';
 import PositionsDrawerCard            from './positions_drawer_card.jsx';
 
-class PositionsDrawer extends React.Component {
+class PositionsDrawer extends React.PureComponent {
     componentDidMount()    {
         this.props.onMount();
     }

@@ -15,7 +15,10 @@ const PositionsDrawerCard = ({
     type,
     underlying,
 }) => (
-    <BinaryLink className='positions-drawer-card' to={getContractPath(id)}>
+    <BinaryLink
+        className='positions-drawer-card'
+        to={getContractPath(id)}
+    >
         <React.Fragment>
             <div className='positions-drawer-card__type'>
                 <ContractTypeCell type={type} />
