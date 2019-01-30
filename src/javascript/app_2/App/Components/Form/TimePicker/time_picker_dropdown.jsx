@@ -12,14 +12,13 @@ function selectOption(type, value, props, is_enabled = true) {
 }
 
 function TimePickerDropdown(props) {
-    const hours    = [...Array(24).keys()].map((a)=>`0${a}`.slice(-2));
-    const minutes  = [...Array(12).keys()].map((a)=>`0${a * 5}`.slice(-2));
-
     const { preClass, value, start_time, end_time } = props;
     const start_time_moment     = start_time ? toMoment(start_time) : toMoment();
     const end_time_moment       = end_time ? toMoment(end_time) : toMoment().hour('23').minute('59').seconds('59').milliseconds('999');
     const to_compare_moment     = toMoment();
     const [ hour, minute ]      = value.split(':');
+    const hours    = [...Array(24).keys()].map((a)=>`0${a}`.slice(-2));
+    const minutes  = [...Array(12).keys()].map((a)=>`0${a * 5}`.slice(-2));
     return (
         <div className={`${preClass}-dropdown ${props.className}`}>
             <div className={`${preClass}-selector`}>
