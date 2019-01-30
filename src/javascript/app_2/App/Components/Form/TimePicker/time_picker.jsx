@@ -98,7 +98,6 @@ class TimePicker extends React.PureComponent {
                                     start_time={start_time}
                                     end_time={end_time}
                                     value={value}
-                                    is_clearable={this.props.is_clearable}
                                 />
                             </React.Fragment>
                         )
@@ -118,7 +117,6 @@ TimePicker.propTypes = {
     padding        : PropTypes.string,
     placeholder    : PropTypes.string,
     start_time     : PropTypes.number,
-    end_time       : PropTypes.number,
     value          : PropTypes.string,
 };
 
