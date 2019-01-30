@@ -2,6 +2,7 @@ import classNames     from 'classnames';
 import ProptTypes     from 'prop-types';
 import React          from 'react';
 import { withRouter } from 'react-router';
+import { Scrollbars } from 'tt-react-custom-scrollbars';
 import { connect }    from 'Stores/connect';
 
 const AppContents = ({ children, is_portfolio_drawer_on }) => (
@@ -11,7 +12,10 @@ const AppContents = ({ children, is_portfolio_drawer_on }) => (
             'app-contents--show-portfolio-drawer': is_portfolio_drawer_on,
         })}
     >
-        {children}
+        {/* Calculate height of user screen and offset height of header and footer */}
+        <Scrollbars autoHide style={{ height: 'calc(100vh - 83px)' }}>
+            {children}
+        </Scrollbars>
     </div>
 );
 
