@@ -6,7 +6,6 @@ import InputField                       from 'App/Components/Form/input_field.js
 import RangeSlider                      from 'App/Components/Form/RangeSlider';
 
 const SimpleDuration = ({
-    changeDurationValue,
     changeDurationUnit,
     getDurationValue,
     number_input_props,
@@ -37,7 +36,6 @@ const SimpleDuration = ({
                     value={duration_t}
                     ticks={10}
                     {...shared_input_props}
-                    onChange={changeDurationValue}
                 />
             }
             { simple_duration_unit !== 't' &&
@@ -47,7 +45,6 @@ const SimpleDuration = ({
                     value={getDurationValue(simple_duration_unit)}
                     {...number_input_props}
                     {...shared_input_props}
-                    onChange={changeDurationValue}
                 />
             }
         </Fragment>
@@ -55,13 +52,13 @@ const SimpleDuration = ({
 };
 
 SimpleDuration.propTypes = {
-    duration_units_list: MobxPropTypes.arrayOrObservableArray,
-    number_input_props : PropTypes.object,
-    onChange           : PropTypes.func,
-    shared_input_props : PropTypes.object,
-    simple_duration_unit  : PropTypes.string,
-    advanced_duration_unit: PropTypes.string,
-    onChangeUiStore   : PropTypes.func,
+    changeDurationUnit  : PropTypes.func,
+    duration_t          : PropTypes.number,
+    duration_units_list : MobxPropTypes.arrayOrObservableArray,
+    getDurationValue    : PropTypes.func,
+    number_input_props  : PropTypes.object,
+    shared_input_props  : PropTypes.object,
+    simple_duration_unit: PropTypes.string,
 };
 
 export default SimpleDuration;

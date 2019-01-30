@@ -169,7 +169,7 @@ const AdvancedDuration = ({
 AdvancedDuration.propTypes = {
     advanced_duration_unit: PropTypes.string,
     advanced_expiry_type  : PropTypes.string,
-    changeDurationUnit    : PropTypes.function,
+    changeDurationUnit    : PropTypes.func,
     duration_min_max      : PropTypes.object,
     duration_t            : PropTypes.number,
     duration_units_list   : MobxPropTypes.arrayOrObservableArray,

@@ -69,7 +69,7 @@ const Duration = ({
         );
     }
 
-    const getDurationValue = du => {
+    const getDurationValue = selected_duration => {
         const duration_obj = {
             t: duration_t,
             s: duration_s,
@@ -77,7 +77,7 @@ const Duration = ({
             h: duration_h,
             d: duration_d,
         };
-        return duration_obj[du];
+        return duration_obj[selected_duration];
     };
 
     const changeDurationUnit = ({ target }) => {
