@@ -53,7 +53,7 @@ const TwoFactorAuthentication = () => (
                             <div id='qrcode_loading'><Loading /></div>
                             <ErrorMessage id='generate_error' />
                             <div id='qrcode' />
-                            <p>{it.L('If you are unable to scan the QR code, you can manually enter this code instead:')} <strong><span id='qrcode_key' /></strong></p>
+                            <p>{it.L('If you are unable to scan the QR code, you can manually enter this code instead:')}<br /><strong><span id='qrcode_key' /></strong></p>
                         </div>
                     </div>
                     <div className='step'>
