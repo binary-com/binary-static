@@ -44,9 +44,9 @@ const ResetPassword = (() => {
         const form_id = '#frm_reset_password';
         FormManager.init(form_id, [
             { selector: '#have_real_account',  validations: ['req'], exclude_request: 1 },
+            { selector: '#date_of_birth',      validations: ['req'] },
             { selector: '#new_password',       validations: ['req', 'password'], re_check_field: '#repeat_password' },
             { selector: '#repeat_password',    validations: ['req', ['compare', { to: '#new_password' }]], exclude_request: 1 },
-            { selector: '#date_of_birth',      validations: ['req'] },
             { request_field: 'reset_password', value: 1 },
         ], true);
 
