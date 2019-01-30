@@ -103,10 +103,8 @@
 .acc-switcher {
     &-wrapper {
         position: absolute;
-        opacity: 1;
         background: $COLOR_WHITE;
         border: 1px solid $COLOR_GRAY;
-        transform: translateY(0);
         transition: transform 0.25s ease, opacity 0.25s linear;
         box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.8);
         right: 0;

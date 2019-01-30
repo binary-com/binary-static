@@ -10,11 +10,13 @@ const MenuLinks = ({ items }) => (
         </div>
         {!!items.length &&
         <div className='menu-links'>
-            {items.map((item, idx) => (
-                <BinaryLink key={idx} to={item.link_to}>
-                    <span title={item.text}>{item.icon}{item.text}</span>
-                </BinaryLink>
-            ))}
+            {
+                items.map((item, idx) => (
+                    <BinaryLink key={idx} to={item.link_to}>
+                        <span title={item.text}>{item.icon}{item.text}</span>
+                    </BinaryLink>
+                ))
+            }
         </div>
         }
     </React.Fragment>

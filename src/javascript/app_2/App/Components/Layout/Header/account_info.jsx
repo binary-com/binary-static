@@ -28,12 +28,20 @@ const AccountInfo = ({
                     })}
                     onClick={toggleDialog}
                 >
-                    <p className='acc-balance-id' title={loginid}>{loginid}</p>
-                    {typeof balance !== 'undefined' &&
-                    <p className='acc-balance-amount'>
-                        <span className={`symbols ${(currency || '').toLowerCase()}`} />
-                        {balance}
+                    <p
+                        className='acc-balance-id'
+                        title={loginid}
+                    >
+                        {loginid}
                     </p>
+                    {
+                        typeof balance !== 'undefined' &&
+                        <p className='acc-balance-amount'>
+                            <span
+                                className={classNames('symbols', (currency || '').toLowerCase())}
+                            />
+                            {balance}
+                        </p>
                     }
                     <IconArrow className='select-arrow' />
                 </div>
@@ -42,7 +50,7 @@ const AccountInfo = ({
                     timeout={200}
                     classNames={{
                         enter    : 'acc-switcher-wrapper--enter',
-                        enterDone: 'acc-switcher-wrapper--enter--done',
+                        enterDone: 'acc-switcher-wrapper--enter-done',
                         exit     : 'acc-switcher-wrapper--exit',
                     }}
                     unmountOnExit

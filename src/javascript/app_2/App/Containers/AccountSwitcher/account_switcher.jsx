@@ -43,6 +43,7 @@ class AccountSwitcher extends React.Component {
         if (!this.props.is_logged_in) return false;
         // TODO: Once we allow other real accounts (apart from CR), assign correct title and group accounts into list with correct account title/types
         // e.g - Real, Financial, Gaming, Investment
+
         const main_account_title = localize('Real account');
 
         return (
@@ -63,10 +64,11 @@ class AccountSwitcher extends React.Component {
                                         })}
                                         onClick={this.doSwitch.bind(this, account.loginid)}
                                     >
-                                        <span className={classNames('acc-switcher__id', {
-                                            'acc-switcher__id__icon': account.icon,
-                                        },
-                                        `acc-switcher__id__icon--${account.icon}`)}
+                                        <span
+                                            className={classNames('acc-switcher__id', {
+                                                'acc-switcher__id__icon': account.icon,
+                                            },
+                                            `acc-switcher__id__icon--${account.icon}`)}
                                         >
                                             {account.loginid}
                                         </span>
@@ -77,9 +79,10 @@ class AccountSwitcher extends React.Component {
                     </div>
                 }
                 {
-                    // TODO: Add link to account opening page and update text below for investment account opening
+                    // TODO: Add link to account opening page for upgrade or multi account page for new account
                     !!(this.props.upgrade_info.can_upgrade || this.props.upgrade_info.can_open_multi) &&
                     <div className='acc-switcher__new-account'>
+                        {/* TODO: Update text below for handling upgrade to new account or adding new account */}
                         <span>{localize('Add new account')}</span>
                     </div>
                 }
@@ -93,7 +96,9 @@ class AccountSwitcher extends React.Component {
                         })}
                         onClick={this.doSwitch.bind(this, this.props.virtual_loginid)}
                     >
-                        <span className={classNames('acc-switcher__id', 'virtual')}>{this.props.virtual_loginid}</span>
+                        <span className={classNames('acc-switcher__id', 'virtual')}>
+                            {this.props.virtual_loginid}
+                        </span>
                         <span className='acc-switcher__radio' />
                     </div>
                 </div>
