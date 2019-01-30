@@ -118,6 +118,7 @@ TimePicker.propTypes = {
     padding        : PropTypes.string,
     placeholder    : PropTypes.string,
     start_time     : PropTypes.number,
+    end_time       : PropTypes.number,
     value          : PropTypes.string,
 };
 
