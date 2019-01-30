@@ -35,11 +35,10 @@ export default class UIStore extends BaseStore {
 
     @observable toast_messages = [];
 
-    // Duration config ---- updated based from component
-    @observable du_is_advanced         = false;
-    @observable adv_duration_unit      = 't';
-    @observable adv_expiry_type   = 'duration';
-    @observable sim_duration_unit      = 't';
+    @observable is_advanced_duration   = false;
+    @observable advanced_duration_unit = 't';
+    @observable advanced_expiry_type   = 'duration';
+    @observable simple_duration_unit   = 't';
     @observable duration_t             = 5;
     @observable duration_s             = 15;
     @observable duration_m             = 3;
@@ -48,10 +47,10 @@ export default class UIStore extends BaseStore {
 
     constructor() {
         const local_storage_properties = [
-            'adv_duration_unit',
-            'du_is_advanced',
-            'adv_expiry_type',
-            'sim_duration_unit',
+            'advanced_duration_unit',
+            'is_advanced_duration',
+            'advanced_expiry_type',
+            'simple_duration_unit',
             'duration_t',
             'duration_s',
             'duration_m',
@@ -72,11 +71,10 @@ export default class UIStore extends BaseStore {
     }
 
     @action.bound
-    onChangeDurationU({ name, value }) {
-        console.log(name, value);
-        
-        // TODO: add duration check
-        // TODO: add to local_storage
+    onChangeUiStore({ name, value }) {
+        if (!(name in this)) {
+            throw new Error(`Invalid Argument: ${name}`);
+        }
         this[name] = value;
     }
 

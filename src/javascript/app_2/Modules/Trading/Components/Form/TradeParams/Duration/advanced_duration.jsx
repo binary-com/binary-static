@@ -16,10 +16,12 @@ import {
     toMoment }                          from 'Utils/Date';
 
 const AdvancedDuration = ({
-    adv_duration_unit,
-    adv_expiry_type,
+    advanced_duration_unit,
+    advanced_expiry_type,
     duration_min_max,
     duration_units_list,
+    changeDurationUnit,
+    getDurationValue,
     expiry_date,
     expiry_list,
     expiry_time,
@@ -32,12 +34,8 @@ const AdvancedDuration = ({
     start_date,
     start_time,
     market_close_times,
-    onChangeDurationU,
+    onChangeUiStore,
     duration_t,
-    duration_s,
-    duration_m,
-    duration_d,
-    duration_h,
 }) => {
     const moment_expiry      = toMoment(expiry_date || server_time);
     let is_24_hours_contract = false;
@@ -45,7 +43,7 @@ const AdvancedDuration = ({
     let max_date_duration,
         min_date_expiry;
 
-    if (adv_expiry_type === 'endtime') {
+    if (advanced_expiry_type === 'endtime') {
         const max_daily_duration = duration_min_max.daily ? duration_min_max.daily.max : 365 * 24 * 3600;
         const moment_contract_start_date_time =
             setTime(toMoment(start_date || server_time), (isTimeValid(start_time) ? start_time : server_time.format('HH:mm')));
@@ -82,50 +80,22 @@ const AdvancedDuration = ({
         'has-time': is_24_hours_contract,
     });
 
-    const getDurationValue = du => {
-        const duration_obj = {
-            t: duration_t,
-            s: duration_s,
-            m: duration_m,
-            h: duration_h,
-            d: duration_d,
-        };
-        return duration_obj[du];
-    };
-
-    const changeDurationUnit = ({ target }) => {
-        const { name, value } = target;
-        const duration_value  = getDurationValue(value);
-
-        onChangeDurationU({ name, value });
-        onChange({ target: { name: 'duration_unit', value } });
-        onChange({ target: { name: 'duration', value: duration_value } });
-    };
-
-    const changeDurationValue = ({ target }) => {
-        const { name, value } = target;
-        const duration_name   = `duration_${adv_duration_unit}`;
-
-        onChangeDurationU({ name: duration_name, value });
-        onChange({ target: { name, value } });
-    };
-
     const changeExpiry = ({ target }) => {
         const { name, value } = target;
 
         onChange({ target: { name: 'expiry_type', value } });
-        onChangeDurationU({ name, value });
+        onChangeUiStore({ name, value });
     };
 
     return (
         <Fragment>
             <ButtonToggleMenu
                 buttons_arr={expiry_list.length > 1 ? expiry_list : null}
-                name='adv_expiry_type'
+                name='advanced_expiry_type'
                 onChange={changeExpiry}
-                value={adv_expiry_type}
+                value={advanced_expiry_type}
             />
-            {adv_expiry_type === 'duration' ?
+            {advanced_expiry_type === 'duration' ?
                 <Fragment>
                     <div className='duration-container'>
                         {duration_units_list.length > 1 &&
@@ -133,28 +103,26 @@ const AdvancedDuration = ({
                                 is_alignment_left
                                 is_nativepicker={is_nativepicker}
                                 list={duration_units_list}
-                                name='adv_duration_unit'
+                                name='advanced_duration_unit'
                                 onChange={changeDurationUnit}
-                                value={adv_duration_unit}
+                                value={advanced_duration_unit}
                             />
                         }
-                        { adv_duration_unit === 't' &&
+                        { advanced_duration_unit === 't' &&
                             <RangeSlider
                                 name='duration'
                                 ticks={10}
                                 value={duration_t}
                                 {...shared_input_props}
-                                onChange={changeDurationValue}
                             />
                         }
-                        { adv_duration_unit !== 't' &&
+                        { advanced_duration_unit !== 't' &&
                             <InputField
                                 label={duration_units_list.length === 1 ? duration_units_list[0].text : null}
                                 name='duration'
-                                value={getDurationValue(adv_duration_unit)}
+                                value={getDurationValue(advanced_duration_unit)}
                                 {...number_input_props}
                                 {...shared_input_props}
-                                onChange={changeDurationValue}
                             />
                         }
                     </div>
@@ -199,20 +167,24 @@ const AdvancedDuration = ({
 };
 
 AdvancedDuration.propTypes = {
-    adu                 : PropTypes.number,
-    advanced_expiry_type: PropTypes.string,
-    duration_min_max    : PropTypes.object,
-    duration_units_list : MobxPropTypes.arrayOrObservableArray,
-    expiry_date         : PropTypes.oneOfType([
+    advanced_duration_unit: PropTypes.string,
+    advanced_expiry_type  : PropTypes.string,
+    changeDurationUnit    : PropTypes.function,
+    duration_min_max      : PropTypes.object,
+    duration_t            : PropTypes.number,
+    duration_units_list   : MobxPropTypes.arrayOrObservableArray,
+    expiry_date           : PropTypes.oneOfType([
         PropTypes.string,
         PropTypes.number,
     ]),
     expiry_list       : PropTypes.array,
     expiry_time       : PropTypes.string,
+    getDurationValue  : PropTypes.func,
     is_nativepicker   : PropTypes.bool,
     market_close_times: PropTypes.array,
     number_input_props: PropTypes.object,
     onChange          : PropTypes.func,
+    onChangeUiStore   : PropTypes.func,
     server_time       : PropTypes.object,
     sessions          : MobxPropTypes.arrayOrObservableArray,
     shared_input_props: PropTypes.object,
@@ -221,7 +193,6 @@ AdvancedDuration.propTypes = {
         PropTypes.string,
     ]),
     start_time: PropTypes.string,
-    onChangeDurationU   : PropTypes.func,
 };
 
 export default AdvancedDuration;

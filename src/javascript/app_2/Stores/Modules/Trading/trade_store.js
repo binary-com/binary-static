@@ -143,12 +143,6 @@ export default class TradeStore extends BaseStore {
             },
             { delay: 500 }
         );
-        reaction(
-            () => [ this.contract_type, this.duration_units_list, this.symbol ],
-            () => {
-                this.changeDuration();
-            },
-        );
     }
 
     @action.bound
@@ -476,24 +470,6 @@ export default class TradeStore extends BaseStore {
         } else {
             this.is_allow_equal = false;
         }
-    }
-
-    @action.bound
-    changeDuration() {
-        const new_state = {};
-        this.updateStore(new_state);
-    }
-
-    @action.bound
-    onChangeDuration(e) {
-        console.log('onChangeDuration');
-        
-        const { value, name }  = e.target;
-        const new_state        = {
-            [name]: value,
-        };
-
-        this.processNewValuesAsync(new_state, true);
     }
     
     @action.bound
