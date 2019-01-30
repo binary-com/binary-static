@@ -139,7 +139,7 @@ const DigitTicker = (() => {
 
     // Calculate peek-box left offset.
     const calculateOffset = () => {
-        const left_offset = document.querySelector(`.digit-${current_spot}`).offsetLeft;
+        const left_offset = document.querySelector(`.digit-${current_spot}`) ? document.querySelector(`.digit-${current_spot}`).offsetLeft : 0;
         return left_offset - style_offset_correction;
     };
 
