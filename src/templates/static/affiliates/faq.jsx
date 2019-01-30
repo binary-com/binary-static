@@ -85,7 +85,7 @@ const FAQ = () => (
 
                     <h3>{it.L('Can I offer my referrals an incentive to sign up through my unique affiliate link rather than sign up directly?')}</h3>
                     <ul className='bullet'>
-                        <li>{it.L('If your referrals reside in the EU, no incentives of any kind can be offered to them.')}</li>
+                        <li>{it.L('If your referrals reside in the EU, no incentives can be offered to them.')}</li>
                         <li>{it.L('If your referrals reside outside the EU, certain kinds of incentives may be permitted. You must check with your account manager for approval before offering any incentive(s).')}</li>
                     </ul>
                 </Section>

@@ -49,8 +49,8 @@ const Cfds = () => (
                     <p>{it.L('When you are trading CFDs, you can choose to open a buy position (if you think that the price will rise) or a sell position (if you think that the price will fall).')}</p>
                     <BuySellImage />
                     <p>{it.L('Let\'s use the US 100 index as an example:')}</p>
-                    <p>{it.L('If you decide to buy or \'go long\' on Gold, you will profit if Gold price rises. However, if the price falls below your entry price, you will incur losses which will increase the further the price falls.')}</p>
-                    <p>{it.L('The opposite is true if you decide to sell or \'go short\' on Gold: you will profit if Gold price falls. However, if the price rises above your entry price, you will incur losses which will increase the further the price rises.')}</p>
+                    <p>{it.L('If you decide to buy or \'go long\' on gold, you will profit if gold price rises. However, if the price falls below your entry price, you will incur losses which will increase the further the price falls.')}</p>
+                    <p>{it.L('The opposite is true if you decide to sell or \'go short\' on gold: you will profit if gold price falls. However, if the price rises above your entry price, you will incur losses which will increase the further the price rises.')}</p>
 
                     <HeaderSecondary header={it.L('How to calculate your profits and losses')} />
                     <p>{it.L('Let\'s say a US 100 contract is worth USD 1 per point in the underlying asset. If you decide to \'go long\' on the US 100, and the asset price rises by 10 points, that represents a USD 10 profit for you.')}</p>
