@@ -167,7 +167,7 @@ const Explanation = () => (
                 <h3>{it.L('Entry Spot')}</h3>
                 <p>{it.L('The entry spot is the first tick after the contract is processed by our servers.')}</p>
                 <h3>{it.L('The Average')}</h3>
-                <p>{it.L('The average is the average of the ticks, including the first and the last tick.')}</p>
+                <p>{it.L('The average is the average of the ticks, including the entry spot and the last tick.')}</p>
             </div>
 
             <div id='explain_digits' className='invisible'>
