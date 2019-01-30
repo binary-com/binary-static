@@ -1,28 +1,30 @@
 $header-height: 40px;
 
 // Trade page animation performance fix #perfmatters
-.trade-container + .portfolio-drawer {
+.trade-container + .positions-drawer {
     transition: opacity 0.4s ease;
 }
 
-.portfolio-drawer {
-    width: $PORTFOLIO_DRAWER_WIDTH;
-    height: calc(100vh - #{$HEADER_HEIGHT} - #{$FOOTER_HEIGHT});
+.positions-drawer {
+    width: $POSITIONS_DRAWER_WIDTH;
+    height: calc(100vh - #{$HEADER_HEIGHT} - #{$FOOTER_HEIGHT} - (2 * #{$POSITIONS_DRAWER_MARGIN}));
+    margin-top: $POSITIONS_DRAWER_MARGIN;
     position: fixed;
     z-index: 2;
     top: $HEADER_HEIGHT;
-    right: 0;
+    left: 0;
     border-left: 1px solid $COLOR_GRAY;
-    background-color: $COLOR_WHITE;
+    background-color: $COLOR_GRAY;
     box-sizing: border-box;
     opacity: 0;
     color: $COLOR_BLUE;
-    transform: translateX(100%);
+    transform: translateX(-100%);
     will-change: transform, opacity;
     transition: opacity 0.25s ease, transform 0.25s ease;
+    border-radius: 4px;
 
     &--open {
-        transform: translateX(0);
+        transform: translateX(#{$POSITIONS_DRAWER_MARGIN});
         opacity: 1;
     }
     &__header {
@@ -56,8 +58,8 @@ $header-height: 40px;
         }
     }
     /*
-        PORTFOLIO DRAWER CARD STARTS
-    */
+       POSITIONS DRAWER CARD STARTS
+   */
     & &-card {
         box-sizing: border-box;
         padding: 8px;
@@ -125,28 +127,28 @@ $header-height: 40px;
                 color: $COLOR_LIGHT_GREEN;
 
                 &:after {
-                    background-image: url('../images/portfolio/ic_price_up.svg');
+                    background-image: url('../images/positions/ic_price_up.svg');
                 }
             }
             &--price-moved-down {
                 color: $COLOR_LIGHT_RED;
 
                 &:after {
-                    background-image: url('../images/portfolio/ic_price_down.svg');
+                    background-image: url('../images/positions/ic_price_down.svg');
                 }
             }
             &--price-stable {
                 color: $COLOR_BLACK;
 
                 &:after {
-                    background-image: url('../images/portfolio/ic_price_stable_light.svg');
+                    background-image: url('../images/positions/ic_price_stable_light.svg');
                 }
             }
             &--no-resale {
                 color: $COLOR_GRAY;
 
                 &:after {
-                    background-image: url('../images/portfolio/ic_no_resale.svg');
+                    background-image: url('../images/positions/ic_no_resale.svg');
                 }
             }
         }
@@ -162,7 +164,7 @@ $header-height: 40px;
                 width: 10px;
                 background-size: 10px 10px;
                 margin-right: 2px;
-                background-image: url('../images/portfolio/ic_countdown.svg');
+                background-image: url('../images/positions/ic_countdown.svg');
                 vertical-align: text-top;
             }
             .remaining-time {
@@ -171,13 +173,13 @@ $header-height: 40px;
         }
     }
     /*
-        PORTFOLIO DRAWER CARD ENDS
+        POSITIONS DRAWER CARD ENDS
     */
 }
 
 // Dark Theme
 .theme-wrapper.dark {
-    .portfolio-drawer {
+    .positions-drawer {
         background: $COLOR_BLUE;
         border-color: $COLOR_BRANDBLUE_85;
         color: $COLOR_WHITE;
@@ -204,13 +206,14 @@ $header-height: 40px;
                     color: $COLOR_WHITE;
 
                     &:after {
-                        background-image: url('../images/portfolio/ic_price_stable_dark.svg');
+                        background-image: url('../images/positions/ic_price_stable_dark.svg');
                     }
                 }
             }
         }
         &__body {
-            .portfolio-empty, p {
+            .positions-empty, p {
+                align-self: center;
                 color: $COLOR_WHITE;
             }
         }

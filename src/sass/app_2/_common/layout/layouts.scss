@@ -4,35 +4,10 @@
     overflow-y: auto;
     overflow-x: hidden;
 
-    &--show-portfolio-drawer {
-        padding-right: $PORTFOLIO_DRAWER_WIDTH;
-
-        .trade-container {
-            transform: translateX(-#{$PORTFOLIO_DRAWER_WIDTH});
-            margin-right: -#{$PORTFOLIO_DRAWER_WIDTH};
-        }
+    &--show-positions-drawer {
         .chart-container {
-            .ciq-chart {
-                .cq-top-ui-widgets, .cq-chart-controls {
-                    transform: translateX(#{$PORTFOLIO_DRAWER_WIDTH});
-                }
-                .cq-top-ui-widgets .info-box {
-                    transform: translateX(-#{$PORTFOLIO_DRAWER_WIDTH});
-                }
-            }
-            .cq-chart-controls {
-                will-change: max-width;
-                max-width: calc(100% - #{$PORTFOLIO_DRAWER_WIDTH});
-                transform: translateX(#{$PORTFOLIO_DRAWER_WIDTH});
-            }
-            .cq-chart-control-left {
-                .cq-chart-controls {
-                    transform: translateX(#{$PORTFOLIO_DRAWER_WIDTH}) !important;
-                }
-                .info-box {
-                    transform: translateX(-#{$PORTFOLIO_DRAWER_WIDTH}) !important;
-                }
-            }
+            width: calc(100% - (#{$POSITIONS_DRAWER_WIDTH} + #{$POSITIONS_DRAWER_MARGIN}));
+            margin-left: calc(#{$POSITIONS_DRAWER_WIDTH} + #{$POSITIONS_DRAWER_MARGIN});
         }
     }
     .chart-container {

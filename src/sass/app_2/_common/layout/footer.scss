@@ -29,6 +29,11 @@ footer {
         flex-direction: row;
         height: 100%;
 
+        &.footer-links-left {
+            position: absolute;
+            left: 0;
+            float: left;
+        }
         a {
             padding: 0 8px;
             text-decoration: none;
