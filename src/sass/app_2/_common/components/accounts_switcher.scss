@@ -66,7 +66,7 @@
                 background: $COLOR_BRANDBLUE_5;
             }
             &--is-virtual {
-                p.acc-balance-id, p.acc-balance-amount {
+                p.acc-balance-amount {
                     color: $COLOR_ORANGE;
                 }
                 &:before {
@@ -160,7 +160,7 @@
             color: $COLOR_BLACK;
         }
         &__virtual {
-            border-top: 4px solid $COLOR_BRANDBLUE_85;
+            border-top: 4px solid $COLOR_GRAY;
         }
         .acc-switcher-account {
             cursor: pointer;
@@ -225,15 +225,20 @@
             .acc-switcher__radio {
                 height: 10px;
                 width: 10px;
-                border: 2px solid $COLOR_GRAY;
+                border: 2px solid $COLOR_DARK_GRAY;
                 border-radius: 50%;
             }
             &:hover {
                 background: $COLOR_BRANDBLUE_5;
+
+                .acc-switcher__radio {
+                    border-color: $COLOR_BLUE;
+                }
             }
             &--selected {
                 .acc-switcher__radio {
-                    border-color: $COLOR_WHITE;
+                    border-color: $COLOR_BLUE;
+                    background: $COLOR_BLUE;
                 }
             }
         }
@@ -282,6 +287,9 @@
             background-color: $COLOR_BRANDBLUE_85;
         }
         &__list {
+            &__virtual {
+                border-color: $COLOR_BRANDBLUE_85;
+            }
             &__title {
                 color: $COLOR_BRANDBLUE_40;
             }
