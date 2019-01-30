@@ -1262,11 +1262,11 @@ body #not_authenticated_financial ul.checked > li {
                     margin: 0;
 
                     &:last-child, &:nth-child(3) {
-                        padding: 15px 0;
+                        padding-bottom: 15px;
                     }
                 }
                 #qrcode {
-                    padding-top: 40px;
+                    padding: 15px 0;
                     @media (max-width: 480px) {
                         padding: 10px 0;
                     }
