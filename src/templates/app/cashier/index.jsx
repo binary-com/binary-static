@@ -1,11 +1,6 @@
-import React             from 'react';
+import React from 'react';
+import { Button } from '../../_common/components/elements.jsx';
 import { SeparatorLine } from '../../_common/components/separator_line.jsx';
-
-const Button = ({ className, text_className, id, href, text }) => (
-    <a className={className} id={id} href={href}>
-        <span className={text_className}>{text}</span>
-    </a>
-);
 
 const IconWithLink = ({ button_id, button_link, img_id, img_src }) => (
     <div className='gr-2 gr-4-m'>
