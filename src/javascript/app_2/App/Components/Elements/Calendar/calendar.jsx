@@ -22,7 +22,14 @@ class Calendar extends React.PureComponent {
     };
 
     navigateTo = (new_date) => {
-        this.setState({ calendar_date: toMoment(new_date).format(this.props.date_format) });
+        this.setState({
+            calendar_date: toMoment(new_date).format(this.props.date_format),
+        }, () => {
+            if (this.props.onChangeCalendarMonth) {
+                const start_of_month = toMoment(new_date).startOf('month').format(this.props.date_format);
+                this.props.onChangeCalendarMonth(start_of_month);
+            }
+        });
     };
 
     updateSelectedDate = (e) => {
@@ -67,6 +74,11 @@ class Calendar extends React.PureComponent {
         this.setState({
             calendar_date: date,
             calendar_view: view_map[type],
+        }, () => {
+            if (this.props.onChangeCalendarMonth) {
+                const start_of_month = toMoment(date).startOf('month').format(this.props.date_format);
+                this.props.onChangeCalendarMonth(start_of_month);
+            }
         });
     };
 
@@ -127,7 +139,8 @@ class Calendar extends React.PureComponent {
                     start_date={start_date}
                     selected_date={selected_date}
                     updateSelected={this.updateSelected}
-                    sessions={this.props.sessions}
+                    holidays={this.props.holidays}
+                    weekends={this.props.weekends}
                 />
                 <CalendarFooter
                     footer={footer}

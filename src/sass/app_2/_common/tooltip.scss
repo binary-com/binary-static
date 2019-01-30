@@ -20,6 +20,9 @@ span.tooltip {
         align-items: center;
         vertical-align: middle;
     }
+    i.dot:after {
+        content: url('../images/common/tooltip/ic_dot_red.svg ');
+    }
     &[data-tooltip] {
         position: relative;
         cursor: help;

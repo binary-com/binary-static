@@ -1,25 +1,29 @@
-import classNames      from 'classnames';
-import { observer }    from 'mobx-react';
-import React           from 'react';
+import classNames           from 'classnames';
+import { observer }         from 'mobx-react';
+import React                from 'react';
+import { CSSTransition }    from 'react-transition-group';
 import {
     IconArrow,
     IconCalendar,
-    IconClear }        from 'Assets/Common';
-import InputField      from 'App/Components/Form/input_field.jsx';
+    IconClear }             from 'Assets/Common';
+import InputField           from 'App/Components/Form/input_field.jsx';
 import {
     addDays,
     daysFromTodayTo,
     formatDate,
     isDateValid,
-    toMoment }         from 'Utils/Date';
-import { localize }    from '_common/localize';
-import Calendar        from '../../Elements/Calendar';
+    toMoment }              from 'Utils/Date';
+import { localize }         from '_common/localize';
+import { getTradingEvents } from './helpers';
+import Calendar             from '../../Elements/Calendar';
 
 class DatePicker extends React.Component {
     state = {
         value                : '',
         is_datepicker_visible: false,
         is_clear_btn_visible : false,
+        holidays             : [],
+        weekends             : [],
     };
 
     componentDidMount() {
@@ -44,7 +48,7 @@ class DatePicker extends React.Component {
         if (!this.mainNode.contains(e.target) && this.state.is_datepicker_visible) {
             this.setState({ is_datepicker_visible: false });
             if (!!this.state.value && this.props.mode !== 'duration') {
-                this.updateDatePickerValue(formatDate(this.state.value));
+                this.updateDatePickerValue(formatDate(this.state.value, 'DD MMM YYYY'));
             }
         }
     }
@@ -112,6 +116,24 @@ class DatePicker extends React.Component {
             onChange({ target: { name, value: this.state.value } });
         }
     };
+
+    async onChangeCalendarMonth(date) {
+        const trading_events = await getTradingEvents(date, this.props.underlying);
+        const holidays = [];
+        let weekends   = [];
+        trading_events.filter(events => {
+            if (events.dates === 'Fridays') {
+                weekends = [6, 0]; // Sat, Sun
+            } else {
+                holidays.push(events);
+            }
+        });
+
+        this.setState({
+            holidays,
+            weekends,
+        });
+    }
 
     renderInputField = () => {
         const { is_read_only, mode, name, validation_errors } = this.props;
@@ -197,18 +219,32 @@ class DatePicker extends React.Component {
                     })}
                     onClick={this.state.is_clear_btn_visible ? this.clearDatePickerInput : undefined}
                 />
-                <div
-                    className={classNames('datepicker__picker', {
-                        'datepicker__picker--show'                           : this.state.is_datepicker_visible,
-                        [`datepicker__picker--align-${this.props.alignment}`]: this.props.alignment,
-                    })}
+                <CSSTransition
+                    in={this.state.is_datepicker_visible}
+                    timeout={100}
+                    classNames={{
+                        enter    : 'datepicker__picker--enter',
+                        enterDone: 'datepicker__picker--enter--done',
+                        exit     : 'datepicker__picker--exit',
+                    }}
+                    unmountOnExit
                 >
-                    <Calendar
-                        ref={node => { this.calendar = node; }}
-                        onSelect={this.onSelectCalendar}
-                        {...this.props}
-                    />
-                </div>
+                    <div
+                        className={classNames('datepicker__picker', {
+                            'datepicker__picker--left': this.props.alignment === 'left',
+                        })}
+                    >
+                        <Calendar
+                            ref={node => { this.calendar = node; }}
+                            onSelect={this.onSelectCalendar}
+                            onChangeCalendarMonth={this.props.disable_trading_events ?
+                                this.onChangeCalendarMonth.bind(this) : undefined}
+                            holidays={this.state.holidays}
+                            weekends={this.state.weekends}
+                            {...this.props}
+                        />
+                    </div>
+                </CSSTransition>
             </div>
         );
     }

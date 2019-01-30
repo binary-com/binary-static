@@ -45,7 +45,7 @@
         }
         &--date {
             grid-template-columns: repeat(7, 24px);
-            grid-template-rows: repeat(6, 24px);
+            grid-auto-rows: 24px;
 
             span {
                 width: 100%;
@@ -131,6 +131,7 @@
         align-self: center;
         justify-self: center;
         transition: background 0.2s;
+        position: relative;
 
         &:hover {
             cursor: pointer;
@@ -143,23 +144,34 @@
             font-weight: bold;
             color: $COLOR_LIGHT_BLACK;
         }
+        &--today {
+            font-weight: 400;
+            border: 1px solid $COLOR_BLUE;
+            border-radius: 5px;
+        }
         &--disabled, &--other {
             color: $COLOR_GRAY;
             transition: none;
         }
         &--disabled:hover {
             cursor: default;
-        }
-        &--today {
-            font-weight: 400;
-            border: 1px solid $COLOR_BLUE;
-            border-radius: 5px;
+            background: initial !important;
         }
         &--active {
             color: $COLOR_WHITE;
             background: $COLOR_BLUE;
             font-weight: bold;
             box-shadow: 0 2px 8px 0 rgba(42, 48, 82, 0.14);
+        }
+        span.tooltip[data-tooltip] {
+            position: absolute;
+            display: inline-grid;
+            height: 0;
+            top: 0;
+
+            i {
+                margin-top: -8px;
+            }
         }
     }
 }
@@ -212,12 +224,15 @@
             &:hover:not(&--active) {
                 background: $COLOR_BRANDBLUE_85;
             }
-            &--disabled, &--other {
-                color: $COLOR_BRANDBLUE_75;
-            }
             &--today {
                 border: 1px solid $COLOR_WHITE;
                 color: $COLOR_WHITE;
+            }
+            &--disabled:hover {
+                background: initial;
+            }
+            &--disabled, &--other {
+                color: $COLOR_BRANDBLUE_75;
             }
             &--active {
                 color: $COLOR_BLUE;

@@ -12,7 +12,7 @@
     & ~ [class*='__icon'] {
         @extend .absolute-center-v; // centers input-field icons vertically
         top: 8px;
-        right: 5%;
+        left: 5%;
     }
     i {
         position: relative;

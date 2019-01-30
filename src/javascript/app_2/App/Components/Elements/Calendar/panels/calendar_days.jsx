@@ -9,15 +9,17 @@ import {
     toMoment }               from 'Utils/Date';
 import CalendarPanelTypes    from './types';
 import { week_headers_abbr } from '../constants';
+import Tooltip               from '../../tooltip.jsx';
 
 const getDays = ({
     calendar_date,
     date_format,
+    holidays,
     isPeriodDisabled,
     start_date,
     selected_date,
     updateSelected,
-    // sessions, // TODO: check expiry date sessions. e.g. disable days if market closes on weekend
+    weekends,
 }) => {
     // adjust Calendar week by 1 day so that Calendar week starts on Monday
     // change to zero to set Calendar week to start on Sunday
@@ -59,10 +61,22 @@ const getDays = ({
         const moment_date = toMoment(date).startOf('day');
         const is_active   = selected_date && moment_date.isSame(moment_selected);
         const is_today    = moment_date.isSame(moment_today, 'day');
-        const is_disabled = isPeriodDisabled(moment_date, 'day') ||
+
+        const events          = holidays.filter(event => event.dates === date);
+        const has_events      = !!events.length;
+        const is_closes_early = events.map(event => event.descrip.includes('Closes early'))[0];
+        const message         = events.map(event => event.descrip)[0] || '';
+
+        const is_disabled =
+            // check if date is before min_date or after_max_date
+            isPeriodDisabled(moment_date, 'day')
             // for forward starting accounts, only show same day as start date and the day after
-            (start_date && (moment_date.isBefore(moment_start_date) ||
-            moment_date.isAfter(addDays(moment_start_date, 1))));
+            || ((start_date && (moment_date.isBefore(moment_start_date)
+            || moment_date.isAfter(addDays(moment_start_date, 1)))))
+            // check if which days of the week are disabled
+            || weekends.some(day => toMoment(date).day() === day)
+            // check if date falls on holidays, and doens't close early
+            || has_events && !is_closes_early;
 
         // show 'disabled' style for dates that is not in the same calendar month,
         // but the date should still be clickable
@@ -80,6 +94,13 @@ const getDays = ({
                 onClick={is_disabled ? undefined : (e) => updateSelected(e, 'day') }
                 data-date={date}
             >
+                { (has_events || is_closes_early) &&
+                    <Tooltip
+                        alignment='top'
+                        icon='dot'
+                        message={message}
+                    />
+                }
                 {moment_date.date()}
             </span>
         );
@@ -99,4 +120,8 @@ export const CalendarDays = (props) => {
     );
 };
 
+CalendarDays.defaultProps = {
+    holidays: [],
+    weekends: [],
+}
 CalendarDays.propTypes = { ...CalendarPanelTypes };
