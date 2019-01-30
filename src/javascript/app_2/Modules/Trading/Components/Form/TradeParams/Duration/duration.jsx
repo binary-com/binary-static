@@ -97,10 +97,7 @@ const Duration = ({
         onChange({ target: { name, value } });
     };
 
-    const contract_has_duration_unit = () => {
-        const duration_type = is_advanced_duration ? advanced_duration_unit : simple_duration_unit;
-        return duration_units_list.some(du => du.value === duration_type);
-    };
+    const contract_has_duration_unit = (duration_type) => duration_units_list.some(du => du.value === duration_type);
 
     const onToggleDurationType = ({ target }) => {
         const { name, value } = target;
@@ -152,7 +149,8 @@ const Duration = ({
     return (
         <Fieldset>
             {
-                (!contract_has_duration_unit(is_advanced_duration) || simple_is_missing_duration_unit) &&
+                (!contract_has_duration_unit(is_advanced_duration ? advanced_duration_unit : simple_duration_unit)
+                    || simple_is_missing_duration_unit) &&
                     setDurationUnit()
             }
             { !has_toggle &&
