@@ -6,11 +6,14 @@
 
     &--show-positions-drawer {
         .chart-container {
-            width: calc(100% - (#{$POSITIONS_DRAWER_WIDTH} + #{$POSITIONS_DRAWER_MARGIN}));
+            width: calc(100% - (#{$POSITIONS_DRAWER_WIDTH} + #{$POSITIONS_DRAWER_MARGIN})) !important;
             margin-left: calc(#{$POSITIONS_DRAWER_WIDTH} + #{$POSITIONS_DRAWER_MARGIN});
+            transition: all 0.25s ease;
         }
     }
     .chart-container {
+        width: 100%;
+
         .cq-chart-control-left {
             .cq-chart-controls {
                 transform: translateX(0);

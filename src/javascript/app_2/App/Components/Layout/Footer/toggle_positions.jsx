@@ -4,9 +4,9 @@ import React             from 'react';
 import { IconPositions } from 'Assets/Footer';
 
 const TogglePositions = ({
-                             is_positions_drawer_on,
-                             togglePositionsDrawer,
-                         }) => {
+    is_positions_drawer_on,
+    togglePositionsDrawer,
+}) => {
     const toggle_positions_class = classNames('ic-portfolio', {
         'active': is_positions_drawer_on,
     });

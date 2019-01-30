@@ -7,13 +7,14 @@ $header-height: 40px;
 
 .positions-drawer {
     width: $POSITIONS_DRAWER_WIDTH;
-    height: calc(100vh - #{$HEADER_HEIGHT} - #{$FOOTER_HEIGHT} - (2 * #{$POSITIONS_DRAWER_MARGIN}));
+    // removing 2px below for borders
+    height: calc(100vh - #{$HEADER_HEIGHT} - #{$FOOTER_HEIGHT} - 2px - (2 * #{$POSITIONS_DRAWER_MARGIN}));
     margin-top: $POSITIONS_DRAWER_MARGIN;
     position: fixed;
     z-index: 2;
     top: $HEADER_HEIGHT;
     left: 0;
-    border-left: 1px solid $COLOR_GRAY;
+    border: 1px solid $COLOR_GRAY;
     background-color: $COLOR_GRAY;
     box-sizing: border-box;
     opacity: 0;

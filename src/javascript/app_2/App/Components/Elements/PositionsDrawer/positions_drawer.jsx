@@ -7,12 +7,13 @@ import { localize }                   from '_common/localize';
 import { IconClose }                  from 'Assets/Common';
 import EmptyPortfolioMessage          from 'Modules/Portfolio/Components/empty_portfolio_message.jsx';
 import { connect }                    from 'Stores/connect';
-import PositionsDrawerCard            from '../PositionsDrawer/positions_drawer_card.jsx';
+import PositionsDrawerCard            from './positions_drawer_card.jsx';
 
 class PositionsDrawer extends React.Component {
     componentDidMount()    {
         this.props.onMount();
     }
+
     componentWillUnmount() {
         this.props.onUnmount();
     }
