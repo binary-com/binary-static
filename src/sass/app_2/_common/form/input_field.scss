@@ -156,7 +156,7 @@
         &:active, &:focus {
             outline: 0;
             border-radius: $BORDER_RADIUS;
-            border-color: $COLOR_BLUE;
+            border-color: $COLOR_WHITE;
             box-shadow: 0 0 0 0.2rem rgba(127, 131, 151, 0.3) // stylelint-disable-line number-leading-zero
         }
         &:not([type=range]), label, textarea {

@@ -270,7 +270,9 @@
                 }
             }
             .input-field {
-                margin-top: 4px;
+                input {
+                    padding-left: 3px;
+                }
             }
         }
     }
