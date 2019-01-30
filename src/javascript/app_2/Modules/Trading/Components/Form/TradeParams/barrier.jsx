@@ -36,7 +36,7 @@ const Barrier = ({
         );
     }
     return (
-        <Fieldset className='barriers' header={localize('Barriers')}>
+        <Fieldset className='barriers' header={localize(barrier_count === 2 ? 'Barriers' : 'Barrier')}>
             <InputField
                 type='number'
                 name='barrier_1'
