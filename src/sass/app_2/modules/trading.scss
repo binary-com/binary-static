@@ -258,6 +258,21 @@
                 }
             }
         }
+        &.barriers {
+            .fieldset-header {
+                text-align: center;
+                height: 1.2rem;
+                margin-top: 2px;
+
+                .field-info {
+                    width: 100%;
+                    left: 0 !important;
+                }
+            }
+            .input-field {
+                margin-top: 4px;
+            }
+        }
     }
     div.purchase-wrapper {
         position: relative;

@@ -3,6 +3,7 @@ import PropTypes    from 'prop-types';
 import React        from 'react';
 import Fieldset     from 'App/Components/Form/fieldset.jsx';
 import InputField   from 'App/Components/Form/input_field.jsx';
+import { localize } from '_common/localize';
 
 const Barrier = ({
     barrier_1,
@@ -35,7 +36,7 @@ const Barrier = ({
         );
     }
     return (
-        <Fieldset>
+        <Fieldset className='barriers' header={localize('Barriers')}>
             <InputField
                 type='number'
                 name='barrier_1'
