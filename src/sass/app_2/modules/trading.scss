@@ -278,6 +278,25 @@
                     width: 46%;
                     margin-left: 4px;
                     margin-right: 4px;
+
+                    .up {
+                        mask: url('../images/sidebar/ic_barrier_high.svg');
+                        mask-size: 50% 50%;
+                        mask-repeat: no-repeat;
+                        mask-position: center;
+                        background-color: $COLOR_LIGHT_BLACK;
+                        padding-top: 2px;
+                        padding-bottom: 2px;
+                    }
+                    .down {
+                        mask: url('../images/sidebar/ic_barrier_low.svg');
+                        mask-size: 50% 50%;
+                        mask-repeat: no-repeat;
+                        mask-position: center;
+                        background-color: $COLOR_LIGHT_BLACK;
+                        padding-top: 2px;
+                        padding-bottom: 2px;
+                    }
                 }
             }
         }
@@ -651,6 +670,20 @@
                 }
                 &:hover:after, &:hover:before {
                     opacity: 1;
+                }
+            }
+        }
+    }
+    fieldset {
+        &.barriers {
+            .input-field {
+                &.multiple {
+                    .up {
+                        background-color: $COLOR_WHITE;
+                    }
+                    .down {
+                        background-color: $COLOR_WHITE;
+                    }
                 }
             }
         }
