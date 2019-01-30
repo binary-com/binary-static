@@ -18,8 +18,7 @@ const expiry_list = [
 
 const Duration = ({
     adv_duration_unit,
-    advanced_duration,
-    advanced_duration_unit,
+    adv_expiry_type,
     advanced_expiry_type,
     contract_expiry_type,
     duration,
@@ -36,15 +35,15 @@ const Duration = ({
     is_nativepicker,
     server_time,
     sessions,
-    simple_duration,
-    simple_duration_unit,
     start_date,
     start_time,
     validation_errors,
     market_close_times,
     sim_duration_unit,
     duration_t,
+    duration_s,
     duration_m,
+    duration_h,
     duration_d,
 }) => {
     const has_end_time = expiry_list.find(expiry => expiry.value === 'endtime');
@@ -93,13 +92,42 @@ const Duration = ({
     // e.g. digit contracts only has range slider - does not have toggle between advanced / simple
     const has_toggle = expiry_list.length > 1 || duration_units_list.length > 1;
 
+    const getDurationValue = du => {
+        const duration_obj = {
+            t: duration_t,
+            s: duration_s,
+            m: duration_m,
+            h: duration_h,
+            d: duration_d,
+        };
+        return duration_obj[du];
+    };
+
+    const onToggleDurationType = ({ target }) => {
+        const { name, value } = target;
+
+        onChangeDurationU({ name, value });
+        // set duration_unit, value as advance/simple types unit
+        let duration_type = value ? adv_duration_unit : sim_duration_unit;
+
+        const contract_has_duration_unit = duration_units_list.some(du => du === duration_type);
+        if (!contract_has_duration_unit) {
+            duration_type = duration_units_list[0].value;
+            onChangeDurationU({ name: `${value ? 'adv' : 'sim'}_duration_unit`, value: duration_type });
+        }
+        onChangeDuration({ target: { name: 'duration_unit', value: duration_type } });
+
+        const duration_value  = getDurationValue(duration_type);
+        onChangeDuration({ target: { name: 'duration', value: duration_value } });
+    };
+
     return (
         <Fieldset>
             { !has_toggle &&
                 <RangeSlider
-                    name='simple_duration'
+                    name='duration'
                     ticks={10}
-                    value={simple_duration}
+                    value={duration_t}
                     {...props.shared_input}
                 />
             }
@@ -107,9 +135,8 @@ const Duration = ({
                 <Fragment>
                     { du_is_advanced &&
                         <AdvancedDuration
+                            adv_expiry_type={adv_expiry_type}
                             adv_duration_unit={adv_duration_unit}
-                            advanced_duration={advanced_duration}
-                            advanced_duration_unit={advanced_duration_unit}
                             advanced_expiry_type={advanced_expiry_type}
                             contract_expiry_type={contract_expiry_type}
                             duration_min_max={duration_min_max}
@@ -126,25 +153,28 @@ const Duration = ({
                             shared_input_props={props.shared_input}
                             start_date={start_date}
                             start_time={start_time}
+                            onChangeDurationU={onChangeDurationU}
+                            duration_t={duration_t}
+                            duration_s={duration_s}
+                            duration_m={duration_m}
+                            duration_h={duration_h}
+                            duration_d={duration_d}
                         /> }
                     { !du_is_advanced &&
                         <SimpleDuration
                             duration_units_list={duration_units_list}
                             number_input_props={props.number_input}
                             onChange={onChangeDuration}
-                            simple_duration={simple_duration}
-                            simple_duration_unit={simple_duration_unit}
                             shared_input_props={props.shared_input}
                             sim_duration_unit={sim_duration_unit}
                             onChangeDurationU={onChangeDurationU}
                             duration_t={duration_t}
                             duration_m={duration_m}
                             duration_d={duration_d}
-                            duration_unit={duration_unit}
                         /> }
                     <DurationToggle
                         name={'du_is_advanced'}
-                        onChange={onChangeDurationU}
+                        onChange={onToggleDurationType}
                         value={du_is_advanced}
                     />
                 </Fragment>
@@ -155,16 +185,12 @@ const Duration = ({
 
 // ToDo: Refactor Duration.jsx and date_picker.jsx
 Duration.propTypes = {
+    adv_expiry_type: PropTypes.string,
     adv_duration_unit: PropTypes.string,
-    advanced_duration: PropTypes.oneOfType([
-        PropTypes.number,
-        PropTypes.string,
-    ]),
-    advanced_duration_unit: PropTypes.string,
-    advanced_expiry_type  : PropTypes.string,
-    contract_expiry_type  : PropTypes.string,
-    du_is_advanced        : PropTypes.bool,
-    duration              : PropTypes.oneOfType([
+    advanced_expiry_type: PropTypes.string,
+    contract_expiry_type: PropTypes.string,
+    du_is_advanced      : PropTypes.bool,
+    duration            : PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
     ]),
@@ -177,7 +203,6 @@ Duration.propTypes = {
     ]),
     expiry_time         : PropTypes.string,
     expiry_type         : PropTypes.string,
-    is_advanced_duration: PropTypes.bool,
     is_minimized        : PropTypes.bool,
     is_nativepicker     : PropTypes.bool,
     market_close_times  : PropTypes.array,
@@ -187,11 +212,6 @@ Duration.propTypes = {
     server_time         : PropTypes.object,
     sessions            : MobxPropTypes.arrayOrObservableArray,
     sim_duration_unit   : PropTypes.string,
-    simple_duration     : PropTypes.oneOfType([
-        PropTypes.number,
-        PropTypes.string,
-    ]),
-    simple_duration_unit: PropTypes.string,
     start_date          : PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
@@ -199,7 +219,9 @@ Duration.propTypes = {
     start_time       : PropTypes.string,
     validation_errors: PropTypes.object,
     duration_t: PropTypes.number,
+    duration_s: PropTypes.number,
     duration_m: PropTypes.number,
+    duration_h: PropTypes.number,
     duration_d: PropTypes.number,
 };
 

@@ -36,20 +36,27 @@ export default class UIStore extends BaseStore {
     @observable toast_messages = [];
 
     // Duration config ---- updated based from component
-    // Duration --> updated from these
     @observable du_is_advanced         = false;
-    @observable adv_duration_unit = 't';
-    @observable advanced_expiry_type   = 'duration';
+    @observable adv_duration_unit      = 't';
+    @observable adv_expiry_type   = 'duration';
     @observable sim_duration_unit      = 't';
-    @observable duration_t         = 5;
-    @observable duration_s       = 15;
-    @observable duration_m       = 3;
-    @observable duration_h         = 1;
-    @observable duration_d         = 1;
+    @observable duration_t             = 5;
+    @observable duration_s             = 15;
+    @observable duration_m             = 3;
+    @observable duration_h             = 1;
+    @observable duration_d             = 1;
 
     constructor() {
         const local_storage_properties = [
+            'adv_duration_unit',
             'du_is_advanced',
+            'adv_expiry_type',
+            'sim_duration_unit',
+            'duration_t',
+            'duration_s',
+            'duration_m',
+            'duration_h',
+            'duration_d',
             'is_chart_asset_info_visible',
             'is_chart_countdown_visible',
             'is_chart_layout_default',

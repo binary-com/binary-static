@@ -66,15 +66,6 @@ export default class TradeStore extends BaseStore {
     @observable expiry_time          = '09:40';
     @observable expiry_type          = 'duration';
 
-    // Advanced / simple duration
-    // duration_ticks, duration_seconds, duration_minutes, duration_hours, duration_days
-    @observable is_advanced_duration   = false;
-    @observable advanced_duration      = 5;
-    @observable advanced_duration_unit = 't';
-    @observable advanced_expiry_type   = 'duration';
-    @observable simple_duration        = 5;
-    @observable simple_duration_unit   = 't';
-
     // Barrier
     @observable barrier_1     = '';
     @observable barrier_2     = '';
@@ -490,102 +481,17 @@ export default class TradeStore extends BaseStore {
     @action.bound
     changeDuration() {
         const new_state = {};
-        const contract_only_has_days   = this.duration_units_list.length < 2 && this.duration_unit === 'd';
-        const is_only_simple_duration  = this.duration_units_list.length === 1 && this.duration_unit === 't';
-        const active_duration_unit     = this.is_advanced_duration ?
-            this.advanced_duration_unit : this.simple_duration_unit;
-        const is_missing_duration_unit = !this.duration_units_list.some(du => du.value === active_duration_unit);
-
-        if (contract_only_has_days) {
-            new_state.simple_duration_unit = 'd';
-            new_state.advanced_duration_unit = 'd';
-        }
-
-        // contracts that have no toggle between advanced/simple are treated as simple (e.g. digits)
-        if (is_only_simple_duration) {
-            new_state.duration             = this.simple_duration;
-            new_state.simple_duration_unit = 't';
-            new_state.is_advanced_duration = false;
-        }
-
-        if (is_missing_duration_unit) {
-            new_state.simple_duration_unit   = this.duration_units_list[0].value;
-            new_state.advanced_duration_unit = this.duration_units_list[0].value;
-            new_state.duration_unit          = this.duration_units_list[0].value;
-        }
-
-        const should_reset_simple_to_ticks = !this.is_advanced_duration && this.simple_duration_unit !== 'm' && this.simple_duration_unit !== 't';
-        if (should_reset_simple_to_ticks && this.duration_units_list.length > 3) {
-            new_state.simple_duration_unit   =  't';
-            new_state.duration_unit          = 't';
-            new_state.contract_expiry_type   = 'tick';
-        }
-
         this.updateStore(new_state);
     }
 
     @action.bound
     onChangeDuration(e) {
-        let advanced_or_simple = this.is_advanced_duration ? 'advanced' : 'simple';
+        console.log('onChangeDuration');
+        
         const { value, name }  = e.target;
         const new_state        = {
             [name]: value,
-            // prevents the update of trade_store if new value is the same as current value
-            set(trade_store, prop, val) {
-                if (trade_store[prop] !== val) this[prop] = val;
-            },
         };
-
-        if (name === `${advanced_or_simple}_duration`) {
-            new_state.set(this, 'duration', value);
-        }
-
-        if (name === `${advanced_or_simple}_duration_unit`) {
-            new_state.set(this, 'duration_unit', value);
-
-            if (value === 't') {
-                // prevent overflowing of range slider by setting duration to max or 1
-                const max_tick_value = convertDurationLimit(+this.duration_min_max.tick.max, value);
-                if (+this.duration > max_tick_value) {
-                    new_state.set(this, 'duration', max_tick_value);
-                    new_state.set(this, `${advanced_or_simple}_duration`, max_tick_value);
-                }
-                if (+this.duration <= 0) {
-                    new_state.set(this, 'duration', max_tick_value);
-                    new_state.set(this, `${advanced_or_simple}_duration`, max_tick_value);
-                }
-            }
-        }
-
-        if (name === 'is_advanced_duration') {
-            advanced_or_simple       = value ? 'advanced' : 'simple';
-            new_state.set(this, 'duration', this[`${advanced_or_simple}_duration`]);
-            new_state.set(this, 'duration_unit', this[`${advanced_or_simple}_duration_unit`]);
-
-            // simple only has duration as expiry_type
-            if (advanced_or_simple === 'simple' && this.expiry_type !== 'duration') {
-                new_state.set(this, 'expiry_type', 'duration');
-            }
-
-            const duration_list_has_ticks = this.duration_units_list.some(du => du.value === 't');
-            const should_be_tick = this.simple_duration_unit !== 't' && this.simple_duration_unit !== 'm' && duration_list_has_ticks
-                && this.duration_units_list.some(du => du.value === 'm');
-            if (advanced_or_simple === 'simple' && should_be_tick) {
-                new_state.simple_duration_unit = 't';
-                new_state.duration_unit = 't';
-            }
-
-            // For contracts without ticks but with minutes - set duration unit to minute e.g. forex rise/fall equals
-            const contract_has_no_tick = this.duration_units_list.length > 1 && !duration_list_has_ticks;
-            if (contract_has_no_tick && this[`${advanced_or_simple}_duration_unit`] === 't') {
-                new_state[`${advanced_or_simple}_duration_unit`] = 'm';
-                new_state.duration_unit                          = 'm';
-            }
-        }
-
-        if (name === 'advanced_expiry_type') {
-            new_state.set(this, 'expiry_type', value);
-        }
 
         this.processNewValuesAsync(new_state, true);
     }

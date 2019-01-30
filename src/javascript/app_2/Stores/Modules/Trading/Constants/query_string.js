@@ -2,9 +2,6 @@ import ContractType from '../Helpers/contract_type';
 
 // list of trade's options that should be used in query string of trade page url.
 export const allowed_query_string_variables = [
-    'advanced_duration',
-    'advanced_duration_unit',
-    'advanced_expiry_type',
     'amount',
     'barrier_1',
     'barrier_2',
@@ -16,25 +13,16 @@ export const allowed_query_string_variables = [
     'expiry_date',
     'expiry_type',
     'is_equal_checked',
-    'is_advanced_duration',
     'last_digit',
     'start_date',
     'start_time',
-    'simple_duration',
-    'simple_duration_unit',
     'symbol',
 ];
 
 export const getNonProposalQueryStringVariables = (store) => {
     const non_proposal_query_string_variables = [
-        'advanced_duration',
-        'advanced_duration_unit',
-        'advanced_expiry_type',
         'contract_start_type',
         'expiry_type',
-        'is_advanced_duration',
-        'simple_duration',
-        'simple_duration_unit',
     ];
 
     if (!store) return non_proposal_query_string_variables;

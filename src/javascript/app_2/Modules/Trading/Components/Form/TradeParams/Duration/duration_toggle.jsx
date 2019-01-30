@@ -9,7 +9,7 @@ const DurationToggle = ({
     value,
 }) => {
     const toggle = () => {
-        onChange({ value: !value, name });
+        onChange({ target: { value: !value, name } });
     };
     const icon_className = classNames(
         'advanced-simple-toggle__icon',

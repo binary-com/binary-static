@@ -15,7 +15,6 @@ const SimpleDuration = ({
     duration_t,
     duration_m,
     duration_d,
-    duration_unit,
 }) => {
     const filterMinutesAndTicks = (arr) => {
         const filtered_arr = arr.filter(du => du.value === 't' || du.value === 'm');
@@ -25,7 +24,7 @@ const SimpleDuration = ({
     };
     const has_label = !duration_units_list.some(du => du.value === 't');
 
-    const get_duration_value = du => {
+    const getDurationValue = du => {
         const duration_obj = {
             t: duration_t,
             m: duration_m,
@@ -36,7 +35,7 @@ const SimpleDuration = ({
 
     const changeDurationUnit = ({ target }) => {
         const { name, value } = target;
-        const duration_value  = get_duration_value(value);
+        const duration_value  = getDurationValue(value);
         
         onChangeDurationU({ name, value });
         onChange({ target: { name: 'duration_unit', value } });
@@ -68,21 +67,11 @@ const SimpleDuration = ({
                     onChange={changeDurationValue}
                 />
             }
-            { sim_duration_unit === 'm' &&
+            { sim_duration_unit !== 't' &&
                 <InputField
                     name='duration'
                     label={has_label ? duration_units_list[0].text : null}
-                    value={duration_m}
-                    {...number_input_props}
-                    {...shared_input_props}
-                    onChange={changeDurationValue}
-                />
-            }
-            { sim_duration_unit === 'd' &&
-                <InputField
-                    name='duration'
-                    label={duration_units_list[0].text}
-                    value={duration_d}
+                    value={getDurationValue(sim_duration_unit)}
                     {...number_input_props}
                     {...shared_input_props}
                     onChange={changeDurationValue}
@@ -99,11 +88,8 @@ SimpleDuration.propTypes = {
     onChange           : PropTypes.func,
     shared_input_props : PropTypes.object,
     sim_duration_unit  : PropTypes.string,
-    simple_duration    : PropTypes.oneOfType([
-        PropTypes.number,
-        PropTypes.string,
-    ]),
-    simple_duration_unit: PropTypes.string,
+    adv_duration_unit: PropTypes.string,
+    onChangeDurationU   : PropTypes.func,
 };
 
 export default SimpleDuration;
