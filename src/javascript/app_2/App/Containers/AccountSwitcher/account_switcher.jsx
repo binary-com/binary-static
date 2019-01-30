@@ -42,31 +42,35 @@ class AccountSwitcher extends React.Component {
 
         return (
             <div className='acc-switcher__list' ref={this.setWrapperRef}>
-                <div className='acc-switcher__list__group'>
-                    <span className='acc-switcher__list__title'>
-                        {main_account_title}
-                    </span>
-                    {(this.props.account_list.length > 0) &&
-                    this.props.account_list.filter((accounts) => !accounts.is_virtual).map((account) => (
-                        <React.Fragment key={account.loginid}>
-                            <div
-                                className={classNames('acc-switcher-account', {
-                                    'acc-switcher-account--selected': (account.loginid === this.props.account_loginid),
-                                })}
-                                onClick={this.doSwitch.bind(this, account.loginid)}
-                            >
-                                <span className={classNames('acc-switcher__id', {
-                                    'acc-switcher__id__icon': account.icon,
-                                },
-                                `acc-switcher__id__icon--${account.icon}`)}
-                                >
-                                    {account.loginid}
-                                </span>
-                                <span className='acc-switcher__radio' />
-                            </div>
-                        </React.Fragment>
-                    ))}
-                </div>
+                {
+                    // Make sure this block is not rendered if there are no real accounts
+                    !!(this.props.account_list.length > 0 && !(this.props.account_list[0].is_virtual)) &&
+                    <div className='acc-switcher__list__group'>
+                        <span className='acc-switcher__list__title'>
+                            {main_account_title}
+                        </span>
+                        {
+                            this.props.account_list.filter((accounts) => !accounts.is_virtual).map((account) => (
+                                <React.Fragment key={account.loginid}>
+                                    <div
+                                        className={classNames('acc-switcher-account', {
+                                            'acc-switcher-account--selected': (account.loginid === this.props.account_loginid),
+                                        })}
+                                        onClick={this.doSwitch.bind(this, account.loginid)}
+                                    >
+                                        <span className={classNames('acc-switcher__id', {
+                                            'acc-switcher__id__icon': account.icon,
+                                        },
+                                        `acc-switcher__id__icon--${account.icon}`)}
+                                        >
+                                            {account.loginid}
+                                        </span>
+                                        <span className='acc-switcher__radio' />
+                                    </div>
+                                </React.Fragment>
+                            ))}
+                    </div>
+                }
                 {
                     // TODO: Add link to account opening page and update text below for investment account opening
                     !!(this.props.upgrade_info.can_upgrade || this.props.upgrade_info.can_open_multi) &&
