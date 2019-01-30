@@ -123,5 +123,6 @@ export const CalendarDays = (props) => {
 CalendarDays.defaultProps = {
     holidays: [],
     weekends: [],
-}
+};
+
 CalendarDays.propTypes = { ...CalendarPanelTypes };
