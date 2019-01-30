@@ -256,3 +256,27 @@
         }
     }
 }
+
+.cashier_note {
+    .notice-circle {
+        color: $COLOR_ORANGE;
+        border-color: $COLOR_ORANGE;
+    }
+    p {
+        color: $COLOR_BLUE;
+    }
+}
+
+#have_real_account {
+    display: flex;
+    align-items: center;
+    height: 100%;
+
+    div {
+        margin-right: 10px;
+    }
+
+    @media screen and (max-width: 480px) {
+        justify-content: center;
+    }
+}

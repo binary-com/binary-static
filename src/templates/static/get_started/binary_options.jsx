@@ -1,7 +1,11 @@
-import React from 'react';
-import { Section, HeaderSecondary, NavButtons, ListStrong } from './common.jsx';
-import { List } from '../../_common/components/elements.jsx';
-import SeparatorLine from '../../_common/components/separator_line.jsx';
+import React            from 'react';
+import {
+    Section,
+    HeaderSecondary,
+    NavButtons,
+    ListStrong }         from './common.jsx';
+import { List }          from '../../_common/components/elements.jsx';
+import { SeparatorLine } from '../../_common/components/separator_line.jsx';
 
 let circle,
     circle_no;

@@ -27,8 +27,8 @@ export const toMoment = value => {
  * @param  {String} time        24 hours format, may or may not include seconds
  * @return {moment} a new moment object of result
  */
-const setTime = (moment_obj, time) => {
-    const [hour, minute, second] = time.split(':');
+export const setTime = (moment_obj, time) => {
+    const [hour, minute, second] = time ? time.split(':') : [0, 0, 0];
     moment_obj.hour(hour).minute(minute || 0).second(second || 0);
     return moment_obj;
 };
@@ -43,7 +43,7 @@ export const convertToUnix = (epoch, time) => setTime(toMoment(epoch), time).uni
 
 export const toGMTFormat = (time) => moment(time || undefined).utc().format('YYYY-MM-DD HH:mm:ss [GMT]');
 
-export const formatDate = (date, date_format = 'YYYY-MM-DD') => moment(date || undefined, date_format).format(date_format);
+export const formatDate = (date, date_format = 'YYYY-MM-DD') => toMoment(date).format(date_format);
 
 /**
  * return the number of days from today to date specified
@@ -51,8 +51,8 @@ export const formatDate = (date, date_format = 'YYYY-MM-DD') => moment(date || u
  * @return {Number} an integer of the number of days
  */
 export const daysFromTodayTo = (date) => {
-    const diff = moment(date).utc().diff(moment().utc(), 'days');
-    return (!date || diff < 0) ? '' : diff + 1;
+    const diff = toMoment(date).startOf('day').diff(toMoment().startOf('day'), 'days');
+    return (!date || diff < 0) ? '' : diff;
 };
 
 /**
@@ -85,7 +85,7 @@ export const formatDuration = (duration) => {
  * return true if the time_str is in "HH:MM" format, else return false
  * @param {String} time_str time
  */
-export const isTimeValid = time_str => /^(\d{1,2}):(\d{2})(:00)?$/.test(time_str);
+export const isTimeValid = time_str => /^([0-9]|[0-1][0-9]|2[0-3]):([0-9]|[0-5][0-9])(:([0-9]|[0-5][0-9]))?$/.test(time_str);
 
 /**
  * return true if the time_str's hour is between 0 and 23, else return false
@@ -101,6 +101,55 @@ export const isMinuteValid = time_str => isTimeValid(time_str) && /^[0-5][0-9]$/
 
 /**
  * return true if the date is typeof string and a valid moment date, else return false
- * @param {String} date_str date
+ * @param {String|moment} date date
  */
-export const isDateValid = date_str => typeof date_str === 'string' && moment(date_str).isValid();
+export const isDateValid = date => moment(date, 'YYYY-MM-DD').isValid();
+
+/**
+ * add the specified number of days to the given date
+ * @param {String} date        date
+ * @param {Number} num_of_days number of days to add
+ */
+export const addDays = (date, num_of_days) => toMoment(date).clone().add(num_of_days, 'day');
+
+/**
+ * add the specified number of months to the given date
+ * @param {String} date        date
+ * @param {Number} num_of_months number of months to add
+ */
+export const addMonths = (date, num_of_months) => toMoment(date).clone().add(num_of_months, 'month');
+
+/**
+ * add the specified number of years to the given date
+ * @param {String} date        date
+ * @param {Number} num_of_years number of years to add
+ */
+export const addYears = (date, num_of_years) => toMoment(date).clone().add(num_of_years, 'year');
+
+/**
+ * subtract the specified number of days from the given date
+ * @param {String} date        date
+ * @param {Number} num_of_days number of days to subtract
+ */
+export const subDays = (date, num_of_days) => toMoment(date).clone().subtract(num_of_days, 'day');
+
+/**
+ * subtract the specified number of months from the given date
+ * @param {String} date        date
+ * @param {Number} num_of_months number of months to subtract
+ */
+export const subMonths = (date, num_of_months) => toMoment(date).clone().subtract(num_of_months, 'month');
+
+/**
+ * subtract the specified number of years from the given date
+ * @param {String} date        date
+ * @param {Number} num_of_years number of years to subtract
+ */
+export const subYears = (date, num_of_years) => toMoment(date).clone().subtract(num_of_years, 'year');
+
+/**
+ * returns the minimum moment between the two passing parameters
+ * @param {moment|string|epoch} first datetime parameter
+ * @param {moment|string|epoch} second datetime parameter
+ */
+export const minDate = (date_1, date_2) => moment.min(toMoment(date_1), toMoment(date_2));
