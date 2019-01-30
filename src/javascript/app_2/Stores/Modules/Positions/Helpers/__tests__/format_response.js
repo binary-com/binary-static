@@ -1,9 +1,9 @@
 import { expect }                  from 'chai';
 import React                       from 'react';
-import { formatPortfolioPosition } from '../format_response';
+import { formatPositionsPosition } from '../format_response';
 
-describe('formatPortfolioPosition', () => {
-    const portfolio_pos = {
+describe('formatPositionsPosition', () => {
+    const positions_pos = {
         contract_id   : 1234,
         transaction_id: 5678,
         contract_type : 'ASIANU',
@@ -14,7 +14,7 @@ describe('formatPortfolioPosition', () => {
     };
 
     it('should return an object with values in object passed as argument', () => {
-        expect(formatPortfolioPosition(portfolio_pos)).to.eql({
+        expect(formatPositionsPosition(positions_pos)).to.eql({
             reference  : +5678,
             type       : 'ASIANU',
             details    :'test <br /> test <br /> test',

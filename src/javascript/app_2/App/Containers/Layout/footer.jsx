@@ -5,18 +5,15 @@ import ServerTime     from '../server_time.jsx';
 import {
     NetworkStatus,
     ToggleFullScreen,
-    TogglePortfolio,
     ToggleSettings,
     TogglePositions }  from '../../Components/Layout/Footer';
 
 const Footer = ({
     is_language_dialog_visible,
     is_logged_in,
-    is_portfolio_drawer_on,
     is_positions_drawer_on,
     is_settings_dialog_on,
     network_status,
-    togglePortfolioDrawer,
     togglePositionsDrawer,
     toggleSettingsDialog,
 }) => (
@@ -24,13 +21,6 @@ const Footer = ({
         <NetworkStatus status={network_status} />
         <ServerTime />
         <div className='footer-links'>
-            {
-                is_logged_in &&
-                <TogglePortfolio
-                    is_portfolio_drawer_on={is_portfolio_drawer_on}
-                    togglePortfolioDrawer={togglePortfolioDrawer}
-                />
-            }
             <ToggleFullScreen />
             <ToggleSettings
                 is_settings_visible={is_settings_dialog_on}
@@ -53,11 +43,9 @@ const Footer = ({
 Footer.propTypes = {
     is_language_dialog_visible: PropTypes.bool,
     is_logged_in              : PropTypes.bool,
-    is_portfolio_drawer_on    : PropTypes.bool,
     is_positions_drawer_on    : PropTypes.bool,
     is_settings_dialog_on     : PropTypes.bool,
     network_status            : PropTypes.object,
-    togglePortfolioDrawer     : PropTypes.func,
     togglePositionsDrawer     : PropTypes.func,
     toggleSettingsDialog      : PropTypes.func,
 };
@@ -67,10 +55,8 @@ export default connect(
         is_logged_in              : client.is_logged_in,
         network_status            : common.network_status,
         is_language_dialog_visible: ui.is_language_dialog_on,
-        is_portfolio_drawer_on    : ui.is_portfolio_drawer_on,
         is_positions_drawer_on    : ui.is_positions_drawer_on,
         is_settings_dialog_on     : ui.is_settings_dialog_on,
-        togglePortfolioDrawer     : ui.togglePortfolioDrawer,
         togglePositionsDrawer     : ui.togglePositionsDrawer,
         toggleSettingsDialog      : ui.toggleSettingsDialog,
     })

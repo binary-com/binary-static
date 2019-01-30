@@ -7,22 +7,24 @@ $header-height: 40px;
 
 .positions-drawer {
     width: $POSITIONS_DRAWER_WIDTH;
-    height: calc(100vh - #{$HEADER_HEIGHT} - #{$FOOTER_HEIGHT});
+    height: calc(100vh - #{$HEADER_HEIGHT} - #{$FOOTER_HEIGHT} - (2 * #{$POSITIONS_DRAWER_MARGIN}));
+    margin-top: $POSITIONS_DRAWER_MARGIN;
     position: fixed;
     z-index: 2;
     top: $HEADER_HEIGHT;
     left: 0;
     border-left: 1px solid $COLOR_GRAY;
-    background-color: $COLOR_WHITE;
+    background-color: $COLOR_GRAY;
     box-sizing: border-box;
     opacity: 0;
     color: $COLOR_BLUE;
     transform: translateX(-100%);
     will-change: transform, opacity;
     transition: opacity 0.25s ease, transform 0.25s ease;
+    border-radius: 4px;
 
     &--open {
-        transform: translateX(0);
+        transform: translateX(#{$POSITIONS_DRAWER_MARGIN});
         opacity: 1;
     }
     &__header {
@@ -55,6 +57,124 @@ $header-height: 40px;
             width: 16px;
         }
     }
+    /*
+       POSITIONS DRAWER CARD STARTS
+   */
+    & &-card {
+        box-sizing: border-box;
+        padding: 8px;
+        margin: 0 10px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr auto;
+        row-gap: 5px;
+        border: 1px solid $COLOR_GRAY;
+        border-radius: 4px;
+        cursor: pointer;
+        text-decoration: none;
+        color: $COLOR_LIGHT_BLACK;
+
+        &.active, &:hover {
+            background: $COLOR_LIGHT_GRAY;
+        }
+        &.active {
+            cursor: default;
+            border-color: $COLOR_BLUE;
+        }
+        &:not(:last-child) {
+            margin-bottom: 16px;
+        }
+        &__type {
+            font-size: 12px;
+
+            .contract-type {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+
+                .type-wrapper {
+                    margin: 0 4px 4px 0;
+                }
+                span {
+                    width: 30px;
+                }
+            }
+        }
+        &__symbol {
+            font-size: 10px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        &__indicative {
+            font-size: 12px;
+            font-weight: bold;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: center;
+            margin-bottom: auto;
+
+            &:after {
+                content: '';
+                display: inline-block;
+                height: 16px;
+                width: 16px;
+                background-size: 16px 16px;
+                margin-left: 2px;
+            }
+            &--price-moved-up {
+                color: $COLOR_LIGHT_GREEN;
+
+                &:after {
+                    background-image: url('../images/positions/ic_price_up.svg');
+                }
+            }
+            &--price-moved-down {
+                color: $COLOR_LIGHT_RED;
+
+                &:after {
+                    background-image: url('../images/positions/ic_price_down.svg');
+                }
+            }
+            &--price-stable {
+                color: $COLOR_BLACK;
+
+                &:after {
+                    background-image: url('../images/positions/ic_price_stable_light.svg');
+                }
+            }
+            &--no-resale {
+                color: $COLOR_GRAY;
+
+                &:after {
+                    background-image: url('../images/positions/ic_no_resale.svg');
+                }
+            }
+        }
+        &__remaining-time {
+            font-size: 10px;
+            color: $COLOR_BLUE_GRAY;
+            text-align: right;
+
+            &:before {
+                content: '';
+                display: inline-block;
+                height: 10px;
+                width: 10px;
+                background-size: 10px 10px;
+                margin-right: 2px;
+                background-image: url('../images/positions/ic_countdown.svg');
+                vertical-align: text-top;
+            }
+            .remaining-time {
+                display: inline;
+            }
+        }
+    }
+    /*
+        POSITIONS DRAWER CARD ENDS
+    */
 }
 
 // Dark Theme
@@ -63,5 +183,39 @@ $header-height: 40px;
         background: $COLOR_BLUE;
         border-color: $COLOR_BRANDBLUE_85;
         color: $COLOR_WHITE;
+
+        &-card {
+            background: $COLOR_BLUE;
+            border-color: $COLOR_BRANDBLUE_85;
+            color: $COLOR_WHITE;
+
+            &__remaining-time {
+                color: $COLOR_BRANDBLUE_40;
+            }
+            &.active, &:hover {
+                background: $COLOR_BRANDBLUE_85;
+            }
+            &.active {
+                border-color: $COLOR_WHITE;
+            }
+            &__indicative {
+                &--no-resale {
+                    color: $COLOR_BRANDBLUE_40;
+                }
+                &--price-stable {
+                    color: $COLOR_WHITE;
+
+                    &:after {
+                        background-image: url('../images/positions/ic_price_stable_dark.svg');
+                    }
+                }
+            }
+        }
+        &__body {
+            .positions-empty, p {
+                align-self: center;
+                color: $COLOR_WHITE;
+            }
+        }
     }
 }

@@ -3,20 +3,20 @@ import {
     computed,
     observable }                   from 'mobx';
 import { WS }                      from 'Services';
-import { formatPortfolioPosition } from './Helpers/format_response';
+import { formatPositionsPosition } from './Helpers/format_response';
 import BaseStore                   from '../../base_store';
 
-export default class PortfolioStore extends BaseStore {
+export default class PositionsStore extends BaseStore {
     @observable data       = [];
     @observable is_loading = false;
     @observable error      = '';
 
     @action.bound
-    initializePortfolio = () => {
+    initializePositions = () => {
         if (!this.root_store.client.is_logged_in) return;
         this.is_loading = true;
 
-        WS.portfolio().then(this.portfolioHandler);
+        WS.positions().then(this.positionsHandler);
         WS.subscribeProposalOpenContract(null, this.proposalOpenContractHandler, false);
         WS.subscribeTransaction(this.transactionHandler, false);
     };
@@ -29,7 +29,7 @@ export default class PortfolioStore extends BaseStore {
     }
 
     @action.bound
-    portfolioHandler(response) {
+    positionsHandler(response) {
         this.is_loading = false;
         if ('error' in response) {
             this.error = response.error.message;
@@ -38,7 +38,7 @@ export default class PortfolioStore extends BaseStore {
         this.error = '';
         if (response.portfolio.contracts) {
             this.data = response.portfolio.contracts
-                .map(pos => formatPortfolioPosition(pos))
+                .map(pos => formatPositionsPosition(pos))
                 .sort((pos1, pos2) => pos2.reference - pos1.reference); // new contracts first
         }
     }
@@ -52,7 +52,7 @@ export default class PortfolioStore extends BaseStore {
         const { contract_id, action: act } = response.transaction;
 
         if (act === 'buy') {
-            WS.portfolio().then((res) => {
+            WS.positions().then((res) => {
                 const new_pos = res.portfolio.contracts.find(pos => +pos.contract_id === +contract_id);
                 if (!new_pos) return;
                 this.pushNewPosition(new_pos);
@@ -69,30 +69,30 @@ export default class PortfolioStore extends BaseStore {
         if ('error' in response) return;
 
         const proposal = response.proposal_open_contract;
-        const portfolio_position = this.data.find((position) => +position.id === +proposal.contract_id);
+        const positions_position = this.data.find((position) => +position.id === +proposal.contract_id);
 
-        if (!portfolio_position) return;
+        if (!positions_position) return;
 
-        const prev_indicative = portfolio_position.indicative;
+        const prev_indicative = positions_position.indicative;
         const new_indicative  = +proposal.bid_price;
 
-        portfolio_position.indicative = new_indicative;
-        portfolio_position.underlying = proposal.display_name;
+        positions_position.indicative = new_indicative;
+        positions_position.underlying = proposal.display_name;
 
         if (!proposal.is_valid_to_sell) {
-            portfolio_position.status = 'no-resale';
+            positions_position.status = 'no-resale';
         } else if (new_indicative > prev_indicative) {
-            portfolio_position.status = 'price-moved-up';
+            positions_position.status = 'price-moved-up';
         } else if (new_indicative < prev_indicative) {
-            portfolio_position.status = 'price-moved-down';
+            positions_position.status = 'price-moved-down';
         } else {
-            portfolio_position.status = 'price-stable';
+            positions_position.status = 'price-stable';
         }
     }
 
     @action.bound
     pushNewPosition(new_pos) {
-        this.data.unshift(formatPortfolioPosition(new_pos));
+        this.data.unshift(formatPositionsPosition(new_pos));
     }
 
     @action.bound
@@ -105,7 +105,7 @@ export default class PortfolioStore extends BaseStore {
     accountSwitcherListener () {
         return new Promise((resolve) => {
             if (this.data.length === 0) {
-                resolve(this.initializePortfolio());
+                resolve(this.initializePositions());
             }
         });
     }
@@ -114,14 +114,14 @@ export default class PortfolioStore extends BaseStore {
     onMount() {
         this.onSwitchAccount(this.accountSwitcherListener);
         if (this.data.length === 0) {
-            this.initializePortfolio();
+            this.initializePositions();
         }
     }
 
     @action.bound
     onUnmount() {
         this.disposeSwitchAccount();
-        // keep data and connections for portfolio drawer on desktop
+        // keep data and connections for positions drawer on desktop
         if (this.root_store.ui.is_mobile) {
             this.clearTable();
             WS.forgetAll('proposal_open_contract', 'transaction');
@@ -134,10 +134,10 @@ export default class PortfolioStore extends BaseStore {
         let payout     = 0;
         let purchase   = 0;
 
-        this.data.forEach((portfolio_pos) => {
-            indicative += (+portfolio_pos.indicative);
-            payout     += (+portfolio_pos.payout);
-            purchase   += (+portfolio_pos.purchase);
+        this.data.forEach((positions_pos) => {
+            indicative += (+positions_pos.indicative);
+            payout     += (+positions_pos.payout);
+            purchase   += (+positions_pos.purchase);
         });
         return {
             indicative,
@@ -148,9 +148,9 @@ export default class PortfolioStore extends BaseStore {
 
     @computed
     get active_positions() {
-        return this.data.filter((portfolio_pos) => {
+        return this.data.filter((positions_pos) => {
             const server_epoch = this.root_store.common.server_time.unix();
-            return portfolio_pos.expiry_time > server_epoch;
+            return positions_pos.expiry_time > server_epoch;
         });
     }
 

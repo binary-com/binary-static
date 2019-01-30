@@ -57,7 +57,7 @@
             font-weight: 400;
         }
     }
-    // empty portfolio message
+    // empty positions message
     &-empty {
         height: 100%;
         display: flex;
@@ -74,7 +74,7 @@
             font-size: 14px;
         }
     }
-    // portfolio card
+    // positions card
     // TODO: reuse statement styles (common component?)
     &-card {
         &__header {

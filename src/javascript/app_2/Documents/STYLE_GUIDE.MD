@@ -179,7 +179,7 @@ never have any styles.
 * Are usually generated using higher order components such as connect() from React 
 Redux, createContainer() from Relay, or Container.create() from Flux Utils, 
 rather than written by hand.
-* Examples: Trade, Statement, Portfolio, Cashier, ...
+* Examples: Trade, Statement, Positions, Cashier, ...
 
 #### Do:
 

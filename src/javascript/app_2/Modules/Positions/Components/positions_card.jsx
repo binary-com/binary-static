@@ -5,7 +5,7 @@ import Money               from 'App/Components/Elements/money.jsx';
 import { getContractPath } from 'App/Components/Routes/helpers';
 import RemainingTime       from 'App/Containers/remaining_time.jsx';
 
-const PortfolioCard = ({
+const PositionsCard = ({
     currency,
     details,
     expiry_time,
@@ -16,30 +16,30 @@ const PortfolioCard = ({
     reference,
     status,
 }) => (
-    <NavLink className='portfolio-card card-list__card' activeClassName='active' to={getContractPath(id)}>
-        <div className='portfolio-card__header'>
-            <span className='portfolio-card__date'>
+    <NavLink className='positions-card card-list__card' activeClassName='active' to={getContractPath(id)}>
+        <div className='positions-card__header'>
+            <span className='positions-card__date'>
                 <RemainingTime end_time={expiry_time} />
             </span>
-            <span className='portfolio-card__refid'>
+            <span className='positions-card__refid'>
                 {reference}
             </span>
         </div>
-        <div className='portfolio-card__body'>
-            <div className='portfolio-card__desc'>{details}</div>
-            <div className='portfolio-card__row'>
-                <div className='portfolio-card__cell portfolio-card__purchase'>
-                    <span className='portfolio-card__cell-text'>
+        <div className='positions-card__body'>
+            <div className='positions-card__desc'>{details}</div>
+            <div className='positions-card__row'>
+                <div className='positions-card__cell positions-card__purchase'>
+                    <span className='positions-card__cell-text'>
                         <Money amount={purchase} currency={currency} />
                     </span>
                 </div>
-                <div className='portfolio-card__cell portfolio-card__payout'>
-                    <span className='portfolio-card__cell-text'>
+                <div className='positions-card__cell positions-card__payout'>
+                    <span className='positions-card__cell-text'>
                         <Money amount={payout} currency={currency} />
                     </span>
                 </div>
-                <div className={`portfolio-card__cell portfolio-card__indicative portfolio-card__indicative--${status}`}>
-                    <span className='portfolio-card__cell-text'>
+                <div className={`positions-card__cell positions-card__indicative positions-card__indicative--${status}`}>
+                    <span className='positions-card__cell-text'>
                         <Money amount={indicative} currency={currency} />
                     </span>
                 </div>
@@ -48,7 +48,7 @@ const PortfolioCard = ({
     </NavLink>
 );
 
-PortfolioCard.propTypes = {
+PositionsCard.propTypes = {
     currency   : PropTypes.string,
     details    : PropTypes.string,
     expiry_time: PropTypes.number,
@@ -60,4 +60,4 @@ PortfolioCard.propTypes = {
     status     : PropTypes.string,
 };
 
-export default PortfolioCard;
+export default PositionsCard;

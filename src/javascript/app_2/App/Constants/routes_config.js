@@ -4,13 +4,13 @@ import { localize }    from '_common/localize';
 import { routes }      from 'Constants';
 
 import {
-    IconPortfolio,
+    IconPositions,
     IconStatement }    from 'Assets/Header/NavBar';
 // import Statement       from 'Modules/Statement';
 import Trade           from 'Modules/Trading';
 
 const ContractDetails = lazy(() => import(/* webpackChunkName: "contract" */  'Modules/Contract'));
-const Portfolio       = lazy(() => import(/* webpackChunkName: "portfolio" */ 'Modules/Portfolio'));
+const Positions       = lazy(() => import(/* webpackChunkName: "positions" */ 'Modules/Positions'));
 const Settings        = lazy(() => import(/* webpackChunkName: "settings" */  'Modules/settings/settings.jsx'));
 const Statement       = lazy(() => import(/* webpackChunkName: "statement" */ 'Modules/Statement'));
 
@@ -31,7 +31,7 @@ const Page404 = lazy(() => import(/* webpackChunkName: "404" */ 'Modules/Page404
 const initRoutesConfig = () => ([
     { path: routes.contract,  component: ContractDetails, title: localize('Contract Details'),  is_authenticated: true },
     { path: routes.index,     component: Redirect,        title: '',                            to: '/trade' },
-    { path: routes.portfolio, component: Portfolio,       title: localize('Portfolio'),         is_authenticated: true, icon_component: IconPortfolio },
+    { path: routes.positions, component: Positions,       title: localize('Positions'),         is_authenticated: true, icon_component: IconPositions },
     { path: routes.root,      component: Redirect,        title: '',                            exact: true, to: '/trade' },
     { path: routes.statement, component: Statement,       title: localize('Statement'),         is_authenticated: true, icon_component: IconStatement },
     { path: routes.trade,     component: Trade,           title: localize('Trade'),             exact: true },

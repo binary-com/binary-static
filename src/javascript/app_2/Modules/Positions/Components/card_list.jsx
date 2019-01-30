@@ -1,15 +1,15 @@
 import { PropTypes as MobxPropTypes } from 'mobx-react';
 import React                          from 'react';
 import PropTypes                      from 'prop-types';
-import PortfolioCard                  from './portfolio_card.jsx';
+import PositionsCard                  from './positions_card.jsx';
 
 const CardList = ({ data, currency }) => (
     <div className='card-list'>
         {
-            data.map((portfolio_position, id) => (
-                <PortfolioCard
+            data.map((positions_position, id) => (
+                <PositionsCard
                     key={id}
-                    {...portfolio_position}
+                    {...positions_position}
                     currency={currency}
                 />
             ))
