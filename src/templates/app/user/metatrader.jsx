@@ -1,8 +1,7 @@
-import React             from 'react';
-import Loading           from '../../_common/components/loading.jsx';
-import {
-    FormRow,
-    SubmitButton }       from '../../_common/components/forms.jsx';
+import React from 'react';
+import { Button } from '../../_common/components/elements.jsx';
+import Loading from '../../_common/components/loading.jsx';
+import { FormRow, SubmitButton } from '../../_common/components/forms.jsx';
 import { SeparatorLine } from '../../_common/components/separator_line.jsx';
 
 /* eslint-disable react/jsx-no-target-blank */
@@ -494,8 +493,9 @@ const Metatrader = () => (
                     </form>
 
                     <div id='frm_cashier'>
-                        <div className='gr-row demo-only invisible'>
-                            <p className='gr-8 gr-push-2 gr-12-m gr-push-0-m gr-padding-30'>{it.L('This demo account comes with [_1] of virtual funds. Please [_2]contact our customer support team[_3] to replenish virtual funds if your account balance is empty.', '<span class="symbols mt-currency" />10,000.00', `<a href="${it.url_for('contact')}">`, '</a>')}</p>
+                        <div className='gr-row gr-row-align-center demo-only invisible'>
+                            <p className='gr-12 gr-12-m center-text'>{it.L('You can top up with [_1] if your balance falls below [_2].', '<span class="symbols mt-currency" />10,000.00', '<span class="symbols mt-currency" />1,000.00')}</p>
+                            <Button id={'MT5-VRT_topup_btn'} className={'button'} text={it.L('Get $10,000.00')} />
                         </div>
                         <div className='real-only invisible'>
                             <div className='gr-padding-20 gr-parent'>

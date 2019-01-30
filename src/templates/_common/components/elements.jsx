@@ -240,8 +240,18 @@ export const DatePicker = ({ className, id, text }) => (
     </div>
 );
 
-export const Button = ({ children, className, text_className, href, id, text, target }) => (
-    <a id={id} href={href || undefined} className={className || undefined} target={target}>
+export const Button = ({ children, className, text_className, href, id, text, target, balloon }) => (
+    <a
+        id={id}
+        href={href || undefined}
+        className={
+            balloon ?
+                [className, 'no-underline'].join(' ')
+                : className
+        }
+        target={target}
+        data-balloon={balloon}
+    >
         { children || <span className={text_className}>{text}</span> }
     </a>
 );
