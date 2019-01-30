@@ -87,12 +87,11 @@ const getMinWithdrawal = currency => (isCryptocurrency(currency) ? (getPropertyV
 const getTransferLimits = (currency, which) => {
     const transfer_limits = getPropertyValue(currencies_config, [currency, 'transfer_between_accounts', 'limits']) || getMinWithdrawal(currency);
     const decimals        = getDecimalPlaces(currency);
-    switch (which) {
-        case 'max':
-            return transfer_limits.max ? transfer_limits.max.toFixed(decimals) : undefined;
-        default:
-            return transfer_limits.min ? transfer_limits.min.toFixed(decimals) : transfer_limits;
+    if (which === 'max') {
+        return transfer_limits.max ? transfer_limits.max.toFixed(decimals) : undefined;
     }
+    
+    return transfer_limits.min ? transfer_limits.min.toFixed(decimals) : transfer_limits;
 };
 
 const getTransferFee = (currency_from, currency_to) => {

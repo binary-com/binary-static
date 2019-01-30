@@ -102,6 +102,7 @@ export const FillBox = ({
     text,
     dataShow,
     children,
+    id,
 }) => {
     let classes1 = '';
     if (padding) {
@@ -115,7 +116,7 @@ export const FillBox = ({
     classes2 += `${border || ''}`;
 
     return (
-        <div data-show={dataShow} className={[classes1, className].join(' ')}>
+        <div data-show={dataShow} id={id} className={[classes1, className].join(' ')}>
             <div className={classes2}>
                 <div className='inline-flex center-align gr-gutter'>
                     { image &&
@@ -242,5 +243,11 @@ export const DatePicker = ({ className, id, text }) => (
 export const Button = ({ children, className, href, id, text }) => (
     <a id={id} href={href || undefined} className={className || undefined}>
         { children || <span>{text}</span> }
+    </a>
+);
+
+export const SocialButton = ({ provider }) => (
+    <a id={`button_${provider}`} href='javascript:;' className='button-social'>
+        <span className='name'>{provider}</span>
     </a>
 );

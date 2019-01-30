@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SeparatorLine = ({
+export const SeparatorLine = ({
     no_wrapper,
     show_mobile,
     className,
@@ -17,4 +17,10 @@ const SeparatorLine = ({
     );
 };
 
-export default SeparatorLine;
+export const SeparatorLineWithText = ({ text, className }) => (
+    <div className={`${className || ''} section-divider`}>
+        <div className='align-self-center border-bottom-light-gray' />
+        <div className='circle'>{text}</div>
+        <div className='align-self-center border-bottom-light-gray' />
+    </div>
+);
