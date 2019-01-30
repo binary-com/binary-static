@@ -46,6 +46,8 @@ const Barrier = ({
                 type='number'
                 name='barrier_1'
                 value={barrier_1}
+                prefix={barrier_count === 2 ? 'up' : false}
+                className={barrier_count === 2 ? 'multiple' : 'single'}
                 onChange={onChange}
                 error_messages = {validation_errors.barrier_1 || []}
                 is_float
@@ -57,6 +59,8 @@ const Barrier = ({
                     type='number'
                     name='barrier_2'
                     value={barrier_2}
+                    prefix='down'
+                    className='multiple'
                     onChange={onChange}
                     error_messages = {validation_errors.barrier_2}
                     is_float

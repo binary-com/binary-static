@@ -273,6 +273,12 @@
                 input {
                     padding-left: 3px;
                 }
+                &.multiple {
+                    display: inline-block;
+                    width: 46%;
+                    margin-left: 4px;
+                    margin-right: 4px;
+                }
             }
         }
     }
