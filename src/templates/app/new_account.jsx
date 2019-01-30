@@ -14,10 +14,10 @@ const NewAccount = () => (
                         <input autoComplete='off' autoFocus={true} name='email' id='email' maxLength='50' placeholder={it.L('Email')}  data-lpignore='true' />
                     </div>
                     <div>
-                        <button type='submit'>{it.L('Create free account')}</button>
+                        <button type='submit' className='no-margin'>{it.L('Create free account')}</button>
                     </div>
                 </form>
-                <SeparatorLineWithText text={it.L('or')} className='gr-padding-20' />
+                <SeparatorLineWithText text={it.L('or')} className='gr-padding-20 no-margin full-width' />
             </div>
             <p className='no-margin gr-padding-10 gr-parent'>{it.L('Create free account with')}</p>
             <div className='gr-row gr-row-align-center'>
