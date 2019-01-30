@@ -56,7 +56,6 @@ export default class ClientStore extends BaseStore {
     @computed
     get account_list() {
         return this.all_loginids.map(id => (
-            id !== this.loginid &&
             !this.isDisabled(id) &&
             this.getToken(id) ?
                 this.getAccountInfo(id) :
