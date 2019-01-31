@@ -3,6 +3,7 @@ import PropTypes          from 'prop-types';
 import React              from 'react';
 import Dialog             from './dialog.jsx';
 import InputField         from '../input_field.jsx';
+import classNames         from 'classnames';
 
 class TimePicker extends React.PureComponent {
     state = {
@@ -62,7 +63,7 @@ class TimePicker extends React.PureComponent {
         return (
             <div
                 ref={this.saveRef}
-                className={`${prefix_class}${this.props.padding ? ' padding' : ''}${this.state.is_open ? ' active' : ''}`}
+                className={classNames(`${prefix_class}`, `${this.props.padding ? ' padding' : ''}`, `${this.state.is_open ? ' active' : ''}`)}
             >
                 {
                     is_nativepicker
@@ -82,18 +83,18 @@ class TimePicker extends React.PureComponent {
                                     type='text'
                                     is_read_only
                                     id={`${prefix_class}-input`}
-                                    className={`${prefix_class}-input ${this.state.is_open ? 'active' : ''}`}
+                                    className={classNames(`${prefix_class}-input`, `${this.state.is_open ? 'active' : ''}`)}
                                     value={value}
                                     onClick={this.toggleDropDown}
                                     name={name}
                                     placeholder={placeholder}
                                 />
                                 <Dialog
-                                    className={`${this.state.is_open ? 'active' : ''} from-left`}
+                                    className={classNames(`${this.state.is_open ? 'active' : ''}`, 'from-left')}
                                     onChange={this.handleChange}
                                     preClass={prefix_class}
                                     start_time={start_time}
-                                    end_time={end_time} 
+                                    end_time={end_time}
                                     value={value}
                                 />
                             </React.Fragment>
