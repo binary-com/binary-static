@@ -17,6 +17,20 @@ class DurationWrapper extends React.Component {
         await this.props.onChangeAsync({ target: { name: 'duration', value: new_duration_value } });
     }
 
+    componentDidMount() {
+        const current_unit = this.props.is_advanced_duration ?
+            this.props.advanced_duration_unit : this.props.simple_duration_unit;
+        const current_duration = this.props.getDurationFromUnit(this.props.duration_unit);
+
+        if (this.props.duration_unit !== current_unit) {
+            this.props.onChangeUiStore({ name: `${this.props.is_advanced_duration ? 'advanced' : 'simple'}_duration_unit`, value: this.props.duration_unit });
+        }
+
+        if (this.props.duration !== current_duration) {
+            this.props.onChangeUiStore({ name: `duration_${current_unit}`, value: this.props.duration });
+        }
+    }
+
     componentWillReact() {
         const simple_is_missing_duration_unit = this.props.simple_duration_unit === 'd' && this.props.duration_units_list.length === 4;
         const current_duration                = this.props.is_advanced_duration ?
