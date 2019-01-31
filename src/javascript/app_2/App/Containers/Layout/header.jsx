@@ -14,7 +14,6 @@ import header_links    from 'App/Constants/header_links';
 import { connect }     from 'Stores/connect';
 
 const Header = ({
-    account_type,
     balance,
     can_upgrade,
     currency,
@@ -23,6 +22,7 @@ const Header = ({
     is_install_button_visible,
     is_logged_in,
     is_mobile,
+    is_virtual,
     loginid,
     onClickUpgrade,
     pwa_prompt_event,
@@ -59,19 +59,20 @@ const Header = ({
                         { is_logged_in ?
                             <React.Fragment>
                                 <AccountInfo
-                                    account_type={account_type}
                                     balance={formatMoney(currency, balance, true)}
                                     is_upgrade_enabled={can_upgrade}
+                                    is_virtual={is_virtual}
                                     onClickUpgrade={onClickUpgrade}
                                     currency={currency}
                                     loginid={loginid}
                                     is_dialog_on={is_acc_switcher_on}
                                     toggleDialog={toggleAccountsDialog}
                                 />
-                                { can_upgrade ?
-                                    <UpgradeButton />
-                                    :
-                                    <DepositButton />
+                                { !!(can_upgrade && is_virtual) &&
+                                <UpgradeButton />
+                                }
+                                { !(is_virtual) &&
+                                <DepositButton />
                                 }
                             </React.Fragment>
                             :
@@ -85,16 +86,16 @@ const Header = ({
 };
 
 Header.propTypes = {
-    account_type             : PropTypes.string,
     balance                  : PropTypes.string,
     can_upgrade              : PropTypes.bool,
     currency                 : PropTypes.string,
     hideInstallButton        : PropTypes.func,
     is_acc_switcher_on       : PropTypes.bool,
-    is_dark_mode             : PropTypes.bool, // TODO: add dark theme handler
+    is_dark_mode             : PropTypes.bool,
     is_install_button_visible: PropTypes.bool,
     is_logged_in             : PropTypes.bool,
     is_mobile                : PropTypes.bool,
+    is_virtual               : PropTypes.bool,
     loginid                  : PropTypes.string,
     onClickUpgrade           : PropTypes.func, // TODO: add click handler
     pwa_prompt_event         : PropTypes.object,
@@ -107,11 +108,11 @@ Header.propTypes = {
 // to prevent updates on <MenuLinks /> from being blocked
 export default withRouter(connect(
     ({ client, ui }) => ({
-        account_type             : client.account_title,
         balance                  : client.balance,
         can_upgrade              : client.can_upgrade,
         currency                 : client.currency,
         is_logged_in             : client.is_logged_in,
+        is_virtual               : client.is_virtual,
         loginid                  : client.loginid,
         hideInstallButton        : ui.hideInstallButton,
         is_acc_switcher_on       : ui.is_accounts_switcher_on,

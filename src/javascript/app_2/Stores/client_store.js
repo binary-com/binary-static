@@ -118,7 +118,7 @@ export default class ClientStore extends BaseStore {
 
     @computed
     get is_virtual() {
-        return !!this.accounts[this.loginid].is_virtual;
+        return this.accounts[this.loginid] && !!this.accounts[this.loginid].is_virtual;
     }
 
     @computed
