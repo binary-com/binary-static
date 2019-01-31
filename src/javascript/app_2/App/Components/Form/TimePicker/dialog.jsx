@@ -11,7 +11,7 @@ function selectOption(type, value, props, is_enabled = true) {
     }
 }
 
-function TimePickerDropdown(props) {
+function Dialog(props) {
     const { preClass, value, start_time, end_time } = props;
     const start_time_moment     = start_time ? toMoment(start_time) : toMoment();
     const end_time_moment       = end_time ? toMoment(end_time) : toMoment().hour('23').minute('59').seconds('59').milliseconds('999');
@@ -20,7 +20,7 @@ function TimePickerDropdown(props) {
     const hours    = [...Array(24).keys()].map((a)=>`0${a}`.slice(-2));
     const minutes  = [...Array(12).keys()].map((a)=>`0${a * 5}`.slice(-2));
     return (
-        <div className={`${preClass}-dropdown ${props.className}`}>
+        <div className={`${preClass}-dialog ${props.className}`}>
             <div className={`${preClass}-selector`}>
                 <div className={`${preClass}-hours`}>
                     <div className='list-title center-text'><strong>{localize('Hour')}</strong></div>
@@ -62,4 +62,4 @@ function TimePickerDropdown(props) {
     );
 }
 
-export default TimePickerDropdown;
+export default Dialog;

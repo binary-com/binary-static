@@ -26,7 +26,7 @@
             text-align: center;
         }
     }
-    .time-picker-dropdown {
+    .time-picker-dialog {
         font-size: 16px;
         position: absolute;
         top: 0;
@@ -110,7 +110,7 @@
 
 // Dark Theme
 .theme-wrapper.dark {
-    .time-picker .time-picker-dropdown {
+    .time-picker .time-picker-dialog {
         .time-picker-panel, .time-picker-selector {
             background: $COLOR_BLUE;
             border-color: $COLOR_BRANDBLUE_85;

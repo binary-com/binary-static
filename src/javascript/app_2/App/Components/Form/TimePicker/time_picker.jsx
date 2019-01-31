@@ -1,17 +1,14 @@
 import { observer }       from 'mobx-react';
 import PropTypes          from 'prop-types';
 import React              from 'react';
-import TimePickerDropdown from './time_picker_dropdown.jsx';
+import Dialog             from './dialog.jsx';
 import InputField         from '../input_field.jsx';
 
 class TimePicker extends React.PureComponent {
-    constructor (props) {
-        super(props);
-        this.state = {
-            is_open: false,
-            value  : '',
-        };
-    }
+    state = {
+        is_open: false,
+        value  : '',
+    };
 
     componentDidMount() {
         document.addEventListener('mousedown', this.handleClickOutside);
@@ -91,12 +88,12 @@ class TimePicker extends React.PureComponent {
                                     name={name}
                                     placeholder={placeholder}
                                 />
-                                <TimePickerDropdown
+                                <Dialog
                                     className={`${this.state.is_open ? 'active' : ''} from-left`}
                                     onChange={this.handleChange}
                                     preClass={prefix_class}
                                     start_time={start_time}
-                                    end_time={end_time}
+                                    end_time={end_time} 
                                     value={value}
                                 />
                             </React.Fragment>
