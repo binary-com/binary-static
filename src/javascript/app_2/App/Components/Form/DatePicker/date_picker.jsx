@@ -87,7 +87,9 @@ class DatePicker extends React.Component {
 
     clearDatePickerInput = () => {
         this.setState({ value: null }, this.updateStore);
-        this.calendar.resetCalendar();
+        if (this.calendar) {
+            this.calendar.resetCalendar();
+        }
     };
 
     // TODO: handle cases where user inputs date before min_date and date after max_date
