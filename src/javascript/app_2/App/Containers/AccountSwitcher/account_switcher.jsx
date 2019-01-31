@@ -2,7 +2,6 @@ import classNames        from 'classnames';
 import PropTypes         from 'prop-types';
 import React             from 'react';
 import { localize }      from '_common/localize';
-import { UpgradeButton } from 'App/Components/Elements/AccountSwitcher/upgrade_button.jsx';
 import { IconLogout }    from 'Assets/Header/Drawer';
 import { requestLogout } from 'Services/index';
 import { connect }       from 'Stores/connect';
@@ -76,14 +75,14 @@ class AccountSwitcher extends React.Component {
                                     </div>
                                 </React.Fragment>
                             ))}
-                    </div>
-                }
-                {
-                    // TODO: Add link to account opening page for upgrade or multi account page for new account
-                    !!(this.props.upgrade_info.can_upgrade || this.props.upgrade_info.can_open_multi) &&
-                    <div className='acc-switcher__new-account'>
-                        {/* TODO: Update text below for handling upgrade to new account or adding new account */}
-                        <span>{localize('Add new account')}</span>
+
+                        {   // TODO: Add link to account opening page for upgrade or multi account page for new account.
+                            // Update text below for handling types of account to create :- e.g - Investment
+                            !!(this.props.is_upgrade_enabled && this.props.upgrade_info.can_open_multi) &&
+                            <div className='acc-switcher__new-account'>
+                                <span>{localize('Add new account')}</span>
+                            </div>
+                        }
                     </div>
                 }
                 <div className='acc-switcher__list__virtual'>
@@ -102,11 +101,10 @@ class AccountSwitcher extends React.Component {
                         <span className='acc-switcher__radio' />
                     </div>
                 </div>
-                {
-                    this.props.is_upgrade_enabled &&
-                    <div className='acc-button'>
-                        <UpgradeButton onClick={this.props.onClickUpgrade} />
-                    </div>
+                { !!(this.props.is_upgrade_enabled && this.props.is_virtual) &&
+                <div className='acc-switcher__new-account'>
+                    <span>{localize('Upgrade to Real Account')}</span>
+                </div>
                 }
                 <div className='acc-logout' onClick={this.handleLogout}>
                     <span className='acc-logout__text'>{localize('Log out')}</span>
@@ -122,6 +120,7 @@ AccountSwitcher.propTypes = {
     account_loginid   : PropTypes.string,
     is_logged_in      : PropTypes.bool,
     is_upgrade_enabled: PropTypes.bool,
+    is_virtual        : PropTypes.bool,
     is_visible        : PropTypes.bool,
     onClickUpgrade    : PropTypes.func,
     toggle            : PropTypes.func,
@@ -134,6 +133,7 @@ const account_switcher = connect(
         account_list   : client.account_list,
         account_loginid: client.loginid,
         is_logged_in   : client.is_logged_in,
+        is_virtual     : client.is_virtual,
         switchAccount  : client.switchAccount,
         upgrade_info   : client.upgrade_info,
         virtual_loginid: client.virtual_account_loginid,
