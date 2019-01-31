@@ -63,7 +63,9 @@ class TimePicker extends React.PureComponent {
         return (
             <div
                 ref={this.saveRef}
-                className={classNames(`${prefix_class}`, `${this.props.padding ? ' padding' : ''}`, `${this.state.is_open ? ' active' : ''}`)}
+                className={classNames(prefix_class,
+                    { 'padding': this.props.padding },
+                    { 'active': this.state.is_open })}
             >
                 {
                     is_nativepicker
@@ -91,7 +93,9 @@ class TimePicker extends React.PureComponent {
                                     placeholder={placeholder}
                                 />
                                 <Dialog
-                                    className={classNames(`${this.state.is_open ? 'active' : ''}`, 'from-left')}
+                                    className={classNames(
+                                        { 'active': this.state.is_open },
+                                        'from-left')}
                                     onChange={this.handleChange}
                                     preClass={prefix_class}
                                     start_time={start_time}
