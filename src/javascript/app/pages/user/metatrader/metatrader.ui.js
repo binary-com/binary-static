@@ -3,6 +3,7 @@ const Client           = require('../../../base/client');
 const Currency         = require('../../../common/currency');
 const Validation       = require('../../../common/form_validation');
 const getTransferFee   = require('../../../../_common/base/currency_base').getTransferFee;
+const getElementById   = require('../../../../_common/common_functions').getElementById;
 const localize         = require('../../../../_common/localize').localize;
 const State            = require('../../../../_common/storage').State;
 const urlForStatic     = require('../../../../_common/url').urlForStatic;
@@ -270,6 +271,7 @@ const MetaTraderUI = (() => {
             const client_currency = Client.get('currency');
             const mt_currency     = MetaTraderConfig.getCurrency(acc_type);
             cloneForm();
+            setDemoTopupStatus();
             $form.find('.binary-account').text(`${localize('[_1] Account [_2]', ['Binary', Client.get('loginid')])}`);
             $form.find('.binary-balance').html(`${Currency.formatMoney(client_currency, Client.get('balance'))}`);
             $form.find('.mt5-account').text(`${localize('[_1] Account [_2]', [accounts_info[acc_type].title, accounts_info[acc_type].info.login])}`);
@@ -559,6 +561,52 @@ const MetaTraderUI = (() => {
         if (MetaTraderConfig.hasAccount(acc_type) && accounts_info[acc_type].account_type === 'financial') {
             $('#financial_authenticate_msg').setVisibility(!MetaTraderConfig.isAuthenticated());
         }
+    };
+
+    const setDemoTopupStatus = () => {
+        const el_demo_topup_btn  = getElementById('demo_topup_btn');
+        const el_demo_topup_info = el_demo_topup_btn.previousSibling;
+        const el_loading         = el_demo_topup_btn.parentElement.firstChild;
+        const topup_info_text    = localize('You can top up your demo account with an additional [_1] if your balance falls below [_2].', [`${Client.get('currency')} 10,000.00`, `${Client.get('currency')} 1,000.00`]);
+        const topup_btn_text     = localize('Get [_1]', `${Client.get('currency')} 10,000.00`);
+        const acc_type           = Client.get('mt5_account');
+        const is_demo            = accounts_info[acc_type].is_demo;
+
+        el_loading.setVisibility(0);
+        el_demo_topup_info.innerText = topup_info_text;
+        el_demo_topup_btn.firstChild.innerText = topup_btn_text;
+
+        if (is_demo) {
+            const balance     = accounts_info[acc_type].info.balance;
+            const min_balance = 1000;
+
+            if (balance <= min_balance) {
+                enableDemoTopup();
+            } else {
+                disableDemoTopup();
+            }
+        }
+    };
+
+    const disableDemoTopup = () => {
+        const el_demo_topup_btn = getElementById('demo_topup_btn');
+        const tooltip_text     = localize('Your balance must be below [_1] to top up.', `${Client.get('currency')} 1,000.00`);
+
+        el_demo_topup_btn.removeAttribute('href');
+        el_demo_topup_btn.previousSibling.setVisibility(1);
+        el_demo_topup_btn.classList.add('button-disabled', 'no-underline');
+        el_demo_topup_btn.classList.remove('button');
+        el_demo_topup_btn.setAttribute('data-balloon', tooltip_text);
+    };
+
+    const enableDemoTopup = () => {
+        const el_demo_topup_btn = getElementById('demo_topup_btn');
+
+        el_demo_topup_btn.href = '#'; // TODO call API
+        el_demo_topup_btn.previousSibling.setVisibility(0);
+        el_demo_topup_btn.classList.add('button');
+        el_demo_topup_btn.removeAttribute('data-balloon');
+        el_demo_topup_btn.classList.remove('button-disabled', 'no-underline');
     };
 
     return {
