@@ -27,7 +27,7 @@ function Dialog(props) {
                     <div className='list-title center-text'><strong>{localize('Hour')}</strong></div>
                     <div className='list-container'>
                         {hours.map((h, key) => {
-                            to_compare_moment.hour(h);
+                            to_compare_moment.hour(h).minute(minute);
                             const is_enabled = to_compare_moment.isBetween(start_time_moment, end_time_moment);
                             return (
                                 <div
