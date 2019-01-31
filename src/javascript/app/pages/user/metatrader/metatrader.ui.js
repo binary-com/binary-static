@@ -590,13 +590,11 @@ const MetaTraderUI = (() => {
 
     const disableDemoTopup = () => {
         const el_demo_topup_btn = getElementById('demo_topup_btn');
-        const tooltip_text     = localize('Your balance must be below [_1] to top up.', `${Client.get('currency')} 1,000.00`);
 
         el_demo_topup_btn.removeAttribute('href');
         el_demo_topup_btn.previousSibling.setVisibility(1);
-        el_demo_topup_btn.classList.add('button-disabled', 'no-underline');
+        el_demo_topup_btn.classList.add('button-disabled');
         el_demo_topup_btn.classList.remove('button');
-        el_demo_topup_btn.setAttribute('data-balloon', tooltip_text);
     };
 
     const enableDemoTopup = () => {
@@ -605,8 +603,7 @@ const MetaTraderUI = (() => {
         el_demo_topup_btn.href = '#'; // TODO call API
         el_demo_topup_btn.previousSibling.setVisibility(0);
         el_demo_topup_btn.classList.add('button');
-        el_demo_topup_btn.removeAttribute('data-balloon');
-        el_demo_topup_btn.classList.remove('button-disabled', 'no-underline');
+        el_demo_topup_btn.classList.remove('button-disabled');
     };
 
     return {
