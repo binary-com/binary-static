@@ -1,9 +1,9 @@
-import PropTypes      from 'prop-types';
-import React          from 'react';
+import PropTypes                from 'prop-types';
+import React                    from 'react';
 import {
     PropTypes as MobxPropTypes,
     observer }                  from 'mobx-react';
-import Duration from './duration.jsx';
+import Duration                 from './duration.jsx';
 
 class DurationWrapper extends React.Component {
     hasDurationUnit = (duration_unit) => this.props.duration_units_list.some(du => du.value === duration_unit);
