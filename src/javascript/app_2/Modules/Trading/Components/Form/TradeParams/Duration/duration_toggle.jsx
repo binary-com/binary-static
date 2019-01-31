@@ -14,7 +14,7 @@ const DurationToggle = ({
     const icon_className = classNames(
         'advanced-simple-toggle__icon',
         'select-arrow',
-        { 'advanced-simple-toggle__icon--active': value }
+        { 'advanced-simple-toggle__icon--active': value },
     );
     return (
         <Fragment>
