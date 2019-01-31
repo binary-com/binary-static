@@ -57,7 +57,7 @@
                 right: 8px;
                 line-height: 1;
                 transition: transform 0.25s ease;
-                transform: rotate(180deg);
+                transform: rotate(0deg);
                 transform-origin: 50% 45%;
                 color: $COLOR_GRAY;
                 font-size: 1.1rem;
@@ -86,7 +86,7 @@
             }
             &--show {
                 .select-arrow {
-                    transform: rotate(0deg);
+                    transform: rotate(180deg);
                 }
                 p.acc-balance-id {
                     font-weight: 500;
