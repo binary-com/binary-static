@@ -86,8 +86,8 @@ const Duration = ({
         onChangeUiStore({ name, value });
 
         // replace selected duration unit and duration if the contract doesn't have that duration unit
-        let current_duration_unit = is_advanced_duration ? advanced_duration_unit : simple_duration_unit;
-        if (hasDurationUnit(current_duration_unit)) {
+        let current_duration_unit = value ? advanced_duration_unit : simple_duration_unit;
+        if (!hasDurationUnit(current_duration_unit)) {
             current_duration_unit = duration_units_list[0].value;
             onChangeUiStore({ name: `${value ? 'advanced' : 'simple'}_duration_unit`, value: current_duration_unit });
         }
@@ -95,6 +95,15 @@ const Duration = ({
         const duration_value  = getDurationFromUnit(current_duration_unit);
         onChange({ target: { name: 'duration_unit', value: current_duration_unit } });
         onChange({ target: { name: 'duration', value: duration_value } });
+
+        // simple only has expiry type of duration
+        if (!value && expiry_type !== 'duration') {
+            onChange({ target: { name: 'expiry_type', value: 'duration' } });
+        }
+
+        if (value && expiry_type !== advanced_expiry_type) {
+            onChange({ target: { name: 'expiry_type', value: advanced_expiry_type } });
+        }
     };
 
     let max_value, min_value;

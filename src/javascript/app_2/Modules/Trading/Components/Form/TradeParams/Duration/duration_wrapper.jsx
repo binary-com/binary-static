@@ -17,15 +17,27 @@ class DurationWrapper extends React.Component {
         this.props.onChange({ target: { name: 'duration', value: new_duration_value } });
     };
 
-    // intercept changes to current contracts duration_units_list - if they are missing change duration_unit and value in trade_store and ui_store
     componentWillReact() {
         const simple_is_missing_duration_unit = this.props.simple_duration_unit === 'd' && this.props.duration_units_list.length === 4;
         const current_duration                = this.props.is_advanced_duration ?
             this.props.advanced_duration_unit : this.props.simple_duration_unit;
         const has_missing_duration_unit       = !this.hasDurationUnit(current_duration);
+        const simple_is_not_type_duration     = !this.props.is_advanced_duration && this.props.expiry_type !== 'duration';
+        const advanced_has_wrong_expiry       = this.props.is_advanced_duration
+            && this.props.expiry_type !== this.props.advanced_expiry_type;
 
+        // intercept changes to current contracts duration_units_list - if they are missing change duration_unit and value in trade_store and ui_store
         if (has_missing_duration_unit || simple_is_missing_duration_unit) {
             this.setDurationUnit();
+        }
+
+        // simple only has expiry type duration
+        if (simple_is_not_type_duration) {
+            this.props.onChange({ target: { name: 'expiry_type', value: 'duration' } });
+        }
+
+        if (advanced_has_wrong_expiry) {
+            this.props.onChange({ target: { name: 'expiry_type', value: this.props.advanced_expiry_type } });
         }
     }
 
