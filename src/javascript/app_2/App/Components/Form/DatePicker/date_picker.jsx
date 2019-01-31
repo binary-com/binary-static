@@ -46,7 +46,7 @@ class DatePicker extends React.Component {
     }
 
     handleVisibility = () => {
-        this.setState({ is_datepicker_visible: !this.state.is_datepicker_visible });
+        this.setState(state => ({ is_datepicker_visible: !state.is_datepicker_visible }));
     }
 
     onClickOutside = (e) => {
