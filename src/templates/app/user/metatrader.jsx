@@ -494,8 +494,9 @@ const Metatrader = () => (
 
                     <div id='frm_cashier'>
                         <div className='gr-row gr-row-align-center demo-only invisible'>
-                            <p className='gr-12 gr-12-m center-text'>{it.L('You can top up with [_1] if your balance falls below [_2].', '<span class="symbols mt-currency" />10,000.00', '<span class="symbols mt-currency" />1,000.00')}</p>
-                            <Button id={'MT5-VRT_topup_btn'} className={'button'} text={it.L('Get $10,000.00')} />
+                            <Loading />
+                            <p className='gr-12 gr-12-m center-text' />
+                            <Button id={'demo_topup_btn'} />
                         </div>
                         <div className='real-only invisible'>
                             <div className='gr-padding-20 gr-parent'>
