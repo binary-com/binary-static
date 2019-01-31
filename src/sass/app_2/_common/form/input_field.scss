@@ -110,7 +110,7 @@
         border: 1px solid $COLOR_GRAY;
         border-radius: $BORDER_RADIUS;
         text-align: center;
-        transition: transform 0.3s, box-shadow 0.18s;
+        transition: transform 0.3s;
 
         &[type=checkbox] {
             cursor: pointer;
@@ -229,7 +229,7 @@
             &:focus, &:active {
                 outline: 0;
                 border-color: $COLOR_WHITE;
-                box-shadow: 0 0 0 0.2rem rgba(127, 131, 151, 0.3) // stylelint-disable-line number-leading-zero
+                box-shadow: 0 0 0 0.2rem rgba(127, 131, 151, 0.3);
             }
         }
     }
