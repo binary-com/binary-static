@@ -44,33 +44,35 @@ const Barrier = ({
             className='barriers'
             header={barrier_title}
         >
-            <InputField
-                type='number'
-                name='barrier_1'
-                value={barrier_1}
-                className={barrier_count === 2 ? 'multiple' : 'single'}
-                onChange={onChange}
-                error_messages = {validation_errors.barrier_1 || []}
-                is_float
-                is_signed
-            />
-
-            {barrier_count === 2 &&
-                <React.Fragment>
-                    <InputField
-                        type='number'
-                        name='barrier_2'
-                        value={barrier_2}
-                        className='multiple'
-                        onChange={onChange}
-                        error_messages = {validation_errors.barrier_2}
-                        is_float
-                        is_signed
-                    />
-                    <IconBarrierUp className='up' />
-                    <IconBarrierDown className='down' />
-                </React.Fragment>
-            }
+            <div className='barriers-wrapper' >
+                <InputField
+                    type='number'
+                    name='barrier_1'
+                    value={barrier_1}
+                    className={barrier_count === 2 ? 'multiple' : 'single'}
+                    onChange={onChange}
+                    error_messages = {validation_errors.barrier_1 || []}
+                    is_float
+                    is_signed
+                />
+    
+                {barrier_count === 2 &&
+                    <React.Fragment>
+                        <InputField
+                            type='number'
+                            name='barrier_2'
+                            value={barrier_2}
+                            className='multiple'
+                            onChange={onChange}
+                            error_messages = {validation_errors.barrier_2}
+                            is_float
+                            is_signed
+                        />
+                        <IconBarrierUp className='up' />
+                        <IconBarrierDown className='down' />
+                    </React.Fragment>
+                }
+            </div>
         </Fieldset>
     );
 };
