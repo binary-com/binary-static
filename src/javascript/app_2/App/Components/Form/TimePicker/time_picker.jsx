@@ -1,9 +1,9 @@
-import classNames         from 'classnames';
-import { observer }       from 'mobx-react';
-import PropTypes          from 'prop-types';
-import React              from 'react';
-import Dialog             from './dialog.jsx';
-import InputField         from '../input_field.jsx';
+import classNames   from 'classnames';
+import { observer } from 'mobx-react';
+import PropTypes    from 'prop-types';
+import React        from 'react';
+import Dialog       from './dialog.jsx';
+import InputField   from '../input_field.jsx';
 
 class TimePicker extends React.PureComponent {
     state = {
@@ -83,7 +83,8 @@ class TimePicker extends React.PureComponent {
                                     type='text'
                                     is_read_only
                                     id={`${prefix_class}-input`}
-                                    className={classNames(`${prefix_class}-input`, `${this.state.is_open ? 'active' : ''}`)}
+                                    className={classNames(`${prefix_class}-input`,
+                                        { 'active': this.state.is_open })}
                                     value={value}
                                     onClick={this.toggleDropDown}
                                     name={name}
