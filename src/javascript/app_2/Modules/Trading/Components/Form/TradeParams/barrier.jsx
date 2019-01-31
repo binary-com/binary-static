@@ -1,11 +1,11 @@
 import { observer }      from 'mobx-react';
 import PropTypes         from 'prop-types';
 import React             from 'react';
+import { IconBarrierUp } from 'Assets/Trading/Barriers/icon_barrier_up.jsx';
+import { IconBarrierDown } from 'Assets/Trading/Barriers/icon_barrier_down.jsx';
 import Fieldset          from 'App/Components/Form/fieldset.jsx';
 import InputField        from 'App/Components/Form/input_field.jsx';
 import { localize }      from '_common/localize';
-import { IconBarrierUp } from 'Assets/Trading/Barriers/icon_barrier_up.jsx';
-import { IconBarrierDown } from 'Assets/Trading/Barriers/icon_barrier_down.jsx';
 
 const Barrier = ({
     barrier_1,
