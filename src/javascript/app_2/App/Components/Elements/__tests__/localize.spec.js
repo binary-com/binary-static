@@ -19,5 +19,6 @@ describe('Localize', () => {
         };
         const wrapper = shallow(<Localize str={str} replacers={replacers} />);
         expect(wrapper).to.have.length(1);
+        expect(wrapper.find('.a-cool-classname').exists()).to.be.true;
     });
 });

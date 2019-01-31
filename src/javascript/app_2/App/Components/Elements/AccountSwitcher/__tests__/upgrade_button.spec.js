@@ -11,8 +11,4 @@ describe('UpgradeButton', () => {
         const wrapper = shallow(<UpgradeButton />);
         expect(wrapper).to.have.length(1);
     });
-    it('should have onClick as an instance of function when passed', () => {
-        const wrapper = shallow(<UpgradeButton onClick={() => true} />);
-        expect(wrapper.find('Button').prop('onClick')).to.be.an.instanceof(Function);
-    });
 });

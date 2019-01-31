@@ -11,8 +11,4 @@ describe('CloseButton', () => {
         const wrapper = shallow(<CloseButton />);
         expect(wrapper).to.have.length(1);
     });
-    it('should have onClick as an instance of function when passed', () => {
-        const wrapper = shallow(<CloseButton onClick={() => true} />);
-        expect(wrapper.find('Button').prop('onClick')).to.be.an.instanceof(Function);
-    });
 });

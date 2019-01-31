@@ -3,7 +3,6 @@ import { expect }             from 'chai';
 import { configure, shallow } from 'enzyme';
 import Adapter                from 'enzyme-adapter-react-16';
 import LoginPrompt            from '../login_prompt.jsx';
-import {UpgradeButton} from "../AccountSwitcher/upgrade_button";
 
 configure({ adapter: new Adapter() });
 
