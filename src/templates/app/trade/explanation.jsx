@@ -330,11 +330,6 @@ const Explanation = () => (
             <div id='duration_volidx' className='invisible'>
                 <Duration link='market-volidx' />
             </div>
-
-            <div id='duration_runs' className='invisible'>
-                <h3>{it.L('Contract duration')}</h3>
-                <p>{it.L('The minimum duration for this trade type is one tick, while the maximum is five ticks.')}</p>
-            </div>
         </div>
 
         {/* ========== Note ========== */}
