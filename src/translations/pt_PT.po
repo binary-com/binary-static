@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-01-30 02:43\n"
+"PO-Revision-Date: 2019-01-31 10:06\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Portuguese\n"
 "MIME-Version: 1.0\n"
@@ -3338,6 +3338,9 @@ msgstr "Não aposte quando estiver cansado ou sob a influência de álcool."
 msgid "Do you have 40 minutes for an interview?"
 msgstr "Tem 40 minutos para fazermos uma entrevista?"
 
+msgid "Do you have a real money account?"
+msgstr ""
+
 msgid "Do you manage a social media page that’s dedicated to online trading? Partner with us and convert your audience into potential profit."
 msgstr ""
 
@@ -4876,9 +4879,6 @@ msgstr "Eu declaro não ser uma pessoa politicamente exposta (PPE)."
 
 msgid "I forgot my password, what should I do?"
 msgstr "Esqueci a minha senha, o que devo fazer?"
-
-msgid "I have a Real Money Account"
-msgstr "Eu tenho uma conta de dinheiro real"
 
 msgid "I have read and agree to the %1terms and conditions%2 of the site."
 msgstr "Li e aceito os %1termos e condições%2 do site."
@@ -8416,10 +8416,10 @@ msgid "Return to player (RTP) % for lookbacks for a multiplier of 1 and 1m durat
 msgstr ""
 
 msgid "Returns above 100% on simple <a href='%1'>rise/fall</a> contracts."
-msgstr "Retornos acima de 100% em contratos <a href='%1' class='pjaxload'>Sobe/Desce</a> simples."
+msgstr "Retornos acima de 100% em contratos <a href='%1'>sobe/desce</a> simples."
 
 msgid "Returns above 1000% on <a href='%1'>higher/lower</a> and <a href='%2'>touch/no-touch</a> trades."
-msgstr "Retornos acima de 1000% nas negociações<a href='%1' class='pjaxload'>Superior/Inferior</a> e <a href='%2' class='pjaxload'>Toca/Não toca</a>."
+msgstr "Retornos acima de 1000% nas negociações <a href='%1'>superior/inferior</a> e <a href='%2'>toca/não toca</a>."
 
 msgid "Revenue share"
 msgstr "Compartilhamento de receitas"
@@ -9753,9 +9753,6 @@ msgstr "O Sistema de Nomes de Domínio (Domain Name System – DNS) permite-lhe 
 msgid "The Financial Products that we offer to deal in are contracts entered into between you and us. Under these contracts and subject to the specific terms of the relevant contract, in consideration for the premium or price that you pay us, we promise to pay you a certain amount if the reference assets or measurements perform in a particular manner. These contracts accordingly are not instruments that we hold on your behalf and neither benefit from clients' assets protection in the event of our insolvency. Similarly the premium or price that you pay to take out a trade is not held as clients' money but as consideration for our undertaking to pay."
 msgstr "Os produtos financeiros que disponibilizamos para negociação são contratos celebrados entre você e nós. Ao abrigo destes contratos, e sujeito aos termos específicos do contrato relevante, em consideração do prêmio ou o preço que você nos paga, nós comprometemo-nos pagar-lhe uma certa quantidade, se os ativos ou medidas de referência tiverem um certo desempenho. Estes contratos, desse modo, não são instrumentos que mantenhamos no seu nome, nem beneficiam da proteção de ativos de clientes no caso da nossa falência. Da mesma forma, o prêmio ou o preço que você paga para efetuar um negócio não é mantido como dinheiro de cliente, mas sim como contrapartida do nosso compromisso de o pagar."
 
-msgid "The First Tick"
-msgstr "O primeiro tique-taque"
-
 msgid "The Foreign Exchange Market (Forex) is the world's largest and most liquid market – where anyone can buy, sell, and exchange currencies."
 msgstr "O mercados de câmbios (forex) é o maior e mais líquido mercado do mundo – onde qualquer pessoa pode comprar, vender e cambiar moedas."
 
@@ -9870,8 +9867,8 @@ msgstr ""
 msgid "The ask price of the currency pair indicates how much of the quote currency is required to buy one unit of base currency. This is more commonly known as the exchange rate."
 msgstr "O preço de venda do par de moedas indica quanto da moeda de cotação é necessário para comprar uma unidade da moeda de base. Isto é mais comumente conhecido como a taxa de câmbio."
 
-msgid "The average is the average of the ticks, including the first and the last tick."
-msgstr "A média é a média dos tique-taques, incluindo o primeiro e o último tique-taque."
+msgid "The average is the average of the ticks, including the entry spot and the last tick."
+msgstr ""
 
 msgid "The barrier of a binary option trade is the price target you set for the underlying. You can choose trades that stay below or go above a price target, or stay between two targets."
 msgstr "A barreira de negociação de uma opção binária é o preço-alvo que você seleciona. Você pode escolher negociações que ficam abaixo ou acima do preço-alvo, ou que ficam entre os dois alvos."
@@ -12116,6 +12113,9 @@ msgid "Written limits and self-exclusion"
 msgstr "Limites escritos e auto-exclusão"
 
 msgid "Yandex.Money is an electronic payment service provider that offers consumers an easy, safe, and reliable online payment method. For more information, please visit %1."
+msgstr ""
+
+msgid "Yes"
 msgstr ""
 
 msgid "Yes, I understand"
