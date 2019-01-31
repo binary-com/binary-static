@@ -33,8 +33,8 @@ const ResetPassword = (() => {
     const onLoad = () => {
         generateBirthDate();
 
-        $('#have_real_account').off('click').on('click', function () {
-            if ($(this).is(':checked')) {
+        $('#have_real_account').off('click').on('click', () => {
+            if ($('#have_real_account_option_0').is(':checked')) {
                 $('#dob_field').setVisibility(1);
             } else {
                 $('#dob_field').setVisibility(0);
@@ -43,10 +43,10 @@ const ResetPassword = (() => {
 
         const form_id = '#frm_reset_password';
         FormManager.init(form_id, [
-            { selector: '#new_password',    validations: ['req', 'password'], re_check_field: '#repeat_password' },
-            { selector: '#repeat_password', validations: ['req', ['compare', { to: '#new_password' }]], exclude_request: 1 },
-            { selector: '#date_of_birth',   validations: ['req'] },
-
+            { selector: '#have_real_account',  validations: ['req'], exclude_request: 1 },
+            { selector: '#date_of_birth',      validations: ['req'] },
+            { selector: '#new_password',       validations: ['req', 'password'], re_check_field: '#repeat_password' },
+            { selector: '#repeat_password',    validations: ['req', ['compare', { to: '#new_password' }]], exclude_request: 1 },
             { request_field: 'reset_password', value: 1 },
         ], true);
 

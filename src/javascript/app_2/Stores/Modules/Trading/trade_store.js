@@ -8,7 +8,8 @@ import BinarySocket                      from '_common/base/socket_base';
 import { localize }                      from '_common/localize';
 import {
     cloneObject,
-    isEmptyObject }                      from '_common/utility';
+    isEmptyObject,
+    getPropertyValue }                   from '_common/utility';
 import {
     getMinPayout,
     isCryptocurrency }                   from '_common/base/currency_base';
@@ -37,6 +38,8 @@ export default class TradeStore extends BaseStore {
     @observable is_trade_component_mounted = false;
     @observable is_purchase_enabled        = false;
     @observable is_trade_enabled           = false;
+    @observable is_allow_equal             = false;
+    @observable is_equal_checked           = 0;
 
     // Underlying
     @observable symbol;
@@ -60,7 +63,7 @@ export default class TradeStore extends BaseStore {
     @observable duration_units_list = [];
     @observable duration_min_max    = {};
     @observable expiry_date         = '';
-    @observable expiry_time         = '09:40';
+    @observable expiry_time         = '';
     @observable expiry_type         = 'duration';
 
     // Barrier
@@ -74,12 +77,21 @@ export default class TradeStore extends BaseStore {
     @observable start_time       = null;
     @observable sessions         = [];
 
+    // End Date Time
+    /**
+     * An array that contains market closing time.
+     *
+     * e.g. ["04:00:00", "08:00:00"]
+     *
+     */
+    @observable market_close_times = [];
+
     // Last Digit
     @observable last_digit = 5;
 
     // Purchase
-    @observable proposal_info = {};
-    @observable purchase_info = {};
+    @observable proposal_info        = {};
+    @observable purchase_info        = {};
 
     // Chart
     chart_id = 1;
@@ -116,6 +128,20 @@ export default class TradeStore extends BaseStore {
             () => {
                 this.changeDurationValidationRules();
             },
+        );
+        reaction(
+            () => [
+                this.symbol,
+                this.contract_type,
+                this.duration_unit,
+                this.expiry_type,
+                this.duration_units_list,
+                this.contract_types_list,
+            ],
+            () => {
+                this.changeAllowEquals();
+            },
+            { delay: 500 }
         );
     }
 
@@ -168,9 +194,23 @@ export default class TradeStore extends BaseStore {
 
     @action.bound
     onChange(e) {
-        const { name, value } = e.target;
+        const { name, checked } = e.target;
+        let { value } = e.target;
+
         if (name === 'currency') {
             this.root_store.client.selectCurrency(value);
+        } else if (value === 'is_equal') {
+            if (/^(rise_fall|rise_fall_equal)$/.test(this.contract_type)) {
+                if (checked) {
+                    this.is_equal_checked = 1;
+                    value = 'rise_fall_equal';
+                } else {
+                    this.is_equal_checked = 0;
+                    value = 'rise_fall';
+                }
+            }
+        } else if (name  === 'expiry_date') {
+            this.expiry_time = null;
         } else if (!(name in this)) {
             throw new Error(`Invalid Argument: ${name}`);
         }
@@ -218,7 +258,7 @@ export default class TradeStore extends BaseStore {
     @action.bound
     updateStore(new_state) {
         Object.keys(cloneObject(new_state)).forEach((key) => {
-            if (key === 'root_store' || ['validation_rules', 'validation_errors', 'currency'].indexOf(key) > -1) return;
+            if (key === 'root_store' || ['validation_rules', 'validation_errors', 'currency', 'smart_chart'].indexOf(key) > -1) return;
             if (JSON.stringify(this[key]) === JSON.stringify(new_state[key])) {
                 delete new_state[key];
             } else {
@@ -337,10 +377,13 @@ export default class TradeStore extends BaseStore {
 
     @action.bound
     onProposalResponse(response) {
-        const contract_type = response.echo_req.contract_type;
+        const contract_type           = response.echo_req.contract_type;
+        const prev_proposal_info      = getPropertyValue(this.proposal_info, contract_type) || {};
+        const obj_prev_contract_basis = getPropertyValue(prev_proposal_info, 'obj_contract_basis') || {};
+
         this.proposal_info  = {
             ...this.proposal_info,
-            [contract_type]: getProposalInfo(this, response),
+            [contract_type]: getProposalInfo(this, response, obj_prev_contract_basis),
         };
 
         if (!this.smart_chart.is_contract_mode) {
@@ -393,6 +436,34 @@ export default class TradeStore extends BaseStore {
                 this.validation_rules.duration.rules.push(['number', duration_options]);
             }
             this.validateProperty('duration', this.duration);
+        }
+    }
+
+    @action.bound
+    changeAllowEquals() {
+        const hasCallPutEqual = () => {
+            const up_down_contracts = getPropertyValue(this.contract_types_list, 'Up/Down');
+            return up_down_contracts.some(contract => contract.value === 'rise_fall_equal');
+        };
+        const hasDurationForCallPutEqual = (contract_type_list, duration_unit, contract_start_type) => {
+            const contract_list = Object.keys(contract_type_list || {})
+                .reduce((key, list) => ([...key, ...contract_type_list[list].map(contract => contract.value)]), []);
+            
+            const contract_duration_list = contract_list
+                .map(list => ({ [list]: getPropertyValue(ContractType.getFullContractTypes(), [list, 'config', 'durations', 'units_display', contract_start_type]) }));
+
+            // Check whether rise fall equal is exists and has the current store duration unit
+            return hasCallPutEqual() ? contract_duration_list
+                .filter(contract => contract.rise_fall_equal)[0].rise_fall_equal
+                .some(duration => duration.value === duration_unit) : false;
+        };
+        const check_callput_equal_duration = hasDurationForCallPutEqual(this.contract_types_list,
+            this.duration_unit, this.contract_start_type);
+
+        if (/^(rise_fall|rise_fall_equal)$/.test(this.contract_type) && (check_callput_equal_duration || this.expiry_type === 'endtime') && hasCallPutEqual()) {
+            this.is_allow_equal = true;
+        } else {
+            this.is_allow_equal = false;
         }
     }
 

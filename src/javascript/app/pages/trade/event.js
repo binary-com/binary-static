@@ -348,6 +348,7 @@ const TradingEvents = (() => {
                 e.preventDefault();
                 CommonTrading.hideOverlayContainer();
                 Price.processPriceRequest();
+                Purchase.onclose();
             }
         });
 
