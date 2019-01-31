@@ -193,6 +193,13 @@ export default class TradeStore extends BaseStore {
     }
 
     @action.bound
+    async onChangeAsync(e) {
+        const { name, value } = e.target;
+
+        await this.processNewValuesAsync({ [name]: value }, true);
+    }
+
+    @action.bound
     onChange(e) {
         const { name, checked } = e.target;
         let { value } = e.target;

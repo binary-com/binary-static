@@ -8,14 +8,14 @@ import Duration                 from './duration.jsx';
 class DurationWrapper extends React.Component {
     hasDurationUnit = (duration_unit) => this.props.duration_units_list.some(du => du.value === duration_unit);
 
-    setDurationUnit = () => {
+    async setDurationUnit() {
         const new_duration_unit  = this.props.duration_units_list[0].value;
         const new_duration_value = this.props.getDurationFromUnit(new_duration_unit);
 
         this.props.onChangeUiStore({ name: `${this.is_advanced_duration ? 'advanced' : 'simple'}_duration_unit`, value: new_duration_unit });
-        this.props.onChange({ target: { name: 'duration_unit', value: new_duration_unit } });
-        this.props.onChange({ target: { name: 'duration', value: new_duration_value } });
-    };
+        await this.props.onChangeAsync({ target: { name: 'duration_unit', value: new_duration_unit } });
+        await this.props.onChangeAsync({ target: { name: 'duration', value: new_duration_value } });
+    }
 
     componentWillReact() {
         const simple_is_missing_duration_unit = this.props.simple_duration_unit === 'd' && this.props.duration_units_list.length === 4;
@@ -94,6 +94,7 @@ DurationWrapper.propTypes = {
     is_nativepicker     : PropTypes.bool,
     market_close_times  : PropTypes.array,
     onChange            : PropTypes.func,
+    onChangeAsync       : PropTypes.func,
     onChangeUiStore     : PropTypes.func,
     server_time         : PropTypes.object,
     sessions            : MobxPropTypes.arrayOrObservableArray,
