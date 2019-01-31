@@ -130,8 +130,11 @@ class DatePicker extends React.Component {
             if (events.dates === 'Fridays') {
                 weekends = [6, 0]; // Sat, Sun
             } else {
-                events.dates = events.dates.split(', '); // convert str into array
-                holidays.push(events);
+                const dates = events.dates.split(', '); // convert dates str into array
+                holidays.push({
+                    dates,
+                    descrip: events.descrip,
+                });
             }
         });
 
