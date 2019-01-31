@@ -1,7 +1,7 @@
+import classNames                     from 'classnames';
 import React                          from 'react';
 import { localize }                   from '_common/localize';
 import { toMoment }                   from 'Utils/Date';
-import classNames                     from 'classnames';
 
 function selectOption(type, value, props, is_enabled = true) {
     if (is_enabled && props.value) {
@@ -31,7 +31,7 @@ function Dialog(props) {
                             const is_enabled = to_compare_moment.isBetween(start_time_moment, end_time_moment);
                             return (
                                 <div
-                                    className={classNames(`list-item`, `${hour === h ? 'selected' : ''}`, `${is_enabled ? '' : 'disabled'}`)}
+                                    className={classNames('list-item', `${hour === h ? 'selected' : ''}`, `${is_enabled ? '' : 'disabled'}`)}
                                     key={key}
                                     onClick={() => { selectOption('h', h, props, is_enabled); }}
                                 >
@@ -49,7 +49,7 @@ function Dialog(props) {
                             const is_enabled = to_compare_moment.isBetween(start_time_moment, end_time_moment, 'minute');
                             return (
                                 <div
-                                    className={classNames(`list-item`, `${minute === mm ? 'selected' : ''}` , `${is_enabled ? '' : 'disabled'}`)}
+                                    className={classNames('list-item', `${minute === mm ? 'selected' : ''}` , `${is_enabled ? '' : 'disabled'}`)}
                                     key={key}
                                     onClick={() => { selectOption('m', mm, props, is_enabled); }}
                                 >{mm}

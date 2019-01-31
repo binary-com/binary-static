@@ -1,9 +1,9 @@
+import classNames         from 'classnames';
 import { observer }       from 'mobx-react';
 import PropTypes          from 'prop-types';
 import React              from 'react';
 import Dialog             from './dialog.jsx';
 import InputField         from '../input_field.jsx';
-import classNames         from 'classnames';
 
 class TimePicker extends React.PureComponent {
     state = {
