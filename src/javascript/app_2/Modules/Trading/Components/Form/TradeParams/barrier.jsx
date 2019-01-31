@@ -1,9 +1,11 @@
-import { observer } from 'mobx-react';
-import PropTypes    from 'prop-types';
-import React        from 'react';
-import Fieldset     from 'App/Components/Form/fieldset.jsx';
-import InputField   from 'App/Components/Form/input_field.jsx';
-import { localize } from '_common/localize';
+import { observer }      from 'mobx-react';
+import PropTypes         from 'prop-types';
+import React             from 'react';
+import Fieldset          from 'App/Components/Form/fieldset.jsx';
+import InputField        from 'App/Components/Form/input_field.jsx';
+import { localize }      from '_common/localize';
+import { IconBarrierUp } from 'Assets/Trading/Barriers/icon_barrier_up.jsx';
+import { IconBarrierDown } from 'Assets/Trading/Barriers/icon_barrier_down.jsx';
 
 const Barrier = ({
     barrier_1,
@@ -46,7 +48,6 @@ const Barrier = ({
                 type='number'
                 name='barrier_1'
                 value={barrier_1}
-                prefix={barrier_count === 2 ? 'up' : false}
                 className={barrier_count === 2 ? 'multiple' : 'single'}
                 onChange={onChange}
                 error_messages = {validation_errors.barrier_1 || []}
@@ -55,17 +56,20 @@ const Barrier = ({
             />
 
             {barrier_count === 2 &&
-                <InputField
-                    type='number'
-                    name='barrier_2'
-                    value={barrier_2}
-                    prefix='down'
-                    className='multiple'
-                    onChange={onChange}
-                    error_messages = {validation_errors.barrier_2}
-                    is_float
-                    is_signed
-                />
+                <React.Fragment>
+                    <InputField
+                        type='number'
+                        name='barrier_2'
+                        value={barrier_2}
+                        className='multiple'
+                        onChange={onChange}
+                        error_messages = {validation_errors.barrier_2}
+                        is_float
+                        is_signed
+                    />
+                    <IconBarrierUp className='up' />
+                    <IconBarrierDown className='down' />
+                </React.Fragment>
             }
         </Fieldset>
     );

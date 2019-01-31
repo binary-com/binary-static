@@ -274,30 +274,29 @@
                     padding-left: 3px;
                 }
                 &.multiple {
-                    display: inline-block;
+                    display: inline-flex;
                     width: 46%;
                     margin-left: 4px;
                     margin-right: 4px;
 
-                    .up {
-                        mask: url('../images/sidebar/ic_barrier_high.svg');
-                        mask-size: 50% 50%;
-                        mask-repeat: no-repeat;
-                        mask-position: center;
-                        background-color: $COLOR_LIGHT_BLACK;
-                        padding-top: 2px;
-                        padding-bottom: 2px;
-                    }
-                    .down {
-                        mask: url('../images/sidebar/ic_barrier_low.svg');
-                        mask-size: 50% 50%;
-                        mask-repeat: no-repeat;
-                        mask-position: center;
-                        background-color: $COLOR_LIGHT_BLACK;
-                        padding-top: 2px;
-                        padding-bottom: 2px;
+                    input {
+                        padding-left: 32px;
+                        padding-right: 12px;
+                        text-align: left;
                     }
                 }
+            }
+            .up, .down {
+                position: absolute;
+                fill: $COLOR_LIGHT_BLACK;
+            }
+            .up {
+                margin-top: 15px;
+                right: 83%;
+            }
+            .down {
+                margin-top: 15px;
+                right: 38%;
             }
         }
     }
@@ -676,15 +675,8 @@
     }
     fieldset {
         &.barriers {
-            .input-field {
-                &.multiple {
-                    .up {
-                        background-color: $COLOR_WHITE;
-                    }
-                    .down {
-                        background-color: $COLOR_WHITE;
-                    }
-                }
+            .up, .down {
+                fill: $COLOR_WHITE;
             }
         }
     }
