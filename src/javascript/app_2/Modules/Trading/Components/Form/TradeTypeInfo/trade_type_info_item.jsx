@@ -32,7 +32,9 @@ const ContractTypeItem = ({
         <div className='info-content'>
             <TradeCategories category={item.value} />
         </div>
-        <Button className='info-choose' text={localize('CHOOSE')} onClick={() => onSubmitButtonClick(item)} />
+        <div className='info-choose'>
+            <Button text={localize('CHOOSE')} onClick={() => onSubmitButtonClick(item)} />
+        </div>
         <div className='info-navigation'>
             <div className='info-navigation__icon' onClick={() => handlePrevClick(navigationList)} >
                 <IconChevronLeft />

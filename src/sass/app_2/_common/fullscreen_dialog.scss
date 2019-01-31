@@ -94,6 +94,7 @@ $content-index: 1;
     }
     .trade-type-info-modal {
         padding: 16px;
+        height: 100vh;
 
         .info-header {
             display: flex;
@@ -125,14 +126,17 @@ $content-index: 1;
             color: $COLOR_LIGHT_BLACK;
         }
         .info-choose {
-            background: $COLOR_LIGHT_ORANGE;
-            color: $COLOR_WHITE;
-            font-weight: bold;
-            margin: 0 auto;
-            display: block;
+            text-align: center;
+
+            button {
+                background: $COLOR_LIGHT_ORANGE;
+                color: $COLOR_WHITE;
+                font-weight: bold;
+            }
         }
         .info-navigation {
             display: flex;
+            align-self: flex-end;
             margin-top: 16px;
 
             &__list {
