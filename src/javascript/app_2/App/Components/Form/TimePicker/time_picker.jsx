@@ -15,7 +15,7 @@ class TimePicker extends React.PureComponent {
         document.addEventListener('mousedown', this.handleClickOutside);
     }
 
-    componentWillUnmount() {
+    componentWillUnmount() {zzzzz
         document.removeEventListener('mousedown', this.handleClickOutside);
     }
 
@@ -111,7 +111,11 @@ class TimePicker extends React.PureComponent {
 }
 
 TimePicker.propTypes = {
-    end_time       : PropTypes.number,
+    end_time       : PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
+        PropTypes.object,
+    ]),
     is_align_right : PropTypes.bool,
     is_clearable   : PropTypes.bool,
     is_nativepicker: PropTypes.bool,
@@ -119,7 +123,11 @@ TimePicker.propTypes = {
     onChange       : PropTypes.func,
     padding        : PropTypes.string,
     placeholder    : PropTypes.string,
-    start_time     : PropTypes.number,
+    start_time     : PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
+        PropTypes.object,
+    ]),
     value          : PropTypes.string,
 };
 
