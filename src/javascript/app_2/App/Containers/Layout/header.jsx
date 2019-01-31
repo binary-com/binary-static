@@ -16,6 +16,7 @@ import { connect }     from 'Stores/connect';
 const Header = ({
     balance,
     can_upgrade,
+    can_upgrade_to,
     currency,
     hideInstallButton,
     is_acc_switcher_on,
@@ -68,7 +69,7 @@ const Header = ({
                                     is_dialog_on={is_acc_switcher_on}
                                     toggleDialog={toggleAccountsDialog}
                                 />
-                                { !!(can_upgrade && is_virtual) &&
+                                { !!(can_upgrade_to && is_virtual) &&
                                 <UpgradeButton />
                                 }
                                 { !(is_virtual) &&
@@ -88,6 +89,7 @@ const Header = ({
 Header.propTypes = {
     balance                  : PropTypes.string,
     can_upgrade              : PropTypes.bool,
+    can_upgrade_to           : PropTypes.bool,
     currency                 : PropTypes.string,
     hideInstallButton        : PropTypes.func,
     is_acc_switcher_on       : PropTypes.bool,
@@ -97,8 +99,8 @@ Header.propTypes = {
     is_mobile                : PropTypes.bool,
     is_virtual               : PropTypes.bool,
     loginid                  : PropTypes.string,
-    onClickUpgrade           : PropTypes.func, // TODO: add click handler
-    pwa_prompt_event         : PropTypes.object,
+    onClickUpgrade           : PropTypes.func,
+    pwa_prompt_event         : PropTypes.object, // TODO: add click handler
     setPWAPromptEvent        : PropTypes.func,
     showInstallButton        : PropTypes.func,
     toggleAccountsDialog     : PropTypes.func,
@@ -110,6 +112,7 @@ export default withRouter(connect(
     ({ client, ui }) => ({
         balance                  : client.balance,
         can_upgrade              : client.can_upgrade,
+        can_upgrade_to           : client.can_upgrade_to,
         currency                 : client.currency,
         is_logged_in             : client.is_logged_in,
         is_virtual               : client.is_virtual,

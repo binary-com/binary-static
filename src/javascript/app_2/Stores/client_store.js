@@ -127,6 +127,11 @@ export default class ClientStore extends BaseStore {
     }
 
     @computed
+    get can_upgrade_to() {
+        return this.upgrade_info && (this.upgrade_info.can_upgrade_to);
+    }
+
+    @computed
     get virtual_account_loginid() {
         return this.all_loginids
             .filter(loginid => !!this.accounts[loginid].is_virtual)
