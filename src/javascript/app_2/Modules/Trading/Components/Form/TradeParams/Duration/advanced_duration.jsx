@@ -25,6 +25,7 @@ const AdvancedDuration = ({
     expiry_date,
     expiry_list,
     expiry_time,
+    expiry_type,
     is_nativepicker,
     number_input_props,
     onChange,
@@ -43,7 +44,7 @@ const AdvancedDuration = ({
     let max_date_duration,
         min_date_expiry;
 
-    if (advanced_expiry_type === 'endtime') {
+    if (expiry_type === 'endtime') {
         const max_daily_duration = duration_min_max.daily ? duration_min_max.daily.max : 365 * 24 * 3600;
         const moment_contract_start_date_time =
             setTime(toMoment(start_date || server_time), (isTimeValid(start_time) ? start_time : server_time.format('HH:mm')));
@@ -97,7 +98,7 @@ const AdvancedDuration = ({
                     value={advanced_expiry_type}
                 />
             }
-            { advanced_expiry_type === 'duration' ?
+            { expiry_type === 'duration' ?
                 <Fragment>
                     <div className='duration-container'>
                         { duration_units_list.length > 1 &&
@@ -184,6 +185,7 @@ AdvancedDuration.propTypes = {
     ]),
     expiry_list        : PropTypes.array,
     expiry_time        : PropTypes.string,
+    expiry_type        : PropTypes.string,
     getDurationFromUnit: PropTypes.func,
     is_nativepicker    : PropTypes.bool,
     market_close_times : PropTypes.array,

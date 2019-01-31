@@ -143,6 +143,7 @@ const Duration = ({
                             expiry_date={expiry_date}
                             expiry_list={expiry_list}
                             expiry_time={expiry_time}
+                            expiry_type={expiry_type}
                             getDurationFromUnit={getDurationFromUnit}
                             is_nativepicker={is_nativepicker}
                             market_close_times={market_close_times}
