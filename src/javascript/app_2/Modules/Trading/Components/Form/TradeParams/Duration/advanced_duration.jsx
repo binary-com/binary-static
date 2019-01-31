@@ -89,16 +89,18 @@ const AdvancedDuration = ({
 
     return (
         <Fragment>
-            <ButtonToggleMenu
-                buttons_arr={expiry_list.length > 1 ? expiry_list : null}
-                name='advanced_expiry_type'
-                onChange={changeExpiry}
-                value={advanced_expiry_type}
-            />
-            {advanced_expiry_type === 'duration' ?
+            { expiry_list.length > 1 &&
+                <ButtonToggleMenu
+                    buttons_arr={expiry_list}
+                    name='advanced_expiry_type'
+                    onChange={changeExpiry}
+                    value={advanced_expiry_type}
+                />
+            }
+            { advanced_expiry_type === 'duration' ?
                 <Fragment>
                     <div className='duration-container'>
-                        {duration_units_list.length > 1 &&
+                        { duration_units_list.length > 1 &&
                             <Dropdown
                                 is_alignment_left
                                 is_nativepicker={is_nativepicker}

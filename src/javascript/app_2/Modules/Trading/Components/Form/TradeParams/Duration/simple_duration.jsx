@@ -24,12 +24,14 @@ const SimpleDuration = ({
 
     return (
         <Fragment>
-            <ButtonToggleMenu
-                buttons_arr={filterMinutesAndTicks(duration_units_list)}
-                name='simple_duration_unit'
-                onChange={changeDurationUnit}
-                value={simple_duration_unit}
-            />
+            { duration_units_list.length > 1 &&
+                <ButtonToggleMenu
+                    buttons_arr={filterMinutesAndTicks(duration_units_list)}
+                    name='simple_duration_unit'
+                    onChange={changeDurationUnit}
+                    value={simple_duration_unit}
+                />
+            }
             { simple_duration_unit === 't' &&
                 <RangeSlider
                     name='duration'

@@ -10,14 +10,10 @@ import DurationToggle                 from './duration_toggle.jsx';
 import AdvancedDuration               from './advanced_duration.jsx';
 import SimpleDuration                 from './simple_duration.jsx';
 
-const expiry_list = [
-    { text: localize('Duration'), value: 'duration' },
-];
-
 const Duration = ({
     advanced_duration_unit,
     advanced_expiry_type,
-    c_has_duration_unit,
+    hasDurationUnit    ,
     contract_expiry_type,
     duration,
     duration_unit,
@@ -41,6 +37,10 @@ const Duration = ({
     simple_duration_unit,
     duration_t,
 }) => {
+    const expiry_list = [
+        { text: localize('Duration'), value: 'duration' },
+    ];
+
     const has_end_time = expiry_list.find(expiry => expiry.value === 'endtime');
     if (duration_units_list.length === 1 && duration_unit === 't') {
         if (has_end_time) {
@@ -86,15 +86,15 @@ const Duration = ({
         const { name, value } = target;
         onChangeUiStore({ name, value });
 
-        // replace selected duration unit and duration if it's missing in the contract
-        let duration_type = is_advanced_duration ? advanced_duration_unit : simple_duration_unit;
-        if (c_has_duration_unit(duration_type)) {
-            duration_type = duration_units_list[0].value;
-            onChangeUiStore({ name: `${value ? 'advanced' : 'simple'}_duration_unit`, value: duration_type });
+        // replace selected duration unit and duration if the contract doesn't have that duration unit
+        let current_duration_unit = is_advanced_duration ? advanced_duration_unit : simple_duration_unit;
+        if (hasDurationUnit(current_duration_unit)) {
+            current_duration_unit = duration_units_list[0].value;
+            onChangeUiStore({ name: `${value ? 'advanced' : 'simple'}_duration_unit`, value: current_duration_unit });
         }
 
-        const duration_value  = getDurationValue(duration_type);
-        onChange({ target: { name: 'duration_unit', value: duration_type } });
+        const duration_value  = getDurationValue(current_duration_unit);
+        onChange({ target: { name: 'duration_unit', value: current_duration_unit } });
         onChange({ target: { name: 'duration', value: duration_value } });
     };
 
@@ -182,7 +182,6 @@ const Duration = ({
 Duration.propTypes = {
     advanced_duration_unit: PropTypes.string,
     advanced_expiry_type  : PropTypes.string,
-    c_has_duration_unit   : PropTypes.func,
     contract_expiry_type  : PropTypes.string,
     duration              : PropTypes.oneOfType([
         PropTypes.number,
@@ -202,6 +201,7 @@ Duration.propTypes = {
     expiry_time         : PropTypes.string,
     expiry_type         : PropTypes.string,
     getDurationValue    : PropTypes.func,
+    hasDurationUnit     : PropTypes.func,
     is_advanced_duration: PropTypes.bool,
     is_minimized        : PropTypes.bool,
     is_nativepicker     : PropTypes.bool,

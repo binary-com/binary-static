@@ -17,7 +17,7 @@ class DurationWrapper extends React.Component {
         return duration[selected_duration];
     };
 
-    c_has_duration_unit = (duration_unit) => this.props.duration_units_list.some(du => du.value === duration_unit);
+    hasDurationUnit = (duration_unit) => this.props.duration_units_list.some(du => du.value === duration_unit);
 
     setDurationUnit = () => {
         const new_duration_unit = this.props.duration_units_list[0].value;
@@ -28,12 +28,12 @@ class DurationWrapper extends React.Component {
         this.props.onChange({ target: { name: 'duration', value: duration_value } });
     };
 
-    // intercept changes to current contracts duration_units_list and change duration_unit and value if they are missing
+    // intercept changes to current contracts duration_units_list - if they are missing change duration_unit and value in trade_store and ui_store
     componentWillReact() {
         const simple_is_missing_duration_unit = this.props.simple_duration_unit === 'd' && this.props.duration_units_list.length === 4;
         const current_duration                = this.props.is_advanced_duration ?
             this.props.advanced_duration_unit : this.props.simple_duration_unit;
-        const has_missing_duration_unit       = !this.c_has_duration_unit(current_duration);
+        const has_missing_duration_unit       = !this.hasDurationUnit(current_duration);
 
         if (has_missing_duration_unit || simple_is_missing_duration_unit) {
             this.setDurationUnit();
@@ -44,7 +44,7 @@ class DurationWrapper extends React.Component {
         return (
             <Duration
                 getDurationValue={this.getDurationValue}
-                c_has_duration_unit={this.c_has_duration_unit}
+                hasDurationUnit={this.hasDurationUnit}
                 {...this.props}
             />
         );
