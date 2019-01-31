@@ -3,6 +3,17 @@
     margin: 8px 0 0;
     font-weight: 300;
 
+    &:has(input[type=checkbox]), span.tooltip {
+        display: inline-block;
+    }
+    span.tooltip {
+        width: 100%;
+    }
+    & ~ [class*='__icon'] {
+        @extend .absolute-center-v; // centers input-field icons vertically
+        top: 8px;
+        right: 5%;
+    }
     i {
         position: relative;
 
@@ -12,7 +23,6 @@
             line-height: 30px;
             margin: 1px;
             border-radius: $BORDER_RADIUS 0 0 $BORDER_RADIUS;
-            background: $COLOR_LIGHT_GRAY;
             box-sizing: border-box;
             font-size: inherit;
 
@@ -28,6 +38,62 @@
             padding-left: 35px !important;
         }
     }
+    .input-wrapper {
+        position: relative;
+
+        input {
+            text-align: center;
+
+            &::-ms-clear { // Edge: hide clear icon for increment input
+                display: none;
+            }
+        }
+        &:hover {
+            input {
+                border-color: $COLOR_BLUE;
+            }
+        }
+        &__button {
+            position: absolute;
+            z-index: 1;
+            height: calc(100% - 2px);
+            margin: initial;
+            margin-top: 1px;
+            margin-bottom: 1px;
+            min-width: 32px;
+            border-radius: 3px;
+            padding: initial;
+            background-color: initial;
+
+            &--increment {
+                right: 1px;
+            }
+            &--decrement {
+                left: 1px;
+            }
+            &:hover {
+                cursor: pointer;
+                background: $COLOR_GRAY;
+            }
+            &:disabled:hover {
+                cursor: not-allowed;
+                background: transparent;
+            }
+        }
+        &__icon {
+            padding-top: 4px;
+
+            path {
+                fill: $COLOR_DARK_GRAY;
+            }
+            &--plus.disabled path {
+                fill: $COLOR_DARK_GRAY;
+            }
+            &--minus.disabled path {
+                fill: $COLOR_DARK_GRAY;
+            }
+        }
+    }
     input {
         box-sizing: border-box;
         margin: 0;
@@ -40,12 +106,50 @@
         line-height: normal;
         padding-left: 8px;
         color: $COLOR_LIGHT_BLACK;
-        background-color: $COLOR_WHITE;
-        background-image: none;
         border: 1px solid $COLOR_GRAY;
         border-radius: $BORDER_RADIUS;
-        transition: all 0.3s;
+        text-align: center;
+        transition: transform 0.3s;
 
+        &[type=checkbox] {
+            cursor: pointer;
+            display: inline-block;
+            vertical-align: middle;
+            width: 12px;
+            height: 12px;
+            border-color: $COLOR_GRAY;
+            border-radius: 1px;
+            border-width: 0.5px;
+            padding: 0;
+
+            &:hover, &:focus, &:active {
+                border-color: $COLOR_ORANGE_2 !important;
+                border-radius: 1px;
+            }
+            &:checked {
+                background: $COLOR_ORANGE_2;
+                border-color: $COLOR_ORANGE_2;
+
+                &:after {
+                    display: inline-block;
+                }
+            }
+            &::-ms-check { // IE/EDGE support
+                background: transparent;
+                border-color: transparent;
+                color: $COLOR_WHITE;
+            }
+            &:after {
+                color: $COLOR_WHITE;
+                content: 'L';
+                font-size: 10px;
+                transform: scaleX(-1) rotate(-40deg);
+                position: absolute;
+                top: -5%;
+                left: 30%;
+                display: none;
+            }
+        }
         &:hover {
             border-color: $COLOR_BLUE;
         }
@@ -76,13 +180,66 @@
 
 // Dark Theme
 .theme-wrapper.dark {
-    .input-field input {
-        background-color: $COLOR_BLUE;
-        color: $COLOR_WHITE;
-        border-color: $COLOR_BRANDBLUE_85;
+    .input-field {
+        &:has(input[type=checkbox]) {
+            display: inline-block;
+        }
+        input {
+            color: $COLOR_WHITE;
 
-        &:hover, &:focus, &:active {
-            border-color: $COLOR_WHITE;
+            &[type=checkbox] {
+                cursor: pointer;
+                display: inline-block;
+                vertical-align: middle;
+                width: 12px;
+                height: 12px;
+                border-color: $COLOR_BRANDBLUE_85;
+                border-radius: 1px;
+                border-width: 0.5px;
+                padding: 0;
+
+                &:hover, &:focus, &:active {
+                    border-color: $COLOR_ORANGE_2;
+                }
+                &:checked {
+                    background: $COLOR_ORANGE_2;
+                    border-color: $COLOR_ORANGE_2;
+
+                    &:after {
+                        display: inline-block;
+                    }
+                }
+                &:after {
+                    content: 'L';
+                    font-size: 10px;
+                    transform: scaleX(-1) rotate(-40deg);
+                    position: absolute;
+                    top: -5%;
+                    left: 30%;
+                    display: none;
+                }
+            }
+            &:hover, &:focus, &:active {
+                border-color: $COLOR_WHITE;
+            }
+        }
+    }
+    .input-wrapper {
+        &:hover {
+            input {
+                border-color: $COLOR_WHITE;
+            }
+        }
+        &__icon {
+            path {
+                fill: $COLOR_DARK_WHITE;
+            }
+            &--plus.disabled path {
+                fill: $COLOR_BRANDBLUE_85;
+            }
+            &--minus.disabled path {
+                fill: $COLOR_BRANDBLUE_85;
+            }
         }
     }
 }

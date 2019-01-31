@@ -1,8 +1,19 @@
 import ContractType from '../Helpers/contract_type';
 
-export const onChangeStartDate = (store) => {
-    const { contract_type, start_date, duration_unit, expiry_time } = store;
-    let { start_time, expiry_date } = store;
+export const onChangeStartDate = async (store) => {
+    const {
+        contract_type,
+        duration_unit,
+        expiry_time,
+        start_date,
+        symbol } = store;
+    const server_time = store.root_store.common.server_time;
+    let {
+        start_time,
+        expiry_date,
+        expiry_type } = store;
+
+    start_time = start_time || server_time.clone().add(6, 'minute').format('HH:mm'); // when there is not a default value for start_time, it should be set more than 5 min after server_time
 
     const obj_contract_start_type = ContractType.getStartType(start_date);
     const contract_start_type     = obj_contract_start_type.contract_start_type;
@@ -12,11 +23,25 @@ export const onChangeStartDate = (store) => {
     start_time                    = obj_start_time.start_time;
 
     const obj_duration_units_list = ContractType.getDurationUnitsList(contract_type, contract_start_type);
+    const duration_units_list     = obj_duration_units_list.duration_units_list;
     const obj_duration_unit       = ContractType.getDurationUnit(duration_unit, contract_type, contract_start_type);
 
-    const obj_expiry_date = ContractType.getExpiryDate(expiry_date, start_date);
+    const obj_expiry_type = ContractType.getExpiryType(duration_units_list, expiry_type);
+    expiry_type           = obj_expiry_type.expiry_type;
+    const obj_expiry_date = ContractType.getExpiryDate(duration_units_list, expiry_date, expiry_type, start_date);
     expiry_date           = obj_expiry_date.expiry_date;
-    const obj_expiry_time = ContractType.getExpiryTime(sessions, start_date, start_time, expiry_date, expiry_time);
+
+    const obj_market_close_times = { market_close_times: await ContractType.getTradingTimes(expiry_date, symbol) };
+    const market_close_times     = obj_market_close_times.market_close_times;
+    const obj_expiry_time        = ContractType.getExpiryTime(
+        expiry_date,
+        expiry_time,
+        expiry_type,
+        market_close_times,
+        sessions,
+        start_date,
+        start_time
+    );
 
     const obj_duration_min_max = ContractType.getDurationMinMax(contract_type, contract_start_type);
 
@@ -29,5 +54,7 @@ export const onChangeStartDate = (store) => {
         ...obj_start_time,
         ...obj_expiry_date,
         ...obj_expiry_time,
+        ...obj_expiry_type,
+        ...obj_market_close_times,
     };
 };

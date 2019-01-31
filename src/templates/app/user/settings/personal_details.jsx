@@ -1,5 +1,4 @@
 import React from 'react';
-import AuthenticateMessageFinancial from '../../_includes/authenticate_message_financial.jsx';
 import { FormRow, SubmitButton, Fieldset } from '../../../_common/components/forms.jsx';
 import {
     AccountOpeningReason,
@@ -10,7 +9,7 @@ import {
     AddressPostcode,
     Phone,
     TaxInformationForm,
-    GeocodeResponse,
+    GeocodeValidation,
 } from '../../../_common/components/forms_common_rows.jsx';
 import Loading from '../../../_common/components/loading.jsx';
 
@@ -28,10 +27,6 @@ const PersonalDetails = () => (
 
         <div id='msg_main' className='invisible'>
             <p>{it.L('Thank you for completing your Personal Details. You can now deposit funds and trade Forex with real money on MetaTrader 5.')}</p>
-            <div id='msg_authenticate' className='invisible'>
-                <div><strong>{it.L('Important')}</strong></div>
-                <AuthenticateMessageFinancial />
-            </div>
             <div className='center-text'>
                 <a className='button' href={it.url_for('user/metatrader')}>
                     <span>{it.L('Go to MetaTrader 5 dashboard')}</span>
@@ -50,6 +45,7 @@ const PersonalDetails = () => (
                 <FormRow type='label'  label={it.L('Country of Residence')} is_bold id='country' row_id='row_country' />
                 <FormRow type='label'  label={it.L('Email address')} is_bold id='email' row_id='row_email' />
                 <FormRow type='label'  label={it.L('Account Opening Reason')} id='lbl_account_opening_reason' row_id='row_lbl_account_opening_reason' row_class='invisible' />
+                <Phone row_class='invisible RealAcc' />
                 <AccountOpeningReason row_id='row_account_opening_reason' row_class='invisible' />
             </Fieldset>
 
@@ -63,9 +59,9 @@ const PersonalDetails = () => (
                 <AddressLine2 />
                 <AddressCity />
                 <AddressState />
-                <AddressPostcode />
-                <Phone />
-                <GeocodeResponse />
+                <AddressPostcode>
+                    <GeocodeValidation className='gr-5 geocode-container' />
+                </AddressPostcode>
             </Fieldset>
 
             <Fieldset id='fieldset_email_consent' legend={it.L('Email Preferences')}>

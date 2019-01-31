@@ -1,6 +1,6 @@
-import React from 'react';
-import Loading from '../../_common/components/loading.jsx';
-import SeparatorLine from '../../_common/components/separator_line.jsx';
+import React             from 'react';
+import Loading           from '../../_common/components/loading.jsx';
+import { SeparatorLine } from '../../_common/components/separator_line.jsx';
 
 const Currencies = ({ text, id }) => (
     <React.Fragment>
@@ -50,12 +50,9 @@ const SetCurrency = () => (
                 <form id='frm_set_currency'>
                     <Currencies id='fiat' text={it.L('Fiat Currency')} />
                     <Currencies id='crypto' text={it.L('Cryptocurrency')} />
-
-                    <p className='invisible error-msg' />
-                    <button type='submit'>{it.L('Confirm')}</button>
                 </form>
             </div>
-
+            <p className='invisible error-msg center-text' />
         </div>
     </React.Fragment>
 );

@@ -1,5 +1,5 @@
-import React from 'react';
-import SeparatorLine from '../../_common/components/separator_line.jsx';
+import React             from 'react';
+import { SeparatorLine } from '../../_common/components/separator_line.jsx';
 
 const BoxInner = ({ className = '', href, image, text }) => (
     <div className={`gr-6 center-text ${className}`}>
@@ -99,7 +99,7 @@ const Index = () => (
                         <p>{it.L('Want to be a part of our dynamic culture? Browse all our openings and see where you fit:')}</p>
                     </div>
                     <div className='center-element'>
-                        <a className='button-secondary' href={it.url_for('careers?anchor=open-positions')}>
+                        <a className='button' href={it.url_for('careers?anchor=open-positions')}>
                             <span>{it.L('Open positions')}</span>
                         </a>
                     </div>
@@ -116,7 +116,7 @@ const Index = () => (
                             <BoxInner className='border-right-top' image='debt-free' text={it.L('Debt-free')} />
                         </Box>
                         <Box>
-                            <BoxInner className='border-right-top' href='/careers' image='staff' text={it.L('Over [_1] [_2]staff[_3] and contractors worldwide', '200', `<a href="${ it.url_for('careers') }">`, '</a>')} />
+                            <BoxInner className='border-right-top' href='/binary-in-numbers?anchor=employee' image='staff' text={it.L('Over [_1] <a href=\'[_2]\'>staff</a> and contractors worldwide', '200', it.url_for('binary-in-numbers?anchor=employee'))} />
                             <BoxInner image='1mil' text={it.L('Over 1 million registered accounts worldwide')} />
                         </Box>
                     </div>

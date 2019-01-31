@@ -1,6 +1,6 @@
 import BinarySocket        from '_common/base/socket_base';
+import SubscriptionManager from '_common/base/subscription_manager';
 import { isEmptyObject }   from '_common/utility';
-import SubscriptionManager from './subscription_manager';
 
 const WS = (() => {
     const activeSymbols = () =>
@@ -20,6 +20,9 @@ const WS = (() => {
 
     const getSettings = () =>
         BinarySocket.send({ get_settings: 1 });
+
+    const getTradingTimes = (date) =>
+        BinarySocket.send({ trading_times: date });
 
     const landingCompany = (residence) =>
         BinarySocket.send({ landing_company: residence });
@@ -89,6 +92,7 @@ const WS = (() => {
         getAccountStatus,
         getSelfExclusion,
         getSettings,
+        getTradingTimes,
         landingCompany,
         logout,
         mt5LoginList,

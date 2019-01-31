@@ -1,4 +1,5 @@
-import React from 'react';
+import React                 from 'react';
+import Loading               from './loading.jsx';
 import { Fieldset, FormRow } from './forms.jsx';
 
 export const Salutation = ({ className }) => (
@@ -103,23 +104,28 @@ export const AddressState = () => (
     <FormRow type='select' id='address_state' label={it.L('State/Province')} attributes={{ single: 'single' }} />
 );
 
-export const AddressPostcode = ({ hint }) => (
+export const AddressPostcode = ({ children, hint }) => (
     <FormRow
         type='text'
         id='address_postcode'
         label={it.L('Postal code/ZIP')}
         attributes={{ maxLength: '20', 'data-lpignore': true }}
         hint={hint}
-    />
+        has_geovalidator
+        row_class='postcode-form-row'
+    >
+        {children}
+    </FormRow>
 );
 
-export const Phone = ({ hint }) => (
+export const Phone = ({ hint, row_class }) => (
     <FormRow
         type='text'
         id='phone'
         label={it.L('Telephone')}
         attributes={{ 'data-lpignore': true }}
         hint={hint}
+        row_class={row_class}
     />
 );
 
@@ -250,12 +256,28 @@ export const TaxInformationForm = () => (
     </React.Fragment>
 );
 
-export const GeocodeResponse = () => (
-    <div className='gr-row'>
-        <div className='gr-12 gr-padding-10 center-text'>
-            <p id='geocode_error' className='notice-msg no-margin invisible'>
-                {it.L('Your address could not be verified by our automated system. You may proceed but please ensure that your address is complete.')}
-            </p>
+export const GeocodeValidation = ({ className }) => (
+    <React.Fragment>
+        <div className={className}>
+            <div className='geocode-btn-container'>
+                <a href='javascript:;' id='geocode_validate' className='geocode-btn invisible' ><span>{it.L('Check address')}</span></a>
+            </div>
         </div>
-    </div>
+        <div id='geocode_status' className='gr-row'>
+            <div className='gr-10 gr-centered gr-padding-10 center-text'>
+                <Loading is_invisible />
+                <p id='geocode_error' className='notice-msg invisible'>
+                    {it.L('We could not recognise your address. You may proceed but please ensure that your address is complete and accurate.')}
+                </p>
+                <div id='geocode_success' className='invisible'>
+                    <div className='success-msg'>
+                        <ul className='checked'>
+                            <li>{it.L('Your address has been recognised by our system.')}</li>
+                        </ul>
+                        <p>{it.L('However, we will require further documentation to authenticate your account in the future.')}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </React.Fragment>
 );

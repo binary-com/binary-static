@@ -1,8 +1,12 @@
+const moment                   = require('moment');
+const isCallputspread          = require('./callputspread').isCallputspread;
 const Contract                 = require('./contract');
+const hidePriceOverlay         = require('./common').hidePriceOverlay;
 const getLookBackFormula       = require('./lookback').getFormula;
 const isLookback               = require('./lookback').isLookback;
-const isCallputspread          = require('./callputspread').isCallputspread;
+const processPriceRequest      = require('./price').processPriceRequest;
 const Symbols                  = require('./symbols');
+const DigitTicker              = require('./digit_ticker');
 const Tick                     = require('./tick');
 const TickDisplay              = require('./tick_trade');
 const updateValues             = require('./update_values');
@@ -10,9 +14,11 @@ const Client                   = require('../../base/client');
 const Header                   = require('../../base/header');
 const BinarySocket             = require('../../base/socket');
 const formatMoney              = require('../../common/currency').formatMoney;
+const TopUpVirtualPopup        = require('../../pages/user/account/top_up_virtual/pop_up');
 const CommonFunctions          = require('../../../_common/common_functions');
 const localize                 = require('../../../_common/localize').localize;
 const localizeKeepPlaceholders = require('../../../_common/localize').localizeKeepPlaceholders;
+const State                    = require('../../../_common/storage').State;
 const padLeft                  = require('../../../_common/string_util').padLeft;
 const urlFor                   = require('../../../_common/url').urlFor;
 const createElement            = require('../../../_common/utility').createElement;
@@ -32,6 +38,27 @@ const Purchase = (() => {
         cost_value,
         profit_value,
         status;
+
+    const replaceElement = (container, child) => {
+        container.querySelectorAll('.row').forEach(item => item.classList.add('invisible'));
+        // Count up to the number instead of just replacing it.
+        if (Array.from(container.querySelectorAll('.row.digit-trade')).length > 0) {
+            const this_quote_el = child.querySelector('.quote');
+            container.append(child);
+            if (this_quote_el.parentElement.parentElement.previousSibling) {
+                const prev_quote_el = this_quote_el.parentElement.parentElement.previousSibling.querySelector('.quote');
+                const prev_quote = prev_quote_el.innerText;
+                DigitTicker.countUp(prev_quote,
+                    parseFloat(this_quote_el.innerText.replace(/,+/, '')),
+                    700,
+                    this_quote_el,
+                    (content) => `<div class='quote'>${content.replace(/\d$/, makeBold)}</div>`,
+                );
+            }
+        } else {
+            container.append(child);
+        }
+    };
 
     const display = (details) => {
         purchase_data = details;
@@ -59,31 +86,38 @@ const Purchase = (() => {
         const has_chart  = !/^(digits|highlowticks)$/.test(Contract.form());
         const show_chart = !error && passthrough.duration <= 10 && passthrough.duration_unit === 't';
 
-        contracts_list.style.display = 'none';
-
         if (error) {
-            container.style.display = 'block';
-            message_container.hide();
-            if (/AuthorizationRequired/.test(error.code)) {
-                authorization_error.setVisibility(1);
-                const authorization_error_btn_login = CommonFunctions.getElementById('authorization_error_btn_login');
-                authorization_error_btn_login.removeEventListener('click', loginOnClick);
-                authorization_error_btn_login.addEventListener('click', loginOnClick);
+            const balance = State.getResponse('balance.balance');
+            if (/InsufficientBalance/.test(error.code) && TopUpVirtualPopup.shouldShow(balance, true)) {
+                hidePriceOverlay();
+                processPriceRequest();
+                TopUpVirtualPopup.show(error.message);
             } else {
-                confirmation_error.setVisibility(1);
-                let message = error.message;
-                if (/RestrictedCountry/.test(error.code)) {
-                    let additional_message = '';
-                    if (/FinancialBinaries/.test(error.code)) {
-                        additional_message = localize('Try our [_1]Volatility Indices[_2].', [`<a href="${urlFor('get-started/binary-options', 'anchor=volatility-indices#range-of-markets')}" >`, '</a>']);
-                    } else if (/Random/.test(error.code)) {
-                        additional_message = localize('Try our other markets.');
+                contracts_list.style.display = 'none';
+                container.style.display = 'block';
+                message_container.hide();
+                if (/AuthorizationRequired/.test(error.code)) {
+                    authorization_error.setVisibility(1);
+                    const authorization_error_btn_login = CommonFunctions.getElementById('authorization_error_btn_login');
+                    authorization_error_btn_login.removeEventListener('click', loginOnClick);
+                    authorization_error_btn_login.addEventListener('click', loginOnClick);
+                } else {
+                    confirmation_error.setVisibility(1);
+                    let message = error.message;
+                    if (/RestrictedCountry/.test(error.code)) {
+                        let additional_message = '';
+                        if (/FinancialBinaries/.test(error.code)) {
+                            additional_message = localize('Try our [_1]Volatility Indices[_2].', [`<a href="${urlFor('get-started/binary-options', 'anchor=volatility-indices#range-of-markets')}" >`, '</a>']);
+                        } else if (/Random/.test(error.code)) {
+                            additional_message = localize('Try our other markets.');
+                        }
+                        message = `${error.message}. ${additional_message}`;
                     }
-                    message = `${error.message}. ${additional_message}`;
+                    CommonFunctions.elementInnerHtml(confirmation_error, message);
                 }
-                CommonFunctions.elementInnerHtml(confirmation_error, message);
             }
         } else {
+            contracts_list.style.display = 'none';
             CommonFunctions.getElementById('guideBtn').style.display = 'none';
             container.style.display = 'table-row';
             message_container.show();
@@ -131,21 +165,22 @@ const Purchase = (() => {
             }
 
             CommonFunctions.elementTextContent(CommonFunctions.getElementById('contract_highlowtick'), '');
+            const arr_shortcode = purchase_data.buy.shortcode.split('_');
+            tick_config = {
+                is_tick_high        : /^tickhigh$/i.test(contract_type),
+                is_tick_low         : /^ticklow$/i.test(contract_type),
+                is_digit            : /^digit/i.test(contract_type),
+                selected_tick_number: arr_shortcode[arr_shortcode.length - 1],
+                winning_tick_quote  : '',
+                winning_tick_number : '',
+            };
+
             if (has_chart) {
                 spots.hide();
             } else {
                 CommonFunctions.elementTextContent(spots, '');
                 spots.className = '';
                 spots.show();
-
-                const arr_shortcode = purchase_data.buy.shortcode.split('_');
-                tick_config = {
-                    is_tick_high        : /^tickhigh$/i.test(contract_type),
-                    is_tick_low         : /^ticklow$/i.test(contract_type),
-                    selected_tick_number: arr_shortcode[arr_shortcode.length - 1],
-                    winning_tick_quote  : '',
-                    winning_tick_number : '',
-                };
             }
 
             if (has_chart && !show_chart) {
@@ -157,6 +192,12 @@ const Purchase = (() => {
                 button.hide();
                 $('#confirmation_message_container .open_contract_details').setVisibility(0);
             }
+        }
+
+        if (tick_config.is_digit && show_chart) {
+            DigitTicker.init('digit_ticker_table', passthrough.contract_type, receipt.shortcode, passthrough.duration, status);
+        } else {
+            DigitTicker.remove();
         }
 
         if (show_chart && has_chart) {
@@ -208,9 +249,15 @@ const Purchase = (() => {
                     status = contract.status;
                     profit_value = contract.profit;
                     TickDisplay.setStatus(contract);
-                    if (contract.exit_tick_time && +contract.exit_tick_time < contract.date_expiry) {
+                    if (/^digit/i.test(contract.contract_type)) {
+                        if (contract.status !== 'open') {
+                            digitShowExitTime(contract.status, contract.exit_tick);
+                        }
+                    }
+                    if (!/^digit/i.test(contract.contract_type) && contract.exit_tick_time && +contract.exit_tick_time < contract.date_expiry) {
                         TickDisplay.updateChart({ is_sold: true }, contract);
                     }
+
                     // force to sell the expired contract, in order to get the final status
                     if (+contract.is_settleable === 1 && !contract.is_sold) {
                         BinarySocket.send({ sell_expired: 1 });
@@ -224,6 +271,10 @@ const Purchase = (() => {
 
     const loginOnClick = (e) => Header.loginOnClick(e);
 
+    const onclose = () => {
+        DigitTicker.remove();
+    };
+
     const updateSpotList = () => {
         const $spots = $('#contract_purchase_spots');
         if (!$spots.length || $spots.is(':hidden')) {
@@ -233,7 +284,9 @@ const Purchase = (() => {
         const spots = CommonFunctions.getElementById('contract_purchase_spots');
         if (status && status !== 'open') {
             if (!new RegExp(status).test(spots.classList)) {
-                spots.className = status;
+                if (!tick_config.is_digit) {
+                    spots.className = status;
+                }
                 if (status === 'won') {
                     updateValues.updatePurchaseStatus(payout_value, cost_value, profit_value, localize('This contract won'));
                 } else if (status === 'lost') {
@@ -257,14 +310,15 @@ const Purchase = (() => {
         }
 
         let duration = +getPropertyValue(purchase_data, ['echo_req', 'passthrough', 'duration']);
+
         if (!duration) {
             return;
         }
 
         const spots2  = Tick.spots();
         const epoches = Object.keys(spots2).sort((a, b) => a - b);
-        CommonFunctions.elementTextContent(spots, '');
 
+        CommonFunctions.elementTextContent(spots, '');
         for (let s = 0; s < epoches.length; s++) {
             const tick_d = {
                 epoch: epoches[s],
@@ -288,10 +342,13 @@ const Purchase = (() => {
                     }
                 }
 
-                const fragment = createElement('div', { class: `row${is_winning_tick ? ' winning-tick-row' : ''}` });
+                const fragment = createElement('div', { class: `row${is_winning_tick ? ' winning-tick-row' : ''} ${tick_config.is_digit ? ' digit-trade' : ''}` });
 
                 const el1 = createElement('div', { class: 'col', text: `${localize('Tick')} ${current_tick_count}` });
-                fragment.appendChild(el1);
+
+                if (!tick_config.is_digit) {
+                    fragment.appendChild(el1);
+                }
 
                 const el2     = createElement('div', { class: 'col' });
                 const date    = new Date(tick_d.epoch * 1000);
@@ -299,14 +356,33 @@ const Purchase = (() => {
                 const minutes = padLeft(date.getUTCMinutes(), 2, '0');
                 const seconds = padLeft(date.getUTCSeconds(), 2, '0');
                 CommonFunctions.elementTextContent(el2, [hours, minutes, seconds].join(':'));
-                fragment.appendChild(el2);
-
-                const tick = (tick_config.is_tick_high || tick_config.is_tick_low) ? tick_d.quote : tick_d.quote.replace(/\d$/, makeBold);
+                if (!tick_config.is_digit) {
+                    fragment.appendChild(el2);
+                }
+                const tick = (tick_config.is_tick_high || tick_config.is_tick_low) ?
+                    tick_d.quote : `<div class='quote'>${tick_d.quote.replace(/\d$/, makeBold)}</div>`;
                 const el3  = createElement('div', { class: 'col' });
                 CommonFunctions.elementInnerHtml(el3, tick);
-                fragment.appendChild(el3);
 
-                spots.appendChild(fragment);
+                if (tick_config.is_digit) {
+                    DigitTicker.update(current_tick_count, tick_d);
+                    const el_epoch = document.createElement('div');
+                    el_epoch.className = 'digit-tick-epoch';
+                    el_epoch.style.right = (el3.offsetWidth - tick.offsetWidth) / 2;
+                    const el_epoch_content = document.createTextNode(
+                        moment(new Date(tick_d.epoch * 1000)).utc().format('HH:mm:ss')
+                    );
+                    el_epoch.appendChild(el_epoch_content);
+                    fragment.appendChild(el_epoch);
+                    el3.insertBefore(el_epoch, el3.childNodes[0]);
+
+                    replaceElement(fragment, el3);
+                    replaceElement(spots, fragment);
+                } else if (!tick_config.is_digit) {
+                    fragment.appendChild(el3);
+                    spots.appendChild(fragment);
+                }
+
                 spots.scrollTop = spots.scrollHeight;
 
                 duration--;
@@ -328,8 +404,32 @@ const Purchase = (() => {
         }
     };
 
+    const digitShowExitTime = (contract_status, last_tick_quote) => {
+        const are_spots_rendered = CommonFunctions.getElementById('contract_purchase_spots')
+            .getElementsByClassName('row').length;
+        if (!are_spots_rendered) {
+            updateSpotList();
+        }
+        const el_container = CommonFunctions.getElementById('contract_purchase_spots');
+        const el_epoch = Array.from(el_container.querySelectorAll('.digit-tick-epoch')).pop();
+        const adjustment = 5;
+        if (el_epoch && el_epoch.classList) {
+            el_epoch.classList.add('is-visible');
+            el_epoch.setAttribute('style', `position: absolute; right: ${((el_epoch.parentElement.offsetWidth - el_epoch.nextSibling.offsetWidth) / 2) + adjustment}px`);
+            if (contract_status === 'won') {
+                DigitTicker.markAsWon();
+                DigitTicker.markDigitAsWon(last_tick_quote.slice(-1));
+            }
+            if (contract_status === 'lost') {
+                DigitTicker.markAsLost();
+                DigitTicker.markDigitAsLost(last_tick_quote.slice(-1));
+            }
+        }
+    };
+
     return {
         display,
+        onclose,
         updateSpotList,
     };
 })();

@@ -57,3 +57,26 @@ fieldset {
     visibility: hidden !important;
     transition: none !important;
 }
+
+.absolute-center {
+    position: absolute;
+    margin: auto;
+}
+
+// Centers absolute element vertically
+.absolute-center-v {
+    @extend .absolute-center;
+    top: 0;
+    bottom: 0;
+}
+
+// Centers absolute element horizontally
+.absolute-center-h {
+    @extend .absolute-center;
+    left: 0;
+    right: 0;
+}
+
+.center-text {
+    text-align: center;
+}
