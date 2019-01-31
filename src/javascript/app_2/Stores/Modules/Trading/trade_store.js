@@ -471,7 +471,7 @@ export default class TradeStore extends BaseStore {
             this.is_allow_equal = false;
         }
     }
-    
+
     @action.bound
     accountSwitcherListener() {
         return new Promise(async (resolve) => {

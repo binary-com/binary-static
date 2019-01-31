@@ -50,7 +50,6 @@ const Duration = ({
         expiry_list.push({ text: localize('End Time'), value: 'endtime' });
     }
 
-    // TODO: Move to MobileComponent
     if (is_minimized) {
         const moment_expiry = toMoment(expiry_date);
         const duration_unit_text = (duration_units_list.find(o => o.value === duration_unit) || {}).text;
