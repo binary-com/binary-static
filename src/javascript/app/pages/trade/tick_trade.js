@@ -211,7 +211,7 @@ const TickDisplay = (() => {
             } else if (contract && contract.barrier) {
                 barrier_quote = parseFloat(contract.barrier);
             } else if (entry_spot_offset) {
-                barrier_quote = Number(`${Math.round(`${barrier_quote + parseFloat(entry_spot_offset)}e${display_decimals}`)}e-${display_decimals}`);
+                barrier_quote = /^[+|-]/i.test(entry_spot_offset) ? Number(`${Math.round(`${barrier_quote + parseFloat(entry_spot_offset)}e${display_decimals}`)}e-${display_decimals}`) : entry_spot_offset;
             }
 
             chart.yAxis[0].addPlotLine({
