@@ -62,7 +62,7 @@ const getDays = ({
         const is_active   = selected_date && moment_date.isSame(moment_selected);
         const is_today    = moment_date.isSame(moment_today, 'day');
 
-        const events          = holidays.filter(event => event.dates === date);
+        const events          = holidays.filter(event => event.dates.find(d => d === date));
         const has_events      = !!events.length;
         const is_closes_early = events.map(event => event.descrip.includes('Closes early'))[0];
         const message         = events.map(event => event.descrip)[0] || '';
