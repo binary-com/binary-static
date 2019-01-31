@@ -1,7 +1,7 @@
-import classNames               from 'classnames';
-import PropTypes                from 'prop-types';
-import React, { Fragment }      from 'react';
-import { IconArrow }            from 'Assets/Common';
+import classNames          from 'classnames';
+import PropTypes           from 'prop-types';
+import React, { Fragment } from 'react';
+import { IconArrow }       from 'Assets/Common';
 
 const DurationToggle = ({
     name,
