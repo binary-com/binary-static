@@ -22,7 +22,7 @@ const Duration = ({
     expiry_date,
     expiry_time,
     expiry_type,
-    getDurationValue,
+    getDurationFromUnit,
     onChange,
     onChangeUiStore,
     is_advanced_duration,
@@ -67,7 +67,7 @@ const Duration = ({
 
     const changeDurationUnit = ({ target }) => {
         const { name, value } = target;
-        const duration_value  = getDurationValue(value);
+        const duration_value  = getDurationFromUnit(value);
 
         onChangeUiStore({ name, value });
         onChange({ target: { name: 'duration_unit', value } });
@@ -93,7 +93,7 @@ const Duration = ({
             onChangeUiStore({ name: `${value ? 'advanced' : 'simple'}_duration_unit`, value: current_duration_unit });
         }
 
-        const duration_value  = getDurationValue(current_duration_unit);
+        const duration_value  = getDurationFromUnit(current_duration_unit);
         onChange({ target: { name: 'duration_unit', value: current_duration_unit } });
         onChange({ target: { name: 'duration', value: duration_value } });
     };
@@ -143,7 +143,7 @@ const Duration = ({
                             expiry_date={expiry_date}
                             expiry_list={expiry_list}
                             expiry_time={expiry_time}
-                            getDurationValue={getDurationValue}
+                            getDurationFromUnit={getDurationFromUnit}
                             is_nativepicker={is_nativepicker}
                             market_close_times={market_close_times}
                             number_input_props={props.number_input}
@@ -158,7 +158,7 @@ const Duration = ({
                         /> }
                     { !is_advanced_duration &&
                         <SimpleDuration
-                            getDurationValue={getDurationValue}
+                            getDurationFromUnit={getDurationFromUnit}
                             changeDurationUnit={changeDurationUnit}
                             duration_units_list={duration_units_list}
                             number_input_props={props.number_input}
@@ -200,7 +200,7 @@ Duration.propTypes = {
     ]),
     expiry_time         : PropTypes.string,
     expiry_type         : PropTypes.string,
-    getDurationValue    : PropTypes.func,
+    getDurationFromUnit : PropTypes.func,
     hasDurationUnit     : PropTypes.func,
     is_advanced_duration: PropTypes.bool,
     is_minimized        : PropTypes.bool,

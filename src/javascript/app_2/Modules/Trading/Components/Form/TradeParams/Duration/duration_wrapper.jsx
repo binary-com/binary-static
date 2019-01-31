@@ -6,26 +6,15 @@ import {
 import Duration from './duration.jsx';
 
 class DurationWrapper extends React.Component {
-    getDurationValue = selected_duration => {
-        const duration = {
-            t: this.props.duration_t,
-            s: this.props.duration_s,
-            m: this.props.duration_m,
-            h: this.props.duration_h,
-            d: this.props.duration_d,
-        };
-        return duration[selected_duration];
-    };
-
     hasDurationUnit = (duration_unit) => this.props.duration_units_list.some(du => du.value === duration_unit);
 
     setDurationUnit = () => {
-        const new_duration_unit = this.props.duration_units_list[0].value;
-        const duration_value    = this.getDurationValue(new_duration_unit);
+        const new_duration_unit  = this.props.duration_units_list[0].value;
+        const new_duration_value = this.props.getDurationFromUnit(new_duration_unit);
 
         this.props.onChangeUiStore({ name: `${this.is_advanced_duration ? 'advanced' : 'simple'}_duration_unit`, value: new_duration_unit });
         this.props.onChange({ target: { name: 'duration_unit', value: new_duration_unit } });
-        this.props.onChange({ target: { name: 'duration', value: duration_value } });
+        this.props.onChange({ target: { name: 'duration', value: new_duration_value } });
     };
 
     // intercept changes to current contracts duration_units_list - if they are missing change duration_unit and value in trade_store and ui_store
@@ -43,7 +32,6 @@ class DurationWrapper extends React.Component {
     render() {
         return (
             <Duration
-                getDurationValue={this.getDurationValue}
                 hasDurationUnit={this.hasDurationUnit}
                 {...this.props}
             />
@@ -88,6 +76,7 @@ DurationWrapper.propTypes = {
     ]),
     expiry_time         : PropTypes.string,
     expiry_type         : PropTypes.string,
+    getDurationFromUnit : PropTypes.func,
     is_advanced_duration: PropTypes.bool,
     is_minimized        : PropTypes.bool,
     is_nativepicker     : PropTypes.bool,

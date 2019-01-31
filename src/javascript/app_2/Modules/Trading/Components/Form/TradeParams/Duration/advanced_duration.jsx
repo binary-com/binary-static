@@ -21,7 +21,7 @@ const AdvancedDuration = ({
     duration_min_max,
     duration_units_list,
     changeDurationUnit,
-    getDurationValue,
+    getDurationFromUnit,
     expiry_date,
     expiry_list,
     expiry_time,
@@ -122,7 +122,7 @@ const AdvancedDuration = ({
                             <InputField
                                 label={duration_units_list.length === 1 ? duration_units_list[0].text : null}
                                 name='duration'
-                                value={getDurationValue(advanced_duration_unit)}
+                                value={getDurationFromUnit(advanced_duration_unit)}
                                 {...number_input_props}
                                 {...shared_input_props}
                             />
@@ -182,18 +182,18 @@ AdvancedDuration.propTypes = {
         PropTypes.string,
         PropTypes.number,
     ]),
-    expiry_list       : PropTypes.array,
-    expiry_time       : PropTypes.string,
-    getDurationValue  : PropTypes.func,
-    is_nativepicker   : PropTypes.bool,
-    market_close_times: PropTypes.array,
-    number_input_props: PropTypes.object,
-    onChange          : PropTypes.func,
-    onChangeUiStore   : PropTypes.func,
-    server_time       : PropTypes.object,
-    sessions          : MobxPropTypes.arrayOrObservableArray,
-    shared_input_props: PropTypes.object,
-    start_date        : PropTypes.oneOfType([
+    expiry_list        : PropTypes.array,
+    expiry_time        : PropTypes.string,
+    getDurationFromUnit: PropTypes.func,
+    is_nativepicker    : PropTypes.bool,
+    market_close_times : PropTypes.array,
+    number_input_props : PropTypes.object,
+    onChange           : PropTypes.func,
+    onChangeUiStore    : PropTypes.func,
+    server_time        : PropTypes.object,
+    sessions           : MobxPropTypes.arrayOrObservableArray,
+    shared_input_props : PropTypes.object,
+    start_date         : PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
     ]),

@@ -45,6 +45,11 @@ export default class UIStore extends BaseStore {
     @observable duration_h             = 1;
     @observable duration_d             = 1;
 
+    @computed
+    get getDurationFromUnit() {
+        return (unit) => this[`duration_${unit}`];
+    }
+
     constructor() {
         const local_storage_properties = [
             'advanced_duration_unit',

@@ -7,7 +7,7 @@ import RangeSlider                      from 'App/Components/Form/RangeSlider';
 
 const SimpleDuration = ({
     changeDurationUnit,
-    getDurationValue,
+    getDurationFromUnit,
     number_input_props,
     duration_units_list,
     shared_input_props,
@@ -44,7 +44,7 @@ const SimpleDuration = ({
                 <InputField
                     name='duration'
                     label={has_label ? duration_units_list[0].text : null}
-                    value={getDurationValue(simple_duration_unit)}
+                    value={getDurationFromUnit(simple_duration_unit)}
                     {...number_input_props}
                     {...shared_input_props}
                 />
@@ -60,7 +60,7 @@ SimpleDuration.propTypes = {
         PropTypes.string,
     ]),
     duration_units_list : MobxPropTypes.arrayOrObservableArray,
-    getDurationValue    : PropTypes.func,
+    getDurationFromUnit : PropTypes.func,
     number_input_props  : PropTypes.object,
     shared_input_props  : PropTypes.object,
     simple_duration_unit: PropTypes.string,
