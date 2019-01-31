@@ -153,3 +153,9 @@ export const subYears = (date, num_of_years) => toMoment(date).clone().subtract(
  * @param {moment|string|epoch} second datetime parameter
  */
 export const minDate = (date_1, date_2) => moment.min(toMoment(date_1), toMoment(date_2));
+
+/**
+ * returns a new date
+ * @param {moment|string|epoch} date date
+ */
+export const getStartOfMonth = (date) => toMoment(date).clone().startOf('month').format('YYYY-MM-DD');

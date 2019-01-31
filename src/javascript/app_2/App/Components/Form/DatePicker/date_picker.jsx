@@ -11,6 +11,7 @@ import {
     addDays,
     daysFromTodayTo,
     formatDate,
+    getStartOfMonth,
     isDateValid,
     toMoment }              from 'Utils/Date';
 import { localize }         from '_common/localize';
@@ -33,6 +34,10 @@ class DatePicker extends React.Component {
             this.updateDatePickerValue(daysFromTodayTo(value));
         } else {
             this.updateDatePickerValue(formatDate(value, 'DD MMM YYYY'));
+        }
+
+        if (this.props.disable_trading_events) {
+            this.onChangeCalendarMonth(getStartOfMonth(this.props.value));
         }
     }
 

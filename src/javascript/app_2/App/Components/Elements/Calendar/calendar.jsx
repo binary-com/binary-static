@@ -1,6 +1,8 @@
 import PropTypes      from 'prop-types';
 import React          from 'react';
-import { toMoment }   from 'Utils/Date';
+import {
+    getStartOfMonth,
+    toMoment }        from 'Utils/Date';
 import CalendarBody   from './calendar_body.jsx';
 import CalendarFooter from './calendar_footer.jsx';
 import CalendarHeader from './calendar_header.jsx';
@@ -8,11 +10,11 @@ import CalendarHeader from './calendar_header.jsx';
 class Calendar extends React.PureComponent {
     constructor(props) {
         super(props);
-        const { date_format, start_date } = props;
-        const current_date = toMoment(start_date).format(date_format);
+        const { date_format, start_date, value } = props;
+        const current_date = toMoment(value || start_date).format(date_format);
         this.state = {
             calendar_date: current_date, // calendar date reference
-            selected_date: '',           // selected date
+            selected_date: value,        // selected date
             calendar_view: 'date',
         };
     }
@@ -26,7 +28,7 @@ class Calendar extends React.PureComponent {
             calendar_date: toMoment(new_date).format(this.props.date_format),
         }, () => {
             if (this.props.onChangeCalendarMonth) {
-                const start_of_month = toMoment(new_date).startOf('month').format(this.props.date_format);
+                const start_of_month = getStartOfMonth(new_date);
                 this.props.onChangeCalendarMonth(start_of_month);
             }
         });
@@ -76,7 +78,7 @@ class Calendar extends React.PureComponent {
             calendar_view: view_map[type],
         }, () => {
             if (this.props.onChangeCalendarMonth) {
-                const start_of_month = toMoment(date).startOf('month').format(this.props.date_format);
+                const start_of_month = getStartOfMonth(date);
                 this.props.onChangeCalendarMonth(start_of_month);
             }
         });
