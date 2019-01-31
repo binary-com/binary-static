@@ -1,11 +1,12 @@
-import { observer }        from 'mobx-react';
-import PropTypes           from 'prop-types';
-import React               from 'react';
-import { IconBarrierUp }   from 'Assets/Trading/Barriers/icon_barrier_up.jsx';
-import { IconBarrierDown } from 'Assets/Trading/Barriers/icon_barrier_down.jsx';
-import Fieldset            from 'App/Components/Form/fieldset.jsx';
-import InputField          from 'App/Components/Form/input_field.jsx';
-import { localize }        from '_common/localize';
+import { observer }   from 'mobx-react';
+import PropTypes      from 'prop-types';
+import React          from 'react';
+import {
+    IconBarrierUp,
+    IconBarrierDown } from 'Assets/Trading/Barriers';
+import Fieldset       from 'App/Components/Form/fieldset.jsx';
+import InputField     from 'App/Components/Form/input_field.jsx';
+import { localize }   from '_common/localize';
 
 const Barrier = ({
     barrier_1,
@@ -51,7 +52,7 @@ const Barrier = ({
                     value={barrier_1}
                     className={barrier_count === 2 ? 'multiple' : 'single'}
                     onChange={onChange}
-                    error_messages = {validation_errors.barrier_1 || []}
+                    error_messages={validation_errors.barrier_1 || []}
                     is_float
                     is_signed
                 />
@@ -64,7 +65,7 @@ const Barrier = ({
                             value={barrier_2}
                             className='multiple'
                             onChange={onChange}
-                            error_messages = {validation_errors.barrier_2}
+                            error_messages={validation_errors.barrier_2}
                             is_float
                             is_signed
                         />
