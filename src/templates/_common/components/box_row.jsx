@@ -1,5 +1,5 @@
-import React from 'react';
-import SeparatorLine from './separator_line.jsx';
+import React             from 'react';
+import { SeparatorLine } from './separator_line.jsx';
 
 export const BoxRow = ({ children, top_row, bottom_row, no_border }) => {
     const children_count = React.Children.count(children);
