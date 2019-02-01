@@ -4,7 +4,7 @@ div.contracts-popup-container {
     background: $COLOR_WHITE;
     border: solid 1px $COLOR_GRAY;
     border-radius: 4px;
-    transition: transform 0.3s opacity 0.3s;
+    transition: transform 0.3s, opacity 0.3s;
     margin-top: 4px;
     padding: 4px;
 
@@ -138,7 +138,6 @@ div.contracts-popup-container {
         pointer-events: none;
         position: absolute;
         transition: transform 0.25s ease, opacity 0.25s;
-        transform: translateX(50%);
         user-select: none;
         opacity: 0;
         height: 0;
@@ -210,7 +209,7 @@ div.contracts-popup-container {
             }
         }
         &-enter, &-exit {
-            transform: translateX(50%);
+            transform: translateX(20%);
             pointer-events: none;
             opacity: 0;
             height: 0;
