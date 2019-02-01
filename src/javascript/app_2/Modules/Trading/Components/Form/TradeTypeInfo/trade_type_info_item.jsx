@@ -1,13 +1,13 @@
-import PropTypes            from 'prop-types';
-import React                from 'react';
-import { IconBack }         from 'Assets/Common/icon_back.jsx';
-import { IconChevronLeft }  from 'Assets/Common/icon_chevron_left.jsx';
-import { IconChevronRight } from 'Assets/Common/icon_chevron_right.jsx';
-import { TradeCategories }  from 'Assets/Trading/Categories/trade_categories.jsx';
-import Button               from 'App/Components/Form/button.jsx';
-import { localize }         from '_common/localize';
+import PropTypes                    from 'prop-types';
+import React                        from 'react';
+import { IconBack }                 from 'Assets/Common/icon_back.jsx';
+import { IconChevronLeft }          from 'Assets/Common/icon_chevron_left.jsx';
+import { IconChevronRight }         from 'Assets/Common/icon_chevron_right.jsx';
+import { TradeCategories }          from 'Assets/Trading/Categories/trade_categories.jsx';
+import Button                       from 'App/Components/Form/button.jsx';
+import { localize }                 from '_common/localize';
 
-const TradeTypeInfoItem = ({
+const ContractTypeItem = ({
     handleNavigationClick,
     handleNextClick,
     handlePrevClick,
@@ -56,7 +56,7 @@ const TradeTypeInfoItem = ({
     </React.Fragment>
 );
 
-TradeTypeInfoItem.propTypes = {
+ContractTypeItem.propTypes = {
     handleNavigationClick: PropTypes.func,
     handleNextClick      : PropTypes.func,
     handlePrevClick      : PropTypes.func,
@@ -67,4 +67,4 @@ TradeTypeInfoItem.propTypes = {
     onSubmitButtonClick  : PropTypes.func,
 };
 
-export default TradeTypeInfoItem;
+export default ContractTypeItem;
