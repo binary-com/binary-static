@@ -7,7 +7,7 @@ import { TradeCategories }          from 'Assets/Trading/Categories/trade_catego
 import Button                       from 'App/Components/Form/button.jsx';
 import { localize }                 from '_common/localize';
 
-const ContractTypeItem = ({
+const TradeTypeInfoItem = ({
     handleNavigationClick,
     handleNextClick,
     handlePrevClick,
@@ -58,7 +58,7 @@ const ContractTypeItem = ({
     </React.Fragment>
 );
 
-ContractTypeItem.propTypes = {
+TradeTypeInfoItem.propTypes = {
     handleNavigationClick: PropTypes.func,
     handleNextClick      : PropTypes.func,
     handlePrevClick      : PropTypes.func,
@@ -69,4 +69,4 @@ ContractTypeItem.propTypes = {
     onSubmitButtonClick  : PropTypes.func,
 };
 
-export default ContractTypeItem;
+export default TradeTypeInfoItem;
