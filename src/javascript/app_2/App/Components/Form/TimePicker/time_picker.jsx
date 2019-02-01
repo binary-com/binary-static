@@ -6,10 +6,7 @@ import Dialog       from './dialog.jsx';
 import InputField   from '../input_field.jsx';
 
 class TimePicker extends React.PureComponent {
-    state = {
-        is_open: false,
-        value  : '',
-    };
+    state.is_open = false;
 
     componentDidMount() {
         document.addEventListener('mousedown', this.handleClickOutside);
@@ -20,7 +17,7 @@ class TimePicker extends React.PureComponent {
     }
 
     toggleDropDown = () => {
-        this.setState({ is_open: !this.state.is_open });
+        this.setState((state) => ({ is_open : !state.is_open }));
     };
 
     handleChange = (arg) => {
@@ -116,7 +113,6 @@ TimePicker.propTypes = {
         PropTypes.string,
         PropTypes.object,
     ]),
-    is_align_right : PropTypes.bool,
     is_clearable   : PropTypes.bool,
     is_nativepicker: PropTypes.bool,
     name           : PropTypes.string,
