@@ -22,14 +22,10 @@
         border-radius: $BORDER_RADIUS 0 0 $BORDER_RADIUS;
         box-sizing: border-box;
         font-size: inherit;
-
-        &:before {
-            margin: 0;
-        }
     }
-    .symbols.aud {
-        // alignment fix for AUD symbol
-        padding-right: 4px;
+    &:has(input[type=checkbox]) {
+        display: inline-block;
+        width: 100%;
     }
     & + input {
         padding-left: 35px !important;
@@ -163,9 +159,10 @@
         }
     }
     label.input-label {
-        font-size: 0.875rem; /* stylelint-disable-line number-max-precision */
-        color: #333333; /* stylelint-disable-line color-no-hex */
-        font-weight: 400;
+        margin-bottom: 2px;
+        margin-left: 4px;
+        text-transform: capitalize;
+        display: inline-block;
     }
     span.input-helper {
         font-weight: 300;
