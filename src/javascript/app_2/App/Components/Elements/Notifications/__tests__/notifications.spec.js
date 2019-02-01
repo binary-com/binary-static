@@ -11,8 +11,12 @@ describe('Notifications', () => {
         const wrapper = shallow(<Notifications />);
         expect(wrapper).to.have.length(1);
     });
-    it('should ', () => {
+    it('should render .no-notifications-container when the list is not passed', () => {
         const wrapper = shallow(<Notifications />);
         expect(wrapper.find('.no-notifications-container').exists()).to.be.true;
+    });
+    it('should not render .no-notifications-container when the list is passed', () => {
+        const wrapper = shallow(<Notifications list={['First', 'Second', 'Third']} />);
+        expect(wrapper.find('.no-notifications-container').exists()).to.be.false;
     });
 });
