@@ -86,7 +86,7 @@ const MetaTrader = (() => {
     };
 
     const getAllAccountsInfo = () => {
-        MetaTraderUI.init(submit);
+        MetaTraderUI.init(submit, sendTopupDemo);
         BinarySocket.send({ mt5_login_list: 1 }).then((response) => {
             if (response.error) {
                 MetaTraderUI.displayPageError(response.error.message || localize('Sorry, an error occurred while processing your request.'));
@@ -228,6 +228,30 @@ const MetaTrader = (() => {
                 });
             });
         }
+    };
+
+    const sendTopupDemo = () => {
+        MetaTraderUI.setTopupLoading(true);
+        const acc_type           = Client.get('mt5_account');
+        const login              = accounts_info[acc_type].info.login;
+        const req = {
+            loginid    : Client.get('loginid'),
+            mt5_deposit: 1,
+            mt5_id     : login,
+        };
+
+        BinarySocket.send(req).then((response) => {
+            if (response.error) {
+                MetaTraderUI.displayPageError(response.error.message);
+            } else {
+                MetaTraderUI.displayMainMessage(
+                    localize(
+                        '[_1] has been credited into your MT5 Demo Account: [_2].',
+                        [`${Client.get('currency')} 10,000.00`, login.toString()]
+                    ));
+            }
+            MetaTraderUI.setTopupLoading(false);
+        });
     };
 
     return {
