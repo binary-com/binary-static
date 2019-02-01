@@ -5,11 +5,11 @@ import { formatMoney } from '_common/base/currency_base';
 import {
     AccountInfo,
     DepositButton,
-    LoginButton,
-    UpgradeButton,
     InstallPWAButton,
+    LoginButton,
     MenuLinks,
-    ToggleMenuDrawer } from 'App/Components/Layout/Header';
+    ToggleMenuDrawer,
+    UpgradeButton }    from 'App/Components/Layout/Header';
 import header_links    from 'App/Constants/header_links';
 import { connect }     from 'Stores/connect';
 
