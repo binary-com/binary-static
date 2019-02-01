@@ -23,14 +23,16 @@ const MetaTraderUI = (() => {
         $main_msg,
         validations,
         submit,
+        topup_demo,
         token,
         current_action_ui;
 
     const accounts_info = MetaTraderConfig.accounts_info;
     const actions_info  = MetaTraderConfig.actions_info;
 
-    const init = (submit_func) => {
+    const init = (submit_func, topup_demo_func) => {
         token        = getHashValue('token');
+        topup_demo   = topup_demo_func;
         submit       = submit_func;
         $container   = $('#mt_account_management');
         $mt5_account = $container.find('#mt5_account');
@@ -591,19 +593,36 @@ const MetaTraderUI = (() => {
     const disableDemoTopup = () => {
         const el_demo_topup_btn = getElementById('demo_topup_btn');
 
-        el_demo_topup_btn.removeAttribute('href');
-        el_demo_topup_btn.previousSibling.setVisibility(1);
+        el_demo_topup_btn.removeEventListener('click', topup_demo);
         el_demo_topup_btn.classList.add('button-disabled');
         el_demo_topup_btn.classList.remove('button');
+        el_demo_topup_btn.previousSibling.setVisibility(1);
     };
 
     const enableDemoTopup = () => {
         const el_demo_topup_btn = getElementById('demo_topup_btn');
 
-        el_demo_topup_btn.href = '#'; // TODO call API
-        el_demo_topup_btn.previousSibling.setVisibility(0);
+        el_demo_topup_btn.addEventListener('click', topup_demo);
         el_demo_topup_btn.classList.add('button');
         el_demo_topup_btn.classList.remove('button-disabled');
+        el_demo_topup_btn.previousSibling.setVisibility(0);
+    };
+
+    const setTopupLoading = (state) => {
+        const el_demo_topup_btn  = getElementById('demo_topup_btn');
+        const el_demo_topup_info = el_demo_topup_btn.previousSibling;
+        const el_loading         = el_demo_topup_btn.parentElement.firstChild;
+
+        if (state) {
+            el_demo_topup_btn.setVisibility(0);
+            el_demo_topup_info.setVisibility(0);
+            el_loading.setVisibility(1);
+        } else {
+            el_demo_topup_btn.setVisibility(1);
+            el_demo_topup_info.setVisibility(1);
+            el_loading.setVisibility(0);
+            setDemoTopupStatus();
+        }
     };
 
     return {
@@ -620,6 +639,7 @@ const MetaTraderUI = (() => {
         disableButton,
         enableButton,
         showHideMAM,
+        setTopupLoading,
 
         $form   : () => $form,
         getToken: () => token,
