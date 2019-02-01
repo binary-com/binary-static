@@ -1,9 +1,10 @@
-import classNames   from 'classnames';
-import { observer } from 'mobx-react';
-import PropTypes    from 'prop-types';
-import React        from 'react';
-import Dialog       from './dialog.jsx';
-import InputField   from '../input_field.jsx';
+import classNames        from 'classnames';
+import { observer }      from 'mobx-react';
+import PropTypes         from 'prop-types';
+import React             from 'react';
+import { CSSTransition } from 'react-transition-group';
+import Dialog            from './dialog.jsx';
+import InputField        from '../input_field.jsx';
 
 class TimePicker extends React.PureComponent {
     state = { is_open: false };
@@ -89,16 +90,25 @@ class TimePicker extends React.PureComponent {
                                     name={name}
                                     placeholder={placeholder}
                                 />
-                                <Dialog
-                                    className={classNames(
-                                        { 'active': this.state.is_open },
-                                        'from-left')}
-                                    onChange={this.handleChange}
-                                    preClass={prefix_class}
-                                    start_time={start_time}
-                                    end_time={end_time}
-                                    value={value}
-                                />
+                                <CSSTransition
+                                    in={ this.state.is_open }
+                                    classNames={{
+                                        enter    : 'time-picker-dialog-enter',
+                                        enterDone: 'time-picker-dialog-enter-done',
+                                        exit     : 'time-picker-dialog-exit',
+                                    }}
+                                    timeout={100}
+                                    unmountOnExit
+                                >
+                                    <Dialog
+                                        className={'from-left'}
+                                        onChange={this.handleChange}
+                                        preClass={prefix_class}
+                                        start_time={start_time}
+                                        end_time={end_time}
+                                        value={value}
+                                    />
+                                </CSSTransition>
                             </React.Fragment>
                         )
                 }
