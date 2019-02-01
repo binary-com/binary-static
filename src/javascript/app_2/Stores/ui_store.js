@@ -35,8 +35,29 @@ export default class UIStore extends BaseStore {
 
     @observable toast_messages = [];
 
+    @observable is_advanced_duration   = false;
+    @observable advanced_duration_unit = 't';
+    @observable advanced_expiry_type   = 'duration';
+    @observable simple_duration_unit   = 't';
+    @observable duration_t             = 5;
+    @observable duration_s             = 15;
+    @observable duration_m             = 3;
+    @observable duration_h             = 1;
+    @observable duration_d             = 1;
+
+    getDurationFromUnit = (unit) => this[`duration_${unit}`];
+
     constructor() {
         const local_storage_properties = [
+            'advanced_duration_unit',
+            'is_advanced_duration',
+            'advanced_expiry_type',
+            'simple_duration_unit',
+            'duration_t',
+            'duration_s',
+            'duration_m',
+            'duration_h',
+            'duration_d',
             'is_chart_asset_info_visible',
             'is_chart_countdown_visible',
             'is_chart_layout_default',
@@ -49,6 +70,14 @@ export default class UIStore extends BaseStore {
         super({ local_storage_properties });
         window.addEventListener('resize', this.handleResize);
         autorun(() => document.body.classList[this.is_dark_mode_on ? 'add' : 'remove']('dark'));
+    }
+
+    @action.bound
+    onChangeUiStore({ name, value }) {
+        if (!(name in this)) {
+            throw new Error(`Invalid Argument: ${name}`);
+        }
+        this[name] = value;
     }
 
     @action.bound

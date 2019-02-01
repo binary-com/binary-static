@@ -187,6 +187,32 @@
             }
         }
     }
+
+    .advanced-simple-toggle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 32px;
+        width: 100%;
+        margin-top: 8px;
+        margin-bottom: -8px;
+        border: 0;
+        background: none;
+
+        &__icon {
+            transition: transform 0.2s ease;
+
+            &--active {
+                transform: rotate(180deg);
+            }
+        }
+        &:hover {
+            cursor: pointer;
+        }
+        &:focus {
+            outline: none;
+        }
+    }
 }
 
 .inline-icon {
