@@ -44,7 +44,7 @@ const InputField = ({
     const changeValue = (e) => {
         if (type === 'number') {
             const is_empty = !e.target.value || e.target.value === '';
-            const signed_regex = is_signed ? '(?!^([-+]0)$|^[-+]?$)^[+-]?' : '^';
+            const signed_regex = is_signed ? '^[\+\-]?[0-9]*(\.?([0-9]*)?)?$' : '^';
 
             const is_number = new RegExp(`${signed_regex}(\\d*)?${is_float ? '(\\.\\d+)?' : ''}$`)
                 .test(e.target.value);
