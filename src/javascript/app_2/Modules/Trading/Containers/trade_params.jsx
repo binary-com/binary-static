@@ -25,6 +25,7 @@ class TradeParams extends React.Component {
                             server_time: this.props.server_time,
                         },
                         this.props.client_store,
+                        this.props.ui_store,
                     )}
                 />
             ));
@@ -45,10 +46,11 @@ TradeParams.propTypes = {
 };
 
 export default connect(
-    ({ client, common, modules }) => ({
+    ({ client, common, modules, ui }) => ({
         client_store   : client,
         server_time    : common.server_time,
         form_components: modules.trade.form_components,
         trade_store    : modules.trade,
+        ui_store       : ui,
     })
 )(TradeParams);
