@@ -50,7 +50,7 @@ const BinarySocketGeneral = (() => {
                         requestLogout();
                     } else {
                         client_store.responseAuthorize(response);
-                        WS.subscribeBalance(ResponseHandlers.balance);
+                        WS.subscribeBalance(ResponseHandlers.balance, true);
                         WS.getSettings();
                         WS.getAccountStatus();
                         WS.payoutCurrencies();
