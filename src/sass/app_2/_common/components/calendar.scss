@@ -165,6 +165,7 @@
         span.tooltip[data-tooltip] {
             position: absolute;
             display: inline-grid;
+            cursor: default;
             height: 0;
             top: 0;
 
