@@ -70,7 +70,7 @@ const Forex = () => (
                     { text: it.L('The price of the currency pair indicates how much of the quote currency is required to buy one unit of base currency. This is more commonly known as the exchange rate.') },
                 ]}
             />
-            <p>{it.L('Example:')}</p>
+            <p>{it.L('Example')}</p>
             <p>{it.L('If you see EUR/USD has a bid price of 1.05229, you will buy USD 1.05229 for every EUR 1 that you sell.')}</p>
         </Step>
 
