@@ -33,7 +33,7 @@ const ContractTypeItem = ({
             <TradeCategories category={item.value} />
         </div>
         <div className='info-choose'>
-            <Button text={localize('CHOOSE')} onClick={() => onSubmitButtonClick(item)} />
+            <Button text={localize('Choose')} onClick={() => onSubmitButtonClick(item)} />
         </div>
         <div className='info-navigation'>
             <div className='info-navigation__icon' onClick={() => handlePrevClick(navigationList)} >
