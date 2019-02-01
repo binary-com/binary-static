@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-01-29 05:29\n"
+"PO-Revision-Date: 2019-01-31 10:08\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Indonesian\n"
 "MIME-Version: 1.0\n"
@@ -1521,6 +1521,9 @@ msgstr "Membantu menyiapkan analisa perekrutan bulanan/tahunan dan laporan statu
 msgid "At any time and for any reason or no reason, the Company, in its sole discretion, may immediately:"
 msgstr "Kapan saja dan baik dengan atau tanpa alasan, Perusahaan atas kebijakannya sendiri dapat dengan segera:"
 
+msgid "At bank rollover, liquidity in the Forex market is reduced and may increase the spread and processing time for client orders. This happens around 21:00 GMT during daylight saving time, and 22:00 GMT during non-daylight saving time."
+msgstr "Pada rollover bank, likuiditas pasar Forex berkurang dan mungkin dapat meningkatkan spread serta waktu pemprosesan untuk order klien. Hal ini terjadi sekitar pukul 21:00 GMT selama waktu musim panas dan pada pukul 22:00 GMT selama musim lainnya."
+
 msgid "At least 5 years of experience in affiliate marketing, growth hacking, business development, and other closely-related skills"
 msgstr "Setidaknya 5 tahun pengalaman dalam marketing afiliasi, growth hacking, pengembangan bisnis, dan keterampilan terkait lainnya"
 
@@ -1977,14 +1980,14 @@ msgstr "Bitcoin"
 msgid "Bitcoin Cash"
 msgstr "Bitcoin Cash"
 
-msgid "Bitcoin Cash is a cryptocurrency that emerged from a fork of the original Bitcoin. For more info, please visit %1."
-msgstr "Bitcoin Cash adalah mata uang kripto yang dihasilkan dari pecahan Bitcoin asli. Untuk info lebih lanjut, silakan kunjungi %1."
+msgid "Bitcoin Cash is a cryptocurrency that emerged from a fork of the original Bitcoin. For more information, please visit %1."
+msgstr "Bitcoin Cash adalah mata uang kripto yang dihasilkan dari pecahan Bitcoin asli. Untuk informasi lebih lanjut, silakan kunjungi %1."
 
 msgid "Bitcoin Cash vs US Dollar"
 msgstr "Bitcoin vs Dolar AS"
 
-msgid "Bitcoin is the world’s first decentralised cryptocurrency, created in 2009. For more info, please visit %1."
-msgstr "Bitcoin adalah mata uang kripto yang terdesentralisasi pertama di dunia, dibuat pada tahun 2009. Untuk info lebih lanjut, silakan kunjungi %1."
+msgid "Bitcoin is the world’s first decentralised cryptocurrency, created in 2009. For more information, please visit %1."
+msgstr "Bitcoin adalah mata uang kripto yang terdesentralisasi pertama di dunia, dibuat pada tahun 2009. Untuk informasi lebih lanjut, silakan kunjungi %1."
 
 msgid "Bitcoin vs US Dollar"
 msgstr "Bitcoin vs Dolar AS"
@@ -1993,7 +1996,7 @@ msgid "Blockchain technology – All cryptocurrencies use a variation of blockch
 msgstr "Teknologi Blockchain - Semua mata uang kripto menggunakan variasi teknologi blockchain (semacam buku besar) untuk mencetak catatan setiap transaksi. "
 
 msgid "Blogger and vlogger"
-msgstr ""
+msgstr "Blogger dan vlogger"
 
 msgid "Both the deposit and the bonus amounts are clearly displayed when this type of promotion is available. E.g. Get $25 when you deposit $100. By way of example, if you choose to participate in a \"Get $25 when you deposit $100\" promotion, we will add an additional $25 to your account when you deposit $100 AND when you have purchased at least $125 worth of trades ($25 * 5= $125). The bonus will only be credited to your account when both of these conditions are met."
 msgstr "Jumlah deposit dan bonus ditampilkan dengan jelas ketika promosi ini tersedia. Sebagai contoh, dapatkan $25 jika Anda mendeposit $100. Hal tersebut berarti jika Anda memilih promosi \"Dapat $25 ketika mendeposit $100\", kami akan menambahkan bonus sebesar $25 kedalam akun Anda ketika Anda mendeposit minimal $100 DAN ketika Anda melakukan pembelian minimal $125 ($25*5=$125). Bonus hanya akan dikreditkan kedalam akun Anda setelah syarat tersebut dipenuhi."
@@ -2272,7 +2275,7 @@ msgid "Check our systems against the latest attacks, vulnerabilities, and mitiga
 msgstr "Periksa sistem kami terhadap serangan, kerentanan, dan mitigasi terbaru"
 
 msgid "Check out some technical terms before you start."
-msgstr "Lihat beberapa terma teknis sebelum Anda memulai."
+msgstr "Lihat beberapa istilah teknis sebelum Anda memulai."
 
 msgid "Check out the payment methods accepted by the payment agents in the list below."
 msgstr "Lihat metode pembayaran yang diterima oleh agen pembayaran pada daftar di bawah ini."
@@ -2868,9 +2871,6 @@ msgstr "Daftar Akun Dana Virtual Baru"
 msgid "Create account"
 msgstr "Daftar akun"
 
-msgid "Create account with Google"
-msgstr "Daftar akun menggunakan Google"
-
 msgid "Create an MT5 account now"
 msgstr "Daftar akun MT5 sekarang"
 
@@ -2888,6 +2888,9 @@ msgstr "Buat alat analisis data untuk analisa trading/kuantitatif"
 
 msgid "Create free account"
 msgstr "Daftar akun gratis"
+
+msgid "Create free account with"
+msgstr "Daftar akun gratis bersama"
 
 msgid "Create mathematical/statistical models for pricing, analyse fat tails to assess margin requirements, and manage the risk for exotic options, Forex, and CFDs"
 msgstr "Buat model matematika/statistik untuk penentuan harga, analisis fat tails untuk menilai persyaratan marjin, dan kelola risiko untuk opsi eksotis, Forex, dan CFD"
@@ -3333,8 +3336,11 @@ msgstr "Jangan melakukan trading jika Anda dalam keadaan lelah atau di bawah pen
 msgid "Do you have 40 minutes for an interview?"
 msgstr "Apakah Anda memiliki 40 menit untuk wawancara?"
 
-msgid "Do you manage a social media page that’s dedicated to online trading? Partner with us and convert your audience into potential profit."
+msgid "Do you have a real money account?"
 msgstr ""
+
+msgid "Do you manage a social media page that’s dedicated to online trading? Partner with us and convert your audience into potential profit."
+msgstr "Apakah Anda mengelola halaman media sosial yang didedikasikan untuk trading online? Bermitralah dengan kami dan raih potensi keuntungan dari pengunjung Anda."
 
 msgid "Do you offer any referral tools to your IBs?"
 msgstr "Apakah Anda menawarkan materi referral kepada IB Anda?"
@@ -3343,7 +3349,7 @@ msgid "Do you offer any tools to manage my clients’ trades?"
 msgstr "Apakah Anda menawarkan metode apa pun untuk mengelola perdagangan klien saya?"
 
 msgid "Do you run a website that promotes Forex or binary options? Join our global network of affiliates and turn your online traffic into revenue."
-msgstr ""
+msgstr "Apakah Anda memiliki situs web yang mempromosikan Forex atau opsi binary? Bergabunglah dengan jaringan global afiliasi kami dan peroleh pendapatan dari trafik Anda."
 
 msgid "Do you want to learn more about the markets and how to trade them? Check out the resources below."
 msgstr "Apakah Anda ingin mempelajari lebih lanjut mengenai pasar dan cara bertrading? Lihat bagian sumber berikut."
@@ -3550,7 +3556,7 @@ msgid "Earn a monetary reward for any verifiable issues that you find, with a bo
 msgstr "Dapatkan bayaran dari masalah yang Anda temukan, dengan ganjaran hingga USD 1,000 bagi rentan keamanan dengan resiko tinggi."
 
 msgid "Earn additional income with us as you grow your community of potential and existing online traders through useful trading insights and mentorship."
-msgstr ""
+msgstr "Dapatkan penghasilan tambahan dengan mengembangkan potensi komunitas dan online trader melalui bimbingan dan mentor trading."
 
 msgid "Earn commission on the trading activity of clients that you refer to our MetaTrader 5 platform."
 msgstr "Dapatkan komisi dari aktivitas trading klien yang Anda perkenalkan ke platform MetaTrader 5 kami."
@@ -3726,8 +3732,8 @@ msgstr "Ether"
 msgid "Ether Classic"
 msgstr "Ether Classic"
 
-msgid "Ether is a cryptocurrency that is used to pay for transactions on the Ethereum platform. For more info, please visit %1."
-msgstr "Ether adalah mata uang kripto yang digunakan untuk membayar transaksi pada platform Ethereum. Untuk info lebih lanjut, silakan kunjungi %1."
+msgid "Ether is a cryptocurrency that is used to pay for transactions on the Ethereum platform. For more information, please visit %1."
+msgstr "Ether adalah mata uang kripto yang digunakan untuk membayar transaksi pada platform Ethereum. Untuk informasi lebih lanjut, silakan kunjungi %1."
 
 msgid "Ethereum vs US Dollar"
 msgstr "Ethereum vs Dolar AS"
@@ -4110,8 +4116,8 @@ msgstr "Akrab dengan berbagai standar JavaScript, pustaka, kerangka kerja, kompi
 msgid "Family name"
 msgstr "Nama belakang"
 
-msgid "FasaPay enables electronic money transfers for individuals and payment gateways for merchants. For more info, please visit %1."
-msgstr "FasaPay menyediakan transfer uang elektronik bagi individu dan juga sebagai gerbang pembayaran bagi para merchant. Untuk info lebih lanjut, silakan kunjungi %1."
+msgid "FasaPay enables electronic money transfers for individuals and payment gateways for merchants. For more information, please visit %1."
+msgstr "FasaPay menyediakan transfer uang elektronik bagi individu dan juga sebagai gerbang pembayaran bagi para merchant. Untuk informasi lebih lanjut, silakan kunjungi %1."
 
 msgid "Favourite artist"
 msgstr "Artis favorit"
@@ -4871,9 +4877,6 @@ msgstr "Saya menyatakan bahwa saya bukan orang yang terlibat dengan politik (PEP
 
 msgid "I forgot my password, what should I do?"
 msgstr "Saya lupa kata sandi, apa yang harus saya lakukan?"
-
-msgid "I have a Real Money Account"
-msgstr "Saya memiliki Akun Uang Riil"
 
 msgid "I have read and agree to the %1terms and conditions%2 of the site."
 msgstr "Saya telah membaca dan menyetujui %1syarat dan kondisi%2 situs ini."
@@ -5991,8 +5994,8 @@ msgstr "Solusi likuiditas"
 msgid "Litecoin"
 msgstr "Litecoin"
 
-msgid "Litecoin is a cryptocurrency similar to Bitcoin, but capable of a higher transaction volume and faster confirmation times. For more info, please visit %1."
-msgstr "Litecoin adalah mata uang kripto yang serupa dengan Bitcoin, namun mampu menghasilkan volume transaksi yang lebih tinggi dan waktu konfirmasi yang lebih cepat. Untuk info lebih lanjut, silakan kunjungi %1."
+msgid "Litecoin is a cryptocurrency similar to Bitcoin, but capable of a higher transaction volume and faster confirmation times. For more information, please visit %1."
+msgstr "Litecoin adalah mata uang kripto yang serupa dengan Bitcoin, namun mampu menghasilkan volume transaksi yang lebih tinggi dan waktu konfirmasi yang lebih cepat. Untuk informasi lebih lanjut, silakan kunjungi %1."
 
 msgid "Litecoin vs US Dollar"
 msgstr "Litecoin vs Dolar AS"
@@ -6214,7 +6217,7 @@ msgid "Maintain trackable records of investigations in AML-CTF-related matters"
 msgstr "Menjaga catatan penelusuran yang dapat dilacak dalam hal-hal yang terkait dengan AML-CTF"
 
 msgid "Maintaining a page or video channel about online trading? Get rewarded when you refer your followers and viewers to trade on our award-winning binary options platform."
-msgstr ""
+msgstr "Mengelola halaman atau saluran video tentang trading online? Dapatkan imbalan dengan mereferensikan pengikut atau penonton Anda untuk bertrading pada platform opsi binary kami yang telah memenangi penghargaan."
 
 msgid "Major and minor pairs, plus Smart FX indices"
 msgstr "Pasangan mayor dan minor, ditambah indeks Smart FX"
@@ -6390,8 +6393,8 @@ msgstr "Marketing Executive"
 msgid "Marketing and Promotion"
 msgstr "Pemasaran dan Promosi"
 
-msgid "Mastercard is an international company that processes payments made with Mastercard-branded credit and debit cards. For more info, please visit %1."
-msgstr "Mastercard adalah perusahaan internasional yang memproses pembayaran menggunakan kartu kredit dan debit bermerek Mastercard. Untuk info lebih lanjut, silakan kunjungi %1."
+msgid "Mastercard is an international company that processes payments made with Mastercard-branded credit and debit cards. For more information, please visit %1."
+msgstr "Mastercard adalah perusahaan internasional yang memproses pembayaran menggunakan kartu kredit dan debit bermerek Mastercard. Untuk informasi lebih lanjut, silakan kunjungi %1."
 
 msgid "Mastercards issued in a non-European country may only withdraw up to the amount deposited."
 msgstr "Mastercard yang dikeluarkan di negara non-Eropa hanya dapat mencairkan sejumlah dana yang didepositkan."
@@ -6583,7 +6586,7 @@ msgid "Monday"
 msgstr "Senin"
 
 msgid "Monetise your online trading discussions with your audience of trading enthusiasts while helping them improve their trading experience."
-msgstr ""
+msgstr "Dapatkan penghasilan dengan memanfaatkan diskusi trading online bersama pengikut yang tertarik dengan dunia trading sambil membantu meningkatkan pengalaman trading mereka."
 
 msgid "Money collected from Clients are not invested in any securities, futures, currencies, derivatives or other investments, on behalf of Clients."
 msgstr "Dana yang dikumpulkan dari Klien tidak diinvestasikan dalam sekuritas, bursa berjangka, mata uang, turunan atau investasi lainnya, atas nama Klien."
@@ -6702,8 +6705,8 @@ msgstr "N. Keadaan Memaksa"
 msgid "N/A"
 msgstr "N/A"
 
-msgid "NETELLER provides businesses and individuals with a fast, simple, and secure way to transfer money online. For more info, please visit %1."
-msgstr "NETELLER memberi pembisnis dan individu dengan cara cepat, sederhana, dan aman untuk mentransfer dana secara online. Untuk info lebih lanjut, silakan kunjungi %1."
+msgid "NETELLER provides businesses and individuals with a fast, simple, and secure way to transfer money online. For more information, please visit %1."
+msgstr "NETELLER memberi pembisnis dan individu dengan cara cepat, sederhana, dan aman untuk mentransfer dana secara online. Untuk informasi lebih lanjut, silakan kunjungi %1."
 
 msgid "Name"
 msgstr "Nama"
@@ -7443,8 +7446,8 @@ msgstr "Pensiunan"
 msgid "Percentage"
 msgstr "Persentase"
 
-msgid "Perfect Money allows individuals to make instant payments and money transfers securely on the Internet. For more info, please visit %1."
-msgstr "Perfect Money memberi individu untuk membuat pembayaran instan dan mentransfer dana secara aman di internet. Untuk info lebih lanjut, silakan kunjungi %1."
+msgid "Perfect Money allows individuals to make instant payments and money transfers securely on the Internet. For more information, please visit %1."
+msgstr "Perfect Money memberi individu untuk membuat pembayaran instan dan menransfer dana secara aman di internet. Untuk informasi lebih lanjut, silakan kunjungi %1."
 
 msgid "Perform audit assignments and identify control gaps and opportunities for improvement"
 msgstr "Melakukan tugas audit dan mengidentifikasi celah kendali dan peluang untuk melakukan peningkatan"
@@ -8100,8 +8103,8 @@ msgstr "Putrajaya"
 msgid "Q. Miscellaneous"
 msgstr "Q. Lain Lain"
 
-msgid "Qiwi is a payment service provider that was founded in 2007. It provides individuals with a simple way to transfer money, receive payments, and pay online. For more info, please visit %1."
-msgstr "Qiwi adalah penyedia layanan pembayaran yang didirikan pada tahun 2007. Menyediakan setiap individu cara mudah dan sederhana dalam mentransfer dana, menerima pembayaran, dan melakukan pembayaran online. Untuk info lebih lanjut, silakan kunjungi %1."
+msgid "Qiwi is a payment service provider that was founded in 2007. It provides individuals with a simple way to transfer money, receive payments, and pay online. For more information, please visit %1."
+msgstr "Qiwi adalah penyedia layanan pembayaran yang didirikan pada tahun 2007. Menyediakan setiap individu cara mudah dan sederhana dalam menransfer dana, menerima pembayaran, dan melakukan pembayaran online. Untuk informasi lebih lanjut, silakan kunjungi %1."
 
 msgid "Quality Assurance"
 msgstr "Quality Assurance"
@@ -8197,7 +8200,7 @@ msgid "Receive back-office support for post-trade risk management and real-time 
 msgstr "Dapatkan bantuan kantor belakang untuk menerima manajemen risiko trading dan memonitor trading/kontrak secara langsung."
 
 msgid "Receive commission when you bring in new clients through trading applications and interfaces you build using the %1 API."
-msgstr ""
+msgstr "Dapatkan komisi ketika Anda membawa klien baru pada aplikasi trading dan antar muka yang Anda bangun menggunakan API %1."
 
 msgid "Receive emails on %1 products, services, and events"
 msgstr "Terima email pada produk, layanan, dan acara %1"
@@ -8838,8 +8841,8 @@ msgstr "Berhubung kami menangani langsung secara eklusif akun kami sendiri pada 
 msgid "Since you feel the need to self-exclude, we strongly encourage you to exclude yourself from similar services that you may have signed up for."
 msgstr "Berhubung Anda merasa perlu mengecualikan diri, kami sangat menyarankan Anda untuk mengecualikan diri Anda dari layanan serupa yang mungkin telah Anda daftarkan."
 
-msgid "Skrill offers global payment solutions for individuals who wish to deposit funds, shop online, and transfer money to family and friends. For more info, please visit %1."
-msgstr "Skrill menawarkan solusi pembayaran global untuk individu yang ingin menyimpan dana, berbelanja online, dan mentransfer dana ke pada keluarga dan teman. Untuk info lebih lanjut, silakan kunjungi %1."
+msgid "Skrill offers global payment solutions for individuals who wish to deposit funds, shop online, and transfer money to family and friends. For more information, please visit %1."
+msgstr "Skrill menawarkan solusi pembayaran global untuk individu yang ingin mendepositkan dana, berbelanja online, dan mentransfer dana ke pada keluarga dan teman. Untuk informasi lebih lanjut, silakan kunjungi %1."
 
 msgid "Small island charm"
 msgstr "Pesona pulau kecil"
@@ -8857,7 +8860,7 @@ msgid "Social & Cultural"
 msgstr "Sosial & Budaya"
 
 msgid "Social media admin"
-msgstr ""
+msgstr "Admin media sosial"
 
 msgid "Software Tester"
 msgstr "Software Tester"
@@ -9330,8 +9333,8 @@ msgstr "Menguji situs web %1, aplikasi, backend, dan sistem back office"
 msgid "Tether"
 msgstr "Tether"
 
-msgid "Tether is a blockchain-based cryptocurrency whose cryptocoins in circulation are backed by an equivalent amount of traditional fiat currencies. For more info, please visit %1."
-msgstr "Tether adalah mata uang kripto berdasarkan blockchain dimana sirkulasi kripto koinnya dididukung oleh jumlah yang setara dengan mata uang fiat. Untuk info lebih lanjut, silakan kunjungi %1."
+msgid "Tether is a blockchain-based cryptocurrency whose cryptocoins in circulation are backed by an equivalent amount of traditional fiat currencies. For more information, please visit %1."
+msgstr "Tether adalah mata uang kripto berdasarkan blockchain dimana sirkulasi kripto koinnya dididukung oleh jumlah yang setara dengan mata uang fiat. Untuk informasi lebih lanjut, silakan kunjungi %1."
 
 msgid "Th"
 msgstr "Kam"
@@ -9747,9 +9750,6 @@ msgstr "Domain Name System (DNS) memungkinkan Anda untuk mengakses suatu situs m
 msgid "The Financial Products that we offer to deal in are contracts entered into between you and us. Under these contracts and subject to the specific terms of the relevant contract, in consideration for the premium or price that you pay us, we promise to pay you a certain amount if the reference assets or measurements perform in a particular manner. These contracts accordingly are not instruments that we hold on your behalf and neither benefit from clients' assets protection in the event of our insolvency. Similarly the premium or price that you pay to take out a trade is not held as clients' money but as consideration for our undertaking to pay."
 msgstr "Produk Keuangan yang kami tawarkan adalah kontrak antara Anda dan kami. Dibawah kontrak ini dan tertakluk kepada syarat dan ketentuan kontrak tertentu. Dengan mempertimbangkan premium atau harga kontrak yang Anda bayarkan, kami berjanji akan membayar jumlah tertentu sesuai dengan referensi aset atau sesuai dengan prestasi kontrak. Kontrak ini bukan merupakan instrumen yang kami pegang atas nama Anda termasuk memberi keuntungan dari proteksi aset klien yang dilindungi jika kami mengalami kepailitan. Demikian pula premi atau harga yang Anda bayar untuk bertrading tidak dikumpulkan sebagai uang klien melainkan sebagai dana untuk membayar."
 
-msgid "The First Tick"
-msgstr "Tik Pertama"
-
 msgid "The Foreign Exchange Market (Forex) is the world's largest and most liquid market – where anyone can buy, sell, and exchange currencies."
 msgstr "Pasar Foreign Exhange (Forex) adalah pasar terbesar dan paling likuid di dunia - dimana semua orang dapat menjual, membeli, dan menukar mata uang."
 
@@ -9864,8 +9864,8 @@ msgstr "Permohonan harus ditinjau dan dinilai oleh departemen compliance dan mar
 msgid "The ask price of the currency pair indicates how much of the quote currency is required to buy one unit of base currency. This is more commonly known as the exchange rate."
 msgstr "Harga ask dari pasangan mata uang mengindikasikan seberapa banyak mata uang kutipan yang diperlukan untuk membeli satu unit mata uang dasar. Ini lebih dikenal sebagai nilai tukar."
 
-msgid "The average is the average of the ticks, including the first and the last tick."
-msgstr "Rata rata adalah jumlah rata rata tik, termasuk tik awal dan akhir."
+msgid "The average is the average of the ticks, including the entry spot and the last tick."
+msgstr ""
 
 msgid "The barrier of a binary option trade is the price target you set for the underlying. You can choose trades that stay below or go above a price target, or stay between two targets."
 msgstr "Batasan pada opsi binary adalah target pada harga dasar pasar yang Anda pilih. Anda dapat memilih kontrak yang tetap berada dibawah atau bergerak keatas target harga atau tetap diantara dua target."
@@ -10840,7 +10840,7 @@ msgid "Trading forex and contracts for differences carries a high level of risk 
 msgstr "Trading Forex dan kontrak untuk perbedaan memiliki tingkat resiko yang tinggi dan %1 tidak memonitor open position pada akun atas nama Anda. Hal ini merupakan tanggung jawab Anda untuk memonitor open position dan memahami paparan Open Position Anda sementara memastikan bahwa paparan Anda sepadan dengan risiko yang Anda inginkan. Berhubung biaya yang terkait dengan posisi menginap, Anda harus mempertimbangkan untuk berinvestasi pada pasar instrumen di mana Anda biasa bertransaksi dan bukan berinvestasi pada CFD."
 
 msgid "Trading guru"
-msgstr ""
+msgstr "Trading guru"
 
 msgid "Trading in Binary Options is speculative and involves a high degree of risk that can result in the loss of your entire investment. Therefore, trading in Binary Options is appropriate only for persons that understand and are willing to assume the economic, legal and other risks involved in such transactions. You should be satisfied that Binary Options trading is suitable for you in light of your investment circumstances and attitude towards risk before trading. You should not engage in speculative Binary Options trading unless you understand the basic aspects of such trading and its risks. If you are in any doubt as to whether Binary Option trading is appropriate and suitable for you, please seek independent advice from a investment consulting professional. %1 does not provide such advice. It is your responsibility, taking into account your personal circumstances and investment resources, to take particular care and make careful considerations independently, both prior to applying to engage in Binary Options with %1, as well as prior to making any individual order. Where you do not understand the risks involved in applying for a trading account with %1 or in making any individual order, you should seek advice and consultation from an independent investment advisor. If you continue to not understand the risks involved in trading in Binary Options, you should not trade at all."
 msgstr "Trading pada Opsi Binary merupakan spekulasi dan melibatkan tingkat risiko tinggi yang dapat menyebabkan kerugian bagi seluruh investasi Anda. Maka, trading di Opsi Binary hanya cocok bagi orang yang memahami dan bersedia menanggung risiko ekonomi, hukum dan risiko lainnya pada transaksi tersebut. Anda puas dengan trading Opsi Binary yang cocok bagi Anda dalam menerangkan keadaan investasi dan sikap terhadap risiko sebelum bertrading. Anda sebaiknya tidak melibatkan diri dalam spekulasi Opsi Binary kecuali jika Anda memahami aspek dasar trading tersebut dan risikonya. Jika Anda masih belum yakin apakah trading Opsi Binary cocok untuk Anda, dapatkan saran indipenden dari seorang profesional konsultasi investasi. %1 tidak menyediakan saran tersebut. Merupakan tanggung jawab Anda untuk mempertimbangkan keadaan dan sumber investasi, untuk berhati hati dan mempertimbangkan untuk bertrading Opsi Binary bersama %1, termasuk pada saat melakukan pembelian kontrak. Ketika Anda tidak memahami tentang risiko yang terlibat pada saat mendaftar trading akun %1 atau membuat pembelian kontrak, maka Anda perlu memperoleh saran dan melakukan konsultasi dari penasihat investasi independen. Jika Anda berkelanjutan tidak memahami risiko yang terlibat pada trading Opsi Binary, maka Anda tidak perlu bertrading sama sekali."
@@ -11343,8 +11343,8 @@ msgstr "Virtual"
 msgid "Virtual Account"
 msgstr "Akun Virtual"
 
-msgid "Visa is an international company that supports digital payments around the world, most commonly through their brand of credit and debit cards. For more info, please visit %1."
-msgstr "Visa adalah perusahaan internasional yang mendukung pembayaran digital di seluruh dunia, biasanya melalui kartu kredit dan debit yang mereka miliki. Untuk info lebih lanjut, silakan kunjungi %1."
+msgid "Visa is an international company that supports digital payments around the world, most commonly through their brand of credit and debit cards. For more information, please visit %1."
+msgstr "Visa adalah perusahaan internasional yang mendukung pembayaran digital di seluruh dunia, biasanya melalui kartu kredit dan debit yang mereka miliki. Untuk informasi lebih lanjut, silakan kunjungi %1."
 
 msgid "Vol 10"
 msgstr "Vol 10"
@@ -11641,22 +11641,22 @@ msgid "We're really proud of this award. We're strongly committed to offering an
 msgstr "Kami sangat bangga dengan penghargaan ini. Kami berdedikasi penuh dalam menawarkan etika dan memusatkan pada pengalaman trading pelanggan dan penghargaan ini menunjukkan BetOnMarkets adalah merek dagang terpercaya yang mendengar dan mengutamakan pelanggan, tidak peduli apakah mereka adalah trader berpengalaman atau pemula. Kami memberi layanan dalam bahasa Inggris, Indonesia, Rusia, Cina dan Spanyol."
 
 msgid "Web and software developer"
-msgstr ""
+msgstr "Pengembang situs web dan perangkat lunak"
 
-msgid "WebMoney is an online payment settlement system that’s been operating since 1998. For more info, please visit %1."
-msgstr "WebMoney adalah sistem penyelesaian pembayaran online yang sudah beroperasi sejak tahun 1998. Untuk info lebih lanjut, silakan kunjungi %1."
+msgid "WebMoney is an online payment settlement system that’s been operating since 1998. For more information, please visit %1."
+msgstr "WebMoney adalah sistem penyelesaian pembayaran online yang sudah beroperasi sejak tahun 1998. Untuk informasi lebih lanjut, silakan kunjungi %1."
 
 msgid "WebTrader"
 msgstr "WebTrader"
 
 msgid "Webinar speaker"
-msgstr ""
+msgstr "Pembicara webinar"
 
 msgid "Webinars"
 msgstr "Berbagai Webinar"
 
 msgid "Webmaster"
-msgstr ""
+msgstr "Webmaster"
 
 msgid "Website"
 msgstr "Situs"
@@ -11930,7 +11930,7 @@ msgid "Whilst we endeavor to take all reasonable and sufficient steps, as requir
 msgstr "Sementara kami berusaha untuk mengambil semua langkah yang wajar dan cukup, sesuai dengan syarat hukum dan regulasi yang berlaku dalam menentukan konflik kepentingan atara kami dan klien kami, atau antara klien dengan klien lainnya, berhubungan dengan layanan trading seperti yang dijelaskan dalam Perjanjian ini, dengan membuat dan menerapkan kebijakan dan prosedur, adalah mungkin bagi kami untuk mengeksekusi Transaksi tertentu yang mungkin memiliki kepentingan material baik itu secara langsung atau tidak langsung lainnya."
 
 msgid "Who can apply as a %1 affiliate?"
-msgstr ""
+msgstr "Siapa saja yang dapat mendaftar sebagai afiliasi %1?"
 
 msgid "Who can apply to be a Payment Agent?"
 msgstr "Siapa yang bisa mendaftar sebagai Agen Pembayaran?"
@@ -12109,8 +12109,11 @@ msgstr "Menulis kode yang kuat, berkualitas tinggi, dan siap produksi untuk situ
 msgid "Written limits and self-exclusion"
 msgstr "Batas tertulis dan pengecualian diri"
 
-msgid "Yandex.Money is an electronic payment service provider that offers consumers an easy, safe, and reliable online payment method. For more info, please visit %1."
-msgstr "Yandex.Money adalah penyedia layanan pembayaran elektronik yang menawarkan metode pembayaran online yang mudah, aman, dan handal. Untuk info lebih lanjut, silakan kunjungi %1."
+msgid "Yandex.Money is an electronic payment service provider that offers consumers an easy, safe, and reliable online payment method. For more information, please visit %1."
+msgstr "Yandex.Money adalah penyedia layanan pembayaran elektronik yang menawarkan metode pembayaran online yang mudah, aman, dan handal. Untuk informasi lebih lanjut, silakan kunjungi %1."
+
+msgid "Yes"
+msgstr ""
 
 msgid "Yes, I understand"
 msgstr "Ya, saya mengerti"
@@ -13108,8 +13111,8 @@ msgstr "atau"
 msgid "page for the exact time of settlement for all contracts. Other websites may adopt a different convention (for example some websites choose 4 o'clock NY time, or 5 o'clock London time). As a result, the open, high, low and closing prices displayed on our website may differ to those on other websites, due to the market-closing time convention."
 msgstr "halaman untuk waktu tepat penyelesaian seluruh kontrak. Situs lain mungkin menggunakan konvensi berbeda (sebagai contoh beberapa website menggunakan jam 4 waktu New York atau jam 5 waktu London). Hal ini menyebabkan harga open, high, low dan close pada situs kami akan mengalami perbedaan dengan situs lainnya berhubung konvensi waktu penutupan pasar."
 
-msgid "paysafecard offers a voucher-based online payment method that does not require a bank account, credit card, or other personal information. For more info, please visit %1."
-msgstr "paysafecard menawarkan metode pembayaran online berbasis voucher yang tidak memerlukan rekening bank, kartu kredit, atau informasi pribadi lainnya. Untuk info lebih lanjut, silakan kunjungi %1."
+msgid "paysafecard offers a voucher-based online payment method that does not require a bank account, credit card, or other personal information. For more information, please visit %1."
+msgstr "paysafecard menawarkan metode pembayaran online berbasis voucher yang tidak memerlukan rekening bank, kartu kredit, atau informasi pribadi lainnya. Untuk informasi lebih lanjut, silakan kunjungi %1."
 
 msgid "perform its services and other obligations hereunder at its own cost and risk."
 msgstr "menyediakan layanan dan kewajiban lainnya berdasarkan biaya dan risiko sendiri."
