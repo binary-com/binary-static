@@ -2,7 +2,6 @@ import classNames          from 'classnames';
 import PropTypes           from 'prop-types';
 import React               from 'react';
 import { CSSTransition }   from 'react-transition-group';
-import Localize            from 'App/Components/Elements/localize.jsx';
 import { AccountSwitcher } from 'App/Containers/AccountSwitcher';
 import { IconArrow }       from 'Assets/Common';
 
@@ -14,23 +13,44 @@ const AccountInfo = ({
     loginid,
     is_dialog_on,
     is_upgrade_enabled,
+    is_virtual,
     onClickUpgrade,
     toggleDialog,
-    account_type,
 }) => (
     <div className='acc-balance'>
         <div className='acc-switcher-container'>
-            <div className={classNames('acc-info', { 'show': is_dialog_on })} onClick={toggleDialog}>
-                <p className='acc-balance-type'>
-                    <Localize str={`${account_type} Account`} />
+            <div
+                className={classNames('acc-info', {
+                    'acc-info--show'      : is_dialog_on,
+                    'acc-info--is-virtual': is_virtual,
+                })}
+                onClick={toggleDialog}
+            >
+                <p
+                    className='acc-balance-id'
+                    title={loginid}
+                >
+                    {loginid}
                 </p>
-                <p className='acc-balance-id'>{loginid}</p>
+                {
+                    typeof balance !== 'undefined' &&
+                    <p className='acc-balance-amount'>
+                        <span
+                            className={classNames('symbols', (currency || '').toLowerCase())}
+                        />
+                        {balance}
+                    </p>
+                }
                 <IconArrow className='select-arrow' />
             </div>
             <CSSTransition
                 in={is_dialog_on}
-                timeout={400}
-                classNames='acc-switcher-wrapper'
+                timeout={200}
+                classNames={{
+                    enter    : 'acc-switcher-wrapper--enter',
+                    enterDone: 'acc-switcher-wrapper--enter-done',
+                    exit     : 'acc-switcher-wrapper--exit',
+                }}
                 unmountOnExit
             >
                 <div className='acc-switcher-wrapper'>
@@ -43,12 +63,6 @@ const AccountInfo = ({
                 </div>
             </CSSTransition>
         </div>
-        {typeof balance !== 'undefined' &&
-        <p className='acc-balance-amount'>
-            <i><span className={`symbols ${(currency || '').toLowerCase()}`} /></i>
-            {balance}
-        </p>
-        }
     </div>
 );
 
@@ -58,6 +72,7 @@ AccountInfo.propTypes = {
     currency          : PropTypes.string,
     is_dialog_on      : PropTypes.bool,
     is_upgrade_enabled: PropTypes.bool,
+    is_virtual        : PropTypes.bool,
     loginid           : PropTypes.string,
     onClickUpgrade    : PropTypes.func,
     toggleDialog      : PropTypes.func,

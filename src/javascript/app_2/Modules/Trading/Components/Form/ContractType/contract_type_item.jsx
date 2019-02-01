@@ -1,13 +1,14 @@
 import { PropTypes as MobxPropTypes } from 'mobx-react';
 import PropTypes                      from 'prop-types';
 import React                          from 'react';
+import { IconTooltipLight }           from 'Assets/Common/icon_tooltip_light.jsx';
 import { IconTradeCategory }          from 'Assets/Trading/Categories';
-import Tooltip                        from 'App/Components/Elements/tooltip.jsx';
 
 const ContractTypeItem = ({
     contracts,
     name,
     value,
+    handleInfoClick,
     handleSelect,
 }) => (
     contracts.map((contract, idx) => (
@@ -17,25 +18,25 @@ const ContractTypeItem = ({
             className={`list-item ${value === contract.value ? 'selected' : ''}`}
             name={name}
             value={contract.value}
-            onClick={() => handleSelect(contract)}
+            onClick={(e) => handleSelect(contract, e)}
         >
             <IconTradeCategory category={contract.value} />
             <span className='contract-title'>
                 {contract.text}
             </span>
-            <Tooltip
-                alignment='left'
-                icon='info'
-            />
+            <div id='info-icon' className='trade-type-info-icon' onClick={() => handleInfoClick(contract)}>
+                <IconTooltipLight />
+            </div>
         </div>
     ))
 );
 
 ContractTypeItem.propTypes = {
-    contracts   : MobxPropTypes.arrayOrObservableArray,
-    handleSelect: PropTypes.func,
-    name        : PropTypes.string,
-    value       : PropTypes.string,
+    contracts      : MobxPropTypes.arrayOrObservableArray,
+    handleInfoClick: PropTypes.func,
+    handleSelect   : PropTypes.func,
+    name           : PropTypes.string,
+    value          : PropTypes.string,
 };
 
 export default ContractTypeItem;

@@ -35,7 +35,8 @@ const TickDisplay = (() => {
         reset_spot_plotted,
         response_id,
         contract,
-        selected_tick;
+        selected_tick,
+        entry_spot_offset;
 
     let id_render = 'tick_chart';
 
@@ -62,6 +63,7 @@ const TickDisplay = (() => {
         display_decimals     = data.display_decimals || 2;
         show_contract_result = data.show_contract_result;
         reset_spot_plotted   = false;
+        entry_spot_offset    = data.barrier || undefined;
 
         if (data.id_render) {
             id_render = data.id_render;
@@ -195,10 +197,10 @@ const TickDisplay = (() => {
         const barrier_type = /^(asian|highlowticks)$/.test(contract_category) ? contract_category : 'static';
 
         let calculated_barrier = '';
+
         if (barrier_type === 'static') {
             const first_quote = applicable_ticks[0].quote;
             let barrier_quote = first_quote;
-
             if (barrier) {
                 let final_barrier = Number(barrier).toFixed(parseInt(display_decimals));
                 if (isRelativeBarrier(barrier)) {
@@ -208,6 +210,8 @@ const TickDisplay = (() => {
                 barrier_quote = final_barrier;
             } else if (contract && contract.barrier) {
                 barrier_quote = parseFloat(contract.barrier);
+            } else if (entry_spot_offset) {
+                barrier_quote = /^[+|-]/i.test(entry_spot_offset) ? Number(`${Math.round(`${barrier_quote + parseFloat(entry_spot_offset)}e${display_decimals}`)}e-${display_decimals}`) : entry_spot_offset;
             }
 
             chart.yAxis[0].addPlotLine({

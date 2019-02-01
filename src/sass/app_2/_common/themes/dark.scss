@@ -28,34 +28,6 @@ body.dark, .theme-wrapper.dark {
             .menu-left .binary-logo, .menu-right {
                 border-color: $COLOR_BRANDBLUE_85;
             }
-            .menu-right .acc-balance-container {
-                .acc-balance {
-                    .acc-info {
-                        p {
-                            color: $COLOR_BRANDBLUE_40;
-                        }
-                        &:hover:not(.show) {
-                            background-color: $COLOR_BRANDBLUE_85;
-                        }
-                        &.show {
-                            p {
-                                color: $COLOR_WHITE;
-                            }
-                            &:after {
-                                background: $COLOR_WHITE;
-                            }
-                        }
-                    }
-                    .acc-balance-amount {
-                        border-color: $COLOR_BRANDBLUE_85;
-                        color: $COLOR_WHITE;
-
-                        .symbols {
-                            background: $COLOR_BLUE;
-                        }
-                    }
-                }
-            }
         }
         .inkbar {
             background-color: $COLOR_WHITE;
