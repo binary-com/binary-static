@@ -41,6 +41,7 @@
             order: -1;
             display: inline-flex;
             flex: 1;
+            height: #{$HEADER_HEIGHT - 1px};
 
             .menu-toggle {
                 align-self: center;
@@ -116,6 +117,7 @@
             order: 1;
             display: inline-flex;
             border-right: 1px solid $COLOR_GRAY;
+            height: #{$HEADER_HEIGHT - 1px};
         }
         .notifications-toggle {
             justify-content: flex-end;
