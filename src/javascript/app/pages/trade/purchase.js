@@ -37,7 +37,8 @@ const Purchase = (() => {
     let payout_value,
         cost_value,
         profit_value,
-        status;
+        status,
+        contract_duration;
 
     const replaceElement = (container, child) => {
         container.querySelectorAll('.row').forEach(item => item.classList.add('invisible'));
@@ -85,6 +86,7 @@ const Purchase = (() => {
         const error      = details.error;
         const has_chart  = !/^(digits|highlowticks)$/.test(Contract.form());
         const show_chart = !error && passthrough.duration <= 10 && passthrough.duration_unit === 't';
+        contract_duration = details.echo_req.passthrough.duration;
 
         if (error) {
             const balance = State.getResponse('balance.balance');
@@ -260,12 +262,14 @@ const Purchase = (() => {
 
                     // force to sell the expired contract, in order to get the final status
                     if (+contract.is_settleable === 1 && !contract.is_sold) {
-                        BinarySocket.send({ sell_expired: 1 });
+                        sellExpired();
                     }
                 }
             } });
         }
     };
+
+    const sellExpired = () => BinarySocket.send({ sell_expired: 1 });
 
     const makeBold = d => `<strong>${d}</strong>`;
 
@@ -327,6 +331,12 @@ const Purchase = (() => {
 
             if (CommonFunctions.isVisible(spots) && tick_d.epoch && tick_d.epoch > purchase_data.buy.start_time) {
                 const current_tick_count = spots.getElementsByClassName('row').length + 1;
+                if (contract_duration && +contract_duration < current_tick_count) {
+                    sellExpired();
+                    duration = 0;
+                    console.log('Fixed', this); // eslint-disable-line
+                    break;
+                }
 
                 let is_winning_tick = false;
                 if (tick_config.is_tick_high || tick_config.is_tick_low) {
