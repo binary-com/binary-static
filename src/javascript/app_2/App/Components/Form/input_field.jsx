@@ -53,8 +53,8 @@ const InputField = ({
         }
 
         if (type === 'number') {
-            const is_empty = !e.target.value || e.target.value === '';
-            const signed_regex = is_signed ? '(?!^([-+]0)$|^[-+]?$)^[+-]?' : '^';
+            const is_empty = !e.target.value || e.target.value === '' || e.target.value === '  ';
+            const signed_regex = is_signed ? '[\+\-\.0-9]$' : '^';
 
             const is_number = new RegExp(`${signed_regex}(\\d*)?${is_float ? '(\\.\\d+)?' : ''}$`)
                 .test(e.target.value);
@@ -162,7 +162,7 @@ const InputField = ({
                     <label htmlFor={name} className='input-label'>{label}</label>
                 }
                 {!!prefix &&
-                    <i><span className={`symbols ${prefix.toLowerCase()}`} /></i>
+                    <span className={`symbols ${prefix.toLowerCase()}`} />
                 }
                 {!!helper &&
                     <span className='input-helper'>{helper}</span>

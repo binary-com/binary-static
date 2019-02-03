@@ -334,7 +334,6 @@ const Purchase = (() => {
                 if (contract_duration && +contract_duration < current_tick_count) {
                     sellExpired();
                     duration = 0;
-                    console.log('Fixed', this); // eslint-disable-line
                     break;
                 }
 
