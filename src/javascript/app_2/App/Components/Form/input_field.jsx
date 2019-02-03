@@ -48,7 +48,7 @@ const InputField = ({
             e.target.value = e.target.value.replace(unit, '').trim();
         }
 
-        if (e.target.value === value) {
+        if (e.target.value === value && e.target.value !== 'is_equal') {
             return;
         }
 
