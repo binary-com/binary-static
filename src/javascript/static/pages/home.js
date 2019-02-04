@@ -15,6 +15,7 @@ const Home = (() => {
     let clients_country;
 
     const onLoad = () => {
+        Login.initOneAll();
         TabSelector.onLoad();
 
         BinarySocket.wait('website_status', 'authorize', 'landing_company').then(() => {
@@ -33,17 +34,9 @@ const Home = (() => {
                 fnc_response_handler: handler,
                 fnc_additional_check: checkCountry,
             });
-            socialLogin();
             if (isEuCountry()) {
                 $('.mfsa_message').slideDown(300);
             }
-        });
-    };
-
-    const socialLogin = () => {
-        $('#google-signup').off('click').on('click', (e) => {
-            e.preventDefault();
-            window.location.href = Login.socialLoginUrl('google');
         });
     };
 

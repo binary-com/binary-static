@@ -4,29 +4,46 @@ import * as Proposal from '../proposal';
 
 describe('Proposal', () => {
     describe('getProposalInfo', () => {
+        const store = {
+            currency: 'EUR',
+            basis_list: [
+                {
+                    text: 'Payout',
+                    value: 'payout',
+                },
+                {
+                    text: 'Stake',
+                    value: 'stake',
+                },
+            ],
+            basis: 'payout',
+        };
         it('should return 0 as profit when proposal has error', () => {
-            const store = {
-                currency: 'EUR'
+            const obj_prev_contract_basis = {
+                text: 'Payout',
+                value: 1234,
             };
             const response = {
                 error: {
                     message: 'This is error'
                 }
             };
-            expect(Proposal.getProposalInfo(store, response)).to.deep.eql({
+            expect(Proposal.getProposalInfo(store, response, obj_prev_contract_basis)).to.deep.eql({
                 profit: '0.00',
                 returns: '0.00%',
                 stake: undefined,
                 payout: undefined,
                 id: '',
                 message: 'This is error',
-                has_error: true
+                has_error: true,
+                has_increased: false,
+                obj_contract_basis: {
+                    text: 'Stake',
+                    value: '',
+                },
             });
         });
         it('should return profit and return calculated if proposal has no error', () => {
-            const store = {
-                currency: 'EUR'
-            };
             const response = {
                 proposal: {
                     proposal: 1,
@@ -37,14 +54,23 @@ describe('Proposal', () => {
                     longcode: 'This is a longcode'
                 }
             };
-            expect(Proposal.getProposalInfo(store, response)).to.deep.eql({
+            const obj_prev_contract_basis = {
+                text: 'payout',
+                value: 1234,
+            };
+            expect(Proposal.getProposalInfo(store, response, obj_prev_contract_basis)).to.deep.eql({
                 profit: '250.00',
                 returns: '500.00%',
                 stake: 200,
                 payout: 300,
                 id: 'id1',
                 message: 'This is a longcode',
-                has_error: false
+                has_error: false,
+                has_increased: false,
+                obj_contract_basis : {
+                    text: 'Stake',
+                    value: 200,
+                },
             });
         });
     });

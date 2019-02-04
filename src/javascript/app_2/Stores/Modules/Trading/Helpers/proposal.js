@@ -7,19 +7,37 @@ import {
     proposal_properties_alternative_names,
     removable_proposal_properties }        from '../Constants/query_string';
 
-export const getProposalInfo = (store, response) => {
-    const proposal = response.proposal || {};
-    const profit   = (proposal.payout - proposal.ask_price) || 0;
-    const returns  = profit * 100 / (proposal.ask_price || 1);
+export const getProposalInfo = (store, response, obj_prev_contract_basis) => {
+    const proposal   = response.proposal || {};
+    const profit     = (proposal.payout - proposal.ask_price) || 0;
+    const returns    = profit * 100 / (proposal.ask_price || 1);
+    const stake      = proposal.display_value;
+    const basis_list = store.basis_list;
+
+    const contract_basis = (basis_list.find(o => o.value !== store.basis));
+    const is_stake       = contract_basis.text === 'Stake';
+    const price          = is_stake ? stake : proposal[contract_basis.value];
+    let has_increased    = price > obj_prev_contract_basis.value;
+
+    if (price === obj_prev_contract_basis.value) {
+        has_increased = null;
+    }
+
+    const obj_contract_basis = {
+        text : contract_basis.text || '',
+        value: price || '',
+    };
 
     return {
+        id       : proposal.id || '',
+        has_error: !!response.error,
+        has_increased,
+        message  : proposal.longcode || response.error.message,
+        obj_contract_basis,
+        payout   : proposal.payout,
         profit   : profit.toFixed(getDecimalPlaces(store.currency)),
         returns  : `${returns.toFixed(2)}%`,
-        stake    : proposal.display_value,
-        payout   : proposal.payout,
-        id       : proposal.id || '',
-        message  : proposal.longcode || response.error.message,
-        has_error: !!response.error,
+        stake,
     };
 };
 
@@ -41,10 +59,7 @@ const createProposalRequestForContract = (store, type_of_contract) => {
     const obj_expiry = {};
     if (store.expiry_type === 'endtime') {
         const expiry_date = toMoment(store.expiry_date);
-        const start_date  = toMoment(store.start_date || store.root_store.common.server_time);
-        const is_same_day = expiry_date.isSame(start_date, 'day');
-        const expiry_time = is_same_day ? store.expiry_time : '23:59:59';
-        obj_expiry.date_expiry = convertToUnix(expiry_date.unix(), expiry_time);
+        obj_expiry.date_expiry = convertToUnix(expiry_date.unix(), store.expiry_time);
     }
 
     return {

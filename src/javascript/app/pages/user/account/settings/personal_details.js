@@ -215,13 +215,11 @@ const PersonalDetails = (() => {
         if (!is_error) {
             const redirect_url = localStorage.getItem('personal_details_redirect');
             // to update tax information message for financial clients
-            BinarySocket.send({ get_account_status: 1 }, { forced: true }).then((response_status) => {
+            BinarySocket.send({ get_account_status: 1 }, { forced: true }).then(() => {
                 showHideTaxMessage();
                 Header.displayAccountStatus();
-                if (redirect_url && +response_status.get_account_status.prompt_client_to_authenticate && Client.isAccountOfType('financial')) {
-                    $('#msg_authenticate').setVisibility(1);
-                }
             });
+
             // to update the State with latest get_settings data
             BinarySocket.send({ get_settings: 1 }, { forced: true }).then((data) => {
                 if (is_virtual && response.echo_req.residence) {

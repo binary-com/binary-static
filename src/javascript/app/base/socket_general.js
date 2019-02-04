@@ -1,3 +1,4 @@
+const Cookies                = require('js-cookie');
 const Client                 = require('./client');
 const Clock                  = require('./clock');
 const Footer                 = require('./footer');
@@ -59,6 +60,11 @@ const BinarySocketGeneral = (() => {
                     // for logged out clients send landing company with IP address as residence
                     if (!Client.isLoggedIn() && !State.getResponse('landing_company')) {
                         BinarySocket.send({ landing_company: response.website_status.clients_country });
+                    }
+                    if (!Client.isLoggedIn() && !Cookies.get('CookieConsent')) {
+                        Footer.displayDialogMessage();
+                    } else {
+                        Footer.clearDialogMessage();
                     }
                 }
                 break;

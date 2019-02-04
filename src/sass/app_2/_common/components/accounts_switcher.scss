@@ -17,44 +17,38 @@
         .acc-info {
             display: flex;
             height: 100%;
-            flex-direction: column;
-            align-items: flex-end;
+            flex-direction: row;
+            align-items: center;
             justify-content: center;
             cursor: pointer;
 
-            &:hover:not(.show) {
-                background: $COLOR_BRANDBLUE_5;
-            }
-            &.show {
-                .select-arrow {
-                    transform: rotate(180deg);
-                }
-                p.acc-balance-id, p.acc-balance-type {
-                    font-weight: 500;
-                }
-                &:after {
-                    content: '';
-                    height: 2px;
-                    width: 100%;
-                    background: $COLOR_BLUE;
-                    position: absolute;
-                    top: calc(100% - 2px);
-                    left: 0;
-                }
-            }
-            p.acc-balance-id, p.acc-balance-type {
+            p.acc-balance-id {
                 pointer-events: none;
                 line-height: 0.5;
                 color: $COLOR_LIGHT_BLACK;
-                font-size: 0.875rem; //stylelint-disable-line number-max-precision
-                margin: 0.5em 1rem;
+                font-size: 1rem;
+                padding: 0 8px 0 16px;
                 font-weight: 300;
                 text-align: center;
-                padding-right: 16px;
 
-                @media (max-width: 768px) {
-                    @include interpolate(font-size, 320px, 1440px, 10px, 14px);
+                &:after {
+                    display: block;
+                    content: attr(title);
+                    font-weight: 500;
+                    height: 0;
+                    overflow: hidden;
+                    visibility: hidden;
                 }
+            }
+            p.acc-balance-amount {
+                line-height: 100%;
+                color: $COLOR_GREEN;
+                font-size: 1rem;
+                padding: 0 16px 0 8px;
+                font-weight: 500;
+                margin: 0 16px 0 0;
+                text-align: center;
+                pointer-events: none;
             }
             .select-arrow {
                 pointer-events: none;
@@ -63,92 +57,187 @@
                 right: 8px;
                 line-height: 1;
                 transition: transform 0.25s ease;
-                transform: rotate(0);
+                transform: rotate(0deg);
                 transform-origin: 50% 45%;
                 color: $COLOR_GRAY;
                 font-size: 1.1rem;
             }
-        }
-        p.acc-balance-amount {
-            line-height: 100%;
-            color: $COLOR_LIGHT_BLACK;
-            font-size: 1rem;
-            padding: 8px 1rem;
-            font-weight: 500;
-            margin: 0;
-            text-align: center;
-            border-left: 1px solid $COLOR_GRAY;
-
-            @media (max-width: 768px) {
-                @include interpolate(font-size, 320px, 1440px, 10px, 14px);
+            &:hover:not(.show) {
+                background: $COLOR_BRANDBLUE_5;
+            }
+            &--is-virtual {
+                p.acc-balance-amount {
+                    color: $COLOR_ORANGE;
+                }
+                &:before {
+                    display: flex;
+                    position: absolute;
+                    text-transform: uppercase;
+                    content: 'demo';
+                    font-size: 0.75rem;
+                    border: 1px solid $COLOR_ORANGE;
+                    color: $COLOR_ORANGE;
+                    padding: 2px 8px;
+                    border-radius: 16px;
+                    align-items: center;
+                    left: -3.5rem;
+                    pointer-events: none;
+                }
+            }
+            &--show {
+                .select-arrow {
+                    transform: rotate(180deg);
+                }
+                p.acc-balance-id {
+                    font-weight: 500;
+                }
             }
         }
     }
     button.btn {
-        margin: 0 16px 0 4px;
-        @media (max-width: 768px) {
-            margin: 0 8px 0 4px;
-        }
+        margin: 8px 16px;
+        height: 32px;
     }
 }
 
 .acc-switcher {
     &-wrapper {
         position: absolute;
-        opacity: 0;
-        pointer-events: none;
         background: $COLOR_WHITE;
         border: 1px solid $COLOR_GRAY;
-        transform: translateY(-20px);
         transition: transform 0.25s ease, opacity 0.25s linear;
+        box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.8);
         right: 0;
         top: calc(100% + 4px);
-        width: 185px;
+        width: 240px;
         border-radius: $BORDER_RADIUS;
 
-        &-enter, &-enter-done {
+        &--enter-done {
             opacity: 1;
-            pointer-events: auto;
             transform: translateY(0);
         }
-        &-exit {
+        &--enter, &--exit {
             opacity: 0;
-            pointer-events: none;
             transform: translateY(-20px);
         }
     }
-    &-list {
+    &__new-account {
+        display: flex;
+        justify-content: center;
+        margin: 8px 0 16px;
+
+        span {
+            padding: 8px 16px;
+            border: 1px dashed $COLOR_BLUE;
+            color: $COLOR_BLUE;
+            font-size: 0.75rem;
+            width: 100%;
+            margin: 0 16px;
+            text-align: center;
+            border-radius: 4px;
+            cursor: pointer;
+
+            &:before {
+                content: '\002B';
+                color: $COLOR_BLUE;
+                margin-right: 8px;
+            }
+            &:hover {
+                background: $COLOR_BRANDBLUE_5;
+            }
+        }
+    }
+    &__list {
         height: 100%;
         border-radius: $BORDER_RADIUS;
 
+        &__group {
+            border-bottom: 4px solid $COLOR_GRAY;
+        }
+        &__title {
+            font-size: 0.875rem; //stylelint-disable-line number-max-precision
+            padding: 14px;
+            display: block;
+            color: $COLOR_BLACK;
+        }
         .acc-switcher-account {
             cursor: pointer;
-            padding: 12px 16px;
+            padding: 12px 16px 12px 0px;
             position: relative;
             display: flex;
             align-items: center;
             justify-content: space-between;
 
-            .acc-switcher-id {
+            .acc-switcher__id {
+                display: flex;
+                align-items: center;
                 font-weight: 300;
-                font-size: 0.75rem;
+                font-size: 0.875rem; //stylelint-disable-line number-max-precision
                 line-height: 0.5;
+                margin-left: 8px;
+
+                &.virtual:before {
+                    text-transform: uppercase;
+                    content: 'demo';
+                    font-size: 0.5714rem; //stylelint-disable-line number-max-precision
+                    border: 1px solid $COLOR_ORANGE;
+                    color: $COLOR_ORANGE;
+                    padding: 4px;
+                    border-radius: 16px;
+                    margin: 0 8px 0 0;
+                }
+                &__icon:before {
+                    width: 20px;
+                    height: 20px;
+                    margin-right: 16px;
+                    margin-left: 8px;
+                }
+                &__icon--usd:before {
+                    content: url('../images/header/accounts/usd.svg');
+                }
+                &__icon--ust:before {
+                    content: url('../images/header/accounts/ust.svg');
+                }
+                &__icon--aud:before {
+                    content: url('../images/header/accounts/aud.svg');
+                }
+                &__icon--bch:before {
+                    content: url('../images/header/accounts/bch.svg');
+                }
+                &__icon--eth:before {
+                    content: url('../images/header/accounts/eth.svg');
+                }
+                &__icon--gbp:before {
+                    content: url('../images/header/accounts/gbp.svg');
+                }
+                &__icon--btc:before {
+                    content: url('../images/header/accounts/btc.svg');
+                }
+                &__icon--eur:before {
+                    content: url('../images/header/accounts/eur.svg');
+                }
+                &__icon--ltc:before {
+                    content: url('../images/header/accounts/ltc.svg');
+                }
             }
-            .acc-switcher-type {
-                font-size: 10px;
-                line-height: 0.5;
-                text-transform: uppercase;
-                background: $COLOR_GRAY;
-                border-radius: $BORDER_RADIUS;
-                text-align: center;
-                padding: 5px 0;
-                width: 32px;
+            .acc-switcher__radio {
+                height: 10px;
+                width: 10px;
+                border: 2px solid $COLOR_DARK_GRAY;
+                border-radius: 50%;
             }
             &:hover {
                 background: $COLOR_BRANDBLUE_5;
+
+                .acc-switcher__radio {
+                    border-color: $COLOR_BLUE;
+                }
             }
-            &:nth-last-child(2) {
-                border-bottom: 1px solid $COLOR_GRAY;
+            &--selected {
+                .acc-switcher__radio {
+                    border-color: $COLOR_BLUE;
+                    background: $COLOR_BLUE;
+                }
             }
         }
         .acc-button {
@@ -195,16 +284,31 @@
         &-account:hover {
             background-color: $COLOR_BRANDBLUE_85;
         }
-        &-list {
-            .acc-switcher-account {
+        &__list {
+            &__group {
                 border-color: $COLOR_BRANDBLUE_85;
             }
-            .acc-switcher-id {
+            &__title {
                 color: $COLOR_BRANDBLUE_40;
             }
-            .acc-switcher-type {
-                color: $COLOR_WHITE;
-                background: $COLOR_BRANDBLUE_75;
+            .acc-switcher-account {
+                border-color: $COLOR_BRANDBLUE_85;
+
+                .acc-switcher__id {
+                    color: $COLOR_BRANDBLUE_40;
+                }
+                .acc-switcher__radio {
+                    border-color: $COLOR_BRANDBLUE_40;
+                }
+                &--selected {
+                    .acc-switcher__id {
+                        color: $COLOR_WHITE;
+                    }
+                    .acc-switcher__radio {
+                        border-color: $COLOR_GREEN;
+                        background: $COLOR_GREEN;
+                    }
+                }
             }
             .acc-button {
                 border-color: $COLOR_BRANDBLUE_85;
@@ -222,6 +326,53 @@
         }
         &-header {
             color: $COLOR_BRANDBLUE_40;
+        }
+        &__new-account span {
+            color: $COLOR_BRANDBLUE_40;
+            border-color: $COLOR_BRANDBLUE_40;
+
+            &:before {
+                color: $COLOR_BRANDBLUE_40;
+            }
+            &:hover {
+                background: $COLOR_BRANDBLUE_85;
+            }
+        }
+    }
+    .acc-balance-container {
+        .acc-balance {
+            .acc-info {
+                p {
+                    color: $COLOR_BRANDBLUE_40;
+                }
+                &:hover:not(.show) {
+                    background-color: $COLOR_BRANDBLUE_85;
+
+                    .symbols {
+                        background: $COLOR_BRANDBLUE_85;
+                    }
+                }
+                .acc-balance-amount {
+                    color: $COLOR_GREEN;
+
+                    .symbols {
+                        background: $COLOR_BLUE;
+                    }
+                }
+                &--show {
+                    p {
+                        color: $COLOR_WHITE;
+                    }
+                    &:after {
+                        background: $COLOR_WHITE;
+                    }
+                }
+                &--is-virtual {
+                    .acc-balance-amount, .symbols {
+                        color: $COLOR_ORANGE;
+                    }
+                }
+            }
         }
     }
 }

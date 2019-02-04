@@ -35,7 +35,8 @@ const IconTradeType = ({ type, className }) => {
                     </g>
                 );
                 break;
-            case 'call':
+            case 'calle':
+            case 'call' :
                 IconType = (
                     <g fill='none' fillRule='evenodd'>
                         <path className='transparent' d='M0 0h16v16H0z' />
@@ -209,7 +210,8 @@ const IconTradeType = ({ type, className }) => {
                     </g>
                 );
                 break;
-            case 'put':
+            case 'pute':
+            case 'put' :
                 IconType = (
                     <g fill='none' fillRule='evenodd'>
                         <path className='transparent' d='M0 0h16v16H0z' />

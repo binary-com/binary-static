@@ -1,6 +1,6 @@
-import React from 'react';
-import Loading from '../../_common/components/loading.jsx';
-import SeparatorLine from '../../_common/components/separator_line.jsx';
+import React             from 'react';
+import Loading           from '../../_common/components/loading.jsx';
+import { SeparatorLine } from '../../_common/components/separator_line.jsx';
 
 const EconomicCalendar = () => (
     <div id='economic_calendar' className='static_full'>

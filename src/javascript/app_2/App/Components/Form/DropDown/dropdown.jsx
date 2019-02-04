@@ -1,29 +1,25 @@
+import classNames        from 'classnames';
 import { isArrayLike }   from 'mobx';
 import { observer }      from 'mobx-react';
 import PropTypes         from 'prop-types';
 import React             from 'react';
 import { CSSTransition } from 'react-transition-group';
-import SimpleBar         from 'simplebar-react';
+import { Scrollbars }    from 'tt-react-custom-scrollbars';
 import { IconArrow }     from 'Assets/Common';
+import Items             from './items.jsx';
+import NativeSelect      from './native_select.jsx';
 import {
     getDisplayText,
     getItemFromValue,
     getValueFromIndex,
     getPrevIndex,
-    getNextIndex,
-}  from './helpers';
+    getNextIndex }       from './helpers';
 
 class Dropdown extends React.Component {
-    constructor(props) {
-        super(props);
-        this.handleVisibility   = this.handleVisibility.bind(this);
-        this.handleSelect       = this.handleSelect.bind(this);
-        this.setWrapperRef      = this.setWrapperRef.bind(this);
-        this.handleClickOutside = this.handleClickOutside.bind(this);
-        this.state = {
-            is_list_visible: false,
-            curr_index     : getItemFromValue(this.props.list, this.props.value).number,
-        };
+    list_ref = React.createRef();
+    state = {
+        curr_index     : getItemFromValue(this.props.list, this.props.value).number,
+        is_list_visible: false,
     }
 
     componentDidMount() {
@@ -34,14 +30,27 @@ class Dropdown extends React.Component {
         document.removeEventListener('mousedown', this.handleClickOutside);
     }
 
-    handleSelect(item) {
+    handleSelect = (item) => {
         if (item.value !== this.props.value) {
             this.props.onChange({ target: { name: this.props.name, value: item.value } });
         }
         this.handleVisibility();
     }
 
+    setWrapperRef = (node) => this.wrapper_ref = node;
+
+    handleClickOutside = (event) => {
+        if (this.wrapper_ref && !this.wrapper_ref.contains(event.target) && this.state.is_list_visible) {
+            this.setState({ is_list_visible: false });
+        }
+    }
+
+    handleVisibility = () => {
+        this.setState((state) =>({  is_list_visible: !state.is_list_visible }));
+    }
+
     onKeyPressed = (event) => {
+        if (this.is_single_option) return;
         if (event.keyCode === 9) { // Tab is pressed
             if (this.state.is_list_visible) {
                 this.handleVisibility();
@@ -72,6 +81,18 @@ class Dropdown extends React.Component {
                 if (this.state.is_list_visible) {
                     const next_index = getNextIndex(this.state.curr_index, index.length);
                     this.setState({ curr_index: next_index });
+                } else if (!this.props.is_alignment_left) {
+                    this.handleVisibility();
+                }
+                break;
+            case 37: // Left arrow is pressed
+                if (!this.state.is_list_visible && this.props.is_alignment_left) {
+                    this.handleVisibility();
+                }
+                break;
+            case 39: // Right Arrow is pressed
+                if (this.state.is_list_visible && this.props.is_alignment_left) {
+                    this.handleVisibility();
                 }
                 break;
             default:
@@ -95,65 +116,87 @@ class Dropdown extends React.Component {
         }
     }
 
-    setWrapperRef(node) {
-        this.wrapper_ref = node;
-    }
-
-    scrollToggle(state) {
-        this.is_open = state;
-        // Used to disable y-scroll on body - disabled in this component for now
-        // document.body.classList.toggle('no-scroll', this.is_open);
-    }
-
-    handleClickOutside(event) {
-        if (this.wrapper_ref && !this.wrapper_ref.contains(event.target) && this.state.is_list_visible) {
-            this.setState({ is_list_visible: false });
-            this.scrollToggle(this.state.is_list_visible);
-        }
-    }
-
-    handleVisibility() {
-        this.setState({ is_list_visible: !this.state.is_list_visible });
-        this.scrollToggle(!this.state.is_list_visible);
-    }
-
     render() {
-        // TODO: Fix list not being populated in native picker dropdown before re-enabling
-        // if (this.props.is_nativepicker) {
-        //     return (
-        //         <NativeSelect
-        //             name={this.props.name}
-        //             value={this.props.value}
-        //             list={this.props.list}
-        //             onChange={this.props.onChange}
-        //         />
-        //     );
-        // }
+        if (this.props.is_nativepicker) {
+            return (
+                <NativeSelect
+                    name={this.props.name}
+                    value={this.props.value}
+                    list={this.props.list}
+                    onChange={this.props.onChange}
+                />
+            );
+        }
+
+        // we are calculating the offset for the dropdown list based on it's width here
+        const left_alignment_style = {
+            transform: `translate3d(calc(-${this.state.list_width}px - 12px), 0, 0px)`,
+        };
+
+        // upon render via css transition group, we use this as a callback to set the width of the dropdown list in the state
+        const setListWidth = () => this.setState({ list_width: this.list_ref.current.offsetWidth });
+
+        const is_single_option = isArrayLike(this.props.list) ?
+            !!(this.props.list.length < 2)
+            :
+            !!(Object.keys(this.props.list).length < 2);
+
         return (
             <div
                 ref={this.setWrapperRef}
-                className={`dropdown-container ${this.props.className ? this.props.className : ''} ${this.state.is_list_visible ? 'show' : ''}`}
+                className={classNames('dropdown-container', this.props.className, {
+                    'dropdown-container--left'    : this.props.is_alignment_left,
+                    'dropdown-container--show'    : this.state.is_list_visible,
+                    'dropdown-container--disabled': is_single_option,
+                })}
             >
                 <div
-                    className={`dropdown-display ${this.state.is_list_visible ? 'clicked' : ''}`}
+                    className={classNames('dropdown__display', {
+                        'dropdown__display--clicked': this.state.is_list_visible,
+                    })}
+                    tabIndex={is_single_option ? '-1' : '0'}
                     onClick={this.handleVisibility}
-                    tabIndex='0'
                     onKeyDown={this.onKeyPressed}
                 >
                     <span name={this.props.name} value={this.props.value}>
                         {getDisplayText(this.props.list, this.props.value)}
                     </span>
                 </div>
-                <IconArrow className='select-arrow' />
+                {
+                    !is_single_option && <IconArrow className={classNames('select-arrow', {
+                        'select-arrow--left': this.props.is_alignment_left,
+                    })}
+                    />
+                }
                 <CSSTransition
                     in={this.state.is_list_visible}
                     timeout={100}
-                    classNames='dropdown-list'
+                    classNames={{
+                        enter    : 'dropdown__list--enter',
+                        enterDone: 'dropdown__list--enter--done',
+                        exit     : 'dropdown__list--exit',
+                    }}
+                    onEntered={setListWidth}
                     unmountOnExit
                 >
-                    <div className='dropdown-list'>
-                        <div className='list-container'>
-                            <SimpleBar style={{ 'height': '100%' }}>
+                    <div className={classNames('dropdown__list', {
+                        'dropdown__list--left': this.props.is_alignment_left,
+                    })}
+                    >
+                        <div
+                            className={classNames('list', {
+                                'list--left': this.props.is_alignment_left,
+                            })}
+                            ref={this.list_ref}
+                            style={this.props.is_alignment_left ? left_alignment_style : undefined}
+                        >
+                            <Scrollbars
+                                autoHeight
+                                autoHide
+                                autoHeightMax={200}
+                                renderTrackHorizontal={props => <div {...props} className='track-horizontal' style={{ display: 'none' }} />}
+                                renderThumbHorizontal={props => <div {...props} className='thumb-horizontal' style={{ display: 'none' }} />}
+                            >
                                 {isArrayLike(this.props.list) ?
                                     <Items
                                         highlightedIdx={this.state.curr_index}
@@ -164,7 +207,7 @@ class Dropdown extends React.Component {
                                     /> :
                                     Object.keys(this.props.list).map(key => (
                                         <React.Fragment key={key}>
-                                            <div className='list-label'><span>{key}</span></div>
+                                            <div className='list__label'><span>{key}</span></div>
                                             <Items
                                                 highlightedIdx={this.state.curr_index}
                                                 items={this.props.list[key]}
@@ -175,7 +218,7 @@ class Dropdown extends React.Component {
                                         </React.Fragment>
                                     ))
                                 }
-                            </SimpleBar>
+                            </Scrollbars>
                         </div>
                     </div>
                 </CSSTransition>
@@ -184,77 +227,13 @@ class Dropdown extends React.Component {
     }
 }
 
-const Items = ({
-    items,
-    name,
-    value,
-    handleSelect,
-    highlightedIdx,
-}) => (
-    items.map((item, idx) => (
-        <React.Fragment key={idx}>
-            <div
-                className={`list-item ${ value === item.value ? 'selected' : ''} ${highlightedIdx === idx ? 'highlighted' : ''}`}
-                key={idx}
-                name={name}
-                value={item.value}
-                onClick={handleSelect.bind(null, item)}
-            >
-                <span>{item.text}</span>
-            </div>
-        </React.Fragment>
-    ))
-);
-
-const NativeSelect = ({
-    name,
-    value,
-    list,
-    onChange,
-}) => (
-    <div className='select-wrapper'>
-        <select name={name} value={value} onChange={onChange}>
-            {Array.isArray(list) ?
-                list.map((item, idx) => (
-                    <option key={idx} value={item.value}>{item.text}</option>
-                ))
-                :
-                Object.keys(list).map(key => (
-                    <React.Fragment key={key}>
-                        <optgroup label={key}>
-                            {list[key].map((item, idx) => (
-                                <option key={idx} value={item.value}>{item.text}</option>
-                            ))}
-                        </optgroup>
-                    </React.Fragment>
-                ))}
-        </select>
-    </div>
-);
-
-// ToDo: Refactor Drop-down.
-// It's now too risky to refactor Dropdown for 'list' and 'value' prop types.
 Dropdown.propTypes = {
-    className      : PropTypes.string,
-    is_nativepicker: PropTypes.bool,
-    list           : PropTypes.oneOfType([
+    className        : PropTypes.string,
+    is_alignment_left: PropTypes.bool,
+    is_nativepicker  : PropTypes.bool,
+    list             : PropTypes.oneOfType([
         PropTypes.array,
         PropTypes.object,
-    ]),
-    name    : PropTypes.string,
-    onChange: PropTypes.func,
-    type    : PropTypes.string,
-    value   : PropTypes.oneOfType([
-        PropTypes.number,
-        PropTypes.string,
-    ]),
-};
-
-// ToDo: Refactor NativeSelect
-NativeSelect.propTypes = {
-    list: PropTypes.oneOfType([
-        PropTypes.object,
-        PropTypes.array,
     ]),
     name    : PropTypes.string,
     onChange: PropTypes.func,

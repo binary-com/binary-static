@@ -1,5 +1,5 @@
-import React from 'react';
-import SeparatorLine from '../../_common/components/separator_line.jsx';
+import React             from 'react';
+import { SeparatorLine } from '../../_common/components/separator_line.jsx';
 
 const BoxInner = ({ className = '', href, image, text }) => (
     <div className={`gr-6 center-text ${className}`}>
@@ -99,7 +99,7 @@ const Index = () => (
                         <p>{it.L('Want to be a part of our dynamic culture? Browse all our openings and see where you fit:')}</p>
                     </div>
                     <div className='center-element'>
-                        <a className='button-secondary' href={it.url_for('careers?anchor=open-positions')}>
+                        <a className='button' href={it.url_for('careers?anchor=open-positions')}>
                             <span>{it.L('Open positions')}</span>
                         </a>
                     </div>

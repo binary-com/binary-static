@@ -21,6 +21,9 @@ const WS = (() => {
     const getSettings = () =>
         BinarySocket.send({ get_settings: 1 });
 
+    const getTradingTimes = (date) =>
+        BinarySocket.send({ trading_times: date });
+
     const landingCompany = (residence) =>
         BinarySocket.send({ landing_company: residence });
 
@@ -61,8 +64,8 @@ const WS = (() => {
     const forgetAll = (...msg_types) =>
         SubscriptionManager.forgetAll(...msg_types);
 
-    const subscribeBalance = (cb) =>
-        SubscriptionManager.subscribe('balance', { balance: 1, subscribe: 1 }, cb);
+    const subscribeBalance = (cb, is_forced) =>
+        SubscriptionManager.subscribe('balance', { balance: 1, subscribe: 1 }, cb, is_forced);
 
     const subscribeProposal = (req, cb, should_forget_first) =>
         SubscriptionManager.subscribe('proposal', req, cb, should_forget_first);
@@ -89,6 +92,7 @@ const WS = (() => {
         getAccountStatus,
         getSelfExclusion,
         getSettings,
+        getTradingTimes,
         landingCompany,
         logout,
         mt5LoginList,

@@ -56,7 +56,6 @@ export default class ClientStore extends BaseStore {
     @computed
     get account_list() {
         return this.all_loginids.map(id => (
-            id !== this.loginid &&
             !this.isDisabled(id) &&
             this.getToken(id) ?
                 this.getAccountInfo(id) :
@@ -119,12 +118,17 @@ export default class ClientStore extends BaseStore {
 
     @computed
     get is_virtual() {
-        return !!this.accounts[this.loginid].is_virtual;
+        return this.accounts[this.loginid] && !!this.accounts[this.loginid].is_virtual;
     }
 
     @computed
     get can_upgrade() {
-        return this.upgrade_info.can_upgrade || this.upgrade_info.can_open_multi;
+        return this.upgrade_info && (this.upgrade_info.can_upgrade || this.upgrade_info.can_open_multi);
+    }
+
+    @computed
+    get can_upgrade_to() {
+        return this.upgrade_info && (this.upgrade_info.can_upgrade_to);
     }
 
     @computed
@@ -196,6 +200,7 @@ export default class ClientStore extends BaseStore {
         this.accounts[this.loginid].session_start             = parseInt(moment().valueOf() / 1000);
         this.accounts[this.loginid].landing_company_shortcode = response.authorize.landing_company_name;
         this.updateAccountList(response.authorize.account_list);
+        this.upgrade_info = this.getBasicUpgradeInfo();
     }
 
     @action.bound
@@ -233,10 +238,9 @@ export default class ClientStore extends BaseStore {
      */
     @action.bound
     async init() {
-        this.loginid      = LocalStore.get('active_loginid');
-        this.accounts     = LocalStore.getObject(storage_key);
-        this.upgrade_info = this.getBasicUpgradeInfo();
-        this.switched     = '';
+        this.loginid  = LocalStore.get('active_loginid');
+        this.accounts = LocalStore.getObject(storage_key);
+        this.switched = '';
 
         this.selectCurrency('');
 

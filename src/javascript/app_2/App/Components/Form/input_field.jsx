@@ -10,15 +10,20 @@ import Button                    from './button.jsx';
 import Tooltip                   from '../Elements/tooltip.jsx';
 
 const InputField = ({
+    checked,
     className,
+    data_tip,
+    data_value,
     error_messages,
     fractional_digits,
     helper,
+    id,
     is_disabled,
     is_float,
     is_incrementable,
     is_read_only = false,
     is_signed = false,
+    is_unit_at_right = false,
     label,
     max_length,
     max_value,
@@ -30,6 +35,7 @@ const InputField = ({
     prefix,
     required,
     type,
+    unit,
     value,
 }) => {
     const has_error = error_messages && error_messages.length;
@@ -38,9 +44,17 @@ const InputField = ({
     const min_is_disabled = min_value && +value <= +min_value;
 
     const changeValue = (e) => {
+        if (unit) {
+            e.target.value = e.target.value.replace(unit, '').trim();
+        }
+
+        if (e.target.value === value && type !== 'checkbox') {
+            return;
+        }
+
         if (type === 'number') {
-            const is_empty = !e.target.value || e.target.value === '';
-            const signed_regex = is_signed ? '(?!^([-+]0)$|^[-+]?$)^[+-]?' : '^';
+            const is_empty = !e.target.value || e.target.value === '' || e.target.value === '  ';
+            const signed_regex = is_signed ? '[\+\-\.0-9]$' : '^';
 
             const is_number = new RegExp(`${signed_regex}(\\d*)?${is_float ? '(\\.\\d+)?' : ''}$`)
                 .test(e.target.value);
@@ -91,12 +105,21 @@ const InputField = ({
         if (e.keyCode === 40) decrementValue(); // down-arrow pressed
     };
 
+    let display_value = value;
+
+    if (unit) {
+        display_value = is_unit_at_right ? `${value} ${unit}` : `${unit} ${value}`;
+    }
+
     const input =
         <input
+            checked={checked ? 'checked' : ''}
             className={classNames({ error: has_error })}
             disabled={is_disabled}
             data-for={`error_tooltip_${name}`}
-            data-tip
+            data-value={data_value}
+            data-tip={data_tip}
+            id={id}
             maxLength={fractional_digits ? max_length + fractional_digits + 1 : max_length}
             name={name}
             onKeyDown={is_incrementable ? onKeyPressed : undefined}
@@ -106,7 +129,7 @@ const InputField = ({
             readOnly={is_read_only}
             required={required || undefined}
             type={type === 'number' ? 'text' : type}
-            value={value || ''}
+            value={display_value || ''}
         />;
 
     const input_increment =
@@ -115,6 +138,7 @@ const InputField = ({
                 className={'input-wrapper__button input-wrapper__button--increment'}
                 is_disabled={max_is_disabled}
                 onClick={incrementValue}
+                tabIndex='-1'
             >
                 <IconPlus className={'input-wrapper__icon input-wrapper__icon--plus' } is_disabled={max_is_disabled} />
             </Button>
@@ -122,6 +146,7 @@ const InputField = ({
                 className={'input-wrapper__button input-wrapper__button--decrement'}
                 is_disabled={min_is_disabled}
                 onClick={decrementValue}
+                tabIndex='-1'
             >
                 <IconMinus className={'input-wrapper__icon input-wrapper__icon--minus'} is_disabled={min_is_disabled} />
             </Button>
@@ -137,7 +162,7 @@ const InputField = ({
                     <label htmlFor={name} className='input-label'>{label}</label>
                 }
                 {!!prefix &&
-                    <i><span className={`symbols ${prefix.toLowerCase()}`} /></i>
+                    <span className={`symbols ${prefix.toLowerCase()}`} />
                 }
                 {!!helper &&
                     <span className='input-helper'>{helper}</span>
@@ -152,15 +177,18 @@ const InputField = ({
 // supports more than two different types of 'value' as a prop.
 // Quick Solution - Pass two different props to input field.
 InputField.propTypes = {
+    checked          : PropTypes.number,
     className        : PropTypes.string,
     error_messages   : MobxPropTypes.arrayOrObservableArray,
     fractional_digits: PropTypes.number,
     helper           : PropTypes.string,
+    id               : PropTypes.string,
     is_disabled      : PropTypes.string,
     is_float         : PropTypes.bool,
     is_incrementable : PropTypes.bool,
     is_read_only     : PropTypes.bool,
     is_signed        : PropTypes.bool,
+    is_unit_at_right : PropTypes.bool,
     label            : PropTypes.string,
     max_length       : PropTypes.number,
     name             : PropTypes.string,
@@ -170,6 +198,7 @@ InputField.propTypes = {
     prefix           : PropTypes.string,
     required         : PropTypes.bool,
     type             : PropTypes.string,
+    unit             : PropTypes.string,
     value            : PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,

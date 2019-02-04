@@ -53,8 +53,9 @@ class PopConfirm extends React.Component {
                 {React.Children.map(this.props.children, child => (
                     React.cloneElement(child, {
                         onClick: this.handleOpen,
-                    }, popconfirm_element)
+                    })
                 ))}
+                {popconfirm_element}
             </React.Fragment>
         );
     }
