@@ -1,8 +1,8 @@
 import classNames         from 'classnames';
 import React              from 'react';
+import { month_headers }  from 'Constants/date_time';
 import { toMoment }       from 'Utils/Date';
 import CalendarPanelTypes from './types';
-import { month_headers }  from '../constants';
 
 export const CalendarMonths = ({
     calendar_date,

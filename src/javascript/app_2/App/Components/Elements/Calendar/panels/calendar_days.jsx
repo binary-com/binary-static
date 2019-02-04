@@ -2,13 +2,15 @@ import classNames            from 'classnames';
 import React                 from 'react';
 import { padLeft }           from '_common/string_util';
 import {
+    getDaysOfTheWeek,
+    week_headers_abbr }     from 'Constants/date_time';
+import {
     addDays,
     addMonths,
     subDays,
     subMonths,
     toMoment }               from 'Utils/Date';
 import CalendarPanelTypes    from './types';
-import { week_headers_abbr } from '../constants';
 import Tooltip               from '../../tooltip.jsx';
 
 const getDays = ({
@@ -62,7 +64,9 @@ const getDays = ({
         const is_active   = selected_date && moment_date.isSame(moment_selected);
         const is_today    = moment_date.isSame(moment_today, 'day');
 
-        const events          = holidays.filter(event => event.dates.find(d => d === date));
+        const events          = holidays.filter(event =>
+            // filter by date or day of the week
+            event.dates.find(d => d === date || getDaysOfTheWeek(d) === toMoment(date).day()));
         const has_events      = !!events.length;
         const is_closes_early = events.map(event => event.descrip.includes('Closes early'))[0];
         const message         = events.map(event => event.descrip)[0] || '';

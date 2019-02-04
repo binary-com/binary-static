@@ -124,20 +124,20 @@ class DatePicker extends React.Component {
         }
     };
 
-    async onChangeCalendarMonth(date) {
-        const trading_events = await getTradingEvents(date, this.props.underlying);
+    async onChangeCalendarMonth(calendar_date) {
+        const trading_events = await getTradingEvents(calendar_date, this.props.underlying);
         const holidays = [];
         let weekends   = [];
         trading_events.filter(events => {
-            if (events.dates === 'Fridays') {
+            const dates = events.dates.split(', '); // convert dates str into array
+            const idx = dates.indexOf('Fridays');
+            if (idx !== -1) {
                 weekends = [6, 0]; // Sat, Sun
-            } else {
-                const dates = events.dates.split(', '); // convert dates str into array
-                holidays.push({
-                    dates,
-                    descrip: events.descrip,
-                });
             }
+            holidays.push({
+                dates,
+                descrip: events.descrip,
+            });
         });
 
         this.setState({

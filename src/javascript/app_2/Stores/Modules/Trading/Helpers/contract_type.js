@@ -25,7 +25,6 @@ const ContractType = (() => {
     let available_categories     = {};
     let contract_types;
     const trading_times          = {};
-    const trading_events         = {};
 
     const buildContractTypesConfig = (symbol) => WS.contractsFor(symbol).then(r => {
         const contract_categories = getContractCategoriesConfig();
@@ -251,7 +250,7 @@ const ContractType = (() => {
         start_time: start_date ? getValidTime(sessions, buildMoment(start_date, start_time)) : null,
     });
 
-    const getTradingTimes = async (date, underlying = null, is_for_trading_events = false) => {
+    const getTradingTimes = async (date, underlying = null) => {
         if (!date) {
             return [];
         }
@@ -270,15 +269,9 @@ const ContractType = (() => {
                                     const symbol = symbols[k];
                                     if (!trading_times[trading_times_response.echo_req.trading_times]) {
                                         trading_times[trading_times_response.echo_req.trading_times] = {};
-                                        trading_events[trading_times_response.echo_req.trading_times] = {};
                                     }
-                                    if (is_for_trading_events) {
-                                        trading_events[trading_times_response.echo_req.trading_times][symbol.symbol] =
-                                            symbol.events;
-                                    } else {
-                                        trading_times[trading_times_response.echo_req.trading_times][symbol.symbol] =
-                                            symbol.times.close;
-                                    }
+                                    trading_times[trading_times_response.echo_req.trading_times][symbol.symbol] =
+                                        symbol.times.close;
                                 }
                             }
                         }
@@ -287,7 +280,6 @@ const ContractType = (() => {
             }
         }
 
-        if (is_for_trading_events) return trading_events[date][underlying];
         return underlying ? trading_times[date][underlying] : trading_times[date];
     };
 

@@ -6,6 +6,7 @@ import {
     IconChevronDoubleRight,
     IconChevronLeft,
     IconChevronRight }      from 'Assets/Common';
+import { month_headers }    from 'Constants/date_time';
 import {
     addMonths,
     addYears,
@@ -13,7 +14,6 @@ import {
     subYears,
     toMoment }              from 'Utils/Date';
 import CalendarButton       from './calendar_button.jsx';
-import { month_headers }    from './constants';
 import {
     getCentury,
     getDecade }             from './helper';
