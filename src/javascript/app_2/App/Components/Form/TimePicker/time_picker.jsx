@@ -6,7 +6,7 @@ import { CSSTransition } from 'react-transition-group';
 import Dialog            from './dialog.jsx';
 import InputField        from '../input_field.jsx';
 
-class TimePicker extends React.PureComponent {
+class TimePicker extends React.Component {
     state = { is_open: false };
 
     componentDidMount() {
