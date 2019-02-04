@@ -128,7 +128,7 @@ class DatePicker extends React.Component {
         const trading_events = await getTradingEvents(calendar_date, this.props.underlying);
         const holidays = [];
         let weekends   = [];
-        trading_events.filter(events => {
+        trading_events.forEach(events => {
             const dates = events.dates.split(', '); // convert dates str into array
             const idx = dates.indexOf('Fridays');
             if (idx !== -1) {
