@@ -120,7 +120,7 @@ div.contracts-popup-container {
             font-size: 0.875rem; /* stylelint-disable-line number-max-precision */
         }
         .trade-type-info-icon {
-            display: block;
+            display: none;
             float: right;
             height: 16px;
             width: 16px;
@@ -349,7 +349,6 @@ div.contracts-popup-container {
         color: $COLOR_GRAY;
     }
     .categories-container {
-        margin-bottom: 6px;
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -380,11 +379,12 @@ div.contracts-popup-container {
         &:focus, &:active {
             outline: 0;
             border-color: $COLOR_WHITE;
-            box-shadow: 0 0 0 0.2rem rgba(127, 131, 151, 0.3) // stylelint-disable-line number-leading-zero
+            box-shadow: 0 0 0 0.2rem rgba(127, 131, 151, 0.3);
         }
         .list-container {
             border-color: $COLOR_BRANDBLUE_85;
             background: $COLOR_BRANDBLUE_95;
+            box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.16);
 
             .list-group .list-items .list-item {
                 background: $COLOR_BLUE;
