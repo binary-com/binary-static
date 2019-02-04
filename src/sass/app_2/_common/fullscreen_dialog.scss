@@ -92,6 +92,70 @@ $content-index: 1;
         margin-right: 0.5rem;
         margin-left: 0.5rem;
     }
+    .trade-type-info-modal {
+        padding: 16px;
+
+        .info-header {
+            display: flex;
+            padding: 8px;
+
+            .title {
+                margin-left: 15px;
+                font-size: 14px;
+                color: $COLOR_LIGHT_BLACK;
+            }
+            span {
+                align-self: center;
+            }
+        }
+        .info-gif {
+            padding: 8px;
+            width: 90%;
+            width: calc(100% - 16px);
+            height: fit-content;
+            background-color: $COLOR_WHITE;
+            border-radius: 4px;
+            margin: 0 auto;
+        }
+        .info-content {
+            padding: 8px;
+            margin: 0 auto;
+            font-size: 14px;
+            line-height: 20px;
+            color: $COLOR_LIGHT_BLACK;
+        }
+        .info-choose {
+            background: $COLOR_LIGHT_ORANGE;
+            color: $COLOR_WHITE;
+            font-weight: bold;
+            margin: 0 auto;
+            display: block;
+        }
+        .info-navigation {
+            display: flex;
+            margin-top: 16px;
+
+            &__list {
+                display: inline-block;
+                text-align: center;
+                margin: 0 auto;
+
+                .circle-button {
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    display: inline-block;
+                    margin: 0 5px;
+                    background-color: $COLOR_DARK_GRAY;
+                    cursor: pointer;
+
+                    &.active {
+                        background-color: $COLOR_GRAY;
+                    }
+                }
+            }
+        }
+    }
 }
 
 // Dark Theme
@@ -107,6 +171,30 @@ $content-index: 1;
         }
         &__title {
             color: $COLOR_BRANDBLUE_40;
+        }
+        .trade-type-info-modal {
+            .info-header {
+                .title {
+                    color: $COLOR_BRANDBLUE_40;
+                }
+            }
+            .info-gif {
+                background-color: $COLOR_BRANDBLUE_75;
+            }
+            .info-content {
+                color: $COLOR_GRAY;
+            }
+            .info-navigation {
+                &__list {
+                    .circle-button {
+                        background-color: $COLOR_WHITE;
+
+                        &.active {
+                            background-color: $COLOR_GRAY;
+                        }
+                    }
+                }
+            }
         }
     }
 }
