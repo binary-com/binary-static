@@ -1,8 +1,8 @@
-import classNames         from 'classnames';
-import React              from 'react';
-import { month_headers }  from 'Constants/date_time';
-import { toMoment }       from 'Utils/Date';
-import CalendarPanelTypes from './types';
+import classNames        from 'classnames';
+import React             from 'react';
+import { month_headers } from 'Constants/date_time';
+import { toMoment }      from 'Utils/Date';
+import CommonPropTypes   from './types';
 
 export const CalendarMonths = ({
     calendar_date,
@@ -37,4 +37,4 @@ export const CalendarMonths = ({
     );
 };
 
-CalendarMonths.propTypes = { ...CalendarPanelTypes };
+CalendarMonths.propTypes = { ...CommonPropTypes };

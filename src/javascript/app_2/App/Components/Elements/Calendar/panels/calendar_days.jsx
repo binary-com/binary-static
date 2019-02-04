@@ -1,17 +1,18 @@
-import classNames            from 'classnames';
-import React                 from 'react';
-import { padLeft }           from '_common/string_util';
+import classNames       from 'classnames';
+import PropTypes        from 'prop-types';
+import React            from 'react';
+import { padLeft }      from '_common/string_util';
 import {
     getDaysOfTheWeek,
-    week_headers_abbr }     from 'Constants/date_time';
+    week_headers_abbr } from 'Constants/date_time';
 import {
     addDays,
     addMonths,
     subDays,
     subMonths,
-    toMoment }               from 'Utils/Date';
-import CalendarPanelTypes    from './types';
-import Tooltip               from '../../tooltip.jsx';
+    toMoment }          from 'Utils/Date';
+import CommonPropTypes  from './types';
+import Tooltip          from '../../tooltip.jsx';
 
 const getDays = ({
     calendar_date,
@@ -77,13 +78,12 @@ const getDays = ({
             // for forward starting accounts, only show same day as start date and the day after
             || ((start_date && (moment_date.isBefore(moment_start_date)
             || moment_date.isAfter(addDays(moment_start_date, 1)))))
-            // check if which days of the week are disabled
+            // check if weekends are disabled
             || weekends.some(day => toMoment(date).day() === day)
-            // check if date falls on holidays, and doens't close early
+            // check if date falls on holidays, and doesn't close early
             || has_events && !is_closes_early;
 
-        // show 'disabled' style for dates that is not in the same calendar month,
-        // but the date should still be clickable
+        // show 'disabled' style for dates that is not in the same calendar month, it should still be clickable
         const is_other_month = moment_date.month() !== moment_cur_date.month();
 
         days.push(
@@ -118,8 +118,12 @@ export const CalendarDays = (props) => {
 
     return (
         <div className='calendar__body calendar__body--date'>
-            {Object.keys(week_headers_abbr).map((item, idx) => (<span key={idx} className='calendar__text calendar__text--bold'>{week_headers_abbr[item]}</span>))}
-            {days}
+            { Object.keys(week_headers_abbr)
+                .map((item, idx) => (
+                    <span key={idx} className='calendar__text calendar__text--bold'>{week_headers_abbr[item]}</span>
+                ))
+            }
+            { days }
         </div>
     );
 };
@@ -129,4 +133,18 @@ CalendarDays.defaultProps = {
     weekends: [],
 };
 
-CalendarDays.propTypes = { ...CalendarPanelTypes };
+CalendarDays.propTypes = {
+    ...CommonPropTypes,
+    date_format: PropTypes.string,
+    holidays   : PropTypes.arrayOf(
+        PropTypes.shape({
+            dates  : PropTypes.array,
+            descrip: PropTypes.string,
+        }),
+    ),
+    start_date: PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
+    ]),
+    weekends: PropTypes.arrayOf(PropTypes.number),
+};

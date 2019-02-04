@@ -20,7 +20,7 @@ import Calendar             from '../../Elements/Calendar';
 
 class DatePicker extends React.Component {
     state = {
-        value                : '',
+        value                : this.props.value,
         is_datepicker_visible: false,
         is_clear_btn_visible : false,
         holidays             : [],
@@ -37,7 +37,7 @@ class DatePicker extends React.Component {
         }
 
         if (this.props.disable_trading_events) {
-            this.onChangeCalendarMonth(getStartOfMonth(this.props.value));
+            this.onChangeCalendarMonth(getStartOfMonth(this.state.value));
         }
     }
 
@@ -252,7 +252,13 @@ class DatePicker extends React.Component {
                                 this.onChangeCalendarMonth.bind(this) : undefined}
                             holidays={this.state.holidays}
                             weekends={this.state.weekends}
-                            {...this.props}
+                            date_format={this.props.date_format}
+                            has_today_btn={this.props.has_today_btn}
+                            footer={this.props.footer}
+                            max_date={this.props.max_date}
+                            min_date={this.props.min_date}
+                            start_date={this.props.start_date}
+                            value={this.props.value}
                         />
                     </div>
                 </CSSTransition>

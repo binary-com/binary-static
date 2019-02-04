@@ -120,12 +120,11 @@ class Calendar extends React.PureComponent {
     };
 
     render() {
-        const { children, date_format, footer, has_today_btn, id, start_date } = this.props;
+        const { date_format, footer, has_today_btn, start_date, holidays, weekends } = this.props;
         const { calendar_date, calendar_view, selected_date  } = this.state;
 
         return (
-            <div id={id} className='calendar' data-value={selected_date}>
-                { children }
+            <div className='calendar' data-value={selected_date}>
                 <CalendarHeader
                     calendar_date={calendar_date}
                     calendar_view={calendar_view}
@@ -141,8 +140,8 @@ class Calendar extends React.PureComponent {
                     start_date={start_date}
                     selected_date={selected_date}
                     updateSelected={this.updateSelected}
-                    holidays={this.props.holidays}
-                    weekends={this.props.weekends}
+                    holidays={holidays}
+                    weekends={weekends}
                 />
                 <CalendarFooter
                     footer={footer}
@@ -161,13 +160,16 @@ Calendar.defaultProps = {
 };
 
 Calendar.propTypes = {
-    children       : PropTypes.object,
-    date_format    : PropTypes.string,
-    footer         : PropTypes.string,
-    has_today_btn  : PropTypes.bool,
-    id             : PropTypes.string,
-    is_nativepicker: PropTypes.bool,
-    max_date       : PropTypes.oneOfType([
+    date_format  : PropTypes.string,
+    footer       : PropTypes.string,
+    has_today_btn: PropTypes.bool,
+    holidays     : PropTypes.arrayOf(
+        PropTypes.shape({
+            dates  : PropTypes.array,
+            descrip: PropTypes.string,
+        }),
+    ),
+    max_date: PropTypes.oneOfType([
         PropTypes.object,
         PropTypes.string,
     ]),
@@ -175,11 +177,14 @@ Calendar.propTypes = {
         PropTypes.object,
         PropTypes.string,
     ]),
-    onSelect  : PropTypes.func,
-    start_date: PropTypes.oneOfType([
+    onChangeCalendarMonth: PropTypes.func,
+    onSelect             : PropTypes.func,
+    start_date           : PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
     ]),
+    value   : PropTypes.string,
+    weekends: PropTypes.arrayOf(PropTypes.number),
 };
 
 export default Calendar;
