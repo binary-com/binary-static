@@ -18,6 +18,15 @@ const Footer = ({
     toggleSettingsDialog,
 }) => (
     <React.Fragment>
+        <div className='footer-links footer-links-left'>
+            {
+                is_logged_in &&
+                <TogglePositions
+                    is_positions_drawer_on={is_positions_drawer_on}
+                    togglePositionsDrawer={togglePositionsDrawer}
+                />
+            }
+        </div>
         <NetworkStatus status={network_status} />
         <ServerTime />
         <div className='footer-links'>
@@ -27,15 +36,6 @@ const Footer = ({
                 is_settings_visible={is_settings_dialog_on}
                 toggleSettings={toggleSettingsDialog}
             />
-        </div>
-        <div className='footer-links footer-links-left'>
-            {
-                is_logged_in &&
-                <TogglePositions
-                    is_positions_drawer_on={is_positions_drawer_on}
-                    togglePositionsDrawer={togglePositionsDrawer}
-                />
-            }
         </div>
     </React.Fragment>
 );
