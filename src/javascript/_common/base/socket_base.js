@@ -23,6 +23,7 @@ const BinarySocketBase = (() => {
     let wrong_app_id         = 0;
     let is_available         = true;
     let is_disconnect_called = false;
+    let is_connected_before  = false;
 
     const socket_url = `${getSocketURL()}?app_id=${getAppId()}&l=${getLanguage()}`;
     const timeouts   = {};
@@ -216,6 +217,14 @@ const BinarySocketBase = (() => {
             if (typeof config.onOpen === 'function') {
                 config.onOpen(isReady());
             }
+
+            if (typeof config.onReconnect === 'function' && is_connected_before) {
+                config.onReconnect();
+            }
+
+            if (!is_connected_before) {
+                is_connected_before = true;
+            }
         };
 
         binary_socket.onmessage = (msg) => {
@@ -289,6 +298,8 @@ const BinarySocketBase = (() => {
         sendBuffered      : sendBufferedRequests,
         get               : () => binary_socket,
         setOnDisconnect   : (onDisconnect) => { config.onDisconnect = onDisconnect; },
+        setOnReconnect    : (onReconnect) => {config.onReconnect = onReconnect; },
+        removeOnReconnect : () => { delete config.onReconnect; },
         removeOnDisconnect: () => { delete config.onDisconnect; },
     };
 })();
