@@ -448,6 +448,12 @@ export default class TradeStore extends BaseStore {
 
     @action.bound
     changeAllowEquals() {
+        if (!this.contract_types_list
+            || !this.contract_type
+            || !this.duration_unit
+            || !this.contract_start_type
+            || !this.expiry_type) return;
+
         const hasCallPutEqual = () => {
             const up_down_contracts = getPropertyValue(this.contract_types_list, 'Up/Down');
             return up_down_contracts.some(contract => contract.value === 'rise_fall_equal');
