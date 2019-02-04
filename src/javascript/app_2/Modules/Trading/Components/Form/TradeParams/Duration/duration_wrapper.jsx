@@ -118,6 +118,7 @@ DurationWrapper.propTypes = {
         PropTypes.string,
     ]),
     start_time       : PropTypes.string,
+    symbol           : PropTypes.string,
     validation_errors: PropTypes.object,
 };
 

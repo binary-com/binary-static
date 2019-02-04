@@ -36,6 +36,7 @@ const Duration = ({
     market_close_times,
     simple_duration_unit,
     duration_t,
+    symbol,
 }) => {
     const expiry_list = [
         { text: localize('Duration'), value: 'duration' },
@@ -164,6 +165,7 @@ const Duration = ({
                             start_time={start_time}
                             onChangeUiStore={onChangeUiStore}
                             duration_t={duration_t}
+                            symbol={symbol}
                         /> }
                     { !is_advanced_duration &&
                         <SimpleDuration
@@ -225,6 +227,7 @@ Duration.propTypes = {
         PropTypes.string,
     ]),
     start_time       : PropTypes.string,
+    symbol           : PropTypes.string,
     validation_errors: PropTypes.object,
 };
 
