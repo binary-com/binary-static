@@ -14,29 +14,22 @@
         top: 8px;
         left: 5%;
     }
-    i {
-        position: relative;
-
-        .symbols {
-            height: 30px;
-            width: 30px;
-            line-height: 30px;
-            margin: 1px;
-            border-radius: $BORDER_RADIUS 0 0 $BORDER_RADIUS;
-            box-sizing: border-box;
-            font-size: inherit;
-
-            &:before {
-                margin: 0;
-            }
-        }
-        .symbols.aud {
-            // alignment fix for AUD symbol
-            padding-right: 4px;
-        }
-        & + input {
-            padding-left: 35px !important;
-        }
+    .symbols {
+        height: 30px;
+        width: 30px;
+        line-height: 30px;
+        margin: 1px;
+        border-radius: $BORDER_RADIUS 0 0 $BORDER_RADIUS;
+        box-sizing: border-box;
+        font-size: inherit;
+    }
+    &:has(input[type=checkbox]) {
+        display: inline-block;
+        width: 100%;
+    }
+    & + input {
+        padding-left: 32px !important;
+        padding-right: 14px;
     }
     .input-wrapper {
         position: relative;
@@ -156,7 +149,8 @@
         &:active, &:focus {
             outline: 0;
             border-radius: $BORDER_RADIUS;
-            border-color: $COLOR_BLUE;
+            border-color: $COLOR_WHITE;
+            box-shadow: 0 0 0 0.2rem rgba(127, 131, 151, 0.3);
         }
         &:not([type=range]), label, textarea {
             touch-action: manipulation;
@@ -167,9 +161,10 @@
         }
     }
     label.input-label {
-        font-size: 0.875rem; /* stylelint-disable-line number-max-precision */
-        color: #333333; /* stylelint-disable-line color-no-hex */
-        font-weight: 400;
+        margin-bottom: 2px;
+        margin-left: 4px;
+        text-transform: capitalize;
+        display: inline-block;
     }
     span.input-helper {
         font-weight: 300;
@@ -185,6 +180,8 @@
             display: inline-block;
         }
         input {
+            background: $COLOR_BLUE;
+            border-color: $COLOR_BRANDBLUE_85;
             color: $COLOR_WHITE;
 
             &[type=checkbox] {
@@ -219,8 +216,13 @@
                     display: none;
                 }
             }
-            &:hover, &:focus, &:active {
+            &:hover {
                 border-color: $COLOR_WHITE;
+            }
+            &:focus, &:active {
+                outline: 0;
+                border-color: $COLOR_WHITE;
+                box-shadow: 0 0 0 0.2rem rgba(127, 131, 151, 0.3);
             }
         }
     }
