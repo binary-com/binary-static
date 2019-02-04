@@ -2,7 +2,7 @@ import classNames                     from 'classnames';
 import { PropTypes as MobxPropTypes } from 'mobx-react';
 import PropTypes                      from 'prop-types';
 import React, { Fragment }            from 'react';
-import TimePicker                     from 'App/Components/Form/time_picker.jsx';
+import TimePicker                     from 'App/Components/Form/TimePicker';
 import DatePicker                     from 'App/Components/Form/DatePicker';
 import Dropdown                       from 'App/Components/Form/DropDown';
 import ButtonToggleMenu               from 'App/Components/Form/button_toggle_menu.jsx';
