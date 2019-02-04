@@ -1,8 +1,12 @@
-import { observer } from 'mobx-react';
-import PropTypes    from 'prop-types';
-import React        from 'react';
-import Fieldset     from 'App/Components/Form/fieldset.jsx';
-import InputField   from 'App/Components/Form/input_field.jsx';
+import { observer }   from 'mobx-react';
+import PropTypes      from 'prop-types';
+import React          from 'react';
+import {
+    IconBarrierUp,
+    IconBarrierDown } from 'Assets/Trading/Barriers';
+import Fieldset       from 'App/Components/Form/fieldset.jsx';
+import InputField     from 'App/Components/Form/input_field.jsx';
+import { localize }   from '_common/localize';
 
 const Barrier = ({
     barrier_1,
@@ -12,6 +16,8 @@ const Barrier = ({
     onChange,
     validation_errors,
 }) =>  {
+    const barrier_title = barrier_count === 1 ? localize('Barrier') : localize('Barriers');
+
     if (is_minimized) {
         if (barrier_count !== 2) {
             return (
@@ -35,28 +41,39 @@ const Barrier = ({
         );
     }
     return (
-        <Fieldset>
-            <InputField
-                type='number'
-                name='barrier_1'
-                value={barrier_1}
-                onChange={onChange}
-                error_messages = {validation_errors.barrier_1 || []}
-                is_float
-                is_signed
-            />
-
-            {barrier_count === 2 &&
+        <Fieldset
+            className='barriers'
+            header={barrier_title}
+        >
+            <div className='barriers-wrapper' >
                 <InputField
                     type='number'
-                    name='barrier_2'
-                    value={barrier_2}
+                    name='barrier_1'
+                    value={barrier_1}
+                    className={barrier_count === 2 ? 'multiple' : 'single'}
                     onChange={onChange}
-                    error_messages = {validation_errors.barrier_2}
+                    error_messages={validation_errors.barrier_1 || []}
                     is_float
                     is_signed
                 />
-            }
+    
+                {barrier_count === 2 &&
+                    <React.Fragment>
+                        <InputField
+                            type='number'
+                            name='barrier_2'
+                            value={barrier_2}
+                            className='multiple'
+                            onChange={onChange}
+                            error_messages={validation_errors.barrier_2}
+                            is_float
+                            is_signed
+                        />
+                        <IconBarrierUp className='up' />
+                        <IconBarrierDown className='down' />
+                    </React.Fragment>
+                }
+            </div>
         </Fieldset>
     );
 };
