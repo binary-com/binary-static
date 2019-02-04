@@ -4,6 +4,7 @@ import {
 import PropTypes                 from 'prop-types';
 import React                     from 'react';
 import { localize }              from '_common/localize';
+import { IconClock }             from 'Assets/Common';
 import { isSessionAvailable }    from 'Stores/Modules/Trading/Helpers/start_date';
 import { toMoment }              from 'Utils/Date';
 import InputField                from './input_field.jsx';
@@ -207,13 +208,16 @@ class TimePicker extends React.Component {
                                     error_messages={validation_errors}
                                     type='text'
                                     is_read_only
+                                    is_unit_at_right
                                     id={`${prefix_class}-input`}
                                     className={`${prefix_class}-input ${this.state.is_open ? 'active' : ''}`}
                                     value={value}
                                     onClick={this.toggleDropDown}
                                     name={name}
                                     placeholder={placeholder}
+                                    unit='GMT'
                                 />
+                                <IconClock className={`${prefix_class}-icon`} />
                                 <TimePickerDropdown
                                     className={`${this.state.is_open ? 'active' : ''}${is_align_right ? ' from-right' : '' }`}
                                     toggle={this.toggleDropDown}
