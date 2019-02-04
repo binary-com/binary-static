@@ -1,3 +1,4 @@
+import PropTypes    from 'prop-types';
 import classNames   from 'classnames';
 import React        from 'react';
 import { localize } from '_common/localize';
@@ -73,6 +74,15 @@ const Dialog = ({
             </div>
         </div>
     );
+};
+
+Dialog.propTypes = {
+    className : PropTypes.string,
+    end_time  : PropTypes.number,
+    onChange  : PropTypes.func,
+    preClass  : PropTypes.string,
+    start_time: PropTypes.number,
+    value     : PropTypes.string,
 };
 
 export default Dialog;
