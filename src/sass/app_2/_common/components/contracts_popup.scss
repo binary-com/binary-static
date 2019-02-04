@@ -277,12 +277,12 @@ div.contracts-popup-container {
                 color: $COLOR_LIGHT_BLACK;
             }
             .info-choose {
-                text-align: center;
-
                 button {
                     background: $COLOR_LIGHT_ORANGE;
                     color: $COLOR_WHITE;
                     font-weight: bold;
+                    margin: 16px 0;
+                    width: 100%;
                 }
             }
             .info-navigation {
@@ -439,7 +439,7 @@ div.contracts-popup-container {
                 background-color: $COLOR_BRANDBLUE_75;
             }
             .info-content {
-                color: $COLOR_GRAY;
+                color: rgba(255, 255, 255, 0.8);
             }
             .info-navigation {
                 &___list {
