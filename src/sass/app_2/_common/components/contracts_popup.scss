@@ -66,7 +66,7 @@ div.contracts-popup-container {
         outline: none;
         border-radius: 4px;
         border-color: $COLOR_LIGHT_GRAY_1;
-        box-shadow: 0 0 0 0.2rem $COLOR_LIGHT_GRAY_2; // stylelint-disable-line number-leading-zero
+        box-shadow: 0 0 0 0.2rem $COLOR_LIGHT_GRAY_2;
     }
     &.show {
         &.mobile-only {
