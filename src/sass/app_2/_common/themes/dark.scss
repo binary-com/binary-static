@@ -269,6 +269,13 @@ body.dark, .theme-wrapper.dark {
                 }
             }
         }
+        .footer-links-left {
+            .ic-positions {
+                &:after {
+                    background-color: $COLOR_BRANDBLUE_40;
+                }
+            }
+        }
         .server-time, .network-status-wrapper {
             border-color: $COLOR_BRANDBLUE_85;
         }
