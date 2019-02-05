@@ -1,28 +1,31 @@
 $header-height: 40px;
 
 // Trade page animation performance fix #perfmatters
-.trade-container + .portfolio-drawer {
+.trade-container + .positions-drawer {
     transition: opacity 0.4s ease;
 }
 
-.portfolio-drawer {
-    width: $PORTFOLIO_DRAWER_WIDTH;
-    height: calc(100vh - #{$HEADER_HEIGHT} - #{$FOOTER_HEIGHT});
+.positions-drawer {
+    width: $POSITIONS_DRAWER_WIDTH;
+    // removing 2px below for borders
+    height: calc(100vh - #{$HEADER_HEIGHT} - #{$FOOTER_HEIGHT} - 2px - (2 * #{$POSITIONS_DRAWER_MARGIN}));
+    margin-top: $POSITIONS_DRAWER_MARGIN;
     position: fixed;
     z-index: 2;
     top: $HEADER_HEIGHT;
-    right: 0;
-    border-left: 1px solid $COLOR_LIGHT_BLACK_4;
-    background-color: $COLOR_WHITE;
+    left: 0;
+    border: 1px solid $COLOR_LIGHT_BLACK_4_SOLID;
+    background-color: $COLOR_LIGHT_BLACK_4_SOLID;
     box-sizing: border-box;
     opacity: 0;
-    color: $COLOR_DARK_BLUE_5;
-    transform: translateX(100%);
+    color: $COLOR_LIGHT_BLACK_1;
+    transform: translateX(-100%);
     will-change: transform, opacity;
     transition: opacity 0.25s ease, transform 0.25s ease;
+    border-radius: 4px;
 
     &--open {
-        transform: translateX(0);
+        transform: translateX(#{$POSITIONS_DRAWER_MARGIN});
         opacity: 1;
     }
     &__header {
@@ -39,7 +42,7 @@ $header-height: 40px;
         overflow-y: auto;
     }
     &__title {
-        font-size: 12px;
+        font-size: 14px;
         font-weight: bold;
     }
     &__icon-main {
@@ -56,8 +59,8 @@ $header-height: 40px;
         }
     }
     /*
-        PORTFOLIO DRAWER CARD STARTS
-    */
+       POSITIONS DRAWER CARD STARTS
+   */
     & &-card {
         box-sizing: border-box;
         padding: 8px;
@@ -125,28 +128,28 @@ $header-height: 40px;
                 color: $COLOR_GREEN_1;
 
                 &:after {
-                    background-image: url('../images/portfolio/ic_price_up.svg');
+                    background-image: url('../images/positions/ic_price_up.svg');
                 }
             }
             &--price-moved-down {
                 color: $COLOR_RED;
 
                 &:after {
-                    background-image: url('../images/portfolio/ic_price_down.svg');
+                    background-image: url('../images/positions/ic_price_down.svg');
                 }
             }
             &--price-stable {
                 color: $COLOR_LIGHT_BLACK_1;
 
                 &:after {
-                    background-image: url('../images/portfolio/ic_price_stable_light.svg');
+                    background-image: url('../images/positions/ic_price_stable_light.svg');
                 }
             }
             &--no-resale {
                 color: $COLOR_LIGHT_BLACK_4;
 
                 &:after {
-                    background-image: url('../images/portfolio/ic_no_resale.svg');
+                    background-image: url('../images/positions/ic_no_resale.svg');
                 }
             }
         }
@@ -162,7 +165,7 @@ $header-height: 40px;
                 width: 10px;
                 background-size: 10px 10px;
                 margin-right: 2px;
-                background-image: url('../images/portfolio/ic_countdown.svg');
+                background-image: url('../images/positions/ic_countdown.svg');
                 vertical-align: text-top;
             }
             .remaining-time {
@@ -171,15 +174,15 @@ $header-height: 40px;
         }
     }
     /*
-        PORTFOLIO DRAWER CARD ENDS
+        POSITIONS DRAWER CARD ENDS
     */
 }
 
 // Dark Theme
 .theme-wrapper.dark {
-    .portfolio-drawer {
-        background: $COLOR_DARK_BLUE_5;
-        border-color: $COLOR_DARK_BLUE_5;
+    .positions-drawer {
+        background: $COLOR_DARK_BLUE_3;
+        border-color: $COLOR_DARK_BLUE_3;
         color: $COLOR_WHITE;
 
         &-card {
@@ -204,13 +207,17 @@ $header-height: 40px;
                     color: $COLOR_WHITE;
 
                     &:after {
-                        background-image: url('../images/portfolio/ic_price_stable_dark.svg');
+                        background-image: url('../images/positions/ic_price_stable_dark.svg');
                     }
                 }
             }
         }
+        &__title {
+            color: $COLOR_DARK_BLUE_7;
+        }
         &__body {
-            .portfolio-empty, p {
+            .positions-empty, p {
+                align-self: center;
                 color: $COLOR_WHITE;
             }
         }

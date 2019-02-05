@@ -59,19 +59,25 @@
     }
     // empty portfolio message
     &-empty {
-        height: 100%;
+        height: calc(100vh - 170px);
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
 
+        &__wrapper {
+            display: flex;
+            flex-direction: column;
+            align-self: center;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
         &__icon {
-            height: 64px;
-            width: 64px;
-            margin-bottom: 8px;
+            height: 48px;
+            width: 48px;
+            margin-bottom: 16px;
         }
         &__text {
             font-size: 14px;
+            color: $COLOR_LIGHT_BLACK_3;
         }
     }
     // portfolio card
@@ -144,6 +150,22 @@
                 &:before {
                     background-image: url('../images/portfolio/ic_no_resale.svg');
                 }
+            }
+        }
+    }
+}
+
+// Dark Theme
+.theme-wrapper.dark {
+    .app-contents .portfolio {
+        &-empty {
+            &__icon {
+                path {
+                    fill: $COLOR_DARK_BLUE_5;
+                }
+            }
+            &__text {
+                color: $COLOR_DARK_BLUE_8 !important;
             }
         }
     }

@@ -51,6 +51,36 @@ footer {
                 }
             }
         }
+        &.footer-links-left {
+            margin-right: auto;
+
+            .ic-positions {
+                svg {
+                    margin-bottom: 5px;
+                }
+                &:after {
+                    content: '';
+                    width: 2px;
+                    height: 2px;
+                    border-radius: 50%;
+                    background-color: $COLOR_LIGHT_BLACK_1;
+                    position: absolute;
+                    margin-top: 10px;
+                    right: 15px;
+                    display: block;
+                }
+                &.active {
+                    background: none !important;
+
+                    svg {
+                        margin-bottom: 0;
+                    }
+                    &:after {
+                        display: none;
+                    }
+                }
+            }
+        }
     }
     @media (max-width: 768px) {
         display: none;
