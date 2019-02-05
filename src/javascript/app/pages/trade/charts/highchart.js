@@ -123,7 +123,7 @@ const Highchart = (() => {
             return null;
         }
 
-        HighchartUI.updateLabels(chart, getHighchartLabelParams());
+        HighchartUI.updateLabels(chart, getHighchartLabelParams(null, !isEmptyObject(init_options.history)));
 
         const display_decimals = (history ? history.prices[0] : candles[0].open).split('.')[1].length || 3;
 
