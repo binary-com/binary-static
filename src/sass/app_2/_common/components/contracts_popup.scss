@@ -389,6 +389,16 @@ div.contracts-popup-container {
                 &:hover:not(.selected) {
                     background: $COLOR_DARK_BLUE_4;
                 }
+                .trade-type-info-icon {
+                    g {
+                        circle {
+                            stroke: $COLOR_DARK_BLUE_7;
+                        }
+                        g {
+                            fill: $COLOR_DARK_BLUE_7;
+                        }
+                    }
+                }
             }
         }
         .category-wrapper {
