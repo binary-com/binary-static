@@ -13,6 +13,7 @@ const addComma         = require('../../../common/currency').addComma;
 const localize         = require('../../../../_common/localize').localize;
 const State            = require('../../../../_common/storage').State;
 const getPropertyValue = require('../../../../_common/utility').getPropertyValue;
+const isEmptyObject    = require('../../../../_common/utility').isEmptyObject;
 
 const Highchart = (() => {
     let chart,
@@ -163,9 +164,10 @@ const Highchart = (() => {
         });
     };
 
-    const getHighchartLabelParams = (is_reset_barrier) => ({
+    const getHighchartLabelParams = (is_reset_barrier, is_tick_type) => ({
         is_chart_delayed,
         is_reset_barrier,
+        is_tick_type,
         contract_type       : contract.contract_type,
         is_forward_starting : purchase_time !== start_time,
         is_sold_before_start: sell_time < start_time,
@@ -261,7 +263,7 @@ const Highchart = (() => {
 
                         // don't draw start time for contracts that are sold before contract starts
                         if (sell_time < start_time) {
-                            HighchartUI.updateLabels(chart, getHighchartLabelParams());
+                            HighchartUI.updateLabels(chart, getHighchartLabelParams(null, !isEmptyObject(history)));
                         } else {
                             drawLineX({ value: start_time });
                         }
