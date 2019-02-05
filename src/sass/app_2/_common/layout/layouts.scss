@@ -4,38 +4,16 @@
     overflow-y: auto;
     overflow-x: hidden;
 
-    &--show-portfolio-drawer {
-        padding-right: $PORTFOLIO_DRAWER_WIDTH;
-
-        .trade-container {
-            transform: translateX(-#{$PORTFOLIO_DRAWER_WIDTH});
-            margin-right: -#{$PORTFOLIO_DRAWER_WIDTH};
-        }
+    &--show-positions-drawer {
         .chart-container {
-            .ciq-chart {
-                .cq-top-ui-widgets, .cq-chart-controls {
-                    transform: translateX(#{$PORTFOLIO_DRAWER_WIDTH});
-                }
-                .cq-top-ui-widgets .info-box {
-                    transform: translateX(-#{$PORTFOLIO_DRAWER_WIDTH});
-                }
-            }
-            .cq-chart-controls {
-                will-change: max-width;
-                max-width: calc(100% - #{$PORTFOLIO_DRAWER_WIDTH});
-                transform: translateX(#{$PORTFOLIO_DRAWER_WIDTH});
-            }
-            .cq-chart-control-left {
-                .cq-chart-controls {
-                    transform: translateX(#{$PORTFOLIO_DRAWER_WIDTH}) !important;
-                }
-                .info-box {
-                    transform: translateX(-#{$PORTFOLIO_DRAWER_WIDTH}) !important;
-                }
-            }
+            width: calc(100% - (#{$POSITIONS_DRAWER_WIDTH} + #{$POSITIONS_DRAWER_MARGIN})) !important;
+            margin-left: calc(#{$POSITIONS_DRAWER_WIDTH} + #{$POSITIONS_DRAWER_MARGIN});
+            transition: all 0.25s ease;
         }
     }
     .chart-container {
+        width: 100%;
+
         .cq-chart-control-left {
             .cq-chart-controls {
                 transform: translateX(0);
@@ -207,6 +185,32 @@
             .smartcharts-mobile .cq-modal-dropdown .cq-menu-overlay .cq-menu-dropdown {
                 bottom: 48px;
             }
+        }
+    }
+
+    .advanced-simple-toggle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 32px;
+        width: 100%;
+        margin-top: 8px;
+        margin-bottom: -8px;
+        border: 0;
+        background: none;
+
+        &__icon {
+            transition: transform 0.2s ease;
+
+            &--active {
+                transform: rotate(180deg);
+            }
+        }
+        &:hover {
+            cursor: pointer;
+        }
+        &:focus {
+            outline: none;
         }
     }
 }

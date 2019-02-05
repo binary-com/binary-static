@@ -74,7 +74,6 @@ export default class URLHelper {
                     }
                 });
         }
-
         return query_params;
     }
 
