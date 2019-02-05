@@ -4,6 +4,7 @@ import { configure, shallow } from 'enzyme';
 import Adapter                from 'enzyme-adapter-react-16';
 import { Link }               from 'react-router-dom';
 import { ButtonLink }         from '../index';
+import { TestChildren }       from '../../../../test_helper';
 
 configure({ adapter: new Adapter() });
 
@@ -13,14 +14,8 @@ describe('<ButtonLink />', () => {
         expect(wrapper).to.have.length(1);
     });
     it('should render children when passed in', () => {
-        const child_div = <div className='sweet-child-of-mine' />;
-        const wrapper = shallow(
-            <ButtonLink>
-                { child_div }
-            </ButtonLink>
-        );
-        expect(wrapper.contains(child_div)).to.equal(true);
-    });
+        TestChildren(<ButtonLink />);
+    })
     it('should render one <Link />', () => {
         const wrapper = shallow(
             <ButtonLink />

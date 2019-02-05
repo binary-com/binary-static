@@ -3,6 +3,7 @@ import { expect }             from 'chai';
 import { configure, shallow } from 'enzyme';
 import Adapter                from 'enzyme-adapter-react-16';
 import Transition             from '../transition.jsx';
+import { TestChildren }       from '../../../../../test_helper';
 
 configure({ adapter: new Adapter() });
 
@@ -12,12 +13,6 @@ describe('Transition', () => {
         expect(wrapper).to.have.length(1);
     });
     it('should render children when passed in', () => {
-        const child_div = <div className='sweet-child-of-mine' />;
-        const wrapper = shallow(
-            <Transition>
-                { child_div }
-            </Transition>
-        );
-        expect(wrapper.contains(child_div)).to.be.true;
+        TestChildren(<Transition />);
     });
 });

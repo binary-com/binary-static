@@ -1,10 +1,11 @@
-import React      from 'react';
-import { expect } from 'chai';
+import React            from 'react';
+import { expect }       from 'chai';
 import { 
     configure, 
-    shallow }     from 'enzyme';
-import Adapter    from 'enzyme-adapter-react-16'; // TODO: move this to a test config file
-import Calendar   from '../index';
+    shallow }           from 'enzyme';
+import Adapter          from 'enzyme-adapter-react-16'; // TODO: move this to a test config file
+import Calendar         from '../index';
+import { TestChildren } from '../../../../../test_helper';
 
 configure({ adapter: new Adapter() }); // TODO: move this to a test config file
 
@@ -16,12 +17,6 @@ describe('<Calendar />', () => {
     });
 
     it('should render children when passed in', () => {
-        const child_div = <div className='sweet-child-of-mine' />;
-        const wrapper = shallow(
-            <Calendar>
-                { child_div }
-            </Calendar>
-        );
-        expect(wrapper.contains(child_div)).to.equal(true);
+        TestChildren(<Calendar />);
     });
 });
