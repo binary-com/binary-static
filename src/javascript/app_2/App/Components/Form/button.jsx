@@ -31,7 +31,7 @@ const Button = ({
 };
 
 Button.propTypes = {
-    children        : PropTypes.object,
+    children        : PropTypes.node,
     className       : PropTypes.string,
     has_effect      : PropTypes.bool,
     id              : PropTypes.string,

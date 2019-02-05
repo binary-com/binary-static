@@ -4,9 +4,15 @@
     &.padding {
         padding: 16px;
     }
+    .time-picker-icon {
+        margin: auto;
+        position: absolute;
+        top: 8px;
+        right: 5%;
+    }
     .time-picker-input {
         height: 32px;
-        padding: 0 8px;
+        padding: 0;
         border-radius: 4px;
         box-sizing: border-box;
         font-size: 16px;
@@ -14,6 +20,9 @@
         margin: 0;
         cursor: pointer;
 
+        input {
+            text-align: center;
+        }
         &::placeholder {
             color: $COLOR_GRAY;
         }

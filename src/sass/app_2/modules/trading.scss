@@ -143,6 +143,12 @@
 
             .input-field {
                 display: inline-block;
+
+                input {
+                    &:active, &:focus {
+                        box-shadow: none;
+                    }
+                }
             }
             label {
                 vertical-align: middle;
@@ -258,6 +264,55 @@
                 }
             }
         }
+        &.barriers {
+            .fieldset-header {
+                text-align: center;
+                height: 1.2rem;
+                margin-top: 2px;
+
+                .field-info {
+                    width: 100%;
+                    left: 0 !important;
+                }
+            }
+            .barriers-wrapper {
+                display: flex;
+
+                &:first-child {
+                    padding-right: 8px;
+                }
+            }
+            .input-field {
+                input {
+                    padding-left: 3px;
+                }
+                &.single {
+                    width: 100%;
+                }
+                &.multiple {
+                    input {
+                        padding-left: 25px;
+                        padding-right: 9px;
+                        text-align: center;
+                    }
+                    &:first-of-type {
+                        padding-right: 8px;
+                    }
+                }
+            }
+            .up, .down {
+                position: absolute;
+                fill: $COLOR_LIGHT_BLACK;
+            }
+            .up {
+                margin-top: 15px;
+                right: 86.5%;
+            }
+            .down {
+                margin-top: 15px;
+                right: 39%;
+            }
+        }
     }
     div.purchase-wrapper {
         position: relative;
@@ -370,7 +425,6 @@
         fieldset.purchase-option {
             padding-top: 8px;
             padding-bottom: 8px;
-            position: relative;
 
             div.submit-section {
                 .btn-purchase {
@@ -632,6 +686,13 @@
                 &:hover:after, &:hover:before {
                     opacity: 1;
                 }
+            }
+        }
+    }
+    fieldset {
+        &.barriers {
+            .up, .down {
+                fill: $COLOR_WHITE;
             }
         }
     }
