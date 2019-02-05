@@ -27,10 +27,9 @@ describe('Popover', () => {
         const wrapper = shallow(<Popover subtitle='This is a subtitle'>
             <div className='sweet-child-of-mine'></div>
         </Popover>);
-        wrapper.find('.sweet-child-of-mine').simulate('mouseenter');
+        wrapper.find('.sweet-child-of-mine').prop('onMouseEnter')();
         expect(wrapper.state('is_open')).to.be.true;
-        wrapper.find('.sweet-child-of-mine').simulate('mouseleave');
+        wrapper.find('.sweet-child-of-mine').prop('onMouseLeave')();
         expect(wrapper.state('is_open')).to.be.false;
     });
-
 });
