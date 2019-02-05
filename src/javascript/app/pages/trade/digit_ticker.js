@@ -192,6 +192,9 @@ const DigitTicker = (() => {
     };
 
     const update = (current_tick_count, { quote, epoch }) => {
+        if (current_tick_count > total_tick_count) {
+            return;
+        }
         setElements(epoch);
         el_container.classList.remove('invisible');
         adjustBoxSizes();
