@@ -6,7 +6,14 @@ import {
 import Duration                 from './duration.jsx';
 
 class DurationWrapper extends React.Component {
-    hasDurationUnit = (duration_unit) => this.props.duration_units_list.some(du => du.value === duration_unit);
+    hasDurationUnit = (duration_unit) => {
+        let duration_list = [...this.props.duration_units_list];
+
+        if (this.props.duration_units_list.length > 1 && !this.props.is_advanced_duration) {
+            duration_list = duration_list.filter(du => du.value === 'm' || du.value === 't');
+        }
+        return duration_list.some(du => du.value === duration_unit);
+    };
 
     async setDurationUnit() {
         const new_duration_unit  = this.props.duration_units_list[0].value;
@@ -32,10 +39,11 @@ class DurationWrapper extends React.Component {
     }
 
     componentWillReact() {
-        const simple_is_missing_duration_unit = this.props.simple_duration_unit === 'd' && this.props.duration_units_list.length === 4;
-        const current_duration                = this.props.is_advanced_duration ?
+        const simple_is_missing_duration_unit = !this.props.is_advanced_duration && this.props.simple_duration_unit === 'd' && this.props.duration_units_list.length === 4;
+        const current_duration_unit           = this.props.is_advanced_duration ?
             this.props.advanced_duration_unit : this.props.simple_duration_unit;
-        const has_missing_duration_unit       = !this.hasDurationUnit(current_duration);
+        const current_duration                = this.props.getDurationFromUnit(this.props.duration_unit);
+        const has_missing_duration_unit       = !this.hasDurationUnit(current_duration_unit);
         const simple_is_not_type_duration     = !this.props.is_advanced_duration && this.props.expiry_type !== 'duration';
         const advanced_has_wrong_expiry       = this.props.is_advanced_duration
             && this.props.expiry_type !== this.props.advanced_expiry_type;
@@ -52,6 +60,10 @@ class DurationWrapper extends React.Component {
 
         if (advanced_has_wrong_expiry) {
             this.props.onChange({ target: { name: 'expiry_type', value: this.props.advanced_expiry_type } });
+        }
+
+        if (this.props.duration !== current_duration) {
+            this.props.onChangeUiStore({ name: `duration_${this.props.duration_unit}`, value: this.props.duration });
         }
     }
 
