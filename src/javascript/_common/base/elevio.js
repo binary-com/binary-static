@@ -13,6 +13,8 @@ const Elevio = (() => {
             const current_language         = getLanguage().toLowerCase();
             if (available_elev_languages.indexOf(current_language) !== -1) {
                 window._elev.setLanguage(current_language); // eslint-disable-line no-underscore-dangle
+            } else {
+                window._elev.setLanguage('en');
             }
             setUserInfo(elev);
             setTranslations(elev);
