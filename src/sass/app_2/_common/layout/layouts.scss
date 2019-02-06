@@ -127,11 +127,11 @@
                 }
             }
             div.cq-chart-controls {
-                border-right: 1px solid $COLOR_GRAY;
+                border-right: 1px solid $COLOR_LIGHT_BLACK_4;
             }
             div.cq-chart-control-left {
                 .cq-chart-controls {
-                    border-top: 1px solid $COLOR_GRAY;
+                    border-top: 1px solid $COLOR_LIGHT_BLACK_4;
                 }
                 .cq-top-ui-widgets {
                     width: calc(100% - 90px);
@@ -156,7 +156,7 @@
             // smartchart library style fixes
             .cq-context {
                 div.cq-chart-controls {
-                    border: 1px solid $COLOR_GRAY;
+                    border: 1px solid $COLOR_LIGHT_BLACK_4;
                 }
             }
             .cq-modal-dropdown {
@@ -222,7 +222,7 @@
 .category-wrapper, .type-wrapper {
     width: 24px;
     height: 24px;
-    background: $COLOR_GRAY;
+    background: $COLOR_LIGHT_BLACK_4_SOLID;
     border-radius: 3px;
     display: flex;
     align-items: center;
@@ -256,6 +256,6 @@
 
     p {
         @include interpolate(font-size, 320px, 1440px, 14px, 20px);
-        color: $COLOR_LIGHT_BLACK;
+        color: $COLOR_LIGHT_BLACK_1;
     }
 }
