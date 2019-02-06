@@ -99,7 +99,7 @@ const Index = () => (
                         <p>{it.L('Want to be a part of our dynamic culture? Browse all our openings and see where you fit:')}</p>
                     </div>
                     <div className='center-element'>
-                        <a className='button-secondary' href={it.url_for('careers?anchor=open-positions')}>
+                        <a className='button' href={it.url_for('careers?anchor=open-positions')}>
                             <span>{it.L('Open positions')}</span>
                         </a>
                     </div>
@@ -136,7 +136,7 @@ const Index = () => (
         <div className='container'>
             <div className='gr-parent'>
                 <p>{it.L('[_1] is owned and operated by the Binary Group Ltd. group of companies. For more information, [_2]visit our history page[_3].', it.website_name, `<a href="${ it.url_for('group-history') }">`, '</a>')}</p>
-                <p>{it.L('In the UK, our clients trade through Binary (IOM) Ltd and Binary Investments (Europe) Ltd. In the Isle of Man, they trade through Binary (IOM) Ltd. In the European Union (except UK), they trade through Binary (Europe) Ltd and Binary Investments (Europe) Ltd. In the rest of the world, they trade through Binary (C.R.) S.A.')}</p>
+                <p>{it.L('In the UK, our clients trade through Binary (IOM) Ltd and Binary Investments (Europe) Ltd. In the Isle of Man, they trade through Binary (IOM) Ltd. In the European Union (except UK), they trade through Binary (Europe) Ltd and Binary Investments (Europe) Ltd. In the rest of the world, they trade through Binary (C.R.) S.A., Binary (V) Ltd, Binary (BVI) Ltd and Binary (FX) Ltd.')}</p>
             </div>
         </div>
     </div>

@@ -6,8 +6,9 @@
         background: $COLOR_WHITE;
         height: 30px;
         cursor: pointer;
-        border: solid 1px $COLOR_GRAY;
+        border: solid 1px $COLOR_LIGHT_BLACK_4;
         border-radius: $BORDER_RADIUS;
+        font-size: 0.85rem;
 
         span {
             font-size: inherit;
@@ -21,11 +22,7 @@
             outline: none;
         }
         &:hover {
-            border-color: $COLOR_BLUE;
-
-            & + .select-arrow {
-                color: $COLOR_BLUE;
-            }
+            border-color: $COLOR_LIGHT_GRAY_1;
         }
     }
     .select-arrow {
@@ -43,7 +40,7 @@
         transition: transform 0.2s ease;
         transform: rotate(0deg);
         transform-origin: 50% 45%;
-        color: $COLOR_GRAY;
+        color: $COLOR_LIGHT_BLACK_4;
         font-size: 1.1rem;
 
         &:before {
@@ -57,7 +54,7 @@
         border-radius: $BORDER_RADIUS;
 
         .select-arrow {
-            color: $COLOR_BLUE;
+            color: $COLOR_DARK_BLUE_5;
         }
     }
     &--left {
@@ -75,7 +72,7 @@
         }
     }
     &--show > .dropdown__display--clicked {
-        border-color: $COLOR_BLUE;
+        border-color: $COLOR_LIGHT_GRAY_1;
     }
     &--show > .select-arrow {
         transform: rotate(-180deg);
@@ -106,14 +103,14 @@
             cursor: pointer;
             background: $COLOR_WHITE;
             border-radius: $BORDER_RADIUS;
-            border: 1px solid $COLOR_GRAY;
+            box-shadow: 0 2px 8px 0 $COLOR_LIGHT_BLACK_3;
 
             &--left {
                 width: unset;
 
                 .list__item span {
-                    padding-left: 16px;
-                    padding-right: 16px;
+                    padding-left: 32px;
+                    padding-right: 32px;
                     overflow: hidden;
                     white-space: nowrap;
                     text-align: center;
@@ -127,7 +124,7 @@
 
                 span {
                     text-transform: capitalize;
-                    color: $COLOR_GRAY;
+                    color: $COLOR_LIGHT_BLACK_4;
                     font-size: inherit;
                     font-weight: 300;
                 }
@@ -151,11 +148,11 @@
                     vertical-align: middle;
                 }
                 &:hover, &--highlighted {
-                    background-color: $COLOR_LIGHT_GRAY;
+                    background-color: $COLOR_LIGHT_BLACK_4;
                 }
                 &--selected span {
-                    background-color: $COLOR_BRANDBLUE_5;
-                    color: $COLOR_BLUE;
+                    background-color: $COLOR_LIGHT_GRAY_1;
+                    color: $COLOR_WHITE;
                     font-weight: 500;
                 }
             }
@@ -207,30 +204,33 @@
 .theme-wrapper.dark {
     .dropdown-container {
         .dropdown__display {
-            background: $COLOR_BLUE;
-            border-color: $COLOR_BRANDBLUE_85;
+            background: $COLOR_DARK_BLUE_2;
+            border-color: $COLOR_DARK_BLUE_2;
 
             &:hover, &:focus, &:active {
-                border-color: $COLOR_WHITE;
+                border-color: $COLOR_DARK_BLUE_7;
+            }
+            &:focus, &:active {
+                box-shadow: 0 0 0 0.2rem rgba(127, 131, 151, 0.3);
             }
         }
         &--show > .dropdown__display--clicked {
-            border-color: $COLOR_WHITE;
+            border-color: $COLOR_DARK_BLUE_7;
+            box-shadow: 0 0 0 0.2rem rgba(127, 131, 151, 0.3);
         }
         .list {
-            background: $COLOR_BLUE;
-            border-color: $COLOR_BRANDBLUE_85;
+            background: $COLOR_DARK_BLUE_3;
 
             .list__item {
-                color: $COLOR_BRANDBLUE_40;
+                color: $COLOR_DARK_BLUE_7;
 
                 &--selected span {
                     color: $COLOR_WHITE;
                     font-weight: 600;
-                    background: $COLOR_BRANDBLUE_85;
+                    background: $COLOR_DARK_BLUE_5;
                 }
                 &:hover, &--highlighted {
-                    background: $COLOR_BRANDBLUE_95;
+                    background: $COLOR_DARK_BLUE_4;
                 }
             }
         }

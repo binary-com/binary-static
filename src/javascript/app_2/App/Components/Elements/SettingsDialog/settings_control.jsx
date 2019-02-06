@@ -1,6 +1,6 @@
 import PropTypes    from 'prop-types';
 import React        from 'react';
-import ToggleButton from '../toggle_button.jsx';
+import SwitchButton from '../switch_button.jsx';
 
 const SettingsControl = ({
     children,
@@ -13,7 +13,7 @@ const SettingsControl = ({
     <div className='settings-row' onClick={toggle || onClick}>
         <span>{name}</span>
         {toggle ?
-            <ToggleButton
+            <SwitchButton
                 toggled={to_toggle}
                 style={style}
             />

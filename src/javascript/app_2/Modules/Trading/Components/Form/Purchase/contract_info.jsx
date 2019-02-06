@@ -19,7 +19,7 @@ const ContractInfo = ({
             <div className='purchase-info-wrapper'>
                 <div className='info-wrapper'>
                     <div>{localize('[_1]', proposal_info.obj_contract_basis.text)}</div>
-                    <div><Money amount={proposal_info.obj_contract_basis.value} currency={currency} /></div>
+                    <div className='info-wrapper__amount'><Money amount={proposal_info.obj_contract_basis.value} currency={currency} /></div>
                     <div className='icon_price_move_container'>
                         {has_increased !== null && <IconPriceMove type={has_increased ? 'profit' : 'loss'} />}
                     </div>
