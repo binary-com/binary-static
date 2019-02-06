@@ -1,6 +1,6 @@
 import {
     SmartChart,
-    setSmartChartsPublicPath } from '@binary-com/smartcharts';
+    setSmartChartsPublicPath } from 'smartcharts-beta';
 import PropTypes               from 'prop-types';
 import React                   from 'react';
 import Url                     from '_common/url';

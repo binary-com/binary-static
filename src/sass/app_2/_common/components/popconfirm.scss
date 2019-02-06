@@ -39,7 +39,7 @@ button.btn {
             justify-content: center;
 
             span {
-                color: $COLOR_BLUE;
+                color: $COLOR_DARK_BLUE_5;
                 font-size: 12px;
             }
         }
@@ -55,7 +55,7 @@ button.btn {
             margin-right: 8px;
         }
         h4 {
-            color: $COLOR_BLUE;
+            color: $COLOR_DARK_BLUE_5;
             font-size: 12px;
             font-weight: 300;
             text-transform: none;
@@ -190,23 +190,23 @@ button.btn {
 // Dark theme
 .theme-wrapper.dark {
     .popconfirm {
-        background: $COLOR_BRANDBLUE_95;
+        background: $COLOR_DARK_BLUE_3;
 
         &-title h4 {
-            color: $COLOR_WHITE;
+            color: $COLOR_DARK_BLUE_7;
         }
         &-buttons .btn {
-            background: $COLOR_BRANDBLUE_95;
+            background: $COLOR_DARK_BLUE_3;
 
             span {
-                color: $COLOR_WHITE;
+                color: $COLOR_DARK_BLUE_7;
             }
             &:hover {
-                background: $COLOR_BRANDBLUE_85;
+                background: $COLOR_DARK_BLUE_5;
             }
         }
         &:after {
-            border-color: $COLOR_BRANDBLUE_95;
+            border-color: $COLOR_DARK_BLUE_3;
         }
     }
 }

@@ -1,7 +1,7 @@
 span.tooltip {
     text-decoration: underline;
     text-decoration-style: dotted;
-    color: $COLOR_BLUE;
+    color: $COLOR_DARK_BLUE_5;
     font-size: inherit;
 
     i.question:after {
@@ -136,7 +136,7 @@ span.tooltip {
         &:before {
             background: rgba(255, 255, 255, 0.88);
             box-shadow: 0 2px 8px 0 rgba(20, 20, 20, 0.2);
-            color: $COLOR_BLUE;
+            color: $COLOR_DARK_BLUE_5;
         }
         &[data-tooltip-pos=top] {
             &:after {

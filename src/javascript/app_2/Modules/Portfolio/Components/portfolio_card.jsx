@@ -16,7 +16,11 @@ const PortfolioCard = ({
     reference,
     status,
 }) => (
-    <NavLink className='portfolio-card card-list__card' activeClassName='active' to={getContractPath(id)}>
+    <NavLink
+        className='portfolio-card card-list__card'
+        activeClassName='active'
+        to={getContractPath(id)}
+    >
         <div className='portfolio-card__header'>
             <span className='portfolio-card__date'>
                 <RemainingTime end_time={expiry_time} />

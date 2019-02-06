@@ -4,7 +4,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import getBaseName                 from 'Utils/URL/base_name';
 import { MobxProvider }            from 'Stores/connect';
 import ErrorBoundary               from './Components/Elements/Errors/error_boundary.jsx';
-import PortfolioDrawer             from './Components/Elements/PortfolioDrawer';
+import PositionsDrawer             from './Components/Elements/PositionsDrawer';
 import { POSITIONS }               from './Components/Elements/ToastMessage';
 import ToastMessage                from './Containers/toast_message.jsx';
 import AppContents                 from './Containers/Layout/app_contents.jsx';
@@ -24,7 +24,7 @@ const App = ({ root_store }) => (
                 <ErrorBoundary>
                     <AppContents>
                         <Routes />
-                        <PortfolioDrawer />
+                        <PositionsDrawer />
                         <ToastMessage position={POSITIONS.TOP_RIGHT} />
                     </AppContents>
                     <DenialOfServiceModal />

@@ -7,7 +7,7 @@ import {
     Share,
     StudyLegend,
     Timeperiod,
-    Views }           from '@binary-com/smartcharts';
+    Views }           from 'smartcharts-beta';
 import PropTypes      from 'prop-types';
 import React          from 'react';
 

@@ -10,5 +10,6 @@ export * from './icon_clear.jsx';
 export * from './icon_clock.jsx';
 export * from './icon_close.jsx';
 export * from './icon_exclamation.jsx';
+export * from './icon_minimize.jsx';
 export * from './icon_minus.jsx';
 export * from './icon_plus.jsx';

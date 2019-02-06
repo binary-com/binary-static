@@ -25,10 +25,10 @@
             p.acc-balance-id {
                 pointer-events: none;
                 line-height: 0.5;
-                color: $COLOR_LIGHT_BLACK;
+                color: $COLOR_LIGHT_BLACK_1;
                 font-size: 1rem;
                 padding: 0 8px 0 16px;
-                font-weight: 300;
+                font-weight: 600;
                 text-align: center;
 
                 &:after {
@@ -42,10 +42,10 @@
             }
             p.acc-balance-amount {
                 line-height: 100%;
-                color: $COLOR_GREEN;
+                color: $COLOR_GREEN_1;
                 font-size: 1rem;
                 padding: 0 16px 0 8px;
-                font-weight: 500;
+                font-weight: bold;
                 margin: 0 16px 0 0;
                 text-align: center;
                 pointer-events: none;
@@ -59,11 +59,10 @@
                 transition: transform 0.25s ease;
                 transform: rotate(0deg);
                 transform-origin: 50% 45%;
-                color: $COLOR_GRAY;
                 font-size: 1.1rem;
             }
             &:hover:not(.show) {
-                background: $COLOR_BRANDBLUE_5;
+                background: $COLOR_LIGHT_BLACK_4;
             }
             &--is-virtual {
                 p.acc-balance-amount {
@@ -88,9 +87,6 @@
                 .select-arrow {
                     transform: rotate(180deg);
                 }
-                p.acc-balance-id {
-                    font-weight: 500;
-                }
             }
         }
     }
@@ -104,9 +100,8 @@
     &-wrapper {
         position: absolute;
         background: $COLOR_WHITE;
-        border: 1px solid $COLOR_GRAY;
         transition: transform 0.25s ease, opacity 0.25s linear;
-        box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.8);
+        box-shadow: 0 2px 8px 0 $COLOR_LIGHT_BLACK_3;
         right: 0;
         top: calc(100% + 4px);
         width: 240px;
@@ -128,8 +123,8 @@
 
         span {
             padding: 8px 16px;
-            border: 1px dashed $COLOR_BLUE;
-            color: $COLOR_BLUE;
+            border: 1px dashed $COLOR_DARK_BLUE_2;
+            color: $COLOR_DARK_BLUE_2;
             font-size: 0.75rem;
             width: 100%;
             margin: 0 16px;
@@ -139,11 +134,11 @@
 
             &:before {
                 content: '\002B';
-                color: $COLOR_BLUE;
+                color: $COLOR_DARK_BLUE_2;
                 margin-right: 8px;
             }
             &:hover {
-                background: $COLOR_BRANDBLUE_5;
+                background: $COLOR_LIGHT_BLACK_4;
             }
         }
     }
@@ -152,13 +147,14 @@
         border-radius: $BORDER_RADIUS;
 
         &__group {
-            border-bottom: 4px solid $COLOR_GRAY;
+            border-bottom: 4px solid $COLOR_LIGHT_BLACK_4;
         }
         &__title {
             font-size: 0.875rem; //stylelint-disable-line number-max-precision
+            font-weight: bold;
             padding: 14px;
             display: block;
-            color: $COLOR_BLACK;
+            color: $COLOR_LIGHT_BLACK_1;
         }
         .acc-switcher-account {
             cursor: pointer;
@@ -223,26 +219,22 @@
             .acc-switcher__radio {
                 height: 10px;
                 width: 10px;
-                border: 2px solid $COLOR_DARK_GRAY;
+                border: 2px solid $COLOR_LIGHT_BLACK_3;
                 border-radius: 50%;
             }
             &:hover {
-                background: $COLOR_BRANDBLUE_5;
-
-                .acc-switcher__radio {
-                    border-color: $COLOR_BLUE;
-                }
+                background: $COLOR_LIGHT_BLACK_4;
             }
             &--selected {
                 .acc-switcher__radio {
-                    border-color: $COLOR_BLUE;
-                    background: $COLOR_BLUE;
+                    border-color: $COLOR_DARK_BLUE_2;
+                    background: $COLOR_DARK_BLUE_2;
                 }
             }
         }
         .acc-button {
             padding: 8px;
-            border-bottom: 1px solid $COLOR_GRAY;
+            border-bottom: 1px solid $COLOR_LIGHT_BLACK_4;
 
             button.btn {
                 margin: 0;
@@ -264,7 +256,7 @@
                 margin-left: 8px;
             }
             &:hover {
-                background: $COLOR_BRANDBLUE_5;
+                background: $COLOR_LIGHT_BLACK_4;
             }
         }
     }
@@ -274,95 +266,83 @@
 .theme-wrapper.dark {
     .acc-switcher {
         &-wrapper {
-            background: $COLOR_BRANDBLUE_95;
-            border-color: $COLOR_BRANDBLUE_85;
-        }
-        &-items {
-            background: $COLOR_BRANDBLUE_95;
-            border-color: $COLOR_BRANDBLUE_85;
+            background: $COLOR_DARK_BLUE_3;
         }
         &-account:hover {
-            background-color: $COLOR_BRANDBLUE_85;
+            background-color: $COLOR_DARK_BLUE_4;
         }
         &__list {
             &__group {
-                border-color: $COLOR_BRANDBLUE_85;
+                border-color: $COLOR_DARK_BLUE_2;
             }
             &__title {
-                color: $COLOR_BRANDBLUE_40;
+                color: $COLOR_DARK_BLUE_7;
             }
             .acc-switcher-account {
-                border-color: $COLOR_BRANDBLUE_85;
+                border-color: $COLOR_DARK_BLUE_2;
 
                 .acc-switcher__id {
-                    color: $COLOR_BRANDBLUE_40;
+                    color: $COLOR_DARK_BLUE_7;
                 }
                 .acc-switcher__radio {
-                    border-color: $COLOR_BRANDBLUE_40;
+                    border-color: $COLOR_DARK_BLUE_7;
                 }
                 &--selected {
                     .acc-switcher__id {
                         color: $COLOR_WHITE;
                     }
                     .acc-switcher__radio {
-                        border-color: $COLOR_GREEN;
-                        background: $COLOR_GREEN;
+                        border-color: $COLOR_GREEN_1;
+                        background: $COLOR_GREEN_1;
                     }
                 }
             }
             .acc-button {
-                border-color: $COLOR_BRANDBLUE_85;
+                border-color: $COLOR_DARK_BLUE_2;
             }
             .acc-logout {
-                border-color: $COLOR_BRANDBLUE_85;
-
                 span {
-                    color: $COLOR_BRANDBLUE_40;
+                    color: $COLOR_DARK_BLUE_7;
                 }
                 &:hover {
-                    background-color: $COLOR_BRANDBLUE_85;
+                    background-color: $COLOR_DARK_BLUE_4;
                 }
             }
         }
         &-header {
-            color: $COLOR_BRANDBLUE_40;
+            color: $COLOR_DARK_BLUE_7;
         }
         &__new-account span {
-            color: $COLOR_BRANDBLUE_40;
-            border-color: $COLOR_BRANDBLUE_40;
+            color: $COLOR_DARK_BLUE_7;
+            border-color: $COLOR_DARK_BLUE_7;
 
             &:before {
-                color: $COLOR_BRANDBLUE_40;
+                color: $COLOR_DARK_BLUE_7;
             }
             &:hover {
-                background: $COLOR_BRANDBLUE_85;
+                background: $COLOR_DARK_BLUE_4;
             }
         }
     }
     .acc-balance-container {
         .acc-balance {
             .acc-info {
-                p {
-                    color: $COLOR_BRANDBLUE_40;
+                p.acc-balance-id {
+                    color: $COLOR_WHITE;
                 }
                 &:hover:not(.show) {
-                    background-color: $COLOR_BRANDBLUE_85;
+                    background-color: $COLOR_DARK_BLUE_4;
 
                     .symbols {
-                        background: $COLOR_BRANDBLUE_85;
+                        background: $COLOR_DARK_BLUE_4;
                     }
                 }
                 .acc-balance-amount {
-                    color: $COLOR_GREEN;
-
                     .symbols {
-                        background: $COLOR_BLUE;
+                        background: $COLOR_DARK_BLUE_2;
                     }
                 }
                 &--show {
-                    p {
-                        color: $COLOR_WHITE;
-                    }
                     &:after {
                         background: $COLOR_WHITE;
                     }

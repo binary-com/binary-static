@@ -6,7 +6,7 @@ import BinaryLink          from '../../Routes/binary_link.jsx';
 import { getContractPath } from '../../Routes/helpers';
 import RemainingTime       from '../../../Containers/remaining_time.jsx';
 
-const PortfolioDrawerCard = ({
+const PositionsDrawerCard = ({
     currency,
     expiry_time,
     id,
@@ -15,23 +15,26 @@ const PortfolioDrawerCard = ({
     type,
     underlying,
 }) => (
-    <BinaryLink className='portfolio-drawer-card' to={getContractPath(id)}>
+    <BinaryLink
+        className='positions-drawer-card'
+        to={getContractPath(id)}
+    >
         <React.Fragment>
-            <div className='portfolio-drawer-card__type'>
+            <div className='positions-drawer-card__type'>
                 <ContractTypeCell type={type} />
             </div>
-            <div className={`portfolio-drawer-card__indicative portfolio-drawer-card__indicative--${status}`}>
+            <div className={`positions-drawer-card__indicative positions-drawer-card__indicative--${status}`}>
                 <Money amount={indicative} currency={currency} />
             </div>
-            <span className='portfolio-drawer-card__symbol'>{underlying}</span>
-            <span className='portfolio-drawer-card__remaining-time'>
+            <span className='positions-drawer-card__symbol'>{underlying}</span>
+            <span className='positions-drawer-card__remaining-time'>
                 <RemainingTime end_time={expiry_time} />
             </span>
         </React.Fragment>
     </BinaryLink>
 );
 
-PortfolioDrawerCard.propTypes = {
+PositionsDrawerCard.propTypes = {
     currency   : PropTypes.string,
     expiry_time: PropTypes.PropTypes.oneOfType([
         PropTypes.number,
@@ -44,4 +47,4 @@ PortfolioDrawerCard.propTypes = {
     underlying: PropTypes.string,
 };
 
-export default PortfolioDrawerCard;
+export default PositionsDrawerCard;

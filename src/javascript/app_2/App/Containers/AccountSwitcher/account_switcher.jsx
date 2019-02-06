@@ -21,6 +21,9 @@ class AccountSwitcher extends React.Component {
 
     handleLogout = () => {
         this.props.toggle();
+        if (this.props.is_positions_drawer_on) {
+            this.props.togglePositionsDrawer(); // TODO: hide drawer inside logout, once it is a mobx action
+        }
         requestLogout();
     }
 
@@ -116,27 +119,31 @@ class AccountSwitcher extends React.Component {
 }
 
 AccountSwitcher.propTypes = {
-    account_list      : PropTypes.array,
-    account_loginid   : PropTypes.string,
-    is_logged_in      : PropTypes.bool,
-    is_upgrade_enabled: PropTypes.bool,
-    is_virtual        : PropTypes.bool,
-    is_visible        : PropTypes.bool,
-    onClickUpgrade    : PropTypes.func,
-    toggle            : PropTypes.func,
-    upgrade_info      : PropTypes.object,
-    virtual_loginid   : PropTypes.string,
+    account_list          : PropTypes.array,
+    account_loginid       : PropTypes.string,
+    is_logged_in          : PropTypes.bool,
+    is_positions_drawer_on: PropTypes.bool,
+    is_upgrade_enabled    : PropTypes.bool,
+    is_virtual            : PropTypes.bool,
+    is_visible            : PropTypes.bool,
+    onClickUpgrade        : PropTypes.func,
+    toggle                : PropTypes.func,
+    togglePositionsDrawer : PropTypes.func,
+    upgrade_info          : PropTypes.object,
+    virtual_loginid       : PropTypes.string,
 };
 
 const account_switcher = connect(
-    ({ client }) => ({
-        account_list   : client.account_list,
-        account_loginid: client.loginid,
-        is_logged_in   : client.is_logged_in,
-        is_virtual     : client.is_virtual,
-        switchAccount  : client.switchAccount,
-        upgrade_info   : client.upgrade_info,
-        virtual_loginid: client.virtual_account_loginid,
+    ({ client, ui }) => ({
+        account_list          : client.account_list,
+        account_loginid       : client.loginid,
+        is_logged_in          : client.is_logged_in,
+        is_virtual            : client.is_virtual,
+        switchAccount         : client.switchAccount,
+        upgrade_info          : client.upgrade_info,
+        virtual_loginid       : client.virtual_account_loginid,
+        is_positions_drawer_on: ui.is_positions_drawer_on,
+        togglePositionsDrawer : ui.togglePositionsDrawer,
 
     }),
 )(AccountSwitcher);

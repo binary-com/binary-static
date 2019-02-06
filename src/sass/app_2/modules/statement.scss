@@ -51,10 +51,10 @@ $side-padding: 12px;
         font-weight: bold;
 
         &--profit {
-            color: $COLOR_LIGHT_GREEN;
+            color: $COLOR_GREEN_1;
         }
         &--loss {
-            color: $COLOR_LIGHT_RED;
+            color: $COLOR_RED;
         }
     }
     /*
@@ -65,13 +65,13 @@ $side-padding: 12px;
         MOBILE CARDS START
     */
     &--card-view {
-        background: $COLOR_LIGHT_GRAY;
+        background: $COLOR_LIGHT_BLACK_4_SOLID;
         overflow: hidden;
 
         .statement-filter {
             background-color: $COLOR_WHITE;
             padding: 0 $side-padding;
-            border-bottom: 1px solid $COLOR_GRAY;
+            border-bottom: 1px solid $COLOR_LIGHT_BLACK_4;
 
             &__content {
                 padding: 0;
@@ -101,12 +101,12 @@ $side-padding: 12px;
         &__header {
             font-size: 10px;
             padding: 0.5rem;
-            border-bottom: 1px solid $COLOR_GRAY;
+            border-bottom: 1px solid $COLOR_LIGHT_BLACK_4;
             display: flex;
             justify-content: space-between;
         }
         &__refid a {
-            color: $COLOR_LIGHT_BLUE;
+            color: $COLOR_SKY_BLUE;
             text-decoration: none;
         }
         &__body {
@@ -135,10 +135,10 @@ $side-padding: 12px;
         }
         &__amount {
             &--sell, &--deposit {
-                color: $COLOR_LIGHT_GREEN;
+                color: $COLOR_GREEN_1;
             }
             &--buy, &--withdrawal {
-                color: $COLOR_LIGHT_RED;
+                color: $COLOR_RED;
             }
             &--sell:before {
                 background-image: url('../images/statement/ic_sell.svg');

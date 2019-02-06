@@ -1,6 +1,6 @@
 import {
     AssetInformation,
-    ChartTitle }      from '@binary-com/smartcharts';
+    ChartTitle }      from 'smartcharts-beta';
 import PropTypes      from 'prop-types';
 import React          from 'react';
 

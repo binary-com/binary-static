@@ -1,4 +1,4 @@
-import { Marker }   from '@binary-com/smartcharts';
+import { Marker }   from 'smartcharts-beta';
 import { toJS }     from 'mobx';
 import { observer } from 'mobx-react';
 import PropTypes    from 'prop-types';

@@ -37,13 +37,13 @@ body, input {
     .contracts-popup-container {
         &.desktop-only {
             span {
-                @include interpolate(font-size, 320px, 1440px, 11px, 12px);
+                @include interpolate(font-size, 320px, 1440px, 11px, 14px);
             }
         }
     }
     fieldset {
         div, input, span {
-            @include interpolate(font-size, 320px, 1440px, 11px, 12px);
+            @include interpolate(font-size, 320px, 1440px, 11px, 14px);
         }
         &.purchase-option > .box {
             & > .purchase-info-wrapper, & > .error-info-wrapper {

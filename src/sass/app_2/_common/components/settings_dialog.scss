@@ -3,7 +3,6 @@
     width: 320px;
     right: 12px;
     top: -250px;
-    border: 1px solid $COLOR_GRAY;
     background: $COLOR_WHITE;
     height: 280px;
     border-radius: $BORDER_RADIUS;
@@ -51,7 +50,7 @@
             justify-content: center;
             align-items: flex-start;
             height: 216px;
-            background: $COLOR_LIGHT_GRAY;
+            background: $COLOR_LIGHT_BLACK_4_SOLID;
         }
         .settings-header {
             padding: 16px;
@@ -63,7 +62,6 @@
             align-items: flex-start;
             margin-top: 16px;
             background: $COLOR_WHITE;
-            border: 1px solid $COLOR_GRAY;
 
             .settings-row {
                 width: 260px;
@@ -76,13 +74,10 @@
 
                 span {
                     font-size: 12px;
-                    color: $COLOR_LIGHT_BLACK;
-                }
-                &:not(:last-child) {
-                    border-bottom: 1px solid $COLOR_GRAY;
+                    color: $COLOR_LIGHT_BLACK_1;
                 }
                 &:hover {
-                    background-color: $COLOR_LIGHT_GRAY;
+                    background-color: $COLOR_LIGHT_BLACK_4_SOLID;
                 }
             }
         }
@@ -95,7 +90,7 @@
         left: 0;
         right: 0;
         pointer-events: none;
-        background: $COLOR_LIGHT_GRAY;
+        background: $COLOR_LIGHT_BLACK_4_SOLID;
         border-radius: $BORDER_RADIUS;
         opacity: 0;
         transition: all 0.3s ease 0.15s;
@@ -112,7 +107,6 @@
             padding: 8px 16px;
             display: flex;
             background: $COLOR_WHITE;
-            border-bottom: 1px solid $COLOR_GRAY;
             cursor: pointer;
             text-decoration: none;
             text-transform: capitalize;
@@ -134,25 +128,16 @@
                 cursor: pointer;
 
                 &:hover {
-                    background: $COLOR_LIGHT_GRAY;
+                    background: $COLOR_LIGHT_BLACK_4_SOLID;
                 }
                 &:nth-child(odd) {
                     grid-column: 1;
-                    border: 1px solid $COLOR_GRAY;
-                    border-bottom-width: 0;
                 }
                 &:nth-child(even) {
                     grid-column: 2;
-                    border: 1px solid $COLOR_GRAY;
-                    border-left-width: 0;
-                    border-bottom-width: 0;
                 }
                 &:last-child:not(:nth-child(even)) {
-                    border-top-width: 1px;
                     margin-top: -1px;
-                }
-                &:nth-last-child(-n+2) {
-                    border-bottom-width: 1px;
                 }
                 i.flag {
                     padding-left: 8px;
@@ -225,60 +210,47 @@
 // Dark Theme
 .theme-wrapper.dark {
     .settings-dialog {
-        background: $COLOR_BLUE;
-        border-color: $COLOR_BRANDBLUE_85;
-
         .settings-dialog-container {
-            background: $COLOR_BLUE;
+            background: $COLOR_DARK_BLUE_3;
 
             .tab-content {
-                background: $COLOR_BRANDBLUE_95;
+                background: $COLOR_DARK_BLUE_3;
             }
             .general-setting-container, .chart-setting-container {
-                background: $COLOR_BLUE;
-                border-color: $COLOR_BRANDBLUE_85;
+                background: $COLOR_DARK_BLUE_5;
 
             }
+            .settings-header {
+                color: $COLOR_DARK_BLUE_7;
+            }
             .settings-row {
-                border-color: $COLOR_BRANDBLUE_85;
+                background-color: $COLOR_DARK_BLUE_2;
 
                 span {
-                    color: $COLOR_BRANDBLUE_40;
+                    color: $COLOR_DARK_BLUE_7;
                 }
                 &:hover {
-                    background-color: $COLOR_BRANDBLUE_95;
-                    color: $COLOR_WHITE;
+                    background-color: $COLOR_DARK_BLUE_4;
                 }
             }
         }
         .language-dialog-container {
-            background: $COLOR_BRANDBLUE_95;
-            border-color: $COLOR_BRANDBLUE_85;
+            background: $COLOR_DARK_BLUE_3;
 
             .language-header {
-                background: $COLOR_BLUE;
-                color: $COLOR_BRANDBLUE_40;
-                border-color: $COLOR_BRANDBLUE_85;
-
-                svg {
-                    stroke: $COLOR_BRANDBLUE_40;
-                }
+                background: $COLOR_DARK_BLUE_3;
+                color: $COLOR_DARK_BLUE_7;
             }
             .language-row {
-                background: $COLOR_BLUE;
-                color: $COLOR_BRANDBLUE_40;
-                border-color: $COLOR_BRANDBLUE_85;
+                background: $COLOR_DARK_BLUE_2;
+                color: $COLOR_DARK_BLUE_7;
 
                 a span {
-                    color: $COLOR_BRANDBLUE_40;
+                    color: $COLOR_DARK_BLUE_7;
                 }
                 &:hover {
                     a {
-                        background: $COLOR_BRANDBLUE_85;
-
-                        span {
-                            color: $COLOR_WHITE;
-                        }
+                        background: $COLOR_DARK_BLUE_4;
                     }
                 }
             }

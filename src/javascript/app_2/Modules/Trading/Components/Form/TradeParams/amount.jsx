@@ -65,6 +65,7 @@ const Amount = ({
                 <InputField
                     error_messages={validation_errors.amount}
                     fractional_digits={getDecimalPlaces(currency)}
+                    is_autocomplete_disabled
                     is_float
                     is_nativepicker={is_nativepicker}
                     max_length={10}

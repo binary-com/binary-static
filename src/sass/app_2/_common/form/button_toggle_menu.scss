@@ -23,12 +23,12 @@
         text-transform: capitalize;
 
         &:hover:not(&--active) {
-            background-color: $COLOR_GRAY;
+            background-color: $COLOR_LIGHT_BLACK_4;
         }
         &--active {
             font-weight: bold;
             color: $COLOR_WHITE;
-            background-color: $COLOR_DARK_GRAY;
+            background-color: $COLOR_LIGHT_GRAY_1;
         }
     }
 }
@@ -36,14 +36,15 @@
 .theme-wrapper.dark {
     .button-menu {
         &__button {
-            color: $COLOR_WHITE;
-            background-color: $COLOR_BLUE;
+            color: $COLOR_DARK_BLUE_7;
+            background-color: $COLOR_DARK_BLUE_2;
 
             &:hover:not(&--active) {
-                background-color: $COLOR_GRAY;
+                background-color: $COLOR_DARK_BLUE_4;
             }
             &--active {
-                background-color: $COLOR_BRANDBLUE_85;
+                color: $COLOR_WHITE;
+                background-color: $COLOR_DARK_BLUE_5;
             }
         }
     }

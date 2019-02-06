@@ -17,11 +17,11 @@ const MenuDrawer = ({
     is_dark_mode,
     is_logged_in,
     is_mobile,
-    is_portfolio_drawer_on,
+    is_positions_drawer_on,
     // is_purchase_confirmed,
     is_purchase_locked,
     toggleDarkMode,
-    togglePortfolioDrawer,
+    togglePositionsDrawer,
     togglePurchaseLock,
     // togglePurchaseConfirmation,
 }) => (
@@ -70,8 +70,8 @@ const MenuDrawer = ({
                 icon={<IconLogout className='drawer-icon' />}
                 text={localize('Logout')}
                 custom_action={() => {
-                    if (is_portfolio_drawer_on) {
-                        togglePortfolioDrawer(); // TODO: hide drawer inside logout, once it is a mobx action
+                    if (is_positions_drawer_on) {
+                        togglePositionsDrawer(); // TODO: hide drawer inside logout, once it is a mobx action
                     }
                     requestLogout();
                 }}
@@ -85,11 +85,11 @@ MenuDrawer.propTypes = {
     is_dark_mode              : PropTypes.bool,
     is_logged_in              : PropTypes.bool,
     is_mobile                 : PropTypes.bool,
-    is_portfolio_drawer_on    : PropTypes.bool,
+    is_positions_drawer_on    : PropTypes.bool,
     is_purchase_confirmed     : PropTypes.bool,
     is_purchase_locked        : PropTypes.bool,
     toggleDarkMode            : PropTypes.func,
-    togglePortfolioDrawer     : PropTypes.func,
+    togglePositionsDrawer     : PropTypes.func,
     togglePurchaseConfirmation: PropTypes.func,
     togglePurchaseLock        : PropTypes.func,
 };
@@ -99,11 +99,11 @@ export default connect(
         is_logged_in              : client.is_logged_in,
         is_dark_mode              : ui.is_dark_mode_on,
         is_mobile                 : ui.is_mobile,
-        is_portfolio_drawer_on    : ui.is_portfolio_drawer_on,
+        is_positions_drawer_on    : ui.is_positions_drawer_on,
         is_purchase_confirmed     : ui.is_purchase_confirm_on,
         is_purchase_locked        : ui.is_purchase_lock_on,
         toggleDarkMode            : ui.toggleDarkMode,
-        togglePortfolioDrawer     : ui.togglePortfolioDrawer,
+        togglePositionsDrawer     : ui.togglePositionsDrawer,
         togglePurchaseConfirmation: ui.togglePurchaseConfirmation,
         togglePurchaseLock        : ui.togglePurchaseLock,
     }),
