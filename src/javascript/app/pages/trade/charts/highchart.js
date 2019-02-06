@@ -44,6 +44,7 @@ const Highchart = (() => {
         is_history_send,
         is_entry_tick_barrier_selected,
         is_response_id_set,
+        is_tick_type,
         prev_barriers; // For checking if barrier was updated
 
     const initOnce = () => {
@@ -51,7 +52,7 @@ const Highchart = (() => {
         lines_drawn = new Set();
 
         is_initialized = is_chart_delayed = is_chart_subscribed = stop_streaming = is_response_id_set =
-            is_contracts_for_send = is_history_send = is_entry_tick_barrier_selected = false;
+            is_contracts_for_send = is_history_send = is_entry_tick_barrier_selected = is_tick_type = false;
     };
 
     const initializeValues = () => {
@@ -123,7 +124,7 @@ const Highchart = (() => {
             return null;
         }
 
-        HighchartUI.updateLabels(chart, getHighchartLabelParams(null, !isEmptyObject(init_options.history)));
+        HighchartUI.updateLabels(chart, getHighchartLabelParams());
 
         const display_decimals = (history ? history.prices[0] : candles[0].open).split('.')[1].length || 3;
 
@@ -164,7 +165,7 @@ const Highchart = (() => {
         });
     };
 
-    const getHighchartLabelParams = (is_reset_barrier, is_tick_type) => ({
+    const getHighchartLabelParams = (is_reset_barrier) => ({
         is_chart_delayed,
         is_reset_barrier,
         is_tick_type,
@@ -214,6 +215,7 @@ const Highchart = (() => {
             const tick    = response.tick;
             const ohlc    = response.ohlc;
             response_id   = response[type].id;
+            is_tick_type  = !isEmptyObject(history);
             // send view popup the response ID so view popup can forget the calls if it's closed before contract ends
             if (response_id && !is_response_id_set) {
                 if (State.get('is_trading') || State.get('is_mb_trading')) {
@@ -263,7 +265,7 @@ const Highchart = (() => {
 
                         // don't draw start time for contracts that are sold before contract starts
                         if (sell_time < start_time) {
-                            HighchartUI.updateLabels(chart, getHighchartLabelParams(null, !isEmptyObject(history)));
+                            HighchartUI.updateLabels(chart, getHighchartLabelParams());
                         } else {
                             drawLineX({ value: start_time });
                         }
