@@ -88,7 +88,7 @@ const InputField = ({
     };
 
     const incrementValue = () => {
-        if  (max_is_disabled) return;
+        if (max_is_disabled) return;
 
         const increment_value = (+value) + 1;
         onChange({ target: { value: increment_value, name } });

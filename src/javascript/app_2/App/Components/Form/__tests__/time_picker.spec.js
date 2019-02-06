@@ -115,4 +115,5 @@ describe('TimePicker', () => {
         const wrapper = mount(<TimePicker value='11:11' is_clearable={true} />);
         expect(wrapper.find('.time-picker-clear').exists()).to.be.true;
     });
+    //    TODO: Add more tests
 });

@@ -30,7 +30,7 @@ describe('InputField', () => {
     });
     it('should render input with .error when it has error messages', () => {
         const wrapper = shallow(<InputField error_messages={['this is error!']} />);
-        expect(wrapper.find('input').prop('className')).to.equal('error');
+        expect(wrapper.find('input').prop('className')).to.be.equal('error');
     });
     it('should render input without .error when it does not have any error message', () => {
         const wrapper = shallow(<InputField />);
@@ -39,24 +39,24 @@ describe('InputField', () => {
     it('should have className passed to it as props', () => {
         const wrapper = shallow(<InputField className='a_cool_className' />);
         expect(wrapper.find('.a_cool_className').exists()).to.be.true;
-        expect(wrapper.prop('className')).to.equal('input-field a_cool_className');
+        expect(wrapper.prop('className')).to.be.equal('input-field a_cool_className');
     });
     it('should have input with maxLength equal to max_length passed as props if fractional_digits is not passed', () => {
         const wrapper = shallow(<InputField max_length={2} />);
-        expect(wrapper.find('input').prop('maxLength')).to.equal(2);
+        expect(wrapper.find('input').prop('maxLength')).to.be.equal(2);
     });
     it('should have input with maxLength equal to max_length + fractional_digits + 1 if fractional_digits is passed', () => {
         const wrapper = shallow(<InputField max_length={2} fractional_digits={2} />);
-        expect(wrapper.find('input').prop('maxLength')).to.equal(5);
+        expect(wrapper.find('input').prop('maxLength')).to.be.equal(5);
     });
-    // it('should have an input_helper with helper passed as prop', () => {
-    //     const wrapper = shallow(<InputField helper='this is helper' />);
-    //     expect(wrapper.contains(<span className='input-helper'>this is helper</span>)).to.be.true;
-    // });
-    // it('should not have input_helper if helper is not passed as prop', () => {
-    //     const wrapper = shallow(<InputField helper='this is helper' />);
-    //     expect(wrapper.find('.input-helper').exists()).to.be.true;
-    // });
+    it('should have an input_helper with helper passed as prop', () => {
+        const wrapper = shallow(<InputField helper='this is helper' />);
+        expect(wrapper.contains(<span className='input-helper'>this is helper</span>)).to.be.true;
+    });
+    it('should not have input_helper if helper is not passed as prop', () => {
+        const wrapper = shallow(<InputField helper='this is helper' />);
+        expect(wrapper.find('.input-helper').exists()).to.be.true;
+    });
     it('should have disabled input if is_disabled is true', () => {
         const wrapper = shallow(<InputField is_disabled={true} />);
         expect(wrapper.find('input').prop('disabled')).to.be.true;
@@ -79,7 +79,7 @@ describe('InputField', () => {
     });
     it('should have icon with prefix lowercased as class if prefix is passed', () => {
         const wrapper = shallow(<InputField prefix='Something' />);
-        expect(wrapper.contains(<i><span className='symbols something' /></i>)).to.be.true;
+        expect(wrapper.contains(<span className='symbols something' />)).to.be.true;
     });
     it('should not have .symbols if prefix is not passed', () => {
         const wrapper = shallow(<InputField />);
@@ -87,7 +87,7 @@ describe('InputField', () => {
     });
     it('should have input with placeholder if placeholder is passed', () => {
         const wrapper = shallow(<InputField placeholder='this is placeholder' />);
-        expect(wrapper.find('input').prop('placeholder')).to.equal('this is placeholder');
+        expect(wrapper.find('input').prop('placeholder')).to.be.equal('this is placeholder');
     });
     it('should have input with undefined placeholder if placeholder is not passed', () => {
         const wrapper = shallow(<InputField />);
@@ -109,53 +109,29 @@ describe('InputField', () => {
         const wrapper = shallow(<InputField />);
         expect(wrapper.find('input').prop('required')).to.be.undefined;
     });
-    it('should have onChange as an instance of function', () => {
+    it('should have input with autoComplete off if is_autocomplete_disabled is true', () => {
+        const wrapper = shallow(<InputField is_autocomplete_disabled={true} />);
+        expect(wrapper.find('input').prop('autoComplete')).to.be.equal('off');
+    });
+    it('should have input with autoComplete undefined if is_autocomplete_disabled is false', () => {
+        const wrapper = shallow(<InputField is_autocomplete_disabled={false} />);
+        expect(wrapper.find('input').prop('autoComplete')).to.be.undefined;
+    });
+    it('should have input with value if value is passed', () => {
+        const wrapper = shallow(<InputField value={123} />);
+        expect(wrapper.find('input').prop('value')).to.be.equal(123);
+    });
+    it('should have input with no value if value is not passed', () => {
         const wrapper = shallow(<InputField />);
-        expect(wrapper.find('input').prop('onChange')).to.be.an.instanceof(Function);
+        expect(wrapper.find('input').prop('value')).to.be.empty;
     });
-    it('onChange function passed should be called when input is changed and e.target.value should be equal to input value in case is string', () => {
-        const onChange = (e) => {
-            wrapper.setState({ result: e.target.value });
-        };
-        const event = { target: { name: 'name', value: 'test' }};
-        const wrapper = shallow(<InputField onChange={onChange} />);
-        wrapper.find('input').simulate('change', event);
-        expect(wrapper.state('result')).to.equal('test');
+    it('should have input with value and unit if they are passed', () => {
+        const wrapper = shallow(<InputField value={123} unit='s' />);
+        expect(wrapper.find('input').prop('value')).to.be.equal('s 123');
     });
-    it('onChange function should be called when input is changed and e.target.value should be equal to empty when it is empty string', () => {
-        const onChange = (e) => {
-            wrapper.setState({ result: e.target.value });
-        };
-        const event = { target: { name: 'name', value: '' }};
-        const wrapper = shallow(<InputField onChange={onChange} is_float={false} />);
-        wrapper.find('input').simulate('change', event);
-        expect(wrapper.state('result')).to.be.empty;
+    it('should have input with value and unit in right if they are passed', () => {
+        const wrapper = shallow(<InputField value={123} unit='s' is_unit_at_right={true} />);
+        expect(wrapper.find('input').prop('value')).to.be.equal('123 s');
     });
-    it('onChange function should work correctly in case is_float and is_signed are false', () => {
-        const onChange = (e) => {
-            wrapper.setState({ result: e.target.value });
-        };
-        const event = { target: { name: 'name', value: 29 }};
-        const wrapper = shallow(<InputField onChange={onChange} is_float={false} />);
-        wrapper.find('input').simulate('change', event);
-        expect(wrapper.state('result')).to.equal(29);
-    });
-    it('onChange function should work correctly in case is_float and is_signed are false', () => {
-        const onChange = (e) => {
-            wrapper.setState({ result: e.target.value });
-        };
-        const event = { target: { name: 'name', value: 29.5 }};
-        const wrapper = shallow(<InputField onChange={onChange} is_float={false} />);
-        wrapper.find('input').simulate('change', event);
-        expect(wrapper.state('result')).to.equal(29.5);
-    });
-    it('onChange function should work correctly in case is_float is true and is_signed is false', () => {
-        const onChange = (e) => {
-            wrapper.setState({ result: e.target.value });
-        };
-        const event = { target: { name: 'name', value: 29.5 }};
-        const wrapper = shallow(<InputField onChange={onChange} is_float={true} />);
-        wrapper.find('input').simulate('change', event);
-        expect(wrapper.state('result')).to.equal(29.5);
-    });
+    //    TODO: Add more tests to cover functions (after refactor)
 });
