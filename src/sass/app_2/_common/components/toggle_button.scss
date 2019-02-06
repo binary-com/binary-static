@@ -6,7 +6,7 @@
 .toggle-button {
     border-radius: 4px;
     background-color: $COLOR_WHITE;
-    color: $COLOR_LIGHT_BLACK;
+    color: $COLOR_LIGHT_BLACK_1;
     height: 32px;
     margin: 0;
     margin-top: 8px;
@@ -20,18 +20,18 @@
         border-bottom-right-radius: 0;
     }
     &_selected {
-        background-color: $COLOR_DARK_GRAY;
+        background-color: $COLOR_LIGHT_GRAY_1;
         color: $COLOR_WHITE;
     }
 }
 
 .theme-wrapper.dark {
     .toggle-button {
-        background-color: $COLOR_DARK_BLUE;
-        color: $COLOR_GRAY;
+        background-color: $COLOR_LIGHT_BLACK_1;
+        color: $COLOR_LIGHT_BLACK_4;
 
         &_selected {
-            background-color: $COLOR_BLUE;
+            background-color: $COLOR_DARK_BLUE_2;
             color: $COLOR_WHITE;
         }
     }

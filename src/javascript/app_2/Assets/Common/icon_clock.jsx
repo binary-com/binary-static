@@ -9,7 +9,10 @@ const IconClock = ({ className, onClick }) => (
         className={className}
         onClick={onClick}
     >
-        <path fill='#7F8397' fillRule='evenodd' d='M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16zm2.854-5.854a.5.5 0 0 1-.708.708l-2.5-2.5A.5.5 0 0 1 7.5 8V3.5a.5.5 0 0 1 1 0v4.293l2.354 2.353z' />
+        <g fill='none' fillRule='nonzero' stroke='#5C5C5C'>
+            <circle cx='8' cy='8' r='7.5' />
+            <path strokeLinecap='round' strokeLinejoin='round' d='M8 3.5v5h3.5' />
+        </g>
     </svg>
 );
 

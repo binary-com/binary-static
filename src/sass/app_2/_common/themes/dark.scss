@@ -1,12 +1,12 @@
 // Dark Theme for Global Layout
 body.dark, .theme-wrapper.dark {
-    background: $COLOR_BLUE;
+    background: $COLOR_DARK_BLUE_1;
 
     header, footer, .app-contents {
-        background: $COLOR_BLUE;
+        background: $COLOR_DARK_BLUE_1;
     }
     header {
-        border-color: $COLOR_BRANDBLUE_85;
+        border-color: $COLOR_DARK_BLUE_1;
 
         .menu-items {
             .menu-links a {
@@ -18,15 +18,15 @@ body.dark, .theme-wrapper.dark {
                         background-color: $COLOR_WHITE;
                     }
                 }
-                &:hover {
-                    background-color: $COLOR_BRANDBLUE_85;
+                &:hover:not(.active) {
+                    background-color: $COLOR_DARK_BLUE_4;
                 }
                 span {
-                    color: $COLOR_BRANDBLUE_40;
+                    color: $COLOR_DARK_BLUE_7;
                 }
             }
             .menu-left .binary-logo, .menu-right {
-                border-color: $COLOR_BRANDBLUE_85;
+                border-color: $COLOR_DARK_BLUE_2;
             }
         }
         .inkbar {
@@ -35,43 +35,41 @@ body.dark, .theme-wrapper.dark {
     }
     .app-contents {
         color: $COLOR_WHITE;
-        background: $COLOR_BLUE;
 
         fieldset {
-            background: $COLOR_BRANDBLUE_95;
-            color: $COLOR_WHITE;
-            border-color: $COLOR_BRANDBLUE_85;
+            background: $COLOR_DARK_BLUE_3;
+            color: $COLOR_DARK_BLUE_7;
+            border-color: $COLOR_DARK_BLUE_3;
 
             div.fieldset-header {
                 span.field-info {
                     &.left, &.center {
-                        color: $COLOR_BRANDBLUE_40;
+                        color: $COLOR_DARK_BLUE_7;
                     }
                 }
             }
             input, select {
-                background: $COLOR_BLUE;
-                color: $COLOR_WHITE;
-                border-color: $COLOR_BRANDBLUE_85;
+                background: $COLOR_DARK_BLUE_2;
+                color: $COLOR_DARK_BLUE_7;
+                border-color: $COLOR_DARK_BLUE_2;
             }
             div.submit-section button.btn:disabled {
-                box-shadow: 0 2px 2px 0 $COLOR_BRANDBLUE_85;
-                background: $COLOR_BRANDBLUE_85;
-                color: $COLOR_BRANDBLUE_75;
+                box-shadow: 0 2px 2px 0 $COLOR_DARK_BLUE_7;
+                background: $COLOR_DARK_BLUE_6;
+                color: $COLOR_DARK_BLUE_8;
             }
             .symbols {
-                color: $COLOR_WHITE;
-                background: $COLOR_BRANDBLUE_95;
+                color: $COLOR_DARK_BLUE_7;
+                background: $COLOR_DARK_BLUE_3;
             }
         }
         div.purchase-wrapper {
             div.purchase-error {
-                background: $COLOR_BRANDBLUE_95;
-                border-color: $COLOR_BRANDBLUE_85;
-                color: $COLOR_BRANDBLUE_40;
+                background: $COLOR_DARK_BLUE_3;
+                color: $COLOR_DARK_BLUE_7;
 
                 a {
-                    color: $COLOR_BRANDBLUE_40;
+                    color: $COLOR_DARK_BLUE_7;
 
                     &:hover {
                         color: $COLOR_WHITE;
@@ -79,10 +77,10 @@ body.dark, .theme-wrapper.dark {
                     }
                 }
                 div.purchase-result-wrapper {
-                    color: $COLOR_WHITE;
+                    color: $COLOR_DARK_BLUE_7;
 
                     span.label {
-                        color: $COLOR_BRANDBLUE_40;
+                        color: $COLOR_DARK_BLUE_7;
                     }
                 }
                 div.purchase-login-wrapper {
@@ -90,7 +88,7 @@ body.dark, .theme-wrapper.dark {
                 }
             }
             fieldset.purchase-option div.box .left-column .type-wrapper {
-                background: $COLOR_BRANDBLUE_75;
+                background: $COLOR_DARK_BLUE_6;
 
                 .type {
                     path, rect {
@@ -98,7 +96,7 @@ body.dark, .theme-wrapper.dark {
                             fill: $COLOR_WHITE;
                         }
                         &.transparent {
-                            fill: $COLOR_BRANDBLUE_75;
+                            fill: $COLOR_DARK_BLUE_6;
                         }
                     }
                     .stroke-white {
@@ -107,8 +105,7 @@ body.dark, .theme-wrapper.dark {
                 }
             }
             div.purchase-lock-container {
-                background: $COLOR_BRANDBLUE_95;
-                border-color: $COLOR_BRANDBLUE_85;
+                background: $COLOR_DARK_BLUE_3;
 
                 .lock-container svg.ic-lock {
                     rect, path {
@@ -122,8 +119,8 @@ body.dark, .theme-wrapper.dark {
                     color: $COLOR_WHITE;
                 }
                 span.lock-message {
-                    background: $COLOR_BRANDBLUE_40;
-                    color: $COLOR_BRANDBLUE_95;
+                    background: $COLOR_DARK_BLUE_2;
+                    color: $COLOR_DARK_BLUE_7;
                 }
                 button.btn {
                     background: transparent;
@@ -134,11 +131,11 @@ body.dark, .theme-wrapper.dark {
             }
         }
         .portfolio.container {
-            background: $COLOR_BLUE;
+            background: $COLOR_DARK_BLUE_5;
         }
         .portfolio-empty, .statement-empty {
             span {
-                color: $COLOR_BRANDBLUE_40;
+                color: $COLOR_DARK_BLUE_7;
             }
             button.btn span {
                 color: unset;
@@ -146,44 +143,44 @@ body.dark, .theme-wrapper.dark {
         }
         .statement.container {
             .statement-filter {
-                background: $COLOR_BLUE;
-                color: $COLOR_BRANDBLUE_40;
-                border-color: $COLOR_BRANDBLUE_85;
+                background: $COLOR_DARK_BLUE_5;
+                color: $COLOR_DARK_BLUE_7;
+                border-color: $COLOR_DARK_BLUE_5;
             }
             .statement__content {
-                background: $COLOR_BLUE;
+                background: $COLOR_DARK_BLUE_5;
             }
         }
         .table {
-            border-color: $COLOR_BRANDBLUE_85;
+            border-color: $COLOR_DARK_BLUE_5;
 
             &__head, &__foot {
-                background: $COLOR_BRANDBLUE_95;
+                background: $COLOR_DARK_BLUE_3;
             }
             &__head, &__foot, &__row {
-                border-color: $COLOR_BRANDBLUE_85;
+                border-color: $COLOR_DARK_BLUE_5;
             }
             &__body {
                 a.table__row:hover {
-                    background: $COLOR_BRANDBLUE_85;
+                    background: $COLOR_DARK_BLUE_5;
                 }
                 .table__row {
                     &, &:active, &:visited {
-                        color: $COLOR_BRANDBLUE_40;
+                        color: $COLOR_DARK_BLUE_7;
                     }
                 }
             }
             &__cell {
-                color: $COLOR_BRANDBLUE_40;
+                color: $COLOR_DARK_BLUE_7;
             }
         }
         .card-list__card {
-            background-color: $COLOR_BLUE;
-            border-color: $COLOR_BRANDBLUE_85;
+            background-color: $COLOR_DARK_BLUE_5;
+            border-color: $COLOR_DARK_BLUE_5;
         }
         .statement, .portfolio {
             &-card__header {
-                border-color: $COLOR_BRANDBLUE_85;
+                border-color: $COLOR_DARK_BLUE_5;
             }
         }
         // TODO: refactor to inline SVG and change colors with CSS
@@ -208,7 +205,7 @@ body.dark, .theme-wrapper.dark {
         }
         .login-message-wrapper {
             .message a {
-                color: $COLOR_BRANDBLUE_40;
+                color: $COLOR_DARK_BLUE_7;
 
                 &:hover {
                     color: $COLOR_WHITE;
@@ -219,30 +216,30 @@ body.dark, .theme-wrapper.dark {
             .cq-context {
                 div.cq-chart-controls {
                     border: none;
-                    border-right: 1px solid $COLOR_BRANDBLUE_85;
-                    border-top: 1px solid $COLOR_BRANDBLUE_85;
+                    border-right: 1px solid $COLOR_DARK_BLUE_5;
+                    border-top: 1px solid $COLOR_DARK_BLUE_5;
 
                     @media (max-width: 768px) {
-                        border: 1px solid $COLOR_BRANDBLUE_85;
+                        border: 1px solid $COLOR_DARK_BLUE_5;
                     }
                 }
             }
             .cq-modal-dropdown .cq-categorical-display .ic-icon.icon-close-menu {
                 svg {
                     g path {
-                        fill: $COLOR_BRANDBLUE_40;
+                        fill: $COLOR_DARK_BLUE_7;
                     }
                 }
             }
         }
         .mobile-widget {
-            border-color: $COLOR_BRANDBLUE_85;
+            border-color: $COLOR_DARK_BLUE_5;
 
             .fieldset-minimized {
-                color: $COLOR_BRANDBLUE_40;
+                color: $COLOR_DARK_BLUE_7;
 
                 &__basis {
-                    color: $COLOR_BRANDBLUE_40;
+                    color: $COLOR_DARK_BLUE_7;
                 }
             }
             &:hover, &:focus, &:active {
@@ -250,19 +247,21 @@ body.dark, .theme-wrapper.dark {
             }
         }
         .error-container p {
-            color: $COLOR_BRANDBLUE_40;
+            color: $COLOR_DARK_BLUE_7;
         }
     }
     footer {
-        border-color: $COLOR_BRANDBLUE_85;
-        color: $COLOR_BRANDBLUE_40;
+        color: $COLOR_DARK_BLUE_7;
 
         .footer-links a {
             span {
-                color: $COLOR_BRANDBLUE_40;
+                color: $COLOR_DARK_BLUE_7;
             }
-            &.active, &:hover {
-                background: $COLOR_BRANDBLUE_85;
+            &:hover {
+                background: $COLOR_DARK_BLUE_4;
+            }
+            &.active {
+                background: $COLOR_DARK_BLUE_4;
 
                 &:after {
                     background: $COLOR_WHITE;
@@ -272,17 +271,14 @@ body.dark, .theme-wrapper.dark {
         .footer-links-left {
             .ic-positions {
                 &:after {
-                    background-color: $COLOR_BRANDBLUE_40;
+                    background-color: $COLOR_DARK_BLUE_7;
                 }
             }
-        }
-        .server-time, .network-status-wrapper {
-            border-color: $COLOR_BRANDBLUE_85;
         }
     }
     // inline trade-types icons
     .type-wrapper {
-        background: $COLOR_BRANDBLUE_75;
+        background: $COLOR_DARK_BLUE_6;
 
         .type {
             path, rect {
@@ -290,7 +286,7 @@ body.dark, .theme-wrapper.dark {
                     fill: $COLOR_WHITE;
                 }
                 &.transparent {
-                    fill: $COLOR_BRANDBLUE_75;
+                    fill: $COLOR_DARK_BLUE_6;
                 }
             }
             .stroke-white {
@@ -304,13 +300,13 @@ body.dark, .theme-wrapper.dark {
     }
     // common inline icons
     .inline-icon {
-        @include colorIcon($COLOR_BRANDBLUE_40, none);
+        @include colorIcon($COLOR_DARK_BLUE_7, none);
 
         &.active {
-            @include colorIcon($COLOR_BLUE, $COLOR_WHITE, $COLOR_WHITE);
+            @include colorIcon($COLOR_DARK_BLUE_5, $COLOR_WHITE, $COLOR_WHITE);
         }
         &.disabled {
-            @include colorIcon($COLOR_BRANDBLUE_75, none);
+            @include colorIcon($COLOR_DARK_BLUE_6, none);
         }
     }
     .barspinner {
@@ -318,17 +314,20 @@ body.dark, .theme-wrapper.dark {
     }
     .card-list {
         &__card {
-            background: $COLOR_BLUE;
-            border-color: $COLOR_BRANDBLUE_85;
+            background: $COLOR_DARK_BLUE_5;
+            border-color: $COLOR_DARK_BLUE_5;
 
             div[class*='-card__header'] {
-                background: $COLOR_BRANDBLUE_95;
-                border-color: $COLOR_BRANDBLUE_85;
-                color: $COLOR_BRANDBLUE_40;
+                background: $COLOR_DARK_BLUE_3;
+                border-color: $COLOR_DARK_BLUE_5;
+                color: $COLOR_DARK_BLUE_7;
             }
             div[class*='-card__body'] {
-                color: $COLOR_BRANDBLUE_40;
+                color: $COLOR_DARK_BLUE_7;
             }
         }
+    }
+    .select-arrow .arrow-path {
+        fill: $COLOR_DARK_BLUE_7;
     }
 }
