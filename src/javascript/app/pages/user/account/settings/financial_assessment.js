@@ -91,7 +91,7 @@ const FinancialAssessment = (() => {
             showLoadingImage(getElementById('msg_form'));
             $(form_selector).find('select').each(function () {
                 if ($(this).val().length) {
-                    financial_assessment[$(this).attr('id')] = data[$(this).attr('id')] = $(this).val() || null;
+                    financial_assessment[$(this).attr('id')] = data[$(this).attr('id')] = $(this).val();
                 }
             });
             BinarySocket.send(data).then((response) => {
