@@ -3,7 +3,7 @@ import { expect }             from 'chai';
 import { configure, shallow } from 'enzyme';
 import Adapter                from 'enzyme-adapter-react-16';
 import Tooltip                from '../tooltip.jsx';
-import { TestChildren }       from '../../../../test_helper';
+import { testChildren }       from '../../../../test_helper';
 
 configure({ adapter: new Adapter() });
 
@@ -13,7 +13,7 @@ describe('Tooltip', () => {
         expect(wrapper).to.have.length(1);
     });
     it('should render children when passed in', () => {
-        TestChildren(<Tooltip />);
+        testChildren(<Tooltip />);
     });
     it('should have class passed as icon prop', () => {
         const wrapper = shallow(<Tooltip icon='info' />);

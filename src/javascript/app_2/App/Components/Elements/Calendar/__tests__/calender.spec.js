@@ -5,7 +5,7 @@ import {
     shallow }           from 'enzyme';
 import Adapter          from 'enzyme-adapter-react-16'; // TODO: move this to a test config file
 import Calendar         from '../index';
-import { TestChildren } from '../../../../../test_helper';
+import { testChildren } from '../../../../../test_helper';
 
 configure({ adapter: new Adapter() }); // TODO: move this to a test config file
 
@@ -17,6 +17,6 @@ describe('<Calendar />', () => {
     });
 
     it('should render children when passed in', () => {
-        TestChildren(<Calendar />);
+        testChildren(<Calendar />);
     });
 });

@@ -11,4 +11,8 @@ describe('CloseButton', () => {
         const wrapper = shallow(<CloseButton />);
         expect(wrapper).to.have.length(1);
     });
+    it('should render one <CloseButton /> component', () => {
+        const wrapper = shallow(<CloseButton />);
+        expect(wrapper.prop('onClick').isRequired).to.be.true();
+    });
 });

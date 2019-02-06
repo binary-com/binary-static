@@ -3,7 +3,7 @@ import { expect }             from 'chai';
 import { configure, shallow } from 'enzyme';
 import Adapter                from 'enzyme-adapter-react-16';
 import ErrorBox               from '../error_box.jsx';
-import { TestChildren }       from '../../../../../test_helper';
+import { testChildren }       from '../../../../../test_helper';
 
 configure({ adapter: new Adapter() });
 
@@ -13,7 +13,7 @@ describe('ErrorBox', () => {
         expect(wrapper).to.have.length(1);
     });
     it('should render children when passed in', () => {
-        TestChildren(<ErrorBox />);
+        testChildren(<ErrorBox />);
     });
     it('should render header as passed to it', () => {
         const wrapper = shallow(<ErrorBox header='This is a header' />);
