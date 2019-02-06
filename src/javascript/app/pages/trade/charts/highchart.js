@@ -215,7 +215,7 @@ const Highchart = (() => {
             const tick    = response.tick;
             const ohlc    = response.ohlc;
             response_id   = response[type].id;
-            is_tick_type  = !isEmptyObject(history);
+            is_tick_type  = !isEmptyObject(history) || !isEmptyObject(tick);
             // send view popup the response ID so view popup can forget the calls if it's closed before contract ends
             if (response_id && !is_response_id_set) {
                 if (State.get('is_trading') || State.get('is_mb_trading')) {
