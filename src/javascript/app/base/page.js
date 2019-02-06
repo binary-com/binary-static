@@ -54,7 +54,7 @@ const Page = (() => {
                 switch (evt.key) {
                     case 'active_loginid':
                         // not the active tab and logged out or loginid switch
-                        if (document.hidden && (evt.newValue === '' || !window.is_logging_in)) {
+                        if (evt.newValue === '' || !window.is_logging_in) {
                             reload();
                         }
                         break;
