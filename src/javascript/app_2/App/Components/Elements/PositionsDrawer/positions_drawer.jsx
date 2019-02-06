@@ -4,7 +4,7 @@ import PropTypes                      from 'prop-types';
 import React                          from 'react';
 import { Scrollbars }                 from 'tt-react-custom-scrollbars';
 import { localize }                   from '_common/localize';
-import { IconMinus }                  from 'Assets/Common';
+import { IconMinimize }               from 'Assets/Common';
 import EmptyPortfolioMessage          from 'Modules/Portfolio/Components/empty_portfolio_message.jsx';
 import { connect }                    from 'Stores/connect';
 import PositionsDrawerCard            from './positions_drawer_card.jsx';
@@ -47,13 +47,12 @@ class PositionsDrawer extends React.Component {
         return (
             <div className={classNames('positions-drawer', { 'positions-drawer--open': is_positions_drawer_on })}>
                 <div className='positions-drawer__header'>
-                    <span className='positions-drawer__icon-main ic-positions' />
                     <span className='positions-drawer__title'>{localize('Positions')}</span>
                     <div
                         className='positions-drawer__icon-close'
                         onClick={toggleDrawer}
                     >
-                        <IconMinus />
+                        <IconMinimize />
                     </div>
                 </div>
                 <div className='positions-drawer__body'>
