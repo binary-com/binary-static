@@ -16,13 +16,14 @@ const DigitDisplay = (() => {
 
     is_redraw_possible = false;
 
+    // Subscribe if contract is still ongoing/running.
     const subscribe = (request) => {
-        // Subscribe if contract is still ongoing/running.
-        if (contract.current_spot_time < contract.date_expiry) {
+        request.end       = 'latest';
+        if (contract.exit_tick_time) {
+            request.end = contract.exit_tick_time;
+        } else {
             request.subscribe = 1;
             request.end       = 'latest';
-        } else {
-            request.end = contract.date_expiry;
         }
     };
 
@@ -49,6 +50,7 @@ const DigitDisplay = (() => {
             contract.tick_count,
             contract.status
         );
+
         const request = {
             ticks_history: contract.underlying,
             start        : contract.date_start,
