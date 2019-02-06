@@ -90,7 +90,9 @@ const FinancialAssessment = (() => {
             const data = { set_financial_assessment: 1 };
             showLoadingImage(getElementById('msg_form'));
             $(form_selector).find('select').each(function () {
-                financial_assessment[$(this).attr('id')] = data[$(this).attr('id')] = $(this).val() || null;
+                if ($(this).val().length) {
+                    financial_assessment[$(this).attr('id')] = data[$(this).attr('id')] = $(this).val() || null;
+                }
             });
             BinarySocket.send(data).then((response) => {
                 $btn_submit.removeAttr('disabled');
