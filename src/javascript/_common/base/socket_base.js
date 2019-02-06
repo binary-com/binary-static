@@ -298,7 +298,7 @@ const BinarySocketBase = (() => {
         sendBuffered      : sendBufferedRequests,
         get               : () => binary_socket,
         setOnDisconnect   : (onDisconnect) => { config.onDisconnect = onDisconnect; },
-        setOnReconnect    : (onReconnect) => {config.onReconnect = onReconnect; },
+        setOnReconnect    : (onReconnect) => { config.onReconnect = onReconnect; },
         removeOnReconnect : () => { delete config.onReconnect; },
         removeOnDisconnect: () => { delete config.onDisconnect; },
     };
