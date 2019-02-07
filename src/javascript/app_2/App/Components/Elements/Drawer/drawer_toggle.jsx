@@ -1,6 +1,6 @@
 import PropTypes    from 'prop-types';
 import React        from 'react';
-import ToggleButton from '../toggle_button.jsx';
+import SwitchButton from '../switch_button.jsx';
 
 const DrawerToggle = ({
     text,
@@ -9,7 +9,7 @@ const DrawerToggle = ({
 }) => (
     <div className='drawer-item__toggle' onClick={toggle}>
         <span>{text}</span>
-        <ToggleButton
+        <SwitchButton
             toggled={to_toggle}
         />
     </div>

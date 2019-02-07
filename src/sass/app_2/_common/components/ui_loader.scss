@@ -73,7 +73,7 @@
 
 @keyframes colorBlue {
     100%, 0% {
-        stroke: $COLOR_BLUE;
+        stroke: $COLOR_DARK_BLUE_5;
     }
 }
 
@@ -86,8 +86,7 @@
 // Dark Theme
 .theme-wrapper.dark {
     .block-ui {
-        background: rgba(42, 48, 82, 0.8) !important;
-        border-color: $COLOR_BRANDBLUE_85 !important;
+        background: rgba(16, 19, 32, 0.6) !important; // this is color dark blue 2 with 0.6 opacity
 
         .loading .circular .path {
             animation: dash 1.5s ease-in-out infinite, colorOrange 6s ease-in-out infinite;
