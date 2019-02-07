@@ -10,7 +10,7 @@
 
         &:focus, &:hover {
             outline: none;
-            border-color: $COLOR_BLUE;
+            border-color: $COLOR_DARK_BLUE_5;
         }
     }
     &__icon {
@@ -29,7 +29,7 @@
         background: $COLOR_WHITE;
         height: 32px;
         cursor: pointer;
-        border: 1px solid $COLOR_GRAY;
+        border: 1px solid $COLOR_LIGHT_BLACK_4;
         border-radius: $BORDER_RADIUS;
         font-size: 14px;
         box-sizing: border-box;
@@ -50,10 +50,6 @@
             position: absolute;
             top: 8px;
             right: 6px;
-
-            & .arrow-path {
-                fill: $COLOR_GRAY;
-            }
         }
     }
     // TODO: style native date picker
@@ -61,7 +57,7 @@
         appearance: none;
         // sometimes we have 2 different elements with hover and focus in chrome mobile
         &:hover:not(:focus) {
-            border-color: $COLOR_GRAY;
+            border-color: $COLOR_LIGHT_BLACK_4;
         }
         &::-webkit-date-and-time-value {
             margin: 0;
@@ -93,8 +89,7 @@
 .theme-wrapper.dark {
     .datepicker {
         &__input {
-            background: $COLOR_BLUE;
-            border-color: $COLOR_BRANDBLUE_85;
+            background: $COLOR_DARK_BLUE_5;
             color: $COLOR_WHITE;
 
             &:hover, &:focus, &:active {
@@ -102,11 +97,10 @@
             }
         }
         &__icon path {
-            fill: $COLOR_WHITE;
+            fill: $COLOR_DARK_BLUE_7;
         }
         &__native-overlay {
-            background: $COLOR_BLUE;
-            border-color: $COLOR_BRANDBLUE_85;
+            background: $COLOR_DARK_BLUE_5;
 
             &:hover, &:focus, &:active {
                 border-color: $COLOR_WHITE;
