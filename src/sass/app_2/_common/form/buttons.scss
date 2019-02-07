@@ -16,9 +16,8 @@
     outline: 0;
     position: relative;
     color: rgba(0, 0, 0, 0.65);
-    background: $COLOR_GREEN;
+    background: $COLOR_GREEN_1;
     font-size: 0.875rem; /* stylelint-disable-line number-max-precision */
-    text-transform: uppercase;
 
     &.is-link {
         max-width: 220px;
@@ -34,7 +33,7 @@
             background: $COLOR_ORANGE;
 
             &:hover:not([disabled]) {
-                background: $COLOR_ORANGE_2;
+                background: $COLOR_ORANGE;
             }
             &:active:not([disabled]) {
                 background: $COLOR_ORANGE;
@@ -44,21 +43,21 @@
             }
         }
         &.green {
-            background: $COLOR_LIGHT_GREEN;
+            background: $COLOR_GREEN_1;
 
             &:hover:not([disabled]) {
                 background: $COLOR_GREEN_2;
             }
             &:active:not([disabled]) {
-                background: $COLOR_LIGHT_GREEN;
+                background: $COLOR_GREEN_1;
             }
             &.effect:focus:not(:active):after {
-                border: 0 solid $COLOR_LIGHT_GREEN;
+                border: 0 solid $COLOR_GREEN_1;
             }
         }
         &:disabled, &[disabled] {
-            background: $COLOR_BRANDBLUE_5;
-            color: $COLOR_GRAY;
+            background: $COLOR_LIGHT_BLACK_4;
+            color: $COLOR_LIGHT_BLACK_4;
             cursor: not-allowed;
         }
     }
@@ -70,8 +69,8 @@
             color: $COLOR_ORANGE;
 
             &:hover:not([disabled]) {
-                border: 1px solid $COLOR_ORANGE_2;
-                color: $COLOR_ORANGE_2;
+                border: 1px solid $COLOR_ORANGE;
+                color: $COLOR_ORANGE;
                 background: rgba(233, 128, 36, 0.1);
             }
             &:active:not([disabled]) {
@@ -83,8 +82,8 @@
             }
         }
         &.green {
-            border: 1px solid $COLOR_LIGHT_GREEN;
-            color: $COLOR_LIGHT_GREEN;
+            border: 1px solid $COLOR_GREEN_1;
+            color: $COLOR_GREEN_1;
 
             &:hover:not([disabled]) {
                 border: 1px solid $COLOR_GREEN_2;
@@ -92,17 +91,17 @@
                 background: rgba(76, 175, 80, 0.1);
             }
             &:active:not([disabled]) {
-                border: 1px solid $COLOR_LIGHT_GREEN;
-                color: $COLOR_LIGHT_GREEN;
+                border: 1px solid $COLOR_GREEN_1;
+                color: $COLOR_GREEN_1;
             }
             &.effect:focus:not(:active):after {
-                border: 0 solid $COLOR_LIGHT_GREEN;
+                border: 0 solid $COLOR_GREEN_1;
             }
         }
         &:disabled, &[disabled] {
-            background: $COLOR_BRANDBLUE_5;
+            background: $COLOR_LIGHT_BLACK_4;
             border: 0 !important;
-            color: $COLOR_GRAY !important;
+            color: $COLOR_LIGHT_BLACK_4 !important;
             cursor: not-allowed !important;
         }
     }
@@ -121,8 +120,8 @@
         }
         &:disabled, &[disabled] {
             background: transparent !important;
-            border: 1px solid $COLOR_GRAY !important; /* stylelint-disable-line color-no-hex */
-            color: $COLOR_GRAY !important;
+            border: 1px solid $COLOR_LIGHT_BLACK_4 !important; /* stylelint-disable-line color-no-hex */
+            color: $COLOR_LIGHT_BLACK_4 !important;
             cursor: not-allowed !important;
         }
     }
@@ -135,7 +134,7 @@
         bottom: -1px;
         right: -1px;
         border-radius: inherit;
-        border: 0 solid $COLOR_BLUE;
+        border: 0 solid $COLOR_DARK_BLUE_5;
         opacity: 0.4;
         animation: buttonEffect 0.4s;
         animation-fill-mode: forwards;
