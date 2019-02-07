@@ -69,7 +69,7 @@ const getDays = ({
             // filter by date or day of the week
             event.dates.find(d => d === date || getDaysOfTheWeek(d) === toMoment(date).day()));
         const has_events      = !!events.length;
-        const is_closes_early = events.map(event => event.descrip.includes('Closes early'))[0];
+        const is_closes_early = events.map(event => !!event.descrip.match(/Closes early|Opens late/))[0];
         const message         = events.map(event => event.descrip)[0] || '';
 
         const is_disabled =
@@ -80,7 +80,7 @@ const getDays = ({
             || moment_date.isAfter(addDays(moment_start_date, 1)))))
             // check if weekends are disabled
             || weekends.some(day => toMoment(date).day() === day)
-            // check if date falls on holidays, and doesn't close early
+            // check if date falls on holidays, and doesn't close early or opens late
             || has_events && !is_closes_early;
 
         // show 'disabled' style for dates that is not in the same calendar month, it should still be clickable
