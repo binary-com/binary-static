@@ -11,16 +11,17 @@ const DigitDisplay = (() => {
     let $container,
         contract,
         tick_count,
-        spot_times,
-        is_redraw_possible;
-
-    is_redraw_possible = false;
+        spot_times;
 
     // Subscribe if contract is still ongoing/running.
     const subscribe = (request) => {
         request.end       = 'latest';
         if (contract.exit_tick_time) {
-            request.end = contract.exit_tick_time;
+            request.end = +contract.exit_tick_time;
+            request.count = +contract.tick_count;
+            if (+contract.tick_count === 1) {
+                request.end += 1; // TODO: backend sends the improper response when end and start are the same for 1 tick contracts. remove this block on fix
+            }
         } else {
             request.subscribe = 1;
             request.end       = 'latest';
@@ -53,7 +54,7 @@ const DigitDisplay = (() => {
 
         const request = {
             ticks_history: contract.underlying,
-            start        : contract.date_start,
+            start        : contract.entry_tick_time,
         };
 
         subscribe(request);
@@ -86,40 +87,9 @@ const DigitDisplay = (() => {
             tick_count,
             {
                 quote: contract.status !== 'open' ? contract.exit_tick : spot,
-                epoch: contract.status !== 'open' ? contract.exit_tick_time : contract.date_expiry,
+                epoch: +contract.exit_tick_time || contract.current_spot_time,
             }
         );
-    };
-
-    const redrawFromHistory = (response) => {
-        tick_count = 1;
-        if (!$container.is(':visible') || !response || (!response.history)) {
-            return;
-        }
-        $container.find('#table_digits').empty();
-        $container.find('#table_digits')
-            .append($('<strong />', { class: 'gr-3', text: localize('Tick') }))
-            .append($('<strong />', { class: 'gr-3', text: localize('Spot') }))
-            .append($('<strong />', { class: 'gr-6', text: localize('Spot Time (GMT)') }));
-
-        response.history.times.some((time, idx) => {
-            if (+time >= +contract.entry_tick_time && time <= +contract.exit_tick_time) {
-                const spot = response.history.prices[idx];
-                const csv_spot = addComma(spot);
-
-                $container
-                    .find('#table_digits')
-                    .append($('<p />', { class: 'gr-3', text: tick_count }))
-                    .append($('<p />', { class: 'gr-3 gray', html: tick_count === contract.tick_count ? `${csv_spot.slice(0, csv_spot.length - 1)}<strong>${csv_spot.substr(-1)}</strong>` : csv_spot }))
-                    .append($('<p />', { class: 'gr-6 gray digit-spot-time no-underline', text: moment(+time * 1000).utc().format('YYYY-MM-DD HH:mm:ss') }));
-
-                tick_count += 1;
-            }
-            return tick_count > contract.tick_count;
-        });
-
-        showLocalTimeOnHover('.digit-spot-time');
-
     };
 
     const update = (response) => {
@@ -140,7 +110,6 @@ const DigitDisplay = (() => {
                 return tick_count > contract.tick_count;
             });
         } else if (response.tick) {
-            is_redraw_possible = true;
             if (tick_count <= contract.tick_count &&
                 +response.tick.epoch >= +contract.entry_tick_time) {
                 updateTable(response.tick.quote, response.tick.epoch);
@@ -154,18 +123,8 @@ const DigitDisplay = (() => {
         if (proposal_open_contract.status !== 'open') {
             DigitTicker.update(proposal_open_contract.tick_count, {
                 quote: proposal_open_contract.exit_tick,
-                epoch: proposal_open_contract.exit_tick_time,
+                epoch: +proposal_open_contract.exit_tick_time,
             });
-
-            const request = {
-                ticks_history: contract.underlying,
-                start        : contract.entry_tick_time,
-                end          : contract.exit_tick_time,
-            };
-            if (is_redraw_possible) {
-                // force rerender the table by sending the history
-                BinarySocket.send(request, { callback: redrawFromHistory });
-            }
         }
         if (proposal_open_contract.status === 'won') {
             DigitTicker.markAsWon();
