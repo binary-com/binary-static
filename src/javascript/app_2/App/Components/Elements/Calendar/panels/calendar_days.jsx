@@ -98,7 +98,7 @@ const getDays = ({
                 onClick={is_disabled ? undefined : (e) => updateSelected(e, 'day') }
                 data-date={date}
             >
-                { (has_events || is_closes_early) &&
+                { ((has_events || is_closes_early) && !is_other_month) &&
                     <Tooltip
                         alignment='top'
                         icon='dot'
