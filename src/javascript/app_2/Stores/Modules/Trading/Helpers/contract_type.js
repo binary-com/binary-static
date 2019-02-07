@@ -1,23 +1,30 @@
-import moment                    from 'moment';
-import { localize }              from '_common/localize';
+import ServerTime               from '_common/base/server_time';
+import { localize }             from '_common/localize';
 import {
     cloneObject,
-    getPropertyValue }           from '_common/utility';
-import { WS }                    from 'Services';
-import { buildBarriersConfig }   from './barrier';
-import { buildDurationConfig }   from './duration';
+    getPropertyValue }          from '_common/utility';
+import { WS }                   from 'Services';
+import {
+    isTimeValid,
+    minDate,
+    toMoment }                  from 'Utils/Date';
+import { buildBarriersConfig }  from './barrier';
+import {
+    buildDurationConfig,
+    hasIntradayDurationUnit }   from './duration';
 import {
     buildForwardStartingConfig,
-    isSessionAvailable }         from './start_date';
+    isSessionAvailable }        from './start_date';
 import {
     getContractCategoriesConfig,
     getContractTypesConfig,
-    getLocalizedBasis }          from '../Constants/contract';
+    getLocalizedBasis }         from '../Constants/contract';
 
 const ContractType = (() => {
     let available_contract_types = {};
     let available_categories     = {};
     let contract_types;
+    const trading_times          = {};
 
     const buildContractTypesConfig = (symbol) => WS.contractsFor(symbol).then(r => {
         const contract_categories = getContractCategoriesConfig();
@@ -185,6 +192,8 @@ const ContractType = (() => {
         return { duration_min_max };
     };
 
+    const getFullContractTypes = () => available_contract_types;
+
     const getStartType = (start_date) => ({
         // Number(0) refers to 'now'
         contract_start_type: start_date === Number(0) ? 'spot' : 'forward',
@@ -233,40 +242,129 @@ const ContractType = (() => {
     };
 
     const buildMoment = (date, time) => {
-        const [ hour, minute ] = time.split(':');
-        return moment.utc(isNaN(date) ? date : +date * 1000).hour(hour).minute(minute);
+        const [ hour, minute ] = isTimeValid(time) ? time.split(':') : [0, 0];
+        return toMoment(date || ServerTime.get()).hour(hour).minute(minute);
     };
 
     const getStartTime = (sessions, start_date, start_time) => ({
-        start_time: getValidTime(sessions, buildMoment(start_date, start_time)),
+        start_time: start_date ? getValidTime(sessions, buildMoment(start_date, start_time)) : null,
     });
 
-    const getExpiryDate = (expiry_date, start_date) => {
-        const moment_start  = moment.utc(start_date ? start_date * 1000 : undefined);
-        const moment_expiry = moment.utc(expiry_date || undefined);
-        // forward starting contracts should only show today and tomorrow as expiry date
-        const is_invalid = moment_expiry.isBefore(moment_start, 'day') || (start_date && moment_expiry.isAfter(moment_start.clone().add(1, 'day')));
-        return {
-            expiry_date: (is_invalid ? moment_start : moment_expiry).format('YYYY-MM-DD'),
-        };
+    const getTradingTimes = async (date, underlying = null) => {
+        if (!date) {
+            return [];
+        }
+
+        if (!(date in trading_times)) {
+            const trading_times_response = await WS.getTradingTimes(date);
+
+            if (getPropertyValue(trading_times_response, ['trading_times', 'markets'])) {
+                for (let i = 0; i < trading_times_response.trading_times.markets.length; i++) {
+                    const submarkets = trading_times_response.trading_times.markets[i].submarkets;
+                    if (submarkets) {
+                        for (let j = 0; j < submarkets.length; j++) {
+                            const symbols = submarkets[j].symbols;
+                            if (symbols) {
+                                for (let k = 0; k < symbols.length; k++) {
+                                    const symbol = symbols[k];
+                                    if (!trading_times[trading_times_response.echo_req.trading_times]) {
+                                        trading_times[trading_times_response.echo_req.trading_times] = {};
+                                    }
+                                    trading_times[trading_times_response.echo_req.trading_times][symbol.symbol] =
+                                        symbol.times.close;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        return underlying ? trading_times[date][underlying] : trading_times[date];
     };
 
-    // has to follow the correct order of checks:
-    // first check if end time is within available sessions
-    // then confirm that end time is after start time
-    const getExpiryTime = (sessions, start_date, start_time, expiry_date, expiry_time) => {
-        const start_moment = start_date ? buildMoment(start_date, start_time) : moment().utc();
-        const end_moment   = buildMoment(expiry_date, expiry_time);
+    const getExpiryType = (duration_units_list, expiry_type) => {
+        if (duration_units_list && duration_units_list.length === 1 && duration_units_list[0].value === 't') {
+            return { expiry_type: 'duration' };
+        }
 
-        let end_time = expiry_time;
-        if (sessions && !isSessionAvailable(sessions, end_moment)) {
-            end_time = getValidTime(sessions, end_moment, start_moment);
+        return { expiry_type };
+    };
+
+    const getExpiryDate = (duration_units_list, expiry_date, expiry_type, start_date) => {
+        let proper_expiry_date = null;
+
+        if (expiry_type === 'endtime') {
+            const moment_start  = toMoment(start_date);
+            const moment_expiry = toMoment(expiry_date);
+
+            if (!hasIntradayDurationUnit(duration_units_list)) {
+                const is_invalid = moment_expiry.isSameOrBefore(moment_start, 'day');
+                proper_expiry_date = (is_invalid ? moment_start.clone().add(1, 'day') : moment_expiry).format('YYYY-MM-DD');
+            } else {
+                // forward starting contracts should only show today and tomorrow as expiry date
+                const is_invalid =
+                    moment_expiry.isBefore(moment_start, 'day') || (start_date && moment_expiry.isAfter(moment_start.clone().add(1, 'day')));
+                proper_expiry_date = (is_invalid ? moment_start : moment_expiry).format('YYYY-MM-DD');
+            }
         }
-        if (end_moment.isSameOrBefore(start_moment)) {
-            const is_end_of_day     = start_moment.get('hours') === 23 && start_moment.get('minute') >= 55;
-            const is_end_of_session = sessions && !isSessionAvailable(sessions, start_moment.clone().add(5, 'minutes'));
-            end_time = start_moment.clone().add((is_end_of_day || is_end_of_session) ? 0 : 5, 'minutes').format('HH:mm');
+
+        return { expiry_date: proper_expiry_date };
+    };
+
+    // It has to follow the correct order of checks:
+    // first check if end time is within available sessions
+    // then confirm that end time is at least 5 minute after start time
+    const getExpiryTime = (
+        expiry_date,
+        expiry_time,
+        expiry_type,
+        market_close_times,
+        sessions,
+        start_date,
+        start_time
+    ) => {
+        let end_time = null;
+
+        if (expiry_type === 'endtime') {
+            let market_close_time = '23:59:59';
+
+            if (market_close_times && market_close_times.length && market_close_times[0] !== '--') {
+                // Some of underlyings (e.g. Australian Index) have two close time during a day so we always select the further one as the end time of the contract.
+                market_close_time = market_close_times.slice(-1)[0];
+            }
+
+            // For contracts with a duration of more that 24 hours must set the expiry_time to the market's close time on the expiry date.
+            if (!start_date && ServerTime.get().isBefore(buildMoment(expiry_date), 'day')) {
+                end_time = market_close_time;
+            } else {
+                const start_moment = start_date ? buildMoment(start_date, start_time) : ServerTime.get();
+                const end_moment   = buildMoment(expiry_date, expiry_time);
+
+                end_time = end_moment.format('HH:mm');
+
+                // When the contract is forwarding, and the duration is endtime, users can purchase the contract within 24 hours.
+                const expiry_sessions = [{
+                    open : start_moment.clone().add(5, 'minute'), // expiry time should be at least 5 minute after start_time
+                    close: minDate(start_moment.clone().add(24, 'hour'), buildMoment(expiry_date, market_close_time)),
+                }];
+
+                if (!isSessionAvailable(expiry_sessions, end_moment)) {
+                    end_time = getValidTime(expiry_sessions, end_moment.clone(), start_moment.clone());
+                }
+                if (end_moment.isSameOrBefore(start_moment) || end_moment.diff(start_moment, 'minute') < 5) {
+                    const is_end_of_day     = start_moment.get('hours') === 23 && start_moment.get('minute') >= 55;
+                    const is_end_of_session = sessions && !isSessionAvailable(sessions, start_moment.clone().add(5, 'minutes'));
+                    end_time = start_moment.clone().add((is_end_of_day || is_end_of_session) ? 0 : 5, 'minutes').format('HH:mm');
+                }
+
+                // Set the expiry_time to 5 minute less than start_time for forwading contracts when the expiry_time is null and the expiry_date is tomorrow.
+                if (end_time === '00:00' && start_moment.isBefore(end_moment, 'day')) {
+                    end_time = start_moment.clone().subtract(5, 'minute').format('HH:mm');
+                }
+            }
         }
+
         return { expiry_time: end_time };
     };
 
@@ -307,12 +405,14 @@ const ContractType = (() => {
         getDurationMinMax,
         getDurationUnit,
         getDurationUnitsList,
+        getFullContractTypes,
         getExpiryDate,
         getExpiryTime,
+        getExpiryType,
         getSessions,
         getStartTime,
         getStartType,
-
+        getTradingTimes,
         getContractCategories: () => ({ contract_types_list: available_categories }),
     };
 })();

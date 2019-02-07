@@ -5,8 +5,8 @@
     width: 100%;
     height: $HEADER_HEIGHT;
     top: 0;
-    border-bottom: 1px solid $COLOR_GRAY;
-    background-color: $COLOR_WHITE;
+    border-bottom: 1px solid $COLOR_LIGHT_BLACK_4;
+    background-color: $COLOR_LIGHT_BLACK_4_SOLID;
 
     .menu-items {
         display: flex;
@@ -18,11 +18,10 @@
 
         .navbar-icons {
             cursor: pointer;
-            padding: 6px 10px;
+            padding: 8px 16px;
             align-self: center;
 
             &.binary-logo {
-                border-left: 1px solid $COLOR_GRAY;
                 box-sizing: border-box;
                 display: flex;
                 height: 100%;
@@ -41,6 +40,7 @@
             order: -1;
             display: inline-flex;
             flex: 1;
+            height: #{$HEADER_HEIGHT - 1px};
 
             .menu-toggle {
                 align-self: center;
@@ -69,7 +69,7 @@
                         font-size: 0.875rem; /* stylelint-disable-line number-max-precision */
                         font-weight: 300;
                         text-transform: capitalize;
-                        color: $COLOR_LIGHT_BLACK;
+                        color: $COLOR_LIGHT_BLACK_1;
                         padding: 14px 18px 12px 34px;
                         position: relative;
 
@@ -87,15 +87,13 @@
                             visibility: hidden;
                         }
                     }
-                    &:hover {
-                        background-color: $COLOR_GRAY;
+                    &:hover:not(.active) {
+                        background-color: $COLOR_LIGHT_BLACK_4;
                     }
                     &.active {
                         & > span[title] {
                             font-weight: 500;
                         }
-                    }
-                    &:hover, &.active {
                         .inline-icon {
                             @extend .inline-icon.active;
                         }
@@ -115,7 +113,8 @@
             justify-content: flex-end;
             order: 1;
             display: inline-flex;
-            border-right: 1px solid $COLOR_GRAY;
+            border-right: 1px solid $COLOR_LIGHT_BLACK_4;
+            height: #{$HEADER_HEIGHT - 1px};
         }
         .notifications-toggle {
             justify-content: flex-end;
@@ -133,7 +132,7 @@
         content: '';
         height: 2px;
         bottom: 0;
-        background-color: $COLOR_BLUE;
+        background-color: $COLOR_DARK_BLUE_5;
         transition: all 0.3s;
     }
 }

@@ -7,10 +7,10 @@ import React                     from 'react';
 import {
     addComma,
     getDecimalPlaces }           from '_common/base/currency_base';
-import { localize }              from '_common/localize';
 import Dropdown                  from 'App/Components/Form/DropDown';
 import Fieldset                  from 'App/Components/Form/fieldset.jsx';
 import InputField                from 'App/Components/Form/input_field.jsx';
+import AllowEquals               from './allow_equals.jsx';
 
 const Amount = ({
     amount,
@@ -18,6 +18,8 @@ const Amount = ({
     basis_list,
     currencies_list,
     currency,
+    is_allow_equal,
+    is_equal_checked,
     is_minimized,
     is_nativepicker,
     is_single_currency,
@@ -40,30 +42,30 @@ const Amount = ({
     });
 
     return (
-        <Fieldset
-            header={localize('Invest Amount')}
-            icon='invest-amount'
-        >
+        <Fieldset>
             <div className={amount_container_class}>
                 <Dropdown
-                    list={basis_list}
-                    value={basis}
-                    name='basis'
-                    onChange={onChange}
+                    is_alignment_left
                     is_nativepicker={is_nativepicker}
+                    list={basis_list}
+                    name='basis'
+                    value={basis}
+                    onChange={onChange}
                 />
                 {!is_single_currency &&
                     <Dropdown
-                        list={currencies_list}
-                        value={currency}
-                        name='currency'
-                        onChange={onChange}
+                        is_alignment_left
                         is_nativepicker={is_nativepicker}
+                        list={currencies_list}
+                        name='currency'
+                        value={currency}
+                        onChange={onChange}
                     />
                 }
                 <InputField
-                    error_messages = {validation_errors.amount}
+                    error_messages={validation_errors.amount}
                     fractional_digits={getDecimalPlaces(currency)}
+                    is_autocomplete_disabled
                     is_float
                     is_nativepicker={is_nativepicker}
                     max_length={10}
@@ -74,6 +76,7 @@ const Amount = ({
                     value={amount}
                 />
             </div>
+            <AllowEquals is_allow_equal={is_allow_equal} onChange={onChange} checked={is_equal_checked} />
         </Fieldset>
     );
 };
@@ -87,6 +90,8 @@ Amount.propTypes = {
     basis_list        : MobxPropTypes.arrayOrObservableArray,
     currencies_list   : MobxPropTypes.observableObject,
     currency          : PropTypes.string,
+    is_allow_equal    : PropTypes.bool,
+    is_equal_checked  : PropTypes.number,
     is_minimized      : PropTypes.bool,
     is_nativepicker   : PropTypes.bool,
     is_single_currency: PropTypes.bool,

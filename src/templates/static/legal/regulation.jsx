@@ -1,6 +1,6 @@
-import React from 'react';
-import { FillBox } from '../../_common/components/elements.jsx';
-import SeparatorLine from '../../_common/components/separator_line.jsx';
+import React             from 'react';
+import { FillBox }       from '../../_common/components/elements.jsx';
+import { SeparatorLine } from '../../_common/components/separator_line.jsx';
 
 const TimelineFirst = () => (
     <div className='gr-1 gr-2-m gr-centered'>
@@ -154,11 +154,11 @@ const Regulation = () => {
                     <div>
                         <p>{it.L('These documents provide you with key information about our investment products. This information is required by law to help you understand the nature, risks, costs, potential gains and losses of these products and to help you compare them with other products.')}</p>
                         <div className='gr-row'>
-                            <FillBox padding='4' center border='border-dark-gray' href={it.url_for(`/download/key_information_document/${lang}/Up_Down.pdf`)}        target='_blank' text={it.L('Up/Down')} />
-                            <FillBox padding='4' center border='border-dark-gray' href={it.url_for(`/download/key_information_document/${lang}/Touch_No_Touch.pdf`)} target='_blank' text={it.L('Touch/No Touch')} />
-                            <FillBox padding='4' center border='border-dark-gray' href={it.url_for(`/download/key_information_document/${lang}/In_and_Out.pdf`)}     target='_blank' text={it.L('In/Out')} />
-                            <FillBox padding='4' center className='margin-right-0' border='border-dark-gray' href={it.url_for(`/download/key_information_document/${lang}/CFD.pdf`)} target='_blank' text={it.L('CFD')} />
-                            <FillBox padding='4' center className='margin-left-0'  border='border-dark-gray' href={it.url_for(`/download/key_information_document/${lang}/FX.pdf`)}  target='_blank' text={it.L('FX')} />
+                            <FillBox id='up-down_fillbox' padding='4' center border='border-dark-gray' href={it.url_for(`/download/key_information_document/${lang}/Up_Down.pdf`)}        target='_blank' text={it.L('Up/Down')} />
+                            <FillBox id='touch-no-touch_fillbox' padding='4' center border='border-dark-gray' href={it.url_for(`/download/key_information_document/${lang}/Touch_No_Touch.pdf`)} target='_blank' text={it.L('Touch/No Touch')} />
+                            <FillBox id='in-and-out_fillbox' padding='4' center border='border-dark-gray' href={it.url_for(`/download/key_information_document/${lang}/In_and_Out.pdf`)}     target='_blank' text={it.L('In/Out')} />
+                            <FillBox id='cfd_fillbox' padding='4' center className='margin-right-0' border='border-dark-gray' href={it.url_for(`/download/key_information_document/${lang}/CFD.pdf`)} target='_blank' text={it.L('CFD')} />
+                            <FillBox id='fx_fillbox' padding='4' center className='margin-left-0'  border='border-dark-gray' href={it.url_for(`/download/key_information_document/${lang}/FX.pdf`)}  target='_blank' text={it.L('FX')} />
                         </div>
                     </div>
 
@@ -173,6 +173,50 @@ const Regulation = () => {
                             href={it.url_for('/download/BIEL-RTS28.pdf')}
                             target='_blank'
                             text={it.L('Annual Best Execution Disclosure 2017')}
+                        />
+                    </div>
+
+                    <h3>{it.L('RTS 27')}</h3>
+                    <div>
+                        <FillBox
+                            padding='5'
+                            center
+                            border='border-dark-gray'
+                            className='margin-top-17'
+                            image='images/pages/regulation/xlsx-icon.svg'
+                            href={it.url_for('/download/rts27/Table_1.xlsx')}
+                            target='_blank'
+                            text={it.L('Table 1 - Type of execution venue')}
+                        />
+                        <FillBox
+                            padding='5'
+                            center
+                            border='border-dark-gray'
+                            className='margin-top-17'
+                            image='images/pages/regulation/xlsx-icon.svg'
+                            href={it.url_for('/download/rts27/Table_3.xlsx')}
+                            target='_blank'
+                            text={it.L('Table 3 - Intra-Day Price information')}
+                        />
+                        <FillBox
+                            padding='5'
+                            center
+                            border='border-dark-gray'
+                            className='margin-top-17'
+                            image='images/pages/regulation/xlsx-icon.svg'
+                            href={it.url_for('/download/rts27/Table_4.xlsx')}
+                            target='_blank'
+                            text={it.L('Table 4 - Daily Price information')}
+                        />
+                        <FillBox
+                            padding='5'
+                            center
+                            border='border-dark-gray'
+                            className='margin-top-17'
+                            image='images/pages/regulation/xlsx-icon.svg'
+                            href={it.url_for('/download/rts27/Table_6.xlsx')}
+                            target='_blank'
+                            text={it.L('Table 6 - Likelihood of execution information')}
                         />
                     </div>
                 </div>

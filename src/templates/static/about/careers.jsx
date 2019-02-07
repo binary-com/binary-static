@@ -1,6 +1,6 @@
-import React from 'react';
-import SeparatorLine from '../../_common/components/separator_line.jsx';
-import Step from '../../_common/components/step.jsx';
+import React             from 'react';
+import { SeparatorLine } from '../../_common/components/separator_line.jsx';
+import Step              from '../../_common/components/step.jsx';
 
 const Box = ({
     gr,
@@ -264,7 +264,7 @@ const Careers = () => {
                                     circle_no='1'
                                 />
                                 <CareerStep
-                                    text={it.L('If you are shortlisted, we will send you a talent test to be completed.')}
+                                    text={it.L('If you\'re shortlisted, we\'ll send you a talent test to be completed.')}
                                     circle_no='2'
                                 />
                                 <CareerStep

@@ -72,7 +72,18 @@ const BinaryLoader = (() => {
         }
 
         ContentVisibility.init();
-        ScrollToAnchor.init();
+
+        BinarySocket.wait('authorize', 'website_status', 'landing_company').then(() => {
+            // first time load.
+            const last_image = $('#content img').last();
+            if (last_image) {
+                last_image.on('load', () => {
+                    ScrollToAnchor.init();
+                });
+            }
+
+            ScrollToAnchor.init();
+        });
     };
 
     const error_messages = {

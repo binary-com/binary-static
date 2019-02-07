@@ -159,6 +159,35 @@
             }
         }
     }
+    #dialog_notification {
+        display: none;
+        position: fixed;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 7px;
+        flex-wrap: wrap;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        z-index: 1000;
+        animation: moveInBottom 0.2s ease-in;
+        border-bottom: 3px solid $COLOR_ORANGE;
+
+        &_text {
+            color: $COLOR_WHITE;
+            font-size: $FONT_SIZE_S;
+            text-align: center;
+
+            a {
+                font-size: $FONT_SIZE_S;
+                text-decoration: underline;
+            }
+        }
+        &_accept {
+            font-size: $FONT_SIZE_S;
+            margin-bottom: 0;
+        }
+    }
     @media screen and (max-width: 590px) {
         .icon-row {
             flex-direction: column;

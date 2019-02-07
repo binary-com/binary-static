@@ -1,6 +1,15 @@
-import React from 'react';
-import { Box, BuySellCurrency, HeaderSecondary, MtBox, NavButtons, Section, MTAccountOpeningButton } from './common.jsx';
-import { List, Table } from '../../_common/components/elements.jsx';
+import React                 from 'react';
+import {
+    Box,
+    BuySellCurrency,
+    HeaderSecondary,
+    MtBox,
+    NavButtons,
+    Section,
+    MTAccountOpeningButton } from './common.jsx';
+import {
+    List,
+    Table }                  from '../../_common/components/elements.jsx';
 
 const hundred_thousand = '100,000';
 const hundredth        = '0.01';

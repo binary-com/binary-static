@@ -1,7 +1,9 @@
-import React from 'react';
-import Loading from '../../_common/components/loading.jsx';
-import { FormRow, SubmitButton } from '../../_common/components/forms.jsx';
-import SeparatorLine from '../../_common/components/separator_line.jsx';
+import React             from 'react';
+import Loading           from '../../_common/components/loading.jsx';
+import {
+    FormRow,
+    SubmitButton }       from '../../_common/components/forms.jsx';
+import { SeparatorLine } from '../../_common/components/separator_line.jsx';
 
 /* eslint-disable react/jsx-no-target-blank */
 const AccountDesc = ({ title, description, account_type, items }) => {
@@ -219,6 +221,18 @@ const Metatrader = () => (
                             ]}
                         />
                         <AccountDesc
+                            account_type={['labuan_advanced']}
+                            title={it.L('Advanced Account')}
+                            description={it.L('Our MetaTrader 5 Advanced account provides you with tight spreads, higher ticket size and offers more products.')}
+                            items={[
+                                it.L('Leverage up to [_1]', '1:100'),
+                                it.L('Variable spreads'),
+                                it.L('Market execution'),
+                                it.L('No commission'),
+                            ]}
+                        />
+                        {/*
+                        <AccountDesc
                             account_type={['vanuatu_advanced']}
                             title={it.L('Advanced Account')}
                             description={it.L('Our MetaTrader 5 Advanced account provides you with tight spreads, higher ticket size and offers more products.')}
@@ -229,6 +243,7 @@ const Metatrader = () => (
                                 it.L('No commission'),
                             ]}
                         />
+                        */}
                         <AccountDesc
                             account_type={['costarica', 'malta']}
                             title={it.L('Volatility Indices Account')}

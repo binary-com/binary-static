@@ -49,7 +49,7 @@ const FinancialAssessment = (() => {
         }
 
         // display Trading Experience only for financial & MT5 financial accounts
-        const is_mt5_financial = /real_vanuatu_(standard|advanced|mamm_advanced)/.test(localStorage.getItem('financial_assessment_redirect'));
+        const is_mt5_financial = /labuan_advanced|real_vanuatu_(standard|advanced|mamm_advanced)/.test(localStorage.getItem('financial_assessment_redirect'));
         $('#trading_experience_form').setVisibility(is_mt5_financial || Client.isAccountOfType('financial'));
 
         Object.keys(financial_assessment).forEach((key) => {
@@ -125,11 +125,6 @@ const FinancialAssessment = (() => {
             $.scrollTo($('h1#heading'), 500, { offset: -10 });
             $(form_selector).setVisibility(0);
             $('#msg_main').setVisibility(1);
-            BinarySocket.send({ get_account_status: 1 }).then((response_status) => {
-                if (+response_status.get_account_status.prompt_client_to_authenticate && Client.isAccountOfType('financial')) {
-                    $('#msg_authenticate').setVisibility(1);
-                }
-            });
         } else {
             $('#msg_form')
                 .attr('class', is_success ? 'success-msg' : 'errorfield')

@@ -36,10 +36,12 @@ export default class URLHelper {
             }
         });
 
-        param_object.sort();
+        if (param_object.length) {
+            param_object.sort();
+        }
 
         if (!url) {
-            window.history.replaceState(null, null, `?${param_object.toString()}`);
+            window.history.replaceState(null, null, `?${decodeURIComponent(param_object.toString())}`);
         } else {
             url_object.search = param_object.toString();
         }
@@ -72,7 +74,6 @@ export default class URLHelper {
                     }
                 });
         }
-
         return query_params;
     }
 
@@ -88,6 +89,6 @@ export default class URLHelper {
 
         const query_string = [...query_params].length ? `?${query_params.toString()}` : '';
 
-        window.history.replaceState(null, null, query_string);
+        window.history.replaceState(null, null, decodeURIComponent(query_string));
     }
 }

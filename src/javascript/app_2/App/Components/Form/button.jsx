@@ -8,12 +8,19 @@ const Button = ({
     id,
     is_disabled,
     onClick,
+    tabIndex,
     text,
     wrapperClassName,
 }) => {
     const classes = `btn${has_effect ? ' effect' : ''} ${className}`;
     const button = (
-        <button id={id} className={classes} onClick={onClick || undefined} disabled={is_disabled}>
+        <button
+            id={id}
+            className={classes}
+            onClick={onClick || undefined}
+            disabled={is_disabled}
+            tabIndex={tabIndex || '0'}
+        >
             <span>{text}</span>
             {children}
         </button>
@@ -24,7 +31,7 @@ const Button = ({
 };
 
 Button.propTypes = {
-    children        : PropTypes.object,
+    children        : PropTypes.node,
     className       : PropTypes.string,
     has_effect      : PropTypes.bool,
     id              : PropTypes.string,

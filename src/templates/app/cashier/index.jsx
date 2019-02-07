@@ -1,5 +1,5 @@
-import React from 'react';
-import SeparatorLine from '../../_common/components/separator_line.jsx';
+import React             from 'react';
+import { SeparatorLine } from '../../_common/components/separator_line.jsx';
 
 const Button = ({ className, text_className, id, href, text }) => (
     <a className={className} id={id} href={href}>
@@ -116,7 +116,9 @@ const Cashier = () => (
                     <a className='invisible normal_currency client_logged_out' href={it.url_for('cashier/payment_methods')} id='view_payment_methods'>
                         <span>{it.L('View available payment methods')}</span>
                     </a>
+                    <CashierNote className='gr-hide-m gr-child' text={it.L('Please do not share your bank account, credit card, or e-wallet with another client, as this may cause delays in your withdrawals.')} />
                 </div>
+                <CashierNote className='gr-12 gr-hide gr-show-m gr-child' text={it.L('Please do not share your bank account, credit card, or e-wallet with another client, as this may cause delays in your withdrawals.')} />
                 <DepositWithdrawButton id='deposit_btn_cashier' />
             </div>
         </div>

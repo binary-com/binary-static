@@ -1261,14 +1261,14 @@ body #not_authenticated_financial ul.checked > li {
                 p {
                     margin: 0;
 
-                    &:last-child, &:nth-child(2) {
+                    &:last-child, &:nth-child(3) {
                         padding-bottom: 15px;
                     }
                 }
                 #qrcode {
-                    padding-bottom: 60px;
+                    padding: 15px 0;
                     @media (max-width: 480px) {
-                        padding-bottom: 10px;
+                        padding: 10px 0;
                     }
                 }
             }
@@ -1466,12 +1466,7 @@ body #not_authenticated_financial ul.checked > li {
     }
 }
 
-.cashier_note {
-    .notice-circle {
-        color: $COLOR_ORANGE;
-        border-color: $COLOR_ORANGE;
-    }
-    p {
-        color: $COLOR_BLUE;
-    }
+.paymentagent_description {
+    height: 4em;
+    width: 206px;
 }

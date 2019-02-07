@@ -30,7 +30,7 @@ export default class BaseStore {
     @observable
     validation_rules = {};
 
-    switch_account_disposer = null;
+    switchAccountDisposer = null;
     switch_account_listener = null;
 
     /**
@@ -133,7 +133,10 @@ export default class BaseStore {
      *
      */
     saveToStorage(properties, storage) {
-        const snapshot = JSON.stringify(this.getSnapshot(properties));
+        const snapshot = JSON.stringify(this.getSnapshot(properties), (key, value) => {
+            if (value !== null) return value;
+            return undefined;
+        });
 
         if (storage === BaseStore.STORAGES.LOCAL_STORAGE) {
             localStorage.setItem(this.constructor.name, snapshot);
@@ -243,7 +246,7 @@ export default class BaseStore {
 
     @action.bound
     onSwitchAccount(listener) {
-        this.switch_account_disposer = when(
+        this.switchAccountDisposer = when(
             () => this.root_store.client.switch_broadcast,
             async () => {
                 try {
@@ -270,7 +273,9 @@ export default class BaseStore {
 
     @action.bound
     disposeSwitchAccount() {
-        this.switch_account_disposer();
+        if (typeof this.switchAccountDisposer === 'function') {
+            this.switchAccountDisposer();
+        }
         this.switch_account_listener = null;
     }
 
@@ -278,6 +283,4 @@ export default class BaseStore {
     onUnmount() {
         this.disposeSwitchAccount();
     }
-
 }
-

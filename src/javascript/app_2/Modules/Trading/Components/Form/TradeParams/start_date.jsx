@@ -20,6 +20,7 @@ const StartDate = ({
     start_date,
     start_dates_list,
     start_time,
+    validation_errors,
 }) => {
     // Number(0) refers to 'now'
     const is_today = start_date === Number(0);
@@ -36,44 +37,42 @@ const StartDate = ({
         );
     }
     return (
-        <Fieldset
-            header={localize('Start time')}
-            icon='start-time'
-        >
+        <Fieldset>
             <Dropdown
+                is_alignment_left
+                is_nativepicker={is_nativepicker}
+                list={start_dates_list}
                 name='start_date'
                 value={start_date}
-                list={start_dates_list}
                 onChange={onChange}
-                is_nativepicker={is_nativepicker}
             />
-            {!is_today &&
-                <React.Fragment>
-                    <TimePicker
-                        onChange={onChange}
-                        is_align_right
-                        name='start_time'
-                        value={start_time}
-                        placeholder='12:00'
-                        start_date={start_date}
-                        sessions={sessions}
-                        is_clearable={false}
-                        is_nativepicker={is_nativepicker}
-                    />
-                </React.Fragment>
+            {(!is_today && start_time) &&
+                <TimePicker
+                    onChange={onChange}
+                    is_align_right
+                    name='start_time'
+                    value={start_time}
+                    placeholder='12:00'
+                    start_date={start_date}
+                    sessions={sessions}
+                    is_clearable={false}
+                    is_nativepicker={is_nativepicker}
+                    validation_errors={validation_errors.start_time}
+                />
             }
         </Fieldset>
     );
 };
 
 StartDate.propTypes = {
-    is_minimized    : PropTypes.bool,
-    is_nativepicker : PropTypes.bool,
-    onChange        : PropTypes.func,
-    sessions        : MobxPropTypes.arrayOrObservableArray,
-    start_date      : PropTypes.number,
-    start_dates_list: MobxPropTypes.arrayOrObservableArray,
-    start_time      : PropTypes.string,
+    is_minimized     : PropTypes.bool,
+    is_nativepicker  : PropTypes.bool,
+    onChange         : PropTypes.func,
+    sessions         : MobxPropTypes.arrayOrObservableArray,
+    start_date       : PropTypes.number,
+    start_dates_list : MobxPropTypes.arrayOrObservableArray,
+    start_time       : PropTypes.string,
+    validation_errors: PropTypes.object,
 };
 
 export default observer(StartDate);

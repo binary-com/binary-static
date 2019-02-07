@@ -1,5 +1,5 @@
-import React from 'react';
-import SeparatorLine from '../../_common/components/separator_line.jsx';
+import React             from 'react';
+import { SeparatorLine } from '../../_common/components/separator_line.jsx';
 
 const BoxInner = ({ className = '', href, image, text }) => (
     <div className={`gr-6 center-text ${className}`}>
@@ -99,7 +99,7 @@ const Index = () => (
                         <p>{it.L('Want to be a part of our dynamic culture? Browse all our openings and see where you fit:')}</p>
                     </div>
                     <div className='center-element'>
-                        <a className='button-secondary' href={it.url_for('careers?anchor=open-positions')}>
+                        <a className='button' href={it.url_for('careers?anchor=open-positions')}>
                             <span>{it.L('Open positions')}</span>
                         </a>
                     </div>
@@ -112,21 +112,21 @@ const Index = () => (
                     <h1 className='center-text gr-padding-20'>{it.L('Key facts')}</h1>
                     <div className='gr-row border-bottom no-padding'>
                         <Box>
-                            <BoxInner className='border-right-top' href='/group-history' image='founded' text={it.L('<a href=\'[_1]\'>Founded</a> October 1999', it.url_for('group-history'))} />
+                            <BoxInner className='border-right-top' href='/group-history' image='founded' text={it.L('[_1]Founded[_2] October 1999', `<a href="${ it.url_for('group-history') }">`, '</a>')} />
                             <BoxInner className='border-right-top' image='debt-free' text={it.L('Debt-free')} />
                         </Box>
                         <Box>
-                            <BoxInner className='border-right-top' href='/careers' image='staff' text={it.L('Over [_1] <a href=\'[_2]\'>staff</a> and contractors worldwide', '200', it.url_for('careers'))} />
+                            <BoxInner className='border-right-top' href='/binary-in-numbers?anchor=employee' image='staff' text={it.L('Over [_1] <a href=\'[_2]\'>staff</a> and contractors worldwide', '200', it.url_for('binary-in-numbers?anchor=employee'))} />
                             <BoxInner image='1mil' text={it.L('Over 1 million registered accounts worldwide')} />
                         </Box>
                     </div>
                     <div className='gr-row gr-parent'>
                         <Box>
-                            <BoxInner className='border-right-bottom gr-padding-30' image='transacts' text={it.L('Binary\'s platform transacts on average [_1] [_2]transactions[_3] per second, 24/7', '20', '<a href=\'https://binarycom.statuspage.io/\' target=\'_blank\' rel=\'noopener noreferrer\'>', '</a>')} />
+                            <BoxInner className='border-right-bottom gr-padding-30' image='transacts' text={it.L('Binary\'s platform transacts on average [_1] [_2]transactions[_3] per second, 24/7', '20', '<a href="https://binarycom.statuspage.io/#system-metrics" target="_blank" rel="noopener noreferrer">', '</a>')} />
                             <BoxInner className='border-right-bottom gr-padding-30' image='locations' text={it.L('Offices in Malta and Malaysia')} />
                         </Box>
                         <Box>
-                            <BoxInner className='border-right-bottom gr-padding-30' image='license' text={it.L('Licensed and regulated in Malta, the United Kingdom, the Isle of Man, and Ireland')} />
+                            <BoxInner className='border-right-bottom gr-padding-30' image='license' text={it.L('Licensed and regulated in Malta, the United Kingdom, the Isle of Man, and Ireland. [_1]Learn more[_2]', `<a href="${ it.url_for('regulation') }">`, '</a>')} />
                             <BoxInner className='gr-padding-30' image='languages' text={it.L('Published in Chinese, English, French, German, Indonesian, Italian, Polish, Portuguese, Russian, Spanish, Thai and Vietnamese')} />
                         </Box>
                     </div>
@@ -135,8 +135,8 @@ const Index = () => (
         </div>
         <div className='container'>
             <div className='gr-parent'>
-                <p>{it.L('[_1] is owned and operated by the Binary Group Ltd. group of companies. For more information, <a href=\'[_2]\'>visit our history page</a>.', it.website_name, it.url_for('group-history'))}</p>
-                <p>{it.L('In the UK, our clients trade through Binary (IOM) Ltd and Binary Investments (Europe) Ltd. In the Isle of Man, they trade through Binary (IOM) Ltd. In the European Union (except UK), they trade through Binary (Europe) Ltd and Binary Investments (Europe) Ltd. In the rest of the world, they trade through Binary (C.R.) S.A.')}</p>
+                <p>{it.L('[_1] is owned and operated by the Binary Group Ltd. group of companies. For more information, [_2]visit our history page[_3].', it.website_name, `<a href="${ it.url_for('group-history') }">`, '</a>')}</p>
+                <p>{it.L('In the UK, our clients trade through Binary (IOM) Ltd and Binary Investments (Europe) Ltd. In the Isle of Man, they trade through Binary (IOM) Ltd. In the European Union (except UK), they trade through Binary (Europe) Ltd and Binary Investments (Europe) Ltd. In the rest of the world, they trade through Binary (C.R.) S.A., Binary (V) Ltd, Binary (BVI) Ltd and Binary (FX) Ltd.')}</p>
             </div>
         </div>
     </div>
