@@ -8,7 +8,7 @@
         margin: auto;
         position: absolute;
         top: 8px;
-        right: 5%;
+        left: 5%;
     }
     .time-picker-input {
         height: 32px;
@@ -24,13 +24,13 @@
             text-align: center;
         }
         &::placeholder {
-            color: $COLOR_GRAY;
+            color: $COLOR_LIGHT_BLACK_4;
         }
         &:hover {
-            border-color: $COLOR_GRAY;
+            border-color: $COLOR_LIGHT_BLACK_4;
         }
         &.active {
-            border-color: $COLOR_BLUE;
+            border-color: $COLOR_DARK_BLUE_5;
         }
     }
     .time-picker-dropdown {
@@ -65,7 +65,6 @@
         .time-picker-panel {
             height: 0;
             background: $COLOR_WHITE;
-            border-bottom: 1px solid $COLOR_GRAY;
             border-radius: 4px 4px 0 0;
             padding: 2px 8px 0 9px;
             line-height: 30px;
@@ -83,15 +82,16 @@
                 cursor: pointer;
             }
             .placeholder {
-                color: $COLOR_GRAY;
+                color: $COLOR_LIGHT_BLACK_4;
             }
         }
         .time-picker-selector {
             display: flex;
             flex-direction: row;
+            background-color: $COLOR_WHITE;
 
             .time-picker-hours {
-                border-right: 1px solid $COLOR_GRAY;
+                border-right: 1px solid $COLOR_LIGHT_BLACK_4;
                 border-radius: 0 0 0 4px;
                 width: 150px;
             }
@@ -101,18 +101,15 @@
             }
             .time-picker-hours, .time-picker-minutes {
                 display: inline-block;
-                background: $COLOR_WHITE;
                 height: 228px;
                 overflow: hidden;
                 text-align: center;
 
                 .list-title {
                     margin-top: 10px;
-                    color: $COLOR_LIGHT_BLACK;
-
-                    strong {
-                        font-weight: 400;
-                    }
+                    color: $COLOR_LIGHT_BLACK_1;
+                    line-height: 20px;
+                    font-size: 0.8rem;
                 }
                 .list-container .list-item {
                     display: inline-block;
@@ -121,22 +118,23 @@
                     transition: all 0.3s ease;
                     cursor: pointer;
                     border-radius: 4px;
+                    font-size: 0.75rem;
 
-                    &:hover(:not.disabled) {
-                        background: $COLOR_GRAY;
-                        color: $COLOR_LIGHT_BLACK;
+                    &:hover:not(.disabled) {
+                        background: $COLOR_LIGHT_BLACK_4;
+                        color: $COLOR_LIGHT_BLACK_1;
 
                         &.selected {
-                            background: $COLOR_BLUE;
+                            background: $COLOR_LIGHT_GRAY_1;
                             color: $COLOR_WHITE;
                         }
                     }
                     &.selected {
-                        background: $COLOR_BLUE;
+                        background: $COLOR_LIGHT_GRAY_1;
                         color: $COLOR_WHITE;
                     }
                     &.disabled {
-                        color: $COLOR_GRAY;
+                        color: $COLOR_LIGHT_BLACK_3;
                         cursor: default;
                     }
                 }
@@ -147,40 +145,46 @@
 
 // Dark Theme
 .theme-wrapper.dark {
-    .time-picker .time-picker-dropdown {
-        border: 1px solid $COLOR_BRANDBLUE_85;
+    .time-picker {
+        .time-picker-icon {
+            g {
+                stroke: $COLOR_DARK_BLUE_7;
+            }
+        }
+        .time-picker-dropdown {
+            .time-picker-panel {
+                background: $COLOR_DARK_BLUE_2;
+                color: $COLOR_DARK_BLUE_7;
+            }
+            .time-picker-selector {
+                background: $COLOR_DARK_BLUE_3;
+            }
+            .time-picker-panel, .time-picker-selector {
+                box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
 
-        .time-picker-panel, .time-picker-selector {
-            background: $COLOR_BLUE;
-            border-color: $COLOR_BRANDBLUE_85;
+                .time-picker-hours, .time-picker-minutes {
+                    color: $COLOR_DARK_BLUE_7;
+                    border-color: $COLOR_DARK_BLUE_2;
 
-            .time-picker-hours, .time-picker-minutes {
-                color: $COLOR_BRANDBLUE_40;
-                background: $COLOR_BRANDBLUE_95;
-                border-color: $COLOR_BRANDBLUE_85;
-
-                .list-title {
-                    color: $COLOR_WHITE;
-                }
-                .list-item {
-                    color: $COLOR_BRANDBLUE_40;
-
-                    &.disabled {
-                        color: $COLOR_BRANDBLUE_75;
-                        pointer-events: none;
+                    .list-title {
+                        color: $COLOR_WHITE;
                     }
-                    &.selected {
-                        background: $COLOR_WHITE;
-                        color: $COLOR_BLUE;
-                    }
-                    &:hover:not(.selected):not(.disabled) {
-                        background: $COLOR_BRANDBLUE_85;
+                    .list-item {
+                        color: $COLOR_DARK_BLUE_7;
+
+                        &.disabled {
+                            color: $COLOR_DARK_BLUE_8;
+                            pointer-events: none;
+                        }
+                        &.selected {
+                            background: $COLOR_DARK_BLUE_5;
+                        }
+                        &:hover:not(.selected):not(.disabled) {
+                            background: $COLOR_DARK_BLUE_4;
+                        }
                     }
                 }
             }
-        }
-        .time-picker-panel {
-            color: $COLOR_BRANDBLUE_40;
         }
     }
 }

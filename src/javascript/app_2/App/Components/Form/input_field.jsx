@@ -18,6 +18,7 @@ const InputField = ({
     fractional_digits,
     helper,
     id,
+    is_autocomplete_disabled,
     is_disabled,
     is_float,
     is_incrementable,
@@ -48,7 +49,7 @@ const InputField = ({
             e.target.value = e.target.value.replace(unit, '').trim();
         }
 
-        if (e.target.value === value) {
+        if (e.target.value === value && type !== 'checkbox') {
             return;
         }
 
@@ -130,6 +131,7 @@ const InputField = ({
             required={required || undefined}
             type={type === 'number' ? 'text' : type}
             value={display_value || ''}
+            autoComplete={is_autocomplete_disabled ? 'off' : undefined}
         />;
 
     const input_increment =
@@ -177,29 +179,30 @@ const InputField = ({
 // supports more than two different types of 'value' as a prop.
 // Quick Solution - Pass two different props to input field.
 InputField.propTypes = {
-    checked          : PropTypes.number,
-    className        : PropTypes.string,
-    error_messages   : MobxPropTypes.arrayOrObservableArray,
-    fractional_digits: PropTypes.number,
-    helper           : PropTypes.string,
-    id               : PropTypes.string,
-    is_disabled      : PropTypes.string,
-    is_float         : PropTypes.bool,
-    is_incrementable : PropTypes.bool,
-    is_read_only     : PropTypes.bool,
-    is_signed        : PropTypes.bool,
-    is_unit_at_right : PropTypes.bool,
-    label            : PropTypes.string,
-    max_length       : PropTypes.number,
-    name             : PropTypes.string,
-    onChange         : PropTypes.func,
-    onClick          : PropTypes.func,
-    placeholder      : PropTypes.string,
-    prefix           : PropTypes.string,
-    required         : PropTypes.bool,
-    type             : PropTypes.string,
-    unit             : PropTypes.string,
-    value            : PropTypes.oneOfType([
+    checked                 : PropTypes.number,
+    className               : PropTypes.string,
+    error_messages          : MobxPropTypes.arrayOrObservableArray,
+    fractional_digits       : PropTypes.number,
+    helper                  : PropTypes.string,
+    id                      : PropTypes.string,
+    is_autocomplete_disabled: PropTypes.bool,
+    is_disabled             : PropTypes.string,
+    is_float                : PropTypes.bool,
+    is_incrementable        : PropTypes.bool,
+    is_read_only            : PropTypes.bool,
+    is_signed               : PropTypes.bool,
+    is_unit_at_right        : PropTypes.bool,
+    label                   : PropTypes.string,
+    max_length              : PropTypes.number,
+    name                    : PropTypes.string,
+    onChange                : PropTypes.func,
+    onClick                 : PropTypes.func,
+    placeholder             : PropTypes.string,
+    prefix                  : PropTypes.string,
+    required                : PropTypes.bool,
+    type                    : PropTypes.string,
+    unit                    : PropTypes.string,
+    value                   : PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
     ]),
