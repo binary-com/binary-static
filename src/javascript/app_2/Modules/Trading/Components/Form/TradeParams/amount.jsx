@@ -7,6 +7,7 @@ import React                     from 'react';
 import {
     addComma,
     getDecimalPlaces }           from '_common/base/currency_base';
+import ButtonToggleMenu          from 'App/Components/Form/button_toggle_menu.jsx';
 import Dropdown                  from 'App/Components/Form/DropDown';
 import Fieldset                  from 'App/Components/Form/fieldset.jsx';
 import InputField                from 'App/Components/Form/input_field.jsx';
@@ -44,16 +45,15 @@ const Amount = ({
     return (
         <Fieldset>
             <div className={amount_container_class}>
-                <Dropdown
-                    is_alignment_left
-                    is_nativepicker={is_nativepicker}
-                    list={basis_list}
+                <ButtonToggleMenu
+                    buttons_arr={basis_list}
                     name='basis'
-                    value={basis}
                     onChange={onChange}
+                    value={basis}
                 />
                 {!is_single_currency &&
                     <Dropdown
+                        className='currency-options'
                         is_alignment_left
                         is_nativepicker={is_nativepicker}
                         list={currencies_list}
@@ -63,6 +63,7 @@ const Amount = ({
                     />
                 }
                 <InputField
+                    className={classNames({ 'has-currency-options': !is_single_currency })}
                     error_messages={validation_errors.amount}
                     fractional_digits={getDecimalPlaces(currency)}
                     is_autocomplete_disabled

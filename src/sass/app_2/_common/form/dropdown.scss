@@ -124,7 +124,7 @@
 
                 span {
                     text-transform: capitalize;
-                    color: $COLOR_LIGHT_BLACK_4;
+                    color: $COLOR_LIGHT_BLACK_1;
                     font-size: inherit;
                     font-weight: 300;
                 }
@@ -221,6 +221,11 @@
         .list {
             background: $COLOR_DARK_BLUE_3;
 
+            &__label {
+                span {
+                    color: $COLOR_WHITE;
+                }
+            }
             .list__item {
                 color: $COLOR_DARK_BLUE_7;
 

@@ -321,6 +321,10 @@
                 right: 39%;
             }
         }
+        .has-currency-options, .currency-options {
+            width: 50%;
+            display: inline-block;
+        }
     }
     div.purchase-wrapper {
         position: relative;
