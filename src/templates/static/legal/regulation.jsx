@@ -150,7 +150,7 @@ const Regulation = () => {
                         />
                     </div>
 
-                    <h3 id='key_information_documents'>{it.L('Key Information Documents')}</h3>
+                    <h3 id='key_information_documents' href='#key_information_documents'>{it.L('Key Information Documents')}</h3>
                     <div>
                         <p>{it.L('These documents provide you with key information about our investment products. This information is required by law to help you understand the nature, risks, costs, potential gains and losses of these products and to help you compare them with other products.')}</p>
                         <div className='gr-row'>

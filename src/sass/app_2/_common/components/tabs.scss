@@ -15,7 +15,6 @@
         position: relative;
         display: inline-block;
         margin-bottom: 3px;
-        border-bottom: 1px solid $COLOR_GRAY;
         width: 100%;
     }
     .tab {
@@ -25,7 +24,7 @@
 
         span {
             padding: 16px;
-            color: $COLOR_LIGHT_BLACK;
+            color: $COLOR_LIGHT_BLACK_1;
             cursor: pointer;
             font-weight: 300;
             font-size: 1rem;
@@ -50,7 +49,7 @@
         }
         &:hover, &--active {
             span {
-                color: $COLOR_BLUE;
+                color: $COLOR_DARK_BLUE_5;
                 font-weight: 400;
             }
         }
@@ -60,7 +59,7 @@
         bottom: -1px;
         left: 0;
         right: 0;
-        border-bottom: 2px solid $COLOR_BLUE;
+        border-bottom: 2px solid $COLOR_DARK_BLUE_5;
     }
     .tab-content {
         p {
@@ -73,16 +72,11 @@
 
 // Dark Theme
 .theme-wrapper.dark {
-    .tab-container {
-        .tab-wrapper {
-            border-color: $COLOR_BRANDBLUE_85;
-        }
-    }
     .tab {
         span {
-            color: $COLOR_BRANDBLUE_40;
+            color: $COLOR_DARK_BLUE_7;
         }
-        &:hover, &--active {
+        &--active {
             span {
                 color: $COLOR_WHITE;
             }

@@ -30,17 +30,16 @@
     }
     input:not([readonly]) {
         &:hover {
-            border-color: $COLOR_BLUE;
+            border-color: $COLOR_LIGHT_GRAY_1;
         }
         &:active, &:focus {
             outline: 0;
-            border-color: $COLOR_BLUE;
+            border-color: $COLOR_LIGHT_GRAY_1;
         }
     }
     fieldset {
-        background-color: $COLOR_LIGHT_GRAY;
+        background-color: $COLOR_LIGHT_BLACK_4_SOLID;
         border-radius: $BORDER_RADIUS;
-        border: 1px solid $COLOR_GRAY;
         padding: 4px 8px 8px;
 
         input, select {
@@ -70,11 +69,11 @@
             display: block;
 
             &:hover {
-                border-color: $COLOR_BLUE;
+                border-color: $COLOR_DARK_BLUE_5;
             }
             &:active, &:focus {
                 outline: 0;
-                border-color: $COLOR_BLUE;
+                border-color: $COLOR_DARK_BLUE_5;
                 box-shadow: 0 0 0 2px rgba(42, 48, 82, 0.2);
             }
         }
@@ -84,12 +83,12 @@
             display: block;
             text-align: center;
             z-index: 1;
-            color: $COLOR_LIGHT_BLACK;
+            color: $COLOR_LIGHT_BLACK_1;
         }
         .clock-header, .fieldset-header, .stake-wrapper {
             span.field-info {
                 position: absolute;
-                color: $COLOR_BLUE;
+                color: $COLOR_DARK_BLUE_5;
                 font-size: 0.7rem;
                 font-weight: 400;
                 margin: 5px 0 12px;
@@ -129,12 +128,12 @@
             span {
                 padding: 5px 5px 5px 8px;
                 line-height: normal;
-                background-color: rgba($COLOR_LIGHT_ORANGE, 0.16);
+                background-color: rgba($COLOR_ORANGE, 0.16);
                 display: block;
-                color: $COLOR_BLUE;
+                color: $COLOR_DARK_BLUE_5;
                 margin-bottom: 10px;
                 font-weight: 300;
-                border: 1px solid $COLOR_LIGHT_ORANGE;
+                border: 1px solid $COLOR_ORANGE;
                 border-radius: $BORDER_RADIUS;
             }
         }
@@ -154,6 +153,7 @@
                 vertical-align: middle;
                 padding-left: 8px;
                 cursor: pointer;
+                font-size: 0.75rem;
             }
             .tooltip {
                 display: inline-block;
@@ -187,14 +187,14 @@
                     }
                 }
                 &:before {
-                    background: $COLOR_DARK_BLUE !important;
+                    background: $COLOR_LIGHT_BLACK_1 !important;
                     color: $COLOR_WHITE;
                     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
                     padding-left: 40px;
                     margin-right: 110px;
                 }
                 &:after {
-                    border-left-color: $COLOR_DARK_BLUE !important;
+                    border-left-color: $COLOR_LIGHT_BLACK_1 !important;
                     margin-right: 98px;
                 }
                 &:hover:after, &:hover:before {
@@ -219,9 +219,14 @@
                 div {
                     margin-left: 4px;
                     display: flex;
+                    font-size: 12px;
+                    font-weight: bold;
+                    color: $COLOR_LIGHT_BLACK_1;
                 }
                 div:first-child {
                     margin-left: 0;
+                    color: $COLOR_LIGHT_BLACK_2;
+                    font-weight: normal;
                 }
                 .symbols {
                     display: inline-block;
@@ -250,14 +255,17 @@
                 display: inline-flex;
                 justify-content: center;
                 align-items: center;
-                background-color: $COLOR_BLUE;
+                background-color: $COLOR_DARK_BLUE_2;
                 margin: 0 5px 5px 0;
 
                 &.selected {
-                    background-color: $COLOR_BRANDBLUE_85;
+                    background-color: $COLOR_DARK_BLUE_5;
+                    color: $COLOR_WHITE;
+                    font-weight: bold;
                 }
                 &:hover {
                     cursor: pointer;
+                    background-color: $COLOR_DARK_BLUE_4;
                 }
                 &:last-child {
                     margin-right: 0;
@@ -302,7 +310,7 @@
             }
             .up, .down {
                 position: absolute;
-                fill: $COLOR_LIGHT_BLACK;
+                fill: $COLOR_LIGHT_BLACK_1;
             }
             .up {
                 margin-top: 15px;
@@ -325,9 +333,8 @@
             width: calc(100% - 6px);
             left: 2px;
             z-index: 2;
-            border: 1px solid $COLOR_GRAY;
             border-radius: $BORDER_RADIUS;
-            background: $COLOR_LIGHT_GRAY;
+            background: $COLOR_LIGHT_BLACK_4_SOLID;
             display: flex;
             align-items: center;
 
@@ -378,7 +385,6 @@
 
                     span {
                         font-size: 0.875rem; /* stylelint-disable-line number-max-precision */
-                        text-transform: uppercase;
                     }
                 }
                 .info-text {
@@ -392,7 +398,7 @@
                 }
                 a {
                     text-decoration: none;
-                    color: $COLOR_LIGHT_BLACK;
+                    color: $COLOR_LIGHT_BLACK_1;
 
                     span.info-text {
                         padding: 5px 10px 10px;
@@ -401,7 +407,7 @@
                     }
                     &:hover, &:focus, &:active {
                         text-decoration: underline;
-                        color: $COLOR_LIGHT_BLACK;
+                        color: $COLOR_LIGHT_BLACK_1;
                     }
                 }
             }
@@ -429,7 +435,7 @@
             div.submit-section {
                 .btn-purchase {
                     position: relative;
-                    background-color: $COLOR_DARK_GREEN;
+                    background-color: $COLOR_GREEN_2;
                     overflow: hidden;
                     height: 56px;
                     width: 100%;
@@ -493,7 +499,7 @@
                         width: 60%;
                         height: 56px;
                         position: absolute;
-                        background-color: $COLOR_GREEN;
+                        background-color: $COLOR_GREEN_1;
                         color: $COLOR_WHITE;
                         left: 0;
                         top: 0;
@@ -507,7 +513,7 @@
                         height: 0;
                         border-style: solid;
                         border-width: 28px 0 28px 14px;
-                        border-color: transparent transparent transparent $COLOR_GREEN;
+                        border-color: transparent transparent transparent $COLOR_GREEN_1;
                         left: 60%;
                         position: absolute;
                         top: 0;
@@ -515,24 +521,24 @@
                         display: inline-block;
                     }
                     &:disabled {
-                        background-color: $COLOR_GRAY_DISABLED;
-                        color: $COLOR_DARK_GRAY_2;
+                        background-color: $COLOR_DARK_BLUE_8;
+                        color: $COLOR_DARK_BLUE_7;
                     }
                     &:hover {
                         box-shadow: none;
                     }
                 }
                 .btn-purchase:disabled .btn-purchase__effect-main {
-                    background: $COLOR_GRAY_DISABLED;
+                    background: $COLOR_DARK_BLUE_8;
                 }
                 .btn-purchase:disabled .btn-purchase__effect-detail {
-                    border-color: transparent transparent transparent $COLOR_GRAY_DISABLED;
+                    border-color: transparent transparent transparent $COLOR_DARK_BLUE_8;
                 }
                 .btn-purchase:disabled .btn-purchase__trade-type svg {
                     opacity: 0.16;
                 }
                 .btn-purchase:disabled .symbols {
-                    color: $COLOR_GRAY_DISABLED;
+                    color: $COLOR_DARK_BLUE_8;
                 }
             }
             span.tooltip {
@@ -557,7 +563,7 @@
                 }
                 &:before {
                     background: $COLOR_WHITE;
-                    color: $COLOR_BLUE;
+                    color: $COLOR_DARK_BLUE_5;
                     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
                     max-width: unset;
                     width: 290px;
@@ -595,7 +601,6 @@
             div.block-ui {
                 background: rgba(255, 255, 255, 0.6);
                 border-radius: 4px;
-                border: 1px solid $COLOR_GRAY;
                 width: calc(100% - 6px);
                 height: calc(100% - 2px);
             }
@@ -604,7 +609,7 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                background: $COLOR_LIGHT_GRAY;
+                background: $COLOR_LIGHT_BLACK_4_SOLID;
                 opacity: 0.95;
                 min-height: 202px;
                 width: calc(100% - 6px);
@@ -616,7 +621,6 @@
                 flex-direction: column;
                 bottom: 0;
                 border-radius: $BORDER_RADIUS;
-                border: 1px solid $COLOR_GRAY;
 
                 .lock-container svg.ic-lock {
                     width: 64px;
@@ -634,7 +638,7 @@
                     text-transform: capitalize;
                 }
                 span.lock-message {
-                    background: $COLOR_GRAY;
+                    background: $COLOR_LIGHT_BLACK_4;
                     padding: 8px;
                     margin: 1rem 1rem 0;
                     border-radius: $BORDER_RADIUS;
@@ -677,15 +681,23 @@
                     }
                 }
                 &:before {
-                    background: $COLOR_DARK_BLUE;
+                    background: $COLOR_LIGHT_BLACK_1;
                     color: $COLOR_WHITE;
                 }
                 &:after {
-                    border-left-color: $COLOR_DARK_BLUE;
+                    border-left-color: $COLOR_LIGHT_BLACK_1;
                 }
                 &:hover:after, &:hover:before {
                     opacity: 1;
                 }
+            }
+        }
+        .purchase-info-wrapper {
+            div:first-child {
+                color: $COLOR_DARK_BLUE_7;
+            }
+            div, .symbols {
+                color: $COLOR_WHITE;
             }
         }
     }
