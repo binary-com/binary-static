@@ -20,12 +20,12 @@
 */
 
 .inline-icon {
-    @include colorIcon($COLOR_BLUE, none);
+    @include colorIcon($COLOR_DARK_BLUE_5, none);
 
     &.active {
-        @include colorIcon($COLOR_WHITE, $COLOR_BLUE, $COLOR_BLUE, none);
+        @include colorIcon($COLOR_WHITE, $COLOR_DARK_BLUE_5, $COLOR_DARK_BLUE_5, none);
     }
     &.disabled {
-        @include colorIcon($COLOR_GRAY, none);
+        @include colorIcon($COLOR_LIGHT_BLACK_4, none);
     }
 }

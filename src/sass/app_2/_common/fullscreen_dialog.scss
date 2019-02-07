@@ -80,7 +80,7 @@ $content-index: 1;
     &__title {
         font-size: 1.3rem;
         font-weight: 600;
-        color: $COLOR_LIGHT_BLACK;
+        color: $COLOR_LIGHT_BLACK_1;
         margin: 0;
     }
     &__close-btn .ic-close {
@@ -102,7 +102,7 @@ $content-index: 1;
             .title {
                 margin-left: 15px;
                 font-size: 14px;
-                color: $COLOR_LIGHT_BLACK;
+                color: $COLOR_LIGHT_BLACK_1;
             }
             span {
                 align-self: center;
@@ -122,17 +122,20 @@ $content-index: 1;
             margin: 0 auto;
             font-size: 14px;
             line-height: 20px;
-            color: $COLOR_LIGHT_BLACK;
+            color: $COLOR_LIGHT_BLACK_1;
         }
         .info-choose {
-            background: $COLOR_LIGHT_ORANGE;
-            color: $COLOR_WHITE;
-            font-weight: bold;
-            margin: 0 auto;
-            display: block;
+            button {
+                background: $COLOR_ORANGE;
+                color: $COLOR_WHITE;
+                font-weight: bold;
+                margin: 16px 0;
+                width: 100%;
+            }
         }
         .info-navigation {
             display: flex;
+            align-self: flex-end;
             margin-top: 16px;
 
             &__list {
@@ -146,11 +149,11 @@ $content-index: 1;
                     border-radius: 50%;
                     display: inline-block;
                     margin: 0 5px;
-                    background-color: $COLOR_DARK_GRAY;
+                    background-color: $COLOR_LIGHT_BLACK_3;
                     cursor: pointer;
 
                     &.active {
-                        background-color: $COLOR_GRAY;
+                        background-color: $COLOR_LIGHT_BLACK_4;
                     }
                 }
             }
@@ -161,28 +164,28 @@ $content-index: 1;
 // Dark Theme
 .theme-wrapper.dark {
     .fullscreen-dialog {
-        background: $COLOR_BLUE;
+        background: $COLOR_DARK_BLUE_5;
 
         &__header, &__header-shadow-cover, &__content {
-            background: $COLOR_BLUE;
+            background: $COLOR_DARK_BLUE_5;
         }
         &__header-shadow-cover {
-            box-shadow: 0 1px 0px $COLOR_BLUE;
+            box-shadow: 0 1px 0px $COLOR_DARK_BLUE_5;
         }
         &__title {
-            color: $COLOR_BRANDBLUE_40;
+            color: $COLOR_DARK_BLUE_7;
         }
         .trade-type-info-modal {
             .info-header {
                 .title {
-                    color: $COLOR_BRANDBLUE_40;
+                    color: $COLOR_DARK_BLUE_2;
                 }
             }
             .info-gif {
-                background-color: $COLOR_BRANDBLUE_75;
+                background-color: $COLOR_DARK_BLUE_2;
             }
             .info-content {
-                color: $COLOR_GRAY;
+                color: $COLOR_LIGHT_BLACK_1;
             }
             .info-navigation {
                 &__list {
@@ -190,7 +193,7 @@ $content-index: 1;
                         background-color: $COLOR_WHITE;
 
                         &.active {
-                            background-color: $COLOR_GRAY;
+                            background-color: $COLOR_LIGHT_BLACK_4;
                         }
                     }
                 }
