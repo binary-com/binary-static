@@ -15,7 +15,7 @@ class DurationWrapper extends React.Component {
         return duration_list.some(du => du.value === duration_unit);
     };
 
-    async setDurationUnit() {
+    setDurationUnit() {
         const new_duration_unit  = this.props.duration_units_list[0].value;
         const new_duration_value = this.props.getDurationFromUnit(new_duration_unit);
 

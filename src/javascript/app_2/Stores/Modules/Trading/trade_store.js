@@ -307,6 +307,7 @@ export default class TradeStore extends BaseStore {
         // Sets the default value to Amount when Currency has changed from Fiat to Crypto and vice versa.
         // The source of default values is the website_status response.
         WS.forgetAll('proposal');
+
         if (is_changed_by_user &&
             /\bcurrency\b/.test(Object.keys(obj_new_values)) &&
             isCryptocurrency(obj_new_values.currency) !== isCryptocurrency(this.currency)
