@@ -41,6 +41,7 @@ export default class BaseStore {
      *     @property {String[]} local_storage_properties - A list of properties' names that should be kept in localStorage.
      *     @property {String[]} session_storage_properties - A list of properties' names that should be kept in sessionStorage.
      *     @property {Object}   validation_rules - An object that contains the validation rules for each property of the store.
+     *     @property {String}   store_name - Explicit store name for application storage to bypass minifation
      */
     constructor(options = {}) {
         const {
@@ -48,6 +49,7 @@ export default class BaseStore {
             local_storage_properties,
             session_storage_properties,
             validation_rules,
+            store_name,
         } = options;
 
         Object.defineProperty(this, 'root_store', {
@@ -61,6 +63,11 @@ export default class BaseStore {
         Object.defineProperty(this, 'session_storage_properties', {
             enumerable: false,
             writable  : true,
+        });
+        Object.defineProperty(this, 'store_name', {
+            value     : store_name,
+            enumerable: false,
+            writable  : false,
         });
 
         this.root_store                 = root_store;
@@ -139,9 +146,9 @@ export default class BaseStore {
         });
 
         if (storage === BaseStore.STORAGES.LOCAL_STORAGE) {
-            localStorage.setItem(this.constructor.name, snapshot);
+            localStorage.setItem(this.store_name ? this.store_name : this.constructor.name, snapshot);
         } else if (storage === BaseStore.STORAGES.SESSION_STORAGE) {
-            sessionStorage.setItem(this.constructor.name, snapshot);
+            sessionStorage.setItem(this.store_name ? this.store_name : this.constructor.name, snapshot);
         }
     }
 

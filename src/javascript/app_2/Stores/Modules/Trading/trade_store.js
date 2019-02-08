@@ -33,6 +33,7 @@ import {
 import { pickDefaultSymbol }             from './Helpers/symbol';
 import BaseStore                         from '../../base_store';
 
+const store_name = 'trade_store';
 export default class TradeStore extends BaseStore {
     // Control values
     @observable is_trade_component_mounted = false;
@@ -109,6 +110,7 @@ export default class TradeStore extends BaseStore {
 
         super({
             root_store,
+            store_name,
             session_storage_properties: allowed_query_string_variables,
             validation_rules          : getValidationRules(),
         });
