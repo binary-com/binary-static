@@ -84,6 +84,7 @@ class TimePicker extends React.Component {
                                     is_read_only
                                     id={`${prefix_class}-input`}
                                     className={classNames(`${prefix_class}-input`,
+                                        'time-picker-clear',
                                         { 'active': this.state.is_open })}
                                     value={value}
                                     onClick={this.toggleDropDown}
