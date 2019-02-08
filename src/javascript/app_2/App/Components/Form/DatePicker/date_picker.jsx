@@ -121,7 +121,6 @@ class DatePicker extends React.Component {
         switch (mode) {
             case 'duration':
                 onChange = this.onChangeInput;
-                placeholder = placeholder || localize('Select a duration');
                 type = 'number';
                 is_incrementable = true;
                 value = this.state.value ? this.state.value : 1;
