@@ -71,13 +71,13 @@ export default class BaseStore {
         if (has_local_or_session_storage) {
             if (!store_name) {
                 throw new Error('store_name is required for local/session storage');
-            } else {
-                Object.defineProperty(this, 'store_name', {
-                    value     : store_name,
-                    enumerable: false,
-                    writable  : false,
-                });
             }
+
+            Object.defineProperty(this, 'store_name', {
+                value     : store_name,
+                enumerable: false,
+                writable  : false,
+            });
         }
 
         this.root_store                 = root_store;
