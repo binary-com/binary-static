@@ -158,8 +158,10 @@ export default class BaseStore {
      */
     @action
     retrieveFromStorage() {
-        const local_storage_snapshot   = JSON.parse(localStorage.getItem(this.constructor.name, {}));
-        const session_storage_snapshot = JSON.parse(sessionStorage.getItem(this.constructor.name, {}));
+        const local_storage_snapshot   = JSON.parse(localStorage.getItem(this.store_name ?
+            this.store_name : this.constructor.name, {}));
+        const session_storage_snapshot = JSON.parse(sessionStorage.getItem(this.store_name ?
+            this.store_name : this.constructor.name, {}));
 
         const snapshot = { ...local_storage_snapshot, ...session_storage_snapshot };
 
