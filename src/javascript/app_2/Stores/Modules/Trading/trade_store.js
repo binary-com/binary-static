@@ -34,6 +34,7 @@ import { pickDefaultSymbol }             from './Helpers/symbol';
 import BaseStore                         from '../../base_store';
 
 const store_name = 'trade_store';
+
 export default class TradeStore extends BaseStore {
     // Control values
     @observable is_trade_component_mounted = false;
