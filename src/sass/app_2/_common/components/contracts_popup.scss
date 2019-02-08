@@ -44,7 +44,7 @@ div.contracts-popup-container {
         padding: 4px;
 
         span[name=contract_type] {
-            font-size: 0.75rem;
+            font-size: 1.2rem;
             text-transform: capitalize;
             line-height: 18px;
             vertical-align: middle;
@@ -59,7 +59,7 @@ div.contracts-popup-container {
             margin-bottom: 2px;
         }
         &.desktop-only span[name=contract_type] {
-            font-size: 0.75rem;
+            font-size: 1.2rem;
         }
     }
     &:active, &:focus, &.show {
@@ -78,7 +78,7 @@ div.contracts-popup-container {
     }
     .list-item {
         width: 100%;
-        font-size: 1rem;
+        font-size: 1.6rem;
         cursor: pointer;
         display: inline-flex;
         flex-direction: row;
@@ -108,7 +108,7 @@ div.contracts-popup-container {
         .contract-title {
             text-transform: capitalize;
             font-weight: 300;
-            font-size: 0.875rem; /* stylelint-disable-line number-max-precision */
+            font-size: 1.4rem;
         }
         .trade-type-info-icon {
             display: none;
@@ -241,7 +241,7 @@ div.contracts-popup-container {
 
                 .title {
                     margin-left: 15px;
-                    font-size: 14px;
+                    font-size: 1.4rem;
                     color: $COLOR_LIGHT_BLACK_1;
                 }
                 span {
@@ -261,7 +261,7 @@ div.contracts-popup-container {
                 height: 215px;
                 overflow-y: auto;
                 margin: 0 auto;
-                font-size: 14px;
+                font-size: 1.4rem;
                 line-height: 20px;
                 color: $COLOR_LIGHT_BLACK_1;
             }
@@ -358,7 +358,7 @@ div.contracts-popup-container {
         &.mobile-only {
             .contracts-popup-display span {
                 color: $COLOR_DARK_BLUE_7;
-                font-size: 0.75rem;
+                font-size: 1.2rem;
                 line-height: 18px;
             }
             .contracts-modal-list {

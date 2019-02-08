@@ -66,7 +66,7 @@
                     transition: background-color 0.3s;
 
                     span {
-                        font-size: 0.875rem; /* stylelint-disable-line number-max-precision */
+                        font-size: inherit;
                         font-weight: 300;
                         text-transform: capitalize;
                         color: $COLOR_LIGHT_BLACK_1;
@@ -75,7 +75,7 @@
 
                         &:before {
                             position: absolute;
-                            top: 15px;
+                            top: 14px;
                             left: 12px;
                         }
                         &:after {

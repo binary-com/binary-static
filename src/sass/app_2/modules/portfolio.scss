@@ -53,7 +53,7 @@
             color: $COLOR_LIGHT_GRAY_2;
         }
         &__no-resale-msg {
-            font-size: 10px;
+            font-size: 1rem;
             font-weight: 400;
         }
     }
@@ -76,7 +76,7 @@
             margin-bottom: 16px;
         }
         &__text {
-            font-size: 14px;
+            font-size: 1.4rem;
             color: $COLOR_LIGHT_BLACK_3;
         }
     }
@@ -84,7 +84,7 @@
     // TODO: reuse statement styles (common component?)
     &-card {
         &__header {
-            font-size: 10px;
+            font-size: 1rem;
             padding: 0.5rem;
             border-bottom: 1px solid $COLOR_LIGHT_BLACK_4;
             display: flex;
@@ -96,7 +96,7 @@
         }
         &__body {
             padding: 0.5rem;
-            font-size: 12px;
+            font-size: 1.2rem;
         }
         &__desc {
             margin-bottom: 0.7rem;

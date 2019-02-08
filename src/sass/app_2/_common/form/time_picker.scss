@@ -15,7 +15,7 @@
         padding: 0;
         border-radius: 4px;
         box-sizing: border-box;
-        font-size: 16px;
+        font-size: 1.6rem;
         font-weight: 300;
         margin: 0;
         cursor: pointer;
@@ -34,7 +34,7 @@
         }
     }
     .time-picker-dropdown {
-        font-size: 16px;
+        font-size: 1.6rem;
         position: absolute;
         top: 0;
         display: flex;
@@ -118,7 +118,7 @@
                     transition: all 0.3s ease;
                     cursor: pointer;
                     border-radius: 4px;
-                    font-size: 0.75rem;
+                    font-size: 1.2rem;
 
                     &:hover:not(.disabled) {
                         background: $COLOR_LIGHT_BLACK_4;

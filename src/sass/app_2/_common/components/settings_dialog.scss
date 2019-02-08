@@ -37,7 +37,7 @@
 
                 span {
                     padding: 16px 16px 8px;
-                    font-size: 12px;
+                    font-size: 1.2rem;
                     margin: 0 auto;
                 }
             }
@@ -54,7 +54,7 @@
         }
         .settings-header {
             padding: 16px;
-            font-size: 12px;
+            font-size: 1.2rem;
             font-weight: 400;
         }
         .general-setting-container, .chart-setting-container {
@@ -73,7 +73,7 @@
                 align-items: center;
 
                 span {
-                    font-size: 12px;
+                    font-size: 1.2rem;
                     color: $COLOR_LIGHT_BLACK_1;
                 }
                 &:hover {
@@ -103,7 +103,7 @@
             height: 280px;
         }
         .language-header {
-            font-size: 12px;
+            font-size: 1.2rem;
             padding: 8px 16px;
             display: flex;
             background: $COLOR_WHITE;
@@ -145,7 +145,7 @@
                 }
                 span {
                     padding-left: 8px;
-                    font-size: 12px;
+                    font-size: 1.2rem;
                 }
                 a {
                     width: 100%;

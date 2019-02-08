@@ -42,7 +42,7 @@ $header-height: 40px;
         overflow-y: auto;
     }
     &__title {
-        font-size: 14px;
+        font-size: 1.4rem;
         font-weight: bold;
     }
     &__icon-main {
@@ -86,7 +86,7 @@ $header-height: 40px;
             margin-bottom: 16px;
         }
         &__type {
-            font-size: 12px;
+            font-size: 1.2rem;
 
             .contract-type {
                 display: flex;
@@ -102,13 +102,13 @@ $header-height: 40px;
             }
         }
         &__symbol {
-            font-size: 10px;
+            font-size: 1rem;
             overflow: hidden;
             white-space: nowrap;
             text-overflow: ellipsis;
         }
         &__indicative {
-            font-size: 12px;
+            font-size: 1.2rem;
             font-weight: bold;
             display: flex;
             flex-direction: row;
@@ -154,7 +154,7 @@ $header-height: 40px;
             }
         }
         &__remaining-time {
-            font-size: 10px;
+            font-size: 1rem;
             color: $COLOR_LIGHT_BLACK_2;
             text-align: right;
 

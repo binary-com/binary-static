@@ -131,7 +131,7 @@ hr {
                     .notifications-header {
                         padding: 0 16px;
                         text-transform: capitalize;
-                        font-size: 16px;
+                        font-size: 1.6rem;
 
                         h4 {
                             margin: 0.5rem;
@@ -165,12 +165,12 @@ hr {
                             margin: 0;
                             text-align: center;
                             font-weight: 400;
-                            font-size: 14px;
+                            font-size: 1.4rem;
                             line-height: 100%;
                         }
                         span {
                             display: block;
-                            font-size: 12px;
+                            font-size: 1.2rem;
                         }
 
                     }
@@ -204,7 +204,7 @@ hr {
                 position: relative;
                 width: 100%;
                 cursor: pointer;
-                font-size: 0.875rem; /* stylelint-disable-line number-max-precision */
+                font-size: 1.4rem;
                 box-sizing: border-box;
                 padding: 16px;
                 z-index: 1;
@@ -217,7 +217,7 @@ hr {
 
                     &:before {
                         content: '\25A2';
-                        font-size: 1rem;
+                        font-size: 1.6rem;
                         position: absolute;
                         display: inline-flex;
                         justify-content: center;

@@ -29,12 +29,12 @@
             padding: 0 16px;
         }
         h1 {
-            font-size: 16px;
+            font-size: 1.6rem;
             margin: 4px 0;
         }
         p {
             flex-grow: 2;
-            font-size: 12px;
+            font-size: 1.2rem;
         }
         .modal-footer {
             display: flex;
@@ -77,7 +77,7 @@
                 }
                 span {
                     color: $COLOR_WHITE;
-                    font-size: 12px;
+                    font-size: 1.2rem;
                 }
             }
         }
@@ -101,7 +101,7 @@
                 }
                 span {
                     color: $COLOR_DARK_BLUE_3;
-                    font-size: 12px;
+                    font-size: 1.2rem;
                 }
             }
         }

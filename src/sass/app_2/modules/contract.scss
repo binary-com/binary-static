@@ -62,7 +62,7 @@
     }
     .contract-contents {
         padding: 10px;
-        font-size: 0.75rem;
+        font-size: 1.2rem;
         border-top-width: 0;
         border-radius: 0 0 4px 4px;
         box-shadow: 0 0 4px 1px rgba(255, 255, 255, 0.16);
@@ -144,7 +144,7 @@ $CONTRACT_INFO_BOX_PADDING: 15px;
             .pl-value {
                 color: $COLOR_GREEN_1;
                 font-weight: bold;
-                font-size: 1rem;
+                font-size: 1.6rem;
                 line-height: 1.5rem;
 
                 .percentage {
@@ -232,7 +232,7 @@ $CONTRACT_INFO_BOX_PADDING: 15px;
                         justify-content: center;
                         align-items: center;
                         color: $COLOR_GREEN_1;
-                        font-size: 1rem;
+                        font-size: 1.6rem;
                         font-weight: bold;
 
                         &.loss {

@@ -8,7 +8,7 @@ $side-padding: 12px;
         box-sizing: border-box;
         height: $filter-height;
         width: 100%;
-        font-size: 14px;
+        font-size: 1.4rem;
         padding: 0 $side-padding;
 
         &__content {
@@ -99,7 +99,7 @@ $side-padding: 12px;
     }
     &-card {
         &__header {
-            font-size: 10px;
+            font-size: 1rem;
             padding: 0.5rem;
             border-bottom: 1px solid $COLOR_LIGHT_BLACK_4;
             display: flex;
@@ -111,7 +111,7 @@ $side-padding: 12px;
         }
         &__body {
             padding: 0.5rem;
-            font-size: 12px;
+            font-size: 1.2rem;
         }
         &__desc {
             margin-bottom: 0.7rem;
@@ -177,7 +177,7 @@ $side-padding: 12px;
             margin-bottom: 14px;
         }
         &__text {
-            font-size: 14px;
+            font-size: 1.4rem;
         }
     }
 }

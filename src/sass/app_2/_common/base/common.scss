@@ -1,10 +1,33 @@
-body {
-    font-family: $FONT_STACK;
-    position: relative;
-    min-height: 100%;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
+html {
+    font-size: 62.5%; /* 1rem = 10px */
+    box-sizing: border-box;
+
+    /** TODO: define breakpoints */
+    // @include respond(big-desktop) {
+    //     font-size: 75.5%; /* 1rem = 12px */
+    // }
+    // @include respond(tab-land) {
+    //     font-size: 50%; /* 1rem = 8px */
+    // }
+    // @include respond(tab-port) {
+    //     font-size: 47%; /* 1rem = 7.5px */
+    // }
+    // @include respond(phone-xl) {
+    //     font-size: 38%; /* 1rem = 6px */
+    // }
+    // @include respond(phone-lg) {
+    //     font-size: 35%; /* 1rem = 5.5px */
+    // }
+
+    body {
+        font-size: 1.6rem; // 1rem = 16px;
+        font-family: $FONT_STACK;
+        position: relative;
+        min-height: 100%;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+    }
 }
 
 /* Form */

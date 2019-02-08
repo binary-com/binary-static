@@ -26,7 +26,7 @@
                 pointer-events: none;
                 line-height: 0.5;
                 color: $COLOR_LIGHT_BLACK_1;
-                font-size: 1rem;
+                font-size: 1.6rem;
                 padding: 0 8px 0 16px;
                 font-weight: 600;
                 text-align: center;
@@ -43,7 +43,7 @@
             p.acc-balance-amount {
                 line-height: 100%;
                 color: $COLOR_GREEN_1;
-                font-size: 1rem;
+                font-size: 1.6rem;
                 padding: 0 16px 0 8px;
                 font-weight: bold;
                 margin: 0 16px 0 0;
@@ -59,7 +59,7 @@
                 transition: transform 0.25s ease;
                 transform: rotate(0deg);
                 transform-origin: 50% 45%;
-                font-size: 1.1rem;
+                font-size: 1.76rem;
             }
             &:hover:not(.show) {
                 background: $COLOR_LIGHT_BLACK_4;
@@ -73,7 +73,7 @@
                     position: absolute;
                     text-transform: uppercase;
                     content: 'demo';
-                    font-size: 0.75rem;
+                    font-size: 1.2rem;
                     border: 1px solid $COLOR_ORANGE;
                     color: $COLOR_ORANGE;
                     padding: 2px 8px;
@@ -125,7 +125,7 @@
             padding: 8px 16px;
             border: 1px dashed $COLOR_DARK_BLUE_2;
             color: $COLOR_DARK_BLUE_2;
-            font-size: 0.75rem;
+            font-size: 1.2rem;
             width: 100%;
             margin: 0 16px;
             text-align: center;
@@ -150,7 +150,7 @@
             border-bottom: 4px solid $COLOR_LIGHT_BLACK_4;
         }
         &__title {
-            font-size: 0.875rem; //stylelint-disable-line number-max-precision
+            font-size: 1.4rem;
             font-weight: bold;
             padding: 14px;
             display: block;
@@ -168,14 +168,14 @@
                 display: flex;
                 align-items: center;
                 font-weight: 300;
-                font-size: 0.875rem; //stylelint-disable-line number-max-precision
+                font-size: 1.4rem;
                 line-height: 0.5;
                 margin-left: 8px;
 
                 &.virtual:before {
                     text-transform: uppercase;
                     content: 'demo';
-                    font-size: 0.5714rem; //stylelint-disable-line number-max-precision
+                    font-size: 0.9rem;
                     border: 1px solid $COLOR_ORANGE;
                     color: $COLOR_ORANGE;
                     padding: 4px;
@@ -239,12 +239,12 @@
             button.btn {
                 margin: 0;
                 width: 100%;
-                font-size: 14px;
+                font-size: 1.4rem;
             }
         }
         .acc-logout {
             cursor: pointer;
-            font-size: 12px;
+            font-size: 1.2rem;
             padding: 10px 16px;
             display: flex;
             align-items: center;

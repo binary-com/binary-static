@@ -45,7 +45,7 @@ module.exports = {
         'no-extra-semicolons'                              : true,
         'no-invalid-double-slash-comments'                 : true,
         'number-leading-zero'                              : 'always',
-        'number-max-precision'                             : 2,
+        'number-max-precision'                             : 3,
         'number-no-trailing-zeros'                         : true,
         'property-case'                                    : 'lower',
         'rule-empty-line-before'                           : ['always', { ignore: ['after-comment'], except: ['inside-block-and-after-rule', 'first-nested'] }],
