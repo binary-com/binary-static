@@ -63,6 +63,7 @@ const AdvancedDuration = ({
                 // when the expiry_date is on the next day of the start_date, the session should be close 5 min before the start_time of the contract.
                 close: is_expired_next_day ? minDate(expiry_date_time.clone().subtract(10, 'minute'), expiry_date_market_close) : expiry_date_market_close.clone(),
             }];
+            console.log(expiry_time_sessions);
 
             min_date_expiry = moment_contract_start_date_time.clone().startOf('day');
             max_date_duration = moment_contract_start_date_time.clone().add(
@@ -150,14 +151,13 @@ const AdvancedDuration = ({
                         />
                         {is_24_hours_contract &&
                             <TimePicker
+                                end_time={expiry_time_sessions.slice(-1)[0].close}
                                 onChange={onChange}
                                 is_align_right
                                 name='expiry_time'
                                 placeholder='12:00'
-                                sessions={expiry_time_sessions}
-                                start_date={moment_expiry.unix()}
+                                start_time={expiry_time_sessions[0].open}
                                 value={expiry_time || min_date_expiry.format('HH:mm')}
-                                is_clearable={false}
                                 is_nativepicker={is_nativepicker}
                                 // validation_errors={validation_errors.end_time} TODO: add validation_errors for end time
                             />
