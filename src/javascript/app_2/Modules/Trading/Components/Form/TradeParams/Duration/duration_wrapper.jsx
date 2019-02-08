@@ -20,8 +20,10 @@ class DurationWrapper extends React.Component {
         const new_duration_value = this.props.getDurationFromUnit(new_duration_unit);
 
         this.props.onChangeUiStore({ name: `${this.props.is_advanced_duration ? 'advanced' : 'simple'}_duration_unit`, value: new_duration_unit });
-        await this.props.onChangeAsync({ target: { name: 'duration_unit', value: new_duration_unit } });
-        await this.props.onChangeAsync({ target: { name: 'duration', value: new_duration_value } });
+        this.props.onChangeMultiple({
+            duration_unit: new_duration_unit,
+            duration     : new_duration_value,
+        }, true);
     }
 
     componentDidMount() {
@@ -120,7 +122,7 @@ DurationWrapper.propTypes = {
     is_nativepicker     : PropTypes.bool,
     market_close_times  : PropTypes.array,
     onChange            : PropTypes.func,
-    onChangeAsync       : PropTypes.func,
+    onChangeMultiple    : PropTypes.func,
     onChangeUiStore     : PropTypes.func,
     server_time         : PropTypes.object,
     sessions            : MobxPropTypes.arrayOrObservableArray,

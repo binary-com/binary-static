@@ -193,10 +193,16 @@ export default class TradeStore extends BaseStore {
     }
 
     @action.bound
-    async onChangeAsync(e) {
-        const { name, value } = e.target;
+    onChangeMultiple(values, should_forget) {
+        Object.keys(values).forEach((name) => {
+            if (!(name in this)) {
+                throw new Error(`Invalid Argument: ${name}`);
+            }
+        });
 
-        await this.processNewValuesAsync({ [name]: value }, true);
+        if (should_forget) WS.forgetAll('proposal');
+
+        this.processNewValuesAsync({ ...values }, true);
     }
 
     @action.bound

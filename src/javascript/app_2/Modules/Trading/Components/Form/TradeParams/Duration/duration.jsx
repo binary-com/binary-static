@@ -25,6 +25,7 @@ const Duration = ({
     getDurationFromUnit,
     onChange,
     onChangeUiStore,
+    onChangeMultiple,
     is_advanced_duration,
     is_minimized,
     is_nativepicker,
@@ -69,8 +70,10 @@ const Duration = ({
         const duration_value  = getDurationFromUnit(value);
 
         onChangeUiStore({ name, value });
-        onChange({ target: { name: 'duration_unit', value } });
-        onChange({ target: { name: 'duration', value: duration_value } });
+        onChangeMultiple({
+            duration_unit: value,
+            duration     : duration_value,
+        }, true);
     };
 
     const changeDurationValue = ({ target }) => {
@@ -93,8 +96,11 @@ const Duration = ({
         }
 
         const duration_value  = getDurationFromUnit(current_duration_unit);
-        onChange({ target: { name: 'duration_unit', value: current_duration_unit } });
-        onChange({ target: { name: 'duration', value: duration_value } });
+
+        onChangeMultiple({
+            duration_unit: current_duration_unit,
+            duration     : duration_value,
+        }, true);
 
         // simple only has expiry type of duration
         if (!value && expiry_type !== 'duration') {
