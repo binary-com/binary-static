@@ -4,14 +4,19 @@ import PropTypes                      from 'prop-types';
 import React                          from 'react';
 import { Scrollbars }                 from 'tt-react-custom-scrollbars';
 import { localize }                   from '_common/localize';
-import { IconClose }                  from 'Assets/Common';
+import { IconMinimize }               from 'Assets/Common';
 import EmptyPortfolioMessage          from 'Modules/Portfolio/Components/empty_portfolio_message.jsx';
 import { connect }                    from 'Stores/connect';
-import PortfolioDrawerCard            from './portfolio_drawer_card.jsx';
+import PositionsDrawerCard            from './positions_drawer_card.jsx';
 
-class PortfolioDrawer extends React.Component {
-    componentDidMount()    { this.props.onMount(); }
-    componentWillUnmount() { this.props.onUnmount(); }
+class PositionsDrawer extends React.Component {
+    componentDidMount()    {
+        this.props.onMount();
+    }
+
+    componentWillUnmount() {
+        this.props.onUnmount();
+    }
 
     render() {
         const {
@@ -19,7 +24,7 @@ class PortfolioDrawer extends React.Component {
             error,
             currency,
             is_empty,
-            is_portfolio_drawer_on,
+            is_positions_drawer_on,
             toggleDrawer,
         } = this.props;
 
@@ -31,7 +36,7 @@ class PortfolioDrawer extends React.Component {
             body_content = <EmptyPortfolioMessage />;
         } else {
             body_content = active_positions.map((portfolio_position) => (
-                <PortfolioDrawerCard
+                <PositionsDrawerCard
                     key={portfolio_position.id}
                     currency={currency}
                     {...portfolio_position}
@@ -40,18 +45,17 @@ class PortfolioDrawer extends React.Component {
         }
 
         return (
-            <div className={classNames('portfolio-drawer', { 'portfolio-drawer--open': is_portfolio_drawer_on })}>
-                <div className='portfolio-drawer__header'>
-                    <span className='portfolio-drawer__icon-main ic-portfolio' />
-                    <span className='portfolio-drawer__title'>{localize('Portfolio Quick Menu')}</span>
+            <div className={classNames('positions-drawer', { 'positions-drawer--open': is_positions_drawer_on })}>
+                <div className='positions-drawer__header'>
+                    <span className='positions-drawer__title'>{localize('Positions')}</span>
                     <div
-                        className='portfolio-drawer__icon-close'
+                        className='positions-drawer__icon-close'
                         onClick={toggleDrawer}
                     >
-                        <IconClose />
+                        <IconMinimize />
                     </div>
                 </div>
-                <div className='portfolio-drawer__body'>
+                <div className='positions-drawer__body'>
                     <Scrollbars
                         style={{ width: '100%', height: 'calc(100vh - 35px)' }}
                         autoHide
@@ -64,14 +68,14 @@ class PortfolioDrawer extends React.Component {
     }
 }
 
-PortfolioDrawer.propTypes = {
+PositionsDrawer.propTypes = {
     active_positions      : MobxPropTypes.arrayOrObservableArray,
     children              : PropTypes.any,
     currency              : PropTypes.string,
     error                 : PropTypes.string,
     is_empty              : PropTypes.bool,
     is_loading            : PropTypes.bool,
-    is_portfolio_drawer_on: PropTypes.bool,
+    is_positions_drawer_on: PropTypes.bool,
     onMount               : PropTypes.func,
     onUnmount             : PropTypes.func,
     toggleDrawer          : PropTypes.func,
@@ -86,7 +90,7 @@ export default connect(
         onMount               : modules.portfolio.onMount,
         onUnmount             : modules.portfolio.onUnmount,
         currency              : client.currency,
-        is_portfolio_drawer_on: ui.is_portfolio_drawer_on,
-        toggleDrawer          : ui.togglePortfolioDrawer,
+        is_positions_drawer_on: ui.is_positions_drawer_on,
+        toggleDrawer          : ui.togglePositionsDrawer,
     })
-)(PortfolioDrawer);
+)(PositionsDrawer);

@@ -30,6 +30,15 @@ const Dialog = ({
 
     return (
         <div className={classNames(`${preClass}-dialog`, `${className}`)}>
+            <div className={`${preClass}-panel`}>
+                <span className={value ? '' : 'placeholder'}>{value || localize('Select time')}</span>
+                {(!('is_clearable' in this.props) || this.props.is_clearable) &&
+                    <span
+                        className={`${preClass}-clear`}
+                    />
+                }
+            </div>
+
             <div className={`${preClass}-selector`}>
                 <div className={`${preClass}-hours`}>
                     <div className='list-title center-text'><strong>{localize('Hour')}</strong></div>
