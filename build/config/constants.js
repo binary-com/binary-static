@@ -59,14 +59,6 @@ const release_config = {
         target_repo   : release_targets.binarynex.repo,
         CNAME         : release_targets.binarynex.CNAME,
     },
-    test: {
-        branch        : 'oskar/store_name',
-        target_folder : '',
-        valid_sections: ['app', 'app_2', 'all'],
-        origin        : 'https://github.com/OskarAhl/binary-static.git',
-        // target_repo   : release_targets.binarynex.repo,
-        CNAME         : 'oskarahl.binary.sx',
-    },
 };
 
 const node_modules_paths = {
