@@ -220,7 +220,20 @@ const PortfolioInit = (() => {
         is_initialized = false;
     };
 
+    const onReconnect = () => {
+        BinarySocket.wait('authorize', 'website_status').then(() => {
+            BinarySocket.send({ forget_all: ['proposal_open_contract'] });
+            SubscriptionManager.forgetAll('transaction').then(() => {
+                $('#portfolio-body').empty();
+                $('#portfolio-content').setVisibility(0);
+                is_initialized = false;
+                init();
+            });
+        });
+    };
+
     return {
+        onReconnect,
         updateBalance,
         onLoad,
         onUnload,
