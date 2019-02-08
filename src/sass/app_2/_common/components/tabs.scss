@@ -14,7 +14,7 @@
     .tab-wrapper {
         position: relative;
         display: inline-block;
-        margin-bottom: 3px;
+        margin-bottom: 0.3em;
         width: 100%;
     }
     .tab {
@@ -23,19 +23,19 @@
         justify-content: space-evenly;
 
         span {
-            padding: 16px;
+            padding: 1.6em;
             color: $COLOR_LIGHT_BLACK_1;
             cursor: pointer;
             font-weight: 300;
-            font-size: 1rem;
+            font-size: 1.6rem;
 
             &.icon {
-                padding: 16px 18px 16px 34px;
+                padding: 1.6em 1.8em 1.6em 3.4em;
 
                 &:before {
                     position: absolute;
-                    top: 16px;
-                    left: 14px;
+                    top: 1.6em;
+                    left: 1.4em;
                 }
             }
             &:after {
@@ -56,14 +56,14 @@
     }
     .tab-underline {
         position: absolute;
-        bottom: -1px;
+        bottom: -0.1em;
         left: 0;
         right: 0;
-        border-bottom: 2px solid $COLOR_DARK_BLUE_5;
+        border-bottom: 0.2em solid $COLOR_DARK_BLUE_5;
     }
     .tab-content {
         p {
-            font-size: 1.125rem; //stylelint-disable-line number-max-precision
+            font-size: 1.8rem;
             line-height: 1.4em;
             text-align: left;
         }

@@ -1,22 +1,23 @@
 .dropdown-container {
     position: relative;
-    margin: 8px 0 0;
 
     .dropdown__display {
         background: $COLOR_WHITE;
-        height: 30px;
         cursor: pointer;
-        border: solid 1px $COLOR_LIGHT_BLACK_4;
+        border: solid 0.1em $COLOR_LIGHT_BLACK_4;
         border-radius: $BORDER_RADIUS;
-        font-size: 0.85rem;
+        height: 3.2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 0.8em;
 
         span {
-            font-size: inherit;
+            font-size: 1.4rem;
             text-transform: capitalize;
-            line-height: 32px;
-            vertical-align: middle;
+            line-height: 1.5;
             font-weight: 300;
-            padding-left: 16px;
+            padding-left: 1.6em;
         }
         &:active, &:focus {
             outline: none;
@@ -41,7 +42,7 @@
         transform: rotate(0deg);
         transform-origin: 50% 45%;
         color: $COLOR_LIGHT_BLACK_4;
-        font-size: 1.1rem;
+        font-size: 1.6rem;
 
         &:before {
             content: '\002303';
@@ -67,7 +68,7 @@
         }
         .select-arrow {
             transform: rotate(90deg);
-            left: 6px;
+            left: 0.6em;
             right: unset;
         }
     }
@@ -83,7 +84,7 @@
     }
     .dropdown__list {
         left: 0;
-        bottom: -8px;
+        bottom: -0.8em;
         height: 0;
         width: 100%;
         position: absolute;
@@ -103,14 +104,14 @@
             cursor: pointer;
             background: $COLOR_WHITE;
             border-radius: $BORDER_RADIUS;
-            box-shadow: 0 2px 8px 0 $COLOR_LIGHT_BLACK_3;
+            box-shadow: 0 0.2em 0.8em 0 $COLOR_LIGHT_BLACK_3;
 
             &--left {
                 width: unset;
 
                 .list__item span {
-                    padding-left: 32px;
-                    padding-right: 32px;
+                    padding-left: 2.286em;
+                    padding-right: 2.286em;
                     overflow: hidden;
                     white-space: nowrap;
                     text-align: center;
@@ -118,9 +119,9 @@
             }
             &__label {
                 pointer-events: none;
-                padding-left: 16px;
-                line-height: 32px;
-                height: 32px;
+                padding-left: 1.6em;
+                line-height: 3.2em;
+                height: 3.2em;
 
                 span {
                     text-transform: capitalize;
@@ -138,12 +139,12 @@
                     display: block;
                     pointer-events: none;
                     vertical-align: middle;
-                    padding-left: 16px;
+                    padding-left: 1.6em;
                     font-weight: 300;
                 }
                 * {
-                    height: 32px;
-                    line-height: 32px !important;
+                    height: 2.286em;
+                    line-height: 2.286em !important;
                     display: inline-block;
                     vertical-align: middle;
                 }
@@ -167,7 +168,7 @@
                             -webkit-appearance: none;
                         }
                         & > div:nth-child(1) {
-                            padding-bottom: 115px !important;
+                            padding-bottom: 11.5em !important;
                         }
                     }
                 }
@@ -183,10 +184,10 @@
             opacity: 1;
         }
         &--left {
-            top: -1px;
+            top: -0.1em;
 
             &.dropdown__list--enter, &.dropdown__list--exit {
-                transform: scale(1, 1) translate3d(20px, 0, 0px);
+                transform: scale(1, 1) translate3d(2em, 0, 0px);
                 opacity: 0;
 
             }

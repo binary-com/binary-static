@@ -1,8 +1,8 @@
 hr {
     display: block;
-    height: 1px;
+    height: 0.1em;
     border: 0;
-    border-top: 1px solid $COLOR_LIGHT_BLACK_4;
+    border-top: 0.1em solid $COLOR_LIGHT_BLACK_4;
     margin: 0.5em 0;
     padding: 0;
 }
@@ -50,43 +50,43 @@ hr {
                 .drawer-header {
                     display: flex;
                     align-items: center;
-                    border-bottom: 1px solid $COLOR_LIGHT_BLACK_4;
+                    border-bottom: 0.1em solid $COLOR_LIGHT_BLACK_4;
                     z-index: 3;
 
                     .icons {
                         display: inline-flex;
                         cursor: pointer;
-                        padding: 6px 10px;
+                        padding: 0.6em 1em;
 
                         &.btn-close {
-                            width: 24px;
-                            height: 24px;
+                            width: 2.4em;
+                            height: 2.4em;
                             align-self: center;
 
                             .inline-icon {
-                                width: 24px;
-                                height: 24px;
+                                width: 2.4em;
+                                height: 2.4em;
                             }
                         }
                         &.brand-logo {
                             display: inline-flex;
-                            padding: 8px 20px;
-                            border-left: 1px solid $COLOR_LIGHT_BLACK_4;
+                            padding: 0.8em 2em;
+                            border-left: 0.1em solid $COLOR_LIGHT_BLACK_4;
 
                             div.img:before {
                                 display: block;
                                 content: ' ';
                                 background-image: url('../images/header/binary_logo_light.svg');
-                                background-size: 138px 32px;
-                                height: 32px;
+                                background-size: 138px 3.2em;
+                                height: 3.2em;
                                 width: 138px;
                             }
                         }
                     }
                 }
                 .drawer-footer {
-                    height: 44px;
-                    border-top: 1px solid $COLOR_LIGHT_BLACK_4;
+                    height: 4.4em;
+                    border-top: 0.1em solid $COLOR_LIGHT_BLACK_4;
                     left: 0;
                     bottom: 0;
                     z-index: 3;
@@ -107,31 +107,31 @@ hr {
                     flex-direction: row-reverse;
                     justify-content: space-between;
                     align-items: center;
-                    border-bottom: 1px solid $COLOR_LIGHT_BLACK_4;
+                    border-bottom: 0.1em solid $COLOR_LIGHT_BLACK_4;
 
                     .icons {
                         display: inline-flex;
                         cursor: pointer;
-                        padding: 14px 11px;
+                        padding: 1.4em 1.1em;
 
                         &.btn-close {
-                            border-left: 1px solid $COLOR_LIGHT_BLACK_4;
-                            width: 24px;
-                            height: 24px;
+                            border-left: 0.1em solid $COLOR_LIGHT_BLACK_4;
+                            width: 2.4em;
+                            height: 2.4em;
 
                             .inline-icon {
                                 position: absolute;
-                                top: 14px;
-                                right: 10px;
-                                width: 24px;
-                                height: 24px;
+                                top: 1.4em;
+                                right: 1em;
+                                width: 2.4em;
+                                height: 2.4em;
                             }
                         }
                     }
                     .notifications-header {
-                        padding: 0 16px;
+                        padding: 0 1.6em;
                         text-transform: capitalize;
-                        font-size: 16px;
+                        font-size: 1.6rem;
 
                         h4 {
                             margin: 0.5rem;
@@ -153,11 +153,11 @@ hr {
                         height: 80%;
 
                         .bell-icon {
-                            height: 70px;
+                            height: 7em;
 
                             svg.inline-icon {
-                                width: 16px;
-                                height: 16px;
+                                width: 1.6em;
+                                height: 1.6em;
                                 transform: scale(6, 6);
                             }
                         }
@@ -165,12 +165,12 @@ hr {
                             margin: 0;
                             text-align: center;
                             font-weight: 400;
-                            font-size: 14px;
+                            font-size: 1.4rem;
                             line-height: 100%;
                         }
                         span {
                             display: block;
-                            font-size: 12px;
+                            font-size: 1.2rem;
                         }
 
                     }
@@ -204,9 +204,9 @@ hr {
                 position: relative;
                 width: 100%;
                 cursor: pointer;
-                font-size: 0.875rem; /* stylelint-disable-line number-max-precision */
+                font-size: 1.4rem;
                 box-sizing: border-box;
-                padding: 16px;
+                padding: 1.6em;
                 z-index: 1;
 
                 span.parent-item {
@@ -217,14 +217,14 @@ hr {
 
                     &:before {
                         content: '\25A2';
-                        font-size: 1rem;
+                        font-size: 1.6rem;
                         position: absolute;
                         display: inline-flex;
                         justify-content: center;
                         align-items: center;
                         color: $COLOR_DARK_BLUE_5;
                         left: 1rem;
-                        top: 11px;
+                        top: 1.1em;
                     }
                     &:after {
                         content: '\002303';
@@ -255,8 +255,8 @@ hr {
                         position: relative;
 
                         .drawer-icon {
-                            width: 16px;
-                            height: 16px;
+                            width: 1.6em;
+                            height: 1.6em;
                             position: absolute;
                             left: 0;
                             top: 0;
@@ -268,19 +268,19 @@ hr {
                 }
                 &__toggle {
                     display: flex;
-                    padding: 16px;
+                    padding: 1.6em;
                     justify-content: space-between;
                     align-items: center;
                     color: $COLOR_DARK_BLUE_5;
                     font-weight: 300;
 
                     .toggle-button {
-                        width: 36px;
-                        height: 20px;
+                        width: 3.6em;
+                        height: 2em;
 
                         &:after {
-                            width: 18px;
-                            height: 18px;
+                            width: 1.8em;
+                            height: 1.8em;
                         }
                     }
                 }
@@ -306,7 +306,7 @@ hr {
     }
     &-enter-done {
         .drawer-bg {
-            box-shadow: 0 8px 10px -5px rgba(0, 0, 0, 0.2), 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 0.8em 1em -0.5em rgba(0, 0, 0, 0.2), 0 1.6em 2.4em 0.2em rgba(0, 0, 0, 0.14), 0 0.6em 3em 0.5em rgba(0, 0, 0, 0.12);
 
             .drawer {
                 &.left, &.right {
@@ -325,7 +325,7 @@ hr {
     .drawer-bg .drawer {
         background: $COLOR_DARK_BLUE_5;
         color: $COLOR_WHITE;
-        box-shadow: 0 1px 6px 0 rgba(42, 48, 82, 0.14), 0 2px 8px 0 rgba(20, 20, 20, 0.3);
+        box-shadow: 0 0.1em 0.6em 0 rgba(42, 48, 82, 0.14), 0 0.2em 0.8em 0 rgba(20, 20, 20, 0.3);
 
         .drawer-item {
             a {

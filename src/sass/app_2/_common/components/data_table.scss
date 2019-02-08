@@ -1,12 +1,12 @@
-$header-height: 42px;
+$header-height: 4.2em;
 
 .table {
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
     color: $COLOR_LIGHT_BLACK_1;
-    font-size: 14px;
-    border: 1px solid $COLOR_LIGHT_BLACK_4;
+    font-size: 1.4rem;
+    border: 0.1em solid $COLOR_LIGHT_BLACK_4;
 
     &__cell {
         padding: 0.75rem;
@@ -23,9 +23,9 @@ $header-height: 42px;
     &__row {
         display: grid;
         grid-auto-rows: min-content; // safari fix
-        padding: 0 16px;
+        padding: 0 1.6em;
         box-sizing: border-box;
-        border-bottom: 1px solid $COLOR_LIGHT_BLACK_4;
+        border-bottom: 0.1em solid $COLOR_LIGHT_BLACK_4;
         text-decoration: none;
 
         &, &:active, &:visited {
@@ -34,7 +34,7 @@ $header-height: 42px;
     }
     &__head {
         height: $header-height;
-        border-bottom: 1px solid $COLOR_LIGHT_BLACK_4;
+        border-bottom: 0.1em solid $COLOR_LIGHT_BLACK_4;
     }
     &__head &__row {
         height: 100%;
@@ -60,7 +60,7 @@ $header-height: 42px;
         background-color: $COLOR_LIGHT_BLACK_4_SOLID;
     }
     &__foot &__row {
-        border-top: 1px solid $COLOR_LIGHT_BLACK_4;
+        border-top: 0.1em solid $COLOR_LIGHT_BLACK_4;
         border-bottom: none;
     }
 }

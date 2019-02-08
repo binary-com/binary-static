@@ -1,10 +1,36 @@
-body {
-    font-family: $FONT_STACK;
-    position: relative;
-    min-height: 100%;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
+html {
+    font-size: 62.5%; /* 1rem = 10px */
+    box-sizing: border-box;
+
+    * {
+        font-size: inherit;
+        box-sizing: inherit;
+    }
+    /** TODO: define breakpoints */
+    // @include breakpoints(big-desktop) {
+    //     font-size: 75.5%; /* 1rem = 12px */
+    // }
+    // @include breakpoints(tab-land) {
+    //     font-size: 50%; /* 1rem = 8px */
+    // }
+    // @include breakpoints(tab-port) {
+    //     font-size: 47%; /* 1rem = 7.5px */
+    // }
+    // @include breakpoints(phone-xl) {
+    //     font-size: 38%; /* 1rem = 6px */
+    // }
+    // @include breakpoints(phone-lg) {
+    //     font-size: 35%; /* 1rem = 5.5px */
+    // }
+
+    body {
+        font-family: $FONT_STACK;
+        position: relative;
+        min-height: 100%;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+    }
 }
 
 /* Form */
@@ -13,8 +39,8 @@ select, input, textarea {
     font-size: inherit;
     font-weight: inherit;
     font-style: inherit;
-    padding: 2px 3px;
-    border: 1px solid $COLOR_LIGHT_BLACK_4;
+    padding: 0.2em 0.3em;
+    border: 0.1em solid $COLOR_LIGHT_BLACK_4;
     border-radius: $BORDER_RADIUS;
 }
 
@@ -23,7 +49,7 @@ a {
 }
 
 fieldset {
-    border: 1px solid $COLOR_LIGHT_BLACK_4_SOLID;
+    border: 0.1em solid $COLOR_LIGHT_BLACK_4_SOLID;
 }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */

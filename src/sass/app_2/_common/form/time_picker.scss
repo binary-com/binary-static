@@ -3,7 +3,7 @@
     position: relative;
 
     &.padding {
-        padding: 16px;
+        padding: 1.6em;
     }
     .time-picker-icon {
         left: 5%;
@@ -63,8 +63,8 @@
             height: inherit;
 
             .time-picker-hours {
-                border-right: 1px solid $COLOR_LIGHT_BLACK_4;
-                border-radius: 0 0 0 4px;
+                border-right: 0.1em solid $COLOR_LIGHT_BLACK_4;
+                border-radius: 0 0 0 0.4em;
                 width: 150px;
             }
             .time-picker-minutes {

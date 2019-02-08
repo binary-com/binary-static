@@ -1,14 +1,14 @@
 .login-prompt {
     height: 100%;
-    margin: 0 20px;
+    margin: 0 2em;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 
     &__icon {
-        height: 64px;
-        width: 64px;
+        height: 6.4em;
+        width: 6.4em;
         margin-bottom: 1rem;
 
         svg {
@@ -17,6 +17,6 @@
         }
     }
     &__message {
-        font-size: 14px;
+        font-size: 1.4rem;
     }
 }

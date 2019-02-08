@@ -9,7 +9,7 @@
         text-align: center;
         background: $COLOR_LIGHT_BLACK_4_SOLID;
         border-radius: $BORDER_RADIUS;
-        border: 1px solid $COLOR_LIGHT_BLACK_4;
+        border: 0.1em solid $COLOR_LIGHT_BLACK_4;
 
         svg {
             margin: 0 auto;
@@ -23,7 +23,7 @@
     &-message p {
         color: $COLOR_LIGHT_BLACK_1;
         opacity: 0.75;
-        font-size: 1rem;
+        font-size: 1.6rem;
         margin-top: 0.5rem;
         margin-bottom: 2rem;
     }

@@ -3,50 +3,49 @@
     top: 0;
     background: $COLOR_WHITE;
     outline: 0;
-    border-radius: 5px;
-    box-shadow: 0 2px 8px 0 rgba(42, 48, 82, 0.2);
+    border-radius: 0.5em;
+    box-shadow: 0 0.2em 0.8em 0 rgba(42, 48, 82, 0.2);
     z-index: 999;
-    font-size: 14px;
 
     &, * {
         box-sizing: border-box;
+        font-size: 1rem;
     }
     button {
         border: none;
         outline: none;
         background: none;
-        font-size: 0.85rem;
     }
     &__header, &__footer {
         position: relative;
         display: flex;
         align-items: center;
-        height: 50px;
-        border-radius: 5px;
-        padding: 8px;
+        height: 5em;
+        border-radius: 0.5em;
+        padding: 0.8em;
     }
     &__header {
         justify-content: center;
     }
     &__body {
-        border-top: 1px solid $COLOR_LIGHT_BLACK_4_SOLID;
-        border-bottom: 1px solid $COLOR_LIGHT_BLACK_4_SOLID;
+        border-top: 0.1em solid $COLOR_LIGHT_BLACK_4_SOLID;
+        border-bottom: 0.1em solid $COLOR_LIGHT_BLACK_4_SOLID;
 
         &--date, &--month, &--year, &--decade {
             display: grid;
-            grid-gap: 12px;
-            padding: 8px 20px;
+            grid-gap: 1.2em;
+            padding: 0.8em 2em;
 
             span {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                border-radius: 5px;
+                border-radius: 0.5em;
             }
         }
         &--date {
-            grid-template-columns: repeat(7, 24px);
-            grid-auto-rows: 24px;
+            grid-template-columns: repeat(7, 2.4em);
+            grid-auto-rows: 2.4em;
 
             span {
                 width: 100%;
@@ -54,12 +53,12 @@
             }
         }
         &--month, &--year, &--decade {
-            grid-template-columns: repeat(3, minmax(72px, 1fr));
-            grid-auto-rows: minmax(42px, auto);
+            grid-template-columns: repeat(3, minmax(7.2em, 1fr));
+            grid-auto-rows: minmax(4.2em, auto);
 
             span {
-                width: 56px;
-                height: 32px;
+                width: 5.6em;
+                height: 3.2em;
             }
         }
         &--decade span {
@@ -76,7 +75,7 @@
     }
     &__nav {
         position: absolute;
-        padding: 0 5px;
+        padding: 0 0.5em;
 
         &:hover:not(.calendar__nav--disabled) {
             cursor: pointer;
@@ -99,7 +98,7 @@
     }
     &__btn {
         text-align: center;
-        padding: 8px 2px;
+        padding: 0em 0.2em;
         font-weight: bold;
         cursor: pointer;
 
@@ -110,11 +109,15 @@
         a {
             cursor: inherit;
             color: inherit;
-            font-size: 12px;
+            font-size: 1.2rem;
+        }
+        &--select {
+            font-size: 1.4rem;
+            line-height: 1.5;
         }
     }
     &__text {
-        font-size: 14px;
+        font-size: 1.4rem;
         line-height: 1.5;
         color: $COLOR_LIGHT_BLACK_1;
 
@@ -122,12 +125,12 @@
             font-weight: bold;
         }
         & + &__btn {
-            border-top: 1px solid $COLOR_LIGHT_BLACK_4;
-            margin: 0 -12px;
+            border-top: 0.1em solid $COLOR_LIGHT_BLACK_4;
+            margin: 0 -1.2em;
         }
     }
     &__cell {
-        font-size: 12px;
+        font-size: 1.2rem;
         align-self: center;
         justify-self: center;
         transition: background 0.2s;
@@ -138,7 +141,7 @@
             background: $COLOR_LIGHT_BLACK_4;
         }
         &--bold {
-            font-size: 14px;
+            font-size: 1.4rem;
             font-weight: bold;
             color: $COLOR_LIGHT_BLACK_1;
         }
@@ -152,8 +155,8 @@
         }
         &--today {
             font-weight: 400;
-            border: 1px solid $COLOR_LIGHT_BLACK_1;
-            border-radius: 5px;
+            border: 0.1em solid $COLOR_LIGHT_BLACK_1;
+            border-radius: 0.5em;
         }
         &--active {
             color: $COLOR_WHITE;
@@ -172,7 +175,7 @@
             top: 0;
 
             i {
-                margin-top: -7px;
+                margin-top: -5px;
             }
         }
     }
@@ -182,7 +185,7 @@
 .theme--dark {
     .calendar {
         background: $COLOR_DARK_BLUE_3;
-        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.8), 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+        box-shadow: 0 0.2em 0.8em 0 rgba(0, 0, 0, 0.8), 0 0.2em 0.4em 0 rgba(0, 0, 0, 0.5);
 
         &__header, &__footer {
             color: $COLOR_WHITE;
@@ -210,8 +213,6 @@
 
             &--select {
                 color: $COLOR_WHITE;
-                font-size: 0.8rem;
-                line-height: 20px;
             }
         }
         &__icon path {

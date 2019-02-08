@@ -1,7 +1,7 @@
 footer {
     position: fixed;
     bottom: 0;
-    padding: 0 10px;
+    padding: 0 1em;
     width: 100%;
     height: $FOOTER_HEIGHT;
     background-color: $COLOR_LIGHT_BLACK_4_SOLID;
@@ -14,9 +14,9 @@ footer {
     .server-time {
         display: inline-flex;
         align-self: center;
-        font-size: 0.75rem;
-        margin-right: 10px;
-        padding: 0 10px;
+        font-size: 1.2rem;
+        margin-right: 1em;
+        padding: 0 1em;
     }
     .footer-links {
         display: flex;
@@ -26,15 +26,15 @@ footer {
         height: 100%;
 
         a {
-            padding: 0 8px;
+            padding: 0 0.8em;
             text-decoration: none;
             height: 100%;
             display: inline-flex;
             align-items: center;
 
             .inline-icon {
-                width: 16px;
-                height: 16px;
+                width: 1.6em;
+                height: 1.6em;
             }
             span {
                 font-size: 0.8rem;
@@ -56,17 +56,17 @@ footer {
 
             .ic-positions {
                 svg {
-                    margin-bottom: 5px;
+                    margin-bottom: 0.5em;
                 }
                 &:after {
                     content: '';
-                    width: 2px;
-                    height: 2px;
+                    width: 0.2em;
+                    height: 0.2em;
                     border-radius: 50%;
                     background-color: $COLOR_LIGHT_BLACK_1;
                     position: absolute;
-                    margin-top: 10px;
-                    right: 15px;
+                    margin-top: 1em;
+                    right: 1.5em;
                     display: block;
                 }
                 &.active {
@@ -89,13 +89,13 @@ footer {
 
 .network-status {
     &-wrapper {
-        height: 14px;
+        height: 1.4em;
     }
     &-circle {
         background: $COLOR_LIGHT_BLACK_3;
-        width: 10px;
-        height: 10px;
-        margin: 2px 16px;
+        width: 1em;
+        height: 1em;
+        margin: 0.2em 1.6em;
         border-radius: 50%;
 
         &.online {
@@ -116,7 +116,7 @@ footer {
 
         &:after {
             content: '';
-            height: 2px;
+            height: 0.2em;
             width: 100%;
             background: $COLOR_DARK_BLUE_5;
             position: absolute;

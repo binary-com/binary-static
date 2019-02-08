@@ -20,14 +20,14 @@
             flex-direction: row;
             align-items: center;
             justify-content: center;
+            padding: 0 1.6em;
             cursor: pointer;
 
             p.acc-balance-id {
                 pointer-events: none;
                 line-height: 0.5;
                 color: $COLOR_LIGHT_BLACK_1;
-                font-size: 1rem;
-                padding: 0 8px 0 16px;
+                font-size: 1.6rem;
                 font-weight: 600;
                 text-align: center;
 
@@ -43,23 +43,19 @@
             p.acc-balance-amount {
                 line-height: 100%;
                 color: $COLOR_GREEN_1;
-                font-size: 1rem;
-                padding: 0 16px 0 8px;
+                font-size: 1.6rem;
+                padding: 0 0.8em;
                 font-weight: bold;
-                margin: 0 16px 0 0;
                 text-align: center;
                 pointer-events: none;
             }
             .select-arrow {
                 pointer-events: none;
-                position: absolute;
-                top: 16px;
-                right: 8px;
-                line-height: 1;
+                line-height: 1.5;
                 transition: transform 0.25s ease;
                 transform: rotate(0deg);
                 transform-origin: 50% 45%;
-                font-size: 1.1rem;
+                font-size: 1.6rem;
             }
             &:hover:not(.show) {
                 background: $COLOR_LIGHT_BLACK_4;
@@ -70,16 +66,15 @@
                 }
                 &:before {
                     display: flex;
-                    position: absolute;
                     text-transform: uppercase;
                     content: 'demo';
-                    font-size: 0.75rem;
-                    border: 1px solid $COLOR_ORANGE;
+                    font-size: 1.2rem;
+                    border: 0.1em solid $COLOR_ORANGE;
                     color: $COLOR_ORANGE;
-                    padding: 2px 8px;
-                    border-radius: 16px;
+                    padding: 0.2em 0.8em;
+                    margin-right: 0.8rem;
+                    border-radius: 1.6em;
                     align-items: center;
-                    left: -3.5rem;
                     pointer-events: none;
                 }
             }
@@ -91,8 +86,7 @@
         }
     }
     button.btn {
-        margin: 8px 16px;
-        height: 32px;
+        margin: 0 1.6em;
     }
 }
 
@@ -101,9 +95,9 @@
         position: absolute;
         background: $COLOR_WHITE;
         transition: transform 0.25s ease, opacity 0.25s linear;
-        box-shadow: 0 2px 8px 0 $COLOR_LIGHT_BLACK_3;
+        box-shadow: 0 0.2em 0.8em 0 $COLOR_LIGHT_BLACK_3;
         right: 0;
-        top: calc(100% + 4px);
+        top: calc(100% + 0.4em);
         width: 240px;
         border-radius: $BORDER_RADIUS;
 
@@ -113,29 +107,29 @@
         }
         &--enter, &--exit {
             opacity: 0;
-            transform: translateY(-20px);
+            transform: translateY(-2em);
         }
     }
     &__new-account {
         display: flex;
         justify-content: center;
-        margin: 8px 0 16px;
+        margin: 0.8em 0 1.6em;
 
         span {
-            padding: 8px 16px;
-            border: 1px dashed $COLOR_DARK_BLUE_2;
+            padding: 0.8em 1.6em;
+            border: 0.1em dashed $COLOR_DARK_BLUE_2;
             color: $COLOR_DARK_BLUE_2;
-            font-size: 0.75rem;
+            font-size: 1.2rem;
             width: 100%;
-            margin: 0 16px;
+            margin: 0 1.6em;
             text-align: center;
-            border-radius: 4px;
+            border-radius: 0.4em;
             cursor: pointer;
 
             &:before {
                 content: '\002B';
                 color: $COLOR_DARK_BLUE_2;
-                margin-right: 8px;
+                margin-right: 0.8em;
             }
             &:hover {
                 background: $COLOR_LIGHT_BLACK_4;
@@ -145,20 +139,26 @@
     &__list {
         height: 100%;
         border-radius: $BORDER_RADIUS;
+        background-color: $COLOR_LIGHT_BLACK_4_SOLID;
 
         &__group {
-            border-bottom: 4px solid $COLOR_LIGHT_BLACK_4;
+            border-bottom: 0.4em solid $COLOR_WHITE;
+            padding: 0.8em 0;
+        }
+        &__virtual {
+            padding-top: 0.8em;
+            padding-bottom: 1.6em;
         }
         &__title {
-            font-size: 0.875rem; //stylelint-disable-line number-max-precision
+            font-size: 1.4rem;
             font-weight: bold;
-            padding: 14px;
+            padding: 0.571em 1.143em;
             display: block;
             color: $COLOR_LIGHT_BLACK_1;
         }
         .acc-switcher-account {
             cursor: pointer;
-            padding: 12px 16px 12px 0px;
+            padding: 0.8em 1.6em;
             position: relative;
             display: flex;
             align-items: center;
@@ -168,25 +168,26 @@
                 display: flex;
                 align-items: center;
                 font-weight: 300;
-                font-size: 0.875rem; //stylelint-disable-line number-max-precision
+                font-size: 1.4rem;
                 line-height: 0.5;
-                margin-left: 8px;
 
                 &.virtual:before {
                     text-transform: uppercase;
                     content: 'demo';
-                    font-size: 0.5714rem; //stylelint-disable-line number-max-precision
-                    border: 1px solid $COLOR_ORANGE;
+                    font-size: 0.9rem;
+                    border: 0.1em solid $COLOR_ORANGE;
                     color: $COLOR_ORANGE;
-                    padding: 4px;
-                    border-radius: 16px;
-                    margin: 0 8px 0 0;
+                    padding: 0.4em;
+                    border-radius: 1.6em;
+                    margin: 0 0.8em 0 0;
                 }
                 &__icon:before {
-                    width: 20px;
-                    height: 20px;
-                    margin-right: 16px;
-                    margin-left: 8px;
+                    width: 2.4em;
+                    height: 2.4em;
+                    margin-right: 1.6em;
+                    font-size: 1rem;
+                    display: flex;
+                    align-items: center;
                 }
                 &__icon--usd:before {
                     content: url('../images/header/accounts/usd.svg');
@@ -217,9 +218,9 @@
                 }
             }
             .acc-switcher__radio {
-                height: 10px;
-                width: 10px;
-                border: 2px solid $COLOR_LIGHT_BLACK_3;
+                height: 1.6em;
+                width: 1.6em;
+                border: 0.2em solid $COLOR_LIGHT_BLACK_2;
                 border-radius: 50%;
             }
             &:hover {
@@ -227,33 +228,34 @@
             }
             &--selected {
                 .acc-switcher__radio {
-                    border-color: $COLOR_DARK_BLUE_2;
-                    background: $COLOR_DARK_BLUE_2;
+                    border: 0.4em solid $COLOR_ORANGE;
+                    background: $COLOR_WHITE;
                 }
             }
         }
         .acc-button {
-            padding: 8px;
-            border-bottom: 1px solid $COLOR_LIGHT_BLACK_4;
+            padding: 0.8em;
+            border-bottom: 0.1em solid $COLOR_LIGHT_BLACK_4;
 
             button.btn {
                 margin: 0;
                 width: 100%;
-                font-size: 14px;
+                font-size: 1.4rem;
             }
         }
         .acc-logout {
             cursor: pointer;
-            font-size: 12px;
-            padding: 10px 16px;
+            font-size: 1.2rem;
+            padding: 1.6em;
             display: flex;
             align-items: center;
             justify-content: flex-end;
+            background-color: $COLOR_WHITE;
 
             .inline-icon {
-                width: 16px;
+                width: 1.6em;
                 height: auto;
-                margin-left: 8px;
+                margin-left: 0.8em;
             }
             &:hover {
                 background: $COLOR_LIGHT_BLACK_4;
@@ -272,6 +274,8 @@
             background-color: $COLOR_DARK_BLUE_4;
         }
         &__list {
+            background-color: $COLOR_DARK_BLUE_3;
+
             &__group {
                 border-color: $COLOR_DARK_BLUE_2;
             }
@@ -301,6 +305,8 @@
                 border-color: $COLOR_DARK_BLUE_2;
             }
             .acc-logout {
+                background-color: $COLOR_DARK_BLUE_2;
+
                 span {
                     color: $COLOR_DARK_BLUE_7;
                 }

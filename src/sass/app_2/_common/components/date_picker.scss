@@ -31,11 +31,11 @@
     // TODO: update datepicker UI in mobile
     &__native-overlay {
         background: $COLOR_WHITE;
-        height: 32px;
+        height: 3.2em;
         cursor: pointer;
-        border: 1px solid $COLOR_LIGHT_BLACK_4;
+        border: 0.1em solid $COLOR_LIGHT_BLACK_4;
         border-radius: $BORDER_RADIUS;
-        font-size: 14px;
+        font-size: 1.4rem;
         box-sizing: border-box;
         font-weight: 300;
         transition: border 0.25s;
@@ -52,8 +52,8 @@
         &__arrowhead {
             display: block;
             position: absolute;
-            top: 8px;
-            right: 6px;
+            top: 0.8em;
+            right: 0.6em;
         }
     }
     // TODO: style native date picker

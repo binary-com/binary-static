@@ -1,0 +1,98 @@
+// /*
+//  * Devices breakpoints - TODO: define proper breakpoints
+//  */
+// @mixin breakpoints($val) {
+//     $big-desktop: '(max-width: 1800px)';
+//     $tab-land   : '(max-width: 1200px)';
+//     $tab-port   : '(max-width: 900px)';
+//     $phone-xl   : '(max-width: 599px)';
+//     $phone-lg   : '(max-width: 480px)';
+
+//     @if $val == big-desktop {
+//         @media #{$big-desktop} {
+//             @content;
+//         }
+//     }
+//     @else if $val == tab-land {
+//         @media #{$tab-land} {
+//             @content;
+//         }
+//     }
+//     @else if $val == tab-port {
+//         @media #{$tab-port} {
+//             @content;
+//         }
+//     }
+//     @else if $val == phone-xl {
+//         @media #{$phone-xl} {
+//             @content;
+//         }
+//     }
+//     @else if $val == phone-lg {
+//         @media #{$phone-lg} {
+//             @content;
+//         }
+//     }
+// }
+
+/*
+ * SASS interpolation
+ */
+// Requires the calc-interpolation function which can also be used independently
+@function calc-interpolation($min-screen, $min-value, $max-screen, $max-value) {
+    $a: ($max-value - $min-value) / ($max-screen - $min-screen);
+    $b: $min-value - $a * $min-screen;
+
+    $sign: '+';
+    @if ($b < 0) {
+        $sign: '-';
+        $b: abs($b);
+    }
+    @return calc(#{$a*100}vw #{$sign} #{$b});
+}
+
+@mixin interpolate($properties, $min-screen, $max-screen, $min-value, $max-value) {
+    & {
+        @each $property in $properties {
+            #{$property}: $min-value;
+        }
+        @media screen and (min-width: $min-screen) {
+            @each $property in $properties {
+                #{$property}: calc-interpolation($min-screen, $min-value, $max-screen, $max-value);
+            }
+        }
+        @media screen and (min-width: $max-screen) {
+            @each $property in $properties {
+                #{$property}: $max-value;
+            }
+        }
+    }
+}
+
+/*
+ * Range Slider Thumb styling is set here
+ */
+@mixin thumbStyle() {
+    appearance: none;
+    width: 0.75em;
+    height: 0.75em;
+    border-radius: 100%;
+    border: 0;
+    cursor: pointer;
+    transition: box-shadow 0.5s;
+    box-shadow: 0 0 0 0px rgba(0, 0, 0, 0);
+}
+
+/*
+ * SVG icons colors
+ */
+@mixin colorIcon($colors...) {
+    @for $i from 1 through length($colors) {
+        .color#{$i}-fill {
+            fill: nth($colors, $i);
+        }
+        .color#{$i}-stroke {
+            stroke: nth($colors, $i);
+        }
+    }
+}
