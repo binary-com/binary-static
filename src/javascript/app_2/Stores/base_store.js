@@ -41,7 +41,7 @@ export default class BaseStore {
      *     @property {String[]} local_storage_properties - A list of properties' names that should be kept in localStorage.
      *     @property {String[]} session_storage_properties - A list of properties' names that should be kept in sessionStorage.
      *     @property {Object}   validation_rules - An object that contains the validation rules for each property of the store.
-     *     @property {String}   store_name - Explicit store name for application storage to bypass minifation
+     *     @property {String}   store_name - Explicit store name for browser application storage (to bypass minification)
      */
     constructor(options = {}) {
         const {
