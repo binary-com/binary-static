@@ -119,7 +119,25 @@ const AdvancedDuration = ({
                                 {...shared_input_props}
                             />
                         }
-                        { advanced_duration_unit !== 't' &&
+                        { advanced_duration_unit === 'd' &&
+                            <DatePicker
+                                name='duration'
+                                has_today_btn
+                                min_date={min_date_expiry}
+                                max_date={max_date_duration}
+                                start_date={start_date}
+                                onChange={onChange}
+                                value={expiry_date}
+                                is_clearable
+                                mode='duration'
+                                is_nativepicker={is_nativepicker}
+                                alignment='left'
+                                disabled_selector={['year']}
+                            // sessions={expiry_date_sessions} TODO: add expiry date sessions. e.g. disable days if market closes on weekend
+                            // validation_errors={validation_errors.expiry_date} TODO: add validation_errors for expiry date
+                            />
+                        }
+                        { (advanced_duration_unit !== 't' && advanced_duration_unit !== 'd') &&
                             <InputField
                                 label={duration_units_list.length === 1 ? duration_units_list[0].text : null}
                                 name='duration'

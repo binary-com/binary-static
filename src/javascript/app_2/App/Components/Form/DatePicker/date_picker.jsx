@@ -116,17 +116,21 @@ class DatePicker extends React.Component {
     renderInputField = () => {
         const { is_read_only, mode, name, validation_errors } = this.props;
         let { placeholder } = this.props;
-        let type, onChange;
+        let type, onChange, is_incrementable, value;
 
         switch (mode) {
             case 'duration':
                 onChange = this.onChangeInput;
                 placeholder = placeholder || localize('Select a duration');
                 type = 'number';
+                is_incrementable = true;
+                value = this.state.value ? this.state.value : 1;
                 break;
             default:
                 placeholder = placeholder || localize('Select a date');
                 type = 'text';
+                is_incrementable = false;
+                value = this.state.value;
         }
 
         return (
@@ -136,12 +140,13 @@ class DatePicker extends React.Component {
                 data-value={this.state.value}
                 error_messages={validation_errors}
                 is_read_only={is_read_only}
+                is_incrementable={is_incrementable}
                 name={name}
                 onChange={onChange}
                 onClick={this.handleVisibility}
                 placeholder={placeholder}
                 type={type}
-                value={this.state.value}
+                value={value}
             />
         );
     };
@@ -185,18 +190,23 @@ class DatePicker extends React.Component {
                 onMouseLeave={this.onMouseLeave}
             >
                 { this.renderInputField() }
-                <IconCalendar
-                    className={classNames('datepicker__icon datepicker__icon--calendar', {
-                        'datepicker__icon--is-hidden': this.state.is_clear_btn_visible,
-                    })}
-                    onClick={this.handleVisibility}
-                />
-                <IconClear
-                    className={classNames('datepicker__icon datepicker__icon--clear', {
-                        'datepicker__icon--is-hidden': !this.state.is_clear_btn_visible,
-                    })}
-                    onClick={this.state.is_clear_btn_visible ? this.clearDatePickerInput : undefined}
-                />
+                {
+                    this.props.mode !== 'duration' &&
+                    <React.Fragment>
+                        <IconCalendar
+                            className={classNames('datepicker__icon datepicker__icon--calendar', {
+                                'datepicker__icon--is-hidden': this.state.is_clear_btn_visible,
+                            })}
+                            onClick={this.handleVisibility}
+                        />
+                        <IconClear
+                            className={classNames('datepicker__icon datepicker__icon--clear', {
+                                'datepicker__icon--is-hidden': !this.state.is_clear_btn_visible,
+                            })}
+                            onClick={this.state.is_clear_btn_visible ? this.clearDatePickerInput : undefined}
+                        />
+                    </React.Fragment>
+                }
                 <div
                     className={classNames('datepicker__picker', {
                         'datepicker__picker--show'                           : this.state.is_datepicker_visible,

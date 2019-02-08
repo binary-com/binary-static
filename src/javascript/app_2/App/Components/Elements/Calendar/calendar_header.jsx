@@ -24,7 +24,7 @@ const CalendarHeader = ({
     isPeriodDisabled,
     navigateTo,
     switchView,
-    disabled_selector,
+    disabled_selector = [],
 }) => {
     const is_date_view   = calendar_view === 'date';
     const is_month_view  = calendar_view === 'month';
