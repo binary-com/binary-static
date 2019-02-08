@@ -5,6 +5,7 @@ import React             from 'react';
 import { CSSTransition } from 'react-transition-group';
 import Dialog            from './dialog.jsx';
 import InputField        from '../input_field.jsx';
+import { IconClock } from '../../../../Assets/Common/icon_clock.jsx';
 
 class TimePicker extends React.Component {
     state = { is_open: false };
@@ -62,8 +63,7 @@ class TimePicker extends React.Component {
             <div
                 ref={this.saveRef}
                 className={classNames(prefix_class,
-                    { 'padding': this.props.padding },
-                    { 'active': this.state.is_open })}
+                    { 'padding': this.props.padding })}
             >
                 {
                     is_nativepicker
@@ -78,14 +78,13 @@ class TimePicker extends React.Component {
                         />
                         : (
                             <React.Fragment>
+                                <IconClock className='time-picker-icon' />
                                 <InputField
                                     error_messages={validation_errors}
                                     type='text'
                                     is_read_only
                                     id={`${prefix_class}-input`}
-                                    className={classNames(`${prefix_class}-input`,
-                                        'time-picker-clear',
-                                        { 'active': this.state.is_open })}
+                                    className={classNames(`${prefix_class}-input`)}
                                     value={value}
                                     onClick={this.toggleDropDown}
                                     name={name}

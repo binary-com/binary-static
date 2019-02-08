@@ -5,7 +5,6 @@ import { localize } from '_common/localize';
 import { toMoment } from 'Utils/Date';
 
 const Dialog = ({
-    is_clearable,
     preClass,
     value,
     start_time,
