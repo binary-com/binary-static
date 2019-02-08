@@ -41,6 +41,7 @@ export default class BaseStore {
      *     @property {String[]} local_storage_properties - A list of properties' names that should be kept in localStorage.
      *     @property {String[]} session_storage_properties - A list of properties' names that should be kept in sessionStorage.
      *     @property {Object}   validation_rules - An object that contains the validation rules for each property of the store.
+     *     @property {String}   store_name - Explicit store name for browser application storage (to bypass minification)
      */
     constructor(options = {}) {
         const {
@@ -48,6 +49,7 @@ export default class BaseStore {
             local_storage_properties,
             session_storage_properties,
             validation_rules,
+            store_name,
         } = options;
 
         Object.defineProperty(this, 'root_store', {
@@ -62,6 +64,21 @@ export default class BaseStore {
             enumerable: false,
             writable  : true,
         });
+
+        const has_local_or_session_storage = local_storage_properties && local_storage_properties.length
+            || session_storage_properties && session_storage_properties.length;
+
+        if (has_local_or_session_storage) {
+            if (!store_name) {
+                throw new Error('store_name is required for local/session storage');
+            }
+
+            Object.defineProperty(this, 'store_name', {
+                value     : store_name,
+                enumerable: false,
+                writable  : false,
+            });
+        }
 
         this.root_store                 = root_store;
         this.local_storage_properties   = local_storage_properties || [];
@@ -139,9 +156,9 @@ export default class BaseStore {
         });
 
         if (storage === BaseStore.STORAGES.LOCAL_STORAGE) {
-            localStorage.setItem(this.constructor.name, snapshot);
+            localStorage.setItem(this.store_name, snapshot);
         } else if (storage === BaseStore.STORAGES.SESSION_STORAGE) {
-            sessionStorage.setItem(this.constructor.name, snapshot);
+            sessionStorage.setItem(this.store_name, snapshot);
         }
     }
 
@@ -151,8 +168,8 @@ export default class BaseStore {
      */
     @action
     retrieveFromStorage() {
-        const local_storage_snapshot   = JSON.parse(localStorage.getItem(this.constructor.name, {}));
-        const session_storage_snapshot = JSON.parse(sessionStorage.getItem(this.constructor.name, {}));
+        const local_storage_snapshot   = JSON.parse(localStorage.getItem(this.store_name, {}));
+        const session_storage_snapshot = JSON.parse(sessionStorage.getItem(this.store_name, {}));
 
         const snapshot = { ...local_storage_snapshot, ...session_storage_snapshot };
 

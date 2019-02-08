@@ -52,6 +52,7 @@ const BinaryLoader = (() => {
     const beforeContentChange = () => {
         if (active_script) {
             BinarySocket.removeOnDisconnect();
+            BinarySocket.removeOnReconnect();
             if (typeof active_script.onUnload === 'function') {
                 active_script.onUnload();
             }
@@ -84,6 +85,7 @@ const BinaryLoader = (() => {
 
             ScrollToAnchor.init();
         });
+        BinarySocket.setOnReconnect(active_script.onReconnect);
     };
 
     const error_messages = {

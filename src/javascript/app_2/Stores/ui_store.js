@@ -8,6 +8,8 @@ import {
     MAX_TABLET_WIDTH } from 'Constants/ui';
 import BaseStore       from './base_store';
 
+const store_name = 'ui_store';
+
 export default class UIStore extends BaseStore {
     @observable is_main_drawer_on          = false;
     @observable is_notifications_drawer_on = false;
@@ -67,7 +69,7 @@ export default class UIStore extends BaseStore {
             'is_purchase_lock_on',
         ];
 
-        super({ local_storage_properties });
+        super({ local_storage_properties, store_name });
         window.addEventListener('resize', this.handleResize);
         autorun(() => document.body.classList[this.is_dark_mode_on ? 'add' : 'remove']('dark'));
     }
