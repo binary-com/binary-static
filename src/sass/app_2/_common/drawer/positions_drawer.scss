@@ -39,7 +39,7 @@ $header-height: 40px;
         height: calc(100% - #{$header-height});
         padding: 8px 0;
         box-sizing: border-box;
-        overflow-y: auto;
+        overflow: hidden;
     }
     &__title {
         font-size: 14px;
