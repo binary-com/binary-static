@@ -77,8 +77,8 @@ const Dialog = ({
 };
 
 Dialog.propTypes = {
-    className : PropTypes.string,
-    end_time  : PropTypes.oneOfType([
+    className: PropTypes.string,
+    end_time : PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
         PropTypes.object,
