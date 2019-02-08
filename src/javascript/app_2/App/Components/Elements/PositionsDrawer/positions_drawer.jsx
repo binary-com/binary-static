@@ -57,7 +57,7 @@ class PositionsDrawer extends React.Component {
                 </div>
                 <div className='positions-drawer__body'>
                     <Scrollbars
-                        style={{ width: '100%', height: 'calc(100vh - 175px)' }}
+                        style={{ width: '100%', height: 'calc(100vh - 200px)' }}
                         autoHide
                     >
                         {body_content}

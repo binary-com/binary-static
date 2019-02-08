@@ -13,7 +13,10 @@ const AppContents = ({ children, is_positions_drawer_on }) => (
         })}
     >
         {/* Calculate height of user screen and offset height of header and footer */}
-        <Scrollbars autoHide style={{ height: 'calc(100vh - 83px)' }}>
+        <Scrollbars
+            autoHide
+            style={{ height: 'calc(100vh - 83px)' }}
+        >
             {children}
         </Scrollbars>
     </div>
