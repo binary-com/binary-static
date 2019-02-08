@@ -14,6 +14,8 @@ import {
     isBarrierSupported }      from './Helpers/barriers';
 import BaseStore              from '../../base_store';
 
+const store_name = 'smart_chart_store';
+
 export default class SmartChartStore extends BaseStore {
     @observable symbol;
     @observable barriers = observable.object({});
@@ -27,7 +29,7 @@ export default class SmartChartStore extends BaseStore {
 
     constructor({ root_store }) {
         const local_storage_properties = ['chart_type', 'granularity'];
-        super({ root_store, local_storage_properties });
+        super({ root_store, local_storage_properties, store_name });
     }
 
     @action.bound
