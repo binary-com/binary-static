@@ -53,6 +53,7 @@ class DurationWrapper extends React.Component {
         // intercept changes to current contracts duration_units_list - if they are missing change duration_unit and value in trade_store and ui_store
         if (has_missing_duration_unit || simple_is_missing_duration_unit) {
             this.setDurationUnit();
+            return;
         }
 
         // simple only has expiry type duration
