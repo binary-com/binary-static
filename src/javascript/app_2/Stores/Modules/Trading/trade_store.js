@@ -257,8 +257,8 @@ export default class TradeStore extends BaseStore {
 
     @action.bound
     onClickNewTrade(e) {
-        this.requestProposal();
         e.preventDefault();
+        WS.forgetAll('proposal').then(this.requestProposal());
     }
 
     /**
