@@ -1,9 +1,5 @@
 .binary-app {
     overflow: hidden;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004); //stylelint-disable-line number-max-precision
-    text-rendering: optimizeLegibility !important;
-    -webkit-font-smoothing: antialiased !important;
-    -moz-osx-font-smoothing: grayscale !important;
 
     .notice-msg {
         background: unset;
