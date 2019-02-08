@@ -72,9 +72,10 @@ const getDays = ({
         const is_closes_early = events.map(event => !!event.descrip.match(/Closes early|Opens late/))[0];
         const message         = events.map(event => event.descrip)[0] || '';
 
+        const is_before_min_or_after_max_date = isPeriodDisabled(moment_date, 'day');
         const is_disabled =
             // check if date is before min_date or after_max_date
-            isPeriodDisabled(moment_date, 'day')
+            is_before_min_or_after_max_date
             // for forward starting accounts, only show same day as start date and the day after
             || ((start_date && (moment_date.isBefore(moment_start_date)
             || moment_date.isAfter(addDays(moment_start_date, 1)))))
@@ -98,7 +99,7 @@ const getDays = ({
                 onClick={is_disabled ? undefined : (e) => updateSelected(e, 'day') }
                 data-date={date}
             >
-                { ((has_events || is_closes_early) && !is_other_month) &&
+                { ((has_events || is_closes_early) && !is_other_month && !is_before_min_or_after_max_date) &&
                     <Tooltip
                         alignment='top'
                         icon='dot'
