@@ -23,9 +23,6 @@
         &:hover {
             border-color: $COLOR_LIGHT_BLACK_4;
         }
-        &.active {
-            border-color: $COLOR_DARK_BLUE_5;
-        }
         input {
             text-align: center;
         }
@@ -101,10 +98,6 @@
                             color: $COLOR_WHITE;
                         }
                     }
-                    &.selected {
-                        background: $COLOR_LIGHT_GRAY_1;
-                        color: $COLOR_WHITE;
-                    }
                     &.disabled {
                         color: $COLOR_LIGHT_BLACK_3;
                         cursor: default;
@@ -127,27 +120,25 @@
             background: $COLOR_DARK_BLUE_3;
             box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
 
-            .time-picker-panel, .time-picker-selector {
-                .time-picker-hours, .time-picker-minutes {
-                    border-color: $COLOR_DARK_BLUE_2;
+            .time-picker-hours, .time-picker-minutes {
+                border-color: $COLOR_DARK_BLUE_2;
+                color: $COLOR_DARK_BLUE_7;
+
+                .list-title {
+                    color: $COLOR_WHITE;
+                }
+                .list-item {
                     color: $COLOR_DARK_BLUE_7;
 
-                    .list-title {
-                        color: $COLOR_WHITE;
+                    &.disabled {
+                        color: $COLOR_DARK_BLUE_8;
+                        pointer-events: none;
                     }
-                    .list-item {
-                        color: $COLOR_DARK_BLUE_7;
-
-                        &.disabled {
-                            color: $COLOR_DARK_BLUE_8;
-                            pointer-events: none;
-                        }
-                        &.selected {
-                            background: $COLOR_DARK_BLUE_5;
-                        }
-                        &:hover:not(.selected):not(.disabled) {
-                            background: $COLOR_DARK_BLUE_4;
-                        }
+                    &.selected {
+                        background: $COLOR_DARK_BLUE_5;
+                    }
+                    &:hover:not(.selected):not(.disabled) {
+                        background: $COLOR_DARK_BLUE_4;
                     }
                 }
             }
