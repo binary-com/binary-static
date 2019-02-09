@@ -138,8 +138,8 @@ class DatePicker extends React.Component {
                 data-tip={false}
                 data-value={this.state.value}
                 error_messages={validation_errors}
-                is_read_only={is_read_only}
                 is_incrementable={is_incrementable}
+                is_read_only={is_read_only}
                 name={name}
                 onChange={onChange}
                 onClick={this.handleVisibility}

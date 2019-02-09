@@ -121,18 +121,18 @@ const AdvancedDuration = ({
                         }
                         { advanced_duration_unit === 'd' &&
                             <DatePicker
-                                name='duration'
-                                has_today_btn
-                                min_date={min_date_expiry}
-                                max_date={max_date_duration}
-                                start_date={start_date}
-                                onChange={onChange}
-                                value={expiry_date}
-                                is_clearable
-                                mode='duration'
-                                is_nativepicker={is_nativepicker}
                                 alignment='left'
                                 disabled_selector={['year']}
+                                has_today_btn
+                                is_clearable
+                                is_nativepicker={is_nativepicker}
+                                max_date={max_date_duration}
+                                min_date={min_date_expiry}
+                                mode='duration'
+                                name='duration'
+                                onChange={onChange}
+                                start_date={start_date}
+                                value={expiry_date}
                             />
                         }
                         { (advanced_duration_unit !== 't' && advanced_duration_unit !== 'd') &&
