@@ -127,13 +127,13 @@ const AdvancedDuration = ({
                                 duration_d={duration_d}
                                 has_today_btn
                                 is_clearable
-                                is_nativepicker={is_nativepicker}
                                 max_date={max_date_duration}
                                 min_date={min_date_expiry}
                                 mode='duration'
                                 name='duration'
                                 start_date={start_date}
                                 value={expiry_date}
+                                {...number_input_props}
                                 {...shared_input_props}
                             />
                         }

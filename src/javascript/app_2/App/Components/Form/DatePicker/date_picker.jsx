@@ -75,6 +75,7 @@ class DatePicker extends React.Component {
     onChangeInput = (e) => {
         const value = e.target.value;
         this.updateDatePickerValue(value);
+        this.props.onChange(e);
     }
 
     clearDatePickerInput = () => {
@@ -114,7 +115,7 @@ class DatePicker extends React.Component {
     };
 
     renderInputField = () => {
-        const { is_read_only, mode, name, validation_errors } = this.props;
+        const { is_read_only, mode, name, error_messages, max_value, min_value } = this.props;
         let { placeholder } = this.props;
         let type, onChange, is_incrementable;
 
@@ -122,7 +123,7 @@ class DatePicker extends React.Component {
             case 'duration':
                 onChange = this.onChangeInput;
                 type = 'number';
-                is_incrementable = true;
+                is_incrementable = this.props.is_incrementable;
                 break;
             default:
                 placeholder = placeholder || localize('Select a date');
@@ -135,11 +136,11 @@ class DatePicker extends React.Component {
                 className='datepicker__input'
                 data-tip={false}
                 data-value={this.state.value}
-                error_messages={validation_errors}
+                error_messages={error_messages}
                 is_incrementable={is_incrementable}
                 is_read_only={is_read_only}
-                max_value={this.props.max_value}
-                min_value={this.props.min_value}
+                max_value={max_value}
+                min_value={min_value}
                 name={name}
                 onChange={onChange}
                 onClick={this.handleVisibility}
