@@ -13,29 +13,30 @@ import SimpleDuration                 from './simple_duration.jsx';
 const Duration = ({
     advanced_duration_unit,
     advanced_expiry_type,
-    hasDurationUnit    ,
     contract_expiry_type,
     duration,
+    duration_d,
     duration_unit,
     duration_units_list,
     duration_min_max,
+    duration_t,
     expiry_date,
     expiry_time,
     expiry_type,
     getDurationFromUnit,
-    onChange,
-    onChangeUiStore,
+    hasDurationUnit,
     is_advanced_duration,
     is_minimized,
     is_nativepicker,
+    market_close_times,
+    onChange,
+    onChangeUiStore,
+    simple_duration_unit,
     server_time,
     sessions,
     start_date,
     start_time,
     validation_errors,
-    market_close_times,
-    simple_duration_unit,
-    duration_t,
 }) => {
     const expiry_list = [
         { text: localize('Duration'), value: 'duration' },
@@ -164,6 +165,7 @@ const Duration = ({
                             start_time={start_time}
                             onChangeUiStore={onChangeUiStore}
                             duration_t={duration_t}
+                            duration_d={duration_d}
                         /> }
                     { !is_advanced_duration &&
                         <SimpleDuration
@@ -193,6 +195,10 @@ Duration.propTypes = {
     advanced_expiry_type  : PropTypes.string,
     contract_expiry_type  : PropTypes.string,
     duration              : PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
+    ]),
+    duration_d: PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
     ]),
