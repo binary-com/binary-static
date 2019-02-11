@@ -1,6 +1,5 @@
 import classNames      from 'classnames';
 import { observer }    from 'mobx-react';
-import PropTypes       from 'prop-types';
 import React           from 'react';
 import {
     IconArrow,
@@ -231,11 +230,6 @@ DatePicker.defaultProps = {
 
 DatePicker.propTypes = {
     ...Calendar.propTypes,
-    duration_d: PropTypes.oneOfType([
-        PropTypes.number,
-        PropTypes.string,
-    ]),
-
 };
 
 export default observer(DatePicker);
