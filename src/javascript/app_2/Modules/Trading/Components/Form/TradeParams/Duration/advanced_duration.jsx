@@ -18,8 +18,10 @@ import {
 const AdvancedDuration = ({
     advanced_duration_unit,
     advanced_expiry_type,
+    duration_d,
     duration_min_max,
     duration_units_list,
+    duration_t,
     changeDurationUnit,
     getDurationFromUnit,
     expiry_date,
@@ -36,7 +38,6 @@ const AdvancedDuration = ({
     start_time,
     market_close_times,
     onChangeUiStore,
-    duration_t,
 }) => {
     const moment_expiry      = toMoment(expiry_date || server_time);
     let is_24_hours_contract = false;
@@ -189,8 +190,12 @@ AdvancedDuration.propTypes = {
     advanced_duration_unit: PropTypes.string,
     advanced_expiry_type  : PropTypes.string,
     changeDurationUnit    : PropTypes.func,
-    duration_min_max      : PropTypes.object,
-    duration_t            : PropTypes.oneOfType([
+    duration_d            : PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
+    ]),
+    duration_min_max: PropTypes.object,
+    duration_t      : PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
     ]),

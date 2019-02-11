@@ -26,7 +26,8 @@ class DatePicker extends React.Component {
         document.addEventListener('click', this.onClickOutside, true);
         const { mode, value } = this.props;
         if (mode === 'duration') {
-            this.updateDatePickerValue(daysFromTodayTo(value));
+            const min_value = 1;
+            this.updateDatePickerValue(min_value);
         } else {
             this.updateDatePickerValue(formatDate(value, 'DD MMM YYYY'));
         }
@@ -84,7 +85,6 @@ class DatePicker extends React.Component {
     // TODO: handle cases where user inputs date before min_date and date after max_date
     updateDatePickerValue = (value) => {
         const { date_format, mode, start_date } = this.props;
-
         this.setState({ value }, this.updateStore);
 
         // update Calendar
@@ -116,20 +116,18 @@ class DatePicker extends React.Component {
     renderInputField = () => {
         const { is_read_only, mode, name, validation_errors } = this.props;
         let { placeholder } = this.props;
-        let type, onChange, is_incrementable, value;
+        let type, onChange, is_incrementable;
 
         switch (mode) {
             case 'duration':
                 onChange = this.onChangeInput;
                 type = 'number';
                 is_incrementable = true;
-                value = this.state.value ? this.state.value : 1;
                 break;
             default:
                 placeholder = placeholder || localize('Select a date');
                 type = 'text';
                 is_incrementable = false;
-                value = this.state.value;
         }
 
         return (
@@ -143,9 +141,10 @@ class DatePicker extends React.Component {
                 name={name}
                 onChange={onChange}
                 onClick={this.handleVisibility}
+                min_value={1}
                 placeholder={placeholder}
                 type={type}
-                value={value}
+                value={this.state.value}
             />
         );
     };
