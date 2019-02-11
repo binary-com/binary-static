@@ -142,7 +142,6 @@ const AdvancedDuration = ({
                             onChange={onChange}
                             value={expiry_date}
                             is_read_only
-                            is_clearable
                             is_nativepicker={is_nativepicker}
                             alignment='left'
                             disable_year_selector

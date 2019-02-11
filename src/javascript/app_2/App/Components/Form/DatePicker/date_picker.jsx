@@ -59,7 +59,7 @@ class DatePicker extends React.Component {
     }
 
     onMouseEnter = () => {
-        if (this.state.value && (!('is_clearable' in this.props) || this.props.is_clearable)) {
+        if (this.state.value && (('is_clearable' in this.props) || this.props.is_clearable)) {
             this.setState({ is_clear_btn_visible: true });
         }
     }
@@ -224,12 +224,14 @@ class DatePicker extends React.Component {
                     })}
                     onClick={this.handleVisibility}
                 />
-                <IconClear
-                    className={classNames('datepicker__icon datepicker__icon--clear', {
-                        'datepicker__icon--is-hidden': !this.state.is_clear_btn_visible,
-                    })}
-                    onClick={this.state.is_clear_btn_visible ? this.clearDatePickerInput : undefined}
-                />
+                { this.props.is_clearable &&
+                    <IconClear
+                        className={classNames('datepicker__icon datepicker__icon--clear', {
+                            'datepicker__icon--is-hidden': !this.state.is_clear_btn_visible,
+                        })}
+                        onClick={this.state.is_clear_btn_visible ? this.clearDatePickerInput : undefined}
+                    />
+                }
                 <CSSTransition
                     in={this.state.is_datepicker_visible}
                     timeout={100}
