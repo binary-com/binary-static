@@ -23,7 +23,7 @@ class DurationWrapper extends React.Component {
         this.props.onChangeMultiple({
             duration_unit: new_duration_unit,
             duration     : new_duration_value,
-        }, true);
+        });
     }
 
     componentDidMount() {
