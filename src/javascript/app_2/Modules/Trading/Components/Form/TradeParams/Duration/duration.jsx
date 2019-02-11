@@ -110,9 +110,7 @@ const Duration = ({
             new_trade_store_values.expiry_type = advanced_expiry_type;
         }
 
-        onChangeMultiple({
-            ...new_trade_store_values,
-        });
+        onChangeMultiple({ ...new_trade_store_values });
     };
 
     let max_value, min_value;
