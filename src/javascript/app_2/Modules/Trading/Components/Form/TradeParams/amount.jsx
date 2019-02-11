@@ -71,8 +71,9 @@ const Amount = ({
                     is_nativepicker={is_nativepicker}
                     max_length={10}
                     name='amount'
+                    id='amount'
                     onChange={onChange}
-                    prefix={is_single_currency ? currency : null}
+                    unit_label={is_single_currency ? <i><span className={`symbols ${(currency || '').toLowerCase()}`} /></i> : null}
                     type='number'
                     value={amount}
                 />

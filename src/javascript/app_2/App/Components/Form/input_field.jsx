@@ -1,4 +1,3 @@
-import classNames                from 'classnames';
 import {
     observer,
     PropTypes as MobxPropTypes } from 'mobx-react';
@@ -7,6 +6,7 @@ import React                     from 'react';
 import { IconMinus }             from 'Assets/Common/icon_minus.jsx'; // implicit import here { IconMinus, IconPlus } from 'Assets/Common' breaks compilation
 import { IconPlus }              from 'Assets/Common/icon_plus.jsx';
 import Button                    from './button.jsx';
+import Input                     from './input.jsx';
 import Tooltip                   from '../Elements/tooltip.jsx';
 
 const InputField = ({
@@ -37,14 +37,27 @@ const InputField = ({
     required,
     type,
     unit,
+    unit_label,
     value,
 }) => {
-    const has_error = error_messages && error_messages.length;
-    let has_valid_length = true;
+    const has_error = error_messages && !!error_messages.length;
     const max_is_disabled = max_value && +value >= +max_value;
     const min_is_disabled = min_value && +value <= +min_value;
 
+    let has_valid_length = true;
+
+    const onKeyPressed = (e) => {
+        if (e.keyCode === 38) incrementValue(); // up-arrow pressed
+        if (e.keyCode === 40) decrementValue(); // down-arrow pressed
+    };
+
     const changeValue = (e) => {
+        if (unit_label) {
+            const label = document.querySelector(`#${name}-label`);
+            const length = document.querySelector(`#${e.target.id}`);
+            console.log(length.offsetWidth);
+        }
+
         if (unit) {
             e.target.value = e.target.value.replace(unit, '').trim();
         }
@@ -87,6 +100,7 @@ const InputField = ({
         onChange(e);
     };
 
+
     const incrementValue = () => {
         if  (max_is_disabled) return;
 
@@ -100,39 +114,6 @@ const InputField = ({
         const decrement_value = (+value) - 1;
         onChange({ target: { value: decrement_value, name } });
     };
-
-    const onKeyPressed = (e) => {
-        if (e.keyCode === 38) incrementValue(); // up-arrow pressed
-        if (e.keyCode === 40) decrementValue(); // down-arrow pressed
-    };
-
-    let display_value = value;
-
-    if (unit) {
-        display_value = is_unit_at_right ? `${value} ${unit}` : `${unit} ${value}`;
-    }
-
-    const input =
-        <input
-            checked={checked ? 'checked' : ''}
-            className={classNames({ error: has_error })}
-            disabled={is_disabled}
-            data-for={`error_tooltip_${name}`}
-            data-value={data_value}
-            data-tip={data_tip}
-            id={id}
-            maxLength={fractional_digits ? max_length + fractional_digits + 1 : max_length}
-            name={name}
-            onKeyDown={is_incrementable ? onKeyPressed : undefined}
-            onChange={changeValue}
-            onClick={onClick}
-            placeholder={placeholder || undefined}
-            readOnly={is_read_only}
-            required={required || undefined}
-            type={type === 'number' ? 'text' : type}
-            value={display_value || ''}
-            autoComplete={is_autocomplete_disabled ? 'off' : undefined}
-        />;
 
     const input_increment =
         <div className='input-wrapper'>
@@ -152,7 +133,32 @@ const InputField = ({
             >
                 <IconMinus className={'input-wrapper__icon input-wrapper__icon--minus'} is_disabled={min_is_disabled} />
             </Button>
-            { input }
+            <Input
+                checked={checked}
+                has_error={has_error}
+                is_disabled={is_disabled}
+                name={name}
+                data_value={data_value}
+                value={value}
+                data_tip={data_tip}
+                id={id}
+                is_float={is_float}
+                fractional_digits={fractional_digits}
+                max_length={max_length}
+                is_incrementable={is_incrementable}
+                is_unit_at_right={is_unit_at_right}
+                is_signed={is_signed}
+                onClick={onClick}
+                onKeyPressed={onKeyPressed}
+                changeValue={changeValue}
+                placeholder={placeholder}
+                is_read_only={is_read_only}
+                required={required}
+                type={type}
+                unit={unit}
+                unit_label={unit_label}
+                is_autocomplete_disabled={is_autocomplete_disabled}
+            />
         </div>;
 
     return (
@@ -169,7 +175,34 @@ const InputField = ({
                 {!!helper &&
                     <span className='input-helper'>{helper}</span>
                 }
-                {is_incrementable  &&  type === 'number' ? input_increment : input}
+                {is_incrementable  &&  type === 'number' ? input_increment :
+                    <Input
+                        checked={checked}
+                        has_error={has_error}
+                        is_disabled={is_disabled}
+                        name={name}
+                        data_value={data_value}
+                        data_tip={data_tip}
+                        value={value}
+                        id={id}
+                        is_float={is_float}
+                        fractional_digits={fractional_digits}
+                        max_length={max_length}
+                        is_incrementable={is_incrementable}
+                        is_unit_at_right={is_unit_at_right}
+                        is_signed={is_signed}
+                        onClick={onClick}
+                        onKeyPressed={onKeyPressed}
+                        changeValue={changeValue}
+                        placeholder={placeholder}
+                        is_read_only={is_read_only}
+                        required={required}
+                        type={type}
+                        unit={unit}
+                        unit_label={unit_label}
+                        is_autocomplete_disabled={is_autocomplete_disabled}
+                    />
+                }
             </Tooltip>
         </div>
     );
@@ -202,6 +235,10 @@ InputField.propTypes = {
     required                : PropTypes.bool,
     type                    : PropTypes.string,
     unit                    : PropTypes.string,
+    unit_label              : PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.node,
+    ]),
     value                   : PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,

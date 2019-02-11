@@ -171,6 +171,53 @@
         font-size: 0.75rem;
         color: $COLOR_LIGHT_GRAY_2;
     }
+    .unit-label {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        position: unset;
+        //height: 32px;
+        //font-size: 1rem;
+        //line-height: normal;
+        background: $COLOR_DARK_BLUE_2;
+        color: $COLOR_LIGHT_BLACK_1;
+        border: 1px solid $COLOR_LIGHT_BLACK_4;
+        border-radius: $BORDER_RADIUS;
+        text-align: center;
+        -ms-box-orient: horizontal;
+        display: flex;
+        pointer-events: auto;
+        cursor: pointer;
+
+        input {
+            width: unset;
+            background: none;
+            border: none;
+            border-radius: none;
+            flex: 2 2 50%;
+            max-width: 80%;
+            text-align: left;
+        }
+        i {
+            flex: 1 1 50%;
+            background: none;
+            width: unset;
+        }
+        .symbols {
+            height: 30px;
+            width: unset;
+            line-height: 30px;
+            margin: 1px;
+            border-radius: none;
+            font-size: inherit;
+            background: none;
+            float: right;
+            text-align: right;
+            align-self: flex-end;
+            display: inline-flex;
+        }
+    }
 }
 
 // Dark Theme
