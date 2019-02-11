@@ -119,11 +119,12 @@ const CalendarHeader = ({
 };
 
 CalendarHeader.propTypes = {
-    calendar_date   : PropTypes.string,
-    calendar_view   : PropTypes.string,
-    isPeriodDisabled: PropTypes.func,
-    navigateTo      : PropTypes.func,
-    switchView      : PropTypes.func,
+    calendar_date    : PropTypes.string,
+    calendar_view    : PropTypes.string,
+    disabled_selector: PropTypes.array,
+    isPeriodDisabled : PropTypes.func,
+    navigateTo       : PropTypes.func,
+    switchView       : PropTypes.func,
 };
 
 export default CalendarHeader;
