@@ -115,7 +115,7 @@ class DatePicker extends React.Component {
     };
 
     renderInputField = () => {
-        const { is_read_only, mode, name, error_messages, max_value, min_value } = this.props;
+        const { is_read_only, mode, name, error_messages, max_value, min_value, label } = this.props;
         let { placeholder } = this.props;
         let type, onChange, is_incrementable;
 
@@ -139,6 +139,7 @@ class DatePicker extends React.Component {
                 error_messages={error_messages}
                 is_incrementable={is_incrementable}
                 is_read_only={is_read_only}
+                label={label}
                 max_value={max_value}
                 min_value={min_value}
                 name={name}
@@ -237,6 +238,7 @@ DatePicker.propTypes = {
     ]),
     error_messages  : PropTypes.array,
     is_incrementable: PropTypes.bool,
+    label           : PropTypes.string,
     max_value       : PropTypes.number,
     min_value       : PropTypes.number,
 };

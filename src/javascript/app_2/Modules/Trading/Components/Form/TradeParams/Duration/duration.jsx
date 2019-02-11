@@ -149,8 +149,8 @@ const Duration = ({
                             contract_expiry_type={contract_expiry_type}
                             duration_d={duration_d}
                             duration_min_max={duration_min_max}
-                            duration_units_list={duration_units_list}
                             duration_t={duration_t}
+                            duration_units_list={duration_units_list}
                             expiry_date={expiry_date}
                             expiry_list={expiry_list}
                             expiry_time={expiry_time}
@@ -171,13 +171,19 @@ const Duration = ({
                         <SimpleDuration
                             getDurationFromUnit={getDurationFromUnit}
                             changeDurationUnit={changeDurationUnit}
+                            duration_d={duration_d}
+                            duration_min_max={duration_min_max}
                             duration_t={duration_t}
                             duration_units_list={duration_units_list}
+                            expiry_date={expiry_date}
                             number_input_props={props.number_input}
                             onChange={onChange}
+                            onChangeUiStore={onChangeUiStore}
+                            server_time={server_time}
                             shared_input_props={props.shared_input}
                             simple_duration_unit={simple_duration_unit}
-                            onChangeUiStore={onChangeUiStore}
+                            start_date={start_date}
+                            start_time={start_time}
                         /> }
                     <DurationToggle
                         name={'is_advanced_duration'}
