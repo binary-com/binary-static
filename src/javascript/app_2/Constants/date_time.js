@@ -1,4 +1,4 @@
-import { localize }       from '_common/localize';
+import { localize } from '_common/localize';
 
 export const month_headers = {
     Jan: localize('Jan'),
@@ -33,4 +33,18 @@ export const week_headers_abbr = {
     Friday   : localize('F'),
     Saturday : localize('S'),
     Sunday   : localize('S'),
+};
+
+export const getDaysOfTheWeek = (day) => {
+    const days_of_the_week = {
+        'Mondays'   : 1,
+        'Tuesdays'  : 2,
+        'Wednesdays': 3,
+        'Thursdays' : 4,
+        'Fridays'   : 5,
+        'Saturdays' : 6,
+        'Sundays'   : 0,
+    };
+
+    return days_of_the_week[day];
 };

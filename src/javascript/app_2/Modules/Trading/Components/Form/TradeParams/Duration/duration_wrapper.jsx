@@ -15,13 +15,15 @@ class DurationWrapper extends React.Component {
         return duration_list.some(du => du.value === duration_unit);
     };
 
-    async setDurationUnit() {
+    setDurationUnit() {
         const new_duration_unit  = this.props.duration_units_list[0].value;
         const new_duration_value = this.props.getDurationFromUnit(new_duration_unit);
 
         this.props.onChangeUiStore({ name: `${this.props.is_advanced_duration ? 'advanced' : 'simple'}_duration_unit`, value: new_duration_unit });
-        await this.props.onChangeAsync({ target: { name: 'duration_unit', value: new_duration_unit } });
-        await this.props.onChangeAsync({ target: { name: 'duration', value: new_duration_value } });
+        this.props.onChangeMultiple({
+            duration_unit: new_duration_unit,
+            duration     : new_duration_value,
+        });
     }
 
     componentDidMount() {
@@ -51,6 +53,7 @@ class DurationWrapper extends React.Component {
         // intercept changes to current contracts duration_units_list - if they are missing change duration_unit and value in trade_store and ui_store
         if (has_missing_duration_unit || simple_is_missing_duration_unit) {
             this.setDurationUnit();
+            return;
         }
 
         // simple only has expiry type duration
@@ -120,7 +123,7 @@ DurationWrapper.propTypes = {
     is_nativepicker     : PropTypes.bool,
     market_close_times  : PropTypes.array,
     onChange            : PropTypes.func,
-    onChangeAsync       : PropTypes.func,
+    onChangeMultiple    : PropTypes.func,
     onChangeUiStore     : PropTypes.func,
     server_time         : PropTypes.object,
     sessions            : MobxPropTypes.arrayOrObservableArray,
@@ -130,6 +133,7 @@ DurationWrapper.propTypes = {
         PropTypes.string,
     ]),
     start_time       : PropTypes.string,
+    symbol           : PropTypes.string,
     validation_errors: PropTypes.object,
 };
 

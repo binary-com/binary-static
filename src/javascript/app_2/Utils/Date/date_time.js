@@ -17,8 +17,11 @@ export const epochToMoment = epoch => moment.unix(epoch).utc();
 export const toMoment = value => {
     if (!value) return moment().utc(); // returns 'now' moment object
     if (value instanceof moment && value.isValid() && value.isUTC()) return value; // returns if already a moment object
-    const moment_obj = epochToMoment(value);
-    return moment_obj.isValid() ? moment_obj : moment.utc(value);
+    const is_number      = typeof value === 'number';
+    // need to explicitly convert date string to a JS Date object then pass that into Moment
+    // to get rid of the warning: Deprecation warning: moment construction falls back to js Date
+    const formatted_date = moment(new Date(value)).format('YYYY-MM-DD');
+    return is_number ? epochToMoment(value) : moment.utc(formatted_date);
 };
 
 /**
@@ -153,3 +156,9 @@ export const subYears = (date, num_of_years) => toMoment(date).clone().subtract(
  * @param {moment|string|epoch} second datetime parameter
  */
 export const minDate = (date_1, date_2) => moment.min(toMoment(date_1), toMoment(date_2));
+
+/**
+ * returns a new date
+ * @param {moment|string|epoch} date date
+ */
+export const getStartOfMonth = (date) => toMoment(date).clone().startOf('month').format('YYYY-MM-DD');
