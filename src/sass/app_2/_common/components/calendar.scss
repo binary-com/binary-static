@@ -223,6 +223,10 @@
             &:hover {
                 background: $COLOR_DARK_BLUE_5;
             }
+            &--today {
+                border: 1px solid $COLOR_DARK_BLUE_7;
+                color: $COLOR_WHITE;
+            }
             &--disabled, &--other {
                 color: $COLOR_DARK_BLUE_8;
             }
@@ -230,10 +234,6 @@
                 &:hover {
                     background: $COLOR_DARK_BLUE_3;
                 }
-            }
-            &--today {
-                border: 1px solid $COLOR_DARK_BLUE_7;
-                color: $COLOR_WHITE;
             }
             &--active {
                 color: $COLOR_WHITE;
