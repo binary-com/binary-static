@@ -25,6 +25,7 @@ const Duration = ({
     getDurationFromUnit,
     onChange,
     onChangeUiStore,
+    onChangeMultiple,
     is_advanced_duration,
     is_minimized,
     is_nativepicker,
@@ -69,8 +70,10 @@ const Duration = ({
         const duration_value  = getDurationFromUnit(value);
 
         onChangeUiStore({ name, value });
-        onChange({ target: { name: 'duration_unit', value } });
-        onChange({ target: { name: 'duration', value: duration_value } });
+        onChangeMultiple({
+            duration_unit: value,
+            duration     : duration_value,
+        });
     };
 
     const changeDurationValue = ({ target }) => {
@@ -92,18 +95,22 @@ const Duration = ({
             onChangeUiStore({ name: `${value ? 'advanced' : 'simple'}_duration_unit`, value: current_duration_unit });
         }
 
-        const duration_value  = getDurationFromUnit(current_duration_unit);
-        onChange({ target: { name: 'duration_unit', value: current_duration_unit } });
-        onChange({ target: { name: 'duration', value: duration_value } });
+        const duration_value         = getDurationFromUnit(current_duration_unit);
+        const new_trade_store_values = {
+            duration_unit: current_duration_unit,
+            duration     : duration_value,
+        };
 
         // simple only has expiry type of duration
         if (!value && expiry_type !== 'duration') {
-            onChange({ target: { name: 'expiry_type', value: 'duration' } });
+            new_trade_store_values.expiry_type = 'duration';
         }
 
         if (value && expiry_type !== advanced_expiry_type) {
-            onChange({ target: { name: 'expiry_type', value: advanced_expiry_type } });
+            new_trade_store_values.expiry_type = advanced_expiry_type;
         }
+
+        onChangeMultiple({ ...new_trade_store_values });
     };
 
     let max_value, min_value;
