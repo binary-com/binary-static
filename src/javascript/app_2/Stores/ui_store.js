@@ -8,10 +8,12 @@ import {
     MAX_TABLET_WIDTH } from 'Constants/ui';
 import BaseStore       from './base_store';
 
+const store_name = 'ui_store';
+
 export default class UIStore extends BaseStore {
     @observable is_main_drawer_on          = false;
     @observable is_notifications_drawer_on = false;
-    @observable is_portfolio_drawer_on     = false;
+    @observable is_positions_drawer_on     = false;
 
     @observable is_dark_mode_on         = true;
     @observable is_language_dialog_on   = false;
@@ -35,27 +37,56 @@ export default class UIStore extends BaseStore {
 
     @observable toast_messages = [];
 
+    @observable is_advanced_duration   = false;
+    @observable advanced_duration_unit = 't';
+    @observable advanced_expiry_type   = 'duration';
+    @observable simple_duration_unit   = 't';
+    @observable duration_t             = 5;
+    @observable duration_s             = 15;
+    @observable duration_m             = 3;
+    @observable duration_h             = 1;
+    @observable duration_d             = 1;
+
+    getDurationFromUnit = (unit) => this[`duration_${unit}`];
+
     constructor() {
         const local_storage_properties = [
+            'advanced_duration_unit',
+            'is_advanced_duration',
+            'advanced_expiry_type',
+            'simple_duration_unit',
+            'duration_t',
+            'duration_s',
+            'duration_m',
+            'duration_h',
+            'duration_d',
             'is_chart_asset_info_visible',
             'is_chart_countdown_visible',
             'is_chart_layout_default',
             'is_dark_mode_on',
-            'is_portfolio_drawer_on',
+            'is_positions_drawer_on',
             'is_purchase_confirm_on',
             'is_purchase_lock_on',
         ];
 
-        super({ local_storage_properties });
+        super({ local_storage_properties, store_name });
         window.addEventListener('resize', this.handleResize);
         autorun(() => document.body.classList[this.is_dark_mode_on ? 'add' : 'remove']('dark'));
+    }
+
+    @action.bound
+    onChangeUiStore({ name, value }) {
+        if (!(name in this)) {
+            throw new Error(`Invalid Argument: ${name}`);
+        }
+        this[name] = value;
     }
 
     @action.bound
     handleResize() {
         this.screen_width = window.innerWidth;
         if (this.is_mobile) {
-            this.is_portfolio_drawer_on = false;
+            this.is_positions_drawer_on = false;
         }
     }
 
@@ -121,8 +152,8 @@ export default class UIStore extends BaseStore {
     }
 
     @action.bound
-    togglePortfolioDrawer() { // show and hide Portfolio Drawer
-        this.is_portfolio_drawer_on = !this.is_portfolio_drawer_on;
+    togglePositionsDrawer() { // show and hide Positions Drawer
+        this.is_positions_drawer_on = !this.is_positions_drawer_on;
     }
 
     @action.bound

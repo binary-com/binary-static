@@ -33,6 +33,8 @@ import {
 import { pickDefaultSymbol }             from './Helpers/symbol';
 import BaseStore                         from '../../base_store';
 
+const store_name = 'trade_store';
+
 export default class TradeStore extends BaseStore {
     // Control values
     @observable is_trade_component_mounted = false;
@@ -109,6 +111,7 @@ export default class TradeStore extends BaseStore {
 
         super({
             root_store,
+            store_name,
             session_storage_properties: allowed_query_string_variables,
             validation_rules          : getValidationRules(),
         });
@@ -190,6 +193,13 @@ export default class TradeStore extends BaseStore {
                 });
             }));
         }
+    }
+
+    @action.bound
+    async onChangeAsync(e) {
+        const { name, value } = e.target;
+
+        await this.processNewValuesAsync({ [name]: value }, true);
     }
 
     @action.bound
@@ -441,11 +451,15 @@ export default class TradeStore extends BaseStore {
 
     @action.bound
     changeAllowEquals() {
-        const hasCallPutEqual = () => {
-            const up_down_contracts = getPropertyValue(this.contract_types_list, 'Up/Down');
-            return up_down_contracts.some(contract => contract.value === 'rise_fall_equal');
+        const hasCallPutEqual = (contract_type_list) => {
+            if (!contract_type_list) return false;
+
+            return getPropertyValue(contract_type_list, 'Up/Down')
+                .some(contract => contract.value === 'rise_fall_equal');
         };
         const hasDurationForCallPutEqual = (contract_type_list, duration_unit, contract_start_type) => {
+            if (!contract_type_list || !duration_unit || !contract_start_type) return false;
+
             const contract_list = Object.keys(contract_type_list || {})
                 .reduce((key, list) => ([...key, ...contract_type_list[list].map(contract => contract.value)]), []);
             
@@ -453,14 +467,19 @@ export default class TradeStore extends BaseStore {
                 .map(list => ({ [list]: getPropertyValue(ContractType.getFullContractTypes(), [list, 'config', 'durations', 'units_display', contract_start_type]) }));
 
             // Check whether rise fall equal is exists and has the current store duration unit
-            return hasCallPutEqual() ? contract_duration_list
+            return hasCallPutEqual(contract_type_list) ? contract_duration_list
                 .filter(contract => contract.rise_fall_equal)[0].rise_fall_equal
                 .some(duration => duration.value === duration_unit) : false;
         };
         const check_callput_equal_duration = hasDurationForCallPutEqual(this.contract_types_list,
             this.duration_unit, this.contract_start_type);
 
-        if (/^(rise_fall|rise_fall_equal)$/.test(this.contract_type) && (check_callput_equal_duration || this.expiry_type === 'endtime') && hasCallPutEqual()) {
+        if (!(/^(rise_fall|rise_fall_equal)$/.test(this.contract_type))) {
+            this.is_allow_equal = false;
+            this.is_equal_checked = 0;
+        }
+
+        if (/^(rise_fall|rise_fall_equal)$/.test(this.contract_type) && (check_callput_equal_duration || this.expiry_type === 'endtime') && hasCallPutEqual(this.contract_types_list)) {
             this.is_allow_equal = true;
         } else {
             this.is_allow_equal = false;
