@@ -1,5 +1,6 @@
 import classNames      from 'classnames';
 import { observer }    from 'mobx-react';
+import PropTypes       from 'prop-types';
 import React           from 'react';
 import {
     IconArrow,
@@ -26,8 +27,7 @@ class DatePicker extends React.Component {
         document.addEventListener('click', this.onClickOutside, true);
         const { mode, value } = this.props;
         if (mode === 'duration') {
-            const min_value = 1;
-            this.updateDatePickerValue(min_value);
+            this.updateDatePickerValue(this.props.duration_d);
         } else {
             this.updateDatePickerValue(formatDate(value, 'DD MMM YYYY'));
         }
@@ -138,10 +138,11 @@ class DatePicker extends React.Component {
                 error_messages={validation_errors}
                 is_incrementable={is_incrementable}
                 is_read_only={is_read_only}
+                max_value={this.props.max_value}
+                min_value={this.props.min_value}
                 name={name}
                 onChange={onChange}
                 onClick={this.handleVisibility}
-                min_value={1}
                 placeholder={placeholder}
                 type={type}
                 value={this.state.value}
@@ -229,6 +230,11 @@ DatePicker.defaultProps = {
 
 DatePicker.propTypes = {
     ...Calendar.propTypes,
+    duration_d: PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
+    ]),
+
 };
 
 export default observer(DatePicker);

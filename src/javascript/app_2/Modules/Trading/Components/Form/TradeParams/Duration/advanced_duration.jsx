@@ -124,6 +124,7 @@ const AdvancedDuration = ({
                             <DatePicker
                                 alignment='left'
                                 disabled_selector={['year']}
+                                duration_d={duration_d}
                                 has_today_btn
                                 is_clearable
                                 is_nativepicker={is_nativepicker}
@@ -131,9 +132,9 @@ const AdvancedDuration = ({
                                 min_date={min_date_expiry}
                                 mode='duration'
                                 name='duration'
-                                onChange={onChange}
                                 start_date={start_date}
                                 value={expiry_date}
+                                {...shared_input_props}
                             />
                         }
                         { (advanced_duration_unit !== 't' && advanced_duration_unit !== 'd') &&
