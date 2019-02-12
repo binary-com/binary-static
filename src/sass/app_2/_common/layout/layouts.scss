@@ -75,7 +75,6 @@
         position: relative;
         margin-left: 16px;
         width: $SIDEBAR_WIDTH;
-        overflow: hidden;
 
         .sidebar-items {
             opacity: 1;
@@ -126,6 +125,7 @@
     min-height: calc(100vh - 99px);
     transition: transform 0.25s ease;
     will-change: transform;
+    overflow: hidden;
 
     .chart-container {
         position: relative;
