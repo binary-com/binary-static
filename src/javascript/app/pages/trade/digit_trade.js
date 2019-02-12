@@ -15,7 +15,8 @@ const DigitDisplay = (() => {
 
     // Subscribe if contract is still ongoing/running.
     const subscribe = (request) => {
-        request.end       = 'latest';
+        request.end = 'latest';
+
         if (contract.exit_tick_time) {
             request.end = +contract.exit_tick_time;
             request.count = +contract.tick_count;
@@ -54,7 +55,7 @@ const DigitDisplay = (() => {
 
         const request = {
             ticks_history: contract.underlying,
-            start        : contract.entry_tick_time,
+            start        : +contract.entry_tick_time,
         };
 
         subscribe(request);
@@ -87,7 +88,7 @@ const DigitDisplay = (() => {
             tick_count,
             {
                 quote: contract.status !== 'open' ? contract.exit_tick : spot,
-                epoch: +contract.exit_tick_time || contract.current_spot_time,
+                epoch: +contract.exit_tick_time || +contract.current_spot_time,
             }
         );
     };
