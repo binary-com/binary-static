@@ -107,12 +107,6 @@
         left: 0;
         top: -2px;
         height: 0;
-        // fix for safari bug with input range slider width
-        @media not all and (min-resolution:.001dpcm) { // stylelint-disable-line
-            @supports (-webkit-appearance:none) {
-                margin: 0 4px;
-            }
-        }
 
         &__step {
             height: 2px;
