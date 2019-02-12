@@ -15,7 +15,6 @@ describe('<Calendar />', () => {
         const wrapper = shallow(<Calendar />);
         expect(wrapper).to.have.length(1);
     });
-
     it('should render children when passed in', () => {
         testChildren(<Calendar />);
     });
