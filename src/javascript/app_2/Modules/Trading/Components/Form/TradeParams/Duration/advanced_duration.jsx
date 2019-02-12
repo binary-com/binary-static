@@ -35,6 +35,7 @@ const AdvancedDuration = ({
     shared_input_props,
     start_date,
     start_time,
+    symbol,
     market_close_times,
     onChangeUiStore,
 }) => {
@@ -157,11 +158,11 @@ const AdvancedDuration = ({
                             onChange={onChange}
                             value={expiry_date}
                             is_read_only
-                            is_clearable
                             is_nativepicker={is_nativepicker}
                             alignment='left'
-                            disabled_selector={['year']}
-                            // sessions={expiry_date_sessions} TODO: add expiry date sessions. e.g. disable days if market closes on weekend
+                            disable_year_selector
+                            disable_trading_events
+                            underlying={symbol}
                             // validation_errors={validation_errors.expiry_date} TODO: add validation_errors for expiry date
                         />
                         {is_24_hours_contract &&
@@ -216,6 +217,7 @@ AdvancedDuration.propTypes = {
         PropTypes.string,
     ]),
     start_time: PropTypes.string,
+    symbol    : PropTypes.string,
 };
 
 export default AdvancedDuration;

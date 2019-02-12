@@ -6,6 +6,7 @@ import {
     IconChevronDoubleRight,
     IconChevronLeft,
     IconChevronRight }      from 'Assets/Common';
+import { month_headers }    from 'Constants/date_time';
 import {
     addMonths,
     addYears,
@@ -13,7 +14,6 @@ import {
     subYears,
     toMoment }              from 'Utils/Date';
 import CalendarButton       from './calendar_button.jsx';
-import { month_headers }    from './constants';
 import {
     getCentury,
     getDecade }             from './helper';
@@ -21,7 +21,8 @@ import {
 const CalendarHeader = ({
     calendar_date,
     calendar_view,
-    disabled_selector = [],
+    disable_month_selector,
+    disable_year_selector,
     isPeriodDisabled,
     navigateTo,
     switchView,
@@ -44,7 +45,7 @@ const CalendarHeader = ({
     const is_prev_year_disabled   = isPeriodDisabled(subYears(moment_date, num_of_years), 'month');
     const is_next_month_disabled  = isPeriodDisabled(addMonths(moment_date, 1), 'month');
     const is_next_year_disabled   = isPeriodDisabled(addYears(moment_date, num_of_years), 'month');
-    const is_select_year_disabled = isPeriodDisabled(moment_date.clone().year(end_of_decade), 'year') || disabled_selector.some(selector => selector === 'year');
+    const is_select_year_disabled = isPeriodDisabled(moment_date.clone().year(end_of_decade), 'year') || disable_year_selector;
 
     return (
         <div className='calendar__header'>
@@ -72,7 +73,7 @@ const CalendarHeader = ({
                         className='calendar__btn calendar__btn--select'
                         is_hidden={!is_date_view}
                         label={month_headers[moment_date.format('MMM')]}
-                        onClick={() => switchView('month')}
+                        onClick={() => disable_month_selector ? undefined : switchView('month')}
                     />
                 }
                 { (is_date_view || is_month_view) &&
@@ -119,12 +120,13 @@ const CalendarHeader = ({
 };
 
 CalendarHeader.propTypes = {
-    calendar_date    : PropTypes.string,
-    calendar_view    : PropTypes.string,
-    disabled_selector: PropTypes.array,
-    isPeriodDisabled : PropTypes.func,
-    navigateTo       : PropTypes.func,
-    switchView       : PropTypes.func,
+    calendar_date         : PropTypes.string,
+    calendar_view         : PropTypes.string,
+    disable_month_selector: PropTypes.bool,
+    disable_year_selector : PropTypes.bool,
+    isPeriodDisabled      : PropTypes.func,
+    navigateTo            : PropTypes.func,
+    switchView            : PropTypes.func,
 };
 
 export default CalendarHeader;

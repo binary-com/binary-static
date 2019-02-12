@@ -1,26 +1,31 @@
-import classNames      from 'classnames';
-import { observer }    from 'mobx-react';
-import PropTypes       from 'prop-types';
-import React           from 'react';
+import classNames           from 'classnames';
+import { observer }         from 'mobx-react';
+import PropTypes            from 'prop-types';
+import React                from 'react';
+import { CSSTransition }    from 'react-transition-group';
 import {
     IconArrow,
     IconCalendar,
-    IconClear }        from 'Assets/Common';
-import InputField      from 'App/Components/Form/input_field.jsx';
+    IconClear }             from 'Assets/Common';
+import InputField           from 'App/Components/Form/input_field.jsx';
 import {
     addDays,
     daysFromTodayTo,
     formatDate,
+    getStartOfMonth,
     isDateValid,
-    toMoment }         from 'Utils/Date';
-import { localize }    from '_common/localize';
-import Calendar        from '../../Elements/Calendar';
+    toMoment }              from 'Utils/Date';
+import { localize }         from '_common/localize';
+import { getTradingEvents } from './helpers';
+import Calendar             from '../../Elements/Calendar';
 
 class DatePicker extends React.Component {
     state = {
-        value                : '',
+        value                : this.props.value,
         is_datepicker_visible: false,
         is_clear_btn_visible : false,
+        holidays             : [],
+        weekends             : [],
     };
 
     componentDidMount() {
@@ -31,6 +36,10 @@ class DatePicker extends React.Component {
         } else {
             this.updateDatePickerValue(formatDate(value, 'DD MMM YYYY'));
         }
+
+        if (this.props.disable_trading_events) {
+            this.onChangeCalendarMonth(getStartOfMonth(this.state.value));
+        }
     }
 
     componentWillUnmount() {
@@ -38,20 +47,20 @@ class DatePicker extends React.Component {
     }
 
     handleVisibility = () => {
-        this.setState({ is_datepicker_visible: !this.state.is_datepicker_visible });
+        this.setState(state => ({ is_datepicker_visible: !state.is_datepicker_visible }));
     }
 
     onClickOutside = (e) => {
         if (!this.mainNode.contains(e.target) && this.state.is_datepicker_visible) {
             this.setState({ is_datepicker_visible: false });
             if (!!this.state.value && this.props.mode !== 'duration') {
-                this.updateDatePickerValue(formatDate(this.state.value));
+                this.updateDatePickerValue(formatDate(this.state.value, 'DD MMM YYYY'));
             }
         }
     }
 
     onMouseEnter = () => {
-        if (this.state.value && (!('is_clearable' in this.props) || this.props.is_clearable)) {
+        if (this.state.value && (('is_clearable' in this.props) || this.props.is_clearable)) {
             this.setState({ is_clear_btn_visible: true });
         }
     }
@@ -80,7 +89,9 @@ class DatePicker extends React.Component {
 
     clearDatePickerInput = () => {
         this.setState({ value: null }, this.updateStore);
-        this.calendar.resetCalendar();
+        if (this.calendar) {
+            this.calendar.resetCalendar();
+        }
     };
 
     // TODO: handle cases where user inputs date before min_date and date after max_date
@@ -113,6 +124,28 @@ class DatePicker extends React.Component {
             onChange({ target: { name, value: this.state.value } });
         }
     };
+
+    async onChangeCalendarMonth(calendar_date) {
+        const trading_events = await getTradingEvents(calendar_date, this.props.underlying);
+        const holidays = [];
+        let weekends   = [];
+        trading_events.forEach(events => {
+            const dates = events.dates.split(', '); // convert dates str into array
+            const idx = dates.indexOf('Fridays');
+            if (idx !== -1) {
+                weekends = [6, 0]; // Sat, Sun
+            }
+            holidays.push({
+                dates,
+                descrip: events.descrip,
+            });
+        });
+
+        this.setState({
+            holidays,
+            weekends,
+        });
+    }
 
     renderInputField = () => {
         const { is_read_only, mode, name, error_messages, max_value, min_value, label } = this.props;
@@ -191,35 +224,52 @@ class DatePicker extends React.Component {
                 onMouseLeave={this.onMouseLeave}
             >
                 { this.renderInputField() }
-                {
-                    this.props.mode !== 'duration' &&
-                    <React.Fragment>
-                        <IconCalendar
-                            className={classNames('datepicker__icon datepicker__icon--calendar', {
-                                'datepicker__icon--is-hidden': this.state.is_clear_btn_visible,
-                            })}
-                            onClick={this.handleVisibility}
-                        />
-                        <IconClear
-                            className={classNames('datepicker__icon datepicker__icon--clear', {
-                                'datepicker__icon--is-hidden': !this.state.is_clear_btn_visible,
-                            })}
-                            onClick={this.state.is_clear_btn_visible ? this.clearDatePickerInput : undefined}
-                        />
-                    </React.Fragment>
-                }
-                <div
-                    className={classNames('datepicker__picker', {
-                        'datepicker__picker--show'                           : this.state.is_datepicker_visible,
-                        [`datepicker__picker--align-${this.props.alignment}`]: this.props.alignment,
+                <IconCalendar
+                    className={classNames('datepicker__icon datepicker__icon--calendar', {
+                        'datepicker__icon--is-hidden': this.state.is_clear_btn_visible,
                     })}
-                >
-                    <Calendar
-                        ref={node => { this.calendar = node; }}
-                        onSelect={this.onSelectCalendar}
-                        {...this.props}
+                    onClick={this.handleVisibility}
+                />
+                { this.props.is_clearable &&
+                    <IconClear
+                        className={classNames('datepicker__icon datepicker__icon--clear', {
+                            'datepicker__icon--is-hidden': !this.state.is_clear_btn_visible,
+                        })}
+                        onClick={this.state.is_clear_btn_visible ? this.clearDatePickerInput : undefined}
                     />
-                </div>
+                }
+                <CSSTransition
+                    in={this.state.is_datepicker_visible}
+                    timeout={100}
+                    classNames={{
+                        enter    : 'datepicker__picker--enter',
+                        enterDone: 'datepicker__picker--enter-done',
+                        exit     : 'datepicker__picker--exit',
+                    }}
+                    unmountOnExit
+                >
+                    <div
+                        className={classNames('datepicker__picker', {
+                            'datepicker__picker--left': this.props.alignment === 'left',
+                        })}
+                    >
+                        <Calendar
+                            ref={node => { this.calendar = node; }}
+                            onSelect={this.onSelectCalendar}
+                            onChangeCalendarMonth={this.props.disable_trading_events ?
+                                this.onChangeCalendarMonth.bind(this) : undefined}
+                            holidays={this.state.holidays}
+                            weekends={this.state.weekends}
+                            date_format={this.props.date_format}
+                            has_today_btn={this.props.has_today_btn}
+                            footer={this.props.footer}
+                            max_date={this.props.max_date}
+                            min_date={this.props.min_date}
+                            start_date={this.props.start_date}
+                            value={this.props.value}
+                        />
+                    </div>
+                </CSSTransition>
             </div>
         );
     }

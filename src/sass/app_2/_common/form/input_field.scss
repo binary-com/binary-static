@@ -160,6 +160,12 @@
             color: $COLOR_RED;
             border: 1px solid $COLOR_RED !important;
         }
+        &[readonly] {
+            cursor: pointer;
+        }
+        &::placeholder {
+            color: $COLOR_LIGHT_BLACK_1;
+        }
     }
     label.input-label {
         margin-bottom: 2px;
@@ -232,6 +238,9 @@
                 outline: 0;
                 border-color: $COLOR_DARK_BLUE_7;
                 box-shadow: 0 0 0 0.2rem rgba(127, 131, 151, 0.3);
+            }
+            &::placeholder {
+                color: $COLOR_DARK_BLUE_7;
             }
         }
     }
