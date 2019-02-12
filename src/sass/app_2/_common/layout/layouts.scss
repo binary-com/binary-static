@@ -75,6 +75,7 @@
         position: relative;
         margin-left: 16px;
         width: $SIDEBAR_WIDTH;
+        overflow: hidden;
 
         .sidebar-items {
             opacity: 1;
