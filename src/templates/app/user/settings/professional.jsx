@@ -19,8 +19,8 @@ const Professional = () => (
                 <p>{it.L('You are categorised as a professional client.')}</p>
             </div>
             <div className='invisible' id='rejected'>
-                <p>{it.L('Your request to be treated as a  professional is [_1]not approved[_2].', '<strong>', '</strong>')}</p>
-                <p>{it.L('Please check your inbox for details. Your account remains under the retail category.')}<br />{it.L('You are welcome at any time if you\'d like to reapply as a professional client.')}</p>
+                <p>{it.L('Your request to be treated as a professional client is [_1]not approved[_2].', '<strong>', '</strong>')}</p>
+                <p>{it.L('Please check your inbox for details. Your account remains under the retail client category.')}<br />{it.L('You are welcome at any time if you\'d like to reapply as a professional client.')}</p>
             </div>
 
             <form className='form gr-padding-10 invisible' id='frm_professional'>
