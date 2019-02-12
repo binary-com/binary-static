@@ -232,7 +232,7 @@ body.dark, .theme-wrapper.dark {
                 }
             }
             &:before {
-                background-image: linear-gradient(to right, rgba(16, 19, 32, 1), rgba(255, 0, 0, 0));
+                background-image: linear-gradient(to right, rgba(16, 19, 32, 1), rgba(16, 19, 32, 0));
             }
         }
         .mobile-widget {
