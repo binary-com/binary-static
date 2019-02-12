@@ -62,8 +62,7 @@ const SimpleDuration = ({
                     alignment='left'
                     disabled_selector={['year']}
                     has_today_btn
-                    is_clearable
-                    label={duration_units_list[0].text}
+                    label={has_label ? duration_units_list[0].text : null}
                     max_date={max_date_duration}
                     min_date={min_date_expiry}
                     mode='duration'

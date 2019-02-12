@@ -150,18 +150,16 @@ class DatePicker extends React.Component {
     renderInputField = () => {
         const { is_read_only, mode, name, error_messages, max_value, min_value, label } = this.props;
         let { placeholder } = this.props;
-        let type, onChange, is_incrementable;
+        let type, onChange;
 
         switch (mode) {
             case 'duration':
                 onChange = this.onChangeInput;
                 type = 'number';
-                is_incrementable = this.props.is_incrementable;
                 break;
             default:
                 placeholder = placeholder || localize('Select a date');
                 type = 'text';
-                is_incrementable = false;
         }
 
         return (
@@ -170,9 +168,8 @@ class DatePicker extends React.Component {
                 data-tip={false}
                 data-value={this.state.value}
                 error_messages={error_messages}
-                is_incrementable={is_incrementable}
-                is_read_only={is_read_only}
                 label={label}
+                is_read_only={is_read_only}
                 max_value={max_value}
                 min_value={min_value}
                 name={name}
@@ -226,11 +223,12 @@ class DatePicker extends React.Component {
                 { this.renderInputField() }
                 <IconCalendar
                     className={classNames('datepicker__icon datepicker__icon--calendar', {
-                        'datepicker__icon--is-hidden': this.state.is_clear_btn_visible,
+                        'datepicker__icon--is-hidden' : this.state.is_clear_btn_visible,
+                        'datepicker__icon--with-label': this.props.label,
                     })}
                     onClick={this.handleVisibility}
                 />
-                { this.props.is_clearable &&
+                {this.props.is_clearable &&
                     <IconClear
                         className={classNames('datepicker__icon datepicker__icon--clear', {
                             'datepicker__icon--is-hidden': !this.state.is_clear_btn_visible,
@@ -246,7 +244,6 @@ class DatePicker extends React.Component {
                         enterDone: 'datepicker__picker--enter-done',
                         exit     : 'datepicker__picker--exit',
                     }}
-                    unmountOnExit
                 >
                     <div
                         className={classNames('datepicker__picker', {
@@ -282,11 +279,10 @@ DatePicker.defaultProps = {
 
 DatePicker.propTypes = {
     ...Calendar.propTypes,
-    error_messages  : PropTypes.array,
-    is_incrementable: PropTypes.bool,
-    label           : PropTypes.string,
-    max_value       : PropTypes.number,
-    min_value       : PropTypes.number,
+    error_messages: PropTypes.array,
+    label         : PropTypes.string,
+    max_value     : PropTypes.number,
+    min_value     : PropTypes.number,
 };
 
 export default observer(DatePicker);

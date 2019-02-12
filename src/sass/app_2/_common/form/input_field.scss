@@ -168,10 +168,12 @@
         }
     }
     label.input-label {
-        margin-bottom: 2px;
-        margin-left: 4px;
+        margin: 5px 0 12px;
         text-transform: capitalize;
         display: inline-block;
+        color: $COLOR_DARK_BLUE_7;
+        text-align: center;
+        width: 100%;
     }
     span.input-helper {
         font-weight: 300;

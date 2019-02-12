@@ -123,14 +123,16 @@ const AdvancedDuration = ({
                         { advanced_duration_unit === 'd' &&
                             <DatePicker
                                 alignment='left'
-                                disabled_selector={['year']}
+                                disable_year_selector
+                                disable_trading_events
                                 has_today_btn
-                                is_clearable
+                                label={duration_units_list.length === 1 ? duration_units_list[0].text : null}
                                 max_date={max_date_duration}
                                 min_date={min_date_expiry}
                                 mode='duration'
                                 name='duration'
                                 start_date={start_date}
+                                underlying={symbol}
                                 value={expiry_date}
                                 {...number_input_props}
                                 {...shared_input_props}

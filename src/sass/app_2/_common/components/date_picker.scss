@@ -23,6 +23,9 @@
         &--is-hidden {
             opacity: 0;
         }
+        &--with-label {
+            top: 37px !important;
+        }
     }
     // TODO: update datepicker UI in mobile 
     &__native-overlay {
@@ -70,12 +73,13 @@
         transform-origin: left;
         transform: scale(1, 0) translate3d(20px, 0, 0);
         transition: transform 0.25s ease, opacity 0.25s linear;
+        opacity: 0;
 
         &--left {
-            &.datepicker__picker--enter, &.datepicker__picker--exit {
-                transform: scale(1, 1) translate3d(-275px, 0, 0);
-                opacity: 0;
+            transform: scale(1, 1) translate3d(-275px, 0, 0);
 
+            &.datepicker__picker--enter, &.datepicker__picker--exit {
+                opacity: 0;
             }
             &.datepicker__picker--enter-done {
                 transform: translate3d(-295px, 0, 0);
