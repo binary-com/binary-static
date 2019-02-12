@@ -247,8 +247,8 @@ const BinaryOptions = () => {
                         </SectionLarge>
                         <SectionLarge dataAnchor='high-low-ticks' header={it.L('High Ticks/Low Ticks')} image='types-of-trades/high_low_ticks' text={it.L('Purchase High Tick/Low Tick contracts to predict the highest or lowest tick among the next five ticks.')} />
                         <SectionLarge dataAnchor='runs-high-low' header={it.L('Run')} image='types-of-trades/runup_rundown' text={it.L('There are two types of Run trades:')}>
-                            <ListStrong header={it.L('Up')} text={it.L('Win payout if consecutive ticks rise successively. Contract is lost when at least one tick falls or is equal to any of the previous ticks.')} />
-                            <ListStrong header={it.L('Down')} text={it.L('Win payout if consecutive ticks fall successively. Contract is lost when at least one tick rises or is equal to any of the previous ticks.')} />
+                            <ListStrong header={it.L('Ups')} text={it.L('Win payout if consecutive ticks rise successively. Contract is lost when at least one tick falls or is equal to any of the previous ticks.')} />
+                            <ListStrong header={it.L('Downs')} text={it.L('Win payout if consecutive ticks fall successively. Contract is lost when at least one tick rises or is equal to any of the previous ticks.')} />
                         </SectionLarge>
                         <p>{it.L('Please note that Asians, Digits, Reset Call/Reset Put, Run Up/Run Down, and High Ticks/Low Ticks are available exclusively with our Volatility Indices.')}</p>
                     </Section>

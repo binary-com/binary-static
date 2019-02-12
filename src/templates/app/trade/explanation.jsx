@@ -148,8 +148,8 @@ const Explanation = () => (
 
             <div id='winning_runs' className='invisible'>
                 <h3>{it.L('Winning the contract')}</h3>
-                <p>{it.L('If you select [_1]“Up”[_2], you win the payout if consecutive tick(s) rise successively after the [_1]entry spot[_2].[_3]No payout if any tick falls or is equal to any of the previous ticks.', '<strong>', '</strong>', '<br />')}</p>
-                <p>{it.L('If you select [_1]“Down”[_2], you win the payout if consecutive tick(s) fall successively after the [_1]entry spot[_2].[_3]No payout if any tick rises or is equal to any of the previous ticks.', '<strong>', '</strong>', '<br />')}</p>
+                <p>{it.L('If you select [_1]“Ups”[_2], you win the payout if consecutive tick(s) rise successively after the [_1]entry spot[_2].[_3]No payout if any tick falls or is equal to any of the previous ticks.', '<strong>', '</strong>', '<br />')}</p>
+                <p>{it.L('If you select [_1]“Downs”[_2], you win the payout if consecutive tick(s) fall successively after the [_1]entry spot[_2].[_3]No payout if any tick rises or is equal to any of the previous ticks.', '<strong>', '</strong>', '<br />')}</p>
             </div>
         </div>
 
