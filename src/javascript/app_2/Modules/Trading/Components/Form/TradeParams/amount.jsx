@@ -10,7 +10,7 @@ import {
 import ButtonToggleMenu          from 'App/Components/Form/button_toggle_menu.jsx';
 import Dropdown                  from 'App/Components/Form/DropDown';
 import Fieldset                  from 'App/Components/Form/fieldset.jsx';
-import InputField                from 'App/Components/Form/input_field.jsx';
+import InputField                from 'App/Components/Form/InputField/input_field.jsx';
 import AllowEquals               from './allow_equals.jsx';
 
 const Amount = ({
