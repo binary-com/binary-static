@@ -21,7 +21,7 @@ const DigitDisplay = (() => {
             request.end = +contract.exit_tick_time;
             request.count = +contract.tick_count;
             if (+contract.tick_count === 1) {
-                request.end += 1; // TODO: backend sends the improper response when end and start are the same for 1 tick contracts. remove this block on fix
+                request.end += 1; // TODO: API sends the improper response when end and start are the same for 1 tick contracts. remove this block on fix
             }
         } else {
             request.subscribe = 1;
