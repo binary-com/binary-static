@@ -14,14 +14,4 @@ describe('<Calendar />', () => {
         const wrapper = shallow(<Calendar />);
         expect(wrapper).to.have.length(1);
     });
-
-    it('should render children when passed in', () => {
-        const child_div = <div className='sweet-child-of-mine' />;
-        const wrapper = shallow(
-            <Calendar>
-                { child_div }
-            </Calendar>
-        );
-        expect(wrapper.contains(child_div)).to.equal(true);
-    });
 });

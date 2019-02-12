@@ -1,3 +1,4 @@
+import classNames        from 'classnames';
 import PropTypes         from 'prop-types';
 import React             from 'react';
 import { localize }      from '_common/localize';
@@ -12,8 +13,12 @@ const ContractInfo = ({
 }) => (
     <React.Fragment>
         {(proposal_info.has_error || !proposal_info.id) ?
-            <div className={proposal_info.has_error ? 'error-info-wrapper' : ''}>
-                <span>{proposal_info.message}</span>
+            <div
+                className={classNames({
+                    'error-info-wrapper': proposal_info.has_error,
+                })}
+            >
+                {proposal_info.message && <span>{proposal_info.message}</span>}
             </div>
             :
             <div className='purchase-info-wrapper'>

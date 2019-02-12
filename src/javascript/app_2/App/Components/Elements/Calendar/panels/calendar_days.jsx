@@ -1,23 +1,28 @@
-import classNames            from 'classnames';
-import React                 from 'react';
-import { padLeft }           from '_common/string_util';
+import classNames       from 'classnames';
+import PropTypes        from 'prop-types';
+import React            from 'react';
+import { padLeft }      from '_common/string_util';
+import {
+    getDaysOfTheWeek,
+    week_headers_abbr } from 'Constants/date_time';
 import {
     addDays,
     addMonths,
     subDays,
     subMonths,
-    toMoment }               from 'Utils/Date';
-import CalendarPanelTypes    from './types';
-import { week_headers_abbr } from '../constants';
+    toMoment }          from 'Utils/Date';
+import CommonPropTypes  from './types';
+import Tooltip          from '../../tooltip.jsx';
 
 const getDays = ({
     calendar_date,
     date_format,
+    holidays,
     isPeriodDisabled,
     start_date,
     selected_date,
     updateSelected,
-    // sessions, // TODO: check expiry date sessions. e.g. disable days if market closes on weekend
+    weekends,
 }) => {
     // adjust Calendar week by 1 day so that Calendar week starts on Monday
     // change to zero to set Calendar week to start on Sunday
@@ -59,13 +64,27 @@ const getDays = ({
         const moment_date = toMoment(date).startOf('day');
         const is_active   = selected_date && moment_date.isSame(moment_selected);
         const is_today    = moment_date.isSame(moment_today, 'day');
-        const is_disabled = isPeriodDisabled(moment_date, 'day') ||
-            // for forward starting accounts, only show same day as start date and the day after
-            (start_date && (moment_date.isBefore(moment_start_date) ||
-            moment_date.isAfter(addDays(moment_start_date, 1))));
 
-        // show 'disabled' style for dates that is not in the same calendar month,
-        // but the date should still be clickable
+        const events          = holidays.filter(event =>
+            // filter by date or day of the week
+            event.dates.find(d => d === date || getDaysOfTheWeek(d) === toMoment(date).day()));
+        const has_events      = !!events.length;
+        const is_closes_early = events.map(event => !!event.descrip.match(/Closes early|Opens late/))[0];
+        const message         = events.map(event => event.descrip)[0] || '';
+
+        const is_before_min_or_after_max_date = isPeriodDisabled(moment_date, 'day');
+        const is_disabled =
+            // check if date is before min_date or after_max_date
+            is_before_min_or_after_max_date
+            // for forward starting accounts, only show same day as start date and the day after
+            || ((start_date && (moment_date.isBefore(moment_start_date)
+            || moment_date.isAfter(addDays(moment_start_date, 1)))))
+            // check if weekends are disabled
+            || weekends.some(day => toMoment(date).day() === day)
+            // check if date falls on holidays, and doesn't close early or opens late
+            || has_events && !is_closes_early;
+
+        // show 'disabled' style for dates that is not in the same calendar month, it should still be clickable
         const is_other_month = moment_date.month() !== moment_cur_date.month();
 
         days.push(
@@ -80,6 +99,13 @@ const getDays = ({
                 onClick={is_disabled ? undefined : (e) => updateSelected(e, 'day') }
                 data-date={date}
             >
+                { ((has_events || is_closes_early) && !is_other_month && !is_before_min_or_after_max_date) &&
+                    <Tooltip
+                        alignment='top'
+                        icon='dot'
+                        message={message}
+                    />
+                }
                 {moment_date.date()}
             </span>
         );
@@ -93,10 +119,33 @@ export const CalendarDays = (props) => {
 
     return (
         <div className='calendar__body calendar__body--date'>
-            {Object.keys(week_headers_abbr).map((item, idx) => (<span key={idx} className='calendar__text calendar__text--bold'>{week_headers_abbr[item]}</span>))}
-            {days}
+            { Object.keys(week_headers_abbr)
+                .map((item, idx) => (
+                    <span key={idx} className='calendar__text calendar__text--bold'>{week_headers_abbr[item]}</span>
+                ))
+            }
+            { days }
         </div>
     );
 };
 
-CalendarDays.propTypes = { ...CalendarPanelTypes };
+CalendarDays.defaultProps = {
+    holidays: [],
+    weekends: [],
+};
+
+CalendarDays.propTypes = {
+    ...CommonPropTypes,
+    date_format: PropTypes.string,
+    holidays   : PropTypes.arrayOf(
+        PropTypes.shape({
+            dates  : PropTypes.array,
+            descrip: PropTypes.string,
+        }),
+    ),
+    start_date: PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
+    ]),
+    weekends: PropTypes.arrayOf(PropTypes.number),
+};

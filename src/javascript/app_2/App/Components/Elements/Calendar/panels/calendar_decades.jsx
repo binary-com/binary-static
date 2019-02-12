@@ -1,8 +1,10 @@
-import classNames         from 'classnames';
-import React              from 'react';
-import { toMoment }       from 'Utils/Date';
-import CalendarPanelTypes from './types';
-import { getCentury, getDecade }      from '../helper';
+import classNames      from 'classnames';
+import React           from 'react';
+import { toMoment }    from 'Utils/Date';
+import CommonPropTypes from './types';
+import {
+    getCentury,
+    getDecade }        from '../helper';
 
 export const CalendarDecades = ({
     calendar_date,
@@ -49,4 +51,4 @@ export const CalendarDecades = ({
     );
 };
 
-CalendarDecades.propTypes = { ...CalendarPanelTypes };
+CalendarDecades.propTypes = { ...CommonPropTypes };

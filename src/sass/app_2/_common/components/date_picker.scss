@@ -4,13 +4,17 @@
     width: 100%;
     max-width: 280px;
 
-    &__input input {
-        text-align: center;
-        pointer-events: auto;
+    &__input {
+        border-radius: $BORDER_RADIUS;
 
-        &:focus, &:hover {
-            outline: none;
-            border-color: $COLOR_DARK_BLUE_5;
+        input {
+            text-align: center;
+            pointer-events: auto;
+
+            &:focus, &:hover {
+                outline: none;
+                border-color: $COLOR_DARK_BLUE_5;
+            }
         }
     }
     &__icon {
@@ -24,7 +28,7 @@
             opacity: 0;
         }
     }
-    // TODO: update datepicker UI in mobile 
+    // TODO: update datepicker UI in mobile
     &__native-overlay {
         background: $COLOR_WHITE;
         height: 32px;
@@ -64,26 +68,23 @@
         }
     }
     &__picker {
-        .calendar {
-            top: 8px;
-            opacity: 0;
-            transform: scale(1, 0);
-            transform-origin: top;
-            transition: all 0.2s;
+        position: absolute;
+        top: 7px;
+        z-index: 999;
+        transform-origin: left;
+        transform: scale(1, 0) translate3d(20px, 0, 0);
+        transition: transform 0.25s ease, opacity 0.25s linear;
 
-            & span {
-                user-select: none;
+        &--left {
+            &.datepicker__picker--enter, &.datepicker__picker--exit {
+                transform: scale(1, 1) translate3d(-275px, 0, 0);
+                opacity: 0;
+
             }
-        }
-        // align picker calendar to the left
-        &--align-left > .calendar {
-            transform: scale(0, 0);
-            transform-origin: top right;
-            left: -295px;
-        }
-        &--show > .calendar {
-            opacity: 1;
-            transform: scale(1, 1);
+            &.datepicker__picker--enter-done {
+                transform: translate3d(-295px, 0, 0);
+                opacity: 1;
+            }
         }
     }
 }

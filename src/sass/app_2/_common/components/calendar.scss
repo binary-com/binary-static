@@ -46,7 +46,7 @@
         }
         &--date {
             grid-template-columns: repeat(7, 24px);
-            grid-template-rows: repeat(6, 24px);
+            grid-auto-rows: 24px;
 
             span {
                 width: 100%;
@@ -78,7 +78,7 @@
         position: absolute;
         padding: 0 5px;
 
-        &:hover:not(&--disabled) {
+        &:hover:not(.calendar__nav--disabled) {
             cursor: pointer;
         }
         &--prev-year {
@@ -105,7 +105,6 @@
 
         &--disabled {
             cursor: default;
-            color: $COLOR_LIGHT_BLACK_3;
             transition: none;
         }
         a {
@@ -132,6 +131,7 @@
         align-self: center;
         justify-self: center;
         transition: background 0.2s;
+        position: relative;
 
         &:hover {
             cursor: pointer;
@@ -162,6 +162,17 @@
 
             &:hover {
                 background: $COLOR_LIGHT_GRAY_1;
+            }
+        }
+        span.tooltip[data-tooltip] {
+            position: absolute;
+            display: inline-grid;
+            cursor: default;
+            height: 0;
+            top: 0;
+
+            i {
+                margin-top: -7px;
             }
         }
     }
@@ -202,9 +213,6 @@
                 font-size: 0.8rem;
                 line-height: 20px;
             }
-            &--disabled {
-                color: $COLOR_DARK_BLUE_8;
-            }
         }
         &__icon path {
             fill: $COLOR_DARK_BLUE_7;
@@ -215,6 +223,10 @@
             &:hover {
                 background: $COLOR_DARK_BLUE_5;
             }
+            &--today {
+                border: 1px solid $COLOR_DARK_BLUE_7;
+                color: $COLOR_WHITE;
+            }
             &--disabled, &--other {
                 color: $COLOR_DARK_BLUE_8;
             }
@@ -222,10 +234,6 @@
                 &:hover {
                     background: $COLOR_DARK_BLUE_3;
                 }
-            }
-            &--today {
-                border: 1px solid $COLOR_DARK_BLUE_7;
-                color: $COLOR_WHITE;
             }
             &--active {
                 color: $COLOR_WHITE;

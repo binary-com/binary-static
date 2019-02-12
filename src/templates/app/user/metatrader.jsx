@@ -101,11 +101,11 @@ const Metatrader = () => (
                                 <div className='acc-info has-account invisible'>
                                     <div className='gr-row gr-padding-10'>
                                         <div className='gr-3'>{it.L('MT5 Account:')}</div>
-                                        <div className='gr-grow' data='login' />
+                                        <div data='login' />
                                     </div>
                                     <div className='gr-row'>
                                         <div className='gr-3'>{it.L('Name:')}</div>
-                                        <div className='gr-grow' data='name' />
+                                        <div data='name' />
                                     </div>
                                     <div className='gr-row gr-padding-10 gr-hide mobile-balance'>
                                         <div className='gr-3'>{it.L('Balance:')}</div>
