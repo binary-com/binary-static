@@ -8,6 +8,7 @@ import { IconMinus }             from 'Assets/Common/icon_minus.jsx'; // implici
 import { IconPlus }              from 'Assets/Common/icon_plus.jsx';
 import Button                    from './button.jsx';
 import Tooltip                   from '../Elements/tooltip.jsx';
+import ExpandableInput from "./expandable_input";
 
 const InputField = ({
     checked,
@@ -20,6 +21,7 @@ const InputField = ({
     id,
     is_autocomplete_disabled,
     is_disabled,
+                        is_expandable,
     is_float,
     is_incrementable,
     is_read_only = false,
@@ -152,24 +154,26 @@ const InputField = ({
             >
                 <IconMinus className={'input-wrapper__icon input-wrapper__icon--minus'} is_disabled={min_is_disabled} />
             </Button>
-            { input }
+            {!!is_expandable ? <ExpandableInput className={`expandable-${name}`}>{input}</ExpandableInput> : input }
         </div>;
 
     return (
         <div
-            className={`input-field ${className || ''}`}
+            className={`input-field ${className || ''} ${is_expandable ? (has_error ? 'expandable-input-container error' : 'expandable-input-container') : null}`}
         >
             <Tooltip alignment='left' message={has_error ? error_messages[0] : null }>
                 {!!label &&
                     <label htmlFor={name} className='input-label'>{label}</label>
                 }
                 {!!prefix &&
-                    <span className={`symbols ${prefix.toLowerCase()}`} />
+                    <span className={`symbols ${is_expandable ? 'expandable-symbols' : null} ${prefix.toLowerCase()}`} />
                 }
                 {!!helper &&
                     <span className='input-helper'>{helper}</span>
                 }
-                {is_incrementable  &&  type === 'number' ? input_increment : input}
+                {is_incrementable  &&  type === 'number' ? input_increment :
+                    !!is_expandable ? <ExpandableInput className={`expandable-${name}`}>{input}</ExpandableInput> : input
+                }
             </Tooltip>
         </div>
     );
@@ -187,6 +191,7 @@ InputField.propTypes = {
     id                      : PropTypes.string,
     is_autocomplete_disabled: PropTypes.bool,
     is_disabled             : PropTypes.string,
+    is_expandable           : PropTypes.bool,
     is_float                : PropTypes.bool,
     is_incrementable        : PropTypes.bool,
     is_read_only            : PropTypes.bool,

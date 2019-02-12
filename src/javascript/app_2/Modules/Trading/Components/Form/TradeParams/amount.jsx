@@ -68,7 +68,9 @@ const Amount = ({
                     fractional_digits={getDecimalPlaces(currency)}
                     is_autocomplete_disabled
                     is_float
+                    is_expandable={true}
                     is_nativepicker={is_nativepicker}
+                    is_incrementable
                     max_length={10}
                     name='amount'
                     onChange={onChange}
