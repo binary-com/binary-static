@@ -179,7 +179,7 @@ const DigitTicker = (() => {
     const setElements = () => {
         el_peek     = el_container ? el_container.querySelector('.peek') : null;
         el_peek_box = el_peek ? el_container.querySelector('.peek-box') : null;
-        el_mask     = el_peek_box ? el_peek_box.querySelector('> .mask') : null;
+        el_mask     = el_peek_box ? el_peek_box.querySelector('& > .mask') : null;
     };
 
     const isBarrierMissing = (contract_type, bar) => !/digit(even|odd)/i.test(type) && !bar;

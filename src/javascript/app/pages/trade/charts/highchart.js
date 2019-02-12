@@ -13,6 +13,7 @@ const addComma         = require('../../../common/currency').addComma;
 const localize         = require('../../../../_common/localize').localize;
 const State            = require('../../../../_common/storage').State;
 const getPropertyValue = require('../../../../_common/utility').getPropertyValue;
+const isEmptyObject    = require('../../../../_common/utility').isEmptyObject;
 
 const Highchart = (() => {
     let chart,
@@ -43,6 +44,7 @@ const Highchart = (() => {
         is_history_send,
         is_entry_tick_barrier_selected,
         is_response_id_set,
+        is_tick_type,
         prev_barriers; // For checking if barrier was updated
 
     const initOnce = () => {
@@ -50,7 +52,7 @@ const Highchart = (() => {
         lines_drawn = new Set();
 
         is_initialized = is_chart_delayed = is_chart_subscribed = stop_streaming = is_response_id_set =
-            is_contracts_for_send = is_history_send = is_entry_tick_barrier_selected = false;
+            is_contracts_for_send = is_history_send = is_entry_tick_barrier_selected = is_tick_type = false;
     };
 
     const initializeValues = () => {
@@ -166,6 +168,7 @@ const Highchart = (() => {
     const getHighchartLabelParams = (is_reset_barrier) => ({
         is_chart_delayed,
         is_reset_barrier,
+        is_tick_type,
         contract_type       : contract.contract_type,
         is_forward_starting : purchase_time !== start_time,
         is_sold_before_start: sell_time < start_time,
@@ -212,6 +215,7 @@ const Highchart = (() => {
             const tick    = response.tick;
             const ohlc    = response.ohlc;
             response_id   = response[type].id;
+            is_tick_type  = !isEmptyObject(history) || !isEmptyObject(tick);
             // send view popup the response ID so view popup can forget the calls if it's closed before contract ends
             if (response_id && !is_response_id_set) {
                 if (State.get('is_trading') || State.get('is_mb_trading')) {
