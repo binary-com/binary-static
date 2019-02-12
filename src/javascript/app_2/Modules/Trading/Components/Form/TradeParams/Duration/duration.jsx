@@ -15,7 +15,6 @@ const Duration = ({
     advanced_expiry_type,
     contract_expiry_type,
     duration,
-    duration_d,
     duration_unit,
     duration_units_list,
     duration_min_max,
@@ -147,7 +146,6 @@ const Duration = ({
                             advanced_duration_unit={advanced_duration_unit}
                             changeDurationUnit={changeDurationUnit}
                             contract_expiry_type={contract_expiry_type}
-                            duration_d={duration_d}
                             duration_min_max={duration_min_max}
                             duration_t={duration_t}
                             duration_units_list={duration_units_list}
@@ -171,7 +169,6 @@ const Duration = ({
                         <SimpleDuration
                             getDurationFromUnit={getDurationFromUnit}
                             changeDurationUnit={changeDurationUnit}
-                            duration_d={duration_d}
                             duration_min_max={duration_min_max}
                             duration_t={duration_t}
                             duration_units_list={duration_units_list}
@@ -201,10 +198,6 @@ Duration.propTypes = {
     advanced_expiry_type  : PropTypes.string,
     contract_expiry_type  : PropTypes.string,
     duration              : PropTypes.oneOfType([
-        PropTypes.number,
-        PropTypes.string,
-    ]),
-    duration_d: PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
     ]),

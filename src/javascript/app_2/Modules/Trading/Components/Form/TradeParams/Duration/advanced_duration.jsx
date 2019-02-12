@@ -18,7 +18,6 @@ import {
 const AdvancedDuration = ({
     advanced_duration_unit,
     advanced_expiry_type,
-    duration_d,
     duration_min_max,
     duration_units_list,
     duration_t,
@@ -124,7 +123,6 @@ const AdvancedDuration = ({
                             <DatePicker
                                 alignment='left'
                                 disabled_selector={['year']}
-                                duration_d={duration_d}
                                 has_today_btn
                                 is_clearable
                                 max_date={max_date_duration}
@@ -191,12 +189,8 @@ AdvancedDuration.propTypes = {
     advanced_duration_unit: PropTypes.string,
     advanced_expiry_type  : PropTypes.string,
     changeDurationUnit    : PropTypes.func,
-    duration_d            : PropTypes.oneOfType([
-        PropTypes.number,
-        PropTypes.string,
-    ]),
-    duration_min_max: PropTypes.object,
-    duration_t      : PropTypes.oneOfType([
+    duration_min_max      : PropTypes.object,
+    duration_t            : PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
     ]),

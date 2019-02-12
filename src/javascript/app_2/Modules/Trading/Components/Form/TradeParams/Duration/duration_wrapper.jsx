@@ -85,10 +85,6 @@ DurationWrapper.propTypes = {
         PropTypes.number,
         PropTypes.string,
     ]),
-    duration_d: PropTypes.oneOfType([
-        PropTypes.number,
-        PropTypes.string,
-    ]),
     duration_h: PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,

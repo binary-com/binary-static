@@ -25,9 +25,9 @@ class DatePicker extends React.Component {
 
     componentDidMount() {
         document.addEventListener('click', this.onClickOutside, true);
-        const { mode, value, duration_d } = this.props;
+        const { mode, value, min_value } = this.props;
         if (mode === 'duration') {
-            this.updateDatePickerValue(duration_d);
+            this.updateDatePickerValue(min_value);
         } else {
             this.updateDatePickerValue(formatDate(value, 'DD MMM YYYY'));
         }
@@ -232,10 +232,6 @@ DatePicker.defaultProps = {
 
 DatePicker.propTypes = {
     ...Calendar.propTypes,
-    duration_d: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.number,
-    ]),
     error_messages  : PropTypes.array,
     is_incrementable: PropTypes.bool,
     label           : PropTypes.string,

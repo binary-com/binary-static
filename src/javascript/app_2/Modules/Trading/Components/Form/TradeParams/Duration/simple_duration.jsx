@@ -5,7 +5,6 @@ import ButtonToggleMenu               from 'App/Components/Form/button_toggle_me
 import DatePicker                     from 'App/Components/Form/DatePicker';
 import InputField                     from 'App/Components/Form/input_field.jsx';
 import RangeSlider                    from 'App/Components/Form/RangeSlider';
-import { hasIntradayDurationUnit }    from 'Stores/Modules/Trading/Helpers/duration';
 import {
     isTimeValid,
     setTime,
@@ -13,7 +12,6 @@ import {
 
 const SimpleDuration = ({
     changeDurationUnit,
-    duration_d,
     duration_t,
     duration_units_list,
     duration_min_max,
@@ -26,30 +24,11 @@ const SimpleDuration = ({
     start_date,
     start_time,
 }) => {
-    /* get max and min date for datepicker */
-    const moment_expiry      = toMoment(expiry_date || server_time);
-    let is_24_hours_contract = false;
-    let max_date_duration,
-        min_date_expiry;
-    const max_daily_duration = duration_min_max.daily ? duration_min_max.daily.max : 365 * 24 * 3600;
-    const moment_contract_start_date_time =
-            setTime(toMoment(start_date || server_time), (isTimeValid(start_time) ? start_time : server_time.format('HH:mm')));
-    const has_intraday_duration_unit = hasIntradayDurationUnit(duration_units_list);
+    const moment_contract_start_date_time = setTime(toMoment(start_date || server_time),
+        (isTimeValid(start_time) ? start_time : server_time.format('HH:mm')));
 
-    is_24_hours_contract = (!!start_date || moment_expiry.isSame(toMoment(server_time), 'day')) && has_intraday_duration_unit;
-
-    if (is_24_hours_contract) {
-        min_date_expiry = moment_contract_start_date_time.clone().startOf('day');
-        max_date_duration = moment_contract_start_date_time.clone().add(
-            start_date ? 24 * 3600 : (max_daily_duration), 'second');
-    } else {
-        min_date_expiry = moment_contract_start_date_time.clone().startOf('day');
-        max_date_duration = moment_contract_start_date_time.clone().add(max_daily_duration, 'second');
-
-        if (!has_intraday_duration_unit) {
-            min_date_expiry.add(1, 'day');
-        }
-    }
+    const min_date_expiry = moment_contract_start_date_time.clone().add(duration_min_max.daily.min, 'second');
+    const max_date_duration = moment_contract_start_date_time.clone().add(duration_min_max.daily.max, 'second');
 
     /* Filter minutes and ticks */
     const filterMinutesAndTicks = (arr) => {
@@ -82,7 +61,6 @@ const SimpleDuration = ({
                 <DatePicker
                     alignment='left'
                     disabled_selector={['year']}
-                    duration_d={duration_d}
                     has_today_btn
                     is_clearable
                     label={duration_units_list[0].text}
