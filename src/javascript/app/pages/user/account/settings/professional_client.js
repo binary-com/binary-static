@@ -42,7 +42,6 @@ const professionalClient = (() => {
             return;
         } else if (is_in_page && status.includes('professional_rejected')) {
             setVisible('#rejected');
-            return;
         }
 
         const $container        = $('#fs_professional');
