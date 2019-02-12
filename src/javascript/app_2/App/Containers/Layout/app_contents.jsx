@@ -5,11 +5,15 @@ import { withRouter } from 'react-router';
 import { Scrollbars } from 'tt-react-custom-scrollbars';
 import { connect }    from 'Stores/connect';
 
-const AppContents = ({ children, is_positions_drawer_on }) => (
+const AppContents = ({
+    children, is_contract_mode,
+    is_positions_drawer_on,
+}) => (
     <div
         id='app_contents'
         className={classNames('app-contents', {
             'app-contents--show-positions-drawer': is_positions_drawer_on,
+            'app-contents--contract-mode'        : is_contract_mode,
         })}
     >
         {/* Calculate height of user screen and offset height of header and footer */}
@@ -28,7 +32,8 @@ AppContents.propTypes = {
 };
 
 export default withRouter(connect(
-    ({ ui }) => ({
+    ({ modules, ui }) => ({
         is_positions_drawer_on: ui.is_positions_drawer_on,
+        is_contract_mode      : modules.smart_chart.is_contract_mode,
     })
 )(AppContents));

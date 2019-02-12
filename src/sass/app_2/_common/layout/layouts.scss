@@ -3,6 +3,13 @@
     height: calc(100vh - #{$HEADER_HEIGHT} - #{$FOOTER_HEIGHT});
     overflow: hidden;
 
+    &--contract-mode {
+        .trade-container {
+            .chart-container {
+                max-width: calc(100% - #{$SIDEBAR_WIDTH} - 16px);
+            }
+        }
+    }
     &--show-positions-drawer {
         .trade-container {
             .chart-container {
@@ -23,6 +30,9 @@
                     }
                 }
             }
+        }
+        & + &.app-contents--contract-mode {
+            max-width: unset;
         }
     }
     .chart-container {
