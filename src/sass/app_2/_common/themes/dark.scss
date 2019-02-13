@@ -301,15 +301,6 @@ body.dark, .theme-wrapper.dark {
     span.tooltip i.question:after {
         content: url('../images/common/tooltip/ic_tooltip_question_dark.svg ');
     }
-    span.tooltip {
-        &:before {
-            background: $COLOR_DARK_BLUE_3;
-            color: $COLOR_WHITE;
-        }
-        &:after {
-            border-left-color: $COLOR_DARK_BLUE_3;
-        }
-    }
     // common inline icons
     .inline-icon {
         @include colorIcon($COLOR_DARK_BLUE_7, none);

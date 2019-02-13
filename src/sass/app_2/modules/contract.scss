@@ -4,7 +4,7 @@
     position: relative;
 
     .contract-header {
-        max-height: 2rem;
+        max-height: 3.2rem;
         overflow: hidden;
         border-radius: 0.4em 0.4em 0 0;
 
@@ -15,10 +15,10 @@
             .header-result, .header-purchased {
                 display: flex;
                 align-items: center;
-                padding: 0 1em;
+                padding: 5px;
                 color: $COLOR_WHITE;
                 font-weight: bold;
-                line-height: 2rem;
+                line-height: 1.5;
 
                 svg {
                     display: inline-block;
@@ -61,6 +61,7 @@
     }
     .contract-contents {
         padding: 1em;
+        background: $COLOR_LIGHT_BLACK_4_SOLID;
         font-size: 1.2rem;
         border-top-width: 0;
         border-radius: 0 0 0.4em 0.4em;
@@ -68,14 +69,15 @@
         .longcode {
             font-weight: 300;
             text-align: center;
-            line-height: 1.1rem;
+            line-height: 1.5;
         }
         .ref-number, .info-header {
             margin-top: 1em;
             font-weight: 300;
             text-align: center;
             background-color: $COLOR_LIGHT_BLACK_4_SOLID;
-            line-height: 1.7rem;
+            line-height: 1.5;
+            padding: 4px;
         }
         .info-header {
             font-weight: bold;

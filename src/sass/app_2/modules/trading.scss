@@ -92,12 +92,13 @@
             text-align: center;
             z-index: 1;
             color: $COLOR_LIGHT_BLACK_1;
+            margin: 1px;
         }
         .clock-header, .fieldset-header, .stake-wrapper {
             span.field-info {
                 position: absolute;
                 color: $COLOR_DARK_BLUE_5;
-                font-size: 1.4rem;
+                font-size: 1.2rem;
                 font-weight: 400;
 
                 &.icon {
@@ -193,14 +194,10 @@
                     }
                 }
                 &:before {
-                    background: $COLOR_LIGHT_BLACK_1 !important;
-                    color: $COLOR_WHITE;
-                    box-shadow: 0 0.2em 0.4em 0 rgba(0, 0, 0, 0.5);
                     padding-left: 3em;
                     margin-right: 110px;
                 }
                 &:after {
-                    border-left-color: $COLOR_LIGHT_BLACK_1 !important;
                     margin-right: 98px;
                 }
                 &:hover:after, &:hover:before {
@@ -237,7 +234,7 @@
                 .symbols {
                     display: inline-block;
                     position: relative;
-                    font-size: inherit;
+                    font-size: 1rem;
                 }
                 .icon_price_move_container {
                     width: 1.6em;
@@ -253,13 +250,14 @@
 
             &__selection {
                 width: calc(20% - 0.5em);
-                height: 2.4em;
+                height: 2em;
                 border-radius: $BORDER_RADIUS;
                 display: inline-flex;
                 justify-content: center;
                 align-items: center;
                 background-color: $COLOR_DARK_BLUE_2;
                 margin: 0 0.5em 0.5em 0;
+                font-size: 1.2rem;
 
                 &.selected {
                     background-color: $COLOR_DARK_BLUE_5;
@@ -564,9 +562,6 @@
                     }
                 }
                 &:before {
-                    background: $COLOR_LIGHT_BLACK_1;
-                    color: $COLOR_WHITE;
-                    box-shadow: 0 0.2em 0.4em 0 rgba(0, 0, 0, 0.5);
                     max-width: unset;
                     width: 290px;
                     white-space: normal;
@@ -575,7 +570,6 @@
                     padding-left: 40px;
                 }
                 &:after {
-                    border-left-color: $COLOR_LIGHT_BLACK_1;
                     margin-right: 8px;
                 }
                 &:hover:after, &:hover:before {

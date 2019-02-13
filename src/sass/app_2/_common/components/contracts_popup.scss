@@ -104,7 +104,7 @@ div.contracts-popup-container {
         .contract-title {
             text-transform: capitalize;
             font-weight: 300;
-            font-size: 1.4rem;
+            font-size: 1.2rem;
         }
         .trade-type-info-icon {
             display: none;
@@ -173,7 +173,7 @@ div.contracts-popup-container {
                             color: $COLOR_WHITE;
 
                             span {
-                                font-weight: 500;
+                                font-weight: bold;
                             }
                         }
                         &:hover:not(.selected) {
@@ -266,6 +266,7 @@ div.contracts-popup-container {
                     color: $COLOR_WHITE;
                     margin: 0.8em 0;
                     width: 100%;
+                    font-size: 1.2rem;
                 }
             }
             .info-navigation {
