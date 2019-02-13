@@ -167,8 +167,8 @@
         }
     }
     label.input-label {
-        margin-bottom: 12px;
-        font-size: 0.7rem;
+        margin-bottom: 8px;
+        font-size: 0.85rem;
         font-weight: 400;
         text-transform: capitalize;
         display: inline-block;
@@ -241,6 +241,7 @@
                 outline: 0;
                 border-color: $COLOR_DARK_BLUE_7;
                 box-shadow: 0 0 0 0.2rem rgba(127, 131, 151, 0.3);
+                color: $COLOR_WHITE;
             }
             &::placeholder {
                 color: $COLOR_DARK_BLUE_7;
