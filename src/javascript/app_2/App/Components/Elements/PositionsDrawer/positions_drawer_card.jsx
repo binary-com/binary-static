@@ -1,6 +1,7 @@
 import PropTypes           from 'prop-types';
 import React               from 'react';
 import ContractTypeCell    from 'Modules/Portfolio/Components/contract_type_cell.jsx';
+import ProgressSlider      from '../../../Containers/PositionsDrawer/positions_progress_slider.jsx';
 import Money               from '../money.jsx';
 import BinaryLink          from '../../Routes/binary_link.jsx';
 import { getContractPath } from '../../Routes/helpers';
@@ -30,6 +31,9 @@ const PositionsDrawerCard = ({
             <span className='positions-drawer-card__remaining-time'>
                 <RemainingTime end_time={expiry_time} />
             </span>
+            <ProgressSlider
+                expiry_time={expiry_time}
+            />
         </React.Fragment>
     </BinaryLink>
 );
