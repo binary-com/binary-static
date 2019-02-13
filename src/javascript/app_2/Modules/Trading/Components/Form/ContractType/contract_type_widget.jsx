@@ -80,7 +80,7 @@ class ContractTypeWidget extends React.PureComponent {
         if (this.wrapper_ref && !this.wrapper_ref.contains(event.target) && this.state.is_dialog_open) {
             this.setState({ is_dialog_open: false });
         } else if (this.wrapper_ref && !this.wrapper_ref.contains(event.target) && this.state.is_info_dialog_open) {
-            this.setState({ is_info_dialog_open: false, is_dialog_open: true });
+            this.setState({ is_info_dialog_open: false, is_dialog_open: false });
         }
     };
 
