@@ -32,7 +32,6 @@ const SimpleDuration = ({
     const min_date_expiry = moment_contract_start_date_time.clone().add(duration_min_max.daily.min, 'second');
     const max_date_duration = moment_contract_start_date_time.clone().add(duration_min_max.daily.max, 'second');
 
-    /* Filter minutes and ticks */
     const filterMinutesAndTicks = (arr) => {
         const filtered_arr = arr.filter(du => du.value === 't' || du.value === 'm');
         if (filtered_arr.length <= 1) return [];
