@@ -1,30 +1,23 @@
-import classNames           from 'classnames';
 import { observer }         from 'mobx-react';
+import PropTypes            from 'prop-types';
 import React                from 'react';
-import { CSSTransition }    from 'react-transition-group';
-import PropTypes from "prop-types";
 
 class ExpandableInput extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
-
     componentDidMount() {
         let textContainer, textareaSize, input;
+        textContainer = document.querySelector(`.${this.props.className}`);
+        textareaSize = textContainer.querySelector(`.${this.props.className}-size`);
+        input = textContainer.querySelector('input');
 
         const autoSize = () => {
-            textareaSize.innerHTML = input.value + '\n';
+            textareaSize.innerHTML = `${input.value} \n`;
         };
+        autoSize();
 
         document.addEventListener('DOMContentLoaded', () => {
-            textContainer = document.querySelector(`.${this.props.className}`);
-            textareaSize = textContainer.querySelector(`.${this.props.className}-size`);
-            input = textContainer.querySelector('input');
-
             autoSize();
             input.addEventListener('input', autoSize);
-        })
+        });
     }
 
     render() {
@@ -40,8 +33,8 @@ class ExpandableInput extends React.Component {
 }
 
 ExpandableInput.propTypes = {
-    className: PropTypes.string,
     children : PropTypes.node,
+    className: PropTypes.string,
 };
 
 export default observer(ExpandableInput);

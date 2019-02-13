@@ -67,10 +67,10 @@ const Amount = ({
                     error_messages={validation_errors.amount}
                     fractional_digits={getDecimalPlaces(currency)}
                     is_autocomplete_disabled
+                    is_expandable
                     is_float
-                    is_expandable={true}
-                    is_nativepicker={is_nativepicker}
                     is_incrementable
+                    is_nativepicker={is_nativepicker}
                     max_length={10}
                     name='amount'
                     onChange={onChange}
