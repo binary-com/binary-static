@@ -146,62 +146,28 @@
             }
         }
         .allow-equals {
-            display: inline-block;
+            display: flex;
+            align-items: center;
 
-            .input-field {
-                display: inline-block;
-
-                input {
-                    &:active, &:focus {
-                        box-shadow: none;
-                    }
-                }
+            > * {
+                margin: 0.8em 0 0;
             }
             label {
-                vertical-align: middle;
                 padding-left: 0.8em;
                 cursor: pointer;
                 font-size: 1.2rem;
             }
-            .tooltip {
-                display: inline-block;
-                height: 1.2em;
-                width: 1.2em;
+            span.tooltip[data-tooltip] {
+                margin-top: 1.1em;
 
-                .info {
-                    vertical-align: middle;
-                    padding-left: 0.2em;
-
-                    &:after {
-                        transform: scale(0.75);
-                    }
-                }
-            }
-            span.tooltip {
-                i {
-                    &:before {
-                        content: url('../images/common/tooltip/ic_tooltip_info_dark.svg');
-                        position: absolute;
-                        right: 100%;
-                        z-index: 10;
-                        opacity: 0;
-                        transition: all 0.18s ease-out 0.18s;
-                        margin-right: 380px;
-                    }
-                    &:hover:before {
-                        opacity: 1;
-                        transform: translate(-50%, 0);
-                    }
-                }
                 &:before {
                     padding-left: 3em;
-                    margin-right: 110px;
                 }
-                &:after {
-                    margin-right: 98px;
+                &:before, &:after {
+                    right: 120px;
                 }
-                &:hover:after, &:hover:before {
-                    opacity: 1;
+                i.info:after {
+                    transform: scale(0.75);
                 }
             }
         }
@@ -419,6 +385,7 @@
                 max-height: 187px;
                 height: 100%;
                 width: 100%;
+                position: relative;
             }
             span.info-text {
                 display: flex;
@@ -541,39 +508,18 @@
                     color: $COLOR_DARK_BLUE_8;
                 }
             }
-            span.tooltip {
-                position: unset;
-
-                i {
-                    &:before {
-                        content: url('../images/common/tooltip/ic_tooltip_info_dark.svg ');
-                        right: 100%;
-                        position: absolute;
-                        margin-right: 330px;
-                        z-index: 10;
-                        opacity: 0;
-                        transition: all 0.18s ease-out 0.17s;
-                        transform: translateX(20%);
-                        top: 0;
-                    }
-                    &:hover:before {
-                        opacity: 1;
-                        transform: translateX(0);
-                    }
+            span.tooltip[data-tooltip] {
+                &:before, &:after {
+                    right: 226px;
                 }
                 &:before {
-                    max-width: unset;
-                    width: 290px;
+                    padding-left: 3em;
                     white-space: normal;
-                    margin-right: 20px;
-                    font-size: 1.2rem;
-                    padding-left: 40px;
+                    width: 300px;
                 }
-                &:after {
-                    margin-right: 8px;
-                }
-                &:hover:after, &:hover:before {
-                    opacity: 1;
+                i.info:before {
+                    top: 0.2em;
+                    left: -55.2em;
                 }
             }
             &:not(:only-child) {
@@ -664,30 +610,6 @@
 // Dark Theme
 .theme-wrapper.dark {
     div.purchase-wrapper {
-        .purchase-tooltip {
-            span.tooltip {
-                position: unset;
-
-                i {
-                    &:before {
-                        content: url('../images/common/tooltip/ic_tooltip_info_dark.svg ');
-                    }
-                    &:hover:before {
-                        opacity: 1;
-                    }
-                }
-                &:before {
-                    background: $COLOR_DARK_BLUE_3;
-                    color: $COLOR_WHITE;
-                }
-                &:after {
-                    border-left-color: $COLOR_DARK_BLUE_3;
-                }
-                &:hover:after, &:hover:before {
-                    opacity: 1;
-                }
-            }
-        }
         .purchase-info-wrapper {
             div:first-child {
                 color: $COLOR_DARK_BLUE_7;
