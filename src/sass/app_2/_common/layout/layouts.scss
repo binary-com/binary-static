@@ -82,7 +82,7 @@
             transition: transform 0.4s ease, opacity 0.2s linear;
 
             &__slideout {
-                transform: translate3d(calc(100% + 2em), 0, 0);
+                transform: translate3d(calc(100% + 2px), 0, 0);
                 pointer-events: none;
                 opacity: 0;
             }
@@ -177,7 +177,7 @@
             // smartchart library style fixes
             .cq-context {
                 div.cq-chart-controls {
-                    border: 0.1em solid $COLOR_LIGHT_BLACK_4;
+                    border: 1px solid $COLOR_LIGHT_BLACK_4;
                 }
             }
             .cq-modal-dropdown {
@@ -244,7 +244,7 @@
     width: 2.4em;
     height: 2.4em;
     background: $COLOR_LIGHT_BLACK_4_SOLID;
-    border-radius: 0.3em;
+    border-radius: 3px;
     display: flex;
     align-items: center;
     justify-content: center;

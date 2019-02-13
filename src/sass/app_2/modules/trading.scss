@@ -404,6 +404,19 @@
             margin-left: 26px;
             position: absolute;
         }
+        .number-selector {
+            &__selection {
+                background-color: $COLOR_DARK_BLUE_2;
+
+                &.selected {
+                    background-color: $COLOR_DARK_BLUE_5;
+                    color: $COLOR_WHITE;
+                }
+                &:hover {
+                    background-color: $COLOR_DARK_BLUE_4;
+                }
+            }
+        }
     }
     &__effect-main {
         width: 60%;

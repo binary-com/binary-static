@@ -66,7 +66,7 @@
                     transition: background-color 0.3s;
 
                     span {
-                        font-size: 1.6rem;
+                        font-size: 1.6em;
                         font-weight: 300;
                         text-transform: capitalize;
                         color: $COLOR_LIGHT_BLACK_1;
@@ -111,7 +111,7 @@
             justify-content: flex-end;
             order: 1;
             display: inline-flex;
-            border-right: 0.1em solid $COLOR_LIGHT_BLACK_4;
+            border-right: 1px solid $COLOR_LIGHT_BLACK_4;
             height: #{$HEADER_HEIGHT - 1px};
         }
         .notifications-toggle {

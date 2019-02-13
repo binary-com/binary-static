@@ -1,12 +1,12 @@
 .contract-container {
-    font-size: 1.4rem;
+    font-size: 1.4em;
     border-radius: $BORDER_RADIUS;
     position: relative;
 
     .contract-header {
-        max-height: 3.2rem;
+        max-height: 3.2em;
         overflow: hidden;
-        border-radius: 0.4em 0.4em 0 0;
+        border-radius: 4px 4px 0 0;
 
         .header-wrapper {
             transition: transform 0.4s ease;
@@ -62,9 +62,9 @@
     .contract-contents {
         padding: 1em;
         background: $COLOR_LIGHT_BLACK_4_SOLID;
-        font-size: 1.2rem;
+        font-size: 1.2em;
         border-top-width: 0;
-        border-radius: 0 0 0.4em 0.4em;
+        border-radius: 0 0 4px 4px;
 
         .longcode {
             font-weight: 300;
@@ -144,8 +144,8 @@ $CONTRACT_INFO_BOX_PADDING: 1.5em;
             .pl-value {
                 color: $COLOR_GREEN_1;
                 font-weight: bold;
-                font-size: 1.6rem;
-                line-height: 1.5rem;
+                font-size: 1.6em;
+                line-height: 1.5em;
 
                 .percentage {
                     display: inline-block;
@@ -163,13 +163,13 @@ $CONTRACT_INFO_BOX_PADDING: 1.5em;
             .sell-info {
                 margin-right: 2em;
                 text-align: center;
-                line-height: 1.2rem;
+                line-height: 1.2em;
             }
         }
         .general {
             display: flex;
             align-items: center;
-            line-height: 1.4rem;
+            line-height: 1.4em;
 
             .values {
                 margin-left: 1em;
@@ -226,13 +226,13 @@ $CONTRACT_INFO_BOX_PADDING: 1.5em;
                         width: 3.2em;
                         height: 3.2em;
                         margin-bottom: 0.5em;
-                        border: 0.2em solid $COLOR_GREEN_1;
+                        border: 2px solid $COLOR_GREEN_1;
                         border-radius: 50%;
                         display: flex;
                         justify-content: center;
                         align-items: center;
                         color: $COLOR_GREEN_1;
-                        font-size: 1.6rem;
+                        font-size: 1.6em;
                         font-weight: bold;
 
                         &.loss {
@@ -252,8 +252,8 @@ $CONTRACT_INFO_BOX_PADDING: 1.5em;
                         }
                     }
                     .tick-number {
-                        line-height: 0.6rem;
-                        font-size: 0.6rem;
+                        line-height: 0.6em;
+                        font-size: 0.6em;
                     }
                 }
             }
@@ -264,7 +264,7 @@ $CONTRACT_INFO_BOX_PADDING: 1.5em;
     }
     .message {
         margin-top: 0.5em;
-        border: 0.1em solid $COLOR_RED;
+        border: 1px solid $COLOR_RED;
         border-radius: $BORDER_RADIUS;
         padding: 1em;
         background-color: rgba(244, 67, 54, 0.16);

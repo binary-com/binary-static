@@ -1,4 +1,6 @@
 html {
+    // Root font-size is set to 10px (1rem) to convert units in base 10
+    // e.g.: 12px = 1.2em
     font-size: 62.5%; /* 1rem = 10px */
     box-sizing: border-box;
 
@@ -40,7 +42,7 @@ select, input, textarea {
     font-weight: inherit;
     font-style: inherit;
     padding: 0.2em 0.3em;
-    border: 0.1em solid $COLOR_LIGHT_BLACK_4;
+    border: 1px solid $COLOR_LIGHT_BLACK_4;
     border-radius: $BORDER_RADIUS;
 }
 
@@ -49,7 +51,7 @@ a {
 }
 
 fieldset {
-    border: 0.1em solid $COLOR_LIGHT_BLACK_4_SOLID;
+    border: 1px solid $COLOR_LIGHT_BLACK_4_SOLID;
 }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */

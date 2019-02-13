@@ -7,7 +7,7 @@ $header-height: 4em;
 
 .positions-drawer {
     width: $POSITIONS_DRAWER_WIDTH;
-    // removing 2px below for borders
+    // emoving 2px below for borders
     height: calc(100vh - #{$HEADER_HEIGHT} - #{$FOOTER_HEIGHT} - 2px - (#{$POSITIONS_DRAWER_MARGIN} * 3));
     margin-top: #{$POSITIONS_DRAWER_MARGIN * 2};
     position: fixed;
@@ -42,7 +42,7 @@ $header-height: 4em;
         overflow: hidden;
     }
     &__title {
-        font-size: 1.4rem;
+        font-size: 1.4em;
         font-weight: bold;
     }
     &__icon-main {
@@ -69,8 +69,8 @@ $header-height: 4em;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr auto;
         row-gap: 0.5em;
-        border: 0.1em solid $COLOR_LIGHT_BLACK_4;
-        border-radius: 0.4em;
+        border: 1px solid $COLOR_LIGHT_BLACK_4;
+        border-radius: 4px;
         cursor: pointer;
         text-decoration: none;
         color: $COLOR_LIGHT_BLACK_1;
@@ -86,7 +86,7 @@ $header-height: 4em;
             margin-bottom: 1.6em;
         }
         &__type {
-            font-size: 1.2rem;
+            font-size: 1.2em;
 
             .contract-type {
                 display: flex;
@@ -102,13 +102,13 @@ $header-height: 4em;
             }
         }
         &__symbol {
-            font-size: 1rem;
+            font-size: 1em;
             overflow: hidden;
             white-space: nowrap;
             text-overflow: ellipsis;
         }
         &__indicative {
-            font-size: 1.2rem;
+            font-size: 1.2em;
             font-weight: bold;
             display: flex;
             flex-direction: row;
@@ -154,7 +154,7 @@ $header-height: 4em;
             }
         }
         &__remaining-time {
-            font-size: 1rem;
+            font-size: 1em;
             color: $COLOR_LIGHT_BLACK_2;
             text-align: right;
 

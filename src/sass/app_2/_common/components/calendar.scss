@@ -3,13 +3,13 @@
     top: 0;
     background: $COLOR_WHITE;
     outline: 0;
-    border-radius: 0.5em;
-    box-shadow: 0 0.2em 0.8em 0 rgba(42, 48, 82, 0.2);
+    border-radius: 5px;
+    box-shadow: 0 2px 8px 0 rgba(42, 48, 82, 0.2);
     z-index: 999;
 
     &, * {
         box-sizing: border-box;
-        font-size: 1rem;
+        font-size: 1em;
     }
     button {
         border: none;
@@ -21,7 +21,7 @@
         display: flex;
         align-items: center;
         height: 5em;
-        border-radius: 0.5em;
+        border-radius: 5px;
         padding: 0.8em;
     }
     &__header {
@@ -40,7 +40,7 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                border-radius: 0.5em;
+                border-radius: 5px;
             }
         }
         &--date {
@@ -109,15 +109,15 @@
         a {
             cursor: inherit;
             color: inherit;
-            font-size: 1.2rem;
+            font-size: 1.2em;
         }
         &--select {
-            font-size: 1.4rem;
+            font-size: 1.4em;
             line-height: 1.5;
         }
     }
     &__text {
-        font-size: 1.4rem;
+        font-size: 1.4em;
         line-height: 1.5;
         color: $COLOR_LIGHT_BLACK_1;
 
@@ -130,7 +130,7 @@
         }
     }
     &__cell {
-        font-size: 1.2rem;
+        font-size: 1.2em;
         align-self: center;
         justify-self: center;
         transition: background 0.2s;
@@ -141,7 +141,7 @@
             background: $COLOR_LIGHT_BLACK_4;
         }
         &--bold {
-            font-size: 1.4rem;
+            font-size: 1.4em;
             font-weight: bold;
             color: $COLOR_LIGHT_BLACK_1;
         }
@@ -155,8 +155,8 @@
         }
         &--today {
             font-weight: 400;
-            border: 0.1em solid $COLOR_LIGHT_BLACK_1;
-            border-radius: 0.5em;
+            border: 1px solid $COLOR_LIGHT_BLACK_1;
+            border-radius: 5px;
         }
         &--active {
             color: $COLOR_WHITE;
@@ -175,7 +175,7 @@
             top: 0;
 
             i {
-                margin-top: -5px;
+                margin-top: -3px;
             }
         }
     }
@@ -185,7 +185,7 @@
 .theme--dark {
     .calendar {
         background: $COLOR_DARK_BLUE_3;
-        box-shadow: 0 0.2em 0.8em 0 rgba(0, 0, 0, 0.8), 0 0.2em 0.4em 0 rgba(0, 0, 0, 0.5);
+        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.8), 0 2px 4px 0 rgba(0, 0, 0, 0.5);
 
         &__header, &__footer {
             color: $COLOR_WHITE;

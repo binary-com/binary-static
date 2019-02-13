@@ -6,7 +6,7 @@
     background: $COLOR_WHITE;
     height: auto;
     border-radius: $BORDER_RADIUS;
-    box-shadow: 0 0 0.2em 0 rgba(0, 0, 0, 0.14);
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.14);
     pointer-events: none;
     transition: opacity 0.3s ease, transform 0.3s ease;
     transform: none;
@@ -37,7 +37,7 @@
 
                 span {
                     padding: 1.6em 1.6em 0.8em;
-                    font-size: 1.2rem;
+                    font-size: 1.2em;
                     margin: 0 auto;
                 }
             }
@@ -54,7 +54,7 @@
         }
         .settings-header {
             padding: 1.6em;
-            font-size: 1.2rem;
+            font-size: 1.2em;
             font-weight: 400;
         }
         .general-setting-container, .chart-setting-container {
@@ -73,7 +73,7 @@
                 align-items: center;
 
                 span {
-                    font-size: 1.2rem;
+                    font-size: 1.2em;
                     color: $COLOR_LIGHT_BLACK_1;
                 }
                 &:hover {
@@ -103,7 +103,7 @@
             height: 280px;
         }
         .language-header {
-            font-size: 1.2rem;
+            font-size: 1.2em;
             padding: 0.8em 1.6em;
             display: flex;
             background: $COLOR_WHITE;
@@ -145,7 +145,7 @@
                 }
                 span {
                     padding-left: 0.8em;
-                    font-size: 1.2rem;
+                    font-size: 1.2em;
                 }
                 a {
                     width: 100%;

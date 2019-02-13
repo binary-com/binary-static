@@ -35,7 +35,7 @@
         input {
             text-align: center;
 
-            &::-ms-clear { // Edge: hide clear icon for increment input
+            &::-ms-clear { // Edge: hide clear icon for incement input
                 display: none;
             }
         }
@@ -50,7 +50,7 @@
             height: 100%;
             margin: initial;
             min-width: 2em;
-            border-radius: 0.3em;
+            border-radius: 3px;
             padding: initial;
             background-color: initial;
             display: flex;
@@ -95,13 +95,13 @@
         line-height: normal;
         padding-left: 0.8em;
         color: $COLOR_LIGHT_BLACK_1;
-        border: 0.1em solid $COLOR_LIGHT_BLACK_4;
+        border: 1px solid $COLOR_LIGHT_BLACK_4;
         border-radius: $BORDER_RADIUS;
         text-align: center;
         transition: transform 0.3s;
 
         &[type=checkbox] {
-            font-size: 1rem;
+            font-size: 1em;
             cursor: pointer;
             display: inline-block;
             vertical-align: middle;
@@ -114,7 +114,7 @@
 
             &:hover, &:focus, &:active {
                 border-color: $COLOR_ORANGE;
-                border-radius: 0.1em;
+                border-radius: 1px;
                 box-shadow: none;
             }
             &:checked {
@@ -133,7 +133,7 @@
             &:after {
                 color: $COLOR_WHITE;
                 content: 'L';
-                font-size: 1rem;
+                font-size: 1em;
                 transform: scaleX(-1) rotate(-40deg);
                 position: absolute;
                 top: -5%;
@@ -148,14 +148,14 @@
             outline: 0;
             border-radius: $BORDER_RADIUS;
             border-color: $COLOR_LIGHT_GRAY_1;
-            box-shadow: 0 0 0 0.2rem rgba(127, 131, 151, 0.3);
+            box-shadow: 0 0 0 2px rgba(127, 131, 151, 0.3);
         }
         &:not([type=range]), label, textarea {
             touch-action: manipulation;
         }
         &.error {
             color: $COLOR_RED;
-            border: 0.1em solid $COLOR_RED !important;
+            border: 1px solid $COLOR_RED !important;
         }
         &[readonly] {
             cursor: pointer;
@@ -168,11 +168,11 @@
         margin-bottom: 0.2em;
         text-transform: capitalize;
         display: inline-block;
-        font-size: 1.4rem;
+        font-size: 1.4em;
     }
     span.input-helper {
         font-weight: 300;
-        font-size: 1.2rem;
+        font-size: 1.2em;
         color: $COLOR_LIGHT_GRAY_2;
     }
 }
@@ -209,7 +209,7 @@
             }
             &:focus, &:active {
                 border-color: $COLOR_DARK_BLUE_7;
-                box-shadow: 0 0 0 0.2rem rgba(127, 131, 151, 0.3);
+                box-shadow: 0 0 0 2px rgba(127, 131, 151, 0.3);
             }
             &::placeholder {
                 color: $COLOR_DARK_BLUE_7;
@@ -224,7 +224,7 @@
         }
         input {
             &:active, &:focus {
-                box-shadow: 0 0 0 0.2rem rgba(127, 131, 151, 0.3);
+                box-shadow: 0 0 0 2px rgba(127, 131, 151, 0.3);
             }
         }
         &__icon {

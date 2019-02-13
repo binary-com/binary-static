@@ -37,7 +37,7 @@ $IC_WARNING     : url('../images/common/toast/ic_warning.svg');
     &__body {
         background-color: $TOAST_BACKGROUND_COLOR_INFO;
         position: relative;
-        border-radius: 0.4em;
+        border-radius: 4px;
         cursor: pointer;
         display: grid;
         grid-template-columns: 1.6em auto 1.6em;
@@ -46,7 +46,7 @@ $IC_WARNING     : url('../images/common/toast/ic_warning.svg');
         min-width: 20vw;
         max-width: 30vw;
         margin-top: 1em;
-        font-size: 1.2rem;
+        font-size: 1.2em;
         color: $TOAST_TEXT_COLOR;
 
         &__message {
@@ -91,19 +91,19 @@ $IC_WARNING     : url('../images/common/toast/ic_warning.svg');
         }
         &--error {
             background-color: $TOAST_BACKGROUND_COLOR_ERROR !important;
-            border: solid 0.1em $TOAST_BORDER_COLOR_ERROR !important;
+            border: solid 1px $TOAST_BORDER_COLOR_ERROR !important;
         }
         &--info {
             background-color: $TOAST_BACKGROUND_COLOR_INFO !important;
-            border: solid 0.1em $TOAST_BORDER_COLOR_INFO !important;
+            border: solid 1px $TOAST_BORDER_COLOR_INFO !important;
         }
         &--success {
             background-color: $TOAST_BACKGROUND_COLOR_SUCCESS !important;
-            border: solid 0.1em $TOAST_BORDER_COLOR_SUCCESS !important;
+            border: solid 1px $TOAST_BORDER_COLOR_SUCCESS !important;
         }
         &--warning {
             background-color: $TOAST_BACKGROUND_COLOR_WARNING !important;
-            border: solid 0.1em $TOAST_BORDER_COLOR_WARNING !important;
+            border: solid 1px $TOAST_BORDER_COLOR_WARNING !important;
         }
     }
     &--top-right {

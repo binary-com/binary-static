@@ -8,7 +8,7 @@ $side-padding: 1.2em;
         box-sizing: border-box;
         height: $filter-height;
         width: 100%;
-        font-size: 1.4rem;
+        font-size: 1.4em;
         padding: 0 $side-padding;
 
         &__content {
@@ -23,10 +23,10 @@ $side-padding: 1.2em;
             }
         }
         &__label {
-            margin-right: 0.6rem;
+            margin-right: 0.6em;
         }
         &__dash {
-            margin: 0 0.5rem;
+            margin: 0 0.5em;
         }
     }
     &__content {
@@ -42,7 +42,7 @@ $side-padding: 1.2em;
         border-bottom: none;
     }
     .table__row {
-        grid-template-columns: 6.5rem 6.5rem 1fr 5rem 7rem 6rem 6rem;
+        grid-template-columns: 6.5em 6.5em 1fr 5em 7em 6em 6em;
     }
     .payout, .amount, .balance {
         justify-content: flex-end;
@@ -71,7 +71,7 @@ $side-padding: 1.2em;
         .statement-filter {
             background-color: $COLOR_WHITE;
             padding: 0 $side-padding;
-            border-bottom: 0.1em solid $COLOR_LIGHT_BLACK_4;
+            border-bottom: 1px solid $COLOR_LIGHT_BLACK_4;
 
             &__content {
                 padding: 0;
@@ -99,9 +99,9 @@ $side-padding: 1.2em;
     }
     &-card {
         &__header {
-            font-size: 1rem;
-            padding: 0.5rem;
-            border-bottom: 0.1em solid $COLOR_LIGHT_BLACK_4;
+            font-size: 1em;
+            padding: 0.5em;
+            border-bottom: 1px solid $COLOR_LIGHT_BLACK_4;
             display: flex;
             justify-content: space-between;
         }
@@ -110,11 +110,11 @@ $side-padding: 1.2em;
             text-decoration: none;
         }
         &__body {
-            padding: 0.5rem;
-            font-size: 1.2rem;
+            padding: 0.5em;
+            font-size: 1.2em;
         }
         &__desc {
-            margin-bottom: 0.7rem;
+            margin-bottom: 0.7em;
         }
         &__row {
             display: grid;
@@ -177,7 +177,7 @@ $side-padding: 1.2em;
             margin-bottom: 1.4em;
         }
         &__text {
-            font-size: 1.4rem;
+            font-size: 1.4em;
         }
     }
 }

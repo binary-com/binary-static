@@ -4,16 +4,16 @@
     .dropdown__display {
         background: $COLOR_WHITE;
         cursor: pointer;
-        border: solid 0.1em $COLOR_LIGHT_BLACK_4;
+        border: solid 1px $COLOR_LIGHT_BLACK_4;
         border-radius: $BORDER_RADIUS;
-        height: 3.2rem;
+        height: 3.2em;
         display: flex;
         align-items: center;
         justify-content: center;
         margin-top: 0.8em;
 
         span {
-            font-size: 1.4rem;
+            font-size: 1.4em;
             text-transform: capitalize;
             line-height: 1.5;
             font-weight: 300;
@@ -42,7 +42,7 @@
         transform: rotate(0deg);
         transform-origin: 50% 45%;
         color: $COLOR_LIGHT_BLACK_4;
-        font-size: 1.6rem;
+        font-size: 1.6em;
 
         &:before {
             content: '\002303';
@@ -104,7 +104,7 @@
             cursor: pointer;
             background: $COLOR_WHITE;
             border-radius: $BORDER_RADIUS;
-            box-shadow: 0 0.2em 0.8em 0 $COLOR_LIGHT_BLACK_3;
+            box-shadow: 0 2px 8px 0 $COLOR_LIGHT_BLACK_3;
 
             &--left {
                 width: unset;
@@ -212,12 +212,12 @@
                 border-color: $COLOR_DARK_BLUE_7;
             }
             &:focus, &:active {
-                box-shadow: 0 0 0 0.2rem rgba(127, 131, 151, 0.3);
+                box-shadow: 0 0 0 2px rgba(127, 131, 151, 0.3);
             }
         }
         &--show > .dropdown__display--clicked {
             border-color: $COLOR_DARK_BLUE_7;
-            box-shadow: 0 0 0 0.2rem rgba(127, 131, 151, 0.3);
+            box-shadow: 0 0 0 2px rgba(127, 131, 151, 0.3);
         }
         .list {
             background: $COLOR_DARK_BLUE_3;

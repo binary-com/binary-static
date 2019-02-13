@@ -2,7 +2,7 @@ hr {
     display: block;
     height: 0.1em;
     border: 0;
-    border-top: 0.1em solid $COLOR_LIGHT_BLACK_4;
+    border-top: 1px solid $COLOR_LIGHT_BLACK_4;
     margin: 0.5em 0;
     padding: 0;
 }
@@ -50,7 +50,7 @@ hr {
                 .drawer-header {
                     display: flex;
                     align-items: center;
-                    border-bottom: 0.1em solid $COLOR_LIGHT_BLACK_4;
+                    border-bottom: 1px solid $COLOR_LIGHT_BLACK_4;
                     z-index: 3;
 
                     .icons {
@@ -71,7 +71,7 @@ hr {
                         &.brand-logo {
                             display: inline-flex;
                             padding: 0.8em 2em;
-                            border-left: 0.1em solid $COLOR_LIGHT_BLACK_4;
+                            border-left: 1px solid $COLOR_LIGHT_BLACK_4;
 
                             div.img:before {
                                 display: block;
@@ -86,7 +86,7 @@ hr {
                 }
                 .drawer-footer {
                     height: 4.4em;
-                    border-top: 0.1em solid $COLOR_LIGHT_BLACK_4;
+                    border-top: 1px solid $COLOR_LIGHT_BLACK_4;
                     left: 0;
                     bottom: 0;
                     z-index: 3;
@@ -107,7 +107,7 @@ hr {
                     flex-direction: row-reverse;
                     justify-content: space-between;
                     align-items: center;
-                    border-bottom: 0.1em solid $COLOR_LIGHT_BLACK_4;
+                    border-bottom: 1px solid $COLOR_LIGHT_BLACK_4;
 
                     .icons {
                         display: inline-flex;
@@ -115,7 +115,7 @@ hr {
                         padding: 1.4em 1.1em;
 
                         &.btn-close {
-                            border-left: 0.1em solid $COLOR_LIGHT_BLACK_4;
+                            border-left: 1px solid $COLOR_LIGHT_BLACK_4;
                             width: 2.4em;
                             height: 2.4em;
 
@@ -131,10 +131,10 @@ hr {
                     .notifications-header {
                         padding: 0 1.6em;
                         text-transform: capitalize;
-                        font-size: 1.6rem;
+                        font-size: 1.6em;
 
                         h4 {
-                            margin: 0.5rem;
+                            margin: 0.5em;
                             font-weight: 400;
                         }
                     }
@@ -165,12 +165,12 @@ hr {
                             margin: 0;
                             text-align: center;
                             font-weight: 400;
-                            font-size: 1.4rem;
+                            font-size: 1.4em;
                             line-height: 100%;
                         }
                         span {
                             display: block;
-                            font-size: 1.2rem;
+                            font-size: 1.2em;
                         }
 
                     }
@@ -196,7 +196,7 @@ hr {
                         content: none;
                     }
                     span {
-                        padding-left: 2rem;
+                        padding-left: 2em;
                     }
                 }
             }
@@ -204,7 +204,7 @@ hr {
                 position: relative;
                 width: 100%;
                 cursor: pointer;
-                font-size: 1.4rem;
+                font-size: 1.4em;
                 box-sizing: border-box;
                 padding: 1.6em;
                 z-index: 1;
@@ -212,29 +212,29 @@ hr {
                 span.parent-item {
                     font-weight: 300;
                     cursor: pointer;
-                    padding-left: 3rem;
-                    line-height: 1.5rem;
+                    padding-left: 3em;
+                    line-height: 1.5em;
 
                     &:before {
                         content: '\25A2';
-                        font-size: 1.6rem;
+                        font-size: 1.6em;
                         position: absolute;
                         display: inline-flex;
                         justify-content: center;
                         align-items: center;
                         color: $COLOR_DARK_BLUE_5;
-                        left: 1rem;
+                        left: 1em;
                         top: 1.1em;
                     }
                     &:after {
                         content: '\002303';
-                        font-size: 1.5rem;
+                        font-size: 1.5em;
                         position: absolute;
                         font-weight: 300;
                         display: inline-flex;
                         justify-content: center;
                         align-items: center;
-                        right: 1rem;
+                        right: 1em;
                         transition: transform 0.25s;
                         transform: rotate(-180deg);
                         transform-origin: 50% 35%;
@@ -250,7 +250,7 @@ hr {
                     display: block;
 
                     span {
-                        padding-left: 1.5rem;
+                        padding-left: 1.5em;
                         color: $COLOR_DARK_BLUE_5;
                         position: relative;
 
@@ -306,7 +306,7 @@ hr {
     }
     &-enter-done {
         .drawer-bg {
-            box-shadow: 0 0.8em 1em -0.5em rgba(0, 0, 0, 0.2), 0 1.6em 2.4em 0.2em rgba(0, 0, 0, 0.14), 0 0.6em 3em 0.5em rgba(0, 0, 0, 0.12);
+            box-shadow: 0 8px 10px -5px rgba(0, 0, 0, 0.2), 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12);
 
             .drawer {
                 &.left, &.right {
@@ -325,7 +325,7 @@ hr {
     .drawer-bg .drawer {
         background: $COLOR_DARK_BLUE_5;
         color: $COLOR_WHITE;
-        box-shadow: 0 0.1em 0.6em 0 rgba(42, 48, 82, 0.14), 0 0.2em 0.8em 0 rgba(20, 20, 20, 0.3);
+        box-shadow: 0 1px 6px 0 rgba(42, 48, 82, 0.14), 0 2px 8px 0 rgba(20, 20, 20, 0.3);
 
         .drawer-item {
             a {

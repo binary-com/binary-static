@@ -8,7 +8,7 @@
         overflow-y: auto;
         height: calc(100vh - #{$HEADER_HEIGHT} - #{$FOOTER_HEIGHT});
         box-sizing: border-box;
-        border-right: 0.1em solid $COLOR_LIGHT_BLACK_4;
+        border-right: 1px solid $COLOR_LIGHT_BLACK_4;
 
         @media (max-width: 1025px) {
             height: calc(100vh - #{$HEADER_HEIGHT});
@@ -31,7 +31,7 @@
         &__group-header {
             width: 100%;
             height: 2.4em;
-            font-size: 1.6rem;
+            font-size: 1.6em;
             font-weight: bold;
             line-height: 1.5;
             color: $COLOR_LIGHT_BLACK_1;
@@ -60,7 +60,7 @@
 
     &--active {
         background-color: #fafafb; /* stylelint-disable-line color-no-hex */
-        box-shadow: inset -0.4em 0 0 0 $COLOR_LIGHT_BLACK_4;
+        box-shadow: inset -4px 0 0 0 $COLOR_LIGHT_BLACK_4;
     }
     &__img {
         width: 3.2em;
@@ -73,14 +73,14 @@
         overflow: hidden;
     }
     &__title {
-        font-size: 1.2rem;
+        font-size: 1.2em;
         height: 1.8em;
         font-weight: bold;
         line-height: 1.5;
         color: $COLOR_LIGHT_BLACK_1;
     }
     &__description {
-        font-size: 1rem;
+        font-size: 1em;
         height: 1.5em;
         padding-right: 0.5em;
         line-height: 1.5;
@@ -99,14 +99,14 @@
     padding: 1.5em 2.4em;
 
     &__title {
-        font-size: 1.25rem;
+        font-size: 1.25em;
         font-weight: bold;
         line-height: 1.25;
         color: $COLOR_LIGHT_BLACK_1;
         margin-bottom: 0;
     }
     &__description {
-        font-size: 1.2rem;
+        font-size: 1.2em;
         line-height: 1.5;
         color: $COLOR_LIGHT_BLACK_1;
         font-weight: normal;
@@ -133,7 +133,7 @@
         padding-right: 4em;
         background: $COLOR_WHITE;
         border-radius: $BORDER_RADIUS;
-        border: 0.1em solid $COLOR_LIGHT_BLACK_4;
+        border: 1px solid $COLOR_LIGHT_BLACK_4;
         position: relative;
         user-select: none;
         -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -149,7 +149,7 @@
         overflow-y: auto;
         background: $COLOR_WHITE;
         border-radius: $BORDER_RADIUS;
-        border: 0.1em solid $COLOR_LIGHT_BLACK_4;
+        border: 1px solid $COLOR_LIGHT_BLACK_4;
         padding-bottom: 1em;
         box-sizing: border-box;
         user-select: none;
@@ -160,7 +160,7 @@
     }
     &--open {
         .mobile-dropdown__button {
-            border: 0.1em solid $COLOR_DARK_BLUE_5;
+            border: 1px solid $COLOR_DARK_BLUE_5;
         }
         .mobile-dropdown__menu {
             transform: scale(1, 1);
@@ -208,7 +208,7 @@
 
         &:before {
             content: '\002303';
-            font-size: 1.76rem;
+            font-size: 1.76em;
         }
     }
 }

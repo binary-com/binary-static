@@ -63,8 +63,8 @@
             height: inherit;
 
             .time-picker-hours {
-                border-right: 0.1em solid $COLOR_LIGHT_BLACK_4;
-                border-radius: 0 0 0 0.4em;
+                border-right: 1px solid $COLOR_LIGHT_BLACK_4;
+                border-radius: 0 0 0 4px;
                 width: 150px;
             }
             .time-picker-minutes {

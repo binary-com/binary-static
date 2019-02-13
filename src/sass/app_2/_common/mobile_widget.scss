@@ -1,16 +1,16 @@
 .mobile-widget {
-    border: 0.1em solid $COLOR_LIGHT_BLACK_4;
-    border-radius: 0.4em;
+    border: 1px solid $COLOR_LIGHT_BLACK_4;
+    border-radius: 4px;
     padding: 1em 0.5em;
     display: grid;
     grid-template-columns: 1fr auto;
     grid-template-rows: auto;
     grid-template-areas: 'a b' 'c d';
-    font-size: 0.7rem;
+    font-size: 0.7em;
 
     &:hover, &:focus, &:active {
         cursor: pointer;
-        border: solid 0.1em $COLOR_DARK_BLUE_5;
+        border: solid 1px $COLOR_DARK_BLUE_5;
     }
     .fieldset-minimized {
         display: flex;
