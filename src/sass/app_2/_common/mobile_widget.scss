@@ -1,5 +1,5 @@
 .mobile-widget {
-    border: 1px solid $COLOR_GRAY;
+    border: 1px solid $COLOR_LIGHT_BLACK_4;
     border-radius: 4px;
     padding: 10px 5px;
     display: grid;
@@ -10,7 +10,7 @@
 
     &:hover, &:focus, &:active {
         cursor: pointer;
-        border: solid 1px $COLOR_BLUE;
+        border: solid 1px $COLOR_DARK_BLUE_5;
     }
     .fieldset-minimized {
         display: flex;
@@ -40,7 +40,7 @@
         }
         &__basis {
             font-weight: bold;
-            color: $COLOR_BLUE;
+            color: $COLOR_DARK_BLUE_5;
         }
     }
 }

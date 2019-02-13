@@ -1,13 +1,14 @@
-import PropTypes                    from 'prop-types';
-import React                        from 'react';
-import { IconBack }                 from 'Assets/Common/icon_back.jsx';
-import { IconChevronLeft }          from 'Assets/Common/icon_chevron_left.jsx';
-import { IconChevronRight }         from 'Assets/Common/icon_chevron_right.jsx';
-import { TradeCategories }          from 'Assets/Trading/Categories/trade_categories.jsx';
-import Button                       from 'App/Components/Form/button.jsx';
-import { localize }                 from '_common/localize';
+import PropTypes            from 'prop-types';
+import React                from 'react';
+import { Scrollbars }       from 'tt-react-custom-scrollbars';
+import { IconBack }         from 'Assets/Common/icon_back.jsx';
+import { IconChevronLeft }  from 'Assets/Common/icon_chevron_left.jsx';
+import { IconChevronRight } from 'Assets/Common/icon_chevron_right.jsx';
+import { TradeCategories }  from 'Assets/Trading/Categories/trade_categories.jsx';
+import Button               from 'App/Components/Form/button.jsx';
+import { localize }         from '_common/localize';
 
-const ContractTypeItem = ({
+const TradeTypeInfoItem = ({
     handleNavigationClick,
     handleNextClick,
     handlePrevClick,
@@ -30,9 +31,16 @@ const ContractTypeItem = ({
             gif explanation
         </div>
         <div className='info-content'>
-            <TradeCategories category={item.value} />
+            <Scrollbars
+                autoHide
+                style={{ height: '215px' }}
+            >
+                <TradeCategories category={item.value} />
+            </Scrollbars>
         </div>
-        <Button className='info-choose' text={localize('CHOOSE')} onClick={() => onSubmitButtonClick(item)} />
+        <div className='info-choose'>
+            <Button text={localize('Choose')} onClick={() => onSubmitButtonClick(item)} />
+        </div>
         <div className='info-navigation'>
             <div className='info-navigation__icon' onClick={() => handlePrevClick(navigationList)} >
                 <IconChevronLeft />
@@ -56,7 +64,7 @@ const ContractTypeItem = ({
     </React.Fragment>
 );
 
-ContractTypeItem.propTypes = {
+TradeTypeInfoItem.propTypes = {
     handleNavigationClick: PropTypes.func,
     handleNextClick      : PropTypes.func,
     handlePrevClick      : PropTypes.func,
@@ -67,4 +75,4 @@ ContractTypeItem.propTypes = {
     onSubmitButtonClick  : PropTypes.func,
 };
 
-export default ContractTypeItem;
+export default TradeTypeInfoItem;

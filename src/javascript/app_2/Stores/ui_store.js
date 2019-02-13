@@ -8,10 +8,12 @@ import {
     MAX_TABLET_WIDTH } from 'Constants/ui';
 import BaseStore       from './base_store';
 
+const store_name = 'ui_store';
+
 export default class UIStore extends BaseStore {
     @observable is_main_drawer_on          = false;
     @observable is_notifications_drawer_on = false;
-    @observable is_portfolio_drawer_on     = false;
+    @observable is_positions_drawer_on     = false;
 
     @observable is_dark_mode_on         = true;
     @observable is_language_dialog_on   = false;
@@ -62,12 +64,12 @@ export default class UIStore extends BaseStore {
             'is_chart_countdown_visible',
             'is_chart_layout_default',
             'is_dark_mode_on',
-            'is_portfolio_drawer_on',
+            'is_positions_drawer_on',
             'is_purchase_confirm_on',
             'is_purchase_lock_on',
         ];
 
-        super({ local_storage_properties });
+        super({ local_storage_properties, store_name });
         window.addEventListener('resize', this.handleResize);
         autorun(() => document.body.classList[this.is_dark_mode_on ? 'add' : 'remove']('dark'));
     }
@@ -84,7 +86,7 @@ export default class UIStore extends BaseStore {
     handleResize() {
         this.screen_width = window.innerWidth;
         if (this.is_mobile) {
-            this.is_portfolio_drawer_on = false;
+            this.is_positions_drawer_on = false;
         }
     }
 
@@ -150,8 +152,8 @@ export default class UIStore extends BaseStore {
     }
 
     @action.bound
-    togglePortfolioDrawer() { // show and hide Portfolio Drawer
-        this.is_portfolio_drawer_on = !this.is_portfolio_drawer_on;
+    togglePositionsDrawer() { // show and hide Positions Drawer
+        this.is_positions_drawer_on = !this.is_positions_drawer_on;
     }
 
     @action.bound

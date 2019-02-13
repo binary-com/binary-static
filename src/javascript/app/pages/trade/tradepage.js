@@ -39,7 +39,9 @@ const TradePage = (() => {
                 Header.upgradeMessageVisibility(); // To handle the upgrade buttons visibility
                 // if not loaded by pjax, balance update function calls TopUpVirtualPopup
                 if (State.get('is_loaded_by_pjax')) {
-                    TopUpVirtualPopup.init(State.getResponse('balance.balance'));
+                    BinarySocket.wait('balance').then(() => {
+                        TopUpVirtualPopup.init(State.getResponse('balance.balance'));
+                    });
                 }
             }
             Client.activateByClientType('trading_socket_container');
