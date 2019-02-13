@@ -7,19 +7,19 @@ html {
         box-sizing: inherit;
     }
     /** TODO: define breakpoints */
-    // @include respond(big-desktop) {
+    // @include breakpoints(big-desktop) {
     //     font-size: 75.5%; /* 1rem = 12px */
     // }
-    // @include respond(tab-land) {
+    // @include breakpoints(tab-land) {
     //     font-size: 50%; /* 1rem = 8px */
     // }
-    // @include respond(tab-port) {
+    // @include breakpoints(tab-port) {
     //     font-size: 47%; /* 1rem = 7.5px */
     // }
-    // @include respond(phone-xl) {
+    // @include breakpoints(phone-xl) {
     //     font-size: 38%; /* 1rem = 6px */
     // }
-    // @include respond(phone-lg) {
+    // @include breakpoints(phone-lg) {
     //     font-size: 35%; /* 1rem = 5.5px */
     // }
 
