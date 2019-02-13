@@ -25,7 +25,7 @@ const Authenticate = () => (
 
             <div id='success-message' className='center-text gr-gutter gr-padding-10 invisible'>
                 <h2>{it.L('Thank you')}</h2>
-                <p>{it.L('We will review your documents and get back to you within one working day.')}</p>
+                <p>{it.L('We will review your documents and get back to you within three working days.')}</p>
             </div>
 
             <div id='not_authenticated_financial' className='invisible'>
