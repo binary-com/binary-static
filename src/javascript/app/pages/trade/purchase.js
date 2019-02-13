@@ -111,8 +111,11 @@ const Purchase = (() => {
                         let message = error.message;
                         if (/NoMFProfessionalClient/.test(error.code)) {
                             const has_professional_requested = (getPropertyValue(response, ['get_account_status', 'status']) || []).includes('professional_requested');
+                            const has_professional_rejected  = (getPropertyValue(response, ['get_account_status', 'status']) || []).includes('professional_rejected');
                             if (has_professional_requested) {
                                 message = localize('Your application to be treated as a professional client is being processed.');
+                            } else if (has_professional_rejected) {
+                                message = `${localize('Your request to be treated as a professional client is not approved.')}&nbsp;${localize('Please check your inbox for more details.')}<br /><br />${localize('Your account remains under the retail client category. You are welcome to reapply as a professional client at any time.')}`;
                             } else {
                                 const row_element = createElement('div', { class: 'gr-row font-style-normal' });
                                 const columnElement = (extra_attributes = {}) => createElement('div', { class: 'gr-12 gr-padding-20', ...extra_attributes });
