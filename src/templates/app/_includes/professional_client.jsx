@@ -4,10 +4,10 @@ import { Fieldset } from '../../_common/components/forms.jsx';
 const ProfessionalClient = () => (
     <Fieldset legend={it.L('Professional Client')} id='fs_professional' className='invisible'>
         <div className='gr-padding-10 gr-12'>
-            <p>{it.L('By default, all clients are treated as retail but anyone can request to be treated as professional.')}</p>
+            <p>{it.L('By default, all Binary.com clients are retail clients but anyone can request to be treated as a professional client.')}</p>
             <input id='chk_professional' type='checkbox' />
             <label htmlFor='chk_professional'>{it.L('I would like to be treated as a professional client.')}&nbsp;</label>
-            <a id='professional_info_toggle' className='toggle-arrow' href='javascript:;'>{it.L('What is this?')}</a>
+            <a id='professional_info_toggle' className='toggle-arrow' href='javascript:;'>{it.L('Learn more.')}</a>
             <div id='professional_info' style={{ display: 'none' }}>
                 <div id='non_uk' className='invisible'>
                     <p>{it.L('Clients need to satisfy at least two of the following criteria in order to receive Professional Client status:')}</p>
