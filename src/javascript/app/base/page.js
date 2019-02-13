@@ -53,8 +53,8 @@ const Page = (() => {
             window.addEventListener('storage', (evt) => {
                 switch (evt.key) {
                     case 'active_loginid':
-                        // not the active tab and logged out or loginid switch
-                        if (document.hidden && (evt.newValue === '' || !window.is_logging_in)) {
+                        // reload the page when the client changes account on other pages.
+                        if (evt.newValue === '' || !window.is_logging_in) {
                             reload();
                         }
                         break;

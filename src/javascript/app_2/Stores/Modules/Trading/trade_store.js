@@ -33,6 +33,8 @@ import {
 import { pickDefaultSymbol }             from './Helpers/symbol';
 import BaseStore                         from '../../base_store';
 
+const store_name = 'trade_store';
+
 export default class TradeStore extends BaseStore {
     // Control values
     @observable is_trade_component_mounted = false;
@@ -109,6 +111,7 @@ export default class TradeStore extends BaseStore {
 
         super({
             root_store,
+            store_name,
             session_storage_properties: allowed_query_string_variables,
             validation_rules          : getValidationRules(),
         });
@@ -193,10 +196,14 @@ export default class TradeStore extends BaseStore {
     }
 
     @action.bound
-    async onChangeAsync(e) {
-        const { name, value } = e.target;
+    onChangeMultiple(values) {
+        Object.keys(values).forEach((name) => {
+            if (!(name in this)) {
+                throw new Error(`Invalid Argument: ${name}`);
+            }
+        });
 
-        await this.processNewValuesAsync({ [name]: value }, true);
+        this.processNewValuesAsync({ ...values }, true);
     }
 
     @action.bound
@@ -253,8 +260,8 @@ export default class TradeStore extends BaseStore {
 
     @action.bound
     onClickNewTrade(e) {
-        this.requestProposal();
         e.preventDefault();
+        WS.forgetAll('proposal').then(this.requestProposal());
     }
 
     /**
@@ -302,6 +309,8 @@ export default class TradeStore extends BaseStore {
     async processNewValuesAsync(obj_new_values = {}, is_changed_by_user = false) {
         // Sets the default value to Amount when Currency has changed from Fiat to Crypto and vice versa.
         // The source of default values is the website_status response.
+        WS.forgetAll('proposal');
+
         if (is_changed_by_user &&
             /\bcurrency\b/.test(Object.keys(obj_new_values)) &&
             isCryptocurrency(obj_new_values.currency) !== isCryptocurrency(this.currency)
@@ -374,10 +383,8 @@ export default class TradeStore extends BaseStore {
             this.proposal_info     = {};
             this.purchase_info     = {};
 
-            WS.forgetAll('proposal').then(() => {
-                Object.keys(this.proposal_requests).forEach((type) => {
-                    WS.subscribeProposal(this.proposal_requests[type], this.onProposalResponse);
-                });
+            Object.keys(this.proposal_requests).forEach((type) => {
+                WS.subscribeProposal(this.proposal_requests[type], this.onProposalResponse);
             });
         }
     }
