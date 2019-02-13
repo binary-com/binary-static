@@ -97,7 +97,6 @@
         height: 32px;
         font-size: 1rem;
         line-height: normal;
-        padding-left: 8px;
         color: $COLOR_LIGHT_BLACK_1;
         border: 1px solid $COLOR_LIGHT_BLACK_4;
         border-radius: $BORDER_RADIUS;
@@ -168,7 +167,9 @@
         }
     }
     label.input-label {
-        margin: 5px 0 12px;
+        margin-bottom: 12px;
+        font-size: 0.7rem;
+        font-weight: 400;
         text-transform: capitalize;
         display: inline-block;
         color: $COLOR_DARK_BLUE_7;
