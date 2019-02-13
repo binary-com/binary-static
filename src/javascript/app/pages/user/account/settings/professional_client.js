@@ -33,6 +33,10 @@ const professionalClient = (() => {
             return;
         }
 
+        $('#professional').setVisibility(0);
+        $('#processing').setVisibility(0);
+        $('#rejected').setVisibility(0);
+
         const status = State.getResponse('get_account_status.status') || [];
         if (is_in_page && status.includes('professional')) {
             setVisible('#professional');
