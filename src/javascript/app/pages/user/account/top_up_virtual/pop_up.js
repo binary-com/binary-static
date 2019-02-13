@@ -26,7 +26,7 @@ const TopUpVirtualPopup = (() => {
         }
         // this is only applicable to clients who have less than 1k balance and have not set popup to remain hidden
         const hide_virtual_top_up_until = should_ignore_hide ? 0 : Client.get('hide_virtual_top_up_until');
-        if (+balance >= 1000 ||
+        if (+balance > 1000 ||
             (hide_virtual_top_up_until && moment.utc().diff(moment.unix(hide_virtual_top_up_until).utc(), 'day') < 1)) {
             return false;
         }
