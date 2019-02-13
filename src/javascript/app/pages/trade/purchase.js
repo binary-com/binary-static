@@ -110,25 +110,21 @@ const Purchase = (() => {
                         confirmation_error.setVisibility(1);
                         let message = error.message;
                         if (/NoMFProfessionalClient/.test(error.code)) {
-                            const has_professional_requested = (getPropertyValue(response, ['get_account_status', 'status']) || []).includes('professional_requested');
-                            const has_professional_rejected  = (getPropertyValue(response, ['get_account_status', 'status']) || []).includes('professional_rejected');
+                            const account_status = getPropertyValue(response, ['get_account_status', 'status']) || [];
+                            const has_professional_requested = account_status.includes('professional_requested');
+                            const has_professional_rejected  = account_status.includes('professional_rejected');
                             if (has_professional_requested) {
                                 message = localize('Your application to be treated as a professional client is being processed.');
                             } else if (has_professional_rejected) {
-                                message = `${localize('Your request to be treated as a professional client is not approved.')}&nbsp;${localize('Please check your inbox for more details.')}<br /><br />${localize('Your account remains under the retail client category. You are welcome to reapply as a professional client at any time.')}`;
+                                const message_text = `${localize('Your request to be treated as a professional client is not approved.')}&nbsp;${localize('Please check your inbox for more details.')}<br /><br />${localize('Your account remains under the retail client category. You are welcome to reapply as a professional client at any time.')}`;
+                                const button_text = localize('Apply now as a professional investor');
+
+                                message = prepareConfirmationErrorCta(message_text, button_text);
                             } else {
-                                const row_element = createElement('div', { class: 'gr-row font-style-normal' });
-                                const columnElement = (extra_attributes = {}) => createElement('div', { class: 'gr-12 gr-padding-20', ...extra_attributes });
-                                const message_element = columnElement({ text: localize('In the EU, financial binary options are only available to professional investors.') });
-                                const button_element = createElement('a', { class: 'button', href: urlFor('user/settings/professional') });
-                                const cta_element = columnElement();
-            
-                                button_element.appendChild(createElement('span', { text: localize('Apply now as a professional investor') }));
-                                cta_element.appendChild(button_element);
-                                row_element.appendChild(message_element);
-                                row_element.appendChild(cta_element);
-            
-                                message = row_element.outerHTML;
+                                const message_text = localize('In the EU, financial binary options are only available to professional investors.');
+                                const button_text = localize('Apply now as a professional investor');
+
+                                message = prepareConfirmationErrorCta(message_text, button_text);
                             }
                         } else if (/RestrictedCountry/.test(error.code)) {
                             let additional_message = '';
@@ -297,6 +293,21 @@ const Purchase = (() => {
     const sellExpired = () => BinarySocket.send({ sell_expired: 1 });
 
     const makeBold = d => `<strong>${d}</strong>`;
+
+    const prepareConfirmationErrorCta = (message_text, button_text) => {
+        const row_element = createElement('div', { class: 'gr-row font-style-normal' });
+        const columnElement = (extra_attributes = {}) => createElement('div', { class: 'gr-12 gr-padding-20', ...extra_attributes });
+        const message_element = columnElement({ text: message_text });
+        const button_element = createElement('a', { class: 'button', href: urlFor('user/settings/professional') });
+        const cta_element = columnElement();
+
+        button_element.appendChild(createElement('span', { text: button_text }));
+        cta_element.appendChild(button_element);
+        row_element.appendChild(message_element);
+        row_element.appendChild(cta_element);
+
+        return row_element.outerHTML;
+    };
 
     const loginOnClick = (e) => Header.loginOnClick(e);
 
