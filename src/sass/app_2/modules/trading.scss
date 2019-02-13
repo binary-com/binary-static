@@ -86,7 +86,7 @@
             }
         }
         .symbols {
-            font-size: inherit;
+            font-size: 1.4rem;
             position: absolute;
             display: block;
             text-align: center;
@@ -237,11 +237,12 @@
                 .symbols {
                     display: inline-block;
                     position: relative;
+                    font-size: inherit;
                 }
                 .icon_price_move_container {
                     width: 1.6em;
                     height: 1.6em;
-                    bottom: 0.1em;
+                    bottom: -1px;
                     position: relative;
                 }
             }
@@ -473,6 +474,7 @@
                             background: none;
                             position: relative;
                             color: $COLOR_WHITE;
+                            font-size: inherit;
                         }
                     }
                     &__content {

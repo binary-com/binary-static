@@ -18,7 +18,6 @@
         height: 2.286em;
         width: 2.286em;
         line-height: 2.286em;
-        margin: 1px;
         border-radius: $BORDER_RADIUS 0 0 $BORDER_RADIUS;
         box-sizing: border-box;
         font-size: inherit;
@@ -51,7 +50,7 @@
             z-index: 1;
             height: 100%;
             margin: initial;
-            min-width: 3.2em;
+            min-width: 2em;
             border-radius: 0.3em;
             padding: initial;
             background-color: initial;
@@ -170,6 +169,7 @@
         margin-bottom: 0.2em;
         text-transform: capitalize;
         display: inline-block;
+        font-size: 1.4rem;
     }
     span.input-helper {
         font-weight: 300;
