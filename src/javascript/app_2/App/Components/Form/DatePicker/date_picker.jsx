@@ -34,7 +34,7 @@ class DatePicker extends React.Component {
         const { mode, value } = this.props;
 
         if (mode === 'duration') {
-            this.updateDatePickerValue(value);
+            this.updateDatePickerValue();
         } else {
             this.updateDatePickerValue(formatDate(value, 'DD MMM YYYY'));
         }

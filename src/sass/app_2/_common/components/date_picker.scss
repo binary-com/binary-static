@@ -73,7 +73,6 @@
         transform-origin: left;
         transform: scale(1, 0) translate3d(20px, 0, 0);
         transition: transform 0.25s ease, opacity 0.25s linear;
-        opacity: 0;
 
         &--left {
             &.datepicker__picker--enter, &.datepicker__picker--exit {

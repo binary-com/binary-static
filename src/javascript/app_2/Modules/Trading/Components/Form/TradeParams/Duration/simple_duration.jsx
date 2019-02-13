@@ -90,12 +90,8 @@ const SimpleDuration = ({
 
 SimpleDuration.propTypes = {
     changeDurationUnit: PropTypes.func,
-    duration_d        : PropTypes.oneOfType([
-        PropTypes.number,
-        PropTypes.string,
-    ]),
-    duration_min_max: PropTypes.object,
-    duration_t      : PropTypes.oneOfType([
+    duration_min_max  : PropTypes.object,
+    duration_t        : PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
     ]),
