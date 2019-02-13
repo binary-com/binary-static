@@ -55,7 +55,9 @@ const MBTradePage = (() => {
         $('.container').css('max-width', '1200px');
         // if not loaded by pjax, balance update function calls TopUpVirtualPopup
         if (State.get('is_loaded_by_pjax')) {
-            TopUpVirtualPopup.init(State.getResponse('balance.balance'));
+            BinarySocket.wait('balance').then(() => {
+                TopUpVirtualPopup.init(State.getResponse('balance.balance'));
+            });
         }
     };
 

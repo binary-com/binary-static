@@ -2,9 +2,9 @@
     position: absolute;
     width: 320px;
     right: 12px;
-    top: -250px;
+    top: -245px;
     background: $COLOR_WHITE;
-    height: 280px;
+    height: auto;
     border-radius: $BORDER_RADIUS;
     box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.14);
     pointer-events: none;
@@ -210,6 +210,8 @@
 // Dark Theme
 .theme-wrapper.dark {
     .settings-dialog {
+        background: $COLOR_DARK_BLUE_3;
+
         .settings-dialog-container {
             background: $COLOR_DARK_BLUE_3;
 
@@ -240,6 +242,10 @@
             .language-header {
                 background: $COLOR_DARK_BLUE_3;
                 color: $COLOR_DARK_BLUE_7;
+
+                .arrow-back path {
+                    fill: $COLOR_DARK_BLUE_7;
+                }
             }
             .language-row {
                 background: $COLOR_DARK_BLUE_2;

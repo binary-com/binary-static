@@ -2,7 +2,7 @@ $filter-height: 60px;
 $side-padding: 12px;
 
 .statement {
-    height: 100%;
+    height: calc(100vh - #{$HEADER_HEIGHT + $FOOTER_HEIGHT});
 
     &-filter {
         box-sizing: border-box;

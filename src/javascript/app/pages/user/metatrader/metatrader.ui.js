@@ -186,6 +186,9 @@ const MetaTraderUI = (() => {
                 };
                 $(this).html(typeof mapping[key] === 'function' ? mapping[key]() : info);
             });
+
+            setCounterpartyAndJurisdictionTooltip($('.acc-info div[data="login"]'), acc_type);
+
             // $container.find('.act_cashier').setVisibility(!types_info[acc_type].is_demo);
             if (current_action_ui !== 'new_account') {
                 $container.find('.has-account').setVisibility(1);
@@ -559,6 +562,26 @@ const MetaTraderUI = (() => {
         if (MetaTraderConfig.hasAccount(acc_type) && accounts_info[acc_type].account_type === 'financial') {
             $('#financial_authenticate_msg').setVisibility(!MetaTraderConfig.isAuthenticated());
         }
+    };
+
+    const setCounterpartyAndJurisdictionTooltip = ($el, acc_type) => {
+        const mt_financial_company = State.getResponse('landing_company.mt_financial_company');
+        const mt_gaming_company = State.getResponse('landing_company.mt_gaming_company');
+        const account = accounts_info[acc_type];
+        let company;
+
+        if (/standard/.test(account.mt5_account_type)) {
+            company = mt_financial_company.standard;
+        } else if (/advanced/.test(account.mt5_account_type)) {
+            company = mt_financial_company.advanced;
+        } else if (account.account_type === 'gaming' || (account.mt5_account_type === '' && account.account_type === 'demo')) {
+            company = mt_gaming_company.standard;
+        }
+
+        $el.attr({
+            'data-balloon'       : `${localize('Counterparty')}: ${company.name}, ${localize('Jurisdiction')}: ${company.country}`,
+            'data-balloon-length': 'large',
+        });
     };
 
     return {

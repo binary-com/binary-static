@@ -1,5 +1,6 @@
 import PropTypes            from 'prop-types';
 import React                from 'react';
+import { Scrollbars }       from 'tt-react-custom-scrollbars';
 import { IconBack }         from 'Assets/Common/icon_back.jsx';
 import { IconChevronLeft }  from 'Assets/Common/icon_chevron_left.jsx';
 import { IconChevronRight } from 'Assets/Common/icon_chevron_right.jsx';
@@ -30,7 +31,12 @@ const TradeTypeInfoItem = ({
             gif explanation
         </div>
         <div className='info-content'>
-            <TradeCategories category={item.value} />
+            <Scrollbars
+                autoHide
+                style={{ height: '215px' }}
+            >
+                <TradeCategories category={item.value} />
+            </Scrollbars>
         </div>
         <div className='info-choose'>
             <Button text={localize('Choose')} onClick={() => onSubmitButtonClick(item)} />

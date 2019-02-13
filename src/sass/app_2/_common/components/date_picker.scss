@@ -4,13 +4,17 @@
     width: 100%;
     max-width: 280px;
 
-    &__input input {
-        text-align: center;
-        pointer-events: auto;
+    &__input {
+        border-radius: $BORDER_RADIUS;
 
-        &:focus, &:hover {
-            outline: none;
-            border-color: $COLOR_DARK_BLUE_5;
+        input {
+            text-align: center;
+            pointer-events: auto;
+
+            &:focus, &:hover {
+                outline: none;
+                border-color: $COLOR_DARK_BLUE_5;
+            }
         }
     }
     &__icon {
@@ -24,7 +28,7 @@
             opacity: 0;
         }
     }
-    // TODO: update datepicker UI in mobile 
+    // TODO: update datepicker UI in mobile
     &__native-overlay {
         background: $COLOR_WHITE;
         height: 32px;
