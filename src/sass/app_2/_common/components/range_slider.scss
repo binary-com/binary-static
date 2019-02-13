@@ -17,7 +17,7 @@
     input[type=range]::-moz-focus-outer {
         border: 0;
     }
-    // TODO: remove once we have proper styling for input slider validation error
+    // TODO: emove once we have proper styling for input slider validation error
     &.error {
         input[type=range] {
             // Range Handle Thumb - Chrome / Webkit based browsers
@@ -39,7 +39,7 @@
     }
     &__track {
         position: relative;
-        // removal of !important is pending refactor in main trading sass file that overrides rules for input els
+        // emoval of !important is pending refactor in main trading sass file that overrides rules for input els
         appearance: none !important;
         width: 100% !important;
         height: 2px !important;
@@ -146,7 +146,7 @@
 }
 
 .sidebar-container fieldset div.range-slider__caption span {
-    font-size: 1.2rem;
+    font-size: 1.2em;
     line-height: 1.5;
 }
 

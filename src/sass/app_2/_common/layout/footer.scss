@@ -14,7 +14,7 @@ footer {
     .server-time {
         display: inline-flex;
         align-self: center;
-        font-size: 1.2rem;
+        font-size: 1.2em;
         margin-right: 1em;
         padding: 0 1em;
     }
@@ -37,7 +37,7 @@ footer {
                 height: 1.6em;
             }
             span {
-                font-size: 0.8rem;
+                font-size: 0.8em;
                 text-transform: capitalize;
                 color: $COLOR_LIGHT_BLACK_1;
                 vertical-align: middle;

@@ -9,7 +9,7 @@
 
     &, * {
         box-sizing: border-box;
-        font-size: 1rem;
+        font-size: 1em;
     }
     button {
         border: none;
@@ -109,15 +109,15 @@
         a {
             cursor: inherit;
             color: inherit;
-            font-size: 1.2rem;
+            font-size: 1.2em;
         }
         &--select {
-            font-size: 1.4rem;
+            font-size: 1.4em;
             line-height: 1.5;
         }
     }
     &__text {
-        font-size: 1.4rem;
+        font-size: 1.4em;
         line-height: 1.5;
         color: $COLOR_LIGHT_BLACK_1;
 
@@ -130,7 +130,7 @@
         }
     }
     &__cell {
-        font-size: 1.2rem;
+        font-size: 1.2em;
         align-self: center;
         justify-self: center;
         transition: background 0.2s;
@@ -141,7 +141,7 @@
             background: $COLOR_LIGHT_BLACK_4;
         }
         &--bold {
-            font-size: 1.4rem;
+            font-size: 1.4em;
             font-weight: bold;
             color: $COLOR_LIGHT_BLACK_1;
         }

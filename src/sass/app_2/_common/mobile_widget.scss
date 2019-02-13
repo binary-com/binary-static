@@ -6,7 +6,7 @@
     grid-template-columns: 1fr auto;
     grid-template-rows: auto;
     grid-template-areas: 'a b' 'c d';
-    font-size: 0.7rem;
+    font-size: 0.7em;
 
     &:hover, &:focus, &:active {
         cursor: pointer;
