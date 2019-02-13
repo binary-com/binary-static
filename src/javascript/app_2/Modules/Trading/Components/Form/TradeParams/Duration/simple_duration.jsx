@@ -17,7 +17,9 @@ const SimpleDuration = ({
     duration_min_max,
     expiry_date,
     getDurationFromUnit,
+    is_nativepicker,
     number_input_props,
+    onChange,
     shared_input_props,
     simple_duration_unit,
     server_time,
@@ -62,15 +64,15 @@ const SimpleDuration = ({
                     alignment='left'
                     disabled_selector={['year']}
                     has_today_btn
+                    is_nativepicker={is_nativepicker}
                     label={has_label ? duration_units_list[0].text : null}
                     max_date={max_date_duration}
                     min_date={min_date_expiry}
+                    onChange={onChange}
                     mode='duration'
                     name='duration'
                     start_date={start_date}
                     value={expiry_date}
-                    {...number_input_props}
-                    {...shared_input_props}
                 />
             }
             { (simple_duration_unit !== 't' && simple_duration_unit !== 'd') &&

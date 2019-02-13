@@ -22,6 +22,7 @@ import Calendar             from '../../Elements/Calendar';
 class DatePicker extends React.Component {
     state = {
         value                : this.props.value,
+        date_value           : '',
         is_datepicker_visible: false,
         is_clear_btn_visible : false,
         holidays             : [],
@@ -30,9 +31,10 @@ class DatePicker extends React.Component {
 
     componentDidMount() {
         document.addEventListener('click', this.onClickOutside, true);
-        const { mode, value, min_value } = this.props;
+        const { mode, value } = this.props;
+
         if (mode === 'duration') {
-            this.updateDatePickerValue(min_value);
+            this.updateDatePickerValue(value);
         } else {
             this.updateDatePickerValue(formatDate(value, 'DD MMM YYYY'));
         }
@@ -74,7 +76,7 @@ class DatePicker extends React.Component {
         if (!isDateValid(value)) { value = ''; }
 
         if (this.props.mode === 'duration') {
-            this.updateDatePickerValue(daysFromTodayTo(value));
+            this.updateDatePickerValue(value);
         } else {
             this.updateDatePickerValue(formatDate(value, 'DD MMM YYYY'));
         }
@@ -83,7 +85,8 @@ class DatePicker extends React.Component {
 
     onChangeInput = (e) => {
         const value = e.target.value;
-        this.updateDatePickerValue(value);
+        const formatted_value = formatDate(addDays(toMoment(), value), 'DD MMM YYYY');
+        this.updateDatePickerValue(formatted_value);
         this.props.onChange(e);
     }
 
@@ -97,10 +100,22 @@ class DatePicker extends React.Component {
     // TODO: handle cases where user inputs date before min_date and date after max_date
     updateDatePickerValue = (value) => {
         const { date_format, mode, start_date } = this.props;
-        this.setState({ value }, this.updateStore);
+
+        if (mode === 'duration') {
+            if (value) {
+                const new_value = daysFromTodayTo(value);
+                const new_date_value = formatDate(value, 'DD MMM YYYY');
+                this.setState({ value: new_value, date_value: new_date_value }, this.updateStore);
+            } else {
+                const initial_date = formatDate(addDays(toMoment(), 1), 'DD MMM YYYY');
+                this.setState({ value: 1, date_value: initial_date }, this.updateStore);
+            }
+        } else {
+            this.setState({ value }, this.updateStore);
+        }
 
         // update Calendar
-        const new_date = (mode === 'duration') ? addDays(toMoment(), value) : value;
+        const new_date = (mode === 'duration') ? formatDate(value, 'DD MMM YYYY') : value;
         if (this.calendar && (isDateValid(new_date) || !new_date)) {
             if (!new_date) {
                 const current_date = formatDate(start_date, date_format);
@@ -148,7 +163,7 @@ class DatePicker extends React.Component {
     }
 
     renderInputField = () => {
-        const { is_read_only, mode, name, error_messages, max_value, min_value, label } = this.props;
+        const { is_read_only, mode, name, error_messages, label } = this.props;
         let { placeholder } = this.props;
         let type, onChange;
 
@@ -170,8 +185,6 @@ class DatePicker extends React.Component {
                 error_messages={error_messages}
                 label={label}
                 is_read_only={is_read_only}
-                max_value={max_value}
-                min_value={min_value}
                 name={name}
                 onChange={onChange}
                 onClick={this.handleVisibility}
@@ -244,6 +257,7 @@ class DatePicker extends React.Component {
                         enterDone: 'datepicker__picker--enter-done',
                         exit     : 'datepicker__picker--exit',
                     }}
+                    unmountOnExit
                 >
                     <div
                         className={classNames('datepicker__picker', {
@@ -263,7 +277,7 @@ class DatePicker extends React.Component {
                             max_date={this.props.max_date}
                             min_date={this.props.min_date}
                             start_date={this.props.start_date}
-                            value={this.props.value}
+                            value={this.props.mode === 'duration' ? this.state.date_value : this.props.value}
                         />
                     </div>
                 </CSSTransition>
@@ -279,10 +293,7 @@ DatePicker.defaultProps = {
 
 DatePicker.propTypes = {
     ...Calendar.propTypes,
-    error_messages: PropTypes.array,
-    label         : PropTypes.string,
-    max_value     : PropTypes.number,
-    min_value     : PropTypes.number,
+    label: PropTypes.string,
 };
 
 export default observer(DatePicker);

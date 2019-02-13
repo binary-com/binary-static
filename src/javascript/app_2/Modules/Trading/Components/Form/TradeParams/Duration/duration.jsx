@@ -182,6 +182,7 @@ const Duration = ({
                             duration_t={duration_t}
                             duration_units_list={duration_units_list}
                             expiry_date={expiry_date}
+                            is_nativepicker={is_nativepicker}
                             number_input_props={props.number_input}
                             onChange={onChange}
                             onChangeUiStore={onChangeUiStore}

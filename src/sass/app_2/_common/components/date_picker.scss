@@ -76,9 +76,8 @@
         opacity: 0;
 
         &--left {
-            transform: scale(1, 1) translate3d(-275px, 0, 0);
-
             &.datepicker__picker--enter, &.datepicker__picker--exit {
+                transform: scale(1, 1) translate3d(-275px, 0, 0);
                 opacity: 0;
             }
             &.datepicker__picker--enter-done {
