@@ -328,6 +328,10 @@
             width: 50%;
             display: inline-block;
         }
+        .expandable-input-wrapper {
+            margin: 0 30px;
+            display: block;
+        }
         .expandable-input-container {
             background: $COLOR_WHITE;
             border-radius: $BORDER_RADIUS;

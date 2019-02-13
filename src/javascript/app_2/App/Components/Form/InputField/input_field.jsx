@@ -146,26 +146,31 @@ const InputField = ({
             {!is_expandable && input }
         </div>;
 
+    const input_tooltip =
+        <Tooltip alignment='left' message={has_error ? error_messages[0] : null }>
+            {!!label &&
+            <label htmlFor={name} className='input-label'>{label}</label>
+            }
+            {!!prefix &&
+            <span className={`symbols ${is_expandable ? 'expandable-symbols' : null} ${prefix.toLowerCase()}`} />
+            }
+            {!!helper &&
+            <span className='input-helper'>{helper}</span>
+            }
+            {!is_expandable && (is_incrementable && type === 'number' ? <React.Fragment>{increment_buttons}</React.Fragment> :
+                input)
+            }
+            {!!is_expandable && <ExpandableInput className={`expandable-${name}`}>{input}</ExpandableInput>}
+        </Tooltip>;
+
+    const expandableInputWrapper = (<label htmlFor={id} className='expandable-input-wrapper'>{input_tooltip}</label>);
+
     return (
         <div
             className={`input-field ${className || ''} ${is_expandable ? (has_error ? 'expandable-input-container error' : 'expandable-input-container') : null}`}
         >
             {is_incrementable && type === 'number' && is_expandable && increment_buttons}
-            <Tooltip alignment='left' message={has_error ? error_messages[0] : null }>
-                {!!label &&
-                <label htmlFor={name} className='input-label'>{label}</label>
-                }
-                {!!prefix &&
-                <span className={`symbols ${is_expandable ? 'expandable-symbols' : null} ${prefix.toLowerCase()}`} />
-                }
-                {!!helper &&
-                <span className='input-helper'>{helper}</span>
-                }
-                {!is_expandable && (is_incrementable && type === 'number' ? <React.Fragment>{increment_buttons}</React.Fragment> :
-                    input)
-                }
-                {!!is_expandable && <ExpandableInput className={`expandable-${name}`}>{input}</ExpandableInput>}
-            </Tooltip>
+            {!!is_expandable ? expandableInputWrapper : input_tooltip}
         </div>
     );
 };

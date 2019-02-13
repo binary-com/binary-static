@@ -66,6 +66,7 @@ const Amount = ({
                     className={classNames({ 'has-currency-options': !is_single_currency })}
                     error_messages={validation_errors.amount}
                     fractional_digits={getDecimalPlaces(currency)}
+                    id='amount'
                     is_autocomplete_disabled
                     is_expandable
                     is_float
