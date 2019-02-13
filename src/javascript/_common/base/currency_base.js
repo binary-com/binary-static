@@ -64,6 +64,7 @@ const CryptoConfig = (() => {
         ETC: { name: localize('Ether Classic'), min_withdrawal: 0.002, pa_max_withdrawal: 5,    pa_min_withdrawal: 0.002 },
         LTC: { name: localize('Litecoin'),      min_withdrawal: 0.002, pa_max_withdrawal: 5,    pa_min_withdrawal: 0.002 },
         UST: { name: localize('Tether'),        min_withdrawal: 0.02,  pa_max_withdrawal: 2000, pa_min_withdrawal: 10 },
+        USB: { name: localize('Binary Coin'),   min_withdrawal: 0.02,  pa_max_withdrawal: 2000, pa_min_withdrawal: 10 },
     });
 
     return {
