@@ -1,47 +1,46 @@
-import classNames                from 'classnames';
 import {
     observer,
     PropTypes as MobxPropTypes } from 'mobx-react';
 import PropTypes                 from 'prop-types';
 import React                     from 'react';
 import Tooltip                   from '../../Elements/tooltip.jsx';
-import ExpandableInput from "./expandable_input";
-import Input from './input.jsx';
-import IncrementButtons from "./increment_buttons";
+import ExpandableInput           from './expandable_input';
+import Input                     from './input.jsx';
+import IncrementButtons          from './increment_buttons';
 
 const InputField = ({
-                        checked,
-                        className,
-                        data_tip,
-                        data_value,
-                        error_messages,
-                        fractional_digits,
-                        helper,
-                        id,
-                        is_autocomplete_disabled,
-                        is_disabled,
-                        is_expandable,
-                        is_float,
-                        is_incrementable,
-                        is_read_only = false,
-                        is_signed = false,
-                        is_unit_at_right = false,
-                        label,
-                        max_length,
-                        max_value,
-                        min_value,
-                        name,
-                        onChange,
-                        onClick,
-                        placeholder,
-                        prefix,
-                        required,
-                        type,
-                        unit,
-                        value,
-                    }) => {
-    const has_error = error_messages && error_messages.length;
-    let has_valid_length = true;
+    checked,
+    className,
+    data_tip,
+    data_value,
+    error_messages,
+    fractional_digits,
+    helper,
+    id,
+    is_autocomplete_disabled,
+    is_disabled,
+    is_expandable,
+    is_float,
+    is_incrementable,
+    is_read_only = false,
+    is_signed = false,
+    is_unit_at_right = false,
+    label,
+    max_length,
+    max_value,
+    min_value,
+    name,
+    onChange,
+    onClick,
+    placeholder,
+    prefix,
+    required,
+    type,
+    unit,
+    value,
+}) => {
+    const has_error       = error_messages && error_messages.length;
+    let has_valid_length  = true;
     const max_is_disabled = max_value && +value >= +max_value;
     const min_is_disabled = min_value && +value <= +min_value;
 

@@ -1,14 +1,11 @@
-import classNames           from 'classnames';
 import { observer }         from 'mobx-react';
+import PropTypes            from 'prop-types';
 import React                from 'react';
-import { CSSTransition }    from 'react-transition-group';
-import PropTypes from "prop-types";
 
 class ExpandableInput extends React.Component {
     constructor(props) {
         super(props);
     }
-
 
     componentDidMount() {
         let textContainer, textareaSize, input;
@@ -40,8 +37,8 @@ class ExpandableInput extends React.Component {
 }
 
 ExpandableInput.propTypes = {
-    className: PropTypes.string,
     children : PropTypes.node,
+    className: PropTypes.string,
 };
 
 export default observer(ExpandableInput);

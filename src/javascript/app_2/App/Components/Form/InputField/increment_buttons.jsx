@@ -1,19 +1,15 @@
-import classNames                from 'classnames';
-import {
-    observer,
-    PropTypes as MobxPropTypes } from 'mobx-react';
+import { observer }              from 'mobx-react';
 import PropTypes                 from 'prop-types';
 import React                     from 'react';
 import Button                    from '../button.jsx';
-
-import { IconMinus, IconPlus } from "../../../../Assets/Common";
+import { IconMinus, IconPlus }   from '../../../../Assets/Common';
 
 const IncrementButtons = ({
-                              max_is_disabled,
-                              incrementValue,
-                              min_is_disabled,
-                              decrementValue,
-               }) => {
+    decrementValue,
+    incrementValue,
+    max_is_disabled,
+    min_is_disabled,
+}) => {
     return (
         <React.Fragment>
             <Button
@@ -37,10 +33,10 @@ const IncrementButtons = ({
 };
 
 IncrementButtons.propTypes = {
-    max_is_disabled: PropTypes.bool,
-    incrementValue : PropTypes.func,
-    min_is_disabled: PropTypes.bool,
     decrementValue : PropTypes.func,
+    incrementValue : PropTypes.func,
+    max_is_disabled: PropTypes.bool,
+    min_is_disabled: PropTypes.bool,
 };
 
 export default observer(IncrementButtons);
