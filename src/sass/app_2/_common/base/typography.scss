@@ -27,6 +27,7 @@
     }
     @return calc(#{$a*100}vw #{$sign} #{$b});
 }
+
 // Indrek Pass also has a fantastic mixin here: http://sassmeister.com/gist/7f22e44ace49b5124eec
 html {
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004); //stylelint-disable-line number-max-precision

@@ -55,7 +55,7 @@ body.dark, .theme-wrapper.dark {
                 border-color: $COLOR_DARK_BLUE_2;
             }
             div.submit-section button.btn:disabled {
-                box-shadow: 0 2px 2px 0 $COLOR_DARK_BLUE_7;
+                box-shadow: 0 0.2em 0.2em 0 $COLOR_DARK_BLUE_7;
                 background: $COLOR_DARK_BLUE_6;
                 color: $COLOR_DARK_BLUE_8;
             }
@@ -217,7 +217,7 @@ body.dark, .theme-wrapper.dark {
             .cq-context {
                 div.cq-chart-controls {
                     @media (max-width: 768px) {
-                        border: 1px solid $COLOR_DARK_BLUE_5;
+                        border: 0.1em solid $COLOR_DARK_BLUE_5;
                     }
                 }
                 .cq-chart-control-left .cq-chart-controls {
@@ -300,6 +300,15 @@ body.dark, .theme-wrapper.dark {
     // tooltip
     span.tooltip i.question:after {
         content: url('../images/common/tooltip/ic_tooltip_question_dark.svg ');
+    }
+    span.tooltip {
+        &:before {
+            background: $COLOR_DARK_BLUE_3;
+            color: $COLOR_WHITE;
+        }
+        &:after {
+            border-left-color: $COLOR_DARK_BLUE_3;
+        }
     }
     // common inline icons
     .inline-icon {

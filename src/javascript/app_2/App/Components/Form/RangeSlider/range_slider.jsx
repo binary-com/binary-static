@@ -58,7 +58,7 @@ const RangeSlider = ({
                 {/* Calculate line width based on active value and size of range thumb */}
                 <div
                     className='range-slider__line'
-                    style={{ width: `calc(${value * 10}% - ${value < 4 ? '0.8rem' : '0.5rem'})` }}
+                    style={{ width: `calc(${value * 10}% - ${value < 4 ? '1.6rem' : '1rem'})` }}
                 />
             </label>
             <div className='range-slider__caption'>

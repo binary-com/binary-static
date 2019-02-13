@@ -1,7 +1,7 @@
 .mobile-widget {
-    border: 1px solid $COLOR_LIGHT_BLACK_4;
-    border-radius: 4px;
-    padding: 10px 5px;
+    border: 0.1em solid $COLOR_LIGHT_BLACK_4;
+    border-radius: 0.4em;
+    padding: 1em 0.5em;
     display: grid;
     grid-template-columns: 1fr auto;
     grid-template-rows: auto;
@@ -10,13 +10,13 @@
 
     &:hover, &:focus, &:active {
         cursor: pointer;
-        border: solid 1px $COLOR_DARK_BLUE_5;
+        border: solid 0.1em $COLOR_DARK_BLUE_5;
     }
     .fieldset-minimized {
         display: flex;
         flex-direction: row;
         align-items: center;
-        padding: 5px;
+        padding: 0.5em;
         white-space: pre-line;
 
         &.amount {
@@ -30,10 +30,10 @@
         }
         .icon {
             display: block;
-            margin-right: 5px;
+            margin-right: 0.5em;
         }
         .symbols:before {
-            margin-right: 1px;
+            margin-right: 0.1em;
             position: static;
             display: inline;
             font-size: 1em;

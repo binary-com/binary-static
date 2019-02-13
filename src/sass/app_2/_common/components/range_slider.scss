@@ -1,8 +1,8 @@
 // Range Slider Thumb styling is set here
 @mixin thumbStyle() {
     appearance: none;
-    width: 0.7rem;
-    height: 0.7rem;
+    width: 0.75em;
+    height: 0.75em;
     border-radius: 100%;
     border: 0;
     cursor: pointer;
@@ -111,7 +111,7 @@
         &__step {
             height: 2px;
             width: 2px;
-            border: 2px solid $COLOR_WHITE;
+            border: 3px solid $COLOR_WHITE;
             background: $COLOR_WHITE;
             border-radius: 50%;
             margin: 0 3px;
@@ -159,6 +159,7 @@
 
 .sidebar-container fieldset div.range-slider__caption span {
     font-size: 1.2rem;
+    line-height: 1.5;
 }
 
 .theme-wrapper.dark {

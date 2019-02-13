@@ -4,22 +4,22 @@
     z-index: 3;
     background: rgba(255, 255, 255, 0.8);
     top: 0;
-    left: 2px;
+    left: 0.2em;
     right: 0;
     bottom: 0;
-    width: calc(100% - 4px);
+    width: calc(100% - 0.4em);
     height: 100%;
 
     .loading {
         position: absolute;
-        top: calc(50% - 22px);
-        left: calc(50% - 16px);
+        top: calc(50% - 2.2em);
+        left: calc(50% - 1.6em);
         z-index: 11;
 
         .spinner {
             position: relative;
             margin: 0 auto;
-            width: 42px;
+            width: 4.2em;
 
             &:before {
                 content: '';
@@ -63,7 +63,7 @@
     }
     50% {
         stroke-dasharray: 89, 200;
-        stroke-dashoffset: -35px;
+        stroke-dashoffset: -3.5em;
     }
     100% {
         stroke-dasharray: 89, 200;
