@@ -255,18 +255,18 @@
                 display: inline-flex;
                 justify-content: center;
                 align-items: center;
-                background-color: $COLOR_DARK_BLUE_2;
+                background-color: $COLOR_WHITE;
                 margin: 0 0.5em 0.5em 0;
                 font-size: 1.2rem;
 
                 &.selected {
-                    background-color: $COLOR_DARK_BLUE_5;
+                    background-color: $COLOR_LIGHT_GRAY_1;
                     color: $COLOR_WHITE;
                     font-weight: bold;
                 }
                 &:hover {
                     cursor: pointer;
-                    background-color: $COLOR_DARK_BLUE_4;
+                    background-color: $COLOR_LIGHT_BLACK_4;
                 }
                 &:last-child {
                     margin-right: 0;
@@ -701,6 +701,19 @@
         &.barriers {
             .up, .down {
                 fill: $COLOR_WHITE;
+            }
+        }
+        .number-selector {
+            &__selection {
+                background-color: $COLOR_DARK_BLUE_2;
+
+                &.selected {
+                    background-color: $COLOR_DARK_BLUE_5;
+                    color: $COLOR_WHITE;
+                }
+                &:hover {
+                    background-color: $COLOR_DARK_BLUE_4;
+                }
             }
         }
     }
