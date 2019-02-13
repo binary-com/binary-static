@@ -250,7 +250,7 @@ const BinaryOptions = () => {
                             <ListStrong header={it.L('Ups')} text={it.L('Win payout if consecutive ticks rise successively. Contract is lost when at least one tick falls or is equal to any of the previous ticks.')} />
                             <ListStrong header={it.L('Downs')} text={it.L('Win payout if consecutive ticks fall successively. Contract is lost when at least one tick rises or is equal to any of the previous ticks.')} />
                         </SectionLarge>
-                        <p>{it.L('Please note that Asians, Digits, Reset Call/Reset Put, Run Up/Run Down, and High Ticks/Low Ticks are available exclusively with our Volatility Indices.')}</p>
+                        <p>{it.L('Please note that Asians, Digits, Reset Call/Reset Put, High Ticks/Low Ticks, and Run Ups/Run Downs are available exclusively with our Volatility Indices.')}</p>
                     </Section>
                     <Section id='range-of-markets' header={it.L('Range of markets')}>
                         <p>{it.L('Binary options allow you to trade on a wide range of underlying markets. One of the advantages of trading binary options is that you are not buying or selling an actual asset, only a contract that determines how that asset performs over a period of time. This limits your risk and makes it easy for anyone to start trading.')}</p>

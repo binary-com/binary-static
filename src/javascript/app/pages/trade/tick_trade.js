@@ -393,7 +393,7 @@ const TickDisplay = (() => {
 
         let has_finished = applicable_ticks && ticks_needed && applicable_ticks.length >= ticks_needed;
         if (contract_category.match('run')) {
-            has_finished = applicable_ticks.length && contract.exit_tick_time || false;
+            has_finished = (applicable_ticks.length && contract.exit_tick_time) || false;
         }
         const has_sold     = contract && contract.exit_tick_time && applicable_ticks
             && applicable_ticks.find(({ epoch }) => +epoch === +contract.exit_tick_time) !== undefined;

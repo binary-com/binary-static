@@ -177,8 +177,9 @@ const TradingAnalysis = (() => {
         const $container = $('#tab_explanation-content');
         $container.find('#explanation_winning > div, #explanation_explain > div, #explanation_image, #explanation_note, #explanation_note > div, #explanation_duration > div').setVisibility(0);
         $container.find(`#explanation_winning, #winning_${form_name}, #explanation_explain, #explain_${form_name}, #duration_${Defaults.get('market')}`).setVisibility(1);
-        if ($container.find(`#duration_${form_name}`).length) {
-            $(`#duration_${form_name}`).setVisibility(1);
+        const market_duration = $container.find(`#duration_${form_name}`);
+        if (market_duration.length) {
+            market_duration.setVisibility(1);
             $(`#duration_${Defaults.get('market')}`).setVisibility(0);
         }
 
