@@ -39,7 +39,7 @@ const InputField = ({
     unit,
     value,
 }) => {
-    const has_error       = error_messages && error_messages.length;
+    const has_error       = error_messages && !!error_messages.length;
     let has_valid_length  = true;
     const max_is_disabled = max_value && +value >= +max_value;
     const min_is_disabled = min_value && +value <= +min_value;
@@ -89,7 +89,6 @@ const InputField = ({
 
     const incrementValue = () => {
         if (max_is_disabled) return;
-        console.log(value);
 
         const increment_value = (+value) + 1;
         onChange({ target: { value: increment_value, name } });

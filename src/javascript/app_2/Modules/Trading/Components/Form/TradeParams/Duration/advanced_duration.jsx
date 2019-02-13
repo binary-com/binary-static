@@ -6,7 +6,7 @@ import TimePicker                     from 'App/Components/Form/time_picker.jsx'
 import DatePicker                     from 'App/Components/Form/DatePicker';
 import Dropdown                       from 'App/Components/Form/DropDown';
 import ButtonToggleMenu               from 'App/Components/Form/button_toggle_menu.jsx';
-import InputField                     from 'App/Components/Form/input_field.jsx';
+import InputField                     from 'App/Components/Form/InputField/input_field.jsx';
 import RangeSlider                    from 'App/Components/Form/RangeSlider';
 import { hasIntradayDurationUnit }    from 'Stores/Modules/Trading/Helpers/duration';
 import {

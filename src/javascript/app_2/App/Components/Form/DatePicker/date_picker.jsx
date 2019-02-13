@@ -6,7 +6,7 @@ import {
     IconArrow,
     IconCalendar,
     IconClear }             from 'Assets/Common';
-import InputField           from 'App/Components/Form/input_field.jsx';
+import InputField           from 'App/Components/Form/InputField/input_field.jsx';
 import {
     addDays,
     daysFromTodayTo,

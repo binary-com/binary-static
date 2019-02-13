@@ -5,7 +5,7 @@ import {
     IconBarrierUp,
     IconBarrierDown } from 'Assets/Trading/Barriers';
 import Fieldset       from 'App/Components/Form/fieldset.jsx';
-import InputField     from 'App/Components/Form/input_field.jsx';
+import InputField     from 'App/Components/Form/InputField/input_field.jsx';
 import { localize }   from '_common/localize';
 
 const Barrier = ({

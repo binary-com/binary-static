@@ -4,10 +4,9 @@ import React                from 'react';
 
 class ExpandableInput extends React.Component {
     componentDidMount() {
-        let textContainer, textareaSize, input;
-        textContainer = document.querySelector(`.${this.props.className}`);
-        textareaSize = textContainer.querySelector(`.${this.props.className}-size`);
-        input = textContainer.querySelector('input');
+        const textContainer = document.querySelector(`.${this.props.className}`);
+        const textareaSize = textContainer.querySelector(`.${this.props.className}-size`);
+        const input = textContainer.querySelector('input');
 
         const autoSize = () => {
             textareaSize.innerHTML = `${input.value} \n`;
