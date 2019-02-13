@@ -160,7 +160,7 @@ const InputField = ({
             {!is_expandable && (is_incrementable && type === 'number' ? <React.Fragment>{increment_buttons}</React.Fragment> :
                 input)
             }
-            {!!is_expandable && <ExpandableInput className={`expandable-${name}`}>{input}</ExpandableInput>}
+            {is_expandable && <ExpandableInput className={`expandable-${name}`}>{input}</ExpandableInput>}
         </Tooltip>;
 
     const expandableInputWrapper = (<label htmlFor={id} className='expandable-input-wrapper'>{input_tooltip}</label>);
@@ -170,7 +170,7 @@ const InputField = ({
             className={`input-field ${className || ''} ${is_expandable ? (has_error ? 'expandable-input-container error' : 'expandable-input-container') : null}`}
         >
             {is_incrementable && type === 'number' && is_expandable && increment_buttons}
-            {!!is_expandable ? expandableInputWrapper : input_tooltip}
+            {is_expandable ? expandableInputWrapper : input_tooltip}
         </div>
     );
 };
