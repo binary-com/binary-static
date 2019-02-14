@@ -8,7 +8,7 @@ const Tooltip = ({
     children,
     icon, // only question or info accepted
 }) => {
-    const icon_name = (icon === 'question' || icon === 'info') ? icon : 'question';
+    const icon_name = (icon === 'question' || icon === 'info' || icon === 'dot') ? icon : 'question';
     const icon_class = classNames(icon_name);
     return (
         <span className='tooltip' data-tooltip={message} data-tooltip-pos={alignment}>
