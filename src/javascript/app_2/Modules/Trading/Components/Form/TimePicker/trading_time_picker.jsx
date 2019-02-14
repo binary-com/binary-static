@@ -79,7 +79,10 @@ export default connect(
         start_time         : modules.trade.start_time,
         start_date         : modules.trade.start_date,
         expiry_type        : modules.trade.expiry_type,
+        expiry_time        : modules.trade.expiry_time,
         onChange           : modules.trade.onChange,
         server_time        : common.server_time,
+        market_close_times : modules.trade.market_close_times,
+        sessions           : modules.trade.sessions,
     })
 )(TradingTimePicker);
