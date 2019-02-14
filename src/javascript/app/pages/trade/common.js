@@ -149,7 +149,7 @@ const commonTrading = (() => {
             'reset',
             'callputspread',
             'highlowticks',
-            'runs',
+            ['run', ['runs']],
         ];
 
         if (elements) {
