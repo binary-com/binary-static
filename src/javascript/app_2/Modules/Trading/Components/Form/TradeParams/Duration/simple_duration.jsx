@@ -10,14 +10,11 @@ const SimpleDuration = ({
     changeDurationUnit,
     duration_t,
     duration_units_list,
-    expiry_date,
     getDurationFromUnit,
     is_nativepicker,
     number_input_props,
-    onChange,
     shared_input_props,
     simple_duration_unit,
-    start_date,
 }) => {
     const filterMinutesAndTicks = (arr) => {
         const filtered_arr = arr.filter(du => du.value === 't' || du.value === 'm');
