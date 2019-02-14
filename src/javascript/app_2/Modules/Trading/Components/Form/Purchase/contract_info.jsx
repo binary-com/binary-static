@@ -15,22 +15,22 @@ const ContractInfo = ({
         {(proposal_info.has_error || !proposal_info.id) ?
             <div
                 className={classNames({
-                    'error-info-wrapper': proposal_info.has_error,
+                    'trade-container__error': proposal_info.has_error,
                 })}
             >
-                {proposal_info.message && <span>{proposal_info.message}</span>}
+                {proposal_info.message && <span className='trade-container__error-info'>{proposal_info.message}</span>}
             </div>
             :
-            <div className='purchase-info-wrapper'>
-                <div className='info-wrapper'>
-                    <div>{localize('[_1]', proposal_info.obj_contract_basis.text)}</div>
-                    <div className='info-wrapper__amount'><Money amount={proposal_info.obj_contract_basis.value} currency={currency} /></div>
-                    <div className='icon_price_move_container'>
+            <div className='trade-container__price'>
+                <div className='trade-container__price-info'>
+                    <div className='trade-container__price-info-basis'>{localize('[_1]', proposal_info.obj_contract_basis.text)}</div>
+                    <div><Money amount={proposal_info.obj_contract_basis.value} className='trade-container__price-info-currency' currency={currency} /></div>
+                    <div className='trade-container__price-info-movement'>
                         {has_increased !== null && <IconPriceMove type={has_increased ? 'profit' : 'loss'} />}
                     </div>
                 </div>
-                <span className='purchase-tooltip'>
-                    <Tooltip alignment='left' icon='info' message={proposal_info.message} />
+                <span>
+                    <Tooltip alignment='left' className='trade-container__price-tooltip' classNameIcon='trade-container__price-tooltip-i' icon='info' message={proposal_info.message} />
                 </span>
             </div>
         }

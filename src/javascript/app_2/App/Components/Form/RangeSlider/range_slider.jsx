@@ -36,7 +36,7 @@ const RangeSlider = ({
             <label htmlFor='range'>
                 <input
                     id='range'
-                    className='range-slider__track'
+                    className='trade-container__input range-slider__track'
                     type='range'
                     min={first_tick}
                     max={ticks}

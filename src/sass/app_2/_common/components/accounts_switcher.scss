@@ -263,7 +263,7 @@
 }
 
 // Dark Theme
-.theme-wrapper.dark {
+.theme--dark {
     .acc-switcher {
         &-wrapper {
             background: $COLOR_DARK_BLUE_3;
@@ -341,6 +341,9 @@
                     .symbols {
                         background: $COLOR_DARK_BLUE_2;
                     }
+                }
+                .select-arrow .arrow-path {
+                    fill: $COLOR_DARK_BLUE_7;
                 }
                 &--show {
                     &:after {
