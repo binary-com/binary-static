@@ -153,7 +153,7 @@ $header-height: 4em;
                 }
             }
         }
-        &__emaining-time {
+        &__remaining-time {
             font-size: 1em;
             color: $COLOR_LIGHT_BLACK_2;
             text-align: right;
@@ -168,7 +168,7 @@ $header-height: 4em;
                 background-image: url('../images/positions/ic_countdown.svg');
                 vertical-align: text-top;
             }
-            .emaining-time {
+            .remaining-time {
                 display: inline;
             }
         }
@@ -190,7 +190,7 @@ $header-height: 4em;
             border-color: $COLOR_DARK_BLUE_5;
             color: $COLOR_WHITE;
 
-            &__emaining-time {
+            &__remaining-time {
                 color: $COLOR_DARK_BLUE_7;
             }
             &.active, &:hover {
