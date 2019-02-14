@@ -46,24 +46,21 @@ const Amount = ({
                 <ButtonToggleMenu
                     buttons_arr={basis_list}
                     name='basis'
+                    value={basis}
                     onChange={onChange}
                     value={basis}
                 />
                 {!is_single_currency &&
-                    <Dropdown
-                        className='currency-options'
-                        is_alignment_left
-                        is_nativepicker={is_nativepicker}
-                        list={currencies_list}
-                        name='currency'
-                        value={currency}
-                        onChange={onChange}
-                    />
+                <Dropdown
+                    className='currency-options'
+                    is_alignment_left
+                    is_nativepicker={is_nativepicker}
+                    list={currencies_list}
+                />
                 }
                 <InputField
                     classNameInput='trade-container__input'
                     classNamePrefix='trade-container__currency'
-                    className={classNames({ 'has-currency-options': !is_single_currency })}
                     error_messages={validation_errors.amount}
                     fractional_digits={getDecimalPlaces(currency)}
                     id='amount'
