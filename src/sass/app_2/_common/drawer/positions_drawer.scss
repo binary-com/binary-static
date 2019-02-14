@@ -7,7 +7,7 @@ $header-height: 4em;
 
 .positions-drawer {
     width: $POSITIONS_DRAWER_WIDTH;
-    // emoving 2px below for borders
+    // removing 2px below for borders
     height: calc(100vh - #{$HEADER_HEIGHT} - #{$FOOTER_HEIGHT} - 2px - (#{$POSITIONS_DRAWER_MARGIN} * 3));
     margin-top: #{$POSITIONS_DRAWER_MARGIN * 2};
     position: fixed;
