@@ -167,7 +167,7 @@
                 background: $COLOR_LIGHT_GRAY_1;
             }
         }
-        span.tooltip[data-tooltip] {
+        .tooltip[data-tooltip] {
             position: absolute;
             display: inline-grid;
             cursor: default;
@@ -175,14 +175,14 @@
             top: 0;
 
             i {
-                margin-top: -3px;
+                margin-top: -7px;
             }
         }
     }
 }
 
 // Dark theme
-.theme-wrapper.dark {
+.theme--dark {
     .calendar {
         background: $COLOR_DARK_BLUE_3;
         box-shadow: 0 0.2em 0.8em 0 rgba(0, 0, 0, 0.8), 0 0.2em 0.4em 0 rgba(0, 0, 0, 0.5);

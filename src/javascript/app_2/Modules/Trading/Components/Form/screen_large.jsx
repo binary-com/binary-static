@@ -2,6 +2,7 @@ import classNames   from 'classnames';
 import PropTypes    from 'prop-types';
 import React        from 'react';
 import UILoader     from 'App/Components/Elements/ui_loader.jsx';
+import Fieldset     from 'App/Components/Form/fieldset.jsx';
 import ContractType from '../../Containers/contract_type.jsx';
 import Purchase     from '../../Containers/purchase.jsx';
 import TradeParams  from '../../Containers/trade_params.jsx';
@@ -15,11 +16,11 @@ const ScreenLarge = ({ is_contract_visible, is_trade_enabled }) => (
             <UILoader />
             :
             <React.Fragment>
-                <fieldset className='trade-types'>
+                <Fieldset className='trade-container__fieldset trade-types'>
                     <ContractType />
-                </fieldset>
+                </Fieldset>
                 <TradeParams />
-                <div className='purchase-wrapper'>
+                <div className='purchase-container'>
                     <Purchase />
                 </div>
             </React.Fragment>

@@ -119,15 +119,16 @@
             }
             &__label {
                 pointer-events: none;
-                padding-left: 1.6em;
+                text-align: center;
+                font-size: 1.4em;
                 line-height: 3.2em;
                 height: 3.2em;
 
                 span {
                     text-transform: capitalize;
-                    color: $COLOR_LIGHT_BLACK_4;
+                    color: $COLOR_LIGHT_BLACK_1;
                     font-size: inherit;
-                    font-weight: 300;
+                    font-weight: 700;
                 }
             }
             &__item {
@@ -202,7 +203,7 @@
 }
 
 // Dark Theme
-.theme-wrapper.dark {
+.theme--dark {
     .dropdown-container {
         .dropdown__display {
             background: $COLOR_DARK_BLUE_2;
@@ -222,6 +223,9 @@
         .list {
             background: $COLOR_DARK_BLUE_3;
 
+            &__label span {
+                color: $COLOR_WHITE;
+            }
             .list__item {
                 color: $COLOR_DARK_BLUE_7;
 
@@ -234,6 +238,9 @@
                     background: $COLOR_DARK_BLUE_4;
                 }
             }
+        }
+        .select-arrow .arrow-path {
+            fill: $COLOR_DARK_BLUE_7;
         }
     }
 }

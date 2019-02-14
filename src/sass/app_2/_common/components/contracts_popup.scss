@@ -346,7 +346,7 @@ div.contracts-popup-container {
 }
 
 // Dark Theme
-.theme-wrapper.dark {
+.theme--dark {
     div.contracts-popup-container {
         color: $COLOR_DARK_BLUE_7;
         background: $COLOR_DARK_BLUE_2;
@@ -409,6 +409,9 @@ div.contracts-popup-container {
                     stroke: $COLOR_WHITE;
                 }
             }
+        }
+        .select-arrow .arrow-path {
+            fill: $COLOR_DARK_BLUE_7;
         }
     }
     .trade-type-info-popup {

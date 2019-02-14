@@ -53,9 +53,10 @@
             background: $COLOR_LIGHT_BLACK_4_SOLID;
         }
         .settings-header {
-            padding: 1.6em;
+            padding: 0.8em 1.6em;
             font-size: 1.2em;
             font-weight: 400;
+            line-height: 1.5;
         }
         .general-setting-container, .chart-setting-container {
             flex-direction: column;
@@ -208,7 +209,7 @@
 }
 
 // Dark Theme
-.theme-wrapper.dark {
+.theme--dark {
     .settings-dialog {
         background: $COLOR_DARK_BLUE_3;
 

@@ -3,10 +3,10 @@
     margin: 0.8em 0 0;
     font-weight: 300;
 
-    &:has(input[type=checkbox]), span.tooltip {
+    &:has(input[type=checkbox]), .tooltip {
         display: inline-block;
     }
-    span.tooltip {
+    .tooltip {
         width: 100%;
     }
     & ~ [class*='__icon'] {
@@ -20,7 +20,6 @@
         line-height: 2.1em;
         border-radius: $BORDER_RADIUS 0 0 $BORDER_RADIUS;
         box-sizing: border-box;
-        font-size: inherit;
     }
     &:has(input[type=checkbox]) {
         display: inline-block;
@@ -48,7 +47,7 @@
         &__button {
             position: absolute;
             z-index: 1;
-            height: 100%;
+            height: calc(100% - 2px);
             margin: initial;
             min-width: 2em;
             border-radius: 0.3em;
@@ -57,12 +56,13 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            top: 1px;
 
             &--increment {
-                right: 0.1em;
+                right: 1px;
             }
             &--decrement {
-                left: 0.1em;
+                left: 1px;
             }
             &:hover {
                 cursor: pointer;
@@ -91,8 +91,8 @@
         position: relative;
         display: inline-block;
         width: 100%;
-        height: 2em;
-        font-size: 1.6em;
+        height: 32px;
+        font-size: 1.4em;
         line-height: normal;
         padding-left: 0.8em;
         color: $COLOR_LIGHT_BLACK_1;
@@ -148,8 +148,8 @@
         &:active, &:focus {
             outline: 0;
             border-radius: $BORDER_RADIUS;
-            border-color: $COLOR_ORANGE;
-            box-shadow: 0 0 0 0.2em rgba(127, 131, 151, 0.3);
+            border-color: $COLOR_LIGHT_GRAY_1;
+            box-shadow: 0 0 0 0.2rem rgba(127, 131, 151, 0.3);
         }
         &:not([type=range]), label, textarea {
             touch-action: manipulation;
@@ -179,7 +179,7 @@
 }
 
 // Dark Theme
-.theme-wrapper.dark {
+.theme--dark {
     .input-field {
         &:has(input[type=checkbox]) {
             display: inline-block;

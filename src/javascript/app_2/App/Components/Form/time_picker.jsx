@@ -1,3 +1,4 @@
+import classNames                from 'classnames';
 import {
     observer,
     PropTypes as MobxPropTypes } from 'mobx-react';
@@ -197,6 +198,7 @@ class TimePicker extends React.Component {
                     is_nativepicker
                         ? <input
                             type='time'
+                            className='trade-container__input'
                             id={`${prefix_class}-input`}
                             value={value}
                             onChange={this.handleChange}
@@ -210,7 +212,8 @@ class TimePicker extends React.Component {
                                     is_read_only
                                     is_unit_at_right
                                     id={`${prefix_class}-input`}
-                                    className={`${prefix_class}-input ${this.state.is_open ? 'active' : ''}`}
+                                    className={classNames(`${prefix_class}-input`, this.state.is_open ? 'active' : '')}
+                                    classNameInput='trade-container__input'
                                     value={value}
                                     onClick={this.toggleDropDown}
                                     name={name}

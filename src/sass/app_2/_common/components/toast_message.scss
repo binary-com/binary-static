@@ -136,7 +136,7 @@ $IC_WARNING     : url('../images/common/toast/ic_warning.svg');
 }
 
 // Dark Theme
-.theme-wrapper.dark {
+.theme--dark {
     .toast {
         &__body {
             background-color: $TOAST_BACKGROUND_COLOR_INFO;
