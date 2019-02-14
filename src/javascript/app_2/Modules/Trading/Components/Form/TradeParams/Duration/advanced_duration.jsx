@@ -85,6 +85,7 @@ const AdvancedDuration = ({
                                 is_nativepicker={is_nativepicker}
                                 mode='duration'
                                 name='duration'
+                                is_24_hours_contract={is_24_hours_contract}
                             />
                         }
                         { (advanced_duration_unit !== 't' && advanced_duration_unit !== 'd') &&
@@ -104,10 +105,14 @@ const AdvancedDuration = ({
                             alignment='left'
                             is_nativepicker={is_nativepicker}
                             name='expiry_date'
+                            is_24_hours_contract={is_24_hours_contract}
                             // validation_errors={validation_errors.expiry_date} TODO: add validation_errors for expiry date
                         />
                         {is_24_hours_contract &&
-                            <TradingTimePicker name='expiry_time' />
+                            <TradingTimePicker
+                                name='expiry_time'
+                                is_24_hours_contract={is_24_hours_contract}
+                            />
                             // validation_errors={validation_errors.end_time} TODO: add validation_errors for end time
                         }
                     </div>
