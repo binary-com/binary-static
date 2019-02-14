@@ -7,12 +7,11 @@ import React                     from 'react';
 import {
     addComma,
     getDecimalPlaces }           from '_common/base/currency_base';
-import ToggleButtonGroup         from 'App/Components/Elements/ToggleButton/toggle_button_group.jsx';
+import ButtonToggleMenu          from 'App/Components/Form/button_toggle_menu.jsx';
 import Dropdown                  from 'App/Components/Form/DropDown';
 import Fieldset                  from 'App/Components/Form/fieldset.jsx';
 import InputField                from 'App/Components/Form/InputField/input_field.jsx';
 import AllowEquals               from './allow_equals.jsx';
-import ToggleButton from "../../../../../App/Components/Elements/ToggleButton/toggle_button";
 
 const Amount = ({
     amount,
@@ -44,16 +43,12 @@ const Amount = ({
     return (
         <Fieldset className='trade-container__fieldset'>
             <div className={amount_container_class}>
-                <ToggleButtonGroup
+                <ButtonToggleMenu
+                    buttons_arr={basis_list}
                     name='basis'
+                    onChange={onChange}
                     value={basis}
-                >
-                    {basis_list.map(() =>
-                        <ToggleButton
-                            onClick={onChange}
-                        />)}
-
-                </ToggleButtonGroup>
+                />
                 {!is_single_currency &&
                 <Dropdown
                     className={classNames({ 'trade-container__currency-options--show': !is_single_currency })}
