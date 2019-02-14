@@ -2,11 +2,11 @@ import classNames          from 'classnames';
 import PropTypes           from 'prop-types';
 import React               from 'react';
 import ContractTypeCell    from 'Modules/Portfolio/Components/contract_type_cell.jsx';
+import { localize }        from '_common/localize';
 import ProgressSlider      from '../../../Containers/PositionsDrawer/positions_progress_slider.jsx';
 import Money               from '../money.jsx';
 import BinaryLink          from '../../Routes/binary_link.jsx';
 import { getContractPath } from '../../Routes/helpers';
-import RemainingTime       from '../../../Containers/remaining_time.jsx';
 
 const PositionsDrawerCard = ({
     currency,
@@ -25,35 +25,47 @@ const PositionsDrawerCard = ({
         to={getContractPath(id)}
     >
         <React.Fragment>
-            <div className='positions-drawer-card__underlying-name'>
-                <div
-                    className={classNames(
-                        'icons-underlying',
-                        `icons-underlying__ic-${underlying_code || 'default'}`
-                    )}
-                />
-                <span className='positions-drawer-card__symbol'>{underlying_name}</span>
+            <div className={classNames(
+                'positions-drawer-card__grid',
+                'positions-drawer-card__grid-underlying-trade'
+            )}
+            >
+                <div className='positions-drawer-card__underlying-name'>
+                    <div
+                        className={classNames(
+                            'icons-underlying',
+                            `icons-underlying__ic-${underlying_code || 'default'}`
+                        )}
+                    />
+                    <span className='positions-drawer-card__symbol'>{underlying_name}</span>
+                </div>
+                <div className='positions-drawer-card__type'>
+                    <ContractTypeCell type={type} />
+                </div>
             </div>
-            <div className='positions-drawer-card__type'>
-                <ContractTypeCell type={type} />
-            </div>
-            <div className={`positions-drawer-card__indicative positions-drawer-card__indicative--${status}`}>
-                <Money amount={indicative} currency={currency} />
-            </div>
-            <span className='positions-drawer-card__remaining-time'>
-                <RemainingTime end_time={expiry_time} />
-            </span>
             <ProgressSlider
                 expiry_time={expiry_time}
             />
-            <div className={classNames('positions-drawer-card__profit-loss', {
-                'positions-drawer-card__profit-loss--negative': (profit_loss < 0),
-                'positions-drawer-card__profit-loss--positive': (profit_loss > 0),
-            })}
+            <div className={classNames(
+                'positions-drawer-card__grid',
+                'positions-drawer-card__grid-profit-payout'
+            )}
             >
-                <Money amount={profit_loss} currency={currency} />
+                <div className={classNames('positions-drawer-card__profit-loss', {
+                    'positions-drawer-card__profit-loss--negative': (profit_loss < 0),
+                    'positions-drawer-card__profit-loss--positive': (profit_loss > 0),
+                })}
+                >
+                    <Money amount={Math.abs(profit_loss)} currency={currency} />
+                </div>
+                <div className={`positions-drawer-card__indicative positions-drawer-card__indicative--${status}`}>
+                    <Money amount={indicative} currency={currency} />
+                </div>
             </div>
-            <div className={classNames('positions-drawer-card__purchase')}>
+            <div className='positions-drawer-card__purchase-price'>
+                <span className='positions-drawer-card__purchase-label'>
+                    {localize('Purchase price')}
+                </span>
                 <Money amount={purchase} currency={currency} />
             </div>
         </React.Fragment>

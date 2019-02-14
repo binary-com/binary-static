@@ -4,12 +4,14 @@ import React               from 'react';
 import { connect }         from 'Stores/connect';
 import { localize }        from '_common/localize';
 import ProgressTicks       from '../../Components/Elements/PositionsDrawer/positions_progress_ticks.jsx';
+import RemainingTime       from '../remaining_time.jsx';
 
 const ProgressSlider = ({
     className,
     tick_count,
     current_tick,
     percentage = 50,
+    expiry_time,
 }) => (
     <div className={classNames('progress-slider', className)}>
         {tick_count ?
@@ -24,7 +26,12 @@ const ProgressSlider = ({
                 </div>
             </React.Fragment>
             :
-            <div className='progress-slider__default' />
+            <React.Fragment>
+                <span className='positions-drawer-card__remaining-time'>
+                    <RemainingTime end_time={expiry_time} />
+                </span>
+                <div className='progress-slider__default' />
+            </React.Fragment>
         }
         {/* Calculate line width based on active value and size of range thumb */}
         <div

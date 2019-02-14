@@ -65,12 +65,10 @@ $header-height: 40px;
         box-sizing: border-box;
         padding: 8px;
         margin: 0 10px;
-        display: grid;
-        grid-template-columns: 1.5fr 1fr;
-        grid-template-rows: 1fr auto;
-        row-gap: 5px;
         border: 1px solid $COLOR_LIGHT_BLACK_4;
         border-radius: $BORDER_RADIUS;
+        display: flex;
+        flex-direction: column;
         cursor: pointer;
         text-decoration: none;
         position: relative;
@@ -86,6 +84,32 @@ $header-height: 40px;
         &:not(:last-child) {
             margin-bottom: 16px;
         }
+        &__grid {
+            display: grid;
+            grid-template-rows: 1fr auto;
+
+            &-underlying-trade, &-profit-payout {
+                grid-template-columns: 1fr 1fr;
+            }
+            &-profit-payout {
+                padding: 8px 0;
+                background: $COLOR_DARK_BLUE_3;
+                border-radius: $BORDER_RADIUS;
+            }
+        }
+        &__purchase {
+            &-price {
+                font-size: 12px;
+                padding: 8px;
+                display: flex;
+                justify-content: center;
+            }
+            &-label {
+                text-transform: capitalize;
+                margin-right: 0.5em;
+                color: $COLOR_DARK_BLUE_7;
+            }
+        }
         &__type {
             font-size: 12px;
             display: flex;
@@ -98,7 +122,7 @@ $header-height: 40px;
                 align-items: center;
 
                 .type-wrapper {
-                    margin: 0 4px 4px 0;
+                    margin: 0 8px 0px 0;
                 }
                 span {
                     width: 30px;
@@ -174,6 +198,27 @@ $header-height: 40px;
                 display: inline;
             }
         }
+        &__profit-loss {
+            font-size: 12px;
+            text-align: center;
+
+            &--negative {
+                color: $COLOR_RED;
+
+                &:before {
+                    content: '-';
+                    color: inherit;
+                }
+            }
+            &--positive {
+                color: $COLOR_GREEN_2;
+
+                &:before {
+                    content: '+';
+                    color: inherit;
+                }
+            }
+        }
         &__underlying-name {
             display: flex;
             justify-content: flex-start;
@@ -203,8 +248,8 @@ $header-height: 40px;
         color: $COLOR_WHITE;
 
         &-card {
-            background: $COLOR_DARK_BLUE_5;
-            border-color: $COLOR_DARK_BLUE_5;
+            background: $COLOR_DARK_BLUE_2;
+            border-color: $COLOR_DARK_BLUE_2;
             color: $COLOR_WHITE;
 
             &__remaining-time {
