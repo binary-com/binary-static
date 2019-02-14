@@ -65,26 +65,15 @@ const SimpleDuration = ({
 
 SimpleDuration.propTypes = {
     changeDurationUnit: PropTypes.func,
-    duration_min_max  : PropTypes.object,
     duration_t        : PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
     ]),
-    duration_units_list: MobxPropTypes.arrayOrObservableArray,
-    expiry_date        : PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.number,
-    ]),
+    duration_units_list : MobxPropTypes.arrayOrObservableArray,
     getDurationFromUnit : PropTypes.func,
     number_input_props  : PropTypes.object,
-    server_time         : PropTypes.object,
     shared_input_props  : PropTypes.object,
     simple_duration_unit: PropTypes.string,
-    start_date          : PropTypes.oneOfType([
-        PropTypes.number,
-        PropTypes.string,
-    ]),
-    start_time: PropTypes.string,
 };
 
 export default SimpleDuration;
