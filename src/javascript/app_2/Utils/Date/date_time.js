@@ -59,36 +59,6 @@ export const daysFromTodayTo = (date) => {
 };
 
 /**
- * return the number of days from today to date specified
- * @param  {String} date   the date to calculate number of days from today
- * @return {Number} an integer of the number of days
- */
-export const hoursFromTimeTo = (time, end) => {
-    const diff = moment.duration(end.diff(time));
-    return (!time) ? '' : diff.asHours();
-};
-
-/**
- * return the number of days from today to date specified
- * @param  {String} date   the date to calculate number of days from today
- * @return {Number} an integer of the number of days
- */
-export const minutesFromTimeTo = (time, end) => {
-    const diff = moment.duration(end.diff(time));
-    return (!time) ? '' : diff.asMinutes();
-};
-
-/**
- * return the number of days from today to date specified
- * @param  {String} date   the date to calculate number of days from today
- * @return {Number} an integer of the number of days
- */
-export const secondsFromTimeTo = (time, end) => {
-    const diff = moment.duration(end.diff(time));
-    return (!time) ? '' : diff.asSeconds();
-};
-
-/**
  * return moment duration between two dates
  * @param  {Number} epoch start time
  * @param  {Number} epoch end time
