@@ -2,9 +2,9 @@ import { PropTypes as MobxPropTypes } from 'mobx-react';
 import PropTypes                      from 'prop-types';
 import React, { Fragment }            from 'react';
 import ButtonToggleMenu               from 'App/Components/Form/button_toggle_menu.jsx';
-import DatePickerWrapper              from 'App/Components/Form/DatePicker';
 import InputField                     from 'App/Components/Form/input_field.jsx';
 import RangeSlider                    from 'App/Components/Form/RangeSlider';
+import TradingDatePicker              from '../../DatePicker';
 
 const SimpleDuration = ({
     changeDurationUnit,
@@ -43,7 +43,7 @@ const SimpleDuration = ({
                 />
             }
             { simple_duration_unit === 'd' &&
-                <DatePickerWrapper
+                <TradingDatePicker
                     alignment='left'
                     is_nativepicker={is_nativepicker}
                     mode='duration'

@@ -6,9 +6,9 @@ import {
     isTimeValid,
     setTime,
     toMoment }                     from 'Utils/Date';
-import DatePicker                  from './date_picker.jsx';
+import DatePicker                  from 'App/Components/Form/DatePicker';
 
-const DatePickerWrapper = ({
+const TradingDatePicker = ({
     is_nativepicker,
     mode,
     name,
@@ -80,7 +80,7 @@ const DatePickerWrapper = ({
     );
 };
 
-DatePickerWrapper.propTypes = {
+TradingDatePicker.propTypes = {
     is_nativepicker: PropTypes.bool,
     mode           : PropTypes.string,
     name           : PropTypes.string,
@@ -99,4 +99,4 @@ export default connect(
         symbol             : modules.trade.symbol,
         server_time        : common.server_time,
     })
-)(DatePickerWrapper);
+)(TradingDatePicker);
