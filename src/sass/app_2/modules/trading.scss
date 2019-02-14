@@ -7,7 +7,7 @@
 
         &-header {
             height: 1.5rem;
-            position: relative;
+            position: absolute;
         }
         &-info {
             color: $COLOR_LIGHT_BLACK_1;
@@ -164,6 +164,18 @@
         }
         &--down {
             right: 39%;
+        }
+    }
+    &__currency-options {
+        &--show {
+            width: 50%;
+            display: inline-block;
+        }
+    }
+    &__amount {
+        &--has-currency-options {
+            width: 50%;
+            display: inline-block;
         }
     }
 }
