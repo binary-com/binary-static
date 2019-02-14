@@ -3,7 +3,7 @@ import { PropTypes as MobxPropTypes } from 'mobx-react';
 import PropTypes                      from 'prop-types';
 import React, { Fragment }            from 'react';
 import TimePicker                     from 'App/Components/Form/time_picker.jsx';
-import DatePicker                     from 'App/Components/Form/DatePicker';
+import DatePickerWrapper              from 'App/Components/Form/DatePicker';
 import Dropdown                       from 'App/Components/Form/DropDown';
 import ButtonToggleMenu               from 'App/Components/Form/button_toggle_menu.jsx';
 import InputField                     from 'App/Components/Form/input_field.jsx';
@@ -18,7 +18,6 @@ import {
 const AdvancedDuration = ({
     advanced_duration_unit,
     advanced_expiry_type,
-    duration_min_max,
     duration_units_list,
     duration_t,
     changeDurationUnit,
@@ -35,23 +34,19 @@ const AdvancedDuration = ({
     shared_input_props,
     start_date,
     start_time,
-    symbol,
     market_close_times,
     onChangeUiStore,
 }) => {
     const moment_expiry      = toMoment(expiry_date || server_time);
     let is_24_hours_contract = false;
     let expiry_time_sessions = sessions;
-    let max_date_duration,
-        min_date_expiry;
+    let min_time_expiry;
 
     if (expiry_type === 'endtime') {
-        const max_daily_duration = duration_min_max.daily ? duration_min_max.daily.max : 365 * 24 * 3600;
         const moment_contract_start_date_time =
             setTime(toMoment(start_date || server_time), (isTimeValid(start_time) ? start_time : server_time.format('HH:mm')));
         const has_intraday_duration_unit = hasIntradayDurationUnit(duration_units_list);
 
-        // When the contract start is forwarding or is not forwarding but the expiry date is as same as start date, the contract should be expired within 24 hours
         is_24_hours_contract = (!!start_date || moment_expiry.isSame(toMoment(server_time), 'day')) && has_intraday_duration_unit;
 
         if (is_24_hours_contract) {
@@ -59,22 +54,12 @@ const AdvancedDuration = ({
             const expiry_date_market_close = setTime(expiry_date_time.clone(), market_close_times.slice(-1)[0]);
             const is_expired_next_day      = expiry_date_time.diff(moment_contract_start_date_time, 'day') === 1;
 
+            min_time_expiry = moment_contract_start_date_time.clone().startOf('day');
             expiry_time_sessions = [{
                 open : is_expired_next_day ? expiry_date_time.clone().startOf('day') : expiry_date_time.clone(),
                 // when the expiry_date is on the next day of the start_date, the session should be close 5 min before the start_time of the contract.
                 close: is_expired_next_day ? minDate(expiry_date_time.clone().subtract(10, 'minute'), expiry_date_market_close) : expiry_date_market_close.clone(),
             }];
-
-            min_date_expiry = moment_contract_start_date_time.clone().startOf('day');
-            max_date_duration = moment_contract_start_date_time.clone().add(
-                start_date ? 24 * 3600 : (max_daily_duration), 'second');
-        } else {
-            min_date_expiry = moment_contract_start_date_time.clone().startOf('day');
-            max_date_duration = moment_contract_start_date_time.clone().add(max_daily_duration, 'second');
-
-            if (!has_intraday_duration_unit) {
-                min_date_expiry.add(1, 'day');
-            }
         }
     }
 
@@ -121,21 +106,11 @@ const AdvancedDuration = ({
                             />
                         }
                         { advanced_duration_unit === 'd' &&
-                            <DatePicker
-                                alignment='left'
-                                disable_year_selector
-                                disable_trading_events
-                                has_today_btn
+                            <DatePickerWrapper
                                 is_nativepicker={is_nativepicker}
-                                label={duration_units_list.length === 1 ? duration_units_list[0].text : null}
-                                max_date={max_date_duration}
-                                min_date={min_date_expiry}
                                 mode='duration'
                                 name='duration'
-                                onChange={onChange}
-                                start_date={start_date}
-                                underlying={symbol}
-                                value={expiry_date}
+                                server_time={server_time}
                             />
                         }
                         { (advanced_duration_unit !== 't' && advanced_duration_unit !== 'd') &&
@@ -151,20 +126,10 @@ const AdvancedDuration = ({
                 </Fragment> :
                 <Fragment>
                     <div className={endtime_container_class}>
-                        <DatePicker
-                            name='expiry_date'
-                            has_today_btn
-                            min_date={min_date_expiry}
-                            max_date={max_date_duration}
-                            start_date={start_date}
-                            onChange={onChange}
-                            value={expiry_date}
-                            is_read_only
-                            is_nativepicker={is_nativepicker}
+                        <DatePickerWrapper
                             alignment='left'
-                            disable_year_selector
-                            disable_trading_events
-                            underlying={symbol}
+                            is_nativepicker={is_nativepicker}
+                            name='expiry_date'
                             // validation_errors={validation_errors.expiry_date} TODO: add validation_errors for expiry date
                         />
                         {is_24_hours_contract &&
@@ -175,7 +140,7 @@ const AdvancedDuration = ({
                                 placeholder='12:00'
                                 sessions={expiry_time_sessions}
                                 start_date={moment_expiry.unix()}
-                                value={expiry_time || min_date_expiry.format('HH:mm')}
+                                value={expiry_time || min_time_expiry.format('HH:mm')}
                                 is_clearable={false}
                                 is_nativepicker={is_nativepicker}
                                 // validation_errors={validation_errors.end_time} TODO: add validation_errors for end time
