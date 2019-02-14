@@ -66,7 +66,7 @@ $header-height: 40px;
         padding: 8px;
         margin: 0 10px;
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1.5fr 1fr;
         grid-template-rows: 1fr auto;
         row-gap: 5px;
         border: 1px solid $COLOR_LIGHT_BLACK_4;
@@ -87,6 +87,9 @@ $header-height: 40px;
         }
         &__type {
             font-size: 12px;
+            display: flex;
+            justify-content: flex-end;
+            margin-right: 0.5rem;
 
             .contract-type {
                 display: flex;
@@ -102,10 +105,8 @@ $header-height: 40px;
             }
         }
         &__symbol {
-            font-size: 10px;
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
+            font-size: 12px;
+            margin-left: 0.5rem;
         }
         &__indicative {
             font-size: 12px;
@@ -171,6 +172,11 @@ $header-height: 40px;
             .remaining-time {
                 display: inline;
             }
+        }
+        &__underlying-name {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
         }
     }
     /*

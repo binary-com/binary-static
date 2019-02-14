@@ -25,8 +25,13 @@ const PositionsDrawerCard = ({
     >
         <React.Fragment>
             <div className='positions-drawer-card__underlying-name'>
-                <div className={classNames(underlying_code)} />
-                {underlying_code}
+                <div
+                    className={classNames(
+                        'icons-underlying',
+                        `icons-underlying__ic-${underlying_code || 'default'}`
+                    )}
+                />
+                <span className='positions-drawer-card__symbol'>{underlying_name}</span>
             </div>
             <div className='positions-drawer-card__type'>
                 <ContractTypeCell type={type} />
@@ -34,7 +39,6 @@ const PositionsDrawerCard = ({
             <div className={`positions-drawer-card__indicative positions-drawer-card__indicative--${status}`}>
                 <Money amount={indicative} currency={currency} />
             </div>
-            <span className='positions-drawer-card__symbol'>{underlying_name}</span>
             <span className='positions-drawer-card__remaining-time'>
                 <RemainingTime end_time={expiry_time} />
             </span>
