@@ -22,7 +22,7 @@ $header-height: 40px;
     transform: translateX(-100%);
     will-change: transform, opacity;
     transition: opacity 0.3s ease, transform 0.3s ease;
-    border-radius: 4px;
+    border-radius: $BORDER_RADIUS;
 
     &--open {
         transform: translateX(#{$POSITIONS_DRAWER_MARGIN});
@@ -70,9 +70,10 @@ $header-height: 40px;
         grid-template-rows: 1fr auto;
         row-gap: 5px;
         border: 1px solid $COLOR_LIGHT_BLACK_4;
-        border-radius: 4px;
+        border-radius: $BORDER_RADIUS;
         cursor: pointer;
         text-decoration: none;
+        position: relative;
         color: $COLOR_LIGHT_BLACK_1;
 
         &.active, &:hover {
@@ -177,6 +178,16 @@ $header-height: 40px;
             display: flex;
             justify-content: flex-start;
             align-items: center;
+        }
+        &:before {
+            content: '';
+            position: absolute;
+            height: 52px;
+            width: calc(100% + 2px);
+            left: -1px;
+            top: -1px;
+            border-radius: $BORDER_RADIUS;
+            background-image: linear-gradient(to top, rgba(16, 19, 32, 0), rgba(0, 148, 117, 0.16));
         }
     }
     /*

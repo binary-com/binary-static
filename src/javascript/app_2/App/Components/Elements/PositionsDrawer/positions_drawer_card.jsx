@@ -14,6 +14,7 @@ const PositionsDrawerCard = ({
     id,
     indicative,
     profit_loss,
+    purchase,
     status,
     type,
     underlying_code,
@@ -52,6 +53,9 @@ const PositionsDrawerCard = ({
             >
                 <Money amount={profit_loss} currency={currency} />
             </div>
+            <div className={classNames('positions-drawer-card__purchase')}>
+                <Money amount={purchase} currency={currency} />
+            </div>
         </React.Fragment>
     </BinaryLink>
 );
@@ -65,6 +69,7 @@ PositionsDrawerCard.propTypes = {
     id             : PropTypes.number,
     indicative     : PropTypes.number,
     profit_loss    : PropTypes.number,
+    purchase       : PropTypes.number,
     status         : PropTypes.string,
     type           : PropTypes.string,
     underlying_code: PropTypes.string,
