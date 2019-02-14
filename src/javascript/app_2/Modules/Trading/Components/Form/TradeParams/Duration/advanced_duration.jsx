@@ -156,7 +156,6 @@ AdvancedDuration.propTypes = {
     advanced_duration_unit: PropTypes.string,
     advanced_expiry_type  : PropTypes.string,
     changeDurationUnit    : PropTypes.func,
-    duration_min_max      : PropTypes.object,
     duration_t            : PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
@@ -183,7 +182,6 @@ AdvancedDuration.propTypes = {
         PropTypes.string,
     ]),
     start_time: PropTypes.string,
-    symbol    : PropTypes.string,
 };
 
 export default AdvancedDuration;
