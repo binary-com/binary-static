@@ -78,7 +78,7 @@ const UsbPage = () => (
                     <div className='gr-9'>
                         <div className='separator-md' />
                         <div className='video-container'>
-                            <iframe src='https://www.youtube.com/embed/pl2jq7EBvdU?rel=0&showinfo=0' frameBorder='0' allow='autoplay; encrypted-media' allowFullScreen />
+                            <iframe src='https://www.youtube.com/embed/cdkwhBK5fnk?rel=0&showinfo=0' frameBorder='0' allow='autoplay; encrypted-media' allowFullScreen />
                         </div>
                         <div className='separator-md' />
                     </div>
