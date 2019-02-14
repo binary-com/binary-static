@@ -6,6 +6,7 @@ import React        from 'react';
 const Input = ({
     changeValue,
     checked,
+    className,
     data_value,
     data_tip,
     display_value,
@@ -27,7 +28,7 @@ const Input = ({
     <input
         autoComplete={is_autocomplete_disabled ? 'off' : undefined}
         checked={checked ? 'checked' : ''}
-        className={classNames({ error: has_error })}
+        className={classNames(className, { error: has_error })}
         data-for={`error_tooltip_${name}`}
         data-tip={data_tip}
         data-value={data_value}
@@ -49,6 +50,7 @@ const Input = ({
 Input.propTypes = {
     changeValue: PropTypes.func,
     checked    : PropTypes.number,
+    className  : PropTypes.string,
     data_tip   : PropTypes.string,
     data_value : PropTypes.oneOfType([
         PropTypes.number,

@@ -38,12 +38,10 @@ const Amount = ({
             </div>
         );
     }
-    const amount_container_class = classNames('amount-container', {
-        'three-columns': !is_single_currency,
-    });
+    const amount_container_class = classNames({ 'three-columns': !is_single_currency });
 
     return (
-        <Fieldset>
+        <Fieldset className='trade-container__fieldset'>
             <div className={amount_container_class}>
                 <ButtonToggleMenu
                     buttons_arr={basis_list}
@@ -63,6 +61,8 @@ const Amount = ({
                     />
                 }
                 <InputField
+                    classNameInput='trade-container__input'
+                    classNamePrefix='trade-container__currency'
                     className={classNames({ 'has-currency-options': !is_single_currency })}
                     error_messages={validation_errors.amount}
                     fractional_digits={getDecimalPlaces(currency)}

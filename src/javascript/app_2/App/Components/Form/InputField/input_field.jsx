@@ -1,3 +1,4 @@
+import classNames                from 'classnames';
 import {
     observer,
     PropTypes as MobxPropTypes } from 'mobx-react';
@@ -11,6 +12,8 @@ import Tooltip                   from '../../Elements/tooltip.jsx';
 const InputField = ({
     checked,
     className,
+    classNameInput,
+    classNamePrefix,
     data_tip,
     data_value,
     error_messages,
@@ -114,25 +117,26 @@ const InputField = ({
 
     const input =
         <Input
-            checked={checked}
-            has_error={has_error}
-            is_disabled={is_disabled}
-            name={name}
-            data_value={data_value}
-            data_tip={data_tip}
-            fractional_digits={fractional_digits}
-            id={id}
-            max_length={max_length}
-            is_incrementable={is_incrementable}
-            onKeyPressed={onKeyPressed}
             changeValue={changeValue}
-            onClick={onClick}
-            placeholder={placeholder}
+            checked={checked}
+            className={classNameInput}
+            data_tip={data_tip}
+            data_value={data_value}
+            display_value={display_value}
+            fractional_digits={fractional_digits}
+            has_error={has_error}
+            id={id}
+            is_autocomplete_disabled={is_autocomplete_disabled}
+            is_disabled={is_disabled}
+            is_incrementable={is_incrementable}
             is_read_only={is_read_only}
+            max_length={max_length}
+            name={name}
+            onClick={onClick}
+            onKeyPressed={onKeyPressed}
+            placeholder={placeholder}
             required={required}
             type={type}
-            display_value={display_value}
-            is_autocomplete_disabled={is_autocomplete_disabled}
         />;
 
     const increment_buttons =
@@ -152,7 +156,7 @@ const InputField = ({
             <label htmlFor={name} className='input-label'>{label}</label>
             }
             {!!prefix &&
-            <span className={`symbols ${is_expandable ? 'expandable-symbols' : null} ${prefix.toLowerCase()}`} />
+            <span className={classNames(classNamePrefix, 'symbols', prefix.toLowerCase(), {'expandable-symbols': is_expandable})} />
             }
             {!!helper &&
             <span className='input-helper'>{helper}</span>
@@ -181,6 +185,8 @@ const InputField = ({
 InputField.propTypes = {
     checked                 : PropTypes.number,
     className               : PropTypes.string,
+    classNameInput          : PropTypes.string,
+    classNamePrefix         : PropTypes.string,
     error_messages          : MobxPropTypes.arrayOrObservableArray,
     fractional_digits       : PropTypes.number,
     helper                  : PropTypes.string,
