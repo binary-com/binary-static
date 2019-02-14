@@ -15,7 +15,7 @@
         padding: 0;
         border-radius: 4px;
         box-sizing: border-box;
-        font-size: 16px;
+        font-size: 12px;
         font-weight: 300;
         margin: 0;
         cursor: pointer;
@@ -144,7 +144,7 @@
 }
 
 // Dark Theme
-.theme-wrapper.dark {
+.theme--dark {
     .time-picker {
         .time-picker-icon {
             g {

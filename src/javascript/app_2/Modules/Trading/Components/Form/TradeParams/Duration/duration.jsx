@@ -137,7 +137,7 @@ const Duration = ({
     const has_toggle = expiry_list.length > 1 || duration_units_list.length > 1;
 
     return (
-        <Fieldset>
+        <Fieldset className='trade-container__fieldset'>
             { !has_toggle &&
                 <RangeSlider
                     name='duration'

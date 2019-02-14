@@ -13,7 +13,7 @@
         -webkit-animation: sk-stretchdelay 1.2s infinite ease-in-out;
         animation: sk-stretchdelay 1.2s infinite ease-in-out;
     }
-    &.dark > div {
+    .dark > div {
         background-color: $COLOR_DARK_BLUE_5;
     }
     &.white > div {
