@@ -110,7 +110,6 @@ const AdvancedDuration = ({
                                 is_nativepicker={is_nativepicker}
                                 mode='duration'
                                 name='duration'
-                                server_time={server_time}
                             />
                         }
                         { (advanced_duration_unit !== 't' && advanced_duration_unit !== 'd') &&

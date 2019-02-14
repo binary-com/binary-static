@@ -163,7 +163,7 @@ class DatePicker extends React.Component {
     }
 
     renderInputField = () => {
-        const { is_read_only, mode, name, error_messages, label } = this.props;
+        const { is_read_only, mode, name, label } = this.props;
         let { placeholder } = this.props;
         let type, onChange;
 
@@ -182,7 +182,6 @@ class DatePicker extends React.Component {
                 className='datepicker__input'
                 data-tip={false}
                 data-value={this.state.value}
-                error_messages={error_messages}
                 label={label}
                 is_read_only={is_read_only}
                 name={name}

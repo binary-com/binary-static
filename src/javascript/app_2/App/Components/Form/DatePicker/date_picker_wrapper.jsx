@@ -1,6 +1,6 @@
 import PropTypes                   from 'prop-types';
 import React                       from 'react';
-import { Observer }                from 'mobx-react';
+import { connect }                 from 'Stores/connect';
 import { hasIntradayDurationUnit } from 'Stores/Modules/Trading/Helpers/duration';
 import {
     isTimeValid,
@@ -13,9 +13,15 @@ const DatePickerWrapper = ({
     mode,
     name,
     server_time,
+    expiry_date,
+    duration_min_max,
+    duration_units_list,
+    start_time,
+    start_date,
+    expiry_type,
+    onChange,
+    symbol,
 }) => {
-    const { expiry_date, duration_min_max, duration_units_list,
-        start_time, start_date, expiry_type, onChange, symbol } = this.props;
     const moment_expiry      = toMoment(expiry_date || server_time);
     let is_24_hours_contract = false;
     let max_date_duration,
@@ -59,9 +65,9 @@ const DatePickerWrapper = ({
             disable_year_selector
             disable_trading_events
             has_today_btn
-            label={duration_units_list.length === 1 ? duration_units_list[0].text : null}
             is_nativepicker={is_nativepicker}
             is_read_only={is_read_only}
+            label={duration_units_list.length === 1 ? duration_units_list[0].text : null}
             mode={mode}
             name={name}
             onChange={onChange}
@@ -76,9 +82,21 @@ const DatePickerWrapper = ({
 
 DatePickerWrapper.propTypes = {
     is_nativepicker: PropTypes.bool,
-    mode           : PropTypes.array,
+    mode           : PropTypes.string,
     name           : PropTypes.string,
     server_time    : PropTypes.object,
 };
 
-export default Observer(DatePickerWrapper);
+export default connect(
+    ({ modules, common }) => ({
+        expiry_date        : modules.trade.expiry_date,
+        duration_min_max   : modules.trade.duration_min_max,
+        duration_units_list: modules.trade.duration_units_list,
+        start_time         : modules.trade.start_time,
+        start_date         : modules.trade.start_date,
+        expiry_type        : modules.trade.expiry_type,
+        onChange           : modules.trade.onChange,
+        symbol             : modules.trade.symbol,
+        server_time        : common.server_time,
+    })
+)(DatePickerWrapper);

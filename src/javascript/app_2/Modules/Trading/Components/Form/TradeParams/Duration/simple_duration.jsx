@@ -2,19 +2,14 @@ import { PropTypes as MobxPropTypes } from 'mobx-react';
 import PropTypes                      from 'prop-types';
 import React, { Fragment }            from 'react';
 import ButtonToggleMenu               from 'App/Components/Form/button_toggle_menu.jsx';
-import DatePicker                     from 'App/Components/Form/DatePicker';
+import DatePickerWrapper              from 'App/Components/Form/DatePicker';
 import InputField                     from 'App/Components/Form/input_field.jsx';
 import RangeSlider                    from 'App/Components/Form/RangeSlider';
-import {
-    isTimeValid,
-    setTime,
-    toMoment }                        from 'Utils/Date';
 
 const SimpleDuration = ({
     changeDurationUnit,
     duration_t,
     duration_units_list,
-    duration_min_max,
     expiry_date,
     getDurationFromUnit,
     is_nativepicker,
@@ -22,16 +17,8 @@ const SimpleDuration = ({
     onChange,
     shared_input_props,
     simple_duration_unit,
-    server_time,
     start_date,
-    start_time,
 }) => {
-    const moment_contract_start_date_time = setTime(toMoment(start_date || server_time),
-        (isTimeValid(start_time) ? start_time : server_time.format('HH:mm')));
-
-    const min_date_expiry = moment_contract_start_date_time.clone().add(duration_min_max.daily.min, 'second');
-    const max_date_duration = moment_contract_start_date_time.clone().add(duration_min_max.daily.max, 'second');
-
     const filterMinutesAndTicks = (arr) => {
         const filtered_arr = arr.filter(du => du.value === 't' || du.value === 'm');
         if (filtered_arr.length <= 1) return [];
@@ -59,19 +46,11 @@ const SimpleDuration = ({
                 />
             }
             { simple_duration_unit === 'd' &&
-                <DatePicker
+                <DatePickerWrapper
                     alignment='left'
-                    disabled_selector={['year']}
-                    has_today_btn
                     is_nativepicker={is_nativepicker}
-                    label={has_label ? duration_units_list[0].text : null}
-                    max_date={max_date_duration}
-                    min_date={min_date_expiry}
-                    onChange={onChange}
                     mode='duration'
                     name='duration'
-                    start_date={start_date}
-                    value={expiry_date}
                 />
             }
             { (simple_duration_unit !== 't' && simple_duration_unit !== 'd') &&
