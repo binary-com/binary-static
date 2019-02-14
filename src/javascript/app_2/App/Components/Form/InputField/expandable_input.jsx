@@ -12,11 +12,7 @@ class ExpandableInput extends React.Component {
             textareaSize.innerHTML = `${input.value} \n`;
         };
         autoSize();
-
-        document.addEventListener('DOMContentLoaded', () => {
-            autoSize();
-            input.addEventListener('input', autoSize);
-        });
+        input.addEventListener('input', autoSize);
     }
 
     render() {

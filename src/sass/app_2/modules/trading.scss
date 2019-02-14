@@ -328,85 +328,6 @@
             width: 50%;
             display: inline-block;
         }
-        .expandable-input-wrapper {
-            margin: 0 30px;
-            display: block;
-        }
-        .expandable-input-container {
-            background: $COLOR_WHITE;
-            border-radius: $BORDER_RADIUS;
-            border: 1px solid $COLOR_WHITE !important;
-
-            .expandable-input {
-                position: relative;
-                width: fit-content;
-                min-width: 15px;
-                height: 30px;
-                float: right;
-
-                input, .input-size {
-                    box-sizing: border-box;
-                    padding: 4px;
-                    border: 1px solid;
-                    overflow: hidden;
-                    width: 100%;
-                    align-self: unset;
-                }
-                input {
-                    height: 100%;
-                    position: absolute;
-                    resize: none;
-                    white-space: normal;
-                    background: none !important;
-                    border: none;
-                    text-align: left;
-                    padding-top: 6px;
-
-                    &.error {
-                        border: none !important;
-                    }
-                    &:focus {
-                        border: none;
-                        box-shadow: none !important;
-                    }
-                }
-                .input-size {
-                    visibility: hidden;
-                    white-space: pre-wrap;
-                    word-wrap: break-word;
-                    overflow-wrap: break-word;
-                }
-            }
-            .tooltip {
-                display: flex;
-                flex-direction: row;
-                position: relative;
-                width: fit-content;
-                margin: 0 auto;
-            }
-            .expandable-symbols {
-                float: left;
-                display: flex;
-                text-align: right;
-                flex-grow: 1;
-                position: relative;
-                background: none !important;
-
-                &:before {
-                    position: absolute;
-                    right: 0;
-                }
-            }
-            &.error {
-                color: $COLOR_RED;
-                border: 1px solid $COLOR_RED !important;
-            }
-        }
-        .input-wrapper {
-            &__button {
-                margin-top: 4px;
-            }
-        }
     }
     div.purchase-wrapper {
         position: relative;
@@ -793,10 +714,5 @@
                 fill: $COLOR_WHITE;
             }
         }
-    }
-    .expandable-input-container {
-        background: $COLOR_DARK_BLUE_2;
-        border-radius: $BORDER_RADIUS;
-        border: 1px solid $COLOR_DARK_BLUE_2 !important;
     }
 }
