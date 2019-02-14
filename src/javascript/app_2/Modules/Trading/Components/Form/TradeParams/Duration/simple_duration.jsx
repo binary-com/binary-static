@@ -42,6 +42,7 @@ const SimpleDuration = ({
             }
             { simple_duration_unit !== 't' &&
                 <InputField
+                    classNameInput='trade-container__input'
                     name='duration'
                     label={has_label ? duration_units_list[0].text : null}
                     value={getDurationFromUnit(simple_duration_unit)}

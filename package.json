@@ -95,6 +95,7 @@
     "sitemap": "1.13.0",
     "stylelint": "7.13.0",
     "stylelint-formatter-pretty": "1.0.3",
+    "stylelint-selector-bem-pattern": "2.0.0",
     "svgo": "0.7.2",
     "sw-precache-webpack-plugin": "0.11.5",
     "time-grunt": "1.4.0",
@@ -108,7 +109,7 @@
   },
   "dependencies": {
     "@binary-com/binary-document-uploader": "2.4.2",
-    "@binary-com/binary-style": "0.2.15",
+    "@binary-com/binary-style": "0.2.16",
     "@binary-com/webtrader-charts": "0.4.2",
     "babel-polyfill": "6.26.0",
     "canvas-toBlob": "1.0.0",

@@ -131,7 +131,7 @@
             }
             &__item {
                 width: 100%;
-                font-size: 1rem;
+                font-size: 0.85rem;
 
                 span {
                     text-transform: capitalize;
@@ -201,7 +201,7 @@
 }
 
 // Dark Theme
-.theme-wrapper.dark {
+.theme--dark {
     .dropdown-container {
         .dropdown__display {
             background: $COLOR_DARK_BLUE_2;
@@ -233,6 +233,9 @@
                     background: $COLOR_DARK_BLUE_4;
                 }
             }
+        }
+        .select-arrow .arrow-path {
+            fill: $COLOR_DARK_BLUE_7;
         }
     }
 }
