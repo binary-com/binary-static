@@ -1,4 +1,4 @@
-span.tooltip {
+.tooltip {
     text-decoration: underline;
     text-decoration-style: dotted;
     color: $COLOR_DARK_BLUE_5;
@@ -132,8 +132,8 @@ span.tooltip {
 }
 
 // Dark Theme
-.theme-wrapper.dark {
-    span.tooltip {
+.theme--dark {
+    .tooltip {
         color: $COLOR_WHITE;
 
         &:before {
@@ -160,6 +160,9 @@ span.tooltip {
             &:after {
                 border-bottom-color: rgba(255, 255, 255, 0.88);
             }
+        }
+        i.question:after {
+            content: url('../images/common/tooltip/ic_tooltip_question_dark.svg ');
         }
     }
 }

@@ -131,17 +131,6 @@
         position: relative;
         width: 100%;
 
-        &:before {
-            content: '';
-            position: absolute;
-            height: 100%;
-            width: 20px;
-            top: 0;
-            left: -2px;
-            background-image: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
-            pointer-events: none;
-            z-index: 2;
-        }
         // smartchart library style fixes
         .cq-context {
             top: 0;

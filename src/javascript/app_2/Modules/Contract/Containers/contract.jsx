@@ -26,7 +26,7 @@ const Contract = ({
                     <ErrorComponent message={error_message} />
                     :
                     <div className='trade-container'>
-                        <div className='chart-container notice-msg'>
+                        <div className='chart-container'>
                             {symbol &&
                                 <React.Suspense fallback={<div>Loading... </div>}>
                                     <SmartChart

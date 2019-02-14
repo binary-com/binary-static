@@ -36,10 +36,9 @@ const Purchase = ({
             <Button
                 is_disabled={is_disabled}
                 id={`purchase_${type}`}
-                className='primary green btn-purchase'
+                className='primary btn-purchase'
                 has_effect
                 onClick={() => { onClickPurchase(info.id, info.stake, type); }}
-                wrapperClassName='submit-section'
             >
                 <React.Fragment>
                     <div className='btn-purchase__effect-main' />
@@ -47,13 +46,13 @@ const Purchase = ({
                     <div className='btn-purchase__content'>
                         <div className='btn-purchase__trade-type'>
                             <IconTradeType type={type.toLowerCase()} />
-                            <span>{localize('[_1]', trade_types[type])}</span>
+                            <span className='btn-purchase__trade-type-text'>{localize('[_1]', trade_types[type])}</span>
                         </div>
                     </div>
                     <div className='btn-purchase__info'>
                         <div className='btn-purchase__return'>{is_disabled ? '---,-' : info.returns}</div>
                         <div className='btn-purchase__profit'>
-                            {is_disabled ? '--,--' : <Money amount={info.profit} currency={currency} />}
+                            {is_disabled ? '--,--' : <Money amount={info.profit} currency={currency} className='btn-purchase__currency' />}
                         </div>
                     </div>
                 </React.Fragment>
@@ -64,7 +63,7 @@ const Purchase = ({
 
         return (
             <Fieldset
-                className='purchase-option'
+                className='trade-container__fieldset purchase-container__option'
                 key={idx}
                 onMouseEnter={() => { onHoverPurchase(true, type); }}
                 onMouseLeave={() => { onHoverPurchase(false); }}
@@ -81,7 +80,7 @@ const Purchase = ({
                     :
                     <React.Fragment>
                         {(!is_purchase_enabled && idx === 0) &&
-                        <UILoader />
+                        <UILoader classNameBlock='purchase-container__loading' />
                         }
                         <ContractInfo
                             currency={currency}

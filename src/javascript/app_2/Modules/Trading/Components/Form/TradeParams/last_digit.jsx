@@ -21,6 +21,7 @@ const LastDigit = ({
     const arr_five = [...Array(5).keys()];
     return (
         <Fieldset
+            className='trade-container__fieldset'
             header={localize('Last Digit Prediction')}
             is_center
         >

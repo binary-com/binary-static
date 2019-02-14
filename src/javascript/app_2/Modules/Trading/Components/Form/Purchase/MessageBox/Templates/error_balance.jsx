@@ -3,10 +3,11 @@ import { localize }        from '_common/localize';
 import Button              from 'App/Components/Form/button.jsx';
 
 const ErrorBalance = () => (
-    <div className='purchase-login-wrapper'>
-        <span className='info-text'>{localize('You have an insufficient amount of balance.')}</span>
+    <div className='purchase-container__error-login'>
+        <span className='purchase-container__error-info purchase-container__error-login-info'>{localize('You have an insufficient amount of balance.')}</span>
         <Button
-            className='secondary orange'
+            className='purchase-container__error-login-btn secondary orange'
+            classNameSpan='purchase-container__error-login-btn-span'
             has_effect
             text={localize('Deposit')}
         />
