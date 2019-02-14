@@ -24,32 +24,25 @@ const TradingDatePicker = ({
     is_24_hours_contract,
 }) => {
     let max_date_duration,
-        min_date_expiry,
-        is_read_only;
+        min_date_expiry;
+    const is_read_only = expiry_type === 'endtime' ? true : false; // eslint-disable-line no-unneeded-ternary
     const moment_contract_start_date_time =
         setTime(toMoment(start_date || server_time), (isTimeValid(start_time) ? start_time : server_time.format('HH:mm')));
 
-    if (expiry_type === 'endtime') {
-        const max_daily_duration = duration_min_max.daily ? duration_min_max.daily.max : 365 * 24 * 3600;
-        const has_intraday_duration_unit = hasIntradayDurationUnit(duration_units_list);
-        is_read_only = true;
+    const max_daily_duration = duration_min_max.daily ? duration_min_max.daily.max : 365 * 24 * 3600;
+    const has_intraday_duration_unit = hasIntradayDurationUnit(duration_units_list);
 
-        if (is_24_hours_contract) {
-            min_date_expiry = moment_contract_start_date_time.clone().startOf('day');
-            max_date_duration = moment_contract_start_date_time.clone().add(
-                start_date ? 24 * 3600 : (max_daily_duration), 'second');
-        } else {
-            min_date_expiry = moment_contract_start_date_time.clone().startOf('day');
-            max_date_duration = moment_contract_start_date_time.clone().add(max_daily_duration, 'second');
-
-            if (!has_intraday_duration_unit) {
-                min_date_expiry.add(1, 'day');
-            }
-        }
+    if (is_24_hours_contract) {
+        min_date_expiry = moment_contract_start_date_time.clone().startOf('day');
+        max_date_duration = moment_contract_start_date_time.clone().add(
+            start_date ? 24 * 3600 : (max_daily_duration), 'second');
     } else {
-        is_read_only = false;
-        min_date_expiry = moment_contract_start_date_time.clone().add(duration_min_max.daily.min, 'second');
-        max_date_duration = moment_contract_start_date_time.clone().add(duration_min_max.daily.max, 'second');
+        min_date_expiry = moment_contract_start_date_time.clone().startOf('day');
+        max_date_duration = moment_contract_start_date_time.clone().add(max_daily_duration, 'second');
+
+        if (!has_intraday_duration_unit) {
+            min_date_expiry.add(1, 'day');
+        }
     }
 
     return (

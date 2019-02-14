@@ -34,7 +34,6 @@ const AdvancedDuration = ({
 
     if (expiry_type === 'endtime') {
         const has_intraday_duration_unit = hasIntradayDurationUnit(duration_units_list);
-
         is_24_hours_contract = (!!start_date || moment_expiry.isSame(toMoment(server_time), 'day')) && has_intraday_duration_unit;
     }
 
@@ -109,10 +108,7 @@ const AdvancedDuration = ({
                             // validation_errors={validation_errors.expiry_date} TODO: add validation_errors for expiry date
                         />
                         {is_24_hours_contract &&
-                            <TradingTimePicker
-                                name='expiry_time'
-                                is_24_hours_contract={is_24_hours_contract}
-                            />
+                            <TradingTimePicker name='expiry_time' />
                             // validation_errors={validation_errors.end_time} TODO: add validation_errors for end time
                         }
                     </div>
