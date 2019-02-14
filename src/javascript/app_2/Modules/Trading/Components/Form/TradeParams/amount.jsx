@@ -7,11 +7,12 @@ import React                     from 'react';
 import {
     addComma,
     getDecimalPlaces }           from '_common/base/currency_base';
-import ButtonToggleMenu          from 'App/Components/Form/button_toggle_menu.jsx';
+import ToggleButtonGroup         from 'App/Components/Elements/ToggleButton/toggle_button_group.jsx';
 import Dropdown                  from 'App/Components/Form/DropDown';
 import Fieldset                  from 'App/Components/Form/fieldset.jsx';
 import InputField                from 'App/Components/Form/InputField/input_field.jsx';
 import AllowEquals               from './allow_equals.jsx';
+import ToggleButton from "../../../../../App/Components/Elements/ToggleButton/toggle_button";
 
 const Amount = ({
     amount,
@@ -43,15 +44,19 @@ const Amount = ({
     return (
         <Fieldset className='trade-container__fieldset'>
             <div className={amount_container_class}>
-                <ButtonToggleMenu
-                    buttons_arr={basis_list}
+                <ToggleButtonGroup
                     name='basis'
-                    onChange={onChange}
                     value={basis}
-                />
+                >
+                    {basis_list.map(() =>
+                        <ToggleButton
+                            onClick={onChange}
+                        />)}
+
+                </ToggleButtonGroup>
                 {!is_single_currency &&
                 <Dropdown
-                    className={classNames({'trade-container__currency-options--show': !is_single_currency})}
+                    className={classNames({ 'trade-container__currency-options--show': !is_single_currency })}
                     is_alignment_left
                     is_nativepicker={is_nativepicker}
                     list={currencies_list}
@@ -61,7 +66,7 @@ const Amount = ({
                 />
                 }
                 <InputField
-                    className={classNames({'trade-container__amount--has-currency-options': !is_single_currency})}
+                    className={classNames({ 'trade-container__amount--has-currency-options': !is_single_currency })}
                     classNameInput='trade-container__input'
                     classNamePrefix='trade-container__currency'
                     error_messages={validation_errors.amount}

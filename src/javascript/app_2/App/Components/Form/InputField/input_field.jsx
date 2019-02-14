@@ -156,7 +156,7 @@ const InputField = ({
             <label htmlFor={name} className='input-label'>{label}</label>
             }
             {!!prefix &&
-            <span className={classNames(classNamePrefix, 'symbols', prefix.toLowerCase(), {'expandable-symbols': is_expandable})} />
+            <span className={classNames(classNamePrefix, 'symbols', prefix.toLowerCase(), { 'expandable-symbols': is_expandable })} />
             }
             {!!helper &&
             <span className='input-helper'>{helper}</span>
