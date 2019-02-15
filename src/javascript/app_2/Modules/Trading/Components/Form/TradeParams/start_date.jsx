@@ -6,7 +6,7 @@ import React                    from 'react';
 import { localize }             from '_common/localize';
 import Dropdown                 from 'App/Components/Form/DropDown';
 import Fieldset                 from 'App/Components/Form/fieldset.jsx';
-import TimePicker               from 'App/Components/Form/time_picker.jsx';
+import TimePicker               from 'App/Components/Form/TimePicker';
 
 /* TODO:
     1. update sessions list when the selected one doesn’t have any enabled time
@@ -16,7 +16,6 @@ const StartDate = ({
     is_minimized,
     is_nativepicker,
     onChange,
-    sessions,
     start_date,
     start_dates_list,
     start_time,
@@ -49,12 +48,10 @@ const StartDate = ({
             {(!is_today && start_time) &&
                 <TimePicker
                     onChange={onChange}
-                    is_align_right
                     name='start_time'
                     value={start_time}
                     placeholder='12:00'
-                    start_date={start_date}
-                    sessions={sessions}
+                    start_time={start_date}
                     is_clearable={false}
                     is_nativepicker={is_nativepicker}
                     validation_errors={validation_errors.start_time}

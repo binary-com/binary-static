@@ -1,94 +1,66 @@
 .time-picker {
+    font-size: 1.6em;
     position: relative;
 
     &.padding {
         padding: 1.6em;
     }
     .time-picker-icon {
+        left: 5%;
         margin: auto;
         position: absolute;
-        top: 0.8em;
-        left: 5%;
+        top: 8px;
+        z-index: 1;
     }
     .time-picker-input {
-        height: 3.2em;
-        padding: 0;
-        border-radius: 0.4em;
-        box-sizing: border-box;
-        font-weight: 300;
-        margin: 0;
+        border-radius: 4px;
         cursor: pointer;
+        font-weight: 300;
+        height: 32px;
 
-        input {
-            text-align: center;
-            font-size: 1.4em;
-        }
         &::placeholder {
             color: $COLOR_LIGHT_BLACK_4;
         }
         &:hover {
             border-color: $COLOR_LIGHT_BLACK_4;
         }
-        &.active {
-            border-color: $COLOR_DARK_BLUE_5;
+        input {
+            text-align: center;
         }
     }
-    .time-picker-dropdown {
-        font-size: 1.4rem;
+    .time-picker-dialog {
+        background-color: $COLOR_WHITE;
+        border-radius: 4px;
+        height: 228px;
+        padding-top: 10px;
         position: absolute;
         top: 0;
-        display: flex;
-        flex-direction: column;
-        height: 0;
-        opacity: 0;
-        border-radius: 0.4em;
-        box-shadow: 0 0.2em 0.8em rgba(0, 0, 0, 0.15);
-        z-index: -1;
-        transition: all 0.3s ease 0.15s;
+        transform-origin: right;
+        transform: scale(1, 0) translate3d(0, 0, 0);
+        transition: transform 0.25s ease, opacity 0.25s linear;
+        width: 231px;
+        z-index: 1;
 
-        &.active {
+        &-enter, &-exit {
+            opacity: 0;
+            transform: scale(1, 1) translate3d(-225px, 0, 0);
+        }
+        &-enter-done {
             opacity: 1;
-            height: 261px;
-            z-index: 10;
-
-            .time-picker-panel {
-                height: 3em;
-
-                .time-picker-clear {
-                    display: inline-block;
-                }
-            }
+            transform: translate3d(-245px, 0, 0);
         }
-        &.from-right {
-            right: 0;
-        }
-        .time-picker-panel {
-            height: 0;
-            background: $COLOR_WHITE;
-            border-radius: 0.4em 0.4em 0 0;
-            padding: 0.2em 0.8em 0 0.9em;
-            line-height: 3em;
-            font-weight: 300;
-            transition: height 0.3s ease 0.15s;
-
-            .time-picker-clear {
-                background: url('../images/common/close_circle.svg') no-repeat;
-                position: relative;
-                float: right;
-                display: none;
-                top: 0.8em;
-                width: 1.2em;
-                height: 1.2em;
-                cursor: pointer;
-            }
-            .placeholder {
-                color: $COLOR_LIGHT_BLACK_4;
-            }
+        .time-picker-clear {
+            background: url('../images/common/close_circle.svg') no-repeat;
+            cursor: pointer;
+            display: none;
+            float: right;
+            height: 12px;
+            position: relative;
+            top: 8px;
+            width: 12px;
         }
         .time-picker-selector {
-            display: flex;
-            flex-direction: row;
-            background-color: $COLOR_WHITE;
+            height: inherit;
 
             .time-picker-hours {
                 border-right: 0.1em solid $COLOR_LIGHT_BLACK_4;
@@ -96,8 +68,8 @@
                 width: 150px;
             }
             .time-picker-minutes {
-                width: 8em;
-                border-radius: 0 0 0.4em;
+                width: 80px;
+                border-radius: 0 5px 5px 0;
             }
             .time-picker-hours, .time-picker-minutes {
                 display: inline-block;
@@ -106,19 +78,17 @@
                 text-align: center;
 
                 .list-title {
-                    margin-top: 0.8em;
                     color: $COLOR_LIGHT_BLACK_1;
-                    line-height: 1.5;
                     font-size: 0.8em;
+                    line-height: 20px;
                 }
                 .list-container .list-item {
+                    border-radius: 4px;
+                    cursor: pointer;
                     display: inline-block;
+                    font-size: 0.75em;
                     margin: 3px;
                     padding: 7px;
-                    transition: all 0.3s ease;
-                    cursor: pointer;
-                    border-radius: 0.4em;
-                    font-size: 1.2rem;
 
                     &:hover:not(.disabled) {
                         background: $COLOR_LIGHT_BLACK_4;
@@ -128,10 +98,6 @@
                             background: $COLOR_LIGHT_GRAY_1;
                             color: $COLOR_WHITE;
                         }
-                    }
-                    &.selected {
-                        background: $COLOR_LIGHT_GRAY_1;
-                        color: $COLOR_WHITE;
                     }
                     &.disabled {
                         color: $COLOR_LIGHT_BLACK_3;
@@ -151,37 +117,29 @@
                 stroke: $COLOR_DARK_BLUE_7;
             }
         }
-        .time-picker-dropdown {
-            .time-picker-panel {
-                background: $COLOR_DARK_BLUE_2;
+        .time-picker-dialog {
+            background: $COLOR_DARK_BLUE_3;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+
+            .time-picker-hours, .time-picker-minutes {
+                border-color: $COLOR_DARK_BLUE_2;
                 color: $COLOR_DARK_BLUE_7;
-            }
-            .time-picker-selector {
-                background: $COLOR_DARK_BLUE_3;
-            }
-            .time-picker-panel, .time-picker-selector {
-                box-shadow: 0 0.2em 0.4em 0 rgba(0, 0, 0, 0.5);
 
-                .time-picker-hours, .time-picker-minutes {
+                .list-title {
+                    color: $COLOR_WHITE;
+                }
+                .list-item {
                     color: $COLOR_DARK_BLUE_7;
-                    border-color: $COLOR_DARK_BLUE_2;
 
-                    .list-title {
-                        color: $COLOR_WHITE;
+                    &.disabled {
+                        color: $COLOR_DARK_BLUE_8;
+                        pointer-events: none;
                     }
-                    .list-item {
-                        color: $COLOR_DARK_BLUE_7;
-
-                        &.disabled {
-                            color: $COLOR_DARK_BLUE_8;
-                            pointer-events: none;
-                        }
-                        &.selected {
-                            background: $COLOR_DARK_BLUE_5;
-                        }
-                        &:hover:not(.selected):not(.disabled) {
-                            background: $COLOR_DARK_BLUE_4;
-                        }
+                    &.selected {
+                        background: $COLOR_DARK_BLUE_5;
+                    }
+                    &:hover:not(.selected):not(.disabled) {
+                        background: $COLOR_DARK_BLUE_4;
                     }
                 }
             }
