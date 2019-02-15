@@ -36,7 +36,7 @@ const StartDate = ({
         );
     }
     return (
-        <Fieldset>
+        <Fieldset className='trade-container__fieldset'>
             <Dropdown
                 is_alignment_left
                 is_nativepicker={is_nativepicker}
