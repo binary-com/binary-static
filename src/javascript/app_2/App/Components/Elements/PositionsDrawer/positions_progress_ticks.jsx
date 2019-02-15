@@ -6,7 +6,8 @@ import { localize } from '_common/localize';
 const ProgressTicks = ({ current_tick, ticks_count }) => {
     const arr_ticks = [...Array(ticks_count).keys()];
     return (
-        <React.Fragment>
+        // TODO: Update and show once design for ticks progress bar is finalized
+        <div style={{ display: 'none' }}>
             <span className='progress-slider__ticks-caption'>
                 {localize('Tick [_1]', current_tick)}
             </span>
@@ -21,19 +22,13 @@ const ProgressTicks = ({ current_tick, ticks_count }) => {
                     />
                 )}
             </div>
-        </React.Fragment>
+        </div>
     );
 };
 
 ProgressTicks.propTypes = {
-    current_tick: PropTypes.oneOfType([
-        PropTypes.number,
-        PropTypes.string,
-    ]),
-    ticks_count: PropTypes.oneOfType([
-        PropTypes.number,
-        PropTypes.string,
-    ]),
+    current_tick: PropTypes.number,
+    ticks_count : PropTypes.number,
 };
 
 export default ProgressTicks;

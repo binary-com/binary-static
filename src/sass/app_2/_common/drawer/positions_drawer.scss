@@ -65,7 +65,8 @@ $header-height: 40px;
         box-sizing: border-box;
         padding: 8px;
         margin: 0 10px;
-        border: 1px solid $COLOR_LIGHT_BLACK_4;
+        border: 1px solid $COLOR_WHITE;
+        background: $COLOR_WHITE;
         border-radius: $BORDER_RADIUS;
         display: flex;
         flex-direction: column;
@@ -74,12 +75,8 @@ $header-height: 40px;
         position: relative;
         color: $COLOR_LIGHT_BLACK_1;
 
-        &.active, &:hover {
-            background: $COLOR_LIGHT_BLACK_4_SOLID;
-        }
         &.active {
             cursor: default;
-            border-color: $COLOR_DARK_BLUE_5;
         }
         &:not(:last-child) {
             margin-bottom: 16px;
@@ -93,7 +90,7 @@ $header-height: 40px;
             }
             &-profit-payout {
                 padding: 8px 0;
-                background: $COLOR_DARK_BLUE_3;
+                background: $COLOR_LIGHT_BLACK_4;
                 border-radius: $BORDER_RADIUS;
                 margin-left: -4px;
                 margin-right: -4px;
@@ -106,12 +103,14 @@ $header-height: 40px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                font-weight: bold;
             }
             &-label {
                 text-transform: capitalize;
                 margin-right: 0.5em;
                 font-size: 10px;
-                color: $COLOR_DARK_BLUE_7;
+                font-weight: normal;
+                color: $COLOR_LIGHT_BLACK_1;
             }
         }
         &__type {
@@ -119,6 +118,7 @@ $header-height: 40px;
             display: flex;
             justify-content: flex-end;
             margin-right: 0.5rem;
+            font-weight: bold;
 
             .contract-type {
                 display: flex;
@@ -145,7 +145,7 @@ $header-height: 40px;
             align-items: center;
 
             &-label {
-                color: $COLOR_DARK_BLUE_7;
+                color: $COLOR_LIGHT_BLACK_1;
                 font-size: 10px;
                 font-weight: normal;
                 margin-bottom: 0.5em;
@@ -178,11 +178,13 @@ $header-height: 40px;
             display: flex;
             justify-content: center;
             align-items: center;
+            font-weight: bold;
 
             &-label {
                 font-size: 10px;
-                color: $COLOR_DARK_BLUE_7;
+                color: $COLOR_LIGHT_BLACK_1;
                 margin-bottom: 0.5em;
+                font-weight: normal;
             }
             &--negative {
                 color: $COLOR_RED;
@@ -205,16 +207,7 @@ $header-height: 40px;
             display: flex;
             justify-content: flex-start;
             align-items: center;
-        }
-        &:before {
-            content: '';
-            position: absolute;
-            height: 52px;
-            width: calc(100% + 2px);
-            left: -1px;
-            top: -1px;
-            border-radius: $BORDER_RADIUS;
-            background-image: linear-gradient(to top, rgba(16, 19, 32, 0), rgba(0, 148, 117, 0.16));
+            font-weight: bold;
         }
     }
     /*
@@ -239,6 +232,7 @@ $header-height: 40px;
             }
             &.active, &:hover {
                 background: $COLOR_DARK_BLUE_5;
+                border-color: $COLOR_DARK_BLUE_5;
             }
             &.active {
                 border-color: $COLOR_WHITE;
@@ -250,6 +244,22 @@ $header-height: 40px;
                 &--price-stable {
                     color: $COLOR_WHITE;
                 }
+            }
+            &__grid--profit-payout {
+                background: $COLOR_DARK_BLUE_3;
+            }
+            &__purchase-label, &__profit-loss-label, &__indicative-label {
+                color: $COLOR_DARK_BLUE_7;
+            }
+            &:before {
+                content: '';
+                position: absolute;
+                height: 52px;
+                width: calc(100% + 2px);
+                left: -1px;
+                top: -1px;
+                border-radius: $BORDER_RADIUS;
+                background-image: linear-gradient(to top, rgba(16, 19, 32, 0), rgba(0, 148, 117, 0.16));
             }
         }
         &__title {

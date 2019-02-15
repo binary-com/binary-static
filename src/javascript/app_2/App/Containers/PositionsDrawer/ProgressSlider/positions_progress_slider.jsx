@@ -2,9 +2,9 @@ import classNames          from 'classnames';
 import PropTypes           from 'prop-types';
 import React               from 'react';
 import { connect }         from 'Stores/connect';
-import { getTimePercentage } from './helpers';
-import ProgressTicks       from '../../Components/Elements/PositionsDrawer/positions_progress_ticks.jsx';
-import RemainingTime       from '../remaining_time.jsx';
+import { getTimePercentage } from '../helpers';
+import ProgressTicks       from '../../../Components/Elements/PositionsDrawer/positions_progress_ticks.jsx';
+import RemainingTime       from '../../remaining_time.jsx';
 
 const ProgressSlider = ({
     className,
@@ -47,11 +47,8 @@ const ProgressSlider = ({
 
 ProgressSlider.propTypes = {
     className   : PropTypes.string,
-    current_tick: PropTypes.oneOfType([
-        PropTypes.number,
-        PropTypes.string,
-    ]),
-    expiry_time: PropTypes.oneOfType([
+    current_tick: PropTypes.number,
+    expiry_time : PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
     ]).isRequired,
@@ -60,10 +57,7 @@ ProgressSlider.propTypes = {
         PropTypes.string,
     ]),
     start_time : PropTypes.object,
-    ticks_count: PropTypes.oneOfType([
-        PropTypes.number,
-        PropTypes.string,
-    ]),
+    ticks_count: PropTypes.number,
 };
 
 export default connect(

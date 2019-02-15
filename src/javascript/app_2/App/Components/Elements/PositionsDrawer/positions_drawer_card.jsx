@@ -3,10 +3,10 @@ import PropTypes           from 'prop-types';
 import React               from 'react';
 import ContractTypeCell    from 'Modules/Portfolio/Components/contract_type_cell.jsx';
 import { localize }        from '_common/localize';
-import ProgressSlider      from '../../../Containers/PositionsDrawer/positions_progress_slider.jsx';
 import Money               from '../money.jsx';
 import BinaryLink          from '../../Routes/binary_link.jsx';
 import { getContractPath } from '../../Routes/helpers';
+import ProgressSlider      from '../../../Containers/PositionsDrawer/ProgressSlider';
 
 const PositionsDrawerCard = ({
     currency,
@@ -17,6 +17,7 @@ const PositionsDrawerCard = ({
     purchase,
     purchase_time,
     status,
+    tick_count,
     type,
     underlying_code,
     underlying_name,
@@ -47,6 +48,7 @@ const PositionsDrawerCard = ({
             <ProgressSlider
                 purchase_time={purchase_time}
                 expiry_time={expiry_time}
+                ticks_count={tick_count}
             />
             <div className={classNames(
                 'positions-drawer-card__grid',
@@ -104,6 +106,7 @@ PositionsDrawerCard.propTypes = {
         PropTypes.string,
     ]),
     status         : PropTypes.string,
+    tick_count     : PropTypes.number,
     type           : PropTypes.string,
     underlying_code: PropTypes.string,
     underlying_name: PropTypes.string,

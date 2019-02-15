@@ -13,7 +13,7 @@
         margin: 2px 0 8px;
         height: 6px;
         width: 100%;
-        background: $COLOR_DARK_BLUE_3;
+        background: $COLOR_LIGHT_BLACK_4;
         border-radius: #{$BORDER_RADIUS * 2};
     }
     &__ticks {
@@ -61,7 +61,7 @@
         border-radius: #{$BORDER_RADIUS * 2};
         background: $COLOR_LIGHT_GRAY_1;
         pointer-events: none;
-        transition: width 0.5s;
+        transition: width 0.3s;
 
         &--ticks {
             height: 2px;
@@ -80,6 +80,9 @@
 
 .theme-wrapper.dark {
     .progress-slider {
+        &__track {
+            background: $COLOR_DARK_BLUE_3;
+        }
         .ticks-step {
             border: 2px solid $COLOR_DARK_BLUE_2;
             background: $COLOR_DARK_BLUE_2;
