@@ -29,14 +29,12 @@ const RangeSlider = ({
 
     const first_tick = ticks - (ticks - 1);
 
-    const is_error = ((value < min_value) || (value > max_value)) ? 'error' : '';
-
     return (
-        <div className={classNames('range-slider', className, { 'error': is_error })}>
-            <label htmlFor='range'>
+        <div className={classNames('range-slider', className, { 'range-slider__error': ((value < min_value) || (value > max_value)) })}>
+            <label className='range-slider__label' htmlFor='range'>
                 <input
                     id='range'
-                    className='trade-container__input range-slider__track'
+                    className='input trade-container__input range-slider__track'
                     type='range'
                     min={first_tick}
                     max={ticks}
@@ -48,7 +46,7 @@ const RangeSlider = ({
                     tabIndex='0'
                     value={value}
                 />
-                <div className='ticks'>
+                <div className='range-slider__ticks'>
                     <TickSteps
                         value={value}
                         ticks={ticks}
@@ -62,7 +60,7 @@ const RangeSlider = ({
                 />
             </label>
             <div className='range-slider__caption'>
-                <span>
+                <span className='range-slider__caption--first'>
                     {first_tick}
                 </span>
                 {
@@ -71,7 +69,7 @@ const RangeSlider = ({
                         {localize('[_1] Ticks', value || '')}
                     </span>
                 }
-                <span>
+                <span className='range-slider__caption--last'>
                     {ticks}
                 </span>
             </div>

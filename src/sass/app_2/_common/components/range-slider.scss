@@ -1,11 +1,12 @@
 // Range Slider
+/** @define range-slider */
 .range-slider {
     margin-top: 8px;
     margin-bottom: 8px;
     padding: 0 4px;
     box-sizing: border-box;
 
-    label[for=range] {
+    &__label {
         position: relative;
         display: flex;
         align-items: center;
@@ -14,27 +15,29 @@
         margin-bottom: 4px;
     }
     /* overriding firefox shadow pseudo element */
-    input[type=range]::-moz-focus-outer {
+    &__track[type=range]::-moz-focus-outer {
         border: 0;
     }
     // TODO: remove once we have proper styling for input slider validation error
-    &.error {
-        input[type=range] {
-            // Range Handle Thumb - Chrome / Webkit based browsers
-            &::-webkit-slider-thumb {
-                background: $COLOR_RED;
+    &__error {
+        .range-slider {
+            &__track[type=range] {
+                // Range Handle Thumb - Chrome / Webkit based browsers
+                &::-webkit-slider-thumb {
+                    background: $COLOR_RED;
+                }
+                // Range Handle Thumb - Firefox / Gecko based browsers
+                &::-moz-range-thumb {
+                    background: $COLOR_RED;
+                }
             }
-            // Range Handle Thumb - Firefox / Gecko based browsers
-            &::-moz-range-thumb {
-                background: $COLOR_RED;
+            &__line {
+                background: $COLOR_RED !important;
             }
-        }
-        .range-slider__line {
-            background: $COLOR_RED !important;
-        }
-        .ticks__step--marked {
-            background: $COLOR_RED !important;
-            border-color: $COLOR_RED !important;
+            &__ticks-step--marked {
+                background: $COLOR_RED !important;
+                border-color: $COLOR_RED !important;
+            }
         }
     }
     &__track {
@@ -87,7 +90,7 @@
             background: $COLOR_WHITE;
         }
     }
-    .ticks {
+    &__ticks {
         width: 100%;
         position: absolute;
         display: flex;
@@ -96,7 +99,7 @@
         top: -2px;
         height: 0;
 
-        &__step {
+        &-step {
             height: 2px;
             width: 2px;
             border: 3px solid $COLOR_WHITE;
@@ -141,52 +144,7 @@
         display: flex;
         padding: 4px 0;
         justify-content: space-between;
-        line-height: 18px;
-    }
-}
-
-.sidebar-container fieldset div.range-slider__caption span {
-    font-size: 1.2em;
-    line-height: 1.5;
-}
-
-.theme--dark {
-    .range-slider {
-        &__track {
-            background: $COLOR_DARK_BLUE_2 !important;
-
-            &::-webkit-slider-thumb {
-                background: $COLOR_PURPLE;
-            }
-            &::-moz-range-thumb {
-                background: $COLOR_PURPLE;
-            }
-            &::-moz-range-track {
-                background: $COLOR_DARK_BLUE_2;
-            }
-            &:active::-webkit-slider-thumb {
-                box-shadow: 0 0 0 4px rgba(79, 96, 174, 0.32);
-            }
-            &:active::-moz-range-thumb {
-                box-shadow: 0 0 0 4px rgba(79, 96, 174, 0.32);
-            }
-        }
-        .ticks__step {
-            border: 3px solid $COLOR_DARK_BLUE_2;
-            background: $COLOR_DARK_BLUE_2;
-
-            &--active, &--marked {
-                background: $COLOR_PURPLE;
-                border-color: $COLOR_PURPLE;
-            }
-            &:hover:not(&--active) {
-                background: $COLOR_PURPLE;
-                border-color: $COLOR_PURPLE;
-                box-shadow: 0 0 0 6px rgba(79, 96, 174, 0.32);
-            }
-        }
-        &__line {
-            background: $COLOR_PURPLE;
-        }
+        line-height: 1.5;
+        font-size: 1.2em;
     }
 }

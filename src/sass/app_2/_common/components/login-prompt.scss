@@ -1,3 +1,4 @@
+/** @define login-prompt */
 .login-prompt {
     height: 100%;
     margin: 0 2em;
@@ -11,7 +12,7 @@
         width: 6.4em;
         margin-bottom: 1em;
 
-        svg {
+        &-svg {
             height: 100%;
             width: 100%;
         }

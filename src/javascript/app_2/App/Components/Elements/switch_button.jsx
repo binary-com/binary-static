@@ -5,7 +5,7 @@ import React      from 'react';
 const SwitchButton = ({ style, toggled }) => {
     const toggle_style = style || 'switch-button';
     const icon_class = classNames(toggle_style, {
-        'toggled': toggled,
+        [`${toggle_style}--toggled`]: toggled,
     });
 
     return (

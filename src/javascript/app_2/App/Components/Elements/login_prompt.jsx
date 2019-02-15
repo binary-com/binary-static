@@ -10,7 +10,7 @@ const LoginPrompt = ({
     <div className='login-prompt'>
         <div className='login-prompt__icon'>
             { IconComponent && // TODO: needs a general icon in case not specified in route
-                <IconComponent className='disabled' />
+                <IconComponent className='login-prompt__icon-svg disabled' />
             }
         </div>
         <div className='login-prompt__message'>

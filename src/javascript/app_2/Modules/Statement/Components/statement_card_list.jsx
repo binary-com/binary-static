@@ -7,7 +7,7 @@ const StatementCardList = ({ data, onScroll, children }) => (
     <div className='card-list' onScroll={onScroll}>
         {
             data.map((transaction, id) => (
-                <StatementCard className='card-list__card' {...transaction} key={id} />
+                <StatementCard className='card-list__card card-list__card-link' {...transaction} key={id} />
             ))
         }
         {children}

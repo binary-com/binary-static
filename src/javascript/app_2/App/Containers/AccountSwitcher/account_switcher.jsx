@@ -53,24 +53,24 @@ class AccountSwitcher extends React.Component {
                 {
                     // Make sure this block is not rendered if there are no real accounts
                     !!(this.props.account_list.length > 0 && !(this.props.account_list[0].is_virtual)) &&
-                    <div className='acc-switcher__list__group'>
-                        <span className='acc-switcher__list__title'>
+                    <div className='acc-switcher__list-group'>
+                        <span className='acc-switcher__list-title'>
                             {main_account_title}
                         </span>
                         {
                             this.props.account_list.filter((accounts) => !accounts.is_virtual).map((account) => (
                                 <React.Fragment key={account.loginid}>
                                     <div
-                                        className={classNames('acc-switcher-account', {
-                                            'acc-switcher-account--selected': (account.loginid === this.props.account_loginid),
+                                        className={classNames('acc-switcher__account', {
+                                            'acc-switcher__account--selected': (account.loginid === this.props.account_loginid),
                                         })}
                                         onClick={this.doSwitch.bind(this, account.loginid)}
                                     >
                                         <span
                                             className={classNames('acc-switcher__id', {
-                                                'acc-switcher__id__icon': account.icon,
+                                                'acc-switcher__id-icon': account.icon,
                                             },
-                                            `acc-switcher__id__icon--${account.icon}`)}
+                                            `acc-switcher__id-icon--${account.icon}`)}
                                         >
                                             {account.loginid}
                                         </span>
@@ -83,22 +83,22 @@ class AccountSwitcher extends React.Component {
                             // Update text below for handling types of account to create :- e.g - Investment
                             !!(this.props.is_upgrade_enabled && this.props.upgrade_info.can_open_multi) &&
                             <div className='acc-switcher__new-account'>
-                                <span>{localize('Add new account')}</span>
+                                <span className='acc-switcher__new-account-title'>{localize('Add new account')}</span>
                             </div>
                         }
                     </div>
                 }
-                <div className='acc-switcher__list__virtual'>
-                    <span className='acc-switcher__list__title'>
+                <div className='acc-switcher__list--virtual'>
+                    <span className='acc-switcher__list-title'>
                         {localize('Virtual account')}
                     </span>
                     <div
-                        className={classNames('acc-switcher-account', {
-                            'acc-switcher-account--selected': (this.props.virtual_loginid === this.props.account_loginid),
+                        className={classNames('acc-switcher__account', {
+                            'acc-switcher__account--selected': (this.props.virtual_loginid === this.props.account_loginid),
                         })}
                         onClick={this.doSwitch.bind(this, this.props.virtual_loginid)}
                     >
-                        <span className={classNames('acc-switcher__id', 'virtual')}>
+                        <span className={classNames('acc-switcher__id', 'acc-switcher__id--virtual')}>
                             {this.props.virtual_loginid}
                         </span>
                         <span className='acc-switcher__radio' />
@@ -106,12 +106,12 @@ class AccountSwitcher extends React.Component {
                 </div>
                 { !!(this.props.is_upgrade_enabled && this.props.is_virtual) &&
                 <div className='acc-switcher__new-account'>
-                    <span>{localize('Upgrade to Real Account')}</span>
+                    <span className='acc-switcher__new-account-title'>{localize('Upgrade to Real Account')}</span>
                 </div>
                 }
-                <div className='acc-logout' onClick={this.handleLogout}>
-                    <span className='acc-logout__text'>{localize('Log out')}</span>
-                    <IconLogout className='drawer-icon' />
+                <div className='acc-switcher__logout' onClick={this.handleLogout}>
+                    <span className='acc-switcher__logout-text'>{localize('Log out')}</span>
+                    <IconLogout className='acc-switcher__logout-icon drawer-icon' />
                 </div>
             </div>
         );

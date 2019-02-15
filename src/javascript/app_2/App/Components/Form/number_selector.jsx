@@ -1,5 +1,6 @@
-import PropTypes from 'prop-types';
-import React     from 'react';
+import classNames from 'classnames';
+import PropTypes  from 'prop-types';
+import React      from 'react';
 
 // arr_arr_numbers is an array of arrays where each nested array indicates one row
 // for example [[1, 2, 3]] will be a single row of these three numbers
@@ -20,11 +21,11 @@ const NumberSelector = ({
     return (
         <div className='number-selector'>
             {arr_arr_numbers.map((arr_numbers, idx) =>
-                <div key={idx}>
+                <div className='number-selector__row' key={idx}>
                     {arr_numbers.map(i =>
                         <span
                             key={i}
-                            className={`number-selector__selection${selected_number === i ? ' selected' : ''}`}
+                            className={classNames('number-selector__selection', { 'number-selector__selection--selected': selected_number === i })}
                             data-value={i}
                             onClick={handleSelect}
                         >

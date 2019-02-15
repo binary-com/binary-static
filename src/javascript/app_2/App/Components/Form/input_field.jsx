@@ -117,7 +117,7 @@ const InputField = ({
     const input =
         <input
             checked={checked ? 'checked' : ''}
-            className={classNames({ error: has_error }, classNameInput)}
+            className={classNames('input', { error: has_error }, classNameInput)}
             disabled={is_disabled}
             data-for={`error_tooltip_${name}`}
             data-value={data_value}

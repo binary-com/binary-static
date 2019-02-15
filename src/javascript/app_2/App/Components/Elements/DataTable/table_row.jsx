@@ -28,7 +28,7 @@ const TableRow = ({
 
     return (
         to ?
-            <NavLink className='table__row' to={to}>
+            <NavLink className='table__row table__row-link' to={to}>
                 {cells}
             </NavLink>
             :

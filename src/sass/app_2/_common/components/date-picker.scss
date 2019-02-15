@@ -1,3 +1,4 @@
+/** @define datepicker */
 .datepicker {
     position: relative;
     display: inline-block;
@@ -87,37 +88,13 @@
         transition: transform 0.25s ease, opacity 0.25s linear;
 
         &--left {
-            &.datepicker__picker--enter, &.datepicker__picker--exit {
+            &-enter, &-exit {
                 transform: scale(1, 1) translate3d(-275px, 0, 0);
                 opacity: 0;
             }
-            &.datepicker__picker--enter-done {
+            &-enter-done {
                 transform: translate3d(-295px, 0, 0);
                 opacity: 1;
-            }
-        }
-    }
-}
-
-// Dark Theme
-.theme--dark {
-    .datepicker {
-        &__input {
-            background: $COLOR_DARK_BLUE_3;
-            color: $COLOR_WHITE;
-
-            &:hover, &:focus, &:active {
-                border-color: $COLOR_WHITE;
-            }
-        }
-        &__icon path {
-            fill: $COLOR_DARK_BLUE_7;
-        }
-        &__native-overlay {
-            background: $COLOR_DARK_BLUE_5;
-
-            &:hover, &:focus, &:active {
-                border-color: $COLOR_WHITE;
             }
         }
     }

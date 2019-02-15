@@ -40,14 +40,14 @@ class SettingsDialog extends React.PureComponent {
         const settings_dialog_class = classNames('settings-dialog', {
             'show': this.props.is_open,
         });
-        const settings_dialog_container_class = classNames('settings-dialog-container', {
-            hide: this.props.is_language_dialog_visible,
+        const settings_dialog_container_class = classNames('settings-dialog__container', {
+            'settings-dialog__container--hide': this.props.is_language_dialog_visible,
         });
         return (
             <div ref={this.setWrapperRef} className={settings_dialog_class}>
                 <div className={settings_dialog_container_class}>
-                    <span className='settings-header'>{localize('Settings')}</span>
-                    <Tabs alignment='center' list={SettingsDialog.settings_content} />
+                    <span className='settings-dialog__header'>{localize('Settings')}</span>
+                    <Tabs alignment='center' classNameHeader='settings-dialog__tab-header' list={SettingsDialog.settings_content} />
                 </div>
                 <LanguageSettings />
             </div>

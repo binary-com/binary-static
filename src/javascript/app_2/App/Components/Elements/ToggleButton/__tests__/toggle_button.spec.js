@@ -13,7 +13,7 @@ describe('<ToggleButton />', () => {
 
     it('should render a <Button /> element with selected class name', () => {
         const wrapper = shallow(<ToggleButton value='test' is_selected>Test</ToggleButton>);
-        expect(wrapper.hasClass('toggle-button_selected')).be.true;
+        expect(wrapper.hasClass('toggle-button--selected')).be.true;
     });
 
     describe('prop: onClick', () => {

@@ -30,10 +30,10 @@ const Toast = ({
             className={classNames('toast__body', POSITIONS.TOP_RIGHT, data.position, TYPES[data.type.toUpperCase()])}
             onClick={onClick}
         >
-            <div className='toast__body__icon'>
-                <span className={`toast__body__icon--${data.type.toLowerCase()}`} />
+            <div className='toast__icon'>
+                <span className={classNames('toast__icon-type', `toast__icon--${data.type.toLowerCase()}`)} />
             </div>
-            <div className='toast__body__message'>
+            <div className='toast__message'>
                 {data.message}
             </div>
             <CloseButton onClick={onClick} />

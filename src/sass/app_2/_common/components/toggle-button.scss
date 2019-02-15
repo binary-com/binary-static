@@ -1,8 +1,4 @@
-.toggle-button-group {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(4.4em, 1fr));
-}
-
+/** @define toggle-button */
 .toggle-button {
     border-radius: 4px;
     background-color: $COLOR_WHITE;
@@ -19,20 +15,14 @@
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
     }
-    &_selected {
+    &--selected {
         background-color: $COLOR_LIGHT_GRAY_1;
         color: $COLOR_WHITE;
     }
 }
 
-.theme--dark {
-    .toggle-button {
-        background-color: $COLOR_LIGHT_BLACK_1;
-        color: $COLOR_LIGHT_BLACK_4;
-
-        &_selected {
-            background-color: $COLOR_DARK_BLUE_2;
-            color: $COLOR_WHITE;
-        }
-    }
+/** @define toggle-button-group */
+.toggle-button-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(4.4em, 1fr));
 }

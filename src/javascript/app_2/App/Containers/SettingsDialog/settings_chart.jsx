@@ -12,8 +12,8 @@ const ChartSettings = ({
     toggleCountdown,
     toggleLayout,
 }) => (
-    <div className='tab-content'>
-        <div className='chart-setting-container'>
+    <div className='settings-dialog__tab-content'>
+        <div className='settings-dialog__chart-container'>
             <SettingsControl
                 name={localize('Position')}
                 toggle={toggleLayout}
