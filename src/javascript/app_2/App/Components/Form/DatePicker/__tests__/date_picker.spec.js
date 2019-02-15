@@ -4,7 +4,7 @@ import { shallow } from 'enzyme';
 import DatePicker from '../index';
 
 // TODO: add tests
-describe('<DatePickerWrapper />', () => {
+describe('<DatePicker />', () => {
     it('should render one <DatePicker /> component', () => {
         const wrapper = shallow(<DatePicker />);
         expect(wrapper).to.have.length(1);
