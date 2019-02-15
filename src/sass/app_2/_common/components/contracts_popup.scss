@@ -413,42 +413,42 @@ div.contracts-popup-container {
         .select-arrow .arrow-path {
             fill: $COLOR_DARK_BLUE_7;
         }
-    }
-    .trade-type-info-popup {
-        .trade-type-info {
-            background-color: $COLOR_DARK_BLUE_2;
+        .trade-type-info-popup {
+            .trade-type-info {
+                background: $COLOR_DARK_BLUE_2;
 
-            .info-header {
-                svg path {
-                    fill: $COLOR_DARK_BLUE_7;
-                }
-                .title {
-                    color: $COLOR_DARK_BLUE_7;
-                }
-                span {
-                    cursor: pointer;
-                }
-            }
-            .info-gif {
-                background-color: $COLOR_DARK_BLUE_2;
-                color: $COLOR_DARK_BLUE_8;
-            }
-            .info-content {
-                color: $COLOR_DARK_BLUE_7;
-            }
-            .info-navigation {
-                &__list {
-                    .circle-button {
-                        background-color: $COLOR_DARK_BLUE_8;
-
-                        &.active {
-                            background-color: $COLOR_DARK_BLUE_7;
-                        }
-                    }
-                }
-                &__icon {
+                .info-header {
                     svg path {
                         fill: $COLOR_DARK_BLUE_7;
+                    }
+                    .title {
+                        color: $COLOR_DARK_BLUE_7;
+                    }
+                    span {
+                        cursor: pointer;
+                    }
+                }
+                .info-gif {
+                    background-color: $COLOR_DARK_BLUE_2;
+                    color: $COLOR_DARK_BLUE_8;
+                }
+                .info-content {
+                    color: $COLOR_DARK_BLUE_7;
+                }
+                .info-navigation {
+                    &__list {
+                        .circle-button {
+                            background-color: $COLOR_DARK_BLUE_8;
+
+                            &.active {
+                                background-color: $COLOR_DARK_BLUE_7;
+                            }
+                        }
+                    }
+                    &__icon {
+                        svg path {
+                            fill: $COLOR_DARK_BLUE_7;
+                        }
                     }
                 }
             }
