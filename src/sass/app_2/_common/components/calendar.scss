@@ -3,8 +3,8 @@
     top: 0;
     background: $COLOR_WHITE;
     outline: 0;
-    border-radius: 0.5em;
-    box-shadow: 0 0.2em 0.8em 0 rgba(42, 48, 82, 0.2);
+    border-radius: 5px;
+    box-shadow: 0 2px 8px 0 rgba(42, 48, 82, 0.2);
     z-index: 999;
 
     &, * {
@@ -21,7 +21,7 @@
         display: flex;
         align-items: center;
         height: 5em;
-        border-radius: 0.5em;
+        border-radius: 5px;
         padding: 0.8em;
     }
     &__header {
@@ -40,7 +40,7 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                border-radius: 0.5em;
+                border-radius: 5px;
             }
         }
         &--date {
@@ -155,8 +155,8 @@
         }
         &--today {
             font-weight: 400;
-            border: 0.1em solid $COLOR_LIGHT_BLACK_1;
-            border-radius: 0.5em;
+            border: 1px solid $COLOR_LIGHT_BLACK_1;
+            border-radius: 5px;
         }
         &--active {
             color: $COLOR_WHITE;
@@ -185,7 +185,7 @@
 .theme--dark {
     .calendar {
         background: $COLOR_DARK_BLUE_3;
-        box-shadow: 0 0.2em 0.8em 0 rgba(0, 0, 0, 0.8), 0 0.2em 0.4em 0 rgba(0, 0, 0, 0.5);
+        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.8), 0 2px 4px 0 rgba(0, 0, 0, 0.5);
 
         &__header, &__footer {
             color: $COLOR_WHITE;

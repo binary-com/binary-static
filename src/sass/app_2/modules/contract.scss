@@ -6,7 +6,7 @@
     .contract-header {
         max-height: 3.2em;
         overflow: hidden;
-        border-radius: 0.4em 0.4em 0 0;
+        border-radius: 4px 4px 0 0;
 
         .header-wrapper {
             transition: transform 0.4s ease;
@@ -64,7 +64,7 @@
         background: $COLOR_LIGHT_BLACK_4_SOLID;
         font-size: 1.2em;
         border-top-width: 0;
-        border-radius: 0 0 0.4em 0.4em;
+        border-radius: 0 0 4px 4px;
 
         .longcode {
             font-weight: 300;
@@ -226,7 +226,7 @@ $CONTRACT_INFO_BOX_PADDING: 1.5em;
                         width: 3.2em;
                         height: 3.2em;
                         margin-bottom: 0.5em;
-                        border: 0.2em solid $COLOR_GREEN_1;
+                        border: 2px solid $COLOR_GREEN_1;
                         border-radius: 50%;
                         display: flex;
                         justify-content: center;
@@ -264,7 +264,7 @@ $CONTRACT_INFO_BOX_PADDING: 1.5em;
     }
     .message {
         margin-top: 0.5em;
-        border: 0.1em solid $COLOR_RED;
+        border: 1px solid $COLOR_RED;
         border-radius: $BORDER_RADIUS;
         padding: 1em;
         background-color: rgba(244, 67, 54, 0.16);

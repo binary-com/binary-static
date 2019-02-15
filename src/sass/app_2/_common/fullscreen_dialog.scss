@@ -75,7 +75,7 @@ $content-index: 1;
         width: 100%;
         height: $header-height;
         z-index: $shadow-index;
-        box-shadow: 0 0.2em 0.8em rgba(0, 0, 0, 0.1);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
     &__title {
         font-size: 1.3em;
@@ -114,7 +114,7 @@ $content-index: 1;
             width: calc(100% - 1.6em);
             height: fit-content;
             background-color: $COLOR_WHITE;
-            border-radius: 0.4em;
+            border-radius: 4px;
             margin: 0 auto;
         }
         .info-content {
@@ -170,7 +170,7 @@ $content-index: 1;
             background: $COLOR_DARK_BLUE_5;
         }
         &__header-shadow-cover {
-            box-shadow: 0 0.1em 0px $COLOR_DARK_BLUE_5;
+            box-shadow: 0 1px 0px $COLOR_DARK_BLUE_5;
         }
         &__title {
             color: $COLOR_DARK_BLUE_7;

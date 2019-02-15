@@ -69,11 +69,11 @@
                     text-transform: uppercase;
                     content: 'demo';
                     font-size: 1.2em;
-                    border: 0.1em solid $COLOR_ORANGE;
+                    border: 1px solid $COLOR_ORANGE;
                     color: $COLOR_ORANGE;
                     padding: 0.2em 0.8em;
                     margin-right: 0.8em;
-                    border-radius: 1.6em;
+                    border-radius: 16px;
                     align-items: center;
                     pointer-events: none;
                 }
@@ -95,7 +95,7 @@
         position: absolute;
         background: $COLOR_WHITE;
         transition: transform 0.25s ease, opacity 0.25s linear;
-        box-shadow: 0 0.2em 0.8em 0 $COLOR_LIGHT_BLACK_3;
+        box-shadow: 0 2px 8px 0 $COLOR_LIGHT_BLACK_3;
         right: 0;
         top: calc(100% + 0.4em);
         width: 240px;
@@ -117,13 +117,13 @@
 
         span {
             padding: 0.8em 1.6em;
-            border: 0.1em dashed $COLOR_DARK_BLUE_2;
+            border: 1px dashed $COLOR_DARK_BLUE_2;
             color: $COLOR_DARK_BLUE_2;
             font-size: 1.2em;
             width: 100%;
             margin: 0 1.6em;
             text-align: center;
-            border-radius: 0.4em;
+            border-radius: 4px;
             cursor: pointer;
 
             &:before {
@@ -142,7 +142,7 @@
         background-color: $COLOR_LIGHT_BLACK_4_SOLID;
 
         &__group {
-            border-bottom: 0.4em solid $COLOR_WHITE;
+            border-bottom: 4px solid $COLOR_WHITE;
             padding: 0.8em 0;
         }
         &__virtual {
@@ -177,10 +177,10 @@
                     content: 'demo';
                     font-size: 8px;
                     font-weight: 500;
-                    border: 0.1em solid $COLOR_ORANGE;
+                    border: 1px solid $COLOR_ORANGE;
                     color: $COLOR_ORANGE;
                     padding: 0.5em;
-                    border-radius: 2em;
+                    border-radius: 20px;
                     margin: 0 1em 0 0;
                 }
                 &__icon:before {
@@ -222,7 +222,7 @@
             .acc-switcher__radio {
                 height: 1.6em;
                 width: 1.6em;
-                border: 0.2em solid $COLOR_LIGHT_BLACK_2;
+                border: 2px solid $COLOR_LIGHT_BLACK_2;
                 border-radius: 50%;
             }
             &:hover {
@@ -230,14 +230,14 @@
             }
             &--selected {
                 .acc-switcher__radio {
-                    border: 0.4em solid $COLOR_ORANGE;
+                    border: 2px solid $COLOR_ORANGE;
                     background: $COLOR_WHITE;
                 }
             }
         }
         .acc-button {
             padding: 0.8em;
-            border-bottom: 0.1em solid $COLOR_LIGHT_BLACK_4;
+            border-bottom: 1px solid $COLOR_LIGHT_BLACK_4;
 
             button.btn {
                 margin: 0;
