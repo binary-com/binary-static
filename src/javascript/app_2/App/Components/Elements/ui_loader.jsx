@@ -2,10 +2,11 @@ import classNames from 'classnames';
 import PropTypes  from 'prop-types';
 import React      from 'react';
 
-const UILoader = ({ className }) => {
+const UILoader = ({ className, classNameBlock }) => {
     const loading_class = classNames('loading', className);
+    const block_class   = classNames(classNameBlock, 'block-ui');
     return (
-        <div className='block-ui'>
+        <div className={block_class}>
             <div className={loading_class}>
                 <div className='spinner'>
                     <svg className='circular' viewBox='25 25 50 50'>
@@ -18,7 +19,8 @@ const UILoader = ({ className }) => {
 };
 
 UILoader.propTypes = {
-    className: PropTypes.string,
+    className     : PropTypes.string,
+    classNameBlock: PropTypes.string,
 };
 
 export default UILoader;
