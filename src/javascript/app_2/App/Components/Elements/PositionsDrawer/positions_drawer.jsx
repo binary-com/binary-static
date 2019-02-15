@@ -35,8 +35,11 @@ class PositionsDrawer extends React.Component {
         } else if (is_empty) {
             body_content = <EmptyPortfolioMessage />;
         } else {
-            body_content = active_positions.map((portfolio_position) => (
+            body_content = active_positions.map((portfolio_position, index) => (
                 <PositionsDrawerCard
+                    className={classNames({
+                        'active': (index === 0),
+                    })}
                     key={portfolio_position.id}
                     currency={currency}
                     {...portfolio_position}

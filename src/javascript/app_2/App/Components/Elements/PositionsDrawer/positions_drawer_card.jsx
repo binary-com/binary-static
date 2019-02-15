@@ -9,6 +9,7 @@ import { getContractPath } from '../../Routes/helpers';
 import ProgressSlider      from '../../../Containers/PositionsDrawer/ProgressSlider';
 
 const PositionsDrawerCard = ({
+    className,
     currency,
     expiry_time,
     id,
@@ -23,7 +24,7 @@ const PositionsDrawerCard = ({
     underlying_name,
 }) => (
     <BinaryLink
-        className='positions-drawer-card'
+        className={classNames('positions-drawer-card', className)}
         to={getContractPath(id)}
     >
         <React.Fragment>
@@ -92,6 +93,7 @@ const PositionsDrawerCard = ({
 );
 
 PositionsDrawerCard.propTypes = {
+    className  : PropTypes.string,
     currency   : PropTypes.string,
     expiry_time: PropTypes.PropTypes.oneOfType([
         PropTypes.number,

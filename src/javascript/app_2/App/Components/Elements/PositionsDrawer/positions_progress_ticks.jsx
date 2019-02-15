@@ -11,16 +11,18 @@ const ProgressTicks = ({ current_tick, ticks_count }) => {
             <span className='progress-slider__ticks-caption'>
                 {localize('Tick [_1]', current_tick)}
             </span>
-            <div className='progress-slider__ticks'>
-                {arr_ticks.map(idx =>
-                    <span
-                        key={idx}
-                        className={classNames('ticks__step', {
-                            'ticks__step--active': (idx + 1) === parseInt(current_tick),
-                            'ticks__step--marked': (idx + 1) < parseInt(current_tick),
-                        })}
-                    />
-                )}
+            <div className='progress-slider__track--ticks'>
+                <div className='progress-slider__ticks'>
+                    {arr_ticks.map(idx =>
+                        <span
+                            key={idx}
+                            className={classNames('ticks__step', {
+                                'ticks__step--active': (idx + 1) === parseInt(current_tick),
+                                'ticks__step--marked': (idx + 1) < parseInt(current_tick),
+                            })}
+                        />
+                    )}
+                </div>
             </div>
         </div>
     );

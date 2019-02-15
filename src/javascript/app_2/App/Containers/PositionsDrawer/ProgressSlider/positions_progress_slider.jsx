@@ -17,7 +17,7 @@ const ProgressSlider = ({
     const percentage = getTimePercentage(start_time, purchase_time, expiry_time);
     return (
         <div className={classNames('progress-slider', className)}>
-            {ticks_count ?
+            {(ticks_count < 5) ?
                 <ProgressTicks
                     current_tick={current_tick}
                     ticks_count={ticks_count}

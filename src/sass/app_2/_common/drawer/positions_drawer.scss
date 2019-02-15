@@ -74,10 +74,14 @@ $header-height: 40px;
         text-decoration: none;
         position: relative;
         color: $COLOR_LIGHT_BLACK_1;
+        // filter: blur(2px);
 
         &.active {
             cursor: default;
         }
+        // &.active, &:hover, &:focus, &:active {
+        //     filter: none;
+        // }
         &:not(:last-child) {
             margin-bottom: 16px;
         }
@@ -230,12 +234,15 @@ $header-height: 40px;
             &__remaining-time {
                 color: $COLOR_DARK_BLUE_7;
             }
-            &.active, &:hover {
-                background: $COLOR_DARK_BLUE_5;
-                border-color: $COLOR_DARK_BLUE_5;
-            }
-            &.active {
-                border-color: $COLOR_WHITE;
+            &.active:before {
+                content: '';
+                position: absolute;
+                height: 52px;
+                width: calc(100% + 2px);
+                left: -1px;
+                top: -1px;
+                border-radius: $BORDER_RADIUS;
+                background-image: linear-gradient(to top, rgba(16, 19, 32, 0), rgba(0, 148, 117, 0.16));
             }
             &__indicative {
                 &--no-resale {
@@ -245,21 +252,11 @@ $header-height: 40px;
                     color: $COLOR_WHITE;
                 }
             }
-            &__grid--profit-payout {
+            &__grid-profit-payout {
                 background: $COLOR_DARK_BLUE_3;
             }
             &__purchase-label, &__profit-loss-label, &__indicative-label {
                 color: $COLOR_DARK_BLUE_7;
-            }
-            &:before {
-                content: '';
-                position: absolute;
-                height: 52px;
-                width: calc(100% + 2px);
-                left: -1px;
-                top: -1px;
-                border-radius: $BORDER_RADIUS;
-                background-image: linear-gradient(to top, rgba(16, 19, 32, 0), rgba(0, 148, 117, 0.16));
             }
         }
         &__title {
