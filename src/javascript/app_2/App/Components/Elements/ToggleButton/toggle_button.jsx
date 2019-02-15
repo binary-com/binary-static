@@ -28,7 +28,7 @@ const ToggleButton = ({
 
     return (
         <Button
-            className={classNames('toggle-button', { 'toggle-button_selected': is_selected }, className)}
+            className={classNames('toggle-button', { 'toggle-button--selected': is_selected }, className)}
             is_disabled={is_disabled}
             onClick={handleChange}
             {...others}

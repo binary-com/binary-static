@@ -14,13 +14,13 @@ const GeneralSettings = ({
     togglePurchaseConfirmation,
     togglePurchaseLock,
 }) => (
-    <div className='tab-content'>
-        <div className='general-setting-container'>
+    <div className='settings-dialog__tab-content'>
+        <div className='settings-dialog__general-container'>
             <SettingsControl
                 name={localize('Language')}
                 onClick={showLanguage}
             >
-                <i className={`flag ic-flag-${(curr_language || 'EN').toLowerCase()}`} />
+                <i className={`settings-dialog__language-flag settings-dialog__language-flag--${(curr_language || 'EN').toLowerCase()}`} />
             </SettingsControl>
             <SettingsControl
                 name={localize('Dark Mode')}

@@ -1,12 +1,13 @@
+import classNames   from 'classnames';
 import PropTypes    from 'prop-types';
 import React        from 'react';
 import { localize } from '_common/localize';
 import Button       from 'App/Components/Form/button.jsx';
 
-const UpgradeButton = ({ onClick }) => (
+const UpgradeButton = ({ className, onClick }) => (
     <Button
         id='acc-balance-btn'
-        className='primary orange'
+        className={classNames(className, 'primary orange')}
         has_effect
         text={localize('Upgrade')}
         onClick={onClick}
@@ -14,7 +15,8 @@ const UpgradeButton = ({ onClick }) => (
 );
 
 UpgradeButton.propTypes = {
-    onClick: PropTypes.func,
+    className: PropTypes.string,
+    onClick  : PropTypes.func,
 };
 
 export { UpgradeButton };

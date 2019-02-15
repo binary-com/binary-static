@@ -13,27 +13,28 @@ const PopConfirmElement = ({
     onConfirm,
     wrapperRef,
 }) => {
-    const popconfirm_class = classNames('popconfirm', alignment, {
-        'open': is_visible,
+    const popconfirm_class = classNames('popconfirm', `popconfirm--${alignment}`, {
+        [`popconfirm--${alignment}--open`]: is_visible,
+        'popconfirm--open'                : is_visible,
     });
     return (
         <div ref={wrapperRef} className={popconfirm_class}>
-            <div className='popconfirm-title'>
-                <IconExclamation />
-                <h4>{message}</h4>
+            <div className='popconfirm__title'>
+                <IconExclamation className='popconfirm__icon_exclamation' />
+                <h4 className='popconfirm__header'>{message}</h4>
             </div>
-            <div className='popconfirm-buttons'>
+            <div className='popconfirm__button-wrapper'>
                 <div
-                    className='btn flat effect'
+                    className='popconfirm__button btn flat effect'
                     onClick={onClose}
                 >
-                    <span>{cancel_text}</span>
+                    <span className='popconfirm__button-text'>{cancel_text}</span>
                 </div>
                 <div
-                    className='btn flat effect'
+                    className='popconfirm__button btn flat effect'
                     onClick={onConfirm}
                 >
-                    <span>{confirm_text}</span>
+                    <span className='popconfirm__button-text'>{confirm_text}</span>
                 </div>
             </div>
         </div>

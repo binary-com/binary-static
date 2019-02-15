@@ -10,8 +10,8 @@ const SettingsControl = ({
     to_toggle,
     toggle,
 }) => (
-    <div className='settings-row' onClick={toggle || onClick}>
-        <span>{name}</span>
+    <div className='settings-dialog__row' onClick={toggle || onClick}>
+        <span className='settings-dialog__row-name'>{name}</span>
         {toggle ?
             <SwitchButton
                 toggled={to_toggle}

@@ -9,9 +9,9 @@ const TickSteps = ({ value, ticks, onClick }) => {
             {arr_ticks.map(idx =>
                 <span
                     key={idx}
-                    className={classNames('ticks__step', {
-                        'ticks__step--active': (idx + 1) === parseInt(value),
-                        'ticks__step--marked': (idx + 1) < parseInt(value),
+                    className={classNames('range-slider__ticks-step', {
+                        'range-slider__ticks-step--active': (idx + 1) === parseInt(value),
+                        'range-slider__ticks-step--marked': (idx + 1) < parseInt(value),
                     })}
                     onClick={(e) => onClick(e, idx + 1)}
                 />

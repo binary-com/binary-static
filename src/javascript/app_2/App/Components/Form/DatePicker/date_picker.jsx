@@ -172,8 +172,8 @@ class DatePicker extends React.Component {
 
         return (
             <InputField
-                className='datepicker__input'
-                classNameInput='trade-container__input'
+                className='datepicker__input-field'
+                classNameInput='datepicker__input trade-container__input'
                 data-tip={false}
                 data-value={this.state.value}
                 error_messages={error_messages}
@@ -197,7 +197,7 @@ class DatePicker extends React.Component {
                     <input
                         id={this.props.name}
                         name={this.props.name}
-                        className='trade-container__input datepicker__input'
+                        className='input trade-container__input datepicker__input'
                         type='date'
                         value={this.state.value}
                         min={this.props.min_date}
@@ -214,7 +214,7 @@ class DatePicker extends React.Component {
                     />
                     <label className='datepicker__native-overlay' htmlFor={this.props.name}>
                         {this.state.value || this.props.placeholder}
-                        <IconArrow className='datepicker__native-overlay__arrowhead' />
+                        <IconArrow className='datepicker__arrowhead' />
                     </label>
                 </div>
             );
@@ -248,9 +248,9 @@ class DatePicker extends React.Component {
                     in={this.state.is_datepicker_visible}
                     timeout={100}
                     classNames={{
-                        enter    : 'datepicker__picker--enter',
-                        enterDone: 'datepicker__picker--enter-done',
-                        exit     : 'datepicker__picker--exit',
+                        enter    : `datepicker__picker--enter datepicker__picker--${this.props.alignment}-enter`,
+                        enterDone: `datepicker__picker--enter-done datepicker__picker--${this.props.alignment}-enter-done`,
+                        exit     : `datepicker__picker--exit datepicker__picker--${this.props.alignment}-exit`,
                     }}
                     unmountOnExit
                 >

@@ -1,4 +1,5 @@
 /* Loading Spinner */
+/** @define block-ui */
 .block-ui {
     position: absolute;
     z-index: 3;
@@ -10,13 +11,13 @@
     width: calc(100% - 4px);
     height: 100%;
 
-    .loading {
+    &__loading {
         position: absolute;
         top: calc(50% - 22px);
         left: calc(50% - 16px);
         z-index: 11;
 
-        .spinner {
+        &-spinner {
             position: relative;
             margin: 0 auto;
             width: 4.2em;
@@ -26,7 +27,7 @@
                 display: block;
                 padding-top: 100%;
             }
-            .circular {
+            &-circular {
                 animation: rotate 2s linear infinite;
                 height: 100%;
                 transform-origin: center center;
@@ -38,12 +39,12 @@
                 right: 0;
                 margin: auto;
 
-                .path {
-                    stroke-dasharray: 1, 200;
-                    stroke-dashoffset: 0;
-                    animation: dash 1.5s ease-in-out infinite, colorBlue 6s ease-in-out infinite;
-                    stroke-linecap: round;
-                }
+            }
+            &-path {
+                stroke-dasharray: 1, 200;
+                stroke-dashoffset: 0;
+                animation: dash 1.5s ease-in-out infinite, colorBlue 6s ease-in-out infinite;
+                stroke-linecap: round;
             }
         }
     }
@@ -80,16 +81,5 @@
 @keyframes colorOrange {
     100%, 0% {
         stroke: $COLOR_ORANGE;
-    }
-}
-
-// Dark Theme
-.theme--dark {
-    .block-ui {
-        background: rgba(16, 19, 32, 0.6) !important; // this is color dark blue 2 with 0.6 opacity
-
-        .loading .circular .path {
-            animation: dash 1.5s ease-in-out infinite, colorOrange 6s ease-in-out infinite;
-        }
     }
 }

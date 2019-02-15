@@ -12,7 +12,8 @@ const AllowEquals = ({
     !!is_allow_equal &&
         <div className='allow-equals'>
             <InputField
-                classNameInput='trade-container__input'
+                className='allow-equals__input-field'
+                classNameInput='allow-equals__input trade-container__input'
                 id='allow_equals'
                 name='contract_type'
                 onChange={onChange}
@@ -20,8 +21,8 @@ const AllowEquals = ({
                 type='checkbox'
                 checked={checked}
             />
-            <label htmlFor='allow_equals'>{localize('Allow equals')}</label>
-            <Tooltip icon='info' message={localize('Win payout if exit spot is also equal to entry spot.')} alignment='left' />
+            <label className='allow-equals__label' htmlFor='allow_equals'>{localize('Allow equals')}</label>
+            <Tooltip className='allow-equals__tooltip' classNameIcon='allow-equals__tooltip-info' icon='info' message={localize('Win payout if exit spot is also equal to entry spot.')} alignment='left' />
         </div>
 );
 

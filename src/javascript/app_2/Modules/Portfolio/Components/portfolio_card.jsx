@@ -17,7 +17,7 @@ const PortfolioCard = ({
     status,
 }) => (
     <NavLink
-        className='portfolio-card card-list__card'
+        className='portfolio-card card-list__card card-list__card-link'
         activeClassName='active'
         to={getContractPath(id)}
     >

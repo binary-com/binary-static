@@ -149,7 +149,7 @@
             border-color: $COLOR_LIGHT_GRAY_1;
             box-shadow: 0 0 0 2px rgba(127, 131, 151, 0.3);
         }
-        &:not([type=range]), label, textarea {
+        &:not([type=range]), label {
             touch-action: manipulation;
         }
         &.error {

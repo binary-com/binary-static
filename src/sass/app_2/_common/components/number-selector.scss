@@ -1,8 +1,9 @@
+/** @define number-selector */
 .number-selector {
     margin-top: 0.8em;
     text-align: center;
 
-    > div:first-child {
+    &__row:first-child {
         margin-bottom: 0.5em;
     }
     &__selection {
@@ -18,11 +19,11 @@
         &:not(:first-child) {
             margin-left: 5px;
         }
-        &.selected {
+        &--selected {
             @include typeface(--paragraph-left-bold-active);
             background-color: $COLOR_LIGHT_GRAY_1;
         }
-        &:hover:not(.selected) {
+        &:hover:not(&--selected) {
             cursor: pointer;
             background-color: $COLOR_LIGHT_BLACK_4;
         }

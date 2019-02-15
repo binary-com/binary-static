@@ -1,15 +1,21 @@
+import classNames          from 'classnames';
+import PropTypes           from 'prop-types';
 import React               from 'react';
 import { redirectToLogin } from '_common/base/login';
 import { localize }        from '_common/localize';
 import Button              from '../../Form/button.jsx';
 
-const LoginButton = () => (
+const LoginButton = ({ className }) => (
     <Button
-        className='secondary orange'
+        className={classNames(className, 'secondary orange')}
         has_effect
         text={localize('Log in')}
         onClick={redirectToLogin}
     />
 );
+
+LoginButton.propTypes = {
+    className: PropTypes.string,
+};
 
 export { LoginButton };

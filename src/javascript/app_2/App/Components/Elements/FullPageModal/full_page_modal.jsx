@@ -13,21 +13,21 @@ const FullPageModal = ({
     if (is_visible) {
         return (
             <div className='full-page-modal'>
-                <div className='modal-dialog'>
-                    <h1>{title}</h1>
-                    <p>{children}</p>
-                    <div className='modal-footer'>
+                <div className='full-page-modal__dialog'>
+                    <h1 className='full-page-modal__header'>{title}</h1>
+                    <p className='full-page-modal__content'>{children}</p>
+                    <div className='full-page-modal__footer'>
                         <div
-                            className='btn flat effect primary'
+                            className='full-page-modal__button btn flat effect primary'
                             onClick={onCancel}
                         >
-                            <span>{cancel_button_text}</span>
+                            <span className='full-page-modal__button-text'>{cancel_button_text}</span>
                         </div>
                         <div
-                            className='btn flat effect primary'
+                            className='full-page-modal__button btn flat effect primary'
                             onClick={onConfirm}
                         >
-                            <span>{confirm_button_text}</span>
+                            <span className='full-page-modal__button-text'>{confirm_button_text}</span>
                         </div>
                     </div>
                 </div>

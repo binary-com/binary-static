@@ -1,9 +1,11 @@
+import classNames   from 'classnames';
 import React        from 'react';
 import PropTypes    from 'prop-types';
 import { localize } from '_common/localize';
 import Button       from '../../Form/button.jsx';
 
 const InstallPWAButton = ({
+    className,
     prompt_event,
     onClick,
 }) => {
@@ -22,7 +24,7 @@ const InstallPWAButton = ({
 
     return (
         <Button
-            className='primary orange'
+            className={classNames(className, 'primary orange')}
             has_effect
             text={localize('Install')}
             onClick={showPrompt}
@@ -31,6 +33,7 @@ const InstallPWAButton = ({
 };
 
 InstallPWAButton.propTypes = {
+    className   : PropTypes.string,
     onClick     : PropTypes.func,
     prompt_event: PropTypes.object,
 };

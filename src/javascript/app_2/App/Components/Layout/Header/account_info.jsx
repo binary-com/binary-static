@@ -17,52 +17,50 @@ const AccountInfo = ({
     onClickUpgrade,
     toggleDialog,
 }) => (
-    <div className='acc-balance'>
-        <div className='acc-switcher-container'>
-            <div
-                className={classNames('acc-info', {
-                    'acc-info--show'      : is_dialog_on,
-                    'acc-info--is-virtual': is_virtual,
-                })}
-                onClick={toggleDialog}
+    <div className='acc-info__wrapper'>
+        <div
+            className={classNames('acc-info', {
+                'acc-info--show'      : is_dialog_on,
+                'acc-info--is-virtual': is_virtual,
+            })}
+            onClick={toggleDialog}
+        >
+            <p
+                className='acc-info__id'
+                title={loginid}
             >
-                <p
-                    className='acc-balance-id'
-                    title={loginid}
-                >
-                    {loginid}
-                </p>
-                {
-                    typeof balance !== 'undefined' &&
-                    <p className='acc-balance-amount'>
-                        <span
-                            className={classNames('symbols', (currency || '').toLowerCase())}
-                        />
-                        {balance}
-                    </p>
-                }
-                <IconArrow className='select-arrow' />
-            </div>
-            <CSSTransition
-                in={is_dialog_on}
-                timeout={200}
-                classNames={{
-                    enter    : 'acc-switcher-wrapper--enter',
-                    enterDone: 'acc-switcher-wrapper--enter-done',
-                    exit     : 'acc-switcher-wrapper--exit',
-                }}
-                unmountOnExit
-            >
-                <div className='acc-switcher-wrapper'>
-                    <AccountSwitcher
-                        is_visible={is_dialog_on}
-                        toggle={toggleDialog}
-                        is_upgrade_enabled={is_upgrade_enabled}
-                        onClickUpgrade={onClickUpgrade}
+                {loginid}
+            </p>
+            {
+                typeof balance !== 'undefined' &&
+                <p className='acc-info__balance'>
+                    <span
+                        className={classNames('symbols', (currency || '').toLowerCase())}
                     />
-                </div>
-            </CSSTransition>
+                    {balance}
+                </p>
+            }
+            <IconArrow className='acc-info__select-arrow' />
         </div>
+        <CSSTransition
+            in={is_dialog_on}
+            timeout={200}
+            classNames={{
+                enter    : 'acc-switcher__wrapper--enter',
+                enterDone: 'acc-switcher__wrapper--enter-done',
+                exit     : 'acc-switcher__wrapper--exit',
+            }}
+            unmountOnExit
+        >
+            <div className='acc-switcher__wrapper'>
+                <AccountSwitcher
+                    is_visible={is_dialog_on}
+                    toggle={toggleDialog}
+                    is_upgrade_enabled={is_upgrade_enabled}
+                    onClickUpgrade={onClickUpgrade}
+                />
+            </div>
+        </CSSTransition>
     </div>
 );
 

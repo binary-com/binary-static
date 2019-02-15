@@ -28,6 +28,7 @@ $IC_INFO        : url('../images/common/toast/ic_info.svg');
 $IC_SUCCESS     : url('../images/common/toast/ic_success.svg');
 $IC_WARNING     : url('../images/common/toast/ic_warning.svg');
 
+/** @define toast */
 .toast {
     z-index: 9999;
     position: absolute;
@@ -49,46 +50,6 @@ $IC_WARNING     : url('../images/common/toast/ic_warning.svg');
         font-size: 1.2em;
         color: $TOAST_TEXT_COLOR;
 
-        &__message {
-            align-self: center;
-            padding: 0.1em 0.8em;
-        }
-        &__close-button {
-            align-self: center;
-            background: transparent !important;
-            border: 0 !important;
-            padding: 0 !important;
-            cursor: pointer;
-            opacity: 0.7;
-            color: $TOAST_CLOSE_BUTTON_COLOR;
-
-            &:before {
-                content: $IC_CLOSE_NORMAL;
-            }
-            &:hover, &:focus {
-                opacity: 1;
-            }
-        }
-        &__icon {
-            align-self: center;
-
-            span {
-                margin-right: 0.8em;
-                padding-top: 0.5em;
-            }
-            &--error:before {
-                content: $IC_ERROR;
-            }
-            &--info:before {
-                content: $IC_INFO;
-            }
-            &--success:before {
-                content: $IC_SUCCESS;
-            }
-            &--warning:before {
-                content: $IC_WARNING;
-            }
-        }
         &--error {
             background-color: $TOAST_BACKGROUND_COLOR_ERROR !important;
             border: solid 1px $TOAST_BORDER_COLOR_ERROR !important;
@@ -104,6 +65,46 @@ $IC_WARNING     : url('../images/common/toast/ic_warning.svg');
         &--warning {
             background-color: $TOAST_BACKGROUND_COLOR_WARNING !important;
             border: solid 1px $TOAST_BORDER_COLOR_WARNING !important;
+        }
+    }
+    &__message {
+        align-self: center;
+        padding: 0.1em 0.8em;
+    }
+    &__close-button {
+        align-self: center;
+        background: transparent !important;
+        border: 0 !important;
+        padding: 0 !important;
+        cursor: pointer;
+        opacity: 0.7;
+        color: $TOAST_CLOSE_BUTTON_COLOR;
+
+        &:before {
+            content: $IC_CLOSE_NORMAL;
+        }
+        &:hover, &:focus {
+            opacity: 1;
+        }
+    }
+    &__icon {
+        align-self: center;
+
+        &-type {
+            margin-right: 0.8em;
+            padding-top: 0.5em;
+        }
+        &--error:before {
+            content: $IC_ERROR;
+        }
+        &--info:before {
+            content: $IC_INFO;
+        }
+        &--success:before {
+            content: $IC_SUCCESS;
+        }
+        &--warning:before {
+            content: $IC_WARNING;
         }
     }
     &--top-right {
@@ -134,30 +135,3 @@ $IC_WARNING     : url('../images/common/toast/ic_warning.svg');
     }
 
 }
-
-// Dark Theme
-.theme--dark {
-    .toast {
-        &__body {
-            background-color: $TOAST_BACKGROUND_COLOR_INFO;
-            color: $TOAST_TEXT_COLOR_DARK;
-
-            &__close-button {
-                color: $TOAST_CLOSE_BUTTON_COLOR_DARK;
-            }
-            &--error {
-                background-color: $TOAST_BACKGROUND_COLOR_ERROR_DARK !important;
-            }
-            &--info {
-                background-color: $TOAST_BACKGROUND_COLOR_INFO_DARK !important;
-            }
-            &--success {
-                background-color: $TOAST_BACKGROUND_COLOR_SUCCESS_DARK !important;
-            }
-            &--warning {
-                background-color: $TOAST_BACKGROUND_COLOR_WARNING_DARK !important;
-            }
-        }
-    }
-}
-

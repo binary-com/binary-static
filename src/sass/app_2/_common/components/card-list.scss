@@ -1,3 +1,4 @@
+/** @define card-list */
 .card-list {
     overflow: auto; // fixes margin collapse
 
@@ -10,8 +11,9 @@
         border: 1px solid $COLOR_LIGHT_BLACK_4;
         border-radius: 4px;
         color: $COLOR_LIGHT_BLACK_1;
-    }
-    a.card-list__card {
-        cursor: pointer;
+
+        &-link {
+            cursor: pointer;
+        }
     }
 }
