@@ -1,6 +1,6 @@
-@at-root {
-    @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700&subset=latin,vietnamese,cyrillic-ext,latin-ext,cyrillic');
-}
+/*------------------------------------*
+ *  # Constants
+ *------------------------------------*/
 
 /* stylelint-disable color-no-hex */
 $COLOR_GREEN_1    : #4bbfab;
@@ -30,7 +30,6 @@ $COLOR_DARK_BLUE_8: rgba(127, 131, 151, 0.3);
 
 /* stylelint-enable color-no-hex */
 
-$FONT_STACK: roboto, sans-serif;
 $BORDER_RADIUS: 4px;
 
 $MAX_CONTAINER_WIDTH: 1440px;

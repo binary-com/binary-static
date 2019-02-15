@@ -24,12 +24,8 @@
             cursor: pointer;
 
             p.acc-balance-id {
+                @include typeface(--title-bold-black, default, center);
                 pointer-events: none;
-                line-height: 0.5;
-                color: $COLOR_LIGHT_BLACK_1;
-                font-size: 1.6em;
-                font-weight: 600;
-                text-align: center;
 
                 &:after {
                     display: block;
@@ -41,21 +37,15 @@
                 }
             }
             p.acc-balance-amount {
-                line-height: 100%;
-                color: $COLOR_GREEN_1;
-                font-size: 1.6em;
-                padding: 0 0.8em;
-                font-weight: bold;
-                text-align: center;
+                @include typeface(--title-bold-green, default, center);
+                padding: 8px;
                 pointer-events: none;
             }
             .select-arrow {
                 pointer-events: none;
-                line-height: 1.5;
                 transition: transform 0.25s ease;
                 transform: rotate(0deg);
                 transform-origin: 50% 45%;
-                font-size: 1.6em;
             }
             &:hover:not(.show) {
                 background: $COLOR_LIGHT_BLACK_4;
@@ -65,16 +55,12 @@
                     color: $COLOR_ORANGE;
                 }
                 &:before {
-                    display: flex;
-                    text-transform: uppercase;
+                    @include typeface(--small-normal-orange, uppercase);
                     content: 'demo';
-                    font-size: 1.2em;
                     border: 1px solid $COLOR_ORANGE;
-                    color: $COLOR_ORANGE;
                     padding: 0.2em 0.8em;
                     margin-right: 0.8em;
                     border-radius: 16px;
-                    align-items: center;
                     pointer-events: none;
                 }
             }
@@ -116,19 +102,17 @@
         margin: 0.8em 0 1.6em;
 
         span {
+            @include typeface(--small-normal-grey, default, center);
             padding: 0.8em 1.6em;
-            border: 1px dashed $COLOR_DARK_BLUE_2;
-            color: $COLOR_DARK_BLUE_2;
-            font-size: 1.2em;
+            border: 1px dashed $COLOR_LIGHT_BLACK_2;
             width: 100%;
             margin: 0 1.6em;
-            text-align: center;
             border-radius: 4px;
             cursor: pointer;
 
             &:before {
                 content: '\002B';
-                color: $COLOR_DARK_BLUE_2;
+                color: $COLOR_LIGHT_BLACK_2;
                 margin-right: 0.8em;
             }
             &:hover {
@@ -150,46 +134,39 @@
             padding-bottom: 1.6em;
         }
         &__title {
-            font-size: 1.4em;
-            font-weight: bold;
-            padding: 0.571em 1.143em;
+            @include typeface(--paragraph-bold-black);
+            padding: 8px 16px;
             display: block;
-            color: $COLOR_LIGHT_BLACK_1;
         }
         .acc-switcher-account {
+            @include typeface(--small-normal-black);
             cursor: pointer;
-            font-size: 1em;
-            padding: 0.8em 1.6em;
+            padding: 8px 16px;
             position: relative;
             display: flex;
             align-items: center;
             justify-content: space-between;
 
             .acc-switcher__id {
+                @include typeface(--paragraph-light-black);
                 display: flex;
                 align-items: center;
-                font-weight: 300;
-                font-size: 1.4em;
-                line-height: 1.5;
 
                 &.virtual:before {
-                    text-transform: uppercase;
+                    @include typeface(--xxsmall-normal-orange, uppercase);
                     content: 'demo';
-                    font-size: 8px;
-                    font-weight: 500;
                     border: 1px solid $COLOR_ORANGE;
-                    color: $COLOR_ORANGE;
                     padding: 0.5em;
                     border-radius: 20px;
                     margin: 0 1em 0 0;
                 }
                 &__icon:before {
-                    width: 1.714em;
-                    height: 1.714em;
-                    margin-right: 1.143em;
-                    font-size: 1em;
-                    display: flex;
-                    align-items: center;
+                    width: 100%;
+                    height: 100%;
+                    margin-right: 16px;
+                    line-height: normal;
+                    display: inline-block;
+                    vertical-align: middle;
                 }
                 &__icon--usd:before {
                     content: url('../images/header/accounts/usd.svg');
@@ -220,8 +197,8 @@
                 }
             }
             .acc-switcher__radio {
-                height: 1.6em;
-                width: 1.6em;
+                height: 1em;
+                width: 1em;
                 border: 2px solid $COLOR_LIGHT_BLACK_2;
                 border-radius: 50%;
             }
@@ -240,15 +217,15 @@
             border-bottom: 1px solid $COLOR_LIGHT_BLACK_4;
 
             button.btn {
+                @include typeface(--small-normal-black);
                 margin: 0;
                 width: 100%;
-                font-size: 1.4em;
             }
         }
         .acc-logout {
+            @include typeface(--paragraph-normal-black);
+            padding: 16px;
             cursor: pointer;
-            font-size: 1.2em;
-            padding: 1.6em;
             display: flex;
             align-items: center;
             justify-content: flex-end;
@@ -257,7 +234,7 @@
             .inline-icon {
                 width: 1.6em;
                 height: auto;
-                margin-left: 0.8em;
+                margin-left: 16px;
             }
             &:hover {
                 background: $COLOR_LIGHT_BLACK_4;
