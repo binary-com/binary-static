@@ -1,12 +1,12 @@
-import PropTypes                      from 'prop-types';
-import React                          from 'react';
-import { connect }                    from 'Stores/connect';
+import PropTypes   from 'prop-types';
+import React       from 'react';
+import { connect } from 'Stores/connect';
 import {
     isTimeValid,
     minDate,
     setTime,
-    toMoment }                        from 'Utils/Date';
-import TimePicker                     from 'App/Components/Form/time_picker.jsx';
+    toMoment }     from 'Utils/Date';
+import TimePicker  from 'App/Components/Form/time_picker.jsx';
 
 const TradingTimePicker = ({
     name,
