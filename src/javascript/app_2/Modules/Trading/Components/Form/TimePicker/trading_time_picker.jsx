@@ -6,10 +6,9 @@ import {
     minDate,
     setTime,
     toMoment }     from 'Utils/Date';
-import TimePicker  from 'App/Components/Form/time_picker.jsx';
+import TimePicker  from 'App/Components/Form/TimePicker';
 
 const TradingTimePicker = ({
-    name,
     server_time,
     expiry_date,
     expiry_time,
@@ -32,14 +31,12 @@ const TradingTimePicker = ({
 
     return (
         <TimePicker
+            end_time={expiry_time_sessions[0].close}
             onChange={onChange}
-            is_align_right
-            sessions={expiry_time_sessions}
-            start_date={moment_expiry.unix()}
+            name='expiry_time'
+            placeholder='12:00'
+            start_time={expiry_time_sessions[0].open}
             value={expiry_time || min_date_expiry.format('HH:mm')}
-            is_clearable={false}
-            is_nativepicker={false}
-            name={name}
         />
     );
 };
