@@ -25,13 +25,13 @@
             border-color: $COLOR_LIGHT_BLACK_4;
         }
         input {
-            text-align: center;
+            font-size: inherit;
         }
     }
     .time-picker-dialog {
+        box-shadow: 0 2px 8px 0 $COLOR_LIGHT_BLACK_3;
         background-color: $COLOR_WHITE;
         border-radius: 4px;
-        height: 228px;
         padding-top: 10px;
         position: absolute;
         top: 0;
@@ -128,7 +128,7 @@
                 .list-title {
                     color: $COLOR_WHITE;
                 }
-                .list-item {
+                .list-container .list-item {
                     color: $COLOR_DARK_BLUE_7;
 
                     &.disabled {
