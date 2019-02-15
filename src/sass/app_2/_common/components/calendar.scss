@@ -108,18 +108,14 @@
         }
         a {
             cursor: inherit;
-            color: inherit;
-            font-size: 1.2em;
+            @include typeface(--small-normal-black);
         }
         &--select {
-            font-size: 1.4em;
-            line-height: 1.5;
+            @include typeface(--paragraph-bold-black);
         }
     }
     &__text {
-        font-size: 1.4em;
-        line-height: 1.5;
-        color: $COLOR_LIGHT_BLACK_1;
+        @include typeface(--paragraph-normal-black);
 
         &--bold {
             font-weight: bold;
@@ -130,7 +126,7 @@
         }
     }
     &__cell {
-        font-size: 1.2em;
+        @include typeface(--small-normal-black);
         align-self: center;
         justify-self: center;
         transition: background 0.2s;
@@ -141,9 +137,7 @@
             background: $COLOR_LIGHT_BLACK_4;
         }
         &--bold {
-            font-size: 1.4em;
-            font-weight: bold;
-            color: $COLOR_LIGHT_BLACK_1;
+            @include typeface(--paragraph-bold-black);
         }
         &--disabled:hover {
             background: $COLOR_WHITE;

@@ -7,14 +7,13 @@ a {
 }
 
 .popover {
+    @include typeface(--xsmall-semibold-black);
     position: absolute;
     left: 50%;
     bottom: 4em;
     background: $COLOR_WHITE;
     box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.14);
     max-width: 250px;
-    font-size: 0.8em;
-    font-weight: 500;
     border-radius: 4px;
     transform: scale(0, 0) translate(-50%, 0);
     opacity: 0;

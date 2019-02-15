@@ -58,16 +58,11 @@
             transform-origin: top;
         }
         &:before {
-            font-size: 1.2em;
-            font-weight: 400;
-            line-height: 1.5;
-            text-align: initial;
-            text-transform: none;
+            @include typeface(--small-normal-white, none);
             text-decoration: none;
             letter-spacing: normal;
             background: $COLOR_LIGHT_BLACK_1;
             border-radius: 4px;
-            color: $COLOR_WHITE;
             content: attr(data-tooltip);
             padding: 0.8em;
             white-space: nowrap;

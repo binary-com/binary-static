@@ -19,9 +19,9 @@ $BASE_FONT_SIZE: 10px;
 $FONT_SIZES: (
     'title'     em(16px),
     'paragraph' em(14px),
-    'small'     em(10px),
-    'xsmall'    em(8px),
-    'xxsmall'   em(6px),
+    'small'     em(12px),
+    'xsmall'    em(10px),
+    'xxsmall'   em(8px),
 );
 
 $FONT_COLORS: (
@@ -95,6 +95,11 @@ body {
     -moz-osx-font-smoothing: grayscale;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
+    box-sizing: border-box;
+}
+
+p {
+    margin: 1em 0;
 }
 
 // Forms

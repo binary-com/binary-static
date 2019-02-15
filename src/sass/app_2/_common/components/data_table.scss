@@ -4,8 +4,7 @@ $header-height: 4.2em;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    color: $COLOR_LIGHT_BLACK_1;
-    font-size: 1.4em;
+    @include typeface(--paragraph-normal-black, default, center);
     border: 1px solid $COLOR_LIGHT_BLACK_4;
 
     &__cell {

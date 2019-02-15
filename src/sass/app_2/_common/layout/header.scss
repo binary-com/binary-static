@@ -66,10 +66,7 @@
                     transition: background-color 0.3s;
 
                     span {
-                        font-size: 1.6em;
-                        font-weight: 300;
-                        text-transform: capitalize;
-                        color: $COLOR_LIGHT_BLACK_1;
+                        @include typeface(--title-light-black);
                         padding: 1em 1em 1em 0;
                         position: relative;
 

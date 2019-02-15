@@ -9,15 +9,13 @@
         display: inline-flex;
         justify-content: center;
         align-items: center;
-        color: $COLOR_LIGHT_BLACK_1;
         background-color: $COLOR_WHITE;
-        margin: 0 5px 5px 0;
-        font-size: 0.85rem;
+        margin-left: 5px;
+        @include typeface(--paragraph-normal-black, default, center);
 
         &.selected {
+            @include typeface(--paragraph-bold-white, default, center);
             background-color: $COLOR_LIGHT_GRAY_1;
-            color: $COLOR_WHITE;
-            font-weight: bold;
         }
         &:hover:not(.selected) {
             cursor: pointer;

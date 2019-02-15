@@ -1,8 +1,6 @@
 /* Ant style */
 .btn {
-    line-height: 1.5;
     display: inline-block;
-    text-align: center;
     touch-action: manipulation;
     cursor: pointer;
     white-space: nowrap;
@@ -15,10 +13,8 @@
     transition: all 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
     outline: 0;
     position: relative;
-    color: rgba(0, 0, 0, 0.65);
     background: $COLOR_GREEN_1;
-    font-size: 1.6em;
-    text-transform: uppercase;
+    @include typeface(--title-normal-black, uppercase, center);
 
     &.is-link {
         max-width: 220px;

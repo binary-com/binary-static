@@ -1,5 +1,4 @@
 .time-picker {
-    font-size: 16px;
     position: relative;
 
     &.padding {
@@ -12,22 +11,20 @@
         top: 8px;
         z-index: 1;
     }
-    .time-picker-input {
-        border-radius: 4px;
-        cursor: pointer;
-        font-weight: 300;
-        height: 32px;
-
-        &::placeholder {
-            color: $COLOR_LIGHT_BLACK_4;
-        }
-        &:hover {
-            border-color: $COLOR_LIGHT_BLACK_4;
-        }
-        input {
-            text-align: center;
-        }
-    }
+    // .time-picker-input {
+    //     border-radius: 4px;
+    //     cursor: pointer;
+    //     height: 32px;
+    //     &::placeholder {
+    //         color: $COLOR_LIGHT_BLACK_4;
+    //     }
+    //     &:hover {
+    //         border-color: $COLOR_LIGHT_BLACK_4;
+    //     }
+    //     input {
+    //         font-size: inherit;
+    //     }
+    // }
     .time-picker-dialog {
         background-color: $COLOR_WHITE;
         border-radius: 4px;
@@ -78,15 +75,13 @@
                 text-align: center;
 
                 .list-title {
-                    color: $COLOR_LIGHT_BLACK_1;
-                    font-size: 0.8rem;
-                    line-height: 20px;
+                    @include typeface(--small-bold-black, capitalize, center);
                 }
                 .list-container .list-item {
-                    border-radius: 4px;
+                    @include typeface(--small-normal-black);
                     cursor: pointer;
+                    border-radius: 4px;
                     display: inline-block;
-                    font-size: 0.75rem;
                     margin: 3px;
                     padding: 7px;
 

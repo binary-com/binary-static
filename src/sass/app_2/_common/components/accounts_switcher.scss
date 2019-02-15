@@ -134,12 +134,11 @@
             padding-bottom: 1.6em;
         }
         &__title {
-            @include typeface(--paragraph-bold-black);
+            @include typeface(--small-bold-black);
             padding: 8px 16px;
             display: block;
         }
         .acc-switcher-account {
-            @include typeface(--small-normal-black);
             cursor: pointer;
             padding: 8px 16px;
             position: relative;
@@ -148,7 +147,7 @@
             justify-content: space-between;
 
             .acc-switcher__id {
-                @include typeface(--paragraph-light-black);
+                @include typeface(--small-light-black);
                 display: flex;
                 align-items: center;
 
@@ -223,7 +222,7 @@
             }
         }
         .acc-logout {
-            @include typeface(--paragraph-normal-black);
+            @include typeface(--small-normal-black);
             padding: 16px;
             cursor: pointer;
             display: flex;

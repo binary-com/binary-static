@@ -13,10 +13,7 @@
         margin-top: 0.8em;
 
         span {
-            font-size: 1.4em;
-            text-transform: capitalize;
-            line-height: 1.5;
-            font-weight: 300;
+            @include typeface(--paragraph-normal-black);
             padding-left: 1.6em;
         }
         &:active, &:focus {
@@ -30,19 +27,15 @@
         display: inline-block;
         font-style: normal;
         vertical-align: baseline;
-        text-align: center;
-        text-transform: none;
         text-rendering: optimizeLegibility;
         position: absolute;
         pointer-events: none;
         top: 9px;
         right: 6px;
-        line-height: 1;
         transition: transform 0.2s ease;
         transform: rotate(0deg);
         transform-origin: 50% 45%;
-        color: $COLOR_LIGHT_BLACK_4;
-        font-size: 1.6em;
+        @include typeface(--title-normal-black, none, center);
 
         &:before {
             content: '\002303';
@@ -118,29 +111,23 @@
                 }
             }
             &__label {
+                @include typeface(--paragraph-normal-black);
                 pointer-events: none;
-                padding-left: 1.6em;
-                line-height: 3.2em;
                 height: 3.2em;
 
                 span {
-                    text-transform: capitalize;
-                    color: $COLOR_LIGHT_BLACK_4;
-                    font-size: inherit;
-                    font-weight: 300;
+                    @include typeface(--paragraph-bold-black);
                 }
             }
             &__item {
                 width: 100%;
-                font-size: 0.85rem;
 
                 span {
-                    text-transform: capitalize;
+                    @include typeface(--paragraph-normal-black);
                     display: block;
                     pointer-events: none;
                     vertical-align: middle;
                     padding-left: 1.6em;
-                    font-weight: 300;
                 }
                 * {
                     height: 2.286em;
@@ -227,7 +214,7 @@
 
                 &--selected span {
                     color: $COLOR_WHITE;
-                    font-weight: 600;
+                    font-weight: 700;
                     background: $COLOR_DARK_BLUE_5;
                 }
                 &:hover, &--highlighted {

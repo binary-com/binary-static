@@ -53,9 +53,8 @@
             background: $COLOR_LIGHT_BLACK_4_SOLID;
         }
         .settings-header {
-            padding: 1.6em;
-            font-size: 1.2em;
-            font-weight: 400;
+            padding: 0.8em 1.6em;
+            @include typeface(--small-normal-black);
         }
         .general-setting-container, .chart-setting-container {
             flex-direction: column;
@@ -73,8 +72,7 @@
                 align-items: center;
 
                 span {
-                    font-size: 1.2em;
-                    color: $COLOR_LIGHT_BLACK_1;
+                    @include typeface(--small-normal-black);
                 }
                 &:hover {
                     background-color: $COLOR_LIGHT_BLACK_4_SOLID;
@@ -103,13 +101,12 @@
             height: 280px;
         }
         .language-header {
-            font-size: 1.2em;
+            @include typeface(--small-normal-black, capitalize);
             padding: 0.8em 1.6em;
             display: flex;
             background: $COLOR_WHITE;
             cursor: pointer;
             text-decoration: none;
-            text-transform: capitalize;
 
             svg.arrow-back {
                 padding-right: 0.4em;
