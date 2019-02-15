@@ -81,6 +81,7 @@ export default class PortfolioStore extends BaseStore {
         portfolio_position.underlying_code = proposal.underlying;
         portfolio_position.underlying_name = proposal.display_name;
         portfolio_position.profit_loss     = profit_loss;
+        portfolio_position.purchase_time   = proposal.purchase_time;
 
         if (!proposal.is_valid_to_sell) {
             portfolio_position.status = 'no-resale';

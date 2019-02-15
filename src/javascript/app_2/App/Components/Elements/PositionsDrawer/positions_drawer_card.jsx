@@ -15,6 +15,7 @@ const PositionsDrawerCard = ({
     indicative,
     profit_loss,
     purchase,
+    purchase_time,
     status,
     type,
     underlying_code,
@@ -34,7 +35,7 @@ const PositionsDrawerCard = ({
                     <div
                         className={classNames(
                             'icons-underlying',
-                            `icons-underlying__ic-${underlying_code || 'default'}`
+                            `icons-underlying__ic-${underlying_code || 'unknown'}`
                         )}
                     />
                     <span className='positions-drawer-card__symbol'>{underlying_name}</span>
@@ -44,6 +45,7 @@ const PositionsDrawerCard = ({
                 </div>
             </div>
             <ProgressSlider
+                purchase_time={purchase_time}
                 expiry_time={expiry_time}
             />
             <div className={classNames(
@@ -51,10 +53,25 @@ const PositionsDrawerCard = ({
                 'positions-drawer-card__grid-profit-payout'
             )}
             >
-                <div className={classNames('positions-drawer-card__profit-loss', {
-                    'positions-drawer-card__profit-loss--negative': (profit_loss < 0),
-                    'positions-drawer-card__profit-loss--positive': (profit_loss > 0),
-                })}
+                <div className={classNames(
+                    'positions-drawer-card__profit-loss',
+                    'positions-drawer-card__profit-loss-label',
+                )}
+                >
+                    {localize('Potential P/L:')}
+                </div>
+                <div className={classNames(
+                    'positions-drawer-card__indicative',
+                    'positions-drawer-card__indicative-label',
+                )}
+                >
+                    {localize('Potential Payout:')}
+                </div>
+                <div className={classNames(
+                    'positions-drawer-card__profit-loss', {
+                        'positions-drawer-card__profit-loss--negative': (profit_loss < 0),
+                        'positions-drawer-card__profit-loss--positive': (profit_loss > 0),
+                    })}
                 >
                     <Money amount={Math.abs(profit_loss)} currency={currency} />
                 </div>
@@ -78,10 +95,14 @@ PositionsDrawerCard.propTypes = {
         PropTypes.number,
         PropTypes.string,
     ]),
-    id             : PropTypes.number,
-    indicative     : PropTypes.number,
-    profit_loss    : PropTypes.number,
-    purchase       : PropTypes.number,
+    id           : PropTypes.number,
+    indicative   : PropTypes.number,
+    profit_loss  : PropTypes.number,
+    purchase     : PropTypes.number,
+    purchase_time: PropTypes.PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
+    ]),
     status         : PropTypes.string,
     type           : PropTypes.string,
     underlying_code: PropTypes.string,

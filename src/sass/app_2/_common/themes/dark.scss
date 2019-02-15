@@ -4,6 +4,8 @@
     color: $COLOR_WHITE;
 
     .trade-container {
+        background: $COLOR_DARK_BLUE_2;
+
         &__price {
             color: $COLOR_WHITE;
 
@@ -59,6 +61,31 @@
         &__error {
             &-info span {
                 color: $COLOR_WHITE;
+            }
+        }
+        .chart-container {
+            .cq-context {
+                div.cq-chart-controls {
+                    border: none;
+                    border-right: 1px solid $COLOR_DARK_BLUE_5;
+                    border-top: 1px solid $COLOR_DARK_BLUE_5;
+
+                    @media (max-width: 768px) {
+                        border: 1px solid $COLOR_DARK_BLUE_5;
+                    }
+                }
+                .ciq-chart {
+                    .chartContainer:before {
+                        background-image: linear-gradient(to right, rgba(16, 19, 32, 1), rgba(16, 19, 32, 0));
+                    }
+                }
+            }
+            .cq-modal-dropdown .cq-categorical-display .ic-icon.icon-close-menu {
+                svg {
+                    g path {
+                        fill: $COLOR_DARK_BLUE_7;
+                    }
+                }
             }
         }
     }
@@ -324,26 +351,6 @@
 
             &:hover {
                 color: $COLOR_WHITE;
-            }
-        }
-    }
-    .chart-container {
-        .cq-context {
-            div.cq-chart-controls {
-                border: none;
-                border-right: 1px solid $COLOR_DARK_BLUE_5;
-                border-top: 1px solid $COLOR_DARK_BLUE_5;
-
-                @media (max-width: 768px) {
-                    border: 1px solid $COLOR_DARK_BLUE_5;
-                }
-            }
-        }
-        .cq-modal-dropdown .cq-categorical-display .ic-icon.icon-close-menu {
-            svg {
-                g path {
-                    fill: $COLOR_DARK_BLUE_7;
-                }
             }
         }
     }

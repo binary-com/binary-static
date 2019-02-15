@@ -95,6 +95,8 @@ $header-height: 40px;
                 padding: 8px 0;
                 background: $COLOR_DARK_BLUE_3;
                 border-radius: $BORDER_RADIUS;
+                margin-left: -4px;
+                margin-right: -4px;
             }
         }
         &__purchase {
@@ -103,10 +105,12 @@ $header-height: 40px;
                 padding: 8px;
                 display: flex;
                 justify-content: center;
+                align-items: center;
             }
             &-label {
                 text-transform: capitalize;
                 margin-right: 0.5em;
+                font-size: 10px;
                 color: $COLOR_DARK_BLUE_7;
             }
         }
@@ -137,46 +141,26 @@ $header-height: 40px;
             font-size: 12px;
             font-weight: bold;
             display: flex;
-            flex-direction: row;
-            justify-content: flex-end;
+            justify-content: center;
             align-items: center;
-            margin-bottom: auto;
 
-            &:after {
-                content: '';
-                display: inline-block;
-                height: 16px;
-                width: 16px;
-                background-size: 16px 16px;
-                margin-left: 2px;
+            &-label {
+                color: $COLOR_DARK_BLUE_7;
+                font-size: 10px;
+                font-weight: normal;
+                margin-bottom: 0.5em;
             }
             &--price-moved-up {
                 color: $COLOR_GREEN_1;
-
-                &:after {
-                    background-image: url('../images/positions/ic_price_up.svg');
-                }
             }
             &--price-moved-down {
                 color: $COLOR_RED;
-
-                &:after {
-                    background-image: url('../images/positions/ic_price_down.svg');
-                }
             }
             &--price-stable {
                 color: $COLOR_LIGHT_BLACK_1;
-
-                &:after {
-                    background-image: url('../images/positions/ic_price_stable_light.svg');
-                }
             }
             &--no-resale {
                 color: $COLOR_LIGHT_BLACK_4;
-
-                &:after {
-                    background-image: url('../images/positions/ic_no_resale.svg');
-                }
             }
         }
         &__remaining-time {
@@ -184,16 +168,6 @@ $header-height: 40px;
             color: $COLOR_LIGHT_BLACK_2;
             text-align: right;
 
-            &:before {
-                content: '';
-                display: inline-block;
-                height: 10px;
-                width: 10px;
-                background-size: 10px 10px;
-                margin-right: 2px;
-                background-image: url('../images/positions/ic_countdown.svg');
-                vertical-align: text-top;
-            }
             .remaining-time {
                 display: inline;
             }
@@ -201,7 +175,15 @@ $header-height: 40px;
         &__profit-loss {
             font-size: 12px;
             text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
+            &-label {
+                font-size: 10px;
+                color: $COLOR_DARK_BLUE_7;
+                margin-bottom: 0.5em;
+            }
             &--negative {
                 color: $COLOR_RED;
 
@@ -267,10 +249,6 @@ $header-height: 40px;
                 }
                 &--price-stable {
                     color: $COLOR_WHITE;
-
-                    &:after {
-                        background-image: url('../images/positions/ic_price_stable_dark.svg');
-                    }
                 }
             }
         }

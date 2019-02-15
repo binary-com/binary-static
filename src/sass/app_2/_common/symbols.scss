@@ -58,6 +58,12 @@
         width: 32px;
         height: 24px;
     }
+    &__ic-unknown:before {
+        content: '?';
+        background: $COLOR_LIGHT_GRAY_1;
+        border-radius: $BORDER_RADIUS;
+        padding: 4px 12px;
+    }
     &__ic-frxAUDCAD:before {
         content: url('../images/portfolio/underlying_icons/ic_frxAUDCAD.svg');
     }

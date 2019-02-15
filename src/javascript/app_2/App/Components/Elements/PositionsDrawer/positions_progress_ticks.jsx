@@ -1,30 +1,36 @@
 import classNames   from 'classnames';
 import PropTypes    from 'prop-types';
 import React        from 'react';
+import { localize } from '_common/localize';
 
-const ProgressTicks = ({ value, ticks }) => {
-    const arr_ticks = [...Array(ticks).keys()];
+const ProgressTicks = ({ current_tick, ticks_count }) => {
+    const arr_ticks = [...Array(ticks_count).keys()];
     return (
         <React.Fragment>
-            {arr_ticks.map(idx =>
-                <span
-                    key={idx}
-                    className={classNames('ticks__step', {
-                        'ticks__step--active': (idx + 1) === parseInt(value),
-                        'ticks__step--marked': (idx + 1) < parseInt(value),
-                    })}
-                />
-            )}
+            <span className='progress-slider__ticks-caption'>
+                {localize('Tick [_1]', current_tick)}
+            </span>
+            <div className='progress-slider__ticks'>
+                {arr_ticks.map(idx =>
+                    <span
+                        key={idx}
+                        className={classNames('ticks__step', {
+                            'ticks__step--active': (idx + 1) === parseInt(current_tick),
+                            'ticks__step--marked': (idx + 1) < parseInt(current_tick),
+                        })}
+                    />
+                )}
+            </div>
         </React.Fragment>
     );
 };
 
 ProgressTicks.propTypes = {
-    ticks: PropTypes.oneOfType([
+    current_tick: PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
     ]),
-    value: PropTypes.oneOfType([
+    ticks_count: PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
     ]),
