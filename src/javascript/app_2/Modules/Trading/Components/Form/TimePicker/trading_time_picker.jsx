@@ -1,5 +1,4 @@
 import PropTypes                      from 'prop-types';
-import { PropTypes as MobxPropTypes } from 'mobx-react';
 import React                          from 'react';
 import { connect }                    from 'Stores/connect';
 import {
@@ -10,7 +9,6 @@ import {
 import TimePicker                     from 'App/Components/Form/time_picker.jsx';
 
 const TradingTimePicker = ({
-    is_nativepicker,
     name,
     server_time,
     expiry_date,
@@ -40,18 +38,28 @@ const TradingTimePicker = ({
             start_date={moment_expiry.unix()}
             value={expiry_time || min_date_expiry.format('HH:mm')}
             is_clearable={false}
-            is_nativepicker={is_nativepicker}
+            is_nativepicker={false}
             name={name}
         />
     );
 };
 
 TradingTimePicker.propTypes = {
-    is_nativepicker: PropTypes.bool,
-    mode           : PropTypes.string,
-    name           : PropTypes.string,
-    server_time    : PropTypes.object,
-    sessions       : MobxPropTypes.arrayOrObservableArray,
+    expiry_date: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.number,
+    ]),
+    expiry_time       : PropTypes.string,
+    market_close_times: PropTypes.array,
+    name              : PropTypes.string,
+    onChange          : PropTypes.func,
+    server_time       : PropTypes.object,
+    start_date        : PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
+    ]),
+    start_time: PropTypes.string,
+    
 };
 
 export default connect(

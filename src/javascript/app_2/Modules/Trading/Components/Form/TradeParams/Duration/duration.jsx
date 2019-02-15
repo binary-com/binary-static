@@ -26,18 +26,13 @@ const Duration = ({
     hasDurationUnit,
     is_advanced_duration,
     is_minimized,
-    is_nativepicker,
-    market_close_times,
     onChange,
     onChangeUiStore,
     onChangeMultiple,
     simple_duration_unit,
     server_time,
-    sessions,
     start_date,
-    start_time,
     validation_errors,
-    symbol,
 }) => {
     const expiry_list = [
         { text: localize('Duration'), value: 'duration' },
@@ -128,7 +123,6 @@ const Duration = ({
         },
         number_input: {
             type            : 'number',
-            is_nativepicker,
             is_incrementable: true,
             error_messages  : validation_errors.duration || [],
         },
@@ -153,44 +147,28 @@ const Duration = ({
                             advanced_expiry_type={advanced_expiry_type}
                             advanced_duration_unit={advanced_duration_unit}
                             changeDurationUnit={changeDurationUnit}
-                            contract_expiry_type={contract_expiry_type}
-                            duration_min_max={duration_min_max}
                             duration_t={duration_t}
                             duration_units_list={duration_units_list}
                             expiry_date={expiry_date}
                             expiry_list={expiry_list}
-                            expiry_time={expiry_time}
                             expiry_type={expiry_type}
                             getDurationFromUnit={getDurationFromUnit}
-                            is_nativepicker={is_nativepicker}
-                            market_close_times={market_close_times}
                             number_input_props={props.number_input}
                             onChange={onChange}
                             onChangeUiStore={onChangeUiStore}
                             server_time={server_time}
-                            sessions={sessions}
                             shared_input_props={props.shared_input}
                             start_date={start_date}
-                            start_time={start_time}
-                            symbol={symbol}
                         /> }
                     { !is_advanced_duration &&
                         <SimpleDuration
                             getDurationFromUnit={getDurationFromUnit}
                             changeDurationUnit={changeDurationUnit}
-                            duration_min_max={duration_min_max}
                             duration_t={duration_t}
                             duration_units_list={duration_units_list}
-                            expiry_date={expiry_date}
-                            is_nativepicker={is_nativepicker}
                             number_input_props={props.number_input}
-                            onChange={onChange}
-                            onChangeUiStore={onChangeUiStore}
-                            server_time={server_time}
                             shared_input_props={props.shared_input}
                             simple_duration_unit={simple_duration_unit}
-                            start_date={start_date}
-                            start_time={start_time}
                         /> }
                     <DurationToggle
                         name={'is_advanced_duration'}
@@ -228,19 +206,14 @@ Duration.propTypes = {
     hasDurationUnit     : PropTypes.func,
     is_advanced_duration: PropTypes.bool,
     is_minimized        : PropTypes.bool,
-    is_nativepicker     : PropTypes.bool,
-    market_close_times  : PropTypes.array,
     onChange            : PropTypes.func,
     onChangeUiStore     : PropTypes.func,
     server_time         : PropTypes.object,
-    sessions            : MobxPropTypes.arrayOrObservableArray,
     simple_duration_unit: PropTypes.string,
     start_date          : PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
     ]),
-    start_time       : PropTypes.string,
-    symbol           : PropTypes.string,
     validation_errors: PropTypes.object,
 };
 

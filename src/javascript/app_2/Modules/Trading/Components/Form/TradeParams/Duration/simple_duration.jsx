@@ -11,7 +11,6 @@ const SimpleDuration = ({
     duration_t,
     duration_units_list,
     getDurationFromUnit,
-    is_nativepicker,
     number_input_props,
     shared_input_props,
     simple_duration_unit,
@@ -45,7 +44,6 @@ const SimpleDuration = ({
             { simple_duration_unit === 'd' &&
                 <TradingDatePicker
                     alignment='left'
-                    is_nativepicker={is_nativepicker}
                     mode='duration'
                     name='duration'
                 />

@@ -21,7 +21,6 @@ const AdvancedDuration = ({
     expiry_date,
     expiry_list,
     expiry_type,
-    is_nativepicker,
     number_input_props,
     onChange,
     server_time,
@@ -64,7 +63,7 @@ const AdvancedDuration = ({
                         { duration_units_list.length > 1 &&
                             <Dropdown
                                 is_alignment_left
-                                is_nativepicker={is_nativepicker}
+                                is_nativepicker={false}
                                 list={duration_units_list}
                                 name='advanced_duration_unit'
                                 onChange={changeDurationUnit}
@@ -81,7 +80,6 @@ const AdvancedDuration = ({
                         }
                         { advanced_duration_unit === 'd' &&
                             <TradingDatePicker
-                                is_nativepicker={is_nativepicker}
                                 mode='duration'
                                 name='duration'
                                 is_24_hours_contract={is_24_hours_contract}
@@ -103,7 +101,6 @@ const AdvancedDuration = ({
                     <div className={endtime_container_class}>
                         <TradingDatePicker
                             alignment='left'
-                            is_nativepicker={is_nativepicker}
                             name='expiry_date'
                             is_24_hours_contract={is_24_hours_contract}
                             // validation_errors={validation_errors.expiry_date} TODO: add validation_errors for expiry date
