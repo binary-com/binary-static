@@ -61,7 +61,7 @@ const FullScreenDialog = (props) => {
             <div className='fullscreen-dialog__header-shadow-cover' />
             <div className='fullscreen-dialog__header-shadow' />
             <div className='fullscreen-dialog__content'>
-                <div className={`${wrapperClassName || 'contracts-modal-list'}`}>
+                <div className={`${wrapperClassName || 'fullscreen-dialog__contracts-modal-list'}`}>
                     {children}
                 </div>
             </div>
