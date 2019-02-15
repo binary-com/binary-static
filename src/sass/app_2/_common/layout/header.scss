@@ -111,7 +111,7 @@
             justify-content: flex-end;
             order: 1;
             display: inline-flex;
-            border-right: 0.1em solid $COLOR_LIGHT_BLACK_4;
+            border-right: 1px solid $COLOR_LIGHT_BLACK_4;
             height: #{$HEADER_HEIGHT - 1px};
         }
         .notifications-toggle {

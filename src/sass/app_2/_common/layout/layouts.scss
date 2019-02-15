@@ -82,7 +82,7 @@
             transition: transform 0.4s ease, opacity 0.2s linear;
 
             &__slideout {
-                transform: translate3d(calc(100% + 2em), 0, 0);
+                transform: translate3d(calc(100% + 2px), 0, 0);
                 pointer-events: none;
                 opacity: 0;
             }
