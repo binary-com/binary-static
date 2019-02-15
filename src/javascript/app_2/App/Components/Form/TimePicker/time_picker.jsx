@@ -4,7 +4,7 @@ import PropTypes         from 'prop-types';
 import React             from 'react';
 import { CSSTransition } from 'react-transition-group';
 import Dialog            from './dialog.jsx';
-import InputField        from '../input_field.jsx';
+import InputField        from '../InputField';
 import { IconClock } from '../../../../Assets/Common/icon_clock.jsx';
 
 class TimePicker extends React.Component {
