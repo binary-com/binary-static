@@ -8,7 +8,7 @@ import { localize }              from '_common/localize';
 import { IconClock }             from 'Assets/Common';
 import { isSessionAvailable }    from 'Stores/Modules/Trading/Helpers/start_date';
 import { toMoment }              from 'Utils/Date';
-import InputField                from './InputField/input_field.jsx';
+import InputField                from './input_field.jsx';
 
 class TimePickerDropdown extends React.Component {
     constructor(props) {
