@@ -7,7 +7,6 @@
         max-height: 2rem;
         overflow: hidden;
         border-radius: 4px 4px 0 0;
-        box-shadow: 0 0 4px 1px rgba(255, 255, 255, 0.16);
 
         .header-wrapper {
             transition: transform 0.4s ease;
@@ -62,10 +61,10 @@
     }
     .contract-contents {
         padding: 10px;
+        background: $COLOR_LIGHT_BLACK_4_SOLID;
         font-size: 0.75rem;
         border-top-width: 0;
         border-radius: 0 0 4px 4px;
-        box-shadow: 0 0 4px 1px rgba(255, 255, 255, 0.16);
 
         .longcode {
             font-weight: 300;
@@ -284,7 +283,7 @@ $CONTRACT_INFO_BOX_PADDING: 15px;
 }
 
 // Dark Theme
-.theme-wrapper.dark {
+.theme--dark {
     .contract-container {
         color: $COLOR_DARK_BLUE_7;
 
@@ -296,8 +295,10 @@ $CONTRACT_INFO_BOX_PADDING: 15px;
             }
         }
         .contract-contents {
+            background: $COLOR_DARK_BLUE_3;
+
             .ref-number, .info-header {
-                background-color: $COLOR_DARK_BLUE_3;
+                background: $COLOR_DARK_BLUE_2;
             }
             .info-item {
                 > div {

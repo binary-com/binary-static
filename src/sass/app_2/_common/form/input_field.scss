@@ -4,10 +4,10 @@
     font-weight: 300;
     border-radius: 4px;
 
-    &:has(input[type=checkbox]), span.tooltip {
+    &:has(input[type=checkbox]), .tooltip {
         display: inline-block;
     }
-    span.tooltip {
+    .tooltip {
         width: 100%;
     }
     & ~ [class*='__icon'] {
@@ -22,7 +22,6 @@
         margin: 1px;
         border-radius: $BORDER_RADIUS 0 0 $BORDER_RADIUS;
         box-sizing: border-box;
-        font-size: inherit;
     }
     &:has(input[type=checkbox]) {
         display: inline-block;
@@ -95,7 +94,7 @@
         display: inline-block;
         width: 100%;
         height: 32px;
-        font-size: 1rem;
+        font-size: 0.85rem;
         line-height: normal;
         color: $COLOR_LIGHT_BLACK_1;
         border: 1px solid $COLOR_LIGHT_BLACK_4;
@@ -149,7 +148,7 @@
         &:active, &:focus {
             outline: 0;
             border-radius: $BORDER_RADIUS;
-            border-color: $COLOR_DARK_BLUE_5;
+            border-color: $COLOR_LIGHT_GRAY_1;
             box-shadow: 0 0 0 0.2rem rgba(127, 131, 151, 0.3);
         }
         &:not([type=range]), label, textarea {
@@ -184,7 +183,7 @@
 }
 
 // Dark Theme
-.theme-wrapper.dark {
+.theme--dark {
     .input-field {
         &:has(input[type=checkbox]) {
             display: inline-block;

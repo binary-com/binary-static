@@ -89,6 +89,7 @@ const AdvancedDuration = ({
                         }
                         { (advanced_duration_unit !== 't' && advanced_duration_unit !== 'd') &&
                             <InputField
+                                classNameInput='trade-container__input'
                                 label={duration_units_list.length === 1 ? duration_units_list[0].text : null}
                                 name='duration'
                                 value={getDurationFromUnit(advanced_duration_unit)}

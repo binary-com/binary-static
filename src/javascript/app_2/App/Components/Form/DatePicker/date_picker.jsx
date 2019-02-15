@@ -180,6 +180,7 @@ class DatePicker extends React.Component {
         return (
             <InputField
                 className='datepicker__input'
+                classNameInput='trade-container__input'
                 data-tip={false}
                 data-value={this.state.value}
                 label={label}
@@ -201,7 +202,7 @@ class DatePicker extends React.Component {
                     <input
                         id={this.props.name}
                         name={this.props.name}
-                        className='datepicker__input'
+                        className='trade-container__input datepicker__input'
                         type='date'
                         value={this.state.value}
                         min={this.props.min_date}

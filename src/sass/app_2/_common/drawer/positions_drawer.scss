@@ -8,12 +8,12 @@ $header-height: 40px;
 .positions-drawer {
     width: $POSITIONS_DRAWER_WIDTH;
     // removing 2px below for borders
-    height: calc(100vh - #{$HEADER_HEIGHT} - #{$FOOTER_HEIGHT} - 2px - (2 * #{$POSITIONS_DRAWER_MARGIN}));
-    margin-top: $POSITIONS_DRAWER_MARGIN;
+    height: calc(100vh - #{$HEADER_HEIGHT} - #{$FOOTER_HEIGHT} - 2px - (#{$POSITIONS_DRAWER_MARGIN} * 3));
+    margin-top: #{$POSITIONS_DRAWER_MARGIN * 2};
     position: fixed;
     z-index: 2;
     top: $HEADER_HEIGHT;
-    left: 0;
+    left: 4px;
     border: 1px solid $COLOR_LIGHT_BLACK_4_SOLID;
     background-color: $COLOR_LIGHT_BLACK_4_SOLID;
     box-sizing: border-box;
@@ -21,7 +21,7 @@ $header-height: 40px;
     color: $COLOR_LIGHT_BLACK_1;
     transform: translateX(-100%);
     will-change: transform, opacity;
-    transition: opacity 0.25s ease, transform 0.25s ease;
+    transition: opacity 0.3s ease, transform 0.3s ease;
     border-radius: 4px;
 
     &--open {
@@ -39,7 +39,7 @@ $header-height: 40px;
         height: calc(100% - #{$header-height});
         padding: 8px 0;
         box-sizing: border-box;
-        overflow-y: auto;
+        overflow: hidden;
     }
     &__title {
         font-size: 14px;
@@ -179,7 +179,7 @@ $header-height: 40px;
 }
 
 // Dark Theme
-.theme-wrapper.dark {
+.theme--dark {
     .positions-drawer {
         background: $COLOR_DARK_BLUE_3;
         border-color: $COLOR_DARK_BLUE_3;

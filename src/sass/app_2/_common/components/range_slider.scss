@@ -19,6 +19,11 @@
 
     label[for=range] {
         position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 16px;
+        margin-bottom: 4px;
     }
     /* overriding firefox shadow pseudo element */
     input[type=range]::-moz-focus-outer {
@@ -99,14 +104,9 @@
         position: absolute;
         display: flex;
         justify-content: space-between;
-        top: 9px;
+        left: 0;
+        top: -2px;
         height: 0;
-        // fix for safari bug with input range slider width
-        @media not all and (min-resolution:.001dpcm) { // stylelint-disable-line
-            @supports (-webkit-appearance:none) {
-                margin: 0 4px;
-            }
-        }
 
         &__step {
             height: 2px;
@@ -142,7 +142,7 @@
     }
     &__line {
         position: absolute;
-        top: 11px;
+        top: 0;
         left: 0;
         height: 2px;
         background: $COLOR_LIGHT_GRAY_1;
@@ -161,7 +161,7 @@
     font-size: 0.75rem;
 }
 
-.theme-wrapper.dark {
+.theme--dark {
     .range-slider {
         &__track {
             background: $COLOR_DARK_BLUE_2 !important;

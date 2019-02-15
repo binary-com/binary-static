@@ -12,6 +12,7 @@ const AllowEquals = ({
     !!is_allow_equal &&
         <div className='allow-equals'>
             <InputField
+                classNameInput='trade-container__input'
                 id='allow_equals'
                 name='contract_type'
                 onChange={onChange}

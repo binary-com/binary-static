@@ -78,7 +78,7 @@ const UsbPage = () => (
                     <div className='gr-9'>
                         <div className='separator-md' />
                         <div className='video-container'>
-                            <iframe src='https://www.youtube.com/embed/pl2jq7EBvdU?rel=0&showinfo=0' frameBorder='0' allow='autoplay; encrypted-media' allowFullScreen />
+                            <iframe src='https://www.youtube.com/embed/cdkwhBK5fnk?rel=0&showinfo=0' frameBorder='0' allow='autoplay; encrypted-media' allowFullScreen />
                         </div>
                         <div className='separator-md' />
                     </div>
@@ -140,7 +140,7 @@ const UsbPage = () => (
                     <div className='gr-3 gr-12-t gr-12-m gr-12-p mb-bottom-30'>
                         <div className='icon-xl icon-clients' />
                         <h3 className='ft-400'>{it.broker_name}{(' clients')}</h3>
-                        <p>{('Trade on ')}{it.broker_name}{(' using USB and enjoy exclusive benefits such as discounts on binary option contract prices.')}</p>
+                        <p>{('Trade on ')}{it.broker_name}{(' using USB.')}</p>
                     </div>
                     <div className='gr-3 gr-12-t gr-12-m gr-12-p mb-bottom-30'>
                         <div className='icon-xl icon-crypto-traders' />
@@ -231,7 +231,7 @@ const UsbPage = () => (
                             <h3>{('What are the usages of USB?')}</h3>
                             <div>{('Use USB as normal money. For example, you can initiate trades, payments, and online transactions with USB.')}</div>
                             <h3>{('Why use USB?')}</h3>
-                            <div>{('USB has a flat rate: one USB is always equal to one US dollar. Thus, it is as stable and secure as the US dollar. It is also issued and guaranteed by ')}{it.broker_name}{(', a market leader with 18 years of trading history and a billion-dollar annual turnover. Moreover, by using USB for trading on ')}{it.broker_name}{(', you’ll be entitled to special discounts on contract prices.')}</div>
+                            <div>{('USB has a flat rate: one USB is always equal to one US dollar. Thus, it is as stable and secure as the US dollar. It is also issued and guaranteed by ')}{it.broker_name}{(', a market leader with 18 years of trading history and a billion-dollar annual turnover.')}</div>
                             <h3>{('Who can use USB?')}</h3>
                             <div>{('Anybody who wants to make a transaction with a stable, dependable cryptocurrency can use USB. Crypto traders can use USB to hedge against price volatility in cryptocurrency markets and exchange USB with other cryptocurrencies to benefit from market swings. Online consumers and businesses can use USB to enjoy a more secure and efficient payment method and avoid the hassle of dealing with banks and credit card companies.')}</div>
                             <h3>{('How many USBs are supplied?')}</h3>
