@@ -66,6 +66,15 @@
         &--ticks {
             height: 2px;
         }
+        &--green {
+            background: $COLOR_GREEN_1;
+        }
+        &--orange {
+            background: $COLOR_ORANGE;
+        }
+        &--red {
+            background: $COLOR_RED;
+        }
     }
 }
 
