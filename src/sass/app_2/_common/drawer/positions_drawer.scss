@@ -5,15 +5,15 @@ $header-height: 40px;
     transition: opacity 0.4s ease;
 }
 
-.app-contents--contract-mode {
-    .positions-drawer-card {
-        filter: blur(2px);
-
-        &.active, &:hover, &:focus, &:active {
-            filter: none;
-        }
-    }
-}
+// .app-contents--contract-mode {
+//     .positions-drawer-card {
+//         filter: blur(2px);
+//
+//         &.active, &.first, &:hover, &:focus, &:active {
+//             filter: none;
+//         }
+//     }
+// }
 
 .positions-drawer {
     width: $POSITIONS_DRAWER_WIDTH;
@@ -174,9 +174,8 @@ $header-height: 40px;
             }
         }
         &__remaining-time {
-            font-size: 10px;
+            font-size: 12px;
             color: $COLOR_LIGHT_BLACK_2;
-            text-align: right;
 
             .remaining-time {
                 display: inline;
@@ -240,7 +239,7 @@ $header-height: 40px;
             &__remaining-time {
                 color: $COLOR_DARK_BLUE_7;
             }
-            &.active:before {
+            &.active:before, &:hover:before {
                 content: '';
                 position: absolute;
                 height: 52px;
