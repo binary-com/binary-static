@@ -10,18 +10,19 @@ import {
 import DatePicker                     from 'App/Components/Form/DatePicker';
 
 const TradingDatePicker = ({
-    mode,
-    name,
-    server_time,
-    expiry_date,
+    duration,
     duration_min_max,
     duration_units_list,
+    expiry_date,
+    expiry_type,
+    is_24_hours_contract,
+    mode,
+    name,
+    onChange,
+    server_time,
     start_time,
     start_date,
-    expiry_type,
-    onChange,
     symbol,
-    is_24_hours_contract,
 }) => {
     let max_date_duration,
         min_date_expiry;
@@ -62,11 +63,16 @@ const TradingDatePicker = ({
             start_date={start_date}
             underlying={symbol}
             value={expiry_date}
+            duration={duration}
         />
     );
 };
 
 TradingDatePicker.propTypes = {
+    duration: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.number,
+    ]),
     duration_min_max   : PropTypes.object,
     duration_units_list: MobxPropTypes.arrayOrObservableArray,
     expiry_date        : PropTypes.oneOfType([
@@ -89,14 +95,15 @@ TradingDatePicker.propTypes = {
 
 export default connect(
     ({ modules, common }) => ({
-        expiry_date        : modules.trade.expiry_date,
+        duration           : modules.trade.duration,
         duration_min_max   : modules.trade.duration_min_max,
         duration_units_list: modules.trade.duration_units_list,
-        start_time         : modules.trade.start_time,
-        start_date         : modules.trade.start_date,
+        expiry_date        : modules.trade.expiry_date,
         expiry_type        : modules.trade.expiry_type,
         onChange           : modules.trade.onChange,
-        symbol             : modules.trade.symbol,
         server_time        : common.server_time,
+        start_date         : modules.trade.start_date,
+        start_time         : modules.trade.start_time,
+        symbol             : modules.trade.symbol,
     })
 )(TradingDatePicker);

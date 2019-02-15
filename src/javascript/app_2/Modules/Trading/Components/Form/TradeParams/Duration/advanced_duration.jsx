@@ -23,10 +23,10 @@ const AdvancedDuration = ({
     expiry_type,
     number_input_props,
     onChange,
+    onChangeUiStore,
     server_time,
     shared_input_props,
     start_date,
-    onChangeUiStore,
 }) => {
     const moment_expiry      = toMoment(expiry_date || server_time);
     let is_24_hours_contract = false;

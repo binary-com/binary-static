@@ -21,18 +21,18 @@ import Calendar             from '../../Elements/Calendar';
 
 class DatePicker extends React.Component {
     state = {
-        value                : this.props.value,
         date_value           : '',
+        holidays             : [],
         is_datepicker_visible: false,
         is_clear_btn_visible : false,
-        holidays             : [],
+        value                : this.props.value,
         weekends             : [],
     };
 
     componentDidMount() {
         document.addEventListener('click', this.onClickOutside, true);
-        const { mode, value } = this.props;
-        const initial_value = mode === 'duration' ? value : formatDate(value, 'DD MMM YYYY');
+        const { mode, value, duration } = this.props;
+        const initial_value = mode === 'duration' ? formatDate(addDays(toMoment(), duration), 'DD MMM YYYY') : formatDate(value, 'DD MMM YYYY');
 
         this.updateDatePickerValue(initial_value);
 
@@ -288,7 +288,11 @@ DatePicker.defaultProps = {
 
 DatePicker.propTypes = {
     ...Calendar.propTypes,
-    label: PropTypes.string,
+    duration: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.number,
+    ]),
+    label: PropTypes.string,  
 };
 
 export default observer(DatePicker);

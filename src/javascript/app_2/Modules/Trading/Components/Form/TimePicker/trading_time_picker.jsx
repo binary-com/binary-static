@@ -9,13 +9,13 @@ import {
 import TimePicker  from 'App/Components/Form/TimePicker';
 
 const TradingTimePicker = ({
-    server_time,
     expiry_date,
     expiry_time,
-    start_time,
-    start_date,
-    onChange,
     market_close_times,
+    onChange,
+    server_time,
+    start_date,
+    start_time,
 }) => {
     const moment_expiry = toMoment(expiry_date || server_time);
     const moment_contract_start_date_time =
@@ -61,13 +61,13 @@ TradingTimePicker.propTypes = {
 
 export default connect(
     ({ modules, common }) => ({
-        expiry_date        : modules.trade.expiry_date,
         duration_units_list: modules.trade.duration_units_list,
-        start_time         : modules.trade.start_time,
-        start_date         : modules.trade.start_date,
+        expiry_date        : modules.trade.expiry_date,
         expiry_time        : modules.trade.expiry_time,
+        market_close_times : modules.trade.market_close_times,
         onChange           : modules.trade.onChange,
         server_time        : common.server_time,
-        market_close_times : modules.trade.market_close_times,
+        start_date         : modules.trade.start_date,
+        start_time         : modules.trade.start_time,
     })
 )(TradingTimePicker);
