@@ -292,7 +292,7 @@ DatePicker.propTypes = {
         PropTypes.string,
         PropTypes.number,
     ]),
-    label: PropTypes.string,  
+    label: PropTypes.string,
 };
 
 export default observer(DatePicker);
