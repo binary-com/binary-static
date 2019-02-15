@@ -5,6 +5,16 @@ $header-height: 40px;
     transition: opacity 0.4s ease;
 }
 
+.app-contents--contract-mode {
+    .positions-drawer-card {
+        filter: blur(2px);
+
+        &.active, &:hover, &:focus, &:active {
+            filter: none;
+        }
+    }
+}
+
 .positions-drawer {
     width: $POSITIONS_DRAWER_WIDTH;
     // removing 2px below for borders
@@ -74,14 +84,10 @@ $header-height: 40px;
         text-decoration: none;
         position: relative;
         color: $COLOR_LIGHT_BLACK_1;
-        // filter: blur(2px);
 
         &.active {
             cursor: default;
         }
-        // &.active, &:hover, &:focus, &:active {
-        //     filter: none;
-        // }
         &:not(:last-child) {
             margin-bottom: 16px;
         }
