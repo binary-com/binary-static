@@ -67,13 +67,13 @@
             height: 2px;
         }
         &--green {
-            background: $COLOR_GREEN_1;
+            background: $COLOR_GREEN_1 !important;
         }
         &--orange {
-            background: $COLOR_ORANGE;
+            background: $COLOR_ORANGE !important;
         }
         &--red {
-            background: $COLOR_RED;
+            background: $COLOR_RED !important;
         }
     }
 }
