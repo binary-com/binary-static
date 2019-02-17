@@ -5,6 +5,16 @@ $header-height: 40px;
     transition: opacity 0.4s ease;
 }
 
+// .app-contents--contract-mode {
+//     .positions-drawer-card {
+//         filter: blur(2px);
+//
+//         &.active, &.first, &:hover, &:focus, &:active {
+//             filter: none;
+//         }
+//     }
+// }
+
 .positions-drawer {
     width: $POSITIONS_DRAWER_WIDTH;
     // removing 2px below for borders
@@ -22,7 +32,7 @@ $header-height: 40px;
     transform: translateX(-100%);
     will-change: transform, opacity;
     transition: opacity 0.3s ease, transform 0.3s ease;
-    border-radius: 4px;
+    border-radius: $BORDER_RADIUS;
 
     &--open {
         transform: translateX(#{$POSITIONS_DRAWER_MARGIN});
@@ -65,28 +75,60 @@ $header-height: 40px;
         box-sizing: border-box;
         padding: 8px;
         margin: 0 10px;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr auto;
-        row-gap: 5px;
-        border: 1px solid $COLOR_LIGHT_BLACK_4;
-        border-radius: 4px;
+        border: 1px solid $COLOR_WHITE;
+        background: $COLOR_WHITE;
+        border-radius: $BORDER_RADIUS;
+        display: flex;
+        flex-direction: column;
         cursor: pointer;
         text-decoration: none;
+        position: relative;
         color: $COLOR_LIGHT_BLACK_1;
 
-        &.active, &:hover {
-            background: $COLOR_LIGHT_BLACK_4_SOLID;
-        }
         &.active {
             cursor: default;
-            border-color: $COLOR_DARK_BLUE_5;
         }
         &:not(:last-child) {
             margin-bottom: 16px;
         }
+        &__grid {
+            display: grid;
+            grid-template-rows: 1fr auto;
+
+            &-underlying-trade, &-profit-payout {
+                grid-template-columns: 1fr 1fr;
+            }
+            &-profit-payout {
+                padding: 8px 0;
+                background: $COLOR_LIGHT_BLACK_4;
+                border-radius: $BORDER_RADIUS;
+                margin-left: -4px;
+                margin-right: -4px;
+            }
+        }
+        &__purchase {
+            &-price {
+                font-size: 12px;
+                padding: 8px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-weight: bold;
+            }
+            &-label {
+                text-transform: capitalize;
+                margin-right: 0.5em;
+                font-size: 10px;
+                font-weight: normal;
+                color: $COLOR_LIGHT_BLACK_1;
+            }
+        }
         &__type {
             font-size: 12px;
+            display: flex;
+            justify-content: flex-end;
+            margin-right: 0.5rem;
+            font-weight: bold;
 
             .contract-type {
                 display: flex;
@@ -94,7 +136,7 @@ $header-height: 40px;
                 align-items: center;
 
                 .type-wrapper {
-                    margin: 0 4px 4px 0;
+                    margin: 0 8px 0px 0;
                 }
                 span {
                     width: 30px;
@@ -102,75 +144,79 @@ $header-height: 40px;
             }
         }
         &__symbol {
-            font-size: 10px;
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
+            font-size: 12px;
+            margin-left: 0.5rem;
         }
         &__indicative {
             font-size: 12px;
             font-weight: bold;
             display: flex;
-            flex-direction: row;
-            justify-content: flex-end;
+            justify-content: center;
             align-items: center;
-            margin-bottom: auto;
 
-            &:after {
-                content: '';
-                display: inline-block;
-                height: 16px;
-                width: 16px;
-                background-size: 16px 16px;
-                margin-left: 2px;
+            &-label {
+                color: $COLOR_LIGHT_BLACK_1;
+                font-size: 10px;
+                font-weight: normal;
+                margin-bottom: 0.5em;
             }
             &--price-moved-up {
                 color: $COLOR_GREEN_1;
-
-                &:after {
-                    background-image: url('../images/positions/ic_price_up.svg');
-                }
             }
             &--price-moved-down {
                 color: $COLOR_RED;
-
-                &:after {
-                    background-image: url('../images/positions/ic_price_down.svg');
-                }
             }
             &--price-stable {
                 color: $COLOR_LIGHT_BLACK_1;
-
-                &:after {
-                    background-image: url('../images/positions/ic_price_stable_light.svg');
-                }
             }
             &--no-resale {
                 color: $COLOR_LIGHT_BLACK_4;
-
-                &:after {
-                    background-image: url('../images/positions/ic_no_resale.svg');
-                }
             }
         }
         &__remaining-time {
-            font-size: 10px;
+            font-size: 12px;
             color: $COLOR_LIGHT_BLACK_2;
-            text-align: right;
 
-            &:before {
-                content: '';
-                display: inline-block;
-                height: 10px;
-                width: 10px;
-                background-size: 10px 10px;
-                margin-right: 2px;
-                background-image: url('../images/positions/ic_countdown.svg');
-                vertical-align: text-top;
-            }
             .remaining-time {
                 display: inline;
             }
+        }
+        &__profit-loss {
+            font-size: 12px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+
+            &-label {
+                font-size: 10px;
+                color: $COLOR_LIGHT_BLACK_1;
+                margin-bottom: 0.5em;
+                font-weight: normal;
+            }
+            &--negative {
+                color: $COLOR_RED;
+
+                &:before {
+                    content: '-';
+                    color: inherit;
+                }
+            }
+            &--positive {
+                color: $COLOR_GREEN_2;
+
+                &:before {
+                    content: '+';
+                    color: inherit;
+                }
+            }
+        }
+        &__underlying-name {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            font-weight: bold;
         }
     }
     /*
@@ -186,18 +232,22 @@ $header-height: 40px;
         color: $COLOR_WHITE;
 
         &-card {
-            background: $COLOR_DARK_BLUE_5;
-            border-color: $COLOR_DARK_BLUE_5;
+            background: $COLOR_DARK_BLUE_2;
+            border-color: $COLOR_DARK_BLUE_2;
             color: $COLOR_WHITE;
 
             &__remaining-time {
                 color: $COLOR_DARK_BLUE_7;
             }
-            &.active, &:hover {
-                background: $COLOR_DARK_BLUE_5;
-            }
-            &.active {
-                border-color: $COLOR_WHITE;
+            &.active:before, &:hover:before {
+                content: '';
+                position: absolute;
+                height: 52px;
+                width: calc(100% + 2px);
+                left: -1px;
+                top: -1px;
+                border-radius: $BORDER_RADIUS;
+                background-image: linear-gradient(to top, rgba(16, 19, 32, 0), rgba(0, 148, 117, 0.16));
             }
             &__indicative {
                 &--no-resale {
@@ -205,11 +255,13 @@ $header-height: 40px;
                 }
                 &--price-stable {
                     color: $COLOR_WHITE;
-
-                    &:after {
-                        background-image: url('../images/positions/ic_price_stable_dark.svg');
-                    }
                 }
+            }
+            &__grid-profit-payout {
+                background: $COLOR_DARK_BLUE_3;
+            }
+            &__purchase-label, &__profit-loss-label, &__indicative-label {
+                color: $COLOR_DARK_BLUE_7;
             }
         }
         &__title {

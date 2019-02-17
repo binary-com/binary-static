@@ -26,7 +26,6 @@
                 .cq-chart-control-left {
                     .cq-chart-controls {
                         transform: translate3d(1px, 0, 0) !important;
-                        background: $COLOR_DARK_BLUE_3;
                     }
                 }
             }
@@ -144,6 +143,18 @@
                 div.chartContainer {
                     background: transparent;
                     min-height: 100%;
+
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        height: 100%;
+                        width: 80px;
+                        top: 0;
+                        left: -2px;
+                        background-image: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+                        pointer-events: none;
+                        z-index: 2;
+                    }
                 }
                 div.cq-chart-controls {
                     box-shadow: none;

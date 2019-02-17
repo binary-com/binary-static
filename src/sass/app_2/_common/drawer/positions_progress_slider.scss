@@ -1,0 +1,99 @@
+
+// Progress Slider
+.progress-slider {
+    position: relative;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    width: 100%;
+    padding: 0 4px;
+    box-sizing: border-box;
+
+    &__track {
+        position: relative;
+        margin: 2px 0 8px;
+        height: 6px;
+        width: 100%;
+        background: $COLOR_LIGHT_BLACK_4;
+        border-radius: #{$BORDER_RADIUS * 2};
+    }
+    &__ticks {
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        left: 0;
+        top: -2px;
+        height: 0;
+
+        &-step {
+            height: 2px;
+            width: 2px;
+            border: 2px solid $COLOR_WHITE;
+            background: $COLOR_WHITE;
+            border-radius: 50%;
+            margin: 0 3px;
+            transition: background 0.5s, border-color 0.5s, box-shadow 0.5s;
+            box-shadow: 0 0 0 0px rgba(0, 0, 0, 0);
+            cursor: pointer;
+
+            &--active, &--marked {
+                background: $COLOR_LIGHT_GRAY_1;
+                border-color: $COLOR_LIGHT_GRAY_1;
+            }
+            &:first-child {
+                margin-left: 0;
+            }
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+        &-caption {
+            display: flex;
+            padding: 4px 0;
+            justify-content: space-between;
+            line-height: 18px;
+        }
+    }
+    &__line {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        border-radius: #{$BORDER_RADIUS * 2};
+        background: $COLOR_LIGHT_GRAY_1;
+        pointer-events: none;
+        transition: width 0.3s;
+
+        &--ticks {
+            height: 2px;
+        }
+        &--green {
+            background: $COLOR_GREEN_1 !important;
+        }
+        &--orange {
+            background: $COLOR_ORANGE !important;
+        }
+        &--red {
+            background: $COLOR_RED !important;
+        }
+    }
+}
+
+.theme--dark {
+    .progress-slider {
+        &__track {
+            background: $COLOR_DARK_BLUE_3;
+        }
+        .ticks-step {
+            border: 2px solid $COLOR_DARK_BLUE_2;
+            background: $COLOR_DARK_BLUE_2;
+
+            &--active, &--marked {
+                background: $COLOR_PURPLE;
+                border-color: $COLOR_PURPLE;
+            }
+        }
+        &__line {
+            background: $COLOR_PURPLE;
+        }
+    }
+}
