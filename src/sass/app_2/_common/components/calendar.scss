@@ -1,4 +1,4 @@
-.calendar {
+.calendar, .sidebar-container .calendar {
     position: absolute;
     top: 0;
     background: $COLOR_WHITE;
@@ -15,6 +15,7 @@
         border: none;
         outline: none;
         background: none;
+        font-size: 0.85rem;
     }
     &__header, &__footer {
         position: relative;
@@ -28,8 +29,8 @@
         justify-content: center;
     }
     &__body {
-        border-top: 1px solid $COLOR_GRAY;
-        border-bottom: 1px solid $COLOR_GRAY;
+        border-top: 1px solid $COLOR_LIGHT_BLACK_4_SOLID;
+        border-bottom: 1px solid $COLOR_LIGHT_BLACK_4_SOLID;
 
         &--date, &--month, &--year, &--decade {
             display: grid;
@@ -45,7 +46,7 @@
         }
         &--date {
             grid-template-columns: repeat(7, 24px);
-            grid-template-rows: repeat(6, 24px);
+            grid-auto-rows: 24px;
 
             span {
                 width: 100%;
@@ -77,7 +78,7 @@
         position: absolute;
         padding: 0 5px;
 
-        &:hover:not(&--disabled) {
+        &:hover:not(.calendar__nav--disabled) {
             cursor: pointer;
         }
         &--prev-year {
@@ -93,7 +94,7 @@
             right: 14%;
         }
         &--disabled path {
-            fill: $COLOR_GRAY;
+            fill: $COLOR_LIGHT_BLACK_3;
         }
     }
     &__btn {
@@ -104,7 +105,6 @@
 
         &--disabled {
             cursor: default;
-            color: $COLOR_GRAY;
             transition: none;
         }
         a {
@@ -116,13 +116,13 @@
     &__text {
         font-size: 14px;
         line-height: 1.5;
-        color: $COLOR_LIGHT_BLACK;
+        color: $COLOR_LIGHT_BLACK_1;
 
         &--bold {
             font-weight: bold;
         }
         & + &__btn {
-            border-top: 1px solid $COLOR_GRAY;
+            border-top: 1px solid $COLOR_LIGHT_BLACK_4;
             margin: 0 -12px;
         }
     }
@@ -131,97 +131,117 @@
         align-self: center;
         justify-self: center;
         transition: background 0.2s;
+        position: relative;
 
         &:hover {
             cursor: pointer;
-        }
-        &:hover:not(&--active) {
-            background: $COLOR_LIGHT_GRAY;
+            background: $COLOR_LIGHT_BLACK_4;
         }
         &--bold {
             font-size: 14px;
             font-weight: bold;
-            color: $COLOR_LIGHT_BLACK;
-        }
-        &--disabled, &--other {
-            color: $COLOR_GRAY;
-            transition: none;
+            color: $COLOR_LIGHT_BLACK_1;
         }
         &--disabled:hover {
+            background: $COLOR_WHITE;
             cursor: default;
+        }
+        &--disabled, &--other {
+            color: $COLOR_LIGHT_BLACK_3;
+            transition: none;
         }
         &--today {
             font-weight: 400;
-            border: 1px solid $COLOR_BLUE;
+            border: 1px solid $COLOR_LIGHT_BLACK_1;
             border-radius: 5px;
         }
         &--active {
             color: $COLOR_WHITE;
-            background: $COLOR_BLUE;
+            background: $COLOR_LIGHT_GRAY_1;
             font-weight: bold;
-            box-shadow: 0 2px 8px 0 rgba(42, 48, 82, 0.14);
+
+            &:hover {
+                background: $COLOR_LIGHT_GRAY_1;
+            }
+        }
+        .tooltip[data-tooltip] {
+            position: absolute;
+            display: inline-grid;
+            cursor: default;
+            height: 0;
+            top: 0;
+
+            i {
+                margin-top: -7px;
+            }
         }
     }
 }
 
 // Dark theme
-.theme-wrapper.dark {
+.theme--dark {
     .calendar {
-        background: $COLOR_BRANDBLUE_95;
-        border: 1px solid $COLOR_BRANDBLUE_85;
+        background: $COLOR_DARK_BLUE_3;
+        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.8), 0 2px 4px 0 rgba(0, 0, 0, 0.5);
 
         &__header, &__footer {
-            border-color: $COLOR_BRANDBLUE_85;
             color: $COLOR_WHITE;
 
             span a {
                 color: $COLOR_WHITE;
             }
         }
+        &__body {
+            border-color: $COLOR_DARK_BLUE_2;
+        }
         &__nav {
             path {
-                fill: $COLOR_BRANDBLUE_40;
+                fill: $COLOR_DARK_BLUE_7;
             }
             &--disabled path {
-                fill: $COLOR_BRANDBLUE_75;
+                fill: $COLOR_DARK_BLUE_6;
             }
         }
         &__text {
             color: $COLOR_WHITE;
         }
-        &__header {
-            background: $COLOR_BLUE;
-        }
         &__btn {
-            color: $COLOR_BRANDBLUE_40;
+            color: $COLOR_DARK_BLUE_7;
 
             &--select {
                 color: $COLOR_WHITE;
+                font-size: 0.8rem;
+                line-height: 20px;
             }
         }
         &__icon path {
-            fill: $COLOR_WHITE;
-        }
-        &__body {
-            background: $COLOR_BRANDBLUE_95;
-            border-color: $COLOR_BRANDBLUE_85;
+            fill: $COLOR_DARK_BLUE_7;
         }
         &__cell {
-            color: $COLOR_BRANDBLUE_40;
+            color: $COLOR_DARK_BLUE_7;
 
-            &:hover:not(&--active) {
-                background: $COLOR_BRANDBLUE_85;
-            }
-            &--disabled, &--other {
-                color: $COLOR_BRANDBLUE_75;
+            &:hover {
+                background: $COLOR_DARK_BLUE_5;
             }
             &--today {
-                border: 1px solid $COLOR_WHITE;
+                border: 1px solid $COLOR_DARK_BLUE_7;
                 color: $COLOR_WHITE;
             }
+            &--disabled, &--other {
+                color: $COLOR_DARK_BLUE_8;
+            }
+            &--disabled {
+                &:hover {
+                    background: $COLOR_DARK_BLUE_3;
+                }
+            }
             &--active {
-                color: $COLOR_BLUE;
-                background: $COLOR_WHITE !important;
+                color: $COLOR_WHITE;
+                background: $COLOR_DARK_BLUE_5 !important;
+
+                &:hover {
+                    background: $COLOR_DARK_BLUE_3;
+                }
             }
         }
     }

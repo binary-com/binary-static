@@ -39,7 +39,6 @@ const UsbPage = () => (
                         <a className='page-scroll' href='#video'>{('Overview')}</a>
                         <a className='page-scroll' href='#why-usb'>{('Why USB')}</a>
                         <a className='page-scroll' href='#get-started'>{('Get started')}</a>
-                        <a className='page-scroll' href='#benefits'>{('Benefits')}</a>
                         <a className='page-scroll' href='#tech'>{('Technology')}</a>
                         <a className='page-scroll' href='#faq'>{('FAQ')}</a>
                     </div>
@@ -79,7 +78,7 @@ const UsbPage = () => (
                     <div className='gr-9'>
                         <div className='separator-md' />
                         <div className='video-container'>
-                            <iframe src='https://www.youtube.com/embed/pl2jq7EBvdU?rel=0&showinfo=0' frameBorder='0' allow='autoplay; encrypted-media' allowFullScreen />
+                            <iframe src='https://www.youtube.com/embed/cdkwhBK5fnk?rel=0&showinfo=0' frameBorder='0' allow='autoplay; encrypted-media' allowFullScreen />
                         </div>
                         <div className='separator-md' />
                     </div>
@@ -141,7 +140,7 @@ const UsbPage = () => (
                     <div className='gr-3 gr-12-t gr-12-m gr-12-p mb-bottom-30'>
                         <div className='icon-xl icon-clients' />
                         <h3 className='ft-400'>{it.broker_name}{(' clients')}</h3>
-                        <p>{('Trade on ')}{it.broker_name}{(' using USB and enjoy exclusive benefits such as discounts on binary option contract prices.')}</p>
+                        <p>{('Trade on ')}{it.broker_name}{(' using USB.')}</p>
                     </div>
                     <div className='gr-3 gr-12-t gr-12-m gr-12-p mb-bottom-30'>
                         <div className='icon-xl icon-crypto-traders' />
@@ -185,82 +184,6 @@ const UsbPage = () => (
                 </div>
             </div>
         </div>
-        <div id='benefits' className='section-md'>
-            <div className='container center-text'>
-                <div className='gr-row'>
-                    <div className='gr-12 center-text bottom-30'>
-                        <h2 className='section-title'>{('Exclusive benefits on ')}{it.broker_name}</h2>
-                    </div>
-                </div>
-            </div>
-            <div className='container'>
-                <div className='gr-row'>
-                    <div className='gr-12 center-text bottom-30'>
-                        <h2 className='primary-color'>{('Enjoy discounts for trading in USB')}</h2>
-                        <p>{it.broker_name}{(' clients who trade using USB will enjoy discounts on binary option purchase prices. The amount of the discount depends on the probability of the option (i.e. its stake divided by payout). The discount amounts are:')}</p>
-                    </div>
-                </div>
-            </div>
-            <div className='container'>
-                <div className='gr-row center-text'>
-                    <div className='gr-6 secondary-bg-color content-inverse-color right-white-border'>
-                        <p>{('Contract probability')}</p>
-                    </div>
-                    <div className='gr-6 secondary-bg-color content-inverse-color'>
-                        <p>{('Discount for trading in USB')}</p>
-                    </div>
-                </div>
-                <div className='gr-row center-text'>
-                    <div className='gr-6 fill-bg-color right-white-border'>
-                        <p>{('0-19.999%')}</p>
-                    </div>
-                    <div className='gr-6 fill-bg-color'>
-                        <p>{('0.25%')}</p>
-                    </div>
-                </div>
-                <div className='gr-row center-text'>
-                    <div className='gr-6 dark-grey-bg right-white-border'>
-                        <p>{('20-39.999%')}</p>
-                    </div>
-                    <div className='gr-6 dark-grey-bg'>
-                        <p>{('0.20%')}</p>
-                    </div>
-                </div>
-                <div className='gr-row center-text'>
-                    <div className='gr-6 fill-bg-color right-white-border'>
-                        <p>{('40-59.999%')}</p>
-                    </div>
-                    <div className='gr-6 fill-bg-color'>
-                        <p>{('0.15%')}</p>
-                    </div>
-                </div>
-                <div className='gr-row center-text'>
-                    <div className='gr-6 dark-grey-bg right-white-border'>
-                        <p>{('60-79.999%')}</p>
-                    </div>
-                    <div className='gr-6 dark-grey-bg'>
-                        <p>{('0.10%')}</p>
-                    </div>
-                </div>
-                <div className='gr-row center-text'>
-                    <div className='gr-6 fill-bg-color right-white-border'>
-                        <p>{('80-94.999%')}</p>
-                    </div>
-                    <div className='gr-6 fill-bg-color'>
-                        <p>{('0.05%')}</p>
-                    </div>
-                </div>
-                <div className='gr-row center-text'>
-                    <div className='gr-6 dark-grey-bg right-white-border'>
-                        <p>{('95%')}</p>
-                    </div>
-                    <div className='gr-6 dark-grey-bg'>
-                        <p>{('0%')}</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div className='separator-lg' />
         <div id='tech' className='section-md dark-grey-bg'>
             <div className='container'>
                 <div className='gr-row'>
@@ -306,11 +229,11 @@ const UsbPage = () => (
                             <h3>{('What is USB?')}</h3>
                             <div>{('USB is a stablecoin exclusively issued by ')}{it.broker_name}{('. It is permanently pegged to the US dollar on a one-to-one basis.')}</div>
                             <h3>{('What are the usages of USB?')}</h3>
-                            <div>{('Use USB as normal money. For example, you can initiate trades, payments, and online transactions with USB. Purchase your ')}{it.broker_name}{(' contracts with USB to enjoy exclusive discounts on contract prices.')}</div>
+                            <div>{('Use USB as normal money. For example, you can initiate trades, payments, and online transactions with USB.')}</div>
                             <h3>{('Why use USB?')}</h3>
-                            <div>{('USB has a flat rate: one USB is always equal to one US dollar. Thus, it is as stable and secure as the US dollar. It is also issued and guaranteed by ')}{it.broker_name}{(', a market leader with 18 years of trading history and a billion-dollar annual turnover. Moreover, by using USB for trading on ')}{it.broker_name}{(', you’ll be entitled to special discounts on contract prices.')}</div>
+                            <div>{('USB has a flat rate: one USB is always equal to one US dollar. Thus, it is as stable and secure as the US dollar. It is also issued and guaranteed by ')}{it.broker_name}{(', a market leader with 18 years of trading history and a billion-dollar annual turnover.')}</div>
                             <h3>{('Who can use USB?')}</h3>
-                            <div>{('Anybody who wants to make a transaction with a stable, dependable cryptocurrency can use USB. ')}{it.broker_name}{(' clients can use USB to get discounts on contract prices when they trade on ')}{it.broker_name}{('. Crypto traders can use USB to hedge against price volatility in cryptocurrency markets and exchange USB with other cryptocurrencies to benefit from market swings. Online consumers and businesses can use USB to enjoy a more secure and efficient payment method and avoid the hassle of dealing with banks and credit card companies.')}</div>
+                            <div>{('Anybody who wants to make a transaction with a stable, dependable cryptocurrency can use USB. Crypto traders can use USB to hedge against price volatility in cryptocurrency markets and exchange USB with other cryptocurrencies to benefit from market swings. Online consumers and businesses can use USB to enjoy a more secure and efficient payment method and avoid the hassle of dealing with banks and credit card companies.')}</div>
                             <h3>{('How many USBs are supplied?')}</h3>
                             <div>{('Twenty million.')}</div>
                             <h3>{('How can I get started with USB?')}</h3>

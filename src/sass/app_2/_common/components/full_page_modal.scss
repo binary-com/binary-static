@@ -58,22 +58,22 @@
     }
 }
 
-.dark {
+.theme--dark {
     .full-page-modal {
         background-color: rgba(31, 36, 61, 0.8);
 
         .modal-dialog {
-            background-color: $COLOR_BRANDBLUE_95;
+            background-color: $COLOR_DARK_BLUE_3;
             box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.16);
 
             p, h1 {
-                color: $COLOR_BRANDBLUE_40;
+                color: $COLOR_DARK_BLUE_7;
             }
             .btn {
-                background-color: $COLOR_BRANDBLUE_95;
+                background-color: $COLOR_DARK_BLUE_3;
 
                 &:hover {
-                    background-color: $COLOR_BRANDBLUE_75;
+                    background-color: $COLOR_DARK_BLUE_7;
                 }
                 span {
                     color: $COLOR_WHITE;
@@ -97,10 +97,10 @@
             }
             .btn {
                 &:hover {
-                    background-color: $COLOR_BRANDBLUE_5;
+                    background-color: $COLOR_LIGHT_BLACK_4;
                 }
                 span {
-                    color: $COLOR_BRANDBLUE_95;
+                    color: $COLOR_DARK_BLUE_3;
                     font-size: 12px;
                 }
             }

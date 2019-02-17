@@ -3,40 +3,32 @@
     margin: 8px 0 0;
     font-weight: 300;
 
-    &:has(input[type=checkbox]), span.tooltip {
+    &:has(input[type=checkbox]), .tooltip {
         display: inline-block;
     }
-    span.tooltip {
+    .tooltip {
         width: 100%;
     }
     & ~ [class*='__icon'] {
         @extend .absolute-center-v; // centers input-field icons vertically
         top: 8px;
-        right: 5%;
+        left: 5%;
     }
-    i {
-        position: relative;
-
-        .symbols {
-            height: 30px;
-            width: 30px;
-            line-height: 30px;
-            margin: 1px;
-            border-radius: $BORDER_RADIUS 0 0 $BORDER_RADIUS;
-            box-sizing: border-box;
-            font-size: inherit;
-
-            &:before {
-                margin: 0;
-            }
-        }
-        .symbols.aud {
-            // alignment fix for AUD symbol
-            padding-right: 4px;
-        }
-        & + input {
-            padding-left: 35px !important;
-        }
+    .symbols {
+        height: 30px;
+        width: 30px;
+        line-height: 30px;
+        margin: 1px;
+        border-radius: $BORDER_RADIUS 0 0 $BORDER_RADIUS;
+        box-sizing: border-box;
+    }
+    &:has(input[type=checkbox]) {
+        display: inline-block;
+        width: 100%;
+    }
+    & + input {
+        padding-left: 32px !important;
+        padding-right: 14px;
     }
     .input-wrapper {
         position: relative;
@@ -50,7 +42,7 @@
         }
         &:hover {
             input {
-                border-color: $COLOR_BLUE;
+                border-color: $COLOR_LIGHT_GRAY_1;
             }
         }
         &__button {
@@ -73,7 +65,7 @@
             }
             &:hover {
                 cursor: pointer;
-                background: $COLOR_GRAY;
+                background: $COLOR_LIGHT_BLACK_4;
             }
             &:disabled:hover {
                 cursor: not-allowed;
@@ -84,13 +76,12 @@
             padding-top: 4px;
 
             path {
-                fill: $COLOR_DARK_GRAY;
+                fill: $COLOR_LIGHT_BLACK_1;
             }
-            &--plus.disabled path {
-                fill: $COLOR_DARK_GRAY;
-            }
-            &--minus.disabled path {
-                fill: $COLOR_DARK_GRAY;
+            &--plus, &--minus {
+                &.disabled path {
+                    fill: $COLOR_LIGHT_BLACK_3;
+                }
             }
         }
     }
@@ -102,11 +93,11 @@
         display: inline-block;
         width: 100%;
         height: 32px;
-        font-size: 1rem;
+        font-size: 0.85rem;
         line-height: normal;
         padding-left: 8px;
-        color: $COLOR_LIGHT_BLACK;
-        border: 1px solid $COLOR_GRAY;
+        color: $COLOR_LIGHT_BLACK_1;
+        border: 1px solid $COLOR_LIGHT_BLACK_4;
         border-radius: $BORDER_RADIUS;
         text-align: center;
         transition: transform 0.3s;
@@ -117,18 +108,19 @@
             vertical-align: middle;
             width: 12px;
             height: 12px;
-            border-color: $COLOR_GRAY;
+            border-color: $COLOR_LIGHT_BLACK_4;
             border-radius: 1px;
             border-width: 0.5px;
             padding: 0;
 
             &:hover, &:focus, &:active {
-                border-color: $COLOR_ORANGE_2 !important;
+                border-color: $COLOR_ORANGE;
                 border-radius: 1px;
+                box-shadow: none;
             }
             &:checked {
-                background: $COLOR_ORANGE_2;
-                border-color: $COLOR_ORANGE_2;
+                background: $COLOR_ORANGE;
+                border-color: $COLOR_ORANGE;
 
                 &:after {
                     display: inline-block;
@@ -151,41 +143,51 @@
             }
         }
         &:hover {
-            border-color: $COLOR_BLUE;
+            border-color: $COLOR_LIGHT_GRAY_1;
         }
         &:active, &:focus {
             outline: 0;
             border-radius: $BORDER_RADIUS;
-            border-color: $COLOR_BLUE;
+            border-color: $COLOR_LIGHT_GRAY_1;
+            box-shadow: 0 0 0 0.2rem rgba(127, 131, 151, 0.3);
         }
         &:not([type=range]), label, textarea {
             touch-action: manipulation;
         }
         &.error {
-            color: $COLOR_LIGHT_RED;
-            border: 1px solid $COLOR_LIGHT_RED !important;
+            color: $COLOR_RED;
+            border: 1px solid $COLOR_RED !important;
+        }
+        &[readonly] {
+            cursor: pointer;
+        }
+        &::placeholder {
+            color: $COLOR_LIGHT_BLACK_1;
         }
     }
     label.input-label {
-        font-size: 0.875rem; /* stylelint-disable-line number-max-precision */
-        color: #333333; /* stylelint-disable-line color-no-hex */
-        font-weight: 400;
+        margin-bottom: 2px;
+        margin-left: 4px;
+        text-transform: capitalize;
+        display: inline-block;
     }
     span.input-helper {
         font-weight: 300;
         font-size: 0.75rem;
-        color: #b0b3bf; /* stylelint-disable-line color-no-hex */
+        color: $COLOR_LIGHT_GRAY_2;
     }
 }
 
 // Dark Theme
-.theme-wrapper.dark {
+.theme--dark {
     .input-field {
         &:has(input[type=checkbox]) {
             display: inline-block;
         }
         input {
-            color: $COLOR_WHITE;
+            background: $COLOR_DARK_BLUE_2;
+            border-color: $COLOR_DARK_BLUE_2;
+            color: $COLOR_DARK_BLUE_7;
 
             &[type=checkbox] {
                 cursor: pointer;
@@ -193,20 +195,28 @@
                 vertical-align: middle;
                 width: 12px;
                 height: 12px;
-                border-color: $COLOR_BRANDBLUE_85;
+                border-color: $COLOR_DARK_BLUE_7;
                 border-radius: 1px;
                 border-width: 0.5px;
                 padding: 0;
 
-                &:hover, &:focus, &:active {
-                    border-color: $COLOR_ORANGE_2;
+                &:hover {
+                    border-color: $COLOR_ORANGE;
+                    box-shadow: none;
                 }
                 &:checked {
-                    background: $COLOR_ORANGE_2;
-                    border-color: $COLOR_ORANGE_2;
+                    background: $COLOR_ORANGE;
+                    border-color: $COLOR_ORANGE;
+                    box-shadow: none;
 
                     &:after {
                         display: inline-block;
+                    }
+                }
+                &:not(:checked) {
+                    &:focus, &:active {
+                        border-color: $COLOR_DARK_BLUE_7;
+                        box-shadow: none;
                     }
                 }
                 &:after {
@@ -219,26 +229,43 @@
                     display: none;
                 }
             }
-            &:hover, &:focus, &:active {
-                border-color: $COLOR_WHITE;
+            &:hover {
+                border-color: $COLOR_DARK_BLUE_7;
+            }
+            &:focus, &:active {
+                outline: 0;
+                border-color: $COLOR_DARK_BLUE_7;
+                box-shadow: 0 0 0 0.2rem rgba(127, 131, 151, 0.3);
+            }
+            &::placeholder {
+                color: $COLOR_DARK_BLUE_7;
             }
         }
     }
     .input-wrapper {
         &:hover {
             input {
-                border-color: $COLOR_WHITE;
+                border-color: $COLOR_DARK_BLUE_7;
+            }
+        }
+        input {
+            &:active, &:focus {
+                box-shadow: 0 0 0 0.2rem rgba(127, 131, 151, 0.3);
             }
         }
         &__icon {
             path {
-                fill: $COLOR_DARK_WHITE;
+                fill: $COLOR_DARK_BLUE_7;
             }
-            &--plus.disabled path {
-                fill: $COLOR_BRANDBLUE_85;
+            &--plus, &--minus {
+                &.disabled path {
+                    fill: rgba(116, 120, 142, 0.25);
+                }
             }
-            &--minus.disabled path {
-                fill: $COLOR_BRANDBLUE_85;
+        }
+        &__button:not(:disabled) {
+            &:hover {
+                background-color: $COLOR_DARK_BLUE_4;
             }
         }
     }

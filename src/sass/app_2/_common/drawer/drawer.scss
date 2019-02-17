@@ -2,7 +2,7 @@ hr {
     display: block;
     height: 1px;
     border: 0;
-    border-top: 1px solid $COLOR_GRAY;
+    border-top: 1px solid $COLOR_LIGHT_BLACK_4;
     margin: 0.5em 0;
     padding: 0;
 }
@@ -50,7 +50,7 @@ hr {
                 .drawer-header {
                     display: flex;
                     align-items: center;
-                    border-bottom: 1px solid $COLOR_GRAY;
+                    border-bottom: 1px solid $COLOR_LIGHT_BLACK_4;
                     z-index: 3;
 
                     .icons {
@@ -71,7 +71,7 @@ hr {
                         &.brand-logo {
                             display: inline-flex;
                             padding: 8px 20px;
-                            border-left: 1px solid $COLOR_GRAY;
+                            border-left: 1px solid $COLOR_LIGHT_BLACK_4;
 
                             div.img:before {
                                 display: block;
@@ -86,7 +86,7 @@ hr {
                 }
                 .drawer-footer {
                     height: 44px;
-                    border-top: 1px solid $COLOR_GRAY;
+                    border-top: 1px solid $COLOR_LIGHT_BLACK_4;
                     left: 0;
                     bottom: 0;
                     z-index: 3;
@@ -107,7 +107,7 @@ hr {
                     flex-direction: row-reverse;
                     justify-content: space-between;
                     align-items: center;
-                    border-bottom: 1px solid $COLOR_GRAY;
+                    border-bottom: 1px solid $COLOR_LIGHT_BLACK_4;
 
                     .icons {
                         display: inline-flex;
@@ -115,7 +115,7 @@ hr {
                         padding: 14px 11px;
 
                         &.btn-close {
-                            border-left: 1px solid $COLOR_GRAY;
+                            border-left: 1px solid $COLOR_LIGHT_BLACK_4;
                             width: 24px;
                             height: 24px;
 
@@ -222,7 +222,7 @@ hr {
                         display: inline-flex;
                         justify-content: center;
                         align-items: center;
-                        color: $COLOR_BLUE;
+                        color: $COLOR_DARK_BLUE_5;
                         left: 1rem;
                         top: 11px;
                     }
@@ -251,7 +251,7 @@ hr {
 
                     span {
                         padding-left: 1.5rem;
-                        color: $COLOR_BLUE;
+                        color: $COLOR_DARK_BLUE_5;
                         position: relative;
 
                         .drawer-icon {
@@ -264,14 +264,14 @@ hr {
                     }
                 }
                 &:hover {
-                    background: $COLOR_GRAY;
+                    background: $COLOR_LIGHT_BLACK_4;
                 }
                 &__toggle {
                     display: flex;
                     padding: 16px;
                     justify-content: space-between;
                     align-items: center;
-                    color: $COLOR_BLUE;
+                    color: $COLOR_DARK_BLUE_5;
                     font-weight: 300;
 
                     .toggle-button {
@@ -318,45 +318,45 @@ hr {
 }
 
 // Dark Theme
-.theme-wrapper.dark {
+.theme--dark {
     hr {
-        border-color: $COLOR_BRANDBLUE_85;
+        border-color: $COLOR_DARK_BLUE_5;
     }
     .drawer-bg .drawer {
-        background: $COLOR_BLUE;
+        background: $COLOR_DARK_BLUE_5;
         color: $COLOR_WHITE;
         box-shadow: 0 1px 6px 0 rgba(42, 48, 82, 0.14), 0 2px 8px 0 rgba(20, 20, 20, 0.3);
 
         .drawer-item {
             a {
                 &:before {
-                    color: $COLOR_BRANDBLUE_40;
+                    color: $COLOR_DARK_BLUE_7;
                 }
                 &:hover:before {
                     color: $COLOR_WHITE;
                 }
                 span {
-                    color: $COLOR_BRANDBLUE_40;
+                    color: $COLOR_DARK_BLUE_7;
                 }
             }
             &:hover {
-                background: $COLOR_BRANDBLUE_85;
+                background: $COLOR_DARK_BLUE_5;
 
                 span {
                     color: $COLOR_WHITE;
                 }
             }
             &__toggle {
-                color: $COLOR_BRANDBLUE_40;
+                color: $COLOR_DARK_BLUE_7;
             }
         }
         &.left, &.right {
             .drawer-header, .drawer-footer {
-                border-color: $COLOR_BRANDBLUE_85;
+                border-color: $COLOR_DARK_BLUE_5;
 
                 .icons {
                     &.brand-logo, &.btn-close {
-                        border-color: $COLOR_BRANDBLUE_85;
+                        border-color: $COLOR_DARK_BLUE_5;
                     }
                     &.brand-logo div.img:before {
                         background-image: url('../images/header/binary_logo_dark.svg');

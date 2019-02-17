@@ -1,8 +1,13 @@
-import { observer } from 'mobx-react';
-import PropTypes    from 'prop-types';
-import React        from 'react';
-import Fieldset     from 'App/Components/Form/fieldset.jsx';
-import InputField   from 'App/Components/Form/input_field.jsx';
+import classNames     from 'classnames';
+import { observer }   from 'mobx-react';
+import PropTypes      from 'prop-types';
+import React          from 'react';
+import {
+    IconBarrierUp,
+    IconBarrierDown } from 'Assets/Trading/Barriers';
+import Fieldset       from 'App/Components/Form/fieldset.jsx';
+import InputField     from 'App/Components/Form/input_field.jsx';
+import { localize }   from '_common/localize';
 
 const Barrier = ({
     barrier_1,
@@ -12,6 +17,8 @@ const Barrier = ({
     onChange,
     validation_errors,
 }) =>  {
+    const barrier_title = barrier_count === 1 ? localize('Barrier') : localize('Barriers');
+
     if (is_minimized) {
         if (barrier_count !== 2) {
             return (
@@ -34,29 +41,45 @@ const Barrier = ({
             </React.Fragment>
         );
     }
-    return (
-        <Fieldset>
-            <InputField
-                type='number'
-                name='barrier_1'
-                value={barrier_1}
-                onChange={onChange}
-                error_messages = {validation_errors.barrier_1 || []}
-                is_float
-                is_signed
-            />
 
-            {barrier_count === 2 &&
+    const input_class = barrier_count === 2 ? 'multiple' : 'single';
+    return (
+        <Fieldset
+            className='trade-container__fieldset trade-container__barriers'
+            header={barrier_title}
+            is_center
+        >
+            <div>
                 <InputField
                     type='number'
-                    name='barrier_2'
-                    value={barrier_2}
+                    name='barrier_1'
+                    value={barrier_1}
+                    className={`trade-container__barriers-${input_class}`}
+                    classNameInput={classNames('trade-container__input', 'trade-container__barriers-input', `trade-container__barriers-${input_class}-input`)}
                     onChange={onChange}
-                    error_messages = {validation_errors.barrier_2}
+                    error_messages={validation_errors.barrier_1 || []}
                     is_float
                     is_signed
                 />
-            }
+    
+                {barrier_count === 2 &&
+                    <React.Fragment>
+                        <InputField
+                            type='number'
+                            name='barrier_2'
+                            value={barrier_2}
+                            className='multiple'
+                            classNameInput='trade-container__input'
+                            onChange={onChange}
+                            error_messages={validation_errors.barrier_2}
+                            is_float
+                            is_signed
+                        />
+                        <IconBarrierUp className='trade-container__barriers--up' />
+                        <IconBarrierDown className='trade-container__barriers--down' />
+                    </React.Fragment>
+                }
+            </div>
         </Fieldset>
     );
 };

@@ -26,7 +26,7 @@ class Trade extends React.Component {
 
         return (
             <div id='trade_container' className='trade-container'>
-                <div className='chart-container notice-msg'>
+                <div className='chart-container'>
                     { this.props.symbol &&
                         <React.Suspense fallback={<UILoader />} >
                             <SmartChart

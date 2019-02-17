@@ -1,51 +1,54 @@
 .app-contents {
     margin: $HEADER_HEIGHT 0 $FOOTER_HEIGHT;
     height: calc(100vh - #{$HEADER_HEIGHT} - #{$FOOTER_HEIGHT});
-    overflow-y: auto;
-    overflow-x: hidden;
+    overflow: hidden;
 
-    &--show-portfolio-drawer {
-        padding-right: $PORTFOLIO_DRAWER_WIDTH;
-
+    &--contract-mode {
         .trade-container {
-            transform: translateX(-#{$PORTFOLIO_DRAWER_WIDTH});
-            margin-right: -#{$PORTFOLIO_DRAWER_WIDTH};
-        }
-        .chart-container {
-            .ciq-chart {
-                .cq-top-ui-widgets, .cq-chart-controls {
-                    transform: translateX(#{$PORTFOLIO_DRAWER_WIDTH});
-                }
-                .cq-top-ui-widgets .info-box {
-                    transform: translateX(-#{$PORTFOLIO_DRAWER_WIDTH});
-                }
-            }
-            .cq-chart-controls {
-                will-change: max-width;
-                max-width: calc(100% - #{$PORTFOLIO_DRAWER_WIDTH});
-                transform: translateX(#{$PORTFOLIO_DRAWER_WIDTH});
-            }
-            .cq-chart-control-left {
-                .cq-chart-controls {
-                    transform: translateX(#{$PORTFOLIO_DRAWER_WIDTH}) !important;
-                }
-                .info-box {
-                    transform: translateX(-#{$PORTFOLIO_DRAWER_WIDTH}) !important;
-                }
+            .chart-container {
+                max-width: calc(100% - #{$SIDEBAR_WIDTH} - 16px);
             }
         }
     }
+    &--show-positions-drawer {
+        .trade-container {
+            .chart-container {
+                width: calc(100% - #{$SIDEBAR_WIDTH * 2} - 18px);
+                margin-left: #{$SIDEBAR_WIDTH + 18px};
+
+                .cq-top-ui-widgets {
+                    transform: translate3d(1px, 0, 0);
+
+                    .info-box {
+                        transform: translate3d(1px, 0, 0);
+                    }
+                }
+                .cq-chart-control-left {
+                    .cq-chart-controls {
+                        transform: translate3d(1px, 0, 0) !important;
+                        background: $COLOR_DARK_BLUE_3;
+                    }
+                }
+            }
+        }
+        & + &.app-contents--contract-mode {
+            max-width: unset;
+        }
+    }
     .chart-container {
+        width: 100%;
+        transition: width 0.15s ease-out, margin 0.15s ease-out;
+
         .cq-chart-control-left {
             .cq-chart-controls {
-                transform: translateX(0);
+                transform: translate3d(0, 0, 0);
                 transition: transform 0.25s ease;
             }
             .cq-top-ui-widgets {
                 left: 90px;
 
                 .info-box {
-                    transform: translateX(0);
+                    transform: translate3d(0, 0, 0);
                 }
             }
         }
@@ -71,36 +74,36 @@
     .sidebar-container {
         position: relative;
         margin-left: 16px;
+        width: $SIDEBAR_WIDTH;
 
         .sidebar-items {
             opacity: 1;
-            width: 240px;
             transform: none;
             transition: transform 0.4s ease, opacity 0.2s linear;
 
             &__slideout {
-                transform: translateX(calc(100% + 20px));
+                transform: translate3d(calc(100% + 20px), 0, 0);
                 pointer-events: none;
                 opacity: 0;
             }
         }
         .contract-wrapper {
             position: absolute;
-            width: 100%;
+            width: $SIDEBAR_WIDTH;
             height: 100%;
             z-index: 2;
             top: 0;
-            left: 0;
+            right: 0;
             transition: transform 0.4s ease, opacity 0.2s linear;
             opacity: 1;
             transform: none;
 
             &-enter {
-                transform: translateX(calc(100% + 20px));
+                transform: translate3d(calc(100% + 16px), 0, 0);
                 opacity: 0;
             }
             &-exit {
-                transform: translateX(calc(100% + 20px));
+                transform: translate3d(calc(100% + 16px), 0, 0);
                 opacity: 0;
                 pointer-events: none;
             }
@@ -117,11 +120,12 @@
 /* trade-app layout */
 .trade-container {
     position: relative;
-    padding: 8px 12px 0;
+    padding: 16px 12px 0;
     display: flex;
-    min-height: calc(100vh - 91px);
+    min-height: calc(100vh - 99px);
     transition: transform 0.25s ease;
     will-change: transform;
+    overflow: hidden;
 
     .chart-container {
         position: relative;
@@ -148,13 +152,7 @@
                     z-index: 0;
                 }
             }
-            div.cq-chart-controls {
-                border-right: 1px solid $COLOR_GRAY;
-            }
             div.cq-chart-control-left {
-                .cq-chart-controls {
-                    border-top: 1px solid $COLOR_GRAY;
-                }
                 .cq-top-ui-widgets {
                     width: calc(100% - 90px);
                 }
@@ -165,7 +163,8 @@
         }
     }
     .sidebar-items, .contract-wrapper {
-        min-height: 500px;
+        min-height: 460px;
+        width: $SIDEBAR_WIDTH;
     }
     .sidebar-items {
         position: relative;
@@ -178,7 +177,7 @@
             // smartchart library style fixes
             .cq-context {
                 div.cq-chart-controls {
-                    border: 1px solid $COLOR_GRAY;
+                    border: 1px solid $COLOR_LIGHT_BLACK_4;
                 }
             }
             .cq-modal-dropdown {
@@ -209,6 +208,32 @@
             }
         }
     }
+
+    .advanced-simple-toggle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 32px;
+        width: 100%;
+        margin-top: 8px;
+        margin-bottom: -8px;
+        border: 0;
+        background: none;
+
+        &__icon {
+            transition: transform 0.2s ease;
+
+            &--active {
+                transform: rotate(180deg);
+            }
+        }
+        &:hover {
+            cursor: pointer;
+        }
+        &:focus {
+            outline: none;
+        }
+    }
 }
 
 .inline-icon {
@@ -218,7 +243,7 @@
 .category-wrapper, .type-wrapper {
     width: 24px;
     height: 24px;
-    background: $COLOR_GRAY;
+    background: $COLOR_LIGHT_BLACK_4_SOLID;
     border-radius: 3px;
     display: flex;
     align-items: center;
@@ -252,6 +277,6 @@
 
     p {
         @include interpolate(font-size, 320px, 1440px, 14px, 20px);
-        color: $COLOR_LIGHT_BLACK;
+        color: $COLOR_LIGHT_BLACK_1;
     }
 }

@@ -7,7 +7,6 @@
         max-height: 2rem;
         overflow: hidden;
         border-radius: 4px 4px 0 0;
-        border: 1px solid $COLOR_GRAY;
 
         .header-wrapper {
             transition: transform 0.4s ease;
@@ -29,8 +28,8 @@
         }
         &.purchased {
             .header-wrapper .header-purchased {
-                color: $COLOR_LIGHT_GREEN;
-                background-color: $COLOR_LIGHT_GRAY;
+                color: $COLOR_GREEN_1;
+                background-color: $COLOR_LIGHT_BLACK_4_SOLID;
                 opacity: 1;
                 transition: opacity 0.4s linear;
             }
@@ -40,7 +39,7 @@
                 transform: none;
 
                 .header-result {
-                    background-color: $COLOR_LIGHT_GREEN;
+                    background-color: $COLOR_GREEN_1;
                 }
                 .header-purchased {
                     opacity: 0;
@@ -52,7 +51,7 @@
                 transform: none;
 
                 .header-result {
-                    background-color: $COLOR_LIGHT_RED;
+                    background-color: $COLOR_RED;
                 }
                 .header-purchased {
                     opacity: 0;
@@ -62,8 +61,8 @@
     }
     .contract-contents {
         padding: 10px;
+        background: $COLOR_LIGHT_BLACK_4_SOLID;
         font-size: 0.75rem;
-        border: 1px solid $COLOR_GRAY;
         border-top-width: 0;
         border-radius: 0 0 4px 4px;
 
@@ -76,7 +75,7 @@
             margin-top: 10px;
             font-weight: 300;
             text-align: center;
-            background-color: $COLOR_LIGHT_GRAY;
+            background-color: $COLOR_LIGHT_BLACK_4_SOLID;
             line-height: 1.7rem;
         }
         .info-header {
@@ -85,7 +84,6 @@
         .info-item {
             display: flex;
             padding: 7px 0;
-            border-bottom: 1px solid $COLOR_GRAY;
 
             > div {
                 align-self: center;
@@ -93,7 +91,7 @@
                 &:first-child {
                     font-weight: 300;
                     flex-grow: 1;
-                    color: $COLOR_LIGHT_BLACK;
+                    color: $COLOR_LIGHT_BLACK_1;
                 }
                 &:last-child {
                     width: 50%;
@@ -124,7 +122,6 @@ $CONTRACT_INFO_BOX_PADDING: 15px;
     }
     .info-box {
         position: relative;
-        border: 1px solid $COLOR_GRAY;
         border-radius: $BORDER_RADIUS;
         padding: $CONTRACT_INFO_BOX_PADDING;
         background: rgba(255, 255, 255, 0.9);
@@ -140,11 +137,11 @@ $CONTRACT_INFO_BOX_PADDING: 15px;
                 margin-right: 10px;
 
                 .color1-fill {
-                    fill: $COLOR_LIGHT_GREEN;
+                    fill: $COLOR_GREEN_1;
                 }
             }
             .pl-value {
-                color: $COLOR_LIGHT_GREEN;
+                color: $COLOR_GREEN_1;
                 font-weight: bold;
                 font-size: 1rem;
                 line-height: 1.5rem;
@@ -156,10 +153,10 @@ $CONTRACT_INFO_BOX_PADDING: 15px;
             }
             &.lost {
                 .pl-value {
-                    color: $COLOR_LIGHT_RED;
+                    color: $COLOR_RED;
                 }
                 svg .color1-fill {
-                    fill: $COLOR_LIGHT_RED;
+                    fill: $COLOR_RED;
                 }
             }
             .sell-info {
@@ -180,10 +177,10 @@ $CONTRACT_INFO_BOX_PADDING: 15px;
                 font-weight: bold;
 
                 .profit {
-                    color: $COLOR_LIGHT_GREEN;
+                    color: $COLOR_GREEN_1;
                 }
                 .loss {
-                    color: $COLOR_LIGHT_RED;
+                    color: $COLOR_RED;
                 }
             }
             .sell {
@@ -194,7 +191,6 @@ $CONTRACT_INFO_BOX_PADDING: 15px;
                 margin: -$CONTRACT_INFO_BOX_PADDING;
                 margin-left: $CONTRACT_INFO_BOX_PADDING;
                 padding: $CONTRACT_INFO_BOX_PADDING;
-                border-left: 1px solid $COLOR_GRAY;
 
                 .tooltip {
                     position: absolute;
@@ -229,29 +225,29 @@ $CONTRACT_INFO_BOX_PADDING: 15px;
                         width: 32px;
                         height: 32px;
                         margin-bottom: 5px;
-                        border: 2px solid $COLOR_LIGHT_GREEN;
+                        border: 2px solid $COLOR_GREEN_1;
                         border-radius: 50%;
                         display: flex;
                         justify-content: center;
                         align-items: center;
-                        color: $COLOR_LIGHT_GREEN;
+                        color: $COLOR_GREEN_1;
                         font-size: 1rem;
                         font-weight: bold;
 
                         &.loss {
-                            border-color: $COLOR_LIGHT_RED;
-                            color: $COLOR_LIGHT_RED;
+                            border-color: $COLOR_RED;
+                            color: $COLOR_RED;
                         }
                         &.last {
-                            background-color: $COLOR_LIGHT_GREEN;
+                            background-color: $COLOR_GREEN_1;
                             color: $COLOR_WHITE;
 
                             &.loss {
-                                background-color: $COLOR_LIGHT_RED;
+                                background-color: $COLOR_RED;
                             }
                         }
                         &:empty {
-                            border-color: $COLOR_DARK_WHITE;
+                            border-color: $COLOR_LIGHT_BLACK_3;
                         }
                     }
                     .tick-number {
@@ -267,7 +263,7 @@ $CONTRACT_INFO_BOX_PADDING: 15px;
     }
     .message {
         margin-top: 5px;
-        border: 1px solid $COLOR_LIGHT_RED;
+        border: 1px solid $COLOR_RED;
         border-radius: $BORDER_RADIUS;
         padding: 10px;
         background-color: rgba(244, 67, 54, 0.16);
@@ -287,50 +283,43 @@ $CONTRACT_INFO_BOX_PADDING: 15px;
 }
 
 // Dark Theme
-.theme-wrapper.dark {
+.theme--dark {
     .contract-container {
-        color: $COLOR_BRANDBLUE_40;
+        color: $COLOR_DARK_BLUE_7;
 
         .contract-header {
-            border-color: $COLOR_BRANDBLUE_85;
-
             &.purchased {
                 .header-wrapper .header-purchased {
-                    background-color: $COLOR_BRANDBLUE_95;
-                }
-            }
-            &.won {
-                .header-wrapper .header-result {
-                    background-color: $COLOR_GREEN;
+                    background-color: $COLOR_DARK_BLUE_2;
                 }
             }
         }
         .contract-contents {
-            border-color: $COLOR_BRANDBLUE_85;
+            background: $COLOR_DARK_BLUE_3;
 
             .ref-number, .info-header {
-                background-color: $COLOR_BRANDBLUE_95;
+                background: $COLOR_DARK_BLUE_2;
             }
             .info-item {
-                border-bottom-color: $COLOR_BRANDBLUE_85;
-
-                > div:first-child {
-                    color: $COLOR_BRANDBLUE_40;
+                > div {
+                    &:first-child {
+                        color: $COLOR_DARK_BLUE_7;
+                    }
+                    &:last-child {
+                        color: $COLOR_WHITE;
+                    }
                 }
             }
         }
     }
     .info-box-container {
         .info-box {
-            background: rgba(42, 48, 82, 0.6);
-            border-color: $COLOR_BRANDBLUE_85;
+            background: rgba(16, 19, 32, 0.6); // this is color dark blue 2 with 0.6 opacity
 
             .general .sell {
-                border-left-color: $COLOR_BRANDBLUE_85;
-
                 .btn:disabled {
-                    background: $COLOR_BRANDBLUE_85;
-                    color: $COLOR_BRANDBLUE_75 !important;
+                    background: $COLOR_DARK_BLUE_8;
+                    color: $COLOR_DARK_BLUE_7 !important;
                 }
             }
         }

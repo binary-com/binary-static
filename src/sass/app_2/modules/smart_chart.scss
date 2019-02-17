@@ -9,7 +9,7 @@
         margin-bottom: -9px;
         padding: 7px;
         border-radius: 3px;
-        background: $COLOR_LIGHT_GREEN;
+        background: $COLOR_GREEN_1;
         color: $COLOR_WHITE;
 
         svg {
@@ -21,7 +21,7 @@
         margin-bottom: 2px;
         width: 0;
         height: 0;
-        border-top: 15px solid $COLOR_LIGHT_GREEN;
+        border-top: 15px solid $COLOR_GREEN_1;
         border-left: 10px solid transparent;
         transform: rotate(60deg);
     }
@@ -31,18 +31,18 @@
         width: 4px;
         height: 4px;
         border-radius: 50%;
-        border: 2px solid $COLOR_LIGHT_GREEN;
+        border: 2px solid $COLOR_GREEN_1;
     }
     /* Left aligned */
     &.lost {
         .content {
-            background: $COLOR_LIGHT_RED;
+            background: $COLOR_RED;
         }
         .arrow {
-            border-top-color: $COLOR_LIGHT_RED;
+            border-top-color: $COLOR_RED;
         }
         .spot {
-            border-color: $COLOR_LIGHT_RED;
+            border-color: $COLOR_RED;
         }
     }
     /* Left aligned */
