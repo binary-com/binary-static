@@ -1,9 +1,11 @@
+import classNames      from 'classnames';
 import PropTypes       from 'prop-types';
 import React           from 'react';
 import { formatMoney } from '_common/base/currency_base';
 
 const Money = ({
     amount,
+    className,
     currency = 'USD',
     has_sign,
     is_formatted = true,
@@ -19,7 +21,7 @@ const Money = ({
     return (
         <React.Fragment>
             {sign}
-            <span className={`symbols ${currency.toLowerCase()}`} />
+            <span className={classNames(className, 'symbols', currency.toLowerCase())} />
             {final_amount}
         </React.Fragment>
     );
@@ -30,6 +32,7 @@ Money.propTypes = {
         PropTypes.number,
         PropTypes.string,
     ]),
+    className   : PropTypes.string,
     currency    : PropTypes.string,
     has_sign    : PropTypes.bool,
     is_formatted: PropTypes.bool,

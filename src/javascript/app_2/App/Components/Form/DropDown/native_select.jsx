@@ -7,8 +7,8 @@ const NativeSelect = ({
     value,
     onChange,
 }) => (
-    <div className='select-wrapper'>
-        <select name={name} value={value} onChange={onChange}>
+    <div className='native-select native-select__wrapper'>
+        <select className='native-select__select' name={name} value={value} onChange={onChange}>
             {Array.isArray(list) ?
                 list.map((item, idx) => (
                     <option key={idx} value={item.value}>{item.text}</option>

@@ -10,15 +10,14 @@ import ToastMessage                from './Containers/toast_message.jsx';
 import AppContents                 from './Containers/Layout/app_contents.jsx';
 import Footer                      from './Containers/Layout/footer.jsx';
 import Header                      from './Containers/Layout/header.jsx';
-import ThemeWrapper                from './Containers/Layout/theme_wrapper.jsx';
 import Routes                      from './Containers/Routes/routes.jsx';
 import DenialOfServiceModal        from './Containers/DenialOfServiceModal';
 
 const App = ({ root_store }) => (
     <Router basename={getBaseName()}>
         <MobxProvider store={root_store}>
-            <ThemeWrapper>
-                <div id='header'>
+            <React.Fragment>
+                <div className='header'>
                     <Header />
                 </div>
                 <ErrorBoundary>
@@ -30,10 +29,10 @@ const App = ({ root_store }) => (
                     <DenialOfServiceModal />
                 </ErrorBoundary>
 
-                <footer id='footer'>
+                <footer className='footer'>
                     <Footer />
                 </footer>
-            </ThemeWrapper>
+            </React.Fragment>
         </MobxProvider>
     </Router>
 );

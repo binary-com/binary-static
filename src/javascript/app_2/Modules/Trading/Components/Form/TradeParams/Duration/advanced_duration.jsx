@@ -2,7 +2,7 @@ import classNames                     from 'classnames';
 import { PropTypes as MobxPropTypes } from 'mobx-react';
 import PropTypes                      from 'prop-types';
 import React, { Fragment }            from 'react';
-import TimePicker                     from 'App/Components/Form/time_picker.jsx';
+import TimePicker                     from 'App/Components/Form/TimePicker';
 import DatePicker                     from 'App/Components/Form/DatePicker';
 import Dropdown                       from 'App/Components/Form/DropDown';
 import ButtonToggleMenu               from 'App/Components/Form/button_toggle_menu.jsx';
@@ -64,7 +64,6 @@ const AdvancedDuration = ({
                 // when the expiry_date is on the next day of the start_date, the session should be close 5 min before the start_time of the contract.
                 close: is_expired_next_day ? minDate(expiry_date_time.clone().subtract(10, 'minute'), expiry_date_market_close) : expiry_date_market_close.clone(),
             }];
-
             min_date_expiry = moment_contract_start_date_time.clone().startOf('day');
             max_date_duration = moment_contract_start_date_time.clone().add(
                 start_date ? 24 * 3600 : (max_daily_duration), 'second');
@@ -122,6 +121,7 @@ const AdvancedDuration = ({
                         }
                         { advanced_duration_unit !== 't' &&
                             <InputField
+                                classNameInput='trade-container__input'
                                 label={duration_units_list.length === 1 ? duration_units_list[0].text : null}
                                 name='duration'
                                 value={getDurationFromUnit(advanced_duration_unit)}
@@ -151,14 +151,12 @@ const AdvancedDuration = ({
                         />
                         {is_24_hours_contract &&
                             <TimePicker
+                                end_time={expiry_time_sessions[0].close}
                                 onChange={onChange}
-                                is_align_right
                                 name='expiry_time'
                                 placeholder='12:00'
-                                sessions={expiry_time_sessions}
-                                start_date={moment_expiry.unix()}
+                                start_time={expiry_time_sessions[0].open}
                                 value={expiry_time || min_date_expiry.format('HH:mm')}
-                                is_clearable={false}
                                 is_nativepicker={is_nativepicker}
                                 // validation_errors={validation_errors.end_time} TODO: add validation_errors for end time
                             />
