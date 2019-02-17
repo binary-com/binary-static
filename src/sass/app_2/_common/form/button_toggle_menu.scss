@@ -36,9 +36,11 @@
 .theme--dark {
     .button-menu {
         &__button {
-            color: $COLOR_DARK_BLUE_7;
             background-color: $COLOR_DARK_BLUE_2;
 
+            span {
+                color: $COLOR_DARK_BLUE_7;
+            }
             &:hover:not(&--active) {
                 background-color: $COLOR_DARK_BLUE_4;
             }

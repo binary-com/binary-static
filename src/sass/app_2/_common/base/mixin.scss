@@ -122,11 +122,8 @@
     @else if $size == 1.2em {
         line-height: map-get($map: $LINEHEIGHTS, $key: 'small');
     }
-    @else if $size == 1em {
-        line-height: map-get($map: $LINEHEIGHTS, $key: 'xsmall');
-    }
     @else {
-        line-height: normal;
+        line-height: unset;
     }
 }
 

@@ -23,6 +23,9 @@
             border-color: $COLOR_LIGHT_GRAY_1;
         }
     }
+    &.no-margin .dropdown__display {
+        margin: 0;
+    }
     .select-arrow {
         display: inline-block;
         font-style: normal;
@@ -190,6 +193,9 @@
             background: $COLOR_DARK_BLUE_2;
             border-color: $COLOR_DARK_BLUE_2;
 
+            span {
+                color: $COLOR_DARK_BLUE_7;
+            }
             &:hover, &:focus, &:active {
                 border-color: $COLOR_DARK_BLUE_7;
             }
@@ -205,8 +211,9 @@
             background: $COLOR_DARK_BLUE_3;
 
             .list__item {
-                color: $COLOR_DARK_BLUE_7;
-
+                span {
+                    color: $COLOR_DARK_BLUE_7;
+                }
                 &--selected span {
                     color: $COLOR_WHITE;
                     font-weight: 700;

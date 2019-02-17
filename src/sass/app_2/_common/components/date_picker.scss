@@ -4,19 +4,6 @@
     width: 100%;
     max-width: 280px;
 
-    &__input {
-        border-radius: $BORDER_RADIUS;
-
-        input {
-            text-align: center;
-            pointer-events: auto;
-
-            &:focus, &:hover {
-                outline: none;
-                border-color: $COLOR_DARK_BLUE_5;
-            }
-        }
-    }
     &__icon {
         opacity: 1;
         transition: opacity 0.1s;

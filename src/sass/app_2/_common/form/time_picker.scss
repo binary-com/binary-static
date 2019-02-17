@@ -11,24 +11,10 @@
         top: 8px;
         z-index: 1;
     }
-    // .time-picker-input {
-    //     border-radius: 4px;
-    //     cursor: pointer;
-    //     height: 32px;
-    //     &::placeholder {
-    //         color: $COLOR_LIGHT_BLACK_4;
-    //     }
-    //     &:hover {
-    //         border-color: $COLOR_LIGHT_BLACK_4;
-    //     }
-    //     input {
-    //         font-size: inherit;
-    //     }
-    // }
     .time-picker-dialog {
         background-color: $COLOR_WHITE;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
         border-radius: 4px;
-        height: 228px;
         padding-top: 10px;
         position: absolute;
         top: 0;
@@ -114,7 +100,6 @@
         }
         .time-picker-dialog {
             background: $COLOR_DARK_BLUE_3;
-            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
 
             .time-picker-hours, .time-picker-minutes {
                 border-color: $COLOR_DARK_BLUE_2;
