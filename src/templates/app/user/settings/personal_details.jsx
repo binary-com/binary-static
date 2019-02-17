@@ -1,5 +1,5 @@
-import React from 'react';
-import { FormRow, SubmitButton, Fieldset } from '../../../_common/components/forms.jsx';
+import React                                            from 'react';
+import { FormRow, SubmitButton, Fieldset }              from '../../../_common/components/forms.jsx';
 import {
     AccountOpeningReason,
     AddressLine1,
@@ -7,11 +7,16 @@ import {
     AddressCity,
     AddressState,
     AddressPostcode,
-    Phone,
-    TaxInformationForm,
+    Citizenship,
+    DateOfBirth,
+    FirstName,
     GeocodeValidation,
-} from '../../../_common/components/forms_common_rows.jsx';
-import Loading from '../../../_common/components/loading.jsx';
+    LastName,
+    Phone,
+    Salutation,
+    TaxInformationForm,
+}                                                       from '../../../_common/components/forms_common_rows.jsx';
+import Loading                                          from '../../../_common/components/loading.jsx';
 
 const PersonalDetails = () => (
     <React.Fragment>
@@ -36,8 +41,14 @@ const PersonalDetails = () => (
 
         <form className='form gr-padding-10 invisible' id='frmPersonalDetails'>
             <Fieldset legend={it.L('Details')}>
+                <Salutation className='invisible' />
+                <FirstName className='invisible' />
+                <LastName className='invisible' />
+                <DateOfBirth className='invisible' />
+                <Citizenship className='invisible' />
+                <AccountOpeningReason className='invisible' />
                 <FormRow type='label'  label={it.L('Name')} is_bold id='name' row_class='invisible RealAcc' row_id='row_name' />
-                <FormRow type='label'  label={it.L('Date of birth')} is_bold id='date_of_birth' row_class='invisible RealAcc' />
+                <FormRow type='label'  label={it.L('Date of birth')} is_bold id='date_of_birth' row_id='row_date_of_birth' row_class='invisible RealAcc' />
                 <FormRow type='label'  label={it.L('Citizenship')} id='lbl_citizen' row_id='row_lbl_citizen' row_class='invisible' />
                 <FormRow type='select' label={it.L('Citizenship')} id='citizen' row_id='row_citizen' row_class='invisible' attributes={{ single: 'single' }} />
                 <FormRow type='label'  label={it.L('Place of birth')} id='lbl_place_of_birth' row_id='row_lbl_place_of_birth' row_class='invisible' />

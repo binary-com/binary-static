@@ -5,10 +5,12 @@ const Client           = require('../../../../base/client');
 const Header           = require('../../../../base/header');
 const BinarySocket     = require('../../../../base/socket');
 const FormManager      = require('../../../../common/form_manager');
+const DatePicker       = require('../../../../components/date_picker');
 const CommonFunctions  = require('../../../../../_common/common_functions');
 const Geocoder         = require('../../../../../_common/geocoder');
 const localize         = require('../../../../../_common/localize').localize;
 const State            = require('../../../../../_common/storage').State;
+const toISOFormat      = require('../../../../../_common/string_util').toISOFormat;
 const getPropertyValue = require('../../../../../_common/utility').getPropertyValue;
 
 const PersonalDetails = (() => {
@@ -21,11 +23,13 @@ const PersonalDetails = (() => {
         is_virtual,
         is_fully_authenticated,
         residence,
-        get_settings_data;
+        get_settings_data,
+        changeable_fields;
 
     const init = () => {
         editable_fields   = {};
         get_settings_data = {};
+        changeable_fields = [];
         is_virtual        = Client.get('is_virtual');
         residence         = Client.get('residence');
     };
@@ -54,6 +58,76 @@ const PersonalDetails = (() => {
         $('#missing_details_notice').setVisibility(!!has_missing_field);
     };
 
+    const populateChangeableFields = () => {
+        if (!has_changeable_fields) return;
+
+        const landing_companies = State.getResponse('landing_company');
+        const changeable        = landing_companies.financial_company.changeable_fields;
+        if (changeable && changeable.only_before_auth) {
+            changeable_fields = changeable.only_before_auth;
+        }
+    };
+
+    /**
+     * Remove labels and static fields and replace them with input when fields are changeable.
+     *
+     * @param {get_settings} to prepopulate some of the values.
+     */
+    const displayChangeableFields = (get_settings) => {
+        if (!has_changeable_fields) return;
+
+        if (changeable_fields.includes('first_name') || changeable_fields.includes('last_name') || changeable_fields.includes('salutation')) {
+            CommonFunctions.getElementById('row_name').setVisibility(0);
+            CommonFunctions.getElementById('first_name').setVisibility(1);
+            CommonFunctions.getElementById('last_name').setVisibility(1);
+            CommonFunctions.getElementById('salutation').setVisibility(1);
+        }
+
+        if (changeable_fields.includes('date_of_birth')) {
+            const $input_el = $('input#date_of_birth');
+            $input_el
+                .attr('data-value', toISOFormat(moment().subtract(18, 'years')))
+                .change(function() {
+                    return CommonFunctions.dateValueChanged(this, 'date');
+                });
+
+            if (get_settings && get_settings.date_of_birth) {
+                $input_el
+                    .val(get_settings.date_of_birth);
+            }
+            $input_el.setVisibility(true);
+            CommonFunctions.getElementById('row_date_of_birth').setVisibility(0);
+
+            DatePicker.init({
+                selector: 'input#date_of_birth',
+                minDate : -100 * 365,
+                maxDate : (
+                    -18 * 365
+                ) - 5,
+                yearRange: '-100:-18',
+            });
+        }
+
+        const $options               = $('<div/>');
+        if (changeable_fields.includes('place_of_birth') || changeable_fields.includes('citizen')) {
+            const residence_list = State.getResponse('residence_list');
+            residence_list.forEach((res) => {
+                $options.append(CommonFunctions.makeOption({ text: res.text, value: res.value }));
+            });
+            $options.prepend($('<option/>', { value: '', text: localize('Please select') }));
+            $('#place_of_birth')
+                .html($options.html())
+                .val(get_settings.place_of_birth);
+
+            CommonFunctions.getElementById('row_place_of_birth').setVisibility(1);
+
+            $('#citizen')
+                .html($options.html())
+                .val(get_settings.citizen);
+            CommonFunctions.getElementById('citizen_row').setVisibility(1);
+        }
+    };
+
     const getDetailsResponse = (data, residence_list = State.getResponse('residence_list')) => {
         const get_settings         = $.extend({}, data);
         get_settings.date_of_birth = 'date_of_birth' in get_settings ? moment.utc(new Date(get_settings.date_of_birth * 1000)).format('YYYY-MM-DD') : '';
@@ -64,13 +138,13 @@ const PersonalDetails = (() => {
             get_settings.name = `${(get_settings.salutation || '')} ${(get_settings.first_name || '')} ${(get_settings.last_name || '')}`;
         }
 
-        if (get_settings.place_of_birth) {
+        if (get_settings.place_of_birth && !has_changeable_fields) {
             get_settings.place_of_birth =
                 (residence_list.find(obj => obj.value === get_settings.place_of_birth) || {}).text ||
                 get_settings.place_of_birth;
         }
 
-        if (get_settings.citizen) {
+        if (get_settings.citizen && !has_changeable_fields) {
             get_settings.citizen =
                 (residence_list.find(obj => obj.value === get_settings.citizen) || {}).text ||
                 get_settings.citizen;
@@ -83,6 +157,9 @@ const PersonalDetails = (() => {
         } else {
             $(real_acc_elements).setVisibility(1);
             showHideTaxMessage();
+        }
+        if (has_changeable_fields) {
+            displayChangeableFields(data);
         }
         $(form_id).setVisibility(1);
         $('#loading').remove();
@@ -98,11 +175,12 @@ const PersonalDetails = (() => {
     };
 
     const show_label_if_any_value   = ['account_opening_reason', 'citizen', 'place_of_birth', 'tax_residence', 'tax_identification_number'];
-    const force_update_fields       = ['tax_residence', 'tax_identification_number'];
+    const force_update_fields       = ['tax_residence', 'tax_identification_number'].concat(changeable_fields);
+    const has_changeable_fields     = Client.hasCostaricaAccount() && /^CR/.exec(Client.get('loginid')) && !is_fully_authenticated && !is_virtual;
 
     const displayGetSettingsData = (get_settings, populate = true) => {
         Object.keys(get_settings).forEach((key) => {
-            const has_label         = show_label_if_any_value.includes(key);
+            const has_label         = show_label_if_any_value.includes(key) && !changeable_fields.includes(key);
             const force_update      = force_update_fields.includes(key);
             const should_show_label = has_label && get_settings[key];
             const element_id        = `${should_show_label ? 'lbl_' : ''}${key}`;
@@ -142,6 +220,10 @@ const PersonalDetails = (() => {
                         }
                         if (force_update) { // Force pushing values, used for (API-)expected values
                             $element.attr({ 'data-force': true, 'data-value': el_value });
+                        }
+                        // Update data-value on change for inputs
+                        if (should_update_value) {
+                            $(element_key).change(function () {this.setAttribute('data-value', this.value);});
                         }
                     }
                 }
@@ -199,6 +281,29 @@ const PersonalDetails = (() => {
                 { selector: '#chk_tax_id',     validations: is_financial ? [['req', { hide_asterisk: true, message: localize('Please confirm that all the information above is true and complete.') }]] : '', exclude_request: 1 },
             ];
 
+            // Push validations for changeable fields.
+            if (has_changeable_fields) {
+                changeable_fields.forEach(key => {
+                    const selector = `#${key}`;
+
+                    // First name and last name validations
+                    if (['first_name', 'last_name'].includes(key)) {
+                        validations.push({
+                            selector,
+                            validations: ['req', 'letter_symbol', ['length', { min: 2, max: 30 }]],
+                        });
+                    }
+
+                    // Required Without special treatment
+                    if (['salutation'].includes(key)) {
+                        validations.push({
+                            selector,
+                            validations: ['req'],
+                        });
+                    }
+                });
+            }
+
             const tax_id_validation  = { selector: '#tax_identification_number', validations: ['tax_id', ['length', { min: 0, max: 20 }]] };
             if (is_tax_req) {
                 tax_id_validation.validations[1][1].min = 1;
@@ -252,6 +357,11 @@ const PersonalDetails = (() => {
                 }
                 if (additionalCheck(get_settings)) {
                     getDetailsResponse(get_settings);
+
+                    // Re-populate changeable fields based on incoming data
+                    if (has_changeable_fields) {
+                        displayChangeableFields(get_settings);
+                    }
                     showFormMessage(localize('Your settings have been updated successfully.'), true);
                     if (!is_fully_authenticated) Geocoder.validate(form_id);
                 }
@@ -285,7 +395,6 @@ const PersonalDetails = (() => {
                         is_disabled: res.disabled,
                     }));
                 });
-
                 if (residence) {
                     const $tax_residence = $('#tax_residence');
                     $tax_residence.html($options_with_disabled.html()).promise().done(() => {
@@ -362,7 +471,7 @@ const PersonalDetails = (() => {
     );
 
     const onLoad = () => {
-        BinarySocket.wait('get_account_status', 'get_settings').then(() => {
+        BinarySocket.wait('get_account_status', 'get_settings', 'landing_company').then(() => {
             init();
             const account_status = State.getResponse('get_account_status').status;
             get_settings_data = State.getResponse('get_settings');
@@ -370,8 +479,8 @@ const PersonalDetails = (() => {
             if (is_virtual) {
                 getDetailsResponse(get_settings_data);
             }
-
-            if (!is_virtual || !residence) {
+            if (!is_virtual || !residence || has_changeable_fields) {
+                populateChangeableFields();
                 BinarySocket.send({ residence_list: 1 }).then(response => {
                     populateResidence(response).then(() => {
                         if (residence) {
