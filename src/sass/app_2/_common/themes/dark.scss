@@ -10,28 +10,28 @@
             &-info-basis {
                 color: $COLOR_DARK_BLUE_7;
             }
-            &-tooltip {
-                position: unset;
+            // &-tooltip {
+            //     position: unset;
 
-                &-i {
-                    &:before {
-                        content: url('../images/common/tooltip/ic_tooltip_info_dark.svg ');
-                    }
-                    &:hover:before {
-                        opacity: 1;
-                    }
-                }
-                &:before {
-                    background: $COLOR_LIGHT_BLACK_1;
-                    color: $COLOR_WHITE;
-                }
-                &[data-tooltip-pos=left]:after {
-                    border-left-color: $COLOR_LIGHT_BLACK_1;
-                }
-                &:hover:after, &:hover:before {
-                    opacity: 1;
-                }
-            }
+            //     &-i {
+            //         &:before {
+            //             content: url('../images/common/tooltip/ic_tooltip_info_dark.svg ');
+            //         }
+            //         &:hover:before {
+            //             opacity: 1;
+            //         }
+            //     }
+            //     &:before {
+            //         background: $COLOR_LIGHT_BLACK_1;
+            //         color: $COLOR_WHITE;
+            //     }
+            //     &[data-tooltip-pos=left]:after {
+            //         border-left-color: $COLOR_LIGHT_BLACK_1;
+            //     }
+            //     &:hover:after, &:hover:before {
+            //         opacity: 1;
+            //     }
+            // }
         }
         &__fieldset {
             background: $COLOR_DARK_BLUE_3;

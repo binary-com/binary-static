@@ -12,19 +12,23 @@
         border-bottom-right-radius: 4px;
     }
     &__button {
-        @include typeface(--paragraph-normal-black, capitalize, center);
         margin: 0;
         background-color: $COLOR_WHITE;
         border-radius: 0px;
         width: 50%;
 
+        span {
+            @include typeface(--paragraph-normal-black);
+        }
         &:hover:not(&--active) {
             background-color: $COLOR_LIGHT_BLACK_4;
         }
         &--active {
-            color: $COLOR_WHITE;
-            font-weight: 700;
             background-color: $COLOR_LIGHT_GRAY_1;
+
+            span {
+                @include typeface(--paragraph-bold-white);
+            }
         }
     }
 }

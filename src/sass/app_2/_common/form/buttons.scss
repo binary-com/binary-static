@@ -1,5 +1,6 @@
 /* Ant style */
 .btn {
+    font-size: 1em;
     display: inline-block;
     touch-action: manipulation;
     cursor: pointer;
@@ -8,14 +9,16 @@
     margin: 1.6em;
     border: 0;
     border-radius: 4px;
-    height: 2em; // 32px
-    min-width: 6em; // 96px
+    height: 3.2em; // 32px
+    min-width: 9.6em; // 96px
     transition: all 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
     outline: 0;
     position: relative;
     background: $COLOR_GREEN_1;
-    @include typeface(--title-normal-black, uppercase, center);
 
+    span {
+        @include typeface(--title-normal-black, uppercase, center);
+    }
     &.is-link {
         max-width: 220px;
         margin: 1em auto;
@@ -24,8 +27,9 @@
         text-decoration: none;
     }
     &.primary {
-        color: $COLOR_WHITE;
-
+        span {
+            color: $COLOR_WHITE;
+        }
         &.orange {
             background: $COLOR_ORANGE;
 
@@ -54,8 +58,11 @@
         }
         &:disabled, &[disabled] {
             background: $COLOR_LIGHT_BLACK_4;
-            color: $COLOR_LIGHT_BLACK_4;
             cursor: not-allowed;
+
+            span {
+                color: $COLOR_LIGHT_BLACK_4;
+            }
         }
     }
     &.secondary {
@@ -63,8 +70,10 @@
 
         &.orange {
             border: 1px solid $COLOR_ORANGE;
-            color: $COLOR_ORANGE;
 
+            span {
+                color: $COLOR_ORANGE;
+            }
             &:hover:not([disabled]) {
                 border: 1px solid $COLOR_ORANGE;
                 color: $COLOR_ORANGE;
@@ -80,8 +89,10 @@
         }
         &.green {
             border: 1px solid $COLOR_GREEN_1;
-            color: $COLOR_GREEN_1;
 
+            span {
+                color: $COLOR_GREEN_1;
+            }
             &:hover:not([disabled]) {
                 border: 1px solid $COLOR_GREEN_2;
                 color: $COLOR_GREEN_2;
@@ -104,12 +115,14 @@
     }
     &.flat {
         background: $COLOR_WHITE;
-        color: #4c5794; /* stylelint-disable-line color-no-hex */
 
+        span {
+            color: #4c5794; /* stylelint-disable-line color-no-hex */
+        }
         &:hover:not([disabled]) {
             background: #f2f3f8; /* stylelint-disable-line color-no-hex */
         }
-        &:active:not([disabled]) {
+        &:active:not([disabled]) span {
             color: #4c5794; /* stylelint-disable-line color-no-hex */
         }
         &.effect:focus:not(:active):after {
@@ -118,8 +131,11 @@
         &:disabled, &[disabled] {
             background: transparent !important;
             border: 1px solid $COLOR_LIGHT_BLACK_4 !important; /* stylelint-disable-line color-no-hex */
-            color: $COLOR_LIGHT_BLACK_4 !important;
             cursor: not-allowed !important;
+
+            span {
+                color: $COLOR_LIGHT_BLACK_4 !important;
+            }
         }
     }
     /* Ant Effect */

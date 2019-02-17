@@ -22,6 +22,7 @@ $FONT_SIZES: (
     'small'     em(12px),
     'xsmall'    em(10px),
     'xxsmall'   em(8px),
+    'xxxsmall'  em(6px),
 );
 
 $FONT_COLORS: (
@@ -96,10 +97,6 @@ body {
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
     box-sizing: border-box;
-}
-
-p {
-    margin: 1em 0;
 }
 
 // Forms

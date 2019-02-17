@@ -13,7 +13,7 @@
         margin-top: 0.8em;
 
         span {
-            @include typeface(--paragraph-normal-black);
+            @include typeface(--paragraph-normal-black, capitalize, center);
             padding-left: 1.6em;
         }
         &:active, &:focus {
@@ -110,14 +110,10 @@
                     text-align: center;
                 }
             }
-            &__label {
-                @include typeface(--paragraph-normal-black);
-                pointer-events: none;
-                height: 3.2em;
-
-                span {
-                    @include typeface(--paragraph-bold-black);
-                }
+            &__label span {
+                @include typeface(--paragraph-bold-black, capitalize, center);
+                @include padding(--paragraph-bold-black, 10px);
+                display: block;
             }
             &__item {
                 width: 100%;
@@ -139,9 +135,8 @@
                     background-color: $COLOR_LIGHT_BLACK_4;
                 }
                 &--selected span {
+                    @include typeface(--paragraph-semibold-white);
                     background-color: $COLOR_LIGHT_GRAY_1;
-                    color: $COLOR_WHITE;
-                    font-weight: 500;
                 }
             }
             // fix for safari bug with overflow-x not working in dropdown

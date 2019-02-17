@@ -10,9 +10,7 @@
             position: relative;
         }
         &-info {
-            color: $COLOR_LIGHT_BLACK_1;
-            font-size: 0.75rem;
-            font-weight: 400;
+            @include typeface(--paragraph-normal-black);
 
             &--left {
                 left: 5px;
@@ -32,20 +30,16 @@
         display: flex;
 
         &-info {
-            font-size: 0.85rem;
-            padding: 5px 5px 5px 8px;
-            line-height: normal;
+            @include typeface(--small-light-black, none);
+            @include padding(--small-light-black, 5px, 5px, 5px, 8px);
             background-color: rgba($COLOR_ORANGE, 0.16);
             display: block;
-            color: $COLOR_DARK_BLUE_5;
             margin-bottom: 10px;
-            font-weight: 300;
             border: 1px solid $COLOR_ORANGE;
             border-radius: $BORDER_RADIUS;
         }
     }
     &__currency {
-        font-size: 0.85rem;
         position: absolute;
         display: block;
         text-align: center;
@@ -64,6 +58,7 @@
         &-info {
             display: flex;
             justify-self: left;
+            align-items: center;
             font-size: 12px;
 
             &-basis {
@@ -87,48 +82,19 @@
         }
         &-tooltip {
             &[data-tooltip] {
-                margin-top: -4px;
-                position: unset;
-
-                &:before {
-                    background: $COLOR_WHITE;
-                    color: $COLOR_DARK_BLUE_5;
-                    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
-                    max-width: unset;
-                    width: 290px;
-                    white-space: normal;
-                    font-size: 12px;
-                    padding-left: 40px;
+                &:before, &:after {
+                    right: 227px !important;
                 }
-                &[data-tooltip-pos=left] {
-                    &:before {
-                        margin-right: 20px;
-                    }
-                    &:after {
-                        border-left-color: $COLOR_WHITE;
-                        margin-right: 8px;
-                    }
+                &:before {
+                    padding-left: 3em;
+                    white-space: normal;
+                    width: 260px;
                 }
             }
             &-i {
                 &:before {
-                    content: url('../images/common/tooltip/ic_tooltip_info_light.svg ');
-                    right: 100%;
-                    position: absolute;
-                    margin-right: 328px;
-                    z-index: 10;
-                    opacity: 0;
-                    transition: all 0.18s ease-out 0.17s;
-                    transform: translateX(20%);
-                    top: 0;
+                    left: -51.2em !important;
                 }
-                &:hover:before {
-                    opacity: 1;
-                    transform: translateX(0);
-                }
-            }
-            &:hover:after, &:hover:before {
-                opacity: 1;
             }
         }
     }
@@ -346,7 +312,7 @@
     position: relative;
     background-color: $COLOR_GREEN_2;
     overflow: hidden;
-    height: 56px;
+    height: 5.6em;
     width: 100%;
     margin: 0;
     text-align: left;
@@ -354,6 +320,12 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.24);
     margin-top: 5px;
 
+    span.btn-purchase__trade-type-text {
+        @include typeface(--paragraph-bold-white);
+    }
+    span.btn-purchase__currency {
+        @include typeface(--xsmall-bold-white);
+    }
     &__info {
         width: 30%;
         float: right;
@@ -363,33 +335,25 @@
         flex-direction: column;
     }
     &__return {
+        @include typeface(--paragraph-bold-white);
         display: flex;
         justify-content: flex-end;
         flex-grow: 1;
-        font-size: 14px;
         align-items: flex-end;
-        font-weight: bold;
     }
     &__profit {
+        @include typeface(--xsmall-bold-white);
         display: flex;
         justify-content: flex-end;
         flex-grow: 1;
-        font-size: 10px;
         align-items: flex-start;
-        font-weight: bold;
-
-    }
-    &__currency {
-        font-size: inherit;
-        background: none;
-        position: relative;
-        color: $COLOR_WHITE;
+        line-height: unset;
     }
     &__content {
         max-width: 50%;
         float: left;
         text-align: left;
-        height: 56px;
+        height: 5.6em;
         display: flex;
         flex-direction: column;
     }
@@ -403,19 +367,6 @@
         &-text {
             margin-left: 26px;
             position: absolute;
-        }
-        .number-selector {
-            &__selection {
-                background-color: $COLOR_DARK_BLUE_2;
-
-                &.selected {
-                    background-color: $COLOR_DARK_BLUE_5;
-                    color: $COLOR_WHITE;
-                }
-                &:hover {
-                    background-color: $COLOR_DARK_BLUE_4;
-                }
-            }
         }
     }
     &__effect-main {

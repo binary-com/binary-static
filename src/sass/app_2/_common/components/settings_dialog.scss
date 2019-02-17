@@ -101,7 +101,7 @@
             height: 280px;
         }
         .language-header {
-            @include typeface(--small-normal-black, capitalize);
+            @include typeface(--small-normal-black);
             padding: 0.8em 1.6em;
             display: flex;
             background: $COLOR_WHITE;

@@ -1,7 +1,7 @@
 /* Ant style */
 .input-field {
     margin: 0.8em 0 0;
-    font-weight: 300;
+    position: relative;
 
     &:has(input[type=checkbox]), .tooltip {
         display: inline-block;
@@ -15,11 +15,14 @@
         left: 5%;
     }
     .symbols {
-        height: 2.1em;
-        width: 2.1em;
-        line-height: 2.1em;
+        height: 100%;
+        width: 3.2em;
+        line-height: 3.2em;
         border-radius: $BORDER_RADIUS 0 0 $BORDER_RADIUS;
-        box-sizing: border-box;
+
+        &:before {
+            @include typeface(--paragraph-normal-black);
+        }
     }
     &:has(input[type=checkbox]) {
         display: inline-block;
@@ -49,7 +52,7 @@
             z-index: 1;
             height: 100%;
             margin: initial;
-            min-width: 2em;
+            min-width: 3.2em;
             border-radius: 3px;
             padding: initial;
             background-color: initial;

@@ -126,7 +126,7 @@
         line-height: map-get($map: $LINEHEIGHTS, $key: 'xsmall');
     }
     @else {
-        line-height: 1;
+        line-height: normal;
     }
 }
 
@@ -153,8 +153,11 @@
 
 /*
  * Set typefaces by passing a typeface variable name
+ * @param $var   - typeface variable
+ * @param $tt    - text-transform property
+ * @param $align - text-align property
  * Usage example:
-   @include typeface(--paragraph-bold-black);
+   @include typeface(--paragraph-bold-black, uppercase, center);
  */
 @mixin typeface($var, $tt: capitalize, $align: left) {
     $typeface_config: map-get($map: $TYPEFACES_LIST, $key: $var);
@@ -164,13 +167,26 @@
     $color : nth($typeface_config, 3); // color
     @include setTypeface($size, $weight, $color, $tt, $align);
 }
+
+/*
+ * Set padding by passing a typeface variable name, and padding value in px
+ * Usage example:
+   @include padding(--paragraph-bold-black, 8px, 16px, 8px, 16px);
+ */
+@mixin padding($typeface, $top, $right: $top, $bottom: $top, $left: $right) {
+    $typeface_config: map-get($map: $TYPEFACES_LIST, $key: $typeface);
+    $size  : nth($typeface_config, 1); // font-size
+
+    padding: em($top, $size) em($right, $size) em($bottom, $size) em($left, $size);
+}
+
 /*
  * Range Slider Thumb styling is set here
  */
 @mixin thumbStyle() {
     appearance: none;
-    width: 0.75em;
-    height: 0.75em;
+    width: 1em;
+    height: 1em;
     border-radius: 100%;
     border: 0;
     cursor: pointer;

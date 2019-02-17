@@ -38,7 +38,7 @@
             }
             p.acc-balance-amount {
                 @include typeface(--title-bold-green, default, center);
-                padding: 8px;
+                @include padding(--small-normal-grey, 8px);
                 pointer-events: none;
             }
             .select-arrow {
@@ -103,7 +103,7 @@
 
         span {
             @include typeface(--small-normal-grey, default, center);
-            padding: 0.8em 1.6em;
+            @include padding(--small-normal-grey, 8px, 16px);
             border: 1px dashed $COLOR_LIGHT_BLACK_2;
             width: 100%;
             margin: 0 1.6em;
@@ -134,25 +134,25 @@
             padding-bottom: 1.6em;
         }
         &__title {
-            @include typeface(--small-bold-black);
-            padding: 8px 16px;
+            @include typeface(--paragraph-bold-black);
+            @include padding(--paragraph-bold-black, 8px, 16px);
             display: block;
         }
         .acc-switcher-account {
             cursor: pointer;
-            padding: 8px 16px;
+            padding: 0.8em 1.6em;
             position: relative;
             display: flex;
             align-items: center;
             justify-content: space-between;
 
             .acc-switcher__id {
-                @include typeface(--small-light-black);
+                @include typeface(--paragraph-light-black);
                 display: flex;
                 align-items: center;
 
                 &.virtual:before {
-                    @include typeface(--xxsmall-normal-orange, uppercase);
+                    @include typeface(--xxxsmall-normal-orange, uppercase);
                     content: 'demo';
                     border: 1px solid $COLOR_ORANGE;
                     padding: 0.5em;
@@ -162,7 +162,7 @@
                 &__icon:before {
                     width: 100%;
                     height: 100%;
-                    margin-right: 16px;
+                    margin-right: 1.6em;
                     line-height: normal;
                     display: inline-block;
                     vertical-align: middle;
@@ -196,8 +196,8 @@
                 }
             }
             .acc-switcher__radio {
-                height: 1em;
-                width: 1em;
+                height: 1.6em;
+                width: 1.6em;
                 border: 2px solid $COLOR_LIGHT_BLACK_2;
                 border-radius: 50%;
             }
@@ -222,14 +222,16 @@
             }
         }
         .acc-logout {
-            @include typeface(--small-normal-black);
-            padding: 16px;
+            padding: 1.6em;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: flex-end;
             background-color: $COLOR_WHITE;
 
+            &__text {
+                @include typeface(--paragraph-normal-black, initial);
+            }
             .inline-icon {
                 width: 1.6em;
                 height: auto;
