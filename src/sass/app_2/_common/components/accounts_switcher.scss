@@ -158,7 +158,7 @@
         }
         .acc-switcher-account {
             cursor: pointer;
-            padding: 12px 16px 12px 0px;
+            padding: 12px 16px;
             position: relative;
             display: flex;
             align-items: center;
@@ -170,7 +170,6 @@
                 font-weight: 300;
                 font-size: 0.875rem; //stylelint-disable-line number-max-precision
                 line-height: 0.5;
-                margin-left: 8px;
 
                 &.virtual:before {
                     text-transform: uppercase;
@@ -182,38 +181,8 @@
                     border-radius: 16px;
                     margin: 0 8px 0 0;
                 }
-                &__icon:before {
-                    width: 20px;
-                    height: 20px;
-                    margin-right: 16px;
+                span {
                     margin-left: 8px;
-                }
-                &__icon--usd:before {
-                    content: url('../images/header/accounts/usd.svg');
-                }
-                &__icon--ust:before {
-                    content: url('../images/header/accounts/ust.svg');
-                }
-                &__icon--aud:before {
-                    content: url('../images/header/accounts/aud.svg');
-                }
-                &__icon--bch:before {
-                    content: url('../images/header/accounts/bch.svg');
-                }
-                &__icon--eth:before {
-                    content: url('../images/header/accounts/eth.svg');
-                }
-                &__icon--gbp:before {
-                    content: url('../images/header/accounts/gbp.svg');
-                }
-                &__icon--btc:before {
-                    content: url('../images/header/accounts/btc.svg');
-                }
-                &__icon--eur:before {
-                    content: url('../images/header/accounts/eur.svg');
-                }
-                &__icon--ltc:before {
-                    content: url('../images/header/accounts/ltc.svg');
                 }
             }
             .acc-switcher__radio {
