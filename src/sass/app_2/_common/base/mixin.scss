@@ -77,8 +77,8 @@
  * PX to EM
  * @param $px - px value to be converted
  * @param $base - base font size (in `em`)
- * Note: 'em' values are calculate based on the container font-size
- *       to properly converts 'px' to 'em', please pass in the container font size with it
+ * Note: 'em' values are calculate based on the element font-size
+ *       to properly converts 'px' to 'em', please pass in the element font-size with it
  * Usage example:
     padding: em(16px, 1.6em); // font-size in 'em'
  */
