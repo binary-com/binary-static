@@ -7,8 +7,10 @@
     &__input {
         border-radius: $BORDER_RADIUS;
 
-        &:has(label), .tooltip:before {
-            top: 72%;
+        .with-label {
+            &:before, &:after {
+                top: 70% !important;
+            }
         }
         input {
             text-align: center;
