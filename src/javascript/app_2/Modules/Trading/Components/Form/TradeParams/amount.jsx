@@ -64,6 +64,7 @@ const Amount = ({
                     className={classNames({ 'trade-container__amount--has-currency-options': !is_single_currency })}
                     classNameInput='trade-container__input'
                     classNamePrefix='trade-container__currency'
+                    currency={currency}
                     error_messages={validation_errors.amount}
                     fractional_digits={getDecimalPlaces(currency)}
                     id='amount'

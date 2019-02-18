@@ -4,6 +4,7 @@ import {
     PropTypes as MobxPropTypes } from 'mobx-react';
 import PropTypes                 from 'prop-types';
 import React                     from 'react';
+import { isCryptocurrency }      from '_common/base/currency_base';
 import ExpandableInput           from './expandable_input.jsx';
 import IncrementButtons          from './increment_buttons.jsx';
 import Input                     from './input.jsx';
@@ -14,6 +15,7 @@ const InputField = ({
     className,
     classNameInput,
     classNamePrefix,
+    currency,
     data_tip,
     data_value,
     error_messages,
@@ -92,15 +94,25 @@ const InputField = ({
 
     const incrementValue = () => {
         if (max_is_disabled) return;
-
-        const increment_value = (+value) + 1;
+        let increment_value;
+        const is_crypto = isCryptocurrency(currency);
+        if (is_crypto) {
+            increment_value = parseFloat(parseFloat(+value) + parseFloat(1 * 10**(0 - fractional_digits))).toFixed(fractional_digits);
+        } else {
+            increment_value = parseFloat((+value) + 1).toFixed(fractional_digits);
+        }
         onChange({ target: { value: increment_value, name } });
     };
 
     const decrementValue = () => {
         if (!value || min_is_disabled) return;
-
-        const decrement_value = (+value) - 1;
+        let decrement_value;
+        const is_crypto = isCryptocurrency(currency);
+        if (is_crypto) {
+            decrement_value = parseFloat(parseFloat(+value) - parseFloat(1 * 10**(0 - fractional_digits))).toFixed(fractional_digits);
+        } else {
+            decrement_value = parseFloat((+value) - 1).toFixed(fractional_digits);
+        }
         onChange({ target: { value: decrement_value, name } });
     };
 
@@ -187,6 +199,7 @@ InputField.propTypes = {
     className               : PropTypes.string,
     classNameInput          : PropTypes.string,
     classNamePrefix         : PropTypes.string,
+    currency                : PropTypes.string,
     error_messages          : MobxPropTypes.arrayOrObservableArray,
     fractional_digits       : PropTypes.number,
     helper                  : PropTypes.string,
