@@ -7,7 +7,6 @@ const elementTextContent = require('../../../_common/common_functions').elementT
 const getElementById     = require('../../../_common/common_functions').getElementById;
 const localize           = require('../../../_common/localize').localize;
 const State              = require('../../../_common/storage').State;
-const createElement      = require('../../../_common/utility').createElement;
 const getPropertyValue   = require('../../../_common/utility').getPropertyValue;
 
 const AccountTransfer = (() => {
