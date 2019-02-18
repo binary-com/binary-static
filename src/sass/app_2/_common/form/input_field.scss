@@ -51,8 +51,8 @@
         &__button {
             position: absolute;
             z-index: 1;
-            top: 1px;
-            height: 95%;
+            top: 2px;
+            height: calc(100% - 5px);
             margin: initial;
             min-width: 3em;
             border-radius: 3px;
@@ -63,10 +63,10 @@
             align-items: center;
 
             &--increment {
-                right: 0.1em;
+                right: 2px; // fixed position
             }
             &--decrement {
-                left: 0.1em;
+                left: 2px; // fixed position
             }
             &:hover {
                 cursor: pointer;
