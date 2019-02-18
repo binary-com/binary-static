@@ -143,27 +143,27 @@
         color: $COLOR_WHITE;
 
         &:before {
-            background: $COLOR_DARK_BLUE_3;
+            background: $COLOR_DARK_BLUE_5;
             color: $COLOR_WHITE;
         }
         &[data-tooltip-pos=top] {
             &:after {
-                border-top-color: $COLOR_DARK_BLUE_3;
+                border-top-color: $COLOR_DARK_BLUE_5;
             }
         }
         &[data-tooltip-pos=right] {
             &:after {
-                border-right-color: $COLOR_DARK_BLUE_3;
+                border-right-color: $COLOR_DARK_BLUE_5;
             }
         }
         &[data-tooltip-pos=left] {
             &:after {
-                border-left-color: $COLOR_DARK_BLUE_3;
+                border-left-color: $COLOR_DARK_BLUE_5;
             }
         }
         &[data-tooltip-pos=bottom] {
             &:after {
-                border-bottom-color: $COLOR_DARK_BLUE_3;
+                border-bottom-color: $COLOR_DARK_BLUE_5;
             }
         }
         i.question:after {
