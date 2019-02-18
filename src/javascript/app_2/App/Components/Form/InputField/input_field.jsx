@@ -97,9 +97,12 @@ const InputField = ({
         let increment_value;
         const is_crypto = isCryptocurrency(currency);
         if (is_crypto) {
-            increment_value = parseFloat(parseFloat(+value) + parseFloat(1 * 10**(0 - fractional_digits))).toFixed(fractional_digits);
+            const new_value = parseFloat(+value) + parseFloat(1 * 10 ** (0 - fractional_digits));
+            increment_value =
+                parseFloat(new_value).toFixed(fractional_digits);
         } else {
-            increment_value = parseFloat((+value) + 1).toFixed(fractional_digits);
+            increment_value =
+                parseFloat((+value) + 1).toFixed(fractional_digits);
         }
         onChange({ target: { value: increment_value, name } });
     };
@@ -109,7 +112,8 @@ const InputField = ({
         let decrement_value;
         const is_crypto = isCryptocurrency(currency);
         if (is_crypto) {
-            decrement_value = parseFloat(parseFloat(+value) - parseFloat(1 * 10**(0 - fractional_digits))).toFixed(fractional_digits);
+            const new_value = parseFloat(+value) - parseFloat(1 * 10 ** (0 - fractional_digits));
+            decrement_value = parseFloat(new_value).toFixed(fractional_digits);
         } else {
             decrement_value = parseFloat((+value) - 1).toFixed(fractional_digits);
         }
@@ -173,10 +177,17 @@ const InputField = ({
             {!!helper &&
             <span className='input-helper'>{helper}</span>
             }
-            {!is_expandable && (is_incrementable && type === 'number' ? <React.Fragment>{increment_buttons}</React.Fragment> :
-                input)
+            {!is_expandable &&
+            (is_incrementable && type === 'number' ? <React.Fragment>{increment_buttons}</React.Fragment> : input)
             }
-            {is_expandable && <ExpandableInput className={`expandable-${name}`}>{input}</ExpandableInput>}
+            {is_expandable &&
+            <ExpandableInput
+                input_class={`expandable-${name}`}
+                input_resizer_class={`expandable-${name}-resizer`}
+            >
+                {input}
+            </ExpandableInput>
+            }
         </Tooltip>;
 
     const expandableInputWrapper = (<label htmlFor={id} className='expandable-input-wrapper'>{input_tooltip}</label>);
