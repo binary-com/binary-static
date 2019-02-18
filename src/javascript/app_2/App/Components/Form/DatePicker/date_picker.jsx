@@ -157,14 +157,13 @@ class DatePicker extends React.Component {
     }
 
     renderInputField = () => {
-        const { is_read_only, mode, name, label } = this.props;
+        const { is_read_only, mode, name, label, error_messages } = this.props;
         let { placeholder } = this.props;
         let type, onChange;
 
         switch (mode) {
             case 'duration':
                 onChange = this.onChangeInput;
-                placeholder = placeholder || localize('Select a date');
                 type = 'text';
                 break;
             default:
@@ -178,6 +177,7 @@ class DatePicker extends React.Component {
                 classNameInput='trade-container__input'
                 data-tip={false}
                 data-value={this.state.value}
+                error_messages={error_messages}
                 label={label}
                 is_read_only={is_read_only}
                 name={name}
@@ -292,7 +292,8 @@ DatePicker.propTypes = {
         PropTypes.string,
         PropTypes.number,
     ]),
-    label: PropTypes.string,
+    error_messages: PropTypes.string,
+    label         : PropTypes.string,
 };
 
 export default observer(DatePicker);

@@ -13,6 +13,7 @@ const TradingDatePicker = ({
     duration,
     duration_min_max,
     duration_units_list,
+    validation_errors,
     expiry_date,
     expiry_type,
     is_24_hours_contract,
@@ -51,6 +52,7 @@ const TradingDatePicker = ({
             alignment='left'
             disable_year_selector
             disable_trading_events
+            error_messages={validation_errors.duration || []}
             has_today_btn
             is_nativepicker={false}
             is_read_only={is_read_only}
@@ -89,8 +91,9 @@ TradingDatePicker.propTypes = {
         PropTypes.number,
         PropTypes.string,
     ]),
-    start_time: PropTypes.string,
-    symbol    : PropTypes.string,
+    start_time       : PropTypes.string,
+    symbol           : PropTypes.string,
+    validation_errors: PropTypes.object,
 };
 
 export default connect(
@@ -105,5 +108,6 @@ export default connect(
         start_date         : modules.trade.start_date,
         start_time         : modules.trade.start_time,
         symbol             : modules.trade.symbol,
+        validation_errors  : modules.trade.validation_errors,
     })
 )(TradingDatePicker);
