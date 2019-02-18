@@ -34,7 +34,8 @@ const AccountTransfer = (() => {
         client_loginid,
         withdrawal_limit,
         max_amount,
-        transferable_amount;
+        transferable_amount,
+        transfer_to_currency;
 
     const populateAccounts = (accounts) => {
         client_loginid   = Client.get('loginid');
@@ -58,25 +59,25 @@ const AccountTransfer = (() => {
             showError();
             return;
         }
+        el_transfer_to.innerHTML = fragment_transfer_to.innerHTML;
+        el_transfer_to.onchange = () => {
+            const to_currency = el_transfer_to.options[el_transfer_to.selectedIndex].getAttribute('data-currency');
+            el_transfer_fee.setVisibility(client_currency !== to_currency);
+            transfer_to_currency.textContent = to_currency;
+            showAmount();
+            setTransferFeeAmount();
+        };
+
+        transfer_to_currency = getElementById('amount-add-on');
+        transfer_to_currency.textContent = el_transfer_to ? el_transfer_to.options[el_transfer_to.selectedIndex].getAttribute('data-currency') : '';
+        getElementById('transfer_to_account').textContent = el_transfer_to.value;
+        getElementById('transfer_to_select').querySelector('label').addEventListener('click', () => {
+            showAmount();
+        });
         if (fragment_transfer_to.childElementCount > 1) {
-            el_transfer_to.innerHTML = fragment_transfer_to.innerHTML;
-            el_transfer_to.onchange = () => {
-                const to_currency = el_transfer_to.options[el_transfer_to.selectedIndex].getAttribute('data-currency');
-                el_transfer_fee.setVisibility(client_currency !== to_currency);
-                setTransferFeeAmount();
-            };
-        } else {
-            const label = createElement('label', {
-                'data-value'   : fragment_transfer_to.innerText,
-                'data-currency': fragment_transfer_to.firstChild.getAttribute('data-currency'),
-            });
-            label.appendChild(document.createTextNode(fragment_transfer_to.innerText));
-            label.id = 'transfer_to';
-
-            el_transfer_to.parentNode.replaceChild(label, el_transfer_to);
-            el_transfer_to = getElementById('transfer_to');
+            transfer_to_currency.addEventListener('click', showSelectForm);
+            transfer_to_currency.setAttribute('data-balloon', localize('Click to change'));
         }
-
         showForm();
 
         if (Client.hasCurrencyType('crypto') && Client.hasCurrencyType('fiat')) {
@@ -89,6 +90,18 @@ const AccountTransfer = (() => {
         }
     };
 
+    const showSelectForm = () => {
+        getElementById('transfer_to_select').setVisibility(1);
+        getElementById('amount').setVisibility(0);
+        getElementById('amount-add-on').setVisibility(0);
+    };
+
+    const showAmount = () => {
+        getElementById('transfer_to_select').setVisibility(0);
+        getElementById('transfer_to_account').textContent = el_transfer_to.value;
+        getElementById('amount').setVisibility(1);
+        getElementById('amount-add-on').setVisibility(1);
+    };
     const setTransferFeeAmount = () => {
         elementTextContent(el_fee_amount, Currency.getTransferFee(client_currency, (el_transfer_to.value || el_transfer_to.getAttribute('data-value') || '').match(/\((\w+)\)/)[1]));
     };
@@ -130,6 +143,8 @@ const AccountTransfer = (() => {
             fnc_response_handler: responseHandler,
             enable_button       : true,
         });
+
+        getElementById('transfer_to_select').setVisibility(0);
     };
 
     const responseHandler = (response) => {
@@ -152,10 +167,10 @@ const AccountTransfer = (() => {
 
         response.accounts.forEach((account) => {
             if (account.loginid === client_loginid) {
-                elementTextContent(getElementById('from_currency'), account.currency);
+                getElementById('from_currency').innerHTML = Currency.formatCurrency(account.currency);
                 elementTextContent(getElementById('from_balance'), account.balance);
             } else if (account.loginid === response_submit_success.client_to_loginid) {
-                elementTextContent(getElementById('to_currency'), account.currency);
+                getElementById('to_currency').innerHTML = Currency.formatCurrency(account.currency);
                 elementTextContent(getElementById('to_balance'), account.balance);
             }
         });

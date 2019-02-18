@@ -1,3 +1,76 @@
+/* stylelint-disable color-no-hex */
+$TRANSFER_BACKGROUND_LIGHT_GRAY: #f2f2f2;
+$TRANSFER_BACKGROUND_LIGHT_GRAY_BORDER: #dedede;
+$TRANSFER_COLOR_BRAND_ORANGE: #e98024;
+
+/* stylelint-enable color-no-hex */
+.transfer_form {
+    background-color: $COLOR_WHITE;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+
+    p {
+        margin: 0;
+    }
+    > div {
+        box-sizing: border-box;
+        width: 100%;
+    }
+    &__left_pane {
+        padding: 30px;
+        width: 50%;
+        min-height: 266px;
+        border: 1px solid $TRANSFER_BACKGROUND_LIGHT_GRAY;
+        border-right: 0;
+    }
+    &__right_pane {
+        padding: 30px;
+        width: 50%;
+        min-height: 266px;
+        background-color: $TRANSFER_BACKGROUND_LIGHT_GRAY;
+        color: $COLOR_BLACK;
+
+        &__input_group {
+            width: 100%;
+
+            &__prefix {
+                display: flex;
+
+                .input-add-on {
+                    background-color: $TRANSFER_BACKGROUND_LIGHT_GRAY;
+                    border: 1px solid $TRANSFER_BACKGROUND_LIGHT_GRAY_BORDER;
+                    border-top-left-radius: 4px;
+                    border-bottom-left-radius: 4px;
+                    cursor: pointer;
+                    display: inline-flex;
+                    height: 28px;
+                    width: 46px;
+                    align-items: center;
+                    justify-content: center;
+                    transition: all 0.3s ease;
+                }
+                .input-add-on.has-dropdown:hover {
+                    box-shadow: 0px 0px 6px $TRANSFER_COLOR_BRAND_ORANGE;
+                }
+                input {
+                    margin: 0;
+                    padding: 0;
+                    border: 1px solid $TRANSFER_BACKGROUND_LIGHT_GRAY_BORDER;
+                    border-left: 0;
+                    border-radius: 0 4px 4px 0;
+                    height: 28px;
+                    min-width: 236px;
+                }
+            }
+            .select {
+                width: 100%;
+            }
+        }
+    }
+}
+
 .account_transfer {
     width: 250px;
 

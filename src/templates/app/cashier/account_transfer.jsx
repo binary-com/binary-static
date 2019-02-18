@@ -1,15 +1,18 @@
 import React from 'react';
-import { FormRow, SubmitButton, Fieldset } from '../../_common/components/forms.jsx';
+import { FormRow } from '../../_common/components/forms.jsx';
 
 const Row = ({ id }) => (
-    <div className='gr-padding-10 gr-row'>
-        <div className='gr-2 gr-4-m align-end'>
+    <React.Fragment>
+        <div>
+            <p>{it.L('Account ID')}:</p>
             <span id={`${id}_loginid`} />
         </div>
-        <div className='gr-10 gr-8-m'>
+        <br />
+        <div>
+            <p>{it.L('Current balance')}:</p>
             <span id={`${id}_currency`} />&nbsp;<span id={`${id}_balance`} />
         </div>
-    </div>
+    </React.Fragment>
 );
 
 const AccountTransfer = () => (
@@ -37,8 +40,14 @@ const AccountTransfer = () => (
 
         <div className='invisible' id='success_form'>
             <p>{it.L('Your fund transfer is successful. Your new balances are:')}</p>
-            <Row id='from' />
-            <Row id='to' />
+            <div className='transfer_form'>
+                <div className='transfer_form__left_pane'>
+                    <Row id='from' />
+                </div>
+                <div className='transfer_form__right_pane'>
+                    <Row id='to' />
+                </div>
+            </div>
             <p>
                 <a href='javascript:;' id='reset_transfer'>{it.L('Make another transfer')}</a>
             </p>
@@ -47,41 +56,39 @@ const AccountTransfer = () => (
         <form className='invisible' id='frm_account_transfer'>
             <p>{it.L('Transfer funds between your real money accounts.')}</p>
 
-            <Fieldset legend={it.L('Details')}>
-                <FormRow label={it.L('Transfer from')} type='label'  id='lbl_transfer_from' />
-                <FormRow label={it.L('Transfer to')}   type='select' id='transfer_to' />
-                <FormRow label={it.L('Amount')}        type='custom' id='transfer_amount'>
-                    <input id='amount' name='amount' type='text' maxLength='20' autoComplete='off' />
-                </FormRow>
-                <div className='gr-row'>
-                    <div className='gr-4 gr-12-m' />
-                    <div className='gr-8 gr-12-m'>
-                        <div className='account_transfer font-s' id='range_hint'>
-                            <h3 className='account_transfer__header'>
-                                {it.L('Min')}: <span id='range_hint_min' />
-                                &nbsp;{it.L('Max')}: <span id='range_hint_max' />
-                            </h3>
-                            <div>
-                                <p className='explain-dynamic-limit font-s'>
-                                    {it.L('Maximum transferable amount will be chosen from a minimum value of:')}
-                                </p>
-                                <ul className='bullet font-s'>
-                                    <li>{it.L('Current balance: [_1]', '<span id=\'limit_current_balance\' />')}</li>
-                                    <li>{it.L('Daily withdrawal limit: [_1]', '<span id=\'limit_daily_withdrawal\' />')}</li>
-                                    <li>{it.L('Maximum allowed amount: [_1]', '<span id=\'limit_max_amount\' />')}</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+            <div className='transfer_form'>
+                <div className='transfer_form__left_pane'>
+                    <p>{it.L('Transfer from')}:</p>
+                    <p id='lbl_transfer_from' />
+                    <br />
+                    <p>{it.L('Current Balance')}:</p>
+                    <p id='limit_current_balance' />
+                    <br />
+                    <p className='error-msg invisible' id='form_error' />
                 </div>
-            </Fieldset>
-
-            <SubmitButton msg_id='form_error' type='submit' text={it.L('Transfer')} />
+                <div className='transfer_form__right_pane'>
+                    <p>{it.L('Transfer to')}:</p>
+                    <p id='transfer_to_account' />
+                    <br />
+                    <p>{it.L('Amount')}:</p>
+                    <div className='transfer_form__right_pane__input_group'>
+                        <FormRow label={it.L('Transfer to')} type='select' row_id='transfer_to_select' id='transfer_to' className='invisible' />
+                        <div className='transfer_form__right_pane__input_group__prefix'>
+                            <span id='amount-add-on' className='input-add-on' />
+                            <input id='amount' name='amount' type='text' maxLength='20' autoComplete='off' />
+                        </div>
+                        <p className='font-s'>{it.L('Min')} <span id='range_hint_min' /></p>
+                    </div>
+                    <br />
+                    <button id='btn_submit' type='submit' className='button'>{it.L('Transfer')}</button>
+                </div>
+            </div>
         </form>
 
         <div className='hint invisible' id='transfer_fee'>
             {it.L('Notes:')}
             <ul className='bullet'>
+                <li>{it.L('Daily withdrawal limit: [_1]*', '<span id=\'limit_daily_withdrawal\' />')} {it.L('Maximum allowed amount: [_1]*', '<span id=\'limit_max_amount\' />')}<br /><span className='font-s italic'>{it.L('*These limits may vary depending on daily exchange rates.')}</span></li>
                 <li>{it.L('There may be times when transfers are not available because the market is closed (weekends or holidays), there is high volatility in the market or because of technical issues.')}</li>
                 <li>{it.L('You may transfer funds between a fiat account and a cryptocurrency account')}</li>
                 <li>{it.L('Each transfer is subject to a [_1] transfer fee or a minimum fee of [_2], whichever is higher.', '<span id="transfer_fee_amount"></span>', '<span id="transfer_fee_minimum"></span>')}</li>
