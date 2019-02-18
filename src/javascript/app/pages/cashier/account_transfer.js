@@ -184,6 +184,20 @@ const AccountTransfer = (() => {
         onLoad();
     };
 
+    const useNativeSelectPickerOnMobile = () => {
+        if (screen.width < 480) {
+            el_transfer_to.setVisibility(1);
+        }
+        window.onresize = () => {
+            if (screen.width < 480) {
+                el_transfer_to.setVisibility(1);
+            } else {
+                el_transfer_to.setVisibility(0);
+
+            }
+        };
+    };
+
     const onLoad = () => {
         if (!Client.canTransferFunds()) {
             BinaryPjax.loadPreviousUrl();
@@ -250,6 +264,7 @@ const AccountTransfer = (() => {
                     );
                     populateHints();
                     populateAccounts(accounts);
+                    useNativeSelectPickerOnMobile();
                 });
             }
         });
