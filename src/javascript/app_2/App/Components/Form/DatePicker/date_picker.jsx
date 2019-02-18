@@ -157,16 +157,18 @@ class DatePicker extends React.Component {
     renderInputField = () => {
         const { is_read_only, mode, name, label, error_messages } = this.props;
         let { placeholder } = this.props;
-        let type, onChange;
+        let value, type, onChange;
 
         switch (mode) {
             case 'duration':
                 onChange = this.onChangeInput;
                 type = 'text';
+                value = this.state.value;
                 break;
             default:
                 placeholder = placeholder || localize('Select a date');
                 type = 'text';
+                value = formatDate(this.props.value, 'DD MMM YYYY');
         }
 
         return (
@@ -183,7 +185,7 @@ class DatePicker extends React.Component {
                 onClick={this.handleVisibility}
                 placeholder={placeholder}
                 type={type}
-                value={this.state.value}
+                value={value}
             />
         );
     };
