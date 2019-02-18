@@ -256,7 +256,7 @@ div.contracts-popup-container {
                     width: 100%;
 
                     span {
-                        @include typeface(--paragraph-normal-white, uppercase, center);
+                        @include typeface(--paragraph-normal-active, uppercase, center);
                     }
                 }
             }
@@ -404,7 +404,7 @@ div.contracts-popup-container {
                         fill: $COLOR_DARK_BLUE_5;
                     }
                 }
-                .stroke-white {
+                .stroke-active {
                     stroke: $COLOR_WHITE;
                 }
             }

@@ -131,7 +131,7 @@
                 color: $COLOR_WHITE;
             }
             &:after {
-                @include typeface(--xsmall-normal-white);
+                @include typeface(--xsmall-normal-active);
                 content: 'L';
                 transform: scaleX(-1) rotate(-40deg);
                 position: absolute;

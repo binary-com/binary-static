@@ -321,10 +321,10 @@
     margin-top: 5px;
 
     span.btn-purchase__trade-type-text {
-        @include typeface(--paragraph-bold-white);
+        @include typeface(--paragraph-bold-active);
     }
     span.btn-purchase__currency {
-        @include typeface(--xsmall-bold-white);
+        @include typeface(--xsmall-bold-active);
     }
     &__info {
         width: 30%;
@@ -335,14 +335,14 @@
         flex-direction: column;
     }
     &__return {
-        @include typeface(--paragraph-bold-white);
+        @include typeface(--paragraph-bold-active);
         display: flex;
         justify-content: flex-end;
         flex-grow: 1;
         align-items: flex-end;
     }
     &__profit {
-        @include typeface(--xsmall-bold-white);
+        @include typeface(--xsmall-bold-active);
         display: flex;
         justify-content: flex-end;
         flex-grow: 1;

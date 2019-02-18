@@ -19,7 +19,7 @@
             margin-left: 5px;
         }
         &.selected {
-            @include typeface(--paragraph-bold-white);
+            @include typeface(--paragraph-bold-active);
             background-color: $COLOR_LIGHT_GRAY_1;
         }
         &:hover:not(.selected) {

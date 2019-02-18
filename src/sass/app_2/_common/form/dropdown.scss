@@ -138,7 +138,7 @@
                     background-color: $COLOR_LIGHT_BLACK_4;
                 }
                 &--selected span {
-                    @include typeface(--paragraph-semibold-white);
+                    @include typeface(--paragraph-semibold-active);
                     background-color: $COLOR_LIGHT_GRAY_1;
                 }
             }
