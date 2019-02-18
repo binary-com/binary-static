@@ -31,10 +31,10 @@
 
         &-info {
             @include typeface(--small-light-black, none);
-            @include padding(--small-light-black, 5px, 5px, 5px, 8px);
+            @include toEm(padding, 5px 5px 5px 8px, 1.2em);
+            @include toEm(margin-bottom, 10px, 1.2em);
             background-color: rgba($COLOR_ORANGE, 0.16);
             display: block;
-            margin-bottom: 10px;
             border: 1px solid $COLOR_ORANGE;
             border-radius: $BORDER_RADIUS;
         }

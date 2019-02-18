@@ -38,7 +38,7 @@
             }
             p.acc-balance-amount {
                 @include typeface(--title-bold-green, default, center);
-                @include padding(--small-normal-grey, 8px);
+                @include toEm(padding, 8px, 1.6em);
                 pointer-events: none;
             }
             .select-arrow {
@@ -103,7 +103,7 @@
 
         span {
             @include typeface(--small-normal-grey, default, center);
-            @include padding(--small-normal-grey, 8px, 16px);
+            @include toEm(padding, 8px 16px, 1.2em);
             border: 1px dashed $COLOR_LIGHT_BLACK_2;
             width: 100%;
             margin: 0 1.6em;
@@ -135,7 +135,7 @@
         }
         &__title {
             @include typeface(--paragraph-bold-black);
-            @include padding(--paragraph-bold-black, 8px, 16px);
+            @include toEm(padding, 8px 16px, 1.6em);
             display: block;
         }
         .acc-switcher-account {
@@ -153,11 +153,11 @@
 
                 &.virtual:before {
                     @include typeface(--xxxsmall-normal-orange, uppercase);
+                    @include toEm(padding, 2px 4px, 0.6em);
+                    @include toEm(margin-right, 8px, 0.6em);
                     content: 'demo';
                     border: 1px solid $COLOR_ORANGE;
-                    padding: 0.5em;
                     border-radius: 20px;
-                    margin: 0 1em 0 0;
                 }
                 &__icon:before {
                     width: 100%;

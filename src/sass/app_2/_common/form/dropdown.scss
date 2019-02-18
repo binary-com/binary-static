@@ -115,7 +115,7 @@
             }
             &__label span {
                 @include typeface(--paragraph-bold-black, capitalize, center);
-                @include padding(--paragraph-bold-black, 10px);
+                @include toEm(padding, 10px, 1.6em);
                 display: block;
             }
             &__item {
