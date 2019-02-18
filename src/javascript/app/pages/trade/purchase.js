@@ -119,7 +119,7 @@ const Purchase = (() => {
                                 const message_text = `${localize('Your request to be treated as a professional client is not approved.')}&nbsp;${localize('Please check your inbox for more details.')}<br /><br />${localize('Your account remains under the retail client category. You are welcome to reapply as a professional client at any time.')}`;
                                 const button_text = localize('Apply now as a professional investor');
 
-                                message = prepareConfirmationErrorCta(message_text, button_text);
+                                message = prepareConfirmationErrorCta(message_text, button_text, true);
                             } else {
                                 const message_text = localize('In the EU, financial binary options are only available to professional investors.');
                                 const button_text = localize('Apply now as a professional investor');
@@ -294,13 +294,20 @@ const Purchase = (() => {
 
     const makeBold = d => `<strong>${d}</strong>`;
 
-    const prepareConfirmationErrorCta = (message_text, button_text) => {
+    const prepareConfirmationErrorCta = (message_text, button_text, has_html = false) => {
         const row_element = createElement('div', { class: 'gr-row font-style-normal' });
         const columnElement = (extra_attributes = {}) => createElement('div', { class: 'gr-12 gr-padding-20', ...extra_attributes });
-        const message_element = columnElement({ text: message_text });
         const button_element = createElement('a', { class: 'button', href: urlFor('user/settings/professional') });
         const cta_element = columnElement();
+        let message_element;
 
+        if (has_html) {
+            message_element = columnElement();
+            message_element.innerHTML = message_text;
+        } else {
+            message_element = columnElement({ text: message_text });
+        }
+        
         button_element.appendChild(createElement('span', { text: button_text }));
         cta_element.appendChild(button_element);
         row_element.appendChild(message_element);
