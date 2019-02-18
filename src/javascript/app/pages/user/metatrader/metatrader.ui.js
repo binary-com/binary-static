@@ -592,17 +592,17 @@ const MetaTraderUI = (() => {
         const el_demo_topup_btn  = getElementById('demo_topup_btn');
         const el_demo_topup_info = el_demo_topup_btn.previousSibling;
         const el_loading         = el_demo_topup_btn.parentElement.firstChild;
-        const topup_info_text    = localize('You can top up your demo account with an additional [_1] if your balance falls below [_2].', [`${Client.get('currency')} 10,000.00`, `${Client.get('currency')} 1,000.00`]);
-        const topup_btn_text     = localize('Get [_1]', `${Client.get('currency')} 10,000.00`);
         const acc_type           = Client.get('mt5_account');
         const is_demo            = accounts_info[acc_type].is_demo;
+        const topup_info_text    = localize('You can top up your demo account with an additional [_1] if your balance falls below [_2].', [`${MetaTraderConfig.getCurrency(acc_type)} 10,000.00`, `${MetaTraderConfig.getCurrency(acc_type)} 1,000.00`]);
+        const topup_btn_text     = localize('Get [_1]', `${MetaTraderConfig.getCurrency(acc_type)} 10,000.00`);
 
         el_loading.setVisibility(0);
         el_demo_topup_info.innerText = topup_info_text;
         el_demo_topup_btn.firstChild.innerText = topup_btn_text;
 
         if (is_demo) {
-            const balance     = accounts_info[acc_type].info.balance;
+            const balance     = +accounts_info[acc_type].info.balance;
             const min_balance = 1000;
 
             if (balance < min_balance) {
