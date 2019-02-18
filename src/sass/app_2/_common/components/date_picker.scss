@@ -7,6 +7,9 @@
     &__input {
         border-radius: $BORDER_RADIUS;
 
+        &:has(label), .tooltip:before {
+            top: 72%;
+        }
         input {
             text-align: center;
             pointer-events: auto;

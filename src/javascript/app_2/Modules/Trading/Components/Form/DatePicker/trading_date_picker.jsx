@@ -10,7 +10,6 @@ import {
 import DatePicker                     from 'App/Components/Form/DatePicker';
 
 const TradingDatePicker = ({
-    duration,
     duration_min_max,
     duration_units_list,
     validation_errors,
@@ -65,7 +64,6 @@ const TradingDatePicker = ({
             start_date={start_date}
             underlying={symbol}
             value={expiry_date}
-            duration={duration}
         />
     );
 };
@@ -98,7 +96,6 @@ TradingDatePicker.propTypes = {
 
 export default connect(
     ({ modules, common }) => ({
-        duration           : modules.trade.duration,
         duration_min_max   : modules.trade.duration_min_max,
         duration_units_list: modules.trade.duration_units_list,
         expiry_date        : modules.trade.expiry_date,

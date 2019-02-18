@@ -31,8 +31,8 @@ class DatePicker extends React.Component {
 
     componentDidMount() {
         document.addEventListener('click', this.onClickOutside, true);
-        const { mode, value, duration } = this.props;
-        const initial_value = mode === 'duration' ? formatDate(addDays(toMoment(), duration), 'DD MMM YYYY') : formatDate(value, 'DD MMM YYYY');
+        const { mode, value } = this.props;
+        const initial_value = mode === 'duration' ? formatDate(addDays(toMoment(), 1), 'DD MMM YYYY') : formatDate(value, 'DD MMM YYYY');
 
         this.updateDatePickerValue(initial_value);
 
@@ -99,11 +99,9 @@ class DatePicker extends React.Component {
         const { date_format, mode, start_date } = this.props;
         this.setState({ value }, this.updateStore);
         if (mode === 'duration') {
-            if (value) {
-                const new_value = daysFromTodayTo(value);
-                const new_date_value = formatDate(value, 'DD MMM YYYY');
-                this.setState({ value: new_value, date_value: new_date_value }, this.updateStore);
-            }
+            const new_value = daysFromTodayTo(value);
+            const new_date_value = formatDate(value, 'DD MMM YYYY');
+            this.setState({ value: new_value, date_value: new_date_value }, this.updateStore);
         } else {
             this.setState({ value }, this.updateStore);
         }
@@ -288,11 +286,7 @@ DatePicker.defaultProps = {
 
 DatePicker.propTypes = {
     ...Calendar.propTypes,
-    duration: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.number,
-    ]),
-    error_messages: PropTypes.string,
+    error_messages: PropTypes.array,
     label         : PropTypes.string,
 };
 
