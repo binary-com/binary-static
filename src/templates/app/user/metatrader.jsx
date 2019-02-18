@@ -1,7 +1,9 @@
-import React from 'react';
-import { Button } from '../../_common/components/elements.jsx';
-import Loading from '../../_common/components/loading.jsx';
-import { FormRow, SubmitButton } from '../../_common/components/forms.jsx';
+import React             from 'react';
+import { Button }        from '../../_common/components/elements.jsx';
+import {
+    FormRow,
+    SubmitButton }       from '../../_common/components/forms.jsx';
+import Loading           from '../../_common/components/loading.jsx';
 import { SeparatorLine } from '../../_common/components/separator_line.jsx';
 
 /* eslint-disable react/jsx-no-target-blank */

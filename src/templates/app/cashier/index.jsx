@@ -1,5 +1,5 @@
-import React from 'react';
-import { Button } from '../../_common/components/elements.jsx';
+import React             from 'react';
+import { Button }        from '../../_common/components/elements.jsx';
 import { SeparatorLine } from '../../_common/components/separator_line.jsx';
 
 const IconWithLink = ({ button_id, button_link, img_id, img_src }) => (
