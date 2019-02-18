@@ -235,7 +235,6 @@ const MetaTrader = (() => {
         const acc_type           = Client.get('mt5_account');
         const login              = accounts_info[acc_type].info.login;
         const req = {
-            from_binary: Client.get('loginid'),
             mt5_deposit: 1,
             to_mt5     : login,
         };
