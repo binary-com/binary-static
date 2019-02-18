@@ -235,9 +235,9 @@ const MetaTrader = (() => {
         const acc_type           = Client.get('mt5_account');
         const login              = accounts_info[acc_type].info.login;
         const req = {
-            loginid    : Client.get('loginid'),
+            from_binary: Client.get('loginid'),
             mt5_deposit: 1,
-            mt5_id     : login,
+            to_mt5     : login,
         };
 
         BinarySocket.send(req).then((response) => {
