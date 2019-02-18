@@ -17,7 +17,7 @@
     background: $COLOR_GREEN_1;
 
     span {
-        @include typeface(--title-normal-black, uppercase, center);
+        @include typeface(--title-center-normal-black, uppercase);
     }
     &.is-link {
         max-width: 220px;

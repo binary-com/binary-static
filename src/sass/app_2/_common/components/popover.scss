@@ -7,7 +7,7 @@ a {
 }
 
 .popover {
-    @include typeface(--xsmall-semibold-black);
+    @include typeface(--xsmall-left-semibold-black);
     position: absolute;
     left: 50%;
     bottom: 4em;

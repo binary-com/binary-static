@@ -13,13 +13,13 @@
         justify-content: center;
         align-items: center;
         background-color: $COLOR_WHITE;
-        @include typeface(--paragraph-normal-black);
+        @include typeface(--paragraph-left-normal-black);
 
         &:not(:first-child) {
             margin-left: 5px;
         }
         &.selected {
-            @include typeface(--paragraph-bold-active);
+            @include typeface(--paragraph-left-bold-active);
             background-color: $COLOR_LIGHT_GRAY_1;
         }
         &:hover:not(.selected) {

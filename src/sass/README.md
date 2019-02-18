@@ -85,26 +85,22 @@ p {
 ---
 
 ### Typography
-The `@typeface($var, $text-transform, $text-align)` mixin can be used to style any text element. Simply pass in a typeface `$var` name to the mixin.
-The `$var` name is in the format `--$FONT_SIZE-$FONT_WEIGHT-$COLOR`.
+The `@typeface($var, $text-transform)` mixin can be used to style any text element. Simply pass in a typeface `$var` name to the mixin.
+The `$var` name is in the format `--$FONT_SIZE-$TEXT_ALIGN-$FONT_WEIGHT-$COLOR`.
 
-Refer to `typography.scss` for a list of valid font-sizes, font-weights & colors.
+Refer to `typography.scss` for a list of valid font-sizes, text-align, font-weights & colors.
 
 ```scss
-// Define bold red title
+// Define bold red title, align to the left
 h1 {
-    @include typeface(--title-bold-red);
+    @include typeface(--title-left-bold-red);
 }
 ```
-The optional second and third arguments in the `@typeface` mixin sets the `text-transform` and `text-align` properties:
+The optional second argumant in the `@typeface` mixin sets the `text-transform`.
 ```scss
 // Define an uppercased paragraph with color orange and font-weight 300
 p {
-    @include typeface(--paragraph-light-orange, uppercase);
-}
-// Define a centered black bold hint
-.hint {
-    @include typeface(--xxsmall-bold-black, capitalize, center);
+    @include typeface(--paragraph-center-light-orange, uppercase);
 }
 ```
 

@@ -111,17 +111,19 @@
 /*
  * Generate typefaces key-value pair of variable name and config
  * Example:
-   --paragraph-bold-black: (14px, bold, black)
+   --paragraph-center-bold-black: (14px, center, bold, black)
  */
 @function generate-typefaces() {
     $typeface_list: ();
     @each $fontsize_name, $size in $FONT_SIZES {
-        @each $color_name, $color in $FONT_COLORS {
-            @each $fontweight_name, $weight in $FONT_WEIGHTS {
-                $key: --#{$fontsize_name}-#{$fontweight_name}-#{$color_name};
-                $val: ($size, $weight, $color);
-                $typeface: ($key: $val);
-                $typeface_list: map-merge($typeface_list, $typeface);
+        @each $textalign_name, $text_align in $TEXT_ALIGN {
+            @each $color_name, $color in $FONT_COLORS {
+                @each $fontweight_name, $weight in $FONT_WEIGHTS {
+                    $key: --#{$fontsize_name}-#{$textalign_name}-#{$fontweight_name}-#{$color_name};
+                    $val: ($size, $text_align, $weight, $color);
+                    $typeface: ($key: $val);
+                    $typeface_list: map-merge($typeface_list, $typeface);
+                }
             }
         }
     }
@@ -134,7 +136,7 @@
  * Usage example:
    @include setTypeface(16px, bold, black, uppercase);
  */
-@mixin setTypeface($size, $weight, $colour, $tt, $align) {
+@mixin setTypeface($size, $align, $weight, $colour, $tt) {
     @if $size {
         font-size: $size;
     }
@@ -172,13 +174,14 @@
  * Usage example:
    @include typeface(--paragraph-bold-black, uppercase, center);
  */
-@mixin typeface($var, $tt: capitalize, $align: left) {
+@mixin typeface($var, $tt: capitalize,) {
     $typeface_config: map-get($map: $TYPEFACES_LIST, $key: $var);
 
     $size  : nth($typeface_config, 1); // font-size
-    $weight: nth($typeface_config, 2); // font-weight
-    $color : nth($typeface_config, 3); // color
-    @include setTypeface($size, $weight, $color, $tt, $align);
+    $align : nth($typeface_config, 2); // text-align
+    $weight: nth($typeface_config, 3); // font-weight
+    $color : nth($typeface_config, 4); // color
+    @include setTypeface($size, $align, $weight, $color, $tt);
 }
 
 /*

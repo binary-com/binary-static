@@ -61,10 +61,10 @@
                 text-align: center;
 
                 .list-title {
-                    @include typeface(--small-bold-black, capitalize, center);
+                    @include typeface(--small-center-bold-black, capitalize);
                 }
                 .list-container .list-item {
-                    @include typeface(--small-normal-black);
+                    @include typeface(--small-left-normal-black);
                     cursor: pointer;
                     border-radius: 4px;
                     display: inline-block;

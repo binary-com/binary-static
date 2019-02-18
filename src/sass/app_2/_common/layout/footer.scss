@@ -12,7 +12,7 @@ footer {
     align-items: center;
 
     .server-time {
-        @include typeface(--small-normal-black);
+        @include typeface(--small-left-normal-black);
         display: inline-flex;
         align-self: center;
         margin-right: 1em;
@@ -37,7 +37,7 @@ footer {
                 height: 1.6em;
             }
             span {
-                @include typeface(--xsmall-normal-black);
+                @include typeface(--xsmall-left-normal-black);
                 vertical-align: middle;
                 display: inline-block;
             }

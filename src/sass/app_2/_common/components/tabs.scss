@@ -23,7 +23,7 @@
         justify-content: space-evenly;
 
         span {
-            @include typeface(--paragraph-light-black);
+            @include typeface(--paragraph-left-light-black);
             @include toEm(padding, 16px, 1.2em);
             cursor: pointer;
 
@@ -61,7 +61,7 @@
     }
     .tab-content {
         p {
-            @include typeface(--paragraph-normal-black);
+            @include typeface(--paragraph-left-normal-black);
         }
     }
 }

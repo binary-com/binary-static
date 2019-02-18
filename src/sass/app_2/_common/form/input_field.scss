@@ -21,7 +21,7 @@
         border-radius: $BORDER_RADIUS 0 0 $BORDER_RADIUS;
 
         &:before {
-            @include typeface(--paragraph-normal-black);
+            @include typeface(--paragraph-center-normal-black);
             color: inherit;
         }
     }
@@ -89,7 +89,7 @@
         }
     }
     input {
-        @include typeface(--paragraph-normal-black, capitalize, center);
+        @include typeface(--paragraph-center-normal-black, capitalize);
         list-style: none;
         position: relative;
         display: inline-block;
@@ -131,7 +131,7 @@
                 color: $COLOR_WHITE;
             }
             &:after {
-                @include typeface(--xsmall-normal-active);
+                @include typeface(--xsmall-left-normal-active);
                 content: 'L';
                 transform: scaleX(-1) rotate(-40deg);
                 position: absolute;
@@ -164,12 +164,12 @@
         }
     }
     label.input-label {
-        @include typeface(--paragraph-normal-black);
+        @include typeface(--paragraph-left-normal-black);
         margin-bottom: 0.2em;
         display: inline-block;
     }
     span.input-helper {
-        @include typeface(--small-light-grey);
+        @include typeface(--small-left-light-grey);
     }
 }
 

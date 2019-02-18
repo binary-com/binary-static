@@ -13,7 +13,7 @@
         margin-top: 0.8em;
 
         span {
-            @include typeface(--paragraph-normal-black, capitalize, center);
+            @include typeface(--paragraph-center-normal-black, capitalize);
             padding-left: 1.6em;
         }
         &:active, &:focus {
@@ -38,7 +38,7 @@
         transition: transform 0.2s ease;
         transform: rotate(0deg);
         transform-origin: 50% 45%;
-        @include typeface(--title-normal-black, none, center);
+        @include typeface(--title-center-normal-black, none);
 
         &:before {
             content: '\002303';
@@ -114,7 +114,7 @@
                 }
             }
             &__label span {
-                @include typeface(--paragraph-bold-black, capitalize, center);
+                @include typeface(--paragraph-center-bold-black, capitalize);
                 @include toEm(padding, 10px, 1.6em);
                 display: block;
             }
@@ -122,7 +122,7 @@
                 width: 100%;
 
                 span {
-                    @include typeface(--paragraph-normal-black);
+                    @include typeface(--paragraph-left-normal-black);
                     display: block;
                     pointer-events: none;
                     vertical-align: middle;
@@ -138,7 +138,7 @@
                     background-color: $COLOR_LIGHT_BLACK_4;
                 }
                 &--selected span {
-                    @include typeface(--paragraph-semibold-active);
+                    @include typeface(--paragraph-left-semibold-active);
                     background-color: $COLOR_LIGHT_GRAY_1;
                 }
             }

@@ -42,7 +42,7 @@ div.contracts-popup-container {
         flex-direction: column;
 
         span[name=contract_type] {
-            @include typeface(--small-light-black);
+            @include typeface(--small-left-light-black);
             vertical-align: middle;
         }
         &:hover, &:focus {
@@ -99,7 +99,7 @@ div.contracts-popup-container {
             padding-right: 0.8em;
         }
         .contract-title {
-            @include typeface(--paragraph-light-black);
+            @include typeface(--paragraph-left-light-black);
         }
         .trade-type-info-icon {
             display: none;
@@ -139,7 +139,7 @@ div.contracts-popup-container {
                 padding: 1.6em 1.6em 0em;
 
                 .list-label span {
-                    @include typeface(--paragraph-normal-black);
+                    @include typeface(--paragraph-left-normal-black);
                 }
                 &:last-child {
                     padding-bottom: 1.6em;
@@ -229,7 +229,7 @@ div.contracts-popup-container {
                 margin-bottom: 0.8em;
 
                 .title {
-                    @include typeface(--paragraph-normal-black);
+                    @include typeface(--paragraph-left-normal-black);
                     @include toEm(margin-left, 8px, 1.4em);
                 }
             }
@@ -245,7 +245,7 @@ div.contracts-popup-container {
                 overflow-y: auto;
 
                 p {
-                    @include typeface(--paragraph-normal-black, none);
+                    @include typeface(--paragraph-left-normal-black, none);
                     @include toEm(margin-bottom, 8px, 1.4em);
                 }
             }
@@ -256,7 +256,7 @@ div.contracts-popup-container {
                     width: 100%;
 
                     span {
-                        @include typeface(--paragraph-normal-active, uppercase, center);
+                        @include typeface(--paragraph-center-normal-active, uppercase);
                     }
                 }
             }

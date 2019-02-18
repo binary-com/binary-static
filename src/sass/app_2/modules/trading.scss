@@ -10,7 +10,7 @@
             position: relative;
         }
         &-info {
-            @include typeface(--paragraph-normal-black);
+            @include typeface(--paragraph-left-normal-black);
 
             &--left {
                 left: 5px;
@@ -30,7 +30,7 @@
         display: flex;
 
         &-info {
-            @include typeface(--small-light-black, none);
+            @include typeface(--small-left-light-black, none);
             @include toEm(padding, 5px 5px 5px 8px, 1.2em);
             @include toEm(margin-bottom, 10px, 1.2em);
             background-color: rgba($COLOR_ORANGE, 0.16);
@@ -321,10 +321,10 @@
     margin-top: 5px;
 
     span.btn-purchase__trade-type-text {
-        @include typeface(--paragraph-bold-active);
+        @include typeface(--paragraph-left-bold-active);
     }
     span.btn-purchase__currency {
-        @include typeface(--xsmall-bold-active);
+        @include typeface(--xsmall-left-bold-active);
     }
     &__info {
         width: 30%;
@@ -335,14 +335,14 @@
         flex-direction: column;
     }
     &__return {
-        @include typeface(--paragraph-bold-active);
+        @include typeface(--paragraph-left-bold-active);
         display: flex;
         justify-content: flex-end;
         flex-grow: 1;
         align-items: flex-end;
     }
     &__profit {
-        @include typeface(--xsmall-bold-active);
+        @include typeface(--xsmall-left-bold-active);
         display: flex;
         justify-content: flex-end;
         flex-grow: 1;

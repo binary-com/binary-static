@@ -18,7 +18,7 @@
         width: 50%;
 
         span {
-            @include typeface(--paragraph-normal-black);
+            @include typeface(--paragraph-left-normal-black);
         }
         &:hover:not(&--active) {
             background-color: $COLOR_LIGHT_BLACK_4;
@@ -27,7 +27,7 @@
             background-color: $COLOR_LIGHT_GRAY_1;
 
             span {
-                @include typeface(--paragraph-bold-active);
+                @include typeface(--paragraph-left-bold-active);
             }
         }
     }

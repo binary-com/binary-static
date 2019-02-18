@@ -58,7 +58,7 @@
             transform-origin: top;
         }
         &:before {
-            @include typeface(--small-normal-active, none);
+            @include typeface(--small-left-normal-active, none);
             text-decoration: none;
             letter-spacing: normal;
             background: $COLOR_LIGHT_BLACK_1;

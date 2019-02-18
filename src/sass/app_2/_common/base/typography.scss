@@ -42,6 +42,12 @@ $FONT_WEIGHTS: (
     'light'    300,
 );
 
+$TEXT_ALIGN: (
+    'center' center,
+    'left'   left,
+    'right'  right,
+);
+
 $LINEHEIGHTS: (
     'large' : 1.75,
     'medium': 1.5,
@@ -49,9 +55,9 @@ $LINEHEIGHTS: (
 );
 
 /*
-    List of all typefaces variables in the format --$FONT_SIZES-$FONT_WEIGHTS-COLORS.
-    See $FONT_SIZES, $FONT_WEIGHTS, $COLORS maps above for references.
-    Usage example: --title-semibold-red
+    List of all typefaces variables in the format: --$FONT_SIZES-$TEXT_ALIGN-$FONT_WEIGHTS-COLORS.
+    See $FONT_SIZES, $TEXT_ALIGN, $FONT_WEIGHTS, $COLORS maps above for references.
+    Variables name example: --title-center-semibold-red
  */
 $TYPEFACES_LIST: generate-typefaces();
 

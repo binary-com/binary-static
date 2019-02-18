@@ -24,7 +24,7 @@
             cursor: pointer;
 
             p.acc-balance-id {
-                @include typeface(--title-bold-black, default, center);
+                @include typeface(--title-center-bold-black, default);
                 pointer-events: none;
 
                 &:after {
@@ -37,7 +37,7 @@
                 }
             }
             p.acc-balance-amount {
-                @include typeface(--title-bold-green, default, center);
+                @include typeface(--title-center-bold-green, default);
                 @include toEm(padding, 8px, 1.6em);
                 pointer-events: none;
             }
@@ -55,7 +55,7 @@
                     color: $COLOR_ORANGE;
                 }
                 &:before {
-                    @include typeface(--small-normal-orange, uppercase);
+                    @include typeface(--small-left-normal-orange, uppercase);
                     @include toEm(padding, 2px 8px, 1.2em);
                     @include toEm(margin-right, 8px, 1.2em);
                     content: 'demo';
@@ -102,7 +102,7 @@
         margin: 0.8em 0 1.6em;
 
         span {
-            @include typeface(--small-normal-grey, default, center);
+            @include typeface(--small-center-normal-grey, none);
             @include toEm(padding, 8px 16px, 1.2em);
             @include toEm(margin, 0 16px, 1.2em);
             border: 1px dashed $COLOR_LIGHT_BLACK_2;
@@ -134,7 +134,7 @@
             padding-bottom: 1.6em;
         }
         &__title {
-            @include typeface(--paragraph-bold-black);
+            @include typeface(--paragraph-left-bold-black);
             @include toEm(padding, 8px 16px, 1.6em);
             display: block;
         }
@@ -147,12 +147,12 @@
             justify-content: space-between;
 
             .acc-switcher__id {
-                @include typeface(--paragraph-light-black);
+                @include typeface(--paragraph-left-light-black);
                 display: flex;
                 align-items: center;
 
                 &.virtual:before {
-                    @include typeface(--xxxsmall-normal-orange, uppercase);
+                    @include typeface(--xxxsmall-left-normal-orange, uppercase);
                     @include toEm(padding, 2px 4px, 0.6em);
                     @include toEm(margin-right, 8px, 0.6em);
                     content: 'demo';
@@ -216,7 +216,7 @@
             border-bottom: 1px solid $COLOR_LIGHT_BLACK_4;
 
             button.btn {
-                @include typeface(--small-normal-black);
+                @include typeface(--small-left-normal-black);
                 margin: 0;
                 width: 100%;
             }
@@ -230,7 +230,7 @@
             background-color: $COLOR_WHITE;
 
             &__text {
-                @include typeface(--paragraph-normal-black, initial);
+                @include typeface(--paragraph-left-normal-black, none);
             }
             .inline-icon {
                 width: 1.6em;

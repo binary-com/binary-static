@@ -53,7 +53,7 @@
             background: $COLOR_LIGHT_BLACK_4_SOLID;
         }
         .settings-header {
-            @include typeface(--small-normal-black);
+            @include typeface(--small-left-normal-black);
             @include toEm(padding, 8px 16px, 1.2em);
             display: block;
         }
@@ -73,7 +73,7 @@
                 align-items: center;
 
                 span {
-                    @include typeface(--small-normal-black);
+                    @include typeface(--small-left-normal-black);
                 }
                 &:hover {
                     background-color: $COLOR_LIGHT_BLACK_4_SOLID;
@@ -102,7 +102,7 @@
             height: 280px;
         }
         .language-header {
-            @include typeface(--small-normal-black);
+            @include typeface(--small-left-normal-black);
             @include toEm(padding, 8px 16px, 1.2em);
             display: flex;
             background: $COLOR_WHITE;
