@@ -179,6 +179,9 @@
         .symbols {
             color: $COLOR_DARK_BLUE_7;
         }
+        label.input-label {
+            color: $COLOR_DARK_BLUE_7;
+        }
         &:has(input[type=checkbox]) {
             display: inline-block;
         }

@@ -56,10 +56,10 @@
                 }
                 &:before {
                     @include typeface(--small-normal-orange, uppercase);
+                    @include toEm(padding, 2px 8px, 1.2em);
+                    @include toEm(margin-right, 8px, 1.2em);
                     content: 'demo';
                     border: 1px solid $COLOR_ORANGE;
-                    padding: 0.2em 0.8em;
-                    margin-right: 0.8em;
                     border-radius: 16px;
                     pointer-events: none;
                 }
@@ -83,7 +83,7 @@
         transition: transform 0.25s ease, opacity 0.25s linear;
         box-shadow: 0 2px 8px 0 $COLOR_LIGHT_BLACK_3;
         right: 0;
-        top: calc(100% + 0.4em);
+        top: calc(100% + 4px);
         width: 240px;
         border-radius: $BORDER_RADIUS;
 
@@ -93,7 +93,7 @@
         }
         &--enter, &--exit {
             opacity: 0;
-            transform: translateY(-2em);
+            transform: translateY(-2px);
         }
     }
     &__new-account {
@@ -104,9 +104,9 @@
         span {
             @include typeface(--small-normal-grey, default, center);
             @include toEm(padding, 8px 16px, 1.2em);
+            @include toEm(margin, 0 16px, 1.2em);
             border: 1px dashed $COLOR_LIGHT_BLACK_2;
             width: 100%;
-            margin: 0 1.6em;
             border-radius: 4px;
             cursor: pointer;
 

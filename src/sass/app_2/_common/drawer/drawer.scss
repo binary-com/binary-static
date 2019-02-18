@@ -1,6 +1,6 @@
 hr {
     display: block;
-    height: 0.1em;
+    height: 1px;
     border: 0;
     border-top: 1px solid $COLOR_LIGHT_BLACK_4;
     margin: 0.5em 0;
@@ -77,9 +77,9 @@ hr {
                                 display: block;
                                 content: ' ';
                                 background-image: url('../images/header/binary_logo_light.svg');
-                                background-size: 138px 3.2em;
+                                background-size: 138px 32px;
                                 height: 3.2em;
-                                width: 138px;
+                                width: 13.8em;
                             }
                         }
                     }
@@ -129,9 +129,8 @@ hr {
                         }
                     }
                     .notifications-header {
-                        padding: 0 1.6em;
-                        text-transform: capitalize;
-                        font-size: 1.6em;
+                        @include typeface(--title-normal-black, capitalize);
+                        @include toEm(padding, 0 16px, 1.6em);
 
                         h4 {
                             margin: 0.5em;
@@ -162,11 +161,9 @@ hr {
                             }
                         }
                         h4 {
+                            @include typeface(--paragraph-normal-black, capitalize, center);
+                            @include toEm(padding, 0 16px, 1.6em);
                             margin: 0;
-                            text-align: center;
-                            font-weight: 400;
-                            font-size: 1.4em;
-                            line-height: 100%;
                         }
                         span {
                             display: block;

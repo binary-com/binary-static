@@ -23,11 +23,9 @@
         justify-content: space-evenly;
 
         span {
-            padding: 1.6em;
-            color: $COLOR_LIGHT_BLACK_1;
+            @include typeface(--paragraph-light-black);
+            @include toEm(padding, 16px, 1.2em);
             cursor: pointer;
-            font-weight: 300;
-            font-size: 1.6em;
 
             &.icon {
                 padding: 1.6em 1.8em 1.6em 3.4em;
@@ -63,9 +61,7 @@
     }
     .tab-content {
         p {
-            font-size: 1.8em;
-            line-height: 1.4em;
-            text-align: left;
+            @include typeface(--paragraph-normal-black);
         }
     }
 }

@@ -53,8 +53,9 @@
             background: $COLOR_LIGHT_BLACK_4_SOLID;
         }
         .settings-header {
-            padding: 0.8em 1.6em;
             @include typeface(--small-normal-black);
+            @include toEm(padding, 8px 16px, 1.2em);
+            display: block;
         }
         .general-setting-container, .chart-setting-container {
             flex-direction: column;
@@ -102,7 +103,7 @@
         }
         .language-header {
             @include typeface(--small-normal-black);
-            padding: 0.8em 1.6em;
+            @include toEm(padding, 8px 16px, 1.2em);
             display: flex;
             background: $COLOR_WHITE;
             cursor: pointer;

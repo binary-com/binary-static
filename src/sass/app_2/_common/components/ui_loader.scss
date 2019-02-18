@@ -7,13 +7,13 @@
     left: 0.2em;
     right: 0;
     bottom: 0;
-    width: calc(100% - 0.4em);
+    width: calc(100% - 4px);
     height: 100%;
 
     .loading {
         position: absolute;
-        top: calc(50% - 2.2em);
-        left: calc(50% - 1.6em);
+        top: calc(50% - 22px);
+        left: calc(50% - 16px);
         z-index: 11;
 
         .spinner {
@@ -63,7 +63,7 @@
     }
     50% {
         stroke-dasharray: 89, 200;
-        stroke-dashoffset: -3.5em;
+        stroke-dashoffset: -35px;
     }
     100% {
         stroke-dasharray: 89, 200;
