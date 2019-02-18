@@ -605,7 +605,7 @@ const MetaTraderUI = (() => {
             const balance     = accounts_info[acc_type].info.balance;
             const min_balance = 1000;
 
-            if (balance <= min_balance) {
+            if (balance < min_balance) {
                 enableDemoTopup();
             } else {
                 disableDemoTopup();
