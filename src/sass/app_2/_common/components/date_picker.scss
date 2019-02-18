@@ -20,6 +20,9 @@
                 outline: none;
                 border-color: $COLOR_DARK_BLUE_5;
             }
+            &::-ms-clear { // Edge: hide clear icon for increment input
+                display: none;
+            }
         }
     }
     &__icon {
