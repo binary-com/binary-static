@@ -86,7 +86,7 @@ p {
 
 ### Typography
 The `@typeface($var, $text-transform, $text-align)` mixin can be used to style any text element. Simply pass in a typeface `$var` name to the mixin.
-The `$var` name is in the format `--$FONT_SIZE_-$FONT_WEIGHT-$COLOR`.
+The `$var` name is in the format `--$FONT_SIZE-$FONT_WEIGHT-$COLOR`.
 
 Refer to `typography.scss` for a list of valid font-sizes, font-weights & colors.
 
