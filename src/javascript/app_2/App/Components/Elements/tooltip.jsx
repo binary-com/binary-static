@@ -1,27 +1,59 @@
 import classNames from 'classnames';
 import PropTypes  from 'prop-types';
 import React      from 'react';
+import {
+    IconInfoBlue,
+    IconInfoLight,
+    IconQuestion,
+    IconRedDot }  from 'Assets/Common/Tooltip';
 
-const Tooltip = ({
-    alignment,
-    children,
-    className,
-    classNameIcon,
-    icon, // only question or info accepted
-    message,
-}) => {
-    const icon_name = (icon === 'question' || icon === 'info' || icon === 'dot') ? icon : 'question';
-    const icon_class = classNames(icon_name);
-    return (
-        <span className={classNames(className, 'tooltip')} data-tooltip={message} data-tooltip-pos={alignment}>
-            {icon ?
-                <i className={classNames(classNameIcon, icon_class)} />
-                :
-                children
-            }
-        </span>
-    );
-};
+class Tooltip extends React.Component {
+    state = {
+        show_tooltip_balloon_icon: false,
+    }
+
+    onMouseEnter = () => {
+        this.setState({ show_tooltip_balloon_icon: true });
+    }
+
+    onMouseLeave = () => {
+        this.setState({ show_tooltip_balloon_icon: false });
+    }
+
+    render() {
+        const {
+            alignment,
+            children,
+            className,
+            icon, // only question or info accepted
+            message,
+        } = this.props;
+
+        return (
+            <span
+                className={classNames(className, icon, 'tooltip')} data-tooltip={message} data-tooltip-pos={alignment}>
+                {icon === 'info' &&
+                    <React.Fragment>
+                        <span
+                            onMouseEnter={this.onMouseEnter}
+                            onMouseLeave={this.onMouseLeave}
+                        >
+                            <IconInfoLight />
+                        </span>
+                        <IconInfoBlue
+                            className={classNames('tooltip__balloon__icon', {
+                                'tooltip__balloon__icon--show': this.state.show_tooltip_balloon_icon,
+                            })}
+                        />
+                    </React.Fragment>
+                }
+                {icon === 'question' && <IconQuestion />}
+                {icon === 'dot'      && <IconRedDot />}
+                {children}
+            </span>
+        );
+    }
+}
 
 Tooltip.propTypes = {
     alignment    : PropTypes.string,

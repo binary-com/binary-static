@@ -91,10 +91,6 @@
                 position: unset;
 
                 &:before {
-                    background: $COLOR_WHITE;
-                    color: $COLOR_DARK_BLUE_5;
-                    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
-                    max-width: unset;
                     width: 290px;
                     white-space: normal;
                     font-size: 12px;
@@ -105,30 +101,31 @@
                         margin-right: 20px;
                     }
                     &:after {
-                        border-left-color: $COLOR_WHITE;
                         margin-right: 8px;
                     }
                 }
             }
-            &-i {
+        }
+    }
+    &__allow-equals {
+        &-tooltip {
+            &[data-tooltip] {
+                margin-top: 8px;
+
                 &:before {
-                    content: url('../images/common/tooltip/ic_tooltip_info_light.svg ');
-                    right: 100%;
-                    position: absolute;
-                    margin-right: 328px;
-                    z-index: 10;
-                    opacity: 0;
-                    transition: all 0.18s ease-out 0.17s;
-                    transform: translateX(20%);
-                    top: 0;
+                    width: 290px;
+                    white-space: normal;
+                    font-size: 12px;
+                    padding-left: 40px;
                 }
-                &:hover:before {
-                    opacity: 1;
-                    transform: translateX(0);
+                &[data-tooltip-pos=left] {
+                    &:before {
+                        margin-right: 20px;
+                    }
+                    &:after {
+                        margin-right: 8px;
+                    }
                 }
-            }
-            &:hover:after, &:hover:before {
-                opacity: 1;
             }
         }
     }
