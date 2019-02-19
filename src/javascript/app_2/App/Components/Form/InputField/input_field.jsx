@@ -108,16 +108,22 @@ const InputField = ({
         onChange({ target: { value: increment_value, name } });
     };
 
-    const decrementValue = () => {
-        if (!value || min_is_disabled) return;
-        let decrement_value;
+    const calculateDecrementedValue = () => {
         const is_crypto = isCryptocurrency(currency);
+        let decrement_value;
+
         if (is_crypto) {
             const new_value = parseFloat(+value) - parseFloat(1 * 10 ** (0 - fractional_digits));
             decrement_value = parseFloat(new_value).toFixed(fractional_digits);
         } else {
             decrement_value = parseFloat((+value) - 1).toFixed(fractional_digits);
         }
+        return decrement_value;
+    };
+
+    const decrementValue = () => {
+        if (!value || min_is_disabled) return;
+        const decrement_value = calculateDecrementedValue();
         if (is_negative_disabled && decrement_value < 0) return;
         onChange({ target: { value: decrement_value, name } });
     };
@@ -162,7 +168,7 @@ const InputField = ({
             <IncrementButtons
                 max_is_disabled={max_is_disabled}
                 incrementValue={incrementValue}
-                min_is_disabled={min_is_disabled}
+                min_is_disabled={min_is_disabled || (is_negative_disabled && calculateDecrementedValue() < 0)}
                 decrementValue={decrementValue}
             />
             {!is_expandable && input }
