@@ -2,7 +2,6 @@ import PropTypes                      from 'prop-types';
 import { PropTypes as MobxPropTypes } from 'mobx-react';
 import React                          from 'react';
 import { connect }                    from 'Stores/connect';
-import { hasIntradayDurationUnit }    from 'Stores/Modules/Trading/Helpers/duration';
 import {
     isTimeValid,
     setTime,
@@ -31,7 +30,6 @@ const TradingDatePicker = ({
         setTime(toMoment(start_date || server_time), (isTimeValid(start_time) ? start_time : server_time.format('HH:mm')));
 
     const max_daily_duration = duration_min_max.daily ? duration_min_max.daily.max : 365 * 24 * 3600;
-    const has_intraday_duration_unit = hasIntradayDurationUnit(duration_units_list);
 
     if (is_24_hours_contract) {
         min_date_expiry = moment_contract_start_date_time.clone().startOf('day');
@@ -41,10 +39,8 @@ const TradingDatePicker = ({
         min_date_expiry = moment_contract_start_date_time.clone().startOf('day');
         max_date_duration = moment_contract_start_date_time.clone().add(max_daily_duration, 'second');
 
-        if (!has_intraday_duration_unit) {
-            min_date_expiry.add(1, 'day');
-        }
     }
+    if (expiry_type === 'duration') min_date_expiry.add(1, 'day');
 
     return (
         <DatePicker
