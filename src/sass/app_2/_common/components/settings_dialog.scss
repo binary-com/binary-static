@@ -1,8 +1,8 @@
 .settings-dialog {
     position: absolute;
     width: 320px;
-    right: 12px;
-    top: -245px;
+    right: 1.2em;
+    top: -250px;
     background: $COLOR_WHITE;
     height: auto;
     border-radius: $BORDER_RADIUS;
@@ -36,8 +36,8 @@
                 width: 50%;
 
                 span {
-                    padding: 16px 16px 8px;
-                    font-size: 12px;
+                    padding: 1.6em 1.6em 0.8em;
+                    font-size: 1.2em;
                     margin: 0 auto;
                 }
             }
@@ -53,28 +53,27 @@
             background: $COLOR_LIGHT_BLACK_4_SOLID;
         }
         .settings-header {
-            padding: 16px;
-            font-size: 12px;
-            font-weight: 400;
+            @include typeface(--small-left-normal-black);
+            @include toEm(padding, 8px 16px, 1.2em);
+            display: block;
         }
         .general-setting-container, .chart-setting-container {
             flex-direction: column;
             align-items: flex-start;
-            margin-top: 16px;
+            margin-top: 1.6em;
             background: $COLOR_WHITE;
 
             .settings-row {
                 width: 260px;
-                padding: 8px 16px;
-                height: 23px;
+                padding: 0.8em 1.6em;
+                height: 3.2em;
                 display: flex;
                 cursor: pointer;
                 justify-content: space-between;
                 align-items: center;
 
                 span {
-                    font-size: 12px;
-                    color: $COLOR_LIGHT_BLACK_1;
+                    @include typeface(--small-left-normal-black);
                 }
                 &:hover {
                     background-color: $COLOR_LIGHT_BLACK_4_SOLID;
@@ -103,28 +102,27 @@
             height: 280px;
         }
         .language-header {
-            font-size: 12px;
-            padding: 8px 16px;
+            @include typeface(--small-left-normal-black);
+            @include toEm(padding, 8px 16px, 1.2em);
             display: flex;
             background: $COLOR_WHITE;
             cursor: pointer;
             text-decoration: none;
-            text-transform: capitalize;
 
             svg.arrow-back {
-                padding-right: 4px;
+                padding-right: 0.4em;
             }
         }
         .language-container {
             display: grid;
-            padding: 8px 16px 0px;
+            padding: 0.8em 1.6em 0;
 
             .language-row {
                 display: flex;
                 justify-content: flex-start;
                 align-items: center;
                 background: $COLOR_WHITE;
-                height: 32px;
+                height: 3.2em;
                 cursor: pointer;
 
                 &:hover {
@@ -137,15 +135,15 @@
                     grid-column: 2;
                 }
                 &:last-child:not(:nth-child(even)) {
-                    margin-top: -1px;
+                    margin-top: -0.1em;
                 }
                 i.flag {
-                    padding-left: 8px;
+                    padding-left: 0.8em;
                     padding-right: unset;
                 }
                 span {
-                    padding-left: 8px;
-                    font-size: 12px;
+                    padding-left: 0.8em;
+                    font-size: 1.2em;
                 }
                 a {
                     width: 100%;
@@ -163,7 +161,7 @@
         pointer-events: auto;
     }
     i.flag {
-        padding-right: 6px;
+        padding-right: 0.6em;
 
         &.ic-flag-en:before {
             content: url('../images/common/language/ic_flag_en.svg');

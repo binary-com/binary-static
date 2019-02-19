@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-02-13 06:59\n"
+"PO-Revision-Date: 2019-02-19 10:23\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: German\n"
 "MIME-Version: 1.0\n"
@@ -1857,6 +1857,9 @@ msgstr "Binärer Bot"
 msgid "Binary Bot released"
 msgstr "Binärer Bot freigegeben"
 
+msgid "Binary Coin"
+msgstr ""
+
 msgid "Binary Group (hereinafter referred to as 'Binary Group of companies', 'the Company') is commited to protecting the privacy and security of the applicant's personal information. This privacy notice sets out the types of data that the Company collects on the applicant. It also sets out how the Company collect and use the applicant' personal data, and how long it keeps them and other relevant information about the applicant's data in accordance with the General Data Protection Regulation (EU) 2016/679 (hereafter referred to as 'GDPR') and Data Protection Act 2018."
 msgstr "Die Binary Gruppe (nachstehend als \"Binary Gruppe von Unternehmen\", \"das Unternehmen\" bezeichnet) verpflichtet sich zum Schutz der Privatsphäre und Sicherheit der persönlichen Daten des Bewerbers. Diese Datenschutzerklärung legt die Datentypen fest, die das Unternehmen über den Bewerber sammelt. Sie legt auch fest, wie das Unternehmen personenbezogene Daten des Bewerbers erfasst und nutzt und wie lange es diese und andere relevante Informationen über die Daten des Bewerbers, gemäß der allgemeinen Datenschutzverordnung (EU) 2016/679 (nachstehend als \"DSGVO\" bezeichnet) und des Datenschutzgesetzes 2018, hält."
 
@@ -2058,8 +2061,8 @@ msgstr "Wenn Sie auf OK klicken, bestätigen Sie, dass Sie die aktualisierten al
 msgid "By clicking buy or sell, your order will be filled at the best possible price with either one of our liquidity providers or on our own books (according to the best streaming price at the time of your order placement);"
 msgstr "Indem Sie auf kaufen oder verkaufen klicken, wird Ihre Order zum bestmöglichen Kurs, mit entweder einem unserer Liquiditätsanbieter oder auf unseren eigenen Büchern (nach dem besten Kurs zum Zeitpunkt Ihrer Ordererteilung) ausgefüllt werden;"
 
-msgid "By default, all clients are treated as retail but anyone can request to be treated as professional."
-msgstr "Standardmäßig werden alle Kunden als Einzelhandelskunden behandelt, aber jeder kann die Anforderung stellen, als Profi behandelt zu werden."
+msgid "By default, all %1 clients are retail clients but anyone can request to be treated as a professional client."
+msgstr ""
 
 msgid "By default, the intelligent order routing system ensures that the top of the book is always comprised of the best bid and offer rates quoted by the competing liquidity providers. However, during times of market illiquidity, this may change with likelihood of execution being the primary execution factor."
 msgstr "Das intelligente Orderführungssystem sorgt standardmäßig dafür, dass der Oberteil des Buches immer die besten Angebots- und Briefkurse umfasst, die von den konkurrierenden Liquiditätsgebern angegeben sind. Dies kann sich jedoch mit Wahrscheinlichkeit auf Ausführung als primärer Ausführungsfaktor, in Zeiten einer Marktliquidität, ändern."
@@ -5874,6 +5877,9 @@ msgstr "Erfahren Sie mehr über unsere Unternehmenskultur"
 msgid "Learn more about submitting essential documents with our handy infographic:"
 msgstr "Hier finden Sie weitere Informationen zum Einreichen von essentiellen Dokumenten mit unserer handlichen Infografik:"
 
+msgid "Learn more."
+msgstr ""
+
 msgid "Learn the basic concepts of trading Meta assets on MetaTrader 5."
 msgstr "Lernen Sie die grundlegenden Konzepte des Handels mit Meta-Anlagen auf MetaTrader 5."
 
@@ -7595,6 +7601,9 @@ msgstr "Bitte überprüfen Sie Ihre E-Mail für den Bestätigungs-Code, um den V
 
 msgid "Please check your email for the verification link to complete the process."
 msgstr "Bitte überprüfen Sie Ihre E-Mail für den Bestätigungs-Link, um den Vorgang abzuschließen."
+
+msgid "Please check your inbox for details."
+msgstr ""
 
 msgid "Please choose a currency"
 msgstr "Bitte wählen Sie eine Währung"
@@ -11730,9 +11739,6 @@ msgstr "Worum handelt sich das %1 IB Programm?"
 msgid "What is the definition of a referred client?"
 msgstr "Was ist die Definition eines angeworbenen Kunden?"
 
-msgid "What is this?"
-msgstr "Was ist das?"
-
 msgid "What kind of reports can I generate?"
 msgstr "Welche Berichte kann ich erstellen?"
 
@@ -12717,6 +12723,9 @@ msgstr "Ihr Konto ist vollständig authentifiziert. Ihre <a href=\"%1\">Abschlus
 msgid "Your account is restricted. Kindly %1contact customer support%2 for assistance."
 msgstr "Ihr Konto ist eingeschränkt. Bitte %1kontaktieren Sie die Kundenbetreuung%2 für Hilfe."
 
+msgid "Your account remains under the retail client category. You are welcome to reapply as a professional client at any time."
+msgstr ""
+
 msgid "Your account security is of paramount importance to us. Please consider the following initiatives and tools to enhance your account security:"
 msgstr "Ihre Kontosicherheit ist für uns von höchster Bedeutung. Bitte beachten Sie die folgenden Initiativen und Instrumente zur Verbesserung der Sicherheit Ihres Kontos:"
 
@@ -12798,7 +12807,7 @@ msgstr "Ihre persönlichen Daten dienen in erster Linie dazu, Sie als den rechtm
 msgid "Your profit or loss is calculated as follows:"
 msgstr "Ihr Gewinn oder Verlust errechnet sich wie folgt:"
 
-msgid "Your request to be treated as a professional client has been rejected. Please check your inbox for more details. Your account remains categorised as a retail client account."
+msgid "Your request to be treated as a professional client is %1not approved%2."
 msgstr ""
 
 msgid "Your request to transfer %1 %2 from %3 to %4 has been successfully processed."
