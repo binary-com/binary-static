@@ -15,6 +15,9 @@
         @include colorIcon($COLOR_WHITE, $COLOR_LIGHT_BLACK_1, $COLOR_LIGHT_BLACK_1, none);
     }
     &.disabled {
-        @include colorIcon($COLOR_LIGHT_BLACK_4, none);
+        @include colorIcon($COLOR_LIGHT_BLACK_3, none);
+    }
+    &.white {
+        @include colorIcon($COLOR_WHITE);
     }
 }

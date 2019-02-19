@@ -31,21 +31,20 @@ class Tooltip extends React.Component {
 
         return (
             <span
-                className={classNames(className, icon, 'tooltip')}
+                className={classNames(className, 'tooltip')}
                 data-tooltip={message}
                 data-tooltip-pos={alignment}
             >
                 {icon === 'info' &&
                     <React.Fragment>
-                        <span
+                        <IconInfoOutline
+                            className='tooltip__icon'
                             onMouseEnter={this.onMouseEnter}
                             onMouseLeave={this.onMouseLeave}
-                        >
-                            <IconInfoOutline className='tooltip__icon' />
-                        </span>
+                        />
                         <IconInfoBlue
-                            className={classNames('tooltip__balloon__icon', {
-                                'tooltip__balloon__icon--show': this.state.show_tooltip_balloon_icon,
+                            className={classNames(`${className}-balloon-icon`, 'tooltip-balloon-icon', {
+                                'tooltip-balloon-icon--show': this.state.show_tooltip_balloon_icon,
                             })}
                         />
                     </React.Fragment>

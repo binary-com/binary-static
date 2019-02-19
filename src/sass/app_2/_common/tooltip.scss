@@ -4,10 +4,10 @@
     color: $COLOR_DARK_BLUE_5;
     font-size: inherit;
 
-    .tooltip__balloon__icon {
+    &-balloon-icon {
         position: absolute;
         top: 0;
-        left: -345px;
+        left: -525px;
         z-index: 999;
         opacity: 0;
         transition: opacity 0.3s;

@@ -77,16 +77,6 @@
                 background: transparent;
             }
         }
-        &__icon {
-            path {
-                fill: $COLOR_LIGHT_BLACK_1;
-            }
-            &--plus, &--minus {
-                &.disabled path {
-                    fill: $COLOR_LIGHT_BLACK_3;
-                }
-            }
-        }
     }
     input {
         @include typeface(--paragraph-center-normal-black, capitalize);
@@ -227,16 +217,6 @@
         input {
             &:active, &:focus {
                 box-shadow: 0 0 0 2px rgba(127, 131, 151, 0.3);
-            }
-        }
-        &__icon {
-            path {
-                fill: $COLOR_DARK_BLUE_7;
-            }
-            &--plus, &--minus {
-                &.disabled path {
-                    fill: rgba(116, 120, 142, 0.25);
-                }
             }
         }
         &__button:not(:disabled) {

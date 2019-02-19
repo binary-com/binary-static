@@ -38,7 +38,7 @@
             }
             p.acc-balance-amount {
                 @include typeface(--title-center-bold-green, default);
-                @include toEm(padding, 8px, 1.6em);
+                @include toEm(padding, 0 8px, 1.6em);
                 pointer-events: none;
             }
             .select-arrow {
@@ -135,7 +135,7 @@
         }
         &__title {
             @include typeface(--paragraph-left-bold-black);
-            @include toEm(padding, 8px 16px, 1.6em);
+            @include toEm(padding, 8px 16px, 1.4em);
             display: block;
         }
         .acc-switcher-account {
@@ -295,9 +295,6 @@
                     .symbols {
                         background: $COLOR_DARK_BLUE_2;
                     }
-                }
-                .select-arrow .arrow-path {
-                    fill: $COLOR_DARK_BLUE_7;
                 }
                 &--show {
                     &:after {

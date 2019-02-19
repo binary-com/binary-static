@@ -20,7 +20,7 @@ const AllowEquals = ({
                 type='checkbox'
                 checked={checked}
             />
-            <label htmlFor='allow_equals'>{localize('Allow equals')}</label>
+            <label className='trade-container__allow-equals-label' htmlFor='allow_equals'>{localize('Allow equals')}</label>
             <Tooltip icon='info' className='trade-container__allow-equals-tooltip' message={localize('Win payout if exit spot is also equal to entry spot.')} alignment='left' />
         </div>
 );

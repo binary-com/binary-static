@@ -92,8 +92,8 @@
         &--next-month {
             right: 14%;
         }
-        &--disabled path {
-            fill: $COLOR_LIGHT_BLACK_3;
+        &--disabled {
+            @extend .inline-icon.disabled;
         }
     }
     &__btn {
@@ -187,14 +187,6 @@
         &__body {
             border-color: $COLOR_DARK_BLUE_2;
         }
-        &__nav {
-            path {
-                fill: $COLOR_DARK_BLUE_7;
-            }
-            &--disabled path {
-                fill: $COLOR_DARK_BLUE_6;
-            }
-        }
         &__text {
             color: $COLOR_WHITE;
         }
@@ -204,9 +196,6 @@
             &--select {
                 color: $COLOR_WHITE;
             }
-        }
-        &__icon path {
-            fill: $COLOR_DARK_BLUE_7;
         }
         &__cell {
             color: $COLOR_DARK_BLUE_7;
