@@ -134,14 +134,20 @@
     }
     &__currency-options {
         &--show {
-            width: 50%;
+            margin-right: 5px;
+            width: calc(40% - 7.5px);
             display: inline-block;
         }
     }
     &__amount {
         &--has-currency-options {
-            width: 50%;
+            margin-left: 5px;
+            width: calc(60% - 7.5px);
             display: inline-block;
+
+            .trade-container__input {
+                padding: 0 30px;
+            }
         }
     }
 }
