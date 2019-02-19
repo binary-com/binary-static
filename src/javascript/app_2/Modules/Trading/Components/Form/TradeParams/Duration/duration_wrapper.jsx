@@ -48,7 +48,7 @@ class DurationWrapper extends React.Component {
         const has_missing_duration_unit       = !this.hasDurationUnit(current_duration_unit);
         const simple_is_not_type_duration     = !this.props.is_advanced_duration && this.props.expiry_type !== 'duration';
         const advanced_has_wrong_expiry       = this.props.is_advanced_duration
-            && this.props.expiry_type !== this.props.advanced_expiry_type;
+            && this.props.expiry_type !== this.props.advanced_expiry_type && this.props.duration_units_list.length > 1;
 
         // intercept changes to current contracts duration_units_list - if they are missing change duration_unit and value in trade_store and ui_store
         if (has_missing_duration_unit || simple_is_missing_duration_unit) {
@@ -120,7 +120,6 @@ DurationWrapper.propTypes = {
     getDurationFromUnit : PropTypes.func,
     is_advanced_duration: PropTypes.bool,
     is_minimized        : PropTypes.bool,
-    is_nativepicker     : PropTypes.bool,
     market_close_times  : PropTypes.array,
     onChange            : PropTypes.func,
     onChangeMultiple    : PropTypes.func,

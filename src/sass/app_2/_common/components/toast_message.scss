@@ -40,18 +40,18 @@ $IC_WARNING     : url('../images/common/toast/ic_warning.svg');
         border-radius: 4px;
         cursor: pointer;
         display: grid;
-        grid-template-columns: 16px auto 16px;
-        padding: 11px 16px;
+        grid-template-columns: 1.6em auto 1.6em;
+        padding: 1.1em 1.6em;
         min-height: 2vh;
         min-width: 20vw;
         max-width: 30vw;
         margin-top: 1em;
-        font-size: 12px;
+        font-size: 1.2em;
         color: $TOAST_TEXT_COLOR;
 
         &__message {
             align-self: center;
-            padding: 1px 8px;
+            padding: 0.1em 0.8em;
         }
         &__close-button {
             align-self: center;
@@ -73,8 +73,8 @@ $IC_WARNING     : url('../images/common/toast/ic_warning.svg');
             align-self: center;
 
             span {
-                margin-right: 8px;
-                padding-top: 5px;
+                margin-right: 0.8em;
+                padding-top: 0.5em;
             }
             &--error:before {
                 content: $IC_ERROR;
@@ -136,7 +136,7 @@ $IC_WARNING     : url('../images/common/toast/ic_warning.svg');
 }
 
 // Dark Theme
-.theme-wrapper.dark {
+.theme--dark {
     .toast {
         &__body {
             background-color: $TOAST_BACKGROUND_COLOR_INFO;

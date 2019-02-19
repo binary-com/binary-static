@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-02-11 08:05\n"
+"PO-Revision-Date: 2019-02-19 10:25\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Indonesian\n"
 "MIME-Version: 1.0\n"
@@ -1027,7 +1027,7 @@ msgid "All barriers in this trading window are expired"
 msgstr "Semua batasan pada tampilan trading ini telah berakhir"
 
 msgid "All calls are recorded for training and monitoring purposes"
-msgstr "Semua percakapan direkam untuk pelatihan dan pemantauan"
+msgstr "Semua percakapan direkam untuk keperluan pelatihan dan pemantauan"
 
 msgid "All client orders are processed on a first in, first out basis without any manual intervention. When executing client order, %1 will seek to fill client order transaction as promptly as possible at the instructed price (or at a better price, if available). Exposure limits are established based on internal governance arrangements and risk management framework, which both commensurate with the size, nature, complexity, and risk profile of the Company's activities. These exposure limits are used as benchmarks to distinguish orders that are auto-accepted from orders that will be worked in the market with fill level passed on to the client."
 msgstr "Semua order klien akan di proses satu per satu terlebihdahulu, tanpa intervensi manual. Saat memproses order klien, %1 akan memproses order klien secepatnya berdasarkan harga yang telah di instruksikan (atau pada harga yang lebih baik jika tersedia). Exposure limit dihitung berdasarkan pengaturan tata kelola internal dan kerangka kerja manajemen risiko, yang keduanya sepadan dengan ukuran, sifat, kompleksitas dan profil risiko kegiatan Perusahaan. Exposure limit ini juga digunakan sebagai tolok ukur untuk membedakan order yang diterima langsung dari order yang akan diproses pada pasar berdasarkan level yang dilanjutkan kepada klien."
@@ -1857,6 +1857,9 @@ msgstr "Bot Binary"
 msgid "Binary Bot released"
 msgstr "Binary bot dirilis"
 
+msgid "Binary Coin"
+msgstr "Koin Binary"
+
 msgid "Binary Group (hereinafter referred to as 'Binary Group of companies', 'the Company') is commited to protecting the privacy and security of the applicant's personal information. This privacy notice sets out the types of data that the Company collects on the applicant. It also sets out how the Company collect and use the applicant' personal data, and how long it keeps them and other relevant information about the applicant's data in accordance with the General Data Protection Regulation (EU) 2016/679 (hereafter referred to as 'GDPR') and Data Protection Act 2018."
 msgstr "Grup Binary (selanjutnya disebut sebagai 'Grup Perusahaan Binary', 'Perusahaan') berkomitmen untuk melindungi privasi dan keamanan informasi pribadi pelamar. Pemberitahuan privasi ini menetapkan jenis data yang dikumpulkan oleh Perusahaan bagi pelamar. Hal ini juga menetapkan bagaimana Perusahaan mengumpulkan dan menggunakan data pribadi pelamar, dan berapa lama penyimpanan mereka dan informasi terkait lainnya tentang data pelamar sesuai dengan Peraturan Perlindungan Data Umum (UE) 2016/679 (selanjutnya disebut sebagai 'GDPR ') dan Undang-undang Perlindungan Data 2018."
 
@@ -2058,8 +2061,8 @@ msgstr "Dengan mengklik OK, Anda telah membaca dan menerima Syarat & Ketentuan."
 msgid "By clicking buy or sell, your order will be filled at the best possible price with either one of our liquidity providers or on our own books (according to the best streaming price at the time of your order placement);"
 msgstr "Dengan mengklik beli atau jual, order Anda akan diisi dengan harga terbaik oleh salah satu penyedia likuiditas kami atau pada sistem kami sendiri (sesuai dengan harga streaming terbaik pada saat penempatan order Anda);"
 
-msgid "By default, all clients are treated as retail but anyone can request to be treated as professional."
-msgstr "Secara default, semua klien diperlakukan sebagai ritel tetapi siapa pun dapat meminta untuk diperlakukan sebagai profesional."
+msgid "By default, all %1 clients are retail clients but anyone can request to be treated as a professional client."
+msgstr ""
 
 msgid "By default, the intelligent order routing system ensures that the top of the book is always comprised of the best bid and offer rates quoted by the competing liquidity providers. However, during times of market illiquidity, this may change with likelihood of execution being the primary execution factor."
 msgstr "Secara langsung, sistem routing pintar akan memastikan buku terbaik selalu dihasilkan dari bid dan harga penawaran terbaik dengan membandingkan penyedia likuiditas. Namun, selama masa likuiditas pasar hal ini dapat berubah dengan kemungkinan eksekusi menjadi faktor eksekusi utama."
@@ -2395,7 +2398,7 @@ msgid "Client withdrawals"
 msgstr "Pencairan klien"
 
 msgid "Client withdrawals prior to this year amounted to almost USD 500 million. More than USD 140 million worth of client withdrawals is expected this year."
-msgstr "Penarikan klien sebelumnya sudah mencapai hampir USD500 juta. Kenaikan hingga 140 juta penarikan dana klien diharapkan tahun ini."
+msgstr "Pencairan klien sebelumnya sudah mencapai hampir USD500 juta. Kenaikan hingga USD140 juta pencairan dana klien diharapkan tahun ini."
 
 msgid "Client's Liability"
 msgstr "Kewajiban Klien"
@@ -5296,7 +5299,7 @@ msgid "In any event of an error in current prices, published odds or trading sof
 msgstr "Jika terjadi kesalahan pada harga terkini, penerbitan selisih atau software trading."
 
 msgid "In business since 2000, %1 is the world’s leading binary options company."
-msgstr "Dalam bisnis sejak tahun 2000, %1 adalah perusahaan opsi binary pilihan terdepan dunia."
+msgstr "Berada di bisnis sejak tahun 2000, %1 adalah perusahaan opsi binary pilihan terdepan dunia."
 
 msgid "In case of Agent’s death, incapacity or where the Agent becomes of unsound mind;"
 msgstr "Dalam hal kematian Agen, ketidakmampuan atau di mana Agen menjadi tidak waras;"
@@ -5873,6 +5876,9 @@ msgstr "Pelajari lebih lanjut tentang budaya perusahaan kami"
 
 msgid "Learn more about submitting essential documents with our handy infographic:"
 msgstr "Pelajari lebih lanjut tentang mengirimkan dokumen dengan infografis kami yang berguna:"
+
+msgid "Learn more."
+msgstr ""
 
 msgid "Learn the basic concepts of trading Meta assets on MetaTrader 5."
 msgstr "Pelajari konsep dasar dari trading aset Meta pada MetaTrader 5."
@@ -7595,6 +7601,9 @@ msgstr "Silakan lihat email Anda untuk melengkapi proses verifikasi."
 
 msgid "Please check your email for the verification link to complete the process."
 msgstr "Silakan lihat email Anda untuk melengkapi proses verifikasi."
+
+msgid "Please check your inbox for details."
+msgstr ""
 
 msgid "Please choose a currency"
 msgstr "Silahkan pilih mata uang"
@@ -11622,8 +11631,8 @@ msgstr "Kami akan terus menutup open position hingga level margin Anda menjadi l
 msgid "We will hold you responsible for all your obligations under this Agreement in our course of providing the margin trading service described in this Agreement to you, even if you notify us that you are acting as the agent of an identified principal."
 msgstr "Anda bertanggungjawab penuh pada semua kewajiban dibawah Perjanjian ini sebagai mana kami sebagai penyedia layanan trading margin yang disebutkan pada Perjanjian ini untuk Anda, meskipun jika Anda menginformasikan bahwa Anda berperan sebagai agen dari utama."
 
-msgid "We will review your documents and get back to you within one working day."
-msgstr "Kami akan meninjau dokumen Anda dan menghubungi Anda kembali dalam tempo satu hari kerja."
+msgid "We will review your documents and get back to you within 3 working days."
+msgstr "Kami akan meninjau dokumen Anda dan menghubungi Anda kembali dalam tempo 3 hari kerja."
 
 msgid "We will use reasonable endeavors within our control to ensure that all electronic data provided on the MT5 Trading Platform and all electronic transactions instructed and accepted from you to us, and executed by us are not subject to network latency."
 msgstr "Kami akan menggunakan upaya yang wajar untuk memastikan semua data elektronik yang disediakan pada Platform Trading MT5 dan semua transaksi elektronik yang Anda instruksikan dan kami terima, serta yang kami eksekusikan diluar keterlambatan network."
@@ -11689,7 +11698,7 @@ msgid "We’re projected to register over 197 million transactions this year, br
 msgstr "Kami memproyeksikan pembelian hingga lebih dari 197 juta transaksi tahun ini, sehingga jumlah kontrak yang dibeli dan dijual pada platform kami sejak awal menjadi lebih dari 789 juta."
 
 msgid "We’ve grown in size over the years – both in terms of manpower and offices. We currently have over %1 employees across three offices in Malaysia and Malta. Further growth in headcount is expected this year to cater to the increased demand in our products and services."
-msgstr "Kami telah tumbuh dengan pesat – baik dari segi tenaga kerja dan kantor. Saat ini kami sudah memiliki %1 karyawan pada beberapa kantor di tiga negara: Malaysia dan Malta. Pertumbuhan lebih lanjut jumlah karyawan diperkirakan pada tahun ini untuk memenuhi permintaan produk dan layanan kami."
+msgstr "Kami telah tumbuh dengan pesat – baik dari segi tenaga kerja dan kantor. Saat ini kami sudah memiliki %1 karyawan pada tiga kantor di negara Malaysia dan Malta. Pertumbuhan lebih lanjut jumlah karyawan diperkirakan pada tahun ini untuk memenuhi permintaan produk dan layanan kami."
 
 msgid "We’ve paid millions in commission to date through our industry-leading affiliate programme."
 msgstr "Kami telah membayar jutaan komisi hingga saat ini melalui program afiliasi kami yang terkemuka."
@@ -11729,9 +11738,6 @@ msgstr "Apakah yang dimaksud dengan Program IB %1?"
 
 msgid "What is the definition of a referred client?"
 msgstr "Apa definisi dari klien yang direferensikan?"
-
-msgid "What is this?"
-msgstr "Apa ini?"
 
 msgid "What kind of reports can I generate?"
 msgstr "Jenis laporan apa yang bisa saya hasilkan?"
@@ -12718,6 +12724,9 @@ msgstr "Akun Anda telah terbukti. Anda dapat melihat <a href=\"%1\">batasan trad
 msgid "Your account is restricted. Kindly %1contact customer support%2 for assistance."
 msgstr "Akun Anda memiliki akses terbatas. Silahkan %1hubungi customer support%2 untuk bantuan."
 
+msgid "Your account remains under the retail client category. You are welcome to reapply as a professional client at any time."
+msgstr ""
+
 msgid "Your account security is of paramount importance to us. Please consider the following initiatives and tools to enhance your account security:"
 msgstr "Keamanan akun Anda sangat penting bagi kami. Mohon pertimbangkan beberapa inisiatif dan fasilitas berikut untuk meningkatkan keamanan akun Anda:"
 
@@ -12799,8 +12808,8 @@ msgstr "Informasi pribadi Anda digunakan terutama sebagai cara memvalidasi Anda 
 msgid "Your profit or loss is calculated as follows:"
 msgstr "Laba dan rugi Anda dihitung sebagai berikut:"
 
-msgid "Your request to be treated as a professional client has been rejected. Please check your inbox for more details. Your account remains categorised as a retail client account."
-msgstr "Permintaan Anda untuk diperlakukan sebagai klien profesional telah mengalami penolakan. Silakan periksa kotak masuk email Anda untuk rincian lebih lanjut. Akun Anda tetap dikategorikan sebagai akun klien ritel."
+msgid "Your request to be treated as a professional client is %1not approved%2."
+msgstr ""
 
 msgid "Your request to transfer %1 %2 from %3 to %4 has been successfully processed."
 msgstr "Permintaan Anda untuk mentransfer %1 %2 dari %3 ke %4 berhasil diproses."

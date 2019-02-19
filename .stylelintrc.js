@@ -1,4 +1,7 @@
 module.exports = {
+    plugins: [
+        'stylelint-selector-bem-pattern',
+    ],
     rules: {
         'at-rule-name-case'                                : 'lower',
         'at-rule-name-space-after'                         : 'always',
@@ -45,13 +48,16 @@ module.exports = {
         'no-extra-semicolons'                              : true,
         'no-invalid-double-slash-comments'                 : true,
         'number-leading-zero'                              : 'always',
-        'number-max-precision'                             : 2,
+        'number-max-precision'                             : 3,
         'number-no-trailing-zeros'                         : true,
+        // 'plugin/selector-bem-pattern'                      : { preset: 'bem', implicitComponents: 'src/sass/app_2/**/*.scss' },
+        'plugin/selector-bem-pattern'                      : { preset: 'bem', implicitComponents: 'src/sass/app_2/modules/trading.scss' },
         'property-case'                                    : 'lower',
         'rule-empty-line-before'                           : ['always', { ignore: ['after-comment'], except: ['inside-block-and-after-rule', 'first-nested'] }],
         'selector-attribute-brackets-space-inside'         : 'never',
         'selector-attribute-operator-space-after'          : 'never',
         'selector-attribute-operator-space-before'         : 'never',
+        'selector-class-pattern'                           : null,
         'selector-combinator-space-after'                  : 'always',
         'selector-combinator-space-before'                 : 'always',
         'selector-list-comma-newline-after'                : 'never-multi-line',
