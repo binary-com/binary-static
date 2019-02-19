@@ -242,14 +242,15 @@ const MetaTrader = (() => {
         BinarySocket.send(req).then((response) => {
             if (response.error) {
                 MetaTraderUI.displayPageError(response.error.message);
-                MetaTraderUI.setTopupLoading(false, false);
+                MetaTraderUI.setTopupLoading(false);
             } else {
                 MetaTraderUI.displayMainMessage(
                     localize(
                         '[_1] has been credited into your MT5 Demo Account: [_2].',
                         [`${MetaTraderConfig.getCurrency(acc_type)} 10,000.00`, login.toString()]
                     ));
-                MetaTraderUI.setTopupLoading(false, true);
+                BinarySocket.send({ mt5_login_list: 1 })
+                    .then(() => MetaTraderUI.setTopupLoading(false));
             }
         });
     };
