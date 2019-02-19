@@ -11,7 +11,7 @@
             position: relative;
             width: fit-content;
             min-width: 15px;
-            height: 30px;
+            height: 32px;
             float: right;
 
             input, .input-size {
@@ -19,10 +19,10 @@
                 padding: 4px;
                 border: 1px solid;
                 overflow: hidden;
-                width: 100%;
                 align-self: unset;
             }
             input {
+                width: fit-content;
                 height: 100%;
                 position: absolute;
                 resize: none;
@@ -30,7 +30,6 @@
                 background: none !important;
                 border: none;
                 text-align: left;
-                padding-top: 6px;
 
                 &.error {
                     border: none !important;
@@ -41,6 +40,7 @@
                 }
             }
             .input-size {
+                width: 100%;
                 visibility: hidden;
                 white-space: pre-wrap;
                 word-wrap: break-word;
@@ -49,7 +49,7 @@
         }
         .input-wrapper {
             &__button {
-                height: 30px;
+                height: 28px;
             }
         }
         .tooltip {
@@ -58,6 +58,7 @@
             position: relative;
             width: fit-content;
             margin: 0 auto;
+            align-items: center;
         }
         .expandable-symbols {
             float: left;
@@ -66,10 +67,13 @@
             flex-grow: 1;
             position: relative;
             background: none !important;
+            height: 32px;
+            align-items: center;
 
             &:before {
                 position: absolute;
                 right: 0;
+                margin-right: 10px;
             }
         }
         &.error {

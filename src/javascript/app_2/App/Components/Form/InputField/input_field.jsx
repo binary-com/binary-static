@@ -27,6 +27,7 @@ const InputField = ({
     is_expandable,
     is_float,
     is_incrementable,
+    is_negative_disabled,
     is_read_only = false,
     is_signed = false,
     is_unit_at_right = false,
@@ -117,6 +118,7 @@ const InputField = ({
         } else {
             decrement_value = parseFloat((+value) - 1).toFixed(fractional_digits);
         }
+        if (is_negative_disabled && decrement_value < 0) return;
         onChange({ target: { value: decrement_value, name } });
     };
 
@@ -220,6 +222,7 @@ InputField.propTypes = {
     is_expandable           : PropTypes.bool,
     is_float                : PropTypes.bool,
     is_incrementable        : PropTypes.bool,
+    is_negative_disabled    : PropTypes.bool,
     is_read_only            : PropTypes.bool,
     is_signed               : PropTypes.bool,
     is_unit_at_right        : PropTypes.bool,

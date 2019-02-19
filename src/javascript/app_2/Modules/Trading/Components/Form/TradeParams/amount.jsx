@@ -51,14 +51,13 @@ const Amount = ({
                 />
                 {!is_single_currency &&
                 <Dropdown
-                    className={classNames({ 'trade-container__currency-options--show': !is_single_currency })}
+                    className={classNames('no-margin', { 'trade-container__currency-options--show': !is_single_currency })}
                     is_alignment_left
                     is_nativepicker={is_nativepicker}
                     list={currencies_list}
                     name='currency'
                     value={currency}
                     onChange={onChange}
-                    className='no-margin'
                 />
                 }
                 <InputField
@@ -74,6 +73,7 @@ const Amount = ({
                     is_float
                     is_incrementable
                     is_nativepicker={is_nativepicker}
+                    is_negative_disabled
                     max_length={10}
                     name='amount'
                     onChange={onChange}
