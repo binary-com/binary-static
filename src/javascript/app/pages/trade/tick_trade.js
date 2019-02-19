@@ -204,7 +204,7 @@ const TickDisplay = (() => {
                 let final_barrier = Number(barrier).toFixed(parseInt(display_decimals));
                 if (isRelativeBarrier(barrier)) {
                     // sometimes due to rounding issues, result is 1.009999 while it should be 1.01
-                    final_barrier = barrier_quote + parseFloat(barrier);
+                    final_barrier = Number(`${Math.round(`${barrier_quote + parseFloat(barrier)}e${display_decimals}`)}e-${display_decimals}`);
                 }
                 barrier_quote = final_barrier;
             } else if (contract && contract.barrier) {
