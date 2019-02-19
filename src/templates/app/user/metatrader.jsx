@@ -496,7 +496,7 @@ const Metatrader = () => (
 
                     <div id='frm_cashier'>
                         <div className='gr-row gr-row-align-center demo-only invisible'>
-                            <Loading id={'demo_topup_loader'} />
+                            <Loading id={'demo_topup_loading'} />
                             <p id={'demo_topup_info'} className='gr-12 gr-12-m center-text' />
                             <Button id={'demo_topup_btn'} />
                         </div>

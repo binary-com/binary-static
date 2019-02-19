@@ -589,8 +589,8 @@ const MetaTraderUI = (() => {
 
     const setDemoTopupStatus = () => {
         const el_demo_topup_btn  = getElementById('demo_topup_btn');
-        const el_demo_topup_info = el_demo_topup_btn.previousSibling;
-        const el_loading         = el_demo_topup_btn.parentElement.firstChild;
+        const el_demo_topup_info = getElementById('demo_topup_info');
+        const el_loading         = getElementById('demo_topup_loading');
         const acc_type           = Client.get('mt5_account');
         const is_demo            = accounts_info[acc_type].is_demo;
         const topup_info_text    = localize('You can top up your demo account with an additional [_1] if your balance falls below [_2].', [`${MetaTraderConfig.getCurrency(acc_type)} 10,000.00`, `${MetaTraderConfig.getCurrency(acc_type)} 1,000.00`]);
