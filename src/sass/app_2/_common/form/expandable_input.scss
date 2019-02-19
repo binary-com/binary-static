@@ -9,7 +9,7 @@
 
         .expandable-input {
             position: relative;
-            width: fit-content;
+            width: 100%;
             min-width: 15px;
             height: 32px;
             float: right;
@@ -68,12 +68,13 @@
             position: relative;
             background: none !important;
             height: 32px;
+            width: 16px;
             align-items: center;
 
             &:before {
                 position: absolute;
                 right: 0;
-                margin-right: 10px;
+                margin-right: 2px;
             }
         }
         &.error {
