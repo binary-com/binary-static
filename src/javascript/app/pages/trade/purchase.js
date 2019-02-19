@@ -116,13 +116,13 @@ const Purchase = (() => {
                             if (has_professional_requested) {
                                 message = localize('Your application to be treated as a professional client is being processed.');
                             } else if (has_professional_rejected) {
-                                const message_text = `${localize('Your request to be treated as a professional client is not approved.')}&nbsp;${localize('Please check your inbox for more details.')}<br /><br />${localize('Your account remains under the retail client category. You are welcome to reapply as a professional client at any time.')}`;
-                                const button_text = localize('Apply now as a professional investor');
+                                const message_text = `${localize('Your professional client request has been unsuccessful.')}<br />${localize('Please reapply once the required criteria has been fulfilled.')}<br /><br />${localize('More information can be found in an email sent to you.')}`;
+                                const button_text  = localize('I want to reapply');
 
                                 message = prepareConfirmationErrorCta(message_text, button_text, true);
                             } else {
                                 const message_text = localize('In the EU, financial binary options are only available to professional investors.');
-                                const button_text = localize('Apply now as a professional investor');
+                                const button_text  = localize('Apply now as a professional investor');
 
                                 message = prepareConfirmationErrorCta(message_text, button_text);
                             }
