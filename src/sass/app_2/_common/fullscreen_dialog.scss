@@ -1,7 +1,7 @@
 $animation-duration: 0.2s;
 
-$header-height: 3.2rem;
-$shadow-cover-height: 3.6rem;
+$header-height: 3.2em;
+$shadow-cover-height: 3.6em;
 
 $header-index: 4;
 $shadow-cover-index: 3;
@@ -38,7 +38,7 @@ $content-index: 1;
         box-sizing: border-box;
         position: relative;
         padding-top: $shadow-cover-height;
-        padding-bottom: 70px; // ios bottom bar fix
+        padding-bottom: 7em; // ios bottom bar fix
         z-index: $content-index;
         background: $COLOR_WHITE;
         transform: scale(0);
@@ -53,7 +53,7 @@ $content-index: 1;
         width: 100%;
         position: fixed;
         top: 0;
-        padding: 1rem;
+        padding: 1em;
         height: $header-height;
         z-index: $header-index;
         background: $COLOR_WHITE;
@@ -78,30 +78,30 @@ $content-index: 1;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
     &__title {
-        font-size: 1.3rem;
+        font-size: 1.3em;
         font-weight: 600;
         color: $COLOR_LIGHT_BLACK_1;
         margin: 0;
     }
     &__close-btn .ic-close {
-        width: 24px;
-        height: 24px;
+        width: 2.4em;
+        height: 2.4em;
     }
     fieldset {
         border: none;
-        margin-right: 0.5rem;
-        margin-left: 0.5rem;
+        margin-right: 0.5em;
+        margin-left: 0.5em;
     }
     .trade-type-info-modal {
-        padding: 16px;
+        padding: 1.6em;
 
         .info-header {
             display: flex;
-            padding: 8px;
+            padding: 0.8em;
 
             .title {
-                margin-left: 15px;
-                font-size: 14px;
+                margin-left: 1.5em;
+                font-size: 1.4em;
                 color: $COLOR_LIGHT_BLACK_1;
             }
             span {
@@ -109,19 +109,19 @@ $content-index: 1;
             }
         }
         .info-gif {
-            padding: 8px;
+            padding: 0.8em;
             width: 90%;
-            width: calc(100% - 16px);
+            width: calc(100% - 1.6em);
             height: fit-content;
             background-color: $COLOR_WHITE;
             border-radius: 4px;
             margin: 0 auto;
         }
         .info-content {
-            padding: 8px;
+            padding: 0.8em;
             margin: 0 auto;
-            font-size: 14px;
-            line-height: 20px;
+            font-size: 1.4em;
+            line-height: 2em;
             color: $COLOR_LIGHT_BLACK_1;
         }
         .info-choose {
@@ -129,14 +129,14 @@ $content-index: 1;
                 background: $COLOR_ORANGE;
                 color: $COLOR_WHITE;
                 font-weight: bold;
-                margin: 16px 0;
+                margin: 1.6em 0;
                 width: 100%;
             }
         }
         .info-navigation {
             display: flex;
             align-self: flex-end;
-            margin-top: 16px;
+            margin-top: 1.6em;
 
             &__list {
                 display: inline-block;
@@ -144,11 +144,11 @@ $content-index: 1;
                 margin: 0 auto;
 
                 .circle-button {
-                    width: 10px;
-                    height: 10px;
+                    width: 1em;
+                    height: 1em;
                     border-radius: 50%;
                     display: inline-block;
-                    margin: 0 5px;
+                    margin: 0 0.5em;
                     background-color: $COLOR_LIGHT_BLACK_3;
                     cursor: pointer;
 

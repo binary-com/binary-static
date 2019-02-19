@@ -52,6 +52,60 @@ Keep all common variables in the [constants.scss](https://github.com/binary-com/
 <a id="units-flexibility"></a>
 **[Flexibility:](#units-flexibility)** If flexibility is needed, for example for font-size, use units such as `rem`, `vh`, `vw`, `fr`, and only use `px` if it's supposed to be a fixed value.
 
+
+#### When to use `em` and `px`?
+- `em` is typically used in padding and margin to maintain the vertical rhythm. If a user resizes the text, the `em` unit will be scaled proportionately. `em` size is always relative to the font-size of the element.
+```scss
+// For example: `span` with font-size of 14px and padding of 8px.
+// The padding in `em` should be `14px/8px * 1em ~ 0.571em`.
+span {
+    font-size: 1.4em;
+    padding: 0.571em;
+}
+```
+- `px` is used to define a fixed value such as for `box-shadow`, `border-radius` and `border-width`.
+
+#### Converts `px` to `em` values
+1. Since the base font-size is set to be `10px = 1rem`, convert `px` to `em` by dividing the `px` value by 10.
+```scss
+.balloon {
+    padding: 1.6em; // 16px;
+}
+```
+2. Or use the `@toEm($property, $px-to-be-converted, $font-size)` mixin. This is particularly helpful when you want to convert the padding/margin `px` values of an element that also has a `font-size`.
+```scss
+// Converts padding 10px into `em` value
+p {
+    font-size: 1.4em;
+    @include toEm(padding, 10px, 1.4em); // font-size in em
+}
+```
+3. Or any online converter tool.
+
+---
+
+### Typography
+The `@typeface($var, $text-transform)` mixin can be used to style any text element. Simply pass in a typeface `$var` name to the mixin.
+The `$var` name is in the format `--$FONT_SIZE-$TEXT_ALIGN-$FONT_WEIGHT-$COLOR`.
+
+Refer to `typography.scss` for a list of valid font-sizes, text-align, font-weights & colors.
+
+```scss
+// Define bold red title, align to the left
+h1 {
+    @include typeface(--title-left-bold-red);
+}
+```
+The optional second argumant in the `@typeface` mixin sets the `text-transform`.
+```scss
+// Define an uppercased paragraph with color orange and font-weight 300
+p {
+    @include typeface(--paragraph-center-light-orange, uppercase);
+}
+```
+
+To define new typefaces, add the name and value in the `$FONT_SIZES`, `$FONT_WEIGHTS` or `$COLORS` maps accordingly in `typography.scss` file. 
+
 ---
 
 ### Theme

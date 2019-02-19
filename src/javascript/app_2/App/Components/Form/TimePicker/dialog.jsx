@@ -85,8 +85,12 @@ Dialog.propTypes = {
     ]),
     onChange  : PropTypes.func,
     preClass  : PropTypes.string,
-    start_time: PropTypes.number,
-    value     : PropTypes.oneOfType([
+    start_time: PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
+        PropTypes.object,
+    ]),
+    value: PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
         PropTypes.object,

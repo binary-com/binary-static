@@ -1,5 +1,6 @@
 import classNames           from 'classnames';
 import { observer }         from 'mobx-react';
+import PropTypes            from 'prop-types';
 import React                from 'react';
 import { CSSTransition }    from 'react-transition-group';
 import {
@@ -20,21 +21,20 @@ import Calendar             from '../../Elements/Calendar';
 
 class DatePicker extends React.Component {
     state = {
-        value                : this.props.value,
+        date_value           : '',
+        holidays             : [],
         is_datepicker_visible: false,
         is_clear_btn_visible : false,
-        holidays             : [],
+        value                : this.props.value,
         weekends             : [],
     };
 
     componentDidMount() {
         document.addEventListener('click', this.onClickOutside, true);
         const { mode, value } = this.props;
-        if (mode === 'duration') {
-            this.updateDatePickerValue(daysFromTodayTo(value));
-        } else {
-            this.updateDatePickerValue(formatDate(value, 'DD MMM YYYY'));
-        }
+        const initial_value = mode === 'duration' ? formatDate(addDays(toMoment(), 1), 'DD MMM YYYY') : formatDate(value, 'DD MMM YYYY');
+
+        this.updateDatePickerValue(initial_value);
 
         if (this.props.disable_trading_events) {
             this.onChangeCalendarMonth(getStartOfMonth(this.state.value));
@@ -73,7 +73,7 @@ class DatePicker extends React.Component {
         if (!isDateValid(value)) { value = ''; }
 
         if (this.props.mode === 'duration') {
-            this.updateDatePickerValue(daysFromTodayTo(value));
+            this.updateDatePickerValue(value);
         } else {
             this.updateDatePickerValue(formatDate(value, 'DD MMM YYYY'));
         }
@@ -82,7 +82,9 @@ class DatePicker extends React.Component {
 
     onChangeInput = (e) => {
         const value = e.target.value;
-        this.updateDatePickerValue(value);
+        const formatted_value = formatDate(addDays(toMoment(), value), 'DD MMM YYYY');
+        this.updateDatePickerValue(formatted_value);
+        this.props.onChange(e);
     }
 
     clearDatePickerInput = () => {
@@ -95,11 +97,16 @@ class DatePicker extends React.Component {
     // TODO: handle cases where user inputs date before min_date and date after max_date
     updateDatePickerValue = (value) => {
         const { date_format, mode, start_date } = this.props;
-
         this.setState({ value }, this.updateStore);
 
+        if (mode === 'duration') {
+            const new_value      = daysFromTodayTo(value);
+            const new_date_value = formatDate(value, 'DD MMM YYYY');
+            this.setState({ value: new_value, date_value: new_date_value }, this.updateStore);
+        }
+
         // update Calendar
-        const new_date = (mode === 'duration') ? addDays(toMoment(), value) : value;
+        const new_date = (mode === 'duration') ? formatDate(value, 'DD MMM YYYY') : value;
         if (this.calendar && (isDateValid(new_date) || !new_date)) {
             if (!new_date) {
                 const current_date = formatDate(start_date, date_format);
@@ -147,19 +154,20 @@ class DatePicker extends React.Component {
     }
 
     renderInputField = () => {
-        const { is_read_only, mode, name, validation_errors } = this.props;
+        const { is_read_only, mode, name, label, error_messages } = this.props;
         let { placeholder } = this.props;
-        let type, onChange;
+        let value, type, onChange;
 
         switch (mode) {
             case 'duration':
                 onChange = this.onChangeInput;
-                placeholder = placeholder || localize('Select a duration');
-                type = 'number';
+                type = 'text';
+                value = this.state.value;
                 break;
             default:
                 placeholder = placeholder || localize('Select a date');
                 type = 'text';
+                value = formatDate(this.props.value, 'DD MMM YYYY');
         }
 
         return (
@@ -168,14 +176,16 @@ class DatePicker extends React.Component {
                 classNameInput='trade-container__input'
                 data-tip={false}
                 data-value={this.state.value}
-                error_messages={validation_errors}
+                error_messages={error_messages}
+                is_autocomplete_disabled={true}
+                label={label}
                 is_read_only={is_read_only}
                 name={name}
                 onChange={onChange}
                 onClick={this.handleVisibility}
                 placeholder={placeholder}
                 type={type}
-                value={this.state.value}
+                value={value}
             />
         );
     };
@@ -221,11 +231,12 @@ class DatePicker extends React.Component {
                 { this.renderInputField() }
                 <IconCalendar
                     className={classNames('datepicker__icon datepicker__icon--calendar', {
-                        'datepicker__icon--is-hidden': this.state.is_clear_btn_visible,
+                        'datepicker__icon--is-hidden' : this.state.is_clear_btn_visible,
+                        'datepicker__icon--with-label': this.props.label,
                     })}
                     onClick={this.handleVisibility}
                 />
-                { this.props.is_clearable &&
+                {this.props.is_clearable &&
                     <IconClear
                         className={classNames('datepicker__icon datepicker__icon--clear', {
                             'datepicker__icon--is-hidden': !this.state.is_clear_btn_visible,
@@ -261,7 +272,7 @@ class DatePicker extends React.Component {
                             max_date={this.props.max_date}
                             min_date={this.props.min_date}
                             start_date={this.props.start_date}
-                            value={this.props.value}
+                            value={this.props.mode === 'duration' ? this.state.date_value : this.props.value}
                         />
                     </div>
                 </CSSTransition>
@@ -277,6 +288,8 @@ DatePicker.defaultProps = {
 
 DatePicker.propTypes = {
     ...Calendar.propTypes,
+    error_messages: PropTypes.array,
+    label         : PropTypes.string,
 };
 
 export default observer(DatePicker);

@@ -5,31 +5,31 @@
     .content {
         display: flex;
         align-items: center;
-        margin-left: 11px;
-        margin-bottom: -9px;
-        padding: 7px;
+        margin-left: 1.1em;
+        margin-bottom: -0.9em;
+        padding: 0.7em;
         border-radius: 3px;
         background: $COLOR_GREEN_1;
         color: $COLOR_WHITE;
 
         svg {
-            margin-right: 5px;
+            margin-right: 0.5em;
         }
     }
     .arrow {
-        margin-left: 4px;
-        margin-bottom: 2px;
+        margin-left: 0.4em;
+        margin-bottom: 0.2em;
         width: 0;
         height: 0;
         border-top: 15px solid $COLOR_GREEN_1;
-        border-left: 10px solid transparent;
+        border-left: 1px solid transparent;
         transform: rotate(60deg);
     }
     .spot {
-        margin-left: -4px;
-        margin-bottom: -4px;
-        width: 4px;
-        height: 4px;
+        margin-left: -0.4em;
+        margin-bottom: -0.4em;
+        width: 0.4em;
+        height: 0.4em;
         border-radius: 50%;
         border: 2px solid $COLOR_GREEN_1;
     }
@@ -51,20 +51,20 @@
         margin-right: 100%;
 
         .content {
-            margin-right: 11px;
-            margin-bottom: -5px;
+            margin-right: 1.1em;
+            margin-bottom: -0.5em;
             background: $COLOR_ORANGE;
         }
         .arrow {
             align-self: flex-end;
-            margin-right: 8px;
-            margin-bottom: -2px;
+            margin-right: 0.8em;
+            margin-bottom: -0.2em;
             border-top-color: $COLOR_ORANGE;
             transform: rotate(-30deg);
         }
         .spot {
             align-self: flex-end;
-            margin-right: -4px;
+            margin-right: -0.4em;
             border-color: $COLOR_ORANGE;
         }
     }
@@ -75,7 +75,7 @@
 
     > div {
         border-left-width: 1px;
-        padding-left: 5px;
+        padding-left: 0.5em;
         height: 100%;
 
         &.solid {

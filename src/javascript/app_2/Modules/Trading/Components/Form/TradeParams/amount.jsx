@@ -58,6 +58,7 @@ const Amount = ({
                     name='currency'
                     value={currency}
                     onChange={onChange}
+                    className='no-margin'
                 />
                 }
                 <InputField
