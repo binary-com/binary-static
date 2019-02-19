@@ -3,7 +3,7 @@ import PropTypes  from 'prop-types';
 import React      from 'react';
 import {
     IconInfoBlue,
-    IconInfoLight,
+    IconInfoOutline,
     IconQuestion,
     IconRedDot }  from 'Assets/Common/Tooltip';
 
@@ -38,7 +38,7 @@ class Tooltip extends React.Component {
                             onMouseEnter={this.onMouseEnter}
                             onMouseLeave={this.onMouseLeave}
                         >
-                            <IconInfoLight />
+                            <IconInfoOutline className='tooltip__icon' />
                         </span>
                         <IconInfoBlue
                             className={classNames('tooltip__balloon__icon', {

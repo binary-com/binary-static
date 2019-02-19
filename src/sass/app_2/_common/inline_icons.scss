@@ -9,10 +9,10 @@
 */
 
 .inline-icon {
-    @include colorIcon($COLOR_DARK_BLUE_5, none);
+    @include colorIcon($COLOR_LIGHT_BLACK_1, none);
 
     &.active {
-        @include colorIcon($COLOR_WHITE, $COLOR_DARK_BLUE_5, $COLOR_DARK_BLUE_5, none);
+        @include colorIcon($COLOR_WHITE, $COLOR_LIGHT_BLACK_1, $COLOR_LIGHT_BLACK_1, none);
     }
     &.disabled {
         @include colorIcon($COLOR_LIGHT_BLACK_4, none);

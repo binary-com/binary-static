@@ -9,6 +9,8 @@
         @include typeface(--small-left-normal-black, none);
         @include toEm(padding-left, 8px, 1.2em);
         cursor: pointer;
-        font-size: 0.75rem;
+    }
+    .tooltip__icon {
+        transform: scale(0.75);
     }
 }

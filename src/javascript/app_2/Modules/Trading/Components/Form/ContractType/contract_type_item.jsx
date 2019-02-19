@@ -1,7 +1,7 @@
 import { PropTypes as MobxPropTypes } from 'mobx-react';
 import PropTypes                      from 'prop-types';
 import React                          from 'react';
-import { IconInfoLight }              from 'Assets/Common/Tooltip';
+import { IconInfoOutline }            from 'Assets/Common/Tooltip';
 import { IconTradeCategory }          from 'Assets/Trading/Categories';
 
 const ContractTypeItem = ({
@@ -25,7 +25,7 @@ const ContractTypeItem = ({
                 {contract.text}
             </span>
             <div id='info-icon' className='trade-type-info-icon' onClick={() => handleInfoClick(contract)}>
-                <IconInfoLight />
+                <IconInfoOutline />
             </div>
         </div>
     ))

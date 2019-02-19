@@ -374,6 +374,9 @@
             margin-left: 26px;
             position: absolute;
         }
+        &-icon {
+            @include colorIcon($COLOR_WHITE);
+        }
     }
     &__effect-main {
         width: 60%;
