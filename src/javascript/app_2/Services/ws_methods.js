@@ -57,6 +57,12 @@ const WS = (() => {
     const statement = (limit, offset, date_boundaries) =>
         BinarySocket.send({ statement: 1, description: 1, limit, offset, ...date_boundaries });
 
+    const subscribeProposalOpenContractAfterBuy = (contract_id, buy_request) =>
+        SubscriptionManager.addSubscriptionFromRequest(
+            'proposal_open_contract',
+            { ...buy_request, subscribe: 1 },
+            { proposal_open_contract: 1, subscribe: 1 },
+        );
     // ----- Streaming calls -----
     const forget = (msg_type, cb, match_values) =>
         SubscriptionManager.forget(msg_type, cb, match_values);
@@ -111,6 +117,7 @@ const WS = (() => {
         subscribeBalance,
         subscribeProposal,
         subscribeProposalOpenContract,
+        subscribeProposalOpenContractAfterBuy,
         subscribeTicks,
         subscribeTicksHistory,
         subscribeTransaction,
