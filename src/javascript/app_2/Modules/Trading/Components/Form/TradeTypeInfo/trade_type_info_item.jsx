@@ -33,7 +33,7 @@ const TradeTypeInfoItem = ({
         <div className='info-content'>
             <Scrollbars
                 autoHide
-                style={{ height: '215px' }}
+                style={{ height: '100%' }}
             >
                 <TradeCategories category={item.value} />
             </Scrollbars>

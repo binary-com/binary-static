@@ -85,7 +85,9 @@ const BinaryLoader = (() => {
 
             ScrollToAnchor.init();
         });
-        BinarySocket.setOnReconnect(active_script.onReconnect);
+        if (active_script) {
+            BinarySocket.setOnReconnect(active_script.onReconnect);
+        }
     };
 
     const error_messages = {
