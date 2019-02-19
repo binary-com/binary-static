@@ -31,7 +31,10 @@ class Tooltip extends React.Component {
 
         return (
             <span
-                className={classNames(className, icon, 'tooltip')} data-tooltip={message} data-tooltip-pos={alignment}>
+                className={classNames(className, icon, 'tooltip')}
+                data-tooltip={message}
+                data-tooltip-pos={alignment}
+            >
                 {icon === 'info' &&
                     <React.Fragment>
                         <span
