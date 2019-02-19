@@ -3,11 +3,11 @@
     align-items: center;
 
     > * {
-        margin: 8px 0 0;
+        margin: 0.8em 0 0;
     }
     label {
-        vertical-align: middle;
-        padding-left: 8px;
+        @include typeface(--small-left-normal-black, none);
+        @include toEm(padding-left, 8px, 1.2em);
         cursor: pointer;
         font-size: 0.75rem;
     }

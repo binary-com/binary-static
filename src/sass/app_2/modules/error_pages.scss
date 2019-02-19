@@ -2,10 +2,10 @@
     &-container {
         display: flex;
         justify-content: center;
-        margin-top: 4rem;
+        margin-top: 4em;
     }
     &-box {
-        padding: 5rem;
+        padding: 5em;
         text-align: center;
         background: $COLOR_LIGHT_BLACK_4_SOLID;
         border-radius: $BORDER_RADIUS;
@@ -18,14 +18,14 @@
     &-header {
         color: $COLOR_DARK_BLUE_5;
         font-weight: 400;
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.5em;
     }
     &-message p {
         color: $COLOR_LIGHT_BLACK_1;
         opacity: 0.75;
-        font-size: 1rem;
-        margin-top: 0.5rem;
-        margin-bottom: 2rem;
+        font-size: 1.6em;
+        margin-top: 0.5em;
+        margin-bottom: 2em;
     }
 }
 

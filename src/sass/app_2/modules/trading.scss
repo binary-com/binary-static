@@ -3,16 +3,14 @@
     &__fieldset {
         background-color: $COLOR_LIGHT_BLACK_4_SOLID;
         border-radius: $BORDER_RADIUS;
-        padding: 4px 8px 8px;
+        padding: 0.8em;
 
         &-header {
             height: 1.5rem;
             position: relative;
         }
         &-info {
-            color: $COLOR_LIGHT_BLACK_1;
-            font-size: 0.75rem;
-            font-weight: 400;
+            @include typeface(--paragraph-left-normal-black);
 
             &--left {
                 left: 5px;
@@ -32,20 +30,16 @@
         display: flex;
 
         &-info {
-            font-size: 0.85rem;
-            padding: 5px 5px 5px 8px;
-            line-height: normal;
+            @include typeface(--small-left-light-black, none);
+            @include toEm(padding, 5px 5px 5px 8px, 1.2em);
+            @include toEm(margin-bottom, 10px, 1.2em);
             background-color: rgba($COLOR_ORANGE, 0.16);
             display: block;
-            color: $COLOR_DARK_BLUE_5;
-            margin-bottom: 10px;
-            font-weight: 300;
             border: 1px solid $COLOR_ORANGE;
             border-radius: $BORDER_RADIUS;
         }
     }
     &__currency {
-        font-size: 0.85rem;
         position: absolute;
         display: block;
         text-align: center;
@@ -64,6 +58,7 @@
         &-info {
             display: flex;
             justify-self: left;
+            align-items: center;
             font-size: 12px;
 
             &-basis {
@@ -87,22 +82,13 @@
         }
         &-tooltip {
             &[data-tooltip] {
-                margin-top: -4px;
-                position: unset;
-
-                &:before {
-                    width: 290px;
-                    white-space: normal;
-                    font-size: 12px;
-                    padding-left: 40px;
+                &:before, &:after {
+                    right: 227px !important;
                 }
-                &[data-tooltip-pos=left] {
-                    &:before {
-                        margin-right: 20px;
-                    }
-                    &:after {
-                        margin-right: 8px;
-                    }
+                &:before {
+                    padding-left: 3em;
+                    white-space: normal;
+                    width: 260px;
                 }
             }
         }
@@ -113,18 +99,7 @@
                 margin-top: 8px;
 
                 &:before {
-                    width: 290px;
-                    white-space: normal;
-                    font-size: 12px;
-                    padding-left: 40px;
-                }
-                &[data-tooltip-pos=left] {
-                    &:before {
-                        margin-right: 20px;
-                    }
-                    &:after {
-                        margin-right: 8px;
-                    }
+                    left: -51.2em !important;
                 }
             }
         }
@@ -343,7 +318,7 @@
     position: relative;
     background-color: $COLOR_GREEN_2;
     overflow: hidden;
-    height: 56px;
+    height: 5.6em;
     width: 100%;
     margin: 0;
     text-align: left;
@@ -351,6 +326,12 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.24);
     margin-top: 5px;
 
+    span.btn-purchase__trade-type-text {
+        @include typeface(--paragraph-left-bold-active);
+    }
+    span.btn-purchase__currency {
+        @include typeface(--xsmall-left-bold-active);
+    }
     &__info {
         width: 30%;
         float: right;
@@ -360,33 +341,25 @@
         flex-direction: column;
     }
     &__return {
+        @include typeface(--paragraph-left-bold-active);
         display: flex;
         justify-content: flex-end;
         flex-grow: 1;
-        font-size: 14px;
         align-items: flex-end;
-        font-weight: bold;
     }
     &__profit {
+        @include typeface(--xsmall-left-bold-active);
         display: flex;
         justify-content: flex-end;
         flex-grow: 1;
-        font-size: 10px;
         align-items: flex-start;
-        font-weight: bold;
-
-    }
-    &__currency {
-        font-size: inherit;
-        background: none;
-        position: relative;
-        color: $COLOR_WHITE;
+        line-height: unset;
     }
     &__content {
         max-width: 50%;
         float: left;
         text-align: left;
-        height: 56px;
+        height: 5.6em;
         display: flex;
         flex-direction: column;
     }

@@ -4,7 +4,7 @@
     z-index: 3;
     background: rgba(255, 255, 255, 0.8);
     top: 0;
-    left: 2px;
+    left: 0.2em;
     right: 0;
     bottom: 0;
     width: calc(100% - 4px);
@@ -19,7 +19,7 @@
         .spinner {
             position: relative;
             margin: 0 auto;
-            width: 42px;
+            width: 4.2em;
 
             &:before {
                 content: '';

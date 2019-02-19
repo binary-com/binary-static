@@ -1,5 +1,5 @@
-$filter-height: 60px;
-$side-padding: 12px;
+$filter-height: 6em;
+$side-padding: 1.2em;
 
 .statement {
     height: calc(100vh - #{$HEADER_HEIGHT + $FOOTER_HEIGHT});
@@ -8,7 +8,7 @@ $side-padding: 12px;
         box-sizing: border-box;
         height: $filter-height;
         width: 100%;
-        font-size: 14px;
+        font-size: 1.4em;
         padding: 0 $side-padding;
 
         &__content {
@@ -16,17 +16,17 @@ $side-padding: 12px;
             display: flex;
             flex-direction: row;
             align-items: center;
-            padding-left: 16px;
+            padding-left: 1.6em;
 
             .datepicker .datepicker__native-overlay {
-                line-height: 30px;
+                line-height: 3em;
             }
         }
         &__label {
-            margin-right: 0.6rem;
+            margin-right: 0.6em;
         }
         &__dash {
-            margin: 0 0.5rem;
+            margin: 0 0.5em;
         }
     }
     &__content {
@@ -42,7 +42,7 @@ $side-padding: 12px;
         border-bottom: none;
     }
     .table__row {
-        grid-template-columns: 6.5rem 6.5rem 1fr 5rem 7rem 6rem 6rem;
+        grid-template-columns: 6.5em 6.5em 1fr 5em 7em 6em 6em;
     }
     .payout, .amount, .balance {
         justify-content: flex-end;
@@ -78,7 +78,7 @@ $side-padding: 12px;
                 margin: 0 auto;
                 max-width: 450px;
                 display: grid;
-                grid-template-columns: 1fr 30px 1fr;
+                grid-template-columns: 1fr 3em 1fr;
                 text-align: center;
 
                 .datepicker__input {
@@ -99,8 +99,8 @@ $side-padding: 12px;
     }
     &-card {
         &__header {
-            font-size: 10px;
-            padding: 0.5rem;
+            font-size: 1em;
+            padding: 0.5em;
             border-bottom: 1px solid $COLOR_LIGHT_BLACK_4;
             display: flex;
             justify-content: space-between;
@@ -110,11 +110,11 @@ $side-padding: 12px;
             text-decoration: none;
         }
         &__body {
-            padding: 0.5rem;
-            font-size: 12px;
+            padding: 0.5em;
+            font-size: 1.2em;
         }
         &__desc {
-            margin-bottom: 0.7rem;
+            margin-bottom: 0.7em;
         }
         &__row {
             display: grid;
@@ -127,11 +127,11 @@ $side-padding: 12px;
         &__cell:before {
             content: '';
             display: inline-block;
-            height: 16px;
-            width: 16px;
-            background-size: 16px 16px;
+            height: 1.6em;
+            width: 1.6em;
+            background-size: 1.6em 1.6em;
             vertical-align: middle;
-            margin-right: 5px;
+            margin-right: 0.5em;
         }
         &__amount {
             &--sell, &--deposit {
@@ -172,12 +172,12 @@ $side-padding: 12px;
         align-items: center;
 
         &__icon {
-            height: 64px;
-            width: 64px;
-            margin-bottom: 14px;
+            height: 6.4em;
+            width: 6.4em;
+            margin-bottom: 1.4em;
         }
         &__text {
-            font-size: 14px;
+            font-size: 1.4em;
         }
     }
 }
