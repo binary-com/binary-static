@@ -16,7 +16,7 @@
     .modal-dialog {
         width: 560px;
         height: 160px;
-        padding: 24px 8px 8px;
+        padding: 2.4em 0.8em 0.8em;
         border-radius: 4px;
         box-sizing: border-box;
         display: flex;
@@ -26,15 +26,15 @@
 
         p, h1 {
             text-align: left;
-            padding: 0 16px;
+            padding: 0 1.6em;
         }
         h1 {
-            font-size: 16px;
-            margin: 4px 0;
+            font-size: 1.6em;
+            margin: 0.4em 0;
         }
         p {
             flex-grow: 2;
-            font-size: 12px;
+            font-size: 1.2em;
         }
         .modal-footer {
             display: flex;
@@ -58,7 +58,7 @@
     }
 }
 
-.dark {
+.theme--dark {
     .full-page-modal {
         background-color: rgba(31, 36, 61, 0.8);
 
@@ -77,7 +77,7 @@
                 }
                 span {
                     color: $COLOR_WHITE;
-                    font-size: 12px;
+                    font-size: 1.2em;
                 }
             }
         }
@@ -101,7 +101,7 @@
                 }
                 span {
                     color: $COLOR_DARK_BLUE_3;
-                    font-size: 12px;
+                    font-size: 1.2em;
                 }
             }
         }

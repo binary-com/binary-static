@@ -1,4 +1,4 @@
-$header-height: 40px;
+$header-height: 4em;
 
 // Trade page animation performance fix #perfmatters
 .trade-container + .positions-drawer {
@@ -7,7 +7,7 @@ $header-height: 40px;
 
 .positions-drawer {
     width: $POSITIONS_DRAWER_WIDTH;
-    // removing 2px below for borders
+    // emoving 2px below for borders
     height: calc(100vh - #{$HEADER_HEIGHT} - #{$FOOTER_HEIGHT} - 2px - (#{$POSITIONS_DRAWER_MARGIN} * 3));
     margin-top: #{$POSITIONS_DRAWER_MARGIN * 2};
     position: fixed;
@@ -33,20 +33,20 @@ $header-height: 40px;
         display: flex;
         flex-direction: row;
         align-items: center;
-        padding: 0 10px;
+        padding: 0 1em;
     }
     &__body {
         height: calc(100% - #{$header-height});
-        padding: 8px 0;
+        padding: 0.8em 0;
         box-sizing: border-box;
         overflow: hidden;
     }
     &__title {
-        font-size: 14px;
+        font-size: 1.4em;
         font-weight: bold;
     }
     &__icon-main {
-        margin-right: 8px;
+        margin-right: 0.8em;
     }
     &__icon-close {
         display: inline-block;
@@ -54,8 +54,8 @@ $header-height: 40px;
         cursor: pointer;
 
         svg {
-            height: 16px;
-            width: 16px;
+            height: 1.6em;
+            width: 1.6em;
         }
     }
     /*
@@ -63,12 +63,12 @@ $header-height: 40px;
    */
     & &-card {
         box-sizing: border-box;
-        padding: 8px;
-        margin: 0 10px;
+        padding: 0.8em;
+        margin: 0 1em;
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr auto;
-        row-gap: 5px;
+        row-gap: 0.5em;
         border: 1px solid $COLOR_LIGHT_BLACK_4;
         border-radius: 4px;
         cursor: pointer;
@@ -83,10 +83,10 @@ $header-height: 40px;
             border-color: $COLOR_DARK_BLUE_5;
         }
         &:not(:last-child) {
-            margin-bottom: 16px;
+            margin-bottom: 1.6em;
         }
         &__type {
-            font-size: 12px;
+            font-size: 1.2em;
 
             .contract-type {
                 display: flex;
@@ -94,21 +94,21 @@ $header-height: 40px;
                 align-items: center;
 
                 .type-wrapper {
-                    margin: 0 4px 4px 0;
+                    margin: 0 0.4em 0.4em 0;
                 }
                 span {
-                    width: 30px;
+                    width: 3em;
                 }
             }
         }
         &__symbol {
-            font-size: 10px;
+            font-size: 1em;
             overflow: hidden;
             white-space: nowrap;
             text-overflow: ellipsis;
         }
         &__indicative {
-            font-size: 12px;
+            font-size: 1.2em;
             font-weight: bold;
             display: flex;
             flex-direction: row;
@@ -119,10 +119,10 @@ $header-height: 40px;
             &:after {
                 content: '';
                 display: inline-block;
-                height: 16px;
-                width: 16px;
-                background-size: 16px 16px;
-                margin-left: 2px;
+                height: 1.6em;
+                width: 1.6em;
+                background-size: 1.6em 1.6em;
+                margin-left: 0.2em;
             }
             &--price-moved-up {
                 color: $COLOR_GREEN_1;
@@ -154,17 +154,17 @@ $header-height: 40px;
             }
         }
         &__remaining-time {
-            font-size: 10px;
+            font-size: 1em;
             color: $COLOR_LIGHT_BLACK_2;
             text-align: right;
 
             &:before {
                 content: '';
                 display: inline-block;
-                height: 10px;
-                width: 10px;
-                background-size: 10px 10px;
-                margin-right: 2px;
+                height: 1em;
+                width: 1em;
+                background-size: 1em 1em;
+                margin-right: 0.2em;
                 background-image: url('../images/positions/ic_countdown.svg');
                 vertical-align: text-top;
             }
@@ -179,7 +179,7 @@ $header-height: 40px;
 }
 
 // Dark Theme
-.theme-wrapper.dark {
+.theme--dark {
     .positions-drawer {
         background: $COLOR_DARK_BLUE_3;
         border-color: $COLOR_DARK_BLUE_3;
