@@ -359,6 +359,7 @@ const TickDisplay = (() => {
                     category = 'highlowticks';
                 }
                 initialize({
+                    barrier,
                     symbol              : contract.underlying,
                     number_of_ticks     : contract.tick_count,
                     contract_category   : category,
