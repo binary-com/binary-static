@@ -80,7 +80,7 @@ const PersonalDetails = (() => {
             CommonFunctions.getElementById(`row_${field}`).setVisibility(1);
         });
 
-        if (changeable_fields.includes('first_name') || changeable_fields.includes('last_name') || changeable_fields.includes('salutation')) {
+        if (['first_name', 'last_name', 'salutation'].some(key => changeable_fields.includes(key))) {
             CommonFunctions.getElementById('row_name').setVisibility(0);
             CommonFunctions.getElementById('first_name').setVisibility(1);
             CommonFunctions.getElementById('last_name').setVisibility(1);
@@ -89,12 +89,12 @@ const PersonalDetails = (() => {
 
         if (changeable_fields.includes('date_of_birth')) {
             const $input_el = $('#date_of_birth');
-            $input_el.setVisibility(1);
             $input_el
                 .attr('data-value', toISOFormat(moment().subtract(18, 'years')))
                 .change(function() {
                     return CommonFunctions.dateValueChanged(this, 'date');
-                });
+                })
+                .setVisibility(1);
 
             DatePicker.init({
                 selector: '#date_of_birth',
@@ -106,8 +106,8 @@ const PersonalDetails = (() => {
             });
         }
 
-        const $options               = $('<div/>');
         if (changeable_fields.includes('place_of_birth') || changeable_fields.includes('citizen')) {
+            const $options       = $('<div/>');
             const residence_list = State.getResponse('residence_list');
             residence_list.forEach((res) => {
                 $options.append(CommonFunctions.makeOption({ text: res.text, value: res.value }));
@@ -478,10 +478,10 @@ const PersonalDetails = (() => {
 
             if (is_virtual) {
                 getDetailsResponse(get_settings_data);
+            } else if (!residence) {
+                displayResidenceList();
             } else if (has_changeable_fields) {
                 populateChangeableFields();
-                displayResidenceList();
-            } else if (!is_virtual || !residence) {
                 displayResidenceList();
             }
         });
