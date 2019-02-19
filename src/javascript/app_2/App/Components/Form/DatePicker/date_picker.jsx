@@ -98,12 +98,11 @@ class DatePicker extends React.Component {
     updateDatePickerValue = (value) => {
         const { date_format, mode, start_date } = this.props;
         this.setState({ value }, this.updateStore);
+
         if (mode === 'duration') {
-            const new_value = daysFromTodayTo(value);
+            const new_value      = daysFromTodayTo(value);
             const new_date_value = formatDate(value, 'DD MMM YYYY');
             this.setState({ value: new_value, date_value: new_date_value }, this.updateStore);
-        } else {
-            this.setState({ value }, this.updateStore);
         }
 
         // update Calendar

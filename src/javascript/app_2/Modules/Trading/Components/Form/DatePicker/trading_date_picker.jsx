@@ -33,11 +33,11 @@ const TradingDatePicker = ({
     const max_daily_duration = duration_min_max.daily ? duration_min_max.daily.max : 365 * 24 * 3600;
 
     if (is_24_hours_contract) {
-        min_date_expiry = moment_contract_start_date_time.clone().startOf('day');
+        min_date_expiry   = moment_contract_start_date_time.clone().startOf('day');
         max_date_duration = moment_contract_start_date_time.clone().add(
             start_date ? 24 * 3600 : (max_daily_duration), 'second');
     } else {
-        min_date_expiry = moment_contract_start_date_time.clone().startOf('day');
+        min_date_expiry   = moment_contract_start_date_time.clone().startOf('day');
         max_date_duration = moment_contract_start_date_time.clone().add(max_daily_duration, 'second');
 
     }
