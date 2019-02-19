@@ -2,7 +2,9 @@ import classNames      from 'classnames';
 import PropTypes       from 'prop-types';
 import React           from 'react';
 import { localize }    from '_common/localize';
-import { IconBack }    from 'Assets/Common';
+import {
+    IconBack,
+    IconFlag }         from 'Assets/Common';
 import {
     getAllowedLanguages,
     getURL }           from 'Utils/Language';
@@ -23,7 +25,7 @@ const LanguageDialog = ({ hide, is_visible, is_settings_on }) => {
                     <React.Fragment key={key}>
                         <div className='language-row'>
                             <a href={getURL(key)} >
-                                <i className={`flag ic-flag-${key.replace(/(\s|_)/, '-').toLowerCase()}`} />
+                                <IconFlag className='flag' type={key.replace(/(\s|_)/, '-').toLowerCase()} />
                                 <span>{getAllowedLanguages()[key]}</span>
                             </a>
                         </div>
