@@ -232,9 +232,9 @@ const MetaTrader = (() => {
 
     const sendTopupDemo = () => {
         MetaTraderUI.setTopupLoading(true);
-        const acc_type           = Client.get('mt5_account');
-        const login              = accounts_info[acc_type].info.login;
-        const req = {
+        const acc_type = Client.get('mt5_account');
+        const login    = accounts_info[acc_type].info.login;
+        const req      = {
             mt5_deposit: 1,
             to_mt5     : login,
         };

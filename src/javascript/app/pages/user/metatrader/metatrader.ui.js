@@ -281,7 +281,6 @@ const MetaTraderUI = (() => {
             $form.find('.binary-balance').html(`${Currency.formatMoney(client_currency, Client.get('balance'))}`);
             $form.find('.mt5-account').text(`${localize('[_1] Account [_2]', [accounts_info[acc_type].title, accounts_info[acc_type].info.login])}`);
             $form.find('.mt5-balance').html(`${Currency.formatMoney(mt_currency, accounts_info[acc_type].info.balance)}`);
-            $form.find('.symbols.mt-currency').addClass(mt_currency.toLowerCase());
             $form.find('label[for="txt_amount_deposit"]').append(` ${client_currency}`);
             $form.find('label[for="txt_amount_withdrawal"]').append(` ${mt_currency}`);
 
@@ -606,37 +605,35 @@ const MetaTraderUI = (() => {
             const min_balance = 1000;
 
             if (balance < min_balance && !is_topped_up) {
-                enableDemoTopup();
+                enableDemoTopup(true);
             } else {
-                disableDemoTopup();
+                enableDemoTopup(false);
             }
         }
     };
 
-    const disableDemoTopup = () => {
+    const enableDemoTopup = (is_enabled) => {
         const el_demo_topup_btn = getElementById('demo_topup_btn');
 
-        el_demo_topup_btn.removeEventListener('click', topup_demo);
-        el_demo_topup_btn.classList.add('button-disabled');
-        el_demo_topup_btn.classList.remove('button');
-        el_demo_topup_btn.previousSibling.setVisibility(1);
+        if (is_enabled) {
+            el_demo_topup_btn.addEventListener('click', topup_demo);
+            el_demo_topup_btn.classList.add('button');
+            el_demo_topup_btn.classList.remove('button-disabled');
+            el_demo_topup_btn.previousSibling.setVisibility(0);
+        } else {
+            el_demo_topup_btn.removeEventListener('click', topup_demo);
+            el_demo_topup_btn.classList.add('button-disabled');
+            el_demo_topup_btn.classList.remove('button');
+            el_demo_topup_btn.previousSibling.setVisibility(1);
+        }
     };
 
-    const enableDemoTopup = () => {
-        const el_demo_topup_btn = getElementById('demo_topup_btn');
-
-        el_demo_topup_btn.addEventListener('click', topup_demo);
-        el_demo_topup_btn.classList.add('button');
-        el_demo_topup_btn.classList.remove('button-disabled');
-        el_demo_topup_btn.previousSibling.setVisibility(0);
-    };
-
-    const setTopupLoading = (state, is_topped_up) => {
+    const setTopupLoading = (is_loading, is_topped_up) => {
         const el_demo_topup_btn  = getElementById('demo_topup_btn');
-        const el_demo_topup_info = el_demo_topup_btn.previousSibling;
-        const el_loading         = el_demo_topup_btn.parentElement.firstChild;
+        const el_demo_topup_info = getElementById('demo_topup_info');
+        const el_loading         = getElementById('demo_topup_loading');
 
-        if (state) {
+        if (is_loading) {
             el_demo_topup_btn.setVisibility(0);
             el_demo_topup_info.setVisibility(0);
             el_loading.setVisibility(1);

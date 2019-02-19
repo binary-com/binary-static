@@ -240,7 +240,16 @@ export const DatePicker = ({ className, id, text }) => (
     </div>
 );
 
-export const Button = ({ children, className, text_className, href, id, text, target, balloon }) => (
+export const Button = ({
+    children,
+    className,
+    text_className,
+    href,
+    id,
+    text,
+    target,
+    balloon,
+}) => (
     <a
         id={id}
         href={href || undefined}
