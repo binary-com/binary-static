@@ -56,7 +56,7 @@ const TradingDatePicker = ({
             disable_year_selector
             disable_trading_events
             error_messages={validation_errors.duration || []}
-            has_today_btn
+            has_today_btn={has_today_btn}
             is_nativepicker={false}
             is_read_only={is_read_only}
             label={duration_units_list.length === 1 ? duration_units_list[0].text : null}

@@ -55,8 +55,11 @@ TradingTimePicker.propTypes = {
         PropTypes.number,
         PropTypes.string,
     ]),
-    start_time: PropTypes.string,
-    
+    start_time: PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
+        PropTypes.object,
+    ]),
 };
 
 export default connect(
