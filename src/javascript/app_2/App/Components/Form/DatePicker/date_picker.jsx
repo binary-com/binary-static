@@ -178,6 +178,7 @@ class DatePicker extends React.Component {
                 data-tip={false}
                 data-value={this.state.value}
                 error_messages={error_messages}
+                is_autocomplete_disabled={true}
                 label={label}
                 is_read_only={is_read_only}
                 name={name}

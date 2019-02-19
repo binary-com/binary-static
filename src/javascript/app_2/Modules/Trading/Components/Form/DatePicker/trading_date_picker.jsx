@@ -24,8 +24,9 @@ const TradingDatePicker = ({
     symbol,
 }) => {
     let max_date_duration,
-        min_date_expiry;
-    const is_read_only = expiry_type === 'endtime';
+        min_date_expiry,
+        has_today_btn,
+        is_read_only;
     const moment_contract_start_date_time =
         setTime(toMoment(start_date || server_time), (isTimeValid(start_time) ? start_time : server_time.format('HH:mm')));
 
@@ -40,7 +41,14 @@ const TradingDatePicker = ({
         max_date_duration = moment_contract_start_date_time.clone().add(max_daily_duration, 'second');
 
     }
-    if (expiry_type === 'duration') min_date_expiry.add(1, 'day');
+    if (expiry_type === 'duration') {
+        min_date_expiry.add(1, 'day');
+        has_today_btn = false;
+        is_read_only = false;
+    } else {
+        has_today_btn = true;
+        is_read_only = true;
+    }
 
     return (
         <DatePicker
