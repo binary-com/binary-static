@@ -121,6 +121,7 @@ DurationWrapper.propTypes = {
     is_advanced_duration: PropTypes.bool,
     is_minimized        : PropTypes.bool,
     is_nativepicker     : PropTypes.bool,
+    market_open_times   : PropTypes.array,
     market_close_times  : PropTypes.array,
     onChange            : PropTypes.func,
     onChangeMultiple    : PropTypes.func,

@@ -35,11 +35,15 @@ const AdvancedDuration = ({
     start_date,
     start_time,
     symbol,
+    market_open_times,
     market_close_times,
     onChangeUiStore,
     duration_t,
 }) => {
-    const moment_expiry      = toMoment(expiry_date || server_time);
+    const moment_expiry_date = toMoment(expiry_date);
+    const moment_market_open_times = toMoment(market_open_times[0])
+    const moment_expiry      = moment_expiry_date.isBefore(moment_market_open_times) ? moment_market_open_times : moment_expiry_date;
+
     let is_24_hours_contract = false;
     let expiry_time_sessions = sessions;
     let max_date_duration,
@@ -187,6 +191,7 @@ AdvancedDuration.propTypes = {
     expiry_type        : PropTypes.string,
     getDurationFromUnit: PropTypes.func,
     is_nativepicker    : PropTypes.bool,
+    market_open_times  : PropTypes.array,
     market_close_times : PropTypes.array,
     number_input_props : PropTypes.object,
     onChange           : PropTypes.func,

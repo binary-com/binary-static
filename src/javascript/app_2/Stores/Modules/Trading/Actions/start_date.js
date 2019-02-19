@@ -30,8 +30,11 @@ export const onChangeStartDate = async (store) => {
     expiry_type           = obj_expiry_type.expiry_type;
     const obj_expiry_date = ContractType.getExpiryDate(duration_units_list, expiry_date, expiry_type, start_date);
     expiry_date           = obj_expiry_date.expiry_date;
+    
+    const trading_times          = await ContractType.getTradingTimes(expiry_date, symbol);
+    const obj_market_open_times  = { market_open_times: trading_times.open }
+    const obj_market_close_times = { market_close_times: trading_times.close };
 
-    const obj_market_close_times = { market_close_times: await ContractType.getTradingTimes(expiry_date, symbol) };
     const market_close_times     = obj_market_close_times.market_close_times;
     const obj_expiry_time        = ContractType.getExpiryTime(
         expiry_date,
@@ -55,6 +58,7 @@ export const onChangeStartDate = async (store) => {
         ...obj_expiry_date,
         ...obj_expiry_time,
         ...obj_expiry_type,
+        ...obj_market_open_times,
         ...obj_market_close_times,
     };
 };

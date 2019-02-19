@@ -34,6 +34,7 @@ const Duration = ({
     start_date,
     start_time,
     validation_errors,
+    market_open_times,
     market_close_times,
     simple_duration_unit,
     duration_t,
@@ -162,6 +163,7 @@ const Duration = ({
                             expiry_type={expiry_type}
                             getDurationFromUnit={getDurationFromUnit}
                             is_nativepicker={is_nativepicker}
+                            market_open_times={market_open_times}
                             market_close_times={market_close_times}
                             number_input_props={props.number_input}
                             onChange={onChange}
@@ -223,6 +225,7 @@ Duration.propTypes = {
     is_advanced_duration: PropTypes.bool,
     is_minimized        : PropTypes.bool,
     is_nativepicker     : PropTypes.bool,
+    market_open_times   : PropTypes.array,
     market_close_times  : PropTypes.array,
     onChange            : PropTypes.func,
     onChangeUiStore     : PropTypes.func,
