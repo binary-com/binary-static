@@ -14,6 +14,8 @@ export const getTimePercentage = (start_time, purchase_time, expiry_time) => {
         percentage = (duration_from_now.asMinutes() / duration_from_purchase.asMinutes()) * 100;
     } else if (duration_unit === 'seconds') {
         percentage = (duration_from_now.asSeconds() / duration_from_purchase.asSeconds()) * 100;
+    } else if (!duration_unit) {
+        percentage = null;
     }
     return Math.floor(percentage);
 };

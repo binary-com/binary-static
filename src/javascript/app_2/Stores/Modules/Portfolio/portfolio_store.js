@@ -77,12 +77,14 @@ export default class PortfolioStore extends BaseStore {
         const new_indicative  = +proposal.bid_price;
         const profit_loss     = +proposal.profit;
 
-        portfolio_position.indicative      = new_indicative;
-        portfolio_position.underlying_code = proposal.underlying;
-        portfolio_position.underlying_name = proposal.display_name;
-        portfolio_position.profit_loss     = profit_loss;
-        portfolio_position.purchase_time   = proposal.purchase_time;
-        portfolio_position.tick_count      = proposal.tick_count;
+        portfolio_position.bid_price        = proposal.bid_price;
+        portfolio_position.indicative       = new_indicative;
+        portfolio_position.underlying_code  = proposal.underlying;
+        portfolio_position.underlying_name  = proposal.display_name;
+        portfolio_position.profit_loss      = profit_loss;
+        portfolio_position.purchase_time    = proposal.purchase_time;
+        portfolio_position.tick_count       = proposal.tick_count;
+        portfolio_position.is_valid_to_sell = proposal.is_valid_to_sell;
 
         if (!proposal.is_valid_to_sell) {
             portfolio_position.status = 'no-resale';
@@ -93,6 +95,33 @@ export default class PortfolioStore extends BaseStore {
         } else {
             portfolio_position.status = 'price-stable';
         }
+    }
+
+    @action.bound
+    onClickSell(contract_id) {
+        const i = this.data.findIndex(pos => +pos.id === +contract_id);
+        const bid_price = this.data[i].bid_price;
+        if (contract_id && bid_price) {
+            WS.sell(contract_id, bid_price).then(this.handleSell);
+        }
+    }
+
+    @action.bound
+    handleSell(response) {
+        if (response.error) {
+            // If unable to sell due to error, give error via toast message
+            this.root_store.ui.addToastMessage({
+                message: response.error.message,
+                type   : 'error',
+            });
+        } else {
+            // If unable to sell due to error, give error via toast message
+            this.root_store.ui.addToastMessage({
+                message: `Contract: ${response.sell.contract_id} sold for ${response.sell.sold_for}. Balance after is ${response.sell.balance_after}`,
+                type   : 'info',
+            });
+        }
+        WS.subscribeProposalOpenContract(null, this.proposalOpenContractHandler, false);
     }
 
     @action.bound

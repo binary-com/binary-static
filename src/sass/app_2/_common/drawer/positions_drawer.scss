@@ -73,11 +73,6 @@ $header-height: 40px;
    */
     & &-card {
         box-sizing: border-box;
-        padding: 8px;
-        margin: 0 10px;
-        border: 1px solid $COLOR_WHITE;
-        background: $COLOR_WHITE;
-        border-radius: $BORDER_RADIUS;
         display: flex;
         flex-direction: column;
         cursor: pointer;
@@ -85,11 +80,37 @@ $header-height: 40px;
         position: relative;
         color: $COLOR_LIGHT_BLACK_1;
 
-        &.active {
+        &__wrapper {
+            padding: 8px;
+            margin: 0 10px;
+            border: 1px solid $COLOR_WHITE;
+            background: $COLOR_WHITE;
+            border-radius: $BORDER_RADIUS;
+
+            &:not(:last-child) {
+                margin-bottom: 16px;
+            }
+        }
+        &--active {
             cursor: default;
         }
-        &:not(:last-child) {
-            margin-bottom: 16px;
+        &--green:before {
+            background-image: linear-gradient(to top, rgba(16, 19, 32, 0), rgba(0, 148, 117, 0.16));
+        }
+        &--orange:before {
+            background-image: linear-gradient(to top, rgba(16, 19, 32, 0), rgba(255, 153, 51, 0.16));
+        }
+        &--red:before {
+            background-image: linear-gradient(to top, rgba(16, 19, 32, 0), rgba(227, 28, 75, 0.16));
+        }
+        &--active:before, &:hover:before {
+            content: '';
+            position: absolute;
+            height: 52px;
+            width: calc(100% + 18px);
+            left: -9px;
+            top: -9px;
+            border-radius: $BORDER_RADIUS;
         }
         &__grid {
             display: grid;
@@ -218,6 +239,16 @@ $header-height: 40px;
             align-items: center;
             font-weight: bold;
         }
+        &__sell-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .btn {
+                margin: 4px;
+                width: 100%;
+            }
+        }
     }
     /*
         POSITIONS DRAWER CARD ENDS
@@ -232,22 +263,14 @@ $header-height: 40px;
         color: $COLOR_WHITE;
 
         &-card {
-            background: $COLOR_DARK_BLUE_2;
-            border-color: $COLOR_DARK_BLUE_2;
             color: $COLOR_WHITE;
 
+            &__wrapper {
+                background: $COLOR_DARK_BLUE_2;
+                border-color: $COLOR_DARK_BLUE_2;
+            }
             &__remaining-time {
                 color: $COLOR_DARK_BLUE_7;
-            }
-            &.active:before, &:hover:before {
-                content: '';
-                position: absolute;
-                height: 52px;
-                width: calc(100% + 2px);
-                left: -1px;
-                top: -1px;
-                border-radius: $BORDER_RADIUS;
-                background-image: linear-gradient(to top, rgba(16, 19, 32, 0), rgba(0, 148, 117, 0.16));
             }
             &__indicative {
                 &--no-resale {

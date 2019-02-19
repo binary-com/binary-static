@@ -25,7 +25,9 @@ class PositionsDrawer extends React.Component {
             currency,
             is_empty,
             is_positions_drawer_on,
+            onClickSell,
             toggleDrawer,
+            server_time,
         } = this.props;
 
         let body_content;
@@ -35,11 +37,10 @@ class PositionsDrawer extends React.Component {
         } else if (is_empty) {
             body_content = <EmptyPortfolioMessage />;
         } else {
-            body_content = active_positions.map((portfolio_position, index) => (
+            body_content = active_positions.map((portfolio_position) => (
                 <PositionsDrawerCard
-                    className={classNames({
-                        'first': (index === 0),
-                    })}
+                    onClickSell={onClickSell}
+                    server_time={server_time}
                     key={portfolio_position.id}
                     currency={currency}
                     {...portfolio_position}
@@ -79,21 +80,25 @@ PositionsDrawer.propTypes = {
     is_empty              : PropTypes.bool,
     is_loading            : PropTypes.bool,
     is_positions_drawer_on: PropTypes.bool,
+    onClickSell           : PropTypes.func,
     onMount               : PropTypes.func,
     onUnmount             : PropTypes.func,
+    server_time           : PropTypes.object,
     toggleDrawer          : PropTypes.func,
 };
 
 export default connect(
-    ({ modules, client, ui }) => ({
+    ({ common, modules, client, ui }) => ({
         active_positions      : modules.portfolio.active_positions,
         is_loading            : modules.portfolio.is_loading,
         error                 : modules.portfolio.error,
         is_empty              : modules.portfolio.is_empty,
         onMount               : modules.portfolio.onMount,
         onUnmount             : modules.portfolio.onUnmount,
+        onClickSell           : modules.portfolio.onClickSell,
         currency              : client.currency,
         is_positions_drawer_on: ui.is_positions_drawer_on,
         toggleDrawer          : ui.togglePositionsDrawer,
+        server_time           : common.server_time,
     })
 )(PositionsDrawer);
