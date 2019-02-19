@@ -615,17 +615,12 @@ const MetaTraderUI = (() => {
     const enableDemoTopup = (is_enabled) => {
         const el_demo_topup_btn = getElementById('demo_topup_btn');
 
-        if (is_enabled) {
-            el_demo_topup_btn.addEventListener('click', topup_demo);
-            el_demo_topup_btn.classList.add('button');
-            el_demo_topup_btn.classList.remove('button-disabled');
-            el_demo_topup_btn.previousSibling.setVisibility(0);
-        } else {
-            el_demo_topup_btn.removeEventListener('click', topup_demo);
-            el_demo_topup_btn.classList.add('button-disabled');
-            el_demo_topup_btn.classList.remove('button');
-            el_demo_topup_btn.previousSibling.setVisibility(1);
-        }
+        const function_to_call = is_enabled ? 'addEventListener' : 'removeEventListener';
+        el_demo_topup_btn[function_to_call]('click', topup_demo);
+
+        el_demo_topup_btn.classList.add(is_enabled ? 'button' : 'button-disabled');
+        el_demo_topup_btn.classList.remove(is_enabled ? 'button-disabled' : 'button');
+        el_demo_topup_btn.previousSibling.setVisibility(!is_enabled);
     };
 
     const setTopupLoading = (is_loading, has_topped_up) => {
