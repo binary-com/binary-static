@@ -164,9 +164,15 @@
         }
     }
     label.input-label {
+        font-size: 0.85rem;
+        font-weight: 400;
+        text-transform: capitalize;
         @include typeface(--paragraph-left-normal-black);
-        margin-bottom: 0.2em;
+        margin-bottom: 0.8em;
         display: inline-block;
+        color: $COLOR_DARK_BLUE_7;
+        text-align: center;
+        width: 100%;
     }
     span.input-helper {
         @include typeface(--small-left-light-grey);
@@ -211,7 +217,8 @@
             }
             &:focus, &:active {
                 border-color: $COLOR_DARK_BLUE_7;
-                box-shadow: 0 0 0 2px rgba(127, 131, 151, 0.3);
+                box-shadow: 0 0 0 0.2rem rgba(127, 131, 151, 0.3);
+                color: $COLOR_WHITE;
             }
             &::placeholder {
                 color: $COLOR_DARK_BLUE_7;
