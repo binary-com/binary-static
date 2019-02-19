@@ -587,7 +587,7 @@ const MetaTraderUI = (() => {
         });
     };
 
-    const setDemoTopupStatus = (is_topped_up = false) => {
+    const setDemoTopupStatus = (has_topped_up = false) => {
         const el_demo_topup_btn  = getElementById('demo_topup_btn');
         const el_demo_topup_info = el_demo_topup_btn.previousSibling;
         const el_loading         = el_demo_topup_btn.parentElement.firstChild;
@@ -604,7 +604,7 @@ const MetaTraderUI = (() => {
             const balance     = +accounts_info[acc_type].info.balance;
             const min_balance = 1000;
 
-            if (balance < min_balance && !is_topped_up) {
+            if (balance < min_balance && !has_topped_up) {
                 enableDemoTopup(true);
             } else {
                 enableDemoTopup(false);
@@ -628,20 +628,17 @@ const MetaTraderUI = (() => {
         }
     };
 
-    const setTopupLoading = (is_loading, is_topped_up) => {
+    const setTopupLoading = (is_loading, has_topped_up) => {
         const el_demo_topup_btn  = getElementById('demo_topup_btn');
         const el_demo_topup_info = getElementById('demo_topup_info');
         const el_loading         = getElementById('demo_topup_loading');
 
-        if (is_loading) {
-            el_demo_topup_btn.setVisibility(0);
-            el_demo_topup_info.setVisibility(0);
-            el_loading.setVisibility(1);
-        } else {
-            el_demo_topup_btn.setVisibility(1);
-            el_demo_topup_info.setVisibility(1);
-            el_loading.setVisibility(0);
-            setDemoTopupStatus(is_topped_up);
+        el_demo_topup_btn.setVisibility(!is_loading);
+        el_demo_topup_info.setVisibility(!is_loading);
+        el_loading.setVisibility(is_loading);
+
+        if (!is_loading) {
+            setDemoTopupStatus(has_topped_up);
         }
     };
 
