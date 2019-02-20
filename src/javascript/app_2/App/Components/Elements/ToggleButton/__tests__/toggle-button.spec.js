@@ -3,7 +3,7 @@ import { shallow }  from 'enzyme';
 import React        from 'react';
 import { fake }     from 'sinon';
 import ToggleButton from '../toggle-button.jsx';
-import Button       from '../../../Form/button.jsx';
+import Button       from 'App/Components/Form/button.jsx';
 
 describe('<ToggleButton />', () => {
     it('should render a <Button /> element', () => {

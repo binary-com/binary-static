@@ -1,13 +1,13 @@
 import PropTypes                   from 'prop-types';
 import React                       from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import getBaseName                 from 'Utils/URL/base_name';
+import getBaseName                 from 'Utils/URL/base-name';
 import { MobxProvider }            from 'Stores/connect';
 import ErrorBoundary               from './Components/Elements/Errors/error-boundary.jsx';
 import PositionsDrawer             from './Components/Elements/PositionsDrawer';
 import { POSITIONS }               from './Components/Elements/ToastMessage';
 import ToastMessage                from './Containers/toast-message.jsx';
-import AppContents                 from './Containers/Layout/app_contents.jsx';
+import AppContents                 from './Containers/Layout/app-contents.jsx';
 import Footer                      from './Containers/Layout/footer.jsx';
 import Header                      from './Containers/Layout/header.jsx';
 import Routes                      from './Containers/Routes/routes.jsx';

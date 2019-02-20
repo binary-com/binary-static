@@ -2,7 +2,7 @@ import { PropTypes as MobxPropTypes } from 'mobx-react';
 import { Scrollbars }                 from 'tt-react-custom-scrollbars';
 import PropTypes                      from 'prop-types';
 import React                          from 'react';
-import TableRow                       from './table_row.jsx';
+import TableRow                       from './table-row.jsx';
 
 /* TODO:
       1. implement sorting by column (ASC/DESC)

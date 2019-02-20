@@ -17,21 +17,21 @@
 
 // Drawer
 @import 'app_2/_common/drawer/drawer';
-@import 'app_2/_common/drawer/positions_drawer';
+@import 'app_2/_common/drawer/positions-drawer';
 
 // Form
 @import 'app_2/_common/form/buttons';
-@import 'app_2/_common/form/button_toggle_menu';
+@import 'app_2/_common/form/button-toggle-menu';
 @import 'app_2/_common/form/dropdown';
-@import 'app_2/_common/form/input_field';
-@import 'app_2/_common/form/time_picker';
+@import 'app_2/_common/form/input-field';
+@import 'app_2/_common/form/time-picker';
 
 // Components
 @import 'app_2/_common/components/account-switcher';
 @import 'app_2/_common/components/allow-equals';
 @import 'app_2/_common/components/calendar';
 @import 'app_2/_common/components/card-list';
-@import 'app_2/_common/components/contracts_popup';
+@import 'app_2/_common/components/contracts-popup';
 @import 'app_2/_common/components/data-table';
 @import 'app_2/_common/components/date-picker';
 @import 'app_2/_common/components/error-boundary';
@@ -47,16 +47,16 @@
 @import 'app_2/_common/components/switch-button';
 @import 'app_2/_common/components/ui-loader';
 @import 'app_2/_common/components/full-page-modal';
-@import 'app_2/_common/inline_icons';
-@import 'app_2/_common/fullscreen_dialog';
-@import 'app_2/_common/mobile_widget';
+@import 'app_2/_common/inline-icons';
+@import 'app_2/_common/fullscreen-dialog';
+@import 'app_2/_common/mobile-widget';
 
 // Modules
 @import 'app_2/modules/contract';
-@import 'app_2/modules/error_pages';
+@import 'app_2/modules/error-pages';
 @import 'app_2/modules/portfolio';
 @import 'app_2/modules/settings';
-@import 'app_2/modules/smart_chart';
+@import 'app_2/modules/smart-chart';
 @import 'app_2/modules/statement';
 @import 'app_2/modules/trading';
 

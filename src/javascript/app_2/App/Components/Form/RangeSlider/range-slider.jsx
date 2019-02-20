@@ -3,7 +3,7 @@ import { observer } from 'mobx-react';
 import PropTypes    from 'prop-types';
 import React        from 'react';
 import { localize } from '_common/localize';
-import TickSteps    from './tick_steps.jsx';
+import TickSteps    from './tick-steps.jsx';
 
 const RangeSlider = ({
     className,

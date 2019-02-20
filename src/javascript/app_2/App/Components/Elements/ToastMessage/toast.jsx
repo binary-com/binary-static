@@ -1,7 +1,7 @@
 import PropTypes   from 'prop-types';
 import React       from 'react';
 import classNames  from 'classnames';
-import CloseButton from './close_button.jsx';
+import CloseButton from './close-button.jsx';
 import {
     DEFAULT_DELAY,
     POSITIONS,

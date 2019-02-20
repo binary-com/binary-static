@@ -1,7 +1,7 @@
 import { PropTypes as MobxPropTypes } from 'mobx-react';
 import React                          from 'react';
 import PropTypes                      from 'prop-types';
-import PortfolioCard                  from './portfolio_card.jsx';
+import PortfolioCard                  from './portfolio-card.jsx';
 
 const CardList = ({ data, currency }) => (
     <div className='card-list'>

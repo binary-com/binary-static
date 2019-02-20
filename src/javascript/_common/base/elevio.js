@@ -14,7 +14,7 @@ const Elevio = (() => {
             if (available_elev_languages.indexOf(current_language) !== -1) {
                 window._elev.setLanguage(current_language); // eslint-disable-line no-underscore-dangle
             } else {
-                window._elev.setLanguage('en');
+                window._elev.setLanguage('en'); // eslint-disable-line no-underscore-dangle
             }
             setUserInfo(elev);
             setTranslations(elev);

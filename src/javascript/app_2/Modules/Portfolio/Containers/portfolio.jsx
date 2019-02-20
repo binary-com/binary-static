@@ -7,8 +7,8 @@ import DataTable                      from 'App/Components/Elements/DataTable';
 import { getContractPath }            from 'App/Components/Routes/helpers';
 import { connect }                    from 'Stores/connect';
 import CardList                       from '../Components/card-list.jsx';
-import EmptyPortfolioMessage          from '../Components/empty_portfolio_message.jsx';
-import { getTableColumnsTemplate }    from '../Constants/data_table_constants';
+import EmptyPortfolioMessage          from '../Components/empty-portfolio-message.jsx';
+import { getTableColumnsTemplate }    from '../Constants/data-table-constants';
 import Loading                        from '../../../../../templates/_common/components/loading.jsx';
 
 class Portfolio extends React.Component {

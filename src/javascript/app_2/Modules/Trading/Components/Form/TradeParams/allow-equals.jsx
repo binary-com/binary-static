@@ -2,7 +2,7 @@ import React          from 'react';
 import PropTypes      from 'prop-types';
 import { localize }   from '_common/localize';
 import Tooltip        from 'App/Components/Elements/tooltip.jsx';
-import InputField     from 'App/Components/Form/input_field.jsx';
+import InputField     from 'App/Components/Form/input-field.jsx';
 
 const AllowEquals = ({
     is_allow_equal,

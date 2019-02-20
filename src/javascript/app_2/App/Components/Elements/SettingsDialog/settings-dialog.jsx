@@ -38,7 +38,7 @@ class SettingsDialog extends React.PureComponent {
 
     render() {
         const settings_dialog_class = classNames('settings-dialog', {
-            'show': this.props.is_open,
+            'settings-dialog__container--show': this.props.is_open,
         });
         const settings_dialog_container_class = classNames('settings-dialog__container', {
             'settings-dialog__container--hide': this.props.is_language_dialog_visible,
