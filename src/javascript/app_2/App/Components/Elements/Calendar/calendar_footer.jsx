@@ -14,6 +14,7 @@ const CalendarFooter = ({
                 { has_today_btn &&
                     <IconCalendarToday
                         className='calendar__icon calendar__icon--today'
+                        classNamePath='calendar__icon-path'
                         onClick={onClick}
                     />
                 }

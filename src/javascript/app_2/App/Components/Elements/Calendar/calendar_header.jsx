@@ -55,7 +55,7 @@ const CalendarHeader = ({
                 })}
                 onClick={is_prev_year_disabled ? undefined : () => navigateTo(subYears(calendar_date, num_of_years))}
             >
-                <IconChevronDoubleLeft />
+                <IconChevronDoubleLeft classNamePath='calendar__nav-icon' />
             </CalendarButton>
             <CalendarButton
                 className={classNames('calendar__nav calendar__nav--prev-month', {
@@ -64,7 +64,7 @@ const CalendarHeader = ({
                 is_hidden={!is_date_view}
                 onClick={is_prev_month_disabled ? undefined : () => navigateTo(subMonths(calendar_date, 1))}
             >
-                <IconChevronLeft />
+                <IconChevronLeft classNamePath='calendar__nav-icon' />
             </CalendarButton>
 
             <React.Fragment>
@@ -105,7 +105,7 @@ const CalendarHeader = ({
                 is_hidden={!is_date_view}
                 onClick={is_next_month_disabled ? undefined : () => navigateTo(addMonths(calendar_date, 1))}
             >
-                <IconChevronRight />
+                <IconChevronRight classNamePath='calendar__nav-icon' />
             </CalendarButton>
             <CalendarButton
                 className={classNames('calendar__nav calendar__nav--next-year', {
@@ -113,7 +113,7 @@ const CalendarHeader = ({
                 })}
                 onClick={is_next_year_disabled ? undefined : () => navigateTo(addYears(calendar_date, num_of_years))}
             >
-                <IconChevronDoubleRight />
+                <IconChevronDoubleRight classNamePath='calendar__nav-icon' />
             </CalendarButton>
         </div>
     );

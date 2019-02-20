@@ -102,6 +102,8 @@ const getDays = ({
                 { ((has_events || is_closes_early) && !is_other_month && !is_before_min_or_after_max_date) &&
                     <Tooltip
                         alignment='top'
+                        className='calendar__cell-tooltip'
+                        classNameIcon='calendar__cell-tooltip-icon'
                         icon='dot'
                         message={message}
                     />
