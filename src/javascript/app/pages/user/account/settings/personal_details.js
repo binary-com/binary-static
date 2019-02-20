@@ -65,7 +65,8 @@ const PersonalDetails = (() => {
         const landing_companies = State.getResponse('landing_company');
         const changeable        = landing_companies.financial_company.changeable_fields;
         if (changeable && changeable.only_before_auth) {
-            changeable_fields = changeable.only_before_auth;
+            // TODO: remove tax_id and tax_residence when api is fixed.
+            changeable_fields = changeable.only_before_auth.concat(['tax_id', 'tax_residence']);
         }
     };
 
@@ -88,13 +89,7 @@ const PersonalDetails = (() => {
         }
 
         if (changeable_fields.includes('date_of_birth')) {
-            const $input_el = $('#date_of_birth');
-            $input_el
-                .attr('data-value', toISOFormat(moment().subtract(18, 'years')))
-                .change(function() {
-                    return CommonFunctions.dateValueChanged(this, 'date');
-                })
-                .setVisibility(1);
+            $('#date_of_birth').setVisibility(1);
 
             DatePicker.init({
                 selector: '#date_of_birth',
@@ -149,7 +144,8 @@ const PersonalDetails = (() => {
 
         if (has_changeable_fields) {
             displayChangeableFields(data);
-            $(real_acc_elements).setVisibility(1);
+            CommonFunctions.getElementById('tax_information_form').setVisibility(1);
+            // $(real_acc_elements).setVisibility(1);
         } else if (is_virtual) {
             $(real_acc_elements).remove();
         } else {
@@ -217,13 +213,16 @@ const PersonalDetails = (() => {
                         if (force_update) { // Force pushing values, used for (API-)expected values
                             $element.attr({ 'data-force': true, 'data-value': el_value });
                         }
-                        if (!has_label) {
-                            CommonFunctions.getElementById(`row_lbl_${key}`).setVisibility(0);
-                        }
                         // Update data-value on change for inputs
                         if (should_update_value) {
                             CommonFunctions.getElementById(`row_${key}`).setVisibility(1);
-                            $(element_key).change(function () {this.setAttribute('data-value', this.value);});
+                            $(element_key).change(function () {
+                                if (this.getAttribute('id') === 'date_of_birth') {
+                                    this.setAttribute('data-value', toISOFormat(moment(this.value, 'DD MMM, YYYY')));
+                                    return CommonFunctions.dateValueChanged(this, 'date');
+                                }
+                                return this.setAttribute('data-value', this.value);
+                            });
                         }
                     }
                 }
@@ -275,6 +274,7 @@ const PersonalDetails = (() => {
                 { selector: '#phone',                  validations: ['req', 'phone', ['length', { min: 8, max: 35, value: () => $('#phone').val().replace(/\D/g,'') }]] },
                 { selector: '#place_of_birth',         validations: ['req'] },
                 { selector: '#account_opening_reason', validations: ['req'] },
+                { selector: '#date_of_birth',          validations: ['req'] },
 
                 { selector: '#tax_residence',  validations: (is_tax_req) ? ['req'] : '' },
                 { selector: '#citizen',        validations: (is_financial || is_gaming || is_for_mt_citizen) ? ['req'] : '' },
