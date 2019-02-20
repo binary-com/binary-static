@@ -48,7 +48,7 @@ module.exports = {
         'no-extra-semicolons'                              : true,
         'no-invalid-double-slash-comments'                 : true,
         'number-leading-zero'                              : 'always',
-        'number-max-precision'                             : 2,
+        'number-max-precision'                             : 3,
         'number-no-trailing-zeros'                         : true,
         // 'plugin/selector-bem-pattern'                      : { preset: 'bem', implicitComponents: 'src/sass/app_2/**/*.scss' },
         'plugin/selector-bem-pattern'                      : { preset: 'bem', implicitComponents: 'src/sass/app_2/modules/trading.scss' },

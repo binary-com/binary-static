@@ -34,6 +34,7 @@ module.exports = [
     'Barrier',
     'Barrier Change',
     'Bid',
+    'Binary Coin',
     'Binary Options Trading has been disabled on your account. Kindly [_1]contact customer support[_2] for assistance.',
     'Bitcoin',
     'Bitcoin Cash',
