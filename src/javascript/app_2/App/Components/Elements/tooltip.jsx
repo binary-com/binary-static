@@ -37,7 +37,7 @@ class Tooltip extends React.Component {
                 {icon === 'info' &&
                     <React.Fragment>
                         <IconInfoOutline
-                            className='tooltip__icon'
+                            className={classNames(icon, 'tooltip__icon')}
                             onMouseEnter={this.onMouseEnter}
                             onMouseLeave={this.onMouseLeave}
                         />
@@ -48,8 +48,8 @@ class Tooltip extends React.Component {
                         />
                     </React.Fragment>
                 }
-                {icon === 'question' && <IconQuestion />}
-                {icon === 'dot'      && <IconRedDot />}
+                {icon === 'question' && <IconQuestion className={classNames(icon, 'tooltip__icon')} />}
+                {icon === 'dot'      && <IconRedDot className={classNames(icon, 'tooltip__icon')} />}
                 {children}
             </span>
         );

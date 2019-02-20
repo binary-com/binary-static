@@ -20,10 +20,6 @@ describe('Tooltip', () => {
         expect(wrapper.find('.info').exists()).to.be.true;
         expect(wrapper.find('.question').exists()).to.be.false;
     });
-    it('should have default class if invalid prop icon is passed', () => {
-        const wrapper = shallow(<Tooltip icon='invalid-icon' />);
-        expect(wrapper.find('.question').exists()).to.be.true;
-    });
     it('should have data-tooltip equal to message passed in props', () => {
         const wrapper = shallow(<Tooltip message='This is a tooltip' />);
         expect(wrapper.prop('data-tooltip')).to.be.equal('This is a tooltip');
