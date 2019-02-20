@@ -370,6 +370,12 @@
             background: url('../images/pages/trade/put_spread.svg') no-repeat center top;
             background-size: 50%;
         }
+        &.RUNHIGH {
+            background: url('../images/pages/trade/run_high.svg') no-repeat center top;
+        }
+        &.RUNLOW {
+            background: url('../images/pages/trade/run_low.svg') no-repeat center top;
+        }
         &.TICKHIGH {
             background: url('../images/pages/trade/high_tick.svg') no-repeat center top;
         }
