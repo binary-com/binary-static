@@ -2,12 +2,12 @@ import classNames from 'classnames';
 import PropTypes  from 'prop-types';
 import React      from 'react';
 
-const IconFlag = ({ type, className }) => {
-    let Icon;
+const IconCountryFlag = ({ type, className }) => {
+    let IconCountry;
     if (type) {
         switch (type) {
             case 'de':
-                Icon = (
+                IconCountry = (
                     <React.Fragment>
                         <defs>
                             <rect id='a' width='24' height='16' rx='2' />
@@ -25,7 +25,7 @@ const IconFlag = ({ type, className }) => {
                 );
                 break;
             case 'es':
-                Icon = (
+                IconCountry = (
                     <React.Fragment>
                         <defs>
                             <rect id='a' width='24' height='16' rx='2' />
@@ -47,7 +47,7 @@ const IconFlag = ({ type, className }) => {
                 );
                 break;
             case 'fr':
-                Icon = (
+                IconCountry = (
                     <React.Fragment>
                         <defs>
                             <rect id='a' width='24' height='16' rx='2' />
@@ -65,7 +65,7 @@ const IconFlag = ({ type, className }) => {
                 );
                 break;
             case 'id':
-                Icon = (
+                IconCountry = (
                     <React.Fragment>
                         <defs>
                             <rect id='a' width='24' height='16' rx='2' />
@@ -82,7 +82,7 @@ const IconFlag = ({ type, className }) => {
                 );
                 break;
             case 'it':
-                Icon = (
+                IconCountry = (
                     <React.Fragment>
                         <defs>
                             <rect id='a' width='24' height='16' rx='2' />
@@ -100,7 +100,7 @@ const IconFlag = ({ type, className }) => {
                 );
                 break;
             case 'pl':
-                Icon = (
+                IconCountry = (
                     <g fill='none' fillRule='evenodd'>
                         <g fillRule='nonzero'>
                             <path d='M0 14.16c0 1.01.805 1.827 1.797 1.827h20.406c.992 0 1.797-.818 1.797-1.826V8H0v6.16z' fill='#F44336' />
@@ -111,7 +111,7 @@ const IconFlag = ({ type, className }) => {
                 );
                 break;
             case 'pt':
-                Icon = (
+                IconCountry = (
                     <React.Fragment>
                         <defs>
                             <rect id='a' width='24' height='16' rx='2' />
@@ -133,7 +133,7 @@ const IconFlag = ({ type, className }) => {
                 );
                 break;
             case 'ru':
-                Icon = (
+                IconCountry = (
                     <React.Fragment>
                         <defs>
                             <rect id='a' width='24' height='16' rx='2' />
@@ -151,7 +151,7 @@ const IconFlag = ({ type, className }) => {
                 );
                 break;
             case 'th':
-                Icon = (
+                IconCountry = (
                     <React.Fragment>
                         <defs>
                             <rect id='a' width='24' height='16' rx='2' />
@@ -169,7 +169,7 @@ const IconFlag = ({ type, className }) => {
                 );
                 break;
             case 'vi':
-                Icon = (
+                IconCountry = (
                     <React.Fragment>
                         <defs>
                             <rect id='a' width='24' height='16' rx='2' />
@@ -186,7 +186,7 @@ const IconFlag = ({ type, className }) => {
                 );
                 break;
             case 'zh_cn':
-                Icon = (
+                IconCountry = (
                     <React.Fragment>
                         <defs>
                             <rect id='a' width='24' height='16' rx='2' />
@@ -202,7 +202,7 @@ const IconFlag = ({ type, className }) => {
                 );
                 break;
             case 'zh_tw':
-                Icon = (
+                IconCountry = (
                     <React.Fragment>
                         <defs>
                             <rect id='a' width='24' height='16' rx='2' />
@@ -218,7 +218,7 @@ const IconFlag = ({ type, className }) => {
                 );
                 break;
             default: // en
-                Icon = (
+                IconCountry = (
                     <g fill='none' fillRule='evenodd'>
                         <g fillRule='nonzero'>
                             <path d='M22.203.013H1.797C.805.013 0 .831 0 1.84v12.322c0 1.008.805 1.826 1.797 1.826h20.406c.992 0 1.797-.818 1.797-1.826V1.839C24 .831 23.195.013 22.203.013z' fill='#0D47A1' />
@@ -233,15 +233,15 @@ const IconFlag = ({ type, className }) => {
     }
     return (
         <svg className={classNames('inline-icon', className)} width='24' height='16' viewBox='0 0 24 16' xmlns='http://www.w3.org/2000/svg'>
-            {Icon}
+            {IconCountry}
         </svg>
 
     );
 };
 
-IconFlag.propTypes = {
+IconCountryFlag.propTypes = {
     className: PropTypes.string,
     type     : PropTypes.string,
 };
 
-export { IconFlag };
+export { IconCountryFlag };

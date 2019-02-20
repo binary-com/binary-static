@@ -4,7 +4,7 @@ import React           from 'react';
 import { localize }    from '_common/localize';
 import {
     IconBack,
-    IconFlag }         from 'Assets/Common';
+    IconCountryFlag }  from 'Assets/Common';
 import {
     getAllowedLanguages,
     getURL }           from 'Utils/Language';
@@ -25,7 +25,7 @@ const LanguageDialog = ({ hide, is_visible, is_settings_on }) => {
                     <React.Fragment key={key}>
                         <div className='language-row'>
                             <a href={getURL(key)} >
-                                <IconFlag className='flag' type={key.replace(/(\s|_)/, '-').toLowerCase()} />
+                                <IconCountryFlag className='flag' type={key.replace(/(\s|_)/, '-').toLowerCase()} />
                                 <span>{getAllowedLanguages()[key]}</span>
                             </a>
                         </div>
