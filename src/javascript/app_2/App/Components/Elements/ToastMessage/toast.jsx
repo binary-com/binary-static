@@ -1,11 +1,15 @@
-import PropTypes   from 'prop-types';
-import React       from 'react';
-import classNames  from 'classnames';
-import CloseButton from './close_button.jsx';
+import PropTypes        from 'prop-types';
+import React            from 'react';
+import classNames       from 'classnames';
+import { IconError }    from 'Assets/Common/icon_error.jsx';
+import { IconInfoBlue } from 'Assets/Common/icon_info_blue.jsx';
+import { IconWarning }  from 'Assets/Common/icon_warning.jsx';
+import { IconSuccess }  from 'Assets/Common/icon_success.jsx';
+import CloseButton      from './close_button.jsx';
 import {
     DEFAULT_DELAY,
     POSITIONS,
-    TYPES }        from './constants';
+    TYPES }             from './constants';
 
 const Toast = ({
     data,
@@ -31,7 +35,10 @@ const Toast = ({
             onClick={onClick}
         >
             <div className='toast__body__icon'>
-                <span className={`toast__body__icon--${data.type.toLowerCase()}`} />
+                { data.type === 'ERROR'   && <IconError /> }
+                { data.type === 'INFO'    && <IconInfoBlue /> }
+                { data.type === 'SUCCESS' && <IconSuccess /> }
+                { data.type === 'WARNING' && <IconWarning /> }
             </div>
             <div className='toast__body__message'>
                 {data.message}

@@ -18,3 +18,5 @@ export * from './icon_minus.jsx';
 export * from './icon_plus.jsx';
 export * from './icon_question.jsx';
 export * from './icon_red_dot.jsx';
+export * from './icon_success.jsx';
+export * from './icon_warning.jsx';

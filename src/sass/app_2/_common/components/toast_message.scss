@@ -21,13 +21,6 @@ $TOAST_BORDER_COLOR_INFO      : rgb(33, 150, 243); // #2196F3
 $TOAST_BORDER_COLOR_SUCCESS   : rgb(76, 175, 80);  // #4CAF50
 $TOAST_BORDER_COLOR_WARNING   : rgb(255, 193, 7);  // #FFC107
 
-// SVG files configs
-$IC_CLOSE_NORMAL: url('../images/common/toast/ic_close_normal.svg');
-$IC_ERROR       : url('../images/common/toast/ic_error.svg');
-$IC_INFO        : url('../images/common/toast/ic_info.svg');
-$IC_SUCCESS     : url('../images/common/toast/ic_success.svg');
-$IC_WARNING     : url('../images/common/toast/ic_warning.svg');
-
 .toast {
     z-index: 9999;
     position: absolute;
@@ -62,9 +55,6 @@ $IC_WARNING     : url('../images/common/toast/ic_warning.svg');
             opacity: 0.7;
             color: $TOAST_CLOSE_BUTTON_COLOR;
 
-            &:before {
-                content: $IC_CLOSE_NORMAL;
-            }
             &:hover, &:focus {
                 opacity: 1;
             }
@@ -75,18 +65,6 @@ $IC_WARNING     : url('../images/common/toast/ic_warning.svg');
             span {
                 margin-right: 0.8em;
                 padding-top: 0.5em;
-            }
-            &--error:before {
-                content: $IC_ERROR;
-            }
-            &--info:before {
-                content: $IC_INFO;
-            }
-            &--success:before {
-                content: $IC_SUCCESS;
-            }
-            &--warning:before {
-                content: $IC_WARNING;
             }
         }
         &--error {
@@ -142,9 +120,6 @@ $IC_WARNING     : url('../images/common/toast/ic_warning.svg');
             background-color: $TOAST_BACKGROUND_COLOR_INFO;
             color: $TOAST_TEXT_COLOR_DARK;
 
-            &__close-button {
-                color: $TOAST_CLOSE_BUTTON_COLOR_DARK;
-            }
             &--error {
                 background-color: $TOAST_BACKGROUND_COLOR_ERROR_DARK !important;
             }
