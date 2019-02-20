@@ -1,10 +1,9 @@
 import PropTypes            from 'prop-types';
 import React                from 'react';
 import { Scrollbars }       from 'tt-react-custom-scrollbars';
-import {
-    IconChevronLeft,
-    IconChevronRight,
-    IconBack }              from 'Assets/Common';
+import { IconBack }         from 'Assets/Common/icon_back.jsx';
+import { IconChevronLeft }  from 'Assets/Common/icon_chevron_left.jsx';
+import { IconChevronRight } from 'Assets/Common/icon_chevron_right.jsx';
 import { TradeCategories }  from 'Assets/Trading/Categories/trade_categories.jsx';
 import Button               from 'App/Components/Form/button.jsx';
 import { localize }         from '_common/localize';
