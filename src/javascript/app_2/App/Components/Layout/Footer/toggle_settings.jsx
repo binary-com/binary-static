@@ -3,7 +3,7 @@ import PropTypes         from 'prop-types';
 import React             from 'react';
 import { CSSTransition } from 'react-transition-group';
 import { IconSettings }  from 'Assets/Footer';
-import SettingsDialog    from '../../Elements/SettingsDialog/settings_dialog.jsx';
+import SettingsDialog    from '../../Elements/SettingsDialog/settings-dialog.jsx';
 
 const ToggleSettings = ({
     is_language_visible,

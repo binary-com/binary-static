@@ -2,7 +2,7 @@ import React         from 'react';
 import PropTypes     from 'prop-types';
 import { localize }  from '_common/localize';
 import URL           from '_common/url';
-import FullPageModal from 'App/Components/Elements/FullPageModal/full_page_modal.jsx';
+import FullPageModal from 'App/Components/Elements/FullPageModal/full-page-modal.jsx';
 import Localize      from 'App/Components/Elements/localize.jsx';
 import { connect }   from 'Stores/connect';
 

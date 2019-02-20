@@ -1,6 +1,6 @@
 import PropTypes    from 'prop-types';
 import React        from 'react';
-import SwitchButton from '../switch_button.jsx';
+import SwitchButton from '../switch-button.jsx';
 
 const DrawerToggle = ({
     text,

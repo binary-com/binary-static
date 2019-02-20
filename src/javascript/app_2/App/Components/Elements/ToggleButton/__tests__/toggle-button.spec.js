@@ -2,7 +2,7 @@ import { expect }   from 'chai';
 import { shallow }  from 'enzyme';
 import React        from 'react';
 import { fake }     from 'sinon';
-import ToggleButton from '../toggle_button.jsx';
+import ToggleButton from '../toggle-button.jsx';
 import Button       from '../../../Form/button.jsx';
 
 describe('<ToggleButton />', () => {

@@ -2,7 +2,7 @@ import PropTypes       from 'prop-types';
 import React           from 'react';
 import { Link }        from 'react-router-dom';
 import { localize }    from '_common/localize';
-import UILoader        from 'App/Components/Elements/ui_loader.jsx';
+import UILoader        from 'App/Components/Elements/ui-loader.jsx';
 import routes          from 'Constants/routes';
 import { connect }     from 'Stores/connect';
 import DetailsContents from '../Components/Details/details_contents.jsx';

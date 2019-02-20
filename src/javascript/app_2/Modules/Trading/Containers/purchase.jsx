@@ -4,7 +4,7 @@ import { localize }      from '_common/localize';
 import { isEmptyObject } from '_common/utility';
 import Money             from 'App/Components/Elements/money.jsx';
 import { PopConfirm }    from 'App/Components/Elements/PopConfirm';
-import UILoader          from 'App/Components/Elements/ui_loader.jsx';
+import UILoader          from 'App/Components/Elements/ui-loader.jsx';
 import Button            from 'App/Components/Form/button.jsx';
 import Fieldset          from 'App/Components/Form/fieldset.jsx';
 import { IconTradeType } from 'Assets/Trading/Types';

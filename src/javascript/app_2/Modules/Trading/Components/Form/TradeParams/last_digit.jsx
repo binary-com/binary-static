@@ -2,7 +2,7 @@ import { observer }   from 'mobx-react';
 import PropTypes      from 'prop-types';
 import React          from 'react';
 import { localize }   from '_common/localize';
-import NumberSelector from 'App/Components/Form/number_selector.jsx';
+import NumberSelector from 'App/Components/Form/number-selector.jsx';
 import Fieldset       from 'App/Components/Form/fieldset.jsx';
 
 const LastDigit = ({

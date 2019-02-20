@@ -4,8 +4,8 @@ import {
     shallow }            from 'enzyme';
 import React             from 'react';
 import { fake }          from 'sinon';
-import ToggleButton      from '../toggle_button.jsx';
-import ToggleButtonGroup from '../toggle_button_group.jsx';
+import ToggleButton      from '../toggle-button.jsx';
+import ToggleButtonGroup from '../toggle-button-group.jsx';
 
 describe('<ToggleButtonGroup />', () => {
     it('should render a <ToggleButtonGroup /> element', () => {
