@@ -1,10 +1,11 @@
-import React      from 'react';
-import { expect } from 'chai';
+import React            from 'react';
+import { expect }       from 'chai';
 import { 
     configure, 
-    shallow }     from 'enzyme';
-import Adapter    from 'enzyme-adapter-react-16'; // TODO: move this to a test config file
-import Calendar   from '../index';
+    shallow }           from 'enzyme';
+import Adapter          from 'enzyme-adapter-react-16'; // TODO: move this to a test config file
+import Calendar         from '../index';
+import { testChildren } from '../../../../../test_helper';
 
 configure({ adapter: new Adapter() }); // TODO: move this to a test config file
 
@@ -14,4 +15,5 @@ describe('<Calendar />', () => {
         const wrapper = shallow(<Calendar />);
         expect(wrapper).to.have.length(1);
     });
+    // TODO: Add calender tests
 });
