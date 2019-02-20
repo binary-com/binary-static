@@ -2,6 +2,7 @@ const Client           = require('../../base/client');
 const BinarySocket     = require('../../base/socket');
 const isCryptocurrency = require('../../common/currency').isCryptocurrency;
 const getElementById   = require('../../../_common/common_functions').getElementById;
+const localize         = require('../../../_common/localize').localize;
 const paramsHash       = require('../../../_common/url').paramsHash;
 const urlFor           = require('../../../_common/url').urlFor;
 const getPropertyValue = require('../../../_common/utility').getPropertyValue;
@@ -42,6 +43,7 @@ const Cashier = (() => {
 
     const displayTopUpButton = () => {
         BinarySocket.wait('balance').then((response) => {
+            const el_virtual_topup_info = getElementById('virtual_topup_info');
             const balance   = +response.balance.balance;
             const can_topup = balance <= 1000;
             const top_up_id = '#VRT_topup_link';
@@ -55,6 +57,9 @@ const Cashier = (() => {
                 href        = href || urlFor('/cashier/top_up_virtualws');
                 new_el.href = href;
             }
+            el_virtual_topup_info.innerText = can_topup
+                ? localize('Your virtual account balance is currently below [_1]. You may top up your account with an additional [_2].', [`${Client.get('currency')} 1,000.00`, `${Client.get('currency')} 10,000.00`])
+                : localize('You can top up your virtual account with an additional [_1] if your balance falls below [_2].', [`${Client.get('currency')} 10,000.00`, `${Client.get('currency')} 1,000.00`]);
             $a.replaceWith($('<a/>', new_el));
             $(top_up_id).parent().setVisibility(1);
         });

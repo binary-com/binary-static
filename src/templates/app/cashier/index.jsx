@@ -84,7 +84,7 @@ const Cashier = () => (
             <div className='gr-row'>
                 <IconWithLink img_id='virtual_money_icon' img_src={it.url_for('images/pages/cashier/virtual_topup.svg')} />
                 <div className='gr-6 gr-8-m'>
-                    <span>{it.L('You can top up your virtual account with an additional USD 10,000.00 if your balance falls below USD 1,000.00.')}</span>
+                    <span id={'virtual_topup_info'} />
                 </div>
                 <DepositWithdrawButton is_virtual />
             </div>
