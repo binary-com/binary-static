@@ -49,6 +49,7 @@ const Amount = ({
                     name='basis'
                     value={basis}
                     onChange={onChange}
+                    className='no-margin'
                 />
                 {!is_single_currency &&
                     <Dropdown

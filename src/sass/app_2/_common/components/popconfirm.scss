@@ -9,11 +9,11 @@ button.btn {
 .popconfirm {
     position: absolute;
     left: 50%;
-    bottom: 40px;
+    bottom: 4em;
     background: $COLOR_WHITE;
     box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.14);
     width: 348px;
-    min-height: 90px;
+    min-height: 9em;
     font-weight: 500;
     border-radius: 4px;
     transform: scale(0, 0) translate(-50%, 0);
@@ -31,7 +31,7 @@ button.btn {
         justify-content: flex-end;
 
         .btn {
-            margin: 0 8px;
+            margin: 0 0.8em;
             box-shadow: none;
             text-decoration: none;
             display: flex;
@@ -40,23 +40,23 @@ button.btn {
 
             span {
                 color: $COLOR_DARK_BLUE_5;
-                font-size: 12px;
+                font-size: 1.2em;
             }
         }
     }
     &-title {
-        margin: 8px;
-        padding: 8px;
+        margin: 0.8em;
+        padding: 0.8em;
         display: flex;
         flex-direction: row;
         align-items: center;
 
         svg {
-            margin-right: 8px;
+            margin-right: 0.8em;
         }
         h4 {
             color: $COLOR_DARK_BLUE_5;
-            font-size: 12px;
+            font-size: 1.2em;
             font-weight: 300;
             text-transform: none;
             padding: 0;
@@ -68,9 +68,9 @@ button.btn {
         // arrow pointing down
         position: absolute;
         content: '';
-        bottom: -3px;
+        bottom: -0.3em;
         left: 50%;
-        margin-left: -5px;
+        margin-left: -0.5em;
         border-width: 5px;
         border-style: solid;
         border-color: transparent $COLOR_WHITE $COLOR_WHITE transparent;
@@ -80,12 +80,12 @@ button.btn {
 
     // Alignments
     &.bottom {
-        top: 40px;
+        top: 4em;
         bottom: unset;
         transform-origin: left top;
 
         &:after {
-            top: -3px;
+            top: -0.3em;
             bottom: unset;
             transform: rotate(-135deg);
         }
@@ -93,7 +93,7 @@ button.btn {
     &.right {
         bottom: 50%;
         left: unset;
-        right: -20px;
+        right: -2em;
         transform-origin: right bottom;
         transform: scale(0, 0) translate(100%, 50%);
 
@@ -108,7 +108,7 @@ button.btn {
     }
     &.left {
         bottom: 50%;
-        left: -20px;
+        left: -2em;
         transform-origin: left bottom;
         transform: scale(0, 0) translate(-100%, 50%);
 
@@ -117,7 +117,7 @@ button.btn {
         }
         &:after {
             left: unset;
-            right: -3px;
+            right: -0.3em;
             bottom: 45%;
             transform: rotate(-45deg);
         }
@@ -149,7 +149,7 @@ button.btn {
         }
     }
     &.bottom-right {
-        top: 40px;
+        top: 4em;
         bottom: unset;
         transform-origin: right top;
         transform: scale(0, 0) translate(0, 0);
@@ -160,7 +160,7 @@ button.btn {
             transform: scale(1, 1) translate(0, 0);
         }
         &:after {
-            top: -3px;
+            top: -0.3em;
             bottom: unset;
             left: unset;
             right: 5%;
@@ -169,7 +169,7 @@ button.btn {
         }
     }
     &.bottom-left {
-        top: 40px;
+        top: 4em;
         bottom: unset;
         transform-origin: left top;
         transform: scale(0, 0) translate(0, 0);
@@ -179,7 +179,7 @@ button.btn {
             transform: scale(1, 1) translate(0, 0);
         }
         &:after {
-            top: -3px;
+            top: -0.3em;
             left: 8%;
             bottom: unset;
             transform: rotate(-135deg);

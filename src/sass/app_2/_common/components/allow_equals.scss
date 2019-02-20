@@ -1,69 +1,38 @@
 .allow-equals {
-    display: inline-block;
+    display: flex;
+    align-items: center;
 
-    .input-field {
-        display: inline-block;
-
-        input {
-            &:active, &:focus {
-                box-shadow: none;
-            }
-        }
+    > * {
+        margin: 0.8em 0 0;
     }
     label {
-        vertical-align: middle;
-        padding-left: 8px;
+        @include typeface(--small-left-normal-black, none);
+        @include toEm(padding-left, 8px, 1.2em);
         cursor: pointer;
-        font-size: 0.75rem;
-    }
-    .tooltip {
-        display: inline-block;
-        height: 12px;
-        width: 12px;
-
-        .info {
-            vertical-align: middle;
-            padding-left: 2px;
-
-            &:after {
-                transform: scale(0.75);
-            }
-        }
     }
     .tooltip[data-tooltip] {
-        i {
-            &:before {
-                content: url('../images/common/tooltip/ic_tooltip_info_dark.svg');
-                position: absolute;
-                right: 100%;
-                z-index: 10;
-                opacity: 0;
-                transition: all 0.18s ease-out 0.18s;
-                margin-right: 380px;
-                margin-top: -3px;
-            }
-            &:hover:before {
-                opacity: 1;
-                transform: translate(-50%, 0);
-            }
-        }
+        margin-top: 1.1em;
+
         &:before {
-            background: $COLOR_LIGHT_BLACK_1 !important;
-            color: $COLOR_WHITE;
-            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+            padding-left: 3em;
         }
-        &:after {
-            border-left-color: $COLOR_LIGHT_BLACK_1 !important;
-            margin-right: 98px;
+        &:before, &:after {
+            right: 112px;
         }
-        &:hover:after, &:hover:before {
-            opacity: 1;
+        i.info:before {
+            left: -39.6em;
         }
-        &[data-tooltip-pos=left] {
-            &:before {
-                padding-left: 40px;
-                margin-right: 110px;
-            }
+        i.info:after {
+            transform: scale(0.75);
+        }
+    }
+}
+
+// Dark Theme
+.theme--dark {
+    .allow-equals {
+        label {
+            color: $COLOR_DARK_BLUE_7;
         }
     }
 }
