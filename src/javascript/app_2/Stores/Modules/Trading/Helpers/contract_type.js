@@ -271,9 +271,9 @@ const ContractType = (() => {
                                         trading_times[trading_times_response.echo_req.trading_times] = {};
                                     }
                                     trading_times[trading_times_response.echo_req.trading_times][symbol.symbol] = {
-                                        'open': symbol.times.open,
+                                        'open' : symbol.times.open,
                                         'close': symbol.times.close,
-                                    }
+                                    };
                                 }
                             }
                         }
