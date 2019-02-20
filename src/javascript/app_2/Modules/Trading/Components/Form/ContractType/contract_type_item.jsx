@@ -15,16 +15,16 @@ const ContractTypeItem = ({
         (contract.value !== 'rise_fall_equal') &&
         <div
             key={idx}
-            className={`list-item ${value === contract.value ? 'selected' : ''}`}
+            className={`contract-type-item ${value === contract.value ? 'contract-type-item--selected' : ''}`}
             name={name}
             value={contract.value}
             onClick={(e) => handleSelect(contract, e)}
         >
             <IconTradeCategory category={contract.value} />
-            <span className='contract-title'>
+            <span className='contract-type-item__title'>
                 {contract.text}
             </span>
-            <div id='info-icon' className='trade-type-info-icon' onClick={() => handleInfoClick(contract)}>
+            <div id='info-icon' className='contract-type-item__icon' onClick={() => handleInfoClick(contract)}>
                 <IconTooltip />
             </div>
         </div>

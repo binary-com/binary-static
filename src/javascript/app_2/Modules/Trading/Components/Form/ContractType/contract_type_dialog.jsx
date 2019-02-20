@@ -28,7 +28,7 @@ const ContractTypeDialog = ({
             unmountOnExit
         >
             <div className='contracts-type-dialog'>
-                <div className='list-container'>
+                <div className='contracts-type-dialog__list-container'>
                     {children}
                 </div>
             </div>
