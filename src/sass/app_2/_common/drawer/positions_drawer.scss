@@ -1,4 +1,4 @@
-$header-height: 40px;
+$header-height: 4em;
 
 // Trade page animation performance fix #perfmatters
 .trade-container + .positions-drawer {
@@ -43,20 +43,20 @@ $header-height: 40px;
         display: flex;
         flex-direction: row;
         align-items: center;
-        padding: 0 10px;
+        padding: 0 1em;
     }
     &__body {
         height: calc(100% - #{$header-height});
-        padding: 8px 0;
+        padding: 0.8em 0;
         box-sizing: border-box;
         overflow: hidden;
     }
     &__title {
-        font-size: 14px;
+        font-size: 1.4em;
         font-weight: bold;
     }
     &__icon-main {
-        margin-right: 8px;
+        margin-right: 0.8em;
     }
     &__icon-close {
         display: inline-block;
@@ -64,8 +64,8 @@ $header-height: 40px;
         cursor: pointer;
 
         svg {
-            height: 16px;
-            width: 16px;
+            height: 1.6em;
+            width: 1.6em;
         }
     }
     /*
@@ -81,8 +81,8 @@ $header-height: 40px;
         color: $COLOR_LIGHT_BLACK_1;
 
         &__wrapper {
-            padding: 8px;
-            margin: 0 10px;
+            padding: 0.8em;
+            margin: 0 1em;
             border: 1px solid $COLOR_WHITE;
             background: $COLOR_WHITE;
             border-radius: $BORDER_RADIUS;
@@ -145,7 +145,7 @@ $header-height: 40px;
             }
         }
         &__type {
-            font-size: 12px;
+            font-size: 1.2em;
             display: flex;
             justify-content: flex-end;
             margin-right: 0.5rem;
@@ -157,19 +157,22 @@ $header-height: 40px;
                 align-items: center;
 
                 .type-wrapper {
-                    margin: 0 8px 0px 0;
+                    margin: 0 0.4em 0 0;
                 }
                 span {
-                    width: 30px;
+                    width: 3em;
                 }
             }
         }
         &__symbol {
-            font-size: 12px;
             margin-left: 0.5rem;
+            font-size: 1em;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
         }
         &__indicative {
-            font-size: 12px;
+            font-size: 1.2em;
             font-weight: bold;
             display: flex;
             justify-content: center;
@@ -177,9 +180,17 @@ $header-height: 40px;
 
             &-label {
                 color: $COLOR_LIGHT_BLACK_1;
-                font-size: 10px;
+                font-size: 0.8em;
                 font-weight: normal;
                 margin-bottom: 0.5em;
+            }
+            &:after {
+                content: '';
+                display: inline-block;
+                height: 1.6em;
+                width: 1.6em;
+                background-size: 1.6em 1.6em;
+                margin-left: 0.2em;
             }
             &--price-moved-up {
                 color: $COLOR_GREEN_1;
@@ -191,11 +202,11 @@ $header-height: 40px;
                 color: $COLOR_LIGHT_BLACK_1;
             }
             &--no-resale {
-                color: $COLOR_LIGHT_BLACK_4;
+                color: $COLOR_LIGHT_BLACK_2;
             }
         }
         &__remaining-time {
-            font-size: 12px;
+            font-size: 1em;
             color: $COLOR_LIGHT_BLACK_2;
 
             .remaining-time {

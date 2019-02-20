@@ -44,7 +44,7 @@
                 transition: transform 0.25s ease;
             }
             .cq-top-ui-widgets {
-                left: 90px;
+                left: 9em;
 
                 .info-box {
                     transform: translate3d(0, 0, 0);
@@ -72,7 +72,7 @@
 
     .sidebar-container {
         position: relative;
-        margin-left: 16px;
+        margin-left: 1.6em;
         width: $SIDEBAR_WIDTH;
 
         .sidebar-items {
@@ -81,7 +81,7 @@
             transition: transform 0.4s ease, opacity 0.2s linear;
 
             &__slideout {
-                transform: translate3d(calc(100% + 20px), 0, 0);
+                transform: translate3d(calc(100% + 2px), 0, 0);
                 pointer-events: none;
                 opacity: 0;
             }
@@ -98,20 +98,20 @@
             transform: none;
 
             &-enter {
-                transform: translate3d(calc(100% + 16px), 0, 0);
+                transform: translate3d(calc(100% + 1.6em), 0, 0);
                 opacity: 0;
             }
             &-exit {
-                transform: translate3d(calc(100% + 16px), 0, 0);
+                transform: translate3d(calc(100% + 1.6em), 0, 0);
                 opacity: 0;
                 pointer-events: none;
             }
         }
         fieldset {
-            margin-bottom: 4px;
+            margin-bottom: 0.4em;
 
             .time-picker {
-                margin-top: 8px;
+                margin-top: 0.8em;
             }
         }
     }
@@ -119,9 +119,9 @@
 /* trade-app layout */
 .trade-container {
     position: relative;
-    padding: 16px 12px 0;
+    padding: 0.8em 1.2em 0;
     display: flex;
-    min-height: calc(100vh - 99px);
+    min-height: calc(100vh - 9.1em);
     transition: transform 0.25s ease;
     will-change: transform;
     overflow: hidden;
@@ -137,7 +137,7 @@
             z-index: 0;
 
             div.ciq-chart {
-                height: calc(100% - 50px);
+                height: calc(100% - 5em);
                 box-shadow: none;
 
                 div.chartContainer {
@@ -165,7 +165,7 @@
             }
             div.cq-chart-control-left {
                 .cq-top-ui-widgets {
-                    width: calc(100% - 90px);
+                    width: calc(100% - 9em);
                 }
             }
         }
@@ -196,26 +196,26 @@
                     position: fixed;
                     height: 100%;
                     width: 100%;
-                    top: 47px;
-                    left: -1px;
+                    top: 4.7em;
+                    left: -0.1em;
                 }
                 .cq-categorical-display {
                     .ic-icon.icon-close-menu {
                         svg {
-                            width: 24px;
-                            height: 24px;
+                            width: 2.4em;
+                            height: 2.4em;
                         }
                     }
                     .cq-lookup-filters.scroll-down {
                         max-height: unset;
                     }
                     .scrollbar-container.cq-scroll-panel {
-                        left: -1px;
+                        left: -0.1em;
                     }
                 }
             }
             .smartcharts-mobile .cq-modal-dropdown .cq-menu-overlay .cq-menu-dropdown {
-                bottom: 48px;
+                bottom: 4.8em;
             }
         }
     }
@@ -224,10 +224,10 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 32px;
+        height: 3.2em;
         width: 100%;
-        margin-top: 8px;
-        margin-bottom: -8px;
+        margin-top: 0.8em;
+        margin-bottom: -0.8em;
         border: 0;
         background: none;
 
@@ -252,8 +252,8 @@
 }
 
 .category-wrapper, .type-wrapper {
-    width: 24px;
-    height: 24px;
+    width: 2.4em;
+    height: 2.4em;
     background: $COLOR_LIGHT_BLACK_4_SOLID;
     border-radius: 3px;
     display: flex;
@@ -284,7 +284,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: calc(100vh - 90px); // TODO: replace with 100vh - header height - footer height
+    height: calc(100vh - 9em); // TODO: replace with 100vh - header height - footer height
 
     p {
         @include interpolate(font-size, 320px, 1440px, 14px, 20px);

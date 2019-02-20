@@ -1,10 +1,10 @@
 .contract-container {
-    font-size: 0.85rem;
+    font-size: 1.4em;
     border-radius: $BORDER_RADIUS;
     position: relative;
 
     .contract-header {
-        max-height: 2rem;
+        max-height: 32px;
         overflow: hidden;
         border-radius: 4px 4px 0 0;
 
@@ -15,14 +15,14 @@
             .header-result, .header-purchased {
                 display: flex;
                 align-items: center;
-                padding: 0 10px;
+                padding: 5px;
                 color: $COLOR_WHITE;
                 font-weight: bold;
-                line-height: 2rem;
+                line-height: 1.5;
 
                 svg {
                     display: inline-block;
-                    margin-right: 7px;
+                    margin-right: 0.7em;
                 }
             }
         }
@@ -59,31 +59,35 @@
             }
         }
     }
+    .btn span {
+        font-size: 1em;
+    }
     .contract-contents {
-        padding: 10px;
+        padding: 1em;
         background: $COLOR_LIGHT_BLACK_4_SOLID;
-        font-size: 0.75rem;
+        font-size: 1em;
         border-top-width: 0;
         border-radius: 0 0 4px 4px;
 
         .longcode {
             font-weight: 300;
             text-align: center;
-            line-height: 1.1rem;
+            line-height: 1.5;
         }
         .ref-number, .info-header {
-            margin-top: 10px;
+            margin-top: 1em;
             font-weight: 300;
             text-align: center;
             background-color: $COLOR_LIGHT_BLACK_4_SOLID;
-            line-height: 1.7rem;
+            line-height: 1.5;
+            padding: 4px;
         }
         .info-header {
             font-weight: bold;
         }
         .info-item {
             display: flex;
-            padding: 7px 0;
+            padding: 0.7em 0;
 
             > div {
                 align-self: center;
@@ -101,23 +105,23 @@
     }
 }
 
-$CONTRACT_INFO_BOX_PADDING: 15px;
+$CONTRACT_INFO_BOX_PADDING: 1.5em;
 
 .info-box-container {
     position: absolute;
     z-index: 10;
-    top: 10px;
-    right: 10px;
+    top: 1em;
+    right: 1em;
     transform: none;
     opacity: 1;
     transition: transform 0.4s ease, opacity 0.4s linear;
 
     &-enter {
-        transform: translateY(calc(-100% - 20px));
+        transform: translateY(calc(-100% - 2em));
         opacity: 0;
     }
     &-exit {
-        transform: translateY(calc(-100% - 20px));
+        transform: translateY(calc(-100% - 2em));
         opacity: 0;
     }
     .info-box {
@@ -132,9 +136,9 @@ $CONTRACT_INFO_BOX_PADDING: 15px;
             align-items: center;
 
             svg {
-                width: 24px;
-                height: 24px;
-                margin-right: 10px;
+                width: 2.4em;
+                height: 2.4em;
+                margin-right: 1em;
 
                 .color1-fill {
                     fill: $COLOR_GREEN_1;
@@ -143,12 +147,12 @@ $CONTRACT_INFO_BOX_PADDING: 15px;
             .pl-value {
                 color: $COLOR_GREEN_1;
                 font-weight: bold;
-                font-size: 1rem;
-                line-height: 1.5rem;
+                font-size: 1.6em;
+                line-height: 1.5em;
 
                 .percentage {
                     display: inline-block;
-                    margin-left: 7px;
+                    margin-left: 0.7em;
                 }
             }
             &.lost {
@@ -160,19 +164,19 @@ $CONTRACT_INFO_BOX_PADDING: 15px;
                 }
             }
             .sell-info {
-                margin-right: 20px;
+                margin-right: 2em;
                 text-align: center;
-                line-height: 1.2rem;
+                line-height: 1.2em;
             }
         }
         .general {
             display: flex;
             align-items: center;
-            line-height: 1.4rem;
+            line-height: 1.4em;
 
             .values {
-                margin-left: 10px;
-                margin-right: 20px;
+                margin-left: 1em;
+                margin-right: 2em;
                 text-align: right;
                 font-weight: bold;
 
@@ -194,8 +198,8 @@ $CONTRACT_INFO_BOX_PADDING: 15px;
 
                 .tooltip {
                     position: absolute;
-                    bottom: 5px;
-                    right: 5px;
+                    bottom: 0.5em;
+                    right: 0.5em;
                     line-height: 0;
 
                     &:before {
@@ -215,23 +219,23 @@ $CONTRACT_INFO_BOX_PADDING: 15px;
             }
             .digit-list {
                 display: flex;
-                margin: 0 25px 0 10px;
+                margin: 0 2.5em 0 1em;
 
                 .digit-info {
-                    margin: 0 4px;
+                    margin: 0 0.4em;
                     text-align: center;
 
                     .digit-value {
-                        width: 32px;
-                        height: 32px;
-                        margin-bottom: 5px;
+                        width: 3.2em;
+                        height: 3.2em;
+                        margin-bottom: 0.5em;
                         border: 2px solid $COLOR_GREEN_1;
                         border-radius: 50%;
                         display: flex;
                         justify-content: center;
                         align-items: center;
                         color: $COLOR_GREEN_1;
-                        font-size: 1rem;
+                        font-size: 1.6em;
                         font-weight: bold;
 
                         &.loss {
@@ -251,27 +255,27 @@ $CONTRACT_INFO_BOX_PADDING: 15px;
                         }
                     }
                     .tick-number {
-                        line-height: 0.6rem;
-                        font-size: 0.6rem;
+                        line-height: 0.6em;
+                        font-size: 0.6em;
                     }
                 }
             }
             .expired {
-                margin-right: -25px;
+                margin-right: -2.5em;
             }
         }
     }
     .message {
-        margin-top: 5px;
+        margin-top: 0.5em;
         border: 1px solid $COLOR_RED;
         border-radius: $BORDER_RADIUS;
-        padding: 10px;
+        padding: 1em;
         background-color: rgba(244, 67, 54, 0.16);
         display: flex;
         align-items: center;
 
         .message-icon {
-            margin-right: 10px;
+            margin-right: 1em;
         }
         .message-text {
             flex-grow: 1;
