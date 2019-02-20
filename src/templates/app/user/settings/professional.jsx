@@ -21,7 +21,7 @@ const Professional = () => (
             <div className='invisible' id='rejected'>
                 <p>{it.L('Your request to be treated as a professional client is [_1]not approved[_2].', '<strong>', '</strong>')}</p>
                 <p>{it.L('Please check your inbox for details.')}</p>
-                <p>{it.L('Your account remains under the retail client category. You are welcome to reapply as a professional client at any time.')}</p>
+                <p>{`${it.L('Your account remains under the retail client category.')} ${it.L('Please reapply once the required criteria has been fulfilled.')}`}</p>
             </div>
 
             <form className='form gr-padding-10 invisible' id='frm_professional'>
