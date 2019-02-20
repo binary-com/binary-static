@@ -12,6 +12,8 @@ import Tooltip                   from '../Elements/tooltip.jsx';
 const InputField = ({
     checked,
     className,
+    classNameInput,
+    classNamePrefix,
     data_tip,
     data_value,
     error_messages,
@@ -55,7 +57,7 @@ const InputField = ({
 
         if (type === 'number') {
             const is_empty = !e.target.value || e.target.value === '' || e.target.value === '  ';
-            const signed_regex = is_signed ? '[\+\-\.0-9]$' : '^';
+            const signed_regex = is_signed ? '[+\-\.0-9]$' : '^';
 
             const is_number = new RegExp(`${signed_regex}(\\d*)?${is_float ? '(\\.\\d+)?' : ''}$`)
                 .test(e.target.value);
@@ -115,7 +117,7 @@ const InputField = ({
     const input =
         <input
             checked={checked ? 'checked' : ''}
-            className={classNames({ error: has_error })}
+            className={classNames({ error: has_error }, classNameInput)}
             disabled={is_disabled}
             data-for={`error_tooltip_${name}`}
             data-value={data_value}
@@ -159,12 +161,12 @@ const InputField = ({
         <div
             className={`input-field ${className || ''}`}
         >
-            <Tooltip alignment='left' message={has_error ? error_messages[0] : null }>
+            <Tooltip className={classNames('', { 'with-label': label })} alignment='left' message={has_error ? error_messages[0] : null }>
                 {!!label &&
                     <label htmlFor={name} className='input-label'>{label}</label>
                 }
                 {!!prefix &&
-                    <span className={`symbols ${prefix.toLowerCase()}`} />
+                    <span className={classNames(classNamePrefix, 'symbols', prefix.toLowerCase())} />
                 }
                 {!!helper &&
                     <span className='input-helper'>{helper}</span>
@@ -181,6 +183,8 @@ const InputField = ({
 InputField.propTypes = {
     checked                 : PropTypes.number,
     className               : PropTypes.string,
+    classNameInput          : PropTypes.string,
+    classNamePrefix         : PropTypes.string,
     error_messages          : MobxPropTypes.arrayOrObservableArray,
     fractional_digits       : PropTypes.number,
     helper                  : PropTypes.string,

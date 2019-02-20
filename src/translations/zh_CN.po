@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-02-11 08:04\n"
+"PO-Revision-Date: 2019-02-20 10:53\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -1284,6 +1284,9 @@ msgstr "应用程序"
 msgid "Apply now"
 msgstr "立即申请"
 
+msgid "Apply now as a professional investor"
+msgstr ""
+
 msgid "Apply to become a %1 <a href=\"%2\">payment agent</a>."
 msgstr "申请成为 %1 <a href=\"%2\">支付代理</a>。"
 
@@ -1857,6 +1860,9 @@ msgstr "Binary Bot"
 msgid "Binary Bot released"
 msgstr "Binary Bot 已发布"
 
+msgid "Binary Coin"
+msgstr "Binary 硬币"
+
 msgid "Binary Group (hereinafter referred to as 'Binary Group of companies', 'the Company') is commited to protecting the privacy and security of the applicant's personal information. This privacy notice sets out the types of data that the Company collects on the applicant. It also sets out how the Company collect and use the applicant' personal data, and how long it keeps them and other relevant information about the applicant's data in accordance with the General Data Protection Regulation (EU) 2016/679 (hereafter referred to as 'GDPR') and Data Protection Act 2018."
 msgstr "Binary集团 (以下简称 \"Binary集团\"、\"公司\") 致力于保护申请人个人信息的隐私和安全。本隐私声明列出了公司向申请人收集的数据类型。同时还列出了公司如何根据(EU) 2016/679《一般数据保护条例》 (以下简称为 \"GDPR ') 和2018数据保护法收集和使用申请人的个人数据、保存期限以及关于申请人数据的其他相关信息。"
 
@@ -2058,8 +2064,8 @@ msgstr "通过点击OK键，您确认已经阅读并接受条款和条件。"
 msgid "By clicking buy or sell, your order will be filled at the best possible price with either one of our liquidity providers or on our own books (according to the best streaming price at the time of your order placement);"
 msgstr "通过点击 \"买入\" 或 \"卖出\", 我们的其中一个流动性提供商或我们自己将以最优惠的价格 (根据您下订单时的最佳流动性价格) 执行您的订单;"
 
-msgid "By default, all clients are treated as retail but anyone can request to be treated as professional."
-msgstr "默认情况下，所有客户都被归类为零售客户，但任何人都可以要求被归类为专业客户。"
+msgid "By default, all %1 clients are retail clients but anyone can request to be treated as a professional client."
+msgstr "默认情况下，所有%1客户都属于零售客户，但任何人都可以要求被归类为专业客户。"
 
 msgid "By default, the intelligent order routing system ensures that the top of the book is always comprised of the best bid and offer rates quoted by the competing liquidity providers. However, during times of market illiquidity, this may change with likelihood of execution being the primary execution factor."
 msgstr "默认情况下，智能订单路由系统确保记录本的最顶部位总是由最佳竞标价格和参与竞争的流动性提供商报价组成。然而，在市场流动性不足的时候，这种情况可能会改变，并由执行可能性作主要执行因素。"
@@ -4888,6 +4894,9 @@ msgstr "我特此确认, 我提供的税务信息是真实和完整的。将来�
 msgid "I understand the risks involved and agree to the %1Terms & Conditions of the MAM facility%2"
 msgstr "我了解所涉及的风险, 并同意接受%1MAM设施的条款和条件%2"
 
+msgid "I want to reapply"
+msgstr ""
+
 msgid "I would like to be treated as a professional client."
 msgstr "我要被视为专业客户。"
 
@@ -5875,6 +5884,9 @@ msgstr "查看关于我们企业文化的详情"
 msgid "Learn more about submitting essential documents with our handy infographic:"
 msgstr "透过方便的信息图了解有关提交重要文件的详情:"
 
+msgid "Learn more."
+msgstr "了解详情。"
+
 msgid "Learn the basic concepts of trading Meta assets on MetaTrader 5."
 msgstr "了解MetaTrader 5进行Meta资产交易的基本概念。"
 
@@ -6639,6 +6651,9 @@ msgstr "月份"
 
 msgid "More benefits"
 msgstr "更多福利"
+
+msgid "More information can be found in an email sent to you."
+msgstr ""
 
 msgid "More specifically, when the Company enters into a binary option trade with the client (each, a \"Contract\"), the Company has a duty to provide the client with 'best execution'. Best execution means that the Company must take reasonable steps to obtain the best possible result for the client when executing a client order. This document provides a summary of the Company's best execution policy."
 msgstr "具体来说，当公司和客户进行二元期权交易时（双方有了“合约”），公司有责任向客户提供\"最佳执行方案”。最佳执行方案的意思是，当公司执行客户的订单时，必须采取合理的措施为客户获取最大效益。此文件是关于最佳执行方案政策的概述。"
@@ -7597,6 +7612,9 @@ msgstr "请检查您的电子邮件领取验证码以完成此程序。"
 msgid "Please check your email for the verification link to complete the process."
 msgstr "请检查您的电子邮件领取验证链接以完成此程序。"
 
+msgid "Please check your inbox for details."
+msgstr "请检查您的收件箱以便了解详情。"
+
 msgid "Please choose a currency"
 msgstr "请选择一种货币"
 
@@ -7677,6 +7695,9 @@ msgstr "请提供以下信息："
 
 msgid "Please read this %1privacy policy%2 before submitting your application."
 msgstr "提交申请前, 请阅读此 %1隐私政策%2。"
+
+msgid "Please reapply once the required criteria has been fulfilled."
+msgstr ""
 
 msgid "Please refer to the %1asset index%2 for each asset’s minimum and maximum contract durations based on trade type."
 msgstr "要了解每个资产基于交易类型的最低和最高合约期限，请参阅 %1资产指数%2。"
@@ -11625,8 +11646,8 @@ msgstr "我们将继续关闭未平仓合约，直到您的保证金水平高于
 msgid "We will hold you responsible for all your obligations under this Agreement in our course of providing the margin trading service described in this Agreement to you, even if you notify us that you are acting as the agent of an identified principal."
 msgstr "在我们根据此协议所述向您提供保证金交易服务期间，您必须对本协议项下您的所有义务负责，即使您通知我们您是某指定委托人的代理。"
 
-msgid "We will review your documents and get back to you within one working day."
-msgstr "我们将审阅您的文件, 并将于一个工作日内回复。"
+msgid "We will review your documents and get back to you within 3 working days."
+msgstr "我们将审阅您的文件, 并将于三个工作日内回复。"
 
 msgid "We will use reasonable endeavors within our control to ensure that all electronic data provided on the MT5 Trading Platform and all electronic transactions instructed and accepted from you to us, and executed by us are not subject to network latency."
 msgstr "我们将在可控制范围内合理地努力，确保您通过 MT5 交易平台和所有电子交易指示所收到并由我们执行提供的所有电子数据均不会受到网络延迟。"
@@ -11732,9 +11753,6 @@ msgstr "%1 IB计划的内容是什么？"
 
 msgid "What is the definition of a referred client?"
 msgstr "“推荐客户”的定义是什么？"
-
-msgid "What is this?"
-msgstr "这是什么？"
 
 msgid "What kind of reports can I generate?"
 msgstr "我可以生成哪些报告？"
@@ -11944,7 +11962,7 @@ msgid "Why Us"
 msgstr "为何选择我们"
 
 msgid "Why Us?"
-msgstr "为何选择我们？"
+msgstr "为何选我们?"
 
 msgid "Why do Clients choose to use Payment Agents?"
 msgstr "客户为什么选择使用支付代理？"
@@ -12721,6 +12739,9 @@ msgstr "您的账户已经得到完全验证，且您可在此查看您的<a hre
 msgid "Your account is restricted. Kindly %1contact customer support%2 for assistance."
 msgstr "您的账户已被限制。请%1联系客服部%2，以获得帮助。"
 
+msgid "Your account remains under the retail client category."
+msgstr ""
+
 msgid "Your account security is of paramount importance to us. Please consider the following initiatives and tools to enhance your account security:"
 msgstr "您的账户安全对我们来说至关重要。请考虑采用以下措施和工具以增强您的账户安全:"
 
@@ -12799,11 +12820,14 @@ msgstr "您的密码已成功重置。请用新密码登录您的账户。"
 msgid "Your personal information is used primarily as a way of validating you as the legitimate account owner and proper recipient of withdrawal payments. We also use this information to process your trades. We collect from you all personal and financial data directly relating to you when you fill in our account opening form. In all instances, you have either a legal or a contractual obligation to provide us with the information. If such information is not provided, we will be unable to provide you with our services."
 msgstr "您的个人信息主要用作证明您是合法的账户拥有者和提款付款的适当接收者的一种验证方式。我们也使用这些信息来处理您的交易。当您填写我们的开户表格时, 我们会向您收集所有与您直接相关的个人和财务数据。在所有情况下, 您都有法律或合同义务向我们提供信息。如果没有提供此类信息, 我们将无法为您提供我们的服务。"
 
+msgid "Your professional client request is %1not approved%2."
+msgstr ""
+
 msgid "Your profit or loss is calculated as follows:"
 msgstr "您的损益计算如下:"
 
-msgid "Your request to be treated as a professional client has been rejected. Please check your inbox for more details. Your account remains categorised as a retail client account."
-msgstr "您被归类为专业客户的请求已被拒绝。请查看收件箱了解更多详情。您的账户仍被归类为零售客户账户。"
+msgid "Your request to be treated as a professional client is %1not approved%2."
+msgstr "您申请成为专业客户的请求%1不受批准%2。"
 
 msgid "Your request to transfer %1 %2 from %3 to %4 has been successfully processed."
 msgstr "您从 %3 转账 %1%2 到 %4 的请求已成功处理。"

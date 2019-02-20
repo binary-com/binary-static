@@ -4,15 +4,16 @@ import React, { Fragment }            from 'react';
 import ButtonToggleMenu               from 'App/Components/Form/button_toggle_menu.jsx';
 import InputField                     from 'App/Components/Form/input_field.jsx';
 import RangeSlider                    from 'App/Components/Form/RangeSlider';
+import TradingDatePicker              from '../../DatePicker';
 
 const SimpleDuration = ({
     changeDurationUnit,
+    duration_t,
+    duration_units_list,
     getDurationFromUnit,
     number_input_props,
-    duration_units_list,
     shared_input_props,
     simple_duration_unit,
-    duration_t,
 }) => {
     const filterMinutesAndTicks = (arr) => {
         const filtered_arr = arr.filter(du => du.value === 't' || du.value === 'm');
@@ -40,8 +41,16 @@ const SimpleDuration = ({
                     {...shared_input_props}
                 />
             }
-            { simple_duration_unit !== 't' &&
+            { simple_duration_unit === 'd' &&
+                <TradingDatePicker
+                    alignment='left'
+                    mode='duration'
+                    name='duration'
+                />
+            }
+            { (simple_duration_unit !== 't' && simple_duration_unit !== 'd') &&
                 <InputField
+                    classNameInput='trade-container__input'
                     name='duration'
                     label={has_label ? duration_units_list[0].text : null}
                     value={getDurationFromUnit(simple_duration_unit)}

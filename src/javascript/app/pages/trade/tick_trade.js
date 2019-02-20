@@ -35,8 +35,7 @@ const TickDisplay = (() => {
         reset_spot_plotted,
         response_id,
         contract,
-        selected_tick,
-        entry_spot_offset;
+        selected_tick;
 
     let id_render = 'tick_chart';
 
@@ -63,7 +62,7 @@ const TickDisplay = (() => {
         display_decimals     = data.display_decimals || 2;
         show_contract_result = data.show_contract_result;
         reset_spot_plotted   = false;
-        entry_spot_offset    = data.barrier || undefined;
+        barrier              = data.barrier || undefined;
 
         if (data.id_render) {
             id_render = data.id_render;
@@ -214,8 +213,6 @@ const TickDisplay = (() => {
                 barrier_quote = final_barrier;
             } else if (contract && contract.barrier) {
                 barrier_quote = parseFloat(contract.barrier);
-            } else if (entry_spot_offset) {
-                barrier_quote = /^[+|-]/i.test(entry_spot_offset) ? Number(`${Math.round(`${barrier_quote + parseFloat(entry_spot_offset)}e${display_decimals}`)}e-${display_decimals}`) : entry_spot_offset;
             }
 
             chart.yAxis[0].addPlotLine({
@@ -369,6 +366,7 @@ const TickDisplay = (() => {
                 }
 
                 initialize({
+                    barrier,
                     symbol              : contract.underlying,
                     number_of_ticks     : contract.tick_count,
                     contract_category   : category,

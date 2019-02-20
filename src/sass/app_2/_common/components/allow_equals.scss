@@ -1,0 +1,38 @@
+.allow-equals {
+    display: flex;
+    align-items: center;
+
+    > * {
+        margin: 0.8em 0 0;
+    }
+    label {
+        @include typeface(--small-left-normal-black, none);
+        @include toEm(padding-left, 8px, 1.2em);
+        cursor: pointer;
+    }
+    .tooltip[data-tooltip] {
+        margin-top: 1.1em;
+
+        &:before {
+            padding-left: 3em;
+        }
+        &:before, &:after {
+            right: 112px;
+        }
+        i.info:before {
+            left: -39.6em;
+        }
+        i.info:after {
+            transform: scale(0.75);
+        }
+    }
+}
+
+// Dark Theme
+.theme--dark {
+    .allow-equals {
+        label {
+            color: $COLOR_DARK_BLUE_7;
+        }
+    }
+}
