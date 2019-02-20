@@ -116,7 +116,7 @@ const Purchase = (() => {
                             if (has_professional_requested) {
                                 message = localize('Your application to be treated as a professional client is being processed.');
                             } else if (has_professional_rejected) {
-                                const message_text = `${localize('Your professional client request is [_1]not approved[_2].', '<strong>', '</strong>')}<br />${localize('Please reapply once the required criteria has been fulfilled.')}<br /><br />${localize('More information can be found in an email sent to you.')}`;
+                                const message_text = `${localize('Your professional client request is [_1]not approved[_2].', ['<strong>', '</strong>'])}<br />${localize('Please reapply once the required criteria has been fulfilled.')}<br /><br />${localize('More information can be found in an email sent to you.')}`;
                                 const button_text  = localize('I want to reapply');
 
                                 message = prepareConfirmationErrorCta(message_text, button_text, true);
