@@ -109,9 +109,9 @@ const PositionsDrawerCard = ({
                 (is_valid_to_sell === 1) &&
                 <div className='positions-drawer-card__sell-button'>
                     <Button
-                        className='secondary green'
+                        className='primary orange'
                         is_disabled={!is_valid_to_sell}
-                        text={localize('Sell')}
+                        text={localize('Sell contract')}
                         onClick={() => onClickSell(id)}
                     />
                 </div>

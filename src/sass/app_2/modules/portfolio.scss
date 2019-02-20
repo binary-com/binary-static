@@ -1,3 +1,4 @@
+// TODO: Combine whatever selector / rule that's still needed from this and merge into positions_drawer
 .portfolio {
     padding: 1.5em 1.2em;
     height: 100%;
@@ -59,7 +60,7 @@
     }
     // empty portfolio message
     &-empty {
-        height: calc(100vh - 170px);
+        height: calc(100vh - 220px);
         display: flex;
 
         &__wrapper {

@@ -67,6 +67,11 @@ class PositionsDrawer extends React.Component {
                         {body_content}
                     </Scrollbars>
                 </div>
+                <div className='positions-drawer__footer'>
+                    <a className='btn secondary orange' href='javascript:;'>
+                        <span>{localize('Go to Reports')}</span>
+                    </a>
+                </div>
             </div>
         );
     }

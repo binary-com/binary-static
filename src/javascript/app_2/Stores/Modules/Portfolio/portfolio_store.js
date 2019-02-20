@@ -138,9 +138,12 @@ export default class PortfolioStore extends BaseStore {
     @action.bound
     accountSwitcherListener () {
         return new Promise((resolve) => {
+            this.clearTable();
+            WS.forgetAll('proposal_open_contract', 'transaction');
             if (this.data.length === 0) {
                 resolve(this.initializePortfolio());
             }
+            WS.subscribeProposalOpenContract(null, this.proposalOpenContractHandler, false);
         });
     }
 

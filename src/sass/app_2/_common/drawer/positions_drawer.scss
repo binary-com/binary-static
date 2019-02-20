@@ -18,7 +18,7 @@ $header-height: 4em;
 .positions-drawer {
     width: $POSITIONS_DRAWER_WIDTH;
     // removing 2px below for borders
-    height: calc(100vh - #{$HEADER_HEIGHT} - #{$FOOTER_HEIGHT} - 2px - (#{$POSITIONS_DRAWER_MARGIN} * 3));
+    height: calc(100vh - #{$HEADER_HEIGHT} - #{$FOOTER_HEIGHT} - 2px - (#{$POSITIONS_DRAWER_MARGIN} * 4));
     margin-top: #{$POSITIONS_DRAWER_MARGIN * 2};
     position: fixed;
     z-index: 2;
@@ -46,10 +46,25 @@ $header-height: 4em;
         padding: 0 1em;
     }
     &__body {
-        height: calc(100% - #{$header-height});
-        padding: 0.8em 0;
+        height: calc(100% - #{$header-height * 2});
+        padding: 0.8em 0 0;
         box-sizing: border-box;
         overflow: hidden;
+    }
+    &__footer {
+        height: 4em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .btn {
+            width: 100%;
+            margin: 0 8px;
+
+            span {
+                font-size: 1.2em;
+            }
+        }
     }
     &__title {
         font-size: 1.4em;
@@ -167,9 +182,6 @@ $header-height: 4em;
         &__symbol {
             margin-left: 0.5rem;
             font-size: 1em;
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
         }
         &__indicative {
             font-size: 1.2em;
@@ -258,6 +270,12 @@ $header-height: 4em;
             .btn {
                 margin: 4px;
                 width: 100%;
+
+                span {
+                    font-size: 1.2em;
+                    font-weight: bold;
+                    line-height: 1.5;
+                }
             }
         }
     }
@@ -305,6 +323,20 @@ $header-height: 4em;
             .positions-empty, p {
                 align-self: center;
                 color: $COLOR_WHITE;
+            }
+        }
+        &__footer {
+            background: $COLOR_DARK_BLUE_3;
+            border-color: $COLOR_DARK_BLUE_3;
+
+            .btn.secondary.orange {
+                background-color: $COLOR_DARK_BLUE_5;
+                border-color: $COLOR_DARK_BLUE_5;
+
+                span {
+                    color: $COLOR_WHITE;
+                    font-weight: bold;
+                }
             }
         }
     }
