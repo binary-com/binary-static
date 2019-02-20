@@ -22,6 +22,17 @@
         &:hover {
             border-color: $COLOR_LIGHT_GRAY_1;
         }
+        &--has-symbol {
+            justify-content: unset;
+
+            span {
+                right: 0;
+                float: right;
+                position: relative;
+                margin-left: auto;
+                margin-right: 0.6em;
+            }
+        }
     }
     &.no-margin .dropdown__display {
         margin: 0;
@@ -94,7 +105,6 @@
             position: absolute;
             width: 100%;
             max-height: 200px;
-            overflow-x: hidden;
             overflow-y: auto;
             z-index: 2;
             cursor: pointer;
@@ -108,7 +118,6 @@
                 .list__item span {
                     padding-left: 2.286em;
                     padding-right: 2.286em;
-                    overflow: hidden;
                     white-space: nowrap;
                     text-align: center;
                 }
@@ -121,9 +130,11 @@
             &__item {
                 width: 100%;
 
-                span {
+                &__title {
                     @include typeface(--paragraph-left-normal-black);
-                    display: block;
+                    display: flex;
+                    width: 100%;
+                    justify-content: center;
                     pointer-events: none;
                     vertical-align: middle;
                     padding-left: 1.6em;
@@ -134,12 +145,36 @@
                     display: inline-block;
                     vertical-align: middle;
                 }
+                &__tooltip {
+                    @include typeface(--paragraph-left-normal-black);
+                    height: auto;
+
+                    &-symbols {
+                        width: 32px;
+                        padding: 0;
+                        margin: 0;
+                        text-align: center;
+                        justify-content: center;
+                        display: flex;
+                    }
+                    &:before {
+                        font-size: 0.8em;
+                        line-height: 1em;
+                        padding: 0.4em;
+                        left: 30px;
+                    }
+                    &:after {
+                        left: 30px;
+                    }
+                }
                 &:hover, &--highlighted {
                     background-color: $COLOR_LIGHT_BLACK_4;
                 }
-                &--selected span {
-                    @include typeface(--paragraph-left-semibold-active);
-                    background-color: $COLOR_LIGHT_GRAY_1;
+                &--selected {
+                    &_title {
+                        @include typeface(--paragraph-left-semibold-active);
+                        background-color: $COLOR_LIGHT_GRAY_1;
+                    }
                 }
             }
             // fix for safari bug with overflow-x not working in dropdown
@@ -218,6 +253,14 @@
             .list__item {
                 span {
                     color: $COLOR_DARK_BLUE_7;
+                }
+                &__tooltip {
+                    width: 100%;
+
+                    i {
+                        height: auto;
+                        width: 100%;
+                    }
                 }
                 &--selected span {
                     color: $COLOR_WHITE;

@@ -52,16 +52,24 @@ const Amount = ({
                 {!is_single_currency &&
                 <Dropdown
                     className={classNames('no-margin', { 'trade-container__currency-options--show': !is_single_currency })}
+                    has_symbol
                     is_alignment_left
-                    is_nativepicker={is_nativepicker}
+                    is_nativepicker={false}
                     list={currencies_list}
                     name='currency'
                     value={currency}
                     onChange={onChange}
                 />
                 }
+                {is_single_currency &&
+                <div
+                    className='no-margin trade-container__currency'
+                >
+                    <span className={`symbols trade-container__currency-symbol ${(currency || '').toLowerCase()}`} />
+                </div>
+                }
                 <InputField
-                    className={classNames({ 'trade-container__amount--has-currency-options': !is_single_currency })}
+                    className={classNames('trade-container__amount', { 'trade-container__amount--has-currency-options': !is_single_currency })}
                     classNameInput='trade-container__input'
                     classNamePrefix='trade-container__currency'
                     currency={currency}
@@ -69,7 +77,6 @@ const Amount = ({
                     fractional_digits={getDecimalPlaces(currency)}
                     id='amount'
                     is_autocomplete_disabled
-                    is_expandable={is_single_currency}
                     is_float
                     is_incrementable
                     is_nativepicker={is_nativepicker}
@@ -77,7 +84,6 @@ const Amount = ({
                     max_length={10}
                     name='amount'
                     onChange={onChange}
-                    prefix={is_single_currency ? currency : null}
                     type='number'
                     value={amount}
                 />

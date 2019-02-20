@@ -40,11 +40,27 @@
         }
     }
     &__currency {
-        position: absolute;
-        display: block;
         text-align: center;
         z-index: 1;
-        color: $COLOR_LIGHT_BLACK_1;
+        margin: 0.8em 0 0;
+        color: rgba(0, 0, 0, 0.8);
+        position: relative;
+        float: left;
+        font-size: 10px;
+        height: 32px;
+        align-items: center;
+        justify-content: center;
+        margin-right: 1px;
+        width: 42px;
+        display: flex;
+        border-radius: 4px 0 0 4px;
+        background: $COLOR_WHITE;
+        border-color: $COLOR_WHITE;
+
+        &-symbol {
+            font-size: 1.4em;
+            line-height: 1.5;
+        }
     }
     &__price {
         line-height: 0.9rem;
@@ -133,21 +149,26 @@
         }
     }
     &__currency-options {
+        border-radius: 4px 0 0 4px;
+        background: $COLOR_DARK_BLUE_2;
+
         &--show {
-            margin-right: 5px;
-            width: calc(40% - 7.5px);
+            margin-right: 1px;
+            width: calc(25% - 1px);
             display: inline-block;
         }
     }
     &__amount {
-        &--has-currency-options {
-            margin-left: 5px;
-            width: calc(60% - 7.5px);
-            display: inline-block;
+        margin-left: 1px;
+        display: inline-block;
+        width: calc(100% - 44px);
 
-            .trade-container__input {
-                padding: 0 30px;
-            }
+        .trade-container__input {
+            padding: 0 30px;
+            border-radius: 0 4px 4px 0;
+        }
+        &--has-currency-options {
+            width: calc(75% - 1px);
         }
     }
 }

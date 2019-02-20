@@ -152,15 +152,21 @@ class Dropdown extends React.Component {
             >
                 <div
                     className={classNames('dropdown__display', {
-                        'dropdown__display--clicked': this.state.is_list_visible,
+                        'dropdown__display--clicked'   : this.state.is_list_visible,
+                        'dropdown__display--has-symbol': this.props.has_symbol,
                     })}
                     tabIndex={is_single_option ? '-1' : '0'}
                     onClick={this.handleVisibility}
                     onKeyDown={this.onKeyPressed}
                 >
+                    {this.props.has_symbol &&
+                    <span className={`symbols ${(this.props.value || '').toLowerCase()}`} />
+                    }
+                    {!this.props.has_symbol &&
                     <span name={this.props.name} value={this.props.value}>
                         {getDisplayText(this.props.list, this.props.value)}
                     </span>
+                    }
                 </div>
                 {
                     !is_single_option && <IconArrow className={classNames('select-arrow', {
@@ -204,6 +210,7 @@ class Dropdown extends React.Component {
                                         name={this.props.name}
                                         value={this.props.value}
                                         handleSelect={this.handleSelect}
+                                        has_symbol={this.props.has_symbol}
                                     /> :
                                     Object.keys(this.props.list).map(key => (
                                         <React.Fragment key={key}>
@@ -214,6 +221,7 @@ class Dropdown extends React.Component {
                                                 name={this.props.name}
                                                 value={this.props.value}
                                                 handleSelect={this.handleSelect}
+                                                has_symbol={this.props.has_symbol}
                                             />
                                         </React.Fragment>
                                     ))
@@ -229,6 +237,7 @@ class Dropdown extends React.Component {
 
 Dropdown.propTypes = {
     className        : PropTypes.string,
+    has_symbol       : PropTypes.bool,
     is_alignment_left: PropTypes.bool,
     is_nativepicker  : PropTypes.bool,
     list             : PropTypes.oneOfType([

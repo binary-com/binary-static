@@ -1,8 +1,10 @@
 import classNames from 'classnames';
 import PropTypes  from 'prop-types';
 import React      from 'react';
+import Tooltip    from 'App/Components/Elements/tooltip.jsx';
 
 const Items = ({
+    has_symbol,
     items,
     name,
     value,
@@ -21,7 +23,15 @@ const Items = ({
                 value={item.value}
                 onClick={handleSelect.bind(null, item)}
             >
-                <span>{item.text}</span>
+                {!!has_symbol && item.has_tooltip &&
+                <Tooltip alignment='top' className='list__item__tooltip' message={item.text}>
+                    <i><span className={`symbols list__item__tooltip-symbols ${(item.text || '').toLowerCase()}`} /></i>
+                </Tooltip>
+                }
+                {!!has_symbol && !item.has_tooltip &&
+                    <span className={`list__item__title symbols ${(item.text || '').toLowerCase()}`} />
+                }
+                {!has_symbol && <span className='list__item__title'>{item.text}</span>}
             </div>
         </React.Fragment>
     ))
@@ -29,6 +39,7 @@ const Items = ({
 
 Items.propTypes = {
     handleSelect  : PropTypes.func,
+    has_symbol    : PropTypes.bool,
     highlightedIdx: PropTypes.number,
     name          : PropTypes.string,
     value         : PropTypes.oneOfType([

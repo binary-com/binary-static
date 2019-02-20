@@ -64,9 +64,11 @@
 
             &--increment {
                 right: 2px; // fixed position
+                height: 28px;
             }
             &--decrement {
                 left: 2px; // fixed position
+                height: 28px;
             }
             &:hover {
                 cursor: pointer;
@@ -223,11 +225,6 @@
             &::placeholder {
                 color: $COLOR_DARK_BLUE_7;
             }
-        }
-        &.expandable-input-container {
-            background: $COLOR_DARK_BLUE_2;
-            border-radius: $BORDER_RADIUS;
-            border: 1px solid $COLOR_DARK_BLUE_2 !important;
         }
     }
     .input-wrapper {

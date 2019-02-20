@@ -5,7 +5,6 @@ import {
 import PropTypes                 from 'prop-types';
 import React                     from 'react';
 import { isCryptocurrency }      from '_common/base/currency_base';
-import ExpandableInput           from './expandable_input.jsx';
 import IncrementButtons          from './increment_buttons.jsx';
 import Input                     from './input.jsx';
 import Tooltip                   from '../../Elements/tooltip.jsx';
@@ -24,7 +23,6 @@ const InputField = ({
     id,
     is_autocomplete_disabled,
     is_disabled,
-    is_expandable,
     is_float,
     is_incrementable,
     is_negative_disabled,
@@ -171,7 +169,6 @@ const InputField = ({
                 min_is_disabled={min_is_disabled || (is_negative_disabled && calculateDecrementedValue() < 0)}
                 decrementValue={decrementValue}
             />
-            {!is_expandable && input }
         </div>;
 
     const input_tooltip =
@@ -180,32 +177,22 @@ const InputField = ({
             <label htmlFor={name} className='input-label'>{label}</label>
             }
             {!!prefix &&
-            <span className={classNames(classNamePrefix, 'symbols', prefix.toLowerCase(), { 'expandable-symbols': is_expandable })} />
+            <span className={classNames(classNamePrefix, 'symbols', prefix.toLowerCase())} />
             }
             {!!helper &&
             <span className='input-helper'>{helper}</span>
             }
-            {!is_expandable &&
-            (is_incrementable && type === 'number' ? <React.Fragment>{increment_buttons}</React.Fragment> : input)
+            {is_incrementable && type === 'number' &&
+                increment_buttons
             }
-            {is_expandable &&
-            <ExpandableInput
-                input_class={`expandable-${name}`}
-                input_resizer_class={`expandable-${name}-resizer`}
-            >
-                {input}
-            </ExpandableInput>
-            }
+            {input}
         </Tooltip>;
-
-    const expandableInputWrapper = (<label htmlFor={id} className='expandable-input-wrapper'>{input_tooltip}</label>);
 
     return (
         <div
-            className={`input-field ${className || ''} ${is_expandable ? (has_error ? 'expandable-input-container error' : 'expandable-input-container') : null}`}
+            className={`input-field ${className || ''}`}
         >
-            {is_incrementable && type === 'number' && is_expandable && increment_buttons}
-            {is_expandable ? expandableInputWrapper : input_tooltip}
+            {input_tooltip}
         </div>
     );
 };
@@ -225,7 +212,6 @@ InputField.propTypes = {
     id                      : PropTypes.string,
     is_autocomplete_disabled: PropTypes.bool,
     is_disabled             : PropTypes.string,
-    is_expandable           : PropTypes.bool,
     is_float                : PropTypes.bool,
     is_incrementable        : PropTypes.bool,
     is_negative_disabled    : PropTypes.bool,
