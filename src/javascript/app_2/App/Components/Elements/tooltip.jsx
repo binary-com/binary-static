@@ -1,9 +1,10 @@
-import classNames from 'classnames';
-import PropTypes  from 'prop-types';
-import React      from 'react';
-import { IconInfoBlue } from 'Assets/Common/icon_info_blue.jsx';
-import { IconQuestion } from 'Assets/Common/icon_question.jsx';
-import { IconRedDot }   from 'Assets/Common/icon_red_dot.jsx';
+import classNames          from 'classnames';
+import PropTypes           from 'prop-types';
+import React               from 'react';
+import { IconInfoBlue }    from 'Assets/Common/icon_info_blue.jsx';
+import { IconInfoOutline } from 'Assets/Common/icon_info_outline.jsx';
+import { IconQuestion }    from 'Assets/Common/icon_question.jsx';
+import { IconRedDot }      from 'Assets/Common/icon_red_dot.jsx';
 
 class Tooltip extends React.Component {
     state = {
