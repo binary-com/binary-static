@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-02-20 10:52\n"
+"PO-Revision-Date: 2019-02-20 14:15\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Korean\n"
 "MIME-Version: 1.0\n"
@@ -3442,6 +3442,9 @@ msgstr "안드로이드용 앱을 다운받으세요"
 msgid "Download your statement"
 msgstr ""
 
+msgid "Downs"
+msgstr ""
+
 msgid "Drive rapid growth and business development to support the company's sales and marketing objectives"
 msgstr ""
 
@@ -5191,10 +5194,16 @@ msgstr ""
 msgid "If you select \"rises\", you win the payout if the market price is higher than the entry spot."
 msgstr ""
 
+msgid "If you select %1\"Downs\"%2, you win the payout if consecutive ticks fall successively after the %1entry spot%2.%3No payout if any tick rises or is equal to any of the previous ticks."
+msgstr ""
+
 msgid "If you select %1\"High Tick\"%2, you win the payout if the selected tick is the %1highest among the next five ticks%2."
 msgstr ""
 
 msgid "If you select %1\"Low Tick\"%2, you win the payout if the selected tick is the %1lowest among the next five ticks%2."
+msgstr ""
+
+msgid "If you select %1\"Ups\"%2, you win the payout if consecutive ticks rise successively after the %1entry spot%2.%3No payout if any tick falls or is equal to any of the previous ticks."
 msgstr ""
 
 msgid "If you select a <strong>start time</strong> in the future, the <strong>start time</strong> is that which is selected and the <strong>entry spot</strong> is the price in effect at that time."
@@ -7666,7 +7675,7 @@ msgstr ""
 msgid "Please make sure that you first agree with the Agent on the terms of payment before submitting your request."
 msgstr ""
 
-msgid "Please note that Asians, Digits, Reset Call/Reset Put and High Ticks/Low Ticks are available exclusively with our Volatility Indices."
+msgid "Please note that Asians, Digits, Reset Call/Reset Put, High Ticks/Low Ticks, and Run Ups/Run Downs are available exclusively with our Volatility Indices."
 msgstr ""
 
 msgid "Please note that actual trading results may not correspond to optimized or back-tested results."
@@ -8531,6 +8540,15 @@ msgid "Roll-over Credit/Debit"
 msgstr ""
 
 msgid "Rolling Spot Forex;"
+msgstr ""
+
+msgid "Run"
+msgstr ""
+
+msgid "Run Downs"
+msgstr ""
+
+msgid "Run Ups"
 msgstr ""
 
 msgid "Russia"
@@ -9415,6 +9433,12 @@ msgstr ""
 msgid "The %1end time%2 is the selected number of minutes/hours after the %1start time%2."
 msgstr ""
 
+msgid "The %1entry spot%2 is the next tick after the %1start time%2."
+msgstr ""
+
+msgid "The %1exit spot%2 is the last tick when the contract ends. Contract ends when all ticks rise or fall successively, or when a single tick breaks the predicted pattern."
+msgstr ""
+
 msgid "The %1high%2 is the highest point ever reached by the market during the contract period."
 msgstr ""
 
@@ -9422,6 +9446,9 @@ msgid "The %1low%2 is the lowest point ever reached by the market during the con
 msgstr ""
 
 msgid "The %1start time%2 begins when the contract is processed by our servers."
+msgstr ""
+
+msgid "The %1start time%2 is when the contract has been processed by our servers."
 msgstr ""
 
 msgid "The <strong>contract period</strong> is the period between the <strong>next tick</strong> after the <strong>start time</strong> and the <strong>end time</strong>."
@@ -10233,6 +10260,9 @@ msgstr "인터넷을 기반으로 하는 거래 집행 트레이딩 시스템에
 
 msgid "There are two types of In/Out trades:"
 msgstr "인/아웃 트레이드에는 두 종류가 있습니다:"
+
+msgid "There are two types of Run trades:"
+msgstr ""
 
 msgid "There are two types of Up/Down trades:"
 msgstr ""
@@ -11197,6 +11227,9 @@ msgstr ""
 msgid "Upon the expiration or termination of this Agreement, for whatever reason, all rights and license granted to you in this Agreement, including use of the %1 API, shall immediately terminate. You agree to promptly cease all further use of the %1 API. Termination of this Agreement shall not act as a waiver of any breach of this Agreement and shall not act as a release of your liability for breach of its obligation under this Agreement. The Company shall not be liable to you for damages of any kind solely as a result of terminating this Agreement in accordance with its terms."
 msgstr "계약 종결 또는 만기시, 어떠한 이유든간에, %1 API의 사용을 포함하여 본 계약내에서 승인된 모든 권리와 라이센스는 즉시 종결됩니다. 당신은 %1 API를 더 이상 사용하는 것을 즉시 중지할 것을 동의합니다. 본 계약의 종결로 본 계약의 위반에 대해 면제되는 것이 아니며 본 계약 아래 의무사항의 위반에 대한 법적 책임에서 해방되는 것이 아닙니다. 본 회사는 관련 조항에 따라 본 계약이 종결됨으로써 생기는 어떠한 손해에 대하여 당신에게 법적책임이 없습니다."
 
+msgid "Ups"
+msgstr ""
+
 msgid "Usage Limit"
 msgstr "사용 한도"
 
@@ -11999,6 +12032,12 @@ msgid "Win maximum payout if the exit spot is higher than or equal to the upper 
 msgstr ""
 
 msgid "Win maximum payout if the exit spot is lower than or equal to the lower barrier."
+msgstr ""
+
+msgid "Win payout if consecutive ticks fall successively. Contract is lost when at least one tick rises or is equal to any of the previous ticks."
+msgstr ""
+
+msgid "Win payout if consecutive ticks rise successively. Contract is lost when at least one tick falls or is equal to any of the previous ticks."
 msgstr ""
 
 msgid "Win payout if exit spot is also equal to entry spot."

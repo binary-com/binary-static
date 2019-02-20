@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-02-20 10:53\n"
+"PO-Revision-Date: 2019-02-20 14:16\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -3441,6 +3441,9 @@ msgstr "下載Android應用程式"
 msgid "Download your statement"
 msgstr "下載您的月結單"
 
+msgid "Downs"
+msgstr ""
+
 msgid "Drive rapid growth and business development to support the company's sales and marketing objectives"
 msgstr "推動快速增長和業務發展，以支援公司的銷售和市場行銷目標"
 
@@ -5190,11 +5193,17 @@ msgstr "如果您選擇「上漲」期權，只要市場價格高於<strong>入�
 msgid "If you select \"rises\", you win the payout if the market price is higher than the entry spot."
 msgstr "如果您選擇「上漲」期權，只要市場價格高於入市現價，您將獲得賠付。"
 
+msgid "If you select %1\"Downs\"%2, you win the payout if consecutive ticks fall successively after the %1entry spot%2.%3No payout if any tick rises or is equal to any of the previous ticks."
+msgstr ""
+
 msgid "If you select %1\"High Tick\"%2, you win the payout if the selected tick is the %1highest among the next five ticks%2."
 msgstr "如果您選擇 %1\"高跳動點\"%2, 如果所選跳動點是接下來五個跳動點%2 中的 %1最高值, 可獲得賠付。"
 
 msgid "If you select %1\"Low Tick\"%2, you win the payout if the selected tick is the %1lowest among the next five ticks%2."
 msgstr "如果您選擇 %1\"低跳動點\"%2, 如果所選跳動點是接下來五個跳動點%2 中的 %1最低值, 可獲得賠付。"
+
+msgid "If you select %1\"Ups\"%2, you win the payout if consecutive ticks rise successively after the %1entry spot%2.%3No payout if any tick falls or is equal to any of the previous ticks."
+msgstr ""
 
 msgid "If you select a <strong>start time</strong> in the future, the <strong>start time</strong> is that which is selected and the <strong>entry spot</strong> is the price in effect at that time."
 msgstr "如果您選擇的<strong>開始時間</strong>為未來的某個時間，交易的<strong>開始時間</strong>就是您選擇的時間，<strong>入市現價</strong>就是當時的實時價格。"
@@ -7665,8 +7674,8 @@ msgstr "請登入。"
 msgid "Please make sure that you first agree with the Agent on the terms of payment before submitting your request."
 msgstr "在送出要求前，請確保您首先同意代理的支付條款。"
 
-msgid "Please note that Asians, Digits, Reset Call/Reset Put and High Ticks/Low Ticks are available exclusively with our Volatility Indices."
-msgstr "請注意，亞洲貨幣、數字交易、買權重設/賣權重設和高跳動點/低跳動點只適用於我們的波動指數。"
+msgid "Please note that Asians, Digits, Reset Call/Reset Put, High Ticks/Low Ticks, and Run Ups/Run Downs are available exclusively with our Volatility Indices."
+msgstr ""
 
 msgid "Please note that actual trading results may not correspond to optimized or back-tested results."
 msgstr "請注意, 實際交易結果可能與被優化或事後測試的結果不符。"
@@ -8531,6 +8540,15 @@ msgstr "轉到借入/貸出"
 
 msgid "Rolling Spot Forex;"
 msgstr "起伏現貨外匯"
+
+msgid "Run"
+msgstr ""
+
+msgid "Run Downs"
+msgstr ""
+
+msgid "Run Ups"
+msgstr ""
 
 msgid "Russia"
 msgstr "俄國"
@@ -9414,6 +9432,12 @@ msgstr "%1合約期限%2是在合約開始時間之後的%1第一個跳動點%2�
 msgid "The %1end time%2 is the selected number of minutes/hours after the %1start time%2."
 msgstr "%1收盤時間%2是%1開盤時間%2後的選定分鐘/小時數。"
 
+msgid "The %1entry spot%2 is the next tick after the %1start time%2."
+msgstr ""
+
+msgid "The %1exit spot%2 is the last tick when the contract ends. Contract ends when all ticks rise or fall successively, or when a single tick breaks the predicted pattern."
+msgstr ""
+
 msgid "The %1high%2 is the highest point ever reached by the market during the contract period."
 msgstr "%1最高值%2是市場在合同期內達到的最高點。"
 
@@ -9422,6 +9446,9 @@ msgstr "%1最低值%2是市場在合同期內達到的最低點。"
 
 msgid "The %1start time%2 begins when the contract is processed by our servers."
 msgstr "%1開盤時間%2即我們的伺服器開始處理合約的時間。"
+
+msgid "The %1start time%2 is when the contract has been processed by our servers."
+msgstr ""
 
 msgid "The <strong>contract period</strong> is the period between the <strong>next tick</strong> after the <strong>start time</strong> and the <strong>end time</strong>."
 msgstr "<strong>合約期限</strong>是在合約<strong>開始時間</strong> 之後的<strong>下一個跳動點</strong>和合約<strong>結束時間</strong>之間的期限。"
@@ -10232,6 +10259,9 @@ msgstr "在通過基於網際網路的交易系統執行交易時會存在諸多
 
 msgid "There are two types of In/Out trades:"
 msgstr "範圍內/外交易有兩種類型:"
+
+msgid "There are two types of Run trades:"
+msgstr ""
 
 msgid "There are two types of Up/Down trades:"
 msgstr "上漲/下跌交易有兩種類型:"
@@ -11196,6 +11226,9 @@ msgstr "您確認並理解一旦資金經理被撤銷後將失去代您管理帳
 msgid "Upon the expiration or termination of this Agreement, for whatever reason, all rights and license granted to you in this Agreement, including use of the %1 API, shall immediately terminate. You agree to promptly cease all further use of the %1 API. Termination of this Agreement shall not act as a waiver of any breach of this Agreement and shall not act as a release of your liability for breach of its obligation under this Agreement. The Company shall not be liable to you for damages of any kind solely as a result of terminating this Agreement in accordance with its terms."
 msgstr "本協議到期或終止時（不論是什麼原因），所有通過本協議授予您的權利和許可證，包括%1 API的使用權限，將立即終止。您同意立即停止繼續使用%1 API。本協議的終止不可視為放棄追究本協議任何違約行為，且不可視為放棄追究您違反本協議所須承擔的義務與責任。公司不對僅僅由於按照協議條款終止本協議的任何類型損失索賠承擔責任。"
 
+msgid "Ups"
+msgstr ""
+
 msgid "Usage Limit"
 msgstr "使用限制"
 
@@ -11999,6 +12032,12 @@ msgstr "如果退市現價高於或等於高障礙, 可獲得最大賠付。"
 
 msgid "Win maximum payout if the exit spot is lower than or equal to the lower barrier."
 msgstr "如果退市現價低於或等於低障礙, 可獲得最大賠付。"
+
+msgid "Win payout if consecutive ticks fall successively. Contract is lost when at least one tick rises or is equal to any of the previous ticks."
+msgstr ""
+
+msgid "Win payout if consecutive ticks rise successively. Contract is lost when at least one tick falls or is equal to any of the previous ticks."
+msgstr ""
 
 msgid "Win payout if exit spot is also equal to entry spot."
 msgstr "如果退市現貨價與入市現貨價相同, 則將贏得賠付。"

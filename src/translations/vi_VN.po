@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-02-20 10:53\n"
+"PO-Revision-Date: 2019-02-20 14:16\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Vietnamese\n"
 "MIME-Version: 1.0\n"
@@ -3441,6 +3441,9 @@ msgstr "Tải ứng dụng Android"
 msgid "Download your statement"
 msgstr "Tải xuống bảng sao kê"
 
+msgid "Downs"
+msgstr ""
+
 msgid "Drive rapid growth and business development to support the company's sales and marketing objectives"
 msgstr "Thúc đẩy tăng trưởng nhanh chóng và phát triển kinh doanh để hỗ trợ cho các mục tiêu bán hàng và tiếp thị của công ty"
 
@@ -5191,11 +5194,17 @@ msgstr "Nếu bạn chọn \"tăng\", bạn sẽ giành chiến thắng nếu
 msgid "If you select \"rises\", you win the payout if the market price is higher than the entry spot."
 msgstr "Nếu bạn chọn \"tăng\", bạn sẽ giành chiến thắng nếu giá thị trường cao hơn điểm khởi đầu."
 
+msgid "If you select %1\"Downs\"%2, you win the payout if consecutive ticks fall successively after the %1entry spot%2.%3No payout if any tick rises or is equal to any of the previous ticks."
+msgstr ""
+
 msgid "If you select %1\"High Tick\"%2, you win the payout if the selected tick is the %1highest among the next five ticks%2."
 msgstr "Nếu bạn chọn %1\"Tick cao\"%2, bạn sẽ giành chiến thắng các thanh toán nếu tick được chọn là %1cao nhất trong số 5 tick tiếp theo%2."
 
 msgid "If you select %1\"Low Tick\"%2, you win the payout if the selected tick is the %1lowest among the next five ticks%2."
 msgstr "Nếu bạn chọn %1\"Tick thấp\"%2, bạn sẽ giành chiến thắng các thanh toán nếu tick được chọn là %1thấp nhất trong số 5 tick tiếp theo%2."
+
+msgid "If you select %1\"Ups\"%2, you win the payout if consecutive ticks rise successively after the %1entry spot%2.%3No payout if any tick falls or is equal to any of the previous ticks."
+msgstr ""
 
 msgid "If you select a <strong>start time</strong> in the future, the <strong>start time</strong> is that which is selected and the <strong>entry spot</strong> is the price in effect at that time."
 msgstr "Nếu bạn chọn <strong>thời điểm bắt đầu</strong> trong tương lai, <strong>thời điểm bắt đầu</strong> là mục được chọn và <strong>điểm khởi đầu</strong> là giá có hiệu lực vào thời điểm đó."
@@ -7667,8 +7676,8 @@ msgstr "Vui lòng đăng nhập."
 msgid "Please make sure that you first agree with the Agent on the terms of payment before submitting your request."
 msgstr "Vui lòng chắc chắn rằng trước hết bạn đồng ý với Đại lý các điều khoản thanh toán trước khi gửi yêu cầu."
 
-msgid "Please note that Asians, Digits, Reset Call/Reset Put and High Ticks/Low Ticks are available exclusively with our Volatility Indices."
-msgstr "Xin lưu ý rằng công cụ Châu Á, Chữ số, Gọi lại/ Đặt lại và Tick Cao/Tick Thấp được cung cấp độc quyền với Chỉ Số Biến Động của chúng tôi."
+msgid "Please note that Asians, Digits, Reset Call/Reset Put, High Ticks/Low Ticks, and Run Ups/Run Downs are available exclusively with our Volatility Indices."
+msgstr ""
 
 msgid "Please note that actual trading results may not correspond to optimized or back-tested results."
 msgstr "Xin lưu ý rằng kết quả giao dịch thực tế có thể không tương ứng với kết quả được tối ưu hóa hoặc được kiểm tra lại."
@@ -8533,6 +8542,15 @@ msgstr "Roll-over tín dụng/thẻ ghi nợ"
 
 msgid "Rolling Spot Forex;"
 msgstr "Rolling Spot ngoại hối;"
+
+msgid "Run"
+msgstr ""
+
+msgid "Run Downs"
+msgstr ""
+
+msgid "Run Ups"
+msgstr ""
 
 msgid "Russia"
 msgstr "Nga"
@@ -9416,6 +9434,12 @@ msgstr "%1Thời hạn hợp đồng%2 là giai đoạn từ %1Giây di chuy�
 msgid "The %1end time%2 is the selected number of minutes/hours after the %1start time%2."
 msgstr "%1thời gian kết thúc%2 là số giây/giờ được chọn sau %1thời gian bắt đầu%2."
 
+msgid "The %1entry spot%2 is the next tick after the %1start time%2."
+msgstr ""
+
+msgid "The %1exit spot%2 is the last tick when the contract ends. Contract ends when all ticks rise or fall successively, or when a single tick breaks the predicted pattern."
+msgstr ""
+
 msgid "The %1high%2 is the highest point ever reached by the market during the contract period."
 msgstr "%1cao%2 là điểm cao nhất từng đạt đến của thị trường trong thời gian hợp đồng."
 
@@ -9424,6 +9448,9 @@ msgstr "%1thấp%2 là điểm thấp nhất từng đạt đến của thị tr
 
 msgid "The %1start time%2 begins when the contract is processed by our servers."
 msgstr "%1thời gian bắt đầu%2 bắt đầu khi hợp đồng được xử lý bởi máy chủ của chúng tôi."
+
+msgid "The %1start time%2 is when the contract has been processed by our servers."
+msgstr ""
 
 msgid "The <strong>contract period</strong> is the period between the <strong>next tick</strong> after the <strong>start time</strong> and the <strong>end time</strong>."
 msgstr "<strong>Thời hạn hợp đồng</strong> là khoảng thời gian giữa <strong>tick tiếp theo</strong> sau <strong>thời gian bắt đầu</strong> và <strong>thời gian kết thúc</strong>."
@@ -10234,6 +10261,9 @@ msgstr "Có những rủi ro liên quan đến việc sử dụng một hệ th�
 
 msgid "There are two types of In/Out trades:"
 msgstr "Hiện có hai loại giao dịch Trong/Ngoài:"
+
+msgid "There are two types of Run trades:"
+msgstr ""
 
 msgid "There are two types of Up/Down trades:"
 msgstr "Hiện có hai loại giao dịch Lên/Xuống:"
@@ -11198,6 +11228,9 @@ msgstr "Sau khi thu hồi, bạn xác nhận và hiểu rằng trình Quản Lý
 msgid "Upon the expiration or termination of this Agreement, for whatever reason, all rights and license granted to you in this Agreement, including use of the %1 API, shall immediately terminate. You agree to promptly cease all further use of the %1 API. Termination of this Agreement shall not act as a waiver of any breach of this Agreement and shall not act as a release of your liability for breach of its obligation under this Agreement. The Company shall not be liable to you for damages of any kind solely as a result of terminating this Agreement in accordance with its terms."
 msgstr "Khi Thỏa Thuận này hết hạn hay chấm dứt, vì bất kỳ lý do nào, tất cả các quyền và sự cho phép mà bạn được hưởng theo Thỏa Thuận này, bao gồm việc sử dụng %1 API, sẽ lập tức chấm dứt. Bạn đồng ý ngừng ngay việc sử dụng %1 API. Sự chấm dứt của Thỏa Thuận này sẽ không được coi như sẽ bỏ qua bất kỳ một sự vi phạm nào của Thỏa Thuận này và cũng không có nghĩa là bạn sẽ không phải chịu bất kỳ trách nhiệm pháp lý nào từ việc vi phạm Thỏa Thuận này. Công Ty chúng tôi sẽ không chịu trách nhiệm với bạn đối với các thiệt hại là kết quả của việc chấm dứt Thỏa Thuận này theo các điều khoản của nó."
 
+msgid "Ups"
+msgstr ""
+
 msgid "Usage Limit"
 msgstr "Giới Hạn Sử Dụng"
 
@@ -12001,6 +12034,12 @@ msgstr "Giành tối đa thanh toán nếu điểm chốt cao hơn hoặc bằng
 
 msgid "Win maximum payout if the exit spot is lower than or equal to the lower barrier."
 msgstr "Giành tối đa thanh toán nếu điểm chốt thấp hơn hoặc bằng giới hạn dưới."
+
+msgid "Win payout if consecutive ticks fall successively. Contract is lost when at least one tick rises or is equal to any of the previous ticks."
+msgstr ""
+
+msgid "Win payout if consecutive ticks rise successively. Contract is lost when at least one tick falls or is equal to any of the previous ticks."
+msgstr ""
 
 msgid "Win payout if exit spot is also equal to entry spot."
 msgstr "Sẽ thắng nếu như điểm chốt bằng với điểm khởi đầu."

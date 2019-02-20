@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-02-20 10:54\n"
+"PO-Revision-Date: 2019-02-20 14:17\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Thai\n"
 "MIME-Version: 1.0\n"
@@ -3442,6 +3442,9 @@ msgstr "ดาวน์โหลดแอนดรอยด์แอพพลิ
 msgid "Download your statement"
 msgstr "ดาวน์โหลดรายการบัญชีของคุณ"
 
+msgid "Downs"
+msgstr ""
+
 msgid "Drive rapid growth and business development to support the company's sales and marketing objectives"
 msgstr "ผลักดันการเติบโตอย่างรวดเร็วขององค์กรและการพัฒนาธุรกิจ เพื่อสนับสนุนเป้าหมายทางการขายและการตลาดขององค์กร"
 
@@ -5191,11 +5194,17 @@ msgstr "หากท่านเลือก \"Rise\" ท่านจะได�
 msgid "If you select \"rises\", you win the payout if the market price is higher than the entry spot."
 msgstr "หากท่านเลือก \"Rise\" ท่านจะได้รับชำระเงินเมื่อราคาตลาดมีค่าสูงกว่าสปอตเริ่มต้น"
 
+msgid "If you select %1\"Downs\"%2, you win the payout if consecutive ticks fall successively after the %1entry spot%2.%3No payout if any tick rises or is equal to any of the previous ticks."
+msgstr ""
+
 msgid "If you select %1\"High Tick\"%2, you win the payout if the selected tick is the %1highest among the next five ticks%2."
 msgstr "หากท่านเลือก %1\"ราคาสูง\"%2 ท่านจะชนะเมื่อ ราคาที่เลือกเป็น %1 สูงสุด ใน 5 ช่วงราคา %2"
 
 msgid "If you select %1\"Low Tick\"%2, you win the payout if the selected tick is the %1lowest among the next five ticks%2."
 msgstr "หากท่านเลือก %1\"ราคาต่ำ\"%2 ท่านจะชนะเมื่อ ราคาที่เลือกเป็น %1 ต่ำสุด ใน 5 ช่วงราคา %2"
+
+msgid "If you select %1\"Ups\"%2, you win the payout if consecutive ticks rise successively after the %1entry spot%2.%3No payout if any tick falls or is equal to any of the previous ticks."
+msgstr ""
 
 msgid "If you select a <strong>start time</strong> in the future, the <strong>start time</strong> is that which is selected and the <strong>entry spot</strong> is the price in effect at that time."
 msgstr "หากท่านกำหนด <strong>เวลาเริ่มต้น</strong>ในอนาคต <strong>เวลาเริ่มต้น</strong> ที่เลือกนั้น<strong>สปอตเริ่มต้น</strong> คือ ราคาที่มีผลในเวลานั้น"
@@ -7666,8 +7675,8 @@ msgstr "โปรดเข้าสู่ระบบ"
 msgid "Please make sure that you first agree with the Agent on the terms of payment before submitting your request."
 msgstr "โปรดแน่ใจว่า ท่านยินยอมกับตัวแทนในเงื่อนไขการชำระเงินก่อนที่จะส่งความต้องการของท่าน"
 
-msgid "Please note that Asians, Digits, Reset Call/Reset Put and High Ticks/Low Ticks are available exclusively with our Volatility Indices."
-msgstr "โปรดทราบว่า Asians, Digits, Reset Call/Reset Put และ HighTicks/Low Ticks มีเฉพาะในดัชนีผันผวนของเรา เท่านั้น"
+msgid "Please note that Asians, Digits, Reset Call/Reset Put, High Ticks/Low Ticks, and Run Ups/Run Downs are available exclusively with our Volatility Indices."
+msgstr ""
 
 msgid "Please note that actual trading results may not correspond to optimized or back-tested results."
 msgstr "โปรดทราบว่า ผลการซื้อขายจริงอาจจะไม่แสดงโดยผลลัพธ์ของการทดสอบเพื่อการปรับปรุงระบบให้ประสิทธิภาพดีขึ้น"
@@ -8532,6 +8541,15 @@ msgstr "โรลโอเวอร์ เครดิต/เดบิต"
 
 msgid "Rolling Spot Forex;"
 msgstr "Rolling Spot Forex"
+
+msgid "Run"
+msgstr ""
+
+msgid "Run Downs"
+msgstr ""
+
+msgid "Run Ups"
+msgstr ""
 
 msgid "Russia"
 msgstr "รัสเซีย"
@@ -9416,6 +9434,12 @@ msgstr "%1 ระยะเวลาของสัญญา %2 คือ ช่�
 msgid "The %1end time%2 is the selected number of minutes/hours after the %1start time%2."
 msgstr "%1 เวลาสิ้นสุด %2 คือ จำนวนนาที/ชั่วโมงที่เลือกเอาไว้ หลังจาก %1 เวลาเริ่มต้น %2"
 
+msgid "The %1entry spot%2 is the next tick after the %1start time%2."
+msgstr ""
+
+msgid "The %1exit spot%2 is the last tick when the contract ends. Contract ends when all ticks rise or fall successively, or when a single tick breaks the predicted pattern."
+msgstr ""
+
 msgid "The %1high%2 is the highest point ever reached by the market during the contract period."
 msgstr "%1 จุดสูง %2 คือ จุดที่สูงที่สุดที่ตลาดได้ไปถึงในช่วงระยะเวลาของสัญญา"
 
@@ -9424,6 +9448,9 @@ msgstr "%1 จุดต่ำ %2 คือ จุดที่ต่ำที่�
 
 msgid "The %1start time%2 begins when the contract is processed by our servers."
 msgstr "%1 เวลาเริ่มต้น %2 เริ่มขึ้นเมื่อสัญญาได้ถูกนำเข้าประมวลผลในระบบของเรา"
+
+msgid "The %1start time%2 is when the contract has been processed by our servers."
+msgstr ""
 
 msgid "The <strong>contract period</strong> is the period between the <strong>next tick</strong> after the <strong>start time</strong> and the <strong>end time</strong>."
 msgstr "<strong>ระยะเวลาของสัญญา</strong> คือ ช่วงเวลาระหว่าง <strong>ช่วงถัดไป</strong> หลังจาก <strong>เวลาเริ่มต้น</strong> และ <strong>เวลาสิ้นสุด</strong>"
@@ -10243,6 +10270,9 @@ msgstr "มีปัจจัยเสี่ยงที่เกี่ยวข
 
 msgid "There are two types of In/Out trades:"
 msgstr "มีการซื้อขาย In/Out 2 ประเภท:"
+
+msgid "There are two types of Run trades:"
+msgstr ""
 
 msgid "There are two types of Up/Down trades:"
 msgstr "มีการซื้อขาย 2 ประเภทของ Up/Down:"
@@ -11207,6 +11237,9 @@ msgstr "เมื่อมีการเพิกถอน ท่านรั�
 msgid "Upon the expiration or termination of this Agreement, for whatever reason, all rights and license granted to you in this Agreement, including use of the %1 API, shall immediately terminate. You agree to promptly cease all further use of the %1 API. Termination of this Agreement shall not act as a waiver of any breach of this Agreement and shall not act as a release of your liability for breach of its obligation under this Agreement. The Company shall not be liable to you for damages of any kind solely as a result of terminating this Agreement in accordance with its terms."
 msgstr "หากมีการหมดอายุ หรือ การยุติของข้อตกลงนี้ ด้วยเหตุผลใดๆ ก็ตาม สิทธิ์ต่างๆ และใบอนุญาตตามข้อตกลงนี้ รวมถึงการใช้ API ของ %1 จะถูกยุติทันที ท่านยอมรับต่อการสิ้นสุดการใช้งาน API ของ %1 โดยทันที การยุติข้อตกลงจะไม่ดำเนินประหนึ่งการละเว้นต่อการฝ่าฝืนข้อตกลง และจะไม่ดำเนินการเสมือนการละความรับผิดชอบต่อการฝ่าฝืนต่อข้อตกลงนี้ บริษัทฯ จะไม่รับผิดชอบต่อความเสียหายอันจะเกิดขึ้นโดยเป็นผลมาจากการยุติข้อตกลงดังกล่าว"
 
+msgid "Ups"
+msgstr ""
+
 msgid "Usage Limit"
 msgstr "วงเงินที่ใช้"
 
@@ -12010,6 +12043,12 @@ msgstr "ชนะและได้รับเงินสูงสุด ห�
 
 msgid "Win maximum payout if the exit spot is lower than or equal to the lower barrier."
 msgstr "ชนะและได้รับเงินสูงสุด หากสปอตสุดท้ายต่ำกว่า หรือ เท่ากับแบร์ริเออร์ล่าง"
+
+msgid "Win payout if consecutive ticks fall successively. Contract is lost when at least one tick rises or is equal to any of the previous ticks."
+msgstr ""
+
+msgid "Win payout if consecutive ticks rise successively. Contract is lost when at least one tick falls or is equal to any of the previous ticks."
+msgstr ""
 
 msgid "Win payout if exit spot is also equal to entry spot."
 msgstr "ชนะ เมื่อสปอตสิ้นสุดเท่ากับสปอตเริ่มต้น"
