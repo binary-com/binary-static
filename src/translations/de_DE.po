@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-02-20 10:51\n"
+"PO-Revision-Date: 2019-02-20 14:14\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: German\n"
 "MIME-Version: 1.0\n"
@@ -3441,6 +3441,9 @@ msgstr "Die Android-App herunterladen"
 msgid "Download your statement"
 msgstr "Laden Sie Ihren Auszug herunter"
 
+msgid "Downs"
+msgstr ""
+
 msgid "Drive rapid growth and business development to support the company's sales and marketing objectives"
 msgstr "Treiben Sie das rasche Wachstum und die Geschäftsentwicklung voran, um die Verkaufs- und Werbeziele des Unternehmens zu unterstützen"
 
@@ -5190,11 +5193,17 @@ msgstr "Wenn Sie „steigt\" auswählen, erhalten Sie eine Auszahlung, wenn der 
 msgid "If you select \"rises\", you win the payout if the market price is higher than the entry spot."
 msgstr "Wenn Sie „steigt\" auswählen, erhalten Sie eine Auszahlung, wenn der Marktpreis höher als der Kurs bei Kontraktbeginn ist."
 
+msgid "If you select %1\"Downs\"%2, you win the payout if consecutive ticks fall successively after the %1entry spot%2.%3No payout if any tick rises or is equal to any of the previous ticks."
+msgstr ""
+
 msgid "If you select %1\"High Tick\"%2, you win the payout if the selected tick is the %1highest among the next five ticks%2."
 msgstr "Wenn Sie %1\"Hoher Tick\"%2 auswählen, gewinnen Sie die Auszahlung, wenn der ausgewählte Tick der %1höchste unter den nächsten fünf Ticks%2 ist."
 
 msgid "If you select %1\"Low Tick\"%2, you win the payout if the selected tick is the %1lowest among the next five ticks%2."
 msgstr "Wenn Sie %1\"Niedriger Tick\"%2 auswählen, gewinnen Sie die Auszahlung, wenn der ausgewählte Tick der %1niedrigste unter den nächsten fünf Ticks%2 ist."
+
+msgid "If you select %1\"Ups\"%2, you win the payout if consecutive ticks rise successively after the %1entry spot%2.%3No payout if any tick falls or is equal to any of the previous ticks."
+msgstr ""
 
 msgid "If you select a <strong>start time</strong> in the future, the <strong>start time</strong> is that which is selected and the <strong>entry spot</strong> is the price in effect at that time."
 msgstr "Wenn Sie eine  <strong>Startzeit</strong> in der Zukunft auswählen, ist die <strong>Startzeit</strong> des Kontrakts die ausgewählte Zeit und der <strong>Einstiegskurs</strong> ist der Kurs, der zu dieser Zeit gültig ist."
@@ -7665,7 +7674,7 @@ msgstr "Melden Sie sich bitte an."
 msgid "Please make sure that you first agree with the Agent on the terms of payment before submitting your request."
 msgstr "Bevor Sie Ihren Antrag absenden können, müssen Sie zuerst den Zahlungsbedingungen des Abwicklers zustimmen."
 
-msgid "Please note that Asians, Digits, Reset Call/Reset Put and High Ticks/Low Ticks are available exclusively with our Volatility Indices."
+msgid "Please note that Asians, Digits, Reset Call/Reset Put, High Ticks/Low Ticks, and Run Ups/Run Downs are available exclusively with our Volatility Indices."
 msgstr ""
 
 msgid "Please note that actual trading results may not correspond to optimized or back-tested results."
@@ -8531,6 +8540,15 @@ msgstr "Roll-Over Kredit/Debit"
 
 msgid "Rolling Spot Forex;"
 msgstr "Rollender Spot Forex;"
+
+msgid "Run"
+msgstr ""
+
+msgid "Run Downs"
+msgstr ""
+
+msgid "Run Ups"
+msgstr ""
 
 msgid "Russia"
 msgstr "Russland"
@@ -9414,6 +9432,12 @@ msgstr "Der %1Kontraktzeitraum%2 ist die Zeitspanne zwischen dem %1ersten Tick%2
 msgid "The %1end time%2 is the selected number of minutes/hours after the %1start time%2."
 msgstr "Die %1Endzeit%2 ist die ausgewählte Anzahl von Minuten bzw. Stunden nach der %1Startzeit%2."
 
+msgid "The %1entry spot%2 is the next tick after the %1start time%2."
+msgstr ""
+
+msgid "The %1exit spot%2 is the last tick when the contract ends. Contract ends when all ticks rise or fall successively, or when a single tick breaks the predicted pattern."
+msgstr ""
+
 msgid "The %1high%2 is the highest point ever reached by the market during the contract period."
 msgstr "Das %1Hoch%2 ist der höchste Punkt, der jemals durch den Kurs während der Kontraktlaufzeit erreicht wird."
 
@@ -9422,6 +9446,9 @@ msgstr "Das %1Tief%2 ist der niedrigste Punkt, der jemals durch den Kurs währen
 
 msgid "The %1start time%2 begins when the contract is processed by our servers."
 msgstr "Die %1Startzeit%2 beginnt, wenn der Kontrakt von unseren Servern bearbeitet wird."
+
+msgid "The %1start time%2 is when the contract has been processed by our servers."
+msgstr ""
 
 msgid "The <strong>contract period</strong> is the period between the <strong>next tick</strong> after the <strong>start time</strong> and the <strong>end time</strong>."
 msgstr "Der <strong>Vertragszeitraum</strong> ist die Zeitspanne zwischen dem <strong>nächsten Tick</strong> nach der <strong>Startzeit</strong> und der <strong>Endzeit</strong>."
@@ -10232,6 +10259,9 @@ msgstr "Mit der Nutzung von Handelssystemen über das Internet sind Risiken verb
 
 msgid "There are two types of In/Out trades:"
 msgstr "Es gibt zwei Arten von Innerhalb/Außerhalb-Trades:"
+
+msgid "There are two types of Run trades:"
+msgstr ""
 
 msgid "There are two types of Up/Down trades:"
 msgstr "Es gibt zwei Arten von Auf/Ab-Trades:"
@@ -11196,6 +11226,9 @@ msgstr "Auf Widerruf bestätigen und verstehen Sie, dass Ihr Vermögensverwalter
 msgid "Upon the expiration or termination of this Agreement, for whatever reason, all rights and license granted to you in this Agreement, including use of the %1 API, shall immediately terminate. You agree to promptly cease all further use of the %1 API. Termination of this Agreement shall not act as a waiver of any breach of this Agreement and shall not act as a release of your liability for breach of its obligation under this Agreement. The Company shall not be liable to you for damages of any kind solely as a result of terminating this Agreement in accordance with its terms."
 msgstr "Nach dem Ablauf oder der Kündigung dieses Vertrags, aus welchem Grund auch immer, enden alle Ihnen durch diesen Vertrag eingeräumten Rechte und Lizenzen, einschließlich der Verwendung des %1 API, mit sofortiger Wirkung. Sie stimmen zu, die weitere Verwendung des %1 API einzustellen. Die Beendigung dieses Vertrags darf nicht als Verzicht einer Verfolgung eines Vertragsbruchs und nicht als Entlassung aus Ihrer Haftung für die Verletzung von Pflichten aus diesem Vertrag interpretiert werden. Das Unternehmen ist für keinerlei Schäden, die einzig und alleine aus der Beendigung des Vertrags, gemäß seiner Klauseln, haftbar."
 
+msgid "Ups"
+msgstr ""
+
 msgid "Usage Limit"
 msgstr "Verwendungslimit"
 
@@ -11999,6 +12032,12 @@ msgstr "Gewinnen Sie die maximale Auszahlung, wenn der Schlusskurs höher oder g
 
 msgid "Win maximum payout if the exit spot is lower than or equal to the lower barrier."
 msgstr "Gewinnen Sie die maximale Auszahlung, wenn der Schlusskurs niedriger oder gleich mit der unteren Schwelle ist."
+
+msgid "Win payout if consecutive ticks fall successively. Contract is lost when at least one tick rises or is equal to any of the previous ticks."
+msgstr ""
+
+msgid "Win payout if consecutive ticks rise successively. Contract is lost when at least one tick falls or is equal to any of the previous ticks."
+msgstr ""
 
 msgid "Win payout if exit spot is also equal to entry spot."
 msgstr "Gewinnen Sie die Auszahlung, wenn der Schlusskurs gleich dem Einstiegskurs ist."
