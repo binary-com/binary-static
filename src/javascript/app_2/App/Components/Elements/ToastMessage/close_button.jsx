@@ -10,7 +10,7 @@ const CloseButton = ({ onClick }) => (
 );
 
 CloseButton.propTypes = {
-    onClick: PropTypes.func,
+    onClick: PropTypes.func.isRequired,
 };
 
 export default CloseButton;
