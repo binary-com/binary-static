@@ -57,7 +57,7 @@ const InputField = ({
 
         if (type === 'number') {
             const is_empty = !e.target.value || e.target.value === '' || e.target.value === '  ';
-            const signed_regex = is_signed ? '[\+\-\.0-9]$' : '^';
+            const signed_regex = is_signed ? '[+\-\.0-9]$' : '^';
 
             const is_number = new RegExp(`${signed_regex}(\\d*)?${is_float ? '(\\.\\d+)?' : ''}$`)
                 .test(e.target.value);
@@ -161,7 +161,7 @@ const InputField = ({
         <div
             className={`input-field ${className || ''}`}
         >
-            <Tooltip alignment='left' message={has_error ? error_messages[0] : null }>
+            <Tooltip className={classNames('', { 'with-label': label })} alignment='left' message={has_error ? error_messages[0] : null }>
                 {!!label &&
                     <label htmlFor={name} className='input-label'>{label}</label>
                 }
