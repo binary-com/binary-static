@@ -106,7 +106,7 @@ export const isMinuteValid = time_str => isTimeValid(time_str) && /^[0-5][0-9]$/
  * return true if the date is typeof string and a valid moment date, else return false
  * @param {String|moment} date date
  */
-export const isDateValid = date => moment(date, 'YYYY-MM-DD').isValid();
+export const isDateValid = date => moment(date, 'DD MMM YYYY').isValid();
 
 /**
  * add the specified number of days to the given date
