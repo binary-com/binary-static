@@ -20,17 +20,17 @@ const TradeTypeInfoItem = ({
 }) => (
     <React.Fragment>
         {!is_mobile &&
-        <div className='info-header'>
+        <div className='trade-type-dialog__header'>
             <span onClick={() => onBackButtonClick()}>
                 <IconBack />
             </span>
             <span className='title'>{item.text}</span>
         </div>
         }
-        <div className='info-gif'>
+        <div className='trade-type-dialog__gif'>
             gif explanation
         </div>
-        <div className='info-content'>
+        <div className='trade-type-dialog__content'>
             <Scrollbars
                 autoHide
                 style={{ height: '100%' }}
@@ -38,14 +38,14 @@ const TradeTypeInfoItem = ({
                 <TradeCategories category={item.value} />
             </Scrollbars>
         </div>
-        <div className='info-choose'>
+        <div className='trade-type-dialog__choose'>
             <Button text={localize('Choose')} onClick={() => onSubmitButtonClick(item)} />
         </div>
-        <div className='info-navigation'>
-            <div className='info-navigation__icon' onClick={() => handlePrevClick(navigationList)} >
+        <div className='trade-type-dialog__navigation'>
+            <div className='trade-type-dialog__navigation__icon' onClick={() => handlePrevClick(navigationList)} >
                 <IconChevronLeft />
             </div>
-            <div className='info-navigation__list'>
+            <div className='trade-type-dialog__navigation__list'>
                 {
                     navigationList.map((contract, idx) => (
                         <React.Fragment key={idx}>
@@ -57,7 +57,7 @@ const TradeTypeInfoItem = ({
                     ))
                 }
             </div>
-            <div className='info-navigation__icon' onClick={() => handleNextClick(navigationList)} >
+            <div className='trade-type-dialog__navigation__icon' onClick={() => handleNextClick(navigationList)} >
                 <IconChevronRight />
             </div>
         </div>
