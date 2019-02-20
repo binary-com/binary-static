@@ -1,4 +1,5 @@
-div.contracts-popup-container {
+/** @define contract-type-widget; */
+.contract-type-widget {
     position: relative;
     z-index: 2;
     background: $COLOR_WHITE;
@@ -34,7 +35,7 @@ div.contracts-popup-container {
             border: solid 1px $COLOR_LIGHT_GRAY_1;
         }
     }
-    .contracts-popup-display {
+    &__display {
         cursor: pointer;
         display: flex;
         align-items: center;
@@ -56,60 +57,18 @@ div.contracts-popup-container {
             font-size: 1.2em;
         }
     }
-    &:active, &:focus, &.show {
+    &:active, &:focus, &--show {
         outline: none;
         border-radius: 4px;
         border-color: $COLOR_LIGHT_GRAY_1;
         box-shadow: 0 0 0 2px $COLOR_LIGHT_GRAY_2;
     }
-    &.show {
+    &--show {
         &.mobile-only {
             z-index: 99;
         }
         & > .clicked {
             border-color: $COLOR_DARK_BLUE_5;
-        }
-    }
-    .list-item {
-        width: 100%;
-        cursor: pointer;
-        display: inline-flex;
-        flex-direction: row;
-        align-items: center;
-        padding: 0.8em;
-        box-sizing: border-box;
-        margin-bottom: 0.1em;
-        transition: transform 0.3s opacity 0.3s;
-
-        &:hover {
-            background-color: #f2f3f8; /* stylelint-disable-line color-no-hex */
-
-            .trade-type-info-icon {
-                display: block;
-            }
-        }
-        &.disabled {
-            pointer-events: none;
-
-            .contract-title {
-                color: $COLOR_LIGHT_BLACK_4;
-            }
-        }
-        .contract-icon {
-            padding-right: 0.8em;
-        }
-        .contract-title {
-            @include typeface(--paragraph-left-light-black);
-        }
-        .trade-type-info-icon {
-            display: none;
-            height: 16px;
-            width: 16px;
-            margin-left: auto;
-
-            svg {
-                pointer-events: none;
-            }
         }
     }
     .contracts-popup-list {
@@ -146,32 +105,71 @@ div.contracts-popup-container {
                 }
                 .list-items {
                     .list-item {
+                        width: 100%;
+                        cursor: pointer;
+                        display: inline-flex;
+                        flex-direction: row;
+                        align-items: center;
+                        padding: 0.8em;
+                        box-sizing: border-box;
+                        margin-bottom: 0.1em;
+                        transition: transform 0.3s opacity 0.3s;
                         background-color: $COLOR_WHITE;
 
-                        &:first-child {
-                            border-top-left-radius: 4px;
-                            border-top-right-radius: 4px;
-                            border-bottom: none;
-                        }
-                        &:last-child {
-                            border-top: none;
-                            border-bottom-left-radius: 4px;
-                            border-bottom-right-radius: 4px;
-                        }
-                        &:only-child {
-                            border-radius: 4px;
-                        }
-                        &.selected {
-                            background: $COLOR_LIGHT_GRAY_1;
+                        &:hover {
+                            background-color: #f2f3f8; /* stylelint-disable-line color-no-hex */
 
-                            span {
-                                font-weight: bold;
-                                color: $COLOR_WHITE;
+                            .trade-type-info-icon {
+                                display: block;
                             }
                         }
-                        &:hover:not(.selected) {
-                            background: $COLOR_LIGHT_BLACK_4;
+                        &.disabled {
+                            pointer-events: none;
+
+                            .contract-title {
+                                color: $COLOR_LIGHT_BLACK_4;
+                            }
                         }
+                        .contract-icon {
+                            padding-right: 0.8em;
+                        }
+                        .contract-title {
+                            @include typeface(--paragraph-left-light-black);
+                        }
+                        .trade-type-info-icon {
+                            display: none;
+                            height: 16px;
+                            width: 16px;
+                            margin-left: auto;
+
+                            svg {
+                                pointer-events: none;
+                            }
+                        }
+                    }
+                    &:first-child {
+                        border-top-left-radius: 4px;
+                        border-top-right-radius: 4px;
+                        border-bottom: none;
+                    }
+                    &:last-child {
+                        border-top: none;
+                        border-bottom-left-radius: 4px;
+                        border-bottom-right-radius: 4px;
+                    }
+                    &:only-child {
+                        border-radius: 4px;
+                    }
+                    &.selected {
+                        background: $COLOR_LIGHT_GRAY_1;
+
+                        span {
+                            font-weight: bold;
+                            color: $COLOR_WHITE;
+                        }
+                    }
+                    &:hover:not(.selected) {
+                        background: $COLOR_LIGHT_BLACK_4;
                     }
                 }
             }
@@ -337,16 +335,16 @@ div.contracts-popup-container {
 
 // Dark Theme
 .theme--dark {
-    div.contracts-popup-container {
+    .contract-type-widget {
         color: $COLOR_DARK_BLUE_7;
         background: $COLOR_DARK_BLUE_2;
         border-color: $COLOR_DARK_BLUE_2;
 
-        .contracts-popup-display span[name=contract_type] {
+        &__display span[name=contract_type] {
             color: $COLOR_DARK_BLUE_7;
         }
         &.mobile-only {
-            .contracts-popup-display span {
+            &__display span {
                 color: $COLOR_DARK_BLUE_7;
             }
             .contracts-modal-list {

@@ -116,13 +116,13 @@ class ContractTypeWidget extends React.PureComponent {
     };
 
     getStyles = () => {
-        const container_classes = ['contracts-popup-container'];
+        const container_classes = ['contract-type-widget'];
         if (this.props.is_mobile) {
             container_classes.push('mobile-only');
         } else {
             container_classes.push('desktop-only');
         }
-        if (this.state.is_dialog_open) container_classes.push('show');
+        if (this.state.is_dialog_open) container_classes.push('contract-type-widget--show');
         return container_classes;
     };
 
@@ -149,7 +149,7 @@ class ContractTypeWidget extends React.PureComponent {
                 tabIndex='0'
             >
                 <div
-                    className={`contracts-popup-display ${this.state.is_dialog_open ? 'clicked' : ''}`}
+                    className={`contract-type-widget__display ${this.state.is_dialog_open ? 'clicked' : ''}`}
                     onClick={this.onWidgetClick}
                 >
                     <IconTradeCategory category={this.props.value} />
