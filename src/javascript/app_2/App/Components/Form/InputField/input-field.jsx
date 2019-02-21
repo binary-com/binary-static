@@ -91,8 +91,8 @@ const InputField = ({
         onChange(e);
     };
 
-    const getDecimals = (value) => {
-        const array_value    = value.split('.');
+    const getDecimals = (val) => {
+        const array_value = val.split('.');
         return array_value && array_value.length > 1 ? array_value[1].length : 0;
     };
 
