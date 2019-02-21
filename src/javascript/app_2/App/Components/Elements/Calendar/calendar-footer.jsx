@@ -13,8 +13,7 @@ const CalendarFooter = ({
                 { footer && <span className='calendar__text'>{footer}</span> }
                 { has_today_btn &&
                     <IconCalendarToday
-                        className='calendar__icon calendar__icon--today'
-                        classNamePath='calendar__icon-path'
+                        className='calendar__icon'
                         onClick={onClick}
                     />
                 }

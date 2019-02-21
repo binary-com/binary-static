@@ -401,9 +401,6 @@
                 border-color: $COLOR_WHITE;
             }
         }
-        &__icon path {
-            fill: $COLOR_DARK_BLUE_7;
-        }
         &__native-overlay {
             background: $COLOR_DARK_BLUE_5;
 
@@ -476,9 +473,6 @@
                 background-color: $COLOR_DARK_BLUE_4;
             }
         }
-        &__arrow-back path {
-            fill: $COLOR_DARK_BLUE_7;
-        }
         &__language {
             &-dialog-container {
                 background: $COLOR_DARK_BLUE_3;
@@ -516,9 +510,6 @@
             .symbols {
                 background: $COLOR_DARK_BLUE_2;
             }
-        }
-        &__select-arrow .arrow-path {
-            fill: $COLOR_DARK_BLUE_7;
         }
         &--show {
             &:after {
@@ -621,14 +612,6 @@
         &__body {
             border-color: $COLOR_DARK_BLUE_2;
         }
-        &__nav {
-            .calendar__nav-icon {
-                fill: $COLOR_DARK_BLUE_7;
-            }
-            &--disabled .calendar__nav-icon {
-                fill: $COLOR_DARK_BLUE_6;
-            }
-        }
         &__text {
             color: $COLOR_WHITE;
         }
@@ -638,9 +621,6 @@
             &--select {
                 color: $COLOR_WHITE;
             }
-        }
-        &__icon-path {
-            fill: $COLOR_DARK_BLUE_7;
         }
         &__cell {
             color: $COLOR_DARK_BLUE_7;

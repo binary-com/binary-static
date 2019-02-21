@@ -210,6 +210,9 @@
         .list {
             background: $COLOR_DARK_BLUE_3;
 
+            .list__label span {
+                color: $COLOR_WHITE;
+            }
             .list__item {
                 span {
                     color: $COLOR_DARK_BLUE_7;

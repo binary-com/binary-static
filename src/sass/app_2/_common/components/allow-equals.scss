@@ -6,7 +6,7 @@
     &__label {
         margin: 0.8em 0 0;
         @include typeface(--small-left-normal-black, none);
-        @include toEm(padding-left, 8px, 1.2em);
+        @include toEm(padding, 0 8px, 1.2em);
         cursor: pointer;
     }
     & &__tooltip {

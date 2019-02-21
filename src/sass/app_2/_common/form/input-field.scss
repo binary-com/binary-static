@@ -125,7 +125,7 @@
                 content: 'L';
                 transform: scaleX(-1) rotate(-40deg);
                 position: absolute;
-                top: -5%;
+                top: -20%;
                 left: 30%;
                 display: none;
             }
@@ -154,13 +154,9 @@
         }
     }
     label.input-label {
-        font-size: 0.85rem;
-        font-weight: 400;
-        text-transform: capitalize;
         @include typeface(--paragraph-left-normal-black);
         margin-bottom: 0.8em;
         display: inline-block;
-        color: $COLOR_DARK_BLUE_7;
         text-align: center;
         width: 100%;
     }

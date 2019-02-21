@@ -128,7 +128,7 @@
         }
         &-title {
             @include typeface(--paragraph-left-bold-black);
-            @include toEm(padding, 8px 16px, 1.4em);
+            @include toEm(padding, 8px 16px, 1em);
             display: block;
         }
         &--virtual {
