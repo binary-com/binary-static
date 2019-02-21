@@ -40,7 +40,6 @@ const TradingDatePicker = ({
     } else {
         min_date_expiry   = moment_contract_start_date_time.clone().startOf('day');
         max_date_duration = moment_contract_start_date_time.clone().add(max_daily_duration, 'second');
-
     }
     if (expiry_type === 'duration') {
         min_date_expiry.add(1, 'day');
