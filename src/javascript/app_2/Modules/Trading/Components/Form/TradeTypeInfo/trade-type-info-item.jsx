@@ -1,3 +1,4 @@
+import classNames           from 'classnames';
 import PropTypes            from 'prop-types';
 import React                from 'react';
 import { Scrollbars }       from 'tt-react-custom-scrollbars';
@@ -20,17 +21,17 @@ const TradeTypeInfoItem = ({
 }) => (
     <React.Fragment>
         {!is_mobile &&
-        <div className='trade-type-dialog__header'>
+        <div className='trade-type-info-dialog__header'>
             <span onClick={() => onBackButtonClick()}>
                 <IconBack />
             </span>
             <span className='title'>{item.text}</span>
         </div>
         }
-        <div className='trade-type-dialog__gif'>
+        <div className='trade-type-info-dialog__gif'>
             gif explanation
         </div>
-        <div className='trade-type-dialog__content'>
+        <div className='trade-type-info-dialog__content'>
             <Scrollbars
                 autoHide
                 style={{ height: '100%' }}
@@ -38,26 +39,28 @@ const TradeTypeInfoItem = ({
                 <TradeCategories category={item.value} />
             </Scrollbars>
         </div>
-        <div className='trade-type-dialog__choose'>
-            <Button text={localize('Choose')} onClick={() => onSubmitButtonClick(item)} />
+        <div>
+            <Button className='trade-type-info-dialog__choose-button' text={localize('Choose')} onClick={() => onSubmitButtonClick(item)} />
         </div>
-        <div className='trade-type-dialog__navigation'>
-            <div className='trade-type-dialog__navigation__icon' onClick={() => handlePrevClick(navigationList)} >
+        <div className='trade-type-info-navigation'>
+            <div className='trade-type-info-navigation__icon' onClick={() => handlePrevClick(navigationList)} >
                 <IconChevronLeft />
             </div>
-            <div className='trade-type-dialog__navigation__list'>
+            <div className='trade-type-info-navigation__list'>
                 {
                     navigationList.map((contract, idx) => (
                         <React.Fragment key={idx}>
                             <div
-                                className={`circle-button ${contract.value === item.value ? 'active' : ''}`}
+                                className={classNames('trade-type-info-navigation__circle-button', {
+                                    'trade-type-info-navigation__circle-button--active': contract.value === item.value,
+                                })}
                                 onClick={() => handleNavigationClick(contract)}
                             />
                         </React.Fragment>
                     ))
                 }
             </div>
-            <div className='trade-type-dialog__navigation__icon' onClick={() => handleNextClick(navigationList)} >
+            <div className='trade-type-info-dialog__navigation__icon' onClick={() => handleNextClick(navigationList)} >
                 <IconChevronRight />
             </div>
         </div>
