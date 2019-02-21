@@ -1,1 +1,1 @@
-export default from './message_box.jsx';
+export default from './message-box.jsx';

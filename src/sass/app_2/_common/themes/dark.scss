@@ -3,34 +3,25 @@
     background: $COLOR_DARK_BLUE_1;
     color: $COLOR_WHITE;
 
+    .inline-icon {
+        @include colorIcon($COLOR_DARK_BLUE_7, none);
+
+        &.active {
+            @include colorIcon($COLOR_DARK_BLUE_5, $COLOR_WHITE, $COLOR_WHITE);
+        }
+        &.disabled {
+            @include colorIcon($COLOR_DARK_BLUE_8, none);
+        }
+        &.white {
+            @include colorIcon($COLOR_WHITE);
+        }
+    }
     .trade-container {
         &__price {
             color: $COLOR_WHITE;
 
             &-info-basis {
                 color: $COLOR_DARK_BLUE_7;
-            }
-            &-tooltip {
-                position: unset;
-
-                &-i {
-                    &:before {
-                        content: url('../images/common/tooltip/ic_tooltip_info_dark.svg ');
-                    }
-                    &:hover:before {
-                        opacity: 1;
-                    }
-                }
-                &:before {
-                    background: $COLOR_LIGHT_BLACK_1;
-                    color: $COLOR_WHITE;
-                }
-                &[data-tooltip-pos=left]:after {
-                    border-left-color: $COLOR_LIGHT_BLACK_1;
-                }
-                &:hover:after, &:hover:before {
-                    opacity: 1;
-                }
             }
         }
         &__fieldset {
@@ -49,17 +40,19 @@
         }
         &__barriers {
             &--up, &--down {
-                fill: $COLOR_WHITE;
+                @extend .inline-icon.white;
             }
         }
         &__currency {
             color: $COLOR_DARK_BLUE_7;
-            background: $COLOR_DARK_BLUE_3;
         }
         &__error {
-            &-info span {
+            &-info {
                 color: $COLOR_WHITE;
             }
+        }
+        &__allow-equals-label {
+            color: $COLOR_DARK_BLUE_7;
         }
     }
     .purchase-container {
@@ -88,31 +81,12 @@
         }
         &__option div.box .left-column .type-wrapper {
             background: $COLOR_DARK_BLUE_6;
-
-            .type {
-                path, rect {
-                    &:not(.important) {
-                        fill: $COLOR_WHITE;
-                    }
-                    &.transparent {
-                        fill: $COLOR_DARK_BLUE_6;
-                    }
-                }
-                .stroke-white {
-                    stroke: $COLOR_WHITE;
-                }
-            }
         }
         &__lock {
             background: $COLOR_DARK_BLUE_3;
 
             &-icon {
-                rect, path {
-                    stroke: $COLOR_WHITE;
-                }
-                circle {
-                    fill: $COLOR_WHITE;
-                }
+                @extend .inline-icon.white;
             }
             &-button {
                 background: transparent;
@@ -130,11 +104,6 @@
         box-shadow: 0 2px 2px 0 $COLOR_DARK_BLUE_7;
         background: $COLOR_DARK_BLUE_6;
         color: $COLOR_DARK_BLUE_8;
-    }
-    .advanced-simple-toggle__icon {
-        &-path {
-            fill: $COLOR_DARK_BLUE_7;
-        }
     }
     .card-list {
         &__card {
@@ -163,16 +132,6 @@
             &:hover {
                 background-color: $COLOR_DARK_BLUE_4;
             }
-        }
-    }
-    .inline-icon {
-        @include colorIcon($COLOR_DARK_BLUE_7, none);
-
-        &.active {
-            @include colorIcon($COLOR_DARK_BLUE_5, $COLOR_WHITE, $COLOR_WHITE);
-        }
-        &.disabled {
-            @include colorIcon($COLOR_DARK_BLUE_6, none);
         }
     }
     header {
@@ -208,6 +167,9 @@
         background: $COLOR_DARK_BLUE_1;
         color: $COLOR_DARK_BLUE_7;
 
+        .server-time {
+            color: $COLOR_DARK_BLUE_7;
+        }
         .footer-links a {
             span {
                 color: $COLOR_DARK_BLUE_7;
@@ -234,20 +196,6 @@
     // inline trade-types icons
     .type-wrapper {
         background: $COLOR_DARK_BLUE_6;
-
-        .type {
-            path, rect {
-                &:not(.important) {
-                    fill: $COLOR_WHITE;
-                }
-                &.transparent {
-                    fill: $COLOR_DARK_BLUE_6;
-                }
-            }
-            .stroke-white {
-                stroke: $COLOR_WHITE;
-            }
-        }
     }
     .portfolio.container {
         background: $COLOR_DARK_BLUE_5;
@@ -303,20 +251,15 @@
         &__purchase:before {
             background-image: url('../images/portfolio/ic_purchase_dark.svg');
         }
-        &__payout:before {
-            background-image: url('../images/statement/ic_payout_dark.svg');
-        }
+        // &__payout:before {
+        //     background-image: url('../images/statement/ic_payout_dark.svg');
+        // }
         &__indicative--price-stable:before {
             background-image: url('../images/portfolio/ic_price_stable_dark.svg');
         }
     }
-    .statement-card {
-        &__payout:before {
-            background-image: url('../images/statement/ic_payout_dark.svg');
-        }
-        &__balance:before {
-            background-image: url('../images/statement/ic_wallet_dark.svg');
-        }
+    .statement-card__icon {
+        @extend .inline-icon.white;
     }
     .login-message-wrapper {
         .message a {
@@ -366,5 +309,345 @@
     }
     .barspinner {
         @extend .barspinner.white;
+    }
+    .toggle-button {
+        background-color: $COLOR_LIGHT_BLACK_1;
+        color: $COLOR_LIGHT_BLACK_4;
+
+        &_selected {
+            background-color: $COLOR_DARK_BLUE_2;
+            color: $COLOR_WHITE;
+        }
+    }
+    .block-ui {
+        background: rgba(16, 19, 32, 0.6); // this is color dark blue 2 with 0.6 opacity
+
+        &__loading-spinner-path {
+            animation: dash 1.5s ease-in-out infinite, colorOrange 6s ease-in-out infinite;
+        }
+    }
+    .switch-button:not(.switch-button--toggled) {
+        background: $COLOR_DARK_BLUE_5;
+    }
+    .toggle-chart-layout {
+        border-color: $COLOR_DARK_BLUE_7;
+
+        &:after {
+            background: $COLOR_WHITE;
+        }
+    }
+    .tab {
+        &__header {
+            color: $COLOR_DARK_BLUE_7;
+        }
+        &--active {
+            .tab__header {
+                color: $COLOR_WHITE;
+            }
+        }
+    }
+    .tab-underline {
+        border-color: $COLOR_WHITE;
+    }
+    .full-page-modal {
+        background-color: rgba(31, 36, 61, 0.8);
+
+        &__dialog {
+            background-color: $COLOR_DARK_BLUE_3;
+            box-shadow: 0 2px 8px 0 $COLOR_LIGHT_BLACK_3;
+        }
+        &__content, &__header {
+            color: $COLOR_DARK_BLUE_7;
+        }
+        &__btn {
+            background-color: $COLOR_DARK_BLUE_3;
+
+            &:hover {
+                background-color: $COLOR_DARK_BLUE_7;
+            }
+            &-text {
+                color: $COLOR_WHITE;
+            }
+        }
+    }
+    .toast {
+        &__body {
+            background-color: $TOAST_BACKGROUND_COLOR_INFO;
+            color: $TOAST_TEXT_COLOR_DARK;
+
+            &--error {
+                background-color: $TOAST_BACKGROUND_COLOR_ERROR_DARK !important;
+            }
+            &--info {
+                background-color: $TOAST_BACKGROUND_COLOR_INFO_DARK !important;
+            }
+            &--success {
+                background-color: $TOAST_BACKGROUND_COLOR_SUCCESS_DARK !important;
+            }
+            &--warning {
+                background-color: $TOAST_BACKGROUND_COLOR_WARNING_DARK !important;
+            }
+        }
+        &__close-button {
+            color: $TOAST_CLOSE_BUTTON_COLOR_DARK;
+        }
+    }
+    .datepicker {
+        &__input {
+            background: $COLOR_DARK_BLUE_3;
+            color: $COLOR_WHITE;
+
+            &:hover, &:focus, &:active {
+                border-color: $COLOR_WHITE;
+            }
+        }
+        &__native-overlay {
+            background: $COLOR_DARK_BLUE_5;
+
+            &:hover, &:focus, &:active {
+                border-color: $COLOR_WHITE;
+            }
+        }
+    }
+    .range-slider {
+        &__track {
+            background: $COLOR_DARK_BLUE_2 !important;
+
+            &::-webkit-slider-thumb {
+                background: $COLOR_PURPLE;
+            }
+            &::-moz-range-thumb {
+                background: $COLOR_PURPLE;
+            }
+            &::-moz-range-track {
+                background: $COLOR_DARK_BLUE_2;
+            }
+            &:active::-webkit-slider-thumb {
+                box-shadow: 0 0 0 4px rgba(79, 96, 174, 0.32);
+            }
+            &:active::-moz-range-thumb {
+                box-shadow: 0 0 0 4px rgba(79, 96, 174, 0.32);
+            }
+        }
+        &__ticks-step {
+            border-color: $COLOR_DARK_BLUE_2;
+            background: $COLOR_DARK_BLUE_2;
+
+            &--active, &--marked {
+                background: $COLOR_PURPLE;
+                border-color: $COLOR_PURPLE;
+            }
+            &:hover:not(&--active) {
+                background: $COLOR_PURPLE;
+                border-color: $COLOR_PURPLE;
+                box-shadow: 0 0 0 6px rgba(79, 96, 174, 0.32);
+            }
+        }
+        &__line {
+            background: $COLOR_PURPLE;
+        }
+    }
+    .settings-dialog {
+        background: $COLOR_DARK_BLUE_3;
+
+        &__container {
+            background: $COLOR_DARK_BLUE_3;
+
+        }
+        &__tab-content {
+            background: $COLOR_DARK_BLUE_3;
+        }
+        &__general-container, &__chart-container {
+            background: $COLOR_DARK_BLUE_5;
+        }
+        &__header {
+            color: $COLOR_DARK_BLUE_7;
+        }
+        &__row {
+            background-color: $COLOR_DARK_BLUE_2;
+
+            &-name {
+                color: $COLOR_DARK_BLUE_7;
+            }
+            &:hover {
+                background-color: $COLOR_DARK_BLUE_4;
+            }
+        }
+        &__language {
+            &-dialog-container {
+                background: $COLOR_DARK_BLUE_3;
+            }
+            &-header {
+                background: $COLOR_DARK_BLUE_3;
+                color: $COLOR_DARK_BLUE_7;
+
+            }
+            &-row {
+                background: $COLOR_DARK_BLUE_2;
+                color: $COLOR_DARK_BLUE_7;
+
+                &:hover {
+                    background: $COLOR_DARK_BLUE_4;
+                }
+            }
+            &-name {
+                color: $COLOR_DARK_BLUE_7;
+            }
+        }
+    }
+    .acc-info {
+        &__id {
+            color: $COLOR_WHITE;
+        }
+        &:hover:not(.show) {
+            background-color: $COLOR_DARK_BLUE_4;
+
+            .symbols {
+                background: $COLOR_DARK_BLUE_4;
+            }
+        }
+        &__balance {
+            .symbols {
+                background: $COLOR_DARK_BLUE_2;
+            }
+        }
+        &--show {
+            &:after {
+                background: $COLOR_WHITE;
+            }
+        }
+        &--is-virtual {
+            .acc-balance-amount, .symbols {
+                color: $COLOR_ORANGE;
+            }
+        }
+    }
+    .acc-switcher {
+        &__wrapper {
+            background: $COLOR_DARK_BLUE_3;
+        }
+        &__account:hover {
+            background-color: $COLOR_DARK_BLUE_4;
+        }
+        &__list {
+            background-color: $COLOR_DARK_BLUE_3;
+
+            &-group {
+                border-color: $COLOR_DARK_BLUE_2;
+            }
+            &-title {
+                color: $COLOR_DARK_BLUE_7;
+            }
+            .acc-switcher__account {
+                border-color: $COLOR_DARK_BLUE_2;
+
+                .acc-switcher__id {
+                    color: $COLOR_DARK_BLUE_7;
+                }
+                .acc-switcher__radio {
+                    border-color: $COLOR_DARK_BLUE_7;
+                }
+                &--selected {
+                    .acc-switcher__id {
+                        color: $COLOR_WHITE;
+                    }
+                    .acc-switcher__radio {
+                        border-color: $COLOR_GREEN_1;
+                        background: $COLOR_GREEN_1;
+                    }
+                }
+            }
+        }
+        &__logout {
+            background-color: $COLOR_DARK_BLUE_2;
+
+            span {
+                color: $COLOR_DARK_BLUE_7;
+            }
+            &:hover {
+                background-color: $COLOR_DARK_BLUE_4;
+            }
+        }
+        &__new-account-title {
+            color: $COLOR_DARK_BLUE_7;
+            border-color: $COLOR_DARK_BLUE_7;
+
+            &:before {
+                color: $COLOR_DARK_BLUE_7;
+            }
+            &:hover {
+                background: $COLOR_DARK_BLUE_4;
+            }
+        }
+    }
+    .allow-equals {
+        &__label {
+            color: $COLOR_DARK_BLUE_7;
+        }
+    }
+    .popconfirm {
+        background: $COLOR_DARK_BLUE_3;
+
+        &__header {
+            color: $COLOR_DARK_BLUE_7;
+        }
+        &__button {
+            background: $COLOR_DARK_BLUE_3;
+
+            &-text {
+                color: $COLOR_DARK_BLUE_7 !important;
+            }
+            &:hover {
+                background: $COLOR_DARK_BLUE_5 !important;
+            }
+        }
+        &:after {
+            border-color: $COLOR_DARK_BLUE_3;
+        }
+    }
+    .calendar {
+        background: $COLOR_DARK_BLUE_3;
+        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.8), 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+
+        &__body {
+            border-color: $COLOR_DARK_BLUE_2;
+        }
+        &__text {
+            color: $COLOR_WHITE;
+        }
+        &__btn {
+            color: $COLOR_DARK_BLUE_7;
+
+            &--select {
+                color: $COLOR_WHITE;
+            }
+        }
+        &__cell {
+            color: $COLOR_DARK_BLUE_7;
+
+            &:hover {
+                background: $COLOR_DARK_BLUE_5;
+            }
+            &--today {
+                border: 1px solid $COLOR_DARK_BLUE_7;
+                color: $COLOR_WHITE;
+            }
+            &--disabled, &--other {
+                color: $COLOR_DARK_BLUE_8;
+            }
+            &--disabled {
+                &:hover {
+                    background: $COLOR_DARK_BLUE_3;
+                }
+            }
+            &--active {
+                color: $COLOR_WHITE;
+                background: $COLOR_DARK_BLUE_5 !important;
+
+                &:hover {
+                    background: $COLOR_DARK_BLUE_3;
+                }
+            }
+        }
     }
 }

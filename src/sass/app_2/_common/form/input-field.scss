@@ -1,0 +1,231 @@
+/* Ant style */
+.input-field {
+    margin: 0.8em 0 0;
+    position: relative;
+
+    &:has(input[type=checkbox]), .tooltip {
+        display: inline-block;
+    }
+    .tooltip {
+        width: 100%;
+    }
+    & ~ [class*='__icon'] {
+        @extend .absolute-center-v; // centers input-field icons vertically
+        top: 0.8em;
+        left: 5%;
+    }
+    .symbols {
+        height: 100%;
+        width: 3.2em;
+        line-height: 3.2em;
+        border-radius: $BORDER_RADIUS 0 0 $BORDER_RADIUS;
+
+        &:before {
+            @include typeface(--paragraph-center-normal-black);
+            color: inherit;
+        }
+    }
+    &:has(input[type=checkbox]) {
+        display: inline-block;
+        width: 100%;
+    }
+    & + input {
+        padding-left: 3.2em !important;
+        padding-right: 1.4em;
+    }
+    .input-wrapper {
+        position: relative;
+
+        input {
+            text-align: center;
+
+            &::-ms-clear { // Edge: hide clear icon for incement input
+                display: none;
+            }
+        }
+        &:hover {
+            input {
+                border-color: $COLOR_LIGHT_GRAY_1;
+            }
+        }
+        &__button {
+            position: absolute;
+            z-index: 1;
+            top: 2px;
+            height: calc(100% - 5px);
+            margin: initial;
+            min-width: 3em;
+            border-radius: 3px;
+            padding: initial;
+            background-color: initial;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &--increment {
+                right: 2px; // fixed position
+            }
+            &--decrement {
+                left: 2px; // fixed position
+            }
+            &:hover {
+                cursor: pointer;
+                background: $COLOR_LIGHT_BLACK_4;
+            }
+            &:disabled:hover {
+                cursor: not-allowed;
+                background: transparent;
+            }
+        }
+    }
+    input {
+        @include typeface(--paragraph-center-normal-black, capitalize);
+        list-style: none;
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        height: 32px;
+        padding-left: 0.8em;
+        border: 1px solid $COLOR_LIGHT_BLACK_4;
+        border-radius: $BORDER_RADIUS;
+        transition: transform 0.3s;
+
+        &[type=checkbox] {
+            font-size: 1em;
+            cursor: pointer;
+            display: inline-block;
+            vertical-align: middle;
+            width: 1.2em;
+            height: 1.2em;
+            border-color: $COLOR_LIGHT_BLACK_4;
+            border-radius: 1px;
+            border-width: 0.5px;
+            padding: 0;
+
+            &:hover, &:focus, &:active {
+                border-color: $COLOR_ORANGE;
+                border-radius: 1px;
+                box-shadow: none;
+            }
+            &:checked {
+                background: $COLOR_ORANGE;
+                border-color: $COLOR_ORANGE;
+
+                &:after {
+                    display: inline-block;
+                }
+            }
+            &::-ms-check { // IE/EDGE support
+                background: transparent;
+                border-color: transparent;
+                color: $COLOR_WHITE;
+            }
+            &:after {
+                @include typeface(--xsmall-left-normal-active);
+                content: 'L';
+                transform: scaleX(-1) rotate(-40deg);
+                position: absolute;
+                top: -20%;
+                left: 30%;
+                display: none;
+            }
+        }
+        &:hover {
+            border-color: $COLOR_LIGHT_GRAY_1;
+        }
+        &:active, &:focus {
+            outline: 0;
+            border-radius: $BORDER_RADIUS;
+            border-color: $COLOR_LIGHT_GRAY_1;
+            box-shadow: 0 0 0 2px rgba(127, 131, 151, 0.3);
+        }
+        &:not([type=range]), label {
+            touch-action: manipulation;
+        }
+        &.error {
+            color: $COLOR_RED;
+            border: 1px solid $COLOR_RED !important;
+        }
+        &[readonly] {
+            cursor: pointer;
+        }
+        &::placeholder {
+            color: $COLOR_LIGHT_BLACK_1;
+        }
+    }
+    label.input-label {
+        @include typeface(--paragraph-left-normal-black);
+        margin-bottom: 0.8em;
+        display: inline-block;
+        text-align: center;
+        width: 100%;
+    }
+    span.input-helper {
+        @include typeface(--small-left-light-grey);
+    }
+}
+
+// Dark Theme
+.theme--dark {
+    .input-field {
+        .symbols {
+            color: $COLOR_DARK_BLUE_7;
+        }
+        label.input-label {
+            color: $COLOR_DARK_BLUE_7;
+        }
+        &:has(input[type=checkbox]) {
+            display: inline-block;
+        }
+        input {
+            background: $COLOR_DARK_BLUE_2;
+            border-color: $COLOR_DARK_BLUE_2;
+            color: $COLOR_DARK_BLUE_7;
+
+            &[type=checkbox] {
+                border-color: $COLOR_DARK_BLUE_7;
+
+                &:hover {
+                    border-color: $COLOR_ORANGE;
+                }
+                &:checked {
+                    background: $COLOR_ORANGE;
+                    border-color: $COLOR_ORANGE;
+                }
+                &:not(:checked) {
+                    &:focus, &:active {
+                        border-color: $COLOR_DARK_BLUE_7;
+                    }
+                }
+            }
+            &:hover {
+                border-color: $COLOR_DARK_BLUE_7;
+            }
+            &:focus, &:active {
+                border-color: $COLOR_DARK_BLUE_7;
+                box-shadow: 0 0 0 0.2rem rgba(127, 131, 151, 0.3);
+                color: $COLOR_WHITE;
+            }
+            &::placeholder {
+                color: $COLOR_DARK_BLUE_7;
+            }
+        }
+    }
+    .input-wrapper {
+        &:hover {
+            input {
+                border-color: $COLOR_DARK_BLUE_7;
+            }
+        }
+        input {
+            &:active, &:focus {
+                box-shadow: 0 0 0 2px rgba(127, 131, 151, 0.3);
+            }
+        }
+        &__button:not(:disabled) {
+            &:hover {
+                background-color: $COLOR_DARK_BLUE_4;
+            }
+        }
+    }
+}

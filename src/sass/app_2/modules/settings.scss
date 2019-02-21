@@ -30,17 +30,17 @@
     &-menu {
         &__group-header {
             width: 100%;
-            height: 24px;
-            font-size: 16px;
+            height: 2.4em;
+            font-size: 1.6em;
             font-weight: bold;
             line-height: 1.5;
             color: $COLOR_LIGHT_BLACK_1;
             box-sizing: border-box;
-            margin: 20px 0 10px;
-            padding: 0 24px;
+            margin: 2em 0 1em;
+            padding: 0 2.4em;
         }
         &__separator {
-            margin: 10px 24px;
+            margin: 1em 2.4em;
         }
     }
 }
@@ -50,7 +50,7 @@
 */
 .menu-item {
     display: flex;
-    height: 48px;
+    height: 4.8em;
     flex-direction: row;
     flex: 1;
     width: 100%;
@@ -63,26 +63,26 @@
         box-shadow: inset -4px 0 0 0 $COLOR_LIGHT_BLACK_4;
     }
     &__img {
-        width: 32px;
-        height: 32px;
-        margin: 8px 8px 8px 24px;
+        width: 3.2em;
+        height: 3.2em;
+        margin: 0.8em 0.8em 0.8em 2.4em;
     }
     &__content {
         flex-grow: 1;
-        margin: 8px 0px;
+        margin: 0.8em 0px;
         overflow: hidden;
     }
     &__title {
-        font-size: 12px;
-        height: 18px;
+        font-size: 1.2em;
+        height: 1.8em;
         font-weight: bold;
         line-height: 1.5;
         color: $COLOR_LIGHT_BLACK_1;
     }
     &__description {
-        font-size: 10px;
-        height: 15px;
-        padding-right: 5px;
+        font-size: 1em;
+        height: 1.5em;
+        padding-right: 0.5em;
         line-height: 1.5;
         color: lighten($COLOR_LIGHT_BLACK_1, 50%);
         font-weight: 300;
@@ -96,17 +96,17 @@
     CONTENT SECTION
 */
 .section {
-    padding: 15px 24px;
+    padding: 1.5em 2.4em;
 
     &__title {
-        font-size: 20px;
+        font-size: 1.25em;
         font-weight: bold;
         line-height: 1.25;
         color: $COLOR_LIGHT_BLACK_1;
         margin-bottom: 0;
     }
     &__description {
-        font-size: 12px;
+        font-size: 1.2em;
         line-height: 1.5;
         color: $COLOR_LIGHT_BLACK_1;
         font-weight: normal;
@@ -119,10 +119,10 @@
     MOBILE DROPDOWN MENU
 */
 .mobile-dropdown {
-    $top_margin: 10px;
-    $side_margin: 8px;
-    $button_height: 50px;
-    $button_menu_gap: 10px;
+    $top_margin: 1em;
+    $side_margin: 0.8em;
+    $button_height: 5em;
+    $button_menu_gap: 1em;
     margin: $top_margin $side_margin $button_menu_gap;
 
     &__button {
@@ -130,7 +130,7 @@
         width: 100%;
         box-sizing: border-box;
         margin-bottom: $button_menu_gap;
-        padding-right: 40px;
+        padding-right: 4em;
         background: $COLOR_WHITE;
         border-radius: $BORDER_RADIUS;
         border: 1px solid $COLOR_LIGHT_BLACK_4;
@@ -145,12 +145,12 @@
     &__menu {
         position: fixed;
         width: calc(100vw - #{$side_margin} * 2);
-        max-height: calc(100vh - #{$HEADER_HEIGHT} - #{$top_margin} - #{$button_height} - #{$button_menu_gap} - 20px);
+        max-height: calc(100vh - #{$HEADER_HEIGHT} - #{$top_margin} - #{$button_height} - #{$button_menu_gap} - 2em);
         overflow-y: auto;
         background: $COLOR_WHITE;
         border-radius: $BORDER_RADIUS;
         border: 1px solid $COLOR_LIGHT_BLACK_4;
-        padding-bottom: 10px;
+        padding-bottom: 1em;
         box-sizing: border-box;
         user-select: none;
         opacity: 0;
@@ -168,7 +168,6 @@
         }
         .select-arrow.select-arrow { // to increase specificity without !IMPORTANT
             transform: rotate(0deg);
-            color: $COLOR_DARK_BLUE_5;
         }
     }
     .menu-item {
@@ -176,14 +175,14 @@
             display: none;
         }
         &__img_container {
-            margin-left: 8px;
+            margin-left: 0.8em;
         }
     }
     .settings__section_header {
-        padding-left: 12px;
+        padding-left: 1.2em;
     }
     .settings-menu > div:first-child .settings-menu__group-header {
-        margin-top: 12px;
+        margin-top: 1.2em;
     }
     .settings-menu__separator {
         margin-right: 0;
@@ -199,16 +198,15 @@
         position: absolute;
         pointer-events: none;
         top: 40%;
-        right: 15px;
+        right: 1.5em;
         line-height: 1;
         transition: transform 0.3s ease;
         transform: rotate(180deg);
         transform-origin: 45% 30%;
-        color: $COLOR_LIGHT_BLACK_4;
 
         &:before {
             content: '\002303';
-            font-size: 1.1rem;
+            font-size: 1.76em;
         }
     }
 }

@@ -5,7 +5,7 @@ import {
     toMoment }                             from 'Utils/Date';
 import {
     proposal_properties_alternative_names,
-    removable_proposal_properties }        from '../Constants/query_string';
+    removable_proposal_properties }        from '../Constants/query-string';
 
 export const getProposalInfo = (store, response, obj_prev_contract_basis) => {
     const proposal   = response.proposal || {};
