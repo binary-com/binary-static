@@ -12,7 +12,7 @@ export const SeparatorLine = ({
     const classes2 = `separator-line ${sub_class || ''} ${invisible ? '' : 'border-bottom'}`;
 
     return (
-        <div data-show={data_show} className={!no_wrapper ? classes1 : undefined} >
+        <div data-show={data_show || undefined} className={!no_wrapper ? classes1 : undefined} >
             <div className={classes2 || undefined} />
         </div>
     );
