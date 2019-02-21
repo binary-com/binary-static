@@ -1,11 +1,11 @@
 import PropTypes        from 'prop-types';
 import React            from 'react';
 import classNames       from 'classnames';
-import { IconError }    from 'Assets/Common/icon_error.jsx';
-import { IconInfoBlue } from 'Assets/Common/icon_info_blue.jsx';
-import { IconWarning }  from 'Assets/Common/icon_warning.jsx';
-import { IconSuccess }  from 'Assets/Common/icon_success.jsx';
-import CloseButton      from './close_button.jsx';
+import { IconError }    from 'Assets/Common/icon-error.jsx';
+import { IconInfoBlue } from 'Assets/Common/icon-info-blue.jsx';
+import { IconWarning }  from 'Assets/Common/icon-warning.jsx';
+import { IconSuccess }  from 'Assets/Common/icon-success.jsx';
+import CloseButton      from './close-button.jsx';
 import {
     DEFAULT_DELAY,
     POSITIONS,
@@ -35,12 +35,12 @@ const Toast = ({
             onClick={onClick}
         >
             <div className='toast__body__icon'>
-                { data.type === 'ERROR'   && <IconError /> }
-                { data.type === 'INFO'    && <IconInfoBlue /> }
-                { data.type === 'SUCCESS' && <IconSuccess /> }
-                { data.type === 'WARNING' && <IconWarning /> }
+                { data.type === 'ERROR'   && <IconError className='toast__icon-type' /> }
+                { data.type === 'INFO'    && <IconInfoBlue className='toast__icon-type' /> }
+                { data.type === 'SUCCESS' && <IconSuccess className='toast__icon-type' /> }
+                { data.type === 'WARNING' && <IconWarning className='toast__icon-type' /> }
             </div>
-            <div className='toast__body__message'>
+            <div className='toast__message'>
                 {data.message}
             </div>
             <CloseButton onClick={onClick} />

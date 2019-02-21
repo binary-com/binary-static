@@ -1,0 +1,36 @@
+/** @define allow-equals */
+.allow-equals {
+    display: flex;
+    align-items: center;
+
+    &__label {
+        margin: 0.8em 0 0;
+        @include typeface(--small-left-normal-black, none);
+        @include toEm(padding-left, 8px, 1.2em);
+        cursor: pointer;
+    }
+    & &__tooltip[data-tooltip] {
+        margin-top: 1.1em;
+
+        &:before {
+            padding-left: 3em;
+        }
+        &:before, &:after {
+            right: 112px;
+        }
+        // .allow-equals__tooltip-info {
+        //     &:before {
+        //         left: -39.6em;
+        //     }
+        //     &:after {
+        //         transform: scale(0.75);
+        //     }
+        // }
+    }
+    &-icon {
+        transform: scale(0.75);
+    }
+    &-tooltip-balloon-icon {
+        left: -412px;
+    }
+}

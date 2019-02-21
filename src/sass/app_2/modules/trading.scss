@@ -2,6 +2,7 @@
 .trade-container {
     &__fieldset {
         background-color: $COLOR_LIGHT_BLACK_4_SOLID;
+        border: 1px solid $COLOR_LIGHT_BLACK_4_SOLID;
         border-radius: $BORDER_RADIUS;
         padding: 0.8em;
 
@@ -91,31 +92,6 @@
                     width: 265px;
                 }
             }
-        }
-    }
-    &__allow-equals {
-        &-tooltip {
-            &[data-tooltip] {
-                margin-top: 1em;
-
-                &:before, &:after {
-                    right: 118px !important;
-                }
-                &:before {
-                    padding-left: 3em;
-                    white-space: normal;
-                    width: 265px;
-                }
-            }
-            &-balloon-icon {
-                left: -412px;
-                top: 1px;
-            }
-        }
-        &-label {
-            @include typeface(--small-left-normal-black, none);
-            @include toEm(padding, 0 8px, 1.2em);
-            cursor: pointer;
         }
     }
     &__barriers {

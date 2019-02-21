@@ -1,4 +1,6 @@
-.calendar, .sidebar-container .calendar {
+
+/** @define calendar */
+.calendar {
     position: absolute;
     top: 0;
     background: $COLOR_WHITE;
@@ -6,16 +8,9 @@
     border-radius: 5px;
     box-shadow: 0 2px 8px 0 rgba(42, 48, 82, 0.2);
     z-index: 999;
+    box-sizing: border-box;
+    font-size: 1em;
 
-    &, * {
-        box-sizing: border-box;
-        font-size: 1em;
-    }
-    button {
-        border: none;
-        outline: none;
-        background: none;
-    }
     &__header, &__footer {
         position: relative;
         display: flex;
@@ -36,7 +31,7 @@
             grid-gap: 1.2em;
             padding: 0.8em 2em;
 
-            span {
+            .calendar__cell {
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -47,7 +42,7 @@
             grid-template-columns: repeat(7, 2.4em);
             grid-auto-rows: 2.4em;
 
-            span {
+            .calendar__cell {
                 width: 100%;
                 height: 100%;
             }
@@ -56,13 +51,15 @@
             grid-template-columns: repeat(3, minmax(7.2em, 1fr));
             grid-auto-rows: minmax(4.2em, auto);
 
-            span {
+            .calendar__cell {
                 width: 5.6em;
                 height: 3.2em;
             }
         }
-        &--decade span {
-            width: 100%;
+        &--decade {
+            .calendar__cell {
+                width: 100%;
+            }
         }
     }
     &__icon {
@@ -74,6 +71,9 @@
         }
     }
     &__nav {
+        border: none;
+        outline: none;
+        background: none;
         position: absolute;
         padding: 0 0.5em;
 
@@ -92,7 +92,8 @@
         &--next-month {
             right: 14%;
         }
-        &--disabled {
+        &--disabled .calendar__nav-icon {
+            // fill: $COLOR_LIGHT_BLACK_3;
             @extend .inline-icon.disabled;
         }
     }
@@ -101,14 +102,13 @@
         padding: 0em 0.2em;
         font-weight: bold;
         cursor: pointer;
+        border: none;
+        outline: none;
+        background: none;
 
         &--disabled {
             cursor: default;
             transition: none;
-        }
-        a {
-            cursor: inherit;
-            @include typeface(--small-left-normal-black);
         }
         &--select {
             @include typeface(--paragraph-left-bold-black);
@@ -119,10 +119,6 @@
 
         &--bold {
             font-weight: bold;
-        }
-        & + &__btn {
-            border-top: 0.1em solid $COLOR_LIGHT_BLACK_4;
-            margin: 0 -1.2em;
         }
     }
     &__cell {
@@ -161,67 +157,17 @@
                 background: $COLOR_LIGHT_GRAY_1;
             }
         }
-        .tooltip[data-tooltip] {
-            position: absolute;
-            display: inline-grid;
-            cursor: default;
-            height: 0;
-            top: 2px;
-        }
-    }
-}
-
-// Dark theme
-.theme--dark {
-    .calendar {
-        background: $COLOR_DARK_BLUE_3;
-        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.8), 0 2px 4px 0 rgba(0, 0, 0, 0.5);
-
-        &__header, &__footer {
-            color: $COLOR_WHITE;
-
-            span a {
-                color: $COLOR_WHITE;
+        &-tooltip {
+            &[data-tooltip] {
+                position: absolute;
+                display: inline-grid;
+                cursor: default;
+                height: 0;
+                top: 0;
+                justify-content: center;
             }
-        }
-        &__body {
-            border-color: $COLOR_DARK_BLUE_2;
-        }
-        &__text {
-            color: $COLOR_WHITE;
-        }
-        &__btn {
-            color: $COLOR_DARK_BLUE_7;
-
-            &--select {
-                color: $COLOR_WHITE;
-            }
-        }
-        &__cell {
-            color: $COLOR_DARK_BLUE_7;
-
-            &:hover {
-                background: $COLOR_DARK_BLUE_5;
-            }
-            &--today {
-                border: 1px solid $COLOR_DARK_BLUE_7;
-                color: $COLOR_WHITE;
-            }
-            &--disabled, &--other {
-                color: $COLOR_DARK_BLUE_8;
-            }
-            &--disabled {
-                &:hover {
-                    background: $COLOR_DARK_BLUE_3;
-                }
-            }
-            &--active {
-                color: $COLOR_WHITE;
-                background: $COLOR_DARK_BLUE_5 !important;
-
-                &:hover {
-                    background: $COLOR_DARK_BLUE_3;
-                }
+            &-icon {
+                margin-top: -0.5em;
             }
         }
     }

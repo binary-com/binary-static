@@ -1,2 +1,2 @@
 export * from './popconfirm.jsx';
-export * from './popconfirm_element.jsx';
+export * from './popconfirm-element.jsx';

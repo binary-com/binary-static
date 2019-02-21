@@ -3,7 +3,7 @@ import { expect }             from 'chai';
 import { configure, shallow } from 'enzyme';
 import Adapter                from 'enzyme-adapter-react-16';
 import Tooltip                from '../tooltip.jsx';
-import { testChildren }       from '../../../../test_helper';
+import { testChildren }       from '../../../../test-helper';
 
 configure({ adapter: new Adapter() });
 

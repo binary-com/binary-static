@@ -58,7 +58,7 @@ const TickDisplay = (() => {
         display_symbol       = data.display_symbol;
         contract_start_ms    = parseInt(data.contract_start) * 1000;
         contract_category    = data.contract_category;
-        should_set_barrier   = !contract_category.match('digits');
+        should_set_barrier   = !contract_category.match('digits|runs');
         display_decimals     = data.display_decimals || 2;
         show_contract_result = data.show_contract_result;
         reset_spot_plotted   = false;
@@ -72,7 +72,6 @@ const TickDisplay = (() => {
             price  = parseFloat(data.price);
             payout = parseFloat(data.payout);
         }
-
         setXIndicators();
         requireHighstock((Highstock) => {
             Highcharts = Highstock;
@@ -148,6 +147,11 @@ const TickDisplay = (() => {
                 label    : localize('Exit Spot'),
                 id       : 'exit_tick',
                 dashStyle: 'Dash',
+            };
+        } else if (contract_category.match('runs')) {
+            ticks_needed = number_of_ticks + 1;
+            x_indicators = {
+                _0: { label: localize('Entry Spot'), id: 'entry_tick' },
             };
         } else {
             x_indicators = {};
@@ -357,7 +361,10 @@ const TickDisplay = (() => {
                     category = 'reset';
                 } else if (/^(tickhigh|ticklow)_/i.test(contract.shortcode)) {
                     category = 'highlowticks';
+                } else if (/^(runhigh|runlow)/i.test(contract.shortcode)) {
+                    category = 'runs';
                 }
+
                 initialize({
                     barrier,
                     symbol              : contract.underlying,
@@ -374,6 +381,7 @@ const TickDisplay = (() => {
                 return;
             }
         }
+
         if (data.tick) {
             spots2  = Tick.spots();
             epoches = Object.keys(spots2).sort((a, b) => a - b);
@@ -381,7 +389,10 @@ const TickDisplay = (() => {
             epoches = data.history.times;
         }
 
-        const has_finished = applicable_ticks && ticks_needed && applicable_ticks.length >= ticks_needed;
+        let has_finished = applicable_ticks && ticks_needed && applicable_ticks.length >= ticks_needed;
+        if (contract_category.match('runs')) {
+            has_finished = (applicable_ticks.length && contract.exit_tick_time) || false;
+        }
         const has_sold     = contract && contract.exit_tick_time && applicable_ticks
             && applicable_ticks.find(({ epoch }) => +epoch === +contract.exit_tick_time) !== undefined;
 
@@ -563,6 +574,9 @@ const TickDisplay = (() => {
                 subscribe         = 'true';
             } else if (!/^(tickhigh|ticklow)_/i.test(contract.shortcode) && contract.exit_tick_time && +contract.exit_tick_time < +contract.date_expiry) {
                 request.end = contract.exit_tick_time;
+            } else if (!/^(runhigh|runlow)$/i.test(contract.contract_category)) {
+                request.subscribe = 1;
+                request.end       = contract.exit_tick_time || 'latest';
             } else {
                 request.end = contract.date_expiry;
             }

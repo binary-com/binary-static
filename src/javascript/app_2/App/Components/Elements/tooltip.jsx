@@ -1,10 +1,10 @@
 import classNames          from 'classnames';
 import PropTypes           from 'prop-types';
 import React               from 'react';
-import { IconInfoBlue }    from 'Assets/Common/icon_info_blue.jsx';
-import { IconInfoOutline } from 'Assets/Common/icon_info_outline.jsx';
-import { IconQuestion }    from 'Assets/Common/icon_question.jsx';
-import { IconRedDot }      from 'Assets/Common/icon_red_dot.jsx';
+import { IconInfoBlue }    from 'Assets/Common/icon-info-blue.jsx';
+import { IconInfoOutline } from 'Assets/Common/icon-info-outline.jsx';
+import { IconQuestion }    from 'Assets/Common/icon-question.jsx';
+import { IconRedDot }      from 'Assets/Common/icon-red-dot.jsx';
 
 class Tooltip extends React.Component {
     state = {
@@ -37,12 +37,12 @@ class Tooltip extends React.Component {
                 {icon === 'info' &&
                     <React.Fragment>
                         <IconInfoOutline
-                            className={classNames(icon, 'tooltip__icon')}
+                            className={classNames(`${className}-icon`, 'tooltip__icon')}
                             onMouseEnter={this.onMouseEnter}
                             onMouseLeave={this.onMouseLeave}
                         />
                         <IconInfoBlue
-                            className={classNames(`${className}-balloon-icon`, 'tooltip-balloon-icon', {
+                            className={classNames(`${className}-tooltip-balloon-icon`, 'tooltip-balloon-icon', {
                                 'tooltip-balloon-icon--show': this.state.show_tooltip_balloon_icon,
                             })}
                         />
