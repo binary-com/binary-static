@@ -2,6 +2,13 @@ import classNames          from 'classnames';
 import PropTypes           from 'prop-types';
 import React               from 'react';
 import { NavLink }         from 'react-router-dom';
+import {
+    IconBuy,
+    IconDeposit,
+    IconSell,
+    IconPayout,
+    IconWallet,
+    IconWithdrawal }       from 'Assets/Statement';
 import { getContractPath } from 'App/Components/Routes/helpers';
 
 const StatementCard = ({
@@ -15,6 +22,8 @@ const StatementCard = ({
     payout,
     refid,
 }) => {
+    const icon = action.toLowerCase();
+
     const content = (
         <React.Fragment>
             <div className='statement-card__header'>
@@ -27,16 +36,22 @@ const StatementCard = ({
                 <div className='statement-card__desc'>{desc}</div>
                 <div className='statement-card__row'>
                     <div className={`statement-card__cell statement-card__amount statement-card__amount--${action.toLowerCase()}`}>
+                        {icon === 'sell'        && <IconSell className='statement-card__icon' />}
+                        {icon === 'buy'         && <IconBuy className='statement-card__icon' />}
+                        {icon === 'deposit'     && <IconDeposit className='statement-card__icon' />}
+                        {icon === 'withdrawal'  && <IconWithdrawal className='statement-card__icon' />}
                         <span className='statement-card__cell-text'>
                             {amount}
                         </span>
                     </div>
                     <div className='statement-card__cell statement-card__payout'>
+                        <IconPayout className='statement-card__icon' />
                         <span className='statement-card__cell-text'>
                             {payout}
                         </span>
                     </div>
                     <div className='statement-card__cell statement-card__balance'>
+                        <IconWallet className='statement-card__icon' />
                         <span className='statement-card__cell-text'>
                             {balance}
                         </span>

@@ -1,8 +1,9 @@
-import PropTypes       from 'prop-types';
-import React           from 'react';
-import { localize }    from '_common/localize';
-import { connect }     from 'Stores/connect';
-import SettingsControl from '../../Components/Elements/SettingsDialog/settings-control.jsx';
+import PropTypes           from 'prop-types';
+import React               from 'react';
+import { localize }        from '_common/localize';
+import { IconCountryFlag } from 'Assets/Common';
+import { connect }         from 'Stores/connect';
+import SettingsControl     from '../../Components/Elements/SettingsDialog/settings-control.jsx';
 
 const GeneralSettings = ({
     curr_language,
@@ -20,7 +21,10 @@ const GeneralSettings = ({
                 name={localize('Language')}
                 onClick={showLanguage}
             >
-                <i className={`settings-dialog__language-flag settings-dialog__language-flag--${(curr_language || 'EN').toLowerCase()}`} />
+                <IconCountryFlag
+                    className={'settings-dialog__language-flag'}
+                    type={(curr_language || 'EN').toLowerCase()}
+                />
             </SettingsControl>
             <SettingsControl
                 name={localize('Dark Mode')}
