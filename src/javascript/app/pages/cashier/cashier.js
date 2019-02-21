@@ -58,8 +58,8 @@ const Cashier = (() => {
                 new_el.href = href;
             }
             el_virtual_topup_info.innerText = can_topup
-                ? localize('Your virtual account balance is currently below [_1]. You may top up your account with an additional [_2].', [`${Client.get('currency')} 1,000.00`, `${Client.get('currency')} 10,000.00`])
-                : localize('You can top up your virtual account with an additional [_1] if your balance falls below [_2].', [`${Client.get('currency')} 10,000.00`, `${Client.get('currency')} 1,000.00`]);
+                ? localize('Your virtual account balance is currently [_1] or less. You may top up your account with an additional [_2].', [`${Client.get('currency')} 1,000.00`, `${Client.get('currency')} 10,000.00`])
+                : localize('You can top up your virtual account with an additional [_1] if your balance is [_2] or less.', [`${Client.get('currency')} 10,000.00`, `${Client.get('currency')} 1,000.00`]);
             $a.replaceWith($('<a/>', new_el));
             $(top_up_id).parent().setVisibility(1);
         });

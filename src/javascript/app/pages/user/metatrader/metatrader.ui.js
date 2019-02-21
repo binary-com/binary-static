@@ -620,8 +620,8 @@ const MetaTraderUI = (() => {
         el_demo_topup_btn.classList.remove(is_enabled ? 'button-disabled' : 'button');
 
         el_demo_topup_info.innerText = is_enabled
-            ? localize('Your demo account balance is currently below [_1]. You may top up your account with an additional [_2].', [`${MetaTraderConfig.getCurrency(acc_type)} 1,000.00`, `${MetaTraderConfig.getCurrency(acc_type)} 10,000.00`])
-            : localize('You can top up your demo account with an additional [_1] if your balance falls below [_2].', [`${MetaTraderConfig.getCurrency(acc_type)} 10,000.00`, `${MetaTraderConfig.getCurrency(acc_type)} 1,000.00`]);
+            ? localize('Your demo account balance is currently [_1] or less. You may top up your account with an additional [_2].', [`${MetaTraderConfig.getCurrency(acc_type)} 1,000.00`, `${MetaTraderConfig.getCurrency(acc_type)} 10,000.00`])
+            : localize('You can top up your demo account with an additional [_1] if your balance is [_2] or less.', [`${MetaTraderConfig.getCurrency(acc_type)} 10,000.00`, `${MetaTraderConfig.getCurrency(acc_type)} 1,000.00`]);
     };
 
     const setTopupLoading = (is_loading) => {
