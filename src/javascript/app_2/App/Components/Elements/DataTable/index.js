@@ -1,1 +1,1 @@
-export default from './data_table.jsx';
+export default from './data-table.jsx';

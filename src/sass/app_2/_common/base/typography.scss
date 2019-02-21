@@ -64,8 +64,9 @@ $TYPEFACES_LIST: generate-typefaces();
 /*
     Typography
 */
+/* postcss-bem-linter: ignore */
 html {
-    font-size: 62.5%; // Set root font size to 10px (1rem) to convert units in base 10 
+    font-size: 62.5%; // Set root font size to 10px (1rem) to convert units in base 10
 
     /** TODO: define breakpoints */
     // @include breakpoints(big-desktop) {
@@ -85,7 +86,8 @@ html {
     // }
 }
 
-body {
+/** @define body */
+.body {
     position: relative;
     min-height: 100%;
     margin: 0;
@@ -93,7 +95,8 @@ body {
     overflow-x: hidden;
 }
 
-*, html, body {
+/* postcss-bem-linter: ignore */
+*, html, .body {
     font-family: $FONT_STACK;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
     text-rendering: optimizeLegibility;
@@ -105,22 +108,21 @@ body {
 }
 
 // Forms
-select, input, textarea {
+/** @define select */
+.select {
     font-family: inherit;
     font-size: inherit;
-    font-weight: inherit;
     font-style: inherit;
     padding: 2px 3px;
     border: 1px solid $COLOR_LIGHT_BLACK_4;
     border-radius: $BORDER_RADIUS;
 }
 
-a {
-    color: $COLOR_SKY_BLUE;
-}
-
-fieldset {
-    border: 1px solid $COLOR_LIGHT_BLACK_4_SOLID;
+/** @define input */
+.input {
+    font-family: inherit;
+    font-style: inherit;
+    padding: 2px 3px;
 }
 
 // Placeholders
