@@ -1,5 +1,5 @@
 import { template }        from '_common/utility';
-import { getPreBuildDVRs } from './declarative_validation_rules';
+import { getPreBuildDVRs } from './declarative-validation-rules';
 import Error               from './errors';
 
 class Validator {

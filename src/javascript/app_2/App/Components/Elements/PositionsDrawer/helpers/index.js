@@ -1,1 +1,1 @@
-export * from './duration_percentage';
+export * from './duration-percentage';

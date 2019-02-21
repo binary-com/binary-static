@@ -2,6 +2,7 @@
 .trade-container {
     &__fieldset {
         background-color: $COLOR_LIGHT_BLACK_4_SOLID;
+        border: 1px solid $COLOR_LIGHT_BLACK_4_SOLID;
         border-radius: $BORDER_RADIUS;
         padding: 0.8em;
 

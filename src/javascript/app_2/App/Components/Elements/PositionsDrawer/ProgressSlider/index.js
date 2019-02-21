@@ -1,1 +1,1 @@
-export default from './positions_progress_slider.jsx';
+export default from './positions-progress-slider.jsx';
