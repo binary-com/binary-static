@@ -203,9 +203,11 @@
  */
 @mixin colorIcon($colors...) {
     @for $i from 1 through length($colors) {
+        /* postcss-bem-linter: ignore */
         .color#{$i}-fill {
             fill: nth($colors, $i);
         }
+        /* postcss-bem-linter: ignore */
         .color#{$i}-stroke {
             stroke: nth($colors, $i);
         }

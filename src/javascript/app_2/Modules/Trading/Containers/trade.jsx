@@ -2,12 +2,12 @@ import PropTypes            from 'prop-types';
 import React                from 'react';
 import { CSSTransition }    from 'react-transition-group';
 import { getPropertyValue } from '_common/utility';
-import UILoader             from 'App/Components/Elements/ui_loader.jsx';
+import UILoader             from 'App/Components/Elements/ui-loader.jsx';
 import { connect }          from 'Stores/connect';
 import Test                 from './test.jsx';
-import FormLayout           from '../Components/Form/form_layout.jsx';
-import ContractDetails      from '../../Contract/Containers/contract_details.jsx';
-import InfoBox              from '../../Contract/Containers/info_box.jsx';
+import FormLayout           from '../Components/Form/form-layout.jsx';
+import ContractDetails      from '../../Contract/Containers/contract-details.jsx';
+import InfoBox              from '../../Contract/Containers/info-box.jsx';
 
 const SmartChart = React.lazy(() => import(/* webpackChunkName: "smart_chart" */'../../SmartChart'));
 
