@@ -6,6 +6,7 @@ import {
     isTimeValid,
     setTime,
     toMoment }                        from 'Utils/Date';
+import { localize }                   from '_common/localize';
 import DatePicker                     from 'App/Components/Form/DatePicker';
 
 const TradingDatePicker = ({
@@ -62,6 +63,7 @@ const TradingDatePicker = ({
             label={duration_units_list.length === 1 ? duration_units_list[0].text : null}
             mode={mode}
             name={name}
+            footer={localize('Minimum duration is 1 day')}
             onChange={onChange}
             min_date={min_date_expiry}
             max_date={max_date_duration}

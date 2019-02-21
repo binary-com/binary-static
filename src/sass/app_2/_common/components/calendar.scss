@@ -22,7 +22,7 @@
         align-items: center;
         height: 5em;
         border-radius: 5px;
-        padding: 0.8em;
+        padding: 1.6em;
     }
     &__header {
         justify-content: center;
@@ -115,7 +115,7 @@
         }
     }
     &__text {
-        @include typeface(--paragraph-left-normal-black);
+        @include typeface(--small-left-normal-black);
 
         &--bold {
             font-weight: bold;
