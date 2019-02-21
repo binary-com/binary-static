@@ -1,36 +1,35 @@
 .contract-container {
-    font-size: 0.85rem;
+    font-size: 1.4em;
     border-radius: $BORDER_RADIUS;
     position: relative;
 
     .contract-header {
-        max-height: 2rem;
+        max-height: 3.2em;
         overflow: hidden;
         border-radius: 4px 4px 0 0;
-        border: 1px solid $COLOR_GRAY;
 
         .header-wrapper {
             transition: transform 0.4s ease;
-            transform: translateY(-32px);
+            transform: translateY(-3.2em);
 
             .header-result, .header-purchased {
                 display: flex;
                 align-items: center;
-                padding: 0 10px;
+                padding: 5px;
                 color: $COLOR_WHITE;
                 font-weight: bold;
-                line-height: 2rem;
+                line-height: 1.5;
 
                 svg {
                     display: inline-block;
-                    margin-right: 7px;
+                    margin-right: 0.7em;
                 }
             }
         }
         &.purchased {
             .header-wrapper .header-purchased {
-                color: $COLOR_LIGHT_GREEN;
-                background-color: $COLOR_LIGHT_GRAY;
+                color: $COLOR_GREEN_1;
+                background-color: $COLOR_LIGHT_BLACK_4_SOLID;
                 opacity: 1;
                 transition: opacity 0.4s linear;
             }
@@ -40,7 +39,7 @@
                 transform: none;
 
                 .header-result {
-                    background-color: $COLOR_LIGHT_GREEN;
+                    background-color: $COLOR_GREEN_1;
                 }
                 .header-purchased {
                     opacity: 0;
@@ -52,7 +51,7 @@
                 transform: none;
 
                 .header-result {
-                    background-color: $COLOR_LIGHT_RED;
+                    background-color: $COLOR_RED;
                 }
                 .header-purchased {
                     opacity: 0;
@@ -61,31 +60,31 @@
         }
     }
     .contract-contents {
-        padding: 10px;
-        font-size: 0.75rem;
-        border: 1px solid $COLOR_GRAY;
+        padding: 1em;
+        background: $COLOR_LIGHT_BLACK_4_SOLID;
+        font-size: 1.2em;
         border-top-width: 0;
         border-radius: 0 0 4px 4px;
 
         .longcode {
             font-weight: 300;
             text-align: center;
-            line-height: 1.1rem;
+            line-height: 1.5;
         }
         .ref-number, .info-header {
-            margin-top: 10px;
+            margin-top: 1em;
             font-weight: 300;
             text-align: center;
-            background-color: $COLOR_LIGHT_GRAY;
-            line-height: 1.7rem;
+            background-color: $COLOR_LIGHT_BLACK_4_SOLID;
+            line-height: 1.5;
+            padding: 4px;
         }
         .info-header {
             font-weight: bold;
         }
         .info-item {
             display: flex;
-            padding: 7px 0;
-            border-bottom: 1px solid $COLOR_GRAY;
+            padding: 0.7em 0;
 
             > div {
                 align-self: center;
@@ -93,7 +92,7 @@
                 &:first-child {
                     font-weight: 300;
                     flex-grow: 1;
-                    color: $COLOR_LIGHT_BLACK;
+                    color: $COLOR_LIGHT_BLACK_1;
                 }
                 &:last-child {
                     width: 50%;
@@ -103,28 +102,27 @@
     }
 }
 
-$CONTRACT_INFO_BOX_PADDING: 15px;
+$CONTRACT_INFO_BOX_PADDING: 1.5em;
 
 .info-box-container {
     position: absolute;
     z-index: 10;
-    top: 10px;
-    right: 10px;
+    top: 1em;
+    right: 1em;
     transform: none;
     opacity: 1;
     transition: transform 0.4s ease, opacity 0.4s linear;
 
     &-enter {
-        transform: translateY(calc(-100% - 20px));
+        transform: translateY(calc(-100% - 2em));
         opacity: 0;
     }
     &-exit {
-        transform: translateY(calc(-100% - 20px));
+        transform: translateY(calc(-100% - 2em));
         opacity: 0;
     }
     .info-box {
         position: relative;
-        border: 1px solid $COLOR_GRAY;
         border-radius: $BORDER_RADIUS;
         padding: $CONTRACT_INFO_BOX_PADDING;
         background: rgba(255, 255, 255, 0.9);
@@ -135,55 +133,55 @@ $CONTRACT_INFO_BOX_PADDING: 15px;
             align-items: center;
 
             svg {
-                width: 24px;
-                height: 24px;
-                margin-right: 10px;
+                width: 2.4em;
+                height: 2.4em;
+                margin-right: 1em;
 
                 .color1-fill {
-                    fill: $COLOR_LIGHT_GREEN;
+                    fill: $COLOR_GREEN_1;
                 }
             }
             .pl-value {
-                color: $COLOR_LIGHT_GREEN;
+                color: $COLOR_GREEN_1;
                 font-weight: bold;
-                font-size: 1rem;
-                line-height: 1.5rem;
+                font-size: 1.6em;
+                line-height: 1.5em;
 
                 .percentage {
                     display: inline-block;
-                    margin-left: 7px;
+                    margin-left: 0.7em;
                 }
             }
             &.lost {
                 .pl-value {
-                    color: $COLOR_LIGHT_RED;
+                    color: $COLOR_RED;
                 }
                 svg .color1-fill {
-                    fill: $COLOR_LIGHT_RED;
+                    fill: $COLOR_RED;
                 }
             }
             .sell-info {
-                margin-right: 20px;
+                margin-right: 2em;
                 text-align: center;
-                line-height: 1.2rem;
+                line-height: 1.2em;
             }
         }
         .general {
             display: flex;
             align-items: center;
-            line-height: 1.4rem;
+            line-height: 1.4em;
 
             .values {
-                margin-left: 10px;
-                margin-right: 20px;
+                margin-left: 1em;
+                margin-right: 2em;
                 text-align: right;
                 font-weight: bold;
 
                 .profit {
-                    color: $COLOR_LIGHT_GREEN;
+                    color: $COLOR_GREEN_1;
                 }
                 .loss {
-                    color: $COLOR_LIGHT_RED;
+                    color: $COLOR_RED;
                 }
             }
             .sell {
@@ -194,12 +192,11 @@ $CONTRACT_INFO_BOX_PADDING: 15px;
                 margin: -$CONTRACT_INFO_BOX_PADDING;
                 margin-left: $CONTRACT_INFO_BOX_PADDING;
                 padding: $CONTRACT_INFO_BOX_PADDING;
-                border-left: 1px solid $COLOR_GRAY;
 
                 .tooltip {
                     position: absolute;
-                    bottom: 5px;
-                    right: 5px;
+                    bottom: 0.5em;
+                    right: 0.5em;
                     line-height: 0;
 
                     &:before {
@@ -219,63 +216,63 @@ $CONTRACT_INFO_BOX_PADDING: 15px;
             }
             .digit-list {
                 display: flex;
-                margin: 0 25px 0 10px;
+                margin: 0 2.5em 0 1em;
 
                 .digit-info {
-                    margin: 0 4px;
+                    margin: 0 0.4em;
                     text-align: center;
 
                     .digit-value {
-                        width: 32px;
-                        height: 32px;
-                        margin-bottom: 5px;
-                        border: 2px solid $COLOR_LIGHT_GREEN;
+                        width: 3.2em;
+                        height: 3.2em;
+                        margin-bottom: 0.5em;
+                        border: 2px solid $COLOR_GREEN_1;
                         border-radius: 50%;
                         display: flex;
                         justify-content: center;
                         align-items: center;
-                        color: $COLOR_LIGHT_GREEN;
-                        font-size: 1rem;
+                        color: $COLOR_GREEN_1;
+                        font-size: 1.6em;
                         font-weight: bold;
 
                         &.loss {
-                            border-color: $COLOR_LIGHT_RED;
-                            color: $COLOR_LIGHT_RED;
+                            border-color: $COLOR_RED;
+                            color: $COLOR_RED;
                         }
                         &.last {
-                            background-color: $COLOR_LIGHT_GREEN;
+                            background-color: $COLOR_GREEN_1;
                             color: $COLOR_WHITE;
 
                             &.loss {
-                                background-color: $COLOR_LIGHT_RED;
+                                background-color: $COLOR_RED;
                             }
                         }
                         &:empty {
-                            border-color: $COLOR_DARK_WHITE;
+                            border-color: $COLOR_LIGHT_BLACK_3;
                         }
                     }
                     .tick-number {
-                        line-height: 0.6rem;
-                        font-size: 0.6rem;
+                        line-height: 0.6em;
+                        font-size: 0.6em;
                     }
                 }
             }
             .expired {
-                margin-right: -25px;
+                margin-right: -2.5em;
             }
         }
     }
     .message {
-        margin-top: 5px;
-        border: 1px solid $COLOR_LIGHT_RED;
+        margin-top: 0.5em;
+        border: 1px solid $COLOR_RED;
         border-radius: $BORDER_RADIUS;
-        padding: 10px;
+        padding: 1em;
         background-color: rgba(244, 67, 54, 0.16);
         display: flex;
         align-items: center;
 
         .message-icon {
-            margin-right: 10px;
+            margin-right: 1em;
         }
         .message-text {
             flex-grow: 1;
@@ -287,50 +284,43 @@ $CONTRACT_INFO_BOX_PADDING: 15px;
 }
 
 // Dark Theme
-.theme-wrapper.dark {
+.theme--dark {
     .contract-container {
-        color: $COLOR_BRANDBLUE_40;
+        color: $COLOR_DARK_BLUE_7;
 
         .contract-header {
-            border-color: $COLOR_BRANDBLUE_85;
-
             &.purchased {
                 .header-wrapper .header-purchased {
-                    background-color: $COLOR_BRANDBLUE_95;
-                }
-            }
-            &.won {
-                .header-wrapper .header-result {
-                    background-color: $COLOR_GREEN;
+                    background-color: $COLOR_DARK_BLUE_2;
                 }
             }
         }
         .contract-contents {
-            border-color: $COLOR_BRANDBLUE_85;
+            background: $COLOR_DARK_BLUE_3;
 
             .ref-number, .info-header {
-                background-color: $COLOR_BRANDBLUE_95;
+                background: $COLOR_DARK_BLUE_2;
             }
             .info-item {
-                border-bottom-color: $COLOR_BRANDBLUE_85;
-
-                > div:first-child {
-                    color: $COLOR_BRANDBLUE_40;
+                > div {
+                    &:first-child {
+                        color: $COLOR_DARK_BLUE_7;
+                    }
+                    &:last-child {
+                        color: $COLOR_WHITE;
+                    }
                 }
             }
         }
     }
     .info-box-container {
         .info-box {
-            background: rgba(42, 48, 82, 0.6);
-            border-color: $COLOR_BRANDBLUE_85;
+            background: rgba(16, 19, 32, 0.6); // this is color dark blue 2 with 0.6 opacity
 
             .general .sell {
-                border-left-color: $COLOR_BRANDBLUE_85;
-
                 .btn:disabled {
-                    background: $COLOR_BRANDBLUE_85;
-                    color: $COLOR_BRANDBLUE_75 !important;
+                    background: $COLOR_DARK_BLUE_8;
+                    color: $COLOR_DARK_BLUE_7 !important;
                 }
             }
         }

@@ -8,15 +8,15 @@ import LimitsSvg              from 'Images/app_2/settings/ic-limits.svg';
 import LoginSvg               from 'Images/app_2/settings/ic-login-history.svg';
 import ApiSvg                 from 'Images/app_2/settings/ic-api-token.svg';
 import AuthorisedSvg          from 'Images/app_2/settings/ic-authorised-applications.svg';
-import AccountPassword        from './sections/account_password.jsx';
-import ApiToken               from './sections/api_token.jsx';
-import AuthorizedApplications from './sections/authorized_applications.jsx';
-import CashierPassword        from './sections/cashier_password.jsx';
-import FinancialAssessment    from './sections/financial_assessment.jsx';
+import AccountPassword        from './sections/account-password.jsx';
+import ApiToken               from './sections/api-token.jsx';
+import AuthorizedApplications from './sections/authorized-applications.jsx';
+import CashierPassword        from './sections/cashier-password.jsx';
+import FinancialAssessment    from './sections/financial-assessment.jsx';
 import Limits                 from './sections/limits.jsx';
-import LoginHistory           from './sections/login_history.jsx';
-import PersonalDetails        from './sections/personal_details.jsx';
-import SelfExclusion          from './sections/self_exclusion.jsx';
+import LoginHistory           from './sections/login-history.jsx';
+import PersonalDetails        from './sections/personal-details.jsx';
+import SelfExclusion          from './sections/self-exclusion.jsx';
 
 const data = [
     {

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-02-01 12:01\n"
+"PO-Revision-Date: 2019-02-20 14:16\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Vietnamese\n"
 "MIME-Version: 1.0\n"
@@ -1284,6 +1284,9 @@ msgstr "Các ứng dụng"
 msgid "Apply now"
 msgstr "Đăng ký ngay"
 
+msgid "Apply now as a professional investor"
+msgstr ""
+
 msgid "Apply to become a %1 <a href=\"%2\">payment agent</a>."
 msgstr "Đăng ký để trở thành %1 <a href=\"%2\">Đại Lý Thanh Toán</a>."
 
@@ -1857,6 +1860,9 @@ msgstr "Binary Bot"
 msgid "Binary Bot released"
 msgstr "Phát hành Binary Bot"
 
+msgid "Binary Coin"
+msgstr "Binary Coin"
+
 msgid "Binary Group (hereinafter referred to as 'Binary Group of companies', 'the Company') is commited to protecting the privacy and security of the applicant's personal information. This privacy notice sets out the types of data that the Company collects on the applicant. It also sets out how the Company collect and use the applicant' personal data, and how long it keeps them and other relevant information about the applicant's data in accordance with the General Data Protection Regulation (EU) 2016/679 (hereafter referred to as 'GDPR') and Data Protection Act 2018."
 msgstr "Binary Group (sau đây gọi là 'Binary Group của các công ty', 'Công ty') cam kết bảo vệ quyền riêng tư và bảo mật thông tin cá nhân của người nộp đơn. Thông báo bảo mật này trình bày các loại dữ liệu mà Công ty thu thập trên người nộp đơn. Nó cũng đặt ra cách thức Công ty thu thập và sử dụng dữ liệu cá nhân của người nộp đơn và thời gian lưu giữ thông tin liên quan đến dữ liệu của người nộp đơn theo Quy định bảo vệ dữ liệu chung (EU) 2016/679 (sau đây gọi là ' GDPR ') và Đạo luật bảo vệ dữ liệu năm 2018."
 
@@ -2058,8 +2064,8 @@ msgstr "Bằng cách ấn OK, bạn xác nhận rằng bạn đã đọc và ch�
 msgid "By clicking buy or sell, your order will be filled at the best possible price with either one of our liquidity providers or on our own books (according to the best streaming price at the time of your order placement);"
 msgstr "Bằng cách nhấp vào mua hoặc bán, lệnh của bạn sẽ được điền ở mức giá tốt nhất có thể với một trong các nhà cung cấp thanh khoản của chúng tôi hoặc trên sách của chính chúng tôi (theo giá trực tuyến tốt nhất tại thời điểm đặt lệnh của bạn);"
 
-msgid "By default, all clients are treated as retail but anyone can request to be treated as professional."
-msgstr "Theo mặc định, tất cả mọi khách hàng đều được coi là khách hàng bán lẻ nhưng bất kỳ ai cũng có thể gửi yêu cầu để được đối xử như là khách hàng chuyên nghiệp."
+msgid "By default, all %1 clients are retail clients but anyone can request to be treated as a professional client."
+msgstr ""
 
 msgid "By default, the intelligent order routing system ensures that the top of the book is always comprised of the best bid and offer rates quoted by the competing liquidity providers. However, during times of market illiquidity, this may change with likelihood of execution being the primary execution factor."
 msgstr "Theo mặc định, hệ thống tự định tuyến thông minh đảm bảo rằng phần đầu của trang luôn luôn bao gồm các giá thầu tốt nhất và cung cấp tỉ giá trích dẫn bởi các nhà cung cấp thanh khoản cạnh tranh. Tuy nhiên, trong thời gian tính thanh khoản của thị trường kém, điều này có thể thay đổi khả năng thực thi vốn đang là các yếu tố chính trong quá trình thực thi lệnh."
@@ -3434,6 +3440,9 @@ msgstr "Tải ứng dụng Android"
 
 msgid "Download your statement"
 msgstr "Tải xuống bảng sao kê"
+
+msgid "Downs"
+msgstr ""
 
 msgid "Drive rapid growth and business development to support the company's sales and marketing objectives"
 msgstr "Thúc đẩy tăng trưởng nhanh chóng và phát triển kinh doanh để hỗ trợ cho các mục tiêu bán hàng và tiếp thị của công ty"
@@ -4888,6 +4897,9 @@ msgstr "Tôi xin xác nhận rằng thông tin thuế mà tôi cung cấp là đ
 msgid "I understand the risks involved and agree to the %1Terms & Conditions of the MAM facility%2"
 msgstr "Tôi hiểu các rủi ro liên quan và đồng ý với %1Điều Khoản & Điều Kiện của cơ sở MAM%2"
 
+msgid "I want to reapply"
+msgstr ""
+
 msgid "I would like to be treated as a professional client."
 msgstr "Tôi muốn được đối xử như một khách hàng chuyên nghiệp."
 
@@ -5182,11 +5194,17 @@ msgstr "Nếu bạn chọn \"tăng\", bạn sẽ giành chiến thắng nếu
 msgid "If you select \"rises\", you win the payout if the market price is higher than the entry spot."
 msgstr "Nếu bạn chọn \"tăng\", bạn sẽ giành chiến thắng nếu giá thị trường cao hơn điểm khởi đầu."
 
+msgid "If you select %1\"Downs\"%2, you win the payout if consecutive ticks fall successively after the %1entry spot%2.%3No payout if any tick rises or is equal to any of the previous ticks."
+msgstr ""
+
 msgid "If you select %1\"High Tick\"%2, you win the payout if the selected tick is the %1highest among the next five ticks%2."
 msgstr "Nếu bạn chọn %1\"Tick cao\"%2, bạn sẽ giành chiến thắng các thanh toán nếu tick được chọn là %1cao nhất trong số 5 tick tiếp theo%2."
 
 msgid "If you select %1\"Low Tick\"%2, you win the payout if the selected tick is the %1lowest among the next five ticks%2."
 msgstr "Nếu bạn chọn %1\"Tick thấp\"%2, bạn sẽ giành chiến thắng các thanh toán nếu tick được chọn là %1thấp nhất trong số 5 tick tiếp theo%2."
+
+msgid "If you select %1\"Ups\"%2, you win the payout if consecutive ticks rise successively after the %1entry spot%2.%3No payout if any tick falls or is equal to any of the previous ticks."
+msgstr ""
 
 msgid "If you select a <strong>start time</strong> in the future, the <strong>start time</strong> is that which is selected and the <strong>entry spot</strong> is the price in effect at that time."
 msgstr "Nếu bạn chọn <strong>thời điểm bắt đầu</strong> trong tương lai, <strong>thời điểm bắt đầu</strong> là mục được chọn và <strong>điểm khởi đầu</strong> là giá có hiệu lực vào thời điểm đó."
@@ -5359,8 +5377,8 @@ msgstr "Tại EU, các sản phẩm tài chính được cung cấp bởi Công 
 msgid "In the Isle of Man and the UK, Volatility Indices are offered by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles; licensed and regulated respectively by (1) the Gambling Supervision Commission in the Isle of Man (current licence issued on 31 August 2017) and by (2) the Gambling Commission in the UK (licence %1reference no: 39172%2)."
 msgstr "Tại Isle of Man và UK, các Chỉ Số Biến Động được cung cấp bởi Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles; được cấp phép và quản lý tương ứng bởi (1) Ủy ban giám sát cờ bạc ở Isle of Man (giấy phép hiện hành được cấp ngày 31 tháng 8 năm 2017) và (2) Ủy ban cờ bạc ở Vương quốc Anh (giấy phép %1 số: 39172 %2)."
 
-msgid "In the UK, our clients trade through Binary (IOM) Ltd and Binary Investments (Europe) Ltd. In the Isle of Man, they trade through Binary (IOM) Ltd. In the European Union (except UK), they trade through Binary (Europe) Ltd and Binary Investments (Europe) Ltd. In the rest of the world, they trade through Binary (C.R.) S.A."
-msgstr "Ở Anh, khách hàng của chúng tôi giao dịch qua Binary (IOM) Ltd và Binary Investments (Europe) Ltd. Ở Đảo Man, khách hàng của chúng tôi giao dịch qua Binary (IOM) Ltd. Tại Liên minh Châu Âu (trừ Anh), họ giao dịch qua Binary (Europe) Ltd và Binary Investments (Europe) Ltd. Ở những nước còn lại trên thế giới, họ giao dịch qua Binary (C.R.) S.A."
+msgid "In the UK, our clients trade through Binary (IOM) Ltd and Binary Investments (Europe) Ltd. In the Isle of Man, they trade through Binary (IOM) Ltd. In the European Union (except UK), they trade through Binary (Europe) Ltd and Binary Investments (Europe) Ltd. In the rest of the world, they trade through Binary (C.R.) S.A., Binary (V) Ltd, Binary (BVI) Ltd and Binary (FX) Ltd."
+msgstr "Ở Anh, khách hàng của chúng tôi giao dịch qua Binary (IOM) Ltd và Binary Investments (Europe) Ltd. Ở Đảo Man, khách hàng của chúng tôi giao dịch qua Binary (IOM) Ltd. Tại Liên minh Châu Âu (trừ Anh), họ giao dịch qua Binary (Europe) Ltd và Binary Investments (Europe) Ltd. Ở những nước còn lại trên thế giới, họ giao dịch qua Binary (C.R.) S.A., Binary (V) Ltd, Binary (BVI) Ltd and Binary (FX) Ltd."
 
 msgid "In the case of a Limit Order, you acknowledge that we will endeavor to open/close a Transaction at a level that is the same or better than the Limit you specified, subject to the availability of the Limit Price."
 msgstr "Trong trường hợp Lệnh Giới Hạn, bạn xác nhận rằng chúng tôi sẽ cố gắng mở / đóng một Giao dịch ở mức tương đương hoặc tốt hơn Giới Hạn bạn đã chỉ định, tùy thuộc vào tính khả dụng của Giá Giới Hạn."
@@ -5558,8 +5576,8 @@ msgstr "Điều tra các tài khoản khách hàng mà bị hệ thống & quy t
 msgid "Investigate, reproduce, identify, document, and resolve issues reported by our clients and the customer support team"
 msgstr "Điều tra, tái tạo hiện trường, xác định, lưu trữ hồ sơ và giải quyết các sự cố được báo bởi khách hàng và đội hỗ trợ khách hàng"
 
-msgid "Investing in complex products, such as CFDs and FX may incur losses as well as gains. Prices may vary and/or fluctuate due to changes in current market prices and conditions, which may impact the return on your investment. Before making an Investment decision, you should refer to our Key Information Documents on our website, in particular, the amount of Margin required for particular instruments that we offer. The Products offered by Binary Investments (Europe) Ltd fall under the category of ‘complex products’ and may not be suitable for retail clients."
-msgstr "Đầu tư vào các sản phẩm phức tạp, như CFDs và FX có thể bị lỗ cũng như thu được lợi nhuận. Giá có thể thay đổi và/hoặc dao động do những thay đổi về giá và điều kiện thị trường hiện tại, điều này có thể ảnh hưởng đến lợi tức đầu tư của bạn. Trước khi đưa ra quyết định đầu tư, bạn nên tham khảo Tài liệu thông tin chính của chúng tôi trên trang web của chúng tôi, cụ thể là số tiền ký quỹ bắt buộc đối với các công cụ mà chúng tôi cung cấp. Các sản phẩm do Công ty Binary Investments (Châu Âu) cung cấp thuộc danh mục sản phẩm phức tạp và có thể không phù hợp với các khách hàng bán lẻ."
+msgid "Investing in complex products, such as CFDs and FX may incur losses as well as gains. Prices may vary and/or fluctuate due to changes in current market prices and conditions, which may impact the return on your investment. Before making an Investment decision, you should refer to our %1Key Information Documents%2 on our website, in particular, the amount of Margin required for particular instruments that we offer. The Products offered by Binary Investments (Europe) Ltd fall under the category of ‘complex products’ and may not be suitable for retail clients."
+msgstr "Đầu tư vào các sản phẩm như CFD và FX có thể đem lại lợi nhuận cũng như thua lỗ. Giá có thể thay đổi và/ hoặc dao động do sự thay đổi giá và điều kiện thị trường hiện tại, điều này có thể ảnh hưởng đến lợi tức đầu tư của bạn. Trước khi đưa ra quyết định đầu tư, bạn nên tham khảo %1Tài liệu thông tin quan trọng %2 trên trang web của chúng tôi, đặc biệt, lượng ký quỹ cần thiết cho các công cụ cụ thể mà chúng tôi cung cấp. Các sản phẩm được cung cấp bởi Công Ty TNHH Binary Investments (Europe) thuộc danh mục sản phẩm phức tạp, và có thể không phù hợp cho khách hàng bán lẻ."
 
 msgid "Investing or trading in Contracts exposes you to the performance of the underlying or reference instrument or asset to which the Binary Contract refers including foreign exchange, indices and commodities each of which have their own features and risks."
 msgstr "Đầu tư hoặc giao dịch trong Hợp đồng cho bạn thấy hiệu suất của công cụ hoặc tài sản cơ bản hoặc tham chiếu mà Hợp đồng Binary đề cập bao gồm ngoại hối, chỉ số và hàng hóa, mỗi loại đều có các tính năng và rủi ro riêng."
@@ -5875,6 +5893,9 @@ msgstr "Tìm hiểu thêm về văn hóa của tập đoàn chúng tôi"
 
 msgid "Learn more about submitting essential documents with our handy infographic:"
 msgstr "Tìm hiểu thêm về cách gửi tài liệu cần thiết bằng họa thông tin tiện dụng của chúng tôi:"
+
+msgid "Learn more."
+msgstr ""
 
 msgid "Learn the basic concepts of trading Meta assets on MetaTrader 5."
 msgstr "Tìm hiểu những khái niệm cơ bản về giao dịch tài sản Meta trên MetaTrader 5."
@@ -6640,6 +6661,9 @@ msgstr "Tháng"
 
 msgid "More benefits"
 msgstr "Các lợi ích khác"
+
+msgid "More information can be found in an email sent to you."
+msgstr ""
 
 msgid "More specifically, when the Company enters into a binary option trade with the client (each, a \"Contract\"), the Company has a duty to provide the client with 'best execution'. Best execution means that the Company must take reasonable steps to obtain the best possible result for the client when executing a client order. This document provides a summary of the Company's best execution policy."
 msgstr "Một cách chi tiết hơn, khi Công Ty giao dịch một Binary Option với khách hàng (mỗi, một \"Hợp đồng\"), Công Ty phải có nghĩa vụ cung cấp cho khách hàng 'thực thi tốt nhất'. Thực thi tốt nhất có nghĩa là Công Ty phải có các bước thích hợp để dành được kết quả tốt nhất có thể cho khách hàng khi khách hàng đặt lệnh với Công Ty. Tài liệu này cung cấp bản tóm tắt chính sách thực thi tốt nhất của Công Ty."
@@ -7598,6 +7622,9 @@ msgstr "Vui lòng kiểm tra email của bạn để nhận được mã xác mi
 msgid "Please check your email for the verification link to complete the process."
 msgstr "Vui lòng kiểm tra email của bạn để thấy liên kết xác minh hoàn tất quá trình."
 
+msgid "Please check your inbox for details."
+msgstr ""
+
 msgid "Please choose a currency"
 msgstr "Hãy chọn một loại tiền tệ"
 
@@ -7649,8 +7676,8 @@ msgstr "Vui lòng đăng nhập."
 msgid "Please make sure that you first agree with the Agent on the terms of payment before submitting your request."
 msgstr "Vui lòng chắc chắn rằng trước hết bạn đồng ý với Đại lý các điều khoản thanh toán trước khi gửi yêu cầu."
 
-msgid "Please note that Asians, Digits, Reset Call/Reset Put and High Ticks/Low Ticks are available exclusively with our Volatility Indices."
-msgstr "Xin lưu ý rằng công cụ Châu Á, Chữ số, Gọi lại/ Đặt lại và Tick Cao/Tick Thấp được cung cấp độc quyền với Chỉ Số Biến Động của chúng tôi."
+msgid "Please note that Asians, Digits, Reset Call/Reset Put, High Ticks/Low Ticks, and Run Ups/Run Downs are available exclusively with our Volatility Indices."
+msgstr ""
 
 msgid "Please note that actual trading results may not correspond to optimized or back-tested results."
 msgstr "Xin lưu ý rằng kết quả giao dịch thực tế có thể không tương ứng với kết quả được tối ưu hóa hoặc được kiểm tra lại."
@@ -7678,6 +7705,9 @@ msgstr "Xin vui lòng cung cấp cho chúng tôi các thông tin sau:"
 
 msgid "Please read this %1privacy policy%2 before submitting your application."
 msgstr "Xin vui lòng đọc %1Chính sách bảo mật%2 này trước khi gửi đơn của bạn."
+
+msgid "Please reapply once the required criteria has been fulfilled."
+msgstr ""
 
 msgid "Please refer to the %1asset index%2 for each asset’s minimum and maximum contract durations based on trade type."
 msgstr "Xem thêm chi tiết trong %1chỉ số tài sản%2 cho thời hạn hợp đồng tối thiểu và tối đa của mỗi tài sản dựa trên loại giao dịch."
@@ -8512,6 +8542,15 @@ msgstr "Roll-over tín dụng/thẻ ghi nợ"
 
 msgid "Rolling Spot Forex;"
 msgstr "Rolling Spot ngoại hối;"
+
+msgid "Run"
+msgstr ""
+
+msgid "Run Downs"
+msgstr ""
+
+msgid "Run Ups"
+msgstr ""
 
 msgid "Russia"
 msgstr "Nga"
@@ -9395,6 +9434,12 @@ msgstr "%1Thời hạn hợp đồng%2 là giai đoạn từ %1Giây di chuy�
 msgid "The %1end time%2 is the selected number of minutes/hours after the %1start time%2."
 msgstr "%1thời gian kết thúc%2 là số giây/giờ được chọn sau %1thời gian bắt đầu%2."
 
+msgid "The %1entry spot%2 is the next tick after the %1start time%2."
+msgstr ""
+
+msgid "The %1exit spot%2 is the last tick when the contract ends. Contract ends when all ticks rise or fall successively, or when a single tick breaks the predicted pattern."
+msgstr ""
+
 msgid "The %1high%2 is the highest point ever reached by the market during the contract period."
 msgstr "%1cao%2 là điểm cao nhất từng đạt đến của thị trường trong thời gian hợp đồng."
 
@@ -9403,6 +9448,9 @@ msgstr "%1thấp%2 là điểm thấp nhất từng đạt đến của thị tr
 
 msgid "The %1start time%2 begins when the contract is processed by our servers."
 msgstr "%1thời gian bắt đầu%2 bắt đầu khi hợp đồng được xử lý bởi máy chủ của chúng tôi."
+
+msgid "The %1start time%2 is when the contract has been processed by our servers."
+msgstr ""
 
 msgid "The <strong>contract period</strong> is the period between the <strong>next tick</strong> after the <strong>start time</strong> and the <strong>end time</strong>."
 msgstr "<strong>Thời hạn hợp đồng</strong> là khoảng thời gian giữa <strong>tick tiếp theo</strong> sau <strong>thời gian bắt đầu</strong> và <strong>thời gian kết thúc</strong>."
@@ -10213,6 +10261,9 @@ msgstr "Có những rủi ro liên quan đến việc sử dụng một hệ th�
 
 msgid "There are two types of In/Out trades:"
 msgstr "Hiện có hai loại giao dịch Trong/Ngoài:"
+
+msgid "There are two types of Run trades:"
+msgstr ""
 
 msgid "There are two types of Up/Down trades:"
 msgstr "Hiện có hai loại giao dịch Lên/Xuống:"
@@ -11177,6 +11228,9 @@ msgstr "Sau khi thu hồi, bạn xác nhận và hiểu rằng trình Quản Lý
 msgid "Upon the expiration or termination of this Agreement, for whatever reason, all rights and license granted to you in this Agreement, including use of the %1 API, shall immediately terminate. You agree to promptly cease all further use of the %1 API. Termination of this Agreement shall not act as a waiver of any breach of this Agreement and shall not act as a release of your liability for breach of its obligation under this Agreement. The Company shall not be liable to you for damages of any kind solely as a result of terminating this Agreement in accordance with its terms."
 msgstr "Khi Thỏa Thuận này hết hạn hay chấm dứt, vì bất kỳ lý do nào, tất cả các quyền và sự cho phép mà bạn được hưởng theo Thỏa Thuận này, bao gồm việc sử dụng %1 API, sẽ lập tức chấm dứt. Bạn đồng ý ngừng ngay việc sử dụng %1 API. Sự chấm dứt của Thỏa Thuận này sẽ không được coi như sẽ bỏ qua bất kỳ một sự vi phạm nào của Thỏa Thuận này và cũng không có nghĩa là bạn sẽ không phải chịu bất kỳ trách nhiệm pháp lý nào từ việc vi phạm Thỏa Thuận này. Công Ty chúng tôi sẽ không chịu trách nhiệm với bạn đối với các thiệt hại là kết quả của việc chấm dứt Thỏa Thuận này theo các điều khoản của nó."
 
+msgid "Ups"
+msgstr ""
+
 msgid "Usage Limit"
 msgstr "Giới Hạn Sử Dụng"
 
@@ -11624,8 +11678,8 @@ msgstr "Chúng tôi sẽ tiếp tục đóng các phiên mở cho đến khi m�
 msgid "We will hold you responsible for all your obligations under this Agreement in our course of providing the margin trading service described in this Agreement to you, even if you notify us that you are acting as the agent of an identified principal."
 msgstr "Chúng tôi sẽ giữ bạn chịu trách nhiệm về tất cả các nghĩa vụ theo thỏa thuận này trong quá trình chúng tôi cung cấp dịch vụ giao dịch ký quỹ được mô tả trong Thỏa Thuận này cho bạn, thậm chí khi bạn thông báo cho chúng tôi biết rằng bạn đang là một chủ Đại Lý có tiếng tăm."
 
-msgid "We will review your documents and get back to you within one working day."
-msgstr "Chúng tôi sẽ xem xét lại các tài liệu và sẽ liên lạc lại với bạn trong vòng một ngày làm việc."
+msgid "We will review your documents and get back to you within 3 working days."
+msgstr "Chúng tôi sẽ xem xét lại các tài liệu và sẽ liên lạc lại với bạn trong vòng 3 ngày làm việc."
 
 msgid "We will use reasonable endeavors within our control to ensure that all electronic data provided on the MT5 Trading Platform and all electronic transactions instructed and accepted from you to us, and executed by us are not subject to network latency."
 msgstr "Chúng tôi sẽ sử dụng các nỗ lực hợp lý trong vòng kiểm soát của chúng tôi để đảm bảo rằng tất cả các dữ liệu điện tử được cung cấp trên nền tảng thương mại MT5 và tất cả các giao dịch điện tử hướng dẫn và chấp nhận bạn cho chúng tôi, và thực hiện bởi chúng tôi không phụ thuộc vào độ trễ mạng."
@@ -11731,9 +11785,6 @@ msgstr "Chương trình IB %1 là gì?"
 
 msgid "What is the definition of a referred client?"
 msgstr "Định nghĩa khách hàng được giới thiệu là gì?"
-
-msgid "What is this?"
-msgstr "Đây là gì?"
 
 msgid "What kind of reports can I generate?"
 msgstr "Tôi có thể tạo những báo cáo nào khác?"
@@ -11983,6 +12034,12 @@ msgstr "Giành tối đa thanh toán nếu điểm chốt cao hơn hoặc bằng
 
 msgid "Win maximum payout if the exit spot is lower than or equal to the lower barrier."
 msgstr "Giành tối đa thanh toán nếu điểm chốt thấp hơn hoặc bằng giới hạn dưới."
+
+msgid "Win payout if consecutive ticks fall successively. Contract is lost when at least one tick rises or is equal to any of the previous ticks."
+msgstr ""
+
+msgid "Win payout if consecutive ticks rise successively. Contract is lost when at least one tick falls or is equal to any of the previous ticks."
+msgstr ""
 
 msgid "Win payout if exit spot is also equal to entry spot."
 msgstr "Sẽ thắng nếu như điểm chốt bằng với điểm khởi đầu."
@@ -12720,6 +12777,9 @@ msgstr "Tài khoản của bạn được xác thực hoàn toàn. Bạn co�
 msgid "Your account is restricted. Kindly %1contact customer support%2 for assistance."
 msgstr "Tài khoản của bạn bị hạn chế. %1 vui lòng liên hệ hỗ trợ khách hàng %2 để được hỗ trợ."
 
+msgid "Your account remains under the retail client category."
+msgstr ""
+
 msgid "Your account security is of paramount importance to us. Please consider the following initiatives and tools to enhance your account security:"
 msgstr "Bảo mật tài khoản của bạn rất quan trọng đối với chúng tôi. Vui lòng xem xét các lời khuyên và công cụ sau để tăng cường bảo mật tài khoản của bạn:"
 
@@ -12798,11 +12858,14 @@ msgstr "Mật khẩu của bạn đã được đổi thành công. Vui lo�
 msgid "Your personal information is used primarily as a way of validating you as the legitimate account owner and proper recipient of withdrawal payments. We also use this information to process your trades. We collect from you all personal and financial data directly relating to you when you fill in our account opening form. In all instances, you have either a legal or a contractual obligation to provide us with the information. If such information is not provided, we will be unable to provide you with our services."
 msgstr "Thông tin cá nhân của bạn được sử dụng chủ yếu như một cách để xác nhận bạn là chủ sở hữu tài khoản hợp pháp và người nhận thích hợp thu hồi các khoản thanh toán. Chúng tôi cũng sử dụng thông tin này để xử lý giao dịch của bạn. Chúng tôi thu thập từ bạn tất cả các dữ liệu cá nhân và tài chính trực tiếp liên quan đến bạn khi bạn điền vào tài khoản mở của chúng tôi. Trong mọi trường hợp, bạn có nghĩa vụ pháp lý hoặc hợp đồng để cung cấp cho chúng tôi với các thông tin. Nếu thông tin đó không được cung cấp, chúng tôi sẽ không thể cung cấp cho bạn dịch vụ của chúng tôi."
 
+msgid "Your professional client request is %1not approved%2."
+msgstr ""
+
 msgid "Your profit or loss is calculated as follows:"
 msgstr "Lợi nhuận hoặc thua lỗ của bạn được tính như sau:"
 
-msgid "Your request to be treated as a professional client has been rejected. Please check your inbox for more details. Your account remains categorised as a retail client account."
-msgstr "Yêu cầu của bạn để được trở thành khách hàng chuyên nghiệp đã bị từ chối. Vui lòng kiểm tra hộp thư của bạn để biết chi tiết. Tài khoản của bạn hiện vẫn được xem là là tài khoản khách hàng bán lẻ."
+msgid "Your request to be treated as a professional client is %1not approved%2."
+msgstr ""
 
 msgid "Your request to transfer %1 %2 from %3 to %4 has been successfully processed."
 msgstr "Yêu cầu chuyển %1 %2 từ %3 sang %4 đã được xử lý thành công."

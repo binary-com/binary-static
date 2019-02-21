@@ -6,36 +6,33 @@ import Fieldset                       from 'App/Components/Form/fieldset.jsx';
 import RangeSlider                    from 'App/Components/Form/RangeSlider';
 import { convertDurationLimit }       from 'Stores/Modules/Trading/Helpers/duration';
 import { toMoment }                   from 'Utils/Date';
-import DurationToggle                 from './duration_toggle.jsx';
-import AdvancedDuration               from './advanced_duration.jsx';
-import SimpleDuration                 from './simple_duration.jsx';
+import DurationToggle                 from './duration-toggle.jsx';
+import AdvancedDuration               from './advanced-duration.jsx';
+import SimpleDuration                 from './simple-duration.jsx';
 
 const Duration = ({
     advanced_duration_unit,
     advanced_expiry_type,
-    hasDurationUnit    ,
     contract_expiry_type,
     duration,
     duration_unit,
     duration_units_list,
     duration_min_max,
+    duration_t,
     expiry_date,
     expiry_time,
     expiry_type,
     getDurationFromUnit,
-    onChange,
-    onChangeUiStore,
+    hasDurationUnit,
     is_advanced_duration,
     is_minimized,
-    is_nativepicker,
-    server_time,
-    sessions,
-    start_date,
-    start_time,
-    validation_errors,
-    market_close_times,
+    onChange,
+    onChangeUiStore,
+    onChangeMultiple,
     simple_duration_unit,
-    duration_t,
+    server_time,
+    start_date,
+    validation_errors,
 }) => {
     const expiry_list = [
         { text: localize('Duration'), value: 'duration' },
@@ -69,8 +66,10 @@ const Duration = ({
         const duration_value  = getDurationFromUnit(value);
 
         onChangeUiStore({ name, value });
-        onChange({ target: { name: 'duration_unit', value } });
-        onChange({ target: { name: 'duration', value: duration_value } });
+        onChangeMultiple({
+            duration_unit: value,
+            duration     : duration_value,
+        });
     };
 
     const changeDurationValue = ({ target }) => {
@@ -92,18 +91,22 @@ const Duration = ({
             onChangeUiStore({ name: `${value ? 'advanced' : 'simple'}_duration_unit`, value: current_duration_unit });
         }
 
-        const duration_value  = getDurationFromUnit(current_duration_unit);
-        onChange({ target: { name: 'duration_unit', value: current_duration_unit } });
-        onChange({ target: { name: 'duration', value: duration_value } });
+        const duration_value         = getDurationFromUnit(current_duration_unit);
+        const new_trade_store_values = {
+            duration_unit: current_duration_unit,
+            duration     : duration_value,
+        };
 
         // simple only has expiry type of duration
         if (!value && expiry_type !== 'duration') {
-            onChange({ target: { name: 'expiry_type', value: 'duration' } });
+            new_trade_store_values.expiry_type = 'duration';
         }
 
         if (value && expiry_type !== advanced_expiry_type) {
-            onChange({ target: { name: 'expiry_type', value: advanced_expiry_type } });
+            new_trade_store_values.expiry_type = advanced_expiry_type;
         }
+
+        onChangeMultiple({ ...new_trade_store_values });
     };
 
     let max_value, min_value;
@@ -120,7 +123,6 @@ const Duration = ({
         },
         number_input: {
             type            : 'number',
-            is_nativepicker,
             is_incrementable: true,
             error_messages  : validation_errors.duration || [],
         },
@@ -129,7 +131,7 @@ const Duration = ({
     const has_toggle = expiry_list.length > 1 || duration_units_list.length > 1;
 
     return (
-        <Fieldset>
+        <Fieldset className='trade-container__fieldset'>
             { !has_toggle &&
                 <RangeSlider
                     name='duration'
@@ -145,37 +147,28 @@ const Duration = ({
                             advanced_expiry_type={advanced_expiry_type}
                             advanced_duration_unit={advanced_duration_unit}
                             changeDurationUnit={changeDurationUnit}
-                            contract_expiry_type={contract_expiry_type}
-                            duration_min_max={duration_min_max}
+                            duration_t={duration_t}
                             duration_units_list={duration_units_list}
                             expiry_date={expiry_date}
                             expiry_list={expiry_list}
-                            expiry_time={expiry_time}
                             expiry_type={expiry_type}
                             getDurationFromUnit={getDurationFromUnit}
-                            is_nativepicker={is_nativepicker}
-                            market_close_times={market_close_times}
                             number_input_props={props.number_input}
                             onChange={onChange}
+                            onChangeUiStore={onChangeUiStore}
                             server_time={server_time}
-                            sessions={sessions}
                             shared_input_props={props.shared_input}
                             start_date={start_date}
-                            start_time={start_time}
-                            onChangeUiStore={onChangeUiStore}
-                            duration_t={duration_t}
                         /> }
                     { !is_advanced_duration &&
                         <SimpleDuration
                             getDurationFromUnit={getDurationFromUnit}
                             changeDurationUnit={changeDurationUnit}
+                            duration_t={duration_t}
                             duration_units_list={duration_units_list}
                             number_input_props={props.number_input}
-                            onChange={onChange}
                             shared_input_props={props.shared_input}
                             simple_duration_unit={simple_duration_unit}
-                            onChangeUiStore={onChangeUiStore}
-                            duration_t={duration_t}
                         /> }
                     <DurationToggle
                         name={'is_advanced_duration'}
@@ -213,18 +206,14 @@ Duration.propTypes = {
     hasDurationUnit     : PropTypes.func,
     is_advanced_duration: PropTypes.bool,
     is_minimized        : PropTypes.bool,
-    is_nativepicker     : PropTypes.bool,
-    market_close_times  : PropTypes.array,
     onChange            : PropTypes.func,
     onChangeUiStore     : PropTypes.func,
     server_time         : PropTypes.object,
-    sessions            : MobxPropTypes.arrayOrObservableArray,
     simple_duration_unit: PropTypes.string,
     start_date          : PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
     ]),
-    start_time       : PropTypes.string,
     validation_errors: PropTypes.object,
 };
 

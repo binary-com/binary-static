@@ -1,11 +1,10 @@
 footer {
     position: fixed;
     bottom: 0;
-    padding: 0 10px;
+    padding: 0 1em;
     width: 100%;
     height: $FOOTER_HEIGHT;
-    border-top: 1px solid $COLOR_GRAY;
-    background-color: $COLOR_WHITE;
+    background-color: $COLOR_LIGHT_BLACK_4_SOLID;
     box-sizing: border-box;
     z-index: 3;
     display: flex;
@@ -13,14 +12,11 @@ footer {
     align-items: center;
 
     .server-time {
+        @include typeface(--small-left-normal-black);
         display: inline-flex;
         align-self: center;
-        font-size: 0.75rem;
-        margin-right: 10px;
-        padding: 0 10px;
-        border-width: 0 1px;
-        border-style: solid;
-        border-color: $COLOR_DARK_WHITE;
+        margin-right: 1em;
+        padding: 0 1em;
     }
     .footer-links {
         display: flex;
@@ -30,28 +26,56 @@ footer {
         height: 100%;
 
         a {
-            padding: 0 8px;
+            padding: 0 0.8em;
             text-decoration: none;
             height: 100%;
             display: inline-flex;
             align-items: center;
 
             .inline-icon {
-                width: 16px;
-                height: 16px;
+                width: 1.6em;
+                height: 1.6em;
             }
             span {
-                font-size: 0.8rem;
-                text-transform: capitalize;
-                color: $COLOR_DARK_BLUE;
+                @include typeface(--xsmall-left-normal-black);
                 vertical-align: middle;
                 display: inline-block;
             }
             &:hover {
-                background: $COLOR_BRANDBLUE_5;
+                background: $COLOR_LIGHT_BLACK_4;
 
                 .inline-icon {
                     @extend .inline-icon.active;
+                }
+            }
+        }
+        &.footer-links-left {
+            margin-right: auto;
+
+            .ic-positions {
+                svg {
+                    margin-bottom: 0.5em;
+                }
+                &:after {
+                    content: '';
+                    width: 0.2em;
+                    height: 0.2em;
+                    border-radius: 50%;
+                    background-color: $COLOR_LIGHT_BLACK_1;
+                    position: absolute;
+                    margin-top: 1em;
+                    right: 1.5em;
+                    display: block;
+                }
+                &.active {
+                    background: none !important;
+
+                    svg {
+                        margin-bottom: 0;
+                    }
+                    &:after {
+                        display: none;
+                    }
                 }
             }
         }
@@ -63,37 +87,37 @@ footer {
 
 .network-status {
     &-wrapper {
-        border-left: 1px solid $COLOR_DARK_WHITE;
-        height: 14px;
+        height: 1.4em;
     }
     &-circle {
-        background: $COLOR_DARK_GRAY;
-        width: 10px;
-        height: 10px;
-        margin: 2px 16px;
+        background: $COLOR_LIGHT_BLACK_3;
+        width: 1em;
+        height: 1em;
+        margin: 0.2em 1.6em;
         border-radius: 50%;
 
         &.online {
-            background: $COLOR_LIGHT_GREEN;
+            background: $COLOR_GREEN_1;
         }
         &.offline {
-            background: $COLOR_LIGHT_RED;
+            background: $COLOR_RED;
         }
         &.blinker {
-            background: $COLOR_DARK_GRAY;
+            background: $COLOR_LIGHT_BLACK_3;
         }
     }
 }
 
 .ic-settings {
     &.active {
-        background: $COLOR_GRAY;
+        position: relative;
+        background: $COLOR_LIGHT_BLACK_4;
 
         &:after {
             content: '';
-            height: 2px;
+            height: 0.2em;
             width: 100%;
-            background: $COLOR_BLUE;
+            background: $COLOR_DARK_BLUE_5;
             position: absolute;
             top: 0;
             left: 0;

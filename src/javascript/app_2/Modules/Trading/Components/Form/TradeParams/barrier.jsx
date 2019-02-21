@@ -1,3 +1,4 @@
+import classNames     from 'classnames';
 import { observer }   from 'mobx-react';
 import PropTypes      from 'prop-types';
 import React          from 'react';
@@ -5,7 +6,7 @@ import {
     IconBarrierUp,
     IconBarrierDown } from 'Assets/Trading/Barriers';
 import Fieldset       from 'App/Components/Form/fieldset.jsx';
-import InputField     from 'App/Components/Form/input_field.jsx';
+import InputField     from 'App/Components/Form/input-field.jsx';
 import { localize }   from '_common/localize';
 
 const Barrier = ({
@@ -40,17 +41,21 @@ const Barrier = ({
             </React.Fragment>
         );
     }
+
+    const input_class = barrier_count === 2 ? 'multiple' : 'single';
     return (
         <Fieldset
-            className='barriers'
+            className='trade-container__fieldset trade-container__barriers'
             header={barrier_title}
+            is_center
         >
-            <div className='barriers-wrapper' >
+            <div>
                 <InputField
                     type='number'
                     name='barrier_1'
                     value={barrier_1}
-                    className={barrier_count === 2 ? 'multiple' : 'single'}
+                    className={`trade-container__barriers-${input_class}`}
+                    classNameInput={classNames('trade-container__input', 'trade-container__barriers-input', `trade-container__barriers-${input_class}-input`)}
                     onChange={onChange}
                     error_messages={validation_errors.barrier_1 || []}
                     is_float
@@ -64,13 +69,14 @@ const Barrier = ({
                             name='barrier_2'
                             value={barrier_2}
                             className='multiple'
+                            classNameInput='trade-container__input'
                             onChange={onChange}
                             error_messages={validation_errors.barrier_2}
                             is_float
                             is_signed
                         />
-                        <IconBarrierUp className='up' />
-                        <IconBarrierDown className='down' />
+                        <IconBarrierUp className='trade-container__barriers--up' />
+                        <IconBarrierDown className='trade-container__barriers--down' />
                     </React.Fragment>
                 }
             </div>

@@ -1,2 +1,2 @@
-export * from './icon_barrier_up.jsx';
-export * from './icon_barrier_down.jsx';
+export * from './icon-barrier-up.jsx';
+export * from './icon-barrier-down.jsx';

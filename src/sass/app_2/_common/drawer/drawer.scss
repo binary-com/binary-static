@@ -2,7 +2,7 @@ hr {
     display: block;
     height: 1px;
     border: 0;
-    border-top: 1px solid $COLOR_GRAY;
+    border-top: 1px solid $COLOR_LIGHT_BLACK_4;
     margin: 0.5em 0;
     padding: 0;
 }
@@ -50,43 +50,43 @@ hr {
                 .drawer-header {
                     display: flex;
                     align-items: center;
-                    border-bottom: 1px solid $COLOR_GRAY;
+                    border-bottom: 1px solid $COLOR_LIGHT_BLACK_4;
                     z-index: 3;
 
                     .icons {
                         display: inline-flex;
                         cursor: pointer;
-                        padding: 6px 10px;
+                        padding: 0.6em 1em;
 
                         &.btn-close {
-                            width: 24px;
-                            height: 24px;
+                            width: 2.4em;
+                            height: 2.4em;
                             align-self: center;
 
                             .inline-icon {
-                                width: 24px;
-                                height: 24px;
+                                width: 2.4em;
+                                height: 2.4em;
                             }
                         }
                         &.brand-logo {
                             display: inline-flex;
-                            padding: 8px 20px;
-                            border-left: 1px solid $COLOR_GRAY;
+                            padding: 0.8em 2em;
+                            border-left: 1px solid $COLOR_LIGHT_BLACK_4;
 
                             div.img:before {
                                 display: block;
                                 content: ' ';
                                 background-image: url('../images/header/binary_logo_light.svg');
                                 background-size: 138px 32px;
-                                height: 32px;
-                                width: 138px;
+                                height: 3.2em;
+                                width: 13.8em;
                             }
                         }
                     }
                 }
                 .drawer-footer {
-                    height: 44px;
-                    border-top: 1px solid $COLOR_GRAY;
+                    height: 4.4em;
+                    border-top: 1px solid $COLOR_LIGHT_BLACK_4;
                     left: 0;
                     bottom: 0;
                     z-index: 3;
@@ -107,34 +107,33 @@ hr {
                     flex-direction: row-reverse;
                     justify-content: space-between;
                     align-items: center;
-                    border-bottom: 1px solid $COLOR_GRAY;
+                    border-bottom: 1px solid $COLOR_LIGHT_BLACK_4;
 
                     .icons {
                         display: inline-flex;
                         cursor: pointer;
-                        padding: 14px 11px;
+                        padding: 1.4em 1.1em;
 
                         &.btn-close {
-                            border-left: 1px solid $COLOR_GRAY;
-                            width: 24px;
-                            height: 24px;
+                            border-left: 1px solid $COLOR_LIGHT_BLACK_4;
+                            width: 2.4em;
+                            height: 2.4em;
 
                             .inline-icon {
                                 position: absolute;
-                                top: 14px;
-                                right: 10px;
-                                width: 24px;
-                                height: 24px;
+                                top: 1.4em;
+                                right: 1em;
+                                width: 2.4em;
+                                height: 2.4em;
                             }
                         }
                     }
                     .notifications-header {
-                        padding: 0 16px;
-                        text-transform: capitalize;
-                        font-size: 16px;
+                        @include typeface(--title-left-normal-black, capitalize);
+                        @include toEm(padding, 0 16px, 1.6em);
 
                         h4 {
-                            margin: 0.5rem;
+                            margin: 0.5em;
                             font-weight: 400;
                         }
                     }
@@ -153,24 +152,22 @@ hr {
                         height: 80%;
 
                         .bell-icon {
-                            height: 70px;
+                            height: 7em;
 
                             svg.inline-icon {
-                                width: 16px;
-                                height: 16px;
+                                width: 1.6em;
+                                height: 1.6em;
                                 transform: scale(6, 6);
                             }
                         }
                         h4 {
+                            @include typeface(--paragraph-center-normal-black, capitalize);
+                            @include toEm(padding, 0 16px, 1.6em);
                             margin: 0;
-                            text-align: center;
-                            font-weight: 400;
-                            font-size: 14px;
-                            line-height: 100%;
                         }
                         span {
                             display: block;
-                            font-size: 12px;
+                            font-size: 1.2em;
                         }
 
                     }
@@ -196,7 +193,7 @@ hr {
                         content: none;
                     }
                     span {
-                        padding-left: 2rem;
+                        padding-left: 2em;
                     }
                 }
             }
@@ -204,37 +201,37 @@ hr {
                 position: relative;
                 width: 100%;
                 cursor: pointer;
-                font-size: 0.875rem; /* stylelint-disable-line number-max-precision */
+                font-size: 1.4em;
                 box-sizing: border-box;
-                padding: 16px;
+                padding: 1.6em;
                 z-index: 1;
 
                 span.parent-item {
                     font-weight: 300;
                     cursor: pointer;
-                    padding-left: 3rem;
-                    line-height: 1.5rem;
+                    padding-left: 3em;
+                    line-height: 1.5em;
 
                     &:before {
                         content: '\25A2';
-                        font-size: 1rem;
+                        font-size: 1.6em;
                         position: absolute;
                         display: inline-flex;
                         justify-content: center;
                         align-items: center;
-                        color: $COLOR_BLUE;
-                        left: 1rem;
-                        top: 11px;
+                        color: $COLOR_DARK_BLUE_5;
+                        left: 1em;
+                        top: 1.1em;
                     }
                     &:after {
                         content: '\002303';
-                        font-size: 1.5rem;
+                        font-size: 1.5em;
                         position: absolute;
                         font-weight: 300;
                         display: inline-flex;
                         justify-content: center;
                         align-items: center;
-                        right: 1rem;
+                        right: 1em;
                         transition: transform 0.25s;
                         transform: rotate(-180deg);
                         transform-origin: 50% 35%;
@@ -250,13 +247,13 @@ hr {
                     display: block;
 
                     span {
-                        padding-left: 1.5rem;
-                        color: $COLOR_BLUE;
+                        padding-left: 1.5em;
+                        color: $COLOR_DARK_BLUE_5;
                         position: relative;
 
                         .drawer-icon {
-                            width: 16px;
-                            height: 16px;
+                            width: 1.6em;
+                            height: 1.6em;
                             position: absolute;
                             left: 0;
                             top: 0;
@@ -264,23 +261,23 @@ hr {
                     }
                 }
                 &:hover {
-                    background: $COLOR_GRAY;
+                    background: $COLOR_LIGHT_BLACK_4;
                 }
                 &__toggle {
                     display: flex;
-                    padding: 16px;
+                    padding: 1.6em;
                     justify-content: space-between;
                     align-items: center;
-                    color: $COLOR_BLUE;
+                    color: $COLOR_DARK_BLUE_5;
                     font-weight: 300;
 
                     .toggle-button {
-                        width: 36px;
-                        height: 20px;
+                        width: 3.6em;
+                        height: 2em;
 
                         &:after {
-                            width: 18px;
-                            height: 18px;
+                            width: 1.8em;
+                            height: 1.8em;
                         }
                     }
                 }
@@ -318,45 +315,45 @@ hr {
 }
 
 // Dark Theme
-.theme-wrapper.dark {
+.theme--dark {
     hr {
-        border-color: $COLOR_BRANDBLUE_85;
+        border-color: $COLOR_DARK_BLUE_5;
     }
     .drawer-bg .drawer {
-        background: $COLOR_BLUE;
+        background: $COLOR_DARK_BLUE_5;
         color: $COLOR_WHITE;
         box-shadow: 0 1px 6px 0 rgba(42, 48, 82, 0.14), 0 2px 8px 0 rgba(20, 20, 20, 0.3);
 
         .drawer-item {
             a {
                 &:before {
-                    color: $COLOR_BRANDBLUE_40;
+                    color: $COLOR_DARK_BLUE_7;
                 }
                 &:hover:before {
                     color: $COLOR_WHITE;
                 }
                 span {
-                    color: $COLOR_BRANDBLUE_40;
+                    color: $COLOR_DARK_BLUE_7;
                 }
             }
             &:hover {
-                background: $COLOR_BRANDBLUE_85;
+                background: $COLOR_DARK_BLUE_5;
 
                 span {
                     color: $COLOR_WHITE;
                 }
             }
             &__toggle {
-                color: $COLOR_BRANDBLUE_40;
+                color: $COLOR_DARK_BLUE_7;
             }
         }
         &.left, &.right {
             .drawer-header, .drawer-footer {
-                border-color: $COLOR_BRANDBLUE_85;
+                border-color: $COLOR_DARK_BLUE_5;
 
                 .icons {
                     &.brand-logo, &.btn-close {
-                        border-color: $COLOR_BRANDBLUE_85;
+                        border-color: $COLOR_DARK_BLUE_5;
                     }
                     &.brand-logo div.img:before {
                         background-image: url('../images/header/binary_logo_dark.svg');

@@ -139,7 +139,8 @@ const DigitTicker = (() => {
 
     // Calculate peek-box left offset.
     const calculateOffset = () => {
-        const left_offset = document.querySelector(`.digit-${current_spot}`).offsetLeft;
+        const current_spot_digit = document.querySelector(`.digit-${current_spot}`);
+        const left_offset =  current_spot_digit ? current_spot_digit.offsetLeft : 0;
         return left_offset - style_offset_correction;
     };
 
@@ -176,9 +177,9 @@ const DigitTicker = (() => {
     };
 
     const setElements = () => {
-        el_peek     = el_container.querySelector('.peek');
-        el_peek_box = el_container.querySelector('.peek-box');
-        el_mask     = el_peek_box.querySelector('.peek-box > .mask');
+        el_peek     = el_container ? el_container.querySelector('.peek') : null;
+        el_peek_box = el_peek ? el_container.querySelector('.peek-box') : null;
+        el_mask     = el_peek_box ? el_peek_box.querySelector('.mask') : null;
     };
 
     const isBarrierMissing = (contract_type, bar) => !/digit(even|odd)/i.test(type) && !bar;
@@ -192,6 +193,9 @@ const DigitTicker = (() => {
     };
 
     const update = (current_tick_count, { quote, epoch }) => {
+        if (current_tick_count > total_tick_count) {
+            return;
+        }
         setElements(epoch);
         el_container.classList.remove('invisible');
         adjustBoxSizes();

@@ -41,6 +41,7 @@ const Financial = () => (
                 <FormRow type='select' id='place_of_birth' label={it.L('Place of birth')} attributes={{ single: 'single' }} />
                 <Residence />
                 <AccountOpeningReason />
+                <Phone />
             </Fieldset>
 
             <Fieldset legend={it.L('Tax Information')}>
@@ -53,9 +54,9 @@ const Financial = () => (
                 <AddressLine2 />
                 <AddressCity />
                 <AddressState />
-                <AddressPostcode />
-                <Phone />
-                <GeocodeValidation />
+                <AddressPostcode>
+                    <GeocodeValidation className='gr-5 geocode-container' />
+                </AddressPostcode>
             </Fieldset>
 
             <Fieldset legend={it.L('Security')} className='security'>

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-02-01 12:00\n"
+"PO-Revision-Date: 2019-02-20 14:16\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -1284,6 +1284,9 @@ msgstr "应用程序"
 msgid "Apply now"
 msgstr "立即申请"
 
+msgid "Apply now as a professional investor"
+msgstr ""
+
 msgid "Apply to become a %1 <a href=\"%2\">payment agent</a>."
 msgstr "申请成为 %1 <a href=\"%2\">支付代理</a>。"
 
@@ -1857,6 +1860,9 @@ msgstr "Binary Bot"
 msgid "Binary Bot released"
 msgstr "Binary Bot 已发布"
 
+msgid "Binary Coin"
+msgstr "Binary 硬币"
+
 msgid "Binary Group (hereinafter referred to as 'Binary Group of companies', 'the Company') is commited to protecting the privacy and security of the applicant's personal information. This privacy notice sets out the types of data that the Company collects on the applicant. It also sets out how the Company collect and use the applicant' personal data, and how long it keeps them and other relevant information about the applicant's data in accordance with the General Data Protection Regulation (EU) 2016/679 (hereafter referred to as 'GDPR') and Data Protection Act 2018."
 msgstr "Binary集团 (以下简称 \"Binary集团\"、\"公司\") 致力于保护申请人个人信息的隐私和安全。本隐私声明列出了公司向申请人收集的数据类型。同时还列出了公司如何根据(EU) 2016/679《一般数据保护条例》 (以下简称为 \"GDPR ') 和2018数据保护法收集和使用申请人的个人数据、保存期限以及关于申请人数据的其他相关信息。"
 
@@ -2058,8 +2064,8 @@ msgstr "通过点击OK键，您确认已经阅读并接受条款和条件。"
 msgid "By clicking buy or sell, your order will be filled at the best possible price with either one of our liquidity providers or on our own books (according to the best streaming price at the time of your order placement);"
 msgstr "通过点击 \"买入\" 或 \"卖出\", 我们的其中一个流动性提供商或我们自己将以最优惠的价格 (根据您下订单时的最佳流动性价格) 执行您的订单;"
 
-msgid "By default, all clients are treated as retail but anyone can request to be treated as professional."
-msgstr "默认情况下，所有客户都被归类为零售客户，但任何人都可以要求被归类为专业客户。"
+msgid "By default, all %1 clients are retail clients but anyone can request to be treated as a professional client."
+msgstr "默认情况下，所有%1客户都属于零售客户，但任何人都可以要求被归类为专业客户。"
 
 msgid "By default, the intelligent order routing system ensures that the top of the book is always comprised of the best bid and offer rates quoted by the competing liquidity providers. However, during times of market illiquidity, this may change with likelihood of execution being the primary execution factor."
 msgstr "默认情况下，智能订单路由系统确保记录本的最顶部位总是由最佳竞标价格和参与竞争的流动性提供商报价组成。然而，在市场流动性不足的时候，这种情况可能会改变，并由执行可能性作主要执行因素。"
@@ -3435,6 +3441,9 @@ msgstr "下载 Android 应用程序"
 
 msgid "Download your statement"
 msgstr "下载月结单"
+
+msgid "Downs"
+msgstr ""
 
 msgid "Drive rapid growth and business development to support the company's sales and marketing objectives"
 msgstr "推动快速增长和业务发展，以支持公司的销售和市场营销目标"
@@ -4888,6 +4897,9 @@ msgstr "我特此确认, 我提供的税务信息是真实和完整的。将来�
 msgid "I understand the risks involved and agree to the %1Terms & Conditions of the MAM facility%2"
 msgstr "我了解所涉及的风险, 并同意接受%1MAM设施的条款和条件%2"
 
+msgid "I want to reapply"
+msgstr ""
+
 msgid "I would like to be treated as a professional client."
 msgstr "我要被视为专业客户。"
 
@@ -5182,11 +5194,17 @@ msgstr "如果您选择“上涨”期权，只要市场价格高于 <strong>入
 msgid "If you select \"rises\", you win the payout if the market price is higher than the entry spot."
 msgstr "如果您选择“上涨”期权，只要市场价格高于入市现价，您将获得赔付。"
 
+msgid "If you select %1\"Downs\"%2, you win the payout if consecutive ticks fall successively after the %1entry spot%2.%3No payout if any tick rises or is equal to any of the previous ticks."
+msgstr ""
+
 msgid "If you select %1\"High Tick\"%2, you win the payout if the selected tick is the %1highest among the next five ticks%2."
 msgstr "如果您选择 %1\"高跳动点\"%2, 如果所选跳动点是接下来下五个跳动点%2 中%1最高值, 可获得赔付。"
 
 msgid "If you select %1\"Low Tick\"%2, you win the payout if the selected tick is the %1lowest among the next five ticks%2."
 msgstr "如果您选择 %1\"低跳动点\"%2, 如果所选跳动点是接下来下五个跳动点%2 中%1最低值, 可获得赔付。"
+
+msgid "If you select %1\"Ups\"%2, you win the payout if consecutive ticks rise successively after the %1entry spot%2.%3No payout if any tick falls or is equal to any of the previous ticks."
+msgstr ""
 
 msgid "If you select a <strong>start time</strong> in the future, the <strong>start time</strong> is that which is selected and the <strong>entry spot</strong> is the price in effect at that time."
 msgstr "如果您选择的 <strong>开始时间</strong> 为未来的某个时间，交易的 <strong>开始时间</strong> 就是您选择的时间，<strong>入市现价</strong> 就是当时的实时价格。"
@@ -5359,8 +5377,8 @@ msgstr "欧盟国家的金融产品交易由Binary Investments (Europe) Ltd提�
 msgid "In the Isle of Man and the UK, Volatility Indices are offered by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles; licensed and regulated respectively by (1) the Gambling Supervision Commission in the Isle of Man (current licence issued on 31 August 2017) and by (2) the Gambling Commission in the UK (licence %1reference no: 39172%2)."
 msgstr "英国和马恩岛的波动率指数交易由Binary (IOM) Ltd. 提供，地址为：First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles；由(1) 不列颠群岛马恩岛投资监管委员会授予牌照和监管，当前在线博彩牌照于2012 年8 月31 日颁发；及(2) 英国博采委员会授予牌照和监管 (牌照 %1编号: 39172%2)。"
 
-msgid "In the UK, our clients trade through Binary (IOM) Ltd and Binary Investments (Europe) Ltd. In the Isle of Man, they trade through Binary (IOM) Ltd. In the European Union (except UK), they trade through Binary (Europe) Ltd and Binary Investments (Europe) Ltd. In the rest of the world, they trade through Binary (C.R.) S.A."
-msgstr "在英国，我们的客户通过 Binary (IOM) Ltd. 和 Binary Investments (Europe) Ltd. 进行交易。在马恩岛，他们通过 Binary (IOM) Ltd. 进行交易。在欧盟（除了英国），则通过 Binary (Europe) Ltd 和 Binary Investments (Europe) Ltd. 进行交易。在全世界其他地区，客户通过 Binary (C.R.) S.A.进行交易。"
+msgid "In the UK, our clients trade through Binary (IOM) Ltd and Binary Investments (Europe) Ltd. In the Isle of Man, they trade through Binary (IOM) Ltd. In the European Union (except UK), they trade through Binary (Europe) Ltd and Binary Investments (Europe) Ltd. In the rest of the world, they trade through Binary (C.R.) S.A., Binary (V) Ltd, Binary (BVI) Ltd and Binary (FX) Ltd."
+msgstr "在英国，我们的客户通过 Binary (IOM) Ltd. 和 Binary Investments (Europe) Ltd. 进行交易。在马恩岛，他们通过 Binary (IOM) Ltd. 进行交易。在欧盟（除了英国），则通过 Binary (Europe) Ltd 和 Binary Investments (Europe) Ltd. 进行交易。在全世界其他地区，客户通过 Binary (C.R.) S.A.，Binary (V) Ltd.，Binary (BVI) Ltd. 和Binary (FX) Ltd.进行交易。"
 
 msgid "In the case of a Limit Order, you acknowledge that we will endeavor to open/close a Transaction at a level that is the same or better than the Limit you specified, subject to the availability of the Limit Price."
 msgstr "下限价订单时, 您确认只要有可用的限价，我们将尽力以与您指定的水平相同或更好价格开盘/平仓。"
@@ -5557,8 +5575,8 @@ msgstr "对已被现有欺诈控制和流程标记的客户端账户进行调查
 msgid "Investigate, reproduce, identify, document, and resolve issues reported by our clients and the customer support team"
 msgstr "对客户和客户支持团队报告的问题展开调查、复制、识别、记录和解决工作"
 
-msgid "Investing in complex products, such as CFDs and FX may incur losses as well as gains. Prices may vary and/or fluctuate due to changes in current market prices and conditions, which may impact the return on your investment. Before making an Investment decision, you should refer to our Key Information Documents on our website, in particular, the amount of Margin required for particular instruments that we offer. The Products offered by Binary Investments (Europe) Ltd fall under the category of ‘complex products’ and may not be suitable for retail clients."
-msgstr "差价合约和外汇等复杂产品投资可能会令您蒙受损失，但也可能获利。价格可能会因为当前市场价格和条件的变化而变动和/或波动，这可能会影响您的投资回报。做出投资决定之前，您应该参考我们网站上的关键信息文件，特别是我们提供的特定工具所需的保证金金额。Binary Investments（Europe）Ltd提供的产品属于“复杂产品”类别，可能不适合零售客户。"
+msgid "Investing in complex products, such as CFDs and FX may incur losses as well as gains. Prices may vary and/or fluctuate due to changes in current market prices and conditions, which may impact the return on your investment. Before making an Investment decision, you should refer to our %1Key Information Documents%2 on our website, in particular, the amount of Margin required for particular instruments that we offer. The Products offered by Binary Investments (Europe) Ltd fall under the category of ‘complex products’ and may not be suitable for retail clients."
+msgstr "差价合约和外汇等复杂产品投资可能会令您蒙受损失，但也可能获利。价格可能会因为当前市场价格和条件的变化而变动和/或波动，这可能会影响您的投资回报。做出投资决定之前，您应该参考我们网站上的%1关键信息文件%2，特别是我们提供的特定工具所需的保证金金额。Binary Investments（Europe）Ltd提供的产品属于“复杂产品”类别，可能不适合零售客户。"
 
 msgid "Investing or trading in Contracts exposes you to the performance of the underlying or reference instrument or asset to which the Binary Contract refers including foreign exchange, indices and commodities each of which have their own features and risks."
 msgstr "合同投资或交易使您和Binary合同指向的标的、参考工具或资产的表现息息相关，包括外汇、指数和大宗商品，每一种都各有特点和风险。"
@@ -5874,6 +5892,9 @@ msgstr "查看关于我们企业文化的详情"
 
 msgid "Learn more about submitting essential documents with our handy infographic:"
 msgstr "透过方便的信息图了解有关提交重要文件的详情:"
+
+msgid "Learn more."
+msgstr "了解详情。"
 
 msgid "Learn the basic concepts of trading Meta assets on MetaTrader 5."
 msgstr "了解MetaTrader 5进行Meta资产交易的基本概念。"
@@ -6639,6 +6660,9 @@ msgstr "月份"
 
 msgid "More benefits"
 msgstr "更多福利"
+
+msgid "More information can be found in an email sent to you."
+msgstr ""
 
 msgid "More specifically, when the Company enters into a binary option trade with the client (each, a \"Contract\"), the Company has a duty to provide the client with 'best execution'. Best execution means that the Company must take reasonable steps to obtain the best possible result for the client when executing a client order. This document provides a summary of the Company's best execution policy."
 msgstr "具体来说，当公司和客户进行二元期权交易时（双方有了“合约”），公司有责任向客户提供\"最佳执行方案”。最佳执行方案的意思是，当公司执行客户的订单时，必须采取合理的措施为客户获取最大效益。此文件是关于最佳执行方案政策的概述。"
@@ -7597,6 +7621,9 @@ msgstr "请检查您的电子邮件领取验证码以完成此程序。"
 msgid "Please check your email for the verification link to complete the process."
 msgstr "请检查您的电子邮件领取验证链接以完成此程序。"
 
+msgid "Please check your inbox for details."
+msgstr "请检查您的收件箱以便了解详情。"
+
 msgid "Please choose a currency"
 msgstr "请选择一种货币"
 
@@ -7648,8 +7675,8 @@ msgstr "请登录。"
 msgid "Please make sure that you first agree with the Agent on the terms of payment before submitting your request."
 msgstr "在提交请求前，请您确认同意代理的支付条款。"
 
-msgid "Please note that Asians, Digits, Reset Call/Reset Put and High Ticks/Low Ticks are available exclusively with our Volatility Indices."
-msgstr "请注意，亚洲货币、数字交易、买权重设/卖权重设和高跳动点/低跳动点只适用于我们的波动指数。"
+msgid "Please note that Asians, Digits, Reset Call/Reset Put, High Ticks/Low Ticks, and Run Ups/Run Downs are available exclusively with our Volatility Indices."
+msgstr ""
 
 msgid "Please note that actual trading results may not correspond to optimized or back-tested results."
 msgstr "请注意, 实际交易结果可能与被优化或事后测试的结果不符。"
@@ -7677,6 +7704,9 @@ msgstr "请提供以下信息："
 
 msgid "Please read this %1privacy policy%2 before submitting your application."
 msgstr "提交申请前, 请阅读此 %1隐私政策%2。"
+
+msgid "Please reapply once the required criteria has been fulfilled."
+msgstr ""
 
 msgid "Please refer to the %1asset index%2 for each asset’s minimum and maximum contract durations based on trade type."
 msgstr "要了解每个资产基于交易类型的最低和最高合约期限，请参阅 %1资产指数%2。"
@@ -8512,6 +8542,15 @@ msgstr "转到借入/贷出"
 
 msgid "Rolling Spot Forex;"
 msgstr "起伏现货外汇"
+
+msgid "Run"
+msgstr ""
+
+msgid "Run Downs"
+msgstr ""
+
+msgid "Run Ups"
+msgstr ""
 
 msgid "Russia"
 msgstr "俄罗斯"
@@ -9395,6 +9434,12 @@ msgstr "%2合约期限%2是在合约开始时间之后的 %1第一个跳动点%2
 msgid "The %1end time%2 is the selected number of minutes/hours after the %1start time%2."
 msgstr "%1收盘时间%2是 %1开盘时间%2后的选定分钟/小时数。"
 
+msgid "The %1entry spot%2 is the next tick after the %1start time%2."
+msgstr ""
+
+msgid "The %1exit spot%2 is the last tick when the contract ends. Contract ends when all ticks rise or fall successively, or when a single tick breaks the predicted pattern."
+msgstr ""
+
 msgid "The %1high%2 is the highest point ever reached by the market during the contract period."
 msgstr "%1最高值%2是市场在合约期间内达到的最高点。"
 
@@ -9403,6 +9448,9 @@ msgstr "%1最低值%2是市场在合约期间内达到的最低点。"
 
 msgid "The %1start time%2 begins when the contract is processed by our servers."
 msgstr "%1开盘时间%2即我们的服务器开始处理合约的时间。"
+
+msgid "The %1start time%2 is when the contract has been processed by our servers."
+msgstr ""
 
 msgid "The <strong>contract period</strong> is the period between the <strong>next tick</strong> after the <strong>start time</strong> and the <strong>end time</strong>."
 msgstr "<strong>合约期限</strong>是在合约<strong>开始时间</strong>之后的<strong>下一个跳动点</strong>和合约<strong>结束时间</strong>之间的期限。"
@@ -10214,6 +10262,9 @@ msgstr "在通过网络系统进行交易有许多潜在风险，包括但不仅
 
 msgid "There are two types of In/Out trades:"
 msgstr "范围内/外交易有两种类型："
+
+msgid "There are two types of Run trades:"
+msgstr ""
 
 msgid "There are two types of Up/Down trades:"
 msgstr "上涨/下跌交易有两种类型："
@@ -11178,6 +11229,9 @@ msgstr "您确认并理解一旦资金经理被撤销后将失去代您管理账
 msgid "Upon the expiration or termination of this Agreement, for whatever reason, all rights and license granted to you in this Agreement, including use of the %1 API, shall immediately terminate. You agree to promptly cease all further use of the %1 API. Termination of this Agreement shall not act as a waiver of any breach of this Agreement and shall not act as a release of your liability for breach of its obligation under this Agreement. The Company shall not be liable to you for damages of any kind solely as a result of terminating this Agreement in accordance with its terms."
 msgstr "本协议到期或终止时（不论是什么原因），所有通过本协议授予您的权利和许可证，包括%1 API的使用权限，将立即终止。您同意立即停止继续使用 %1 API。本协议的终止不可视为放弃追究本协议任何违约行为，且不可视为放弃追究您违反本协议所须承担的义务与责任。公司不对仅仅由于按照协议条款终止本协议的任何类型损失索赔承担责任。"
 
+msgid "Ups"
+msgstr ""
+
 msgid "Usage Limit"
 msgstr "使用限制"
 
@@ -11625,8 +11679,8 @@ msgstr "我们将继续关闭未平仓合约，直到您的保证金水平高于
 msgid "We will hold you responsible for all your obligations under this Agreement in our course of providing the margin trading service described in this Agreement to you, even if you notify us that you are acting as the agent of an identified principal."
 msgstr "在我们根据此协议所述向您提供保证金交易服务期间，您必须对本协议项下您的所有义务负责，即使您通知我们您是某指定委托人的代理。"
 
-msgid "We will review your documents and get back to you within one working day."
-msgstr "我们将审阅您的文件, 并将于一个工作日内回复。"
+msgid "We will review your documents and get back to you within 3 working days."
+msgstr "我们将审阅您的文件, 并将于三个工作日内回复。"
 
 msgid "We will use reasonable endeavors within our control to ensure that all electronic data provided on the MT5 Trading Platform and all electronic transactions instructed and accepted from you to us, and executed by us are not subject to network latency."
 msgstr "我们将在可控制范围内合理地努力，确保您通过 MT5 交易平台和所有电子交易指示所收到并由我们执行提供的所有电子数据均不会受到网络延迟。"
@@ -11732,9 +11786,6 @@ msgstr "%1 IB计划的内容是什么？"
 
 msgid "What is the definition of a referred client?"
 msgstr "“推荐客户”的定义是什么？"
-
-msgid "What is this?"
-msgstr "这是什么？"
 
 msgid "What kind of reports can I generate?"
 msgstr "我可以生成哪些报告？"
@@ -11944,7 +11995,7 @@ msgid "Why Us"
 msgstr "为何选择我们"
 
 msgid "Why Us?"
-msgstr "为何选择我们？"
+msgstr "为何选我们?"
 
 msgid "Why do Clients choose to use Payment Agents?"
 msgstr "客户为什么选择使用支付代理？"
@@ -11984,6 +12035,12 @@ msgstr "如果退市现价高于或等于高障碍, 可获得最大赔付。"
 
 msgid "Win maximum payout if the exit spot is lower than or equal to the lower barrier."
 msgstr "如果退市现价低于或等于低障碍, 可获得最大赔付。"
+
+msgid "Win payout if consecutive ticks fall successively. Contract is lost when at least one tick rises or is equal to any of the previous ticks."
+msgstr ""
+
+msgid "Win payout if consecutive ticks rise successively. Contract is lost when at least one tick falls or is equal to any of the previous ticks."
+msgstr ""
 
 msgid "Win payout if exit spot is also equal to entry spot."
 msgstr "如果退市现货价与入市现货价相同, 则将赢得赔付。"
@@ -12721,6 +12778,9 @@ msgstr "您的账户已经得到完全验证，且您可在此查看您的<a hre
 msgid "Your account is restricted. Kindly %1contact customer support%2 for assistance."
 msgstr "您的账户已被限制。请%1联系客服部%2，以获得帮助。"
 
+msgid "Your account remains under the retail client category."
+msgstr ""
+
 msgid "Your account security is of paramount importance to us. Please consider the following initiatives and tools to enhance your account security:"
 msgstr "您的账户安全对我们来说至关重要。请考虑采用以下措施和工具以增强您的账户安全:"
 
@@ -12799,11 +12859,14 @@ msgstr "您的密码已成功重置。请用新密码登录您的账户。"
 msgid "Your personal information is used primarily as a way of validating you as the legitimate account owner and proper recipient of withdrawal payments. We also use this information to process your trades. We collect from you all personal and financial data directly relating to you when you fill in our account opening form. In all instances, you have either a legal or a contractual obligation to provide us with the information. If such information is not provided, we will be unable to provide you with our services."
 msgstr "您的个人信息主要用作证明您是合法的账户拥有者和提款付款的适当接收者的一种验证方式。我们也使用这些信息来处理您的交易。当您填写我们的开户表格时, 我们会向您收集所有与您直接相关的个人和财务数据。在所有情况下, 您都有法律或合同义务向我们提供信息。如果没有提供此类信息, 我们将无法为您提供我们的服务。"
 
+msgid "Your professional client request is %1not approved%2."
+msgstr ""
+
 msgid "Your profit or loss is calculated as follows:"
 msgstr "您的损益计算如下:"
 
-msgid "Your request to be treated as a professional client has been rejected. Please check your inbox for more details. Your account remains categorised as a retail client account."
-msgstr "您被归类为专业客户的请求已被拒绝。请查看收件箱了解更多详情。您的账户仍被归类为零售客户账户。"
+msgid "Your request to be treated as a professional client is %1not approved%2."
+msgstr "您申请成为专业客户的请求%1不受批准%2。"
 
 msgid "Your request to transfer %1 %2 from %3 to %4 has been successfully processed."
 msgstr "您从 %3 转账 %1%2 到 %4 的请求已成功处理。"

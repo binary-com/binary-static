@@ -3,7 +3,7 @@ import PropTypes        from 'prop-types';
 import React            from 'react';
 import { CSSTransition }   from 'react-transition-group';
 import { connect }      from 'Stores/connect';
-import { DrawerHeader } from './drawer_header.jsx';
+import { DrawerHeader } from './drawer-header.jsx';
 
 class Drawer extends React.Component {
     state = {

@@ -1,1 +1,1 @@
-export default from './duration_wrapper.jsx';
+export default from './duration-wrapper.jsx';

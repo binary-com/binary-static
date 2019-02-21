@@ -245,8 +245,12 @@ const BinaryOptions = () => {
                             <ListStrong header={it.L('Reset-Put')}  text={it.L('Predict that the market will end up lower than either the current level or the level at a predetermined time (reset time).')} />
                             <p>{it.L('At reset time, if the spot is in the opposite direction of your prediction, the barrier is reset to that spot.')}</p>
                         </SectionLarge>
-                        <SectionLarge dataAnchor='high-low-ticks' header={it.L('High Tick/Low Tick')} image='types-of-trades/high_low_ticks' text={it.L('Purchase High Tick/Low Tick contracts to predict the highest or lowest tick among the next five ticks.')} />
-                        <p>{it.L('Please note that Asians, Digits, Reset Call/Put, and High/Low Ticks are available exclusively with our Volatility Indices.')}</p>
+                        <SectionLarge dataAnchor='high-low-ticks' header={it.L('High Ticks/Low Ticks')} image='types-of-trades/high_low_ticks' text={it.L('Purchase High Tick/Low Tick contracts to predict the highest or lowest tick among the next five ticks.')} />
+                        <SectionLarge dataAnchor='runs-high-low' header={it.L('Run')} image='types-of-trades/runup_rundown' text={it.L('There are two types of Run trades:')}>
+                            <ListStrong header={it.L('Ups')} text={it.L('Win payout if consecutive ticks rise successively. Contract is lost when at least one tick falls or is equal to any of the previous ticks.')} />
+                            <ListStrong header={it.L('Downs')} text={it.L('Win payout if consecutive ticks fall successively. Contract is lost when at least one tick rises or is equal to any of the previous ticks.')} />
+                        </SectionLarge>
+                        <p>{it.L('Please note that Asians, Digits, Reset Call/Reset Put, High Ticks/Low Ticks, and Run Ups/Run Downs are available exclusively with our Volatility Indices.')}</p>
                     </Section>
                     <Section id='range-of-markets' header={it.L('Range of markets')}>
                         <p>{it.L('Binary options allow you to trade on a wide range of underlying markets. One of the risk-limiting advantages of trading binary options is that you are not buying or selling an actual asset. Instead, you’re only trading a contract based on your prediction of how the asset performs over a period of time.')}</p>
