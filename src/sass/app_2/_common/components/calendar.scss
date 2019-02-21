@@ -28,7 +28,6 @@
 
         &--date, &--month, &--year, &--decade {
             display: grid;
-            grid-gap: 1.2em;
             padding: 0.8em 2em;
 
             .calendar__cell {
@@ -39,8 +38,8 @@
             }
         }
         &--date {
-            grid-template-columns: repeat(7, 2.4em);
-            grid-auto-rows: 2.4em;
+            grid-template-columns: repeat(7, 3.4em);
+            grid-auto-rows: 3.4em;
 
             .calendar__cell {
                 width: 100%;
@@ -115,7 +114,7 @@
         }
     }
     &__text {
-        @include typeface(--small-left-normal-black);
+        @include typeface(--small-center-normal-black);
 
         &--bold {
             font-weight: bold;

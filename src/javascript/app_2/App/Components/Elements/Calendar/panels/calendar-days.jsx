@@ -88,28 +88,30 @@ const getDays = ({
         const is_other_month = moment_date.month() !== moment_cur_date.month();
 
         days.push(
-            <span
-                key={date}
-                className={classNames('calendar__cell', {
-                    'calendar__cell--active'  : is_active && !is_disabled,
-                    'calendar__cell--today'   : is_today,
-                    'calendar__cell--disabled': is_disabled,
-                    'calendar__cell--other'   : is_other_month,
-                })}
-                onClick={is_disabled ? undefined : (e) => updateSelected(e, 'day') }
-                data-date={date}
-            >
-                { ((has_events || is_closes_early) && !is_other_month && !is_before_min_or_after_max_date) &&
-                    <Tooltip
-                        alignment='top'
-                        className='calendar__cell-tooltip'
-                        classNameIcon='calendar__cell-tooltip-icon'
-                        icon='dot'
-                        message={message}
-                    />
-                }
-                {moment_date.date()}
-            </span>
+            <div className='coba-coba-desu'>
+                <span
+                    key={date}
+                    className={classNames('calendar__cell', {
+                        'calendar__cell--active'  : is_active && !is_disabled,
+                        'calendar__cell--today'   : is_today,
+                        'calendar__cell--disabled': is_disabled,
+                        'calendar__cell--other'   : is_other_month,
+                    })}
+                    onClick={is_disabled ? undefined : (e) => updateSelected(e, 'day')}
+                    data-date={date}
+                >
+                    {((has_events || is_closes_early) && !is_other_month && !is_before_min_or_after_max_date) &&
+                        <Tooltip
+                            alignment='top'
+                            className='calendar__cell-tooltip'
+                            classNameIcon='calendar__cell-tooltip-icon'
+                            icon='dot'
+                            message={message}
+                        />
+                    }
+                    {moment_date.date()}
+                </span>
+            </div>
         );
     });
 
