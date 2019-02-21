@@ -18,13 +18,13 @@ const FullPageModal = ({
                     <p className='full-page-modal__content'>{children}</p>
                     <div className='full-page-modal__footer'>
                         <div
-                            className='full-page-modal__button btn flat effect primary'
+                            className='full-page-modal__button btn btn--flat effect btn--primary'
                             onClick={onCancel}
                         >
                             <span className='full-page-modal__button-text'>{cancel_button_text}</span>
                         </div>
                         <div
-                            className='full-page-modal__button btn flat effect primary'
+                            className='full-page-modal__button btn btn--flat effect btn--primary'
                             onClick={onConfirm}
                         >
                             <span className='full-page-modal__button-text'>{confirm_button_text}</span>

@@ -7,7 +7,7 @@ import Button              from '../../Form/button.jsx';
 
 const LoginButton = ({ className }) => (
     <Button
-        className={classNames(className, 'secondary orange')}
+        className={classNames(className, 'btn-secondary btn--secondary--orange')}
         has_effect
         text={localize('Log in')}
         onClick={redirectToLogin}

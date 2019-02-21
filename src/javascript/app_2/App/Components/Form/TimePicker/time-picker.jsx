@@ -63,7 +63,7 @@ class TimePicker extends React.Component {
             <div
                 ref={this.saveRef}
                 className={classNames(prefix_class,
-                    { 'padding': this.props.padding })}
+                    { [`${prefix_class}--padding`]: this.props.padding })}
             >
                 {
                     is_nativepicker
@@ -78,7 +78,6 @@ class TimePicker extends React.Component {
                         />
                         : (
                             <React.Fragment>
-                                <IconClock className='time-picker-icon' />
                                 <InputField
                                     error_messages={validation_errors}
                                     type='text'
@@ -90,12 +89,13 @@ class TimePicker extends React.Component {
                                     name={name}
                                     placeholder={placeholder}
                                 />
+                                <IconClock className={`input-field__icon ${prefix_class}__icon`} />
                                 <CSSTransition
                                     in={ this.state.is_open }
                                     classNames={{
-                                        enter    : 'time-picker-dialog-enter',
-                                        enterDone: 'time-picker-dialog-enter-done',
-                                        exit     : 'time-picker-dialog-exit',
+                                        enter    : 'time-picker__dialog--enter',
+                                        enterDone: 'time-picker__dialog--enter-done',
+                                        exit     : 'time-picker__dialog--exit',
                                     }}
                                     timeout={100}
                                     unmountOnExit
