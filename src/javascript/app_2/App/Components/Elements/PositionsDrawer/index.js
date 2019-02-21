@@ -1,1 +1,1 @@
-export default from './positions_drawer.jsx';
+export default from './positions-drawer.jsx';

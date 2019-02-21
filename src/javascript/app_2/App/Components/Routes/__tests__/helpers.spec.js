@@ -1,7 +1,7 @@
 import React from 'react';
 import { expect }      from 'chai';
 import * as Helpers    from '../helpers';
-import getRoutesConfig from '../../../Constants/routes_config';
+import getRoutesConfig from '../../../Constants/routes-config';
 import Trade           from 'Modules/Trading';
 
 describe('Helpers', () => {

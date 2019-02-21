@@ -6,9 +6,9 @@ import Fieldset                       from 'App/Components/Form/fieldset.jsx';
 import RangeSlider                    from 'App/Components/Form/RangeSlider';
 import { convertDurationLimit }       from 'Stores/Modules/Trading/Helpers/duration';
 import { toMoment }                   from 'Utils/Date';
-import DurationToggle                 from './duration_toggle.jsx';
-import AdvancedDuration               from './advanced_duration.jsx';
-import SimpleDuration                 from './simple_duration.jsx';
+import DurationToggle                 from './duration-toggle.jsx';
+import AdvancedDuration               from './advanced-duration.jsx';
+import SimpleDuration                 from './simple-duration.jsx';
 
 const Duration = ({
     advanced_duration_unit,

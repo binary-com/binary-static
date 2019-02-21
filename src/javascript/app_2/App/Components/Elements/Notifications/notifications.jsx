@@ -1,6 +1,6 @@
 import PropTypes             from 'prop-types';
 import React                 from 'react';
-import { EmptyNotification } from './empty_notification.jsx';
+import { EmptyNotification } from './empty-notification.jsx';
 import { DrawerItem }        from '../Drawer';
 
 const Notifications = ({ list }) => (

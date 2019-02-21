@@ -1,5 +1,5 @@
 import { expect }           from 'chai';
-import { getPreBuildDVRs }  from '../declarative_validation_rules';
+import { getPreBuildDVRs }  from '../declarative-validation-rules';
 import Validator            from '../validator';
 
 describe('Validator', () => {

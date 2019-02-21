@@ -1,1 +1,1 @@
-export * from './account_switcher.jsx';
+export * from './account-switcher.jsx';

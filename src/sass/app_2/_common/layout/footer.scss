@@ -110,6 +110,7 @@ footer {
 
 .ic-settings {
     &.active {
+        position: relative;
         background: $COLOR_LIGHT_BLACK_4;
 
         &:after {

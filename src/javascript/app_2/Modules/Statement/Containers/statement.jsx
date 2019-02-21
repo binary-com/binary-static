@@ -6,10 +6,10 @@ import { withRouter }                 from 'react-router-dom';
 import DataTable                      from 'App/Components/Elements/DataTable';
 import { getContractPath }            from 'App/Components/Routes/helpers';
 import { connect }                    from 'Stores/connect';
-import Filter                         from './statement_filter.jsx';
-import StatementCardList              from '../Components/statement_card_list.jsx';
-import EmptyStatementMessage          from '../Components/empty_statement_message.jsx';
-import { getTableColumnsTemplate }    from '../Constants/data_table_constants';
+import Filter                         from './statement-filter.jsx';
+import StatementCardList              from '../Components/statement-card-list.jsx';
+import EmptyStatementMessage          from '../Components/empty-statement-message.jsx';
+import { getTableColumnsTemplate }    from '../Constants/data-table-constants';
 import Loading                        from '../../../../../templates/_common/components/loading.jsx';
 
 class Statement extends React.Component {

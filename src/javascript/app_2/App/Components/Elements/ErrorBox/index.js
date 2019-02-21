@@ -1,1 +1,1 @@
-export default from './error_box.jsx';
+export default from './error-box.jsx';

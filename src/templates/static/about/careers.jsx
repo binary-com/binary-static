@@ -217,7 +217,7 @@ const Careers = () => {
 
             <div className='container'>
                 <div className='gr-padding-30 center-text'>
-                    <h1>{it.L('Interview process')}</h1>
+                    <h1>{it.L('Recruitment Process')}</h1>
                 </div>
                 <div className='has-tabs'>
                     <ul className='role-section'>

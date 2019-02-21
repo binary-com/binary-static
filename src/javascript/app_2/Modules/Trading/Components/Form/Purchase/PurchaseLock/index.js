@@ -1,1 +1,1 @@
-export default from './purchase_lock.jsx';
+export default from './purchase-lock.jsx';

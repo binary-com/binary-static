@@ -1,1 +1,1 @@
-export default from './trading_date_picker.jsx';
+export default from './trading-date-picker.jsx';

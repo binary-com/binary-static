@@ -5,7 +5,7 @@ import {
     shallow }           from 'enzyme';
 import Adapter          from 'enzyme-adapter-react-16'; // TODO: move this to a test config file
 import Calendar         from '../index';
-import { testChildren } from '../../../../../test_helper';
+import { testChildren } from '../../../../../test-helper';
 
 configure({ adapter: new Adapter() }); // TODO: move this to a test config file
 

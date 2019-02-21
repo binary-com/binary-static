@@ -1,84 +1,77 @@
+/** @define tab-container */
 .tab-container {
     overflow-x: auto;
     overflow-y: hidden;
 
-    &.left {
+    &--left {
         text-align: left;
     }
-    &.center {
+    &--center {
         text-align: center;
     }
-    &.right {
+    &--right {
         text-align: right;
     }
-    .tab-wrapper {
-        position: relative;
-        display: inline-block;
-        margin-bottom: 0.3em;
-        width: 100%;
-    }
-    .tab {
-        display: inline-flex;
-        align-items: center;
-        justify-content: space-evenly;
+}
 
-        span {
-            @include typeface(--paragraph-left-light-black);
-            @include toEm(padding, 16px, 1.2em);
-            cursor: pointer;
+/** @define tab-wrapper */
+.tab-wrapper {
+    position: relative;
+    display: flex;
+    width: 100%;
+}
 
-            &.icon {
-                padding: 1.6em 1.8em 1.6em 3.4em;
+/** @define tab */
+.tab {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex: 1;
+    -webkit-box-flex: 1;
 
-                &:before {
-                    position: absolute;
-                    top: 1.6em;
-                    left: 1.4em;
-                }
-            }
-            &:after {
-                display: block;
-                content: attr(title);
-                font-weight: 400;
-                height: 0;
-                overflow: hidden;
-                visibility: hidden;
-            }
-        }
-        &:hover, &--active {
-            span {
-                color: $COLOR_DARK_BLUE_5;
-                font-weight: 400;
-            }
+    &__header {
+        @include typeface(--paragraph-left-light-black);
+        @include toEm(padding, 16px, 1.2em);
+        cursor: pointer;
+
+        &:after {
+            display: block;
+            content: attr(title);
+            font-weight: 400;
+            height: 0;
+            overflow: hidden;
+            visibility: hidden;
         }
     }
-    .tab-underline {
-        position: absolute;
-        bottom: -0.1em;
-        left: 0;
-        right: 0;
-        border-bottom: 2px solid $COLOR_DARK_BLUE_5;
+    &__icon {
+        padding: 1.6em 1.8em 1.6em 3.4em;
+
+        &:before {
+            position: absolute;
+            top: 1.6em;
+            left: 1.4em;
+        }
     }
-    .tab-content {
-        p {
-            @include typeface(--paragraph-left-normal-black);
+    &:hover, &--active {
+        .tab__header {
+            color: $COLOR_DARK_BLUE_5;
+            font-weight: 400;
         }
     }
 }
 
-// Dark Theme
-.theme--dark {
-    .tab {
-        span {
-            color: $COLOR_DARK_BLUE_7;
-        }
-        &--active {
-            span {
-                color: $COLOR_WHITE;
-            }
-        }
-    }
-    .tab-underline {
-        border-color: $COLOR_WHITE;
+/** @define tab-underline */
+.tab-underline {
+    position: absolute;
+    bottom: -0.1em;
+    left: 0;
+    right: 0;
+    border-bottom: 2px solid $COLOR_DARK_BLUE_5;
+}
+
+/** @define tab-content */
+.tab-content {
+    p {
+        @include typeface(--paragraph-left-normal-black);
     }
 }

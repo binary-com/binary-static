@@ -1,0 +1,19 @@
+/** @define card-list */
+.card-list {
+    overflow: auto; // fixes margin collapse
+
+    & &__card { // keep & for higher specificity
+        display: block;
+        text-decoration: none;
+        max-width: 450px;
+        margin: 0.6em auto;
+        background-color: $COLOR_WHITE;
+        border: 1px solid $COLOR_LIGHT_BLACK_4;
+        border-radius: 4px;
+        color: $COLOR_LIGHT_BLACK_1;
+
+        &-link {
+            cursor: pointer;
+        }
+    }
+}

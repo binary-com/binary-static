@@ -7,7 +7,7 @@ import { CSSTransition } from 'react-transition-group';
 import { Scrollbars }    from 'tt-react-custom-scrollbars';
 import { IconArrow }     from 'Assets/Common';
 import Items             from './items.jsx';
-import NativeSelect      from './native_select.jsx';
+import NativeSelect      from './native-select.jsx';
 import {
     getDisplayText,
     getItemFromValue,

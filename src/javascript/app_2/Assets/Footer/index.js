@@ -1,3 +1,3 @@
-export * from './icon_maximize.jsx';
-export * from './icon_positions.jsx';
-export * from './icon_settings.jsx';
+export * from './icon-maximize.jsx';
+export * from './icon-positions.jsx';
+export * from './icon-settings.jsx';
