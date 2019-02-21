@@ -10,7 +10,7 @@ const Cryptocurrencies = () => {
             <div className='center-text'>
                 <h2>{it.L('How to trade cryptocurrencies')}</h2>
                 <p>{it.L('Trade Bitcoin, Ethereum, and Litecoin pairs without owning them. Our cryptocurrency pairs quote a cryptocurrency, such as Bitcoin, against a fiat currency, such as the US dollar.')}</p>
-                <p>{it.L('Similar to Forex trading, you must understand when to buy (or "go long") and when to sell (or "go short"). In Forex trading, you\'ll buy a certain currency pair if you think the value of the base currency will rise. The opposite is also true: you will sell a certain currency pair if you think the value of the base currency will fall.')}</p>
+                <p>{it.L('As in forex trading, it is important to understand when to buy (or "go long") and when to sell (or "go short") cryptocurrency pairs. In forex trading, you\'ll buy a certain currency pair if you think the value of the base currency will rise. The opposite is also true: you will sell a certain currency pair if you think the value of the base currency will fall.')}</p>
                 <p>{it.L('The same concept applies to our cryptocurrency pairs.')}</p>
                 <p>{it.L('Let\'s compare the differences between buying and selling, using the BTC/USD as an example:')}</p>
             </div>
@@ -42,7 +42,7 @@ const Cryptocurrencies = () => {
             <SeparatorLine className='gr-padding-30' />
 
             <div className='center-text'>
-                <p>{it.L('In a nutshell, when you go long on the BTC/USD with Binary.com, you are not purchasing bitcoin directly. Instead, you\'re taking a position that the BTC/USD will rise in value whereby you will make a profit. If you go long on the BTC/USD and its value falls, then you will make a loss.')}</p>
+                <p>{it.L('In a nutshell, when you go long on the BTC/USD with [_1], you are not purchasing Bitcoins directly. Instead, you\'re taking a position that the BTC/USD will rise in value whereby you will make a profit. If you go long on the BTC/USD and its value falls, then you will make a loss.', it.website_name)}</p>
             </div>
         </div>
     );

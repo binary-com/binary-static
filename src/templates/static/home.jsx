@@ -209,27 +209,27 @@ const Home = () => {
                                     image='images/pages/home/binary_options.svg'
                                     image_one='images/pages/home/icons/demo.svg'
                                     list_header_one={it.L('Virtual Account')}
-                                    list_text_one={it.L('Practice account with replenishable USD 10,000 virtual credit.')}
+                                    list_text_one={it.L('Practice accounts with replenishable USD 10,000 virtual credit')}
                                     image_two='images/pages/home/icons/real.svg'
                                     list_header_two={it.L('Real Account')}
-                                    list_text_two={it.L('Real-money accounts with your choice of fiat and crypto currency.')}
+                                    list_text_two={it.L('Real-money accounts with your choice of fiat and cryptocurrency')}
                                 />
                             </TabContent>
                             <TabContent id='mt5'>
                                 <AccountsTabContent
-                                    header={it.L('Trade Forex and CFDs on our popular multi-asset platform.')}
+                                    header={it.L('Trade forex and CFDs on our popular multi-asset platform.')}
                                     mobile_class='padding-top-20'
                                     mobile_header={it.L('MetaTrader 5')}
                                     image='images/pages/home/MT5.svg'
                                     image_one='images/pages/home/icons/demo.svg'
                                     list_header_one={it.L('MT5 Demo')}
-                                    list_text_one={it.L('Practice account with replenishable USD 10,000 virtual credit.')}
+                                    list_text_one={it.L('Practice account with replenishable USD 10,000 virtual credit')}
                                     image_two='images/pages/home/icons/mt5_financial.svg'
                                     list_header_two={it.L('MT5 Financial')}
-                                    list_text_two={it.L('MT5 real-money account for Forex and CFDs.')}
+                                    list_text_two={it.L('MT5 real-money accounts for forex and CFDs')}
                                     image_three='images/pages/home/icons/mt5_volatility.svg'
                                     list_header_three={it.L('MT5 Volatility Indices')}
-                                    list_text_three={it.L('MT5 real-money account for Volatility Indices only.')}
+                                    list_text_three={it.L('MT5 real-money accounts for Volatility Indices only')}
                                 />
                             </TabContent>
                         </TabContentContainer>
@@ -238,7 +238,7 @@ const Home = () => {
                 </TabContainer>
 
                 <div className='center-text gr-padding-20 gr-parent'>
-                    <h3 className='center-text gr-padding-20 gr-parent'>{it.L('Choose the platforms and accounts you need, based on your personal trading style')}</h3>
+                    <h3 className='center-text gr-padding-20 gr-parent'>{it.L('Choose the platforms and accounts you need, based on your personal trading style.')}</h3>
                     <a className='button-secondary' href={it.url_for('platforms')}>
                         <span>{it.L('View our platforms')}</span>
                     </a>
@@ -275,35 +275,35 @@ const Home = () => {
                             <TabContent id='forex'>
                                 <MarketsTabContent
                                     header={it.L('Forex')}
-                                    text={it.L('Major, minor and exotic currency pairs.')}
+                                    text={it.L('Major, minor, and exotic currency pairs')}
                                     image='images/pages/home/trade/forex.svg'
                                 />
                             </TabContent>
                             <TabContent id='crypto'>
                                 <MarketsTabContent
                                     header={it.L('Cryptocurrencies')}
-                                    text={it.L('Cryptocurrency pairs including Bitcoin, Ethereum, and Litecoin.')}
+                                    text={it.L('Cryptocurrency pairs including Bitcoin, Ethereum, and Litecoin')}
                                     image='images/pages/home/trade/crypto.svg'
                                 />
                             </TabContent>
                             <TabContent id='cfds'>
                                 <MarketsTabContent
                                     header={it.L('CFDs')}
-                                    text={it.L('Financial derivatives that allow you to trade on the movement of underlying assets.')}
+                                    text={it.L('Financial derivatives that allow you to trade on the movement of underlying assets')}
                                     image='images/pages/home/trade/cfds.svg'
                                 />
                             </TabContent>
                             <TabContent id='metals'>
                                 <MarketsTabContent
                                     header={it.L('Metals')}
-                                    text={it.L('Precious metal pairs including gold and platinum.')}
+                                    text={it.L('Precious metal pairs, including gold and platinum')}
                                     image='images/pages/home/trade/metals.svg'
                                 />
                             </TabContent>
                             <TabContent id='lookbacks'>
                                 <MarketsTabContent
                                     header={it.L('Lookbacks')}
-                                    text={it.L('Options that let you “look back” on the optimum high or low achieved by the market to determine the payout.')}
+                                    text={it.L('Options that let you “look back” on the optimum high or low achieved by the market to determine the payout')}
                                     image='images/pages/home/trade/lookbacks.svg'
                                 />
                             </TabContent>
@@ -361,17 +361,17 @@ const Home = () => {
                     <AcademySection
                         image='images/pages/home/icons/webinars.svg'
                         header={it.L('Interactive webinars')}
-                        text={it.L('Free training sessions by professional traders.')}
+                        text={it.L('Free training sessions by professional traders')}
                     />
                     <AcademySection
                         image='images/pages/home/icons/daily.svg'
                         header={it.L('Daily market reports')}
-                        text={it.L('Daily insights into markets around the world.')}
+                        text={it.L('Daily insights into markets around the world')}
                     />
                     <AcademySection
                         image='images/pages/home/icons/video.svg'
                         header={it.L('Ebooks, videos, and more')}
-                        text={it.L('Expert analysis and learning resources.')}
+                        text={it.L('Expert analysis and learning resources')}
                     />
                 </div>
                 <div className='center-text gr-padding-30 academy'>

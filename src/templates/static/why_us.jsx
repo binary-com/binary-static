@@ -41,8 +41,8 @@ const WhyUs = () => (
                         <div className='gr-7 gr-12-m'>
                             <ul className='checked'>
                                 <li>{it.L('Real-time prices, benchmarked against interbank options markets')}</li>
-                                <li>{it.L('High returns on [_1]rise/fall[_2] contracts', `<a href='${it.url_for('trading?market=forex&formname=risefall')}'>`, '</a>')}</li>
-                                <li>{it.L('Returns above 1000% on [_1]higher/lower[_2] and [_3]touch/no-touch[_2] trades.', `<a href='${it.url_for('trading?market=forex&formname=higherlower')}'>`, '</a>', `<a href='${it.url_for('trading?market=forex&formname=touchnotouch')}'>`)}</li>
+                                <li>{it.L('High returns on [_1]Rise/Fall[_2] contracts', `<a href='${it.url_for('trading?market=forex&formname=risefall')}'>`, '</a>')}</li>
+                                <li>{it.L('Returns above 1000% on [_1]Higher/Lower[_2] and [_3]Touch/No Touch[_2] trades.', `<a href='${it.url_for('trading?market=forex&formname=higherlower')}'>`, '</a>', `<a href='${it.url_for('trading?market=forex&formname=touchnotouch')}'>`)}</li>
                                 <li>{it.L('No hidden fees or commissions')}</li>
                             </ul>
                         </div>
@@ -57,7 +57,7 @@ const WhyUs = () => (
                     <img className='responsive' src={it.url_for('images/pages/tour/trade-tutorial_1.svg')} />
                     <ul className='checked'>
                         <li>{it.L('Choose from a wide range of payouts.')}</li>
-                        <li>{it.L('Trade all major currencies, indices, commodities, and volatility indices.')}</li>
+                        <li>{it.L('Trade all major currencies, indices, commodities, and Volatility Indices.')}</li>
                         <li>{it.L('Choose from a wide range of durations.')}</li>
                         <li>{it.L('Choose your own strike.')}</li>
                     </ul>

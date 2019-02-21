@@ -46,20 +46,20 @@ const Cfds = () => (
                     <p>{it.L('New to CFD trading? Below are a few basics that all CFD traders need to know before they start trading.')}</p>
 
                     <HeaderSecondary header={it.L('When to buy and sell')} />
-                    <p>{it.L('When you are trading CFDs, you can choose to open a buy position (if you think that the price will rise) or a sell position (if you think that the price will fall).')}</p>
+                    <p>{it.L('When you are trading CFDs, you can choose to open a buy position if you think that the price will rise or a sell position if you think that the price will fall.')}</p>
                     <BuySellImage />
-                    <p>{it.L('Let\'s use the US 100 index as an example:')}</p>
-                    <p>{it.L('If you decide to buy or \'go long\' on gold, you will profit if gold price rises. However, if the price falls below your entry price, you will incur losses which will increase the further the price falls.')}</p>
-                    <p>{it.L('The opposite is true if you decide to sell or \'go short\' on gold: you will profit if gold price falls. However, if the price rises above your entry price, you will incur losses which will increase the further the price rises.')}</p>
+                    <p>{it.L('Let\'s use the US 100 Cash Index as an example:')}</p>
+                    <p>{it.L('If you decide to buy or \'go long\' on the US 100 Cash Index, your profit will continue to increase as long as the price of the US 100 Cash Index keeps rising. However, if the price falls, the loss you incur will also increase.')}</p>
+                    <p>{it.L('The opposite is true if you decide to sell or \'go short\' on the US 100 Cash Index. This means that your profit will continue to increase as long as the price of the US 100 Cash Index keeps falling. However, if the price rises, the loss you incur will also increase.')}</p>
 
-                    <HeaderSecondary header={it.L('How to calculate your profits and losses')} />
+                    <HeaderSecondary header={it.L('How to calculate your profit and loss')} />
                     <p>{it.L('Let\'s say a US 100 contract is worth USD 1 per point in the underlying asset. If you decide to \'go long\' on the US 100, and the asset price rises by 10 points, that represents a USD 10 profit for you.')}</p>
                     <p>{it.L('However, if the asset price falls by 10 points, that represents a USD 10 loss for you.')}</p>
                     <p>{it.L('To learn more, please read our <a href=\'[_1]\'>CFD contract specifications</a>.', '#contract-specification')}</p>
 
                     <HeaderSecondary header={it.L('How to close a position')} />
                     <p>{it.L('When you decide to close an open contract, you only need to take the opposite position in order to close the contract.')}</p>
-                    <p>{it.L('For example, if you buy a US 100 contract and it\'s not going as planned, you just need to sell it to cut your losses at the current market price.')}</p>
+                    <p>{it.L('For example, if you buy a US 100 contract and it\'s not going as planned, you just need to sell it to cut your loss at the current market price.')}</p>
                 </Section>
 
                 <Section id='margin-policy' header={it.L('CFD margin policy')}>
@@ -71,7 +71,7 @@ const Cfds = () => (
                     <p>{it.L('You can determine the margin for our CFDs by using the formula below:')}</p>
                     <MtBox icon_1='mr1-icon' icon_2='mr2-icon' text={it.L('For example, if you buy one lot of an underlying asset at a price of USD 20,000 and a margin rate of 0.01, the margin required to purchase that one lot will be calculated as follows:')} />
 
-                    <HeaderSecondary header={it.L('What\'s a margin call and how is it applied')} />
+                    <HeaderSecondary header={it.L('What a margin call is and how it is applied')} />
                     <p>{it.L('Equity is the sum of your balance and floating profit and loss (PnL). Margin level is the ratio of equity to margin. When that ratio reaches a specified percentage (usually 100%), your account will be placed under margin call. This does not affect your ability to open new positions; it serves to alert you that your floating PnL is moving lower. However, it is recommended to add funds to your account in order to keep your positions open. Alternatively, you may close losing positions.')}</p>
 
                     <HeaderSecondary header={it.L('What\'s a stop out level and how is it applied')} />
@@ -146,15 +146,15 @@ const Cfds = () => (
 
                     <HeaderSecondary header={it.L('How to read the table above')} />
                     <p>{it.L('A contract for difference (CFD) is a financial derivative that allows you to speculate on the rise or fall of an underlying asset, without actually owning that asset. Your profit and loss is calculated through the difference in the buy and sell prices of the underlying asset.')}</p>
-                    <p>{it.L('For example, a CFD on [_1]\'s US 30 index offers a USD 1 per point contract. If you buy a Volume 1.0 contract for the US 30 with a current ask price of USD 20,000 and later sell it at a bid price of USD 20,010, your net profit will be calculated as follows:', it.website_name)}</p>
+                    <p>{it.L('For example, a CFD on Binary.com\'s US 30 Cash Index offers a USD 1 per point contract. If you buy a Volume 1.0 contract for the US 30 with a current ask price of USD 20,000 and later sell it at a bid price of USD 20,010, your net profit will be calculated as follows:', it.website_name)}</p>
 
                     <Box
-                        text={`(${it.L('Sell Price')} – ${it.L('Buy Price')}) x ${it.L('Volume')} x ${it.L('Price Per Point')} = ${it.L('Profit')}`}
+                        text={`(${it.L('sell price')} – ${it.L('buy price')}) x ${it.L('volume')} x ${it.L('price per point')} = ${it.L('profit')}`}
                         text_two={`(20010 – 20000) x 1 x 1 = ${it.L('USD')} 10`}
                     />
 
                     <p>{it.L('Each time you open a position on an index symbol, you can start with a minimum volume transaction as indicated in the table above.')}</p>
-                    <p>{it.L('To learn more, read our [_1]Margin Policy[_2] that further explains our margin requirements.', '<a href="#margin-policy">', '</a>')}</p>
+                    <p>{it.L('To learn more, read our [_1]Margin policy[_2] that further explains our margin requirements.', '<a href="#margin-policy">', '</a>')}</p>
 
                     <HeaderSecondary header={it.L('Important notes on our swap rates (overnight funding)')} />
                     <p>{it.L('If you keep any positions open overnight, an interest adjustment will be made to your trading account as an indication of the cost required to keep your position open.')}</p>
@@ -163,7 +163,7 @@ const Cfds = () => (
                     <p>{it.L('Please take note that our swap rate also depends on the time and days you hold your positions open:')}</p>
                     <ul className='bullet'>
                         <li>{it.L('You will be subjected to swap rates if you keep a position open past the market close.')}</li>
-                        <li>{it.L('Positions that are still open on Friday at market close will be charged three times the swap rate to account for weekends, a standard practice for all brokers.')}</li>
+                        <li>{it.L('Positions that are still open on Friday at the market close will be charged three times the swap rate to account for weekends, a standard practice for all brokers.')}</li>
                         <li>{it.L('Our swap rate may also be adjusted to take holidays into account.')}</li>
                     </ul>
                 </Section>

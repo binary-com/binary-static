@@ -55,7 +55,7 @@ const CTA = () => (
         <SeparatorLine show_mobile className='gr-padding-20 gr-child' />
         <div className='center-text'>
             <p>{it.L('Don\'t have a [_1] account yet?', it.website_name)}</p>
-            <a className='button' href={it.url_for('new-account')}><span>{it.L('Create free account')}</span></a>
+            <a className='button' href={it.url_for('new-account')}><span>{it.L('Create a free account')}</span></a>
         </div>
     </div>
 );
@@ -339,10 +339,10 @@ const Index = () => (
                         <SeparatorLine invisible />
                         <p>{it.L('For example, let’s say the market has a low of 5,200 and a close of 6,000 over the contract duration, then a ‘Close-Low’ lookback with a multiplier of $2 would have a payout of:')}</p>
                         <div className='formula center-text'>
-                            <span>{it.L('2 * (6,000 – 5,200) = $1600')}</span>
+                            <span>{it.L('2 * ($6,000 – $5,200) = $1,600')}</span>
                         </div>
+                        <p>{it.L('The \'Return to player\' (RTP) rate is the percentage of the money at stake in games of chance that is required by law to be paid back to players as \'winnings\', over time. The RTP% for lookbacks for a multiplier of 1 and a one-minute duration is around 87% on average.')}</p>
                         <p>{it.L('Lookbacks options are currently only available for [_1]Volatility Indices[_2].', `<a href=${it.url_for('get-started/binary-options')}?anchor=volatility-indices#range-of-markets>`, '</a>')}</p>
-                        <p className='hint'>{it.L('Return to player (RTP) % for lookbacks for a multiplier of 1 and 1m duration is around 87% on average.')}</p>
                         <CTA />
                     </TabContent>
                 </TabContentContainer>

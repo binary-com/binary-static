@@ -118,13 +118,13 @@ const BinaryOptions = () => {
                 </div>
                 <div className='gr-9 gr-12-m'>
                     <Section id='what-are-binary-options' header={it.L('What are binary options')}>
-                        <p>{it.L('A binary option is a type of option with a fixed payout in which you predict the outcome from two possible results. If your prediction is correct, you receive the agreed payout. If not, you lose your initial stake, and nothing more. It\'s called \'binary\' because there can be only two outcomes – win or lose.')}</p>
+                        <p>{it.L('A binary option is a type of option with a fixed payout in which you predict the outcome from two possible results. If your prediction is correct, you receive the agreed payout. If not, you lose your initial stake and nothing more. It\'s called \'binary\' because there can only be two outcomes – win or lose.')}</p>
 
                         <HeaderSecondary header={it.L('Advantages of binary options trading')} />
                         <p>{it.L('Aside from the simplicity of its \'yes or no\' proposition, binary options trading is also very flexible. It gives you the ability to trade:')}</p>
                         <div className='gr-row gr-parent gr-padding-10'>
                             <SectionTicked header={it.L('A wide range of markets')}           text={it.L('Trade on underlying markets that include forex, indices, commodities, and more.')} />
-                            <SectionTicked header={it.L('All market conditions')} text={it.L('Predict market movement using up/down, touch/no touch, and in/out trade types.')} />
+                            <SectionTicked header={it.L('All market conditions')} text={it.L('Predict market movement using Up/Down, Touch/No Touch, and In/Out trade types.')} />
                             <SectionTicked header={it.L('All durations')}         text={it.L('Take a short-term or long-term view with trade durations from a few seconds to 365 days.')} />
                             <SectionTicked header={it.L('All payouts')}           text={it.L('Earn payouts of varying amounts, even up to USD 50,000 for Volatility Indices. Losses are limited to your initial stake and nothing more.')} />
                         </div>
@@ -135,14 +135,14 @@ const BinaryOptions = () => {
                         <ul className='bullet'>
                             <ListStrong header={it.L('Simple and intuitive')} text={it.L('Enjoy a trading platform that\'s easy to navigate and use.')} />
                             <ListStrong header={it.L('Instant access')}       text={it.L('Open an account and start trading in minutes.')} />
-                            <ListStrong header={it.L('Available 24/7')}       text={it.L('Trade when you want. Our Volatility Indices are available even on weekends.')} />
+                            <ListStrong header={it.L('Available 24/7')}       text={it.L('Trade when you want. Our Volatility Indices are available even at weekends.')} />
                             <ListStrong header={it.L('Patented technology')}  text={it.L('Trade with the industry pioneer and holder of a patented pricing technology.')} />
                             <ListStrong header={it.L('Security and privacy')} text={it.L('Trade confidently, knowing that your personal data and transactions are always secure and your funds are kept separate from company assets.')} />
                         </ul>
                         <strong>{it.L('All conditions and durations')}</strong>
                         <ul className='bullet'>
                             <ListStrong header={it.L('A wide range of markets and conditions')}   text={it.L('Trade currencies, indices, commodities, and more in rising, falling, sideways, quiet, and volatile markets.')} />
-                            <ListStrong header={it.L('Short to long-term durations')} text={it.L('Choose durations from a few seconds to 365 days.')} />
+                            <ListStrong header={it.L('Short- and long-term durations')} text={it.L('Choose durations from a few seconds to 365 days.')} />
                         </ul>
                         <strong>{it.L('Competitive and transparent pricing')}</strong>
                         <ul className='bullet'>
@@ -179,16 +179,16 @@ const BinaryOptions = () => {
                         <CircleHeader className='gr-padding-10' header={it.L('Underlying market')} text={it.L('Choose from four available markets:')}>
                             <ul className='checked'>
                                 <ListStrong header={it.L('Forex')}              text={it.L('Major and minor pairs, plus Smart FX indices')} />
-                                <ListStrong header={it.L('Indices')}            text={it.L('All major worldwide stock indices sourced from the over-the-counter market')} />
-                                <ListStrong header={it.L('Commodities')}        text={it.L('Major commodities such as gold, silver, and oil')} />
+                                <ListStrong header={it.L('Indices')}            text={it.L('All major worldwide stock indices, sourced from the over-the-counter market')} />
+                                <ListStrong header={it.L('Commodities')}        text={it.L('Major commodities, such as gold, silver, and oil')} />
                                 <ListStrong header={it.L('Volatility Indices')} text={it.L('Our proprietary synthetic indices that simulate market forces')} />
                             </ul>
                         </CircleHeader>
 
                         <CircleHeader header={it.L('Trade type')} text={it.L('Choose from three main trade types:')}>
                             <ul className='bullet'>
-                                <ListStrong header={it.L('Up/Down')}        text={it.L('Predict if the market will rise or fall from its current level, or if it will end higher or lower than a price target.')} />
-                                <ListStrong header={it.L('Touch/No touch')} text={it.L('Predict if the market will touch or not touch a price target.')} />
+                                <ListStrong header={it.L('Up/Down')}        text={it.L('Predict if the market will rise or fall from its current level or if it will end higher or lower than a price target.')} />
+                                <ListStrong header={it.L('Touch/No Touch')} text={it.L('Predict if the market will touch or not touch a price target.')} />
                                 <ListStrong header={it.L('In/Out')}         text={it.L('Predict if the market will stay between or go outside two price targets.')} />
                             </ul>
                             <p>{it.L('Aside from the three main trade types above, you also get Asians and Digits trade types exclusively with our Volatility Indices.')}</p>
@@ -228,7 +228,7 @@ const BinaryOptions = () => {
                             <ListStrong header={it.L('Higher/Lower')} text={it.L('Predict that the market will end higher or lower than a price target.')} />
                         </SectionLarge>
 
-                        <SectionLarge dataAnchor='touch-no-touch' header={it.L('Touch/No touch')} image='types-of-trades/touch_notouch' text={it.L('Predict that the market will touch or not touch a target any time during the contract period.')} />
+                        <SectionLarge dataAnchor='touch-no-touch' header={it.L('Touch/No Touch')} image='types-of-trades/touch_notouch' text={it.L('Predict that the market will touch or not touch a target any time during the contract period.')} />
 
                         <SectionLarge dataAnchor='in-out' header={it.L('In/Out')} image='types-of-trades/in_out' text={it.L('There are two types of In/Out trades:')}>
                             <ListStrong header={it.L('Ends Between/Ends Outside')}  text={it.L('Predict that the market stops inside or outside two price targets at the end of the time period.')} />
@@ -238,11 +238,11 @@ const BinaryOptions = () => {
                         <SectionLarge dataAnchor='digits' header={it.L('Digits')} image='types-of-trades/digits' text={it.L('Predict the last decimal digit of the spot price with Digits. There are three types of Digits trades:')}>
                             <ListStrong header={it.L('Matches/Differs')} text={it.L('Predict that the last digit will match or not match.')} />
                             <ListStrong header={it.L('Even/Odd')}        text={it.L('Predict that the last digit is an even number or odd number after the last tick.')} />
-                            <ListStrong header={it.L('Over/Under')}      text={it.L('Predict that the last digit is higher or lower.')} />
+                            <ListStrong header={it.L('Over/Under')}      text={it.L('Predict that the last digit is higher or lower than a selected number.')} />
                         </SectionLarge>
-                        <SectionLarge dataAnchor='reset-callput' header={it.L('Reset-Call/Reset-Put')} image='types-of-trades/reset' text={it.L('There are two types of reset trades:')}>
-                            <ListStrong header={it.L('Reset-Call')} text={it.L('Predict that the market will end up higher than either the current level or the level at a predetermined time (reset time).')} />
-                            <ListStrong header={it.L('Reset-Put')}  text={it.L('Predict that the market will end up lower than either the current level or the level at a predetermined time (reset time).')} />
+                        <SectionLarge dataAnchor='reset-callput' header={it.L('Reset Call/Reset Put')} image='types-of-trades/reset' text={it.L('There are two types of reset trades:')}>
+                            <ListStrong header={it.L('Reset Call')} text={it.L('Predict that the market will end up higher than either the current level or the level at a predetermined time (reset time).')} />
+                            <ListStrong header={it.L('Reset Put')}  text={it.L('Predict that the market will end up lower than either the current level or the level at a predetermined time (reset time).')} />
                             <p>{it.L('At reset time, if the spot is in the opposite direction of your prediction, the barrier is reset to that spot.')}</p>
                         </SectionLarge>
                         <SectionLarge dataAnchor='high-low-ticks' header={it.L('High Ticks/Low Ticks')} image='types-of-trades/high_low_ticks' text={it.L('Purchase High Tick/Low Tick contracts to predict the highest or lowest tick among the next five ticks.')} />
@@ -250,7 +250,7 @@ const BinaryOptions = () => {
                             <ListStrong header={it.L('Ups')} text={it.L('Win payout if consecutive ticks rise successively. Contract is lost when at least one tick falls or is equal to any of the previous ticks.')} />
                             <ListStrong header={it.L('Downs')} text={it.L('Win payout if consecutive ticks fall successively. Contract is lost when at least one tick rises or is equal to any of the previous ticks.')} />
                         </SectionLarge>
-                        <p>{it.L('Please note that Asians, Digits, Reset Call/Reset Put, High Ticks/Low Ticks, and Run Ups/Run Downs are available exclusively with our Volatility Indices.')}</p>
+                        <p>{it.L('Please note that Asians, Digits, Reset Call/Reset Put, and High Tick/Low Tick are available exclusively with our Volatility Indices.')}</p>
                     </Section>
                     <Section id='range-of-markets' header={it.L('Range of markets')}>
                         <p>{it.L('Binary options allow you to trade on a wide range of underlying markets. One of the risk-limiting advantages of trading binary options is that you are not buying or selling an actual asset. Instead, you’re only trading a contract based on your prediction of how the asset performs over a period of time.')}</p>
@@ -258,7 +258,7 @@ const BinaryOptions = () => {
                         <HeaderSecondary header={it.L('Available markets')} data-anchor='available-markets' />
                         <div className='gr-row'>
                             <SectionSmall image='range-of-markets/forex'   header={it.L('Forex')}   text={it.L('Major pairs, minor pairs, and Smart FX indices')} />
-                            <SectionSmall image='range-of-markets/indices' header={it.L('Indices')} text={it.L('Major worldwide stock indices sourced from the OTC market')} />
+                            <SectionSmall image='range-of-markets/indices' header={it.L('Indices')} text={it.L('Major worldwide stock indices, sourced from the OTC market')} />
 
                             <SectionSmall image='range-of-markets/commodities' header={it.L('Commodities')}        text={it.L('All four precious metals, plus energy')} />
                             <SectionSmall image='range-of-markets/volatility'  header={it.L('Volatility Indices')} text={it.L('Synthetic indices that mimic market volatility')} />
@@ -310,8 +310,8 @@ const BinaryOptions = () => {
                                 { word: it.L('Indices'),             dataAnchor: 'indices',             definition: it.L('Stock market indices measure the value of a selection of companies in the stock market.') },
                                 { word: it.L('In/Out trades'),       dataAnchor: 'in-out-trades',       definition: it.L('These are trades where the trader selects a low and high barrier, and predicts if the market will stay within these barriers or go outside them (see also \'Stays Between/Goes Outside trades\').') },
                                 { word: it.L('Market exit price'),   dataAnchor: 'market-exit-price',   definition: it.L('The market exit price is the price in effect at the end of the contract period.') },
-                                { word: it.L('No Touch trades'),     dataAnchor: 'no-touch-trades',     definition: it.L('These are trades where the trader selects a price target, and predicts that the market will never touch the target before the expiry of the trade.') },
-                                { word: it.L('(One) Touch trades'),  dataAnchor: 'one-touch-trades',    definition: it.L('These are trades where the trader selects a price target, and predicts that the market will touch the target before the expiry of the trade.') },
+                                { word: it.L('No Touch trades'),     dataAnchor: 'no-touch-trades',     definition: it.L('These are trades where the trader selects a price target and predicts that the market will never touch the target before the expiry of the trade.') },
+                                { word: it.L('(One) Touch trades'),  dataAnchor: 'one-touch-trades',    definition: it.L('These are trades where the trader selects a price target and predicts that the market will touch the target before the expiry of the trade.') },
                                 { word: it.L('Payout'),              dataAnchor: 'payout',              definition: it.L('The payout is the amount paid to an options trader if their prediction is correct.') },
                                 { word: it.L('Pip'),                 dataAnchor: 'pip',                 definition: it.L('Pip stands for \'percentage in point\', which is generally the fourth decimal place (i.e. 0.0001).') },
                                 { word: it.L('Profit'),              dataAnchor: 'profit',              definition: it.L('The profit is the difference between the purchase price (the stake) and the payout on a winning trade.') },
@@ -319,7 +319,7 @@ const BinaryOptions = () => {
                                 { word: it.L('Resale price'),        dataAnchor: 'resale-price',        definition: it.L('The resale price indicates a contract\'s current market price. Resale prices are on a best-efforts basis and may not be available at all times after purchase. See \'Sell option\' for more details on selling contracts before expiry.') },
                                 { word: it.L('Return'),              dataAnchor: 'return',              definition: it.L('The return is the money realized when the contract expires (see \'Payout\').') },
                                 { word: it.L('Rise/Fall trades'),    dataAnchor: 'rise-fall-trades',    definition: it.L('These are trades where the trader predicts if a market will rise or fall at the end of a selected time period.') },
-                                { word: it.L('Sell option'),         dataAnchor: 'sell-option',         definition: it.L('It is sometimes possible to sell an option before the expiry of a trade, but only if a fair price can be determined. If this option is available, you will see a \'Sell\' button inside the popup window, after clicking on the \'View\' button next to your trade in the portfolio.') },
+                                { word: it.L('Sell option'),         dataAnchor: 'sell-option',         definition: it.L('If this option is available, you will see a \'Sell\' button inside the popup window after clicking on the \'View\' button next to your trade in the portfolio.') },
                                 { word: it.L('Spot price'),          dataAnchor: 'spot-price',          definition: it.L('This is the current price at which an underlying can be bought or sold at a particular time.') },
                                 { word: it.L('Stake'),               dataAnchor: 'stake',               definition: it.L('The stake is the amount that a trader must pay to enter into a trade.') },
 

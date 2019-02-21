@@ -152,7 +152,7 @@ const Platform = () => (
                             <Platforms
                                 image='tick-trade'
                                 header={it.L('Binary Tick Trade App')}
-                                description={it.L('Ultra fast on-the-go trading')}
+                                description={it.L('Ultra-fast on-the-go trading')}
                                 text={it.L('Enjoy our fastest type of trading with our Tick Trade app, wherever you are.')}
                                 url='https://ticktrade.binary.com/download/ticktrade-app.apk'
                                 button_text={it.L('Download the Android app')}
@@ -173,7 +173,7 @@ const Platform = () => (
                                 image='mt5'
                                 header={it.L('MetaTrader 5')}
                                 description={it.L('Advanced multi-asset trading platform')}
-                                text={it.L('Trade Forex, CFDs, and binary options with a powerful platform recognised as the global standard.')}
+                                text={it.L('Trade forex, CFDs, and binary options with a powerful platform recognised as the global standard.')}
                                 url={it.url_for('user/metatrader')}
                                 button_text={it.L('Access MT5 dashboard')}
                             />
@@ -204,7 +204,7 @@ const Platform = () => (
 
             <div className='gr-padding-30'>
                 <h2 className='primary-color center-text gr-padding-30 gr-child'>{it.L('Charting platforms')}</h2>
-                <p className='center-text gr-padding-30 gr-parent'>{it.L('Study financial data to forecast market movements using our charting tools.')}</p>
+                <p className='center-text gr-padding-30 gr-parent'>{it.L('Study financial data to forecast market movements, using our charting tools.')}</p>
                 <div className='gr-row'>
                     <PlatformsSmall
                         image='tradingview'
@@ -220,7 +220,7 @@ const Platform = () => (
                         image='chart'
                         header={it.L('SmartCharts')}
                         description={it.L('Interactive charting tool')}
-                        text={it.L('Analyse the financial markets using beautiful visualisations and unique trading tools, powered by a fast and intuitive interface.')}
+                        text={it.L('Analyse the financial markets, using beautiful visualisations and unique trading tools, powered by a fast and intuitive interface.')}
                         url='https://charts.binary.com'
                         target='_blank'
                         button_text={it.L('Try SmartCharts')}

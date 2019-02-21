@@ -7,7 +7,7 @@ import { TabContainer, TabsSubtabs, TabContentContainer, TabContent } from '../.
 
 const HowToTradeMT5 = () => (
     <div id='how_to_trade_mt5' className='static_full'>
-        <h1>{it.L('How to Trade in MetaTrader 5')}</h1>
+        <h1>{it.L('How to trade in MetaTrader 5')}</h1>
         <TabContainer className='gr-padding-30 gr-parent full-width' theme='light full-width'>
             <TabsSubtabs
                 id='how_to_tabs'
