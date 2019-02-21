@@ -46,20 +46,22 @@ $header-height: 4em;
         padding: 0 1em;
     }
     &__body {
-        height: calc(100% - #{$header-height * 2});
+        height: calc(100% - #{$header-height * 2.5});
         padding: 0.8em 0 0;
         box-sizing: border-box;
         overflow: hidden;
     }
     &__footer {
-        height: 4em;
+        position: relative;
+        height: 6em;
         display: flex;
         justify-content: center;
         align-items: center;
 
         .btn {
             width: 100%;
-            margin: 0 8px;
+            margin: 8px;
+            height: 40px;
 
             span {
                 font-size: 1.2em;

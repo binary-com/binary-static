@@ -106,11 +106,11 @@ const PositionsDrawerCard = ({
                 </React.Fragment>
             </BinaryLink>
             {
-                (is_valid_to_sell === 1) &&
+                !!(is_valid_to_sell) &&
                 <div className='positions-drawer-card__sell-button'>
                     <Button
                         className='primary orange'
-                        is_disabled={!is_valid_to_sell}
+                        is_disabled={(is_valid_to_sell === 0)}
                         text={localize('Sell contract')}
                         onClick={() => onClickSell(id)}
                     />

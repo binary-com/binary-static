@@ -108,6 +108,8 @@ export default class PortfolioStore extends BaseStore {
 
     @action.bound
     handleSell(response) {
+        // TODO: Refactor with ContractStore for re-drawing of chart markers and barriers
+        // Toast messages are temporary UI for prompting user of sold contracts
         if (response.error) {
             // If unable to sell due to error, give error via toast message
             this.root_store.ui.addToastMessage({
@@ -115,13 +117,23 @@ export default class PortfolioStore extends BaseStore {
                 type   : 'error',
             });
         } else {
-            // If unable to sell due to error, give error via toast message
+            WS.forget('proposal_open_contract', this.updateSoldContract, { contract_id: response.sell.contract_id });
+            WS.proposalOpenContract(response.sell.contract_id).then(action((proposal_response) => {
+                this.updateSoldContract(proposal_response);
+            }));
+        }
+    }
+
+    @action.bound
+    updateSoldContract(response) {
+        const contract_info = response.proposal_open_contract;
+        // Temporary toast message for successful contract sold
+        if (contract_info.is_sold === 1) {
             this.root_store.ui.addToastMessage({
-                message: `Contract: ${response.sell.contract_id} sold for ${response.sell.sold_for}. Balance after is ${response.sell.balance_after}`,
+                message: `Contract sold at ${contract_info.currency} ${contract_info.sell_price}. Reference number is ${contract_info.transaction_ids.sell}`,
                 type   : 'info',
             });
         }
-        WS.subscribeProposalOpenContract(null, this.proposalOpenContractHandler, false);
     }
 
     @action.bound

@@ -138,6 +138,14 @@
             }
         }
     }
+    &__alternate {
+        background: $COLOR_LIGHT_GRAY_2;
+        border-color: $COLOR_LIGHT_GRAY_2;
+
+        span {
+            color: $COLOR_DARK_BLUE_1;
+        }
+    }
     /* Ant Effect */
     &.effect:focus:not(:active):after {
         content: '';

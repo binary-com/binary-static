@@ -363,6 +363,14 @@
             color: $COLOR_WHITE;
         }
     }
+    .btn__alternate {
+        background: $COLOR_DARK_BLUE_5;
+        border-color: $COLOR_DARK_BLUE_5;
+
+        span {
+            color: $COLOR_WHITE;
+        }
+    }
     .block-ui {
         background: rgba(16, 19, 32, 0.6); // this is color dark blue 2 with 0.6 opacity
 
