@@ -2,6 +2,7 @@
 .trade-container {
     &__fieldset {
         background-color: $COLOR_LIGHT_BLACK_4_SOLID;
+        border: 1px solid $COLOR_LIGHT_BLACK_4_SOLID;
         border-radius: $BORDER_RADIUS;
         padding: 0.8em;
 
@@ -83,17 +84,12 @@
         &-tooltip {
             &[data-tooltip] {
                 &:before, &:after {
-                    right: 227px !important;
+                    right: 230px !important;
                 }
                 &:before {
                     padding-left: 3em;
                     white-space: normal;
-                    width: 260px;
-                }
-            }
-            &-i {
-                &:before {
-                    left: -51.2em !important;
+                    width: 265px;
                 }
             }
         }
@@ -122,7 +118,6 @@
         }
         &--up, &--down {
             position: absolute;
-            fill: $COLOR_LIGHT_BLACK_1;
             margin-top: 15px;
         }
         &--up {
@@ -367,6 +362,9 @@
         &-text {
             margin-left: 26px;
             position: absolute;
+        }
+        &-icon {
+            @extend .inline-icon.white;
         }
     }
     &__effect-main {

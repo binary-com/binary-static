@@ -1,1 +1,1 @@
-export * as ProcessData from './process_data';
+export * as ProcessData from './process-data';

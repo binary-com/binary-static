@@ -3,9 +3,9 @@ import React          from 'react';
 import {
     getStartOfMonth,
     toMoment }        from 'Utils/Date';
-import CalendarBody   from './calendar_body.jsx';
-import CalendarFooter from './calendar_footer.jsx';
-import CalendarHeader from './calendar_header.jsx';
+import CalendarBody   from './calendar-body.jsx';
+import CalendarFooter from './calendar-footer.jsx';
+import CalendarHeader from './calendar-header.jsx';
 
 class Calendar extends React.PureComponent {
     constructor(props) {

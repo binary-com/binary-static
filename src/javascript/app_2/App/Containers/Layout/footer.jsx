@@ -1,7 +1,7 @@
 import PropTypes      from 'prop-types';
 import React          from 'react';
 import { connect }    from 'Stores/connect';
-import ServerTime     from '../server_time.jsx';
+import ServerTime     from '../server-time.jsx';
 import {
     NetworkStatus,
     ToggleFullScreen,

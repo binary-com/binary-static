@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-02-19 10:24\n"
+"PO-Revision-Date: 2019-02-20 14:15\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Polish\n"
 "MIME-Version: 1.0\n"
@@ -1283,6 +1283,9 @@ msgstr "Aplikacje"
 
 msgid "Apply now"
 msgstr "Aplikuj teraz"
+
+msgid "Apply now as a professional investor"
+msgstr ""
 
 msgid "Apply to become a %1 <a href=\"%2\">payment agent</a>."
 msgstr "Złóż wniosek, aby zostać <a href=\"%2\">pośrednikiem płatności %1</a>."
@@ -3438,6 +3441,9 @@ msgstr "Pobierz aplikację dla systemu Android"
 msgid "Download your statement"
 msgstr "Pobierz wyciąg z rachunku"
 
+msgid "Downs"
+msgstr ""
+
 msgid "Drive rapid growth and business development to support the company's sales and marketing objectives"
 msgstr "Dbanie o szybki wzrost i rozwój biznesowy w celu realizacji celów sprzedażowych i marketingowych firmy"
 
@@ -4890,6 +4896,9 @@ msgstr "Niniejszym potwierdzam, że podane informacje podatkowe są prawdziwe i 
 msgid "I understand the risks involved and agree to the %1Terms & Conditions of the MAM facility%2"
 msgstr "Jestem świadomy/-a ryzyka związanego z tym produktem i akceptuję %1Regulamin funkcji MAM%2"
 
+msgid "I want to reapply"
+msgstr ""
+
 msgid "I would like to be treated as a professional client."
 msgstr "Chcę być traktowany/-a jako klient profesjonalny."
 
@@ -5184,11 +5193,17 @@ msgstr "Jeśli wybierzesz „wzrośnie”, zdobędziesz wypłatę, gdy cena rynk
 msgid "If you select \"rises\", you win the payout if the market price is higher than the entry spot."
 msgstr "Jeśli wybierzesz „wzrośnie”, zdobędziesz wypłatę, gdy cena rynkowa będzie wyższa niż pozycja wejściowa."
 
+msgid "If you select %1\"Downs\"%2, you win the payout if consecutive ticks fall successively after the %1entry spot%2.%3No payout if any tick rises or is equal to any of the previous ticks."
+msgstr ""
+
 msgid "If you select %1\"High Tick\"%2, you win the payout if the selected tick is the %1highest among the next five ticks%2."
 msgstr "Jeśli wybierzesz kontrakt %1„Duża zmiana ceny”%2 zyskasz wypłatę, jeśli wybrana zmiana ceny będzie %1największa spośród następnych pięciu zmian%2."
 
 msgid "If you select %1\"Low Tick\"%2, you win the payout if the selected tick is the %1lowest among the next five ticks%2."
 msgstr "Jeśli wybierzesz kontrakt %1„Mała zmiana ceny”%2 zyskasz wypłatę, jeśli wybrana zmiana ceny będzie %1najmniejsza spośród następnych pięciu zmian%2."
+
+msgid "If you select %1\"Ups\"%2, you win the payout if consecutive ticks rise successively after the %1entry spot%2.%3No payout if any tick falls or is equal to any of the previous ticks."
+msgstr ""
 
 msgid "If you select a <strong>start time</strong> in the future, the <strong>start time</strong> is that which is selected and the <strong>entry spot</strong> is the price in effect at that time."
 msgstr "Jeśli wybierzesz <strong>godzinę rozpoczęcia</strong> w przyszłości, <strong>godziną rozpoczęcia</strong> kontraktu będzie wybrana godzina, a <strong>ceną wejściową</strong> będzie cena obowiązującą w tym czasie."
@@ -6645,6 +6660,9 @@ msgstr "Miesiące"
 msgid "More benefits"
 msgstr "Więcej korzyści"
 
+msgid "More information can be found in an email sent to you."
+msgstr ""
+
 msgid "More specifically, when the Company enters into a binary option trade with the client (each, a \"Contract\"), the Company has a duty to provide the client with 'best execution'. Best execution means that the Company must take reasonable steps to obtain the best possible result for the client when executing a client order. This document provides a summary of the Company's best execution policy."
 msgstr "Dokładniej, w momencie zawarcia z transakcji związanej z Opcją binarną (każdej transakcji zwanej dalej „Kontraktem”) między klientem a Firmą, Firma ma obowiązek zapewnić klientowi jej „najkorzystniejszą realizację”. Najkorzystniejsza realizacja oznacza, że Firma musi podjąć rozsądne kroki, aby uzyskać najlepsze możliwe dla klienta rezultaty podczas realizacji zlecenia. Niniejszy dokument zawiera streszczenie polityki Firmy dot. najkorzystniejszej realizacji."
 
@@ -7656,8 +7674,8 @@ msgstr "Proszę się zalogować."
 msgid "Please make sure that you first agree with the Agent on the terms of payment before submitting your request."
 msgstr "Przed złożeniem wniosku upewnij się, że zgadzasz się z pośrednikiem co do warunków płatności."
 
-msgid "Please note that Asians, Digits, Reset Call/Reset Put and High Ticks/Low Ticks are available exclusively with our Volatility Indices."
-msgstr "Pamiętaj, że zakłady: Azjatyckie, Cyfry, Reset Call/ Reset Put i Duże zmiany ceny/ małe zmiany ceny są dostępne wyłącznie z naszymi wskaźnikami zmienności."
+msgid "Please note that Asians, Digits, Reset Call/Reset Put, High Ticks/Low Ticks, and Run Ups/Run Downs are available exclusively with our Volatility Indices."
+msgstr ""
 
 msgid "Please note that actual trading results may not correspond to optimized or back-tested results."
 msgstr "Należy pamiętać, że rzeczywiste wyniki zakładów mogą odbiegać od zoptymalizowanych, testowanych wyników."
@@ -7685,6 +7703,9 @@ msgstr "Prosimy o podanie następujących informacji:"
 
 msgid "Please read this %1privacy policy%2 before submitting your application."
 msgstr "Przed zaaplikowaniem zapoznaj się z niniejszą %1polityką prywatności%2."
+
+msgid "Please reapply once the required criteria has been fulfilled."
+msgstr ""
 
 msgid "Please refer to the %1asset index%2 for each asset’s minimum and maximum contract durations based on trade type."
 msgstr "Proszę zapoznać się z %1indeksem aktywów%2, który zawiera minimalny i maksymalny czas trwania kontraktu dla każdego aktywa, w zależności od rodzaju zakładu."
@@ -8519,6 +8540,15 @@ msgstr "Rolowanie kredytu/długu"
 
 msgid "Rolling Spot Forex;"
 msgstr "Rolowanie kontraktów Spot Forex;"
+
+msgid "Run"
+msgstr ""
+
+msgid "Run Downs"
+msgstr ""
+
+msgid "Run Ups"
+msgstr ""
 
 msgid "Russia"
 msgstr "Rosja"
@@ -9402,6 +9432,12 @@ msgstr "%1Okres kontraktu%2 to okres między %1pierwszym przyrostem ceny%2 (po r
 msgid "The %1end time%2 is the selected number of minutes/hours after the %1start time%2."
 msgstr "%1Czas zakończenia%2 to wybrana liczba minut/godzin po %1czasie rozpoczęcia%2."
 
+msgid "The %1entry spot%2 is the next tick after the %1start time%2."
+msgstr ""
+
+msgid "The %1exit spot%2 is the last tick when the contract ends. Contract ends when all ticks rise or fall successively, or when a single tick breaks the predicted pattern."
+msgstr ""
+
 msgid "The %1high%2 is the highest point ever reached by the market during the contract period."
 msgstr "Cena %1wysoka%2 to najwyższy punkt kiedykolwiek osiągnięty przez rynek w czasie trwania kontraktu."
 
@@ -9410,6 +9446,9 @@ msgstr "Cena %1niska%2 to najniższy punkt kiedykolwiek osiągnięty przez rynek
 
 msgid "The %1start time%2 begins when the contract is processed by our servers."
 msgstr "%1Godzina rozpoczęcia%2 to godzina przetworzenia kontraktu przez nasze serwery."
+
+msgid "The %1start time%2 is when the contract has been processed by our servers."
+msgstr ""
 
 msgid "The <strong>contract period</strong> is the period between the <strong>next tick</strong> after the <strong>start time</strong> and the <strong>end time</strong>."
 msgstr "<strong>Okres kontraktu</strong> to okres między <strong>następnym przyrostem ceny</strong> po <strong>rozpoczęciu kontraktu</strong> i <strong>godziną zakończenia</strong>."
@@ -10220,6 +10259,9 @@ msgstr "Istnieje pewne ryzyko związane z używaniem internetowego systemu zawie
 
 msgid "There are two types of In/Out trades:"
 msgstr "Istnieją dwa rodzaje zakładów typu „w/poza”:"
+
+msgid "There are two types of Run trades:"
+msgstr ""
 
 msgid "There are two types of Up/Down trades:"
 msgstr "Istnieją dwa rodzaje zakładów typu „góra/dół”:"
@@ -11184,6 +11226,9 @@ msgstr "Przyjmujesz do wiadomości, że w przypadku odwołania podmiotu zarządz
 msgid "Upon the expiration or termination of this Agreement, for whatever reason, all rights and license granted to you in this Agreement, including use of the %1 API, shall immediately terminate. You agree to promptly cease all further use of the %1 API. Termination of this Agreement shall not act as a waiver of any breach of this Agreement and shall not act as a release of your liability for breach of its obligation under this Agreement. The Company shall not be liable to you for damages of any kind solely as a result of terminating this Agreement in accordance with its terms."
 msgstr "W momencie wygaśnięcia lub zakończenia niniejszej Umowy, bez względu na przyczynę, wszelkie prawa i licencje przyznane Użytkownikowi na jej podstawie, w tym do korzystania z API %1, natychmiast przestają obowiązywać. Użytkownik zgadza się niezwłocznie zakończyć dalsze korzystanie z API %1. Zakończenie niniejszej Umowy nie oznacza zrzeczenia się praw w związku z jakimkolwiek naruszeniem niniejszej Umowy i nie może być traktowane jako zwolnienie od odpowiedzialności tytułem naruszenia zobowiązań określonych w niniejszej Umowie. Zgodnie z postanowieniami niniejszej Umowy Firma nie ponosi odpowiedzialności w stosunku do Użytkownika za jakiekolwiek szkody wynikające wyłącznie z zakończenia niniejszej Umowy."
 
+msgid "Ups"
+msgstr ""
+
 msgid "Usage Limit"
 msgstr "Limity użytkowania"
 
@@ -11988,6 +12033,12 @@ msgstr "Zyskasz najwyższą wypłatę, jeśli punt wyjściowy będzie wyższy ni
 msgid "Win maximum payout if the exit spot is lower than or equal to the lower barrier."
 msgstr "Zyskasz najwyższą wypłatę, jeśli punt wyjściowy będzie niższy niż dolny limit lub równy."
 
+msgid "Win payout if consecutive ticks fall successively. Contract is lost when at least one tick rises or is equal to any of the previous ticks."
+msgstr ""
+
+msgid "Win payout if consecutive ticks rise successively. Contract is lost when at least one tick falls or is equal to any of the previous ticks."
+msgstr ""
+
 msgid "Win payout if exit spot is also equal to entry spot."
 msgstr "Zdobywasz wypłatę, jeśli punkt wyjściowy jest równy punktowi wyjściowemu."
 
@@ -12723,7 +12774,7 @@ msgstr "Twoje konto jest w pełni zweryfikowane. Możesz sprawdzić swoje <a hre
 msgid "Your account is restricted. Kindly %1contact customer support%2 for assistance."
 msgstr "Na Twoje konto zostały nałożone ograniczenia. %1Skontaktuj się z obsługą klienta%2, aby uzyskać pomoc."
 
-msgid "Your account remains under the retail client category. You are welcome to reapply as a professional client at any time."
+msgid "Your account remains under the retail client category."
 msgstr ""
 
 msgid "Your account security is of paramount importance to us. Please consider the following initiatives and tools to enhance your account security:"
@@ -12803,6 +12854,9 @@ msgstr "Twoje hasło zostało zresetowane. Zaloguj się na swoje konto, używaj�
 
 msgid "Your personal information is used primarily as a way of validating you as the legitimate account owner and proper recipient of withdrawal payments. We also use this information to process your trades. We collect from you all personal and financial data directly relating to you when you fill in our account opening form. In all instances, you have either a legal or a contractual obligation to provide us with the information. If such information is not provided, we will be unable to provide you with our services."
 msgstr "Twoje dane osobowe są wykorzystywane przede wszystkim w celu weryfikacji Twojej osoby jako prawomocnego właściciela konta i właściwego odbiorcy wypłacanych środków. Wykorzystujemy te informacje również w celu przetwarzania zakładów. Wszelkie Twoje dane osobowe i finansowe bezpośrednio z Tobą powiązane są przez nas gromadzone w momencie wypełnienia przez Ciebie formularza otwarcia konta. W każdym przypadku masz prawne lub umowne zobowiązanie przekazania nam tych informacji. Jeśli ich nie przekażesz, nie będziemy mogli świadczyć Ci naszych usług."
+
+msgid "Your professional client request is %1not approved%2."
+msgstr ""
 
 msgid "Your profit or loss is calculated as follows:"
 msgstr "Sposób obliczenia Twojego zysku lub straty jest następujący:"
