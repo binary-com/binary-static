@@ -94,33 +94,28 @@ const InputField = ({
     const incrementValue = () => {
         if (max_is_disabled) return;
         let increment_value;
-        let decimal_places = fractional_digits;
-        const is_crypto = isCryptocurrency(currency);
+
+        const array_value    = value.split('.');
+        const decimal_places = array_value && array_value.length > 1 ? array_value[1].length : 0;
+        const is_crypto      = isCryptocurrency(currency);
+
         if (is_crypto) {
-            const array_value = value.split('.');
-            if (array_value && array_value.length > 1) {
-                decimal_places = array_value[1].length;
-            }
             const new_value = parseFloat(+value) + parseFloat(1 * 10 ** (0 - decimal_places));
-            increment_value =
-                parseFloat(new_value).toFixed(decimal_places);
+            increment_value = parseFloat(new_value).toFixed(decimal_places);
         } else {
-            increment_value =
-                parseFloat((+value) + 1).toFixed(decimal_places);
+            increment_value = parseFloat((+value) + 1).toFixed(decimal_places);
         }
         onChange({ target: { value: increment_value, name } });
     };
 
     const calculateDecrementedValue = () => {
-        const is_crypto = isCryptocurrency(currency);
         let decrement_value;
-        let decimal_places = fractional_digits;
+
+        const is_crypto      = isCryptocurrency(currency);
+        const array_value    = value.split('.');
+        const decimal_places = array_value && array_value.length > 1 ? array_value[1].length : 0;
 
         if (is_crypto) {
-            const array_value = value.split('.');
-            if (array_value && array_value.length > 1) {
-                decimal_places = array_value[1].length;
-            }
             const new_value = parseFloat(+value) - parseFloat(1 * 10 ** (0 - decimal_places));
             decrement_value = parseFloat(new_value).toFixed(decimal_places);
         } else {
