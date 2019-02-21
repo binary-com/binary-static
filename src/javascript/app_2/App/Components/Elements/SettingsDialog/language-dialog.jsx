@@ -26,8 +26,9 @@ const LanguageDialog = ({ hide, is_visible, is_settings_on }) => {
                         <div className='settings-dialog__language-row'>
                             <a className='settings-dialog__language-link' href={getURL(key)} >
                                 <IconCountryFlag
-                                    className={`settings-dialog__language-row-flag settings-dialog__language-flag`}
-                                    type={key.replace(/(\s|_)/, '-').toLowerCase()} />
+                                    className={'settings-dialog__language-row-flag settings-dialog__language-flag'}
+                                    type={key.replace(/(\s|_)/, '-').toLowerCase()}
+                                />
                                 <span className='settings-dialog__language-name'>{getAllowedLanguages()[key]}</span>
                             </a>
                         </div>

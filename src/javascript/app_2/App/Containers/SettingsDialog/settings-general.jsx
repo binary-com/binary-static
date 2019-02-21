@@ -22,7 +22,7 @@ const GeneralSettings = ({
                 onClick={showLanguage}
             >
                 <IconCountryFlag
-                    className={`settings-dialog__language-flag`}
+                    className={'settings-dialog__language-flag'}
                     type={(curr_language || 'EN').toLowerCase()}
                 />
             </SettingsControl>

@@ -24,10 +24,12 @@ class Tooltip extends React.Component {
             alignment,
             children,
             className,
+            classNameIcon,
             icon, // only question or info accepted
             message,
         } = this.props;
 
+        const icon_class = classNames(classNameIcon, icon);
         return (
             <span
                 className={classNames(className, 'tooltip')}
@@ -37,19 +39,19 @@ class Tooltip extends React.Component {
                 {icon === 'info' &&
                     <React.Fragment>
                         <IconInfoOutline
-                            className={classNames(`${className}-icon`, 'tooltip__icon')}
+                            className={icon_class}
                             onMouseEnter={this.onMouseEnter}
                             onMouseLeave={this.onMouseLeave}
                         />
                         <IconInfoBlue
-                            className={classNames(`${className}-tooltip-balloon-icon`, 'tooltip-balloon-icon', {
+                            className={classNames(`${classNameIcon}-balloon-icon`, 'tooltip-balloon-icon', {
                                 'tooltip-balloon-icon--show': this.state.show_tooltip_balloon_icon,
                             })}
                         />
                     </React.Fragment>
                 }
-                {icon === 'question' && <IconQuestion className={classNames(icon, 'tooltip__icon')} />}
-                {icon === 'dot'      && <IconRedDot className={classNames(icon, 'tooltip__icon')} />}
+                {icon === 'question' && <IconQuestion className={icon_class} />}
+                {icon === 'dot'      && <IconRedDot className={icon_class} />}
                 {children}
             </span>
         );
