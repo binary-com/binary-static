@@ -143,7 +143,6 @@ export default class PortfolioStore extends BaseStore {
             if (this.data.length === 0) {
                 resolve(this.initializePortfolio());
             }
-            WS.subscribeProposalOpenContract(null, this.proposalOpenContractHandler, false);
         });
     }
 
