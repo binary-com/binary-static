@@ -22,25 +22,16 @@
         border-radius: 4px;
         box-shadow: 0 2px 8px 0 $COLOR_LIGHT_BLACK_3;
     }
-    &-enter, &-exit {
+    &--enter, &--exit {
         transform: translateX(20%);
         pointer-events: none;
         opacity: 0;
         height: 0;
     }
-    &-enter-done {
+    &--enterDone {
         transform: translateX(0);
         max-height: 100%;
         opacity: 1;
         pointer-events: auto;
-    }
-}
-
-.theme--dark {
-    .contracts-type-dialog {
-        &__list-container {
-            background: $COLOR_DARK_BLUE_3;
-            box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.5);
-        }
     }
 }

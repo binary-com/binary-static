@@ -24,7 +24,11 @@ const ContractTypeDialog = ({
         <CSSTransition
             in={open}
             timeout={100}
-            classNames='contracts-type-dialog'
+            classNames={{
+                enter    : 'contracts-type-dialog--enter',
+                enterDone: 'contracts-type-dialog--enterDone',
+                exit     : 'contracts-type-dialog--exit',
+            }}
             unmountOnExit
         >
             <div className='contracts-type-dialog'>
