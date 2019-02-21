@@ -168,7 +168,6 @@
         }
         .select-arrow.select-arrow { // to increase specificity without !IMPORTANT
             transform: rotate(0deg);
-            color: $COLOR_DARK_BLUE_5;
         }
     }
     .menu-item {
@@ -204,7 +203,6 @@
         transition: transform 0.3s ease;
         transform: rotate(180deg);
         transform-origin: 45% 30%;
-        color: $COLOR_LIGHT_BLACK_4;
 
         &:before {
             content: '\002303';

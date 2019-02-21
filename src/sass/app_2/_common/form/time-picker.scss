@@ -32,16 +32,6 @@
             opacity: 1;
             transform: translate3d(-245px, 0, 0);
         }
-        .time-picker-clear {
-            background: url('../images/common/close_circle.svg') no-repeat;
-            cursor: pointer;
-            display: none;
-            float: right;
-            height: 12px;
-            position: relative;
-            top: 8px;
-            width: 12px;
-        }
         .time-picker-selector {
             height: inherit;
 

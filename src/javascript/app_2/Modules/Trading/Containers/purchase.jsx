@@ -45,7 +45,7 @@ const Purchase = ({
                     <div className='btn-purchase__effect-detail' />
                     <div className='btn-purchase__content'>
                         <div className='btn-purchase__trade-type'>
-                            <IconTradeType type={type.toLowerCase()} />
+                            <IconTradeType type={type.toLowerCase()} className='btn-purchase__trade-type-icon' />
                             <span className='btn-purchase__trade-type-text'>{localize('[_1]', trade_types[type])}</span>
                         </div>
                     </div>
