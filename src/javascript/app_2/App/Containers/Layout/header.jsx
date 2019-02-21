@@ -10,7 +10,7 @@ import {
     MenuLinks,
     ToggleMenuDrawer,
     UpgradeButton }    from 'App/Components/Layout/Header';
-import header_links    from 'App/Constants/header_links';
+import header_links    from 'App/Constants/header-links';
 import { connect }     from 'Stores/connect';
 
 const Header = ({

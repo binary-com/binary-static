@@ -5,25 +5,12 @@
     width: 100%;
     max-width: 280px;
 
-    &__input {
+    &__input-field {
         border-radius: $BORDER_RADIUS;
-
-        .with-label {
-            &:before, &:after {
-                top: 70% !important;
-            }
-        }
-        input {
-            text-align: center;
-            pointer-events: auto;
-
-            &:focus, &:hover {
-                outline: none;
-                border-color: $COLOR_DARK_BLUE_5;
-            }
-            &::-ms-clear { // Edge: hide clear icon for increment input
-                display: none;
-            }
+    }
+    &__input {
+        &::-ms-clear { // Edge: hide clear icon for increment input
+            display: none;
         }
     }
     &__icon {

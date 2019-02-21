@@ -651,4 +651,60 @@
             border-color: $COLOR_DARK_BLUE_3;
         }
     }
+    .calendar {
+        background: $COLOR_DARK_BLUE_3;
+        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.8), 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+
+        &__body {
+            border-color: $COLOR_DARK_BLUE_2;
+        }
+        &__nav {
+            .calendar__nav-icon {
+                fill: $COLOR_DARK_BLUE_7;
+            }
+            &--disabled .calendar__nav-icon {
+                fill: $COLOR_DARK_BLUE_6;
+            }
+        }
+        &__text {
+            color: $COLOR_WHITE;
+        }
+        &__btn {
+            color: $COLOR_DARK_BLUE_7;
+
+            &--select {
+                color: $COLOR_WHITE;
+            }
+        }
+        &__icon-path {
+            fill: $COLOR_DARK_BLUE_7;
+        }
+        &__cell {
+            color: $COLOR_DARK_BLUE_7;
+
+            &:hover {
+                background: $COLOR_DARK_BLUE_5;
+            }
+            &--today {
+                border: 1px solid $COLOR_DARK_BLUE_7;
+                color: $COLOR_WHITE;
+            }
+            &--disabled, &--other {
+                color: $COLOR_DARK_BLUE_8;
+            }
+            &--disabled {
+                &:hover {
+                    background: $COLOR_DARK_BLUE_3;
+                }
+            }
+            &--active {
+                color: $COLOR_WHITE;
+                background: $COLOR_DARK_BLUE_5 !important;
+
+                &:hover {
+                    background: $COLOR_DARK_BLUE_3;
+                }
+            }
+        }
+    }
 }
