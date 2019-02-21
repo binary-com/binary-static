@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-02-19 10:23\n"
+"PO-Revision-Date: 2019-02-20 14:15\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Korean\n"
 "MIME-Version: 1.0\n"
@@ -1283,6 +1283,9 @@ msgid "Applications"
 msgstr ""
 
 msgid "Apply now"
+msgstr ""
+
+msgid "Apply now as a professional investor"
 msgstr ""
 
 msgid "Apply to become a %1 <a href=\"%2\">payment agent</a>."
@@ -3439,6 +3442,9 @@ msgstr "안드로이드용 앱을 다운받으세요"
 msgid "Download your statement"
 msgstr ""
 
+msgid "Downs"
+msgstr ""
+
 msgid "Drive rapid growth and business development to support the company's sales and marketing objectives"
 msgstr ""
 
@@ -4891,6 +4897,9 @@ msgstr ""
 msgid "I understand the risks involved and agree to the %1Terms & Conditions of the MAM facility%2"
 msgstr ""
 
+msgid "I want to reapply"
+msgstr ""
+
 msgid "I would like to be treated as a professional client."
 msgstr ""
 
@@ -5185,10 +5194,16 @@ msgstr ""
 msgid "If you select \"rises\", you win the payout if the market price is higher than the entry spot."
 msgstr ""
 
+msgid "If you select %1\"Downs\"%2, you win the payout if consecutive ticks fall successively after the %1entry spot%2.%3No payout if any tick rises or is equal to any of the previous ticks."
+msgstr ""
+
 msgid "If you select %1\"High Tick\"%2, you win the payout if the selected tick is the %1highest among the next five ticks%2."
 msgstr ""
 
 msgid "If you select %1\"Low Tick\"%2, you win the payout if the selected tick is the %1lowest among the next five ticks%2."
+msgstr ""
+
+msgid "If you select %1\"Ups\"%2, you win the payout if consecutive ticks rise successively after the %1entry spot%2.%3No payout if any tick falls or is equal to any of the previous ticks."
 msgstr ""
 
 msgid "If you select a <strong>start time</strong> in the future, the <strong>start time</strong> is that which is selected and the <strong>entry spot</strong> is the price in effect at that time."
@@ -6646,6 +6661,9 @@ msgstr ""
 msgid "More benefits"
 msgstr "더 많은 혜택"
 
+msgid "More information can be found in an email sent to you."
+msgstr ""
+
 msgid "More specifically, when the Company enters into a binary option trade with the client (each, a \"Contract\"), the Company has a duty to provide the client with 'best execution'. Best execution means that the Company must take reasonable steps to obtain the best possible result for the client when executing a client order. This document provides a summary of the Company's best execution policy."
 msgstr "더 구체적으로, 본 회사가 고객과 바이너리 옵션 거래를 체결할 시 (각각의 \"계약\"), 본 회사는 해당 고객에게 '최선집행'을 제공할 의무가 있습니다. 최선집행의무란 본 회사가 고객의 주문을 실행할 시에 해당 고객을 위한 가능한 최선의 결과를 얻기 위해 취할 수 있는 모든 합리적인 단계를 밟아야 한다는것을 의미합니다. 이 문서는 본 회사의 최선집행의무 정책의 개요를 제공합니다."
 
@@ -7657,7 +7675,7 @@ msgstr ""
 msgid "Please make sure that you first agree with the Agent on the terms of payment before submitting your request."
 msgstr ""
 
-msgid "Please note that Asians, Digits, Reset Call/Reset Put and High Ticks/Low Ticks are available exclusively with our Volatility Indices."
+msgid "Please note that Asians, Digits, Reset Call/Reset Put, High Ticks/Low Ticks, and Run Ups/Run Downs are available exclusively with our Volatility Indices."
 msgstr ""
 
 msgid "Please note that actual trading results may not correspond to optimized or back-tested results."
@@ -7685,6 +7703,9 @@ msgid "Please provide us with the following information:"
 msgstr ""
 
 msgid "Please read this %1privacy policy%2 before submitting your application."
+msgstr ""
+
+msgid "Please reapply once the required criteria has been fulfilled."
 msgstr ""
 
 msgid "Please refer to the %1asset index%2 for each asset’s minimum and maximum contract durations based on trade type."
@@ -8519,6 +8540,15 @@ msgid "Roll-over Credit/Debit"
 msgstr ""
 
 msgid "Rolling Spot Forex;"
+msgstr ""
+
+msgid "Run"
+msgstr ""
+
+msgid "Run Downs"
+msgstr ""
+
+msgid "Run Ups"
 msgstr ""
 
 msgid "Russia"
@@ -9403,6 +9433,12 @@ msgstr ""
 msgid "The %1end time%2 is the selected number of minutes/hours after the %1start time%2."
 msgstr ""
 
+msgid "The %1entry spot%2 is the next tick after the %1start time%2."
+msgstr ""
+
+msgid "The %1exit spot%2 is the last tick when the contract ends. Contract ends when all ticks rise or fall successively, or when a single tick breaks the predicted pattern."
+msgstr ""
+
 msgid "The %1high%2 is the highest point ever reached by the market during the contract period."
 msgstr ""
 
@@ -9410,6 +9446,9 @@ msgid "The %1low%2 is the lowest point ever reached by the market during the con
 msgstr ""
 
 msgid "The %1start time%2 begins when the contract is processed by our servers."
+msgstr ""
+
+msgid "The %1start time%2 is when the contract has been processed by our servers."
 msgstr ""
 
 msgid "The <strong>contract period</strong> is the period between the <strong>next tick</strong> after the <strong>start time</strong> and the <strong>end time</strong>."
@@ -10221,6 +10260,9 @@ msgstr "인터넷을 기반으로 하는 거래 집행 트레이딩 시스템에
 
 msgid "There are two types of In/Out trades:"
 msgstr "인/아웃 트레이드에는 두 종류가 있습니다:"
+
+msgid "There are two types of Run trades:"
+msgstr ""
 
 msgid "There are two types of Up/Down trades:"
 msgstr ""
@@ -11185,6 +11227,9 @@ msgstr ""
 msgid "Upon the expiration or termination of this Agreement, for whatever reason, all rights and license granted to you in this Agreement, including use of the %1 API, shall immediately terminate. You agree to promptly cease all further use of the %1 API. Termination of this Agreement shall not act as a waiver of any breach of this Agreement and shall not act as a release of your liability for breach of its obligation under this Agreement. The Company shall not be liable to you for damages of any kind solely as a result of terminating this Agreement in accordance with its terms."
 msgstr "계약 종결 또는 만기시, 어떠한 이유든간에, %1 API의 사용을 포함하여 본 계약내에서 승인된 모든 권리와 라이센스는 즉시 종결됩니다. 당신은 %1 API를 더 이상 사용하는 것을 즉시 중지할 것을 동의합니다. 본 계약의 종결로 본 계약의 위반에 대해 면제되는 것이 아니며 본 계약 아래 의무사항의 위반에 대한 법적 책임에서 해방되는 것이 아닙니다. 본 회사는 관련 조항에 따라 본 계약이 종결됨으로써 생기는 어떠한 손해에 대하여 당신에게 법적책임이 없습니다."
 
+msgid "Ups"
+msgstr ""
+
 msgid "Usage Limit"
 msgstr "사용 한도"
 
@@ -11989,6 +12034,12 @@ msgstr ""
 msgid "Win maximum payout if the exit spot is lower than or equal to the lower barrier."
 msgstr ""
 
+msgid "Win payout if consecutive ticks fall successively. Contract is lost when at least one tick rises or is equal to any of the previous ticks."
+msgstr ""
+
+msgid "Win payout if consecutive ticks rise successively. Contract is lost when at least one tick falls or is equal to any of the previous ticks."
+msgstr ""
+
 msgid "Win payout if exit spot is also equal to entry spot."
 msgstr ""
 
@@ -12724,7 +12775,7 @@ msgstr ""
 msgid "Your account is restricted. Kindly %1contact customer support%2 for assistance."
 msgstr ""
 
-msgid "Your account remains under the retail client category. You are welcome to reapply as a professional client at any time."
+msgid "Your account remains under the retail client category."
 msgstr ""
 
 msgid "Your account security is of paramount importance to us. Please consider the following initiatives and tools to enhance your account security:"
@@ -12804,6 +12855,9 @@ msgstr "귀하의 비밀번호가 성공적으로 재설정되었습니다. 새 
 
 msgid "Your personal information is used primarily as a way of validating you as the legitimate account owner and proper recipient of withdrawal payments. We also use this information to process your trades. We collect from you all personal and financial data directly relating to you when you fill in our account opening form. In all instances, you have either a legal or a contractual obligation to provide us with the information. If such information is not provided, we will be unable to provide you with our services."
 msgstr "귀하의 개인 정보는 귀하의 합법적인 계좌 소유자 여부 및 인출 지불금액의 올바른 수령인인지 확인하기 위해 주된 한 수단으로 이용됩니다. 우리는 또한 귀하의 거래를 처리하기 위해 이러한 정보를 이용합니다. 우리는 귀하께서 계좌 개설시 우리의 계좌 개설 양식에 쓴 내용에 관련하여 모든 개인 정보 및 금융 정보를 수집합니다. 귀하께서는 우리에게 이런 정보를 제공해야 하는 법적 또는 계약상의 의무가 있습니다. 만약 이런 정보가 제공되지 않는다면, 우리는 귀하에게 서비스를 제공하지 못할 것입니다."
+
+msgid "Your professional client request is %1not approved%2."
+msgstr ""
 
 msgid "Your profit or loss is calculated as follows:"
 msgstr "귀하의 손익은 다음과 같이 계산됩니다:"

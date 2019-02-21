@@ -9,8 +9,8 @@ import {
     getDecimalPlaces }           from '_common/base/currency_base';
 import Dropdown                  from 'App/Components/Form/DropDown';
 import Fieldset                  from 'App/Components/Form/fieldset.jsx';
-import InputField                from 'App/Components/Form/input_field.jsx';
-import AllowEquals               from './allow_equals.jsx';
+import InputField                from 'App/Components/Form/input-field.jsx';
+import AllowEquals               from './allow-equals.jsx';
 
 const Amount = ({
     amount,
