@@ -7,11 +7,11 @@ import React                     from 'react';
 import {
     addComma,
     getDecimalPlaces }           from '_common/base/currency_base';
-import ButtonToggleMenu          from 'App/Components/Form/button_toggle_menu.jsx';
+import ButtonToggleMenu          from 'App/Components/Form/button-toggle-menu.jsx';
 import Dropdown                  from 'App/Components/Form/DropDown';
 import Fieldset                  from 'App/Components/Form/fieldset.jsx';
 import InputField                from 'App/Components/Form/InputField';
-import AllowEquals               from './allow_equals.jsx';
+import AllowEquals               from './allow-equals.jsx';
 
 const Amount = ({
     amount,

@@ -5,7 +5,7 @@ import React             from 'react';
 import { CSSTransition } from 'react-transition-group';
 import Dialog            from './dialog.jsx';
 import InputField        from '../InputField';
-import { IconClock } from '../../../../Assets/Common/icon_clock.jsx';
+import { IconClock }     from '../../../../Assets/Common/icon-clock.jsx';
 
 class TimePicker extends React.Component {
     state = { is_open: false };

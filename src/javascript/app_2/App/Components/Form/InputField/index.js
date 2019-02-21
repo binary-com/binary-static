@@ -1,1 +1,1 @@
-export default from './input_field.jsx';
+export default from './input-field.jsx';

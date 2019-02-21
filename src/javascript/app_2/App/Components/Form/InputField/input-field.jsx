@@ -5,7 +5,7 @@ import {
 import PropTypes                 from 'prop-types';
 import React                     from 'react';
 import { isCryptocurrency }      from '_common/base/currency_base';
-import IncrementButtons          from './increment_buttons.jsx';
+import IncrementButtons          from './increment-buttons.jsx';
 import Input                     from './input.jsx';
 import Tooltip                   from '../../Elements/tooltip.jsx';
 
