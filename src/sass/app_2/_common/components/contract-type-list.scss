@@ -48,13 +48,6 @@
             display: block;
         }
     }
-    &.disabled {
-        pointer-events: none;
-
-        .contract-type-item__title {
-            color: $COLOR_LIGHT_BLACK_4;
-        }
-    }
     &__title {
         @include typeface(--paragraph-left-light-black);
     }
@@ -64,6 +57,7 @@
         width: 16px;
         margin-left: auto;
 
+        /* postcss-bem-linter: ignore */
         svg {
             pointer-events: none;
         }
@@ -71,6 +65,7 @@
     &--selected {
         background: $COLOR_LIGHT_GRAY_1;
 
+        /* postcss-bem-linter: ignore */
         span {
             font-weight: bold;
             color: $COLOR_WHITE;
@@ -97,7 +92,6 @@
         }
         &--selected {
             background: $COLOR_DARK_BLUE_5;
-
             span {
                 color: $COLOR_WHITE;
             }

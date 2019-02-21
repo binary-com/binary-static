@@ -10,7 +10,7 @@
     height: 0;
     z-index: 999;
 
-    &__list-container {
+    &__list-wrapper {
         position: absolute;
         width: 290px;
         right: calc(100% + 1em);
@@ -21,15 +21,6 @@
         background: $COLOR_LIGHT_BLACK_4_SOLID;
         border-radius: 4px;
         box-shadow: 0 2px 8px 0 $COLOR_LIGHT_BLACK_3;
-
-        .categories-container {
-            margin-right: 0.4em;
-
-            .category-wrapper {
-                width: 2.4em;
-                height: 2.4em;
-            }
-        }
     }
     &-enter, &-exit {
         transform: translateX(20%);
