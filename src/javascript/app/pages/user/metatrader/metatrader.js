@@ -86,32 +86,9 @@ const MetaTrader = (() => {
     };
 
     const getAllAccountsInfo = () => {
-        MetaTraderUI.init(submit);
+        MetaTraderUI.init(submit, sendTopupDemo);
         BinarySocket.send({ mt5_login_list: 1 }).then((response) => {
-            if (response.error) {
-                MetaTraderUI.displayPageError(response.error.message || localize('Sorry, an error occurred while processing your request.'));
-                return;
-            }
-            // Ignore old accounts which are not linked to any group or has deprecated group
-            const mt5_login_list = (response.mt5_login_list || []).filter(obj => (
-                obj.group && Client.getMT5AccountType(obj.group) in accounts_info
-            ));
-
-            // Update account info
-            mt5_login_list.forEach((obj) => {
-                const acc_type = Client.getMT5AccountType(obj.group);
-                accounts_info[acc_type].info = { login: obj.login };
-                setAccountDetails(obj.login, acc_type, response);
-            });
-
-            const current_acc_type = getDefaultAccount();
-            Client.set('mt5_account', current_acc_type);
-            MetaTraderUI.showHideMAM(current_acc_type);
-
-            // Update types with no account
-            Object.keys(accounts_info)
-                .filter(acc_type => !MetaTraderConfig.hasAccount(acc_type))
-                .forEach((acc_type) => { MetaTraderUI.updateAccount(acc_type); });
+            allAccountsResponseHandler(response);
         });
     };
 
@@ -228,6 +205,60 @@ const MetaTrader = (() => {
                 });
             });
         }
+    };
+
+    const allAccountsResponseHandler = (response) => {
+        if (response.error) {
+            MetaTraderUI.displayPageError(response.error.message || localize('Sorry, an error occurred while processing your request.'));
+            return;
+        }
+        // Ignore old accounts which are not linked to any group or has deprecated group
+        const mt5_login_list = (response.mt5_login_list || []).filter(obj => (
+            obj.group && Client.getMT5AccountType(obj.group) in accounts_info
+        ));
+
+        // Update account info
+        mt5_login_list.forEach((obj) => {
+            const acc_type = Client.getMT5AccountType(obj.group);
+            accounts_info[acc_type].info = { login: obj.login };
+            setAccountDetails(obj.login, acc_type, response);
+        });
+
+        const current_acc_type = getDefaultAccount();
+        Client.set('mt5_account', current_acc_type);
+        MetaTraderUI.showHideMAM(current_acc_type);
+
+        // Update types with no account
+        Object.keys(accounts_info)
+            .filter(acc_type => !MetaTraderConfig.hasAccount(acc_type))
+            .forEach((acc_type) => { MetaTraderUI.updateAccount(acc_type); });
+    };
+
+    const sendTopupDemo = () => {
+        MetaTraderUI.setTopupLoading(true);
+        const acc_type = Client.get('mt5_account');
+        const login    = accounts_info[acc_type].info.login;
+        const req      = {
+            mt5_deposit: 1,
+            to_mt5     : login,
+        };
+
+        BinarySocket.send(req).then((response) => {
+            if (response.error) {
+                MetaTraderUI.displayPageError(response.error.message);
+                MetaTraderUI.setTopupLoading(false);
+            } else {
+                MetaTraderUI.displayMainMessage(
+                    localize(
+                        '[_1] has been credited into your MT5 Demo Account: [_2].',
+                        [`${MetaTraderConfig.getCurrency(acc_type)} 10,000.00`, login.toString()]
+                    ));
+                BinarySocket.send({ mt5_login_list: 1 }).then((res) => {
+                    allAccountsResponseHandler(res);
+                    MetaTraderUI.setTopupLoading(false);
+                });
+            }
+        });
     };
 
     return {
