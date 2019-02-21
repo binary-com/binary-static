@@ -151,7 +151,7 @@ class Dropdown extends React.Component {
                 })}
             >
                 <div
-                    className={classNames('dropdown__display', {
+                    className={classNames('dropdown__display', this.props.classNameDisplay, {
                         'dropdown__display--clicked'   : this.state.is_list_visible,
                         'dropdown__display--has-symbol': this.props.has_symbol,
                     })}
@@ -237,6 +237,7 @@ class Dropdown extends React.Component {
 
 Dropdown.propTypes = {
     className        : PropTypes.string,
+    classNameDisplay : PropTypes.string,
     has_symbol       : PropTypes.bool,
     is_alignment_left: PropTypes.bool,
     is_nativepicker  : PropTypes.bool,

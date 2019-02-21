@@ -51,7 +51,8 @@ const Amount = ({
                 />
                 {!is_single_currency &&
                 <Dropdown
-                    className={classNames('no-margin', { 'trade-container__currency-options--show': !is_single_currency })}
+                    className={classNames('no-margin', { 'trade-container__currency-options': !is_single_currency })}
+                    classNameDisplay='trade-container__currency-options--display'
                     has_symbol
                     is_alignment_left
                     is_nativepicker={false}

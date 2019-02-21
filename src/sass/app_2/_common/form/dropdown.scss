@@ -171,9 +171,14 @@
                     background-color: $COLOR_LIGHT_BLACK_4;
                 }
                 &--selected {
+                    background-color: $COLOR_LIGHT_GRAY_1;
+
                     &_title {
                         @include typeface(--paragraph-left-semibold-active);
                         background-color: $COLOR_LIGHT_GRAY_1;
+                    }
+                    &:hover {
+                        background: $COLOR_LIGHT_GRAY_1;
                     }
                 }
             }
