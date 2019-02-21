@@ -33,10 +33,9 @@ const TradingTimePicker = ({
 
     const moment_contract_start_date_time = setTime(
         toMoment(start_date || moment_market_open_times),
-        (isTimeValid(start_time)
+        isTimeValid(start_time)
             ? start_time
-            : moment_market_open_times.format('HH:mm')
-        ));
+            : moment_market_open_times.format('HH:mm'));
     const expiry_date_time = setTime(
         moment_expiry.clone(),
         moment_contract_start_date_time.clone().add(5, 'minute').format('HH:mm')
