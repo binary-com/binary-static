@@ -1,7 +1,7 @@
-import ClientStore  from './client_store';
-import CommonStore  from './common_store';
+import ClientStore  from './client-store';
+import CommonStore  from './common-store';
 import ModulesStore from './Modules';
-import UIStore      from './ui_store';
+import UIStore      from './ui-store';
 
 export default class RootStore {
     constructor() {

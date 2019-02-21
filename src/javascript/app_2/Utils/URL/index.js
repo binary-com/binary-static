@@ -1,1 +1,1 @@
-export { default } from './url_helper';
+export { default } from './url-helper';
