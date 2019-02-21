@@ -20,7 +20,7 @@ const ContractTypeItem = ({
             value={contract.value}
             onClick={(e) => handleSelect(contract, e)}
         >
-            <IconTradeCategory category={contract.value} />
+            <IconTradeCategory category={contract.value} className='contract-type-item__icon-wrapper' />
             <span className='contract-type-item__title'>
                 {contract.text}
             </span>

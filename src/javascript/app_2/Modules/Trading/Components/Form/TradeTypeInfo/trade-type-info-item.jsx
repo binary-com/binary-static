@@ -60,7 +60,7 @@ const TradeTypeInfoItem = ({
                     ))
                 }
             </div>
-            <div className='trade-type-info-dialog__navigation__icon' onClick={() => handleNextClick(navigationList)} >
+            <div className='trade-type-info-navigation__icon' onClick={() => handleNextClick(navigationList)} >
                 <IconChevronRight />
             </div>
         </div>

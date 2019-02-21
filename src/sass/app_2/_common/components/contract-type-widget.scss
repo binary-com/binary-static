@@ -9,32 +9,6 @@
     padding: 0.4em;
     color: $COLOR_LIGHT_BLACK_1;
 
-    &:hover {
-        border-color: $COLOR_LIGHT_GRAY_1;
-    }
-    &.mobile-only {
-        border: solid 1px $COLOR_WHITE;
-
-        .list-group {
-            margin-bottom: 1.5em;
-
-            .list-label {
-                padding-left: 2.4em;
-                margin-bottom: 0.8em;
-            }
-            .list-item {
-                padding-bottom: 0.6em;
-                padding-top: 0.6em;
-
-                .categories-container {
-                    margin-right: 0.8em;
-                }
-            }
-        }
-        &:hover, &:focus, &:active {
-            border: solid 1px $COLOR_LIGHT_GRAY_1;
-        }
-    }
     &__display {
         cursor: pointer;
         display: flex;
@@ -42,6 +16,7 @@
         justify-content: flex-start;
         flex-direction: column;
 
+        /* postcss-bem-linter: ignore */
         span[name=contract_type] {
             @include typeface(--small-left-light-black);
             vertical-align: middle;
@@ -50,30 +25,8 @@
             border-color: $COLOR_DARK_BLUE_5;
             outline: none;
         }
-        .categories-container {
-            margin-bottom: 0.2em;
-        }
-        &.desktop-only span[name=contract_type] {
-            font-size: 1.2em;
-        }
-    }
-    &:active, &:focus, &--show {
-        outline: none;
-        border-radius: 4px;
-        border-color: $COLOR_LIGHT_GRAY_1;
-        box-shadow: 0 0 0 2px $COLOR_LIGHT_GRAY_2;
-    }
-    &--show {
-        &.mobile-only {
-            z-index: 99;
-        }
-        & > .clicked {
+        &--clicked {
             border-color: $COLOR_DARK_BLUE_5;
-        }
-    }
-    .contracts-modal-list {
-        .list-item {
-            padding: 1.6em;
         }
     }
     &__select-arrow {
@@ -93,62 +46,24 @@
         transform-origin: 45% 45;
         color: $COLOR_LIGHT_BLACK_4;
     }
-    .categories-container {
+    &__icon-wrapper {
         display: inline-flex;
         align-items: center;
         justify-content: center;
+        margin-bottom: 0.2em;
 
+        /* postcss-bem-linter: ignore */
         .category-wrapper {
             margin: 0 0.2em;
         }
     }
-}
-
-// Dark Theme
-.theme--dark {
-    .contract-type-widget {
-        color: $COLOR_DARK_BLUE_7;
-        background: $COLOR_DARK_BLUE_2;
-        border-color: $COLOR_DARK_BLUE_2;
-
-        &__display span[name=contract_type] {
-            color: $COLOR_DARK_BLUE_7;
-        }
-        &.mobile-only {
-            &__display span {
-                color: $COLOR_DARK_BLUE_7;
-            }
-            .contracts-modal-list {
-                background: $COLOR_DARK_BLUE_5;
-            }
-        }
-        &:hover {
-            border-color: $COLOR_DARK_BLUE_7;
-        }
-        &:focus, &:active {
-            outline: 0;
-            border-color: $COLOR_DARK_BLUE_7;
-            box-shadow: 0 0 0 2px rgba(127, 131, 151, 0.3);
-        }
-        .category-wrapper {
-            background: $COLOR_DARK_BLUE_5;
-
-            .category-type {
-                path, rect {
-                    &:not(.important) {
-                        fill: $COLOR_WHITE;
-                    }
-                    &.transparent {
-                        fill: $COLOR_DARK_BLUE_5;
-                    }
-                }
-                .stroke-active {
-                    stroke: $COLOR_WHITE;
-                }
-            }
-        }
-        .select-arrow .arrow-path {
-            fill: $COLOR_DARK_BLUE_7;
-        }
+    &:hover {
+        border-color: $COLOR_LIGHT_GRAY_1;
+    }
+    &:active, &:focus, &--show {
+        outline: none;
+        border-radius: 4px;
+        border-color: $COLOR_LIGHT_GRAY_1;
+        box-shadow: 0 0 0 2px $COLOR_LIGHT_GRAY_2;
     }
 }

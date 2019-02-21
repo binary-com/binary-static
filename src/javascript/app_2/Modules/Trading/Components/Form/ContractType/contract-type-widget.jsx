@@ -1,3 +1,4 @@
+import classNames           from 'classnames';
 import PropTypes             from 'prop-types';
 import React                 from 'react';
 import { IconTradeCategory } from 'Assets/Trading/Categories';
@@ -115,17 +116,6 @@ class ContractTypeWidget extends React.PureComponent {
         return text;
     };
 
-    getStyles = () => {
-        const container_classes = ['contract-type-widget'];
-        if (this.props.is_mobile) {
-            container_classes.push('mobile-only');
-        } else {
-            container_classes.push('desktop-only');
-        }
-        if (this.state.is_dialog_open) container_classes.push('contract-type-widget--show');
-        return container_classes;
-    };
-
     getNavigationList = () => {
         const navigationList = [];
         const list = this.props.list;
@@ -140,19 +130,19 @@ class ContractTypeWidget extends React.PureComponent {
     };
 
     render() {
-        const container_classes = this.getStyles();
-
         return (
             <div
                 ref={this.setWrapperRef}
-                className={container_classes.join(' ')}
+                className={'contract-type-widget'}
                 tabIndex='0'
             >
                 <div
-                    className={`contract-type-widget__display ${this.state.is_dialog_open ? 'clicked' : ''}`}
+                    className={classNames('contract-type-widget__display', {
+                        'contract-type-widget__display--clicked': this.state.is_dialog_open,
+                    })}
                     onClick={this.onWidgetClick}
                 >
-                    <IconTradeCategory category={this.props.value} />
+                    <IconTradeCategory category={this.props.value} className='contract-type-widget__icon-wrapper' />
                     <span name={this.props.name} value={this.props.value}>
                         {this.getDisplayText()}
                     </span>

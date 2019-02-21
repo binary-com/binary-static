@@ -788,4 +788,47 @@
             }
         }
     }
+    .contract-type-widget {
+        color: $COLOR_DARK_BLUE_7;
+        background: $COLOR_DARK_BLUE_2;
+        border-color: $COLOR_DARK_BLUE_2;
+
+        &:hover {
+            border-color: $COLOR_DARK_BLUE_7;
+        }
+        &:focus, &:active {
+            outline: 0;
+            border-color: $COLOR_DARK_BLUE_7;
+            box-shadow: 0 0 0 2px rgba(127, 131, 151, 0.3);
+        }
+        &__display {
+            /* postcss-bem-linter: ignore */
+            span[name=contract_type] {
+                color: $COLOR_DARK_BLUE_7;
+            }
+        }
+        &__select-arrow {
+            /* postcss-bem-linter: ignore */
+            .arrow-path {
+                fill: $COLOR_DARK_BLUE_7;
+            }
+        }
+        .category-wrapper {
+            background: $COLOR_DARK_BLUE_5;
+
+            .category-type {
+                path, rect {
+                    &:not(.important) {
+                        fill: $COLOR_WHITE;
+                    }
+                    &.transparent {
+                        fill: $COLOR_DARK_BLUE_5;
+                    }
+                }
+                .stroke-active {
+                    stroke: $COLOR_WHITE;
+                }
+            }
+        }
+    }
 }
