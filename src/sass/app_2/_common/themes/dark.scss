@@ -251,20 +251,15 @@
         &__purchase:before {
             background-image: url('../images/portfolio/ic_purchase_dark.svg');
         }
-        &__payout:before {
-            background-image: url('../images/statement/ic_payout_dark.svg');
-        }
+        // &__payout:before {
+        //     background-image: url('../images/statement/ic_payout_dark.svg');
+        // }
         &__indicative--price-stable:before {
             background-image: url('../images/portfolio/ic_price_stable_dark.svg');
         }
     }
-    .statement-card {
-        &__payout:before {
-            background-image: url('../images/statement/ic_payout_dark.svg');
-        }
-        &__balance:before {
-            background-image: url('../images/statement/ic_wallet_dark.svg');
-        }
+    .statement-card__icon {
+        @extend .inline-icon.white;
     }
     .login-message-wrapper {
         .message a {
