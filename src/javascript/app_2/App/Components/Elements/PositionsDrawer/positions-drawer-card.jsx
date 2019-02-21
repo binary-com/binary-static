@@ -1,14 +1,15 @@
-import classNames          from 'classnames';
-import PropTypes           from 'prop-types';
-import React               from 'react';
-import { localize }        from '_common/localize';
-import ContractTypeCell    from 'Modules/Portfolio/Components/contract-type-cell.jsx';
-import ProgressSlider      from './ProgressSlider';
+import classNames            from 'classnames';
+import PropTypes             from 'prop-types';
+import React                 from 'react';
+import { CSSTransition }     from 'react-transition-group';
+import { localize }          from '_common/localize';
+import ContractTypeCell      from 'Modules/Portfolio/Components/contract-type-cell.jsx';
+import ProgressSlider        from './ProgressSlider';
 import { getTimePercentage } from './helpers';
-import Money               from '../money.jsx';
-import BinaryLink          from '../../Routes/binary-link.jsx';
-import { getContractPath } from '../../Routes/helpers';
-import Button              from '../../Form/button.jsx';
+import Money                 from '../money.jsx';
+import BinaryLink            from '../../Routes/binary-link.jsx';
+import { getContractPath }   from '../../Routes/helpers';
+import Button                from '../../Form/button.jsx';
 
 const PositionsDrawerCard = ({
     className,
@@ -105,8 +106,16 @@ const PositionsDrawerCard = ({
                     </div>
                 </React.Fragment>
             </BinaryLink>
-            {
-                !!(is_valid_to_sell) &&
+            <CSSTransition
+                in={!!(is_valid_to_sell)}
+                timeout={250}
+                classNames={{
+                    enter    : 'positions-drawer-card__sell-button--enter',
+                    enterDone: 'positions-drawer-card__sell-button--enter-done',
+                    exit     : 'positions-drawer-card__sell-button--exit',
+                }}
+                unmountOnExit
+            >
                 <div className='positions-drawer-card__sell-button'>
                     <Button
                         className='primary orange'
@@ -115,7 +124,7 @@ const PositionsDrawerCard = ({
                         onClick={() => onClickSell(id)}
                     />
                 </div>
-            }
+            </CSSTransition>
         </div>
     );
 };

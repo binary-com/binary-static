@@ -103,9 +103,18 @@ $header-height: 4em;
             border: 1px solid $COLOR_WHITE;
             background: $COLOR_WHITE;
             border-radius: $BORDER_RADIUS;
+            transition: transform 0.25s ease, opacity 0.25s linear;
 
             &:not(:last-child) {
                 margin-bottom: 16px;
+            }
+            &--enter-done {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            &--enter, &--exit {
+                opacity: 0;
+                transform: translateY(-16px);
             }
         }
         &--active {
@@ -278,6 +287,14 @@ $header-height: 4em;
                     font-weight: bold;
                     line-height: 1.5;
                 }
+            }
+            &--enter-done {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            &--enter, &--exit {
+                opacity: 0;
+                transform: translateY(-8px);
             }
         }
     }

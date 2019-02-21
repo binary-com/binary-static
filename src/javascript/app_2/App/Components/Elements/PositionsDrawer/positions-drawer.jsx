@@ -2,6 +2,7 @@ import classNames                     from 'classnames';
 import { PropTypes as MobxPropTypes } from 'mobx-react';
 import PropTypes                      from 'prop-types';
 import React                          from 'react';
+import { CSSTransition }              from 'react-transition-group';
 import { Scrollbars }                 from 'tt-react-custom-scrollbars';
 import { localize }                   from '_common/localize';
 import { IconMinimize }               from 'Assets/Common';
@@ -37,14 +38,27 @@ class PositionsDrawer extends React.Component {
         } else if (is_empty) {
             body_content = <EmptyPortfolioMessage />;
         } else {
-            body_content = active_positions.map((portfolio_position) => (
-                <PositionsDrawerCard
-                    onClickSell={onClickSell}
-                    server_time={server_time}
+            // Show only 3 most recent open contracts
+            body_content = active_positions.slice(0, 3).map((portfolio_position) => (
+                <CSSTransition
                     key={portfolio_position.id}
-                    currency={currency}
-                    {...portfolio_position}
-                />
+                    in={!!(portfolio_position.underlying_code)}
+                    timeout={250}
+                    classNames={{
+                        enter    : 'positions-drawer-card__wrapper--enter',
+                        enterDone: 'positions-drawer-card__wrapper--enter-done',
+                        exit     : 'positions-drawer-card__wrapper--exit',
+                    }}
+                    unmountOnExit
+                >
+                    <PositionsDrawerCard
+                        onClickSell={onClickSell}
+                        server_time={server_time}
+                        key={portfolio_position.id}
+                        currency={currency}
+                        {...portfolio_position}
+                    />
+                </CSSTransition>
             ));
         }
 
