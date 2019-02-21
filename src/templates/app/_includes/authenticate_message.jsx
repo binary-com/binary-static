@@ -156,6 +156,8 @@ const AuthenticateMessage = () => (
             ]}
         />
 
+        <SeparatorLine className='gr-padding-10' invisible />
+
         <FileSelector
             heading={it.L('3. Selfie or self-portrait photo')}
             data_show='mt5fin:vanuatu, labuan'
