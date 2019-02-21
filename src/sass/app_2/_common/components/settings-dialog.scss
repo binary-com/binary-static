@@ -146,46 +146,6 @@
         }
         &-flag {
             padding-right: 0.6em;
-
-            &--en:before {
-                content: url('../images/common/language/ic_flag_en.svg');
-            }
-            &--de:before {
-                content: url('../images/common/language/ic_flag_de.svg');
-            }
-            &--pt:before {
-                content: url('../images/common/language/ic_flag_pt.svg');
-            }
-            &--it:before {
-                content: url('../images/common/language/ic_flag_it.svg');
-            }
-            &--vi:before {
-                content: url('../images/common/language/ic_flag_vi.svg');
-            }
-            &--ru:before {
-                content: url('../images/common/language/ic_flag_ru.svg');
-            }
-            &--pl:before {
-                content: url('../images/common/language/ic_flag_pl.svg');
-            }
-            &--es:before {
-                content: url('../images/common/language/ic_flag_es.svg');
-            }
-            &--zh-cn:before {
-                content: url('../images/common/language/ic_flag_zh_cn.svg');
-            }
-            &--zh-tw:before {
-                content: url('../images/common/language/ic_flag_zh_tw.svg');
-            }
-            &--id:before {
-                content: url('../images/common/language/ic_flag_id.svg');
-            }
-            &--fr:before {
-                content: url('../images/common/language/ic_flag_fr.svg');
-            }
-            &--th:before {
-                content: url('../images/common/language/ic_flag_th.svg');
-            }
         }
     }
 }

@@ -128,7 +128,7 @@
         }
         &-title {
             @include typeface(--paragraph-left-bold-black);
-            @include toEm(padding, 8px 16px, 1.6em);
+            @include toEm(padding, 8px 16px, 1em);
             display: block;
         }
         &--virtual {
@@ -151,46 +151,14 @@
 
             &--virtual:before {
                 @include typeface(--xxxsmall-left-normal-orange, uppercase);
-                @include toEm(padding, 2px 4px, 0.6em);
+                @include toEm(padding, 1px 2px, 0.6em);
                 @include toEm(margin-right, 8px, 0.6em);
                 content: 'demo';
                 border: 1px solid $COLOR_ORANGE;
                 border-radius: 16px;
             }
-            &-icon:before {
-                width: 100%;
-                height: 100%;
+            &-icon {
                 margin-right: 1.6em;
-                line-height: normal;
-                display: inline-block;
-                vertical-align: middle;
-            }
-            &-icon--usd:before {
-                content: url('../images/header/accounts/usd.svg');
-            }
-            &-icon--ust:before {
-                content: url('../images/header/accounts/ust.svg');
-            }
-            &-icon--aud:before {
-                content: url('../images/header/accounts/aud.svg');
-            }
-            &-icon--bch:before {
-                content: url('../images/header/accounts/bch.svg');
-            }
-            &-icon--eth:before {
-                content: url('../images/header/accounts/eth.svg');
-            }
-            &-icon--gbp:before {
-                content: url('../images/header/accounts/gbp.svg');
-            }
-            &-icon--btc:before {
-                content: url('../images/header/accounts/btc.svg');
-            }
-            &-icon--eur:before {
-                content: url('../images/header/accounts/eur.svg');
-            }
-            &-icon--ltc:before {
-                content: url('../images/header/accounts/ltc.svg');
             }
         }
         .acc-switcher__radio {

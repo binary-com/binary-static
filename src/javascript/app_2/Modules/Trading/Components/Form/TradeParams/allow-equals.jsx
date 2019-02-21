@@ -22,7 +22,13 @@ const AllowEquals = ({
                 checked={checked}
             />
             <label className='allow-equals__label' htmlFor='allow_equals'>{localize('Allow equals')}</label>
-            <Tooltip className='allow-equals__tooltip' classNameIcon='allow-equals__tooltip-info' icon='info' message={localize('Win payout if exit spot is also equal to entry spot.')} alignment='left' />
+            <Tooltip
+                alignment='left'
+                className='allow-equals__tooltip'
+                classNameIcon='allow-equals__tooltip-info'
+                icon='info'
+                message={localize('Win payout if exit spot is also equal to entry spot.')}
+            />
         </div>
 );
 
