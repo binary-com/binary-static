@@ -64,9 +64,9 @@ const AccountTransfer = () => (
             {it.L('Notes:')}
             <ul className='bullet'>
                 <li>{it.L('There may be times when transfers are not available because the market is closed (weekends or holidays), there is high volatility in the market or because of technical issues.')}</li>
-                <li>{it.L('You may only transfer funds between a fiat account and a cryptocurrency account')}</li>
+                <li>{it.L('You may only transfer funds between a fiat account and a cryptocurrency account.')}</li>
                 <li>{it.L('Each transfer is subject to a [_1] transfer fee or a minimum fee of [_2], whichever is higher.', '<span id="transfer_fee_amount"></span>', '<span id="transfer_fee_minimum"></span>')}</li>
-                <li>{it.L('Authorised payment agents are exempted from paying any transfer fees')}</li>
+                <li>{it.L('Authorised payment agents are exempted from paying any transfer fees.')}</li>
             </ul>
         </div>
     </React.Fragment>
