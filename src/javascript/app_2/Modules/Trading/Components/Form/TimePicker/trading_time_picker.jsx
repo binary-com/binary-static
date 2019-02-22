@@ -7,6 +7,7 @@ import {
     setTime,
     toMoment }     from 'Utils/Date';
 import TimePicker  from 'App/Components/Form/TimePicker';
+import { getSelectedTime } from 'Stores/Modules/Trading/Helpers/end-time';
 
 const TradingTimePicker = ({
     expiry_date,
@@ -18,56 +19,44 @@ const TradingTimePicker = ({
     start_date,
     start_time,
 }) => {
-    const moment_expiry_date_time = setTime(
-        toMoment(expiry_date),
-        expiry_time);
-    const moment_market_open_times = setTime(
-        moment_expiry_date_time.clone(),
-        market_open_times[0]);
-    const moment_server_time = toMoment(server_time);
-    const moment_expiry = moment_expiry_date_time.isBefore(moment_market_open_times)
-        ? moment_market_open_times.isBefore(moment_server_time)
-            ? moment_market_open_times
-            : moment_server_time
-        : moment_expiry_date_time;
-
-    const moment_contract_start_date_time = setTime(
-        toMoment(start_date || moment_market_open_times),
+    const server_dt = toMoment(server_time);
+    const contract_start = setTime(
+        toMoment(start_date || server_dt.clone()),
         isTimeValid(start_time)
             ? start_time
-            : moment_market_open_times.format('HH:mm'));
-    const expiry_date_time = setTime(
-        moment_expiry.clone(),
-        moment_contract_start_date_time.clone().add(5, 'minute').format('HH:mm')
-    );
+            : server_dt.clone().format('HH:mm'));
 
-    const expiry_date_market_close = setTime(
-        expiry_date_time.clone(),
-        market_close_times.slice(-1)[0]
-    );
+    const expiry_dt = setTime(toMoment(expiry_date), expiry_time);
+    const contract_expiry = setTime(
+        expiry_dt.clone(),
+        contract_start.clone().add(5, 'minute').format('HH:mm'));
 
-    const is_expired_next_day      = expiry_date_time.diff(moment_contract_start_date_time, 'day') === 1;
-    const min_date_expiry          = moment_contract_start_date_time.clone().startOf('day');
-    const expiry_time_sessions     = [{
-        open: is_expired_next_day
-            ? expiry_date_time.clone().startOf('day')
-            : expiry_date_time.clone(),
-        close: is_expired_next_day
-            ? minDate(
-                expiry_date_time.clone().subtract(10, 'minute'),
-                expiry_date_market_close
-            )
-            : expiry_date_market_close.clone(),
-    }];
-
+    const market_next_day_close = setTime(
+        expiry_dt.clone(),
+        market_close_times.slice(-1)[0]);
+    
+    // Boundaries for TimePicker.
+    const is_expired_next_day = contract_expiry.diff(contract_start, 'day') === 1;
+    const expiry_time_start = is_expired_next_day
+        ? contract_expiry.clone().startOf('day')
+        : contract_expiry.clone();
+    const expiry_time_end   = is_expired_next_day
+        ? minDate(
+            contract_expiry.clone().subtract(10, 'minute'),
+            market_next_day_close)
+        : market_next_day_close.clone();
+        
+    // Calculate valid value to be highlighted.
+    const market_open_dt = setTime(toMoment(expiry_date), market_open_times[0]);
+    const selected_time = getSelectedTime(expiry_dt, market_open_dt, server_dt);
     return (
         <TimePicker
-            end_time={expiry_time_sessions[0].close}
+            end_time={expiry_time_end}
             onChange={onChange}
             name='expiry_time'
             placeholder='12:00'
-            start_time={expiry_time_sessions[0].open}
-            value={moment_expiry.format('HH:mm') || min_date_expiry.format('HH:mm')} // The first value doesn't change.
+            start_time={expiry_time_start}
+            value={selected_time}
         />
     );
 };
