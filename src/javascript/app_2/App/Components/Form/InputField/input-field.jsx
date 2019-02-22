@@ -184,9 +184,6 @@ const InputField = ({
             {!!label &&
             <label htmlFor={name} className='input-label'>{label}</label>
             }
-            {!!prefix &&
-            <span className={classNames(classNamePrefix, 'symbols', prefix.toLowerCase())} />
-            }
             {!!helper &&
             <span className='input-helper'>{helper}</span>
             }
@@ -197,11 +194,18 @@ const InputField = ({
         </Tooltip>;
 
     return (
-        <div
-            className={`input-field ${className || ''}`}
-        >
-            {input_tooltip}
-        </div>
+        <React.Fragment>
+            {!!prefix &&
+                <div className={classNamePrefix}>
+                    <span className={classNames(`${classNamePrefix}__symbol`, 'symbols', prefix.toLowerCase())} />
+                </div>
+            }
+            <div
+                className={`input-field ${className || ''}`}
+            >
+                {input_tooltip}
+            </div>
+        </React.Fragment>
     );
 };
 

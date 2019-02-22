@@ -62,13 +62,6 @@ const Amount = ({
                     onChange={onChange}
                 />
                 }
-                {is_single_currency &&
-                <div
-                    className='no-margin trade-container__currency'
-                >
-                    <span className={`symbols trade-container__currency-symbol ${(currency || '').toLowerCase()}`} />
-                </div>
-                }
                 <InputField
                     className={classNames('trade-container__amount', { 'trade-container__amount--has-currency-options': !is_single_currency })}
                     classNameInput='trade-container__input'
@@ -85,6 +78,7 @@ const Amount = ({
                     max_length={10}
                     name='amount'
                     onChange={onChange}
+                    prefix={is_single_currency ? currency : null}
                     type='number'
                     value={amount}
                 />
