@@ -64,6 +64,7 @@
     }
     &__icon {
         @extend .absolute-center-v;
+        @extend .inline-icon;
         right: 5%;
 
         &--today:hover {
@@ -92,8 +93,8 @@
         &--next-month {
             right: 14%;
         }
-        &--disabled .calendar__nav-icon {
-            fill: $COLOR_LIGHT_BLACK_3;
+        &--disabled .calendar__icon {
+            @extend .inline-icon.disabled;
         }
     }
     &__btn {
@@ -166,7 +167,7 @@
                 justify-content: center;
             }
             &-icon {
-                margin-top: -0.5em;
+                margin-top: 0.1em;
             }
         }
     }

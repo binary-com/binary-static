@@ -3,6 +3,19 @@
     background: $COLOR_DARK_BLUE_1;
     color: $COLOR_WHITE;
 
+    .inline-icon {
+        @include colorIcon($COLOR_DARK_BLUE_7, none);
+
+        &.active {
+            @include colorIcon($COLOR_DARK_BLUE_5, $COLOR_WHITE, $COLOR_WHITE);
+        }
+        &.disabled {
+            @include colorIcon($COLOR_DARK_BLUE_8, none);
+        }
+        &.white {
+            @include colorIcon($COLOR_WHITE);
+        }
+    }
     .trade-container {
         background: $COLOR_DARK_BLUE_2;
 
@@ -29,7 +42,7 @@
         }
         &__barriers {
             &--up, &--down {
-                fill: $COLOR_WHITE;
+                @extend .inline-icon.white;
             }
         }
         &__currency {
@@ -40,30 +53,11 @@
                 color: $COLOR_WHITE;
             }
         }
-        .chart-container {
-            .cq-context {
-                div.cq-chart-controls {
-                    border: none;
-                    border-right: 1px solid $COLOR_DARK_BLUE_5;
-                    border-top: 1px solid $COLOR_DARK_BLUE_5;
-
-                    @media (max-width: 768px) {
-                        border: 1px solid $COLOR_DARK_BLUE_5;
-                    }
-                }
-                .ciq-chart {
-                    .chartContainer:before {
-                        background-image: linear-gradient(to right, rgba(16, 19, 32, 1), rgba(16, 19, 32, 0));
-                    }
-                }
-            }
-            .cq-modal-dropdown .cq-categorical-display .ic-icon.icon-close-menu {
-                svg {
-                    g path {
-                        fill: $COLOR_DARK_BLUE_7;
-                    }
-                }
-            }
+        &__allow-equals-label {
+            color: $COLOR_DARK_BLUE_7;
+        }
+        .chartContainer:before {
+            background-image: linear-gradient(to right, rgba(16, 19, 32, 1), rgba(16, 19, 32, 0));
         }
     }
     .purchase-container {
@@ -92,31 +86,12 @@
         }
         &__option div.box .left-column .type-wrapper {
             background: $COLOR_DARK_BLUE_6;
-
-            .type {
-                path, rect {
-                    &:not(.important) {
-                        fill: $COLOR_WHITE;
-                    }
-                    &.transparent {
-                        fill: $COLOR_DARK_BLUE_6;
-                    }
-                }
-                .stroke-active {
-                    stroke: $COLOR_WHITE;
-                }
-            }
         }
         &__lock {
             background: $COLOR_DARK_BLUE_3;
 
             &-icon {
-                rect, path {
-                    stroke: $COLOR_WHITE;
-                }
-                circle {
-                    fill: $COLOR_WHITE;
-                }
+                @extend .inline-icon.white;
             }
             &-button {
                 background: transparent;
@@ -134,11 +109,6 @@
         box-shadow: 0 2px 2px 0 $COLOR_DARK_BLUE_7;
         background: $COLOR_DARK_BLUE_6;
         color: $COLOR_DARK_BLUE_8;
-    }
-    .advanced-simple-toggle__icon {
-        &-path {
-            fill: $COLOR_DARK_BLUE_7;
-        }
     }
     .card-list {
         &__card {
@@ -167,16 +137,6 @@
             &:hover {
                 background-color: $COLOR_DARK_BLUE_4;
             }
-        }
-    }
-    .inline-icon {
-        @include colorIcon($COLOR_DARK_BLUE_7, none);
-
-        &.active {
-            @include colorIcon($COLOR_DARK_BLUE_5, $COLOR_WHITE, $COLOR_WHITE);
-        }
-        &.disabled {
-            @include colorIcon($COLOR_DARK_BLUE_6, none);
         }
     }
     header {
@@ -241,20 +201,6 @@
     // inline trade-types icons
     .type-wrapper {
         background: $COLOR_DARK_BLUE_6;
-
-        .type {
-            path, rect {
-                &:not(.important) {
-                    fill: $COLOR_WHITE;
-                }
-                &.transparent {
-                    fill: $COLOR_DARK_BLUE_6;
-                }
-            }
-            .stroke-active {
-                stroke: $COLOR_WHITE;
-            }
-        }
     }
     .portfolio.container {
         background: $COLOR_DARK_BLUE_5;
@@ -310,20 +256,15 @@
         &__purchase:before {
             background-image: url('../images/portfolio/ic_purchase_dark.svg');
         }
-        &__payout:before {
-            background-image: url('../images/statement/ic_payout_dark.svg');
-        }
+        // &__payout:before {
+        //     background-image: url('../images/statement/ic_payout_dark.svg');
+        // }
         &__indicative--price-stable:before {
             background-image: url('../images/portfolio/ic_price_stable_dark.svg');
         }
     }
-    .statement-card {
-        &__payout:before {
-            background-image: url('../images/statement/ic_payout_dark.svg');
-        }
-        &__balance:before {
-            background-image: url('../images/statement/ic_wallet_dark.svg');
-        }
+    .statement-card__icon {
+        @extend .inline-icon.white;
     }
     .login-message-wrapper {
         .message a {
@@ -453,9 +394,6 @@
                 border-color: $COLOR_WHITE;
             }
         }
-        &__icon path {
-            fill: $COLOR_DARK_BLUE_7;
-        }
         &__native-overlay {
             background: $COLOR_DARK_BLUE_5;
 
@@ -528,9 +466,6 @@
                 background-color: $COLOR_DARK_BLUE_4;
             }
         }
-        &__arrow-back path {
-            fill: $COLOR_DARK_BLUE_7;
-        }
         &__language {
             &-dialog-container {
                 background: $COLOR_DARK_BLUE_3;
@@ -568,9 +503,6 @@
             .symbols {
                 background: $COLOR_DARK_BLUE_2;
             }
-        }
-        &__select-arrow .arrow-path {
-            fill: $COLOR_DARK_BLUE_7;
         }
         &--show {
             &:after {
@@ -673,14 +605,6 @@
         &__body {
             border-color: $COLOR_DARK_BLUE_2;
         }
-        &__nav {
-            .calendar__nav-icon {
-                fill: $COLOR_DARK_BLUE_7;
-            }
-            &--disabled .calendar__nav-icon {
-                fill: $COLOR_DARK_BLUE_6;
-            }
-        }
         &__text {
             color: $COLOR_WHITE;
         }
@@ -690,9 +614,6 @@
             &--select {
                 color: $COLOR_WHITE;
             }
-        }
-        &__icon-path {
-            fill: $COLOR_DARK_BLUE_7;
         }
         &__cell {
             color: $COLOR_DARK_BLUE_7;

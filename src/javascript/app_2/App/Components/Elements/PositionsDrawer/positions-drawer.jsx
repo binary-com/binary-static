@@ -27,6 +27,7 @@ class PositionsDrawer extends React.Component {
             is_empty,
             is_positions_drawer_on,
             onClickSell,
+            onClickRemove,
             toggleDrawer,
             server_time,
         } = this.props;
@@ -53,6 +54,7 @@ class PositionsDrawer extends React.Component {
                 >
                     <PositionsDrawerCard
                         onClickSell={onClickSell}
+                        onClickRemove={onClickRemove}
                         server_time={server_time}
                         key={portfolio_position.id}
                         currency={currency}
@@ -100,6 +102,7 @@ PositionsDrawer.propTypes = {
     is_empty              : PropTypes.bool,
     is_loading            : PropTypes.bool,
     is_positions_drawer_on: PropTypes.bool,
+    onClickRemove         : PropTypes.func,
     onClickSell           : PropTypes.func,
     onMount               : PropTypes.func,
     onUnmount             : PropTypes.func,
@@ -115,6 +118,7 @@ export default connect(
         is_empty              : modules.portfolio.is_empty,
         is_positions_drawer_on: ui.is_positions_drawer_on,
         onClickSell           : modules.portfolio.onClickSell,
+        onClickRemove         : modules.portfolio.removePositionById,
         onMount               : modules.portfolio.onMount,
         onUnmount             : modules.portfolio.onUnmount,
         currency              : client.currency,

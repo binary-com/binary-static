@@ -99,10 +99,10 @@ $header-height: 4em;
 
         &__result {
             position: absolute;
-            top: -9px;
-            left: -9px;
-            width: calc(100% + 18px);
-            height: calc(100% + 18px);
+            top: -1px;
+            left: -1px;
+            width: calc(100% + 2px);
+            height: calc(100% + 2px);
             background: $COLOR_WHITE;
             opacity: 0.7;
             border-radius: $BORDER_RADIUS;
@@ -321,8 +321,11 @@ $header-height: 4em;
     }
     .result__caption {
         text-transform: capitalize;
-        font-size: 1.4em;
+        font-size: 1.6em;
         font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
         &--won {
             color: $COLOR_GREEN_1;
@@ -333,11 +336,15 @@ $header-height: 4em;
     }
     .result__close-btn:after {
         content: '\0000D7';
-        font-size: 1.8em;
-        top: 4px;
-        right: 4px;
+        font-size: 3em;
+        top: 2px;
+        right: 8px;
         position: absolute;
         color: $COLOR_LIGHT_GRAY_1;
+        cursor: pointer;
+    }
+    .result__icon {
+        margin-left: 10px;
     }
     /*
         POSITIONS DRAWER CARD ENDS

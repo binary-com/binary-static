@@ -140,22 +140,6 @@
                 height: calc(100% - 5em);
                 box-shadow: none;
 
-                div.chartContainer {
-                    background: transparent;
-                    min-height: 100%;
-
-                    &:before {
-                        content: '';
-                        position: absolute;
-                        height: 100%;
-                        width: 80px;
-                        top: 0;
-                        left: -2px;
-                        background-image: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
-                        pointer-events: none;
-                        z-index: 2;
-                    }
-                }
                 div.cq-chart-controls {
                     box-shadow: none;
                 }
@@ -171,6 +155,22 @@
         }
         div.debug-text {
             display: none;
+        }
+    }
+    .chartContainer {
+        background: transparent;
+        min-height: 100%;
+
+        &:before {
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 80px;
+            top: 0;
+            left: -2px;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+            pointer-events: none;
+            z-index: 2;
         }
     }
     .sidebar-items, .contract-wrapper {
@@ -247,9 +247,9 @@
     }
 }
 
-.inline-icon {
-    pointer-events: none;
-}
+// .inline-icon {
+//     pointer-events: none;
+// }
 
 .category-wrapper, .type-wrapper {
     width: 2.4em;

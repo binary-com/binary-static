@@ -23,6 +23,7 @@ const PositionsDrawerCard = ({
     purchase,
     purchase_time,
     onClickSell,
+    onClickRemove,
     result,
     server_time,
     status,
@@ -34,6 +35,11 @@ const PositionsDrawerCard = ({
     const percentage = getTimePercentage(server_time, purchase_time, expiry_time);
     return (
         <div className={classNames('positions-drawer-card__wrapper', className)}>
+            <ResultOverlay
+                id={id}
+                result={result}
+                onClose={onClickRemove}
+            />
             <BinaryLink
                 active_class='positions-drawer-card--active'
                 className={classNames(
@@ -46,7 +52,6 @@ const PositionsDrawerCard = ({
                 to={getContractPath(id)}
             >
                 <React.Fragment>
-                    <ResultOverlay result={result} />
                     <div className={classNames(
                         'positions-drawer-card__grid',
                         'positions-drawer-card__grid-underlying-trade'
@@ -143,6 +148,7 @@ PositionsDrawerCard.propTypes = {
     id              : PropTypes.number,
     indicative      : PropTypes.number,
     is_valid_to_sell: PropTypes.number,
+    onClickRemove   : PropTypes.func,
     onClickSell     : PropTypes.func,
     profit_loss     : PropTypes.number,
     purchase        : PropTypes.number,
