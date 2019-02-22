@@ -68,10 +68,10 @@ const getDays = ({
         const events          = holidays.filter(event =>
             // filter by date or day of the week
             event.dates.find(d => d === date || getDaysOfTheWeek(d) === toMoment(date).day()));
-        const has_events      = !!events.length;
-        const is_closes_early = events.map(event => !!event.descrip.match(/Closes early|Opens late/))[0];
-        const message         = events.map(event => event.descrip)[0] || '';
-
+        const has_events           = !!events.length;
+        const is_closes_early      = events.map(event => !!event.descrip.match(/Closes early|Opens late/))[0];
+        const message              = events.map(event => event.descrip)[0] || '';
+        const is_between           = moment_date.isBetween(moment_today, moment_selected);
         const is_before_min_or_after_max_date = isPeriodDisabled(moment_date, 'day');
         const is_disabled =
             // check if date is before min_date or after_max_date
@@ -95,7 +95,7 @@ const getDays = ({
                     'calendar__cell--today'   : is_today,
                     'calendar__cell--disabled': is_disabled,
                     'calendar__cell--other'   : is_other_month,
-                    'calendar__cell__between' : '',
+                    'calendar__cell--between' : is_between,
                 })}
                 onClick={is_disabled ? undefined : (e) => updateSelected(e, 'day')}
                 data-date={date}

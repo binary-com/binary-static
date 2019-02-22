@@ -145,8 +145,11 @@
         }
         &--today {
             font-weight: 400;
-            border: 1px solid $COLOR_LIGHT_BLACK_1;
-            border-radius: 5px;
+            background: $COLOR_DARK_BLUE_5;
+
+            &:hover {
+                background: $COLOR_DARK_BLUE_5 !important;
+            }
         }
         &--active {
             color: $COLOR_WHITE;
@@ -155,6 +158,22 @@
 
             &:hover {
                 background: $COLOR_LIGHT_GRAY_1;
+            }
+        }
+        &--between {
+            background: $COLOR_DARK_BLUE_4;
+
+            &:hover {
+                background: $COLOR_DARK_BLUE_4 !important;
+            }
+            &:before {
+                position: absolute;
+                content: '';
+                width: 100%;
+                z-index: -2;
+                height: 100%;
+                padding-left: 28px;
+                background: $COLOR_DARK_BLUE_4 !important;
             }
         }
         &-tooltip {
