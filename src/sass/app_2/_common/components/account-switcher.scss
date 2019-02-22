@@ -110,7 +110,7 @@
             &:before {
                 content: '\002B';
                 color: $COLOR_LIGHT_BLACK_2;
-                margin-right: 0.8em;
+                float: left;
             }
             &:hover {
                 background: $COLOR_LIGHT_BLACK_4;
@@ -172,7 +172,7 @@
         }
         &--selected {
             .acc-switcher__radio {
-                border: 2px solid $COLOR_ORANGE;
+                border: 4px solid $COLOR_ORANGE;
                 background: $COLOR_WHITE;
             }
         }
