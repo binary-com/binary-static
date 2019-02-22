@@ -7,6 +7,7 @@ const Items = ({
     name,
     value,
     handleSelect,
+    has_highlights,
     highlightedIdx,
 }) => (
     items.map((item, idx) => (
@@ -14,7 +15,7 @@ const Items = ({
             <div
                 className={classNames('list__item', {
                     'list__item--selected'   : value === item.value,
-                    'list__item--highlighted': highlightedIdx === idx,
+                    'list__item--highlighted': has_highlights && highlightedIdx === idx,
                 })}
                 key={idx}
                 name={name}
@@ -29,6 +30,7 @@ const Items = ({
 
 Items.propTypes = {
     handleSelect  : PropTypes.func,
+    has_highlights: PropTypes.bool,
     highlightedIdx: PropTypes.number,
     name          : PropTypes.string,
     value         : PropTypes.oneOfType([
