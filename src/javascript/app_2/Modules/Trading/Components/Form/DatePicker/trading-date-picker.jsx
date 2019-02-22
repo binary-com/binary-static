@@ -29,7 +29,7 @@ const TradingDatePicker = ({
         has_today_btn,
         is_read_only;
     const moment_contract_start_date_time =
-        setTime(toMoment(start_date || server_time), (isTimeValid(start_time) ? start_time : server_time.format('HH:mm')));
+        setTime(toMoment(start_date || server_time), (isTimeValid(start_time) ? start_time : server_time.format('HH:mm:ss')));
 
     const max_daily_duration = duration_min_max.daily ? duration_min_max.daily.max : 365 * 24 * 3600;
 
