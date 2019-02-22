@@ -32,12 +32,17 @@ const ResultOverlay = ({
             }
             )}
             >
-                {result ? localize(result) : null}
                 {
                     (result === 'won') ?
-                        <IconCheck className='result__icon' />
+                        <React.Fragment>
+                            {localize('won')}
+                            <IconCheck className='result__icon' />
+                        </React.Fragment>
                         :
-                        <IconCross className='result__icon' />
+                        <React.Fragment>
+                            {localize('lost')}
+                            <IconCross className='result__icon' />
+                        </React.Fragment>
                 }
             </span>
             <span
