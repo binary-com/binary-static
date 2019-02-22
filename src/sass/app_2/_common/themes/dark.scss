@@ -683,20 +683,9 @@
         &:hover:not(.contract-type-item--selected) {
             background: $COLOR_DARK_BLUE_4;
         }
-        &__icon {
-
-            /* postcss-bem-linter: ignore */
-            svg path {
-                fill: $COLOR_DARK_BLUE_7;
-            }
-        }
     }
     .trade-type-info-dialog {
         &__header {
-            /* postcss-bem-linter: ignore */
-            svg path {
-                fill: $COLOR_DARK_BLUE_7;
-            }
             /* postcss-bem-linter: ignore */
             .title {
                 color: $COLOR_DARK_BLUE_7;
@@ -724,12 +713,6 @@
                 background-color: $COLOR_DARK_BLUE_7;
             }
         }
-        &__icon {
-            /* postcss-bem-linter: ignore */
-            svg path {
-                fill: $COLOR_DARK_BLUE_7;
-            }
-        }
     }
     .contract-type-widget {
         color: $COLOR_DARK_BLUE_7;
@@ -748,12 +731,6 @@
             /* postcss-bem-linter: ignore */
             span[name=contract_type] {
                 color: $COLOR_DARK_BLUE_7;
-            }
-        }
-        &__select-arrow {
-            /* postcss-bem-linter: ignore */
-            .arrow-path {
-                fill: $COLOR_DARK_BLUE_7;
             }
         }
         .category-wrapper {
