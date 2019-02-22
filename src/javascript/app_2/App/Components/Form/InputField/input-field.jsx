@@ -92,7 +92,7 @@ const InputField = ({
     };
 
     const getDecimals = (val) => {
-        const array_value = val.split('.');
+        const array_value = typeof val === 'string' ? val.split('.') : val.toString().split('.');
         return array_value && array_value.length > 1 ? array_value[1].length : 0;
     };
 
@@ -100,7 +100,7 @@ const InputField = ({
         if (max_is_disabled) return;
         let increment_value;
 
-        const decimal_places = getDecimals(value);
+        const decimal_places = value ? getDecimals(value) : 0;
         const is_crypto      = isCryptocurrency(currency);
 
         if (is_crypto) {
@@ -115,7 +115,7 @@ const InputField = ({
     const calculateDecrementedValue = () => {
         let decrement_value;
 
-        const decimal_places = getDecimals(value);
+        const decimal_places = value ? getDecimals(value) : 0;
         const is_crypto      = isCryptocurrency(currency);
 
         if (is_crypto) {
