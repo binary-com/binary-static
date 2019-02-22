@@ -5,6 +5,7 @@ import { CSSTransition }     from 'react-transition-group';
 import { localize }          from '_common/localize';
 import ContractTypeCell      from 'Modules/Portfolio/Components/contract-type-cell.jsx';
 import ProgressSlider        from './ProgressSlider';
+import ResultOverlay         from './result-overlay.jsx';
 import { getTimePercentage } from './helpers';
 import Money                 from '../money.jsx';
 import BinaryLink            from '../../Routes/binary-link.jsx';
@@ -22,6 +23,7 @@ const PositionsDrawerCard = ({
     purchase,
     purchase_time,
     onClickSell,
+    result,
     server_time,
     status,
     tick_count,
@@ -36,14 +38,15 @@ const PositionsDrawerCard = ({
                 active_class='positions-drawer-card--active'
                 className={classNames(
                     'positions-drawer-card', {
-                        'positions-drawer-card--green' : (percentage >= 50),
-                        'positions-drawer-card--orange': (percentage < 50 && percentage >= 20),
-                        'positions-drawer-card--red'   : (percentage < 20),
+                        'positions-drawer-card--green' : (percentage >= 50) && !result,
+                        'positions-drawer-card--orange': (percentage < 50 && percentage >= 20) && !result,
+                        'positions-drawer-card--red'   : (percentage < 20) && !result,
                     }
                 )}
                 to={getContractPath(id)}
             >
                 <React.Fragment>
+                    <ResultOverlay result={result} />
                     <div className={classNames(
                         'positions-drawer-card__grid',
                         'positions-drawer-card__grid-underlying-trade'
@@ -66,6 +69,7 @@ const PositionsDrawerCard = ({
                         remaining_time={expiry_time}
                         percentage={percentage}
                         ticks_count={tick_count}
+                        has_result={!!(result)}
                     />
                     <div className={classNames(
                         'positions-drawer-card__grid',
@@ -107,7 +111,7 @@ const PositionsDrawerCard = ({
                 </React.Fragment>
             </BinaryLink>
             <CSSTransition
-                in={!!(is_valid_to_sell)}
+                in={!!(is_valid_to_sell && !result)}
                 timeout={250}
                 classNames={{
                     enter    : 'positions-drawer-card__sell-button--enter',
@@ -146,6 +150,7 @@ PositionsDrawerCard.propTypes = {
         PropTypes.number,
         PropTypes.string,
     ]),
+    result         : PropTypes.string,
     server_time    : PropTypes.object,
     status         : PropTypes.string,
     tick_count     : PropTypes.number,

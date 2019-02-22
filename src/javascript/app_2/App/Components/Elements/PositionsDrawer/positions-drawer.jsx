@@ -113,11 +113,11 @@ export default connect(
         is_loading            : modules.portfolio.is_loading,
         error                 : modules.portfolio.error,
         is_empty              : modules.portfolio.is_empty,
+        is_positions_drawer_on: ui.is_positions_drawer_on,
+        onClickSell           : modules.portfolio.onClickSell,
         onMount               : modules.portfolio.onMount,
         onUnmount             : modules.portfolio.onUnmount,
-        onClickSell           : modules.portfolio.onClickSell,
         currency              : client.currency,
-        is_positions_drawer_on: ui.is_positions_drawer_on,
         toggleDrawer          : ui.togglePositionsDrawer,
         server_time           : common.server_time,
     })

@@ -9,7 +9,7 @@ $header-height: 4em;
 //     .positions-drawer-card {
 //         filter: blur(2px);
 //
-//         &.active, &.first, &:hover, &:focus, &:active {
+//         &--active, &--first, &:hover, &:focus, &:active {
 //             filter: none;
 //         }
 //     }
@@ -97,6 +97,35 @@ $header-height: 4em;
         position: relative;
         color: $COLOR_LIGHT_BLACK_1;
 
+        &__result {
+            position: absolute;
+            top: -9px;
+            left: -9px;
+            width: calc(100% + 18px);
+            height: calc(100% + 18px);
+            background: $COLOR_WHITE;
+            opacity: 0.7;
+            border-radius: $BORDER_RADIUS;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &:after {
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: $BORDER_RADIUS;
+                z-index: 2;
+            }
+            &--won:after {
+                background-image: linear-gradient(to top, rgba(16, 19, 32, 0), rgba(0, 148, 117, 0.16));
+            }
+            &--lost:after {
+                background-image: linear-gradient(to top, rgba(16, 19, 32, 0), rgba(227, 28, 75, 0.16));
+            }
+        }
         &__wrapper {
             padding: 0.8em;
             margin: 0 1em;
@@ -207,14 +236,6 @@ $header-height: 4em;
                 font-weight: normal;
                 margin-bottom: 0.5em;
             }
-            &:after {
-                content: '';
-                display: inline-block;
-                height: 1.6em;
-                width: 1.6em;
-                background-size: 1.6em 1.6em;
-                margin-left: 0.2em;
-            }
             &--price-moved-up {
                 color: $COLOR_GREEN_1;
             }
@@ -298,6 +319,26 @@ $header-height: 4em;
             }
         }
     }
+    .result__caption {
+        text-transform: capitalize;
+        font-size: 1.4em;
+        font-weight: bold;
+
+        &--won {
+            color: $COLOR_GREEN_1;
+        }
+        &--lost {
+            color: $COLOR_RED;
+        }
+    }
+    .result__close-btn:after {
+        content: '\0000D7';
+        font-size: 1.8em;
+        top: 4px;
+        right: 4px;
+        position: absolute;
+        color: $COLOR_LIGHT_GRAY_1;
+    }
     /*
         POSITIONS DRAWER CARD ENDS
     */
@@ -313,6 +354,9 @@ $header-height: 4em;
         &-card {
             color: $COLOR_WHITE;
 
+            &__result {
+                background-color: $COLOR_DARK_BLUE_3;
+            }
             &__wrapper {
                 background: $COLOR_DARK_BLUE_2;
                 border-color: $COLOR_DARK_BLUE_2;

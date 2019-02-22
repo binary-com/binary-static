@@ -7,7 +7,7 @@ import { formatPortfolioPosition } from './Helpers/format-response';
 import BaseStore                   from '../../base-store';
 
 export default class PortfolioStore extends BaseStore {
-    @observable data       = [];
+    @observable positions  = [];
     @observable is_loading = false;
     @observable error      = '';
 
@@ -23,7 +23,7 @@ export default class PortfolioStore extends BaseStore {
 
     @action.bound
     clearTable() {
-        this.data       = [];
+        this.positions  = [];
         this.is_loading = false;
         this.error      = '';
     }
@@ -37,7 +37,7 @@ export default class PortfolioStore extends BaseStore {
         }
         this.error = '';
         if (response.portfolio.contracts) {
-            this.data = response.portfolio.contracts
+            this.positions = response.portfolio.contracts
                 .map(pos => formatPortfolioPosition(pos))
                 .sort((pos1, pos2) => pos2.reference - pos1.reference); // new contracts first
         }
@@ -60,7 +60,15 @@ export default class PortfolioStore extends BaseStore {
             // subscribe to new contract:
             WS.subscribeProposalOpenContract(contract_id, this.proposalOpenContractHandler, false);
         } else if (act === 'sell') {
-            this.removePositionById(contract_id);
+            // TODO: Refactor with contract-store and use common helpers to handle contract result
+            const contract_info = this.positions.find((pos) => +pos.id === +contract_id);
+            const contract_index = this.positions.findIndex(pos => +pos.id === +contract_id);
+
+            if (contract_info.profit_loss < 0) {
+                this.positions[contract_index].result = 'lost';
+            } else {
+                this.positions[contract_index].result = 'won';
+            }
         }
     }
 
@@ -69,7 +77,7 @@ export default class PortfolioStore extends BaseStore {
         if ('error' in response) return;
 
         const proposal = response.proposal_open_contract;
-        const portfolio_position = this.data.find((position) => +position.id === +proposal.contract_id);
+        const portfolio_position = this.positions.find((position) => +position.id === +proposal.contract_id);
 
         if (!portfolio_position) return;
 
@@ -99,8 +107,8 @@ export default class PortfolioStore extends BaseStore {
 
     @action.bound
     onClickSell(contract_id) {
-        const i = this.data.findIndex(pos => +pos.id === +contract_id);
-        const bid_price = this.data[i].bid_price;
+        const i = this.positions.findIndex(pos => +pos.id === +contract_id);
+        const bid_price = this.positions[i].bid_price;
         if (contract_id && bid_price) {
             WS.sell(contract_id, bid_price).then(this.handleSell);
         }
@@ -108,19 +116,35 @@ export default class PortfolioStore extends BaseStore {
 
     @action.bound
     handleSell(response) {
+        const is_contract_mode = this.root_store.modules.smart_chart.is_contract_mode;
         // TODO: Refactor with ContractStore for re-drawing of chart markers and barriers
         // Toast messages are temporary UI for prompting user of sold contracts
-        if (response.error) {
-            // If unable to sell due to error, give error via toast message
+        if (response.error && !is_contract_mode) {
+            // If unable to sell due to error, give error via toast message if not in contract mode
             this.root_store.ui.addToastMessage({
                 message: response.error.message,
                 type   : 'error',
             });
         } else {
             WS.forget('proposal_open_contract', this.updateSoldContract, { contract_id: response.sell.contract_id });
-            WS.proposalOpenContract(response.sell.contract_id).then(action((proposal_response) => {
-                this.updateSoldContract(proposal_response);
-            }));
+            // Check if still in contract_mode
+            if (is_contract_mode) {
+                WS.proposalOpenContract(response.sell.contract_id).then(action((proposal_response) => {
+                    // update contract store proposal after sell
+                    this.root_store.modules.contract.updateProposal(proposal_response);
+                }));
+                // update contract store sell info after sell
+                this.root_store.modules.contract.sell_info = {
+                    sell_price    : response.sell.sold_for,
+                    transaction_id: response.sell.transaction_id,
+                };
+            // If not in contract_mode, show only toast message for error and sale
+            } else {
+                WS.proposalOpenContract(response.sell.contract_id).then(action((proposal_response) => {
+                    this.updateSoldContract(proposal_response);
+                    // update contract store proposal after sell
+                }));
+            }
         }
     }
 
@@ -138,13 +162,13 @@ export default class PortfolioStore extends BaseStore {
 
     @action.bound
     pushNewPosition(new_pos) {
-        this.data.unshift(formatPortfolioPosition(new_pos));
+        this.positions.unshift(formatPortfolioPosition(new_pos));
     }
 
     @action.bound
     removePositionById(contract_id) {
-        const i = this.data.findIndex(pos => +pos.id === +contract_id);
-        this.data.splice(i, 1);
+        const i = this.positions.findIndex(pos => +pos.id === +contract_id);
+        this.positions.splice(i, 1);
     }
 
     @action.bound
@@ -152,16 +176,14 @@ export default class PortfolioStore extends BaseStore {
         return new Promise((resolve) => {
             this.clearTable();
             WS.forgetAll('proposal_open_contract', 'transaction');
-            if (this.data.length === 0) {
-                resolve(this.initializePortfolio());
-            }
+            resolve(this.initializePortfolio());
         });
     }
 
     @action.bound
     onMount() {
         this.onSwitchAccount(this.accountSwitcherListener);
-        if (this.data.length === 0) {
+        if (this.positions.length === 0) {
             this.initializePortfolio();
         }
     }
@@ -182,7 +204,7 @@ export default class PortfolioStore extends BaseStore {
         let payout     = 0;
         let purchase   = 0;
 
-        this.data.forEach((portfolio_pos) => {
+        this.positions.forEach((portfolio_pos) => {
             indicative += (+portfolio_pos.indicative);
             payout     += (+portfolio_pos.payout);
             purchase   += (+portfolio_pos.purchase);
@@ -196,10 +218,7 @@ export default class PortfolioStore extends BaseStore {
 
     @computed
     get active_positions() {
-        return this.data.filter((portfolio_pos) => {
-            const server_epoch = this.root_store.common.server_time.unix();
-            return portfolio_pos.expiry_time > server_epoch;
-        });
+        return this.positions;
     }
 
     @computed

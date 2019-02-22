@@ -6,12 +6,13 @@ import RemainingTime         from '../../../../Containers/remaining-time.jsx';
 
 const ProgressSlider = ({
     className,
+    has_result,
     ticks_count,
     current_tick,
     percentage,
     remaining_time,
 }) => {
-    if (!percentage && !ticks_count) return null;
+    if (!percentage && !ticks_count || has_result) return <div className='progress-slider--completed' />;
     return (
         <div className={classNames('progress-slider', className)}>
             {(ticks_count < 5) ?
@@ -45,6 +46,7 @@ const ProgressSlider = ({
 ProgressSlider.propTypes = {
     className     : PropTypes.string,
     current_tick  : PropTypes.number,
+    has_result    : PropTypes.bool,
     percentage    : PropTypes.number,
     remaining_time: PropTypes.oneOfType([
         PropTypes.number,

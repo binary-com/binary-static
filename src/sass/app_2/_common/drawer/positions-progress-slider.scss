@@ -76,6 +76,9 @@
             background: $COLOR_RED !important;
         }
     }
+    &--completed {
+        margin: 8px 0;
+    }
 }
 
 .theme--dark {
