@@ -1,7 +1,7 @@
 import PropTypes        from 'prop-types';
 import React            from 'react';
 import { localize }     from '_common/localize';
-import { fillTemplate } from 'Utils/Language/fill_template';
+import { fillTemplate } from 'Utils/Language/fill-template';
 
 const Localize = ({ str, replacers }) => {
     const localized = localize(str /* localize-ignore */); // should be localized on the caller side

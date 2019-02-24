@@ -10,7 +10,7 @@ import {
     MenuLinks,
     ToggleMenuDrawer,
     UpgradeButton }    from 'App/Components/Layout/Header';
-import header_links    from 'App/Constants/header_links';
+import header_links    from 'App/Constants/header-links';
 import { connect }     from 'Stores/connect';
 
 const Header = ({
@@ -50,9 +50,10 @@ const Header = ({
                     <MenuLinks items={header_links} />
                 </div>
                 <div className='menu-right'>
-                    <div className='acc-balance-container'>
+                    <div className='acc-info__container'>
                         { is_install_button_visible && is_logged_in &&
                             <InstallPWAButton
+                                className='acc-info__button'
                                 prompt_event={pwa_prompt_event}
                                 onClick={hideInstallButton}
                             />
@@ -70,14 +71,14 @@ const Header = ({
                                     toggleDialog={toggleAccountsDialog}
                                 />
                                 { !!(can_upgrade_to && is_virtual) &&
-                                <UpgradeButton />
+                                <UpgradeButton className='acc-info__button' />
                                 }
                                 { !(is_virtual) &&
-                                <DepositButton />
+                                <DepositButton className='acc-info__button' />
                                 }
                             </React.Fragment>
                             :
-                            <LoginButton />
+                            <LoginButton className='acc-info__button' />
                         }
                     </div>
                 </div>

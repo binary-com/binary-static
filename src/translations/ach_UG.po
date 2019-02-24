@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-02-13 07:01\n"
+"PO-Revision-Date: 2019-02-20 14:17\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Acholi\n"
 "MIME-Version: 1.0\n"
@@ -1284,6 +1284,9 @@ msgstr "crwdns37781:0crwdne37781:0"
 msgid "Apply now"
 msgstr "crwdns52508:0crwdne52508:0"
 
+msgid "Apply now as a professional investor"
+msgstr "crwdns52952:0crwdne52952:0"
+
 msgid "Apply to become a %1 <a href=\"%2\">payment agent</a>."
 msgstr "crwdns37783:0%1crwdnd37783:0%2crwdne37783:0"
 
@@ -1857,6 +1860,9 @@ msgstr "crwdns37900:0crwdne37900:0"
 msgid "Binary Bot released"
 msgstr "crwdns37901:0crwdne37901:0"
 
+msgid "Binary Coin"
+msgstr "crwdns52940:0crwdne52940:0"
+
 msgid "Binary Group (hereinafter referred to as 'Binary Group of companies', 'the Company') is commited to protecting the privacy and security of the applicant's personal information. This privacy notice sets out the types of data that the Company collects on the applicant. It also sets out how the Company collect and use the applicant' personal data, and how long it keeps them and other relevant information about the applicant's data in accordance with the General Data Protection Regulation (EU) 2016/679 (hereafter referred to as 'GDPR') and Data Protection Act 2018."
 msgstr "crwdns51126:0crwdne51126:0"
 
@@ -2058,8 +2064,8 @@ msgstr "crwdns37959:0crwdne37959:0"
 msgid "By clicking buy or sell, your order will be filled at the best possible price with either one of our liquidity providers or on our own books (according to the best streaming price at the time of your order placement);"
 msgstr "crwdns46029:0crwdne46029:0"
 
-msgid "By default, all clients are treated as retail but anyone can request to be treated as professional."
-msgstr "crwdns52500:0crwdne52500:0"
+msgid "By default, all %1 clients are retail clients but anyone can request to be treated as a professional client."
+msgstr "crwdns52942:0%1crwdne52942:0"
 
 msgid "By default, the intelligent order routing system ensures that the top of the book is always comprised of the best bid and offer rates quoted by the competing liquidity providers. However, during times of market illiquidity, this may change with likelihood of execution being the primary execution factor."
 msgstr "crwdns37960:0crwdne37960:0"
@@ -3434,6 +3440,9 @@ msgstr "crwdns52526:0crwdne52526:0"
 
 msgid "Download your statement"
 msgstr "crwdns51372:0crwdne51372:0"
+
+msgid "Downs"
+msgstr "crwdns52964:0crwdne52964:0"
 
 msgid "Drive rapid growth and business development to support the company's sales and marketing objectives"
 msgstr "crwdns51926:0crwdne51926:0"
@@ -4887,6 +4896,9 @@ msgstr "crwdns43560:0crwdne43560:0"
 msgid "I understand the risks involved and agree to the %1Terms & Conditions of the MAM facility%2"
 msgstr "crwdns44668:0%1crwdnd44668:0%2crwdne44668:0"
 
+msgid "I want to reapply"
+msgstr "crwdns52954:0crwdne52954:0"
+
 msgid "I would like to be treated as a professional client."
 msgstr "crwdns52502:0crwdne52502:0"
 
@@ -5181,11 +5193,17 @@ msgstr "crwdns38704:0crwdne38704:0"
 msgid "If you select \"rises\", you win the payout if the market price is higher than the entry spot."
 msgstr "crwdns38705:0crwdne38705:0"
 
+msgid "If you select %1\"Downs\"%2, you win the payout if consecutive ticks fall successively after the %1entry spot%2.%3No payout if any tick rises or is equal to any of the previous ticks."
+msgstr "crwdns52966:0%1crwdnd52966:0%2crwdnd52966:0%1ecrwdnd52966:0%2crwdnd52966:0%3crwdne52966:0"
+
 msgid "If you select %1\"High Tick\"%2, you win the payout if the selected tick is the %1highest among the next five ticks%2."
 msgstr "crwdns45856:0%1crwdnd45856:0%2crwdnd45856:0%1hicrwdnd45856:0%2crwdne45856:0"
 
 msgid "If you select %1\"Low Tick\"%2, you win the payout if the selected tick is the %1lowest among the next five ticks%2."
 msgstr "crwdns45857:0%1crwdnd45857:0%2crwdnd45857:0%1locrwdnd45857:0%2crwdne45857:0"
+
+msgid "If you select %1\"Ups\"%2, you win the payout if consecutive ticks rise successively after the %1entry spot%2.%3No payout if any tick falls or is equal to any of the previous ticks."
+msgstr "crwdns52968:0%1crwdnd52968:0%2crwdnd52968:0%1ecrwdnd52968:0%2crwdnd52968:0%3crwdne52968:0"
 
 msgid "If you select a <strong>start time</strong> in the future, the <strong>start time</strong> is that which is selected and the <strong>entry spot</strong> is the price in effect at that time."
 msgstr "crwdns38706:0crwdne38706:0"
@@ -5873,6 +5891,9 @@ msgstr "crwdns39043:0crwdne39043:0"
 
 msgid "Learn more about submitting essential documents with our handy infographic:"
 msgstr "crwdns51286:0crwdne51286:0"
+
+msgid "Learn more."
+msgstr "crwdns52944:0crwdne52944:0"
 
 msgid "Learn the basic concepts of trading Meta assets on MetaTrader 5."
 msgstr "crwdns42224:0crwdne42224:0"
@@ -6638,6 +6659,9 @@ msgstr "crwdns50912:0crwdne50912:0"
 
 msgid "More benefits"
 msgstr "crwdns39216:0crwdne39216:0"
+
+msgid "More information can be found in an email sent to you."
+msgstr "crwdns52956:0crwdne52956:0"
 
 msgid "More specifically, when the Company enters into a binary option trade with the client (each, a \"Contract\"), the Company has a duty to provide the client with 'best execution'. Best execution means that the Company must take reasonable steps to obtain the best possible result for the client when executing a client order. This document provides a summary of the Company's best execution policy."
 msgstr "crwdns51516:0crwdne51516:0"
@@ -7596,6 +7620,9 @@ msgstr "crwdns46461:0crwdne46461:0"
 msgid "Please check your email for the verification link to complete the process."
 msgstr "crwdns39470:0crwdne39470:0"
 
+msgid "Please check your inbox for details."
+msgstr "crwdns52946:0crwdne52946:0"
+
 msgid "Please choose a currency"
 msgstr "crwdns39471:0crwdne39471:0"
 
@@ -7647,8 +7674,8 @@ msgstr "crwdns39484:0crwdne39484:0"
 msgid "Please make sure that you first agree with the Agent on the terms of payment before submitting your request."
 msgstr "crwdns39485:0crwdne39485:0"
 
-msgid "Please note that Asians, Digits, Reset Call/Reset Put and High Ticks/Low Ticks are available exclusively with our Volatility Indices."
-msgstr "crwdns52672:0crwdne52672:0"
+msgid "Please note that Asians, Digits, Reset Call/Reset Put, High Ticks/Low Ticks, and Run Ups/Run Downs are available exclusively with our Volatility Indices."
+msgstr "crwdns52970:0crwdne52970:0"
 
 msgid "Please note that actual trading results may not correspond to optimized or back-tested results."
 msgstr "crwdns46081:0crwdne46081:0"
@@ -7676,6 +7703,9 @@ msgstr "crwdns39490:0crwdne39490:0"
 
 msgid "Please read this %1privacy policy%2 before submitting your application."
 msgstr "crwdns51152:0%1pcrwdnd51152:0%2crwdne51152:0"
+
+msgid "Please reapply once the required criteria has been fulfilled."
+msgstr "crwdns52958:0crwdne52958:0"
 
 msgid "Please refer to the %1asset index%2 for each asset’s minimum and maximum contract durations based on trade type."
 msgstr "crwdns51388:0%1acrwdnd51388:0%2crwdne51388:0"
@@ -8510,6 +8540,15 @@ msgstr "crwdns46089:0crwdne46089:0"
 
 msgid "Rolling Spot Forex;"
 msgstr "crwdns46090:0crwdne46090:0"
+
+msgid "Run"
+msgstr "crwdns52972:0crwdne52972:0"
+
+msgid "Run Downs"
+msgstr "crwdns52974:0crwdne52974:0"
+
+msgid "Run Ups"
+msgstr "crwdns52976:0crwdne52976:0"
 
 msgid "Russia"
 msgstr "crwdns39701:0crwdne39701:0"
@@ -9393,6 +9432,12 @@ msgstr "crwdns43518:0%1ccrwdnd43518:0%2crwdnd43518:0%1fcrwdnd43518:0%2crwdnd4351
 msgid "The %1end time%2 is the selected number of minutes/hours after the %1start time%2."
 msgstr "crwdns43519:0%1ecrwdnd43519:0%2crwdnd43519:0%1scrwdnd43519:0%2crwdne43519:0"
 
+msgid "The %1entry spot%2 is the next tick after the %1start time%2."
+msgstr "crwdns52978:0%1ecrwdnd52978:0%2crwdnd52978:0%1scrwdnd52978:0%2crwdne52978:0"
+
+msgid "The %1exit spot%2 is the last tick when the contract ends. Contract ends when all ticks rise or fall successively, or when a single tick breaks the predicted pattern."
+msgstr "crwdns52980:0%1ecrwdnd52980:0%2crwdne52980:0"
+
 msgid "The %1high%2 is the highest point ever reached by the market during the contract period."
 msgstr "crwdns43520:0%1hicrwdnd43520:0%2crwdne43520:0"
 
@@ -9401,6 +9446,9 @@ msgstr "crwdns43521:0%1locrwdnd43521:0%2crwdne43521:0"
 
 msgid "The %1start time%2 begins when the contract is processed by our servers."
 msgstr "crwdns43522:0%1scrwdnd43522:0%2crwdne43522:0"
+
+msgid "The %1start time%2 is when the contract has been processed by our servers."
+msgstr "crwdns52982:0%1scrwdnd52982:0%2crwdne52982:0"
 
 msgid "The <strong>contract period</strong> is the period between the <strong>next tick</strong> after the <strong>start time</strong> and the <strong>end time</strong>."
 msgstr "crwdns39929:0crwdne39929:0"
@@ -10211,6 +10259,9 @@ msgstr "crwdns40112:0%1crwdne40112:0"
 
 msgid "There are two types of In/Out trades:"
 msgstr "crwdns40113:0crwdne40113:0"
+
+msgid "There are two types of Run trades:"
+msgstr "crwdns52984:0crwdne52984:0"
 
 msgid "There are two types of Up/Down trades:"
 msgstr "crwdns40114:0crwdne40114:0"
@@ -11175,6 +11226,9 @@ msgstr "crwdns44704:0crwdne44704:0"
 msgid "Upon the expiration or termination of this Agreement, for whatever reason, all rights and license granted to you in this Agreement, including use of the %1 API, shall immediately terminate. You agree to promptly cease all further use of the %1 API. Termination of this Agreement shall not act as a waiver of any breach of this Agreement and shall not act as a release of your liability for breach of its obligation under this Agreement. The Company shall not be liable to you for damages of any kind solely as a result of terminating this Agreement in accordance with its terms."
 msgstr "crwdns40344:0%1crwdnd40344:0%1crwdne40344:0"
 
+msgid "Ups"
+msgstr "crwdns52986:0crwdne52986:0"
+
 msgid "Usage Limit"
 msgstr "crwdns40345:0crwdne40345:0"
 
@@ -11730,9 +11784,6 @@ msgstr "crwdns44423:0%1crwdne44423:0"
 msgid "What is the definition of a referred client?"
 msgstr "crwdns43914:0crwdne43914:0"
 
-msgid "What is this?"
-msgstr "crwdns40492:0crwdne40492:0"
-
 msgid "What kind of reports can I generate?"
 msgstr "crwdns43915:0crwdne43915:0"
 
@@ -11981,6 +12032,12 @@ msgstr "crwdns45879:0crwdne45879:0"
 
 msgid "Win maximum payout if the exit spot is lower than or equal to the lower barrier."
 msgstr "crwdns45880:0crwdne45880:0"
+
+msgid "Win payout if consecutive ticks fall successively. Contract is lost when at least one tick rises or is equal to any of the previous ticks."
+msgstr "crwdns52988:0crwdne52988:0"
+
+msgid "Win payout if consecutive ticks rise successively. Contract is lost when at least one tick falls or is equal to any of the previous ticks."
+msgstr "crwdns52990:0crwdne52990:0"
 
 msgid "Win payout if exit spot is also equal to entry spot."
 msgstr "crwdns52584:0crwdne52584:0"
@@ -12717,6 +12774,9 @@ msgstr "crwdns40732:0%1crwdne40732:0"
 msgid "Your account is restricted. Kindly %1contact customer support%2 for assistance."
 msgstr "crwdns40733:0%1ccrwdnd40733:0%2crwdne40733:0"
 
+msgid "Your account remains under the retail client category."
+msgstr "crwdns52960:0crwdne52960:0"
+
 msgid "Your account security is of paramount importance to us. Please consider the following initiatives and tools to enhance your account security:"
 msgstr "crwdns51096:0crwdne51096:0"
 
@@ -12795,11 +12855,14 @@ msgstr "crwdns40751:0crwdne40751:0"
 msgid "Your personal information is used primarily as a way of validating you as the legitimate account owner and proper recipient of withdrawal payments. We also use this information to process your trades. We collect from you all personal and financial data directly relating to you when you fill in our account opening form. In all instances, you have either a legal or a contractual obligation to provide us with the information. If such information is not provided, we will be unable to provide you with our services."
 msgstr "crwdns44839:0crwdne44839:0"
 
+msgid "Your professional client request is %1not approved%2."
+msgstr "crwdns52962:0%1ncrwdnd52962:0%2crwdne52962:0"
+
 msgid "Your profit or loss is calculated as follows:"
 msgstr "crwdns42550:0crwdne42550:0"
 
-msgid "Your request to be treated as a professional client has been rejected. Please check your inbox for more details. Your account remains categorised as a retail client account."
-msgstr "crwdns52676:0crwdne52676:0"
+msgid "Your request to be treated as a professional client is %1not approved%2."
+msgstr "crwdns52950:0%1ncrwdnd52950:0%2crwdne52950:0"
 
 msgid "Your request to transfer %1 %2 from %3 to %4 has been successfully processed."
 msgstr "crwdns40753:0%1crwdnd40753:0%2crwdnd40753:0%3crwdnd40753:0%4crwdne40753:0"
