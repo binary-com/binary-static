@@ -40,12 +40,12 @@ const PersonalDetails = () => (
 
         <form className='form gr-padding-10 invisible' id='frmPersonalDetails'>
             <Fieldset legend={it.L('Details')}>
-                <Salutation className='invisible' />
-                <FirstName className='invisible' />
-                <LastName className='invisible' />
+                <Salutation row_class='invisible'  row_id='row_salutation' />
+                <FirstName row_class='invisible' row_id='row_first_name' />
+                <LastName row_class='invisible' row_id='row_last_name' />
                 <FormRow type='label'  label={it.L('Name')} is_bold id='name' row_class='invisible RealAcc' row_id='row_name' />
                 <FormRow type='label'  label={it.L('Date of birth')} is_bold id='lbl_date_of_birth' row_id='row_lbl_date_of_birth' row_class='invisible RealAcc' />
-                <DateOfBirth className='invisible' />
+                <DateOfBirth className='RealAcc' row_class='invisible' row_id='row_date_of_birth' />
                 <FormRow type='label'  label={it.L('Citizenship')} id='lbl_citizen' row_id='row_lbl_citizen' row_class='invisible' />
                 <FormRow type='select' label={it.L('Citizenship')} id='citizen' row_id='row_citizen' row_class='invisible' attributes={{ single: 'single' }} />
                 <FormRow type='label'  label={it.L('Place of birth')} id='lbl_place_of_birth' row_id='row_lbl_place_of_birth' row_class='invisible' />
