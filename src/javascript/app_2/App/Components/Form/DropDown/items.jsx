@@ -5,18 +5,16 @@ import Tooltip    from 'App/Components/Elements/tooltip.jsx';
 
 const Items = ({
     has_symbol,
+    handleSelect,
     items,
     name,
     value,
-    handleSelect,
-    highlightedIdx,
 }) => (
     items.map((item, idx) => (
         <React.Fragment key={idx}>
             <div
                 className={classNames('list__item', {
-                    'list__item--selected'   : value === item.value,
-                    'list__item--highlighted': highlightedIdx === idx,
+                    'list__item--selected': value === item.value,
                 })}
                 key={idx}
                 name={name}
@@ -40,7 +38,6 @@ const Items = ({
 Items.propTypes = {
     handleSelect  : PropTypes.func,
     has_symbol    : PropTypes.bool,
-    highlightedIdx: PropTypes.number,
     name          : PropTypes.string,
     value         : PropTypes.oneOfType([
         PropTypes.number,
