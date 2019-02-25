@@ -109,6 +109,13 @@ const getDays = ({
                         message={message}
                     />
                 }
+                { !is_disabled &&
+                    <Tooltip
+                        alignment='top'
+                        className='calendar__cell-hint'
+                        message={'1 Day'}
+                    />
+                }
                 {moment_date.date()}
             </span>
         );

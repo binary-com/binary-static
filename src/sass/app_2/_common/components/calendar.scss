@@ -130,7 +130,7 @@
 
         &:hover {
             cursor: pointer;
-            background: $COLOR_LIGHT_BLACK_4;
+            background: $COLOR_DARK_BLUE_4;
         }
         &--bold {
             @include typeface(--paragraph-left-bold-black);
@@ -150,6 +150,16 @@
             &:hover {
                 background: $COLOR_DARK_BLUE_5 !important;
             }
+            &:before {
+                position: absolute;
+                content: '';
+                width: 100%;
+                left: 50%;
+                z-index: -2;
+                height: 100%;
+                padding-right: 10px;
+                background: $COLOR_DARK_BLUE_5 !important;
+            }
         }
         &--active {
             color: $COLOR_WHITE;
@@ -161,10 +171,12 @@
             }
         }
         &--between {
-            background: $COLOR_DARK_BLUE_4;
+            background: $COLOR_DARK_BLUE_5;
+            font-weight: bold;
+            color: $COLOR_WHITE !important;
 
             &:hover {
-                background: $COLOR_DARK_BLUE_4 !important;
+                background: $COLOR_DARK_BLUE_5 !important;
             }
             &:before {
                 position: absolute;
@@ -173,7 +185,7 @@
                 z-index: -2;
                 height: 100%;
                 padding-left: 28px;
-                background: $COLOR_DARK_BLUE_4 !important;
+                background: $COLOR_DARK_BLUE_5 !important;
             }
         }
         &-tooltip {
