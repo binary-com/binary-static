@@ -227,6 +227,9 @@ const PersonalDetails = (() => {
             $('#residence').replaceWith($('<label/>').append($('<strong/>', { id: 'country' })));
             $('#country').text(get_settings.country);
         }
+        if (is_virtual) {
+            CommonFunctions.getElementById('row_date_of_birth').setVisibility(0);
+        }
     };
 
     const additionalCheck = (data) => {
@@ -481,6 +484,9 @@ const PersonalDetails = (() => {
             } else if (is_fully_authenticated) {
                 displayResidenceList();
                 name_fields.forEach(field => CommonFunctions.getElementById(`row_${field}`).classList.add('invisible'));
+            } else {
+                displayResidenceList();
+                // getDetailsResponse(get_settings_data);
             }
         });
     };
