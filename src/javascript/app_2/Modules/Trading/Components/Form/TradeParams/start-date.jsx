@@ -49,9 +49,9 @@ const StartDate = ({
                 <TimePicker
                     onChange={onChange}
                     name='start_time'
-                    value={start_time}
+                    selected_time={start_time}
                     placeholder='12:00'
-                    start_time={start_date}
+                    boundary_start={start_date}
                     is_clearable={false}
                     is_nativepicker={is_nativepicker}
                     validation_errors={validation_errors.start_time}

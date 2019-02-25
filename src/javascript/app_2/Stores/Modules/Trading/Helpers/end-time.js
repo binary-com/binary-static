@@ -18,10 +18,10 @@ export const getBoundaries = (
     market_close_time,
 ) => {
     const boundaries = {
-        min: server_time.isBefore(market_open_time)
+        start: server_time.isBefore(market_open_time)
             ? market_open_time
-            : server_time,
-        max: market_close_time,
+            : server_time.add(5, 'minute'),
+        end: market_close_time,
     };
     return boundaries;
 };

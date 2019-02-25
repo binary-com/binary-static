@@ -47,25 +47,28 @@ const TradingTimePicker = ({
             market_next_day_close)
         : market_next_day_close.clone();
     */
-    const expiry_datetime = setTime(toMoment(expiry_date), expiry_time);
+    const moment_expiry_date = toMoment(expiry_date);
+    const market_open_datetime  = setTime(moment_expiry_date.clone(), market_open_times[0]);
+    const market_close_datetime = setTime(moment_expiry_date.clone(), market_close_times.slice(-1)[0]);
+    const expiry_datetime = setTime(moment_expiry_date.clone(), expiry_time);
     const server_datetime = toMoment(server_time);
-    const market_open_datetime  = setTime(toMoment(expiry_date), market_open_times[0]);
-    const market_close_datetime = setTime(toMoment(expiry_date), market_close_times.slice(-1)[0]);
+    
     const boundaries = getBoundaries(
-        server_datetime,
-        market_open_datetime,
+        server_datetime.clone(),
+        market_open_datetime.clone(),
         market_close_datetime);
-
-    // Calculate valid value to be highlighted.
-    const selected_time = getSelectedTime(server_datetime, expiry_datetime, market_open_datetime);
+    const selected_time = getSelectedTime(
+        server_datetime.clone(),
+        expiry_datetime,
+        market_open_datetime);
     return (
         <TimePicker
-            end_time={boundaries.max}
+            boundary_end={boundaries.end}
             onChange={onChange}
             name='expiry_time'
             placeholder='12:00'
-            start_time={boundaries.min}
-            value={selected_time}
+            boundary_start={boundaries.start}
+            selected_time={selected_time}
         />
     );
 };

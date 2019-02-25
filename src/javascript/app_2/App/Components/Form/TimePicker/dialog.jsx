@@ -6,16 +6,20 @@ import { toMoment } from 'Utils/Date';
 
 const Dialog = ({
     preClass,
-    value,
-    start_time,
-    end_time,
+    selected_time,
+    boundary_end,
+    boundary_start,
     onChange,
     className,
 }) => {
-    const start_time_moment     = start_time ? toMoment(start_time) : toMoment();
-    const end_time_moment       = end_time ? toMoment(end_time) : toMoment().hour('23').minute('59').seconds('59').milliseconds('999');
+    const start_time_moment     = boundary_start
+        ? toMoment(boundary_start)
+        : toMoment();
+    const end_time_moment       = boundary_end
+        ? toMoment(boundary_end)
+        : toMoment().hour('23').minute('59').seconds('59').milliseconds('999');
     const to_compare_moment     = toMoment();
-    const [ hour, minute ]      = value.split(':');
+    const [ hour, minute ]      = selected_time.split(':');
     const hours    = [...Array(24).keys()].map((a)=>`0${a}`.slice(-2));
     const minutes  = [...Array(12).keys()].map((a)=>`0${a * 5}`.slice(-2));
 
@@ -43,7 +47,7 @@ const Dialog = ({
                                         { 'selected': (hour === h) },
                                         { 'disabled': !is_enabled })}
                                     key={key}
-                                    onClick={() => { selectOption('h', h, value, is_enabled); }}
+                                    onClick={() => { selectOption('h', h, selected_time, is_enabled); }}
                                 >
                                     {h}
                                 </div>
@@ -63,7 +67,7 @@ const Dialog = ({
                                         { 'selected': (minute === mm) },
                                         { 'disabled': !is_enabled })}
                                     key={key}
-                                    onClick={() => { selectOption('m', mm, value, is_enabled); }}
+                                    onClick={() => { selectOption('m', mm, selected_time, is_enabled); }}
                                 >
                                     {mm}
                                 </div>
@@ -77,20 +81,20 @@ const Dialog = ({
 };
 
 Dialog.propTypes = {
-    className: PropTypes.string,
-    end_time : PropTypes.oneOfType([
+    boundary_end: PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
         PropTypes.object,
     ]),
-    onChange  : PropTypes.func,
-    preClass  : PropTypes.string,
-    start_time: PropTypes.oneOfType([
+    boundary_start: PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
         PropTypes.object,
     ]),
-    value: PropTypes.oneOfType([
+    className    : PropTypes.string,
+    onChange     : PropTypes.func,
+    preClass     : PropTypes.string,
+    selected_time: PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
         PropTypes.object,

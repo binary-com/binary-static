@@ -24,9 +24,9 @@ class TimePicker extends React.Component {
 
     handleChange = (arg) => {
         // To handle nativepicker;
-        const value = typeof arg === 'object' ? arg.target.value : arg;
+        const value = typeof arg === 'object' ? arg.target.selected_time : arg;
 
-        if (value !== this.props.value) {
+        if (value !== this.props.selected_time) {
             this.props.onChange({ target: { name: this.props.name, value } });
         }
     };
@@ -51,12 +51,12 @@ class TimePicker extends React.Component {
     render() {
         const prefix_class = 'time-picker';
         const {
-            value,
+            selected_time,
             name,
             is_nativepicker,
             placeholder,
-            start_time,
-            end_time,
+            boundary_end,
+            boundary_start,
             validation_errors,
         } = this.props;
         return (
@@ -70,11 +70,11 @@ class TimePicker extends React.Component {
                         ? <input
                             type='time'
                             id={`${prefix_class}-input`}
-                            value={value}
+                            value={selected_time}
                             onChange={this.handleChange}
                             name={name}
-                            min={start_time}
-                            max={end_time}
+                            min={boundary_start}
+                            max={boundary_end}
                         />
                         : (
                             <React.Fragment>
@@ -85,7 +85,7 @@ class TimePicker extends React.Component {
                                     is_read_only
                                     id={`${prefix_class}-input`}
                                     className={classNames(`${prefix_class}-input`)}
-                                    value={value}
+                                    value={selected_time}
                                     onClick={this.toggleDropDown}
                                     name={name}
                                     placeholder={placeholder}
@@ -101,12 +101,12 @@ class TimePicker extends React.Component {
                                     unmountOnExit
                                 >
                                     <Dialog
+                                        boundary_end={boundary_end}
+                                        boundary_start={boundary_start}
                                         className={'from-left'}
                                         onChange={this.handleChange}
                                         preClass={prefix_class}
-                                        start_time={start_time}
-                                        end_time={end_time}
-                                        value={value}
+                                        selected_time={selected_time}
                                     />
                                 </CSSTransition>
                             </React.Fragment>
@@ -118,7 +118,12 @@ class TimePicker extends React.Component {
 }
 
 TimePicker.propTypes = {
-    end_time: PropTypes.oneOfType([
+    boundary_end: PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
+        PropTypes.object,
+    ]),
+    boundary_start: PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
         PropTypes.object,
@@ -129,12 +134,7 @@ TimePicker.propTypes = {
     onChange       : PropTypes.func,
     padding        : PropTypes.string,
     placeholder    : PropTypes.string,
-    start_time     : PropTypes.oneOfType([
-        PropTypes.number,
-        PropTypes.string,
-        PropTypes.object,
-    ]),
-    value: PropTypes.string,
+    selected_time  : PropTypes.string,
 };
 
 export default observer(TimePicker);
