@@ -68,7 +68,7 @@ class DatePicker extends React.Component {
         this.setState({ is_clear_btn_visible: false });
     }
 
-    onSelectCalendar = (selected_date, is_datepicker_visible) => {
+    onSelectCalendar = (selected_date, is_datepicker_visible = true) => {
         let value = selected_date;
         if (!isDateValid(value)) { value = ''; }
 
