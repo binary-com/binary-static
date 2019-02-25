@@ -4,8 +4,8 @@ import React      from 'react';
 import Tooltip    from 'App/Components/Elements/tooltip.jsx';
 
 const Items = ({
-    has_symbol,
     handleSelect,
+    has_symbol,
     items,
     name,
     value,
@@ -36,10 +36,10 @@ const Items = ({
 );
 
 Items.propTypes = {
-    handleSelect  : PropTypes.func,
-    has_symbol    : PropTypes.bool,
-    name          : PropTypes.string,
-    value         : PropTypes.oneOfType([
+    handleSelect: PropTypes.func,
+    has_symbol  : PropTypes.bool,
+    name        : PropTypes.string,
+    value       : PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
     ]),
