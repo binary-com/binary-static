@@ -5,27 +5,23 @@ export const getSelectedTime = (
 ) => {
     const value = selected_time.isBefore(market_open_time)
         ? market_open_time.isBefore(server_time)
-            ? server_time
-            : market_open_time
+            ? server_time.add(5, 'minute')
+            : market_open_time.add(5, 'minute')
         : selected_time;
 
     return value.format('HH:mm');
 };
 
 export const getBoundaries = (
-    selected_time,
     server_time,
     market_open_time,
     market_close_time,
 ) => {
     const boundaries = {
-        start: selected_time.isBefore(market_open_time)
-            ? market_open_time.isBefore(server_time)
-                ? server_time
-                : market_open_time
-            : selected_time,
-        end: market_close_time,
+        min: server_time.isBefore(market_open_time)
+            ? market_open_time
+            : server_time,
+        max: market_close_time,
     };
-
     return boundaries;
 };
