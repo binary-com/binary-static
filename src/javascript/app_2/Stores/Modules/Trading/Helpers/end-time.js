@@ -19,7 +19,7 @@ export const getBoundaries = (
 ) => {
     const boundaries = {
         start: server_time.isBefore(market_open_time)
-            ? market_open_time
+            ? market_open_time.add(5, 'minute')
             : server_time.add(5, 'minute'),
         end: market_close_time,
     };
