@@ -56,7 +56,7 @@ class AccountSwitcher extends React.Component {
             <div className='acc-switcher__list' ref={this.setWrapperRef}>
                 {
                     // Make sure this block is not rendered if there are no real accounts
-                    !!(this.props.account_list.length > 0 && real_accounts.length > 0) &&
+                    !!(this.props.account_list.length && real_accounts.length) &&
                     <div className='acc-switcher__list-group'>
                         <span className='acc-switcher__list-title'>
                             {main_account_title}
