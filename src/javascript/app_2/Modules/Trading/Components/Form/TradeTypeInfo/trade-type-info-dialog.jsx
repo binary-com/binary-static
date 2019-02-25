@@ -21,13 +21,17 @@ const TradeTypeInfoDialog = ({
         </FullScreenDialog>
         :
         <CSSTransition
-            classNames='trade-type-info-popup'
+            classNames={{
+                enter    : 'trade-type-info-dialog--enter',
+                enterDone: 'trade-type-info-dialog--enterDone',
+                exit     : 'trade-type-info-dialog--exit',
+            }}
             in={open}
             timeout={100}
             unmountOnExit
         >
-            <div className='trade-type-info-popup'>
-                <div className='trade-type-info'>
+            <div className='trade-type-info-dialog'>
+                <div className='trade-type-info-dialog__info-wrapper'>
                     {children}
                 </div>
             </div>

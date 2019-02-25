@@ -11,7 +11,7 @@ const ContractTypeDialog = ({
 }) => (
     is_mobile ?
         <React.Fragment>
-            <span className='select-arrow' />
+            <span className='contract-type-widget__select-arrow' />
             <FullScreenDialog
                 title='Select Trading Type'
                 visible={open}
@@ -24,11 +24,15 @@ const ContractTypeDialog = ({
         <CSSTransition
             in={open}
             timeout={100}
-            classNames='contracts-popup-list'
+            classNames={{
+                enter    : 'contracts-type-dialog--enter',
+                enterDone: 'contracts-type-dialog--enterDone',
+                exit     : 'contracts-type-dialog--exit',
+            }}
             unmountOnExit
         >
-            <div className='contracts-popup-list'>
-                <div className='list-container'>
+            <div className='contracts-type-dialog'>
+                <div className='contracts-type-dialog__list-wrapper'>
                     {children}
                 </div>
             </div>
