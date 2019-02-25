@@ -21,6 +21,7 @@ $TOAST_BORDER_COLOR_INFO      : rgb(33, 150, 243); // #2196F3
 $TOAST_BORDER_COLOR_SUCCESS   : rgb(76, 175, 80);  // #4CAF50
 $TOAST_BORDER_COLOR_WARNING   : rgb(255, 193, 7);  // #FFC107
 
+/** @define toast; */
 .toast {
     z-index: 9999;
     position: absolute;

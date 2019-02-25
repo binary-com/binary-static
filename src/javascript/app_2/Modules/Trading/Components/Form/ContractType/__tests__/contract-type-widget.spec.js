@@ -28,10 +28,10 @@ describe('ContractTypeWidget', () => {
     it('should toggle is_dialog_open in state and set is_info_dialog_open to false onWidgetClick', () => {
         const wrapper = shallow(<ContractTypeWidget list={list} />);
         wrapper.setState({ is_dialog_open: false });
-        wrapper.find('.contracts-popup-display').simulate('click');
+        wrapper.find('.contract-type-widget__display').simulate('click');
         expect(wrapper.state('is_dialog_open')).to.be.true;
         expect(wrapper.state('is_info_dialog_open')).to.be.false;
-        wrapper.find('.contracts-popup-display').simulate('click');
+        wrapper.find('.contract-type-widget__display').simulate('click');
         expect(wrapper.state('is_dialog_open')).to.be.false;
         expect(wrapper.state('is_info_dialog_open')).to.be.false;
     });
@@ -115,22 +115,6 @@ describe('ContractTypeWidget', () => {
         const wrapper = shallow(<ContractTypeWidget list={list} value='rise_fall' />);
         const instance = wrapper.instance();
         expect(instance.getDisplayText()).to.eql('Rise/Fall');
-    });
-    it('should return the correct classes in getStyles() when is_mobile is true and is_dialog_open is false in state', () => {
-        const wrapper = shallow(<ContractTypeWidget list={list} value='rise_fall' is_mobile={true} />);
-        const instance = wrapper.instance();
-        expect(instance.getStyles()).to.deep.eql(['contracts-popup-container', 'mobile-only']);
-    });
-    it('should return the correct classes in getStyles() when is_mobile is false and is_dialog_open is false in state', () => {
-        const wrapper = shallow(<ContractTypeWidget list={list} value='rise_fall' is_mobile={false} />);
-        const instance = wrapper.instance();
-        expect(instance.getStyles()).to.deep.eql(['contracts-popup-container', 'desktop-only']);
-    });
-    it('should return the correct classes in getStyles() when is_dialog_open is true', () => {
-        const wrapper = shallow(<ContractTypeWidget list={list} value='rise_fall' is_mobile={false} />);
-        wrapper.setState({ is_dialog_open : true });
-        const instance = wrapper.instance();
-        expect(instance.getStyles()).to.deep.eql(['contracts-popup-container', 'desktop-only', 'show']);
     });
     it('should return the correct classes in getStyles() when is_dialog_open is true', () => {
         const wrapper = shallow(<ContractTypeWidget list={list} value='rise_fall' />);
