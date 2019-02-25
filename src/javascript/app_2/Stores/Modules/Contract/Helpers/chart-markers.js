@@ -1,4 +1,5 @@
 import extend                  from 'extend';
+import { WS }                  from 'Services';
 import { MARKER_TYPES_CONFIG } from '../../SmartChart/Constants/markers';
 
 export const createChartMarkers = (SmartChartStore, contract_info, ContractStore = null) => {
@@ -11,8 +12,35 @@ export const createChartMarkers = (SmartChartStore, contract_info, ContractStore
                 SmartChartStore.createMarker(marker_config);
             }
         });
+        getTicksBetweenStartAndEnd(contract_info, ContractStore);
     }
 };
+
+const getTicksBetweenStartAndEnd = (function() {
+    let has_been_called = false;
+
+    return function ({ ...contract_info }, ContractStore) {
+        if (has_been_called) return;
+        has_been_called = true;
+
+        const ticks_history_req = {
+            ticks_history: contract_info.underlying,
+            start        : contract_info.entry_tick_time,
+            end          : 'latest',
+            count        : contract_info.tick_count,
+        };
+
+        if (ContractStore.end_spot_time) {
+            WS.sendRequest(ticks_history_req).then((data) => {
+                console.log('end spot ', data);
+            });
+        } else {
+            WS.subscribeTicksHistory({ ...ticks_history_req, subscribe: 1 }, (data) => {
+                console.log('createChartMarker: ', data);
+            });
+        }
+    };
+})();
 
 const marker_creators = {
     [MARKER_TYPES_CONFIG.LINE_END.type]     : createMarkerEndTime,
@@ -20,6 +48,7 @@ const marker_creators = {
     [MARKER_TYPES_CONFIG.LINE_START.type]   : createMarkerStartTime,
     [MARKER_TYPES_CONFIG.SPOT_ENTRY.type]   : createMarkerSpotEntry,
     [MARKER_TYPES_CONFIG.SPOT_EXIT.type]    : createMarkerSpotExit,
+    [MARKER_TYPES_CONFIG.SPOT_MIDDLE.type]  : createMarkerSpotMiddle,
 };
 
 // -------------------- Lines --------------------
@@ -60,7 +89,7 @@ function createMarkerSpotEntry(contract_info, ContractStore) {
         contract_info.entry_tick_time,
         contract_info.entry_tick,
         {
-            spot_value: `${contract_info.entry_tick}`,
+            // spot_value: `${contract_info.entry_tick}`,
         },
     );
 }
@@ -77,6 +106,10 @@ function createMarkerSpotExit(contract_info, ContractStore) {
             status    : `${contract_info.profit > 0 ? 'won' : 'lost' }`,
         },
     );
+}
+
+function createMarkerSpotMiddle(contract_info, ContractStore) {
+    // TODO: createMarkerConfig for middle spots
 }
 
 // -------------------- Helpers --------------------
