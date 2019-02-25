@@ -81,20 +81,20 @@ const Dialog = ({
 };
 
 Dialog.propTypes = {
-    end_time: PropTypes.oneOfType([
+    className: PropTypes.string,
+    end_time : PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
+        PropTypes.object,
+    ]),
+    onChange     : PropTypes.func,
+    preClass     : PropTypes.string,
+    selected_time: PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
         PropTypes.object,
     ]),
     start_time: PropTypes.oneOfType([
-        PropTypes.number,
-        PropTypes.string,
-        PropTypes.object,
-    ]),
-    className    : PropTypes.string,
-    onChange     : PropTypes.func,
-    preClass     : PropTypes.string,
-    selected_time: PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
         PropTypes.object,
