@@ -14,20 +14,8 @@ describe('TradeTypeInfoItem', () => {
         const wrapper = shallow(<TradeTypeInfoItem item={item} navigationList={navigationList} />);
         expect(wrapper).to.have.length(1);
     });
-    it('should have .info-header if is_mobile is false', () => {
-        const wrapper = shallow(<TradeTypeInfoItem item={item} navigationList={navigationList} is_mobile={false} />);
-        expect(wrapper.find('.info-header').exists()).to.be.true;
-    });
-    it('should have item\'s text as title if is_mobile is false', () => {
-        const wrapper = shallow(<TradeTypeInfoItem item={item} navigationList={navigationList} is_mobile={false} />);
-        expect(wrapper.find('.title').text()).to.be.eql('Higher/Lower');
-    });
-    it('should not have .info-header if is_mobile is true', () => {
-        const wrapper = shallow(<TradeTypeInfoItem item={item} navigationList={navigationList} is_mobile={true} />);
-        expect(wrapper.find('.info-header').exists()).to.be.false;
-    });
     it('should have 2 .circle-button (equal to navigationList\'s length)', () => {
         const wrapper = shallow(<TradeTypeInfoItem item={item} navigationList={navigationList} />);
-        expect(wrapper.find('.circle-button')).to.have.length(2);
+        expect(wrapper.find('.trade-type-info-navigation__circle-button')).to.have.length(2);
     });
 });
