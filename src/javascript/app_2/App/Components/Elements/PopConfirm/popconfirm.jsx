@@ -1,6 +1,6 @@
 import React                 from 'react';
 import PropTypes             from 'prop-types';
-import { PopConfirmElement } from './popconfirm_element.jsx';
+import { PopConfirmElement } from './popconfirm-element.jsx';
 
 class PopConfirm extends React.Component {
     state = {

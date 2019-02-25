@@ -1,0 +1,150 @@
+// Range Slider
+/** @define range-slider */
+.range-slider {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    padding: 0 4px;
+    box-sizing: border-box;
+
+    &__label {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 16px;
+        margin-bottom: 4px;
+    }
+    /* overriding firefox shadow pseudo element */
+    &__track[type=range]::-moz-focus-outer {
+        border: 0;
+    }
+    // TODO: remove once we have proper styling for input slider validation error
+    &__error {
+        .range-slider {
+            &__track[type=range] {
+                // Range Handle Thumb - Chrome / Webkit based browsers
+                &::-webkit-slider-thumb {
+                    background: $COLOR_RED;
+                }
+                // Range Handle Thumb - Firefox / Gecko based browsers
+                &::-moz-range-thumb {
+                    background: $COLOR_RED;
+                }
+            }
+            &__line {
+                background: $COLOR_RED !important;
+            }
+            &__ticks-step--marked {
+                background: $COLOR_RED !important;
+                border-color: $COLOR_RED !important;
+            }
+        }
+    }
+    &__track {
+        position: relative;
+        // removal of !important is pending refactor in main trading sass file that overrides rules for input els
+        appearance: none !important;
+        width: 100% !important;
+        height: 2px !important;
+        border-radius: 5px;
+        background: $COLOR_WHITE !important;
+        outline: none;
+        border: 0;
+        padding: 0;
+        margin: 0;
+        cursor: pointer;
+
+        // Range Handle Thumb - Chrome / Webkit based browsers
+        &::-webkit-slider-thumb {
+            @include thumbStyle();
+            background: $COLOR_LIGHT_GRAY_1;
+        }
+        // Range Handle Thumb - Firefox / Gecko based browsers
+        &::-moz-range-thumb {
+            @include thumbStyle();
+            background: $COLOR_LIGHT_GRAY_1;
+        }
+        // Range Handle Thumb - Microsoft Edge
+        &::-ms-thumb {
+            @include thumbStyle();
+            background: $COLOR_LIGHT_GRAY_1;
+        }
+        &:hover, &:focus, &:active {
+            border: 0;
+            outline: none;
+        }
+        // Browser active classes for slider thumb
+        &:active::-webkit-slider-thumb {
+            box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.3);
+        }
+        &:active::-moz-range-thumb {
+            box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.3);
+        }
+        &:active::-ms-thumb {
+            box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.3);
+        }
+        &::-moz-range-track {
+            background: $COLOR_WHITE;
+        }
+        &::-ms-track {
+            background: $COLOR_WHITE;
+        }
+    }
+    &__ticks {
+        width: 100%;
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        left: 0;
+        top: -2px;
+        height: 0;
+
+        &-step {
+            height: 2px;
+            width: 2px;
+            border: 3px solid $COLOR_WHITE;
+            background: $COLOR_WHITE;
+            border-radius: 50%;
+            margin: 0 3px;
+            transition: background 0.5s, border-color 0.5s, box-shadow 0.5s;
+            box-shadow: 0 0 0 0px rgba(0, 0, 0, 0);
+            cursor: pointer;
+
+            &--active, &--marked {
+                background: $COLOR_LIGHT_GRAY_1;
+                border-color: $COLOR_LIGHT_GRAY_1;
+            }
+            &--active {
+                visibility: hidden;
+                pointer-events: none;
+            }
+            &:hover:not(&--active) {
+                background: $COLOR_LIGHT_GRAY_1;
+                border-color: $COLOR_LIGHT_GRAY_1;
+                box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.3);
+            }
+            &:first-child {
+                margin-left: 0;
+            }
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+    &__line {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 2px;
+        background: $COLOR_LIGHT_GRAY_1;
+        pointer-events: none;
+        transition: width 0.5s;
+    }
+    &__caption {
+        display: flex;
+        padding: 4px 0;
+        justify-content: space-between;
+        line-height: 1.5;
+        font-size: 1.2em;
+    }
+}
