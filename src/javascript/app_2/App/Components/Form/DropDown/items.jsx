@@ -3,19 +3,16 @@ import PropTypes  from 'prop-types';
 import React      from 'react';
 
 const Items = ({
+    handleSelect,
     items,
     name,
     value,
-    handleSelect,
-    has_highlights,
-    highlightedIdx,
 }) => (
     items.map((item, idx) => (
         <React.Fragment key={idx}>
             <div
                 className={classNames('list__item', {
-                    'list__item--selected'   : value === item.value,
-                    'list__item--highlighted': has_highlights && highlightedIdx === idx,
+                    'list__item--selected': value === item.value,
                 })}
                 key={idx}
                 name={name}
@@ -29,11 +26,9 @@ const Items = ({
 );
 
 Items.propTypes = {
-    handleSelect  : PropTypes.func,
-    has_highlights: PropTypes.bool,
-    highlightedIdx: PropTypes.number,
-    name          : PropTypes.string,
-    value         : PropTypes.oneOfType([
+    handleSelect: PropTypes.func,
+    name        : PropTypes.string,
+    value       : PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
     ]),

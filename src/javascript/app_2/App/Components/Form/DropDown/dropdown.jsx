@@ -199,7 +199,6 @@ class Dropdown extends React.Component {
                             >
                                 {isArrayLike(this.props.list) ?
                                     <Items
-                                        highlightedIdx={this.state.curr_index}
                                         items={this.props.list}
                                         name={this.props.name}
                                         value={this.props.value}
@@ -209,8 +208,6 @@ class Dropdown extends React.Component {
                                         <React.Fragment key={key}>
                                             <div className='list__label'><span>{key}</span></div>
                                             <Items
-                                                has_highlights={this.props.has_highlights}
-                                                highlightedIdx={this.state.curr_index}
                                                 items={this.props.list[key]}
                                                 name={this.props.name}
                                                 value={this.props.value}
@@ -230,7 +227,6 @@ class Dropdown extends React.Component {
 
 Dropdown.propTypes = {
     className        : PropTypes.string,
-    has_highlights   : PropTypes.bool,
     is_alignment_left: PropTypes.bool,
     is_nativepicker  : PropTypes.bool,
     list             : PropTypes.oneOfType([
