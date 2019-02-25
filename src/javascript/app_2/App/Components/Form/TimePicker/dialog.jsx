@@ -7,16 +7,16 @@ import { toMoment } from 'Utils/Date';
 const Dialog = ({
     preClass,
     selected_time,
-    boundary_end,
-    boundary_start,
+    end_time,
+    start_time,
     onChange,
     className,
 }) => {
-    const start_time_moment     = boundary_start
-        ? toMoment(boundary_start)
+    const start_time_moment     = start_time
+        ? toMoment(start_time)
         : toMoment();
-    const end_time_moment       = boundary_end
-        ? toMoment(boundary_end)
+    const end_time_moment       = end_time
+        ? toMoment(end_time)
         : toMoment().hour('23').minute('59').seconds('59').milliseconds('999');
     const to_compare_moment     = toMoment();
     const [ hour, minute ]      = selected_time.split(':');
@@ -81,12 +81,12 @@ const Dialog = ({
 };
 
 Dialog.propTypes = {
-    boundary_end: PropTypes.oneOfType([
+    end_time: PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
         PropTypes.object,
     ]),
-    boundary_start: PropTypes.oneOfType([
+    start_time: PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
         PropTypes.object,

@@ -55,8 +55,8 @@ class TimePicker extends React.Component {
             name,
             is_nativepicker,
             placeholder,
-            boundary_end,
-            boundary_start,
+            end_time,
+            start_time,
             validation_errors,
         } = this.props;
         return (
@@ -73,8 +73,8 @@ class TimePicker extends React.Component {
                             value={selected_time}
                             onChange={this.handleChange}
                             name={name}
-                            min={boundary_start}
-                            max={boundary_end}
+                            min={start_time}
+                            max={end_time}
                         />
                         : (
                             <React.Fragment>
@@ -101,8 +101,8 @@ class TimePicker extends React.Component {
                                     unmountOnExit
                                 >
                                     <Dialog
-                                        boundary_end={boundary_end}
-                                        boundary_start={boundary_start}
+                                        end_time={end_time}
+                                        start_time={start_time}
                                         className={'from-left'}
                                         onChange={this.handleChange}
                                         preClass={prefix_class}
@@ -118,12 +118,7 @@ class TimePicker extends React.Component {
 }
 
 TimePicker.propTypes = {
-    boundary_end: PropTypes.oneOfType([
-        PropTypes.number,
-        PropTypes.string,
-        PropTypes.object,
-    ]),
-    boundary_start: PropTypes.oneOfType([
+    end_time: PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
         PropTypes.object,
@@ -135,6 +130,11 @@ TimePicker.propTypes = {
     padding        : PropTypes.string,
     placeholder    : PropTypes.string,
     selected_time  : PropTypes.string,
+    start_time     : PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
+        PropTypes.object,
+    ]),
 };
 
 export default observer(TimePicker);

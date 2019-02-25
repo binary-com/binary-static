@@ -63,11 +63,11 @@ const TradingTimePicker = ({
         market_open_datetime);
     return (
         <TimePicker
-            boundary_end={boundaries.end}
+            end_time={boundaries.end}
             onChange={onChange}
             name='expiry_time'
             placeholder='12:00'
-            boundary_start={boundaries.start}
+            start_time={boundaries.start}
             selected_time={selected_time}
         />
     );
