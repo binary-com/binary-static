@@ -57,15 +57,24 @@ const AccountTransfer = (() => {
         if (!fragment_transfer_to.childElementCount) {
             showError();
             return;
+        } else if (fragment_transfer_to.childElementCount === 1) {
+            const el_label_transfer_to = document.createElement('div');
+            el_label_transfer_to.setAttribute('data-value', fragment_transfer_to.firstChild.textContent);
+            el_label_transfer_to.setAttribute('id', el_transfer_to.getAttribute('id'));
+            el_label_transfer_to.innerText = fragment_transfer_to.firstChild.textContent;
+            el_transfer_to.setVisibility(0);
+            el_transfer_to.setAttribute('data-value', fragment_transfer_to.firstChild.textContent);
+            el_transfer_to.parentElement.insertBefore(el_label_transfer_to, el_transfer_to);
+        } else {
+            el_transfer_to.innerHTML = fragment_transfer_to.innerHTML;
         }
-        el_transfer_to.innerHTML = fragment_transfer_to.innerHTML;
+
         el_transfer_to.onchange = () => {
             setTransferFeeAmount();
         };
 
         transfer_to_currency = getElementById('amount-add-on');
         transfer_to_currency.textContent = Client.get('currency');
-        getElementById('transfer_to_account').textContent = el_transfer_to.value;
 
         showForm();
 
@@ -136,15 +145,13 @@ const AccountTransfer = (() => {
 
     const populateReceipt = (response_submit_success, response) => {
         getElementById(form_id).setVisibility(0);
-
-        elementTextContent(getElementById('from_loginid'), client_loginid);
-        elementTextContent(getElementById('to_loginid'), response_submit_success.client_to_loginid);
-
         response.accounts.forEach((account) => {
             if (account.loginid === client_loginid) {
                 getElementById('from_currency').innerHTML = Currency.formatCurrency(account.currency);
+                elementTextContent(getElementById('from_loginid'), `${account.balance} (${account.currency})`);
                 elementTextContent(getElementById('from_balance'), account.balance);
             } else if (account.loginid === response_submit_success.client_to_loginid) {
+                elementTextContent(getElementById('to_loginid'), `${account.balance} (${account.currency})`);
                 getElementById('to_currency').innerHTML = Currency.formatCurrency(account.currency);
                 elementTextContent(getElementById('to_balance'), account.balance);
             }
@@ -235,11 +242,6 @@ const AccountTransfer = (() => {
         getElementById('limit_current_balance').innerHTML  = Currency.formatMoney(
             client_currency,
             client_balance,
-        );
-
-        getElementById('limit_daily_withdrawal').innerHTML = Currency.formatMoney(
-            client_currency,
-            withdrawal_limit,
         );
 
         getElementById('limit_max_amount').innerHTML = max_amount ? Currency.formatMoney(

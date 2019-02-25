@@ -1,13 +1,12 @@
 .transfer_form {
     background-color: $COLOR_WHITE;
     display: flex;
-    align-items: flex-start;
     justify-content: space-between;
     width: 100%;
     flex-wrap: wrap-reverse;
 
     p {
-        margin: 0;
+        margin: 0 0 6px;
     }
     #transfer_to_select.form-row {
         padding-top: 0;
@@ -20,47 +19,37 @@
         padding: 30px;
         width: 50%;
         min-height: 266px;
-        border: 1px solid $COLOR_LIGHT_GRAY;
-        border-right: 0;
+        background-color: $COLOR_LIGHT_GRAY;
+        color: $COLOR_BLACK;
     }
     &__right_pane {
         padding: 30px;
         width: 50%;
         min-height: 266px;
-        background-color: $COLOR_LIGHT_GRAY;
-        color: $COLOR_BLACK;
+        border: 1px solid $COLOR_LIGHT_GRAY;
+        border-left: 0;
 
         &__input_group {
             width: 100%;
 
             &__prefix {
                 display: flex;
+                flex-wrap: wrap;
                 max-width: 280px;
 
                 .input-add-on {
-                    background-color: $COLOR_LIGHT_GRAY;
-                    border: 1px solid $COLOR_GRAY;
-                    border-top-left-radius: 4px;
-                    border-bottom-left-radius: 4px;
-                    cursor: pointer;
                     display: inline-flex;
                     height: 28px;
                     width: 46px;
                     align-items: center;
                     justify-content: center;
-                    transition: all 0.3s ease;
-                }
-                .input-add-on.has-dropdown:hover {
-                    box-shadow: 0px 0px 6px $COLOR_ORANGE;
                 }
                 input {
                     margin: 0;
                     padding: 0;
-                    border: 1px solid $COLOR_GRAY;
-                    border-left: 0;
-                    border-radius: 0 4px 4px 0;
                     height: 28px;
-                    width: 100%;
+                    max-width: 100%;
+                    width: 232px;
                 }
             }
             .select {
@@ -69,6 +58,7 @@
         }
         & .select {
             width: 280px !important;
+            display: block;
         }
     }
 }
