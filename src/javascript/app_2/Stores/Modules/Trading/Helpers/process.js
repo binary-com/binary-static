@@ -1,9 +1,9 @@
 import extend from 'extend';
 
-import ContractTypeHelper from './contract_type';
-import * as ContractType  from '../Actions/contract_type';
+import ContractTypeHelper from './contract-type';
+import * as ContractType  from '../Actions/contract-type';
 import * as Duration      from '../Actions/duration';
-import * as StartDate     from '../Actions/start_date';
+import * as StartDate     from '../Actions/start-date';
 
 export const processTradeParams = async(store, new_state) => {
     const snapshot = store.getSnapshot();

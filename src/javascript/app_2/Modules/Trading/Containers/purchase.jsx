@@ -4,12 +4,12 @@ import { localize }      from '_common/localize';
 import { isEmptyObject } from '_common/utility';
 import Money             from 'App/Components/Elements/money.jsx';
 import { PopConfirm }    from 'App/Components/Elements/PopConfirm';
-import UILoader          from 'App/Components/Elements/ui_loader.jsx';
+import UILoader          from 'App/Components/Elements/ui-loader.jsx';
 import Button            from 'App/Components/Form/button.jsx';
 import Fieldset          from 'App/Components/Form/fieldset.jsx';
 import { IconTradeType } from 'Assets/Trading/Types';
 import { connect }       from 'Stores/connect';
-import ContractInfo      from '../Components/Form/Purchase/contract_info.jsx';
+import ContractInfo      from '../Components/Form/Purchase/contract-info.jsx';
 import MessageBox        from '../Components/Form/Purchase/MessageBox';
 import PurchaseLock      from '../Components/Form/Purchase/PurchaseLock';
 
@@ -36,24 +36,23 @@ const Purchase = ({
             <Button
                 is_disabled={is_disabled}
                 id={`purchase_${type}`}
-                className='primary green btn-purchase'
+                className='primary btn-purchase'
                 has_effect
                 onClick={() => { onClickPurchase(info.id, info.stake, type); }}
-                wrapperClassName='submit-section'
             >
                 <React.Fragment>
                     <div className='btn-purchase__effect-main' />
                     <div className='btn-purchase__effect-detail' />
                     <div className='btn-purchase__content'>
                         <div className='btn-purchase__trade-type'>
-                            <IconTradeType type={type.toLowerCase()} />
-                            <span>{localize('[_1]', trade_types[type])}</span>
+                            <IconTradeType type={type.toLowerCase()} className='btn-purchase__trade-type-icon' />
+                            <span className='btn-purchase__trade-type-text'>{localize('[_1]', trade_types[type])}</span>
                         </div>
                     </div>
                     <div className='btn-purchase__info'>
                         <div className='btn-purchase__return'>{is_disabled ? '---,-' : info.returns}</div>
                         <div className='btn-purchase__profit'>
-                            {is_disabled ? '--,--' : <Money amount={info.profit} currency={currency} />}
+                            {is_disabled ? '--,--' : <Money amount={info.profit} currency={currency} className='btn-purchase__currency' />}
                         </div>
                     </div>
                 </React.Fragment>
@@ -64,7 +63,7 @@ const Purchase = ({
 
         return (
             <Fieldset
-                className='purchase-option'
+                className='trade-container__fieldset purchase-container__option'
                 key={idx}
                 onMouseEnter={() => { onHoverPurchase(true, type); }}
                 onMouseLeave={() => { onHoverPurchase(false); }}
@@ -81,7 +80,7 @@ const Purchase = ({
                     :
                     <React.Fragment>
                         {(!is_purchase_enabled && idx === 0) &&
-                        <UILoader />
+                        <UILoader classNameBlock='purchase-container__loading' />
                         }
                         <ContractInfo
                             currency={currency}

@@ -1,1 +1,1 @@
-export default from './denial_of_service.jsx';
+export default from './denial-of-service.jsx';

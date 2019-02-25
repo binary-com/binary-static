@@ -3,8 +3,8 @@ import React             from 'react';
 import { CSSTransition } from 'react-transition-group';
 import ErrorComponent    from 'App/Components/Elements/Errors';
 import { connect }       from 'Stores/connect';
-import ContractDetails   from './contract_details.jsx';
-import InfoBox           from './info_box.jsx';
+import ContractDetails   from './contract-details.jsx';
+import InfoBox           from './info-box.jsx';
 
 const SmartChart = React.lazy(() => import('Modules/SmartChart'));
 
@@ -26,7 +26,7 @@ const Contract = ({
                     <ErrorComponent message={error_message} />
                     :
                     <div className='trade-container'>
-                        <div className='chart-container notice-msg'>
+                        <div className='chart-container'>
                             {symbol &&
                                 <React.Suspense fallback={<div>Loading... </div>}>
                                     <SmartChart

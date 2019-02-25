@@ -3,6 +3,7 @@ const Client           = require('../../../base/client');
 const Currency         = require('../../../common/currency');
 const Validation       = require('../../../common/form_validation');
 const getTransferFee   = require('../../../../_common/base/currency_base').getTransferFee;
+const getElementById   = require('../../../../_common/common_functions').getElementById;
 const localize         = require('../../../../_common/localize').localize;
 const State            = require('../../../../_common/storage').State;
 const urlForStatic     = require('../../../../_common/url').urlForStatic;
@@ -22,14 +23,16 @@ const MetaTraderUI = (() => {
         $main_msg,
         validations,
         submit,
+        topup_demo,
         token,
         current_action_ui;
 
     const accounts_info = MetaTraderConfig.accounts_info;
     const actions_info  = MetaTraderConfig.actions_info;
 
-    const init = (submit_func) => {
+    const init = (submit_func, topup_demo_func) => {
         token        = getHashValue('token');
+        topup_demo   = topup_demo_func;
         submit       = submit_func;
         $container   = $('#mt_account_management');
         $mt5_account = $container.find('#mt5_account');
@@ -186,6 +189,9 @@ const MetaTraderUI = (() => {
                 };
                 $(this).html(typeof mapping[key] === 'function' ? mapping[key]() : info);
             });
+
+            setCounterpartyAndJurisdictionTooltip($('.acc-info div[data="login"]'), acc_type);
+
             // $container.find('.act_cashier').setVisibility(!types_info[acc_type].is_demo);
             if (current_action_ui !== 'new_account') {
                 $container.find('.has-account').setVisibility(1);
@@ -270,11 +276,11 @@ const MetaTraderUI = (() => {
             const client_currency = Client.get('currency');
             const mt_currency     = MetaTraderConfig.getCurrency(acc_type);
             cloneForm();
+            setDemoTopupStatus();
             $form.find('.binary-account').text(`${localize('[_1] Account [_2]', ['Binary', Client.get('loginid')])}`);
             $form.find('.binary-balance').html(`${Currency.formatMoney(client_currency, Client.get('balance'))}`);
             $form.find('.mt5-account').text(`${localize('[_1] Account [_2]', [accounts_info[acc_type].title, accounts_info[acc_type].info.login])}`);
             $form.find('.mt5-balance').html(`${Currency.formatMoney(mt_currency, accounts_info[acc_type].info.balance)}`);
-            $form.find('.symbols.mt-currency').addClass(mt_currency.toLowerCase());
             $form.find('label[for="txt_amount_deposit"]').append(` ${client_currency}`);
             $form.find('label[for="txt_amount_withdrawal"]').append(` ${mt_currency}`);
 
@@ -561,6 +567,77 @@ const MetaTraderUI = (() => {
         }
     };
 
+    const setCounterpartyAndJurisdictionTooltip = ($el, acc_type) => {
+        const mt_financial_company = State.getResponse('landing_company.mt_financial_company');
+        const mt_gaming_company = State.getResponse('landing_company.mt_gaming_company');
+        const account = accounts_info[acc_type];
+        let company;
+
+        if (/standard/.test(account.mt5_account_type)) {
+            company = mt_financial_company.standard;
+        } else if (/advanced/.test(account.mt5_account_type)) {
+            company = mt_financial_company.advanced;
+        } else if (account.account_type === 'gaming' || (account.mt5_account_type === '' && account.account_type === 'demo')) {
+            company = mt_gaming_company.standard;
+        }
+
+        $el.attr({
+            'data-balloon'       : `${localize('Counterparty')}: ${company.name}, ${localize('Jurisdiction')}: ${company.country}`,
+            'data-balloon-length': 'large',
+        });
+    };
+
+    const setDemoTopupStatus = () => {
+        const el_demo_topup_btn  = getElementById('demo_topup_btn');
+        const el_loading         = getElementById('demo_topup_loading');
+        const acc_type           = Client.get('mt5_account');
+        const is_demo            = accounts_info[acc_type].is_demo;
+        const topup_btn_text     = localize('Get [_1]', `${MetaTraderConfig.getCurrency(acc_type)} 10,000.00`);
+
+        el_loading.setVisibility(0);
+        el_demo_topup_btn.firstChild.innerText = topup_btn_text;
+
+        if (is_demo) {
+            const balance     = +accounts_info[acc_type].info.balance;
+            const min_balance = 1000;
+
+            if (balance <= min_balance) {
+                enableDemoTopup(true, acc_type);
+            } else {
+                enableDemoTopup(false, acc_type);
+            }
+        }
+    };
+
+    const enableDemoTopup = (is_enabled, acc_type) => {
+        const el_demo_topup_btn = getElementById('demo_topup_btn');
+        const el_demo_topup_info = getElementById('demo_topup_info');
+
+        const function_to_call = is_enabled ? 'addEventListener' : 'removeEventListener';
+        el_demo_topup_btn[function_to_call]('click', topup_demo);
+
+        el_demo_topup_btn.classList.add(is_enabled ? 'button' : 'button-disabled');
+        el_demo_topup_btn.classList.remove(is_enabled ? 'button-disabled' : 'button');
+
+        el_demo_topup_info.innerText = is_enabled
+            ? localize('Your demo account balance is currently [_1] or less. You may top up your account with an additional [_2].', [`${MetaTraderConfig.getCurrency(acc_type)} 1,000.00`, `${MetaTraderConfig.getCurrency(acc_type)} 10,000.00`])
+            : localize('You can top up your demo account with an additional [_1] if your balance is [_2] or less.', [`${MetaTraderConfig.getCurrency(acc_type)} 10,000.00`, `${MetaTraderConfig.getCurrency(acc_type)} 1,000.00`]);
+    };
+
+    const setTopupLoading = (is_loading) => {
+        const el_demo_topup_btn  = getElementById('demo_topup_btn');
+        const el_demo_topup_info = getElementById('demo_topup_info');
+        const el_loading         = getElementById('demo_topup_loading');
+
+        el_demo_topup_btn.setVisibility(!is_loading);
+        el_demo_topup_info.setVisibility(!is_loading);
+        el_loading.setVisibility(is_loading);
+
+        if (!is_loading) {
+            setDemoTopupStatus();
+        }
+    };
+
     return {
         init,
         setAccountType,
@@ -575,6 +652,7 @@ const MetaTraderUI = (() => {
         disableButton,
         enableButton,
         showHideMAM,
+        setTopupLoading,
 
         $form   : () => $form,
         getToken: () => token,

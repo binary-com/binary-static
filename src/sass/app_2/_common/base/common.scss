@@ -1,47 +1,4 @@
-body {
-    font-family: $FONT_STACK;
-    position: relative;
-    min-height: 100%;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-}
-
-/* Form */
-select, input, textarea {
-    font-family: inherit;
-    font-size: inherit;
-    font-weight: inherit;
-    font-style: inherit;
-    padding: 2px 3px;
-    border: 1px solid $COLOR_LIGHT_BLACK_4;
-    border-radius: $BORDER_RADIUS;
-}
-
-a {
-    color: $COLOR_SKY_BLUE;
-}
-
-fieldset {
-    border: 1px solid $COLOR_LIGHT_BLACK_4_SOLID;
-}
-
-::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-    color: $COLOR_LIGHT_BLACK_3;
-}
-
-::-moz-placeholder { /* Firefox 19+ */
-    color: $COLOR_LIGHT_BLACK_3;
-}
-
-:-ms-input-placeholder { /* IE 10+ */
-    color: $COLOR_LIGHT_BLACK_3;
-}
-
-:-moz-placeholder { /* Firefox 18- */
-    color: $COLOR_LIGHT_BLACK_3;
-}
-
+/** @define container */
 .container {
     width: 100%;
     max-width: $MAX_CONTAINER_WIDTH;
@@ -49,30 +6,27 @@ fieldset {
     box-sizing: border-box;
 }
 
+/** @define hidden */
 .hidden {
     visibility: hidden !important;
     transition: none !important;
 }
 
-.absolute-center {
+// Centers absolute element vertically
+/** @define absolute-center-v */
+.absolute-center-v {
     position: absolute;
     margin: auto;
-}
-
-// Centers absolute element vertically
-.absolute-center-v {
-    @extend .absolute-center;
     top: 0;
     bottom: 0;
 }
 
-// Centers absolute element horizontally
-.absolute-center-h {
-    @extend .absolute-center;
-    left: 0;
-    right: 0;
-}
-
+/** @define center-text */
 .center-text {
     text-align: center;
+}
+
+/** @define no-margin */
+.no-margin {
+    margin: 0;
 }

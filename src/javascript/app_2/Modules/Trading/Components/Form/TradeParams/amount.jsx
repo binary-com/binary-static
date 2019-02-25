@@ -9,8 +9,8 @@ import {
     getDecimalPlaces }           from '_common/base/currency_base';
 import Dropdown                  from 'App/Components/Form/DropDown';
 import Fieldset                  from 'App/Components/Form/fieldset.jsx';
-import InputField                from 'App/Components/Form/input_field.jsx';
-import AllowEquals               from './allow_equals.jsx';
+import InputField                from 'App/Components/Form/input-field.jsx';
+import AllowEquals               from './allow-equals.jsx';
 
 const Amount = ({
     amount,
@@ -37,12 +37,10 @@ const Amount = ({
             </div>
         );
     }
-    const amount_container_class = classNames('amount-container', {
-        'three-columns': !is_single_currency,
-    });
+    const amount_container_class = classNames({ 'three-columns': !is_single_currency });
 
     return (
-        <Fieldset>
+        <Fieldset className='trade-container__fieldset'>
             <div className={amount_container_class}>
                 <Dropdown
                     is_alignment_left
@@ -51,6 +49,7 @@ const Amount = ({
                     name='basis'
                     value={basis}
                     onChange={onChange}
+                    className='no-margin'
                 />
                 {!is_single_currency &&
                     <Dropdown
@@ -63,6 +62,8 @@ const Amount = ({
                     />
                 }
                 <InputField
+                    classNameInput='trade-container__input'
+                    classNamePrefix='trade-container__currency'
                     error_messages={validation_errors.amount}
                     fractional_digits={getDecimalPlaces(currency)}
                     is_autocomplete_disabled

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-02-11 08:03\n"
+"PO-Revision-Date: 2019-02-20 14:14\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: German\n"
 "MIME-Version: 1.0\n"
@@ -1284,6 +1284,9 @@ msgstr "Anwendungen"
 msgid "Apply now"
 msgstr "Jetzt bewerben"
 
+msgid "Apply now as a professional investor"
+msgstr ""
+
 msgid "Apply to become a %1 <a href=\"%2\">payment agent</a>."
 msgstr "Bewerben Sie sich als <a href=\"%2\">Zahlungsagent</a> von %1."
 
@@ -1857,6 +1860,9 @@ msgstr "Binärer Bot"
 msgid "Binary Bot released"
 msgstr "Binärer Bot freigegeben"
 
+msgid "Binary Coin"
+msgstr ""
+
 msgid "Binary Group (hereinafter referred to as 'Binary Group of companies', 'the Company') is commited to protecting the privacy and security of the applicant's personal information. This privacy notice sets out the types of data that the Company collects on the applicant. It also sets out how the Company collect and use the applicant' personal data, and how long it keeps them and other relevant information about the applicant's data in accordance with the General Data Protection Regulation (EU) 2016/679 (hereafter referred to as 'GDPR') and Data Protection Act 2018."
 msgstr "Die Binary Gruppe (nachstehend als \"Binary Gruppe von Unternehmen\", \"das Unternehmen\" bezeichnet) verpflichtet sich zum Schutz der Privatsphäre und Sicherheit der persönlichen Daten des Bewerbers. Diese Datenschutzerklärung legt die Datentypen fest, die das Unternehmen über den Bewerber sammelt. Sie legt auch fest, wie das Unternehmen personenbezogene Daten des Bewerbers erfasst und nutzt und wie lange es diese und andere relevante Informationen über die Daten des Bewerbers, gemäß der allgemeinen Datenschutzverordnung (EU) 2016/679 (nachstehend als \"DSGVO\" bezeichnet) und des Datenschutzgesetzes 2018, hält."
 
@@ -2058,8 +2064,8 @@ msgstr "Wenn Sie auf OK klicken, bestätigen Sie, dass Sie die aktualisierten al
 msgid "By clicking buy or sell, your order will be filled at the best possible price with either one of our liquidity providers or on our own books (according to the best streaming price at the time of your order placement);"
 msgstr "Indem Sie auf kaufen oder verkaufen klicken, wird Ihre Order zum bestmöglichen Kurs, mit entweder einem unserer Liquiditätsanbieter oder auf unseren eigenen Büchern (nach dem besten Kurs zum Zeitpunkt Ihrer Ordererteilung) ausgefüllt werden;"
 
-msgid "By default, all clients are treated as retail but anyone can request to be treated as professional."
-msgstr "Standardmäßig werden alle Kunden als Einzelhandelskunden behandelt, aber jeder kann die Anforderung stellen, als Profi behandelt zu werden."
+msgid "By default, all %1 clients are retail clients but anyone can request to be treated as a professional client."
+msgstr ""
 
 msgid "By default, the intelligent order routing system ensures that the top of the book is always comprised of the best bid and offer rates quoted by the competing liquidity providers. However, during times of market illiquidity, this may change with likelihood of execution being the primary execution factor."
 msgstr "Das intelligente Orderführungssystem sorgt standardmäßig dafür, dass der Oberteil des Buches immer die besten Angebots- und Briefkurse umfasst, die von den konkurrierenden Liquiditätsgebern angegeben sind. Dies kann sich jedoch mit Wahrscheinlichkeit auf Ausführung als primärer Ausführungsfaktor, in Zeiten einer Marktliquidität, ändern."
@@ -3434,6 +3440,9 @@ msgstr "Die Android-App herunterladen"
 
 msgid "Download your statement"
 msgstr "Laden Sie Ihren Auszug herunter"
+
+msgid "Downs"
+msgstr ""
 
 msgid "Drive rapid growth and business development to support the company's sales and marketing objectives"
 msgstr "Treiben Sie das rasche Wachstum und die Geschäftsentwicklung voran, um die Verkaufs- und Werbeziele des Unternehmens zu unterstützen"
@@ -4887,6 +4896,9 @@ msgstr "Hiermit bestätige ich, dass die von mir angegebenen Steuerinformationen
 msgid "I understand the risks involved and agree to the %1Terms & Conditions of the MAM facility%2"
 msgstr "Ich verstehe die damit verbundenen Risiken und stimme den %1Allgemeinen Geschäftsbedingungen der MAM-Anlage%2 zu"
 
+msgid "I want to reapply"
+msgstr ""
+
 msgid "I would like to be treated as a professional client."
 msgstr "Ich möchte als professioneller Kunde behandelt werden."
 
@@ -5181,11 +5193,17 @@ msgstr "Wenn Sie „steigt\" auswählen, erhalten Sie eine Auszahlung, wenn der 
 msgid "If you select \"rises\", you win the payout if the market price is higher than the entry spot."
 msgstr "Wenn Sie „steigt\" auswählen, erhalten Sie eine Auszahlung, wenn der Marktpreis höher als der Kurs bei Kontraktbeginn ist."
 
+msgid "If you select %1\"Downs\"%2, you win the payout if consecutive ticks fall successively after the %1entry spot%2.%3No payout if any tick rises or is equal to any of the previous ticks."
+msgstr ""
+
 msgid "If you select %1\"High Tick\"%2, you win the payout if the selected tick is the %1highest among the next five ticks%2."
 msgstr "Wenn Sie %1\"Hoher Tick\"%2 auswählen, gewinnen Sie die Auszahlung, wenn der ausgewählte Tick der %1höchste unter den nächsten fünf Ticks%2 ist."
 
 msgid "If you select %1\"Low Tick\"%2, you win the payout if the selected tick is the %1lowest among the next five ticks%2."
 msgstr "Wenn Sie %1\"Niedriger Tick\"%2 auswählen, gewinnen Sie die Auszahlung, wenn der ausgewählte Tick der %1niedrigste unter den nächsten fünf Ticks%2 ist."
+
+msgid "If you select %1\"Ups\"%2, you win the payout if consecutive ticks rise successively after the %1entry spot%2.%3No payout if any tick falls or is equal to any of the previous ticks."
+msgstr ""
 
 msgid "If you select a <strong>start time</strong> in the future, the <strong>start time</strong> is that which is selected and the <strong>entry spot</strong> is the price in effect at that time."
 msgstr "Wenn Sie eine  <strong>Startzeit</strong> in der Zukunft auswählen, ist die <strong>Startzeit</strong> des Kontrakts die ausgewählte Zeit und der <strong>Einstiegskurs</strong> ist der Kurs, der zu dieser Zeit gültig ist."
@@ -5873,6 +5891,9 @@ msgstr "Erfahren Sie mehr über unsere Unternehmenskultur"
 
 msgid "Learn more about submitting essential documents with our handy infographic:"
 msgstr "Hier finden Sie weitere Informationen zum Einreichen von essentiellen Dokumenten mit unserer handlichen Infografik:"
+
+msgid "Learn more."
+msgstr ""
 
 msgid "Learn the basic concepts of trading Meta assets on MetaTrader 5."
 msgstr "Lernen Sie die grundlegenden Konzepte des Handels mit Meta-Anlagen auf MetaTrader 5."
@@ -6638,6 +6659,9 @@ msgstr "Monate"
 
 msgid "More benefits"
 msgstr "Mehrere Vorteile"
+
+msgid "More information can be found in an email sent to you."
+msgstr ""
 
 msgid "More specifically, when the Company enters into a binary option trade with the client (each, a \"Contract\"), the Company has a duty to provide the client with 'best execution'. Best execution means that the Company must take reasonable steps to obtain the best possible result for the client when executing a client order. This document provides a summary of the Company's best execution policy."
 msgstr "Konkret hat das Unternehmen die Pflicht, dem Kunden die „bestmögliche Ausführung” zu bieten, wenn das Unternehmen einen binäre Optionen Handel mit dem Kunden eingeht (je \"Kontrakt\"). Die bestmögliche Ausführung bedeutet, dass das Unternehmen die geeigneten Schritte unternehmen muss, um für den Kunden das bestmögliche Ergebnis zu erreichen, wenn das Unternehmen die Order für den Kunden ausführt. Dieses Dokument bietet eine Zusammenfassung der Regeln des Unternehmens zur bestmöglichen Ausführung."
@@ -7596,6 +7620,9 @@ msgstr "Bitte überprüfen Sie Ihre E-Mail für den Bestätigungs-Code, um den V
 msgid "Please check your email for the verification link to complete the process."
 msgstr "Bitte überprüfen Sie Ihre E-Mail für den Bestätigungs-Link, um den Vorgang abzuschließen."
 
+msgid "Please check your inbox for details."
+msgstr ""
+
 msgid "Please choose a currency"
 msgstr "Bitte wählen Sie eine Währung"
 
@@ -7647,7 +7674,7 @@ msgstr "Melden Sie sich bitte an."
 msgid "Please make sure that you first agree with the Agent on the terms of payment before submitting your request."
 msgstr "Bevor Sie Ihren Antrag absenden können, müssen Sie zuerst den Zahlungsbedingungen des Abwicklers zustimmen."
 
-msgid "Please note that Asians, Digits, Reset Call/Reset Put and High Ticks/Low Ticks are available exclusively with our Volatility Indices."
+msgid "Please note that Asians, Digits, Reset Call/Reset Put, High Ticks/Low Ticks, and Run Ups/Run Downs are available exclusively with our Volatility Indices."
 msgstr ""
 
 msgid "Please note that actual trading results may not correspond to optimized or back-tested results."
@@ -7676,6 +7703,9 @@ msgstr "Bitte stellen Sie uns die folgenden Informationen zur Verfügung:"
 
 msgid "Please read this %1privacy policy%2 before submitting your application."
 msgstr "Bitte lesen Sie diese %1Datenschutzrichtlinie%2, bevor Sie Ihre Bewerbung einreichen."
+
+msgid "Please reapply once the required criteria has been fulfilled."
+msgstr ""
 
 msgid "Please refer to the %1asset index%2 for each asset’s minimum and maximum contract durations based on trade type."
 msgstr "Bitte beziehen Sie sich auf den %1Anleger Index%2 für die minimalen und maximalen Kontraktlaufzeiten einer jeden Anlage, auf deren Handelsart basierend."
@@ -8510,6 +8540,15 @@ msgstr "Roll-Over Kredit/Debit"
 
 msgid "Rolling Spot Forex;"
 msgstr "Rollender Spot Forex;"
+
+msgid "Run"
+msgstr ""
+
+msgid "Run Downs"
+msgstr ""
+
+msgid "Run Ups"
+msgstr ""
 
 msgid "Russia"
 msgstr "Russland"
@@ -9393,6 +9432,12 @@ msgstr "Der %1Kontraktzeitraum%2 ist die Zeitspanne zwischen dem %1ersten Tick%2
 msgid "The %1end time%2 is the selected number of minutes/hours after the %1start time%2."
 msgstr "Die %1Endzeit%2 ist die ausgewählte Anzahl von Minuten bzw. Stunden nach der %1Startzeit%2."
 
+msgid "The %1entry spot%2 is the next tick after the %1start time%2."
+msgstr ""
+
+msgid "The %1exit spot%2 is the last tick when the contract ends. Contract ends when all ticks rise or fall successively, or when a single tick breaks the predicted pattern."
+msgstr ""
+
 msgid "The %1high%2 is the highest point ever reached by the market during the contract period."
 msgstr "Das %1Hoch%2 ist der höchste Punkt, der jemals durch den Kurs während der Kontraktlaufzeit erreicht wird."
 
@@ -9401,6 +9446,9 @@ msgstr "Das %1Tief%2 ist der niedrigste Punkt, der jemals durch den Kurs währen
 
 msgid "The %1start time%2 begins when the contract is processed by our servers."
 msgstr "Die %1Startzeit%2 beginnt, wenn der Kontrakt von unseren Servern bearbeitet wird."
+
+msgid "The %1start time%2 is when the contract has been processed by our servers."
+msgstr ""
 
 msgid "The <strong>contract period</strong> is the period between the <strong>next tick</strong> after the <strong>start time</strong> and the <strong>end time</strong>."
 msgstr "Der <strong>Vertragszeitraum</strong> ist die Zeitspanne zwischen dem <strong>nächsten Tick</strong> nach der <strong>Startzeit</strong> und der <strong>Endzeit</strong>."
@@ -10211,6 +10259,9 @@ msgstr "Mit der Nutzung von Handelssystemen über das Internet sind Risiken verb
 
 msgid "There are two types of In/Out trades:"
 msgstr "Es gibt zwei Arten von Innerhalb/Außerhalb-Trades:"
+
+msgid "There are two types of Run trades:"
+msgstr ""
 
 msgid "There are two types of Up/Down trades:"
 msgstr "Es gibt zwei Arten von Auf/Ab-Trades:"
@@ -11175,6 +11226,9 @@ msgstr "Auf Widerruf bestätigen und verstehen Sie, dass Ihr Vermögensverwalter
 msgid "Upon the expiration or termination of this Agreement, for whatever reason, all rights and license granted to you in this Agreement, including use of the %1 API, shall immediately terminate. You agree to promptly cease all further use of the %1 API. Termination of this Agreement shall not act as a waiver of any breach of this Agreement and shall not act as a release of your liability for breach of its obligation under this Agreement. The Company shall not be liable to you for damages of any kind solely as a result of terminating this Agreement in accordance with its terms."
 msgstr "Nach dem Ablauf oder der Kündigung dieses Vertrags, aus welchem Grund auch immer, enden alle Ihnen durch diesen Vertrag eingeräumten Rechte und Lizenzen, einschließlich der Verwendung des %1 API, mit sofortiger Wirkung. Sie stimmen zu, die weitere Verwendung des %1 API einzustellen. Die Beendigung dieses Vertrags darf nicht als Verzicht einer Verfolgung eines Vertragsbruchs und nicht als Entlassung aus Ihrer Haftung für die Verletzung von Pflichten aus diesem Vertrag interpretiert werden. Das Unternehmen ist für keinerlei Schäden, die einzig und alleine aus der Beendigung des Vertrags, gemäß seiner Klauseln, haftbar."
 
+msgid "Ups"
+msgstr ""
+
 msgid "Usage Limit"
 msgstr "Verwendungslimit"
 
@@ -11622,8 +11676,8 @@ msgstr "Wir werden fortfahren, offene Positionen zu schließen, bis Ihr Margin L
 msgid "We will hold you responsible for all your obligations under this Agreement in our course of providing the margin trading service described in this Agreement to you, even if you notify us that you are acting as the agent of an identified principal."
 msgstr "Wir machen Sie für alle Ihre Verpflichtungen, unter dieser Vereinbarung, die im Laufe des Angebots unserer Margin-Handelsdienstleistung, wie es Ihnen in dieser Vereinbarung beschrieben ist, verantwortlich; sogar wenn Sie uns davon in Kenntnis setzen, dass Sie als Agent eines identifizierten Auftraggebers handeln."
 
-msgid "We will review your documents and get back to you within one working day."
-msgstr "Wir werden Ihre Dokumente überprüfen und uns bei Ihnen innerhalb eines Arbeitstages melden."
+msgid "We will review your documents and get back to you within 3 working days."
+msgstr ""
 
 msgid "We will use reasonable endeavors within our control to ensure that all electronic data provided on the MT5 Trading Platform and all electronic transactions instructed and accepted from you to us, and executed by us are not subject to network latency."
 msgstr "Wir werden angemessene Bemühungen innerhalb unserer Kontrolle unternehmen, um sicherzustellen, dass alle elektronischen Daten, die auf der MT5 Handelsplattform angegeben werden, und alle angewiesenen elektronischen Transaktionen, die wir von Ihnen angenommen haben, und die von uns ausgeführt werden, keiner Netzwerklatenz unterliegen."
@@ -11729,9 +11783,6 @@ msgstr "Worum handelt sich das %1 IB Programm?"
 
 msgid "What is the definition of a referred client?"
 msgstr "Was ist die Definition eines angeworbenen Kunden?"
-
-msgid "What is this?"
-msgstr "Was ist das?"
 
 msgid "What kind of reports can I generate?"
 msgstr "Welche Berichte kann ich erstellen?"
@@ -11981,6 +12032,12 @@ msgstr "Gewinnen Sie die maximale Auszahlung, wenn der Schlusskurs höher oder g
 
 msgid "Win maximum payout if the exit spot is lower than or equal to the lower barrier."
 msgstr "Gewinnen Sie die maximale Auszahlung, wenn der Schlusskurs niedriger oder gleich mit der unteren Schwelle ist."
+
+msgid "Win payout if consecutive ticks fall successively. Contract is lost when at least one tick rises or is equal to any of the previous ticks."
+msgstr ""
+
+msgid "Win payout if consecutive ticks rise successively. Contract is lost when at least one tick falls or is equal to any of the previous ticks."
+msgstr ""
 
 msgid "Win payout if exit spot is also equal to entry spot."
 msgstr "Gewinnen Sie die Auszahlung, wenn der Schlusskurs gleich dem Einstiegskurs ist."
@@ -12717,6 +12774,9 @@ msgstr "Ihr Konto ist vollständig authentifiziert. Ihre <a href=\"%1\">Abschlus
 msgid "Your account is restricted. Kindly %1contact customer support%2 for assistance."
 msgstr "Ihr Konto ist eingeschränkt. Bitte %1kontaktieren Sie die Kundenbetreuung%2 für Hilfe."
 
+msgid "Your account remains under the retail client category."
+msgstr ""
+
 msgid "Your account security is of paramount importance to us. Please consider the following initiatives and tools to enhance your account security:"
 msgstr "Ihre Kontosicherheit ist für uns von höchster Bedeutung. Bitte beachten Sie die folgenden Initiativen und Instrumente zur Verbesserung der Sicherheit Ihres Kontos:"
 
@@ -12795,10 +12855,13 @@ msgstr "Ihr Passwort wurde erfolgreich zurückgesetzt. Bitte loggen Sie mit Ihre
 msgid "Your personal information is used primarily as a way of validating you as the legitimate account owner and proper recipient of withdrawal payments. We also use this information to process your trades. We collect from you all personal and financial data directly relating to you when you fill in our account opening form. In all instances, you have either a legal or a contractual obligation to provide us with the information. If such information is not provided, we will be unable to provide you with our services."
 msgstr "Ihre persönlichen Daten dienen in erster Linie dazu, Sie als den rechtmäßigen Kontoinhaber und richtigen Empfänger der Auszahlungen zu validieren. Wir verwenden diese Informationen auch, um Ihre Geschäfte zu bearbeiten. Wir erfassen alle Ihre persönlichen und finanziellen Daten, die sich direkt auf Sie beziehen, wenn Sie unser Formular zur Kontoeröffnung ausfüllen. In jedem Fall haben Sie entweder eine gesetzliche oder eine vertragliche Verpflichtung, uns mit diesen Informationen zu versorgen. Wenn solche Informationen nicht angegeben werden, werden wir nicht in der Lage sein, Ihnen unsere Dienstleistungen anzubieten."
 
+msgid "Your professional client request is %1not approved%2."
+msgstr ""
+
 msgid "Your profit or loss is calculated as follows:"
 msgstr "Ihr Gewinn oder Verlust errechnet sich wie folgt:"
 
-msgid "Your request to be treated as a professional client has been rejected. Please check your inbox for more details. Your account remains categorised as a retail client account."
+msgid "Your request to be treated as a professional client is %1not approved%2."
 msgstr ""
 
 msgid "Your request to transfer %1 %2 from %3 to %4 has been successfully processed."

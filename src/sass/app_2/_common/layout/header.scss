@@ -5,7 +5,7 @@
     width: 100%;
     height: $HEADER_HEIGHT;
     top: 0;
-    border-bottom: 1px solid $COLOR_LIGHT_BLACK_4;
+    border-bottom: 1px solid $COLOR_LIGHT_BLACK_4_SOLID;
     background-color: $COLOR_LIGHT_BLACK_4_SOLID;
 
     .menu-items {
@@ -18,21 +18,21 @@
 
         .navbar-icons {
             cursor: pointer;
-            padding: 8px 16px;
+            padding: 0.8em 1.6em;
             align-self: center;
+            height: 100%;
 
             &.binary-logo {
                 box-sizing: border-box;
                 display: flex;
-                height: 100%;
                 justify-content: center;
                 align-items: center;
             }
             &.notify-toggle {
                 order: 2;
                 order: 2;
-                padding: 5px 12px;
-                width: 20px;
+                padding: 0.5em 1em;
+                width: 2em;
             }
         }
         .menu-left {
@@ -47,7 +47,7 @@
                 display: flex;
 
                 img {
-                    width: 24px;
+                    width: 2.4em;
                     height: auto;
                 }
             }
@@ -57,7 +57,7 @@
 
                 a {
                     height: 100%;
-                    padding: 0 12px;
+                    padding: 0 1.6em;
                     text-decoration: none;
                     position: relative;
                     display: inline-flex;
@@ -66,17 +66,14 @@
                     transition: background-color 0.3s;
 
                     span {
-                        font-size: 0.875rem; /* stylelint-disable-line number-max-precision */
-                        font-weight: 300;
-                        text-transform: capitalize;
-                        color: $COLOR_LIGHT_BLACK_1;
-                        padding: 14px 18px 12px 34px;
+                        @include typeface(--title-left-light-black);
+                        padding: 0.5em 0.5em 0.5em 0;
                         position: relative;
 
                         &:before {
                             position: absolute;
-                            top: 15px;
-                            left: 12px;
+                            top: 1.4em;
+                            left: 1.2em;
                         }
                         &:after {
                             display: block;
@@ -99,9 +96,7 @@
                         }
                     }
                     .inline-icon {
-                        position: absolute;
-                        left: 10px;
-                        top: 13px;
+                        margin-right: 0.8em;
                     }
                 }
                 @media (max-width: 980px) {
@@ -130,7 +125,7 @@
         display: block;
         position: absolute;
         content: '';
-        height: 2px;
+        height: 0.2em;
         bottom: 0;
         background-color: $COLOR_DARK_BLUE_5;
         transition: all 0.3s;

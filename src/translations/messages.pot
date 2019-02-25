@@ -1270,6 +1270,9 @@ msgstr ""
 msgid "Apply now"
 msgstr ""
 
+msgid "Apply now as a professional investor"
+msgstr ""
+
 msgid "Apply to become a %1 <a href=\"%2\">payment agent</a>."
 msgstr ""
 
@@ -1843,6 +1846,9 @@ msgstr ""
 msgid "Binary Bot released"
 msgstr ""
 
+msgid "Binary Coin"
+msgstr ""
+
 msgid "Binary Group (hereinafter referred to as 'Binary Group of companies', 'the Company') is commited to protecting the privacy and security of the applicant's personal information. This privacy notice sets out the types of data that the Company collects on the applicant. It also sets out how the Company collect and use the applicant' personal data, and how long it keeps them and other relevant information about the applicant's data in accordance with the General Data Protection Regulation (EU) 2016/679 (hereafter referred to as 'GDPR') and Data Protection Act 2018."
 msgstr ""
 
@@ -2044,7 +2050,7 @@ msgstr ""
 msgid "By clicking buy or sell, your order will be filled at the best possible price with either one of our liquidity providers or on our own books (according to the best streaming price at the time of your order placement);"
 msgstr ""
 
-msgid "By default, all clients are treated as retail but anyone can request to be treated as professional."
+msgid "By default, all %1 clients are retail clients but anyone can request to be treated as a professional client."
 msgstr ""
 
 msgid "By default, the intelligent order routing system ensures that the top of the book is always comprised of the best bid and offer rates quoted by the competing liquidity providers. However, during times of market illiquidity, this may change with likelihood of execution being the primary execution factor."
@@ -3419,6 +3425,9 @@ msgid "Download the Android app"
 msgstr ""
 
 msgid "Download your statement"
+msgstr ""
+
+msgid "Downs"
 msgstr ""
 
 msgid "Drive rapid growth and business development to support the company's sales and marketing objectives"
@@ -4873,6 +4882,9 @@ msgstr ""
 msgid "I understand the risks involved and agree to the %1Terms & Conditions of the MAM facility%2"
 msgstr ""
 
+msgid "I want to reapply"
+msgstr ""
+
 msgid "I would like to be treated as a professional client."
 msgstr ""
 
@@ -5167,10 +5179,16 @@ msgstr ""
 msgid "If you select \"rises\", you win the payout if the market price is higher than the entry spot."
 msgstr ""
 
+msgid "If you select %1\"Downs\"%2, you win the payout if consecutive ticks fall successively after the %1entry spot%2.%3No payout if any tick rises or is equal to any of the previous ticks."
+msgstr ""
+
 msgid "If you select %1\"High Tick\"%2, you win the payout if the selected tick is the %1highest among the next five ticks%2."
 msgstr ""
 
 msgid "If you select %1\"Low Tick\"%2, you win the payout if the selected tick is the %1lowest among the next five ticks%2."
+msgstr ""
+
+msgid "If you select %1\"Ups\"%2, you win the payout if consecutive ticks rise successively after the %1entry spot%2.%3No payout if any tick falls or is equal to any of the previous ticks."
 msgstr ""
 
 msgid "If you select a <strong>start time</strong> in the future, the <strong>start time</strong> is that which is selected and the <strong>entry spot</strong> is the price in effect at that time."
@@ -5858,6 +5876,9 @@ msgid "Learn more about our corporate culture"
 msgstr ""
 
 msgid "Learn more about submitting essential documents with our handy infographic:"
+msgstr ""
+
+msgid "Learn more."
 msgstr ""
 
 msgid "Learn the basic concepts of trading Meta assets on MetaTrader 5."
@@ -6623,6 +6644,9 @@ msgid "Months"
 msgstr ""
 
 msgid "More benefits"
+msgstr ""
+
+msgid "More information can be found in an email sent to you."
 msgstr ""
 
 msgid "More specifically, when the Company enters into a binary option trade with the client (each, a \"Contract\"), the Company has a duty to provide the client with 'best execution'. Best execution means that the Company must take reasonable steps to obtain the best possible result for the client when executing a client order. This document provides a summary of the Company's best execution policy."
@@ -7582,6 +7606,9 @@ msgstr ""
 msgid "Please check your email for the verification link to complete the process."
 msgstr ""
 
+msgid "Please check your inbox for details."
+msgstr ""
+
 msgid "Please choose a currency"
 msgstr ""
 
@@ -7633,7 +7660,7 @@ msgstr ""
 msgid "Please make sure that you first agree with the Agent on the terms of payment before submitting your request."
 msgstr ""
 
-msgid "Please note that Asians, Digits, Reset Call/Reset Put and High Ticks/Low Ticks are available exclusively with our Volatility Indices."
+msgid "Please note that Asians, Digits, Reset Call/Reset Put, High Ticks/Low Ticks, and Run Ups/Run Downs are available exclusively with our Volatility Indices."
 msgstr ""
 
 msgid "Please note that actual trading results may not correspond to optimized or back-tested results."
@@ -7661,6 +7688,9 @@ msgid "Please provide us with the following information:"
 msgstr ""
 
 msgid "Please read this %1privacy policy%2 before submitting your application."
+msgstr ""
+
+msgid "Please reapply once the required criteria has been fulfilled."
 msgstr ""
 
 msgid "Please refer to the %1asset index%2 for each asset’s minimum and maximum contract durations based on trade type."
@@ -8495,6 +8525,15 @@ msgid "Roll-over Credit/Debit"
 msgstr ""
 
 msgid "Rolling Spot Forex;"
+msgstr ""
+
+msgid "Run"
+msgstr ""
+
+msgid "Run Downs"
+msgstr ""
+
+msgid "Run Ups"
 msgstr ""
 
 msgid "Russia"
@@ -9379,6 +9418,12 @@ msgstr ""
 msgid "The %1end time%2 is the selected number of minutes/hours after the %1start time%2."
 msgstr ""
 
+msgid "The %1entry spot%2 is the next tick after the %1start time%2."
+msgstr ""
+
+msgid "The %1exit spot%2 is the last tick when the contract ends. Contract ends when all ticks rise or fall successively, or when a single tick breaks the predicted pattern."
+msgstr ""
+
 msgid "The %1high%2 is the highest point ever reached by the market during the contract period."
 msgstr ""
 
@@ -9386,6 +9431,9 @@ msgid "The %1low%2 is the lowest point ever reached by the market during the con
 msgstr ""
 
 msgid "The %1start time%2 begins when the contract is processed by our servers."
+msgstr ""
+
+msgid "The %1start time%2 is when the contract has been processed by our servers."
 msgstr ""
 
 msgid "The <strong>contract period</strong> is the period between the <strong>next tick</strong> after the <strong>start time</strong> and the <strong>end time</strong>."
@@ -10196,6 +10244,9 @@ msgid "There are risks associated with utilizing an Internet-based deal executio
 msgstr ""
 
 msgid "There are two types of In/Out trades:"
+msgstr ""
+
+msgid "There are two types of Run trades:"
 msgstr ""
 
 msgid "There are two types of Up/Down trades:"
@@ -11161,6 +11212,9 @@ msgstr ""
 msgid "Upon the expiration or termination of this Agreement, for whatever reason, all rights and license granted to you in this Agreement, including use of the %1 API, shall immediately terminate. You agree to promptly cease all further use of the %1 API. Termination of this Agreement shall not act as a waiver of any breach of this Agreement and shall not act as a release of your liability for breach of its obligation under this Agreement. The Company shall not be liable to you for damages of any kind solely as a result of terminating this Agreement in accordance with its terms."
 msgstr ""
 
+msgid "Ups"
+msgstr ""
+
 msgid "Usage Limit"
 msgstr ""
 
@@ -11608,7 +11662,7 @@ msgstr ""
 msgid "We will hold you responsible for all your obligations under this Agreement in our course of providing the margin trading service described in this Agreement to you, even if you notify us that you are acting as the agent of an identified principal."
 msgstr ""
 
-msgid "We will review your documents and get back to you within one working day."
+msgid "We will review your documents and get back to you within 3 working days."
 msgstr ""
 
 msgid "We will use reasonable endeavors within our control to ensure that all electronic data provided on the MT5 Trading Platform and all electronic transactions instructed and accepted from you to us, and executed by us are not subject to network latency."
@@ -11714,9 +11768,6 @@ msgid "What is the %1 IB Programme all about?"
 msgstr ""
 
 msgid "What is the definition of a referred client?"
-msgstr ""
-
-msgid "What is this?"
 msgstr ""
 
 msgid "What kind of reports can I generate?"
@@ -11966,6 +12017,12 @@ msgid "Win maximum payout if the exit spot is higher than or equal to the upper 
 msgstr ""
 
 msgid "Win maximum payout if the exit spot is lower than or equal to the lower barrier."
+msgstr ""
+
+msgid "Win payout if consecutive ticks fall successively. Contract is lost when at least one tick rises or is equal to any of the previous ticks."
+msgstr ""
+
+msgid "Win payout if consecutive ticks rise successively. Contract is lost when at least one tick falls or is equal to any of the previous ticks."
 msgstr ""
 
 msgid "Win payout if exit spot is also equal to entry spot."
@@ -12703,6 +12760,9 @@ msgstr ""
 msgid "Your account is restricted. Kindly %1contact customer support%2 for assistance."
 msgstr ""
 
+msgid "Your account remains under the retail client category."
+msgstr ""
+
 msgid "Your account security is of paramount importance to us. Please consider the following initiatives and tools to enhance your account security:"
 msgstr ""
 
@@ -12781,10 +12841,13 @@ msgstr ""
 msgid "Your personal information is used primarily as a way of validating you as the legitimate account owner and proper recipient of withdrawal payments. We also use this information to process your trades. We collect from you all personal and financial data directly relating to you when you fill in our account opening form. In all instances, you have either a legal or a contractual obligation to provide us with the information. If such information is not provided, we will be unable to provide you with our services."
 msgstr ""
 
+msgid "Your professional client request is %1not approved%2."
+msgstr ""
+
 msgid "Your profit or loss is calculated as follows:"
 msgstr ""
 
-msgid "Your request to be treated as a professional client has been rejected. Please check your inbox for more details. Your account remains categorised as a retail client account."
+msgid "Your request to be treated as a professional client is %1not approved%2."
 msgstr ""
 
 msgid "Your request to transfer %1 %2 from %3 to %4 has been successfully processed."
