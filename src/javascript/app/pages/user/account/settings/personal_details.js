@@ -145,6 +145,8 @@ const PersonalDetails = (() => {
         if (has_changeable_fields) {
             displayChangeableFields(data);
             CommonFunctions.getElementById('tax_information_form').setVisibility(1);
+            CommonFunctions.getElementById('address_form').setVisibility(1);
+            showHideTaxMessage();
         } else if (is_virtual) {
             $(real_acc_elements).remove();
         } else {

@@ -42,6 +42,9 @@
         select.select-hidden {
             min-width: 205px;
         }
+        div.select {
+            width: 100%;
+        }
         @media all and (max-width: 480px) {
             div.select {
                 width: 85%;
