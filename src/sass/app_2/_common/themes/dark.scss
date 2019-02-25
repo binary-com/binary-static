@@ -649,4 +649,105 @@
             }
         }
     }
+    .contracts-type-dialog {
+        &__list-wrapper {
+            background: $COLOR_DARK_BLUE_3;
+            box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.5);
+        }
+    }
+    .contract-type-list {
+        &__label span {
+            color: $COLOR_DARK_BLUE_7;
+        }
+        &__contract-wrapper {
+            background: $COLOR_DARK_BLUE_2;
+            color: $COLOR_DARK_BLUE_7;
+        }
+    }
+    .contract-type-item {
+        background: $COLOR_DARK_BLUE_2;
+        color: $COLOR_DARK_BLUE_7;
+
+        &__title {
+            color: $COLOR_DARK_BLUE_7;
+        }
+        &--selected {
+            background: $COLOR_DARK_BLUE_5;
+
+            /* postcss-bem-linter: ignore */
+            span {
+                color: $COLOR_WHITE;
+            }
+        }
+        &:hover:not(.contract-type-item--selected) {
+            background: $COLOR_DARK_BLUE_4;
+        }
+    }
+    .trade-type-info-dialog {
+        &__header {
+            /* postcss-bem-linter: ignore */
+            .title {
+                color: $COLOR_DARK_BLUE_7;
+            }
+        }
+        &__gif {
+            background-color: $COLOR_DARK_BLUE_2;
+            color: $COLOR_DARK_BLUE_8;
+        }
+        &__content {
+            /* postcss-bem-linter: ignore */
+            p {
+                color: $COLOR_DARK_BLUE_7;
+            }
+        }
+        &__info-wrapper {
+            background: $COLOR_DARK_BLUE_3;
+        }
+    }
+    .trade-type-info-navigation {
+        &__circle-button {
+            background-color: $COLOR_DARK_BLUE_8;
+
+            &--active {
+                background-color: $COLOR_DARK_BLUE_7;
+            }
+        }
+    }
+    .contract-type-widget {
+        color: $COLOR_DARK_BLUE_7;
+        background: $COLOR_DARK_BLUE_2;
+        border-color: $COLOR_DARK_BLUE_2;
+
+        &:hover {
+            border-color: $COLOR_DARK_BLUE_7;
+        }
+        &:focus, &:active {
+            outline: 0;
+            border-color: $COLOR_DARK_BLUE_7;
+            box-shadow: 0 0 0 2px rgba(127, 131, 151, 0.3);
+        }
+        &__display {
+            /* postcss-bem-linter: ignore */
+            span[name=contract_type] {
+                color: $COLOR_DARK_BLUE_7;
+            }
+        }
+        .category-wrapper {
+            background: $COLOR_DARK_BLUE_5;
+
+            .category-type {
+                path, rect {
+                    &:not(.important) {
+                        fill: $COLOR_WHITE;
+                    }
+                    &.transparent {
+                        fill: $COLOR_DARK_BLUE_5;
+                    }
+                }
+                .stroke-active {
+                    stroke: $COLOR_WHITE;
+                }
+            }
+        }
+    }
 }
