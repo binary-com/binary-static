@@ -59,8 +59,12 @@
             }
         }
     }
-    .btn span {
-        font-size: 1em;
+    .btn {
+        margin: 0.8em;
+
+        span {
+            font-size: 1em;
+        }
     }
     .contract-contents {
         padding: 1em;
@@ -75,7 +79,7 @@
             line-height: 1.5;
         }
         .ref-number, .info-header {
-            margin-top: 1em;
+            margin-top: 0.6em;
             font-weight: 300;
             text-align: center;
             background-color: $COLOR_LIGHT_BLACK_4_SOLID;
