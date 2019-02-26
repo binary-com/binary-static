@@ -89,7 +89,7 @@ class TimePicker extends React.Component {
                                     name={name}
                                     placeholder={placeholder}
                                 />
-                                <IconClock className={`input-field__icon ${prefix_class}__icon`} />
+                                <IconClock className={`${prefix_class}__icon`} />
                                 <CSSTransition
                                     in={ this.state.is_open }
                                     classNames={{

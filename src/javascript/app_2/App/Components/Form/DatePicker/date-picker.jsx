@@ -230,7 +230,7 @@ class DatePicker extends React.Component {
             >
                 { this.renderInputField() }
                 <IconCalendar
-                    className={classNames('input-field__icon datepicker__icon datepicker__icon--calendar', {
+                    className={classNames('datepicker__icon datepicker__icon--calendar', {
                         'datepicker__icon--is-hidden' : this.state.is_clear_btn_visible,
                         'datepicker__icon--with-label': this.props.label,
                     })}

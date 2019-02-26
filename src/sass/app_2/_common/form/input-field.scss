@@ -3,11 +3,6 @@
     margin: 0.8em 0 0;
     position: relative;
 
-    &__icon {
-        @extend .absolute-center-v; // centers input-field icons vertically
-        top: 0.8em;
-        left: 5%;
-    }
     &__label {
         @include typeface(--paragraph-left-normal-black);
         margin-bottom: 0.8em;

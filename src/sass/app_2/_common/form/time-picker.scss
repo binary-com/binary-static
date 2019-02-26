@@ -6,6 +6,8 @@
         padding: 1.6em;
     }
     &__icon {
+        @extend .absolute-center-v;
+        @extend .icon--centered;
         z-index: 1;
         margin: unset;
     }
