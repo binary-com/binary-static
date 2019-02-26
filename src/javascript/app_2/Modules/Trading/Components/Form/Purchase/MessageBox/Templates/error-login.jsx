@@ -7,7 +7,7 @@ const ErrorLogin = () => (
     <div className='purchase-container__error-login'>
         <span className='purchase-container__error-info purchase-container__error-login-info'>{localize('Please log in to purchase the contract')}</span>
         <Button
-            className='purchase-container__error-login-btn secondary orange'
+            className='purchase-container__error-login-btn btn--secondary btn--secondary--orange'
             classNameSpan='purchase-container__error-login-btn-span'
             has_effect
             text={localize('log in')}
