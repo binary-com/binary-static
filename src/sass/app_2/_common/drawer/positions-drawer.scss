@@ -65,7 +65,7 @@ $header-height: 4em;
             margin: 8px;
             height: 40px;
 
-            span {
+            .btn__text {
                 font-size: 1.2em;
             }
         }
@@ -323,7 +323,7 @@ $header-height: 4em;
                 margin: 4px;
                 width: 100%;
 
-                span {
+                .btn__text {
                     font-size: 1.2em;
                     font-weight: bold;
                     line-height: 1.5;
@@ -481,11 +481,11 @@ $header-height: 4em;
             background: $COLOR_DARK_BLUE_3;
             border-color: $COLOR_DARK_BLUE_3;
 
-            .btn.secondary.orange {
+            .btn--alternate {
                 background-color: $COLOR_DARK_BLUE_5;
                 border-color: $COLOR_DARK_BLUE_5;
 
-                span {
+                .btn__text {
                     color: $COLOR_WHITE;
                     font-weight: bold;
                 }

@@ -124,6 +124,7 @@ footer {
         }
         .inline-icon {
             @extend .inline-icon.active;
+            pointer-events: none;
         }
     }
 }

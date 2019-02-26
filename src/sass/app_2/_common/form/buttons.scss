@@ -15,7 +15,6 @@
     outline: 0;
     position: relative;
     background: $COLOR_GREEN_1;
-    text-decoration: none;
 
     &__text {
         @include typeface(--title-center-normal-black, uppercase);

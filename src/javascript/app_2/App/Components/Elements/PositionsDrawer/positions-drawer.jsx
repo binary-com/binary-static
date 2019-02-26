@@ -87,7 +87,7 @@ class PositionsDrawer extends React.Component {
                 </div>
                 <div className='positions-drawer__footer'>
                     {/* TODO: Toggle to popup the Reports Dialog once Dialog is available */}
-                    <a className='btn btn--alternate' href='javascript:;'>
+                    <a className='btn btn--link btn--alternate' href='javascript:;'>
                         <span className='btn__text'>
                             {localize('Go to Reports')}
                         </span>

@@ -185,7 +185,9 @@ export default class PortfolioStore extends BaseStore {
 
     @action.bound
     removePositionById(contract_id) {
-        const i = this.positions.findIndex(pos => +pos.id === +contract_id);
+        let i = this.positions.findIndex(pos => +pos.id === +contract_id);
+        // check if position to be removed is out of range from the maximum amount rendered in drawer
+        if (this.positions.length > 4) i = this.positions.length - 1;
         this.positions.splice(i, 1);
     }
 
