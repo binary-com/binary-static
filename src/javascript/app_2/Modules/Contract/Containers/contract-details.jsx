@@ -33,7 +33,7 @@ class ContractDetails extends React.Component {
                             longcode={longcode}
                         />
                         <Link
-                            className='btn secondary orange'
+                            className='btn btn--link btn--secondary btn--secondary--orange'
                             to={routes.trade}
                             onClick={this.props.onClickNewTrade}
                         >
