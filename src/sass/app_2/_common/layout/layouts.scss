@@ -58,6 +58,9 @@
                 .cq-symbols-display {
                     z-index: 1;
                 }
+                .ciq-menu.ciq-disabled {
+                    display: none;
+                }
             }
             .cq-chart-controls {
                 transition: max-width 0.25s ease, transform 0.25s ease;
