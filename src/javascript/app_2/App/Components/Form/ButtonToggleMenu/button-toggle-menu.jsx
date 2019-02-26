@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import PropTypes  from 'prop-types';
 import React      from 'react';
-import Button     from './button.jsx';
+import Button     from '../Button';
 
 const ButtonToggleMenu = ({
     buttons_arr,

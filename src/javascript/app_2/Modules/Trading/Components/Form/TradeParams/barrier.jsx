@@ -5,8 +5,8 @@ import React          from 'react';
 import {
     IconBarrierUp,
     IconBarrierDown } from 'Assets/Trading/Barriers';
-import Fieldset       from 'App/Components/Form/fieldset.jsx';
-import InputField     from 'App/Components/Form/input-field.jsx';
+import Fieldset       from 'App/Components/Form/FieldSet';
+import InputField     from 'App/Components/Form/InputField';
 import { localize }   from '_common/localize';
 
 const Barrier = ({

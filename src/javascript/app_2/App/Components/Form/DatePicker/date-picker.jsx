@@ -7,7 +7,7 @@ import {
     IconArrow,
     IconCalendar,
     IconClear }             from 'Assets/Common';
-import InputField           from 'App/Components/Form/input-field.jsx';
+import InputField           from 'App/Components/Form/InputField';
 import {
     addDays,
     daysFromTodayTo,
@@ -16,8 +16,8 @@ import {
     isDateValid,
     toMoment }              from 'Utils/Date';
 import { localize }         from '_common/localize';
+import Calendar             from 'App/Components/Elements/Calendar';
 import { getTradingEvents } from './helpers';
-import Calendar             from '../../Elements/Calendar';
 
 class DatePicker extends React.Component {
     state = {

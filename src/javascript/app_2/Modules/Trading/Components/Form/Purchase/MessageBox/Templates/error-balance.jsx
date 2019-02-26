@@ -1,6 +1,6 @@
 import React               from 'react';
 import { localize }        from '_common/localize';
-import Button              from 'App/Components/Form/button.jsx';
+import Button              from 'App/Components/Form/Button';
 
 const ErrorBalance = () => (
     <div className='purchase-container__error-login'>

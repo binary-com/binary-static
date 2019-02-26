@@ -2,7 +2,7 @@ import classNames   from 'classnames';
 import React        from 'react';
 import PropTypes    from 'prop-types';
 import { localize } from '_common/localize';
-import Button       from '../../Form/button.jsx';
+import Button       from 'App/Components/Form/Button';
 
 const InstallPWAButton = ({
     className,

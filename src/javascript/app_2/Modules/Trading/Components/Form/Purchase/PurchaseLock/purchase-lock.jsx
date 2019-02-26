@@ -1,7 +1,7 @@
 import React           from 'react';
 import PropTypes       from 'prop-types';
 import { localize }    from '_common/localize';
-import Button          from 'App/Components/Form/button.jsx';
+import Button          from 'App/Components/Form/Button';
 import { IconLock }    from 'Assets/Trading/icon-lock.jsx';
 
 const PurchaseLock = ({ onClick }) => (

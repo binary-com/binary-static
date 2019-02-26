@@ -2,7 +2,7 @@ import { PropTypes as MobxPropTypes } from 'mobx-react';
 import PropTypes                      from 'prop-types';
 import React, { Fragment }            from 'react';
 import { localize }                   from '_common/localize';
-import Fieldset                       from 'App/Components/Form/fieldset.jsx';
+import Fieldset                       from 'App/Components/Form/FieldSet';
 import RangeSlider                    from 'App/Components/Form/RangeSlider';
 import { convertDurationLimit }       from 'Stores/Modules/Trading/Helpers/duration';
 import { toMoment }                   from 'Utils/Date';

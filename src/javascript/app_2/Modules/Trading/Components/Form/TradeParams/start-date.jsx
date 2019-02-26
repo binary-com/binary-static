@@ -5,7 +5,7 @@ import PropTypes                from 'prop-types';
 import React                    from 'react';
 import { localize }             from '_common/localize';
 import Dropdown                 from 'App/Components/Form/DropDown';
-import Fieldset                 from 'App/Components/Form/fieldset.jsx';
+import Fieldset                 from 'App/Components/Form/FieldSet';
 import TimePicker               from 'App/Components/Form/TimePicker';
 
 /* TODO:

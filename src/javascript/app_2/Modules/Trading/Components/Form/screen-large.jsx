@@ -2,7 +2,7 @@ import classNames   from 'classnames';
 import PropTypes    from 'prop-types';
 import React        from 'react';
 import UILoader     from 'App/Components/Elements/ui-loader.jsx';
-import Fieldset     from 'App/Components/Form/fieldset.jsx';
+import Fieldset     from 'App/Components/Form/FieldSet';
 import ContractType from '../../Containers/contract-type.jsx';
 import Purchase     from '../../Containers/purchase.jsx';
 import TradeParams  from '../../Containers/trade-params.jsx';

@@ -6,8 +6,8 @@ import PropTypes                 from 'prop-types';
 import React                     from 'react';
 import { IconMinus }             from 'Assets/Common/icon-minus.jsx'; // implicit import here { IconMinus, IconPlus } from 'Assets/Common' breaks compilation
 import { IconPlus }              from 'Assets/Common/icon-plus.jsx';
-import Button                    from './button.jsx';
-import Tooltip                   from '../Elements/tooltip.jsx';
+import Tooltip                   from 'App/Components/Elements/tooltip.jsx';
+import Button                    from 'App/Components/Form/Button';
 
 const InputField = ({
     checked,

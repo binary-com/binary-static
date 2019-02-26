@@ -6,7 +6,7 @@ import { IconBack }         from 'Assets/Common/icon-back.jsx';
 import { IconChevronLeft }  from 'Assets/Common/icon-chevron-left.jsx';
 import { IconChevronRight } from 'Assets/Common/icon-chevron-right.jsx';
 import { TradeCategories }  from 'Assets/Trading/Categories/trade-categories.jsx';
-import Button               from 'App/Components/Form/button.jsx';
+import Button               from 'App/Components/Form/Button';
 import { localize }         from '_common/localize';
 
 const TradeTypeInfoItem = ({
