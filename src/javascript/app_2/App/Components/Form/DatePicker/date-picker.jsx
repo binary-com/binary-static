@@ -8,7 +8,6 @@ import {
     IconCalendar,
     IconClear }             from 'Assets/Common';
 import InputField           from 'App/Components/Form/InputField';
-
 import {
     addDays,
     daysFromTodayTo,
