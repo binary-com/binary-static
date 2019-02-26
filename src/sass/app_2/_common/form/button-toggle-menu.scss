@@ -1,3 +1,4 @@
+/** @define button-menu */
 .button-menu {
     display: flex;
     justify-content: center;
@@ -28,25 +29,6 @@
 
             span {
                 @include typeface(--paragraph-left-bold-active);
-            }
-        }
-    }
-}
-
-.theme--dark {
-    .button-menu {
-        &__button {
-            background-color: $COLOR_DARK_BLUE_2;
-
-            span {
-                color: $COLOR_DARK_BLUE_7;
-            }
-            &:hover:not(&--active) {
-                background-color: $COLOR_DARK_BLUE_4;
-            }
-            &--active {
-                color: $COLOR_WHITE;
-                background-color: $COLOR_DARK_BLUE_5;
             }
         }
     }

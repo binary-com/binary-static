@@ -27,9 +27,9 @@ const Items = ({
                 </Tooltip>
                 }
                 {!!has_symbol && !item.has_tooltip &&
-                    <span className={`list__item__title symbols ${(item.text || '').toLowerCase()}`} />
+                    <span className={`list__item-text symbols ${(item.text || '').toLowerCase()}`} />
                 }
-                {!has_symbol && <span className='list__item__title'>{item.text}</span>}
+                {!has_symbol && <span className='list__item-text'>{item.text}</span>}
             </div>
         </React.Fragment>
     ))

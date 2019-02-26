@@ -1,14 +1,26 @@
 $header-height: 4em;
 
+// TODO: Split into smaller sass files for card, result-overlay and result-details
+
 // Trade page animation performance fix #perfmatters
 .trade-container + .positions-drawer {
     transition: opacity 0.4s ease;
 }
 
+// .app-contents--contract-mode {
+//     .positions-drawer-card {
+//         filter: blur(2px);
+//
+//         &--active, &--first, &:hover, &:focus, &:active {
+//             filter: none;
+//         }
+//     }
+// }
+
 .positions-drawer {
     width: $POSITIONS_DRAWER_WIDTH;
-    // emoving 2px below for borders
-    height: calc(100vh - #{$HEADER_HEIGHT} - #{$FOOTER_HEIGHT} - 2px - (#{$POSITIONS_DRAWER_MARGIN} * 3));
+    // removing 2px below for borders
+    height: calc(100vh - #{$HEADER_HEIGHT} - #{$FOOTER_HEIGHT} - 2px - (#{$POSITIONS_DRAWER_MARGIN} * 4));
     margin-top: #{$POSITIONS_DRAWER_MARGIN * 2};
     position: fixed;
     z-index: 2;
@@ -22,7 +34,7 @@ $header-height: 4em;
     transform: translateX(-100%);
     will-change: transform, opacity;
     transition: opacity 0.3s ease, transform 0.3s ease;
-    border-radius: 4px;
+    border-radius: $BORDER_RADIUS;
 
     &--open {
         transform: translateX(#{$POSITIONS_DRAWER_MARGIN});
@@ -36,10 +48,27 @@ $header-height: 4em;
         padding: 0 1em;
     }
     &__body {
-        height: calc(100% - #{$header-height});
-        padding: 0.8em 0;
+        height: calc(100% - #{$header-height * 2.5});
+        padding: 0.8em 0 0;
         box-sizing: border-box;
         overflow: hidden;
+    }
+    &__footer {
+        position: relative;
+        height: 6em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .btn {
+            width: 100%;
+            margin: 8px;
+            height: 40px;
+
+            .btn__text {
+                font-size: 1.2em;
+            }
+        }
     }
     &__title {
         font-size: 1.4em;
@@ -63,30 +92,137 @@ $header-height: 4em;
    */
     & &-card {
         box-sizing: border-box;
-        padding: 0.8em;
-        margin: 0 1em;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr auto;
-        row-gap: 0.5em;
-        border: 1px solid $COLOR_LIGHT_BLACK_4;
-        border-radius: 4px;
+        display: flex;
+        flex-direction: column;
         cursor: pointer;
         text-decoration: none;
+        position: relative;
         color: $COLOR_LIGHT_BLACK_1;
 
-        &.active, &:hover {
-            background: $COLOR_LIGHT_BLACK_4_SOLID;
+        &__result {
+            position: absolute;
+            top: -1px;
+            left: -1px;
+            width: calc(100% + 2px);
+            height: calc(100% + 2px);
+            max-height: 136px;
+            opacity: 0.8;
+            background-color: $COLOR_WHITE;
+            border-radius: $BORDER_RADIUS;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.25s linear;
+
+            &--won {
+                background-image: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(0, 148, 117, 0.16));
+            }
+            &--lost {
+                background-image: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(227, 28, 75, 0.16));
+            }
+            &:hover {
+                background: transparent;
+
+                .result__caption {
+                    opacity: 0;
+                }
+            }
+            &:after {
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: $BORDER_RADIUS;
+                z-index: 2;
+            }
+            &--won:after {
+                background-image: linear-gradient(to top, rgba(16, 19, 32, 0), rgba(0, 148, 117, 0.16));
+            }
+            &--lost:after {
+                background-image: linear-gradient(to top, rgba(16, 19, 32, 0), rgba(227, 28, 75, 0.16));
+            }
         }
-        &.active {
+        &__wrapper {
+            padding: 0.8em;
+            margin: 0 1em;
+            border: 1px solid $COLOR_WHITE;
+            background: $COLOR_WHITE;
+            border-radius: $BORDER_RADIUS;
+            transition: transform 0.25s ease, opacity 0.25s linear;
+
+            &:not(:last-child) {
+                margin-bottom: 16px;
+            }
+            &--enter-done {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            &--enter, &--exit {
+                opacity: 0;
+                transform: translateY(-16px);
+            }
+        }
+        &--active {
             cursor: default;
-            border-color: $COLOR_DARK_BLUE_5;
         }
-        &:not(:last-child) {
-            margin-bottom: 1.6em;
+        &--green:before {
+            background-image: linear-gradient(to top, rgba(16, 19, 32, 0), rgba(0, 148, 117, 0.16));
+        }
+        &--orange:before {
+            background-image: linear-gradient(to top, rgba(16, 19, 32, 0), rgba(255, 153, 51, 0.16));
+        }
+        &--red:before {
+            background-image: linear-gradient(to top, rgba(16, 19, 32, 0), rgba(227, 28, 75, 0.16));
+        }
+        &--active:before, &:hover:before {
+            content: '';
+            position: absolute;
+            height: 52px;
+            width: calc(100% + 18px);
+            left: -9px;
+            top: -9px;
+            border-radius: $BORDER_RADIUS;
+        }
+        &__grid {
+            display: grid;
+            grid-template-rows: 1fr auto;
+
+            &-underlying-trade, &-profit-payout {
+                grid-template-columns: 1fr 1fr;
+            }
+            &-profit-payout {
+                padding: 8px 0;
+                background: $COLOR_LIGHT_BLACK_4;
+                border-radius: $BORDER_RADIUS;
+                margin-left: -4px;
+                margin-right: -4px;
+            }
+        }
+        &__purchase {
+            &-price {
+                font-size: 1.2em;
+                padding: 8px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-weight: bold;
+            }
+            &-label {
+                text-transform: capitalize;
+                margin-right: 0.5em;
+                font-size: 10px;
+                font-weight: normal;
+                color: $COLOR_LIGHT_BLACK_1;
+            }
         }
         &__type {
             font-size: 1.2em;
+            display: flex;
+            justify-content: center;
+            font-weight: bold;
 
             .contract-type {
                 display: flex;
@@ -94,7 +230,7 @@ $header-height: 4em;
                 align-items: center;
 
                 .type-wrapper {
-                    margin: 0 0.4em 0.4em 0;
+                    margin: 0 0.4em 0 0;
                 }
                 span {
                     width: 3em;
@@ -102,76 +238,188 @@ $header-height: 4em;
             }
         }
         &__symbol {
+            margin-left: 0.5rem;
             font-size: 1em;
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
+            line-height: 1.5;
         }
         &__indicative {
             font-size: 1.2em;
             font-weight: bold;
             display: flex;
-            flex-direction: row;
-            justify-content: flex-end;
+            justify-content: center;
             align-items: center;
-            margin-bottom: auto;
 
-            &:after {
-                content: '';
-                display: inline-block;
-                height: 1.6em;
-                width: 1.6em;
-                background-size: 1.6em 1.6em;
-                margin-left: 0.2em;
+            &-label {
+                color: $COLOR_LIGHT_BLACK_1;
+                font-size: 1em;
+                font-weight: normal;
+                margin-bottom: 0.5em;
             }
             &--price-moved-up {
                 color: $COLOR_GREEN_1;
-
-                &:after {
-                    background-image: url('../images/positions/ic_price_up.svg');
-                }
             }
             &--price-moved-down {
                 color: $COLOR_RED;
-
-                &:after {
-                    background-image: url('../images/positions/ic_price_down.svg');
-                }
             }
             &--price-stable {
                 color: $COLOR_LIGHT_BLACK_1;
-
-                &:after {
-                    background-image: url('../images/positions/ic_price_stable_light.svg');
-                }
             }
             &--no-resale {
-                color: $COLOR_LIGHT_BLACK_4;
-
-                &:after {
-                    background-image: url('../images/positions/ic_no_resale.svg');
-                }
+                color: $COLOR_LIGHT_BLACK_2;
             }
         }
         &__remaining-time {
             font-size: 1em;
             color: $COLOR_LIGHT_BLACK_2;
-            text-align: right;
 
-            &:before {
-                content: '';
-                display: inline-block;
-                height: 1em;
-                width: 1em;
-                background-size: 1em 1em;
-                margin-right: 0.2em;
-                background-image: url('../images/positions/ic_countdown.svg');
-                vertical-align: text-top;
-            }
             .remaining-time {
                 display: inline;
             }
         }
+        &__profit-loss {
+            font-size: 1.2em;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+
+            &-label {
+                font-size: 1em;
+                color: $COLOR_LIGHT_BLACK_1;
+                margin-bottom: 0.5em;
+                font-weight: normal;
+            }
+            &--negative {
+                color: $COLOR_RED;
+
+                &:before {
+                    content: '-';
+                    color: inherit;
+                }
+            }
+            &--positive {
+                color: $COLOR_GREEN_2;
+
+                &:before {
+                    content: '+';
+                    color: inherit;
+                }
+            }
+        }
+        &__underlying-name {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        &__sell-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .btn {
+                margin: 4px;
+                width: 100%;
+
+                .btn__text {
+                    font-size: 1.2em;
+                    font-weight: bold;
+                    line-height: 1.5;
+                }
+            }
+            &--enter-done {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            &--enter, &--exit {
+                opacity: 0;
+                transform: translateY(-8px);
+            }
+        }
+    }
+    .result-details__separator {
+        border-top: 1px solid $COLOR_LIGHT_BLACK_4_SOLID;
+        margin: 4px -9px 4px;
+    }
+    .result-details__wrapper {
+        margin: -2px -9px 0;
+        transition: opacity 0.2s ease;
+        will-change: opacity;
+        padding: 2px 4px;
+
+        &--enter-done {
+            opacity: 1;
+        }
+        &--enter, &--exit {
+            opacity: 0;
+        }
+    }
+    .result-details__grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 4px 8px;
+    }
+    .result-details__item {
+        display: flex;
+        flex-direction: column;
+        margin: 4px;
+        max-width: 80px;
+    }
+    .result-details__label {
+        fonts-size: 0.8em;
+        color: $COLOR_LIGHT_BLACK_1;
+    }
+    .result-details__value {
+        padding-top: 4px;
+        line-height: 1.5;
+        font-size: 1.2em;
+    }
+    .result-details__toggle {
+        margin: -2px -9px -9px;
+        padding: 4px 0;
+        display: flex;
+        justify-content: center;
+        border-radius: $BORDER_RADIUS;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        cursor: pointer;
+
+        &--is-open {
+            border-top: 1px solid $COLOR_LIGHT_BLACK_4_SOLID;
+        }
+    }
+    .result__caption {
+        text-transform: capitalize;
+        font-size: 1.6em;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: opacity 0.25s ease;
+
+        &--won {
+            color: $COLOR_GREEN_1;
+        }
+        &--lost {
+            color: $COLOR_RED;
+        }
+    }
+    .result__close-btn {
+        position: absolute;
+        top: 2px;
+        right: 8px;
+        cursor: pointer;
+
+        &:after {
+            content: '\0000D7';
+            font-size: 1.6em;
+            color: $COLOR_LIGHT_GRAY_1;
+        }
+    }
+    .result__icon {
+        margin-left: 10px;
     }
     /*
         POSITIONS DRAWER CARD ENDS
@@ -186,18 +434,24 @@ $header-height: 4em;
         color: $COLOR_WHITE;
 
         &-card {
-            background: $COLOR_DARK_BLUE_5;
-            border-color: $COLOR_DARK_BLUE_5;
             color: $COLOR_WHITE;
 
+            &__result {
+                background-color: $COLOR_DARK_BLUE_2;
+
+                &--won {
+                    background-image: linear-gradient(to top, rgba(16, 19, 32, 0), rgba(0, 148, 117, 0.16));
+                }
+                &--lost {
+                    background-image: linear-gradient(to top, rgba(16, 19, 32, 0), rgba(227, 28, 75, 0.16));
+                }
+            }
+            &__wrapper {
+                background: $COLOR_DARK_BLUE_2;
+                border-color: $COLOR_DARK_BLUE_2;
+            }
             &__remaining-time {
                 color: $COLOR_DARK_BLUE_7;
-            }
-            &.active, &:hover {
-                background: $COLOR_DARK_BLUE_5;
-            }
-            &.active {
-                border-color: $COLOR_WHITE;
             }
             &__indicative {
                 &--no-resale {
@@ -205,11 +459,13 @@ $header-height: 4em;
                 }
                 &--price-stable {
                     color: $COLOR_WHITE;
-
-                    &:after {
-                        background-image: url('../images/positions/ic_price_stable_dark.svg');
-                    }
                 }
+            }
+            &__grid-profit-payout {
+                background: $COLOR_DARK_BLUE_3;
+            }
+            &__purchase-label, &__profit-loss-label, &__indicative-label {
+                color: $COLOR_DARK_BLUE_7;
             }
         }
         &__title {
@@ -219,6 +475,28 @@ $header-height: 4em;
             .positions-empty, p {
                 align-self: center;
                 color: $COLOR_WHITE;
+            }
+        }
+        &__footer {
+            background: $COLOR_DARK_BLUE_3;
+            border-color: $COLOR_DARK_BLUE_3;
+
+            .btn--alternate {
+                background-color: $COLOR_DARK_BLUE_5;
+                border-color: $COLOR_DARK_BLUE_5;
+
+                .btn__text {
+                    color: $COLOR_WHITE;
+                    font-weight: bold;
+                }
+            }
+        }
+        .result {
+            &-details__label {
+                color: $COLOR_DARK_BLUE_7;
+            }
+            &-details__toggle--is-open, &-details__separator {
+                border-color: $COLOR_DARK_BLUE_3;
             }
         }
     }

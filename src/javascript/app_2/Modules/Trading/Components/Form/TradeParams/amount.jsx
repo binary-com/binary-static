@@ -45,6 +45,7 @@ const Amount = ({
             <div className={amount_container_class}>
                 <ButtonToggleMenu
                     buttons_arr={basis_list}
+                    className='dropdown--no-margin'
                     name='basis'
                     onChange={onChange}
                     value={basis}

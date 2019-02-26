@@ -7,7 +7,7 @@ import Button       from 'App/Components/Form/button.jsx';
 const UpgradeButton = ({ className, onClick }) => (
     <Button
         id='acc-balance-btn'
-        className={classNames(className, 'primary orange')}
+        className={classNames(className, 'btn--primary btn--primary--orange')}
         has_effect
         text={localize('Upgrade')}
         onClick={onClick}

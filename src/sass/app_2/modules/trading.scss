@@ -19,7 +19,6 @@
         }
     }
     &__input {
-        font-weight: 300;
         align-self: center;
         appearance: none;
         box-sizing: border-box;
@@ -41,8 +40,6 @@
         }
     }
     &__currency {
-        text-align: center;
-        z-index: 1;
         margin: 0.8em 0 0;
         color: rgba(0, 0, 0, 0.8);
         position: relative;
@@ -59,8 +56,12 @@
         border-color: $COLOR_WHITE;
 
         &--symbol {
-            font-size: 1.4em;
-            line-height: 1.5;
+          font-size: 1.4em;
+          line-height: 1.5;
+        }
+        &:before {
+            @include typeface(--paragraph-center-normal-black);
+            color: inherit;
         }
     }
     &__price {
@@ -112,6 +113,7 @@
     }
     &__barriers {
         display: flex;
+        flex-direction: column;
 
         &:first-child {
             padding-right: 8px;

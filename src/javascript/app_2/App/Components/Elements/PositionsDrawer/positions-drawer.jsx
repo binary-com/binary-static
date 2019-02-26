@@ -2,12 +2,13 @@ import classNames                     from 'classnames';
 import { PropTypes as MobxPropTypes } from 'mobx-react';
 import PropTypes                      from 'prop-types';
 import React                          from 'react';
+import { CSSTransition }              from 'react-transition-group';
 import { Scrollbars }                 from 'tt-react-custom-scrollbars';
 import { localize }                   from '_common/localize';
 import { IconMinimize }               from 'Assets/Common';
 import EmptyPortfolioMessage          from 'Modules/Portfolio/Components/empty-portfolio-message.jsx';
 import { connect }                    from 'Stores/connect';
-import PositionsDrawerCard            from './positions_drawer_card.jsx';
+import PositionsDrawerCard            from './positions-drawer-card.jsx';
 
 class PositionsDrawer extends React.Component {
     componentDidMount()    {
@@ -20,12 +21,16 @@ class PositionsDrawer extends React.Component {
 
     render() {
         const {
+            active_contract_id,
             active_positions,
             error,
             currency,
             is_empty,
             is_positions_drawer_on,
+            onClickSell,
+            onClickRemove,
             toggleDrawer,
+            server_time,
         } = this.props;
 
         let body_content;
@@ -35,12 +40,29 @@ class PositionsDrawer extends React.Component {
         } else if (is_empty) {
             body_content = <EmptyPortfolioMessage />;
         } else {
-            body_content = active_positions.map((portfolio_position) => (
-                <PositionsDrawerCard
+            // Show only 4 most recent open contracts
+            body_content = active_positions.slice(0, 4).map((portfolio_position) => (
+                <CSSTransition
                     key={portfolio_position.id}
-                    currency={currency}
-                    {...portfolio_position}
-                />
+                    in={!!(portfolio_position.underlying_code)}
+                    timeout={150}
+                    classNames={{
+                        enter    : 'positions-drawer-card__wrapper--enter',
+                        enterDone: 'positions-drawer-card__wrapper--enter-done',
+                        exit     : 'positions-drawer-card__wrapper--exit',
+                    }}
+                    unmountOnExit
+                >
+                    <PositionsDrawerCard
+                        active_position={active_contract_id}
+                        onClickSell={onClickSell}
+                        onClickRemove={onClickRemove}
+                        server_time={server_time}
+                        key={portfolio_position.id}
+                        currency={currency}
+                        {...portfolio_position}
+                    />
+                </CSSTransition>
             ));
         }
 
@@ -63,12 +85,21 @@ class PositionsDrawer extends React.Component {
                         {body_content}
                     </Scrollbars>
                 </div>
+                <div className='positions-drawer__footer'>
+                    {/* TODO: Toggle to popup the Reports Dialog once Dialog is available */}
+                    <a className='btn btn--link btn--alternate' href='javascript:;'>
+                        <span className='btn__text'>
+                            {localize('Go to Reports')}
+                        </span>
+                    </a>
+                </div>
             </div>
         );
     }
 }
 
 PositionsDrawer.propTypes = {
+    active_contract_id    : PropTypes.string,
     active_positions      : MobxPropTypes.arrayOrObservableArray,
     children              : PropTypes.any,
     currency              : PropTypes.string,
@@ -76,20 +107,27 @@ PositionsDrawer.propTypes = {
     is_empty              : PropTypes.bool,
     is_loading            : PropTypes.bool,
     is_positions_drawer_on: PropTypes.bool,
+    onClickRemove         : PropTypes.func,
+    onClickSell           : PropTypes.func,
     onMount               : PropTypes.func,
     onUnmount             : PropTypes.func,
+    server_time           : PropTypes.object,
     toggleDrawer          : PropTypes.func,
 };
 
 export default connect(
-    ({ modules, client, ui }) => ({
+    ({ common, modules, client, ui }) => ({
+        server_time           : common.server_time,
+        currency              : client.currency,
+        active_contract_id    : modules.contract.contract_id,
         active_positions      : modules.portfolio.active_positions,
-        is_loading            : modules.portfolio.is_loading,
         error                 : modules.portfolio.error,
         is_empty              : modules.portfolio.is_empty,
+        is_loading            : modules.portfolio.is_loading,
+        onClickSell           : modules.portfolio.onClickSell,
+        onClickRemove         : modules.portfolio.removePositionById,
         onMount               : modules.portfolio.onMount,
         onUnmount             : modules.portfolio.onUnmount,
-        currency              : client.currency,
         is_positions_drawer_on: ui.is_positions_drawer_on,
         toggleDrawer          : ui.togglePositionsDrawer,
     })

@@ -5,8 +5,8 @@
     transition: all 0.4s ease;
     outline: 0;
     display: block;
-    width: 3.2em;
-    height: 1.6em;
+    width: 32px;
+    height: 16px;
     position: relative;
     cursor: pointer;
 
@@ -14,20 +14,20 @@
         background: $COLOR_GREEN_1;
 
         &:after {
-            left: 1.7em !important;
+            left: 17px !important;
         }
     }
     &:after {
         border-radius: 50%;
         background: $COLOR_WHITE;
         transition: all 0.2s ease;
-        top: 0.1em;
-        left: 0.1em;
+        top: 1px;
+        left: 1px;
         position: relative;
         display: block;
         content: '';
-        width: 1.4em;
-        height: 1.4em;
+        width: 14px;
+        height: 14px;
     }
     // these are styles that we don't want to clash with .switch-button--toggled:after
     &:not(.switch-button--toggled):after {
@@ -43,8 +43,8 @@
     transition: all 0.4s ease;
     outline: 0;
     display: block;
-    width: 1.6em;
-    height: 1.2em;
+    width: 20px;
+    height: 18px;
     position: relative;
     cursor: pointer;
     margin-right: 0.4em;
@@ -52,7 +52,7 @@
     &--toggled:after {
         top: 0;
         height: 100%;
-        width: 0.4em;
+        width: 4px;
     }
     &:after {
         background: $COLOR_DARK_BLUE_2;
@@ -66,6 +66,6 @@
     &:not(.toggle-chart-layout--toggled):after {
         top: 70%;
         width: 100%;
-        height: 0.4em;
+        height: 4px;
     }
 }
