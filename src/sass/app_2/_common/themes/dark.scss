@@ -526,8 +526,12 @@
         &__wrapper {
             background: $COLOR_DARK_BLUE_3;
         }
-        &__account:hover {
-            background-color: $COLOR_DARK_BLUE_4;
+        &__accounts {
+            .acc-switcher__account {
+                &:not(:last-child):not(:only-child) {
+                    border-bottom: 1px solid $COLOR_DARK_BLUE_3;
+                }
+            }
         }
         &__list {
             background-color: $COLOR_DARK_BLUE_3;
@@ -539,33 +543,27 @@
                 color: $COLOR_DARK_BLUE_7;
             }
             .acc-switcher__account {
-                border-color: $COLOR_DARK_BLUE_2;
+                background-color: $COLOR_DARK_BLUE_2;
 
+                &:hover:not(.acc-switcher__account--selected) {
+                    background-color: $COLOR_DARK_BLUE_4;
+                }
                 .acc-switcher__id {
                     color: $COLOR_DARK_BLUE_7;
                 }
-                .acc-switcher__radio {
-                    border-color: $COLOR_DARK_BLUE_7;
-                }
                 &--selected {
+                    background: $COLOR_DARK_BLUE_5;
+
                     .acc-switcher__id {
                         color: $COLOR_WHITE;
-                    }
-                    .acc-switcher__radio {
-                        border-color: $COLOR_GREEN_1;
-                        background: $COLOR_GREEN_1;
+                        font-weight: 700;
                     }
                 }
             }
         }
         &__logout {
-            background-color: $COLOR_DARK_BLUE_2;
-
             span {
                 color: $COLOR_DARK_BLUE_7;
-            }
-            &:hover {
-                background-color: $COLOR_DARK_BLUE_4;
             }
         }
         &__new-account-title {

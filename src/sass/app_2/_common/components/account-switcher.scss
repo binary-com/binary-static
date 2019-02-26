@@ -101,7 +101,6 @@
         &-title {
             @include typeface(--small-center-normal-grey, none);
             @include toEm(padding, 8px 16px, 1.2em);
-            @include toEm(margin, 0 16px, 1.2em);
             border: 1px dashed $COLOR_LIGHT_BLACK_2;
             width: 100%;
             border-radius: 4px;
@@ -121,19 +120,36 @@
         height: 100%;
         border-radius: $BORDER_RADIUS;
         background-color: $COLOR_LIGHT_BLACK_4_SOLID;
+        padding: 1.6em;
+        display: flex;
+        flex-flow: column nowrap;
 
-        &-group {
-            border-bottom: 4px solid $COLOR_WHITE;
-            padding: 0.8em 0;
-        }
         &-title {
             @include typeface(--paragraph-left-bold-black);
-            @include toEm(padding, 8px 16px, 1em);
+            @include toEm(padding, 8px 0, 1em);
             display: block;
         }
-        &--virtual {
-            padding-top: 0.8em;
-            padding-bottom: 1.6em;
+    }
+    &__accounts {
+        .acc-switcher__account {
+            &:first-child {
+                border-top-left-radius: 4px;
+                border-top-right-radius: 4px;
+                border-bottom: none;
+            }
+            &:last-child {
+                border-bottom-left-radius: 4px;
+                border-bottom-right-radius: 4px;
+                border-top: none;
+            }
+            &:only-child {
+                border-radius: 4px;
+            }
+            &:not(:last-child):not(:only-child) {
+                border-bottom: 1px solid $COLOR_LIGHT_BLACK_4_SOLID;
+                border-right: none;
+                border-left: none;
+            }
         }
     }
     &__account {
@@ -143,6 +159,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        background-color: $COLOR_WHITE;
 
         .acc-switcher__id {
             @include typeface(--paragraph-left-light-black);
@@ -161,29 +178,26 @@
                 margin-right: 1.6em;
             }
         }
-        .acc-switcher__radio {
-            height: 1.6em;
-            width: 1.6em;
-            border: 2px solid $COLOR_LIGHT_BLACK_2;
-            border-radius: 50%;
-        }
-        &:hover {
+        &:hover:not(.acc-switcher__account--selected) {
             background: $COLOR_LIGHT_BLACK_4;
         }
         &--selected {
-            .acc-switcher__radio {
-                border: 4px solid $COLOR_ORANGE;
-                background: $COLOR_WHITE;
+            background: $COLOR_LIGHT_GRAY_1;
+
+            .acc-switcher__id {
+                color: $COLOR_WHITE;
+                font-weight: 700;
             }
         }
     }
     &__logout {
-        padding: 1.6em;
+        margin-top: 1.6em;
         cursor: pointer;
         display: flex;
         align-items: center;
         justify-content: flex-end;
-        background-color: $COLOR_WHITE;
+        width: fit-content;
+        align-self: flex-end;
 
         &-text {
             @include typeface(--paragraph-left-normal-black, none);
@@ -191,10 +205,7 @@
         &-icon {
             width: 1.6em;
             height: auto;
-            margin-left: 16px;
-        }
-        &:hover {
-            background: $COLOR_LIGHT_BLACK_4;
+            margin-left: 8px;
         }
     }
 }

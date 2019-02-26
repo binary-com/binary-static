@@ -61,10 +61,11 @@ class AccountSwitcher extends React.Component {
                         <span className='acc-switcher__list-title'>
                             {main_account_title}
                         </span>
-                        {
-                            real_accounts.map((account) => (
-                                <React.Fragment key={account.loginid}>
+                        <div className='acc-switcher__accounts'>
+                            {
+                                real_accounts.map((account) => (
                                     <div
+                                        key={account.loginid}
                                         className={classNames('acc-switcher__account', {
                                             'acc-switcher__account--selected': (account.loginid === this.props.account_loginid),
                                         })}
@@ -77,10 +78,10 @@ class AccountSwitcher extends React.Component {
                                             />
                                             {account.loginid}
                                         </span>
-                                        <span className='acc-switcher__radio' />
                                     </div>
-                                </React.Fragment>
-                            ))}
+                                ))
+                            }
+                        </div>
 
                         {   // TODO: Add link to account opening page for upgrade or multi account page for new account.
                             // Update text below for handling types of account to create :- e.g - Investment
@@ -97,16 +98,17 @@ class AccountSwitcher extends React.Component {
                         <span className='acc-switcher__list-title'>
                             {localize('Virtual account')}
                         </span>
-                        <div
-                            className={classNames('acc-switcher__account', {
-                                'acc-switcher__account--selected': (this.props.virtual_loginid === this.props.account_loginid),
-                            })}
-                            onClick={this.doSwitch.bind(this, this.props.virtual_loginid)}
-                        >
-                            <span className={classNames('acc-switcher__id', 'acc-switcher__id--virtual')}>
-                                {this.props.virtual_loginid}
-                            </span>
-                            <span className='acc-switcher__radio' />
+                        <div className='acc-switcher__accounts'>
+                            <div
+                                className={classNames('acc-switcher__account', {
+                                    'acc-switcher__account--selected': (this.props.virtual_loginid === this.props.account_loginid),
+                                })}
+                                onClick={this.doSwitch.bind(this, this.props.virtual_loginid)}
+                            >
+                                <span className={classNames('acc-switcher__id', 'acc-switcher__id--virtual')}>
+                                    {this.props.virtual_loginid}
+                                </span>
+                            </div>
                         </div>
                     </div>
                 }
