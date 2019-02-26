@@ -19,7 +19,7 @@ const SellButton = ({
         <React.Fragment>
             <Tooltip alignment='left' icon='question' message={sell_message} />
             <Button
-                className='secondary green'
+                className='btn--secondary btn--secondary--green'
                 is_disabled={!is_valid_to_sell || is_sell_requested}
                 text={localize('Sell')}
                 onClick={onClickSell}

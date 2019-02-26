@@ -19,7 +19,6 @@
         }
     }
     &__input {
-        font-weight: 300;
         align-self: center;
         appearance: none;
         box-sizing: border-box;
@@ -46,6 +45,13 @@
         text-align: center;
         z-index: 1;
         color: $COLOR_LIGHT_BLACK_1;
+        width: 3.2em;
+        line-height: 3.2em;
+
+        &:before {
+            @include typeface(--paragraph-center-normal-black);
+            color: inherit;
+        }
     }
     &__price {
         line-height: 0.9rem;

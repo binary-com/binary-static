@@ -145,9 +145,9 @@ class Dropdown extends React.Component {
             <div
                 ref={this.setWrapperRef}
                 className={classNames('dropdown-container', this.props.className, {
-                    'dropdown-container--left'    : this.props.is_alignment_left,
-                    'dropdown-container--show'    : this.state.is_list_visible,
-                    'dropdown-container--disabled': is_single_option,
+                    'dropdown--left'    : this.props.is_alignment_left,
+                    'dropdown--show'    : this.state.is_list_visible,
+                    'dropdown--disabled': is_single_option,
                 })}
             >
                 <div
@@ -158,13 +158,13 @@ class Dropdown extends React.Component {
                     onClick={this.handleVisibility}
                     onKeyDown={this.onKeyPressed}
                 >
-                    <span name={this.props.name} value={this.props.value}>
+                    <span name={this.props.name} value={this.props.value} className='dropdown__display-text'>
                         {getDisplayText(this.props.list, this.props.value)}
                     </span>
                 </div>
                 {
-                    !is_single_option && <IconArrow className={classNames('select-arrow', {
-                        'select-arrow--left': this.props.is_alignment_left,
+                    !is_single_option && <IconArrow className={classNames('dropdown__select-arrow', {
+                        'dropdown__select-arrow--left': this.props.is_alignment_left,
                     })}
                     />
                 }
@@ -172,9 +172,9 @@ class Dropdown extends React.Component {
                     in={this.state.is_list_visible}
                     timeout={100}
                     classNames={{
-                        enter    : 'dropdown__list--enter',
-                        enterDone: 'dropdown__list--enter--done',
-                        exit     : 'dropdown__list--exit',
+                        enter    : `dropdown__list--enter ${this.props.is_alignment_left ? 'dropdown__list--left--enter' : ''}`,
+                        enterDone: `dropdown__list--enter-done ${this.props.is_alignment_left ? 'dropdown__list--left--enter-done' : ''}`,
+                        exit     : `dropdown__list--exit ${this.props.is_alignment_left ? 'dropdown__list--left--exit' : ''}`,
                     }}
                     onEntered={setListWidth}
                     unmountOnExit
@@ -207,7 +207,7 @@ class Dropdown extends React.Component {
                                     /> :
                                     Object.keys(this.props.list).map(key => (
                                         <React.Fragment key={key}>
-                                            <div className='list__label'><span>{key}</span></div>
+                                            <div className='list__label'>{key}</div>
                                             <Items
                                                 highlightedIdx={this.state.curr_index}
                                                 items={this.props.list[key]}
