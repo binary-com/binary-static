@@ -38,12 +38,12 @@
 }
 
 .detailsws-content {
+    div.select-dropdown {
+        width: 100%;
+    }
     #address_form {
         select.select-hidden {
             min-width: 205px;
-        }
-        div.select {
-            width: 100%;
         }
         @media all and (max-width: 480px) {
             div.select {
