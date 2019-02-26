@@ -19,8 +19,8 @@ const TradingTimePicker = ({
 }) => {
     const moment_expiry                   = toMoment(expiry_date || server_time);
     const moment_contract_start_date_time =
-        setTime(toMoment(start_date || server_time), (isTimeValid(start_time) ? start_time : server_time.format('HH:mm:ss')));
-    const expiry_date_time                = setTime(moment_expiry.clone(), moment_contract_start_date_time.clone().add(5, 'minute').format('HH:mm:ss'));
+        setTime(toMoment(start_date || server_time), (isTimeValid(start_time) ? start_time : server_time.format('HH:mm')));
+    const expiry_date_time                = setTime(moment_expiry.clone(), moment_contract_start_date_time.clone().add(5, 'minute').format('HH:mm'));
     const expiry_date_market_close        = setTime(expiry_date_time.clone(), market_close_times.slice(-1)[0]);
     const is_expired_next_day             = expiry_date_time.diff(moment_contract_start_date_time, 'day') === 1;
     const min_date_expiry                 = moment_contract_start_date_time.clone().startOf('day');
