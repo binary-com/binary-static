@@ -20,7 +20,7 @@ const EmptyStatementMessage = ({ has_selected_date }) => (
             {
                 !has_selected_date &&
                 <ButtonLink
-                    className='secondary orange'
+                    className='btn--secondary btn--secondary--orange'
                     to={routes.trade}
                 >
                     <span>{localize('Trade now')}</span>

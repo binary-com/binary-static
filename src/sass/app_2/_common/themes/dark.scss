@@ -675,7 +675,6 @@
         &--selected {
             background: $COLOR_DARK_BLUE_5;
 
-            /* postcss-bem-linter: ignore */
             span {
                 color: $COLOR_WHITE;
             }
@@ -686,7 +685,6 @@
     }
     .trade-type-info-dialog {
         &__header {
-            /* postcss-bem-linter: ignore */
             .title {
                 color: $COLOR_DARK_BLUE_7;
             }
@@ -696,7 +694,6 @@
             color: $COLOR_DARK_BLUE_8;
         }
         &__content {
-            /* postcss-bem-linter: ignore */
             p {
                 color: $COLOR_DARK_BLUE_7;
             }
@@ -728,7 +725,6 @@
             box-shadow: 0 0 0 2px rgba(127, 131, 151, 0.3);
         }
         &__display {
-            /* postcss-bem-linter: ignore */
             span[name=contract_type] {
                 color: $COLOR_DARK_BLUE_7;
             }
@@ -748,6 +744,144 @@
                 .stroke-active {
                     stroke: $COLOR_WHITE;
                 }
+            }
+        }
+    }
+    .button-menu {
+        &__button {
+            background-color: $COLOR_DARK_BLUE_2;
+
+            span {
+                color: $COLOR_DARK_BLUE_7;
+            }
+            &:hover:not(&--active) {
+                background-color: $COLOR_DARK_BLUE_4;
+            }
+            &--active {
+                color: $COLOR_WHITE;
+                background-color: $COLOR_DARK_BLUE_5;
+            }
+        }
+    }
+    .time-picker {
+        &__icon {
+            g {
+                stroke: $COLOR_DARK_BLUE_7;
+            }
+        }
+        &__dialog {
+            background: $COLOR_DARK_BLUE_3;
+        }
+        &__selector {
+            &--hours, &--minutes {
+                border-color: $COLOR_DARK_BLUE_2;
+                color: $COLOR_DARK_BLUE_7;
+
+            }
+            &-list-title {
+                color: $COLOR_WHITE;
+            }
+            &-list-item {
+                color: $COLOR_DARK_BLUE_7;
+
+                &--disabled {
+                    color: $COLOR_DARK_BLUE_8;
+                    pointer-events: none;
+                }
+                &--selected {
+                    background: $COLOR_DARK_BLUE_5;
+                }
+                &:hover:not(&--selected):not(&--disabled) {
+                    background: $COLOR_DARK_BLUE_4;
+                }
+            }
+        }
+    }
+    .input-field {
+        &__label {
+            color: $COLOR_DARK_BLUE_7;
+        }
+        &:has(input[type=checkbox]) {
+            display: inline-block;
+        }
+    }
+    .input-wrapper {
+        &__button:not(:disabled) {
+            &:hover {
+                background-color: $COLOR_DARK_BLUE_4;
+            }
+        }
+    }
+    .input {
+        background: $COLOR_DARK_BLUE_2;
+        border-color: $COLOR_DARK_BLUE_2;
+        color: $COLOR_DARK_BLUE_7;
+
+        &[type=checkbox] {
+            border-color: $COLOR_DARK_BLUE_7;
+
+            &:hover {
+                border-color: $COLOR_ORANGE;
+            }
+            &:checked {
+                background: $COLOR_ORANGE;
+                border-color: $COLOR_ORANGE;
+            }
+            &:not(:checked) {
+                &:focus, &:active {
+                    border-color: $COLOR_DARK_BLUE_7;
+                }
+            }
+        }
+        &:hover {
+            border-color: $COLOR_DARK_BLUE_7;
+        }
+        &:focus, &:active {
+            border-color: $COLOR_DARK_BLUE_7;
+            box-shadow: 0 0 0 0.2rem rgba(127, 131, 151, 0.3);
+            color: $COLOR_WHITE;
+        }
+        &::placeholder {
+            color: $COLOR_DARK_BLUE_7;
+        }
+    }
+    .dropdown {
+        &__display {
+            background: $COLOR_DARK_BLUE_2;
+            border-color: $COLOR_DARK_BLUE_2;
+
+            &-text {
+                color: $COLOR_DARK_BLUE_7;
+            }
+            &:hover, &:focus, &:active {
+                border-color: $COLOR_DARK_BLUE_7;
+            }
+            &:focus, &:active {
+                box-shadow: 0 0 0 2px rgba(127, 131, 151, 0.3);
+            }
+        }
+        &--show > .dropdown__display--clicked {
+            border-color: $COLOR_DARK_BLUE_7;
+            box-shadow: 0 0 0 2px rgba(127, 131, 151, 0.3);
+        }
+    }
+    .list {
+        background: $COLOR_DARK_BLUE_3;
+
+        &__label-text {
+            color: $COLOR_WHITE;
+        }
+        &__item {
+            &-text {
+                color: $COLOR_DARK_BLUE_7;
+            }
+            &--selected .list__item-text {
+                color: $COLOR_WHITE;
+                font-weight: 700;
+                background: $COLOR_DARK_BLUE_5;
+            }
+            &:hover, &--highlighted {
+                background: $COLOR_DARK_BLUE_4;
             }
         }
     }
