@@ -1,10 +1,11 @@
+/** @define tooltip */
 .tooltip {
     text-decoration: underline;
     text-decoration-style: dotted;
     color: $COLOR_DARK_BLUE_5;
     font-size: inherit;
 
-    &-balloon-icon {
+    &__balloon-icon {
         position: absolute;
         top: 0;
         left: -525px;
@@ -113,38 +114,6 @@
             &:after {
                 border-top-color: transparent;
                 border-bottom-color: $COLOR_LIGHT_BLACK_1;
-            }
-        }
-    }
-}
-
-// Dark Theme
-.theme--dark {
-    .tooltip {
-        color: $COLOR_WHITE;
-
-        &:before {
-            background: $COLOR_DARK_BLUE_5;
-            color: $COLOR_WHITE;
-        }
-        &[data-tooltip-pos=top] {
-            &:after {
-                border-top-color: $COLOR_DARK_BLUE_5;
-            }
-        }
-        &[data-tooltip-pos=right] {
-            &:after {
-                border-right-color: $COLOR_DARK_BLUE_5;
-            }
-        }
-        &[data-tooltip-pos=left] {
-            &:after {
-                border-left-color: $COLOR_DARK_BLUE_5;
-            }
-        }
-        &[data-tooltip-pos=bottom] {
-            &:after {
-                border-bottom-color: $COLOR_DARK_BLUE_5;
             }
         }
     }
