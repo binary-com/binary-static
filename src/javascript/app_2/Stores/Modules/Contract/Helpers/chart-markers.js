@@ -12,16 +12,30 @@ export const createChartMarkers = (SmartChartStore, contract_info, ContractStore
                 SmartChartStore.createMarker(marker_config);
             }
         });
-        const init = getTicksBetweenStartAndEnd(ContractStore, SmartChartStore);
-        init(contract_info);
     }
 };
 
-const getTicksBetweenStartAndEnd = function(ContractStore, SmartChartStore) {
+export const createChartTickMarkers = (SmartChartStore, contract_info, ContractStore = null) => {
+    const init = getTicksBetweenStartAndEnd(ContractStore, SmartChartStore);
+    init(contract_info);
+};
+
+const getTicksBetweenStartAndEnd = (ContractStore, SmartChartStore) => {
     let has_been_called = false;
-    const zip = rows => rows[0].map((_,c) => rows.map(row => row[c]));
+    const zip = (arr, ...arrs) => arr.map((val, i) => arrs.reduce((a, curr) => [...a, curr[i]], [val]));
+
     const combinePriceTime = (price_arr, times_arr) =>
-        zip([ price_arr, times_arr ]).reduce((acc, curr) => [...acc, { price: +curr[0], time: +curr[1] }], []);
+        zip(price_arr, times_arr).reduce((acc, curr) => [...acc, { price: curr[0], time: curr[1] }], []);
+
+    const addTickToChart = (tick, idx) => {
+        const marker_config = createMarkerSpotMiddle(tick);
+        marker_config.type = `SPOT_MIDDLE_${idx}`;
+        SmartChartStore.createMarker(marker_config);
+    };
+
+    const on_tick = (data) => {
+        console.log(data);
+    };
 
     return function ({ ...contract_info }) {
         if (has_been_called) return;
@@ -40,20 +54,12 @@ const getTicksBetweenStartAndEnd = function(ContractStore, SmartChartStore) {
                 const middle_ticks = combinePriceTime(prices, times)
                     .filter((i) => i.time > +contract_info.entry_tick_time && i.time < +ContractStore.end_spot_time);
 
-                middle_ticks.forEach((tick) => {
-                    const marker_config = createMarkerSpotMiddle(tick, 'add');
-                    SmartChartStore.createMarker(marker_config);
-                });
-
-                console.log(middle_ticks);
-                // TODO: add middle ticks to chart
-
+                middle_ticks.forEach(addTickToChart);
             });
-        } else {
-            WS.subscribeTicksHistory({ ...ticks_history_req, subscribe: 1 }, (data) => {
-                console.log('createChartMarker: ', data);
-            });
+            return;
         }
+
+        WS.subscribeTicksHistory({ ...ticks_history_req, subscribe: 1 }, on_tick);
     };
 };
 
@@ -122,18 +128,12 @@ function createMarkerSpotExit(contract_info, ContractStore) {
     );
 }
 
-function createMarkerSpotMiddle(tick, should_add) {
-    // TODO: createMarkerConfig for middle spots
-    if (should_add !== 'add') return false;
-
+function createMarkerSpotMiddle(tick) {
     return createMarkerConfig(
         MARKER_TYPES_CONFIG.SPOT_MIDDLE.type,
-        tick.time,
-        tick.price,
-        {
-            spot_value: `${tick.price}`,
-            // status    : `${tick.price > 0 ? 'won' : 'lost' }`,
-        },
+        +tick.time,
+        +tick.price,
+        { spot_value: `${tick.price}` },
     );
 }
 

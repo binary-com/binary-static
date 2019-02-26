@@ -7,7 +7,9 @@ import { isEmptyObject }         from '_common/utility';
 import { localize }              from '_common/localize';
 import { WS }                    from 'Services';
 import { createChartBarrier }    from './Helpers/chart-barriers';
-import { createChartMarkers }    from './Helpers/chart-markers';
+import { 
+    createChartMarkers,
+    createChartTickMarkers }          from './Helpers/chart-markers';
 import {
     getDetailsExpiry,
     getDetailsInfo }             from './Helpers/details';
@@ -117,8 +119,11 @@ export default class ContractStore extends BaseStore {
             delete this.chart_config.end_epoch;
             delete this.chart_config.start_epoch;
         }
+
         createChartBarrier(this.smart_chart, this.contract_info);
         createChartMarkers(this.smart_chart, this.contract_info, this);
+        if (this.contract_info.tick_count) createChartTickMarkers(this.smart_chart, this.contract_info, this);
+
         this.handleDigits();
     }
 
