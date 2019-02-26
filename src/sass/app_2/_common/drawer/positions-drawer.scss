@@ -1,5 +1,7 @@
 $header-height: 4em;
 
+// TODO: Split into smaller sass files for card, result-overlay and result-details
+
 // Trade page animation performance fix #perfmatters
 .trade-container + .positions-drawer {
     transition: opacity 0.4s ease;
@@ -103,14 +105,31 @@ $header-height: 4em;
             left: -1px;
             width: calc(100% + 2px);
             height: calc(100% + 2px);
-            background: $COLOR_WHITE;
-            opacity: 0.7;
+            max-height: 136px;
+            opacity: 0.8;
+            background-color: $COLOR_WHITE;
             border-radius: $BORDER_RADIUS;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
             z-index: 2;
             display: flex;
             align-items: center;
             justify-content: center;
+            transition: background 0.25s linear;
 
+            &--won {
+                background-image: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(0, 148, 117, 0.16));
+            }
+            &--lost {
+                background-image: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(227, 28, 75, 0.16));
+            }
+            &:hover {
+                background: transparent;
+
+                .result__caption {
+                    opacity: 0;
+                }
+            }
             &:after {
                 top: 0;
                 left: 0;
@@ -184,7 +203,7 @@ $header-height: 4em;
         }
         &__purchase {
             &-price {
-                font-size: 12px;
+                font-size: 1.2em;
                 padding: 8px;
                 display: flex;
                 justify-content: center;
@@ -202,8 +221,7 @@ $header-height: 4em;
         &__type {
             font-size: 1.2em;
             display: flex;
-            justify-content: flex-end;
-            margin-right: 0.5rem;
+            justify-content: center;
             font-weight: bold;
 
             .contract-type {
@@ -222,6 +240,7 @@ $header-height: 4em;
         &__symbol {
             margin-left: 0.5rem;
             font-size: 1em;
+            line-height: 1.5;
         }
         &__indicative {
             font-size: 1.2em;
@@ -232,7 +251,7 @@ $header-height: 4em;
 
             &-label {
                 color: $COLOR_LIGHT_BLACK_1;
-                font-size: 0.8em;
+                font-size: 1em;
                 font-weight: normal;
                 margin-bottom: 0.5em;
             }
@@ -258,7 +277,7 @@ $header-height: 4em;
             }
         }
         &__profit-loss {
-            font-size: 12px;
+            font-size: 1.2em;
             text-align: center;
             display: flex;
             justify-content: center;
@@ -266,7 +285,7 @@ $header-height: 4em;
             font-weight: bold;
 
             &-label {
-                font-size: 10px;
+                font-size: 1em;
                 color: $COLOR_LIGHT_BLACK_1;
                 margin-bottom: 0.5em;
                 font-weight: normal;
@@ -293,6 +312,7 @@ $header-height: 4em;
             justify-content: flex-start;
             align-items: center;
             font-weight: bold;
+            font-size: 1.2em;
         }
         &__sell-button {
             display: flex;
@@ -319,6 +339,57 @@ $header-height: 4em;
             }
         }
     }
+    .result-details__separator {
+        border-top: 1px solid $COLOR_LIGHT_BLACK_4_SOLID;
+        margin: 4px -9px 4px;
+    }
+    .result-details__wrapper {
+        margin: -2px -9px 16px;
+        transition: opacity 0.2s ease;
+        will-change: opacity;
+        padding: 2px 4px;
+
+        &--enter-done {
+            opacity: 1;
+        }
+        &--enter, &--exit {
+            opacity: 0;
+        }
+    }
+    .result-details__grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 4px 8px;
+    }
+    .result-details__item {
+        display: flex;
+        flex-direction: column;
+        margin: 4px;
+        max-width: 80px;
+    }
+    .result-details__label {
+        fonts-size: 0.8em;
+        color: $COLOR_LIGHT_BLACK_1;
+    }
+    .result-details__value {
+        padding-top: 4px;
+        line-height: 1.5;
+        font-size: 1.2em;
+    }
+    .result-details__toggle {
+        margin: -2px -9px -9px;
+        padding: 4px 0;
+        display: flex;
+        justify-content: center;
+        border-radius: $BORDER_RADIUS;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        cursor: pointer;
+
+        &--is-open {
+            border-top: 1px solid $COLOR_LIGHT_BLACK_4_SOLID;
+        }
+    }
     .result__caption {
         text-transform: capitalize;
         font-size: 1.6em;
@@ -326,6 +397,7 @@ $header-height: 4em;
         display: flex;
         justify-content: center;
         align-items: center;
+        transition: opacity 0.25s ease;
 
         &--won {
             color: $COLOR_GREEN_1;
@@ -334,14 +406,17 @@ $header-height: 4em;
             color: $COLOR_RED;
         }
     }
-    .result__close-btn:after {
-        content: '\0000D7';
-        font-size: 3em;
+    .result__close-btn {
+        position: absolute;
         top: 2px;
         right: 8px;
-        position: absolute;
-        color: $COLOR_LIGHT_GRAY_1;
-        cursor: pointer;
+
+        &:after {
+            content: '\0000D7';
+            font-size: 1.6em;
+            color: $COLOR_LIGHT_GRAY_1;
+            cursor: pointer;
+        }
     }
     .result__icon {
         margin-left: 10px;
@@ -362,7 +437,14 @@ $header-height: 4em;
             color: $COLOR_WHITE;
 
             &__result {
-                background-color: $COLOR_DARK_BLUE_3;
+                background-color: $COLOR_DARK_BLUE_2;
+
+                &--won {
+                    background-image: linear-gradient(to top, rgba(16, 19, 32, 0), rgba(0, 148, 117, 0.16));
+                }
+                &--lost {
+                    background-image: linear-gradient(to top, rgba(16, 19, 32, 0), rgba(227, 28, 75, 0.16));
+                }
             }
             &__wrapper {
                 background: $COLOR_DARK_BLUE_2;
@@ -407,6 +489,14 @@ $header-height: 4em;
                     color: $COLOR_WHITE;
                     font-weight: bold;
                 }
+            }
+        }
+        .result {
+            &-details__label {
+                color: $COLOR_DARK_BLUE_7;
+            }
+            &-details__toggle--is-open, &-details__separator {
+                border-color: $COLOR_DARK_BLUE_3;
             }
         }
     }

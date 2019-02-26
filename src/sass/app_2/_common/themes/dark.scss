@@ -190,6 +190,9 @@
                 }
             }
         }
+        .network-status-circle--blinker {
+            background: $COLOR_DARK_BLUE_7;
+        }
         .footer-links-left {
             .ic-positions {
                 &:after {

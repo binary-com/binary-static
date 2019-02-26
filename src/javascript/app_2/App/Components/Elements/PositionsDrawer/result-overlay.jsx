@@ -8,55 +8,57 @@ import { localize }      from '_common/localize';
 
 const ResultOverlay = ({
     id,
-    onClose,
+    onClickRemove,
     result,
 }) => (
-    <CSSTransition
-        in={!!(result)}
-        timeout={250}
-        classNames={{
-            enter    : 'positions-drawer-card__result--enter',
-            enterDone: 'positions-drawer-card__result--enter-done',
-            exit     : 'positions-drawer-card__result--exit',
-        }}
-        unmountOnExit
-    >
-        <div className={classNames('positions-drawer-card__result', {
-            'positions-drawer-card__result--won' : (result === 'won'),
-            'positions-drawer-card__result--lost': (result === 'lost'),
-        })}
+    <React.Fragment>
+        <CSSTransition
+            in={!!(result)}
+            timeout={250}
+            classNames={{
+                enter    : 'positions-drawer-card__result--enter',
+                enterDone: 'positions-drawer-card__result--enter-done',
+                exit     : 'positions-drawer-card__result--exit',
+            }}
+            unmountOnExit
         >
-            <span className={classNames('result__caption', {
-                'result__caption--won' : (result === 'won'),
-                'result__caption--lost': (result === 'lost'),
-            }
-            )}
+            <div className={classNames('positions-drawer-card__result', {
+                'positions-drawer-card__result--won' : (result === 'won'),
+                'positions-drawer-card__result--lost': (result === 'lost'),
+            })}
             >
-                {
-                    (result === 'won') ?
-                        <React.Fragment>
-                            {localize('won')}
-                            <IconCheck className='result__icon' />
-                        </React.Fragment>
-                        :
-                        <React.Fragment>
-                            {localize('lost')}
-                            <IconCross className='result__icon' />
-                        </React.Fragment>
+                <span
+                    className='result__close-btn'
+                    onClick={() => onClickRemove(id)}
+                />
+                <span className={classNames('result__caption', {
+                    'result__caption--won' : (result === 'won'),
+                    'result__caption--lost': (result === 'lost'),
                 }
-            </span>
-            <span
-                className='result__close-btn'
-                onClick={() => onClose(id)}
-            />
-        </div>
-    </CSSTransition>
+                )}
+                >
+                    {
+                        (result === 'won') ?
+                            <React.Fragment>
+                                {localize('won')}
+                                <IconCheck className='result__icon' />
+                            </React.Fragment>
+                            :
+                            <React.Fragment>
+                                {localize('lost')}
+                                <IconCross className='result__icon' />
+                            </React.Fragment>
+                    }
+                </span>
+            </div>
+        </CSSTransition>
+    </React.Fragment>
 );
 
 ResultOverlay.propTypes = {
-    id     : PropTypes.number,
-    onClose: PropTypes.func,
-    result : PropTypes.string,
+    id           : PropTypes.number,
+    onClickRemove: PropTypes.func,
+    result       : PropTypes.string,
 };
 
 export default ResultOverlay;

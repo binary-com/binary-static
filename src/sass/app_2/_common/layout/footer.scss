@@ -96,13 +96,13 @@ footer {
         margin: 0.2em 1.6em;
         border-radius: 50%;
 
-        &.online {
+        &--online {
             background: $COLOR_GREEN_1;
         }
-        &.offline {
+        &--offline {
             background: $COLOR_RED;
         }
-        &.blinker {
+        &--blinker {
             background: $COLOR_LIGHT_BLACK_3;
         }
     }

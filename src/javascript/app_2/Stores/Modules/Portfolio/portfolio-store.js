@@ -4,6 +4,11 @@ import {
     observable }                   from 'mobx';
 import { WS }                      from 'Services';
 import { formatPortfolioPosition } from './Helpers/format-response';
+import {
+    getDisplayStatus,
+    getEndSpotTime,
+    isUserSold,
+    isValidToSell }                from '../Contract/Helpers/logic';
 import BaseStore                   from '../../base-store';
 
 export default class PortfolioStore extends BaseStore {
@@ -61,14 +66,10 @@ export default class PortfolioStore extends BaseStore {
             WS.subscribeProposalOpenContract(contract_id, this.proposalOpenContractHandler, false);
         } else if (act === 'sell') {
             // TODO: Refactor with contract-store and use common helpers to handle contract result
-            const contract_info = this.positions.find((pos) => +pos.id === +contract_id);
-            const contract_index = this.positions.findIndex(pos => +pos.id === +contract_id);
-
-            if (contract_info.profit_loss < 0) {
-                this.positions[contract_index].result = 'lost';
-            } else {
-                this.positions[contract_index].result = 'won';
-            }
+            WS.proposalOpenContract(contract_id).then(action((proposal_response) => {
+                // update contract store proposal after sell
+                this.populateResultDetails(proposal_response);
+            }));
         }
     }
 
@@ -85,14 +86,18 @@ export default class PortfolioStore extends BaseStore {
         const new_indicative  = +proposal.bid_price;
         const profit_loss     = +proposal.profit;
 
+        portfolio_position.purchase_time = (proposal.is_forward_starting === 1) ?
+            proposal.date_start
+            :
+            proposal.purchase_time;
+
         portfolio_position.bid_price        = proposal.bid_price;
         portfolio_position.indicative       = new_indicative;
         portfolio_position.underlying_code  = proposal.underlying;
         portfolio_position.underlying_name  = proposal.display_name;
         portfolio_position.profit_loss      = profit_loss;
-        portfolio_position.purchase_time    = proposal.purchase_time;
         portfolio_position.tick_count       = proposal.tick_count;
-        portfolio_position.is_valid_to_sell = proposal.is_valid_to_sell;
+        portfolio_position.is_valid_to_sell = isValidToSell(proposal);
 
         if (!proposal.is_valid_to_sell) {
             portfolio_position.status = 'no-resale';
@@ -119,45 +124,41 @@ export default class PortfolioStore extends BaseStore {
         const is_contract_mode = this.root_store.modules.smart_chart.is_contract_mode;
         // TODO: Refactor with ContractStore for re-drawing of chart markers and barriers
         // Toast messages are temporary UI for prompting user of sold contracts
-        if (response.error && !is_contract_mode) {
+        if (!is_contract_mode && response.error) {
             // If unable to sell due to error, give error via toast message if not in contract mode
             this.root_store.ui.addToastMessage({
                 message: response.error.message,
                 type   : 'error',
             });
-        } else {
-            WS.forget('proposal_open_contract', this.updateSoldContract, { contract_id: response.sell.contract_id });
-            // Check if still in contract_mode
-            if (is_contract_mode) {
-                WS.proposalOpenContract(response.sell.contract_id).then(action((proposal_response) => {
-                    // update contract store proposal after sell
-                    this.root_store.modules.contract.updateProposal(proposal_response);
-                }));
-                // update contract store sell info after sell
-                this.root_store.modules.contract.sell_info = {
-                    sell_price    : response.sell.sold_for,
-                    transaction_id: response.sell.transaction_id,
-                };
-            // If not in contract_mode, show only toast message for error and sale
-            } else {
-                WS.proposalOpenContract(response.sell.contract_id).then(action((proposal_response) => {
-                    this.updateSoldContract(proposal_response);
-                    // update contract store proposal after sell
-                }));
-            }
+        // Check if still in contract_mode
+        } else if (is_contract_mode && !response.error) {
+            WS.forget('proposal_open_contract', this.root_store.modules.contract.updateProposal, { contract_id: response.sell.contract_id });
+            WS.proposalOpenContract(response.sell.contract_id).then(action((proposal_response) => {
+                // update contract store proposal after sell
+                this.root_store.modules.contract.updateProposal(proposal_response);
+                this.populateResultDetails(proposal_response);
+            }));
+            // update contract store sell info after sell
+            this.root_store.modules.contract.sell_info = {
+                sell_price    : response.sell.sold_for,
+                transaction_id: response.sell.transaction_id,
+            };
         }
     }
 
-    @action.bound
-    updateSoldContract(response) {
-        const contract_info = response.proposal_open_contract;
-        // Temporary toast message for successful contract sold
-        if (contract_info.is_sold === 1) {
-            this.root_store.ui.addToastMessage({
-                message: `Contract sold at ${contract_info.currency} ${contract_info.sell_price}. Reference number is ${contract_info.transaction_ids.sell}`,
-                type   : 'info',
-            });
-        }
+    populateResultDetails(response) {
+        const contract_response = response.proposal_open_contract;
+        const i = this.positions.findIndex(pos => +pos.id === +contract_response.contract_id);
+        const sell_time = isUserSold(contract_response) ?
+            +contract_response.date_expiry
+            :
+            getEndSpotTime(contract_response);
+
+        this.positions[i].id_sell    = +contract_response.transaction_ids.sell;
+        this.positions[i].barrier    = +contract_response.barrier;
+        this.positions[i].entry_spot = +contract_response.entry_spot;
+        this.positions[i].sell_time  = sell_time;
+        this.positions[i].result     = getDisplayStatus(contract_response);
     }
 
     @action.bound
@@ -176,13 +177,13 @@ export default class PortfolioStore extends BaseStore {
         return new Promise((resolve) => {
             this.clearTable();
             WS.forgetAll('proposal_open_contract', 'transaction');
-            resolve(this.initializePortfolio());
+            return resolve(this.initializePortfolio());
         });
     }
 
     @action.bound
     onMount() {
-        this.onSwitchAccount(this.accountSwitcherListener);
+        this.onSwitchAccount(this.accountSwitcherListener.bind(null));
         if (this.positions.length === 0) {
             this.initializePortfolio();
         }

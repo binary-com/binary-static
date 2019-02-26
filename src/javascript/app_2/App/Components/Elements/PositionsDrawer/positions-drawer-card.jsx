@@ -5,6 +5,7 @@ import { CSSTransition }     from 'react-transition-group';
 import { localize }          from '_common/localize';
 import ContractTypeCell      from 'Modules/Portfolio/Components/contract-type-cell.jsx';
 import ProgressSlider        from './ProgressSlider';
+import ResultDetails         from './result-details.jsx';
 import ResultOverlay         from './result-overlay.jsx';
 import { getTimePercentage } from './helpers';
 import Money                 from '../money.jsx';
@@ -12,11 +13,17 @@ import BinaryLink            from '../../Routes/binary-link.jsx';
 import { getContractPath }   from '../../Routes/helpers';
 import Button                from '../../Form/button.jsx';
 
+// TODO: Break into smaller components once confirmed to be components used are finalized
 const PositionsDrawerCard = ({
+    barrier,
     className,
     currency,
+    duration,
+    duration_unit,
+    entry_spot,
     expiry_time,
     id,
+    id_sell,
     indicative,
     is_valid_to_sell,
     profit_loss,
@@ -25,6 +32,7 @@ const PositionsDrawerCard = ({
     onClickSell,
     onClickRemove,
     result,
+    sell_time,
     server_time,
     status,
     tick_count,
@@ -37,8 +45,8 @@ const PositionsDrawerCard = ({
         <div className={classNames('positions-drawer-card__wrapper', className)}>
             <ResultOverlay
                 id={id}
+                onClickRemove={onClickRemove}
                 result={result}
-                onClose={onClickRemove}
             />
             <BinaryLink
                 active_class='positions-drawer-card--active'
@@ -116,7 +124,7 @@ const PositionsDrawerCard = ({
                 </React.Fragment>
             </BinaryLink>
             <CSSTransition
-                in={!!(is_valid_to_sell && !result)}
+                in={!!(is_valid_to_sell)}
                 timeout={250}
                 classNames={{
                     enter    : 'positions-drawer-card__sell-button--enter',
@@ -128,35 +136,59 @@ const PositionsDrawerCard = ({
                 <div className='positions-drawer-card__sell-button'>
                     <Button
                         className='primary orange'
-                        is_disabled={(is_valid_to_sell === 0)}
+                        is_disabled={!is_valid_to_sell}
                         text={localize('Sell contract')}
                         onClick={() => onClickSell(id)}
                     />
                 </div>
             </CSSTransition>
+            <ResultDetails
+                barrier={barrier}
+                contract_end_time={sell_time}
+                contract_start_time={purchase_time}
+                duration={duration}
+                duration_unit={duration_unit}
+                entry_spot={entry_spot}
+                tick_count={tick_count}
+                has_result={!!(result)}
+                id_sell={id_sell}
+            />
         </div>
     );
 };
 
 PositionsDrawerCard.propTypes = {
-    className  : PropTypes.string,
-    currency   : PropTypes.string,
-    expiry_time: PropTypes.PropTypes.oneOfType([
+    barrier      : PropTypes.number,
+    className    : PropTypes.string,
+    currency     : PropTypes.string,
+    duration     : PropTypes.number,
+    duration_unit: PropTypes.string,
+    entry_spot   : PropTypes.number,
+    exit_spot    : PropTypes.number,
+    expiry_time  : PropTypes.PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
     ]),
     id              : PropTypes.number,
+    id_sell         : PropTypes.number,
     indicative      : PropTypes.number,
-    is_valid_to_sell: PropTypes.number,
-    onClickRemove   : PropTypes.func,
-    onClickSell     : PropTypes.func,
-    profit_loss     : PropTypes.number,
-    purchase        : PropTypes.number,
-    purchase_time   : PropTypes.PropTypes.oneOfType([
+    is_valid_to_sell: PropTypes.PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.bool,
+    ]),
+    onClickRemove: PropTypes.func,
+    onClickSell  : PropTypes.func,
+    profit_loss  : PropTypes.number,
+    purchase     : PropTypes.number,
+    purchase_time: PropTypes.PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
     ]),
-    result         : PropTypes.string,
+    result   : PropTypes.string,
+    sell_time: PropTypes.PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
+    ]),
     server_time    : PropTypes.object,
     status         : PropTypes.string,
     tick_count     : PropTypes.number,
