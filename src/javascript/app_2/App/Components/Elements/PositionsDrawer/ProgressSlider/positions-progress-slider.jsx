@@ -12,7 +12,7 @@ const ProgressSlider = ({
     percentage,
     remaining_time,
 }) => {
-    if (!percentage && !ticks_count || has_result) return <div className='progress-slider--completed' />;
+    if (!percentage && !ticks_count || has_result || !remaining_time) return <div className='progress-slider--completed' />;
     return (
         <div className={classNames('progress-slider', className)}>
             {(ticks_count < 5) ?

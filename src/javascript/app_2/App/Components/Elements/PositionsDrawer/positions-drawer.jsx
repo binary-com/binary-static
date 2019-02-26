@@ -21,6 +21,7 @@ class PositionsDrawer extends React.Component {
 
     render() {
         const {
+            active_contract_id,
             active_positions,
             error,
             currency,
@@ -53,6 +54,7 @@ class PositionsDrawer extends React.Component {
                     unmountOnExit
                 >
                     <PositionsDrawerCard
+                        active_position={active_contract_id}
                         onClickSell={onClickSell}
                         onClickRemove={onClickRemove}
                         server_time={server_time}
@@ -95,6 +97,7 @@ class PositionsDrawer extends React.Component {
 }
 
 PositionsDrawer.propTypes = {
+    active_contract_id    : PropTypes.string,
     active_positions      : MobxPropTypes.arrayOrObservableArray,
     children              : PropTypes.any,
     currency              : PropTypes.string,
@@ -112,17 +115,18 @@ PositionsDrawer.propTypes = {
 
 export default connect(
     ({ common, modules, client, ui }) => ({
+        server_time           : common.server_time,
+        currency              : client.currency,
+        active_contract_id    : modules.contract.contract_id,
         active_positions      : modules.portfolio.active_positions,
-        is_loading            : modules.portfolio.is_loading,
         error                 : modules.portfolio.error,
         is_empty              : modules.portfolio.is_empty,
-        is_positions_drawer_on: ui.is_positions_drawer_on,
+        is_loading            : modules.portfolio.is_loading,
         onClickSell           : modules.portfolio.onClickSell,
         onClickRemove         : modules.portfolio.removePositionById,
         onMount               : modules.portfolio.onMount,
         onUnmount             : modules.portfolio.onUnmount,
-        currency              : client.currency,
+        is_positions_drawer_on: ui.is_positions_drawer_on,
         toggleDrawer          : ui.togglePositionsDrawer,
-        server_time           : common.server_time,
     })
 )(PositionsDrawer);

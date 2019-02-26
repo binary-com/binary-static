@@ -73,7 +73,7 @@ export default class PortfolioStore extends BaseStore {
         } else if (act === 'sell') {
             // TODO: Refactor with contract-store and use common helpers to handle contract result
             WS.proposalOpenContract(contract_id).then(action((proposal_response) => {
-                // update contract store proposal after sell
+                // populate result details box for specified positions card
                 this.populateResultDetails(proposal_response);
             }));
         }

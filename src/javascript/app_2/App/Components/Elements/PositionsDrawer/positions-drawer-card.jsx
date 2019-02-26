@@ -15,6 +15,7 @@ import Button                from '../../Form/button.jsx';
 
 // TODO: Break into smaller components once design is finalized
 const PositionsDrawerCard = ({
+    active_position,
     barrier,
     className,
     currency,
@@ -49,9 +50,9 @@ const PositionsDrawerCard = ({
                 result={result}
             />
             <BinaryLink
-                active_class='positions-drawer-card--active'
                 className={classNames(
                     'positions-drawer-card', {
+                        'positions-drawer-card--active': (parseInt(active_position) === id),
                         'positions-drawer-card--green' : (percentage >= 50) && !result,
                         'positions-drawer-card--orange': (percentage < 50 && percentage >= 20) && !result,
                         'positions-drawer-card--red'   : (percentage < 20) && !result,
@@ -158,14 +159,15 @@ const PositionsDrawerCard = ({
 };
 
 PositionsDrawerCard.propTypes = {
-    barrier      : PropTypes.number,
-    className    : PropTypes.string,
-    currency     : PropTypes.string,
-    duration     : PropTypes.number,
-    duration_unit: PropTypes.string,
-    entry_spot   : PropTypes.number,
-    exit_spot    : PropTypes.number,
-    expiry_time  : PropTypes.PropTypes.oneOfType([
+    active_position: PropTypes.string,
+    barrier        : PropTypes.number,
+    className      : PropTypes.string,
+    currency       : PropTypes.string,
+    duration       : PropTypes.number,
+    duration_unit  : PropTypes.string,
+    entry_spot     : PropTypes.number,
+    exit_spot      : PropTypes.number,
+    expiry_time    : PropTypes.PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
     ]),
