@@ -7,7 +7,7 @@ import routes          from 'Constants/routes';
 import { connect }     from 'Stores/connect';
 import DetailsContents from '../Components/Details/details-contents.jsx';
 import DetailsHeader   from '../Components/Details/details-header.jsx';
-import ErrorComponent  from '../../../App/Components/Elements/Errors/error-component.jsx';
+import ErrorComponent  from '../../../App/Components/Elements/Errors';
 
 class ContractDetails extends React.Component {
     componentDidMount() { this.props.onMount(this.props.contract_id); }
