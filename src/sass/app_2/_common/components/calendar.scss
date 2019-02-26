@@ -188,6 +188,28 @@
                 background: $COLOR_DARK_BLUE_5 !important;
             }
         }
+        &--hover {
+            &:after {
+                font-size: 1.2em;
+                color: $COLOR_WHITE;
+                font-weight: 400;
+                text-transform: none;
+                text-align: left;
+                line-height: 1.25;
+                text-decoration: none;
+                letter-spacing: normal;
+                background: $COLOR_DARK_BLUE_5;
+                border-radius: 4px;
+                content: attr(data-date);
+                padding: 0.8em;
+                white-space: nowrap;
+                opacity: 0.96;
+                margin-bottom: 10px;
+                position: absolute;
+                bottom: 100%;
+                z-index: 10;
+            }
+        }
         &-tooltip {
             &[data-tooltip] {
                 position: absolute;

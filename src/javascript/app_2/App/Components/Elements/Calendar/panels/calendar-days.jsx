@@ -60,6 +60,22 @@ const getDays = ({
 
     const moment_start_date = toMoment(start_date).startOf('day');
 
+    const onMouseOver = (event) => {
+        const target = event.currentTarget;
+
+        if (!target.classList.contains('calendar__cell--disabled') && !target.classList.contains('calendar__cell--hover')) {
+            target.className += ' calendar__cell--hover';
+        }
+    };
+
+    const onMouseLeave = (event) => {
+        const target = event.currentTarget;
+
+        if (target.classList.contains('calendar__cell--hover')) {
+            target.classList.remove('calendar__cell--hover');
+        }
+    };
+
     dates.map((date) => {
         const moment_date = toMoment(date).startOf('day');
         const is_active   = selected_date && moment_date.isSame(moment_selected);
@@ -99,6 +115,8 @@ const getDays = ({
                 })}
                 onClick={is_disabled ? undefined : (e) => updateSelected(e, 'day')}
                 data-date={date}
+                onMouseOver={onMouseOver}
+                onMouseLeave={onMouseLeave}
             >
                 {((has_events || is_closes_early) && !is_other_month && !is_before_min_or_after_max_date) &&
                     <Tooltip
