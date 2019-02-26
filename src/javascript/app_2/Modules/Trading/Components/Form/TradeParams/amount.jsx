@@ -65,12 +65,13 @@ const Amount = ({
                 }
                 <InputField
                     className={classNames('trade-container__amount', { 'trade-container__amount--has-currency-options': !is_single_currency })}
+                    classNameInlinePrefix='trade-container__currency'
                     classNameInput='trade-container__input'
-                    classNamePrefix='trade-container__currency'
                     currency={currency}
                     error_messages={validation_errors.amount}
                     fractional_digits={getDecimalPlaces(currency)}
                     id='amount'
+                    inline_prefix={is_single_currency ? currency : null}
                     is_autocomplete_disabled
                     is_float
                     is_incrementable
@@ -79,7 +80,6 @@ const Amount = ({
                     max_length={10}
                     name='amount'
                     onChange={onChange}
-                    prefix={is_single_currency ? currency : null}
                     type='number'
                     value={amount}
                 />

@@ -132,4 +132,7 @@
         border-color: $COLOR_LIGHT_GRAY_1;
         box-shadow: 0 0 0 2px rgba(127, 131, 151, 0.3);
     }
+    &--has-inline-prefix {
+        padding-left: 50px !important;
+    }
 }

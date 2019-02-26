@@ -12,6 +12,7 @@ import Tooltip                   from '../../Elements/tooltip.jsx';
 const InputField = ({
     checked,
     className,
+    classNameInlinePrefix,
     classNameInput,
     classNamePrefix,
     currency,
@@ -21,6 +22,7 @@ const InputField = ({
     fractional_digits,
     helper,
     id,
+    inline_prefix,
     is_autocomplete_disabled,
     is_disabled,
     is_float,
@@ -151,13 +153,15 @@ const InputField = ({
         <Input
             changeValue={changeValue}
             checked={checked}
-            className={classNames(is_increment_input ? 'input-wrapper__input' : '', 'input', { 'input--error': has_error }, classNameInput)}
+            className={classNames(is_increment_input ? 'input-wrapper__input' : '', inline_prefix ? 'input--has-inline-prefix' : '', 'input', { 'input--error': has_error }, classNameInput)}
+            classNameInlinePrefix={classNameInlinePrefix}
             data_tip={data_tip}
             data_value={data_value}
             display_value={display_value}
             fractional_digits={fractional_digits}
             has_error={has_error}
             id={id}
+            inline_prefix={inline_prefix}
             is_autocomplete_disabled={is_autocomplete_disabled}
             is_disabled={is_disabled}
             is_incrementable={is_increment_input}
@@ -203,7 +207,7 @@ const InputField = ({
                 </div>
             }
             <div
-                className={`input-field ${className || ''}`}
+                className={`input-field ${className}`}
             >
                 {input_tooltip}
             </div>
@@ -217,6 +221,7 @@ const InputField = ({
 InputField.propTypes = {
     checked                 : PropTypes.number,
     className               : PropTypes.string,
+    classNameInlinePrefix   : PropTypes.string,
     classNameInput          : PropTypes.string,
     classNamePrefix         : PropTypes.string,
     currency                : PropTypes.string,
@@ -224,6 +229,7 @@ InputField.propTypes = {
     fractional_digits       : PropTypes.number,
     helper                  : PropTypes.string,
     id                      : PropTypes.string,
+    inline_prefix           : PropTypes.string,
     is_autocomplete_disabled: PropTypes.bool,
     is_disabled             : PropTypes.string,
     is_float                : PropTypes.bool,

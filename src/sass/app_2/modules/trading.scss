@@ -23,6 +23,7 @@
         appearance: none;
         box-sizing: border-box;
         background: $COLOR_WHITE;
+        border-radius: 0 4px 4px 0;
     }
     &__error {
         justify-content: center;
@@ -40,20 +41,19 @@
         }
     }
     &__currency {
-        margin: 0.8em 0 0;
         color: rgba(0, 0, 0, 0.8);
-        position: relative;
+        position: absolute;
         float: left;
         font-size: 10px;
         height: 32px;
+        left: 32px;
         align-items: center;
         justify-content: center;
-        margin-right: 1px;
-        width: 42px;
+        width: 20px;
         display: flex;
-        border-radius: 4px 0 0 4px;
-        background: $COLOR_WHITE;
-        border-color: $COLOR_WHITE;
+        background: transparent;
+        border-color: transparent;
+        z-index: 2;
 
         &--symbol {
             font-size: 1.4em;
@@ -162,14 +162,14 @@
     &__amount {
         margin-left: 1px;
         display: inline-block;
-        width: calc(100% - 44px);
+        width: 100%;
 
         .trade-container__input {
             padding: 0 30px;
-            border-radius: 0 4px 4px 0;
         }
         &--has-currency-options {
             width: calc(75% - 1px);
+            border-radius: 0 4px 4px 0;
         }
     }
 }

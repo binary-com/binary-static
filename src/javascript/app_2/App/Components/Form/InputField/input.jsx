@@ -1,3 +1,4 @@
+import classNames   from 'classnames';
 import { observer } from 'mobx-react';
 import PropTypes    from 'prop-types';
 import React        from 'react';
@@ -6,11 +7,13 @@ const Input = ({
     changeValue,
     checked,
     className,
+    classNameInlinePrefix,
     data_value,
     data_tip,
     display_value,
     fractional_digits,
     id,
+    inline_prefix,
     is_autocomplete_disabled,
     is_disabled,
     is_incrementable,
@@ -23,34 +26,42 @@ const Input = ({
     required,
     type,
 }) => (
-    <input
-        autoComplete={is_autocomplete_disabled ? 'off' : undefined}
-        checked={checked ? 'checked' : ''}
-        className={className}
-        data-for={`error_tooltip_${name}`}
-        data-tip={data_tip}
-        data-value={data_value}
-        disabled={is_disabled}
-        id={id}
-        maxLength={fractional_digits ? max_length + fractional_digits + 1 : max_length}
-        name={name}
-        onChange={changeValue}
-        onClick={onClick}
-        onKeyDown={is_incrementable ? onKeyPressed : undefined}
-        placeholder={placeholder || undefined}
-        readOnly={is_read_only}
-        required={required || undefined}
-        type={type === 'number' ? 'text' : type}
-        value={display_value || ''}
-    />
+    <React.Fragment>
+        {!!inline_prefix &&
+        <div className={classNameInlinePrefix}>
+            <span className={classNames(classNameInlinePrefix ? `${classNameInlinePrefix}--symbol` : '', 'symbols', inline_prefix.toLowerCase())} />
+        </div>
+        }
+        <input
+            autoComplete={is_autocomplete_disabled ? 'off' : undefined}
+            checked={checked ? 'checked' : ''}
+            className={classNames(className)}
+            data-for={`error_tooltip_${name}`}
+            data-tip={data_tip}
+            data-value={data_value}
+            disabled={is_disabled}
+            id={id}
+            maxLength={fractional_digits ? max_length + fractional_digits + 1 : max_length}
+            name={name}
+            onChange={changeValue}
+            onClick={onClick}
+            onKeyDown={is_incrementable ? onKeyPressed : undefined}
+            placeholder={placeholder || undefined}
+            readOnly={is_read_only}
+            required={required || undefined}
+            type={type === 'number' ? 'text' : type}
+            value={display_value || ''}
+        />
+    </React.Fragment>
 );
 
 Input.propTypes = {
-    changeValue: PropTypes.func,
-    checked    : PropTypes.number,
-    className  : PropTypes.string,
-    data_tip   : PropTypes.string,
-    data_value : PropTypes.oneOfType([
+    changeValue          : PropTypes.func,
+    checked              : PropTypes.number,
+    className            : PropTypes.string,
+    classNameInlinePrefix: PropTypes.string,
+    data_tip             : PropTypes.string,
+    data_value           : PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
     ]),
@@ -60,6 +71,7 @@ Input.propTypes = {
     ]),
     fractional_digits       : PropTypes.number,
     id                      : PropTypes.string,
+    inline_prefix           : PropTypes.string,
     is_autocomplete_disabled: PropTypes.bool,
     is_disabled             : PropTypes.string,
     is_incrementable        : PropTypes.bool,
