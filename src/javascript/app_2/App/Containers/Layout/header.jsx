@@ -90,7 +90,7 @@ const Header = ({
 Header.propTypes = {
     balance                  : PropTypes.string,
     can_upgrade              : PropTypes.bool,
-    can_upgrade_to           : PropTypes.bool,
+    can_upgrade_to           : PropTypes.string,
     currency                 : PropTypes.string,
     hideInstallButton        : PropTypes.func,
     is_acc_switcher_on       : PropTypes.bool,

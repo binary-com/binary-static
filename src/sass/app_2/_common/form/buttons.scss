@@ -147,6 +147,19 @@
             }
         }
     }
+    &--alternate {
+        background: $COLOR_LIGHT_GRAY_2;
+        border-color: $COLOR_LIGHT_GRAY_2;
+        padding: 8px 0;
+        text-align: center;
+        line-height: 100%;
+        font-size: 1.2em;
+        font-weight: bold;
+
+        .btn__text {
+            color: $COLOR_DARK_BLUE_1;
+        }
+    }
     /* postcss-bem-linter: ignore */
     &.effect:focus:not(:active):after {
         content: '';

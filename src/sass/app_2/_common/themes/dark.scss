@@ -17,6 +17,8 @@
         }
     }
     .trade-container {
+        background: $COLOR_DARK_BLUE_2;
+
         &__price {
             color: $COLOR_WHITE;
 
@@ -53,6 +55,9 @@
         }
         &__allow-equals-label {
             color: $COLOR_DARK_BLUE_7;
+        }
+        .chartContainer:before {
+            background-image: linear-gradient(to right, rgba(16, 19, 32, 1), rgba(16, 19, 32, 0));
         }
     }
     .purchase-container {
@@ -185,6 +190,9 @@
                 }
             }
         }
+        .network-status-circle--blinker {
+            background: $COLOR_DARK_BLUE_7;
+        }
         .footer-links-left {
             .ic-positions {
                 &:after {
@@ -270,26 +278,6 @@
             }
         }
     }
-    .chart-container {
-        .cq-context {
-            div.cq-chart-controls {
-                border: none;
-                border-right: 1px solid $COLOR_DARK_BLUE_5;
-                border-top: 1px solid $COLOR_DARK_BLUE_5;
-
-                @media (max-width: 768px) {
-                    border: 1px solid $COLOR_DARK_BLUE_5;
-                }
-            }
-        }
-        .cq-modal-dropdown .cq-categorical-display .ic-icon.icon-close-menu {
-            svg {
-                g path {
-                    fill: $COLOR_DARK_BLUE_7;
-                }
-            }
-        }
-    }
     .mobile-widget {
         border-color: $COLOR_DARK_BLUE_5;
 
@@ -316,6 +304,14 @@
 
         &_selected {
             background-color: $COLOR_DARK_BLUE_2;
+            color: $COLOR_WHITE;
+        }
+    }
+    .btn--alternate {
+        background: $COLOR_DARK_BLUE_5;
+        border-color: $COLOR_DARK_BLUE_5;
+
+        .btn__text {
             color: $COLOR_WHITE;
         }
     }
