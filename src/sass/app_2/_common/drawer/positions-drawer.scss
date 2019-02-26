@@ -410,12 +410,12 @@ $header-height: 4em;
         position: absolute;
         top: 2px;
         right: 8px;
+        cursor: pointer;
 
         &:after {
             content: '\0000D7';
             font-size: 1.6em;
             color: $COLOR_LIGHT_GRAY_1;
-            cursor: pointer;
         }
     }
     .result__icon {

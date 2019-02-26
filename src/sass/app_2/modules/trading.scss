@@ -102,6 +102,7 @@
     }
     &__barriers {
         display: flex;
+        flex-direction: column;
 
         &:first-child {
             padding-right: 8px;

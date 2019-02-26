@@ -15,7 +15,8 @@ const ProgressSlider = ({
     if (!percentage && !ticks_count || has_result || !remaining_time) return <div className='progress-slider--completed' />;
     return (
         <div className={classNames('progress-slider', className)}>
-            {(ticks_count < 5) ?
+            {/* TODO: enable ticks slider once it is completed */}
+            {(ticks_count < -1) ?
                 <ProgressTicks
                     current_tick={current_tick}
                     ticks_count={ticks_count}
