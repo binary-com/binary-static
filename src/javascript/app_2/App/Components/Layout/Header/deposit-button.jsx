@@ -6,7 +6,7 @@ import Button              from '../../Form/button.jsx';
 
 const DepositButton = ({ className }) => (
     <Button
-        className={classNames(className, 'primary orange')}
+        className={classNames(className, 'btn--primary btn--primary--orange')}
         has_effect
         text={localize('Deposit')}
         // TODO: Redirect to Deposit page in Cashier

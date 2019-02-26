@@ -10,7 +10,7 @@ const generateBirthDate = () => {
         DatePicker.init({
             selector : date_of_birth,
             minDate  : -100 * 365,
-            maxDate  : (-18 * 365) - 5,
+            maxDate  : (-18 * 365) - 4,
             yearRange: '-100:-18',
         });
         $(date_of_birth)

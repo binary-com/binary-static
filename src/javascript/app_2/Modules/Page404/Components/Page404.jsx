@@ -13,7 +13,7 @@ const Page404 = () => (
             message={localize('Sorry, we couldn\'t find the page you are looking for.')}
         >
             <ButtonLink
-                className='secondary orange'
+                className='btn--secondary btn--secondary--orange'
                 to={routes.trade}
             >
                 <span>

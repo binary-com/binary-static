@@ -29,19 +29,19 @@ const Dialog = ({
     };
 
     return (
-        <div className={classNames(`${preClass}-dialog`, `${className}`)}>
-            <div className={`${preClass}-selector`}>
-                <div className={`${preClass}-hours`}>
-                    <div className='list-title center-text'><strong>{localize('Hour')}</strong></div>
-                    <div className='list-container'>
+        <div className={classNames(`${preClass}__dialog`, `${className}`)}>
+            <div className={`${preClass}__selector`}>
+                <div className={`${preClass}__selector--hours`}>
+                    <div className={classNames(`${preClass}__selector-list-title`, 'center-text')}><strong>{localize('Hour')}</strong></div>
+                    <div>
                         {hours.map((h, key) => {
                             to_compare_moment.hour(h).minute(minute);
                             const is_enabled = to_compare_moment.isBetween(start_time_moment, end_time_moment);
                             return (
                                 <div
-                                    className={classNames('list-item',
-                                        { 'selected': (hour === h) },
-                                        { 'disabled': !is_enabled })}
+                                    className={classNames(`${preClass}__selector-list-item`,
+                                        { [`${preClass}__selector-list-item--selected`]: (hour === h) },
+                                        { [`${preClass}__selector-list-item--disabled`]: !is_enabled })}
                                     key={key}
                                     onClick={() => { selectOption('h', h, value, is_enabled); }}
                                 >
@@ -51,17 +51,17 @@ const Dialog = ({
                         })}
                     </div>
                 </div>
-                <div className={`${preClass}-minutes`}>
-                    <div className='list-title center-text'><strong>{localize('Minute')}</strong></div>
-                    <div className='list-container'>
+                <div className={`${preClass}__selector--minutes`}>
+                    <div className={classNames(`${preClass}__selector-list-title`, 'center-text')}><strong>{localize('Minute')}</strong></div>
+                    <div>
                         {minutes.map((mm, key) => {
                             to_compare_moment.hour(hour).minute(mm);
                             const is_enabled = to_compare_moment.isBetween(start_time_moment, end_time_moment, 'minute');
                             return (
                                 <div
-                                    className={classNames('list-item',
-                                        { 'selected': (minute === mm) },
-                                        { 'disabled': !is_enabled })}
+                                    className={classNames(`${preClass}__selector-list-item`,
+                                        { [`${preClass}__selector-list-item--selected`]: (minute === mm) },
+                                        { [`${preClass}__selector-list-item--disabled`]: !is_enabled })}
                                     key={key}
                                     onClick={() => { selectOption('m', mm, value, is_enabled); }}
                                 >

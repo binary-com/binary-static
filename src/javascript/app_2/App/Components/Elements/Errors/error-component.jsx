@@ -1,8 +1,8 @@
-import PropTypes    from 'prop-types';
-import React        from 'react';
-import IconError    from 'Assets/Common/icon-error.jsx';
-import { localize } from '_common/localize';
-import Localize     from '../localize.jsx';
+import PropTypes     from 'prop-types';
+import React         from 'react';
+import { IconError } from 'Assets/Common/icon-error.jsx';
+import { localize }  from '_common/localize';
+import Localize      from '../localize.jsx';
 
 const ErrorComponent = ({ type, message }) => {
     let msg = '';
