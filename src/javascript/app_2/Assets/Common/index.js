@@ -10,6 +10,7 @@ export * from './icon-country-flag.jsx';
 export * from './icon-clear.jsx';
 export * from './icon-clock.jsx';
 export * from './icon-close.jsx';
+export * from './icon-error.jsx';
 export * from './icon-exclamation.jsx';
 export * from './icon-info-blue.jsx';
 export * from './icon-info-outline.jsx';

@@ -1,8 +1,9 @@
+import classNames        from 'classnames';
 import PropTypes         from 'prop-types';
 import React             from 'react';
 import { IconTradeType } from '../Types';
 
-const IconTradeCategory = ({ category }) => {
+const IconTradeCategory = ({ category, className }) => {
     let IconCategory;
     if (category) {
         switch (category) {
@@ -229,14 +230,15 @@ const IconTradeCategory = ({ category }) => {
         }
     }
     return (
-        <div className='categories-container'>
+        <div className={classNames('categories-container', className)}>
             {IconCategory}
         </div>
     );
 };
 
 IconTradeCategory.propTypes = {
-    category: PropTypes.string,
+    category : PropTypes.string,
+    className: PropTypes.string,
 };
 
 export { IconTradeCategory };

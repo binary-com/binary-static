@@ -20,20 +20,4 @@ describe('TradeTypeInfoDialog', () => {
         );
         expect(wrapper.contains(child_div)).to.equal(true);
     });
-    it('should have prop wrapperClassName equal to trade-type-info-modal if is_mobile is true', () => {
-        const wrapper = shallow(<TradeTypeInfoDialog is_mobile={true} />);
-        expect(wrapper.prop('wrapperClassName')).to.be.eql('trade-type-info-modal');
-    });
-    it('should not have prop wrapperClassName if is_mobile is false', () => {
-        const wrapper = shallow(<TradeTypeInfoDialog is_mobile={false} />);
-        expect(wrapper.prop('wrapperClassName')).to.be.undefined;
-    });
-    it('should have .trade-type-info-popup if is_mobile is false', () => {
-        const wrapper = shallow(<TradeTypeInfoDialog is_mobile={false} />);
-        expect(wrapper.find('.trade-type-info-popup').exists()).to.be.true;
-    });
-    it('should not have .trade-type-info-popup if is_mobile is true', () => {
-        const wrapper = shallow(<TradeTypeInfoDialog is_mobile={true} />);
-        expect(wrapper.find('.trade-type-info-popup').exists()).to.be.false;
-    });
 });
