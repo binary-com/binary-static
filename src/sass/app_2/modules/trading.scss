@@ -40,14 +40,25 @@
         }
     }
     &__currency {
-        position: absolute;
-        display: block;
-        text-align: center;
-        z-index: 1;
-        color: $COLOR_LIGHT_BLACK_1;
-        width: 3.2em;
-        line-height: 3.2em;
+        margin: 0.8em 0 0;
+        color: rgba(0, 0, 0, 0.8);
+        position: relative;
+        float: left;
+        font-size: 10px;
+        height: 32px;
+        align-items: center;
+        justify-content: center;
+        margin-right: 1px;
+        width: 42px;
+        display: flex;
+        border-radius: 4px 0 0 4px;
+        background: $COLOR_WHITE;
+        border-color: $COLOR_WHITE;
 
+        &--symbol {
+            font-size: 1.4em;
+            line-height: 1.5;
+        }
         &:before {
             @include typeface(--paragraph-center-normal-black);
             color: inherit;
@@ -132,6 +143,33 @@
         }
         &--down {
             right: 39%;
+        }
+    }
+    &__currency-options {
+        border-radius: 4px 0 0 4px;
+        margin-right: 1px;
+        width: calc(25% - 1px);
+        display: inline-block;
+
+        &--display {
+            font-size: 1.4em;
+            line-height: 1.5;
+            height: 32px;
+            border-radius: 4px 0 0 4px !important;
+            margin-top: 0;
+        }
+    }
+    &__amount {
+        margin-left: 1px;
+        display: inline-block;
+        width: calc(100% - 44px);
+
+        .trade-container__input {
+            padding: 0 30px;
+            border-radius: 0 4px 4px 0;
+        }
+        &--has-currency-options {
+            width: calc(75% - 1px);
         }
     }
 }

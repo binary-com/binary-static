@@ -38,15 +38,17 @@
         justify-content: center;
         align-items: center;
 
-        &--increment {
-            right: 2px; // fixed position
-        }
-        &--decrement {
-            left: 2px; // fixed position
-        }
         &:hover {
             cursor: pointer;
             background: $COLOR_LIGHT_BLACK_4;
+        }
+        &--increment {
+            right: 2px; // fixed position
+            height: 28px;
+        }
+        &--decrement {
+            left: 2px; // fixed position
+            height: 28px;
         }
         &:disabled:hover {
             cursor: not-allowed;

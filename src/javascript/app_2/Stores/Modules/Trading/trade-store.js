@@ -55,9 +55,10 @@ export default class TradeStore extends BaseStore {
     @observable trade_types          = {};
 
     // Amount
-    @observable amount          = 10;
-    @observable basis           = '';
-    @observable basis_list      = [];
+    @observable amount     = 10;
+    @observable basis      = '';
+    @observable basis_list = [];
+    @observable currency   = '';
 
     // Duration
     @observable duration            = 5;
@@ -158,6 +159,8 @@ export default class TradeStore extends BaseStore {
     async prepareTradeStore() {
         let query_string_values = this.updateQueryString();
         this.smart_chart        = this.root_store.modules.smart_chart;
+
+        this.currency           = this.root_store.client.currency;
         const active_symbols    = await WS.activeSymbols();
         if (!active_symbols.active_symbols || active_symbols.active_symbols.length === 0) {
             this.root_store.common.showError(localize('Trading is unavailable at this time.'));
@@ -312,10 +315,12 @@ export default class TradeStore extends BaseStore {
         WS.forgetAll('proposal');
 
         if (is_changed_by_user &&
-            /\bcurrency\b/.test(Object.keys(obj_new_values)) &&
-            isCryptocurrency(obj_new_values.currency) !== isCryptocurrency(this.currency)
+            /\bcurrency\b/.test(Object.keys(obj_new_values))
         ) {
-            obj_new_values.amount = obj_new_values.amount || getMinPayout(obj_new_values.currency);
+            if (isCryptocurrency(obj_new_values.currency) !== isCryptocurrency(this.currency)) {
+                obj_new_values.amount = obj_new_values.amount || getMinPayout(obj_new_values.currency);
+            }
+            this.currency = obj_new_values.currency;
         }
 
         const new_state = this.updateStore(cloneObject(obj_new_values));
