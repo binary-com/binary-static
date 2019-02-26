@@ -190,7 +190,7 @@
         }
         &--hover {
             &:after {
-                font-size: 1.2em;
+                font-size: 1em;
                 color: $COLOR_WHITE;
                 font-weight: 400;
                 text-transform: none;
@@ -200,14 +200,14 @@
                 letter-spacing: normal;
                 background: $COLOR_DARK_BLUE_5;
                 border-radius: 4px;
-                content: attr(data-date);
+                content: attr(data-duration);
                 padding: 0.8em;
                 white-space: nowrap;
                 opacity: 0.96;
                 margin-bottom: 10px;
                 position: absolute;
                 bottom: 100%;
-                z-index: 10;
+                z-index: 9;
             }
         }
         &-tooltip {
