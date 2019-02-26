@@ -14,6 +14,8 @@
         }
     }
     &__icon {
+        @extend .absolute-center-v;
+        @extend .icon--centered;
         opacity: 1;
         transition: opacity 0.1s;
 
