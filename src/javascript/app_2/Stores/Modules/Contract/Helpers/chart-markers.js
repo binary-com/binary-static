@@ -12,27 +12,42 @@ export const createChartMarkers = (SmartChartStore, contract_info, ContractStore
                 SmartChartStore.createMarker(marker_config);
             }
         });
-        getTicksBetweenStartAndEnd(contract_info, ContractStore);
+        const init = getTicksBetweenStartAndEnd(ContractStore, SmartChartStore);
+        init(contract_info);
     }
 };
 
-const getTicksBetweenStartAndEnd = (function() {
+const getTicksBetweenStartAndEnd = function(ContractStore, SmartChartStore) {
     let has_been_called = false;
+    const zip = rows => rows[0].map((_,c) => rows.map(row => row[c]));
+    const combinePriceTime = (price_arr, times_arr) =>
+        zip([ price_arr, times_arr ]).reduce((acc, curr) => [...acc, { price: +curr[0], time: +curr[1] }], []);
 
-    return function ({ ...contract_info }, ContractStore) {
+    return function ({ ...contract_info }) {
         if (has_been_called) return;
         has_been_called = true;
 
         const ticks_history_req = {
             ticks_history: contract_info.underlying,
             start        : contract_info.entry_tick_time,
-            end          : 'latest',
+            end          : ContractStore.end_spot_time ? ContractStore.end_spot_time : 'latest',
             count        : contract_info.tick_count,
         };
 
         if (ContractStore.end_spot_time) {
             WS.sendRequest(ticks_history_req).then((data) => {
-                console.log('end spot ', data);
+                const { prices, times } = data.history;
+                const middle_ticks = combinePriceTime(prices, times)
+                    .filter((i) => i.time > +contract_info.entry_tick_time && i.time < +ContractStore.end_spot_time);
+
+                middle_ticks.forEach((tick) => {
+                    const marker_config = createMarkerSpotMiddle(tick, 'add');
+                    SmartChartStore.createMarker(marker_config);
+                });
+
+                console.log(middle_ticks);
+                // TODO: add middle ticks to chart
+
             });
         } else {
             WS.subscribeTicksHistory({ ...ticks_history_req, subscribe: 1 }, (data) => {
@@ -40,7 +55,7 @@ const getTicksBetweenStartAndEnd = (function() {
             });
         }
     };
-})();
+};
 
 const marker_creators = {
     [MARKER_TYPES_CONFIG.LINE_END.type]     : createMarkerEndTime,
@@ -48,7 +63,6 @@ const marker_creators = {
     [MARKER_TYPES_CONFIG.LINE_START.type]   : createMarkerStartTime,
     [MARKER_TYPES_CONFIG.SPOT_ENTRY.type]   : createMarkerSpotEntry,
     [MARKER_TYPES_CONFIG.SPOT_EXIT.type]    : createMarkerSpotExit,
-    [MARKER_TYPES_CONFIG.SPOT_MIDDLE.type]  : createMarkerSpotMiddle,
 };
 
 // -------------------- Lines --------------------
@@ -108,8 +122,19 @@ function createMarkerSpotExit(contract_info, ContractStore) {
     );
 }
 
-function createMarkerSpotMiddle(contract_info, ContractStore) {
+function createMarkerSpotMiddle(tick, should_add) {
     // TODO: createMarkerConfig for middle spots
+    if (should_add !== 'add') return false;
+
+    return createMarkerConfig(
+        MARKER_TYPES_CONFIG.SPOT_MIDDLE.type,
+        tick.time,
+        tick.price,
+        {
+            spot_value: `${tick.price}`,
+            // status    : `${tick.price > 0 ? 'won' : 'lost' }`,
+        },
+    );
 }
 
 // -------------------- Helpers --------------------

@@ -1,6 +1,6 @@
 import React         from 'react';
 import { localize }  from '_common/localize';
-// import IconEntrySpot from 'Assets/Contract/icon-entry-spot.jsx';
+import IconEntrySpot from 'Assets/Contract/icon-entry-spot.jsx';
 import IconFlag      from 'Assets/Contract/icon-flag.jsx';
 import MarkerLine    from 'Modules/SmartChart/Components/Markers/marker-line.jsx';
 import MarkerSpot    from 'Modules/SmartChart/Components/Markers/marker-spot.jsx';
@@ -56,7 +56,8 @@ export const MARKER_TYPES_CONFIG = {
         content_config: { align: 'right', icon: <IconFlag /> },
     },
     SPOT_MIDDLE: {
-        type         : 'SPOT_MIDDLE',
-        marker_config: MARKER_CONTENT_TYPES.SPOT,
+        type          : 'SPOT_MIDDLE',
+        marker_config : MARKER_CONTENT_TYPES.SPOT,
+        content_config: { align: 'left',  icon: <IconEntrySpot /> },
     },
 };
