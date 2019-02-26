@@ -39,12 +39,12 @@ class PositionsDrawer extends React.Component {
         } else if (is_empty) {
             body_content = <EmptyPortfolioMessage />;
         } else {
-            // Show only 3 most recent open contracts
-            body_content = active_positions.slice(0, 3).map((portfolio_position) => (
+            // Show only 4 most recent open contracts
+            body_content = active_positions.slice(0, 4).map((portfolio_position) => (
                 <CSSTransition
                     key={portfolio_position.id}
                     in={!!(portfolio_position.underlying_code)}
-                    timeout={250}
+                    timeout={150}
                     classNames={{
                         enter    : 'positions-drawer-card__wrapper--enter',
                         enterDone: 'positions-drawer-card__wrapper--enter-done',

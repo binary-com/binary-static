@@ -13,7 +13,7 @@ import BinaryLink            from '../../Routes/binary-link.jsx';
 import { getContractPath }   from '../../Routes/helpers';
 import Button                from '../../Form/button.jsx';
 
-// TODO: Break into smaller components once confirmed to be components used are finalized
+// TODO: Break into smaller components once design is finalized
 const PositionsDrawerCard = ({
     barrier,
     className,
