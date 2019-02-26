@@ -56,8 +56,8 @@
         border-color: $COLOR_WHITE;
 
         &--symbol {
-          font-size: 1.4em;
-          line-height: 1.5;
+            font-size: 1.4em;
+            line-height: 1.5;
         }
         &:before {
             @include typeface(--paragraph-center-normal-black);
@@ -152,7 +152,11 @@
         display: inline-block;
 
         &--display {
+            font-size: 1.4em;
+            line-height: 1.5;
+            height: 32px;
             border-radius: 4px 0 0 4px !important;
+            margin-top: 0;
         }
     }
     &__amount {

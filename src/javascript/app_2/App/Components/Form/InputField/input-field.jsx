@@ -148,29 +148,19 @@ const InputField = ({
     const is_increment_input = is_incrementable && type === 'number';
 
     const input =
-<<<<<<< HEAD:src/javascript/app_2/App/Components/Form/InputField/input-field.jsx
         <Input
             changeValue={changeValue}
             checked={checked}
-            className={classNameInput}
+            className={classNames(is_increment_input ? 'input-wrapper__input' : '', 'input', { 'input--error': has_error }, classNameInput)}
             data_tip={data_tip}
             data_value={data_value}
             display_value={display_value}
             fractional_digits={fractional_digits}
             has_error={has_error}
-=======
-        <input
-            checked={checked ? 'checked' : ''}
-            className={classNames(is_increment_input ? 'input-wrapper__input' : '', 'input', { 'input--error': has_error }, classNameInput)}
-            disabled={is_disabled}
-            data-for={`error_tooltip_${name}`}
-            data-value={data_value}
-            data-tip={data_tip}
->>>>>>> upstream/master:src/javascript/app_2/App/Components/Form/input-field.jsx
             id={id}
             is_autocomplete_disabled={is_autocomplete_disabled}
             is_disabled={is_disabled}
-            is_incrementable={is_incrementable}
+            is_incrementable={is_increment_input}
             is_read_only={is_read_only}
             max_length={max_length}
             name={name}
@@ -192,21 +182,20 @@ const InputField = ({
         </div>;
 
     const input_tooltip =
-        <Tooltip alignment='left' message={has_error ? error_messages[0] : null }>
+        <Tooltip className={classNames('', { 'with-label': label })} alignment='left' message={has_error ? error_messages[0] : null }>
             {!!label &&
-            <label htmlFor={name} className='input-label'>{label}</label>
+            <label htmlFor={name} className='input-field__label'>{label}</label>
             }
             {!!helper &&
-            <span className='input-helper'>{helper}</span>
+            <span className='input-field__helper'>{helper}</span>
             }
-            {is_incrementable && type === 'number' &&
+            {is_increment_input && type === 'number' &&
                 increment_buttons
             }
             {input}
         </Tooltip>;
 
     return (
-<<<<<<< HEAD:src/javascript/app_2/App/Components/Form/InputField/input-field.jsx
         <React.Fragment>
             {!!prefix &&
                 <div className={classNamePrefix}>
@@ -219,24 +208,6 @@ const InputField = ({
                 {input_tooltip}
             </div>
         </React.Fragment>
-=======
-        <div
-            className={`input-field ${className || ''}`}
-        >
-            <Tooltip className={classNames('', { 'with-label': label })} alignment='left' message={has_error ? error_messages[0] : null }>
-                {!!label &&
-                    <label htmlFor={name} className='input-field__label'>{label}</label>
-                }
-                {!!prefix &&
-                    <span className={classNames(classNamePrefix, 'symbols', prefix.toLowerCase())} />
-                }
-                {!!helper &&
-                    <span className='input-field__helper'>{helper}</span>
-                }
-                {is_increment_input ? input_increment : input}
-            </Tooltip>
-        </div>
->>>>>>> upstream/master:src/javascript/app_2/App/Components/Form/input-field.jsx
     );
 };
 

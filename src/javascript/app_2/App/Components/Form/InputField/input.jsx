@@ -11,7 +11,6 @@ const Input = ({
     data_tip,
     display_value,
     fractional_digits,
-    has_error,
     id,
     is_autocomplete_disabled,
     is_disabled,
@@ -28,7 +27,7 @@ const Input = ({
     <input
         autoComplete={is_autocomplete_disabled ? 'off' : undefined}
         checked={checked ? 'checked' : ''}
-        className={classNames(className, { error: has_error })}
+        className={className}
         data-for={`error_tooltip_${name}`}
         data-tip={data_tip}
         data-value={data_value}
@@ -61,7 +60,6 @@ Input.propTypes = {
         PropTypes.string,
     ]),
     fractional_digits       : PropTypes.number,
-    has_error               : PropTypes.bool,
     id                      : PropTypes.string,
     is_autocomplete_disabled: PropTypes.bool,
     is_disabled             : PropTypes.string,

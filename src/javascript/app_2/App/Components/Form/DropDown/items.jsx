@@ -22,8 +22,8 @@ const Items = ({
                 onClick={handleSelect.bind(null, item)}
             >
                 {!!has_symbol && item.has_tooltip &&
-                <Tooltip alignment='top' className='list__item__tooltip' message={item.text}>
-                    <i><span className={`symbols list__item__tooltip-symbols ${(item.text || '').toLowerCase()}`} /></i>
+                <Tooltip alignment='top' className='list__item-tooltip' message={item.text}>
+                    <i><span className={`symbols list__item-tooltip-symbols ${(item.text || '').toLowerCase()}`} /></i>
                 </Tooltip>
                 }
                 {!!has_symbol && !item.has_tooltip &&
