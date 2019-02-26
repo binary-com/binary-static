@@ -16,6 +16,7 @@ class Calendar extends React.PureComponent {
             calendar_date: current_date, // calendar date reference
             selected_date: value,        // selected date
             calendar_view: 'date',
+            hovered_date : '',
         };
     }
 
@@ -32,6 +33,28 @@ class Calendar extends React.PureComponent {
                 this.props.onChangeCalendarMonth(start_of_month);
             }
         });
+    };
+
+    onMouseOver = (event) => {
+        const target = event.currentTarget;
+
+        if (!target.classList.contains('calendar__cell--disabled') && !target.classList.contains('calendar__cell--hover')) {
+            target.className += ' calendar__cell--hover';
+            this.setState({
+                hovered_date: target.getAttribute('data-date'),
+            });
+        }
+    };
+
+    onMouseLeave = (event) => {
+        const target = event.currentTarget;
+
+        if (target.classList.contains('calendar__cell--hover')) {
+            this.setState({
+                hovered_date: null,
+            });
+            target.classList.remove('calendar__cell--hover');
+        }
     };
 
     updateSelectedDate = (e) => {
@@ -142,6 +165,9 @@ class Calendar extends React.PureComponent {
                     updateSelected={this.updateSelected}
                     holidays={holidays}
                     weekends={weekends}
+                    onMouseOver={this.onMouseOver}
+                    onMouseLeave={this.onMouseLeave}
+                    hovered_date={this.state.hovered_date}
                 />
                 <CalendarFooter
                     footer={footer}

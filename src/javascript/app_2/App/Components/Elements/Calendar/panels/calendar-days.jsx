@@ -23,6 +23,9 @@ const getDays = ({
     selected_date,
     updateSelected,
     weekends,
+    onMouseOver,
+    onMouseLeave,
+    hovered_date,
 }) => {
     // adjust Calendar week by 1 day so that Calendar week starts on Monday
     // change to zero to set Calendar week to start on Sunday
@@ -61,28 +64,10 @@ const getDays = ({
     const moment_start_date = toMoment(start_date).startOf('day');
 
     dates.map((date) => {
-        const onMouseOver = (event) => {
-            const target = event.currentTarget;
-    
-            if (!target.classList.contains('calendar__cell--disabled') && !target.classList.contains('calendar__cell--hover')) {
-                target.className += ' calendar__cell--hover';
-                moment_hover = toMoment(target.getAttribute('data-date'));
-                console.log(moment_hover) //eslint-disable-line
-            }
-        };
-    
-        const onMouseLeave = (event) => {
-            const target = event.currentTarget;
-    
-            if (target.classList.contains('calendar__cell--hover')) {
-                target.classList.remove('calendar__cell--hover');
-            }
-        };
-        
-        const moment_date = toMoment(date).startOf('day');
-        const is_active   = selected_date && moment_date.isSame(moment_selected);
-        const is_today    = moment_date.isSame(moment_today, 'day');
-        let moment_hover;
+        const moment_date    = toMoment(date).startOf('day');
+        const moment_hovered = toMoment(hovered_date).startOf('day');
+        const is_active      = selected_date && moment_date.isSame(moment_selected);
+        const is_today       = moment_date.isSame(moment_today, 'day');
 
         const events          = holidays.filter(event =>
             // filter by date or day of the week
@@ -92,7 +77,7 @@ const getDays = ({
         const message              = events.map(event => event.descrip)[0] || '';
         const duration_from_today  = moment_date.diff(moment_today, 'days');
         const is_between           = moment_date.isBetween(moment_today, moment_selected);
-        const is_between_hover     = moment_date.isBetween(moment_selected, moment_hover);
+        const is_between_hover     = moment_date.isBetween(moment_today, moment_hovered);
         const is_before_min_or_after_max_date = isPeriodDisabled(moment_date, 'day');
         const is_disabled =
             // check if date is before min_date or after_max_date
@@ -116,15 +101,14 @@ const getDays = ({
                     'calendar__cell--today'        : is_today,
                     'calendar__cell--disabled'     : is_disabled,
                     'calendar__cell--other'        : is_other_month,
-                    'calendar__cell--between'      : is_between,
                     'calendar__cell--between-hover': is_between_hover,
+                    'calendar__cell--between'      : is_between,
                 })}
                 onClick={is_disabled ? undefined : (e) => updateSelected(e, 'day')}
                 data-date={date}
                 data-duration={`${duration_from_today} ${duration_from_today === 1 ? 'Day' : 'Days'}`}
                 onMouseOver={onMouseOver}
                 onMouseLeave={onMouseLeave}
-                moment_hover={moment_hover}
             >
                 {((has_events || is_closes_early) && !is_other_month && !is_before_min_or_after_max_date) &&
                     <Tooltip

@@ -155,7 +155,7 @@
                 content: '';
                 width: 100%;
                 left: 50%;
-                z-index: -2;
+                z-index: -1;
                 height: 100%;
                 padding-right: 10px;
                 background: $COLOR_DARK_BLUE_5 !important;
@@ -163,7 +163,7 @@
         }
         &--active {
             color: $COLOR_WHITE;
-            background: $COLOR_LIGHT_GRAY_1;
+            background: $COLOR_DARK_BLUE_5 !important;
             font-weight: bold;
 
             &:hover {
@@ -175,6 +175,17 @@
             font-weight: bold;
             color: $COLOR_WHITE !important;
 
+            &-hover {
+                &:before {
+                    position: absolute;
+                    content: '';
+                    width: 100%;
+                    z-index: -2;
+                    height: 100%;
+                    padding-left: 28px;
+                    background: $COLOR_DARK_BLUE_4;
+                }
+            }
             &:hover {
                 background: $COLOR_DARK_BLUE_5 !important;
             }
@@ -182,7 +193,7 @@
                 position: absolute;
                 content: '';
                 width: 100%;
-                z-index: -2;
+                z-index: -1;
                 height: 100%;
                 padding-left: 28px;
                 background: $COLOR_DARK_BLUE_5 !important;
