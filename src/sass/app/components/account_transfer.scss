@@ -46,10 +46,14 @@
                 }
                 input {
                     margin: 0;
-                    padding: 0;
+                    padding: 0 0 0 5px;
                     height: 28px;
                     max-width: 100%;
                     width: 232px;
+                    box-sizing: border-box;
+                }
+                p.error-msg {
+                    margin-left: 50px !important;
                 }
             }
             .select {
@@ -59,6 +63,7 @@
         & .select {
             width: 280px !important;
             display: block;
+            margin-bottom: 2px;
         }
     }
 }
@@ -77,5 +82,14 @@
     &__header {
         padding: 5px !important;
         font-size: smaller !important;
+    }
+}
+
+.account_transfer-content {
+    .hint {
+        font-size: 15px;
+    }
+    .italic {
+        font-style: italic;
     }
 }

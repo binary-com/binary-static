@@ -36,6 +36,18 @@ const AccountTransfer = (() => {
         transferable_amount,
         transfer_to_currency;
 
+    /**
+     * Sort Accounts
+     * See : https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore#_sortby-and-_orderby
+     * @param accounts
+     * @returns {*}
+     */
+    const sortAccounts = (accounts) => {
+        const sortBy = (key) => (a, b) => (a[key] > b[key]) ? 1 : ((b[key] > a[key]) ? -1 : 0);
+
+        return accounts.concat().sort(sortBy('currency'));
+    };
+
     const populateAccounts = (accounts) => {
         client_loginid   = Client.get('loginid');
         el_transfer_from = getElementById('lbl_transfer_from');
@@ -45,7 +57,7 @@ const AccountTransfer = (() => {
 
         const fragment_transfer_to = document.createElement('div');
 
-        accounts.forEach((account) => {
+        sortAccounts(accounts).forEach((account) => {
             if (Client.canTransferFunds(account)) {
                 const option = document.createElement('option');
                 option.setAttribute('data-currency', account.currency);
@@ -58,7 +70,7 @@ const AccountTransfer = (() => {
             showError();
             return;
         } else if (fragment_transfer_to.childElementCount === 1) {
-            const el_label_transfer_to = document.createElement('div');
+            const el_label_transfer_to = document.createElement('p');
             el_label_transfer_to.setAttribute('data-value', fragment_transfer_to.firstChild.textContent);
             el_label_transfer_to.setAttribute('id', el_transfer_to.getAttribute('id'));
             el_label_transfer_to.innerText = fragment_transfer_to.firstChild.textContent;
@@ -147,13 +159,19 @@ const AccountTransfer = (() => {
         getElementById(form_id).setVisibility(0);
         response.accounts.forEach((account) => {
             if (account.loginid === client_loginid) {
-                getElementById('from_currency').innerHTML = Currency.formatCurrency(account.currency);
-                elementTextContent(getElementById('from_loginid'), `${account.balance} (${account.currency})`);
-                elementTextContent(getElementById('from_balance'), account.balance);
+                // getElementById('from_currency').innerHTML = Currency.formatCurrency(account.currency);
+                elementTextContent(getElementById('from_loginid'), `${account.loginid} (${account.currency})`);
+                getElementById('from_current_balance').innerHTML = Currency.formatMoney(
+                    account.currency,
+                    account.balance,
+                );
             } else if (account.loginid === response_submit_success.client_to_loginid) {
-                elementTextContent(getElementById('to_loginid'), `${account.balance} (${account.currency})`);
-                getElementById('to_currency').innerHTML = Currency.formatCurrency(account.currency);
-                elementTextContent(getElementById('to_balance'), account.balance);
+                elementTextContent(getElementById('to_loginid'), `${account.loginid} (${account.currency})`);
+                // getElementById('to_currency').innerHTML = Currency.formatCurrency(account.currency);
+                getElementById('to_current_balance').innerHTML = Currency.formatMoney(
+                    account.currency,
+                    account.balance,
+                );
             }
         });
 
