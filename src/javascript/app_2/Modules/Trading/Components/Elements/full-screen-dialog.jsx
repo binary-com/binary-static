@@ -55,13 +55,13 @@ const FullScreenDialog = (props) => {
                     className='icons btn-close fullscreen-dialog__close-btn'
                     onClick={props.onClose}
                 >
-                    <IconClose className='ic-close' />
+                    <IconClose className='fullscreen-dialog__close-btn-icon' />
                 </div>
             </div>
             <div className='fullscreen-dialog__header-shadow-cover' />
             <div className='fullscreen-dialog__header-shadow' />
             <div className='fullscreen-dialog__content'>
-                <div className={`${wrapperClassName || 'fullscreen-dialog__contracts-modal-list'}`}>
+                <div className={`fullscreen-dialog__${wrapperClassName || 'contracts-modal-list'}`}>
                     {children}
                 </div>
             </div>

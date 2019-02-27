@@ -37,7 +37,7 @@ class ContractDetails extends React.Component {
                             to={routes.trade}
                             onClick={this.props.onClickNewTrade}
                         >
-                            <span>{localize('Start a new trade')}</span>
+                            <span className='btn__text'>{localize('Start a new trade')}</span>
                         </Link>
                     </div>
                 </React.Fragment>
@@ -50,7 +50,7 @@ class ContractDetails extends React.Component {
         return (
             <ErrorComponent message={this.props.error_message} />
         );
-        
+
     }
 }
 
