@@ -1,6 +1,6 @@
 import React     from 'react';
 import PropTypes from 'prop-types';
-import MenuList  from './menu_list.jsx';
+import MenuList  from './menu-list.jsx';
 
 const Menu = ({ data }) => (
     <div className='settings-menu'>

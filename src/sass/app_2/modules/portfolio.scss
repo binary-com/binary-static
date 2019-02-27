@@ -1,3 +1,4 @@
+// TODO: Combine whatever selector / rule that's still needed from this and merge into positions_drawer
 .portfolio {
     padding: 1.5em 1.2em;
     height: 100%;
@@ -59,7 +60,7 @@
     }
     // empty portfolio message
     &-empty {
-        height: calc(100vh - 170px);
+        height: calc(100vh - 240px);
         display: flex;
 
         &__wrapper {
@@ -121,9 +122,9 @@
         &__purchase:before {
             background-image: url('../images/portfolio/ic_purchase_light.svg');
         }
-        &__payout:before {
-            background-image: url('../images/statement/ic_payout_light.svg');
-        }
+        // &__payout:before {
+        //     background-image: url('../images/statement/ic_payout_light.svg');
+        // }
         &__indicative {
             &--price-moved-up {
                 color: $COLOR_GREEN_1;

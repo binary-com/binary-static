@@ -1,4 +1,4 @@
-import ContractType      from '../Helpers/contract_type';
+import ContractType      from '../Helpers/contract-type';
 import { getExpiryType } from '../Helpers/duration';
 
 export const onChangeExpiry = (store) => {

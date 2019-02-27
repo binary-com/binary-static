@@ -2,12 +2,12 @@ import PropTypes            from 'prop-types';
 import React                from 'react';
 import { CSSTransition }    from 'react-transition-group';
 import { getPropertyValue } from '_common/utility';
-import UILoader             from 'App/Components/Elements/ui_loader.jsx';
+import UILoader             from 'App/Components/Elements/ui-loader.jsx';
 import { connect }          from 'Stores/connect';
 import Test                 from './test.jsx';
-import FormLayout           from '../Components/Form/form_layout.jsx';
-import ContractDetails      from '../../Contract/Containers/contract_details.jsx';
-import InfoBox              from '../../Contract/Containers/info_box.jsx';
+import FormLayout           from '../Components/Form/form-layout.jsx';
+import ContractDetails      from '../../Contract/Containers/contract-details.jsx';
+import InfoBox              from '../../Contract/Containers/info-box.jsx';
 
 const SmartChart = React.lazy(() => import(/* webpackChunkName: "smart_chart" */'../../SmartChart'));
 
@@ -22,7 +22,8 @@ class Trade extends React.Component {
 
     render() {
         const contract_id = getPropertyValue(this.props.purchase_info, ['buy', 'contract_id']);
-        const form_wrapper_class = this.props.is_mobile ? 'mobile-wrapper' : 'sidebar-container desktop-only';
+        const form_wrapper_class = this.props.is_mobile ? 'mobile-wrapper' : 'sidebar__container desktop-only';
+        const should_show_last_digit_stats = ['match_diff', 'even_odd', 'over_under'].includes(this.props.contract_type);
 
         return (
             <div id='trade_container' className='trade-container'>
@@ -38,6 +39,7 @@ class Trade extends React.Component {
                                 granularity={this.props.granularity}
                                 updateChartType={this.props.updateChartType}
                                 updateGranularity={this.props.updateGranularity}
+                                should_show_last_digit_stats={should_show_last_digit_stats}
                             />
                         </React.Suspense>
                     }
@@ -54,10 +56,14 @@ class Trade extends React.Component {
                     <CSSTransition
                         in={!!contract_id}
                         timeout={400}
-                        classNames='contract-wrapper'
+                        classNames={{
+                            enter    : 'contract--enter',
+                            enterDone: 'contract--enter-done',
+                            exit     : 'contract--exit',
+                        }}
                         unmountOnExit
                     >
-                        <div className='contract-wrapper'>
+                        <div className='contract__wrapper'>
                             <ContractDetails
                                 contract_id={contract_id}
                                 onClickNewTrade={this.props.onClickNewTrade}
@@ -72,6 +78,7 @@ class Trade extends React.Component {
 
 Trade.propTypes = {
     chart_id        : PropTypes.number,
+    contract_type   : PropTypes.string,
     is_contract_mode: PropTypes.bool,
     is_mobile       : PropTypes.bool,
     is_trade_enabled: PropTypes.bool,
@@ -91,6 +98,7 @@ export default connect(
         updateChartType  : modules.smart_chart.updateChartType,
         updateGranularity: modules.smart_chart.updateGranularity,
         chart_id         : modules.trade.chart_id,
+        contract_type    : modules.trade.contract_type,
         is_trade_enabled : modules.trade.is_trade_enabled,
         onClickNewTrade  : modules.trade.onClickNewTrade,
         onMount          : modules.trade.onMount,

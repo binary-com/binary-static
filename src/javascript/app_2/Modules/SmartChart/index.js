@@ -1,1 +1,1 @@
-export default from './Containers/smart_chart.jsx';
+export default from './Containers/smart-chart.jsx';

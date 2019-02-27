@@ -6,9 +6,9 @@ import Fieldset                       from 'App/Components/Form/fieldset.jsx';
 import RangeSlider                    from 'App/Components/Form/RangeSlider';
 import { convertDurationLimit }       from 'Stores/Modules/Trading/Helpers/duration';
 import { toMoment }                   from 'Utils/Date';
-import DurationToggle                 from './duration_toggle.jsx';
-import AdvancedDuration               from './advanced_duration.jsx';
-import SimpleDuration                 from './simple_duration.jsx';
+import DurationToggle                 from './duration-toggle.jsx';
+import AdvancedDuration               from './advanced-duration.jsx';
+import SimpleDuration                 from './simple-duration.jsx';
 
 const Duration = ({
     advanced_duration_unit,
@@ -51,8 +51,7 @@ const Duration = ({
         const moment_expiry = toMoment(expiry_date);
         const duration_unit_text = (duration_units_list.find(o => o.value === duration_unit) || {}).text;
         return (
-            <div className='fieldset-minimized duration'>
-                <span className='icon trade-duration' />
+            <div className='fieldset-minimized fieldset-minimized__duration'>
                 {expiry_type === 'duration'
                     ? `${duration} ${duration_unit_text}`
                     : `${moment_expiry.format('ddd - DD MMM, YYYY')}\n${expiry_time}`

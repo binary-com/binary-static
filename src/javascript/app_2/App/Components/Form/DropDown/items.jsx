@@ -21,7 +21,7 @@ const Items = ({
                 value={item.value}
                 onClick={handleSelect.bind(null, item)}
             >
-                <span>{item.text}</span>
+                <span className='list__item-text'>{item.text}</span>
             </div>
         </React.Fragment>
     ))

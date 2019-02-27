@@ -1,0 +1,133 @@
+/** @define input-field */
+.input-field {
+    margin: 0.8em 0 0;
+    position: relative;
+
+    &__label {
+        @include typeface(--paragraph-left-normal-black);
+        margin-bottom: 0.8em;
+        display: inline-block;
+        text-align: center;
+        width: 100%;
+    }
+    &__helper {
+        @include typeface(--small-left-light-grey);
+    }
+}
+
+/** @define input-wrapper */
+.input-wrapper {
+    position: relative;
+
+    &__input {
+        &::-ms-clear { // Edge: hide clear icon for incement input
+            display: none;
+        }
+    }
+    &__button {
+        position: absolute;
+        z-index: 1;
+        top: 2px;
+        height: calc(100% - 5px);
+        margin: initial;
+        min-width: 3em;
+        border-radius: 3px;
+        padding: initial;
+        background-color: initial;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &--increment {
+            right: 2px; // fixed position
+        }
+        &--decrement {
+            left: 2px; // fixed position
+        }
+        &:hover {
+            cursor: pointer;
+            background: $COLOR_LIGHT_BLACK_4;
+        }
+        &:disabled:hover {
+            cursor: not-allowed;
+            background: transparent;
+        }
+    }
+}
+
+/** @define input */
+.input {
+    @include typeface(--paragraph-center-normal-black, capitalize);
+    list-style: none;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 32px;
+    padding-left: 0.8em;
+    border: 1px solid $COLOR_LIGHT_BLACK_4;
+    border-radius: $BORDER_RADIUS;
+    transition: transform 0.3s;
+
+    &[type=checkbox] {
+        font-size: 1em;
+        cursor: pointer;
+        display: inline-block;
+        vertical-align: middle;
+        width: 1.2em;
+        height: 1.2em;
+        border-color: $COLOR_LIGHT_BLACK_4;
+        border-radius: 1px;
+        border-width: 0.5px;
+        padding: 0;
+
+        &:hover, &:focus, &:active {
+            border-color: $COLOR_ORANGE;
+            border-radius: 1px;
+            box-shadow: none;
+        }
+        &:checked {
+            background: $COLOR_ORANGE;
+            border-color: $COLOR_ORANGE;
+
+            &:after {
+                display: inline-block;
+            }
+        }
+        &::-ms-check { // IE/EDGE support
+            background: transparent;
+            border-color: transparent;
+            color: $COLOR_WHITE;
+        }
+        &:after {
+            @include typeface(--xsmall-left-normal-active);
+            content: 'L';
+            transform: scaleX(-1) rotate(-40deg);
+            position: absolute;
+            top: -20%;
+            left: 30%;
+            display: none;
+        }
+    }
+    &:not([type=range]) {
+        touch-action: manipulation;
+    }
+    &--error {
+        color: $COLOR_RED;
+        border: 1px solid $COLOR_RED !important;
+    }
+    &[readonly] {
+        cursor: pointer;
+    }
+    &::placeholder {
+        color: $COLOR_LIGHT_BLACK_1;
+    }
+    &:hover {
+        border-color: $COLOR_LIGHT_GRAY_1;
+    }
+    &:active, &:focus {
+        outline: 0;
+        border-radius: $BORDER_RADIUS;
+        border-color: $COLOR_LIGHT_GRAY_1;
+        box-shadow: 0 0 0 2px rgba(127, 131, 151, 0.3);
+    }
+}

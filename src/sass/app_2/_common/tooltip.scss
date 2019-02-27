@@ -1,40 +1,22 @@
+/** @define tooltip */
 .tooltip {
     text-decoration: underline;
     text-decoration-style: dotted;
     color: $COLOR_DARK_BLUE_5;
     font-size: inherit;
 
-    i.question:after, i.info:after {
-        margin-left: 0.5em;
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        vertical-align: middle;
-    }
-    i.question:after {
-        content: url('../images/common/tooltip/ic_tooltip_question_light.svg ');
-    }
-    i.info:after {
-        content: url('../images/common/tooltip/ic_tooltip_info_light.svg ');
-    }
-    i.info {
-        &:before {
-            content: url('../images/common/tooltip/ic_tooltip_info_dark.svg ');
-            position: absolute;
-            z-index: 10;
-            opacity: 0;
-            transition: all 0.18s ease-out 0.17s;
-            transform: translateX(20%);
-            top: 0.1em;
-            left: -40.6em;
-        }
-        &:hover:before {
+    &__balloon-icon {
+        position: absolute;
+        top: 0;
+        left: -525px;
+        z-index: 999;
+        opacity: 0;
+        transition: opacity 0.3s;
+
+        &--show {
+            transition: opacity 0.3s 0.2s;
             opacity: 1;
-            transform: translateX(0);
         }
-    }
-    i.dot:after {
-        content: url('../images/common/tooltip/ic_dot_red.svg ');
     }
     &[data-tooltip] {
         position: relative;
@@ -133,41 +115,6 @@
                 border-top-color: transparent;
                 border-bottom-color: $COLOR_LIGHT_BLACK_1;
             }
-        }
-    }
-}
-
-// Dark Theme
-.theme--dark {
-    .tooltip {
-        color: $COLOR_WHITE;
-
-        &:before {
-            background: $COLOR_DARK_BLUE_5;
-            color: $COLOR_WHITE;
-        }
-        &[data-tooltip-pos=top] {
-            &:after {
-                border-top-color: $COLOR_DARK_BLUE_5;
-            }
-        }
-        &[data-tooltip-pos=right] {
-            &:after {
-                border-right-color: $COLOR_DARK_BLUE_5;
-            }
-        }
-        &[data-tooltip-pos=left] {
-            &:after {
-                border-left-color: $COLOR_DARK_BLUE_5;
-            }
-        }
-        &[data-tooltip-pos=bottom] {
-            &:after {
-                border-bottom-color: $COLOR_DARK_BLUE_5;
-            }
-        }
-        i.question:after {
-            content: url('../images/common/tooltip/ic_tooltip_question_dark.svg ');
         }
     }
 }

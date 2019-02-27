@@ -1,0 +1,82 @@
+/** @define time-picker */
+.time-picker {
+    position: relative;
+    margin-top: 0.8em;
+
+    &--padding {
+        padding: 1.6em;
+    }
+    &__icon {
+        @extend .absolute-center-v;
+        @extend .icon--centered;
+        z-index: 1;
+        margin: unset;
+    }
+    &__dialog {
+        background-color: $COLOR_WHITE;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+        border-radius: 4px;
+        padding-top: 10px;
+        position: absolute;
+        top: 0;
+        transform-origin: right;
+        transform: scale(1, 0) translate3d(0, 0, 0);
+        transition: transform 0.25s ease, opacity 0.25s linear;
+        width: 231px;
+        z-index: 1;
+
+        &--enter, &--exit {
+            opacity: 0;
+            transform: scale(1, 1) translate3d(-225px, 0, 0);
+        }
+        &--enter-done {
+            opacity: 1;
+            transform: translate3d(-245px, 0, 0);
+        }
+    }
+    &__selector {
+        height: inherit;
+
+        &--hours {
+            border-right: 1px solid $COLOR_LIGHT_BLACK_4;
+            border-radius: 0 0 0 4px;
+            width: 150px;
+        }
+        &--minutes {
+            width: 80px;
+            border-radius: 0 5px 5px 0;
+        }
+        &--hours, &--minutes {
+            display: inline-block;
+            height: 228px;
+            overflow: hidden;
+            text-align: center;
+
+        }
+        &-list-title {
+            @include typeface(--small-center-bold-black, capitalize);
+        }
+        &-list-item {
+            @include typeface(--small-left-normal-black);
+            cursor: pointer;
+            border-radius: 4px;
+            display: inline-block;
+            margin: 3px;
+            padding: 7px;
+
+            &:hover:not(&--disabled) {
+                background: $COLOR_LIGHT_BLACK_4;
+                color: $COLOR_LIGHT_BLACK_1;
+
+                &--selected {
+                    background: $COLOR_LIGHT_GRAY_1;
+                    color: $COLOR_WHITE;
+                }
+            }
+            &--disabled {
+                color: $COLOR_LIGHT_BLACK_3;
+                cursor: default;
+            }
+        }
+    }
+}

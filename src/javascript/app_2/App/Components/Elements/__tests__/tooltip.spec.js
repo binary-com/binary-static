@@ -3,7 +3,7 @@ import { expect }             from 'chai';
 import { configure, shallow } from 'enzyme';
 import Adapter                from 'enzyme-adapter-react-16';
 import Tooltip                from '../tooltip.jsx';
-import { testChildren }       from '../../../../test_helper';
+import { testChildren }       from '../../../../test-helper';
 
 configure({ adapter: new Adapter() });
 
@@ -19,10 +19,6 @@ describe('Tooltip', () => {
         const wrapper = shallow(<Tooltip icon='info' />);
         expect(wrapper.find('.info').exists()).to.be.true;
         expect(wrapper.find('.question').exists()).to.be.false;
-    });
-    it('should have default class if invalid prop icon is passed', () => {
-        const wrapper = shallow(<Tooltip icon='invalid-icon' />);
-        expect(wrapper.find('.question').exists()).to.be.true;
     });
     it('should have data-tooltip equal to message passed in props', () => {
         const wrapper = shallow(<Tooltip message='This is a tooltip' />);

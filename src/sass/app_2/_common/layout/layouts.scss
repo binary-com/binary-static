@@ -1,3 +1,4 @@
+/** @define app-contents; weak */
 .app-contents {
     margin: $HEADER_HEIGHT 0 $FOOTER_HEIGHT;
     height: calc(100vh - #{$HEADER_HEIGHT} - #{$FOOTER_HEIGHT});
@@ -26,7 +27,6 @@
                 .cq-chart-control-left {
                     .cq-chart-controls {
                         transform: translate3d(1px, 0, 0) !important;
-                        background: $COLOR_DARK_BLUE_3;
                     }
                 }
             }
@@ -35,212 +35,215 @@
             max-width: unset;
         }
     }
-    .chart-container {
-        width: 100%;
-        transition: width 0.15s ease-out, margin 0.15s ease-out;
-
-        .cq-chart-control-left {
-            .cq-chart-controls {
-                transform: translate3d(0, 0, 0);
-                transition: transform 0.25s ease;
-            }
-            .cq-top-ui-widgets {
-                left: 9em;
-
-                .info-box {
-                    transform: translate3d(0, 0, 0);
-                }
-            }
-        }
-        .ciq-chart {
-            .cq-top-ui-widgets, & .info-box {
-                transition: transform 0.25s ease;
-
-                .cq-symbols-display {
-                    z-index: 1;
-                }
-            }
-            .cq-chart-controls {
-                transition: max-width 0.25s ease, transform 0.25s ease;
-            }
-        }
-    }
     @media screen and (max-width: 768px) {
         // no footer:
         margin-bottom: 0;
         height: calc(100vh - #{$HEADER_HEIGHT});
     }
-
-    .sidebar-container {
-        position: relative;
-        margin-left: 1.6em;
-        width: $SIDEBAR_WIDTH;
-
-        .sidebar-items {
-            opacity: 1;
-            transform: none;
-            transition: transform 0.4s ease, opacity 0.2s linear;
-
-            &__slideout {
-                transform: translate3d(calc(100% + 2px), 0, 0);
-                pointer-events: none;
-                opacity: 0;
-            }
-        }
-        .contract-wrapper {
-            position: absolute;
-            width: $SIDEBAR_WIDTH;
-            height: 100%;
-            z-index: 2;
-            top: 0;
-            right: 0;
-            transition: transform 0.4s ease, opacity 0.2s linear;
-            opacity: 1;
-            transform: none;
-
-            &-enter {
-                transform: translate3d(calc(100% + 1.6em), 0, 0);
-                opacity: 0;
-            }
-            &-exit {
-                transform: translate3d(calc(100% + 1.6em), 0, 0);
-                opacity: 0;
-                pointer-events: none;
-            }
-        }
-        fieldset {
-            margin-bottom: 0.4em;
-
-            .time-picker {
-                margin-top: 0.8em;
-            }
-        }
-    }
 }
-/* trade-app layout */
+
+/** @define trade-container */
 .trade-container {
     position: relative;
     padding: 0.8em 1.2em 0;
     display: flex;
-    min-height: calc(100vh - 9.1em);
+    min-height: calc(100vh - 83px);
     transition: transform 0.25s ease;
     will-change: transform;
     overflow: hidden;
 
-    .chart-container {
-        position: relative;
-        width: 100%;
-
-        // smartchart library style fixes
-        .cq-context {
-            top: 0;
-            left: 0;
-            z-index: 0;
-
-            div.ciq-chart {
-                height: calc(100% - 5em);
-                box-shadow: none;
-
-                div.chartContainer {
-                    background: transparent;
-                    min-height: 100%;
-                }
-                div.cq-chart-controls {
-                    box-shadow: none;
-                }
-                div.ciq-asset-information {
-                    z-index: 0;
-                }
-            }
-            div.cq-chart-control-left {
-                .cq-top-ui-widgets {
-                    width: calc(100% - 9em);
-                }
-            }
-        }
-        div.debug-text {
-            display: none;
-        }
-    }
-    .sidebar-items, .contract-wrapper {
-        min-height: 460px;
-        width: $SIDEBAR_WIDTH;
-    }
-    .sidebar-items {
-        position: relative;
-    }
     @media (max-width: 768px) {
         flex-direction: column;
+    }
+}
 
-        .chart-container {
-            height: 400px;
-            // smartchart library style fixes
-            .cq-context {
-                div.cq-chart-controls {
-                    border: 1px solid $COLOR_LIGHT_BLACK_4;
-                }
+/** @define chart-container; weak */
+.chart-container {
+    width: 100%;
+    transition: width 0.15s ease-out, margin 0.15s ease-out;
+    position: relative;
+
+    // smartchart library style fixes
+    .cq-context {
+        top: 0;
+        left: 0;
+        z-index: 0;
+
+        div.ciq-chart {
+            height: calc(100% - 5em);
+            box-shadow: none;
+
+            div.cq-chart-controls {
+                box-shadow: none;
             }
-            .cq-modal-dropdown {
-                &.stxMenuActive {
-                    position: fixed;
-                    height: 100%;
-                    width: 100%;
-                    top: 4.7em;
+            div.ciq-asset-information {
+                z-index: 0;
+            }
+        }
+        div.cq-chart-control-left {
+            .cq-top-ui-widgets {
+                width: calc(100% - 9em);
+            }
+        }
+    }
+    div.debug-text {
+        display: none;
+    }
+    .cq-chart-control-left {
+        .cq-chart-controls {
+            transform: translate3d(0, 0, 0);
+            transition: transform 0.25s ease;
+        }
+        .cq-top-ui-widgets {
+            left: 9em;
+
+            .info-box {
+                transform: translate3d(0, 0, 0);
+            }
+        }
+    }
+    .ciq-chart {
+        .cq-top-ui-widgets, & .info-box {
+            transition: transform 0.25s ease;
+
+            .cq-symbols-display {
+                z-index: 1;
+            }
+        }
+        .cq-chart-controls {
+            transition: max-width 0.25s ease, transform 0.25s ease;
+        }
+    }
+    .chartContainer {
+        background: transparent;
+        min-height: 100%;
+
+        &:before {
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 80px;
+            top: 0;
+            left: -2px;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+            pointer-events: none;
+            z-index: 2;
+        }
+    }
+    @media (max-width: 768px) {
+        height: 400px;
+        // smartchart library style fixes
+        .cq-context {
+            div.cq-chart-controls {
+                border: 1px solid $COLOR_LIGHT_BLACK_4;
+            }
+        }
+        .cq-modal-dropdown {
+            &.stxMenuActive {
+                position: fixed;
+                height: 100%;
+                width: 100%;
+                top: 4.7em;
+                left: -0.1em;
+            }
+            .cq-categorical-display {
+                .ic-icon.icon-close-menu {
+                    svg {
+                        width: 2.4em;
+                        height: 2.4em;
+                    }
+                }
+                .cq-lookup-filters.scroll-down {
+                    max-height: unset;
+                }
+                .scrollbar-container.cq-scroll-panel {
                     left: -0.1em;
                 }
-                .cq-categorical-display {
-                    .ic-icon.icon-close-menu {
-                        svg {
-                            width: 2.4em;
-                            height: 2.4em;
-                        }
-                    }
-                    .cq-lookup-filters.scroll-down {
-                        max-height: unset;
-                    }
-                    .scrollbar-container.cq-scroll-panel {
-                        left: -0.1em;
-                    }
-                }
-            }
-            .smartcharts-mobile .cq-modal-dropdown .cq-menu-overlay .cq-menu-dropdown {
-                bottom: 4.8em;
             }
         }
-    }
-
-    .advanced-simple-toggle {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 3.2em;
-        width: 100%;
-        margin-top: 0.8em;
-        margin-bottom: -0.8em;
-        border: 0;
-        background: none;
-
-        &__icon {
-            transition: transform 0.2s ease;
-
-            &--active {
-                transform: rotate(180deg);
-            }
-        }
-        &:hover {
-            cursor: pointer;
-        }
-        &:focus {
-            outline: none;
+        .smartcharts-mobile .cq-modal-dropdown .cq-menu-overlay .cq-menu-dropdown {
+            bottom: 4.8em;
         }
     }
 }
 
-.inline-icon {
-    pointer-events: none;
+/** @define sidebar */
+.sidebar {
+    &__container {
+        position: relative;
+        margin-left: 1.6em;
+        width: $SIDEBAR_WIDTH;
+        margin-top: 8px;
+    }
+    &__items {
+        opacity: 1;
+        transform: none;
+        transition: transform 0.4s ease, opacity 0.2s linear;
+        position: relative;
+        min-height: 460px;
+        width: $SIDEBAR_WIDTH;
+
+        &--slideout {
+            transform: translate3d(calc(100% + 2px), 0, 0);
+            pointer-events: none;
+            opacity: 0;
+        }
+    }
 }
 
-.category-wrapper, .type-wrapper {
+/** @define contract */
+.contract {
+    &__wrapper {
+        position: absolute;
+        width: $SIDEBAR_WIDTH;
+        min-height: 460px;
+        height: 100%;
+        z-index: 2;
+        top: 0;
+        right: 0;
+        transition: transform 0.4s ease, opacity 0.2s linear;
+        opacity: 1;
+        transform: none;
+    }
+    &--enter {
+        transform: translate3d(calc(100% + 1.6em), 0, 0);
+        opacity: 0;
+    }
+    &--exit {
+        transform: translate3d(calc(100% + 1.6em), 0, 0);
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
+/** @define advanced-simple-toggle */
+.advanced-simple-toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3.2em;
+    width: 100%;
+    margin-top: 0.8em;
+    margin-bottom: -0.8em;
+    border: 0;
+    background: none;
+
+    &__icon {
+        transition: transform 0.2s ease;
+
+        &--active {
+            transform: rotate(180deg);
+        }
+    }
+    &:hover {
+        cursor: pointer;
+    }
+    &:focus {
+        outline: none;
+    }
+}
+
+@mixin contract_type_icon_wrapper {
     width: 2.4em;
     height: 2.4em;
     background: $COLOR_LIGHT_BLACK_4_SOLID;
@@ -250,32 +253,47 @@
     justify-content: center;
 }
 
+/** @define category-wrapper */
+.category-wrapper {
+    @include contract_type_icon_wrapper;
+}
+
+/** @define type-wrapper */
+.type-wrapper {
+    @include contract_type_icon_wrapper;
+}
+
 // Helpers
+/** @define no-scroll */
 .no-scroll {
     overflow: hidden;
     max-height: 100vh;
 }
 
+/** @define desktop-only */
 .desktop-only {
     @media (max-width: 768px) {
         display: none !important;
     }
 }
 
+/** @define mobile-only */
 .mobile-only {
     @media (min-width: 769px) {
         display: none !important;
     }
 }
 
-.error-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: calc(100vh - 9em); // TODO: replace with 100vh - header height - footer height
-
-    p {
+/** @define error */
+.error {
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: calc(100vh - 9em); // TODO: replace with 100vh - header height - footer height
+    }
+    &__message {
         @include interpolate(font-size, 320px, 1440px, 14px, 20px);
         color: $COLOR_LIGHT_BLACK_1;
     }

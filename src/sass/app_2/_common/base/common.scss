@@ -1,3 +1,4 @@
+/** @define container */
 .container {
     width: 100%;
     max-width: $MAX_CONTAINER_WIDTH;
@@ -5,34 +6,33 @@
     box-sizing: border-box;
 }
 
+/** @define hidden */
 .hidden {
     visibility: hidden !important;
     transition: none !important;
 }
 
-.absolute-center {
+// Centers absolute element vertically
+/** @define absolute-center-v */
+.absolute-center-v {
     position: absolute;
     margin: auto;
-}
-
-// Centers absolute element vertically
-.absolute-center-v {
-    @extend .absolute-center;
     top: 0;
     bottom: 0;
 }
 
-// Centers absolute element horizontally
-.absolute-center-h {
-    @extend .absolute-center;
-    left: 0;
-    right: 0;
+/** @define icon */
+.icon--centered {
+    top: 0.8em;
+    left: 5%;
 }
 
+/** @define center-text */
 .center-text {
     text-align: center;
 }
 
+/** @define no-margin */
 .no-margin {
     margin: 0;
 }

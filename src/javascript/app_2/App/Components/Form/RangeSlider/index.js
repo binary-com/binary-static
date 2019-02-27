@@ -1,1 +1,1 @@
-export default from './range_slider.jsx';
+export default from './range-slider.jsx';
