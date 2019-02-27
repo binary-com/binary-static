@@ -73,15 +73,8 @@
             border: 0;
             outline: none;
         }
-        // Browser active classes for slider thumb
-        &:active::-webkit-slider-thumb {
-            box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.3);
-        }
-        &:active::-moz-range-thumb {
-            box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.3);
-        }
-        &:active::-ms-thumb {
-            box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.3);
+        &:active, &:focus {
+            box-shadow: none;
         }
         &::-moz-range-track {
             background: $COLOR_WHITE;

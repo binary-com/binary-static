@@ -29,8 +29,7 @@ const StartDate = ({
     }
     if (is_minimized) {
         return (
-            <div className='fieldset-minimized start-date'>
-                <span className='icon start-time' />
+            <div className='fieldset-minimized fieldset-minimized__start-date'>
                 {is_today ? localize('Now') : `${current_date_config.text}\n${start_time}`}
             </div>
         );

@@ -318,7 +318,7 @@ const TradingEvents = (() => {
             const id        = e.currentTarget.getAttribute('data-purchase-id');
             const ask_price = e.currentTarget.getAttribute('data-ask-price');
             const params    = { buy: id, price: ask_price, passthrough: {} };
-            Array.prototype.slice.call(event.currentTarget.attributes).filter(attr => {
+            Array.prototype.slice.call(e.currentTarget.attributes).filter(attr => {
                 if (!/^data/.test(attr.name) ||
                     /^data-balloon$/.test(attr.name) ||
                     /data-balloon/.test(attr.name)) {

@@ -44,12 +44,12 @@ const Header = ({
 
     return (
         <header className='header'>
-            <div className='menu-items'>
-                <div className='menu-left'>
+            <div className='header__menu-items'>
+                <div className='header__menu-left'>
                     {is_mobile && <ToggleMenuDrawer />}
                     <MenuLinks items={header_links} />
                 </div>
-                <div className='menu-right'>
+                <div className='header__menu-right'>
                     <div className='acc-info__container'>
                         { is_install_button_visible && is_logged_in &&
                             <InstallPWAButton
@@ -90,7 +90,7 @@ const Header = ({
 Header.propTypes = {
     balance                  : PropTypes.string,
     can_upgrade              : PropTypes.bool,
-    can_upgrade_to           : PropTypes.bool,
+    can_upgrade_to           : PropTypes.string,
     currency                 : PropTypes.string,
     hideInstallButton        : PropTypes.func,
     is_acc_switcher_on       : PropTypes.bool,

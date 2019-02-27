@@ -24,7 +24,7 @@ const InstallPWAButton = ({
 
     return (
         <Button
-            className={classNames(className, 'primary orange')}
+            className={classNames(className, 'btn--primary btn--primary--orange')}
             has_effect
             text={localize('Install')}
             onClick={showPrompt}
