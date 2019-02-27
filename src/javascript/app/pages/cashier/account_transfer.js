@@ -164,15 +164,15 @@ const AccountTransfer = (() => {
         getElementById(form_id).setVisibility(0);
         response.accounts.forEach((account) => {
             if (account.loginid === client_loginid) {
-                // getElementById('from_currency').innerHTML = Currency.formatCurrency(account.currency);
+                elementTextContent(getElementById('transfer_success_from'), localize('From account: '));
                 elementTextContent(getElementById('from_loginid'), `${account.loginid} (${account.currency})`);
                 getElementById('from_current_balance').innerHTML = Currency.formatMoney(
                     account.currency,
                     account.balance,
                 );
             } else if (account.loginid === response_submit_success.client_to_loginid) {
+                elementTextContent(getElementById('transfer_success_to'), localize('To account: '));
                 elementTextContent(getElementById('to_loginid'), `${account.loginid} (${account.currency})`);
-                // getElementById('to_currency').innerHTML = Currency.formatCurrency(account.currency);
                 getElementById('to_current_balance').innerHTML = Currency.formatMoney(
                     account.currency,
                     account.balance,

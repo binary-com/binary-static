@@ -3,7 +3,7 @@ import React from 'react';
 const Row = ({ id }) => (
     <React.Fragment>
         <div>
-            <p className='mb-bottom-10'>{it.L('Login ID')}:</p>
+            <p id={`transfer_success_${id}`} className='mb-bottom-10' />
             <span id={`${id}_loginid`} />
         </div>
         <br />
