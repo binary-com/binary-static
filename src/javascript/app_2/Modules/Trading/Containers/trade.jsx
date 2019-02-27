@@ -22,7 +22,7 @@ class Trade extends React.Component {
 
     render() {
         const contract_id = getPropertyValue(this.props.purchase_info, ['buy', 'contract_id']);
-        const form_wrapper_class = this.props.is_mobile ? 'mobile-wrapper' : 'sidebar-container desktop-only';
+        const form_wrapper_class = this.props.is_mobile ? 'mobile-wrapper' : 'sidebar__container desktop-only';
         const should_show_last_digit_stats = ['match_diff', 'even_odd', 'over_under'].includes(this.props.contract_type);
 
         return (
@@ -56,10 +56,14 @@ class Trade extends React.Component {
                     <CSSTransition
                         in={!!contract_id}
                         timeout={400}
-                        classNames='contract-wrapper'
+                        classNames={{
+                            enter    : 'contract--enter',
+                            enterDone: 'contract--enter-done',
+                            exit     : 'contract--exit',
+                        }}
                         unmountOnExit
                     >
-                        <div className='contract-wrapper'>
+                        <div className='contract__wrapper'>
                             <ContractDetails
                                 contract_id={contract_id}
                                 onClickNewTrade={this.props.onClickNewTrade}

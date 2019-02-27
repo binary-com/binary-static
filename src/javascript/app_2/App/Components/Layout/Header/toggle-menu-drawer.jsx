@@ -7,7 +7,7 @@ const ToggleMenuDrawer = () => (
     <ToggleDrawer
         alignment='left'
         icon={<IconHamburger />}
-        icon_class='menu-toggle'
+        icon_class='header__menu-toggle'
     >
         <MenuDrawer />
     </ToggleDrawer>
