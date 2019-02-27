@@ -98,6 +98,11 @@ const AccountTransfer = (() => {
             const to_currency = el_transfer_to.getAttribute('data-currency');
             el_transfer_fee.setVisibility(client_currency !== to_currency);
         }
+
+        // Hide Notes from MF|MLT accounts
+        if (/iom|malta/.test(Client.get('landing_company_shortcode'))) {
+            el_transfer_fee.setVisibility(0);
+        }
     };
 
     const setTransferFeeAmount = () => {
