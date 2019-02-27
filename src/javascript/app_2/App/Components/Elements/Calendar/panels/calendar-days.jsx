@@ -109,8 +109,8 @@ const getDays = ({
                 onClick={is_disabled ? undefined : (e) => updateSelected(e, 'day')}
                 data-date={date}
                 data-duration={`${duration_from_today} ${duration_from_today === 1 ? 'Day' : 'Days'}`}
-                onMouseOver={has_range_selection && onMouseOver}
-                onMouseLeave={has_range_selection && onMouseLeave}
+                onMouseOver={onMouseOver}
+                onMouseLeave={onMouseLeave}
             >
                 {((has_events || is_closes_early) && !is_other_month && !is_before_min_or_after_max_date) &&
                     <Tooltip
@@ -160,9 +160,15 @@ CalendarDays.propTypes = {
         }),
     ),
     hovered_date: PropTypes.string,
-    onMouseLeave: PropTypes.func,
-    onMouseOver : PropTypes.func,
-    start_date  : PropTypes.oneOfType([
+    onMouseLeave: PropTypes.oneOfType([
+        PropTypes.func,
+        PropTypes.bool,
+    ]),
+    onMouseOver: PropTypes.oneOfType([
+        PropTypes.func,
+        PropTypes.bool,
+    ]),
+    start_date: PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
     ]),
