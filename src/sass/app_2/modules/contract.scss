@@ -109,7 +109,7 @@
     }
 }
 
-$CONTRACT_INFO_BOX_PADDING: 1.5em;
+$CONTRACT_INFO_BOX_PADDING: 1.6em;
 
 .info-box-container {
     position: absolute;
@@ -127,8 +127,8 @@ $CONTRACT_INFO_BOX_PADDING: 1.5em;
         cursor: pointer;
     }
     &-icon {
-        width: 24px;
-        height: 24px;
+        width: 32px;
+        height: 32px;
     }
     &-enter {
         transform: translateY(calc(-100% - 2em));
@@ -147,14 +147,14 @@ $CONTRACT_INFO_BOX_PADDING: 1.5em;
 
         &-longcode {
             display: flex;
-            align-items: center;
 
             &-icon {
                 @extend .info-box-container-icon;
+                margin-right: 1.6em;
+                padding: 0.4em;
             }
             &-text {
                 @include typeface(--paragraph-left-normal-black, unset);
-                @include toEm(margin, 0 16px, 1em);
                 max-width: 360px;
             }
         }
