@@ -148,7 +148,8 @@ class Calendar extends React.PureComponent {
     };
 
     render() {
-        const { date_format, footer, has_today_btn, has_range_selection, start_date, holidays, weekends, duration_date } = this.props;
+        const { date_format, duration_date, footer, has_today_btn, has_range_selection,
+            holidays, start_date, weekends } = this.props;
         const { calendar_date, calendar_view, selected_date  } = this.state;
         const default_message = `${duration_date} ${duration_date === 1 ? localize('Day') : localize('Days')}`;
 
@@ -196,7 +197,11 @@ Calendar.defaultProps = {
 };
 
 Calendar.propTypes = {
-    date_format        : PropTypes.string,
+    date_format  : PropTypes.string,
+    duration_date: PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
+    ]),
     footer             : PropTypes.string,
     has_range_selection: PropTypes.bool,
     has_today_btn      : PropTypes.bool,
