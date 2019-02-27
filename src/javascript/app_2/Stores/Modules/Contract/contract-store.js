@@ -122,6 +122,8 @@ export default class ContractStore extends BaseStore {
 
         createChartBarrier(this.smart_chart, this.contract_info);
         createChartMarkers(this.smart_chart, this.contract_info, this);
+
+        // TODO: check digits
         if (this.contract_info.tick_count) createChartTickMarkers(this.smart_chart, this.contract_info, this);
 
         this.handleDigits();

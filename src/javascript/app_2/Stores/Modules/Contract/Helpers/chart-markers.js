@@ -15,13 +15,25 @@ export const createChartMarkers = (SmartChartStore, contract_info, ContractStore
     }
 };
 
+let middle_ticks_handler;
 export const createChartTickMarkers = (SmartChartStore, contract_info, ContractStore = null) => {
-    const init = getTicksBetweenStartAndEnd(ContractStore, SmartChartStore);
-    init(contract_info);
+    if (!middle_ticks_handler && contract_info.entry_tick_time) {
+        middle_ticks_handler = initMiddleTicks(ContractStore, SmartChartStore);
+
+        // ONGOING contract - entry tick only
+        if (contract_info.entry_tick_time && !ContractStore.end_spot_time) {
+            middle_ticks_handler.addMarkerFromStreamHistory(contract_info);
+            // when exit tick middle_ticks_handler.forgetStreamHistory()
+        }
+
+        // FINISHED - contract - exit tick
+        if (ContractStore.end_spot_time) {
+            middle_ticks_handler.addMarkerFromHistory(contract_info);
+        }
+    }
 };
 
-const getTicksBetweenStartAndEnd = (ContractStore, SmartChartStore) => {
-    let has_been_called = false;
+const initMiddleTicks = (ContractStore, SmartChartStore) => {
     const zip = (arr, ...arrs) => arr.map((val, i) => arrs.reduce((a, curr) => [...a, curr[i]], [val]));
 
     const combinePriceTime = (price_arr, times_arr) =>
@@ -33,33 +45,57 @@ const getTicksBetweenStartAndEnd = (ContractStore, SmartChartStore) => {
         SmartChartStore.createMarker(marker_config);
     };
 
-    const on_tick = (data) => {
-        console.log(data);
+    let ticks_added_to_chart = 0;
+    const isMiddleTick = (tick, { entry_tick_time, tick_count }) => {
+        if ((+tick.time) > entry_tick_time && ticks_added_to_chart < tick_count) {
+            return true;
+        }
+        return false;
     };
 
-    return function ({ ...contract_info }) {
-        if (has_been_called) return;
-        has_been_called = true;
+    const on_tick = (tick, contract_info) => {
+        if (isMiddleTick(tick, contract_info)) {
+            ticks_added_to_chart += 1;
+            addTickToChart(tick, ticks_added_to_chart);
+        }
+    };
 
-        const ticks_history_req = {
-            ticks_history: contract_info.underlying,
-            start        : contract_info.entry_tick_time,
-            end          : ContractStore.end_spot_time ? ContractStore.end_spot_time : 'latest',
-            count        : contract_info.tick_count,
-        };
+    const makeTickHistoryReq = (contract_info) => ({
+        ticks_history: contract_info.underlying,
+        start        : contract_info.entry_tick_time,
+        end          : ContractStore.end_spot_time ? ContractStore.end_spot_time : 'latest',
+        count        : contract_info.tick_count,
+    });
 
-        if (ContractStore.end_spot_time) {
-            WS.sendRequest(ticks_history_req).then((data) => {
+    return {
+        addMarkerFromStreamHistory: ({ ...contract_info }) => {
+            const handle_running_contract = (data) => {
+                if (data.tick) {
+                    const tick = { price: data.tick.quote, time: data.tick.epoch };
+                    on_tick(tick, contract_info);
+                }
+                if (data.history) {
+                    const { prices, times } = data.history;
+                    combinePriceTime(prices, times).forEach(tick => on_tick(tick, contract_info));
+                }
+            };
+
+            const ticks_history_req = makeTickHistoryReq(contract_info);
+            WS.subscribeTicksHistory({ ...ticks_history_req, subscribe: 1 }, handle_running_contract);
+
+        },
+        addMarkerFromHistory: ({ ...contract_info }) => {
+            const handle_finished_contract = (data) => {
                 const { prices, times } = data.history;
                 const middle_ticks = combinePriceTime(prices, times)
                     .filter((i) => i.time > +contract_info.entry_tick_time && i.time < +ContractStore.end_spot_time);
 
                 middle_ticks.forEach(addTickToChart);
-            });
-            return;
-        }
+            };
 
-        WS.subscribeTicksHistory({ ...ticks_history_req, subscribe: 1 }, on_tick);
+            const ticks_history_req = makeTickHistoryReq(contract_info);
+            WS.sendRequest({ ...ticks_history_req }).then((data) => handle_finished_contract(data));
+        },
     };
 };
 
