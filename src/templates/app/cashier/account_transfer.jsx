@@ -62,8 +62,6 @@ const AccountTransfer = () => (
                     <br />
                     <p>{it.L('Current balance')}:</p>
                     <p id='limit_current_balance' />
-                    <br />
-                    <p className='error-msg invisible' id='form_error' />
                 </div>
                 <div className='transfer_form__right_pane'>
                     <p>{it.L('Transfer to')}:</p>
@@ -79,6 +77,7 @@ const AccountTransfer = () => (
                         <p className='error-msg invisible' id='form_error' />
                     </div>
                     <br />
+                    <p className='error-msg invisible' id='form_error' />
                     <button id='btn_submit' type='submit' className='button'>{it.L('Transfer')}</button>
                 </div>
             </div>
