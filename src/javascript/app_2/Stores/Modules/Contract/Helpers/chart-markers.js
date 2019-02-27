@@ -15,25 +15,35 @@ export const createChartMarkers = (SmartChartStore, contract_info, ContractStore
     }
 };
 
-let middle_ticks_handler;
+let middle_ticks_handler, is_ongoing_contract;
 export const createChartTickMarkers = (SmartChartStore, contract_info, ContractStore = null) => {
+
     if (!middle_ticks_handler && contract_info.entry_tick_time) {
-        middle_ticks_handler = initMiddleTicks(ContractStore, SmartChartStore);
+        middle_ticks_handler = initMiddleTicks(ContractStore, SmartChartStore, contract_info);
+        is_ongoing_contract = !ContractStore.end_spot_time;
 
-        // ONGOING contract - entry tick only
-        if (contract_info.entry_tick_time && !ContractStore.end_spot_time) {
-            middle_ticks_handler.addMarkerFromStreamHistory(contract_info);
-            // when exit tick middle_ticks_handler.forgetStreamHistory()
-        }
+        if (is_ongoing_contract) middle_ticks_handler.addMarkerFromStreamHistory(contract_info);
+        if (!is_ongoing_contract) middle_ticks_handler.addMarkerFromHistory(contract_info);
+    }
 
-        // FINISHED - contract - exit tick
-        if (ContractStore.end_spot_time) {
-            middle_ticks_handler.addMarkerFromHistory(contract_info);
-        }
+    const stream_is_done = is_ongoing_contract && ContractStore.end_spot_time;
+    if (stream_is_done) middle_ticks_handler.forgetStreamHistory();
+    if (middle_ticks_handler && ContractStore.end_spot_time) {
+        middle_ticks_handler = null;
+        is_ongoing_contract = null;
     }
 };
 
-const initMiddleTicks = (ContractStore, SmartChartStore) => {
+const initMiddleTicks = (ContractStore, SmartChartStore, contract_info) => {
+    let ticks_added_to_chart = 0;
+
+    const ticks_history_req = {
+        ticks_history: contract_info.underlying,
+        start        : contract_info.entry_tick_time,
+        end          : ContractStore.end_spot_time ? ContractStore.end_spot_time : 'latest',
+        count        : contract_info.tick_count,
+    };
+
     const zip = (arr, ...arrs) => arr.map((val, i) => arrs.reduce((a, curr) => [...a, curr[i]], [val]));
 
     const combinePriceTime = (price_arr, times_arr) =>
@@ -41,11 +51,10 @@ const initMiddleTicks = (ContractStore, SmartChartStore) => {
 
     const addTickToChart = (tick, idx) => {
         const marker_config = createMarkerSpotMiddle(tick);
-        marker_config.type = `SPOT_MIDDLE_${idx}`;
+        marker_config.type = `${marker_config.type}_${idx}`;
         SmartChartStore.createMarker(marker_config);
     };
 
-    let ticks_added_to_chart = 0;
     const isMiddleTick = (tick, { entry_tick_time, tick_count }) => {
         if ((+tick.time) > entry_tick_time && ticks_added_to_chart < tick_count) {
             return true;
@@ -53,47 +62,42 @@ const initMiddleTicks = (ContractStore, SmartChartStore) => {
         return false;
     };
 
-    const on_tick = (tick, contract_info) => {
+    const on_tick = (tick) => {
         if (isMiddleTick(tick, contract_info)) {
             ticks_added_to_chart += 1;
             addTickToChart(tick, ticks_added_to_chart);
         }
     };
 
-    const makeTickHistoryReq = (contract_info) => ({
-        ticks_history: contract_info.underlying,
-        start        : contract_info.entry_tick_time,
-        end          : ContractStore.end_spot_time ? ContractStore.end_spot_time : 'latest',
-        count        : contract_info.tick_count,
-    });
+    const handle_finished_contract = (data) => {
+        const { prices, times } = data.history;
+        const middle_ticks = combinePriceTime(prices, times)
+            .filter((i) => i.time > +contract_info.entry_tick_time && i.time < +ContractStore.end_spot_time);
+
+        middle_ticks.forEach(addTickToChart);
+    };
+
+    const handle_running_contract = (data) => {
+        console.log(data);
+        if (data.tick) {
+            const tick = { price: data.tick.quote, time: data.tick.epoch };
+            on_tick(tick, contract_info);
+        }
+        if (data.history) {
+            const { prices, times } = data.history;
+            combinePriceTime(prices, times).forEach(tick => on_tick(tick));
+        }
+    };
 
     return {
-        addMarkerFromStreamHistory: ({ ...contract_info }) => {
-            const handle_running_contract = (data) => {
-                if (data.tick) {
-                    const tick = { price: data.tick.quote, time: data.tick.epoch };
-                    on_tick(tick, contract_info);
-                }
-                if (data.history) {
-                    const { prices, times } = data.history;
-                    combinePriceTime(prices, times).forEach(tick => on_tick(tick, contract_info));
-                }
-            };
-
-            const ticks_history_req = makeTickHistoryReq(contract_info);
+        addMarkerFromStreamHistory: () => {
             WS.subscribeTicksHistory({ ...ticks_history_req, subscribe: 1 }, handle_running_contract);
-
         },
-        addMarkerFromHistory: ({ ...contract_info }) => {
-            const handle_finished_contract = (data) => {
-                const { prices, times } = data.history;
-                const middle_ticks = combinePriceTime(prices, times)
-                    .filter((i) => i.time > +contract_info.entry_tick_time && i.time < +ContractStore.end_spot_time);
-
-                middle_ticks.forEach(addTickToChart);
-            };
-
-            const ticks_history_req = makeTickHistoryReq(contract_info);
+        forgetStreamHistory: () => {
+            console.log('forget');
+            WS.forget('ticks_history', handle_running_contract, ticks_history_req);
+        },
+        addMarkerFromHistory: () => {
             WS.sendRequest({ ...ticks_history_req }).then((data) => handle_finished_contract(data));
         },
     };

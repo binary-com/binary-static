@@ -7,7 +7,7 @@ import { isEmptyObject }         from '_common/utility';
 import { localize }              from '_common/localize';
 import { WS }                    from 'Services';
 import { createChartBarrier }    from './Helpers/chart-barriers';
-import { 
+import {
     createChartMarkers,
     createChartTickMarkers }          from './Helpers/chart-markers';
 import {
