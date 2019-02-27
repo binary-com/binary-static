@@ -200,10 +200,11 @@ Calendar.defaultProps = {
 };
 
 Calendar.propTypes = {
-    date_format  : PropTypes.string,
-    footer       : PropTypes.string,
-    has_today_btn: PropTypes.bool,
-    holidays     : PropTypes.arrayOf(
+    date_format        : PropTypes.string,
+    footer             : PropTypes.string,
+    has_range_selection: PropTypes.bool,
+    has_today_btn      : PropTypes.bool,
+    holidays           : PropTypes.arrayOf(
         PropTypes.shape({
             dates  : PropTypes.array,
             descrip: PropTypes.string,

@@ -151,14 +151,18 @@ CalendarDays.defaultProps = {
 
 CalendarDays.propTypes = {
     ...CommonPropTypes,
-    date_format: PropTypes.string,
-    holidays   : PropTypes.arrayOf(
+    date_format        : PropTypes.string,
+    has_range_selection: PropTypes.bool,
+    holidays           : PropTypes.arrayOf(
         PropTypes.shape({
             dates  : PropTypes.array,
             descrip: PropTypes.string,
         }),
     ),
-    start_date: PropTypes.oneOfType([
+    hovered_date: PropTypes.string,
+    onMouseLeave: PropTypes.func,
+    onMouseOver : PropTypes.func,
+    start_date  : PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
     ]),
