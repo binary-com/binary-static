@@ -29,7 +29,7 @@ const Input = ({
     <React.Fragment>
         {!!inline_prefix &&
         <div className={classNameInlinePrefix}>
-            <span className={classNames(classNameInlinePrefix ? `${classNameInlinePrefix}--symbol` : '', 'symbols', inline_prefix.toLowerCase())} />
+            <span className={classNames(classNameInlinePrefix ? `${classNameInlinePrefix}--symbol` : '', 'symbols', `symbols--${inline_prefix.toLowerCase()}`)} />
         </div>
         }
         <input

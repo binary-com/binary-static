@@ -202,7 +202,7 @@ const InputField = ({
         <React.Fragment>
             {!!prefix &&
                 <div className={classNamePrefix}>
-                    <span className={classNames(`${classNamePrefix}--symbol`, 'symbols', prefix.toLowerCase())} />
+                    <span className={classNames(`${classNamePrefix}--symbol`, 'symbols', `symbols--${prefix.toLowerCase()}`)} />
                 </div>
             }
             <div

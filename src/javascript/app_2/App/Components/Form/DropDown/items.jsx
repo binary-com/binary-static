@@ -23,11 +23,11 @@ const Items = ({
             >
                 {!!has_symbol && item.has_tooltip &&
                 <Tooltip alignment='top' className='list__item-tooltip' message={item.text}>
-                    <i><span className={`symbols list__item-tooltip-symbols ${(item.text || '').toLowerCase()}`} /></i>
+                    <i><span className={`symbols list__item-tooltip-symbols symbols--${(item.text || '').toLowerCase()}`} /></i>
                 </Tooltip>
                 }
                 {!!has_symbol && !item.has_tooltip &&
-                    <span className={`list__item-text symbols ${(item.text || '').toLowerCase()}`} />
+                    <span className={`list__item-text symbols symbols--${(item.text || '').toLowerCase()}`} />
                 }
                 {!has_symbol && <span className='list__item-text'>{item.text}</span>}
             </div>

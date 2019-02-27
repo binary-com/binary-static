@@ -160,7 +160,7 @@ class Dropdown extends React.Component {
                     onKeyDown={this.onKeyPressed}
                 >
                     {this.props.has_symbol &&
-                    <span name={this.props.name} value={this.props.value} className={`symbols dropdown__display-symbol ${(this.props.value || '').toLowerCase()}`} />
+                    <span name={this.props.name} value={this.props.value} className={`symbols dropdown__display-symbol symbols--${(this.props.value || '').toLowerCase()}`} />
                     }
                     {!this.props.has_symbol &&
                     <span name={this.props.name} value={this.props.value} className='dropdown__display-text'>
