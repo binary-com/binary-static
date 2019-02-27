@@ -44,8 +44,8 @@ class Tooltip extends React.Component {
                             onMouseLeave={this.onMouseLeave}
                         />
                         <IconInfoBlue
-                            className={classNames(`${classNameIcon}-balloon-icon`, 'tooltip-balloon-icon', {
-                                'tooltip-balloon-icon--show': this.state.show_tooltip_balloon_icon,
+                            className={classNames(`${classNameIcon}-balloon-icon`, 'tooltip__balloon-icon', {
+                                'tooltip__balloon-icon--show': this.state.show_tooltip_balloon_icon,
                             })}
                         />
                     </React.Fragment>

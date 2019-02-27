@@ -18,7 +18,7 @@ const Contract = ({
     updateChartType,
     updateGranularity,
 }) => {
-    const form_wrapper_class = is_mobile ? 'mobile-wrapper' : 'sidebar-container desktop-only';
+    const form_wrapper_class = is_mobile ? 'mobile-wrapper' : 'sidebar__container desktop-only';
     return (
         <React.Fragment>
             {
@@ -43,10 +43,14 @@ const Contract = ({
                             <CSSTransition
                                 in={!has_error}
                                 timeout={400}
-                                classNames='contract-wrapper'
+                                classNames={{
+                                    enter    : 'contract--enter',
+                                    enterDone: 'contract--enter-done',
+                                    exit     : 'contract--exit',
+                                }}
                                 unmountOnExit
                             >
-                                <div className='contract-wrapper'>
+                                <div className='contract__wrapper'>
                                     <ContractDetails
                                         contract_id={match.params.contract_id}
                                         key={match.params.contract_id}
