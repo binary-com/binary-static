@@ -557,6 +557,11 @@
                     .acc-switcher__id {
                         color: $COLOR_WHITE;
                         font-weight: 700;
+
+                        &--virtual:before {
+                            color: $COLOR_ORANGE;
+                            border: 1px solid $COLOR_ORANGE;
+                        }
                     }
                 }
             }

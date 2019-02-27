@@ -29,7 +29,7 @@ const AccountInfo = ({
                 className='acc-info__id'
                 title={loginid}
             >
-                {loginid}
+                {loginid}&nbsp;
             </p>
             {
                 typeof balance !== 'undefined' &&
