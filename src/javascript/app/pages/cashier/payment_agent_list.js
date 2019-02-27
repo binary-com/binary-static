@@ -1,6 +1,7 @@
 const BinaryPjax   = require('../../base/binary_pjax');
 const Client       = require('../../base/client');
 const BinarySocket = require('../../base/socket');
+const Url          = require('../../../_common/url');
 const urlForStatic = require('../../../_common/url').urlForStatic;
 
 const PaymentAgentList = (() => {
@@ -15,6 +16,11 @@ const PaymentAgentList = (() => {
                 active     : false,
             });
         });
+
+        if (!Client.get('currency')) {
+            BinaryPjax.load(`${Url.urlFor('user/set-currency')}`);
+            return;
+        }
 
         $pa_list_container = $('#pa_list');
         $agent_template    = $pa_list_container.find('#accordion').html();
