@@ -17,6 +17,8 @@
         }
     }
     .trade-container {
+        background: $COLOR_DARK_BLUE_2;
+
         &__price {
             color: $COLOR_WHITE;
 
@@ -53,6 +55,9 @@
         }
         &__allow-equals-label {
             color: $COLOR_DARK_BLUE_7;
+        }
+        .chartContainer:before {
+            background-image: linear-gradient(to right, rgba(16, 19, 32, 1), rgba(16, 19, 32, 0));
         }
     }
     .purchase-container {
@@ -185,6 +190,9 @@
                 }
             }
         }
+        .network-status-circle--blinker {
+            background: $COLOR_DARK_BLUE_7;
+        }
         .footer-links-left {
             .ic-positions {
                 &:after {
@@ -270,26 +278,6 @@
             }
         }
     }
-    .chart-container {
-        .cq-context {
-            div.cq-chart-controls {
-                border: none;
-                border-right: 1px solid $COLOR_DARK_BLUE_5;
-                border-top: 1px solid $COLOR_DARK_BLUE_5;
-
-                @media (max-width: 768px) {
-                    border: 1px solid $COLOR_DARK_BLUE_5;
-                }
-            }
-        }
-        .cq-modal-dropdown .cq-categorical-display .ic-icon.icon-close-menu {
-            svg {
-                g path {
-                    fill: $COLOR_DARK_BLUE_7;
-                }
-            }
-        }
-    }
     .mobile-widget {
         border-color: $COLOR_DARK_BLUE_5;
 
@@ -307,8 +295,8 @@
     .error-container p {
         color: $COLOR_DARK_BLUE_7;
     }
-    .barspinner {
-        @extend .barspinner.white;
+    .barspinner__rect {
+        background-color: $COLOR_WHITE;
     }
     .toggle-button {
         background-color: $COLOR_LIGHT_BLACK_1;
@@ -316,6 +304,14 @@
 
         &_selected {
             background-color: $COLOR_DARK_BLUE_2;
+            color: $COLOR_WHITE;
+        }
+    }
+    .btn--alternate {
+        background: $COLOR_DARK_BLUE_5;
+        border-color: $COLOR_DARK_BLUE_5;
+
+        .btn__text {
             color: $COLOR_WHITE;
         }
     }
@@ -526,8 +522,12 @@
         &__wrapper {
             background: $COLOR_DARK_BLUE_3;
         }
-        &__account:hover {
-            background-color: $COLOR_DARK_BLUE_4;
+        &__accounts {
+            .acc-switcher__account {
+                &:not(:last-child):not(:only-child) {
+                    border-bottom: 1px solid $COLOR_DARK_BLUE_3;
+                }
+            }
         }
         &__list {
             background-color: $COLOR_DARK_BLUE_3;
@@ -539,33 +539,32 @@
                 color: $COLOR_DARK_BLUE_7;
             }
             .acc-switcher__account {
-                border-color: $COLOR_DARK_BLUE_2;
+                background-color: $COLOR_DARK_BLUE_2;
 
+                &:hover:not(.acc-switcher__account--selected) {
+                    background-color: $COLOR_DARK_BLUE_4;
+                }
                 .acc-switcher__id {
                     color: $COLOR_DARK_BLUE_7;
                 }
-                .acc-switcher__radio {
-                    border-color: $COLOR_DARK_BLUE_7;
-                }
                 &--selected {
+                    background: $COLOR_DARK_BLUE_5;
+
                     .acc-switcher__id {
                         color: $COLOR_WHITE;
-                    }
-                    .acc-switcher__radio {
-                        border-color: $COLOR_GREEN_1;
-                        background: $COLOR_GREEN_1;
+                        font-weight: 700;
+
+                        &--virtual:before {
+                            color: $COLOR_ORANGE;
+                            border: 1px solid $COLOR_ORANGE;
+                        }
                     }
                 }
             }
         }
         &__logout {
-            background-color: $COLOR_DARK_BLUE_2;
-
             span {
                 color: $COLOR_DARK_BLUE_7;
-            }
-            &:hover {
-                background-color: $COLOR_DARK_BLUE_4;
             }
         }
         &__new-account-title {
@@ -882,6 +881,71 @@
             }
             &:hover, &--highlighted {
                 background: $COLOR_DARK_BLUE_4;
+            }
+        }
+    }
+    .tooltip {
+        color: $COLOR_WHITE;
+
+        &:before {
+            background: $COLOR_DARK_BLUE_5;
+            color: $COLOR_WHITE;
+        }
+        &[data-tooltip-pos=top] {
+            &:after {
+                border-top-color: $COLOR_DARK_BLUE_5;
+            }
+        }
+        &[data-tooltip-pos=right] {
+            &:after {
+                border-right-color: $COLOR_DARK_BLUE_5;
+            }
+        }
+        &[data-tooltip-pos=left] {
+            &:after {
+                border-left-color: $COLOR_DARK_BLUE_5;
+            }
+        }
+        &[data-tooltip-pos=bottom] {
+            &:after {
+                border-bottom-color: $COLOR_DARK_BLUE_5;
+            }
+        }
+    }
+    .fullscreen-dialog {
+        background: $COLOR_DARK_BLUE_5;
+
+        &__header, &__header-shadow-cover, &__content {
+            background: $COLOR_DARK_BLUE_5;
+        }
+        &__header-shadow-cover {
+            box-shadow: 0 1px 0px $COLOR_DARK_BLUE_5;
+        }
+        &__title {
+            color: $COLOR_DARK_BLUE_7;
+        }
+        &__trade-type-info-modal {
+            .info-header {
+                .title {
+                    color: $COLOR_DARK_BLUE_2;
+                }
+            }
+            .info-gif {
+                background-color: $COLOR_DARK_BLUE_2;
+            }
+            .info-content {
+                color: $COLOR_LIGHT_BLACK_1;
+            }
+            .info-navigation {
+                &__list {
+                    .circle-button {
+                        background-color: $COLOR_WHITE;
+
+                        &.active {
+                            background-color: $COLOR_LIGHT_BLACK_4;
+                        }
+                    }
+                }
             }
         }
     }
