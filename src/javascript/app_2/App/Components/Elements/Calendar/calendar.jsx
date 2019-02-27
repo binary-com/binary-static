@@ -17,6 +17,7 @@ class Calendar extends React.PureComponent {
             selected_date: value,        // selected date
             calendar_view: 'date',
             hovered_date : '',
+            duration_date: '',
         };
     }
 
@@ -41,7 +42,8 @@ class Calendar extends React.PureComponent {
         if (!target.classList.contains('calendar__cell--disabled') && !target.classList.contains('calendar__cell--hover')) {
             target.className += ' calendar__cell--hover';
             this.setState({
-                hovered_date: target.getAttribute('data-date'),
+                hovered_date : target.getAttribute('data-date'),
+                duration_date: target.getAttribute('data-duration'),
             });
         }
     };
@@ -51,7 +53,8 @@ class Calendar extends React.PureComponent {
 
         if (target.classList.contains('calendar__cell--hover')) {
             this.setState({
-                hovered_date: null,
+                hovered_date : null,
+                duration_date: null,
             });
             target.classList.remove('calendar__cell--hover');
         }
@@ -168,12 +171,14 @@ class Calendar extends React.PureComponent {
                     weekends={weekends}
                     onMouseOver={this.onMouseOver}
                     onMouseLeave={this.onMouseLeave}
-                    hovered_date={this.state.hovered_date}
                 />
                 <CalendarFooter
                     footer={footer}
+                    duration_date={this.state.duration_date}
                     has_today_btn={has_today_btn}
+                    has_range_selection={has_range_selection}
                     onClick={this.setToday}
+                    selected_date={selected_date}
                 />
             </div>
         );

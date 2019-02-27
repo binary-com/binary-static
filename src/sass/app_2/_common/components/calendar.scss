@@ -220,25 +220,6 @@
                 background: $COLOR_LIGHT_GRAY_1;
             }
         }
-        &--hover {
-            &:after {
-                @include typeface(--xsmall-left-normal-black, none);
-                color: $COLOR_WHITE;
-                text-decoration: none;
-                letter-spacing: normal;
-                background: rgba(0, 0, 0, 0.8);
-                border-radius: 4px;
-                content: attr(data-duration);
-                padding: 0.8em;
-                white-space: nowrap;
-                opacity: 0.96;
-                margin-bottom: 10px;
-                position: absolute;
-                bottom: 100%;
-                z-index: 9;
-                cursor: pointer;
-            }
-        }
         &-tooltip {
             &[data-tooltip] {
                 position: absolute;
