@@ -630,6 +630,14 @@
             }
             &--today {
                 color: $COLOR_WHITE;
+                background: $COLOR_DARK_BLUE_5;
+
+                &:hover {
+                    background: $COLOR_DARK_BLUE_5;
+                }
+                &:before {
+                    background: $COLOR_DARK_BLUE_5;
+                }
             }
             &--disabled, &--other {
                 color: $COLOR_DARK_BLUE_8;
@@ -645,6 +653,27 @@
 
                 &:hover {
                     background: $COLOR_DARK_BLUE_3;
+                }
+            }
+            &--between {
+                color: $COLOR_WHITE;
+                background: $COLOR_DARK_BLUE_5;
+
+                &-hover {
+                    &:before {
+                        background: $COLOR_DARK_BLUE_4;
+                    }
+                }
+                &:hover {
+                    background: $COLOR_DARK_BLUE_5;
+                }
+                &:before {
+                    background: $COLOR_DARK_BLUE_5;
+                }
+            }
+            &--hover {
+                &:after {
+                    background: $COLOR_DARK_BLUE_5;
                 }
             }
         }

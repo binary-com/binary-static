@@ -131,6 +131,12 @@
             cursor: pointer;
             background: $COLOR_LIGHT_BLACK_4_SOLID;
         }
+        &:nth-child(7n), &:nth-child(7n + 1) {
+            &:before {
+                padding: 0;
+                border-radius: 4px;
+            }
+        }
         &--bold {
             @include typeface(--paragraph-left-bold-black);
         }
@@ -147,7 +153,7 @@
             background: $COLOR_LIGHT_GRAY_1;
 
             &:hover {
-                background: $COLOR_LIGHT_GRAY_1 !important;
+                background: $COLOR_LIGHT_GRAY_1;
             }
             &:before {
                 position: absolute;
@@ -157,7 +163,7 @@
                 z-index: -1;
                 height: 100%;
                 padding-right: 10px;
-                background: $COLOR_LIGHT_GRAY_1 !important;
+                background: $COLOR_LIGHT_GRAY_1;
             }
         }
         &--active {
@@ -172,7 +178,7 @@
         &--between {
             background: $COLOR_LIGHT_GRAY_1;
             font-weight: bold;
-            color: $COLOR_WHITE !important;
+            color: $COLOR_WHITE;
 
             &-hover {
                 &:before {
@@ -195,7 +201,7 @@
                 z-index: -1;
                 height: 100%;
                 padding-left: 32px;
-                background: $COLOR_LIGHT_GRAY_1 !important;
+                background: $COLOR_LIGHT_GRAY_1;
             }
         }
         &--hover {
