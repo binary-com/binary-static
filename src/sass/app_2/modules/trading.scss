@@ -23,7 +23,7 @@
         appearance: none;
         box-sizing: border-box;
         background: $COLOR_WHITE;
-        border-radius: 0 4px 4px 0;
+        border-radius: 0 $BORDER_RADIUS $BORDER_RADIUS 0;
     }
     &__error {
         justify-content: center;
@@ -146,7 +146,7 @@
         }
     }
     &__currency-options {
-        border-radius: 4px 0 0 4px;
+        border-radius: $BORDER_RADIUS 0 0 $BORDER_RADIUS;
         margin-right: 1px;
         width: calc(25% - 1px);
         display: inline-block;
@@ -155,7 +155,7 @@
             font-size: 1.4em;
             line-height: 1.5;
             height: 32px;
-            border-radius: 4px 0 0 4px !important;
+            border-radius: $BORDER_RADIUS 0 0 $BORDER_RADIUS !important;
             margin-top: 0;
         }
     }
@@ -169,7 +169,7 @@
         }
         &--has-currency-options {
             width: calc(75% - 1px);
-            border-radius: 0 4px 4px 0;
+            border-radius: 0 $BORDER_RADIUS $BORDER_RADIUS 0;
         }
     }
 }
@@ -300,7 +300,7 @@
     }
     &__loading {
         background: rgba(255, 255, 255, 0.6);
-        border-radius: 4px;
+        border-radius: $BORDER_RADIUS;
         width: calc(100% - 6px);
         height: calc(100% - 2px);
     }

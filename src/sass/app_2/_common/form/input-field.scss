@@ -134,5 +134,6 @@
     }
     &--has-inline-prefix {
         padding-left: 50px !important;
+        border-radius: $BORDER_RADIUS !important;
     }
 }

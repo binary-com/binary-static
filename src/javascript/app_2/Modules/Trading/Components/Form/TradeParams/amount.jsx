@@ -80,7 +80,7 @@ const Amount = ({
                     max_length={10}
                     name='amount'
                     onChange={onChange}
-                    type='number'
+                    type='tel'
                     value={amount}
                 />
             </div>

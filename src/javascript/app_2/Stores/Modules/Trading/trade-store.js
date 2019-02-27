@@ -159,7 +159,6 @@ export default class TradeStore extends BaseStore {
     async prepareTradeStore() {
         let query_string_values = this.updateQueryString();
         this.smart_chart        = this.root_store.modules.smart_chart;
-
         this.currency           = this.root_store.client.currency;
         const active_symbols    = await WS.activeSymbols();
         if (!active_symbols.active_symbols || active_symbols.active_symbols.length === 0) {
@@ -309,17 +308,22 @@ export default class TradeStore extends BaseStore {
         return new_state;
     }
 
-    async processNewValuesAsync(obj_new_values = {}, is_changed_by_user = false) {
+    async processNewValuesAsync(obj_new_values = {}, obj_old_values = {}, is_changed_by_user = false) {
         // Sets the default value to Amount when Currency has changed from Fiat to Crypto and vice versa.
         // The source of default values is the website_status response.
         WS.forgetAll('proposal');
 
-        if (is_changed_by_user &&
+        if (
             /\bcurrency\b/.test(Object.keys(obj_new_values))
         ) {
-            if (isCryptocurrency(obj_new_values.currency) !== isCryptocurrency(this.currency)) {
-                obj_new_values.amount = obj_new_values.amount || getMinPayout(obj_new_values.currency);
+            const prev_currency = !isEmptyObject(obj_old_values) && obj_old_values.currency ?
+                obj_old_values.currency : this.currency;
+            if (isCryptocurrency(obj_new_values.currency) !== isCryptocurrency(prev_currency)) {
+                obj_new_values.amount = is_changed_by_user && obj_new_values.amount ?
+                    obj_new_values.amount : getMinPayout(obj_new_values.currency);
             }
+        }
+        if (is_changed_by_user) {
             this.currency = obj_new_values.currency;
         }
 
@@ -498,6 +502,10 @@ export default class TradeStore extends BaseStore {
     @action.bound
     accountSwitcherListener() {
         return new Promise(async (resolve) => {
+            await this.processNewValuesAsync(
+                { currency: this.root_store.client.currency },
+                { currency: this.currency }
+            );
             await this.refresh();
             await this.prepareTradeStore();
             return resolve(this.debouncedProposal());

@@ -59,7 +59,7 @@ const InputField = ({
             return;
         }
 
-        if (type === 'number') {
+        if (type === 'number' || type === 'tel') {
             const is_empty = !e.target.value || e.target.value === '' || e.target.value === '  ';
             const signed_regex = is_signed ? '[\+\-\.0-9]$' : '^';
 
@@ -68,7 +68,6 @@ const InputField = ({
 
             const is_not_completed_number = is_float && new RegExp(`${signed_regex}(\\.|\\d+\\.)?$`)
                 .test(e.target.value);
-
             // This regex check whether there is any zero at the end of fractional part or not.
             const has_zero_at_end = new RegExp(`${signed_regex}(\\d+)?\\.(\\d+)?[0]+$`)
                 .test(e.target.value);
@@ -80,8 +79,8 @@ const InputField = ({
                     .test(e.target.value);
             }
 
-            if ((is_number || is_empty) && has_valid_length) {
-                e.target.value = is_empty || is_signed || has_zero_at_end || is_scientific_notation
+            if (((is_number) || is_empty) && has_valid_length) {
+                e.target.value = is_empty || is_signed || has_zero_at_end || is_scientific_notation || type === 'tel'
                     ? e.target.value
                     : +e.target.value;
             } else if (!is_not_completed_number) {
@@ -147,7 +146,7 @@ const InputField = ({
         display_value = is_unit_at_right ? `${value} ${unit}` : `${unit} ${value}`;
     }
 
-    const is_increment_input = is_incrementable && type === 'number';
+    const is_increment_input = is_incrementable && (type === 'number' || type === 'tel');
 
     const input =
         <Input
@@ -193,7 +192,7 @@ const InputField = ({
             {!!helper &&
             <span className='input-field__helper'>{helper}</span>
             }
-            {is_increment_input && type === 'number' &&
+            {is_increment_input &&
                 increment_buttons
             }
             {input}
