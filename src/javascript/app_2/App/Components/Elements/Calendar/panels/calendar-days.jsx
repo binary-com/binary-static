@@ -26,6 +26,7 @@ const getDays = ({
     weekends,
     onMouseOver,
     onMouseLeave,
+    hovered_date,
 }) => {
     // adjust Calendar week by 1 day so that Calendar week starts on Monday
     // change to zero to set Calendar week to start on Sunday
@@ -65,6 +66,7 @@ const getDays = ({
 
     dates.map((date) => {
         const moment_date    = toMoment(date).startOf('day');
+        const moment_hovered = toMoment(hovered_date).startOf('day');
         const is_active      = selected_date && moment_date.isSame(moment_selected);
         const is_today       = moment_date.isSame(moment_today, 'day');
 
@@ -76,6 +78,7 @@ const getDays = ({
         const message              = events.map(event => event.descrip)[0] || '';
         const duration_from_today  = moment_date.diff(moment_today, 'days');
         const is_between           = moment_date.isBetween(moment_today, moment_selected);
+        const is_between_hover     = moment_date.isBetween(moment_today, moment_hovered);
         const is_before_min_or_after_max_date = isPeriodDisabled(moment_date, 'day');
         const is_disabled =
             // check if date is before min_date or after_max_date
@@ -100,6 +103,7 @@ const getDays = ({
                     'calendar__cell--today-duration': is_today && has_range_selection,
                     'calendar__cell--disabled'      : is_disabled,
                     'calendar__cell--other'         : is_other_month,
+                    'calendar__cell--between-hover' : is_between_hover && has_range_selection,
                     'calendar__cell--between'       : is_between && has_range_selection,
                 })}
                 onClick={is_disabled ? undefined : (e) => updateSelected(e, 'day')}

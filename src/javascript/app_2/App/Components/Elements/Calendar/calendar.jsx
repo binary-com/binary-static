@@ -168,6 +168,7 @@ class Calendar extends React.PureComponent {
                     updateSelected={this.updateSelected}
                     holidays={holidays}
                     has_range_selection={has_range_selection}
+                    hovered_date={this.state.hovered_date}
                     weekends={weekends}
                     onMouseOver={this.onMouseOver}
                     onMouseLeave={this.onMouseLeave}
