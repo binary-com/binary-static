@@ -1,6 +1,5 @@
 import React         from 'react';
 import { localize }  from '_common/localize';
-// import IconEntrySpot from 'Assets/Contract/icon-entry-spot.jsx';
 import IconFlag      from 'Assets/Contract/icon-flag.jsx';
 import MarkerLine    from 'Modules/SmartChart/Components/Markers/marker-line.jsx';
 import MarkerSpot    from 'Modules/SmartChart/Components/Markers/marker-spot.jsx';
@@ -46,9 +45,9 @@ export const MARKER_TYPES_CONFIG = {
         content_config: { line_style: 'solid', label: localize('Start Time') },
     },
     SPOT_ENTRY: {
-        type         : 'SPOT_ENTRY',
-        marker_config: MARKER_CONTENT_TYPES.SPOT,
-        // content_config: { align: 'left',  icon: <IconEntrySpot /> },
+        type          : 'SPOT_ENTRY',
+        marker_config : MARKER_CONTENT_TYPES.SPOT,
+        content_config: { has_icon: false, className: 'spot-entry' },
     },
     SPOT_EXIT: {
         type          : 'SPOT_EXIT',
@@ -58,6 +57,5 @@ export const MARKER_TYPES_CONFIG = {
     SPOT_MIDDLE: {
         type         : 'SPOT_MIDDLE',
         marker_config: MARKER_CONTENT_TYPES.SPOT,
-        // content_config: { align: 'left',  icon: <IconEntrySpot /> },
     },
 };

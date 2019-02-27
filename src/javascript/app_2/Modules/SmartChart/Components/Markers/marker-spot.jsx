@@ -6,17 +6,23 @@ import { addComma } from '_common/base/currency_base';
 
 const MarkerSpot = ({
     align,
+    has_icon = true,
+    className,
     icon,
     spot_value,
     status,
 }) => (
     <div className={classNames('chart-spot', align, status)}>
-        <div className='content'>
-            {icon}
-            {addComma(spot_value)}
-        </div>
-        <div className='arrow' />
-        <div className='spot' />
+        {has_icon &&
+            <React.Fragment>
+                <div className='content'>
+                    {icon}
+                    {addComma(spot_value)}
+                </div>
+                <div className='arrow' />
+            </React.Fragment>
+        }
+        <div className={classNames('spot', className)} />
     </div>
 );
 
