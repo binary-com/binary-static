@@ -55,6 +55,13 @@
             }
         }
     }
+    #frmPersonalDetails {
+        @media all and (max-width: 480px) {
+            div.select {
+                width: 280px !important;
+            }
+        }
+    }
 }
 
 #limits-container thead {
@@ -287,5 +294,9 @@
 .realws-content {
     div.select-dropdown {
         width: 100%;
+    }
+
+    @media screen and (max-width: 480px) {
+        width: 280px !important;
     }
 }
