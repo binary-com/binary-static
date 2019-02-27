@@ -8,6 +8,7 @@ $shadow-cover-index: 3;
 $shadow-index: 2;
 $content-index: 1;
 
+/** @define fullscreen-dialog; weak */
 .fullscreen-dialog {
     box-sizing: border-box;
     position: fixed;
@@ -83,7 +84,7 @@ $content-index: 1;
         color: $COLOR_LIGHT_BLACK_1;
         margin: 0;
     }
-    &__close-btn .ic-close {
+    &__close-btn-icon {
         width: 2.4em;
         height: 2.4em;
     }
@@ -92,7 +93,7 @@ $content-index: 1;
         margin-right: 0.5em;
         margin-left: 0.5em;
     }
-    .trade-type-info-modal {
+    &__trade-type-info-modal {
         padding: 1.6em;
 
         .info-header {
@@ -154,47 +155,6 @@ $content-index: 1;
 
                     &.active {
                         background-color: $COLOR_LIGHT_BLACK_4;
-                    }
-                }
-            }
-        }
-    }
-}
-
-// Dark Theme
-.theme--dark {
-    .fullscreen-dialog {
-        background: $COLOR_DARK_BLUE_5;
-
-        &__header, &__header-shadow-cover, &__content {
-            background: $COLOR_DARK_BLUE_5;
-        }
-        &__header-shadow-cover {
-            box-shadow: 0 1px 0px $COLOR_DARK_BLUE_5;
-        }
-        &__title {
-            color: $COLOR_DARK_BLUE_7;
-        }
-        .trade-type-info-modal {
-            .info-header {
-                .title {
-                    color: $COLOR_DARK_BLUE_2;
-                }
-            }
-            .info-gif {
-                background-color: $COLOR_DARK_BLUE_2;
-            }
-            .info-content {
-                color: $COLOR_LIGHT_BLACK_1;
-            }
-            .info-navigation {
-                &__list {
-                    .circle-button {
-                        background-color: $COLOR_WHITE;
-
-                        &.active {
-                            background-color: $COLOR_LIGHT_BLACK_4;
-                        }
                     }
                 }
             }

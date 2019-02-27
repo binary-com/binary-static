@@ -28,11 +28,10 @@ const Amount = ({
 }) => {
     if (is_minimized) {
         return (
-            <div className='fieldset-minimized amount'>
-                <span className='icon invest-amount' />
+            <div className='fieldset-minimized fieldset-minimized__amount'>
                 <span className='fieldset-minimized__basis'>{(basis_list.find(o => o.value === basis) || {}).text}</span>
                 &nbsp;
-                <i><span className={`symbols ${(currency || '').toLowerCase()}`} /></i>
+                <i><span className={classNames('fieldset-minimized__currency', 'symbols', { [`symbols--${(currency || '').toLowerCase()}`]: currency })} /></i>
                 {addComma(amount, 2)}
             </div>
         );
