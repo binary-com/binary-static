@@ -52,8 +52,7 @@ const Duration = ({
         const moment_expiry = toMoment(expiry_date);
         const duration_unit_text = (duration_units_list.find(o => o.value === duration_unit) || {}).text;
         return (
-            <div className='fieldset-minimized duration'>
-                <span className='icon trade-duration' />
+            <div className='fieldset-minimized fieldset-minimized__duration'>
                 {expiry_type === 'duration'
                     ? `${duration} ${duration_unit_text}`
                     : `${moment_expiry.format('ddd - DD MMM, YYYY')}\n${expiry_time}`
