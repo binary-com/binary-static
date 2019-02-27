@@ -168,7 +168,7 @@ const InputField = ({
                     <label htmlFor={name} className='input-field__label'>{label}</label>
                 }
                 {!!prefix &&
-                    <span className={classNames(classNamePrefix, 'symbols', prefix.toLowerCase())} />
+                    <span className={classNames(classNamePrefix, 'symbols', `symbols--${prefix.toLowerCase()}`)} />
                 }
                 {!!helper &&
                     <span className='input-field__helper'>{helper}</span>

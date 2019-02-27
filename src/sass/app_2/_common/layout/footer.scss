@@ -1,4 +1,5 @@
-footer {
+/** @define footer */
+.footer {
     position: fixed;
     bottom: 0;
     padding: 0 1em;
@@ -11,85 +12,75 @@ footer {
     justify-content: flex-end;
     align-items: center;
 
-    .server-time {
-        @include typeface(--small-left-normal-black);
-        display: inline-flex;
-        align-self: center;
-        margin-right: 1em;
-        padding: 0 1em;
-    }
-    .footer-links {
+    &__links {
         display: flex;
         justify-content: space-evenly;
         align-items: center;
         flex-direction: row;
         height: 100%;
 
-        a {
-            padding: 0 0.8em;
-            text-decoration: none;
-            height: 100%;
-            display: inline-flex;
-            align-items: center;
-
-            .inline-icon {
-                width: 1.6em;
-                height: 1.6em;
-            }
-            span {
-                @include typeface(--xsmall-left-normal-black);
-                vertical-align: middle;
-                display: inline-block;
-            }
-            &:hover {
-                background: $COLOR_LIGHT_BLACK_4;
-
-                .inline-icon {
-                    @extend .inline-icon.active;
-                }
-            }
-        }
-        &.footer-links-left {
+        &--left {
             margin-right: auto;
+        }
+    }
+    &__link {
+        padding: 0 0.8em;
+        text-decoration: none;
+        height: 100%;
+        display: inline-flex;
+        align-items: center;
 
-            .ic-positions {
-                svg {
-                    margin-bottom: 0.5em;
-                }
-                &:after {
-                    content: '';
-                    width: 0.2em;
-                    height: 0.2em;
-                    border-radius: 50%;
-                    background-color: $COLOR_LIGHT_BLACK_1;
-                    position: absolute;
-                    margin-top: 1em;
-                    right: 1.5em;
-                    display: block;
-                }
-                &.active {
-                    background: none !important;
+        &:hover {
+            background: $COLOR_LIGHT_BLACK_4;
 
-                    svg {
-                        margin-bottom: 0;
-                    }
-                    &:after {
-                        display: none;
-                    }
-                }
+            .footer__icon {
+                @extend .inline-icon.active;
             }
         }
+    }
+    &__icon {
+        width: 1.6em;
+        height: 1.6em;
     }
     @media (max-width: 768px) {
         display: none;
     }
 }
 
+/** @define ic-positions */
+.ic-positions {
+    &__icon {
+        margin-bottom: 0.5em;
+    }
+    &:after {
+        content: '';
+        width: 0.2em;
+        height: 0.2em;
+        border-radius: 50%;
+        background-color: $COLOR_LIGHT_BLACK_1;
+        position: absolute;
+        margin-top: 1em;
+        right: 1.5em;
+        display: block;
+    }
+    &--active {
+        background: none !important;
+
+        .ic-positions__icon {
+            margin-bottom: 0;
+        }
+        &:after {
+            display: none;
+        }
+    }
+}
+
+/** @define network-status */
 .network-status {
-    &-wrapper {
+    &__wrapper {
         height: 1.4em;
     }
-    &-circle {
+    &__circle {
         background: $COLOR_LIGHT_BLACK_3;
         width: 1em;
         height: 1em;
@@ -108,8 +99,18 @@ footer {
     }
 }
 
+/** @define server-time */
+.server-time {
+    @include typeface(--small-left-normal-black);
+    display: inline-flex;
+    align-self: center;
+    margin-right: 1em;
+    padding: 0 1em;
+}
+
+/** @define ic-settings */
 .ic-settings {
-    &.active {
+    &--active {
         position: relative;
         background: $COLOR_LIGHT_BLACK_4;
 
@@ -122,7 +123,7 @@ footer {
             top: 0;
             left: 0;
         }
-        .inline-icon {
+        .ic-settings__icon {
             @extend .inline-icon.active;
             pointer-events: none;
         }

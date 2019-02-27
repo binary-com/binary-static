@@ -12,14 +12,14 @@ const PurchaseResult = ({ currency, purchase_info }) => (
         <div>
             <span className='purchase-container__error-result-label'>{localize('Buy Price')}:</span>
             <span>
-                <i className={classNames('purchase-container__error-result-currency', 'symbols', currency.toLowerCase())} />
+                <i className={classNames('purchase-container__error-result-currency', 'symbols', { [`symbols--${(currency || '').toLowerCase()}`]: currency })} />
                 {purchase_info.buy_price}
             </span>
         </div>
         <div>
             <span className='purchase-container__error-result-label'>{localize('Payout')}:</span>
             <span>
-                <i className={classNames('purchase-container__error-result-currency', 'symbols', currency.toLowerCase())} />
+                <i className={classNames('purchase-container__error-result-currency', 'symbols', { [`symbols--${(currency || '').toLowerCase()}`]: currency })} />
                 {purchase_info.payout}
             </span>
         </div>

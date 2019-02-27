@@ -7,52 +7,53 @@
     }
 }
 
+/** @define symbols */
 .symbols {
     &:before {
         font-family: 'BinarySymbols';
         font-style: normal;
-        margin-right: 0.2em;
         pointer-events: none;
     }
     &, &:before {
         transition: none;
         animation: none;
     }
-    &.aud:before {
+    &--aud:before {
         content: '\0041\0024';
     }
-    &.eur:before {
+    &--eur:before {
         content: '\20AC';
     }
-    &.gbp:before {
+    &--gbp:before {
         content: '\00A3';
     }
-    &.jpy:before {
+    &--jpy:before {
         content: '\00A5';
     }
-    &.usd:before {
+    &--usd:before {
         content: '\0024';
     }
-    &.btc:before {
+    &--btc:before {
         content: '\0042';
     }
-    &.bch:before {
+    &--bch:before {
         content: '\e901';
     }
-    &.eth:before {
+    &--eth:before {
         content: '\0045';
     }
-    &.etc:before {
+    &--etc:before {
         content: '\e900';
     }
-    &.ltc:before {
+    &--ltc:before {
         content: '\004c';
     }
-    &.ust:before {
+    &--ust:before {
         content: '\e903';
     }
 }
 
+/** @define icons-underlying */
 .icons-underlying {
     &:before {
         width: 32px;

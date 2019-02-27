@@ -8,8 +8,8 @@ import Purchase     from '../../Containers/purchase.jsx';
 import TradeParams  from '../../Containers/trade-params.jsx';
 
 const ScreenLarge = ({ is_contract_visible, is_trade_enabled }) => (
-    <div className={classNames('sidebar-items', {
-        'sidebar-items__slideout': is_contract_visible,
+    <div className={classNames('sidebar__items', {
+        'sidebar__items--slideout': is_contract_visible,
     })}
     >
         {!is_trade_enabled && !is_contract_visible ?
