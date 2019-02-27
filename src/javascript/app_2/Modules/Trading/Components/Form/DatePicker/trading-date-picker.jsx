@@ -12,7 +12,6 @@ import DatePicker                     from 'App/Components/Form/DatePicker';
 const TradingDatePicker = ({
     duration_min_max,
     duration_units_list,
-    validation_errors,
     expiry_date,
     expiry_type,
     is_24_hours_contract,
@@ -23,6 +22,7 @@ const TradingDatePicker = ({
     start_time,
     start_date,
     symbol,
+    validation_errors,
 }) => {
     let max_date_duration,
         min_date_expiry,

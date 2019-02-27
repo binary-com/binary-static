@@ -19,6 +19,7 @@ const getDays = ({
     date_format,
     has_range_selection,
     holidays,
+    hovered_date,
     isPeriodDisabled,
     start_date,
     selected_date,
@@ -26,7 +27,6 @@ const getDays = ({
     weekends,
     onMouseOver,
     onMouseLeave,
-    hovered_date,
 }) => {
     // adjust Calendar week by 1 day so that Calendar week starts on Monday
     // change to zero to set Calendar week to start on Sunday
@@ -160,15 +160,9 @@ CalendarDays.propTypes = {
         }),
     ),
     hovered_date: PropTypes.string,
-    onMouseLeave: PropTypes.oneOfType([
-        PropTypes.func,
-        PropTypes.bool,
-    ]),
-    onMouseOver: PropTypes.oneOfType([
-        PropTypes.func,
-        PropTypes.bool,
-    ]),
-    start_date: PropTypes.oneOfType([
+    onMouseLeave: PropTypes.func,
+    onMouseOver : PropTypes.func,
+    start_date  : PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
     ]),
