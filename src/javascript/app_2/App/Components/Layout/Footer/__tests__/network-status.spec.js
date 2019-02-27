@@ -18,17 +18,17 @@ describe('NetworkStatus', () => {
     });
     it('should have correct class based on class passed in status', () => {
         const wrapper = shallow(<NetworkStatus status={status} />);
-        expect(wrapper.find('.network-status-circle--online').exists()).to.be.true;
+        expect(wrapper.find('.network-status__circle--online').exists()).to.be.true;
         wrapper.setProps({status: { class: 'offline'}});
-        expect(wrapper.find('.network-status-circle--offline').exists()).to.be.true;
+        expect(wrapper.find('.network-status__circle--offline').exists()).to.be.true;
         wrapper.setProps({status: { class: 'blinker'}});
-        expect(wrapper.find('.network-status-circle--blinker').exists()).to.be.true;
+        expect(wrapper.find('.network-status__circle--blinker').exists()).to.be.true;
     });
     it('should contain Tooltip message passed in status', () => {
         const wrapper = shallow(<NetworkStatus status={status} />);
         expect(wrapper.contains(
             <Tooltip alignment='top' message='Network status: Online'>
-                <div className='network-status-circle network-status-circle--online' />
+                <div className='network-status__circle network-status__circle--online' />
             </Tooltip>
         )).to.be.true;
     });
@@ -38,7 +38,7 @@ describe('NetworkStatus', () => {
         console.log(wrapper.toString());
         expect(wrapper.contains(
             <Tooltip alignment='top' message='Network status: Connecting to server'>
-                <div className='network-status-circle' />
+                <div className='network-status__circle' />
             </Tooltip>
         )).to.be.true;
     });

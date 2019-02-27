@@ -32,11 +32,11 @@ describe('AccountInfo', () => {
     });
     it('should have <p /> with loginid passed to it', () => {
         const wrapper = shallow(<AccountInfo loginid='12345' />);
-        expect(wrapper.contains(<p className='acc-info__id' title='12345'>12345</p>)).to.be.true;
+        expect(wrapper.contains(<p className='acc-info__id' title='12345'>12345&nbsp;</p>)).to.be.true;
     });
     it('should have <IconArrow />', () => {
         const wrapper = shallow(<AccountInfo />);
-        expect(wrapper.contains(<IconArrow className='acc-info__select-arrow' />)).to.be.true;
+        expect(wrapper.contains(<IconArrow className='acc-info__select-arrow' is_bold={true} />)).to.be.true;
     });
     it('should contain <CSSTransition /> and children', () => {
         const wrapper = shallow(<AccountInfo is_dialog_on={false}
@@ -104,12 +104,12 @@ describe('AccountInfo', () => {
     });
     it('should have currency string passed in props, toLoweCase as a class', () => {
         const wrapper = shallow(<AccountInfo balance='123456789' currency='EUR' />);
-        expect(wrapper.find('.eur').exists()).to.be.true;
+        expect(wrapper.find('.symbols--eur').exists()).to.be.true;
     });
     it('should render balance and currency when balance and currency are passed in props', () => {
         const wrapper = shallow(<AccountInfo balance='123456789' currency='USD' />);
         expect(wrapper.contains(<p className='acc-info__balance'>
-            <span className='symbols usd' />
+            <span className='symbols symbols--usd' />
             123456789
         </p>)).to.be.true;
     });

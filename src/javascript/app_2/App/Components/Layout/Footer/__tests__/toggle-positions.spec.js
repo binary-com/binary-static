@@ -15,15 +15,15 @@ describe('TogglePositions', () => {
     });
     it('should have active class when is_positions_drawer_on is true', () => {
         const wrapper = shallow(<TogglePositions is_positions_drawer_on={true} />);
-        expect(wrapper.find('.active').exists()).to.be.true;
+        expect(wrapper.find('.ic-positions--active').exists()).to.be.true;
     });
     it('should not have active class when is_positions_drawer_on is false', () => {
         const wrapper = shallow(<TogglePositions is_positions_drawer_on={false} />);
-        expect(wrapper.find('.active').exists()).to.be.false;
+        expect(wrapper.find('.ic-positions--active').exists()).to.be.false;
     });
     it('should contain <IconPositions />', () => {
         const wrapper = shallow(<TogglePositions />);
-        expect(wrapper.contains(<IconPositions />)).to.be.true;
+        expect(wrapper.contains(<IconPositions className='footer__icon ic-positions__icon' />)).to.be.true;
     });
     it('should call togglePositionsDrawer passed onClick', () => {
         const callback = fake();

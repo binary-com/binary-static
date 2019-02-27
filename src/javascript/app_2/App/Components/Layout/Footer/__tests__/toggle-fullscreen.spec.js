@@ -22,18 +22,18 @@ describe('ToggleFullScreen', () => {
         const wrapper = shallow(<ToggleFullScreen  />);
         expect(wrapper.find('.ic-fullscreen').exists()).to.be.true;
     });
-    it('should not have .active if it\'s false in state', () => {
+    it('should not have .ic-fullscreen--active if it\'s false in state', () => {
         const wrapper = shallow(<ToggleFullScreen  />);
-        expect(wrapper.find('.active').exists()).to.be.false;
+        expect(wrapper.find('.ic-fullscreen--active').exists()).to.be.false;
     });
-    it('should have .active if it\'s true in state', () => {
+    it('should have .ic-fullscreen--active if it\'s true in state', () => {
         const wrapper = shallow(<ToggleFullScreen  />);
         wrapper.setState({ is_full_screen: true });
-        expect(wrapper.find('.active').exists()).to.be.true;
+        expect(wrapper.find('.ic-fullscreen--active').exists()).to.be.true;
     });
     it('should contain <IconMaximize />', () => {
         const wrapper = shallow(<ToggleFullScreen />);
-        expect(wrapper.contains(<IconMaximize className='footer-icon' />)).to.be.true;
+        expect(wrapper.contains(<IconMaximize className='footer__icon' />)).to.be.true;
     });
     it('should have onclick property as an instance of a Function', () => {
         const wrapper = shallow(<ToggleFullScreen />);

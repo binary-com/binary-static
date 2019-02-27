@@ -13,15 +13,15 @@ describe('ToggleSettings', () => {
     it('should render one <ToggleSettings /> component with active class if is_settings_visible is true', () => {
         const wrapper = shallow(<ToggleSettings is_settings_visible={true} />);
         expect(wrapper).to.have.length(1);
-        expect(wrapper.find('.active').exists()).to.be.true;
+        expect(wrapper.find('.ic-settings--active').exists()).to.be.true;
     });
     it('should not have active class if is_settings_visible is false', () => {
         const wrapper = shallow(<ToggleSettings is_settings_visible={false} />);
-        expect(wrapper.find('.active').exists()).to.be.false;
+        expect(wrapper.find('.ic-settings--active').exists()).to.be.false;
     });
     it('should contain IconSettings', () => {
         const wrapper = shallow(<ToggleSettings />);
-        expect(wrapper.contains(<IconSettings className='footer-icon' />)).to.be.true;
+        expect(wrapper.contains(<IconSettings className='footer__icon ic-settings__icon' />)).to.be.true;
     });
     it('should have CSSTransition', () => {
         const wrapper = shallow(<ToggleSettings is_settings_visible={true} />);
