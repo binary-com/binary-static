@@ -2,12 +2,14 @@ import React                 from 'react';
 import Loading               from './loading.jsx';
 import { Fieldset, FormRow } from './forms.jsx';
 
-export const Salutation = ({ className }) => (
+export const Salutation = ({ className, row_class, row_id }) => (
     <FormRow
         type='select'
         className={className}
         id='salutation'
         label={it.L('Title')}
+        row_class={row_class}
+        row_id={row_id}
     >
         <option value='Mr'>{it.L('Mr')}</option>
         <option value='Mrs' className='ru-hide'>{it.L('Mrs')}</option>
@@ -16,41 +18,62 @@ export const Salutation = ({ className }) => (
     </FormRow>
 );
 
-export const FirstName = ({ className, hint }) => (
+export const FirstName = ({ className, hint, row_class, row_id }) => (
     <FormRow
         type='text'
         id='first_name'
         label={it.L('First name')}
         attributes={{ maxLength: '30', className: className || undefined, 'data-lpignore': true }}
+        row_class={row_class}
+        row_id={row_id}
         hint={hint}
     />
 );
 
-export const LastName = ({ className, hint }) => (
+export const LastName = ({ className, hint, row_class, row_id }) => (
     <FormRow
         type='text'
         id='last_name'
         label={it.L('Family name')}
         attributes={{ maxLength: '30', className: className || undefined, 'data-lpignore': true }}
         hint={hint}
+        row_id={row_id}
+        row_class={row_class}
     />
 );
 
-export const DateOfBirth = ({ className }) => (
+export const DateOfBirth = ({ className, row_class, row_id }) => (
     <FormRow
         type='text'
         id='date_of_birth'
         label={it.L('Date of birth')}
+        row_class={row_class}
+        row_id={row_id}
         attributes={{ size: '12', readOnly: true, className: className || undefined, 'data-lpignore': true }}
     />
 );
 
-export const Citizenship = ({ className }) => (
-    <FormRow type='select' id='citizen' label={it.L('Citizenship')} row_class={className} row_id='citizen_row' attributes={{ single: 'single' }} />
+export const Citizenship = ({ className, row_class }) => (
+    <FormRow
+        type='select'
+        id='citizen'
+        label={it.L('Citizenship')}
+        className={className}
+        row_class={row_class}
+        row_id='citizen_row'
+        attributes={{ single: 'single' }}
+    />
 );
 
-export const Residence = () => (
-    <FormRow type='custom' id='residence' label={it.L('Country of residence')}>
+export const Residence = ({ className, row_class, row_id }) => (
+    <FormRow
+        type='custom'
+        id='residence'
+        row_class={row_class}
+        row_id={row_id}
+        className={className || ''}
+        label={it.L('Country of residence')}
+    >
         <label id='lbl_residence' />
     </FormRow>
 );
