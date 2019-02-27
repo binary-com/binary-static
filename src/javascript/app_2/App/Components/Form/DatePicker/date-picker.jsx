@@ -268,6 +268,7 @@ class DatePicker extends React.Component {
                             weekends={this.state.weekends}
                             date_format={this.props.date_format}
                             has_today_btn={this.props.has_today_btn}
+                            has_range_selection={this.props.has_range_selection}
                             footer={this.props.footer}
                             max_date={this.props.max_date}
                             min_date={this.props.min_date}

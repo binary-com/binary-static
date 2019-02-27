@@ -17,6 +17,7 @@ import Tooltip          from '../../tooltip.jsx';
 const getDays = ({
     calendar_date,
     date_format,
+    has_range_selection,
     holidays,
     isPeriodDisabled,
     start_date,
@@ -97,18 +98,19 @@ const getDays = ({
             <span
                 key={date}
                 className={classNames('calendar__cell', {
-                    'calendar__cell--active'       : is_active && !is_disabled,
-                    'calendar__cell--today'        : is_today,
-                    'calendar__cell--disabled'     : is_disabled,
-                    'calendar__cell--other'        : is_other_month,
-                    'calendar__cell--between-hover': is_between_hover,
-                    'calendar__cell--between'      : is_between,
+                    'calendar__cell--active'        : is_active && !is_disabled,
+                    'calendar__cell--today'         : is_today,
+                    'calendar__cell--today-duration': is_today && has_range_selection,
+                    'calendar__cell--disabled'      : is_disabled,
+                    'calendar__cell--other'         : is_other_month,
+                    'calendar__cell--between-hover' : is_between_hover && has_range_selection,
+                    'calendar__cell--between'       : is_between && has_range_selection,
                 })}
                 onClick={is_disabled ? undefined : (e) => updateSelected(e, 'day')}
                 data-date={date}
                 data-duration={`${duration_from_today} ${duration_from_today === 1 ? 'Day' : 'Days'}`}
-                onMouseOver={onMouseOver}
-                onMouseLeave={onMouseLeave}
+                onMouseOver={has_range_selection && onMouseOver}
+                onMouseLeave={has_range_selection && onMouseLeave}
             >
                 {((has_events || is_closes_early) && !is_other_month && !is_before_min_or_after_max_date) &&
                     <Tooltip

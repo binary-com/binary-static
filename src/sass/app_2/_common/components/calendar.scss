@@ -163,20 +163,23 @@
         }
         &--today {
             font-weight: 400;
-            background: $COLOR_LIGHT_GRAY_1;
 
             &:hover {
                 background: $COLOR_LIGHT_GRAY_1;
             }
-            &:before {
-                position: absolute;
-                content: '';
-                width: 100%;
-                left: 50%;
-                z-index: -1;
-                height: 100%;
-                padding-right: 10px;
+            &-duration {
                 background: $COLOR_LIGHT_GRAY_1;
+
+                &:before {
+                    position: absolute;
+                    content: '';
+                    width: 100%;
+                    left: 50%;
+                    z-index: -1;
+                    height: 100%;
+                    padding-right: 10px;
+                    background: $COLOR_LIGHT_GRAY_1;
+                }
             }
         }
         &--active {

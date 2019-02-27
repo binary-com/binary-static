@@ -143,7 +143,7 @@ class Calendar extends React.PureComponent {
     };
 
     render() {
-        const { date_format, footer, has_today_btn, start_date, holidays, weekends } = this.props;
+        const { date_format, footer, has_today_btn, has_range_selection, start_date, holidays, weekends } = this.props;
         const { calendar_date, calendar_view, selected_date  } = this.state;
 
         return (
@@ -164,6 +164,7 @@ class Calendar extends React.PureComponent {
                     selected_date={selected_date}
                     updateSelected={this.updateSelected}
                     holidays={holidays}
+                    has_range_selection={has_range_selection}
                     weekends={weekends}
                     onMouseOver={this.onMouseOver}
                     onMouseLeave={this.onMouseLeave}
