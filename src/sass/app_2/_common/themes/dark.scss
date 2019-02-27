@@ -295,8 +295,8 @@
     .error-container p {
         color: $COLOR_DARK_BLUE_7;
     }
-    .barspinner {
-        @extend .barspinner.white;
+    .barspinner__rect {
+        background-color: $COLOR_WHITE;
     }
     .toggle-button {
         background-color: $COLOR_LIGHT_BLACK_1;
@@ -878,6 +878,71 @@
             }
             &:hover, &--highlighted {
                 background: $COLOR_DARK_BLUE_4;
+            }
+        }
+    }
+    .tooltip {
+        color: $COLOR_WHITE;
+
+        &:before {
+            background: $COLOR_DARK_BLUE_5;
+            color: $COLOR_WHITE;
+        }
+        &[data-tooltip-pos=top] {
+            &:after {
+                border-top-color: $COLOR_DARK_BLUE_5;
+            }
+        }
+        &[data-tooltip-pos=right] {
+            &:after {
+                border-right-color: $COLOR_DARK_BLUE_5;
+            }
+        }
+        &[data-tooltip-pos=left] {
+            &:after {
+                border-left-color: $COLOR_DARK_BLUE_5;
+            }
+        }
+        &[data-tooltip-pos=bottom] {
+            &:after {
+                border-bottom-color: $COLOR_DARK_BLUE_5;
+            }
+        }
+    }
+    .fullscreen-dialog {
+        background: $COLOR_DARK_BLUE_5;
+
+        &__header, &__header-shadow-cover, &__content {
+            background: $COLOR_DARK_BLUE_5;
+        }
+        &__header-shadow-cover {
+            box-shadow: 0 1px 0px $COLOR_DARK_BLUE_5;
+        }
+        &__title {
+            color: $COLOR_DARK_BLUE_7;
+        }
+        &__trade-type-info-modal {
+            .info-header {
+                .title {
+                    color: $COLOR_DARK_BLUE_2;
+                }
+            }
+            .info-gif {
+                background-color: $COLOR_DARK_BLUE_2;
+            }
+            .info-content {
+                color: $COLOR_LIGHT_BLACK_1;
+            }
+            .info-navigation {
+                &__list {
+                    .circle-button {
+                        background-color: $COLOR_WHITE;
+
+                        &.active {
+                            background-color: $COLOR_LIGHT_BLACK_4;
+                        }
+                    }
+                }
             }
         }
     }
