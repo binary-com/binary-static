@@ -400,6 +400,11 @@
         &__track {
             background: $COLOR_DARK_BLUE_2 !important;
 
+            &.input {
+                &:active, &:focus {
+                    box-shadow: none;
+                }
+            }
             &::-webkit-slider-thumb {
                 background: $COLOR_PURPLE;
             }
@@ -408,12 +413,6 @@
             }
             &::-moz-range-track {
                 background: $COLOR_DARK_BLUE_2;
-            }
-            &:active::-webkit-slider-thumb {
-                box-shadow: 0 0 0 4px rgba(79, 96, 174, 0.32);
-            }
-            &:active::-moz-range-thumb {
-                box-shadow: 0 0 0 4px rgba(79, 96, 174, 0.32);
             }
         }
         &__ticks-step {

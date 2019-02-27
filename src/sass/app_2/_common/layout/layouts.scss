@@ -78,6 +78,7 @@
             }
             div.ciq-asset-information {
                 z-index: 0;
+                display: none;
             }
         }
         div.cq-chart-control-left {
@@ -108,6 +109,10 @@
 
             .cq-symbols-display {
                 z-index: 1;
+
+                &.ciq-disabled {
+                    display: none;
+                }
             }
         }
         .cq-chart-controls {
