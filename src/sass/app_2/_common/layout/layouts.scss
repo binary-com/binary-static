@@ -10,6 +10,9 @@
             }
         }
     }
+    &--is-blurred {
+        filter: blur(3px);
+    }
     &--show-positions-drawer {
         .trade-container {
             .chart-container {

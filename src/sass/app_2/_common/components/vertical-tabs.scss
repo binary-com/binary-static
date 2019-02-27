@@ -1,0 +1,22 @@
+.vertical-tab {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 760px;
+    height: 600px;
+
+    &__tab {
+        display: flex;
+        width: 200px;
+        height: 100%;
+        flex-direction: column;
+        background-color: $COLOR_DARK_BLUE_2;
+    }
+    &__header-link {
+        font-size: 18px;
+        padding: 10px;
+    }
+    &__content-container {
+        background-color: $COLOR_DARK_BLUE_2;
+    }
+}

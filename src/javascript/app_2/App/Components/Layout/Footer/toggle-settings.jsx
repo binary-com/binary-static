@@ -6,8 +6,10 @@ import { IconSettings }  from 'Assets/Footer';
 import SettingsDialog    from '../../Elements/SettingsDialog/settings-dialog.jsx';
 
 const ToggleSettings = ({
+    hideBlur,
     is_language_visible,
     is_settings_visible,
+    showBlur,
     toggleSettings,
 }) => {
     const toggle_settings_class = classNames('ic-settings', {
@@ -36,6 +38,8 @@ const ToggleSettings = ({
                     is_open={is_settings_visible}
                     is_language_dialog_visible={is_language_visible}
                     toggleDialog={toggleSettings}
+                    showBlur={showBlur}
+                    hideBlur={hideBlur}
                 />
             </CSSTransition>
         </React.Fragment>
@@ -43,8 +47,10 @@ const ToggleSettings = ({
 };
 
 ToggleSettings.propTypes = {
+    hideBlur           : PropTypes.func,
     is_language_visible: PropTypes.bool,
     is_settings_visible: PropTypes.bool,
+    showBlur           : PropTypes.func,
     toggleSettings     : PropTypes.func,
 };
 

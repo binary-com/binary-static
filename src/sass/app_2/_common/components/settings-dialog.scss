@@ -1,42 +1,25 @@
 /** @define settings-dialog */
 .settings-dialog {
-    position: absolute;
-    width: 320px;
-    right: 1.2em;
-    top: -250px;
-    background: $COLOR_WHITE;
-    height: auto;
     border-radius: $BORDER_RADIUS;
-    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.14);
     pointer-events: none;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    transform: none;
-    opacity: 0;
-    z-index: -1;
 
     &--enter, &--exit {
-        transform: none;
-        pointer-events: none;
-        z-index: -1;
+        transform: translateY(-50%) scale(0.2, 0.2);
         opacity: 0;
+        pointer-events: none;
     }
     &--enter-done {
-        transform: translateY(-15%) scale(1, 1);
+        transform: translateY(0) scale(1, 1);
         opacity: 1;
         pointer-events: auto;
-        z-index: 1;
     }
     &__container {
         position: relative;
+        width: 760px;
 
         &--hide {
             display: none;
         }
-    }
-    &__header {
-        @include typeface(--small-left-normal-black);
-        @include toEm(padding, 8px 16px, 1.2em);
-        display: block;
     }
     & &__tab-header {
         padding: 1.6em 1.6em 0.8em;
@@ -50,9 +33,7 @@
         background: $COLOR_LIGHT_BLACK_4_SOLID;
     }
     &__row {
-        width: 260px;
         padding: 0.8em 1.6em;
-        height: 3.2em;
         display: flex;
         cursor: pointer;
         justify-content: space-between;
@@ -147,5 +128,24 @@
         &-flag {
             padding-right: 0.6em;
         }
+    }
+}
+/**
+ * @define dialog-header
+ */
+.dialog-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+    background-color: $COLOR_DARK_BLUE_2;
+
+    &__heading {
+        width: 280px;
+        font-size: 24px;
+    }
+    &__close {
+        display: block;
+        cursor: pointer;
     }
 }

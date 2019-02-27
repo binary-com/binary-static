@@ -47,6 +47,8 @@ export default class UIStore extends BaseStore {
     @observable duration_h             = 1;
     @observable duration_d             = 1;
 
+    @observable is_blurred             = false;
+
     getDurationFromUnit = (unit) => this[`duration_${unit}`];
 
     constructor() {
@@ -98,6 +100,16 @@ export default class UIStore extends BaseStore {
     @computed
     get is_tablet() {
         return this.screen_width <= MAX_TABLET_WIDTH;
+    }
+
+    @action.bound
+    showBlur() {
+        this.is_blurred = true;
+    }
+
+    @action.bound
+    hideBlur() {
+        this.is_blurred = false;
     }
 
     @action.bound
