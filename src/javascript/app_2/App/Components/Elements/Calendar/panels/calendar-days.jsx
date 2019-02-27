@@ -100,13 +100,13 @@ const getDays = ({
             <span
                 key={date}
                 className={classNames('calendar__cell', {
-                    'calendar__cell--active'        : is_active && !is_disabled,
-                    'calendar__cell--today'         : is_today,
-                    'calendar__cell--today-duration': is_today && has_range_selection,
-                    'calendar__cell--disabled'      : is_disabled,
-                    'calendar__cell--other'         : is_other_month,
-                    'calendar__cell--between-hover' : is_between_hover && has_range_selection,
-                    'calendar__cell--between'       : is_between && has_range_selection,
+                    'calendar__cell--active'         : is_active,
+                    'calendar__cell--today'          : is_today,
+                    'calendar__cell--active-duration': is_active && has_range_selection && !is_today,
+                    'calendar__cell--disabled'       : is_disabled,
+                    'calendar__cell--other'          : is_other_month,
+                    'calendar__cell--between-hover'  : is_between_hover && has_range_selection,
+                    'calendar__cell--between'        : is_between && has_range_selection,
                 })}
                 onClick={is_disabled ? undefined : (e) => updateSelected(e, 'day')}
                 data-date={date}

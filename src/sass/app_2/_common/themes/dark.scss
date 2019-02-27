@@ -618,17 +618,11 @@
                 background: $COLOR_DARK_BLUE_4;
             }
             &--today {
+                background: $COLOR_DARK_BLUE_5;
                 color: $COLOR_WHITE;
 
-                &-duration {
-                    background: $COLOR_DARK_BLUE_5;
-
-                    &:hover {
-                        background: $COLOR_DARK_BLUE_5;
-                    }
-                    &:before {
-                        background: $COLOR_DARK_BLUE_5;
-                    }
+                &:hover {
+                    background: $COLOR_DARK_BLUE_5 !important;
                 }
             }
             &--disabled, &--other {
@@ -645,6 +639,13 @@
 
                 &:hover {
                     background: $COLOR_DARK_BLUE_3;
+                }
+                &-duration {
+                    background: $COLOR_DARK_BLUE_5;
+
+                    &:after {
+                        background: $COLOR_DARK_BLUE_5;
+                    }
                 }
             }
             &--between {

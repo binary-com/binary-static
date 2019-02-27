@@ -266,6 +266,7 @@ class DatePicker extends React.Component {
                                 this.onChangeCalendarMonth.bind(this) : undefined}
                             holidays={this.state.holidays}
                             weekends={this.state.weekends}
+                            duration_date={this.state.value}
                             date_format={this.props.date_format}
                             has_today_btn={this.props.has_today_btn}
                             has_range_selection={this.props.has_range_selection}

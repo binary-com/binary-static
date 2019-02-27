@@ -1,7 +1,6 @@
 import PropTypes      from 'prop-types';
 import React          from 'react';
 import {
-    daysFromTodayTo,
     getStartOfMonth,
     toMoment }        from 'Utils/Date';
 import { localize }   from '_common/localize';
@@ -54,16 +53,12 @@ class Calendar extends React.PureComponent {
         const target = event.currentTarget;
 
         if (target.classList.contains('calendar__cell--hover')) {
-            const default_duration = daysFromTodayTo(this.state.selected_date);
-            const default_message = `${default_duration} ${default_duration === 1 ? localize('Day') : localize('Days')}`;
-
             target.classList.remove('calendar__cell--hover');
 
             this.setState({
                 hovered_date : null,
-                duration_date: default_message,
+                duration_date: null,
             });
-           
         }
     };
 
@@ -153,8 +148,9 @@ class Calendar extends React.PureComponent {
     };
 
     render() {
-        const { date_format, footer, has_today_btn, has_range_selection, start_date, holidays, weekends } = this.props;
+        const { date_format, footer, has_today_btn, has_range_selection, start_date, holidays, weekends, duration_date } = this.props;
         const { calendar_date, calendar_view, selected_date  } = this.state;
+        const default_message = `${duration_date} ${duration_date === 1 ? localize('Day') : localize('Days')}`;
 
         return (
             <div className='calendar' data-value={selected_date}>
@@ -182,7 +178,7 @@ class Calendar extends React.PureComponent {
                 />
                 <CalendarFooter
                     footer={footer}
-                    duration_date={this.state.duration_date}
+                    duration_date={this.state.duration_date || default_message}
                     has_today_btn={has_today_btn}
                     has_range_selection={has_range_selection}
                     onClick={this.setToday}
