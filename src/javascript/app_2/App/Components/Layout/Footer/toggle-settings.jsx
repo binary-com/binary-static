@@ -10,8 +10,8 @@ const ToggleSettings = ({
     is_settings_visible,
     toggleSettings,
 }) => {
-    const toggle_settings_class = classNames('ic-settings', {
-        'active': is_settings_visible,
+    const toggle_settings_class = classNames('ic-settings', 'footer__link', {
+        'ic-settings--active': is_settings_visible,
     });
     return (
         <React.Fragment>
@@ -20,7 +20,7 @@ const ToggleSettings = ({
                 onClick={toggleSettings}
                 className={toggle_settings_class}
             >
-                <IconSettings className='footer-icon' />
+                <IconSettings className='footer__icon ic-settings__icon' />
             </a>
             <CSSTransition
                 in={is_settings_visible}
