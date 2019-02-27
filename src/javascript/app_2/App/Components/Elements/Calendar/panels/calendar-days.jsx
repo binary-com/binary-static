@@ -8,9 +8,11 @@ import {
 import {
     addDays,
     addMonths,
+    daysFromTodayTo,
     subDays,
     subMonths,
     toMoment }          from 'Utils/Date';
+import { localize }     from '_common/localize';
 import CommonPropTypes  from './types';
 import Tooltip          from '../../tooltip.jsx';
 
@@ -76,7 +78,7 @@ const getDays = ({
         const has_events           = !!events.length;
         const is_closes_early      = events.map(event => !!event.descrip.match(/Closes early|Opens late/))[0];
         const message              = events.map(event => event.descrip)[0] || '';
-        const duration_from_today  = moment_date.diff(moment_today, 'days');
+        const duration_from_today  = daysFromTodayTo(date);
         const is_between           = moment_date.isBetween(moment_today, moment_selected);
         const is_between_hover     = moment_date.isBetween(moment_today, moment_hovered);
         const is_before_min_or_after_max_date = isPeriodDisabled(moment_date, 'day');
@@ -108,7 +110,7 @@ const getDays = ({
                 })}
                 onClick={is_disabled ? undefined : (e) => updateSelected(e, 'day')}
                 data-date={date}
-                data-duration={`${duration_from_today} ${duration_from_today === 1 ? 'Day' : 'Days'}`}
+                data-duration={`${duration_from_today} ${ duration_from_today === 1 ? localize('Day') : localize('Days') }`}
                 onMouseOver={onMouseOver}
                 onMouseLeave={onMouseLeave}
             >

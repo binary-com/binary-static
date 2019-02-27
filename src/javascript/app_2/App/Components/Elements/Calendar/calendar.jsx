@@ -1,8 +1,10 @@
 import PropTypes      from 'prop-types';
 import React          from 'react';
 import {
+    daysFromTodayTo,
     getStartOfMonth,
     toMoment }        from 'Utils/Date';
+import { localize }   from '_common/localize';
 import CalendarBody   from './calendar-body.jsx';
 import CalendarFooter from './calendar-footer.jsx';
 import CalendarHeader from './calendar-header.jsx';
@@ -52,10 +54,8 @@ class Calendar extends React.PureComponent {
         const target = event.currentTarget;
 
         if (target.classList.contains('calendar__cell--hover')) {
-            const moment_today = toMoment().startOf('day');
-            const moment_selected = toMoment(this.state.selected_date);
-            const default_duration = moment_selected.diff(moment_today, 'days');
-            const default_message = `${default_duration} ${default_duration === 1 ? 'Day' : 'Days'}`;
+            const default_duration = daysFromTodayTo(this.state.selected_date);
+            const default_message = `${default_duration} ${default_duration === 1 ? localize('Day') : localize('Days')}`;
 
             target.classList.remove('calendar__cell--hover');
 
