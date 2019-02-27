@@ -115,7 +115,7 @@
         }
     }
     &__text {
-        @include typeface(--small-center-normal-black);
+        @include typeface(--small-center-normal-black, unset);
 
         &--bold {
             font-weight: bold;
@@ -129,7 +129,7 @@
 
         &:hover {
             cursor: pointer;
-            background: $COLOR_DARK_BLUE_4;
+            background: $COLOR_LIGHT_BLACK_4_SOLID;
         }
         &--bold {
             @include typeface(--paragraph-left-bold-black);
@@ -144,10 +144,10 @@
         }
         &--today {
             font-weight: 400;
-            background: $COLOR_DARK_BLUE_5;
+            background: $COLOR_LIGHT_GRAY_1;
 
             &:hover {
-                background: $COLOR_DARK_BLUE_5 !important;
+                background: $COLOR_LIGHT_GRAY_1 !important;
             }
             &:before {
                 position: absolute;
@@ -157,12 +157,12 @@
                 z-index: -1;
                 height: 100%;
                 padding-right: 10px;
-                background: $COLOR_DARK_BLUE_5 !important;
+                background: $COLOR_LIGHT_GRAY_1 !important;
             }
         }
         &--active {
             color: $COLOR_WHITE;
-            background: $COLOR_DARK_BLUE_5 !important;
+            background: $COLOR_LIGHT_GRAY_1;
             font-weight: bold;
 
             &:hover {
@@ -170,7 +170,7 @@
             }
         }
         &--between {
-            background: $COLOR_DARK_BLUE_5;
+            background: $COLOR_LIGHT_GRAY_1;
             font-weight: bold;
             color: $COLOR_WHITE !important;
 
@@ -181,12 +181,12 @@
                     width: 100%;
                     z-index: -2;
                     height: 100%;
-                    padding-left: 28px;
-                    background: $COLOR_DARK_BLUE_4;
+                    padding-left: 32px;
+                    background: $COLOR_LIGHT_BLACK_4_SOLID;
                 }
             }
             &:hover {
-                background: $COLOR_DARK_BLUE_5 !important;
+                background: $COLOR_LIGHT_GRAY_1;
             }
             &:before {
                 position: absolute;
@@ -194,21 +194,17 @@
                 width: 100%;
                 z-index: -1;
                 height: 100%;
-                padding-left: 28px;
-                background: $COLOR_DARK_BLUE_5 !important;
+                padding-left: 32px;
+                background: $COLOR_LIGHT_GRAY_1 !important;
             }
         }
         &--hover {
             &:after {
-                font-size: 1em;
+                @include typeface(--xsmall-left-normal-black, none);
                 color: $COLOR_WHITE;
-                font-weight: 400;
-                text-transform: none;
-                text-align: left;
-                line-height: 1.25;
                 text-decoration: none;
                 letter-spacing: normal;
-                background: $COLOR_DARK_BLUE_5;
+                background: rgba(0, 0, 0, 0.8);
                 border-radius: 4px;
                 content: attr(data-duration);
                 padding: 0.8em;
@@ -218,6 +214,7 @@
                 position: absolute;
                 bottom: 100%;
                 z-index: 9;
+                cursor: pointer;
             }
         }
         &-tooltip {
