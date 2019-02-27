@@ -13,7 +13,6 @@ const LastDigit = ({
     if (is_minimized) {
         return (
             <div className='fieldset-minimized'>
-                <span className='icon digits' />
                 {`${localize('Last Digit')}: ${last_digit}`}
             </div>
         );

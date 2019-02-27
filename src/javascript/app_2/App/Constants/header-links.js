@@ -7,13 +7,13 @@ import { routes }   from 'Constants/index';
 
 const header_links = [
     {
-        icon   : <IconTrade className='ic-header__trade' />,
+        icon   : <IconTrade className='header__icon' />,
         text   : localize('Trade'),
         link_to: routes.trade,
     },
     {
         // TODO: Combine portfolio and statement into reports page
-        icon   : <IconStatement className='ic-header__statement' />,
+        icon   : <IconStatement className='header__icon' />,
         text   : localize('Reports'),
         link_to: routes.statement,
     },

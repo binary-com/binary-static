@@ -134,8 +134,7 @@ export default class ClientStore extends BaseStore {
     @computed
     get virtual_account_loginid() {
         return this.all_loginids
-            .filter(loginid => !!this.accounts[loginid].is_virtual)
-            .reduce(loginid => loginid);
+            .find(loginid => !!this.accounts[loginid].is_virtual);
     }
 
     @computed

@@ -34,7 +34,7 @@ const Real = () => (
                 <FirstName />
                 <LastName />
                 <DateOfBirth />
-                <Citizenship className='invisible' />
+                <Citizenship row_class='invisible' />
                 <FormRow type='select' id='place_of_birth' label={it.L('Place of birth')} attributes={{ single: 'single' }} />
                 <Residence />
                 <Phone />
