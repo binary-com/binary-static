@@ -127,8 +127,8 @@ $CONTRACT_INFO_BOX_PADDING: 1.5em;
         cursor: pointer;
     }
     &-icon {
-        width: 3.2em;
-        height: 3.2em;
+        width: 24px;
+        height: 24px;
     }
     &-enter {
         transform: translateY(calc(-100% - 2em));
@@ -154,7 +154,7 @@ $CONTRACT_INFO_BOX_PADDING: 1.5em;
             }
             &-text {
                 @include typeface(--paragraph-left-normal-black, unset);
-                @include toEm(margin, 0 16px, 1.4em);
+                @include toEm(margin, 0 16px, 1em);
                 max-width: 360px;
             }
         }
