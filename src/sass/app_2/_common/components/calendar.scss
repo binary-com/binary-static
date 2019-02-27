@@ -126,16 +126,29 @@
         align-self: center;
         justify-self: center;
         position: relative;
+        cursor: pointer;
 
         &:hover {
             cursor: pointer;
             background: $COLOR_LIGHT_BLACK_4_SOLID;
         }
-        &:nth-child(7n), &:nth-child(7n + 1) {
+        &:nth-child(7n) {
             &:before {
                 padding: 0;
                 border-radius: 4px;
             }
+        }
+        &:nth-child(7n + 1) {
+            &:before {
+                left: 0;
+                border-radius: 4px;
+            }
+        }
+        &:before {
+            cursor: pointer;
+        }
+        &:after {
+            cursor: pointer;
         }
         &--bold {
             @include typeface(--paragraph-left-bold-black);
