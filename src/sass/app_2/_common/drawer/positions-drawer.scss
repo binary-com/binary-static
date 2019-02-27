@@ -345,15 +345,17 @@ $header-height: 4em;
     }
     .result-details__wrapper {
         margin: -2px -9px 0;
-        transition: opacity 0.2s ease;
-        will-change: opacity;
+        transition: max-height 0.2s ease, opacity 0.2s linear;
+        will-change: max-height, opacity;
         padding: 2px 4px;
+        height: 100%;
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
 
-        &--enter-done {
+        &--is-open {
             opacity: 1;
-        }
-        &--enter, &--exit {
-            opacity: 0;
+            max-height: 166px;
         }
     }
     .result-details__grid {
