@@ -52,11 +52,18 @@ class Calendar extends React.PureComponent {
         const target = event.currentTarget;
 
         if (target.classList.contains('calendar__cell--hover')) {
+            const moment_today = toMoment().startOf('day');
+            const moment_selected = toMoment(this.state.selected_date);
+            const default_duration = moment_selected.diff(moment_today, 'days');
+            const default_message = `${default_duration} ${default_duration === 1 ? 'Day' : 'Days'}`;
+
+            target.classList.remove('calendar__cell--hover');
+
             this.setState({
                 hovered_date : null,
-                duration_date: null,
+                duration_date: default_message,
             });
-            target.classList.remove('calendar__cell--hover');
+           
         }
     };
 
