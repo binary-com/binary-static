@@ -22,20 +22,17 @@ const Barrier = ({
     if (is_minimized) {
         if (barrier_count !== 2) {
             return (
-                <div className='fieldset-minimized barrier1'>
-                    <span className='icon barriers' />
+                <div className='fieldset-minimized fieldset-minimized__barrier1'>
                     {barrier_1}
                 </div>
             );
         }
         return (
             <React.Fragment>
-                <div className='fieldset-minimized barrier1'>
-                    <span className='icon barriers' />
+                <div className='fieldset-minimized fieldset-minimized__barrier1'>
                     {barrier_1}
                 </div>
-                <div className='fieldset-minimized barrier2'>
-                    <span className='icon barriers' />
+                <div className='fieldset-minimized fieldset-minimized__barrier2'>
                     {barrier_2}
                 </div>
             </React.Fragment>
