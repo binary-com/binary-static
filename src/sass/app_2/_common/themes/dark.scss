@@ -884,8 +884,12 @@
     .list {
         background: $COLOR_DARK_BLUE_3;
 
-        &__label-text {
+        &__label {
             color: $COLOR_WHITE;
+
+            &-text {
+                color: $COLOR_WHITE;
+            }
         }
         &__item {
             &-text {
