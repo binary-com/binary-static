@@ -11,7 +11,6 @@ import DatePicker                     from 'App/Components/Form/DatePicker';
 const TradingDatePicker = ({
     duration_min_max,
     duration_units_list,
-    validation_errors,
     expiry_date,
     expiry_type,
     is_24_hours_contract,
@@ -22,6 +21,7 @@ const TradingDatePicker = ({
     start_time,
     start_date,
     symbol,
+    validation_errors,
 }) => {
     let max_date_duration,
         min_date_expiry,
@@ -39,7 +39,6 @@ const TradingDatePicker = ({
     } else {
         min_date_expiry   = moment_contract_start_date_time.clone().startOf('day');
         max_date_duration = moment_contract_start_date_time.clone().add(max_daily_duration, 'second');
-
     }
     if (expiry_type === 'duration') {
         min_date_expiry.add(1, 'day');
@@ -57,6 +56,7 @@ const TradingDatePicker = ({
             disable_trading_events
             error_messages={validation_errors.duration || []}
             has_today_btn={has_today_btn}
+            has_range_selection={mode === 'duration'}
             is_nativepicker={false}
             is_read_only={is_read_only}
             label={duration_units_list.length === 1 ? duration_units_list[0].text : null}
