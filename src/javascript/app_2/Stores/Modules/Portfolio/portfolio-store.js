@@ -149,6 +149,11 @@ export default class PortfolioStore extends BaseStore {
                 sell_price    : response.sell.sold_for,
                 transaction_id: response.sell.transaction_id,
             };
+        } else if (!is_contract_mode && response.sell.sold_for) {
+            this.root_store.ui.addToastMessage({
+                message: `Contract was sold for ${response.sell.sold_for}.`,
+                type   : 'info',
+            });
         }
     }
 
