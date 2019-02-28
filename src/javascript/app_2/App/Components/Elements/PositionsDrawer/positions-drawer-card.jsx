@@ -43,7 +43,12 @@ const PositionsDrawerCard = ({
 }) => {
     const percentage = getTimePercentage(server_time, purchase_time, expiry_time);
     return (
-        <div className={classNames('positions-drawer-card__wrapper', className)}>
+        <div className={classNames(
+            'positions-drawer-card__wrapper', {
+                'positions-drawer-card__wrapper--active': (parseInt(active_position) === id),
+            },
+            className)}
+        >
             <ResultOverlay
                 id={id}
                 onClickRemove={onClickRemove}

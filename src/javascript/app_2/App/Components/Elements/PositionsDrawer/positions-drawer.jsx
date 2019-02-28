@@ -25,6 +25,7 @@ class PositionsDrawer extends React.Component {
             active_positions,
             error,
             currency,
+            is_contract_mode,
             is_empty,
             is_positions_drawer_on,
             onClickSell,
@@ -67,7 +68,12 @@ class PositionsDrawer extends React.Component {
         }
 
         return (
-            <div className={classNames('positions-drawer', { 'positions-drawer--open': is_positions_drawer_on })}>
+            <div className={classNames(
+                'positions-drawer', {
+                    'positions-drawer--open'            : is_positions_drawer_on,
+                    'positions-drawer--is-contract-mode': is_contract_mode,
+                })}
+            >
                 <div className='positions-drawer__header'>
                     <span className='positions-drawer__title'>{localize('Positions')}</span>
                     <div
@@ -104,6 +110,7 @@ PositionsDrawer.propTypes = {
     children              : PropTypes.any,
     currency              : PropTypes.string,
     error                 : PropTypes.string,
+    is_contract_mode      : PropTypes.bool,
     is_empty              : PropTypes.bool,
     is_loading            : PropTypes.bool,
     is_positions_drawer_on: PropTypes.bool,
@@ -122,6 +129,7 @@ export default connect(
         active_contract_id    : modules.contract.contract_id,
         active_positions      : modules.portfolio.active_positions,
         error                 : modules.portfolio.error,
+        is_contract_mode      : modules.smart_chart.is_contract_mode,
         is_empty              : modules.portfolio.is_empty,
         is_loading            : modules.portfolio.is_loading,
         onClickSell           : modules.portfolio.onClickSell,
