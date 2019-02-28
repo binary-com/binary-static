@@ -6,16 +6,20 @@ import { toMoment } from 'Utils/Date';
 
 const Dialog = ({
     preClass,
-    value,
-    start_time,
+    selected_time,
     end_time,
+    start_time,
     onChange,
     className,
 }) => {
-    const start_time_moment     = start_time ? toMoment(start_time) : toMoment();
-    const end_time_moment       = end_time ? toMoment(end_time) : toMoment().hour('23').minute('59').seconds('59').milliseconds('999');
+    const start_time_moment     = start_time
+        ? toMoment(start_time)
+        : toMoment();
+    const end_time_moment       = end_time
+        ? toMoment(end_time)
+        : toMoment().hour('23').minute('59').seconds('59').milliseconds('999');
     const to_compare_moment     = toMoment();
-    const [ hour, minute ]      = value.split(':');
+    const [ hour, minute ]      = selected_time.split(':');
     const hours    = [...Array(24).keys()].map((a)=>`0${a}`.slice(-2));
     const minutes  = [...Array(12).keys()].map((a)=>`0${a * 5}`.slice(-2));
 
@@ -36,14 +40,15 @@ const Dialog = ({
                     <div>
                         {hours.map((h, key) => {
                             to_compare_moment.hour(h).minute(minute);
-                            const is_enabled = to_compare_moment.isBetween(start_time_moment, end_time_moment);
+                            const is_enabled = to_compare_moment.isBetween(start_time_moment, end_time_moment)
+                                && to_compare_moment.isBetween(start_time_moment, end_time_moment, 'minute');
                             return (
                                 <div
                                     className={classNames(`${preClass}__selector-list-item`,
                                         { [`${preClass}__selector-list-item--selected`]: (hour === h) },
                                         { [`${preClass}__selector-list-item--disabled`]: !is_enabled })}
                                     key={key}
-                                    onClick={() => { selectOption('h', h, value, is_enabled); }}
+                                    onClick={() => { selectOption('h', h, selected_time, is_enabled); }}
                                 >
                                     {h}
                                 </div>
@@ -63,7 +68,7 @@ const Dialog = ({
                                         { [`${preClass}__selector-list-item--selected`]: (minute === mm) },
                                         { [`${preClass}__selector-list-item--disabled`]: !is_enabled })}
                                     key={key}
-                                    onClick={() => { selectOption('m', mm, value, is_enabled); }}
+                                    onClick={() => { selectOption('m', mm, selected_time, is_enabled); }}
                                 >
                                     {mm}
                                 </div>
@@ -83,14 +88,14 @@ Dialog.propTypes = {
         PropTypes.string,
         PropTypes.object,
     ]),
-    onChange  : PropTypes.func,
-    preClass  : PropTypes.string,
-    start_time: PropTypes.oneOfType([
+    onChange     : PropTypes.func,
+    preClass     : PropTypes.string,
+    selected_time: PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
         PropTypes.object,
     ]),
-    value: PropTypes.oneOfType([
+    start_time: PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
         PropTypes.object,

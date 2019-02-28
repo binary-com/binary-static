@@ -120,7 +120,7 @@ DurationWrapper.propTypes = {
     getDurationFromUnit : PropTypes.func,
     is_advanced_duration: PropTypes.bool,
     is_minimized        : PropTypes.bool,
-    market_close_times  : PropTypes.array,
+    market_open_times   : PropTypes.array,
     onChange            : PropTypes.func,
     onChangeMultiple    : PropTypes.func,
     onChangeUiStore     : PropTypes.func,
