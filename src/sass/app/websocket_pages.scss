@@ -38,6 +38,9 @@
 }
 
 .detailsws-content {
+    div.select-dropdown {
+        width: 100%;
+    }
     #address_form {
         select.select-hidden {
             min-width: 205px;
@@ -49,6 +52,13 @@
                 select.select-hidden {
                     min-width: unset;
                 }
+            }
+        }
+    }
+    #frmPersonalDetails {
+        @media all and (max-width: 480px) {
+            div.select {
+                width: 280px !important;
             }
         }
     }
@@ -278,5 +288,15 @@
 
     @media screen and (max-width: 480px) {
         justify-content: center;
+    }
+}
+
+.realws-content {
+    div.select-dropdown {
+        width: 100%;
+    }
+
+    @media screen and (max-width: 480px) {
+        width: 280px !important;
     }
 }

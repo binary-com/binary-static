@@ -7,8 +7,8 @@ const TogglePositions = ({
     is_positions_drawer_on,
     togglePositionsDrawer,
 }) => {
-    const toggle_positions_class = classNames('ic-positions', {
-        'active': is_positions_drawer_on,
+    const toggle_positions_class = classNames('ic-positions', 'footer__link', {
+        'ic-positions--active': is_positions_drawer_on,
     });
     return (
         <a
@@ -16,7 +16,7 @@ const TogglePositions = ({
             className={toggle_positions_class}
             onClick={togglePositionsDrawer}
         >
-            <IconPositions />
+            <IconPositions className='footer__icon ic-positions__icon' />
         </a>
     );
 };

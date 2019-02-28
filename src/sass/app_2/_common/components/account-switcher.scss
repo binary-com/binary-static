@@ -42,7 +42,7 @@
     &__select-arrow {
         pointer-events: none;
         transition: transform 0.25s ease;
-        transform: rotate(180deg);
+        transform: rotate(0deg);
         transform-origin: 50% 45%;
     }
     &:hover:not(.show) {
@@ -64,7 +64,7 @@
     }
     &--show {
         .acc-info__select-arrow {
-            transform: rotate(0deg);
+            transform: rotate(180deg);
         }
     }
     &__button {
