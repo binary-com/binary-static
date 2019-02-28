@@ -139,65 +139,56 @@
             }
         }
     }
-    header {
+    .header {
         background: $COLOR_DARK_BLUE_1;
         border-color: $COLOR_DARK_BLUE_1;
 
-        .menu-items {
-            .menu-left .menu-links a {
-                &.active {
-                    span {
-                        color: $COLOR_WHITE;
-                    }
-                    &:after {
-                        background-color: $COLOR_WHITE;
-                    }
+        &__menu-link {
+            &--active {
+                .header__menu-link-text {
+                    color: $COLOR_WHITE;
                 }
-                &:hover:not(.active) {
-                    background-color: $COLOR_DARK_BLUE_4;
-                }
-                span {
-                    color: $COLOR_DARK_BLUE_7;
+                &:after {
+                    background-color: $COLOR_WHITE;
                 }
             }
-            .menu-left .binary-logo, .menu-right {
-                border-color: $COLOR_DARK_BLUE_2;
+            &:hover:not(&--active) {
+                background-color: $COLOR_DARK_BLUE_4;
+            }
+            &-text {
+                color: $COLOR_DARK_BLUE_7;
             }
         }
-        .inkbar {
-            background-color: $COLOR_WHITE;
+        &__menu-right {
+            border-color: $COLOR_DARK_BLUE_2;
+        }
+        &__navbar-icons--binary-logo {
+            border-color: $COLOR_DARK_BLUE_2;
         }
     }
-    footer {
+    .footer {
         background: $COLOR_DARK_BLUE_1;
         color: $COLOR_DARK_BLUE_7;
 
-        .server-time {
-            color: $COLOR_DARK_BLUE_7;
-        }
-        .footer-links a {
-            span {
-                color: $COLOR_DARK_BLUE_7;
-            }
+        &__link {
             &:hover {
                 background: $COLOR_DARK_BLUE_4;
             }
-            &.active {
-                background: $COLOR_DARK_BLUE_4;
-
-                &:after {
-                    background: $COLOR_WHITE;
-                }
+        }
+        .ic-positions {
+            &:after {
+                background-color: $COLOR_DARK_BLUE_7;
             }
         }
         .network-status-circle--blinker {
             background: $COLOR_DARK_BLUE_7;
         }
-        .footer-links-left {
-            .ic-positions {
-                &:after {
-                    background-color: $COLOR_DARK_BLUE_7;
-                }
+        .server-time {
+            color: $COLOR_DARK_BLUE_7;
+        }
+        .ic-settings {
+            &:after {
+                background-color: $COLOR_WHITE;
             }
         }
     }
@@ -292,7 +283,7 @@
             border-color: $COLOR_WHITE;
         }
     }
-    .error-container p {
+    .error__message {
         color: $COLOR_DARK_BLUE_7;
     }
     .barspinner__rect {
@@ -409,6 +400,11 @@
         &__track {
             background: $COLOR_DARK_BLUE_2 !important;
 
+            &.input {
+                &:active, &:focus {
+                    box-shadow: none;
+                }
+            }
             &::-webkit-slider-thumb {
                 background: $COLOR_PURPLE;
             }
@@ -417,12 +413,6 @@
             }
             &::-moz-range-track {
                 background: $COLOR_DARK_BLUE_2;
-            }
-            &:active::-webkit-slider-thumb {
-                box-shadow: 0 0 0 4px rgba(79, 96, 174, 0.32);
-            }
-            &:active::-moz-range-thumb {
-                box-shadow: 0 0 0 4px rgba(79, 96, 174, 0.32);
             }
         }
         &__ticks-step {
@@ -522,8 +512,12 @@
         &__wrapper {
             background: $COLOR_DARK_BLUE_3;
         }
-        &__account:hover {
-            background-color: $COLOR_DARK_BLUE_4;
+        &__accounts {
+            .acc-switcher__account {
+                &:not(:last-child):not(:only-child) {
+                    border-bottom: 1px solid $COLOR_DARK_BLUE_3;
+                }
+            }
         }
         &__list {
             background-color: $COLOR_DARK_BLUE_3;
@@ -535,33 +529,32 @@
                 color: $COLOR_DARK_BLUE_7;
             }
             .acc-switcher__account {
-                border-color: $COLOR_DARK_BLUE_2;
+                background-color: $COLOR_DARK_BLUE_2;
 
+                &:hover:not(.acc-switcher__account--selected) {
+                    background-color: $COLOR_DARK_BLUE_4;
+                }
                 .acc-switcher__id {
                     color: $COLOR_DARK_BLUE_7;
                 }
-                .acc-switcher__radio {
-                    border-color: $COLOR_DARK_BLUE_7;
-                }
                 &--selected {
+                    background: $COLOR_DARK_BLUE_5;
+
                     .acc-switcher__id {
                         color: $COLOR_WHITE;
-                    }
-                    .acc-switcher__radio {
-                        border-color: $COLOR_GREEN_1;
-                        background: $COLOR_GREEN_1;
+                        font-weight: 700;
+
+                        &--virtual:before {
+                            color: $COLOR_ORANGE;
+                            border: 1px solid $COLOR_ORANGE;
+                        }
                     }
                 }
             }
         }
         &__logout {
-            background-color: $COLOR_DARK_BLUE_2;
-
             span {
                 color: $COLOR_DARK_BLUE_7;
-            }
-            &:hover {
-                background-color: $COLOR_DARK_BLUE_4;
             }
         }
         &__new-account-title {
