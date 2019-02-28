@@ -9,38 +9,45 @@ export const createChartMarkers = (SmartChartStore, contract_info, ContractStore
 
             const marker_config = marker_creators[marker_type](contract_info, ContractStore);
             if (marker_config) {
-                SmartChartStore.createMarker(marker_config);
+                setTimeout(() => {
+                    SmartChartStore.createMarker(marker_config);
+                }, 1000);
             }
         });
     }
 };
 
 let middle_ticks_handler, is_running_contract;
-export const createChartTickMarkers = (SmartChartStore, contract_info, ContractStore = null) => {
-
+export const createChartTickMarkers = (SmartChartStore, contract_info) => {
     if (!middle_ticks_handler && contract_info.entry_tick_time) {
-        middle_ticks_handler = getMiddleTicksHandler(ContractStore, SmartChartStore, contract_info);
-        is_running_contract = !ContractStore.end_spot_time;
-
+        middle_ticks_handler = getMiddleTicksHandler(SmartChartStore, contract_info);
+        is_running_contract = !contract_info.exit_tick_time;
         if (is_running_contract) middle_ticks_handler.addMarkerFromStreamHistory(contract_info);
         if (!is_running_contract) middle_ticks_handler.addMarkerFromHistory(contract_info);
     }
 
-    const stream_is_done = is_running_contract && ContractStore.end_spot_time;
+    const stream_is_done = is_running_contract && contract_info.exit_tick_time;
     if (stream_is_done) middle_ticks_handler.forgetStreamHistory();
-    if (middle_ticks_handler && ContractStore.end_spot_time) {
+
+    if (contract_info.is_path_dependent && is_running_contract && middle_ticks_handler && contract_info.barrier) {
+        middle_ticks_handler.setBarrier(contract_info);
+    }
+
+    if (middle_ticks_handler && contract_info.exit_tick_time) {
         middle_ticks_handler = null;
         is_running_contract = null;
     }
 };
 
-const getMiddleTicksHandler = (ContractStore, SmartChartStore, contract_info) => {
+const getMiddleTicksHandler = (SmartChartStore, contract_info) => {
     let on_going_tick_idx = 0;
+    let is_finished_before_end = false;
+    let path_dependent_barrier;
 
     const ticks_history_req = {
         ticks_history: contract_info.underlying,
         start        : contract_info.entry_tick_time,
-        end          : ContractStore.end_spot_time ? ContractStore.end_spot_time : 'latest',
+        end          : contract_info.exit_tick_time ? contract_info.exit_tick_time : 'latest',
         count        : contract_info.tick_count,
     };
 
@@ -61,7 +68,11 @@ const getMiddleTicksHandler = (ContractStore, SmartChartStore, contract_info) =>
         (+tick.time > entry_tick_time && on_going_tick_idx < (tick_count - 1));
 
     const on_tick = (tick) => {
-        if (isMiddleTick(tick, contract_info)) {
+        if (isMiddleTick(tick, contract_info) && !is_finished_before_end) {
+            if (path_dependent_barrier && +tick.price >= path_dependent_barrier) {
+                is_finished_before_end = true;
+                return;
+            }
             on_going_tick_idx += 1;
             addTickToChart(tick, on_going_tick_idx);
         }
@@ -70,7 +81,7 @@ const getMiddleTicksHandler = (ContractStore, SmartChartStore, contract_info) =>
     const onCompletedContract = (data) => {
         const { prices, times } = data.history;
         const middle_ticks = combinePriceTime(prices, times)
-            .filter((tick) => tick.time > +contract_info.entry_tick_time && tick.time < +ContractStore.end_spot_time);
+            .filter((tick) => tick.time > +contract_info.entry_tick_time && tick.time < +contract_info.exit_tick_time);
 
         middle_ticks.forEach((tick, idx) => addTickToChart(tick, idx + 1));
     };
@@ -93,6 +104,9 @@ const getMiddleTicksHandler = (ContractStore, SmartChartStore, contract_info) =>
             WS.forget('ticks_history', onRunningContract, ticks_history_req),
         addMarkerFromHistory: () =>
             WS.sendRequest({ ...ticks_history_req }).then((data) => onCompletedContract(data)),
+        setBarrier: (ci) => {
+            path_dependent_barrier = ci.barrier;
+        },
     };
 };
 
@@ -147,15 +161,15 @@ function createMarkerSpotEntry(contract_info, ContractStore) {
     );
 }
 
-function createMarkerSpotExit(contract_info, ContractStore) {
-    if (!ContractStore.end_spot_time) return false;
+function createMarkerSpotExit(contract_info) {
+    if (!contract_info.exit_tick_time) return false;
 
     return createMarkerConfig(
         MARKER_TYPES_CONFIG.SPOT_EXIT.type,
-        ContractStore.end_spot_time,
-        ContractStore.end_spot,
+        contract_info.exit_tick_time,
+        contract_info.exit_tick,
         {
-            spot_value: `${ContractStore.end_spot}`,
+            spot_value: `${contract_info.exit_tick}`,
             status    : `${contract_info.profit > 0 ? 'won' : 'lost' }`,
         },
     );
