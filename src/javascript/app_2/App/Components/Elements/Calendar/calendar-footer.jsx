@@ -10,7 +10,7 @@ const CalendarFooter = ({
     onClick,
 }) => (
     <React.Fragment>
-        { (has_today_btn || footer) &&
+        { (has_today_btn || footer || has_range_selection) &&
             <div className='calendar__footer'>
                 { footer && <span className='calendar__text'>{footer}</span>}
                 { has_range_selection && <span className='calendar__text'>{ `${duration_date}` }</span> }

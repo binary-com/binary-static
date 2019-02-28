@@ -154,7 +154,7 @@ class Calendar extends React.PureComponent {
         let default_message;
 
         if (duration_date) {
-            default_message = `${duration_date} ${duration_date === 1 ? localize('Day') : localize('Days')}`;
+            default_message = `${localize('Duration')}: ${duration_date} ${duration_date === 1 ? localize('Day') : localize('Days')}`;
         } else {
             default_message = localize('Minimum duration is 1 day');
         }
