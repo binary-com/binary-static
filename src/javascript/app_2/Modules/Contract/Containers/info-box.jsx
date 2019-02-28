@@ -54,11 +54,11 @@ const InfoBox = ({
                     message={sell_info.error_message}
                     onClickClose={removeError}
                 />
+                <ChartCloseBtn
+                    is_contract_mode={is_contract_mode}
+                    onClose={onClickNewTrade}
+                />
             </div>
-            <ChartCloseBtn
-                is_contract_mode={is_contract_mode}
-                onClose={onClickNewTrade}
-            />
         </React.Fragment>
         // </CSSTransition>
     );

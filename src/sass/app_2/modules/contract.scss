@@ -311,6 +311,13 @@ $CONTRACT_INFO_BOX_PADDING: 1.6em;
             cursor: pointer;
         }
     }
+    .chart-close-btn {
+        position: absolute;
+        cursor: pointer;
+        z-index: 11;
+        right: 8px;
+        top: 0;
+    }
 }
 
 // Dark Theme
