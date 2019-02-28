@@ -28,6 +28,7 @@ const createDigitInfo = (contract_info, spot, spot_time) => {
             digit,
             is_win : isWin(contract_info, digit),
             is_last: spot_time === +contract_info.exit_tick_time,
+            spot,
         },
     };
 };

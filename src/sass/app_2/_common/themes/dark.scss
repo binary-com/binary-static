@@ -130,7 +130,7 @@
             color: $COLOR_DARK_BLUE_7;
             background-color: $COLOR_DARK_BLUE_2;
 
-            &.selected {
+            &--selected {
                 background-color: $COLOR_DARK_BLUE_5;
                 color: $COLOR_WHITE;
             }
@@ -967,6 +967,42 @@
                         &.active {
                             background-color: $COLOR_LIGHT_BLACK_4;
                         }
+                    }
+                }
+            }
+        }
+    }
+    .digits {
+        &__digit {
+            &-value {
+                background-color: $COLOR_DARK_BLUE_5;
+                color: $COLOR_WHITE;
+
+                &--selected {
+                    background-color: $COLOR_DARK_BLUE_2;
+                    border: 2px solid $COLOR_WHITE;
+                }
+                &--latest {
+                    background-color: $COLOR_DARK_BLUE_7;
+                }
+                &--win {
+                    background-color: $COLOR_GREEN_1;
+                }
+                &--loss {
+                    background-color: $COLOR_RED;
+                }
+            }
+            &-spot {
+                color: $COLOR_DARK_BLUE_7;
+
+                &-last-digit {
+                    color: $COLOR_WHITE;
+
+                    &--win {
+                        color: $COLOR_GREEN_1;
+                    }
+                    &--loss {
+                        color: $COLOR_RED;
                     }
                 }
             }

@@ -142,7 +142,7 @@ $CONTRACT_INFO_BOX_PADDING: 1.6em;
         position: relative;
         border-radius: $BORDER_RADIUS;
         padding: $CONTRACT_INFO_BOX_PADDING;
-        background: rgba(42, 48, 82, 0.04);
+        background: rgba(255, 255, 255, 0.9);
         font-weight: 300;
 
         &-longcode {
@@ -234,61 +234,6 @@ $CONTRACT_INFO_BOX_PADDING: 1.6em;
                         white-space: normal;
                     }
                 }
-            }
-        }
-        .digits {
-            display: flex;
-            align-items: center;
-
-            .digit-title {
-                font-weight: bold;
-                max-width: min-content;
-            }
-            .digit-list {
-                display: flex;
-                margin: 0 2.5em 0 1em;
-
-                .digit-info {
-                    margin: 0 0.4em;
-                    text-align: center;
-
-                    .digit-value {
-                        width: 3.2em;
-                        height: 3.2em;
-                        margin-bottom: 0.5em;
-                        border: 2px solid $COLOR_GREEN_1;
-                        border-radius: 50%;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        color: $COLOR_GREEN_1;
-                        font-size: 1.6em;
-                        font-weight: bold;
-
-                        &.loss {
-                            border-color: $COLOR_RED;
-                            color: $COLOR_RED;
-                        }
-                        &.last {
-                            background-color: $COLOR_GREEN_1;
-                            color: $COLOR_WHITE;
-
-                            &.loss {
-                                background-color: $COLOR_RED;
-                            }
-                        }
-                        &:empty {
-                            border-color: $COLOR_LIGHT_BLACK_3;
-                        }
-                    }
-                    .tick-number {
-                        line-height: 0.6em;
-                        font-size: 0.6em;
-                    }
-                }
-            }
-            .expired {
-                margin-right: -2.5em;
             }
         }
     }
