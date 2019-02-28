@@ -21,7 +21,7 @@ class ToggleDrawer extends React.Component {
     render() {
         const { icon_class, icon, alignment, children } = this.props;
 
-        const toggle_class = classNames('navbar-icons', icon_class);
+        const toggle_class = classNames('header__navbar-icons', `header__navbar-icons--${icon_class}`);
 
         return (
             <React.Fragment>

@@ -18,7 +18,7 @@ const Footer = ({
     toggleSettingsDialog,
 }) => (
     <React.Fragment>
-        <div className='footer-links footer-links-left'>
+        <div className='footer__links footer__links--left'>
             {
                 is_logged_in &&
                 <TogglePositions
@@ -29,7 +29,7 @@ const Footer = ({
         </div>
         <NetworkStatus status={network_status} />
         <ServerTime />
-        <div className='footer-links'>
+        <div className='footer__links'>
             <ToggleFullScreen />
             <ToggleSettings
                 is_language_visible={is_language_dialog_visible}

@@ -8,8 +8,7 @@ import { isEnded }         from 'Stores/Modules/Contract/Helpers/logic';
 import ContractError       from '../Components/contract-error.jsx';
 import {
     InfoBoxDigit,
-    InfoBoxExpired,
-    InfoBoxGeneral }       from '../Components/InfoBox';
+    InfoBoxLongcode }      from '../Components/InfoBox';
 
 const InfoBox = ({
     // is_contract_mode,
@@ -25,11 +24,10 @@ const InfoBox = ({
         'ended': is_ended,
     });
 
-    let Contents = is_ended ? InfoBoxExpired : InfoBoxGeneral;
+    let Contents = InfoBoxLongcode;
     if (is_digit && is_trade_page) { // we don't display digit info in Statement/Portfolio because of API shortages
         Contents = InfoBoxDigit;
     }
-
     return (
         // TODO: Resolve issue with undefined contract_info showing upon unmounting transition
         // <CSSTransition
