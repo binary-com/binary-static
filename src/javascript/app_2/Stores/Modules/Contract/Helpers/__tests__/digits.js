@@ -65,6 +65,7 @@ describe('Digits', () => {
                     digit: 9,
                     is_win: true,
                     is_last: false,
+                    spot: 456.99,
                 }
             });
         });
@@ -95,11 +96,13 @@ describe('Digits', () => {
                     digit: 9,
                     is_win: false,
                     is_last: false,
+                    spot: 456.99,
                 },
                 20000000: {
                     digit: 7,
                     is_win: false,
                     is_last: false,
+                    spot: 123.77,
                 }
             });
         });

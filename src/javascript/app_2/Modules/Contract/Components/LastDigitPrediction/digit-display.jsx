@@ -28,7 +28,7 @@ const DigitDisplay = ({
                 'digits__digit--loss': is_loss,
             })}
         >
-            { digit_value === digit && spot &&
+            { is_latest_digit && spot &&
                 <DigitSpot
                     current_spot={spot}
                     is_loss={is_loss}
