@@ -130,7 +130,7 @@ export default class PortfolioStore extends BaseStore {
         const is_contract_mode = this.root_store.modules.smart_chart.is_contract_mode;
         // TODO: Refactor with ContractStore for re-drawing of chart markers and barriers
         // Toast messages are temporary UI for prompting user of sold contracts
-        if (!is_contract_mode && response.error) {
+        if (response.error) {
             // If unable to sell due to error, give error via toast message if not in contract mode
             this.root_store.ui.addToastMessage({
                 message: response.error.message,
@@ -149,7 +149,6 @@ export default class PortfolioStore extends BaseStore {
                 sell_price    : response.sell.sold_for,
                 transaction_id: response.sell.transaction_id,
             };
-        } else if (!is_contract_mode && response.sell.sold_for) {
             this.root_store.ui.addToastMessage({
                 message: `Contract was sold for ${response.sell.sold_for}.`,
                 type   : 'info',
