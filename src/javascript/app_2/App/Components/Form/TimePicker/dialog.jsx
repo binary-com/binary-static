@@ -39,9 +39,13 @@ const Dialog = ({
                     <div className={classNames(`${preClass}__selector-list-title`, 'center-text')}><strong>{localize('Hour')}</strong></div>
                     <div>
                         {hours.map((h, key) => {
-                            to_compare_moment.hour(h).minute(minute);
-                            const is_enabled = to_compare_moment.isBetween(start_time_moment, end_time_moment)
-                                && to_compare_moment.isBetween(start_time_moment, end_time_moment, 'minute');
+                            // Cloning so we can change the minutes without affecting minute enable/disable.
+                            const start_time_moment_clone = start_time_moment.clone().minute(0);
+                            const end_time_moment_clone = end_time_moment.clone().minute(0);
+                            
+                            to_compare_moment.hour(h);
+                            const is_enabled = to_compare_moment.isBetween(start_time_moment_clone, end_time_moment_clone)
+                                && to_compare_moment.isBetween(start_time_moment_clone, end_time_moment_clone, 'minute');
                             return (
                                 <div
                                     className={classNames(`${preClass}__selector-list-item`,
