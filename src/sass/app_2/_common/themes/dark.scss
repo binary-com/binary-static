@@ -618,9 +618,11 @@
                 background: $COLOR_DARK_BLUE_4;
             }
             &--today {
-                background: $COLOR_DARK_BLUE_5;
                 color: $COLOR_WHITE;
 
+                &-duration {
+                    background: $COLOR_DARK_BLUE_5;
+                }
                 &:hover {
                     background: $COLOR_DARK_BLUE_5 !important;
                 }
