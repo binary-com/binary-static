@@ -1,13 +1,18 @@
 const BinaryPjax   = require('../../base/binary_pjax');
 const Client       = require('../../base/client');
 const BinarySocket = require('../../base/socket');
-const urlForStatic = require('../../../_common/url').urlForStatic;
+const Url          = require('../../../_common/url');
 
 const PaymentAgentList = (() => {
     let $pa_list_container,
         $agent_template;
 
     const onLoad = () => {
+        if (!Client.get('currency')) {
+            BinaryPjax.load(`${Url.urlFor('user/set-currency')}`);
+            return;
+        }
+        
         $(() => {
             $('#accordion').accordion({
                 heightStyle: 'content',
@@ -58,7 +63,7 @@ const PaymentAgentList = (() => {
                 banks.map((bank) => {
                     supported_banks += bank.length === 0 ?
                         '' :
-                        `<img src="${urlForStatic(`images/pages/payment_agent/banks/${bank.toLowerCase()}.png`)}" alt="${bank}" title="${bank}" />`;
+                        `<img src="${Url.urlForStatic(`images/pages/payment_agent/banks/${bank.toLowerCase()}.png`)}" alt="${bank}" title="${bank}" />`;
                 });
             }
 
