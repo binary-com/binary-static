@@ -1,7 +1,7 @@
 import classNames          from 'classnames';
 import PropTypes           from 'prop-types';
 import React               from 'react';
-// import { CSSTransition }   from 'react-transition-group';
+import { CSSTransition }   from 'react-transition-group';
 import { connect }         from 'Stores/connect';
 import { isDigitContract } from 'Stores/Modules/Contract/Helpers/digits';
 import { isEnded }         from 'Stores/Modules/Contract/Helpers/logic';
@@ -17,6 +17,7 @@ const InfoBox = ({
     digits_info,
     is_trade_page,
     onClickNewTrade,
+    onClose,
     removeError,
     sell_info,
 }) => {
@@ -32,35 +33,42 @@ const InfoBox = ({
     }
     return (
         // TODO: Resolve issue with undefined contract_info showing upon unmounting transition
-        // <CSSTransition
-        //     in={is_contract_mode}
-        //     timeout={400}
-        //     classNames='info-box-container'
-        //     unmountOnExit
-        // >
-        <React.Fragment>
-            <div className='info-box-container'>
-                { contract_info.contract_type &&
-                    <div className={box_class}>
-                        <Contents
-                            contract_info={contract_info}
-                            digits_info={digits_info}
-                            is_ended={is_ended}
-                            sell_info={sell_info}
-                        />
-                    </div>
-                }
-                <ContractError
-                    message={sell_info.error_message}
-                    onClickClose={removeError}
-                />
-                <ChartCloseBtn
-                    is_contract_mode={is_contract_mode}
-                    onClose={onClickNewTrade}
-                />
-            </div>
-        </React.Fragment>
-        // </CSSTransition>
+        <CSSTransition
+            in={is_contract_mode}
+            timeout={250}
+            classNames={{
+                enter    : 'info-box-container--enter',
+                enterDone: 'info-box-container--enter-done',
+                exit     : 'info-box-containert--exit',
+            }}
+            unmountOnExit
+        >
+            <React.Fragment>
+                <div className='info-box-container'>
+                    { contract_info.contract_type &&
+                        <div className={box_class}>
+                            <Contents
+                                contract_info={contract_info}
+                                digits_info={digits_info}
+                                is_ended={is_ended}
+                                sell_info={sell_info}
+                            />
+                        </div>
+                    }
+                    <ContractError
+                        message={sell_info.error_message}
+                        onClickClose={removeError}
+                    />
+                    <ChartCloseBtn
+                        is_contract_mode={is_contract_mode}
+                        onClose={(e) => {
+                            onClose();
+                            onClickNewTrade(e);
+                        }}
+                    />
+                </div>
+            </React.Fragment>
+        </CSSTransition>
     );
 };
 
@@ -69,6 +77,8 @@ InfoBox.propTypes = {
     digits_info     : PropTypes.object,
     is_contract_mode: PropTypes.bool,
     is_trade_page   : PropTypes.bool,
+    onClickNewTrade : PropTypes.func,
+    onClose         : PropTypes.func,
     removeError     : PropTypes.func,
     sell_info       : PropTypes.object,
 };
@@ -80,6 +90,7 @@ export default connect(
         removeError     : modules.contract.removeSellError,
         sell_info       : modules.contract.sell_info,
         onClickNewTrade : modules.trade.onClickNewTrade,
+        onClose         : modules.contract.onUnmount,
         is_contract_mode: modules.smart_chart.is_contract_mode,
     })
 )(InfoBox);

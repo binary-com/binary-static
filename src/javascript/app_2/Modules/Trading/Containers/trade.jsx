@@ -1,12 +1,10 @@
 import PropTypes            from 'prop-types';
 import React                from 'react';
-import { CSSTransition }    from 'react-transition-group';
 import { getPropertyValue } from '_common/utility';
 import UILoader             from 'App/Components/Elements/ui-loader.jsx';
 import { connect }          from 'Stores/connect';
 import Test                 from './test.jsx';
 import FormLayout           from '../Components/Form/form-layout.jsx';
-import ContractDetails      from '../../Contract/Containers/contract-details.jsx';
 import InfoBox              from '../../Contract/Containers/info-box.jsx';
 
 const SmartChart = React.lazy(() => import(/* webpackChunkName: "smart_chart" */'../../SmartChart'));
@@ -53,23 +51,6 @@ class Trade extends React.Component {
                         is_contract_visible={!!contract_id}
                         is_trade_enabled={this.props.is_trade_enabled}
                     />
-                    <CSSTransition
-                        in={!!contract_id}
-                        timeout={400}
-                        classNames={{
-                            enter    : 'contract--enter',
-                            enterDone: 'contract--enter-done',
-                            exit     : 'contract--exit',
-                        }}
-                        unmountOnExit
-                    >
-                        <div className='contract__wrapper'>
-                            <ContractDetails
-                                contract_id={contract_id}
-                                onClickNewTrade={this.props.onClickNewTrade}
-                            />
-                        </div>
-                    </CSSTransition>
                 </div>
             </div>
         );

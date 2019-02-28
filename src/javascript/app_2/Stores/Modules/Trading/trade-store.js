@@ -250,6 +250,9 @@ export default class TradeStore extends BaseStore {
                         ...this.proposal_info[type],
                         buy_price: response.buy.buy_price,
                     };
+                    // toggle smartcharts to contract mode
+                    const contract_id = getPropertyValue(response, ['buy', 'contract_id']);
+                    if (contract_id) this.root_store.modules.contract.onMount(contract_id);
                     GTM.pushPurchaseData(contract_data, this.root_store);
                 }
                 WS.forgetAll('proposal');
@@ -466,7 +469,7 @@ export default class TradeStore extends BaseStore {
 
             const contract_list = Object.keys(contract_type_list || {})
                 .reduce((key, list) => ([...key, ...contract_type_list[list].map(contract => contract.value)]), []);
-            
+
             const contract_duration_list = contract_list
                 .map(list => ({ [list]: getPropertyValue(ContractType.getFullContractTypes(), [list, 'config', 'durations', 'units_display', contract_start_type]) }));
 
