@@ -40,7 +40,8 @@ const Dialog = ({
                     <div>
                         {hours.map((h, key) => {
                             to_compare_moment.hour(h).minute(minute);
-                            const is_enabled = to_compare_moment.isBetween(start_time_moment, end_time_moment);
+                            const is_enabled = to_compare_moment.isBetween(start_time_moment, end_time_moment)
+                                && to_compare_moment.isBetween(start_time_moment, end_time_moment, 'minute');
                             return (
                                 <div
                                     className={classNames(`${preClass}__selector-list-item`,
