@@ -165,6 +165,7 @@
             transition: none;
         }
         &--today {
+            background: $COLOR_LIGHT_GRAY_1;
             font-weight: 400;
 
             &:hover {

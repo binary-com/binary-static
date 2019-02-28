@@ -8,13 +8,14 @@ const CalendarFooter = ({
     has_today_btn,
     has_range_selection,
     duration_date,
+    is_minimum,
     onClick,
 }) => (
     <React.Fragment>
         { (has_today_btn || footer || has_range_selection) &&
             <div className='calendar__footer'>
                 { footer && <span className='calendar__text'>{footer}</span>}
-                { has_range_selection && <span className='calendar__text'>{ `${localize('Duration')}: ${duration_date}` }</span> }
+                { has_range_selection && <span className='calendar__text'>{ `${!is_minimum ? localize('Duration: ') : ''}${duration_date}` }</span> }
                 { has_today_btn &&
                     <IconCalendarToday
                         className='calendar__icon'
@@ -31,6 +32,7 @@ CalendarFooter.propTypes = {
     footer             : PropTypes.string,
     has_range_selection: PropTypes.bool,
     has_today_btn      : PropTypes.bool,
+    is_minimum         : PropTypes.bool,
     onClick            : PropTypes.func,
 };
 
