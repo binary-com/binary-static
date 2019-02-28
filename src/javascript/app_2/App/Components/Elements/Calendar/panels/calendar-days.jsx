@@ -8,21 +8,27 @@ import {
 import {
     addDays,
     addMonths,
+    daysFromTodayTo,
     subDays,
     subMonths,
     toMoment }          from 'Utils/Date';
+import { localize }     from '_common/localize';
 import CommonPropTypes  from './types';
 import Tooltip          from '../../tooltip.jsx';
 
 const getDays = ({
     calendar_date,
     date_format,
+    has_range_selection,
     holidays,
+    hovered_date,
     isPeriodDisabled,
     start_date,
     selected_date,
     updateSelected,
     weekends,
+    onMouseOver,
+    onMouseLeave,
 }) => {
     // adjust Calendar week by 1 day so that Calendar week starts on Monday
     // change to zero to set Calendar week to start on Sunday
@@ -61,17 +67,20 @@ const getDays = ({
     const moment_start_date = toMoment(start_date).startOf('day');
 
     dates.map((date) => {
-        const moment_date = toMoment(date).startOf('day');
-        const is_active   = selected_date && moment_date.isSame(moment_selected);
-        const is_today    = moment_date.isSame(moment_today, 'day');
+        const moment_date    = toMoment(date).startOf('day');
+        const moment_hovered = toMoment(hovered_date).startOf('day');
+        const is_active      = selected_date && moment_date.isSame(moment_selected);
+        const is_today       = moment_date.isSame(moment_today, 'day');
 
         const events          = holidays.filter(event =>
             // filter by date or day of the week
             event.dates.find(d => d === date || getDaysOfTheWeek(d) === toMoment(date).day()));
-        const has_events      = !!events.length;
-        const is_closes_early = events.map(event => !!event.descrip.match(/Closes early|Opens late/))[0];
-        const message         = events.map(event => event.descrip)[0] || '';
-
+        const has_events           = !!events.length;
+        const is_closes_early      = events.map(event => !!event.descrip.match(/Closes early|Opens late/))[0];
+        const message              = events.map(event => event.descrip)[0] || '';
+        const duration_from_today  = daysFromTodayTo(date);
+        const is_between           = moment_date.isBetween(moment_today, moment_selected);
+        const is_between_hover     = moment_date.isBetween(moment_today, moment_hovered);
         const is_before_min_or_after_max_date = isPeriodDisabled(moment_date, 'day');
         const is_disabled =
             // check if date is before min_date or after_max_date
@@ -91,15 +100,22 @@ const getDays = ({
             <span
                 key={date}
                 className={classNames('calendar__cell', {
-                    'calendar__cell--active'  : is_active && !is_disabled,
-                    'calendar__cell--today'   : is_today,
-                    'calendar__cell--disabled': is_disabled,
-                    'calendar__cell--other'   : is_other_month,
+                    'calendar__cell--active'         : is_active,
+                    'calendar__cell--today'          : is_today,
+                    'calendar__cell--active-duration': is_active && has_range_selection && !is_today,
+                    'calendar__cell--today-duration' : is_today && has_range_selection,
+                    'calendar__cell--disabled'       : is_disabled,
+                    'calendar__cell--other'          : is_other_month,
+                    'calendar__cell--between-hover'  : is_between_hover && has_range_selection,
+                    'calendar__cell--between'        : is_between && has_range_selection,
                 })}
-                onClick={is_disabled ? undefined : (e) => updateSelected(e, 'day') }
+                onClick={is_disabled ? undefined : (e) => updateSelected(e, 'day')}
                 data-date={date}
+                data-duration={`${duration_from_today} ${ duration_from_today === 1 ? localize('Day') : localize('Days') }`}
+                onMouseOver={onMouseOver}
+                onMouseLeave={onMouseLeave}
             >
-                { ((has_events || is_closes_early) && !is_other_month && !is_before_min_or_after_max_date) &&
+                {((has_events || is_closes_early) && !is_other_month && !is_before_min_or_after_max_date) &&
                     <Tooltip
                         alignment='top'
                         className='calendar__cell-tooltip'
@@ -138,14 +154,18 @@ CalendarDays.defaultProps = {
 
 CalendarDays.propTypes = {
     ...CommonPropTypes,
-    date_format: PropTypes.string,
-    holidays   : PropTypes.arrayOf(
+    date_format        : PropTypes.string,
+    has_range_selection: PropTypes.bool,
+    holidays           : PropTypes.arrayOf(
         PropTypes.shape({
             dates  : PropTypes.array,
             descrip: PropTypes.string,
         }),
     ),
-    start_date: PropTypes.oneOfType([
+    hovered_date: PropTypes.string,
+    onMouseLeave: PropTypes.func,
+    onMouseOver : PropTypes.func,
+    start_date  : PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
     ]),
