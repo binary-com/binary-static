@@ -172,12 +172,11 @@ const PaymentAgentWithdraw = (() => {
     };
 
     const onLoad = () => {
+        if (!Client.get('currency')) {
+            BinaryPjax.load(`${Url.urlFor('user/set-currency')}`);
+            return;
+        }
         BinarySocket.wait('get_account_status').then((data) => {
-            if (!Client.get('currency')) {
-                BinaryPjax.load(`${Url.urlFor('user/set-currency')}`);
-                return;
-            }
-
             $views = $('#paymentagent_withdrawal').find('.viewItem');
             $views.setVisibility(0);
 

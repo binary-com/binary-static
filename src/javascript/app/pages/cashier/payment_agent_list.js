@@ -8,6 +8,11 @@ const PaymentAgentList = (() => {
         $agent_template;
 
     const onLoad = () => {
+        if (!Client.get('currency')) {
+            BinaryPjax.load(`${Url.urlFor('user/set-currency')}`);
+            return;
+        }
+        
         $(() => {
             $('#accordion').accordion({
                 heightStyle: 'content',
@@ -15,11 +20,6 @@ const PaymentAgentList = (() => {
                 active     : false,
             });
         });
-
-        if (!Client.get('currency')) {
-            BinaryPjax.load(`${Url.urlFor('user/set-currency')}`);
-            return;
-        }
 
         $pa_list_container = $('#pa_list');
         $agent_template    = $pa_list_container.find('#accordion').html();
