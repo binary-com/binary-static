@@ -11,7 +11,7 @@ export default class URLHelper {
     static getQueryParams(url) {
         const query_string =  url ? new URL(url).search : window.location.search;
         const query_encoded = encodeURIComponent(query_string);
-        const query_params = new URLSearchParams(query_encoded.slice(1));
+        const query_params = new URLSearchParams(query_encoded);
 
         return query_params;
     }
