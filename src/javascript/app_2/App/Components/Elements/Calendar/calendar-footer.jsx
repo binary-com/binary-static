@@ -12,7 +12,8 @@ const CalendarFooter = ({
     <React.Fragment>
         { (has_today_btn || footer) &&
             <div className='calendar__footer'>
-                { footer && <span className='calendar__text'>{ `${footer} ${has_range_selection ? duration_date : ''}` }</span>}
+                { footer && <span className='calendar__text'>{footer}</span>}
+                { has_range_selection && <span className='calendar__text'>{ `${duration_date}` }</span> }
                 { has_today_btn &&
                     <IconCalendarToday
                         className='calendar__icon'

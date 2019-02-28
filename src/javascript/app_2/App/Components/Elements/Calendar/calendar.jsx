@@ -151,8 +151,14 @@ class Calendar extends React.PureComponent {
         const { date_format, duration_date, footer, has_today_btn, has_range_selection,
             holidays, start_date, weekends } = this.props;
         const { calendar_date, calendar_view, selected_date  } = this.state;
-        const default_message = `${duration_date} ${duration_date === 1 ? localize('Day') : localize('Days')}`;
+        let default_message;
 
+        if (duration_date) {
+            default_message = `${duration_date} ${duration_date === 1 ? localize('Day') : localize('Days')}`;
+        } else {
+            default_message = localize('Minimum duration is 1 day');
+        }
+        
         return (
             <div className='calendar' data-value={selected_date}>
                 <CalendarHeader
@@ -183,7 +189,6 @@ class Calendar extends React.PureComponent {
                     has_today_btn={has_today_btn}
                     has_range_selection={has_range_selection}
                     onClick={this.setToday}
-                    selected_date={selected_date}
                 />
             </div>
         );
