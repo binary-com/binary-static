@@ -46,13 +46,17 @@ const Purchase = ({
                     <div className='btn-purchase__content'>
                         <div className='btn-purchase__trade-type'>
                             <IconTradeType type={type.toLowerCase()} className='btn-purchase__trade-type-icon' />
-                            <span className='btn-purchase__trade-type-text'>{localize('[_1]', trade_types[type])}</span>
+                            <span className='btn-purchase__trade-type-text'>{is_disabled ? '' : localize('[_1]', trade_types[type])}</span>
                         </div>
                     </div>
                     <div className='btn-purchase__info'>
-                        <div className='btn-purchase__return'>{is_disabled ? '---,-' : info.returns}</div>
+                        <div className='btn-purchase__return'>
+                            <span className='btn-purchase__return-text'>{is_disabled ? '' : info.returns}</span>
+                        </div>
                         <div className='btn-purchase__profit'>
-                            {is_disabled ? '--,--' : <Money amount={info.profit} currency={currency} className='btn-purchase__currency' />}
+                            <span className='btn-purchase__profit-text'>
+                                {is_disabled ? '' : <Money amount={info.profit} currency={currency} className='btn-purchase__currency' />}
+                            </span>
                         </div>
                     </div>
                 </React.Fragment>

@@ -403,20 +403,30 @@
     &:disabled {
         background-color: $COLOR_DARK_BLUE_8;
         color: $COLOR_DARK_BLUE_7;
+
+        .btn-purchase__effect-main, .btn-purchase__currency {
+            background-color: $COLOR_DARK_BLUE_8;
+        }
+        .btn-purchase__effect-detail {
+            border-color: transparent transparent transparent $COLOR_DARK_BLUE_8;
+        }
+        .btn-purchase__trade-type-icon {
+            width: 16px;
+            height: 16px;
+        }
+        .btn-purchase__trade-type-icon, .btn-purchase__trade-type-text, .btn-purchase__profit-text, .btn-purchase__return-text {
+            opacity: 0.32;
+            background-color: $COLOR_WHITE;
+        }
+        .btn-purchase__trade-type-text, .btn-purchase__profit-text, .btn-purchase__return-text {
+            width: 56px;
+            height: 8px;
+        }
+        .btn-purchase__profit-text, .btn-purchase__return-text {
+            margin: 4px 0;
+        }
     }
     &:hover {
         box-shadow: none;
-    }
-    &:disabled .btn-purchase__effect-main {
-        background: $COLOR_DARK_BLUE_8;
-    }
-    &:disabled .btn-purchase__effect-detail {
-        border-color: transparent transparent transparent $COLOR_DARK_BLUE_8;
-    }
-    &:disabled .btn-purchase__trade-type svg {
-        opacity: 0.16;
-    }
-    &:disabled .btn-purchase__currency {
-        color: $COLOR_DARK_BLUE_8;
     }
 }
