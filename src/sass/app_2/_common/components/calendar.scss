@@ -17,7 +17,7 @@
         align-items: center;
         height: 5em;
         border-radius: 5px;
-        padding: 0.8em;
+        padding: 1.6em;
     }
     &__header {
         justify-content: center;
@@ -115,7 +115,7 @@
         }
     }
     &__text {
-        @include typeface(--paragraph-left-normal-black);
+        @include typeface(--small-center-normal-black, unset);
 
         &--bold {
             font-weight: bold;
@@ -125,12 +125,33 @@
         @include typeface(--small-left-normal-black);
         align-self: center;
         justify-self: center;
-        transition: background 0.2s;
         position: relative;
+        cursor: pointer;
 
         &:hover {
             cursor: pointer;
-            background: $COLOR_LIGHT_BLACK_4;
+            background: $COLOR_LIGHT_BLACK_4_SOLID;
+        }
+        &:nth-child(7n) {
+            &:before {
+                padding: 0;
+                border-radius: 4px;
+            }
+        }
+        &:nth-child(7n + 1) {
+            &:before {
+                left: 0;
+                border-radius: 4px;
+            }
+            &:after {
+                content: none;
+            }
+        }
+        &:before {
+            cursor: pointer;
+        }
+        &:after {
+            cursor: pointer;
         }
         &--bold {
             @include typeface(--paragraph-left-bold-black);
@@ -145,8 +166,13 @@
         }
         &--today {
             font-weight: 400;
-            border: 1px solid $COLOR_LIGHT_BLACK_1;
-            border-radius: 5px;
+
+            &-duration {
+                background: $COLOR_LIGHT_GRAY_1;
+            }
+            &:hover {
+                background: $COLOR_LIGHT_GRAY_1;
+            }
         }
         &--active {
             color: $COLOR_WHITE;
@@ -154,6 +180,49 @@
             font-weight: bold;
 
             &:hover {
+                background: $COLOR_LIGHT_GRAY_1;
+            }
+            &-duration {
+                background: $COLOR_LIGHT_GRAY_1;
+
+                &:after {
+                    position: absolute;
+                    content: '';
+                    width: 100%;
+                    right: 50%;
+                    z-index: -1;
+                    height: 100%;
+                    padding-left: 10px;
+                    background: $COLOR_LIGHT_GRAY_1;
+                }
+            }
+        }
+        &--between {
+            background: $COLOR_LIGHT_GRAY_1;
+            font-weight: bold;
+            color: $COLOR_WHITE;
+
+            &-hover {
+                &:before {
+                    position: absolute;
+                    content: '';
+                    width: 100%;
+                    z-index: -2;
+                    height: 100%;
+                    padding-left: 32px;
+                    background: $COLOR_LIGHT_BLACK_4_SOLID;
+                }
+            }
+            &:hover {
+                background: $COLOR_LIGHT_GRAY_1;
+            }
+            &:before {
+                position: absolute;
+                content: '';
+                width: 100%;
+                z-index: -1;
+                height: 100%;
+                padding-left: 32px;
                 background: $COLOR_LIGHT_GRAY_1;
             }
         }

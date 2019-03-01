@@ -4,17 +4,18 @@ import Url          from '../../../../_common/url';
 import URLHelper    from '../url-helper';
 
 describe('URLHelper', () => {
-    const url = 'https://binary.com/en/home.html?currency=USD&market=forex';
+    const url = 'https://binary.com/en/home.html?duration=13&market=forex';
 
     describe('.getQueryParams', () => {
         const params = URLHelper.getQueryParams(url);
+        const string_params = new URLSearchParams(decodeURIComponent(params.toString().slice(0, -1)));
 
         it('should return query parameters', () => {
-            expect(params.get('currency')).to.eql('USD');
-            expect(params.get('market')).to.eql('forex');
+            expect(string_params.get('duration')).to.eql('13');
+            expect(string_params.get('market')).to.eql('forex');
         });
         it('should return an object', () => {
-            expect(typeof params).to.eql('object');
+            expect(typeof string_params).to.eql('object');
         });
     });
 
@@ -30,7 +31,7 @@ describe('URLHelper', () => {
         it('should return an object currency key with the value of params.currency ', () => {
             expect(URLHelper.setQueryParam(params, url).searchParams.get('currency')).to.eql(params.currency);
         });
-        it('should return an object market key witht he value of params.market', () => {
+        it('should return an object market key with the value of params.market', () => {
             expect(URLHelper.setQueryParam(params, url).searchParams.get('market')).to.eql(params.market);
         });
 
