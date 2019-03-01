@@ -563,13 +563,10 @@ const ViewPopup = (() => {
             }
             // don't show exit tick information if missing or manual sold
             if (contract.audit_details.contract_end && contract.status !== 'sold') {
-                const contract_ends = createAuditTable(localize('Contract Ends'));
-                parseAuditResponse(contract_ends.table, contract.audit_details.contract_end).then(() => {
+                // const contract_ends = createAuditTable(localize('Contract Ends'));
+                parseAuditResponse(contract_starts.table, contract.audit_details.contract_end).then(() => {
                     if (contract.audit_details.contract_end) {
-                        createAuditHeader(contract_ends.table);
                         appendAuditLink('trade_details_current_spot');
-                    } else {
-                        contract_ends.div.remove();
                     }
                     onAuditTableComplete(show_audit_table);
                 });
