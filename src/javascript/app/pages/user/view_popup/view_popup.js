@@ -563,7 +563,6 @@ const ViewPopup = (() => {
             }
             // don't show exit tick information if missing or manual sold
             if (contract.audit_details.contract_end && contract.status !== 'sold') {
-                // const contract_ends = createAuditTable(localize('Contract Ends'));
                 parseAuditResponse(contract_starts.table, contract.audit_details.contract_end).then(() => {
                     if (contract.audit_details.contract_end) {
                         appendAuditLink('trade_details_current_spot');
