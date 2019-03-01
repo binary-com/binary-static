@@ -23,13 +23,15 @@ class LastDigitPrediction extends React.Component {
         const digits_array = Object.keys(digits_info).sort().map(spot_time => digits_info[spot_time]);
         const latest_digit = digits_array.slice(-1)[0] || {};
 
+        // 'won' or 'lost' status exists after contract expiry
         const is_won  = is_ended && status === 'won';
         // need to explicitly have is_lost condition here
         // because negating is_won would always be true,
-        // but we only need is_lost condition only once we have the is_win result
+        // but we only need is_lost condition only once we have the 'won' or 'lost' status
         const is_lost = is_ended && status === 'lost';
 
         const position = this.state[latest_digit.digit];
+
         return (
             <div
                 ref={node => this.node = node}

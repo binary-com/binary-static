@@ -15,6 +15,7 @@ const DigitDisplay = ({
     const { digit, spot } = latest_digit;
     const is_latest       = value === digit;
     const is_selected     = value === barrier;
+
     return (
         <div
             className={classNames('digits__digit', {
