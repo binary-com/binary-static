@@ -41,14 +41,14 @@ const Dialog = ({
                         {hours.map((h, key) => {
                             to_compare_moment.hour(h);
                             const start_time_reset_minute = start_time_moment.clone().minute(0);
-                            const is_valid_time = to_compare_moment.isBetween(
+                            const is_hour_enabled = to_compare_moment.isBetween(
                                 start_time_reset_minute,
                                 end_time_moment);
-                            const is_valid_minute = to_compare_moment.isBetween(
-                                start_time_reset_minute,
+                            const is_minute_enabled = to_compare_moment.isBetween(
+                                start_time_moment,
                                 end_time_moment,
                                 'minute');
-                            const is_enabled = is_valid_time && is_valid_minute;
+                            const is_enabled = is_hour_enabled && is_minute_enabled;
                             return (
                                 <div
                                     className={classNames(`${preClass}__selector-list-item`,
