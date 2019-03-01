@@ -6,51 +6,46 @@ import Digit        from './digit.jsx';
 import DigitSpot    from './digit-spot.jsx';
 
 const DigitDisplay = ({
-    digit_value,
-    is_ended,
+    barrier,
+    is_lost,
+    is_won,
     latest_digit,
-    selected_digit,
+    value,
 }) => {
-    const { digit, is_win, spot } = latest_digit;
-
-    const is_latest_digit   = digit_value === digit;
-    const is_selected_digit = digit_value === selected_digit;
-    
-    const is_won = is_ended && digit_value === digit && is_win;
-    // need to explicitly have is_loss condition here
-    // because negating is_won would always be true,
-    // but we only need is_loss condition only once we have the is_win result
-    const is_loss = is_ended && digit_value === digit && !is_win;
+    const { digit, spot } = latest_digit;
+    const is_latest       = value === digit;
+    const is_selected     = value === barrier;
     return (
         <div
             className={classNames('digits__digit', {
-                'digits__digit--win' : is_won,
-                'digits__digit--loss': is_loss,
+                'digits__digit--win' : is_won && is_latest,
+                'digits__digit--loss': is_lost && is_latest,
             })}
         >
-            { is_latest_digit && spot &&
+            { is_latest && spot &&
                 <DigitSpot
                     current_spot={spot}
-                    is_loss={is_loss}
+                    is_lost={is_lost}
                     is_won={is_won}
                 />
             }
             <Digit
-                is_latest_digit={is_latest_digit}
-                is_selected_digit={is_selected_digit}
-                is_loss={is_loss}
+                is_latest={is_latest}
+                is_lost={is_lost}
+                is_selected={is_selected}
                 is_won={is_won}
-                value={digit_value}
+                value={value}
             />
         </div>
     );
 };
 
 DigitDisplay.propTypes = {
-    digit_value   : PropTypes.number,
-    is_ended      : PropTypes.bool,
-    latest_digit  : PropTypes.object,
-    selected_digit: PropTypes.number,
+    barrier     : PropTypes.number,
+    is_lost     : PropTypes.bool,
+    is_won      : PropTypes.bool,
+    latest_digit: PropTypes.object,
+    value       : PropTypes.number,
 };
 
 export default observer(DigitDisplay);

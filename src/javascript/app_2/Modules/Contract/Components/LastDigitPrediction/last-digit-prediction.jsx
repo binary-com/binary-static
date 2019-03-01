@@ -19,16 +19,15 @@ class LastDigitPrediction extends React.Component {
     }
 
     render() {
-        const { digits_info, is_ended } = this.props;
+        const { barrier, digits_info, is_ended, status } = this.props;
         const digits_array = Object.keys(digits_info).sort().map(spot_time => digits_info[spot_time]);
         const latest_digit = digits_array.slice(-1)[0] || {};
-        const { is_win } = latest_digit;
 
-        const is_won  = is_ended && is_win;
-        // need to explicitly have is_loss condition here
+        const is_won  = is_ended && status === 'won';
+        // need to explicitly have is_lost condition here
         // because negating is_won would always be true,
-        // but we only need is_loss condition only once we have the is_win result
-        const is_loss = is_ended && !is_win;
+        // but we only need is_lost condition only once we have the is_win result
+        const is_lost = is_ended && status === 'lost';
 
         const position = this.state[latest_digit.digit];
         return (
@@ -38,16 +37,17 @@ class LastDigitPrediction extends React.Component {
             >
                 { display_array.map((idx) => (
                     <DigitDisplay
-                        digit_value={idx}
-                        is_ended={is_ended}
+                        barrier={+barrier}
+                        is_lost={is_lost}
+                        is_won={is_won}
                         key={idx}
                         latest_digit={latest_digit}
-                        selected_digit={+this.props.contract_info.barrier}
+                        value={idx}
                     />
                 ))}
                 { latest_digit.digit >= 0 &&
                     <LastDigitPointer
-                        is_loss={is_loss}
+                        is_lost={is_lost}
                         is_won={is_won}
                         position={position}
                     />
@@ -62,8 +62,10 @@ class LastDigitPrediction extends React.Component {
 }
 
 LastDigitPrediction.propTypes = {
+    barrier    : PropTypes.string,
     digits_info: PropTypes.object,
     is_ended   : PropTypes.bool,
+    status     : PropTypes.string,
 };
 
 export default observer(LastDigitPrediction);

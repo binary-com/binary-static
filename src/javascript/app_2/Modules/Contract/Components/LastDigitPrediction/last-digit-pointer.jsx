@@ -4,7 +4,7 @@ import React             from 'react';
 import { IconPriceMove } from 'Assets/Trading/icon-price-move.jsx';
 
 const LastDigitPointer = ({
-    is_loss,
+    is_lost,
     is_won,
     position,
 }) => (
@@ -15,7 +15,7 @@ const LastDigitPointer = ({
         <IconPriceMove
             className={classNames('digits__icon', {
                 'digits__icon--win' : is_won,
-                'digits__icon--loss': is_loss,
+                'digits__icon--loss': is_lost,
             })}
             classNamePath='digits__icon-color'
             type='profit'
@@ -24,7 +24,7 @@ const LastDigitPointer = ({
 );
 
 LastDigitPointer.propTypes = {
-    is_loss : PropTypes.bool,
+    is_lost : PropTypes.bool,
     is_won  : PropTypes.bool,
     position: PropTypes.number,
 };

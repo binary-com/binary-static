@@ -9,15 +9,18 @@ const Digits = ({
     contract_info,
     digits_info,
 }) => {
-    const is_digit = isDigitContract(contract_info.contract_type);
+    const { barrier, contract_type, status } = contract_info;
+    const is_digit = isDigitContract(contract_type);
     const is_ended = isEnded(contract_info);
+
     return (
         <React.Fragment>
-            { contract_info.contract_type && is_digit &&
+            { contract_type && is_digit &&
                 <LastDigitPrediction
-                    contract_info={contract_info}
+                    barrier={barrier}
                     digits_info={digits_info}
                     is_ended={is_ended}
+                    status={status}
                 />
             }
         </React.Fragment>

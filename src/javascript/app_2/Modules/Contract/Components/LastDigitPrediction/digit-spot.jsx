@@ -4,7 +4,7 @@ import React        from 'react';
 
 const DigitSpot = ({
     current_spot,
-    is_loss,
+    is_lost,
     is_won,
 }) => (
     <div className='digits__digit-spot'>
@@ -12,7 +12,7 @@ const DigitSpot = ({
         <span
             className={classNames('digits__digit-spot-last-digit', {
                 'digits__digit-spot-last-digit--win' : is_won,
-                'digits__digit-spot-last-digit--loss': is_loss,
+                'digits__digit-spot-last-digit--loss': is_lost,
             })}
         >
             {current_spot.slice(-1)}
@@ -22,7 +22,7 @@ const DigitSpot = ({
 
 DigitSpot.propTypes = {
     current_spot: PropTypes.string,
-    is_loss     : PropTypes.bool,
+    is_lost     : PropTypes.bool,
     is_won      : PropTypes.bool,
 };
 
