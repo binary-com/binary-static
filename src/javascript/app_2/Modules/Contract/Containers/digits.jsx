@@ -17,7 +17,8 @@ const Digits = ({
         <React.Fragment>
             { contract_type && is_digit &&
                 <LastDigitPrediction
-                    barrier={barrier}
+                    barrier={+barrier}
+                    contract_type={contract_type}
                     digits_info={digits_info}
                     is_ended={is_ended}
                     status={status}
