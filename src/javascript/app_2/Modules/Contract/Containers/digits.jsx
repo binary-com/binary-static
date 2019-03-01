@@ -8,8 +8,9 @@ import { LastDigitPrediction } from '../Components/LastDigitPrediction';
 const Digits = ({
     contract_info,
     digits_info,
+    display_status,
 }) => {
-    const { barrier, contract_type, status } = contract_info;
+    const { barrier, contract_type } = contract_info;
     const is_digit = isDigitContract(contract_type);
     const is_ended = isEnded(contract_info);
 
@@ -21,7 +22,7 @@ const Digits = ({
                     contract_type={contract_type}
                     digits_info={digits_info}
                     is_ended={is_ended}
-                    status={status}
+                    status={display_status}
                 />
             }
         </React.Fragment>
@@ -29,13 +30,15 @@ const Digits = ({
 };
 
 Digits.propTypes = {
-    contract_info: PropTypes.object,
-    digits_info  : PropTypes.object,
+    contract_info : PropTypes.object,
+    digits_info   : PropTypes.object,
+    display_status: PropTypes.string,
 };
 
 export default connect(
     ({ modules }) => ({
-        contract_info: modules.contract.contract_info,
-        digits_info  : modules.contract.digits_info,
+        contract_info : modules.contract.contract_info,
+        digits_info   : modules.contract.digits_info,
+        display_status: modules.contract.display_status,
     })
 )(Digits);
