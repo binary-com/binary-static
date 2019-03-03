@@ -28,12 +28,11 @@ const AdvancedDuration = ({
     shared_input_props,
     start_date,
 }) => {
-    const moment_expiry      = toMoment(expiry_date || server_time);
     let is_24_hours_contract = false;
 
     if (expiry_type === 'endtime') {
         const has_intraday_duration_unit = hasIntradayDurationUnit(duration_units_list);
-        is_24_hours_contract = (!!start_date || moment_expiry.isSame(toMoment(server_time), 'day')) && has_intraday_duration_unit;
+        is_24_hours_contract = (!!start_date || toMoment(expiry_date || server_time).isSame(toMoment(server_time), 'day')) && has_intraday_duration_unit;
     }
 
     const endtime_container_class = classNames('endtime-container', {
@@ -131,7 +130,6 @@ AdvancedDuration.propTypes = {
     expiry_list        : PropTypes.array,
     expiry_type        : PropTypes.string,
     getDurationFromUnit: PropTypes.func,
-    is_nativepicker    : PropTypes.bool,
     number_input_props : PropTypes.object,
     onChange           : PropTypes.func,
     onChangeUiStore    : PropTypes.func,

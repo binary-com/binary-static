@@ -68,7 +68,7 @@ class DatePicker extends React.Component {
         this.setState({ is_clear_btn_visible: false });
     }
 
-    onSelectCalendar = (selected_date, is_datepicker_visible) => {
+    onSelectCalendar = (selected_date, is_datepicker_visible = true) => {
         let value = selected_date;
         if (!isDateValid(value)) { value = ''; }
 
@@ -266,8 +266,10 @@ class DatePicker extends React.Component {
                                 this.onChangeCalendarMonth.bind(this) : undefined}
                             holidays={this.state.holidays}
                             weekends={this.state.weekends}
+                            duration_date={this.state.value}
                             date_format={this.props.date_format}
                             has_today_btn={this.props.has_today_btn}
+                            has_range_selection={this.props.has_range_selection}
                             footer={this.props.footer}
                             max_date={this.props.max_date}
                             min_date={this.props.min_date}

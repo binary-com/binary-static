@@ -80,6 +80,7 @@ export default class TradeStore extends BaseStore {
     @observable start_time       = null;
     @observable sessions         = [];
 
+    @observable market_open_times = [];
     // End Date Time
     /**
      * An array that contains market closing time.

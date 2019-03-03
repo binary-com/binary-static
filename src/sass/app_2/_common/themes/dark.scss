@@ -615,11 +615,17 @@
             color: $COLOR_DARK_BLUE_7;
 
             &:hover {
-                background: $COLOR_DARK_BLUE_5;
+                background: $COLOR_DARK_BLUE_4;
             }
             &--today {
-                border: 1px solid $COLOR_DARK_BLUE_7;
                 color: $COLOR_WHITE;
+
+                &-duration {
+                    background: $COLOR_DARK_BLUE_5;
+                }
+                &:hover {
+                    background: $COLOR_DARK_BLUE_5 !important;
+                }
             }
             &--disabled, &--other {
                 color: $COLOR_DARK_BLUE_8;
@@ -635,6 +641,29 @@
 
                 &:hover {
                     background: $COLOR_DARK_BLUE_3;
+                }
+                &-duration {
+                    background: $COLOR_DARK_BLUE_5;
+
+                    &:after {
+                        background: $COLOR_DARK_BLUE_5;
+                    }
+                }
+            }
+            &--between {
+                color: $COLOR_WHITE;
+                background: $COLOR_DARK_BLUE_5;
+
+                &-hover {
+                    &:before {
+                        background: $COLOR_DARK_BLUE_4;
+                    }
+                }
+                &:hover {
+                    background: $COLOR_DARK_BLUE_5;
+                }
+                &:before {
+                    background: $COLOR_DARK_BLUE_5;
                 }
             }
         }
@@ -859,6 +888,10 @@
 
         &__label {
             color: $COLOR_WHITE;
+
+            &-text {
+                color: $COLOR_WHITE;
+            }
         }
         &__item {
             &-text, &-tooltip-symbols {
