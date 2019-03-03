@@ -308,22 +308,20 @@ export default class TradeStore extends BaseStore {
         return new_state;
     }
 
-    async processNewValuesAsync(obj_new_values = {}, obj_old_values = {}, is_changed_by_user = false) {
+    async processNewValuesAsync(obj_new_values = {}, is_changed_by_user = false, obj_old_values = {}) {
         // Sets the default value to Amount when Currency has changed from Fiat to Crypto and vice versa.
         // The source of default values is the website_status response.
         WS.forgetAll('proposal');
-
-        if (
+        if (is_changed_by_user &&
             /\bcurrency\b/.test(Object.keys(obj_new_values))
         ) {
-            const prev_currency = !isEmptyObject(obj_old_values) && obj_old_values.currency ?
-                obj_old_values.currency : this.currency;
+            const prev_currency = obj_old_values &&
+            !isEmptyObject(obj_old_values) &&
+            obj_old_values.currency ? obj_old_values.currency : this.currency;
             if (isCryptocurrency(obj_new_values.currency) !== isCryptocurrency(prev_currency)) {
                 obj_new_values.amount = is_changed_by_user && obj_new_values.amount ?
                     obj_new_values.amount : getMinPayout(obj_new_values.currency);
             }
-        }
-        if (is_changed_by_user) {
             this.currency = obj_new_values.currency;
         }
 
@@ -475,7 +473,7 @@ export default class TradeStore extends BaseStore {
 
             const contract_list = Object.keys(contract_type_list || {})
                 .reduce((key, list) => ([...key, ...contract_type_list[list].map(contract => contract.value)]), []);
-            
+
             const contract_duration_list = contract_list
                 .map(list => ({ [list]: getPropertyValue(ContractType.getFullContractTypes(), [list, 'config', 'durations', 'units_display', contract_start_type]) }));
 

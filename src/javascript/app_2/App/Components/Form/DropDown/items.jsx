@@ -1,7 +1,8 @@
-import classNames from 'classnames';
-import PropTypes  from 'prop-types';
-import React      from 'react';
-import Tooltip    from 'App/Components/Elements/tooltip.jsx';
+import classNames          from 'classnames';
+import PropTypes           from 'prop-types';
+import React               from 'react';
+import Tooltip             from 'App/Components/Elements/tooltip.jsx';
+import { getCurrencyName } from '_common/base/currency_base';
 
 const Items = ({
     handleSelect,
@@ -22,12 +23,12 @@ const Items = ({
                 onClick={handleSelect.bind(null, item)}
             >
                 {!!has_symbol && item.has_tooltip &&
-                <Tooltip alignment='top' className='list__item-tooltip' message={item.text}>
+                <Tooltip alignment='top' className='list__item-tooltip' message={getCurrencyName(item.value)}>
                     <i><span className={`symbols list__item-tooltip-symbols symbols--${(item.text || '').toLowerCase()}`} /></i>
                 </Tooltip>
                 }
                 {!!has_symbol && !item.has_tooltip &&
-                    <span className={`list__item-text symbols symbols--${(item.text || '').toLowerCase()}`} />
+                <span className={`list__item-text symbols symbols--${(item.text || '').toLowerCase()}`} />
                 }
                 {!has_symbol && <span className='list__item-text'>{item.text}</span>}
             </div>
