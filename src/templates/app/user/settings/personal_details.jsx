@@ -53,7 +53,7 @@ const PersonalDetails = () => (
                 <FormRow type='label'  label={it.L('Country of Residence')} is_bold id='country' row_id='row_lbl_country' />
                 <FormRow type='label'  label={it.L('Email address')} is_bold id='email' row_id='row_lbl_email' />
                 <FormRow type='label'  label={it.L('Account Opening Reason')} id='lbl_account_opening_reason' row_id='row_lbl_account_opening_reason' row_class='invisible' />
-                <Phone row_class='invisible RealAcc' />
+                <Phone row_class='invisible RealAcc' row_id='row_phone' />
                 <AccountOpeningReason row_id='row_account_opening_reason' row_class='invisible' />
             </Fieldset>
 
