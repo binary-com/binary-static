@@ -24,7 +24,6 @@
         appearance: none;
         box-sizing: border-box;
         background: $COLOR_WHITE;
-        border-radius: 0 $BORDER_RADIUS $BORDER_RADIUS 0;
     }
     &__error {
         justify-content: center;
@@ -42,24 +41,14 @@
         }
     }
     &__currency {
-        color: rgba(0, 0, 0, 0.8);
         position: absolute;
-        float: left;
-        font-size: 10px;
-        height: 32px;
-        left: 32px;
-        align-items: center;
-        justify-content: center;
-        width: 20px;
-        display: flex;
-        background: transparent;
-        border-color: transparent;
-        z-index: 2;
+        display: block;
+        text-align: center;
+        z-index: 1;
+        color: $COLOR_LIGHT_BLACK_1;
+        width: 3.2em;
+        line-height: 3.2em;
 
-        &--symbol {
-            font-size: 1.4em;
-            line-height: 1.5;
-        }
         &:before {
             @include typeface(--paragraph-center-normal-black);
             color: inherit;
@@ -144,33 +133,6 @@
         }
         &--down {
             right: 39%;
-        }
-    }
-    &__currency-options {
-        border-radius: $BORDER_RADIUS 0 0 $BORDER_RADIUS;
-        margin-right: 1px;
-        width: calc(25% - 1px);
-        display: inline-block;
-
-        &--display {
-            font-size: 1.4em;
-            line-height: 1.5;
-            height: 32px;
-            border-radius: $BORDER_RADIUS 0 0 $BORDER_RADIUS !important;
-            margin-top: 0;
-        }
-    }
-    &__amount {
-        margin-left: 1px;
-        display: inline-block;
-        width: 100%;
-
-        .trade-container__input {
-            padding: 0 30px;
-        }
-        &--has-currency-options {
-            width: calc(75% - 1px);
-            border-radius: 0 $BORDER_RADIUS $BORDER_RADIUS 0;
         }
     }
 }
@@ -301,7 +263,7 @@
     }
     &__loading {
         background: rgba(255, 255, 255, 0.6);
-        border-radius: $BORDER_RADIUS;
+        border-radius: 4px;
         width: calc(100% - 6px);
         height: calc(100% - 2px);
     }

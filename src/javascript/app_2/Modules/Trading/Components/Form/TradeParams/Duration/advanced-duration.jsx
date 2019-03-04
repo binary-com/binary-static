@@ -4,7 +4,7 @@ import PropTypes                      from 'prop-types';
 import React, { Fragment }            from 'react';
 import Dropdown                       from 'App/Components/Form/DropDown';
 import ButtonToggleMenu               from 'App/Components/Form/button-toggle-menu.jsx';
-import InputField                     from 'App/Components/Form/InputField';
+import InputField                     from 'App/Components/Form/input-field.jsx';
 import RangeSlider                    from 'App/Components/Form/RangeSlider';
 import { hasIntradayDurationUnit }    from 'Stores/Modules/Trading/Helpers/duration';
 import { toMoment }                   from 'Utils/Date';
