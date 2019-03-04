@@ -2,14 +2,13 @@ import {
     action,
     computed,
     extendObservable,
-    observable }                 from 'mobx';
-import { isEmptyObject }         from '_common/utility';
-import { localize }              from '_common/localize';
-import { WS }                    from 'Services';
-import { createChartBarrier }    from './Helpers/chart-barriers';
-import {
-    createChartMarkers,
-    createChartTickMarkers }          from './Helpers/chart-markers';
+    observable }                  from 'mobx';
+import { isEmptyObject }          from '_common/utility';
+import { localize }               from '_common/localize';
+import { WS }                     from 'Services';
+import { createChartBarrier }     from './Helpers/chart-barriers';
+import { createChartMarkers }     from './Helpers/chart-markers';
+import { createChartTickMarkers, cleanUpTickMarkers } from './Helpers/chart-tick-markers';
 import {
     getDetailsExpiry,
     getDetailsInfo }             from './Helpers/details';
@@ -86,6 +85,7 @@ export default class ContractStore extends BaseStore {
     onUnmount() {
         this.disposeSwitchAccount();
         this.forgetProposalOpenContract();
+        cleanUpTickMarkers(this.contract_info);
 
         this.contract_id       = null;
         this.contract_info     = {};
@@ -121,10 +121,11 @@ export default class ContractStore extends BaseStore {
         }
 
         createChartBarrier(this.smart_chart, this.contract_info);
-        createChartMarkers(this.smart_chart, this.contract_info, this);
 
         if (this.contract_info.tick_count && !isDigitContract(this.contract_info.contract_type)) {
             createChartTickMarkers(this.smart_chart, this.contract_info);
+        } else {
+            createChartMarkers(this.smart_chart, this.contract_info, this);
         }
 
         this.handleDigits();
