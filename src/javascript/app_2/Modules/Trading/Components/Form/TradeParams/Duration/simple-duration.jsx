@@ -2,7 +2,7 @@ import { PropTypes as MobxPropTypes } from 'mobx-react';
 import PropTypes                      from 'prop-types';
 import React, { Fragment }            from 'react';
 import ButtonToggleMenu               from 'App/Components/Form/button-toggle-menu.jsx';
-import InputField                     from 'App/Components/Form/InputField';
+import InputField                     from 'App/Components/Form/input-field.jsx';
 import RangeSlider                    from 'App/Components/Form/RangeSlider';
 import TradingDatePicker              from '../../DatePicker';
 

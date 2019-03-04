@@ -904,7 +904,7 @@
             }
         }
         &__item {
-            &-text, &-tooltip-symbols {
+            &-text {
                 color: $COLOR_DARK_BLUE_7;
             }
             &--selected .list__item-text {

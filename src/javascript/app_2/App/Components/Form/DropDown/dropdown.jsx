@@ -151,22 +151,16 @@ class Dropdown extends React.Component {
                 })}
             >
                 <div
-                    className={classNames('dropdown__display', this.props.classNameDisplay, {
-                        'dropdown__display--clicked'   : this.state.is_list_visible,
-                        'dropdown__display--has-symbol': this.props.has_symbol,
+                    className={classNames('dropdown__display', {
+                        'dropdown__display--clicked': this.state.is_list_visible,
                     })}
                     tabIndex={is_single_option ? '-1' : '0'}
                     onClick={this.handleVisibility}
                     onKeyDown={this.onKeyPressed}
                 >
-                    {this.props.has_symbol &&
-                    <span name={this.props.name} value={this.props.value} className={`symbols dropdown__display-symbol symbols--${(this.props.value || '').toLowerCase()}`} />
-                    }
-                    {!this.props.has_symbol &&
                     <span name={this.props.name} value={this.props.value} className='dropdown__display-text'>
                         {getDisplayText(this.props.list, this.props.value)}
                     </span>
-                    }
                 </div>
                 {
                     !is_single_option && <IconArrow className={classNames('dropdown__select-arrow', {
@@ -205,21 +199,21 @@ class Dropdown extends React.Component {
                             >
                                 {isArrayLike(this.props.list) ?
                                     <Items
-                                        handleSelect={this.handleSelect}
-                                        has_symbol={this.props.has_symbol}
+                                        highlightedIdx={this.state.curr_index}
                                         items={this.props.list}
                                         name={this.props.name}
                                         value={this.props.value}
+                                        handleSelect={this.handleSelect}
                                     /> :
                                     Object.keys(this.props.list).map(key => (
                                         <React.Fragment key={key}>
                                             <div className='list__label'>{key}</div>
                                             <Items
-                                                handleSelect={this.handleSelect}
-                                                has_symbol={this.props.has_symbol}
+                                                highlightedIdx={this.state.curr_index}
                                                 items={this.props.list[key]}
                                                 name={this.props.name}
                                                 value={this.props.value}
+                                                handleSelect={this.handleSelect}
                                             />
                                         </React.Fragment>
                                     ))
@@ -235,8 +229,6 @@ class Dropdown extends React.Component {
 
 Dropdown.propTypes = {
     className        : PropTypes.string,
-    classNameDisplay : PropTypes.string,
-    has_symbol       : PropTypes.bool,
     is_alignment_left: PropTypes.bool,
     is_nativepicker  : PropTypes.bool,
     list             : PropTypes.oneOfType([

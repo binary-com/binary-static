@@ -38,17 +38,15 @@
         justify-content: center;
         align-items: center;
 
-        &:hover {
-            cursor: pointer;
-            background: $COLOR_LIGHT_BLACK_4;
-        }
         &--increment {
             right: 2px; // fixed position
-            height: 28px;
         }
         &--decrement {
             left: 2px; // fixed position
-            height: 28px;
+        }
+        &:hover {
+            cursor: pointer;
+            background: $COLOR_LIGHT_BLACK_4;
         }
         &:disabled:hover {
             cursor: not-allowed;
@@ -131,9 +129,5 @@
         border-radius: $BORDER_RADIUS;
         border-color: $COLOR_LIGHT_GRAY_1;
         box-shadow: 0 0 0 2px rgba(127, 131, 151, 0.3);
-    }
-    &--has-inline-prefix {
-        padding-left: 50px !important;
-        border-radius: $BORDER_RADIUS !important;
     }
 }

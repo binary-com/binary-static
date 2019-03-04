@@ -6,8 +6,7 @@ export const buildCurrenciesList = (payout_currencies) => {
     const crypto = [];
 
     payout_currencies.forEach((cur) => {
-        const isCrypto = isCryptocurrency(cur);
-        (isCrypto ? crypto : fiat).push({ text: cur, value: cur, has_tooltip: isCrypto });
+        (isCryptocurrency(cur) ? crypto : fiat).push({ text: cur, value: cur });
     });
 
     return {

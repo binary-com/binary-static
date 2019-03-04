@@ -55,10 +55,9 @@ export default class TradeStore extends BaseStore {
     @observable trade_types          = {};
 
     // Amount
-    @observable amount     = 10;
-    @observable basis      = '';
-    @observable basis_list = [];
-    @observable currency   = '';
+    @observable amount          = 10;
+    @observable basis           = '';
+    @observable basis_list      = [];
 
     // Duration
     @observable duration            = 5;
@@ -160,7 +159,6 @@ export default class TradeStore extends BaseStore {
     async prepareTradeStore() {
         let query_string_values = this.updateQueryString();
         this.smart_chart        = this.root_store.modules.smart_chart;
-        this.currency           = this.root_store.client.currency;
         const active_symbols    = await WS.activeSymbols();
         if (!active_symbols.active_symbols || active_symbols.active_symbols.length === 0) {
             this.root_store.common.showError(localize('Trading is unavailable at this time.'));
@@ -309,21 +307,16 @@ export default class TradeStore extends BaseStore {
         return new_state;
     }
 
-    async processNewValuesAsync(obj_new_values = {}, is_changed_by_user = false, obj_old_values = {}) {
+    async processNewValuesAsync(obj_new_values = {}, is_changed_by_user = false) {
         // Sets the default value to Amount when Currency has changed from Fiat to Crypto and vice versa.
         // The source of default values is the website_status response.
         WS.forgetAll('proposal');
+
         if (is_changed_by_user &&
-            /\bcurrency\b/.test(Object.keys(obj_new_values))
+            /\bcurrency\b/.test(Object.keys(obj_new_values)) &&
+            isCryptocurrency(obj_new_values.currency) !== isCryptocurrency(this.currency)
         ) {
-            const prev_currency = obj_old_values &&
-            !isEmptyObject(obj_old_values) &&
-            obj_old_values.currency ? obj_old_values.currency : this.currency;
-            if (isCryptocurrency(obj_new_values.currency) !== isCryptocurrency(prev_currency)) {
-                obj_new_values.amount = is_changed_by_user && obj_new_values.amount ?
-                    obj_new_values.amount : getMinPayout(obj_new_values.currency);
-            }
-            this.currency = obj_new_values.currency;
+            obj_new_values.amount = obj_new_values.amount || getMinPayout(obj_new_values.currency);
         }
 
         const new_state = this.updateStore(cloneObject(obj_new_values));
@@ -474,7 +467,7 @@ export default class TradeStore extends BaseStore {
 
             const contract_list = Object.keys(contract_type_list || {})
                 .reduce((key, list) => ([...key, ...contract_type_list[list].map(contract => contract.value)]), []);
-
+            
             const contract_duration_list = contract_list
                 .map(list => ({ [list]: getPropertyValue(ContractType.getFullContractTypes(), [list, 'config', 'durations', 'units_display', contract_start_type]) }));
 
@@ -501,10 +494,6 @@ export default class TradeStore extends BaseStore {
     @action.bound
     accountSwitcherListener() {
         return new Promise(async (resolve) => {
-            await this.processNewValuesAsync(
-                { currency: this.root_store.client.currency },
-                { currency: this.currency }
-            );
             await this.refresh();
             await this.prepareTradeStore();
             return resolve(this.debouncedProposal());

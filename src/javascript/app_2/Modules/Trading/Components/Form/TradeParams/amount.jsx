@@ -7,10 +7,9 @@ import React                     from 'react';
 import {
     addComma,
     getDecimalPlaces }           from '_common/base/currency_base';
-import ButtonToggleMenu          from 'App/Components/Form/button-toggle-menu.jsx';
 import Dropdown                  from 'App/Components/Form/DropDown';
 import Fieldset                  from 'App/Components/Form/fieldset.jsx';
-import InputField                from 'App/Components/Form/InputField';
+import InputField                from 'App/Components/Form/input-field.jsx';
 import AllowEquals               from './allow-equals.jsx';
 
 const Amount = ({
@@ -42,44 +41,38 @@ const Amount = ({
     return (
         <Fieldset className='trade-container__fieldset'>
             <div className={amount_container_class}>
-                <ButtonToggleMenu
-                    buttons_arr={basis_list}
-                    className='dropdown--no-margin'
+                <Dropdown
+                    is_alignment_left
+                    is_nativepicker={is_nativepicker}
+                    list={basis_list}
                     name='basis'
-                    onChange={onChange}
                     value={basis}
+                    onChange={onChange}
+                    className='dropdown--no-margin'
                 />
                 {!is_single_currency &&
-                <Dropdown
-                    className={classNames('no-margin', { 'trade-container__currency-options': !is_single_currency })}
-                    classNameDisplay='trade-container__currency-options--display'
-                    has_symbol
-                    is_alignment_left
-                    is_nativepicker={false}
-                    list={currencies_list}
-                    name='currency'
-                    value={currency}
-                    onChange={onChange}
-                />
+                    <Dropdown
+                        is_alignment_left
+                        is_nativepicker={is_nativepicker}
+                        list={currencies_list}
+                        name='currency'
+                        value={currency}
+                        onChange={onChange}
+                    />
                 }
                 <InputField
-                    className={classNames('trade-container__amount', { 'trade-container__amount--has-currency-options': !is_single_currency })}
-                    classNameInlinePrefix='trade-container__currency'
                     classNameInput='trade-container__input'
-                    currency={currency}
+                    classNamePrefix='trade-container__currency'
                     error_messages={validation_errors.amount}
                     fractional_digits={getDecimalPlaces(currency)}
-                    id='amount'
-                    inline_prefix={is_single_currency ? currency : null}
                     is_autocomplete_disabled
                     is_float
-                    is_incrementable
                     is_nativepicker={is_nativepicker}
-                    is_negative_disabled
                     max_length={10}
                     name='amount'
                     onChange={onChange}
-                    type='tel'
+                    prefix={is_single_currency ? currency : null}
+                    type='number'
                     value={amount}
                 />
             </div>

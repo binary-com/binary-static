@@ -15,32 +15,26 @@ describe('buildCurrenciesList', () => {
     it('It Returns the desired currencies', () => {
         expect(buildCurrenciesList(payout_currencies)).to.eql({
             Fiat: [{
-                "has_tooltip": false,
                 "text": "AUD",
                 "value": "AUD"
             },
             {
-                "has_tooltip": false,
                 "text": "EUR",
                 "value": "EUR"
             },
             {
-                "has_tooltip": false,
                 "text": "USD",
                 "value": "USD"
             }],
             Crypto: [{
-                "has_tooltip": true,
                 "text": "BTC",
                 "value": "BTC"
             },
             {
-                "has_tooltip": true,
                 "text": "ETH",
                 "value": "ETH"
             },
             {
-                "has_tooltip": true,
                 "text": "LTC",
                 "value": "LTC"
             }],
