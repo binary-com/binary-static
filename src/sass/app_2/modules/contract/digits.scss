@@ -23,10 +23,11 @@
 
             &--selected {
                 background-color: $COLOR_WHITE;
-                border: 2px solid $COLOR_LIGHT_GRAY_2;
+                border: 2px solid $COLOR_LIGHT_GRAY_1;
             }
             &--latest {
-                background-color: $COLOR_LIGHT_GRAY_2;
+                color: $COLOR_WHITE;
+                background-color: $COLOR_LIGHT_GRAY_1;
                 transform: translateY(-10px);
                 transition: transform 0.2s ease-out, background-color 0.1s linear 0.2s;
             }
@@ -34,7 +35,11 @@
                 transition: none;
                 background-color: $COLOR_GREEN_1;
                 color: $COLOR_WHITE;
-                animation: blinking 500ms step-end 4 0.5s;
+            }
+            &--blink {
+                background-color: $COLOR_GREEN_1;
+                color: $COLOR_WHITE;
+                animation: blinking-light 500ms step-end 4 0.5s;
             }
             &--loss {
                 transition: none;
@@ -43,8 +48,6 @@
             }
         }
         &-spot {
-            @include typeface(--paragraph-center-bold-black);
-            color: $COLOR_LIGHT_GRAY_2;
             position: absolute;
             top: -35px;
             left: -10px;
@@ -53,7 +56,12 @@
             opacity: 1;
             transition: opacity 0.3s;
 
-            &-last-digit {
+            &-value {
+                @include typeface(--paragraph-center-bold-black);
+                color: $COLOR_LIGHT_BLACK_2;
+            }
+            &-last {
+                @include typeface(--paragraph-center-bold-black);
                 color: $COLOR_LIGHT_BLACK_1;
 
                 &--win {
@@ -156,7 +164,13 @@
     }
 }
 
-@keyframes blinking {
+@keyframes blinking-light {
+    50% {
+        background-color: $COLOR_LIGHT_BLACK_4_SOLID;
+    }
+}
+
+@keyframes blinking-dark {
     50% {
         background-color: $COLOR_DARK_BLUE_4;
     }

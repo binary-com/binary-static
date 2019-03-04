@@ -8,11 +8,13 @@ const DigitSpot = ({
     is_won,
 }) => (
     <div className='digits__digit-spot'>
-        {current_spot.slice(0, -1)}
+        <span className='digits__digit-spot-value'>
+            {current_spot.slice(0, -1)}
+        </span>
         <span
-            className={classNames('digits__digit-spot-last-digit', {
-                'digits__digit-spot-last-digit--win' : is_won,
-                'digits__digit-spot-last-digit--loss': is_lost,
+            className={classNames('digits__digit-spot-last', {
+                'digits__digit-spot-last--win' : is_won,
+                'digits__digit-spot-last--loss': is_lost,
             })}
         >
             {current_spot.slice(-1)}

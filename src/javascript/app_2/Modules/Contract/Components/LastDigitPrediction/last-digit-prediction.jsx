@@ -19,7 +19,7 @@ class LastDigitPrediction extends React.Component {
     }
 
     render() {
-        const { barrier, contract_type, digits_info, is_ended, status } = this.props;
+        const { barrier, contract_type, digits_info, is_ended, is_trade_page, status } = this.props;
         const digits_array = Object.keys(digits_info).sort().map(spot_time => digits_info[spot_time]);
         const latest_digit = digits_array.slice(-1)[0] || {};
 
@@ -50,6 +50,7 @@ class LastDigitPrediction extends React.Component {
                     <DigitDisplay
                         barrier={getBarrier(idx)}
                         is_lost={is_lost}
+                        is_trade_page={is_trade_page}
                         is_won={is_won}
                         key={idx}
                         latest_digit={latest_digit}

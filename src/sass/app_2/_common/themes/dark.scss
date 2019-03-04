@@ -988,6 +988,9 @@
                 background-color: $COLOR_DARK_BLUE_5;
                 color: $COLOR_WHITE;
 
+                &--blink {
+                    animation-name: blinking-dark;
+                }
                 &--selected {
                     background-color: $COLOR_DARK_BLUE_2;
                     border: 2px solid $COLOR_WHITE;
@@ -1003,9 +1006,10 @@
                 }
             }
             &-spot {
-                color: $COLOR_DARK_BLUE_7;
-
-                &-last-digit {
+                &-value {
+                    color: $COLOR_DARK_BLUE_7;
+                }
+                &-last {
                     color: $COLOR_WHITE;
 
                     &--win {

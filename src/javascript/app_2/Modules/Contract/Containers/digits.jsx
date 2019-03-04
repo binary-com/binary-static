@@ -9,6 +9,7 @@ const Digits = ({
     contract_info,
     digits_info,
     display_status,
+    is_trade_page,
 }) => {
     const { barrier, contract_type } = contract_info;
     const is_digit = isDigitContract(contract_type);
@@ -22,6 +23,7 @@ const Digits = ({
                     contract_type={contract_type}
                     digits_info={digits_info}
                     is_ended={is_ended}
+                    is_trade_page={is_trade_page}
                     status={display_status}
                 />
             }

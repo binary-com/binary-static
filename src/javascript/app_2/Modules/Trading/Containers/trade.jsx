@@ -34,7 +34,7 @@ class Trade extends React.Component {
                         <React.Suspense fallback={<UILoader />} >
                             <SmartChart
                                 chart_id={this.props.chart_id}
-                                Digits={<Digits />}
+                                Digits={<Digits is_trade_page />}
                                 InfoBox={<InfoBox is_trade_page />}
                                 onSymbolChange={this.props.onSymbolChange}
                                 symbol={this.props.symbol}

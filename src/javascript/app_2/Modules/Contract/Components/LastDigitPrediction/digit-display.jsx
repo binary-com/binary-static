@@ -8,6 +8,7 @@ import DigitSpot    from './digit-spot.jsx';
 const DigitDisplay = ({
     barrier,
     is_lost,
+    is_trade_page,
     is_won,
     latest_digit,
     value,
@@ -33,6 +34,7 @@ const DigitDisplay = ({
             <Digit
                 is_latest={is_latest}
                 is_lost={is_lost}
+                is_trade_page={is_trade_page}
                 is_selected={is_selected}
                 is_won={is_won}
                 value={value}
@@ -42,11 +44,12 @@ const DigitDisplay = ({
 };
 
 DigitDisplay.propTypes = {
-    barrier     : PropTypes.number,
-    is_lost     : PropTypes.bool,
-    is_won      : PropTypes.bool,
-    latest_digit: PropTypes.object,
-    value       : PropTypes.number,
+    barrier      : PropTypes.number,
+    is_lost      : PropTypes.bool,
+    is_trade_page: PropTypes.bool,
+    is_won       : PropTypes.bool,
+    latest_digit : PropTypes.object,
+    value        : PropTypes.number,
 };
 
 export default observer(DigitDisplay);
