@@ -49,7 +49,7 @@ class Drawer extends React.Component {
         const drawer_bg_class = classNames('drawer__bg', {
             'drawer--show': is_this_drawer_on,
         });
-        const drawer_class = classNames('drawer', `drawer--${alignment}`);
+        const drawer_class = classNames('drawer', { [`drawer--${alignment}`]: alignment });
 
         return (
             <CSSTransition
