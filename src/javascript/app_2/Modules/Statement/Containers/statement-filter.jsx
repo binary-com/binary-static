@@ -12,9 +12,9 @@ const Filter = ({
     today,
     use_native_pickers,
 }) => (
-    <div className='statement-filter'>
-        <div className='statement-filter__content'>
-            <span className='statement-filter__label'>{localize('Filter by date:')}</span>
+    <div className='statement__filter'>
+        <div className='statement__filter-content'>
+            <span className='statement__filter-label'>{localize('Filter by date:')}</span>
             <DatePicker
                 name='date_from'
                 placeholder={localize('Start date')}
@@ -24,7 +24,7 @@ const Filter = ({
                 value={date_from}
                 is_nativepicker={use_native_pickers}
             />
-            <span className='statement-filter__dash'>&mdash;</span>
+            <span className='statement__filter-dash'>&mdash;</span>
             <DatePicker
                 name='date_to'
                 placeholder={localize('End date')}
