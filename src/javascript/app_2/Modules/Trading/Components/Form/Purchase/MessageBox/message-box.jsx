@@ -26,9 +26,9 @@ const MessageBox = ({ purchase_info, onClick }) => {
     }
 
     return (
-        <div className='purchase-container__error'>
-            <div className='purchase-container__error-close-btn' onClick={onClick}>
-                <IconClose className='purchase-container__error-close-btn-ic' />
+        <div className='message-box'>
+            <div className='message-box__close-btn' onClick={onClick}>
+                <IconClose className='ic-close' />
             </div>
             {ErrorComponent}
         </div>

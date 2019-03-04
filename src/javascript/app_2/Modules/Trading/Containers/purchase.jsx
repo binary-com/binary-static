@@ -1,6 +1,7 @@
 import PropTypes         from 'prop-types';
 import React             from 'react';
 import { localize }      from '_common/localize';
+import { isEmptyObject } from '_common/utility';
 import Money             from 'App/Components/Elements/money.jsx';
 import { PopConfirm }    from 'App/Components/Elements/PopConfirm';
 import UILoader          from 'App/Components/Elements/ui-loader.jsx';
@@ -9,6 +10,7 @@ import Fieldset          from 'App/Components/Form/fieldset.jsx';
 import { IconTradeType } from 'Assets/Trading/Types';
 import { connect }       from 'Stores/connect';
 import ContractInfo      from '../Components/Form/Purchase/contract-info.jsx';
+import MessageBox        from '../Components/Form/Purchase/MessageBox';
 import PurchaseLock      from '../Components/Form/Purchase/PurchaseLock';
 
 const Purchase = ({
@@ -21,13 +23,16 @@ const Purchase = ({
     is_trade_enabled,
     onClickPurchase,
     onHoverPurchase,
+    resetPurchase,
     togglePurchaseLock,
+    purchase_info,
     proposal_info,
     trade_types,
 }) => (
     Object.keys(trade_types).map((type, idx) => {
         const info        = proposal_info[type] || {};
         const is_disabled = !is_purchase_enabled || !is_trade_enabled || !info.id || !is_client_allowed_to_visit;
+        const is_purchase_error = (!isEmptyObject(purchase_info) && purchase_info.echo_req.buy === info.id);
 
         const purchase_button = (
             <Button
@@ -63,6 +68,13 @@ const Purchase = ({
                 onMouseEnter={() => { onHoverPurchase(true, type); }}
                 onMouseLeave={() => { onHoverPurchase(false); }}
             >
+                {is_purchase_error &&
+                <MessageBox
+                    purchase_info={purchase_info}
+                    onClick={resetPurchase}
+                    currency={currency}
+                />
+                }
                 {(is_purchase_locked && idx === 0) &&
                 <PurchaseLock onClick={togglePurchaseLock} />
                 }

@@ -61,7 +61,7 @@
         }
     }
     .purchase-container {
-        &__error {
+        .message-box {
             background: $COLOR_DARK_BLUE_3;
             color: $COLOR_DARK_BLUE_7;
 
@@ -73,14 +73,14 @@
                     font-weight: 500;
                 }
             }
-            &-result {
+            &__result {
                 color: $COLOR_DARK_BLUE_7;
 
                 span.label {
                     color: $COLOR_DARK_BLUE_7;
                 }
             }
-            &-login {
+            &__login {
                 color: $COLOR_WHITE;
             }
         }
