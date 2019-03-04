@@ -483,7 +483,7 @@ const ViewPopup = (() => {
     const parseAuditResponse = (table, array_audit_data) => (
         new Promise((resolve) => {
             const primary_classes   = ['secondary-bg-color', 'content-inverse-color'];
-            const secondary_classes = ['fill-bg-color', 'secondary-time'];
+            const secondary_classes = ['fill-bg-color'];
             array_audit_data.forEach((audit_data) => {
                 let color;
                 if (audit_data.flag === 'highlight_tick') {
@@ -491,6 +491,7 @@ const ViewPopup = (() => {
                 } else if (audit_data.flag === 'highlight_time') {
                     color = secondary_classes;
                 }
+
                 createAuditRow(table, audit_data.epoch, audit_data.tick, audit_data.name, color);
             });
             resolve();
@@ -500,7 +501,7 @@ const ViewPopup = (() => {
     const createAuditTable = (title) => {
         const div      = Utility.createElement('div', { class: 'audit-table' });
         const fieldset = Utility.createElement('fieldset', { class: 'align-start' });
-        const table    = Utility.createElement('table', { class: 'gr-10 gr-centered gr-12-p gr-12-m' });
+        const table    = Utility.createElement('table', { class: 'gr-12 gr-centered gr-12-p gr-12-m' });
         fieldset.appendChild(Utility.createElement('legend', { text: title }));
         fieldset.appendChild(table);
         div.appendChild(fieldset);
@@ -519,9 +520,9 @@ const ViewPopup = (() => {
     const createAuditHeader = (table) => {
         const tr = Utility.createElement('tr', { class: 'gr-row' });
 
-        tr.appendChild(Utility.createElement('td', { class: 'gr-3' }));
-        tr.appendChild(Utility.createElement('td', { class: 'gr-4 no-margin secondary-color', text: localize('Spot') }));
-        tr.appendChild(Utility.createElement('td', { class: 'gr-5 no-margin secondary-color', text: localize('Spot Time (GMT)') }));
+        tr.appendChild(Utility.createElement('td', { class: 'gr-4' }));
+        tr.appendChild(Utility.createElement('td', { class: 'gr-3 no-margin secondary-color', text: localize('Spot') }));
+        tr.appendChild(Utility.createElement('td', { class: 'gr-4 no-margin secondary-color', text: localize('Spot Time (GMT)') }));
 
         table.insertBefore(tr, table.childNodes[0]);
     };
@@ -534,9 +535,9 @@ const ViewPopup = (() => {
         }
 
         const tr        = Utility.createElement('tr', { class: 'gr-row' });
-        const td_remark = Utility.createElement('td', { class: 'gr-3 remark', text: remark || '' });
-        const td_tick   = Utility.createElement('td', { class: 'gr-4', text: (tick && !isNaN(tick) ? addComma(tick) : (tick || '')) });
-        const td_date   = Utility.createElement('td', { class: 'gr-5 audit-dates', 'data-value': date, 'data-balloon-pos': 'down', text: (date && !isNaN(date) ? moment.unix(date).utc().format('YYYY-MM-DD HH:mm:ss') : (date || '')) });
+        const td_remark = Utility.createElement('td', { class: 'gr-4 remark', text: remark || '' });
+        const td_tick   = Utility.createElement('td', { class: 'gr-3 spot-value', text: (tick && !isNaN(tick) ? addComma(tick) : (tick || '')) });
+        const td_date   = Utility.createElement('td', { class: 'gr-4 audit-dates', 'data-value': date, 'data-balloon-pos': 'down', text: (date && !isNaN(date) ? moment.unix(date).utc().format('YYYY-MM-DD HH:mm:ss') : (date || '')) });
 
         tr.appendChild(td_remark);
         tr.appendChild(td_tick);
