@@ -152,7 +152,12 @@ export default class UIStore extends BaseStore {
     }
 
     @action.bound
-    togglePositionsDrawer() { // show and hide Positions Drawer
+    openPositionsDrawer() { // show and hide Positions Drawer
+        this.is_positions_drawer_on = true;
+    }
+
+    @action.bound
+    togglePositionsDrawer() { // toggle Positions Drawer
         this.is_positions_drawer_on = !this.is_positions_drawer_on;
     }
 

@@ -253,7 +253,10 @@ export default class TradeStore extends BaseStore {
                     };
                     // toggle smartcharts to contract mode
                     const contract_id = getPropertyValue(response, ['buy', 'contract_id']);
-                    if (contract_id) this.root_store.modules.contract.onMount(contract_id);
+                    if (contract_id) {
+                        this.root_store.modules.contract.onMount(contract_id);
+                        this.root_store.ui.openPositionsDrawer();
+                    }
                     GTM.pushPurchaseData(contract_data, this.root_store);
                 }
                 WS.forgetAll('proposal');

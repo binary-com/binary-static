@@ -3,13 +3,11 @@ import {
     computed,
     observable }                   from 'mobx';
 import { WS }                      from 'Services';
-import {
-    epochToMoment,
-    getDiffDuration }              from 'Utils/Date';
 import { formatPortfolioPosition } from './Helpers/format-response';
 import {
-    getDurationUnitText,
-    getDurationUnitValue }         from './Helpers/details';
+    getDurationPeriod,
+    getDurationTime,
+    getDurationUnitText }          from './Helpers/details';
 import {
     getDisplayStatus,
     getEndSpotTime,
@@ -74,6 +72,7 @@ export default class PortfolioStore extends BaseStore {
             // TODO: Refactor with contract-store and use common helpers to handle contract result
             WS.proposalOpenContract(contract_id).then(action((proposal_response) => {
                 // populate result details box for specified positions card
+                WS.forget('proposal_open_contract', this.populateResultDetails, { contract_id: response.contract_id });
                 this.populateResultDetails(proposal_response);
             }));
         }
@@ -163,20 +162,11 @@ export default class PortfolioStore extends BaseStore {
             +contract_response.date_expiry
             :
             getEndSpotTime(contract_response);
-        const duration_diff =
-            getDiffDuration(
-                epochToMoment(this.positions[i].purchase_time || this.positions[i].date_start),
-                epochToMoment(this.positions[i].expiry_time)
-            );
-        const duration = this.positions[i].tick_count ?
-            this.positions[i].tick_count
-            :
-            getDurationUnitValue(duration_diff);
 
         this.positions[i].id_sell       = +contract_response.transaction_ids.sell;
         this.positions[i].barrier       = +contract_response.barrier;
-        this.positions[i].duration      = duration;
-        this.positions[i].duration_unit = getDurationUnitText(duration_diff);
+        this.positions[i].duration      = getDurationTime(contract_response);
+        this.positions[i].duration_unit = getDurationUnitText(getDurationPeriod(contract_response));
         this.positions[i].entry_spot    = +contract_response.entry_spot;
         this.positions[i].sell_time     = sell_time;
         this.positions[i].result        = getDisplayStatus(contract_response);

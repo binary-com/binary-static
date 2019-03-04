@@ -70,8 +70,8 @@ class PositionsDrawer extends React.Component {
         return (
             <div className={classNames(
                 'positions-drawer', {
-                    'positions-drawer--open'            : is_positions_drawer_on,
-                    'positions-drawer--is-contract-mode': is_contract_mode,
+                    'positions-drawer--open'         : is_positions_drawer_on,
+                    'positions-drawer--contract-mode': is_contract_mode,
                 })}
             >
                 <div className='positions-drawer__header'>
