@@ -7,7 +7,7 @@ let middle_ticks_handler;
 
 export const createChartTickMarkers = (SmartChartStore, contract_info) => {
     if (!has_been_initialized && contract_info.entry_tick_time) {
-        console.log(contract_info.entry_tick_time);
+        // console.log(contract_info.entry_tick_time);
         middle_ticks_handler = getMiddleTicksHandler(SmartChartStore, contract_info);
         has_been_initialized = true;
 
@@ -67,7 +67,7 @@ const getMiddleTicksHandler = (SmartChartStore, contract_info) => {
             if (is_entry) marker_config = createMarkerSpotEntry(tick, idx);
             if (is_exit) {
                 marker_config = createMarkerSpotExit(ci);
-                console.log(added_ticks);
+                // console.log(added_ticks);
             }
             if (is_middle) {
                 marker_config = createMarkerSpotMiddle(tick, idx);
