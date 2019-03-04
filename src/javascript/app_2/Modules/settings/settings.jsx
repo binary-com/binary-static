@@ -2,7 +2,6 @@ import PropTypes                   from 'prop-types';
 import React                       from 'react';
 import { Route, Redirect, Switch } from 'react-router-dom';
 import Menu                        from './components/menu/menu.jsx';
-import MobileDropdown              from './components/menu/mobile-dropdown.jsx';
 
 import settings_data from './settings_data';
 
@@ -37,11 +36,6 @@ const Settings = ({ match, routes }) => {
         <div className='settings container'>
             <div className='settings__sidebar desktop-only'>
                 <Menu data={data} />
-            </div>
-            <div className='mobile-only'>
-                <MobileDropdown all_items={all_items}>
-                    <Menu data={data} />
-                </MobileDropdown>
             </div>
             <div className='settings__content'>
                 <Switch>

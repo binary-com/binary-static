@@ -2,13 +2,13 @@ import PropTypes from 'prop-types';
 import React     from 'react';
 
 const ErrorBox = ({ header, icon, message, children }) => (
-    <div className='page-error-box'>
+    <div className='page-error__box'>
         {icon}
-        <h3 className='page-error-header'>
+        <h3 className='page-error__header'>
             {header}
         </h3>
-        <div className='page-error-message'>
-            <p>{message}</p>
+        <div>
+            <p className='page-error__message'>{message}</p>
         </div>
         {children}
     </div>
