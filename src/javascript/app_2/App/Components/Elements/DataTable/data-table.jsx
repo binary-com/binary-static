@@ -1,3 +1,4 @@
+import classNames                     from 'classnames';
 import { PropTypes as MobxPropTypes } from 'mobx-react';
 import { Scrollbars }                 from 'tt-react-custom-scrollbars';
 import PropTypes                      from 'prop-types';
@@ -36,6 +37,7 @@ class DataTable extends React.PureComponent {
             <React.Fragment>
                 {this.props.data_source.map((row_obj, id) =>
                     <TableRow
+                        className={this.props.className}
                         row_obj={row_obj}
                         columns={columns}
                         key={id}
@@ -46,9 +48,9 @@ class DataTable extends React.PureComponent {
             </React.Fragment>;
 
         return (
-            <div className='table'>
+            <div className={classNames('table', { [`${this.props.className}__table`]: this.props.className })}>
                 <div className='table__head' ref={el => { this.el_table_head = el; }}>
-                    <TableRow columns={columns} is_header />
+                    <TableRow className={this.props.className} columns={columns} is_header />
                 </div>
                 <div
                     className='table__body'
@@ -69,7 +71,12 @@ class DataTable extends React.PureComponent {
 
                 {this.props.footer &&
                     <div className='table__foot'>
-                        <TableRow row_obj={footer} columns={columns} is_footer />
+                        <TableRow
+                            className={this.props.className}
+                            row_obj={footer}
+                            columns={columns}
+                            is_footer
+                        />
                     </div>
                 }
             </div>
@@ -82,6 +89,7 @@ DataTable.propTypes = {
         PropTypes.node,
         PropTypes.arrayOf(PropTypes.node),
     ]),
+    className  : PropTypes.string,
     columns    : PropTypes.array,
     data_source: MobxPropTypes.arrayOrObservableArray,
     footer     : PropTypes.object,

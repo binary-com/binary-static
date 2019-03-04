@@ -4,7 +4,7 @@ import PropTypes                      from 'prop-types';
 import StatementCard                  from './statement-card.jsx';
 
 const StatementCardList = ({ data, onScroll, children }) => (
-    <div className='card-list' onScroll={onScroll}>
+    <div className='card-list statement__card-list' onScroll={onScroll}>
         {
             data.map((transaction, id) => (
                 <StatementCard className='card-list__card card-list__card-link' {...transaction} key={id} />

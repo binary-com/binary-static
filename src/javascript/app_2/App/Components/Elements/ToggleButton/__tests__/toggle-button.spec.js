@@ -54,7 +54,7 @@ describe('<ToggleButton />', () => {
         });
 
         it('should be called when the button clicked', () => {
-            const callback = fake()
+            const callback = fake();
             const wrapper = shallow(<ToggleButton value='test' onChange={callback}>Test</ToggleButton>);
             wrapper.simulate('click', event);
             expect(callback.called).be.true;

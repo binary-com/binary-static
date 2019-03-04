@@ -141,7 +141,7 @@ export const AddressPostcode = ({ children, hint }) => (
     </FormRow>
 );
 
-export const Phone = ({ hint, row_class }) => (
+export const Phone = ({ hint, row_class, row_id }) => (
     <FormRow
         type='text'
         id='phone'
@@ -149,6 +149,7 @@ export const Phone = ({ hint, row_class }) => (
         attributes={{ 'data-lpignore': true }}
         hint={hint}
         row_class={row_class}
+        row_id={row_id}
     />
 );
 

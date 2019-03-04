@@ -62,6 +62,7 @@ class Statement extends React.Component {
                             </React.Fragment>
                             :
                             <DataTable
+                                className='statement'
                                 data_source={data}
                                 columns={columns}
                                 onScroll={handleScroll}

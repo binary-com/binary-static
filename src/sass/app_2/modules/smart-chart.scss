@@ -1,8 +1,9 @@
+/** @define chart-spot */
 .chart-spot {
     display: flex;
     flex-direction: column;
 
-    .content {
+    &__content {
         display: flex;
         align-items: center;
         margin-left: 1.1em;
@@ -12,11 +13,11 @@
         background: $COLOR_GREEN_1;
         color: $COLOR_WHITE;
 
-        svg {
-            margin-right: 0.5em;
-        }
     }
-    .arrow {
+    &__icon {
+        margin-right: 0.5em;
+    }
+    &__arrow {
         margin-left: 0.4em;
         margin-bottom: 0.2em;
         width: 0;
@@ -25,7 +26,7 @@
         border-left: 1px solid transparent;
         transform: rotate(60deg);
     }
-    .spot {
+    &__spot {
         margin-left: -0.4em;
         margin-bottom: -0.4em;
         width: 0.4em;
@@ -34,35 +35,35 @@
         border: 2px solid $COLOR_GREEN_1;
     }
     /* Left aligned */
-    &.lost {
-        .content {
+    &--lost {
+        .chart-spot__content {
             background: $COLOR_RED;
         }
-        .arrow {
+        .chart-spot__arrow {
             border-top-color: $COLOR_RED;
         }
-        .spot {
+        .chart-spot__spot {
             border-color: $COLOR_RED;
         }
     }
     /* Left aligned */
-    &.left {
+    &--left {
         margin-left: -100%;
         margin-right: 100%;
 
-        .content {
+        .chart-spot__content {
             margin-right: 1.1em;
             margin-bottom: -0.5em;
             background: $COLOR_ORANGE;
         }
-        .arrow {
+        .chart-spot__arrow {
             align-self: flex-end;
             margin-right: 0.8em;
             margin-bottom: -0.2em;
             border-top-color: $COLOR_ORANGE;
             transform: rotate(-30deg);
         }
-        .spot {
+        .chart-spot__spot {
             align-self: flex-end;
             margin-right: -0.4em;
             border-color: $COLOR_ORANGE;
@@ -70,24 +71,25 @@
     }
 }
 
+/** @define chart-marker-line */
 .chart-marker-line {
     height: 100%;
 
-    > div {
+    &__wrapper {
         border-left-width: 1px;
         padding-left: 0.5em;
         height: 100%;
 
-        &.solid {
-            border-left-style: solid;
-        }
-        &.dash {
-            border-left-style: dashed;
-        }
-        > div {
-            position: absolute;
-            bottom: 0;
-            white-space: nowrap;
-        }
+    }
+    &__label {
+        position: absolute;
+        bottom: 0;
+        white-space: nowrap;
+    }
+    &--solid {
+        border-left-style: solid;
+    }
+    &--dash {
+        border-left-style: dashed;
     }
 }
