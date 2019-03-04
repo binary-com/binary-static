@@ -10,13 +10,13 @@ const MarkerSpot = ({
     spot_value,
     status,
 }) => (
-    <div className={classNames('chart-spot', align, status)}>
-        <div className='content'>
+    <div className={classNames('chart-spot', `chart-spot--${align}`, `chart-spot--${status}`)}>
+        <div className='chart-spot__content'>
             {icon}
             {addComma(spot_value)}
         </div>
-        <div className='arrow' />
-        <div className='spot' />
+        <div className='chart-spot__arrow' />
+        <div className='chart-spot__spot' />
     </div>
 );
 
