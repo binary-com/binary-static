@@ -10,6 +10,7 @@ import {
 
 const Footer = ({
     hideBlur,
+    is_dark_mode,
     is_language_dialog_visible,
     is_logged_in,
     is_positions_drawer_on,
@@ -34,6 +35,7 @@ const Footer = ({
         <div className='footer-links'>
             <ToggleFullScreen />
             <ToggleSettings
+                is_dark_mode={is_dark_mode}
                 is_language_visible={is_language_dialog_visible}
                 is_settings_visible={is_settings_dialog_on}
                 toggleSettings={toggleSettingsDialog}
@@ -45,6 +47,7 @@ const Footer = ({
 );
 
 Footer.propTypes = {
+    is_dark_mode              : PropTypes.bool,
     is_language_dialog_visible: PropTypes.bool,
     is_logged_in              : PropTypes.bool,
     is_positions_drawer_on    : PropTypes.bool,
@@ -57,6 +60,7 @@ Footer.propTypes = {
 export default connect(
     ({ client, common, ui }) => ({
         hideBlur                  : ui.hideBlur,
+        is_dark_mode              : ui.is_dark_mode_on,
         is_logged_in              : client.is_logged_in,
         network_status            : common.network_status,
         is_language_dialog_visible: ui.is_language_dialog_on,

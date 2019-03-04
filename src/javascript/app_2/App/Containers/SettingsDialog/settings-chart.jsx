@@ -2,7 +2,14 @@ import PropTypes       from 'prop-types';
 import React           from 'react';
 import { localize }    from '_common/localize';
 import { connect }     from 'Stores/connect';
-import SettingsControl from '../../Components/Elements/SettingsDialog/settings-control.jsx';
+import Localize        from 'App/Components/Elements/localize.jsx';
+import MediaItem, {
+    MediaHeading,
+    MediaIcon,
+    MediaDescription,
+}                      from 'App/Components/Elements/Media';
+import Checkbox        from 'App/Components/Form/Checkbox';
+import RadioGroup      from 'App/Components/Form/Radio';
 
 const ChartSettings = ({
     is_asset_visible,
@@ -12,25 +19,61 @@ const ChartSettings = ({
     toggleCountdown,
     toggleLayout,
 }) => (
-    <div className='settings-dialog__tab-content'>
-        <div className='settings-dialog__chart-container'>
-            <SettingsControl
-                name={localize('Position')}
-                toggle={toggleLayout}
-                to_toggle={!is_layout_default}
-                style='toggle-chart-layout'
-            />
-            <SettingsControl
-                name={localize('Asset Information')}
-                toggle={toggleAsset}
-                to_toggle={is_asset_visible}
-            />
-            <SettingsControl
-                name={localize('Scale Countdown')}
-                toggle={toggleCountdown}
-                to_toggle={is_countdown_visible}
-            />
-        </div>
+    <div className='settings-chart'>
+        <MediaItem>
+            <MediaHeading>
+                <Localize str='Chart Control Position' />
+            </MediaHeading>
+            <MediaDescription>
+                <MediaIcon />
+                <div className='media__form'>
+                    <p><Localize str='Cras quis nulla commodo, aliqam lectus sed, blandit augue cras.' /></p>
+                    <RadioGroup
+                        items={[
+                            {
+                                label: 'Left', // localization will be handled in RadioGroup
+                                value: false,
+                            }, {
+                                label: 'Bottom',
+                                value: true,
+                            },
+                        ]}
+                        selected={is_layout_default}
+                        onToggle={toggleLayout}
+                    />
+                </div>
+            </MediaDescription>
+        </MediaItem>
+        <MediaItem>
+            <MediaHeading>
+                <Localize str='Asset Information' />
+            </MediaHeading>
+            <MediaDescription>
+                <MediaIcon />
+                <div className='media__form'>
+                    <Checkbox
+                        value={is_asset_visible}
+                        label={localize('Cras quis nulla commodo, aliqam lectus sed, blandit augue cras.')}
+                        onClick={toggleAsset}
+                    />
+                </div>
+            </MediaDescription>
+        </MediaItem>
+        <MediaItem>
+            <MediaHeading>
+                <Localize str='Scale Countdown' />
+            </MediaHeading>
+            <MediaDescription>
+                <MediaIcon />
+                <div className='media__form'>
+                    <Checkbox
+                        value={is_countdown_visible}
+                        label={localize('Cras quis nulla commodo, aliqam lectus sed, blandit augue cras.')}
+                        onClick={toggleCountdown}
+                    />
+                </div>
+            </MediaDescription>
+        </MediaItem>
     </div>
 );
 
@@ -43,13 +86,13 @@ ChartSettings.propTypes = {
     toggleLayout        : PropTypes.func,
 };
 
-export default connect(
-    ({ ui }) => ({
+export default connect(({ ui }) => (
+    {
         is_layout_default   : ui.is_chart_layout_default,
         is_asset_visible    : ui.is_chart_asset_info_visible,
         is_countdown_visible: ui.is_chart_countdown_visible,
         toggleAsset         : ui.toggleChartAssetInfo,
         toggleCountdown     : ui.toggleChartCountdown,
         toggleLayout        : ui.toggleChartLayout,
-    })
-)(ChartSettings);
+    }
+))(ChartSettings);

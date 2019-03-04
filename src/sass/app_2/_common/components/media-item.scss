@@ -1,0 +1,39 @@
+.media {
+    margin: 0 0 16px;
+
+    &__heading {
+        font-size: 14px;
+        font-weight: bold;
+        color: $COLOR_LIGHT_BLACK_1;
+        margin: 0 0 16px;
+    }
+    &__icon {
+        min-width: 160px;
+        max-width: 160px;
+        height: 80px;
+        margin-right: 16px;
+        background-color: $COLOR_LIGHT_BLACK_3;
+    }
+    &__description {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        font-size: 14px;
+        font-weight: normal;
+        color: $COLOR_LIGHT_BLACK_1;
+    }
+    &__form {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    .theme--dark & {
+        &__heading {
+            color: $COLOR_DARK_BLUE_7;
+        }
+        &__description {
+            color: $COLOR_WHITE;
+        }
+    }
+}

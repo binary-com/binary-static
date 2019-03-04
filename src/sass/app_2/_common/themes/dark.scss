@@ -444,50 +444,26 @@
         }
     }
     .settings-dialog {
-        background: $COLOR_DARK_BLUE_3;
-
+        &__language-header {
+            color: $COLOR_DARK_BLUE_7;
+        }
         &__container {
             background: $COLOR_DARK_BLUE_3;
-
-        }
-        &__tab-content {
-            background: $COLOR_DARK_BLUE_3;
-        }
-        &__general-container, &__chart-container {
-            background: $COLOR_DARK_BLUE_5;
         }
         &__header {
             color: $COLOR_DARK_BLUE_7;
         }
-        &__row {
-            background-color: $COLOR_DARK_BLUE_2;
-
-            &-name {
-                color: $COLOR_DARK_BLUE_7;
-            }
-            &:hover {
-                background-color: $COLOR_DARK_BLUE_4;
-            }
-        }
         &__language {
-            &-dialog-container {
-                background: $COLOR_DARK_BLUE_3;
-            }
-            &-header {
-                background: $COLOR_DARK_BLUE_3;
+            &-link {
                 color: $COLOR_DARK_BLUE_7;
 
-            }
-            &-row {
-                background: $COLOR_DARK_BLUE_2;
-                color: $COLOR_DARK_BLUE_7;
-
-                &:hover {
-                    background: $COLOR_DARK_BLUE_4;
+                &--active {
+                    color: $COLOR_WHITE;
+                    background-color: $COLOR_DARK_BLUE_2;
                 }
-            }
-            &-name {
-                color: $COLOR_DARK_BLUE_7;
+                &:hover {
+                    border: 1px solid $COLOR_DARK_BLUE_7;
+                }
             }
         }
     }
@@ -947,6 +923,28 @@
                     }
                 }
             }
+        }
+    }
+    .vertical-tab {
+        &__tab {
+            background-color: $COLOR_DARK_BLUE_2;
+        }
+        &__header {
+            color: $COLOR_DARK_BLUE_7;
+
+            &:hover {
+                background-color: $COLOR_DARK_BLUE_4;
+            }
+            &--active {
+                background-color: $COLOR_DARK_BLUE_5;
+                color: $COLOR_WHITE;
+            }
+        }
+    }
+    .dialog-header {
+        &__sidebar {
+            background-color: $COLOR_DARK_BLUE_2;
+            color: $COLOR_DARK_BLUE_7;
         }
     }
 }

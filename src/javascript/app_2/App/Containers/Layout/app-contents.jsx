@@ -8,7 +8,7 @@ import { connect }    from 'Stores/connect';
 const AppContents = ({
     children, is_contract_mode,
     is_positions_drawer_on,
-    is_blurred
+    is_blurred,
 }) => (
     <div
         id='app_contents'

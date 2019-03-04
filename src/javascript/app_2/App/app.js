@@ -24,8 +24,6 @@ const initApp = () => {
 
     const app = document.getElementById('binary_app');
 
-    const modal_root = document.getElementById('modal_root');
-
     if (app) {
         render(<App root_store={root_store} />, app);
     }

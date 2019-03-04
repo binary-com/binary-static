@@ -5,7 +5,8 @@ const websocket   = require('ws');
 const Client      = require('../../app/base/client');
 const Language    = require('../language');
 const Url         = require('../url');
-
+// ignore svgs in tests
+require.extensions['.svg'] = () => '<svg></svg>';
 const setURL = (url) => {
     jsdom.changeURL(window, url);
     Url.reset();

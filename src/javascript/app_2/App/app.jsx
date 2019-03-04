@@ -1,4 +1,3 @@
-import classNames                   from 'classnames';
 import PropTypes                   from 'prop-types';
 import React                       from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';

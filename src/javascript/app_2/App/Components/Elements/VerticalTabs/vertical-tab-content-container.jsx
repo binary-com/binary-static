@@ -1,16 +1,16 @@
-import React from 'react';
+import React     from 'react';
 
 class VerticalTabContentContainer extends React.PureComponent {
     render() {
+        const selected   = this.props.items.find(item => item.label === this.props.selected.label);
+        const TabContent = selected.value;
+
         return (
-            <div className='vertical-tabs__content'>
-                {this.props.items.map(item => {
-                    const TabContent = item.value;
-                    return <TabContent
-                        key={item.label}
-                        className='item-id'
-                    />;
-                })}
+            <div className='vertical-tab__content'>
+                <TabContent
+                    key={selected.label}
+                    className='item-id'
+                />
             </div>
         );
     }
