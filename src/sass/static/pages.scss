@@ -807,8 +807,11 @@ body #not_authenticated_financial ul.checked > li {
     }
     img.platform {
         max-height: 150px;
-        width: auto;
+        width: 100%;
 
+        @media (max-width: 768px) {
+            width: auto;
+        }
         @media (max-width: 350px) {
             max-width: 290px;
         }

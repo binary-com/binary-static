@@ -21,7 +21,7 @@ const Money = ({
     return (
         <React.Fragment>
             {sign}
-            <span className={classNames(className, 'symbols', currency.toLowerCase())} />
+            <span className={classNames(className, 'symbols', `symbols--${currency.toLowerCase()}`)} />
             {final_amount}
         </React.Fragment>
     );

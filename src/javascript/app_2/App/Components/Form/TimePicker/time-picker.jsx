@@ -24,9 +24,9 @@ class TimePicker extends React.Component {
 
     handleChange = (arg) => {
         // To handle nativepicker;
-        const value = typeof arg === 'object' ? arg.target.value : arg;
+        const value = typeof arg === 'object' ? arg.target.selected_time : arg;
 
-        if (value !== this.props.value) {
+        if (value !== this.props.selected_time) {
             this.props.onChange({ target: { name: this.props.name, value } });
         }
     };
@@ -51,26 +51,26 @@ class TimePicker extends React.Component {
     render() {
         const prefix_class = 'time-picker';
         const {
-            value,
+            selected_time,
             name,
             is_nativepicker,
             placeholder,
-            start_time,
             end_time,
+            start_time,
             validation_errors,
         } = this.props;
         return (
             <div
                 ref={this.saveRef}
                 className={classNames(prefix_class,
-                    { 'padding': this.props.padding })}
+                    { [`${prefix_class}--padding`]: this.props.padding })}
             >
                 {
                     is_nativepicker
                         ? <input
                             type='time'
                             id={`${prefix_class}-input`}
-                            value={value}
+                            value={selected_time}
                             onChange={this.handleChange}
                             name={name}
                             min={start_time}
@@ -78,35 +78,35 @@ class TimePicker extends React.Component {
                         />
                         : (
                             <React.Fragment>
-                                <IconClock className='time-picker-icon' />
                                 <InputField
                                     error_messages={validation_errors}
                                     type='text'
                                     is_read_only
                                     id={`${prefix_class}-input`}
                                     className={classNames(`${prefix_class}-input`)}
-                                    value={value}
+                                    value={selected_time}
                                     onClick={this.toggleDropDown}
                                     name={name}
                                     placeholder={placeholder}
                                 />
+                                <IconClock className={`${prefix_class}__icon`} />
                                 <CSSTransition
                                     in={ this.state.is_open }
                                     classNames={{
-                                        enter    : 'time-picker-dialog-enter',
-                                        enterDone: 'time-picker-dialog-enter-done',
-                                        exit     : 'time-picker-dialog-exit',
+                                        enter    : 'time-picker__dialog--enter',
+                                        enterDone: 'time-picker__dialog--enter-done',
+                                        exit     : 'time-picker__dialog--exit',
                                     }}
                                     timeout={100}
                                     unmountOnExit
                                 >
                                     <Dialog
+                                        end_time={end_time}
+                                        start_time={start_time}
                                         className={'from-left'}
                                         onChange={this.handleChange}
                                         preClass={prefix_class}
-                                        start_time={start_time}
-                                        end_time={end_time}
-                                        value={value}
+                                        selected_time={selected_time}
                                     />
                                 </CSSTransition>
                             </React.Fragment>
@@ -129,12 +129,12 @@ TimePicker.propTypes = {
     onChange       : PropTypes.func,
     padding        : PropTypes.string,
     placeholder    : PropTypes.string,
+    selected_time  : PropTypes.string,
     start_time     : PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
         PropTypes.object,
     ]),
-    value: PropTypes.string,
 };
 
 export default observer(TimePicker);

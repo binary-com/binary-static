@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-02-25 07:19\n"
+"PO-Revision-Date: 2019-03-04 06:46\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Thai\n"
 "MIME-Version: 1.0\n"
@@ -7411,6 +7411,9 @@ msgstr "ไม่ต้องจ่ายค่าคอมมิชชั่น
 msgid "Pay-out"
 msgstr "ชำระเงิน"
 
+msgid "PaySec was founded in 2014 to provide customers and merchants in the Asian region with a comprehensive range of payment methods through one payment gateway."
+msgstr "PaySec ก่อตั้งในปี พ.ศ. 2557 (ค.ศ. 2014) เพื่อให้บริการด้านการชำระเงินที่ครอบคลุมผ่านทางตัวกลางชำระเงินรายเดียว แก่ลูกค้าและร้านค้าในภูมิภาคเอเชีย"
+
 msgid "Payment Agent"
 msgstr "ตัวแทนรับชำระเงิน"
 
@@ -7679,7 +7682,7 @@ msgid "Please make sure that you first agree with the Agent on the terms of paym
 msgstr "โปรดแน่ใจว่า ท่านยินยอมกับตัวแทนในเงื่อนไขการชำระเงินก่อนที่จะส่งความต้องการของท่าน"
 
 msgid "Please note that Asians, Digits, Reset Call/Reset Put, High Ticks/Low Ticks, and Run Ups/Run Downs are available exclusively with our Volatility Indices."
-msgstr ""
+msgstr "โปรดทราบว่า Asians, Digits, Reset Call/Reset Put HighTicks/Low Ticks และ Run Ups/Run Downs มีเฉพาะในดัชนีผันผวนของเราเท่านั้น"
 
 msgid "Please note that actual trading results may not correspond to optimized or back-tested results."
 msgstr "โปรดทราบว่า ผลการซื้อขายจริงอาจจะไม่แสดงโดยผลลัพธ์ของการทดสอบเพื่อการปรับปรุงระบบให้ประสิทธิภาพดีขึ้น"
@@ -9441,10 +9444,10 @@ msgid "The %1end time%2 is the selected number of minutes/hours after the %1star
 msgstr "%1 เวลาสิ้นสุด %2 คือ จำนวนนาที/ชั่วโมงที่เลือกเอาไว้ หลังจาก %1 เวลาเริ่มต้น %2"
 
 msgid "The %1entry spot%2 is the next tick after the %1start time%2."
-msgstr ""
+msgstr "%1eสปอตเริ่มต้น%2 คือ ราคาถัดไป หลังจาก%1sเวลาเริ่มต้น%2"
 
 msgid "The %1exit spot%2 is the last tick when the contract ends. Contract ends when all ticks rise or fall successively, or when a single tick breaks the predicted pattern."
-msgstr ""
+msgstr "%1eสปอตสิ้นสุด%2 คือ ราคาสุดท้ายเมื่อสัญญาสิ้นสุดลง สัญญาจะสิ้นสุดเมื่อราคาทั้งหมดสูงขึ้น หรือต่ำลงอย่างต่อเนื่อง หรือเมื่อมีราคาหนึ่งไม่เป็นไปตามรูปแบบที่ได้คาดการณ์เอาไว้"
 
 msgid "The %1high%2 is the highest point ever reached by the market during the contract period."
 msgstr "%1 จุดสูง %2 คือ จุดที่สูงที่สุดที่ตลาดได้ไปถึงในช่วงระยะเวลาของสัญญา"
@@ -12402,10 +12405,10 @@ msgid "You can sell your contract before expiry to keep any profit you may have 
 msgstr "ท่านสามารถขายสัญญาซื้อขายของท่านก่อนวันหมดอายุเพื่อรักษากำไรของท่านที่พึงได้ หรือ เพื่อย่อภาวะขาดทุนของท่าน"
 
 msgid "You can top up your demo account with an additional %1 if your balance is %2 or less."
-msgstr ""
+msgstr "ท่านสามารถเติมเงินในบัญชีทดลอง จำนวน %1 หากมียอดคงเหลือในบัญชี %2 หรือน้อยกว่า"
 
 msgid "You can top up your virtual account with an additional %1 if your balance is %2 or less."
-msgstr ""
+msgstr "ท่านสามารถเติมเงินในบัญชีเสมือน จำนวน %1 หากมียอดคงเหลือในบัญชี %2 หรือน้อยกว่า"
 
 msgid "You can trade Volatility Indices on all three main trade types: Up/Down, Touch/No Touch, and In/Out. That's not all – Volatility Indices also give you exclusive access to two additional trade types: Asians and Digits."
 msgstr "ท่านสามารถซื้อขายดัชนีผันผวนในประเภทการซื้อขายหลักๆ สามประเภท คือ ขึ้น/ลง แตะ/ไม่แตะ และ นอก/ใน ไม่เพียงเท่านั้น ดัชนีผันผวนยังรวมถึงการซื้อขายอีกสองประเภท คือ Asians และ Digits"

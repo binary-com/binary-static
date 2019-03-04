@@ -17,6 +17,6 @@ describe('ErrorBox', () => {
     });
     it('should render header as passed to it', () => {
         const wrapper = shallow(<ErrorBox header='This is a header' />);
-        expect(wrapper.find('.page-error-header').text()).to.be.eql('This is a header');
+        expect(wrapper.find('.page-error__header').text()).to.be.eql('This is a header');
     });
 });

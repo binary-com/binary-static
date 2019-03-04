@@ -13,11 +13,11 @@ describe('Money', () => {
     });
     it('should have lowercase USD as class when currency is not passed', () => {
         const wrapper = shallow(<Money />);
-        expect(wrapper.find('.usd').exists()).to.be.true;
+        expect(wrapper.find('.symbols--usd').exists()).to.be.true;
     });
     it('should have lowercase currency as class when passed', () => {
         const wrapper = shallow(<Money currency='AUD' />);
-        expect(wrapper.find('.aud').exists()).to.be.true;
+        expect(wrapper.find('.symbols--aud').exists()).to.be.true;
     });
     it('should return correct text based on props when number is > 0 and has_sign is true', () => {
         const wrapper = shallow(<Money has_sign={true} amount={+10} />);
