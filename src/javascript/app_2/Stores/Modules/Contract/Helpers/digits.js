@@ -14,9 +14,14 @@ export const getDigitInfo = (digits_info, contract_info) => {
     const current = (spot_time in digits_info) || is_after_expiry ? {} : // filter out duplicated responses and those after contract expiry
         createDigitInfo(contract_info.current_spot, spot_time);
 
+    const is_expired = contract_info.is_expired;
+    const exit = (exit_time in digits_info) || !is_expired ? {} :
+        createDigitInfo(contract_info.exit_tick, exit_time);
+
     return {
         ...entry,
         ...current,
+        ...exit,
     };
 };
 
