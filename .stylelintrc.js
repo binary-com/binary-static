@@ -57,6 +57,7 @@ module.exports = {
         // 'plugin/selector-bem-pattern'                      : { preset: 'bem', implicitComponents: 'src/sass/app_2/_common/form/*.scss' },
         'plugin/selector-bem-pattern'                      : { preset: 'bem', implicitComponents: 'src/sass/app_2/_common/layout/*.scss' },
         // 'plugin/selector-bem-pattern'                      : { preset: 'bem', implicitComponents: 'src/sass/app_2/_common/*.scss' },
+        // 'plugin/selector-bem-pattern'                      : { preset: 'bem', implicitComponents: 'src/sass/app_2/modules/*.scss' },
         'property-case'                                    : 'lower',
         'rule-empty-line-before'                           : ['always', { ignore: ['after-comment'], except: ['inside-block-and-after-rule', 'first-nested'] }],
         'selector-attribute-brackets-space-inside'         : 'never',

@@ -6,7 +6,7 @@ import ErrorBox       from 'App/Components/Elements/ErrorBox';
 import { Icon404 }    from './Icon404.jsx';
 
 const Page404 = () => (
-    <div className='page-error-container'>
+    <div className='page-error__container'>
         <ErrorBox
             header={localize('Page not found')}
             icon={<Icon404 />}

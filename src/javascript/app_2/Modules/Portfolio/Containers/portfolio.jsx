@@ -48,6 +48,7 @@ class Portfolio extends React.Component {
                         <CardList data={active_positions} currency={currency} />
                         :
                         <DataTable
+                            className='portfolio'
                             columns={getTableColumnsTemplate(currency)}
                             data_source={active_positions}
                             footer={totals}
