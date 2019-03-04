@@ -179,10 +179,15 @@ export default class PortfolioStore extends BaseStore {
 
     @action.bound
     removePositionById(contract_id) {
+        const is_contract_mode = this.root_store.modules.smart_chart.is_contract_mode;
         let i = this.positions.findIndex(pos => +pos.id === +contract_id);
         // check if position to be removed is out of range from the maximum amount rendered in drawer
         if (this.positions.length > 4) i += 1;
         this.positions.splice(i, 1);
+        if (is_contract_mode) {
+            this.root_store.modules.contract.onUnmount();
+            this.root_store.modules.trade.requestProposal();
+        }
     }
 
     @action.bound

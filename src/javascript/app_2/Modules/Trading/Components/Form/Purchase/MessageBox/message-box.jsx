@@ -24,7 +24,7 @@ const MessageBox = ({ purchase_info, onClick }) => {
                 break;
         }
     }
-
+    if (!has_error) return null;
     return (
         <div className='message-box'>
             <div className='message-box__close-btn' onClick={onClick}>
