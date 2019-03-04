@@ -190,6 +190,9 @@ $header-height: 4em;
             &:not(:last-child) {
                 margin-bottom: 16px;
             }
+            &:last-child {
+                margin-bottom: 10px;
+            }
             &--enter-done {
                 opacity: 1;
                 transform: translateY(0);

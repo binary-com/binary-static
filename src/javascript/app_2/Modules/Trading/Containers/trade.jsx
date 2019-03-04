@@ -48,7 +48,7 @@ class Trade extends React.Component {
                 >
                     <FormLayout
                         is_mobile={this.props.is_mobile}
-                        is_contract_visible={!!contract_id}
+                        is_contract_visible={!!contract_id || this.props.is_contract_mode}
                         is_trade_enabled={this.props.is_trade_enabled}
                     />
                 </div>

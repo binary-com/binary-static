@@ -105,7 +105,10 @@ class PositionsDrawer extends React.Component {
 }
 
 PositionsDrawer.propTypes = {
-    active_contract_id    : PropTypes.string,
+    active_contract_id: PropTypes.PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
+    ]),
     active_positions      : MobxPropTypes.arrayOrObservableArray,
     children              : PropTypes.any,
     currency              : PropTypes.string,

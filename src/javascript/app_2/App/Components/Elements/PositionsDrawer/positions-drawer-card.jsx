@@ -2,6 +2,7 @@ import classNames            from 'classnames';
 import PropTypes             from 'prop-types';
 import React                 from 'react';
 import { CSSTransition }     from 'react-transition-group';
+import ContractLink          from 'Modules/Contract/Containers/contract-link.jsx';
 import { localize }          from '_common/localize';
 import ContractTypeCell      from 'Modules/Portfolio/Components/contract-type-cell.jsx';
 import ProgressSlider        from './ProgressSlider';
@@ -9,8 +10,6 @@ import ResultDetails         from './result-details.jsx';
 import ResultOverlay         from './result-overlay.jsx';
 import { getTimePercentage } from './helpers';
 import Money                 from '../money.jsx';
-import BinaryLink            from '../../Routes/binary-link.jsx';
-import { getContractPath }   from '../../Routes/helpers';
 import Button                from '../../Form/button.jsx';
 
 // TODO: Break into smaller components once design is finalized
@@ -54,7 +53,7 @@ const PositionsDrawerCard = ({
                 onClickRemove={onClickRemove}
                 result={result}
             />
-            <BinaryLink
+            <ContractLink
                 className={classNames(
                     'positions-drawer-card', {
                         'positions-drawer-card--active': (parseInt(active_position) === id),
@@ -63,7 +62,7 @@ const PositionsDrawerCard = ({
                         'positions-drawer-card--red'   : (percentage < 20) && !result,
                     }
                 )}
-                to={getContractPath(id)}
+                contract_id={id}
             >
                 <React.Fragment>
                     <div className={classNames(
@@ -128,7 +127,7 @@ const PositionsDrawerCard = ({
                         <Money amount={purchase} currency={currency} />
                     </div>
                 </React.Fragment>
-            </BinaryLink>
+            </ContractLink>
             <CSSTransition
                 in={!!(is_valid_to_sell)}
                 timeout={250}
@@ -164,15 +163,18 @@ const PositionsDrawerCard = ({
 };
 
 PositionsDrawerCard.propTypes = {
-    active_position: PropTypes.string,
-    barrier        : PropTypes.number,
-    className      : PropTypes.string,
-    currency       : PropTypes.string,
-    duration       : PropTypes.number,
-    duration_unit  : PropTypes.string,
-    entry_spot     : PropTypes.number,
-    exit_spot      : PropTypes.number,
-    expiry_time    : PropTypes.PropTypes.oneOfType([
+    active_position: PropTypes.PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
+    ]),
+    barrier      : PropTypes.number,
+    className    : PropTypes.string,
+    currency     : PropTypes.string,
+    duration     : PropTypes.number,
+    duration_unit: PropTypes.string,
+    entry_spot   : PropTypes.number,
+    exit_spot    : PropTypes.number,
+    expiry_time  : PropTypes.PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
     ]),
