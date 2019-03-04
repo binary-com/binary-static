@@ -995,4 +995,45 @@
             opacity: 1;
         }
     }
+    .hr {
+        border-color: $COLOR_DARK_BLUE_5;
+    }
+    .drawer__bg .drawer {
+        background: $COLOR_DARK_BLUE_5;
+        color: $COLOR_WHITE;
+        box-shadow: 0 1px 6px 0 rgba(42, 48, 82, 0.14), 0 2px 8px 0 rgba(20, 20, 20, 0.3);
+
+        .drawer__item {
+            &-link {
+                &:before {
+                    color: $COLOR_DARK_BLUE_7;
+                }
+                &:hover:before {
+                    color: $COLOR_WHITE;
+                }
+                &-text {
+                    color: $COLOR_DARK_BLUE_7;
+                }
+            }
+            &:hover {
+                background: $COLOR_DARK_BLUE_5;
+
+                .drawer__item-link-text {
+                    color: $COLOR_WHITE;
+                }
+            }
+        }
+        &--left, &--right {
+            .drawer__header, .drawer__footer {
+                border-color: $COLOR_DARK_BLUE_5;
+
+                .drawer__brand-logo, &.btn-close {
+                    border-color: $COLOR_DARK_BLUE_5;
+                }
+                .drawer__brand-logo .drawer__img:before {
+                    background-image: url('../images/header/binary_logo_dark.svg');
+                }
+            }
+        }
+    }
 }
