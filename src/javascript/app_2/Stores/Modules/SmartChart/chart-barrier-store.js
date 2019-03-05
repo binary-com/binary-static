@@ -57,6 +57,17 @@ export class ChartBarrierStore {
     }
 
     @action.bound
+    updateDragBarriers(high, low) {
+        if (this.relative) {
+            this.high = +high > 0 ? `+${high}` : +high;
+            this.low = +low > 0 ? `+${low}` : +low;
+        } else {
+            this.high = +high;
+            this.low  = +low;
+        }
+    }
+
+    @action.bound
     updateBarrierShade(should_display, contract_type) {
         this.shade = (should_display && CONTRACT_SHADES[contract_type]) || this.default_shade;
     }
