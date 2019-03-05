@@ -30,6 +30,7 @@ class PositionsDrawer extends React.Component {
             is_positions_drawer_on,
             onClickSell,
             onClickRemove,
+            openContract,
             toggleDrawer,
             server_time,
         } = this.props;
@@ -58,6 +59,7 @@ class PositionsDrawer extends React.Component {
                         active_position={active_contract_id}
                         onClickSell={onClickSell}
                         onClickRemove={onClickRemove}
+                        openContract={openContract}
                         server_time={server_time}
                         key={portfolio_position.id}
                         currency={currency}
@@ -121,6 +123,7 @@ PositionsDrawer.propTypes = {
     onClickSell           : PropTypes.func,
     onMount               : PropTypes.func,
     onUnmount             : PropTypes.func,
+    openContract          : PropTypes.func,
     server_time           : PropTypes.object,
     toggleDrawer          : PropTypes.func,
 };
@@ -130,6 +133,7 @@ export default connect(
         server_time           : common.server_time,
         currency              : client.currency,
         active_contract_id    : modules.contract.contract_id,
+        openContract          : modules.contract.onMount,
         active_positions      : modules.portfolio.active_positions,
         error                 : modules.portfolio.error,
         is_contract_mode      : modules.smart_chart.is_contract_mode,

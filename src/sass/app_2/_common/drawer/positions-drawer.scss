@@ -7,16 +7,6 @@ $header-height: 4em;
     transition: opacity 0.4s ease;
 }
 
-// .app-contents--contract-mode {
-//     .positions-drawer-card {
-//         filter: blur(2px);
-//
-//         &--active, &--first, &:hover, &:focus, &:active {
-//             filter: none;
-//         }
-//     }
-// }
-
 .positions-drawer {
     width: $POSITIONS_DRAWER_WIDTH;
     // removing 2px below for borders
@@ -437,6 +427,9 @@ $header-height: 4em;
         justify-content: center;
         align-items: center;
         transition: opacity 0.25s ease;
+        cursor: pointer;
+        width: 100%;
+        height: calc(100% - 32px);
 
         &--won {
             color: $COLOR_GREEN_1;

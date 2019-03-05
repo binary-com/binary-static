@@ -60,7 +60,7 @@ class ResultDetails extends React.PureComponent {
                                 {localize('Barrier')}
                             </span>
                             <span className='result-details__value'>
-                                {barrier.toFixed(2)}
+                                {barrier}
                             </span>
                         </div>
                         <div className='result-details__item'>
@@ -68,7 +68,7 @@ class ResultDetails extends React.PureComponent {
                                 {localize('Entry spot')}
                             </span>
                             <span className='result-details__value'>
-                                {entry_spot.toFixed(2)}
+                                {entry_spot}
                             </span>
                         </div>
                     </div>

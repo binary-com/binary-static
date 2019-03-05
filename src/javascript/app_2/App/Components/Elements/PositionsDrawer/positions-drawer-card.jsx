@@ -31,6 +31,7 @@ const PositionsDrawerCard = ({
     purchase_time,
     onClickSell,
     onClickRemove,
+    openContract,
     result,
     sell_time,
     server_time,
@@ -51,6 +52,7 @@ const PositionsDrawerCard = ({
             <ResultOverlay
                 id={id}
                 onClickRemove={onClickRemove}
+                onClick={openContract}
                 result={result}
             />
             <ContractLink
@@ -187,6 +189,7 @@ PositionsDrawerCard.propTypes = {
     ]),
     onClickRemove: PropTypes.func,
     onClickSell  : PropTypes.func,
+    openContract : PropTypes.func,
     profit_loss  : PropTypes.number,
     purchase     : PropTypes.number,
     purchase_time: PropTypes.PropTypes.oneOfType([

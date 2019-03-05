@@ -152,7 +152,7 @@ export default class TradeStore extends BaseStore {
     @action.bound
     refresh() {
         this.symbol = null;
-        WS.forgetAll('proposal');
+        WS.forgetAll('proposal', 'ticks_history');
     }
 
     @action.bound
@@ -520,7 +520,7 @@ export default class TradeStore extends BaseStore {
     @action.bound
     onUnmount() {
         this.disposeSwitchAccount();
-        WS.forgetAll('proposal');
+        WS.forgetAll('proposal', 'ticks_history');
         this.is_trade_component_mounted = false;
     }
 }
