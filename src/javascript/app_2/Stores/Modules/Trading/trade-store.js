@@ -241,6 +241,7 @@ export default class TradeStore extends BaseStore {
     @action.bound
     onPurchase(proposal_id, price, type) {
         if (proposal_id) {
+            this.is_purchase_enabled = false;
             processPurchase(proposal_id, price).then(action((response) => {
                 if (this.proposal_info[type].id !== proposal_id) {
                     throw new Error('Proposal ID does not match.');
@@ -261,6 +262,7 @@ export default class TradeStore extends BaseStore {
                 }
                 WS.forgetAll('proposal');
                 this.purchase_info = response;
+                this.is_purchase_enabled = true;
             }));
         }
     }
