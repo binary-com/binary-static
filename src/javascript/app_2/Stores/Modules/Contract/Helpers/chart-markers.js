@@ -74,6 +74,7 @@ function createMarkerSpotExit(contract_info, ContractStore) {
         ContractStore.end_spot,
         {
             spot_value: `${ContractStore.end_spot}`,
+            spot_epoch: ContractStore.end_spot_time,
             status    : `${contract_info.profit > 0 ? 'won' : 'lost' }`,
         },
     );

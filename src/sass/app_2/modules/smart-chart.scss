@@ -3,16 +3,21 @@
     display: flex;
     flex-direction: column;
 
-    &__content {
+    &__time {
+        margin-left: -39px;
+        margin-bottom: 4px;
+    }
+    &__content-box {
+        font-size: 14px;
+        font-weight: bold;
         display: flex;
         align-items: center;
-        margin-left: 1.1em;
-        margin-bottom: -0.9em;
-        padding: 0.7em;
-        border-radius: 3px;
-        background: $COLOR_GREEN_1;
+        margin-left: -39px;
+        margin-bottom: 10px;
+        padding: 4px 8px;
+        border-radius: 11px;
+        background: $COLOR_LIGHT_GRAY_1;
         color: $COLOR_WHITE;
-
     }
     &__icon {
         margin-right: 0.5em;
@@ -27,16 +32,23 @@
         transform: rotate(60deg);
     }
     &__spot {
-        margin-left: -0.4em;
-        margin-bottom: -0.4em;
+        margin-left: -2.4px;
+        margin-bottom: -0.4px;
         width: 0.4em;
         height: 0.4em;
         border-radius: 50%;
-        border: 2px solid $COLOR_GREEN_1;
+        border: 2px solid $COLOR_LIGHT_GRAY_1;
     }
-    /* Left aligned */
+    &__spot-entry {
+        width: 16px;
+        height: 16px;
+        margin-bottom: -8px;
+        margin-left: -8px;
+        border: 4px solid $COLOR_SKY_BLUE;
+        border-radius: 50%;
+    }
     &--lost {
-        .chart-spot__content {
+        .chart-spot__content-box {
             background: $COLOR_RED;
         }
         .chart-spot__arrow {
@@ -44,29 +56,6 @@
         }
         .chart-spot__spot {
             border-color: $COLOR_RED;
-        }
-    }
-    /* Left aligned */
-    &--left {
-        margin-left: -100%;
-        margin-right: 100%;
-
-        .chart-spot__content {
-            margin-right: 1.1em;
-            margin-bottom: -0.5em;
-            background: $COLOR_ORANGE;
-        }
-        .chart-spot__arrow {
-            align-self: flex-end;
-            margin-right: 0.8em;
-            margin-bottom: -0.2em;
-            border-top-color: $COLOR_ORANGE;
-            transform: rotate(-30deg);
-        }
-        .chart-spot__spot {
-            align-self: flex-end;
-            margin-right: -0.4em;
-            border-color: $COLOR_ORANGE;
         }
     }
 }
