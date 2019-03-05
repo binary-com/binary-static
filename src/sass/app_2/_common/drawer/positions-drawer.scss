@@ -204,7 +204,7 @@ $header-height: 4em;
         &--red:before {
             background-image: linear-gradient(to top, rgba(16, 19, 32, 0), rgba(227, 28, 75, 0.16));
         }
-        &--active:before, &:hover:before {
+        &:before {
             content: '';
             position: absolute;
             height: 52px;
@@ -446,7 +446,7 @@ $header-height: 4em;
 
         &:after {
             content: '\0000D7';
-            font-size: 1.6em;
+            font-size: 24px;
             color: $COLOR_LIGHT_GRAY_1;
         }
     }
