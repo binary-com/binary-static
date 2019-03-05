@@ -32,27 +32,41 @@
                 transition: transform 0.2s ease-out, background-color 0.1s linear 0.2s;
             }
             &--win {
-                transition: none;
+                transition: background-color 0.2s linear;
                 background-color: $COLOR_GREEN_1;
-                color: $COLOR_WHITE;
+
+                /* postcss-bem-linter: ignore */
+                &.digits__digit-value--selected {
+                    border: 2px solid $COLOR_GREEN_1;
+                }
             }
             &--blink {
                 background-color: $COLOR_GREEN_1;
-                color: $COLOR_WHITE;
-                animation: blinking-light 500ms step-end 4 0.5s;
+                animation-name: blinking-light-gray-1;
+                animation-duration: 500ms;
+                animation-iteration-count: 4;
+                animation-timing-function: step-end;
+
+                /* postcss-bem-linter: ignore */
+                &.digits__digit-value--selected {
+                    animation-name: blinking-white;
+                }
             }
             &--loss {
-                transition: none;
-                color: $COLOR_WHITE;
+                transition: background-color 0.2s linear;
                 background-color: $COLOR_RED;
+
+                /* postcss-bem-linter: ignore */
+                &.digits__digit-value--selected {
+                    border: 2px solid $COLOR_RED;
+                }
             }
         }
         &-spot {
             position: absolute;
             top: -35px;
             left: -10px;
-            animation-timing-function: ease;
-            animation: bounce 0.8s forwards;
+            animation: bounce 0.8s forwards ease;
             opacity: 1;
             transition: opacity 0.3s;
 
@@ -164,14 +178,27 @@
     }
 }
 
-@keyframes blinking-light {
+@keyframes blinking-white {
     50% {
-        background-color: $COLOR_LIGHT_BLACK_4_SOLID;
+        color: $COLOR_LIGHT_BLACK_1;
+        background-color: $COLOR_WHITE;
     }
 }
 
-@keyframes blinking-dark {
+@keyframes blinking-light-gray-1 {
     50% {
-        background-color: $COLOR_DARK_BLUE_4;
+        background-color: $COLOR_LIGHT_GRAY_1;
+    }
+}
+
+@keyframes blinking-dark-blue-2 {
+    50% {
+        background-color: $COLOR_DARK_BLUE_2;
+    }
+}
+
+@keyframes blinking-dark-blue-7 {
+    50% {
+        background-color: $COLOR_DARK_BLUE_7;
     }
 }
