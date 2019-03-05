@@ -3,11 +3,16 @@
     display: flex;
     flex-direction: column;
 
+    &__info-container {
+        width: 100%;
+        margin-left: -50%;
+    }
     &__time-container {
         display: flex;
         align-items: center;
+        justify-content: flex-end;
+        padding-right: 7px;
         margin-bottom: 5px;
-        margin-left: -22px;
     }
     &__time {
         font-size: 10px;
@@ -21,7 +26,6 @@
         font-weight: bold;
         display: flex;
         align-items: center;
-        margin-left: -39px;
         margin-bottom: 8px;
         padding: 4px 8px;
         border-radius: 11px;
@@ -61,7 +65,7 @@
         height: 16px;
         margin-bottom: -8px;
         margin-left: -8px;
-        border: 4px solid $COLOR_SKY_BLUE;
+        border: 4px solid $COLOR_ORANGE;
         border-radius: 50%;
     }
     &--lost {

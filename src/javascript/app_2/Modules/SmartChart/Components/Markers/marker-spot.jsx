@@ -15,20 +15,22 @@ const MarkerSpot = ({
     status,
 }) => (
     <div className={classNames('chart-spot', `chart-spot--${status}`)}>
-        { icon &&
-            <React.Fragment>
-                <div className='chart-spot__icon-container'>
-                    <div className='chart-spot__icon'>{icon}</div>
-                </div>
-            </React.Fragment>
-        }
-        <div className='chart-spot__time-container'>
-            <IconClock height='10' width='10' className='chart-spot__time-icon' />
-            <div className='chart-spot__time'>{toMoment(+spot_epoch).format('HH:mm:ss')}</div>
-        </div>
-        <div className='chart-spot__content-box'>
-            {/* {icon} */}
-            {addComma(spot_value)}
+        <div className='chart-spot__info-container'>
+            {/* { icon &&
+                <React.Fragment>
+                    <div className='chart-spot__icon-container'>
+                        <div className='chart-spot__icon'>{icon}</div>
+                    </div>
+                </React.Fragment>
+            } */}
+            <div className='chart-spot__time-container'>
+                <IconClock height='10' width='10' className='chart-spot__time-icon' />
+                <div className='chart-spot__time'>{toMoment(+spot_epoch).format('HH:mm:ss')}</div>
+            </div>
+            <div className='chart-spot__content-box'>
+                {/* {icon} */}
+                {addComma(spot_value)}
+            </div>
         </div>
         {/* <div className='chart-spot__arrow' /> */}
         <div className={spot_className}>5</div>
