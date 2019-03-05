@@ -41,14 +41,13 @@ const Purchase = ({
                 onClick={() => { onClickPurchase(info.id, info.stake, type); }}
             >
                 <React.Fragment>
-                    <div className='btn-purchase__effect-main' />
-                    <div className='btn-purchase__effect-detail' />
                     <div className='btn-purchase__content'>
                         <div className='btn-purchase__trade-type'>
                             <IconTradeType type={is_disabled ? '' : type.toLowerCase()} className='btn-purchase__trade-type-icon' />
                             <span className='btn-purchase__trade-type-text'>{is_disabled ? '' : localize('[_1]', trade_types[type])}</span>
                         </div>
                     </div>
+                    <div className='btn-purchase__effect-detail' />
                     <div className='btn-purchase__info'>
                         <div className='btn-purchase__return'>
                             <span className='btn-purchase__return-text'>{is_disabled ? '' : info.returns}</span>

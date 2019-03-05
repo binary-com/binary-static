@@ -318,10 +318,11 @@
     height: 5.6em;
     width: 100%;
     margin: 0;
+    margin-top: 5px;
+    padding: 0;
     text-align: left;
     transition: box-shadow 0.5s;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.24);
-    margin-top: 5px;
 
     span.btn-purchase__trade-type-text {
         @include typeface(--paragraph-left-bold-active);
@@ -334,6 +335,7 @@
         float: right;
         text-align: right;
         height: 56px;
+        padding-right: 5%;
         display: flex;
         flex-direction: column;
     }
@@ -353,12 +355,16 @@
         line-height: unset;
     }
     &__content {
-        max-width: 50%;
+        width: 60%;
         float: left;
         text-align: left;
-        height: 5.6em;
         display: flex;
         flex-direction: column;
+        padding-left: 5%;
+        height: 56px;
+
+        background-color: $COLOR_GREEN_1;
+        color: $COLOR_WHITE;
     }
     &__trade-type {
         position: relative;
@@ -374,19 +380,6 @@
         &-icon {
             @extend .inline-icon.white;
         }
-    }
-    &__effect-main {
-        width: 60%;
-        height: 56px;
-        position: absolute;
-        background-color: $COLOR_GREEN_1;
-        color: $COLOR_WHITE;
-        left: 0;
-        top: 0;
-        bottom: 0;
-        display: inline-block;
-        float: left;
-        text-align: left;
     }
     &__effect-detail {
         width: 0;
@@ -404,7 +397,7 @@
         background-color: $COLOR_GREEN_2;
         color: $COLOR_DARK_BLUE_7;
 
-        .btn-purchase__effect-main, .btn-purchase__currency {
+        .btn-purchase__currency {
             background-color: $COLOR_GREEN_1;
         }
         .btn-purchase__effect-detail {
