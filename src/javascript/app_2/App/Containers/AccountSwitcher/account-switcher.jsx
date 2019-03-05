@@ -119,7 +119,7 @@ class AccountSwitcher extends React.Component {
                 }
                 <div className='acc-switcher__logout' onClick={this.handleLogout}>
                     <span className='acc-switcher__logout-text'>{localize('Log out')}</span>
-                    <IconLogout className='acc-switcher__logout-icon drawer-icon' />
+                    <IconLogout className='acc-switcher__logout-icon drawer__icon' />
                 </div>
             </div>
         );
