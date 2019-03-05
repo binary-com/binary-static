@@ -21,16 +21,7 @@ const ProgressSlider = ({
                 //     current_tick={current_tick}
                 //     ticks_count={ticks_count}
                 // />
-                <div className='progress-slider__track'>
-                    <div
-                        className={classNames('progress-slider__line', {
-                            'progress-slider__line--green' : (percentage >= 50),
-                            'progress-slider__line--orange': (percentage < 50 && percentage >= 20),
-                            'progress-slider__line--red'   : (percentage < 20),
-                        })}
-                        style={{ width: `${percentage}%` }}
-                    />
-                </div>
+                null
                 :
                 <React.Fragment>
                     <span className='positions-drawer-card__remaining-time'>

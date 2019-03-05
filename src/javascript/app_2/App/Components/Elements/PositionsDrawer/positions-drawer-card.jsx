@@ -59,9 +59,9 @@ const PositionsDrawerCard = ({
                 className={classNames(
                     'positions-drawer-card', {
                         'positions-drawer-card--active': (parseInt(active_position) === id),
-                        'positions-drawer-card--green' : (percentage >= 50) && !result,
-                        'positions-drawer-card--orange': (percentage < 50 && percentage >= 20) && !result,
-                        'positions-drawer-card--red'   : (percentage < 20) && !result,
+                        'positions-drawer-card--green' : tick_count ? (profit_loss > 0) && !result : (percentage >= 50) && !result,
+                        'positions-drawer-card--orange': tick_count ? null : (percentage < 50 && percentage >= 20) && !result,
+                        'positions-drawer-card--red'   : tick_count ? (profit_loss < 0) && !result : (percentage < 20) && !result,
                     }
                 )}
                 contract_id={id}
