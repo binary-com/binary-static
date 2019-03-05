@@ -12,7 +12,7 @@ const MarkerSpot = ({
     status,
 }) => (
     <div className={classNames('chart-spot', `chart-spot--${status}`)}>
-        <div className='chart-spot__time'>{toMoment(spot_epoch).format('HH:mm:ss')}</div>
+        <div className='chart-spot__time'>{toMoment(+spot_epoch).format('HH:mm:ss')}</div>
         <div className='chart-spot__content-box'>
             {/* {icon} */}
             {addComma(spot_value)}

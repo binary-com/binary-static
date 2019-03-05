@@ -4,8 +4,9 @@
     flex-direction: column;
 
     &__time {
-        margin-left: -39px;
+        margin-left: -21px;
         margin-bottom: 4px;
+        color: $COLOR_LIGHT_BLACK_1;
     }
     &__content-box {
         font-size: 14px;
