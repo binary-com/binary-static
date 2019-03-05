@@ -117,8 +117,9 @@ export default class PortfolioStore extends BaseStore {
 
     @action.bound
     onClickSell(contract_id) {
-        const i = this.positions.findIndex(pos => +pos.id === +contract_id);
+        const i = this.getPositionIndexById(contract_id);
         const bid_price = this.positions[i].bid_price;
+        this.positions[i].is_sell_requested = true;
         if (contract_id && bid_price) {
             WS.sell(contract_id, bid_price).then(this.handleSell);
         }
@@ -137,12 +138,6 @@ export default class PortfolioStore extends BaseStore {
             });
         // Check if still in contract_mode
         } else if (is_contract_mode && !response.error) {
-            WS.forget('proposal_open_contract', this.root_store.modules.contract.updateProposal, { contract_id: response.sell.contract_id });
-            WS.proposalOpenContract(response.sell.contract_id).then(action((proposal_response) => {
-                // update contract store proposal after sell
-                this.root_store.modules.contract.updateProposal(proposal_response);
-                this.populateResultDetails(proposal_response);
-            }));
             // update contract store sell info after sell
             this.root_store.modules.contract.sell_info = {
                 sell_price    : response.sell.sold_for,
@@ -157,7 +152,7 @@ export default class PortfolioStore extends BaseStore {
 
     populateResultDetails(response) {
         const contract_response = response.proposal_open_contract;
-        const i = this.positions.findIndex(pos => +pos.id === +contract_response.contract_id);
+        const i = this.getPositionIndexById(contract_response.contract_id);
         const sell_time = isUserSold(contract_response) ?
             +contract_response.date_expiry
             :
@@ -180,7 +175,7 @@ export default class PortfolioStore extends BaseStore {
     @action.bound
     removePositionById(contract_id) {
         const is_contract_mode = this.root_store.modules.smart_chart.is_contract_mode;
-        let i = this.positions.findIndex(pos => +pos.id === +contract_id);
+        let i = this.getPositionIndexById(contract_id);
         // check if position to be removed is out of range from the maximum amount rendered in drawer
         if (this.positions.length > 4) i += 1;
         this.positions.splice(i, 1);
@@ -215,6 +210,10 @@ export default class PortfolioStore extends BaseStore {
             this.clearTable();
             WS.forgetAll('proposal_open_contract', 'transaction');
         }
+    }
+
+    getPositionIndexById(contract_id) {
+        return this.positions.findIndex(pos => +pos.id === +contract_id);
     }
 
     @computed
