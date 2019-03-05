@@ -401,14 +401,14 @@
         display: inline-block;
     }
     &:disabled {
-        background-color: $COLOR_DARK_BLUE_8;
+        background-color: $COLOR_GREEN_2;
         color: $COLOR_DARK_BLUE_7;
 
         .btn-purchase__effect-main, .btn-purchase__currency {
-            background-color: $COLOR_DARK_BLUE_8;
+            background-color: $COLOR_GREEN_1;
         }
         .btn-purchase__effect-detail {
-            border-color: transparent transparent transparent $COLOR_DARK_BLUE_8;
+            border-color: transparent transparent transparent $COLOR_GREEN_1;
         }
         .btn-purchase__trade-type-icon {
             width: 16px;
