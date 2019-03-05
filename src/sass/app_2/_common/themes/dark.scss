@@ -179,6 +179,14 @@
             &:after {
                 background-color: $COLOR_DARK_BLUE_7;
             }
+            &:hover:after {
+                background-color: $COLOR_WHITE;
+            }
+            &--active {
+                .color1-fill {
+                    fill: $COLOR_WHITE;
+                }
+            }
         }
         .network-status-circle--blinker {
             background: $COLOR_DARK_BLUE_7;

@@ -29,6 +29,7 @@
         height: 100%;
         display: inline-flex;
         align-items: center;
+        position: relative;
 
         &:hover {
             background: $COLOR_LIGHT_BLACK_4;
