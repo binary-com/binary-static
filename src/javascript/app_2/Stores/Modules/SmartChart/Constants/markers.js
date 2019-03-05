@@ -1,7 +1,4 @@
-import React           from 'react';
 import { localize }    from '_common/localize';
-// import IconEntrySpot   from 'Assets/Contract/icon-entry-spot.jsx';
-import IconFlag        from 'Assets/Contract/icon-flag.jsx';
 import MarkerLine      from 'Modules/SmartChart/Components/Markers/marker-line.jsx';
 import MarkerSpot      from 'Modules/SmartChart/Components/Markers/marker-spot.jsx';
 import MarkerSpotEntry from 'Modules/SmartChart/Components/Markers/marker-spot-entry.jsx';
@@ -58,11 +55,11 @@ export const MARKER_TYPES_CONFIG = {
     SPOT_EXIT: {
         type          : 'SPOT_EXIT',
         marker_config : MARKER_CONTENT_TYPES.SPOT,
-        content_config: { icon: <IconFlag />, spot_className: 'chart-spot__spot' },
+        content_config: { spot_className: 'chart-spot__spot' },
     },
     SPOT_MIDDLE: {
         type          : 'SPOT_MIDDLE',
         marker_config : MARKER_CONTENT_TYPES.SPOT,
-        content_config: { spot_className: 'chart-spot__middle-spot' },
+        content_config: { spot_className: 'chart-spot__spot--middle' },
     },
 };

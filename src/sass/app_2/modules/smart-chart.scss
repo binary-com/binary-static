@@ -11,7 +11,7 @@
         display: flex;
         align-items: center;
         justify-content: flex-end;
-        padding-right: 7px;
+        padding-right: 8px;
         margin-bottom: 5px;
     }
     &__time {
@@ -21,30 +21,24 @@
     &__time-icon {
         margin-right: 2px;
     }
-    &__content-box {
+    &__value-box {
         font-size: 14px;
-        font-weight: bold;
-        display: flex;
-        align-items: center;
         margin-bottom: 8px;
         padding: 4px 8px;
         border-radius: 11px;
         background: $COLOR_LIGHT_GRAY_1;
-        color: $COLOR_WHITE;
+
+        /* postcss-bem-linter: ignore */
+        p {
+            font-weight: bold;
+            color: $COLOR_WHITE;
+            margin-top: 2px;
+        }
     }
     &__icon-container {
         margin-left: -39px;
         margin-bottom: 8px;
         background: $COLOR_GREEN_1;
-    }
-    &__arrow {
-        margin-left: 0.4em;
-        margin-bottom: 0.2em;
-        width: 0;
-        height: 0;
-        border-top: 15px solid $COLOR_GREEN_1;
-        border-left: 1px solid transparent;
-        transform: rotate(60deg);
     }
     &__spot {
         margin-left: -9.4px;
@@ -59,6 +53,15 @@
         display: flex;
         justify-content: center;
         align-items: center;
+
+        &--middle {
+            background-color: $COLOR_GREEN_1;
+            border: 2px solid $COLOR_GREEN_1;
+        }
+        &--lost {
+            border-color: $COLOR_RED;
+            background: $COLOR_RED;
+        }
     }
     &__spot-entry {
         width: 16px;
@@ -69,14 +72,9 @@
         border-radius: 50%;
     }
     &--lost {
-        .chart-spot__content-box, .chart-spot__spot {
-            background: $COLOR_RED;
-        }
-        .chart-spot__arrow {
-            border-top-color: $COLOR_RED;
-        }
         .chart-spot__spot {
             border-color: $COLOR_RED;
+            background: $COLOR_RED;
         }
     }
 }

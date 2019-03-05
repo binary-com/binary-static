@@ -7,7 +7,6 @@ import { toMoment } from 'Utils/Date';
 import { IconClock }    from '../../../../Assets/Common/icon-clock.jsx';
 
 const MarkerSpot = ({
-    icon,
     spot_epoch,
     spot_value,
     spot_count,
@@ -16,24 +15,15 @@ const MarkerSpot = ({
 }) => (
     <div className={classNames('chart-spot', `chart-spot--${status}`)}>
         <div className='chart-spot__info-container'>
-            {/* { icon &&
-                <React.Fragment>
-                    <div className='chart-spot__icon-container'>
-                        <div className='chart-spot__icon'>{icon}</div>
-                    </div>
-                </React.Fragment>
-            } */}
             <div className='chart-spot__time-container'>
                 <IconClock height='10' width='10' className='chart-spot__time-icon' />
-                <div className='chart-spot__time'>{toMoment(+spot_epoch).format('HH:mm:ss')}</div>
+                <p className='chart-spot__time'>{toMoment(+spot_epoch).format('HH:mm:ss')}</p>
             </div>
-            <div className='chart-spot__content-box'>
-                {/* {icon} */}
-                {addComma(spot_value)}
+            <div className='chart-spot__value-box'>
+                <p>{addComma(spot_value)}</p>
             </div>
         </div>
-        {/* <div className='chart-spot__arrow' /> */}
-        <div className={spot_className}>5</div>
+        <div className={spot_className}>{spot_count}</div>
     </div>
 );
 
