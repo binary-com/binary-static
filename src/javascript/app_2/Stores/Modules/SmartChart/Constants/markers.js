@@ -58,10 +58,11 @@ export const MARKER_TYPES_CONFIG = {
     SPOT_EXIT: {
         type          : 'SPOT_EXIT',
         marker_config : MARKER_CONTENT_TYPES.SPOT,
-        content_config: { icon: <IconFlag /> },
+        content_config: { icon: <IconFlag />, spot_className: 'chart-spot__spot' },
     },
     SPOT_MIDDLE: {
-        type         : 'SPOT_MIDDLE',
-        marker_config: MARKER_CONTENT_TYPES.SPOT,
+        type          : 'SPOT_MIDDLE',
+        marker_config : MARKER_CONTENT_TYPES.SPOT,
+        content_config: { spot_className: 'chart-spot__middle-spot' },
     },
 };
