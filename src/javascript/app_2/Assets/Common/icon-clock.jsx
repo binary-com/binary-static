@@ -8,12 +8,12 @@ const IconClock = ({
     width = '16',
 }) => (
     <svg
-        className={className}
-        onClick={onClick}
         xmlns='http://www.w3.org/2000/svg'
+        viewBox='0 0 16 16'
         width={width}
         height={height}
-        viewBox='0 0 16 16'
+        className={className}
+        onClick={onClick}
     >
         <g fill='none' fillRule='nonzero' stroke='#5C5C5C'>
             <circle cx='8' cy='8' r='7.5' />
