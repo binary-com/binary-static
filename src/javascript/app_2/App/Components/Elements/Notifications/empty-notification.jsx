@@ -3,14 +3,14 @@ import { localize } from '_common/localize';
 import { IconBell } from 'Assets/Header/NavBar';
 
 const EmptyNotification = () => (
-    <div className='no-notifications-container'>
-        <div className='notification-message'>
-            <div className='bell-icon'>
-                <IconBell />
+    <div className='drawer__no-notifications-container'>
+        <div className='drawer__no-notifications'>
+            <div className='drawer__bell'>
+                <IconBell className='drawer__bell-icon' />
             </div>
             <div>
-                <h4>{localize('No Notifications')}</h4>
-                <span className='no-notifications-message'>{localize('You have yet to receive any notifications')}</span>
+                <h4 className='drawer__no-notifications-header'>{localize('No Notifications')}</h4>
+                <span className='drawer__no-notifications-message'>{localize('You have yet to receive any notifications')}</span>
             </div>
         </div>
     </div>

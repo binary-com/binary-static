@@ -15,9 +15,9 @@ const ErrorComponent = ({ type, message }) => {
         msg = message;
     }
     return (
-        <div className='error-container'>
+        <div className='error__container'>
             <IconError type={type} />
-            <p>{msg || localize('Sorry, an error occured while processing your request.')}</p>
+            <p className='error__message'>{msg || localize('Sorry, an error occured while processing your request.')}</p>
         </div>
     );
 };

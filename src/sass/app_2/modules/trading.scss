@@ -5,6 +5,7 @@
         border: 1px solid $COLOR_LIGHT_BLACK_4_SOLID;
         border-radius: $BORDER_RADIUS;
         padding: 0.8em;
+        margin-bottom: 0.4em;
 
         &-header {
             height: 1.5rem;
@@ -66,12 +67,14 @@
             display: flex;
             justify-self: left;
             align-items: center;
-            font-size: 12px;
 
+            &-value {
+                @include typeface(--small-left-bold-black);
+            }
             &-basis {
+                @include typeface(--small-left-normal-black);
                 margin-left: 0;
                 color: $COLOR_LIGHT_BLACK_2;
-                font-weight: normal;
             }
             &-currency {
                 margin-left: 4px;

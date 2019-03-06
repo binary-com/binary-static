@@ -1,3 +1,4 @@
+/** @define settings */
 .settings {
     $sidebar_width: 350px;
     $sidebar_tablet_width: 250px;
@@ -27,6 +28,7 @@
             margin-left: 0;
         }
     }
+    /** @define settings-menu */
     &-menu {
         &__group-header {
             width: 100%;
@@ -48,6 +50,7 @@
 /*
     MENU ITEM COMPONENT
 */
+/** @define menu-item */
 .menu-item {
     display: flex;
     height: 4.8em;
@@ -95,6 +98,7 @@
 /*
     CONTENT SECTION
 */
+/** @define section */
 .section {
     padding: 1.5em 2.4em;
 
@@ -112,101 +116,5 @@
         font-weight: normal;
         margin: 0;
         padding: 0;
-    }
-}
-
-/*
-    MOBILE DROPDOWN MENU
-*/
-.mobile-dropdown {
-    $top_margin: 1em;
-    $side_margin: 0.8em;
-    $button_height: 5em;
-    $button_menu_gap: 1em;
-    margin: $top_margin $side_margin $button_menu_gap;
-
-    &__button {
-        height: $button_height;
-        width: 100%;
-        box-sizing: border-box;
-        margin-bottom: $button_menu_gap;
-        padding-right: 4em;
-        background: $COLOR_WHITE;
-        border-radius: $BORDER_RADIUS;
-        border: 1px solid $COLOR_LIGHT_BLACK_4;
-        position: relative;
-        user-select: none;
-        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-
-        .menu-item {
-            height: 100%;
-        }
-    }
-    &__menu {
-        position: fixed;
-        width: calc(100vw - #{$side_margin} * 2);
-        max-height: calc(100vh - #{$HEADER_HEIGHT} - #{$top_margin} - #{$button_height} - #{$button_menu_gap} - 2em);
-        overflow-y: auto;
-        background: $COLOR_WHITE;
-        border-radius: $BORDER_RADIUS;
-        border: 1px solid $COLOR_LIGHT_BLACK_4;
-        padding-bottom: 1em;
-        box-sizing: border-box;
-        user-select: none;
-        opacity: 0;
-        transform: scale(1, 0);
-        transform-origin: top center;
-        transition: all 0.25s;
-    }
-    &--open {
-        .mobile-dropdown__button {
-            border: 1px solid $COLOR_DARK_BLUE_5;
-        }
-        .mobile-dropdown__menu {
-            transform: scale(1, 1);
-            opacity: 1;
-        }
-        .select-arrow.select-arrow { // to increase specificity without !IMPORTANT
-            transform: rotate(0deg);
-        }
-    }
-    .menu-item {
-        &--active {
-            display: none;
-        }
-        &__img_container {
-            margin-left: 0.8em;
-        }
-    }
-    .settings__section_header {
-        padding-left: 1.2em;
-    }
-    .settings-menu > div:first-child .settings-menu__group-header {
-        margin-top: 1.2em;
-    }
-    .settings-menu__separator {
-        margin-right: 0;
-        margin-left: 0;
-    }
-    .select-arrow {
-        display: inline-block;
-        font-style: normal;
-        vertical-align: baseline;
-        text-align: center;
-        text-transform: none;
-        text-rendering: optimizeLegibility;
-        position: absolute;
-        pointer-events: none;
-        top: 40%;
-        right: 1.5em;
-        line-height: 1;
-        transition: transform 0.3s ease;
-        transform: rotate(180deg);
-        transform-origin: 45% 30%;
-
-        &:before {
-            content: '\002303';
-            font-size: 1.76em;
-        }
     }
 }
