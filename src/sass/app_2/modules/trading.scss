@@ -323,9 +323,6 @@
     transition: box-shadow 0.5s;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.24);
 
-    &__trade-type-text span {
-        @include typeface(--paragraph-left-bold-active);
-    }
     &__currency span {
         @include typeface(--xsmall-left-bold-active);
     }
@@ -375,6 +372,10 @@
         &-text {
             margin-left: 26px;
             position: absolute;
+            
+            span {
+                @include typeface(--paragraph-left-bold-active);
+            }
         }
         &-icon {
             @extend .inline-icon.white;
