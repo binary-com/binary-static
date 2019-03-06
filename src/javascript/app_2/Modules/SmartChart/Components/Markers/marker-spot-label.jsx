@@ -10,28 +10,32 @@ class MarkerSpotLabel extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            isShow: !this.props.has_hover_toggle,
+            show_label: !this.props.has_hover_toggle,
         };
     }
 
     handleHoverToggle = () => {
-        this.setState((state) =>  ({ isShow: !state.isShow }));
+        this.setState((state) =>  ({ show_label: !state.show_label }));
     }
 
     render() {
-        let spot = <MarkerSpot
-            className={this.props.spot_className}
-            spot_count={this.props.spot_count}
-            status={this.props.status}
-        />;
+        let marker_spot =
+            <MarkerSpot
+                className={this.props.spot_className}
+                spot_count={this.props.spot_count}
+                status={this.props.status}
+            />;
 
         if (this.props.has_hover_toggle) {
-            spot = <div onMouseEnter={this.handleHoverToggle} onMouseLeave={this.handleHoverToggle}>{ spot }</div>;
+            marker_spot =
+                <div className='marker-hover-container' onMouseEnter={this.handleHoverToggle} onMouseLeave={this.handleHoverToggle}>
+                    { marker_spot }
+                </div>;
         }
 
         return (
             <div className={'chart-spot-label'}>
-                {this.state.isShow &&
+                {this.state.show_label &&
                     <div className='chart-spot-label__info-container'>
                         <div className={`chart-spot-label__time-value-container chart-spot-label__time-value-container--${this.props.align_label}`}>
                             <div className='chart-spot-label__time-container'>
@@ -44,7 +48,7 @@ class MarkerSpotLabel extends React.Component {
                         </div>
                     </div>
                 }
-                { spot }
+                { marker_spot }
             </div>);
     }
 }
