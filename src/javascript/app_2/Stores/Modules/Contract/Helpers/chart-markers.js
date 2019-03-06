@@ -8,6 +8,7 @@ export const createChartMarkers = (SmartChartStore, contract_info, ContractStore
 
             const marker_config = marker_creators[marker_type](contract_info, ContractStore);
             if (marker_config) {
+                console.log(marker_config);
                 SmartChartStore.createMarker(marker_config);
             }
         });

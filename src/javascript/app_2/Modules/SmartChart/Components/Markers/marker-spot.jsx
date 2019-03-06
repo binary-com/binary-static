@@ -9,7 +9,7 @@ const MarkerSpot = ({
     status,
 }) => (
     <div
-        className={classNames(className, {
+        className={classNames('chart-spot', className, {
             'chart-spot__spot--won' : status === 'won',
             'chart-spot__spot--lost': status === 'lost',
         })}

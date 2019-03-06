@@ -49,8 +49,9 @@ export const MARKER_TYPES_CONFIG = {
         content_config: { line_style: 'solid', label: localize('Start Time') },
     },
     SPOT_ENTRY: {
-        type         : 'SPOT_ENTRY',
-        marker_config: MARKER_CONTENT_TYPES.SPOT_ENTRY,
+        type          : 'SPOT_ENTRY',
+        marker_config : MARKER_CONTENT_TYPES.SPOT_ENTRY,
+        content_config: { className: 'chart-spot__entry' },
     },
     SPOT_EXIT: {
         type          : 'SPOT_EXIT',

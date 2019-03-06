@@ -3,6 +3,44 @@
     display: flex;
     flex-direction: column;
 
+    &__spot {
+        margin-left: -9.4px;
+        margin-bottom: -5.4px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        color: $COLOR_LIGHT_BLACK_1;
+        background-color: $COLOR_WHITE;
+        border: 2px solid $COLOR_LIGHT_GRAY_1;
+
+        &--lost {
+            border-color: $COLOR_RED;
+            background: $COLOR_RED;
+        }
+        &--won {
+            background-color: $COLOR_GREEN_1;
+            border: 2px solid $COLOR_GREEN_1;
+        }
+        &--won, &--lost {
+            color: $COLOR_WHITE;
+        }
+    }
+    &__entry {
+        width: 16px;
+        height: 16px;
+        margin-bottom: -8px;
+        margin-left: -8px;
+        border: 4px solid $COLOR_ORANGE;
+        border-radius: 50%;
+    }
+}
+
+/** @define chart-spot-label */
+.chart-spot-label {
     &__info-container {
         width: 100%;
         position: relative;
@@ -16,7 +54,7 @@
         &--top {
             bottom: 8px;
 
-            .chart-spot__time-container {
+            .chart-spot-label__time-container {
                 margin-bottom: 2px;
             }
         }
@@ -24,7 +62,7 @@
             top: 28px;
             flex-direction: column-reverse;
 
-            .chart-spot__time-container {
+            .chart-spot-label__time-container {
                 margin-top: 2px;
             }
         }
@@ -59,40 +97,6 @@
         margin-left: -39px;
         margin-bottom: 8px;
         background: $COLOR_GREEN_1;
-    }
-    &__spot {
-        margin-left: -9.4px;
-        margin-bottom: -5.4px;
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-weight: bold;
-        color: $COLOR_LIGHT_BLACK_1;
-        background-color: $COLOR_WHITE;
-        border: 2px solid $COLOR_LIGHT_GRAY_1;
-
-        &--lost {
-            border-color: $COLOR_RED;
-            background: $COLOR_RED;
-        }
-        &--won {
-            background-color: $COLOR_GREEN_1;
-            border: 2px solid $COLOR_GREEN_1;
-        }
-        &--won, &--lost {
-            color: $COLOR_WHITE;
-        }
-    }
-    &__spot-entry {
-        width: 16px;
-        height: 16px;
-        margin-bottom: -8px;
-        margin-left: -8px;
-        border: 4px solid $COLOR_ORANGE;
-        border-radius: 50%;
     }
 }
 

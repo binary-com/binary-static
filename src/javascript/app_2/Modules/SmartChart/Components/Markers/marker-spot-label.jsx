@@ -14,14 +14,14 @@ const MarkerSpotLabel = ({
     spot_value,
     status,
 }) => (
-    <div className={'chart-spot'}>
-        <div className='chart-spot__info-container'>
-            <div className={`chart-spot__time-value-wrapper chart-spot__time-value-wrapper--${align_label}`}>
-                <div className='chart-spot__time-container'>
-                    <IconClock height='10' width='10' className='chart-spot__time-icon' />
-                    <p className='chart-spot__time'>{toMoment(+spot_epoch).format('HH:mm:ss')}</p>
+    <div className={'chart-spot-label'}>
+        <div className='chart-spot-label__info-container'>
+            <div className={`chart-spot-label__time-value-wrapper chart-spot-label__time-value-wrapper--${align_label}`}>
+                <div className='chart-spot-label__time-container'>
+                    <IconClock height='10' width='10' className='chart-spot-label__time-icon' />
+                    <p className='chart-spot-label__time'>{toMoment(+spot_epoch).format('HH:mm:ss')}</p>
                 </div>
-                <div className='chart-spot__value-container'>
+                <div className='chart-spot-label__value-container'>
                     <p>{addComma(spot_value)}</p>
                 </div>
             </div>
