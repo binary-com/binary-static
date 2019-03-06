@@ -1058,6 +1058,9 @@
             &__result {
                 background-color: $COLOR_DARK_BLUE_2;
 
+                &:hover {
+                    background: 0;
+                }
                 &--won {
                     background-image: linear-gradient(to top, rgba(16, 19, 32, 0), rgba(0, 148, 117, 0.16));
                 }
@@ -1072,13 +1075,20 @@
                     box-shadow: 0 0 4px 1px rgba(255, 255, 255, 0.16);
                 }
             }
+            &__type {
+                .category-type {
+                    .color1-fill {
+                        fill: $COLOR_WHITE;
+                    }
+                }
+            }
             &__remaining-time {
                 color: $COLOR_DARK_BLUE_7;
             }
             &__indicative {
-                &--no-resale {
-                    color: $COLOR_DARK_BLUE_7;
-                }
+                // &--no-resale {
+                //     color: $COLOR_DARK_BLUE_7;
+                // }
                 &--price-stable {
                     color: $COLOR_WHITE;
                 }

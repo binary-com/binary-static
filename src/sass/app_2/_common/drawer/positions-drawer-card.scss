@@ -178,9 +178,9 @@
         &--price-stable {
             color: $COLOR_LIGHT_BLACK_1;
         }
-        &--no-resale {
-            color: $COLOR_LIGHT_BLACK_2;
-        }
+        // &--no-resale {
+        //     color: $COLOR_LIGHT_BLACK_2;
+        // }
     }
     &__remaining-time {
         font-size: 1em;
@@ -246,12 +246,25 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    text-align: center;
 
     &__type-wrapper {
         margin: 0 0.4em 0 0;
+        padding: 0.5em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        /* postcss-bem-linter: ignore */
+        .category-type {
+            width: 20px;
+            height: 20px;
+        }
     }
     &__type-label {
         width: 3em;
+        line-height: 1.5;
+        text-align: left;
     }
 }
 
