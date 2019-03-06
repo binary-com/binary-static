@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React     from 'react';
 
 const IconWarning = ({ className }) => (
-    <svg className={className} xmlns='http://www.w3.org/2000/svg' width='16' height='16'>
+    <svg className={className} width='16' height='16'>
         <g fill='none' fillRule='evenodd'>
             <circle cx='8' cy='8' r='8' fill='#FFC107' />
             <g fill='#FFF' transform='matrix(1 0 0 -1 6.5 12)'>

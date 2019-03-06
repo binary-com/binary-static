@@ -3,7 +3,7 @@ import PropTypes    from 'prop-types';
 import React        from 'react';
 
 const IconEntrySpot = () => (
-    <svg className='chart-spot__icon' xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'>
+    <svg className='chart-spot__icon' width='16' height='16' viewBox='0 0 16 16'>
         <g fill='none' fillRule='evenodd'>
             <path d='M0 0h16v16H0z' />
             <path fill='#fff' fillRule='nonzero' d='M9.033 7.912c-1.107 1.014-2.214 2.03-3.33 3.037L5.701 8.84H0V6.88h5.7c.001-.979.002-1.822.005-2.107 1.099.982 2.178 1.987 3.27 2.977.044.047.151.108.058.16z' />

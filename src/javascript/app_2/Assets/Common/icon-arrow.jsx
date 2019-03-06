@@ -3,7 +3,7 @@ import PropTypes  from 'prop-types';
 import React      from 'react';
 
 const IconArrow = ({ className, classNamePath }) => (
-    <svg className={classNames('inline-icon', className)} width='16' height='16' xmlns='http://www.w3.org/2000/svg'>
+    <svg className={classNames('inline-icon', className)} width='16' height='16'>
         <path
             className={classNames(classNamePath, 'color1-fill')}
             fill='rgba(0, 0, 0, 0.8)'
