@@ -27,10 +27,10 @@
     &__button {
         position: absolute;
         z-index: 1;
-        top: 2px;
-        height: calc(100% - 5px);
+        top: 1px;
+        height: calc(100% - 2px);
         margin: initial;
-        min-width: 3em;
+        min-width: 3.2em;
         border-radius: 3px;
         padding: initial;
         background-color: initial;
@@ -39,14 +39,18 @@
         align-items: center;
 
         &--increment {
-            right: 2px; // fixed position
+            right: 1px; // fixed position
         }
         &--decrement {
-            left: 2px; // fixed position
+            left: 1px; // fixed position
         }
         &:hover {
             cursor: pointer;
             background: $COLOR_LIGHT_BLACK_4;
+
+            & ~ .input-wrapper__input {
+                @extend .input:hover;
+            }
         }
         &:disabled:hover {
             cursor: not-allowed;
