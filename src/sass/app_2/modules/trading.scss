@@ -67,12 +67,14 @@
             display: flex;
             justify-self: left;
             align-items: center;
-            font-size: 12px;
 
+            &-value {
+                @include typeface(--small-left-bold-black);
+            }
             &-basis {
+                @include typeface(--small-left-normal-black);
                 margin-left: 0;
                 color: $COLOR_LIGHT_BLACK_2;
-                font-weight: normal;
             }
             &-currency {
                 margin-left: 4px;
