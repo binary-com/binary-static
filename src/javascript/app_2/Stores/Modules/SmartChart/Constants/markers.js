@@ -60,6 +60,6 @@ export const MARKER_TYPES_CONFIG = {
     SPOT_MIDDLE: {
         type          : 'SPOT_MIDDLE',
         marker_config : MARKER_CONTENT_TYPES.SPOT,
-        content_config: { spot_className: 'chart-spot__spot--middle' },
+        content_config: { spot_className: 'chart-spot__spot' },
     },
 };
