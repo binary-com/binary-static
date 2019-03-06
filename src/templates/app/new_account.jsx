@@ -23,8 +23,7 @@ const NewAccount = () => (
                 <p className='no-margin gr-padding-10 gr-parent'>{it.L('Create free account with')}</p>
                 <div className='gr-row gr-row-align-center'>
                     <SocialButton provider='google' />
-                    {/* TODO: uncomment to enable FB */}
-                    {/* <SocialButton provider='facebook' /> */}
+                    <SocialButton provider='facebook' />
                 </div>
             </div>
             <p>{it.L('Already have an account? [_1]Log in[_2] here', '<a id="login" href="javascript:;">', '</a>')}</p>

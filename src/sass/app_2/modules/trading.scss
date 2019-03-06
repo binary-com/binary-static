@@ -5,6 +5,7 @@
         border: 1px solid $COLOR_LIGHT_BLACK_4_SOLID;
         border-radius: $BORDER_RADIUS;
         padding: 0.8em;
+        margin-bottom: 0.4em;
 
         &-header {
             height: 1.5rem;
@@ -19,7 +20,6 @@
         }
     }
     &__input {
-        font-weight: 300;
         align-self: center;
         appearance: none;
         box-sizing: border-box;
@@ -46,6 +46,13 @@
         text-align: center;
         z-index: 1;
         color: $COLOR_LIGHT_BLACK_1;
+        width: 3.2em;
+        line-height: 3.2em;
+
+        &:before {
+            @include typeface(--paragraph-center-normal-black);
+            color: inherit;
+        }
     }
     &__price {
         line-height: 0.9rem;
@@ -60,12 +67,14 @@
             display: flex;
             justify-self: left;
             align-items: center;
-            font-size: 12px;
 
+            &-value {
+                @include typeface(--small-left-bold-black);
+            }
             &-basis {
+                @include typeface(--small-left-normal-black);
                 margin-left: 0;
                 color: $COLOR_LIGHT_BLACK_2;
-                font-weight: normal;
             }
             &-currency {
                 margin-left: 4px;
@@ -96,6 +105,7 @@
     }
     &__barriers {
         display: flex;
+        flex-direction: column;
 
         &:first-child {
             padding-right: 8px;

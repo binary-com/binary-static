@@ -4,13 +4,13 @@
     position: relative;
 
     .contract-header {
-        max-height: 3.2em;
+        max-height: 32px;
         overflow: hidden;
         border-radius: 4px 4px 0 0;
 
         .header-wrapper {
             transition: transform 0.4s ease;
-            transform: translateY(-3.2em);
+            transform: translateY(-32px);
 
             .header-result, .header-purchased {
                 display: flex;
@@ -59,10 +59,17 @@
             }
         }
     }
+    .btn {
+        margin: 0.8em;
+
+        span {
+            font-size: 1em;
+        }
+    }
     .contract-contents {
         padding: 1em;
         background: $COLOR_LIGHT_BLACK_4_SOLID;
-        font-size: 1.2em;
+        font-size: 1em;
         border-top-width: 0;
         border-radius: 0 0 4px 4px;
 
@@ -72,7 +79,7 @@
             line-height: 1.5;
         }
         .ref-number, .info-header {
-            margin-top: 1em;
+            margin-top: 0.6em;
             font-weight: 300;
             text-align: center;
             background-color: $COLOR_LIGHT_BLACK_4_SOLID;
@@ -102,7 +109,7 @@
     }
 }
 
-$CONTRACT_INFO_BOX_PADDING: 1.5em;
+$CONTRACT_INFO_BOX_PADDING: 1.6em;
 
 .info-box-container {
     position: absolute;
@@ -112,7 +119,17 @@ $CONTRACT_INFO_BOX_PADDING: 1.5em;
     transform: none;
     opacity: 1;
     transition: transform 0.4s ease, opacity 0.4s linear;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 
+    &-button:hover {
+        cursor: pointer;
+    }
+    &-icon {
+        width: 32px;
+        height: 32px;
+    }
     &-enter {
         transform: translateY(calc(-100% - 2em));
         opacity: 0;
@@ -125,9 +142,22 @@ $CONTRACT_INFO_BOX_PADDING: 1.5em;
         position: relative;
         border-radius: $BORDER_RADIUS;
         padding: $CONTRACT_INFO_BOX_PADDING;
-        background: rgba(255, 255, 255, 0.9);
+        background: rgba(42, 48, 82, 0.04);
         font-weight: 300;
 
+        &-longcode {
+            display: flex;
+
+            &-icon {
+                @extend .info-box-container-icon;
+                margin-right: 1.6em;
+                padding: 0.4em;
+            }
+            &-text {
+                @include typeface(--paragraph-left-normal-black, unset);
+                max-width: 360px;
+            }
+        }
         .expired {
             display: flex;
             align-items: center;
@@ -317,6 +347,11 @@ $CONTRACT_INFO_BOX_PADDING: 1.5em;
         .info-box {
             background: rgba(16, 19, 32, 0.6); // this is color dark blue 2 with 0.6 opacity
 
+            &-longcode {
+                &-text {
+                    color: $COLOR_WHITE;
+                }
+            }
             .general .sell {
                 .btn:disabled {
                     background: $COLOR_DARK_BLUE_8;

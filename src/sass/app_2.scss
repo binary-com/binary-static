@@ -18,6 +18,7 @@
 // Drawer
 @import 'app_2/_common/drawer/drawer';
 @import 'app_2/_common/drawer/positions-drawer';
+@import 'app_2/_common/drawer/positions-progress-slider';
 
 // Form
 @import 'app_2/_common/form/buttons';
@@ -31,7 +32,10 @@
 @import 'app_2/_common/components/allow-equals';
 @import 'app_2/_common/components/calendar';
 @import 'app_2/_common/components/card-list';
-@import 'app_2/_common/components/contracts-popup';
+@import 'app_2/_common/components/contract-type-dialog';
+@import 'app_2/_common/components/contract-type-widget';
+@import 'app_2/_common/components/contract-type-list';
+@import 'app_2/_common/components/trade-type-info-dialog';
 @import 'app_2/_common/components/data-table';
 @import 'app_2/_common/components/date-picker';
 @import 'app_2/_common/components/error-boundary';

@@ -57,7 +57,7 @@ const InputField = ({
 
         if (type === 'number') {
             const is_empty = !e.target.value || e.target.value === '' || e.target.value === '  ';
-            const signed_regex = is_signed ? '[+\-\.0-9]$' : '^';
+            const signed_regex = is_signed ? '^([+\-\.0-9])' : '^';
 
             const is_number = new RegExp(`${signed_regex}(\\d*)?${is_float ? '(\\.\\d+)?' : ''}$`)
                 .test(e.target.value);
@@ -114,10 +114,12 @@ const InputField = ({
         display_value = is_unit_at_right ? `${value} ${unit}` : `${unit} ${value}`;
     }
 
+    const is_increment_input = is_incrementable && type === 'number';
+
     const input =
         <input
             checked={checked ? 'checked' : ''}
-            className={classNames('input', { error: has_error }, classNameInput)}
+            className={classNames(is_increment_input ? 'input-wrapper__input' : '', 'input', { 'input--error': has_error }, classNameInput)}
             disabled={is_disabled}
             data-for={`error_tooltip_${name}`}
             data-value={data_value}
@@ -163,15 +165,15 @@ const InputField = ({
         >
             <Tooltip className={classNames('', { 'with-label': label })} alignment='left' message={has_error ? error_messages[0] : null }>
                 {!!label &&
-                    <label htmlFor={name} className='input-label'>{label}</label>
+                    <label htmlFor={name} className='input-field__label'>{label}</label>
                 }
                 {!!prefix &&
-                    <span className={classNames(classNamePrefix, 'symbols', prefix.toLowerCase())} />
+                    <span className={classNames(classNamePrefix, 'symbols', `symbols--${prefix.toLowerCase()}`)} />
                 }
                 {!!helper &&
-                    <span className='input-helper'>{helper}</span>
+                    <span className='input-field__helper'>{helper}</span>
                 }
-                {is_incrementable  &&  type === 'number' ? input_increment : input}
+                {is_increment_input ? input_increment : input}
             </Tooltip>
         </div>
     );

@@ -21,6 +21,12 @@
     bottom: 0;
 }
 
+/** @define icon */
+.icon--centered {
+    top: 0.8em;
+    left: 5%;
+}
+
 /** @define center-text */
 .center-text {
     text-align: center;
@@ -29,4 +35,14 @@
 /** @define no-margin */
 .no-margin {
     margin: 0;
+}
+
+/** @define hr */
+.hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid $COLOR_LIGHT_BLACK_4;
+    margin: 0.5em 0;
+    padding: 0;
 }

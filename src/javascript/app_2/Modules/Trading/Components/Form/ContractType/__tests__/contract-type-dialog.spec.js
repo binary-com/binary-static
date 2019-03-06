@@ -29,12 +29,4 @@ describe('ContractTypeDialog', () => {
         const wrapper = shallow(<ContractTypeDialog is_mobile={false} />);
         expect(wrapper.find('FullScreenDialog').exists()).to.be.false;
     });
-    it('should render .contracts-popup-list component when is_mobile is false', () => {
-        const wrapper = shallow(<ContractTypeDialog is_mobile={false} />);
-        expect(wrapper.find('.contracts-popup-list').exists()).to.be.true;
-    });
-    it('should not render .contracts-popup-list component when is_mobile is true', () => {
-        const wrapper = shallow(<ContractTypeDialog is_mobile={true} />);
-        expect(wrapper.find('.contracts-popup-list').exists()).to.be.false;
-    });
 });

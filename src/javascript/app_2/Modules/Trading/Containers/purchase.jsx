@@ -36,7 +36,7 @@ const Purchase = ({
             <Button
                 is_disabled={is_disabled}
                 id={`purchase_${type}`}
-                className='primary btn-purchase'
+                className='btn--primary btn-purchase'
                 has_effect
                 onClick={() => { onClickPurchase(info.id, info.stake, type); }}
             >

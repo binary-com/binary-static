@@ -29,18 +29,18 @@ const AccountInfo = ({
                 className='acc-info__id'
                 title={loginid}
             >
-                {loginid}
+                {loginid}&nbsp;
             </p>
             {
                 typeof balance !== 'undefined' &&
                 <p className='acc-info__balance'>
                     <span
-                        className={classNames('symbols', (currency || '').toLowerCase())}
+                        className={classNames('symbols', { [`symbols--${(currency || '').toLowerCase()}`]: currency })}
                     />
                     {balance}
                 </p>
             }
-            <IconArrow className='acc-info__select-arrow' />
+            <IconArrow className='acc-info__select-arrow' is_bold={true} />
         </div>
         <CSSTransition
             in={is_dialog_on}

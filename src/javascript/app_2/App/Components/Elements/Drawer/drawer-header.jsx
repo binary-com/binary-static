@@ -8,25 +8,25 @@ export const DrawerHeader = ({
     alignment,
     closeBtn,
 }) => {
-    const drawer_header_class = classNames('drawer-header', alignment);
+    const drawer_header_class = classNames('drawer__header', alignment);
     return (
         <React.Fragment>
             {alignment && alignment === 'right' ?
                 <div className={drawer_header_class}>
-                    <div className='icons btn-close' onClick={closeBtn}>
-                        <IconClose />
+                    <div className='drawer__icons drawer__icons-btn-close' onClick={closeBtn}>
+                        <IconClose className='drawer__icons-icon-close' />
                     </div>
-                    <div className='notifications-header'>
-                        <h4>{localize('all notifications')}</h4>
+                    <div className='drawer__notifications'>
+                        <h4 className='drawer__notifications-header'>{localize('all notifications')}</h4>
                     </div>
                 </div>
                 :
                 <div className={drawer_header_class}>
-                    <div className='icons btn-close' onClick={closeBtn}>
-                        <IconClose />
+                    <div className='drawer__icons drawer__icons-btn-close' onClick={closeBtn}>
+                        <IconClose className='drawer__icons-icon-close' />
                     </div>
-                    <div className='icons brand-logo'>
-                        <div className='img' />
+                    <div className='drawer__icons drawer__brand-logo'>
+                        <div className='drawer__image' />
                     </div>
                 </div>
             }

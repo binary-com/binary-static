@@ -15,9 +15,9 @@ const ContractTypeList = ({
             // TODO: Remove this line after other contracts are ready to be served
             !['In/Out', 'Asians'].includes(key) &&
             <React.Fragment key={key}>
-                <div className='list-group'>
-                    <div className='list-label'><span>{key}</span></div>
-                    <div className='list-items'>
+                <div className='contract-type-list'>
+                    <div className='contract-type-list__label'><span>{key}</span></div>
+                    <div className='contract-type-list__contracts-wrapper'>
                         <ContractTypeItem
                             contracts={list[key]}
                             name={name}

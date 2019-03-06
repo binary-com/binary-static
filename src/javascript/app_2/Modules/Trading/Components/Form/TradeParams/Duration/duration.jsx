@@ -33,6 +33,7 @@ const Duration = ({
     server_time,
     start_date,
     validation_errors,
+    market_open_times,
 }) => {
     const expiry_list = [
         { text: localize('Duration'), value: 'duration' },
@@ -51,8 +52,7 @@ const Duration = ({
         const moment_expiry = toMoment(expiry_date);
         const duration_unit_text = (duration_units_list.find(o => o.value === duration_unit) || {}).text;
         return (
-            <div className='fieldset-minimized duration'>
-                <span className='icon trade-duration' />
+            <div className='fieldset-minimized fieldset-minimized__duration'>
                 {expiry_type === 'duration'
                     ? `${duration} ${duration_unit_text}`
                     : `${moment_expiry.format('ddd - DD MMM, YYYY')}\n${expiry_time}`
@@ -153,6 +153,7 @@ const Duration = ({
                             expiry_list={expiry_list}
                             expiry_type={expiry_type}
                             getDurationFromUnit={getDurationFromUnit}
+                            market_open_times={market_open_times}
                             number_input_props={props.number_input}
                             onChange={onChange}
                             onChangeUiStore={onChangeUiStore}
@@ -206,6 +207,7 @@ Duration.propTypes = {
     hasDurationUnit     : PropTypes.func,
     is_advanced_duration: PropTypes.bool,
     is_minimized        : PropTypes.bool,
+    market_open_times   : PropTypes.array,
     onChange            : PropTypes.func,
     onChangeUiStore     : PropTypes.func,
     server_time         : PropTypes.object,

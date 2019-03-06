@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-02-20 14:16\n"
+"PO-Revision-Date: 2019-03-06 10:56\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -173,6 +173,9 @@ msgstr "%1让每个人都能轻松参与金融市场。您可交易各主要货�
 
 msgid "%1 gives everyone an easy way to participate in the financial markets. Trade with as little as $1 USD on major currencies, stocks, indices, and commodities."
 msgstr "%1让每个人都能轻松参与金融市场。您可交易各主要货币、股票指数和大宗商品，投资门槛低至1美元。"
+
+msgid "%1 has been credited into your MT5 Demo Account: %2."
+msgstr "%1 已记入您的MT5模拟账户: %2。"
 
 msgid "%1 has been credited into your Virtual Account: %2."
 msgstr "%1 已记入您的虚拟账户: %2。"
@@ -1285,7 +1288,7 @@ msgid "Apply now"
 msgstr "立即申请"
 
 msgid "Apply now as a professional investor"
-msgstr ""
+msgstr "立刻申请成为专业投资者"
 
 msgid "Apply to become a %1 <a href=\"%2\">payment agent</a>."
 msgstr "申请成为 %1 <a href=\"%2\">支付代理</a>。"
@@ -1584,8 +1587,8 @@ msgstr "验证"
 msgid "Authorised Applications"
 msgstr "授权应用程序"
 
-msgid "Authorised payment agents are exempted from paying any transfer fees"
-msgstr "获授权付款代理人免缴任何转账费"
+msgid "Authorised payment agents are exempted from paying any transfer fees."
+msgstr "获授权付款代理人免缴任何转账费."
 
 msgid "Auto-trader programming tool"
 msgstr "自动交易编程工具"
@@ -3382,8 +3385,8 @@ msgstr "文档提交状态"
 msgid "Does Not Touch"
 msgstr "未触及"
 
-msgid "Don't have an account?"
-msgstr "没有账户？"
+msgid "Don't have a %1 account yet?"
+msgstr "还没有%1账户？"
 
 msgid "Don't show again"
 msgstr "别再显示"
@@ -3443,7 +3446,7 @@ msgid "Download your statement"
 msgstr "下载月结单"
 
 msgid "Downs"
-msgstr ""
+msgstr "持续下跌"
 
 msgid "Drive rapid growth and business development to support the company's sales and marketing objectives"
 msgstr "推动快速增长和业务发展，以支持公司的销售和市场营销目标"
@@ -4507,6 +4510,9 @@ msgstr "生成的验证码︰"
 msgid "Generous commission"
 msgstr "高额佣金"
 
+msgid "Get %1"
+msgstr "获取 %1"
+
 msgid "Get Started"
 msgstr "开始交易"
 
@@ -4898,7 +4904,7 @@ msgid "I understand the risks involved and agree to the %1Terms & Conditions of 
 msgstr "我了解所涉及的风险, 并同意接受%1MAM设施的条款和条件%2"
 
 msgid "I want to reapply"
-msgstr ""
+msgstr "我想重新申请"
 
 msgid "I would like to be treated as a professional client."
 msgstr "我要被视为专业客户。"
@@ -5195,7 +5201,7 @@ msgid "If you select \"rises\", you win the payout if the market price is higher
 msgstr "如果您选择“上涨”期权，只要市场价格高于入市现价，您将获得赔付。"
 
 msgid "If you select %1\"Downs\"%2, you win the payout if consecutive ticks fall successively after the %1entry spot%2.%3No payout if any tick rises or is equal to any of the previous ticks."
-msgstr ""
+msgstr "如果您选择%1“持续下跌”%2期权，只要%1入市现价%2后的价格持续下跌，您将获得赔付。如果期间内的价格有任何上涨或相等于之前的价格， 您将不会获得%3赔付。"
 
 msgid "If you select %1\"High Tick\"%2, you win the payout if the selected tick is the %1highest among the next five ticks%2."
 msgstr "如果您选择 %1\"高跳动点\"%2, 如果所选跳动点是接下来下五个跳动点%2 中%1最高值, 可获得赔付。"
@@ -5204,7 +5210,7 @@ msgid "If you select %1\"Low Tick\"%2, you win the payout if the selected tick i
 msgstr "如果您选择 %1\"低跳动点\"%2, 如果所选跳动点是接下来下五个跳动点%2 中%1最低值, 可获得赔付。"
 
 msgid "If you select %1\"Ups\"%2, you win the payout if consecutive ticks rise successively after the %1entry spot%2.%3No payout if any tick falls or is equal to any of the previous ticks."
-msgstr ""
+msgstr "如果您选择%1“持续上涨”%2期权，只要%1入市现价%2后的价格持续上涨，您将获得赔付。如果期间内的价格有任何下跌或相等于之前的价格， 您将不会获得%3赔付。"
 
 msgid "If you select a <strong>start time</strong> in the future, the <strong>start time</strong> is that which is selected and the <strong>entry spot</strong> is the price in effect at that time."
 msgstr "如果您选择的 <strong>开始时间</strong> 为未来的某个时间，交易的 <strong>开始时间</strong> 就是您选择的时间，<strong>入市现价</strong> 就是当时的实时价格。"
@@ -5535,9 +5541,6 @@ msgstr "释义"
 
 msgid "Interpretations"
 msgstr "释义"
-
-msgid "Interview process"
-msgstr "面试流程"
 
 msgid "Introduce %1"
 msgstr "介绍%1"
@@ -6662,7 +6665,7 @@ msgid "More benefits"
 msgstr "更多福利"
 
 msgid "More information can be found in an email sent to you."
-msgstr ""
+msgstr "您可以在发给您的电子邮件中找到更详细的信息。"
 
 msgid "More specifically, when the Company enters into a binary option trade with the client (each, a \"Contract\"), the Company has a duty to provide the client with 'best execution'. Best execution means that the Company must take reasonable steps to obtain the best possible result for the client when executing a client order. This document provides a summary of the Company's best execution policy."
 msgstr "具体来说，当公司和客户进行二元期权交易时（双方有了“合约”），公司有责任向客户提供\"最佳执行方案”。最佳执行方案的意思是，当公司执行客户的订单时，必须采取合理的措施为客户获取最大效益。此文件是关于最佳执行方案政策的概述。"
@@ -7300,8 +7303,8 @@ msgstr "我们的网站包含其他网站链接，并可能含有第三方网站
 msgid "Our website uses cookies to give you the best user experience. For more information, %1."
 msgstr "我们网站使用 cookie 为您提供最佳的用户体验。请参阅详细信息, %1。"
 
-msgid "Outside the EU, financial products are offered by Binary (C.R.) S.A., 5th Floor, Building 6 Centro Ejecutivo La Sabana, Sabana Sur, San José, Costa Rica, Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, regulated by the Vanuatu Financial Services Commission (%1view licence%2), Binary (BVI) Ltd, 2nd Floor, O’Neal Marketing Associates Building, Wickham’s Cay II, P.O. Box 3174, Road Town, Tortola VB1110, British Virgin Islands, regulated by the British Virgin Islands Financial Services Commission (%3licence no. SIBA/L/18/1114%4), and Binary (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Labuan, Malaysia, regulated by the Labuan Financial Services Authority to carry on a money-broking business (%5licence no. MB/18/0024%6)"
-msgstr "欧盟以外地区，金融产品由Binary (C.R.) S.A., 5th Floor, Building 6 Centro Ejecutivo La Sabana, Sabana Sur, San José, Costa Rica和Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu提供服务，受瓦努阿图金融服务委员会监管 (%1查看许可证%2)，或由Binary (BVI) Ltd, 2nd Floor, O’Neal Marketing Associates Building, Wickham’s Cay II, P.O. Box 3174, Road Town, Tortola VB1110, British Virgin Islands提供服务，受英属维尔京群岛金融服务委员会监管 (%3许可证编号SIBA/L/18/1114%4) 以及由Binary (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Labuan, Malaysia提供服务，受纳闽金融服务管理局监管，并开展货币经纪业务查看许可证 (%5许可证编号MB/18/0024%6)"
+msgid "Outside the EU, financial products are offered by Binary (C.R.) S.A., 5th Floor, Building 6 Centro Ejecutivo La Sabana, Sabana Sur, San José, Costa Rica, Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, regulated by the Vanuatu Financial Services Commission (%1view licence%2), Binary (BVI) Ltd, 2nd Floor, O’Neal Marketing Associates Building, Wickham’s Cay II, P.O. Box 3174, Road Town, Tortola VB1110, British Virgin Islands, regulated by the British Virgin Islands Financial Services Commission (%3licence no. SIBA/L/18/1114%4), and Binary (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Labuan, Malaysia, regulated by the Labuan Financial Services Authority to carry on a money-broking business (%5licence no. MB/18/0024%6)."
+msgstr "欧盟以外地区，金融产品由Binary (C.R.) S.A., 5th Floor, Building 6 Centro Ejecutivo La Sabana, Sabana Sur, San José, Costa Rica和Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu提供服务，受瓦努阿图金融服务委员会监管（％1查看许可证％2），或由Binary (BVI) Ltd, 2nd Floor, O’Neal Marketing Associates Building, Wickham’s Cay II, P.O. Box 3174, Road Town, Tortola VB1110, British Virgin Islands提供服务，受英属维尔京群岛金融服务委员会监管（％3许可证编号SIBA/L/18/1114％4）以及由Binary (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Labuan, Malaysia提供服务，受纳闽金融服务管理局监管，并开展货币经纪业务（％5许可证编号MB/18/0024％6）。"
 
 msgid "Over $1,000,000"
 msgstr "大于$1,000,000"
@@ -7407,6 +7410,9 @@ msgstr "所有金属合约不需付佣金费。"
 
 msgid "Pay-out"
 msgstr "回报"
+
+msgid "PaySec was founded in 2014 to provide customers and merchants in the Asian region with a comprehensive range of payment methods through one payment gateway."
+msgstr "PaySec 成立于 2014年, 通过一个支付网关为亚洲地区的客户和商家提供全面的支付方式。"
 
 msgid "Payment Agent"
 msgstr "付款代理"
@@ -7676,7 +7682,7 @@ msgid "Please make sure that you first agree with the Agent on the terms of paym
 msgstr "在提交请求前，请您确认同意代理的支付条款。"
 
 msgid "Please note that Asians, Digits, Reset Call/Reset Put, High Ticks/Low Ticks, and Run Ups/Run Downs are available exclusively with our Volatility Indices."
-msgstr ""
+msgstr "请注意，亚洲货币、数字交易、买权重设/卖权重设、高跳动点/低跳动点和持续上涨/持续下跌只适用于我们的波动指数。"
 
 msgid "Please note that actual trading results may not correspond to optimized or back-tested results."
 msgstr "请注意, 实际交易结果可能与被优化或事后测试的结果不符。"
@@ -7706,7 +7712,7 @@ msgid "Please read this %1privacy policy%2 before submitting your application."
 msgstr "提交申请前, 请阅读此 %1隐私政策%2。"
 
 msgid "Please reapply once the required criteria has been fulfilled."
-msgstr ""
+msgstr "一旦满足所需标准, 请重新申请。"
 
 msgid "Please refer to the %1asset index%2 for each asset’s minimum and maximum contract durations based on trade type."
 msgstr "要了解每个资产基于交易类型的最低和最高合约期限，请参阅 %1资产指数%2。"
@@ -8261,6 +8267,9 @@ msgstr "轻松推荐我们的产品，并透过我们卓越的推介工具对您
 msgid "Recruit, train, and nurture affiliates and IBs in countries where Binary Group is active, leveraging your direct knowledge and experience of the local market"
 msgstr "利用您在本地市场的直接知识和经验，负责对Binary集团活跃的国家招聘、培训和培养联盟成员和推介经纪(IB)"
 
+msgid "Recruitment Process"
+msgstr "招聘流程"
+
 msgid "Ref."
 msgstr "参考"
 
@@ -8544,13 +8553,13 @@ msgid "Rolling Spot Forex;"
 msgstr "起伏现货外汇"
 
 msgid "Run"
-msgstr ""
+msgstr "持续交易"
 
 msgid "Run Downs"
-msgstr ""
+msgstr "持续下跌"
 
 msgid "Run Ups"
-msgstr ""
+msgstr "持续上涨"
 
 msgid "Russia"
 msgstr "俄罗斯"
@@ -9435,10 +9444,10 @@ msgid "The %1end time%2 is the selected number of minutes/hours after the %1star
 msgstr "%1收盘时间%2是 %1开盘时间%2后的选定分钟/小时数。"
 
 msgid "The %1entry spot%2 is the next tick after the %1start time%2."
-msgstr ""
+msgstr "%1入市现价%2是交易%1开盘时间%2后的下一个价格跳动点。"
 
 msgid "The %1exit spot%2 is the last tick when the contract ends. Contract ends when all ticks rise or fall successively, or when a single tick breaks the predicted pattern."
-msgstr ""
+msgstr "%1退市现价%2是合约结束时最后一个价格跳动点。当所有价格持续上涨或下跌，或当其中一个价格跳动点突破了预测的价格形态时，合约即结束。"
 
 msgid "The %1high%2 is the highest point ever reached by the market during the contract period."
 msgstr "%1最高值%2是市场在合约期间内达到的最高点。"
@@ -9450,7 +9459,7 @@ msgid "The %1start time%2 begins when the contract is processed by our servers."
 msgstr "%1开盘时间%2即我们的服务器开始处理合约的时间。"
 
 msgid "The %1start time%2 is when the contract has been processed by our servers."
-msgstr ""
+msgstr "%1开盘时间%2即当我们的服务器已经处理好合约的时间。"
 
 msgid "The <strong>contract period</strong> is the period between the <strong>next tick</strong> after the <strong>start time</strong> and the <strong>end time</strong>."
 msgstr "<strong>合约期限</strong>是在合约<strong>开始时间</strong>之后的<strong>下一个跳动点</strong>和合约<strong>结束时间</strong>之间的期限。"
@@ -10264,7 +10273,7 @@ msgid "There are two types of In/Out trades:"
 msgstr "范围内/外交易有两种类型："
 
 msgid "There are two types of Run trades:"
-msgstr ""
+msgstr "持续交易有两种类型："
 
 msgid "There are two types of Up/Down trades:"
 msgstr "上涨/下跌交易有两种类型："
@@ -10424,9 +10433,6 @@ msgstr "此合约类型仅提供5跳动点"
 
 msgid "This contract won"
 msgstr "此合约获利"
-
-msgid "This demo account comes with %1 of virtual funds. Please %2contact our customer support team%3 to replenish virtual funds if your account balance is empty."
-msgstr "此演示账户附带了%1的虚拟资金。如果您的账户余额为空, 请%2联系我们的客服团队%3补充虚拟资金。"
 
 msgid "This document (the \"Agreement\") sets out the terms and conditions (\"Terms\") between \"the Company\" which is Binary Services Ltd (\"we,\" \"us,\" and \"our\"), and you (the person who registered for the %1 Application Program Interface (\"API\"); \"you\", or \"your\")."
 msgstr "本文件（“协议”）规定了“公司”即 Binary Services Ltd.(“我们”或“我们的“）与“您”（%1 应用程序接口 (\"API\")注册者）；“您”或“您的”）之间的条款和条件（”条款“）。"
@@ -11230,7 +11236,7 @@ msgid "Upon the expiration or termination of this Agreement, for whatever reason
 msgstr "本协议到期或终止时（不论是什么原因），所有通过本协议授予您的权利和许可证，包括%1 API的使用权限，将立即终止。您同意立即停止继续使用 %1 API。本协议的终止不可视为放弃追究本协议任何违约行为，且不可视为放弃追究您违反本协议所须承担的义务与责任。公司不对仅仅由于按照协议条款终止本协议的任何类型损失索赔承担责任。"
 
 msgid "Ups"
-msgstr ""
+msgstr "持续上涨"
 
 msgid "Usage Limit"
 msgstr "使用限制"
@@ -12037,10 +12043,10 @@ msgid "Win maximum payout if the exit spot is lower than or equal to the lower b
 msgstr "如果退市现价低于或等于低障碍, 可获得最大赔付。"
 
 msgid "Win payout if consecutive ticks fall successively. Contract is lost when at least one tick rises or is equal to any of the previous ticks."
-msgstr ""
+msgstr "如果连续价格跳动点持续下跌, 可获得赔付。当至少一个价格跳动点上涨或相等于之前任何一个跳动点，则合约将亏损。"
 
 msgid "Win payout if consecutive ticks rise successively. Contract is lost when at least one tick falls or is equal to any of the previous ticks."
-msgstr ""
+msgstr "如果连续价格跳动点持续上涨, 可获得赔付。当至少一个价格跳动点下跌或相等于之前任何一个跳动点，则合约将亏损。"
 
 msgid "Win payout if exit spot is also equal to entry spot."
 msgstr "如果退市现货价与入市现货价相同, 则将赢得赔付。"
@@ -12391,8 +12397,11 @@ msgstr "您可以生成各种包含深刻见解的报告，包括以下："
 msgid "You can sell your contract before expiry to keep any profit you may have made or to minimise your loss."
 msgstr "您可在合约到期前卖出交易合约，以锁定利润或将亏损减至最低。"
 
-msgid "You can top up your virtual account with an additional USD 10,000.00 if your balance falls below USD 1,000.00."
-msgstr "如果您的虚拟账户余额低于1,000.00 美元, 您可以加入10,000.00 美元给账户充值。"
+msgid "You can top up your demo account with an additional %1 if your balance is %2 or less."
+msgstr "如果您的余额为 %2 或更低, 您可以在模拟账户内添加 %1。"
+
+msgid "You can top up your virtual account with an additional %1 if your balance is %2 or less."
+msgstr "如果您的余额为 %2 或更低, 您可以在虚拟账户内添加 %1。"
 
 msgid "You can trade Volatility Indices on all three main trade types: Up/Down, Touch/No Touch, and In/Out. That's not all – Volatility Indices also give you exclusive access to two additional trade types: Asians and Digits."
 msgstr "您可以对所有三种主要交易类型进行波动率指数交易：上涨/下跌、触及/未触及和范围内/范围外。还有 - 波动率指数也让您独家获得另外两种交易类型：亚洲货币和数字交易。"
@@ -12538,8 +12547,8 @@ msgstr "一旦已经达到订单止损和限价水平，您不能在收盘交易
 msgid "You may only open an account at this site on conditions that:"
 msgstr "只有满足下列条件，您才能在本网站开户："
 
-msgid "You may only transfer funds between a fiat account and a cryptocurrency account"
-msgstr "资金只可在法定账户和加密货币账户之间转移"
+msgid "You may only transfer funds between a fiat account and a cryptocurrency account."
+msgstr "资金只可在法定账户和加密货币账户之间转移."
 
 msgid "You may proceed but please <a href=\"%1\">authenticate</a> your account within five days to continue trading."
 msgstr "您可以继续操作, 但请在五天内 <a href=\"%1\">验证</a> 您的账户以继续交易。"
@@ -12779,7 +12788,7 @@ msgid "Your account is restricted. Kindly %1contact customer support%2 for assis
 msgstr "您的账户已被限制。请%1联系客服部%2，以获得帮助。"
 
 msgid "Your account remains under the retail client category."
-msgstr ""
+msgstr "您的账户仍属于零售客户类别。"
 
 msgid "Your account security is of paramount importance to us. Please consider the following initiatives and tools to enhance your account security:"
 msgstr "您的账户安全对我们来说至关重要。请考虑采用以下措施和工具以增强您的账户安全:"
@@ -12835,6 +12844,9 @@ msgstr "如果您是个人，您的逝世、丧失工作能力、变得心智不
 msgid "Your debts are not settled as, and when, they fall due."
 msgstr "您无法在到期时还清债务."
 
+msgid "Your demo account balance is currently %1 or less. You may top up your account with an additional %2."
+msgstr "您的模拟账户余额当前为 %1 或更低。您可以添加 %2补充账户资金。"
+
 msgid "Your forex and contracts for differences transactions with %1 are linked to an underlying financial instrument and you will be exposed to price, currency exchange, interest rate or other volatility of the market to which your financial instrument is related to, especially if the market is of a jurisdiction that is foreign to you. Forex and contracts for differences trading over the internet via an electronic trading platform is subject to data latency risk which may result in delays in order execution."
 msgstr "您与 %1的外汇和差价合约交易与一种标的金融工具相连接，您将承受与金融工具有关的价格、汇率、利率或其他市场波动率的风险，特别是如果市场所属的管辖权与你无关。通过电子交易平台在网络上进行的外汇和差价合约交易承受潜在数据风险，可能导致订单执行的延误。"
 
@@ -12860,7 +12872,7 @@ msgid "Your personal information is used primarily as a way of validating you as
 msgstr "您的个人信息主要用作证明您是合法的账户拥有者和提款付款的适当接收者的一种验证方式。我们也使用这些信息来处理您的交易。当您填写我们的开户表格时, 我们会向您收集所有与您直接相关的个人和财务数据。在所有情况下, 您都有法律或合同义务向我们提供信息。如果没有提供此类信息, 我们将无法为您提供我们的服务。"
 
 msgid "Your professional client request is %1not approved%2."
-msgstr ""
+msgstr "您申请成为专业客户的请求 %1不受批准%2。"
 
 msgid "Your profit or loss is calculated as follows:"
 msgstr "您的损益计算如下:"
@@ -12912,6 +12924,9 @@ msgstr "不论您是通过访问我们的网站或第三方网站或从网站下
 
 msgid "Your violation of any applicable law, rule or regulation;"
 msgstr "您违反了任何适用的法律、 法规或规定;"
+
+msgid "Your virtual account balance is currently %1 or less. You may top up your account with an additional %2."
+msgstr "您的虚拟账户余额当前为 %1 或更低。您可以添加 %2补充账户资金。"
 
 msgid "Your web browser (%1) is out of date and may affect your trading experience. Proceed at your own risk. %2Update browser%3"
 msgstr "您的网络浏览器 (%1) 已过时，并可能会影响您的交易操作。继续操作须自行承担风险。%2更新浏览器%3"
