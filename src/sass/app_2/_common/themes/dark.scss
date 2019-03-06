@@ -140,9 +140,6 @@
         }
     }
     .header {
-        background: $COLOR_DARK_BLUE_1;
-        border-color: $COLOR_DARK_BLUE_1;
-
         &__menu-link {
             &--active {
                 .header__menu-link-text {
