@@ -18,8 +18,23 @@ class LastDigitPrediction extends React.Component {
         });
     }
 
+    getBarrier = (num) => {
+        const  { barrier, contract_type } = this.props;
+
+        const barrier_map = {
+            DIGITMATCH: (val) => val === barrier,
+            DIGITDIFF : (val) => val !== barrier,
+            DIGITOVER : (val) => val > barrier,
+            DIGITUNDER: (val) => val < barrier,
+            DIGITODD  : (val) => val % 2,
+            DIGITEVEN : (val) => !(val % 2),
+        };
+
+        return barrier_map[contract_type](num) ? num : null;
+    };
+
     render() {
-        const { barrier, contract_type, digits_info, is_ended, is_trade_page, status } = this.props;
+        const { barrier, digits_info, is_ended, is_trade_page, status } = this.props;
         const digits_array = Object.keys(digits_info).sort().map(spot_time => digits_info[spot_time]);
         const latest_digit = digits_array.slice(-1)[0] || {};
 
@@ -32,15 +47,6 @@ class LastDigitPrediction extends React.Component {
 
         const position = this.state[latest_digit.digit];
 
-        const getBarrier = (idx) => {
-            if (contract_type === 'DIGITEVEN') {
-                return (idx % 2 === 0) ? idx : null; // return even numbers
-            } else if (contract_type === 'DIGITODD') {
-                return (idx % 2 === 1) ? idx : null; // return odd numbers
-            }
-            return barrier; // return selected number
-        };
-
         return (
             <div
                 ref={node => this.node = node}
@@ -48,7 +54,7 @@ class LastDigitPrediction extends React.Component {
             >
                 { display_array.map((idx) => (
                     <DigitDisplay
-                        barrier={getBarrier(idx)}
+                        barrier={this.getBarrier(idx)}
                         is_lost={is_lost}
                         is_trade_page={is_trade_page}
                         is_won={is_won}

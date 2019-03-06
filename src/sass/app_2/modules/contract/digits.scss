@@ -20,52 +20,39 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            transition: background-color 0.2s ease-in;
 
             &--selected {
                 background-color: $COLOR_WHITE;
-                border: 2px solid $COLOR_LIGHT_GRAY_1;
+                border: 2px solid $COLOR_GREEN_1;
             }
             &--latest {
-                color: $COLOR_WHITE;
-                background-color: $COLOR_LIGHT_GRAY_1;
-                transform: translateY(-10px);
-                transition: transform 0.2s ease-out, background-color 0.1s linear 0.2s;
+                transform: translateY(-8px);
+                transition: transform 0.2s ease-out;
             }
             &--win {
-                transition: background-color 0.2s linear;
                 background-color: $COLOR_GREEN_1;
-
-                /* postcss-bem-linter: ignore */
-                &.digits__digit-value--selected {
-                    border: 2px solid $COLOR_GREEN_1;
-                }
+                color: $COLOR_WHITE;
             }
             &--blink {
                 background-color: $COLOR_GREEN_1;
-                animation-name: blinking-light-gray-1;
+                animation-name: blinking-white;
                 animation-duration: 500ms;
                 animation-iteration-count: 4;
                 animation-timing-function: step-end;
-
-                /* postcss-bem-linter: ignore */
-                &.digits__digit-value--selected {
-                    animation-name: blinking-white;
-                }
             }
             &--loss {
-                transition: background-color 0.2s linear;
                 background-color: $COLOR_RED;
-
-                /* postcss-bem-linter: ignore */
-                &.digits__digit-value--selected {
-                    border: 2px solid $COLOR_RED;
-                }
+                color: $COLOR_WHITE;
             }
         }
         &-spot {
             position: absolute;
             top: -35px;
-            left: -10px;
+            left: -50%;
+            right: -50%;
+            width: auto;
+            transform: translateX(50%);
             animation: bounce 0.8s forwards ease;
             opacity: 1;
             transition: opacity 0.3s;
@@ -87,7 +74,7 @@
             }
         }
         &--loss {
-            transform: translateY(10px);
+            transform: translateY(8px);
             transition: transform 0.2s ease-out 1s;
         }
     }
@@ -180,14 +167,8 @@
 
 @keyframes blinking-white {
     50% {
-        color: $COLOR_LIGHT_BLACK_1;
         background-color: $COLOR_WHITE;
-    }
-}
-
-@keyframes blinking-light-gray-1 {
-    50% {
-        background-color: $COLOR_LIGHT_GRAY_1;
+        color: $COLOR_LIGHT_BLACK_1;
     }
 }
 
@@ -197,8 +178,3 @@
     }
 }
 
-@keyframes blinking-dark-blue-7 {
-    50% {
-        background-color: $COLOR_DARK_BLUE_7;
-    }
-}

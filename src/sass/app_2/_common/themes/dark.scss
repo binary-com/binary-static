@@ -989,35 +989,16 @@
                 color: $COLOR_WHITE;
 
                 &--blink {
-                    animation-name: blinking-dark-blue-7;
-
-                    /* postcss-bem-linter: ignore */
-                    &.digits__digit-value--selected {
-                        animation-name: blinking-dark-blue-2;
-                    }
+                    animation-name: blinking-dark-blue-2;
                 }
                 &--selected {
                     background-color: $COLOR_DARK_BLUE_2;
-                    border: 2px solid $COLOR_WHITE;
-                }
-                &--latest {
-                    background-color: $COLOR_DARK_BLUE_7;
                 }
                 &--win {
                     background-color: $COLOR_GREEN_1;
-
-                    /* postcss-bem-linter: ignore */
-                    &.digits__digit-value--selected {
-                        border: 2px solid $COLOR_GREEN_1;
-                    }
                 }
                 &--loss {
                     background-color: $COLOR_RED;
-
-                    /* postcss-bem-linter: ignore */
-                    &.digits__digit-value--selected {
-                        border: 2px solid $COLOR_RED;
-                    }
                 }
             }
             &-spot {
