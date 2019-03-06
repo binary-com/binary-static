@@ -5,14 +5,35 @@
 
     &__info-container {
         width: 100%;
-        margin-left: -50%;
+        position: relative;
+    }
+    &__time-value-wrapper {
+        position: absolute;
+        left: -350%;
+        display: flex;
+        flex-direction: column;
+
+        &--top {
+            bottom: 8px;
+
+            .chart-spot__time-container {
+                margin-bottom: 2px;
+            }
+        }
+        &--bottom {
+            top: 28px;
+            flex-direction: column-reverse;
+
+            .chart-spot__time-container {
+                margin-top: 2px;
+            }
+        }
     }
     &__time-container {
         display: flex;
         align-items: center;
         justify-content: flex-end;
         padding-right: 8px;
-        margin-bottom: 5px;
     }
     &__time {
         font-size: 10px;
@@ -23,7 +44,6 @@
     }
     &__value-container {
         font-size: 14px;
-        margin-bottom: 8px;
         padding: 4px 8px;
         border-radius: 11px;
         background: $COLOR_LIGHT_GRAY_1;
