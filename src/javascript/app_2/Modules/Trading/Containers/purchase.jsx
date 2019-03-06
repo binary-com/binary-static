@@ -88,9 +88,6 @@ const Purchase = ({
                     />
                     :
                     <React.Fragment>
-                        {(!is_purchase_enabled && idx === 0) &&
-                        <UILoader classNameBlock='purchase-container__loading' />
-                        }
                         <ContractInfo
                             currency={currency}
                             proposal_info={info}
