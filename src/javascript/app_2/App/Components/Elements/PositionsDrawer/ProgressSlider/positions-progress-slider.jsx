@@ -1,14 +1,14 @@
 import classNames            from 'classnames';
 import PropTypes             from 'prop-types';
 import React                 from 'react';
-// import ProgressTicks         from './positions-progress-ticks.jsx';
+import ProgressTicks         from './positions-progress-ticks.jsx';
 import RemainingTime         from '../../../../Containers/remaining-time.jsx';
 
 const ProgressSlider = ({
     className,
     has_result,
     ticks_count,
-    // current_tick,
+    current_tick,
     percentage,
     remaining_time,
 }) => {
@@ -17,11 +17,10 @@ const ProgressSlider = ({
         <div className={classNames('progress-slider', className)}>
             {/* TODO: enable ticks slider once it is completed */}
             {(ticks_count) ?
-                // <ProgressTicks
-                //     current_tick={current_tick}
-                //     ticks_count={ticks_count}
-                // />
-                null
+                <ProgressTicks
+                    current_tick={current_tick}
+                    ticks_count={ticks_count}
+                />
                 :
                 <React.Fragment>
                     <span className='positions-drawer-card__remaining-time'>
