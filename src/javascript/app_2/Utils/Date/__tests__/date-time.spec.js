@@ -63,7 +63,7 @@ describe('daysFromTodayTo', () => {
 
     it('return difference value between selected date and today', () => {
         //get date three days from now
-        const date = moment().utc().startOf('day').add('3', 'days').format('YYYY-MM-DD');
+        const date = moment().utc().startOf('day').add('3', 'days');
         expect(DateTime.daysFromTodayTo(date)).to.deep.equal(3);
     });
 });
