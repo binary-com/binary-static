@@ -1,4 +1,4 @@
-
+/** @define progress-slider */
 // Progress Slider
 .progress-slider {
     position: relative;
@@ -137,26 +137,6 @@
                 left: 107%;
                 right: -8%;
             }
-        }
-    }
-}
-
-.theme--dark {
-    .progress-slider {
-        &__track, &__infinite-loader {
-            background: $COLOR_DARK_BLUE_3;
-        }
-        .ticks-step {
-            border: 2px solid $COLOR_DARK_BLUE_2;
-            background: $COLOR_DARK_BLUE_2;
-
-            &--active, &--marked {
-                background: $COLOR_PURPLE;
-                border-color: $COLOR_PURPLE;
-            }
-        }
-        &__line {
-            background: $COLOR_PURPLE;
         }
     }
 }
