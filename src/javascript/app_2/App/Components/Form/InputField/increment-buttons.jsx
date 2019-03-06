@@ -1,4 +1,3 @@
-import { observer }              from 'mobx-react';
 import PropTypes                 from 'prop-types';
 import React                     from 'react';
 import Button                    from '../button.jsx';
@@ -37,4 +36,4 @@ IncrementButtons.propTypes = {
     min_is_disabled: PropTypes.bool,
 };
 
-export default observer(IncrementButtons);
+export default IncrementButtons;

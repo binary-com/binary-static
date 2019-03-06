@@ -102,9 +102,9 @@ const InputField = ({
         let increment_value;
 
         const decimal_places = value ? getDecimals(value) : 0;
-        const is_crypto      = isCryptocurrency(currency);
+        const is_crypto      = !!currency && isCryptocurrency(currency);
 
-        if (is_crypto) {
+        if (is_crypto || (!currency && is_float)) {
             const new_value = parseFloat(+value) + parseFloat(1 * 10 ** (0 - decimal_places));
             increment_value = parseFloat(new_value).toFixed(decimal_places);
         } else {
@@ -117,9 +117,9 @@ const InputField = ({
         let decrement_value;
 
         const decimal_places = value ? getDecimals(value) : 0;
-        const is_crypto      = isCryptocurrency(currency);
+        const is_crypto      = !!currency && isCryptocurrency(currency);
 
-        if (is_crypto) {
+        if (is_crypto || (!currency && is_float)) {
             const new_value = parseFloat(+value) - parseFloat(1 * 10 ** (0 - decimal_places));
             decrement_value = parseFloat(new_value).toFixed(decimal_places);
         } else {

@@ -38,15 +38,13 @@
         justify-content: center;
         align-items: center;
 
-        &:hover {
-            cursor: pointer;
-            background: $COLOR_LIGHT_BLACK_4;
-        }
         &--increment {
             right: 1px; // fixed position
+            height: 28px;
         }
         &--decrement {
             left: 1px; // fixed position
+            height: 28px;
         }
         &:hover {
             cursor: pointer;
