@@ -34,7 +34,7 @@ class LastDigitPrediction extends React.Component {
     };
 
     render() {
-        const { barrier, digits_info, is_ended, is_trade_page, status } = this.props;
+        const { digits_info, is_ended, is_trade_page, status } = this.props;
         const digits_array = Object.keys(digits_info).sort().map(spot_time => digits_info[spot_time]);
         const latest_digit = digits_array.slice(-1)[0] || {};
 
