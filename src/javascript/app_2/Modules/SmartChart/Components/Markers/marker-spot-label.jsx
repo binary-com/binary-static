@@ -16,7 +16,7 @@ const MarkerSpotLabel = ({
 }) => (
     <div className={'chart-spot-label'}>
         <div className='chart-spot-label__info-container'>
-            <div className={`chart-spot-label__time-value-wrapper chart-spot-label__time-value-wrapper--${align_label}`}>
+            <div className={`chart-spot-label__time-value-container chart-spot-label__time-value-container--${align_label}`}>
                 <div className='chart-spot-label__time-container'>
                     <IconClock height='10' width='10' className='chart-spot-label__time-icon' />
                     <p className='chart-spot-label__time'>{toMoment(+spot_epoch).format('HH:mm:ss')}</p>
