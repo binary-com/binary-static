@@ -34,6 +34,7 @@ const AccountTransfer = (() => {
         withdrawal_limit,
         max_amount,
         transferable_amount,
+        to_loginid,
         transfer_to_currency;
 
     /**
@@ -61,6 +62,7 @@ const AccountTransfer = (() => {
             if (Client.canTransferFunds(account)) {
                 const option = document.createElement('option');
                 option.setAttribute('data-currency', account.currency);
+                option.setAttribute('data-loginid', account.loginid);
                 option.appendChild(document.createTextNode(`${account.loginid}${account.currency ? ` (${account.currency})` : ''}`));
                 fragment_transfer_to.appendChild(option);
             }
@@ -74,6 +76,7 @@ const AccountTransfer = (() => {
             el_label_transfer_to.setAttribute('data-value', fragment_transfer_to.firstChild.textContent);
             el_label_transfer_to.setAttribute('id', el_transfer_to.getAttribute('id'));
             el_label_transfer_to.innerText = fragment_transfer_to.firstChild.textContent;
+            to_loginid = fragment_transfer_to.firstChild.getAttribute('data-loginid');
             el_transfer_to.setVisibility(0);
             el_transfer_to.setAttribute('data-value', fragment_transfer_to.firstChild.textContent);
             el_transfer_to.parentElement.insertBefore(el_label_transfer_to, el_transfer_to);
@@ -244,9 +247,16 @@ const AccountTransfer = (() => {
                         Client.get('currency'),
                         'max'
                     );
-                    transferable_amount = max_amount ?
-                        Math.min(max_amount, withdrawal_limit, client_balance) :
-                        Math.min(withdrawal_limit, client_balance);
+
+                    const from_currency = Client.get('currency');
+                    const to_currency = Client.get('currency', to_loginid);
+                    if (!Currency.isCryptocurrency(from_currency) && !Currency.isCryptocurrency(to_currency)) {
+                        transferable_amount = client_balance;
+                    } else {
+                        transferable_amount = max_amount ?
+                            Math.min(max_amount, withdrawal_limit, client_balance) :
+                            Math.min(withdrawal_limit, client_balance);
+                    }
 
                     getElementById('range_hint_min').textContent = min_amount;
                     getElementById('range_hint_max').textContent = transferable_amount.toFixed(
