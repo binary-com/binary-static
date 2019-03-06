@@ -1,7 +1,7 @@
 import { localize }    from '_common/localize';
 import MarkerLine      from 'Modules/SmartChart/Components/Markers/marker-line.jsx';
+import MarkerSpotLabel from 'Modules/SmartChart/Components/Markers/marker-spot-label.jsx';
 import MarkerSpot      from 'Modules/SmartChart/Components/Markers/marker-spot.jsx';
-import MarkerSpotEntry from 'Modules/SmartChart/Components/Markers/marker-spot-entry.jsx';
 
 const MARKER_X_POSITIONER = {
     EPOCH: 'epoch',
@@ -21,12 +21,12 @@ const MARKER_CONTENT_TYPES = {
         className       : 'chart-marker-line',
     },
     SPOT: {
-        ContentComponent: MarkerSpot,
+        ContentComponent: MarkerSpotLabel,
         xPositioner     : MARKER_X_POSITIONER.EPOCH,
         yPositioner     : MARKER_Y_POSITIONER.VALUE,
     },
     SPOT_ENTRY: {
-        ContentComponent: MarkerSpotEntry,
+        ContentComponent: MarkerSpot,
         xPositioner     : MARKER_X_POSITIONER.EPOCH,
         yPositioner     : MARKER_Y_POSITIONER.VALUE,
     },
