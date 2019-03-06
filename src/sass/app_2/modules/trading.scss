@@ -402,15 +402,22 @@
         .btn-purchase__effect-detail {
             border-color: transparent transparent transparent $COLOR_GREEN_1;
         }
-        .btn-purchase__trade-type-icon {
+        .btn-purchase__trade-type-icon, .btn-purchase__trade-type-text, .btn-purchase__profit, .btn-purchase__return {
+            overflow: hidden;
+        }
+        .btn-purchase__trade-type-icon, .btn-purchase__trade-type-icon svg {
             width: 16px;
             height: 16px;
         }
-        .btn-purchase__trade-type-icon, .btn-purchase__trade-type-text, .btn-purchase__profit-text, .btn-purchase__return-text {
+        .btn-purchase__trade-type-text span {
+            display: block;
+        }
+        .btn-purchase__trade-type-icon svg, .btn-purchase__trade-type-text span, .btn-purchase__profit-text, .btn-purchase__return-text {
             opacity: 0.32;
             background-color: $COLOR_WHITE;
+            animation: data--loading 0.8s ease infinite;
         }
-        .btn-purchase__trade-type-text, .btn-purchase__profit-text, .btn-purchase__return-text {
+        .btn-purchase__trade-type-text, .btn-purchase__trade-type-text span, .btn-purchase__profit-text, .btn-purchase__return-text {
             width: 56px;
             height: 8px;
         }
@@ -420,5 +427,17 @@
     }
     &:hover {
         box-shadow: none;
+    }
+}
+
+@keyframes data--loading {
+    0% {
+        transform: translateX(-100%);
+    }
+    50% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(100%);
     }
 }
