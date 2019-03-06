@@ -47,7 +47,7 @@
     }
     &__time-value-container {
         position: absolute;
-        left: -350%;
+        transform: translateX(-50%);
         display: flex;
         flex-direction: column;
 
@@ -70,8 +70,8 @@
     &__time-container {
         display: flex;
         align-items: center;
-        justify-content: flex-end;
-        padding-right: 8px;
+        justify-content: center;
+        padding: 0px 8px;
     }
     &__time {
         font-size: 10px;
@@ -92,11 +92,6 @@
             color: $COLOR_WHITE;
             margin-top: 2px;
         }
-    }
-    &__icon-container {
-        margin-left: -39px;
-        margin-bottom: 8px;
-        background: $COLOR_GREEN_1;
     }
 }
 
