@@ -4,7 +4,7 @@ import React                 from 'react';
 import { CSSTransition }     from 'react-transition-group';
 import ContractLink          from 'Modules/Contract/Containers/contract-link.jsx';
 import { localize }          from '_common/localize';
-import ContractTypeCell      from 'Modules/Portfolio/Components/contract-type-cell.jsx';
+import ContractTypeCell      from './contract-type-cell.jsx';
 import ProgressSlider        from './ProgressSlider';
 import ResultDetails         from './result-details.jsx';
 import ResultOverlay         from './result-overlay.jsx';
@@ -12,7 +12,6 @@ import { getTimePercentage } from './helpers';
 import Money                 from '../money.jsx';
 import Button                from '../../Form/button.jsx';
 
-// TODO: Break into smaller components once design is finalized
 const PositionsDrawerCard = ({
     active_position,
     barrier,
@@ -141,7 +140,7 @@ const PositionsDrawerCard = ({
             >
                 <div className='positions-drawer-card__sell-button'>
                     <Button
-                        className='btn--primary btn--primary--orange'
+                        className='btn--primary btn--primary--orange btn--sell'
                         is_disabled={!is_valid_to_sell}
                         text={localize('Sell contract')}
                         onClick={() => onClickSell(id)}
