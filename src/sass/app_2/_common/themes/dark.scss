@@ -1,21 +1,6 @@
 // Dark Theme
 .theme--dark {
-    .inline-icon {
-        @include colorIcon($COLOR_DARK_BLUE_7, none);
-
-        &.active {
-            @include colorIcon($COLOR_DARK_BLUE_5, $COLOR_WHITE, $COLOR_WHITE);
-        }
-        &.disabled {
-            @include colorIcon($COLOR_DARK_BLUE_8, none);
-        }
-        &.white {
-            @include colorIcon($COLOR_WHITE);
-        }
-    }
     .trade-container {
-        background: $COLOR_DARK_BLUE_2;
-
         &__price {
             color: $COLOR_WHITE;
 

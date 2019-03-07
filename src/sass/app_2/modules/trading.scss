@@ -1,5 +1,9 @@
 /** @define trade-container */
 .trade-container {
+    @include themify($themes) {
+        background: themed('container_color');
+    }
+
     &__fieldset {
         background-color: $COLOR_LIGHT_BLACK_4_SOLID;
         border: 1px solid $COLOR_LIGHT_BLACK_4_SOLID;
