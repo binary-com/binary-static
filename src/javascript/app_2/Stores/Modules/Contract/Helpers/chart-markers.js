@@ -1,7 +1,9 @@
 import {
-    createMarkerConfig,
+    createMarkerEndTime,
+    createMarkerPurchaseTime,
     createMarkerSpotEntry,
-    createMarkerSpotExit }     from './chart-marker-helpers';
+    createMarkerSpotExit,
+    createMarkerStartTime }     from './chart-marker-helpers';
 import { MARKER_TYPES_CONFIG } from '../../SmartChart/Constants/markers';
 
 export const createChartMarkers = (SmartChartStore, contract_info) => {
@@ -24,32 +26,3 @@ const marker_creators = {
     [MARKER_TYPES_CONFIG.SPOT_ENTRY.type]   : createMarkerSpotEntry,
     [MARKER_TYPES_CONFIG.SPOT_EXIT.type]    : createMarkerSpotExit,
 };
-
-// -------------------- Lines --------------------
-function createMarkerEndTime(contract_info) {
-    if (contract_info.status === 'open' || !contract_info.date_expiry) return false;
-
-    return createMarkerConfig(
-        MARKER_TYPES_CONFIG.LINE_END.type,
-        contract_info.date_expiry,
-    );
-}
-
-function createMarkerPurchaseTime(contract_info) {
-    if (!contract_info.purchase_time || !contract_info.date_start ||
-        +contract_info.purchase_time === +contract_info.date_start) return false;
-
-    return createMarkerConfig(
-        MARKER_TYPES_CONFIG.LINE_PURCHASE.type,
-        contract_info.purchase_time,
-    );
-}
-
-function createMarkerStartTime(contract_info) {
-    if (!contract_info.date_start) return false;
-
-    return createMarkerConfig(
-        MARKER_TYPES_CONFIG.LINE_START.type,
-        contract_info.date_start,
-    );
-}

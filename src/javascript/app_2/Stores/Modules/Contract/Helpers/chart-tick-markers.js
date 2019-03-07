@@ -1,27 +1,31 @@
-import { WS }                  from 'Services';
+import { WS }                from 'Services';
 import {
-    createMarkerConfig,
     createMarkerSpotEntry,
-    createMarkerSpotExit }     from './chart-marker-helpers';
-import { MARKER_TYPES_CONFIG } from '../../SmartChart/Constants/markers';
+    createMarkerSpotExit,
+    createMarkerSpotMiddle,
+    createMarkerEndTime,
+    createMarkerPurchaseTime,
+    createMarkerStartTime,
+} from './chart-marker-helpers';
 
 let has_been_initialized = false;
 
 export const createChartTickMarkers = (SmartChartStore, contract_info) => {
     if (!has_been_initialized) {
-        const middle_ticks_handler = middleTicksHandler(SmartChartStore, contract_info);
+        const tick_marker_handler = tickMarkerHandler(SmartChartStore, contract_info);
         has_been_initialized = true;
 
         if (contract_info.exit_tick_time) {
-            middle_ticks_handler.addMarkersFromHistory(contract_info);
+            tick_marker_handler.addSpotsFromHistory();
+            tick_marker_handler.addLines();
         } else {
             // TODO: implement middle tick markers for ongoing contracts
-            // middle_ticks_handler.addOnGoingMarkers(contract_info);
+            // tick_marker_handler.addOnGoingMarkers();
         }
     }
 };
 
-const middleTicksHandler = (SmartChartStore, { ...contract_info }) => {
+const tickMarkerHandler = (SmartChartStore, { ...contract_info }) => {
     const ticks_history_req = {
         ticks_history: contract_info.underlying,
         start        : contract_info.entry_tick_time,
@@ -70,17 +74,18 @@ const middleTicksHandler = (SmartChartStore, { ...contract_info }) => {
         addTicks(ticks);
     };
 
+    const addLine = (fnc) => {
+        const marker_config = fnc(contract_info);
+        if (marker_config) SmartChartStore.createMarker(marker_config);
+    };
+
     return {
-        addMarkersFromHistory: () =>
+        addSpotsFromHistory: () =>
             WS.sendRequest({ ...ticks_history_req }).then((data) => onCompletedContract(data)),
+        addLines: () => {
+            addLine(createMarkerEndTime);
+            addLine(createMarkerPurchaseTime);
+            addLine(createMarkerStartTime);
+        },
     };
 };
-
-function createMarkerSpotMiddle(tick, idx) {
-    return createMarkerConfig(
-        MARKER_TYPES_CONFIG.SPOT_MIDDLE.type,
-        tick.time,
-        tick.price,
-        { spot_value: `${idx}` },
-    );
-}

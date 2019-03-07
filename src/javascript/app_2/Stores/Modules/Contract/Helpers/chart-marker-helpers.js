@@ -1,7 +1,7 @@
 import extend                  from 'extend';
 import { MARKER_TYPES_CONFIG } from '../../SmartChart/Constants/markers';
 
-export const createMarkerConfig = (marker_type, x, y, content_config) => (
+const createMarkerConfig = (marker_type, x, y, content_config) => (
     extend(true, {}, MARKER_TYPES_CONFIG[marker_type], {
         marker_config: {
             x: +x,
@@ -10,6 +10,35 @@ export const createMarkerConfig = (marker_type, x, y, content_config) => (
         content_config,
     })
 );
+
+// -------------------- Lines --------------------
+export const createMarkerEndTime = (contract_info) => {
+    if (contract_info.status === 'open' || !contract_info.date_expiry) return false;
+
+    return createMarkerConfig(
+        MARKER_TYPES_CONFIG.LINE_END.type,
+        contract_info.date_expiry,
+    );
+};
+
+export const createMarkerPurchaseTime = (contract_info) => {
+    if (!contract_info.purchase_time || !contract_info.date_start ||
+        +contract_info.purchase_time === +contract_info.date_start) return false;
+
+    return createMarkerConfig(
+        MARKER_TYPES_CONFIG.LINE_PURCHASE.type,
+        contract_info.purchase_time,
+    );
+};
+
+export const createMarkerStartTime = (contract_info) => {
+    if (!contract_info.date_start) return false;
+
+    return createMarkerConfig(
+        MARKER_TYPES_CONFIG.LINE_START.type,
+        contract_info.date_start,
+    );
+};
 
 // -------------------- Spots --------------------
 export const createMarkerSpotEntry = (contract_info) => {
@@ -35,3 +64,11 @@ export const createMarkerSpotExit = (contract_info) => {
         },
     );
 };
+
+export const createMarkerSpotMiddle = (tick, idx) =>
+    createMarkerConfig(
+        MARKER_TYPES_CONFIG.SPOT_MIDDLE.type,
+        tick.time,
+        tick.price,
+        { spot_value: `${idx}` },
+    );
