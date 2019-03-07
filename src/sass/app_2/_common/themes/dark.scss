@@ -1,10 +1,5 @@
 // Dark Theme
 .theme--dark {
-    .btn-purchase:disabled {
-        box-shadow: 0 2px 2px 0 $COLOR_DARK_BLUE_7;
-        background: $COLOR_DARK_BLUE_6;
-        color: $COLOR_DARK_BLUE_8;
-    }
     .card-list {
         &__card {
             background: $COLOR_DARK_BLUE_5;

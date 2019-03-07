@@ -502,6 +502,10 @@
     &:disabled {
         background-color: $COLOR_DARK_BLUE_8;
         color: $COLOR_DARK_BLUE_7;
+        @include themify($themes) {
+            background-color: themed('disabled_color');
+            color: themed('text_secondary_color');
+        }
     }
     &:hover {
         box-shadow: none;
