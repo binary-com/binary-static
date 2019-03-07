@@ -4,8 +4,9 @@
     flex-direction: column;
 
     &__spot {
-        margin-left: -9.4px;
-        margin-bottom: -5.4px;
+        position: absolute;
+        bottom: -9px;
+        margin-left: -9.5px;
         width: 20px;
         height: 20px;
         border-radius: 50%;
@@ -52,7 +53,7 @@
         flex-direction: column;
 
         &--top {
-            bottom: 8px;
+            bottom: 19px;
 
             .chart-spot-label__time-container {
                 margin-bottom: 2px;
