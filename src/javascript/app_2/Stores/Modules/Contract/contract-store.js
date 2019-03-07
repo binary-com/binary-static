@@ -83,10 +83,7 @@ export default class ContractStore extends BaseStore {
     @action.bound
     onUnmount(contract_id) {
         this.disposeSwitchAccount();
-        if (contract_id) {
-            WS.forget('proposal_open_contract', this.updateProposal, { contract_id: +contract_id });
-        }
-        this.forgetProposalOpenContract();
+        this.forgetProposalOpenContract(contract_id);
 
         this.contract_id       = null;
         this.contract_info     = {};
@@ -160,8 +157,8 @@ export default class ContractStore extends BaseStore {
         }
     }
 
-    forgetProposalOpenContract() {
-        WS.forget('proposal_open_contract', this.updateProposal, { contract_id: this.contract_id });
+    forgetProposalOpenContract(contract_id) {
+        WS.forget('proposal_open_contract', this.updateProposal, { contract_id: +contract_id || this.contract_id });
     }
 
     @action.bound
