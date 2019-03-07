@@ -7,7 +7,7 @@ import { IconInfoOutline } from 'Assets/Common/icon-info-outline.jsx';
 import { IconQuestion }    from 'Assets/Common/icon-question.jsx';
 import { IconRedDot }      from 'Assets/Common/icon-red-dot.jsx';
 
-class Tooltip extends React.Component {
+class Tooltip extends React.PureComponent {
     state = {
         show_tooltip_balloon_icon: false,
     }
