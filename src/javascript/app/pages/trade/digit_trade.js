@@ -9,6 +9,7 @@ const getPropertyValue     = require('../../../_common/utility').getPropertyValu
 
 const DigitDisplay = (() => {
     let $container,
+        $digit_table,
         contract,
         tick_count,
         spot_times;
@@ -30,7 +31,7 @@ const DigitDisplay = (() => {
     };
 
     const init = (id_render, proposal_open_contract) => {
-        const calculated_height = proposal_open_contract.tick_count * 40;
+        const calculated_height = (proposal_open_contract.tick_count + 1) * 40;
 
         tick_count = 1;
         contract   = proposal_open_contract;
@@ -40,12 +41,20 @@ const DigitDisplay = (() => {
         $container
             .addClass('normal-font')
             .html($('<h5 />', { text: contract.display_name, class: 'center-text' }))
-            .append($('<div />', { class: 'gr-8 gr-centered gr-12-m', style: `height: ${calculated_height + 50}px;` })
+            .append($('<div />', { class: 'gr-8 gr-centered gr-12-m', style: `height: ${calculated_height}px;` })
                 .append($('<div />', { class: 'gr-row', id: 'table_digits' })
                     .append($('<strong />', { class: 'gr-3', text: localize('Tick') }))
                     .append($('<strong />', { class: 'gr-3', text: localize('Spot') }))
                     .append($('<strong />', { class: 'gr-6', text: localize('Spot Time (GMT)') }))))
             .append($('<div />', { class: 'digit-ticker invisible', id: 'digit_ticker_container' }));
+        $digit_table = $('#table_digits');
+        $digit_table
+            .append($('<div />', { class: 'barspinner dark' })
+                .append($('<div />', { class: 'rect1' }))
+                .append($('<div />', { class: 'rect2' }))
+                .append($('<div />', { class: 'rect3' }))
+                .append($('<div />', { class: 'rect4' }))
+                .append($('<div />', { class: 'rect5' })));
 
         DigitTicker.init(
             'digit_ticker_container',
@@ -103,7 +112,7 @@ const DigitDisplay = (() => {
         if (getPropertyValue(response, ['tick', 'id']) && document.getElementById('sell_content_wrapper')) {
             ViewPopupUI.storeSubscriptionID(response.tick.id);
         }
-
+        $digit_table.find('.barspinner').remove();
         // Hide loading component
         if (response.history) {
             response.history.times.some((time, idx) => {
