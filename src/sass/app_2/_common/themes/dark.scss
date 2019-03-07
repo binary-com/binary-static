@@ -1,8 +1,5 @@
 // Dark Theme
 .theme--dark {
-    background: $COLOR_DARK_BLUE_1;
-    color: $COLOR_WHITE;
-
     .inline-icon {
         @include colorIcon($COLOR_DARK_BLUE_7, none);
 

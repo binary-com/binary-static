@@ -15,6 +15,8 @@ $themes: (
         chart_gradient: $COLOR_LIGHT_WHITE_GRADIENT,
         portfolio_won_gradient: $COLOR_LIGHT_GREEN_GRADIENT,
         portfolio_lost_gradient: $COLOR_LIGHT_RED_GRADIENT,
+        navbar_text_active: $COLOR_LIGHT_BLACK_1,
+        navbar_text: $COLOR_LIGHT_BLACK_1,
     ),
     dark: (
         background_color: $COLOR_DARK_BLUE_1,
@@ -32,5 +34,7 @@ $themes: (
         chart_gradient: $COLOR_DARK_BLACK_GRADIENT,
         portfolio_won_gradient: $COLOR_DARK_GREEN_GRADIENT,
         portfolio_lost_gradient: $COLOR_DARK_RED_GRADIENT,
+        navbar_text_active: $COLOR_WHITE,
+        navbar_text: $COLOR_DARK_BLUE_7,
     ),
 );
