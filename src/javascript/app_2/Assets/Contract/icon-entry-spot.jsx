@@ -1,8 +1,9 @@
 import { observer } from 'mobx-react';
 import PropTypes    from 'prop-types';
 import React        from 'react';
+import { Icon }     from 'Assets/Common/icon.jsx';
 
-const IconEntrySpot = () => (
+export const IconEntrySpotSVG = () => (
     <svg className='chart-spot__icon' width='16' height='16' viewBox='0 0 16 16'>
         <g fill='none' fillRule='evenodd'>
             <path d='M0 0h16v16H0z' />
@@ -10,6 +11,10 @@ const IconEntrySpot = () => (
             <path fill='#fff' fillRule='nonzero' d='M7.66 3.005c2.9 0 5.258 2.244 5.258 5 0 2.757-2.357 5-5.258 5a5.329 5.329 0 0 1-4.178-2h-2.46c1.184 2.361 3.71 4 6.638 4 4.059 0 7.361-3.14 7.361-7s-3.302-7-7.36-7c-2.929 0-5.455 1.64-6.64 4h2.46a5.33 5.33 0 0 1 4.18-2z' />
         </g>
     </svg>
+);
+
+const IconEntrySpot = () => (
+    <Icon icon={IconEntrySpotSVG} />
 );
 
 IconEntrySpot.propTypes = {
