@@ -40,9 +40,11 @@
 
         &--increment {
             right: 1px; // fixed position
+            height: 28px;
         }
         &--decrement {
             left: 1px; // fixed position
+            height: 28px;
         }
         &:hover {
             cursor: pointer;
@@ -133,5 +135,9 @@
         border-radius: $BORDER_RADIUS;
         border-color: $COLOR_LIGHT_GRAY_1;
         box-shadow: 0 0 0 2px rgba(127, 131, 151, 0.3);
+    }
+    &--has-inline-prefix {
+        padding-left: 50px !important;
+        border-radius: $BORDER_RADIUS !important;
     }
 }
