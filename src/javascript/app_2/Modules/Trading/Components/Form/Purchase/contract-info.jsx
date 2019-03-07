@@ -12,7 +12,7 @@ const ContractInfo = ({
     proposal_info,
 }) => (
     <React.Fragment>
-        {!proposal_info.has_error &&
+        {!proposal_info.obj_contract_basis &&
             <div className='trade-container__load_container'>
                 <div className='trade-container--loading' />
             </div>
