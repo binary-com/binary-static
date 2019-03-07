@@ -25,6 +25,9 @@
             &-info-basis {
                 color: $COLOR_DARK_BLUE_7;
             }
+            &-info-value {
+                color: $COLOR_WHITE;
+            }
         }
         &__fieldset {
             background: $COLOR_DARK_BLUE_3;
@@ -904,7 +907,7 @@
             }
         }
         &__item {
-            &-text {
+            &-text, &-tooltip-symbols {
                 color: $COLOR_DARK_BLUE_7;
             }
             &--selected .list__item-text {
