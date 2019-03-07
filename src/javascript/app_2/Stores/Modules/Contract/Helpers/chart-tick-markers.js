@@ -33,7 +33,7 @@ const tickMarkerHandler = (SmartChartStore, { ...contract_info }) => {
         count        : (contract_info.tick_count + 1), // add 1 to prevent for 1-tick contracts from returning 5000 ticks
     };
 
-    const zip = (arr, ...arrs) => arr.map((val, i) => arrs.reduce((a, curr) => [...a, curr[i]], [val]));
+    const zip = (arr, ...arrs) => arr.map((val, idx) => arrs.reduce((a, curr) => [...a, curr[idx]], [val]));
 
     const combinePriceTime = (price_arr, times_arr) =>
         zip(price_arr, times_arr).reduce((acc, tick) => [...acc, { price: tick[0], time: tick[1] }], []);
@@ -67,7 +67,7 @@ const tickMarkerHandler = (SmartChartStore, { ...contract_info }) => {
         contract_ticks.forEach(addTickToChart);
     };
 
-    const onCompletedContract = (data) => {
+    const onTicksHistory = (data) => {
         const { prices, times } = data.history;
         const ticks = combinePriceTime(prices, times);
 
@@ -81,7 +81,7 @@ const tickMarkerHandler = (SmartChartStore, { ...contract_info }) => {
 
     return {
         addSpotsFromHistory: () =>
-            WS.sendRequest({ ...ticks_history_req }).then((data) => onCompletedContract(data)),
+            WS.sendRequest({ ...ticks_history_req }).then(onTicksHistory),
         addLines: () => {
             addLine(createMarkerEndTime);
             addLine(createMarkerPurchaseTime);
