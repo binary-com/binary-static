@@ -818,7 +818,7 @@
             }
         }
         &__item {
-            &-text {
+            &-text, &-tooltip-symbols {
                 color: $COLOR_DARK_BLUE_7;
             }
             &--selected .list__item-text {
