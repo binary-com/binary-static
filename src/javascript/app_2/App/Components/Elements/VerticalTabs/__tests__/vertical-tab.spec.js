@@ -7,18 +7,12 @@ import sinon       from 'sinon';
 describe('<VerticalTab />', () => {
     const valid_tab_items = [
         {
-            icon: {
-                normal: () => <svg />,
-                active: () => <svg />,
-            },
+            icon: () => <svg />,
             label: 'Label 1',
             value: () => <svg />
         },
         {
-            icon: {
-                normal:() => <svg />,
-                active: () => <svg />,
-            },
+            icon: () => <svg />,
             label: 'Label 2',
             value: () => <svg />
         }
