@@ -37,10 +37,7 @@ class VerticalTab extends React.PureComponent {
 VerticalTab.propTypes = {
     list: PropTypes.arrayOf(
         PropTypes.shape({
-            icon: PropTypes.shape({
-                active: PropTypes.func,
-                normal: PropTypes.func,
-            }),
+            icon : PropTypes.func,
             label: PropTypes.string,
             value: PropTypes.func,
         })

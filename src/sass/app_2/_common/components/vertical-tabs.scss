@@ -27,12 +27,20 @@
             color: $COLOR_WHITE;
             font-weight: bold;
         }
+        &__link {
+            font-weight: normal;
+        }
+        &--active &__link {
+            font-weight: bold;
+        }
         &__icon {
             margin: 2px 10px 0 0;
+            @include colorIcon($COLOR_LIGHT_BLACK_1);
+
+            &--active {
+                @include colorIcon($COLOR_WHITE);
+            }
         }
-    }
-    &__header__link {
-        font-weight: normal;
     }
     &__content {
         width: 100%;

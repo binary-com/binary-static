@@ -45,7 +45,7 @@
         }
         &__barriers {
             &--up, &--down {
-                @extend .inline-icon.white;
+                @extend %inline-icon.white;
             }
         }
         &__currency {
@@ -94,7 +94,7 @@
             background: $COLOR_DARK_BLUE_3;
 
             &-icon {
-                @extend .inline-icon.white;
+                @extend %inline-icon.white;
             }
             &-button {
                 background: transparent;
@@ -271,7 +271,7 @@
         }
     }
     .statement-card__icon {
-        @extend .inline-icon.white;
+        @extend %inline-icon.white;
     }
     .login-message-wrapper {
         .message a {
@@ -452,6 +452,7 @@
         }
         &__container {
             background: $COLOR_DARK_BLUE_3;
+            box-shadow: 0 2px 8px 0 $COLOR_LIGHT_BLACK_2;
         }
         &__header {
             color: $COLOR_DARK_BLUE_7;
@@ -1028,6 +1029,14 @@
             &--active {
                 background-color: $COLOR_DARK_BLUE_5;
                 color: $COLOR_WHITE;
+                font-weight: bold;
+            }
+            &__icon {
+                @include colorIcon($COLOR_DARK_BLUE_7);
+
+                &--active {
+                    @include colorIcon($COLOR_WHITE);
+                }
             }
         }
     }

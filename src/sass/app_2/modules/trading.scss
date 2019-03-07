@@ -412,7 +412,7 @@
             position: absolute;
         }
         &-icon {
-            @extend .inline-icon.white;
+            @extend %inline-icon.white;
         }
     }
     &__effect-main {

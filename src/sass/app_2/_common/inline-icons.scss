@@ -4,11 +4,11 @@
 
     e.g. style icon on parent hover:
         a:hover .inline-icon {
-            @extend .inline-icon.active;
+            @extend %inline-icon.active;
         }
 */
 
-.inline-icon {
+%inline-icon {
     @include colorIcon($COLOR_LIGHT_BLACK_1, none);
 
     &.active {

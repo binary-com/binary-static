@@ -34,7 +34,7 @@
             background: $COLOR_LIGHT_BLACK_4;
 
             .footer__icon {
-                @extend .inline-icon.active;
+                @extend %inline-icon.active;
             }
         }
     }
@@ -124,7 +124,7 @@
             left: 0;
         }
         .ic-settings__icon {
-            @extend .inline-icon.active;
+            @extend %inline-icon.active;
             pointer-events: none;
         }
     }

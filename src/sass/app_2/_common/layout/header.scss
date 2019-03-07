@@ -100,7 +100,7 @@
                 font-weight: bold;
             }
             .header__icon {
-                @extend .inline-icon.active;
+                @extend %inline-icon.active;
             }
         }
     }

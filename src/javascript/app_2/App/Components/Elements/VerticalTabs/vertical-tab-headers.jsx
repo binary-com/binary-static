@@ -6,7 +6,7 @@ class VerticalTabHeaders extends React.PureComponent {
         return (
             <div className='vertical-tab__tab'>
                 {this.props.items.map(item => {
-                    const IconComponent = this.getIconComponent(item);
+                    const IconComponent = item.icon;
                     return (
                         <div
                             className={
@@ -32,10 +32,6 @@ class VerticalTabHeaders extends React.PureComponent {
                 })}
             </div>
         );
-    }
-
-    getIconComponent(item) {
-        return this.props.selected.label === item.label ? item.icon.active : item.icon.normal;
     }
 }
 

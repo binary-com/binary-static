@@ -10,20 +10,13 @@ import {
     ThemeSelectSettings,
     PurchaseSettings,
 }                         from 'App/Containers/SettingsDialog';
-import LightThemeIcon     from 'Images/app_2/settings/ic-theme.svg';
-import ThemeIcon          from 'Images/app_2/settings/ic-theme-normal.svg';
-import ThemeIconActive    from 'Images/app_2/settings/ic-theme-active.svg';
-import LightLanguageIcon  from 'Images/app_2/settings/ic-language.svg';
-import LanguageIcon       from 'Images/app_2/settings/ic-language-normal.svg';
-import LanguageIconActive from 'Images/app_2/settings/ic-language-active.svg';
-import LightCloseIcon     from 'Images/app_2/settings/ic-close.svg';
-import CloseIcon          from 'Images/app_2/settings/ic-close-normal.svg';
-import LightChartsIcon    from 'Images/app_2/settings/ic-charts.svg';
-import ChartsIcon         from 'Images/app_2/settings/ic-charts-normal.svg';
-import ChartsIconActive   from 'Images/app_2/settings/ic-charts-active.svg';
-import LightPurchaseIcon  from 'Images/app_2/settings/ic-purchase.svg';
-import PurchaseIcon       from 'Images/app_2/settings/ic-purchase-normal.svg';
-import PurchaseIconActive from 'Images/app_2/settings/ic-purchase-active.svg';
+import {
+    IconCharts,
+    IconClose,
+    IconLanguage,
+    IconPurchase,
+    IconTheme,
+}                         from 'Assets/Settings';
 
 class SettingsDialog extends React.PureComponent {
     constructor(props) {
@@ -65,7 +58,7 @@ class SettingsDialog extends React.PureComponent {
                     <h3 className='dialog-header__sidebar'>{localize('Platform settings')}</h3>
                     <div className='dialog-header__main'>
                         <div className='dialog-header__close' onClick={this.props.toggleDialog}>
-                            {this.props.is_dark_mode ? <CloseIcon /> : <LightCloseIcon />}
+                            <IconClose />
                         </div>
                     </div>
                 </div>
@@ -83,39 +76,25 @@ class SettingsDialog extends React.PureComponent {
         this.wrapper_ref = node;
     };
 
-    settings_content() {
-        return [
-            {
-                icon: {
-                    normal: this.props.is_dark_mode ? ThemeIcon : LightThemeIcon,
-                    active: ThemeIconActive,
-                },
-                label: localize('Themes'),
-                value: ThemeSelectSettings,
-            }, {
-                icon: {
-                    normal: this.props.is_dark_mode ? LanguageIcon : LightLanguageIcon,
-                    active: LanguageIconActive,
-                },
-                label: localize('Language'),
-                value: LanguageSettings,
-            }, {
-                icon: {
-                    normal: this.props.is_dark_mode ? ChartsIcon : LightChartsIcon,
-                    active: ChartsIconActive,
-                },
-                label: localize('Charts'),
-                value: ChartSettings,
-            }, {
-                icon: {
-                    normal: this.props.is_dark_mode ? PurchaseIcon : LightPurchaseIcon,
-                    active: PurchaseIconActive,
-                },
-                label: localize('Purchase Section'),
-                value: PurchaseSettings,
-            },
-        ];
-    }
+    settings_content = () => [
+        {
+            icon : IconTheme,
+            label: localize('Themes'),
+            value: ThemeSelectSettings,
+        }, {
+            icon : IconLanguage,
+            label: localize('Language'),
+            value: LanguageSettings,
+        }, {
+            icon : IconCharts,
+            label: localize('Charts'),
+            value: ChartSettings,
+        }, {
+            icon : IconPurchase,
+            label: localize('Purchase Section'),
+            value: PurchaseSettings,
+        },
+    ]
 }
 
 SettingsDialog.propTypes = {
