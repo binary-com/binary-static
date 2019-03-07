@@ -164,7 +164,7 @@ const PaymentMethods = () => {
                                         { td: it.L('PaySec was founded in 2014 to provide customers and merchants in the Asian region with a comprehensive range of payment methods through one payment gateway.') },
                                         { td_list: [
                                             { text: 'USD' },
-                                            { text: '25 - 10,000' },
+                                            { text: '25 - 4,000' },
                                             { text: 'N/A' },
                                             { text: <TableValues value={[it.L(`${deposit}${instant}`), it.L(`${withdrawal}${not_applicable}`)]} /> },
                                             { text: <ReferenceLinks pdf_file='Binary.com_PaySec.pdf' video_link='https://youtu.be/DTVspCgnx0M' /> },
@@ -173,6 +173,26 @@ const PaymentMethods = () => {
                                     ]}
                                     />,
                                     },
+                                ],
+                            },
+                            {
+                                id : 'paytrust',
+                                row: [
+                                    { text: <PaymentLogo logo='paytrust' /> },
+                                    { attributes: { colSpan: 5, className: 'toggler' }, custom_td : <CustomTableData data={[
+                                        { td: it.L('Enjoy the simplicity of online banking to fund your [_1] account.', it.website_name) },
+                                        { td_list: [
+                                            { text: 'USD' },
+                                            { text: '25 - 10,000' },
+                                            { text: 'N/A' },
+                                            { text: <TableValues value={[it.L(`${deposit}${instant}`), it.L(`${withdrawal}${working_day}`, 1)]} /> },
+                                            { text: <ReferenceLinks /> },
+                                        ],
+                                        },
+                                    ]}
+                                    />,
+                                    },
+
                                 ],
                             },
                         ],
@@ -384,6 +404,44 @@ const PaymentMethods = () => {
                                             { text: '5 - 750' },
                                             { text: <TableValues value={[it.L(`${deposit}${instant}`), it.L(`${withdrawal}${working_day}`, 1)]} /> },
                                             { text: <ReferenceLinks pdf_file='Binary.com_PaySafeCard.pdf' video_link='https://youtu.be/5QzGc1nleQo' /> },
+                                        ],
+                                        },
+                                    ]}
+                                    />,
+                                    },
+                                ],
+                            },
+                            {
+                                id : 'jeton',
+                                row: [
+                                    { text: <PaymentLogo logo='jeton' /> },
+                                    { attributes: { colSpan: 5, className: 'toggler' }, custom_td : <CustomTableData data={[
+                                        { td: it.L('-') },
+                                        { td_list: [
+                                            { text: 'USD EUR' },
+                                            { text: '10 - 10,000' },
+                                            { text: 'N/A' },
+                                            { text: <TableValues value={[it.L(`${deposit}${instant}`), it.L(`${withdrawal}${working_day}`, 1)]} /> },
+                                            { text: <ReferenceLinks /> },
+                                        ],
+                                        },
+                                    ]}
+                                    />,
+                                    },
+                                ],
+                            },
+                            {
+                                id : 'iwallet',
+                                row: [
+                                    { text: <PaymentLogo logo='iwallet' /> },
+                                    { attributes: { colSpan: 5, className: 'toggler' }, custom_td : <CustomTableData data={[
+                                        { td: it.L('-') },
+                                        { td_list: [
+                                            { text: 'USD' },
+                                            { text: '5 - 10,000' },
+                                            { text: 'N/A' },
+                                            { text: <TableValues value={[it.L(`${deposit}${instant}`), it.L(`${withdrawal}${working_day}`, 1)]} /> },
+                                            { text: <ReferenceLinks /> },
                                         ],
                                         },
                                     ]}
