@@ -84,7 +84,7 @@ export default class ContractStore extends BaseStore {
     onUnmount(contract_id) {
         this.disposeSwitchAccount();
         if (contract_id) {
-            WS.forget('proposal_open_contract', this.updateProposal, { contract_id });
+            WS.forget('proposal_open_contract', this.updateProposal, { contract_id: +contract_id });
         }
         this.forgetProposalOpenContract();
 

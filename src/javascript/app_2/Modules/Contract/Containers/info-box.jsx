@@ -62,7 +62,7 @@ const InfoBox = ({
                     <ChartCloseBtn
                         is_contract_mode={is_contract_mode}
                         onClose={(e) => {
-                            onClose(+contract_info.contract_id);
+                            onClose(contract_info.contract_id);
                             onClickNewTrade(e);
                         }}
                     />
