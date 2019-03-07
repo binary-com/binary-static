@@ -8,7 +8,7 @@ import { localize }               from '_common/localize';
 import { WS }                     from 'Services';
 import { createChartBarrier }     from './Helpers/chart-barriers';
 import { createChartMarkers }     from './Helpers/chart-markers';
-import { createChartTickMarkers, cleanUpTickMarkers } from './Helpers/chart-tick-markers';
+import { createChartTickMarkers } from './Helpers/chart-tick-markers';
 import {
     getDetailsExpiry,
     getDetailsInfo }             from './Helpers/details';
@@ -85,7 +85,6 @@ export default class ContractStore extends BaseStore {
     onUnmount() {
         this.disposeSwitchAccount();
         this.forgetProposalOpenContract();
-        cleanUpTickMarkers(this.contract_info);
 
         this.contract_id       = null;
         this.contract_info     = {};

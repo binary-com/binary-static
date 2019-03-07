@@ -1,4 +1,4 @@
-import { createMarkerConfig } from './chart-marker-helpers';
+import { createMarkerConfig }     from './chart-marker-helpers';
 import { MARKER_TYPES_CONFIG } from '../../SmartChart/Constants/markers';
 
 export const createChartMarkers = (SmartChartStore, contract_info, ContractStore = null) => {
@@ -8,9 +8,7 @@ export const createChartMarkers = (SmartChartStore, contract_info, ContractStore
 
             const marker_config = marker_creators[marker_type](contract_info, ContractStore);
             if (marker_config) {
-                setTimeout(() => {
-                    SmartChartStore.createMarker(marker_config);
-                }, 1000);
+                SmartChartStore.createMarker(marker_config);
             }
         });
     }
@@ -61,11 +59,8 @@ function createMarkerSpotEntry(contract_info, ContractStore) {
         MARKER_TYPES_CONFIG.SPOT_ENTRY.type,
         contract_info.entry_tick_time,
         contract_info.entry_tick,
-        {
-            // spot_value: `${contract_info.entry_tick}`,
-        },
     );
-}
+};
 
 function createMarkerSpotExit(contract_info) {
     if (!contract_info.exit_tick_time) return false;
@@ -79,4 +74,4 @@ function createMarkerSpotExit(contract_info) {
             status    : `${contract_info.profit > 0 ? 'won' : 'lost' }`,
         },
     );
-}
+};
