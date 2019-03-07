@@ -40,7 +40,7 @@ const JobDetails = (() => {
             load(urlFor('404'));
         }
 
-        // show sectionl
+        // show sections
         $(dept_class).setVisibility(1);
         $sidebar_dept.setVisibility(1).find(`a[href="${window.location.hash}"]`).parent('li').addClass('selected');
         showSelectedDiv();
