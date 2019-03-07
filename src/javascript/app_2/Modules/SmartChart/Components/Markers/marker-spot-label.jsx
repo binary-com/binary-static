@@ -3,8 +3,8 @@ import PropTypes     from 'prop-types';
 import React         from 'react';
 import { addComma }  from '_common/base/currency_base';
 import { toMoment }  from 'Utils/Date';
+import { IconClock } from 'Assets/Common/icon-clock.jsx';
 import MarkerSpot    from './marker-spot.jsx';
-import { IconClock } from '../../../../Assets/Common/icon-clock.jsx';
 
 class MarkerSpotLabel extends React.Component {
     constructor(props) {
