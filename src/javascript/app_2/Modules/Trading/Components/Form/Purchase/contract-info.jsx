@@ -4,6 +4,7 @@ import React             from 'react';
 import { localize }      from '_common/localize';
 import Money             from 'App/Components/Elements/money.jsx';
 import Tooltip           from 'App/Components/Elements/tooltip.jsx';
+import { Icon }          from 'Assets/Common/icon.jsx';
 import { IconPriceMove } from 'Assets/Trading/icon-price-move.jsx';
 
 const ContractInfo = ({
@@ -26,7 +27,7 @@ const ContractInfo = ({
                     <div className='trade-container__price-info-basis'>{localize('[_1]', proposal_info.obj_contract_basis.text)}</div>
                     <div className='trade-container__price-info-value'><Money amount={proposal_info.obj_contract_basis.value} className='trade-container__price-info-currency' currency={currency} /></div>
                     <div className='trade-container__price-info-movement'>
-                        {has_increased !== null && <IconPriceMove type={has_increased ? 'profit' : 'loss'} />}
+                        {has_increased !== null && <Icon icon={IconPriceMove} type={has_increased ? 'profit' : 'loss'} />}
                     </div>
                 </div>
                 <span>

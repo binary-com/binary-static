@@ -2,12 +2,13 @@ import React           from 'react';
 import PropTypes       from 'prop-types';
 import { localize }    from '_common/localize';
 import Button          from 'App/Components/Form/button.jsx';
+import { Icon }        from 'Assets/Common/icon.jsx';
 import { IconLock }    from 'Assets/Trading/icon-lock.jsx';
 
 const PurchaseLock = ({ onClick }) => (
     <div className='purchase-container__lock'>
         <div>
-            <IconLock className='purchase-container__lock-icon' />
+            <Icon icon={IconLock} className='purchase-container__lock-icon' />
         </div>
         <h4 className='purchase-container__lock-header'>{localize('Purchase Locked')}</h4>
         <Button

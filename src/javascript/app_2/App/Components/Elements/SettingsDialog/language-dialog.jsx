@@ -3,6 +3,7 @@ import PropTypes       from 'prop-types';
 import React           from 'react';
 import { localize }    from '_common/localize';
 import {
+    Icon,
     IconBack,
     IconCountryFlag }  from 'Assets/Common';
 import {
@@ -17,7 +18,7 @@ const LanguageDialog = ({ hide, is_visible, is_settings_on }) => {
     return (
         <div className={language_dialog_class}>
             <div className='settings-dialog__language-header' onClick={hide}>
-                <IconBack className='settings-dialog__arrow-back' />
+                <Icon icon={IconBack} className='settings-dialog__arrow-back' />
                 <span>{localize('language')}</span>
             </div>
             <div className='settings-dialog__language-container'>
@@ -25,7 +26,8 @@ const LanguageDialog = ({ hide, is_visible, is_settings_on }) => {
                     <React.Fragment key={key}>
                         <div className='settings-dialog__language-row'>
                             <a className='settings-dialog__language-link' href={getURL(key)} >
-                                <IconCountryFlag
+                                <Icon
+                                    icon={IconCountryFlag}
                                     className={'settings-dialog__language-row-flag settings-dialog__language-flag'}
                                     type={key.replace(/(\s|_)/, '-').toLowerCase()}
                                 />

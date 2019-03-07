@@ -1,7 +1,9 @@
 import PropTypes           from 'prop-types';
 import React               from 'react';
 import { localize }        from '_common/localize';
-import { IconCountryFlag } from 'Assets/Common';
+import {
+    Icon,
+    IconCountryFlag }      from 'Assets/Common';
 import { connect }         from 'Stores/connect';
 import SettingsControl     from '../../Components/Elements/SettingsDialog/settings-control.jsx';
 
@@ -21,7 +23,8 @@ const GeneralSettings = ({
                 name={localize('Language')}
                 onClick={showLanguage}
             >
-                <IconCountryFlag
+                <Icon
+                    icon={IconCountryFlag}
                     className={'settings-dialog__language-flag'}
                     type={(curr_language || 'EN').toLowerCase()}
                 />

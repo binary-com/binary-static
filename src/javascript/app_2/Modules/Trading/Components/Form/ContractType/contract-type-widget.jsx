@@ -1,6 +1,7 @@
-import classNames           from 'classnames';
+import classNames            from 'classnames';
 import PropTypes             from 'prop-types';
 import React                 from 'react';
+import { Icon }              from 'Assets/Common/icon.jsx';
 import { IconTradeCategory } from 'Assets/Trading/Categories';
 import ContractTypeDialog    from './contract-type-dialog.jsx';
 import ContractTypeList      from './contract-type-list.jsx';
@@ -142,7 +143,7 @@ class ContractTypeWidget extends React.PureComponent {
                     })}
                     onClick={this.onWidgetClick}
                 >
-                    <IconTradeCategory category={this.props.value} className='contract-type-widget__icon-wrapper' />
+                    <Icon icon={IconTradeCategory} category={this.props.value} className='contract-type-widget__icon-wrapper' />
                     <span name={this.props.name} value={this.props.value}>
                         {this.getDisplayText()}
                     </span>

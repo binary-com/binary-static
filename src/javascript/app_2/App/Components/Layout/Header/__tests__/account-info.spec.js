@@ -3,7 +3,8 @@ import { expect }             from 'chai';
 import { configure, shallow } from 'enzyme';
 import Adapter                from 'enzyme-adapter-react-16';
 import { AccountInfo }        from '../account-info.jsx';
-import { IconArrow }          from '../../../../../Assets/Common';
+import { IconArrowBold }      from 'Assets/Common';
+import { Icon }               from 'Assets/Common/icon.jsx';
 import { AccountSwitcher }    from '../../../../Containers/AccountSwitcher';
 import { CSSTransition }      from 'react-transition-group';
 
@@ -34,9 +35,9 @@ describe('AccountInfo', () => {
         const wrapper = shallow(<AccountInfo loginid='12345' />);
         expect(wrapper.contains(<p className='acc-info__id' title='12345'>12345&nbsp;</p>)).to.be.true;
     });
-    it('should have <IconArrow />', () => {
+    it('should have <Icon icon={IconArrow} />', () => {
         const wrapper = shallow(<AccountInfo />);
-        expect(wrapper.contains(<IconArrow className='acc-info__select-arrow' is_bold={true} />)).to.be.true;
+        expect(wrapper.contains(<Icon icon={IconArrowBold} className='acc-info__select-arrow' />)).to.be.true;
     });
     it('should contain <CSSTransition /> and children', () => {
         const wrapper = shallow(<AccountInfo is_dialog_on={false}

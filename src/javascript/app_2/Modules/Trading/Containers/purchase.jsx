@@ -7,6 +7,7 @@ import { PopConfirm }    from 'App/Components/Elements/PopConfirm';
 import UILoader          from 'App/Components/Elements/ui-loader.jsx';
 import Button            from 'App/Components/Form/button.jsx';
 import Fieldset          from 'App/Components/Form/fieldset.jsx';
+import { Icon }          from 'Assets/Common/icon.jsx';
 import { IconTradeType } from 'Assets/Trading/Types';
 import { connect }       from 'Stores/connect';
 import ContractInfo      from '../Components/Form/Purchase/contract-info.jsx';
@@ -45,7 +46,7 @@ const Purchase = ({
                     <div className='btn-purchase__effect-detail' />
                     <div className='btn-purchase__content'>
                         <div className='btn-purchase__trade-type'>
-                            <IconTradeType type={type.toLowerCase()} className='btn-purchase__trade-type-icon' />
+                            <Icon icon={IconTradeType} type={type.toLowerCase()} className='btn-purchase__trade-type-icon' />
                             <span className='btn-purchase__trade-type-text'>{localize('[_1]', trade_types[type])}</span>
                         </div>
                     </div>

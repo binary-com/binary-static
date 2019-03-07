@@ -2,7 +2,9 @@ import classNames        from 'classnames';
 import PropTypes         from 'prop-types';
 import React             from 'react';
 import { CSSTransition } from 'react-transition-group';
-import { IconArrow }     from 'Assets/Common';
+import {
+    IconArrow,
+    Icon }               from 'Assets/Common';
 import { localize }      from '_common/localize';
 import {
     epochToMoment,
@@ -106,7 +108,7 @@ class ResultDetails extends React.PureComponent {
                     })}
                     onClick={this.toggleDetails}
                 >
-                    <IconArrow />
+                    <Icon icon={IconArrow} />
                 </div>
             </React.Fragment>
         );

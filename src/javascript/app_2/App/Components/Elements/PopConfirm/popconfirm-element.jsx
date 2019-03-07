@@ -1,7 +1,9 @@
 import classNames          from 'classnames';
 import PropTypes           from 'prop-types';
 import React               from 'react';
-import { IconExclamation } from 'Assets/Common';
+import {
+    Icon,
+    IconExclamation }      from 'Assets/Common';
 
 const PopConfirmElement = ({
     alignment,
@@ -20,7 +22,7 @@ const PopConfirmElement = ({
     return (
         <div ref={wrapperRef} className={popconfirm_class}>
             <div className='popconfirm__title'>
-                <IconExclamation className='popconfirm__icon_exclamation' />
+                <Icon icon={IconExclamation} className='popconfirm__icon_exclamation' />
                 <h4 className='popconfirm__header'>{message}</h4>
             </div>
             <div className='popconfirm__button-wrapper'>

@@ -2,6 +2,7 @@ import classNames        from 'classnames';
 import PropTypes         from 'prop-types';
 import React             from 'react';
 import { CSSTransition } from 'react-transition-group';
+import { Icon }          from 'Assets/Common';
 import { IconSettings }  from 'Assets/Footer';
 import SettingsDialog    from '../../Elements/SettingsDialog/settings-dialog.jsx';
 
@@ -20,7 +21,7 @@ const ToggleSettings = ({
                 onClick={toggleSettings}
                 className={toggle_settings_class}
             >
-                <IconSettings className='footer__icon ic-settings__icon' />
+                <Icon icon={IconSettings} className='footer__icon ic-settings__icon' />
             </a>
             <CSSTransition
                 in={is_settings_visible}

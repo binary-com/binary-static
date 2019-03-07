@@ -4,6 +4,7 @@ import { localize }      from '_common/localize';
 import {
     DrawerItem,
     DrawerToggle }       from 'App/Components/Elements/Drawer';
+import { Icon }          from 'Assets/Common';
 import { IconLogout }    from 'Assets/Header/Drawer';
 import {
     IconTrade,
@@ -31,17 +32,17 @@ const MenuDrawer = ({
             <React.Fragment>
                 <DrawerItem
                     text={localize('Trade')}
-                    icon={<IconTrade className='drawer__icon' />}
+                    icon={<Icon icon={IconTrade} className='drawer__icon' />}
                     link_to={routes.trade}
                 />
                 <DrawerItem
                     text={localize('Portfolio')}
-                    icon={<IconPortfolio className='drawer__icon' />}
+                    icon={<Icon icon={IconPortfolio} className='drawer__icon' />}
                     link_to={routes.portfolio}
                 />
                 <DrawerItem
                     text={localize('Statement')}
-                    icon={<IconStatement className='drawer__icon' />}
+                    icon={<Icon icon={IconStatement} className='drawer__icon' />}
                     link_to={routes.statement}
                 />
                 <hr className='hr' />
@@ -67,7 +68,7 @@ const MenuDrawer = ({
         {!!(is_logged_in && is_mobile) &&
         <div className='drawer__footer'>
             <DrawerItem
-                icon={<IconLogout className='drawer__icon' />}
+                icon={<Icon icon={IconLogout} className='drawer__icon' />}
                 text={localize('Logout')}
                 custom_action={() => {
                     if (is_positions_drawer_on) {

@@ -2,7 +2,9 @@ import classNames           from 'classnames';
 import PropTypes            from 'prop-types';
 import React                from 'react';
 import { Scrollbars }       from 'tt-react-custom-scrollbars';
-import { IconBack }         from 'Assets/Common/icon-back.jsx';
+import {
+    Icon,
+    IconBack }              from 'Assets/Common';
 import { IconChevronLeft }  from 'Assets/Common/icon-chevron-left.jsx';
 import { IconChevronRight } from 'Assets/Common/icon-chevron-right.jsx';
 import { TradeCategories }  from 'Assets/Trading/Categories/trade-categories.jsx';
@@ -23,7 +25,7 @@ const TradeTypeInfoItem = ({
         {!is_mobile &&
         <div className='trade-type-info-dialog__header'>
             <span onClick={() => onBackButtonClick()}>
-                <IconBack />
+                <Icon icon={IconBack} />
             </span>
             <span className='title'>{item.text}</span>
         </div>
@@ -44,7 +46,7 @@ const TradeTypeInfoItem = ({
         </div>
         <div className='trade-type-info-navigation'>
             <div className='trade-type-info-navigation__icon' onClick={() => handlePrevClick(navigationList)} >
-                <IconChevronLeft />
+                <Icon icon={IconChevronLeft} />
             </div>
             <div className='trade-type-info-navigation__list'>
                 {
@@ -61,7 +63,7 @@ const TradeTypeInfoItem = ({
                 }
             </div>
             <div className='trade-type-info-navigation__icon' onClick={() => handleNextClick(navigationList)} >
-                <IconChevronRight />
+                <Icon icon={IconChevronRight} />
             </div>
         </div>
     </React.Fragment>

@@ -1,6 +1,8 @@
 import PropTypes             from 'prop-types';
 import React                 from 'react';
-import { IconCalendarToday } from 'Assets/Common';
+import {
+    Icon,
+    IconCalendarToday }      from 'Assets/Common';
 import { localize }          from '_common/localize';
 
 const CalendarFooter = ({
@@ -17,7 +19,8 @@ const CalendarFooter = ({
                 { footer && <span className='calendar__text'>{footer}</span>}
                 { has_range_selection && <span className='calendar__text'>{ `${!is_minimum ? localize('Duration: ') : ''}${duration_date}` }</span> }
                 { has_today_btn &&
-                    <IconCalendarToday
+                    <Icon
+                        icon={IconCalendarToday}
                         className='calendar__icon'
                         onClick={onClick}
                     />

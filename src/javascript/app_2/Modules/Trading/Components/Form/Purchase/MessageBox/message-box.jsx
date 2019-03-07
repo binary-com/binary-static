@@ -1,7 +1,9 @@
 import PropTypes            from 'prop-types';
 import React                from 'react';
 import { getPropertyValue } from '_common/utility';
-import { IconClose }        from 'Assets/Common/icon-close.jsx';
+import {
+    Icon,
+    IconClose }             from 'Assets/Common';
 import PurchaseResult       from './purchase-result.jsx';
 import {
     ErrorBalance,
@@ -29,7 +31,7 @@ const MessageBox = ({ currency, purchase_info, onClick }) => {
     return (
         <div className='purchase-container__error'>
             <div className='purchase-container__error-close-btn' onClick={onClick}>
-                <IconClose className='purchase-container__error-close-btn-ic' />
+                <Icon icon={IconClose} className='purchase-container__error-close-btn-ic' />
             </div>
             {has_error ?
                 ErrorComponent

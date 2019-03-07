@@ -1,6 +1,8 @@
 import PropTypes     from 'prop-types';
 import React         from 'react';
-import { IconError } from 'Assets/Common/icon-error.jsx';
+import {
+    Icon,
+    IconError }      from 'Assets/Common';
 import { localize }  from '_common/localize';
 import Localize      from '../localize.jsx';
 
@@ -16,7 +18,7 @@ const ErrorComponent = ({ type, message }) => {
     }
     return (
         <div className='error__container'>
-            <IconError type={type} />
+            <Icon icon={IconError} type={type} />
             <p className='error__message'>{msg || localize('Sorry, an error occured while processing your request.')}</p>
         </div>
     );

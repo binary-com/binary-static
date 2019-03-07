@@ -1,6 +1,8 @@
 import PropTypes     from 'prop-types';
 import React         from 'react';
-import { IconClose } from 'Assets/Common';
+import {
+    Icon,
+    IconClose }      from 'Assets/Common';
 
 // TODO: move to App/Components, Refactor svg, consider other types, more features;
 // when a general design and more icons for all messages is ready
@@ -19,7 +21,7 @@ const ContractError = ({
         </div>
         <div className='message-text'>{message}</div>
         <div className='message-close' onClick={onClickClose}>
-            <IconClose />
+            <Icon icon={IconClose} />
         </div>
     </div>
 );
