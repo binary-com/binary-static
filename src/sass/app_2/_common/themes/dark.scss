@@ -1,27 +1,6 @@
 // Dark Theme
 .theme--dark {
     .trade-container {
-        &__price {
-            color: $COLOR_WHITE;
-
-            &-info-basis {
-                color: $COLOR_DARK_BLUE_7;
-            }
-        }
-        &__fieldset {
-            background: $COLOR_DARK_BLUE_3;
-            color: $COLOR_DARK_BLUE_7;
-            border-color: $COLOR_DARK_BLUE_3;
-
-            &-info {
-                color: $COLOR_DARK_BLUE_7;
-            }
-        }
-        &__input {
-            background: $COLOR_DARK_BLUE_2;
-            color: $COLOR_DARK_BLUE_7;
-            border-color: $COLOR_DARK_BLUE_2;
-        }
         &__barriers {
             &--up, &--down {
                 @extend .inline-icon.white;

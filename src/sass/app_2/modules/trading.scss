@@ -5,11 +5,14 @@
     }
 
     &__fieldset {
-        background-color: $COLOR_LIGHT_BLACK_4_SOLID;
-        border: 1px solid $COLOR_LIGHT_BLACK_4_SOLID;
         border-radius: $BORDER_RADIUS;
         padding: 0.8em;
         margin-bottom: 0.4em;
+        @include themify($themes) {
+            background-color: themed('background_container_color');
+            border: 1px solid themed('background_container_color');
+            color: themed('text_primary_color');
+        }
 
         &-header {
             height: 1.5rem;
@@ -17,6 +20,9 @@
         }
         &-info {
             @include typeface(--paragraph-left-normal-black);
+            @include themify($themes) {
+                color: themed('border_hover_color');
+            }
 
             &--left {
                 left: 5px;
@@ -27,7 +33,11 @@
         align-self: center;
         appearance: none;
         box-sizing: border-box;
-        background: $COLOR_WHITE;
+        @include themify($themes) {
+            background: themed('background_input_color');
+            border-color: themed('background_input_color');
+            color: themed('text_primary_color');
+        }
     }
     &__error {
         justify-content: center;
@@ -66,6 +76,9 @@
         display: flex;
         justify-content: space-between;
         position: relative;
+        @include themify($themes) {
+            color: themed('text_color');
+        }
 
         &-info {
             display: flex;
@@ -75,8 +88,10 @@
 
             &-basis {
                 margin-left: 0;
-                color: $COLOR_LIGHT_BLACK_2;
                 font-weight: normal;
+                @include themify($themes) {
+                    color: themed('text_secondary_color');
+                }
             }
             &-currency {
                 margin-left: 4px;
