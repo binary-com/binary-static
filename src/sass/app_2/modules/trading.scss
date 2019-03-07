@@ -25,6 +25,17 @@
         box-sizing: border-box;
         background: $COLOR_WHITE;
     }
+    &__loading {
+        overflow: hidden;
+        width: 92px;
+        height: 8px;
+    }
+    &--loading {
+        animation: data--loading 0.6s ease infinite;
+        background-color: $COLOR_LIGHT_GRAY_1;
+        width: 92px;
+        height: 8px;
+    }
     &__error {
         justify-content: center;
         align-items: center;
@@ -331,7 +342,7 @@
         float: right;
         text-align: right;
         height: 56px;
-        padding-right: 5%;
+        padding-right: 10px;
         display: flex;
         flex-direction: column;
     }
@@ -356,7 +367,7 @@
         text-align: left;
         display: flex;
         flex-direction: column;
-        padding-left: 5%;
+        padding-left: 10px;
         height: 56px;
 
         background-color: $COLOR_GREEN_1;
