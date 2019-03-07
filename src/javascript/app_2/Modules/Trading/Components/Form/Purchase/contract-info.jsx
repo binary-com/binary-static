@@ -12,27 +12,19 @@ const ContractInfo = ({
     proposal_info,
 }) => (
     <React.Fragment>
+        {!proposal_info.has_error &&
+            <div className='trade-container__load_container'>
+                <div className='trade-container--loading' />
+            </div>
+        }
         {(proposal_info.has_error || !proposal_info.id) ?
-            <React.Fragment>
-                <div
-                    className={classNames({
-                        'trade-container__loading': !proposal_info.has_error,
-                    })}
-                >
-                    <div
-                        className={classNames({
-                            'trade-container--loading': !proposal_info.has_error,
-                        })}
-                    />
-                </div>
-                <div
-                    className={classNames({
-                        'trade-container__error': proposal_info.has_error,
-                    })}
-                >
-                    {proposal_info.message && <span className='trade-container__error-info'>{proposal_info.message}</span>}
-                </div>
-            </React.Fragment>
+            <div
+                className={classNames({
+                    'trade-container__error': proposal_info.has_error,
+                })}
+            >
+                {proposal_info.message && <span className='trade-container__error-info'>{proposal_info.message}</span>}
+            </div>
             :
             <div className='trade-container__price'>
                 <div className='trade-container__price-info'>
