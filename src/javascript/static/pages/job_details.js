@@ -1,3 +1,4 @@
+const load     = require('../../app/base/binary_pjax').load;
 const urlParam = require('../../_common/url').param;
 const urlFor   = require('../../_common/url').urlFor;
 
@@ -30,7 +31,16 @@ const JobDetails = (() => {
         $sidebar.setVisibility(0);
         $('#title').find('h1').setVisibility(0);
         $('#image').find('img').setVisibility(0);
-        // show section
+
+        window.location.hash = ($sidebar_dept.length > 0 && window.location.hash === '')
+            ? $sidebar_dept.find('a')[0].hash
+            : window.location.hash;
+
+        if ($sidebar_dept.length === 0 || $sidebar_dept.find(`a[href="${window.location.hash}"]`).length === 0) {
+            load(urlFor('404'));
+        }
+
+        // show sectionl
         $(dept_class).setVisibility(1);
         $sidebar_dept.setVisibility(1).find(`a[href="${window.location.hash}"]`).parent('li').addClass('selected');
         showSelectedDiv();
