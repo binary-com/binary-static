@@ -2,7 +2,6 @@ $themes: (
     light: (
         background_color          : $COLOR_LIGHT_BLACK_4_SOLID,
         background_container_color: $COLOR_LIGHT_BLACK_4_SOLID,
-        background_input_color    : $COLOR_WHITE,
         background_icon_color     : $COLOR_LIGHT_BLACK_4_SOLID,
         background_tooltip_color  : $COLOR_LIGHT_BLACK_1,
         border_hover_color        : $COLOR_LIGHT_GRAY_1,
@@ -25,7 +24,6 @@ $themes: (
     dark: (
         background_color          : $COLOR_DARK_BLUE_1,
         background_container_color: $COLOR_DARK_BLUE_3,
-        background_input_color    : $COLOR_DARK_BLUE_2,
         background_icon_color     : $COLOR_DARK_BLUE_5,
         background_tooltip_color  : $COLOR_DARK_BLUE_5,
         border_hover_color        : $COLOR_DARK_BLUE_7,

@@ -1,50 +1,6 @@
 // Dark Theme
 .theme--dark {
-    .trade-container {
-        &__barriers {
-            &--up, &--down {
-                @extend .inline-icon.white;
-            }
-        }
-        &__currency {
-            color: $COLOR_DARK_BLUE_7;
-        }
-        &__error {
-            &-info {
-                color: $COLOR_WHITE;
-            }
-        }
-        &__allow-equals-label {
-            color: $COLOR_DARK_BLUE_7;
-        }
-        .chartContainer:before {
-            background-image: linear-gradient(to right, rgba(16, 19, 32, 1), rgba(16, 19, 32, 0));
-        }
-    }
     .purchase-container {
-        &__error {
-            background: $COLOR_DARK_BLUE_3;
-            color: $COLOR_DARK_BLUE_7;
-
-            a {
-                color: $COLOR_DARK_BLUE_7;
-
-                &:hover {
-                    color: $COLOR_WHITE;
-                    font-weight: 500;
-                }
-            }
-            &-result {
-                color: $COLOR_DARK_BLUE_7;
-
-                span.label {
-                    color: $COLOR_DARK_BLUE_7;
-                }
-            }
-            &-login {
-                color: $COLOR_WHITE;
-            }
-        }
         &__option div.box .left-column .type-wrapper {
             background: $COLOR_DARK_BLUE_6;
         }
