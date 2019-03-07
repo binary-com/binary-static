@@ -30,6 +30,8 @@ const DigitDisplay = (() => {
     };
 
     const init = (id_render, proposal_open_contract) => {
+        const calculated_height = proposal_open_contract.tick_count * 40;
+
         tick_count = 1;
         contract   = proposal_open_contract;
         spot_times = [];
@@ -38,7 +40,7 @@ const DigitDisplay = (() => {
         $container
             .addClass('normal-font')
             .html($('<h5 />', { text: contract.display_name, class: 'center-text' }))
-            .append($('<div />', { class: 'gr-8 gr-centered gr-12-m' })
+            .append($('<div />', { class: 'gr-8 gr-centered gr-12-m', style: `height: ${calculated_height + 50}px;` })
                 .append($('<div />', { class: 'gr-row', id: 'table_digits' })
                     .append($('<strong />', { class: 'gr-3', text: localize('Tick') }))
                     .append($('<strong />', { class: 'gr-3', text: localize('Spot') }))
@@ -102,6 +104,7 @@ const DigitDisplay = (() => {
             ViewPopupUI.storeSubscriptionID(response.tick.id);
         }
 
+        // Hide loading component
         if (response.history) {
             response.history.times.some((time, idx) => {
                 if (+time >= +contract.entry_tick_time) {
