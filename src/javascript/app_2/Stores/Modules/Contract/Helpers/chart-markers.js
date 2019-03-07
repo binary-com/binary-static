@@ -1,12 +1,15 @@
-import { createMarkerConfig }     from './chart-marker-helpers';
+import {
+    createMarkerConfig,
+    createMarkerSpotEntry,
+    createMarkerSpotExit }     from './chart-marker-helpers';
 import { MARKER_TYPES_CONFIG } from '../../SmartChart/Constants/markers';
 
-export const createChartMarkers = (SmartChartStore, contract_info, ContractStore = null) => {
+export const createChartMarkers = (SmartChartStore, contract_info) => {
     if (contract_info) {
         Object.keys(marker_creators).forEach((marker_type) => {
             if (marker_type in SmartChartStore.markers) return;
 
-            const marker_config = marker_creators[marker_type](contract_info, ContractStore);
+            const marker_config = marker_creators[marker_type](contract_info);
             if (marker_config) {
                 SmartChartStore.createMarker(marker_config);
             }
@@ -50,28 +53,3 @@ function createMarkerStartTime(contract_info) {
         contract_info.date_start,
     );
 }
-
-// -------------------- Spots --------------------
-function createMarkerSpotEntry(contract_info, ContractStore) {
-    if (!contract_info.entry_tick_time || ContractStore.is_sold_before_start) return false;
-
-    return createMarkerConfig(
-        MARKER_TYPES_CONFIG.SPOT_ENTRY.type,
-        contract_info.entry_tick_time,
-        contract_info.entry_tick,
-    );
-};
-
-function createMarkerSpotExit(contract_info) {
-    if (!contract_info.exit_tick_time) return false;
-
-    return createMarkerConfig(
-        MARKER_TYPES_CONFIG.SPOT_EXIT.type,
-        contract_info.exit_tick_time,
-        contract_info.exit_tick,
-        {
-            spot_value: `${contract_info.exit_tick}`,
-            status    : `${contract_info.profit > 0 ? 'won' : 'lost' }`,
-        },
-    );
-};

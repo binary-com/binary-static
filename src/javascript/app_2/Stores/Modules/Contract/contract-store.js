@@ -124,7 +124,7 @@ export default class ContractStore extends BaseStore {
         if (this.contract_info.tick_count && !isDigitContract(this.contract_info.contract_type)) {
             createChartTickMarkers(this.smart_chart, this.contract_info);
         } else {
-            createChartMarkers(this.smart_chart, this.contract_info, this);
+            createChartMarkers(this.smart_chart, this.contract_info);
         }
 
         this.handleDigits();

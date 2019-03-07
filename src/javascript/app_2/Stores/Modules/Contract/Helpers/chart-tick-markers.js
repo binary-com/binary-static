@@ -1,5 +1,8 @@
 import { WS }                  from 'Services';
-import { createMarkerConfig } from './chart-marker-helpers';
+import {
+    createMarkerConfig,
+    createMarkerSpotEntry,
+    createMarkerSpotExit }     from './chart-marker-helpers';
 import { MARKER_TYPES_CONFIG } from '../../SmartChart/Constants/markers';
 
 let has_been_initialized = false;
@@ -79,25 +82,5 @@ function createMarkerSpotMiddle(tick, idx) {
         tick.time,
         tick.price,
         { spot_value: `${idx}` },
-    );
-}
-
-function createMarkerSpotEntry(contract_info) {
-    return createMarkerConfig(
-        MARKER_TYPES_CONFIG.SPOT_ENTRY.type,
-        contract_info.entry_tick_time,
-        contract_info.entry_tick,
-    );
-}
-
-function createMarkerSpotExit(contract_info) {
-    return createMarkerConfig(
-        MARKER_TYPES_CONFIG.SPOT_EXIT.type,
-        contract_info.exit_tick_time,
-        contract_info.exit_tick,
-        {
-            spot_value: `${contract_info.exit_tick}`,
-            status    : `${contract_info.profit > 0 ? 'won' : 'lost' }`,
-        },
     );
 }
