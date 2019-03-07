@@ -19,7 +19,7 @@
             @include colorIcon(themed('disabled_color'), none);
         }
         &.white {
-            @include colorIcon(themed('text_active_color'));
+            @include colorIcon(themed('text_color'));
         }
     }
 }

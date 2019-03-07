@@ -1,27 +1,5 @@
 // Dark Theme
 .theme--dark {
-    .purchase-container {
-        &__option div.box .left-column .type-wrapper {
-            background: $COLOR_DARK_BLUE_6;
-        }
-        &__lock {
-            background: $COLOR_DARK_BLUE_3;
-
-            &-icon {
-                @extend .inline-icon.white;
-            }
-            &-button {
-                background: transparent;
-            }
-            &-header {
-                color: $COLOR_WHITE;
-            }
-            &-message {
-                background: $COLOR_DARK_BLUE_2;
-                color: $COLOR_DARK_BLUE_7;
-            }
-        }
-    }
     .btn-purchase:disabled {
         box-shadow: 0 2px 2px 0 $COLOR_DARK_BLUE_7;
         background: $COLOR_DARK_BLUE_6;
