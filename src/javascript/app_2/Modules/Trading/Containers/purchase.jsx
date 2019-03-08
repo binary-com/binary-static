@@ -35,30 +35,32 @@ const Purchase = ({
         const is_purchase_error = (!isEmptyObject(purchase_info) && purchase_info.echo_req.buy === info.id);
 
         const purchase_button = (
-            <Button
-                is_disabled={is_contract_mode || is_disabled}
-                id={`purchase_${type}`}
-                className='btn--primary btn-purchase'
-                has_effect
-                onClick={() => { onClickPurchase(info.id, info.stake, type); }}
-            >
-                <React.Fragment>
-                    <div className='btn-purchase__effect-main' />
-                    <div className='btn-purchase__effect-detail' />
-                    <div className='btn-purchase__content'>
-                        <div className='btn-purchase__trade-type'>
-                            <IconTradeType type={type.toLowerCase()} className='btn-purchase__trade-type-icon' />
-                            <span className='btn-purchase__trade-type-text'>{localize('[_1]', trade_types[type])}</span>
+            <div className='btn-purchase__shadow-wrapper'>
+                <Button
+                    is_disabled={is_contract_mode || is_disabled}
+                    id={`purchase_${type}`}
+                    className='btn--primary btn-purchase'
+                    has_effect
+                    onClick={() => { onClickPurchase(info.id, info.stake, type); }}
+                >
+                    <React.Fragment>
+                        <div className='btn-purchase__effect-main' />
+                        <div className='btn-purchase__effect-detail' />
+                        <div className='btn-purchase__content'>
+                            <div className='btn-purchase__trade-type'>
+                                <IconTradeType type={type.toLowerCase()} className='btn-purchase__trade-type-icon' />
+                                <span className='btn-purchase__trade-type-text'>{localize('[_1]', trade_types[type])}</span>
+                            </div>
                         </div>
-                    </div>
-                    <div className='btn-purchase__info'>
-                        <div className='btn-purchase__return'>{is_disabled ? '---,-' : info.returns}</div>
-                        <div className='btn-purchase__profit'>
-                            {is_disabled ? '--,--' : <Money amount={info.profit} currency={currency} className='btn-purchase__currency' />}
+                        <div className='btn-purchase__info'>
+                            <div className='btn-purchase__return'>{is_disabled ? '---,-' : info.returns}</div>
+                            <div className='btn-purchase__profit'>
+                                {is_disabled ? '--,--' : <Money amount={info.profit} currency={currency} className='btn-purchase__currency' />}
+                            </div>
                         </div>
-                    </div>
-                </React.Fragment>
-            </Button>
+                    </React.Fragment>
+                </Button>
+            </div>
         );
 
         return (
