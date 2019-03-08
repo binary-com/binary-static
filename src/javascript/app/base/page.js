@@ -7,6 +7,7 @@ const Footer           = require('./footer');
 const Menu             = require('./menu');
 const BinarySocket     = require('./socket');
 const TrafficSource    = require('../common/traffic_source');
+const isEuCountry      = require('../common/country_base').isEuCountry;
 const RealityCheck     = require('../pages/user/reality_check/reality_check');
 const Elevio           = require('../../_common/base/elevio');
 const Login            = require('../../_common/base/login');
@@ -96,6 +97,9 @@ const Page = (() => {
         if (Client.isLoggedIn()) {
             BinarySocket.wait('authorize', 'website_status', 'get_account_status').then(() => {
                 RealityCheck.onLoad();
+                if (isEuCountry()) {
+                    console.log('kontol'); //eslint-disable-line
+                }
                 Menu.init();
             });
         } else {
