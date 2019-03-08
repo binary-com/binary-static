@@ -27,11 +27,6 @@
         justify-content: center;
         text-decoration: none;
     }
-    &--loading {
-        .btn__text {
-            opacity: 0;
-        }
-    }
     &:not([disabled]):hover {
         text-decoration: none;
     }

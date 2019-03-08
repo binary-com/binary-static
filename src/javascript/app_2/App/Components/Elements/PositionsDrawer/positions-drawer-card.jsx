@@ -12,7 +12,7 @@ import { getTimePercentage } from './helpers';
 import Money                 from '../money.jsx';
 import Button                from '../../Form/button.jsx';
 
-// TODO: Find a way to simplify required props, maybe we can pass the response object as a prop and parse it with helpers
+// TODO: Find a way to simplify props, maybe we can pass some of props as object from portfolio_store and parse it with helpers
 const PositionsDrawerCard = ({
     active_position,
     barrier,
