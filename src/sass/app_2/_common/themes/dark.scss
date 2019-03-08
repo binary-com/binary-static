@@ -108,9 +108,37 @@
             }
         }
     }
-    .btn-purchase:disabled {
-        box-shadow: 0 2px 2px 0 $COLOR_LIGHT_BLACK_3;
-        color: $COLOR_DARK_BLUE_8;
+    .btn-purchase {
+        &:disabled {
+            box-shadow: 0 2px 2px 0 $COLOR_LIGHT_BLACK_3;
+            background-color: $COLOR_DARK_BLUE_8;
+            /* stylelint-disable */
+            .btn-purchase__effect-detail {
+                border-color: transparent transparent transparent rgba(127, 131, 151, 0.48);
+            }
+            /* stylelint-enable */
+            .btn-purchase__content {
+                background-color: $COLOR_DARK_BLUE_8;
+            }
+        }
+        &:disabled.animate {
+            background-color: $COLOR_GREEN_2;
+            color: $COLOR_DARK_BLUE_7;
+
+            .btn-purchase__content {
+                background-color: $COLOR_GREEN_1;
+            }
+            .btn-purchase__effect-detail {
+                border-color: transparent transparent transparent $COLOR_GREEN_1;
+                opacity: 1;
+            }
+            .btn-purchase__trade-type-icon svg, .btn-purchase__trade-type-text span, .btn-purchase__profit-text, .btn-purchase__return-text {
+                animation: data--loading 0.6s ease infinite;
+            }
+            .btn-purchase__info {
+                background-color: transparent;
+            }
+        }
     }
     .card-list {
         &__card {
