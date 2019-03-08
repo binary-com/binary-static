@@ -24,7 +24,7 @@
         appearance: none;
         box-sizing: border-box;
         background: $COLOR_WHITE;
-        border-radius: 0 $BORDER_RADIUS $BORDER_RADIUS 0;
+        border-radius: $BORDER_RADIUS;
     }
     &__error {
         justify-content: center;
@@ -172,7 +172,10 @@
         }
         &--has-currency-options {
             width: calc(75% - 1px);
-            border-radius: 0 $BORDER_RADIUS $BORDER_RADIUS 0;
+
+            .trade-container__input {
+                border-radius: 0 $BORDER_RADIUS $BORDER_RADIUS 0;
+            }
         }
     }
 }

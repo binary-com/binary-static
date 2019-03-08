@@ -213,3 +213,27 @@
         }
     }
 }
+
+/*
+ * Tooltip colors
+ */
+@mixin tooltipColor($color) {
+    &:before {
+        background: $color;
+    }
+    &:after {
+        border-top-color: $color;
+    }
+    &[data-tooltip-pos=right]:after {
+        border-top-color: transparent;
+        border-right-color: $color;
+    }
+    &[data-tooltip-pos=left]:after {
+        border-top-color: transparent;
+        border-left-color: $color;
+    }
+    &[data-tooltip-pos=bottom]:after {
+        border-top-color: transparent;
+        border-bottom-color: $color;
+    }
+}

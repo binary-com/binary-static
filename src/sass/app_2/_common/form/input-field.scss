@@ -39,12 +39,12 @@
         align-items: center;
 
         &--increment {
-            right: 1px; // fixed position
-            height: 28px;
+            right: 2px; // fixed position
+            height: 3em;
         }
         &--decrement {
-            left: 1px; // fixed position
-            height: 28px;
+            left: 2px; // fixed position
+            height: 3em;
         }
         &:hover {
             cursor: pointer;
