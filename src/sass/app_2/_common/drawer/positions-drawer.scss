@@ -374,8 +374,10 @@ $header-height: 4em;
         }
     }
     .result-details__separator {
-        border-top: 1px solid $COLOR_LIGHT_BLACK_4_SOLID;
         margin: 4px -9px 4px;
+        @include themify($themes) {
+            border-top: 1px solid themed('background_container_color');
+        }
     }
     .result-details__wrapper {
         margin: -2px -9px 0;
@@ -403,7 +405,9 @@ $header-height: 4em;
     }
     .result-details__label {
         fonts-size: 0.8em;
-        color: $COLOR_LIGHT_BLACK_1;
+        @include themify($themes) {
+            color: themed('text_primary_color');
+        }
     }
     .result-details__value {
         padding-top: 4px;
@@ -421,7 +425,9 @@ $header-height: 4em;
         cursor: pointer;
 
         &--is-open {
-            border-top: 1px solid $COLOR_LIGHT_BLACK_4_SOLID;
+            @include themify($themes) {
+                border-top: 1px solid themed('background_container_color');
+            }
         }
     }
     .result__caption {
@@ -454,21 +460,5 @@ $header-height: 4em;
     }
     .result__icon {
         margin-left: 10px;
-    }
-    /*
-        POSITIONS DRAWER CARD ENDS
-    */
-}
-// Dark Theme
-.theme--dark {
-    .positions-drawer {
-        .result {
-            &-details__label {
-                color: $COLOR_DARK_BLUE_7;
-            }
-            &-details__toggle--is-open, &-details__separator {
-                border-color: $COLOR_DARK_BLUE_3;
-            }
-        }
     }
 }
