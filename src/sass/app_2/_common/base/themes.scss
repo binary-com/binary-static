@@ -21,6 +21,7 @@ $themes: (
         navbar_active_color       : $COLOR_LIGHT_BLACK_1,
         disabled_color            : $COLOR_LIGHT_BLACK_3,
         container_color           : $COLOR_WHITE,
+        background_button_color   : $COLOR_LIGHT_GRAY_2,
     ),
     dark: (
         background_color          : $COLOR_DARK_BLUE_1,
@@ -30,7 +31,7 @@ $themes: (
         background_cover          : $COLOR_DARK_BLUE_2,
         border_hover_color        : $COLOR_DARK_BLUE_7,
         border_outline_color      : $COLOR_DARK_BLUE_8,
-        hover_color               : $COLOR_DARK_BLUE_4,
+        hover_color               : $COLOR_DARK_BLUE_3,
         active_color              : $COLOR_DARK_BLUE_5,
         slider_icon_color         : $COLOR_PURPLE,
         text_primary_color        : $COLOR_DARK_BLUE_7,
@@ -44,5 +45,6 @@ $themes: (
         navbar_active_color       : $COLOR_WHITE,
         disabled_color            : $COLOR_DARK_BLUE_8,
         container_color           : $COLOR_DARK_BLUE_2,
+        background_button_color   : $COLOR_DARK_BLUE_5,
     ),
 );

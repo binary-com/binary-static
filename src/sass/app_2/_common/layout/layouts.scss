@@ -253,11 +253,13 @@
 @mixin contract_type_icon_wrapper {
     width: 2.4em;
     height: 2.4em;
-    background: $COLOR_LIGHT_BLACK_4_SOLID;
     border-radius: 3px;
     display: flex;
     align-items: center;
     justify-content: center;
+    @include themify($themes) {
+        background: themed('background_icon_color');
+    }
 }
 
 /** @define category-wrapper */
@@ -268,6 +270,12 @@
 /** @define type-wrapper */
 .type-wrapper {
     @include contract_type_icon_wrapper;
+
+    .color1-fill {
+        @include themify($themes) {
+            fill: themed('text_color');
+        }
+    }
 }
 
 // Helpers
@@ -302,6 +310,8 @@
     }
     &__message {
         @include interpolate(font-size, 320px, 1440px, 14px, 20px);
-        color: $COLOR_LIGHT_BLACK_1;
+        @include themify($themes) {
+            color: themed('text_primary_color');
+        }
     }
 }

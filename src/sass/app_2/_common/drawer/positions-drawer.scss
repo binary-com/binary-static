@@ -26,8 +26,6 @@ $header-height: 4em;
     z-index: 2;
     top: $HEADER_HEIGHT;
     left: 4px;
-    border: 1px solid $COLOR_LIGHT_BLACK_4_SOLID;
-    background-color: $COLOR_LIGHT_BLACK_4_SOLID;
     box-sizing: border-box;
     opacity: 0;
     color: $COLOR_LIGHT_BLACK_1;
@@ -35,6 +33,11 @@ $header-height: 4em;
     will-change: transform, opacity;
     transition: opacity 0.3s ease, transform 0.3s ease;
     border-radius: $BORDER_RADIUS;
+    @include themify($themes) {
+        border: 1px solid themed('background_container_color');
+        background-color: themed('background_container_color');
+        color: themed('text_color');
+    }
 
     &--open {
         transform: translateX(#{$POSITIONS_DRAWER_MARGIN});
@@ -52,6 +55,10 @@ $header-height: 4em;
         padding: 0.8em 0 0;
         box-sizing: border-box;
         overflow: hidden;
+        align-self: center;
+        @include themify($themes) {
+            color: themed('text_color');
+        }
     }
     &__footer {
         position: relative;
@@ -64,9 +71,16 @@ $header-height: 4em;
             width: 100%;
             margin: 8px;
             height: 40px;
+            @include themify($themes) {
+                background-color: themed('background_button_color');
+            }
 
             .btn__text {
                 font-size: 1.2em;
+                font-weight: bold;
+                @include themify($themes) {
+                    color: themed('text_color');
+                }
             }
         }
     }
@@ -97,7 +111,9 @@ $header-height: 4em;
         cursor: pointer;
         text-decoration: none;
         position: relative;
-        color: $COLOR_LIGHT_BLACK_1;
+        @include themify($themes) {
+            color: themed('navbar_active_color');
+        }
 
         &__result {
             position: absolute;
@@ -116,13 +132,17 @@ $header-height: 4em;
             align-items: center;
             justify-content: center;
             transition: background 0.25s linear;
+            @include themify($themes) {
+                background-color: themed('container_color');
 
-            &--won {
-                background-image: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(0, 148, 117, 0.16));
+                &--won {
+                    background-image: themed('won_gradient_color');
+                }
+                &--lost {
+                    background-image: themed('lost_gradient_color');
+                }
             }
-            &--lost {
-                background-image: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(227, 28, 75, 0.16));
-            }
+
             &:hover {
                 background: transparent;
 
@@ -148,10 +168,12 @@ $header-height: 4em;
         &__wrapper {
             padding: 0.8em;
             margin: 0 1em;
-            border: 1px solid $COLOR_WHITE;
-            background: $COLOR_WHITE;
             border-radius: $BORDER_RADIUS;
             transition: transform 0.25s ease, opacity 0.25s linear;
+            @include themify($themes) {
+                background: themed('container_color');
+                border: 1px solid themed('container_color');
+            }
 
             &:not(:last-child) {
                 margin-bottom: 16px;
@@ -195,10 +217,12 @@ $header-height: 4em;
             }
             &-profit-payout {
                 padding: 8px 0;
-                background: $COLOR_LIGHT_BLACK_4;
                 border-radius: $BORDER_RADIUS;
                 margin-left: -4px;
                 margin-right: -4px;
+                @include themify($themes) {
+                    background: themed('hover_color');
+                }
             }
         }
         &__purchase {
@@ -215,7 +239,9 @@ $header-height: 4em;
                 margin-right: 0.5em;
                 font-size: 10px;
                 font-weight: normal;
-                color: $COLOR_LIGHT_BLACK_1;
+                @include themify($themes) {
+                    color: themed('text_primary_color');
+                }
             }
         }
         &__type {
@@ -248,12 +274,22 @@ $header-height: 4em;
             display: flex;
             justify-content: center;
             align-items: center;
+            @include themify($themes) {
+                &--price-stable {
+                    color: themed('navbar_active_color');
+                }
+                &--no-resale {
+                    color: themed('text_secondary_color');
+                }
+            }
 
             &-label {
-                color: $COLOR_LIGHT_BLACK_1;
                 font-size: 1em;
                 font-weight: normal;
                 margin-bottom: 0.5em;
+                @include themify($themes) {
+                    color: themed('text_primary_color');
+                }
             }
             &--price-moved-up {
                 color: $COLOR_GREEN_1;
@@ -261,16 +297,12 @@ $header-height: 4em;
             &--price-moved-down {
                 color: $COLOR_RED;
             }
-            &--price-stable {
-                color: $COLOR_LIGHT_BLACK_1;
-            }
-            &--no-resale {
-                color: $COLOR_LIGHT_BLACK_2;
-            }
         }
         &__remaining-time {
             font-size: 1em;
-            color: $COLOR_LIGHT_BLACK_2;
+            @include themify($themes) {
+                color: themed('text_secondary_color');
+            }
 
             .remaining-time {
                 display: inline;
@@ -286,9 +318,11 @@ $header-height: 4em;
 
             &-label {
                 font-size: 1em;
-                color: $COLOR_LIGHT_BLACK_1;
                 margin-bottom: 0.5em;
                 font-weight: normal;
+                @include themify($themes) {
+                    color: themed('text_primary_color');
+                }
             }
             &--negative {
                 color: $COLOR_RED;
@@ -425,72 +459,9 @@ $header-height: 4em;
         POSITIONS DRAWER CARD ENDS
     */
 }
-
 // Dark Theme
 .theme--dark {
     .positions-drawer {
-        background: $COLOR_DARK_BLUE_3;
-        border-color: $COLOR_DARK_BLUE_3;
-        color: $COLOR_WHITE;
-
-        &-card {
-            color: $COLOR_WHITE;
-
-            &__result {
-                background-color: $COLOR_DARK_BLUE_2;
-
-                &--won {
-                    background-image: linear-gradient(to top, rgba(16, 19, 32, 0), rgba(0, 148, 117, 0.16));
-                }
-                &--lost {
-                    background-image: linear-gradient(to top, rgba(16, 19, 32, 0), rgba(227, 28, 75, 0.16));
-                }
-            }
-            &__wrapper {
-                background: $COLOR_DARK_BLUE_2;
-                border-color: $COLOR_DARK_BLUE_2;
-            }
-            &__remaining-time {
-                color: $COLOR_DARK_BLUE_7;
-            }
-            &__indicative {
-                &--no-resale {
-                    color: $COLOR_DARK_BLUE_7;
-                }
-                &--price-stable {
-                    color: $COLOR_WHITE;
-                }
-            }
-            &__grid-profit-payout {
-                background: $COLOR_DARK_BLUE_3;
-            }
-            &__purchase-label, &__profit-loss-label, &__indicative-label {
-                color: $COLOR_DARK_BLUE_7;
-            }
-        }
-        &__title {
-            color: $COLOR_DARK_BLUE_7;
-        }
-        &__body {
-            .positions-empty, p {
-                align-self: center;
-                color: $COLOR_WHITE;
-            }
-        }
-        &__footer {
-            background: $COLOR_DARK_BLUE_3;
-            border-color: $COLOR_DARK_BLUE_3;
-
-            .btn--alternate {
-                background-color: $COLOR_DARK_BLUE_5;
-                border-color: $COLOR_DARK_BLUE_5;
-
-                .btn__text {
-                    color: $COLOR_WHITE;
-                    font-weight: bold;
-                }
-            }
-        }
         .result {
             &-details__label {
                 color: $COLOR_DARK_BLUE_7;

@@ -15,36 +15,6 @@
             }
         }
     }
-    .footer {
-        background: $COLOR_DARK_BLUE_1;
-        color: $COLOR_DARK_BLUE_7;
-
-        &__link {
-            &:hover {
-                background: $COLOR_DARK_BLUE_4;
-            }
-        }
-        .ic-positions {
-            &:after {
-                background-color: $COLOR_DARK_BLUE_7;
-            }
-        }
-        .network-status-circle--blinker {
-            background: $COLOR_DARK_BLUE_7;
-        }
-        .server-time {
-            color: $COLOR_DARK_BLUE_7;
-        }
-        .ic-settings {
-            &:after {
-                background-color: $COLOR_WHITE;
-            }
-        }
-    }
-    // inline trade-types icons
-    .type-wrapper {
-        background: $COLOR_DARK_BLUE_6;
-    }
     .portfolio.container {
         background: $COLOR_DARK_BLUE_5;
     }
@@ -104,7 +74,6 @@
             border-color: $COLOR_DARK_BLUE_5;
         }
     }
-    // TODO: refactor to inline SVG and change colors with CSS
     .portfolio-card {
         &__purchase:before {
             background-image: url('../images/portfolio/ic_purchase_dark.svg');
@@ -142,9 +111,6 @@
             border-color: $COLOR_WHITE;
         }
     }
-    .error__message {
-        color: $COLOR_DARK_BLUE_7;
-    }
     .barspinner__rect {
         background-color: $COLOR_WHITE;
     }
@@ -154,14 +120,6 @@
 
         &_selected {
             background-color: $COLOR_DARK_BLUE_2;
-            color: $COLOR_WHITE;
-        }
-    }
-    .btn--alternate {
-        background: $COLOR_DARK_BLUE_5;
-        border-color: $COLOR_DARK_BLUE_5;
-
-        .btn__text {
             color: $COLOR_WHITE;
         }
     }
