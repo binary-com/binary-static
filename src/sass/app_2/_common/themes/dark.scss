@@ -1075,4 +1075,24 @@
             }
         }
     }
+    .chart-spot-label {
+        &__value-container {
+            background: $COLOR_DARK_BLUE_5;
+        }
+        &__time {
+            color: $COLOR_WHITE;
+        }
+        &__time-container {
+            svg {
+                g {
+                    stroke: $COLOR_WHITE;
+                }
+            }
+        }
+    }
+    .chart-spot {
+        &__entry {
+            background-color: unset;
+        }
+    }
 }
