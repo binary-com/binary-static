@@ -130,29 +130,6 @@
             animation: dash 1.5s ease-in-out infinite, colorOrange 6s ease-in-out infinite;
         }
     }
-    .switch-button:not(.switch-button--toggled) {
-        background: $COLOR_DARK_BLUE_5;
-    }
-    .toggle-chart-layout {
-        border-color: $COLOR_DARK_BLUE_7;
-
-        &:after {
-            background: $COLOR_WHITE;
-        }
-    }
-    .tab {
-        &__header {
-            color: $COLOR_DARK_BLUE_7;
-        }
-        &--active {
-            .tab__header {
-                color: $COLOR_WHITE;
-            }
-        }
-    }
-    .tab-underline {
-        border-color: $COLOR_WHITE;
-    }
     .full-page-modal {
         background-color: rgba(31, 36, 61, 0.8);
 
