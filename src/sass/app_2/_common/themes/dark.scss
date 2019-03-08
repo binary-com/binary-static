@@ -15,44 +15,6 @@
             }
         }
     }
-    .number-selector {
-        &__selection {
-            color: $COLOR_DARK_BLUE_7;
-            background-color: $COLOR_DARK_BLUE_2;
-
-            &.selected {
-                background-color: $COLOR_DARK_BLUE_5;
-                color: $COLOR_WHITE;
-            }
-            &:hover {
-                background-color: $COLOR_DARK_BLUE_4;
-            }
-        }
-    }
-    .header {
-        &__menu-link {
-            &--active {
-                .header__menu-link-text {
-                    color: $COLOR_WHITE;
-                }
-                &:after {
-                    background-color: $COLOR_WHITE;
-                }
-            }
-            &:hover:not(&--active) {
-                background-color: $COLOR_DARK_BLUE_4;
-            }
-            &-text {
-                color: $COLOR_DARK_BLUE_7;
-            }
-        }
-        &__menu-right {
-            border-color: $COLOR_DARK_BLUE_2;
-        }
-        &__navbar-icons--binary-logo {
-            border-color: $COLOR_DARK_BLUE_2;
-        }
-    }
     .footer {
         background: $COLOR_DARK_BLUE_1;
         color: $COLOR_DARK_BLUE_7;
