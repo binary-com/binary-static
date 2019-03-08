@@ -5,11 +5,8 @@
 
     &__spot {
         position: absolute;
-        bottom: -9px;
-        margin-left: -9.5px;
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
+        bottom: -11px;
+        margin-left: -11.5px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -31,11 +28,14 @@
         }
     }
     &__entry {
-        width: 16px;
-        height: 16px;
-        margin-bottom: -8px;
-        margin-left: -8px;
-        border: 4px solid $COLOR_ORANGE;
+        margin-bottom: -12px;
+        margin-left: -12px;
+        border: 6px solid $COLOR_ORANGE;
+        background-color: $COLOR_WHITE;
+    }
+    &__spot, &__entry {
+        width: 24px;
+        height: 24px;
         border-radius: 50%;
     }
 }
@@ -53,14 +53,14 @@
         flex-direction: column;
 
         &--top {
-            bottom: 19px;
+            bottom: 21px;
 
             .chart-spot-label__time-container {
                 margin-bottom: 2px;
             }
         }
         &--bottom {
-            top: 28px;
+            top: 25px;
             flex-direction: column-reverse;
 
             .chart-spot-label__time-container {
