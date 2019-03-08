@@ -34,6 +34,12 @@
         & + &.app-contents--contract-mode {
             max-width: unset;
         }
+        .statement {
+            &.container {
+                max-width: calc(100% - 252px);
+                margin-left: calc(240px + 12px);
+            }
+        }
     }
     @media screen and (max-width: 768px) {
         // no footer:
