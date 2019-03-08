@@ -6,13 +6,13 @@ const InterviewPopup = () => (
         <HTMLComment>googleoff: all</HTMLComment>{/* https://support.google.com/gsa/answer/6329153?hl=en#82542 */}
         <div className='popup'>
             <div className='popup__head'>
-                <img className='popup__present_img' src={it.url_for('images/interview_popup/present.svg')} alt='$30 present' />
-                <div className='header-1'>{it.L('Do you have 40 minutes for an interview?')}</div>
+                <img className='popup__present_img' src={it.url_for('images/interview_popup/bg-shape.svg')} alt='binary option' />
+                <div className='header-1'>{it.L('Can you spare 15 minutes?')}</div>
             </div>
             <div className='popup__body'>
-                <div className='header-2'>{it.L('Earn $30 to trade on [_1]', it.website_name.toLowerCase())}</div>
+                <div className='header-2'>{it.L('We’d love to hear what you think.')}</div>
                 <p>
-                    {it.L('We\'re looking for users of [_1] to participate in a [_2]40-minute video or phone interview[_3]. To qualify, just answer a few short questions. If selected, you will receive an email or a phone call from one of our researchers.', it.website_name.toLowerCase(), '<strong>', '</strong>')}
+                    {it.L('We’re looking to improve our products and services, and we want to understand your needs better. We’d like to interview you via phone, to know what you like about us, what you don’t like, and where we can do better.')}
                 </p>
                 <div className='popup__options'>
                     <div className='popup__secondary_options'>
@@ -21,7 +21,7 @@ const InterviewPopup = () => (
                         <a href={'javascript:void(0);'} id='interview_ask_later'>{it.L('Ask me later')}</a>
                     </div>
                     <a href={'javascript:void(0);'} id='interview_interested' className='button' target='_blank' rel='noopener noreferrer'>
-                        <span>{it.L('I\'m interested')}</span>
+                        <span>{it.L('I’m interested')}</span>
                     </a>
                 </div>
             </div>

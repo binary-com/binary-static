@@ -53,7 +53,7 @@ const Layout = () => {
                     </div>
                     <Footer />
                 </div>
-                <InterviewPopup /> {/* TODO: remove when UX research is finished */}
+                <InterviewPopup />
                 <Elevio />
             </body>
         </html>
