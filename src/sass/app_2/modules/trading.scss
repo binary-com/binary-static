@@ -338,7 +338,8 @@
         @include typeface(--xsmall-left-bold-active);
     }
     &__info {
-        width: 30%;
+        width: 40%;
+        padding-left: 10%;
         float: right;
         text-align: right;
         height: 56px;
@@ -405,15 +406,24 @@
         display: inline-block;
     }
     &:disabled {
-        background-color: $COLOR_GREEN_2;
+        background-color: $COLOR_LIGHT_BLACK_3;
         color: $COLOR_DARK_BLUE_7;
 
         .btn-purchase__currency {
             background-color: $COLOR_GREEN_1;
         }
-        .btn-purchase__effect-detail {
-            border-color: transparent transparent transparent $COLOR_GREEN_1;
+        .btn-purchase__content {
+            background-color: transparent;
         }
+        .btn-purchase__info {
+            background-color: $COLOR_LIGHT_BLACK_3;
+        }
+        /* eslint-disable */
+        .btn-purchase__effect-detail {
+            border-color: transparent transparent transparent #d6d6d6;
+            opacity: 0.8;
+        }
+        /* eslint-enable */
         .btn-purchase__trade-type-icon, .btn-purchase__trade-type-text, .btn-purchase__profit, .btn-purchase__return {
             overflow: hidden;
         }
@@ -435,8 +445,23 @@
         .btn-purchase__profit-text, .btn-purchase__return-text {
             margin: 4px 0;
         }
-        .animate {
+    }
+    &:disabled.animate {
+        background-color: $COLOR_GREEN_2;
+        color: $COLOR_DARK_BLUE_7;
+
+        .btn-purchase__content {
+            background-color: $COLOR_GREEN_1;
+        }
+        .btn-purchase__effect-detail {
+            border-color: transparent transparent transparent $COLOR_GREEN_1;
+            opacity: 1;
+        }
+        .btn-purchase__trade-type-icon svg, .btn-purchase__trade-type-text span, .btn-purchase__profit-text, .btn-purchase__return-text {
             animation: data--loading 0.6s ease infinite;
+        }
+        .btn-purchase__info {
+            background-color: transparent;
         }
     }
     &:hover {

@@ -37,7 +37,10 @@ const Purchase = ({
             <Button
                 is_disabled={is_disabled}
                 id={`purchase_${type}`}
-                className={'btn--primary btn-purchase'}
+                className={classNames(
+                    'btn--primary',
+                    'btn-purchase',
+                    { 'animate': is_loading })}
                 has_effect
                 onClick={() => { onClickPurchase(info.id, info.stake, type); }}
             >
@@ -45,10 +48,10 @@ const Purchase = ({
                     <div className='btn-purchase__content'>
                         <div className='btn-purchase__trade-type'>
                             <div className='btn-purchase__trade-type-icon'>
-                                <IconTradeType className={classNames({ 'animate': is_loading })} type={is_disabled ? '' : type.toLowerCase()} />
+                                <IconTradeType type={is_disabled ? '' : type.toLowerCase()} />
                             </div>
                             <div className='btn-purchase__trade-type-text'>
-                                <span className={classNames({ 'animate': is_loading })}>
+                                <span>
                                     {is_disabled ? '' : localize('[_1]', trade_types[type])}
                                 </span>
                             </div>
@@ -57,17 +60,12 @@ const Purchase = ({
                     <div className='btn-purchase__effect-detail' />
                     <div className='btn-purchase__info'>
                         <div className='btn-purchase__return'>
-                            <span className={classNames(
-                                'btn-purchase__return-text',
-                                { 'animate': is_loading })}
-                            >{is_disabled ? '' : info.returns}
+                            <span className='btn-purchase__return-text'>
+                                {is_disabled ? '' : info.returns}
                             </span>
                         </div>
                         <div className='btn-purchase__profit'>
-                            <span className={classNames(
-                                'btn-purchase__profit-text',
-                                { 'animate': is_loading })}
-                            >
+                            <span className='btn-purchase__profit-text'>
                                 {is_disabled ? '' : <Money amount={info.profit} currency={currency} className='btn-purchase__currency' />}
                             </span>
                         </div>
