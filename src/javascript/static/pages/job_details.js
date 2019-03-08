@@ -32,11 +32,9 @@ const JobDetails = (() => {
         $('#title').find('h1').setVisibility(0);
         $('#image').find('img').setVisibility(0);
 
-        window.location.hash = ($sidebar_dept.length > 0 && window.location.hash === '')
-            ? $sidebar_dept.find('a')[0].hash
-            : window.location.hash;
-
-        if ($sidebar_dept.length === 0 || $sidebar_dept.find(`a[href="${window.location.hash}"]`).length === 0) {
+        if ($sidebar_dept.length && window.location.hash === '') {
+            load(`${urlFor('open-positions/job-details')}?dept=${dept}${$sidebar_dept.find('a')[0].hash}`);
+        } else if ($sidebar_dept.length === 0 || $sidebar_dept.find(`a[href="${window.location.hash}"]`).length === 0) {
             load(urlFor('404'));
         }
 
