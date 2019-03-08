@@ -133,7 +133,7 @@
             color: $COLOR_DARK_BLUE_7;
             background-color: $COLOR_DARK_BLUE_2;
 
-            &.selected {
+            &--selected {
                 background-color: $COLOR_DARK_BLUE_5;
                 color: $COLOR_WHITE;
             }
@@ -144,7 +144,6 @@
     }
     .header {
         background: $COLOR_DARK_BLUE_1;
-        border-color: $COLOR_DARK_BLUE_1;
 
         &__menu-link {
             &--active {

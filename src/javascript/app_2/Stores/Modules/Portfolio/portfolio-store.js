@@ -103,6 +103,7 @@ export default class PortfolioStore extends BaseStore {
         portfolio_position.profit_loss      = profit_loss;
         portfolio_position.tick_count       = proposal.tick_count;
         portfolio_position.is_valid_to_sell = isValidToSell(proposal);
+        portfolio_position.chart_config     = proposal;
 
         if (!proposal.is_valid_to_sell) {
             portfolio_position.status = 'no-resale';
@@ -119,7 +120,7 @@ export default class PortfolioStore extends BaseStore {
     onClickSell(contract_id) {
         const i = this.getPositionIndexById(contract_id);
         const bid_price = this.positions[i].bid_price;
-        this.positions[i].is_sell_requested = true;
+        this.positions[i].is_sell_requested = false;
         if (contract_id && bid_price) {
             WS.sell(contract_id, bid_price).then(this.handleSell);
         }
@@ -127,17 +128,18 @@ export default class PortfolioStore extends BaseStore {
 
     @action.bound
     handleSell(response) {
-        const is_contract_mode = this.root_store.modules.smart_chart.is_contract_mode;
-        // TODO: Refactor with ContractStore for re-drawing of chart markers and barriers
         // Toast messages are temporary UI for prompting user of sold contracts
         if (response.error) {
             // If unable to sell due to error, give error via toast message if not in contract mode
+            const i = this.getPositionIndexById(response.echo_req.sell);
+            this.positions[i].is_sell_requested = false;
             this.root_store.ui.addToastMessage({
                 message: response.error.message,
                 type   : 'error',
             });
-        // Check if still in contract_mode
-        } else if (is_contract_mode && !response.error) {
+        } else if (!response.error && response.sell) {
+            const i = this.getPositionIndexById(response.sell.contract_id);
+            this.positions[i].is_sell_requested = false;
             // update contract store sell info after sell
             this.root_store.modules.contract.sell_info = {
                 sell_price    : response.sell.sold_for,
@@ -158,13 +160,14 @@ export default class PortfolioStore extends BaseStore {
             :
             getEndSpotTime(contract_response);
 
-        this.positions[i].id_sell       = +contract_response.transaction_ids.sell;
-        this.positions[i].barrier       = +contract_response.barrier;
-        this.positions[i].duration      = getDurationTime(contract_response);
-        this.positions[i].duration_unit = getDurationUnitText(getDurationPeriod(contract_response));
-        this.positions[i].entry_spot    = +contract_response.entry_spot;
-        this.positions[i].sell_time     = sell_time;
-        this.positions[i].result        = getDisplayStatus(contract_response);
+        this.positions[i].id_sell          = +contract_response.transaction_ids.sell;
+        this.positions[i].barrier          = +contract_response.barrier;
+        this.positions[i].duration         = getDurationTime(contract_response);
+        this.positions[i].duration_unit    = getDurationUnitText(getDurationPeriod(contract_response));
+        this.positions[i].entry_spot       = +contract_response.entry_spot;
+        this.positions[i].sell_time        = sell_time;
+        this.positions[i].result           = getDisplayStatus(contract_response);
+        this.positions[i].is_valid_to_sell = isValidToSell(contract_response);
     }
 
     @action.bound
@@ -179,8 +182,9 @@ export default class PortfolioStore extends BaseStore {
         // check if position to be removed is out of range from the maximum amount rendered in drawer
         if (this.positions.length > 4) i += 1;
         this.positions.splice(i, 1);
+        // check if chart is in contract_mode before removing contract details from chart
         if (is_contract_mode) {
-            this.root_store.modules.contract.onUnmount();
+            this.root_store.modules.contract.onCloseContract();
             this.root_store.modules.trade.requestProposal();
         }
     }

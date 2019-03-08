@@ -30,7 +30,6 @@ import BaseStore                 from '../../base-store';
 
 export default class ContractStore extends BaseStore {
     @observable contract_id;
-
     @observable contract_info = observable.object({});
     @observable digits_info   = observable.object({});
     @observable sell_info     = observable.object({});
@@ -68,23 +67,32 @@ export default class ContractStore extends BaseStore {
     }
 
     @action.bound
-    accountSwitcherListener (contract_id) {
-        this.has_error     = false;
-        this.error_message = '';
-        this.contract_id   = contract_id;
+    onLoadContract(contract_info) {
+        if (!contract_info) return;
+        if (contract_info === this.contract_id) return;
         this.smart_chart   = this.root_store.modules.smart_chart;
-        this.smart_chart.setContractMode(true);
-
-        if (contract_id) {
-            WS.subscribeProposalOpenContract(this.contract_id, this.updateProposal, false);
+        this.contract_info = contract_info;
+        this.contract_id   = +contract_info.contract_id;
+        if (isEnded(this.contract_info)) {
+            this.chart_config = getChartConfig(this.contract_info);
+        } else {
+            delete this.chart_config.end_epoch;
+            delete this.chart_config.start_epoch;
         }
+        this.smart_chart.setContractMode(true);
+        createChartBarrier(this.smart_chart, this.contract_info);
+        createChartMarkers(this.smart_chart, this.contract_info, this);
+        this.handleDigits();
     }
 
     @action.bound
-    onUnmount(contract_id) {
-        this.disposeSwitchAccount();
-        this.forgetProposalOpenContract(contract_id);
+    accountSwitcherListener (contract_id) {
+        return new Promise((resolve) => resolve(this.onMount(contract_id)));
+    }
 
+    @action.bound
+    onCloseContract() {
+        this.forgetProposalOpenContract();
         this.contract_id       = null;
         this.contract_info     = {};
         this.digits_info       = {};
@@ -94,6 +102,13 @@ export default class ContractStore extends BaseStore {
         this.smart_chart.removeBarriers();
         this.smart_chart.removeMarkers();
         this.smart_chart.setContractMode(false);
+    }
+
+    @action.bound
+    onUnmount() {
+        this.disposeSwitchAccount();
+        this.forgetProposalOpenContract();
+        this.onCloseContract();
     }
 
     @action.bound
@@ -108,6 +123,8 @@ export default class ContractStore extends BaseStore {
             this.has_error     = true;
             this.error_message = localize('Contract does not exist or does not belong to this client.');
             this.contract_info = {};
+            this.contract_id   = null;
+            this.smart_chart.setContractMode(false);
             return;
         }
         this.contract_info = response.proposal_open_contract;
@@ -157,8 +174,8 @@ export default class ContractStore extends BaseStore {
         }
     }
 
-    forgetProposalOpenContract(contract_id) {
-        WS.forget('proposal_open_contract', this.updateProposal, { contract_id: +contract_id || this.contract_id });
+    forgetProposalOpenContract() {
+        WS.forget('proposal_open_contract', this.updateProposal, { contract_id: this.contract_id });
     }
 
     @action.bound

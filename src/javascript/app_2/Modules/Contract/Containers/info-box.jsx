@@ -62,7 +62,7 @@ const InfoBox = ({
                     <ChartCloseBtn
                         is_contract_mode={is_contract_mode}
                         onClose={(e) => {
-                            onClose(contract_info.contract_id);
+                            onClose();
                             onClickNewTrade(e);
                         }}
                     />
@@ -90,7 +90,7 @@ export default connect(
         removeError     : modules.contract.removeSellError,
         sell_info       : modules.contract.sell_info,
         onClickNewTrade : modules.trade.onClickNewTrade,
-        onClose         : modules.contract.onUnmount,
+        onClose         : modules.contract.onCloseContract,
         is_contract_mode: modules.smart_chart.is_contract_mode,
     })
 )(InfoBox);

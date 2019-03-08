@@ -16,6 +16,7 @@ const PositionsDrawerCard = ({
     active_position,
     barrier,
     className,
+    chart_config,
     currency,
     duration,
     duration_unit,
@@ -24,6 +25,7 @@ const PositionsDrawerCard = ({
     id,
     id_sell,
     indicative,
+    is_sell_requested,
     is_valid_to_sell,
     profit_loss,
     purchase,
@@ -52,6 +54,7 @@ const PositionsDrawerCard = ({
                 id={id}
                 onClickRemove={onClickRemove}
                 onClick={openContract}
+                chart_config={chart_config}
                 result={result}
             />
             <ContractLink
@@ -62,7 +65,7 @@ const PositionsDrawerCard = ({
                         'positions-drawer-card--red'   : (profit_loss < 0) && !result,
                     }
                 )}
-                contract_id={id}
+                chart_config={chart_config}
             >
                 <React.Fragment>
                     <div className={classNames(
@@ -140,8 +143,13 @@ const PositionsDrawerCard = ({
             >
                 <div className='positions-drawer-card__sell-button'>
                     <Button
-                        className='btn--primary btn--primary--orange btn--sell'
-                        is_disabled={!is_valid_to_sell}
+                        className={classNames(
+                            'btn--primary',
+                            'btn--primary--orange',
+                            'btn--sell', {
+                                'btn--loading': is_sell_requested,
+                            })}
+                        is_disabled={!is_valid_to_sell || is_sell_requested}
                         text={localize('Sell contract')}
                         onClick={() => onClickSell(id)}
                     />
@@ -178,10 +186,11 @@ PositionsDrawerCard.propTypes = {
         PropTypes.number,
         PropTypes.string,
     ]),
-    id              : PropTypes.number,
-    id_sell         : PropTypes.number,
-    indicative      : PropTypes.number,
-    is_valid_to_sell: PropTypes.PropTypes.oneOfType([
+    id               : PropTypes.number,
+    id_sell          : PropTypes.number,
+    indicative       : PropTypes.number,
+    is_sell_requested: PropTypes.bool,
+    is_valid_to_sell : PropTypes.PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.bool,
     ]),
