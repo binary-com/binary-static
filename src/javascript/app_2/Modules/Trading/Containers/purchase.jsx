@@ -48,11 +48,11 @@ const Purchase = ({
                     <div className='btn-purchase__content'>
                         <div className='btn-purchase__trade-type'>
                             <div className='btn-purchase__trade-type-icon'>
-                                <IconTradeType type={is_disabled ? '' : type.toLowerCase()} />
+                                <IconTradeType type={!is_disabled ? type.toLowerCase() : ''} />
                             </div>
                             <div className='btn-purchase__trade-type-text'>
                                 <span>
-                                    {is_disabled ? '' : localize('[_1]', trade_types[type])}
+                                    {!is_disabled && localize('[_1]', trade_types[type])}
                                 </span>
                             </div>
                         </div>
@@ -61,12 +61,12 @@ const Purchase = ({
                     <div className='btn-purchase__info'>
                         <div className='btn-purchase__return'>
                             <span className='btn-purchase__return-text'>
-                                {is_disabled ? '' : info.returns}
+                                {!is_disabled && info.returns}
                             </span>
                         </div>
                         <div className='btn-purchase__profit'>
                             <span className='btn-purchase__profit-text'>
-                                {is_disabled ? '' : <Money amount={info.profit} currency={currency} className='btn-purchase__currency' />}
+                                {!is_disabled && <Money amount={info.profit} currency={currency} className='btn-purchase__currency' />}
                             </span>
                         </div>
                     </div>
