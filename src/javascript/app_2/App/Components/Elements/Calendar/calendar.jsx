@@ -3,6 +3,7 @@ import React          from 'react';
 import {
     getStartOfMonth,
     toMoment }        from 'Utils/Date';
+import { localize }   from '_common/localize';
 import CalendarBody   from './calendar-body.jsx';
 import CalendarFooter from './calendar-footer.jsx';
 import CalendarHeader from './calendar-header.jsx';
@@ -16,6 +17,8 @@ class Calendar extends React.PureComponent {
             calendar_date: current_date, // calendar date reference
             selected_date: value,        // selected date
             calendar_view: 'date',
+            hovered_date : '',
+            duration_date: '',
         };
     }
 
@@ -32,6 +35,31 @@ class Calendar extends React.PureComponent {
                 this.props.onChangeCalendarMonth(start_of_month);
             }
         });
+    };
+
+    onMouseOver = (event) => {
+        const target = event.currentTarget;
+
+        if (!target.classList.contains('calendar__cell--disabled') && !target.classList.contains('calendar__cell--hover')) {
+            target.className += ' calendar__cell--hover';
+            this.setState({
+                hovered_date : target.getAttribute('data-date'),
+                duration_date: target.getAttribute('data-duration'),
+            });
+        }
+    };
+
+    onMouseLeave = (event) => {
+        const target = event.currentTarget;
+
+        if (target.classList.contains('calendar__cell--hover')) {
+            target.classList.remove('calendar__cell--hover');
+
+            this.setState({
+                hovered_date : null,
+                duration_date: null,
+            });
+        }
     };
 
     updateSelectedDate = (e) => {
@@ -120,9 +148,19 @@ class Calendar extends React.PureComponent {
     };
 
     render() {
-        const { date_format, footer, has_today_btn, start_date, holidays, weekends } = this.props;
+        const { date_format, duration_date, footer, has_today_btn, has_range_selection,
+            holidays, start_date, weekends } = this.props;
         const { calendar_date, calendar_view, selected_date  } = this.state;
+        let default_message, is_minimum;
 
+        if (duration_date) {
+            default_message = `${duration_date} ${duration_date === 1 ? localize('Day') : localize('Days')}`;
+            is_minimum = false;
+        } else {
+            default_message = localize('Minimum duration is 1 day');
+            is_minimum = true;
+        }
+        
         return (
             <div className='calendar' data-value={selected_date}>
                 <CalendarHeader
@@ -141,11 +179,18 @@ class Calendar extends React.PureComponent {
                     selected_date={selected_date}
                     updateSelected={this.updateSelected}
                     holidays={holidays}
+                    has_range_selection={has_range_selection}
+                    hovered_date={this.state.hovered_date}
                     weekends={weekends}
+                    onMouseOver={this.onMouseOver}
+                    onMouseLeave={this.onMouseLeave}
                 />
                 <CalendarFooter
                     footer={footer}
+                    duration_date={this.state.duration_date || default_message}
+                    is_minimum={is_minimum}
                     has_today_btn={has_today_btn}
+                    has_range_selection={has_range_selection}
                     onClick={this.setToday}
                 />
             </div>
@@ -161,9 +206,14 @@ Calendar.defaultProps = {
 
 Calendar.propTypes = {
     date_format  : PropTypes.string,
-    footer       : PropTypes.string,
-    has_today_btn: PropTypes.bool,
-    holidays     : PropTypes.arrayOf(
+    duration_date: PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
+    ]),
+    footer             : PropTypes.string,
+    has_range_selection: PropTypes.bool,
+    has_today_btn      : PropTypes.bool,
+    holidays           : PropTypes.arrayOf(
         PropTypes.shape({
             dates  : PropTypes.array,
             descrip: PropTypes.string,

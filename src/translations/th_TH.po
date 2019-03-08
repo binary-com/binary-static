@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-02-27 10:03\n"
+"PO-Revision-Date: 2019-03-07 10:39\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Thai\n"
 "MIME-Version: 1.0\n"
@@ -3386,7 +3386,7 @@ msgid "Does Not Touch"
 msgstr "ไม่แตะ"
 
 msgid "Don't have a %1 account yet?"
-msgstr "ยังไม่มีบัญชี %1 ใช่หรือไม่"
+msgstr "ยังไม่มีบัญชี %1 ใช่ไหม?"
 
 msgid "Don't show again"
 msgstr "ไม่ต้องแสดงอีก"
@@ -4511,7 +4511,7 @@ msgid "Generous commission"
 msgstr "ค่าคอมมิชชั่นที่คุ้มค่า"
 
 msgid "Get %1"
-msgstr ""
+msgstr "รับเงิน %1"
 
 msgid "Get Started"
 msgstr "เริ่มเลย"
@@ -5201,7 +5201,7 @@ msgid "If you select \"rises\", you win the payout if the market price is higher
 msgstr "หากท่านเลือก \"Rise\" ท่านจะได้รับชำระเงินเมื่อราคาตลาดมีค่าสูงกว่าสปอตเริ่มต้น"
 
 msgid "If you select %1\"Downs\"%2, you win the payout if consecutive ticks fall successively after the %1entry spot%2.%3No payout if any tick rises or is equal to any of the previous ticks."
-msgstr "หากท่านเลือก %1\"ลง\"%2 ท่านจะชนะถ้าช่วงราคาที่ติดๆ กันตกลงอย่างต่อเนื่องหลังจาก %1eสปอตเริ่มต้น%2 %3ท่านจะไม่ได้รับเงินถ้าช่วงราคาสูงขึ้นหรือเท่ากับช่วงราคาก่อนหน้านั้น"
+msgstr "หากท่านเลือก %1\"ลง\"%2 ท่านจะชนะ หากช่วงราคาที่ติดๆ กันลดลงอย่างต่อเนื่อง หลังจาก %1สปอตเริ่มต้น%2 %3 ท่านจะไม่ได้รับเงิน หากช่วงราคาสูงขึ้น หรือ เท่ากับช่วงราคาก่อนหน้านั้น"
 
 msgid "If you select %1\"High Tick\"%2, you win the payout if the selected tick is the %1highest among the next five ticks%2."
 msgstr "หากท่านเลือก %1\"ราคาสูง\"%2 ท่านจะชนะเมื่อ ราคาที่เลือกเป็น %1 สูงสุด ใน 5 ช่วงราคา %2"
@@ -5210,7 +5210,7 @@ msgid "If you select %1\"Low Tick\"%2, you win the payout if the selected tick i
 msgstr "หากท่านเลือก %1\"ราคาต่ำ\"%2 ท่านจะชนะเมื่อ ราคาที่เลือกเป็น %1 ต่ำสุด ใน 5 ช่วงราคา %2"
 
 msgid "If you select %1\"Ups\"%2, you win the payout if consecutive ticks rise successively after the %1entry spot%2.%3No payout if any tick falls or is equal to any of the previous ticks."
-msgstr "หากท่านเลือก %1\"ขึ้น\"%2 ท่านจะชนะถ้าช่วงราคาที่ติดๆ กันสูงขึ้นอย่างต่อเนื่องหลังจาก %1eสปอตเริ่มต้น%2 %3ท่านจะไม่ได้รับเงินถ้าช่วงราคาตกลงหรือเท่ากับช่วงราคาก่อนหน้านั้น"
+msgstr "หากท่านเลือก %1\"ขึ้น\"%2 ท่านจะชนะ หากช่วงราคาที่ติดๆ กันสูงขึ้นอย่างต่อเนื่อง หลังจาก %1สปอตเริ่มต้น%2 %3 ท่านจะไม่ได้รับเงิน หากช่วงราคาลดลง หรือ เท่ากับช่วงราคาก่อนหน้านั้น"
 
 msgid "If you select a <strong>start time</strong> in the future, the <strong>start time</strong> is that which is selected and the <strong>entry spot</strong> is the price in effect at that time."
 msgstr "หากท่านกำหนด <strong>เวลาเริ่มต้น</strong>ในอนาคต <strong>เวลาเริ่มต้น</strong> ที่เลือกนั้น<strong>สปอตเริ่มต้น</strong> คือ ราคาที่มีผลในเวลานั้น"
@@ -6665,7 +6665,7 @@ msgid "More benefits"
 msgstr "ประโยชน์อื่นๆ"
 
 msgid "More information can be found in an email sent to you."
-msgstr "ท่านสามารถอ่านรายละเอียดเพิ่มเติมได้จากอีเมลที่ส่งถึงท่าน"
+msgstr "ท่านสามารถอ่านรายละเอียดเพิ่มเติมได้จากอีเมล์ที่ส่งถึงท่าน"
 
 msgid "More specifically, when the Company enters into a binary option trade with the client (each, a \"Contract\"), the Company has a duty to provide the client with 'best execution'. Best execution means that the Company must take reasonable steps to obtain the best possible result for the client when executing a client order. This document provides a summary of the Company's best execution policy."
 msgstr "ที่พิเศษไปกว่านั้น เมื่อบริษัทฯ เข้าดำเนินการซื้อขายไบนารีออปชั่นกับลูกค้า (แต่ละ \"สัญญา\") บริษัทฯ มีหน้าที่ที่จะให้ 'บริหารจัดการการซื้อขายได้อย่างดีที่สุด'แก่ลูกค้า การบริหารจัดการการซื้อขายได้อย่างดีที่สุด หมายถึง บริษัทฯ จะปฏิบัติตามขั้นตอนอย่างพิถีพิถันเพื่อทำให้เกิดผลลัพธ์ที่ดีที่สุดที่เป็นไปได้แก่ลูกค้า เมื่อดำเนินการคำสั่งซื้อขาย เอกสารนี้ได้แสดงถึงบทสรุปของนโยบายการดำเนินการที่ดีที่สุดของบริษัทฯ"
@@ -7304,7 +7304,7 @@ msgid "Our website uses cookies to give you the best user experience. For more i
 msgstr "เว็บไซต์ของเราใช้คุ๊กกี้ที่จะให้ประสบการณ์การใช้งานที่ดีที่สุดแก่คุณ สำหรับข้อมูลเพิ่มเติม%1"
 
 msgid "Outside the EU, financial products are offered by Binary (C.R.) S.A., 5th Floor, Building 6 Centro Ejecutivo La Sabana, Sabana Sur, San José, Costa Rica, Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, regulated by the Vanuatu Financial Services Commission (%1view licence%2), Binary (BVI) Ltd, 2nd Floor, O’Neal Marketing Associates Building, Wickham’s Cay II, P.O. Box 3174, Road Town, Tortola VB1110, British Virgin Islands, regulated by the British Virgin Islands Financial Services Commission (%3licence no. SIBA/L/18/1114%4), and Binary (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Labuan, Malaysia, regulated by the Labuan Financial Services Authority to carry on a money-broking business (%5licence no. MB/18/0024%6)."
-msgstr "พื้นที่นอกสหภาพยุโรปนั้น บริษัท Binary (C.R.) S.A. เป็นผู้ให้บริการผลิตภัณฑ์ทางการเงิน มีที่ตั้งอยู่ที่ ชั้น 5 อาคาร 6 Centro Ejecutivo La Sabana, Sabana Sur, San José คอสตาริกา บริษัท Binary (V) Ltd ตั้งอยู่ที่อาคาร Govant, Port Vila, ตู้ปณ 1276 วานูอาตู ซึ่งได้รับการรับรองจาก Vanuatu Financial Services Commission (%1 ดูใบรับรอง %2) บริษัท Binary (BVI) Ltd มีที่ตั้งอยู่ที่ ชั้น 2 อาคาร O’Neal Marketing Associates, Wickham’s Cay II, ตู้ปณ 3174, Road Town, Tortola VB1110 หมู่เกาะบริติชเวอร์จิน ซึ่งได้รับการรับรองจาก British Virgin Islands Financial Services Commission (%3 ใบรับรองเลขที่ SIBA/L/18/1114%4) และบริษัท Binary (FX) Ltd. ตั้งอยู่ที่ ล็อต F16 ชั้น 1 Paragon Labuan ถนน Tun Mustapha 87000 ลาบวน มาเลเซีย ซึ่งได้รับการรับรองจาก Labuan Financial Services Authority ในการดำเนินการธุรกิจตัวแทนด้านการเงิน (%5 ใบรับรองเลขที่ MB/18/0024%6)"
+msgstr "พื้นที่นอกสหภาพยุโรปนั้น บริษัท Binary (C.R.) S.A. เป็นผู้ให้บริการผลิตภัณฑ์ทางการเงิน มีที่ตั้งอยู่ที่ ชั้น 5 อาคาร 6 Centro Ejecutivo La Sabana, Sabana Sur, San José คอสตาริกา บริษัท Binary (V) Ltd ตั้งอยู่ที่อาคาร Govant, Port Vila, ตู้ปณ. 1276 วานูอาตู ซึ่งได้รับการรับรองจาก Vanuatu Financial Services Commission (%1 ดูใบรับรอง %2) บริษัท Binary (BVI) Ltd มีที่ตั้งอยู่ที่ ชั้น 2 อาคาร O’Neal Marketing Associates, Wickham’s Cay II, ตู้ปณ 3174, Road Town, Tortola VB1110 หมู่เกาะบริติชเวอร์จิน ซึ่งได้รับการรับรองจาก British Virgin Islands Financial Services Commission (%3 ใบรับรองเลขที่ SIBA/L/18/1114%4) และบริษัท Binary (FX) Ltd. ตั้งอยู่ที่ ล็อต F16 ชั้น 1 Paragon Labuan ถนน Tun Mustapha 87000 ลาบวน มาเลเซีย ซึ่งได้รับการรับรองจาก Labuan Financial Services Authority ในการดำเนินการธุรกิจตัวแทนด้านการเงิน (%5 ใบรับรองเลขที่ MB/18/0024%6)"
 
 msgid "Over $1,000,000"
 msgstr "มากกว่า 1,000,000 เหรียญสหรัฐ"
@@ -7412,7 +7412,7 @@ msgid "Pay-out"
 msgstr "ชำระเงิน"
 
 msgid "PaySec was founded in 2014 to provide customers and merchants in the Asian region with a comprehensive range of payment methods through one payment gateway."
-msgstr ""
+msgstr "PaySec ก่อตั้งในปี พ.ศ. 2557 (ค.ศ. 2014) ให้บริการด้านการชำระเงินที่ครอบคลุมผ่านทางตัวกลางชำระเงินรายเดียว แก่ลูกค้าและร้านค้าในภูมิภาคเอเชีย"
 
 msgid "Payment Agent"
 msgstr "ตัวแทนรับชำระเงิน"
@@ -7628,7 +7628,7 @@ msgid "Please check your email for the verification link to complete the process
 msgstr "โปรดตรวจสอบอีเมล์ของท่านสำหรับลิงค์การยืนยันเพื่อการดำเนินการให้สมบูรณ์"
 
 msgid "Please check your inbox for details."
-msgstr "โปรดตรวจสอบกล่องขาเข้าของท่านสำหรับรายละเอียดเพิ่มเติม"
+msgstr "โปรดตรวจสอบกล่องจดหมายของท่านสำหรับรายละเอียดเพิ่มเติม"
 
 msgid "Please choose a currency"
 msgstr "โปรดเลือกสกุลเงิน"
@@ -7682,7 +7682,7 @@ msgid "Please make sure that you first agree with the Agent on the terms of paym
 msgstr "โปรดแน่ใจว่า ท่านยินยอมกับตัวแทนในเงื่อนไขการชำระเงินก่อนที่จะส่งความต้องการของท่าน"
 
 msgid "Please note that Asians, Digits, Reset Call/Reset Put, High Ticks/Low Ticks, and Run Ups/Run Downs are available exclusively with our Volatility Indices."
-msgstr ""
+msgstr "โปรดทราบว่า Asians, Digits, Reset Call/Reset Put HighTicks/Low Ticks และ Run Ups/Run Downs มีเฉพาะในดัชนีผันผวนของเราเท่านั้น"
 
 msgid "Please note that actual trading results may not correspond to optimized or back-tested results."
 msgstr "โปรดทราบว่า ผลการซื้อขายจริงอาจจะไม่แสดงโดยผลลัพธ์ของการทดสอบเพื่อการปรับปรุงระบบให้ประสิทธิภาพดีขึ้น"
@@ -7712,7 +7712,7 @@ msgid "Please read this %1privacy policy%2 before submitting your application."
 msgstr "โปรดอ่าน%1นโยบายการรักษาข้อมูลส่วนบุคคล%2นี้ ก่อนส่งใบสมัครของท่าน"
 
 msgid "Please reapply once the required criteria has been fulfilled."
-msgstr "กรุณาสมัครอีกครั้งเมื่อท่านมีคุณสมบัติตามเกณฑ์ที่กำหนด"
+msgstr "กรุณาสมัครอีกครั้ง เมื่อท่านมีคุณสมบัติตามเกณฑ์ที่กำหนด"
 
 msgid "Please refer to the %1asset index%2 for each asset’s minimum and maximum contract durations based on trade type."
 msgstr "กรุณาอ้างถึง %1aดัชนีสินทรัพย์%2 สำหรับระยะเวลาสัญญาที่ต่ำที่สุดและสูงที่สุดของแต่ละสินทรัพย์ตามประเภทของการซื้อขาย"
@@ -8552,13 +8552,13 @@ msgid "Rolling Spot Forex;"
 msgstr "Rolling Spot Forex"
 
 msgid "Run"
-msgstr ""
+msgstr "Run"
 
 msgid "Run Downs"
-msgstr ""
+msgstr "Run Downs"
 
 msgid "Run Ups"
-msgstr ""
+msgstr "Run Ups"
 
 msgid "Russia"
 msgstr "รัสเซีย"
@@ -9444,10 +9444,10 @@ msgid "The %1end time%2 is the selected number of minutes/hours after the %1star
 msgstr "%1 เวลาสิ้นสุด %2 คือ จำนวนนาที/ชั่วโมงที่เลือกเอาไว้ หลังจาก %1 เวลาเริ่มต้น %2"
 
 msgid "The %1entry spot%2 is the next tick after the %1start time%2."
-msgstr ""
+msgstr "%1สปอตเริ่มต้น%2 คือ ราคาถัดไป หลังจาก%1เวลาเริ่มต้น%2"
 
 msgid "The %1exit spot%2 is the last tick when the contract ends. Contract ends when all ticks rise or fall successively, or when a single tick breaks the predicted pattern."
-msgstr ""
+msgstr "%1สปอตสิ้นสุด%2 คือ ราคาสุดท้ายเมื่อสัญญาสิ้นสุดลง สัญญาจะสิ้นสุดเมื่อราคาทั้งหมดสูงขึ้น หรือ ต่ำลงอย่างต่อเนื่อง หรือ เมื่อมีราคาหนึ่งไม่เป็นไปตามรูปแบบที่ได้คาดการณ์เอาไว้"
 
 msgid "The %1high%2 is the highest point ever reached by the market during the contract period."
 msgstr "%1 จุดสูง %2 คือ จุดที่สูงที่สุดที่ตลาดได้ไปถึงในช่วงระยะเวลาของสัญญา"
@@ -9459,7 +9459,7 @@ msgid "The %1start time%2 begins when the contract is processed by our servers."
 msgstr "%1 เวลาเริ่มต้น %2 เริ่มขึ้นเมื่อสัญญาได้ถูกนำเข้าประมวลผลในระบบของเรา"
 
 msgid "The %1start time%2 is when the contract has been processed by our servers."
-msgstr "%1sเวลาเริ่มต้น%2คือเวลาที่สัญญาได้ถูกนำเข้าประมวลผลในระบบของเรา"
+msgstr "%1เวลาเริ่มต้น%2 คือ เวลาที่สัญญาได้ถูกนำเข้าประมวลผลในระบบของเรา"
 
 msgid "The <strong>contract period</strong> is the period between the <strong>next tick</strong> after the <strong>start time</strong> and the <strong>end time</strong>."
 msgstr "<strong>ระยะเวลาของสัญญา</strong> คือ ช่วงเวลาระหว่าง <strong>ช่วงถัดไป</strong> หลังจาก <strong>เวลาเริ่มต้น</strong> และ <strong>เวลาสิ้นสุด</strong>"
@@ -10281,7 +10281,7 @@ msgid "There are two types of In/Out trades:"
 msgstr "มีการซื้อขาย In/Out 2 ประเภท:"
 
 msgid "There are two types of Run trades:"
-msgstr ""
+msgstr "มีการซื้อขาย Run 2 ประเภท:"
 
 msgid "There are two types of Up/Down trades:"
 msgstr "มีการซื้อขาย 2 ประเภทของ Up/Down:"
@@ -12051,10 +12051,10 @@ msgid "Win maximum payout if the exit spot is lower than or equal to the lower b
 msgstr "ชนะและได้รับเงินสูงสุด หากสปอตสุดท้ายต่ำกว่า หรือ เท่ากับแบร์ริเออร์ล่าง"
 
 msgid "Win payout if consecutive ticks fall successively. Contract is lost when at least one tick rises or is equal to any of the previous ticks."
-msgstr "ท่านจะชนะถ้าช่วงราคาที่ติดๆ กันตกลงอย่างต่อเนื่อง สัญญานี้ขาดทุนเมื่อมีอย่างน้อยหนึ่งช่วงราคาสูงขึ้นหรือเท่ากับช่วงราคาก่อนหน้านั้น"
+msgstr "ท่านจะชนะถ้าช่วงราคาที่ติดๆ กันตกลงอย่างต่อเนื่อง สัญญานี้ขาดทุนเมื่อมีอย่างน้อยหนึ่งช่วงราคาสูงขึ้น หรือ เท่ากับช่วงราคาก่อนหน้านั้น"
 
 msgid "Win payout if consecutive ticks rise successively. Contract is lost when at least one tick falls or is equal to any of the previous ticks."
-msgstr "ท่านจะชนะถ้าช่วงราคาที่ติดๆ กันสูงขึ้นอย่างต่อเนื่อง สัญญานี้ขาดทุนเมื่อมีอย่างน้อยหนึ่งช่วงราคาตกลงหรือเท่ากับช่วงราคาก่อนหน้านั้น"
+msgstr "ท่านจะชนะถ้าช่วงราคาที่ติดๆ กันสูงขึ้นอย่างต่อเนื่อง สัญญานี้ขาดทุนเมื่อมีอย่างน้อยหนึ่งช่วงราคาตกลง หรือ เท่ากับช่วงราคาก่อนหน้านั้น"
 
 msgid "Win payout if exit spot is also equal to entry spot."
 msgstr "ชนะ เมื่อสปอตสิ้นสุดเท่ากับสปอตเริ่มต้น"
@@ -12405,10 +12405,10 @@ msgid "You can sell your contract before expiry to keep any profit you may have 
 msgstr "ท่านสามารถขายสัญญาซื้อขายของท่านก่อนวันหมดอายุเพื่อรักษากำไรของท่านที่พึงได้ หรือ เพื่อย่อภาวะขาดทุนของท่าน"
 
 msgid "You can top up your demo account with an additional %1 if your balance is %2 or less."
-msgstr ""
+msgstr "ท่านสามารถเติมเงินในบัญชีทดลอง จำนวน %1 หากมียอดคงเหลือในบัญชี %2 หรือน้อยกว่า"
 
 msgid "You can top up your virtual account with an additional %1 if your balance is %2 or less."
-msgstr ""
+msgstr "ท่านสามารถเติมเงินในบัญชีเสมือน จำนวน %1 หากมียอดคงเหลือในบัญชี %2 หรือ น้อยกว่า"
 
 msgid "You can trade Volatility Indices on all three main trade types: Up/Down, Touch/No Touch, and In/Out. That's not all – Volatility Indices also give you exclusive access to two additional trade types: Asians and Digits."
 msgstr "ท่านสามารถซื้อขายดัชนีผันผวนในประเภทการซื้อขายหลักๆ สามประเภท คือ ขึ้น/ลง แตะ/ไม่แตะ และ นอก/ใน ไม่เพียงเท่านั้น ดัชนีผันผวนยังรวมถึงการซื้อขายอีกสองประเภท คือ Asians และ Digits"
@@ -12555,7 +12555,7 @@ msgid "You may only open an account at this site on conditions that:"
 msgstr "ท่านอาจเปิดบัญชีในเว็บไซต์นี้เท่านั้น ตามเงื่อนไขที่ว่า"
 
 msgid "You may only transfer funds between a fiat account and a cryptocurrency account."
-msgstr "ท่านโอนเงินได้ระหว่างบัญชีเงินกระดาษและบัญชีเงินดิจิทัลเท่านั้น"
+msgstr "ท่านสามารถโอนเงินได้ระหว่างบัญชีเงินกระดาษและบัญชีเงินดิจิทัลเท่านั้น"
 
 msgid "You may proceed but please <a href=\"%1\">authenticate</a> your account within five days to continue trading."
 msgstr "โปรด <a href=\"%1\">ยืนยัน</a> บัญชีของท่านภายในห้าวันเพื่อการซื้อขายอย่างต่อเนื่อง"
@@ -12795,7 +12795,7 @@ msgid "Your account is restricted. Kindly %1contact customer support%2 for assis
 msgstr "บัญชีของท่านถูกระงับ โปรด %1ติดต่อฝ่ายลูกค้าสัมพันธ์%2 เพื่อดำเนินการต่อไป"
 
 msgid "Your account remains under the retail client category."
-msgstr "บัญชีของคุณยังอยู่ในกลุ่มลูกค้ารายย่อย"
+msgstr "บัญชีของท่านยังอยู่ในประเภทลูกค้ารายย่อย"
 
 msgid "Your account security is of paramount importance to us. Please consider the following initiatives and tools to enhance your account security:"
 msgstr "ความปลอดภัยของบัญชีมีความสำคัญยิ่งต่อเรา โปรดพิจารณาความริเริ่มและเครื่องมือต่อไปนี้เพื่อเพิ่มความปลอดภัยของบัญชี:"
@@ -12852,7 +12852,7 @@ msgid "Your debts are not settled as, and when, they fall due."
 msgstr "หนี้ของท่านยังไม่ได้รับชำระและถึงกำหนดแล้ว"
 
 msgid "Your demo account balance is currently %1 or less. You may top up your account with an additional %2."
-msgstr "ท่านมียอดเงินในบัญชีทดลอง %1 หรือน้อยกว่า กรุณาเติมเงินในบัญชีของท่านเพิ่มเติม %2"
+msgstr "ท่านมียอดเงินคงเหลือในบัญชีทดลอง %1 หรือน้อยกว่า กรุณาฝากเงินในบัญชีของท่านเพิ่ม %2"
 
 msgid "Your forex and contracts for differences transactions with %1 are linked to an underlying financial instrument and you will be exposed to price, currency exchange, interest rate or other volatility of the market to which your financial instrument is related to, especially if the market is of a jurisdiction that is foreign to you. Forex and contracts for differences trading over the internet via an electronic trading platform is subject to data latency risk which may result in delays in order execution."
 msgstr "อัตราแลกเปลี่ยนและสัญญาสำหรับธุรกรรมส่วนต่างกับ %1ถูกเชื่อมโยงกับเครื่องมือทางการเงินของผลิตภัณฑ์อ้างอิง ซึ่งมีความสัมพันธ์กับราคา อัตราแลกเปลี่ยน อัตราดอกเบี้ย หรือ ความผันผวนอื่นของตลาดซึ่งเกี่ยวข้องกับเครื่องมือทางการเงินของท่าน โดยเฉพาะอย่างยิ่งถ้าตลาดเป็นของเขตพื้นที่ตามกฎมายที่ต่างถิ่นกับท่าน อัตราแลกเปลี่ยนและสัญญาสำหรับการซื้อขายส่วนต่างทางอินเทอร์เน็ตผ่านทางแพลตฟอร์มการซื้อขายอิเล็กทรอนิกส์จะมีความเสี่ยงของการแฝงของข้อมูลซึ่งอาจะทำให้เกิดการล่าช้าในประมวลผลคำสั่งซื้อ"
@@ -12879,13 +12879,13 @@ msgid "Your personal information is used primarily as a way of validating you as
 msgstr "โดยปกติแล้วข้อมูลส่วนบุคคลของท่านถูกใช้ในการตรวจสอบว่า ท่านเป็นเจ้าของบัญชีที่ถูกต้อง และเป็นผู้รับที่ถูกต้องของการชำระเงินที่ถอนออกมา นอกจากนี้เรายังใช้ข้อมูลนี้เพื่อดำเนินการซื้อขายของท่าน เรารวบรวมข้อมูลส่วนบุคคล และการเงินทั้งหมดเกี่ยวข้องกับท่านโดยตรง เมื่อท่านกรอกข้อมูลในแบบฟอร์มการเปิดบัญชี ในทุกกรณี ท่านมีข้อผูกมัดตามกฎหมายหรือภาระผูกพันในสัญญาที่จะให้ข้อมูลนี้แก่เรา หากไม่มีการให้ข้อมูลดังกล่าวแล้ว เราจะไม่สามารถให้บริการแก่ท่านได้"
 
 msgid "Your professional client request is %1not approved%2."
-msgstr "คำขอเป็นลูกค้าผู้เชี่ยวชาญของท่าน %1nไม่ได้รับการอนุมัติ%2"
+msgstr "คำขอเป็นลูกค้าผู้เชี่ยวชาญของท่าน %1ไม่ได้รับการอนุมัติ%2"
 
 msgid "Your profit or loss is calculated as follows:"
 msgstr "คำนวณกำไรหรือขาดทุนของท่านได้ ดังต่อไปนี้"
 
 msgid "Your request to be treated as a professional client is %1not approved%2."
-msgstr "คำขอของท่านเพื่อปรับสถานะเป็นลูกค้าผู้เชี่ยวชาญนั้น %1nไม่ได้รับการอนุมัติ%2"
+msgstr "คำขอของท่านเพื่อปรับสถานะเป็นลูกค้าผู้เชี่ยวชาญนั้น %1ไม่ได้รับการอนุมัติ%2"
 
 msgid "Your request to transfer %1 %2 from %3 to %4 has been successfully processed."
 msgstr "คำสั่งของท่านในการโอน %1 %2 จาก %3 ไป %4 ได้ดำเนินการสำเร็จแล้ว"
@@ -12933,7 +12933,7 @@ msgid "Your violation of any applicable law, rule or regulation;"
 msgstr "การฝ่าฝืนใดๆ ของท่านต่อกฎหมายที่บังคับใช้ ระเบียบ บัญญัติต่างๆ "
 
 msgid "Your virtual account balance is currently %1 or less. You may top up your account with an additional %2."
-msgstr "ท่านมียอดเงินในบัญชีทดลอง %1 หรือน้อยกว่า กรุณาเติมเงินในบัญชีของท่านเพิ่มเติม %2"
+msgstr "ท่านมียอดเงินในบัญชีทดลอง %1 หรือ น้อยกว่า กรุณาฝากเงินในบัญชีของท่านเพิ่ม%2"
 
 msgid "Your web browser (%1) is out of date and may affect your trading experience. Proceed at your own risk. %2Update browser%3"
 msgstr "เว็บเบราเซอร์ของท่าน (%1) ไม่ได้ปรับปรุงให้ทันสมัย ซึ่งส่งผลต่อการใช้งานในการซื้อขายของท่าน โปรดดำเนินการเพื่อแก้ไขความเสี่ยงนี้โดยตัวท่านเองสามารถ %2 ปรับปรุงเบราเซอร์ให้เหมาะกับการใช้งาน %3"
