@@ -120,8 +120,8 @@ const ViewPopup = (() => {
             PUTSPREAD   : localize('Put Spread'),
             TICKHIGH    : localize('High Tick'),
             TICKLOW     : localize('Low Tick'),
-            RUNHIGH     : localize('Only Ups'),
-            RUNLOW      : localize('Only Downs'),
+            RUNHIGH     : localize('Run Ups'),
+            RUNLOW      : localize('Run Downs'),
         });
 
         return {

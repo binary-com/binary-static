@@ -242,8 +242,8 @@ const TradingAnalysis = (() => {
                 image2: 'low-tick.svg',
             },
             runs: {
-                image1: 'only-ups.svg',
-                image2: 'only-downs.svg',
+                image1: 'ups.svg',
+                image2: 'downs.svg',
             },
         };
 
