@@ -5,6 +5,7 @@ import UILoader             from 'App/Components/Elements/ui-loader.jsx';
 import { connect }          from 'Stores/connect';
 import Test                 from './test.jsx';
 import FormLayout           from '../Components/Form/form-layout.jsx';
+import Digits               from '../../Contract/Containers/digits.jsx';
 import InfoBox              from '../../Contract/Containers/info-box.jsx';
 
 const SmartChart = React.lazy(() => import(/* webpackChunkName: "smart_chart" */'../../SmartChart'));
@@ -21,7 +22,8 @@ class Trade extends React.Component {
     render() {
         const contract_id = getPropertyValue(this.props.purchase_info, ['buy', 'contract_id']);
         const form_wrapper_class = this.props.is_mobile ? 'mobile-wrapper' : 'sidebar__container desktop-only';
-        const should_show_last_digit_stats = ['match_diff', 'even_odd', 'over_under'].includes(this.props.contract_type);
+        const should_show_last_digit_stats = ['match_diff', 'even_odd', 'over_under'].includes(this.props.contract_type)
+            && !this.props.is_contract_mode;
 
         return (
             <div id='trade_container' className='trade-container'>
@@ -30,6 +32,7 @@ class Trade extends React.Component {
                         <React.Suspense fallback={<UILoader />} >
                             <SmartChart
                                 chart_id={this.props.chart_id}
+                                Digits={<Digits is_trade_page />}
                                 InfoBox={<InfoBox is_trade_page />}
                                 onSymbolChange={this.props.onSymbolChange}
                                 symbol={this.props.symbol}

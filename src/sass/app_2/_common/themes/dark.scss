@@ -914,7 +914,7 @@
             }
         }
         &__item {
-            &-text {
+            &-text, &-tooltip-symbols {
                 color: $COLOR_DARK_BLUE_7;
             }
             &--selected .list__item-text {
@@ -987,6 +987,42 @@
                         &.active {
                             background-color: $COLOR_LIGHT_BLACK_4;
                         }
+                    }
+                }
+            }
+        }
+    }
+    .digits {
+        &__digit {
+            &-value {
+                background-color: $COLOR_DARK_BLUE_5;
+                color: $COLOR_WHITE;
+
+                &--blink {
+                    animation-name: blinking-dark-blue-2;
+                }
+                &--selected {
+                    background-color: $COLOR_DARK_BLUE_2;
+                }
+                &--win {
+                    background-color: $COLOR_GREEN_1;
+                }
+                &--loss {
+                    background-color: $COLOR_RED;
+                }
+            }
+            &-spot {
+                &-value {
+                    color: $COLOR_DARK_BLUE_7;
+                }
+                &-last {
+                    color: $COLOR_WHITE;
+
+                    &--win {
+                        color: $COLOR_GREEN_1;
+                    }
+                    &--loss {
+                        color: $COLOR_RED;
                     }
                 }
             }
