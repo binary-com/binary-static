@@ -6,6 +6,7 @@ import { localize }      from '_common/localize';
 import {
     epochToMoment,
     toGMTFormat }        from 'Utils/Date';
+import ResultDetailsItem from './result-details-item.jsx';
 
 class ResultDetails extends React.PureComponent {
     state = {
@@ -37,58 +38,34 @@ class ResultDetails extends React.PureComponent {
                 })}
                 >
                     <div className='result-details__grid'>
-                        <div className='result-details__item'>
-                            <span className='result-details__label'>
-                                {localize('Reference ID')}
-                            </span>
-                            <span className='result-details__value'>
-                                {id_sell}
-                            </span>
-                        </div>
-                        <div className='result-details__item'>
-                            <span className='result-details__label'>
-                                {localize('Duration')}
-                            </span>
-                            <span className='result-details__value'>
-                                {tick_count ? `${tick_count} ${localize('ticks')}` : `${duration} ${duration_unit}`}
-                            </span>
-                        </div>
+                        <ResultDetailsItem
+                            label={localize('Reference ID')}
+                            value={id_sell}
+                        />
+                        <ResultDetailsItem
+                            label={localize('Duration')}
+                            value={tick_count ? `${tick_count} ${localize('ticks')}` : `${duration} ${duration_unit}`}
+                        />
                     </div>
                     <div className='result-details__grid'>
-                        <div className='result-details__item'>
-                            <span className='result-details__label'>
-                                {localize('Barrier')}
-                            </span>
-                            <span className='result-details__value'>
-                                {barrier}
-                            </span>
-                        </div>
-                        <div className='result-details__item'>
-                            <span className='result-details__label'>
-                                {localize('Entry spot')}
-                            </span>
-                            <span className='result-details__value'>
-                                {entry_spot}
-                            </span>
-                        </div>
+                        <ResultDetailsItem
+                            label={localize('Barrier')}
+                            value={barrier}
+                        />
+                        <ResultDetailsItem
+                            label={localize('Entry spot')}
+                            value={entry_spot}
+                        />
                     </div>
                     <div className='result-details__grid'>
-                        <div className='result-details__item'>
-                            <span className='result-details__label'>
-                                {localize('Start time')}
-                            </span>
-                            <span className='result-details__value'>
-                                {toGMTFormat(epochToMoment(contract_start_time))}
-                            </span>
-                        </div>
-                        <div className='result-details__item'>
-                            <span className='result-details__label'>
-                                {localize('End time')}
-                            </span>
-                            <span className='result-details__value'>
-                                {toGMTFormat(epochToMoment(contract_end_time))}
-                            </span>
-                        </div>
+                        <ResultDetailsItem
+                            label={localize('Start time')}
+                            value={toGMTFormat(epochToMoment(contract_start_time))}
+                        />
+                        <ResultDetailsItem
+                            label={localize('End time')}
+                            value={toGMTFormat(epochToMoment(contract_end_time))}
+                        />
                     </div>
                 </div>
                 <div
