@@ -4,10 +4,10 @@ const Client           = require('./client');
 const Contents         = require('./contents');
 const Header           = require('./header');
 const Footer           = require('./footer');
+const InterviewPopup   = require('./interview_popup');
 const Menu             = require('./menu');
 const BinarySocket     = require('./socket');
 const TrafficSource    = require('../common/traffic_source');
-const isEuCountry      = require('../common/country_base').isEuCountry;
 const RealityCheck     = require('../pages/user/reality_check/reality_check');
 const Elevio           = require('../../_common/base/elevio');
 const Login            = require('../../_common/base/login');
@@ -87,6 +87,7 @@ const Page = (() => {
             updateLinksURL('body');
             recordAffiliateExposure();
             endpointNotification();
+            InterviewPopup.onLoad();
         }
         Contents.onLoad();
 
@@ -97,9 +98,6 @@ const Page = (() => {
         if (Client.isLoggedIn()) {
             BinarySocket.wait('authorize', 'website_status', 'get_account_status').then(() => {
                 RealityCheck.onLoad();
-                if (isEuCountry()) {
-                    console.log('testing'); //eslint-disable-line
-                }
                 Menu.init();
             });
         } else {

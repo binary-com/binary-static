@@ -16,9 +16,9 @@ const InterviewPopup = () => (
                 </p>
                 <div className='popup__options'>
                     <div className='popup__secondary_options'>
-                        <a href={'javascript:void(0);'} id='interview_no_thanks'>{it.L('No thanks')}</a>
+                        <a id='interview_no_thanks'>{it.L('No thanks')}</a>
                         <span className='popup__separator' />
-                        <a href={'javascript:void(0);'} id='interview_ask_later'>{it.L('Ask me later')}</a>
+                        <a id='interview_ask_later'>{it.L('Ask me later')}</a>
                     </div>
                     <a href={'javascript:void(0);'} id='interview_interested' className='button' target='_blank' rel='noopener noreferrer'>
                         <span>{it.L('I’m interested')}</span>
