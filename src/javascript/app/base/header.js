@@ -251,20 +251,31 @@ const Header = (() => {
     };
 
     const displayAccountStatus = () => {
-        BinarySocket.wait('authorize').then(() => {
+        BinarySocket.wait('authorize', 'landing_company').then(() => {
             let get_account_status,
                 status;
+            const is_costarica = Client.get('landing_company_shortcode') === 'costarica';
+            const necessary_withdrawal_fields = is_costarica
+                ? State.getResponse('landing_company.financial_company.requirements.withdrawal')
+                : [];
+            const necessary_signup_fields = is_costarica
+                ? State.getResponse('landing_company.financial_company.requirements.signup')
+                    .map(field => (field === 'residence' ? 'country' : field))
+                : [];
 
             const hasMissingRequiredField = () => {
-                const required_fields = [
-                    'account_opening_reason',
-                    'address_line_1',
-                    'address_city',
-                    'phone',
-                    'tax_identification_number',
-                    'tax_residence',
-                    ...(Client.get('residence') === 'gb' ? ['address_postcode'] : []),
-                ];
+                // eslint-disable-next-line no-nested-ternary
+                const required_fields = is_costarica ? [ ...necessary_signup_fields, ...necessary_withdrawal_fields ]
+                    : Client.isAccountOfType('financial') ? [
+                        'account_opening_reason',
+                        'address_line_1',
+                        'address_city',
+                        'phone',
+                        'tax_identification_number',
+                        'tax_residence',
+                        ...(Client.get('residence') === 'gb' ? ['address_postcode'] : []),
+                    ] : [];
+                
                 const get_settings = State.getResponse('get_settings');
                 return required_fields.some(field => !get_settings[field]);
             };
@@ -305,7 +316,7 @@ const Header = (() => {
                 financial_limit      : () => hasStatus('ukrts_max_turnover_limit_not_set'),
                 mf_retail            : () => Client.get('landing_company_shortcode') === 'maltainvest' && !hasStatus('professional'),
                 mt5_withdrawal_locked: () => hasStatus('mt5_withdrawal_locked'),
-                required_fields      : () => Client.isAccountOfType('financial') && hasMissingRequiredField(),
+                required_fields      : () => hasMissingRequiredField(),
                 residence            : () => !Client.get('residence'),
                 risk                 : () => Client.getRiskAssessment(),
                 tax                  : () => Client.shouldCompleteTax(),
