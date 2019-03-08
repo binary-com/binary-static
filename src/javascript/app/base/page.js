@@ -98,7 +98,7 @@ const Page = (() => {
             BinarySocket.wait('authorize', 'website_status', 'get_account_status').then(() => {
                 RealityCheck.onLoad();
                 if (isEuCountry()) {
-                    console.log('kontol'); //eslint-disable-line
+                    console.log('testing'); //eslint-disable-line
                 }
                 Menu.init();
             });
