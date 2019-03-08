@@ -206,7 +206,7 @@ const InputField = ({
                 </div>
             }
             <div
-                className={`input-field ${className}`}
+                className={classNames('input-field', className)}
             >
                 {input_tooltip}
             </div>
