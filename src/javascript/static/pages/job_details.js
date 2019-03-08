@@ -1,6 +1,6 @@
-const load     = require('../../app/base/binary_pjax').load;
-const urlParam = require('../../_common/url').param;
-const urlFor   = require('../../_common/url').urlFor;
+const BinaryPjax = require('../../app/base/binary_pjax');
+const urlParam   = require('../../_common/url').param;
+const urlFor     = require('../../_common/url').urlFor;
 
 const JobDetails = (() => {
     let dept,
@@ -33,9 +33,9 @@ const JobDetails = (() => {
         $('#image').find('img').setVisibility(0);
 
         if ($sidebar_dept.length && window.location.hash === '') {
-            load(`${urlFor('open-positions/job-details')}?dept=${dept}${$sidebar_dept.find('a')[0].hash}`);
+            BinaryPjax.load(`${urlFor('open-positions/job-details')}?dept=${dept}${$sidebar_dept.find('a')[0].hash}`);
         } else if ($sidebar_dept.length === 0 || $sidebar_dept.find(`a[href="${window.location.hash}"]`).length === 0) {
-            load(urlFor('404'));
+            BinaryPjax.load(urlFor('404'));
         }
 
         // show sections
