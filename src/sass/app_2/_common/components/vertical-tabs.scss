@@ -13,19 +13,18 @@
         background-color: $COLOR_LIGHT_BLACK_4_SOLID;
     }
     &__header {
-        font-size: 14px;
-        font-weight: bold;
-        line-height: 20px;
-        height: 40px;
+        @include typeface(--paragraph-center-bold-black);
+        @include toEm(line-height, 20px);
         padding: 10px 16px;
+        height: 40px;
         cursor: pointer;
         display: flex;
+        align-items: center;
         transition: background-color 0.1s ease-in;
 
         &--active {
+            @include typeface(--paragraph-left-bold-active);
             background-color: $COLOR_LIGHT_GRAY_1;
-            color: $COLOR_WHITE;
-            font-weight: bold;
         }
         &__link {
             font-weight: normal;
@@ -45,7 +44,7 @@
     &__content {
         width: 100%;
         height: 100%;
-        padding: 24px;
+        @include toEm(padding, 24px);
         display: flex;
         flex-direction: column;
         justify-content: flex-start;

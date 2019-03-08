@@ -2,25 +2,21 @@
     margin: 0 0 16px;
 
     &__heading {
-        font-size: 14px;
-        font-weight: bold;
-        color: $COLOR_LIGHT_BLACK_1;
+        @include typeface(--paragraph-left-bold-black);
         margin: 0 0 16px;
     }
     &__icon {
         min-width: 160px;
         max-width: 160px;
-        height: 80px;
-        margin-right: 16px;
+        @include toEm(height, 80px);
+        @include toEm(margin-right, 16px);
         background-color: $COLOR_LIGHT_BLACK_3;
     }
     &__description {
         display: flex;
         justify-content: flex-start;
         align-items: flex-start;
-        font-size: 14px;
-        font-weight: normal;
-        color: $COLOR_LIGHT_BLACK_1;
+        @include typeface(--paragraph-left-normal-black);
     }
     &__form {
         display: flex;
