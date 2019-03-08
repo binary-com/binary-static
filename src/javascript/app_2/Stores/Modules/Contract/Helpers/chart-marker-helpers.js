@@ -65,10 +65,14 @@ export const createMarkerSpotExit = (contract_info) => {
     );
 };
 
-export const createMarkerSpotMiddle = (tick, idx) =>
-    createMarkerConfig(
+export const createMarkerSpotMiddle = (tick, idx) => {
+    const marker_config = createMarkerConfig(
         MARKER_TYPES_CONFIG.SPOT_MIDDLE.type,
         tick.time,
         tick.price,
         { spot_value: `${idx}` },
     );
+    marker_config.type = `${marker_config.type}_${idx}`;
+
+    return marker_config;
+};
