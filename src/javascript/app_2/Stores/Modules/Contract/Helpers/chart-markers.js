@@ -1,5 +1,5 @@
 import {
-    createMarkerEndTime,
+    createMarkerExpiry,
     createMarkerPurchaseTime,
     createMarkerSpotEntry,
     createMarkerSpotExit,
@@ -20,7 +20,7 @@ export const createChartMarkers = (SmartChartStore, contract_info) => {
 };
 
 const marker_creators = {
-    [MARKER_TYPES_CONFIG.LINE_END.type]     : createMarkerEndTime,
+    [MARKER_TYPES_CONFIG.LINE_END.type]     : createMarkerExpiry,
     [MARKER_TYPES_CONFIG.LINE_PURCHASE.type]: createMarkerPurchaseTime,
     [MARKER_TYPES_CONFIG.LINE_START.type]   : createMarkerStartTime,
     [MARKER_TYPES_CONFIG.SPOT_ENTRY.type]   : createMarkerSpotEntry,

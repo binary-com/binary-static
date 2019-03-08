@@ -121,7 +121,8 @@ export default class ContractStore extends BaseStore {
 
         createChartBarrier(this.smart_chart, this.contract_info);
 
-        if (this.contract_info.tick_count && !isDigitContract(this.contract_info.contract_type)) {
+        if (this.contract_info.tick_count && !isDigitContract(this.contract_info.contract_type)
+            && this.contract_info.exit_tick_time) { // TODO: remove this when ongoing contracts are implemented
             createChartTickMarkers(this.smart_chart, this.contract_info);
         } else {
             createChartMarkers(this.smart_chart, this.contract_info);

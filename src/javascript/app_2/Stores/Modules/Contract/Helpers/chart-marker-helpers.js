@@ -12,7 +12,7 @@ const createMarkerConfig = (marker_type, x, y, content_config) => (
 );
 
 // -------------------- Lines --------------------
-export const createMarkerEndTime = (contract_info) => {
+export const createMarkerExpiry = (contract_info) => {
     if (contract_info.status === 'open' || !contract_info.date_expiry) return false;
 
     return createMarkerConfig(

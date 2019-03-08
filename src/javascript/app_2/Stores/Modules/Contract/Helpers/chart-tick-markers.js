@@ -3,7 +3,7 @@ import {
     createMarkerSpotEntry,
     createMarkerSpotExit,
     createMarkerSpotMiddle,
-    createMarkerEndTime,
+    createMarkerExpiry,
     createMarkerPurchaseTime,
     createMarkerStartTime,
 } from './chart-marker-helpers';
@@ -25,7 +25,7 @@ const zip = (arr, ...arrs) => arr.map((val, idx) => arrs.reduce((a, curr) => [..
 const makeTickArr = (price_arr, times_arr) =>
     zip(price_arr, times_arr).reduce((acc, tick) => [...acc, { price: tick[0], time: tick[1] }], []);
 
-const multiple = (parentFn) => ([...fncs]) => fncs.forEach(parentFn);
+const fnForEach = (fn) => ([...args]) => args.forEach(fn);
 
 const tickMarker = (function () {
     let instance;
@@ -87,7 +87,7 @@ const tickMarker = (function () {
             addSpotsFromHistory: () =>
                 WS.sendRequest({ ...ticks_history_req }).then(onTicksHistory),
             addLines: () => {
-                multiple(addMarkerFromContract)([createMarkerEndTime, createMarkerPurchaseTime, createMarkerStartTime]);
+                fnForEach(addMarkerFromContract)([createMarkerExpiry, createMarkerPurchaseTime, createMarkerStartTime]);
             },
             getContractId: () => contract_info.contract_id,
         };
