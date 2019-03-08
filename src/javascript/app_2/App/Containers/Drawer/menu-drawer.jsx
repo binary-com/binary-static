@@ -25,26 +25,26 @@ const MenuDrawer = ({
     togglePurchaseLock,
     // togglePurchaseConfirmation,
 }) => (
-    <div className='drawer-items-container'>
+    <div className='drawer__items-container'>
         <div className='list-items-container'>
             {is_mobile &&
             <React.Fragment>
                 <DrawerItem
                     text={localize('Trade')}
-                    icon={<IconTrade className='drawer-icon' />}
+                    icon={<IconTrade className='drawer__icon' />}
                     link_to={routes.trade}
                 />
                 <DrawerItem
                     text={localize('Portfolio')}
-                    icon={<IconPortfolio className='drawer-icon' />}
+                    icon={<IconPortfolio className='drawer__icon' />}
                     link_to={routes.portfolio}
                 />
                 <DrawerItem
                     text={localize('Statement')}
-                    icon={<IconStatement className='drawer-icon' />}
+                    icon={<IconStatement className='drawer__icon' />}
                     link_to={routes.statement}
                 />
-                <hr />
+                <hr className='hr' />
                 <DrawerToggle
                     text={localize('Dark Mode')}
                     toggle={toggleDarkMode}
@@ -65,9 +65,9 @@ const MenuDrawer = ({
             </React.Fragment>}
         </div>
         {!!(is_logged_in && is_mobile) &&
-        <div className='drawer-footer'>
+        <div className='drawer__footer'>
             <DrawerItem
-                icon={<IconLogout className='drawer-icon' />}
+                icon={<IconLogout className='drawer__icon' />}
                 text={localize('Logout')}
                 custom_action={() => {
                     if (is_positions_drawer_on) {

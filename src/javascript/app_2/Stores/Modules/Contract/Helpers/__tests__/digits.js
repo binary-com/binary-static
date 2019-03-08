@@ -27,13 +27,9 @@ describe('Digits', () => {
             const digits_info = {
                 1544707342: {
                     digit: 7,
-                    is_last: false,
-                    is_win: false,
                 },
                 1544707344: {
                     digit: 6,
-                    is_last: false,
-                    is_win: false,
                 },
             };
             expect(getDigitInfo(digits_info, contract_info)).to.be.empty;
@@ -51,20 +47,17 @@ describe('Digits', () => {
             const digits_info = {
                 1544707342: {
                     digit: 7,
-                    is_last: false,
-                    is_win: false,
+                    spot: 456.99,
                 },
                 1544707344: {
                     digit: 6,
-                    is_last: false,
-                    is_win: false,
+                    spot: 456.99,
                 },
             };
             expect(getDigitInfo(digits_info, contract_info)).to.deep.eql({
                 10000000: {
                     digit: 9,
-                    is_win: true,
-                    is_last: false,
+                    spot: 456.99,
                 }
             });
         });
@@ -81,25 +74,19 @@ describe('Digits', () => {
             const digits_info = {
                 1544707342: {
                     digit: 7,
-                    is_last: false,
-                    is_win: false,
                 },
                 1544707344: {
                     digit: 6,
-                    is_last: false,
-                    is_win: false,
                 },
             };
             expect(getDigitInfo(digits_info, contract_info)).to.deep.eql({
                 10000000: {
                     digit: 9,
-                    is_win: false,
-                    is_last: false,
+                    spot: 456.99,
                 },
                 20000000: {
                     digit: 7,
-                    is_win: false,
-                    is_last: false,
+                    spot: 123.77,
                 }
             });
         });

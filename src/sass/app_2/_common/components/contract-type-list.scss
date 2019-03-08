@@ -2,8 +2,9 @@
 .contract-type-list {
     padding: 1.6em 1.6em 0em;
 
-    &__label span {
+    &__label {
         @include typeface(--paragraph-left-bold-black);
+        margin-bottom: 0.8em;
     }
     &:last-child {
         padding-bottom: 1.6em;
@@ -41,15 +42,15 @@
     transition: transform 0.3s opacity 0.3s;
     background-color: $COLOR_WHITE;
 
-    &:hover {
-        background-color: #f2f3f8; /* stylelint-disable-line color-no-hex */
+    &:hover:not(&--selected) {
+        background-color: $COLOR_LIGHT_BLACK_4;
 
         .contract-type-item__icon {
             display: block;
         }
     }
     &__title {
-        @include typeface(--paragraph-left-light-black);
+        @include typeface(--small-left-normal-black);
     }
     &__icon {
         display: none;
@@ -75,7 +76,7 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        margin-bottom: 0.2em;
+        margin-right: 0.7em;
 
         /* postcss-bem-linter: ignore */
         .category-wrapper {

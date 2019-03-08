@@ -27,10 +27,10 @@
     &__button {
         position: absolute;
         z-index: 1;
-        top: 2px;
-        height: calc(100% - 5px);
+        top: 1px;
+        height: calc(100% - 2px);
         margin: initial;
-        min-width: 3em;
+        min-width: 3.2em;
         border-radius: 3px;
         padding: initial;
         background-color: initial;
@@ -39,14 +39,20 @@
         align-items: center;
 
         &--increment {
-            right: 2px; // fixed position
+            right: 1px; // fixed position
+            height: 28px;
         }
         &--decrement {
-            left: 2px; // fixed position
+            left: 1px; // fixed position
+            height: 28px;
         }
         &:hover {
             cursor: pointer;
             background: $COLOR_LIGHT_BLACK_4;
+
+            & ~ .input-wrapper__input {
+                @extend .input:hover;
+            }
         }
         &:disabled:hover {
             cursor: not-allowed;
@@ -129,5 +135,9 @@
         border-radius: $BORDER_RADIUS;
         border-color: $COLOR_LIGHT_GRAY_1;
         box-shadow: 0 0 0 2px rgba(127, 131, 151, 0.3);
+    }
+    &--has-inline-prefix {
+        padding-left: 50px !important;
+        border-radius: $BORDER_RADIUS !important;
     }
 }

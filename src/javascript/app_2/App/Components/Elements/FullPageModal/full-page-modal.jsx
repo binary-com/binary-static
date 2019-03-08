@@ -1,5 +1,7 @@
-import React     from 'react';
-import PropTypes from 'prop-types';
+import classNames from 'classnames';
+import React      from 'react';
+import PropTypes  from 'prop-types';
+import Button     from 'App/Components/Form/button.jsx';
 
 const FullPageModal = ({
     cancel_button_text,
@@ -17,18 +19,18 @@ const FullPageModal = ({
                     <h1 className='full-page-modal__header'>{title}</h1>
                     <p className='full-page-modal__content'>{children}</p>
                     <div className='full-page-modal__footer'>
-                        <div
-                            className='full-page-modal__button btn btn--flat effect btn--primary'
+                        <Button
+                            className={classNames('full-page-modal__button', 'btn--secondary btn--secondary--orange')}
+                            has_effect
+                            text={cancel_button_text}
                             onClick={onCancel}
-                        >
-                            <span className='full-page-modal__button-text'>{cancel_button_text}</span>
-                        </div>
-                        <div
-                            className='full-page-modal__button btn btn--flat effect btn--primary'
+                        />
+                        <Button
+                            className={classNames('full-page-modal__button', 'btn--primary btn--primary--orange')}
+                            has_effect
+                            text={confirm_button_text}
                             onClick={onConfirm}
-                        >
-                            <span className='full-page-modal__button-text'>{confirm_button_text}</span>
-                        </div>
+                        />
                     </div>
                 </div>
             </div>

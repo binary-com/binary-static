@@ -19,15 +19,15 @@ class DrawerItems extends React.Component {
         const list_is_collapsed = {
             visibility: is_collapsed ? 'visible' : 'hidden',
         };
-        const parent_item_class = classNames('parent-item', {
-            'show': is_collapsed,
+        const parent_item_class = classNames('drawer__parent-item', {
+            'drawer__parent-item--show': is_collapsed,
         });
-        const drawer_items_class = classNames('drawer-items', {
-            'show': is_collapsed,
+        const drawer_items_class = classNames('drawer__items', {
+            'drawer__items--show': is_collapsed,
         });
         return (
             <React.Fragment>
-                <div className='drawer-item' onClick={this.collapseItems}>
+                <div className='drawer__item' onClick={this.collapseItems}>
                     <span className={parent_item_class}>{text}</span>
                 </div>
                 <div

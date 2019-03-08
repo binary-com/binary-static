@@ -74,7 +74,7 @@
         transition: background-color 0.3s;
 
         &-text {
-            @include typeface(--title-left-light-black);
+            @include typeface(--title-left-normal-black);
             padding: 0.5em 0.5em 0.5em 0;
             position: relative;
 
@@ -97,7 +97,7 @@
         }
         &--active {
             & > .header__menu-link-text[title] {
-                font-weight: 500;
+                font-weight: bold;
             }
             .header__icon {
                 @extend .inline-icon.active;
