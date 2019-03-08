@@ -99,6 +99,7 @@
 /** @define chart-marker-line */
 .chart-marker-line {
     height: 100%;
+    z-index: 0 !important;
 
     &__wrapper {
         border-left-width: 1px;
