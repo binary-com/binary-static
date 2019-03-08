@@ -227,7 +227,7 @@ const TickDisplay = (() => {
                 width : 2,
                 zIndex: 2,
             });
-            calculated_barrier = barrier_quote;
+            calculated_barrier = addComma(barrier_quote, parseInt(display_decimals));
             should_set_barrier = false;
         }
 
@@ -251,7 +251,7 @@ const TickDisplay = (() => {
                 width : 2,
                 zIndex: 2,
             });
-            calculated_barrier = calc_barrier;
+            calculated_barrier = addComma(calc_barrier, (parseInt(display_decimals) + 1));
         }
 
         if (barrier_type === 'highlowticks') {
