@@ -1,39 +1,34 @@
 const path   = require('path');
 const fs     = require('fs');
+const util   = require('util');
 const expect = require('chai').expect;
+const exec   = util.promisify(require('child_process').exec);
 const common = require('../common');
 
 const ignored_files = [
     'src/images/pages/regulation/map.svg',
 ];
 
+let changed_files = [];
+
 describe('check svg file format', () => {
-    it('should be valid svgs', () => {
-        function fetchSvgs(dir) {
-            const directory = fs.readdirSync(dir);
-            return directory.map(file => {
-                if (fs.statSync(path.join(dir, file)).isDirectory()) {
-                    return fetchSvgs(path.join(dir, file));
-                }
-                return file.match(/.*\.(svg)$/ig) ? path.join(dir, file) : false;
-            });
+    const fetchFiles = async () => {
+        const { stdout, stderr } = await exec('git diff HEAD origin/master --name-only -- *.svg');
+        if (stderr) {
+            throw new Error(stderr);
         }
 
-        const flatten = arr => {
-            const index = arr.findIndex(el => Array.isArray(el));
-            if (index > -1) {
-                arr.splice(index, 1, ...arr[index]);
-                return flatten(arr);
-            }
+        return stdout.split('\n').filter(path => path.length);
+    };
 
-            return arr;
-        };
+    it('should be valid svgs', async () => {
+        try {
+            changed_files = await fetchFiles();
+        } catch (err) {
+            console.error(err);
+        }
 
-        const svgs = fetchSvgs(path.resolve(common.root_path, 'src/images'));
-
-        flatten(svgs)
-            .filter(item => !!item)
-            .filter(item => !ignored_files.some(ignored => path.resolve(common.root_path, ignored) === item))
+        changed_files.filter(item => !ignored_files.some(ignored => path.resolve(common.root_path, ignored) === item))
             .forEach(item => {
                 const stats = fs.statSync(path.resolve(item));
                 if (stats.isSymbolicLink()) return;
