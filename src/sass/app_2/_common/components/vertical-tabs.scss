@@ -22,6 +22,9 @@
         align-items: center;
         transition: background-color 0.1s ease-in;
 
+        &:not(&--active):hover {
+            background-color: $COLOR_LIGHT_GRAY_2;
+        }
         &--active {
             @include typeface(--paragraph-left-bold-active);
             background-color: $COLOR_LIGHT_GRAY_1;
@@ -49,5 +52,29 @@
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
+    }
+    .theme--dark & {
+        &__tab {
+            background-color: $COLOR_DARK_BLUE_2;
+        }
+        &__header {
+            color: $COLOR_DARK_BLUE_7;
+
+            &:hover:not(.vertical-tab__header--active) {
+                background-color: $COLOR_DARK_BLUE_4;
+            }
+            &--active {
+                background-color: $COLOR_DARK_BLUE_5;
+                color: $COLOR_WHITE;
+                font-weight: bold;
+            }
+            &__icon {
+                @include colorIcon($COLOR_DARK_BLUE_7);
+
+                &--active {
+                    @include colorIcon($COLOR_WHITE);
+                }
+            }
+        }
     }
 }

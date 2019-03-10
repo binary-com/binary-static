@@ -1052,30 +1052,6 @@
             }
         }
     }
-    .vertical-tab {
-        &__tab {
-            background-color: $COLOR_DARK_BLUE_2;
-        }
-        &__header {
-            color: $COLOR_DARK_BLUE_7;
-
-            &:hover {
-                background-color: $COLOR_DARK_BLUE_4;
-            }
-            &--active {
-                background-color: $COLOR_DARK_BLUE_5;
-                color: $COLOR_WHITE;
-                font-weight: bold;
-            }
-            &__icon {
-                @include colorIcon($COLOR_DARK_BLUE_7);
-
-                &--active {
-                    @include colorIcon($COLOR_WHITE);
-                }
-            }
-        }
-    }
     .dialog-header {
         &__sidebar {
             background-color: $COLOR_DARK_BLUE_2;
