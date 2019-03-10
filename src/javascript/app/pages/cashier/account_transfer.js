@@ -135,7 +135,7 @@ const AccountTransfer = (() => {
         getElementById(form_id).setVisibility(1);
 
         FormManager.init(form_id_hash, [
-            { selector: '#amount', validations: [['req', { hide_asterisk: true }], ['number', { type: 'float', decimals: Currency.getDecimalPlaces(client_currency), min: Currency.getTransferLimits(client_currency, 'min'), max: +transferable_amount, format_money: true }]] },
+            { selector: '#amount', validations: [['req', { hide_asterisk: true }], ['number', { type: 'float', decimals: Currency.getDecimalPlaces(client_currency), min: Currency.getTransferLimits(client_currency, 'min'), max: transferable_amount, format_money: true }]] },
 
             { request_field: 'transfer_between_accounts', value: 1 },
             { request_field: 'account_from',              value: client_loginid },
@@ -237,39 +237,42 @@ const AccountTransfer = (() => {
                     }
 
                     populateAccounts(accounts);
-                    setLimits(response_limits, min_amount);
-                    showForm();
-                    populateHints();
+                    setLimits(response_limits, min_amount).then(() => {
+                        showForm();
+                        populateHints();
+                    }).catch(() => {
+                        getElementById(messages.limit).setVisibility(1);
+                        getElementById(messages.parent).setVisibility(1);
+                        el_transfer_fee.setVisibility(0);
+                    });
+
                 });
             }
         });
     };
 
-    const setLimits = (response, min_amount) => {
+    const setLimits = (response, min_amount) => new Promise((resolve, reject) => {
         withdrawal_limit = +response.get_limits.remainder;
         if (withdrawal_limit < +min_amount) {
-            getElementById(messages.limit).setVisibility(1);
-            getElementById(messages.parent).setVisibility(1);
-            return;
+            reject(new Error('Withdrawal limit is less than Min amount.'));
         }
 
-        max_amount = Currency.getTransferLimits(
-            Client.get('currency'),
-            'max'
-        );
+        max_amount = Currency.getTransferLimits(Client.get('currency'), 'max');
 
         const from_currency = Client.get('currency');
-        const to_currency = Client.get('currency', to_loginid);
+        const to_currency   = Client.get('currency', to_loginid);
         if (!Currency.isCryptocurrency(from_currency) && !Currency.isCryptocurrency(to_currency)) {
             transferable_amount = client_balance;
         } else {
-            transferable_amount = max_amount ?
-                Math.min(max_amount, withdrawal_limit, client_balance) :
-                Math.min(withdrawal_limit, client_balance);
+            transferable_amount = max_amount ? Math.min(max_amount, withdrawal_limit, client_balance) : Math.min(
+                withdrawal_limit,
+                client_balance,
+            );
         }
 
         getElementById('range_hint_min').textContent = min_amount;
-    };
+        resolve();
+    });
 
     const populateHints = () => {
         getElementById('limit_current_balance').innerHTML  = Currency.formatMoney(
