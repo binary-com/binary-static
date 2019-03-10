@@ -79,19 +79,17 @@ const AccountTransfer = (() => {
             to_loginid = fragment_transfer_to.firstChild.getAttribute('data-loginid');
             el_transfer_to.setVisibility(0);
             el_transfer_to.setAttribute('data-value', fragment_transfer_to.firstChild.textContent);
+            el_transfer_to.setAttribute('data-loginid', to_loginid);
             el_transfer_to.parentElement.insertBefore(el_label_transfer_to, el_transfer_to);
         } else {
             el_transfer_to.innerHTML = fragment_transfer_to.innerHTML;
         }
-
-        el_transfer_to.onchange = () => {
+        el_transfer_to.addEventListener('change', () => {
             setTransferFeeAmount();
-        };
+        });
 
         transfer_to_currency = getElementById('amount-add-on');
         transfer_to_currency.textContent = Client.get('currency');
-
-        showForm();
 
         if (Client.hasCurrencyType('crypto') && Client.hasCurrencyType('fiat')) {
             setTransferFeeAmount();
@@ -110,6 +108,7 @@ const AccountTransfer = (() => {
 
     const setTransferFeeAmount = () => {
         elementTextContent(el_fee_amount, Currency.getTransferFee(client_currency, (el_transfer_to.value || el_transfer_to.getAttribute('data-value') || '').match(/\((\w+)\)/)[1]));
+        to_loginid = el_transfer_to.getAttribute('data-loginid');
     };
 
     const hasError = (response) => {
@@ -136,7 +135,7 @@ const AccountTransfer = (() => {
         getElementById(form_id).setVisibility(1);
 
         FormManager.init(form_id_hash, [
-            { selector: '#amount', validations: [['req', { hide_asterisk: true }], ['number', { type: 'float', decimals: Currency.getDecimalPlaces(client_currency), min: Currency.getTransferLimits(client_currency, 'min'), max: transferable_amount, format_money: true }]] },
+            { selector: '#amount', validations: [['req', { hide_asterisk: true }], ['number', { type: 'float', decimals: Currency.getDecimalPlaces(client_currency), min: Currency.getTransferLimits(client_currency, 'min'), max: +transferable_amount, format_money: true }]] },
 
             { request_field: 'transfer_between_accounts', value: 1 },
             { request_field: 'account_from',              value: client_loginid },
@@ -236,39 +235,40 @@ const AccountTransfer = (() => {
                     if (hasError(response_limits)) {
                         return;
                     }
-                    withdrawal_limit = +response_limits.get_limits.remainder;
 
-                    if (withdrawal_limit < +min_amount) {
-                        getElementById(messages.limit).setVisibility(1);
-                        getElementById(messages.parent).setVisibility(1);
-                        return;
-                    }
-                    max_amount = Currency.getTransferLimits(
-                        Client.get('currency'),
-                        'max'
-                    );
-
-                    const from_currency = Client.get('currency');
-                    const to_currency = Client.get('currency', to_loginid);
-                    if (!Currency.isCryptocurrency(from_currency) && !Currency.isCryptocurrency(to_currency)) {
-                        transferable_amount = client_balance;
-                    } else {
-                        transferable_amount = max_amount ?
-                            Math.min(max_amount, withdrawal_limit, client_balance) :
-                            Math.min(withdrawal_limit, client_balance);
-                    }
-
-                    getElementById('range_hint_min').textContent = min_amount;
-                    getElementById('range_hint_max').textContent = transferable_amount.toFixed(
-                        Currency.getDecimalPlaces(
-                            Client.get('currency')
-                        )
-                    );
-                    populateHints();
                     populateAccounts(accounts);
+                    setLimits(response_limits, min_amount);
+                    showForm();
+                    populateHints();
                 });
             }
         });
+    };
+
+    const setLimits = (response, min_amount) => {
+        withdrawal_limit = +response.get_limits.remainder;
+        if (withdrawal_limit < +min_amount) {
+            getElementById(messages.limit).setVisibility(1);
+            getElementById(messages.parent).setVisibility(1);
+            return;
+        }
+
+        max_amount = Currency.getTransferLimits(
+            Client.get('currency'),
+            'max'
+        );
+
+        const from_currency = Client.get('currency');
+        const to_currency = Client.get('currency', to_loginid);
+        if (!Currency.isCryptocurrency(from_currency) && !Currency.isCryptocurrency(to_currency)) {
+            transferable_amount = client_balance;
+        } else {
+            transferable_amount = max_amount ?
+                Math.min(max_amount, withdrawal_limit, client_balance) :
+                Math.min(withdrawal_limit, client_balance);
+        }
+
+        getElementById('range_hint_min').textContent = min_amount;
     };
 
     const populateHints = () => {
@@ -279,7 +279,7 @@ const AccountTransfer = (() => {
 
         getElementById('limit_max_amount').innerHTML = max_amount ? Currency.formatMoney(
             client_currency,
-            max_amount,
+            transferable_amount,
         ) : localize('Not announced for this currency.');
 
         $('#range_hint').accordion({
