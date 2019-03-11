@@ -43,9 +43,9 @@ const tickMarker = (function () {
         };
         const ticks_added_to_chart = [];
 
-        const addMarkerFromContract = (createMarkerFn, tick, idx) => {
+        const addMarkerFromContract = (markerConfigFn, tick, idx) => {
             const align_label = labelTopOrBottom(tick, idx);
-            const marker_config = createMarkerFn(contract_info, idx, align_label);
+            const marker_config = markerConfigFn(contract_info, idx, align_label);
 
             if (marker_config) SmartChartStore.createMarker(marker_config);
         };
@@ -64,9 +64,9 @@ const tickMarker = (function () {
             return align_label;
         };
 
-        const addMarkerFromTick = (createMarkerFn, tick, idx) => {
-            const label_position = labelTopOrBottom(tick, idx);
-            const marker_config = createMarkerFn(tick, idx, label_position);
+        const addMarkerFromTick = (markerConfigFn, tick, idx) => {
+            const align_label = labelTopOrBottom(tick, idx);
+            const marker_config = markerConfigFn(tick, idx, align_label);
 
             if (marker_config) SmartChartStore.createMarker(marker_config);
         };
