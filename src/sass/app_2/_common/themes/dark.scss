@@ -25,6 +25,9 @@
             &-info-basis {
                 color: $COLOR_DARK_BLUE_7;
             }
+            &-info-value {
+                color: $COLOR_WHITE;
+            }
         }
         &__fieldset {
             background: $COLOR_DARK_BLUE_3;
@@ -130,7 +133,7 @@
             color: $COLOR_DARK_BLUE_7;
             background-color: $COLOR_DARK_BLUE_2;
 
-            &.selected {
+            &--selected {
                 background-color: $COLOR_DARK_BLUE_5;
                 color: $COLOR_WHITE;
             }
@@ -904,7 +907,7 @@
             }
         }
         &__item {
-            &-text {
+            &-text, &-tooltip-symbols {
                 color: $COLOR_DARK_BLUE_7;
             }
             &--selected .list__item-text {
@@ -982,6 +985,42 @@
             }
         }
     }
+    .digits {
+        &__digit {
+            &-value {
+                background-color: $COLOR_DARK_BLUE_5;
+                color: $COLOR_WHITE;
+
+                &--blink {
+                    animation-name: blinking-dark-blue-2;
+                }
+                &--selected {
+                    background-color: $COLOR_DARK_BLUE_2;
+                }
+                &--win {
+                    background-color: $COLOR_GREEN_1;
+                }
+                &--loss {
+                    background-color: $COLOR_RED;
+                }
+            }
+            &-spot {
+                &-value {
+                    color: $COLOR_DARK_BLUE_7;
+                }
+                &-last {
+                    color: $COLOR_WHITE;
+
+                    &--win {
+                        color: $COLOR_GREEN_1;
+                    }
+                    &--loss {
+                        color: $COLOR_RED;
+                    }
+                }
+            }
+        }
+    }
     .page-error {
         &__box {
             background-color: $COLOR_DARK_BLUE_3;
@@ -993,6 +1032,67 @@
         &__message {
             color: $COLOR_LIGHT_BLACK_3;
             opacity: 1;
+        }
+    }
+    .hr {
+        border-color: $COLOR_DARK_BLUE_5;
+    }
+    .drawer__bg .drawer {
+        background: $COLOR_DARK_BLUE_5;
+        color: $COLOR_WHITE;
+        box-shadow: 0 1px 6px 0 rgba(42, 48, 82, 0.14), 0 2px 8px 0 rgba(20, 20, 20, 0.3);
+
+        .drawer__item {
+            &-link {
+                &:before {
+                    color: $COLOR_DARK_BLUE_7;
+                }
+                &:hover:before {
+                    color: $COLOR_WHITE;
+                }
+                &-text {
+                    color: $COLOR_DARK_BLUE_7;
+                }
+            }
+            &:hover {
+                background: $COLOR_DARK_BLUE_5;
+
+                .drawer__item-link-text {
+                    color: $COLOR_WHITE;
+                }
+            }
+        }
+        &--left, &--right {
+            .drawer__header, .drawer__footer {
+                border-color: $COLOR_DARK_BLUE_5;
+
+                .drawer__brand-logo, &.btn-close {
+                    border-color: $COLOR_DARK_BLUE_5;
+                }
+                .drawer__brand-logo .drawer__img:before {
+                    background-image: url('../images/header/binary_logo_dark.svg');
+                }
+            }
+        }
+    }
+    .chart-spot-label {
+        &__value-container {
+            background: $COLOR_DARK_BLUE_5;
+        }
+        &__time {
+            color: $COLOR_WHITE;
+        }
+        &__time-container {
+            svg {
+                g {
+                    stroke: $COLOR_WHITE;
+                }
+            }
+        }
+    }
+    .chart-spot {
+        &__entry {
+            background-color: unset;
         }
     }
 }

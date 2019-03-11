@@ -1,7 +1,7 @@
-import React      from 'react';
-import Tooltip    from '../../../javascript/app_2/App/Components/Elements/tooltip.jsx';
-import Button     from '../../../javascript/app_2/App/Components/Form/button.jsx';
-import InputField from '../../../javascript/app_2/App/Components/Form/input-field.jsx';
+import React   from 'react';
+import Tooltip from '../../../javascript/app_2/App/Components/Elements/tooltip.jsx';
+import Button  from '../../../javascript/app_2/App/Components/Form/button.jsx';
+import Input   from '../../../javascript/app_2/App/Components/Form/InputField/input.jsx';
 
 const StyleGuide = () => (
     <div className='container'>
@@ -73,9 +73,11 @@ const StyleGuide = () => (
                 </div>
                 <div className='gr-row gr-padding-20'>
                     <div className='gr-12'>
-                        <InputField
+                        <Input
                             type='text'
                             name='text'
+                            is_read_only
+                            value='text'
                             placeholder='Placeholder Text'
                             label='Text Field'
                         />
@@ -83,9 +85,11 @@ const StyleGuide = () => (
                 </div>
                 <div className='gr-row gr-padding-20'>
                     <div className='gr-12'>
-                        <InputField
+                        <Input
                             type='number'
                             name='number'
+                            is_read_only
+                            value='1'
                             placeholder='Placeholder Number'
                             label='Numbers Field'
                         />
