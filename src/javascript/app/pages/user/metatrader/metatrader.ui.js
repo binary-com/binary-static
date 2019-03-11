@@ -638,6 +638,10 @@ const MetaTraderUI = (() => {
         }
     };
 
+    const showEA = (is_shown) => {
+        getElementById('mt-ea').setVisibility(is_shown);
+    };
+
     return {
         init,
         setAccountType,
@@ -653,6 +657,7 @@ const MetaTraderUI = (() => {
         enableButton,
         showHideMAM,
         setTopupLoading,
+        showEA,
 
         $form   : () => $form,
         getToken: () => token,

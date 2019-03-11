@@ -25,12 +25,13 @@ const MetaTrader = (() => {
                     BinarySocket.send({ get_limits: 1 }).then(getAllAccountsInfo);
                     getExchangeRates();
                 }
-            } else if (State.getResponse('landing_company.gaming_company.shortcode') === 'malta') {
-                // TODO: remove this elseif when we enable mt account opening for malta
-                // show specific message to clients from malta landing company as long as there is no mt_company for them
-                MetaTraderUI.displayPageError(localize('Our MT5 service is currently unavailable to EU residents due to pending regulatory approval.'));
             } else {
                 MetaTraderUI.displayPageError(localize('Sorry, this feature is not available in your jurisdiction.'));
+            }
+
+            const shortcode = State.getResponse('landing_company.gaming_company.shortcode');
+            if (shortcode === 'malta' || shortcode === 'maltainvest') {
+                MetaTraderUI.showEA(false);
             }
         });
     };
