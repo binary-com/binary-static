@@ -126,8 +126,11 @@
 
         &-title {
             @include typeface(--paragraph-left-bold-black);
-            @include toEm(padding, 8px 0, 1em);
+            padding-bottom: 0.8em;
             display: block;
+        }
+        &-group {
+            padding-bottom: 16px;
         }
     }
     &__accounts {
@@ -162,7 +165,7 @@
         background-color: $COLOR_WHITE;
 
         .acc-switcher__id {
-            @include typeface(--paragraph-left-light-black);
+            @include typeface(--paragraph-left-normal-black);
             display: flex;
             align-items: center;
 
@@ -175,7 +178,7 @@
                 border-radius: 16px;
             }
             &-icon {
-                margin-right: 1.6em;
+                @include toEm(margin-right, 16px, 1em);
             }
         }
         &:hover:not(.acc-switcher__account--selected) {
@@ -185,13 +188,11 @@
             background: $COLOR_LIGHT_GRAY_1;
 
             .acc-switcher__id {
-                color: $COLOR_WHITE;
-                font-weight: 700;
+                @include typeface(--paragraph-left-bold-active);
 
                 &--virtual:before {
                     color: $COLOR_WHITE;
                     border: 1px solid $COLOR_WHITE;
-
                 }
             }
         }
