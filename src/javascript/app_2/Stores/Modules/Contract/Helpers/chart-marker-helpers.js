@@ -1,4 +1,5 @@
 import extend                  from 'extend';
+import { isDigitContract }     from 'Stores/Modules/Contract/Helpers/digits';
 import { MARKER_TYPES_CONFIG } from '../../SmartChart/Constants/markers';
 
 const createMarkerConfig = (marker_type, x, y, content_config) => (
@@ -51,8 +52,9 @@ export const createMarkerSpotEntry = (contract_info) => {
     );
 };
 
-export const createMarkerSpotExit = (contract_info) => {
+export const createMarkerSpotExit = (contract_info, align_label) => {
     if (!contract_info.exit_tick_time) return false;
+    const spot_count = isDigitContract(contract_info.contract_type) ? '' : contract_info.tick_count;
 
     return createMarkerConfig(
         MARKER_TYPES_CONFIG.SPOT_EXIT.type,
@@ -61,16 +63,22 @@ export const createMarkerSpotExit = (contract_info) => {
         {
             spot_value: `${contract_info.exit_tick}`,
             status    : `${contract_info.profit > 0 ? 'won' : 'lost' }`,
+            spot_count,
+            align_label,
         },
     );
 };
 
-export const createMarkerSpotMiddle = (tick, idx) => {
+export const createMarkerSpotMiddle = (tick, idx, align_label) => {
     const marker_config = createMarkerConfig(
         MARKER_TYPES_CONFIG.SPOT_MIDDLE.type,
         tick.time,
         tick.price,
-        { spot_value: `${idx}` },
+        {
+            spot_value: `${tick.price}`,
+            spot_count: idx,
+            align_label,
+        },
     );
     marker_config.type = `${marker_config.type}_${idx}`;
 

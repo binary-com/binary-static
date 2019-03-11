@@ -7,7 +7,7 @@ import {
     createMarkerPurchaseTime,
     createMarkerStartTime,
 } from './chart-marker-helpers';
-// TODO: 1. remove count from digit 2. Over/Under label logic
+
 export const createChartTickMarkers = (SmartChartStore, contract_info) => {
     const tick_marker_handler = tickMarker.getInstance(SmartChartStore, contract_info);
 
@@ -18,6 +18,10 @@ export const createChartTickMarkers = (SmartChartStore, contract_info) => {
         // TODO: implement middle tick markers for ongoing contracts
         // tick_marker_handler.addOnGoingMarkers();
     }
+};
+
+export const destroyChartTickMarkers = () => {
+    tickMarker.destroyInstance();
 };
 
 const zip = (arr, ...arrs) => arr.map((val, idx) => arrs.reduce((a, curr) => [...a, curr[idx]], [val]));
@@ -37,14 +41,33 @@ const tickMarker = (function () {
             end          : contract_info.exit_tick_time,
             count        : (contract_info.tick_count + 1), // add 1 to prevent for 1-tick contracts from returning 5000 ticks
         };
+        const added_ticks = [];
 
-        const addMarkerFromContract = (createMarkerFn) => {
-            const marker_config = createMarkerFn(contract_info);
+        const addMarkerFromContract = (createMarkerFn, tick, idx) => {
+            const align_label = labelTopOrBottom(tick, idx);
+            const marker_config = createMarkerFn(contract_info, align_label);
+
             if (marker_config) SmartChartStore.createMarker(marker_config);
         };
 
+        const labelTopOrBottom = (tick, idx) => {
+            let align_label = 'top';
+            if (tick && tick.price) {
+                if (idx > 0) {
+                    const prev_tick = added_ticks[idx - 1];
+
+                    if (+tick.price < +prev_tick.price) align_label = 'bottom';
+                    if (+tick.price === +prev_tick.price) align_label = prev_tick.align_label;
+                }
+                added_ticks.push({ ...tick, align_label });
+            }
+            return align_label;
+        };
+
         const addMarkerFromTick = (createMarkerFn, tick, idx) => {
-            const marker_config = createMarkerFn(tick, idx);
+            const label_position = labelTopOrBottom(tick, idx);
+            const marker_config = createMarkerFn(tick, idx, label_position);
+
             if (marker_config) SmartChartStore.createMarker(marker_config);
         };
 
@@ -63,8 +86,8 @@ const tickMarker = (function () {
             const is_exit   = isExitTick(tick);
             const is_middle = isMiddleTick(tick);
 
-            if (is_entry) addMarkerFromContract(createMarkerSpotEntry);
-            if (is_exit) addMarkerFromContract(createMarkerSpotExit);
+            if (is_entry) addMarkerFromContract(createMarkerSpotEntry, tick, idx);
+            if (is_exit) addMarkerFromContract(createMarkerSpotExit, tick, idx);
             if (is_middle) addMarkerFromTick(createMarkerSpotMiddle, tick, idx);
         };
 
@@ -99,6 +122,10 @@ const tickMarker = (function () {
                 instance = tickMarkerHandler(SmartChartStore, contract_info);
             }
             return instance;
+        },
+        destroyInstance: () => {
+            // TODO: forget tick history stream for ongoing contracts here
+            if (instance) instance = null;
         },
     };
 })();

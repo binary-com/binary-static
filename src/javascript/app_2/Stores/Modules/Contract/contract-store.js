@@ -8,7 +8,9 @@ import { localize }               from '_common/localize';
 import { WS }                     from 'Services';
 import { createChartBarrier }     from './Helpers/chart-barriers';
 import { createChartMarkers }     from './Helpers/chart-markers';
-import { createChartTickMarkers } from './Helpers/chart-tick-markers';
+import {
+    destroyTickMarkers,
+    createChartTickMarkers } from './Helpers/chart-tick-markers';
 import {
     getDetailsExpiry,
     getDetailsInfo }             from './Helpers/details';
@@ -92,6 +94,7 @@ export default class ContractStore extends BaseStore {
         this.sell_info         = {};
         this.is_sell_requested = false;
 
+        destroyTickMarkers();
         this.smart_chart.removeBarriers();
         this.smart_chart.removeMarkers();
         this.smart_chart.setContractMode(false);
