@@ -11,7 +11,7 @@
             }
         }
     }
-    &--is-blurred {
+    &--is-blurred .trade-container, &--is-blurred .statement {
         filter: blur(3px);
     }
     &--show-positions-drawer {
