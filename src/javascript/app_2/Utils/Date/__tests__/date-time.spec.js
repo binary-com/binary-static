@@ -9,10 +9,10 @@ describe('toMoment', () => {
         expect(DateTime.toMoment(epoch)).to.deep.equal(moment.unix(epoch).utc());
     });
     it('return correct date when plain string date passed', () => {
-        const date = '12 Mar 2019'
-        const format = 'DD MMM YYYY'
+        const date = '12 Mar 2019';
+        const format = 'DD MMM YYYY';
 
-        expect(DateTime.toMoment(date).format(format)).to.equal(date)
+        expect(DateTime.toMoment(date).format(format)).to.equal(date);
     });
 });
 
@@ -63,13 +63,13 @@ describe('daysFromTodayTo', () => {
 
     it('return empty string if the user selected previous day', () => {
         //get previous day
-        const date = moment().utc().startOf('day').subtract(1, 'days').format('YYYY-MM-DD');
+        const date = moment().startOf('day').subtract(1, 'days').format('YYYY-MM-DD');
         expect(DateTime.daysFromTodayTo(date)).to.be.empty;
     });
 
     it('return difference value between selected date and today', () => {
         //get date three days from now
-        const date = moment().utc().startOf('day').add('3', 'days').format('YYYY-MM-DD');
+        const date = moment().startOf('day').add('3', 'days').format('YYYY-MM-DD');
         expect(DateTime.daysFromTodayTo(date)).to.deep.equal(3);
     });
 });
