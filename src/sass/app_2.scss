@@ -1,6 +1,7 @@
 // Base
 @import 'app_2/_common/base/reset';
 @import 'app_2/_common/base/constants';
+@import 'app_2/_common/base/themes';
 @import 'app_2/_common/base/mixin';
 @import 'app_2/_common/base/typography';
 @import 'app_2/_common/base/common';
@@ -57,6 +58,8 @@
 
 // Modules
 @import 'app_2/modules/contract';
+@import 'app_2/modules/contract/bottom-widgets';
+@import 'app_2/modules/contract/digits';
 @import 'app_2/modules/error-pages';
 @import 'app_2/modules/portfolio';
 @import 'app_2/modules/settings';

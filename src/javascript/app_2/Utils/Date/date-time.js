@@ -20,7 +20,7 @@ export const toMoment = value => {
     const is_number      = typeof value === 'number';
     // need to explicitly convert date string to a JS Date object then pass that into Moment
     // to get rid of the warning: Deprecation warning: moment construction falls back to js Date
-    const formatted_date = moment(new Date(value)).format('YYYY-MM-DD');
+    const formatted_date = moment(new Date(value)).utc().format('YYYY-MM-DD');
     return is_number ? epochToMoment(value) : moment.utc(formatted_date);
 };
 

@@ -6,7 +6,7 @@
     border: solid 1px $COLOR_WHITE;
     border-radius: 4px;
     transition: transform 0.3s, opacity 0.3s;
-    padding: 0.4em;
+    padding: 1em;
     color: $COLOR_LIGHT_BLACK_1;
 
     &__display {
@@ -18,7 +18,7 @@
 
         /* postcss-bem-linter: ignore */
         span[name=contract_type] {
-            @include typeface(--small-left-light-black);
+            @include typeface(--small-left-normal-black);
             vertical-align: middle;
         }
         &:hover, &:focus {
@@ -50,7 +50,7 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        margin-bottom: 0.2em;
+        margin-bottom: 0.6em;
 
         /* postcss-bem-linter: ignore */
         .category-wrapper {
