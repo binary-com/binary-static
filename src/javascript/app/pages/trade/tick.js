@@ -1,6 +1,7 @@
 const moment               = require('moment');
 const countDecimalPlaces   = require('./common_independent').countDecimalPlaces;
 const displayPriceMovement = require('./common_independent').displayPriceMovement;
+const addComma             = require('../../../_common/base/currency_base').addComma;
 const elementTextContent   = require('../../../_common/common_functions').elementTextContent;
 const getElementById       = require('../../../_common/common_functions').getElementById;
 const isVisible            = require('../../../_common/common_functions').isVisible;
@@ -52,21 +53,26 @@ const Tick = (() => {
     const display = () => {
         $('#spot').fadeIn(200);
         let message = '';
+        let message_number = '';
         if (error_message) {
             message = error_message;
+            message_number = error_message;
         } else {
-            message = quote;
+            const decimal_places = parseInt(countDecimalPlaces(Tick.quote()));
+            message = addComma(quote, decimal_places);
+            message_number = quote;
         }
 
         const spot_element = getElementById('spot');
-        if (parseFloat(message) !== +message) {
+        if (parseFloat(message_number) !== +message_number) {
             spot_element.className = 'error';
         } else {
             spot_element.classList.remove('error');
-            displayPriceMovement(spot_element, elementTextContent(spot_element), message);
+            displayPriceMovement(spot_element, spot_element.getAttribute('data-value'), message_number);
             displayIndicativeBarrier();
         }
 
+        spot_element.setAttribute('data-value', message_number);
         elementTextContent(spot_element, message);
     };
 
