@@ -27,7 +27,6 @@ const Purchase = ({
 }) => (
     Object.keys(trade_types).map((type, idx) => {
         const info        = proposal_info[type] || {};
-        
         const is_disabled = !is_purchase_enabled || !is_trade_enabled || !info.id || !is_client_allowed_to_visit;
         const is_loading  = !info.has_error && !info.id;
         const purchase_button = (

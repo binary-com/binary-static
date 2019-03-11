@@ -5,7 +5,7 @@ import Button            from 'App/Components/Form/button.jsx';
 import Money             from 'App/Components/Elements/money.jsx';
 import { IconTradeType } from 'Assets/Trading/Types';
 
-const PurchaseButton = (
+const PurchaseButton = ({
     currency,
     info,
     is_disabled,
@@ -13,7 +13,7 @@ const PurchaseButton = (
     onClickPurchase,
     trade_types,
     type,
-) => (
+}) => (
     <Button
         is_disabled={is_disabled}
         id={`purchase_${type}`}
