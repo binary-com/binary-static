@@ -833,12 +833,11 @@ label + input {
         transform: translate(-50%, -50%);
         background: $COLOR_WHITE;
         box-shadow: 0 2px 31px 0 rgba(0, 0, 0, 0.82);
-        border-radius: 10px;
         overflow: hidden;
 
         &__head {
             box-sizing: border-box;
-            padding: 20px 25px;
+            padding: 45px 100px;
             background-image: url('../images/interview_popup/bg-shape.svg');
             background-size: 100%;
             background-position: bottom;
@@ -869,6 +868,10 @@ label + input {
             }
             #interview_no_thanks {
                 color: $COLOR_NAV;
+                cursor: pointer;
+            }
+            #interview_ask_later {
+                cursor: pointer;
             }
         }
         &__secondary_options {

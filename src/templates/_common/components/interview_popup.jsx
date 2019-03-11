@@ -6,7 +6,6 @@ const InterviewPopup = () => (
         <HTMLComment>googleoff: all</HTMLComment>{/* https://support.google.com/gsa/answer/6329153?hl=en#82542 */}
         <div className='popup'>
             <div className='popup__head'>
-                <img className='popup__present_img' src={it.url_for('images/interview_popup/bg-shape.svg')} alt='binary option' />
                 <div className='header-1'>{it.L('Can you spare 15 minutes?')}</div>
             </div>
             <div className='popup__body'>
