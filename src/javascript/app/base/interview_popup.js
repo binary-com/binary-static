@@ -1,7 +1,7 @@
-const Cookies        = require('js-cookie');
-const BinarySocket   = require('./socket');
-const Client         = require('../base/client');
-const isEuCountry    = require('../common/country_base').isEuCountry;
+const Cookies      = require('js-cookie');
+const BinarySocket = require('./socket');
+const Client       = require('../base/client');
+const isEuCountry  = require('../common/country_base').isEuCountry;
 
 const InterviewPopup = (() => {
     const onLoad = () => {
