@@ -5,6 +5,7 @@ import PropTypes               from 'prop-types';
 import React                   from 'react';
 import Url                     from '_common/url';
 import { connect }             from 'Stores/connect';
+import BottomWidgets           from '../Components/bottom-widgets.jsx';
 import ControlWidgets          from '../Components/control-widgets.jsx';
 import ChartMarker             from '../Components/Markers/marker.jsx';
 import TopWidgets              from '../Components/top-widgets.jsx';
@@ -30,10 +31,16 @@ class Chart extends React.Component {
         />
     );
 
+    bottomWidgets = () => (
+        <BottomWidgets Digits={this.props.Digits} />
+    );
+
     render() {
+
         return (
             <SmartChart
                 barriers={this.props.barriers_array}
+                bottomWidgets={this.props.should_show_last_digit_stats ? undefined : this.bottomWidgets}
                 chartControlsWidgets={this.chartControlsWidgets}
                 chartType={this.props.chart_type}
                 endEpoch={this.props.end_epoch}
@@ -64,6 +71,7 @@ class Chart extends React.Component {
 
 Chart.propTypes = {
     barriers_array              : PropTypes.array,
+    BottomWidgets               : PropTypes.node,
     chart_id                    : PropTypes.number,
     chart_type                  : PropTypes.string,
     end_epoch                   : PropTypes.number,

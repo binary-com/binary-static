@@ -807,14 +807,8 @@ body #not_authenticated_financial ul.checked > li {
     }
     img.platform {
         max-height: 150px;
-        width: 100%;
-
-        @media (max-width: 768px) {
-            width: auto;
-        }
-        @media (max-width: 350px) {
-            max-width: 290px;
-        }
+        width: auto;
+        max-width: 100%;
     }
     @media screen and (max-width: 768px) {
         .no-center-text-p-m {

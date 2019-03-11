@@ -15,14 +15,14 @@ class DrawerItem extends React.Component {
         const { link_to, text, icon, custom_action } = this.props;
 
         return (
-            <div className='drawer-item' onClick={this.drawerItemClicked}>
+            <div className='drawer__item' onClick={this.drawerItemClicked}>
                 {custom_action ?
-                    <a href='javascript:;' onClick={custom_action}>
-                        <span>{icon}{text}</span>
+                    <a href='javascript:;' className='drawer__item-link' onClick={custom_action}>
+                        <span className='drawer__item-link-text'>{icon}{text}</span>
                     </a>
                     :
-                    <BinaryLink to={link_to}>
-                        <span>{icon}{text}</span>
+                    <BinaryLink className='drawer__item-link' to={link_to}>
+                        <span className='drawer__item-link-text'>{icon}{text}</span>
                     </BinaryLink>
                 }
             </div>
