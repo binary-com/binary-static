@@ -93,6 +93,9 @@ html {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    @include themify($themes) {
+        background: themed('background_color');
+    }
 }
 
 /* postcss-bem-linter: ignore */
