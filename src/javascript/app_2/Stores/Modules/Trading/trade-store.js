@@ -53,6 +53,7 @@ export default class TradeStore extends BaseStore {
     @observable contract_types_list  = {};
     @observable form_components      = [];
     @observable trade_types          = {};
+    @observable is_only_forwarding   = false;
 
     // Amount
     @observable amount     = 10;
@@ -326,13 +327,19 @@ export default class TradeStore extends BaseStore {
             this.currency = obj_new_values.currency;
         }
 
+        let is_only_forwarding;
+
+        if (/symbol/.test(Object.keys(obj_new_values))) {
+            await Symbol.onChangeSymbolAsync(obj_new_values.symbol);
+            is_only_forwarding = ContractType.getContractCategories().is_only_forwarding;
+        }
+        this.setOnlyForwarding(is_only_forwarding);
+
+        if (is_only_forwarding) return;
+
         const new_state = this.updateStore(cloneObject(obj_new_values));
 
         if (is_changed_by_user || /\b(symbol|contract_types_list)\b/.test(Object.keys(new_state))) {
-            if ('symbol' in new_state) {
-                await Symbol.onChangeSymbolAsync(new_state.symbol);
-            }
-
             this.updateStore({ // disable purchase button(s), clear contract info
                 is_purchase_enabled: false,
                 proposal_info      : {},
@@ -364,6 +371,11 @@ export default class TradeStore extends BaseStore {
 
             this.debouncedProposal();
         }
+    }
+
+    @action.bound
+    setOnlyForwarding(is_only_forwarding) {
+        this.is_only_forwarding = is_only_forwarding;
     }
 
     @action.bound
