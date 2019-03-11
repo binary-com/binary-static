@@ -20,7 +20,7 @@ const InterviewPopup = () => (
                         <span className='popup__separator' />
                         <a id='interview_ask_later'>{it.L('Ask me later')}</a>
                     </div>
-                    <a href={'javascript:void(0);'} id='interview_interested' className='button' target='_blank' rel='noopener noreferrer'>
+                    <a id='interview_interested' className='button'>
                         <span>{it.L('I’m interested')}</span>
                     </a>
                 </div>
