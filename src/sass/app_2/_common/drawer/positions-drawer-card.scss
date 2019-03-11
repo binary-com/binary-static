@@ -148,7 +148,7 @@
     &__type {
         font-size: 1.2em;
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         font-weight: bold;
     }
     &__symbol {
@@ -262,7 +262,7 @@
         }
     }
     &__type-label {
-        width: 3em;
+        width: 3.8em;
         line-height: 1.5;
         text-align: left;
     }
