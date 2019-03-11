@@ -94,7 +94,7 @@ describe('getExpiryType', () => {
                 server_time: '2018-12-25 23:59:59',
             }
         },
-        duration_units_list: [ 
+        duration_units_list: [
             { "text": "ticks", "value": "t" },
             { "text": "minutes", "value": "m" },
             { "text": "hours", "value": "h" },
@@ -109,11 +109,11 @@ describe('getExpiryType', () => {
     });
 
     it('Return daily if expiry date is tomorrow', () => {
-        store.expiry_date = '2018-12-26';
-        store.expiry_type = 'endtime'
+        store.expiry_date = moment().utc().add(1, 'days');
+        store.expiry_type = 'endtime';
         expect(Duration.getExpiryType(store)).to.eql('daily');
     });
-    
+
     it('Return tick if duration unit is t', () => {
         store.duration_unit = 't'
         store.expiry_type = 'duration'
