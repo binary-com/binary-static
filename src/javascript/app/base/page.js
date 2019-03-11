@@ -79,6 +79,7 @@ const Page = (() => {
             init();
             if (!Login.isLoginPages()) {
                 Language.setCookie(Language.urlLang());
+                InterviewPopup.onLoad();
             }
             Header.onLoad();
             Footer.onLoad();
@@ -87,7 +88,6 @@ const Page = (() => {
             updateLinksURL('body');
             recordAffiliateExposure();
             endpointNotification();
-            InterviewPopup.onLoad();
         }
         Contents.onLoad();
 

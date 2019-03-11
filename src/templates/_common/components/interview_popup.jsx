@@ -9,9 +9,9 @@ const InterviewPopup = () => (
                 <div className='header-1'>{it.L('Can you spare 15 minutes?')}</div>
             </div>
             <div className='popup__body'>
-                <div className='header-2'>{it.L('We’d love to hear what you think.')}</div>
+                <div className='header-2'>{it.L('We\'d love to hear what you think.')}</div>
                 <p>
-                    {it.L('We’re looking to improve our products and services, and we want to understand your needs better. We’d like to interview you via phone, to know what you like about us, what you don’t like, and where we can do better.')}
+                    {it.L('We\'re looking to improve our products and services, and we want to understand your needs better. We\'d like to interview you via phone, to know what you like about us, what you don\'t like, and where we can do better.')}
                 </p>
                 <div className='popup__options'>
                     <div className='popup__secondary_options'>
@@ -20,7 +20,7 @@ const InterviewPopup = () => (
                         <a id='interview_ask_later'>{it.L('Ask me later')}</a>
                     </div>
                     <a id='interview_interested' className='button'>
-                        <span>{it.L('I’m interested')}</span>
+                        <span>{it.L('I\'m interested')}</span>
                     </a>
                 </div>
             </div>
