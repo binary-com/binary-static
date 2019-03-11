@@ -1,12 +1,11 @@
-import { WS }                from 'Services';
+import { WS }                  from 'Services';
 import {
     createMarkerExpiry,
     createMarkerPurchaseTime,
     createMarkerSpotEntry,
     createMarkerSpotExit,
     createMarkerSpotMiddle,
-    createMarkerStartTime,
-} from './chart-marker-helpers';
+    createMarkerStartTime    } from './chart-marker-helpers';
 
 export const createChartTickMarkers = (SmartChartStore, contract_info) => {
     const tick_marker_handler = tickMarker.getInstance(SmartChartStore, contract_info);

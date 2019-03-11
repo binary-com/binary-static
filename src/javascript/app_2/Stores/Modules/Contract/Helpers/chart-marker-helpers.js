@@ -1,6 +1,8 @@
 import extend                  from 'extend';
 import { isDigitContract }     from 'Stores/Modules/Contract/Helpers/digits';
-import { isUserSold }          from 'Stores/Modules/Contract/Helpers/logic';
+import {
+    getEndSpotTime,
+    isUserSold }               from 'Stores/Modules/Contract/Helpers/logic';
 import { MARKER_TYPES_CONFIG } from '../../SmartChart/Constants/markers';
 
 const createMarkerConfig = (marker_type, x, y, content_config) => (
@@ -16,10 +18,11 @@ const createMarkerConfig = (marker_type, x, y, content_config) => (
 // -------------------- Lines --------------------
 export const createMarkerExpiry = (contract_info) => {
     if (contract_info.status === 'open' || !contract_info.date_expiry) return false;
+    const end_spot_time = getEndSpotTime(contract_info);
 
     return createMarkerConfig(
         MARKER_TYPES_CONFIG.LINE_END.type,
-        contract_info.date_expiry,
+        end_spot_time,
     );
 };
 
