@@ -1,17 +1,14 @@
-import classNames        from 'classnames';
 import PropTypes         from 'prop-types';
 import React             from 'react';
 import { localize }      from '_common/localize';
 import { isEmptyObject } from '_common/utility';
-import Money             from 'App/Components/Elements/money.jsx';
 import { PopConfirm }    from 'App/Components/Elements/PopConfirm';
-import Button            from 'App/Components/Form/button.jsx';
 import Fieldset          from 'App/Components/Form/fieldset.jsx';
-import { IconTradeType } from 'Assets/Trading/Types';
 import { connect }       from 'Stores/connect';
 import ContractInfo      from '../Components/Form/Purchase/contract-info.jsx';
 import MessageBox        from '../Components/Form/Purchase/MessageBox';
 import PurchaseLock      from '../Components/Form/Purchase/PurchaseLock';
+import PurchaseButton    from '../Components/Elements/purchase-button.jsx';
 
 const Purchase = ({
     currency,
@@ -30,50 +27,20 @@ const Purchase = ({
 }) => (
     Object.keys(trade_types).map((type, idx) => {
         const info        = proposal_info[type] || {};
+        
         const is_disabled = !is_purchase_enabled || !is_trade_enabled || !info.id || !is_client_allowed_to_visit;
-        const is_loading = !info.has_error && !info.id;
-
+        const is_loading  = !info.has_error && !info.id;
         const purchase_button = (
-            <Button
+            <PurchaseButton
+                currency={currency}
+                info={info}
                 is_disabled={is_disabled}
-                id={`purchase_${type}`}
-                className={classNames(
-                    'btn--primary',
-                    'btn-purchase',
-                    { 'animate': is_loading })}
-                has_effect
-                onClick={() => { onClickPurchase(info.id, info.stake, type); }}
-            >
-                <React.Fragment>
-                    <div className='btn-purchase__content'>
-                        <div className='btn-purchase__trade-type'>
-                            <div className='btn-purchase__trade-type-icon'>
-                                <IconTradeType type={!is_disabled ? type.toLowerCase() : ''} />
-                            </div>
-                            <div className='btn-purchase__trade-type-text'>
-                                <span>
-                                    {!is_disabled && localize('[_1]', trade_types[type])}
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='btn-purchase__effect-detail' />
-                    <div className='btn-purchase__info'>
-                        <div className='btn-purchase__return'>
-                            <span className='btn-purchase__return-text'>
-                                {!is_disabled && info.returns}
-                            </span>
-                        </div>
-                        <div className='btn-purchase__profit'>
-                            <span className='btn-purchase__profit-text'>
-                                {!is_disabled && <Money amount={info.profit} currency={currency} className='btn-purchase__currency' />}
-                            </span>
-                        </div>
-                    </div>
-                </React.Fragment>
-            </Button>
+                is_loading={is_loading}
+                onClickPurchase={onClickPurchase}
+                trade_types={trade_types}
+                type={type}
+            />
         );
-
         const is_purchase_error = (!isEmptyObject(purchase_info) && purchase_info.echo_req.buy === info.id);
 
         return (
