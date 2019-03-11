@@ -31,11 +31,12 @@ const ChartSettings = ({
                     <RadioGroup
                         items={[
                             {
-                                label: 'Left', // localization will be handled in RadioGroup
-                                value: false,
-                            }, {
-                                label: 'Bottom',
+                                label: 'Bottom',  // localization will be handled in RadioGroup
                                 value: true,
+                            },
+                            {
+                                label: 'Left',
+                                value: false,
                             },
                         ]}
                         selected={is_layout_default}
