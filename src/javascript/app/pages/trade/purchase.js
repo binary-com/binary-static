@@ -2,6 +2,7 @@ const moment                   = require('moment');
 const isCallputspread          = require('./callputspread').isCallputspread;
 const Contract                 = require('./contract');
 const hidePriceOverlay         = require('./common').hidePriceOverlay;
+const countDecimalPlaces       = require('./common_independent').countDecimalPlaces;
 const getLookBackFormula       = require('./lookback').getFormula;
 const isLookback               = require('./lookback').isLookback;
 const processPriceRequest      = require('./price').processPriceRequest;
@@ -15,6 +16,7 @@ const Header                   = require('../../base/header');
 const BinarySocket             = require('../../base/socket');
 const formatMoney              = require('../../common/currency').formatMoney;
 const TopUpVirtualPopup        = require('../../pages/user/account/top_up_virtual/pop_up');
+const addComma                 = require('../../../_common/base/currency_base').addComma;
 const CommonFunctions          = require('../../../_common/common_functions');
 const localize                 = require('../../../_common/localize').localize;
 const localizeKeepPlaceholders = require('../../../_common/localize').localizeKeepPlaceholders;
@@ -53,7 +55,7 @@ const Purchase = (() => {
                     parseFloat(this_quote_el.innerText.replace(/,+/, '')),
                     700,
                     this_quote_el,
-                    (content) => `<div class='quote'>${content.replace(/\d$/, makeBold)}</div>`,
+                    (content) => `<div class='quote'>${addComma(content, countDecimalPlaces(content)).replace(/\d$/, makeBold)}</div>`,
                 );
             }
         } else {
@@ -411,8 +413,9 @@ const Purchase = (() => {
                 if (!tick_config.is_digit) {
                     fragment.appendChild(el2);
                 }
+                const tick_with_comma = addComma(tick_d.quote, countDecimalPlaces(tick_d.quote));
                 const tick = (tick_config.is_tick_high || tick_config.is_tick_low) ?
-                    tick_d.quote : `<div class='quote'>${tick_d.quote.replace(/\d$/, makeBold)}</div>`;
+                    tick_with_comma : `<div class='quote'>${tick_with_comma.replace(/\d$/, makeBold)}</div>`;
                 const el3  = createElement('div', { class: 'col' });
                 CommonFunctions.elementInnerHtml(el3, tick);
 
