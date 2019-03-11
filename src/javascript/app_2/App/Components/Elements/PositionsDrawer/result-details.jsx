@@ -50,7 +50,7 @@ class ResultDetails extends React.PureComponent {
                     <div className='result-details__grid'>
                         <ResultDetailsItem
                             label={localize('Barrier')}
-                            value={barrier || ' - '}
+                            value={barrier ? barrier.toString() : ' - '}
                         />
                         <ResultDetailsItem
                             label={localize('Entry spot')}
