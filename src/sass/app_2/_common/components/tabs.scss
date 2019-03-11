@@ -32,6 +32,9 @@
     &__header {
         @include typeface(--paragraph-left-light-black);
         @include toEm(padding, 16px, 1.2em);
+        @include themify($themes) {
+            color: themed('text_primary_color');
+        }
         cursor: pointer;
 
         &:after {
@@ -54,8 +57,10 @@
     }
     &:hover, &--active {
         .tab__header {
-            color: $COLOR_DARK_BLUE_5;
             font-weight: 400;
+            @include themify($themes) {
+                color: themed('text_color');
+            }
         }
     }
 }
@@ -66,7 +71,9 @@
     bottom: -0.1em;
     left: 0;
     right: 0;
-    border-bottom: 2px solid $COLOR_DARK_BLUE_5;
+    @include themify($themes) {
+        border-bottom: 2px solid themed('text_color');
+    }
 }
 
 /** @define tab-content */
