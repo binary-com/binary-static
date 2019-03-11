@@ -1,10 +1,10 @@
 import { WS }                from 'Services';
 import {
+    createMarkerExpiry,
+    createMarkerPurchaseTime,
     createMarkerSpotEntry,
     createMarkerSpotExit,
     createMarkerSpotMiddle,
-    createMarkerExpiry,
-    createMarkerPurchaseTime,
     createMarkerStartTime,
 } from './chart-marker-helpers';
 

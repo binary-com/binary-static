@@ -9,8 +9,8 @@ import { WS }                     from 'Services';
 import { createChartBarrier }     from './Helpers/chart-barriers';
 import { createChartMarkers }     from './Helpers/chart-markers';
 import {
-    destroyChartTickMarkers,
-    createChartTickMarkers } from './Helpers/chart-tick-markers';
+    createChartTickMarkers,
+    destroyChartTickMarkers }    from './Helpers/chart-tick-markers';
 import {
     getDetailsExpiry,
     getDetailsInfo }             from './Helpers/details';
