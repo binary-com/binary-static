@@ -11,6 +11,7 @@ const TrafficSource    = require('../common/traffic_source');
 const RealityCheck     = require('../pages/user/reality_check/reality_check');
 const Elevio           = require('../../_common/base/elevio');
 const Login            = require('../../_common/base/login');
+const ClientBase       = require('../../_common/base/client_base');
 const elementInnerHtml = require('../../_common/common_functions').elementInnerHtml;
 const getElementById   = require('../../_common/common_functions').getElementById;
 const Crowdin          = require('../../_common/crowdin');
@@ -79,7 +80,10 @@ const Page = (() => {
             init();
             if (!Login.isLoginPages()) {
                 Language.setCookie(Language.urlLang());
-                InterviewPopup.onLoad();
+
+                if (!ClientBase.get('is_virtual')) {
+                    InterviewPopup.onLoad();
+                }
             }
             Header.onLoad();
             Footer.onLoad();
