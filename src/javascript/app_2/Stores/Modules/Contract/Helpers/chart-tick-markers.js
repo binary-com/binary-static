@@ -7,7 +7,7 @@ import {
     createMarkerPurchaseTime,
     createMarkerStartTime,
 } from './chart-marker-helpers';
-
+// TODO: 1. remove count from digit 2. Over/Under label logic
 export const createChartTickMarkers = (SmartChartStore, contract_info) => {
     const tick_marker_handler = tickMarker.getInstance(SmartChartStore, contract_info);
 

@@ -3,78 +3,95 @@
     display: flex;
     flex-direction: column;
 
-    &__content {
-        display: flex;
-        align-items: center;
-        margin-left: 1.1em;
-        margin-bottom: -0.9em;
-        padding: 0.7em;
-        border-radius: 3px;
-        background: $COLOR_GREEN_1;
-        color: $COLOR_WHITE;
-
-    }
-    &__icon {
-        margin-right: 0.5em;
-    }
-    &__arrow {
-        margin-left: 0.4em;
-        margin-bottom: 0.2em;
-        width: 0;
-        height: 0;
-        border-top: 15px solid $COLOR_GREEN_1;
-        border-left: 1px solid transparent;
-        transform: rotate(60deg);
-    }
     &__spot {
-        margin-left: -0.4em;
-        margin-bottom: -0.4em;
-        width: 0.4em;
-        height: 0.4em;
-        border-radius: 50%;
-        border: 2px solid $COLOR_GREEN_1;
-    }
-    /* postcss-bem-linter: ignore */
-    .spot-entry {
-        width: 16px;
-        height: 16px;
-        margin-bottom: -7px;
-        margin-left: -9px;
-        border: 4px solid $COLOR_SKY_BLUE;
-    }
-    /* Left aligned */
-    &--lost {
-        .chart-spot__content {
+        position: absolute;
+        bottom: -11px;
+        margin-left: -11.5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        color: $COLOR_LIGHT_BLACK_1;
+        background-color: $COLOR_WHITE;
+        border: 2px solid $COLOR_LIGHT_GRAY_1;
+
+        &--lost {
+            border-color: $COLOR_RED;
             background: $COLOR_RED;
         }
-        .chart-spot__arrow {
-            border-top-color: $COLOR_RED;
+        &--won {
+            background-color: $COLOR_GREEN_1;
+            border: 2px solid $COLOR_GREEN_1;
         }
-        .chart-spot__spot {
-            border-color: $COLOR_RED;
+        &--won, &--lost {
+            color: $COLOR_WHITE;
         }
     }
-    /* Left aligned */
-    &--left {
-        margin-left: -100%;
-        margin-right: 100%;
+    &__entry {
+        margin-bottom: -12px;
+        margin-left: -12px;
+        border: 6px solid $COLOR_ORANGE;
+        background-color: $COLOR_WHITE;
+    }
+    &__spot, &__entry {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+    }
+}
 
-        .chart-spot__content {
-            margin-right: 1.1em;
-            margin-bottom: -0.5em;
-            background: $COLOR_ORANGE;
+/** @define chart-spot-label */
+.chart-spot-label {
+    &__info-container {
+        width: 100%;
+        position: relative;
+    }
+    &__time-value-container {
+        position: absolute;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+
+        &--top {
+            bottom: 21px;
+
+            .chart-spot-label__time-container {
+                margin-bottom: 2px;
+            }
         }
-        .chart-spot__arrow {
-            align-self: flex-end;
-            margin-right: 0.8em;
-            margin-bottom: -0.2em;
-            border-top-color: $COLOR_ORANGE;
-            transform: rotate(-30deg);
+        &--bottom {
+            top: 25px;
+            flex-direction: column-reverse;
+
+            .chart-spot-label__time-container {
+                margin-top: 2px;
+            }
         }
-        .chart-spot__spot {
-            align-self: flex-end;
-            margin-right: -0.4em;
-            border-color: $COLOR_ORANGE;
+    }
+    &__time-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0px 8px;
+    }
+    &__time {
+        font-size: 10px;
+        color: $COLOR_LIGHT_BLACK_1;
+    }
+    &__time-icon {
+        margin-right: 2px;
+    }
+    &__value-container {
+        font-size: 14px;
+        padding: 4px 8px;
+        border-radius: 11px;
+        background: $COLOR_LIGHT_GRAY_1;
+
+        /* postcss-bem-linter: ignore */
+        p {
+            font-weight: bold;
+            color: $COLOR_WHITE;
+            margin-top: 2px;
         }
     }
 }
@@ -82,6 +99,7 @@
 /** @define chart-marker-line */
 .chart-marker-line {
     height: 100%;
+    z-index: 0 !important;
 
     &__wrapper {
         border-left-width: 1px;
