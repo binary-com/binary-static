@@ -112,11 +112,11 @@
         &:disabled {
             box-shadow: 0 2px 2px 0 $COLOR_LIGHT_BLACK_3;
             background-color: $COLOR_DARK_BLUE_8;
-            /* stylelint-disable */
+            /* stylelint-disable color-no-hex */
             .btn-purchase__effect-detail {
                 border-color: transparent transparent transparent rgba(127, 131, 151, 0.48);
             }
-            /* stylelint-enable */
+            /* stylelint-enable color-no-hex */
             .btn-purchase__content {
                 background-color: $COLOR_DARK_BLUE_8;
             }

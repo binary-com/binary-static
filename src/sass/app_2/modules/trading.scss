@@ -459,12 +459,12 @@
         .btn-purchase__info {
             background-color: $COLOR_LIGHT_BLACK_3;
         }
-        /* stylelint-disable */
+        /* stylelint-disable color-no-hex*/
         .btn-purchase__effect-detail {
             border-color: transparent transparent transparent #d6d6d6;
             opacity: 0.8;
         }
-        /* stylelint-enable */
+        /* stylelint-enable color-no-hex */
         .btn-purchase__trade-type-icon, .btn-purchase__trade-type-text, .btn-purchase__profit, .btn-purchase__return {
             overflow: hidden;
         }
