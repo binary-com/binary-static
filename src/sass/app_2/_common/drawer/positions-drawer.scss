@@ -16,8 +16,6 @@ $header-height: 4em;
     z-index: 2;
     top: $HEADER_HEIGHT;
     left: 4px;
-    border: 1px solid $COLOR_LIGHT_BLACK_4_SOLID;
-    background-color: $COLOR_LIGHT_BLACK_4_SOLID;
     box-sizing: border-box;
     opacity: 0;
     color: $COLOR_LIGHT_BLACK_1;
@@ -25,6 +23,11 @@ $header-height: 4em;
     will-change: transform, opacity;
     transition: opacity 0.3s ease, transform 0.3s ease;
     border-radius: $BORDER_RADIUS;
+    @include themify($themes) {
+        border: 1px solid themed('background_container_color');
+        background-color: themed('background_container_color');
+        color: themed('text_color');
+    }
 
     &--contract-mode {
         &:before {
@@ -62,6 +65,10 @@ $header-height: 4em;
         padding: 0.8em 0 0;
         box-sizing: border-box;
         overflow: hidden;
+        align-self: center;
+        @include themify($themes) {
+            color: themed('text_color');
+        }
     }
     &__footer {
         position: relative;
@@ -74,9 +81,16 @@ $header-height: 4em;
             width: 100%;
             margin: 8px;
             height: 40px;
+            @include themify($themes) {
+                background-color: themed('background_button_color');
+            }
 
             .btn__text {
                 font-size: 1.2em;
+                font-weight: bold;
+                @include themify($themes) {
+                    color: themed('text_color');
+                }
             }
         }
     }

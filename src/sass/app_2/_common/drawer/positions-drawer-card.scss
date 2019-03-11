@@ -7,7 +7,9 @@
     cursor: pointer;
     text-decoration: none;
     position: relative;
-    color: $COLOR_LIGHT_BLACK_1;
+    @include themify($themes) {
+        color: themed('navbar_active_color');
+    }
 
     &__result {
         position: absolute;
@@ -15,9 +17,8 @@
         left: 0;
         width: 100%;
         height: 100%;
-        max-height: 136px;
+        max-height: 130px;
         opacity: 0.8;
-        background-color: $COLOR_WHITE;
         border-radius: $BORDER_RADIUS;
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
@@ -27,20 +28,15 @@
         justify-content: center;
         transition: background 0.25s linear;
 
-        &--won {
-            background-image: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(0, 148, 117, 0.16));
-        }
-        &--lost {
-            background-image: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(227, 28, 75, 0.16));
-        }
         &:hover {
-            background: transparent;
+            background: 0 !important;
 
             .result__caption {
                 opacity: 0;
             }
         }
         &:after {
+
             top: 0;
             left: 0;
             width: 100%;
@@ -48,20 +44,26 @@
             border-radius: $BORDER_RADIUS;
             z-index: 2;
         }
-        &--won:after {
-            background-image: linear-gradient(to top, rgba(16, 19, 32, 0), rgba(0, 148, 117, 0.16));
-        }
-        &--lost:after {
-            background-image: linear-gradient(to top, rgba(16, 19, 32, 0), rgba(227, 28, 75, 0.16));
+        @include themify($themes) {
+            background-color: themed('container_color');
+
+            &--won, &--won:after {
+                background-image: themed('won_gradient_color');
+            }
+            &--lost, &--lost:after {
+                background-image: themed('lost_gradient_color');
+            }
         }
     }
     &__wrapper {
         padding: 0.8em;
         margin: 0 1em;
-        background: $COLOR_WHITE;
         border-radius: $BORDER_RADIUS;
         transition: transform 0.25s ease, opacity 0.25s linear;
         position: relative;
+        @include themify($themes) {
+            background: themed('container_color');
+        }
 
         &--active:before {
             content: '';
@@ -122,10 +124,12 @@
         }
         &-profit-payout {
             padding: 8px 0;
-            background: $COLOR_LIGHT_BLACK_4;
             border-radius: $BORDER_RADIUS;
             margin-left: -4px;
             margin-right: -4px;
+            @include themify($themes) {
+                background: themed('hover_color');
+            }
         }
     }
     &__purchase {
@@ -142,7 +146,9 @@
             margin-right: 0.5em;
             font-size: 10px;
             font-weight: normal;
-            color: $COLOR_LIGHT_BLACK_1;
+            @include themify($themes) {
+                color: themed('text_primary_color');
+            }
         }
     }
     &__type {
@@ -162,6 +168,11 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        @include themify($themes) {
+            &--price-stable {
+                color: themed('navbar_active_color');
+            }
+        }
 
         &-label {
             color: $COLOR_LIGHT_BLACK_1;
@@ -175,16 +186,12 @@
         &--price-moved-down {
             color: $COLOR_RED;
         }
-        &--price-stable {
-            color: $COLOR_LIGHT_BLACK_1;
-        }
-        // &--no-resale {
-        //     color: $COLOR_LIGHT_BLACK_2;
-        // }
     }
     &__remaining-time {
         font-size: 1em;
-        color: $COLOR_LIGHT_BLACK_2;
+        @include themify($themes) {
+            color: themed('text_secondary_color');
+        }
     }
     &__profit-loss {
         font-size: 1.2em;
@@ -196,9 +203,11 @@
 
         &-label {
             font-size: 1em;
-            color: $COLOR_LIGHT_BLACK_1;
             margin-bottom: 0.5em;
             font-weight: normal;
+            @include themify($themes) {
+                color: themed('text_primary_color');
+            }
         }
         &--negative {
             color: $COLOR_RED;

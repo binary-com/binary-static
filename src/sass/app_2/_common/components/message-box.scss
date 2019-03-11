@@ -7,9 +7,12 @@
     width: 100%;
     z-index: 2;
     border-radius: $BORDER_RADIUS;
-    background: $COLOR_LIGHT_BLACK_4_SOLID;
     display: flex;
     align-items: center;
+    @include themify($themes) {
+        background: themed('background_container_color');
+        color: themed('text_primary_color');
+    }
 
     &__close-btn {
         position: absolute;
@@ -33,6 +36,9 @@
         max-height: 187px;
         height: 100%;
         width: 100%;
+        @include themify($themes) {
+            color: themed('text_primary_color');
+        }
 
         &-header {
             margin-bottom: 0.5rem;
@@ -41,6 +47,9 @@
         &-label {
             margin-right: 4px;
             font-size: 10px;
+            @include themify($themes) {
+                color: themed('text_primary_color');
+            }
         }
         &-currency {
             position: relative;
@@ -54,6 +63,9 @@
         justify-content: center;
         height: 100%;
         width: 100%;
+        @include themify($themes) {
+            color: themed('text_color');
+        }
 
         &-btn {
             margin: 0 auto;
@@ -74,7 +86,9 @@
         }
         &-link {
             text-decoration: none;
-            color: $COLOR_LIGHT_BLACK_1;
+            @include themify($themes) {
+                color: themed('text_primary_color');
+            }
 
             &-info {
                 padding: 5px 10px 10px;
@@ -83,7 +97,9 @@
             }
             &:hover, &:focus, &:active {
                 text-decoration: underline;
-                color: $COLOR_LIGHT_BLACK_1;
+                @include themify($themes) {
+                    color: themed('text_color');
+                }
             }
         }
     }

@@ -1,8 +1,10 @@
 /** @define result-details; */
 .result-details {
     &__separator {
-        border-top: 1px solid $COLOR_LIGHT_BLACK_4_SOLID;
         margin: 4px -9px 4px;
+        @include themify($themes) {
+            border-top: 1px solid themed('background_container_color');
+        }
     }
     &__wrapper {
         margin: -2px -9px 0;
@@ -31,8 +33,10 @@
         max-width: 80px;
     }
     &__label {
-        fonts-size: 0.8em;
-        color: $COLOR_LIGHT_BLACK_1;
+        font-size: 1em;
+        @include themify($themes) {
+            color: themed('text_primary_color');
+        }
     }
     &__value {
         padding-top: 4px;
@@ -50,7 +54,9 @@
         cursor: pointer;
 
         &--is-open {
-            border-top: 1px solid $COLOR_LIGHT_BLACK_4_SOLID;
+            @include themify($themes) {
+                border-top: 1px solid themed('background_container_color');
+            }
         }
     }
 }
@@ -67,7 +73,8 @@
         transition: opacity 0.25s ease;
         cursor: pointer;
         width: 100%;
-        height: calc(100% - 32px);
+        margin-top: 2rem;
+        height: calc(100% - 36px);
 
         &--won {
             color: $COLOR_GREEN_1;

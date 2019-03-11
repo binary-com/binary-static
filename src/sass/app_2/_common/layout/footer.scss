@@ -5,12 +5,15 @@
     padding: 0 1em;
     width: 100%;
     height: $FOOTER_HEIGHT;
-    background-color: $COLOR_LIGHT_BLACK_4_SOLID;
     box-sizing: border-box;
     z-index: 3;
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    @include themify($themes) {
+        background-color: themed('background_color');
+        color: themed('text_primary_color');
+    }
 
     &__links {
         display: flex;
@@ -32,7 +35,9 @@
         position: relative;
 
         &:hover {
-            background: $COLOR_LIGHT_BLACK_4;
+            @include themify($themes) {
+                background: themed('hover_color');
+            }
 
             .footer__icon {
                 @extend .inline-icon.active;
@@ -63,6 +68,9 @@
         margin-top: 1em;
         right: 1.5em;
         display: block;
+        @include themify($themes) {
+            background-color: themed('text_primary_color');
+        }
     }
     &--active {
         background: none !important;
@@ -95,18 +103,23 @@
             background: $COLOR_RED;
         }
         &--blinker {
-            background: $COLOR_LIGHT_BLACK_3;
+            @include themify($themes) {
+                background: themed('disabled_color');
+            }
         }
     }
 }
 
 /** @define server-time */
 .server-time {
-    @include typeface(--small-left-normal-black);
     display: inline-flex;
     align-self: center;
     margin-right: 1em;
     padding: 0 1em;
+    @include typeface(--small-left-normal-black);
+    @include themify($themes) {
+        color: themed('text_primary_color');
+    }
 }
 
 /** @define ic-settings */
@@ -119,10 +132,12 @@
             content: '';
             height: 0.2em;
             width: 100%;
-            background: $COLOR_DARK_BLUE_5;
             position: absolute;
             top: 0;
             left: 0;
+            @include themify($themes) {
+                background: themed('navbar_active_color');
+            }
         }
         .ic-settings__icon {
             @extend .inline-icon.active;
