@@ -227,17 +227,18 @@ const TickDisplay = (() => {
                 width : 2,
                 zIndex: 2,
             });
-            calculated_barrier = barrier_quote;
+            calculated_barrier = addComma(barrier_quote, parseInt(display_decimals));
             should_set_barrier = false;
         }
 
         if (barrier_type === 'asian') {
+            const decimal_places = parseInt(display_decimals) + 1;
             let total = 0;
             for (let i = 0; i < applicable_ticks.length; i++) {
                 total += parseFloat(applicable_ticks[i].quote);
             }
             // round calculated barrier
-            const calc_barrier = (total / applicable_ticks.length).toFixed(parseInt(display_decimals) + 1);
+            const calc_barrier = (total / applicable_ticks.length).toFixed(decimal_places);
 
             chart.yAxis[0].removePlotLine('tick-barrier');
             chart.yAxis[0].addPlotLine({
@@ -251,7 +252,7 @@ const TickDisplay = (() => {
                 width : 2,
                 zIndex: 2,
             });
-            calculated_barrier = calc_barrier;
+            calculated_barrier = addComma(calc_barrier, decimal_places);
         }
 
         if (barrier_type === 'highlowticks') {
@@ -500,7 +501,7 @@ const TickDisplay = (() => {
                 dashStyle: 'dot',
             });
 
-            CommonFunctions.elementInnerHtml(CommonFunctions.getElementById('contract_purchase_barrier'), `${localize('Reset Barrier')}: ${reset_barrier}`);
+            CommonFunctions.elementInnerHtml(CommonFunctions.getElementById('contract_purchase_barrier'), `${localize('Reset Barrier')}: ${addComma(reset_barrier, parseInt(display_decimals))}`);
             reset_spot_plotted = true;
             HighchartUI.updateLabels(chart, {
                 contract_type   : contract_category,
