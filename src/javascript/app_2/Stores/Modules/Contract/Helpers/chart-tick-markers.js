@@ -16,7 +16,7 @@ export const createChartTickMarkers = (SmartChartStore, contract_info) => {
         tick_marker_handler.addLines();
     } else {
         // TODO: implement middle tick markers for ongoing contracts
-        // tick_marker_handler.addOnGoingMarkers();
+        // tick_marker_handler.addMarkerSpotsFromStream();
     }
 };
 
@@ -41,7 +41,7 @@ const tickMarker = (function () {
             end          : contract_info.exit_tick_time,
             count        : (contract_info.tick_count + 1), // add 1 to prevent for 1-tick contracts from returning 5000 ticks
         };
-        const added_ticks = [];
+        const ticks_added_to_chart = [];
 
         const addMarkerFromContract = (createMarkerFn, tick, idx) => {
             const align_label = labelTopOrBottom(tick, idx);
@@ -53,13 +53,13 @@ const tickMarker = (function () {
         const labelTopOrBottom = (tick, idx) => {
             let align_label = 'top';
             if (tick && tick.price) {
-                if (idx > 0) {
-                    const prev_tick = added_ticks[idx - 1];
+                if (idx > 0 && ticks_added_to_chart.length > 1) {
+                    const prev_tick = ticks_added_to_chart[idx - 1];
 
                     if (+tick.price < +prev_tick.price) align_label = 'bottom';
                     if (+tick.price === +prev_tick.price) align_label = prev_tick.align_label;
                 }
-                added_ticks.push({ ...tick, align_label });
+                ticks_added_to_chart.push({ ...tick, align_label });
             }
             return align_label;
         };
