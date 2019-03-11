@@ -45,7 +45,7 @@ const tickMarker = (function () {
 
         const addMarkerFromContract = (createMarkerFn, tick, idx) => {
             const align_label = labelTopOrBottom(tick, idx);
-            const marker_config = createMarkerFn(contract_info, align_label);
+            const marker_config = createMarkerFn(contract_info, idx, align_label);
 
             if (marker_config) SmartChartStore.createMarker(marker_config);
         };

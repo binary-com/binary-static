@@ -52,9 +52,9 @@ export const createMarkerSpotEntry = (contract_info) => {
     );
 };
 
-export const createMarkerSpotExit = (contract_info, align_label) => {
+export const createMarkerSpotExit = (contract_info, idx, align_label) => {
     if (!contract_info.exit_tick_time) return false;
-    const spot_count = isDigitContract(contract_info.contract_type) ? '' : contract_info.tick_count;
+    const spot_count = isDigitContract(contract_info.contract_type) ? '' : idx;
 
     return createMarkerConfig(
         MARKER_TYPES_CONFIG.SPOT_EXIT.type,
