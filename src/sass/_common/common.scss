@@ -856,6 +856,10 @@ label + input {
         }
         &__body {
             padding: 20px 35px 30px;
+
+            p {
+                text-align: justify;
+            }
         }
         &__options {
             display: flex;
@@ -900,6 +904,7 @@ label + input {
     .header-1, .header-2 {
         text-align: center;
         line-height: 1.15;
+        font-weight: normal;
     }
     @media screen and (max-width: 768px) {
         .header-1 {
