@@ -71,7 +71,15 @@ export default class UIStore extends BaseStore {
 
         super({ local_storage_properties, store_name });
         window.addEventListener('resize', this.handleResize);
-        autorun(() => document.body.classList[this.is_dark_mode_on ? 'add' : 'remove']('theme--dark'));
+        autorun(() => {
+            if (this.is_dark_mode_on) {
+                document.body.classList.remove('theme--light');
+                document.body.classList.add('theme--dark');
+            } else {
+                document.body.classList.remove('theme--dark');
+                document.body.classList.add('theme--light');
+            }
+        });
     }
 
     @action.bound
