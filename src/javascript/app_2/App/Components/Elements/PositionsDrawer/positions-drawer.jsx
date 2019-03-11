@@ -21,8 +21,8 @@ class PositionsDrawer extends React.Component {
 
     render() {
         const {
+            all_positions,
             active_contract_id,
-            active_positions,
             error,
             currency,
             is_contract_mode,
@@ -43,7 +43,7 @@ class PositionsDrawer extends React.Component {
             body_content = <EmptyPortfolioMessage />;
         } else {
             // Show only 4 most recent open contracts
-            body_content = active_positions.slice(0, 4).map((portfolio_position) => (
+            body_content = all_positions.slice(0, 4).map((portfolio_position) => (
                 <CSSTransition
                     key={portfolio_position.id}
                     in={!!(portfolio_position.underlying_code)}
@@ -111,7 +111,7 @@ PositionsDrawer.propTypes = {
         PropTypes.number,
         PropTypes.string,
     ]),
-    active_positions      : MobxPropTypes.arrayOrObservableArray,
+    all_positions         : MobxPropTypes.arrayOrObservableArray,
     children              : PropTypes.any,
     currency              : PropTypes.string,
     error                 : PropTypes.string,
@@ -133,7 +133,7 @@ export default connect(
         server_time           : common.server_time,
         currency              : client.currency,
         active_contract_id    : modules.contract.contract_id,
-        active_positions      : modules.portfolio.active_positions,
+        all_positions         : modules.portfolio.all_positions,
         error                 : modules.portfolio.error,
         is_contract_mode      : modules.smart_chart.is_contract_mode,
         is_empty              : modules.portfolio.is_empty,

@@ -1,7 +1,8 @@
-import PropTypes      from 'prop-types';
-import React          from 'react';
-import { connect }    from 'Stores/connect';
-import ServerTime     from '../server-time.jsx';
+import { PropTypes as MobxPropTypes } from 'mobx-react';
+import PropTypes                      from 'prop-types';
+import React                          from 'react';
+import { connect }                    from 'Stores/connect';
+import ServerTime                     from '../server-time.jsx';
 import {
     NetworkStatus,
     ToggleFullScreen,
@@ -9,6 +10,7 @@ import {
     ToggleSettings }  from '../../Components/Layout/Footer';
 
 const Footer = ({
+    active_positions,
     is_language_dialog_visible,
     is_logged_in,
     is_positions_drawer_on,
@@ -24,6 +26,7 @@ const Footer = ({
                 <TogglePositions
                     is_positions_drawer_on={is_positions_drawer_on}
                     togglePositionsDrawer={togglePositionsDrawer}
+                    positions_count={active_positions.length || 0}
                 />
             }
         </div>
@@ -41,6 +44,7 @@ const Footer = ({
 );
 
 Footer.propTypes = {
+    active_positions          : MobxPropTypes.arrayOrObservableArray,
     is_language_dialog_visible: PropTypes.bool,
     is_logged_in              : PropTypes.bool,
     is_positions_drawer_on    : PropTypes.bool,
@@ -51,8 +55,9 @@ Footer.propTypes = {
 };
 
 export default connect(
-    ({ client, common, ui }) => ({
+    ({ client, common, modules, ui }) => ({
         is_logged_in              : client.is_logged_in,
+        active_positions          : modules.portfolio.active_positions,
         network_status            : common.network_status,
         is_language_dialog_visible: ui.is_language_dialog_on,
         is_positions_drawer_on    : ui.is_positions_drawer_on,
