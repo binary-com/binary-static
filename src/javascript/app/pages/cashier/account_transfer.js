@@ -168,17 +168,11 @@ const AccountTransfer = (() => {
             if (account.loginid === client_loginid) {
                 elementTextContent(getElementById('transfer_success_from'), localize('From account: '));
                 elementTextContent(getElementById('from_loginid'), `${account.loginid} (${account.currency})`);
-                getElementById('from_current_balance').innerHTML = Currency.formatMoney(
-                    account.currency,
-                    account.balance,
-                );
+                getElementById('from_current_balance').innerText = `${account.currency} ${account.balance}`;
             } else if (account.loginid === response_submit_success.client_to_loginid) {
                 elementTextContent(getElementById('transfer_success_to'), localize('To account: '));
                 elementTextContent(getElementById('to_loginid'), `${account.loginid} (${account.currency})`);
-                getElementById('to_current_balance').innerHTML = Currency.formatMoney(
-                    account.currency,
-                    account.balance,
-                );
+                getElementById('to_current_balance').innerText = `${account.currency} ${account.balance}`;
             }
         });
 
@@ -223,6 +217,7 @@ const AccountTransfer = (() => {
                 Promise.all([req_transfer_between_accounts, req_get_limits]).then(() => {
                     const response_transfer = State.get(['response', 'transfer_between_accounts']);
                     const response_limits   = State.get(['response', 'get_limits']);
+                    const is_authenticated  = State.get(['response', 'get_account_status', 'status']);
 
                     if (hasError(response_transfer)) {
                         return;
@@ -237,8 +232,8 @@ const AccountTransfer = (() => {
                     }
 
                     populateAccounts(accounts);
-                    setLimits(response_limits, min_amount).then(() => {
-                        showForm();
+                    setLimits(response_limits, min_amount, is_authenticated).then(() => {
+                        showForm({ is_authenticated });
                         populateHints();
                     }).catch(() => {
                         getElementById(messages.limit).setVisibility(1);
@@ -251,7 +246,7 @@ const AccountTransfer = (() => {
         });
     };
 
-    const setLimits = (response, min_amount) => new Promise((resolve, reject) => {
+    const setLimits = (response, min_amount, is_authenticated) => new Promise((resolve, reject) => {
         withdrawal_limit = +response.get_limits.remainder;
         if (withdrawal_limit < +min_amount) {
             reject(new Error('Withdrawal limit is less than Min amount.'));
@@ -261,7 +256,7 @@ const AccountTransfer = (() => {
 
         const from_currency = Client.get('currency');
         const to_currency   = Client.get('currency', to_loginid);
-        if (!Currency.isCryptocurrency(from_currency) && !Currency.isCryptocurrency(to_currency)) {
+        if (!Currency.isCryptocurrency(from_currency) && !Currency.isCryptocurrency(to_currency) && is_authenticated) {
             transferable_amount = client_balance;
         } else {
             transferable_amount = max_amount ? Math.min(max_amount, withdrawal_limit, client_balance) : Math.min(
@@ -275,15 +270,9 @@ const AccountTransfer = (() => {
     });
 
     const populateHints = () => {
-        getElementById('limit_current_balance').innerHTML  = Currency.formatMoney(
-            client_currency,
-            client_balance,
-        );
+        getElementById('limit_current_balance').innerText  = `${client_currency} ${client_balance}`;
 
-        getElementById('limit_max_amount').innerHTML = max_amount ? Currency.formatMoney(
-            client_currency,
-            transferable_amount,
-        ) : localize('Not announced for this currency.');
+        getElementById('limit_max_amount').innerText = max_amount ? `${client_currency} ${client_balance}` : localize('Not announced for this currency.');
 
         $('#range_hint').accordion({
             heightStyle: 'content',
