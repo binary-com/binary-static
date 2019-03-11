@@ -6,7 +6,13 @@ describe('toMoment', () => {
     it('return utc epoch value date based on client epoch value passed', () => {
         const epoch = 1544756041;
 
-        expect(DateTime.toMoment(1544756041)).to.deep.equal(moment.unix(epoch).utc());
+        expect(DateTime.toMoment(epoch)).to.deep.equal(moment.unix(epoch).utc());
+    });
+    it('return correct date when plain string date passed', () => {
+        const date = '12 Mar 2019'
+        const format = 'DD MMM YYYY'
+
+        expect(DateTime.toMoment(date).format(format)).to.equal(date)
     });
 });
 
