@@ -1,5 +1,6 @@
 import extend                  from 'extend';
 import { isDigitContract }     from 'Stores/Modules/Contract/Helpers/digits';
+import { isUserSold }          from 'Stores/Modules/Contract/Helpers/logic';
 import { MARKER_TYPES_CONFIG } from '../../SmartChart/Constants/markers';
 
 const createMarkerConfig = (marker_type, x, y, content_config) => (
@@ -53,7 +54,7 @@ export const createMarkerSpotEntry = (contract_info) => {
 };
 
 export const createMarkerSpotExit = (contract_info, idx, align_label) => {
-    if (!contract_info.exit_tick_time) return false;
+    if (!contract_info.exit_tick_time || isUserSold(contract_info)) return false;
     const spot_count = isDigitContract(contract_info.contract_type) ? '' : idx;
 
     return createMarkerConfig(
