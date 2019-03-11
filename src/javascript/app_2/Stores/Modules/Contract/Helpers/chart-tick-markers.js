@@ -53,7 +53,7 @@ const tickMarker = (function () {
         const labelTopOrBottom = (tick, idx) => {
             let align_label = 'top';
             if (tick && tick.price) {
-                if (idx > 0 && ticks_added_to_chart.length > 1) {
+                if (idx > 0 && ticks_added_to_chart.length) {
                     const prev_tick = ticks_added_to_chart[idx - 1];
 
                     if (+tick.price < +prev_tick.price) align_label = 'bottom';
