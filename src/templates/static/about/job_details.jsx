@@ -87,6 +87,13 @@ const JobDetails = () => (
                         />
 
                         <SideBar
+                            className='quality_assurance'
+                            sidebar_items={[
+                                { href: 'software_tester', string: it.L('Software Tester') },
+                            ]}
+                        />
+
+                        <SideBar
                             className='quantitative_analysis'
                             sidebar_items={[
                                 { href: 'quantitative_analyst',      string: it.L('Quantitative Analyst') },
@@ -106,6 +113,13 @@ const JobDetails = () => (
                         />
 
                         <SideBar
+                            className='accounting'
+                            sidebar_items={[
+                                { href: 'accounts_and_payments_executive', string: it.L('Accounts and Payments Executive') },
+                            ]}
+                        />
+
+                        <SideBar
                             className='compliance'
                             sidebar_items={[
                                 { href: 'compliance_executive',            string: it.L('Compliance Executive') },
@@ -115,10 +129,24 @@ const JobDetails = () => (
                         />
 
                         <SideBar
+                            className='internal_audit'
+                            sidebar_items={[
+                                { href: 'internal_audit_executive', string: it.L('Internal Audit Executive') },
+                            ]}
+                        />
+
+                        <SideBar
                             className='human_resources'
                             sidebar_items={[
                                 { href: 'hr_operations_executive',      string: it.L('HR Operations Executive') },
                                 { href: 'talent_acquisition_executive', string: it.L('Talent Acquisition Executive') },
+                            ]}
+                        />
+
+                        <SideBar
+                            className='customer_support'
+                            sidebar_items={[
+                                { href: 'customer_support_executive', string: it.L('Customer Support Executive') },
                             ]}
                         />
                     </div>
