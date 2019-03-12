@@ -2,12 +2,15 @@ import {
     action,
     computed,
     extendObservable,
-    observable }                 from 'mobx';
-import { isEmptyObject }         from '_common/utility';
-import { localize }              from '_common/localize';
-import { WS }                    from 'Services';
-import { createChartBarrier }    from './Helpers/chart-barriers';
-import { createChartMarkers }    from './Helpers/chart-markers';
+    observable }                  from 'mobx';
+import { isEmptyObject }          from '_common/utility';
+import { localize }               from '_common/localize';
+import { WS }                     from 'Services';
+import { createChartBarrier }     from './Helpers/chart-barriers';
+import { createChartMarkers }     from './Helpers/chart-markers';
+import {
+    createChartTickMarkers,
+    destroyChartTickMarkers }    from './Helpers/chart-tick-markers';
 import {
     getDetailsExpiry,
     getDetailsInfo }             from './Helpers/details';
@@ -101,6 +104,7 @@ export default class ContractStore extends BaseStore {
         this.is_sell_requested = false;
         this.chart_config      = {};
 
+        destroyChartTickMarkers();
         this.smart_chart.removeBarriers();
         this.smart_chart.removeMarkers();
         this.smart_chart.setContractMode(false);
@@ -136,8 +140,15 @@ export default class ContractStore extends BaseStore {
             delete this.chart_config.end_epoch;
             delete this.chart_config.start_epoch;
         }
+
         createChartBarrier(this.smart_chart, this.contract_info);
-        createChartMarkers(this.smart_chart, this.contract_info, this);
+
+        if (this.contract_info.tick_count && this.contract_info.exit_tick_time) { // TODO: remove this.contract_info.exit_tick_time when ongoing contracts are implemented
+            createChartTickMarkers(this.smart_chart, this.contract_info);
+        } else {
+            createChartMarkers(this.smart_chart, this.contract_info);
+        }
+
         this.handleDigits();
     }
 

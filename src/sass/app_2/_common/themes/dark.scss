@@ -977,6 +977,17 @@
         }
     }
     .chart-spot {
+        &__spot {
+            background-color: $COLOR_DARK_BLUE_2;
+            color: $COLOR_WHITE;
+
+            &--won {
+                background-color: $COLOR_GREEN_1;
+            }
+            &--lost {
+                background-color: $COLOR_RED;
+            }
+        }
         &__entry {
             background-color: unset;
         }
