@@ -66,6 +66,7 @@ export const createMarkerSpotExit = (contract_info, idx, align_label) => {
         contract_info.exit_tick,
         {
             spot_value: `${contract_info.exit_tick}`,
+            spot_epoch: `${contract_info.exit_tick_time}`,
             status    : `${contract_info.profit > 0 ? 'won' : 'lost' }`,
             spot_count,
             align_label,
@@ -80,6 +81,7 @@ export const createMarkerSpotMiddle = (tick, idx, align_label) => {
         tick.price,
         {
             spot_value: `${tick.price}`,
+            spot_epoch: `${tick.time}`,
             spot_count: idx,
             align_label,
         },
