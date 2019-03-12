@@ -206,7 +206,7 @@ const InputField = ({
                 </div>
             }
             <div
-                className={`input-field ${className}`}
+                className={classNames('input-field', className)}
             >
                 {input_tooltip}
             </div>
@@ -218,7 +218,10 @@ const InputField = ({
 // supports more than two different types of 'value' as a prop.
 // Quick Solution - Pass two different props to input field.
 InputField.propTypes = {
-    checked                 : PropTypes.number,
+    checked: PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
+    ]),
     className               : PropTypes.string,
     classNameInlinePrefix   : PropTypes.string,
     classNameInput          : PropTypes.string,

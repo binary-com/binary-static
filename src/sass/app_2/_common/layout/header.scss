@@ -6,8 +6,10 @@
     width: 100%;
     height: $HEADER_HEIGHT;
     top: 0;
-    border-bottom: 1px solid $COLOR_LIGHT_BLACK_4_SOLID;
-    background-color: $COLOR_LIGHT_BLACK_4_SOLID;
+    @include themify($themes) {
+        background-color: themed('background_color');
+        border-bottom: 1px solid themed('background_color');
+    }
 
     &__menu-items {
         display: flex;
@@ -48,7 +50,6 @@
         justify-content: flex-end;
         order: 1;
         display: inline-flex;
-        border-right: 1px solid $COLOR_LIGHT_BLACK_4;
         height: #{$HEADER_HEIGHT - 1px};
     }
     &__menu-toggle {
@@ -77,6 +78,9 @@
             @include typeface(--title-left-normal-black);
             padding: 0.5em 0.5em 0.5em 0;
             position: relative;
+            @include themify($themes) {
+                color: themed('text_primary_color');
+            }
 
             &:before {
                 position: absolute;
@@ -93,11 +97,20 @@
             }
         }
         &:hover:not(&--active) {
-            background-color: $COLOR_LIGHT_BLACK_4;
+            @include themify($themes) {
+                background-color: themed('hover_color');
+            }
         }
         &--active {
             & > .header__menu-link-text[title] {
                 font-weight: bold;
+                @include themify($themes) {
+                    color: themed('navbar_active_color');
+
+                    &:after {
+                        color: themed('navbar_active_color');
+                    }
+                }
             }
             .header__icon {
                 @extend %inline-icon.active;

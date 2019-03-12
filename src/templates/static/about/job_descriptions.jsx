@@ -92,6 +92,14 @@ const JobDescriptions = () => (
             />
 
             <Row
+                id='data_analytics'
+                title={it.L('Data Analytics')}
+                sections={[
+                    { header: it.L('Data Scientist'), subsection: 'data_scientist', text: it.L('We need a talented Data Scientist with the technical skills and creative curiosity to explore and solve complex business problems.'), className: 'nowrap' },
+                ]}
+            />
+
+            <Row
                 id='marketing'
                 title={it.L('Marketing')}
                 sections={[
@@ -100,8 +108,6 @@ const JobDescriptions = () => (
                     { header: it.L('Marketing Executive'),           subsection: 'marketing_executive',           text: it.L('As our Marketing Executive, you will coordinate and execute marketing campaigns across a variety of channels, and continuously identify the best ways to reach current and prospective customers.') },
                     { header: it.L('Graphics Designer'),             subsection: 'graphics_designer',             text: it.L('As our Graphic Designer, you will develop high-impact graphics and visual elements such as images and icons for our websites and applications. You will play an essential role in creating user interface assets that bring our products and users closer together.') },
                     { header: it.L('Copywriter'),                    subsection: 'copywriter',                    text: it.L('As our Copywriter, you will help us to craft copy and content that engages our audiences - both online and offline.') },
-                    { header: it.L('Translator'),                    subsection: 'translator',                    text: it.L('By delivering a high level of translation and customer support services, you will be the company’s voice to our clients.') },
-                    { header: it.L('Proofreader'),                   subsection: 'proofreader',                   text: it.L('[_1] is seeking a qualified proofreader with a flair for language and a meticulous eye for detail. You must be able to interact with our staff using a web-based translator interface.', it.website_name) },
                 ]}
             />
 
