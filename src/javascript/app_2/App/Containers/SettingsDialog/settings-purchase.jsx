@@ -26,7 +26,7 @@ const PurchaseSettings = ({
                 <div className='media__form'>
                     <Checkbox
                         value={is_purchase_confirmed}
-                        label={localize('Cras quis nulla commodo, aliqam lectus sed, blandit augue cras.')}
+                        label={localize('Purchase confirmation')}
                         onClick={togglePurchaseConfirmation}
                     />
                 </div>
@@ -41,7 +41,7 @@ const PurchaseSettings = ({
                 <div className='media__form'>
                     <Checkbox
                         value={is_purchase_locked}
-                        label={localize('Cras quis nulla commodo, aliqam lectus sed, blandit augue cras.')}
+                        label={localize('Purchase Lock')}
                         onClick={togglePurchaseLock}
                     />
                 </div>
