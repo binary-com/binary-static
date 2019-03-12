@@ -122,8 +122,10 @@ const DigitDisplay = (() => {
 
     const end = (proposal_open_contract) => {
         if (proposal_open_contract.status !== 'open') {
+            // if there is no exit tick inside proposal open contract, select a fallback from history instead.
+            const fallback_exit_tick = spot_times.find(spot => spot.time === proposal_open_contract.exit_tick_time);
             DigitTicker.update(proposal_open_contract.tick_count, {
-                quote: proposal_open_contract.exit_tick,
+                quote: proposal_open_contract.exit_tick || fallback_exit_tick.spot,
                 epoch: +proposal_open_contract.exit_tick_time,
             });
         }
