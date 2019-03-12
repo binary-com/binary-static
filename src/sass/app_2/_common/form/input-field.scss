@@ -27,8 +27,8 @@
     &__button {
         position: absolute;
         z-index: 1;
-        top: 1px;
-        height: calc(100% - 2px);
+        top: 2px;
+        height: 28px;
         margin: initial;
         min-width: 3.2em;
         border-radius: 3px;
@@ -39,12 +39,10 @@
         align-items: center;
 
         &--increment {
-            right: 1px; // fixed position
-            height: 28px;
+            right: 2px;
         }
         &--decrement {
-            left: 1px; // fixed position
-            height: 28px;
+            left: 2px;
         }
         &:hover {
             cursor: pointer;
