@@ -50,7 +50,7 @@ const InputField = ({
     const max_is_disabled = max_value && +value >= +max_value;
     const min_is_disabled = min_value && +value <= +min_value;
 
-    const changeValue = (e) => {
+    const changeValue = (e, callback) => {
         if (unit) {
             e.target.value = e.target.value.replace(unit, '').trim();
         }
@@ -90,6 +90,7 @@ const InputField = ({
         }
 
         onChange(e);
+        callback(e);
     };
 
     const getDecimals = (val) => {
