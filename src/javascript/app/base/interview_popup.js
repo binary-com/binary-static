@@ -13,7 +13,7 @@ const InterviewPopup = (() => {
             const $interview_ask_later  = $('#interview_ask_later');
             const $interview_interested = $('#interview_interested');
 
-            if (Client.isLoggedIn() && isEuCountry() && !is_interview_consent && !(RealityCheckData.get('keep_open') === false)) {
+            if (Client.isLoggedIn() && isEuCountry() && !is_interview_consent && !(RealityCheckData.get('keep_open') === (1 || false))) {
                 $interview_popup.removeClass('invisible');
                 $interview_no_thanks.one('click', () => {
                     Cookies.set('InterviewConsent', 1);
@@ -34,10 +34,10 @@ const InterviewPopup = (() => {
                         const pre_email   = `&entry.81172074=${get_settings.email}`;
                         const pre_country = `&entry.141529718=${get_settings.country}`;
                         const pre_phone   = `&entry.1442583433=${get_settings.phone}`;
-
+                        const encode_uri  =  (`${url}${pre_name}${pre_email}${pre_country}${pre_phone}`).replace(/\+/g, '%2B');
                         $interview_popup.addClass('invisible');
                         Cookies.set('InterviewConsent', 1);
-                        window.open(`${url}${pre_name}${pre_email}${pre_country}${pre_phone}`, '_blank');
+                        window.open(encode_uri, '_blank');
                     });
                 });
             }
