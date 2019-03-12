@@ -34,6 +34,12 @@
         & + &.app-contents--contract-mode {
             max-width: unset;
         }
+        .statement {
+            &.container {
+                max-width: calc(100% - 252px);
+                margin-left: calc(240px + 12px);
+            }
+        }
     }
     @media screen and (max-width: 768px) {
         // no footer:
@@ -185,15 +191,14 @@
     &__items {
         opacity: 1;
         transform: none;
-        transition: transform 0.4s ease, opacity 0.2s linear;
+        transition: filter 0.4s ease;
         position: relative;
         min-height: 460px;
         width: $SIDEBAR_WIDTH;
 
-        &--slideout {
-            transform: translate3d(calc(100% + 2px), 0, 0);
+        &--blur {
+            filter: blur(3px);
             pointer-events: none;
-            opacity: 0;
         }
     }
 }
