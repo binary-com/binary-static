@@ -8,6 +8,8 @@ import { localize }      from '_common/localize';
 
 const ResultOverlay = ({
     id,
+    chart_config,
+    onClick,
     onClickRemove,
     result,
 }) => (
@@ -31,11 +33,13 @@ const ResultOverlay = ({
                     className='result__close-btn'
                     onClick={() => onClickRemove(id)}
                 />
-                <span className={classNames('result__caption', {
-                    'result__caption--won' : (result === 'won'),
-                    'result__caption--lost': (result === 'lost'),
-                }
-                )}
+                <span
+                    className={classNames('result__caption', {
+                        'result__caption--won' : (result === 'won'),
+                        'result__caption--lost': (result === 'lost'),
+                    }
+                    )}
+                    onClick={() => onClick(chart_config)}
                 >
                     {
                         (result === 'won') ?
@@ -56,7 +60,9 @@ const ResultOverlay = ({
 );
 
 ResultOverlay.propTypes = {
+    chart_config : PropTypes.object,
     id           : PropTypes.number,
+    onClick      : PropTypes.func,
     onClickRemove: PropTypes.func,
     result       : PropTypes.string,
 };
