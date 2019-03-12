@@ -27,7 +27,7 @@ const ChartSettings = ({
             <MediaDescription>
                 <MediaIcon />
                 <div className='media__form'>
-                    <p><Localize str='Cras quis nulla commodo, aliqam lectus sed, blandit augue cras.' /></p>
+                    <p><Localize str='Chart control position' /></p>
                     <RadioGroup
                         items={[
                             {
@@ -54,7 +54,7 @@ const ChartSettings = ({
                 <div className='media__form'>
                     <Checkbox
                         value={is_asset_visible}
-                        label={localize('Cras quis nulla commodo, aliqam lectus sed, blandit augue cras.')}
+                        label={localize('Visible Asset')}
                         onClick={toggleAsset}
                     />
                 </div>
@@ -69,7 +69,7 @@ const ChartSettings = ({
                 <div className='media__form'>
                     <Checkbox
                         value={is_countdown_visible}
-                        label={localize('Cras quis nulla commodo, aliqam lectus sed, blandit augue cras.')}
+                        label={localize('Visible Countdown')}
                         onClick={toggleCountdown}
                     />
                 </div>
