@@ -418,7 +418,10 @@ const ContractType = (() => {
         getStartTime,
         getStartType,
         getTradingTimes,
-        getContractCategories: () => ({ contract_types_list: available_categories, has_only_forward_starting_contracts }),
+        getContractCategories: () => ({
+            contract_types_list: available_categories,
+            has_only_forward_starting_contracts,
+        }),
     };
 })();
 
