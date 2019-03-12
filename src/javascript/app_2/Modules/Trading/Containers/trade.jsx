@@ -1,5 +1,6 @@
 import PropTypes            from 'prop-types';
 import React                from 'react';
+import URL                  from '_common/url';
 import { getPropertyValue } from '_common/utility';
 import FullPageModal        from 'App/Components/Elements/FullPageModal/full-page-modal.jsx';
 import Localize             from 'App/Components/Elements/localize.jsx';
@@ -61,11 +62,13 @@ class Trade extends React.Component {
                     />
                 </div>
                 <FullPageModal
-                    confirm_button_text={localize('Go Back')}
-                    is_visible={this.props.is_only_forwarding}
-                    onConfirm={() => this.props.setOnlyForwarding(false)}
+                    cancel_button_text={localize('Go Back')}
+                    confirm_button_text={localize('Visit main website')}
+                    is_visible={this.props.has_only_forward_starting_contracts}
+                    onCancel={() => this.props.setHasOnlyForwardingContracts(false)}
+                    onConfirm={() => window.location.href = URL.websiteUrl()}
                 >
-                    <Localize str='This market is not supported yet.' />
+                    <Localize str='This market is not available in New Trading platform yet. Please use our current platform.' />
                 </FullPageModal>
             </div>
         );
@@ -73,43 +76,43 @@ class Trade extends React.Component {
 }
 
 Trade.propTypes = {
-    chart_id        : PropTypes.number,
-    contract_type   : PropTypes.string,
-    end_epoch       : PropTypes.number,
-    is_contract_mode: PropTypes.bool,
-    is_mobile       : PropTypes.bool,
-    is_only_forwarding: PropTypes.bool,
-    is_trade_enabled: PropTypes.bool,
-    onClickNewTrade : PropTypes.func,
-    onMount         : PropTypes.func,
-    onSymbolChange  : PropTypes.func,
-    onUnmount       : PropTypes.func,
-    purchase_info   : PropTypes.object,
-    setOnlyForwarding : PropTypes.func,
-    start_epoch     : PropTypes.number,
-    symbol          : PropTypes.string,
+    chart_id                           : PropTypes.number,
+    contract_type                      : PropTypes.string,
+    end_epoch                          : PropTypes.number,
+    has_only_forward_starting_contracts: PropTypes.bool,
+    is_contract_mode                   : PropTypes.bool,
+    is_mobile                          : PropTypes.bool,
+    is_trade_enabled                   : PropTypes.bool,
+    onClickNewTrade                    : PropTypes.func,
+    onMount                            : PropTypes.func,
+    onSymbolChange                     : PropTypes.func,
+    onUnmount                          : PropTypes.func,
+    purchase_info                      : PropTypes.object,
+    setHasOnlyForwardingContracts      : PropTypes.func,
+    start_epoch                        : PropTypes.number,
+    symbol                             : PropTypes.string,
 };
 
 export default connect(
     ({ modules, ui }) => ({
-        start_epoch      : modules.contract.chart_config.start_epoch,
-        end_epoch        : modules.contract.chart_config.end_epoch,
-        chart_type       : modules.smart_chart.chart_type,
-        granularity      : modules.smart_chart.granularity,
-        is_contract_mode : modules.smart_chart.is_contract_mode,
-        updateChartType  : modules.smart_chart.updateChartType,
-        updateGranularity: modules.smart_chart.updateGranularity,
-        chart_id         : modules.trade.chart_id,
-        contract_type    : modules.trade.contract_type,
-        is_only_forwarding: modules.trade.is_only_forwarding,
-        is_trade_enabled : modules.trade.is_trade_enabled,
-        onClickNewTrade  : modules.trade.onClickNewTrade,
-        onMount          : modules.trade.onMount,
-        onSymbolChange   : modules.trade.onChange,
-        onUnmount        : modules.trade.onUnmount,
-        purchase_info    : modules.trade.purchase_info,
-        setOnlyForwarding : modules.trade.setOnlyForwarding,
-        symbol           : modules.trade.symbol,
-        is_mobile        : ui.is_mobile,
+        start_epoch                        : modules.contract.chart_config.start_epoch,
+        end_epoch                          : modules.contract.chart_config.end_epoch,
+        chart_type                         : modules.smart_chart.chart_type,
+        granularity                        : modules.smart_chart.granularity,
+        is_contract_mode                   : modules.smart_chart.is_contract_mode,
+        updateChartType                    : modules.smart_chart.updateChartType,
+        updateGranularity                  : modules.smart_chart.updateGranularity,
+        chart_id                           : modules.trade.chart_id,
+        contract_type                      : modules.trade.contract_type,
+        is_trade_enabled                   : modules.trade.is_trade_enabled,
+        onClickNewTrade                    : modules.trade.onClickNewTrade,
+        onMount                            : modules.trade.onMount,
+        onSymbolChange                     : modules.trade.onChange,
+        onUnmount                          : modules.trade.onUnmount,
+        purchase_info                      : modules.trade.purchase_info,
+        symbol                             : modules.trade.symbol,
+        has_only_forward_starting_contracts: ui.has_only_forward_starting_contracts,
+        is_mobile                          : ui.is_mobile,
+        setHasOnlyForwardingContracts      : ui.setHasOnlyForwardingContracts,
     })
 )(Trade);

@@ -25,11 +25,11 @@ const ContractType = (() => {
     let available_categories     = {};
     let contract_types;
     const trading_times          = {};
-    let is_only_forwarding = false;
+    let has_only_forward_starting_contracts = false;
 
     const buildContractTypesConfig = (symbol) => WS.contractsFor(symbol).then(r => {
-        is_only_forwarding = !r.contracts_for.available.find((contract) => contract.start_type !== 'forward');
-        if (is_only_forwarding) return;
+        has_only_forward_starting_contracts = !r.contracts_for.available.find((contract) => contract.start_type !== 'forward');
+        if (has_only_forward_starting_contracts) return;
         const contract_categories = getContractCategoriesConfig();
         contract_types = getContractTypesConfig();
 
@@ -418,7 +418,7 @@ const ContractType = (() => {
         getStartTime,
         getStartType,
         getTradingTimes,
-        getContractCategories: () => ({ contract_types_list: available_categories, is_only_forwarding }),
+        getContractCategories: () => ({ contract_types_list: available_categories, has_only_forward_starting_contracts }),
     };
 })();
 
