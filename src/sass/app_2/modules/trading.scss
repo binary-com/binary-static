@@ -242,8 +242,9 @@
     &__loading {
         background: rgba(255, 255, 255, 0.6);
         border-radius: $BORDER_RADIUS;
-        width: calc(100% - 6px);
-        height: calc(100% - 2px);
+        width: calc(100% + 2px);
+        height: calc(100% + 2px);
+        left: -2px;
     }
     &__lock {
         position: absolute;
