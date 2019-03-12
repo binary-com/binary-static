@@ -154,7 +154,7 @@ export default class TradeStore extends BaseStore {
     @action.bound
     refresh() {
         this.symbol = null;
-        WS.forgetAll('proposal');
+        WS.forgetAll('proposal', 'ticks_history');
     }
 
     @action.bound
@@ -244,6 +244,7 @@ export default class TradeStore extends BaseStore {
     @action.bound
     onPurchase(proposal_id, price, type) {
         if (proposal_id) {
+            this.is_purchase_enabled = false;
             processPurchase(proposal_id, price).then(action((response) => {
                 if (this.proposal_info[type].id !== proposal_id) {
                     throw new Error('Proposal ID does not match.');
@@ -254,10 +255,17 @@ export default class TradeStore extends BaseStore {
                         ...this.proposal_info[type],
                         buy_price: response.buy.buy_price,
                     };
+                    // toggle smartcharts to contract mode
+                    const contract_id = getPropertyValue(response, ['buy', 'contract_id']);
+                    if (contract_id) {
+                        this.root_store.modules.contract.onMount(contract_id);
+                        this.root_store.ui.openPositionsDrawer();
+                    }
                     GTM.pushPurchaseData(contract_data, this.root_store);
                 }
                 WS.forgetAll('proposal');
                 this.purchase_info = response;
+                this.is_purchase_enabled = true;
             }));
         }
     }
@@ -537,7 +545,7 @@ export default class TradeStore extends BaseStore {
     @action.bound
     onUnmount() {
         this.disposeSwitchAccount();
-        WS.forgetAll('proposal');
+        WS.forgetAll('proposal', 'ticks_history');
         this.is_trade_component_mounted = false;
     }
 }
