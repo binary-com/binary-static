@@ -213,11 +213,12 @@ const AccountTransfer = (() => {
             } else {
                 const req_transfer_between_accounts = BinarySocket.send({ transfer_between_accounts: 1 });
                 const req_get_limits                = BinarySocket.send({ get_limits: 1 });
+                const get_account_status            = BinarySocket.send({ get_account_status: 1 });
 
-                Promise.all([req_transfer_between_accounts, req_get_limits]).then(() => {
+                Promise.all([req_transfer_between_accounts, req_get_limits, get_account_status]).then(() => {
                     const response_transfer = State.get(['response', 'transfer_between_accounts']);
                     const response_limits   = State.get(['response', 'get_limits']);
-                    const is_authenticated  = State.get(['response', 'get_account_status', 'status']);
+                    const is_authenticated  = State.getResponse('get_account_status.status').some(state => state === 'authenticated');
 
                     if (hasError(response_transfer)) {
                         return;
