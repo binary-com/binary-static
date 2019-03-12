@@ -55,8 +55,11 @@ const Input = ({
 );
 
 Input.propTypes = {
-    changeValue          : PropTypes.func,
-    checked              : PropTypes.number,
+    changeValue: PropTypes.func,
+    checked    : PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
+    ]),
     className            : PropTypes.string,
     classNameInlinePrefix: PropTypes.string,
     data_tip             : PropTypes.string,
