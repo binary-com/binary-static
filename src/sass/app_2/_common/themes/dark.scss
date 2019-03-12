@@ -1,5 +1,7 @@
 // Dark Theme
 .theme--dark {
+    background-color: $COLOR_DARK_BLUE_1;
+
     .card-list {
         &__card {
             background: $COLOR_DARK_BLUE_5;
@@ -837,6 +839,9 @@
         &__sidebar {
             background-color: $COLOR_DARK_BLUE_2;
             color: $COLOR_DARK_BLUE_7;
+        }
+        &__close {
+            @extend %inline-icon.border_hover_color;
         }
     }
     .media {
