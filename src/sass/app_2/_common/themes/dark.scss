@@ -650,7 +650,7 @@
         }
         &:focus, &:active {
             border-color: $COLOR_DARK_BLUE_7;
-            box-shadow: 0 0 0 0.2rem rgba(127, 131, 151, 0.3);
+            box-shadow: 0 0 0 0.2px rgba(127, 131, 151, 0.3);
             color: $COLOR_WHITE;
         }
         &::placeholder {
