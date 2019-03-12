@@ -11,7 +11,10 @@ import Checkbox               from 'App/Components/Form/Checkbox';
 import { connect }            from 'Stores/connect';
 
 const PurchaseSettings = ({
-    is_purchase_confirmed, is_purchase_locked, togglePurchaseConfirmation, togglePurchaseLock,
+    is_purchase_confirmed,
+    is_purchase_locked,
+    togglePurchaseConfirmation,
+    togglePurchaseLock,
 }) => (
     <div className='settings-dialog__purchase'>
         <MediaItem>

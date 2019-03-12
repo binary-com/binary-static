@@ -40,22 +40,4 @@
             box-shadow: 0 0 0 2px $COLOR_LIGHT_GRAY_2;
         }
     }
-    .theme--dark & {
-        &__title {
-            color: $COLOR_DARK_BLUE_7;
-        }
-        &__option {
-            &__title {
-                color: $COLOR_WHITE;
-            }
-            &__icon {
-                border: solid 1px $COLOR_DARK_BLUE_7;
-
-                &--active, &:hover {
-                    box-shadow: 0 0 0 2px $COLOR_DARK_BLUE_8;
-                }
-            }
-
-        }
-    }
 }

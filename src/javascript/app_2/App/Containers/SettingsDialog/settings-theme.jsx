@@ -1,9 +1,9 @@
 import classNames    from 'classnames';
 import React         from 'react';
-import { connect }   from 'Stores/connect';
+import Localize      from 'App/Components/Elements/localize.jsx';
 import DarkModeIcon  from 'Images/app_2/settings/img-theme-dark.svg';
 import LightModeIcon from 'Images/app_2/settings/img-theme-light.svg';
-import Localize      from 'App/Components/Elements/localize.jsx';
+import { connect }   from 'Stores/connect';
 
 const ThemeSelectSettings = ({ is_dark_mode, toggleDarkMode }) => {
     const darkOnClick = () => {

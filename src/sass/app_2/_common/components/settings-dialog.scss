@@ -77,11 +77,9 @@
 
     &__sidebar {
         width: 200px;
-        font-size: 16px;
+        @include typeface(--title-left-bold-black);
         line-height: 24px;
         padding: 16px;
-        font-weight: bold;
-        color: $COLOR_LIGHT_BLACK_1;
         background-color: $COLOR_LIGHT_BLACK_4_SOLID;
     }
     &__main {

@@ -1,7 +1,7 @@
-import React                              from 'react';
-import { expect }                         from 'chai';
-import ShallowRenderer from 'react-test-renderer/shallow';
-import { SettingsDialog }                 from '../settings-dialog.jsx';
+import { expect }         from 'chai';
+import React              from 'react';
+import ShallowRenderer    from 'react-test-renderer/shallow';
+import { SettingsDialog } from '../settings-dialog.jsx';
 
 describe('SettingsDialog', () => {
     it('should render one <SettingsDialog /> component', () => {

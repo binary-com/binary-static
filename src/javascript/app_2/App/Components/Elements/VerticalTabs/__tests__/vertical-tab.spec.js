@@ -2,7 +2,6 @@ import { expect }  from 'chai';
 import { mount }   from 'enzyme';
 import React       from 'react';
 import VerticalTab from '../vertical-tab.jsx';
-import sinon       from 'sinon';
 
 describe('<VerticalTab />', () => {
     const valid_tab_items = [

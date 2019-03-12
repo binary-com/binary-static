@@ -1,8 +1,8 @@
 import { expect } from 'chai';
 import { mount }  from 'enzyme';
 import React      from 'react';
-import RadioGroup from '../radio-group.jsx';
 import sinon      from 'sinon';
+import RadioGroup from '../radio-group.jsx';
 
 describe('<RadioGroup />', () => {
     beforeEach(() => {

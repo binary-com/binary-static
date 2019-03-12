@@ -24,12 +24,4 @@
         justify-content: flex-start;
         align-items: flex-start;
     }
-    .theme--dark & {
-        &__heading {
-            color: $COLOR_DARK_BLUE_7;
-        }
-        &__description {
-            color: $COLOR_WHITE;
-        }
-    }
 }

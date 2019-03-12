@@ -47,7 +47,7 @@ export default class UIStore extends BaseStore {
     @observable duration_h             = 1;
     @observable duration_d             = 1;
 
-    @observable is_blurred             = false;
+    @observable is_blurred = false;
 
     getDurationFromUnit = (unit) => this[`duration_${unit}`];
 

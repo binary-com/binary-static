@@ -1,7 +1,7 @@
 import PropTypes                       from 'prop-types';
 import React                           from 'react';
-import { VerticalTabHeaders }          from './vertical-tab-headers.jsx';
 import { VerticalTabContentContainer } from './vertical-tab-content-container.jsx';
+import { VerticalTabHeaders }          from './vertical-tab-headers.jsx';
 
 class VerticalTab extends React.PureComponent {
     constructor(props) {
