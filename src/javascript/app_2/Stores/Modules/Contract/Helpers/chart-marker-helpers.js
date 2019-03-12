@@ -1,5 +1,4 @@
 import extend                  from 'extend';
-import { isDigitContract }     from 'Stores/Modules/Contract/Helpers/digits';
 import {
     getEndSpotTime,
     isUserSold }               from 'Stores/Modules/Contract/Helpers/logic';
@@ -17,8 +16,9 @@ const createMarkerConfig = (marker_type, x, y, content_config) => (
 
 // -------------------- Lines --------------------
 export const createMarkerExpiry = (contract_info) => {
-    if (contract_info.status === 'open' || !contract_info.date_expiry) return false;
     const end_spot_time = getEndSpotTime(contract_info);
+
+    if (contract_info.status === 'open' || !end_spot_time) return false;
 
     return createMarkerConfig(
         MARKER_TYPES_CONFIG.LINE_END.type,
@@ -58,7 +58,6 @@ export const createMarkerSpotEntry = (contract_info) => {
 
 export const createMarkerSpotExit = (contract_info, idx, align_label) => {
     if (!contract_info.exit_tick_time || isUserSold(contract_info)) return false;
-    const spot_count = isDigitContract(contract_info.contract_type) ? '' : idx;
 
     return createMarkerConfig(
         MARKER_TYPES_CONFIG.SPOT_EXIT.type,
@@ -68,7 +67,7 @@ export const createMarkerSpotExit = (contract_info, idx, align_label) => {
             spot_value: `${contract_info.exit_tick}`,
             spot_epoch: `${contract_info.exit_tick_time}`,
             status    : `${contract_info.profit > 0 ? 'won' : 'lost' }`,
-            spot_count,
+            spot_count: idx,
             align_label,
         },
     );
