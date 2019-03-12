@@ -53,9 +53,19 @@
         border-top-right-radius: 0;
         cursor: pointer;
 
+        .result-details__select-arrow {
+            pointer-events: none;
+            transition: transform 0.25s ease;
+            transform: rotate(0deg);
+            transform-origin: 50% 45%;
+        }
         &--is-open {
             @include themify($themes) {
                 border-top: 1px solid themed('background_container_color');
+            }
+
+            .result-details__select-arrow {
+                transform: rotate(180deg);
             }
         }
     }
