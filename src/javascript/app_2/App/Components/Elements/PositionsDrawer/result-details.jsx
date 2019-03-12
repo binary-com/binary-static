@@ -106,7 +106,7 @@ class ResultDetails extends React.PureComponent {
                     })}
                     onClick={this.toggleDetails}
                 >
-                    <IconArrow />
+                    <IconArrow className='result-details__select-arrow' />
                 </div>
             </React.Fragment>
         );
