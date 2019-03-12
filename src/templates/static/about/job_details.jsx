@@ -106,7 +106,7 @@ const JobDetails = () => (
                         <SideBar
                             className='data_analytics'
                             sidebar_items={[
-                                { href: 'data_scientist',      string: it.L('Data Scientist') },
+                                { href: 'data_scientist', string: it.L('Data Scientist') },
                             ]}
                         />
 
@@ -634,7 +634,7 @@ const JobDetails = () => (
                                 text={it.L('You should be passionate about:')}
                                 className='bullet'
                                 items={[
-                                    { text: it.L('Focusing on customer’s needs in everything that you do.') },
+                                    { text: it.L('Focusing on customer\'s needs in everything that you do.') },
                                     { text: it.L('Approaching even the smallest task with an open mind and learning new skills.') },
                                     { text: it.L('Constant, open and honest communication.') },
                                     { text: it.L('Fixing problems and providing feedback for improvement.') },
