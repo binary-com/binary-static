@@ -837,7 +837,7 @@ label + input {
 
         &__head {
             box-sizing: border-box;
-            padding: 57px 100px;
+            padding: 57px 115px;
             background-image: url('../images/interview_popup/bg-shape.svg');
             background-size: 100%;
             background-position: bottom;
@@ -924,7 +924,7 @@ label + input {
                 height: 100px;
             }
             &__head {
-                padding: 20px 15px;
+                padding: 30px 80px;
             }
             &__body {
                 padding: 20px 15px 7px;
@@ -937,7 +937,7 @@ label + input {
                 font-size: 12px;
             }
             #interview_interested {
-                font-size: 20px;
+                font-size: 14px;
                 margin: 5px 0 30px;
             }
         }
