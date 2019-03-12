@@ -30,7 +30,7 @@ const MetaTrader = (() => {
             }
 
             const shortcode = State.getResponse('landing_company.gaming_company.shortcode');
-            if (shortcode === 'malta') {
+            if (shortcode === 'malta' || shortcode === 'maltainvest') {
                 MetaTraderUI.showEA(false);
             }
         });
