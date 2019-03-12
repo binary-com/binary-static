@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-03-11 10:54\n"
+"PO-Revision-Date: 2019-03-12 02:56\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Indonesian\n"
 "MIME-Version: 1.0\n"
@@ -1598,6 +1598,9 @@ msgstr "Pasar yang tersedia"
 
 msgid "Available payment methods"
 msgstr "Metode pembayaran yang tersedia"
+
+msgid "Available trade types:"
+msgstr ""
 
 msgid "Average"
 msgstr "Rata-rata"
@@ -3429,9 +3432,6 @@ msgstr "Download aplikasi android"
 msgid "Download your statement"
 msgstr "Unduh pernyataan Anda"
 
-msgid "Downs"
-msgstr "Downs"
-
 msgid "Drive rapid growth and business development to support the company's sales and marketing objectives"
 msgstr "Mendorong pertumbuhan yang cepat dan pengembangan bisnis untuk mendukung penjualan dan tujuan pemasaran perusahaan"
 
@@ -5178,17 +5178,17 @@ msgstr "Jika Anda memilih \"rise\", maka Anda akan memperoleh hasil jika harga p
 msgid "If you select \"rises\", you win the payout if the market price is higher than the entry spot."
 msgstr "Jika Anda memilih \"rise\", maka Anda akan memperoleh hasil jika harga pasar lebih tinggi dari spot masuk."
 
-msgid "If you select %1\"Downs\"%2, you win the payout if consecutive ticks fall successively after the %1entry spot%2.%3No payout if any tick rises or is equal to any of the previous ticks."
-msgstr "Jika Anda memilih %1\"Downs\"%2 Anda akan memperoleh hasil jika tik secara berurutan turun setelah %1spot masuk%2.%3Tidak akan menghasilkan jika salah satu tik bergerak naik atau sama dengan tik sebelumnya."
-
 msgid "If you select %1\"High Tick\"%2, you win the payout if the selected tick is the %1highest among the next five ticks%2."
 msgstr "Pilih %1\"High Tick\"%2, Anda akan memperoleh hasil jika tik yang dipilih merupakan %1tik tertinggi diatara lima tik selanjutnya%2."
 
 msgid "If you select %1\"Low Tick\"%2, you win the payout if the selected tick is the %1lowest among the next five ticks%2."
 msgstr "Pilih %1\"Low Tick\"%2, Anda akan memperoleh hasil jika tik yang dipilih merupakan %1tik terendah diatara lima tik selanjutnya%2."
 
-msgid "If you select %1\"Ups\"%2, you win the payout if consecutive ticks rise successively after the %1entry spot%2.%3No payout if any tick falls or is equal to any of the previous ticks."
-msgstr "Jika Anda memilih %1\"Ups\"%2 Anda akan memperoleh hasil jika tik secara berurutan naik setelah %1spot masuk%2.%3Tidak akan menghasilkan jika salah satu tik bergerak turun atau sama dengan tik sebelumnya."
+msgid "If you select %1\"Only Downs\"%2, you win the payout if consecutive ticks fall successively after the %1entry spot%2.%3No payout if any tick rises or is equal to any of the previous ticks."
+msgstr ""
+
+msgid "If you select %1\"Only Ups\"%2, you win the payout if consecutive ticks rise successively after the %1entry spot%2.%3No payout if any tick falls or is equal to any of the previous ticks."
+msgstr ""
 
 msgid "If you select a <strong>start time</strong> in the future, the <strong>start time</strong> is that which is selected and the <strong>entry spot</strong> is the price in effect at that time."
 msgstr "Jika anda memilih <strong>waktu mulai</strong> mendatang, maka <strong>waktu mulai</strong> adalah waktu yang dipilih dan <strong>spot masuk</strong> adalah harga yang berlaku pada saat itu."
@@ -7041,11 +7041,20 @@ msgstr "Trading online dapat menyebabkan ketagihan. Isikan formulir dibawah ini 
 msgid "Only %1 are allowed."
 msgstr "Hanya %1 dibenarkan."
 
+msgid "Only Downs"
+msgstr ""
+
 msgid "Only JPG, JPEG, GIF, PNG and PDF formats are accepted"
 msgstr "Hanya format JPG, JPEG, GIF, PNG dan PDF yang diterima"
 
 msgid "Only JPG, JPEG, GIF, and PNG formats are accepted"
 msgstr "Hanya format JPG, JPEG, GIF dan PNG yang diterima"
+
+msgid "Only Ups"
+msgstr ""
+
+msgid "Only Ups/Only Downs"
+msgstr ""
 
 msgid "Only five years after inception, we pick up this major award for our online trading services. The award recognises BetOnMarkets.com's reliable, fast and secure online trading for novice and expert traders. At this time, our website has received over 15 million trades."
 msgstr "Dalam waktu lima tahun kami telah mengantongi beberapa penghargaan. Hal ini membuktikan bahwa BetOnMarkets.com adalah online trading yang handal, cepat dan aman bagi pemula atau trader mahir. Saat ini, sudah 15 juta kontrak terjual."
@@ -7656,8 +7665,8 @@ msgstr "Silahkan masuk."
 msgid "Please make sure that you first agree with the Agent on the terms of payment before submitting your request."
 msgstr "Pastikan Anda telah setuju dengan Agen mengenai syarat pembayaran sebelum mengajukan permohonan Anda."
 
-msgid "Please note that Asians, Digits, Reset Call/Reset Put, High Ticks/Low Ticks, and Run Ups/Run Downs are available exclusively with our Volatility Indices."
-msgstr "Mohon diketahui Asian, Digit, Reset Call/Reset Put, High Tick/Low Tick, dan Run Ups/Run Downs hanya tersedia secara eksklusif pada Indeks Volatilitas."
+msgid "Please note that Asians, Digits, Reset Call/Reset Put, High Ticks/Low Ticks, and Only Ups/Only Downs are available exclusively with our Volatility Indices."
+msgstr ""
 
 msgid "Please note that actual trading results may not correspond to optimized or back-tested results."
 msgstr "Mohon diketahui bahwa hasil trading mungkin tidak sesuai dengan hasil yang dioptimalkan atau di uji."
@@ -8504,15 +8513,6 @@ msgstr "Kredit/Debit Roll-over"
 
 msgid "Rolling Spot Forex;"
 msgstr "Rolling Spot Forex;"
-
-msgid "Run"
-msgstr "Run"
-
-msgid "Run Downs"
-msgstr "Run Downs"
-
-msgid "Run Ups"
-msgstr "Run Ups"
 
 msgid "Russia"
 msgstr "Rusia"
@@ -10224,9 +10224,6 @@ msgstr "Terdapat beberapa risiko dalam penggunaan sistem pengeksekusian trading 
 msgid "There are two types of In/Out trades:"
 msgstr "Tersedia dua jenis kontrak In/Out:"
 
-msgid "There are two types of Run trades:"
-msgstr "Tersedia dua jenis trading Run:"
-
 msgid "There are two types of Up/Down trades:"
 msgstr "Tersedia dua jenis kontrak Up/Down:"
 
@@ -11183,9 +11180,6 @@ msgstr "Setelah pencabutan, Anda mengakui dan memahami bahwa Money Manager Anda 
 
 msgid "Upon the expiration or termination of this Agreement, for whatever reason, all rights and license granted to you in this Agreement, including use of the %1 API, shall immediately terminate. You agree to promptly cease all further use of the %1 API. Termination of this Agreement shall not act as a waiver of any breach of this Agreement and shall not act as a release of your liability for breach of its obligation under this Agreement. The Company shall not be liable to you for damages of any kind solely as a result of terminating this Agreement in accordance with its terms."
 msgstr "Setelah berakhirnya atau penghentian Perjanjian ini, untuk alasan apa pun, semua hak dan lisensi yang diberikan kepada Anda dalam Perjanjian ini, termasuk penggunaan API %1, akan segera diakhiri. Anda setuju untuk segera menghentikan semua penggunaan lebih lanjut dari API %1. Pengakhiran Perjanjian ini tidak akan bertindak sebagai pelepasan dari pelanggaran Perjanjian dan tidak akan bertindak sebagai pelepasan tanggung jawab Anda untuk pelanggaran kewajibannya berdasarkan Perjanjian ini. Perusahaan tidak bertanggung jawab kepada Anda atas kerusakan apapun semata-mata sebagai akibat dari mengakhiri Perjanjian ini sesuai dengan ketentuan-ketentuannya."
-
-msgid "Ups"
-msgstr "Ups"
 
 msgid "Usage Limit"
 msgstr "Batas Penggunaan"

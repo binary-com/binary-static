@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-03-11 10:54\n"
+"PO-Revision-Date: 2019-03-12 02:57\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Acholi\n"
 "MIME-Version: 1.0\n"
@@ -1598,6 +1598,9 @@ msgstr "crwdns42024:0crwdne42024:0"
 
 msgid "Available payment methods"
 msgstr "crwdns37844:0crwdne37844:0"
+
+msgid "Available trade types:"
+msgstr "crwdns53020:0crwdne53020:0"
 
 msgid "Average"
 msgstr "crwdns45845:0crwdne45845:0"
@@ -3429,9 +3432,6 @@ msgstr "crwdns52526:0crwdne52526:0"
 msgid "Download your statement"
 msgstr "crwdns51372:0crwdne51372:0"
 
-msgid "Downs"
-msgstr "crwdns52964:0crwdne52964:0"
-
 msgid "Drive rapid growth and business development to support the company's sales and marketing objectives"
 msgstr "crwdns51926:0crwdne51926:0"
 
@@ -5178,17 +5178,17 @@ msgstr "crwdns38704:0crwdne38704:0"
 msgid "If you select \"rises\", you win the payout if the market price is higher than the entry spot."
 msgstr "crwdns38705:0crwdne38705:0"
 
-msgid "If you select %1\"Downs\"%2, you win the payout if consecutive ticks fall successively after the %1entry spot%2.%3No payout if any tick rises or is equal to any of the previous ticks."
-msgstr "crwdns52966:0%1crwdnd52966:0%2crwdnd52966:0%1ecrwdnd52966:0%2crwdnd52966:0%3crwdne52966:0"
-
 msgid "If you select %1\"High Tick\"%2, you win the payout if the selected tick is the %1highest among the next five ticks%2."
 msgstr "crwdns45856:0%1crwdnd45856:0%2crwdnd45856:0%1hicrwdnd45856:0%2crwdne45856:0"
 
 msgid "If you select %1\"Low Tick\"%2, you win the payout if the selected tick is the %1lowest among the next five ticks%2."
 msgstr "crwdns45857:0%1crwdnd45857:0%2crwdnd45857:0%1locrwdnd45857:0%2crwdne45857:0"
 
-msgid "If you select %1\"Ups\"%2, you win the payout if consecutive ticks rise successively after the %1entry spot%2.%3No payout if any tick falls or is equal to any of the previous ticks."
-msgstr "crwdns52968:0%1crwdnd52968:0%2crwdnd52968:0%1ecrwdnd52968:0%2crwdnd52968:0%3crwdne52968:0"
+msgid "If you select %1\"Only Downs\"%2, you win the payout if consecutive ticks fall successively after the %1entry spot%2.%3No payout if any tick rises or is equal to any of the previous ticks."
+msgstr "crwdns53022:0%1crwdnd53022:0%2crwdnd53022:0%1ecrwdnd53022:0%2crwdnd53022:0%3crwdne53022:0"
+
+msgid "If you select %1\"Only Ups\"%2, you win the payout if consecutive ticks rise successively after the %1entry spot%2.%3No payout if any tick falls or is equal to any of the previous ticks."
+msgstr "crwdns53024:0%1crwdnd53024:0%2crwdnd53024:0%1ecrwdnd53024:0%2crwdnd53024:0%3crwdne53024:0"
 
 msgid "If you select a <strong>start time</strong> in the future, the <strong>start time</strong> is that which is selected and the <strong>entry spot</strong> is the price in effect at that time."
 msgstr "crwdns38706:0crwdne38706:0"
@@ -7041,11 +7041,20 @@ msgstr "crwdns43471:0%1crwdne43471:0"
 msgid "Only %1 are allowed."
 msgstr "crwdns39323:0%1crwdne39323:0"
 
+msgid "Only Downs"
+msgstr "crwdns53026:0crwdne53026:0"
+
 msgid "Only JPG, JPEG, GIF, PNG and PDF formats are accepted"
 msgstr "crwdns41759:0crwdne41759:0"
 
 msgid "Only JPG, JPEG, GIF, and PNG formats are accepted"
 msgstr "crwdns46270:0crwdne46270:0"
+
+msgid "Only Ups"
+msgstr "crwdns53028:0crwdne53028:0"
+
+msgid "Only Ups/Only Downs"
+msgstr "crwdns53030:0crwdne53030:0"
 
 msgid "Only five years after inception, we pick up this major award for our online trading services. The award recognises BetOnMarkets.com's reliable, fast and secure online trading for novice and expert traders. At this time, our website has received over 15 million trades."
 msgstr "crwdns39325:0crwdne39325:0"
@@ -7656,8 +7665,8 @@ msgstr "crwdns39484:0crwdne39484:0"
 msgid "Please make sure that you first agree with the Agent on the terms of payment before submitting your request."
 msgstr "crwdns39485:0crwdne39485:0"
 
-msgid "Please note that Asians, Digits, Reset Call/Reset Put, High Ticks/Low Ticks, and Run Ups/Run Downs are available exclusively with our Volatility Indices."
-msgstr "crwdns52970:0crwdne52970:0"
+msgid "Please note that Asians, Digits, Reset Call/Reset Put, High Ticks/Low Ticks, and Only Ups/Only Downs are available exclusively with our Volatility Indices."
+msgstr "crwdns53032:0crwdne53032:0"
 
 msgid "Please note that actual trading results may not correspond to optimized or back-tested results."
 msgstr "crwdns46081:0crwdne46081:0"
@@ -8504,15 +8513,6 @@ msgstr "crwdns46089:0crwdne46089:0"
 
 msgid "Rolling Spot Forex;"
 msgstr "crwdns46090:0crwdne46090:0"
-
-msgid "Run"
-msgstr "crwdns52972:0crwdne52972:0"
-
-msgid "Run Downs"
-msgstr "crwdns52974:0crwdne52974:0"
-
-msgid "Run Ups"
-msgstr "crwdns52976:0crwdne52976:0"
 
 msgid "Russia"
 msgstr "crwdns39701:0crwdne39701:0"
@@ -10224,9 +10224,6 @@ msgstr "crwdns40112:0%1crwdne40112:0"
 msgid "There are two types of In/Out trades:"
 msgstr "crwdns40113:0crwdne40113:0"
 
-msgid "There are two types of Run trades:"
-msgstr "crwdns52984:0crwdne52984:0"
-
 msgid "There are two types of Up/Down trades:"
 msgstr "crwdns40114:0crwdne40114:0"
 
@@ -11183,9 +11180,6 @@ msgstr "crwdns44704:0crwdne44704:0"
 
 msgid "Upon the expiration or termination of this Agreement, for whatever reason, all rights and license granted to you in this Agreement, including use of the %1 API, shall immediately terminate. You agree to promptly cease all further use of the %1 API. Termination of this Agreement shall not act as a waiver of any breach of this Agreement and shall not act as a release of your liability for breach of its obligation under this Agreement. The Company shall not be liable to you for damages of any kind solely as a result of terminating this Agreement in accordance with its terms."
 msgstr "crwdns40344:0%1crwdnd40344:0%1crwdne40344:0"
-
-msgid "Ups"
-msgstr "crwdns52986:0crwdne52986:0"
 
 msgid "Usage Limit"
 msgstr "crwdns40345:0crwdne40345:0"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-03-11 10:52\n"
+"PO-Revision-Date: 2019-03-12 02:54\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Italian\n"
 "MIME-Version: 1.0\n"
@@ -1598,6 +1598,9 @@ msgstr "Mercati disponibili"
 
 msgid "Available payment methods"
 msgstr "Modalità di pagamento disponibili"
+
+msgid "Available trade types:"
+msgstr ""
 
 msgid "Average"
 msgstr "Media"
@@ -3429,9 +3432,6 @@ msgstr "Scarica l'app per Android"
 msgid "Download your statement"
 msgstr "Scarica il tuo estratto conto"
 
-msgid "Downs"
-msgstr "Discendente"
-
 msgid "Drive rapid growth and business development to support the company's sales and marketing objectives"
 msgstr "Condurre una crescita rapida e lo sviluppo del business per favorire gli obiettivi di vendita e marketing della Società"
 
@@ -5180,17 +5180,17 @@ msgstr "Se selezioni \"rialza\", vinci il payout se il prezzo del mercato è sup
 msgid "If you select \"rises\", you win the payout if the market price is higher than the entry spot."
 msgstr "Se selezioni \"rialza\", vinci il payout se il prezzo del mercato è superiore a quello dello spot d'ingresso."
 
-msgid "If you select %1\"Downs\"%2, you win the payout if consecutive ticks fall successively after the %1entry spot%2.%3No payout if any tick rises or is equal to any of the previous ticks."
-msgstr "Selezionando %1\"Discendente\"%2, ottieni il payout se tick consecutivi scendono successivamente al di sotto del %1punto di entrata%2.%3Non ottieni alcun payout se qualsiasi tick è maggiore o uguale a uno dei tick precedenti."
-
 msgid "If you select %1\"High Tick\"%2, you win the payout if the selected tick is the %1highest among the next five ticks%2."
 msgstr "Selezionando %1\"Tick alto\"%2, vinci il payout se il tick selezionato è il %1più alto tra i cinque tick successivi%2."
 
 msgid "If you select %1\"Low Tick\"%2, you win the payout if the selected tick is the %1lowest among the next five ticks%2."
 msgstr "Selezionando %1\"Tick basso\"%2, vinci il payout se il tick selezionato è quello %1più basso tra i successivi cinque tick%2."
 
-msgid "If you select %1\"Ups\"%2, you win the payout if consecutive ticks rise successively after the %1entry spot%2.%3No payout if any tick falls or is equal to any of the previous ticks."
-msgstr "Selezionando %\"Ascendente\"%2, ottieni il payout se tick consecutivi superano successivamente il %1punto di entrata%2.%3Non ottieni alcun payout se qualsiasi tick è minore o uguale a uno dei tick precedenti."
+msgid "If you select %1\"Only Downs\"%2, you win the payout if consecutive ticks fall successively after the %1entry spot%2.%3No payout if any tick rises or is equal to any of the previous ticks."
+msgstr ""
+
+msgid "If you select %1\"Only Ups\"%2, you win the payout if consecutive ticks rise successively after the %1entry spot%2.%3No payout if any tick falls or is equal to any of the previous ticks."
+msgstr ""
 
 msgid "If you select a <strong>start time</strong> in the future, the <strong>start time</strong> is that which is selected and the <strong>entry spot</strong> is the price in effect at that time."
 msgstr "Se selezioni un <strong>orario di inizio</strong> nel futuro, l'<strong>orario d'inizio</strong> sarà quello selezionato e lo <strong>spot d'ingresso</strong> sarà il prezzo in vigore a quell'ora."
@@ -7043,11 +7043,20 @@ msgstr "Il trading online può creare dipendenza. Per limitare la tua partecipaz
 msgid "Only %1 are allowed."
 msgstr "Sono consentiti solo %1."
 
+msgid "Only Downs"
+msgstr ""
+
 msgid "Only JPG, JPEG, GIF, PNG and PDF formats are accepted"
 msgstr "Sono accettati solo formati JPG, JPEG, GIF, PNG e PDF"
 
 msgid "Only JPG, JPEG, GIF, and PNG formats are accepted"
 msgstr "Sono accettati solo i formati JPG, JPEG, GIF e PNG"
+
+msgid "Only Ups"
+msgstr ""
+
+msgid "Only Ups/Only Downs"
+msgstr ""
 
 msgid "Only five years after inception, we pick up this major award for our online trading services. The award recognises BetOnMarkets.com's reliable, fast and secure online trading for novice and expert traders. At this time, our website has received over 15 million trades."
 msgstr "Dopo soli cinque anni dall'inizio, abbiamo ottenuto questo importante premio per i nostri servizi di trading online. BetOnMarkets.com è stata riconosciuta come una piattaforma di trading online affidabile, rapida e sicura sia per i novizi che per i trader professionisti. Fino a quel momento, il nostro sito internet aveva ricevuto oltre 15 milioni di trade."
@@ -7658,8 +7667,8 @@ msgstr "Effettua il login."
 msgid "Please make sure that you first agree with the Agent on the terms of payment before submitting your request."
 msgstr "Prima di inviare la tua richiesta, assicurati di essere d'accordo con l'Agente sui termini di pagamento."
 
-msgid "Please note that Asians, Digits, Reset Call/Reset Put, High Ticks/Low Ticks, and Run Ups/Run Downs are available exclusively with our Volatility Indices."
-msgstr "Importante: le opzioni Asiatiche, Digitali, la funzione Reimposta Call/Reimposta Put, i tick alti/tick bassi e ascendenti/discendenti sono disponibili esclusivamente con i nostri indici di volatilità."
+msgid "Please note that Asians, Digits, Reset Call/Reset Put, High Ticks/Low Ticks, and Only Ups/Only Downs are available exclusively with our Volatility Indices."
+msgstr ""
 
 msgid "Please note that actual trading results may not correspond to optimized or back-tested results."
 msgstr "Importante: i risultati del trading reali potrebbero non corrispondere ai risultati ottimizzati o relativi al backtesting."
@@ -8220,7 +8229,7 @@ msgid "Recommend our products easily, and keep track of all your earnings with o
 msgstr "Consiglia i nostri prodotti con facilità e tieni traccia dei tuoi guadagni con i nostri eccellenti strumenti di suggerimento."
 
 msgid "Recruit, train, and nurture affiliates and IBs in countries where Binary Group is active, leveraging your direct knowledge and experience of the local market"
-msgstr "Reclutare, preparare e formare associati e IB nei paesi in cui il gruppo Binary è attivo, moltiplicando l'esperienza e le conoscenze dirette dei clienti del mercato locale"
+msgstr "Reclutare, preparare e formare associati e Introducing Broker nei paesi in cui il gruppo Binary è attivo, moltiplicando l'esperienza e le conoscenze dirette dei clienti del mercato locale"
 
 msgid "Recruitment Process"
 msgstr "Processo di assunzione"
@@ -8506,15 +8515,6 @@ msgstr "Credito/debito roll-over"
 
 msgid "Rolling Spot Forex;"
 msgstr "Rolling Spot Forex;"
-
-msgid "Run"
-msgstr "Contratto Run"
-
-msgid "Run Downs"
-msgstr ""
-
-msgid "Run Ups"
-msgstr ""
 
 msgid "Russia"
 msgstr "Russia"
@@ -9246,7 +9246,7 @@ msgid "Table 4 - Daily Price information"
 msgstr "Tabella 4 - Informazioni sui prezzi giornalieri"
 
 msgid "Table 6 - Likelihood of execution information"
-msgstr "Tabella 6 - Probabilità di informazioni di esecuzione"
+msgstr "Tabella 6 - Informazioni sulla probabilità di esecuzione"
 
 msgid "Take a short-term or long-term view with trade durations from 10 seconds to 365 days."
 msgstr "Scegli se fare trading a breve o a lungo termine con durate di trade da 10 secondi a 365 giorni."
@@ -10226,9 +10226,6 @@ msgstr "Esistono dei rischi connessi all'utilizzo di un sistema di trading con e
 msgid "There are two types of In/Out trades:"
 msgstr "Ci sono due tipologie di trade Dentro/Fuori:"
 
-msgid "There are two types of Run trades:"
-msgstr "Esistono due tipi di trade sui contratti Run:"
-
 msgid "There are two types of Up/Down trades:"
 msgstr "Ci sono due tipologie di trade Alto/Basso:"
 
@@ -10470,13 +10467,13 @@ msgid "This website’s services are not made available in certain countries suc
 msgstr "I servizi di questo sito web non vengono resi disponibili in alcuni paesi come USA, Canada, Costa Rica, Hong Kong e Giappone, e agli individui di età inferiore ai 18 anni."
 
 msgid "Thorough knowledge of bash scripting, and experience with the Perl scripting language"
-msgstr ""
+msgstr "Conoscenza approfondita dello scripting con Bash ed esperienza con il linguaggio di scripting di Perl"
 
 msgid "Thorough knowledge of web writing best practices"
-msgstr ""
+msgstr "Conoscenza approfondita delle migliori pratiche di scrittura per il web"
 
 msgid "Thorough understanding of Anti-Money Laundering (AML) and Know Your Customer (KYC) processes"
-msgstr ""
+msgstr "Dimestichezza con i processi anti-riciclaggio di denaro (AML) e di conoscenza dei clienti (KYC)"
 
 msgid "Throughout the duration of the Transaction and for as long as the Transaction is open, you are required to maintain a sufficient Account Equity to cover any Margin Requirement. If your Account Equity is less than the Margin Requirement in relation to the open Transaction you wish to create, you have entered into a Margin Call and you are required to fund the shortfall immediately. You may not be able to place an Order to open a Transaction until the shortfall has been funded and there is sufficient Account Equity to cover the Total Margin."
 msgstr "È necessario mantenere un equity del conto sufficiente a coprire qualsiasi requisito di margine per tutta la durata della transazione e fino quando la stessa è aperta. Se l'equity dovesse essere inferiore al requisito di margine relazionato alla transazione che si desidera aprire, verrà eseguita una chiamata a margine e il cliente dovrà provvedere a finanziare immediatamente l'ammanco. Fino a quando quest'ultimo non sarà coperto e l'equity del conto non sarà sufficiente a coprire il margine totale, potrebbe essere impossibile effettuare un ordine per aprire una transazione."
@@ -10542,7 +10539,7 @@ msgid "Title"
 msgstr "Titolo"
 
 msgid "To"
-msgstr ""
+msgstr "A"
 
 msgid "To apply, please submit your CV and a cover letter to %1"
 msgstr "Per candidarti, invia il tuo CV e una lettera di presentazione a %1"
@@ -10551,7 +10548,7 @@ msgid "To be able to trade OTC instruments available on the MT5 Trading Platform
 msgstr "Per poter effettuare trading con gli strumenti OTC disponibili sulla piattaforma MT5, è prima necessario:"
 
 msgid "To change your name, date of birth, country of residence, email, or tax information, please contact %1Customer Support%2."
-msgstr ""
+msgstr "Per modificare nome, data di nascita, paese di residenza, e-mail o informazioni fiscali, contatta l'%1assistenza clienti%2."
 
 msgid "To create a MAM real account, please:"
 msgstr "Per creare un conto reale MAM, ti preghiamo di:"
@@ -10563,7 +10560,7 @@ msgid "To disable two-factor authentication, please enter the code generated by 
 msgstr "Per disabilitare l'autenticazione a due fattori, inserisci il codice generato dalla app qui sotto:"
 
 msgid "To excel, you must demonstrate a passion for open-source technologies. You must also have a burning desire to challenge yourself in a fast-paced environment."
-msgstr ""
+msgstr "Per emergere, devi dimostrare una grande passione per le tecnologie open-source e una forte determinazione a lavorare con ritmi di lavoro incalzanti."
 
 msgid "To exchange one currency for another in order to make profit."
 msgstr "Scambiare una valuta con un'altra al fine di realizzare un profitto."
@@ -10629,13 +10626,13 @@ msgid "Top Up Virtual Account"
 msgstr "Ricarica il conto virtuale"
 
 msgid "Top up"
-msgstr ""
+msgstr "Ricarica"
 
 msgid "Top up Virtual Account"
-msgstr ""
+msgstr "Ricarica il conto virtuale"
 
 msgid "Top up error"
-msgstr ""
+msgstr "Errore di caricamento"
 
 msgid "Top up virtual account"
 msgstr "Ricarica il conto virtuale"
@@ -10644,7 +10641,7 @@ msgid "Top-tier liquidity"
 msgstr "Alto livello di liquidità"
 
 msgid "Top-up successful"
-msgstr ""
+msgstr "Caricamento avvenuto con successo"
 
 msgid "Total"
 msgstr "Totale"
@@ -10689,16 +10686,16 @@ msgid "Town/City"
 msgstr "Città"
 
 msgid "Track and document thoroughly the bugs that you find"
-msgstr ""
+msgstr "Monitora e registra accuratamente i bug individuati"
 
 msgid "Track and manage transactions and accounts using proprietary and non-proprietary software and systems"
-msgstr ""
+msgstr "Monitorare e gestire operazioni e conti utilizzando software e sistemi proprietari o non proprietari"
 
 msgid "Track every click, impression, download, and signup to increase your conversions."
 msgstr "Tieni traccia di ogni click, impressione, download e registrazione per aumentare le tue conversioni."
 
 msgid "Track laws and regulations that may affect all group companies and implement necessary changes to internal policies in order to manage and mitigate our risk and exposure"
-msgstr ""
+msgstr "Monitorare normative e regolamenti che potrebbero riguardare tutte le società del gruppo, e implementare le modifiche necessarie alle politiche interne al fine di gestire e mitigare l'esposizione e i rischi potenziali"
 
 msgid "Trade"
 msgstr "Trade"
@@ -10854,7 +10851,7 @@ msgid "Trading forex and contracts for differences carries a high level of risk 
 msgstr "Il trading su forex e sui contratti per differenza comporta un elevato livello di rischio e %1 non controlla le posizioni aperte del conto per i propri clienti. È dunque responsabilità del cliente controllare le posizioni aperte e comprenderne l'esposizione, assicurandosi, al contempo, che l'esposizione sia commisurata alla propensione al rischio. A causa del costo associato alle posizioni aperte durante la notte, si dovrebbe considerare di investire nel mercato dello strumento in cui si negozia normalmente invece di investire in CFD."
 
 msgid "Trading guru"
-msgstr ""
+msgstr "Guru del trading"
 
 msgid "Trading in Binary Options is speculative and involves a high degree of risk that can result in the loss of your entire investment. Therefore, trading in Binary Options is appropriate only for persons that understand and are willing to assume the economic, legal and other risks involved in such transactions. You should be satisfied that Binary Options trading is suitable for you in light of your investment circumstances and attitude towards risk before trading. You should not engage in speculative Binary Options trading unless you understand the basic aspects of such trading and its risks. If you are in any doubt as to whether Binary Option trading is appropriate and suitable for you, please seek independent advice from a investment consulting professional. %1 does not provide such advice. It is your responsibility, taking into account your personal circumstances and investment resources, to take particular care and make careful considerations independently, both prior to applying to engage in Binary Options with %1, as well as prior to making any individual order. Where you do not understand the risks involved in applying for a trading account with %1 or in making any individual order, you should seek advice and consultation from an independent investment advisor. If you continue to not understand the risks involved in trading in Binary Options, you should not trade at all."
 msgstr "Il trading in Opzioni binarie è speculativo e comporta un alto livello di rischio che può portare alla perdita dell'intero investimento. Pertanto, il trading in Opzioni binarie è adeguato solo per le persone che comprendono e che sono disposte ad assumersi i rischi economici, legali e altri rischi connessi a tali transazioni. Dovresti assicurarti che il trading in Opzioni binarie sia adatto a te alla luce della tua situazione finanziaria e alla tua attitudine al rischio prima di fare trading. Non dovresti impegnarti nel trading speculativo in Opzioni binarie se non comprendi le nozioni di base di tale trading e dei suoi rischi. Per qualsiasi dubbio sull'adeguatezza o meno del trading in Opzioni binarie alla tua situazione personale, si prega di ricorrere a una consulenza indipendente da parte di un professionista in investimenti. %1 non fornisce tale consulenza. È tua la responsabilità, tenendo in considerazione la tua situazione personale e le tue risorse finanziarie, di prestare particolare attenzione e fare considerazioni attente indipendentemente, sia prima di fare richiesta e impegnarsi in Opzioni binarie con %1, sia prima di fare un qualsiasi ordine individuale. Nel caso in cui non si comprendano i rischi connessi alla richiesta di un account di trading con %1 o nel fare un qualsiasi ordine individuale, bisognerebbe richiedere una consulenza da parte di un professionista finanziario indipendente. Se continui a non comprendere i rischi connessi al trading in Opzioni binarie, non dovresti fare trading affatto."
@@ -10938,10 +10935,10 @@ msgid "Transparent risk and potential reward"
 msgstr "Trasparenza dei rischi e potenziali ritorni"
 
 msgid "Troubleshoot and debug problems in existing applications, and find new ways to improve their speed, functionality, and scalability"
-msgstr ""
+msgstr "Provvedere alla risoluzione dei problemi e alla rimozione dei bug nelle applicazioni esistenti, e trovare nuovi modi per migliorarne rapidità, funzionalità e scalabilità"
 
 msgid "Troubleshoot and debug problems in existing database systems, and find new ways to improve their speed, functionality, and scalability"
-msgstr ""
+msgstr "Provvedere alla risoluzione dei problemi e alla rimozione dei bug nei sistemi di banche dati esistenti, e trovare nuovi modi per migliorarne rapidità, funzionalità e scalabilità"
 
 msgid "Trust"
 msgstr "Fiducia"
@@ -11010,7 +11007,7 @@ msgid "Types of trades"
 msgstr "Tipologie di trade"
 
 msgid "UI/UX Designer"
-msgstr ""
+msgstr "Designer UI/UX"
 
 msgid "UK and Manx residents who wish to trade gambling products will have their accounts opened with Binary (IOM) Limited."
 msgstr "Il conto dei residenti del Regno Unito e dell'Isola di Man che desiderano fare trading su prodotti di gioco d'azzardo verranno aperti con Binary (IOM) Limited."
@@ -11115,13 +11112,13 @@ msgid "Understand when to buy and sell"
 msgstr "Capisci quando acquistare e vendere"
 
 msgid "Understanding of cryptography, including asymmetric, symmetric, hash functions, and encryption/signatures"
-msgstr ""
+msgstr "Conoscenza della crittografia, incluse le funzioni asimmetriche, simmetriche e di Hash, e di criptaggio/firme"
 
 msgid "Understanding of encryption fundamentals and the OWASP Top 10"
-msgstr ""
+msgstr "Comprensione dei fondamenti del criptaggio e della lista OWASP Top 10"
 
 msgid "Understood"
-msgstr ""
+msgstr "Ho capito"
 
 msgid "Unemployed"
 msgstr "Disoccupato"
@@ -11133,10 +11130,10 @@ msgid "United Kingdom"
 msgstr "Regno Unito"
 
 msgid "University degree in Marketing, Mathematics, IT/Programming or any related field"
-msgstr ""
+msgstr "Laurea in marketing, matematica, programmazione/IT o qualsiasi settore correlato"
 
 msgid "University degree in marketing, journalism, communication, or a business-related discipline"
-msgstr ""
+msgstr "Laurea in marketing, giornalismo, comunicazione o una disciplina correlata al business"
 
 msgid "Unknown OS"
 msgstr "Sistema operativo sconosciuto"
@@ -11186,9 +11183,6 @@ msgstr "Il Cliente comprende e accetta che, in caso di revoca, il suo Gestore di
 msgid "Upon the expiration or termination of this Agreement, for whatever reason, all rights and license granted to you in this Agreement, including use of the %1 API, shall immediately terminate. You agree to promptly cease all further use of the %1 API. Termination of this Agreement shall not act as a waiver of any breach of this Agreement and shall not act as a release of your liability for breach of its obligation under this Agreement. The Company shall not be liable to you for damages of any kind solely as a result of terminating this Agreement in accordance with its terms."
 msgstr "Alla scadenza o alla risoluzione del presente Contratto, dovuta quest'ultima a qualsiasi ragione, tutti i diritti e la licenza concessi al Cliente con lo stesso, incluso l'utilizzo dell'API di %1, cesseranno immediatamente. Il Cliente accetta di terminare prontamente qualsiasi uso ulteriore dell'API di %1. La risoluzione del presente Contratto non costituirà una rinuncia di rivalsa in caso di suo inadempimento e non costituirà un esonero di responsabilità per la violazione dei suoi obblighi, secondo il presente Contratto. La Società non sarà ritenuta responsabile nei confronti del Cliente per danni di qualsiasi natura derivanti dalla risoluzione del presente Contratto conformemente ai termini dello stesso."
 
-msgid "Ups"
-msgstr ""
-
 msgid "Usage Limit"
 msgstr "Limiti d'utilizzo"
 
@@ -11196,7 +11190,7 @@ msgid "Use a variety of allocation methods (e.g equity, balance, even, and lot) 
 msgstr "Utilizza una varietà di metodi di allocazione (per esempio equity, saldo, equilibro e lotto) per distribuire i volumi del trading, a partire da 0,01 lotti"
 
 msgid "Use advanced data analytics skills to study trends/pattern in financial markets"
-msgstr ""
+msgstr "Conoscenze avanzate nell'analisi dei dati per studiare tendenze/modelli dei mercati finanziari"
 
 msgid "Use comprehensive technical analysis tools to predict price movements"
 msgstr "Utilizza strumenti di analisi tecnica completi per prevedere i movimenti dei prezzi"
@@ -11235,7 +11229,7 @@ msgid "Using our website, customers can trade currencies, indices, commodities, 
 msgstr "Utilizzando il nostro sito web, i clienti possono effettuare trading su valute, indici, materie prime e indici di volatilità 24/7. Offriamo i prezzi più flessibili e la più completa gamma di prodotti disponibile."
 
 msgid "Utilise a variety of tactics – both online and offline – to grow and support the company’s network of partners in your designated market"
-msgstr ""
+msgstr "Utilizzare strategie diverse, sia online che offline, per ampliare e sostenere la rete di partner della società in un dato mercato"
 
 msgid "Utility bill"
 msgstr "Fattura di un'utenza"
@@ -11271,7 +11265,7 @@ msgid "Verify Reset Password"
 msgstr "Verifica la nuova password"
 
 msgid "Verify and approve clients’ deposit and withdrawal requests"
-msgstr ""
+msgstr "Verificare e approvare le richieste di deposito e prelievo dei clienti"
 
 msgid "Verify main password"
 msgstr "Verifica la password principale"
@@ -11328,7 +11322,7 @@ msgid "View the operating hours of the markets you can trade."
 msgstr "Mostra l'orario operativo dei mercati in cui puoi fare trading."
 
 msgid "View updated statement"
-msgstr ""
+msgstr "Visualizza estratto conto aggiornato"
 
 msgid "View your account's authentication status."
 msgstr "Visualizza lo stato di autenticazione del conto."
@@ -11355,7 +11349,7 @@ msgid "Virtual Account"
 msgstr "Conto Virtuale"
 
 msgid "Visa is an international company that supports digital payments around the world, most commonly through their brand of credit and debit cards. For more information, please visit %1."
-msgstr ""
+msgstr "Visa è una società internazionale che supporta i pagamenti digitali in tutto il mondo, solitamente attraverso le carte di credito o di debito dello stesso circuito. Per maggiori informazioni, visita il sito %1."
 
 msgid "Vol 10"
 msgstr "Vol 10"
@@ -11487,7 +11481,7 @@ msgid "We collect and assess your data to profile you, as our client, in relatio
 msgstr "Raccogliamo e valutiamo i dati per profilare l'utente come Cliente in relazione ai nostri prodotti, operando manualmente con il supporto di procedure automatiche. Grazie alla classificazione del Cliente, saremo in grado di fornirti servizi e prodotti mirati."
 
 msgid "We could not recognise your address. You may proceed but please ensure that your address is complete and accurate."
-msgstr ""
+msgstr "Non è stato possibile identificare il tuo indirizzo; puoi procedere con l'operazione ma assicurati che sia completo e corretto."
 
 msgid "We delete an order with the largest margin reserved"
 msgstr "Cancelliamo un ordine con il maggiore margine riservato"
@@ -11553,7 +11547,7 @@ msgid "We offer all four precious metals – gold, silver, palladium, and platin
 msgstr "Offriamo tutti e quattro i metalli preziosi - oro, argento, palladio e platino - così come l'energia nella nostra lista di materie prime."
 
 msgid "We offer the following trade types on our MT5 platform:"
-msgstr ""
+msgstr "Sulla nostra piattaforma MT5 offriamo i seguenti tipi di trade:"
 
 msgid "We offer three types of lookbacks:"
 msgstr "Offriamo tre tipologie di opzioni retrospettive (lookbacks):"
@@ -11652,7 +11646,7 @@ msgid "We're really proud of this award. We're strongly committed to offering an
 msgstr "Siamo davvero orgogliosi di questo riconoscimento. Siamo fermamente impegnati nell'offrire un'esperienza di trading etica e concentrata sul cliente, e il riconoscimento mostra che BetOnMarkets è un marchio di fiducia in grado di ascoltare e soddisfare i clienti, siano essi trader esperti o novizi. Offriamo servizi personalizzati in inglese, indonesiano, russo, cinese e spagnolo."
 
 msgid "Web and software developer"
-msgstr ""
+msgstr "Sviluppatore web e software"
 
 msgid "WebMoney is an online payment settlement system that’s been operating since 1998. For more information, please visit %1."
 msgstr ""
@@ -11661,13 +11655,13 @@ msgid "WebTrader"
 msgstr "WebTrader"
 
 msgid "Webinar speaker"
-msgstr ""
+msgstr "Relatore del webinar"
 
 msgid "Webinars"
 msgstr "Webinar"
 
 msgid "Webmaster"
-msgstr ""
+msgstr "Webmaster"
 
 msgid "Website"
 msgstr "Sito internet"

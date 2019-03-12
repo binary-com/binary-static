@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-03-11 10:53\n"
+"PO-Revision-Date: 2019-03-12 02:55\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
@@ -1598,6 +1598,9 @@ msgstr "Доступные рынки"
 
 msgid "Available payment methods"
 msgstr "Доступные способы оплаты"
+
+msgid "Available trade types:"
+msgstr ""
 
 msgid "Average"
 msgstr "Среднее"
@@ -3429,9 +3432,6 @@ msgstr "Загрузить для Android"
 msgid "Download your statement"
 msgstr "Загрузите выписку со счёта"
 
-msgid "Downs"
-msgstr "Спад"
-
 msgid "Drive rapid growth and business development to support the company's sales and marketing objectives"
 msgstr "Стимуляция быстрого роста и развития бизнеса с целью поддержания уровня продаж и выполнения маркетинговых задач компании"
 
@@ -5178,17 +5178,17 @@ msgstr "Если Вы выбираете \"повысится\", Вы выигр
 msgid "If you select \"rises\", you win the payout if the market price is higher than the entry spot."
 msgstr "Если Вы выбираете \"повысится\", Вы выигрываете, если рыночная цена выше, чем входная котировка."
 
-msgid "If you select %1\"Downs\"%2, you win the payout if consecutive ticks fall successively after the %1entry spot%2.%3No payout if any tick rises or is equal to any of the previous ticks."
-msgstr "Выбрав %1\"Спад\"%2, Вы получите выплату, если несколько тиков подряд будут снижаться по отношению к %1котировке на входе%2.%3Если один из тиков покажет рост или будет равен одному из предыдущих тиков, Вы не получите выплаты."
-
 msgid "If you select %1\"High Tick\"%2, you win the payout if the selected tick is the %1highest among the next five ticks%2."
 msgstr "Если Вы выбираете %1\"Высокой тик\"%2, Вы получите выплату, если выбранный тик будет %1наибольшим среди следующих пяти тиков%2."
 
 msgid "If you select %1\"Low Tick\"%2, you win the payout if the selected tick is the %1lowest among the next five ticks%2."
 msgstr "Если Вы выбираете %1\"Низкий тик\"%2, Вы получите выплату, если выбранный тик будет %1наименьшим из следующих пяти тиков%2."
 
-msgid "If you select %1\"Ups\"%2, you win the payout if consecutive ticks rise successively after the %1entry spot%2.%3No payout if any tick falls or is equal to any of the previous ticks."
-msgstr "Выбрав %1\"Подъём\"%2, Вы получите выплату, если несколько тиков подряд будут расти по отношению к %1котировке на входе%2.%3Если любой тик покажет снижение или будет равен одному из предыдущих тиков, Вы не получите выплаты."
+msgid "If you select %1\"Only Downs\"%2, you win the payout if consecutive ticks fall successively after the %1entry spot%2.%3No payout if any tick rises or is equal to any of the previous ticks."
+msgstr ""
+
+msgid "If you select %1\"Only Ups\"%2, you win the payout if consecutive ticks rise successively after the %1entry spot%2.%3No payout if any tick falls or is equal to any of the previous ticks."
+msgstr ""
 
 msgid "If you select a <strong>start time</strong> in the future, the <strong>start time</strong> is that which is selected and the <strong>entry spot</strong> is the price in effect at that time."
 msgstr "Если вы выбираете <strong>время начала</strong> контракта в будущем, он <strong>начнется</strong> в выбранное время, а <strong>входная котировка</strong> будет действительной на тот момент ценой."
@@ -7041,11 +7041,20 @@ msgstr "Онлайн торговля может перерасти в зави�
 msgid "Only %1 are allowed."
 msgstr "Разрешены только %1 и латинские буквы."
 
+msgid "Only Downs"
+msgstr ""
+
 msgid "Only JPG, JPEG, GIF, PNG and PDF formats are accepted"
 msgstr "Принимаются только следующие форматы: JPG, JPEG, GIF, PNG и PDF"
 
 msgid "Only JPG, JPEG, GIF, and PNG formats are accepted"
 msgstr "Принимаются только следующие форматы: JPG, JPEG, GIF и PNG"
+
+msgid "Only Ups"
+msgstr ""
+
+msgid "Only Ups/Only Downs"
+msgstr ""
 
 msgid "Only five years after inception, we pick up this major award for our online trading services. The award recognises BetOnMarkets.com's reliable, fast and secure online trading for novice and expert traders. At this time, our website has received over 15 million trades."
 msgstr "Уже через пять лет после создания сайта мы получили этот крупный приз за свои услуги онлайн трейдинга. Награда признает надежный, быстрый и безопасный трейдинг, предлагаемый BetOnMarkets.com как новичкам, так и опытным трейдерам. На тот момент на сайте было выполнено более 15 миллионов сделок."
@@ -7656,8 +7665,8 @@ msgstr "Пожалуйста, войдите в систему."
 msgid "Please make sure that you first agree with the Agent on the terms of payment before submitting your request."
 msgstr "Пожалуйста, убедитесь, что Вы согласны с условиями платежного агента, прежде чем Вы отошлете заявку."
 
-msgid "Please note that Asians, Digits, Reset Call/Reset Put, High Ticks/Low Ticks, and Run Ups/Run Downs are available exclusively with our Volatility Indices."
-msgstr "Обратите внимание, что Азиатские, Цифровые контракты, контракты Reset Колл/Reset Пут, Наибольший/Наименьший тик и Подъём/Спад доступны лишь на Индексах волатильности."
+msgid "Please note that Asians, Digits, Reset Call/Reset Put, High Ticks/Low Ticks, and Only Ups/Only Downs are available exclusively with our Volatility Indices."
+msgstr ""
 
 msgid "Please note that actual trading results may not correspond to optimized or back-tested results."
 msgstr "Пожалуйста, примите во внимание, что фактические торговые результаты могут не соответствовать оптимизированным или протестированным результатам."
@@ -8504,15 +8513,6 @@ msgstr "Ролловерный кредит/дебет"
 
 msgid "Rolling Spot Forex;"
 msgstr "Rolling Spot Forex;"
-
-msgid "Run"
-msgstr "Направление"
-
-msgid "Run Downs"
-msgstr "Спад"
-
-msgid "Run Ups"
-msgstr "Подъём"
 
 msgid "Russia"
 msgstr "Россия"
@@ -10224,9 +10224,6 @@ msgstr "Существуют риски, связанные с использо�
 msgid "There are two types of In/Out trades:"
 msgstr "Существует два типа контрактов Внутри/Вне:"
 
-msgid "There are two types of Run trades:"
-msgstr "Категория Направление включает два вида контрактов:"
-
 msgid "There are two types of Up/Down trades:"
 msgstr "Выделяют два типа контрактов Вверх/Вниз:"
 
@@ -11183,9 +11180,6 @@ msgstr "Отзывая менеджера, Вы признаёте и согла
 
 msgid "Upon the expiration or termination of this Agreement, for whatever reason, all rights and license granted to you in this Agreement, including use of the %1 API, shall immediately terminate. You agree to promptly cease all further use of the %1 API. Termination of this Agreement shall not act as a waiver of any breach of this Agreement and shall not act as a release of your liability for breach of its obligation under this Agreement. The Company shall not be liable to you for damages of any kind solely as a result of terminating this Agreement in accordance with its terms."
 msgstr "После прекращения действия или расторжения данного Соглашения по любой причине, все права и лицензия, предоставленные Вам в рамках данного Соглашения, включая право на использование API %1, должны быть немедленно отозваны. Вы соглашаетесь своевременно прекратить дальнейшее использование API %1. Прекращение действия данного Соглашения не должно восприниматься как отказ от предъявления претензий в связи с нарушением данного Соглашения и не должно освобождать Вас от ответственности за нарушение Вами обязательств в рамках данного Соглашения. Компания не должна нести перед Вами единоличную ответственность за любой ущерб, вызванный прекращением действия данного Соглашения, согласно его условиям."
-
-msgid "Ups"
-msgstr "Подъём"
 
 msgid "Usage Limit"
 msgstr "Лимит использования"
