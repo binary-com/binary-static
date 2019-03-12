@@ -168,11 +168,11 @@ const AccountTransfer = (() => {
             if (account.loginid === client_loginid) {
                 elementTextContent(getElementById('transfer_success_from'), localize('From account: '));
                 elementTextContent(getElementById('from_loginid'), `${account.loginid} (${account.currency})`);
-                getElementById('from_current_balance').innerText = `${account.currency} ${account.balance}`;
+                getElementById('from_current_balance').innerText = Currency.getTextFormat(account.balance, account.currency);
             } else if (account.loginid === response_submit_success.client_to_loginid) {
                 elementTextContent(getElementById('transfer_success_to'), localize('To account: '));
                 elementTextContent(getElementById('to_loginid'), `${account.loginid} (${account.currency})`);
-                getElementById('to_current_balance').innerText = `${account.currency} ${account.balance}`;
+                getElementById('to_current_balance').innerText = Currency.getTextFormat(account.balance, account.currency);
             }
         });
 
@@ -270,9 +270,9 @@ const AccountTransfer = (() => {
     });
 
     const populateHints = () => {
-        getElementById('limit_current_balance').innerText  = `${client_currency} ${client_balance}`;
+        getElementById('limit_current_balance').innerText  = Currency.getTextFormat(client_balance, client_currency);
 
-        getElementById('limit_max_amount').innerText = max_amount ? `${client_currency} ${client_balance}` : localize('Not announced for this currency.');
+        getElementById('limit_max_amount').innerText = max_amount ? Currency.getTextFormat(transferable_amount, client_currency) : localize('Not announced for this currency.');
 
         $('#range_hint').accordion({
             heightStyle: 'content',

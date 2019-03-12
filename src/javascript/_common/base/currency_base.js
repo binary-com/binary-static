@@ -4,6 +4,8 @@ const getPropertyValue = require('../utility').getPropertyValue;
 
 let currencies_config = {};
 
+const getTextFormat = (number, currency) => `${currency} ${addComma(number, getDecimalPlaces(currency), isCryptocurrency(currency))}`;
+
 const formatMoney = (currency_value, amount, exclude_currency, decimals = 0, minimumFractionDigits = 0) => {
     let money = amount;
     if (money) money = String(money).replace(/,/g, '');
@@ -91,7 +93,7 @@ const getTransferLimits = (currency, which) => {
     if (which === 'max') {
         return transfer_limits.max ? transfer_limits.max.toFixed(decimals) : undefined;
     }
-    
+
     return transfer_limits.min ? transfer_limits.min.toFixed(decimals) : undefined;
 };
 
@@ -130,6 +132,7 @@ module.exports = {
     getTransferLimits,
     getTransferFee,
     getMinimumTransferFee,
+    getTextFormat,
     getMinPayout,
     getPaWithdrawalLimit,
     getCurrencies: () => currencies_config,
