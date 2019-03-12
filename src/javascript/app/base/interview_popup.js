@@ -1,25 +1,29 @@
-const Cookies      = require('js-cookie');
-const BinarySocket = require('./socket');
-const Client       = require('../base/client');
-const isEuCountry  = require('../common/country_base').isEuCountry;
+const Cookies          = require('js-cookie');
+const BinarySocket     = require('./socket');
+const Client           = require('../base/client');
+const isEuCountry      = require('../common/country_base').isEuCountry;
+const RealityCheckData = require('../pages/user/reality_check/reality_check.data');
 
 const InterviewPopup = (() => {
     const onLoad = () => {
         BinarySocket.wait('authorize', 'website_status', 'get_account_status').then(() => {
-            const is_interview_consent = Cookies.get('InterviewConsent');
+            const is_interview_consent  = Cookies.get('InterviewConsent');
+            const $interview_popup      = $('#interview_popup_container');
+            const $interview_no_thanks  = $('#interview_no_thanks');
+            const $interview_ask_later  = $('#interview_ask_later');
+            const $interview_interested = $('#interview_interested');
 
-            if (Client.isLoggedIn() && isEuCountry() && !is_interview_consent) {
-                const $interview_popup      = $('#interview_popup_container');
-                const $interview_no_thanks  = $('#interview_no_thanks');
-                const $interview_ask_later  = $('#interview_ask_later');
-                const $interview_interested = $('#interview_interested');
-
+            if (Client.isLoggedIn() && isEuCountry() && !is_interview_consent && !(RealityCheckData.get('keep_open') === false)) {
                 $interview_popup.removeClass('invisible');
                 $interview_no_thanks.one('click', () => {
                     Cookies.set('InterviewConsent', 1);
                     $interview_popup.addClass('invisible');
                 });
                 $interview_ask_later.one('click', () => {
+                    const interval_time = 1 / 12;
+                    Cookies.set('InterviewConsent', 1, {
+                        expires: interval_time,
+                    });
                     $interview_popup.addClass('invisible');
                 });
                 $interview_interested.one('click', () => {
