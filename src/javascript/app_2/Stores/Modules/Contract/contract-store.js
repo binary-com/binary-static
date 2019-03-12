@@ -54,7 +54,7 @@ export default class ContractStore extends BaseStore {
 
     @action.bound
     onMount(contract_id) {
-        this.onSwitchAccount(this.accountSwitcherListener.bind(null, contract_id));
+        this.onSwitchAccount(this.accountSwitcherListener.bind(null));
         this.has_error     = false;
         this.error_message = '';
         this.contract_id   = contract_id;
@@ -68,8 +68,8 @@ export default class ContractStore extends BaseStore {
 
     @action.bound
     onLoadContract(contract_info) {
-        if (!contract_info) return;
-        if (contract_info === this.contract_id) return;
+        if (contract_info === this.contract_id || !contract_info) return;
+        this.onSwitchAccount(this.accountSwitcherListener.bind(null));
         this.smart_chart   = this.root_store.modules.smart_chart;
         this.contract_info = contract_info;
         this.contract_id   = +contract_info.contract_id;
@@ -86,8 +86,9 @@ export default class ContractStore extends BaseStore {
     }
 
     @action.bound
-    accountSwitcherListener (contract_id) {
-        return new Promise((resolve) => resolve(this.onMount(contract_id)));
+    accountSwitcherListener () {
+        this.smart_chart.setContractMode(false);
+        return new Promise((resolve) => resolve(this.onCloseContract()));
     }
 
     @action.bound
