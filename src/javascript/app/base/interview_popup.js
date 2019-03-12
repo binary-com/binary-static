@@ -27,9 +27,18 @@ const InterviewPopup = (() => {
                     $interview_popup.addClass('invisible');
                 });
                 $interview_interested.one('click', () => {
-                    $interview_popup.addClass('invisible');
-                    Cookies.set('InterviewConsent', 1);
-                    window.open('https://goo.gl/forms/XJFZlYsvo3K4FcQ02', '_blank');
+                    BinarySocket.wait('get_settings').then((response) => {
+                        const get_settings = response.get_settings || {};
+                        const url = 'https://docs.google.com/forms/d/e/1FAIpQLSccg8p-GjoBufjAnMJJUZHJ_1YqlS_GyQyy5vQdgGm4VKmnMg/viewform?usp=pp_url';
+                        const pre_name    = `&entry.909179306=${get_settings.first_name}%20${get_settings.last_name}`;
+                        const pre_email   = `&entry.81172074=${get_settings.email}`;
+                        const pre_country = `&entry.141529718=${get_settings.country}`;
+                        const pre_phone   = `&entry.1442583433=${get_settings.phone}`;
+
+                        $interview_popup.addClass('invisible');
+                        Cookies.set('InterviewConsent', 1);
+                        window.open(`${url}${pre_name}${pre_email}${pre_country}${pre_phone}`, '_blank');
+                    });
                 });
             }
         });
