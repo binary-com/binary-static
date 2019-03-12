@@ -93,14 +93,14 @@ class PositionsDrawer extends React.Component {
                         {body_content}
                     </Scrollbars>
                 </div>
-                <div className='positions-drawer__footer'>
-                    {/* TODO: Toggle to popup the Reports Dialog once Dialog is available */}
-                    <a className='btn btn--link btn--alternate' href='javascript:;'>
-                        <span className='btn__text'>
-                            {localize('Go to Reports')}
-                        </span>
-                    </a>
-                </div>
+                {/* TODO: Re-enable reports button positions drawer footer once implemented */}
+                {/* <div className='positions-drawer__footer'> */}
+                {/* <a className='btn btn--link btn--alternate' href='javascript:;'> */}
+                {/* <span className='btn__text'> */}
+                {/* {localize('Go to Reports')} */}
+                {/* </span> */}
+                {/* </a> */}
+                {/* </div> */}
             </div>
         );
     }
