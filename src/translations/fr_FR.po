@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-03-11 10:51\n"
+"PO-Revision-Date: 2019-03-12 02:54\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: French\n"
 "MIME-Version: 1.0\n"
@@ -1599,6 +1599,9 @@ msgstr "Marchés disponibles"
 
 msgid "Available payment methods"
 msgstr "Moyens de paiement disponibles"
+
+msgid "Available trade types:"
+msgstr ""
 
 msgid "Average"
 msgstr "Moyenne"
@@ -3430,9 +3433,6 @@ msgstr "Téléchargez l’application Android"
 msgid "Download your statement"
 msgstr "Téléchargez votre relevé"
 
-msgid "Downs"
-msgstr "Descentes"
-
 msgid "Drive rapid growth and business development to support the company's sales and marketing objectives"
 msgstr "Favoriser la croissance rapide et le développement de nos activités pour réaliser les objectifs de vente et de marketing de la Compagnie"
 
@@ -5179,17 +5179,17 @@ msgstr "Si vous sélectionnez « Hausse », vous gagnez si le prix du marché 
 msgid "If you select \"rises\", you win the payout if the market price is higher than the entry spot."
 msgstr "Si vous sélectionnez « Hausse », vous gagnez si le prix du marché est supérieur au point d'entrée."
 
-msgid "If you select %1\"Downs\"%2, you win the payout if consecutive ticks fall successively after the %1entry spot%2.%3No payout if any tick rises or is equal to any of the previous ticks."
-msgstr "Si vous sélectionnez %1« Descentes »%2, vous gagnez le paiement si les ticks consécutifs descendent successivement après le %1point d'entrée%2.%3Aucun paiement si un tick monte ou est égal à un des ticks précédents."
-
 msgid "If you select %1\"High Tick\"%2, you win the payout if the selected tick is the %1highest among the next five ticks%2."
 msgstr "Si vous sélectionnez %1« Tick Haut »%2, vous gagnez le paiement si le tick sélectionné est le %1 plus haut parmi les cinq prochains ticks %2."
 
 msgid "If you select %1\"Low Tick\"%2, you win the payout if the selected tick is the %1lowest among the next five ticks%2."
 msgstr "Si vous sélectionnez %1« Tick Bas »%2, vous gagnez le paiement si le tick sélectionné est le %1 plus bas parmi les cinq prochains ticks %2."
 
-msgid "If you select %1\"Ups\"%2, you win the payout if consecutive ticks rise successively after the %1entry spot%2.%3No payout if any tick falls or is equal to any of the previous ticks."
-msgstr "Si vous sélectionnez %1« Montées »%2, vous gagnez le paiement si les ticks consécutifs montent successivement après le %1point d'entrée%2.%3Aucun paiement si un tick descend ou est égal à un des ticks précédents."
+msgid "If you select %1\"Only Downs\"%2, you win the payout if consecutive ticks fall successively after the %1entry spot%2.%3No payout if any tick rises or is equal to any of the previous ticks."
+msgstr ""
+
+msgid "If you select %1\"Only Ups\"%2, you win the payout if consecutive ticks rise successively after the %1entry spot%2.%3No payout if any tick falls or is equal to any of the previous ticks."
+msgstr ""
 
 msgid "If you select a <strong>start time</strong> in the future, the <strong>start time</strong> is that which is selected and the <strong>entry spot</strong> is the price in effect at that time."
 msgstr "Si vous sélectionnez une <strong>heure de début</strong> ultérieure, l'opération <strong>débute</strong> à l'heure sélectionnée et le <strong>point d'entrée</strong> correspond au prix en vigueur à l'heure sélectionnée."
@@ -7042,11 +7042,20 @@ msgstr "La spéculation financière peut s'avérer addictive. Veuillez remplir l
 msgid "Only %1 are allowed."
 msgstr "Seulement %1 autorisées."
 
+msgid "Only Downs"
+msgstr ""
+
 msgid "Only JPG, JPEG, GIF, PNG and PDF formats are accepted"
 msgstr "Seuls les formats JPG, JPEG, GIF, PNG et PDF sont acceptés"
 
 msgid "Only JPG, JPEG, GIF, and PNG formats are accepted"
 msgstr "Seuls les formats JPG, JPEG, GIF, PNG et PDF sont acceptés"
+
+msgid "Only Ups"
+msgstr ""
+
+msgid "Only Ups/Only Downs"
+msgstr ""
 
 msgid "Only five years after inception, we pick up this major award for our online trading services. The award recognises BetOnMarkets.com's reliable, fast and secure online trading for novice and expert traders. At this time, our website has received over 15 million trades."
 msgstr "Seulement cinq ans après sa création, BetOnMarkets.com remporte ce prix pour ses services de trading en ligne. Il récompense la fiabilité, la rapidité et la sécurité des transactions en ligne sur site BetOnMarkets.com, accessible à la fois aux novices et aux experts du trading. À cette date, notre site Web a déjà enregistré plus de 15 millions de transactions."
@@ -7657,8 +7666,8 @@ msgstr "Veuillez vous connecter."
 msgid "Please make sure that you first agree with the Agent on the terms of payment before submitting your request."
 msgstr "Veuillez vous assurer d'abord que vous êtes d'accord avec l'Agent sur les délais de paiement avant de soumettre votre demande."
 
-msgid "Please note that Asians, Digits, Reset Call/Reset Put, High Ticks/Low Ticks, and Run Ups/Run Downs are available exclusively with our Volatility Indices."
-msgstr "Veuillez noter que les Asiatiques, Reset Call/Put, Ticks Haut/Bas et Montées/Descentes sont disponibles exclusivement avec nos Indices de Volatilité."
+msgid "Please note that Asians, Digits, Reset Call/Reset Put, High Ticks/Low Ticks, and Only Ups/Only Downs are available exclusively with our Volatility Indices."
+msgstr ""
 
 msgid "Please note that actual trading results may not correspond to optimized or back-tested results."
 msgstr "Veuillez noter que les résultats réels peuvent ne pas correspondre aux résultats optimisés ou testés à posteriori."
@@ -8505,15 +8514,6 @@ msgstr "Refinancement de Crédit/Débit"
 
 msgid "Rolling Spot Forex;"
 msgstr "Roulement du Spot Forex ;"
-
-msgid "Run"
-msgstr "Séquence"
-
-msgid "Run Downs"
-msgstr "Descentes"
-
-msgid "Run Ups"
-msgstr "Montées"
 
 msgid "Russia"
 msgstr "Russie"
@@ -10225,9 +10225,6 @@ msgstr "L'utilisation d'un système d'exécution de transactions de trading bas�
 msgid "There are two types of In/Out trades:"
 msgstr "Il existe deux types d'option In/Out :"
 
-msgid "There are two types of Run trades:"
-msgstr "Il existe deux types de trades de Séquence:"
-
 msgid "There are two types of Up/Down trades:"
 msgstr "Il existe deux types d'option Hausse/Baisse :"
 
@@ -11184,9 +11181,6 @@ msgstr "Lors de la révocation, vous reconnaissez et comprenez que votre Gestion
 
 msgid "Upon the expiration or termination of this Agreement, for whatever reason, all rights and license granted to you in this Agreement, including use of the %1 API, shall immediately terminate. You agree to promptly cease all further use of the %1 API. Termination of this Agreement shall not act as a waiver of any breach of this Agreement and shall not act as a release of your liability for breach of its obligation under this Agreement. The Company shall not be liable to you for damages of any kind solely as a result of terminating this Agreement in accordance with its terms."
 msgstr "Au moment de l'expiration ou de la résiliation de cet Accord pour quelque raison que ce soit, les droits et les licences vous ayant été octroyés en vertu du présent Accord, y compris le droit d'utiliser l'API %1, sont immédiatement résiliés en totalité. Vous acceptez de cesser sans délai toute utilisation ultérieure de l'API %1. La résiliation de cet Accord ne constitue nullement une renonciation à se prévaloir de toute violation de cet Accord et ne vous dégage nullement de votre responsabilité en cas de violation des obligations qui vous incombent en vertu de cet Accord. La Société n'assume aucune responsabilité envers vous en cas de dommages quels qu'ils soient résultant uniquement de la résiliation de cet Accord conformément aux conditions de celui-ci."
-
-msgid "Ups"
-msgstr "Montées"
 
 msgid "Usage Limit"
 msgstr "Restrictions d'utilisation"

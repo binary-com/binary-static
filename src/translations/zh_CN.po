@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-03-11 10:53\n"
+"PO-Revision-Date: 2019-03-12 02:56\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -1598,6 +1598,9 @@ msgstr "可用的市场"
 
 msgid "Available payment methods"
 msgstr "可用支付方式"
+
+msgid "Available trade types:"
+msgstr ""
 
 msgid "Average"
 msgstr "平均"
@@ -3430,9 +3433,6 @@ msgstr "下载 Android 应用程序"
 msgid "Download your statement"
 msgstr "下载月结单"
 
-msgid "Downs"
-msgstr "持续下跌"
-
 msgid "Drive rapid growth and business development to support the company's sales and marketing objectives"
 msgstr "推动快速增长和业务发展，以支持公司的销售和市场营销目标"
 
@@ -5179,17 +5179,17 @@ msgstr "如果您选择“上涨”期权，只要市场价格高于 <strong>入
 msgid "If you select \"rises\", you win the payout if the market price is higher than the entry spot."
 msgstr "如果您选择“上涨”期权，只要市场价格高于入市现价，您将获得赔付。"
 
-msgid "If you select %1\"Downs\"%2, you win the payout if consecutive ticks fall successively after the %1entry spot%2.%3No payout if any tick rises or is equal to any of the previous ticks."
-msgstr "如果您选择%1“持续下跌”%2期权，只要%1入市现价%2后的价格持续下跌，您将获得赔付。如果期间内的价格有任何上涨或相等于之前的价格， 您将不会获得%3赔付。"
-
 msgid "If you select %1\"High Tick\"%2, you win the payout if the selected tick is the %1highest among the next five ticks%2."
 msgstr "如果您选择 %1\"高跳动点\"%2, 如果所选跳动点是接下来下五个跳动点%2 中%1最高值, 可获得赔付。"
 
 msgid "If you select %1\"Low Tick\"%2, you win the payout if the selected tick is the %1lowest among the next five ticks%2."
 msgstr "如果您选择 %1\"低跳动点\"%2, 如果所选跳动点是接下来下五个跳动点%2 中%1最低值, 可获得赔付。"
 
-msgid "If you select %1\"Ups\"%2, you win the payout if consecutive ticks rise successively after the %1entry spot%2.%3No payout if any tick falls or is equal to any of the previous ticks."
-msgstr "如果您选择%1“持续上涨”%2期权，只要%1入市现价%2后的价格持续上涨，您将获得赔付。如果期间内的价格有任何下跌或相等于之前的价格， 您将不会获得%3赔付。"
+msgid "If you select %1\"Only Downs\"%2, you win the payout if consecutive ticks fall successively after the %1entry spot%2.%3No payout if any tick rises or is equal to any of the previous ticks."
+msgstr ""
+
+msgid "If you select %1\"Only Ups\"%2, you win the payout if consecutive ticks rise successively after the %1entry spot%2.%3No payout if any tick falls or is equal to any of the previous ticks."
+msgstr ""
 
 msgid "If you select a <strong>start time</strong> in the future, the <strong>start time</strong> is that which is selected and the <strong>entry spot</strong> is the price in effect at that time."
 msgstr "如果您选择的 <strong>开始时间</strong> 为未来的某个时间，交易的 <strong>开始时间</strong> 就是您选择的时间，<strong>入市现价</strong> 就是当时的实时价格。"
@@ -7042,11 +7042,20 @@ msgstr "在线交易可能使人上瘾。请填写下表以限制您对本网站
 msgid "Only %1 are allowed."
 msgstr "只允许 %1 。"
 
+msgid "Only Downs"
+msgstr ""
+
 msgid "Only JPG, JPEG, GIF, PNG and PDF formats are accepted"
 msgstr "只接受 JPG、JPEG、GIF、PNG 和 PDF 格式"
 
 msgid "Only JPG, JPEG, GIF, and PNG formats are accepted"
 msgstr "只接受 JPG、JPEG、GIF和PNG格式"
+
+msgid "Only Ups"
+msgstr ""
+
+msgid "Only Ups/Only Downs"
+msgstr ""
 
 msgid "Only five years after inception, we pick up this major award for our online trading services. The award recognises BetOnMarkets.com's reliable, fast and secure online trading for novice and expert traders. At this time, our website has received over 15 million trades."
 msgstr "成立后仅五年，我们的在线交易服务即斩获这一重要奖项。该奖项旨在表彰 BetOnMarkets.com 向交易新手和资深交易者提供可靠、快速和安全的网上交易。此时，我们网站的交易数量已超过1500万笔。"
@@ -7657,8 +7666,8 @@ msgstr "请登录。"
 msgid "Please make sure that you first agree with the Agent on the terms of payment before submitting your request."
 msgstr "在提交请求前，请您确认同意代理的支付条款。"
 
-msgid "Please note that Asians, Digits, Reset Call/Reset Put, High Ticks/Low Ticks, and Run Ups/Run Downs are available exclusively with our Volatility Indices."
-msgstr "请注意，亚洲货币、数字交易、买权重设/卖权重设、高跳动点/低跳动点和持续上涨/持续下跌只适用于我们的波动指数。"
+msgid "Please note that Asians, Digits, Reset Call/Reset Put, High Ticks/Low Ticks, and Only Ups/Only Downs are available exclusively with our Volatility Indices."
+msgstr ""
 
 msgid "Please note that actual trading results may not correspond to optimized or back-tested results."
 msgstr "请注意, 实际交易结果可能与被优化或事后测试的结果不符。"
@@ -8506,15 +8515,6 @@ msgstr "转到借入/贷出"
 
 msgid "Rolling Spot Forex;"
 msgstr "起伏现货外汇"
-
-msgid "Run"
-msgstr "持续交易"
-
-msgid "Run Downs"
-msgstr "持续下跌"
-
-msgid "Run Ups"
-msgstr "持续上涨"
 
 msgid "Russia"
 msgstr "俄罗斯"
@@ -10227,9 +10227,6 @@ msgstr "在通过网络系统进行交易有许多潜在风险，包括但不仅
 msgid "There are two types of In/Out trades:"
 msgstr "范围内/外交易有两种类型："
 
-msgid "There are two types of Run trades:"
-msgstr "持续交易有两种类型："
-
 msgid "There are two types of Up/Down trades:"
 msgstr "上涨/下跌交易有两种类型："
 
@@ -11186,9 +11183,6 @@ msgstr "您确认并理解一旦资金经理被撤销后将失去代您管理账
 
 msgid "Upon the expiration or termination of this Agreement, for whatever reason, all rights and license granted to you in this Agreement, including use of the %1 API, shall immediately terminate. You agree to promptly cease all further use of the %1 API. Termination of this Agreement shall not act as a waiver of any breach of this Agreement and shall not act as a release of your liability for breach of its obligation under this Agreement. The Company shall not be liable to you for damages of any kind solely as a result of terminating this Agreement in accordance with its terms."
 msgstr "本协议到期或终止时（不论是什么原因），所有通过本协议授予您的权利和许可证，包括%1 API的使用权限，将立即终止。您同意立即停止继续使用 %1 API。本协议的终止不可视为放弃追究本协议任何违约行为，且不可视为放弃追究您违反本协议所须承担的义务与责任。公司不对仅仅由于按照协议条款终止本协议的任何类型损失索赔承担责任。"
-
-msgid "Ups"
-msgstr "持续上涨"
 
 msgid "Usage Limit"
 msgstr "使用限制"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-03-11 10:53\n"
+"PO-Revision-Date: 2019-03-12 02:55\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Portuguese\n"
 "MIME-Version: 1.0\n"
@@ -1600,6 +1600,9 @@ msgstr "Mercados disponíveis"
 
 msgid "Available payment methods"
 msgstr "Métodos de pagamento disponíves"
+
+msgid "Available trade types:"
+msgstr ""
 
 msgid "Average"
 msgstr "Média"
@@ -3431,9 +3434,6 @@ msgstr "Baixe o aplicativo para Android"
 msgid "Download your statement"
 msgstr ""
 
-msgid "Downs"
-msgstr ""
-
 msgid "Drive rapid growth and business development to support the company's sales and marketing objectives"
 msgstr ""
 
@@ -5180,16 +5180,16 @@ msgstr "Se você selecionar \"sobe\", você ganha o prêmio se o preço do merca
 msgid "If you select \"rises\", you win the payout if the market price is higher than the entry spot."
 msgstr "Se você selecionar \"sobe\", você ganha o prêmio se o preço do mercado for superior ao preço de entrada."
 
-msgid "If you select %1\"Downs\"%2, you win the payout if consecutive ticks fall successively after the %1entry spot%2.%3No payout if any tick rises or is equal to any of the previous ticks."
-msgstr ""
-
 msgid "If you select %1\"High Tick\"%2, you win the payout if the selected tick is the %1highest among the next five ticks%2."
 msgstr "Se você selecionar %1\"Tique-taque alto\"%2, você ganhará o prêmio se o tique-taque selecionado for o %1mais alto entre os seguintes cinco tique-taques%2."
 
 msgid "If you select %1\"Low Tick\"%2, you win the payout if the selected tick is the %1lowest among the next five ticks%2."
 msgstr "Se você selecionar %1\"Tique-taque baixo\"%2, você ganhará o prêmio se o tique-taque selecionado for o %1mais baixo entre os seguintes cinco tique-taques%2."
 
-msgid "If you select %1\"Ups\"%2, you win the payout if consecutive ticks rise successively after the %1entry spot%2.%3No payout if any tick falls or is equal to any of the previous ticks."
+msgid "If you select %1\"Only Downs\"%2, you win the payout if consecutive ticks fall successively after the %1entry spot%2.%3No payout if any tick rises or is equal to any of the previous ticks."
+msgstr ""
+
+msgid "If you select %1\"Only Ups\"%2, you win the payout if consecutive ticks rise successively after the %1entry spot%2.%3No payout if any tick falls or is equal to any of the previous ticks."
 msgstr ""
 
 msgid "If you select a <strong>start time</strong> in the future, the <strong>start time</strong> is that which is selected and the <strong>entry spot</strong> is the price in effect at that time."
@@ -7044,11 +7044,20 @@ msgstr "As negociações online podem criar dependência. Preencha o formulário
 msgid "Only %1 are allowed."
 msgstr "Apenas %1 são permitidos."
 
+msgid "Only Downs"
+msgstr ""
+
 msgid "Only JPG, JPEG, GIF, PNG and PDF formats are accepted"
 msgstr "Apenas os formatos JPG, JPEG, GIF, PNG e PDF são aceitos"
 
 msgid "Only JPG, JPEG, GIF, and PNG formats are accepted"
 msgstr "Apenas os formatos JPG, JPEG, GIF e PNG são aceitos"
+
+msgid "Only Ups"
+msgstr ""
+
+msgid "Only Ups/Only Downs"
+msgstr ""
 
 msgid "Only five years after inception, we pick up this major award for our online trading services. The award recognises BetOnMarkets.com's reliable, fast and secure online trading for novice and expert traders. At this time, our website has received over 15 million trades."
 msgstr "Apenas cinco anos depois da criação, ganhamos este grande prêmio pelos nossos serviços de negociações online. O prêmio reconhece a BetOnMarkets.com como um site de negociações online confiável, rápido e seguro para os apostadores iniciantes e experientes. Neste momento, o nosso site já recebeu mais de 15 milhões de negociações."
@@ -7659,7 +7668,7 @@ msgstr "Por favor, conecte-se."
 msgid "Please make sure that you first agree with the Agent on the terms of payment before submitting your request."
 msgstr "Certifique-se de que aceita as condições de pagamento do Agente antes de submeter o seu pedido."
 
-msgid "Please note that Asians, Digits, Reset Call/Reset Put, High Ticks/Low Ticks, and Run Ups/Run Downs are available exclusively with our Volatility Indices."
+msgid "Please note that Asians, Digits, Reset Call/Reset Put, High Ticks/Low Ticks, and Only Ups/Only Downs are available exclusively with our Volatility Indices."
 msgstr ""
 
 msgid "Please note that actual trading results may not correspond to optimized or back-tested results."
@@ -8507,15 +8516,6 @@ msgstr "Débito/Crédito acumulado"
 
 msgid "Rolling Spot Forex;"
 msgstr "Forex de preço à vista móvel"
-
-msgid "Run"
-msgstr ""
-
-msgid "Run Downs"
-msgstr ""
-
-msgid "Run Ups"
-msgstr ""
 
 msgid "Russia"
 msgstr "Rússia"
@@ -10228,9 +10228,6 @@ msgstr "Existem riscos associados à utilização de um sistema de negociação 
 msgid "There are two types of In/Out trades:"
 msgstr "Existem dois tipos de negociações Dentro/Fora:"
 
-msgid "There are two types of Run trades:"
-msgstr ""
-
 msgid "There are two types of Up/Down trades:"
 msgstr "Existem dois tipos de negociações Acima/Abaixo:"
 
@@ -11187,9 +11184,6 @@ msgstr "Ao revogar, você compreende e aceita que o seu gestor de dinheiro irá 
 
 msgid "Upon the expiration or termination of this Agreement, for whatever reason, all rights and license granted to you in this Agreement, including use of the %1 API, shall immediately terminate. You agree to promptly cease all further use of the %1 API. Termination of this Agreement shall not act as a waiver of any breach of this Agreement and shall not act as a release of your liability for breach of its obligation under this Agreement. The Company shall not be liable to you for damages of any kind solely as a result of terminating this Agreement in accordance with its terms."
 msgstr "Após o vencimento ou rescisão deste Acordo, por qualquer motivo, todos os direitos e licenças concedidos a você neste Acordo, incluindo o uso da API %1, terminarão imediatamente. Você aceita cessar prontamente todo o uso da API %1. A rescisão deste Acordo não representará uma isenção de qualquer violação deste Acordo, nem representará uma isenção da sua responsabilidade pela violação da sua obrigação ao abrigo deste Acordo. A Empresa não será responsável perante você por danos de qualquer natureza, exclusivamente como resultado da rescisão deste Acordo em conformidade com os seus termos."
-
-msgid "Ups"
-msgstr ""
 
 msgid "Usage Limit"
 msgstr "Limite de uso"
