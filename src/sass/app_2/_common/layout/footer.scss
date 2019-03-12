@@ -125,7 +125,9 @@
 .ic-settings {
     &--active {
         position: relative;
-        background: $COLOR_LIGHT_BLACK_4;
+        @include themify($themes) {
+            background: themed('hover_color');
+        }
 
         &:after {
             content: '';

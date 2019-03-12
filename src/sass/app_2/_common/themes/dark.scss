@@ -130,27 +130,6 @@
             animation: dash 1.5s ease-in-out infinite, colorOrange 6s ease-in-out infinite;
         }
     }
-    .full-page-modal {
-        background-color: rgba(31, 36, 61, 0.8);
-
-        &__dialog {
-            background-color: $COLOR_DARK_BLUE_3;
-            box-shadow: 0 2px 8px 0 $COLOR_LIGHT_BLACK_3;
-        }
-        &__content, &__header {
-            color: $COLOR_DARK_BLUE_7;
-        }
-        &__btn {
-            background-color: $COLOR_DARK_BLUE_3;
-
-            &:hover {
-                background-color: $COLOR_DARK_BLUE_7;
-            }
-            &-text {
-                color: $COLOR_WHITE;
-            }
-        }
-    }
     .toast {
         &__body {
             background-color: $TOAST_BACKGROUND_COLOR_INFO;
@@ -171,108 +150,6 @@
         }
         &__close-button {
             color: $TOAST_CLOSE_BUTTON_COLOR_DARK;
-        }
-    }
-    .datepicker {
-        &__input {
-            background: $COLOR_DARK_BLUE_3;
-            color: $COLOR_WHITE;
-
-            &:hover, &:focus, &:active {
-                border-color: $COLOR_WHITE;
-            }
-        }
-        &__native-overlay {
-            background: $COLOR_DARK_BLUE_5;
-
-            &:hover, &:focus, &:active {
-                border-color: $COLOR_WHITE;
-            }
-        }
-    }
-    .range-slider {
-        &__track {
-            background: $COLOR_DARK_BLUE_2 !important;
-
-            &.input {
-                &:active, &:focus {
-                    box-shadow: none;
-                }
-            }
-            &::-webkit-slider-thumb {
-                background: $COLOR_PURPLE;
-            }
-            &::-moz-range-thumb {
-                background: $COLOR_PURPLE;
-            }
-            &::-moz-range-track {
-                background: $COLOR_DARK_BLUE_2;
-            }
-        }
-        &__ticks-step {
-            border-color: $COLOR_DARK_BLUE_2;
-            background: $COLOR_DARK_BLUE_2;
-
-            &--active, &--marked {
-                background: $COLOR_PURPLE;
-                border-color: $COLOR_PURPLE;
-            }
-            &:hover:not(&--active) {
-                background: $COLOR_PURPLE;
-                border-color: $COLOR_PURPLE;
-                box-shadow: 0 0 0 6px rgba(79, 96, 174, 0.32);
-            }
-        }
-        &__line {
-            background: $COLOR_PURPLE;
-        }
-    }
-    .settings-dialog {
-        background: $COLOR_DARK_BLUE_3;
-
-        &__container {
-            background: $COLOR_DARK_BLUE_3;
-
-        }
-        &__tab-content {
-            background: $COLOR_DARK_BLUE_3;
-        }
-        &__general-container, &__chart-container {
-            background: $COLOR_DARK_BLUE_5;
-        }
-        &__header {
-            color: $COLOR_DARK_BLUE_7;
-        }
-        &__row {
-            background-color: $COLOR_DARK_BLUE_2;
-
-            &-name {
-                color: $COLOR_DARK_BLUE_7;
-            }
-            &:hover {
-                background-color: $COLOR_DARK_BLUE_4;
-            }
-        }
-        &__language {
-            &-dialog-container {
-                background: $COLOR_DARK_BLUE_3;
-            }
-            &-header {
-                background: $COLOR_DARK_BLUE_3;
-                color: $COLOR_DARK_BLUE_7;
-
-            }
-            &-row {
-                background: $COLOR_DARK_BLUE_2;
-                color: $COLOR_DARK_BLUE_7;
-
-                &:hover {
-                    background: $COLOR_DARK_BLUE_4;
-                }
-            }
-            &-name {
-                color: $COLOR_DARK_BLUE_7;
-            }
         }
     }
     .acc-info {

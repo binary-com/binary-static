@@ -13,53 +13,57 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(255, 255, 255, 0.56);
+    @include themify($themes) {
+        background-color: themed('modal_color');
 
-    &__dialog {
-        max-width: 560px;
-        max-height: 320px;
-        padding: 1.6em;
-        border-radius: 4px;
-        box-sizing: border-box;
-        display: flex;
-        justify-content: space-around;
-        flex-direction: column;
-        align-items: flex-start;
-        background-color: $COLOR_WHITE;
-        box-shadow: 0 2px 8px 0 $COLOR_LIGHT_BLACK_3;
-    }
-    &__header {
-        @include typeface(--title-left-bold-black);
-        @include toEm(margin-bottom, 16px, 1.6em);
-    }
-    &__content {
-        max-width: 448px;
-        @include typeface(--paragraph-left-normal-black, unset);
-        @include toEm(margin-bottom, 32px, 1.4em);
-    }
-    &__footer {
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        width: 100%;
-    }
-    &__button {
-        margin: 0;
-    }
-    /* postcss-bem-linter: ignore */
-    .btn--secondary--orange {
-        border: none;
-        margin-right: 0.8em;
-
-        /* postcss-bem-linter: ignore */
-        &:hover:not([disabled]) {
-            background: none;
-            border: none;
+        &__dialog {
+            max-width: 560px;
+            max-height: 320px;
+            padding: 1.6em;
+            border-radius: 4px;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-around;
+            flex-direction: column;
+            align-items: flex-start;
+            background-color: themed('container_secondary_color');
+            box-shadow: 0 2px 8px 0 $COLOR_LIGHT_BLACK_3;
         }
-    }
-    /* postcss-bem-linter: ignore */
-    .btn__text {
-        font-size: 1.4em;
+        &__header {
+            @include typeface(--title-left-bold-black);
+            @include toEm(margin-bottom, 16px, 1.6em);
+            color: themed('text_color');
+        }
+        &__content {
+            @include typeface(--paragraph-left-normal-black, unset);
+            @include toEm(margin-bottom, 32px, 1.4em);
+            max-width: 448px;
+            color: themed('text_primary_color');
+        }
+        &__footer {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            width: 100%;
+        }
+        &__button {
+            margin: 0;
+        }
+        /* postcss-bem-linter: ignore */
+        .btn--secondary--orange {
+            border: none;
+            margin-right: 0.8em;
+
+            /* postcss-bem-linter: ignore */
+            &:hover:not([disabled]) {
+                background: none;
+                border: none;
+            }
+        }
+        /* postcss-bem-linter: ignore */
+        .btn__text {
+            font-size: 1.4em;
+        }
     }
 }
 
