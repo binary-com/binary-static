@@ -58,7 +58,7 @@ const DigitDisplay = (() => {
                     .append($('<strong />', { class: 'gr-3', text: localize('Spot') }))
                     .append($('<strong />', { class: 'gr-6', text: localize('Spot Time (GMT)') }))))
             .append($('<div />', { class: 'digit-ticker invisible', id: 'digit_ticker_container' }));
-        setLoadingSpinner();
+        setLoadingSpinner('table_digits');
 
         DigitTicker.init(
             'digit_ticker_container',
