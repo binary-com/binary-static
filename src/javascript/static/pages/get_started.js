@@ -1,6 +1,6 @@
 const getElementById = require('../../_common/common_functions').getElementById;
 const MenuSelector   = require('../../_common/menu_selector');
-const State          = require('../../_common/storage').State;
+const ClientBase     = require('../../_common/base/client_base');
 
 module.exports = {
     BinaryOptions: {
@@ -25,11 +25,17 @@ module.exports = {
     },
     BinaryOptionsForMT5: {
         onLoad: () => {
-            MenuSelector.init(['what-are-binary-options', 'how-to-trade-binary', 'types-of-trades']);
-            const shortcode = State.getResponse('landing_company.gaming_company.shortcode');
-            if (shortcode === 'malta' || shortcode === 'maltainvest') {
+            let menu_sections = [
+                'what-are-binary-options',
+                'how-to-trade-binary',
+                'types-of-trades',
+            ];
+            const landing_company_shortcode = ClientBase.get('landing_company_shortcode');
+            if (landing_company_shortcode === 'malta' || landing_company_shortcode === 'maltainvest') {
                 getElementById('how-to-trade-binary').setVisibility(false);
+                menu_sections = menu_sections.filter(menu_item => menu_item !== 'how-to-trade-binary');
             }
+            MenuSelector.init(menu_sections);
         },
         onUnload: () => { MenuSelector.clean(); },
     },
