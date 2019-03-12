@@ -22,7 +22,7 @@ $themes: (
         text_primary_color        : $COLOR_LIGHT_BLACK_1,
         text_secondary_color      : $COLOR_LIGHT_BLACK_2,
         won_gradient_color        : $COLOR_LIGHT_GREEN_GRADIENT,
-        detail_color              : transparent transparent transparent #d6d6d6,
+        detail_color              :  #cdcdcf, /* stylelint-disable-line color-no-hex */
     ),
     dark: (
         active_color              : $COLOR_DARK_BLUE_5,
@@ -47,6 +47,6 @@ $themes: (
         text_primary_color        : $COLOR_DARK_BLUE_7,
         text_secondary_color      : $COLOR_DARK_BLUE_7,
         won_gradient_color        : $COLOR_DARK_GREEN_GRADIENT,
-        detail_color              : transparent transparent transparent rgba(127,131,151,.12),
+        detail_color              : #373b50, /* stylelint-disable-line color-no-hex */
     ),
 );

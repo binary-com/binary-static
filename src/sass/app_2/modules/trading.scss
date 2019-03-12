@@ -515,18 +515,16 @@
             background-color: $COLOR_GREEN_1;
         }
         .btn-purchase__content {
-            background-color: transparent; // dark is $COLOR_DARK_BLUE_8
+            background-color: transparent;
         }
         .btn-purchase__info {
             background-color: $COLOR_LIGHT_BLACK_3;
         }
-        /* stylelint-disable color-no-hex*/
         .btn-purchase__effect-detail {
             @include themify($themes) {
-                border-color: themed('detail_color');
+                border-color: transparent transparent transparent themed('detail_color');
             }
         }
-        /* stylelint-enable color-no-hex */
         .btn-purchase__trade-type-icon, .btn-purchase__trade-type-text, .btn-purchase__profit, .btn-purchase__return {
             overflow: hidden;
         }
