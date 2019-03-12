@@ -4,6 +4,8 @@ const ResponsibleTrading = () => (
     <div className='static_full' id='responsible-trading'>
         <div className='container'>
             <h1>{it.L('Responsible Trading')}</h1>
+            <p>{it.L('[_1] supports [_2] which is the leading charity in Britain committed to minimising gambling-related harm. The charity funds education, prevention and treatment services and commissions research to help people understand more about gambling-related harm. It also offers a national gambling helpline to offer confidential advice and emotional support to those that seek help about their gambling.', it.website_name, '<a target=\'_blank\' href=\'https://www.begambleaware.org/about-us/\' rel=\'noopener noreferrer\'>BeGambleAware</a>')}</p>
+            <p>{it.L('[_1] also provides links to an online quiz to assess a potential gambling problem and an online gambling calculator to see how much you can really spend.', '<a target=\'_blank\' href=\'https://www.begambleaware.org/\' rel=\'noopener noreferrer\'>BeGambleAware</a>')}</p>
             <p>{it.L('Please remember at all times that trading binary options can be an exciting activity, but we have a moral duty to remind you of the risks you may run. Options trading can become a real addiction, as can any other activity pushed to its limits. We kindly ask you to engage in a careful self-analysis to check if you are at risk. To avoid the danger of such an addiction, it is important that you follow some basic principles and guidelines.')}</p>
             <ol>
                 <li>{it.L('Use the opportunity provided by our website to practice for free with our virtual money account facility. This will enable you to get used to the functionalities and rules of the website.')}</li>
@@ -36,8 +38,7 @@ const ResponsibleTrading = () => (
 
                 <h2>{it.L('Filtering Controls')}</h2>
                 <p>{it.L('Our site can be filtered using a number of filtering systems available on the market which could be used to restrict one\'s access to our site.')}</p>
-                <p>{it.L('[_1] supports [_2] which is the leading charity in Britain committed to minimising gambling-related harm. The charity funds education, prevention and treatment services and commissions research to help people understand more about gambling-related harm. It also offers a national gambling helpline to offer confidential advice and emotional support to those that seek help about their gambling.', it.website_name, '<a target=\'_blank\' href=\'https://www.begambleaware.org/about-us/\' rel=\'noopener noreferrer\'>BeGambleAware</a>')}</p>
-                <p>{it.L('[_1] also provides links to an online quiz to assess a potential gambling problem and an online gambling calculator to see how much you can really spend.', '<a target=\'_blank\' href=\'https://www.begambleaware.org/\' rel=\'noopener noreferrer\'>BeGambleAware</a>')}</p>
+                
             </div>
 
             <h2>{it.L('Other Warnings & Regulatory Disclosures')}</h2>
