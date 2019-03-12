@@ -50,7 +50,7 @@ export const createMarkerStartTime = (contract_info) => {
 };
 
 // -------------------- Spots --------------------
-export const createMarkerSpotEntry = (contract_info, idx) => {
+export const createMarkerSpotEntry = (contract_info) => {
     if (!contract_info.entry_tick_time) return false;
 
     let marker_type      = MARKER_TYPES_CONFIG.SPOT_ENTRY.type;
@@ -59,7 +59,7 @@ export const createMarkerSpotEntry = (contract_info, idx) => {
 
     if (spot_has_label) {
         marker_type = MARKER_TYPES_CONFIG.SPOT_MIDDLE.type;
-        const spot_count = getSpotCount(contract_info, idx);
+        const spot_count = 1;
 
         component_props = {
             spot_value: contract_info.entry_tick,
