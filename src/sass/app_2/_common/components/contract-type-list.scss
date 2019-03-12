@@ -50,7 +50,8 @@
         }
     }
     &__title {
-        @include typeface(--small-left-normal-black);
+        @include typeface(--paragraph-left-normal-black);
+        padding-left: 0.4em;
     }
     &__icon {
         display: none;

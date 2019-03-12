@@ -375,7 +375,7 @@ const PersonalDetails = (() => {
             .attr('class', is_success ? 'success-msg' : 'errorfield')
             .html(is_success ? $ul : localized_text)
             .css('display', 'block')
-            .delay(5000)
+            .delay(15000)
             .fadeOut(1000);
     };
 

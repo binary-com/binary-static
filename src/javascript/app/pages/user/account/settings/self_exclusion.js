@@ -319,7 +319,7 @@ const SelfExclusion = (() => {
             .attr('class', is_success ? 'success-msg' : error_class)
             .html(is_success ? $ul : localized_text)
             .css('display', 'block')
-            .delay(5000)
+            .delay(10000)
             .fadeOut(1000);
     };
 
