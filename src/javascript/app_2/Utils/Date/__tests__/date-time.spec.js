@@ -9,8 +9,8 @@ describe('toMoment', () => {
         expect(DateTime.toMoment(epoch)).to.deep.equal(moment.unix(epoch).utc());
     });
     it('return correct date when plain string date passed', () => {
-        const date = '12 Mar 2019';
-        const format = 'DD MMM YYYY';
+        const date = '2019-03-12';
+        const format = 'YYYY-MM-DD';
 
         expect(DateTime.toMoment(date).format(format)).to.equal(date);
     });
