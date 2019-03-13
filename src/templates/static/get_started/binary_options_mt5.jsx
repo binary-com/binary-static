@@ -57,7 +57,7 @@ const BinaryOptionsForMT5 = () => (
                     </div>
                     <p>{it.L('Each index corresponds to simulated markets with constant volatilities of 10%, 25%, 50%, 75%, and 100% respectively.')}</p>
                 </Section>
-                <Section data-show='-malta, -maltainvest' id='how-to-trade-binary' header={it.L('How to trade binary options on MT5')}>
+                <Section id='how-to-trade-binary' header={it.L('How to trade binary options on MT5')}>
                     <p>{it.L('Get started with the [_1] Expert Advisor (EA) for binary options trading on MT5 by following these steps:', it.website_name)}</p>
 
                     <SeparatorLine invisible show_mobile className='gr-padding-10' />
