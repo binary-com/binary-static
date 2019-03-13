@@ -11,6 +11,14 @@
             }
         }
     }
+    &--is-blurred {
+        filter: blur(3px);
+        @supports (-ms-ime-align:auto) { // Edge filter:blur not working when element has overflow:hidden
+            & .trade-container, & .statement {
+                filter: blur(3px);
+            }
+        }
+    }
     &--show-positions-drawer {
         .trade-container {
             .chart-container {
@@ -33,6 +41,12 @@
         }
         & + &.app-contents--contract-mode {
             max-width: unset;
+        }
+        .statement {
+            &.container {
+                max-width: calc(100% - 252px);
+                margin-left: calc(240px + 12px);
+            }
         }
     }
     @media screen and (max-width: 768px) {
@@ -130,9 +144,11 @@
             width: 80px;
             top: 0;
             left: -2px;
-            background-image: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
             pointer-events: none;
             z-index: 2;
+            @include themify($themes) {
+                background-image: themed('chart_gradient_color');
+            }
         }
     }
     @media (max-width: 768px) {
@@ -183,15 +199,14 @@
     &__items {
         opacity: 1;
         transform: none;
-        transition: transform 0.4s ease, opacity 0.2s linear;
+        transition: filter 0.4s ease;
         position: relative;
         min-height: 460px;
         width: $SIDEBAR_WIDTH;
 
-        &--slideout {
-            transform: translate3d(calc(100% + 2px), 0, 0);
+        &--blur {
+            filter: blur(3px);
             pointer-events: none;
-            opacity: 0;
         }
     }
 }
@@ -251,11 +266,13 @@
 @mixin contract_type_icon_wrapper {
     width: 2.4em;
     height: 2.4em;
-    background: $COLOR_LIGHT_BLACK_4_SOLID;
     border-radius: 3px;
     display: flex;
     align-items: center;
     justify-content: center;
+    @include themify($themes) {
+        background: themed('background_icon_color');
+    }
 }
 
 /** @define category-wrapper */
@@ -266,6 +283,12 @@
 /** @define type-wrapper */
 .type-wrapper {
     @include contract_type_icon_wrapper;
+
+    .color1-fill {
+        @include themify($themes) {
+            fill: themed('text_color');
+        }
+    }
 }
 
 // Helpers
@@ -300,6 +323,8 @@
     }
     &__message {
         @include interpolate(font-size, 320px, 1440px, 14px, 20px);
-        color: $COLOR_LIGHT_BLACK_1;
+        @include themify($themes) {
+            color: themed('text_primary_color');
+        }
     }
 }

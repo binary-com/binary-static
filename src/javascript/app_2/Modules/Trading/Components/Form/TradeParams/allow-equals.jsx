@@ -33,7 +33,10 @@ const AllowEquals = ({
 );
 
 AllowEquals.propTypes = {
-    checked       : PropTypes.number,
+    checked: PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
+    ]),
     is_allow_equal: PropTypes.bool,
     onChange      : PropTypes.func,
 };

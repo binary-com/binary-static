@@ -1,118 +1,7 @@
 // Dark Theme
 .theme--dark {
-    background: $COLOR_DARK_BLUE_1;
-    color: $COLOR_WHITE;
+    background-color: $COLOR_DARK_BLUE_1;
 
-    .inline-icon {
-        @include colorIcon($COLOR_DARK_BLUE_7, none);
-
-        &.active {
-            @include colorIcon($COLOR_DARK_BLUE_5, $COLOR_WHITE, $COLOR_WHITE);
-        }
-        &.disabled {
-            @include colorIcon($COLOR_DARK_BLUE_8, none);
-        }
-        &.white {
-            @include colorIcon($COLOR_WHITE);
-        }
-    }
-    .trade-container {
-        background: $COLOR_DARK_BLUE_2;
-
-        &__price {
-            color: $COLOR_WHITE;
-
-            &-info-basis {
-                color: $COLOR_DARK_BLUE_7;
-            }
-            &-info-value {
-                color: $COLOR_WHITE;
-            }
-        }
-        &__fieldset {
-            background: $COLOR_DARK_BLUE_3;
-            color: $COLOR_DARK_BLUE_7;
-            border-color: $COLOR_DARK_BLUE_3;
-
-            &-info {
-                color: $COLOR_DARK_BLUE_7;
-            }
-        }
-        &__input {
-            background: $COLOR_DARK_BLUE_2;
-            color: $COLOR_DARK_BLUE_7;
-            border-color: $COLOR_DARK_BLUE_2;
-        }
-        &__barriers {
-            &--up, &--down {
-                @extend .inline-icon.white;
-            }
-        }
-        &__currency {
-            color: $COLOR_DARK_BLUE_7;
-        }
-        &__error {
-            &-info {
-                color: $COLOR_WHITE;
-            }
-        }
-        &__allow-equals-label {
-            color: $COLOR_DARK_BLUE_7;
-        }
-        .chartContainer:before {
-            background-image: linear-gradient(to right, rgba(16, 19, 32, 1), rgba(16, 19, 32, 0));
-        }
-    }
-    .purchase-container {
-        &__error {
-            background: $COLOR_DARK_BLUE_3;
-            color: $COLOR_DARK_BLUE_7;
-
-            a {
-                color: $COLOR_DARK_BLUE_7;
-
-                &:hover {
-                    color: $COLOR_WHITE;
-                    font-weight: 500;
-                }
-            }
-            &-result {
-                color: $COLOR_DARK_BLUE_7;
-
-                span.label {
-                    color: $COLOR_DARK_BLUE_7;
-                }
-            }
-            &-login {
-                color: $COLOR_WHITE;
-            }
-        }
-        &__option div.box .left-column .type-wrapper {
-            background: $COLOR_DARK_BLUE_6;
-        }
-        &__lock {
-            background: $COLOR_DARK_BLUE_3;
-
-            &-icon {
-                @extend .inline-icon.white;
-            }
-            &-button {
-                background: transparent;
-            }
-            &-header {
-                color: $COLOR_WHITE;
-            }
-            &-message {
-                background: $COLOR_DARK_BLUE_2;
-                color: $COLOR_DARK_BLUE_7;
-            }
-        }
-    }
-    .btn-purchase:disabled {
-        box-shadow: 0 2px 2px 0 $COLOR_DARK_BLUE_7;
-        background: $COLOR_DARK_BLUE_6;
-        color: $COLOR_DARK_BLUE_8;
-    }
     .card-list {
         &__card {
             background: $COLOR_DARK_BLUE_5;
@@ -127,77 +16,6 @@
                 color: $COLOR_DARK_BLUE_7;
             }
         }
-    }
-    .number-selector {
-        &__selection {
-            color: $COLOR_DARK_BLUE_7;
-            background-color: $COLOR_DARK_BLUE_2;
-
-            &--selected {
-                background-color: $COLOR_DARK_BLUE_5;
-                color: $COLOR_WHITE;
-            }
-            &:hover {
-                background-color: $COLOR_DARK_BLUE_4;
-            }
-        }
-    }
-    .header {
-        background: $COLOR_DARK_BLUE_1;
-        border-color: $COLOR_DARK_BLUE_1;
-
-        &__menu-link {
-            &--active {
-                .header__menu-link-text {
-                    color: $COLOR_WHITE;
-                }
-                &:after {
-                    background-color: $COLOR_WHITE;
-                }
-            }
-            &:hover:not(&--active) {
-                background-color: $COLOR_DARK_BLUE_4;
-            }
-            &-text {
-                color: $COLOR_DARK_BLUE_7;
-            }
-        }
-        &__menu-right {
-            border-color: $COLOR_DARK_BLUE_2;
-        }
-        &__navbar-icons--binary-logo {
-            border-color: $COLOR_DARK_BLUE_2;
-        }
-    }
-    .footer {
-        background: $COLOR_DARK_BLUE_1;
-        color: $COLOR_DARK_BLUE_7;
-
-        &__link {
-            &:hover {
-                background: $COLOR_DARK_BLUE_4;
-            }
-        }
-        .ic-positions {
-            &:after {
-                background-color: $COLOR_DARK_BLUE_7;
-            }
-        }
-        .network-status-circle--blinker {
-            background: $COLOR_DARK_BLUE_7;
-        }
-        .server-time {
-            color: $COLOR_DARK_BLUE_7;
-        }
-        .ic-settings {
-            &:after {
-                background-color: $COLOR_WHITE;
-            }
-        }
-    }
-    // inline trade-types icons
-    .type-wrapper {
-        background: $COLOR_DARK_BLUE_6;
     }
     .portfolio.container {
         background: $COLOR_DARK_BLUE_5;
@@ -222,12 +40,12 @@
     }
     .statement.container {
         .statement__filter {
-            background: $COLOR_DARK_BLUE_5;
+            background: $COLOR_DARK_BLUE_1;
             color: $COLOR_DARK_BLUE_7;
-            border-color: $COLOR_DARK_BLUE_5;
+            border-color: $COLOR_DARK_BLUE_1;
         }
         .statement__content {
-            background: $COLOR_DARK_BLUE_5;
+            background: $COLOR_DARK_BLUE_1;
         }
     }
     .table {
@@ -258,7 +76,6 @@
             border-color: $COLOR_DARK_BLUE_5;
         }
     }
-    // TODO: refactor to inline SVG and change colors with CSS
     .portfolio-card {
         &__purchase:before {
             background-image: url('../images/portfolio/ic_purchase_dark.svg');
@@ -271,7 +88,7 @@
         }
     }
     .statement-card__icon {
-        @extend .inline-icon.white;
+        @extend %inline-icon.white;
     }
     .login-message-wrapper {
         .message a {
@@ -296,9 +113,6 @@
             border-color: $COLOR_WHITE;
         }
     }
-    .error__message {
-        color: $COLOR_DARK_BLUE_7;
-    }
     .barspinner__rect {
         background-color: $COLOR_WHITE;
     }
@@ -311,43 +125,12 @@
             color: $COLOR_WHITE;
         }
     }
-    .btn--alternate {
-        background: $COLOR_DARK_BLUE_5;
-        border-color: $COLOR_DARK_BLUE_5;
-
-        .btn__text {
-            color: $COLOR_WHITE;
-        }
-    }
     .block-ui {
         background: rgba(16, 19, 32, 0.6); // this is color dark blue 2 with 0.6 opacity
 
         &__loading-spinner-path {
             animation: dash 1.5s ease-in-out infinite, colorOrange 6s ease-in-out infinite;
         }
-    }
-    .switch-button:not(.switch-button--toggled) {
-        background: $COLOR_DARK_BLUE_5;
-    }
-    .toggle-chart-layout {
-        border-color: $COLOR_DARK_BLUE_7;
-
-        &:after {
-            background: $COLOR_WHITE;
-        }
-    }
-    .tab {
-        &__header {
-            color: $COLOR_DARK_BLUE_7;
-        }
-        &--active {
-            .tab__header {
-                color: $COLOR_WHITE;
-            }
-        }
-    }
-    .tab-underline {
-        border-color: $COLOR_WHITE;
     }
     .full-page-modal {
         background-color: rgba(31, 36, 61, 0.8);
@@ -444,54 +227,6 @@
         }
         &__line {
             background: $COLOR_PURPLE;
-        }
-    }
-    .settings-dialog {
-        background: $COLOR_DARK_BLUE_3;
-
-        &__container {
-            background: $COLOR_DARK_BLUE_3;
-
-        }
-        &__tab-content {
-            background: $COLOR_DARK_BLUE_3;
-        }
-        &__general-container, &__chart-container {
-            background: $COLOR_DARK_BLUE_5;
-        }
-        &__header {
-            color: $COLOR_DARK_BLUE_7;
-        }
-        &__row {
-            background-color: $COLOR_DARK_BLUE_2;
-
-            &-name {
-                color: $COLOR_DARK_BLUE_7;
-            }
-            &:hover {
-                background-color: $COLOR_DARK_BLUE_4;
-            }
-        }
-        &__language {
-            &-dialog-container {
-                background: $COLOR_DARK_BLUE_3;
-            }
-            &-header {
-                background: $COLOR_DARK_BLUE_3;
-                color: $COLOR_DARK_BLUE_7;
-
-            }
-            &-row {
-                background: $COLOR_DARK_BLUE_2;
-                color: $COLOR_DARK_BLUE_7;
-
-                &:hover {
-                    background: $COLOR_DARK_BLUE_4;
-                }
-            }
-            &-name {
-                color: $COLOR_DARK_BLUE_7;
-            }
         }
     }
     .acc-info {
@@ -1075,6 +810,111 @@
             }
         }
     }
+    .positions-drawer {
+        background: $COLOR_DARK_BLUE_3;
+        border-color: $COLOR_DARK_BLUE_3;
+        color: $COLOR_WHITE;
+
+        &--contract-mode:before {
+            background: $COLOR_DARK_BLUE_3;
+        }
+        &-card {
+            color: $COLOR_WHITE;
+
+            &__result {
+                background-color: $COLOR_DARK_BLUE_2;
+
+                &:hover {
+                    background: 0;
+                }
+                &--won {
+                    background-image: linear-gradient(to top, rgba(16, 19, 32, 0), rgba(0, 148, 117, 0.16));
+                }
+                &--lost {
+                    background-image: linear-gradient(to top, rgba(16, 19, 32, 0), rgba(227, 28, 75, 0.16));
+                }
+            }
+            &__wrapper {
+                background: $COLOR_DARK_BLUE_2;
+
+                &--active:before {
+                    box-shadow: 0 0 4px 1px rgba(255, 255, 255, 0.16);
+                }
+            }
+            &__type {
+                .category-type {
+                    .color1-fill {
+                        fill: $COLOR_WHITE;
+                    }
+                }
+            }
+            &__remaining-time {
+                color: $COLOR_DARK_BLUE_7;
+            }
+            &__indicative {
+                // &--no-resale {
+                //     color: $COLOR_DARK_BLUE_7;
+                // }
+                &--price-stable {
+                    color: $COLOR_WHITE;
+                }
+            }
+            &__grid-profit-payout {
+                background: $COLOR_DARK_BLUE_3;
+            }
+            &__purchase-label, &__profit-loss-label, &__indicative-label {
+                color: $COLOR_DARK_BLUE_7;
+            }
+        }
+        &__title {
+            color: $COLOR_DARK_BLUE_7;
+        }
+        &__body {
+            .positions-empty, p {
+                align-self: center;
+                color: $COLOR_WHITE;
+            }
+        }
+        &__footer {
+            background: $COLOR_DARK_BLUE_3;
+            border-color: $COLOR_DARK_BLUE_3;
+
+            .btn--alternate {
+                background-color: $COLOR_DARK_BLUE_5;
+                border-color: $COLOR_DARK_BLUE_5;
+
+                .btn__text {
+                    color: $COLOR_WHITE;
+                    font-weight: bold;
+                }
+            }
+        }
+        .result {
+            &-details__label {
+                color: $COLOR_DARK_BLUE_7;
+            }
+            &-details__toggle--is-open, &-details__separator {
+                border-color: $COLOR_DARK_BLUE_3;
+            }
+        }
+    }
+    .progress-slider {
+        &__track, &__infinite-loader {
+            background: $COLOR_DARK_BLUE_3;
+        }
+        .ticks-step {
+            border: 2px solid $COLOR_DARK_BLUE_2;
+            background: $COLOR_DARK_BLUE_2;
+
+            &--active, &--marked {
+                background: $COLOR_PURPLE;
+                border-color: $COLOR_PURPLE;
+            }
+        }
+        &__line {
+            background: $COLOR_PURPLE;
+        }
+    }
     .chart-spot-label {
         &__value-container {
             background: $COLOR_DARK_BLUE_5;
@@ -1091,6 +931,17 @@
         }
     }
     .chart-spot {
+        &__spot {
+            background-color: $COLOR_DARK_BLUE_2;
+            color: $COLOR_WHITE;
+
+            &--won {
+                background-color: $COLOR_GREEN_1;
+            }
+            &--lost {
+                background-color: $COLOR_RED;
+            }
+        }
         &__entry {
             background-color: unset;
         }
