@@ -70,11 +70,7 @@ export default class PortfolioStore extends BaseStore {
             WS.subscribeProposalOpenContract(contract_id, this.proposalOpenContractHandler, false);
         } else if (act === 'sell') {
             // TODO: Refactor with contract-store and use common helpers to handle contract result
-            WS.proposalOpenContract(contract_id).then(action((proposal_response) => {
-                // populate result details box for specified positions card
-                WS.forget('proposal_open_contract', this.populateResultDetails, { contract_id: response.contract_id });
-                this.populateResultDetails(proposal_response);
-            }));
+            WS.subscribeProposalOpenContract(contract_id, this.populateResultDetails, false);
         }
     }
 
@@ -152,7 +148,8 @@ export default class PortfolioStore extends BaseStore {
         }
     }
 
-    populateResultDetails(response) {
+    @action.bound
+    populateResultDetails = (response) => {
         const contract_response = response.proposal_open_contract;
         const i = this.getPositionIndexById(contract_response.contract_id);
         const sell_time = isUserSold(contract_response) ?
