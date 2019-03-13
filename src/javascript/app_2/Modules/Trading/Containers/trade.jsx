@@ -62,13 +62,13 @@ class Trade extends React.Component {
                     />
                 </div>
                 <FullPageModal
-                    cancel_button_text={localize('Go Back')}
-                    confirm_button_text={localize('Visit main website')}
+                    cancel_button_text={localize('Trade on other contracts')}
+                    confirm_button_text={localize('Switch to legacy platform')}
                     is_visible={this.props.has_only_forward_starting_contracts}
                     onCancel={() => this.props.setHasOnlyForwardingContracts(false)}
-                    onConfirm={() => window.location.href = URL.websiteUrl()}
+                    onConfirm={() => window.open(URL.websiteUrl())}
                 >
-                    <Localize str='This market is not available in New Trading platform yet. Please use our current platform.' />
+                    <Localize str='Sorry, but forward-start contracts are not supported yet on our new platform.' />
                 </FullPageModal>
             </div>
         );

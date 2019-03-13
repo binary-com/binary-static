@@ -341,8 +341,9 @@ export default class TradeStore extends BaseStore {
             has_only_forward_starting_contracts =
                 ContractType.getContractCategories().has_only_forward_starting_contracts;
         }
+        // TODO: remove all traces of setHasOnlyForwardingContracts and has_only_forward_starting_contracts in app
+        //  once future contracts are implemented
         this.root_store.ui.setHasOnlyForwardingContracts(has_only_forward_starting_contracts);
-
         if (has_only_forward_starting_contracts) return;
 
         const new_state = this.updateStore(cloneObject(obj_new_values));
