@@ -32,7 +32,6 @@ module.exports = {
             ];
             const landing_company_shortcode = ClientBase.get('landing_company_shortcode');
             if (landing_company_shortcode === 'malta' || landing_company_shortcode === 'maltainvest') {
-                getElementById('how-to-trade-binary').setVisibility(false);
                 menu_sections = menu_sections.filter(menu_item => menu_item !== 'how-to-trade-binary');
             }
             MenuSelector.init(menu_sections);

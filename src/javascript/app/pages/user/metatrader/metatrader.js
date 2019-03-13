@@ -28,11 +28,6 @@ const MetaTrader = (() => {
             } else {
                 MetaTraderUI.displayPageError(localize('Sorry, this feature is not available in your jurisdiction.'));
             }
-
-            const shortcode = State.getResponse('landing_company.gaming_company.shortcode');
-            if (shortcode === 'malta' || shortcode === 'maltainvest') {
-                MetaTraderUI.showEA(false);
-            }
         });
     };
 
