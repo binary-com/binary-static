@@ -1,6 +1,6 @@
+const isEuCountry    = require('../../app/common/country_base').isEuCountry;
 const getElementById = require('../../_common/common_functions').getElementById;
 const MenuSelector   = require('../../_common/menu_selector');
-const ClientBase     = require('../../_common/base/client_base');
 
 module.exports = {
     BinaryOptions: {
@@ -30,8 +30,7 @@ module.exports = {
                 'how-to-trade-binary',
                 'types-of-trades',
             ];
-            const landing_company_shortcode = ClientBase.get('landing_company_shortcode');
-            if (landing_company_shortcode === 'malta' || landing_company_shortcode === 'maltainvest') {
+            if (isEuCountry()) {
                 getElementById('how-to-trade-binary').setVisibility(0);
                 menu_sections = menu_sections.filter(menu_item => menu_item !== 'how-to-trade-binary');
             }
