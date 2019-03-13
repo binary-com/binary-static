@@ -6,6 +6,7 @@ import {
     MTAccountOpeningButton } from './common.jsx';
 import { List }              from '../../_common/components/elements.jsx';
 import { SeparatorLine }     from '../../_common/components/separator_line.jsx';
+import Loading               from '../../_common/components/loading.jsx';
 
 const BinaryOptionsForMT5 = () => (
     <div className='static_full get-started'>
@@ -26,6 +27,9 @@ const BinaryOptionsForMT5 = () => (
                 </div>
             </div>
             <div className='gr-9 gr-12-m'>
+                <div id='loading_binary_options_mt5'>
+                    <Loading />
+                </div>
                 <Section id='what-are-binary-options' header={it.L('Introduction to binary options on MT5')}>
                     <p>{it.L('Binary options are now available for you to trade on MT5 – our advanced multi-asset trading platform that offers unlimited trading possibilities.')}</p>
 
