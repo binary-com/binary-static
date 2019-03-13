@@ -1,6 +1,10 @@
 import moment       from 'moment';
 import { localize } from '_common/localize';
 
+moment.createFromInputFallback = function (config) {
+    config._d = new Date(NaN);
+};
+
 /**
  * Convert epoch to moment object
  * @param  {Number} epoch
@@ -19,7 +23,7 @@ export const toMoment = value => {
     if (value instanceof moment && value.isValid() && value.isUTC()) return value; // returns if already a moment object
     if (typeof value === 'number') return epochToMoment(value); // returns epochToMoment() if not a date
 
-    return moment.utc(value);
+    return (/invalid/i.test(moment(value))) ? moment.utc(value, 'DD MMM YYYY') : moment.utc(value);
 };
 
 /**
