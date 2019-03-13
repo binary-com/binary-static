@@ -176,8 +176,9 @@ const PaymentMethods = () => {
                                 ],
                             },
                             {
-                                id : 'paytrust',
-                                row: [
+                                id      : 'paytrust',
+                                dataShow: '-eucountry',
+                                row     : [
                                     { text: <PaymentLogo logo='paytrust' /> },
                                     { attributes: { colSpan: 5, className: 'toggler' }, custom_td : <CustomTableData data={[
                                         { td: it.L('Enjoy the simplicity of online banking to fund your [_1] account.', it.website_name) },
@@ -412,8 +413,9 @@ const PaymentMethods = () => {
                                 ],
                             },
                             {
-                                id : 'jeton',
-                                row: [
+                                id      : 'jeton',
+                                dataShow: '-eucountry',
+                                row     : [
                                     { text: <PaymentLogo logo='jeton' /> },
                                     { attributes: { colSpan: 5, className: 'toggler' }, custom_td : <CustomTableData data={[
                                         { td: it.L('-') },
@@ -431,8 +433,9 @@ const PaymentMethods = () => {
                                 ],
                             },
                             {
-                                id : 'iwallet',
-                                row: [
+                                id      : 'iwallet',
+                                dataShow: '-eucountry',
+                                row     : [
                                     { text: <PaymentLogo logo='iwallet' /> },
                                     { attributes: { colSpan: 5, className: 'toggler' }, custom_td : <CustomTableData data={[
                                         { td: it.L('-') },
