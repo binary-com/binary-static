@@ -40,7 +40,7 @@
             }
 
             .footer__icon {
-                @extend .inline-icon.active;
+                @extend %inline-icon.active;
             }
         }
     }
@@ -140,7 +140,7 @@
             }
         }
         .ic-settings__icon {
-            @extend .inline-icon.active;
+            @extend %inline-icon.active;
             pointer-events: none;
         }
     }

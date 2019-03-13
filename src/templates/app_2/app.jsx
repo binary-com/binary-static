@@ -12,6 +12,7 @@ const BinaryApp = () => (
             <div id='binary_app' className='binary-app'>
                 <Loading />
             </div>
+            <div id='modal_root' className='modal-root' />
         </body>
     </html>
 );

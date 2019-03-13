@@ -1,5 +1,7 @@
 // Dark Theme
 .theme--dark {
+    background-color: $COLOR_DARK_BLUE_1;
+
     .card-list {
         &__card {
             background: $COLOR_DARK_BLUE_5;
@@ -86,7 +88,7 @@
         }
     }
     .statement-card__icon {
-        @extend .inline-icon.white;
+        @extend %inline-icon.white;
     }
     .login-message-wrapper {
         .message a {
@@ -225,54 +227,6 @@
         }
         &__line {
             background: $COLOR_PURPLE;
-        }
-    }
-    .settings-dialog {
-        background: $COLOR_DARK_BLUE_3;
-
-        &__container {
-            background: $COLOR_DARK_BLUE_3;
-
-        }
-        &__tab-content {
-            background: $COLOR_DARK_BLUE_3;
-        }
-        &__general-container, &__chart-container {
-            background: $COLOR_DARK_BLUE_5;
-        }
-        &__header {
-            color: $COLOR_DARK_BLUE_7;
-        }
-        &__row {
-            background-color: $COLOR_DARK_BLUE_2;
-
-            &-name {
-                color: $COLOR_DARK_BLUE_7;
-            }
-            &:hover {
-                background-color: $COLOR_DARK_BLUE_4;
-            }
-        }
-        &__language {
-            &-dialog-container {
-                background: $COLOR_DARK_BLUE_3;
-            }
-            &-header {
-                background: $COLOR_DARK_BLUE_3;
-                color: $COLOR_DARK_BLUE_7;
-
-            }
-            &-row {
-                background: $COLOR_DARK_BLUE_2;
-                color: $COLOR_DARK_BLUE_7;
-
-                &:hover {
-                    background: $COLOR_DARK_BLUE_4;
-                }
-            }
-            &-name {
-                color: $COLOR_DARK_BLUE_7;
-            }
         }
     }
     .acc-info {
