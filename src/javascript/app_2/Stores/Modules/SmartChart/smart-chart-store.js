@@ -26,6 +26,9 @@ export default class SmartChartStore extends BaseStore {
 
     @observable chart_type = 'mountain';
     @observable granularity = 0;
+    @observable left_epoch;
+    @observable left_epoch_offset;
+    @observable zoom;
 
     constructor({ root_store }) {
         const local_storage_properties = ['chart_type', 'granularity'];
@@ -43,6 +46,28 @@ export default class SmartChartStore extends BaseStore {
         if (granularity === 0 && !tick_chart_types.includes(this.chart_type)) {
             this.chart_type = 'mountain';
         }
+    }
+
+    @action.bound
+    updateEpochScrollToValue(epoch) {
+        this.left_epoch = epoch;
+    }
+
+    @action.bound
+    updateEpochScrollToOffset(offset) {
+        this.left_epoch_offset = offset;
+    }
+
+    @action.bound
+    updateChartZoom(percentage) {
+        this.zoom = percentage;
+    }
+
+    @action.bound
+    resetScrollZoom() {
+        this.zoom = null;
+        this.left_epoch = null;
+        this.left_epoch_offset = null;
     }
 
     @action.bound

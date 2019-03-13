@@ -53,9 +53,12 @@ class Chart extends React.Component {
                 settings={this.props.settings}
                 showLastDigitStats={this.props.should_show_last_digit_stats}
                 startEpoch={this.props.start_epoch}
+                scrollToEpoch={this.props.scroll_to_epoch}
+                scrollToEpochOffset={this.props.scroll_to_offset}
                 symbol={this.props.symbol}
                 topWidgets={this.topWidgets}
                 isConnectionOpened={this.props.is_socket_opened}
+                zoom={this.props.chart_zoom}
             >
                 { this.props.markers_array.map((marker, idx) => (
                     <ChartMarker
@@ -74,6 +77,7 @@ Chart.propTypes = {
     BottomWidgets               : PropTypes.node,
     chart_id                    : PropTypes.number,
     chart_type                  : PropTypes.string,
+    chart_zoom                  : PropTypes.number,
     end_epoch                   : PropTypes.number,
     granularity                 : PropTypes.number,
     InfoBox                     : PropTypes.node,
@@ -82,6 +86,8 @@ Chart.propTypes = {
     markers_array               : PropTypes.array,
     onSymbolChange              : PropTypes.func,
     onUnmount                   : PropTypes.func,
+    scroll_to_epoch             : PropTypes.number,
+    scroll_to_epoch_offset      : PropTypes.number,
     settings                    : PropTypes.object,
     should_show_last_digit_stats: PropTypes.bool,
     start_epoch                 : PropTypes.number,
