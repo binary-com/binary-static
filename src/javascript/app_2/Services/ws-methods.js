@@ -57,13 +57,6 @@ const WS = (() => {
     const statement = (limit, offset, date_boundaries) =>
         BinarySocket.send({ statement: 1, description: 1, limit, offset, ...date_boundaries });
 
-    const subscribeProposalOpenContractAfterBuy = (buy_request) =>
-        SubscriptionManager.addSubscriptionFromRequest(
-            'proposal_open_contract',
-            { ...buy_request, subscribe: 1 },
-            { proposal_open_contract: 1, subscribe: 1, contract_id: '' },
-            'contract_id',
-        );
     // ----- Streaming calls -----
     const forget = (msg_type, cb, match_values) =>
         SubscriptionManager.forget(msg_type, cb, match_values);
@@ -79,6 +72,14 @@ const WS = (() => {
 
     const subscribeProposalOpenContract = (contract_id = null, cb, should_forget_first) =>
         SubscriptionManager.subscribe('proposal_open_contract', { proposal_open_contract: 1, subscribe: 1, ...(contract_id && { contract_id }) }, cb, should_forget_first);
+
+    const subscribeProposalOpenContractAfterBuy = (buy_request) =>
+        SubscriptionManager.addSubscriptionFromRequest(
+            'proposal_open_contract',
+            { ...buy_request, subscribe: 1 },
+            { proposal_open_contract: 1, subscribe: 1, contract_id: '' },
+            'contract_id',
+        );
 
     const subscribeTicks = (symbol, cb, should_forget_first) =>
         SubscriptionManager.subscribe('ticks', { ticks: symbol, subscribe: 1 }, cb, should_forget_first);
