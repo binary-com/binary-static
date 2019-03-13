@@ -12,18 +12,21 @@ const ignored_files = [
 let changed_files = [];
 
 describe('check svg file format', () => {
-    const fetchFiles = async () => {
-        const { stdout, stderr } = await exec('git diff HEAD origin/master --name-only -- *.svg');
+    const fetchFiles = async (command) => {
+        const { stdout, stderr } = await exec(command);
         if (stderr) {
             throw new Error(stderr);
         }
 
-        return stdout.split('\n').filter(path => path.length);
+        return stdout.split('\n').filter(dir => dir.length);
     };
 
     it('should be valid svgs', async () => {
         try {
-            changed_files = await fetchFiles();
+            changed_files = [
+                ...await fetchFiles('git diff --name-only -- *.svg'),
+                ...await fetchFiles('git diff HEAD origin/master --name-only -- *.svg'),
+            ];
         } catch (err) {
             console.error(err);
         }
