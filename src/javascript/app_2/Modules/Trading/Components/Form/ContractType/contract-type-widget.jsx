@@ -1,6 +1,8 @@
-import classNames           from 'classnames';
+import classNames            from 'classnames';
+import { isArrayLike }       from 'mobx/lib/mobx';
 import PropTypes             from 'prop-types';
 import React                 from 'react';
+import { IconArrow }         from 'Assets/Common';
 import { IconTradeCategory } from 'Assets/Trading/Categories';
 import ContractTypeDialog    from './contract-type-dialog.jsx';
 import ContractTypeList      from './contract-type-list.jsx';
@@ -130,10 +132,15 @@ class ContractTypeWidget extends React.PureComponent {
     };
 
     render() {
+        const is_single_option = isArrayLike(this.props.list) ?
+            !!(this.props.list.length < 2)
+            :
+            !!(Object.keys(this.props.list).length < 2);
+
         return (
             <div
                 ref={this.setWrapperRef}
-                className={'contract-type-widget'}
+                className='contract-type-widget dropdown--left'
                 tabIndex='0'
             >
                 <div
@@ -147,6 +154,9 @@ class ContractTypeWidget extends React.PureComponent {
                         {this.getDisplayText()}
                     </span>
                 </div>
+                {
+                    !is_single_option && <IconArrow className='contract-type-widget__select-arrow dropdown__select-arrow dropdown__select-arrow--left' />
+                }
 
                 <ContractTypeDialog
                     is_mobile={this.props.is_mobile}

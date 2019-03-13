@@ -29,11 +29,6 @@
         }
     }
     .portfolio-empty {
-        &__icon {
-            path {
-                fill: $COLOR_DARK_BLUE_5;
-            }
-        }
         &__text {
             color: $COLOR_DARK_BLUE_8 !important;
         }
@@ -227,6 +222,10 @@
         }
         &__line {
             background: $COLOR_PURPLE;
+        }
+        &__caption-title {
+            color: $COLOR_WHITE;
+            font-weight: bold;
         }
     }
     .acc-info {
@@ -527,6 +526,10 @@
             &--active {
                 color: $COLOR_WHITE;
                 background-color: $COLOR_DARK_BLUE_5;
+
+                span {
+                    color: $COLOR_WHITE;
+                }
             }
         }
     }
@@ -582,7 +585,7 @@
     .input {
         background: $COLOR_DARK_BLUE_2;
         border-color: $COLOR_DARK_BLUE_2;
-        color: $COLOR_DARK_BLUE_7;
+        color: $COLOR_WHITE;
 
         &[type=checkbox] {
             border-color: $COLOR_DARK_BLUE_7;
