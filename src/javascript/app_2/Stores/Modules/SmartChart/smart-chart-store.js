@@ -26,8 +26,8 @@ export default class SmartChartStore extends BaseStore {
 
     @observable chart_type = 'mountain';
     @observable granularity = 0;
-    @observable left_epoch;
-    @observable left_epoch_offset;
+    @observable left_epoch = null;
+    @observable left_epoch_offset = 0;
     @observable zoom;
 
     constructor({ root_store }) {

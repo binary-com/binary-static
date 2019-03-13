@@ -59,11 +59,11 @@ export default class ContractStore extends BaseStore {
     drawChart(SmartChartStore, contract_info) {
         SmartChartStore.setContractMode(true);
         SmartChartStore.updateChartZoom(100);
-        SmartChartStore.updateEpochScrollToValue(contract_info.purchase_time);
         SmartChartStore.updateEpochScrollToOffset(0);
         if (isEnded(contract_info)) {
             this.chart_config = getChartConfig(contract_info);
         } else {
+            SmartChartStore.updateEpochScrollToValue(contract_info.purchase_time);
             delete this.chart_config.end_epoch;
             delete this.chart_config.start_epoch;
         }
@@ -86,43 +86,25 @@ export default class ContractStore extends BaseStore {
         this.error_message = '';
         this.contract_id   = contract_id;
         this.smart_chart   = this.root_store.modules.smart_chart;
-        this.smart_chart.setContractMode(true);
-        this.smart_chart.updateChartZoom(100);
-        this.smart_chart.updateEpochScrollToOffset(0);
 
         if (contract_id) {
+            this.smart_chart.setContractMode(true);
+            this.smart_chart.updateEpochScrollToOffset(2);
             WS.subscribeProposalOpenContract(this.contract_id, this.updateProposal, false);
         }
     }
 
     @action.bound
     onLoadContract(contract_info) {
-        if (contract_info === this.contract_id || !contract_info) return;
+        if (contract_info.contract_id === this.contract_id || !contract_info) return;
         this.onSwitchAccount(this.accountSwitcherListener.bind(null));
         this.smart_chart   = this.root_store.modules.smart_chart;
         this.contract_info = contract_info;
         this.contract_id   = +contract_info.contract_id;
-
-        this.smart_chart.updateChartZoom(100);
-        this.smart_chart.updateEpochScrollToValue(this.contract_info.purchase_time);
-        this.smart_chart.updateEpochScrollToOffset(0);
-        if (isEnded(this.contract_info)) {
-            this.chart_config = getChartConfig(this.contract_info);
-        } else {
-            delete this.chart_config.end_epoch;
-            delete this.chart_config.start_epoch;
-        }
         this.smart_chart.setContractMode(true);
-        createChartBarrier(this.smart_chart, this.contract_info);
+        this.smart_chart.updateEpochScrollToOffset(2);
 
-        if (this.contract_info.tick_count && this.contract_info.exit_tick_time) { // TODO: remove this.contract_info.exit_tick_time when ongoing contracts are implemented
-            createChartTickMarkers(this.smart_chart, this.contract_info);
-        } else {
-            createChartMarkers(this.smart_chart, this.contract_info);
-        }
-
-        createChartMarkers(this.smart_chart, this.contract_info, this);
-        this.handleDigits();
+        this.drawChart(this.smart_chart, this.contract_info);
     }
 
     @action.bound
@@ -172,23 +154,7 @@ export default class ContractStore extends BaseStore {
             return;
         }
         this.contract_info = response.proposal_open_contract;
-        this.smart_chart.updateEpochScrollToValue(this.contract_info.purchase_time);
-        if (isEnded(this.contract_info)) {
-            this.chart_config = getChartConfig(this.contract_info);
-        } else {
-            delete this.chart_config.end_epoch;
-            delete this.chart_config.start_epoch;
-        }
-
-        createChartBarrier(this.smart_chart, this.contract_info);
-
-        if (this.contract_info.tick_count && this.contract_info.exit_tick_time) { // TODO: remove this.contract_info.exit_tick_time when ongoing contracts are implemented
-            createChartTickMarkers(this.smart_chart, this.contract_info);
-        } else {
-            createChartMarkers(this.smart_chart, this.contract_info);
-        }
-
-        this.handleDigits();
+        this.drawChart(this.smart_chart, this.contract_info);
     }
 
     @action.bound
