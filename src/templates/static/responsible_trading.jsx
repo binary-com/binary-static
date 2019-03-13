@@ -37,7 +37,7 @@ const ResponsibleTrading = () => (
 
                 <h2>{it.L('Underage Gambling')}</h2>
                 <p>{it.L('Clients must be aware that underage gambling is an offence. If a client, upon age verification, is proven to be underage, they will be deprived of any winnings and only deposits made shall be refunded.')}</p>
-                
+
                 <h2>{it.L('Filtering Controls')}</h2>
                 <p>{it.L('Our site can be filtered using a number of filtering systems available on the market which could be used to restrict one\'s access to our site.')}</p>
             </div>
