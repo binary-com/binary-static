@@ -1,13 +1,12 @@
 .contract-container {
-    font-size: 0.85rem;
+    font-size: 1.4em;
     border-radius: $BORDER_RADIUS;
     position: relative;
 
     .contract-header {
-        max-height: 2rem;
+        max-height: 32px;
         overflow: hidden;
         border-radius: 4px 4px 0 0;
-        box-shadow: 0 0 4px 1px rgba(255, 255, 255, 0.16);
 
         .header-wrapper {
             transition: transform 0.4s ease;
@@ -16,14 +15,14 @@
             .header-result, .header-purchased {
                 display: flex;
                 align-items: center;
-                padding: 0 10px;
+                padding: 5px;
                 color: $COLOR_WHITE;
                 font-weight: bold;
-                line-height: 2rem;
+                line-height: 1.5;
 
                 svg {
                     display: inline-block;
-                    margin-right: 7px;
+                    margin-right: 0.7em;
                 }
             }
         }
@@ -60,31 +59,39 @@
             }
         }
     }
+    .btn {
+        margin: 0.8em;
+
+        span {
+            font-size: 1em;
+        }
+    }
     .contract-contents {
-        padding: 10px;
-        font-size: 0.75rem;
+        padding: 1em;
+        background: $COLOR_LIGHT_BLACK_4_SOLID;
+        font-size: 1em;
         border-top-width: 0;
         border-radius: 0 0 4px 4px;
-        box-shadow: 0 0 4px 1px rgba(255, 255, 255, 0.16);
 
         .longcode {
             font-weight: 300;
             text-align: center;
-            line-height: 1.1rem;
+            line-height: 1.5;
         }
         .ref-number, .info-header {
-            margin-top: 10px;
+            margin-top: 0.6em;
             font-weight: 300;
             text-align: center;
             background-color: $COLOR_LIGHT_BLACK_4_SOLID;
-            line-height: 1.7rem;
+            line-height: 1.5;
+            padding: 4px;
         }
         .info-header {
             font-weight: bold;
         }
         .info-item {
             display: flex;
-            padding: 7px 0;
+            padding: 0.7em 0;
 
             > div {
                 align-self: center;
@@ -102,40 +109,63 @@
     }
 }
 
-$CONTRACT_INFO_BOX_PADDING: 15px;
+$CONTRACT_INFO_BOX_PADDING: 1.6em;
 
 .info-box-container {
     position: absolute;
     z-index: 10;
-    top: 10px;
-    right: 10px;
-    transform: none;
-    opacity: 1;
+    top: 1em;
+    right: 1em;
+    opacity: 0;
+    transform: translate3d(0, calc(-100% - 2em), 0);
     transition: transform 0.4s ease, opacity 0.4s linear;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 
-    &-enter {
-        transform: translateY(calc(-100% - 20px));
-        opacity: 0;
+    &-button:hover {
+        cursor: pointer;
     }
-    &-exit {
-        transform: translateY(calc(-100% - 20px));
+    &-icon {
+        width: 32px;
+        height: 32px;
+    }
+    &--enter-done {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+    &--enter, &--exit {
+        transform: translate3d(0, calc(-100% - 2em), 0);
         opacity: 0;
     }
     .info-box {
         position: relative;
         border-radius: $BORDER_RADIUS;
         padding: $CONTRACT_INFO_BOX_PADDING;
-        background: rgba(255, 255, 255, 0.9);
+        background: rgba(42, 48, 82, 0.04);
         font-weight: 300;
 
+        &-longcode {
+            display: flex;
+
+            &-icon {
+                @extend .info-box-container-icon;
+                margin-right: 1.6em;
+                padding: 0.4em;
+            }
+            &-text {
+                @include typeface(--paragraph-left-normal-black, unset);
+                max-width: 360px;
+            }
+        }
         .expired {
             display: flex;
             align-items: center;
 
             svg {
-                width: 24px;
-                height: 24px;
-                margin-right: 10px;
+                width: 2.4em;
+                height: 2.4em;
+                margin-right: 1em;
 
                 .color1-fill {
                     fill: $COLOR_GREEN_1;
@@ -144,12 +174,12 @@ $CONTRACT_INFO_BOX_PADDING: 15px;
             .pl-value {
                 color: $COLOR_GREEN_1;
                 font-weight: bold;
-                font-size: 1rem;
-                line-height: 1.5rem;
+                font-size: 1.6em;
+                line-height: 1.5em;
 
                 .percentage {
                     display: inline-block;
-                    margin-left: 7px;
+                    margin-left: 0.7em;
                 }
             }
             &.lost {
@@ -161,19 +191,19 @@ $CONTRACT_INFO_BOX_PADDING: 15px;
                 }
             }
             .sell-info {
-                margin-right: 20px;
+                margin-right: 2em;
                 text-align: center;
-                line-height: 1.2rem;
+                line-height: 1.2em;
             }
         }
         .general {
             display: flex;
             align-items: center;
-            line-height: 1.4rem;
+            line-height: 1.4em;
 
             .values {
-                margin-left: 10px;
-                margin-right: 20px;
+                margin-left: 1em;
+                margin-right: 2em;
                 text-align: right;
                 font-weight: bold;
 
@@ -195,8 +225,8 @@ $CONTRACT_INFO_BOX_PADDING: 15px;
 
                 .tooltip {
                     position: absolute;
-                    bottom: 5px;
-                    right: 5px;
+                    bottom: 0.5em;
+                    right: 0.5em;
                     line-height: 0;
 
                     &:before {
@@ -206,73 +236,18 @@ $CONTRACT_INFO_BOX_PADDING: 15px;
                 }
             }
         }
-        .digits {
-            display: flex;
-            align-items: center;
-
-            .digit-title {
-                font-weight: bold;
-                max-width: min-content;
-            }
-            .digit-list {
-                display: flex;
-                margin: 0 25px 0 10px;
-
-                .digit-info {
-                    margin: 0 4px;
-                    text-align: center;
-
-                    .digit-value {
-                        width: 32px;
-                        height: 32px;
-                        margin-bottom: 5px;
-                        border: 2px solid $COLOR_GREEN_1;
-                        border-radius: 50%;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        color: $COLOR_GREEN_1;
-                        font-size: 1rem;
-                        font-weight: bold;
-
-                        &.loss {
-                            border-color: $COLOR_RED;
-                            color: $COLOR_RED;
-                        }
-                        &.last {
-                            background-color: $COLOR_GREEN_1;
-                            color: $COLOR_WHITE;
-
-                            &.loss {
-                                background-color: $COLOR_RED;
-                            }
-                        }
-                        &:empty {
-                            border-color: $COLOR_LIGHT_BLACK_3;
-                        }
-                    }
-                    .tick-number {
-                        line-height: 0.6rem;
-                        font-size: 0.6rem;
-                    }
-                }
-            }
-            .expired {
-                margin-right: -25px;
-            }
-        }
     }
     .message {
-        margin-top: 5px;
+        margin-top: 0.5em;
         border: 1px solid $COLOR_RED;
         border-radius: $BORDER_RADIUS;
-        padding: 10px;
+        padding: 1em;
         background-color: rgba(244, 67, 54, 0.16);
         display: flex;
         align-items: center;
 
         .message-icon {
-            margin-right: 10px;
+            margin-right: 1em;
         }
         .message-text {
             flex-grow: 1;
@@ -281,10 +256,17 @@ $CONTRACT_INFO_BOX_PADDING: 15px;
             cursor: pointer;
         }
     }
+    .chart-close-btn {
+        position: absolute;
+        cursor: pointer;
+        z-index: 11;
+        right: 0;
+        top: 0;
+    }
 }
 
 // Dark Theme
-.theme-wrapper.dark {
+.theme--dark {
     .contract-container {
         color: $COLOR_DARK_BLUE_7;
 
@@ -296,8 +278,10 @@ $CONTRACT_INFO_BOX_PADDING: 15px;
             }
         }
         .contract-contents {
+            background: $COLOR_DARK_BLUE_3;
+
             .ref-number, .info-header {
-                background-color: $COLOR_DARK_BLUE_3;
+                background: $COLOR_DARK_BLUE_2;
             }
             .info-item {
                 > div {
@@ -315,6 +299,11 @@ $CONTRACT_INFO_BOX_PADDING: 15px;
         .info-box {
             background: rgba(16, 19, 32, 0.6); // this is color dark blue 2 with 0.6 opacity
 
+            &-longcode {
+                &-text {
+                    color: $COLOR_WHITE;
+                }
+            }
             .general .sell {
                 .btn:disabled {
                     background: $COLOR_DARK_BLUE_8;

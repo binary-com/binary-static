@@ -120,6 +120,8 @@ const ViewPopup = (() => {
             PUTSPREAD   : localize('Put Spread'),
             TICKHIGH    : localize('High Tick'),
             TICKLOW     : localize('Low Tick'),
+            RUNHIGH     : localize('Only Ups'),
+            RUNLOW      : localize('Only Downs'),
         });
 
         return {
@@ -448,6 +450,7 @@ const ViewPopup = (() => {
         'reset'           : 'reset',
         '(call|put)spread': 'callputspread',
         'tick(high|low)'  : 'highlowticks',
+        'run(high|low)'   : 'runs',
         'call|put'        : () => +contract.entry_tick === +contract.barrier ? 'risefall' : 'higherlower',
     };
 
@@ -601,7 +604,7 @@ const ViewPopup = (() => {
         }
 
         const should_show_entry_spot = !Lookback.isLookback(contract.contract_type) && !/digit/i.test(contract.contract_type);
-
+        const should_show_barrier = !/runhigh|runlow/i.test(contract.contract_type);
         $sections.find('#sell_details_table').append($(
             `<table>
             <tr id="contract_tabs"><th colspan="2" id="contract_information_tab">${localize('Contract Information')}</th></tr><tbody id="contract_information_content">
@@ -611,7 +614,7 @@ const ViewPopup = (() => {
             ${createRow(localize('Purchase Time'), '', 'trade_details_purchase_time', true)}
             ${(!contract.tick_count ? createRow(localize('Remaining Time'), '', 'trade_details_live_remaining') : '')}
             ${should_show_entry_spot ? createRow(localize('Entry Spot'), '', 'trade_details_entry_spot', 0, '<span></span>') : ''}
-            ${createRow(barrier_text, '', 'trade_details_barrier', true)}
+            ${should_show_barrier ? createRow(barrier_text, '', 'trade_details_barrier', true) : ''}
             ${Reset.isReset(contract.contract_type) ? createRow(localize('Reset Barrier'), '', 'trade_details_reset_barrier', true) : ''}
             ${(contract.barrier_count > 1 ? createRow(low_barrier_text, '', 'trade_details_barrier_low', true) : '')}
             ${createRow(Callputspread.isCallputspread(contract.contract_type) ? localize('Maximum payout') : localize('Potential Payout'), '', 'trade_details_payout')}

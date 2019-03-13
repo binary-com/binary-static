@@ -1,7 +1,7 @@
 import classNames      from 'classnames';
 import React           from 'react';
 import PropTypes       from 'prop-types';
-import { TabsWrapper } from './tabs_wrapper.jsx';
+import { TabsWrapper } from './tabs-wrapper.jsx';
 
 class Tabs extends React.PureComponent {
     state = {
@@ -14,9 +14,11 @@ class Tabs extends React.PureComponent {
 
     render() {
         const TabContents = this.props.list[this.state.active_tab_index].content;
-        const tab_container_class = classNames('tab-container', this.props.alignment);
+        const tab_container_class = classNames('tab-container', `tab-container--${this.props.alignment}`);
         const tab_header_class = (icon_name) => classNames(
-            { icon: icon_name },
+            this.props.classNameHeader,
+            'tab__header',
+            { 'tab__icon': icon_name },
             icon_name,
         );
 
@@ -46,8 +48,9 @@ class Tabs extends React.PureComponent {
 }
 
 Tabs.propTypes = {
-    alignment: PropTypes.string,
-    list     : PropTypes.shape({
+    alignment      : PropTypes.string,
+    classNameHeader: PropTypes.string,
+    list           : PropTypes.shape({
         header: PropTypes.string,
         icon  : PropTypes.string,
     }),

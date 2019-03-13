@@ -1,317 +1,5 @@
-// Dark Theme for Global Layout
-body.dark, .theme-wrapper.dark {
-    background: $COLOR_DARK_BLUE_1;
-
-    header, footer, .app-contents {
-        background: $COLOR_DARK_BLUE_1;
-    }
-    header {
-        border-color: $COLOR_DARK_BLUE_1;
-
-        .menu-items {
-            .menu-links a {
-                &.active {
-                    span {
-                        color: $COLOR_WHITE;
-                    }
-                    &:after {
-                        background-color: $COLOR_WHITE;
-                    }
-                }
-                &:hover:not(.active) {
-                    background-color: $COLOR_DARK_BLUE_4;
-                }
-                span {
-                    color: $COLOR_DARK_BLUE_7;
-                }
-            }
-            .menu-left .binary-logo, .menu-right {
-                border-color: $COLOR_DARK_BLUE_2;
-            }
-        }
-        .inkbar {
-            background-color: $COLOR_WHITE;
-        }
-    }
-    .app-contents {
-        color: $COLOR_WHITE;
-
-        fieldset {
-            background: $COLOR_DARK_BLUE_3;
-            color: $COLOR_DARK_BLUE_7;
-            border-color: $COLOR_DARK_BLUE_3;
-
-            div.fieldset-header {
-                span.field-info {
-                    &.left, &.center {
-                        color: $COLOR_DARK_BLUE_7;
-                    }
-                }
-            }
-            input, select {
-                background: $COLOR_DARK_BLUE_2;
-                color: $COLOR_DARK_BLUE_7;
-                border-color: $COLOR_DARK_BLUE_2;
-            }
-            div.submit-section button.btn:disabled {
-                box-shadow: 0 2px 2px 0 $COLOR_DARK_BLUE_7;
-                background: $COLOR_DARK_BLUE_6;
-                color: $COLOR_DARK_BLUE_8;
-            }
-            .symbols {
-                color: $COLOR_DARK_BLUE_7;
-                background: $COLOR_DARK_BLUE_3;
-            }
-        }
-        div.purchase-wrapper {
-            div.purchase-error {
-                background: $COLOR_DARK_BLUE_3;
-                color: $COLOR_DARK_BLUE_7;
-
-                a {
-                    color: $COLOR_DARK_BLUE_7;
-
-                    &:hover {
-                        color: $COLOR_WHITE;
-                        font-weight: 500;
-                    }
-                }
-                div.purchase-result-wrapper {
-                    color: $COLOR_DARK_BLUE_7;
-
-                    span.label {
-                        color: $COLOR_DARK_BLUE_7;
-                    }
-                }
-                div.purchase-login-wrapper {
-                    color: $COLOR_WHITE;
-                }
-            }
-            fieldset.purchase-option div.box .left-column .type-wrapper {
-                background: $COLOR_DARK_BLUE_6;
-
-                .type {
-                    path, rect {
-                        &:not(.important) {
-                            fill: $COLOR_WHITE;
-                        }
-                        &.transparent {
-                            fill: $COLOR_DARK_BLUE_6;
-                        }
-                    }
-                    .stroke-white {
-                        stroke: $COLOR_WHITE;
-                    }
-                }
-            }
-            div.purchase-lock-container {
-                background: $COLOR_DARK_BLUE_3;
-
-                .lock-container svg.ic-lock {
-                    rect, path {
-                        stroke: $COLOR_WHITE;
-                    }
-                    circle {
-                        fill: $COLOR_WHITE;
-                    }
-                }
-                h4 {
-                    color: $COLOR_WHITE;
-                }
-                span.lock-message {
-                    background: $COLOR_DARK_BLUE_2;
-                    color: $COLOR_DARK_BLUE_7;
-                }
-                button.btn {
-                    background: transparent;
-                }
-            }
-            .error-info-wrapper span {
-                color: $COLOR_WHITE;
-            }
-        }
-        .portfolio.container {
-            background: $COLOR_DARK_BLUE_5;
-        }
-        .portfolio-empty, .statement-empty {
-            span {
-                color: $COLOR_DARK_BLUE_7;
-            }
-            button.btn span {
-                color: unset;
-            }
-        }
-        .statement.container {
-            .statement-filter {
-                background: $COLOR_DARK_BLUE_5;
-                color: $COLOR_DARK_BLUE_7;
-                border-color: $COLOR_DARK_BLUE_5;
-            }
-            .statement__content {
-                background: $COLOR_DARK_BLUE_5;
-            }
-        }
-        .table {
-            border-color: $COLOR_DARK_BLUE_5;
-
-            &__head, &__foot {
-                background: $COLOR_DARK_BLUE_3;
-            }
-            &__head, &__foot, &__row {
-                border-color: $COLOR_DARK_BLUE_5;
-            }
-            &__body {
-                a.table__row:hover {
-                    background: $COLOR_DARK_BLUE_5;
-                }
-                .table__row {
-                    &, &:active, &:visited {
-                        color: $COLOR_DARK_BLUE_7;
-                    }
-                }
-            }
-            &__cell {
-                color: $COLOR_DARK_BLUE_7;
-            }
-        }
-        .card-list__card {
-            background-color: $COLOR_DARK_BLUE_5;
-            border-color: $COLOR_DARK_BLUE_5;
-        }
-        .statement, .portfolio {
-            &-card__header {
-                border-color: $COLOR_DARK_BLUE_5;
-            }
-        }
-        // TODO: refactor to inline SVG and change colors with CSS
-        .portfolio-card {
-            &__purchase:before {
-                background-image: url('../images/portfolio/ic_purchase_dark.svg');
-            }
-            &__payout:before {
-                background-image: url('../images/statement/ic_payout_dark.svg');
-            }
-            &__indicative--price-stable:before {
-                background-image: url('../images/portfolio/ic_price_stable_dark.svg');
-            }
-        }
-        .statement-card {
-            &__payout:before {
-                background-image: url('../images/statement/ic_payout_dark.svg');
-            }
-            &__balance:before {
-                background-image: url('../images/statement/ic_wallet_dark.svg');
-            }
-        }
-        .login-message-wrapper {
-            .message a {
-                color: $COLOR_DARK_BLUE_7;
-
-                &:hover {
-                    color: $COLOR_WHITE;
-                }
-            }
-        }
-        .chart-container {
-            .cq-context {
-                div.cq-chart-controls {
-                    border: none;
-                    border-right: 1px solid $COLOR_DARK_BLUE_5;
-                    border-top: 1px solid $COLOR_DARK_BLUE_5;
-
-                    @media (max-width: 768px) {
-                        border: 1px solid $COLOR_DARK_BLUE_5;
-                    }
-                }
-            }
-            .cq-modal-dropdown .cq-categorical-display .ic-icon.icon-close-menu {
-                svg {
-                    g path {
-                        fill: $COLOR_DARK_BLUE_7;
-                    }
-                }
-            }
-        }
-        .mobile-widget {
-            border-color: $COLOR_DARK_BLUE_5;
-
-            .fieldset-minimized {
-                color: $COLOR_DARK_BLUE_7;
-
-                &__basis {
-                    color: $COLOR_DARK_BLUE_7;
-                }
-            }
-            &:hover, &:focus, &:active {
-                border-color: $COLOR_WHITE;
-            }
-        }
-        .error-container p {
-            color: $COLOR_DARK_BLUE_7;
-        }
-    }
-    footer {
-        color: $COLOR_DARK_BLUE_7;
-
-        .footer-links a {
-            span {
-                color: $COLOR_DARK_BLUE_7;
-            }
-            &:hover {
-                background: $COLOR_DARK_BLUE_4;
-            }
-            &.active {
-                background: $COLOR_DARK_BLUE_4;
-
-                &:after {
-                    background: $COLOR_WHITE;
-                }
-            }
-        }
-        .footer-links-left {
-            .ic-positions {
-                &:after {
-                    background-color: $COLOR_DARK_BLUE_7;
-                }
-            }
-        }
-    }
-    // inline trade-types icons
-    .type-wrapper {
-        background: $COLOR_DARK_BLUE_6;
-
-        .type {
-            path, rect {
-                &:not(.important) {
-                    fill: $COLOR_WHITE;
-                }
-                &.transparent {
-                    fill: $COLOR_DARK_BLUE_6;
-                }
-            }
-            .stroke-white {
-                stroke: $COLOR_WHITE;
-            }
-        }
-    }
-    // tooltip
-    span.tooltip i.question:after {
-        content: url('../images/common/tooltip/ic_tooltip_question_dark.svg ');
-    }
-    // common inline icons
-    .inline-icon {
-        @include colorIcon($COLOR_DARK_BLUE_7, none);
-
-        &.active {
-            @include colorIcon($COLOR_DARK_BLUE_5, $COLOR_WHITE, $COLOR_WHITE);
-        }
-        &.disabled {
-            @include colorIcon($COLOR_DARK_BLUE_6, none);
-        }
-    }
-    .barspinner {
-        @extend .barspinner.white;
-    }
+// Dark Theme
+.theme--dark {
     .card-list {
         &__card {
             background: $COLOR_DARK_BLUE_5;
@@ -327,7 +15,981 @@ body.dark, .theme-wrapper.dark {
             }
         }
     }
-    .select-arrow .arrow-path {
-        fill: $COLOR_DARK_BLUE_7;
+    .portfolio.container {
+        background: $COLOR_DARK_BLUE_5;
+    }
+    .portfolio-empty, .statement-empty {
+        span {
+            color: $COLOR_DARK_BLUE_7;
+        }
+        button.btn span {
+            color: unset;
+        }
+    }
+    .portfolio-empty {
+        &__icon {
+            path {
+                fill: $COLOR_DARK_BLUE_5;
+            }
+        }
+        &__text {
+            color: $COLOR_DARK_BLUE_8 !important;
+        }
+    }
+    .statement.container {
+        .statement__filter {
+            background: $COLOR_DARK_BLUE_1;
+            color: $COLOR_DARK_BLUE_7;
+            border-color: $COLOR_DARK_BLUE_1;
+        }
+        .statement__content {
+            background: $COLOR_DARK_BLUE_1;
+        }
+    }
+    .table {
+        border-color: $COLOR_DARK_BLUE_5;
+
+        &__head, &__foot {
+            background: $COLOR_DARK_BLUE_3;
+        }
+        &__head, &__foot, &__row {
+            border-color: $COLOR_DARK_BLUE_5;
+        }
+        &__body {
+            a.table__row:hover {
+                background: $COLOR_DARK_BLUE_5;
+            }
+            .table__row {
+                &, &:active, &:visited {
+                    color: $COLOR_DARK_BLUE_7;
+                }
+            }
+        }
+        &__cell {
+            color: $COLOR_DARK_BLUE_7;
+        }
+    }
+    .statement, .portfolio {
+        &-card__header {
+            border-color: $COLOR_DARK_BLUE_5;
+        }
+    }
+    .portfolio-card {
+        &__purchase:before {
+            background-image: url('../images/portfolio/ic_purchase_dark.svg');
+        }
+        // &__payout:before {
+        //     background-image: url('../images/statement/ic_payout_dark.svg');
+        // }
+        &__indicative--price-stable:before {
+            background-image: url('../images/portfolio/ic_price_stable_dark.svg');
+        }
+    }
+    .statement-card__icon {
+        @extend .inline-icon.white;
+    }
+    .login-message-wrapper {
+        .message a {
+            color: $COLOR_DARK_BLUE_7;
+
+            &:hover {
+                color: $COLOR_WHITE;
+            }
+        }
+    }
+    .mobile-widget {
+        border-color: $COLOR_DARK_BLUE_5;
+
+        .fieldset-minimized {
+            color: $COLOR_DARK_BLUE_7;
+
+            &__basis {
+                color: $COLOR_DARK_BLUE_7;
+            }
+        }
+        &:hover, &:focus, &:active {
+            border-color: $COLOR_WHITE;
+        }
+    }
+    .barspinner__rect {
+        background-color: $COLOR_WHITE;
+    }
+    .toggle-button {
+        background-color: $COLOR_LIGHT_BLACK_1;
+        color: $COLOR_LIGHT_BLACK_4;
+
+        &_selected {
+            background-color: $COLOR_DARK_BLUE_2;
+            color: $COLOR_WHITE;
+        }
+    }
+    .block-ui {
+        background: rgba(16, 19, 32, 0.6); // this is color dark blue 2 with 0.6 opacity
+
+        &__loading-spinner-path {
+            animation: dash 1.5s ease-in-out infinite, colorOrange 6s ease-in-out infinite;
+        }
+    }
+    .full-page-modal {
+        background-color: rgba(31, 36, 61, 0.8);
+
+        &__dialog {
+            background-color: $COLOR_DARK_BLUE_3;
+            box-shadow: 0 2px 8px 0 $COLOR_LIGHT_BLACK_3;
+        }
+        &__content, &__header {
+            color: $COLOR_DARK_BLUE_7;
+        }
+        &__btn {
+            background-color: $COLOR_DARK_BLUE_3;
+
+            &:hover {
+                background-color: $COLOR_DARK_BLUE_7;
+            }
+            &-text {
+                color: $COLOR_WHITE;
+            }
+        }
+    }
+    .toast {
+        &__body {
+            background-color: $TOAST_BACKGROUND_COLOR_INFO;
+            color: $TOAST_TEXT_COLOR_DARK;
+
+            &--error {
+                background-color: $TOAST_BACKGROUND_COLOR_ERROR_DARK !important;
+            }
+            &--info {
+                background-color: $TOAST_BACKGROUND_COLOR_INFO_DARK !important;
+            }
+            &--success {
+                background-color: $TOAST_BACKGROUND_COLOR_SUCCESS_DARK !important;
+            }
+            &--warning {
+                background-color: $TOAST_BACKGROUND_COLOR_WARNING_DARK !important;
+            }
+        }
+        &__close-button {
+            color: $TOAST_CLOSE_BUTTON_COLOR_DARK;
+        }
+    }
+    .datepicker {
+        &__input {
+            background: $COLOR_DARK_BLUE_3;
+            color: $COLOR_WHITE;
+
+            &:hover, &:focus, &:active {
+                border-color: $COLOR_WHITE;
+            }
+        }
+        &__native-overlay {
+            background: $COLOR_DARK_BLUE_5;
+
+            &:hover, &:focus, &:active {
+                border-color: $COLOR_WHITE;
+            }
+        }
+    }
+    .range-slider {
+        &__track {
+            background: $COLOR_DARK_BLUE_2 !important;
+
+            &.input {
+                &:active, &:focus {
+                    box-shadow: none;
+                }
+            }
+            &::-webkit-slider-thumb {
+                background: $COLOR_PURPLE;
+            }
+            &::-moz-range-thumb {
+                background: $COLOR_PURPLE;
+            }
+            &::-moz-range-track {
+                background: $COLOR_DARK_BLUE_2;
+            }
+        }
+        &__ticks-step {
+            border-color: $COLOR_DARK_BLUE_2;
+            background: $COLOR_DARK_BLUE_2;
+
+            &--active, &--marked {
+                background: $COLOR_PURPLE;
+                border-color: $COLOR_PURPLE;
+            }
+            &:hover:not(&--active) {
+                background: $COLOR_PURPLE;
+                border-color: $COLOR_PURPLE;
+                box-shadow: 0 0 0 6px rgba(79, 96, 174, 0.32);
+            }
+        }
+        &__line {
+            background: $COLOR_PURPLE;
+        }
+    }
+    .settings-dialog {
+        background: $COLOR_DARK_BLUE_3;
+
+        &__container {
+            background: $COLOR_DARK_BLUE_3;
+
+        }
+        &__tab-content {
+            background: $COLOR_DARK_BLUE_3;
+        }
+        &__general-container, &__chart-container {
+            background: $COLOR_DARK_BLUE_5;
+        }
+        &__header {
+            color: $COLOR_DARK_BLUE_7;
+        }
+        &__row {
+            background-color: $COLOR_DARK_BLUE_2;
+
+            &-name {
+                color: $COLOR_DARK_BLUE_7;
+            }
+            &:hover {
+                background-color: $COLOR_DARK_BLUE_4;
+            }
+        }
+        &__language {
+            &-dialog-container {
+                background: $COLOR_DARK_BLUE_3;
+            }
+            &-header {
+                background: $COLOR_DARK_BLUE_3;
+                color: $COLOR_DARK_BLUE_7;
+
+            }
+            &-row {
+                background: $COLOR_DARK_BLUE_2;
+                color: $COLOR_DARK_BLUE_7;
+
+                &:hover {
+                    background: $COLOR_DARK_BLUE_4;
+                }
+            }
+            &-name {
+                color: $COLOR_DARK_BLUE_7;
+            }
+        }
+    }
+    .acc-info {
+        &__id {
+            color: $COLOR_WHITE;
+        }
+        &:hover:not(.show) {
+            background-color: $COLOR_DARK_BLUE_4;
+
+            .symbols {
+                background: $COLOR_DARK_BLUE_4;
+            }
+        }
+        &__balance {
+            .symbols {
+                background: $COLOR_DARK_BLUE_2;
+            }
+        }
+        &--show {
+            &:after {
+                background: $COLOR_WHITE;
+            }
+        }
+        &--is-virtual {
+            .acc-balance-amount, .symbols {
+                color: $COLOR_ORANGE;
+            }
+        }
+    }
+    .acc-switcher {
+        &__wrapper {
+            background: $COLOR_DARK_BLUE_3;
+        }
+        &__accounts {
+            .acc-switcher__account {
+                &:not(:last-child):not(:only-child) {
+                    border-bottom: 1px solid $COLOR_DARK_BLUE_3;
+                }
+            }
+        }
+        &__list {
+            background-color: $COLOR_DARK_BLUE_3;
+
+            &-group {
+                border-color: $COLOR_DARK_BLUE_2;
+            }
+            &-title {
+                color: $COLOR_DARK_BLUE_7;
+            }
+            .acc-switcher__account {
+                background-color: $COLOR_DARK_BLUE_2;
+
+                &:hover:not(.acc-switcher__account--selected) {
+                    background-color: $COLOR_DARK_BLUE_4;
+                }
+                .acc-switcher__id {
+                    color: $COLOR_DARK_BLUE_7;
+                }
+                &--selected {
+                    background: $COLOR_DARK_BLUE_5;
+
+                    .acc-switcher__id {
+                        color: $COLOR_WHITE;
+                        font-weight: 700;
+
+                        &--virtual:before {
+                            color: $COLOR_ORANGE;
+                            border: 1px solid $COLOR_ORANGE;
+                        }
+                    }
+                }
+            }
+        }
+        &__logout {
+            span {
+                color: $COLOR_DARK_BLUE_7;
+            }
+        }
+        &__new-account-title {
+            color: $COLOR_DARK_BLUE_7;
+            border-color: $COLOR_DARK_BLUE_7;
+
+            &:before {
+                color: $COLOR_DARK_BLUE_7;
+            }
+            &:hover {
+                background: $COLOR_DARK_BLUE_4;
+            }
+        }
+    }
+    .allow-equals {
+        &__label {
+            color: $COLOR_DARK_BLUE_7;
+        }
+    }
+    .popconfirm {
+        background: $COLOR_DARK_BLUE_3;
+
+        &__header {
+            color: $COLOR_DARK_BLUE_7;
+        }
+        &__button {
+            background: $COLOR_DARK_BLUE_3;
+
+            &-text {
+                color: $COLOR_DARK_BLUE_7 !important;
+            }
+            &:hover {
+                background: $COLOR_DARK_BLUE_5 !important;
+            }
+        }
+        &:after {
+            border-color: $COLOR_DARK_BLUE_3;
+        }
+    }
+    .calendar {
+        background: $COLOR_DARK_BLUE_3;
+        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.8), 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+
+        &__body {
+            border-color: $COLOR_DARK_BLUE_2;
+        }
+        &__text {
+            color: $COLOR_WHITE;
+        }
+        &__btn {
+            color: $COLOR_DARK_BLUE_7;
+
+            &--select {
+                color: $COLOR_WHITE;
+            }
+        }
+        &__cell {
+            color: $COLOR_DARK_BLUE_7;
+
+            &:hover {
+                background: $COLOR_DARK_BLUE_4;
+            }
+            &--today {
+                color: $COLOR_WHITE;
+
+                &-duration {
+                    background: $COLOR_DARK_BLUE_5;
+                }
+                &:hover {
+                    background: $COLOR_DARK_BLUE_5 !important;
+                }
+            }
+            &--disabled, &--other {
+                color: $COLOR_DARK_BLUE_8;
+            }
+            &--disabled {
+                &:hover {
+                    background: $COLOR_DARK_BLUE_3;
+                }
+            }
+            &--active {
+                color: $COLOR_WHITE;
+                background: $COLOR_DARK_BLUE_5 !important;
+
+                &:hover {
+                    background: $COLOR_DARK_BLUE_3;
+                }
+                &-duration {
+                    background: $COLOR_DARK_BLUE_5;
+
+                    &:after {
+                        background: $COLOR_DARK_BLUE_5;
+                    }
+                }
+            }
+            &--between {
+                color: $COLOR_WHITE;
+                background: $COLOR_DARK_BLUE_5;
+
+                &-hover {
+                    &:before {
+                        background: $COLOR_DARK_BLUE_4;
+                    }
+                }
+                &:hover {
+                    background: $COLOR_DARK_BLUE_5;
+                }
+                &:before {
+                    background: $COLOR_DARK_BLUE_5;
+                }
+            }
+        }
+    }
+    .contracts-type-dialog {
+        &__list-wrapper {
+            background: $COLOR_DARK_BLUE_3;
+            box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.5);
+        }
+    }
+    .contract-type-list {
+        &__label span {
+            color: $COLOR_DARK_BLUE_7;
+        }
+        &__contract-wrapper {
+            background: $COLOR_DARK_BLUE_2;
+            color: $COLOR_DARK_BLUE_7;
+        }
+    }
+    .contract-type-item {
+        background: $COLOR_DARK_BLUE_2;
+        color: $COLOR_DARK_BLUE_7;
+
+        &__title {
+            color: $COLOR_DARK_BLUE_7;
+        }
+        &--selected {
+            background: $COLOR_DARK_BLUE_5;
+
+            span {
+                color: $COLOR_WHITE;
+            }
+        }
+        &:hover:not(.contract-type-item--selected) {
+            background: $COLOR_DARK_BLUE_4;
+        }
+    }
+    .trade-type-info-dialog {
+        &__header {
+            .title {
+                color: $COLOR_DARK_BLUE_7;
+            }
+        }
+        &__gif {
+            background-color: $COLOR_DARK_BLUE_2;
+            color: $COLOR_DARK_BLUE_8;
+        }
+        &__content {
+            p {
+                color: $COLOR_DARK_BLUE_7;
+            }
+        }
+        &__info-wrapper {
+            background: $COLOR_DARK_BLUE_3;
+        }
+    }
+    .trade-type-info-navigation {
+        &__circle-button {
+            background-color: $COLOR_DARK_BLUE_8;
+
+            &--active {
+                background-color: $COLOR_DARK_BLUE_7;
+            }
+        }
+    }
+    .contract-type-widget {
+        color: $COLOR_DARK_BLUE_7;
+        background: $COLOR_DARK_BLUE_2;
+        border-color: $COLOR_DARK_BLUE_2;
+
+        &:hover {
+            border-color: $COLOR_DARK_BLUE_7;
+        }
+        &:focus, &:active {
+            outline: 0;
+            border-color: $COLOR_DARK_BLUE_7;
+            box-shadow: 0 0 0 2px rgba(127, 131, 151, 0.3);
+        }
+        &__display {
+            span[name=contract_type] {
+                color: $COLOR_DARK_BLUE_7;
+            }
+        }
+        .category-wrapper {
+            background: $COLOR_DARK_BLUE_5;
+
+            .category-type {
+                path, rect {
+                    &:not(.important) {
+                        fill: $COLOR_WHITE;
+                    }
+                    &.transparent {
+                        fill: $COLOR_DARK_BLUE_5;
+                    }
+                }
+                .stroke-active {
+                    stroke: $COLOR_WHITE;
+                }
+            }
+        }
+    }
+    .button-menu {
+        &__button {
+            background-color: $COLOR_DARK_BLUE_2;
+
+            span {
+                color: $COLOR_DARK_BLUE_7;
+            }
+            &:hover:not(&--active) {
+                background-color: $COLOR_DARK_BLUE_4;
+            }
+            &--active {
+                color: $COLOR_WHITE;
+                background-color: $COLOR_DARK_BLUE_5;
+            }
+        }
+    }
+    .time-picker {
+        &__icon {
+            g {
+                stroke: $COLOR_DARK_BLUE_7;
+            }
+        }
+        &__dialog {
+            background: $COLOR_DARK_BLUE_3;
+        }
+        &__selector {
+            &--hours, &--minutes {
+                border-color: $COLOR_DARK_BLUE_2;
+                color: $COLOR_DARK_BLUE_7;
+
+            }
+            &-list-title {
+                color: $COLOR_WHITE;
+            }
+            &-list-item {
+                color: $COLOR_DARK_BLUE_7;
+
+                &--disabled {
+                    color: $COLOR_DARK_BLUE_8;
+                    pointer-events: none;
+                }
+                &--selected {
+                    background: $COLOR_DARK_BLUE_5;
+                }
+                &:hover:not(&--selected):not(&--disabled) {
+                    background: $COLOR_DARK_BLUE_4;
+                }
+            }
+        }
+    }
+    .input-field {
+        &__label {
+            color: $COLOR_DARK_BLUE_7;
+        }
+        &:has(input[type=checkbox]) {
+            display: inline-block;
+        }
+    }
+    .input-wrapper {
+        &__button:not(:disabled) {
+            &:hover {
+                background-color: $COLOR_DARK_BLUE_4;
+            }
+        }
+    }
+    .input {
+        background: $COLOR_DARK_BLUE_2;
+        border-color: $COLOR_DARK_BLUE_2;
+        color: $COLOR_DARK_BLUE_7;
+
+        &[type=checkbox] {
+            border-color: $COLOR_DARK_BLUE_7;
+
+            &:hover {
+                border-color: $COLOR_ORANGE;
+            }
+            &:checked {
+                background: $COLOR_ORANGE;
+                border-color: $COLOR_ORANGE;
+            }
+            &:not(:checked) {
+                &:focus, &:active {
+                    border-color: $COLOR_DARK_BLUE_7;
+                }
+            }
+        }
+        &:hover {
+            border-color: $COLOR_DARK_BLUE_7;
+        }
+        &:focus, &:active {
+            border-color: $COLOR_DARK_BLUE_7;
+            box-shadow: 0 0 0 0.2rem rgba(127, 131, 151, 0.3);
+            color: $COLOR_WHITE;
+        }
+        &::placeholder {
+            color: $COLOR_DARK_BLUE_7;
+        }
+    }
+    .dropdown {
+        &__display {
+            background: $COLOR_DARK_BLUE_2;
+            border-color: $COLOR_DARK_BLUE_2;
+
+            &-text {
+                color: $COLOR_DARK_BLUE_7;
+            }
+            &:hover, &:focus, &:active {
+                border-color: $COLOR_DARK_BLUE_7;
+            }
+            &:focus, &:active {
+                box-shadow: 0 0 0 2px rgba(127, 131, 151, 0.3);
+            }
+        }
+        &--show > .dropdown__display--clicked {
+            border-color: $COLOR_DARK_BLUE_7;
+            box-shadow: 0 0 0 2px rgba(127, 131, 151, 0.3);
+        }
+    }
+    .list {
+        background: $COLOR_DARK_BLUE_3;
+
+        &__label {
+            color: $COLOR_WHITE;
+
+            &-text {
+                color: $COLOR_WHITE;
+            }
+        }
+        &__item {
+            &-text, &-tooltip-symbols {
+                color: $COLOR_DARK_BLUE_7;
+            }
+            &--selected .list__item-text {
+                color: $COLOR_WHITE;
+                font-weight: 700;
+                background: $COLOR_DARK_BLUE_5;
+            }
+            &:hover, &--highlighted {
+                background: $COLOR_DARK_BLUE_4;
+            }
+        }
+    }
+    .tooltip {
+        color: $COLOR_WHITE;
+
+        &:before {
+            background: $COLOR_DARK_BLUE_5;
+            color: $COLOR_WHITE;
+        }
+        &[data-tooltip-pos=top] {
+            &:after {
+                border-top-color: $COLOR_DARK_BLUE_5;
+            }
+        }
+        &[data-tooltip-pos=right] {
+            &:after {
+                border-right-color: $COLOR_DARK_BLUE_5;
+            }
+        }
+        &[data-tooltip-pos=left] {
+            &:after {
+                border-left-color: $COLOR_DARK_BLUE_5;
+            }
+        }
+        &[data-tooltip-pos=bottom] {
+            &:after {
+                border-bottom-color: $COLOR_DARK_BLUE_5;
+            }
+        }
+    }
+    .fullscreen-dialog {
+        background: $COLOR_DARK_BLUE_5;
+
+        &__header, &__header-shadow-cover, &__content {
+            background: $COLOR_DARK_BLUE_5;
+        }
+        &__header-shadow-cover {
+            box-shadow: 0 1px 0px $COLOR_DARK_BLUE_5;
+        }
+        &__title {
+            color: $COLOR_DARK_BLUE_7;
+        }
+        &__trade-type-info-modal {
+            .info-header {
+                .title {
+                    color: $COLOR_DARK_BLUE_2;
+                }
+            }
+            .info-gif {
+                background-color: $COLOR_DARK_BLUE_2;
+            }
+            .info-content {
+                color: $COLOR_LIGHT_BLACK_1;
+            }
+            .info-navigation {
+                &__list {
+                    .circle-button {
+                        background-color: $COLOR_WHITE;
+
+                        &.active {
+                            background-color: $COLOR_LIGHT_BLACK_4;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .digits {
+        &__digit {
+            &-value {
+                background-color: $COLOR_DARK_BLUE_5;
+                color: $COLOR_WHITE;
+
+                &--blink {
+                    animation-name: blinking-dark-blue-2;
+                }
+                &--selected {
+                    background-color: $COLOR_DARK_BLUE_2;
+                }
+                &--win {
+                    background-color: $COLOR_GREEN_1;
+                }
+                &--loss {
+                    background-color: $COLOR_RED;
+                }
+            }
+            &-spot {
+                &-value {
+                    color: $COLOR_DARK_BLUE_7;
+                }
+                &-last {
+                    color: $COLOR_WHITE;
+
+                    &--win {
+                        color: $COLOR_GREEN_1;
+                    }
+                    &--loss {
+                        color: $COLOR_RED;
+                    }
+                }
+            }
+        }
+    }
+    .page-error {
+        &__box {
+            background-color: $COLOR_DARK_BLUE_3;
+            border-color: $COLOR_DARK_BLUE_3;
+        }
+        &__header {
+            color: $COLOR_WHITE;
+        }
+        &__message {
+            color: $COLOR_LIGHT_BLACK_3;
+            opacity: 1;
+        }
+    }
+    .hr {
+        border-color: $COLOR_DARK_BLUE_5;
+    }
+    .drawer__bg .drawer {
+        background: $COLOR_DARK_BLUE_5;
+        color: $COLOR_WHITE;
+        box-shadow: 0 1px 6px 0 rgba(42, 48, 82, 0.14), 0 2px 8px 0 rgba(20, 20, 20, 0.3);
+
+        .drawer__item {
+            &-link {
+                &:before {
+                    color: $COLOR_DARK_BLUE_7;
+                }
+                &:hover:before {
+                    color: $COLOR_WHITE;
+                }
+                &-text {
+                    color: $COLOR_DARK_BLUE_7;
+                }
+            }
+            &:hover {
+                background: $COLOR_DARK_BLUE_5;
+
+                .drawer__item-link-text {
+                    color: $COLOR_WHITE;
+                }
+            }
+        }
+        &--left, &--right {
+            .drawer__header, .drawer__footer {
+                border-color: $COLOR_DARK_BLUE_5;
+
+                .drawer__brand-logo, &.btn-close {
+                    border-color: $COLOR_DARK_BLUE_5;
+                }
+                .drawer__brand-logo .drawer__img:before {
+                    background-image: url('../images/header/binary_logo_dark.svg');
+                }
+            }
+        }
+    }
+    .positions-drawer {
+        background: $COLOR_DARK_BLUE_3;
+        border-color: $COLOR_DARK_BLUE_3;
+        color: $COLOR_WHITE;
+
+        &--contract-mode:before {
+            background: $COLOR_DARK_BLUE_3;
+        }
+        &-card {
+            color: $COLOR_WHITE;
+
+            &__result {
+                background-color: $COLOR_DARK_BLUE_2;
+
+                &:hover {
+                    background: 0;
+                }
+                &--won {
+                    background-image: linear-gradient(to top, rgba(16, 19, 32, 0), rgba(0, 148, 117, 0.16));
+                }
+                &--lost {
+                    background-image: linear-gradient(to top, rgba(16, 19, 32, 0), rgba(227, 28, 75, 0.16));
+                }
+            }
+            &__wrapper {
+                background: $COLOR_DARK_BLUE_2;
+
+                &--active:before {
+                    box-shadow: 0 0 4px 1px rgba(255, 255, 255, 0.16);
+                }
+            }
+            &__type {
+                .category-type {
+                    .color1-fill {
+                        fill: $COLOR_WHITE;
+                    }
+                }
+            }
+            &__remaining-time {
+                color: $COLOR_DARK_BLUE_7;
+            }
+            &__indicative {
+                // &--no-resale {
+                //     color: $COLOR_DARK_BLUE_7;
+                // }
+                &--price-stable {
+                    color: $COLOR_WHITE;
+                }
+            }
+            &__grid-profit-payout {
+                background: $COLOR_DARK_BLUE_3;
+            }
+            &__purchase-label, &__profit-loss-label, &__indicative-label {
+                color: $COLOR_DARK_BLUE_7;
+            }
+        }
+        &__title {
+            color: $COLOR_DARK_BLUE_7;
+        }
+        &__body {
+            .positions-empty, p {
+                align-self: center;
+                color: $COLOR_WHITE;
+            }
+        }
+        &__footer {
+            background: $COLOR_DARK_BLUE_3;
+            border-color: $COLOR_DARK_BLUE_3;
+
+            .btn--alternate {
+                background-color: $COLOR_DARK_BLUE_5;
+                border-color: $COLOR_DARK_BLUE_5;
+
+                .btn__text {
+                    color: $COLOR_WHITE;
+                    font-weight: bold;
+                }
+            }
+        }
+        .result {
+            &-details__label {
+                color: $COLOR_DARK_BLUE_7;
+            }
+            &-details__toggle--is-open, &-details__separator {
+                border-color: $COLOR_DARK_BLUE_3;
+            }
+        }
+    }
+    .progress-slider {
+        &__track, &__infinite-loader {
+            background: $COLOR_DARK_BLUE_3;
+        }
+        .ticks-step {
+            border: 2px solid $COLOR_DARK_BLUE_2;
+            background: $COLOR_DARK_BLUE_2;
+
+            &--active, &--marked {
+                background: $COLOR_PURPLE;
+                border-color: $COLOR_PURPLE;
+            }
+        }
+        &__line {
+            background: $COLOR_PURPLE;
+        }
+    }
+    .chart-spot-label {
+        &__value-container {
+            background: $COLOR_DARK_BLUE_5;
+        }
+        &__time {
+            color: $COLOR_WHITE;
+        }
+        &__time-container {
+            svg {
+                g {
+                    stroke: $COLOR_WHITE;
+                }
+            }
+        }
+    }
+    .chart-spot {
+        &__spot {
+            background-color: $COLOR_DARK_BLUE_2;
+            color: $COLOR_WHITE;
+
+            &--won {
+                background-color: $COLOR_GREEN_1;
+            }
+            &--lost {
+                background-color: $COLOR_RED;
+            }
+        }
+        &__entry {
+            background-color: unset;
+        }
     }
 }

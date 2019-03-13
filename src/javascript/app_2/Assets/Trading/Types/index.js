@@ -1,1 +1,1 @@
-export * from './icon_trade_types.jsx';
+export * from './icon-trade-types.jsx';

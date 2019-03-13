@@ -304,33 +304,35 @@ const TradingEvents = (() => {
             Price.processPriceRequest();
         });
 
-        /*
-         * attach event to purchase buttons to buy the current contract
+        /**
+         * Handle Incoming Click or double click event.
+         * @param {EventTarget} e
          */
-        const $purchase_button = $('.purchase_button');
-        $purchase_button.on('click dblclick', function () {
-            if (isVisible(getElementById('confirmation_message_container')) || /disabled/.test(this.parentNode.classList)) {
+        const preparePurchaseParams = (e) => {
+            if (isVisible(getElementById('confirmation_message_container')) ||
+                /disabled/.test(e.currentTarget.parentElement.classList)
+                || !e.currentTarget.hasAttributes()) {
                 return;
             }
-            const id        = this.getAttribute('data-purchase-id');
-            const ask_price = this.getAttribute('data-ask-price');
-            const params    = { buy: id, price: ask_price, passthrough: {} };
 
-            Object.keys(this.attributes).forEach(function(attr) {
-                if (attr && this.attributes[attr] && this.attributes[attr].name) {
-                    if (/^data-balloon$/.test(this.attributes[attr].name)) { // Force removal of attribute for Safari
-                        this.removeAttribute(this.attributes[attr].name);
-                    } else if (!/data-balloon/.test(this.attributes[attr].name)) { // Do not send tooltip data
-                        const m = this.attributes[attr].name.match(/data-(.+)/);
-                        if (m && m[1] && m[1] !== 'purchase-id' && m[1] !== 'passthrough') {
-                            params.passthrough[m[1]] = this.attributes[attr].value;
-                        }
-                    }
+            const id        = e.currentTarget.getAttribute('data-purchase-id');
+            const ask_price = e.currentTarget.getAttribute('data-ask-price');
+            const params    = { buy: id, price: ask_price, passthrough: {} };
+            Array.prototype.slice.call(e.currentTarget.attributes).filter(attr => {
+                if (!/^data/.test(attr.name) ||
+                    /^data-balloon$/.test(attr.name) ||
+                    /data-balloon/.test(attr.name)) {
+                    return false;
                 }
-            }, this);
+                return true;
+            })
+                .forEach(attr=> {
+                    params.passthrough[attr.name.substring(5)] = attr.value;
+                });
+
             if (id && ask_price) {
-                $purchase_button.parent().addClass('button-disabled');
-                $(this).text(localize('Purchase request sent'));
+                e.currentTarget.parentElement.classList.add('button-disabled');
+                e.currentTarget.innerText = localize('Purchase request sent');
                 BinarySocket.send(params).then((response) => {
                     Purchase.display(response);
                     GTM.pushPurchaseData(response);
@@ -338,6 +340,16 @@ const TradingEvents = (() => {
                 Price.incrFormId();
                 Price.processForgetProposals();
             }
+        };
+
+        /*
+         * attach event to purchase buttons to buy the current contract
+         */
+        const el_purchase_button = document.querySelectorAll('.purchase_button');
+
+        el_purchase_button.forEach(el => {
+            el.addEventListener('click', preparePurchaseParams);
+            el.addEventListener('dblclick', preparePurchaseParams);
         });
 
         /*

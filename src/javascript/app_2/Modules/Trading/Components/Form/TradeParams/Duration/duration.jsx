@@ -6,38 +6,34 @@ import Fieldset                       from 'App/Components/Form/fieldset.jsx';
 import RangeSlider                    from 'App/Components/Form/RangeSlider';
 import { convertDurationLimit }       from 'Stores/Modules/Trading/Helpers/duration';
 import { toMoment }                   from 'Utils/Date';
-import DurationToggle                 from './duration_toggle.jsx';
-import AdvancedDuration               from './advanced_duration.jsx';
-import SimpleDuration                 from './simple_duration.jsx';
+import DurationToggle                 from './duration-toggle.jsx';
+import AdvancedDuration               from './advanced-duration.jsx';
+import SimpleDuration                 from './simple-duration.jsx';
 
 const Duration = ({
     advanced_duration_unit,
     advanced_expiry_type,
-    hasDurationUnit    ,
     contract_expiry_type,
     duration,
     duration_unit,
     duration_units_list,
     duration_min_max,
+    duration_t,
     expiry_date,
     expiry_time,
     expiry_type,
     getDurationFromUnit,
+    hasDurationUnit,
+    is_advanced_duration,
+    is_minimized,
     onChange,
     onChangeUiStore,
     onChangeMultiple,
-    is_advanced_duration,
-    is_minimized,
-    is_nativepicker,
-    server_time,
-    sessions,
-    start_date,
-    start_time,
-    validation_errors,
-    market_close_times,
     simple_duration_unit,
-    duration_t,
-    symbol,
+    server_time,
+    start_date,
+    validation_errors,
+    market_open_times,
 }) => {
     const expiry_list = [
         { text: localize('Duration'), value: 'duration' },
@@ -56,8 +52,7 @@ const Duration = ({
         const moment_expiry = toMoment(expiry_date);
         const duration_unit_text = (duration_units_list.find(o => o.value === duration_unit) || {}).text;
         return (
-            <div className='fieldset-minimized duration'>
-                <span className='icon trade-duration' />
+            <div className='fieldset-minimized fieldset-minimized__duration'>
                 {expiry_type === 'duration'
                     ? `${duration} ${duration_unit_text}`
                     : `${moment_expiry.format('ddd - DD MMM, YYYY')}\n${expiry_time}`
@@ -128,7 +123,6 @@ const Duration = ({
         },
         number_input: {
             type            : 'number',
-            is_nativepicker,
             is_incrementable: true,
             error_messages  : validation_errors.duration || [],
         },
@@ -137,7 +131,7 @@ const Duration = ({
     const has_toggle = expiry_list.length > 1 || duration_units_list.length > 1;
 
     return (
-        <Fieldset>
+        <Fieldset className='trade-container__fieldset'>
             { !has_toggle &&
                 <RangeSlider
                     name='duration'
@@ -153,38 +147,29 @@ const Duration = ({
                             advanced_expiry_type={advanced_expiry_type}
                             advanced_duration_unit={advanced_duration_unit}
                             changeDurationUnit={changeDurationUnit}
-                            contract_expiry_type={contract_expiry_type}
-                            duration_min_max={duration_min_max}
+                            duration_t={duration_t}
                             duration_units_list={duration_units_list}
                             expiry_date={expiry_date}
                             expiry_list={expiry_list}
-                            expiry_time={expiry_time}
                             expiry_type={expiry_type}
                             getDurationFromUnit={getDurationFromUnit}
-                            is_nativepicker={is_nativepicker}
-                            market_close_times={market_close_times}
+                            market_open_times={market_open_times}
                             number_input_props={props.number_input}
                             onChange={onChange}
+                            onChangeUiStore={onChangeUiStore}
                             server_time={server_time}
-                            sessions={sessions}
                             shared_input_props={props.shared_input}
                             start_date={start_date}
-                            start_time={start_time}
-                            onChangeUiStore={onChangeUiStore}
-                            duration_t={duration_t}
-                            symbol={symbol}
                         /> }
                     { !is_advanced_duration &&
                         <SimpleDuration
                             getDurationFromUnit={getDurationFromUnit}
                             changeDurationUnit={changeDurationUnit}
+                            duration_t={duration_t}
                             duration_units_list={duration_units_list}
                             number_input_props={props.number_input}
-                            onChange={onChange}
                             shared_input_props={props.shared_input}
                             simple_duration_unit={simple_duration_unit}
-                            onChangeUiStore={onChangeUiStore}
-                            duration_t={duration_t}
                         /> }
                     <DurationToggle
                         name={'is_advanced_duration'}
@@ -222,19 +207,15 @@ Duration.propTypes = {
     hasDurationUnit     : PropTypes.func,
     is_advanced_duration: PropTypes.bool,
     is_minimized        : PropTypes.bool,
-    is_nativepicker     : PropTypes.bool,
-    market_close_times  : PropTypes.array,
+    market_open_times   : PropTypes.array,
     onChange            : PropTypes.func,
     onChangeUiStore     : PropTypes.func,
     server_time         : PropTypes.object,
-    sessions            : MobxPropTypes.arrayOrObservableArray,
     simple_duration_unit: PropTypes.string,
     start_date          : PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
     ]),
-    start_time       : PropTypes.string,
-    symbol           : PropTypes.string,
     validation_errors: PropTypes.object,
 };
 

@@ -18,10 +18,10 @@ const professionalClient = (() => {
         populateProfessionalClient(is_financial);
     };
 
-    const setVisible = (selector) => {
+    const setVisible = ($selector) => {
         $('#loading').remove();
         $('#frm_professional').setVisibility(0);
-        $(selector).setVisibility(1);
+        $selector.setVisibility(1);
     };
 
     const populateProfessionalClient = (is_financial) => {
@@ -33,16 +33,23 @@ const professionalClient = (() => {
             return;
         }
 
+        const $professional = $('#professional');
+        const $processing   = $('#processing');
+        const $rejected     = $('#rejected');
+        
+        $professional.setVisibility(0);
+        $processing.setVisibility(0);
+        $rejected.setVisibility(0);
+
         const status = State.getResponse('get_account_status.status') || [];
         if (is_in_page && status.includes('professional')) {
-            setVisible('#professional');
+            setVisible($professional);
             return;
         } else if (is_in_page && status.includes('professional_requested')) {
-            setVisible('#processing');
+            setVisible($processing);
             return;
         } else if (is_in_page && status.includes('professional_rejected')) {
-            setVisible('#rejected');
-            return;
+            setVisible($rejected);
         }
 
         const $container        = $('#fs_professional');

@@ -3,7 +3,7 @@ import PropTypes        from 'prop-types';
 import React            from 'react';
 import { CSSTransition }   from 'react-transition-group';
 import { connect }      from 'Stores/connect';
-import { DrawerHeader } from './drawer_header.jsx';
+import { DrawerHeader } from './drawer-header.jsx';
 
 class Drawer extends React.Component {
     state = {
@@ -46,16 +46,20 @@ class Drawer extends React.Component {
         const { is_this_drawer_on } = this.state;
         const { alignment, closeBtn, children } = this.props;
 
-        const drawer_bg_class = classNames('drawer-bg', {
-            'show': is_this_drawer_on,
+        const drawer_bg_class = classNames('drawer__bg', {
+            'drawer--show': is_this_drawer_on,
         });
-        const drawer_class = classNames('drawer', alignment);
+        const drawer_class = classNames('drawer', { [`drawer--${alignment}`]: alignment });
 
         return (
             <CSSTransition
                 in={is_this_drawer_on}
                 timeout={150}
-                classNames='drawer-container'
+                classNames={{
+                    enter    : 'drawer__container--enter',
+                    enterDone: 'drawer__container--enter-done',
+                    exit     : 'drawer__container--exit',
+                }}
                 unmountOnExit
             >
                 <aside className='drawer-container'>

@@ -145,6 +145,12 @@ const Explanation = () => (
                 <p>{it.L('If you select [_1]"High Tick"[_2], you win the payout if the selected tick is the [_1]highest among the next five ticks[_2].', '<strong>', '</strong>')}</p>
                 <p>{it.L('If you select [_1]"Low Tick"[_2], you win the payout if the selected tick is the [_1]lowest among the next five ticks[_2].', '<strong>', '</strong>')}</p>
             </div>
+
+            <div id='winning_runs' className='invisible'>
+                <h3>{it.L('Winning the contract')}</h3>
+                <p>{it.L('If you select [_1]"Only Ups"[_2], you win the payout if consecutive ticks rise successively after the [_1]entry spot[_2].[_3]No payout if any tick falls or is equal to any of the previous ticks.', '<strong>', '</strong>', '<br />')}</p>
+                <p>{it.L('If you select [_1]"Only Downs"[_2], you win the payout if consecutive ticks fall successively after the [_1]entry spot[_2].[_3]No payout if any tick rises or is equal to any of the previous ticks.', '<strong>', '</strong>', '<br />')}</p>
+            </div>
         </div>
 
         {/* ========== Image ========== */}
@@ -294,6 +300,13 @@ const Explanation = () => (
             <div id='explain_highlowticks' className='invisible'>
                 <h3>{it.L('Entry Spot')}</h3>
                 <p>{it.L('The entry spot is the first tick after the contract is processed by our servers.')}</p>
+            </div>
+            <div id='explain_runs' className='invisible'>
+                <h3>{it.L('Entry spot')}</h3>
+                <p>{it.L('The [_1]start time[_2] is when the contract has been processed by our servers.', '<strong>', '</strong>')}</p>
+                <p>{it.L('The [_1]entry spot[_2] is the next tick after the [_1]start time[_2].', '<strong>', '</strong>')}</p>
+                <h3>{it.L('Exit Spot')}</h3>
+                <p>{it.L('The [_1]exit spot[_2] is the last tick when the contract ends. Contract ends when all ticks rise or fall successively, or when a single tick breaks the predicted pattern.', '<strong>', '</strong>')}</p>
             </div>
         </div>
 

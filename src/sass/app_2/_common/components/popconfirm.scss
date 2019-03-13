@@ -1,19 +1,13 @@
-button.btn {
-    position: relative;
 
-    .popconfirm {
-        position: absolute;
-    }
-}
-
+/** @define popconfirm */
 .popconfirm {
     position: absolute;
     left: 50%;
-    bottom: 40px;
+    bottom: 4em;
     background: $COLOR_WHITE;
     box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.14);
     width: 348px;
-    min-height: 90px;
+    min-height: 9em;
     font-weight: 500;
     border-radius: 4px;
     transform: scale(0, 0) translate(-50%, 0);
@@ -22,82 +16,80 @@ button.btn {
     transition: all 0.3s;
     z-index: 3;
 
-    &.open {
+    &--open {
         transform: scale(1, 1) translate(-50%, 0);
         opacity: 1;
     }
-    &-buttons {
+    &__button {
+        margin: 0 0.8em;
+        box-shadow: none;
+        text-decoration: none;
         display: flex;
-        justify-content: flex-end;
+        align-items: center;
+        justify-content: center;
 
-        .btn {
-            margin: 0 8px;
-            box-shadow: none;
-            text-decoration: none;
+        &-wrapper {
             display: flex;
-            align-items: center;
-            justify-content: center;
-
-            span {
-                color: $COLOR_DARK_BLUE_5;
-                font-size: 12px;
-            }
+            justify-content: flex-end;
+        }
+        &-text {
+            color: $COLOR_DARK_BLUE_5 !important;
+            font-size: 1.2em !important;
         }
     }
-    &-title {
-        margin: 8px;
-        padding: 8px;
+    &__title {
+        margin: 0.8em;
+        padding: 0.8em;
         display: flex;
         flex-direction: row;
         align-items: center;
 
-        svg {
-            margin-right: 8px;
-        }
-        h4 {
-            color: $COLOR_DARK_BLUE_5;
-            font-size: 12px;
-            font-weight: 300;
-            text-transform: none;
-            padding: 0;
-            margin: 0;
-            line-height: 100%;
-        }
+    }
+    &__icon_exclamation {
+        margin-right: 0.8em;
+    }
+    &__header {
+        color: $COLOR_DARK_BLUE_5;
+        font-size: 1.2em;
+        font-weight: 300;
+        text-transform: none;
+        padding: 0;
+        margin: 0;
+        line-height: 100%;
     }
     &:after {
         // arrow pointing down
         position: absolute;
         content: '';
-        bottom: -3px;
+        bottom: -0.3em;
         left: 50%;
-        margin-left: -5px;
+        margin-left: -0.5em;
         border-width: 5px;
         border-style: solid;
         border-color: transparent $COLOR_WHITE $COLOR_WHITE transparent;
         transform: rotate(45deg);
         box-shadow: rgba(0, 0, 0, 0.05) 2px 2px 2px;
     }
-
     // Alignments
-    &.bottom {
-        top: 40px;
+    &--bottom {
+        top: 4em;
         bottom: unset;
         transform-origin: left top;
 
         &:after {
-            top: -3px;
+            top: -0.3em;
             bottom: unset;
             transform: rotate(-135deg);
         }
     }
-    &.right {
+    &--right {
         bottom: 50%;
         left: unset;
-        right: -20px;
+        right: -2em;
         transform-origin: right bottom;
         transform: scale(0, 0) translate(100%, 50%);
 
-        &.open {
+        &--open {
             transform: scale(1, 1) translate(100%, 50%);
         }
         &:after {
@@ -106,29 +98,29 @@ button.btn {
             transform: rotate(135deg);
         }
     }
-    &.left {
+    &--left {
         bottom: 50%;
-        left: -20px;
+        left: -2em;
         transform-origin: left bottom;
         transform: scale(0, 0) translate(-100%, 50%);
 
-        &.open {
+        &--open {
             transform: scale(1, 1) translate(-100%, 50%);
         }
         &:after {
             left: unset;
-            right: -3px;
+            right: -0.3em;
             bottom: 45%;
             transform: rotate(-45deg);
         }
     }
-    &.top-right {
+    &--top-right {
         transform-origin: right bottom;
         transform: scale(0, 0) translate(0, 0);
         left: unset;
         right: 0;
 
-        &.open {
+        &--open {
             transform: scale(1, 1) translate(0, 0);
         }
         &:after {
@@ -136,31 +128,31 @@ button.btn {
             right: 5%;
         }
     }
-    &.top-left {
+    &--top-left {
         transform-origin: left bottom;
         transform: scale(0, 0) translate(0, 0);
         left: 0;
 
-        &.open {
+        &--open {
             transform: scale(1, 1) translate(0, 0);
         }
         &:after {
             left: 8%;
         }
     }
-    &.bottom-right {
-        top: 40px;
+    &--bottom-right {
+        top: 4em;
         bottom: unset;
         transform-origin: right top;
         transform: scale(0, 0) translate(0, 0);
         left: unset;
         right: 0;
 
-        &.open {
+        &--open {
             transform: scale(1, 1) translate(0, 0);
         }
         &:after {
-            top: -3px;
+            top: -0.3em;
             bottom: unset;
             left: unset;
             right: 5%;
@@ -168,45 +160,21 @@ button.btn {
 
         }
     }
-    &.bottom-left {
-        top: 40px;
+    &--bottom-left {
+        top: 4em;
         bottom: unset;
         transform-origin: left top;
         transform: scale(0, 0) translate(0, 0);
         left: 0;
 
-        &.open {
+        &--open {
             transform: scale(1, 1) translate(0, 0);
         }
         &:after {
-            top: -3px;
+            top: -0.3em;
             left: 8%;
             bottom: unset;
             transform: rotate(-135deg);
-        }
-    }
-}
-
-// Dark theme
-.theme-wrapper.dark {
-    .popconfirm {
-        background: $COLOR_DARK_BLUE_3;
-
-        &-title h4 {
-            color: $COLOR_DARK_BLUE_7;
-        }
-        &-buttons .btn {
-            background: $COLOR_DARK_BLUE_3;
-
-            span {
-                color: $COLOR_DARK_BLUE_7;
-            }
-            &:hover {
-                background: $COLOR_DARK_BLUE_5;
-            }
-        }
-        &:after {
-            border-color: $COLOR_DARK_BLUE_3;
         }
     }
 }

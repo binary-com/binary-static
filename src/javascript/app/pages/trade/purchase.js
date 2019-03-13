@@ -2,6 +2,7 @@ const moment                   = require('moment');
 const isCallputspread          = require('./callputspread').isCallputspread;
 const Contract                 = require('./contract');
 const hidePriceOverlay         = require('./common').hidePriceOverlay;
+const countDecimalPlaces       = require('./common_independent').countDecimalPlaces;
 const getLookBackFormula       = require('./lookback').getFormula;
 const isLookback               = require('./lookback').isLookback;
 const processPriceRequest      = require('./price').processPriceRequest;
@@ -15,6 +16,7 @@ const Header                   = require('../../base/header');
 const BinarySocket             = require('../../base/socket');
 const formatMoney              = require('../../common/currency').formatMoney;
 const TopUpVirtualPopup        = require('../../pages/user/account/top_up_virtual/pop_up');
+const addComma                 = require('../../../_common/base/currency_base').addComma;
 const CommonFunctions          = require('../../../_common/common_functions');
 const localize                 = require('../../../_common/localize').localize;
 const localizeKeepPlaceholders = require('../../../_common/localize').localizeKeepPlaceholders;
@@ -53,7 +55,7 @@ const Purchase = (() => {
                     parseFloat(this_quote_el.innerText.replace(/,+/, '')),
                     700,
                     this_quote_el,
-                    (content) => `<div class='quote'>${content.replace(/\d$/, makeBold)}</div>`,
+                    (content) => `<div class='quote'>${addComma(content, countDecimalPlaces(content)).replace(/\d$/, makeBold)}</div>`,
                 );
             }
         } else {
@@ -90,6 +92,8 @@ const Purchase = (() => {
 
         if (error) {
             const balance = State.getResponse('balance.balance');
+            confirmation_error.show();
+
             if (/InsufficientBalance/.test(error.code) && TopUpVirtualPopup.shouldShow(balance, true)) {
                 hidePriceOverlay();
                 processPriceRequest();
@@ -104,18 +108,37 @@ const Purchase = (() => {
                     authorization_error_btn_login.removeEventListener('click', loginOnClick);
                     authorization_error_btn_login.addEventListener('click', loginOnClick);
                 } else {
-                    confirmation_error.setVisibility(1);
-                    let message = error.message;
-                    if (/RestrictedCountry/.test(error.code)) {
-                        let additional_message = '';
-                        if (/FinancialBinaries/.test(error.code)) {
-                            additional_message = localize('Try our [_1]Volatility Indices[_2].', [`<a href="${urlFor('get-started/binary-options', 'anchor=volatility-indices#range-of-markets')}" >`, '</a>']);
-                        } else if (/Random/.test(error.code)) {
-                            additional_message = localize('Try our other markets.');
+                    BinarySocket.wait('get_account_status').then(response => {
+                        confirmation_error.setVisibility(1);
+                        let message = error.message;
+                        if (/NoMFProfessionalClient/.test(error.code)) {
+                            const account_status = getPropertyValue(response, ['get_account_status', 'status']) || [];
+                            const has_professional_requested = account_status.includes('professional_requested');
+                            const has_professional_rejected  = account_status.includes('professional_rejected');
+                            if (has_professional_requested) {
+                                message = localize('Your application to be treated as a professional client is being processed.');
+                            } else if (has_professional_rejected) {
+                                const message_text = `${localize('Your professional client request is [_1]not approved[_2].', ['<strong>', '</strong>'])}<br />${localize('Please reapply once the required criteria has been fulfilled.')}<br /><br />${localize('More information can be found in an email sent to you.')}`;
+                                const button_text  = localize('I want to reapply');
+
+                                message = prepareConfirmationErrorCta(message_text, button_text, true);
+                            } else {
+                                const message_text = localize('In the EU, financial binary options are only available to professional investors.');
+                                const button_text  = localize('Apply now as a professional investor');
+
+                                message = prepareConfirmationErrorCta(message_text, button_text);
+                            }
+                        } else if (/RestrictedCountry/.test(error.code)) {
+                            let additional_message = '';
+                            if (/FinancialBinaries/.test(error.code)) {
+                                additional_message = localize('Try our [_1]Volatility Indices[_2].', [`<a href="${urlFor('get-started/binary-options', 'anchor=volatility-indices#range-of-markets')}" >`, '</a>']);
+                            } else if (/Random/.test(error.code)) {
+                                additional_message = localize('Try our other markets.');
+                            }
+                            message = `${error.message}. ${additional_message}`;
                         }
-                        message = `${error.message}. ${additional_message}`;
-                    }
-                    CommonFunctions.elementInnerHtml(confirmation_error, message);
+                        CommonFunctions.elementInnerHtml(confirmation_error, message);
+                    });
                 }
             }
         } else {
@@ -273,6 +296,28 @@ const Purchase = (() => {
 
     const makeBold = d => `<strong>${d}</strong>`;
 
+    const prepareConfirmationErrorCta = (message_text, button_text, has_html = false) => {
+        const row_element = createElement('div', { class: 'gr-row font-style-normal' });
+        const columnElement = (extra_attributes = {}) => createElement('div', { class: 'gr-12 gr-padding-20', ...extra_attributes });
+        const button_element = createElement('a', { class: 'button', href: urlFor('user/settings/professional') });
+        const cta_element = columnElement();
+        let message_element;
+
+        if (has_html) {
+            message_element = columnElement();
+            message_element.innerHTML = message_text;
+        } else {
+            message_element = columnElement({ text: message_text });
+        }
+        
+        button_element.appendChild(createElement('span', { text: button_text }));
+        cta_element.appendChild(button_element);
+        row_element.appendChild(message_element);
+        row_element.appendChild(cta_element);
+
+        return row_element.outerHTML;
+    };
+
     const loginOnClick = (e) => Header.loginOnClick(e);
 
     const onclose = () => {
@@ -368,8 +413,9 @@ const Purchase = (() => {
                 if (!tick_config.is_digit) {
                     fragment.appendChild(el2);
                 }
+                const tick_with_comma = addComma(tick_d.quote, countDecimalPlaces(tick_d.quote));
                 const tick = (tick_config.is_tick_high || tick_config.is_tick_low) ?
-                    tick_d.quote : `<div class='quote'>${tick_d.quote.replace(/\d$/, makeBold)}</div>`;
+                    tick_with_comma : `<div class='quote'>${tick_with_comma.replace(/\d$/, makeBold)}</div>`;
                 const el3  = createElement('div', { class: 'col' });
                 CommonFunctions.elementInnerHtml(el3, tick);
 
@@ -425,13 +471,14 @@ const Purchase = (() => {
         if (el_epoch && el_epoch.classList) {
             el_epoch.classList.add('is-visible');
             el_epoch.setAttribute('style', `position: absolute; right: ${((el_epoch.parentElement.offsetWidth - el_epoch.nextSibling.offsetWidth) / 2) + adjustment}px`);
+            const last_digit_quote = last_tick_quote ? last_tick_quote.slice(-1) : '';
             if (contract_status === 'won') {
                 DigitTicker.markAsWon();
-                DigitTicker.markDigitAsWon(last_tick_quote.slice(-1));
+                DigitTicker.markDigitAsWon(last_digit_quote);
             }
             if (contract_status === 'lost') {
                 DigitTicker.markAsLost();
-                DigitTicker.markDigitAsLost(last_tick_quote.slice(-1));
+                DigitTicker.markDigitAsLost(last_digit_quote);
             }
         }
     };

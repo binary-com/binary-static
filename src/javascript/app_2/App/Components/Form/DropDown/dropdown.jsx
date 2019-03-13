@@ -7,7 +7,7 @@ import { CSSTransition } from 'react-transition-group';
 import { Scrollbars }    from 'tt-react-custom-scrollbars';
 import { IconArrow }     from 'Assets/Common';
 import Items             from './items.jsx';
-import NativeSelect      from './native_select.jsx';
+import NativeSelect      from './native-select.jsx';
 import {
     getDisplayText,
     getItemFromValue,
@@ -145,26 +145,32 @@ class Dropdown extends React.Component {
             <div
                 ref={this.setWrapperRef}
                 className={classNames('dropdown-container', this.props.className, {
-                    'dropdown-container--left'    : this.props.is_alignment_left,
-                    'dropdown-container--show'    : this.state.is_list_visible,
-                    'dropdown-container--disabled': is_single_option,
+                    'dropdown--left'    : this.props.is_alignment_left,
+                    'dropdown--show'    : this.state.is_list_visible,
+                    'dropdown--disabled': is_single_option,
                 })}
             >
                 <div
-                    className={classNames('dropdown__display', {
-                        'dropdown__display--clicked': this.state.is_list_visible,
+                    className={classNames('dropdown__display', this.props.classNameDisplay, {
+                        'dropdown__display--clicked'   : this.state.is_list_visible,
+                        'dropdown__display--has-symbol': this.props.has_symbol,
                     })}
                     tabIndex={is_single_option ? '-1' : '0'}
                     onClick={this.handleVisibility}
                     onKeyDown={this.onKeyPressed}
                 >
-                    <span name={this.props.name} value={this.props.value}>
+                    {this.props.has_symbol &&
+                    <span name={this.props.name} value={this.props.value} className={`symbols dropdown__display-symbol symbols--${(this.props.value || '').toLowerCase()}`} />
+                    }
+                    {!this.props.has_symbol &&
+                    <span name={this.props.name} value={this.props.value} className='dropdown__display-text'>
                         {getDisplayText(this.props.list, this.props.value)}
                     </span>
+                    }
                 </div>
                 {
-                    !is_single_option && <IconArrow className={classNames('select-arrow', {
-                        'select-arrow--left': this.props.is_alignment_left,
+                    !is_single_option && <IconArrow className={classNames('dropdown__select-arrow', {
+                        'dropdown__select-arrow--left': this.props.is_alignment_left,
                     })}
                     />
                 }
@@ -172,9 +178,9 @@ class Dropdown extends React.Component {
                     in={this.state.is_list_visible}
                     timeout={100}
                     classNames={{
-                        enter    : 'dropdown__list--enter',
-                        enterDone: 'dropdown__list--enter--done',
-                        exit     : 'dropdown__list--exit',
+                        enter    : `dropdown__list--enter ${this.props.is_alignment_left ? 'dropdown__list--left--enter' : ''}`,
+                        enterDone: `dropdown__list--enter-done ${this.props.is_alignment_left ? 'dropdown__list--left--enter-done' : ''}`,
+                        exit     : `dropdown__list--exit ${this.props.is_alignment_left ? 'dropdown__list--left--exit' : ''}`,
                     }}
                     onEntered={setListWidth}
                     unmountOnExit
@@ -199,21 +205,21 @@ class Dropdown extends React.Component {
                             >
                                 {isArrayLike(this.props.list) ?
                                     <Items
-                                        highlightedIdx={this.state.curr_index}
+                                        handleSelect={this.handleSelect}
+                                        has_symbol={this.props.has_symbol}
                                         items={this.props.list}
                                         name={this.props.name}
                                         value={this.props.value}
-                                        handleSelect={this.handleSelect}
                                     /> :
                                     Object.keys(this.props.list).map(key => (
                                         <React.Fragment key={key}>
-                                            <div className='list__label'><span>{key}</span></div>
+                                            <div className='list__label'>{key}</div>
                                             <Items
-                                                highlightedIdx={this.state.curr_index}
+                                                handleSelect={this.handleSelect}
+                                                has_symbol={this.props.has_symbol}
                                                 items={this.props.list[key]}
                                                 name={this.props.name}
                                                 value={this.props.value}
-                                                handleSelect={this.handleSelect}
                                             />
                                         </React.Fragment>
                                     ))
@@ -229,6 +235,8 @@ class Dropdown extends React.Component {
 
 Dropdown.propTypes = {
     className        : PropTypes.string,
+    classNameDisplay : PropTypes.string,
+    has_symbol       : PropTypes.bool,
     is_alignment_left: PropTypes.bool,
     is_nativepicker  : PropTypes.bool,
     list             : PropTypes.oneOfType([

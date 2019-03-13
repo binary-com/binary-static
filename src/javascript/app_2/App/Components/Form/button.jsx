@@ -1,9 +1,11 @@
-import PropTypes from 'prop-types';
-import React     from 'react';
+import classNames from 'classnames';
+import PropTypes  from 'prop-types';
+import React      from 'react';
 
 const Button = ({
     children,
     className = '',
+    classNameSpan,
     has_effect,
     id,
     is_disabled,
@@ -12,7 +14,7 @@ const Button = ({
     text,
     wrapperClassName,
 }) => {
-    const classes = `btn${has_effect ? ' effect' : ''} ${className}`;
+    const classes = classNames('btn', { effect: has_effect }, className);
     const button = (
         <button
             id={id}
@@ -21,7 +23,7 @@ const Button = ({
             disabled={is_disabled}
             tabIndex={tabIndex || '0'}
         >
-            <span>{text}</span>
+            <span className={classNames('btn__text', classNameSpan)}>{text}</span>
             {children}
         </button>
     );
