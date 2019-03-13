@@ -3,13 +3,13 @@ const DigitTicker          = require('./digit_ticker');
 const ViewPopupUI          = require('../user/view_popup/view_popup.ui');
 const showLocalTimeOnHover = require('../../base/clock').showLocalTimeOnHover;
 const BinarySocket         = require('../../base/socket');
+const LoadingSpinner       = require('../../components/loading-spinner');
 const addComma             = require('../../../_common/base/currency_base').addComma;
 const localize             = require('../../../_common/localize').localize;
 const getPropertyValue     = require('../../../_common/utility').getPropertyValue;
 
 const DigitDisplay = (() => {
     let $container,
-        $digit_table,
         contract,
         tick_count,
         spot_times;
@@ -30,17 +30,6 @@ const DigitDisplay = (() => {
         }
     };
 
-    function setLoadingSpinner(content_id) {
-        $digit_table = $(`#${content_id}`);
-        $digit_table
-            .append($('<div />', { class: 'barspinner dark' })
-                .append($('<div />', { class: 'rect1' }))
-                .append($('<div />', { class: 'rect2' }))
-                .append($('<div />', { class: 'rect3' }))
-                .append($('<div />', { class: 'rect4' }))
-                .append($('<div />', { class: 'rect5' })));
-    }
-
     const init = (id_render, proposal_open_contract) => {
         const calculated_height = (proposal_open_contract.tick_count + 1) * 40;
 
@@ -58,7 +47,7 @@ const DigitDisplay = (() => {
                     .append($('<strong />', { class: 'gr-3', text: localize('Spot') }))
                     .append($('<strong />', { class: 'gr-6', text: localize('Spot Time (GMT)') }))))
             .append($('<div />', { class: 'digit-ticker invisible', id: 'digit_ticker_container' }));
-        setLoadingSpinner('table_digits');
+        LoadingSpinner.show('table_digits');
 
         DigitTicker.init(
             'digit_ticker_container',
@@ -116,8 +105,7 @@ const DigitDisplay = (() => {
         if (getPropertyValue(response, ['tick', 'id']) && document.getElementById('sell_content_wrapper')) {
             ViewPopupUI.storeSubscriptionID(response.tick.id);
         }
-        // Hide loading component
-        $digit_table.find('.barspinner').remove();
+        LoadingSpinner.hide('table_digits');
         if (response.history) {
             response.history.times.some((time, idx) => {
                 if (+time >= +contract.entry_tick_time) {
