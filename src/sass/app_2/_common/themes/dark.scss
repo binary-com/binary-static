@@ -229,31 +229,6 @@
             background: $COLOR_PURPLE;
         }
     }
-    .settings-dialog {
-        &__language-header {
-            color: $COLOR_DARK_BLUE_7;
-        }
-        &__container {
-            background: $COLOR_DARK_BLUE_3;
-            box-shadow: 0 2px 8px 0 $COLOR_LIGHT_BLACK_2;
-        }
-        &__header {
-            color: $COLOR_DARK_BLUE_7;
-        }
-        &__language {
-            &-link {
-                color: $COLOR_DARK_BLUE_7;
-
-                &--active {
-                    color: $COLOR_WHITE;
-                    background-color: $COLOR_DARK_BLUE_2;
-                }
-                &:hover {
-                    border: 1px solid $COLOR_DARK_BLUE_7;
-                }
-            }
-        }
-    }
     .acc-info {
         &__id {
             color: $COLOR_WHITE;
@@ -835,41 +810,6 @@
             }
         }
     }
-    .dialog-header {
-        &__sidebar {
-            background-color: $COLOR_DARK_BLUE_2;
-            color: $COLOR_DARK_BLUE_7;
-        }
-        &__close {
-            @extend %inline-icon.border_hover_color;
-        }
-    }
-    .media {
-        &__heading {
-            color: $COLOR_DARK_BLUE_7;
-        }
-        &__description {
-            color: $COLOR_WHITE;
-        }
-    }
-    .theme-select-settings {
-        &__title {
-            color: $COLOR_DARK_BLUE_7;
-        }
-        &__option {
-            &__title {
-                color: $COLOR_WHITE;
-            }
-            &__icon {
-                border: solid 1px $COLOR_DARK_BLUE_7;
-
-                &--active, &:hover {
-                    box-shadow: 0 0 0 2px $COLOR_DARK_BLUE_8;
-                }
-            }
-
-        }
-    }
     .positions-drawer {
         background: $COLOR_DARK_BLUE_3;
         border-color: $COLOR_DARK_BLUE_3;
@@ -1004,30 +944,6 @@
         }
         &__entry {
             background-color: unset;
-        }
-    }
-    .vertical-tab {
-        &__tab {
-            background-color: $COLOR_DARK_BLUE_2;
-        }
-        &__header {
-            color: $COLOR_DARK_BLUE_7;
-
-            &:hover:not(.vertical-tab__header--active) {
-                background-color: $COLOR_DARK_BLUE_4;
-            }
-            &--active {
-                background-color: $COLOR_DARK_BLUE_5;
-                color: $COLOR_WHITE;
-                font-weight: bold;
-            }
-            &__icon {
-                @include colorIcon($COLOR_DARK_BLUE_7);
-
-                &--active {
-                    @include colorIcon($COLOR_WHITE);
-                }
-            }
         }
     }
 }

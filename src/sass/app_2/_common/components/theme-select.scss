@@ -7,8 +7,10 @@
     &__title {
         font-weight: bold;
         font-size: 14px;
-        color: $COLOR_LIGHT_BLACK_1;
-        margin-bottom: 17px;
+        @include themify($themes) {
+            color: themed('text_primary_color');
+        }
+        margin-bottom: 16px;
     }
     &__content {
         display: flex;
@@ -28,16 +30,23 @@
             margin-top: 9px;
             font-size: 14px;
             line-height: 1.43;
+            @include themify($themes) {
+                color: themed('text_color');
+            }
         }
         &__icon {
             width: 234px;
             height: 178px;
             cursor: pointer;
             border-radius: 4px;
-            border: 1px solid $COLOR_LIGHT_GRAY_1;
+            @include themify($themes) {
+                border: 1px solid themed('text_primary_color');
+            }
         }
         &__icon--active, &__icon:hover {
-            box-shadow: 0 0 0 2px $COLOR_LIGHT_GRAY_2;
+            @include themify($themes) {
+                box-shadow: 0 0 0 2px themed('border_outline_color');
+            }
         }
     }
 }

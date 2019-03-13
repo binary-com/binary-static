@@ -6,7 +6,9 @@
         font-size: 14px;
         font-weight: bold;
         margin-bottom: 16px;
-        color: $COLOR_LIGHT_BLACK_1;
+        @include themify($themes) {
+            color: themed('text_primary_color');
+        }
     }
     &__language-container {
         display: grid;
@@ -16,18 +18,24 @@
     }
     &__language {
         &-link {
-            border-radius: $BORDER_RADIUS;
+            @include themify($themes) {
+                color: themed('text_primary_color');
+            }
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             align-items: center;
+            border-radius: $BORDER_RADIUS;
             padding: 16px;
-            color: $COLOR_LIGHT_BLACK_1;
             text-decoration: none;
 
             &--active {
-                border: 1px solid $COLOR_LIGHT_GRAY_1;
-                box-shadow: 0 0 0 2px $COLOR_LIGHT_GRAY_2;
+                @include themify($themes) {
+                    border: 1px solid themed('border_hover_color');
+                    box-shadow: 0 0 0 2px themed('border_outline_color');
+                    background-color: themed('container_color');
+                    color: themed('text_active_color');
+                }
             }
         }
         &-flag {
@@ -35,8 +43,10 @@
             height: 24px;
         }
         &-name {
-            font-size: 14px;
-            font-weight: normal;
+            @include typeface(--paragraph-left-normal-black);
+            @include themify($themes) {
+                color: themed('text_primary_color');
+            }
 
             &--active {
                 font-weight: bold;
@@ -54,12 +64,14 @@
         pointer-events: auto;
     }
     &__container {
-        position: relative;
+        @include themify($themes) {
+            background-color: themed('background_container_color');
+        }
         width: 736px;
-        background-color: $COLOR_WHITE;
-        border-radius: $BORDER_RADIUS;
+        position: relative;
         overflow: hidden;
         box-shadow: 0 2px 8px 0 $COLOR_LIGHT_BLACK_3;
+        border-radius: $BORDER_RADIUS;
 
         &--hide {
             display: none;
@@ -76,11 +88,14 @@
     box-shadow: 0 2px 8px 0 var($COLOR_LIGHT_BLACK_3);
 
     &__sidebar {
-        width: 200px;
         @include typeface(--title-left-bold-black);
+        @include themify($themes) {
+            background-color: themed('background_cover');
+            color: themed('text_primary_color');
+        }
+        width: 200px;
         line-height: 24px;
         padding: 16px;
-        background-color: $COLOR_LIGHT_BLACK_4_SOLID;
     }
     &__main {
         width: 536px;
@@ -94,5 +109,6 @@
     &__close {
         display: block;
         cursor: pointer;
+        @extend %inline-icon.border_hover_color;
     }
 }

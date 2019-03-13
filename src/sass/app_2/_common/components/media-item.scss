@@ -3,6 +3,9 @@
 
     &__heading {
         @include typeface(--paragraph-left-bold-black);
+        @include themify($themes) {
+            color: themed('text_primary_color');
+        }
         margin: 0 0 16px;
     }
     &__icon {
@@ -17,6 +20,9 @@
         justify-content: flex-start;
         align-items: flex-start;
         @include typeface(--paragraph-left-normal-black);
+        @include themify($themes) {
+            color: themed('text_color');
+        }
     }
     &__form {
         display: flex;
