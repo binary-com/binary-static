@@ -2,22 +2,22 @@ import classNames            from 'classnames';
 import PropTypes             from 'prop-types';
 import React                 from 'react';
 import { CSSTransition }     from 'react-transition-group';
+import ContractLink          from 'Modules/Contract/Containers/contract-link.jsx';
 import { localize }          from '_common/localize';
-import ContractTypeCell      from 'Modules/Portfolio/Components/contract-type-cell.jsx';
+import ContractTypeCell      from './contract-type-cell.jsx';
 import ProgressSlider        from './ProgressSlider';
 import ResultDetails         from './result-details.jsx';
 import ResultOverlay         from './result-overlay.jsx';
 import { getTimePercentage } from './helpers';
 import Money                 from '../money.jsx';
-import BinaryLink            from '../../Routes/binary-link.jsx';
-import { getContractPath }   from '../../Routes/helpers';
 import Button                from '../../Form/button.jsx';
 
-// TODO: Break into smaller components once design is finalized
+// TODO: Find a way to simplify props, maybe we can pass some of props as object from portfolio_store and parse it with helpers
 const PositionsDrawerCard = ({
     active_position,
     barrier,
     className,
+    chart_config,
     currency,
     duration,
     duration_unit,
@@ -26,12 +26,14 @@ const PositionsDrawerCard = ({
     id,
     id_sell,
     indicative,
+    is_sell_requested,
     is_valid_to_sell,
     profit_loss,
     purchase,
     purchase_time,
     onClickSell,
     onClickRemove,
+    openContract,
     result,
     sell_time,
     server_time,
@@ -43,22 +45,28 @@ const PositionsDrawerCard = ({
 }) => {
     const percentage = getTimePercentage(server_time, purchase_time, expiry_time);
     return (
-        <div className={classNames('positions-drawer-card__wrapper', className)}>
+        <div className={classNames(
+            'positions-drawer-card__wrapper', {
+                'positions-drawer-card__wrapper--active': (parseInt(active_position) === id),
+            },
+            className)}
+        >
             <ResultOverlay
                 id={id}
                 onClickRemove={onClickRemove}
+                onClick={openContract}
+                chart_config={chart_config}
                 result={result}
             />
-            <BinaryLink
+            <ContractLink
                 className={classNames(
                     'positions-drawer-card', {
                         'positions-drawer-card--active': (parseInt(active_position) === id),
-                        'positions-drawer-card--green' : (percentage >= 50) && !result,
-                        'positions-drawer-card--orange': (percentage < 50 && percentage >= 20) && !result,
-                        'positions-drawer-card--red'   : (percentage < 20) && !result,
+                        'positions-drawer-card--green' : (profit_loss > 0) && !result,
+                        'positions-drawer-card--red'   : (profit_loss < 0) && !result,
                     }
                 )}
-                to={getContractPath(id)}
+                chart_config={chart_config}
             >
                 <React.Fragment>
                     <div className={classNames(
@@ -95,7 +103,7 @@ const PositionsDrawerCard = ({
                             'positions-drawer-card__profit-loss-label',
                         )}
                         >
-                            {localize('Potential P/L:')}
+                            {result ? localize('P/L:') : localize('Potential P/L:')}
                         </div>
                         <div className={classNames(
                             'positions-drawer-card__indicative',
@@ -123,7 +131,7 @@ const PositionsDrawerCard = ({
                         <Money amount={purchase} currency={currency} />
                     </div>
                 </React.Fragment>
-            </BinaryLink>
+            </ContractLink>
             <CSSTransition
                 in={!!(is_valid_to_sell)}
                 timeout={250}
@@ -136,8 +144,13 @@ const PositionsDrawerCard = ({
             >
                 <div className='positions-drawer-card__sell-button'>
                     <Button
-                        className='btn--primary btn--primary--orange'
-                        is_disabled={!is_valid_to_sell}
+                        className={classNames(
+                            'btn--primary',
+                            'btn--primary--orange',
+                            'btn--sell', {
+                                'btn--loading': is_sell_requested,
+                            })}
+                        is_disabled={!is_valid_to_sell || is_sell_requested}
                         text={localize('Sell contract')}
                         onClick={() => onClickSell(id)}
                     />
@@ -159,27 +172,32 @@ const PositionsDrawerCard = ({
 };
 
 PositionsDrawerCard.propTypes = {
-    active_position: PropTypes.string,
-    barrier        : PropTypes.number,
-    className      : PropTypes.string,
-    currency       : PropTypes.string,
-    duration       : PropTypes.number,
-    duration_unit  : PropTypes.string,
-    entry_spot     : PropTypes.number,
-    exit_spot      : PropTypes.number,
-    expiry_time    : PropTypes.PropTypes.oneOfType([
+    active_position: PropTypes.PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
     ]),
-    id              : PropTypes.number,
-    id_sell         : PropTypes.number,
-    indicative      : PropTypes.number,
-    is_valid_to_sell: PropTypes.PropTypes.oneOfType([
+    barrier      : PropTypes.number,
+    className    : PropTypes.string,
+    currency     : PropTypes.string,
+    duration     : PropTypes.number,
+    duration_unit: PropTypes.string,
+    entry_spot   : PropTypes.number,
+    exit_spot    : PropTypes.number,
+    expiry_time  : PropTypes.PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
+    ]),
+    id               : PropTypes.number,
+    id_sell          : PropTypes.number,
+    indicative       : PropTypes.number,
+    is_sell_requested: PropTypes.bool,
+    is_valid_to_sell : PropTypes.PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.bool,
     ]),
     onClickRemove: PropTypes.func,
     onClickSell  : PropTypes.func,
+    openContract : PropTypes.func,
     profit_loss  : PropTypes.number,
     purchase     : PropTypes.number,
     purchase_time: PropTypes.PropTypes.oneOfType([
