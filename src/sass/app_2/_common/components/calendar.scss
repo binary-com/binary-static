@@ -64,7 +64,7 @@
     }
     &__icon {
         @extend .absolute-center-v;
-        @extend .inline-icon;
+        @extend %inline-icon;
         right: 5%;
 
         &--today:hover {
@@ -94,7 +94,7 @@
             right: 14%;
         }
         &--disabled .calendar__icon {
-            @extend .inline-icon.disabled;
+            @extend %inline-icon.disabled;
         }
     }
     &__btn {

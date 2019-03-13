@@ -211,7 +211,7 @@ const ClientBase = (() => {
         let can_open_multi = false;
         let type,
             can_upgrade_to;
-        if ((upgradeable_landing_companies || []).length) {
+        if ((upgradeable_landing_companies || []).length && !/^(py|ae)$/i.test(get('residence'))) { // TODO: remove py and ae exceptions when API block is implemented
             const current_landing_company = get('landing_company_shortcode');
 
             can_open_multi = upgradeable_landing_companies.indexOf(current_landing_company) !== -1;
