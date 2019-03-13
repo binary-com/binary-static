@@ -184,7 +184,7 @@ const Contract = (() => {
         }
 
         if (trade_contract_forms.runs) {
-            trade_contract_forms.run = localize('Run');
+            trade_contract_forms.run = localize('Only Ups/Only Downs');
         }
 
         if (trade_contract_forms.endsinout || trade_contract_forms.staysinout) {

@@ -1,5 +1,7 @@
 // Dark Theme
 .theme--dark {
+    background-color: $COLOR_DARK_BLUE_1;
+
     .card-list {
         &__card {
             background: $COLOR_DARK_BLUE_5;
@@ -38,12 +40,12 @@
     }
     .statement.container {
         .statement__filter {
-            background: $COLOR_DARK_BLUE_5;
+            background: $COLOR_DARK_BLUE_1;
             color: $COLOR_DARK_BLUE_7;
-            border-color: $COLOR_DARK_BLUE_5;
+            border-color: $COLOR_DARK_BLUE_1;
         }
         .statement__content {
-            background: $COLOR_DARK_BLUE_5;
+            background: $COLOR_DARK_BLUE_1;
         }
     }
     .table {
@@ -86,7 +88,7 @@
         }
     }
     .statement-card__icon {
-        @extend .inline-icon.white;
+        @extend %inline-icon.white;
     }
     .login-message-wrapper {
         .message a {
@@ -225,54 +227,6 @@
         }
         &__line {
             background: $COLOR_PURPLE;
-        }
-    }
-    .settings-dialog {
-        background: $COLOR_DARK_BLUE_3;
-
-        &__container {
-            background: $COLOR_DARK_BLUE_3;
-
-        }
-        &__tab-content {
-            background: $COLOR_DARK_BLUE_3;
-        }
-        &__general-container, &__chart-container {
-            background: $COLOR_DARK_BLUE_5;
-        }
-        &__header {
-            color: $COLOR_DARK_BLUE_7;
-        }
-        &__row {
-            background-color: $COLOR_DARK_BLUE_2;
-
-            &-name {
-                color: $COLOR_DARK_BLUE_7;
-            }
-            &:hover {
-                background-color: $COLOR_DARK_BLUE_4;
-            }
-        }
-        &__language {
-            &-dialog-container {
-                background: $COLOR_DARK_BLUE_3;
-            }
-            &-header {
-                background: $COLOR_DARK_BLUE_3;
-                color: $COLOR_DARK_BLUE_7;
-
-            }
-            &-row {
-                background: $COLOR_DARK_BLUE_2;
-                color: $COLOR_DARK_BLUE_7;
-
-                &:hover {
-                    background: $COLOR_DARK_BLUE_4;
-                }
-            }
-            &-name {
-                color: $COLOR_DARK_BLUE_7;
-            }
         }
     }
     .acc-info {
@@ -856,6 +810,111 @@
             }
         }
     }
+    .positions-drawer {
+        background: $COLOR_DARK_BLUE_3;
+        border-color: $COLOR_DARK_BLUE_3;
+        color: $COLOR_WHITE;
+
+        &--contract-mode:before {
+            background: $COLOR_DARK_BLUE_3;
+        }
+        &-card {
+            color: $COLOR_WHITE;
+
+            &__result {
+                background-color: $COLOR_DARK_BLUE_2;
+
+                &:hover {
+                    background: 0;
+                }
+                &--won {
+                    background-image: linear-gradient(to top, rgba(16, 19, 32, 0), rgba(0, 148, 117, 0.16));
+                }
+                &--lost {
+                    background-image: linear-gradient(to top, rgba(16, 19, 32, 0), rgba(227, 28, 75, 0.16));
+                }
+            }
+            &__wrapper {
+                background: $COLOR_DARK_BLUE_2;
+
+                &--active:before {
+                    box-shadow: 0 0 4px 1px rgba(255, 255, 255, 0.16);
+                }
+            }
+            &__type {
+                .category-type {
+                    .color1-fill {
+                        fill: $COLOR_WHITE;
+                    }
+                }
+            }
+            &__remaining-time {
+                color: $COLOR_DARK_BLUE_7;
+            }
+            &__indicative {
+                // &--no-resale {
+                //     color: $COLOR_DARK_BLUE_7;
+                // }
+                &--price-stable {
+                    color: $COLOR_WHITE;
+                }
+            }
+            &__grid-profit-payout {
+                background: $COLOR_DARK_BLUE_3;
+            }
+            &__purchase-label, &__profit-loss-label, &__indicative-label {
+                color: $COLOR_DARK_BLUE_7;
+            }
+        }
+        &__title {
+            color: $COLOR_DARK_BLUE_7;
+        }
+        &__body {
+            .positions-empty, p {
+                align-self: center;
+                color: $COLOR_WHITE;
+            }
+        }
+        &__footer {
+            background: $COLOR_DARK_BLUE_3;
+            border-color: $COLOR_DARK_BLUE_3;
+
+            .btn--alternate {
+                background-color: $COLOR_DARK_BLUE_5;
+                border-color: $COLOR_DARK_BLUE_5;
+
+                .btn__text {
+                    color: $COLOR_WHITE;
+                    font-weight: bold;
+                }
+            }
+        }
+        .result {
+            &-details__label {
+                color: $COLOR_DARK_BLUE_7;
+            }
+            &-details__toggle--is-open, &-details__separator {
+                border-color: $COLOR_DARK_BLUE_3;
+            }
+        }
+    }
+    .progress-slider {
+        &__track, &__infinite-loader {
+            background: $COLOR_DARK_BLUE_3;
+        }
+        .ticks-step {
+            border: 2px solid $COLOR_DARK_BLUE_2;
+            background: $COLOR_DARK_BLUE_2;
+
+            &--active, &--marked {
+                background: $COLOR_PURPLE;
+                border-color: $COLOR_PURPLE;
+            }
+        }
+        &__line {
+            background: $COLOR_PURPLE;
+        }
+    }
     .chart-spot-label {
         &__value-container {
             background: $COLOR_DARK_BLUE_5;
@@ -872,6 +931,17 @@
         }
     }
     .chart-spot {
+        &__spot {
+            background-color: $COLOR_DARK_BLUE_2;
+            color: $COLOR_WHITE;
+
+            &--won {
+                background-color: $COLOR_GREEN_1;
+            }
+            &--lost {
+                background-color: $COLOR_RED;
+            }
+        }
         &__entry {
             background-color: unset;
         }

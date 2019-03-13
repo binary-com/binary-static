@@ -1,4 +1,7 @@
-import { localize } from '_common/localize';
+import { localize }   from '_common/localize';
+import {
+    epochToMoment,
+    getDiffDuration } from 'Utils/Date';
 
 export const getDurationUnitValue = (obj_duration) => {
     const duration_ms = obj_duration.asMilliseconds() / 1000;
@@ -36,3 +39,17 @@ export const getDurationUnitText = (obj_duration) => {
     }
     return unit_map.s.name;
 };
+
+export const getDurationPeriod = (contract_info) => (
+    getDiffDuration(
+        epochToMoment(contract_info.purchase_time || contract_info.date_start),
+        epochToMoment(contract_info.date_expiry)
+    )
+);
+
+export const getDurationTime = (contract_info) => (
+    contract_info.tick_count ?
+        contract_info.tick_count
+        :
+        getDurationUnitValue(getDurationPeriod(contract_info))
+);

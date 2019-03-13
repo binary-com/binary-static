@@ -24,39 +24,46 @@ const Input = ({
     placeholder,
     required,
     type,
-}) => (
-    <React.Fragment>
-        {!!inline_prefix &&
-        <div className={classNameInlinePrefix}>
-            <span className={classNames(classNameInlinePrefix ? `${classNameInlinePrefix}--symbol` : '', 'symbols', `symbols--${inline_prefix.toLowerCase()}`)} />
-        </div>
-        }
-        <input
-            autoComplete={is_autocomplete_disabled ? 'off' : undefined}
-            checked={checked ? 'checked' : ''}
-            className={classNames(className)}
-            data-for={`error_tooltip_${name}`}
-            data-tip={data_tip}
-            data-value={data_value}
-            disabled={is_disabled}
-            id={id}
-            maxLength={fractional_digits ? max_length + fractional_digits + 1 : max_length}
-            name={name}
-            onChange={changeValue}
-            onClick={onClick}
-            onKeyDown={is_incrementable ? onKeyPressed : undefined}
-            placeholder={placeholder || undefined}
-            readOnly={is_read_only}
-            required={required || undefined}
-            type={type === 'number' ? 'text' : type}
-            value={display_value || ''}
-        />
-    </React.Fragment>
-);
+}) => {
+    const computedMaxLength = fractional_digits ? max_length + fractional_digits + 1 : max_length;
+
+    return (
+        <React.Fragment>
+            {!!inline_prefix &&
+            <div className={classNameInlinePrefix}>
+                <span className={classNames(classNameInlinePrefix ? `${classNameInlinePrefix}--symbol` : '', 'symbols', `symbols--${inline_prefix.toLowerCase()}`)} />
+            </div>
+            }
+            <input
+                autoComplete={is_autocomplete_disabled ? 'off' : undefined}
+                checked={checked ? 'checked' : ''}
+                className={classNames(className)}
+                data-for={`error_tooltip_${name}`}
+                data-tip={data_tip}
+                data-value={data_value}
+                disabled={is_disabled}
+                id={id}
+                maxLength={max_length && computedMaxLength}
+                name={name}
+                onChange={changeValue}
+                onClick={onClick}
+                onKeyDown={is_incrementable ? onKeyPressed : undefined}
+                placeholder={placeholder || undefined}
+                readOnly={is_read_only}
+                required={required || undefined}
+                type={type === 'number' ? 'text' : type}
+                value={display_value || ''}
+            />
+        </React.Fragment>
+    );
+};
 
 Input.propTypes = {
-    changeValue          : PropTypes.func,
-    checked              : PropTypes.number,
+    changeValue: PropTypes.func,
+    checked    : PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
+    ]),
     className            : PropTypes.string,
     classNameInlinePrefix: PropTypes.string,
     data_tip             : PropTypes.string,

@@ -47,6 +47,8 @@ export default class UIStore extends BaseStore {
     @observable duration_h             = 1;
     @observable duration_d             = 1;
 
+    @observable is_blurred = false;
+
     getDurationFromUnit = (unit) => this[`duration_${unit}`];
 
     constructor() {
@@ -109,6 +111,16 @@ export default class UIStore extends BaseStore {
     }
 
     @action.bound
+    showBlur() {
+        this.is_blurred = true;
+    }
+
+    @action.bound
+    hideBlur() {
+        this.is_blurred = false;
+    }
+
+    @action.bound
     toggleAccountsDialog() {
         this.is_accounts_switcher_on = !this.is_accounts_switcher_on;
     }
@@ -160,7 +172,12 @@ export default class UIStore extends BaseStore {
     }
 
     @action.bound
-    togglePositionsDrawer() { // show and hide Positions Drawer
+    openPositionsDrawer() { // show and hide Positions Drawer
+        this.is_positions_drawer_on = true;
+    }
+
+    @action.bound
+    togglePositionsDrawer() { // toggle Positions Drawer
         this.is_positions_drawer_on = !this.is_positions_drawer_on;
     }
 

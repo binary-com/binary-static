@@ -16,7 +16,7 @@ const ProgressSlider = ({
     return (
         <div className={classNames('progress-slider', className)}>
             {/* TODO: enable ticks slider once it is completed */}
-            {(ticks_count < -1) ?
+            {(ticks_count) ?
                 <ProgressTicks
                     current_tick={current_tick}
                     ticks_count={ticks_count}

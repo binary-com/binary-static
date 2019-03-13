@@ -56,6 +56,8 @@ export const getDetailsInfo = (contract_info) => {
     };
 };
 
+export const formatMoney = (currency, amount) => <Money amount={amount} currency={currency} />;
+
 export const getDetailsExpiry = (store) => {
     if (!store.is_ended) return {};
 

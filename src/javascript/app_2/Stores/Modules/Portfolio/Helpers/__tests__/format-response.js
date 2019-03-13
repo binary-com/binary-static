@@ -10,19 +10,21 @@ describe('formatPortfolioPosition', () => {
         expiry_time   : 123456789,
         longcode      : 'test \n test \n test',
         payout        : 3500.1,
+        symbol        : 'R_25',
         transaction_id: 5678,
     };
 
     it('should return an object with values in object passed as argument', () => {
         expect(formatPortfolioPosition(portfolio_pos)).to.eql({
-            details      :'test <br /> test <br /> test',
-            expiry_time  : 123456789,
-            id           : 1234,
-            indicative   : 0,
-            payout       : 3500.1,
-            purchase     : 2500.5,
-            reference    : +5678,
-            type         : 'ASIANU',
+            details        :'test <br /> test <br /> test',
+            expiry_time    : 123456789,
+            id             : 1234,
+            indicative     : 0,
+            payout         : 3500.1,
+            purchase       : 2500.5,
+            reference      : +5678,
+            underlying_code: 'R_25',
+            type           : 'ASIANU',
         });
     });
 });
