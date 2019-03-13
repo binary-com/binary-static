@@ -534,7 +534,7 @@
         &:focus, &:active {
             outline: 0;
             border-color: $COLOR_DARK_BLUE_7;
-            box-shadow: 0 0 0 2px rgba(127, 131, 151, 0.3);
+            box-shadow: 0 0 0 2px $COLOR_DARK_BLUE_8;
         }
         &__display {
             span[name=contract_type] {
@@ -650,7 +650,7 @@
         }
         &:focus, &:active {
             border-color: $COLOR_DARK_BLUE_7;
-            box-shadow: 0 0 0 0.2px rgba(127, 131, 151, 0.3);
+            box-shadow: 0 0 0 2px $COLOR_DARK_BLUE_8;
             color: $COLOR_WHITE;
         }
         &::placeholder {
@@ -669,12 +669,12 @@
                 border-color: $COLOR_DARK_BLUE_7;
             }
             &:focus, &:active {
-                box-shadow: 0 0 0 2px rgba(127, 131, 151, 0.3);
+                box-shadow: 0 0 0 2px $COLOR_DARK_BLUE_8;
             }
         }
         &--show > .dropdown__display--clicked {
             border-color: $COLOR_DARK_BLUE_7;
-            box-shadow: 0 0 0 2px rgba(127, 131, 151, 0.3);
+            box-shadow: 0 0 0 2px $COLOR_DARK_BLUE_8;
         }
     }
     .list {

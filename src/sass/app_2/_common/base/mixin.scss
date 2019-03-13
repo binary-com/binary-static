@@ -255,7 +255,7 @@
     &:before {
         background: $color;
     }
-    &:after {
+    &:after, &[data-tooltip-pos=top]:after {
         border-top-color: $color;
     }
     &[data-tooltip-pos=right]:after {
