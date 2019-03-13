@@ -3,6 +3,7 @@ const DigitTicker          = require('./digit_ticker');
 const ViewPopupUI          = require('../user/view_popup/view_popup.ui');
 const showLocalTimeOnHover = require('../../base/clock').showLocalTimeOnHover;
 const BinarySocket         = require('../../base/socket');
+const LoadingSpinner       = require('../../components/loading-spinner');
 const addComma             = require('../../../_common/base/currency_base').addComma;
 const localize             = require('../../../_common/localize').localize;
 const getPropertyValue     = require('../../../_common/utility').getPropertyValue;
@@ -30,6 +31,8 @@ const DigitDisplay = (() => {
     };
 
     const init = (id_render, proposal_open_contract) => {
+        const calculated_height = (proposal_open_contract.tick_count + 1) * 40;
+
         tick_count = 1;
         contract   = proposal_open_contract;
         spot_times = [];
@@ -38,12 +41,13 @@ const DigitDisplay = (() => {
         $container
             .addClass('normal-font')
             .html($('<h5 />', { text: contract.display_name, class: 'center-text' }))
-            .append($('<div />', { class: 'gr-8 gr-centered gr-12-m' })
+            .append($('<div />', { class: 'gr-8 gr-centered gr-12-m', style: `height: ${calculated_height}px;` })
                 .append($('<div />', { class: 'gr-row', id: 'table_digits' })
                     .append($('<strong />', { class: 'gr-3', text: localize('Tick') }))
                     .append($('<strong />', { class: 'gr-3', text: localize('Spot') }))
                     .append($('<strong />', { class: 'gr-6', text: localize('Spot Time (GMT)') }))))
             .append($('<div />', { class: 'digit-ticker invisible', id: 'digit_ticker_container' }));
+        LoadingSpinner.show('table_digits');
 
         DigitTicker.init(
             'digit_ticker_container',
@@ -101,7 +105,7 @@ const DigitDisplay = (() => {
         if (getPropertyValue(response, ['tick', 'id']) && document.getElementById('sell_content_wrapper')) {
             ViewPopupUI.storeSubscriptionID(response.tick.id);
         }
-
+        LoadingSpinner.hide('table_digits');
         if (response.history) {
             response.history.times.some((time, idx) => {
                 if (+time >= +contract.entry_tick_time) {
