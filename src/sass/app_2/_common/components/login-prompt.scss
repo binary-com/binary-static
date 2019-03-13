@@ -1,6 +1,6 @@
 /** @define login-prompt */
 .login-prompt {
-    height: 100%;
+    height: calc(100vh - 83px);
     margin: 0 2em;
     display: flex;
     flex-direction: column;

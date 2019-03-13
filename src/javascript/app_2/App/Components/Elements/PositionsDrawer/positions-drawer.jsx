@@ -25,10 +25,12 @@ class PositionsDrawer extends React.Component {
             active_positions,
             error,
             currency,
+            is_contract_mode,
             is_empty,
             is_positions_drawer_on,
             onClickSell,
             onClickRemove,
+            openContract,
             toggleDrawer,
             server_time,
         } = this.props;
@@ -57,6 +59,7 @@ class PositionsDrawer extends React.Component {
                         active_position={active_contract_id}
                         onClickSell={onClickSell}
                         onClickRemove={onClickRemove}
+                        openContract={openContract}
                         server_time={server_time}
                         key={portfolio_position.id}
                         currency={currency}
@@ -67,7 +70,12 @@ class PositionsDrawer extends React.Component {
         }
 
         return (
-            <div className={classNames('positions-drawer', { 'positions-drawer--open': is_positions_drawer_on })}>
+            <div className={classNames(
+                'positions-drawer', {
+                    'positions-drawer--open'         : is_positions_drawer_on,
+                    'positions-drawer--contract-mode': is_contract_mode,
+                })}
+            >
                 <div className='positions-drawer__header'>
                     <span className='positions-drawer__title'>{localize('Positions')}</span>
                     <div
@@ -85,25 +93,29 @@ class PositionsDrawer extends React.Component {
                         {body_content}
                     </Scrollbars>
                 </div>
-                <div className='positions-drawer__footer'>
-                    {/* TODO: Toggle to popup the Reports Dialog once Dialog is available */}
-                    <a className='btn btn--link btn--alternate' href='javascript:;'>
-                        <span className='btn__text'>
-                            {localize('Go to Reports')}
-                        </span>
-                    </a>
-                </div>
+                {/* TODO: Re-enable reports button positions drawer footer once implemented */}
+                {/* <div className='positions-drawer__footer'> */}
+                {/* <a className='btn btn--link btn--alternate' href='javascript:;'> */}
+                {/* <span className='btn__text'> */}
+                {/* {localize('Go to Reports')} */}
+                {/* </span> */}
+                {/* </a> */}
+                {/* </div> */}
             </div>
         );
     }
 }
 
 PositionsDrawer.propTypes = {
-    active_contract_id    : PropTypes.string,
+    active_contract_id: PropTypes.PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
+    ]),
     active_positions      : MobxPropTypes.arrayOrObservableArray,
     children              : PropTypes.any,
     currency              : PropTypes.string,
     error                 : PropTypes.string,
+    is_contract_mode      : PropTypes.bool,
     is_empty              : PropTypes.bool,
     is_loading            : PropTypes.bool,
     is_positions_drawer_on: PropTypes.bool,
@@ -111,6 +123,7 @@ PositionsDrawer.propTypes = {
     onClickSell           : PropTypes.func,
     onMount               : PropTypes.func,
     onUnmount             : PropTypes.func,
+    openContract          : PropTypes.func,
     server_time           : PropTypes.object,
     toggleDrawer          : PropTypes.func,
 };
@@ -122,10 +135,12 @@ export default connect(
         active_contract_id    : modules.contract.contract_id,
         active_positions      : modules.portfolio.active_positions,
         error                 : modules.portfolio.error,
+        is_contract_mode      : modules.smart_chart.is_contract_mode,
         is_empty              : modules.portfolio.is_empty,
         is_loading            : modules.portfolio.is_loading,
         onClickSell           : modules.portfolio.onClickSell,
         onClickRemove         : modules.portfolio.removePositionById,
+        openContract          : modules.contract.onLoadContract,
         onMount               : modules.portfolio.onMount,
         onUnmount             : modules.portfolio.onUnmount,
         is_positions_drawer_on: ui.is_positions_drawer_on,

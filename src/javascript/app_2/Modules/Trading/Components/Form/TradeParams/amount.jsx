@@ -83,7 +83,11 @@ const Amount = ({
                     value={amount}
                 />
             </div>
-            <AllowEquals is_allow_equal={is_allow_equal} onChange={onChange} checked={is_equal_checked} />
+            <AllowEquals
+                checked={is_equal_checked}
+                is_allow_equal={is_allow_equal}
+                onChange={onChange}
+            />
         </Fieldset>
     );
 };
@@ -93,12 +97,15 @@ Amount.propTypes = {
         PropTypes.number,
         PropTypes.string,
     ]),
-    basis             : PropTypes.string,
-    basis_list        : MobxPropTypes.arrayOrObservableArray,
-    currencies_list   : MobxPropTypes.observableObject,
-    currency          : PropTypes.string,
-    is_allow_equal    : PropTypes.bool,
-    is_equal_checked  : PropTypes.number,
+    basis           : PropTypes.string,
+    basis_list      : MobxPropTypes.arrayOrObservableArray,
+    currencies_list : MobxPropTypes.observableObject,
+    currency        : PropTypes.string,
+    is_allow_equal  : PropTypes.bool,
+    is_equal_checked: PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
+    ]),
     is_minimized      : PropTypes.bool,
     is_nativepicker   : PropTypes.bool,
     is_single_currency: PropTypes.bool,

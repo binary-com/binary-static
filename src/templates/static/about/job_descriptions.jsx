@@ -92,6 +92,14 @@ const JobDescriptions = () => (
             />
 
             <Row
+                id='data_analytics'
+                title={it.L('Data Analytics')}
+                sections={[
+                    { header: it.L('Data Scientist'), subsection: 'data_scientist', text: it.L('We need a talented Data Scientist with the technical skills and creative curiosity to explore and solve complex business problems.'), className: 'nowrap' },
+                ]}
+            />
+
+            <Row
                 id='marketing'
                 title={it.L('Marketing')}
                 sections={[

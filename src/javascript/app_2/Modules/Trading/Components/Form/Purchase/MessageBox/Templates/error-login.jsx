@@ -4,17 +4,22 @@ import { localize }        from '_common/localize';
 import Button              from 'App/Components/Form/button.jsx';
 
 const ErrorLogin = () => (
-    <div className='purchase-container__error-login'>
-        <span className='purchase-container__error-info purchase-container__error-login-info'>{localize('Please log in to purchase the contract')}</span>
+    <div className='message-box__login'>
+        <span className='message-box__info message-box__login-info'>
+            {localize('Please log in to purchase the contract')}
+        </span>
         <Button
-            className='purchase-container__error-login-btn btn--secondary btn--secondary--orange'
-            classNameSpan='purchase-container__error-login-btn-span'
+            className='btn--secondary btn--secondary--orange'
             has_effect
             text={localize('log in')}
             onClick={redirectToLogin}
         />
-        <p className='purchase-container__error-login-prompt'>{localize('Don\'t have a [_1] account?', ['Binary.com'])}</p>
-        <a className='purchase-container__error-login-link' href='javascript:;'><span className='purchase-container__error-info purchase-container__error-login-info'>{localize('Create one now')}</span></a>
+        <p className='message-box__login-prompt'>{localize('Don\'t have a [_1] account?', ['Binary.com'])}</p>
+        <a className='message-box__login-link' href='javascript:;'>
+            <span className='message-box__info message-box__login-info'>
+                {localize('Create one now')}
+            </span>
+        </a>
     </div>
 );
 

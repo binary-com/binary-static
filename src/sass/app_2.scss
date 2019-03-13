@@ -19,6 +19,8 @@
 // Drawer
 @import 'app_2/_common/drawer/drawer';
 @import 'app_2/_common/drawer/positions-drawer';
+@import 'app_2/_common/drawer/positions-drawer-card';
+@import 'app_2/_common/drawer/positions-drawer-card-details';
 @import 'app_2/_common/drawer/positions-progress-slider';
 
 // Form
@@ -41,6 +43,7 @@
 @import 'app_2/_common/components/date-picker';
 @import 'app_2/_common/components/error-boundary';
 @import 'app_2/_common/components/login-prompt';
+@import 'app_2/_common/components/message-box';
 @import 'app_2/_common/components/number-selector';
 @import 'app_2/_common/components/popconfirm';
 @import 'app_2/_common/components/range-slider';

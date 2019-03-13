@@ -3,13 +3,11 @@ import {
     computed,
     observable }                   from 'mobx';
 import { WS }                      from 'Services';
-import {
-    epochToMoment,
-    getDiffDuration }              from 'Utils/Date';
 import { formatPortfolioPosition } from './Helpers/format-response';
 import {
-    getDurationUnitText,
-    getDurationUnitValue }         from './Helpers/details';
+    getDurationPeriod,
+    getDurationTime,
+    getDurationUnitText }          from './Helpers/details';
 import {
     getDisplayStatus,
     getEndSpotTime,
@@ -74,6 +72,7 @@ export default class PortfolioStore extends BaseStore {
             // TODO: Refactor with contract-store and use common helpers to handle contract result
             WS.proposalOpenContract(contract_id).then(action((proposal_response) => {
                 // populate result details box for specified positions card
+                WS.forget('proposal_open_contract', this.populateResultDetails, { contract_id: response.contract_id });
                 this.populateResultDetails(proposal_response);
             }));
         }
@@ -104,6 +103,7 @@ export default class PortfolioStore extends BaseStore {
         portfolio_position.profit_loss      = profit_loss;
         portfolio_position.tick_count       = proposal.tick_count;
         portfolio_position.is_valid_to_sell = isValidToSell(proposal);
+        portfolio_position.chart_config     = proposal;
 
         if (!proposal.is_valid_to_sell) {
             portfolio_position.status = 'no-resale';
@@ -118,8 +118,9 @@ export default class PortfolioStore extends BaseStore {
 
     @action.bound
     onClickSell(contract_id) {
-        const i = this.positions.findIndex(pos => +pos.id === +contract_id);
+        const i = this.getPositionIndexById(contract_id);
         const bid_price = this.positions[i].bid_price;
+        this.positions[i].is_sell_requested = false;
         if (contract_id && bid_price) {
             WS.sell(contract_id, bid_price).then(this.handleSell);
         }
@@ -127,55 +128,46 @@ export default class PortfolioStore extends BaseStore {
 
     @action.bound
     handleSell(response) {
-        const is_contract_mode = this.root_store.modules.smart_chart.is_contract_mode;
-        // TODO: Refactor with ContractStore for re-drawing of chart markers and barriers
         // Toast messages are temporary UI for prompting user of sold contracts
-        if (!is_contract_mode && response.error) {
+        if (response.error) {
             // If unable to sell due to error, give error via toast message if not in contract mode
+            const i = this.getPositionIndexById(response.echo_req.sell);
+            this.positions[i].is_sell_requested = false;
             this.root_store.ui.addToastMessage({
                 message: response.error.message,
                 type   : 'error',
             });
-        // Check if still in contract_mode
-        } else if (is_contract_mode && !response.error) {
-            WS.forget('proposal_open_contract', this.root_store.modules.contract.updateProposal, { contract_id: response.sell.contract_id });
-            WS.proposalOpenContract(response.sell.contract_id).then(action((proposal_response) => {
-                // update contract store proposal after sell
-                this.root_store.modules.contract.updateProposal(proposal_response);
-                this.populateResultDetails(proposal_response);
-            }));
+        } else if (!response.error && response.sell) {
+            const i = this.getPositionIndexById(response.sell.contract_id);
+            this.positions[i].is_sell_requested = false;
             // update contract store sell info after sell
             this.root_store.modules.contract.sell_info = {
                 sell_price    : response.sell.sold_for,
                 transaction_id: response.sell.transaction_id,
             };
+            this.root_store.ui.addToastMessage({
+                message: `Contract was sold for ${response.sell.sold_for}.`,
+                type   : 'info',
+            });
         }
     }
 
     populateResultDetails(response) {
         const contract_response = response.proposal_open_contract;
-        const i = this.positions.findIndex(pos => +pos.id === +contract_response.contract_id);
+        const i = this.getPositionIndexById(contract_response.contract_id);
         const sell_time = isUserSold(contract_response) ?
             +contract_response.date_expiry
             :
             getEndSpotTime(contract_response);
-        const duration_diff =
-            getDiffDuration(
-                epochToMoment(this.positions[i].purchase_time || this.positions[i].date_start),
-                epochToMoment(this.positions[i].expiry_time)
-            );
-        const duration = this.positions[i].tick_count ?
-            this.positions[i].tick_count
-            :
-            getDurationUnitValue(duration_diff);
 
-        this.positions[i].id_sell       = +contract_response.transaction_ids.sell;
-        this.positions[i].barrier       = +contract_response.barrier;
-        this.positions[i].duration      = duration;
-        this.positions[i].duration_unit = getDurationUnitText(duration_diff);
-        this.positions[i].entry_spot    = +contract_response.entry_spot;
-        this.positions[i].sell_time     = sell_time;
-        this.positions[i].result        = getDisplayStatus(contract_response);
+        this.positions[i].id_sell          = +contract_response.transaction_ids.sell;
+        this.positions[i].barrier          = +contract_response.barrier;
+        this.positions[i].duration         = getDurationTime(contract_response);
+        this.positions[i].duration_unit    = getDurationUnitText(getDurationPeriod(contract_response));
+        this.positions[i].entry_spot       = +contract_response.entry_spot;
+        this.positions[i].sell_time        = sell_time;
+        this.positions[i].result           = getDisplayStatus(contract_response);
+        this.positions[i].is_valid_to_sell = isValidToSell(contract_response);
     }
 
     @action.bound
@@ -185,10 +177,16 @@ export default class PortfolioStore extends BaseStore {
 
     @action.bound
     removePositionById(contract_id) {
-        let i = this.positions.findIndex(pos => +pos.id === +contract_id);
+        const is_contract_mode = this.root_store.modules.smart_chart.is_contract_mode;
+        let i = this.getPositionIndexById(contract_id);
         // check if position to be removed is out of range from the maximum amount rendered in drawer
         if (this.positions.length > 4) i += 1;
         this.positions.splice(i, 1);
+        // check if chart is in contract_mode before removing contract details from chart
+        if (is_contract_mode) {
+            this.root_store.modules.contract.onCloseContract();
+            this.root_store.modules.trade.requestProposal();
+        }
     }
 
     @action.bound
@@ -216,6 +214,10 @@ export default class PortfolioStore extends BaseStore {
             this.clearTable();
             WS.forgetAll('proposal_open_contract', 'transaction');
         }
+    }
+
+    getPositionIndexById(contract_id) {
+        return this.positions.findIndex(pos => +pos.id === +contract_id);
     }
 
     @computed
