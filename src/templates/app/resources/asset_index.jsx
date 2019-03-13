@@ -7,7 +7,7 @@ const AssetIndex = () => (
             <p id='errorMsg' className='error-msg invisible' />
             <div id='asset-index' className='has-tabs gr-parent' />
             <p className='notice-msg center-text invisible' id='empty-asset-index'>
-                {it.L('Asset index is unavailable at this time.')}
+                {it.L('Asset index is unavailable in this country. If you have an active [_1] account, please log in for full access.', it.website_name)}
             </p>
         </div>
     </div>
