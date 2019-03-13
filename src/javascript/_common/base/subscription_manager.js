@@ -65,24 +65,30 @@ const SubscriptionManager = (() => {
 
     /**
      * Add subscription without subscribers from request
-     * E.g. open subscription to proposal_open_contract on buy
-     * @param {String}   msg_type             msg_type of the subscription
-     * @param {Object}   send_request         the whole object of the request to be made
-     * @param {Object}   subscribe_request    the object of the subscription request
+     * E.g. open subscription to proposal_open_contract on buy request
+     * @param {String}   msg_type               msg_type of the subscription
+     * @param {Object}   send_request           the object of the request to be made
+     * @param {Object}   subscribe_request      the object of the subscription request
+     * @param {String}   subscription_prop      prop to add to subscribe_request from initial request, e.g. contract_id
      */
-    const addSubscriptionFromRequest = (msg_type, send_request, subscribe_request) =>
-        new Promise((resolve) => {
+    const addSubscriptionFromRequest = (msg_type, send_request, subscribe_request, subscription_prop = '') =>
+        new Promise((resolve, reject) => {
             let sub_id;
             let is_stream = false;
 
             BinarySocket.send(send_request, {
                 callback: (response) => {
-                    // TODO: add error handling
+                    if (response.error) {
+                        reject(response);
+                        return;
+                    }
                     if (!is_stream) {
-                        is_stream                     = true;
-                        // TODO: generalize this
-                        subscribe_request.contract_id = response.buy.contract_id;
-                        sub_id                        = ++subscription_id;
+                        is_stream = true;
+                        sub_id    = ++subscription_id;
+
+                        if (subscription_prop) {
+                            subscribe_request[subscription_prop] = response[response.msg_type][subscription_prop];
+                        }
 
                         subscriptions[sub_id] = {
                             msg_type,
