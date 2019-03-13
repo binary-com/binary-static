@@ -1,4 +1,5 @@
 const isEuCountry    = require('../../app/common/country_base').isEuCountry;
+const BinarySocket   = require('../../_common/base/socket_base');
 const getElementById = require('../../_common/common_functions').getElementById;
 const MenuSelector   = require('../../_common/menu_selector');
 
@@ -25,15 +26,15 @@ module.exports = {
     },
     BinaryOptionsForMT5: {
         onLoad: () => {
-            let menu_sections = [
+            const menu_sections = [
                 'what-are-binary-options',
-                'how-to-trade-binary',
                 'types-of-trades',
             ];
-            if (isEuCountry()) {
-                getElementById('how-to-trade-binary').setVisibility(0);
-                menu_sections = menu_sections.filter(menu_item => menu_item !== 'how-to-trade-binary');
-            }
+            BinarySocket.wait('website_status').then(() => {
+                if (!isEuCountry()) {
+                    menu_sections.splice(1, 0, 'how-to-trade-binary');
+                }
+            });
             MenuSelector.init(menu_sections);
         },
         onUnload: () => { MenuSelector.clean(); },
