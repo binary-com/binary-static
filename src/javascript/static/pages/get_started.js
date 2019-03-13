@@ -1,4 +1,3 @@
-const getElementById = require('../../_common/common_functions').getElementById;
 const MenuSelector   = require('../../_common/menu_selector');
 const ClientBase     = require('../../_common/base/client_base');
 
