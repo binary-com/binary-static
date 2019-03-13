@@ -79,8 +79,7 @@ const SubscriptionManager = (() => {
             BinarySocket.send(send_request, {
                 callback: (response) => {
                     if (response.error) {
-                        reject(response);
-                        return;
+                        return reject(response);
                     }
                     if (!is_stream) {
                         is_stream = true;
@@ -96,10 +95,9 @@ const SubscriptionManager = (() => {
                             stream_id  : '',             // stream_id will be updated after receiving the response
                             subscribers: [],
                         };
-                        resolve(response);
-                        return;
+                        return resolve(response);
                     }
-                    dispatch(response, sub_id);
+                    return dispatch(response, sub_id);
                 },
             });
         });
