@@ -1,6 +1,6 @@
 export const getChartConfig = (contract_info) => {
-    const start = contract_info.date_start;
-    const end   = contract_info.date_expiry;
+    const start = contract_info.purchase_time;
+    const end   = getEndSpotTime(contract_info);
     const granularity = calculateGranularity(end - start);
 
     return {
@@ -37,7 +37,7 @@ export const getEndSpot = (contract_info) => (
 );
 
 export const getEndSpotTime = (contract_info) => (
-    +contract_info.exit_tick_time
+    isUserSold(contract_info) ? +contract_info.sell_time : +contract_info.exit_tick_time
 );
 
 export const getFinalPrice = (contract_info) => (

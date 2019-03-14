@@ -41,6 +41,9 @@ export default class ContractStore extends BaseStore {
     @observable has_error         = false;
     @observable error_message     = '';
     @observable is_sell_requested = false;
+    @observable contract_symbol;
+    @observable trade_symbol;
+    @observable is_left_epoch_set = false;
 
     // -------------------
     // ----- Actions -----
@@ -57,15 +60,16 @@ export default class ContractStore extends BaseStore {
 
     @action.bound
     drawChart(SmartChartStore, contract_info) {
-        SmartChartStore.setContractMode(true);
-        SmartChartStore.updateChartZoom(100);
-        SmartChartStore.updateEpochScrollToOffset(0);
         if (isEnded(contract_info)) {
             this.chart_config = getChartConfig(contract_info);
         } else {
-            SmartChartStore.updateEpochScrollToValue(contract_info.purchase_time);
+            if (!this.is_left_epoch_set) {
+                SmartChartStore.updateEpochScrollToValue(contract_info.purchase_time || contract_info.date_start);
+            }
+
             delete this.chart_config.end_epoch;
             delete this.chart_config.start_epoch;
+            this.is_left_epoch_set = true;
         }
 
         createChartBarrier(SmartChartStore, contract_info);
@@ -88,22 +92,23 @@ export default class ContractStore extends BaseStore {
         this.smart_chart   = this.root_store.modules.smart_chart;
 
         if (contract_id) {
-            this.smart_chart.setContractMode(true);
             this.smart_chart.updateEpochScrollToOffset(2);
+            this.smart_chart.updateChartZoom(100);
+            this.smart_chart.setContractMode(true);
             WS.subscribeProposalOpenContract(this.contract_id, this.updateProposal, false);
         }
     }
 
     @action.bound
     onLoadContract(contract_info) {
-        if (contract_info.contract_id === this.contract_id || !contract_info) return;
+        if (+contract_info.contract_id === this.contract_id || !contract_info) return;
         this.onSwitchAccount(this.accountSwitcherListener.bind(null));
         this.smart_chart   = this.root_store.modules.smart_chart;
         this.contract_info = contract_info;
         this.contract_id   = +contract_info.contract_id;
         this.smart_chart.setContractMode(true);
         this.smart_chart.updateEpochScrollToOffset(2);
-
+        this.smart_chart.updateChartZoom(100);
         this.drawChart(this.smart_chart, this.contract_info);
     }
 
@@ -122,6 +127,7 @@ export default class ContractStore extends BaseStore {
         this.sell_info         = {};
         this.is_sell_requested = false;
         this.chart_config      = {};
+        this.is_left_epoch_set = false;
 
         destroyChartTickMarkers();
         this.smart_chart.removeBarriers();
@@ -155,6 +161,7 @@ export default class ContractStore extends BaseStore {
         }
         this.contract_info = response.proposal_open_contract;
         this.drawChart(this.smart_chart, this.contract_info);
+
     }
 
     @action.bound
