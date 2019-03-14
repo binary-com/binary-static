@@ -77,7 +77,7 @@ const WS = (() => {
         SubscriptionManager.addSubscriptionFromRequest(
             'proposal_open_contract',
             { ...buy_request, subscribe: 1 },
-            { proposal_open_contract: 1, subscribe: 1, contract_id: '' },
+            { proposal_open_contract: 1, subscribe: 1 },
             'contract_id',
         );
 
