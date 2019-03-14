@@ -11,15 +11,25 @@ const toISOFormat      = require('../../../../_common/string_util').toISOFormat;
 const TradingTimesUI = (() => {
     let $date,
         $container,
+        $date_container,
+        $date_notice,
+        $empty_trading_times,
         columns,
         active_symbols,
         trading_times;
 
     const onLoad = () => {
-        $date      = $('#trading-date');
-        $container = $('#trading-times');
+        $date                = $('#trading-date');
+        $container           = $('#trading-times');
+        $date_container      = $('#trading-date-container');
+        $date_notice         = $('#trading-date-notice');
+        $empty_trading_times = $('#empty-trading-times');
+
         columns    = ['Asset', 'Opens', 'Closes', 'Settles', 'UpcomingEvents'];
         active_symbols = trading_times = undefined;
+        $empty_trading_times.setVisibility(0);
+        $date_container.setVisibility(1);
+        $date_notice.setVisibility(1);
 
         if ($container.contents().length) return;
 
@@ -72,6 +82,13 @@ const TradingTimesUI = (() => {
 
     const populateTable = () => {
         if (!active_symbols || !trading_times) return;
+        if (!active_symbols.length) {
+            $container.empty();
+            $date_container.setVisibility(0);
+            $date_notice.setVisibility(0);
+            $empty_trading_times.setVisibility(1);
+            return;
+        }
 
         $('#errorMsg').setVisibility(0);
 
