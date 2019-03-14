@@ -66,7 +66,7 @@ class Trade extends React.Component {
                     confirm_button_text={localize('Switch to legacy platform')}
                     is_visible={this.props.has_only_forward_starting_contracts}
                     onCancel={() => this.props.setHasOnlyForwardingContracts(false)}
-                    onConfirm={() => window.open(URL.websiteUrl() && this.props.setHasOnlyForwardingContracts(false))}
+                    onConfirm={() => window.open(URL.websiteUrl()) && this.props.setHasOnlyForwardingContracts(false)}
                 >
                     <Localize str='Sorry, but forward-start contracts are not supported yet on our new platform.' />
                 </FullPageModal>
