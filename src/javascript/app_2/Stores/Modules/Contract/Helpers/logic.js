@@ -1,5 +1,5 @@
 export const getChartConfig = (contract_info) => {
-    const start = contract_info.purchase_time;
+    const start = contract_info.date_start;
     const end   = getEndSpotTime(contract_info);
     const granularity = calculateGranularity(end - start);
 
@@ -33,11 +33,11 @@ export const getDisplayStatus = (contract_info) => {
 // for path dependent contracts the contract is sold from server side
 // so we need to use sell spot and sell spot time instead
 export const getEndSpot = (contract_info) => (
-    +contract_info.exit_tick
+    isUserSold(contract_info) ? +contract_info.sell_spot : +contract_info.exit_tick
 );
 
 export const getEndSpotTime = (contract_info) => (
-    isUserSold(contract_info) ? +contract_info.sell_time : +contract_info.exit_tick_time
+    isUserSold(contract_info) ? +contract_info.sell_spot_time : +contract_info.exit_tick_time
 );
 
 export const getFinalPrice = (contract_info) => (

@@ -155,10 +155,7 @@ export default class PortfolioStore extends BaseStore {
     populateResultDetails(response) {
         const contract_response = response.proposal_open_contract;
         const i = this.getPositionIndexById(contract_response.contract_id);
-        const sell_time = isUserSold(contract_response) ?
-            +contract_response.date_expiry
-            :
-            getEndSpotTime(contract_response);
+        const sell_time = getEndSpotTime(contract_response);
 
         this.positions[i].id_sell          = +contract_response.transaction_ids.sell;
         this.positions[i].barrier          = +contract_response.barrier;

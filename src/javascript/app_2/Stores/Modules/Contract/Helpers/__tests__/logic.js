@@ -6,7 +6,7 @@ describe('logic', () => {
     describe('getChartConfig', () => {
         it('should work as expected with values leading to granularity 0', () => {
             const contract_info = {
-                "date_expiry":1544000100,
+                "exit_tick_time":1544000100,
                 "date_start":1544000000,
             };
             expect(Logic.getChartConfig(contract_info)).to.eql({
@@ -18,7 +18,7 @@ describe('logic', () => {
         });
         it('should work as expected with values leading to granularity 120', () => {
             const contract_info = {
-                "date_expiry":1544005000,
+                "exit_tick_time":1544005000,
                 "date_start":1544000000,
             };
             expect(Logic.getChartConfig(contract_info)).to.eql({
@@ -30,7 +30,7 @@ describe('logic', () => {
         });
         it('should work as expected with values leading to granularity 600', () => {
             const contract_info = {
-                "date_expiry":1544010000,
+                "exit_tick_time":1544010000,
                 "date_start":1544000000,
             };
             expect(Logic.getChartConfig(contract_info)).to.eql({
@@ -42,7 +42,7 @@ describe('logic', () => {
         });
         it('should work as expected with values leading to granularity 900', () => {
             const contract_info = {
-                "date_expiry":1544025000,
+                "exit_tick_time":1544025000,
                 "date_start":1544000000,
             };
             expect(Logic.getChartConfig(contract_info)).to.eql({
@@ -54,7 +54,7 @@ describe('logic', () => {
         });
         it('should work as expected with values leading to granularity 14400', () => {
             const contract_info = {
-                "date_expiry":1546000000,
+                "exit_tick_time":1546000000,
                 "date_start":1544000000,
             };
             expect(Logic.getChartConfig(contract_info)).to.eql({
@@ -66,7 +66,7 @@ describe('logic', () => {
         });
         it('should work as expected when duration is more than 30 * 24 * 3600', () => {
             const contract_info = {
-                "date_expiry":1546592100,
+                "exit_tick_time":1546592100,
                 "date_start":1544000000,
             };
             expect(Logic.getChartConfig(contract_info)).to.eql({
