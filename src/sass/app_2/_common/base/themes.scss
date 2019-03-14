@@ -27,7 +27,6 @@ $themes: (
         text_primary_color          : $COLOR_LIGHT_BLACK_1,
         text_secondary_color        : $COLOR_LIGHT_BLACK_2,
         won_gradient_color          : $COLOR_LIGHT_GREEN_GRADIENT,
-        detail_color              :  #cdcdcf, /* stylelint-disable-line color-no-hex */
     ),
     dark: (
         active_color                : $COLOR_DARK_BLUE_5,
@@ -56,6 +55,5 @@ $themes: (
         text_primary_color          : $COLOR_DARK_BLUE_7,
         text_secondary_color        : $COLOR_DARK_BLUE_7,
         won_gradient_color          : $COLOR_DARK_GREEN_GRADIENT,
-        detail_color              :  #cdcdcf, /* stylelint-disable-line color-no-hex */
     ),
 );
