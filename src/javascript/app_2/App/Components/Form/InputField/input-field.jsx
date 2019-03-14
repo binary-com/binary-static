@@ -90,7 +90,9 @@ const InputField = ({
         }
 
         onChange(e);
-        callback(e);
+        if (callback) {
+            callback(e);
+        }
     };
 
     const getDecimals = (val) => {
