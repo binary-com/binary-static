@@ -21,12 +21,8 @@ const AllowEquals = ({
         duration_unit, contract_start_type);
     const has_callputequal          = hasCallPutEqual(contract_types_list);
 
-    let show = false;
-    if (isRiseFallEqual(contract_type) && ((has_callputequal_duration || expiry_type === 'endtime') && has_callputequal)) {
-        show = true;
-    } else {
-        show = false;
-    }
+    const has_allow_equals = isRiseFallEqual(contract_type) &&
+            ((has_callputequal_duration || expiry_type === 'endtime') && has_callputequal);
 
     const changeValue = (e) => {
         const { name, checked } = e.target;
@@ -34,7 +30,7 @@ const AllowEquals = ({
     };
 
     return (
-        show &&
+        has_allow_equals &&
             <div className='allow-equals'>
                 <InputField
                     className='allow-equals__input-field'
