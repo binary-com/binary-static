@@ -44,6 +44,7 @@
         transition: transform 0.25s ease;
         transform: rotate(0deg);
         transform-origin: 50% 45%;
+        @extend %inline-icon;
     }
     &:hover:not(.show) {
         background: $COLOR_LIGHT_BLACK_4;
