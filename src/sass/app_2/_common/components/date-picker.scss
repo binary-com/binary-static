@@ -16,6 +16,7 @@
     &__icon {
         @extend .absolute-center-v;
         @extend .icon--centered;
+        @extend %inline-icon;
         opacity: 1;
         transition: opacity 0.1s;
 

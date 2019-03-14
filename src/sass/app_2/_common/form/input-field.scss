@@ -57,6 +57,9 @@
             background: transparent;
         }
     }
+    &__icon {
+        @extend %inline-icon;
+    }
 }
 
 /** @define input */
