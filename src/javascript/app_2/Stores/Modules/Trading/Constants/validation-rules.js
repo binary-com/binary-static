@@ -16,8 +16,7 @@ const getValidationRules = () => ({
     barrier_1: {
         rules: [
             ['req'    , { condition: store => store.barrier_count && store.form_components.indexOf('barrier') > -1, message: localize('Barrier is a required field.') }],
-            ['barrier', { condition: store => store.contract_expiry_type !== 'daily' && store.barrier_count }],
-            ['number' , { condition: store => store.contract_expiry_type === 'daily' && store.barrier_count, type: 'float', input: 'barrier' }],
+            ['barrier', { condition: store => store.barrier_count }],
             ['custom' , { func: (value, options, store, inputs) => store.barrier_count > 1 ? +value > +inputs.barrier_2 : true, message: localize('Higher barrier must be higher than lower barrier.') }],
         ],
         trigger: 'barrier_2',
@@ -25,8 +24,7 @@ const getValidationRules = () => ({
     barrier_2: {
         rules: [
             ['req'    , { condition: store => store.barrier_count > 1 && store.form_components.indexOf('barrier') > -1, message: localize('Barrier is a required field.') }],
-            ['barrier', { condition: store => store.contract_expiry_type !== 'daily' && store.barrier_count }],
-            ['number' , { condition: store => store.contract_expiry_type === 'daily' && store.barrier_count, type: 'float', input: 'barrier' }],
+            ['barrier', { condition: store => store.barrier_count }],
             ['custom' , { func: (value, options, store, inputs) => (/^[+-]/g.test(inputs.barrier_1) && /^[+-]/g.test(value)) || (/^(?![+-])/g.test(inputs.barrier_1) && /^(?![+-])/g.test(value)), message: localize('Both barriers should be relative or absolute') }],
             ['custom' , { func: (value, options, store, inputs) => +inputs.barrier_1 > +value, message: localize('Lower barrier must be lower than higher barrier.') }],
         ],
