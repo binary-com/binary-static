@@ -164,6 +164,7 @@ export default class PortfolioStore extends BaseStore {
         this.positions[i].sell_time        = sell_time;
         this.positions[i].result           = getDisplayStatus(contract_response);
         this.positions[i].is_valid_to_sell = isValidToSell(contract_response);
+        this.positions[i].contract_info    = contract_response;
     }
 
     @action.bound

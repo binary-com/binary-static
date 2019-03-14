@@ -8,6 +8,10 @@
         .trade-container {
             .chart-container {
                 max-width: calc(100% - #{$SIDEBAR_WIDTH} - 16px);
+
+                .cq-chart-controls {
+                    display: none;
+                }
             }
         }
     }
