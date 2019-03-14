@@ -12,7 +12,7 @@ export const allowed_query_string_variables = [
     'duration_unit',
     'expiry_date',
     'expiry_type',
-    'is_equal_checked',
+    'is_equal',
     'last_digit',
     'start_date',
     'start_time',
@@ -28,13 +28,13 @@ export const getNonProposalQueryStringVariables = (store) => {
     if (!store) return non_proposal_query_string_variables;
 
     const { contract_start_type } = ContractType.getStartType(store.start_date);
-    const { expiry_type, is_equal_checked } = store;
+    const { expiry_type, is_equal } = store;
 
     return [
         ...non_proposal_query_string_variables,
         ...(contract_start_type === 'forward' ? ['start_time'] : []),
         ...(expiry_type         === 'endtime' ? ['expiry_date'] : []),
-        ...(is_equal_checked                  ? ['is_equal_checked'] : []),
+        ...(is_equal                          ? ['is_equal'] : []),
     ];
 };
 

@@ -41,7 +41,7 @@ export default class TradeStore extends BaseStore {
     @observable is_trade_component_mounted = false;
     @observable is_purchase_enabled        = false;
     @observable is_trade_enabled           = false;
-    @observable is_equal_checked           = 0;
+    @observable is_equal                   = 0;
 
     // Underlying
     @observable symbol;
@@ -138,7 +138,7 @@ export default class TradeStore extends BaseStore {
             },
         );
         reaction(
-            () => this.is_equal_checked,
+            () => this.is_equal,
             () => {
                 this.onAllowEqualsChange();
             },
@@ -175,10 +175,10 @@ export default class TradeStore extends BaseStore {
             query_string_values = this.updateQueryString();
         }
 
-        // Checks for is_equal_checked in query string and update the contract_type to rise_fall or rise_fall_equal
-        const { contract_type, is_equal_checked } = query_string_values;
+        // Checks for is_equal in query string and update the contract_type to rise_fall or rise_fall_equal
+        const { contract_type, is_equal } = query_string_values;
         if (isRiseFallEqual(contract_type)) {
-            URLHelper.setQueryParam({ 'contract_type': parseInt(is_equal_checked) ? 'rise_fall_equal' : 'rise_fall' });
+            URLHelper.setQueryParam({ 'contract_type': parseInt(is_equal) ? 'rise_fall_equal' : 'rise_fall' });
             query_string_values = this.updateQueryString();
         }
 
@@ -421,7 +421,7 @@ export default class TradeStore extends BaseStore {
 
     @action.bound
     onAllowEqualsChange() {
-        this.processNewValuesAsync({ contract_type: parseInt(this.is_equal_checked) ? 'rise_fall_equal' : 'rise_fall' }, true);
+        this.processNewValuesAsync({ contract_type: parseInt(this.is_equal) ? 'rise_fall_equal' : 'rise_fall' }, true);
     }
 
     @action.bound

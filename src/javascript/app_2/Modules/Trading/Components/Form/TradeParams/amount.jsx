@@ -24,7 +24,7 @@ const Amount = ({
     currency,
     duration_unit,
     expiry_type,
-    is_equal_checked,
+    is_equal,
     is_minimized,
     is_nativepicker,
     is_single_currency,
@@ -94,7 +94,7 @@ const Amount = ({
                 duration_unit={duration_unit}
                 expiry_type={expiry_type}
                 onChange={onChange}
-                value={parseInt(is_equal_checked)}
+                value={parseInt(is_equal)}
             />
         </Fieldset>
     );
@@ -114,7 +114,7 @@ Amount.propTypes = {
     currency           : PropTypes.string,
     duration_unit      : PropTypes.string,
     expiry_type        : PropTypes.string,
-    is_equal_checked   : PropTypes.oneOfType([
+    is_equal           : PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
     ]),
