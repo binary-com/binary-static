@@ -417,24 +417,14 @@
         }
     }
     &:disabled {
+        background-color: $COLOR_LIGHT_BLACK_3_SOLID_2;
         color: $COLOR_DARK_BLUE_7;
-        @include themify($themes) {
-            background-color: themed('disabled_color');
-        }
 
-        .btn-purchase__currency {
-            background-color: $COLOR_GREEN_1;
-        }
         .btn-purchase__content {
-            background-color: transparent;
-        }
-        .btn-purchase__info {
-            background-color: $COLOR_LIGHT_BLACK_3;
+            background-color: $COLOR_LIGHT_BLACK_3_SOLID_1;
         }
         .btn-purchase__effect-detail {
-            @include themify($themes) {
-                border-color: transparent transparent transparent themed('detail_color');
-            }
+            border-color: transparent transparent transparent $COLOR_LIGHT_BLACK_3_SOLID_1;
         }
         .btn-purchase__trade-type-icon, .btn-purchase__trade-type-text, .btn-purchase__profit, .btn-purchase__return {
             overflow: hidden;
@@ -447,8 +437,8 @@
             display: block;
         }
         .btn-purchase__trade-type-icon svg, .btn-purchase__trade-type-text span, .btn-purchase__profit-text, .btn-purchase__return-text {
-            opacity: 0.32;
             background-color: $COLOR_WHITE;
+            opacity: 0.32;
         }
         .btn-purchase__trade-type-text, .btn-purchase__trade-type-text span, .btn-purchase__profit-text, .btn-purchase__return-text {
             width: 56px;
@@ -460,20 +450,15 @@
     }
     &:disabled.animate {
         background-color: $COLOR_GREEN_2;
-        color: $COLOR_DARK_BLUE_7;
 
         .btn-purchase__content {
             background-color: $COLOR_GREEN_1;
         }
         .btn-purchase__effect-detail {
             border-color: transparent transparent transparent $COLOR_GREEN_1;
-            opacity: 1;
         }
         .btn-purchase__trade-type-icon svg, .btn-purchase__trade-type-text span, .btn-purchase__profit-text, .btn-purchase__return-text {
             animation: data--loading 0.6s ease infinite;
-        }
-        .btn-purchase__info {
-            background-color: transparent;
         }
     }
     &__shadow-wrapper:hover:after {
