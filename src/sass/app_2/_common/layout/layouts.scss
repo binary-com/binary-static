@@ -11,6 +11,14 @@
             }
         }
     }
+    &--is-blurred {
+        filter: blur(3px);
+        @supports (-ms-ime-align:auto) { // Edge filter:blur not working when element has overflow:hidden
+            & .trade-container, & .statement {
+                filter: blur(3px);
+            }
+        }
+    }
     &--show-positions-drawer {
         .trade-container {
             .chart-container {

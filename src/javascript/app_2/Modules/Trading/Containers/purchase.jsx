@@ -62,35 +62,12 @@ const Purchase = ({
                 <PurchaseLock onClick={togglePurchaseLock} />
                 }
                 <React.Fragment>
-                    {(!is_purchase_enabled && idx === 0) &&
-                    <UILoader classNameBlock='purchase-container__loading' />
-                    }
                     <ContractInfo
                         currency={currency}
                         proposal_info={info}
                         has_increased={info.has_increased}
                         is_visible={!is_contract_mode}
                     />
-<<<<<<< HEAD
-                    :
-                    <React.Fragment>
-                        <ContractInfo
-                            currency={currency}
-                            proposal_info={info}
-                            has_increased={info.has_increased}
-                        />
-                        {is_purchase_confirm_on ?
-                            <PopConfirm
-                                alignment='left'
-                                cancel_text={localize('Cancel')}
-                                confirm_text={localize('Purchase')}
-                                message={localize('Are you sure you want to purchase this contract?')}
-                            >
-                                {purchase_button}
-                            </PopConfirm>
-                            :
-                            purchase_button
-=======
                     <div className='btn-purchase__shadow-wrapper'>
                         {
                             is_purchase_confirm_on ?
@@ -104,7 +81,6 @@ const Purchase = ({
                                 </PopConfirm>
                                 :
                                 purchase_button
->>>>>>> d93689b0eb815ad6753ed6be56f24293a4bcf892
                         }
                     </div>
                 </React.Fragment>

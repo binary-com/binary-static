@@ -8,12 +8,14 @@ import { connect }    from 'Stores/connect';
 const AppContents = ({
     children, is_contract_mode,
     is_positions_drawer_on,
+    is_blurred,
 }) => (
     <div
         id='app_contents'
         className={classNames('app-contents', {
             'app-contents--show-positions-drawer': is_positions_drawer_on,
             'app-contents--contract-mode'        : is_contract_mode,
+            'app-contents--is-blurred'           : is_blurred,
         })}
     >
         {/* Calculate height of user screen and offset height of header and footer */}
@@ -35,5 +37,6 @@ export default withRouter(connect(
     ({ modules, ui }) => ({
         is_positions_drawer_on: ui.is_positions_drawer_on,
         is_contract_mode      : modules.smart_chart.is_contract_mode,
+        is_blurred            : ui.is_blurred,
     })
 )(AppContents));

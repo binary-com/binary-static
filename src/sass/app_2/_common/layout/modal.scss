@@ -1,0 +1,29 @@
+.modal-root {
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: transparentize($COLOR_DARK_BLUE_1, 0.7);
+    z-index: 9999;
+    display: none;
+
+    &:not(:empty) {
+        display: flex;
+        animation: fade-in;
+        animation-duration: 0.2s;
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
