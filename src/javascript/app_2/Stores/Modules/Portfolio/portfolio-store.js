@@ -11,7 +11,6 @@ import {
 import {
     getDisplayStatus,
     getEndSpotTime,
-    isUserSold,
     isValidToSell }                from '../Contract/Helpers/logic';
 import BaseStore                   from '../../base-store';
 
