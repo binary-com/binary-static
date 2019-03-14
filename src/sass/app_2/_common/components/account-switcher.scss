@@ -8,75 +8,77 @@
     padding: 0 1.6em;
     cursor: pointer;
 
-    @include themify($themes) {
-        &__container {
-            display: flex;
-            -webkit-box-align: center;
-            align-items: center;
-        }
-        &__wrapper {
-            display: flex;
-            align-items: center;
-            position: relative;
-            height: 100%;
-            flex-direction: row;
-            justify-content: center;
-        }
-        &__id {
-            @include typeface(--title-center-bold-black, default);
-            pointer-events: none;
+    &__container {
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+    }
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        position: relative;
+        height: 100%;
+        flex-direction: row;
+        justify-content: center;
+    }
+    &__id {
+        @include typeface(--title-center-bold-black, default);
+        pointer-events: none;
+        @include themify(themes) {
             color: themed('text_color');
+        }
 
-            &:after {
-                display: block;
-                content: attr(title);
-                font-weight: 500;
-                height: 0;
-                overflow: hidden;
-                visibility: hidden;
-            }
+        &:after {
+            display: block;
+            content: attr(title);
+            font-weight: 500;
+            height: 0;
+            overflow: hidden;
+            visibility: hidden;
         }
-        &__balance {
-            @include typeface(--title-center-bold-green, default);
-            @include toEm(padding, 8px, 1.6em);
-            pointer-events: none;
-        }
-        &__select-arrow {
-            pointer-events: none;
-            transition: transform 0.25s ease;
-            transform: rotate(0deg);
-            transform-origin: 50% 45%;
-            @extend %inline-icon;
-        }
-        &:hover:not(.show) {
+    }
+    &__balance {
+        @include typeface(--title-center-bold-green, default);
+        @include toEm(padding, 8px, 1.6em);
+        pointer-events: none;
+    }
+    &__select-arrow {
+        pointer-events: none;
+        transition: transform 0.25s ease;
+        transform: rotate(0deg);
+        transform-origin: 50% 45%;
+        @extend %inline-icon;
+    }
+    &:hover:not(.show) {
+        @include themify($themes) {
             background: themed('hover_color');
 
             .symbols {
                 background: themed('hover_color');
             }
         }
-        &--is-virtual {
-            .acc-info__balance {
-                color: $COLOR_ORANGE;
-            }
-            &:before {
-                @include typeface(--small-left-normal-orange, uppercase);
-                @include toEm(padding, 2px 8px, 1.2em);
-                @include toEm(margin-right, 8px, 1.2em);
-                content: 'demo';
-                border: 1px solid $COLOR_ORANGE;
-                border-radius: 16px;
-                pointer-events: none;
-            }
+    }
+    &--is-virtual {
+        .acc-info__balance {
+            color: $COLOR_ORANGE;
         }
-        &--show {
-            .acc-info__select-arrow {
-                transform: rotate(180deg);
-            }
+        &:before {
+            @include typeface(--small-left-normal-orange, uppercase);
+            @include toEm(padding, 2px 8px, 1.2em);
+            @include toEm(margin-right, 8px, 1.2em);
+            content: 'demo';
+            border: 1px solid $COLOR_ORANGE;
+            border-radius: 16px;
+            pointer-events: none;
         }
-        &__button {
-            margin: 0 1.6em;
+    }
+    &--show {
+        .acc-info__select-arrow {
+            transform: rotate(180deg);
         }
+    }
+    &__button {
+        margin: 0 1.6em;
     }
 }
 
