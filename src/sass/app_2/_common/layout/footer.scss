@@ -32,6 +32,7 @@
         height: 100%;
         display: inline-flex;
         align-items: center;
+        position: relative;
 
         &:hover {
             @include themify($themes) {
@@ -39,7 +40,7 @@
             }
 
             .footer__icon {
-                @extend .inline-icon.active;
+                @extend %inline-icon.active;
             }
         }
     }
@@ -141,7 +142,7 @@
             }
         }
         .ic-settings__icon {
-            @extend .inline-icon.active;
+            @extend %inline-icon.active;
             pointer-events: none;
         }
     }
