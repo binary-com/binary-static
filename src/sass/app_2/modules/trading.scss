@@ -38,7 +38,6 @@
             border-color: themed('container_color');
             color: themed('text_primary_color');
         }
-        border-radius: 0 $BORDER_RADIUS $BORDER_RADIUS 0;
     }
     &__error {
         justify-content: center;
@@ -117,6 +116,7 @@
             }
             &-currency {
                 margin-left: 4px;
+                margin-right: 2px;
                 display: inline-block;
                 position: relative;
                 font-weight: bold;
@@ -216,115 +216,6 @@
 .purchase-container {
     position: relative;
 
-    &__error {
-        position: absolute;
-        top: 0;
-        min-height: 202px;
-        height: calc(100% - 2px);
-        width: calc(100% - 6px);
-        left: 2px;
-        z-index: 2;
-        border-radius: $BORDER_RADIUS;
-        display: flex;
-        align-items: center;
-        @include themify($themes) {
-            background: themed('background_container_color');
-            color: themed('text_primary_color');
-        }
-
-        &-close-btn {
-            position: absolute;
-            cursor: pointer;
-            right: 2px;
-            top: 2px;
-
-            &-ic {
-                width: 24px;
-                height: 24px;
-            }
-        }
-        &-result {
-            padding: 16px;
-            line-height: 1.5;
-            font-size: 10px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            max-height: 187px;
-            height: 100%;
-            width: 100%;
-            @include themify($themes) {
-                color: themed('text_primary_color');
-            }
-
-            &-header {
-                margin-bottom: 0.5rem;
-                font-size: 12px;
-            }
-            &-label {
-                margin-right: 4px;
-                font-size: 10px;
-                @include themify($themes) {
-                    color: themed('text_primary_color');
-                }
-            }
-            &-currency {
-                position: relative;
-                display: inline-flex;
-            }
-        }
-        &-login {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100%;
-            width: 100%;
-            @include themify($themes) {
-                color: themed('text_color');
-            }
-
-            &-btn {
-                margin: 1.2em auto;
-
-                &-span {
-                    font-size: 1.2em;
-                }
-            }
-            &-info {
-                font-weight: 300;
-                font-size: 1.2em;
-            }
-            &-prompt {
-                line-height: 100%;
-                margin-bottom: 0.6em;
-                font-size: 1.2em;
-                font-weight: 300;
-            }
-            &-link {
-                text-decoration: none;
-                @include themify($themes) {
-                    color: themed('text_primary_color');
-                }
-
-                &:hover, &:focus, &:active {
-                    text-decoration: underline;
-                    font-weight: 500;
-                    @include themify($themes) {
-                        color: themed('text_color');
-                    }
-                }
-            }
-        }
-        &-info {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0.5rem 1.5rem;
-            text-align: center;
-        }
-    }
     &__option {
         padding-top: 8px;
         padding-bottom: 8px;
@@ -351,8 +242,9 @@
     &__loading {
         background: rgba(255, 255, 255, 0.6);
         border-radius: $BORDER_RADIUS;
-        width: calc(100% - 6px);
-        height: calc(100% - 2px);
+        width: calc(100% + 2px);
+        height: calc(100% + 2px);
+        left: -2px;
     }
     &__lock {
         position: absolute;
@@ -378,7 +270,7 @@
         &-icon {
             width: 64px;
             height: 64px;
-            @extend .inline-icon.white;
+            @extend %inline-icon.white;
         }
         &-button {
             height: 32px;
@@ -418,8 +310,6 @@
     width: 100%;
     margin: 0;
     text-align: left;
-    transition: box-shadow 0.5s;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.24);
     margin-top: 5px;
 
     span.btn-purchase__trade-type-text {
@@ -471,7 +361,7 @@
             position: absolute;
         }
         &-icon {
-            @extend .inline-icon.white;
+            @extend %inline-icon.white;
         }
     }
     &__effect-main {
@@ -499,6 +389,25 @@
         bottom: 0;
         display: inline-block;
     }
+    &__shadow-wrapper {
+        box-shadow: 0 0px 0px rgba(0, 0, 0, 0.15);
+        position: relative;
+
+        &:after {
+            content: '';
+            position: absolute;
+            z-index: 1;
+            width: 100%;
+            height: calc(100% - 6px);
+            pointer-events: none;
+            top: 4px;
+            left: 0;
+            border-radius: $BORDER_RADIUS;
+            opacity: 1;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: opacity 0.3s ease-in-out;
+        }
+    }
     &:disabled {
         background-color: $COLOR_DARK_BLUE_8;
         color: $COLOR_DARK_BLUE_7;
@@ -507,8 +416,8 @@
             color: themed('text_secondary_color');
         }
     }
-    &:hover {
-        box-shadow: none;
+    &__shadow-wrapper:hover:after {
+        opacity: 0;
     }
     &:disabled .btn-purchase__effect-main {
         background: $COLOR_DARK_BLUE_8;

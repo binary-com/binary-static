@@ -47,7 +47,10 @@ const Header = ({
             <div className='header__menu-items'>
                 <div className='header__menu-left'>
                     {is_mobile && <ToggleMenuDrawer />}
-                    <MenuLinks items={header_links} />
+                    <MenuLinks
+                        is_logged_in={is_logged_in}
+                        items={header_links}
+                    />
                 </div>
                 <div className='header__menu-right'>
                     <div className='acc-info__container'>

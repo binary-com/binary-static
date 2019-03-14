@@ -1,0 +1,33 @@
+.media {
+    margin: 0 0 16px;
+
+    &__heading {
+        @include typeface(--paragraph-left-bold-black);
+        @include themify($themes) {
+            color: themed('text_primary_color');
+        }
+        margin: 0 0 16px;
+    }
+    &__icon {
+        min-width: 160px;
+        max-width: 160px;
+        @include toEm(height, 80px);
+        @include toEm(margin-right, 16px);
+        background-color: $COLOR_LIGHT_BLACK_3;
+    }
+    &__description {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        @include typeface(--paragraph-left-normal-black);
+        @include themify($themes) {
+            color: themed('text_color');
+        }
+    }
+    &__form {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+}
