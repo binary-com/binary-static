@@ -78,7 +78,7 @@ const WS = (() => {
             'proposal_open_contract',
             { ...buy_request, subscribe: 1 },
             { proposal_open_contract: 1, subscribe: 1 },
-            'contract_id',
+            ['contract_id'],
         );
 
     const subscribeTicks = (symbol, cb, should_forget_first) =>

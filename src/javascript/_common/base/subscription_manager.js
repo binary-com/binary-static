@@ -69,9 +69,9 @@ const SubscriptionManager = (() => {
      * @param {String}   msg_type               msg_type of the subscription
      * @param {Object}   send_request           the object of the request to be made
      * @param {Object}   subscribe_request      the object of the subscription request
-     * @param {String}   subscription_prop      prop to add to subscribe_request from initial request, e.g. contract_id
+     * @param {Array}    subscription_props     Array of prop strings to add to subscribe_request from initial request, e.g. contract_id
      */
-    const addSubscriptionFromRequest = (msg_type, send_request, subscribe_request, subscription_prop = '') =>
+    const addSubscriptionFromRequest = (msg_type, send_request, subscribe_request, subscription_props) =>
         new Promise((resolve) => {
             let sub_id;
             let is_stream = false;
@@ -85,8 +85,12 @@ const SubscriptionManager = (() => {
                         is_stream = true;
                         sub_id    = ++subscription_id;
 
-                        if (subscription_prop) {
-                            subscribe_request[subscription_prop] = response[response.msg_type][subscription_prop];
+                        if (subscription_props && Array.isArray(subscription_props)) {
+                            subscription_props.forEach((prop) => {
+                                if (response[response.msg_type][prop]) {
+                                    subscribe_request[prop] = response[response.msg_type][prop];
+                                }
+                            });
                         }
 
                         subscriptions[sub_id] = {
