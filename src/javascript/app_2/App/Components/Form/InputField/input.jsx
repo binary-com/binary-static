@@ -31,7 +31,8 @@ const Input = ({
          * we have to keep track of the current cursor position, update the value in store,
          * then reset the cursor position to the current cursor position
          */
-        if (navigator.userAgent.indexOf('Safari') != -1) {
+        // TODO: find better ways to target browsers
+        if (navigator.userAgent.indexOf('Safari') !== -1) {
             const cursor = e.target.selectionStart;
             changeValue(e, (evt) => {
                 evt.target.selectionEnd = cursor; // reset the cursor position in callback
