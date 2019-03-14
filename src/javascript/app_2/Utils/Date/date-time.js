@@ -1,5 +1,6 @@
 import moment       from 'moment';
 import { localize } from '_common/localize';
+import ServerTime from '../../../_common/base/server_time';
 
 moment.createFromInputFallback = function (config) {
     config._d = new Date(NaN);
@@ -19,7 +20,7 @@ export const epochToMoment = epoch => moment.unix(epoch).utc();
  * @return {moment} the moment object of 'now' or the provided date epoch or string
  */
 export const toMoment = value => {
-    if (!value) return moment().utc(); // returns 'now' moment object
+    if (!value) return ServerTime.get() || moment().utc(); // returns 'now' moment object
     if (value instanceof moment && value.isValid() && value.isUTC()) return value; // returns if already a moment object
     if (typeof value === 'number') return epochToMoment(value); // returns epochToMoment() if not a date
 
