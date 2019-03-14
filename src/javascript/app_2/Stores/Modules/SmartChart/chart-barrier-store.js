@@ -66,11 +66,7 @@ export class ChartBarrierStore {
     @action.bound
     onBarrierChange({ high, low }) {
         this.updateBarriers(high, low, true);
-        if (low) {
-            this.onChartBarrierChange(...barriersToString(this.relative, high, low));
-        } else {
-            this.onChartBarrierChange(...barriersToString(this.relative, high));
-        }
+        this.onChartBarrierChange(...barriersToString(this.relative, high, low));
     }
 
     @computed
