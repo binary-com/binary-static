@@ -50,8 +50,10 @@ export class ChartBarrierStore {
     }
 
     @action.bound
-    updateBarriers(high, low) {
-        this.relative       = /^[+-]/.test(high);
+    updateBarriers(high, low, isFromChart = false) {
+        if (!isFromChart) {
+            this.relative       = /^[+-]/.test(high);
+        }
         this.high = +high || undefined;
         this.low  = +low  || undefined;
     }
@@ -63,7 +65,7 @@ export class ChartBarrierStore {
 
     @action.bound
     onBarrierChange({ high, low }) {
-        this.updateBarriers(high, low);
+        this.updateBarriers(high, low, true);
         this.onChartBarrierChange(...barriersToString(this.relative, high, low));
     }
 
