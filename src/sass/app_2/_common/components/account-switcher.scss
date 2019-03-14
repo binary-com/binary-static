@@ -24,7 +24,7 @@
     &__id {
         @include typeface(--title-center-bold-black, default);
         pointer-events: none;
-        @include themify(themes) {
+        @include themify($themes) {
             color: themed('text_color');
         }
 
