@@ -171,33 +171,6 @@
             }
         }
     }
-    .acc-info {
-        &__id {
-            color: $COLOR_WHITE;
-        }
-        &:hover:not(.show) {
-            background-color: $COLOR_DARK_BLUE_4;
-
-            .symbols {
-                background: $COLOR_DARK_BLUE_4;
-            }
-        }
-        &__balance {
-            .symbols {
-                background: $COLOR_DARK_BLUE_2;
-            }
-        }
-        &--show {
-            &:after {
-                background: $COLOR_WHITE;
-            }
-        }
-        &--is-virtual {
-            .acc-balance-amount, .symbols {
-                color: $COLOR_ORANGE;
-            }
-        }
-    }
     .acc-switcher {
         &__wrapper {
             background: $COLOR_DARK_BLUE_3;
