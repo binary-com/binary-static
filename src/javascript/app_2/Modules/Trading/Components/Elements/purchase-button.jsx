@@ -41,14 +41,18 @@ const PurchaseButton = ({
             <div className='btn-purchase__effect-detail' />
             <div className='btn-purchase__info'>
                 <div className='btn-purchase__return'>
-                    <span className='btn-purchase__return-text'>
-                        {!is_disabled && info.returns}
-                    </span>
+                    <div className='btn-purchase__return-text__wrapper'>
+                        <span className='btn-purchase__return-text'>
+                            {!is_disabled && info.returns}
+                        </span>
+                    </div>
                 </div>
                 <div className='btn-purchase__profit'>
-                    <span className='btn-purchase__profit-text'>
-                        {!is_disabled && <Money amount={info.profit} currency={currency} className='btn-purchase__currency' />}
-                    </span>
+                    <div className='btn-purchase__profit-text__wrapper'>
+                        <span className='btn-purchase__profit-text'>
+                            {!is_disabled && <Money amount={info.profit} currency={currency} className='btn-purchase__currency' />}
+                        </span>
+                    </div>
                 </div>
             </div>
         </React.Fragment>

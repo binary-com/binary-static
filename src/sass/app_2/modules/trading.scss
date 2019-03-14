@@ -436,15 +436,24 @@
         .btn-purchase__trade-type-text span {
             display: block;
         }
-        .btn-purchase__trade-type-icon svg, .btn-purchase__trade-type-text span, .btn-purchase__profit-text, .btn-purchase__return-text {
+        .btn-purchase__trade-type-icon, .btn-purchase__trade-type-text, .btn-purchase__profit-text__wrapper, .btn-purchase__return-text__wrapper {
             background-color: $COLOR_WHITE;
             opacity: 0.32;
         }
-        .btn-purchase__trade-type-text, .btn-purchase__trade-type-text span, .btn-purchase__profit-text, .btn-purchase__return-text {
+        .btn-purchase__trade-type-icon svg, .btn-purchase__trade-type-text span, .btn-purchase__profit-text, .btn-purchase__return-text {
+            // Temporary color, replace with gradient in the future.
+            background-color: $COLOR_DARK_BLUE_7;
+        }
+        .btn-purchase__trade-type-text, .btn-purchase__trade-type-text span, .btn-purchase__profit-text__wrapper, .btn-purchase__return-text__wrapper {
             width: 56px;
             height: 8px;
         }
         .btn-purchase__profit-text, .btn-purchase__return-text {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+        .btn-purchase__profit-text__wrapper, .btn-purchase__return-text__wrapper {
             margin: 4px 0;
         }
     }
