@@ -10,8 +10,7 @@ export default class URLHelper {
      */
     static getQueryParams(url) {
         const query_string =  url ? new URL(url).search : window.location.search;
-        const query_encoded = encodeURIComponent(query_string);
-        const query_params = new URLSearchParams(query_encoded);
+        const query_params = new URLSearchParams(query_string.slice(1));
 
         return query_params;
     }
@@ -32,12 +31,13 @@ export default class URLHelper {
 
             const value = params[name];
 
+            // console.log(name, value);
             if (value && typeof value !== 'object' && value !== '') {
                 param_object.append(name, params[name]);
             }
         });
 
-        if (param_object.length) {
+        if (param_object.keys().length) {
             param_object.sort();
         }
 
@@ -91,5 +91,15 @@ export default class URLHelper {
         const query_string = [...query_params].length ? `?${query_params.toString()}` : '';
 
         window.history.replaceState(null, null, decodeURIComponent(query_string));
+    }
+
+    /**
+     * Gets the query string
+     *
+     * @param {String|null} url
+     */
+    static getQueryString(url) {
+        const query_string =  url ? new URL(url).search : window.location.search;
+        return query_string;
     }
 }

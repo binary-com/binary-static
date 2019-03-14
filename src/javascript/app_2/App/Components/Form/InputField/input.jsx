@@ -33,7 +33,7 @@ const Input = ({
         }
         <input
             autoComplete={is_autocomplete_disabled ? 'off' : undefined}
-            checked={checked ? 'checked' : ''}
+            checked={checked}
             className={classNames(className)}
             data-for={`error_tooltip_${name}`}
             data-tip={data_tip}
