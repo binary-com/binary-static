@@ -69,7 +69,6 @@ export default class PortfolioStore extends BaseStore {
             // subscribe to new contract:
             WS.subscribeProposalOpenContract(contract_id, this.proposalOpenContractHandler, false);
         } else if (act === 'sell') {
-            // TODO: Refactor with contract-store and use common helpers to handle contract result
             WS.subscribeProposalOpenContract(contract_id, this.populateResultDetails, false);
         }
     }
