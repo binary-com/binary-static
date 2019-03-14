@@ -73,7 +73,7 @@ const WS = (() => {
     const subscribeProposalOpenContract = (contract_id = null, cb, should_forget_first) =>
         SubscriptionManager.subscribe('proposal_open_contract', { proposal_open_contract: 1, subscribe: 1, ...(contract_id && { contract_id }) }, cb, should_forget_first);
 
-    const subscribeProposalOpenContractAfterBuy = (buy_request) =>
+    const subscribeProposalOpenContractOnBuy = (buy_request) =>
         SubscriptionManager.addSubscriptionFromRequest(
             'proposal_open_contract',
             { ...buy_request, subscribe: 1 },
@@ -119,7 +119,7 @@ const WS = (() => {
         subscribeBalance,
         subscribeProposal,
         subscribeProposalOpenContract,
-        subscribeProposalOpenContractAfterBuy,
+        subscribeProposalOpenContractOnBuy,
         subscribeTicks,
         subscribeTicksHistory,
         subscribeTransaction,

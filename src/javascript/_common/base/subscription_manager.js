@@ -72,14 +72,14 @@ const SubscriptionManager = (() => {
      * @param {String}   subscription_prop      prop to add to subscribe_request from initial request, e.g. contract_id
      */
     const addSubscriptionFromRequest = (msg_type, send_request, subscribe_request, subscription_prop = '') =>
-        new Promise((resolve, reject) => {
+        new Promise((resolve) => {
             let sub_id;
             let is_stream = false;
 
             BinarySocket.send(send_request, {
                 callback: (response) => {
                     if (response.error) {
-                        return reject(response);
+                        return resolve(response);
                     }
                     if (!is_stream) {
                         is_stream = true;
