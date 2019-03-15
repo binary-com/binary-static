@@ -154,11 +154,6 @@
             color: $TOAST_CLOSE_BUTTON_COLOR_DARK;
         }
     }
-    .allow-equals {
-        &__label {
-            color: $COLOR_DARK_BLUE_7;
-        }
-    }
     .popconfirm {
         background: $COLOR_DARK_BLUE_3;
 
@@ -347,22 +342,6 @@
                 .stroke-active {
                     stroke: $COLOR_WHITE;
                 }
-            }
-        }
-    }
-    .button-menu {
-        &__button {
-            background-color: $COLOR_DARK_BLUE_2;
-
-            span {
-                color: $COLOR_DARK_BLUE_7;
-            }
-            &:hover:not(&--active) {
-                background-color: $COLOR_DARK_BLUE_4;
-            }
-            &--active {
-                color: $COLOR_WHITE;
-                background-color: $COLOR_DARK_BLUE_5;
             }
         }
     }

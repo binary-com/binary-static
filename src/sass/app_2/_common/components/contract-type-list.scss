@@ -42,10 +42,11 @@
     transition: transform 0.3s opacity 0.3s;
     background-color: $COLOR_WHITE;
 
-    &:hover:not(&--selected) {
+    &:hover {
         background-color: $COLOR_LIGHT_BLACK_4;
 
         .contract-type-item__icon {
+            @extend %inline-icon;
             display: block;
         }
     }

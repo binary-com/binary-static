@@ -7,6 +7,9 @@
         margin: 0.8em 0 0;
         @include typeface(--small-left-normal-black, none);
         @include toEm(padding, 0 8px, 1.2em);
+        @include themify($themes) {
+            color: themed('text_primary_color');
+        }
         cursor: pointer;
     }
     & &__tooltip {
@@ -21,6 +24,7 @@
             }
         }
         &-info {
+            @extend %inline-icon;
             transform: scale(0.75);
         }
         &-info-balloon-icon {
