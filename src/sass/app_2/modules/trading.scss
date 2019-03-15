@@ -1,3 +1,5 @@
+$linear-gradient-white-blur: linear-gradient(to left, rgba(255, 255, 255, 0), $COLOR_WHITE 27%, $COLOR_WHITE 48%, $COLOR_WHITE 67%, rgba(255, 255, 255, 0));
+
 /** @define trade-container */
 .trade-container {
     @include themify($themes) {
@@ -49,7 +51,7 @@
         width: 100%;
         height: 100%;
         animation: data--loading 0.6s ease infinite;
-        background-image: linear-gradient(to left, rgba(255, 255, 255, 0), $COLOR_WHITE 27%, $COLOR_WHITE 48%, $COLOR_WHITE 67%, rgba(255, 255, 255, 0));
+        background-image: $linear-gradient-white-blur;
         opacity: 0.16;
     }
     &__error {
@@ -421,7 +423,7 @@
         background-color: $COLOR_LIGHT_BLACK_3_SOLID_2;
         color: $COLOR_DARK_BLUE_7;
 
-        span {
+        & span {
             display: block;
         }
         .btn-purchase__content {
@@ -441,7 +443,7 @@
             background-color: rgba($COLOR_WHITE, 0.32);
         }
         .btn-purchase__trade-type-icon svg, .btn-purchase__trade-type-text span, .btn-purchase__profit-text, .btn-purchase__return-text {
-            background-image: linear-gradient(to left, rgba(255, 255, 255, 0), $COLOR_WHITE 27%, $COLOR_WHITE 48%, $COLOR_WHITE 67%, rgba(255, 255, 255, 0));
+            background-image: $COLOR_WHITE;
             opacity: 0.32;
         }
         .btn-purchase__trade-type-text, .btn-purchase__trade-type-text span, .btn-purchase__profit-text__wrapper, .btn-purchase__return-text__wrapper {
@@ -467,6 +469,8 @@
         }
         .btn-purchase__trade-type-icon svg, .btn-purchase__trade-type-text span, .btn-purchase__profit-text, .btn-purchase__return-text {
             animation: data--loading 0.6s ease infinite;
+            background-image: $linear-gradient-white-blur;
+            opacity: 0.32;
         }
     }
     &__shadow-wrapper:hover:after {
