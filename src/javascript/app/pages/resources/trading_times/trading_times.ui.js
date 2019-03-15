@@ -3,7 +3,8 @@ const TradingTimes     = require('./trading_times');
 const BinarySocket     = require('../../../base/socket');
 const Table            = require('../../../common/attach_dom/table');
 const DatePicker       = require('../../../components/date_picker');
-const dateValueChanged = require('../../../../_common/common_functions').dateValueChanged;
+const Login            = require('../../../../_common/base/login');
+const CommonFunctions  = require('../../../../_common/common_functions');
 const localize         = require('../../../../_common/localize').localize;
 const showLoadingImage = require('../../../../_common/utility').showLoadingImage;
 const toISOFormat      = require('../../../../_common/string_util').toISOFormat;
@@ -67,7 +68,7 @@ const TradingTimesUI = (() => {
             });
         }
         $date.change(function () {
-            if (!dateValueChanged(this, 'date')) {
+            if (!CommonFunctions.dateValueChanged(this, 'date')) {
                 return false;
             }
             $container.empty();
@@ -87,6 +88,9 @@ const TradingTimesUI = (() => {
             $date_container.setVisibility(0);
             $date_notice.setVisibility(0);
             $empty_trading_times.setVisibility(1);
+            const empty_trading_times_btn_login = CommonFunctions.getElementById('empty-trading-times-btn-login');
+            empty_trading_times_btn_login.removeEventListener('click', loginOnClick);
+            empty_trading_times_btn_login.addEventListener('click', loginOnClick);
             return;
         }
 
@@ -212,6 +216,11 @@ const TradingTimesUI = (() => {
             trading_times = response.trading_times;
             if (active_symbols) populateTable();
         });
+    };
+
+    const loginOnClick = (e) => {
+        e.preventDefault();
+        Login.redirectToLogin();
     };
 
     return {

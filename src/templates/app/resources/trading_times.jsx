@@ -13,7 +13,7 @@ const TradingTimes = () => (
             <p className='error-msg invisible' id='errorMsg' />
             <div id='trading-times' className='has-tabs gr-parent' />
             <p className='notice-msg center-text invisible' id='empty-trading-times'>
-                {it.L('Trading times is unavailable in this country. If you have an active [_1] account, please log in for full access.', it.website_name)}
+                {it.L('Trading times is unavailable in this country. If you have an active [_1] account, please [_2]log in[_3] for full access.', it.website_name, '<a id=\'empty-trading-times-btn-login\' href=\'javascript:;\'>', '</a>')}
             </p>
         </div>
     </React.Fragment>
