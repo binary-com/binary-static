@@ -17,10 +17,14 @@ const Amount = ({
     amount,
     basis,
     basis_list,
+    contract_start_type,
+    contract_type,
+    contract_types_list,
     currencies_list,
     currency,
-    is_allow_equal,
-    is_equal_checked,
+    duration_unit,
+    expiry_type,
+    is_equal,
     is_minimized,
     is_nativepicker,
     is_single_currency,
@@ -89,9 +93,13 @@ const Amount = ({
 
             }
             <AllowEquals
-                checked={is_equal_checked}
-                is_allow_equal={is_allow_equal}
+                contract_start_type={contract_start_type}
+                contract_type={contract_type}
+                contract_types_list={contract_types_list}
+                duration_unit={duration_unit}
+                expiry_type={expiry_type}
                 onChange={onChange}
+                value={parseInt(is_equal)}
             />
         </Fieldset>
     );
@@ -102,12 +110,16 @@ Amount.propTypes = {
         PropTypes.number,
         PropTypes.string,
     ]),
-    basis           : PropTypes.string,
-    basis_list      : MobxPropTypes.arrayOrObservableArray,
-    currencies_list : MobxPropTypes.observableObject,
-    currency        : PropTypes.string,
-    is_allow_equal  : PropTypes.bool,
-    is_equal_checked: PropTypes.oneOfType([
+    basis              : PropTypes.string,
+    basis_list         : MobxPropTypes.arrayOrObservableArray,
+    contract_start_type: PropTypes.string,
+    contract_type      : PropTypes.string,
+    contract_types_list: MobxPropTypes.observableObject,
+    currencies_list    : MobxPropTypes.observableObject,
+    currency           : PropTypes.string,
+    duration_unit      : PropTypes.string,
+    expiry_type        : PropTypes.string,
+    is_equal           : PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
     ]),
