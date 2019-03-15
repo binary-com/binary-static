@@ -10,8 +10,14 @@ export default class URLHelper {
      */
     static getQueryParams(url) {
         const query_string =  url ? new URL(url).search : window.location.search;
-        const query_encoded = encodeURIComponent(query_string);
-        const query_params = new URLSearchParams(query_encoded);
+        const query_params = new URLSearchParams(query_string.slice(1));
+
+        [...query_params].forEach(value => {
+            // by default, URL encoding replaces '+' with white-spaces
+            // but for barrier, we want to keep '+' sign. so, we need to encode white-spaces
+            // and then replace %20 to '+'.
+            query_params.set(value[0], encodeURI(value[1]).replace(/%20/g, '+'));
+        });
 
         return query_params;
     }
@@ -37,7 +43,7 @@ export default class URLHelper {
             }
         });
 
-        if (param_object.length) {
+        if (param_object.keys().length) {
             param_object.sort();
         }
 
@@ -91,5 +97,15 @@ export default class URLHelper {
         const query_string = [...query_params].length ? `?${query_params.toString()}` : '';
 
         window.history.replaceState(null, null, decodeURIComponent(query_string));
+    }
+
+    /**
+     * Gets the query string
+     *
+     * @param {String|null} url
+     */
+    static getQueryString(url) {
+        const query_string =  url ? new URL(url).search : window.location.search;
+        return query_string;
     }
 }
