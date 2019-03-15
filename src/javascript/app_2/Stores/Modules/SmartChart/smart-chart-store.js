@@ -74,7 +74,7 @@ export default class SmartChartStore extends BaseStore {
     setContractMode(is_contract_mode) {
         this.is_contract_mode = is_contract_mode;
         this.is_title_enabled = !is_contract_mode;
-        window.dispatchEvent(new Event('resize'));
+
     }
 
     @action.bound

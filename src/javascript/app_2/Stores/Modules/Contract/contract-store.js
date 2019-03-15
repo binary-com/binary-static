@@ -60,13 +60,18 @@ export default class ContractStore extends BaseStore {
 
     @action.bound
     drawChart(SmartChartStore, contract_info) {
+        if (contract_info.tick_count) {
+            SmartChartStore.updateGranularity(0);
+            SmartChartStore.updateChartType('mountain');
+        }
         if (isEnded(contract_info)) {
             this.chart_config = getChartConfig(contract_info);
+            SmartChartStore.updateChartType(this.chart_config.chart_type);
+            SmartChartStore.updateGranularity(this.chart_config.granularity);
         } else {
             if (!this.is_left_epoch_set) {
                 SmartChartStore.updateEpochScrollToValue(contract_info.purchase_time || contract_info.date_start);
             }
-
             delete this.chart_config.end_epoch;
             delete this.chart_config.start_epoch;
             this.is_left_epoch_set = true;
@@ -95,6 +100,9 @@ export default class ContractStore extends BaseStore {
             this.smart_chart.updateEpochScrollToOffset(2);
             this.smart_chart.updateChartZoom(100);
             this.smart_chart.setContractMode(true);
+            setTimeout(() => {
+                window.dispatchEvent(new Event('resize'));
+            }, 2000);
             WS.subscribeProposalOpenContract(this.contract_id, this.updateProposal, false);
         }
     }
@@ -109,6 +117,9 @@ export default class ContractStore extends BaseStore {
         this.smart_chart.setContractMode(true);
         this.smart_chart.updateEpochScrollToOffset(2);
         this.smart_chart.updateChartZoom(100);
+        setTimeout(() => {
+            window.dispatchEvent(new Event('resize'));
+        }, 2000);
         this.drawChart(this.smart_chart, this.contract_info);
     }
 
