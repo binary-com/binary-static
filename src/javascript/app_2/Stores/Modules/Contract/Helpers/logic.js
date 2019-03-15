@@ -1,6 +1,6 @@
 export const getChartConfig = (contract_info) => {
     const start = contract_info.date_start;
-    const end   = getEndSpotTime(contract_info);
+    const end   = getEndSpotTime(contract_info) || contract_info.date_expiry;
     const granularity = calculateGranularity(end - start);
 
     return {
