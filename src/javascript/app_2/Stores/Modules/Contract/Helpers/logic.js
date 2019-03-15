@@ -19,7 +19,7 @@ const hour_to_granularity_map = [
     [5 * 24 , 3600],
     [30 * 24, 14400],
 ];
-const calculateGranularity = (duration) =>
+export const calculateGranularity = (duration) =>
     (hour_to_granularity_map.find(m => duration <= m[0] * 3600) || [null, 86400])[1];
 
 export const getDisplayStatus = (contract_info) => {

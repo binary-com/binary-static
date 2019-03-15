@@ -18,6 +18,7 @@ import {
     getDigitInfo,
     isDigitContract }            from './Helpers/digits';
 import {
+    calculateGranularity,
     getChartConfig,
     getDisplayStatus,
     getEndSpot,
@@ -63,11 +64,14 @@ export default class ContractStore extends BaseStore {
         if (contract_info.tick_count) {
             SmartChartStore.updateGranularity(0);
             SmartChartStore.updateChartType('mountain');
+        } else {
+            const granularity = calculateGranularity(contract_info.date_expiry - contract_info.date_start);
+            SmartChartStore.updateGranularity(granularity);
         }
         if (isEnded(contract_info)) {
             this.chart_config = getChartConfig(contract_info);
         } else {
-            if (!this.is_left_epoch_set) {
+            if (!this.is_left_epoch_set && contract_info.tick_count) {
                 SmartChartStore.updateEpochScrollToValue(contract_info.purchase_time || contract_info.date_start);
             }
             delete this.chart_config.end_epoch;
@@ -142,6 +146,7 @@ export default class ContractStore extends BaseStore {
         this.smart_chart.removeBarriers();
         this.smart_chart.removeMarkers();
         this.smart_chart.resetScrollZoom();
+        this.smart_chart.updateGranularity(0);
         this.smart_chart.setContractMode(false);
     }
 
