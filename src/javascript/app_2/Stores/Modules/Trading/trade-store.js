@@ -98,7 +98,7 @@ export default class TradeStore extends BaseStore {
     @observable purchase_info        = {};
 
     // Query string
-    @observable query = '';
+    query = '';
 
     // Chart
     chart_id = 1;
