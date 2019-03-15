@@ -32,7 +32,7 @@ const Input = ({
          * then reset the cursor position to the current cursor position
          */
         // TODO: find better ways to target browsers
-        if (navigator.userAgent.indexOf('Safari') !== -1) {
+        if (navigator.userAgent.indexOf('Safari') !== -1 && type !== 'checkbox') {
             const cursor = e.target.selectionStart;
             changeValue(e, (evt) => {
                 evt.target.selectionEnd = cursor; // reset the cursor position in callback
