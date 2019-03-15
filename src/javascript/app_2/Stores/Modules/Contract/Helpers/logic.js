@@ -6,8 +6,8 @@ export const getChartConfig = (contract_info) => {
     return {
         granularity,
         chart_type : granularity ? 'candle' : 'mountain',
-        end_epoch  : end   + (granularity || 3),
-        start_epoch: start - (granularity || 3),
+        end_epoch  : end,
+        start_epoch: start,
     };
 };
 

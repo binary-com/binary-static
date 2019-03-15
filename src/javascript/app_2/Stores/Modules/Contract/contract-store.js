@@ -66,8 +66,6 @@ export default class ContractStore extends BaseStore {
         }
         if (isEnded(contract_info)) {
             this.chart_config = getChartConfig(contract_info);
-            SmartChartStore.updateChartType(this.chart_config.chart_type);
-            SmartChartStore.updateGranularity(this.chart_config.granularity);
         } else {
             if (!this.is_left_epoch_set) {
                 SmartChartStore.updateEpochScrollToValue(contract_info.purchase_time || contract_info.date_start);
@@ -97,7 +95,7 @@ export default class ContractStore extends BaseStore {
         this.smart_chart   = this.root_store.modules.smart_chart;
 
         if (contract_id) {
-            this.smart_chart.updateEpochScrollToOffset(2);
+            this.smart_chart.updateEpochScrollToOffset(1);
             this.smart_chart.updateChartZoom(100);
             this.smart_chart.setContractMode(true);
             setTimeout(() => {
@@ -115,7 +113,7 @@ export default class ContractStore extends BaseStore {
         this.contract_info = contract_info;
         this.contract_id   = +contract_info.contract_id;
         this.smart_chart.setContractMode(true);
-        this.smart_chart.updateEpochScrollToOffset(2);
+        this.smart_chart.updateEpochScrollToOffset(1);
         this.smart_chart.updateChartZoom(100);
         setTimeout(() => {
             window.dispatchEvent(new Event('resize'));
