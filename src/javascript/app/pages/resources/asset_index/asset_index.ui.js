@@ -14,7 +14,7 @@ const AssetIndexUI = (() => {
         market_columns;
 
     const onLoad = () => {
-        $container                   = $('#asset-index');
+        $container = $('#asset-index');
         $('#empty-asset-index').setVisibility(0);
         asset_index = market_columns = undefined;
         active_symbols = undefined;
