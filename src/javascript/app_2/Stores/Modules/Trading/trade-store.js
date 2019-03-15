@@ -22,6 +22,7 @@ import {
     allowed_query_string_variables,
     getNonProposalQueryStringVariables } from './Constants/query-string';
 import getValidationRules                from './Constants/validation-rules';
+import { isRiseFallEqual }               from './Helpers/allow-equals';
 import { setChartBarrier }               from './Helpers/chart';
 import ContractType                      from './Helpers/contract-type';
 import { convertDurationLimit }          from './Helpers/duration';
@@ -40,8 +41,7 @@ export default class TradeStore extends BaseStore {
     @observable is_trade_component_mounted = false;
     @observable is_purchase_enabled        = false;
     @observable is_trade_enabled           = false;
-    @observable is_allow_equal             = false;
-    @observable is_equal_checked           = 0;
+    @observable is_equal                   = 0;
 
     // Underlying
     @observable symbol;
@@ -97,6 +97,9 @@ export default class TradeStore extends BaseStore {
     @observable proposal_info        = {};
     @observable purchase_info        = {};
 
+    // Query string
+    query = '';
+
     // Chart
     chart_id = 1;
 
@@ -135,18 +138,10 @@ export default class TradeStore extends BaseStore {
             },
         );
         reaction(
-            () => [
-                this.symbol,
-                this.contract_type,
-                this.duration_unit,
-                this.expiry_type,
-                this.duration_units_list,
-                this.contract_types_list,
-            ],
+            () => this.is_equal,
             () => {
-                this.changeAllowEquals();
+                this.onAllowEqualsChange();
             },
-            { delay: 500 }
         );
     }
 
@@ -176,6 +171,13 @@ export default class TradeStore extends BaseStore {
                 type   : 'info',
             });
             URLHelper.setQueryParam({ 'symbol': pickDefaultSymbol(active_symbols.active_symbols) });
+            query_string_values = this.updateQueryString();
+        }
+
+        // Checks for is_equal in query string and update the contract_type to rise_fall or rise_fall_equal
+        const { contract_type, is_equal } = query_string_values;
+        if (isRiseFallEqual(contract_type)) {
+            URLHelper.setQueryParam({ 'contract_type': parseInt(is_equal) ? 'rise_fall_equal' : 'rise_fall' });
             query_string_values = this.updateQueryString();
         }
 
@@ -210,21 +212,10 @@ export default class TradeStore extends BaseStore {
 
     @action.bound
     onChange(e) {
-        const { name, checked } = e.target;
-        let { value } = e.target;
+        const { name, value } = e.target;
 
         if (name === 'currency') {
             this.root_store.client.selectCurrency(value);
-        } else if (value === 'is_equal') {
-            if (/^(rise_fall|rise_fall_equal)$/.test(this.contract_type)) {
-                if (checked) {
-                    this.is_equal_checked = 1;
-                    value = 'rise_fall_equal';
-                } else {
-                    this.is_equal_checked = 0;
-                    value = 'rise_fall';
-                }
-            }
         } else if (name  === 'expiry_date') {
             this.expiry_time = null;
         } else if (!(name in this)) {
@@ -312,7 +303,6 @@ export default class TradeStore extends BaseStore {
                 }
             }
         });
-
         return new_state;
     }
 
@@ -393,6 +383,7 @@ export default class TradeStore extends BaseStore {
                     ...getNonProposalQueryStringVariables(this),
                 ],
             );
+            this.query = URLHelper.getQueryString();
 
             this.proposal_requests = requests;
             this.proposal_info     = {};
@@ -428,8 +419,12 @@ export default class TradeStore extends BaseStore {
     }
 
     @action.bound
-    updateQueryString() {
+    onAllowEqualsChange() {
+        this.processNewValuesAsync({ contract_type: parseInt(this.is_equal) ? 'rise_fall_equal' : 'rise_fall' }, true);
+    }
 
+    @action.bound
+    updateQueryString() {
         // Update the url's query string by default values of the store
         const query_params = URLHelper.updateQueryString(
             this,
@@ -440,6 +435,7 @@ export default class TradeStore extends BaseStore {
         // update state values from query string
         const config = {};
         [...query_params].forEach(param => config[param[0]] = param[1]);
+
         return config;
     }
 
@@ -465,43 +461,6 @@ export default class TradeStore extends BaseStore {
                 this.validation_rules.duration.rules.push(['number', duration_options]);
             }
             this.validateProperty('duration', this.duration);
-        }
-    }
-
-    @action.bound
-    changeAllowEquals() {
-        const hasCallPutEqual = (contract_type_list) => {
-            if (!contract_type_list) return false;
-
-            return getPropertyValue(contract_type_list, 'Up/Down')
-                .some(contract => contract.value === 'rise_fall_equal');
-        };
-        const hasDurationForCallPutEqual = (contract_type_list, duration_unit, contract_start_type) => {
-            if (!contract_type_list || !duration_unit || !contract_start_type) return false;
-
-            const contract_list = Object.keys(contract_type_list || {})
-                .reduce((key, list) => ([...key, ...contract_type_list[list].map(contract => contract.value)]), []);
-
-            const contract_duration_list = contract_list
-                .map(list => ({ [list]: getPropertyValue(ContractType.getFullContractTypes(), [list, 'config', 'durations', 'units_display', contract_start_type]) }));
-
-            // Check whether rise fall equal is exists and has the current store duration unit
-            return hasCallPutEqual(contract_type_list) ? contract_duration_list
-                .filter(contract => contract.rise_fall_equal)[0].rise_fall_equal
-                .some(duration => duration.value === duration_unit) : false;
-        };
-        const check_callput_equal_duration = hasDurationForCallPutEqual(this.contract_types_list,
-            this.duration_unit, this.contract_start_type);
-
-        if (!(/^(rise_fall|rise_fall_equal)$/.test(this.contract_type))) {
-            this.is_allow_equal = false;
-            this.is_equal_checked = 0;
-        }
-
-        if (/^(rise_fall|rise_fall_equal)$/.test(this.contract_type) && (check_callput_equal_duration || this.expiry_type === 'endtime') && hasCallPutEqual(this.contract_types_list)) {
-            this.is_allow_equal = true;
-        } else {
-            this.is_allow_equal = false;
         }
     }
 
