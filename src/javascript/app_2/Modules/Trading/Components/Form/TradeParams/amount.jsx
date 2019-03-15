@@ -41,52 +41,57 @@ const Amount = ({
             </div>
         );
     }
-    const amount_container_class = classNames({ 'three-columns': !is_single_currency });
+
+    const input =
+        <InputField
+            className='trade-container__amount'
+            classNameInlinePrefix='trade-container__currency'
+            classNameInput='trade-container__input'
+            currency={currency}
+            error_messages={validation_errors.amount}
+            fractional_digits={getDecimalPlaces(currency)}
+            id='amount'
+            inline_prefix={is_single_currency ? currency : null}
+            is_autocomplete_disabled
+            is_float
+            is_incrementable
+            is_nativepicker={is_nativepicker}
+            is_negative_disabled
+            max_length={10}
+            name='amount'
+            onChange={onChange}
+            type='tel'
+            value={amount}
+        />;
 
     return (
         <Fieldset className='trade-container__fieldset'>
-            <div className={amount_container_class}>
-                <ButtonToggleMenu
-                    buttons_arr={basis_list}
-                    className='dropdown--no-margin'
-                    name='basis'
-                    onChange={onChange}
-                    value={basis}
-                />
-                {!is_single_currency &&
-                <Dropdown
-                    className={classNames('no-margin', { 'trade-container__currency-options': !is_single_currency })}
-                    classNameDisplay='trade-container__currency-options--display'
-                    has_symbol
-                    is_alignment_left
-                    is_nativepicker={false}
-                    list={currencies_list}
-                    name='currency'
-                    value={currency}
-                    onChange={onChange}
-                />
-                }
-                <InputField
-                    className={classNames('trade-container__amount', { 'trade-container__amount--has-currency-options': !is_single_currency })}
-                    classNameInlinePrefix='trade-container__currency'
-                    classNameInput='trade-container__input'
-                    currency={currency}
-                    error_messages={validation_errors.amount}
-                    fractional_digits={getDecimalPlaces(currency)}
-                    id='amount'
-                    inline_prefix={is_single_currency ? currency : null}
-                    is_autocomplete_disabled
-                    is_float
-                    is_incrementable
-                    is_nativepicker={is_nativepicker}
-                    is_negative_disabled
-                    max_length={10}
-                    name='amount'
-                    onChange={onChange}
-                    type='tel'
-                    value={amount}
-                />
-            </div>
+            <ButtonToggleMenu
+                buttons_arr={basis_list}
+                className='dropdown--no-margin'
+                name='basis'
+                onChange={onChange}
+                value={basis}
+            />
+            {!is_single_currency ?
+                <div className='trade-container__currency-options'>
+                    <Dropdown
+                        className={classNames({ 'trade-container__currency-options-dropdown': !is_single_currency })}
+                        classNameDisplay='trade-container__currency-options--display'
+                        has_symbol
+                        is_alignment_left
+                        is_nativepicker={false}
+                        list={currencies_list}
+                        name='currency'
+                        value={currency}
+                        onChange={onChange}
+                    />
+                    {input}
+                </div>
+                :
+                input
+
+            }
             <AllowEquals
                 contract_start_type={contract_start_type}
                 contract_type={contract_type}

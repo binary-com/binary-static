@@ -6,6 +6,7 @@ import {
     MTAccountOpeningButton } from './common.jsx';
 import { List }              from '../../_common/components/elements.jsx';
 import { SeparatorLine }     from '../../_common/components/separator_line.jsx';
+import Loading               from '../../_common/components/loading.jsx';
 
 const BinaryOptionsForMT5 = () => (
     <div className='static_full get-started'>
@@ -17,7 +18,7 @@ const BinaryOptionsForMT5 = () => (
                         id='sidebar-nav'
                         items={[
                             { id: 'what-are-binary-options', href: '#what-are-binary-options', text: it.L('Introduction to binary options on MT5') },
-                            { id: 'how-to-trade-binary',     href: '#how-to-trade-binary',     text: it.L('How to trade binary options on MT5') },
+                            { id: 'how-to-trade-binary',     href: '#how-to-trade-binary',     text: it.L('How to trade binary options on MT5'), dataShow: '-eucountry' },
                             { id: 'types-of-trades',         href: '#types-of-trades',         text: it.L('Types of trades') },
                         ]}
                     />
@@ -26,6 +27,9 @@ const BinaryOptionsForMT5 = () => (
                 </div>
             </div>
             <div className='gr-9 gr-12-m'>
+                <div id='loading_binary_options_mt5'>
+                    <Loading />
+                </div>
                 <Section id='what-are-binary-options' header={it.L('Introduction to binary options on MT5')}>
                     <p>{it.L('Binary options are now available for you to trade on MT5 – our advanced multi-asset trading platform that offers unlimited trading possibilities.')}</p>
 
@@ -57,7 +61,7 @@ const BinaryOptionsForMT5 = () => (
                     </div>
                     <p>{it.L('Each index corresponds to simulated markets with constant volatilities of 10%, 25%, 50%, 75%, and 100% respectively.')}</p>
                 </Section>
-                <Section id='how-to-trade-binary' header={it.L('How to trade binary options on MT5')}>
+                <Section id='how-to-trade-binary' header={it.L('How to trade binary options on MT5')} data-show='-eucountry'>
                     <p>{it.L('Get started with the [_1] Expert Advisor (EA) for binary options trading on MT5 by following these steps:', it.website_name)}</p>
 
                     <SeparatorLine invisible show_mobile className='gr-padding-10' />
