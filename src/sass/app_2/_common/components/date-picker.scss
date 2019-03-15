@@ -9,6 +9,15 @@
         border-radius: $BORDER_RADIUS;
     }
     &__input {
+        @include themify($themes) {
+            background: themed('background_container_color');
+            color: themed('text_color');
+
+            &:hover, &:focus, &:active {
+                border-color: themed('text_color');
+            }
+        }
+
         &::-ms-clear { // Edge: hide clear icon for increment input
             display: none;
         }
