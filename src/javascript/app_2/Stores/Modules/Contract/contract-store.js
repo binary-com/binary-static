@@ -113,7 +113,6 @@ export default class ContractStore extends BaseStore {
     @action.bound
     onUnmount() {
         this.disposeSwitchAccount();
-        this.forgetProposalOpenContract();
         this.onCloseContract();
     }
 
