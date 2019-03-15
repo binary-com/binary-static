@@ -40,16 +40,17 @@
         }
     }
     &__load_container {
-        overflow: hidden;
         width: 92px;
         height: 8px;
+        overflow: hidden;
+        background-color: rgba($COLOR_WHITE, 0.16);
     }
     &--loading {
+        width: 100%;
+        height: 100%;
         animation: data--loading 0.6s ease infinite;
-        background-color: $COLOR_WHITE;
+        background-image: linear-gradient(to left, rgba(255, 255, 255, 0), $COLOR_WHITE 27%, $COLOR_WHITE 48%, $COLOR_WHITE 67%, rgba(255, 255, 255, 0));
         opacity: 0.16;
-        width: 92px;
-        height: 8px;
     }
     &__error {
         justify-content: center;
@@ -420,6 +421,9 @@
         background-color: $COLOR_LIGHT_BLACK_3_SOLID_2;
         color: $COLOR_DARK_BLUE_7;
 
+        span {
+            display: block;
+        }
         .btn-purchase__content {
             background-color: $COLOR_LIGHT_BLACK_3_SOLID_1;
         }
@@ -433,16 +437,12 @@
             width: 16px;
             height: 16px;
         }
-        .btn-purchase__trade-type-text span {
-            display: block;
-        }
         .btn-purchase__trade-type-icon, .btn-purchase__trade-type-text, .btn-purchase__profit-text__wrapper, .btn-purchase__return-text__wrapper {
-            background-color: $COLOR_WHITE;
-            opacity: 0.32;
+            background-color: rgba($COLOR_WHITE, 0.32);
         }
         .btn-purchase__trade-type-icon svg, .btn-purchase__trade-type-text span, .btn-purchase__profit-text, .btn-purchase__return-text {
-            // Temporary color, replace with gradient in the future.
-            background-color: $COLOR_DARK_BLUE_7;
+            background-image: linear-gradient(to left, rgba(255, 255, 255, 0), $COLOR_WHITE 27%, $COLOR_WHITE 48%, $COLOR_WHITE 67%, rgba(255, 255, 255, 0));
+            opacity: 0.32;
         }
         .btn-purchase__trade-type-text, .btn-purchase__trade-type-text span, .btn-purchase__profit-text__wrapper, .btn-purchase__return-text__wrapper {
             width: 56px;
@@ -451,7 +451,6 @@
         .btn-purchase__profit-text, .btn-purchase__return-text {
             width: 100%;
             height: 100%;
-            display: block;
         }
         .btn-purchase__profit-text__wrapper, .btn-purchase__return-text__wrapper {
             margin: 4px 0;
