@@ -20,7 +20,7 @@ const InterviewPopup = (() => {
                 || RealityCheckData.get('keep_open') === 1))) {
                 setTimeout(() => {
                     $interview_popup.removeClass('invisible');
-                }, 500);
+                }, 2000);
                 $interview_no_thanks.one('click', () => {
                     Cookies.set('InterviewConsent', 1);
                     $interview_popup.addClass('invisible');
