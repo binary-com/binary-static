@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-03-13 13:04\n"
+"PO-Revision-Date: 2019-03-15 12:16\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Indonesian\n"
 "MIME-Version: 1.0\n"
@@ -119,6 +119,9 @@ msgstr "Syarat dan Ketentuan Application Program Interface (\"API\") %1"
 
 msgid "%1 Expert Advisor (EA)"
 msgstr "Expert Advisor (EA) %1"
+
+msgid "%1 Graduate Programme"
+msgstr ""
 
 msgid "%1 Introducing Broker (IB) Programme"
 msgstr "Program Introducing Broker (IB) %1"
@@ -1494,6 +1497,9 @@ msgstr "Aset"
 msgid "Asset Index"
 msgstr "Indeks Aset"
 
+msgid "Asset index is unavailable in this country. If you have an active %1 account, please log in for full access."
+msgstr ""
+
 msgid "Assign and manage multiple sub-accounts seamlessly via one interface – the Multiple Accounts Manager (MAM)."
 msgstr "Tetapkan dan kelola beberapa sub-akun dengan cepat menggunakan fasilitas - Multi Akun Manager (MAM)."
 
@@ -1982,6 +1988,9 @@ msgstr "Cabang Binary Malta yaitu Binary Investments (Europe) Ltd. diberikan seb
 
 msgid "Binary's platform transacts on average %1 %2transactions%3 per second, 24/7"
 msgstr "Platform Binary memproses rata-rata %1 %2transaksi%3 per detik, 24/7"
+
+msgid "Binary.com Graduate Program"
+msgstr ""
 
 msgid "Binary.com is an award-winning online trading provider that helps its clients to trade on financial markets through binary options and CFDs. Trading binary options and CFDs on Volatility Indices is classified as a gambling activity. Remember that gambling can be addictive – please play responsibly. Learn more about %1Responsible Trading%2. Some products are not available in all countries. This website’s services are not made available in certain countries such as the USA, Canada, Costa Rica, Hong Kong, or to persons under age 18."
 msgstr "Binary.com adalah pemenang penghargaan sebagai penyedia trading online yang membantu para pelanggan untuk bertrading pada pasar finansial melalui opsi binary dan CFD. Beberapa produk mungkin tidak tersedia di semua negara. Fasilitas situs ini tidak tersedia di beberapa negara seperti AS, Kanada, Kosta Rika, Hong Kong atau siapapun dibawah umur 18."
@@ -3271,7 +3280,7 @@ msgid "DevOps Engineer"
 msgstr "DevOps Engineer"
 
 msgid "Develop and implement databases; collect, design, process, analyse, and present data in a meaningful way."
-msgstr "Mengembangkan dan mengimplementasikan basis data; mengumpulkan, mendesain, memproses, menganalisis, dan menyajikan data dengan cara yang bermakna."
+msgstr "Mengembangkan dan mengimplementasikan database; mengumpulkan, mendesain, memproses, menganalisis, dan menyajikan data dengan cara yang bermakna."
 
 msgid "Develop and maintain advanced features, tools, and applications according to best practices in UI/UX, front-end development and hybrid mobile application development"
 msgstr "Mengembangkan dan mempertahankan fitur lanjutan, alat, dan aplikasi sesuai dengan praktek terbaik dalam UI/UX, pengembangan front-end dan pengembangan aplikasi mobile hibrida"
@@ -3994,7 +4003,7 @@ msgid "Experience with Linux and open-source applications such as rsyslog, DHCP,
 msgstr "Berpengalaman dengan Linux dan aplikasi open-source seperti rsyslog, DHCP, iptables, Postfix, NGINX, dan sistem inisialisasi seperti systemd dan SysVinit"
 
 msgid "Experience with MDX query language"
-msgstr "Berpengalaman dengan bahasa kueri MDX"
+msgstr "Berpengalaman dengan bahasa query MDX"
 
 msgid "Experience with Multidimensional Expressions (MDX) is an advantage"
 msgstr "Diutamakan berpengalaman dengan Ekspresi Multidimensi (MDX)"
@@ -4021,7 +4030,7 @@ msgid "Experience with languages such as Perl, Python, PHP, C/C++, Go, or Ruby, 
 msgstr "Berpengalaman dengan bahasa pemrograman seperti Perl, Python, PHP, C/C ++, Go, atau Ruby, dan kesediaan untuk menjadi sangat mahir dengan Perl"
 
 msgid "Experience with machine learning algorithms, decision trees, neural networks, clustering, etc."
-msgstr "Berpengalaman dengan mesin pembelajaran algoritma, pohon keputusan, jaringan saraf, pengelompokan, dll."
+msgstr "Berpengalaman dengan mesin pembelajaran algoritma, decision tree, jaringan saraf, pengelompokan, dll."
 
 msgid "Experience with package managers (npm), task runners (Gulp, Webpack, Grunt), CSS processors (Sass, Stylus), and APIs (WebSocket)"
 msgstr "Berpengalaman dengan manajer paket (npm), pelari tugas (Gulp, Webpack, Grunt), prosesor CSS (Sass, Stylus), dan API (WebSocket)"
@@ -4294,7 +4303,7 @@ msgid "Fixed spreads"
 msgstr "Spread tetap"
 
 msgid "Fixing problems and providing feedback for improvement."
-msgstr "Memperbaiki masalah dan memberikan umpan balik untuk perbaikan."
+msgstr "Memperbaiki masalah dan memberikan saran untuk perbaikan."
 
 msgid "Flexible"
 msgstr "Fleksibel"
@@ -7271,9 +7280,6 @@ msgstr "Akun MAM Advanced dapat ditugaskan ke money manager yang akan bertrading
 
 msgid "Our MAM Volatility Indices account can be assigned to a money manager who will trade on your behalf with the same specifications as the regular Volatility Indices account."
 msgstr "Akun Volatilitas Indeks MAM kami dapat diberikan kepada money manager yang akan bertrading atas nama Anda dengan spesifikasi yang sama dengan akun Indeks Volatilitas biasa."
-
-msgid "Our MT5 service is currently unavailable to EU residents due to pending regulatory approval."
-msgstr "Layanan MT5 kami tidak tersedia untuk warga Uni Eropa berhubung persetujuan peraturan yang masih tertunda."
 
 msgid "Our MetaTrader 5 Advanced account provides you with tight spreads, higher ticket size and offers more products."
 msgstr "Akun MetaTrader Lanjutan 5 kami memberi Anda spread yang ketat, ukuran tiket yang lebih tinggi dan menawarkan lebih banyak produk."
@@ -12362,7 +12368,7 @@ msgid "You are not entitled to any compensation or reimbursement of any kind fro
 msgstr "Anda tidak berhak atas kompensasi atau penggantian dalam bentuk apapun dari Perusahaan dalam keadaan apapun."
 
 msgid "You are not resident in a restricted country such as Canada, Costa Rica, Hong Kong, Israel, Jersey, Malaysia, Malta, Paraguay, United Arab Emirates, USA or any other restricted country which has been identified by the FATF as having strategic deficiencies;"
-msgstr ""
+msgstr "Anda bukan penduduk di negara yang dibatasi seperti KAnda, Costa Rica, Hong Kong, Israel, Jersey, Malaysia, Malta, Paraguay, Uni Emirat Arab, AS atau negara terlarang lainnya yang telah diidentifikasi oleh FATF;"
 
 msgid "You are not trading in the actual underlying instrument, or the actual foreign currency; all transactions are settled in cash only."
 msgstr "Anda tidak mentradingkan instrumen dasar yang sebenarnya, atau mata uang asing yang sebenarnya; semua transaksi diselesaikan secara tunai saja."
@@ -13412,7 +13418,7 @@ msgid "years"
 msgstr "tahun"
 
 msgid "you are not resident in a restricted country such as Canada, Costa Rica, Hong Kong, Israel, Jersey, Malaysia, Malta, Paraguay, United Arab Emirates, USA or any other restricted country which has been identified by the FATF as having strategic deficiencies;"
-msgstr ""
+msgstr "anda bukan penduduk di negara yang dibatasi seperti Kanda, Costa Rica, Hong Kong, Israel, Jersey, Malaysia, Malta, Paraguay, Uni Emirat Arab, AS atau negara terlarang lainnya yang telah diidentifikasi oleh FATF;"
 
 msgid "you are over 18 years of age, unless you are an Estonian resident whereby you would have to be over 21;"
 msgstr "Anda berumur lebih dari 18 tahun, kecuali jika Anda adalah seorang penduduk Estonia maka Anda harus berumur lebih dari 21 tahun,"
