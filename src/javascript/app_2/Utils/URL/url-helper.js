@@ -12,6 +12,13 @@ export default class URLHelper {
         const query_string =  url ? new URL(url).search : window.location.search;
         const query_params = new URLSearchParams(query_string.slice(1));
 
+        [...query_params].forEach(value => {
+            // by default, URL encoding replaces '+' with white-spaces
+            // but for barrier, we want to keep '+' sign. so, we need to encode white-spaces
+            // and then replace %20 to '+'.
+            query_params.set(value[0], encodeURI(value[1]).replace(/%20/g, '+'));
+        });
+
         return query_params;
     }
 
