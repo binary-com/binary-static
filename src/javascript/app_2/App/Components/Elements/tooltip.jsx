@@ -25,6 +25,7 @@ class Tooltip extends React.Component {
             children,
             className,
             classNameIcon,
+            has_error,
             icon, // only question or info accepted
             message,
         } = this.props;
@@ -32,7 +33,7 @@ class Tooltip extends React.Component {
         const icon_class = classNames(classNameIcon, icon);
         return (
             <span
-                className={classNames(className, 'tooltip')}
+                className={classNames(className, 'tooltip', { 'tooltip--error': has_error })}
                 data-tooltip={message}
                 data-tooltip-pos={alignment}
             >
@@ -63,6 +64,7 @@ Tooltip.propTypes = {
     children     : PropTypes.node,
     className    : PropTypes.string,
     classNameIcon: PropTypes.string,
+    has_error    : PropTypes.bool,
     icon         : PropTypes.string,
     message      : PropTypes.string,
 };

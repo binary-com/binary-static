@@ -73,6 +73,7 @@ export default class ContractStore extends BaseStore {
     onLoadContract(contract_info) {
         if (contract_info === this.contract_id || !contract_info) return;
         this.onSwitchAccount(this.accountSwitcherListener.bind(null));
+        this.root_store.modules.trade.symbol = contract_info.underlying;
         this.smart_chart   = this.root_store.modules.smart_chart;
         this.contract_info = contract_info;
         this.contract_id   = +contract_info.contract_id;
@@ -113,7 +114,6 @@ export default class ContractStore extends BaseStore {
     @action.bound
     onUnmount() {
         this.disposeSwitchAccount();
-        this.forgetProposalOpenContract();
         this.onCloseContract();
     }
 

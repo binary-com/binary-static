@@ -13,6 +13,7 @@ const AssetIndexUI = (() => {
 
     const onLoad = () => {
         $container  = $('#asset-index');
+        $('#empty-asset-index').setVisibility(0);
         asset_index = market_columns = undefined;
         active_symbols = undefined;
 
@@ -28,6 +29,12 @@ const AssetIndexUI = (() => {
 
     const populateTable = () => {
         if (!active_symbols || !asset_index) return;
+
+        if (!asset_index.length) {
+            $container.empty();
+            $('#empty-asset-index').setVisibility(1);
+            return;
+        }
 
         $('#errorMsg').setVisibility(0);
         asset_index    = AssetIndex.getAssetIndexData(asset_index, active_symbols);
