@@ -92,7 +92,6 @@ const DigitDisplay = (() => {
             tick_count,
             {
                 quote: contract.status !== 'open' ? contract.exit_tick : spot,
-                epoch: +contract.exit_tick_time || +contract.current_spot_time,
             }
         );
     };
@@ -128,7 +127,6 @@ const DigitDisplay = (() => {
         if (proposal_open_contract.status !== 'open') {
             DigitTicker.update(proposal_open_contract.tick_count, {
                 quote: proposal_open_contract.exit_tick,
-                epoch: +proposal_open_contract.exit_tick_time,
             });
         }
         if (proposal_open_contract.status === 'won') {

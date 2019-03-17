@@ -145,9 +145,7 @@ const DigitTicker = (() => {
     };
 
     const markAsLost = () => {
-        if (!el_peek_box || !el_peek) {
-            setElements();
-        }
+        setElements();
         el_peek.classList.remove('digit-winning', 'digit-running');
         el_peek_box.classList.remove('digit-winning', 'digit-running');
         el_peek.classList.add('digit-losing');
@@ -167,9 +165,7 @@ const DigitTicker = (() => {
     };
 
     const markAsWon = () => {
-        if (!el_peek_box || !el_peek) {
-            setElements();
-        }
+        setElements();
         el_peek_box.classList.remove('digit-losing', 'digit-running');
         el_peek_box.classList.add('digit-winning');
         el_peek.classList.remove('digit-losing', 'digit-running');
@@ -177,12 +173,14 @@ const DigitTicker = (() => {
     };
 
     const setElements = () => {
+        if (!el_container || !el_peek || !el_peek_box || !el_mask) {
+            populateContainer(el_container);
+            highlightWinningNumbers(getWinningNumbers(type, barrier));
+        }
         el_peek     = el_container ? el_container.querySelector('.peek') : null;
         el_peek_box = el_peek ? el_container.querySelector('.peek-box') : null;
         el_mask     = el_peek_box ? el_peek_box.querySelector('.mask') : null;
     };
-
-    const isBarrierMissing = (contract_type, bar) => !/digit(even|odd)/i.test(type) && !bar;
 
     const setBarrierFromShortcode = (contract_type, shortcode) => {
         barrier = '';
@@ -192,20 +190,19 @@ const DigitTicker = (() => {
         }
     };
 
-    const update = (current_tick_count, { quote, epoch }) => {
-        if (!el_mask || !el_peek_box || !el_peek || current_tick_count > total_tick_count) {
+    const update = (current_tick_count, { quote }) => {
+        if (current_tick_count > total_tick_count) {
             return;
         }
 
-        setElements(epoch);
+        setElements();
         el_container.classList.remove('invisible');
         adjustBoxSizes();
         current_spot = quote.substr(-1);
-        el_mask.innerText = `${current_tick_count} / ${total_tick_count}`;
 
+        el_mask.innerText = `${current_tick_count} / ${total_tick_count}`;
         el_peek_box.classList.add('digit-running');
         el_peek.classList.add('digit-running');
-
         el_peek_box.setAttribute('style', `transform: translateX(${calculateOffset()}px)`);
     };
 
@@ -254,7 +251,6 @@ const DigitTicker = (() => {
         init,
         update,
         countUp,
-        isBarrierMissing,
         markAsWon,
         markAsLost,
         markDigitAsLost,
@@ -262,5 +258,4 @@ const DigitTicker = (() => {
         remove,
     };
 })();
-
 module.exports = DigitTicker;
