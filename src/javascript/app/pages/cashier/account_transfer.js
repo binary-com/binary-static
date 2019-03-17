@@ -56,10 +56,13 @@ const AccountTransfer = (() => {
 
         elementTextContent(el_transfer_from, `${client_loginid} ${client_currency ? `(${client_currency})` : ''}`);
 
-        const fragment_transfer_to = document.createElement('div');
+        const fragment_transfer_to = document.createElement('select');
 
-        sortAccounts(accounts).forEach((account) => {
+        sortAccounts(accounts).forEach((account, index) => {
             if (Client.canTransferFunds(account)) {
+                if (index === 0) {
+                    to_loginid = account.loginid;
+                }
                 const option = document.createElement('option');
                 option.setAttribute('data-currency', account.currency);
                 option.setAttribute('data-loginid', account.loginid);
@@ -84,8 +87,9 @@ const AccountTransfer = (() => {
         } else {
             el_transfer_to.innerHTML = fragment_transfer_to.innerHTML;
         }
-        el_transfer_to.addEventListener('change', () => {
+        el_transfer_to.addEventListener('change', (e) => {
             setTransferFeeAmount();
+            to_loginid = e.target.getAttribute('data-loginid');
         });
 
         transfer_to_currency = getElementById('amount-add-on');
@@ -108,7 +112,6 @@ const AccountTransfer = (() => {
 
     const setTransferFeeAmount = () => {
         elementTextContent(el_fee_amount, Currency.getTransferFee(client_currency, (el_transfer_to.value || el_transfer_to.getAttribute('data-value') || '').match(/\((\w+)\)/)[1]));
-        to_loginid = el_transfer_to.getAttribute('data-loginid');
     };
 
     const hasError = (response) => {
