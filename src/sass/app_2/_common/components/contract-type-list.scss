@@ -4,6 +4,9 @@
 
     &__label {
         @include typeface(--paragraph-left-bold-black);
+        @include themify($themes) {
+            color: themed('text_primary_color');
+        }
         margin-bottom: 0.8em;
     }
     &:last-child {
@@ -66,8 +69,9 @@
         }
     }
     &--selected {
-        background: $COLOR_LIGHT_GRAY_1;
-
+        @include themify($themes) {
+            color: themed('text_color');
+        }
         /* postcss-bem-linter: ignore */
         span {
             font-weight: bold;

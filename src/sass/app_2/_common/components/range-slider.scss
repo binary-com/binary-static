@@ -135,10 +135,21 @@
         }
         &__caption {
             display: flex;
-            padding: 4px 0;
+            padding: 8px 0 0;
             justify-content: space-between;
             line-height: 1.5;
-            font-size: 1.2em;
+            font-size: 1.4em;
+
+            /* postcss-bem-linter: ignore */
+            &--first, &--last {
+                color: themed('text_primary_color') !important;
+                font-weight: normal !important;
+            }
+            /* postcss-bem-linter: ignore */
+            span {
+                font-weight: bold;
+                color: themed('text_color');
+            }
         }
     }
 }

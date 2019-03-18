@@ -249,15 +249,6 @@
             box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.5);
         }
     }
-    .contract-type-list {
-        &__label span {
-            color: $COLOR_DARK_BLUE_7;
-        }
-        &__contract-wrapper {
-            background: $COLOR_DARK_BLUE_2;
-            color: $COLOR_DARK_BLUE_7;
-        }
-    }
     .contract-type-item {
         background: $COLOR_DARK_BLUE_2;
         color: $COLOR_DARK_BLUE_7;
@@ -392,7 +383,6 @@
     .input {
         background: $COLOR_DARK_BLUE_2;
         border-color: $COLOR_DARK_BLUE_2;
-        color: $COLOR_DARK_BLUE_7;
 
         &[type=checkbox] {
             border-color: $COLOR_DARK_BLUE_7;
@@ -427,9 +417,6 @@
             background: $COLOR_DARK_BLUE_2;
             border-color: $COLOR_DARK_BLUE_2;
 
-            &-text {
-                color: $COLOR_DARK_BLUE_7;
-            }
             &:hover, &:focus, &:active {
                 border-color: $COLOR_DARK_BLUE_7;
             }

@@ -12,7 +12,10 @@
         margin-top: 0.8em;
 
         &-text {
-            @include typeface(--paragraph-center-normal-black, capitalize);
+            @include typeface(--paragraph-center-bold-black, capitalize);
+            @include themify($themes) {
+                color: themed('text_color');
+            }
             padding-left: 1.6em;
         }
         &:active, &:focus {
