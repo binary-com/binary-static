@@ -1,12 +1,13 @@
 import PropTypes                      from 'prop-types';
 import { PropTypes as MobxPropTypes } from 'mobx-react';
 import React                          from 'react';
+import DatePicker                     from 'App/Components/Form/DatePicker';
 import { connect }                    from 'Stores/connect';
+import { hasIntradayDurationUnit }    from 'Stores/Modules/Trading/Helpers/duration';
 import {
     isTimeValid,
     setTime,
     toMoment }                        from 'Utils/Date';
-import DatePicker                     from 'App/Components/Form/DatePicker';
 
 const TradingDatePicker = ({
     duration_min_max,
@@ -27,8 +28,9 @@ const TradingDatePicker = ({
         min_date_expiry,
         has_today_btn,
         is_read_only;
+    const min_duration = hasIntradayDurationUnit(duration_units_list) ? toMoment(server_time) : toMoment(server_time).add(duration_min_max.daily.min, 'second');
     const moment_contract_start_date_time =
-        setTime(toMoment(start_date || server_time), (isTimeValid(start_time) ? start_time : server_time.format('HH:mm:ss')));
+        setTime(toMoment(min_duration), (isTimeValid(start_time) ? start_time : server_time.format('HH:mm:ss')));
 
     const max_daily_duration = duration_min_max.daily ? duration_min_max.daily.max : 365 * 24 * 3600;
 
