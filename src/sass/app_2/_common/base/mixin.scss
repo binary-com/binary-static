@@ -244,3 +244,30 @@
 @function themed($key) {
     @return map-get($theme-map, $key);
 }
+
+/*
+ * Tooltip colors
+ * @param $color - color property
+ * Usage example:
+   @include tooltipColor($COLOR_RED);
+ */
+@mixin tooltipColor($color) {
+    &:before {
+        background: $color;
+    }
+    &:after, &[data-tooltip-pos=top]:after {
+        border-top-color: $color;
+    }
+    &[data-tooltip-pos=right]:after {
+        border-top-color: transparent;
+        border-right-color: $color;
+    }
+    &[data-tooltip-pos=left]:after {
+        border-top-color: transparent;
+        border-left-color: $color;
+    }
+    &[data-tooltip-pos=bottom]:after {
+        border-top-color: transparent;
+        border-bottom-color: $color;
+    }
+}

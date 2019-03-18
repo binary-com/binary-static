@@ -1,44 +1,67 @@
-import React          from 'react';
-import PropTypes      from 'prop-types';
-import { localize }   from '_common/localize';
-import Tooltip        from 'App/Components/Elements/tooltip.jsx';
-import InputField     from 'App/Components/Form/InputField';
+import React                    from 'react';
+import PropTypes                from 'prop-types';
+import { localize }             from '_common/localize';
+import Tooltip                  from 'App/Components/Elements/tooltip.jsx';
+import InputField               from 'App/Components/Form/InputField';
+import {
+    hasCallPutEqual,
+    hasDurationForCallPutEqual,
+    isRiseFallEqual }           from 'Stores/Modules/Trading/Helpers/allow-equals';
 
 const AllowEquals = ({
-    is_allow_equal,
-    checked,
+    contract_start_type,
+    contract_type,
+    contract_types_list,
+    duration_unit,
+    expiry_type,
     onChange,
-}) => (
-    !!is_allow_equal &&
-        <div className='allow-equals'>
-            <InputField
-                className='allow-equals__input-field'
-                classNameInput='allow-equals__input trade-container__input'
-                id='allow_equals'
-                name='contract_type'
-                onChange={onChange}
-                value='is_equal'
-                type='checkbox'
-                checked={checked}
-            />
-            <label className='allow-equals__label' htmlFor='allow_equals'>{localize('Allow equals')}</label>
-            <Tooltip
-                alignment='left'
-                className='allow-equals__tooltip'
-                classNameIcon='allow-equals__tooltip-info'
-                icon='info'
-                message={localize('Win payout if exit spot is also equal to entry spot.')}
-            />
-        </div>
-);
+    value,
+}) => {
+    const has_callputequal_duration = hasDurationForCallPutEqual(contract_types_list,
+        duration_unit, contract_start_type);
+    const has_callputequal          = hasCallPutEqual(contract_types_list);
+
+    const has_allow_equals = isRiseFallEqual(contract_type) &&
+            ((has_callputequal_duration || expiry_type === 'endtime') && has_callputequal);
+
+    const changeValue = (e) => {
+        const { name, checked } = e.target;
+        onChange({ target: { name, value: Number(checked) } });
+    };
+
+    return (
+        has_allow_equals &&
+            <div className='allow-equals'>
+                <InputField
+                    className='allow-equals__input-field'
+                    classNameInput='allow-equals__input trade-container__input'
+                    checked={value}
+                    id='allow_equals'
+                    name='is_equal'
+                    onChange={changeValue}
+                    type='checkbox'
+                    value={value}
+                />
+                <label className='allow-equals__label' htmlFor='allow_equals'>{localize('Allow equals')}</label>
+                <Tooltip
+                    alignment='left'
+                    className='allow-equals__tooltip'
+                    classNameIcon='allow-equals__tooltip-info'
+                    icon='info'
+                    message={localize('Win payout if exit spot is also equal to entry spot.')}
+                />
+            </div>
+    );
+};
 
 AllowEquals.propTypes = {
-    checked: PropTypes.oneOfType([
-        PropTypes.number,
-        PropTypes.string,
-    ]),
-    is_allow_equal: PropTypes.bool,
-    onChange      : PropTypes.func,
+    contract_start_type: PropTypes.string,
+    contract_type      : PropTypes.string,
+    contract_types_list: PropTypes.object,
+    duration_unit      : PropTypes.string,
+    expiry_type        : PropTypes.string,
+    onChange           : PropTypes.func,
+    value              : PropTypes.number,
 };
 
 export default AllowEquals;
