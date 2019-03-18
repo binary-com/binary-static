@@ -53,7 +53,7 @@ const Tac = () => (
             '<a href="http://www.gamblingcommission.gov.uk/for-the-public/Your-rights/Protection-of-customer-funds.aspx" target="_blank" rel="noopener noreferrer">', '</a>')}
         </p>
         <p data-show='eucountry'>{it.L('The company holds customer funds in separate bank accounts to the operational accounts; and arrangements have been made to ensure assets in the customer accounts are distributed to customers in the event of insolvency. This meets the Gambling Commission\'s requirements for the segregation of customer funds at the level: medium protection.')}</p>
-        <p>{it.L('The company has various deposit methods available, each with their own timing for deposits, some of which might not be available for withdrawals. Full details of deposits and withdrawals methods available including settlement times are available [_1]here.[_2]',
+        <p>{it.L('The company has various deposit methods available, each with their own timing for deposits, some of which might not be available for withdrawals. Full details of deposits and withdrawals methods available including settlement times are available [_1]here[_2].',
             `<a href='${it.url_for('cashier/payment_methods')}'>`, '</a>')}
         </p>
         <p>{it.L('Your account should not be used as a banking facility and deposits should only be made with a view to using funds to place contracts. The Company is not a financial institution, Clients will not receive interest on deposits. Should you make repeated deposits and withdrawals without commensurate contracts being placed, we reserve the right to pass on to your accounts, without prior notice, any bank charges we have incurred before closing the account.')}</p>
