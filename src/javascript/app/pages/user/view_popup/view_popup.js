@@ -20,7 +20,6 @@ const ViewPopup = (() => {
         is_sold,
         is_sold_before_start,
         is_sell_clicked,
-        is_tick_contract,
         chart_started,
         chart_init,
         chart_updated,
@@ -266,7 +265,6 @@ const ViewPopup = (() => {
             if (!chart_started) {
                 DigitDisplay.init(id_tick_chart, contract);
                 chart_started = true;
-                is_tick_contract = true;
             }
         } else if (!chart_started && !contract.tick_count) {
             if (!chart_init) {
@@ -280,7 +278,6 @@ const ViewPopup = (() => {
         } else if (contract.tick_count && !chart_updated) {
             TickDisplay.updateChart({ id_render: id_tick_chart, request_ticks: !ticks_requested }, contract);
             ticks_requested = true;
-            is_tick_contract = true;
             if ('barrier' in contract) {
                 chart_updated = true;
             }
@@ -557,7 +554,7 @@ const ViewPopup = (() => {
     };
 
     const populateAuditTable = (show_audit_table) => {
-        if (!is_tick_contract) {
+        if (!contract.tick_count) {
             const contract_starts = createAuditTable(localize('Contract Starts'));
             parseAuditResponse(contract_starts.table, contract.audit_details.contract_start).then(() => {
                 if (contract.audit_details.contract_start) {
@@ -593,7 +590,9 @@ const ViewPopup = (() => {
                     contract_details.div.remove();
                 }
 
-                onAuditTableComplete(show_audit_table);
+                if (contract.status === 'sold') {
+                    onAuditTableComplete(show_audit_table);
+                }
             });
         }
     };
