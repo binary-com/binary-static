@@ -1,7 +1,9 @@
 import moment       from 'moment';
 import { localize } from '_common/localize';
-import ServerTime from '../../../_common/base/server_time';
+import ServerTime   from '../../../_common/base/server_time';
 
+// Disables moment's fallback to native Date object
+// moment will return `Invalid Date` if date cannot be parsed
 moment.createFromInputFallback = function (config) {
     config._d = new Date(NaN);
 };

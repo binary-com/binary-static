@@ -6,7 +6,7 @@ const ServerTime = (() => {
     let clock_started = false;
     const pending = new PromiseClass();
     let server_time,
-        perf_request_time,
+        performance_request_time,
         get_time_interval,
         update_time_interval,
         onTimeUpdated;
@@ -22,7 +22,7 @@ const ServerTime = (() => {
     };
 
     const requestTime = () => {
-        perf_request_time = performance.now();
+        performance_request_time = performance.now();
         BinarySocket.send({ time: 1 }).then(timeCounter);
     };
 
@@ -37,11 +37,11 @@ const ServerTime = (() => {
         clearInterval(update_time_interval);
 
         const start_timestamp = response.time;
-        const perf_response_time = performance.now();
-        const server_time_at_response = ((start_timestamp * 1000) + (perf_response_time - perf_request_time));
+        const performance_response_time = performance.now();
+        const server_time_at_response = ((start_timestamp * 1000) + (performance_response_time - performance_request_time));
 
         const updateTime = () => {
-            server_time = moment(server_time_at_response + (performance.now() - perf_response_time)).utc();
+            server_time = moment(server_time_at_response + (performance.now() - performance_response_time)).utc();
 
             if (typeof onTimeUpdated === 'function') {
                 onTimeUpdated();
