@@ -248,7 +248,6 @@ module.exports = [
     'Open a Financial Account',
     'Open a Real Account',
     'Opens',
-    'Our MT5 service is currently unavailable to EU residents due to pending regulatory approval.',
     'Over/Under',
     'PM',
     'Passport',

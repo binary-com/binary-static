@@ -27,8 +27,8 @@
     &__button {
         position: absolute;
         z-index: 1;
-        top: 1px;
-        height: calc(100% - 2px);
+        top: 2px;
+        height: 28px;
         margin: initial;
         min-width: 3.2em;
         border-radius: 3px;
@@ -39,12 +39,10 @@
         align-items: center;
 
         &--increment {
-            right: 1px; // fixed position
-            height: 28px;
+            right: 2px;
         }
         &--decrement {
-            left: 1px; // fixed position
-            height: 28px;
+            left: 2px;
         }
         &:hover {
             cursor: pointer;
@@ -117,10 +115,6 @@
     &:not([type=range]) {
         touch-action: manipulation;
     }
-    &--error {
-        color: $COLOR_RED;
-        border: 1px solid $COLOR_RED !important;
-    }
     &[readonly] {
         cursor: pointer;
     }
@@ -134,10 +128,18 @@
         outline: 0;
         border-radius: $BORDER_RADIUS;
         border-color: $COLOR_LIGHT_GRAY_1;
-        box-shadow: 0 0 0 2px rgba(127, 131, 151, 0.3);
+        box-shadow: 0 0 0 2px $COLOR_DARK_BLUE_8;
     }
     &--has-inline-prefix {
         padding-left: 50px !important;
         border-radius: $BORDER_RADIUS !important;
+    }
+    &--error {
+        color: $COLOR_RED;
+        border: 1px solid $COLOR_RED !important;
+
+        &:active, &:focus {
+            box-shadow: 0 0 0 2px rgba(226, 28, 76, 0.3) !important;
+        }
     }
 }
