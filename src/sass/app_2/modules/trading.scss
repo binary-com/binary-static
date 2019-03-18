@@ -46,7 +46,9 @@ $linear-gradient-white-blur: linear-gradient(to left, rgba(255, 255, 255, 0), $C
         width: 92px;
         height: 8px;
         overflow: hidden;
-        background-color: rgba($COLOR_WHITE, 0.16);
+        @include themify($themes) {
+            background-color: themed('loader_background');
+        }
     }
     &--loading {
         width: 100%;
@@ -418,17 +420,23 @@ $linear-gradient-white-blur: linear-gradient(to left, rgba(255, 255, 255, 0), $C
         }
     }
     &:disabled {
-        background-color: $COLOR_LIGHT_BLACK_3_SOLID_2;
+        @include themify($themes) {
+            background-color: themed('purchase_background_color');
+        }
         color: $COLOR_DARK_BLUE_7;
 
         & span {
             display: block;
         }
         .btn-purchase__content {
-            background-color: $COLOR_LIGHT_BLACK_3_SOLID_1;
+            @include themify($themes) {
+                background-color: themed('purchase_detail_color');
+            }
         }
         .btn-purchase__effect-detail {
-            border-color: transparent transparent transparent $COLOR_LIGHT_BLACK_3_SOLID_1;
+            @include themify($themes) {
+                border-color: transparent transparent transparent themed('purchase_detail_color');
+            }
         }
         .btn-purchase__trade-type-icon, .btn-purchase__trade-type-text, .btn-purchase__profit, .btn-purchase__return {
             overflow: hidden;
@@ -438,7 +446,9 @@ $linear-gradient-white-blur: linear-gradient(to left, rgba(255, 255, 255, 0), $C
             height: 16px;
         }
         .btn-purchase__trade-type-icon, .btn-purchase__trade-type-text, .btn-purchase__profit-text__wrapper, .btn-purchase__return-text__wrapper {
-            background-color: rgba($COLOR_WHITE, 0.32);
+            @include themify($themes) {
+                background-color: themed('loader_background');
+            }
         }
         .btn-purchase__trade-type-icon svg, .btn-purchase__trade-type-text span, .btn-purchase__profit-text, .btn-purchase__return-text {
             background-image: $COLOR_WHITE;

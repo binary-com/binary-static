@@ -27,6 +27,10 @@ $themes: (
         text_primary_color          : $COLOR_LIGHT_BLACK_1,
         text_secondary_color        : $COLOR_LIGHT_BLACK_2,
         won_gradient_color          : $COLOR_LIGHT_GREEN_GRADIENT,
+
+        purchase_background_color   : $COLOR_LIGHT_BLACK_3_SOLID_2,
+        purchase_detail_color       : $COLOR_LIGHT_BLACK_3_SOLID_1,
+        loader_background           : $COLOR_LIGHT_BLACK_3,
     ),
     dark: (
         active_color                : $COLOR_DARK_BLUE_5,
@@ -55,5 +59,9 @@ $themes: (
         text_primary_color          : $COLOR_DARK_BLUE_7,
         text_secondary_color        : $COLOR_DARK_BLUE_7,
         won_gradient_color          : $COLOR_DARK_GREEN_GRADIENT,
+
+        purchase_background_color   : $COLOR_DARK_GREY_1,
+        purchase_detail_color       : $COLOR_DARK_GREY_2,
+        loader_background           : rgba($COLOR_WHITE, 0.16),
     ),
 );
