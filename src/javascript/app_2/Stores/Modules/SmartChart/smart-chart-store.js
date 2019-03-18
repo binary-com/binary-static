@@ -65,7 +65,7 @@ export default class SmartChartStore extends BaseStore {
 
     @action.bound
     resetScrollZoom() {
-        this.zoom = null;
+        this.zoom = (this.zoom === 100) ? -100 : 0;
         this.left_epoch = null;
         this.left_epoch_offset = null;
     }
