@@ -499,7 +499,7 @@ const JobDetails = () => (
                                     { text: it.L('Proficiency in designing intuitive and cohesive screens, pages, and visual elements that work as intended') },
                                     { text: it.L('Proficiency in Photoshop, Illustrator, Sketch, and other design and wireframing software') },
                                     { text: it.L('Knowledge of HTML, CSS, and JavaScript for rapid prototyping of websites and apps') },
-                                    { text: it.L('Bachelor’s degree in graphic design, interaction design, visual communication, multimedia, or equivalent') },
+                                    { text: it.L('Bachelor\'s degree in graphic design, interaction design, visual communication, multimedia, or equivalent') },
                                 ]}
                             />
                         </div>
@@ -530,7 +530,7 @@ const JobDetails = () => (
                                 text={it.L('Preferences:')}
                                 className='bullet'
                                 items={[
-                                    { text: it.L('Bachelor’s degree in computer science, or an equivalent combination of technical education, training, and work experience') },
+                                    { text: it.L('Bachelor\'s degree in computer science, or an equivalent combination of technical education, training, and work experience') },
                                     { text: it.L('Ability to write high-quality, self-documenting code using test-driven development techniques') },
                                     { text: it.L('Minimum two years experience in a software or web application testing role') },
                                     { text: it.L('Experience designing and executing test plans (both automated and manual)') },
@@ -549,7 +549,7 @@ const JobDetails = () => (
                         <div className='invisible' id='quantitative_analyst'>
                             <h1>{it.L('Quantitative Analyst')}</h1>
 
-                            <p>{it.L('[_1]\'s Quantitative Analytics team is responsible for the pricing of our binary options. You will join them in managing the risk and profitability of the company’s options book.', it.website_name)}</p>
+                            <p>{it.L('[_1]\'s Quantitative Analytics team is responsible for the pricing of our binary options. You will join them in managing the risk and profitability of the company\'s options book.', it.website_name)}</p>
 
                             <p>{it.L('The work that you do is complex, challenging, and essential to our future.')}</p>
 
@@ -699,7 +699,7 @@ const JobDetails = () => (
                                     { text: it.L('Drive rapid growth and business development to support the company\'s sales and marketing objectives') },
                                     { text: it.L('Coordinate business development activities and generate high-quality partnership leads') },
                                     { text: it.L('Adapt affiliate marketing tactics and promotional materials as needed to localise all content for maximum effectiveness') },
-                                    { text: it.L('Utilise a variety of tactics – both online and offline – to grow and support the company’s network of partners in your designated market') },
+                                    { text: it.L('Utilise a variety of tactics – both online and offline – to grow and support the company\'s network of partners in your designated market') },
                                 ]}
                             />
 
@@ -707,7 +707,7 @@ const JobDetails = () => (
                                 text={it.L('Preferences:')}
                                 className='bullet'
                                 items={[
-                                    { text: it.L('Bachelor’s degree in marketing, business administration, or related discipline') },
+                                    { text: it.L('Bachelor\'s degree in marketing, business administration, or related discipline') },
                                     { text: it.L('At least 5 years of experience in affiliate marketing, growth hacking, business development, and other closely-related skills') },
                                     { text: it.L('An assertive, sales-driven personality, able to adapt quickly and achieve powerful results') },
                                     { text: it.L('Strong oral and written communication skills in both the regional language(s) and English') },
@@ -729,8 +729,8 @@ const JobDetails = () => (
                                     { text: it.L('Act as first and second level support for our traders by offering them solutions through basic coding and troubleshooting techniques') },
                                     { text: it.L('Engage in market development to grow the client base for existing products and platforms of the company') },
                                     { text: it.L('Perform market research and analysis to uncover trends, prospects, partners, and competitors for our client base') },
-                                    { text: it.L('Support overall development, planning and execution of the team’s digital marketing efforts in accordance to the marketing objectives of respective projects') },
-                                    { text: it.L('Contribute creative ideas to further the company’s dynamic branding effort') },
+                                    { text: it.L('Support overall development, planning and execution of the team\'s digital marketing efforts in accordance to the marketing objectives of respective projects') },
+                                    { text: it.L('Contribute creative ideas to further the company\'s dynamic branding effort') },
                                 ]}
                             />
 
@@ -763,7 +763,7 @@ const JobDetails = () => (
                                     { text: it.L('Perform market research and analysis to uncover trends, prospects, partners, and competitors') },
                                     { text: it.L('Produce content for websites, blogs, social media, and marketing materials') },
                                     { text: it.L('Maintain relationships with clients and partners to drive retention and loyalty') },
-                                    { text: it.L('Contribute ideas, energy, and creativity to further the company’s dynamic branding efforts') },
+                                    { text: it.L('Contribute ideas, energy, and creativity to further the company\'s dynamic branding efforts') },
                                 ]}
                             />
 
@@ -812,7 +812,7 @@ const JobDetails = () => (
                                     { text: it.L('Strong understanding of colours, typography, identity design, and branding') },
                                     { text: it.L('Creative flair and versatility in developing concepts, graphics, and layouts for a wide range of media') },
                                     { text: it.L('Proficiency in Photoshop, Illustrator, InDesign, Sketch, and other design and wireframing software') },
-                                    { text: it.L('Bachelor’s degree in graphic design, visual communication, multimedia, or equivalent') },
+                                    { text: it.L('Bachelor\'s degree in graphic design, visual communication, multimedia, or equivalent') },
                                 ]}
                             />
                         </div>
@@ -826,7 +826,7 @@ const JobDetails = () => (
                                 text={it.L('Responsibilities:')}
                                 className='bullet'
                                 items={[
-                                    { text: it.L('Create clear, concise, and engaging content for the company’s website, email newsletters, blog, social media channels, and other marketing materials') },
+                                    { text: it.L('Create clear, concise, and engaging content for the company\'s website, email newsletters, blog, social media channels, and other marketing materials') },
                                     { text: it.L('Adapt brand messaging, voice, and tone of content as needed to suit specific audiences, business objectives, and the channel of delivery') },
                                     { text: it.L('Edit, proofread, and improve content from other team members') },
                                     { text: it.L('Follow established workflows for content deliverables') },
@@ -909,7 +909,7 @@ const JobDetails = () => (
                                 text={it.L('Preferences:')}
                                 className='bullet'
                                 items={[
-                                    { text: it.L('A bachelor’s degree in commerce or any business-related field, law, or risk management') },
+                                    { text: it.L('A bachelor\'s degree in commerce or any business-related field, law, or risk management') },
                                     { text: it.L('A good understanding of, and keen interest in corporate, legal or regulatory compliance') },
                                     { text: it.L('Thorough understanding of Anti-Money Laundering (AML) and Know Your Customer (KYC) processes') },
                                     { text: it.L('The ability to draft and review legal documents, and prepare licence applications') },
@@ -945,7 +945,7 @@ const JobDetails = () => (
                                 text={it.L('Preferences:')}
                                 className='bullet'
                                 items={[
-                                    { text: it.L('A bachelor’s degree in commerce or any business-related field, IT-related field or criminology') },
+                                    { text: it.L('A bachelor\'s degree in commerce or any business-related field, IT-related field or criminology') },
                                     { text: it.L('Good understanding of the link between payments functionality, as well as money laundering and fraud prevention') },
                                     { text: it.L('Aptitude for working in an international environment') },
                                     { text: it.L('Ability to acquire knowledge of varied AML matters in a multitude of international jurisdictions') },
@@ -967,14 +967,14 @@ const JobDetails = () => (
                                 className='bullet'
                                 items={[
                                     { text: it.L('Investigate client accounts that have been flagged by existing fraud controls and processes') },
-                                    { text: it.L('Scrutinise clients’ user behaviour on our trading platform') },
+                                    { text: it.L('Scrutinise clients\' user behaviour on our trading platform') },
                                     { text: it.L('Review and analyse suspicious client activities') },
                                     { text: it.L('Review and approve KYC documents') },
-                                    { text: it.L('Verify and approve clients’ deposit and withdrawal requests') },
+                                    { text: it.L('Verify and approve clients\' deposit and withdrawal requests') },
                                     { text: it.L('Create strategies against potential risks that might arise due to disruptive innovation') },
                                     { text: it.L('Evaluate existing procedures and policies with respect to risk management and suggest improvements') },
                                     { text: it.L('Maintain trackable records of investigations in AML-CTF-related matters') },
-                                    { text: it.L('Provide guidance to the Company’s operational teams and act as internal second line support for AML-CTF, anti-fraud, and authentication purposes') },
+                                    { text: it.L('Provide guidance to the Company\'s operational teams and act as internal second line support for AML-CTF, anti-fraud, and authentication purposes') },
                                     { text: it.L('Adhere to internal policies, procedures, and guidelines on all matters that concern risk management') },
                                     { text: it.L('Prepare reports on investigations and resolved issues') },
                                     { text: it.L('Handle chargeback disputes and review regulatory complaints') },
@@ -1005,7 +1005,7 @@ const JobDetails = () => (
                         <div className='invisible' id='internal_audit_executive'>
                             <h1>{it.L('Internal Audit Executive')}</h1>
 
-                            <p>{it.L('The Internal Audit team is the catalyst for improving our organisation’s governance, risk management, and internal controls by providing insights and recommendations based on the audits they perform.')}</p>
+                            <p>{it.L('The Internal Audit team is the catalyst for improving our organisation\'s governance, risk management, and internal controls by providing insights and recommendations based on the audits they perform.')}</p>
 
                             <UlText
                                 text={it.L('Responsibilities:')}
@@ -1059,7 +1059,7 @@ const JobDetails = () => (
                                 text={it.L('Preferences:')}
                                 className='bullet'
                                 items={[
-                                    { text: it.L('An advanced/higher/graduate diploma or bachelor’s degree') },
+                                    { text: it.L('An advanced/higher/graduate diploma or bachelor\'s degree') },
                                     { text: it.L('Extensive experience in Microsoft Office applications, as well as popular HR management and payroll systems') },
                                     { text: it.L('Well-honed organisational, administrative, and accounting skills') },
                                     { text: it.L('Excellent oral and written communication skills in English and Bahasa Malaysia') },
@@ -1109,7 +1109,7 @@ const JobDetails = () => (
                         <div className='invisible' id='customer_support_executive'>
                             <h1>{it.L('Customer Support Executive')}</h1>
 
-                            <p>{it.L('As our Customer Support Executive, you will serve as the voice of the company, and help our customers resolve and reduce the issues they’re facing with our products and services. The frontline is essential to our business and you are expected to deliver world-class customer service that creates customer loyalty and promotes business growth.')}</p>
+                            <p>{it.L('As our Customer Support Executive, you will serve as the voice of the company, and help our customers resolve and reduce the issues they\'re facing with our products and services. The frontline is essential to our business and you are expected to deliver world-class customer service that creates customer loyalty and promotes business growth.')}</p>
 
                             <UlText
                                 text={it.L('Responsibilities:')}

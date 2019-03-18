@@ -38,7 +38,7 @@ const Malta = () =>  (
                                 },
                                 {
                                     url    : 'images/pages/careers/malta/festivities.jpg',
-                                    caption: it.L('Life in Malta moves at a slower pace with a number of colourful festivities and religious holidays that you can look forward to every year. Some of the most popular ones include the Notte Bianca, the Malta Jazz Festival, Christmas, and Easter. Malta has no shortage of museums, archaeological sites, and other places of interest if you’re looking for a culture fix.'),
+                                    caption: it.L('Life in Malta moves at a slower pace with a number of colourful festivities and religious holidays that you can look forward to every year. Some of the most popular ones include the Notte Bianca, the Malta Jazz Festival, Christmas, and Easter. Malta has no shortage of museums, archaeological sites, and other places of interest if you\'re looking for a culture fix.'),
                                 },
                                 {
                                     url    : 'images/pages/careers/malta/cost-of-living.jpg',

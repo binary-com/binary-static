@@ -116,7 +116,7 @@ const Index = () => (
                             <BoxInner className='border-right-top' image='debt-free' text={it.L('Debt-free')} />
                         </Box>
                         <Box>
-                            <BoxInner className='border-right-top' href='/binary-in-numbers?anchor=employee' image='staff' text={it.L('Over [_1] <a href=\'[_2]\'>staff</a> and contractors worldwide', '200', it.url_for('binary-in-numbers?anchor=employee'))} />
+                            <BoxInner className='border-right-top' href='/binary-in-numbers?anchor=employee' image='staff' text={it.L('Over [_1] [_2]staff[_3] and contractors worldwide', '200', `<a href="${it.url_for('binary-in-numbers?anchor=employee')}">`, '</a>')} />
                             <BoxInner image='1mil' text={it.L('Over 1 million registered accounts worldwide')} />
                         </Box>
                     </div>

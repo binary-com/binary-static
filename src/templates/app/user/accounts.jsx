@@ -60,7 +60,7 @@ const Accounts = () => (
             />
             <div id='note_support' className='invisible fill-bg-color gr-padding-10 gr-gutter'>
                 <div className='gr-gutter hint'>
-                    {it.L('Note: For any enquiries regarding disabled or excluded accounts, please contact <a href="[_1]">Customer Support</a>.', it.url_for('contact'))}
+                    {it.L('Note: For any enquiries regarding disabled or excluded accounts, please contact [_1]Customer Support[_2].', `<a href="${it.url_for('contact')}">`, '</a>')}
                 </div>
             </div>
 
