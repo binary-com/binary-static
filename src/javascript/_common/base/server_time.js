@@ -38,10 +38,12 @@ const ServerTime = (() => {
 
         const start_timestamp = response.time;
         const performance_response_time = performance.now();
-        const server_time_at_response = ((start_timestamp * 1000) + (performance_response_time - performance_request_time));
+        const time_taken = performance_response_time - performance_request_time;
+        const server_time_at_response = ((start_timestamp * 1000) + time_taken);
 
         const updateTime = () => {
-            server_time = moment(server_time_at_response + (performance.now() - performance_response_time)).utc();
+            const time_since_response = performance.now() - performance_response_time;
+            server_time = moment(server_time_at_response + time_since_response).utc();
 
             if (typeof onTimeUpdated === 'function') {
                 onTimeUpdated();
