@@ -33,6 +33,7 @@ import BaseStore                 from '../../base-store';
 
 export default class ContractStore extends BaseStore {
     @observable contract_id;
+    @observable forget_id;
     @observable contract_info = observable.object({});
     @observable digits_info   = observable.object({});
     @observable sell_info     = observable.object({});
@@ -49,31 +50,21 @@ export default class ContractStore extends BaseStore {
     // ----- Actions -----
     // -------------------
     @action.bound
-    updateChartType(chart_type) {
-        this.chart_config.chart_type = chart_type;
-    }
-
-    @action.bound
-    updateGranularity(granularity) {
-        this.chart_config.granularity = granularity;
-    }
-
-    @action.bound
     drawChart(SmartChartStore, contract_info) {
+        this.forget_id = contract_info.id;
         if (isEnded(contract_info)) {
             this.chart_config = getChartConfig(contract_info);
         } else {
-            if (!this.is_left_epoch_set && contract_info.tick_count) {
-
-                SmartChartStore.updateGranularity(0);
-                SmartChartStore.updateChartType('mountain');
-                SmartChartStore.updateEpochScrollToOffset(1);
-                SmartChartStore.updateChartZoom(100);
-                SmartChartStore.updateEpochScrollToValue(contract_info.purchase_time || contract_info.date_start);
-            }
             delete this.chart_config.end_epoch;
             delete this.chart_config.start_epoch;
-            this.is_left_epoch_set = true;
+
+            if (!this.is_left_epoch_set && contract_info.tick_count) {
+                SmartChartStore.updateChartType('mountain');
+                SmartChartStore.updateEpochScrollToOffset(3);
+                SmartChartStore.updateChartZoom(100);
+                SmartChartStore.updateEpochScrollToValue(contract_info.purchase_time || contract_info.date_start);
+                this.is_left_epoch_set = true;
+            }
         }
 
         createChartBarrier(SmartChartStore, contract_info);
@@ -109,8 +100,11 @@ export default class ContractStore extends BaseStore {
         this.smart_chart   = this.root_store.modules.smart_chart;
         this.contract_info = contract_info;
         this.contract_id   = +contract_info.contract_id;
-        this.smart_chart.setContractMode(true);
-        this.drawChart(this.smart_chart, this.contract_info);
+        this.is_left_epoch_set = true;
+        if (this.contract_id) {
+            this.smart_chart.setContractMode(true);
+            WS.subscribeProposalOpenContract(this.contract_id, this.updateProposal, false);
+        }
     }
 
     @action.bound
@@ -124,6 +118,7 @@ export default class ContractStore extends BaseStore {
         this.forgetProposalOpenContract();
         this.contract_id       = null;
         this.contract_info     = {};
+        this.forget_id         = null;
         this.digits_info       = {};
         this.sell_info         = {};
         this.is_sell_requested = false;
@@ -134,7 +129,6 @@ export default class ContractStore extends BaseStore {
         this.smart_chart.removeBarriers();
         this.smart_chart.removeMarkers();
         this.smart_chart.resetScrollZoom();
-        this.smart_chart.updateGranularity(0);
         this.smart_chart.setContractMode(false);
     }
 
@@ -160,6 +154,7 @@ export default class ContractStore extends BaseStore {
             this.smart_chart.setContractMode(false);
             return;
         }
+        if (+response.proposal_open_contract.contract_id !== +this.contract_id) return;
         this.contract_info = response.proposal_open_contract;
         this.drawChart(this.smart_chart, this.contract_info);
 
@@ -201,7 +196,7 @@ export default class ContractStore extends BaseStore {
     }
 
     forgetProposalOpenContract() {
-        WS.forget('proposal_open_contract', this.updateProposal, { contract_id: this.contract_id });
+        WS.forget('proposal_open_contract', this.updateProposal, { id: this.forget_id });
     }
 
     @action.bound
