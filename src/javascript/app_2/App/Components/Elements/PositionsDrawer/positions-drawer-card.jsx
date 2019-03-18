@@ -100,7 +100,7 @@ const PositionsDrawerCard = ({
                             'positions-drawer-card__indicative-label',
                         )}
                         >
-                            {localize('Potential Payout:')}
+                            {!result ? localize('Potential Payout:') : localize('Payout:')}
                         </div>
                         <div className={classNames(
                             'positions-drawer-card__profit-loss', {

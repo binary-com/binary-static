@@ -18,7 +18,6 @@ import {
     getDigitInfo,
     isDigitContract }            from './Helpers/digits';
 import {
-    calculateGranularity,
     getChartConfig,
     getDisplayStatus,
     getEndSpot,
@@ -61,17 +60,15 @@ export default class ContractStore extends BaseStore {
 
     @action.bound
     drawChart(SmartChartStore, contract_info) {
-        if (contract_info.tick_count) {
-            SmartChartStore.updateGranularity(0);
-            SmartChartStore.updateChartType('mountain');
-        } else {
-            const granularity = calculateGranularity(contract_info.date_expiry - contract_info.date_start);
-            SmartChartStore.updateGranularity(granularity);
-        }
         if (isEnded(contract_info)) {
             this.chart_config = getChartConfig(contract_info);
         } else {
             if (!this.is_left_epoch_set && contract_info.tick_count) {
+
+                SmartChartStore.updateGranularity(0);
+                SmartChartStore.updateChartType('mountain');
+                SmartChartStore.updateEpochScrollToOffset(1);
+                SmartChartStore.updateChartZoom(100);
                 SmartChartStore.updateEpochScrollToValue(contract_info.purchase_time || contract_info.date_start);
             }
             delete this.chart_config.end_epoch;
@@ -99,12 +96,7 @@ export default class ContractStore extends BaseStore {
         this.smart_chart   = this.root_store.modules.smart_chart;
 
         if (contract_id) {
-            this.smart_chart.updateEpochScrollToOffset(1);
-            this.smart_chart.updateChartZoom(100);
             this.smart_chart.setContractMode(true);
-            setTimeout(() => {
-                window.dispatchEvent(new Event('resize'));
-            }, 2000);
             WS.subscribeProposalOpenContract(this.contract_id, this.updateProposal, false);
         }
     }
@@ -118,11 +110,6 @@ export default class ContractStore extends BaseStore {
         this.contract_info = contract_info;
         this.contract_id   = +contract_info.contract_id;
         this.smart_chart.setContractMode(true);
-        this.smart_chart.updateEpochScrollToOffset(1);
-        this.smart_chart.updateChartZoom(100);
-        setTimeout(() => {
-            window.dispatchEvent(new Event('resize'));
-        }, 2000);
         this.drawChart(this.smart_chart, this.contract_info);
     }
 
