@@ -38,7 +38,25 @@ const getValidationRules = () => ({
     start_date: {
         trigger: 'start_time',
     },
+    expiry_date: {
+        trigger: 'expiry_time',
+    },
     start_time: {
+        rules: [
+            ['custom' , { func: (value, options, store) => store.contract_start_type === 'spot' || isTimeValid(value)  , message: localize('Please enter the start time in the format "HH:MM".') }],
+            ['custom' , { func: (value, options, store) => store.contract_start_type === 'spot' || isHourValid(value)  , message: localize('Hour must be between 0 and 23.') }],
+            ['custom' , { func: (value, options, store) => store.contract_start_type === 'spot' || isMinuteValid(value), message: localize('Minute must be between 0 and 59.') }],
+            ['custom' , { func: (value, options, store) => {
+                if (store.contract_start_type === 'spot') return true;
+                if (!isTimeValid(value)) return false;
+                const start_moment       = toMoment(store.start_date);
+                const start_moment_clone = start_moment.clone();
+                const [h, m] = value.split(':');
+                return isSessionAvailable(store.sessions, start_moment_clone.hour(h).minute(m), start_moment);
+            }, message: localize('Start time cannot be in the past.') }],
+        ],
+    },
+    expiry_time: {
         rules: [
             ['custom' , { func: (value, options, store) => store.contract_start_type === 'spot' || isTimeValid(value)  , message: localize('Please enter the start time in the format "HH:MM".') }],
             ['custom' , { func: (value, options, store) => store.contract_start_type === 'spot' || isHourValid(value)  , message: localize('Hour must be between 0 and 23.') }],

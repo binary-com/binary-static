@@ -53,12 +53,14 @@ const TradingDatePicker = ({
         is_read_only = true;
     }
 
+    const error_messages = expiry_type === 'duration' ? validation_errors.duration : validation_errors.expiry_date;
+
     return (
         <DatePicker
             alignment='left'
             disable_year_selector
             disable_trading_events
-            error_messages={validation_errors.duration || []}
+            error_messages={error_messages || []}
             has_today_btn={has_today_btn}
             has_range_selection={mode === 'duration'}
             is_nativepicker={false}
