@@ -8,6 +8,10 @@
         .trade-container {
             .chart-container {
                 max-width: calc(100% - #{$SIDEBAR_WIDTH} - 16px);
+
+                .ciq-studies, .ciq-chart-types, .ciq-period, .cq-symbols-display {
+                    display: none;
+                }
             }
         }
     }
