@@ -3,6 +3,7 @@ import React from 'react';
 const payment_methods_list = [
     { image: 'visa',                    param: '?anchor=visa' },
     { image: 'mastercard',              param: '?anchor=mastercard' },
+    { image: 'maestro',                 param: '?anchor=maestro' },
     { image: 'bank_transfer',           param: '?anchor=bank-transfer' },
     { image: 'internet_bank_transfer',  param: '?anchor=internet-bank-transfer' },
     { image: 'paysec',                  param: '?anchor=paysec',         dataShow: '-eucountry' },
