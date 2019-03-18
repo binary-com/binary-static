@@ -2,7 +2,7 @@ import React                 from 'react';
 import PropTypes             from 'prop-types';
 import { PopConfirmElement } from './popconfirm-element.jsx';
 
-class PopConfirm extends React.Component {
+class PopConfirm extends React.PureComponent {
     state = {
         is_open: false,
     };

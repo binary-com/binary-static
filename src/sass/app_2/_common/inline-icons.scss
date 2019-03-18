@@ -4,20 +4,25 @@
 
     e.g. style icon on parent hover:
         a:hover .inline-icon {
-            @extend .inline-icon.active;
+            @extend %inline-icon.active;
         }
 */
 
-.inline-icon {
-    @include colorIcon($COLOR_LIGHT_BLACK_1, none);
+%inline-icon {
+    @include themify($themes) {
+        @include colorIcon(themed('text_primary_color'), none);
 
-    &.active {
-        @include colorIcon($COLOR_WHITE, $COLOR_LIGHT_BLACK_1, $COLOR_LIGHT_BLACK_1, none);
-    }
-    &.disabled {
-        @include colorIcon($COLOR_LIGHT_BLACK_3, none);
-    }
-    &.white {
-        @include colorIcon($COLOR_WHITE);
+        &.active {
+            @include colorIcon(themed('navbar_background_color'), themed('navbar_active_color'), themed('navbar_active_color'), none);
+        }
+        &.disabled {
+            @include colorIcon(themed('disabled_color'), none);
+        }
+        &.white {
+            @include colorIcon(themed('text_color'));
+        }
+        &.border_hover_color {
+            @include colorIcon(themed('border_hover_color'));
+        }
     }
 }

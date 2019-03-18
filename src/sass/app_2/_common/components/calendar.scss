@@ -64,7 +64,7 @@
     }
     &__icon {
         @extend .absolute-center-v;
-        @extend .inline-icon;
+        @extend %inline-icon;
         right: 5%;
 
         &--today:hover {
@@ -94,7 +94,7 @@
             right: 14%;
         }
         &--disabled .calendar__icon {
-            @extend .inline-icon.disabled;
+            @extend %inline-icon.disabled;
         }
     }
     &__btn {
@@ -170,8 +170,9 @@
             &-duration {
                 background: $COLOR_LIGHT_GRAY_1;
             }
-            &:hover {
-                background: $COLOR_LIGHT_GRAY_1;
+            &:hover:not(.calendar__cell--disabled):not(.calendar__cell--active) {
+                background: $COLOR_LIGHT_BLACK_4_SOLID;
+                border: 1px solid $COLOR_LIGHT_GRAY_1;
             }
         }
         &--active {

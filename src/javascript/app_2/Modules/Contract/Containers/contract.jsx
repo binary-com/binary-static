@@ -4,6 +4,7 @@ import { CSSTransition } from 'react-transition-group';
 import ErrorComponent    from 'App/Components/Elements/Errors';
 import { connect }       from 'Stores/connect';
 import ContractDetails   from './contract-details.jsx';
+import Digits            from './digits.jsx';
 import InfoBox           from './info-box.jsx';
 
 const SmartChart = React.lazy(() => import('Modules/SmartChart'));
@@ -31,6 +32,7 @@ const Contract = ({
                                 <React.Suspense fallback={<div>Loading... </div>}>
                                     <SmartChart
                                         InfoBox={<InfoBox />}
+                                        Digits={<Digits />}
                                         symbol={symbol}
                                         {...chart_config}
                                         updateChartType={updateChartType}

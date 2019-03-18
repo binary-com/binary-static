@@ -5,6 +5,8 @@ import { localize } from '_common/localize';
 
 const ProgressTicks = ({ current_tick, ticks_count }) => {
     const arr_ticks = [...Array(ticks_count).keys()];
+    // TODO: temporary infinite/indeterminate loader
+    if (!current_tick) return <div className='progress-slider__infinite-loader'><div className='progress-slider__infinite-loader--indeterminate' /></div>;
     return (
         // TODO: Update and show once design for ticks progress bar is finalized
         <div style={{ display: 'none' }}>

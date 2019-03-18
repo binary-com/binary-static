@@ -116,8 +116,8 @@ $CONTRACT_INFO_BOX_PADDING: 1.6em;
     z-index: 10;
     top: 1em;
     right: 1em;
-    transform: none;
-    opacity: 1;
+    opacity: 0;
+    transform: translate3d(0, calc(-100% - 2em), 0);
     transition: transform 0.4s ease, opacity 0.4s linear;
     display: flex;
     justify-content: space-between;
@@ -130,12 +130,12 @@ $CONTRACT_INFO_BOX_PADDING: 1.6em;
         width: 32px;
         height: 32px;
     }
-    &-enter {
-        transform: translateY(calc(-100% - 2em));
-        opacity: 0;
+    &--enter-done {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
     }
-    &-exit {
-        transform: translateY(calc(-100% - 2em));
+    &--enter, &--exit {
+        transform: translate3d(0, calc(-100% - 2em), 0);
         opacity: 0;
     }
     .info-box {
@@ -236,61 +236,6 @@ $CONTRACT_INFO_BOX_PADDING: 1.6em;
                 }
             }
         }
-        .digits {
-            display: flex;
-            align-items: center;
-
-            .digit-title {
-                font-weight: bold;
-                max-width: min-content;
-            }
-            .digit-list {
-                display: flex;
-                margin: 0 2.5em 0 1em;
-
-                .digit-info {
-                    margin: 0 0.4em;
-                    text-align: center;
-
-                    .digit-value {
-                        width: 3.2em;
-                        height: 3.2em;
-                        margin-bottom: 0.5em;
-                        border: 2px solid $COLOR_GREEN_1;
-                        border-radius: 50%;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        color: $COLOR_GREEN_1;
-                        font-size: 1.6em;
-                        font-weight: bold;
-
-                        &.loss {
-                            border-color: $COLOR_RED;
-                            color: $COLOR_RED;
-                        }
-                        &.last {
-                            background-color: $COLOR_GREEN_1;
-                            color: $COLOR_WHITE;
-
-                            &.loss {
-                                background-color: $COLOR_RED;
-                            }
-                        }
-                        &:empty {
-                            border-color: $COLOR_LIGHT_BLACK_3;
-                        }
-                    }
-                    .tick-number {
-                        line-height: 0.6em;
-                        font-size: 0.6em;
-                    }
-                }
-            }
-            .expired {
-                margin-right: -2.5em;
-            }
-        }
     }
     .message {
         margin-top: 0.5em;
@@ -310,6 +255,13 @@ $CONTRACT_INFO_BOX_PADDING: 1.6em;
         .message-close {
             cursor: pointer;
         }
+    }
+    .chart-close-btn {
+        position: absolute;
+        cursor: pointer;
+        z-index: 11;
+        right: 0;
+        top: 0;
     }
 }
 

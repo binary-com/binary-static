@@ -22,6 +22,7 @@ import {
     allowed_query_string_variables,
     getNonProposalQueryStringVariables } from './Constants/query-string';
 import getValidationRules                from './Constants/validation-rules';
+import { isRiseFallEqual }               from './Helpers/allow-equals';
 import { setChartBarrier }               from './Helpers/chart';
 import ContractType                      from './Helpers/contract-type';
 import { convertDurationLimit }          from './Helpers/duration';
@@ -40,8 +41,7 @@ export default class TradeStore extends BaseStore {
     @observable is_trade_component_mounted = false;
     @observable is_purchase_enabled        = false;
     @observable is_trade_enabled           = false;
-    @observable is_allow_equal             = false;
-    @observable is_equal_checked           = 0;
+    @observable is_equal                   = 0;
 
     // Underlying
     @observable symbol;
@@ -55,9 +55,10 @@ export default class TradeStore extends BaseStore {
     @observable trade_types          = {};
 
     // Amount
-    @observable amount          = 10;
-    @observable basis           = '';
-    @observable basis_list      = [];
+    @observable amount     = 10;
+    @observable basis      = '';
+    @observable basis_list = [];
+    @observable currency   = '';
 
     // Duration
     @observable duration            = 5;
@@ -95,6 +96,9 @@ export default class TradeStore extends BaseStore {
     // Purchase
     @observable proposal_info        = {};
     @observable purchase_info        = {};
+
+    // Query string
+    query = '';
 
     // Chart
     chart_id = 1;
@@ -134,31 +138,24 @@ export default class TradeStore extends BaseStore {
             },
         );
         reaction(
-            () => [
-                this.symbol,
-                this.contract_type,
-                this.duration_unit,
-                this.expiry_type,
-                this.duration_units_list,
-                this.contract_types_list,
-            ],
+            () => this.is_equal,
             () => {
-                this.changeAllowEquals();
+                this.onAllowEqualsChange();
             },
-            { delay: 500 }
         );
     }
 
     @action.bound
     refresh() {
         this.symbol = null;
-        WS.forgetAll('proposal');
+        WS.forgetAll('proposal', 'ticks_history');
     }
 
     @action.bound
     async prepareTradeStore() {
         let query_string_values = this.updateQueryString();
         this.smart_chart        = this.root_store.modules.smart_chart;
+        this.currency           = this.root_store.client.currency;
         const active_symbols    = await WS.activeSymbols();
         if (!active_symbols.active_symbols || active_symbols.active_symbols.length === 0) {
             this.root_store.common.showError(localize('Trading is unavailable at this time.'));
@@ -175,6 +172,13 @@ export default class TradeStore extends BaseStore {
                 type   : 'info',
             });
             URLHelper.setQueryParam({ 'symbol': pickDefaultSymbol(active_symbols.active_symbols) });
+            query_string_values = this.updateQueryString();
+        }
+
+        // Checks for is_equal in query string and update the contract_type to rise_fall or rise_fall_equal
+        const { contract_type, is_equal } = query_string_values;
+        if (isRiseFallEqual(contract_type)) {
+            URLHelper.setQueryParam({ 'contract_type': parseInt(is_equal) ? 'rise_fall_equal' : 'rise_fall' });
             query_string_values = this.updateQueryString();
         }
 
@@ -209,21 +213,10 @@ export default class TradeStore extends BaseStore {
 
     @action.bound
     onChange(e) {
-        const { name, checked } = e.target;
-        let { value } = e.target;
+        const { name, value } = e.target;
 
         if (name === 'currency') {
             this.root_store.client.selectCurrency(value);
-        } else if (value === 'is_equal') {
-            if (/^(rise_fall|rise_fall_equal)$/.test(this.contract_type)) {
-                if (checked) {
-                    this.is_equal_checked = 1;
-                    value = 'rise_fall_equal';
-                } else {
-                    this.is_equal_checked = 0;
-                    value = 'rise_fall';
-                }
-            }
         } else if (name  === 'expiry_date') {
             this.expiry_time = null;
         } else if (!(name in this)) {
@@ -241,6 +234,7 @@ export default class TradeStore extends BaseStore {
     @action.bound
     onPurchase(proposal_id, price, type) {
         if (proposal_id) {
+            this.is_purchase_enabled = false;
             processPurchase(proposal_id, price).then(action((response) => {
                 if (this.proposal_info[type].id !== proposal_id) {
                     throw new Error('Proposal ID does not match.');
@@ -251,10 +245,17 @@ export default class TradeStore extends BaseStore {
                         ...this.proposal_info[type],
                         buy_price: response.buy.buy_price,
                     };
+                    // toggle smartcharts to contract mode
+                    const contract_id = getPropertyValue(response, ['buy', 'contract_id']);
+                    if (contract_id) {
+                        this.root_store.modules.contract.onMount(contract_id);
+                        this.root_store.ui.openPositionsDrawer();
+                    }
                     GTM.pushPurchaseData(contract_data, this.root_store);
                 }
                 WS.forgetAll('proposal');
                 this.purchase_info = response;
+                this.is_purchase_enabled = true;
             }));
         }
     }
@@ -303,20 +304,24 @@ export default class TradeStore extends BaseStore {
                 }
             }
         });
-
         return new_state;
     }
 
-    async processNewValuesAsync(obj_new_values = {}, is_changed_by_user = false) {
+    async processNewValuesAsync(obj_new_values = {}, is_changed_by_user = false, obj_old_values = {}) {
         // Sets the default value to Amount when Currency has changed from Fiat to Crypto and vice versa.
         // The source of default values is the website_status response.
         WS.forgetAll('proposal');
-
         if (is_changed_by_user &&
-            /\bcurrency\b/.test(Object.keys(obj_new_values)) &&
-            isCryptocurrency(obj_new_values.currency) !== isCryptocurrency(this.currency)
+            /\bcurrency\b/.test(Object.keys(obj_new_values))
         ) {
-            obj_new_values.amount = obj_new_values.amount || getMinPayout(obj_new_values.currency);
+            const prev_currency = obj_old_values &&
+            !isEmptyObject(obj_old_values) &&
+            obj_old_values.currency ? obj_old_values.currency : this.currency;
+            if (isCryptocurrency(obj_new_values.currency) !== isCryptocurrency(prev_currency)) {
+                obj_new_values.amount = is_changed_by_user && obj_new_values.amount ?
+                    obj_new_values.amount : getMinPayout(obj_new_values.currency);
+            }
+            this.currency = obj_new_values.currency;
         }
 
         const new_state = this.updateStore(cloneObject(obj_new_values));
@@ -379,6 +384,7 @@ export default class TradeStore extends BaseStore {
                     ...getNonProposalQueryStringVariables(this),
                 ],
             );
+            this.query = URLHelper.getQueryString();
 
             this.proposal_requests = requests;
             this.proposal_info     = {};
@@ -414,8 +420,12 @@ export default class TradeStore extends BaseStore {
     }
 
     @action.bound
-    updateQueryString() {
+    onAllowEqualsChange() {
+        this.processNewValuesAsync({ contract_type: parseInt(this.is_equal) ? 'rise_fall_equal' : 'rise_fall' }, true);
+    }
 
+    @action.bound
+    updateQueryString() {
         // Update the url's query string by default values of the store
         const query_params = URLHelper.updateQueryString(
             this,
@@ -426,6 +436,7 @@ export default class TradeStore extends BaseStore {
         // update state values from query string
         const config = {};
         [...query_params].forEach(param => config[param[0]] = param[1]);
+
         return config;
     }
 
@@ -455,45 +466,12 @@ export default class TradeStore extends BaseStore {
     }
 
     @action.bound
-    changeAllowEquals() {
-        const hasCallPutEqual = (contract_type_list) => {
-            if (!contract_type_list) return false;
-
-            return getPropertyValue(contract_type_list, 'Up/Down')
-                .some(contract => contract.value === 'rise_fall_equal');
-        };
-        const hasDurationForCallPutEqual = (contract_type_list, duration_unit, contract_start_type) => {
-            if (!contract_type_list || !duration_unit || !contract_start_type) return false;
-
-            const contract_list = Object.keys(contract_type_list || {})
-                .reduce((key, list) => ([...key, ...contract_type_list[list].map(contract => contract.value)]), []);
-            
-            const contract_duration_list = contract_list
-                .map(list => ({ [list]: getPropertyValue(ContractType.getFullContractTypes(), [list, 'config', 'durations', 'units_display', contract_start_type]) }));
-
-            // Check whether rise fall equal is exists and has the current store duration unit
-            return hasCallPutEqual(contract_type_list) ? contract_duration_list
-                .filter(contract => contract.rise_fall_equal)[0].rise_fall_equal
-                .some(duration => duration.value === duration_unit) : false;
-        };
-        const check_callput_equal_duration = hasDurationForCallPutEqual(this.contract_types_list,
-            this.duration_unit, this.contract_start_type);
-
-        if (!(/^(rise_fall|rise_fall_equal)$/.test(this.contract_type))) {
-            this.is_allow_equal = false;
-            this.is_equal_checked = 0;
-        }
-
-        if (/^(rise_fall|rise_fall_equal)$/.test(this.contract_type) && (check_callput_equal_duration || this.expiry_type === 'endtime') && hasCallPutEqual(this.contract_types_list)) {
-            this.is_allow_equal = true;
-        } else {
-            this.is_allow_equal = false;
-        }
-    }
-
-    @action.bound
     accountSwitcherListener() {
         return new Promise(async (resolve) => {
+            await this.processNewValuesAsync(
+                { currency: this.root_store.client.currency },
+                { currency: this.currency }
+            );
             await this.refresh();
             await this.prepareTradeStore();
             return resolve(this.debouncedProposal());
@@ -514,7 +492,7 @@ export default class TradeStore extends BaseStore {
     @action.bound
     onUnmount() {
         this.disposeSwitchAccount();
-        WS.forgetAll('proposal');
+        WS.forgetAll('proposal', 'ticks_history');
         this.is_trade_component_mounted = false;
     }
 }

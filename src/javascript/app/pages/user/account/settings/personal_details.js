@@ -375,7 +375,7 @@ const PersonalDetails = (() => {
             .attr('class', is_success ? 'success-msg' : 'errorfield')
             .html(is_success ? $ul : localized_text)
             .css('display', 'block')
-            .delay(5000)
+            .delay(15000)
             .fadeOut(1000);
     };
 
@@ -390,7 +390,8 @@ const PersonalDetails = (() => {
                     $options_with_disabled.append(CommonFunctions.makeOption({
                         text       : res.text,
                         value      : res.value,
-                        is_disabled: res.disabled,
+                        // is_disabled: res.disabled,
+                        is_disabled: (res.disabled || /^(py|ae)$/i.test(res.value) ? 'disabled' : ''), // TODO: remove py and ae exceptions when API block is implemented
                     }));
                 });
                 if (residence) {
