@@ -53,7 +53,7 @@
 
         /* postcss-bem-linter: ignore */
         &:hover:not([disabled]) {
-            background: none;
+            background: $COLOR_LIGHT_BLACK_4_SOLID;
             border: none;
         }
     }

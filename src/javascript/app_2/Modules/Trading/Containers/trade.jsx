@@ -62,13 +62,14 @@ class Trade extends React.Component {
                     />
                 </div>
                 <FullPageModal
-                    cancel_button_text={localize('Trade on other contracts')}
-                    confirm_button_text={localize('Switch to legacy platform')}
+                    confirm_button_text={localize('No, Stay on BinaryNex')}
+                    cancel_button_text={localize('Go to SmartTrader')}
                     is_visible={this.props.has_only_forward_starting_contracts}
-                    onCancel={() => this.props.setHasOnlyForwardingContracts(false)}
-                    onConfirm={() => window.open(URL.websiteUrl()) && this.props.setHasOnlyForwardingContracts(false)}
+                    onConfirm={() => this.props.setHasOnlyForwardingContracts(false)}
+                    onCancel={() => window.open(URL.websiteUrl()) && this.props.setHasOnlyForwardingContracts(false)}
+                    title={localize('Market is unavailable')}
                 >
-                    <Localize str='Sorry, but forward-start contracts are not supported yet on our new platform.' />
+                    <Localize str='Sorry, but this market is not supported yet on BinaryNex. Do you want to trade this market on SmartTrader?' />
                 </FullPageModal>
             </div>
         );

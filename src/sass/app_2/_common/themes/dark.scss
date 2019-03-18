@@ -142,13 +142,17 @@
         &__content, &__header {
             color: $COLOR_DARK_BLUE_7;
         }
-        &__btn {
+        /* postcss-bem-linter: ignore */
+        .btn--secondary--orange {
             background-color: $COLOR_DARK_BLUE_3;
 
-            &:hover {
-                background-color: $COLOR_DARK_BLUE_7;
+            /* postcss-bem-linter: ignore */
+            &:hover:not([disabled]) {
+                background: $COLOR_DARK_BLUE_4;
+                border: none;
             }
-            &-text {
+            /* postcss-bem-linter: ignore */
+            .btn__text {
                 color: $COLOR_WHITE;
             }
         }
