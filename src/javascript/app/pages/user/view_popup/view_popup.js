@@ -590,7 +590,7 @@ const ViewPopup = (() => {
                     contract_details.div.remove();
                 }
 
-                if (contract.status === 'sold') {
+                if (contract.status !== 'open') {
                     onAuditTableComplete(show_audit_table);
                 }
             });
