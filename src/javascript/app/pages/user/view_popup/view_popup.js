@@ -20,6 +20,7 @@ const ViewPopup = (() => {
         is_sold,
         is_sold_before_start,
         is_sell_clicked,
+        is_tick_contract,
         chart_started,
         chart_init,
         chart_updated,
@@ -265,6 +266,7 @@ const ViewPopup = (() => {
             if (!chart_started) {
                 DigitDisplay.init(id_tick_chart, contract);
                 chart_started = true;
+                is_tick_contract = true;
             }
         } else if (!chart_started && !contract.tick_count) {
             if (!chart_init) {
@@ -278,6 +280,7 @@ const ViewPopup = (() => {
         } else if (contract.tick_count && !chart_updated) {
             TickDisplay.updateChart({ id_render: id_tick_chart, request_ticks: !ticks_requested }, contract);
             ticks_requested = true;
+            is_tick_contract = true;
             if ('barrier' in contract) {
                 chart_updated = true;
             }
@@ -483,7 +486,7 @@ const ViewPopup = (() => {
     const parseAuditResponse = (table, array_audit_data) => (
         new Promise((resolve) => {
             const primary_classes   = ['secondary-bg-color', 'content-inverse-color'];
-            const secondary_classes = ['fill-bg-color'];
+            const secondary_classes = ['fill-bg-color', 'secondary-time'];
             array_audit_data.forEach((audit_data) => {
                 let color;
                 if (audit_data.flag === 'highlight_tick') {
@@ -554,26 +557,45 @@ const ViewPopup = (() => {
     };
 
     const populateAuditTable = (show_audit_table) => {
-        const contract_starts = createAuditTable(localize('Contract Starts'));
-        parseAuditResponse(contract_starts.table, contract.audit_details.contract_start).then(() => {
-            if (contract.audit_details.contract_start) {
-                createAuditHeader(contract_starts.table);
-                appendAuditLink('trade_details_entry_spot');
-            } else {
-                contract_starts.div.remove();
-            }
-            // don't show exit tick information if missing or manual sold
-            if (contract.audit_details.contract_end && contract.status !== 'sold') {
-                parseAuditResponse(contract_starts.table, contract.audit_details.contract_end).then(() => {
-                    if (contract.audit_details.contract_end) {
-                        appendAuditLink('trade_details_current_spot');
-                    }
+        if (!is_tick_contract) {
+            const contract_starts = createAuditTable(localize('Contract Starts'));
+            parseAuditResponse(contract_starts.table, contract.audit_details.contract_start).then(() => {
+                if (contract.audit_details.contract_start) {
+                    createAuditHeader(contract_starts.table);
+                    appendAuditLink('trade_details_entry_spot');
+                } else {
+                    contract_starts.div.remove();
+                }
+                // don't show exit tick information if missing or manual sold
+                if (contract.audit_details.contract_end && contract.status !== 'sold') {
+                    const contract_ends = createAuditTable(localize('Contract Ends'));
+                    parseAuditResponse(contract_ends.table, contract.audit_details.contract_end).then(() => {
+                        if (contract.audit_details.contract_end) {
+                            createAuditHeader(contract_ends.table);
+                            appendAuditLink('trade_details_current_spot');
+                        } else {
+                            contract_ends.div.remove();
+                        }
+                        onAuditTableComplete(show_audit_table);
+                    });
+                } else {
                     onAuditTableComplete(show_audit_table);
-                });
-            } else {
+                }
+            });
+        } else {
+            const contract_details = createAuditTable(localize('Contract Details'));
+            parseAuditResponse(contract_details.table, contract.audit_details.all_ticks).then(() => {
+                if (contract.audit_details.all_ticks) {
+                    createAuditHeader(contract_details.table);
+                    appendAuditLink('trade_details_entry_spot');
+                    appendAuditLink('trade_details_current_spot');
+                } else {
+                    contract_details.div.remove();
+                }
+
                 onAuditTableComplete(show_audit_table);
-            }
-        });
+            });
+        }
     };
 
     const onAuditTableComplete = (show_audit_table) => {
