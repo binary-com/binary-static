@@ -54,6 +54,7 @@
         cursor: pointer;
 
         .result-details__select-arrow {
+            @extend %inline-icon;
             pointer-events: none;
             transition: transform 0.25s ease;
             transform: rotate(0deg);

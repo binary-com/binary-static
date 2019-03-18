@@ -29,11 +29,6 @@
         }
     }
     .portfolio-empty {
-        &__icon {
-            path {
-                fill: $COLOR_DARK_BLUE_5;
-            }
-        }
         &__text {
             color: $COLOR_DARK_BLUE_8 !important;
         }

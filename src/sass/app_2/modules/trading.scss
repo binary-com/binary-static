@@ -131,6 +131,9 @@
             }
         }
         &-tooltip {
+            &-i {
+                @extend %inline-icon;
+            }
             &[data-tooltip] {
                 &:before, &:after {
                     right: 230px !important;
