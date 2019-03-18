@@ -50,6 +50,9 @@ class DatePicker extends React.Component {
     }
 
     onClickOutside = (e) => {
+        if (e.path.some(el => Array.from(document.getElementsByClassName('btn-purchase__shadow-wrapper')).includes(el))) {
+            return;
+        }
         if (!this.mainNode.contains(e.target) && this.state.is_datepicker_visible) {
             this.setState({ is_datepicker_visible: false });
             if (!!this.state.value && this.props.mode !== 'duration') {
