@@ -371,8 +371,9 @@
                 &-duration {
                     background: $COLOR_DARK_BLUE_5;
                 }
-                &:hover {
-                    background: $COLOR_DARK_BLUE_5 !important;
+                &:hover:not(.calendar__cell--disabled):not(.calendar__cell--active) {
+                    background: $COLOR_DARK_BLUE_5;
+                    border: 1px solid $COLOR_DARK_BLUE_7;
                 }
             }
             &--disabled, &--other {
@@ -488,7 +489,7 @@
         &:focus, &:active {
             outline: 0;
             border-color: $COLOR_DARK_BLUE_7;
-            box-shadow: 0 0 0 2px rgba(127, 131, 151, 0.3);
+            box-shadow: 0 0 0 2px $COLOR_DARK_BLUE_8;
         }
         &__display {
             span[name=contract_type] {
@@ -604,7 +605,7 @@
         }
         &:focus, &:active {
             border-color: $COLOR_DARK_BLUE_7;
-            box-shadow: 0 0 0 0.2rem rgba(127, 131, 151, 0.3);
+            box-shadow: 0 0 0 2px $COLOR_DARK_BLUE_8;
             color: $COLOR_WHITE;
         }
         &::placeholder {
@@ -623,12 +624,12 @@
                 border-color: $COLOR_DARK_BLUE_7;
             }
             &:focus, &:active {
-                box-shadow: 0 0 0 2px rgba(127, 131, 151, 0.3);
+                box-shadow: 0 0 0 2px $COLOR_DARK_BLUE_8;
             }
         }
         &--show > .dropdown__display--clicked {
             border-color: $COLOR_DARK_BLUE_7;
-            box-shadow: 0 0 0 2px rgba(127, 131, 151, 0.3);
+            box-shadow: 0 0 0 2px $COLOR_DARK_BLUE_8;
         }
     }
     .list {
@@ -657,30 +658,10 @@
     }
     .tooltip {
         color: $COLOR_WHITE;
+        @include tooltipColor($COLOR_DARK_BLUE_5);
 
-        &:before {
-            background: $COLOR_DARK_BLUE_5;
-            color: $COLOR_WHITE;
-        }
-        &[data-tooltip-pos=top] {
-            &:after {
-                border-top-color: $COLOR_DARK_BLUE_5;
-            }
-        }
-        &[data-tooltip-pos=right] {
-            &:after {
-                border-right-color: $COLOR_DARK_BLUE_5;
-            }
-        }
-        &[data-tooltip-pos=left] {
-            &:after {
-                border-left-color: $COLOR_DARK_BLUE_5;
-            }
-        }
-        &[data-tooltip-pos=bottom] {
-            &:after {
-                border-bottom-color: $COLOR_DARK_BLUE_5;
-            }
+        &--error[data-tooltip] {
+            @include tooltipColor($COLOR_RED);
         }
     }
     .fullscreen-dialog {
