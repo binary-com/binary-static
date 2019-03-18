@@ -1,4 +1,4 @@
-$linear-gradient-white-blur: linear-gradient(to left, rgba(255, 255, 255, 0), $COLOR_WHITE 50%, rgba(255, 255, 255, 0));
+$linear-gradient-white-blur: linear-gradient(to left, rgba(255, 255, 255, 0), $COLOR_WHITE 10%, rgba(255, 255, 255, 0));
 
 /** @define trade-container */
 .trade-container {
@@ -55,7 +55,7 @@ $linear-gradient-white-blur: linear-gradient(to left, rgba(255, 255, 255, 0), $C
         height: 100%;
         animation: data--loading 1s ease-in-out infinite;
         background-image: $linear-gradient-white-blur;
-        opacity: 0.16;
+        opacity: 0.32;
     }
     &__error {
         justify-content: center;
@@ -478,7 +478,7 @@ $linear-gradient-white-blur: linear-gradient(to left, rgba(255, 255, 255, 0), $C
         .btn-purchase__trade-type-icon svg, .btn-purchase__trade-type-text span, .btn-purchase__profit-text, .btn-purchase__return-text {
             animation: data--loading 1s ease-in-out infinite;
             background-image: $linear-gradient-white-blur;
-            opacity: 0.16;
+            opacity: 0.32;
         }
     }
     &__shadow-wrapper:hover:after {
