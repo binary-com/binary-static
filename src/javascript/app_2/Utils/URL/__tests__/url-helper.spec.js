@@ -8,14 +8,13 @@ describe('URLHelper', () => {
 
     describe('.getQueryParams', () => {
         const params = URLHelper.getQueryParams(url);
-        const string_params = new URLSearchParams(decodeURIComponent(params.toString().slice(0, -1)));
 
         it('should return query parameters', () => {
-            expect(string_params.get('duration')).to.eql('13');
-            expect(string_params.get('market')).to.eql('forex');
+            expect(params.get('duration')).to.eql('13');
+            expect(params.get('market')).to.eql('forex');
         });
         it('should return an object', () => {
-            expect(typeof string_params).to.eql('object');
+            expect(typeof params).to.eql('object');
         });
     });
 
@@ -35,5 +34,12 @@ describe('URLHelper', () => {
             expect(URLHelper.setQueryParam(params, url).searchParams.get('market')).to.eql(params.market);
         });
 
+    });
+
+    describe('.getQueryString', () => {
+        it('should return a correct query string', () => {
+            const query = '?duration=13&market=forex';
+            expect(URLHelper.getQueryString(url)).to.eql(query);
+        })
     });
 });

@@ -26,6 +26,22 @@ const Input = ({
     type,
 }) => {
     const computedMaxLength = fractional_digits ? max_length + fractional_digits + 1 : max_length;
+    const onChange = (e) => {
+        /**
+         * fix for Safari
+         * we have to keep track of the current cursor position, update the value in store,
+         * then reset the cursor position to the current cursor position
+         */
+        // TODO: find better ways to target browsers
+        if (navigator.userAgent.indexOf('Safari') !== -1 && type !== 'checkbox') {
+            const cursor = e.target.selectionStart;
+            changeValue(e, (evt) => {
+                evt.target.selectionEnd = cursor; // reset the cursor position in callback
+            });
+        } else {
+            changeValue(e);
+        }
+    };
 
     return (
         <React.Fragment>
@@ -36,7 +52,7 @@ const Input = ({
             }
             <input
                 autoComplete={is_autocomplete_disabled ? 'off' : undefined}
-                checked={checked ? 'checked' : ''}
+                checked={checked}
                 className={classNames(className)}
                 data-for={`error_tooltip_${name}`}
                 data-tip={data_tip}
@@ -45,7 +61,7 @@ const Input = ({
                 id={id}
                 maxLength={max_length && computedMaxLength}
                 name={name}
-                onChange={changeValue}
+                onChange={onChange}
                 onClick={onClick}
                 onKeyDown={is_incrementable ? onKeyPressed : undefined}
                 placeholder={placeholder || undefined}

@@ -156,7 +156,7 @@ const Metatrader = () => (
                         <div id='account_desc' className='mt-container border-bottom' />
                     </div>
                     <div className='mt-panel'>
-                        <div className='mt-sidebar-button border-bottom'>
+                        <div className='mt-sidebar-button border-bottom' data-show='-eucountry'>
                             <div className='small-icon'>
                                 <a href={it.url_for('get-started/binary-options-mt5')}>
                                     <img src={it.url_for('images/pages/metatrader/dashboard/binary-options.svg')} />

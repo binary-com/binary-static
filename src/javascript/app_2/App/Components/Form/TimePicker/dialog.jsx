@@ -48,7 +48,11 @@ const Dialog = ({
                                 start_time_moment,
                                 end_time_moment,
                                 'minute');
-                            const is_enabled = is_hour_enabled && is_minute_enabled;
+                            // The minute number after which the last block/interval of `Minutes` selection will be disabled
+                            const last_interval_of_hour = 52;
+                            const is_enabled = to_compare_moment.minutes() > last_interval_of_hour
+                                ? is_hour_enabled && is_minute_enabled
+                                : is_hour_enabled;
                             return (
                                 <div
                                     className={classNames(`${preClass}__selector-list-item`,

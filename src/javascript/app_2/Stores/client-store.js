@@ -196,7 +196,7 @@ export default class ClientStore extends BaseStore {
         this.accounts[this.loginid].email                     = response.authorize.email;
         this.accounts[this.loginid].currency                  = response.authorize.currency;
         this.accounts[this.loginid].is_virtual                = +response.authorize.is_virtual;
-        this.accounts[this.loginid].session_start             = parseInt(moment().valueOf() / 1000);
+        this.accounts[this.loginid].session_start             = parseInt(moment().utc().valueOf() / 1000);
         this.accounts[this.loginid].landing_company_shortcode = response.authorize.landing_company_name;
         this.updateAccountList(response.authorize.account_list);
         this.upgrade_info = this.getBasicUpgradeInfo();

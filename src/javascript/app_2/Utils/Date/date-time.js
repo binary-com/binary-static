@@ -1,5 +1,12 @@
 import moment       from 'moment';
 import { localize } from '_common/localize';
+import ServerTime   from '../../../_common/base/server_time';
+
+// Disables moment's fallback to native Date object
+// moment will return `Invalid Date` if date cannot be parsed
+moment.createFromInputFallback = function (config) {
+    config._d = new Date(NaN);
+};
 
 /**
  * Convert epoch to moment object
@@ -15,13 +22,11 @@ export const epochToMoment = epoch => moment.unix(epoch).utc();
  * @return {moment} the moment object of 'now' or the provided date epoch or string
  */
 export const toMoment = value => {
-    if (!value) return moment().utc(); // returns 'now' moment object
+    if (!value) return ServerTime.get() || moment().utc(); // returns 'now' moment object
     if (value instanceof moment && value.isValid() && value.isUTC()) return value; // returns if already a moment object
-    const is_number      = typeof value === 'number';
-    // need to explicitly convert date string to a JS Date object then pass that into Moment
-    // to get rid of the warning: Deprecation warning: moment construction falls back to js Date
-    const formatted_date = moment(new Date(value)).format('YYYY-MM-DD');
-    return is_number ? epochToMoment(value) : moment.utc(formatted_date);
+    if (typeof value === 'number') return epochToMoment(value); // returns epochToMoment() if not a date
+
+    return (/invalid/i.test(moment(value))) ? moment.utc(value, 'DD MMM YYYY') : moment.utc(value);
 };
 
 /**

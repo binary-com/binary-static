@@ -200,7 +200,7 @@ class Calendar extends React.PureComponent {
 
 Calendar.defaultProps = {
     date_format: 'YYYY-MM-DD',
-    min_date   : toMoment().format('YYYY-MM-DD'),               // by default, min_date is set to Unix Epoch (January 1st 1970)
+    min_date   : toMoment(0).format('YYYY-MM-DD'),               // by default, min_date is set to Unix Epoch (January 1st 1970)
     max_date   : toMoment().add(120, 'y').format('YYYY-MM-DD'), // by default, max_date is set to 120 years after today
 };
 
