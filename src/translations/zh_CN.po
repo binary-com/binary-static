@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-03-13 13:03\n"
+"PO-Revision-Date: 2019-03-18 13:56\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -119,6 +119,9 @@ msgstr "%1 应用程序编程界面(\"API\")的条款和条件"
 
 msgid "%1 Expert Advisor (EA)"
 msgstr "%1 专家顾问 (EA)"
+
+msgid "%1 Graduate Programme"
+msgstr "%1 研究生课程"
 
 msgid "%1 Introducing Broker (IB) Programme"
 msgstr "%1 推出经纪 (IB) 计划"
@@ -1494,6 +1497,9 @@ msgstr "资产"
 msgid "Asset Index"
 msgstr "资产指数"
 
+msgid "Asset index is unavailable in this country. If you have an active %1 account, please log in for full access."
+msgstr "此国家不提供资产指数。如果您有活跃的 %1 账户, 请登录以获得完整的访问权限。"
+
 msgid "Assign and manage multiple sub-accounts seamlessly via one interface – the Multiple Accounts Manager (MAM)."
 msgstr "通过一个接口无缝分配和管理多个分账户 — — 多个账户管理器 (MAM)。"
 
@@ -1983,6 +1989,9 @@ msgstr "Binary 的马耳他附属公司 Binary Investments (Europe) Ltd. 由 Mal
 msgid "Binary's platform transacts on average %1 %2transactions%3 per second, 24/7"
 msgstr "Binary 平台平均每秒钟进行 %1宗%2交易%3，全天候提供服务，整年无休"
 
+msgid "Binary.com Graduate Program"
+msgstr "Binary.com 研究生课程"
+
 msgid "Binary.com is an award-winning online trading provider that helps its clients to trade on financial markets through binary options and CFDs. Trading binary options and CFDs on Volatility Indices is classified as a gambling activity. Remember that gambling can be addictive – please play responsibly. Learn more about %1Responsible Trading%2. Some products are not available in all countries. This website’s services are not made available in certain countries such as the USA, Canada, Costa Rica, Hong Kong, or to persons under age 18."
 msgstr "Binary.com 是多次获奖的在线交易提供商，帮助客户通过二元期权和差价合约在金融市场进行交易。基于波动率指数的二元期权和差价合约交易被归类为博彩活动。请记住博彩活动可能会上瘾，并提醒自己要承担责任。查阅 %1负责任交易%2的详细信息。一些产品在所有国家都不可用。本网站不向一些国家如美国、加拿大、哥斯达黎加、香港、或18岁以下的用户提供服务。"
 
@@ -2174,6 +2183,9 @@ msgstr "可用于查看账户活动，包括设置、限额、资产负债表、
 
 msgid "Can be used to withdraw to payment agents, transfer funds between accounts, and set / clear cashier passwords."
 msgstr "用途包括为付款代理取款、帐户转账以及设置/删除收银台密码。"
+
+msgid "Can you spare 15 minutes?"
+msgstr ""
 
 msgid "Can't figure it out on when to buy and sell? Here is a simple way of looking at it:"
 msgstr "不知道什么时候买入和卖出？这里有个简单的方法:"
@@ -3370,9 +3382,6 @@ msgstr "不要将比特币发送到比特币现金账户 （或将比特币现�
 msgid "Do not trade when you are tired or are under the influence of alcohol."
 msgstr "疲惫或受酒精影响时不要交易。"
 
-msgid "Do you have 40 minutes for an interview?"
-msgstr "你有40分钟的面试时间吗？"
-
 msgid "Do you have a real money account?"
 msgstr "有真实资金账户吗?"
 
@@ -3579,9 +3588,6 @@ msgstr "每次转账需支付%1转账费或最低费用%2, 以较高者为准。
 
 msgid "Earn"
 msgstr "赚取"
-
-msgid "Earn $30 to trade on %1"
-msgstr "赚取30美元在%1交易"
 
 msgid "Earn USD 100 in commission for each successful referral. Your referred client must open a %1real money investment account%2 through your unique affiliate link and deposit a total of USD 100 or more (one-time or accumulative) in the account. This commission plan is only available to affiliates based in the EU."
 msgstr "每次推荐成功可获得100美元佣金。您推荐的客户必须通过您专用的联盟链接开立 %1真实货币投资账户%2, 并在账户中存入总计100美元或更多 (一次性或累计) 的资金。该佣金计划仅适用于欧盟区的联盟成员。"
@@ -7272,9 +7278,6 @@ msgstr "资金经理可以获得分配MAM高级账户，代表您进行比普通
 
 msgid "Our MAM Volatility Indices account can be assigned to a money manager who will trade on your behalf with the same specifications as the regular Volatility Indices account."
 msgstr "资金经理可以获得分配MAM波动率指数账户，代表您进行与普通波动率账户相同规范的交易。"
-
-msgid "Our MT5 service is currently unavailable to EU residents due to pending regulatory approval."
-msgstr "我们的 MT5平台正在等待监管机构批准，目前无法向欧盟居民提供服务 。"
 
 msgid "Our MetaTrader 5 Advanced account provides you with tight spreads, higher ticket size and offers more products."
 msgstr "我们的 MetaTrader 5 高级账户为您提供极低的差价, 更高的票证大小, 并提供更多的产品。"
@@ -11724,14 +11727,17 @@ msgstr "我们将审阅您的文件, 并将于三个工作日内回复。"
 msgid "We will use reasonable endeavors within our control to ensure that all electronic data provided on the MT5 Trading Platform and all electronic transactions instructed and accepted from you to us, and executed by us are not subject to network latency."
 msgstr "我们将在可控制范围内合理地努力，确保您通过 MT5 交易平台和所有电子交易指示所收到并由我们执行提供的所有电子数据均不会受到网络延迟。"
 
+msgid "We'd love to hear what you think."
+msgstr ""
+
 msgid "We're almost there"
 msgstr "快全都准备就绪了"
 
 msgid "We're granted patents for 'Computer trading system and method for speculating on a financial market' and 'Computer trading system for offering custom financial market speculations'. The patents show our ability to innovate and stay ahead of the pack."
 msgstr "我们获得了“用于金融市场投机的电脑交易系统及方法”和“用于定制金融市场投机的电脑交易系统”两项专利。这些专利说明了我们的创新性和领先水平。"
 
-msgid "We're looking for users of %1 to participate in a %240-minute video or phone interview%3. To qualify, just answer a few short questions. If selected, you will receive an email or a phone call from one of our researchers."
-msgstr "我们正在寻找 %1 的用户参与 %为时240 分钟的视频或电话访谈%3。只需回答几个简短的问题即可获取参加资格。如果入选的话, 您将收到我们研究人员发送的电子邮件或电话。"
+msgid "We're looking to improve our products and services, and we want to understand your needs better. We'd like to interview you via phone, to know what you like about us, what you don't like, and where we can do better."
+msgstr ""
 
 msgid "We're really proud of this award. We're strongly committed to offering an ethical and customer-focused trading experience, and the award shows that BetOnMarkets is a trusted brand that listens and caters to customers, whether they are experienced traders or novices. We offer customer services in English, Indonesian, Russian, Chinese and Spanish."
 msgstr "获得这个奖项，我们真的很自豪。我们不懈努力，提供合乎道德、以客户为中心的交易体验。该奖项表明 BetOnMarkets 是一个值得信赖的品牌，愿意接受客户意见并满足客户需求，无论客户是经验丰富的交易者还是新手。我们为客户提供英语、印尼语、俄语、中文和西班牙语服务。"
@@ -12365,7 +12371,7 @@ msgid "You are not entitled to any compensation or reimbursement of any kind fro
 msgstr "您无权在任何情况下获取公司任何补偿或支付。"
 
 msgid "You are not resident in a restricted country such as Canada, Costa Rica, Hong Kong, Israel, Jersey, Malaysia, Malta, Paraguay, United Arab Emirates, USA or any other restricted country which has been identified by the FATF as having strategic deficiencies;"
-msgstr ""
+msgstr "您不是被FATF认定具有策略缺陷的国家和地区如加拿大、哥斯达黎加、香港、以色列、泽西岛、马来西亚、马耳他、巴拉圭、阿拉伯联合酋长国、美国或任何其他受限制国家的居民。"
 
 msgid "You are not trading in the actual underlying instrument, or the actual foreign currency; all transactions are settled in cash only."
 msgstr "您没交易真实的标的工具, 或真实的外币。所有交易仅以现金结算。"
@@ -13415,7 +13421,7 @@ msgid "years"
 msgstr "年"
 
 msgid "you are not resident in a restricted country such as Canada, Costa Rica, Hong Kong, Israel, Jersey, Malaysia, Malta, Paraguay, United Arab Emirates, USA or any other restricted country which has been identified by the FATF as having strategic deficiencies;"
-msgstr ""
+msgstr "您不是被FATF认定具有策略缺陷的国家和地区如加拿大、哥斯达黎加、香港、以色列、泽西岛、马来西亚、马耳他、巴拉圭、阿拉伯联合酋长国、美国或任何其他受限制国家的居民。"
 
 msgid "you are over 18 years of age, unless you are an Estonian resident whereby you would have to be over 21;"
 msgstr "您的年龄在18岁以上，如果您是爱沙尼亚居民，则年龄须在21岁以上；"
