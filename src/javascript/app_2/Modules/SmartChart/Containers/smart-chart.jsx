@@ -41,7 +41,7 @@ class Chart extends React.Component {
             <SmartChart
                 barriers={this.props.barriers_array}
                 bottomWidgets={this.props.should_show_last_digit_stats ? undefined : this.bottomWidgets}
-                chartControlsWidgets={this.chartControlsWidgets}
+                chartControlsWidgets={this.prop.is_contract_mode ? null : this.chartControlsWidgets}
                 chartType={this.props.chart_type}
                 endEpoch={this.props.end_epoch}
                 granularity={this.props.granularity}
@@ -81,6 +81,7 @@ Chart.propTypes = {
     end_epoch                   : PropTypes.number,
     granularity                 : PropTypes.number,
     InfoBox                     : PropTypes.node,
+    is_contract_mode            : PropTypes.bool,
     is_mobile                   : PropTypes.bool,
     is_title_enabled            : PropTypes.bool,
     markers_array               : PropTypes.array,
@@ -101,6 +102,7 @@ export default connect(
     ({ modules, ui, common }) => ({
         is_socket_opened: common.is_socket_opened,
         barriers_array  : modules.smart_chart.barriers_array,
+        is_contract_mode: modules.smart_chart.is_contract_mode,
         is_title_enabled: modules.smart_chart.is_title_enabled,
         markers_array   : modules.smart_chart.markers_array,
         onUnmount       : modules.smart_chart.onUnmount,

@@ -85,9 +85,11 @@ export default class PortfolioStore extends BaseStore {
         const new_indicative  = +proposal.bid_price;
         const profit_loss     = +proposal.profit;
 
+        // store contract proposal details that require modifiers
         portfolio_position.indicative       = new_indicative;
         portfolio_position.profit_loss      = profit_loss;
         portfolio_position.is_valid_to_sell = isValidToSell(proposal);
+        // store contract proposal details that do not require modifiers
         portfolio_position.contract_info    = proposal;
 
         if (!proposal.is_valid_to_sell) {
