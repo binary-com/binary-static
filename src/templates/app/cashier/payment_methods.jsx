@@ -266,7 +266,7 @@ const PaymentMethods = () => {
                 />
 
                 <div className='gr-padding-10'>
-                    <p className='hint'>{it.L('Note:')} {it.L('Mastercards issued in a non-European country may only withdraw up to the amount deposited.')}</p>
+                    <p className='hint'>{it.L('Note:')} {it.L('Mastercards and Maestro issued in a non-European country may only withdraw up to the amount deposited.')}</p>
                 </div>
 
                 <TableTitle title={it.L('E-wallet')} />
@@ -462,6 +462,25 @@ const PaymentMethods = () => {
                                             { text: '5 - 10,000' },
                                             { text: 'N/A' },
                                             { text: <TableValues value={[it.L(`${deposit}${instant}`), it.L(`${withdrawal}${working_day}`, 1)]} /> },
+                                            { text: <ReferenceLinks /> },
+                                        ],
+                                        },
+                                    ]}
+                                    />,
+                                    },
+                                ],
+                            },
+                            {
+                                id : 'vload',
+                                row: [
+                                    { text: <PaymentLogo logo='vload' /> },
+                                    { attributes: { colSpan: 5, className: 'toggler' }, custom_td : <CustomTableData data={[
+                                        { td: it.L('Deposit and withdraw using the world\'s safest instant payment method. For more information, please visit [_1]', '<a target="_blank" href="https://www.vload.expert/">https://www.vload.expert/</a>') },
+                                        { td_list: [
+                                            { text: 'USD EUR' },
+                                            { text: '10 - 5,000' },
+                                            { text: '10 - 5,000' },
+                                            { text: <TableValues value={[it.L(`${deposit}${instant}`), it.L(`${withdrawal}${instant}`, 1)]} /> },
                                             { text: <ReferenceLinks /> },
                                         ],
                                         },
