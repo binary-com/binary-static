@@ -601,16 +601,8 @@
             color: $COLOR_WHITE;
 
             &__result {
-                background-color: $COLOR_DARK_BLUE_2;
-
                 &:hover {
                     background: 0;
-                }
-                &--won {
-                    background-image: linear-gradient(to top, rgba(16, 19, 32, 0), rgba(0, 148, 117, 0.16));
-                }
-                &--lost {
-                    background-image: linear-gradient(to top, rgba(16, 19, 32, 0), rgba(227, 28, 75, 0.16));
                 }
             }
             &__wrapper {

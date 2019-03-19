@@ -19,7 +19,7 @@
 
         /* postcss-bem-linter: ignore */
         span[name=contract_type] {
-            @include typeface(--paragraph-left-bold-black);
+            @include typeface(--paragraph-left-normal-black);
             @include themify($themes) {
                 color: themed('text_color') !important;
             }
