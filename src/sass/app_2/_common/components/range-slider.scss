@@ -5,149 +5,188 @@
     margin-bottom: 8px;
     padding: 0 4px;
     box-sizing: border-box;
-    @include themify($themes) {
-        &__label {
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-top: 16px;
-            margin-bottom: 4px;
-        }
-        /* overriding firefox shadow pseudo element */
-        &__track[type=range]::-moz-focus-outer {
-            border: 0;
-        }
-        // TODO: remove once we have proper styling for input slider validation error
-        &__error {
-            .range-slider {
-                &__track[type=range] {
-                    // Range Handle Thumb - Chrome / Webkit based browsers
-                    &::-webkit-slider-thumb {
-                        background: $COLOR_RED;
-                    }
-                    // Range Handle Thumb - Firefox / Gecko based browsers
-                    &::-moz-range-thumb {
-                        background: $COLOR_RED;
-                    }
+
+    &__label {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 16px;
+        margin-bottom: 4px;
+    }
+    /* overriding firefox shadow pseudo element */
+    &__track[type=range]::-moz-focus-outer {
+        border: 0;
+    }
+    // TODO: remove once we have proper styling for input slider validation error
+    &__error {
+        .range-slider {
+            &__track[type=range] {
+                // Range Handle Thumb - Chrome / Webkit based browsers
+                &::-webkit-slider-thumb {
+                    background: $COLOR_RED;
                 }
-                &__line {
-                    background: $COLOR_RED !important;
+                // Range Handle Thumb - Firefox / Gecko based browsers
+                &::-moz-range-thumb {
+                    background: $COLOR_RED;
                 }
-                &__ticks-step--marked {
-                    background: $COLOR_RED !important;
-                    border-color: $COLOR_RED !important;
+                &::-ms-thumb {
+                    background: $COLOR_RED;
                 }
             }
+            &__line {
+                background: $COLOR_RED !important;
+            }
+            &__ticks-step--marked {
+                background: $COLOR_RED !important;
+                border-color: $COLOR_RED !important;
+            }
         }
-        &__track {
-            position: relative;
-            // removal of !important is pending refactor in main trading sass file that overrides rules for input els
-            appearance: none !important;
-            width: 100% !important;
-            height: 2px !important;
-            border-radius: 5px;
+    }
+    &__track {
+        position: relative;
+        // removal of !important is pending refactor in main trading sass file that overrides rules for input els
+        appearance: none !important;
+        width: 100% !important;
+        height: 2px !important;
+        border-radius: 5px;
+        outline: none;
+        border: 0;
+        padding: 0;
+        margin: 0;
+        cursor: pointer;
+        @include themify($themes) {
             background: themed('container_color') !important;
-            outline: none;
-            border: 0;
-            padding: 0;
-            margin: 0;
-            cursor: pointer;
+        }
 
-            // Range Handle Thumb - Chrome / Webkit based browsers
-            &::-webkit-slider-thumb {
-                @include thumbStyle();
-                background: themed('slider_icon_color');
-            }
-            // Range Handle Thumb - Firefox / Gecko based browsers
-            &::-moz-range-thumb {
-                @include thumbStyle();
-                background: themed('slider_icon_color');
-            }
-            // Range Handle Thumb - Microsoft Edge
-            &::-ms-thumb {
-                @include thumbStyle();
-                background: themed('slider_icon_color');
-            }
-            &:hover, &:focus, &:active {
-                border: 0;
-                outline: none;
-            }
-            &:active, &:focus {
-                box-shadow: none !important;
-            }
-            &::-moz-range-track {
-                background: themed('container_color');
-            }
-            &::-ms-track {
-                background: themed('container_color');
+        // Range Handle Thumb - Chrome / Webkit based browsers
+        &::-webkit-slider-thumb {
+            @include thumbStyle();
+            @include themify($themes) {
+                background: themed('slider_icon_color') !important;
             }
         }
-        &__ticks {
-            width: 100%;
-            position: absolute;
-            display: flex;
-            justify-content: space-between;
-            left: 0;
-            top: -2px;
-            height: 0;
+        // Range Handle Thumb - Firefox / Gecko based browsers
+        &::-moz-range-thumb {
+            @include thumbStyle();
+            @include themify($themes) {
+                background: themed('slider_icon_color') !important;
+            }
+        }
+        // Range Handle Thumb - Microsoft Edge
+        &::-ms-thumb {
+            @include thumbStyle();
+            @include themify($themes) {
+                background: themed('slider_icon_color') !important;
+            }
+        }
+        &:hover, &:focus, &:active {
+            border: 0;
+            outline: none;
+        }
+        &:active, &:focus {
+            box-shadow: none !important;
+        }
+        &::-moz-range-track {
+            @include themify($themes) {
+                background: themed('container_color') !important;
+            }
+        }
+        &::-ms-track {
+            @include themify($themes) {
+                background: themed('container_color') !important;
+            }
+        }
+    }
+    &__ticks {
+        width: 100%;
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        left: 0;
+        top: -2px;
+        height: 0;
 
-            &-step {
-                height: 2px;
-                width: 2px;
+        &-step {
+            height: 2px;
+            width: 2px;
+            border-radius: 50%;
+            margin: 0 3px;
+            transition: background 0.3s, border-color 0.3s, box-shadow 0.3s;
+            box-shadow: 0 0 0 0px rgba(0, 0, 0, 0);
+            cursor: pointer;
+            @include themify($themes) {
                 border: 3px solid themed('container_color');
                 background: themed('container_color');
-                border-radius: 50%;
-                margin: 0 3px;
-                transition: background 0.3s, border-color 0.3s, box-shadow 0.3s;
-                box-shadow: 0 0 0 0px rgba(0, 0, 0, 0);
-                cursor: pointer;
+            }
 
-                &--active, &--marked {
+            &--active, &--marked {
+                @include themify($themes) {
                     background: themed('slider_icon_color');
                     border-color: themed('slider_icon_color');
                 }
-                &--active {
-                    visibility: hidden;
-                    pointer-events: none;
+            }
+            &--active {
+                visibility: hidden;
+                pointer-events: none;
+
+                &:after {
+                    content: '';
+                    width: 1em;
+                    height: 1em;
+                    position: absolute;
+                    display: block;
+                    top: 0;
+                    border-radius: 50%;
+                    @include themify($themes) {
+                        background: themed('slider_icon_color');
+                    }
                 }
-                &:hover:not(&--active) {
+            }
+            &:hover:not(&--active) {
+                @include themify($themes) {
                     background: themed('slider_icon_color');
                     border-color: themed('slider_icon_color');
                     box-shadow: 0 0 0 4px themed('slider_hover_color');
                 }
-                &:first-child {
-                    margin-left: 0;
-                }
-                &:last-child {
-                    margin-right: 0;
-                }
+            }
+            &:first-child {
+                margin-left: 0;
+            }
+            &:last-child {
+                margin-right: 0;
             }
         }
-        &__line {
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 2px;
+    }
+    &__line {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 2px;
+        pointer-events: none;
+        transition: width 0.5s;
+        @include themify($themes) {
             background: themed('slider_icon_color');
-            pointer-events: none;
-            transition: width 0.5s;
         }
-        &__caption {
-            display: flex;
-            padding: 8px 0 0;
-            justify-content: space-between;
-            line-height: 1.5;
-            font-size: 1.4em;
+    }
+    &__caption {
+        display: flex;
+        padding: 8px 0 0;
+        justify-content: space-between;
+        line-height: 1.5;
+        font-size: 1.4em;
 
-            /* postcss-bem-linter: ignore */
-            &--first, &--last {
+        /* postcss-bem-linter: ignore */
+        &--first, &--last {
+            font-weight: normal !important;
+            @include themify($themes) {
                 color: themed('text_primary_color') !important;
-                font-weight: normal !important;
             }
-            /* postcss-bem-linter: ignore */
-            span {
-                font-weight: bold;
+        }
+        /* postcss-bem-linter: ignore */
+        span {
+            font-weight: bold;
+            @include themify($themes) {
                 color: themed('text_color');
             }
         }
