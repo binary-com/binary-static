@@ -1,7 +1,6 @@
 /** @define digits */
 .digits {
-    display: flex;
-    align-items: center;
+    @include flex-align($y: center);
     position: relative;
     margin: 0 2.5em 0 1em;
     transform: translate3d(0, calc(100% + 2em), 0);
@@ -25,12 +24,10 @@
             @include typeface(--paragraph-center-bold-black);
             @include toEm(width, 40px, 1em);
             @include toEm(height, 40px, 1em);
+            @include flex-align(center, center);
             margin-bottom: 0.5em;
             border-radius: 50%;
             background-color: $COLOR_LIGHT_BLACK_4_SOLID;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             transition: background-color 0.2s ease-in;
 
             &--selected {

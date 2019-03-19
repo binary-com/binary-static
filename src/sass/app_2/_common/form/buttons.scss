@@ -22,9 +22,7 @@
     &--link {
         max-width: 220px;
         margin: 1em auto;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include flex-align(center, center);
         text-decoration: none;
     }
     &:not([disabled]):hover {

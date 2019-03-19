@@ -12,9 +12,7 @@
 
     &__display {
         cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
+        @include flex-align(left, center);
         flex-direction: column;
 
         /* postcss-bem-linter: ignore */
@@ -56,9 +54,7 @@
         @extend %inline-icon;
     }
     &__icon-wrapper {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
+        @include flex-align(center, center, inline);
         margin-bottom: 0.6em;
 
         /* postcss-bem-linter: ignore */

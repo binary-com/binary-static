@@ -30,7 +30,7 @@
         }
     }
     &__input {
-        align-self: center;
+        @include flex-align-self(center);
         appearance: none;
         box-sizing: border-box;
         border-radius: $BORDER_RADIUS;
@@ -41,9 +41,7 @@
         }
     }
     &__error {
-        justify-content: center;
-        align-items: center;
-        display: flex;
+        @include flex-align(center, center);
 
         &-info {
             @include themify($themes) {
@@ -89,17 +87,15 @@
         border: 0;
         margin: 8px 0 0;
         width: 100%;
-        display: flex;
-        justify-content: space-between;
         position: relative;
+        @include flex-align(justify);
         @include themify($themes) {
             color: themed('text_color');
         }
 
         &-info {
-            display: flex;
-            justify-self: left;
-            align-items: center;
+            @include flex-align($y: center);
+            @include flex-align-self($x: left);
 
             &-value {
                 @include typeface(--small-left-bold-black);
@@ -248,10 +244,9 @@
         left: -2px;
     }
     &__lock {
+        @include flex-align(center, center);
+        flex-direction: column;
         position: absolute;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         background: $COLOR_LIGHT_BLACK_4_SOLID;
         opacity: 0.95;
         min-height: 202px;
@@ -261,7 +256,6 @@
         top: 0;
         left: 2px;
         right: 0;
-        flex-direction: column;
         bottom: 0;
         border-radius: $BORDER_RADIUS;
         @include themify($themes) {
@@ -329,17 +323,13 @@
     }
     &__return {
         @include typeface(--paragraph-left-bold-active);
-        display: flex;
-        justify-content: flex-end;
+        @include flex-align(right, bottom);
         flex-grow: 1;
-        align-items: flex-end;
     }
     &__profit {
         @include typeface(--xsmall-left-bold-active);
-        display: flex;
-        justify-content: flex-end;
+        @include flex-align(right, top);
         flex-grow: 1;
-        align-items: flex-start;
         line-height: unset;
     }
     &__content {
@@ -351,10 +341,9 @@
         flex-direction: column;
     }
     &__trade-type {
+        @include flex-align($y: center);
         position: relative;
-        display: flex;
         flex-grow: 1;
-        align-items: center;
         width: 100%;
 
         &-text {
@@ -380,7 +369,6 @@
         left: 0;
         top: 0;
         bottom: 0;
-        display: inline-block;
         float: left;
         text-align: left;
     }

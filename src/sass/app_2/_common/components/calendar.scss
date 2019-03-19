@@ -12,9 +12,8 @@
     font-size: 1em;
 
     &__header, &__footer {
+        @include flex-align(null, center);
         position: relative;
-        display: flex;
-        align-items: center;
         height: 5em;
         border-radius: 5px;
         padding: 1.6em;
@@ -32,9 +31,7 @@
             padding: 0.8em 2em;
 
             .calendar__cell {
-                display: flex;
-                justify-content: center;
-                align-items: center;
+                @include flex-align(center, center);
                 border-radius: 5px;
             }
         }
@@ -123,8 +120,6 @@
     }
     &__cell {
         @include typeface(--small-left-normal-black);
-        align-self: center;
-        justify-self: center;
         position: relative;
         cursor: pointer;
 

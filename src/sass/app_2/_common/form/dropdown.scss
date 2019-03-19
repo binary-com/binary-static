@@ -6,9 +6,7 @@
         border: solid 1px $COLOR_LIGHT_BLACK_4;
         border-radius: $BORDER_RADIUS;
         height: 3.2em;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include flex-align(center, center);
         margin-top: 0.8em;
 
         &-text {
@@ -166,9 +164,8 @@
 
         &-text, &-symbol {
             @include typeface(--paragraph-left-normal-black);
-            display: flex;
+            @include flex-align(center);
             width: 100%;
-            justify-content: center;
             pointer-events: none;
             vertical-align: middle;
             padding: 6.25px 0;
@@ -191,8 +188,7 @@
                 padding: 6.25px 0;
                 margin: 0;
                 text-align: center;
-                justify-content: center;
-                display: flex;
+                @include flex-align(center);
             }
             &:before {
                 font-size: 0.8em !important;

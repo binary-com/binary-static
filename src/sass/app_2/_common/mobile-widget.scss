@@ -17,9 +17,8 @@
 
 /** @define fieldset-minimized */
 .fieldset-minimized {
-    display: flex;
+    @include flex-align($y: center);
     flex-direction: row;
-    align-items: center;
     padding: 0.5em;
     white-space: pre-line;
 

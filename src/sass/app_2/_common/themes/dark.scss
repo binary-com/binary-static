@@ -636,7 +636,7 @@
         }
         &__body {
             .positions-empty, p {
-                align-self: center;
+                @include flex-align-self(center);
                 color: $COLOR_WHITE;
             }
         }

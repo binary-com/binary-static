@@ -51,8 +51,7 @@
         border-radius: 4px;
     }
     &__header {
-        display: flex;
-        align-items: center;
+        @include flex-align($y: center);
         margin-bottom: 0.8em;
 
         .title {
@@ -85,8 +84,7 @@
 
 /** @define trade-type-info-navigation; */
 .trade-type-info-navigation {
-    display: flex;
-    align-self: flex-end;
+    @include flex-align-self($y: bottom);
     width: 100%;
 
     &__list {

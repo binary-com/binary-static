@@ -34,9 +34,7 @@
         border-radius: 3px;
         padding: initial;
         background-color: initial;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flex-align(center, center);
 
         &--increment {
             right: 2px;

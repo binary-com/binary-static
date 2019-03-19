@@ -19,9 +19,8 @@
     }
     .contract-type {
         flex-grow: 1;
-        display: flex;
+        @include flex-align($y: center);
         flex-direction: column;
-        align-items: center;
         text-align: center;
 
         .type-wrapper {
@@ -30,9 +29,7 @@
             padding: 0.5em;
             margin-bottom: 0.3em;
             border-radius: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            @include flex-align(center, center);
             @include themify($themes) {
                 background: themed('background_icon_color');
             }
@@ -71,11 +68,9 @@
     display: flex;
 
     &__wrapper {
-        display: flex;
+        @include flex-align(center, center);
+        @include flex-align-self(center);
         flex-direction: column;
-        align-self: center;
-        justify-content: center;
-        align-items: center;
         width: 100%;
     }
     &__icon {
@@ -104,8 +99,7 @@
         font-size: 1em;
         padding: 0.5em;
         border-bottom: 1px solid $COLOR_LIGHT_BLACK_4;
-        display: flex;
-        justify-content: space-between;
+        @include flex-align(justify);
     }
     /* postcss-bem-linter: ignore */
     &__refid a {

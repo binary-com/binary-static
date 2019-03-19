@@ -238,9 +238,8 @@
 
 /** @define advanced-simple-toggle */
 .advanced-simple-toggle {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex-align(center, center);
+    height: 3.2em;
     width: 100%;
     margin-top: 0.8em;
     border: 0;
@@ -266,9 +265,7 @@
     width: 2.4em;
     height: 2.4em;
     border-radius: 3px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex-align(center, center);
     @include themify($themes) {
         background: themed('background_icon_color');
     }
@@ -314,10 +311,8 @@
 /** @define error */
 .error {
     &__container {
-        display: flex;
+        @include flex-align(center, center);
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
         height: calc(100vh - 9em); // TODO: replace with 100vh - header height - footer height
     }
     &__message {

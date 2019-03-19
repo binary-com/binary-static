@@ -1,25 +1,17 @@
 /** @define acc-info */
 .acc-info {
-    display: flex;
+    @include flex-align(center, center);
     height: 100%;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
     padding: 0 1.6em;
     cursor: pointer;
 
     &__container {
-        display: flex;
-        -webkit-box-align: center;
-        align-items: center;
+        @include flex-align(center, center);
     }
     &__wrapper {
-        display: flex;
-        align-items: center;
+        @include flex-align(center, center);
         position: relative;
         height: 100%;
-        flex-direction: row;
-        justify-content: center;
     }
     &__id {
         @include typeface(--title-center-bold-black, default);
@@ -110,8 +102,7 @@
         }
     }
     &__new-account {
-        display: flex;
-        justify-content: center;
+        @include flex-align(left, center);
         margin: 0.8em 0 1.6em;
 
         &-title {
@@ -211,18 +202,15 @@
         }
     }
     &__account {
+        @include flex-align(justify, center);
         cursor: pointer;
         padding: 0.8em 1.6em;
         position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
         background-color: $COLOR_WHITE;
 
         .acc-switcher__id {
             @include typeface(--paragraph-left-normal-black);
-            display: flex;
-            align-items: center;
+            @include flex-align($y: center);
 
             &--virtual:before {
                 @include typeface(--xxxsmall-left-normal-orange, uppercase);
@@ -253,13 +241,11 @@
         }
     }
     &__logout {
+        @include flex-align($y: center);
+        @include flex-align-self($y: bottom);
         margin-top: 1.6em;
         cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
         width: fit-content;
-        align-self: flex-end;
 
         &-text {
             @include typeface(--paragraph-left-normal-black, none);

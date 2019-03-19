@@ -23,9 +23,7 @@
 
 /** @define tab */
 .tab {
-    display: inline-flex;
-    align-items: center;
-    justify-content: space-evenly;
+    @include flex-align(spaced, center, inline);
     flex: 1;
     -webkit-box-flex: 1;
 

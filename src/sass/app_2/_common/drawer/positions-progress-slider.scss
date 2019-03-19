@@ -17,9 +17,8 @@
         border-radius: #{$BORDER_RADIUS * 2};
     }
     &__ticks {
+        @include flex-align(justify);
         position: absolute;
-        display: flex;
-        justify-content: space-between;
         left: 0;
         top: -2px;
         height: 0;
@@ -47,9 +46,8 @@
             }
         }
         &-caption {
-            display: flex;
+            @include flex-align(justify);
             padding: 4px 0;
-            justify-content: space-between;
             line-height: 18px;
         }
     }

@@ -36,9 +36,8 @@
 .contract-type-item {
     width: 100%;
     cursor: pointer;
-    display: inline-flex;
+    @include flex-align($y: center, $flex: inline);
     flex-direction: row;
-    align-items: center;
     padding: 0.8em;
     box-sizing: border-box;
     margin-bottom: 0.1em;
@@ -97,9 +96,7 @@
         }
     }
     &__icon-wrapper {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
+        @include flex-align(center, center, inline);
         margin-right: 0.7em;
 
         /* postcss-bem-linter: ignore */

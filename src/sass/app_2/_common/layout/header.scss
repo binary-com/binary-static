@@ -12,24 +12,21 @@
     }
 
     &__menu-items {
-        display: flex;
+        @include flex-align($y: center);
         position: relative;
         box-sizing: border-box;
-        align-items: center;
         width: 100%;
         height: 100%;
     }
     &__navbar-icons {
         cursor: pointer;
         padding: 0.8em 1.6em;
-        align-self: center;
+        @include flex-align-self(center);
         height: 100%;
 
         &--binary-logo {
             box-sizing: border-box;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            @include flex-align(center, center);
         }
         &--notify-toggle {
             order: 2;
@@ -39,26 +36,23 @@
         }
     }
     &__menu-left {
-        justify-content: flex-start;
+        @include flex-align($x: left, $flex: inline);
         order: -1;
-        display: inline-flex;
         flex: 1;
         height: #{$HEADER_HEIGHT - 1px};
 
     }
     &__menu-right {
-        justify-content: flex-end;
+        @include flex-align($x: right, $flex: inline);
         order: 1;
-        display: inline-flex;
         height: #{$HEADER_HEIGHT - 1px};
     }
     &__menu-toggle {
-        align-self: center;
-        display: flex;
+        @include flex-align($y: center);
     }
     &__menu-links {
         height: 100%;
-        align-self: center;
+        @include flex-align-self(center);
 
         @media (max-width: 980px) {
             display: none;
@@ -69,9 +63,7 @@
         padding: 0 1.6em;
         text-decoration: none;
         position: relative;
-        display: inline-flex;
-        align-items: center;
-        justify-content: space-evenly;
+        @include flex-align(spaced, center, inline);
         transition: background-color 0.3s;
 
         &-text {

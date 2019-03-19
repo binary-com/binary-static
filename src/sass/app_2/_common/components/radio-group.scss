@@ -1,7 +1,5 @@
 .radio-group {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
+    @include flex-align(left, center);
     margin-top: 16px;
 
     &__item {

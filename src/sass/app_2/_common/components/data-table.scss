@@ -9,9 +9,8 @@ $header-height: 4.2em;
     border: 1px solid $COLOR_LIGHT_BLACK_4;
 
     &__cell {
+        @include flex-align($y: center);
         padding: 0.75em;
-        display: flex;
-        align-items: center;
 
         &:first-child {
             padding-left: 0;

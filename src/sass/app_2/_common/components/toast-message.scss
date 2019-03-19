@@ -61,11 +61,11 @@ $TOAST_BORDER_COLOR_WARNING   : rgb(255, 193, 7);  // #FFC107
         }
     }
     &__message {
-        align-self: center;
+        @include flex-align-self(center);
         padding: 0.1em 0.8em;
     }
     &__close-button {
-        align-self: center;
+        @include flex-align-self(center);
         background: transparent !important;
         border: 0 !important;
         padding: 0 !important;
@@ -78,7 +78,7 @@ $TOAST_BORDER_COLOR_WARNING   : rgb(255, 193, 7);  // #FFC107
         }
     }
     &__icon {
-        align-self: center;
+        @include flex-align-self(center);
 
         &-type {
             margin-right: 0.8em;

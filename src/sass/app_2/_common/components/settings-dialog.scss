@@ -21,10 +21,8 @@
             @include themify($themes) {
                 color: themed('text_primary_color');
             }
-            display: flex;
+            @include flex-align(justify, center);
             flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
             border-radius: $BORDER_RADIUS;
             padding: 16px;
             text-decoration: none;
@@ -82,8 +80,7 @@
  * @define dialog-header
  */
 .dialog-header {
-    display: flex;
-    justify-content: space-between;
+    @include flex-align(justify, null);
     width: 100%;
     box-shadow: 0 2px 8px 0 var($COLOR_LIGHT_BLACK_3);
 
@@ -102,9 +99,7 @@
         font-size: 16px;
         padding: 16px;
         line-height: 24px;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
+        @include flex-align(right, center);
     }
     &__close {
         display: block;

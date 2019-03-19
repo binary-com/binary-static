@@ -22,9 +22,7 @@
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
         z-index: 2;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include flex-align(center, center);
         transition: background 0.25s linear;
 
         &:hover {
@@ -135,9 +133,7 @@
         &-price {
             font-size: 1.2em;
             padding: 8px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            @include flex-align(center, center);
             font-weight: bold;
         }
         &-label {
@@ -152,8 +148,7 @@
     }
     &__type {
         font-size: 1.2em;
-        display: flex;
-        justify-content: flex-start;
+        @include flex-align(left, null);
         font-weight: bold;
     }
     &__symbol {
@@ -164,9 +159,7 @@
     &__indicative {
         font-size: 1.2em;
         font-weight: bold;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flex-align(center, center);
         @include themify($themes) {
             &--price-stable {
                 color: themed('navbar_active_color');
@@ -195,9 +188,7 @@
     &__profit-loss {
         font-size: 1.2em;
         text-align: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flex-align(center, center);
         font-weight: bold;
 
         &-label {
@@ -226,16 +217,12 @@
         }
     }
     &__underlying-name {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
+        @include flex-align(left, center);
         font-weight: bold;
         font-size: 1.2em;
     }
     &__sell-button {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include flex-align(center, center);
         transition: transform 0.25s ease, opacity 0.25s linear;
 
         &--enter-done {
@@ -251,17 +238,13 @@
 
 /** @define contract-type */
 .contract-type {
-    display: flex;
+    @include flex-align(center, center);
     flex-direction: row;
-    align-items: center;
-    text-align: center;
 
     &__type-wrapper {
         margin: 0 0.4em 0 0;
         padding: 0.5em;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flex-align(center, center);
 
         /* postcss-bem-linter: ignore */
         .category-type {

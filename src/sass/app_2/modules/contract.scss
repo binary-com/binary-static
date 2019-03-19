@@ -13,8 +13,7 @@
             transform: translateY(-32px);
 
             .header-result, .header-purchased {
-                display: flex;
-                align-items: center;
+                @include flex-align($y: center);
                 padding: 5px;
                 color: $COLOR_WHITE;
                 font-weight: bold;
@@ -94,7 +93,7 @@
             padding: 0.7em 0;
 
             > div {
-                align-self: center;
+                @include flex-align-self(center);
 
                 &:first-child {
                     font-weight: 300;
@@ -119,8 +118,7 @@ $CONTRACT_INFO_BOX_PADDING: 1.6em;
     opacity: 0;
     transform: translate3d(0, calc(-100% - 2em), 0);
     transition: transform 0.4s ease, opacity 0.4s linear;
-    display: flex;
-    justify-content: space-between;
+    @include flex-align(justify);
     width: 100%;
 
     &-button:hover {
@@ -159,8 +157,7 @@ $CONTRACT_INFO_BOX_PADDING: 1.6em;
             }
         }
         .expired {
-            display: flex;
-            align-items: center;
+            @include flex-align($y: center);
 
             svg {
                 width: 2.4em;
@@ -197,8 +194,7 @@ $CONTRACT_INFO_BOX_PADDING: 1.6em;
             }
         }
         .general {
-            display: flex;
-            align-items: center;
+            @include flex-align($y: center);
             line-height: 1.4em;
 
             .values {
@@ -215,9 +211,8 @@ $CONTRACT_INFO_BOX_PADDING: 1.6em;
                 }
             }
             .sell {
-                display: flex;
+                @include flex-align($y: center);
                 flex-direction: column;
-                align-items: center;
                 text-align: center;
                 margin: -$CONTRACT_INFO_BOX_PADDING;
                 margin-left: $CONTRACT_INFO_BOX_PADDING;
@@ -243,8 +238,7 @@ $CONTRACT_INFO_BOX_PADDING: 1.6em;
         border-radius: $BORDER_RADIUS;
         padding: 1em;
         background-color: rgba(244, 67, 54, 0.16);
-        display: flex;
-        align-items: center;
+        @include flex-align($y: center);
 
         .message-icon {
             margin-right: 1em;

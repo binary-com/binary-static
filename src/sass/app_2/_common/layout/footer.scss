@@ -7,19 +7,13 @@
     height: $FOOTER_HEIGHT;
     box-sizing: border-box;
     z-index: 3;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+    @include flex-align(right, center);
     @include themify($themes) {
         background-color: themed('background_color');
         color: themed('text_primary_color');
     }
 
     &__links {
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        flex-direction: row;
         height: 100%;
 
         &--left {
@@ -30,8 +24,7 @@
         padding: 0 0.8em;
         text-decoration: none;
         height: 100%;
-        display: inline-flex;
-        align-items: center;
+        @include flex-align($y: center, $flex: inline);
         position: relative;
 
         &:hover {
@@ -113,8 +106,6 @@
 
 /** @define server-time */
 .server-time {
-    display: inline-flex;
-    align-self: center;
     margin-right: 1em;
     padding: 0 1em;
     @include typeface(--small-left-normal-black);

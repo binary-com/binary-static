@@ -16,18 +16,14 @@
         background-color: $COLOR_LIGHT_BLACK_3;
     }
     &__description {
-        display: flex;
-        justify-content: flex-start;
-        align-items: flex-start;
+        @include flex-align(left, top);
         @include typeface(--paragraph-left-normal-black);
         @include themify($themes) {
             color: themed('text_color');
         }
     }
     &__form {
-        display: flex;
+        @include flex-align(left, top);
         flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
     }
 }

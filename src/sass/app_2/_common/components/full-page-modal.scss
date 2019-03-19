@@ -1,12 +1,10 @@
 /** @define full-page-modal */
 .full-page-modal {
+    @include flex-align(center, center);
+    flex-direction: column;
+    text-align: center;
     width: 100vw;
     height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    flex-direction: column;
     z-index: 999;
     position: absolute;
     top: -$HEADER_HEIGHT;
@@ -16,18 +14,14 @@
     background-color: transparentize($COLOR_DARK_BLUE_1, 0.7);
 
     &__dialog {
-        @include themify($themes) {
-            background-color: themed('container_secondary_color');
-        }
+        @include flex-align(spaced, top);
+        flex-direction: column;
         max-width: 560px;
         max-height: 320px;
         padding: 1.6em;
         border-radius: 4px;
         box-sizing: border-box;
-        display: flex;
-        justify-content: space-around;
-        flex-direction: column;
-        align-items: flex-start;
+        background-color: $COLOR_WHITE;
         box-shadow: 0 2px 8px 0 $COLOR_LIGHT_BLACK_3;
     }
     &__header {
@@ -46,9 +40,7 @@
         max-width: 448px;
     }
     &__footer {
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
+        @include flex-align(right, center);
         width: 100%;
     }
     &__button {

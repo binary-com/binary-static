@@ -24,13 +24,10 @@
         margin: 0 0.8em;
         box-shadow: none;
         text-decoration: none;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include flex-align(center, center);
 
         &-wrapper {
-            display: flex;
-            justify-content: flex-end;
+            @include flex-align(right, center);
         }
         &-text {
             color: $COLOR_DARK_BLUE_5 !important;
@@ -40,10 +37,8 @@
     &__title {
         margin: 0.8em;
         padding: 0.8em;
-        display: flex;
+        @include flex-align($y: center);
         flex-direction: row;
-        align-items: center;
-
     }
     &__icon_exclamation {
         margin-right: 0.8em;

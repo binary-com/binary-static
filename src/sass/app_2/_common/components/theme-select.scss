@@ -1,7 +1,6 @@
 .theme-select-settings {
-    display: flex;
+    @include flex-align($y: top);
     flex-direction: column;
-    align-items: flex-start;
     width: 100%;
 
     &__title {
@@ -13,16 +12,12 @@
         margin-bottom: 16px;
     }
     &__content {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
+        @include flex-align(justify, top);
         width: 100%;
     }
     &__option {
-        display: flex;
+        @include flex-align(center, center);
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
         width: 234px;
         height: 207px;
 

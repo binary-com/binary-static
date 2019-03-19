@@ -1,8 +1,7 @@
 .modal-root {
     width: 100vw;
     height: 100vh;
-    align-items: center;
-    justify-content: center;
+    @include flex-align(center, center);
     position: absolute;
     top: 0;
     left: 0;

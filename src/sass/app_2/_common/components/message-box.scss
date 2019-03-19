@@ -7,8 +7,7 @@
     width: 100%;
     z-index: 2;
     border-radius: $BORDER_RADIUS;
-    display: flex;
-    align-items: center;
+    @include flex-align($y: center);
     @include themify($themes) {
         background: themed('background_container_color');
         color: themed('text_primary_color');
@@ -29,13 +28,11 @@
         padding: 16px;
         line-height: 1.5;
         font-size: 0.8em;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
         max-height: 187px;
         height: 100%;
         width: 100%;
+        @include flex-align(center, center);
+        flex-direction: column;
         @include themify($themes) {
             color: themed('text_primary_color');
         }
@@ -57,10 +54,8 @@
         }
     }
     &__login {
-        display: flex;
+        @include flex-align(center, center);
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
         height: 100%;
         width: 100%;
         @include themify($themes) {
@@ -104,9 +99,7 @@
         }
     }
     &__info {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include flex-align(center, center);
         padding: 0.5rem 1.5rem;
         text-align: center;
     }

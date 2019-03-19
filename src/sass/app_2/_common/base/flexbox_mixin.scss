@@ -1,0 +1,46 @@
+// Flexbox horizontal alignment
+$FLEX_JUSTIFY : (
+    'center' : center,
+    'left'   : flex-start,
+    'right'  : flex-end,
+    'justify': space-between,
+    'spaced' : space-around,
+);
+
+// Flexbox vertical alignment
+$FLEX_ALIGN: (
+    'center' : center,
+    'top'    : flex-start,
+    'bottom' : flex-end,
+    'stretch': stretch,
+);
+
+/*
+ * Aligns flexbox items horizontally or vertically within a flex container
+ * Usage example:
+   @include flex-align(center, center);
+   valid x values: center | left | right | justify | spaced
+   valid y values: center | top | bottom | stretch
+ */
+@mixin flex-align($x: null, $y: null, $flex: flex) {
+    @if $flex == flex {
+        display: flex;
+    }
+    @else if $flex == inline {
+        display: inline-flex;
+    }
+    justify-content: map-get($FLEX_JUSTIFY, $x);
+    align-items: map-get($FLEX_ALIGN, $y);
+}
+
+/*
+ * Align a single flexbox item horizontally or vertically within a flex container
+ * Usage example:
+   @include flex-align-self(right, top);
+   valid x values: center | left | right | justify | spaced
+   valid y values: center | top | bottom | stretch
+ */
+@mixin flex-align-self($x: null, $y: null) {
+    justify-self: map-get($FLEX_JUSTIFY, $x);
+    align-self: map-get($FLEX_ALIGN, $y);
+}

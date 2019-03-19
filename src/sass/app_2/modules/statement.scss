@@ -14,9 +14,8 @@ $side-padding: 1.2em;
 
         &-content {
             height: 100%;
-            display: flex;
+            @include flex-align($y: center);
             flex-direction: row;
-            align-items: center;
             padding-left: 1.6em;
 
             .datepicker .datepicker__native-overlay {
@@ -100,8 +99,7 @@ $side-padding: 1.2em;
         font-size: 1em;
         padding: 0.5em;
         border-bottom: 1px solid $COLOR_LIGHT_BLACK_4;
-        display: flex;
-        justify-content: space-between;
+        @include flex-align(justify);
     }
     /* postcss-bem-linter: ignore */
     &__refid a {
@@ -144,10 +142,8 @@ $side-padding: 1.2em;
 /** @define statement-empty */
 .statement-empty {
     flex-grow: 1;
-    display: flex;
+    @include flex-align(center, center);
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
 
     &__icon {
         height: 6.4em;

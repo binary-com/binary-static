@@ -1,8 +1,7 @@
 /** @define page-error */
 .page-error {
     &__container {
-        display: flex;
-        justify-content: center;
+        @include flex-align(center);
         margin-top: 4em;
     }
     &__box {
