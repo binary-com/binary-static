@@ -130,7 +130,7 @@
                     float: left;
                 }
                 &:hover {
-                    background: themed('hover_color');
+                    background: themed('tab_hover_color');
                 }
             }
         }
@@ -168,7 +168,7 @@
                 background: themed('container_color');
 
                 &:hover:not(.acc-switcher__account--selected) {
-                    background-color: themed('hover_color');
+                    background-color: themed('tab_hover_color');
                 }
                 .acc-switcher__id {
                     color: themed('text_primary_color');

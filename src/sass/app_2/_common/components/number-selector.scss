@@ -32,7 +32,7 @@
         &:hover:not(&--selected) {
             cursor: pointer;
             @include themify($themes) {
-                background-color: themed('hover_color');
+                background-color: themed('tab_hover_color');
             }
         }
         &:last-child {

@@ -49,7 +49,6 @@
         background-color: $COLOR_LIGHT_BLACK_4;
 
         .contract-type-item__icon {
-            @extend %inline-icon;
             display: block;
         }
     }
@@ -66,16 +65,35 @@
         /* postcss-bem-linter: ignore */
         svg {
             pointer-events: none;
+
+            .color1-fill {
+                @include themify($themes) {
+                    fill: themed('text_primary_color') !important;
+                }
+            }
         }
     }
     &--selected {
         @include themify($themes) {
-            color: themed('text_color');
+            color: themed('text_active_color');
+            background: themed('active_color');
         }
         /* postcss-bem-linter: ignore */
         span {
             font-weight: bold;
             color: $COLOR_WHITE;
+        }
+        .contract-type-item__icon {
+            /* postcss-bem-linter: ignore */
+            svg {
+                pointer-events: none;
+
+                .color1-fill {
+                    @include themify($themes) {
+                        fill: themed('text_active_color') !important;
+                    }
+                }
+            }
         }
     }
     &__icon-wrapper {

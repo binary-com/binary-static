@@ -86,7 +86,7 @@
         @include themify($themes) {
             /* postcss-bem-linter: ignore */
             path {
-                fill: themed('background_container_color');
+                fill: themed('slider_hover_color') !important;
             }
         }
     }

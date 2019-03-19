@@ -1,5 +1,4 @@
 import classNames            from 'classnames';
-import { isArrayLike }       from 'mobx/lib/mobx';
 import PropTypes             from 'prop-types';
 import React                 from 'react';
 import { IconArrow }         from 'Assets/Common';
@@ -132,11 +131,6 @@ class ContractTypeWidget extends React.PureComponent {
     };
 
     render() {
-        const is_single_option = isArrayLike(this.props.list) ?
-            !!(this.props.list.length < 2)
-            :
-            !!(Object.keys(this.props.list).length < 2);
-
         return (
             <div
                 ref={this.setWrapperRef}
@@ -153,14 +147,8 @@ class ContractTypeWidget extends React.PureComponent {
                     <span name={this.props.name} value={this.props.value}>
                         {this.getDisplayText()}
                     </span>
-                    <IconArrow className={classNames('contract-type-widget__select-arrow', {
-                        'contract-type-widget__select-arrow--left': true,
-                    })}
-                    />
+                    <IconArrow className='contract-type-widget__select-arrow contract-type-widget__select-arrow--left' />
                 </div>
-                {
-                    !is_single_option && <IconArrow className='contract-type-widget__select-arrow dropdown__select-arrow dropdown__select-arrow--left' />
-                }
 
                 <ContractTypeDialog
                     is_mobile={this.props.is_mobile}

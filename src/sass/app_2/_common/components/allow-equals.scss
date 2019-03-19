@@ -24,7 +24,7 @@
             }
         }
         &-info {
-            @extend %inline-icon;
+            @extend %inline-icon.disabled;
             transform: scale(0.75);
         }
         &-info-balloon-icon {
