@@ -127,9 +127,9 @@
     }
     &:active, &:focus {
         outline: 0;
-        @include rounded();
         border-color: $COLOR_LIGHT_GRAY_1;
-        box-shadow: 0 0 0 2px $COLOR_DARK_BLUE_8;
+        @include rounded();
+        @include boxShadow('spread');
     }
     &--has-inline-prefix {
         padding-left: 50px !important;
@@ -140,7 +140,7 @@
         border: 1px solid $COLOR_RED !important;
 
         &:active, &:focus {
-            box-shadow: 0 0 0 2px rgba(226, 28, 76, 0.3) !important;
+            @include boxShadow('spread', rgba(226, 28, 76, 0.3) !important);
         }
     }
 }

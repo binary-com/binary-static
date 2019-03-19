@@ -83,22 +83,12 @@
     &__wrapper {
         position: absolute;
         transition: transform 0.25s ease, opacity 0.25s linear;
-        box-shadow: 0 2px 8px 0 $COLOR_LIGHT_BLACK_3;
         right: 0;
         top: calc(100% + 4px);
         width: 240px;
         @include rounded();
         @include themify($themes) {
             background: themed('background_container_color');
-        }
-
-        &--enter-done {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        &--enter, &--exit {
-            opacity: 0;
-            transform: translateY(-2px);
         }
     }
     &__new-account {

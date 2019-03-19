@@ -15,7 +15,7 @@
     }
     &__dialog {
         background-color: $COLOR_WHITE;
-        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+        @include boxShadow();
         @include rounded();
         padding-top: 10px;
         position: absolute;

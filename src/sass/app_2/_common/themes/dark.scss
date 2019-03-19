@@ -127,6 +127,26 @@
             animation: dash 1.5s ease-in-out infinite, colorOrange 6s ease-in-out infinite;
         }
     }
+    .full-page-modal {
+        background-color: rgba(31, 36, 61, 0.8);
+
+        &__dialog {
+            background-color: $COLOR_DARK_BLUE_3;
+        }
+        &__content, &__header {
+            color: $COLOR_DARK_BLUE_7;
+        }
+        &__btn {
+            background-color: $COLOR_DARK_BLUE_3;
+
+            &:hover {
+                background-color: $COLOR_DARK_BLUE_7;
+            }
+            &-text {
+                color: $COLOR_WHITE;
+            }
+        }
+    }
     .toast {
         &__body {
             background-color: $TOAST_BACKGROUND_COLOR_INFO;
@@ -171,7 +191,6 @@
     }
     .calendar {
         background: $COLOR_DARK_BLUE_3;
-        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.8), 0 2px 4px 0 rgba(0, 0, 0, 0.5);
 
         &__body {
             border-color: $COLOR_DARK_BLUE_2;
@@ -247,7 +266,6 @@
     .contracts-type-dialog {
         &__list-wrapper {
             background: $COLOR_DARK_BLUE_3;
-            box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.5);
         }
     }
     .contract-type-item {
@@ -305,9 +323,7 @@
             border-color: $COLOR_DARK_BLUE_7;
         }
         &:focus, &:active {
-            outline: 0;
             border-color: $COLOR_DARK_BLUE_7;
-            box-shadow: 0 0 0 2px $COLOR_DARK_BLUE_8;
         }
         &__display {
             span[name=contract_type] {
@@ -400,7 +416,6 @@
         }
         &:focus, &:active {
             border-color: $COLOR_DARK_BLUE_7;
-            box-shadow: 0 0 0 2px $COLOR_DARK_BLUE_8;
             color: $COLOR_WHITE;
         }
         &::placeholder {
@@ -415,13 +430,9 @@
             &:hover, &:focus, &:active {
                 border-color: $COLOR_DARK_BLUE_7;
             }
-            &:focus, &:active {
-                box-shadow: 0 0 0 2px $COLOR_DARK_BLUE_8;
-            }
         }
         &--show > .dropdown__display--clicked {
             border-color: $COLOR_DARK_BLUE_7;
-            box-shadow: 0 0 0 2px $COLOR_DARK_BLUE_8;
         }
     }
     .list {

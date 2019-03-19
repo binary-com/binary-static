@@ -5,7 +5,7 @@
     left: 50%;
     bottom: 4em;
     background: $COLOR_WHITE;
-    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.14);
+    @include boxShadow();
     width: 348px;
     min-height: 9em;
     font-weight: 500;

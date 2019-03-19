@@ -276,6 +276,18 @@
     border-radius: $radius;
 }
 
-@mixin boxShadow($color) {
-    box-shadow: 0 2px 8px 0 $color;
+@mixin boxShadow($type: null, $shadow_color: null) {
+    @include themify($themes) {
+        @if ($type == 'spread') {
+            @if ($shadow_color) {
+                box-shadow: 0 0 0 2px $shadow_color;
+            }
+            @else {
+                box-shadow: 0 0 0 2px themed('border_outline_color');
+            }
+        }
+        @else {
+            box-shadow: 0 2px 8px 0 themed('box_shadow_color');
+        }
+    }
 }

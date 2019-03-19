@@ -21,7 +21,7 @@
         background: $COLOR_LIGHT_BLACK_4_SOLID;
         @include rounded();
         padding: 1.6em;
-        box-shadow: 0 2px 8px 0 $COLOR_LIGHT_BLACK_3;
+        @include boxShadow();
         display: flex;
         flex-direction: column;
     }

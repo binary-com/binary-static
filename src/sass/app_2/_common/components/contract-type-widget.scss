@@ -67,8 +67,8 @@
     }
     &:active, &:focus, &--show {
         outline: none;
-        @include rounded();
         border-color: $COLOR_LIGHT_GRAY_1;
-        box-shadow: 0 0 0 2px $COLOR_LIGHT_GRAY_2;
+        @include rounded();
+        @include boxShadow('spread');
     }
 }

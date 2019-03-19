@@ -39,9 +39,7 @@
             }
         }
         &__icon--active, &__icon:hover {
-            @include themify($themes) {
-                box-shadow: 0 0 0 2px themed('border_outline_color');
-            }
+            @include boxShadow('spread');
         }
     }
 }

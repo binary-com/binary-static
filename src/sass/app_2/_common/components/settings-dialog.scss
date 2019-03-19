@@ -30,10 +30,10 @@
             &--active {
                 @include themify($themes) {
                     border: 1px solid themed('border_hover_color');
-                    box-shadow: 0 0 0 2px themed('border_outline_color');
                     background-color: themed('container_color');
                     color: themed('text_active_color');
                 }
+                @include boxShadow('spread');
             }
         }
         &-flag {
@@ -68,7 +68,7 @@
         width: 736px;
         position: relative;
         overflow: hidden;
-        box-shadow: 0 2px 8px 0 $COLOR_LIGHT_BLACK_3;
+        @include boxShadow();
         @include rounded();
 
         &--hide {
@@ -82,7 +82,7 @@
 .dialog-header {
     @include flex-align(justify, null);
     width: 100%;
-    box-shadow: 0 2px 8px 0 var($COLOR_LIGHT_BLACK_3);
+    @include boxShadow();
 
     &__sidebar {
         @include typeface(--title-left-bold-black);
