@@ -7,7 +7,7 @@
         @include themify($themes) {
             color: themed('text_primary_color');
         }
-        margin-bottom: 0.8em;
+        margin-bottom: 0.6em;
     }
     &:last-child {
         padding-bottom: 1.6em;
