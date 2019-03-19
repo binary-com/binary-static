@@ -357,12 +357,6 @@
                     color: $COLOR_DARK_BLUE_8;
                     pointer-events: none;
                 }
-                &--selected {
-                    background: $COLOR_DARK_BLUE_5;
-                }
-                &:hover:not(&--selected):not(&--disabled) {
-                    background: $COLOR_DARK_BLUE_4;
-                }
             }
         }
     }
