@@ -11,6 +11,7 @@ import PurchaseLock      from '../Components/Form/Purchase/PurchaseLock';
 import PurchaseButton    from '../Components/Elements/purchase-button.jsx';
 
 const Purchase = ({
+    contract_type,
     currency,
     is_contract_mode,
     is_client_allowed_to_visit,
@@ -29,6 +30,7 @@ const Purchase = ({
     Object.keys(trade_types).map((type, idx) => {
         const info        = proposal_info[type] || {};
         const is_disabled = !is_purchase_enabled || !is_trade_enabled || !info.id || !is_client_allowed_to_visit;
+        const is_high_low = /high_low/.test(contract_type.toLowerCase());
         const is_loading  = !info.has_error && !info.id;
         const purchase_button = (
             <PurchaseButton
@@ -36,6 +38,7 @@ const Purchase = ({
                 info={info}
                 is_contract_mode={is_contract_mode}
                 is_disabled={is_disabled}
+                is_high_low={is_high_low}
                 is_loading={is_loading}
                 onClickPurchase={onClickPurchase}
                 trade_types={trade_types}
@@ -111,6 +114,7 @@ export default connect(
         currency                  : client.currency,
         is_client_allowed_to_visit: client.is_client_allowed_to_visit,
         is_contract_mode          : modules.smart_chart.is_contract_mode,
+        contract_type             : modules.trade.contract_type,
         is_purchase_enabled       : modules.trade.is_purchase_enabled,
         is_trade_enabled          : modules.trade.is_trade_enabled,
         onClickPurchase           : modules.trade.onPurchase,

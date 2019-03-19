@@ -5,7 +5,7 @@ import { formatMoney } from '_common/base/currency_base';
 import {
     AccountInfo,
     DepositButton,
-    InstallPWAButton,
+    // InstallPWAButton,
     LoginButton,
     MenuLinks,
     ToggleMenuDrawer,
@@ -18,15 +18,15 @@ const Header = ({
     can_upgrade,
     can_upgrade_to,
     currency,
-    hideInstallButton,
+    // hideInstallButton,
     is_acc_switcher_on,
-    is_install_button_visible,
+    // is_install_button_visible,
     is_logged_in,
     is_mobile,
     is_virtual,
     loginid,
     onClickUpgrade,
-    pwa_prompt_event,
+    // pwa_prompt_event,
     setPWAPromptEvent,
     showInstallButton,
     toggleAccountsDialog,
@@ -54,13 +54,14 @@ const Header = ({
                 </div>
                 <div className='header__menu-right'>
                     <div className='acc-info__container'>
-                        { is_install_button_visible && is_logged_in &&
+                        {/* TODO: uncomment to show PWA Install button */}
+                        {/* { is_install_button_visible && is_logged_in &&
                             <InstallPWAButton
                                 className='acc-info__button'
                                 prompt_event={pwa_prompt_event}
                                 onClick={hideInstallButton}
                             />
-                        }
+                        } */}
                         { is_logged_in ?
                             <React.Fragment>
                                 <AccountInfo

@@ -10,6 +10,7 @@ const PurchaseButton = ({
     info,
     is_contract_mode,
     is_disabled,
+    is_high_low,
     is_loading,
     onClickPurchase,
     trade_types,
@@ -29,7 +30,11 @@ const PurchaseButton = ({
             <div className='btn-purchase__content'>
                 <div className='btn-purchase__trade-type'>
                     <div className='btn-purchase__trade-type-icon'>
-                        <IconTradeType type={!is_disabled ? type.toLowerCase() : ''} />
+                        <IconTradeType type={!is_disabled 
+                            ? !is_high_low 
+                                ? type.toLowerCase() 
+                                : `${type.toLowerCase()}_barrier` 
+                            : '' } className='btn-purchase__trade-type-icon' />
                     </div>
                     <div className='btn-purchase__trade-type-text'>
                         <span>
