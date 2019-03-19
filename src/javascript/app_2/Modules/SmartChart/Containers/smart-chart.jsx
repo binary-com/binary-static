@@ -36,7 +36,6 @@ class Chart extends React.Component {
     );
 
     render() {
-
         return (
             <SmartChart
                 barriers={this.props.barriers_array}
@@ -56,6 +55,10 @@ class Chart extends React.Component {
                 symbol={this.props.symbol}
                 topWidgets={this.topWidgets}
                 isConnectionOpened={this.props.is_socket_opened}
+
+                clearChart={this.props.should_clear_chart}
+                importedLayout={this.props.trade_chart_layout}
+                onExportLayout={this.props.should_save_layout ? this.props.exportLayout : null}
             >
                 { this.props.markers_array.map((marker, idx) => (
                     <ChartMarker
@@ -98,7 +101,11 @@ export default connect(
         is_title_enabled: modules.smart_chart.is_title_enabled,
         markers_array   : modules.smart_chart.markers_array,
         onUnmount       : modules.smart_chart.onUnmount,
+        exportLayout    : modules.smart_chart.exportLayout,
+        should_clean_chart: modules.smart_chart.should_clear_chart,
+        should_save_layout: modules.smart_chart.should_save_layout,
         settings        : modules.smart_chart.settings,
+        trade_chart_layout: modules.smart_chart.trade_chart_layout,
         wsForget        : modules.smart_chart.wsForget,
         wsSendRequest   : modules.smart_chart.wsSendRequest,
         wsSubscribe     : modules.smart_chart.wsSubscribe,

@@ -75,6 +75,8 @@ export default class ContractStore extends BaseStore {
         this.onSwitchAccount(this.accountSwitcherListener.bind(null));
         this.root_store.modules.trade.symbol = contract_info.underlying;
         this.smart_chart   = this.root_store.modules.smart_chart;
+        this.smart_chart.saveTradeChartLayout();
+
         this.contract_info = contract_info;
         this.contract_id   = +contract_info.contract_id;
         if (isEnded(this.contract_info)) {
@@ -109,6 +111,7 @@ export default class ContractStore extends BaseStore {
         this.smart_chart.removeBarriers();
         this.smart_chart.removeMarkers();
         this.smart_chart.setContractMode(false);
+        this.smart_chart.applySavedTradeChartLayout();
     }
 
     @action.bound
