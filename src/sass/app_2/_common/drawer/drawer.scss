@@ -7,7 +7,6 @@
     right: initial;
     will-change: transform;
     overflow: hidden;
-    box-sizing: border-box;
     width: 260px;
     height: 100%;
     transition: transform 0.25s ease;
@@ -175,7 +174,6 @@
         width: 100%;
         cursor: pointer;
         font-size: 1.4em;
-        box-sizing: border-box;
         padding: 1.6em;
         z-index: 1;
 

@@ -21,7 +21,6 @@
         font-weight: 300;
         @include flex-align-self(center);
         appearance: none;
-        box-sizing: border-box;
         background: $COLOR_WHITE;
 
         &:hover {

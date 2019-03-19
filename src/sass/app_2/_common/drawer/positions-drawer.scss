@@ -16,7 +16,6 @@ $header-height: 4em;
     z-index: 2;
     top: $HEADER_HEIGHT;
     left: 4px;
-    box-sizing: border-box;
     opacity: 0;
     color: $COLOR_LIGHT_BLACK_1;
     transform: translateX(-100%);
@@ -64,7 +63,6 @@ $header-height: 4em;
         // height: calc(100% - #{$header-height * 2.5});
         height: calc(100% - #{$header-height});
         padding: 0.8em 0 0;
-        box-sizing: border-box;
         overflow: hidden;
         @include flex-align-self(center);
         @include themify($themes) {

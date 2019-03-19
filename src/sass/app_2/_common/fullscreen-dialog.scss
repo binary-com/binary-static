@@ -10,7 +10,6 @@ $content-index: 1;
 
 /** @define fullscreen-dialog; weak */
 .fullscreen-dialog {
-    box-sizing: border-box;
     position: fixed;
     top: 0;
     left: 0;
@@ -36,7 +35,6 @@ $content-index: 1;
         }
     }
     &__content {
-        box-sizing: border-box;
         position: relative;
         padding-top: $shadow-cover-height;
         padding-bottom: 7em; // ios bottom bar fix
@@ -46,7 +44,6 @@ $content-index: 1;
         transition: all $animation-duration ease-out;
     }
     &__header {
-        box-sizing: border-box;
         @include flex-align(justify, center);
         flex-direction: row;
         width: 100%;

@@ -2,7 +2,6 @@
 .header {
     position: fixed;
     z-index: 99;
-    box-sizing: border-box;
     width: 100%;
     height: $HEADER_HEIGHT;
     top: 0;
@@ -14,7 +13,6 @@
     &__menu-items {
         @include flex-align($y: center);
         position: relative;
-        box-sizing: border-box;
         width: 100%;
         height: 100%;
     }
@@ -25,7 +23,6 @@
         height: 100%;
 
         &--binary-logo {
-            box-sizing: border-box;
             @include flex-align(center, center);
         }
         &--notify-toggle {

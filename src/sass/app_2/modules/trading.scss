@@ -32,7 +32,6 @@
     &__input {
         @include flex-align-self(center);
         appearance: none;
-        box-sizing: border-box;
         border-radius: $BORDER_RADIUS;
         @include themify($themes) {
             background: themed('container_color');

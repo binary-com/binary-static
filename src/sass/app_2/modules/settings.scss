@@ -8,7 +8,6 @@
         position: fixed;
         overflow-y: auto;
         height: calc(100vh - #{$HEADER_HEIGHT} - #{$FOOTER_HEIGHT});
-        box-sizing: border-box;
         border-right: 1px solid $COLOR_LIGHT_BLACK_4;
 
         @media (max-width: 1025px) {
@@ -37,7 +36,6 @@
             font-weight: bold;
             line-height: 1.5;
             color: $COLOR_LIGHT_BLACK_1;
-            box-sizing: border-box;
             margin: 2em 0 1em;
             padding: 0 2.4em;
         }

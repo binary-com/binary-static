@@ -6,7 +6,6 @@ $side-padding: 1.2em;
     height: calc(100vh - #{$HEADER_HEIGHT + $FOOTER_HEIGHT});
 
     &__filter {
-        box-sizing: border-box;
         height: $filter-height;
         width: 100%;
         font-size: 1.4em;

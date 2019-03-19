@@ -39,7 +39,6 @@
     @include flex-align($y: center, $flex: inline);
     flex-direction: row;
     padding: 0.8em;
-    box-sizing: border-box;
     margin-bottom: 0.1em;
     transition: transform 0.3s opacity 0.3s;
     background-color: $COLOR_WHITE;

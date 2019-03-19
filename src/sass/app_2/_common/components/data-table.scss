@@ -4,7 +4,6 @@ $header-height: 4.2em;
 .table {
     display: flex;
     flex-direction: column;
-    box-sizing: border-box;
     @include typeface(--paragraph-center-normal-black, default);
     border: 1px solid $COLOR_LIGHT_BLACK_4;
 
@@ -23,7 +22,6 @@ $header-height: 4.2em;
         display: grid;
         grid-auto-rows: min-content; // safari fix
         padding: 0 1.6em;
-        box-sizing: border-box;
         border-bottom: 1px solid $COLOR_LIGHT_BLACK_4;
         text-decoration: none;
 
