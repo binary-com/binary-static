@@ -181,8 +181,8 @@
                         font-weight: 700;
 
                         &--virtual:before {
-                            color: $COLOR_WHITE;
-                            border: 1px solid $COLOR_WHITE;
+                            color: themed('text_active_color');
+                            border: 1px solid themed('text_active_color');;
                         }
                     }
                 }
