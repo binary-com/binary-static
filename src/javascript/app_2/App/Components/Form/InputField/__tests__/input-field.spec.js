@@ -52,7 +52,6 @@ describe('InputField', () => {
             </div>
         )).to.be.true;
     });
-    // TODO: Add more tests
     it('display_value should change with unit and is_unit_at_right', () => {
         const wrapper = shallow(<InputField value={10} onChange={onChange} />);
         expect(wrapper.find('.input').prop('display_value')).to.be.equal(10);
@@ -61,8 +60,5 @@ describe('InputField', () => {
         wrapper.setProps({ is_unit_at_right: true });
         expect(wrapper.find('.input').prop('display_value')).to.be.equal('10 $');
     });
-    it('getDecimals should return correct result ', () => {
-        const wrapper = mount(<InputField />);
-        expect(wrapper.instance().getDecimals('2.56')).to.equal(2);
-    });
+    // TODO: Add more tests
 });

@@ -25,9 +25,9 @@ describe('Input', () => {
     });
     it('input\'s checked should depend on checked in props', () => {
         let wrapper = shallow(<Input />);
-        expect(wrapper.find('input').prop('checked')).to.be.empty;
+        expect(wrapper.find('input').prop('checked')).to.be.undefined;
         wrapper = shallow(<Input checked />);
-        expect(wrapper.find('input').prop('checked')).to.be.equal('checked');
+        expect(wrapper.find('input').prop('checked')).to.be.true;
     });
     it('input\'s maxLength should be correct based on maxLength and fractional digits', () => {
         let wrapper = shallow(<Input />);
