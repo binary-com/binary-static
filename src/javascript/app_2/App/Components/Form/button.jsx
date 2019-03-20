@@ -23,7 +23,7 @@ const Button = ({
             disabled={is_disabled}
             tabIndex={tabIndex || '0'}
         >
-            <span className={classNames('btn__text', classNameSpan)}>{text}</span>
+            { text && <span className={classNames('btn__text', classNameSpan)}>{text}</span> }
             {children}
         </button>
     );
