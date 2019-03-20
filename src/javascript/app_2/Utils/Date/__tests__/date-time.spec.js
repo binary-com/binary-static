@@ -63,13 +63,13 @@ describe('daysFromTodayTo', () => {
 
     it('return empty string if the user selected previous day', () => {
         //get previous day
-        const date = moment().startOf('day').subtract(1, 'days').format('YYYY-MM-DD');
+        const date = moment().utc().startOf('day').subtract(1, 'days').format('YYYY-MM-DD');
         expect(DateTime.daysFromTodayTo(date)).to.be.empty;
     });
 
     it('return difference value between selected date and today', () => {
         //get date three days from now
-        const date = moment().startOf('day').add('3', 'days').format('YYYY-MM-DD');
+        const date = moment().utc().startOf('day').add('3', 'days').format('YYYY-MM-DD');
         expect(DateTime.daysFromTodayTo(date)).to.deep.equal(3);
     });
 });

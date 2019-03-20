@@ -371,8 +371,9 @@
                 &-duration {
                     background: $COLOR_DARK_BLUE_5;
                 }
-                &:hover {
-                    background: $COLOR_DARK_BLUE_5 !important;
+                &:hover:not(.calendar__cell--disabled):not(.calendar__cell--active) {
+                    background: $COLOR_DARK_BLUE_5;
+                    border: 1px solid $COLOR_DARK_BLUE_7;
                 }
             }
             &--disabled, &--other {
