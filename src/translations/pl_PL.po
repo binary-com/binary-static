@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-03-19 01:47\n"
+"PO-Revision-Date: 2019-03-20 02:47\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Polish\n"
 "MIME-Version: 1.0\n"
@@ -428,6 +428,9 @@ msgstr "Nagroda „Operator finansowy roku” przyznana przez eGaming Review"
 
 msgid "(One) Touch trades"
 msgstr "Zakłady z (jednokrotnym) osiągnięciem ceny"
+
+msgid "(This limit may vary depending on current exchange rates.)"
+msgstr ""
 
 msgid "(a) Price and cost"
 msgstr "(a) Cena i koszt"
@@ -1498,7 +1501,7 @@ msgid "Asset Index"
 msgstr "Indeks aktywów"
 
 msgid "Asset index is unavailable in this country. If you have an active %1 account, please %2log in%3 for full access."
-msgstr ""
+msgstr "Indeks aktywów jest niedostępny w tym kraju. Jeśli posiadasz aktywne konto %1, %2zaloguj się%3, aby uzyskać pełny dostęp."
 
 msgid "Assign and manage multiple sub-accounts seamlessly via one interface – the Multiple Accounts Manager (MAM)."
 msgstr "Bezproblemowe przydzielanie wielu subkont i zarządzanie nimi za pośrednictwem jednego interfejsu – Menedżer wielu kont (MAM)."
@@ -4470,6 +4473,9 @@ msgstr "piątki"
 msgid "From"
 msgstr "Od"
 
+msgid "From account: "
+msgstr ""
+
 msgid "Front Side"
 msgstr "Przednia strona"
 
@@ -6477,9 +6483,6 @@ msgstr "Karty Mastercard wydane w kraju poza Europą umożliwiają wypłaty w wy
 msgid "Matches/Differs"
 msgstr "Zgadza się/Różni się"
 
-msgid "Max"
-msgstr "Maks."
-
 msgid "Maximum Payout"
 msgstr "Maksymalna wypłata"
 
@@ -6950,6 +6953,9 @@ msgstr "Stanowiska nietechniczne"
 
 msgid "Not"
 msgstr "Nie"
+
+msgid "Not announced for this currency."
+msgstr ""
 
 msgid "Not at all. Joining our affiliate programme is completely free and always will be."
 msgstr "Wcale. Dołączenie do naszego programu partnerskiego jest całkowicie bezpłatne i tak pozostanie."
@@ -10620,6 +10626,9 @@ msgstr "Tytuł"
 msgid "To"
 msgstr "Do"
 
+msgid "To account: "
+msgstr ""
+
 msgid "To apply, please submit your CV and a cover letter to %1"
 msgstr "Aby aplikować, prześlij swoje CV i list motywacyjny do %1"
 
@@ -10945,7 +10954,7 @@ msgid "Trading platforms"
 msgstr "Platformy handlowe"
 
 msgid "Trading times is unavailable in this country. If you have an active %1 account, please %2log in%3 for full access."
-msgstr ""
+msgstr "Godziny handlu są niedostępne w tym kraju. Jeśli posiadasz aktywne konto %1, %2zaloguj się%3, aby uzyskać pełny dostęp."
 
 msgid "TradingView"
 msgstr "Widok handlowy (TradingView)"
@@ -10988,6 +10997,9 @@ msgstr "Przelej środki z konta opcji binarnych na swoje konto MetaTrader 5."
 
 msgid "Transfer funds to your MT5 account"
 msgstr "Przelej środki na swoje konto MT5"
+
+msgid "Transfer limit: %1*"
+msgstr ""
 
 msgid "Transfer of Data"
 msgstr "Przekazywanie danych"
@@ -12141,9 +12153,6 @@ msgstr "Limity wypłat"
 msgid "Withdrawal for your account is not allowed at this moment."
 msgstr "Wypłata z Twojego konta jest w obecnej chwili niedozwolona."
 
-msgid "Withdrawal limit"
-msgstr "Limit wypłat"
-
 msgid "Withdrawal of Funds from MT5 Real Account"
 msgstr "Wypłata środków z Prawdziwego konta MT5"
 
@@ -12582,8 +12591,8 @@ msgstr "Nie możesz anulować ani zmieniać poziomu dla swojego zlecenia Stop lu
 msgid "You may only open an account at this site on conditions that:"
 msgstr "Możesz otworzyć konto na portalu pod warunkiem, że:"
 
-msgid "You may only transfer funds between a fiat account and a cryptocurrency account."
-msgstr "Możesz przesyłać środki wyłącznie między kontem prowadzonym w walucie fiducjarnej i kontem w kryptowalucie."
+msgid "You may only transfer funds between fiat and cryptocurrency accounts."
+msgstr ""
 
 msgid "You may proceed but please <a href=\"%1\">authenticate</a> your account within five days to continue trading."
 msgstr "Możesz kontynuować, ale prosimy o dokonanie <a href=\"%1\">weryfikacji</a> konta w ciągu 5 dni, aby móc dalej handlować."
