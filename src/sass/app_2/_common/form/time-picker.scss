@@ -20,20 +20,9 @@
         padding-top: 10px;
         position: absolute;
         top: 0;
-        transform-origin: right;
-        transform: scale(1, 0) translate3d(0, 0, 0);
-        transition: transform 0.25s ease, opacity 0.25s linear;
         width: 231px;
         z-index: 1;
-
-        &--enter, &--exit {
-            opacity: 0;
-            transform: scale(1, 1) translate3d(-225px, 0, 0);
-        }
-        &--enter-done {
-            opacity: 1;
-            transform: translate3d(-245px, 0, 0);
-        }
+        @include slideIn($x: -245px);
     }
     &__selector {
         height: inherit;

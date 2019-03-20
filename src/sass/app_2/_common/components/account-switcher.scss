@@ -32,6 +32,7 @@
     &__balance {
         @include typeface(--title-center-bold-green, default);
         @include toEm(padding, 8px, 1.6em);
+        padding: em(8px);
         pointer-events: none;
     }
     &__select-arrow {
@@ -82,14 +83,15 @@
 .acc-switcher {
     &__wrapper {
         position: absolute;
-        transition: transform 0.25s ease, opacity 0.25s linear;
         right: 0;
         top: calc(100% + 4px);
         width: 240px;
         @include rounded();
+        @include boxShadow();
         @include themify($themes) {
             background: themed('background_container_color');
         }
+        @include slideIn($y: -2px);
     }
     &__new-account {
         @include flex-align(left, center);

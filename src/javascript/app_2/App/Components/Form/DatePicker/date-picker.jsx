@@ -248,9 +248,9 @@ class DatePicker extends React.Component {
                     in={this.state.is_datepicker_visible}
                     timeout={100}
                     classNames={{
-                        enter    : `datepicker__picker--enter datepicker__picker--${this.props.alignment}-enter`,
-                        enterDone: `datepicker__picker--enter-done datepicker__picker--${this.props.alignment}-enter-done`,
-                        exit     : `datepicker__picker--exit datepicker__picker--${this.props.alignment}-exit`,
+                        enter    : 'datepicker__picker--enter',
+                        enterDone: 'datepicker__picker--enter-done',
+                        exit     : 'datepicker__picker--exit',
                     }}
                     unmountOnExit
                 >

@@ -23,7 +23,7 @@ const TradeTypeInfoDialog = ({
         <CSSTransition
             classNames={{
                 enter    : 'trade-type-info-dialog--enter',
-                enterDone: 'trade-type-info-dialog--enterDone',
+                enterDone: 'trade-type-info-dialog--enter-done',
                 exit     : 'trade-type-info-dialog--exit',
             }}
             in={open}

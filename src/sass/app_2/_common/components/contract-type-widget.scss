@@ -5,9 +5,6 @@
     background: $COLOR_WHITE;
     border: solid 1px $COLOR_WHITE;
     @include rounded();
-    transition: transform 0.3s, opacity 0.3s;
-    padding: 0.8em;
-    padding-bottom: 0.6em;
     color: $COLOR_LIGHT_BLACK_1;
 
     &__display {

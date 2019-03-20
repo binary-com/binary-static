@@ -26,7 +26,7 @@ const ContractTypeDialog = ({
             timeout={100}
             classNames={{
                 enter    : 'contracts-type-dialog--enter',
-                enterDone: 'contracts-type-dialog--enterDone',
+                enterDone: 'contracts-type-dialog--enter-done',
                 exit     : 'contracts-type-dialog--exit',
             }}
             unmountOnExit
