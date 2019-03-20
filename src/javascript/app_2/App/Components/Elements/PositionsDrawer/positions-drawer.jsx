@@ -140,7 +140,7 @@ export default connect(
         is_loading            : modules.portfolio.is_loading,
         onClickSell           : modules.portfolio.onClickSell,
         onClickRemove         : modules.portfolio.removePositionById,
-        openContract          : modules.contract.onLoadContract,
+        openContract          : modules.contract.onMount,
         onMount               : modules.portfolio.onMount,
         onUnmount             : modules.portfolio.onUnmount,
         is_positions_drawer_on: ui.is_positions_drawer_on,

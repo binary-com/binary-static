@@ -42,10 +42,9 @@ const PositionsDrawerCard = ({
             className)}
         >
             <ResultOverlay
-                id={id}
+                contract_id={id}
                 onClickRemove={onClickRemove}
                 onClick={openContract}
-                chart_config={contract_info}
                 result={result}
             />
             <ContractLink
@@ -56,7 +55,7 @@ const PositionsDrawerCard = ({
                         'positions-drawer-card--red'   : (profit_loss < 0) && !result,
                     }
                 )}
-                chart_config={contract_info}
+                contract_id={id}
             >
                 <React.Fragment>
                     <div className={classNames(

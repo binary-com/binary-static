@@ -79,12 +79,13 @@ export default class ContractStore extends BaseStore {
     }
 
     @action.bound
-    onMount(contract_id) {
+    onMount(contract_id, has_left_epoch) {
         this.onSwitchAccount(this.accountSwitcherListener.bind(null));
-        this.has_error     = false;
-        this.error_message = '';
-        this.contract_id   = contract_id;
-        this.smart_chart   = this.root_store.modules.smart_chart;
+        this.has_error         = false;
+        this.error_message     = '';
+        this.contract_id       = contract_id;
+        this.smart_chart       = this.root_store.modules.smart_chart;
+        this.is_left_epoch_set = has_left_epoch;
 
         if (contract_id) {
             this.smart_chart.setContractMode(true);
