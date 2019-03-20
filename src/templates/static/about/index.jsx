@@ -126,7 +126,7 @@ const Index = () => (
                             <BoxInner className='border-right-bottom gr-padding-30' image='locations' text={it.L('Offices in Malta and Malaysia')} />
                         </Box>
                         <Box>
-                            <BoxInner className='border-right-bottom gr-padding-30' href='/regulation' image='license' text={it.L('Licensed and regulated in Malta, the United Kingdom, the Isle of Man, and Ireland. [_1]Learn more[_2]', `<a href="${ it.url_for('regulation') }">`, '</a>')} />
+                            <BoxInner className='border-right-bottom gr-padding-30' href='regulation' image='license' text={it.L('Licensed and regulated in Malta, the United Kingdom, the Isle of Man, and Ireland. [_1]Learn more[_2]', `<a href="${ it.url_for('regulation') }">`, '</a>')} />
                             <BoxInner className='gr-padding-30' image='languages' text={it.L('Published in Chinese, English, French, German, Indonesian, Italian, Polish, Portuguese, Russian, Spanish, Thai and Vietnamese')} />
                         </Box>
                     </div>
