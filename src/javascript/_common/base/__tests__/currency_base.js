@@ -7,7 +7,7 @@ describe('Currency', () => {
             AUD: { fractional_digits: 2, type: 'fiat' },
             EUR: { fractional_digits: 2, type: 'fiat' },
             GBP: { fractional_digits: 2, type: 'fiat' },
-            USD: { fractional_digits: 2, type: 'fiat' },
+            USD: { fractional_digits: 2, type: 'fiat', transfer_between_accounts: { limits: { max: 2500, min: 1.00 } } },
             BTC: { fractional_digits: 8, type: 'crypto' },
         }
     };
@@ -102,4 +102,13 @@ describe('Currency', () => {
             expect(Currency.isCryptocurrency('ZZZ')).to.eq(false);
         });
     });
+
+    describe('.getTransferLimits()', () => {
+        it('returns limits based on input', () => {
+            expect(Currency.getTransferLimits('USD')).to.eq('1.00');
+            expect(Currency.getTransferLimits('USD', 'max')).to.eq('2500.00');
+            expect(Currency.getTransferLimits('BTC')).to.eq(undefined);
+            expect(Currency.getTransferLimits('BTC', 'max')).to.eq(undefined);
+        })
+    })
 });
