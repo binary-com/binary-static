@@ -47,6 +47,7 @@
     &__icon {
         width: 1.6em;
         height: 1.6em;
+        @extend %inline-icon;
     }
     @media (max-width: 768px) {
         display: none;
@@ -126,7 +127,9 @@
 .ic-settings {
     &--active {
         position: relative;
-        background: $COLOR_LIGHT_BLACK_4;
+        @include themify($themes) {
+            background: themed('hover_color');
+        }
 
         &:after {
             content: '';

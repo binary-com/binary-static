@@ -4,6 +4,8 @@ const getPropertyValue = require('../utility').getPropertyValue;
 
 let currencies_config = {};
 
+const getTextFormat = (number, currency) => `${currency} ${addComma(number, getDecimalPlaces(currency), isCryptocurrency(currency))}`;
+
 const formatMoney = (currency_value, amount, exclude_currency, decimals = 0, minimumFractionDigits = 0) => {
     let money = amount;
     if (money) money = String(money).replace(/,/g, '');
@@ -79,11 +81,20 @@ const CryptoConfig = (() => {
 
 const getMinWithdrawal = currency => (isCryptocurrency(currency) ? (getPropertyValue(CryptoConfig.get(), [currency, 'min_withdrawal']) || 0.002) : 1);
 
-// returns in a string format, e.g. '0.00000001'
-const getMinTransfer = currency => {
-    const min_transfer = getPropertyValue(currencies_config, [currency, 'transfer_between_accounts', 'limits', 'min']) || getMinWithdrawal(currency);
-    const decimals     = getDecimalPlaces(currency);
-    return min_transfer.toFixed(decimals); // we need toFixed() so that it doesn't display in scientific notation, e.g. 1e-8 for currencies with 8 decimal places
+/**
+ * Returns the transfer limits for the account.
+ * @param currency
+ * @param {string} max|undefined
+ * @returns numeric|undefined
+ */
+const getTransferLimits = (currency, which) => {
+    const transfer_limits = getPropertyValue(currencies_config, [currency, 'transfer_between_accounts', 'limits']) || getMinWithdrawal(currency);
+    const decimals        = getDecimalPlaces(currency);
+    if (which === 'max') {
+        return transfer_limits.max ? transfer_limits.max.toFixed(decimals) : undefined;
+    }
+
+    return transfer_limits.min ? transfer_limits.min.toFixed(decimals) : undefined;
 };
 
 const getTransferFee = (currency_from, currency_to) => {
@@ -118,9 +129,10 @@ module.exports = {
     isCryptocurrency,
     getCurrencyName,
     getMinWithdrawal,
-    getMinTransfer,
+    getTransferLimits,
     getTransferFee,
     getMinimumTransferFee,
+    getTextFormat,
     getMinPayout,
     getPaWithdrawalLimit,
     getCurrencies: () => currencies_config,
