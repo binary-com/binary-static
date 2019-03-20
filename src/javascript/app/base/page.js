@@ -82,7 +82,8 @@ const Page = (() => {
                 Language.setCookie(Language.urlLang());
 
                 if (!ClientBase.get('is_virtual')) {
-                    InterviewPopup.onLoad();
+                    // TODO: uncomment below to enable interview popup dialog
+                    // InterviewPopup.onLoad();
                 }
             }
             Header.onLoad();

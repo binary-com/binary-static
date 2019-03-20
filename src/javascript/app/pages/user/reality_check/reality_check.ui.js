@@ -101,7 +101,8 @@ const RealityCheckUI = (() => {
     const closePopUp = () => {
         $('#reality_check').remove();
         startSummaryTimer();
-        InterviewPopup.onLoad();
+        // TODO: uncomment below to enable interview popup dialog
+        // InterviewPopup.onLoad();
     };
 
     const startSummaryTimer = () => {
