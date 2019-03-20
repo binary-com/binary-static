@@ -12,13 +12,14 @@ const getPropertyValue = require('../utility').getPropertyValue;
 const getAppId         = require('../../config').getAppId;
 
 const GTM = (() => {
-    const isGtmApplicable = () => (/^(1|1098|14473|15284)$/.test(getAppId()));
+    const isGtmApplicable = () => (/^(1|1098|14473|15284|1108)$/.test(getAppId()));
 
     const getCommonVariables = () => ({
-        language : getLanguage(),
-        pageTitle: pageTitle(),
-        pjax     : State.get('is_loaded_by_pjax'),
-        url      : document.URL,
+        language  : getLanguage(),
+        pageTitle : pageTitle(),
+        pjax      : State.get('is_loaded_by_pjax'),
+        url       : document.URL,
+        country_ip: State.getResponse('website_status.clients_country'),
         ...ClientBase.isLoggedIn() && {
             visitorId: ClientBase.get('loginid'),
             bom_email: ClientBase.get('email'),
