@@ -27,10 +27,9 @@ export default class SmartChartStore extends BaseStore {
     @observable chart_type = 'mountain';
     @observable granularity = 0;
 
+    @observable should_import_layout = false;
     @observable should_save_layout = false;
     @observable should_clear_chart = false;
-
-    trade_chart;
     @observable trade_chart_layout;
 
     constructor({ root_store }) {
@@ -99,22 +98,22 @@ export default class SmartChartStore extends BaseStore {
     }
 
     @action.bound
-    saveTradeChartLayout() {
-        this.trade_chart = null;
-        this.trade_chart_layout = null;
-        this.should_save_layout = true;
+    saveAndClearTradeChartLayout() {
+        this.trade_chart_layout   = {};
+        this.should_save_layout   = true;
+        this.should_import_layout = false;
     }
 
     @action.bound
     applySavedTradeChartLayout() {
-        this.trade_chart_layout = this.trade_chart;
-        this.should_clear_chart = false;
-        this.should_save_layout = null;
+        this.should_import_layout = true;
+        this.should_clear_chart   = false;
+        this.should_save_layout   = false;
     }
 
     @action.bound
     exportLayout(layout) {
-        this.trade_chart = layout;
+        this.trade_chart_layout = layout;
         this.should_clear_chart = true;
     }
 
