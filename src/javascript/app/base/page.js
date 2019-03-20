@@ -4,7 +4,6 @@ const Client           = require('./client');
 const Contents         = require('./contents');
 const Header           = require('./header');
 const Footer           = require('./footer');
-const InterviewPopup   = require('./interview_popup');
 const Menu             = require('./menu');
 const BinarySocket     = require('./socket');
 const TrafficSource    = require('../common/traffic_source');
