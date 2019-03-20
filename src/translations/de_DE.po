@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-03-18 13:55\n"
+"PO-Revision-Date: 2019-03-20 02:46\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: German\n"
 "MIME-Version: 1.0\n"
@@ -428,6 +428,9 @@ msgstr "'Finanzwettenanbieter des Jahres' Auszeichung durch die eGaming Review"
 
 msgid "(One) Touch trades"
 msgstr "(Einmalige) Zielkontrakte"
+
+msgid "(This limit may vary depending on current exchange rates.)"
+msgstr ""
 
 msgid "(a) Price and cost"
 msgstr "(a) Preise und Kosten"
@@ -1497,7 +1500,7 @@ msgstr "Kapital"
 msgid "Asset Index"
 msgstr "Vermögensindex"
 
-msgid "Asset index is unavailable in this country. If you have an active %1 account, please log in for full access."
+msgid "Asset index is unavailable in this country. If you have an active %1 account, please %2log in%3 for full access."
 msgstr ""
 
 msgid "Assign and manage multiple sub-accounts seamlessly via one interface – the Multiple Accounts Manager (MAM)."
@@ -4470,6 +4473,9 @@ msgstr "Freitag"
 msgid "From"
 msgstr "Von"
 
+msgid "From account: "
+msgstr ""
+
 msgid "Front Side"
 msgstr "Vorderseite"
 
@@ -6477,9 +6483,6 @@ msgstr "MasterCards, die in einem außereuropäischen Land ausgestellt sind, kö
 msgid "Matches/Differs"
 msgstr "Gleich/Verschieden"
 
-msgid "Max"
-msgstr "Max"
-
 msgid "Maximum Payout"
 msgstr "Maximale Auszahlung"
 
@@ -6950,6 +6953,9 @@ msgstr "Nicht-technische Rollen"
 
 msgid "Not"
 msgstr "Nicht"
+
+msgid "Not announced for this currency."
+msgstr ""
 
 msgid "Not at all. Joining our affiliate programme is completely free and always will be."
 msgstr "Überhaupt nicht. Unser Partnerprogramm ist völlig kostenlos und wird es immer bleiben."
@@ -10620,6 +10626,9 @@ msgstr "Überschrift"
 msgid "To"
 msgstr "Zu"
 
+msgid "To account: "
+msgstr ""
+
 msgid "To apply, please submit your CV and a cover letter to %1"
 msgstr "Um sich zu bewerben, senden Sie uns bitte Ihren Lebenslauf und ein Bewerbungsschreiben an %1"
 
@@ -10944,6 +10953,9 @@ msgstr "Der Handel auf %1 kann süchtig machen. Wenn Sie das Bedürfnis verspür
 msgid "Trading platforms"
 msgstr "Handelsplattformen"
 
+msgid "Trading times is unavailable in this country. If you have an active %1 account, please %2log in%3 for full access."
+msgstr ""
+
 msgid "TradingView"
 msgstr "TradingView"
 
@@ -10985,6 +10997,9 @@ msgstr "Überweisen Sie Geld von Ihrem binären Optionen Konto auf Ihr MetaTrade
 
 msgid "Transfer funds to your MT5 account"
 msgstr "Überweisen Sie Gelder auf Ihr MT5 Konto"
+
+msgid "Transfer limit: %1*"
+msgstr ""
 
 msgid "Transfer of Data"
 msgstr "Datentransfer"
@@ -12138,9 +12153,6 @@ msgstr "Abhebungslimits"
 msgid "Withdrawal for your account is not allowed at this moment."
 msgstr "Eine Abhebung von Ihrem Konto ist im Moment nicht erlaubt."
 
-msgid "Withdrawal limit"
-msgstr "Auszahlungslimit"
-
 msgid "Withdrawal of Funds from MT5 Real Account"
 msgstr "Vom MT5 Echtgeldkonto Gelder abheben"
 
@@ -12579,8 +12591,8 @@ msgstr "Sobald das Level erreicht wurde, können Sie das Level Ihrer Stop und Li
 msgid "You may only open an account at this site on conditions that:"
 msgstr "Sie können auf dieser Site ein Konto nur unter den Bedingungen eröffnen, dass:"
 
-msgid "You may only transfer funds between a fiat account and a cryptocurrency account."
-msgstr "Sie können Gelder nur zwischen einem Fiat-Konto und einem Kryptowährung-Konto überweisen."
+msgid "You may only transfer funds between fiat and cryptocurrency accounts."
+msgstr ""
 
 msgid "You may proceed but please <a href=\"%1\">authenticate</a> your account within five days to continue trading."
 msgstr "Sie können fortfahren, aber bitte <a href=\"%1\">authentifizieren Sie</a> Ihr Konto innerhalb der nächsten fünf Tage, um den Handel fortzusetzen."
