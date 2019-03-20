@@ -168,7 +168,7 @@
             font-weight: 400;
 
             &-duration {
-                background: $COLOR_LIGHT_GRAY_1;
+                background: $COLOR_LIGHT_GRAY_1 !important;
             }
             &:hover:not(.calendar__cell--disabled):not(.calendar__cell--active) {
                 background: $COLOR_LIGHT_BLACK_4_SOLID;
