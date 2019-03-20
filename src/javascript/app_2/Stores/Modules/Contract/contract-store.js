@@ -42,8 +42,6 @@ export default class ContractStore extends BaseStore {
     @observable has_error         = false;
     @observable error_message     = '';
     @observable is_sell_requested = false;
-    @observable contract_symbol;
-    @observable trade_symbol;
     @observable is_left_epoch_set = false;
 
     // -------------------
