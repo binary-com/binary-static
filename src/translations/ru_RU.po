@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-03-18 13:56\n"
+"PO-Revision-Date: 2019-03-20 02:47\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
@@ -428,6 +428,9 @@ msgstr "Награда \"Оператор года по финансовому �
 
 msgid "(One) Touch trades"
 msgstr "Контракты Касание"
+
+msgid "(This limit may vary depending on current exchange rates.)"
+msgstr ""
 
 msgid "(a) Price and cost"
 msgstr "(a) Цена и стоимость"
@@ -1497,8 +1500,8 @@ msgstr "Актив"
 msgid "Asset Index"
 msgstr "Индекс активов"
 
-msgid "Asset index is unavailable in this country. If you have an active %1 account, please log in for full access."
-msgstr "Индекс активов не доступен в данной стране. Если у Вас есть активный счёт %1, пожалуйста, войдите в систему для получения полного доступа."
+msgid "Asset index is unavailable in this country. If you have an active %1 account, please %2log in%3 for full access."
+msgstr ""
 
 msgid "Assign and manage multiple sub-accounts seamlessly via one interface – the Multiple Accounts Manager (MAM)."
 msgstr "Легко назначайте и управляйте несколькими счетами в одном интерфейсе, благодаря Менеджеру множественных счетов (ММС)."
@@ -4470,6 +4473,9 @@ msgstr "пятница"
 msgid "From"
 msgstr "От"
 
+msgid "From account: "
+msgstr ""
+
 msgid "Front Side"
 msgstr "Лицевая сторона"
 
@@ -6477,9 +6483,6 @@ msgstr "Карты Mastercard, выпущенные вне ЕС, разреша�
 msgid "Matches/Differs"
 msgstr "Совпадение/Отличие"
 
-msgid "Max"
-msgstr "Макс"
-
 msgid "Maximum Payout"
 msgstr "Макс. выплата"
 
@@ -6950,6 +6953,9 @@ msgstr "Нетехнические позиции"
 
 msgid "Not"
 msgstr "Не"
+
+msgid "Not announced for this currency."
+msgstr ""
 
 msgid "Not at all. Joining our affiliate programme is completely free and always will be."
 msgstr "Нет. Регистрация в нашей партнёрской программе осуществляется совершенно бесплатно."
@@ -10620,6 +10626,9 @@ msgstr "Заголовок"
 msgid "To"
 msgstr "До"
 
+msgid "To account: "
+msgstr ""
+
 msgid "To apply, please submit your CV and a cover letter to %1"
 msgstr "Чтобы подать заявку, пришлите свое резюме и сопроводительное письмо на адрес %1"
 
@@ -10944,6 +10953,9 @@ msgstr "Торговля на %1 может вызвать привыкание.
 msgid "Trading platforms"
 msgstr "Торговые платформы"
 
+msgid "Trading times is unavailable in this country. If you have an active %1 account, please %2log in%3 for full access."
+msgstr ""
+
 msgid "TradingView"
 msgstr "TradingView"
 
@@ -10985,6 +10997,9 @@ msgstr "Переведите средства со счёта на бинарн�
 
 msgid "Transfer funds to your MT5 account"
 msgstr "Перевод средств на счёт MT5"
+
+msgid "Transfer limit: %1*"
+msgstr ""
 
 msgid "Transfer of Data"
 msgstr "Передача данных"
@@ -12138,9 +12153,6 @@ msgstr "Лимиты на вывод"
 msgid "Withdrawal for your account is not allowed at this moment."
 msgstr "Вывод средств с Вашего счёта в данный момент не разрешен."
 
-msgid "Withdrawal limit"
-msgstr "Лимит на вывод"
-
 msgid "Withdrawal of Funds from MT5 Real Account"
 msgstr "Вывод средств с Реального счёта MT5"
 
@@ -12579,8 +12591,8 @@ msgstr "Вы не можете отменить или изменить уров
 msgid "You may only open an account at this site on conditions that:"
 msgstr "Вы можете открыть счет на этом сайте при следующих условиях:"
 
-msgid "You may only transfer funds between a fiat account and a cryptocurrency account."
-msgstr "Вы можете переводить средства только между фидуциарным и криптовалютным счётом."
+msgid "You may only transfer funds between fiat and cryptocurrency accounts."
+msgstr ""
 
 msgid "You may proceed but please <a href=\"%1\">authenticate</a> your account within five days to continue trading."
 msgstr "Вы можете продолжить но для продолжения торговли, пожалуйста, <a href=\"%1\">пройдите аутентификацию</a> своего счёта в течение пяти дней."
