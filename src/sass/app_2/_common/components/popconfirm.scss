@@ -9,7 +9,7 @@
     width: 348px;
     min-height: 9em;
     font-weight: 500;
-    border-radius: 4px;
+    @include rounded();
     transform: scale(0, 0) translate(-50%, 0);
     opacity: 0;
     transform-origin: left bottom;

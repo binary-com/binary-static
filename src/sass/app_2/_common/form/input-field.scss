@@ -70,7 +70,7 @@
     height: 32px;
     padding-left: 0.8em;
     border: 1px solid $COLOR_LIGHT_BLACK_4;
-    border-radius: $BORDER_RADIUS;
+    @include rounded();
     transition: transform 0.3s;
 
     &[type=checkbox] {
@@ -127,7 +127,7 @@
     }
     &:active, &:focus {
         outline: 0;
-        border-radius: $BORDER_RADIUS;
+        @include rounded();
         border-color: $COLOR_LIGHT_GRAY_1;
         box-shadow: 0 0 0 2px $COLOR_DARK_BLUE_8;
     }

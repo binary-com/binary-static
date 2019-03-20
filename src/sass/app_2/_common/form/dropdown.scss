@@ -4,7 +4,7 @@
         background: $COLOR_WHITE;
         cursor: pointer;
         border: solid 1px $COLOR_LIGHT_BLACK_4;
-        border-radius: $BORDER_RADIUS;
+        @include rounded();
         height: 3.2em;
         @include flex-align(center, center);
         margin-top: 0.8em;
@@ -52,7 +52,7 @@
     }
     &:active, &:focus, &--show {
         outline: none;
-        border-radius: $BORDER_RADIUS;
+        @include rounded();
 
         .dropdown__select-arrow {
             color: $COLOR_DARK_BLUE_5;
@@ -140,7 +140,7 @@
     z-index: 2;
     cursor: pointer;
     background: $COLOR_WHITE;
-    border-radius: $BORDER_RADIUS;
+    @include rounded();
     box-shadow: 0 2px 8px 0 $COLOR_LIGHT_BLACK_3;
 
     &--left {

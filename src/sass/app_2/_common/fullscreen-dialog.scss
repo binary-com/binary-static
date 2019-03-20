@@ -110,7 +110,7 @@ $content-index: 1;
             width: calc(100% - 1.6em);
             height: fit-content;
             background-color: $COLOR_WHITE;
-            border-radius: 4px;
+            @include rounded();
             margin: 0 auto;
         }
         .info-content {

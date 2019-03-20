@@ -87,7 +87,7 @@
         right: 0;
         top: calc(100% + 4px);
         width: 240px;
-        border-radius: $BORDER_RADIUS;
+        @include rounded();
         @include themify($themes) {
             background: themed('background_container_color');
         }
@@ -109,7 +109,7 @@
             @include typeface(--small-center-normal-grey, none);
             @include toEm(padding, 8px 16px, 1.2em);
             width: 100%;
-            border-radius: 4px;
+            @include rounded();
             cursor: pointer;
             @include themify($themes) {
                 color: themed('text_secondary_color');
@@ -128,7 +128,7 @@
     }
     &__list {
         height: 100%;
-        border-radius: $BORDER_RADIUS;
+        @include rounded();
         padding: 1.6em;
         display: flex;
         flex-flow: column nowrap;
@@ -190,7 +190,7 @@
                 border-top: none;
             }
             &:only-child {
-                border-radius: 4px;
+                @include rounded();
             }
             &:not(:last-child):not(:only-child) {
                 @include themify($themes) {

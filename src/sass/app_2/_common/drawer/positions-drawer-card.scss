@@ -17,7 +17,7 @@
         width: 100%;
         height: 100%;
         max-height: 130px;
-        border-radius: $BORDER_RADIUS;
+        @include rounded();
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
         z-index: 2;
@@ -37,7 +37,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            border-radius: $BORDER_RADIUS;
+            @include rounded();
             z-index: 2;
         }
         @include themify($themes) {
@@ -54,7 +54,7 @@
     &__wrapper {
         padding: 0.8em;
         margin: 0 1em;
-        border-radius: $BORDER_RADIUS;
+        @include rounded();
         transition: transform 0.25s ease, opacity 0.25s linear;
         position: relative;
         @include themify($themes) {
@@ -69,7 +69,7 @@
             top: 0;
             position: absolute;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.24);
-            border-radius: $BORDER_RADIUS;
+            @include rounded();
             pointer-events: none;
         }
         &:first-child {
@@ -109,7 +109,7 @@
         width: calc(100% + 18px);
         left: -9px;
         top: -9px;
-        border-radius: $BORDER_RADIUS;
+        @include rounded();
     }
     &__grid {
         display: grid;
@@ -120,7 +120,7 @@
         }
         &-profit-payout {
             padding: 8px 0;
-            border-radius: $BORDER_RADIUS;
+            @include rounded();
             margin-left: -4px;
             margin-right: -4px;
             @include themify($themes) {

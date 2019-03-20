@@ -9,7 +9,7 @@
     &__selection {
         width: calc(20% - 4px);
         height: 24px;
-        border-radius: $BORDER_RADIUS;
+        @include rounded();
         @include flex-align(center, center, inline);
         @include typeface(--paragraph-left-normal-black);
         @include themify($themes) {

@@ -19,7 +19,7 @@
         top: -55px;
         z-index: 2;
         background: $COLOR_LIGHT_BLACK_4_SOLID;
-        border-radius: 4px;
+        @include rounded();
         padding: 1.6em;
         box-shadow: 0 2px 8px 0 $COLOR_LIGHT_BLACK_3;
         display: flex;
@@ -48,7 +48,7 @@
         width: 100%;
         height: 140px;
         background-color: $COLOR_WHITE;
-        border-radius: 4px;
+        @include rounded();
     }
     &__header {
         @include flex-align($y: center);

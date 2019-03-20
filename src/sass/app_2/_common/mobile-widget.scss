@@ -1,7 +1,7 @@
 /** @define mobile-widget */
 .mobile-widget {
     border: 1px solid $COLOR_LIGHT_BLACK_4;
-    border-radius: 4px;
+    @include rounded();
     padding: 1em 0.5em;
     display: grid;
     grid-template-columns: 1fr auto;

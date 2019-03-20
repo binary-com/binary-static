@@ -33,7 +33,7 @@
             width: 234px;
             height: 178px;
             cursor: pointer;
-            border-radius: 4px;
+            @include rounded();
             @include themify($themes) {
                 border: 1px solid themed('text_primary_color');
             }

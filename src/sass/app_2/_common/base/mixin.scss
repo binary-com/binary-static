@@ -271,3 +271,11 @@
         border-bottom-color: $color;
     }
 }
+
+@mixin rounded($radius: $BORDER_RADIUS) {
+    border-radius: $radius;
+}
+
+@mixin boxShadow($color) {
+    box-shadow: 0 2px 8px 0 $color;
+}

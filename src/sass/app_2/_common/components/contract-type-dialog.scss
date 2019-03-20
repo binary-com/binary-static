@@ -19,7 +19,7 @@
         grid-auto-columns: 1fr;
         z-index: 2;
         background: $COLOR_LIGHT_BLACK_4_SOLID;
-        border-radius: 4px;
+        @include rounded();
         box-shadow: 0 2px 8px 0 $COLOR_LIGHT_BLACK_3;
     }
     &--enter, &--exit {

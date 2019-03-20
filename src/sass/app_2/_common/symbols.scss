@@ -63,7 +63,7 @@
     &__ic-unknown:before {
         content: '?';
         background: $COLOR_LIGHT_GRAY_1;
-        border-radius: $BORDER_RADIUS;
+        @include rounded();
         padding: 4px 12px;
     }
     &__ic-frxAUDCAD:before {

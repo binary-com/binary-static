@@ -47,7 +47,7 @@
         @include flex-align(center, null);
         margin: -2px -9px -9px;
         padding: 4px 0;
-        border-radius: $BORDER_RADIUS;
+        @include rounded();
         border-top-left-radius: 0;
         border-top-right-radius: 0;
         cursor: pointer;

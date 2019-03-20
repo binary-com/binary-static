@@ -31,7 +31,7 @@ $TOAST_BORDER_COLOR_WARNING   : rgb(255, 193, 7);  // #FFC107
     &__body {
         background-color: $TOAST_BACKGROUND_COLOR_INFO;
         position: relative;
-        border-radius: 4px;
+        @include rounded();
         cursor: pointer;
         display: grid;
         grid-template-columns: 1.6em auto 1.6em;

@@ -1,12 +1,12 @@
 .contract-container {
     font-size: 1.4em;
-    border-radius: $BORDER_RADIUS;
+    @include rounded();
     position: relative;
 
     .contract-header {
         max-height: 32px;
         overflow: hidden;
-        border-radius: 4px 4px 0 0;
+        border-radius: $BORDER_RADIUS $BORDER_RADIUS 0 0;
 
         .header-wrapper {
             transition: transform 0.4s ease;
@@ -70,7 +70,7 @@
         background: $COLOR_LIGHT_BLACK_4_SOLID;
         font-size: 1em;
         border-top-width: 0;
-        border-radius: 0 0 4px 4px;
+        border-radius: 0 0 $BORDER_RADIUS $BORDER_RADIUS;
 
         .longcode {
             font-weight: 300;
@@ -138,7 +138,7 @@ $CONTRACT_INFO_BOX_PADDING: 1.6em;
     }
     .info-box {
         position: relative;
-        border-radius: $BORDER_RADIUS;
+        @include rounded();
         padding: $CONTRACT_INFO_BOX_PADDING;
         background: rgba(42, 48, 82, 0.04);
         font-weight: 300;
@@ -235,7 +235,7 @@ $CONTRACT_INFO_BOX_PADDING: 1.6em;
     .message {
         margin-top: 0.5em;
         border: 1px solid $COLOR_RED;
-        border-radius: $BORDER_RADIUS;
+        @include rounded();
         padding: 1em;
         background-color: rgba(244, 67, 54, 0.16);
         @include flex-align($y: center);

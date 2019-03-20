@@ -5,7 +5,7 @@
     }
 
     &__fieldset {
-        border-radius: $BORDER_RADIUS;
+        @include rounded();
         padding: 0.8em;
         margin-bottom: 0.4em;
         @include themify($themes) {
@@ -32,7 +32,7 @@
     &__input {
         @include flex-align-self(center);
         appearance: none;
-        border-radius: $BORDER_RADIUS;
+        @include rounded();
         @include themify($themes) {
             background: themed('container_color');
             border-color: themed('container_color');
@@ -52,7 +52,7 @@
             background-color: rgba($COLOR_ORANGE, 0.16);
             display: block;
             border: 1px solid $COLOR_ORANGE;
-            border-radius: $BORDER_RADIUS;
+            @include rounded();
         }
     }
     &__currency {
@@ -237,7 +237,7 @@
     }
     &__loading {
         background: rgba(255, 255, 255, 0.6);
-        border-radius: $BORDER_RADIUS;
+        @include rounded();
         width: calc(100% + 2px);
         height: calc(100% + 2px);
         left: -2px;
@@ -256,7 +256,7 @@
         left: 2px;
         right: 0;
         bottom: 0;
-        border-radius: $BORDER_RADIUS;
+        @include rounded();
         @include themify($themes) {
             background: themed('background_container_color');
         }
@@ -285,7 +285,7 @@
             text-align: center;
             padding: 8px;
             margin: 1rem 1rem 0;
-            border-radius: $BORDER_RADIUS;
+            @include rounded();
             font-size: 10px;
             @include themify($themes) {
                 background: themed('background_cover');
@@ -396,7 +396,7 @@
             pointer-events: none;
             top: 4px;
             left: 0;
-            border-radius: $BORDER_RADIUS;
+            @include rounded();
             opacity: 1;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
             transition: opacity 0.3s ease-in-out;

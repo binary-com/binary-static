@@ -21,7 +21,7 @@ $header-height: 4em;
     transform: translateX(-100%);
     will-change: transform, opacity;
     transition: opacity 0.3s ease, transform 0.3s ease;
-    border-radius: $BORDER_RADIUS;
+    @include rounded();
     @include themify($themes) {
         border: 1px solid themed('background_container_color');
         background-color: themed('background_container_color');

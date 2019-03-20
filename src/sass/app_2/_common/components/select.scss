@@ -29,7 +29,7 @@
         &:active, &:focus {
             outline: 0;
             border-color: $COLOR_DARK_BLUE_5;
-            box-shadow: 0 0 0 2px rgba(42, 48, 82, 0.2);
+            box-shadow: 0 0 0 2px $COLOR_LIGHT_BLACK_3;
         }
     }
 }

@@ -9,7 +9,7 @@
         margin: 0.6em auto;
         background-color: $COLOR_WHITE;
         border: 1px solid $COLOR_LIGHT_BLACK_4;
-        border-radius: 4px;
+        @include rounded();
         color: $COLOR_LIGHT_BLACK_1;
 
         &-link {

@@ -16,7 +16,7 @@
     &__dialog {
         background-color: $COLOR_WHITE;
         box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
-        border-radius: 4px;
+        @include rounded();
         padding-top: 10px;
         position: absolute;
         top: 0;
@@ -37,15 +37,14 @@
     }
     &__selector {
         height: inherit;
+        @include rounded();
 
         &--hours {
             border-right: 1px solid $COLOR_LIGHT_BLACK_4;
-            border-radius: 0 0 0 4px;
             width: 150px;
         }
         &--minutes {
             width: 80px;
-            border-radius: 0 5px 5px 0;
         }
         &--hours, &--minutes {
             display: inline-block;
@@ -60,7 +59,7 @@
         &-list-item {
             @include typeface(--small-left-normal-black);
             cursor: pointer;
-            border-radius: 4px;
+            @include rounded();
             display: inline-block;
             margin: 3px;
             padding: 7px;

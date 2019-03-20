@@ -8,7 +8,7 @@
         padding: 5em;
         text-align: center;
         background: $COLOR_LIGHT_BLACK_4_SOLID;
-        border-radius: $BORDER_RADIUS;
+        @include rounded();
         border: 1px solid $COLOR_LIGHT_BLACK_4;
 
         /* postcss-bem-linter: ignore */

@@ -6,7 +6,7 @@
     height: 100%;
     width: 100%;
     z-index: 2;
-    border-radius: $BORDER_RADIUS;
+    @include rounded();
     @include flex-align($y: center);
     @include themify($themes) {
         background: themed('background_container_color');

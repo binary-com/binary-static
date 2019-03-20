@@ -5,8 +5,8 @@
     top: 0;
     background: $COLOR_WHITE;
     outline: 0;
-    border-radius: 5px;
-    box-shadow: 0 2px 8px 0 rgba(42, 48, 82, 0.2);
+    @include rounded();
+    box-shadow: 0 2px 8px 0 $COLOR_LIGHT_BLACK_3;
     z-index: 999;
     font-size: 1em;
 
@@ -14,7 +14,7 @@
         @include flex-align(null, center);
         position: relative;
         height: 5em;
-        border-radius: 5px;
+        @include rounded();
         padding: 1.6em;
     }
     &__header {
@@ -31,7 +31,7 @@
 
             .calendar__cell {
                 @include flex-align(center, center);
-                border-radius: 5px;
+                @include rounded();
             }
         }
         &--date {
@@ -129,13 +129,13 @@
         &:nth-child(7n) {
             &:before {
                 padding: 0;
-                border-radius: 4px;
+                @include rounded();
             }
         }
         &:nth-child(7n + 1) {
             &:before {
                 left: 0;
-                border-radius: 4px;
+                @include rounded();
             }
             &:after {
                 content: none;

@@ -24,7 +24,7 @@
             border-bottom-right-radius: 4px;
         }
         &:only-child {
-            border-radius: 4px;
+            @include rounded();
         }
         &:hover:not(.selected) {
             background: $COLOR_LIGHT_BLACK_4;

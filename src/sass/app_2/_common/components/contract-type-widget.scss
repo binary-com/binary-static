@@ -4,7 +4,7 @@
     z-index: 2;
     background: $COLOR_WHITE;
     border: solid 1px $COLOR_WHITE;
-    border-radius: 4px;
+    @include rounded();
     transition: transform 0.3s, opacity 0.3s;
     padding: 0.8em;
     padding-bottom: 0.6em;
@@ -67,7 +67,7 @@
     }
     &:active, &:focus, &--show {
         outline: none;
-        border-radius: 4px;
+        @include rounded();
         border-color: $COLOR_LIGHT_GRAY_1;
         box-shadow: 0 0 0 2px $COLOR_LIGHT_GRAY_2;
     }

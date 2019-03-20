@@ -1,6 +1,6 @@
 /** @define toggle-button */
 .toggle-button {
-    border-radius: 4px;
+    @include rounded();
     background-color: $COLOR_WHITE;
     color: $COLOR_LIGHT_BLACK_1;
     height: 3.2em;
