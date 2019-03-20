@@ -8,6 +8,7 @@ import {
     // InstallPWAButton,
     LoginButton,
     MenuLinks,
+    SignupButton,
     ToggleMenuDrawer,
     UpgradeButton }    from 'App/Components/Layout/Header';
 import header_links    from 'App/Constants/header-links';
@@ -82,7 +83,10 @@ const Header = ({
                                 }
                             </React.Fragment>
                             :
-                            <LoginButton className='acc-info__button' />
+                            <React.Fragment>
+                                <LoginButton className='acc-info__button' />
+                                <SignupButton className='acc-info__button' />
+                            </React.Fragment>
                         }
                     </div>
                 </div>
