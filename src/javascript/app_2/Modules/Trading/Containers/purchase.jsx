@@ -14,7 +14,6 @@ import MessageBox        from '../Components/Form/Purchase/MessageBox';
 import PurchaseLock      from '../Components/Form/Purchase/PurchaseLock';
 
 const Purchase = ({
-    contract_type,
     currency,
     is_contract_mode,
     is_client_allowed_to_visit,
@@ -34,7 +33,6 @@ const Purchase = ({
         const info        = proposal_info[type] || {};
         const is_disabled = !is_purchase_enabled || !is_trade_enabled || !info.id || !is_client_allowed_to_visit;
         const is_purchase_error = (!isEmptyObject(purchase_info) && purchase_info.echo_req.buy === info.id);
-        const is_high_low = /high_low/.test(contract_type.toLowerCase());
 
         const purchase_button = (
             <Button
@@ -51,7 +49,7 @@ const Purchase = ({
                     <div className='btn-purchase__effect-detail' />
                     <div className='btn-purchase__content'>
                         <div className='btn-purchase__trade-type'>
-                            <IconTradeType type={!is_high_low ? type.toLowerCase() : `${type.toLowerCase()}_barrier`} className='btn-purchase__trade-type-icon' />
+                            <IconTradeType type={type.toLowerCase()} className='btn-purchase__trade-type-icon' />
                             <span className='btn-purchase__trade-type-text'>{localize('[_1]', trade_types[type])}</span>
                         </div>
                     </div>
@@ -135,7 +133,6 @@ export default connect(
         currency                  : client.currency,
         is_client_allowed_to_visit: client.is_client_allowed_to_visit,
         is_contract_mode          : modules.smart_chart.is_contract_mode,
-        contract_type             : modules.trade.contract_type,
         is_purchase_enabled       : modules.trade.is_purchase_enabled,
         is_trade_enabled          : modules.trade.is_trade_enabled,
         onClickPurchase           : modules.trade.onPurchase,

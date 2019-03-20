@@ -1,46 +1,48 @@
 const path   = require('path');
 const fs     = require('fs');
-const util   = require('util');
 const expect = require('chai').expect;
-const exec   = util.promisify(require('child_process').exec);
 const common = require('../common');
 
 const ignored_files = [
     'src/images/pages/regulation/map.svg',
 ];
 
-let changed_files = [];
-
 describe('check svg file format', () => {
-    const fetchFiles = async (command) => {
-        const { stdout, stderr } = await exec(command);
-        if (stderr) {
-            throw new Error(stderr);
+    it('should be valid svgs', () => {
+        function fetchSvgs(dir) {
+            const directory = fs.readdirSync(dir);
+            return directory.map(file => {
+                if (fs.statSync(path.join(dir, file)).isDirectory()) {
+                    return fetchSvgs(path.join(dir, file));
+                }
+                return file.match(/.*\.(svg)$/ig) ? path.join(dir, file) : false;
+            });
         }
 
-        return stdout.split('\n').filter(dir => dir.length);
-    };
+        const flatten = arr => {
+            const index = arr.findIndex(el => Array.isArray(el));
+            if (index > -1) {
+                arr.splice(index, 1, ...arr[index]);
+                return flatten(arr);
+            }
 
-    it('should be valid svgs', async () => {
-        try {
-            changed_files = [
-                ...await fetchFiles('git diff --name-only -- *.svg'),
-                ...await fetchFiles('git diff HEAD origin/master --name-only -- *.svg'),
-            ];
-        } catch (err) {
-            console.error(err);
-        }
+            return arr;
+        };
 
-        changed_files.filter(item =>
-            !ignored_files.some(ignored => path.resolve(common.root_path, ignored) === item) &&
-            fs.existsSync(path.resolve(item)))
+        const svgs = fetchSvgs(path.resolve(common.root_path, 'src/images'));
+
+        flatten(svgs)
+            .filter(item => !!item)
+            .filter(item => !ignored_files.some(ignored => path.resolve(common.root_path, ignored) === item))
             .forEach(item => {
                 const stats = fs.statSync(path.resolve(item));
                 if (stats.isSymbolicLink()) return;
                 const file = fs.readFileSync(path.resolve(item), 'utf-8');
-                expect(file, `Unoptimized svg at ${item}\n Please run the following command on your terminal and commit the result: \n svgo ${item} \n`)
+                expect(file).to.be.a('string');
+                expect(file)
                     .to
-                    .match(/(?!\n)(<svg)(.*)(>).*(<\/\s?svg)>/i);
+                    .match(/(?!\n)(<svg)(.*)(>).*(<\/\s?svg)>/i,
+                        `unoptimized svg at ${item}\n Please run the following command on your terminal and commit the result: \n svgo ${item} \n`);
             });
     });
 });

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-03-20 02:48\n"
+"PO-Revision-Date: 2019-03-18 07:33\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Indonesian\n"
 "MIME-Version: 1.0\n"
@@ -428,9 +428,6 @@ msgstr "'Operator Trading Financial Terbaik' penghargaan oleh eGaming Review"
 
 msgid "(One) Touch trades"
 msgstr "Kontrak (Sekali) Sentuh"
-
-msgid "(This limit may vary depending on current exchange rates.)"
-msgstr ""
 
 msgid "(a) Price and cost"
 msgstr "(a) Harga dan biaya"
@@ -1500,8 +1497,8 @@ msgstr "Aset"
 msgid "Asset Index"
 msgstr "Indeks Aset"
 
-msgid "Asset index is unavailable in this country. If you have an active %1 account, please %2log in%3 for full access."
-msgstr "Indeks aset tidak tersedia pada negara berikut. Jika Anda memiliki akun %1 aktif, silahkan %2masuk%3 untuk akses penuh."
+msgid "Asset index is unavailable in this country. If you have an active %1 account, please log in for full access."
+msgstr ""
 
 msgid "Assign and manage multiple sub-accounts seamlessly via one interface – the Multiple Accounts Manager (MAM)."
 msgstr "Tetapkan dan kelola beberapa sub-akun dengan cepat menggunakan fasilitas - Multi Akun Manager (MAM)."
@@ -2186,9 +2183,6 @@ msgstr "Dapat digunakan untuk melihat aktivitas akun, termasuk pengaturan, batas
 
 msgid "Can be used to withdraw to payment agents, transfer funds between accounts, and set / clear cashier passwords."
 msgstr "Dapat digunakan untuk menarik dana ke agen pembayaran, transfer dana antar akun, dan mengatur/menghapus sandi kasir."
-
-msgid "Can you spare 15 minutes?"
-msgstr "Dapatkan Anda meluangkan 15 menit?"
 
 msgid "Can't figure it out on when to buy and sell? Here is a simple way of looking at it:"
 msgstr "Tidak mengetahui waktu yang tepat untuk membeli dan menjual? Berikut adalah cara sederhana untuk melihatnya:"
@@ -3384,6 +3378,9 @@ msgstr "Mohon untuk tidak mengirim Bitcoin ke dalam akun Bitcoin Cash (atau Bitc
 msgid "Do not trade when you are tired or are under the influence of alcohol."
 msgstr "Jangan melakukan trading jika Anda dalam keadaan lelah atau di bawah pengaruh alkohol."
 
+msgid "Do you have 40 minutes for an interview?"
+msgstr "Apakah Anda memiliki 40 menit untuk wawancara?"
+
 msgid "Do you have a real money account?"
 msgstr "Apakah Anda memiliki akun uang riil?"
 
@@ -3590,6 +3587,9 @@ msgstr "Setiap transfer dikenakan biaya transfer %1 atau biaya minimum sebesar %
 
 msgid "Earn"
 msgstr "Hasilkan"
+
+msgid "Earn $30 to trade on %1"
+msgstr "Dapatkan $30 untuk bertrading di %1"
 
 msgid "Earn USD 100 in commission for each successful referral. Your referred client must open a %1real money investment account%2 through your unique affiliate link and deposit a total of USD 100 or more (one-time or accumulative) in the account. This commission plan is only available to affiliates based in the EU."
 msgstr "Dapatkan komisi USD 100 untuk setiap referral yang sukses. Klien yang Anda referensikan harus mendaftar %1akun investasi uang riil%2 melalui tautan unik affiliasi Anda dan mendeposit sebesar USD 100 atau lebih (sekali atau akumulasi) dalam akun. Rencana komisi ini hanya tersedia untuk affiliasi yang berdomisili di Uni Eropa."
@@ -4472,9 +4472,6 @@ msgstr "Jum'at"
 
 msgid "From"
 msgstr "Dari"
-
-msgid "From account: "
-msgstr ""
 
 msgid "Front Side"
 msgstr "Bagian Depan"
@@ -6483,6 +6480,9 @@ msgstr "Mastercard yang dikeluarkan di negara non-Eropa hanya dapat mencairkan s
 msgid "Matches/Differs"
 msgstr "Matches/Differs"
 
+msgid "Max"
+msgstr "Maks"
+
 msgid "Maximum Payout"
 msgstr "Hasil Maksimum"
 
@@ -6953,9 +6953,6 @@ msgstr "Peran non teknis"
 
 msgid "Not"
 msgstr "Bukan"
-
-msgid "Not announced for this currency."
-msgstr ""
 
 msgid "Not at all. Joining our affiliate programme is completely free and always will be."
 msgstr "Tidak sama sekali. Bergabung dengan program afiliasi kami benar-benar gratis dan akan selalu akan seperti itu."
@@ -10626,9 +10623,6 @@ msgstr "Gelar"
 msgid "To"
 msgstr "Hingga"
 
-msgid "To account: "
-msgstr ""
-
 msgid "To apply, please submit your CV and a cover letter to %1"
 msgstr "Untuk melamar, kirimkan CV dan surat lamaran ke %1"
 
@@ -10953,9 +10947,6 @@ msgstr "Trading di %1 dapat menyebabkan ketagihan. Jika Anda merasa perlu mengec
 msgid "Trading platforms"
 msgstr "Platform trading"
 
-msgid "Trading times is unavailable in this country. If you have an active %1 account, please %2log in%3 for full access."
-msgstr "Waktu trading tidak tersedia pada negara berikut. Jika Anda memiliki akun %1 aktif, silahkan %2masuk%3 untuk akses penuh."
-
 msgid "TradingView"
 msgstr "TradingView"
 
@@ -10997,9 +10988,6 @@ msgstr "Transfer dana dari akun opsi binary Anda kedalam akun MetaTrader 5 Anda.
 
 msgid "Transfer funds to your MT5 account"
 msgstr "Transfer dana ke akun MT5 Anda"
-
-msgid "Transfer limit: %1*"
-msgstr ""
 
 msgid "Transfer of Data"
 msgstr "Transfer Data"
@@ -11739,17 +11727,14 @@ msgstr "Kami akan meninjau dokumen Anda dan menghubungi Anda kembali dalam tempo
 msgid "We will use reasonable endeavors within our control to ensure that all electronic data provided on the MT5 Trading Platform and all electronic transactions instructed and accepted from you to us, and executed by us are not subject to network latency."
 msgstr "Kami akan menggunakan upaya yang wajar untuk memastikan semua data elektronik yang disediakan pada Platform Trading MT5 dan semua transaksi elektronik yang Anda instruksikan dan kami terima, serta yang kami eksekusikan diluar keterlambatan network."
 
-msgid "We'd love to hear what you think."
-msgstr "Kami ingin mendengar pendapat Anda."
-
 msgid "We're almost there"
 msgstr "Kita hampir sampai"
 
 msgid "We're granted patents for 'Computer trading system and method for speculating on a financial market' and 'Computer trading system for offering custom financial market speculations'. The patents show our ability to innovate and stay ahead of the pack."
 msgstr "Kami memperoleh hak paten sebagai 'Sistem trading komputer dan metode untuk berspekulasi dalam pasar finansial' dan 'Sistem trading komputer yang menawarkan spekulasi khusus pasar finansial'. Paten tersebut memperlihatkan kemampuan kami dalam berinovasi dan tetap terdepan dalam bisnis ini."
 
-msgid "We're looking to improve our products and services, and we want to understand your needs better. We'd like to interview you via phone, to know what you like about us, what you don't like, and where we can do better."
-msgstr "Untuk meningkatkan produk dan layanan kami, dan untuk memahami kebutuhan Anda dengan lebih baik, kami ingin mewawancarai Anda melalui telepon mengenai apa yang Anda sukai dan tidak mengenai kami dan dimana kami dapat melakukan perbaikan untuk menjadi lebih baik."
+msgid "We're looking for users of %1 to participate in a %240-minute video or phone interview%3. To qualify, just answer a few short questions. If selected, you will receive an email or a phone call from one of our researchers."
+msgstr "Kami sedang mencari pengguna %1 yang ingin berpartisipasi dalam %240 menit wawancara video atau telepon%3. Untuk bergabung, silahkan jawab beberapa pertanyaan singkat. Jika Anda terpilih, Anda akan menerima email atau telepon dari salah satu peneliti kami."
 
 msgid "We're really proud of this award. We're strongly committed to offering an ethical and customer-focused trading experience, and the award shows that BetOnMarkets is a trusted brand that listens and caters to customers, whether they are experienced traders or novices. We offer customer services in English, Indonesian, Russian, Chinese and Spanish."
 msgstr "Kami sangat bangga dengan penghargaan ini. Kami berdedikasi penuh dalam menawarkan etika dan memusatkan pada pengalaman trading pelanggan dan penghargaan ini menunjukkan BetOnMarkets adalah merek dagang terpercaya yang mendengar dan mengutamakan pelanggan, tidak peduli apakah mereka adalah trader berpengalaman atau pemula. Kami memberi layanan dalam bahasa Inggris, Indonesia, Rusia, Cina dan Spanyol."
@@ -12154,6 +12139,9 @@ msgstr "Batas Penarikan"
 msgid "Withdrawal for your account is not allowed at this moment."
 msgstr "Penarikan untuk akun Anda tidak diperbolehkan pada saat ini."
 
+msgid "Withdrawal limit"
+msgstr "Batas pencairan"
+
 msgid "Withdrawal of Funds from MT5 Real Account"
 msgstr "Penarikan dana dari Akun Riil MT5"
 
@@ -12380,7 +12368,7 @@ msgid "You are not entitled to any compensation or reimbursement of any kind fro
 msgstr "Anda tidak berhak atas kompensasi atau penggantian dalam bentuk apapun dari Perusahaan dalam keadaan apapun."
 
 msgid "You are not resident in a restricted country such as Canada, Costa Rica, Hong Kong, Israel, Jersey, Malaysia, Malta, Paraguay, United Arab Emirates, USA or any other restricted country which has been identified by the FATF as having strategic deficiencies;"
-msgstr "Anda bukan penduduk di negara yang dibatasi seperti Kanada, Costa Rica, Hong Kong, Israel, Jersey, Malaysia, Malta, Paraguay, Uni Emirat Arab, AS atau negara terlarang lainnya yang telah diidentifikasi oleh FATF;"
+msgstr "Anda bukan penduduk di negara yang dibatasi seperti KAnda, Costa Rica, Hong Kong, Israel, Jersey, Malaysia, Malta, Paraguay, Uni Emirat Arab, AS atau negara terlarang lainnya yang telah diidentifikasi oleh FATF;"
 
 msgid "You are not trading in the actual underlying instrument, or the actual foreign currency; all transactions are settled in cash only."
 msgstr "Anda tidak mentradingkan instrumen dasar yang sebenarnya, atau mata uang asing yang sebenarnya; semua transaksi diselesaikan secara tunai saja."
@@ -12592,8 +12580,8 @@ msgstr "Anda tidak dapat membatalkan atau merubah level Stop dan Limit Order And
 msgid "You may only open an account at this site on conditions that:"
 msgstr "Anda hanya dapat mendaftar akun pada situs ini dengan syarat:"
 
-msgid "You may only transfer funds between fiat and cryptocurrency accounts."
-msgstr ""
+msgid "You may only transfer funds between a fiat account and a cryptocurrency account."
+msgstr "Anda hanya dapat menransfer dana antara akun fiat dan mata uang kripto saja."
 
 msgid "You may proceed but please <a href=\"%1\">authenticate</a> your account within five days to continue trading."
 msgstr "Anda dapat melanjutkan namun silahkan <a href=\"%1\">otentikasi</a> akun Anda dalam tempo lima hari untuk melanjutkan trading."
