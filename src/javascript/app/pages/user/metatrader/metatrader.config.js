@@ -132,22 +132,13 @@ const MetaTraderConfig = (() => {
                         $message.find('.citizen').setVisibility(1).find('a').attr('onclick', `localStorage.setItem('personal_details_redirect', '${acc_type}')`);
                     };
 
-                    const has_financial_account = Client.hasAccountType('financial', 1);
-                    const is_maltainvest = State.getResponse(`landing_company.mt_financial_company.${getMTFinancialAccountType(acc_type)}.shortcode`) === 'maltainvest';
-                    const is_financial = accounts_info[acc_type].account_type === 'financial';
-                    const is_demo = accounts_info[acc_type].account_type === 'demo';
-                    let is_ok = true;
-
-                    if (is_maltainvest && (is_financial || is_demo) && !has_financial_account) {
-                        $message.find('.maltainvest').setVisibility(1);
-                        is_ok = false;
-                        $message.find(message_selector).setVisibility(1);
-                        resolve($message.html());
-                    }
-
-                    if (is_financial) { // financial accounts have their own checks
+                    if (accounts_info[acc_type].account_type === 'financial') { // financial accounts have their own checks
                         BinarySocket.wait('get_account_status', 'landing_company').then(() => {
-                            if (!(is_maltainvest && !has_financial_account)) {
+                            let is_ok = true;
+                            if (State.getResponse(`landing_company.mt_financial_company.${getMTFinancialAccountType(acc_type)}.shortcode`) === 'maltainvest' && !Client.hasAccountType('financial', 1)) {
+                                $message.find('.maltainvest').setVisibility(1);
+                                is_ok = false;
+                            } else {
                                 const response_get_account_status = State.getResponse('get_account_status');
                                 if (/(financial_assessment|trading_experience)_not_complete/.test(response_get_account_status.status)) {
                                     $message.find('.assessment').setVisibility(1).find('a').attr('onclick', `localStorage.setItem('financial_assessment_redirect', '${urlFor('user/metatrader')}#${acc_type}')`);
