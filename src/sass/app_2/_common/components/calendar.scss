@@ -168,7 +168,9 @@
             font-weight: 400;
 
             &-duration {
-                background: $COLOR_LIGHT_GRAY_1;
+                @include themify($themes) {
+                    background: themed('active_color') !important;
+                }
             }
             &:hover:not(.calendar__cell--disabled):not(.calendar__cell--active) {
                 background: $COLOR_LIGHT_BLACK_4_SOLID;
@@ -190,6 +192,7 @@
                     position: absolute;
                     content: '';
                     width: 100%;
+                    top: 0;
                     right: 50%;
                     z-index: -1;
                     height: 100%;

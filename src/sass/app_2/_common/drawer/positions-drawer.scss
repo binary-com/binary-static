@@ -109,6 +109,7 @@ $header-height: 4em;
         cursor: pointer;
 
         svg {
+            @extend %inline-icon;
             height: 1.6em;
             width: 1.6em;
         }

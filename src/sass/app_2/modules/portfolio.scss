@@ -79,9 +79,16 @@
         width: 100%;
     }
     &__icon {
+        @extend %inline-icon;
         height: 4.8em;
         width: 4.8em;
         margin-bottom: 1.6em;
+        @include themify($themes) {
+            /* postcss-bem-linter: ignore */
+            path {
+                fill: themed('slider_hover_color') !important;
+            }
+        }
     }
     &__text {
         font-size: 1.4em;

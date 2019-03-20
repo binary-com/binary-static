@@ -13,9 +13,12 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(255, 255, 255, 0.56);
+    background-color: transparentize($COLOR_DARK_BLUE_1, 0.7);
 
     &__dialog {
+        @include themify($themes) {
+            background-color: themed('container_secondary_color');
+        }
         max-width: 560px;
         max-height: 320px;
         padding: 1.6em;
@@ -25,17 +28,22 @@
         justify-content: space-around;
         flex-direction: column;
         align-items: flex-start;
-        background-color: $COLOR_WHITE;
         box-shadow: 0 2px 8px 0 $COLOR_LIGHT_BLACK_3;
     }
     &__header {
+        @include themify($themes) {
+            color: themed('text_color');
+        }
         @include typeface(--title-left-bold-black);
         @include toEm(margin-bottom, 16px, 1.6em);
     }
     &__content {
-        max-width: 448px;
+        @include themify($themes) {
+            color: themed('text_primary_color');
+        }
         @include typeface(--paragraph-left-normal-black, unset);
         @include toEm(margin-bottom, 32px, 1.4em);
+        max-width: 448px;
     }
     &__footer {
         display: flex;
