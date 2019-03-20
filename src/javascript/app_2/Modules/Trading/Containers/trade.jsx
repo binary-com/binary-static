@@ -88,8 +88,8 @@ export default connect(
     ({ modules, ui }) => ({
         start_epoch      : modules.contract.chart_config.start_epoch,
         end_epoch        : modules.contract.chart_config.end_epoch,
-        scroll_to_epoch  : modules.smart_chart.left_epoch,
-        scroll_to_offset : modules.smart_chart.left_epoch_offset,
+        scroll_to_epoch  : modules.smart_chart.scroll_to_left_epoch,
+        scroll_to_offset : modules.smart_chart.scroll_to_left_epoch_offset,
         chart_zoom       : modules.smart_chart.zoom,
         chart_type       : modules.smart_chart.chart_type,
         granularity      : modules.smart_chart.granularity,

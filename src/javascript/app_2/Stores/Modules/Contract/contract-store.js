@@ -57,11 +57,8 @@ export default class ContractStore extends BaseStore {
             delete this.chart_config.start_epoch;
 
             if (!this.is_left_epoch_set && contract_info.tick_count) {
-                SmartChartStore.updateChartType('mountain');
-                SmartChartStore.updateEpochScrollToOffset(3);
-                SmartChartStore.updateChartZoom(100);
-                SmartChartStore.updateEpochScrollToValue(contract_info.purchase_time || contract_info.date_start);
                 this.is_left_epoch_set = true;
+                SmartChartStore.setTickChartView(contract_info.purchase_time);
             }
         }
 
@@ -86,21 +83,6 @@ export default class ContractStore extends BaseStore {
         this.is_left_epoch_set = has_left_epoch;
 
         if (contract_id) {
-            this.smart_chart.setContractMode(true);
-            WS.subscribeProposalOpenContract(this.contract_id, this.updateProposal, false);
-        }
-    }
-
-    @action.bound
-    onLoadContract(contract_info) {
-        if (+contract_info.contract_id === this.contract_id || !contract_info) return;
-        this.onSwitchAccount(this.accountSwitcherListener.bind(null));
-        this.root_store.modules.trade.symbol = contract_info.underlying;
-        this.smart_chart   = this.root_store.modules.smart_chart;
-        this.contract_info = contract_info;
-        this.contract_id   = +contract_info.contract_id;
-        this.is_left_epoch_set = true;
-        if (this.contract_id) {
             this.smart_chart.setContractMode(true);
             WS.subscribeProposalOpenContract(this.contract_id, this.updateProposal, false);
         }
