@@ -137,18 +137,22 @@
         &__content, &__header {
             color: $COLOR_DARK_BLUE_7;
         }
+    }
+    .btn {
         /* postcss-bem-linter: ignore */
-        .btn--secondary--orange {
-            background-color: $COLOR_DARK_BLUE_3;
+        &--secondary {
+            &--orange {
+                background-color: $COLOR_DARK_BLUE_3;
 
-            /* postcss-bem-linter: ignore */
-            &:hover:not([disabled]) {
-                background: $COLOR_DARK_BLUE_4;
-                border: none;
-            }
-            /* postcss-bem-linter: ignore */
-            .btn__text {
-                color: $COLOR_WHITE;
+                /* postcss-bem-linter: ignore */
+                &:hover:not([disabled]) {
+                    background: $COLOR_DARK_BLUE_4;
+                    border: none;
+                }
+                /* postcss-bem-linter: ignore */
+                .btn__text {
+                    color: $COLOR_WHITE;
+                }
             }
         }
     }

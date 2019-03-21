@@ -36,9 +36,23 @@
         }
         &--orange {
             background: $COLOR_ORANGE;
+            transition: all ease 0.4s;
 
             &:hover:not([disabled]) {
-                background: $COLOR_ORANGE;
+                border: none;
+
+                &:before {
+                    background: $COLOR_LIGHT_BLACK_2;
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    right: 0;
+                    opacity: 0.4;
+                    display: block;
+                    border-radius: $BORDER_RADIUS;
+                }
             }
             &:active:not([disabled]) {
                 background: $COLOR_ORANGE;
@@ -83,7 +97,7 @@
             &:hover:not([disabled]) {
                 border: 1px solid $COLOR_ORANGE;
                 color: $COLOR_ORANGE;
-                background: rgba(233, 128, 36, 0.1);
+                background: $COLOR_LIGHT_BLACK_4_SOLID;
             }
             &:active:not([disabled]) {
                 border: 1px solid $COLOR_ORANGE;

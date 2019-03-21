@@ -55,20 +55,12 @@
         margin: 0;
     }
     /* postcss-bem-linter: ignore */
-    .btn--primary--orange {
-        /* postcss-bem-linter: ignore */
-        &:hover:not([disabled]) {
-            background: $COLOR_DARK_ORANGE;
-        }
-    }
-    /* postcss-bem-linter: ignore */
     .btn--secondary--orange {
         border: none;
         margin-right: 0.8em;
 
         /* postcss-bem-linter: ignore */
         &:hover:not([disabled]) {
-            background: $COLOR_LIGHT_BLACK_4_SOLID;
             border: none;
         }
     }
