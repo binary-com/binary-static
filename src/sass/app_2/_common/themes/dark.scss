@@ -127,6 +127,31 @@
             animation: dash 1.5s ease-in-out infinite, colorOrange 6s ease-in-out infinite;
         }
     }
+    .full-page-modal {
+        background-color: rgba(31, 36, 61, 0.8);
+
+        &__dialog {
+            background-color: $COLOR_DARK_BLUE_3;
+            box-shadow: 0 2px 8px 0 $COLOR_LIGHT_BLACK_3;
+        }
+        &__content, &__header {
+            color: $COLOR_DARK_BLUE_7;
+        }
+        /* postcss-bem-linter: ignore */
+        .btn--secondary--orange {
+            background-color: $COLOR_DARK_BLUE_3;
+
+            /* postcss-bem-linter: ignore */
+            &:hover:not([disabled]) {
+                background: $COLOR_DARK_BLUE_4;
+                border: none;
+            }
+            /* postcss-bem-linter: ignore */
+            .btn__text {
+                color: $COLOR_WHITE;
+            }
+        }
+    }
     .toast {
         &__body {
             background-color: $TOAST_BACKGROUND_COLOR_INFO;
