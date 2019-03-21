@@ -447,10 +447,6 @@ $linear-gradient-white-blur: linear-gradient(to left, rgba(255, 255, 255, 0), $C
                 border-color: transparent transparent transparent themed('purchase_detail_background_color');
             }
         }
-        .btn-purchase__trade-type-icon, .btn-purchase__trade-type-icon svg {
-            width: 16px;
-            height: 16px;
-        }
         .btn-purchase__trade-type-icon, .btn-purchase__trade-type-text, .btn-purchase__profit-text__wrapper, .btn-purchase__return-text__wrapper {
             overflow: hidden;
             @include themify($themes) {
@@ -459,6 +455,10 @@ $linear-gradient-white-blur: linear-gradient(to left, rgba(255, 255, 255, 0), $C
         }
         .btn-purchase__trade-type-icon svg, .btn-purchase__trade-type-text span, .btn-purchase__profit-text, .btn-purchase__return-text {
             background-color: rgba($COLOR_WHITE, 0.32);
+        }
+        .btn-purchase__trade-type-icon, .btn-purchase__trade-type-icon svg {
+            width: 16px;
+            height: 16px;
         }
         .btn-purchase__trade-type-text, .btn-purchase__trade-type-text span, .btn-purchase__profit-text__wrapper, .btn-purchase__profit-text, .btn-purchase__return-text__wrapper .btn-purchase__return-text {
             width: 56px;
