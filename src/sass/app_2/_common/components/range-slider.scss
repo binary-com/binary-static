@@ -30,9 +30,6 @@
                 &::-moz-range-thumb {
                     background: $COLOR_RED;
                 }
-                &::-ms-thumb {
-                    background: $COLOR_RED;
-                }
             }
             &__line {
                 background: $COLOR_RED !important;
@@ -56,28 +53,28 @@
         margin: 0;
         cursor: pointer;
         @include themify($themes) {
-            background: themed('container_color') !important;
+            background: themed('container_color');
         }
 
         // Range Handle Thumb - Chrome / Webkit based browsers
         &::-webkit-slider-thumb {
             @include thumbStyle();
             @include themify($themes) {
-                background: themed('slider_icon_color') !important;
+                background: themed('slider_icon_color');
             }
         }
         // Range Handle Thumb - Firefox / Gecko based browsers
         &::-moz-range-thumb {
             @include thumbStyle();
             @include themify($themes) {
-                background: themed('slider_icon_color') !important;
+                background: themed('slider_icon_color');
             }
         }
         // Range Handle Thumb - Microsoft Edge
         &::-ms-thumb {
             @include thumbStyle();
             @include themify($themes) {
-                background: themed('slider_icon_color') !important;
+                background: themed('slider_icon_color');
             }
         }
         &:hover, &:focus, &:active {
@@ -89,12 +86,12 @@
         }
         &::-moz-range-track {
             @include themify($themes) {
-                background: themed('container_color') !important;
+                background: themed('container_color');
             }
         }
         &::-ms-track {
             @include themify($themes) {
-                background: themed('container_color') !important;
+                background: themed('container_color');
             }
         }
     }
