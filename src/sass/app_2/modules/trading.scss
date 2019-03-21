@@ -429,10 +429,10 @@ $linear-gradient-white-blur: linear-gradient(to left, rgba(255, 255, 255, 0), $C
         }
     }
     &:disabled {
+        color: $COLOR_DARK_BLUE_7;
         @include themify($themes) {
             background-color: themed('purchase_background_color');
         }
-        color: $COLOR_DARK_BLUE_7;
 
         & span {
             display: block;
@@ -458,16 +458,11 @@ $linear-gradient-white-blur: linear-gradient(to left, rgba(255, 255, 255, 0), $C
             }
         }
         .btn-purchase__trade-type-icon svg, .btn-purchase__trade-type-text span, .btn-purchase__profit-text, .btn-purchase__return-text {
-            background-image: $COLOR_WHITE;
-            opacity: 0.32;
+            background-color: rgba($COLOR_WHITE, 0.32);
         }
-        .btn-purchase__trade-type-text, .btn-purchase__trade-type-text span, .btn-purchase__profit-text__wrapper, .btn-purchase__return-text__wrapper {
+        .btn-purchase__trade-type-text, .btn-purchase__trade-type-text span, .btn-purchase__profit-text__wrapper, .btn-purchase__profit-text, .btn-purchase__return-text__wrapper .btn-purchase__return-text {
             width: 56px;
             height: 8px;
-        }
-        .btn-purchase__profit-text, .btn-purchase__return-text {
-            width: 100%;
-            height: 100%;
         }
         .btn-purchase__profit-text__wrapper, .btn-purchase__return-text__wrapper {
             margin: 4px 0;
