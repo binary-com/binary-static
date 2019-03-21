@@ -323,13 +323,21 @@ export default class TradeStore extends BaseStore {
             this.currency = obj_new_values.currency;
         }
 
+        let has_only_forward_starting_contracts;
+
+        if (/symbol/.test(Object.keys(obj_new_values))) {
+            await Symbol.onChangeSymbolAsync(obj_new_values.symbol);
+            has_only_forward_starting_contracts =
+                ContractType.getContractCategories().has_only_forward_starting_contracts;
+        }
+        // TODO: remove all traces of setHasOnlyForwardingContracts and has_only_forward_starting_contracts in app
+        //  once future contracts are implemented
+        this.root_store.ui.setHasOnlyForwardingContracts(has_only_forward_starting_contracts);
+        if (has_only_forward_starting_contracts) return;
+
         const new_state = this.updateStore(cloneObject(obj_new_values));
 
         if (is_changed_by_user || /\b(symbol|contract_types_list)\b/.test(Object.keys(new_state))) {
-            if ('symbol' in new_state) {
-                await Symbol.onChangeSymbolAsync(new_state.symbol);
-            }
-
             this.updateStore({ // disable purchase button(s), clear contract info
                 is_purchase_enabled: false,
                 proposal_info      : {},
