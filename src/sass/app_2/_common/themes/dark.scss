@@ -1,22 +1,5 @@
 // Dark Theme
 .theme--dark {
-    background-color: $COLOR_DARK_BLUE_1;
-
-    .card-list {
-        &__card {
-            background: $COLOR_DARK_BLUE_5;
-            border-color: $COLOR_DARK_BLUE_5;
-
-            div[class*='-card__header'] {
-                background: $COLOR_DARK_BLUE_3;
-                border-color: $COLOR_DARK_BLUE_5;
-                color: $COLOR_DARK_BLUE_7;
-            }
-            div[class*='-card__body'] {
-                color: $COLOR_DARK_BLUE_7;
-            }
-        }
-    }
     .portfolio.container {
         background: $COLOR_DARK_BLUE_5;
     }
