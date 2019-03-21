@@ -425,6 +425,13 @@ export default class TradeStore extends BaseStore {
     }
 
     @action.bound
+    updateSymbol(symbol) {
+        if (symbol) {
+            this.symbol = symbol;
+        }
+    }
+
+    @action.bound
     updateQueryString() {
         // Update the url's query string by default values of the store
         const query_params = URLHelper.updateQueryString(

@@ -63,6 +63,7 @@ export default class ContractStore extends BaseStore {
         this.contract_id   = contract_id;
         this.smart_chart   = this.root_store.modules.smart_chart;
         this.smart_chart.setContractMode(true);
+        this.smart_chart.saveAndClearTradeChartLayout();
 
         if (contract_id) {
             WS.subscribeProposalOpenContract(this.contract_id, this.updateProposal, false);
@@ -73,9 +74,9 @@ export default class ContractStore extends BaseStore {
     onLoadContract(contract_info) {
         if (contract_info === this.contract_id || !contract_info) return;
         this.onSwitchAccount(this.accountSwitcherListener.bind(null));
-        this.root_store.modules.trade.symbol = contract_info.underlying;
         this.smart_chart   = this.root_store.modules.smart_chart;
         this.smart_chart.saveAndClearTradeChartLayout();
+        this.root_store.modules.trade.updateSymbol(contract_info.underlying);
 
         this.contract_info = contract_info;
         this.contract_id   = +contract_info.contract_id;
