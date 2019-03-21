@@ -434,6 +434,10 @@
             #cs_telephone_number {
                 width: 100%;
                 min-width: 160px;
+
+                & ~ ul.select-options {
+                    max-height: 130px;
+                }
             }
             #display_cs_telephone {
                 line-height: 1.5rem;
