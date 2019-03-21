@@ -36,7 +36,6 @@
         }
         &--orange {
             background: $COLOR_ORANGE;
-            transition: all ease 0.4s;
 
             &:hover:not([disabled]) {
                 background: $COLOR_ORANGE;

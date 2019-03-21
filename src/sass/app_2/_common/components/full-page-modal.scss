@@ -56,6 +56,8 @@
     }
     /* postcss-bem-linter: ignore */
     .btn--primary--orange {
+        transition: all 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
+
         /* postcss-bem-linter: ignore */
         &:hover:not([disabled]):before {
             background: $COLOR_LIGHT_BLACK_2;
