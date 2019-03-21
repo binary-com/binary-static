@@ -62,6 +62,19 @@
         /* postcss-bem-linter: ignore */
         &:hover:not([disabled]) {
             border: none;
+
+            &:before {
+                background: $COLOR_LIGHT_BLACK_2;
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                opacity: 0.4;
+                display: block;
+                border-radius: $BORDER_RADIUS;
+            }
         }
     }
     /* postcss-bem-linter: ignore */
