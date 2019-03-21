@@ -47,7 +47,7 @@ $linear-gradient-white-blur: linear-gradient(to left, rgba(255, 255, 255, 0), $C
         height: 8px;
         overflow: hidden;
         @include themify($themes) {
-            background-color: themed('loader_background');
+            background-color: rgba(themed('loader_background'), 0.16);
         }
     }
     &--loading {
@@ -447,7 +447,7 @@ $linear-gradient-white-blur: linear-gradient(to left, rgba(255, 255, 255, 0), $C
         }
         .btn-purchase__trade-type-icon, .btn-purchase__trade-type-text, .btn-purchase__profit-text__wrapper, .btn-purchase__return-text__wrapper {
             @include themify($themes) {
-                background-color: themed('loader_background');
+                background-color: rgba(themed('loader_background'), 0.16);
             }
         }
         .btn-purchase__trade-type-icon svg, .btn-purchase__trade-type-text span, .btn-purchase__profit-text, .btn-purchase__return-text {

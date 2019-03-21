@@ -29,7 +29,7 @@ $themes: (
         won_gradient_color               : $COLOR_LIGHT_GREEN_GRADIENT,
         purchase_background_color        : $COLOR_LIGHT_BLACK_3_SOLID_2,
         purchase_detail_background_color : $COLOR_LIGHT_BLACK_3_SOLID_1,
-        loader_background                : $COLOR_LIGHT_BLACK_3,
+        loader_background                : $COLOR_BLACK,
     ),
     dark: (
         active_color                     : $COLOR_DARK_BLUE_5,
@@ -60,6 +60,6 @@ $themes: (
         won_gradient_color               : $COLOR_DARK_GREEN_GRADIENT,
         purchase_background_color        : $COLOR_DARK_GREY_1,
         purchase_detail_background_color : $COLOR_DARK_GREY_2,
-        loader_background                : rgba($COLOR_WHITE, 0.16),
+        loader_background                : $COLOR_WHITE,
     ),
 );
