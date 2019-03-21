@@ -25,6 +25,7 @@ class ResultDetails extends React.PureComponent {
             duration,
             duration_unit,
             entry_spot,
+            exit_spot,
             has_result,
             id_sell,
             tick_count,
@@ -43,28 +44,38 @@ class ResultDetails extends React.PureComponent {
                             value={id_sell}
                         />
                         <ResultDetailsItem
-                            label={localize('Duration')}
-                            value={tick_count ? `${tick_count} ${localize('ticks')}` : `${duration} ${duration_unit}`}
+                            label={localize('Reference ID')}
+                            value={id_sell}
                         />
                     </div>
                     <div className='result-details__grid'>
                         <ResultDetailsItem
+                            label={localize('Duration')}
+                            value={tick_count ? `${tick_count} ${localize('ticks')}` : `${duration} ${duration_unit}`}
+                        />
+                        <ResultDetailsItem
                             label={localize('Barrier')}
                             value={barrier ? barrier.toString() : ' - '}
                         />
+                    </div>
+                    <div className='result-details__grid'>
                         <ResultDetailsItem
                             label={localize('Entry spot')}
                             value={entry_spot || ' - '}
+                        />
+                        <ResultDetailsItem
+                            label={localize('Exit spot')}
+                            value={exit_spot || ' - '}
                         />
                     </div>
                     <div className='result-details__grid'>
                         <ResultDetailsItem
                             label={localize('Start time')}
-                            value={toGMTFormat(epochToMoment(contract_start_time))}
+                            value={toGMTFormat(epochToMoment(contract_start_time)) || ' - '}
                         />
                         <ResultDetailsItem
                             label={localize('End time')}
-                            value={toGMTFormat(epochToMoment(contract_end_time))}
+                            value={toGMTFormat(epochToMoment(contract_end_time)) || ' - '}
                         />
                     </div>
                 </div>
@@ -97,6 +108,10 @@ ResultDetails.propTypes = {
     duration     : PropTypes.number,
     duration_unit: PropTypes.string,
     entry_spot   : PropTypes.PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
+    ]),
+    exit_spot: PropTypes.PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
     ]),
