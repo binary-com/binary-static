@@ -120,13 +120,6 @@
     //         color: $COLOR_WHITE;
     //     }
     // }
-    // .block-ui {
-    //     background: rgba(16, 19, 32, 0.6); // this is color dark blue 2 with 0.6 opacity
-
-    //     &__loading-spinner-path {
-    //         animation: dash 1.5s ease-in-out infinite, colorOrange 6s ease-in-out infinite;
-    //     }
-    // }
     .toast {
         &__body {
             background-color: $TOAST_BACKGROUND_COLOR_INFO;
@@ -147,19 +140,6 @@
         }
         &__close-button {
             color: $TOAST_CLOSE_BUTTON_COLOR_DARK;
-        }
-    }
-    .popconfirm {
-        &__button {
-            &-text {
-                color: $COLOR_DARK_BLUE_7 !important;
-            }
-            &:hover {
-                background: $COLOR_DARK_BLUE_5 !important;
-            }
-        }
-        &:after {
-            border-color: $COLOR_DARK_BLUE_3;
         }
     }
     .calendar {
