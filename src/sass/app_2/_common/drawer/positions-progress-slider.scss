@@ -16,7 +16,7 @@
         border-radius: #{$BORDER_RADIUS * 2};
     }
     &__ticks {
-        @include flex-align(justify);
+        @include flexAlign(justify);
         position: absolute;
         left: 0;
         top: -2px;
@@ -45,7 +45,7 @@
             }
         }
         &-caption {
-            @include flex-align(justify);
+            @include flexAlign(justify);
             padding: 4px 0;
             line-height: 18px;
         }

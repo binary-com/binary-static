@@ -1,6 +1,6 @@
 /** @define allow-equals */
 .allow-equals {
-    @include flex-align($y: center);
+    @include flexAlign($y: center);
 
     &__label {
         margin: 0.8em 0 0;

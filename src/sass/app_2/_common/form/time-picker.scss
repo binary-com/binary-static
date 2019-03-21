@@ -7,26 +7,15 @@
         padding: 1.6em;
     }
     &__icon {
-        @extend .absolute-center-v;
-        @extend .icon--centered;
-        @extend %inline-icon;
-        z-index: 1;
-        margin: unset;
+        @extend .input__icon;
     }
     &__dialog {
-        background-color: $COLOR_WHITE;
-        @include boxShadow();
-        @include rounded();
-        padding-top: 10px;
-        position: absolute;
-        top: 0;
-        width: 231px;
-        z-index: 1;
-        @include slideIn($x: -245px);
+        @include dialog($width: 241px);
+        @include slideIn($x: -230px);
     }
     &__selector {
-        height: inherit;
-        @include rounded();
+        background: $COLOR_WHITE;
+        padding-top: 1.6em;
 
         &--hours {
             border-right: 1px solid $COLOR_LIGHT_BLACK_4;
@@ -40,7 +29,6 @@
             height: 228px;
             overflow: hidden;
             text-align: center;
-
         }
         &-list-title {
             @include typeface(--small-center-bold-black, capitalize);
@@ -48,7 +36,7 @@
         &-list-item {
             @include typeface(--small-left-normal-black);
             cursor: pointer;
-            @include rounded();
+            @include borderRadius($BORDER_RADIUS);
             display: inline-block;
             margin: 3px;
             padding: 7px;

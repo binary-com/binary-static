@@ -44,12 +44,10 @@
         font-size: 1.2em;
     }
     &__toggle {
-        @include flex-align(center, null);
+        @include flexAlign(center, null);
         margin: -2px -9px -9px;
         padding: 4px 0;
-        @include rounded();
-        border-top-left-radius: 0;
-        border-top-right-radius: 0;
+        @include borderRadius($BORDER_RADIUS, $tl: 0, $tr: 0);
         cursor: pointer;
 
         .result-details__select-arrow {
@@ -77,7 +75,7 @@
         text-transform: capitalize;
         font-size: 1.6em;
         font-weight: bold;
-        @include flex-align(center, center);
+        @include flexAlignCenter();
         transition: opacity 0.25s ease;
         cursor: pointer;
         width: 100%;

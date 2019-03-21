@@ -7,7 +7,7 @@
         position: absolute;
         bottom: -11px;
         margin-left: -11.5px;
-        @include flex-align(center, center);
+        @include flexAlignCenter();
         font-weight: bold;
         color: $COLOR_LIGHT_BLACK_1;
         background-color: $COLOR_WHITE;
@@ -67,7 +67,7 @@
         }
     }
     &__time-container {
-        @include flex-align(center, center);
+        @include flexAlignCenter();
         padding: 0px 8px;
     }
     &__time {

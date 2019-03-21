@@ -1,15 +1,15 @@
 /** @define acc-info */
 .acc-info {
-    @include flex-align(center, center);
+    @include flexAlignCenter();
     height: 100%;
     padding: 0 1.6em;
     cursor: pointer;
 
     &__container {
-        @include flex-align(center, center);
+        @include flexAlignCenter();
     }
     &__wrapper {
-        @include flex-align(center, center);
+        @include flexAlignCenter();
         position: relative;
         height: 100%;
     }
@@ -60,8 +60,8 @@
             @include toEm(padding, 2px 8px, 1.2em);
             @include toEm(margin-right, 8px, 1.2em);
             content: 'demo';
+            @include borderRadius(16px);
             border: 1px solid $COLOR_ORANGE;
-            border-radius: 16px;
             pointer-events: none;
         }
     }
@@ -82,26 +82,21 @@
 /** @define acc-switcher */
 .acc-switcher {
     &__wrapper {
-        position: absolute;
-        right: 0;
-        top: calc(100% + 4px);
-        width: 240px;
-        @include rounded();
-        @include boxShadow();
         @include themify($themes) {
             background: themed('background_container_color');
         }
-        @include slideIn($y: -2px);
+        @include dialog($width: 240px, $height: auto);
+        @include slideIn($y: 54px);
     }
     &__new-account {
-        @include flex-align(left, center);
+        @include flexAlign(left, center);
         margin: 0.8em 0 1.6em;
 
         &-title {
             @include typeface(--small-center-normal-grey, none);
             @include toEm(padding, 8px 16px, 1.2em);
             width: 100%;
-            @include rounded();
+            @include borderRadius($BORDER_RADIUS);
             cursor: pointer;
             @include themify($themes) {
                 color: themed('text_secondary_color');
@@ -119,8 +114,6 @@
         }
     }
     &__list {
-        height: 100%;
-        @include rounded();
         padding: 1.6em;
         display: flex;
         flex-flow: column nowrap;
@@ -141,7 +134,7 @@
         }
     }
     &__accounts {
-        border-radius: 4px;
+        @include borderRadius($BORDER_RADIUS);
         @include themify($themes) {
             background: themed('container_color');
         }
@@ -170,20 +163,8 @@
                     }
                 }
             }
+            @include styledList();
 
-            &:first-child {
-                border-top-left-radius: 4px;
-                border-top-right-radius: 4px;
-                border-bottom: none;
-            }
-            &:last-child {
-                border-bottom-left-radius: 4px;
-                border-bottom-right-radius: 4px;
-                border-top: none;
-            }
-            &:only-child {
-                @include rounded();
-            }
             &:not(:last-child):not(:only-child) {
                 @include themify($themes) {
                     border-bottom: 1px solid themed('background_container_color');
@@ -194,7 +175,7 @@
         }
     }
     &__account {
-        @include flex-align(justify, center);
+        @include flexAlign(justify, center);
         cursor: pointer;
         padding: 0.8em 1.6em;
         position: relative;
@@ -202,7 +183,7 @@
 
         .acc-switcher__id {
             @include typeface(--paragraph-left-normal-black);
-            @include flex-align($y: center);
+            @include flexAlign($y: center);
 
             &--virtual:before {
                 @include typeface(--xxxsmall-left-normal-orange, uppercase);
@@ -210,7 +191,7 @@
                 @include toEm(margin-right, 8px, 0.6em);
                 content: 'demo';
                 border: 1px solid $COLOR_ORANGE;
-                border-radius: 16px;
+                @include borderRadius(16px);
             }
             &-icon {
                 @include toEm(margin-right, 16px, 1em);
@@ -233,8 +214,8 @@
         }
     }
     &__logout {
-        @include flex-align($y: center);
-        @include flex-align-self($y: bottom);
+        @include flexAlign($y: center);
+        @include flexAlignSelf($y: bottom);
         margin-top: 1.6em;
         cursor: pointer;
         width: fit-content;

@@ -5,7 +5,7 @@
     }
 
     &__fieldset {
-        @include rounded();
+        @include borderRadius($BORDER_RADIUS);
         padding: 0.8em;
         margin-bottom: 0.4em;
         @include themify($themes) {
@@ -29,18 +29,8 @@
             }
         }
     }
-    &__input {
-        @include flex-align-self(center);
-        appearance: none;
-        @include rounded();
-        @include themify($themes) {
-            background: themed('container_color');
-            border-color: themed('container_color');
-            color: themed('text_color');
-        }
-    }
     &__error {
-        @include flex-align(center, center);
+        @include flexAlignCenter();
 
         &-info {
             @include themify($themes) {
@@ -52,7 +42,7 @@
             background-color: rgba($COLOR_ORANGE, 0.16);
             display: block;
             border: 1px solid $COLOR_ORANGE;
-            @include rounded();
+            @include borderRadius($BORDER_RADIUS);
         }
     }
     &__currency {
@@ -60,14 +50,12 @@
         float: left;
         font-size: 10px;
         height: 32px;
-        left: 32px;
-        align-items: center;
-        justify-content: center;
+        left: 36px;
         width: 20px;
-        display: flex;
         background: transparent;
         border-color: transparent;
         z-index: 2;
+        @include flexAlignCenter();
         @include themify($themes) {
             color: themed('text_primary_color');
         }
@@ -87,14 +75,14 @@
         margin: 8px 0 0;
         width: 100%;
         position: relative;
-        @include flex-align(justify);
+        @include flexAlign(justify);
         @include themify($themes) {
             color: themed('text_color');
         }
 
         &-info {
-            @include flex-align($y: center);
-            @include flex-align-self($x: left);
+            @include flexAlign($y: center);
+            @include flexAlignSelf($x: left);
 
             &-value {
                 @include typeface(--small-left-bold-black);
@@ -219,15 +207,13 @@
         &:not(:only-child) {
             &:nth-last-child(2) {
                 border-bottom-width: 0;
-                border-bottom-left-radius: 0;
-                border-bottom-right-radius: 0;
                 margin-bottom: 0 !important;
+                @include borderRadius($bl: 0, $br: 0);
             }
             &:nth-last-child(1) {
                 border-top-width: 0;
-                border-top-left-radius: 0;
-                border-top-right-radius: 0;
                 margin-bottom: 0 !important;
+                @include borderRadius($tl: 0, $tr: 0);
 
                 .trade-container__price {
                     margin-top: -4px;
@@ -237,13 +223,13 @@
     }
     &__loading {
         background: rgba(255, 255, 255, 0.6);
-        @include rounded();
+        @include borderRadius($BORDER_RADIUS);
         width: calc(100% + 2px);
         height: calc(100% + 2px);
         left: -2px;
     }
     &__lock {
-        @include flex-align(center, center);
+        @include flexAlignCenter();
         flex-direction: column;
         position: absolute;
         background: $COLOR_LIGHT_BLACK_4_SOLID;
@@ -256,7 +242,7 @@
         left: 2px;
         right: 0;
         bottom: 0;
-        @include rounded();
+        @include borderRadius($BORDER_RADIUS);
         @include themify($themes) {
             background: themed('background_container_color');
         }
@@ -285,7 +271,7 @@
             text-align: center;
             padding: 8px;
             margin: 1rem 1rem 0;
-            @include rounded();
+            @include borderRadius($BORDER_RADIUS);
             font-size: 10px;
             @include themify($themes) {
                 background: themed('background_cover');
@@ -322,12 +308,12 @@
     }
     &__return {
         @include typeface(--paragraph-left-bold-active);
-        @include flex-align(right, bottom);
+        @include flexAlign(right, bottom);
         flex-grow: 1;
     }
     &__profit {
         @include typeface(--xsmall-left-bold-active);
-        @include flex-align(right, top);
+        @include flexAlign(right, top);
         flex-grow: 1;
         line-height: unset;
     }
@@ -340,7 +326,7 @@
         flex-direction: column;
     }
     &__trade-type {
-        @include flex-align($y: center);
+        @include flexAlign($y: center);
         position: relative;
         flex-grow: 1;
         width: 100%;
@@ -396,7 +382,7 @@
             pointer-events: none;
             top: 4px;
             left: 0;
-            @include rounded();
+            @include borderRadius($BORDER_RADIUS);
             opacity: 1;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
             transition: opacity 0.3s ease-in-out;

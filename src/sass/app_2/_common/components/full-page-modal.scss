@@ -1,6 +1,6 @@
 /** @define full-page-modal */
 .full-page-modal {
-    @include flex-align(center, center);
+    @include flexAlignCenter();
     flex-direction: column;
     text-align: center;
     width: 100vw;
@@ -14,14 +14,14 @@
     background-color: transparentize($COLOR_DARK_BLUE_1, 0.7);
 
     &__dialog {
-        @include flex-align(spaced, top);
+        @include flexAlign(spaced, top);
         flex-direction: column;
         max-width: 560px;
         max-height: 320px;
         padding: 1.6em;
-        @include rounded();
+        @include borderRadius($BORDER_RADIUS);
         background-color: $COLOR_WHITE;
-        @include boxShadow();
+        @include boxShadow('drop');
     }
     &__header {
         @include themify($themes) {
@@ -39,7 +39,7 @@
         max-width: 448px;
     }
     &__footer {
-        @include flex-align(right, center);
+        @include flexAlign(right, center);
         width: 100%;
     }
     &__button {

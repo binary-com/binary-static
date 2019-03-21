@@ -1,0 +1,38 @@
+
+.inputCheckbox {
+    cursor: pointer;
+    width: 12px;
+    height: 12px;
+    margin-right: 0.8em;
+    border-radius: 2px;
+    transition: 0.25s ease-out;
+    @include flexAlignCenter();
+    @include themify($themes) {
+        border: 1px solid themed('border_hover_color');
+    }
+
+    &:hover, &:focus, &:active {
+        border-color: $COLOR_ORANGE;
+        box-shadow: none;
+    }
+    &:checked {
+        position: relative;
+        border-color: $COLOR_ORANGE !important;
+        background-color: $COLOR_ORANGE;
+
+        &:after {
+            position: absolute;
+            font-size: inherit !important;
+            color: $COLOR_WHITE;
+            content: 'L';
+            transform: scaleX(-1) rotate(-40deg);
+            margin-top: -1px;
+            margin-left: -3px;
+        }
+    }
+    &::-ms-check { // IE/EDGE support
+        background: transparent;
+        border-color: transparent;
+        color: $COLOR_WHITE;
+    }
+}

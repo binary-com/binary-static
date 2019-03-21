@@ -44,7 +44,7 @@ $content-index: 1;
         transition: all $animation-duration ease-out;
     }
     &__header {
-        @include flex-align(justify, center);
+        @include flexAlign(justify, center);
         flex-direction: row;
         width: 100%;
         position: fixed;
@@ -71,7 +71,7 @@ $content-index: 1;
         width: 100%;
         height: $header-height;
         z-index: $shadow-index;
-        @include boxShadow();
+        @include boxShadow('drop');
     }
     &__title {
         font-size: 1.3em;
@@ -101,7 +101,7 @@ $content-index: 1;
                 color: $COLOR_LIGHT_BLACK_1;
             }
             span {
-                @include flex-align-self(center);
+                @include flexAlignSelf(center);
             }
         }
         .info-gif {
@@ -110,7 +110,7 @@ $content-index: 1;
             width: calc(100% - 1.6em);
             height: fit-content;
             background-color: $COLOR_WHITE;
-            @include rounded();
+            @include borderRadius($BORDER_RADIUS);
             margin: 0 auto;
         }
         .info-content {
@@ -130,7 +130,7 @@ $content-index: 1;
             }
         }
         .info-navigation {
-            @include flex-align-self($y: bottom);
+            @include flexAlignSelf($y: bottom);
             margin-top: 1.6em;
 
             &__list {

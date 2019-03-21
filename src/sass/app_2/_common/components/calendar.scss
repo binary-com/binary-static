@@ -1,24 +1,16 @@
 
 /** @define calendar */
 .calendar {
-    position: absolute;
-    top: 0;
     background: $COLOR_WHITE;
-    outline: 0;
-    @include rounded();
-    @include boxShadow();
-    z-index: 999;
     font-size: 1em;
 
     &__header, &__footer {
-        @include flex-align(null, center);
         position: relative;
         height: 5em;
-        @include rounded();
         padding: 1.6em;
     }
     &__header {
-        justify-content: center;
+        @include flexAlignCenter();
     }
     &__body {
         border-top: 0.1em solid $COLOR_LIGHT_BLACK_4_SOLID;
@@ -28,11 +20,6 @@
             display: grid;
             grid-gap: 1.2em;
             padding: 0.8em 2em;
-
-            .calendar__cell {
-                @include flex-align(center, center);
-                @include rounded();
-            }
         }
         &--date {
             grid-template-columns: repeat(7, 2.4em);
@@ -63,7 +50,7 @@
         @extend %inline-icon;
         right: 5%;
 
-        &--today:hover {
+        &:hover {
             cursor: pointer;
         }
     }
@@ -118,6 +105,8 @@
         }
     }
     &__cell {
+        @include flexAlignCenter();
+        @include borderRadius($BORDER_RADIUS);
         @include typeface(--small-left-normal-black);
         position: relative;
         cursor: pointer;
@@ -129,22 +118,19 @@
         &:nth-child(7n) {
             &:before {
                 padding: 0;
-                @include rounded();
+                @include borderRadius($BORDER_RADIUS);
             }
         }
         &:nth-child(7n + 1) {
             &:before {
                 left: 0;
-                @include rounded();
+                @include borderRadius($BORDER_RADIUS);
             }
             &:after {
                 content: none;
             }
         }
-        &:before {
-            cursor: pointer;
-        }
-        &:after {
+        &:after, &:before {
             cursor: pointer;
         }
         &--bold {

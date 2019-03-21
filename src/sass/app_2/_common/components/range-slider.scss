@@ -7,9 +7,7 @@
 
     &__label {
         position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include flexAlignCenter();
         margin-top: 16px;
         margin-bottom: 4px;
     }
@@ -100,11 +98,10 @@
     &__ticks {
         width: 100%;
         position: absolute;
-        display: flex;
-        justify-content: space-between;
         left: 0;
         top: -2px;
         height: 0;
+        @include flexAlign($x: justify);
 
         &-step {
             height: 2px;
@@ -169,11 +166,10 @@
         }
     }
     &__caption {
-        display: flex;
         padding: 8px 0 0;
-        justify-content: space-between;
         line-height: 1.5;
         font-size: 1.4em;
+        @include flexAlign($x: justify);
 
         /* postcss-bem-linter: ignore */
         &--first, &--last {

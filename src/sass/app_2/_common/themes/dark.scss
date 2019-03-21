@@ -320,21 +320,6 @@
         }
     }
     .contract-type-widget {
-        color: $COLOR_DARK_BLUE_7;
-        background: $COLOR_DARK_BLUE_2;
-        border-color: $COLOR_DARK_BLUE_2;
-
-        &:hover {
-            border-color: $COLOR_DARK_BLUE_7;
-        }
-        &:focus, &:active {
-            border-color: $COLOR_DARK_BLUE_7;
-        }
-        &__display {
-            span[name=contract_type] {
-                color: $COLOR_DARK_BLUE_7;
-            }
-        }
         .category-wrapper {
             background: $COLOR_DARK_BLUE_5;
 
@@ -359,10 +344,9 @@
                 stroke: $COLOR_DARK_BLUE_7;
             }
         }
-        &__dialog {
-            background: $COLOR_DARK_BLUE_3;
-        }
         &__selector {
+            background: $COLOR_DARK_BLUE_3;
+
             &--hours, &--minutes {
                 border-color: $COLOR_DARK_BLUE_2;
                 color: $COLOR_DARK_BLUE_7;
@@ -397,9 +381,6 @@
         }
     }
     .input {
-        background: $COLOR_DARK_BLUE_2;
-        border-color: $COLOR_DARK_BLUE_2;
-
         &[type=checkbox] {
             border-color: $COLOR_DARK_BLUE_7;
 
@@ -415,16 +396,6 @@
                     border-color: $COLOR_DARK_BLUE_7;
                 }
             }
-        }
-        &:hover {
-            border-color: $COLOR_DARK_BLUE_7;
-        }
-        &:focus, &:active {
-            border-color: $COLOR_DARK_BLUE_7;
-            color: $COLOR_WHITE;
-        }
-        &::placeholder {
-            color: $COLOR_DARK_BLUE_7;
         }
     }
     .dropdown {
@@ -652,7 +623,7 @@
         }
         &__body {
             .positions-empty, p {
-                @include flex-align-self(center);
+                @include flexAlignSelf(center);
                 color: $COLOR_WHITE;
             }
         }

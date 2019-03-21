@@ -6,7 +6,7 @@
     width: 100%;
     height: $FOOTER_HEIGHT;
     z-index: 3;
-    @include flex-align(right, center);
+    @include flexAlign(right, center);
     @include themify($themes) {
         background-color: themed('background_color');
         color: themed('text_primary_color');
@@ -23,7 +23,7 @@
         padding: 0 0.8em;
         text-decoration: none;
         height: 100%;
-        @include flex-align($y: center, $flex: inline);
+        @include flexAlign($y: center, $flex: inline);
         position: relative;
 
         &:hover {

@@ -1,14 +1,14 @@
 /** @define page-error */
 .page-error {
     &__container {
-        @include flex-align(center);
+        @include flexAlign(center);
         margin-top: 4em;
     }
     &__box {
         padding: 5em;
         text-align: center;
         background: $COLOR_LIGHT_BLACK_4_SOLID;
-        @include rounded();
+        @include borderRadius($BORDER_RADIUS);
         border: 1px solid $COLOR_LIGHT_BLACK_4;
 
         /* postcss-bem-linter: ignore */

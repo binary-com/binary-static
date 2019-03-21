@@ -1,6 +1,6 @@
 /** @define login-prompt */
 .login-prompt {
-    @include flex-align(center, center);
+    @include flexAlignCenter();
     flex-direction: column;
     height: calc(100vh - 83px);
     margin: 0 2em;

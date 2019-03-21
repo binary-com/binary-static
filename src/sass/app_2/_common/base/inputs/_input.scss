@@ -1,0 +1,44 @@
+// Helper
+@mixin inputDisplay {
+    list-style: none;
+    position: relative;
+    display: inline-block;
+    padding-left: 0.8rem;
+    height: 3.2rem;
+    width: 100%;
+    transition: all 0.25s ease-out;
+    @include borderRadius($BORDER_RADIUS);
+    @include themify($themes) {
+        background: themed('container_color');
+        border: 1px solid themed('container_color');
+
+        &:hover {
+            border-color: themed('border_hover_color');
+        }
+        &:active, &:focus {
+            border-color: themed('border_hover_color');
+            box-shadow: 0 0 0 2px themed('border_outline_color');
+        }
+    }
+
+    &:active, &:focus {
+        outline: 0;
+    }
+    &::-ms-clear { // Edge: hide clear icon for incement input
+        display: none;
+    }
+}
+
+// Helper
+@mixin inputDisplayText {
+    appearance: none;
+    @include typeface(--paragraph-center-normal-black, capitalize);
+    @include themify($themes) {
+        color: themed('text_color');
+
+        &::placeholder {
+            color: themed('text_primary_color');
+        }
+    }
+}
+

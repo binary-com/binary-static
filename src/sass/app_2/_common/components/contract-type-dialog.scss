@@ -1,22 +1,10 @@
 /** @define contracts-type-dialog; */
 .contracts-type-dialog {
-    right: 0.4em;
-    width: 100%;
-    position: absolute;
-    user-select: none;
-    z-index: 999;
-    @include slideIn($x: -3px);
+    @include dialog($width: 290px);
+    @include slideIn($x: -230px);
 
     &__list-wrapper {
-        position: absolute;
-        width: 290px;
-        right: calc(100% + 10px);
-        top: -70px;
-        display: grid;
-        grid-auto-columns: 1fr;
-        z-index: 2;
+        padding: 1.6em;
         background: $COLOR_LIGHT_BLACK_4_SOLID;
-        @include rounded();
-        @include boxShadow();
     }
 }

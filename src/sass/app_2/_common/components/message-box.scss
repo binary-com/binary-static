@@ -6,8 +6,8 @@
     height: 100%;
     width: 100%;
     z-index: 2;
-    @include rounded();
-    @include flex-align($y: center);
+    @include borderRadius($BORDER_RADIUS);
+    @include flexAlign($y: center);
     @include themify($themes) {
         background: themed('background_container_color');
         color: themed('text_primary_color');
@@ -31,7 +31,7 @@
         max-height: 187px;
         height: 100%;
         width: 100%;
-        @include flex-align(center, center);
+        @include flexAlignCenter();
         flex-direction: column;
         @include themify($themes) {
             color: themed('text_primary_color');
@@ -54,7 +54,7 @@
         }
     }
     &__login {
-        @include flex-align(center, center);
+        @include flexAlignCenter();
         flex-direction: column;
         height: 100%;
         width: 100%;
@@ -99,7 +99,7 @@
         }
     }
     &__info {
-        @include flex-align(center, center);
+        @include flexAlignCenter();
         padding: 0.5rem 1.5rem;
         text-align: center;
     }

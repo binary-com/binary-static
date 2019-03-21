@@ -21,9 +21,9 @@
             @include themify($themes) {
                 color: themed('text_primary_color');
             }
-            @include flex-align(justify, center);
+            @include flexAlign(justify, center);
             flex-direction: column;
-            @include rounded();
+            @include borderRadius($BORDER_RADIUS);
             padding: 16px;
             text-decoration: none;
 
@@ -68,8 +68,8 @@
         width: 736px;
         position: relative;
         overflow: hidden;
-        @include boxShadow();
-        @include rounded();
+        @include boxShadow('drop');
+        @include borderRadius($BORDER_RADIUS);
 
         &--hide {
             display: none;
@@ -80,9 +80,9 @@
  * @define dialog-header
  */
 .dialog-header {
-    @include flex-align(justify, null);
+    @include flexAlign(justify, null);
     width: 100%;
-    @include boxShadow();
+    @include boxShadow('drop');
 
     &__sidebar {
         @include typeface(--title-left-bold-black);
@@ -99,7 +99,7 @@
         font-size: 16px;
         padding: 16px;
         line-height: 24px;
-        @include flex-align(right, center);
+        @include flexAlign(right, center);
     }
     &__close {
         display: block;

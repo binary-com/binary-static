@@ -5,11 +5,11 @@
     left: 50%;
     bottom: 4em;
     background: $COLOR_WHITE;
-    @include boxShadow();
+    @include boxShadow('drop');
     width: 348px;
     min-height: 9em;
     font-weight: 500;
-    @include rounded();
+    @include borderRadius($BORDER_RADIUS);
     transform: scale(0, 0) translate(-50%, 0);
     opacity: 0;
     transform-origin: left bottom;
@@ -24,10 +24,10 @@
         margin: 0 0.8em;
         box-shadow: none;
         text-decoration: none;
-        @include flex-align(center, center);
+        @include flexAlignCenter();
 
         &-wrapper {
-            @include flex-align(right, center);
+            @include flexAlign(right, center);
         }
         &-text {
             color: $COLOR_DARK_BLUE_5 !important;
@@ -37,7 +37,7 @@
     &__title {
         margin: 0.8em;
         padding: 0.8em;
-        @include flex-align($y: center);
+        @include flexAlign($y: center);
         flex-direction: row;
     }
     &__icon_exclamation {

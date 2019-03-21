@@ -1,6 +1,6 @@
 /** @define error-box */
 .error-box {
-    @include flex-align(center, center);
+    @include flexAlignCenter();
     height: 100vh;
     width: 100%;
     text-align: center;

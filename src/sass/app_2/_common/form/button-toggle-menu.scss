@@ -1,24 +1,23 @@
 /** @define button-menu */
 .button-menu {
-    @include flex-align(center);
+    @include flexAlign(center);
     width: 100%;
 
     &__button:first-child {
-        border-top-left-radius: 4px;
-        border-bottom-left-radius: 4px;
+        @include borderRadius($tl: $BORDER_RADIUS, $bl: $BORDER_RADIUS);
     }
     &__button:last-child {
-        border-top-right-radius: 4px;
-        border-bottom-right-radius: 4px;
+        @include borderRadius($tr: $BORDER_RADIUS, $br: $BORDER_RADIUS);
     }
     &__button {
         margin: 0;
-        border-radius: 0px;
         width: 50%;
+        transition: all 0.25s ease;
+        border-radius: 0;
         @include themify($themes) {
             background-color: themed('container_color');
 
-            &:hover:not(&--active) {
+            &:hover:not(.button-menu__button--active) {
                 background-color: themed('tab_hover_color');
             }
         }

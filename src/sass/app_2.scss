@@ -2,8 +2,10 @@
 @import 'app_2/_common/base/reset';
 @import 'app_2/_common/base/constants';
 @import 'app_2/_common/base/themes';
-@import 'app_2/_common/base/mixin';
 @import 'app_2/_common/base/flexbox_mixin';
+@import 'app_2/_common/base/mixin';
+@import 'app_2/_common/base/inputs/_checkbox';
+@import 'app_2/_common/base/inputs/input';
 @import 'app_2/_common/base/typography';
 @import 'app_2/_common/base/common';
 

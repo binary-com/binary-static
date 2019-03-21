@@ -272,8 +272,16 @@
     }
 }
 
-@mixin rounded($radius: $BORDER_RADIUS) {
-    border-radius: $radius;
+@mixin borderRadius($radius: null, $tl: none, $tr: none, $bl: none, $br: none) {
+    @if ($radius) {
+        border-radius: $radius;
+    }
+    @else {
+        border-top-left-radius: $tl;
+        border-top-right-radius: $tr;
+        border-bottom-left-radius: $bl;
+        border-bottom-right-radius: $br;
+    }
 }
 
 @mixin boxShadow($type: null, $shadow_color: null) {
@@ -286,7 +294,7 @@
                 box-shadow: 0 0 0 2px themed('border_outline_color');
             }
         }
-        @else {
+        @if ($type == 'drop') {
             box-shadow: 0 2px 8px 0 themed('box_shadow_color');
         }
     }
@@ -302,27 +310,97 @@
    @include slideIn($x: 10px, $duration: 0.4s);
  */
 @mixin slideIn($x: null, $y: null, $duration: 0.25s) {
+    z-index: 1;
     opacity: 0;
     transition: transform $duration ease, opacity $duration linear;
 
     @if ($x) {
+        $offset_x: 0;
+        @if ($x < 0) {
+            $offset_x: calc(#{$x} + 2em); // slide-in from left
+        }
+        @else {
+            $offset_x: calc(#{$x} - 2em); // slide-in from right
+        }
+
         &--enter, &--exit {
-            transform: translate(calc(#{$x} + 2em), 0);
+            transform: translate($offset_x, 0);
             opacity: 0;
         }
         &--enter-done {
-            transform: translate($x, 0);
+            transform: translate(calc(#{$x} - 0.8em), 0);
             opacity: 1;
         }
     }
     @if ($y) {
+        $offset_y: 0;
+        @if ($y < 0) {
+            $offset_y: calc(#{$y} + 2em); // slide-in from bottom
+        }
+        @else {
+            $offset_y: calc(#{$y} - 2em); // slide-in from top
+        }
+
         &--enter, &--exit {
-            transform: translate(0, $y);
+            transform: translate(0, $offset_y);
             opacity: 0;
         }
         &--enter-done {
-            transform: translate(0, 0);
+            transform: translate(0, $y);
             opacity: 1;
+        }
+    }
+}
+
+@mixin dialog($width: auto, $height: auto) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: $width;
+    height: $height;
+    user-select: none;
+    outline: 0;
+    z-index: 999;
+
+    > * { // target immediate child 
+        position: absolute;
+        top: inherit;
+        right: inherit;
+        width: inherit;
+        height: inherit;
+        @include borderRadius($BORDER_RADIUS);
+        @include boxShadow('drop');
+    }
+}
+
+@mixin styledList() {
+    &:first-child {
+        @include borderRadius($tl: $BORDER_RADIUS, $tr: $BORDER_RADIUS);
+    }
+    &:last-child {
+        @include borderRadius($bl: $BORDER_RADIUS, $br: $BORDER_RADIUS);
+    }
+    &:only-child {
+        @include borderRadius($BORDER_RADIUS);
+    }
+    &:active, &:focus {
+        outline: none;
+        @include borderRadius($BORDER_RADIUS);
+    }
+    &:hover {
+        cursor: pointer;
+    }
+    transition: all 0.25s ease-out;
+
+    @include themify($themes) {
+        background-color: themed('container_color');
+
+        &:hover {
+            background-color: themed('hover_color');
+        }
+        &--selected:hover, &--selected {
+            color: themed('text_active_color');
+            background-color: themed('active_color');
         }
     }
 }

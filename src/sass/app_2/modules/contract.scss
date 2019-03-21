@@ -1,19 +1,19 @@
 .contract-container {
     font-size: 1.4em;
-    @include rounded();
+    @include borderRadius($BORDER_RADIUS);
     position: relative;
 
     .contract-header {
         max-height: 32px;
         overflow: hidden;
-        border-radius: $BORDER_RADIUS $BORDER_RADIUS 0 0;
+        @include borderRadius($tl: $BORDER_RADIUS, $tr: $BORDER_RADIUS);
 
         .header-wrapper {
             transition: transform 0.4s ease;
             transform: translateY(-32px);
 
             .header-result, .header-purchased {
-                @include flex-align($y: center);
+                @include flexAlign($y: center);
                 padding: 5px;
                 color: $COLOR_WHITE;
                 font-weight: bold;
@@ -93,7 +93,7 @@
             padding: 0.7em 0;
 
             > div {
-                @include flex-align-self(center);
+                @include flexAlignSelf(center);
 
                 &:first-child {
                     font-weight: 300;
@@ -111,13 +111,8 @@
 $CONTRACT_INFO_BOX_PADDING: 1.6em;
 
 .info-box-container {
-    position: absolute;
-    z-index: 10;
-    top: 1em;
-    right: 1em;
-    @include flex-align(justify);
-    width: 100%;
-    @include slideIn($y: calc(-100% - 2em), $duration: 0.3s);
+    @include flexAlign(justify);
+    @include slideIn($y: 20px, $duration: 0.3s);
 
     &-button:hover {
         cursor: pointer;
@@ -128,7 +123,7 @@ $CONTRACT_INFO_BOX_PADDING: 1.6em;
     }
     .info-box {
         position: relative;
-        @include rounded();
+        @include borderRadius($BORDER_RADIUS);
         padding: $CONTRACT_INFO_BOX_PADDING;
         background: rgba(42, 48, 82, 0.04);
         font-weight: 300;
@@ -147,7 +142,7 @@ $CONTRACT_INFO_BOX_PADDING: 1.6em;
             }
         }
         .expired {
-            @include flex-align($y: center);
+            @include flexAlign($y: center);
 
             svg {
                 width: 2.4em;
@@ -184,7 +179,7 @@ $CONTRACT_INFO_BOX_PADDING: 1.6em;
             }
         }
         .general {
-            @include flex-align($y: center);
+            @include flexAlign($y: center);
             line-height: 1.4em;
 
             .values {
@@ -201,7 +196,7 @@ $CONTRACT_INFO_BOX_PADDING: 1.6em;
                 }
             }
             .sell {
-                @include flex-align($y: center);
+                @include flexAlign($y: center);
                 flex-direction: column;
                 text-align: center;
                 margin: -$CONTRACT_INFO_BOX_PADDING;
@@ -225,10 +220,10 @@ $CONTRACT_INFO_BOX_PADDING: 1.6em;
     .message {
         margin-top: 0.5em;
         border: 1px solid $COLOR_RED;
-        @include rounded();
+        @include borderRadius($BORDER_RADIUS);
         padding: 1em;
         background-color: rgba(244, 67, 54, 0.16);
-        @include flex-align($y: center);
+        @include flexAlign($y: center);
 
         .message-icon {
             margin-right: 1em;
@@ -246,6 +241,7 @@ $CONTRACT_INFO_BOX_PADDING: 1.6em;
         z-index: 11;
         right: 0;
         top: 0;
+        margin-right: 1.6em;
     }
 }
 

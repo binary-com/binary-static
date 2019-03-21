@@ -115,7 +115,7 @@ html {
     font-style: inherit;
     padding: 2px 3px;
     border: 1px solid $COLOR_LIGHT_BLACK_4;
-    @include rounded();
+    @include borderRadius($BORDER_RADIUS);
 }
 
 /** @define input */

@@ -11,7 +11,7 @@
     }
 
     &__menu-items {
-        @include flex-align($y: center);
+        @include flexAlign($y: center);
         position: relative;
         width: 100%;
         height: 100%;
@@ -19,11 +19,11 @@
     &__navbar-icons {
         cursor: pointer;
         padding: 0.8em 1.6em;
-        @include flex-align-self(center);
+        @include flexAlignSelf(center);
         height: 100%;
 
         &--binary-logo {
-            @include flex-align(center, center);
+            @include flexAlignCenter();
         }
         &--notify-toggle {
             order: 2;
@@ -33,23 +33,23 @@
         }
     }
     &__menu-left {
-        @include flex-align($x: left, $flex: inline);
+        @include flexAlign($x: left, $flex: inline);
         order: -1;
         flex: 1;
         height: #{$HEADER_HEIGHT - 1px};
 
     }
     &__menu-right {
-        @include flex-align($x: right, $flex: inline);
+        @include flexAlign($x: right, $flex: inline);
         order: 1;
         height: #{$HEADER_HEIGHT - 1px};
     }
     &__menu-toggle {
-        @include flex-align($y: center);
+        @include flexAlign($y: center);
     }
     &__menu-links {
         height: 100%;
-        @include flex-align-self(center);
+        @include flexAlignSelf(center);
 
         @media (max-width: 980px) {
             display: none;
@@ -60,7 +60,7 @@
         padding: 0 1.6em;
         text-decoration: none;
         position: relative;
-        @include flex-align(spaced, center, inline);
+        @include flexAlign(spaced, center, inline);
         transition: background-color 0.3s;
 
         &-text {

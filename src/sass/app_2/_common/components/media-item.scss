@@ -16,14 +16,14 @@
         background-color: $COLOR_LIGHT_BLACK_3;
     }
     &__description {
-        @include flex-align(left, top);
+        @include flexAlign(left, top);
         @include typeface(--paragraph-left-normal-black);
         @include themify($themes) {
             color: themed('text_color');
         }
     }
     &__form {
-        @include flex-align(left, top);
+        @include flexAlign(left, top);
         flex-direction: column;
     }
 }

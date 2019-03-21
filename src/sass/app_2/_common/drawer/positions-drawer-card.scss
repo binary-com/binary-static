@@ -17,11 +17,11 @@
         width: 100%;
         height: 100%;
         max-height: 130px;
-        @include rounded();
+        @include borderRadius($BORDER_RADIUS);
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
         z-index: 2;
-        @include flex-align(center, center);
+        @include flexAlignCenter();
         transition: background 0.25s linear;
 
         &:hover {
@@ -37,7 +37,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            @include rounded();
+            @include borderRadius($BORDER_RADIUS);
             z-index: 2;
         }
         @include themify($themes) {
@@ -54,7 +54,7 @@
     &__wrapper {
         padding: 0.8em;
         margin: 0 1em;
-        @include rounded();
+        @include borderRadius($BORDER_RADIUS);
         transition: transform 0.25s ease, opacity 0.25s linear;
         position: relative;
         @include themify($themes) {
@@ -69,7 +69,7 @@
             top: 0;
             position: absolute;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.24);
-            @include rounded();
+            @include borderRadius($BORDER_RADIUS);
             pointer-events: none;
         }
         &:first-child {
@@ -109,7 +109,7 @@
         width: calc(100% + 18px);
         left: -9px;
         top: -9px;
-        @include rounded();
+        @include borderRadius($BORDER_RADIUS);
     }
     &__grid {
         display: grid;
@@ -120,7 +120,7 @@
         }
         &-profit-payout {
             padding: 8px 0;
-            @include rounded();
+            @include borderRadius($BORDER_RADIUS);
             margin-left: -4px;
             margin-right: -4px;
             @include themify($themes) {
@@ -132,7 +132,7 @@
         &-price {
             font-size: 1.2em;
             padding: 8px;
-            @include flex-align(center, center);
+            @include flexAlignCenter();
             font-weight: bold;
         }
         &-label {
@@ -147,7 +147,7 @@
     }
     &__type {
         font-size: 1.2em;
-        @include flex-align(left, null);
+        @include flexAlign(left, null);
         font-weight: bold;
     }
     &__symbol {
@@ -158,7 +158,7 @@
     &__indicative {
         font-size: 1.2em;
         font-weight: bold;
-        @include flex-align(center, center);
+        @include flexAlignCenter();
         @include themify($themes) {
             &--price-stable {
                 color: themed('navbar_active_color');
@@ -187,7 +187,7 @@
     &__profit-loss {
         font-size: 1.2em;
         text-align: center;
-        @include flex-align(center, center);
+        @include flexAlignCenter();
         font-weight: bold;
 
         &-label {
@@ -216,12 +216,12 @@
         }
     }
     &__underlying-name {
-        @include flex-align(left, center);
+        @include flexAlign(left, center);
         font-weight: bold;
         font-size: 1.2em;
     }
     &__sell-button {
-        @include flex-align(center, center);
+        @include flexAlignCenter();
         transition: transform 0.25s ease, opacity 0.25s linear;
 
         &--enter-done {
@@ -237,13 +237,13 @@
 
 /** @define contract-type */
 .contract-type {
-    @include flex-align(center, center);
+    @include flexAlignCenter();
     flex-direction: row;
 
     &__type-wrapper {
         margin: 0 0.4em 0 0;
         padding: 0.5em;
-        @include flex-align(center, center);
+        @include flexAlignCenter();
 
         /* postcss-bem-linter: ignore */
         .category-type {

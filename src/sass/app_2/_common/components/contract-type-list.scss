@@ -1,34 +1,16 @@
 /** @define contract-type-list; */
 .contract-type-list {
-    padding: 1.6em 1.6em 0em;
+    margin-bottom: 1.6em;
 
+    &:last-child {
+        margin-bottom: 0;
+    }
     &__label {
         @include typeface(--paragraph-left-bold-black);
         @include themify($themes) {
             color: themed('text_primary_color');
         }
-        margin-bottom: 0.6em;
-    }
-    &:last-child {
-        padding-bottom: 1.6em;
-    }
-    &__contracts-wrapper {
-        &:first-child {
-            border-top-left-radius: 4px;
-            border-top-right-radius: 4px;
-            border-bottom: none;
-        }
-        &:last-child {
-            border-top: none;
-            border-bottom-left-radius: 4px;
-            border-bottom-right-radius: 4px;
-        }
-        &:only-child {
-            @include rounded();
-        }
-        &:hover:not(.selected) {
-            background: $COLOR_LIGHT_BLACK_4;
-        }
+        margin-bottom: 0.8em;
     }
 }
 
@@ -36,15 +18,14 @@
 .contract-type-item {
     width: 100%;
     cursor: pointer;
-    @include flex-align($y: center, $flex: inline);
+    @include flexAlign($y: center, $flex: inline);
     flex-direction: row;
     padding: 0.8em;
     margin-bottom: 0.1em;
     background-color: $COLOR_WHITE;
+    @include styledList();
 
     &:hover {
-        background-color: $COLOR_LIGHT_BLACK_4;
-
         .contract-type-item__icon {
             display: block;
         }
@@ -71,10 +52,6 @@
         }
     }
     &--selected {
-        @include themify($themes) {
-            color: themed('text_active_color');
-            background: themed('active_color');
-        }
         /* postcss-bem-linter: ignore */
         span {
             font-weight: bold;
@@ -94,7 +71,7 @@
         }
     }
     &__icon-wrapper {
-        @include flex-align(center, center, inline);
+        @include flexAlignCenter(inline);
         margin-right: 0.7em;
 
         /* postcss-bem-linter: ignore */

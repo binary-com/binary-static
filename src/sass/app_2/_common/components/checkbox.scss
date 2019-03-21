@@ -1,32 +1,18 @@
 .checkbox {
-    @include flex-align(left, top);
+    @include flexAlignCenter();
     cursor: pointer;
 
     &__box {
-        width: 16px;
+        @extend .inputCheckbox;
+        border-width: 2px !important;
         height: 16px;
-        transition: 0.3s ease-in-out;
-        flex-shrink: 0;
-        margin-right: 8px;
-        border-radius: 2px;
-        border: 2px solid $COLOR_DARK_BLUE_7;
+        width: 16px;
 
         &--active {
-            border: none;
-            background-color: $COLOR_ORANGE;
+            @extend .inputCheckbox:checked;
 
             &:after {
-                font-size: 1em;
-                color: $COLOR_WHITE;
-                font-weight: 500;
-                text-transform: capitalize;
-                text-align: left;
-                line-height: unset;
-                content: 'L';
-                transform: scaleX(-1) rotate(-40deg);
-                position: absolute;
-                margin-left: 0.25em;
-                margin-top: -0.2em;
+                margin-left: -1px;
             }
         }
     }

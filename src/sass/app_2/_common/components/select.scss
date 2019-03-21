@@ -19,7 +19,7 @@
         margin: 8px 0;
         display: block;
         font-weight: 300;
-        @include flex-align-self(center);
+        @include flexAlignSelf(center);
         appearance: none;
         background: $COLOR_WHITE;
 

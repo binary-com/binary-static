@@ -1,16 +1,13 @@
 /** @define contract-type-widget; */
 .contract-type-widget {
-    position: relative;
-    z-index: 2;
-    background: $COLOR_WHITE;
-    border: solid 1px $COLOR_WHITE;
-    @include rounded();
-    color: $COLOR_LIGHT_BLACK_1;
+    height: unset;
+    margin-top: 0;
+    @extend .dropdown__display;
+    @include flexAlign(left, center);
 
     &__display {
+        padding: 1.6em;
         cursor: pointer;
-        @include flex-align(left, center);
-        flex-direction: column;
 
         /* postcss-bem-linter: ignore */
         span[name=contract_type] {
@@ -18,54 +15,19 @@
             @include themify($themes) {
                 color: themed('text_color') !important;
             }
-            vertical-align: middle;
-        }
-        &:hover, &:focus {
-            border-color: $COLOR_DARK_BLUE_5;
-            outline: none;
-        }
-        &--clicked {
-            border-color: $COLOR_DARK_BLUE_5;
-
-            .contract-type-widget__select-arrow {
-                transform: rotate(-90deg);
-            }
         }
     }
     &__select-arrow {
-        display: inline-block;
-        font-style: normal;
-        vertical-align: baseline;
-        text-align: center;
-        text-transform: none;
-        text-rendering: optimizeLegibility;
-        position: absolute;
-        pointer-events: none;
-        top: 40%;
-        left: 0.6em;
-        line-height: 1;
-        transition: transform 0.25s ease;
-        transform: rotate(90deg);
-        transform-origin: 45% 45;
-        color: $COLOR_LIGHT_BLACK_4;
-        @extend %inline-icon;
+        @extend .dropdown__select-arrow;
     }
     &__icon-wrapper {
-        @include flex-align(center, center, inline);
-        margin-bottom: 0.6em;
+        @include flexAlignCenter(inline);
+        margin-left: 0.8em;
+        margin-right: 0.8em;
 
         /* postcss-bem-linter: ignore */
         .category-wrapper {
             margin: 0 0.2em;
         }
-    }
-    &:hover {
-        border-color: $COLOR_LIGHT_GRAY_1;
-    }
-    &:active, &:focus, &--show {
-        outline: none;
-        border-color: $COLOR_LIGHT_GRAY_1;
-        @include rounded();
-        @include boxShadow('spread');
     }
 }

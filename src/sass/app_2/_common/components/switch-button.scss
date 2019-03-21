@@ -43,7 +43,7 @@
 
 /** @define toggle-chart-layout */
 .toggle-chart-layout {
-    @include rounded();
+    @include borderRadius($BORDER_RADIUS);
     padding: 0.2em;
     transition: all 0.4s ease;
     outline: 0;
@@ -69,7 +69,7 @@
     &:after {
         left: 0;
         position: relative;
-        @include rounded();
+        @include borderRadius($BORDER_RADIUS);
         display: block;
         content: '';
     }

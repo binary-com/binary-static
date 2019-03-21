@@ -23,7 +23,7 @@
 
 /** @define tab */
 .tab {
-    @include flex-align(spaced, center, inline);
+    @include flexAlign(spaced, center, inline);
     flex: 1;
     -webkit-box-flex: 1;
 

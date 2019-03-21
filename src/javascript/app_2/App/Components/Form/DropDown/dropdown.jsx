@@ -130,7 +130,7 @@ class Dropdown extends React.Component {
 
         // we are calculating the offset for the dropdown list based on it's width here
         const left_alignment_style = {
-            transform: `translate3d(calc(-${this.state.list_width}px), 0, 0px)`,
+            transform: `translate3d(calc(-${this.state.list_width}px - 12px), 0, 0px)`,
         };
 
         // upon render via css transition group, we use this as a callback to set the width of the dropdown list in the state
@@ -178,9 +178,9 @@ class Dropdown extends React.Component {
                     in={this.state.is_list_visible}
                     timeout={100}
                     classNames={{
-                        enter    : `${this.props.is_alignment_left ? 'dropdown__list--enter' : ''}`,
-                        enterDone: `${this.props.is_alignment_left ? 'dropdown__list--enter-done' : ''}`,
-                        exit     : `${this.props.is_alignment_left ? 'dropdown__list--exit' : ''}`,
+                        enter    : 'dropdown__list--enter',
+                        enterDone: 'dropdown__list--enter-done',
+                        exit     : 'dropdown__list--exit',
                     }}
                     onEntered={setListWidth}
                     unmountOnExit

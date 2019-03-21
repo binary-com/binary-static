@@ -21,7 +21,7 @@ $header-height: 4em;
     transform: translateX(-100%);
     will-change: transform, opacity;
     transition: opacity 0.3s ease, transform 0.3s ease;
-    @include rounded();
+    @include borderRadius($BORDER_RADIUS);
     @include themify($themes) {
         border: 1px solid themed('background_container_color');
         background-color: themed('background_container_color');
@@ -54,7 +54,7 @@ $header-height: 4em;
     }
     &__header {
         height: $header-height;
-        @include flex-align($y: center);
+        @include flexAlign($y: center);
         flex-direction: row;
         padding: 0 1em;
     }
@@ -64,7 +64,7 @@ $header-height: 4em;
         height: calc(100% - #{$header-height});
         padding: 0.8em 0 0;
         overflow: hidden;
-        @include flex-align-self(center);
+        @include flexAlignSelf(center);
         @include themify($themes) {
             color: themed('text_color');
         }
@@ -72,7 +72,7 @@ $header-height: 4em;
     &__footer {
         position: relative;
         height: 6em;
-        @include flex-align(center, center);
+        @include flexAlignCenter();
 
         .btn {
             width: 100%;

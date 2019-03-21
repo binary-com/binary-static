@@ -238,7 +238,7 @@
 
 /** @define advanced-simple-toggle */
 .advanced-simple-toggle {
-    @include flex-align(center, center);
+    @include flexAlignCenter();
     height: 3.2em;
     width: 100%;
     margin-top: 0.8em;
@@ -265,7 +265,7 @@
     width: 2.4em;
     height: 2.4em;
     border-radius: 3px;
-    @include flex-align(center, center);
+    @include flexAlignCenter();
     @include themify($themes) {
         background: themed('background_icon_color');
     }
@@ -311,7 +311,7 @@
 /** @define error */
 .error {
     &__container {
-        @include flex-align(center, center);
+        @include flexAlignCenter();
         flex-direction: column;
         height: calc(100vh - 9em); // TODO: replace with 100vh - header height - footer height
     }

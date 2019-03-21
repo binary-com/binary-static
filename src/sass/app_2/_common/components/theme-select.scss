@@ -1,5 +1,5 @@
 .theme-select-settings {
-    @include flex-align($y: top);
+    @include flexAlign($y: top);
     flex-direction: column;
     width: 100%;
 
@@ -12,11 +12,11 @@
         margin-bottom: 16px;
     }
     &__content {
-        @include flex-align(justify, top);
+        @include flexAlign(justify, top);
         width: 100%;
     }
     &__option {
-        @include flex-align(center, center);
+        @include flexAlignCenter();
         flex-direction: column;
         width: 234px;
         height: 207px;
@@ -33,7 +33,7 @@
             width: 234px;
             height: 178px;
             cursor: pointer;
-            @include rounded();
+            @include borderRadius($BORDER_RADIUS);
             @include themify($themes) {
                 border: 1px solid themed('text_primary_color');
             }

@@ -9,8 +9,8 @@
     &__selection {
         width: calc(20% - 4px);
         height: 24px;
-        @include rounded();
-        @include flex-align(center, center, inline);
+        @include borderRadius($BORDER_RADIUS);
+        @include flexAlignCenter(inline);
         @include typeface(--paragraph-left-normal-black);
         @include themify($themes) {
             background-color: themed('container_color');

@@ -1,7 +1,7 @@
 .modal-root {
     width: 100vw;
     height: 100vh;
-    @include flex-align(center, center);
+    @include flexAlignCenter();
     position: absolute;
     top: 0;
     left: 0;

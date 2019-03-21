@@ -44,7 +44,7 @@
             @include typeface(--small-left-normal-active, none);
             text-decoration: none;
             letter-spacing: normal;
-            @include rounded();
+            @include borderRadius($BORDER_RADIUS);
             content: attr(data-tooltip);
             padding: 0.8em;
             white-space: nowrap;

@@ -1,9 +1,9 @@
 /** @define digits */
 .digits {
-    @include flex-align($y: center);
     position: relative;
     margin: 0 2.5em 0 1em;
-    @include slideIn($y: calc(100% + 2em), $duration: 0.3s);
+    @include flexAlign($y: center);
+    @include slideIn($y: -20px, $duration: 0.3s);
 
     &__digit {
         margin: 0 0.4em;
@@ -14,7 +14,7 @@
             @include typeface(--paragraph-center-bold-black);
             @include toEm(width, 40px, 1em);
             @include toEm(height, 40px, 1em);
-            @include flex-align(center, center);
+            @include flexAlignCenter();
             margin-bottom: 0.5em;
             border-radius: 50%;
             background-color: $COLOR_LIGHT_BLACK_4_SOLID;

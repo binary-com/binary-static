@@ -19,7 +19,7 @@
     }
     .contract-type {
         flex-grow: 1;
-        @include flex-align($y: center);
+        @include flexAlign($y: center);
         flex-direction: column;
         text-align: center;
 
@@ -29,7 +29,7 @@
             padding: 0.5em;
             margin-bottom: 0.3em;
             border-radius: 100%;
-            @include flex-align(center, center);
+            @include flexAlignCenter();
             @include themify($themes) {
                 background: themed('background_icon_color');
             }
@@ -68,8 +68,8 @@
     display: flex;
 
     &__wrapper {
-        @include flex-align(center, center);
-        @include flex-align-self(center);
+        @include flexAlignCenter();
+        @include flexAlignSelf(center);
         flex-direction: column;
         width: 100%;
     }
@@ -99,7 +99,7 @@
         font-size: 1em;
         padding: 0.5em;
         border-bottom: 1px solid $COLOR_LIGHT_BLACK_4;
-        @include flex-align(justify);
+        @include flexAlign(justify);
     }
     /* postcss-bem-linter: ignore */
     &__refid a {
