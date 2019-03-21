@@ -107,10 +107,7 @@ export default class ContractStore extends BaseStore {
         this.is_left_epoch_set = false;
 
         destroyChartTickMarkers();
-        this.smart_chart.removeBarriers();
-        this.smart_chart.removeMarkers();
-        this.smart_chart.resetScrollZoom();
-        this.smart_chart.setContractMode(false);
+        this.smart_chart.cleanupContractChartView();
     }
 
     @action.bound

@@ -8,6 +8,7 @@ import ServerTime             from '_common/base/server_time';
 import { WS }                 from 'Services';
 import { ChartBarrierStore }  from './chart-barrier-store';
 import { ChartMarkerStore }   from './chart-marker-store';
+import { tick_chart_types }   from './Constants/chart';
 import {
     barriersObjectToArray,
     isBarrierSupported }      from './Helpers/barriers';
@@ -42,6 +43,9 @@ export default class SmartChartStore extends BaseStore {
     @action.bound
     updateGranularity(granularity) {
         this.granularity = granularity;
+        if (granularity === 0 && !tick_chart_types.includes(this.chart_type)) {
+            this.chart_type = 'mountain';
+        }
     }
 
     @action.bound
@@ -57,6 +61,14 @@ export default class SmartChartStore extends BaseStore {
     @action.bound
     updateChartZoom(percentage) {
         this.zoom = percentage;
+    }
+
+    @action.bound
+    cleanupContractChartView() {
+        this.removeBarriers();
+        this.removeMarkers();
+        this.resetScrollZoom();
+        this.setContractMode(false);
     }
 
     @action.bound
