@@ -447,14 +447,12 @@ $linear-gradient-white-blur: linear-gradient(to left, rgba(255, 255, 255, 0), $C
                 border-color: transparent transparent transparent themed('purchase_detail_background_color');
             }
         }
-        .btn-purchase__trade-type-icon, .btn-purchase__trade-type-text, .btn-purchase__profit, .btn-purchase__return {
-            overflow: hidden;
-        }
         .btn-purchase__trade-type-icon, .btn-purchase__trade-type-icon svg {
             width: 16px;
             height: 16px;
         }
         .btn-purchase__trade-type-icon, .btn-purchase__trade-type-text, .btn-purchase__profit-text__wrapper, .btn-purchase__return-text__wrapper {
+            overflow: hidden;
             @include themify($themes) {
                 background-color: rgba(themed('loader_background'), 0.16);
             }
