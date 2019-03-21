@@ -219,7 +219,7 @@
  * generate sets of themes keys object property (dark / light)
  * @param $themes - themes property
  * Usage example:
-   @include themify($themes) { color: $COLOR_WHITE }
+   @include themify($themes) { color: themed('background_color') }
  */
 @mixin themify($themes) {
     @each $theme, $map in $themes {

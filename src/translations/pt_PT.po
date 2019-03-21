@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-03-18 13:56\n"
+"PO-Revision-Date: 2019-03-21 11:13\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Portuguese\n"
 "MIME-Version: 1.0\n"
@@ -428,6 +428,9 @@ msgstr "Prêmio de \"Melhor Operador de Apostas Financeiras do Ano\" concedido p
 
 msgid "(One) Touch trades"
 msgstr "Negociações de (Um) Toque"
+
+msgid "(This limit may vary depending on current exchange rates.)"
+msgstr ""
 
 msgid "(a) Price and cost"
 msgstr "(a) Preço e custo"
@@ -1499,7 +1502,7 @@ msgstr "Ativos"
 msgid "Asset Index"
 msgstr "Índice de Ativos"
 
-msgid "Asset index is unavailable in this country. If you have an active %1 account, please log in for full access."
+msgid "Asset index is unavailable in this country. If you have an active %1 account, please %2log in%3 for full access."
 msgstr ""
 
 msgid "Assign and manage multiple sub-accounts seamlessly via one interface – the Multiple Accounts Manager (MAM)."
@@ -2029,6 +2032,9 @@ msgstr "Tanto o valor do depósito como o valor do bônus são apresentados de f
 
 msgid "Brand of first car"
 msgstr "Marca do primeiro carro"
+
+msgid "Brazil"
+msgstr ""
 
 msgid "Browse and trade securely on your preferred device"
 msgstr "Navegue e negocie de forma segura no seu dispositivo preferido"
@@ -4472,6 +4478,9 @@ msgstr "Sexta-feira"
 msgid "From"
 msgstr ""
 
+msgid "From account: "
+msgstr ""
+
 msgid "Front Side"
 msgstr "Frente"
 
@@ -6480,9 +6489,6 @@ msgstr ""
 msgid "Matches/Differs"
 msgstr "Combina/Difere"
 
-msgid "Max"
-msgstr "Máx."
-
 msgid "Maximum Payout"
 msgstr "Prêmio máximo"
 
@@ -6953,6 +6959,9 @@ msgstr "Funções não técnicas"
 
 msgid "Not"
 msgstr "Não"
+
+msgid "Not announced for this currency."
+msgstr ""
 
 msgid "Not at all. Joining our affiliate programme is completely free and always will be."
 msgstr "De modo algum. A inscrição no nosso programa de afiliados é totalmente gratuita e sempre será."
@@ -8976,6 +8985,9 @@ msgstr "Lamentamos, a sua conta não está autorizada a mais compras de contrato
 msgid "Source of Wealth"
 msgstr "Fonte de riqueza"
 
+msgid "South Africa"
+msgstr ""
+
 msgid "Spam - We do not condone Spam"
 msgstr "Spam - Não toleramos Spam"
 
@@ -10624,6 +10636,9 @@ msgstr "Título"
 msgid "To"
 msgstr ""
 
+msgid "To account: "
+msgstr ""
+
 msgid "To apply, please submit your CV and a cover letter to %1"
 msgstr "Para se candidatar, envie o seu CV e uma carta de apresentação para %1"
 
@@ -10948,6 +10963,9 @@ msgstr ""
 msgid "Trading platforms"
 msgstr "Plataformas de negociação"
 
+msgid "Trading times is unavailable in this country. If you have an active %1 account, please %2log in%3 for full access."
+msgstr ""
+
 msgid "TradingView"
 msgstr "TradingView"
 
@@ -10989,6 +11007,9 @@ msgstr "Transfira fundos da sua conta de opções binárias para a sua conta Met
 
 msgid "Transfer funds to your MT5 account"
 msgstr "Transfira fundos para a sua conta MT5"
+
+msgid "Transfer limit: %1*"
+msgstr ""
 
 msgid "Transfer of Data"
 msgstr "Transferência de dados"
@@ -12142,9 +12163,6 @@ msgstr "Limites de retirada"
 msgid "Withdrawal for your account is not allowed at this moment."
 msgstr "Retiradas da sua conta não são permitidas neste momento."
 
-msgid "Withdrawal limit"
-msgstr "Limite de retirada"
-
 msgid "Withdrawal of Funds from MT5 Real Account"
 msgstr "Retirada de fundos de uma conta real MT5"
 
@@ -12583,8 +12601,8 @@ msgstr "Você não pode cancelar nem emendar o nível da sua ordem de limites ou
 msgid "You may only open an account at this site on conditions that:"
 msgstr "Você apenas pode abrir uma conta neste site sob a condição de que:"
 
-msgid "You may only transfer funds between a fiat account and a cryptocurrency account."
-msgstr "Você apenas pode transferir fundos entre contas de moedas fiduciárias e contas de criptomoedas."
+msgid "You may only transfer funds between fiat and cryptocurrency accounts."
+msgstr ""
 
 msgid "You may proceed but please <a href=\"%1\">authenticate</a> your account within five days to continue trading."
 msgstr "Você pode avançar mas pedimos que <a href=\"%1\">autentique</a> a sua conta dentro de cinco dias para continuar a negociar."

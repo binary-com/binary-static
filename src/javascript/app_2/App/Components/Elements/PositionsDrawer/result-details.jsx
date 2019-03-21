@@ -82,7 +82,10 @@ class ResultDetails extends React.PureComponent {
 }
 
 ResultDetails.propTypes = {
-    barrier          : PropTypes.number,
+    barrier: PropTypes.PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
+    ]),
     contract_end_time: PropTypes.PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
@@ -93,10 +96,16 @@ ResultDetails.propTypes = {
     ]),
     duration     : PropTypes.number,
     duration_unit: PropTypes.string,
-    entry_spot   : PropTypes.number,
-    has_result   : PropTypes.bool,
-    id_sell      : PropTypes.number,
-    tick_count   : PropTypes.number,
+    entry_spot   : PropTypes.PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
+    ]),
+    has_result: PropTypes.bool,
+    id_sell   : PropTypes.PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
+    ]),
+    tick_count: PropTypes.number,
 };
 
 export default ResultDetails;
