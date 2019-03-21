@@ -106,7 +106,7 @@ export default class PortfolioStore extends BaseStore {
     @action.bound
     onClickSell(contract_id) {
         const i = this.getPositionIndexById(contract_id);
-        const bid_price = this.positions[i].contract_info.bid_price;
+        const { bid_price } = this.positions[i].contract_info;
         this.positions[i].is_sell_requested = false;
         if (contract_id && bid_price) {
             WS.sell(contract_id, bid_price).then(this.handleSell);

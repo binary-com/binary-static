@@ -32,8 +32,8 @@ import {
 import BaseStore                 from '../../base-store';
 
 export default class ContractStore extends BaseStore {
+    // --- Observable properties ---
     @observable contract_id;
-    @observable forget_id;
     @observable contract_info = observable.object({});
     @observable digits_info   = observable.object({});
     @observable sell_info     = observable.object({});
@@ -42,7 +42,10 @@ export default class ContractStore extends BaseStore {
     @observable has_error         = false;
     @observable error_message     = '';
     @observable is_sell_requested = false;
-    @observable is_left_epoch_set = false;
+
+    // ---- Normal properties ---
+    forget_id;
+    is_left_epoch_set = false;
 
     // -------------------
     // ----- Actions -----
@@ -97,20 +100,19 @@ export default class ContractStore extends BaseStore {
     @action.bound
     onCloseContract() {
         this.forgetProposalOpenContract();
+        this.chart_config      = {};
         this.contract_id       = null;
         this.contract_info     = {};
-        this.forget_id         = null;
         this.digits_info       = {};
-        this.sell_info         = {};
+        this.error_message     = '';
+        this.forget_id         = null;
+        this.has_error         = false;
         this.is_sell_requested = false;
-        this.chart_config      = {};
         this.is_left_epoch_set = false;
+        this.sell_info         = {};
 
         destroyChartTickMarkers();
-        this.smart_chart.removeBarriers();
-        this.smart_chart.removeMarkers();
-        this.smart_chart.resetScrollZoom();
-        this.smart_chart.setContractMode(false);
+        this.smart_chart.cleanupContractChartView();
     }
 
     @action.bound

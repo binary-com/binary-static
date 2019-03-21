@@ -30,8 +30,6 @@ export const getDisplayStatus = (contract_info) => {
     return status;
 };
 
-// for path dependent contracts the contract is sold from server side
-// so we need to use sell spot and sell spot time instead
 export const getEndSpot = (contract_info) => (
     isUserSold(contract_info) ? +contract_info.sell_spot : +contract_info.exit_tick
 );
