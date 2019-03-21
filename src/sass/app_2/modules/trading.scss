@@ -23,7 +23,7 @@ $linear-gradient-white-blur: linear-gradient(to left, rgba(255, 255, 255, 0), $C
         &-info {
             @include typeface(--paragraph-left-normal-black);
             @include themify($themes) {
-                color: themed('border_hover_color');
+                color: themed('text_primary_color');
             }
 
             &--left {
@@ -39,7 +39,7 @@ $linear-gradient-white-blur: linear-gradient(to left, rgba(255, 255, 255, 0), $C
         @include themify($themes) {
             background: themed('container_color');
             border-color: themed('container_color');
-            color: themed('text_primary_color');
+            color: themed('text_color');
         }
     }
     &__load_container {
@@ -148,6 +148,9 @@ $linear-gradient-white-blur: linear-gradient(to left, rgba(255, 255, 255, 0), $C
             }
         }
         &-tooltip {
+            &-i {
+                @extend %inline-icon.disabled;
+            }
             &[data-tooltip] {
                 &:before, &:after {
                     right: 230px !important;
@@ -386,6 +389,12 @@ $linear-gradient-white-blur: linear-gradient(to left, rgba(255, 255, 255, 0), $C
         }
         &-icon {
             @extend %inline-icon.white;
+            /* postcss-bem-linter: ignore */
+            .color1-fill {
+                @include themify($themes) {
+                    fill: themed('text_active_color');
+                }
+            }
         }
     }
     &__effect-detail {
