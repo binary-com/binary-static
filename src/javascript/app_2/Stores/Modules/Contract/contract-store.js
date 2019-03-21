@@ -32,6 +32,7 @@ import {
 import BaseStore                 from '../../base-store';
 
 export default class ContractStore extends BaseStore {
+    // --- Observable properties ---
     @observable contract_id;
     @observable contract_info = observable.object({});
     @observable digits_info   = observable.object({});
@@ -42,51 +43,52 @@ export default class ContractStore extends BaseStore {
     @observable error_message     = '';
     @observable is_sell_requested = false;
 
+    // ---- Normal properties ---
+    forget_id;
+    is_left_epoch_set = false;
+
     // -------------------
     // ----- Actions -----
     // -------------------
     @action.bound
-    updateChartType(chart_type) {
-        this.chart_config.chart_type = chart_type;
-    }
-
-    @action.bound
-    updateGranularity(granularity) {
-        this.chart_config.granularity = granularity;
-    }
-
-    @action.bound
-    onMount(contract_id) {
-        this.onSwitchAccount(this.accountSwitcherListener.bind(null));
-        this.has_error     = false;
-        this.error_message = '';
-        this.contract_id   = contract_id;
-        this.smart_chart   = this.root_store.modules.smart_chart;
-        this.smart_chart.setContractMode(true);
-
-        if (contract_id) {
-            WS.subscribeProposalOpenContract(this.contract_id, this.updateProposal, false);
-        }
-    }
-
-    @action.bound
-    onLoadContract(contract_info) {
-        if (contract_info === this.contract_id || !contract_info) return;
-        this.onSwitchAccount(this.accountSwitcherListener.bind(null));
-        this.root_store.modules.trade.symbol = contract_info.underlying;
-        this.smart_chart   = this.root_store.modules.smart_chart;
-        this.contract_info = contract_info;
-        this.contract_id   = +contract_info.contract_id;
-        if (isEnded(this.contract_info)) {
-            this.chart_config = getChartConfig(this.contract_info);
+    drawChart(SmartChartStore, contract_info) {
+        this.forget_id = contract_info.id;
+        if (isEnded(contract_info) || !!(getEndSpotTime(contract_info))) {
+            this.chart_config = getChartConfig(contract_info);
         } else {
             delete this.chart_config.end_epoch;
             delete this.chart_config.start_epoch;
+
+            if (!this.is_left_epoch_set && contract_info.tick_count) {
+                this.is_left_epoch_set = true;
+                SmartChartStore.setTickChartView(contract_info.purchase_time);
+            }
         }
-        this.smart_chart.setContractMode(true);
-        createChartBarrier(this.smart_chart, this.contract_info);
-        createChartMarkers(this.smart_chart, this.contract_info, this);
+
+        createChartBarrier(SmartChartStore, contract_info);
+
+        if (contract_info.tick_count && contract_info.exit_tick_time) { // TODO: remove this.contract_info.exit_tick_time when ongoing contracts are implemented
+            createChartTickMarkers(SmartChartStore, contract_info);
+        } else {
+            createChartMarkers(SmartChartStore, contract_info);
+        }
+
         this.handleDigits();
+    }
+
+    @action.bound
+    onMount(contract_id, has_left_epoch) {
+        this.onSwitchAccount(this.accountSwitcherListener.bind(null));
+        this.has_error         = false;
+        this.error_message     = '';
+        this.contract_id       = contract_id;
+        this.smart_chart       = this.root_store.modules.smart_chart;
+        this.is_left_epoch_set = has_left_epoch;
+
+        if (contract_id) {
+            this.smart_chart.setContractMode(true);
+            WS.subscribeProposalOpenContract(this.contract_id, this.updateProposal, false);
+        }
     }
 
     @action.bound
@@ -98,17 +100,19 @@ export default class ContractStore extends BaseStore {
     @action.bound
     onCloseContract() {
         this.forgetProposalOpenContract();
+        this.chart_config      = {};
         this.contract_id       = null;
         this.contract_info     = {};
         this.digits_info       = {};
-        this.sell_info         = {};
+        this.error_message     = '';
+        this.forget_id         = null;
+        this.has_error         = false;
         this.is_sell_requested = false;
-        this.chart_config      = {};
+        this.is_left_epoch_set = false;
+        this.sell_info         = {};
 
         destroyChartTickMarkers();
-        this.smart_chart.removeBarriers();
-        this.smart_chart.removeMarkers();
-        this.smart_chart.setContractMode(false);
+        this.smart_chart.cleanupContractChartView();
     }
 
     @action.bound
@@ -133,23 +137,10 @@ export default class ContractStore extends BaseStore {
             this.smart_chart.setContractMode(false);
             return;
         }
+        if (+response.proposal_open_contract.contract_id !== +this.contract_id) return;
         this.contract_info = response.proposal_open_contract;
-        if (isEnded(this.contract_info)) {
-            this.chart_config = getChartConfig(this.contract_info);
-        } else {
-            delete this.chart_config.end_epoch;
-            delete this.chart_config.start_epoch;
-        }
+        this.drawChart(this.smart_chart, this.contract_info);
 
-        createChartBarrier(this.smart_chart, this.contract_info);
-
-        if (this.contract_info.tick_count && this.contract_info.exit_tick_time) { // TODO: remove this.contract_info.exit_tick_time when ongoing contracts are implemented
-            createChartTickMarkers(this.smart_chart, this.contract_info);
-        } else {
-            createChartMarkers(this.smart_chart, this.contract_info);
-        }
-
-        this.handleDigits();
     }
 
     @action.bound
@@ -188,7 +179,7 @@ export default class ContractStore extends BaseStore {
     }
 
     forgetProposalOpenContract() {
-        WS.forget('proposal_open_contract', this.updateProposal, { contract_id: this.contract_id });
+        WS.forget('proposal_open_contract', this.updateProposal, { id: this.forget_id });
     }
 
     @action.bound

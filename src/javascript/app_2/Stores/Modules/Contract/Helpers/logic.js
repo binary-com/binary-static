@@ -1,13 +1,13 @@
 export const getChartConfig = (contract_info) => {
-    const start = contract_info.date_start;
-    const end   = contract_info.date_expiry;
-    const granularity = calculateGranularity(end - start);
+    const start_epoch = contract_info.date_start;
+    const end_epoch   = getEndSpotTime(contract_info) || contract_info.date_expiry;
+    const granularity = calculateGranularity(end_epoch - start_epoch);
 
     return {
         granularity,
-        chart_type : granularity ? 'candle' : 'mountain',
-        end_epoch  : end   + (granularity || 3),
-        start_epoch: start - (granularity || 3),
+        chart_type: granularity ? 'candle' : 'mountain',
+        end_epoch,
+        start_epoch,
     };
 };
 
@@ -19,7 +19,7 @@ const hour_to_granularity_map = [
     [5 * 24 , 3600],
     [30 * 24, 14400],
 ];
-const calculateGranularity = (duration) =>
+export const calculateGranularity = (duration) =>
     (hour_to_granularity_map.find(m => duration <= m[0] * 3600) || [null, 86400])[1];
 
 export const getDisplayStatus = (contract_info) => {
@@ -30,14 +30,12 @@ export const getDisplayStatus = (contract_info) => {
     return status;
 };
 
-// for path dependent contracts the contract is sold from server side
-// so we need to use sell spot and sell spot time instead
 export const getEndSpot = (contract_info) => (
-    contract_info.exit_tick
+    isUserSold(contract_info) ? +contract_info.sell_spot : +contract_info.exit_tick
 );
 
 export const getEndSpotTime = (contract_info) => (
-    contract_info.exit_tick_time
+    isUserSold(contract_info) ? +contract_info.sell_spot_time : +contract_info.exit_tick_time
 );
 
 export const getFinalPrice = (contract_info) => (
