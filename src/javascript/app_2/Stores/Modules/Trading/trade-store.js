@@ -432,11 +432,11 @@ export default class TradeStore extends BaseStore {
         this.processNewValuesAsync({ contract_type: parseInt(this.is_equal) ? 'rise_fall_equal' : 'rise_fall' }, true);
     }
 
+    // When you directly need to update the chart symbol
+    // E.g. When opening a contract from positions that has a different symbol from the current symbol.
     @action.bound
     updateSymbol(symbol) {
-        if (symbol) {
-            this.symbol = symbol;
-        }
+        if (symbol) this.symbol = symbol;
     }
 
     @action.bound
