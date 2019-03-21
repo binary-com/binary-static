@@ -3,7 +3,7 @@ import React       from 'react';
 import { connect } from 'Stores/connect';
 
 const ContractLink = ({
-    chart_config,
+    contract_id,
     children,
     className,
     openContract,
@@ -11,17 +11,16 @@ const ContractLink = ({
     <a
         className={className}
         href='javascript:;'
-        onClick={() => openContract(chart_config)}
+        onClick={() => openContract(contract_id, true)}
     >
         {children}
     </a>
 );
 
 ContractLink.propTypes = {
-    chart_config: PropTypes.object,
-    children    : PropTypes.node,
-    className   : PropTypes.string,
-    contract_id : PropTypes.PropTypes.oneOfType([
+    children   : PropTypes.node,
+    className  : PropTypes.string,
+    contract_id: PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
     ]),
@@ -30,6 +29,6 @@ ContractLink.propTypes = {
 
 export default connect(
     ({ modules }) => ({
-        openContract: modules.contract.onLoadContract,
+        openContract: modules.contract.onMount,
     }),
 )(ContractLink);
