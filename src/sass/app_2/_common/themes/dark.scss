@@ -1,5 +1,38 @@
 // Dark Theme
 .theme--dark {
+    // background-color: $COLOR_DARK_BLUE_1;
+
+    // .card-list {
+    //     &__card {
+    //         background: $COLOR_DARK_BLUE_5;
+    //         border-color: $COLOR_DARK_BLUE_5;
+
+    //         div[class*='-card__header'] {
+    //             background: $COLOR_DARK_BLUE_3;
+    //             border-color: $COLOR_DARK_BLUE_5;
+    //             color: $COLOR_DARK_BLUE_7;
+    //         }
+    //         div[class*='-card__body'] {
+    //             color: $COLOR_DARK_BLUE_7;
+    //         }
+    //     }
+    // }
+    // .portfolio.container {
+    //     background: $COLOR_DARK_BLUE_5;
+    // }
+    // .portfolio-empty, .statement-empty {
+    //     span {
+    //         color: $COLOR_DARK_BLUE_7;
+    //     }
+    //     button.btn span {
+    //         color: unset;
+    //     }
+    // }
+    // .portfolio-empty {
+    //     &__text {
+    //         color: $COLOR_DARK_BLUE_8 !important;
+    //     }
+    // }
     // .statement.container {
     //     .statement__filter {
     //         background: $COLOR_DARK_BLUE_1;
@@ -117,14 +150,7 @@
         }
     }
     .popconfirm {
-        background: $COLOR_DARK_BLUE_3;
-
-        &__header {
-            color: $COLOR_DARK_BLUE_7;
-        }
         &__button {
-            background: $COLOR_DARK_BLUE_3;
-
             &-text {
                 color: $COLOR_DARK_BLUE_7 !important;
             }
