@@ -16,7 +16,7 @@ const DepositWithdraw = () => (
             <p id='cashier_locked_message'>{it.L('Your cashier is locked as per your request - to unlock it, please click [_1]here[_2].', `<a href="${it.url_for('user/security/cashier_passwordws')}">`, '</a>')}</p>
             <p id='check_email_message'>{it.L('Please check your email for the verification link to complete the process.')}</p>
             <p id='personal_details_message'>
-                {it.L('There was a problem validating your personal details. Please update your [_1] [_2]here[_3].', it.website_name, `<a href="${it.url_for('user/settings/detailsws')}">`, '</a>')}
+                {it.L('There was a problem validating your personal details. Please update your [_1] [_2]here[_3].', '[_1]', `<a href="${it.url_for('user/settings/detailsws')}">`, '</a>')}
                 <br /> {it.L('If you need assistance feel free to contact our [_1]Customer Support[_2].', `<a href="${it.url_for('contact')}">`, '</a>')}
             </p>
             <p id='not_authenticated_message'>{it.L('Please [_1]authenticate[_2] your account.',  `<a href="${it.url_for('user/authenticate')}">`, '</a>')}</p>
