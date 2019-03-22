@@ -12,7 +12,7 @@ const getPropertyValue = require('../utility').getPropertyValue;
 const getAppId         = require('../../config').getAppId;
 
 const GTM = (() => {
-    const isGtmApplicable = () => (/^(1|1098|14473|15284|1108)$/.test(getAppId()));
+    const isGtmApplicable = () => (/^(1|1098|14473|15284)$/.test(getAppId()));
 
     const getCommonVariables = () => ({
         country_ip: State.getResponse('website_status.clients_country'),
