@@ -120,34 +120,6 @@
     //         color: $COLOR_WHITE;
     //     }
     // }
-    .time-picker {
-        &__icon {
-            g {
-                stroke: $COLOR_DARK_BLUE_7;
-            }
-        }
-        &__dialog {
-            background: $COLOR_DARK_BLUE_3;
-        }
-        &__selector {
-            &--hours, &--minutes {
-                border-color: $COLOR_DARK_BLUE_2;
-                color: $COLOR_DARK_BLUE_7;
-
-            }
-            &-list-title {
-                color: $COLOR_WHITE;
-            }
-            &-list-item {
-                color: $COLOR_DARK_BLUE_7;
-
-                &--disabled {
-                    color: $COLOR_DARK_BLUE_8;
-                    pointer-events: none;
-                }
-            }
-        }
-    }
     .input-field {
         &__label {
             color: $COLOR_DARK_BLUE_7;

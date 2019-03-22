@@ -36,8 +36,11 @@
         border-radius: $BORDER_RADIUS;
         @include themify($themes) {
             background: themed('container_color');
-            border-color: themed('container_color');
             color: themed('text_color');
+
+            &:hover {
+                border-color: themed('border_hover_color');
+            }
         }
     }
     &__error {
