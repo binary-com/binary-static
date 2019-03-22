@@ -182,7 +182,6 @@
         }
         /* postcss-bem-linter: ignore */
         span {
-            font-weight: bold;
             @include themify($themes) {
                 color: themed('text_color');
             }

@@ -108,7 +108,7 @@
                 }
             }
             &-basis {
-                @include typeface(--small-left-normal-black);
+                @include typeface(--paragraph-left-normal-black);
                 margin-left: 0;
                 font-weight: normal;
                 @include themify($themes) {
@@ -132,7 +132,7 @@
         }
         &-tooltip {
             &-i {
-                @extend %inline-icon.disabled;
+                @extend %inline-icon;
             }
             &[data-tooltip] {
                 &:before, &:after {
