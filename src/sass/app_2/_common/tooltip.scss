@@ -15,6 +15,7 @@
         z-index: 999;
         opacity: 0;
         transition: opacity 0.3s;
+        pointer-events: none;
 
         &--show {
             transition: opacity 0.3s 0.2s;
@@ -111,4 +112,3 @@
         @include tooltipColor($COLOR_RED);
     }
 }
-

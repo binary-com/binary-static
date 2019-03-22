@@ -13,7 +13,9 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: transparentize($COLOR_DARK_BLUE_1, 0.7);
+    @include themify($themes) {
+        background-color: rgba(themed('container_color'), 0.56);
+    }
 
     &__dialog {
         @include themify($themes) {
@@ -34,7 +36,7 @@
         @include themify($themes) {
             color: themed('text_color');
         }
-        @include typeface(--title-left-bold-black);
+        @include typeface(--title-left-bold-black, none);
         @include toEm(margin-bottom, 16px, 1.6em);
     }
     &__content {
@@ -55,13 +57,20 @@
         margin: 0;
     }
     /* postcss-bem-linter: ignore */
+    .btn--primary--orange {
+        /* postcss-bem-linter: ignore */
+        &:hover:not([disabled]) {
+            background: $COLOR_DARK_ORANGE;
+        }
+    }
+    /* postcss-bem-linter: ignore */
     .btn--secondary--orange {
         border: none;
         margin-right: 0.8em;
 
         /* postcss-bem-linter: ignore */
         &:hover:not([disabled]) {
-            background: none;
+            background: $COLOR_LIGHT_BLACK_4_SOLID;
             border: none;
         }
     }
