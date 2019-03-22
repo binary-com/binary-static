@@ -18,13 +18,9 @@
     &__grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        padding: 4px 8px;
-
-        &:first-child {
-            padding-top: 16px;
-            @include themify($themes) {
-                border-top: 1px solid themed('background_container_color');
-            }
+        padding: 8px;
+        @include themify($themes) {
+            border-top: 1px solid themed('background_container_color');
         }
     }
     &__item {

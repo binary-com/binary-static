@@ -28,11 +28,11 @@ export const getDurationUnitText = (obj_duration) => {
     const duration_ms = obj_duration.asMilliseconds() / 1000;
     if (duration_ms) {
         if (duration_ms >= 86400000) {
-            return unit_map.d.name;
+            return (duration_ms === 8640000) ? unit_map.d.name.slice(0, -1) : unit_map.d.name;
         } else if (duration_ms >= 3600000 && duration_ms < 86400000) {
-            return unit_map.h.name;
+            return (duration_ms === 360000) ? unit_map.h.name.slice(0, -1) : unit_map.h.name;
         } else if (duration_ms >= 60000 && duration_ms < 3600000) {
-            return unit_map.m.name;
+            return (duration_ms === 60000) ? unit_map.m.name.slice(0, -1) : unit_map.m.name;
         } else if (duration_ms >= 1000 && duration_ms < 60000) {
             return unit_map.s.name;
         }
