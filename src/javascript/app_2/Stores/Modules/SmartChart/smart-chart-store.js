@@ -75,7 +75,6 @@ export default class SmartChartStore extends BaseStore {
         this.removeMarkers();
         this.resetScrollZoom();
         this.setContractMode(false);
-        this.applySavedTradeChartLayout();
     }
 
     @action.bound

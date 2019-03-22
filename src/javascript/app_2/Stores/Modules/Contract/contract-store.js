@@ -84,7 +84,7 @@ export default class ContractStore extends BaseStore {
         this.contract_id       = contract_id;
         this.smart_chart       = this.root_store.modules.smart_chart;
         this.is_left_epoch_set = has_left_epoch;
-        console.log({...this.contract_info});
+
         if (contract_id) {
             this.smart_chart.saveAndClearTradeChartLayout();
             this.smart_chart.setContractMode(true);
