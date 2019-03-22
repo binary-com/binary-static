@@ -100,10 +100,6 @@ export default class SmartChartStore extends BaseStore {
     // --------- Tick Contracts ---------
     @action.bound
     setTickChartView(scroll_to_left_epoch) {
-        if (this.granularity !== 0) {
-            this.updateGranularity(0);
-            this.updateChartType('mountain');
-        }
         this.updateEpochScrollToOffset(1);
         this.updateChartZoom(100);
         this.updateEpochScrollToValue(scroll_to_left_epoch);
