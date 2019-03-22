@@ -1,15 +1,22 @@
 /** @define dropdown */
 .dropdown {
     &__display {
-        background: $COLOR_WHITE;
         cursor: pointer;
-        border: solid 1px $COLOR_LIGHT_BLACK_4;
         border-radius: $BORDER_RADIUS;
         height: 3.2em;
         display: flex;
         align-items: center;
         justify-content: center;
         margin-top: 0.8em;
+        @include themify($themes) {
+            background: themed('container_color');
+            border: 1px solid themed('container_color');
+
+            &:hover, &:active, &:focus {
+                outline: 0;
+                border: 1px solid themed('border_hover_color');
+            }
+        }
 
         &-text {
             @include typeface(--paragraph-center-normal-black, capitalize);
@@ -17,12 +24,6 @@
                 color: themed('text_color');
             }
             padding-left: 1.6em;
-        }
-        &:active, &:focus {
-            outline: none;
-        }
-        &:hover {
-            border-color: $COLOR_LIGHT_GRAY_1;
         }
         &--has-symbol {
             justify-content: unset;

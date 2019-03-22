@@ -201,7 +201,8 @@
             margin-top: 0.8em;
         }
         &--display {
-            margin-top: 0;
+            margin-top: 0.1em;
+            height: 3em;
             border-radius: $BORDER_RADIUS 0 0 $BORDER_RADIUS;
 
             /* postcss-bem-linter: ignore */
