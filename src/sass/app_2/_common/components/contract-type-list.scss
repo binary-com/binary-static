@@ -27,7 +27,9 @@
             border-radius: 4px;
         }
         &:hover:not(.selected) {
-            background: $COLOR_LIGHT_BLACK_4;
+            @include themify($themes) {
+                background: themed('tab_hover_color');
+            }
         }
     }
 }
@@ -43,7 +45,10 @@
     box-sizing: border-box;
     margin-bottom: 0.1em;
     transition: transform 0.3s opacity 0.3s;
-    background-color: $COLOR_WHITE;
+    @include themify($themes) {
+        background-color: themed('container_color');
+        color: themed('text_primary_color');
+    }
 
     &:hover {
         background-color: $COLOR_LIGHT_BLACK_4;
@@ -54,6 +59,9 @@
     }
     &__title {
         @include typeface(--paragraph-left-normal-black);
+        @include themify($themes) {
+            color: themed('text_primary_color');
+        }
         padding-left: 0.4em;
     }
     &__icon {
@@ -81,7 +89,9 @@
         /* postcss-bem-linter: ignore */
         span {
             font-weight: bold;
-            color: $COLOR_WHITE;
+            @include themify($themes) {
+                color: themed('text_active_color');
+            }
         }
         .contract-type-item__icon {
             /* postcss-bem-linter: ignore */

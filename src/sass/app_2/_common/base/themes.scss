@@ -1,7 +1,6 @@
 $themes: (
     light: (
         active_color                : $COLOR_LIGHT_GRAY_1,
-        active_hover_color          : $COLOR_LIGHT_BLACK_4_SOLID,
         background_button_color     : $COLOR_LIGHT_GRAY_2,
         background_color            : $COLOR_LIGHT_BLACK_4_SOLID,
         background_container_color  : $COLOR_LIGHT_BLACK_4_SOLID,
@@ -35,7 +34,6 @@ $themes: (
     ),
     dark: (
         active_color                : $COLOR_DARK_BLUE_5,
-        active_hover_color          : $COLOR_DARK_BLUE_3,
         background_button_color     : $COLOR_DARK_BLUE_5,
         background_color            : $COLOR_DARK_BLUE_1,
         background_container_color  : $COLOR_DARK_BLUE_3,

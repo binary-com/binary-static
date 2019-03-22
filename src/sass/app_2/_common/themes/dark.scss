@@ -120,30 +120,6 @@
     //         color: $COLOR_WHITE;
     //     }
     // }
-    .contracts-type-dialog {
-        &__list-wrapper {
-            background: $COLOR_DARK_BLUE_3;
-            box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.5);
-        }
-    }
-    .contract-type-item {
-        background: $COLOR_DARK_BLUE_2;
-        color: $COLOR_DARK_BLUE_7;
-
-        &__title {
-            color: $COLOR_DARK_BLUE_7;
-        }
-        &--selected {
-            background: $COLOR_DARK_BLUE_5;
-
-            span {
-                color: $COLOR_WHITE;
-            }
-        }
-        &:hover:not(.contract-type-item--selected) {
-            background: $COLOR_DARK_BLUE_4;
-        }
-    }
     .trade-type-info-dialog {
         &__header {
             .title {
