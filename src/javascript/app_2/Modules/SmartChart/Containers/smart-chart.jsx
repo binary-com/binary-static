@@ -59,7 +59,7 @@ class Chart extends React.Component {
                 isConnectionOpened={this.props.is_socket_opened}
                 clearChart={this.props.should_clear_chart}
                 importedLayout={this.props.should_import_layout ? this.props.trade_chart_layout : null}
-                onExportLayout={this.props.should_save_layout ? this.props.exportLayout : null}
+                onExportLayout={this.props.should_export_layout ? this.props.exportLayout : null}
                 zoom={this.props.chart_zoom}
             >
                 { this.props.markers_array.map((marker, idx) => (
@@ -95,8 +95,8 @@ Chart.propTypes = {
     scroll_to_epoch_offset      : PropTypes.number,
     settings                    : PropTypes.object,
     should_clear_chart          : PropTypes.bool,
+    should_export_layout        : PropTypes.bool,
     should_import_layout        : PropTypes.bool,
-    should_save_layout          : PropTypes.bool,
     should_show_last_digit_stats: PropTypes.bool,
     start_epoch                 : PropTypes.number,
     symbol                      : PropTypes.string,
@@ -117,8 +117,8 @@ export default connect(
         onUnmount           : modules.smart_chart.onUnmount,
         settings            : modules.smart_chart.settings,
         should_clear_chart  : modules.smart_chart.should_clear_chart,
+        should_export_layout: modules.smart_chart.should_export_layout,
         should_import_layout: modules.smart_chart.should_import_layout,
-        should_save_layout  : modules.smart_chart.should_save_layout,
         trade_chart_layout  : modules.smart_chart.trade_chart_layout,
         wsForget            : modules.smart_chart.wsForget,
         wsSendRequest       : modules.smart_chart.wsSendRequest,

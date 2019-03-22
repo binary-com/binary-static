@@ -31,7 +31,7 @@ export default class SmartChartStore extends BaseStore {
     @observable zoom;
 
     @observable should_import_layout = false;
-    @observable should_save_layout   = false;
+    @observable should_export_layout = false;
     @observable should_clear_chart   = false;
     @observable trade_chart_layout   = observable.object({});
     trade_chart_symbol               = null;
@@ -146,20 +146,19 @@ export default class SmartChartStore extends BaseStore {
 
     @action.bound
     saveAndClearTradeChartLayout() {
-        this.should_save_layout   = true;
+        this.should_export_layout = true;
         this.should_import_layout = false;
-        this.trade_chart_layout   = {};
+
         this.trade_chart_symbol   = this.root_store.modules.trade.symbol;
     }
 
     @action.bound
     applySavedTradeChartLayout() {
+        this.should_export_layout = false;
         this.should_import_layout = true;
         this.should_clear_chart   = false;
-        this.should_save_layout   = false;
 
         this.root_store.modules.trade.updateSymbol(this.trade_chart_symbol);
-        this.trade_chart_symbol = null;
     }
 
     @action.bound
