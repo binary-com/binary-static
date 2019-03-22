@@ -7,7 +7,6 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-top: 0.8em;
         @include themify($themes) {
             background: themed('container_color');
             border: 1px solid themed('container_color');
@@ -115,9 +114,6 @@
             right: unset;
         }
     }
-    &--show > .dropdown__display--clicked {
-        border-color: $COLOR_LIGHT_GRAY_1;
-    }
     &--show > .dropdown__select-arrow {
         transform: rotate(-180deg);
 
@@ -142,9 +138,11 @@
     overflow-y: auto;
     z-index: 2;
     cursor: pointer;
-    background: $COLOR_WHITE;
     border-radius: $BORDER_RADIUS;
     box-shadow: 0 2px 8px 0 $COLOR_LIGHT_BLACK_3;
+    @include themify($themes) {
+        background: themed('container_secondary_color');
+    }
 
     &--left {
         width: unset;
@@ -160,6 +158,9 @@
     &__label {
         @include typeface(--paragraph-center-bold-black, capitalize);
         @include toEm(padding, 10px, 1.6em);
+        @include themify($themes) {
+            color: themed('text_color');
+        }
         display: block;
     }
     &__item {
@@ -167,6 +168,9 @@
 
         &-text, &-symbol {
             @include typeface(--paragraph-left-normal-black);
+            @include themify($themes) {
+                color: themed('text_primary_color');
+            }
             display: flex;
             width: 100%;
             justify-content: center;
@@ -176,11 +180,17 @@
             padding-left: 1.6em;
         }
         &:hover {
-            background-color: $COLOR_LIGHT_BLACK_4;
+            @include themify($themes) {
+                background-color: themed('tab_hover_color');
+                color: themed('text_color');
+            }
         }
         &--selected .list__item-text, &--selected .list__item-symbol {
             @include typeface(--paragraph-left-semibold-active);
-            background-color: $COLOR_LIGHT_GRAY_1;
+            @include themify($themes) {
+                color: themed('text_active_color');
+                background: themed('active_color');
+            }
         }
         &-tooltip {
             @include typeface(--paragraph-left-normal-black);
