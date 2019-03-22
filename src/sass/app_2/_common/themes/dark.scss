@@ -120,45 +120,6 @@
     //         color: $COLOR_WHITE;
     //     }
     // }
-    .input-wrapper {
-        &__button:not(:disabled) {
-            &:hover {
-                background-color: $COLOR_DARK_BLUE_4;
-            }
-        }
-    }
-    .input {
-        background: $COLOR_DARK_BLUE_2;
-        border-color: $COLOR_DARK_BLUE_2;
-
-        &[type=checkbox] {
-            border-color: $COLOR_DARK_BLUE_7;
-
-            &:hover {
-                border-color: $COLOR_ORANGE;
-            }
-            &:checked {
-                background: $COLOR_ORANGE;
-                border-color: $COLOR_ORANGE;
-            }
-            &:not(:checked) {
-                &:focus, &:active {
-                    border-color: $COLOR_DARK_BLUE_7;
-                }
-            }
-        }
-        &:hover {
-            border-color: $COLOR_DARK_BLUE_7;
-        }
-        &:focus, &:active {
-            border-color: $COLOR_DARK_BLUE_7;
-            box-shadow: 0 0 0 2px $COLOR_DARK_BLUE_8;
-            color: $COLOR_WHITE;
-        }
-        &::placeholder {
-            color: $COLOR_DARK_BLUE_7;
-        }
-    }
     .fullscreen-dialog {
         background: $COLOR_DARK_BLUE_5;
 

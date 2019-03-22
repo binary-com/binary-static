@@ -441,3 +441,11 @@
         color: $COLOR_DARK_BLUE_8;
     }
 }
+
+/** @define duration-container */
+.duration-container {
+    /* postcss-bem-linter: ignore */
+    .dropdown-container {
+        margin-top: 0.8em;
+    }
+}
