@@ -1,4 +1,26 @@
-$linear-gradient-white-blur: linear-gradient(to left, rgba(255, 255, 255, 0), $COLOR_WHITE 10%, rgba(255, 255, 255, 0));
+@keyframes data--loading {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.loader {
+    overflow: hidden;
+    @include themify($themes) {
+        background-color: rgba(themed('loader_background'), 0.16);
+    }
+
+    &--loading {
+        width: inherit;
+        height: inherit;
+        animation: data--loading 1s cubic-bezier(1, 0, 0.5, 0) infinite;
+        background-image: linear-gradient(to left, rgba(255, 255, 255, 0), $COLOR_WHITE 10%, rgba(255, 255, 255, 0));
+        opacity: 0.32;
+    }
+}
 
 /** @define trade-container */
 .trade-container {
@@ -45,17 +67,10 @@ $linear-gradient-white-blur: linear-gradient(to left, rgba(255, 255, 255, 0), $C
     &__loader {
         width: 92px;
         height: 8px;
-        overflow: hidden;
-        @include themify($themes) {
-            background-color: rgba(themed('loader_background'), 0.16);
-        }
+        @extend .loader;
 
         &--loading {
-            width: inherit;
-            height: inherit;
-            animation: data--loading 1s cubic-bezier(1, 0, 0.5, 0) infinite;
-            background-image: $linear-gradient-white-blur;
-            opacity: 0.32;
+            @extend .loader--loading;
         }
     }
     &__error {
@@ -446,27 +461,17 @@ $linear-gradient-white-blur: linear-gradient(to left, rgba(255, 255, 255, 0), $C
             }
         }
         .btn-purchase__icon, .btn-purchase__text {
-            overflow: hidden;
-            @include themify($themes) {
-                background-color: rgba(themed('loader_background'), 0.16);
-            }
+            @extend .loader;
         }
         .btn-purchase__icon {
             width: 16px;
             height: 16px;
-
-            & svg {
-                width: inherit;
-                height: inherit;
-            }
         }
         .btn-purchase__text {
             width: 56px;
             height: 8px;
 
             & span {
-                width: inherit;
-                height: inherit;
                 display: block;
             }
         }
@@ -484,21 +489,10 @@ $linear-gradient-white-blur: linear-gradient(to left, rgba(255, 255, 255, 0), $C
             border-color: transparent transparent transparent $COLOR_GREEN_1;
         }
         .btn-purchase__icon svg, .btn-purchase__text span {
-            animation: data--loading 1s cubic-bezier(1, 0, 0.5, 0) infinite;
-            background-image: $linear-gradient-white-blur;
-            opacity: 0.32;
+            @extend .loader--loading;
         }
     }
     &__shadow-wrapper:hover:after {
         opacity: 0;
-    }
-}
-
-@keyframes data--loading {
-    0% {
-        transform: translateX(-100%);
-    }
-    100% {
-        transform: translateX(100%);
     }
 }

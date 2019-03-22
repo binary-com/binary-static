@@ -30,7 +30,7 @@ const ContractInfo = ({
 
             {is_loading &&
                 <div className='trade-container__loader'>
-                    <div className='trade-container__loading--loading' />
+                    <div className='trade-container__loader--loading' />
                 </div>
             }
             {is_loaded &&
