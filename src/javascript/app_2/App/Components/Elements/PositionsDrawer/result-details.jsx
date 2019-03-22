@@ -50,8 +50,8 @@ class ResultDetails extends React.PureComponent {
                     <div className='result-details__grid'>
                         <ResultDetailsItem
                             label={localize('Duration')}
-                            value={contract_info.tick_count ?
-                                `${contract_info.tick_count} ${localize('ticks')}`
+                            value={(contract_info.tick_count > 0) ?
+                                `${contract_info.tick_count} ${(contract_info.tick_count < 2) ? localize('tick') : localize('ticks')}`
                                 :
                                 `${duration} ${duration_unit}`}
                         />
