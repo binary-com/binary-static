@@ -48,6 +48,10 @@ export const getIndicativePrice = (contract_info) => (
         (+contract_info.bid_price || null)
 );
 
+export const getLastTickFromTickStream = (tick_stream = []) => (
+    tick_stream[tick_stream.length - 1] || {}
+);
+
 export const isEnded = (contract_info) => !!(
     (contract_info.status && contract_info.status !== 'open') ||
     contract_info.is_expired        ||
