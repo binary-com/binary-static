@@ -54,6 +54,7 @@
         cursor: pointer;
 
         .result-details__select-arrow {
+            @extend %inline-icon;
             pointer-events: none;
             transition: transform 0.25s ease;
             transform: rotate(0deg);
@@ -102,7 +103,10 @@
         &:after {
             content: '\0000D7';
             font-size: 24px;
-            color: $COLOR_LIGHT_GRAY_1;
+            font-weight: 300;
+            @include themify($themes) {
+                color: themed('text_primary_color');
+            }
         }
     }
     &__icon {

@@ -20,6 +20,8 @@ export default class UIStore extends BaseStore {
     @observable is_settings_dialog_on   = false;
     @observable is_accounts_switcher_on = false;
 
+    @observable has_only_forward_starting_contracts = false;
+
     // Purchase Controls
     @observable is_purchase_confirm_on = false;
     @observable is_purchase_lock_on    = false;
@@ -229,5 +231,10 @@ export default class UIStore extends BaseStore {
     @action.bound
     removeAllToastMessages() {
         this.toast_messages = [];
+    }
+
+    @action.bound
+    setHasOnlyForwardingContracts(has_only_forward_starting_contracts) {
+        this.has_only_forward_starting_contracts = has_only_forward_starting_contracts;
     }
 }
