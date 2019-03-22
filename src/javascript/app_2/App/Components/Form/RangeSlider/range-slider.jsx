@@ -14,7 +14,6 @@ const RangeSlider = ({
     value,
     onChange,
 }) => {
-
     const handleChange = (e) => {
         if (e.target.value !== value) {
             onChange({ target: { name, value: e.target.value } });

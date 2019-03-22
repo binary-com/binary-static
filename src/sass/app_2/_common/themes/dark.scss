@@ -120,14 +120,6 @@
     //         color: $COLOR_WHITE;
     //     }
     // }
-    .input-field {
-        &__label {
-            color: $COLOR_DARK_BLUE_7;
-        }
-        &:has(input[type=checkbox]) {
-            display: inline-block;
-        }
-    }
     .input-wrapper {
         &__button:not(:disabled) {
             &:hover {
