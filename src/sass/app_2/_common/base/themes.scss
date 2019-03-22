@@ -1,6 +1,7 @@
 $themes: (
     light: (
         active_color                : $COLOR_LIGHT_GRAY_1,
+        active_hover_color          : $COLOR_LIGHT_BLACK_4_SOLID,
         background_button_color     : $COLOR_LIGHT_GRAY_2,
         background_color            : $COLOR_LIGHT_BLACK_4_SOLID,
         background_container_color  : $COLOR_LIGHT_BLACK_4_SOLID,
@@ -9,6 +10,7 @@ $themes: (
         background_tooltip_color    : $COLOR_LIGHT_BLACK_1,
         border_hover_color          : $COLOR_LIGHT_GRAY_1,
         border_outline_color        : $COLOR_LIGHT_GRAY_2,
+        cell_hover_color            : $COLOR_LIGHT_BLACK_4_SOLID,
         chart_gradient_color        : $COLOR_LIGHT_WHITE_GRADIENT,
         container_color             : $COLOR_WHITE,
         container_secondary_color   : $COLOR_WHITE,
@@ -33,6 +35,7 @@ $themes: (
     ),
     dark: (
         active_color                : $COLOR_DARK_BLUE_5,
+        active_hover_color          : $COLOR_DARK_BLUE_3,
         background_button_color     : $COLOR_DARK_BLUE_5,
         background_color            : $COLOR_DARK_BLUE_1,
         background_container_color  : $COLOR_DARK_BLUE_3,
@@ -41,6 +44,7 @@ $themes: (
         background_tooltip_color    : $COLOR_DARK_BLUE_5,
         border_hover_color          : $COLOR_DARK_BLUE_7,
         border_outline_color        : $COLOR_DARK_BLUE_8,
+        cell_hover_color            : $COLOR_DARK_BLUE_4,
         chart_gradient_color        : $COLOR_DARK_BLACK_GRADIENT,
         container_color             : $COLOR_DARK_BLUE_2,
         container_secondary_color   : $COLOR_DARK_BLUE_3,
