@@ -10,6 +10,7 @@ import {
     getDurationUnitText }          from './Helpers/details';
 import {
     getDisplayStatus,
+    getEndSpot,
     getEndSpotTime,
     isValidToSell }                from '../Contract/Helpers/logic';
 import BaseStore                   from '../../base-store';
@@ -144,6 +145,7 @@ export default class PortfolioStore extends BaseStore {
         const contract_response = response.proposal_open_contract;
         const i = this.getPositionIndexById(contract_response.contract_id);
 
+        this.positions[i].exit_spot        = getEndSpot(contract_response);
         this.positions[i].duration         = getDurationTime(contract_response);
         this.positions[i].duration_unit    = getDurationUnitText(getDurationPeriod(contract_response));
         this.positions[i].sell_time        = getEndSpotTime(contract_response);

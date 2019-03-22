@@ -19,6 +19,7 @@ const PositionsDrawerCard = ({
     currency,
     duration,
     duration_unit,
+    exit_spot,
     indicative,
     id,
     is_sell_requested,
@@ -146,15 +147,12 @@ const PositionsDrawerCard = ({
                 </div>
             </CSSTransition>
             <ResultDetails
-                barrier={contract_info.barrier}
+                contract_info={contract_info}
                 contract_end_time={sell_time}
-                contract_start_time={contract_info.purchase_time}
                 duration={duration}
                 duration_unit={duration_unit}
-                entry_spot={contract_info.entry_spot}
-                tick_count={contract_info.tick_count}
+                exit_spot={exit_spot}
                 has_result={!!(result)}
-                id_sell={contract_info.transaction_ids.sell}
             />
         </div>
     );
@@ -170,6 +168,7 @@ PositionsDrawerCard.propTypes = {
     currency         : PropTypes.string,
     duration         : PropTypes.number,
     duration_unit    : PropTypes.string,
+    exit_spot        : PropTypes.number,
     id               : PropTypes.number,
     indicative       : PropTypes.number,
     is_sell_requested: PropTypes.bool,
