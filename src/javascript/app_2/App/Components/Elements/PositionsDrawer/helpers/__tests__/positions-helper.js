@@ -3,7 +3,7 @@ import * as PositionsHelper from '../positions-helper';
 
 describe('positions-helper', () => {
     describe('addCommaToNumber', () => {
-        it('should work as expected with number containg value of thousands leading to a comma separated string', () => {
+        it('should work as expected with number steps of thousands leading to a comma separated string', () => {
             const number = 1224500.3153;
             expect(PositionsHelper.addCommaToNumber(number)).to.eql('1,224,500.3153');
         });
