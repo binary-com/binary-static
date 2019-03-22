@@ -29,8 +29,8 @@ const ContractInfo = ({
             }
 
             {is_loading &&
-                <div className='trade-container__load_container'>
-                    <div className='trade-container--loading' />
+                <div className='trade-container__loader'>
+                    <div className='trade-container__loading--loading' />
                 </div>
             }
             {is_loaded &&
