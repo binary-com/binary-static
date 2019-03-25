@@ -78,6 +78,7 @@ export default class ContractStore extends BaseStore {
 
     @action.bound
     onMount(contract_id, has_left_epoch) {
+        if (contract_id === +this.contract_id) return;
         this.onSwitchAccount(this.accountSwitcherListener.bind(null));
         this.has_error         = false;
         this.error_message     = '';
