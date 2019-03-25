@@ -39,6 +39,11 @@ const Authenticate = (() => {
                         link = Url.urlForCurrentDomain('https://marketing.binary.com/authentication/MF_Authentication_Process.pdf');
                     }
                     $not_authenticated.find('.learn_more').setVisibility(1).find('a').attr('href', link);
+
+                    if (isIdentificationNoExpiry(Client.get('residence'))) {
+                        $('#expiry_datepicker_proofid').setVisibility(0);
+                        $('#exp_date_2').datepicker('setDate', '2099-12-31');
+                    }
                 } else if (!/age_verification/.test(status)) {
                     $('#needs_age_verification').setVisibility(1);
                 } else {
@@ -69,6 +74,12 @@ const Authenticate = (() => {
 
         $('.file-picker').on('change', onFileSelected);
     };
+
+    /**
+     * Checks for countries of residence with no ID expiry date.
+     * @param {string} residence
+    */
+    const isIdentificationNoExpiry = (residence) => /(ng|za|lk|in|sg|id|mm|vn|br|mx|co)/.test(residence);
 
     /**
      * Listens for file changes.
@@ -193,6 +204,7 @@ const Authenticate = (() => {
                     file_obj.id_number = $($inputs[0]).val();
                     file_obj.exp_date  = $($inputs[1]).val();
                 }
+                console.log($inputs); // The new date isn't setting for some reason.
                 fileTracker($e, true);
                 files.push(file_obj);
 
@@ -401,7 +413,11 @@ const Authenticate = (() => {
             onErrorResolved('id_number', file.passthrough.class);
             return localize('Only letters, numbers, space, underscore, and hyphen are allowed for ID number ([_1]).', doc_name[file.documentType]);
         }
-        if (!file.expirationDate && required_docs.indexOf(file.documentType.toLowerCase()) !== -1) {
+        if (!file.expirationDate
+            && required_docs.indexOf(file.documentType.toLowerCase()) !== -1
+            && !isIdentificationNoExpiry(Client.get('residence'))
+        ) {
+            console.log('This has passed despite account being in the no expiry list.')
             onErrorResolved('exp_date', file.passthrough.class);
             return localize('Expiry date is required for [_1].', doc_name[file.documentType]);
         }
