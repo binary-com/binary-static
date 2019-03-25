@@ -132,7 +132,11 @@ const TermsAndConditions = (() => {
             $container[0].offsetHeight + $container.offset().top) { // 20 is the padding for content from bottom, to avoid menu snapping back up
             $sidebar.css({ position: 'absolute', bottom: '20px', top: '', width: sidebar_width });
         } else {
-            $sidebar.css({ position: 'fixed', top: '0px', bottom: '', width: sidebar_width });
+            let position_style = 'fixed';
+            if (!!window.MSInputMethodContext && !!document.documentMode) { // fix styling for IE11
+                position_style = 'static';
+            }
+            $sidebar.css({ position: position_style, top: '0px', bottom: '', width: sidebar_width });
         }
     };
 
