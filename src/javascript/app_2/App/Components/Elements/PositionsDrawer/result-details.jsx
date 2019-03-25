@@ -102,7 +102,7 @@ ResultDetails.propTypes = {
     contract_info: PropTypes.object,
     duration     : PropTypes.number,
     duration_unit: PropTypes.string,
-    exit_spot    : PropTypes.number,
+    exit_spot    : PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     has_result   : PropTypes.bool,
 };
 

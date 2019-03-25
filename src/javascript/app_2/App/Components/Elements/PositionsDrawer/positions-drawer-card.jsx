@@ -159,7 +159,7 @@ const PositionsDrawerCard = ({
 };
 
 PositionsDrawerCard.propTypes = {
-    active_position: PropTypes.PropTypes.oneOfType([
+    active_position: PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
     ]),
@@ -168,23 +168,20 @@ PositionsDrawerCard.propTypes = {
     currency         : PropTypes.string,
     duration         : PropTypes.number,
     duration_unit    : PropTypes.string,
-    exit_spot        : PropTypes.number,
+    exit_spot        : PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     id               : PropTypes.number,
     indicative       : PropTypes.number,
     is_sell_requested: PropTypes.bool,
-    is_valid_to_sell : PropTypes.PropTypes.oneOfType([
-        PropTypes.number,
-        PropTypes.bool,
-    ]),
-    onClickRemove: PropTypes.func,
-    onClickSell  : PropTypes.func,
-    openContract : PropTypes.func,
-    profit_loss  : PropTypes.number,
-    result       : PropTypes.string,
-    sell_time    : PropTypes.number,
-    server_time  : PropTypes.object,
-    status       : PropTypes.string,
-    type         : PropTypes.string,
+    is_valid_to_sell : PropTypes.oneOfType([PropTypes.number, PropTypes.bool]),
+    onClickRemove    : PropTypes.func,
+    onClickSell      : PropTypes.func,
+    openContract     : PropTypes.func,
+    profit_loss      : PropTypes.number,
+    result           : PropTypes.string,
+    sell_time        : PropTypes.number,
+    server_time      : PropTypes.object,
+    status           : PropTypes.string,
+    type             : PropTypes.string,
 };
 
 export default PositionsDrawerCard;
