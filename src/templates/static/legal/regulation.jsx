@@ -177,47 +177,85 @@ const Regulation = () => {
                     </div>
 
                     <h3>{it.L('RTS 27')}</h3>
-                    <div>
-                        <FillBox
-                            padding='5'
-                            center
-                            border='border-dark-gray'
-                            className='margin-top-17'
-                            image='images/pages/regulation/xlsx-icon.svg'
-                            href={it.url_for('/download/rts27/Table_1.xlsx')}
-                            target='_blank'
-                            text={it.L('Table 1 - Type of execution venue')}
-                        />
-                        <FillBox
-                            padding='5'
-                            center
-                            border='border-dark-gray'
-                            className='margin-top-17'
-                            image='images/pages/regulation/xlsx-icon.svg'
-                            href={it.url_for('/download/rts27/Table_3.xlsx')}
-                            target='_blank'
-                            text={it.L('Table 3 - Intra-Day Price information')}
-                        />
-                        <FillBox
-                            padding='5'
-                            center
-                            border='border-dark-gray'
-                            className='margin-top-17'
-                            image='images/pages/regulation/xlsx-icon.svg'
-                            href={it.url_for('/download/rts27/Table_4.xlsx')}
-                            target='_blank'
-                            text={it.L('Table 4 - Daily Price information')}
-                        />
-                        <FillBox
-                            padding='5'
-                            center
-                            border='border-dark-gray'
-                            className='margin-top-17'
-                            image='images/pages/regulation/xlsx-icon.svg'
-                            href={it.url_for('/download/rts27/Table_6.xlsx')}
-                            target='_blank'
-                            text={it.L('Table 6 - Likelihood of execution information')}
-                        />
+                    <div className='gr-row'>
+                        <div className='gr-6'>
+                            <h3 className='gr-padding-10'>{it.L('Q3 2018')}</h3>
+                            <FillBox
+                                center
+                                border='border-dark-gray'
+                                className='margin-top-17'
+                                image='images/pages/regulation/xlsx-icon.svg'
+                                href={it.url_for('/download/rts27/Q3/Table_1.xlsx')}
+                                target='_blank'
+                                text={it.L('Table 1 - Type of execution venue')}
+                            />
+                            <FillBox
+                                center
+                                border='border-dark-gray'
+                                className='margin-top-17'
+                                image='images/pages/regulation/xlsx-icon.svg'
+                                href={it.url_for('/download/rts27/Q3/Table_3.xlsx')}
+                                target='_blank'
+                                text={it.L('Table 3 - Intra-Day Price information')}
+                            />
+                            <FillBox
+                                center
+                                border='border-dark-gray'
+                                className='margin-top-17'
+                                image='images/pages/regulation/xlsx-icon.svg'
+                                href={it.url_for('/download/rts27/Q3/Table_4.xlsx')}
+                                target='_blank'
+                                text={it.L('Table 4 - Daily Price information')}
+                            />
+                            <FillBox
+                                center
+                                border='border-dark-gray'
+                                className='margin-top-17'
+                                image='images/pages/regulation/xlsx-icon.svg'
+                                href={it.url_for('/download/rts27/Q3/Table_6.xlsx')}
+                                target='_blank'
+                                text={it.L('Table 6 - Likelihood of execution information')}
+                            />
+                        </div>
+                        <div className='gr-6'>
+                            <h3 className='gr-padding-10'>{it.L('Q4 2018')}</h3>
+                            <FillBox
+                                center
+                                border='border-dark-gray'
+                                className='margin-top-17'
+                                image='images/pages/regulation/xlsx-icon.svg'
+                                href={it.url_for('/download/rts27/Q4/Table_1.xlsx')}
+                                target='_blank'
+                                text={it.L('Table 1 - Type of execution venue')}
+                            />
+                            <FillBox
+                                center
+                                border='border-dark-gray'
+                                className='margin-top-17'
+                                image='images/pages/regulation/xlsx-icon.svg'
+                                href={it.url_for('/download/rts27/Q4/Table_3.xlsx')}
+                                target='_blank'
+                                text={it.L('Table 3 - Intra-Day Price information')}
+                            />
+                            <FillBox
+                                center
+                                border='border-dark-gray'
+                                className='margin-top-17'
+                                image='images/pages/regulation/xlsx-icon.svg'
+                                href={it.url_for('/download/rts27/Q4/Table_4.xlsx')}
+                                target='_blank'
+                                text={it.L('Table 4 - Daily Price information')}
+                            />
+                            <FillBox
+                                center
+                                border='border-dark-gray'
+                                className='margin-top-17'
+                                image='images/pages/regulation/xlsx-icon.svg'
+                                href={it.url_for('/download/rts27/Q4/Table_6.xlsx')}
+                                target='_blank'
+                                text={it.L('Table 6 - Likelihood of execution information')}
+                            />
+                        </div>
                     </div>
                 </div>
             </Box>
