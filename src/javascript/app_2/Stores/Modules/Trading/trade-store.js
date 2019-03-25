@@ -418,6 +418,17 @@ export default class TradeStore extends BaseStore {
             setChartBarrier(this.smart_chart, response, this.onChartBarrierChange);
         }
 
+        if (response.error) {
+            const error       = getPropertyValue(response, ['error']);
+            const error_field = getPropertyValue(error, ['details', 'field']);
+            const map_error = {
+                barrier    : 'barrier_1',
+                barrier2   : 'barrier_2',
+                date_expiry: 'expiry_date',
+            };
+            this.setValidationErrorMessages(map_error[error_field] || error_field, [error.message]);
+        }
+
         this.is_purchase_enabled = true;
     }
 
