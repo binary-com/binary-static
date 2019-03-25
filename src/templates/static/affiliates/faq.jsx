@@ -56,7 +56,7 @@ const FAQ = () => (
                     </ul>
 
                     <h3>{it.L('Who can be a client on the [_1] platform?', it.website_name)}</h3>
-                    <p>{it.L('Anyone aged 18 years old and above who is not the resident of a “restricted country” (as listed in our [_1]Terms & Conditions[_2]) can become a [_3] client.', `<a href="${it.url_for('terms-and-conditions')}">`, '</a>', it.website_name)}</p>
+                    <p>{it.L('Anyone aged 18 years old and above who is not the resident of a "restricted country" (as listed in our [_1]Terms & Conditions[_2]) can become a [_3] client.', `<a href="${it.url_for('terms-and-conditions')}">`, '</a>', it.website_name)}</p>
                 </Section>
 
                 <Section id='account-management-and-tracking' header={it.L('Account management and tracking')}>
