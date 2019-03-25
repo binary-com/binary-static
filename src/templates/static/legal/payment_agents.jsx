@@ -6,8 +6,8 @@ const PaymentAgents = () => (
 
         <h2 data-anchor='scope-of-agreement'>A. {it.L('Scope of Agreement')}</h2>
         <ol>
-            <li>{it.L('This Agreement is between Binary (C.R) S.A. (hereinafter referred to as “the Company” or “[_1]“) and Payment Agent (hereinafter referred to as “the Agent”), both of whom agree to be bound by this Agreement.', it.website_name)}</li>
-            <li>{it.L('The Company and Agent (hereinafter referred to as “the Parties”) desire to enter into this Agreement whereby the Company will offer to its clients local payment processing services through the Agent within a territory as specified in Section D of this Agreement.')}</li>
+            <li>{it.L('This Agreement is between Binary (C.R) S.A. (hereinafter referred to as "the Company" or "[_1]") and Payment Agent (hereinafter referred to as "the Agent"), both of whom agree to be bound by this Agreement.', it.website_name)}</li>
+            <li>{it.L('The Company and Agent (hereinafter referred to as "the Parties") desire to enter into this Agreement whereby the Company will offer to its clients local payment processing services through the Agent within a territory as specified in Section D of this Agreement.')}</li>
         </ol>
 
         <h2 data-anchor='general'>B. {it.L('General')}</h2>
@@ -23,10 +23,10 @@ const PaymentAgents = () => (
 
         <h2 data-anchor='provision-of-services'>D. {it.L('Provision of Services')}</h2>
         <ol>
-            <li>{it.L('The Agent may provide its services to clients of the Company who desire to deposit and/or withdraw money using the Agent. The Agent may provide its services to clients who intend to use e-wallet or e-payment methods other than those used by the Company (hereinafter referred to as the “e-payments”) or local currencies other than those accepted by the Company (hereinafter referred to as the “local currencies”) and local bank wire transfers (hereinafter referred to as the “bank wire transfers”).')}</li>
+            <li>{it.L('The Agent may provide its services to clients of the Company who desire to deposit and/or withdraw money using the Agent. The Agent may provide its services to clients who intend to use e-wallet or e-payment methods other than those used by the Company (hereinafter referred to as the "e-payments") or local currencies other than those accepted by the Company (hereinafter referred to as the "local currencies") and local bank wire transfers (hereinafter referred to as the "bank wire transfers").')}</li>
             <li>{it.L('It is agreed that any deposits through the Agent shall be made as follows:  ')}
                 <ul className='bullet'>
-                    <li>{it.L('The client using e-payments and bank wire transfers may make a deposit to the Agent. The Agent, receiving the deposit, shall thereinafter make a deposit to his [_1] Account (hereinafter referred to as the “[_1] Agent Account”).', it.website_name)}</li>
+                    <li>{it.L('The client using e-payments and bank wire transfers may make a deposit to the Agent. The Agent, receiving the deposit, shall thereinafter make a deposit to his [_1] Account (hereinafter referred to as the "[_1] Agent Account").', it.website_name)}</li>
                     <li>{it.L('The sum received in the [_1] Agent Account shall be subsequently transferred by the Agent to the respective [_1] Client\'s Account.', it.website_name)}</li>
                 </ul>
             </li>
@@ -125,7 +125,7 @@ const PaymentAgents = () => (
 
         <h2 data-anchor='events-of-defaults'>K. {it.L('Events of Default')}</h2>
         <ol>
-            <li>{it.L('Each of the following event constitutes an “Event of Default”:')}
+            <li>{it.L('Each of the following event constitutes an "Event of Default":')}
                 <ul className='bullet'>
                     <li>{it.L('In case of Agent\'s death, incapacity or where the Agent becomes of unsound mind;')}</li>
                     <li>{it.L('Where the Agent becomes incapable to pay his debts as they fall due, or is bankrupt or insolvent, as defined under any and all applicable bankruptcy or insolvency law, where the Agent is an individual;')}</li>
@@ -170,7 +170,7 @@ const PaymentAgents = () => (
 
         <h2 data-anchor='confidentiality'>P. {it.L('Confidentiality')}</h2>
         <ol>
-            <li>{it.L('The Agent shall treat all information related to the Company and the client including but not limited to client\'s identity, financial status, trading or transaction performance, as well as Company\'s business plans, price points, ideas, concepts, formats, suggestions, developments, arrangements, programs, techniques, methodologies, knowhow, equipment, whatsoever as confidential (hereinafter referred to as the “Confidential Information”).')}</li>
+            <li>{it.L('The Agent shall treat all information related to the Company and the client including but not limited to client\'s identity, financial status, trading or transaction performance, as well as Company\'s business plans, price points, ideas, concepts, formats, suggestions, developments, arrangements, programs, techniques, methodologies, knowhow, equipment, whatsoever as confidential (hereinafter referred to as the "Confidential Information").')}</li>
             <li>{it.L('The Agent shall not produce any copies of any Confidential Information or any content based on the concepts contained within the Confidential Information for personal use or for distribution, without the Company\'s request.')}</li>
             <li>{it.L('It is agreed that Confidential Information shall be considered as confidential even after the termination of the business relationship established under this Agreement or any other agreement or arrangement between the Parties.')}</li>
             <li>{it.L('It is noted that immediately upon termination of the relationship between the Company and the Agent, the Agent shall return to the Company any documents pertaining to the Company\'s business whatsoever which are in the Agent\'s possession.')}</li>
