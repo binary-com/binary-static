@@ -10,6 +10,7 @@ import {
     getDurationUnitText }          from './Helpers/details';
 import {
     getDisplayStatus,
+    getEndSpot,
     getEndSpotTime,
     isValidToSell }                from '../Contract/Helpers/logic';
 import BaseStore                   from '../../base-store';
@@ -85,6 +86,10 @@ export default class PortfolioStore extends BaseStore {
         const new_indicative  = +proposal.bid_price;
         const profit_loss     = +proposal.profit;
 
+        // fix for missing barrier and entry_spot in proposal_open_contract API response, only re-assign if valid
+        if (proposal.barrier) portfolio_position.barrier = +proposal.barrier;
+        if (proposal.entry_spot) portfolio_position.entry_spot = +proposal.entry_spot;
+
         // store contract proposal details that require modifiers
         portfolio_position.indicative       = new_indicative;
         portfolio_position.profit_loss      = profit_loss;
@@ -144,12 +149,19 @@ export default class PortfolioStore extends BaseStore {
         const contract_response = response.proposal_open_contract;
         const i = this.getPositionIndexById(contract_response.contract_id);
 
+        this.positions[i].contract_info    = contract_response;
+        this.positions[i].exit_spot        = getEndSpot(contract_response) || contract_response.current_spot; // workaround if no exit_spot in proposal_open_contract, use latest spot
         this.positions[i].duration         = getDurationTime(contract_response);
         this.positions[i].duration_unit    = getDurationUnitText(getDurationPeriod(contract_response));
-        this.positions[i].sell_time        = getEndSpotTime(contract_response);
-        this.positions[i].result           = getDisplayStatus(contract_response);
         this.positions[i].is_valid_to_sell = isValidToSell(contract_response);
-        this.positions[i].contract_info    = contract_response;
+        this.positions[i].result           = getDisplayStatus(contract_response);
+        this.positions[i].sell_time        = getEndSpotTime(contract_response) || contract_response.current_spot_time; // same as exit_spot, use latest spot time if no exit_tick_time
+
+        // fix for missing barrier and entry_spot
+        if (!this.positions[i].contract_info.barrier || !this.positions[i].contract_info.entry_spot) {
+            this.positions[i].contract_info.barrier    = this.positions[i].barrier;
+            this.positions[i].contract_info.entry_spot = this.positions[i].entry_spot;
+        }
     }
 
     @action.bound
