@@ -1,8 +1,8 @@
 import classNames        from 'classnames';
 import React             from 'react';
 import { localize }      from '_common/localize';
-import Button            from 'App/Components/Form/button.jsx';
 import Money             from 'App/Components/Elements/money.jsx';
+import Button            from 'App/Components/Form/button.jsx';
 import { IconTradeType } from 'Assets/Trading/Types';
 
 const PurchaseButton = ({
@@ -31,7 +31,7 @@ const PurchaseButton = ({
                 <div className='btn-purchase__trade-type'>
                     <div className='btn-purchase__icon'>
                         <IconTradeType
-                            type={!is_disabled ? !is_high_low ? type.toLowerCase() : `${type.toLowerCase()}_barrier` : ''}
+                            type={!is_disabled ? (!is_high_low ? type.toLowerCase() : `${type.toLowerCase()}_barrier`) : ''}
                         />
                     </div>
                     <div className='btn-purchase__text'>
