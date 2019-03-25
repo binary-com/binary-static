@@ -253,6 +253,29 @@ describe('logic', () => {
         });
     });
 
+    describe('getLastTickFromTickStream', () => {
+        it('should return the last tick in the tick_stream array', () => {
+            const tick_stream = [
+                {
+                    "tick" : 766.53,
+                    "epoch": 1000001,
+                },
+                {
+                    "tick" : 800.23,
+                    "epoch": 1000002,
+                },
+            ];
+            expect(Logic.getLastTickFromTickStream(tick_stream)).to.deep.include({
+                "tick" : 800.23,
+                "epoch": 1000002,
+            });
+        });
+        it('should return an empty object if the tick_stream array is empty', () => {
+            const tick_stream = [];
+            expect(Logic.getLastTickFromTickStream(tick_stream)).to.eql({});
+        });
+    });
+
     describe('isSoldBeforeStart', () => {
         it('should return true when sell_time is before date_start', () => {
             const contract_info = {

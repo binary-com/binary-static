@@ -15,10 +15,11 @@ const GTM = (() => {
     const isGtmApplicable = () => (/^(1|1098|14473|15284)$/.test(getAppId()));
 
     const getCommonVariables = () => ({
-        language : getLanguage(),
-        pageTitle: pageTitle(),
-        pjax     : State.get('is_loaded_by_pjax'),
-        url      : document.URL,
+        country_ip: State.getResponse('website_status.clients_country'),
+        language  : getLanguage(),
+        pageTitle : pageTitle(),
+        pjax      : State.get('is_loaded_by_pjax'),
+        url       : document.URL,
         ...ClientBase.isLoggedIn() && {
             visitorId: ClientBase.get('loginid'),
             bom_email: ClientBase.get('email'),
