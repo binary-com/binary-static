@@ -204,7 +204,6 @@ const Authenticate = (() => {
                     file_obj.id_number = $($inputs[0]).val();
                     file_obj.exp_date  = $($inputs[1]).val();
                 }
-                console.log($inputs); // The new date isn't setting for some reason.
                 fileTracker($e, true);
                 files.push(file_obj);
 
@@ -417,7 +416,6 @@ const Authenticate = (() => {
             && required_docs.indexOf(file.documentType.toLowerCase()) !== -1
             && !isIdentificationNoExpiry(Client.get('residence'))
         ) {
-            console.log('This has passed despite account being in the no expiry list.')
             onErrorResolved('exp_date', file.passthrough.class);
             return localize('Expiry date is required for [_1].', doc_name[file.documentType]);
         }
