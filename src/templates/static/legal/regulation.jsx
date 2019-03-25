@@ -178,7 +178,7 @@ const Regulation = () => {
 
                     <h3>{it.L('RTS 27')}</h3>
                     <div className='gr-row'>
-                        <div className='gr-6'>
+                        <div className='gr-6 gr-12-m'>
                             <h3 className='gr-padding-10'>{it.L('Q3 2018')}</h3>
                             <FillBox
                                 align_left
@@ -221,7 +221,7 @@ const Regulation = () => {
                                 text={it.L('Table 6 - Likelihood of execution information')}
                             />
                         </div>
-                        <div className='gr-6'>
+                        <div className='gr-6 gr-12-m'>
                             <h3 className='gr-padding-10'>{it.L('Q4 2018')}</h3>
                             <FillBox
                                 align_left
