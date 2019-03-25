@@ -15,8 +15,8 @@
         position: absolute;
         width: 290px;
         height: 544px;
-        right: calc(100% + 1px);
-        top: -5.4em;
+        right: calc(100% + 10px);
+        top: -55px;
         z-index: 2;
         background: $COLOR_LIGHT_BLACK_4_SOLID;
         border-radius: 4px;
@@ -56,13 +56,17 @@
         margin-bottom: 0.8em;
 
         .title {
-            @include typeface(--paragraph-left-normal-black);
+            @include typeface(--paragraph-left-bold-black);
             @include toEm(margin-left, 8px, 1.4em);
         }
 
         /* postcss-bem-linter: ignore */
         span {
             cursor: pointer;
+        }
+        /* postcss-bem-linter: ignore */
+        svg {
+            @extend %inline-icon;
         }
     }
     &--enter, &--exit {
@@ -104,6 +108,7 @@
         }
     }
     &__icon {
+        @extend %inline-icon;
         cursor: pointer;
     }
 }

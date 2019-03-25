@@ -2,13 +2,12 @@ import PropTypes            from 'prop-types';
 import React                from 'react';
 import { getPropertyValue } from '_common/utility';
 import { IconClose }        from 'Assets/Common/icon-close.jsx';
-import PurchaseResult       from './purchase-result.jsx';
 import {
     ErrorBalance,
     ErrorGeneral,
     ErrorLogin }            from './Templates';
 
-const MessageBox = ({ currency, purchase_info, onClick }) => {
+const MessageBox = ({ purchase_info, onClick }) => {
     const has_error = !!purchase_info.error;
     let ErrorComponent;
     if (has_error) {
@@ -25,20 +24,13 @@ const MessageBox = ({ currency, purchase_info, onClick }) => {
                 break;
         }
     }
-
+    if (!has_error) return null;
     return (
-        <div className='purchase-container__error'>
-            <div className='purchase-container__error-close-btn' onClick={onClick}>
-                <IconClose className='purchase-container__error-close-btn-ic' />
+        <div className='message-box'>
+            <div className='message-box__close-btn' onClick={onClick}>
+                <IconClose className='ic-close' />
             </div>
-            {has_error ?
-                ErrorComponent
-                :
-                <PurchaseResult
-                    purchase_info={purchase_info.buy}
-                    currency={currency}
-                />
-            }
+            {ErrorComponent}
         </div>
     );
 };

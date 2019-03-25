@@ -6,7 +6,8 @@
     border: solid 1px $COLOR_WHITE;
     border-radius: 4px;
     transition: transform 0.3s, opacity 0.3s;
-    padding: 0.4em;
+    padding: 0.8em;
+    padding-bottom: 0.6em;
     color: $COLOR_LIGHT_BLACK_1;
 
     &__display {
@@ -18,7 +19,10 @@
 
         /* postcss-bem-linter: ignore */
         span[name=contract_type] {
-            @include typeface(--small-left-light-black);
+            @include typeface(--paragraph-left-normal-black);
+            @include themify($themes) {
+                color: themed('text_color') !important;
+            }
             vertical-align: middle;
         }
         &:hover, &:focus {
@@ -27,6 +31,10 @@
         }
         &--clicked {
             border-color: $COLOR_DARK_BLUE_5;
+
+            .contract-type-widget__select-arrow {
+                transform: rotate(-90deg);
+            }
         }
     }
     &__select-arrow {
@@ -38,19 +46,20 @@
         text-rendering: optimizeLegibility;
         position: absolute;
         pointer-events: none;
-        top: 35%;
-        right: 0.8em;
+        top: 40%;
+        left: 0.6em;
         line-height: 1;
-        transition: transform 0.3s ease;
-        transform: rotate(0deg);
+        transition: transform 0.25s ease;
+        transform: rotate(90deg);
         transform-origin: 45% 45;
         color: $COLOR_LIGHT_BLACK_4;
+        @extend %inline-icon;
     }
     &__icon-wrapper {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        margin-bottom: 0.2em;
+        margin-bottom: 0.6em;
 
         /* postcss-bem-linter: ignore */
         .category-wrapper {

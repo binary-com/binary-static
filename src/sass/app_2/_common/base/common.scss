@@ -1,3 +1,13 @@
+/** @define theme */
+.theme {
+    &--light {
+        background: $COLOR_LIGHT_BLACK_4_SOLID;
+    }
+    &--dark {
+        background: $COLOR_DARK_BLUE_1;
+    }
+}
+
 /** @define container */
 .container {
     width: 100%;
@@ -35,4 +45,14 @@
 /** @define no-margin */
 .no-margin {
     margin: 0;
+}
+
+/** @define hr */
+.hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid $COLOR_LIGHT_BLACK_4;
+    margin: 0.5em 0;
+    padding: 0;
 }

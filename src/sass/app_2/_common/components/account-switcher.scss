@@ -24,6 +24,9 @@
     &__id {
         @include typeface(--title-center-bold-black, default);
         pointer-events: none;
+        @include themify($themes) {
+            color: themed('text_color');
+        }
 
         &:after {
             display: block;
@@ -44,9 +47,16 @@
         transition: transform 0.25s ease;
         transform: rotate(0deg);
         transform-origin: 50% 45%;
+        @extend %inline-icon;
     }
     &:hover:not(.show) {
-        background: $COLOR_LIGHT_BLACK_4;
+        @include themify($themes) {
+            background: themed('hover_color');
+
+            .symbols {
+                background: themed('hover_color');
+            }
+        }
     }
     &--is-virtual {
         .acc-info__balance {
@@ -68,7 +78,11 @@
         }
     }
     &__button {
-        margin: 0 1.6em;
+        margin: 0 1.4em 0 0;
+
+        &:not(:last-child) {
+            margin-right: 1em;
+        }
     }
 }
 
@@ -76,13 +90,15 @@
 .acc-switcher {
     &__wrapper {
         position: absolute;
-        background: $COLOR_WHITE;
         transition: transform 0.25s ease, opacity 0.25s linear;
         box-shadow: 0 2px 8px 0 $COLOR_LIGHT_BLACK_3;
         right: 0;
         top: calc(100% + 4px);
         width: 240px;
         border-radius: $BORDER_RADIUS;
+        @include themify($themes) {
+            background: themed('background_container_color');
+        }
 
         &--enter-done {
             opacity: 1;
@@ -101,37 +117,77 @@
         &-title {
             @include typeface(--small-center-normal-grey, none);
             @include toEm(padding, 8px 16px, 1.2em);
-            border: 1px dashed $COLOR_LIGHT_BLACK_2;
             width: 100%;
             border-radius: 4px;
             cursor: pointer;
+            @include themify($themes) {
+                color: themed('text_secondary_color');
+                border: 1px dashed themed('text_secondary_color');
 
-            &:before {
-                content: '\002B';
-                color: $COLOR_LIGHT_BLACK_2;
-                float: left;
-            }
-            &:hover {
-                background: $COLOR_LIGHT_BLACK_4;
+                &:before {
+                    content: '\002B';
+                    color: themed('text_secondary_color');
+                    float: left;
+                }
+                &:hover {
+                    background: themed('tab_hover_color');
+                }
             }
         }
     }
     &__list {
         height: 100%;
         border-radius: $BORDER_RADIUS;
-        background-color: $COLOR_LIGHT_BLACK_4_SOLID;
         padding: 1.6em;
         display: flex;
         flex-flow: column nowrap;
+        @include themify($themes) {
+            background: themed('background_container_color');
+        }
 
         &-title {
             @include typeface(--paragraph-left-bold-black);
-            @include toEm(padding, 8px 0, 1em);
+            padding-bottom: 0.8em;
             display: block;
+            @include themify($themes) {
+                color: themed('text_color');
+            }
+        }
+        &-group {
+            padding-bottom: 16px;
         }
     }
     &__accounts {
+        border-radius: 4px;
+        @include themify($themes) {
+            background: themed('container_color');
+        }
+
         .acc-switcher__account {
+            @include themify($themes) {
+                background: themed('container_color');
+
+                &:hover:not(.acc-switcher__account--selected) {
+                    background-color: themed('tab_hover_color');
+                }
+                .acc-switcher__id {
+                    color: themed('text_primary_color');
+                }
+                &--selected {
+                    background: themed('active_color');
+
+                    .acc-switcher__id {
+                        color: themed('text_active_color');
+                        font-weight: 700;
+
+                        &--virtual:before {
+                            color: themed('text_active_color');
+                            border: 1px solid themed('text_active_color');
+                        }
+                    }
+                }
+            }
+
             &:first-child {
                 border-top-left-radius: 4px;
                 border-top-right-radius: 4px;
@@ -146,7 +202,9 @@
                 border-radius: 4px;
             }
             &:not(:last-child):not(:only-child) {
-                border-bottom: 1px solid $COLOR_LIGHT_BLACK_4_SOLID;
+                @include themify($themes) {
+                    border-bottom: 1px solid themed('background_container_color');
+                }
                 border-right: none;
                 border-left: none;
             }
@@ -162,7 +220,7 @@
         background-color: $COLOR_WHITE;
 
         .acc-switcher__id {
-            @include typeface(--paragraph-left-light-black);
+            @include typeface(--paragraph-left-normal-black);
             display: flex;
             align-items: center;
 
@@ -175,7 +233,7 @@
                 border-radius: 16px;
             }
             &-icon {
-                margin-right: 1.6em;
+                @include toEm(margin-right, 16px, 1em);
             }
         }
         &:hover:not(.acc-switcher__account--selected) {
@@ -185,13 +243,11 @@
             background: $COLOR_LIGHT_GRAY_1;
 
             .acc-switcher__id {
-                color: $COLOR_WHITE;
-                font-weight: 700;
+                @include typeface(--paragraph-left-bold-active);
 
                 &--virtual:before {
                     color: $COLOR_WHITE;
                     border: 1px solid $COLOR_WHITE;
-
                 }
             }
         }
@@ -207,11 +263,15 @@
 
         &-text {
             @include typeface(--paragraph-left-normal-black, none);
+            @include themify($themes) {
+                color: themed('text_primary_color');
+            }
         }
         &-icon {
             width: 1.6em;
             height: auto;
             margin-left: 8px;
+            @extend %inline-icon;
         }
     }
 }

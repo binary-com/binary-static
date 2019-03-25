@@ -13,19 +13,27 @@
         display: inline-flex;
         justify-content: center;
         align-items: center;
-        background-color: $COLOR_WHITE;
         @include typeface(--paragraph-left-normal-black);
+        @include themify($themes) {
+            background-color: themed('container_color');
+            color: themed('text_primary_color');
+        }
 
         &:not(:first-child) {
             margin-left: 5px;
         }
         &--selected {
             @include typeface(--paragraph-left-bold-active);
-            background-color: $COLOR_LIGHT_GRAY_1;
+            @include themify($themes) {
+                background-color: themed('active_color');
+                color: themed('text_active_color');
+            }
         }
         &:hover:not(&--selected) {
             cursor: pointer;
-            background-color: $COLOR_LIGHT_BLACK_4;
+            @include themify($themes) {
+                background-color: themed('tab_hover_color');
+            }
         }
         &:last-child {
             margin-right: 0;

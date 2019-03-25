@@ -2,8 +2,12 @@
 .contract-type-list {
     padding: 1.6em 1.6em 0em;
 
-    &__label span {
+    &__label {
         @include typeface(--paragraph-left-bold-black);
+        @include themify($themes) {
+            color: themed('text_primary_color');
+        }
+        margin-bottom: 0.6em;
     }
     &:last-child {
         padding-bottom: 1.6em;
@@ -42,14 +46,15 @@
     background-color: $COLOR_WHITE;
 
     &:hover {
-        background-color: #f2f3f8; /* stylelint-disable-line color-no-hex */
+        background-color: $COLOR_LIGHT_BLACK_4;
 
         .contract-type-item__icon {
             display: block;
         }
     }
     &__title {
-        @include typeface(--paragraph-left-light-black);
+        @include typeface(--paragraph-left-normal-black);
+        padding-left: 0.4em;
     }
     &__icon {
         display: none;
@@ -60,22 +65,42 @@
         /* postcss-bem-linter: ignore */
         svg {
             pointer-events: none;
+
+            .color1-fill {
+                @include themify($themes) {
+                    fill: themed('text_primary_color') !important;
+                }
+            }
         }
     }
     &--selected {
-        background: $COLOR_LIGHT_GRAY_1;
-
+        @include themify($themes) {
+            color: themed('text_active_color');
+            background: themed('active_color');
+        }
         /* postcss-bem-linter: ignore */
         span {
             font-weight: bold;
             color: $COLOR_WHITE;
+        }
+        .contract-type-item__icon {
+            /* postcss-bem-linter: ignore */
+            svg {
+                pointer-events: none;
+
+                .color1-fill {
+                    @include themify($themes) {
+                        fill: themed('text_active_color') !important;
+                    }
+                }
+            }
         }
     }
     &__icon-wrapper {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        margin-bottom: 0.2em;
+        margin-right: 0.7em;
 
         /* postcss-bem-linter: ignore */
         .category-wrapper {

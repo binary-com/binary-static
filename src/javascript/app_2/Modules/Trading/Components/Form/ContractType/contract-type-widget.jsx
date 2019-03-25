@@ -1,6 +1,7 @@
-import classNames           from 'classnames';
+import classNames            from 'classnames';
 import PropTypes             from 'prop-types';
 import React                 from 'react';
+import { IconArrow }         from 'Assets/Common';
 import { IconTradeCategory } from 'Assets/Trading/Categories';
 import ContractTypeDialog    from './contract-type-dialog.jsx';
 import ContractTypeList      from './contract-type-list.jsx';
@@ -133,7 +134,7 @@ class ContractTypeWidget extends React.PureComponent {
         return (
             <div
                 ref={this.setWrapperRef}
-                className={'contract-type-widget'}
+                className='contract-type-widget dropdown--left'
                 tabIndex='0'
             >
                 <div
@@ -146,6 +147,7 @@ class ContractTypeWidget extends React.PureComponent {
                     <span name={this.props.name} value={this.props.value}>
                         {this.getDisplayText()}
                     </span>
+                    <IconArrow className='contract-type-widget__select-arrow contract-type-widget__select-arrow--left' />
                 </div>
 
                 <ContractTypeDialog

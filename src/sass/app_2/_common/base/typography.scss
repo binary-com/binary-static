@@ -123,6 +123,9 @@ html {
     font-family: inherit;
     font-style: inherit;
     padding: 2px 3px;
+    @include themify($themes) {
+        color: themed('text_color');
+    }
 }
 
 // Placeholders

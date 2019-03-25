@@ -1,6 +1,8 @@
 const AssetIndex       = require('./asset_index');
 const BinarySocket     = require('../../../base/socket');
 const Table            = require('../../../common/attach_dom/table');
+const Login            = require('../../../../_common/base/login');
+const CommonFunctions  = require('../../../../_common/common_functions');
 const showLoadingImage = require('../../../../_common/utility').showLoadingImage;
 
 const AssetIndexUI = (() => {
@@ -12,7 +14,8 @@ const AssetIndexUI = (() => {
         market_columns;
 
     const onLoad = () => {
-        $container  = $('#asset-index');
+        $container = $('#asset-index');
+        $('#empty-asset-index').setVisibility(0);
         asset_index = market_columns = undefined;
         active_symbols = undefined;
 
@@ -28,6 +31,15 @@ const AssetIndexUI = (() => {
 
     const populateTable = () => {
         if (!active_symbols || !asset_index) return;
+
+        if (!asset_index.length) {
+            $container.empty();
+            $('#empty-asset-index').setVisibility(1);
+            const empty_asset_index_btn_login = CommonFunctions.getElementById('empty-asset-index-btn-login');
+            empty_asset_index_btn_login.removeEventListener('click', loginOnClick);
+            empty_asset_index_btn_login.addEventListener('click', loginOnClick);
+            return;
+        }
 
         $('#errorMsg').setVisibility(0);
         asset_index    = AssetIndex.getAssetIndexData(asset_index, active_symbols);
@@ -119,6 +131,11 @@ const AssetIndexUI = (() => {
             asset_index = response.asset_index;
             if (active_symbols) populateTable();
         });
+    };
+
+    const loginOnClick = (e) => {
+        e.preventDefault();
+        Login.redirectToLogin();
     };
 
     return {

@@ -20,6 +20,8 @@ export default class UIStore extends BaseStore {
     @observable is_settings_dialog_on   = false;
     @observable is_accounts_switcher_on = false;
 
+    @observable has_only_forward_starting_contracts = false;
+
     // Purchase Controls
     @observable is_purchase_confirm_on = false;
     @observable is_purchase_lock_on    = false;
@@ -47,6 +49,8 @@ export default class UIStore extends BaseStore {
     @observable duration_h             = 1;
     @observable duration_d             = 1;
 
+    @observable is_blurred = false;
+
     getDurationFromUnit = (unit) => this[`duration_${unit}`];
 
     constructor() {
@@ -71,7 +75,15 @@ export default class UIStore extends BaseStore {
 
         super({ local_storage_properties, store_name });
         window.addEventListener('resize', this.handleResize);
-        autorun(() => document.body.classList[this.is_dark_mode_on ? 'add' : 'remove']('theme--dark'));
+        autorun(() => {
+            if (this.is_dark_mode_on) {
+                document.body.classList.remove('theme--light');
+                document.body.classList.add('theme--dark');
+            } else {
+                document.body.classList.remove('theme--dark');
+                document.body.classList.add('theme--light');
+            }
+        });
     }
 
     @action.bound
@@ -98,6 +110,16 @@ export default class UIStore extends BaseStore {
     @computed
     get is_tablet() {
         return this.screen_width <= MAX_TABLET_WIDTH;
+    }
+
+    @action.bound
+    showBlur() {
+        this.is_blurred = true;
+    }
+
+    @action.bound
+    hideBlur() {
+        this.is_blurred = false;
     }
 
     @action.bound
@@ -152,7 +174,12 @@ export default class UIStore extends BaseStore {
     }
 
     @action.bound
-    togglePositionsDrawer() { // show and hide Positions Drawer
+    openPositionsDrawer() { // show and hide Positions Drawer
+        this.is_positions_drawer_on = true;
+    }
+
+    @action.bound
+    togglePositionsDrawer() { // toggle Positions Drawer
         this.is_positions_drawer_on = !this.is_positions_drawer_on;
     }
 
@@ -204,5 +231,10 @@ export default class UIStore extends BaseStore {
     @action.bound
     removeAllToastMessages() {
         this.toast_messages = [];
+    }
+
+    @action.bound
+    setHasOnlyForwardingContracts(has_only_forward_starting_contracts) {
+        this.has_only_forward_starting_contracts = has_only_forward_starting_contracts;
     }
 }

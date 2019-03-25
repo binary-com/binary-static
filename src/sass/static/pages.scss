@@ -434,6 +434,10 @@
             #cs_telephone_number {
                 width: 100%;
                 min-width: 160px;
+
+                & ~ ul.select-options {
+                    max-height: 130px;
+                }
             }
             #display_cs_telephone {
                 line-height: 1.5rem;
@@ -810,14 +814,8 @@ body #not_authenticated_financial ul.checked > li {
     }
     img.platform {
         max-height: 150px;
-        width: 100%;
-
-        @media (max-width: 768px) {
-            width: auto;
-        }
-        @media (max-width: 350px) {
-            max-width: 290px;
-        }
+        width: auto;
+        max-width: 100%;
     }
     @media screen and (max-width: 768px) {
         .no-center-text-p-m {

@@ -5,9 +5,10 @@ import { formatMoney } from '_common/base/currency_base';
 import {
     AccountInfo,
     DepositButton,
-    InstallPWAButton,
+    // InstallPWAButton,
     LoginButton,
     MenuLinks,
+    SignupButton,
     ToggleMenuDrawer,
     UpgradeButton }    from 'App/Components/Layout/Header';
 import header_links    from 'App/Constants/header-links';
@@ -18,15 +19,15 @@ const Header = ({
     can_upgrade,
     can_upgrade_to,
     currency,
-    hideInstallButton,
+    // hideInstallButton,
     is_acc_switcher_on,
-    is_install_button_visible,
+    // is_install_button_visible,
     is_logged_in,
     is_mobile,
     is_virtual,
     loginid,
     onClickUpgrade,
-    pwa_prompt_event,
+    // pwa_prompt_event,
     setPWAPromptEvent,
     showInstallButton,
     toggleAccountsDialog,
@@ -47,17 +48,21 @@ const Header = ({
             <div className='header__menu-items'>
                 <div className='header__menu-left'>
                     {is_mobile && <ToggleMenuDrawer />}
-                    <MenuLinks items={header_links} />
+                    <MenuLinks
+                        is_logged_in={is_logged_in}
+                        items={header_links}
+                    />
                 </div>
                 <div className='header__menu-right'>
                     <div className='acc-info__container'>
-                        { is_install_button_visible && is_logged_in &&
+                        {/* TODO: uncomment to show PWA Install button */}
+                        {/* { is_install_button_visible && is_logged_in &&
                             <InstallPWAButton
                                 className='acc-info__button'
                                 prompt_event={pwa_prompt_event}
                                 onClick={hideInstallButton}
                             />
-                        }
+                        } */}
                         { is_logged_in ?
                             <React.Fragment>
                                 <AccountInfo
@@ -78,7 +83,10 @@ const Header = ({
                                 }
                             </React.Fragment>
                             :
-                            <LoginButton className='acc-info__button' />
+                            <React.Fragment>
+                                <LoginButton className='acc-info__button' />
+                                <SignupButton className='acc-info__button' />
+                            </React.Fragment>
                         }
                     </div>
                 </div>

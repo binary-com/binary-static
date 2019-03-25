@@ -5,7 +5,7 @@
     touch-action: manipulation;
     cursor: pointer;
     white-space: nowrap;
-    padding: 0 1em;
+    padding: 0 1.6em;
     margin: 1.6em;
     border: 0;
     border-radius: 4px;
@@ -17,7 +17,7 @@
     background: $COLOR_GREEN_1;
 
     &__text {
-        @include typeface(--title-center-normal-black, uppercase);
+        @include typeface(--paragraph-center-bold-black, uppercase);
     }
     &--link {
         max-width: 220px;

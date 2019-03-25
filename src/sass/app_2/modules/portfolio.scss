@@ -30,10 +30,12 @@
             padding: 0.5em;
             margin-bottom: 0.3em;
             border-radius: 100%;
-            background-color: $COLOR_LIGHT_BLACK_4;
             display: flex;
             justify-content: center;
             align-items: center;
+            @include themify($themes) {
+                background: themed('background_icon_color');
+            }
         }
     }
     .reference a {
@@ -77,9 +79,16 @@
         width: 100%;
     }
     &__icon {
+        @extend %inline-icon;
         height: 4.8em;
         width: 4.8em;
         margin-bottom: 1.6em;
+        @include themify($themes) {
+            /* postcss-bem-linter: ignore */
+            path {
+                fill: themed('slider_hover_color') !important;
+            }
+        }
     }
     &__text {
         font-size: 1.4em;
