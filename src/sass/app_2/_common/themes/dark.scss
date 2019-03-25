@@ -120,79 +120,43 @@
     //         color: $COLOR_WHITE;
     //     }
     // }
-    .fullscreen-dialog {
-        background: $COLOR_DARK_BLUE_5;
+    // .fullscreen-dialog {
+    //     background: $COLOR_DARK_BLUE_5;
 
-        &__header, &__header-shadow-cover, &__content {
-            background: $COLOR_DARK_BLUE_5;
-        }
-        &__header-shadow-cover {
-            box-shadow: 0 1px 0px $COLOR_DARK_BLUE_5;
-        }
-        &__title {
-            color: $COLOR_DARK_BLUE_7;
-        }
-        &__trade-type-info-modal {
-            .info-header {
-                .title {
-                    color: $COLOR_DARK_BLUE_2;
-                }
-            }
-            .info-gif {
-                background-color: $COLOR_DARK_BLUE_2;
-            }
-            .info-content {
-                color: $COLOR_LIGHT_BLACK_1;
-            }
-            .info-navigation {
-                &__list {
-                    .circle-button {
-                        background-color: $COLOR_WHITE;
+    //     &__header, &__header-shadow-cover, &__content {
+    //         background: $COLOR_DARK_BLUE_5;
+    //     }
+    //     &__header-shadow-cover {
+    //         box-shadow: 0 1px 0px $COLOR_DARK_BLUE_5;
+    //     }
+    //     &__title {
+    //         color: $COLOR_DARK_BLUE_7;
+    //     }
+    //     &__trade-type-info-modal {
+    //         .info-header {
+    //             .title {
+    //                 color: $COLOR_DARK_BLUE_2;
+    //             }
+    //         }
+    //         .info-gif {
+    //             background-color: $COLOR_DARK_BLUE_2;
+    //         }
+    //         .info-content {
+    //             color: $COLOR_LIGHT_BLACK_1;
+    //         }
+    //         .info-navigation {
+    //             &__list {
+    //                 .circle-button {
+    //                     background-color: $COLOR_WHITE;
 
-                        &.active {
-                            background-color: $COLOR_LIGHT_BLACK_4;
-                        }
-                    }
-                }
-            }
-        }
-    }
-    .digits {
-        &__digit {
-            &-value {
-                background-color: $COLOR_DARK_BLUE_5;
-                color: $COLOR_WHITE;
-
-                &--blink {
-                    animation-name: blinking-dark-blue-2;
-                }
-                &--selected {
-                    background-color: $COLOR_DARK_BLUE_2;
-                }
-                &--win {
-                    background-color: $COLOR_GREEN_1;
-                }
-                &--loss {
-                    background-color: $COLOR_RED;
-                }
-            }
-            &-spot {
-                &-value {
-                    color: $COLOR_DARK_BLUE_7;
-                }
-                &-last {
-                    color: $COLOR_WHITE;
-
-                    &--win {
-                        color: $COLOR_GREEN_1;
-                    }
-                    &--loss {
-                        color: $COLOR_RED;
-                    }
-                }
-            }
-        }
-    }
+    //                     &.active {
+    //                         background-color: $COLOR_LIGHT_BLACK_4;
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
     .page-error {
         &__box {
             background-color: $COLOR_DARK_BLUE_3;

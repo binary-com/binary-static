@@ -1,6 +1,7 @@
 $themes: (
     light: (
         active_color                : $COLOR_LIGHT_GRAY_1,
+        animation_blink_name        : blinking-white,
         background_button_color     : $COLOR_LIGHT_GRAY_2,
         background_color            : $COLOR_LIGHT_BLACK_4_SOLID,
         background_container_color  : $COLOR_LIGHT_BLACK_4_SOLID,
@@ -36,6 +37,7 @@ $themes: (
     ),
     dark: (
         active_color                : $COLOR_DARK_BLUE_5,
+        animation_blink_name        : blinking-dark-blue-2,
         background_button_color     : $COLOR_DARK_BLUE_5,
         background_color            : $COLOR_DARK_BLUE_1,
         background_container_color  : $COLOR_DARK_BLUE_3,
