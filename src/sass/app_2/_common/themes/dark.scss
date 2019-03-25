@@ -157,19 +157,6 @@
     //         }
     //     }
     // }
-    .page-error {
-        &__box {
-            background-color: $COLOR_DARK_BLUE_3;
-            border-color: $COLOR_DARK_BLUE_3;
-        }
-        &__header {
-            color: $COLOR_WHITE;
-        }
-        &__message {
-            color: $COLOR_LIGHT_BLACK_3;
-            opacity: 1;
-        }
-    }
     .hr {
         border-color: $COLOR_DARK_BLUE_5;
     }
