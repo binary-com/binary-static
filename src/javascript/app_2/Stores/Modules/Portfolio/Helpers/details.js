@@ -20,19 +20,19 @@ export const getDurationUnitValue = (obj_duration) => {
 
 export const getDurationUnitText = (obj_duration) => {
     const unit_map = {
+        d: { name_plural: localize('days'),    name_singular: localize('day') },
+        h: { name_plural: localize('hours'),   name_singular: localize('hour') },
+        m: { name_plural: localize('minutes'), name_singular: localize('minute') },
         s: { name: localize('seconds') },
-        m: { name: localize('minutes') },
-        h: { name: localize('hours') },
-        d: { name: localize('days') },
     };
     const duration_ms = obj_duration.asMilliseconds() / 1000;
     if (duration_ms) {
         if (duration_ms >= 86400000) {
-            return unit_map.d.name;
+            return (duration_ms === 8640000) ? unit_map.d.name_singular : unit_map.d.name_plural;
         } else if (duration_ms >= 3600000 && duration_ms < 86400000) {
-            return unit_map.h.name;
+            return (duration_ms === 360000) ? unit_map.h.name_singular : unit_map.h.name_plural;
         } else if (duration_ms >= 60000 && duration_ms < 3600000) {
-            return unit_map.m.name;
+            return (duration_ms === 60000) ? unit_map.m.name_singular : unit_map.m.name_plural;
         } else if (duration_ms >= 1000 && duration_ms < 60000) {
             return unit_map.s.name;
         }
