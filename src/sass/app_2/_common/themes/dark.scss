@@ -157,170 +157,42 @@
     //         }
     //     }
     // }
-    .drawer__bg .drawer {
-        background: $COLOR_DARK_BLUE_5;
-        color: $COLOR_WHITE;
-        box-shadow: 0 1px 6px 0 rgba(42, 48, 82, 0.14), 0 2px 8px 0 rgba(20, 20, 20, 0.3);
+    // .drawer__bg .drawer {
+    //     background: $COLOR_DARK_BLUE_5;
+    //     color: $COLOR_WHITE;
+    //     box-shadow: 0 1px 6px 0 rgba(42, 48, 82, 0.14), 0 2px 8px 0 rgba(20, 20, 20, 0.3);
 
-        .drawer__item {
-            &-link {
-                &:before {
-                    color: $COLOR_DARK_BLUE_7;
-                }
-                &:hover:before {
-                    color: $COLOR_WHITE;
-                }
-                &-text {
-                    color: $COLOR_DARK_BLUE_7;
-                }
-            }
-            &:hover {
-                background: $COLOR_DARK_BLUE_5;
+    //     .drawer__item {
+    //         &-link {
+    //             &:before {
+    //                 color: $COLOR_DARK_BLUE_7;
+    //             }
+    //             &:hover:before {
+    //                 color: $COLOR_WHITE;
+    //             }
+    //             &-text {
+    //                 color: $COLOR_DARK_BLUE_7;
+    //             }
+    //         }
+    //         &:hover {
+    //             background: $COLOR_DARK_BLUE_5;
 
-                .drawer__item-link-text {
-                    color: $COLOR_WHITE;
-                }
-            }
-        }
-        &--left, &--right {
-            .drawer__header, .drawer__footer {
-                border-color: $COLOR_DARK_BLUE_5;
+    //             .drawer__item-link-text {
+    //                 color: $COLOR_WHITE;
+    //             }
+    //         }
+    //     }
+    //     &--left, &--right {
+    //         .drawer__header, .drawer__footer {
+    //             border-color: $COLOR_DARK_BLUE_5;
 
-                .drawer__brand-logo, &.btn-close {
-                    border-color: $COLOR_DARK_BLUE_5;
-                }
-                .drawer__brand-logo .drawer__img:before {
-                    background-image: url('../images/header/binary_logo_dark.svg');
-                }
-            }
-        }
-    }
-    .positions-drawer {
-        background: $COLOR_DARK_BLUE_3;
-        border-color: $COLOR_DARK_BLUE_3;
-        color: $COLOR_WHITE;
-
-        &--contract-mode:before {
-            background: $COLOR_DARK_BLUE_3;
-        }
-        &-card {
-            color: $COLOR_WHITE;
-
-            &__result {
-                &:hover {
-                    background: 0;
-                }
-            }
-            &__wrapper {
-                background: $COLOR_DARK_BLUE_2;
-
-                &--active:before {
-                    box-shadow: 0 0 4px 1px rgba(255, 255, 255, 0.16);
-                }
-            }
-            &__type {
-                .category-type {
-                    .color1-fill {
-                        fill: $COLOR_WHITE;
-                    }
-                }
-            }
-            &__remaining-time {
-                color: $COLOR_DARK_BLUE_7;
-            }
-            &__indicative {
-                // &--no-resale {
-                //     color: $COLOR_DARK_BLUE_7;
-                // }
-                &--price-stable {
-                    color: $COLOR_WHITE;
-                }
-            }
-            &__grid-profit-payout {
-                background: $COLOR_DARK_BLUE_3;
-            }
-            &__purchase-label, &__profit-loss-label, &__indicative-label {
-                color: $COLOR_DARK_BLUE_7;
-            }
-        }
-        &__title {
-            color: $COLOR_DARK_BLUE_7;
-        }
-        &__body {
-            .positions-empty, p {
-                align-self: center;
-                color: $COLOR_WHITE;
-            }
-        }
-        &__footer {
-            background: $COLOR_DARK_BLUE_3;
-            border-color: $COLOR_DARK_BLUE_3;
-
-            .btn--alternate {
-                background-color: $COLOR_DARK_BLUE_5;
-                border-color: $COLOR_DARK_BLUE_5;
-
-                .btn__text {
-                    color: $COLOR_WHITE;
-                    font-weight: bold;
-                }
-            }
-        }
-        .result {
-            &-details__label {
-                color: $COLOR_DARK_BLUE_7;
-            }
-            &-details__toggle--is-open, &-details__separator {
-                border-color: $COLOR_DARK_BLUE_3;
-            }
-        }
-    }
-    .progress-slider {
-        &__track, &__infinite-loader {
-            background: $COLOR_DARK_BLUE_3;
-        }
-        .ticks-step {
-            border: 2px solid $COLOR_DARK_BLUE_2;
-            background: $COLOR_DARK_BLUE_2;
-
-            &--active, &--marked {
-                background: $COLOR_PURPLE;
-                border-color: $COLOR_PURPLE;
-            }
-        }
-        &__line {
-            background: $COLOR_PURPLE;
-        }
-    }
-    .chart-spot-label {
-        &__value-container {
-            background: $COLOR_DARK_BLUE_5;
-        }
-        &__time {
-            color: $COLOR_WHITE;
-        }
-        &__time-container {
-            svg {
-                g {
-                    stroke: $COLOR_WHITE;
-                }
-            }
-        }
-    }
-    .chart-spot {
-        &__spot {
-            background-color: $COLOR_DARK_BLUE_2;
-            color: $COLOR_WHITE;
-
-            &--won {
-                background-color: $COLOR_GREEN_1;
-            }
-            &--lost {
-                background-color: $COLOR_RED;
-            }
-        }
-        &__entry {
-            background-color: unset;
-        }
-    }
+    //             .drawer__brand-logo, &.btn-close {
+    //                 border-color: $COLOR_DARK_BLUE_5;
+    //             }
+    //             .drawer__brand-logo .drawer__img:before {
+    //                 background-image: url('../images/header/binary_logo_dark.svg');
+    //             }
+    //         }
+    //     }
+    // }
 }
