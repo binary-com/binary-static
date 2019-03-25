@@ -1,6 +1,5 @@
-import { expect }                       from 'chai';
-import React                            from 'react';
-import { isDigitContract, getDigitInfo} from '../digits';
+import { expect }                        from 'chai';
+import { isDigitContract, getDigitInfo } from '../digits';
 
 describe('Digits', () => {
     describe('isDigitContract', () => {
@@ -14,27 +13,11 @@ describe('Digits', () => {
     });
 
     describe('getDigitInfo', () => {
-        it('should return {} when entry_tick_time is not in contract_info', () => {
+        it('should return an empty object when tick_stream is not in contract_info', () => {
             const contract_info = {};
             expect(getDigitInfo({}, contract_info)).to.deep.eql({});
         });
-        it('should return empty object if entry_tick_time and current_spot_time of contract are both in digits_info', () => {
-            const contract_info = {
-                entry_tick_time: 1544707342,
-                entry_tick: 123,
-                current_spot_time: 1544707344,
-            };
-            const digits_info = {
-                1544707342: {
-                    digit: 7,
-                },
-                1544707344: {
-                    digit: 6,
-                },
-            };
-            expect(getDigitInfo(digits_info, contract_info)).to.be.empty;
-        });
-        it('should return desired object with inputs and when current_spot_time is not in digits info', () => {
+        it('should return an empty object if tick_stream data is already in digits_info', () => {
             const contract_info = {
                 entry_tick_time: 1544707342,
                 entry_tick: 123.99,
@@ -42,53 +25,42 @@ describe('Digits', () => {
                 current_spot: 456.99,
                 exit_tick_time: 10000001,
                 contract_type: 'DIGITMATCH',
-                barrier: 9
+                barrier: 9,
+                tick_stream: [
+                    {
+                        "tick" : 123.456,
+                        "epoch": 1544707344,
+                    }
+                ],
             };
             const digits_info = {
-                1544707342: {
-                    digit: 7,
-                    spot: 456.99,
-                },
                 1544707344: {
                     digit: 6,
-                    spot: 456.99,
+                    spot: 123.456,
                 },
             };
-            expect(getDigitInfo(digits_info, contract_info)).to.deep.eql({
-                10000000: {
-                    digit: 9,
-                    spot: 456.99,
-                }
-            });
+            expect(getDigitInfo(digits_info, contract_info)).to.deep.eql({});
         });
-        it('should return desired object with inputs and when current_spot_time and entry_tick_time are not in digits info', () => {
+        it('should return a digits_info object with the latest tick_stream array data', () => {
             const contract_info = {
-                entry_tick_time: 20000000,
-                entry_tick: 123.77,
-                current_spot_time: 10000000,
-                current_spot: 456.99,
-                exit_tick_time: 10000001,
-                contract_type: 'DIGITMATCH',
-                barrier: 8
+                tick_stream: [
+                    {
+                        "tick" : 123.456,
+                        "epoch": 1544707344,
+                    },
+                    {
+                        "tick" : 456.993,
+                        "epoch": 1544707346,
+                    }
+                ],
             };
             const digits_info = {
-                1544707342: {
-                    digit: 7,
-                },
-                1544707344: {
-                    digit: 6,
+                1544707346: {
+                    digit: 3,
+                    spot : 456.993,
                 },
             };
-            expect(getDigitInfo(digits_info, contract_info)).to.deep.eql({
-                10000000: {
-                    digit: 9,
-                    spot: 456.99,
-                },
-                20000000: {
-                    digit: 7,
-                    spot: 123.77,
-                }
-            });
+            expect(getDigitInfo({}, contract_info)).to.deep.eql(digits_info);
         });
     });
 });
