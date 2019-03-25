@@ -103,6 +103,8 @@ const isEqualObject = (obj1, obj2) => (
     )
 );
 
+const unique = (array, key) => array.filter((e, i) => array.findIndex(a => a[key] === e[key]) === i);
+
 const getPropertyValue = (obj, k) => {
     let keys = k;
     if (!Array.isArray(keys)) keys = [keys];
@@ -229,6 +231,7 @@ module.exports = {
     template,
     isEmptyObject,
     cloneObject,
+    unique,
     isDeepEqual,
     getPropertyValue,
     handleHash,

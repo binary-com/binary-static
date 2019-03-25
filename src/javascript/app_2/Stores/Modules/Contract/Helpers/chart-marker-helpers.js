@@ -109,5 +109,6 @@ export const createMarkerSpotMiddle = (contract_info, tick, idx) => {
         },
     );
     marker_config.type = `${marker_config.type}_${idx}`;
+
     return marker_config;
 };

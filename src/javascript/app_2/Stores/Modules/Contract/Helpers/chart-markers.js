@@ -5,67 +5,17 @@ import {
     createMarkerSpotExit,
     createMarkerStartTime,
     createMarkerSpotMiddle }     from './chart-marker-helpers';
+import { unique } from '../../../../../_common/utility';
 import { MARKER_TYPES_CONFIG } from '../../SmartChart/Constants/markers';
-
-const unique = (array, key) => array.filter((e, i) => array.findIndex(a => a[key] === e[key]) === i);
-
-const addLabelAlignment = (tick, idx, arr) => {
-    if (idx > 0 && arr.length) {
-        const prev_tick = arr[idx - 1];
-
-        if (+tick > +prev_tick.tick) tick.align_label = 'top';
-        if (+tick.tick < +prev_tick.tick) tick.align_label = 'bottom';
-        if (+tick.price === +prev_tick.price) tick.align_label = prev_tick.align_label;
-    }
-
-    return tick;
-};
 
 export const createChartMarkers = (SmartChartStore, contract_info) => {
     if (contract_info) {
         if (contract_info.tick_count) {
-            addTickMarker(contract_info);
+            addTickMarker(SmartChartStore, contract_info);
         } else {
-            addMarker(marker_spots);
+            addMarker(marker_spots, SmartChartStore, contract_info);
         }
-
-        addMarker(marker_lines);
-    }
-
-    function addMarker(marker_obj) {
-        Object.keys(marker_obj).forEach(createMarker);
-
-        function createMarker(marker_type) {
-            if (marker_type in SmartChartStore.markers) return;
-
-            const marker_config = marker_obj[marker_type](contract_info);
-            if (marker_config) {
-                SmartChartStore.createMarker(marker_config);
-            }
-        }
-    }
-
-    function addTickMarker() {
-        let { tick_stream } = contract_info;
-        tick_stream = unique(tick_stream, 'epoch').map(addLabelAlignment);
-
-        tick_stream.forEach((tick, idx) => {
-            let marker_config;
-
-            if (idx === 0) marker_config = createMarkerSpotEntry(contract_info);
-            if (idx > 0 && +tick.epoch !== +contract_info.exit_tick_time) {
-                marker_config = createMarkerSpotMiddle(contract_info, tick, idx);
-            }
-            if (idx > 0 && +tick.epoch === +contract_info.exit_tick_time) {
-                marker_config = createMarkerSpotExit(contract_info, tick, idx);
-            }
-
-            if (marker_config) {
-                if (marker_config.type in SmartChartStore.markers) return;
-
-                SmartChartStore.createMarker(marker_config);
-            }
-        });
+        addMarker(marker_lines, SmartChartStore, contract_info);
     }
 };
 
@@ -78,4 +28,52 @@ const marker_lines = {
     [MARKER_TYPES_CONFIG.LINE_START.type]   : createMarkerStartTime,
     [MARKER_TYPES_CONFIG.LINE_END.type]     : createMarkerExpiry,
     [MARKER_TYPES_CONFIG.LINE_PURCHASE.type]: createMarkerPurchaseTime,
+};
+
+const addMarker = (marker_obj, SmartChartStore, contract_info) => {
+    Object.keys(marker_obj).forEach((marker_type) =>
+        createMarker(marker_type, SmartChartStore, contract_info, marker_obj));
+
+    function createMarker(marker_type) {
+        if (marker_type in SmartChartStore.markers) return;
+
+        const marker_config = marker_obj[marker_type](contract_info);
+        if (marker_config) {
+            SmartChartStore.createMarker(marker_config);
+        }
+    }
+};
+
+const addLabelAlignment = (tick, idx, arr) => {
+    if (idx > 0 && arr.length) {
+        const prev_tick = arr[idx - 1];
+
+        if (+tick > +prev_tick.tick) tick.align_label = 'top';
+        if (+tick.tick < +prev_tick.tick) tick.align_label = 'bottom';
+        if (+tick.tick === +prev_tick.tick) tick.align_label = prev_tick.align_label;
+    }
+
+    return tick;
+};
+
+const addTickMarker = (SmartChartStore, contract_info) => {
+    let { tick_stream } = contract_info;
+    tick_stream = unique(tick_stream, 'epoch').map(addLabelAlignment);
+
+    tick_stream.forEach((tick, idx) => {
+        let marker_config;
+        const is_entry_spot  = idx === 0;
+        const is_middle_spot = idx > 0 && +tick.epoch !== +contract_info.exit_tick_time;
+        const is_exit_spot   = idx > 0 && +tick.epoch === +contract_info.exit_tick_time;
+
+        if (is_entry_spot) marker_config = createMarkerSpotEntry(contract_info);
+        if (is_middle_spot) marker_config = createMarkerSpotMiddle(contract_info, tick, idx);
+        if (is_exit_spot) marker_config = createMarkerSpotExit(contract_info, tick, idx);
+
+        if (marker_config) {
+            if (marker_config.type in SmartChartStore.markers) return;
+
+            SmartChartStore.createMarker(marker_config);
+        }
+    });
 };
