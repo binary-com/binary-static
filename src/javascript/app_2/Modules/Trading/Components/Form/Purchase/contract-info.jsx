@@ -19,7 +19,7 @@ const ContractInfo = ({
                     'trade-container__error': proposal_info.has_error,
                 })}
             >
-                {proposal_info.message && <span className='trade-container__error-info'>{proposal_info.message}</span>}
+                {proposal_info.message && proposal_info.has_error_details && <span className='trade-container__error-info'>{proposal_info.message}</span>}
             </div>
             :
             <div className='trade-container__price'>
