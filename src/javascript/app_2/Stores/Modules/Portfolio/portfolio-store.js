@@ -11,7 +11,6 @@ import {
 import {
     getDisplayStatus,
     getEndSpotTime,
-    isUserSold,
     isValidToSell }                from '../Contract/Helpers/logic';
 import BaseStore                   from '../../base-store';
 
@@ -86,19 +85,12 @@ export default class PortfolioStore extends BaseStore {
         const new_indicative  = +proposal.bid_price;
         const profit_loss     = +proposal.profit;
 
-        portfolio_position.purchase_time = (proposal.is_forward_starting === 1) ?
-            proposal.date_start
-            :
-            proposal.purchase_time;
-
-        portfolio_position.bid_price        = proposal.bid_price;
+        // store contract proposal details that require modifiers
         portfolio_position.indicative       = new_indicative;
-        portfolio_position.underlying_code  = proposal.underlying;
-        portfolio_position.underlying_name  = proposal.display_name;
         portfolio_position.profit_loss      = profit_loss;
-        portfolio_position.tick_count       = proposal.tick_count;
         portfolio_position.is_valid_to_sell = isValidToSell(proposal);
-        portfolio_position.chart_config     = proposal;
+        // store contract proposal details that do not require modifiers
+        portfolio_position.contract_info    = proposal;
 
         if (!proposal.is_valid_to_sell) {
             portfolio_position.status = 'no-resale';
@@ -114,7 +106,7 @@ export default class PortfolioStore extends BaseStore {
     @action.bound
     onClickSell(contract_id) {
         const i = this.getPositionIndexById(contract_id);
-        const bid_price = this.positions[i].bid_price;
+        const { bid_price } = this.positions[i].contract_info;
         this.positions[i].is_sell_requested = false;
         if (contract_id && bid_price) {
             WS.sell(contract_id, bid_price).then(this.handleSell);
@@ -151,19 +143,13 @@ export default class PortfolioStore extends BaseStore {
     populateResultDetails = (response) => {
         const contract_response = response.proposal_open_contract;
         const i = this.getPositionIndexById(contract_response.contract_id);
-        const sell_time = isUserSold(contract_response) ?
-            +contract_response.date_expiry
-            :
-            getEndSpotTime(contract_response);
 
-        this.positions[i].id_sell          = +contract_response.transaction_ids.sell;
-        this.positions[i].barrier          = +contract_response.barrier;
         this.positions[i].duration         = getDurationTime(contract_response);
         this.positions[i].duration_unit    = getDurationUnitText(getDurationPeriod(contract_response));
-        this.positions[i].entry_spot       = +contract_response.entry_spot;
-        this.positions[i].sell_time        = sell_time;
+        this.positions[i].sell_time        = getEndSpotTime(contract_response);
         this.positions[i].result           = getDisplayStatus(contract_response);
         this.positions[i].is_valid_to_sell = isValidToSell(contract_response);
+        this.positions[i].contract_info    = contract_response;
     }
 
     @action.bound

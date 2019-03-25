@@ -46,12 +46,16 @@ const Url = (() => {
 
     const normalizePath = path => (path ? path.replace(/(^\/|\/$|[^a-zA-Z0-9-_/])/g, '') : '');
 
-    const urlFor = (path, pars, language) => {
+    const urlFor = (path, pars, language, should_change_to_legacy = false) => {
         const lang = (language || urlLang()).toLowerCase();
         // url language might differ from passed language, so we will always replace using the url language
         const url_lang = (language ? urlLang().toLowerCase() : lang);
         const url = window.location.href;
-        const new_url = `${url.substring(0, url.indexOf(`/${url_lang}/`) + url_lang.length + 2)}${(normalizePath(path) || 'home')}.html${(pars ? `?${pars}` : '')}`;
+        let domain = url.substring(0, url.indexOf(`/${url_lang}/`) + url_lang.length + 2);
+        if (should_change_to_legacy) {
+            domain = domain.replace(/\/app/,'');
+        }
+        const new_url = `${domain}${(normalizePath(path) || 'home')}.html${(pars ? `?${pars}` : '')}`;
         // replace old lang with new lang
         return urlForLanguage(lang, new_url);
     };
