@@ -26,7 +26,7 @@ export const createMarkerExpiry = (contract_info) => {
 
     return createMarkerConfig(
         MARKER_TYPES_CONFIG.LINE_END.type,
-        end_spot_time,
+        +end_spot_time,
     );
 };
 
@@ -36,7 +36,7 @@ export const createMarkerPurchaseTime = (contract_info) => {
 
     return createMarkerConfig(
         MARKER_TYPES_CONFIG.LINE_PURCHASE.type,
-        contract_info.purchase_time,
+        +contract_info.purchase_time,
     );
 };
 
@@ -45,7 +45,7 @@ export const createMarkerStartTime = (contract_info) => {
 
     return createMarkerConfig(
         MARKER_TYPES_CONFIG.LINE_START.type,
-        contract_info.date_start,
+        +contract_info.date_start,
     );
 };
 
