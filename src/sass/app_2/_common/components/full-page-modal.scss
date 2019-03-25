@@ -60,7 +60,7 @@
 
         /* postcss-bem-linter: ignore */
         &:hover:not([disabled]):before {
-            background: $COLOR_LIGHT_BLACK_2;
+            background: $COLOR_LIGHT_BLACK_4;
             content: '';
             position: absolute;
             top: 0;
@@ -80,6 +80,7 @@
         /* postcss-bem-linter: ignore */
         &:hover:not([disabled]) {
             border: none;
+            background: $COLOR_LIGHT_BLACK_4;
         }
     }
     /* postcss-bem-linter: ignore */
