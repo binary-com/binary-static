@@ -61,6 +61,9 @@
         /* postcss-bem-linter: ignore */
         &:hover:not([disabled]) {
             background: $COLOR_DARK_ORANGE;
+            @include themify($themes) {
+                color: themed('text_active_color');
+            }
         }
     }
     /* postcss-bem-linter: ignore */
@@ -70,8 +73,11 @@
 
         /* postcss-bem-linter: ignore */
         &:hover:not([disabled]) {
-            background: $COLOR_LIGHT_BLACK_4_SOLID;
             border: none;
+            @include themify($themes) {
+                background: themed('tab_hover_color');
+                color: themed('text_color');
+            }
         }
     }
     /* postcss-bem-linter: ignore */
