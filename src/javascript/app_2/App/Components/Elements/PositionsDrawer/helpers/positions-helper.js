@@ -6,7 +6,7 @@ export const addCommaToNumber = num => {
     const p = n.indexOf('.');
     return n.replace(
         /\d(?=(?:\d{3})+(?:\.|$))/g,
-        (m, i) => p < 0 || i < p ? `${m},` : m
+        (m, i) => p <= 0 || i < p ? `${m},` : m
     );
 };
 
