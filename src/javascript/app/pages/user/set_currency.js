@@ -115,21 +115,25 @@ const SetCurrency = (() => {
                 const $clicked_currency = $(this);
                 const currency          = $clicked_currency.attr('id');
                 let localized_message   = '';
+                let localized_footnote   = '';
                 $error.setVisibility(0);
                 $currency_list.find('> div').removeClass('selected');
                 $clicked_currency.addClass('selected');
                 if (isCryptocurrency(currency)) {
-                    localized_message = localize('You have chosen [_1] as the currency for this account. You cannot change this later. You can have more than one cryptocurrency account.', `<strong>${getCurrencyName(currency)} (${currency})</strong>`);
+                    localized_message = localize('Are you sure you want to create your [_1] account now?', `<strong>${getCurrencyName(currency)} (${currency})</strong>`);
+                    localized_footnote = `${localize('Note:')} ${localize('You may open one account for each supported cryptocurrency.')}`;
                 } else {
-                    localized_message = localize('You have chosen [_1] as the currency for this account. You cannot change this later. You can have one fiat currency account only.', `<strong>${currency}</strong>`);
+                    localized_message = localize('Are you sure you want to create a fiat account in [_1]?', `${currency}`);
+                    localized_footnote = `${localize('Note:')} ${localize('You are limited to one fiat account. You can change the currency of your fiat account anytime before you’ve made a first-time deposit.')}`;
                 }
 
                 Dialog.confirm({
                     id             : 'set_currency_popup_container',
-                    ok_text        : localize('Confirm'),
-                    cancel_text    : localize('Back'),
-                    localized_title: localize('Are you sure?'),
+                    ok_text        : localize('Yes'),
+                    cancel_text    : localize('Cancel'),
+                    localized_title: localize('Create [_1] account', `${currency}`),
                     localized_message,
+                    localized_footnote,
                     onConfirm,
                     onAbort        : () => $currency_list.find('> div').removeClass('selected'),
                 });

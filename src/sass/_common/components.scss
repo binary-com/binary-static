@@ -82,6 +82,11 @@
         #dialog_content {
             max-width: 24em;
             padding: 25px 15px;
+
+            #dialog_title, #dialog_footnote {
+                padding: 0;
+                margin: 5px 0;
+            }
         }
         #frm_confirm {
             width: 100%;
