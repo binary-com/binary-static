@@ -7,17 +7,22 @@ import {
     createMarkerSpotMiddle }     from './chart-marker-helpers';
 import { MARKER_TYPES_CONFIG } from '../../SmartChart/Constants/markers';
 
-function unique(array, propertyName) {
-    return array.filter((e, i) => array.findIndex(a => a[propertyName] === e[propertyName]) === i);
-}
+const unique = (array, key) => array.filter((e, i) => array.findIndex(a => a[key] === e[key]) === i);
+
+const addLabelAlignment = (tick, idx, arr) => {
+    if (idx > 0 && arr.length) {
+        const prev_tick = arr[idx - 1];
+
+        if (+tick > +prev_tick.tick) tick.align_label = 'top';
+        if (+tick.tick < +prev_tick.tick) tick.align_label = 'bottom';
+        if (+tick.price === +prev_tick.price) tick.align_label = prev_tick.align_label;
+    }
+
+    return tick;
+};
 
 export const createChartMarkers = (SmartChartStore, contract_info) => {
     if (contract_info) {
-        // contract_info_arr:
-
-        // ==== TICKS ====
-        // TODO: Align label
-
         if (contract_info.tick_count) {
             addTickMarker(contract_info);
         } else {
@@ -42,15 +47,16 @@ export const createChartMarkers = (SmartChartStore, contract_info) => {
 
     function addTickMarker() {
         let { tick_stream } = contract_info;
-        tick_stream = unique(tick_stream, 'epoch');
+        tick_stream = unique(tick_stream, 'epoch').map(addLabelAlignment);
 
         tick_stream.forEach((tick, idx) => {
             let marker_config;
+
             if (idx === 0) marker_config = createMarkerSpotEntry(contract_info);
-            if (idx > 0 && +tick.epoch !== contract_info.exit_tick_time) {
+            if (idx > 0 && +tick.epoch !== +contract_info.exit_tick_time) {
                 marker_config = createMarkerSpotMiddle(contract_info, tick, idx);
             }
-            if (idx > 0 && +tick.epoch === contract_info.exit_tick_time) {
+            if (idx > 0 && +tick.epoch === +contract_info.exit_tick_time) {
                 marker_config = createMarkerSpotExit(contract_info, tick, idx);
             }
 
