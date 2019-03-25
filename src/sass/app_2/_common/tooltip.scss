@@ -43,13 +43,15 @@
         }
         &:before {
             @include typeface(--small-left-normal-active, none);
+            line-height: 1.5;
             text-decoration: none;
             letter-spacing: normal;
             border-radius: 4px;
             content: attr(data-tooltip);
-            padding: 0.8em;
-            white-space: nowrap;
+            padding: 0.7em;
             margin-bottom: 10px;
+            width: max-content;
+            max-width: 280px;
         }
         &:after {
             border: solid transparent;
@@ -107,5 +109,14 @@
     }
     &--error[data-tooltip] {
         @include tooltipColor($COLOR_RED);
+
+        &, &[data-tooltip-pos=left] {
+            // always show error tooltips, not just on hover
+            &:after, &:before {
+                opacity: 0.96;
+                pointer-events: auto;
+                transform: translate(0, -50%);
+            }
+        }
     }
 }
