@@ -22,12 +22,12 @@ const ChartSettings = ({
     <div className='settings-chart'>
         <MediaItem>
             <MediaHeading>
-                <Localize str='Chart Control Position' />
+                <Localize str='Toolbar position' />
             </MediaHeading>
             <MediaDescription>
                 <MediaIcon />
                 <div className='media__form'>
-                    <p><Localize str='Chart control position' /></p>
+                    <p><Localize str='Change chart control positions' /></p>
                     <RadioGroup
                         items={[
                             {
@@ -47,14 +47,14 @@ const ChartSettings = ({
         </MediaItem>
         <MediaItem>
             <MediaHeading>
-                <Localize str='Asset Information' />
+                <Localize str='Open-High-Low-Close (OHLC) information' />
             </MediaHeading>
             <MediaDescription>
                 <MediaIcon />
                 <div className='media__form'>
                     <Checkbox
                         value={is_asset_visible}
-                        label={localize('Visible Asset')}
+                        label={localize('Display OHLC information for current chart')}
                         onClick={toggleAsset}
                     />
                 </div>
@@ -62,14 +62,14 @@ const ChartSettings = ({
         </MediaItem>
         <MediaItem>
             <MediaHeading>
-                <Localize str='Scale Countdown' />
+                <Localize str='Interval duration' />
             </MediaHeading>
             <MediaDescription>
                 <MediaIcon />
                 <div className='media__form'>
                     <Checkbox
                         value={is_countdown_visible}
-                        label={localize('Visible Countdown')}
+                        label={localize('Display remaining time for each interval')}
                         onClick={toggleCountdown}
                     />
                 </div>

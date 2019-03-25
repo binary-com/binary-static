@@ -26,7 +26,7 @@ const PurchaseSettings = ({
                 <div className='media__form'>
                     <Checkbox
                         value={is_purchase_confirmed}
-                        label={localize('Purchase confirmation')}
+                        label={localize('Require confirmation before purchasing a contract')}
                         onClick={togglePurchaseConfirmation}
                     />
                 </div>
@@ -34,14 +34,14 @@ const PurchaseSettings = ({
         </MediaItem>
         <MediaItem>
             <MediaHeading>
-                <Localize str='Purchase Lock' />
+                <Localize str='Purchase lock' />
             </MediaHeading>
             <MediaDescription>
                 <MediaIcon />
                 <div className='media__form'>
                     <Checkbox
                         value={is_purchase_locked}
-                        label={localize('Purchase Lock')}
+                        label={localize('Lock contract purchase buttons')}
                         onClick={togglePurchaseLock}
                     />
                 </div>
