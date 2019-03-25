@@ -165,7 +165,7 @@ const BinaryPjax = (() => {
 
     const createEventWithPolyfill = (event_name) => {
         let event;
-        if (typeof(Event) === 'function') {
+        if (typeof Event === 'function') {
             event = new Event(event_name);
         } else {
             // IE11
@@ -174,7 +174,7 @@ const BinaryPjax = (() => {
         }
 
         return event;
-    }
+    };
 
     const replaceContent = (url, content, replace) => {
         previous_url = window.location.href;

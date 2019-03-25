@@ -134,7 +134,7 @@ const TermsAndConditions = (() => {
         } else {
             let position_style = 'fixed';
             if (!!window.MSInputMethodContext && !!document.documentMode) { // fix styling for IE11
-                position_style = 'static'
+                position_style = 'static';
             }
             $sidebar.css({ position: position_style, top: '0px', bottom: '', width: sidebar_width });
         }
