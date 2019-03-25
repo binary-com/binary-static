@@ -181,36 +181,40 @@ const Regulation = () => {
                         <div className='gr-6'>
                             <h3 className='gr-padding-10'>{it.L('Q3 2018')}</h3>
                             <FillBox
+                                align_left
                                 center
                                 border='border-dark-gray'
-                                className='margin-top-17'
+                                className='margin-top-17 align-start'
                                 image='images/pages/regulation/xlsx-icon.svg'
                                 href={it.url_for('/download/rts27/Q3/Table_1.xlsx')}
                                 target='_blank'
                                 text={it.L('Table 1 - Type of execution venue')}
                             />
                             <FillBox
+                                align_left
                                 center
                                 border='border-dark-gray'
-                                className='margin-top-17'
+                                className='margin-top-17 align-start'
                                 image='images/pages/regulation/xlsx-icon.svg'
                                 href={it.url_for('/download/rts27/Q3/Table_3.xlsx')}
                                 target='_blank'
                                 text={it.L('Table 3 - Intra-Day Price information')}
                             />
                             <FillBox
+                                align_left
                                 center
                                 border='border-dark-gray'
-                                className='margin-top-17'
+                                className='margin-top-17 align-start'
                                 image='images/pages/regulation/xlsx-icon.svg'
                                 href={it.url_for('/download/rts27/Q3/Table_4.xlsx')}
                                 target='_blank'
                                 text={it.L('Table 4 - Daily Price information')}
                             />
                             <FillBox
+                                align_left
                                 center
                                 border='border-dark-gray'
-                                className='margin-top-17'
+                                className='margin-top-17 align-start'
                                 image='images/pages/regulation/xlsx-icon.svg'
                                 href={it.url_for('/download/rts27/Q3/Table_6.xlsx')}
                                 target='_blank'
@@ -220,36 +224,40 @@ const Regulation = () => {
                         <div className='gr-6'>
                             <h3 className='gr-padding-10'>{it.L('Q4 2018')}</h3>
                             <FillBox
+                                align_left
                                 center
                                 border='border-dark-gray'
-                                className='margin-top-17'
+                                className='margin-top-17 align-start'
                                 image='images/pages/regulation/xlsx-icon.svg'
                                 href={it.url_for('/download/rts27/Q4/Table_1.xlsx')}
                                 target='_blank'
                                 text={it.L('Table 1 - Type of execution venue')}
                             />
                             <FillBox
+                                align_left
                                 center
                                 border='border-dark-gray'
-                                className='margin-top-17'
+                                className='margin-top-17 align-start'
                                 image='images/pages/regulation/xlsx-icon.svg'
                                 href={it.url_for('/download/rts27/Q4/Table_3.xlsx')}
                                 target='_blank'
                                 text={it.L('Table 3 - Intra-Day Price information')}
                             />
                             <FillBox
+                                align_left
                                 center
                                 border='border-dark-gray'
-                                className='margin-top-17'
+                                className='margin-top-17 align-start'
                                 image='images/pages/regulation/xlsx-icon.svg'
                                 href={it.url_for('/download/rts27/Q4/Table_4.xlsx')}
                                 target='_blank'
                                 text={it.L('Table 4 - Daily Price information')}
                             />
                             <FillBox
+                                align_left
                                 center
                                 border='border-dark-gray'
-                                className='margin-top-17'
+                                className='margin-top-17 align-start'
                                 image='images/pages/regulation/xlsx-icon.svg'
                                 href={it.url_for('/download/rts27/Q4/Table_6.xlsx')}
                                 target='_blank'
