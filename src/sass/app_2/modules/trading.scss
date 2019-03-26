@@ -422,23 +422,41 @@
         }
     }
     &:disabled {
-        background-color: $COLOR_DARK_BLUE_8;
-        color: $COLOR_DARK_BLUE_7;
         @include themify($themes) {
-            background-color: themed('disabled_color');
-            color: themed('text_secondary_color');
+            background-color: themed('btn_purchase_disabled_bg');
+            color: themed('btn_purchase_disabled_text');
         }
-    }
-    &:disabled .btn-purchase__effect-main {
-        background: $COLOR_DARK_BLUE_8;
-    }
-    &:disabled .btn-purchase__effect-detail {
-        border-color: transparent transparent transparent $COLOR_DARK_BLUE_8;
-    }
-    &:disabled .btn-purchase__trade-type svg {
-        opacity: 0.16;
-    }
-    &:disabled .btn-purchase__currency {
-        color: $COLOR_DARK_BLUE_8;
+
+        .btn-purchase__return, .btn-purchase__profit {
+            @include themify($themes) {
+                color: themed('btn_purchase_disabled_text');
+            }
+        }
+        .btn-purchase__effect-main {
+            @include themify($themes) {
+                background-color: themed('btn_purchase_disabled_accent');
+                color: themed('btn_purchase_disabled_text');
+            }
+        }
+        .btn-purchase__effect-detail {
+            @include themify($themes) {
+                border-color: transparent transparent transparent themed('btn_purchase_disabled_accent');
+            }
+        }
+        .btn-purchase__trade-type {
+            svg {
+                @include themify($themes) {
+                    @include colorIcon(themed('btn_purchase_disabled_text'), none);
+                }
+            }
+            .btn-purchase__trade-type-text {
+                @include themify($themes) {
+                    color: themed('btn_purchase_disabled_text');
+                }
+            }
+        }
+        .btn-purchase__currency {
+            color: $COLOR_DARK_BLUE_8;
+        }
     }
 }
