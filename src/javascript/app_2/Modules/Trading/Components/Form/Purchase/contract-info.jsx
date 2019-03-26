@@ -12,13 +12,17 @@ const ContractInfo = ({
     is_visible,
     proposal_info,
 }) => {
-    const has_error_or_no_proposal = proposal_info.has_error || !proposal_info.id;
     const is_loading = !proposal_info.has_error && !proposal_info.id;
-    const is_loaded = !proposal_info.has_error && proposal_info.id;
+    const is_loaded_with_error = proposal_info.has_error || !proposal_info.id;
 
     return (
         <React.Fragment>
-            {has_error_or_no_proposal &&
+            {is_loading &&
+                <div className='trade-container__loader'>
+                    <div className='trade-container__loader--loading' />
+                </div>
+            }
+            {is_loaded_with_error ?
                 <div
                     className={classNames({
                         'trade-container__error': proposal_info.has_error,
@@ -26,14 +30,7 @@ const ContractInfo = ({
                 >
                     {proposal_info.message && <span className='trade-container__error-info'>{proposal_info.message}</span>}
                 </div>
-            }
-
-            {is_loading &&
-                <div className='trade-container__loader'>
-                    <div className='trade-container__loader--loading' />
-                </div>
-            }
-            {is_loaded &&
+                :
                 <div className='trade-container__price'>
                     <div className='trade-container__price-info'>
                         <div className='trade-container__price-info-basis'>{localize('[_1]', proposal_info.obj_contract_basis.text)}</div>
