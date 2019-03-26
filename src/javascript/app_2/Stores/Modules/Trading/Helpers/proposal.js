@@ -29,14 +29,15 @@ export const getProposalInfo = (store, response, obj_prev_contract_basis) => {
     };
 
     return {
-        id       : proposal.id || '',
-        has_error: !!response.error,
+        id               : proposal.id || '',
+        has_error        : !!response.error,
+        has_error_details: !!response.error && !!response.error.details,
         has_increased,
-        message  : proposal.longcode || response.error.message,
+        message          : proposal.longcode || response.error.message,
         obj_contract_basis,
-        payout   : proposal.payout,
-        profit   : profit.toFixed(getDecimalPlaces(store.currency)),
-        returns  : `${returns.toFixed(2)}%`,
+        payout           : proposal.payout,
+        profit           : profit.toFixed(getDecimalPlaces(store.currency)),
+        returns          : `${returns.toFixed(2)}%`,
         stake,
     };
 };

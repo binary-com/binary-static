@@ -29,6 +29,8 @@ $themes: (
         text_color                  : $COLOR_BLACK,
         text_primary_color          : $COLOR_LIGHT_BLACK_1,
         text_secondary_color        : $COLOR_LIGHT_BLACK_2,
+        tooltip_background_color    : $COLOR_LIGHT_BLACK_1,
+        tooltip_background_error    : $COLOR_RED,
         won_gradient_color          : $COLOR_LIGHT_GREEN_GRADIENT,
     ),
     dark: (
@@ -60,6 +62,8 @@ $themes: (
         text_color                  : $COLOR_WHITE,
         text_primary_color          : $COLOR_DARK_BLUE_7,
         text_secondary_color        : $COLOR_DARK_BLUE_7,
+        tooltip_background_color    : $COLOR_DARK_BLUE_5,
+        tooltip_background_error    : $COLOR_RED,
         won_gradient_color          : $COLOR_DARK_GREEN_GRADIENT,
     ),
 );

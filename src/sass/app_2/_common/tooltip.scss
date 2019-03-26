@@ -20,10 +20,9 @@
         }
     }
     &[data-tooltip] {
-        position: relative;
         cursor: help;
         display: block;
-        @include tooltipColor($COLOR_LIGHT_BLACK_1);
+        @include themifiedTooltipColor('tooltip_background_color');
 
         &:hover:after, &:hover:before {
             opacity: 0.96;
@@ -108,7 +107,19 @@
         }
     }
     &--error[data-tooltip] {
-        @include tooltipColor($COLOR_RED);
+        @include themifiedTooltipColor('tooltip_background_error');
+
+        &, &[data-tooltip-pos=left] {
+            // always show error tooltips, not just on hover
+            &:after, &:before {
+                opacity: 0.96;
+                pointer-events: auto;
+                transform: translate(0, -50%);
+            }
+        }
+    }
+    &--error-secondary[data-tooltip] {
+        @include themifiedTooltipColor('tooltip_background_color');
 
         &, &[data-tooltip-pos=left] {
             // always show error tooltips, not just on hover
