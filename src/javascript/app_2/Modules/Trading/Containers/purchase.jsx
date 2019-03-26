@@ -1,7 +1,7 @@
+import classNames        from 'classnames';
 import PropTypes         from 'prop-types';
 import React             from 'react';
 import { localize }      from '_common/localize';
-import { isEmptyObject } from '_common/utility';
 import Money             from 'App/Components/Elements/money.jsx';
 import { PopConfirm }    from 'App/Components/Elements/PopConfirm';
 import Tooltip           from 'App/Components/Elements/tooltip.jsx';
@@ -11,7 +11,6 @@ import Fieldset          from 'App/Components/Form/fieldset.jsx';
 import { IconTradeType } from 'Assets/Trading/Types';
 import { connect }       from 'Stores/connect';
 import ContractInfo      from '../Components/Form/Purchase/contract-info.jsx';
-import MessageBox        from '../Components/Form/Purchase/MessageBox';
 import PurchaseLock      from '../Components/Form/Purchase/PurchaseLock';
 
 const Purchase = ({
@@ -25,20 +24,15 @@ const Purchase = ({
     is_trade_enabled,
     onClickPurchase,
     onHoverPurchase,
-    resetPurchase,
     togglePurchaseLock,
-    purchase_info,
     proposal_info,
     trade_types,
 }) => (
     Object.keys(trade_types).map((type, idx) => {
-        const info        = proposal_info[type] || {};
-        const is_disabled = !is_purchase_enabled || !is_trade_enabled || !info.id || !is_client_allowed_to_visit;
-        const is_purchase_error = (
-            info.has_error &&
-            !info.has_error_details
-        );
-        const is_high_low = /high_low/.test(contract_type.toLowerCase());
+        const info              = proposal_info[type] || {};
+        const is_disabled       = !is_purchase_enabled || !is_trade_enabled || !info.id || !is_client_allowed_to_visit;
+        const is_high_low       = /high_low/.test(contract_type.toLowerCase());
+        const is_proposal_error = info.has_error && !info.has_error_details;
 
         const purchase_button = (
             <Button
@@ -89,8 +83,8 @@ const Purchase = ({
                         has_increased={info.has_increased}
                         is_visible={!is_contract_mode}
                     />
-                    <div className='btn-purchase__shadow-wrapper'>
-                        {info.has_error && !info.has_error_details &&
+                    <div className={classNames('btn-purchase__shadow-wrapper', { 'btn-purchase__shadow-wrapper--disabled': (is_proposal_error || is_disabled) })}>
+                        {is_proposal_error &&
                         <Tooltip message={info.message} alignment='left' className='tooltip--error-secondary' />
                         }
                         {

@@ -397,22 +397,28 @@
         display: inline-block;
     }
     &__shadow-wrapper {
-        box-shadow: 0 0px 0px rgba(0, 0, 0, 0.15);
         position: relative;
 
-        &:after {
-            content: '';
-            position: absolute;
-            z-index: 1;
-            width: 100%;
-            height: calc(100% - 6px);
-            pointer-events: none;
-            top: 4px;
-            left: 0;
-            border-radius: $BORDER_RADIUS;
-            opacity: 1;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            transition: opacity 0.3s ease-in-out;
+        &:not(&--disabled) {
+            box-shadow: 0 0px 0px rgba(0, 0, 0, 0.15);
+
+            &:after {
+                content: '';
+                position: absolute;
+                z-index: 1;
+                width: 100%;
+                height: calc(100% - 6px);
+                pointer-events: none;
+                top: 4px;
+                left: 0;
+                border-radius: $BORDER_RADIUS;
+                opacity: 1;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+                transition: opacity 0.3s ease-in-out;
+            }
+            &:hover:after {
+                opacity: 0;
+            }
         }
     }
     &:disabled {
@@ -422,9 +428,6 @@
             background-color: themed('disabled_color');
             color: themed('text_secondary_color');
         }
-    }
-    &__shadow-wrapper:hover:after {
-        opacity: 0;
     }
     &:disabled .btn-purchase__effect-main {
         background: $COLOR_DARK_BLUE_8;

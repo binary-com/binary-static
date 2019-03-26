@@ -29,6 +29,7 @@ import { convertDurationLimit }          from './Helpers/duration';
 import { processTradeParams }            from './Helpers/process';
 import {
     createProposalRequests,
+    getProposalErrorField,
     getProposalInfo,
     getProposalParametersName }          from './Helpers/proposal';
 import { pickDefaultSymbol }             from './Helpers/symbol';
@@ -216,12 +217,13 @@ export default class TradeStore extends BaseStore {
 
         if (name === 'currency') {
             this.root_store.client.selectCurrency(value);
-        } else if (name  === 'expiry_date') {
+        } else if (name === 'expiry_date') {
             this.expiry_time = null;
         } else if (!(name in this)) {
             throw new Error(`Invalid Argument: ${name}`);
         }
 
+        this.validateAllProperties();
         this.processNewValuesAsync({ [name]: value }, true);
     }
 
@@ -419,14 +421,12 @@ export default class TradeStore extends BaseStore {
         }
 
         if (response.error) {
-            const error       = getPropertyValue(response, ['error']);
-            const error_field = getPropertyValue(error, ['details', 'field']);
-            const map_error = {
-                barrier    : 'barrier_1',
-                barrier2   : 'barrier_2',
-                date_expiry: 'expiry_date',
-            };
-            this.setValidationErrorMessages(map_error[error_field] || error_field, [error.message]);
+            const error_id = getProposalErrorField(response);
+            if (error_id) {
+                this.setValidationErrorMessages(error_id, [response.error.message]);
+            }
+        } else {
+            this.validateAllProperties();
         }
 
         this.is_purchase_enabled = true;
