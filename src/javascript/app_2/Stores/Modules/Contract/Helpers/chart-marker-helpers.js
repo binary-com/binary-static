@@ -21,7 +21,6 @@ const getSpotCount = (contract_info, spot_count) =>
 // -------------------- Lines --------------------
 export const createMarkerExpiry = (contract_info) => {
     const end_spot_time = getEndSpotTime(contract_info);
-
     if (contract_info.status === 'open' || !end_spot_time) return false;
 
     return createMarkerConfig(
@@ -55,16 +54,15 @@ export const createMarkerSpotEntry = (contract_info) => {
 
     let marker_type      = MARKER_TYPES_CONFIG.SPOT_ENTRY.type;
     let component_props  = {};
-    const spot_has_label = isDigitContract(contract_info.contract_type);
 
+    const spot_has_label = isDigitContract(contract_info.contract_type);
     if (spot_has_label) {
         marker_type = MARKER_TYPES_CONFIG.SPOT_MIDDLE.type;
-        const spot_count = 1;
 
         component_props = {
-            spot_value: +contract_info.entry_tick,
-            spot_epoch: +contract_info.entry_tick_time,
-            spot_count,
+            spot_value: `${contract_info.entry_tick}`,
+            spot_epoch: `${contract_info.entry_tick_time}`,
+            spot_count: 1,
         };
     }
 
@@ -78,8 +76,8 @@ export const createMarkerSpotEntry = (contract_info) => {
 
 export const createMarkerSpotExit = (contract_info, tick, idx) => {
     if (!contract_info.exit_tick_time || isUserSold(contract_info)) return false;
-    const spot_count = getSpotCount(contract_info, idx);
 
+    const spot_count = getSpotCount(contract_info, idx);
     return createMarkerConfig(
         MARKER_TYPES_CONFIG.SPOT_EXIT.type,
         +tick.epoch,
@@ -87,7 +85,7 @@ export const createMarkerSpotExit = (contract_info, tick, idx) => {
         {
             spot_value : `${tick.tick}`,
             spot_epoch : `${tick.epoch}`,
-            status     : `${contract_info.profit && contract_info.profit > 0 ? 'won' : 'lost' }`,
+            status     : `${contract_info.profit > 0 ? 'won' : 'lost' }`,
             align_label: tick.align_label,
             spot_count,
         },

@@ -31,8 +31,7 @@ const marker_lines = {
 };
 
 const addMarker = (marker_obj, SmartChartStore, contract_info) => {
-    Object.keys(marker_obj).forEach((marker_type) =>
-        createMarker(marker_type, SmartChartStore, contract_info, marker_obj));
+    Object.keys(marker_obj).forEach(createMarker);
 
     function createMarker(marker_type) {
         if (marker_type in SmartChartStore.markers) return;
@@ -57,15 +56,14 @@ const addLabelAlignment = (tick, idx, arr) => {
 };
 
 const addTickMarker = (SmartChartStore, contract_info) => {
-    let { tick_stream } = contract_info;
-    tick_stream = unique(tick_stream, 'epoch').map(addLabelAlignment);
+    const tick_stream = unique(contract_info.tick_stream, 'epoch').map(addLabelAlignment);
 
     tick_stream.forEach((tick, idx) => {
-        let marker_config;
         const is_entry_spot  = idx === 0;
         const is_middle_spot = idx > 0 && +tick.epoch !== +contract_info.exit_tick_time;
         const is_exit_spot   = idx > 0 && +tick.epoch === +contract_info.exit_tick_time;
 
+        let marker_config;
         if (is_entry_spot) marker_config = createMarkerSpotEntry(contract_info);
         if (is_middle_spot) marker_config = createMarkerSpotMiddle(contract_info, tick, idx);
         if (is_exit_spot) marker_config = createMarkerSpotExit(contract_info, tick, idx);
