@@ -152,5 +152,22 @@ describe('Utility', () => {
                     ['a', '1', [{ c: ['c', { cc: 33 }] }], { d: 4 }])).to.eq(true);
             });
         });
+
+        describe('.unique()', () => {
+            it('filters out duplicate array objects with provided key', () => {
+                expect(Utility.unique([{ a: 1 }, { a: 2 }, { a: 1 }, { a: 4 }], 'a')).to.have.lengthOf(3);
+                expect(Utility.unique([{ a: 1 }, { a: 2 }, { a: 1 }, { a: 4 }], 'a')).to.deep.equal([{ a: 1 }, { a: 2 }, { a: 4 }]);
+                expect(Utility.unique([{ a: '1233', b: '2' }, { a: '1233', b: '2' }, { a: '1234', b: '2' },], 'a')).to.have.lengthOf(2);
+                expect(Utility.unique([{ a: '1233', b: '2' }, { a: '1233', b: '2' }, { a: '1234', b: '2' },], 'a'))
+                    .to.deep.equal([{ a: '1233', b: '2' }, { a: '1234', b: '2' }]);
+            });
+            it('Works with invalid values', () => {
+                expect(Utility.unique([], 'a')).to.have.lengthOf(0);
+                expect(Utility.unique([], 'a')).to.deep.equal([]);
+                expect(Utility.unique([{ a: 1 }, { b: 2 }, { c: 3 }], 'd')).to.have.lengthOf(3);
+                expect(Utility.unique([{ a: 1 }, { b: 2 }, { c: 3 }], 'd')).to.deep.equal([{ a: 1 }, { b: 2 }, { c: 3 }]);
+
+            });
+        });
     });
 });

@@ -103,7 +103,9 @@ const isEqualObject = (obj1, obj2) => (
     )
 );
 
-const unique = (array, key) => array.filter((e, i) => array.findIndex(a => a[key] === e[key]) === i);
+// Filters out duplicates in an array of objects by key
+const unique = (array, key) => array.filter((e, idx) =>
+    array.findIndex((a, i) => a[key] ? a[key] === e[key] : i === idx) === idx);
 
 const getPropertyValue = (obj, k) => {
     let keys = k;
