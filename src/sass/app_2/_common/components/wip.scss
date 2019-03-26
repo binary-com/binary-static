@@ -1,0 +1,31 @@
+/** @define work-in-progress */
+.work-in-progress {
+    height: 100vh;
+    display: flex;
+
+    &__content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0 1.6em;
+    }
+    &__header {
+        @include typeface(--large-center-bold-blue);
+        margin: 0.8em;
+    }
+    &__text {
+        @include typeface(--title-center-normal-blue);
+        margin: 0 1.6em 2.4em;
+    }
+    &__btn {
+        background: $COLOR_DARK_BLUE_5;
+        height: 42px;
+
+        &--span {
+            font-weight: normal;
+            color: $COLOR_WHITE;
+        }
+    }
+}

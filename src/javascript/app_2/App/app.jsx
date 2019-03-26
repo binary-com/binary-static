@@ -12,26 +12,37 @@ import Footer                      from './Containers/Layout/footer.jsx';
 import Header                      from './Containers/Layout/header.jsx';
 import Routes                      from './Containers/Routes/routes.jsx';
 import DenialOfServiceModal        from './Containers/DenialOfServiceModal';
+import Wip                         from './Containers/Wip';
 
 const App = ({ root_store }) => (
     <Router basename={getBaseName()}>
         <MobxProvider store={root_store}>
             <React.Fragment>
-                <div className='header'>
-                    <Header />
-                </div>
+                {
+                    !root_store.ui.is_mobile &&
+                        <div className='header'>
+                            <Header />
+                        </div>
+                }
                 <ErrorBoundary>
+                    {!root_store.ui.is_mobile &&
                     <AppContents>
                         <Routes />
                         <PositionsDrawer />
                         <ToastMessage position={POSITIONS.TOP_RIGHT} />
                     </AppContents>
+                    }
+                    {root_store.ui.is_mobile &&
+                        <Wip />
+                    }
                     <DenialOfServiceModal />
                 </ErrorBoundary>
-
-                <footer className='footer'>
-                    <Footer />
-                </footer>
+                {
+                    !root_store.ui.is_mobile &&
+                        <footer className='footer'>
+                            <Footer />
+                        </footer>
+                }
             </React.Fragment>
         </MobxProvider>
     </Router>

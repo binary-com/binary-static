@@ -736,4 +736,21 @@
             background-color: unset;
         }
     }
+    .work-in-progress {
+        background: $COLOR_DARK_BLUE_3;
+
+        &__header {
+            color: $COLOR_WHITE;
+        }
+        &__text {
+            color: $COLOR_WHITE;
+        }
+        &__btn {
+            background: $COLOR_WHITE;
+
+            &--span {
+                color: $COLOR_DARK_BLUE_2;
+            }
+        }
+    }
 }
