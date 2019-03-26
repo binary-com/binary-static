@@ -78,6 +78,7 @@ export const createMarkerSpotExit = (contract_info, tick, idx) => {
     if (!contract_info.exit_tick_time || isUserSold(contract_info)) return false;
 
     const spot_count = getSpotCount(contract_info, idx);
+
     return createMarkerConfig(
         MARKER_TYPES_CONFIG.SPOT_EXIT.type,
         +tick.epoch,

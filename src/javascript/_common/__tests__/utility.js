@@ -161,12 +161,14 @@ describe('Utility', () => {
                 expect(Utility.unique([{ a: '1233', b: '2' }, { a: '1233', b: '2' }, { a: '1234', b: '2' },], 'a'))
                     .to.deep.equal([{ a: '1233', b: '2' }, { a: '1234', b: '2' }]);
             });
-            it('Works with invalid values', () => {
+
+            it('works with faulty arguments', () => {
                 expect(Utility.unique([], 'a')).to.have.lengthOf(0);
                 expect(Utility.unique([], 'a')).to.deep.equal([]);
                 expect(Utility.unique([{ a: 1 }, { b: 2 }, { c: 3 }], 'd')).to.have.lengthOf(3);
-                expect(Utility.unique([{ a: 1 }, { b: 2 }, { c: 3 }], 'd')).to.deep.equal([{ a: 1 }, { b: 2 }, { c: 3 }]);
-
+                expect(Utility.unique([{ a: 1 }, { a: 1 }, { b: 2 }, { c: 3 }], 'd')).to.deep.equal([{ a: 1 }, { a: 1 }, { b: 2 }, { c: 3 }]);
+                expect(Utility.unique([{ a: 1 }, { b: 2 }, { c: 3 }], '')).to.have.lengthOf(3);
+                expect(Utility.unique([{ a: 1 }, { a: 1 }, { b: 2 }, { c: 3 }], '')).to.deep.equal([{ a: 1 }, { a: 1 }, { b: 2 }, { c: 3 }]);
             });
         });
     });
