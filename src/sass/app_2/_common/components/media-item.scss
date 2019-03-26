@@ -6,7 +6,7 @@
         @include themify($themes) {
             color: themed('text_primary_color');
         }
-        margin: 0 0 16px;
+        margin: 0 0 8px;
     }
     &__icon {
         min-width: 160px;
