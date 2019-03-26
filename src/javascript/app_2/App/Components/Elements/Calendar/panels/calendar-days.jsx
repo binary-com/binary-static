@@ -86,8 +86,7 @@ const getDays = ({
             // check if date is before min_date or after_max_date
             is_before_min_or_after_max_date
             // for forward starting accounts, only show same day as start date and the day after
-            || ((start_date && (moment_date.isBefore(moment_start_date)
-            || moment_date.isAfter(addDays(moment_start_date, 1)))))
+            || ((start_date && (moment_date.isBefore(moment_start_date))))
             // check if weekends are disabled
             || weekends.some(day => toMoment(date).day() === day)
             // check if date falls on holidays, and doesn't close early or opens late

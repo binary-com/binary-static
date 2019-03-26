@@ -434,6 +434,10 @@
             #cs_telephone_number {
                 width: 100%;
                 min-width: 160px;
+
+                & ~ ul.select-options {
+                    max-height: 130px;
+                }
             }
             #display_cs_telephone {
                 line-height: 1.5rem;
@@ -487,7 +491,7 @@ body #_elev_io {
 }
 
 #content {
-    &.cyberjaya, &.malta, &.labuan {
+    &.cyberjaya, &.malta, &.labuan, &.asuncion {
         &-content {
             margin-top: 0;
         }
@@ -537,7 +541,7 @@ body #_elev_io {
 }
 
 .location {
-    &-cyberjaya, &-labuan, &-malta {
+    &-cyberjaya, &-labuan, &-malta, &-asuncion {
         .introduction {
             h1 {
                 color: $COLOR_ORANGE;

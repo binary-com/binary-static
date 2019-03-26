@@ -65,8 +65,9 @@ const RangeSlider = ({
                 </span>
                 {
                     !!value &&
-                    <span>
-                        {localize('[_1] Ticks', value || '')}
+                    <span className='range-slider__caption-title'>
+                        {+value === 1 && localize('[_1] Tick', value)}
+                        {+value > 1 && localize('[_1] Ticks', value)}
                     </span>
                 }
                 <span className='range-slider__caption--last'>

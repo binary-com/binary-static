@@ -13,9 +13,12 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(255, 255, 255, 0.56);
+    background-color: transparentize($COLOR_DARK_BLUE_1, 0.7);
 
     &__dialog {
+        @include themify($themes) {
+            background-color: themed('container_secondary_color');
+        }
         max-width: 560px;
         max-height: 320px;
         padding: 1.6em;
@@ -25,17 +28,22 @@
         justify-content: space-around;
         flex-direction: column;
         align-items: flex-start;
-        background-color: $COLOR_WHITE;
         box-shadow: 0 2px 8px 0 $COLOR_LIGHT_BLACK_3;
     }
     &__header {
-        @include typeface(--title-left-bold-black);
+        @include themify($themes) {
+            color: themed('text_color');
+        }
+        @include typeface(--title-left-bold-black, none);
         @include toEm(margin-bottom, 16px, 1.6em);
     }
     &__content {
-        max-width: 448px;
+        @include themify($themes) {
+            color: themed('text_primary_color');
+        }
         @include typeface(--paragraph-left-normal-black, unset);
         @include toEm(margin-bottom, 32px, 1.4em);
+        max-width: 448px;
     }
     &__footer {
         display: flex;
@@ -47,14 +55,32 @@
         margin: 0;
     }
     /* postcss-bem-linter: ignore */
+    .btn--primary--orange {
+        transition: all 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
+
+        /* postcss-bem-linter: ignore */
+        &:hover:not([disabled]):before {
+            background: $COLOR_LIGHT_BLACK_4;
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            opacity: 0.4;
+            display: block;
+            border-radius: $BORDER_RADIUS;
+        }
+    }
+    /* postcss-bem-linter: ignore */
     .btn--secondary--orange {
         border: none;
         margin-right: 0.8em;
 
         /* postcss-bem-linter: ignore */
         &:hover:not([disabled]) {
-            background: none;
             border: none;
+            background: $COLOR_LIGHT_BLACK_4;
         }
     }
     /* postcss-bem-linter: ignore */

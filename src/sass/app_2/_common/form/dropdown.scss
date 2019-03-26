@@ -13,6 +13,9 @@
 
         &-text {
             @include typeface(--paragraph-center-normal-black, capitalize);
+            @include themify($themes) {
+                color: themed('text_color');
+            }
             padding-left: 1.6em;
         }
         &:active, &:focus {
@@ -41,6 +44,7 @@
         transform: rotate(0deg);
         transform-origin: 50% 45%;
         @include typeface(--title-center-normal-black, none);
+        @extend %inline-icon;
 
         &:before {
             content: '\002303';

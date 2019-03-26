@@ -29,11 +29,6 @@
         }
     }
     .portfolio-empty {
-        &__icon {
-            path {
-                fill: $COLOR_DARK_BLUE_5;
-            }
-        }
         &__text {
             color: $COLOR_DARK_BLUE_8 !important;
         }
@@ -142,13 +137,17 @@
         &__content, &__header {
             color: $COLOR_DARK_BLUE_7;
         }
-        &__btn {
+        /* postcss-bem-linter: ignore */
+        .btn--secondary--orange {
             background-color: $COLOR_DARK_BLUE_3;
 
-            &:hover {
-                background-color: $COLOR_DARK_BLUE_7;
+            /* postcss-bem-linter: ignore */
+            &:hover:not([disabled]) {
+                background: $COLOR_DARK_BLUE_4;
+                border: none;
             }
-            &-text {
+            /* postcss-bem-linter: ignore */
+            .btn__text {
                 color: $COLOR_WHITE;
             }
         }
@@ -173,153 +172,6 @@
         }
         &__close-button {
             color: $TOAST_CLOSE_BUTTON_COLOR_DARK;
-        }
-    }
-    .datepicker {
-        &__input {
-            background: $COLOR_DARK_BLUE_3;
-            color: $COLOR_WHITE;
-
-            &:hover, &:focus, &:active {
-                border-color: $COLOR_WHITE;
-            }
-        }
-        &__native-overlay {
-            background: $COLOR_DARK_BLUE_5;
-
-            &:hover, &:focus, &:active {
-                border-color: $COLOR_WHITE;
-            }
-        }
-    }
-    .range-slider {
-        &__track {
-            background: $COLOR_DARK_BLUE_2 !important;
-
-            &.input {
-                &:active, &:focus {
-                    box-shadow: none;
-                }
-            }
-            &::-webkit-slider-thumb {
-                background: $COLOR_PURPLE;
-            }
-            &::-moz-range-thumb {
-                background: $COLOR_PURPLE;
-            }
-            &::-moz-range-track {
-                background: $COLOR_DARK_BLUE_2;
-            }
-        }
-        &__ticks-step {
-            border-color: $COLOR_DARK_BLUE_2;
-            background: $COLOR_DARK_BLUE_2;
-
-            &--active, &--marked {
-                background: $COLOR_PURPLE;
-                border-color: $COLOR_PURPLE;
-            }
-            &:hover:not(&--active) {
-                background: $COLOR_PURPLE;
-                border-color: $COLOR_PURPLE;
-                box-shadow: 0 0 0 6px rgba(79, 96, 174, 0.32);
-            }
-        }
-        &__line {
-            background: $COLOR_PURPLE;
-        }
-    }
-    .acc-info {
-        &__id {
-            color: $COLOR_WHITE;
-        }
-        &:hover:not(.show) {
-            background-color: $COLOR_DARK_BLUE_4;
-
-            .symbols {
-                background: $COLOR_DARK_BLUE_4;
-            }
-        }
-        &__balance {
-            .symbols {
-                background: $COLOR_DARK_BLUE_2;
-            }
-        }
-        &--show {
-            &:after {
-                background: $COLOR_WHITE;
-            }
-        }
-        &--is-virtual {
-            .acc-balance-amount, .symbols {
-                color: $COLOR_ORANGE;
-            }
-        }
-    }
-    .acc-switcher {
-        &__wrapper {
-            background: $COLOR_DARK_BLUE_3;
-        }
-        &__accounts {
-            .acc-switcher__account {
-                &:not(:last-child):not(:only-child) {
-                    border-bottom: 1px solid $COLOR_DARK_BLUE_3;
-                }
-            }
-        }
-        &__list {
-            background-color: $COLOR_DARK_BLUE_3;
-
-            &-group {
-                border-color: $COLOR_DARK_BLUE_2;
-            }
-            &-title {
-                color: $COLOR_DARK_BLUE_7;
-            }
-            .acc-switcher__account {
-                background-color: $COLOR_DARK_BLUE_2;
-
-                &:hover:not(.acc-switcher__account--selected) {
-                    background-color: $COLOR_DARK_BLUE_4;
-                }
-                .acc-switcher__id {
-                    color: $COLOR_DARK_BLUE_7;
-                }
-                &--selected {
-                    background: $COLOR_DARK_BLUE_5;
-
-                    .acc-switcher__id {
-                        color: $COLOR_WHITE;
-                        font-weight: 700;
-
-                        &--virtual:before {
-                            color: $COLOR_ORANGE;
-                            border: 1px solid $COLOR_ORANGE;
-                        }
-                    }
-                }
-            }
-        }
-        &__logout {
-            span {
-                color: $COLOR_DARK_BLUE_7;
-            }
-        }
-        &__new-account-title {
-            color: $COLOR_DARK_BLUE_7;
-            border-color: $COLOR_DARK_BLUE_7;
-
-            &:before {
-                color: $COLOR_DARK_BLUE_7;
-            }
-            &:hover {
-                background: $COLOR_DARK_BLUE_4;
-            }
-        }
-    }
-    .allow-equals {
-        &__label {
-            color: $COLOR_DARK_BLUE_7;
         }
     }
     .popconfirm {
@@ -423,15 +275,6 @@
             box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.5);
         }
     }
-    .contract-type-list {
-        &__label span {
-            color: $COLOR_DARK_BLUE_7;
-        }
-        &__contract-wrapper {
-            background: $COLOR_DARK_BLUE_2;
-            color: $COLOR_DARK_BLUE_7;
-        }
-    }
     .contract-type-item {
         background: $COLOR_DARK_BLUE_2;
         color: $COLOR_DARK_BLUE_7;
@@ -514,22 +357,6 @@
             }
         }
     }
-    .button-menu {
-        &__button {
-            background-color: $COLOR_DARK_BLUE_2;
-
-            span {
-                color: $COLOR_DARK_BLUE_7;
-            }
-            &:hover:not(&--active) {
-                background-color: $COLOR_DARK_BLUE_4;
-            }
-            &--active {
-                color: $COLOR_WHITE;
-                background-color: $COLOR_DARK_BLUE_5;
-            }
-        }
-    }
     .time-picker {
         &__icon {
             g {
@@ -555,12 +382,6 @@
                     color: $COLOR_DARK_BLUE_8;
                     pointer-events: none;
                 }
-                &--selected {
-                    background: $COLOR_DARK_BLUE_5;
-                }
-                &:hover:not(&--selected):not(&--disabled) {
-                    background: $COLOR_DARK_BLUE_4;
-                }
             }
         }
     }
@@ -582,7 +403,6 @@
     .input {
         background: $COLOR_DARK_BLUE_2;
         border-color: $COLOR_DARK_BLUE_2;
-        color: $COLOR_DARK_BLUE_7;
 
         &[type=checkbox] {
             border-color: $COLOR_DARK_BLUE_7;
@@ -617,9 +437,6 @@
             background: $COLOR_DARK_BLUE_2;
             border-color: $COLOR_DARK_BLUE_2;
 
-            &-text {
-                color: $COLOR_DARK_BLUE_7;
-            }
             &:hover, &:focus, &:active {
                 border-color: $COLOR_DARK_BLUE_7;
             }
@@ -803,16 +620,8 @@
             color: $COLOR_WHITE;
 
             &__result {
-                background-color: $COLOR_DARK_BLUE_2;
-
                 &:hover {
                     background: 0;
-                }
-                &--won {
-                    background-image: linear-gradient(to top, rgba(16, 19, 32, 0), rgba(0, 148, 117, 0.16));
-                }
-                &--lost {
-                    background-image: linear-gradient(to top, rgba(16, 19, 32, 0), rgba(227, 28, 75, 0.16));
                 }
             }
             &__wrapper {

@@ -93,9 +93,6 @@ html {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    @include themify($themes) {
-        background: themed('background_color');
-    }
 }
 
 /* postcss-bem-linter: ignore */
@@ -126,6 +123,9 @@ html {
     font-family: inherit;
     font-style: inherit;
     padding: 2px 3px;
+    @include themify($themes) {
+        color: themed('text_color');
+    }
 }
 
 // Placeholders

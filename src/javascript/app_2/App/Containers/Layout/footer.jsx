@@ -33,7 +33,6 @@ const Footer = ({
         <NetworkStatus status={network_status} />
         <ServerTime />
         <div className='footer__links'>
-            <ToggleFullScreen />
             <ToggleSettings
                 is_dark_mode={is_dark_mode}
                 is_language_visible={is_language_dialog_visible}
@@ -42,6 +41,7 @@ const Footer = ({
                 showBlur={showBlur}
                 hideBlur={hideBlur}
             />
+            <ToggleFullScreen />
         </div>
     </React.Fragment>
 );

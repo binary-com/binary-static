@@ -1,3 +1,13 @@
+/** @define theme */
+.theme {
+    &--light {
+        background: $COLOR_LIGHT_BLACK_4_SOLID;
+    }
+    &--dark {
+        background: $COLOR_DARK_BLUE_1;
+    }
+}
+
 /** @define container */
 .container {
     width: 100%;

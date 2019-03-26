@@ -9,6 +9,7 @@
     &__icon {
         @extend .absolute-center-v;
         @extend .icon--centered;
+        @extend %inline-icon;
         z-index: 1;
         margin: unset;
     }
@@ -65,12 +66,16 @@
             padding: 7px;
 
             &:hover:not(&--disabled):not(&--selected) {
-                background: $COLOR_LIGHT_BLACK_4;
-                color: $COLOR_LIGHT_BLACK_1;
+                @include themify($themes) {
+                    background: themed('tab_hover_color');
+                    color: themed('text_primary_color');
+                }
             }
             &--selected {
-                background: $COLOR_LIGHT_GRAY_1;
-                color: $COLOR_WHITE;
+                @include themify($themes) {
+                    background: themed('active_color');
+                    color: themed('text_active_color') !important;
+                }
             }
             &--disabled {
                 color: $COLOR_LIGHT_BLACK_3;

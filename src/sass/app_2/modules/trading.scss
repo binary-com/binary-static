@@ -21,7 +21,7 @@
         &-info {
             @include typeface(--paragraph-left-normal-black);
             @include themify($themes) {
-                color: themed('border_hover_color');
+                color: themed('text_primary_color');
             }
 
             &--left {
@@ -37,7 +37,7 @@
         @include themify($themes) {
             background: themed('container_color');
             border-color: themed('container_color');
-            color: themed('text_primary_color');
+            color: themed('text_color');
         }
     }
     &__error {
@@ -131,6 +131,9 @@
             }
         }
         &-tooltip {
+            &-i {
+                @extend %inline-icon.disabled;
+            }
             &[data-tooltip] {
                 &:before, &:after {
                     right: 230px !important;
@@ -360,6 +363,12 @@
         }
         &-icon {
             @extend %inline-icon.white;
+            /* postcss-bem-linter: ignore */
+            .color1-fill {
+                @include themify($themes) {
+                    fill: themed('text_active_color');
+                }
+            }
         }
     }
     &__effect-main {

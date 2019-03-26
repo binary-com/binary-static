@@ -64,6 +64,10 @@
         span {
             cursor: pointer;
         }
+        /* postcss-bem-linter: ignore */
+        svg {
+            @extend %inline-icon;
+        }
     }
     &--enter, &--exit {
         transform: translateX(50%);
@@ -104,6 +108,7 @@
         }
     }
     &__icon {
+        @extend %inline-icon;
         cursor: pointer;
     }
 }
