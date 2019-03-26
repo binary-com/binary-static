@@ -1,6 +1,6 @@
-import React from 'react';
+import React               from 'react';
 import { BoxOverlayImage } from '../../_common/components/box_row.jsx';
-import ImageSlider from '../../_common/components/image_slider.jsx';
+import ImageSlider         from '../../_common/components/image_slider.jsx';
 
 const Malta = () =>  (
     <div className='static_full location-malta'>
