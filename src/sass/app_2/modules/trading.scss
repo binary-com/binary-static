@@ -21,7 +21,7 @@
         &-info {
             @include typeface(--paragraph-left-normal-black);
             @include themify($themes) {
-                color: themed('border_hover_color');
+                color: themed('text_primary_color');
             }
 
             &--left {
@@ -33,10 +33,11 @@
         align-self: center;
         appearance: none;
         box-sizing: border-box;
+        border-radius: $BORDER_RADIUS;
         @include themify($themes) {
             background: themed('container_color');
             border-color: themed('container_color');
-            color: themed('text_primary_color');
+            color: themed('text_color');
         }
     }
     &__error {
@@ -130,6 +131,9 @@
             }
         }
         &-tooltip {
+            &-i {
+                @extend %inline-icon.disabled;
+            }
             &[data-tooltip] {
                 &:before, &:after {
                     right: 230px !important;
@@ -184,31 +188,28 @@
         }
     }
     &__currency-options {
-        border-radius: $BORDER_RADIUS 0 0 $BORDER_RADIUS;
-        margin-right: 1px;
-        width: calc(25% - 1px);
-        display: inline-block;
+        // fix for Safari:
+        // display: inline-block causes input cursor to seemingly appears duplicated
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        grid-gap: 0.2em;
 
+        &-dropdown {
+            margin-top: 0.8em;
+        }
         &--display {
-            font-size: 1.4em;
-            line-height: 1.5;
-            height: 32px;
-            border-radius: $BORDER_RADIUS 0 0 $BORDER_RADIUS !important;
             margin-top: 0;
+            border-radius: $BORDER_RADIUS 0 0 $BORDER_RADIUS;
+
+            /* postcss-bem-linter: ignore */
+            .symbols {
+                font-size: 1.4em;
+            }
         }
     }
-    &__amount {
-        margin-left: 1px;
-        display: inline-block;
-        width: 100%;
-
-        .trade-container__input {
-            padding: 0 30px;
-        }
-        &--has-currency-options {
-            width: calc(75% - 1px);
-            border-radius: 0 $BORDER_RADIUS $BORDER_RADIUS 0;
-        }
+    &__amount .trade-container__input {
+        padding: 0 30px;
+        border-radius: 0 $BORDER_RADIUS $BORDER_RADIUS 0;
     }
 }
 
@@ -270,7 +271,7 @@
         &-icon {
             width: 64px;
             height: 64px;
-            @extend .inline-icon.white;
+            @extend %inline-icon.white;
         }
         &-button {
             height: 32px;
@@ -361,7 +362,13 @@
             position: absolute;
         }
         &-icon {
-            @extend .inline-icon.white;
+            @extend %inline-icon.white;
+            /* postcss-bem-linter: ignore */
+            .color1-fill {
+                @include themify($themes) {
+                    fill: themed('text_active_color');
+                }
+            }
         }
     }
     &__effect-main {

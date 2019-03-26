@@ -20,6 +20,8 @@ export default class UIStore extends BaseStore {
     @observable is_settings_dialog_on   = false;
     @observable is_accounts_switcher_on = false;
 
+    @observable has_only_forward_starting_contracts = false;
+
     // Purchase Controls
     @observable is_purchase_confirm_on = false;
     @observable is_purchase_lock_on    = false;
@@ -46,6 +48,8 @@ export default class UIStore extends BaseStore {
     @observable duration_m             = 3;
     @observable duration_h             = 1;
     @observable duration_d             = 1;
+
+    @observable is_blurred = false;
 
     getDurationFromUnit = (unit) => this[`duration_${unit}`];
 
@@ -106,6 +110,16 @@ export default class UIStore extends BaseStore {
     @computed
     get is_tablet() {
         return this.screen_width <= MAX_TABLET_WIDTH;
+    }
+
+    @action.bound
+    showBlur() {
+        this.is_blurred = true;
+    }
+
+    @action.bound
+    hideBlur() {
+        this.is_blurred = false;
     }
 
     @action.bound
@@ -217,5 +231,10 @@ export default class UIStore extends BaseStore {
     @action.bound
     removeAllToastMessages() {
         this.toast_messages = [];
+    }
+
+    @action.bound
+    setHasOnlyForwardingContracts(has_only_forward_starting_contracts) {
+        this.has_only_forward_starting_contracts = has_only_forward_starting_contracts;
     }
 }
