@@ -31,8 +31,8 @@ const ProgressTicks = ({ current_tick, ticks_count }) => {
 };
 
 ProgressTicks.propTypes = {
-    current_tick: PropTypes.number,
-    ticks_count : PropTypes.number,
+    // current_tick: PropTypes.number,
+    ticks_count: PropTypes.number,
 };
 
 export default ProgressTicks;

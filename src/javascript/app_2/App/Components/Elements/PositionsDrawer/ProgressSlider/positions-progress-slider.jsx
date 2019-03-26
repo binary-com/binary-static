@@ -46,7 +46,7 @@ const ProgressSlider = ({
 
 ProgressSlider.propTypes = {
     className     : PropTypes.string,
-    current_tick  : PropTypes.number,
+    // current_tick  : PropTypes.number,
     has_result    : PropTypes.bool,
     percentage    : PropTypes.number,
     remaining_time: PropTypes.oneOfType([
