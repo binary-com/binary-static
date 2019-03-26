@@ -40,6 +40,20 @@ const Dialog = (() => {
                     if (options.localized_footnote && el_footnote) {
                         el_footnote.setVisibility(1);
                         setMessage('localized_footnote', '#dialog_footnote');
+
+                        // Assigns a click event listener on each anchor tag of footnote
+                        // to close dialog upon click
+                        Array.from(el_footnote.children)
+                            .filter(el => el.nodeName === 'A')
+                            .forEach(el => {
+                                el.addEventListener('click', () => {
+                                    if (typeof options.onAbort === 'function') {
+                                        options.onAbort();
+                                    }
+                                    el_dialog.remove();
+                                    resolve(false);
+                                });
+                            });
                     }
 
                     if (is_alert) {

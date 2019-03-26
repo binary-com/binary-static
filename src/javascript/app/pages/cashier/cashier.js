@@ -1,9 +1,12 @@
+/* eslint-disable no-nested-ternary */
 const Client           = require('../../base/client');
 const BinarySocket     = require('../../base/socket');
+const Dialog           = require('../../common/attach_dom/dialog');
 const isCryptocurrency = require('../../common/currency').isCryptocurrency;
 const elementInnerHtml = require('../../../_common/common_functions').elementInnerHtml;
 const getElementById   = require('../../../_common/common_functions').getElementById;
 const localize         = require('../../../_common/localize').localize;
+const State            = require('../../../_common/storage').State;
 const paramsHash       = require('../../../_common/url').paramsHash;
 const urlFor           = require('../../../_common/url').urlFor;
 const getPropertyValue = require('../../../_common/utility').getPropertyValue;
@@ -66,37 +69,77 @@ const Cashier = (() => {
         });
     };
 
-    const showCurrentCurrency = (currency) => {
+    const showCurrentCurrency = (currency, has_no_mt5, has_no_tx) => {
         const el_acc_currency     = getElementById('account_currency');
         const el_currency_image   = getElementById('account_currency_img');
         const el_current_currency = getElementById('account_currency_current');
         const el_current_hint     = getElementById('account_currency_hint');
 
         // Set messages based on if currency is crypto or fiat
+        // If fiat, set message based on if they're allowed to change currency or not
+        // Condition is to have no MT5 accounts *and* have no transactions
         const currency_message    = isCryptocurrency(currency)
             ? localize('This is your [_1] account.', `${currency}`)
-            : localize('Your fiat account’s currency is currently set to [_1].', `${currency}`);
+            : has_no_mt5 && has_no_tx
+                ? localize('Your fiat account’s currency is currently set to [_1].', `${currency}`)
+                : localize('Your fiat account’s currency is set to [_1].', `${currency}`);
+
         const currency_hint       = isCryptocurrency(currency)
             ? localize('Don\'t want to trade in [_1]? You can open another cryptocurrency account. [_2]Manage your accounts[_3].', [`${currency}`, `<a href=${urlFor('user/accounts')}>`, '</a>'])
-            : localize('You can set a new currency before you deposit for the first time. [_1]Manage your accounts[_2].', [`<a href=${urlFor('user/accounts')}>`, '</a>']);
+            : has_no_mt5 && has_no_tx
+                ? localize('You can set a new currency before you deposit for the first time. [_1]Manage your accounts[_2].', [`<a href=${urlFor('user/accounts')}>`, '</a>'])
+                : localize('You can no longer change the currency because you’ve made a first-time deposit. [_1]Manage your accounts[_2].', [`<a href=${urlFor('user/accounts')}>`, '</a>']);
 
         elementInnerHtml(el_current_currency, currency_message);
         elementInnerHtml(el_current_hint, currency_hint);
         el_currency_image.src = `/images/pages/cashier/icons/icon-${currency}.svg`;
 
+        if (has_no_mt5 && has_no_tx) {
+            enablePopupOnDeposit();
+        }
+
         el_acc_currency.setVisibility(1);
+    };
+
+    const enablePopupOnDeposit = () => {
+        const $deposit_btn = $('#deposit_btn_cashier > .deposit');
+        const setEventHandler = () => $deposit_btn.one('click', showPopup);
+
+        const showPopup = (e) => {
+            e.preventDefault();
+
+            Dialog.confirm({
+                id                : 'deposit_currency_change_popup_container',
+                ok_text           : localize('Yes I\'m sure'),
+                cancel_text       : localize('Cancel'),
+                localized_title   : localize('Are you sure?'),
+                localized_message : localize('You will not be able to change your fiat account’s currency after making this deposit. Are you sure you want to proceed?'),
+                localized_footnote: localize('[_1]No, change my fiat account’s currency now[_2]', [`<a href=${urlFor('user/accounts')}>`, '</a>']),
+                onConfirm         : () => $deposit_btn.click(),
+                onAbort           : setEventHandler,
+            });
+        };
+
+        setEventHandler();
     };
 
     const onLoad = () => {
         if (Client.isLoggedIn()) {
-            BinarySocket.wait('authorize').then(() => {
-                const residence = Client.get('residence');
-                const currency  = Client.get('currency');
+            BinarySocket.send({ statement: 1, limit: 1 });
+            BinarySocket.wait('authorize', 'mt5_login_list', 'statement').then(() => {
+                const mt5_logins = State.getResponse('mt5_login_list');
+                const statement  = State.getResponse('statement');
+                const residence  = Client.get('residence');
+                const currency   = Client.get('currency');
 
                 if (Client.get('is_virtual')) {
                     displayTopUpButton();
                 } else {
-                    showCurrentCurrency(currency);
+                    showCurrentCurrency(
+                        currency,
+                        mt5_logins.length === 0,
+                        (statement.count === 0 && statement.transactions.length === 0)
+                    );
                 }
 
                 if (residence) {
