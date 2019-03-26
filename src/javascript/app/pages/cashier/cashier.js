@@ -1,6 +1,7 @@
 const Client           = require('../../base/client');
 const BinarySocket     = require('../../base/socket');
 const isCryptocurrency = require('../../common/currency').isCryptocurrency;
+const elementInnerHtml = require('../../../_common/common_functions').elementInnerHtml;
 const getElementById   = require('../../../_common/common_functions').getElementById;
 const localize         = require('../../../_common/localize').localize;
 const paramsHash       = require('../../../_common/url').paramsHash;
@@ -65,14 +66,39 @@ const Cashier = (() => {
         });
     };
 
+    const showCurrentCurrency = (currency) => {
+        const el_acc_currency     = getElementById('account_currency');
+        const el_currency_image   = getElementById('account_currency_img');
+        const el_current_currency = getElementById('account_currency_current');
+        const el_current_hint     = getElementById('account_currency_hint');
+
+        // Set messages based on if currency is crypto or fiat
+        const currency_message    = isCryptocurrency(currency)
+            ? localize('This is your [_1] account.', `${currency}`)
+            : localize('Your fiat account’s currency is currently set to [_1].', `${currency}`);
+        const currency_hint       = isCryptocurrency(currency)
+            ? localize('Don\'t want to trade in [_1]? You can open another cryptocurrency account. [_2]Manage your accounts[_3].', [`${currency}`, `<a href=${urlFor('user/accounts')}>`, '</a>'])
+            : localize('You can set a new currency before you deposit for the first time. [_1]Manage your accounts[_2].', [`<a href=${urlFor('user/accounts')}>`, '</a>']);
+
+        elementInnerHtml(el_current_currency, currency_message);
+        elementInnerHtml(el_current_hint, currency_hint);
+        el_currency_image.src = `/images/pages/cashier/icons/icon-${currency}.svg`;
+
+        el_acc_currency.setVisibility(1);
+    };
+
     const onLoad = () => {
         if (Client.isLoggedIn()) {
             BinarySocket.wait('authorize').then(() => {
-                if (Client.get('is_virtual')) {
-                    displayTopUpButton();
-                }
                 const residence = Client.get('residence');
                 const currency  = Client.get('currency');
+
+                if (Client.get('is_virtual')) {
+                    displayTopUpButton();
+                } else {
+                    showCurrentCurrency(currency);
+                }
+
                 if (residence) {
                     BinarySocket.send({ paymentagent_list: residence }).then((response) => {
                         const list = getPropertyValue(response, ['paymentagent_list', 'list']);

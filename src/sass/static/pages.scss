@@ -150,6 +150,28 @@
     margin-bottom: 0;
 }
 
+#account_currency {
+    display: flex;
+    align-items: center;
+    background-color: $COLOR_LIGHT_GRAY;
+    padding: 30px;
+    border-radius: 4px;
+
+    &_img {
+        width: 80px;
+        height: 80px;
+        margin-right: 20px;
+    }
+    &_current {
+        color: $primaryBrandColor;
+        font-weight: 300;
+    }
+    &_hint {
+        font-size: 1rem;
+        margin: 10px 0 0;
+    }
+}
+
 #payment_methods {
     overflow-y: hidden;
 
