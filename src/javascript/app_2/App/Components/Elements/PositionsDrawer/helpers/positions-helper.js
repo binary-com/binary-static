@@ -14,8 +14,10 @@ export const getCurrentTick = (contract_info) => {
     const unique = (array, key) => array.filter((e, i) => array.findIndex(a => a[key] === e[key]) === i);
     let { tick_stream } = contract_info;
     tick_stream = unique(tick_stream, 'epoch');
-    return tick_stream;
+    return isDigitContract(contract_info.contract_type) ? tick_stream.length : tick_stream.length - 1;
 };
+
+const isDigitContract = (contract_type) => /digit/i.test(contract_type);
 
 export const getTimePercentage = (current_time, purchase_time, expiry_time) => {
     const duration_from_purchase = moment.duration(moment.unix(expiry_time).diff(moment.unix(purchase_time)));

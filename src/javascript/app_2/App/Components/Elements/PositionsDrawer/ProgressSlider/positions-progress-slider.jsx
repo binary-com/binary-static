@@ -18,7 +18,7 @@ const ProgressSlider = ({
             {/* TODO: enable ticks slider once it is completed */}
             {(ticks_count) ?
                 <ProgressTicks
-                    current_tick={current_tick}
+                    current_tick={(current_tick === ticks_count) ? ticks_count : current_tick}
                     ticks_count={ticks_count}
                 />
                 :
@@ -46,7 +46,7 @@ const ProgressSlider = ({
 
 ProgressSlider.propTypes = {
     className     : PropTypes.string,
-    // current_tick  : PropTypes.number,
+    current_tick  : PropTypes.number,
     has_result    : PropTypes.bool,
     percentage    : PropTypes.number,
     remaining_time: PropTypes.oneOfType([
