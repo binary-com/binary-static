@@ -17,11 +17,10 @@ const ProgressTicks = ({ current_tick, ticks_count }) => {
             <div className='progress-slider__track--ticks'>
                 <div className='progress-slider__ticks'>
                     {arr_ticks.map(idx =>
-                        <span
+                        <div
                             key={idx}
                             className={classNames('ticks__step', {
-                                'ticks__step--active': (idx + 1) === parseInt(current_tick),
-                                'ticks__step--marked': (idx + 1) < parseInt(current_tick),
+                                'ticks__step--marked': (idx + 1) <= parseInt(current_tick),
                             })}
                         />
                     )}

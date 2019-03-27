@@ -2,14 +2,13 @@ import { localize }        from '_common/localize';
 import {
     epochToMoment,
     getDiffDuration }      from 'Utils/Date';
+import { unique }          from '../../../../../_common/utility';
 import { isDigitContract } from '../../Contract/Helpers/digits';
 
 export const getCurrentTick = (contract_info) => {
-    const unique = (array, key) => array.filter((e, i) => array.findIndex(a => a[key] === e[key]) === i);
     let { tick_stream } = contract_info;
     tick_stream = unique(tick_stream, 'epoch');
-    const curr_tick = isDigitContract(contract_info.contract_type) ? tick_stream.length : tick_stream.length - 1;
-    return curr_tick < 0 ? 0 : curr_tick;
+    return isDigitContract(contract_info.contract_type) ? tick_stream.length : tick_stream.length - 1;
 };
 
 export const getDurationUnitValue = (obj_duration) => {
