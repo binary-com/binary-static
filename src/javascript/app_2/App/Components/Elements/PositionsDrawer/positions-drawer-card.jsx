@@ -1,24 +1,23 @@
-import classNames        from 'classnames';
-import PropTypes         from 'prop-types';
-import React             from 'react';
-import { CSSTransition } from 'react-transition-group';
-import ContractLink      from 'Modules/Contract/Containers/contract-link.jsx';
-import { localize }      from '_common/localize';
-import ContractTypeCell  from './contract-type-cell.jsx';
-import ProgressSlider    from './ProgressSlider';
-import ResultDetails     from './result-details.jsx';
-import ResultOverlay     from './result-overlay.jsx';
-import {
-    getTimePercentage,
-    getCurrentTick     } from './helpers';
-import Money             from '../money.jsx';
-import Button            from '../../Form/button.jsx';
+import classNames            from 'classnames';
+import PropTypes             from 'prop-types';
+import React                 from 'react';
+import { CSSTransition }     from 'react-transition-group';
+import ContractLink          from 'Modules/Contract/Containers/contract-link.jsx';
+import { localize }          from '_common/localize';
+import ContractTypeCell      from './contract-type-cell.jsx';
+import ProgressSlider        from './ProgressSlider';
+import ResultDetails         from './result-details.jsx';
+import ResultOverlay         from './result-overlay.jsx';
+import { getTimePercentage } from './helpers';
+import Money                 from '../money.jsx';
+import Button                from '../../Form/button.jsx';
 
 const PositionsDrawerCard = ({
     active_position,
     className,
     contract_info,
     currency,
+    current_tick,
     duration,
     duration_unit,
     exit_spot,
@@ -82,7 +81,7 @@ const PositionsDrawerCard = ({
                     <ProgressSlider
                         remaining_time={contract_info.date_expiry}
                         percentage={percentage}
-                        current_tick={contract_info.tick_count ? getCurrentTick(contract_info) : null}
+                        current_tick={current_tick}
                         ticks_count={contract_info.tick_count}
                         has_result={!!(result)}
                     />
@@ -169,6 +168,7 @@ PositionsDrawerCard.propTypes = {
     className        : PropTypes.string,
     contract_info    : PropTypes.object,
     currency         : PropTypes.string,
+    current_tick     : PropTypes.number,
     duration         : PropTypes.number,
     duration_unit    : PropTypes.string,
     exit_spot        : PropTypes.oneOfType([PropTypes.number, PropTypes.string]),

@@ -18,7 +18,7 @@ const ProgressSlider = ({
             {/* TODO: enable ticks slider once it is completed */}
             {(ticks_count) ?
                 <ProgressTicks
-                    current_tick={(current_tick === ticks_count) ? ticks_count : current_tick}
+                    current_tick={current_tick}
                     ticks_count={ticks_count}
                 />
                 :

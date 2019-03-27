@@ -9,9 +9,10 @@ const ProgressTicks = ({ current_tick, ticks_count }) => {
     // if (!current_tick) return <div className='progress-slider__infinite-loader'><div className='progress-slider__infinite-loader--indeterminate' /></div>;
     return (
         // TODO: Update and show once design for ticks progress bar is finalized
+        current_tick &&
         <div>
             <span className='progress-slider__ticks-caption'>
-                {localize('Tick [_1]', (current_tick < 0) ? 0 : current_tick)}
+                {localize('Tick [_1]', current_tick)}
             </span>
             <div className='progress-slider__track--ticks'>
                 <div className='progress-slider__ticks'>

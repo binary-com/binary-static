@@ -5,6 +5,7 @@ import {
 import { WS }                      from 'Services';
 import { formatPortfolioPosition } from './Helpers/format-response';
 import {
+    getCurrentTick,
     getDurationPeriod,
     getDurationTime,
     getDurationUnitText }          from './Helpers/details';
@@ -91,6 +92,7 @@ export default class PortfolioStore extends BaseStore {
         if (proposal.entry_spot) portfolio_position.entry_spot = +proposal.entry_spot;
 
         // store contract proposal details that require modifiers
+        portfolio_position.current_tick     = getCurrentTick(proposal);
         portfolio_position.indicative       = new_indicative;
         portfolio_position.profit_loss      = profit_loss;
         portfolio_position.is_valid_to_sell = isValidToSell(proposal);
