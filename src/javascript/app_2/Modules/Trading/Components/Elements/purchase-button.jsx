@@ -8,7 +8,6 @@ import { IconTradeType } from 'Assets/Trading/Types';
 const PurchaseButton = ({
     currency,
     info,
-    is_contract_mode,
     is_disabled,
     is_high_low,
     is_loading,
@@ -17,7 +16,7 @@ const PurchaseButton = ({
     type,
 }) => (
     <Button
-        is_disabled={ is_contract_mode || is_disabled }
+        is_disabled={ is_disabled }
         id={`purchase_${type}`}
         className={classNames(
             'btn--primary',

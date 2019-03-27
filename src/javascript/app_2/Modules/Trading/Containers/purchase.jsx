@@ -29,14 +29,13 @@ const Purchase = ({
 }) => (
     Object.keys(trade_types).map((type, idx) => {
         const info        = proposal_info[type] || {};
-        const is_disabled = !is_purchase_enabled || !is_trade_enabled || !info.id || !is_client_allowed_to_visit;
+        const is_disabled = is_contract_mode || !is_purchase_enabled || !is_trade_enabled || !info.id || !is_client_allowed_to_visit;
         const is_high_low = /high_low/.test(contract_type.toLowerCase());
         const is_loading  = !info.has_error && !info.id;
         const purchase_button = (
             <PurchaseButton
                 currency={currency}
                 info={info}
-                is_contract_mode={is_contract_mode}
                 is_disabled={is_disabled}
                 is_high_low={is_high_low}
                 is_loading={is_loading}
