@@ -27,25 +27,26 @@ const PurchaseButton = ({
     >
         <React.Fragment>
             <div className='btn-purchase__trade-type'>
-                <div className='btn-purchase__icon'>
+                <div className='btn-purchase__icon_wrapper'>
                     <IconTradeType
+                        className='btn-purchase__icon'
                         type={!is_disabled ? (!is_high_low ? type.toLowerCase() : `${type.toLowerCase()}_barrier`) : ''}
                     />
                 </div>
-                <div className='btn-purchase__text'>
-                    <span>{!is_disabled && localize('[_1]', trade_types[type])}</span>
+                <div className='btn-purchase__text_wrapper'>
+                    <span className='btn-purchase__text'>{!is_disabled && localize('[_1]', trade_types[type])}</span>
                 </div>
             </div>
             <div className='btn-purchase__effect-detail' />
             <div className='btn-purchase__info'>
                 <div className='btn-purchase__return'>
-                    <div className='btn-purchase__text'>
-                        <span>{!is_disabled && info.returns}</span>
+                    <div className='btn-purchase__text_wrapper'>
+                        <span className='btn-purchase__text'>{!is_disabled && info.returns}</span>
                     </div>
                 </div>
                 <div className='btn-purchase__profit'>
-                    <div className='btn-purchase__text'>
-                        <span>{!is_disabled && <Money amount={info.profit} currency={currency} className='btn-purchase__currency' />}</span>
+                    <div className='btn-purchase__text_wrapper'>
+                        <span className='btn-purchase__text'>{!is_disabled && <Money amount={info.profit} currency={currency} className='btn-purchase__currency' />}</span>
                     </div>
                 </div>
             </div>
