@@ -12,6 +12,12 @@
         @extend %inline-icon;
         z-index: 1;
         margin: unset;
+        /* postcss-bem-linter: ignore */
+        g {
+            @include themify($themes) {
+                stroke: themed('text_primary_color');
+            }
+        }
     }
     &__dialog {
         background-color: $COLOR_WHITE;
