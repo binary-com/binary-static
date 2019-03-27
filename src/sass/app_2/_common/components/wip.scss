@@ -13,10 +13,12 @@
     }
     &__header {
         @include typeface(--large-center-bold-blue);
+        text-transform: none;
         margin: 0.8em;
     }
     &__text {
         @include typeface(--title-center-normal-blue);
+        text-transform: none;
         margin: 0 1.6em 2.4em;
     }
     &__btn {
