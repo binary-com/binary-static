@@ -82,6 +82,18 @@
                 }
             }
         }
+        &:hover {
+            /* postcss-bem-linter: ignore */
+            svg {
+                pointer-events: none;
+
+                .color1-fill {
+                    @include themify($themes) {
+                        fill: themed('text_color') !important;
+                    }
+                }
+            }
+        }
     }
     &--selected {
         @include themify($themes) {
@@ -93,18 +105,6 @@
             font-weight: bold;
             @include themify($themes) {
                 color: themed('text_active_color');
-            }
-        }
-        .contract-type-item__icon {
-            /* postcss-bem-linter: ignore */
-            svg {
-                pointer-events: none;
-
-                .color1-fill {
-                    @include themify($themes) {
-                        fill: themed('text_active_color') !important;
-                    }
-                }
             }
         }
     }

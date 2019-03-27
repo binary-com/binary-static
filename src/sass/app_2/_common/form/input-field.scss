@@ -84,12 +84,12 @@
     }
 
     &[type=checkbox] {
-        font-size: 1em;
+        font-size: 1.2em;
         cursor: pointer;
         display: inline-block;
         vertical-align: middle;
-        width: 1.2em;
-        height: 1.2em;
+        width: 16px;
+        height: 16px;
         border-color: $COLOR_LIGHT_BLACK_4;
         border-radius: 1px;
         border-width: 0.5px;
@@ -117,12 +117,12 @@
             color: $COLOR_WHITE;
         }
         &:after {
-            @include typeface(--xsmall-left-normal-active);
+            @include typeface(--small-left-normal-active);
             content: 'L';
             transform: scaleX(-1) rotate(-40deg);
             position: absolute;
-            top: -20%;
-            left: 30%;
+            top: -10%;
+            left: 25%;
             display: none;
         }
     }

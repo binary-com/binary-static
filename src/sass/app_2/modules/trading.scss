@@ -147,6 +147,11 @@
                     width: 265px;
                 }
             }
+            &:hover {
+                .trade-container__price-tooltip-i {
+                    @extend %inline-icon.white;
+                }
+            }
         }
     }
     &__barriers {
