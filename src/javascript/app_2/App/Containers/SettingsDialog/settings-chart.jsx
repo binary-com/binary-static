@@ -64,7 +64,7 @@ const ChartSettings = ({
         </MediaItem>
         <MediaItem>
             <MediaHeading>
-                <Localize str='Open-High-Low-Close (OHLC) information' />
+                <Localize str='Open-High-Low-Close [_1](OHLC) information' replacers={{ 1: <br /> }} />
             </MediaHeading>
             <MediaDescription>
                 <MediaIcon

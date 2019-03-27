@@ -1,12 +1,12 @@
 .media {
-    margin: 0 0 16px;
+    margin: 0 0 24px;
 
     &__heading {
         @include typeface(--paragraph-left-bold-black);
         @include themify($themes) {
             color: themed('text_primary_color');
         }
-        margin: 0 0 8px;
+        margin: 0 0 16px;
     }
     &__icon {
         min-width: 160px;
@@ -30,5 +30,6 @@
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
+        text-transform: initial;
     }
 }
