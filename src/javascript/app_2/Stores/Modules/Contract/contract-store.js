@@ -9,9 +9,6 @@ import { WS }                     from 'Services';
 import { createChartBarrier }     from './Helpers/chart-barriers';
 import { createChartMarkers }     from './Helpers/chart-markers';
 import {
-    createChartTickMarkers,
-    destroyChartTickMarkers }    from './Helpers/chart-tick-markers';
-import {
     getDetailsExpiry,
     getDetailsInfo }             from './Helpers/details';
 import {
@@ -66,18 +63,14 @@ export default class ContractStore extends BaseStore {
         }
 
         createChartBarrier(SmartChartStore, contract_info);
-
-        if (contract_info.tick_count && contract_info.exit_tick_time) { // TODO: remove this.contract_info.exit_tick_time when ongoing contracts are implemented
-            createChartTickMarkers(SmartChartStore, contract_info);
-        } else {
-            createChartMarkers(SmartChartStore, contract_info);
-        }
+        createChartMarkers(SmartChartStore, contract_info);
 
         this.handleDigits();
     }
 
     @action.bound
     onMount(contract_id, has_left_epoch) {
+        if (contract_id === +this.contract_id) return;
         this.onSwitchAccount(this.accountSwitcherListener.bind(null));
         this.has_error         = false;
         this.error_message     = '';
@@ -111,7 +104,6 @@ export default class ContractStore extends BaseStore {
         this.is_left_epoch_set = false;
         this.sell_info         = {};
 
-        destroyChartTickMarkers();
         this.smart_chart.cleanupContractChartView();
     }
 

@@ -31,7 +31,7 @@ export const getDisplayStatus = (contract_info) => {
 };
 
 export const getEndSpot = (contract_info) => (
-    isUserSold(contract_info) ? +contract_info.sell_spot : +contract_info.exit_tick
+    isUserSold(contract_info) ? contract_info.sell_spot : contract_info.exit_tick
 );
 
 export const getEndSpotTime = (contract_info) => (

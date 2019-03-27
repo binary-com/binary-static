@@ -6,6 +6,10 @@ import { localize }      from '_common/localize';
 import {
     epochToMoment,
     toGMTFormat }        from 'Utils/Date';
+import {
+    addCommaToNumber,
+    getBarrierLabel,
+    getBarrierValue  }   from './helpers';
 import ResultDetailsItem from './result-details-item.jsx';
 
 class ResultDetails extends React.PureComponent {
@@ -19,52 +23,61 @@ class ResultDetails extends React.PureComponent {
 
     render() {
         const {
-            barrier,
             contract_end_time,
-            contract_start_time,
+            contract_info,
             duration,
             duration_unit,
-            entry_spot,
+            exit_spot,
             has_result,
-            id_sell,
-            tick_count,
         } = this.props;
         if (!has_result) return null;
         return (
             <React.Fragment>
-                <div className='result-details__separator' />
                 <div className={classNames('result-details__wrapper', {
                     'result-details__wrapper--is-open': this.state.is_open,
                 })}
                 >
                     <div className='result-details__grid'>
                         <ResultDetailsItem
-                            label={localize('Reference ID')}
-                            value={id_sell}
+                            label={localize('Ref. ID (Buy)')}
+                            value={contract_info.transaction_ids.buy}
                         />
                         <ResultDetailsItem
-                            label={localize('Duration')}
-                            value={tick_count ? `${tick_count} ${localize('ticks')}` : `${duration} ${duration_unit}`}
+                            label={localize('Ref. ID (Sell)')}
+                            value={contract_info.transaction_ids.sell}
                         />
                     </div>
                     <div className='result-details__grid'>
                         <ResultDetailsItem
-                            label={localize('Barrier')}
-                            value={barrier ? barrier.toString() : ' - '}
+                            label={localize('Duration')}
+                            value={(contract_info.tick_count > 0) ?
+                                `${contract_info.tick_count} ${(contract_info.tick_count < 2) ? localize('tick') : localize('ticks')}`
+                                :
+                                `${duration} ${duration_unit}`}
                         />
                         <ResultDetailsItem
+                            label={getBarrierLabel(contract_info)}
+                            value={getBarrierValue(contract_info) || ' - '}
+                        />
+                    </div>
+                    <div className='result-details__grid'>
+                        <ResultDetailsItem
                             label={localize('Entry spot')}
-                            value={entry_spot || ' - '}
+                            value={addCommaToNumber(contract_info.entry_spot) || ' - '}
+                        />
+                        <ResultDetailsItem
+                            label={localize('Exit spot')}
+                            value={addCommaToNumber(exit_spot) || ' - '}
                         />
                     </div>
                     <div className='result-details__grid'>
                         <ResultDetailsItem
                             label={localize('Start time')}
-                            value={toGMTFormat(epochToMoment(contract_start_time))}
+                            value={toGMTFormat(epochToMoment(contract_info.purchase_time)) || ' - '}
                         />
                         <ResultDetailsItem
                             label={localize('End time')}
-                            value={toGMTFormat(epochToMoment(contract_end_time))}
+                            value={toGMTFormat(epochToMoment(contract_end_time)) || ' - '}
                         />
                     </div>
                 </div>
@@ -82,30 +95,15 @@ class ResultDetails extends React.PureComponent {
 }
 
 ResultDetails.propTypes = {
-    barrier: PropTypes.PropTypes.oneOfType([
-        PropTypes.number,
-        PropTypes.string,
-    ]),
     contract_end_time: PropTypes.PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
     ]),
-    contract_start_time: PropTypes.PropTypes.oneOfType([
-        PropTypes.number,
-        PropTypes.string,
-    ]),
+    contract_info: PropTypes.object,
     duration     : PropTypes.number,
     duration_unit: PropTypes.string,
-    entry_spot   : PropTypes.PropTypes.oneOfType([
-        PropTypes.number,
-        PropTypes.string,
-    ]),
-    has_result: PropTypes.bool,
-    id_sell   : PropTypes.PropTypes.oneOfType([
-        PropTypes.number,
-        PropTypes.string,
-    ]),
-    tick_count: PropTypes.number,
+    exit_spot    : PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    has_result   : PropTypes.bool,
 };
 
 export default ResultDetails;
