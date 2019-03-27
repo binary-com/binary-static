@@ -86,13 +86,15 @@ export default class PortfolioStore extends BaseStore {
         const prev_indicative = portfolio_position.indicative;
         const new_indicative  = +proposal.bid_price;
         const profit_loss     = +proposal.profit;
+        const current_tick    = (portfolio_position.current_tick > getCurrentTick(proposal)) ?
+            portfolio_position.current_tick : getCurrentTick(proposal);
 
         // fix for missing barrier and entry_spot in proposal_open_contract API response, only re-assign if valid
         if (proposal.barrier) portfolio_position.barrier = +proposal.barrier;
         if (proposal.entry_spot) portfolio_position.entry_spot = +proposal.entry_spot;
 
         // store contract proposal details that require modifiers
-        portfolio_position.current_tick     = getCurrentTick(proposal);
+        portfolio_position.current_tick     = current_tick;
         portfolio_position.indicative       = new_indicative;
         portfolio_position.profit_loss      = profit_loss;
         portfolio_position.is_valid_to_sell = isValidToSell(proposal);
