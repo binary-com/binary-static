@@ -414,7 +414,7 @@ const Authenticate = (() => {
         }
         if (!file.expirationDate
             && required_docs.indexOf(file.documentType.toLowerCase()) !== -1
-            && !isIdentificationNoExpiry(Client.get('residence'))
+            && !(isIdentificationNoExpiry(Client.get('residence')) && file.documentType === 'proofid')
         ) {
             onErrorResolved('exp_date', file.passthrough.class);
             return localize('Expiry date is required for [_1].', doc_name[file.documentType]);
