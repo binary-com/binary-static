@@ -31,7 +31,7 @@
         &-step {
             height: 6px;
             width: 100%;
-            margin: 0 3px;
+            margin: 0 2px;
             position: relative;
             @include themify($themes) {
                 background: themed('tick_step_default');
