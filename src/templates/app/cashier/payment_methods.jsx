@@ -181,7 +181,7 @@ const PaymentMethods = () => {
                                 row     : [
                                     { text: <PaymentLogo logo='paytrust' /> },
                                     { attributes: { colSpan: 5, className: 'toggler' }, custom_td : <CustomTableData data={[
-                                        { td: it.L('Paytrust88 is a bank transfer payment that allows users across South East Asia to make fast, simple and secure online transfers. For more information, please visit: [_1].', '<a href="https://paytrust88.com/" target="_blank">https://paytrust88.com/</a>') },
+                                        { td: it.L('Paytrust88 is a payment facility that allows online bank transfers for clients across Southeast Asia. For more information, please visit [_1].', '<a href="https://paytrust88.com/" target="_blank">paytrust88.com</a>') },
                                         { td_list: [
                                             { text: 'USD' },
                                             { text: '25 - 10,000' },
@@ -248,7 +248,7 @@ const PaymentMethods = () => {
                                 row: [
                                     { text: <PaymentLogo logo='maestro' /> },
                                     { attributes: { colSpan: 5, className: 'toggler' }, custom_td : <CustomTableData data={[
-                                        { td: it.L('Maestro is a multi-national debit card service owned by Mastercard. For more information, please visit: [_1].', '<a href="http://stage.maestrocard.com/gateway/about/index.html" target="_blank">http://stage.maestrocard.com/gateway/about/index.html</a>') },
+                                        { td: it.L('Maestro is an international debit card service by Mastercard. For more information, please visit [_1].', '<a href="http://stage.maestrocard.com/" target="_blank">stage.maestrocard.com</a>') },
                                         { td_list: [
                                             { text: 'USD GBP EUR AUD' },
                                             { text: '10 - 10,000' },
@@ -437,7 +437,7 @@ const PaymentMethods = () => {
                                 row     : [
                                     { text: <PaymentLogo logo='jeton' /> },
                                     { attributes: { colSpan: 5, className: 'toggler' }, custom_td : <CustomTableData data={[
-                                        { td: it.L('Jeton is an international e-wallet for money transfers and online payments. For more information, please visit: [_1].', '<a href="https://www.jeton.com/" target="_blank">https://www.jeton.com/</a>') },
+                                        { td: it.L('Jeton is an international e-wallet for money transfers and online payments. For more information, please visit [_1].', '<a href="https://www.jeton.com/" target="_blank">www.jeton.com</a>') },
                                         { td_list: [
                                             { text: 'USD EUR' },
                                             { text: '10 - 10,000' },
@@ -457,7 +457,7 @@ const PaymentMethods = () => {
                                 row     : [
                                     { text: <PaymentLogo logo='iwallet' /> },
                                     { attributes: { colSpan: 5, className: 'toggler' }, custom_td : <CustomTableData data={[
-                                        { td: it.L('iWallet is an online payment service provider that offers a safe and secure payment method. For more information, please visit: [_1].', '<a href="https://www.iwl.hk/" target="_blank">https://www.iwl.hk/</a>') },
+                                        { td: it.L('iWallet is an online payment service provider that allows deposits, withdrawals, and transaction payments. For more information, please visit [_1].', '<a href="https://www.iwl.hk/" target="_blank">www.iwl.hk</a>') },
                                         { td_list: [
                                             { text: 'USD' },
                                             { text: '5 - 10,000' },
@@ -476,7 +476,7 @@ const PaymentMethods = () => {
                                 row: [
                                     { text: <PaymentLogo logo='vload' /> },
                                     { attributes: { colSpan: 5, className: 'toggler' }, custom_td : <CustomTableData data={[
-                                        { td: it.L('Deposit and withdraw using the world\'s safest instant payment method. For more information, please visit [_1].', '<a target="_blank" href="https://www.vload.expert/">https://www.vload.expert/</a>') },
+                                        { td: it.L('Vload is an eVoucher facility that’s available as a payment method to deposit and withdraw funds. For more information, please visit [_1].', '<a target="_blank" href="https://www.vload.expert/">www.vload.expert</a>') },
                                         { td_list: [
                                             { text: 'USD EUR' },
                                             { text: '10 - 5,000' },
