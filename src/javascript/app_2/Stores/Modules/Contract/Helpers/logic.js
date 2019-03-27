@@ -34,13 +34,9 @@ export const getEndSpot = (contract_info) => (
     isUserSold(contract_info) ? contract_info.sell_spot : contract_info.exit_tick
 );
 
-export const getEndSpotTime = (contract_info, is_return_string) => {
-    const end_spot_time = isUserSold(contract_info) ? contract_info.sell_spot_time : contract_info.exit_tick_time;
-    if (is_return_string) {
-        return end_spot_time;
-    }
-    return +end_spot_time;
-};
+export const getEndSpotTime = (contract_info) => (
+    isUserSold(contract_info) ? +contract_info.sell_spot_time : +contract_info.exit_tick_time
+);
 
 export const getFinalPrice = (contract_info) => (
     +(contract_info.sell_price || contract_info.bid_price)
