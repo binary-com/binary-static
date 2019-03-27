@@ -9,21 +9,19 @@ const ProgressTicks = ({ current_tick, ticks_count }) => {
     // if (!current_tick) return <div className='progress-slider__infinite-loader'><div className='progress-slider__infinite-loader--indeterminate' /></div>;
     return (
         // TODO: Update and show once design for ticks progress bar is finalized
-        <div>
+        <div className='progress-slider__ticks'>
             <span className='progress-slider__ticks-caption'>
                 {localize('Tick [_1]', current_tick.toString()) }
             </span>
-            <div className='progress-slider__track--ticks'>
-                <div className='progress-slider__ticks'>
-                    {arr_ticks.map(idx =>
-                        <div
-                            key={idx}
-                            className={classNames('ticks__step', {
-                                'ticks__step--marked': (idx + 1) <= parseInt(current_tick),
-                            })}
-                        />
-                    )}
-                </div>
+            <div className='progress-slider__ticks-wrapper'>
+                {arr_ticks.map(idx =>
+                    <div
+                        key={idx}
+                        className={classNames('progress-slider__ticks-step', {
+                            'progress-slider__ticks-step--marked': (idx + 1) <= parseInt(current_tick),
+                        })}
+                    />
+                )}
             </div>
         </div>
     );
