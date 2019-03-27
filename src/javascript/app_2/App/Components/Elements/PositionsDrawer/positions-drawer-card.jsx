@@ -4,6 +4,7 @@ import React                 from 'react';
 import { CSSTransition }     from 'react-transition-group';
 import ContractLink          from 'Modules/Contract/Containers/contract-link.jsx';
 import { localize }          from '_common/localize';
+import { IconPriceMove }     from 'Assets/Trading/icon-price-move.jsx';
 import ContractTypeCell      from './contract-type-cell.jsx';
 import ProgressSlider        from './ProgressSlider';
 import ResultDetails         from './result-details.jsx';
@@ -112,8 +113,15 @@ const PositionsDrawerCard = ({
                         >
                             <Money amount={Math.abs(profit_loss)} currency={currency} />
                         </div>
-                        <div className={`positions-drawer-card__indicative positions-drawer-card__indicative--${status}`}>
+                        <div className='positions-drawer-card__indicative'>
                             <Money amount={indicative} currency={currency} />
+                            <div className='trade-container__price-info-movement'>
+                                {(status !== null) &&
+                                    <IconPriceMove
+                                        type={(status === 'price-moved-up') ? 'profit' : 'loss'}
+                                    />
+                                }
+                            </div>
                         </div>
                     </div>
                     <div className='positions-drawer-card__purchase-price'>
