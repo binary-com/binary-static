@@ -347,10 +347,7 @@
     text-align: left;
     transition: box-shadow 0.5s;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.24);
-
-    &__currency span {
-        @include typeface(--xsmall-left-bold-active);
-    }
+ 
     &__info {
         width: 40%;
         padding-left: 10%;
