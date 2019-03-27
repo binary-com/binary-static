@@ -4,8 +4,6 @@
     z-index: 2;
     border-radius: 4px;
     transition: transform 0.3s, opacity 0.3s;
-    padding: 0.8em;
-    padding-bottom: 0.6em;
     @include themify($themes) {
         color: themed('text_primary_color');
         background: themed('container_color');
@@ -17,7 +15,8 @@
         display: flex;
         align-items: center;
         justify-content: flex-start;
-        flex-direction: column;
+        flex-direction: row;
+        padding: 1.6em;
 
         /* postcss-bem-linter: ignore */
         span[name=contract_type] {
@@ -26,6 +25,7 @@
                 color: themed('text_color');
             }
             vertical-align: middle;
+            padding-left: 0.4em;
         }
         &:hover, &:focus {
             border-color: $COLOR_DARK_BLUE_5;
@@ -48,7 +48,7 @@
         text-rendering: optimizeLegibility;
         position: absolute;
         pointer-events: none;
-        top: 40%;
+        top: 37%;
         left: 0.6em;
         line-height: 1;
         transition: transform 0.25s ease;
@@ -61,7 +61,7 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        margin-bottom: 0.6em;
+        padding-left: 1.6em;
 
         /* postcss-bem-linter: ignore */
         .category-wrapper {
