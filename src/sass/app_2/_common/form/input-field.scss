@@ -48,8 +48,10 @@
             left: 2px;
         }
         &:hover {
+            @include themify($themes) {
+                background: themed('tab_hover_color');
+            }
             cursor: pointer;
-            background: $COLOR_LIGHT_BLACK_4;
 
             & ~ .input-wrapper__input {
                 @extend .input:hover;
@@ -146,7 +148,7 @@
         box-shadow: 0 0 0 2px $COLOR_DARK_BLUE_8;
         @include themify($themes) {
             border-color: themed('border_hover_color');
-            color: themed('text_primary_color');
+            color: themed('text_color');
         }
 
     }
