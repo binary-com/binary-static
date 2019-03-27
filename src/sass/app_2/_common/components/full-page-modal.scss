@@ -34,7 +34,6 @@
         align-items: flex-start;
         box-shadow: 0 2px 8px 0 $COLOR_LIGHT_BLACK_3;
     }
-
     &__header {
         @include themify($themes) {
             color: themed('text_color');
@@ -43,7 +42,6 @@
         @include typeface(--title-left-bold-black, none);
         @include toEm(margin-bottom, 16px, 1.6em);
     }
-
     &__content {
         @include themify($themes) {
             color: themed('text_primary_color');
@@ -53,14 +51,12 @@
         @include toEm(margin-bottom, 32px, 1.4em);
         max-width: 448px;
     }
-
     &__footer {
         display: flex;
         justify-content: flex-end;
         align-items: center;
         width: 100%;
     }
-
     &__button {
         margin: 0;
     }
