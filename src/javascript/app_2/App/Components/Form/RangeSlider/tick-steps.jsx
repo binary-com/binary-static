@@ -2,7 +2,7 @@ import classNames   from 'classnames';
 import PropTypes    from 'prop-types';
 import React        from 'react';
 
-const TickSteps = ({ value, ticks, onClick }) => {
+const TickSteps = ({ min_value, value, ticks, onClick }) => {
     const arr_ticks = [...Array(ticks).keys()];
     return (
         <React.Fragment>
@@ -10,10 +10,10 @@ const TickSteps = ({ value, ticks, onClick }) => {
                 <span
                     key={idx}
                     className={classNames('range-slider__ticks-step', {
-                        'range-slider__ticks-step--active': (idx + 1) === parseInt(value),
-                        'range-slider__ticks-step--marked': (idx + 1) < parseInt(value),
+                        'range-slider__ticks-step--active': (idx + min_value) === parseInt(value),
+                        'range-slider__ticks-step--marked': (idx + min_value) < parseInt(value),
                     })}
-                    onClick={(e) => onClick(e, idx + 1)}
+                    onClick={(e) => onClick(e, idx + min_value)}
                 />
             )}
         </React.Fragment>
@@ -21,8 +21,9 @@ const TickSteps = ({ value, ticks, onClick }) => {
 };
 
 TickSteps.propTypes = {
-    onClick: PropTypes.func,
-    ticks  : PropTypes.oneOfType([
+    min_value: PropTypes.number,
+    onClick  : PropTypes.func,
+    ticks    : PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
     ]),

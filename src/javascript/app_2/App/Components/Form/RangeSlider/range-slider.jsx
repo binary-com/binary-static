@@ -27,7 +27,16 @@ const RangeSlider = ({
         }
     };
 
-    const first_tick = ticks - (ticks - 1);
+    if (+value < min_value || +value > max_value) {
+        onChange({
+            target: {
+                name,
+                value: min_value,
+            },
+        });
+    }
+
+    const steps = ticks - min_value;
 
     return (
         <div className={classNames('range-slider', className, { 'range-slider__error': ((value < min_value) || (value > max_value)) })}>
@@ -36,12 +45,12 @@ const RangeSlider = ({
                     id='range'
                     className='input trade-container__input range-slider__track'
                     type='range'
-                    min={first_tick}
+                    min={min_value}
                     max={ticks}
                     min_value={min_value}
                     max_value={max_value}
                     name={name}
-                    steps='1'
+                    steps={steps}
                     onChange={handleChange}
                     tabIndex='0'
                     value={value}
@@ -49,19 +58,20 @@ const RangeSlider = ({
                 <div className='range-slider__ticks'>
                     <TickSteps
                         value={value}
-                        ticks={ticks}
+                        ticks={steps + 1}
+                        min_value={min_value}
                         onClick={handleClick}
                     />
                 </div>
                 {/* Calculate line width based on active value and size of range thumb */}
                 <div
                     className='range-slider__line'
-                    style={{ width: `calc(${value * 10}% - ${value < 4 ? '1.6rem' : '1rem'})` }}
+                    style={{ width: `calc(${(value - min_value) * (100 / steps)}% ` }}
                 />
             </label>
             <div className='range-slider__caption'>
                 <span className='range-slider__caption--first'>
-                    {first_tick}
+                    {min_value}
                 </span>
                 {
                     !!value &&
