@@ -347,7 +347,7 @@
     text-align: left;
     transition: box-shadow 0.5s;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.24);
- 
+
     &__info {
         width: 40%;
         padding-left: 10%;
@@ -373,24 +373,18 @@
         align-items: flex-start;
         line-height: unset;
     }
-    &__content {
-        width: 60%;
-        float: left;
-        text-align: left;
-        display: flex;
-        flex-direction: column;
-        padding-left: 10px;
-        height: 56px;
-
+    &__trade-type {
         background-color: $COLOR_GREEN_1;
         color: $COLOR_WHITE;
-    }
-    &__trade-type {
+        float: left;
+        text-align: left;
         position: relative;
         display: flex;
         flex-grow: 1;
         align-items: center;
-        width: 100%;
+        padding-left: 10px;
+        height: 56px;
+        width: 60%;
 
         .btn-purchase__text {
             margin-left: 24px;
