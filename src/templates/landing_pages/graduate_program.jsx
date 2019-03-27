@@ -7,7 +7,7 @@ const GraduateProgram = () => {
         { icon: 'two',    title: 'Phone interview',                                           description: 'If your resume makes the cut, we’ll arrange a phone interview to get a better idea of who you are and what you’re interested in.' },
         { icon: 'three',  title: 'Technical test',                                            description: 'If you pass our phone interview, we’ll invite you to a technical test either on-site or online. You’ll be asked technical questions which may require you to write code.' },
         { icon: 'four',   title: 'Self-Assessment Topgrading Interview (SATI) questionnaire', description: 'Once you pass our technical test, we’ll send you a SATI questionnaire to understand you better.' },
-        { icon: 'five',   title: `Job offer`,                                                 description: 'If you ace your interviews and make a real impression on us, we’ll contact you with an official offer to join our graduate programme.' },
+        { icon: 'five',   title: 'Job offer',                                                 description: 'If you ace your interviews and make a real impression on us, we’ll contact you with an official offer to join our graduate programme.' },
     ];
 
     return (
