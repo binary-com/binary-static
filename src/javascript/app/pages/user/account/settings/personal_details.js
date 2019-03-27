@@ -269,7 +269,7 @@ const PersonalDetails = (() => {
                 { selector: '#address_line_2',         validations: ['address'] },
                 { selector: '#address_city',           validations: ['req', 'letter_symbol'] },
                 { selector: '#address_state',          validations: $('#address_state').prop('nodeName') === 'SELECT' ? '' : ['letter_symbol'] },
-                { selector: '#address_postcode',       validations: [Client.get('residence') === 'gb' ? 'req' : '', 'postcode', ['length', { min: 0, max: 20 }]] },
+                { selector: '#address_postcode',       validations: [Client.get('residence') === 'gb' || Client.get('landing_company_shortcode') === 'iom' ? 'req' : '', 'postcode', ['length', { min: 0, max: 20 }]] },
                 { selector: '#email_consent' },
                 { selector: '#phone',                  validations: ['req', 'phone', ['length', { min: 8, max: 35, value: () => $('#phone').val().replace(/\D/g,'') }]] },
                 { selector: '#place_of_birth',         validations: ['req'] },
