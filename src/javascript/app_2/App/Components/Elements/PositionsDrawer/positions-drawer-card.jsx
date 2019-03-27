@@ -115,7 +115,7 @@ const PositionsDrawerCard = ({
                         </div>
                         <div className='positions-drawer-card__indicative'>
                             <Money amount={indicative} currency={currency} />
-                            <div className='trade-container__price-info-movement'>
+                            <div className='positions-drawer-card__indicative--movement'>
                                 {(status !== null) &&
                                     <IconPriceMove
                                         type={(status === 'price-moved-up') ? 'profit' : 'loss'}
