@@ -49,9 +49,6 @@ export default class SmartChartStore extends BaseStore {
     @action.bound
     updateGranularity(granularity) {
         this.granularity = granularity;
-        if (granularity === 0 && !tick_chart_types.includes(this.chart_type)) {
-            this.chart_type = 'mountain';
-        }
     }
 
     @action.bound
