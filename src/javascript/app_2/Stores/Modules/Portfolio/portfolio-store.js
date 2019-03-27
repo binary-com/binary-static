@@ -106,9 +106,9 @@ export default class PortfolioStore extends BaseStore {
         }
 
         if (new_indicative > prev_indicative) {
-            portfolio_position.status = 'price-moved-up';
+            portfolio_position.status = 'profit';
         } else if (new_indicative < prev_indicative) {
-            portfolio_position.status = 'price-moved-down';
+            portfolio_position.status = 'loss';
         } else {
             portfolio_position.status = null;
         }
@@ -162,7 +162,7 @@ export default class PortfolioStore extends BaseStore {
         this.positions[i].is_valid_to_sell = isValidToSell(contract_response);
         this.positions[i].result           = getDisplayStatus(contract_response);
         this.positions[i].sell_time        = getEndSpotTime(contract_response) || contract_response.current_spot_time; // same as exit_spot, use latest spot time if no exit_tick_time
-        this.positions[i].status           = null;
+        this.positions[i].status           = 'complete';
 
         // fix for missing barrier and entry_spot
         if (!this.positions[i].contract_info.barrier || !this.positions[i].contract_info.entry_spot) {

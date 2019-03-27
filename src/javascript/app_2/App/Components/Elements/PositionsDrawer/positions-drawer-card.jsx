@@ -115,12 +115,15 @@ const PositionsDrawerCard = ({
                         </div>
                         <div className='positions-drawer-card__indicative'>
                             <Money amount={indicative} currency={currency} />
-                            <div className='positions-drawer-card__indicative--movement'>
-                                {(status !== null) &&
-                                    <IconPriceMove
-                                        type={(status === 'price-moved-up') ? 'profit' : 'loss'}
-                                    />
-                                }
+                            <div className={classNames(
+                                'positions-drawer-card__indicative--movement', {
+                                    'positions-drawer-card__indicative--movement-complete': (status === 'complete'),
+                                },
+                            )}
+                            >
+                                <IconPriceMove
+                                    type={(status !== 'complete') ? status : null}
+                                />
                             </div>
                         </div>
                     </div>
