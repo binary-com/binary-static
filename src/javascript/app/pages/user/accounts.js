@@ -1,15 +1,16 @@
-const moment             = require('moment');
-const setIsForNewAccount = require('./account/settings/personal_details').setIsForNewAccount;
-const getCurrencies      = require('./get_currency').getCurrencies;
-const BinaryPjax         = require('../../base/binary_pjax');
-const Client             = require('../../base/client');
-const BinarySocket       = require('../../base/socket');
-const Currency           = require('../../common/currency');
-const FormManager        = require('../../common/form_manager');
-const getElementById     = require('../../../_common/common_functions').getElementById;
-const localize           = require('../../../_common/localize').localize;
-const State              = require('../../../_common/storage').State;
-const urlFor             = require('../../../_common/url').urlFor;
+const moment               = require('moment');
+const setIsForNewAccount   = require('./account/settings/personal_details').setIsForNewAccount;
+const getCurrencies        = require('./get_currency').getCurrencies;
+const BinaryPjax           = require('../../base/binary_pjax');
+const Client               = require('../../base/client');
+const BinarySocket         = require('../../base/socket');
+const Currency             = require('../../common/currency');
+const FormManager          = require('../../common/form_manager');
+const isCryptocurrency     = require('../../../_common/base/currency_base').isCryptocurrency;
+const getElementById       = require('../../../_common/common_functions').getElementById;
+const localize             = require('../../../_common/localize').localize;
+const State                = require('../../../_common/storage').State;
+const urlFor               = require('../../../_common/url').urlFor;
 
 const Accounts = (() => {
     let landing_company;
@@ -41,7 +42,8 @@ const Accounts = (() => {
             // ask client to set residence first since cannot wait landing_company otherwise
             BinaryPjax.load(urlFor('user/settings/detailsws'));
         }
-        BinarySocket.wait('landing_company', 'get_settings').then(() => {
+        BinarySocket.send({ statement: 1, limit: 1 });
+        BinarySocket.wait('landing_company', 'get_settings', 'statement', 'mt5_login_list').then(() => {
             landing_company = State.getResponse('landing_company');
 
             populateExistingAccounts();
@@ -50,6 +52,11 @@ const Accounts = (() => {
             const upgrade_info  = Client.getUpgradeInfo();
             if (upgrade_info.can_upgrade) {
                 populateNewAccounts(upgrade_info);
+                element_to_show = '#new_accounts_wrapper';
+            }
+
+            if (canChangeCurrency()) {
+                addChangeCurrencyOption();
                 element_to_show = '#new_accounts_wrapper';
             }
 
@@ -70,6 +77,20 @@ const Accounts = (() => {
     const getCompanyName = account => Client.getLandingCompanyValue(account, landing_company, 'name');
 
     const getCompanyCountry = account => Client.getLandingCompanyValue(account, landing_company, 'country');
+
+    const canChangeCurrency = () => {
+        const statement  = State.getResponse('statement');
+        const has_no_mt5 = State.getResponse('mt5_login_list').length === 0;
+        const has_no_tx  = (statement.count === 0 && statement.transactions.length === 0);
+        const currency    = Client.get('currency');
+
+        // Current BE requirements for user successfully changing their account's currency:
+        // 1. User must not have made any transactions
+        // 2. User must not have any MT5 account
+        // 3. Not be a crypto account
+        // 4. Not be a virtual account
+        return !Client.get('is_virtual') && has_no_tx && has_no_mt5 && !isCryptocurrency(currency);
+    };
 
     const populateNewAccounts = (upgrade_info) => {
         const table_headers = TableHeaders.get();
@@ -93,6 +114,49 @@ const Accounts = (() => {
                 .append($('<td/>')
                     .html($('<a/>', { class: 'button', href: urlFor(new_account.upgrade_link) })
                         .html($('<span/>', { text: localize('Create') })))));
+    };
+
+    const addChangeCurrencyOption = () => {
+        const table_headers        = TableHeaders.get();
+        const loginid              = Client.get('loginid');
+        const available_currencies = Client.getLandingCompanyValue(loginid, landing_company, 'legal_allowed_currencies');
+        const multi_currencies     = available_currencies.length > 1;
+
+        // Set the table row
+        $(form_id).find('tbody')
+            .append($('<tr/>', { id: 'change_account_currency' })
+                .append($('<td/>', { datath: table_headers.account }).html($('<span/>', {
+                    text: loginid,
+                })))
+                .append($('<td/>', { text: getAvailableMarkets(loginid), datath: table_headers.available_markets }))
+                .append($('<td/>', { class: 'account-currency', datath: table_headers.available_currencies }))
+                .append($('<td/>')
+                    .html($('<button/>', { class: 'button', type: 'button', text: localize('Change') }).click(sendCurrencyChangeReq))));
+
+        // Make available currencies into dropdown if multi, or label if single
+        const $change_account_currency = $('#change_account_currency');
+        if (multi_currencies) {
+            const $currencies = $('<div/>');
+            $currencies.append(Currency.getCurrencyList(available_currencies).html());
+            $change_account_currency.find('.account-currency').html($('<select/>', { id: 'change_account_currencies' }).html($currencies.html()));
+        } else {
+            $change_account_currency.find('.account-currency').html($('<label/>', { id: 'change_account_currencies', 'data-value': available_currencies, text: Currency.getCurrencyFullName(available_currencies) }));
+        }
+
+        // Replace note to reflect ability to change currency
+        $('#note > .hint').text(`${localize('Note: You are limited to one fiat currency account. The currency of your fiat account can be changed before you deposit into your fiat account for the first time or create an MT5 account. You may also open one account for each supported cryptocurrency.')}`);
+    };
+
+    const sendCurrencyChangeReq = () => {
+        BinarySocket.send({
+            set_account_currency: getElementById('change_account_currencies').value,
+        }).then(res => {
+            if (res.error) {
+                showError(res.error.message, true);
+            } else if (res.set_account_currency === 1) {
+                window.location.reload();
+            }
+        });
     };
 
     const populateExistingAccounts = () => {
@@ -244,9 +308,12 @@ const Accounts = (() => {
         }
     };
 
-    const showError = (localized_text) => {
-        $('#new_account_error').remove();
-        $('#new_account_opening').find('button').parent().append($('<p/>', { class: 'error-msg', id: 'new_account_error', text: localized_text }));
+    const showError = (localized_text, is_currency_change = false) => {
+        const error_message_id = is_currency_change ? '#change_currency_error' : '#new_account_error';
+        const error_message_parent_id = is_currency_change ? '#change_account_currency' : '#new_account_opening';
+
+        $(error_message_id).remove();
+        $(error_message_parent_id).find('button').parent().append($('<p/>', { class: 'error-msg', id: error_message_id, text: localized_text }));
     };
 
     const populateReq = () => {
