@@ -59,10 +59,7 @@ const ResultOverlay = ({
 );
 
 ResultOverlay.propTypes = {
-    contract_id: PropTypes.oneOfType([
-        PropTypes.number,
-        PropTypes.string,
-    ]),
+    contract_id  : PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     onClick      : PropTypes.func,
     onClickRemove: PropTypes.func,
     result       : PropTypes.string,
