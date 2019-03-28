@@ -9,12 +9,14 @@
         margin: 0 0 16px;
     }
     &__icon {
-        min-width: 160px;
-        max-width: 160px;
-        @include toEm(height, 80px);
+        width: 160px;
+        height: 120px;
         @include toEm(margin-right, 16px);
-        background-color: $COLOR_LIGHT_BLACK_3;
         border-radius: $BORDER_RADIUS;
+
+        &:empty {
+            background-color: $COLOR_LIGHT_BLACK_3;
+        }
     }
     &__description {
         display: flex;
