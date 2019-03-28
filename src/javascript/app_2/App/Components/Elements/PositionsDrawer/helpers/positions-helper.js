@@ -16,7 +16,7 @@ export const getTimePercentage = (current_time, purchase_time, expiry_time) => {
     let percentage = (duration_from_now.asMilliseconds() / duration_from_purchase.asMilliseconds()) * 100;
 
     if (percentage < 0.5) {
-        percentage = 1;
+        percentage = 0;
     } else if (percentage > 100) {
         percentage = 100;
     }

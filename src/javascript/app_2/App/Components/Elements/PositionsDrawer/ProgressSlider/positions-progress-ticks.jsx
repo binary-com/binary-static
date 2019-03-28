@@ -3,12 +3,12 @@ import PropTypes    from 'prop-types';
 import React        from 'react';
 import { localize } from '_common/localize';
 
-const ProgressTicks = ({ current_tick, ticks_count }) => {
+const ProgressTicks = ({
+    current_tick,
+    ticks_count,
+}) => {
     const arr_ticks   = [...Array(ticks_count).keys()];
-    // TODO: temporary infinite/indeterminate loader
-    // if (!current_tick) return <div className='progress-slider__infinite-loader'><div className='progress-slider__infinite-loader--indeterminate' /></div>;
     return (
-        // TODO: Update and show once design for ticks progress bar is finalized
         <div className='progress-slider__ticks'>
             <span className='progress-slider__ticks-caption'>
                 {localize('Tick [_1]', current_tick.toString()) }
@@ -28,8 +28,8 @@ const ProgressTicks = ({ current_tick, ticks_count }) => {
 };
 
 ProgressTicks.propTypes = {
-    // current_tick: PropTypes.number,
-    ticks_count: PropTypes.number,
+    current_tick: PropTypes.number,
+    ticks_count : PropTypes.number,
 };
 
 export default ProgressTicks;

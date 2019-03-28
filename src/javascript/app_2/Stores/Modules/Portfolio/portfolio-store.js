@@ -70,6 +70,8 @@ export default class PortfolioStore extends BaseStore {
             // subscribe to new contract:
             WS.subscribeProposalOpenContract(contract_id, this.proposalOpenContractHandler, false);
         } else if (act === 'sell') {
+            const i = this.getPositionIndexById(contract_id);
+            this.positions[i].is_loading = true;
             WS.subscribeProposalOpenContract(contract_id, this.populateResultDetails, false);
         }
     }
@@ -102,7 +104,7 @@ export default class PortfolioStore extends BaseStore {
         if (proposal.tick_count) {
             const current_tick    = (portfolio_position.current_tick > getCurrentTick(proposal)) ?
                 portfolio_position.current_tick : getCurrentTick(proposal);
-            portfolio_position.current_tick     = current_tick;
+            portfolio_position.current_tick = current_tick;
         }
 
         if (new_indicative > prev_indicative) {
@@ -169,6 +171,8 @@ export default class PortfolioStore extends BaseStore {
             this.positions[i].contract_info.barrier    = this.positions[i].barrier;
             this.positions[i].contract_info.entry_spot = this.positions[i].entry_spot;
         }
+
+        this.positions[i].is_loading = false;
     }
 
     @action.bound

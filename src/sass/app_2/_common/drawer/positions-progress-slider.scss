@@ -114,7 +114,9 @@
         overflow: hidden;
 
         &--indeterminate {
-            background-color: $COLOR_GREEN_1;
+            @include themify($themes) {
+                background-color: themed('tick_step_marked');
+            }
 
             &:before, &:after {
                 content: '';

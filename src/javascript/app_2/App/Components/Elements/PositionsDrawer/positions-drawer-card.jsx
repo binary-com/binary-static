@@ -24,6 +24,7 @@ const PositionsDrawerCard = ({
     exit_spot,
     indicative,
     id,
+    is_loading,
     is_sell_requested,
     is_valid_to_sell,
     profit_loss,
@@ -80,6 +81,7 @@ const PositionsDrawerCard = ({
                         </div>
                     </div>
                     <ProgressSlider
+                        is_loading={is_loading}
                         remaining_time={contract_info.date_expiry}
                         percentage={percentage}
                         current_tick={current_tick}
@@ -185,6 +187,7 @@ PositionsDrawerCard.propTypes = {
     exit_spot        : PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     id               : PropTypes.number,
     indicative       : PropTypes.number,
+    is_loading       : PropTypes.bool,
     is_sell_requested: PropTypes.bool,
     is_valid_to_sell : PropTypes.oneOfType([PropTypes.number, PropTypes.bool]),
     onClickRemove    : PropTypes.func,
