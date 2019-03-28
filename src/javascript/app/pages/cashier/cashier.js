@@ -9,6 +9,7 @@ const localize         = require('../../../_common/localize').localize;
 const State            = require('../../../_common/storage').State;
 const paramsHash       = require('../../../_common/url').paramsHash;
 const urlFor           = require('../../../_common/url').urlFor;
+const urlForStatic     = require('../../../_common/url').urlForStatic;
 const getPropertyValue = require('../../../_common/utility').getPropertyValue;
 
 const Cashier = (() => {
@@ -99,7 +100,7 @@ const Cashier = (() => {
 
         elementInnerHtml(el_current_currency, currency_message);
         elementInnerHtml(el_current_hint, currency_hint);
-        el_currency_image.src = `/images/pages/cashier/icons/icon-${currency}.svg`;
+        el_currency_image.src = urlForStatic(`/images/pages/cashier/icons/icon-${currency}.svg`);
 
         if (has_no_mt5 && has_no_tx) {
             enablePopupOnDeposit();
