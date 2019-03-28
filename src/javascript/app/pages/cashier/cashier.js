@@ -75,6 +75,13 @@ const Cashier = (() => {
         const el_current_currency = getElementById('account_currency_current');
         const el_current_hint     = getElementById('account_currency_hint');
 
+        const missingCriteria     = (has_mt5, has_tx) => {
+            const existing_mt5_msg = localize('You can no longer change the currency because you’ve created an MT5 account. [_1]Manage your accounts[_2].', [`<a href=${urlFor('user/accounts')}>`, '</a>']);
+            const existing_tx_msg  = localize('You can no longer change the currency because you’ve made a first-time deposit. [_1]Manage your accounts[_2].', [`<a href=${urlFor('user/accounts')}>`, '</a>']);
+
+            return !has_mt5 && has_tx ? existing_tx_msg : (has_mt5 && !has_tx ? existing_mt5_msg : existing_tx_msg);
+        };
+
         // Set messages based on if currency is crypto or fiat
         // If fiat, set message based on if they're allowed to change currency or not
         // Condition is to have no MT5 accounts *and* have no transactions
@@ -87,8 +94,8 @@ const Cashier = (() => {
         const currency_hint       = isCryptocurrency(currency)
             ? localize('Don\'t want to trade in [_1]? You can open another cryptocurrency account. [_2]Manage your accounts[_3].', [`${currency}`, `<a href=${urlFor('user/accounts')}>`, '</a>'])
             : has_no_mt5 && has_no_tx
-                ? localize('You can set a new currency before you deposit for the first time. [_1]Manage your accounts[_2].', [`<a href=${urlFor('user/accounts')}>`, '</a>'])
-                : localize('You can no longer change the currency because you’ve made a first-time deposit. [_1]Manage your accounts[_2].', [`<a href=${urlFor('user/accounts')}>`, '</a>']);
+                ? localize('You can set a new currency before you deposit for the first time or create an MT5 account. [_1]Manage your accounts[_2].', [`<a href=${urlFor('user/accounts')}>`, '</a>'])
+                : missingCriteria(!has_no_mt5, !has_no_tx);
 
         elementInnerHtml(el_current_currency, currency_message);
         elementInnerHtml(el_current_hint, currency_hint);

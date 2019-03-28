@@ -124,7 +124,7 @@ const SetCurrency = (() => {
                     localized_footnote = `${localize('Note:')} ${localize('You may open one account for each supported cryptocurrency.')}`;
                 } else {
                     localized_message = localize('Are you sure you want to create a fiat account in [_1]?', `${currency}`);
-                    localized_footnote = `${localize('Note:')} ${localize('You are limited to one fiat account. You can change the currency of your fiat account anytime before you’ve made a first-time deposit.')}`;
+                    localized_footnote = `${localize('Note:')} ${localize('You are limited to one fiat account. You can change the currency of your fiat account anytime before you make a first-time deposit or create an MT5 account.')}`;
                 }
 
                 Dialog.confirm({

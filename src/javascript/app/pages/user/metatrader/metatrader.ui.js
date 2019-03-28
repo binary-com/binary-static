@@ -1,5 +1,6 @@
 const MetaTraderConfig = require('./metatrader.config');
 const Client           = require('../../../base/client');
+const Dialog           = require('../../../common/attach_dom/dialog');
 const Currency         = require('../../../common/currency');
 const Validation       = require('../../../common/form_validation');
 const getTransferFee   = require('../../../../_common/base/currency_base').getTransferFee;
@@ -638,6 +639,22 @@ const MetaTraderUI = (() => {
         }
     };
 
+    const showNewAccountConfirmationPopup = (e, onConfirm, onAbort) => {
+        Dialog.confirm({
+            id                : 'create_mt5_popup_container',
+            ok_text           : localize('Yes, I\'m sure'),
+            cancel_text       : localize('Cancel'),
+            localized_title   : localize('Are you sure?'),
+            localized_message : localize('You will not be able to change your fiat account\'s currency after creating this MT5 account. Are you sure you want to proceed?'),
+            localized_footnote: `${localize('Note:')} ${localize('You may open one account for each supported cryptocurrency.')}`,
+            onConfirm         : () => {
+                onConfirm();
+                submit(e);
+            },
+            onAbort,
+        });
+    };
+
     return {
         init,
         setAccountType,
@@ -653,6 +670,7 @@ const MetaTraderUI = (() => {
         enableButton,
         showHideMAM,
         setTopupLoading,
+        showNewAccountConfirmationPopup,
 
         $form   : () => $form,
         getToken: () => token,

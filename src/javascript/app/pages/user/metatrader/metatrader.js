@@ -9,9 +9,10 @@ const getPropertyValue = require('../../../../_common/utility').getPropertyValue
 
 const MetaTrader = (() => {
     let mt_companies;
-    const accounts_info = MetaTraderConfig.accounts_info;
-    const actions_info  = MetaTraderConfig.actions_info;
-    const fields        = MetaTraderConfig.fields;
+    let show_new_account_popup = true;
+    const accounts_info        = MetaTraderConfig.accounts_info;
+    const actions_info         = MetaTraderConfig.actions_info;
+    const fields               = MetaTraderConfig.fields;
 
     const mt_company = {};
 
@@ -84,6 +85,7 @@ const MetaTrader = (() => {
     const getAllAccountsInfo = () => {
         MetaTraderUI.init(submit, sendTopupDemo);
         BinarySocket.send({ mt5_login_list: 1 }).then((response) => {
+            show_new_account_popup = (response.mt5_login_list || []).length === 0;
             allAccountsResponseHandler(response);
         });
     };
@@ -135,6 +137,17 @@ const MetaTrader = (() => {
 
     const submit = (e) => {
         e.preventDefault();
+
+        if (show_new_account_popup) {
+            MetaTraderUI.showNewAccountConfirmationPopup(
+                e,
+                () => show_new_account_popup = false,
+                () => show_new_account_popup = true
+            );
+
+            return;
+        }
+
         const $btn_submit = $(e.target);
         const acc_type    = $btn_submit.attr('acc_type');
         const action      = $btn_submit.attr('action');
