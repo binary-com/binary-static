@@ -1,7 +1,7 @@
 import React from 'react';
 
 /*
-*   Remove the extra classes when splitting the project.
+*   TODO: Remove the extra classes when splitting the project.
 *   Binary 1.0 and Binary Nex is using different classNames
 *   to accomplish the same loader effect.
 *
