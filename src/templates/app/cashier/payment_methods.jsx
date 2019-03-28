@@ -186,7 +186,7 @@ const PaymentMethods = () => {
                                             { text: 'USD' },
                                             { text: '25 - 10,000' },
                                             { text: 'N/A' },
-                                            { text: <TableValues value={[it.L(`${deposit}${instant}`), it.L(`${withdrawal}${working_day}`, 1)]} /> },
+                                            { text: <TableValues value={[it.L(`${deposit}${instant}`), it.L(`${withdrawal}${not_applicable}`)]} /> },
                                             { text: <ReferenceLinks /> },
                                         ],
                                         },
