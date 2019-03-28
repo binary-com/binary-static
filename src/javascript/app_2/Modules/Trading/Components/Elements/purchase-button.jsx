@@ -20,9 +20,8 @@ const PurchaseButton = ({
         is_disabled={ is_contract_mode || is_disabled }
         id={`purchase_${type}`}
         className={classNames(
-            'btn--primary',
             'btn-purchase',
-            { 'btn-purchase--disabled': is_contract_mode || is_disabled },
+            { 'btn-purchase--disabled': (is_contract_mode || is_disabled) && !is_loading },
             { 'btn-purchase--disabled-bar': !is_contract_mode && is_disabled },
             { 'btn-purchase--animated': is_loading })}
         has_effect
