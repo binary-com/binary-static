@@ -84,7 +84,7 @@ const GraduateProgram = () => {
                     </div>
                     <div className='separator gr-padding-30 gr-12-m' />
                     <div className='gr-6 gr-12-m'>
-                        <h4 className='center-text'><span className='text-bold'>{('Education and experience requirement')}</span></h4>
+                        <h4 className='center-text'><span className='text-bold'>{('Education and experience requirements')}</span></h4>
                         <div className='inline-flex'>
                             <img className='icon-md margin-30' src={it.url_for('images/graduate_program/education_icon.svg')} />
                             <p>{('A bachelor’s degree, master’s degree, or PhD in computer science, IT, mathematics, physics, or engineering')}</p>
@@ -171,7 +171,7 @@ const GraduateProgram = () => {
                                     <div className='box fill-bg-color'>
                                         <p>{('Manage and optimise pricing and risk management software for exotic options, Forex, and CFDs.')}</p>
                                         <p>{('Develop risk management models and algorithms.')}</p>
-                                        <p>{('Develop software to study market micro-structure and manage financial data feeds.')}</p>
+                                        <p>{('Develop software to study market microstructure and manage financial data feeds.')}</p>
                                         <p>{('Software development stack: Perl, R, Python, MATLAB')}</p>
                                     </div>
                                 </div>
