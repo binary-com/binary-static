@@ -1,22 +1,22 @@
-import PropTypes                from 'prop-types';
-import React                    from 'react';
-import { localize }             from '_common/localize';
+import PropTypes                     from 'prop-types';
+import React                         from 'react';
+import { localize }                  from '_common/localize';
 import MediaItem, {
     MediaDescription,
     MediaHeading,
     MediaIcon,
-}                                from 'App/Components/Elements/Media';
-import Localize                  from 'App/Components/Elements/localize.jsx';
-import Checkbox                  from 'App/Components/Form/Checkbox';
-import ConfirmationDisabledLight from 'Images/app_2/settings/confirmation-disabled.svg';
-import ConfirmationEnabledLight  from 'Images/app_2/settings/confirmation-enabled.svg';
-import ConfirmationDisabledDark  from 'Images/app_2/settings/dark/confirmation-disabled.svg';
-import ConfirmationEnabledDark   from 'Images/app_2/settings/dark/confirmation-enabled.svg';
-import LockDisabledDark          from 'Images/app_2/settings/dark/lock-disabled.svg';
-import LockEnabledDark           from 'Images/app_2/settings/dark/lock-enabled.svg';
-import LockDisabledLight         from 'Images/app_2/settings/lock-disabled.svg';
-import LockEnabledLight          from 'Images/app_2/settings/lock-enabled.svg';
-import { connect }               from 'Stores/connect';
+}                                    from 'App/Components/Elements/Media';
+import Localize                      from 'App/Components/Elements/localize.jsx';
+import Checkbox                      from 'App/Components/Form/Checkbox';
+import ConfirmationDisabledLightIcon from 'Images/app_2/settings/confirmation-disabled.svg';
+import ConfirmationEnabledLightIcon  from 'Images/app_2/settings/confirmation-enabled.svg';
+import ConfirmationDisabledDarkIcon  from 'Images/app_2/settings/dark/confirmation-disabled.svg';
+import ConfirmationEnabledDarkIcon   from 'Images/app_2/settings/dark/confirmation-enabled.svg';
+import LockDisabledDarkIcon          from 'Images/app_2/settings/dark/lock-disabled.svg';
+import LockEnabledDarkIcon           from 'Images/app_2/settings/dark/lock-enabled.svg';
+import LockDisabledLightIcon         from 'Images/app_2/settings/lock-disabled.svg';
+import LockEnabledLightIcon          from 'Images/app_2/settings/lock-enabled.svg';
+import { connect }                   from 'Stores/connect';
 
 const PurchaseSettings = ({
     is_dark_mode,
@@ -32,8 +32,8 @@ const PurchaseSettings = ({
             </MediaHeading>
             <MediaDescription>
                 <MediaIcon
-                    disabled={is_dark_mode ? ConfirmationDisabledDark : ConfirmationDisabledLight }
-                    enabled={is_dark_mode ? ConfirmationEnabledDark : ConfirmationEnabledLight }
+                    disabled={is_dark_mode ? ConfirmationDisabledDarkIcon : ConfirmationDisabledLightIcon }
+                    enabled={is_dark_mode ? ConfirmationEnabledDarkIcon : ConfirmationEnabledLightIcon }
                     is_enabled={is_purchase_confirmed}
                 />
                 <div className='media__form'>
@@ -51,8 +51,8 @@ const PurchaseSettings = ({
             </MediaHeading>
             <MediaDescription>
                 <MediaIcon
-                    disabled={is_dark_mode ? LockDisabledDark : LockDisabledLight}
-                    enabled={is_dark_mode ? LockEnabledDark : LockEnabledLight}
+                    disabled={is_dark_mode ? LockDisabledDarkIcon : LockDisabledLightIcon}
+                    enabled={is_dark_mode ? LockEnabledDarkIcon : LockEnabledLightIcon}
                     is_enabled={is_purchase_locked}
                 />
                 <div className='media__form'>
