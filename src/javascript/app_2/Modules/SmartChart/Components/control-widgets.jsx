@@ -13,7 +13,6 @@ import React          from 'react';
 
 const ControlWidgets = ({
     updateChartType,
-    updateGranularity,
 }) => (
     <React.Fragment>
         <CrosshairToggle />
@@ -23,14 +22,13 @@ const ControlWidgets = ({
         <DrawTools />
         <Views />
         <Share />
-        <Timeperiod onChange={updateGranularity} />
+        <Timeperiod />
         <ChartSize />
     </React.Fragment>
 );
 
 ControlWidgets.propTypes = {
-    updateChartType  : PropTypes.func,
-    updateGranularity: PropTypes.func,
+    updateChartType: PropTypes.func,
 };
 
 export default ControlWidgets;

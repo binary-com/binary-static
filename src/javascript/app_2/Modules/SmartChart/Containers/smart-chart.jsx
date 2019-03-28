@@ -19,7 +19,6 @@ class Chart extends React.Component {
     chartControlsWidgets = () => (
         <ControlWidgets
             updateChartType={this.props.updateChartType}
-            updateGranularity={this.props.updateGranularity}
         />
     );
 
@@ -43,7 +42,6 @@ class Chart extends React.Component {
                 chartControlsWidgets={this.chartControlsWidgets}
                 chartType={this.props.chart_type}
                 endEpoch={this.props.end_epoch}
-                granularity={this.props.granularity}
                 id={this.props.chart_id}
                 isMobile={this.props.is_mobile}
                 requestAPI={this.props.wsSendRequest}
@@ -82,7 +80,6 @@ Chart.propTypes = {
     chart_zoom                  : PropTypes.number,
     end_epoch                   : PropTypes.number,
     exportLayout                : PropTypes.func,
-    granularity                 : PropTypes.number,
     InfoBox                     : PropTypes.node,
     is_contract_mode            : PropTypes.bool,
     is_mobile                   : PropTypes.bool,
