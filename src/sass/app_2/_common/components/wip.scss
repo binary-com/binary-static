@@ -3,6 +3,10 @@
     height: 100vh;
     display: flex;
 
+    @include themify($themes) {
+        background: themed('container_secondary_color');
+    }
+
     &__content {
         width: 100%;
         display: flex;
@@ -12,23 +16,37 @@
         padding: 0 1.6em;
     }
     &__header {
-        @include typeface(--large-center-bold-blue);
+        @include typeface(--large-center-bold-black);
         text-transform: none;
         margin: 0.8em;
+
+        @include themify($themes) {
+            color: themed('wip_color');
+        }
     }
     &__text {
-        @include typeface(--title-center-normal-blue);
+        @include typeface(--title-center-normal-black);
         text-transform: none;
         margin: 0 1.6em 2.4em;
+
+        @include themify($themes) {
+            color: themed('wip_color');
+        }
     }
     &__btn {
-        background: $COLOR_DARK_BLUE_5;
         height: 42px;
         cursor: pointer;
 
+        @include themify($themes) {
+            background: themed('wip_color');
+        }
+
         &--span {
             font-weight: normal;
-            color: $COLOR_WHITE;
+
+            @include themify($themes) {
+                color: themed('wip_btn_color');
+            }
         }
     }
 }
