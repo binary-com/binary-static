@@ -78,7 +78,7 @@
 
             .color1-fill {
                 @include themify($themes) {
-                    fill: themed('text_primary_color') !important;
+                    fill: themed('text_secondary_color');
                 }
             }
         }
@@ -89,7 +89,7 @@
 
                 .color1-fill {
                     @include themify($themes) {
-                        fill: themed('text_color') !important;
+                        fill: themed('text_color');
                     }
                 }
             }
@@ -105,6 +105,30 @@
             font-weight: bold;
             @include themify($themes) {
                 color: themed('text_active_color');
+            }
+        }
+        .contract-type-item__icon {
+            /* postcss-bem-linter: ignore */
+            svg {
+                pointer-events: none;
+
+                .color1-fill {
+                    @include themify($themes) {
+                        fill: themed('icon_active_color');
+                    }
+                }
+            }
+            &:hover {
+                /* postcss-bem-linter: ignore */
+                svg {
+                    pointer-events: none;
+
+                    .color1-fill {
+                        @include themify($themes) {
+                            fill: themed('text_active_color') !important;
+                        }
+                    }
+                }
             }
         }
     }
