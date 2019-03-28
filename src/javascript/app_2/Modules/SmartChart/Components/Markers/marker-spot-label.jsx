@@ -1,3 +1,4 @@
+import classNames   from 'classnames';
 import { observer }  from 'mobx-react';
 import PropTypes     from 'prop-types';
 import React         from 'react';
@@ -23,7 +24,6 @@ class MarkerSpotLabel extends React.Component {
             <MarkerSpot
                 className={this.props.spot_className}
                 spot_count={this.props.spot_count}
-                status={this.props.status}
             />;
 
         if (this.props.has_hover_toggle) {
@@ -42,7 +42,12 @@ class MarkerSpotLabel extends React.Component {
                                 <IconClock height='10' width='10' className='chart-spot-label__time-icon' />
                                 <p className='chart-spot-label__time'>{toMoment(+this.props.spot_epoch).format('HH:mm:ss')}</p>
                             </div>
-                            <div className='chart-spot-label__value-container'>
+                            <div
+                                className={classNames('chart-spot-label__value-container', {
+                                    'chart-spot-label__value-container--won' : this.props.status === 'won',
+                                    'chart-spot-label__value-container--lost': this.props.status === 'lost',
+                                })}
+                            >
                                 <p>{addComma(this.props.spot_value)}</p>
                             </div>
                         </div>

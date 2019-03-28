@@ -146,9 +146,8 @@ export default class TradeStore extends BaseStore {
     }
 
     @action.bound
-    refresh() {
-        this.symbol = null;
-        WS.forgetAll('proposal', 'ticks_history');
+    refresh = () => {
+        WS.forgetAll('proposal');
     }
 
     @action.bound

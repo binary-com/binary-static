@@ -6,13 +6,9 @@ import React        from 'react';
 const MarkerSpot = ({
     className,
     spot_count,
-    status,
 }) => (
     <div
-        className={classNames('chart-spot', className, {
-            'chart-spot__spot--won' : status === 'won',
-            'chart-spot__spot--lost': status === 'lost',
-        })}
+        className={classNames('chart-spot', className)}
     >{spot_count}
     </div>
 );
@@ -20,7 +16,6 @@ const MarkerSpot = ({
 MarkerSpot.propTypes = {
     className : PropTypes.string,
     spot_count: PropTypes.oneOfType([ PropTypes.number, PropTypes.string ]),
-    status    : PropTypes.oneOf(['won', 'lost']),
 };
 
 export default observer(MarkerSpot);

@@ -39,5 +39,13 @@ describe('MarkerSpotLabel', () => {
         expect(wrapper.state('show_label')).to.be.true;
         expect(wrapper.find('.marker-hover-container').exists()).to.equal(false);
     });
+    it('should have class .chart-spot-label__value-container--won if status won is passed in props', () => {
+        const wrapper = shallow(<MarkerSpotLabel status={'won'} />);
+        expect(wrapper.find('.chart-spot-label__value-container--won').exists()).to.be.true;
+    });
+    it('should have class .chart-spot-label__value-container--lost if status lost is passed in props', () => {
+        const wrapper = shallow(<MarkerSpotLabel status={'lost'} />);
+        expect(wrapper.find('.chart-spot-label__value-container--lost').exists()).to.be.true;
+    });
 });
 

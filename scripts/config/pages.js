@@ -80,6 +80,7 @@ module.exports = [
     ['platforms',                               'static/platforms',                            'full_width', 'Trading Platforms'],
 
     ['about-us',                                'static/about/index',                          'full_width', 'About Us'],
+    ['asuncion',                                'static/about/asuncion',                       'full_width', 'Careers - Asunción'],
     ['binary-in-numbers',                       'static/about/binary_in_numbers',              'default',    'Binary in Numbers'],
     ['careers',                                 'static/about/careers',                        'full_width', 'Careers'],
     ['careers/privacy-policy',                  'static/about/job_applicant_policy',           'full_width', 'Job Applicant Privacy Policy'],

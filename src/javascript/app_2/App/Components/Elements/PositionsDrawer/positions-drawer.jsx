@@ -46,7 +46,7 @@ class PositionsDrawer extends React.Component {
             body_content = active_positions.slice(0, 4).map((portfolio_position) => (
                 <CSSTransition
                     key={portfolio_position.id}
-                    in={!!(portfolio_position.underlying_code)}
+                    in={!!(portfolio_position.contract_info.underlying)}
                     timeout={150}
                     classNames={{
                         enter    : 'positions-drawer-card__wrapper--enter',
@@ -107,10 +107,7 @@ class PositionsDrawer extends React.Component {
 }
 
 PositionsDrawer.propTypes = {
-    active_contract_id: PropTypes.PropTypes.oneOfType([
-        PropTypes.number,
-        PropTypes.string,
-    ]),
+    active_contract_id    : PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     active_positions      : MobxPropTypes.arrayOrObservableArray,
     children              : PropTypes.any,
     currency              : PropTypes.string,
@@ -140,7 +137,7 @@ export default connect(
         is_loading            : modules.portfolio.is_loading,
         onClickSell           : modules.portfolio.onClickSell,
         onClickRemove         : modules.portfolio.removePositionById,
-        openContract          : modules.contract.onLoadContract,
+        openContract          : modules.contract.onMount,
         onMount               : modules.portfolio.onMount,
         onUnmount             : modules.portfolio.onUnmount,
         is_positions_drawer_on: ui.is_positions_drawer_on,

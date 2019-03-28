@@ -70,6 +70,7 @@ const pages_config = {
     api_tokenws              : { module: APIToken,                   is_authenticated: true },
     assessmentws             : { module: FinancialAssessment,        is_authenticated: true, only_real: true },
     asset_indexws            : { module: AssetIndexUI },
+    asuncion                 : { module: StaticPages.Locations },
     authenticate             : { module: Authenticate,               is_authenticated: true, only_real: true },
     authorised_appsws        : { module: AuthorisedApps,             is_authenticated: true },
     careers                  : { module: StaticPages.Careers },
