@@ -85,13 +85,22 @@
         font-size: 14px;
         padding: 4px 8px;
         border-radius: 11px;
-        background: $COLOR_LIGHT_GRAY_1;
+        background-color: $COLOR_LIGHT_GRAY_1;
 
         /* postcss-bem-linter: ignore */
         p {
             font-weight: bold;
             color: $COLOR_WHITE;
             margin-top: 2px;
+        }
+        &--lost {
+            background-color: $COLOR_RED;
+        }
+        &--won {
+            background-color: $COLOR_GREEN_1;
+        }
+        &--won, &--lost {
+            color: $COLOR_WHITE;
         }
     }
 }
