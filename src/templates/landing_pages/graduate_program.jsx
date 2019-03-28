@@ -4,10 +4,10 @@ import Layout from './_common/layout.jsx';
 const GraduateProgram = () => {
     const steps = [
         { icon: 'one',    title: 'Send us your resume',                                       description: 'Kickstart the application process by uploading your resume. Be sure to emphasise awards, achievements, projects, and open-source contributions that will make you stand out.' },
-        { icon: 'two',    title: 'Phone interview',                                           description: 'If your resume makes the cut, we’ll arrange a phone interview to get a better idea of who you are and what you’re interested in.' },
-        { icon: 'three',  title: 'Technical test',                                            description: 'If you pass our phone interview, we’ll invite you to a technical test either on-site or online. You’ll be asked technical questions which may require you to write code.' },
-        { icon: 'four',   title: 'Self-Assessment Topgrading Interview (SATI) questionnaire', description: 'Once you pass our technical test, we’ll send you a SATI questionnaire to understand you better.' },
-        { icon: 'five',   title: 'Job offer',                                                 description: 'If you ace your interviews and make a real impression on us, we’ll contact you with an official offer to join our graduate programme.' },
+        { icon: 'two',    title: 'Phone interview',                                           description: 'If your resume makes the cut, we\'ll arrange a phone interview to get a better idea of who you are and what you\'re interested in.' },
+        { icon: 'three',  title: 'Technical test',                                            description: 'If you pass our phone interview, we\'ll invite you to a technical test either on-site or online. You\'ll be asked technical questions which may require you to write code.' },
+        { icon: 'four',   title: 'Self-Assessment Topgrading Interview (SATI) questionnaire', description: 'Once you pass our technical test, we\'ll send you a SATI questionnaire to understand you better.' },
+        { icon: 'five',   title: 'Job offer',                                                 description: 'If you ace your interviews and make a real impression on us, we\'ll contact you with an official offer to join our graduate programme.' },
     ];
 
     return (
@@ -66,8 +66,8 @@ const GraduateProgram = () => {
                     <h2>Who we are</h2>
                 </div>
                 <p>{('Looking for an exciting, challenging, and highly-rewarding graduate role in software development? Binary.com is looking for A players who want to make a difference and impact the way thousands of people trade online.')}</p>
-                <p>{('As the pioneer in binary options trading, we’re no strangers to big ideas and innovation. Here, you’ll be given the opportunity to break the norm with support from some of the top talents in your field.')}</p>
-                <p>{('Our graduate developers take on responsibilities from Day 1. We’ve designed a world-class training programme to help you enhance the skills you have and master new ones, even as you’re pushing the boundaries of what’s possible at the intersection of finance and technology.')}</p>
+                <p>{('As the pioneer in binary options trading, we\'re no strangers to big ideas and innovation. Here, you\'ll be given the opportunity to break the norm with support from some of the top talents in your field.')}</p>
+                <p>{('Our graduate developers take on responsibilities from Day 1. We\'ve designed a world-class training programme to help you enhance the skills you have and master new ones, even as you\'re pushing the boundaries of what\'s possible at the intersection of finance and technology.')}</p>
             </section>
 
             <section className='container'>
@@ -77,7 +77,7 @@ const GraduateProgram = () => {
                 <div className='gr-row'>
                     <div className='gr-6 gr-12-m'>
                         <div className='box fill-bg-color'>
-                            <p>{('We’re looking for talented graduates who are passionate about software development and can get things done.')}</p>
+                            <p>{('We\'re looking for talented graduates who are passionate about software development and can get things done.')}</p>
                             <p>{('You must possess a natural curiosity and determination to solve complex problems and challenges.')}</p>
                             <p>{('You must also be a fast learner eager to adopt new tools and technology, and a  dynamic team player who values open and honest communication.')}</p>
                         </div>
@@ -87,7 +87,7 @@ const GraduateProgram = () => {
                         <h4 className='center-text'><span className='text-bold'>{('Education and experience requirements')}</span></h4>
                         <div className='inline-flex'>
                             <img className='icon-md margin-30' src={it.url_for('images/graduate_program/education_icon.svg')} />
-                            <p>{('A bachelor’s degree, master’s degree, or PhD in computer science, IT, mathematics, physics, or engineering')}</p>
+                            <p>{('A bachelor\'s degree, master\'s degree, or PhD in computer science, IT, mathematics, physics, or engineering')}</p>
                         </div>
                         <div className='inline-flex'>
                             <img className='icon-md margin-30' src={it.url_for('images/graduate_program/coding_icon.svg')} />
@@ -95,7 +95,7 @@ const GraduateProgram = () => {
                         </div>
                         <div className='inline-flex'>
                             <img className='icon-md margin-30' src={it.url_for('images/graduate_program/experience_icon.svg')} />
-                            <p>{('If currently employed, you must have less than one year’s worth of working experience')}</p>
+                            <p>{('If currently employed, you must have less than one year\'s worth of working experience')}</p>
                         </div>
                     </div>
                 </div>
@@ -196,7 +196,7 @@ const GraduateProgram = () => {
                     </div>
                     <div className='inline-flex'>
                         <img className='icon-lg margin-left-0' src={it.url_for('images/graduate_program/program2_icon.svg')} />
-                        <p>{('A buddy and mentor will be assigned to guide you throughout the programme. This will give you the opportunity to take part in pair coding sessions. You’ll also have a friend to guide you throughout the programme.')}</p>
+                        <p>{('A buddy and mentor will be assigned to guide you throughout the programme. This will give you the opportunity to take part in pair coding sessions. You\'ll also have a friend to guide you throughout the programme.')}</p>
                     </div>
                     <div className='inline-flex'>
                         <img className='icon-lg margin-left-0' src={it.url_for('images/graduate_program/program3_icon.svg')} />
