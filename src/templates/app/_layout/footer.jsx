@@ -131,6 +131,9 @@ const Footer = () => (
                                 <a className='labuan-icon' href='https://www.labuanibfc.com/' target='_blank' rel='noopener noreferrer'>
                                     <img className='responsive' src={it.url_for('images/pages/footer/labuan_FSA.svg')} />
                                 </a>
+                                <div className='age-restriction'>
+                                    <img className='responsive' src={it.url_for('images/pages/footer/18+.svg')} />
+                                </div>
                             </div>
                             <SocialIcons
                                 networks={[
@@ -181,6 +184,9 @@ const Footer = () => (
                                     <a className='lga-icon' href='https://www.authorisation.mga.org.mt/verification.aspx?lang=EN&company=a5fd1edc-d072-4c26-b0cd-ab3fa0f0cc40&details=1' target='_blank' rel='noopener noreferrer'>
                                         <img className='responsive' src={it.url_for('images/pages/footer/mga-logo-footer.svg')} />
                                     </a>
+                                    <div className='age-restriction'>
+                                        <img className='responsive' src={it.url_for('images/pages/footer/18+.svg')} />
+                                    </div>
                                 </div>
                             </div>
                             <SocialIcons
