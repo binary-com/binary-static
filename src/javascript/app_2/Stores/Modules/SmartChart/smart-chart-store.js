@@ -150,7 +150,9 @@ export default class SmartChartStore extends BaseStore {
         this.should_import_layout = true;
         this.should_clear_chart   = false;
 
-        this.root_store.modules.trade.updateSymbol(this.trade_chart_symbol);
+        if (this.trade_chart_symbol !== this.root_store.modules.trade.symbol) {
+            this.root_store.modules.trade.updateSymbol(this.trade_chart_symbol);
+        }
     }
 
     @action.bound
