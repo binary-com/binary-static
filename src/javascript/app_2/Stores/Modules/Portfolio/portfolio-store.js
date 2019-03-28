@@ -102,7 +102,7 @@ export default class PortfolioStore extends BaseStore {
 
         // for tick contracts
         if (proposal.tick_count) {
-            const current_tick    = (portfolio_position.current_tick > getCurrentTick(proposal)) ?
+            const current_tick = (portfolio_position.current_tick > getCurrentTick(proposal)) ?
                 portfolio_position.current_tick : getCurrentTick(proposal);
             portfolio_position.current_tick = current_tick;
         }
