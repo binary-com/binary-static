@@ -85,6 +85,10 @@ const SetCurrency = (() => {
                                         redirect_url = Url.urlFor('user/authenticate');
                                     }
                                 }
+                                // Do not redirect MLT clients to cashier, because they need to set self exclusion before trading
+                                if (!redirect_url && /^(malta)$/i.test(Client.get('landing_company_shortcode'))) {
+                                    redirect_url = Url.urlFor('user/security/self_exclusionws');
+                                }
                                 // Do not redirect MX clients to cashier, because they need to set max limit before making deposit
                                 if (!redirect_url && !/^(iom)$/i.test(Client.get('landing_company_shortcode'))) {
                                     redirect_url = Url.urlFor('cashier');
