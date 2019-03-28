@@ -22,7 +22,9 @@ const PurchaseButton = ({
         className={classNames(
             'btn--primary',
             'btn-purchase',
-            { 'animate': is_loading })}
+            { 'btn-purchase--disabled': is_contract_mode || is_disabled },
+            { 'btn-purchase--disabled-bar': !is_contract_mode && is_disabled },
+            { 'btn-purchase--animated': is_loading })}
         has_effect
         onClick={() => { onClickPurchase(info.id, info.stake, type); }}
     >
