@@ -446,7 +446,7 @@
         .btn-purchase__trade-type {
             svg {
                 @include themify($themes) {
-                    @include colorIcon(themed('btn_purchase_disabled_text'), none);
+                    @include colorIcon(themed('btn_purchase_disabled_text'), themed('btn_purchase_disabled_text'));
                 }
             }
             .btn-purchase__trade-type-text {
