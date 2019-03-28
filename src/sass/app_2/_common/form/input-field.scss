@@ -90,16 +90,29 @@
         vertical-align: middle;
         width: 16px;
         height: 16px;
-        border-color: $COLOR_LIGHT_BLACK_4;
         border-radius: 1px;
         border-width: 0.5px;
         padding: 0;
         @include themify($themes) {
+            background-color: themed('background_container_color');
             border-color: themed('text_primary_color');
         }
 
-        &:hover, &:focus, &:active {
-            border-color: $COLOR_ORANGE !important;
+        &:active {
+            @include themify($themes) {
+                border-color: $COLOR_ORANGE;
+                border-radius: 1px;
+                box-shadow: none;
+            }
+        }
+        &:hover {
+            @include themify($themes) {
+                border-color: themed('text_color');
+                border-radius: 1px;
+                box-shadow: none;
+            }
+        }
+        &:focus {
             border-radius: 1px;
             box-shadow: none;
         }
@@ -109,6 +122,11 @@
 
             &:after {
                 display: inline-block;
+            }
+            &:hover {
+                @include themify($themes) {
+                    border-color: $COLOR_ORANGE;
+                }
             }
         }
         &::-ms-check { // IE/EDGE support
@@ -147,7 +165,6 @@
         border-radius: $BORDER_RADIUS;
         box-shadow: 0 0 0 2px $COLOR_DARK_BLUE_8;
         @include themify($themes) {
-            border-color: themed('border_hover_color');
             color: themed('text_color');
         }
 
