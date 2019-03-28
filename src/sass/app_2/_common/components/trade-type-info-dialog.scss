@@ -117,7 +117,7 @@
             background-color: themed('slider_background_color');
 
             &--active {
-                background-color: themed('active_color');
+                background-color: themed('border_hover_color');
             }
         }
     }

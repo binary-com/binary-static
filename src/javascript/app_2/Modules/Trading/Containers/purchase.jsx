@@ -69,8 +69,6 @@ const Purchase = ({
             <Fieldset
                 className='trade-container__fieldset purchase-container__option'
                 key={idx}
-                onMouseEnter={() => { onHoverPurchase(true, type); }}
-                onMouseLeave={() => { onHoverPurchase(false); }}
             >
                 {is_purchase_error &&
                 <MessageBox
@@ -92,7 +90,11 @@ const Purchase = ({
                         has_increased={info.has_increased}
                         is_visible={!is_contract_mode}
                     />
-                    <div className='btn-purchase__shadow-wrapper'>
+                    <div
+                        className='btn-purchase__shadow-wrapper'
+                        onMouseEnter={() => { onHoverPurchase(true, type); }}
+                        onMouseLeave={() => { onHoverPurchase(false); }}
+                    >
                         {
                             is_purchase_confirm_on ?
                                 <PopConfirm
