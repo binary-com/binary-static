@@ -1,8 +1,8 @@
 import { localize }        from '_common/localize';
+import { unique }          from '_common/utility';
 import {
     epochToMoment,
     getDiffDuration }      from 'Utils/Date';
-import { unique }          from '../../../../../_common/utility';
 import { isDigitContract } from '../../Contract/Helpers/digits';
 
 export const getCurrentTick = (contract_info) => {
