@@ -17,33 +17,26 @@ import Wip                         from './Containers/Wip';
 const App = ({ root_store }) => (
     <Router basename={getBaseName()}>
         <MobxProvider store={root_store}>
-            <React.Fragment>
-                {
-                    !root_store.ui.is_mobile &&
+            {
+                root_store.ui.is_mobile ?
+                    <Wip /> :
+                    <React.Fragment>
                         <div className='header'>
                             <Header />
                         </div>
-                }
-                <ErrorBoundary>
-                    {!root_store.ui.is_mobile &&
-                    <AppContents>
-                        <Routes />
-                        <PositionsDrawer />
-                        <ToastMessage position={POSITIONS.TOP_RIGHT} />
-                    </AppContents>
-                    }
-                    {root_store.ui.is_mobile &&
-                        <Wip />
-                    }
-                    <DenialOfServiceModal />
-                </ErrorBoundary>
-                {
-                    !root_store.ui.is_mobile &&
+                        <ErrorBoundary>
+                            <AppContents>
+                                <Routes />
+                                <PositionsDrawer />
+                                <ToastMessage position={POSITIONS.TOP_RIGHT} />
+                            </AppContents>
+                            <DenialOfServiceModal />
+                        </ErrorBoundary>
                         <footer className='footer'>
                             <Footer />
                         </footer>
-                }
-            </React.Fragment>
+                    </React.Fragment>
+            }
         </MobxProvider>
     </Router>
 );
