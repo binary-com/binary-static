@@ -74,13 +74,13 @@
     .iom-icon {
         width: 90px;
     }
-    .lga-icon {
+    .mga-icon {
         width: 100px;
     }
     .gamstop-icon {
         width: 109px;
     }
-    .gamstop-icon.data-show-visible + .lga-icon {
+    .gamstop-icon.data-show-visible + .mga-icon {
         width: 70px;
         margin-bottom: 3px;
         margin-left: -10px;
@@ -90,7 +90,7 @@
         flex-direction: row;
         align-items: center;
     }
-    .lga-gamstop-icon-container {
+    .mga-gamstop-icon-container {
         display: flex;
         align-items: flex-start;
         flex-direction: column-reverse;
@@ -212,8 +212,10 @@
             }
             .labuan-icon {
                 width: 105px;
-                margin-right: 0;
             }
+        }
+        .age-restriction {
+            margin-right: 0;
         }
     }
 }
