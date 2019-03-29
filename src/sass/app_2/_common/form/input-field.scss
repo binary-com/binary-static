@@ -95,7 +95,7 @@
         padding: 0;
         @include themify($themes) {
             background-color: themed('background_container_color');
-            border-color: themed('text_primary_color');
+            border-color: themed('text_secondary_color');
         }
 
         &:active {

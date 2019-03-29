@@ -75,23 +75,13 @@
         /* postcss-bem-linter: ignore */
         svg {
             pointer-events: none;
-
-            .color1-fill {
-                @include themify($themes) {
-                    fill: themed('text_secondary_color');
-                }
-            }
+            @extend %inline-icon.secondary;
         }
         &:hover {
             /* postcss-bem-linter: ignore */
             svg {
                 pointer-events: none;
-
-                .color1-fill {
-                    @include themify($themes) {
-                        fill: themed('text_color');
-                    }
-                }
+                @extend %inline-icon.white;
             }
         }
     }

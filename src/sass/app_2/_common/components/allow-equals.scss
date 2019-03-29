@@ -26,7 +26,7 @@
             }
         }
         &-info {
-            @extend %inline-icon;
+            @extend %inline-icon.secondary;
         }
         &-info-balloon-icon {
             left: -428px;

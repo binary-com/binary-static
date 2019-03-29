@@ -135,7 +135,7 @@
         }
         &-tooltip {
             &-i {
-                @extend %inline-icon;
+                @extend %inline-icon.secondary;
             }
             &[data-tooltip] {
                 &:before, &:after {
