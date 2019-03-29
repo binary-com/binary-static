@@ -164,7 +164,7 @@ const PaymentMethods = () => {
                                         { td: it.L('PaySec was founded in 2014 to provide customers and merchants in the Asian region with a comprehensive range of payment methods through one payment gateway.') },
                                         { td_list: [
                                             { text: 'USD' },
-                                            { text: '25 - 10,000' },
+                                            { text: '25 - 4,000' },
                                             { text: 'N/A' },
                                             { text: <TableValues value={[it.L(`${deposit}${instant}`), it.L(`${withdrawal}${not_applicable}`)]} /> },
                                             { text: <ReferenceLinks pdf_file='Binary.com_PaySec.pdf' video_link='https://youtu.be/DTVspCgnx0M' /> },
@@ -173,6 +173,27 @@ const PaymentMethods = () => {
                                     ]}
                                     />,
                                     },
+                                ],
+                            },
+                            {
+                                id      : 'paytrust',
+                                dataShow: '-eucountry',
+                                row     : [
+                                    { text: <PaymentLogo logo='paytrust' /> },
+                                    { attributes: { colSpan: 5, className: 'toggler' }, custom_td : <CustomTableData data={[
+                                        { td: it.L('Paytrust88 is a payment facility that allows online bank transfers for clients across Southeast Asia. For more information, please visit [_1].', '<a href="https://paytrust88.com/" target="_blank">paytrust88.com</a>') },
+                                        { td_list: [
+                                            { text: 'USD' },
+                                            { text: '25 - 10,000' },
+                                            { text: 'N/A' },
+                                            { text: <TableValues value={[it.L(`${deposit}${instant}`), it.L(`${withdrawal}${not_applicable}`)]} /> },
+                                            { text: <ReferenceLinks /> },
+                                        ],
+                                        },
+                                    ]}
+                                    />,
+                                    },
+
                                 ],
                             },
                         ],
@@ -222,12 +243,31 @@ const PaymentMethods = () => {
                                     },
                                 ],
                             },
+                            {
+                                id : 'maestro',
+                                row: [
+                                    { text: <PaymentLogo logo='maestro' /> },
+                                    { attributes: { colSpan: 5, className: 'toggler' }, custom_td : <CustomTableData data={[
+                                        { td: it.L('Maestro is an international debit card service by Mastercard. For more information, please visit [_1].', '<a href="http://stage.maestrocard.com/" target="_blank">stage.maestrocard.com</a>') },
+                                        { td_list: [
+                                            { text: 'USD GBP EUR AUD' },
+                                            { text: '10 - 10,000' },
+                                            { text: '10 - 10,000' },
+                                            { text: <TableValues value={[it.L(`${deposit}${instant}`), it.L(`${withdrawal}${working_day}`, 1)]} /> },
+                                            { text: <ReferenceLinks /> },
+                                        ],
+                                        },
+                                    ]}
+                                    />,
+                                    },
+                                ],
+                            },
                         ],
                     }}
                 />
 
                 <div className='gr-padding-10'>
-                    <p className='hint'>{it.L('Note:')} {it.L('Mastercards issued in a non-European country may only withdraw up to the amount deposited.')}</p>
+                    <p className='hint'>{it.L('Note:')} {it.L('Mastercards and Maestros issued in a non-European country may only withdraw up to the amount deposited.')}</p>
                 </div>
 
                 <TableTitle title={it.L('E-wallet')} />
@@ -384,6 +424,65 @@ const PaymentMethods = () => {
                                             { text: '5 - 750' },
                                             { text: <TableValues value={[it.L(`${deposit}${instant}`), it.L(`${withdrawal}${working_day}`, 1)]} /> },
                                             { text: <ReferenceLinks pdf_file='Binary.com_PaySafeCard.pdf' video_link='https://youtu.be/5QzGc1nleQo' /> },
+                                        ],
+                                        },
+                                    ]}
+                                    />,
+                                    },
+                                ],
+                            },
+                            {
+                                id      : 'jeton',
+                                dataShow: '-eucountry',
+                                row     : [
+                                    { text: <PaymentLogo logo='jeton' /> },
+                                    { attributes: { colSpan: 5, className: 'toggler' }, custom_td : <CustomTableData data={[
+                                        { td: it.L('Jeton is an international e-wallet for money transfers and online payments. For more information, please visit [_1].', '<a href="https://www.jeton.com/" target="_blank">www.jeton.com</a>') },
+                                        { td_list: [
+                                            { text: 'USD EUR' },
+                                            { text: '10 - 10,000' },
+                                            { text: 'N/A' },
+                                            { text: <TableValues value={[it.L(`${deposit}${instant}`), it.L(`${withdrawal}${working_day}`, 1)]} /> },
+                                            { text: <ReferenceLinks /> },
+                                        ],
+                                        },
+                                    ]}
+                                    />,
+                                    },
+                                ],
+                            },
+                            {
+                                id      : 'iwallet',
+                                dataShow: '-eucountry',
+                                row     : [
+                                    { text: <PaymentLogo logo='iwallet' /> },
+                                    { attributes: { colSpan: 5, className: 'toggler' }, custom_td : <CustomTableData data={[
+                                        { td: it.L('iWallet is an online payment service provider that allows deposits, withdrawals, and transaction payments. For more information, please visit [_1].', '<a href="https://www.iwl.hk/" target="_blank">www.iwl.hk</a>') },
+                                        { td_list: [
+                                            { text: 'USD' },
+                                            { text: '5 - 10,000' },
+                                            { text: 'N/A' },
+                                            { text: <TableValues value={[it.L(`${deposit}${instant}`), it.L(`${withdrawal}${working_day}`, 1)]} /> },
+                                            { text: <ReferenceLinks /> },
+                                        ],
+                                        },
+                                    ]}
+                                    />,
+                                    },
+                                ],
+                            },
+                            {
+                                id : 'vload',
+                                row: [
+                                    { text: <PaymentLogo logo='vload' /> },
+                                    { attributes: { colSpan: 5, className: 'toggler' }, custom_td : <CustomTableData data={[
+                                        { td: it.L('Vload is an eVoucher facility that’s available as a payment method to deposit and withdraw funds. For more information, please visit [_1].', '<a target="_blank" href="https://www.vload.expert/">www.vload.expert</a>') },
+                                        { td_list: [
+                                            { text: 'USD EUR' },
+                                            { text: '10 - 5,000' },
+                                            { text: '10 - 5,000' },
+                                            { text: <TableValues value={[it.L(`${deposit}${instant}`), it.L(`${withdrawal}${instant}`, 1)]} /> },
+                                            { text: <ReferenceLinks /> },
                                         ],
                                         },
                                     ]}
