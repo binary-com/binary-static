@@ -1,16 +1,18 @@
-const moment             = require('moment');
-const setIsForNewAccount = require('./account/settings/personal_details').setIsForNewAccount;
-const GetCurrency        = require('./get_currency');
-const BinaryPjax         = require('../../base/binary_pjax');
-const Client             = require('../../base/client');
-const BinarySocket       = require('../../base/socket');
-const Currency           = require('../../common/currency');
-const FormManager        = require('../../common/form_manager');
-const isCryptocurrency   = require('../../../_common/base/currency_base').isCryptocurrency;
-const getElementById     = require('../../../_common/common_functions').getElementById;
-const localize           = require('../../../_common/localize').localize;
-const State              = require('../../../_common/storage').State;
-const urlFor             = require('../../../_common/url').urlFor;
+const Dropdown             = require('@binary-com/binary-style').selectDropdown;
+const moment               = require('moment');
+const setIsForNewAccount   = require('./account/settings/personal_details').setIsForNewAccount;
+const GetCurrency          = require('./get_currency');
+const BinaryPjax           = require('../../base/binary_pjax');
+const Client               = require('../../base/client');
+const populateAccountsList = require('../../base/header').populateAccountsList;
+const BinarySocket         = require('../../base/socket');
+const Currency             = require('../../common/currency');
+const FormManager          = require('../../common/form_manager');
+const isCryptocurrency     = require('../../../_common/base/currency_base').isCryptocurrency;
+const getElementById       = require('../../../_common/common_functions').getElementById;
+const localize             = require('../../../_common/localize').localize;
+const State                = require('../../../_common/storage').State;
+const urlFor               = require('../../../_common/url').urlFor;
 
 const Accounts = (() => {
     let landing_company;
@@ -119,10 +121,6 @@ const Accounts = (() => {
     const addChangeCurrencyOption = () => {
         const table_headers        = TableHeaders.get();
         const loginid              = Client.get('loginid');
-        const allowed_currencies   = Client.getLandingCompanyValue(loginid, landing_company, 'legal_allowed_currencies');
-        const current_currencies   = GetCurrency.getCurrenciesOfOtherAccounts();
-        current_currencies.push(Client.get('currency'));
-        const available_currencies = allowed_currencies.filter(currency => !current_currencies.includes(currency));
 
         // Set the table row
         $(form_id).find('tbody')
@@ -132,21 +130,47 @@ const Accounts = (() => {
                 })))
                 .append($('<td/>', { text: getAvailableMarkets(loginid), datath: table_headers.available_markets }))
                 .append($('<td/>', { class: 'account-currency', datath: table_headers.available_currencies }))
-                .append($('<td/>')
-                    .html($('<button/>', { class: 'button', type: 'button', text: localize('Change') }).click(sendCurrencyChangeReq))));
+                .append($('<td/>', { id: 'change_currency_action' })
+                    .html($('<button/>', { id: 'change_currency_btn', class: 'button no-margin', type: 'button', text: localize('Change') }).click(sendCurrencyChangeReq))
+                    .append($(`
+                        <svg width="24" height="24" id="change_currency_success_icon" class="invisible"><path fill="#e98024" d="M8.308 22.298L.399 14.39l3.535-3.536 4.374 4.374L20.066 3.47l3.535 3.535L8.308 22.298z"/></svg>
+                    `))));
 
-        // Make available currencies into dropdown if multi, or label if single
-        const $change_account_currency = $('#change_account_currency');
-        if (available_currencies.length > 1) {
-            const $currencies = $('<div/>');
-            $currencies.append(Currency.getCurrencyList(available_currencies).html());
-            $change_account_currency.find('.account-currency').html($('<select/>', { id: 'change_account_currencies' }).html($currencies.html()));
-        } else {
-            $change_account_currency.find('.account-currency').html($('<label/>', { id: 'change_account_currencies', 'data-value': available_currencies, text: Currency.getCurrencyFullName(available_currencies) }));
-        }
+        // Add and convert available currencies into dropdown if multi, or label if single
+        populateChangeCurrencyDropdown(getCurrencyChangeOptions());
 
         // Replace note to reflect ability to change currency
         $('#note > .hint').text(`${localize('Note: You are limited to one fiat currency account. The currency of your fiat account can be changed before you deposit into your fiat account for the first time or create an MT5 account. You may also open one account for each supported cryptocurrency.')}`);
+    };
+
+    const getCurrencyChangeOptions = () => {
+        const allowed_currencies   = Client.getLandingCompanyValue(Client.get('loginid'), landing_company, 'legal_allowed_currencies');
+        const current_currencies   = GetCurrency.getCurrenciesOfOtherAccounts();
+
+        current_currencies.push(Client.get('currency'));
+
+        return allowed_currencies.filter(
+            currency => !current_currencies.includes(currency) && !isCryptocurrency(currency)
+        );
+    };
+
+    const populateChangeCurrencyDropdown = (available_currencies) => {
+        const change_currency_id       = 'change_account_currencies';
+        const $change_account_currency = $('#change_account_currency');
+
+        if (available_currencies.length > 1) {
+            const $currencies = $('<div/>');
+            $currencies.append(Currency.getCurrencyList(available_currencies).html());
+            $change_account_currency.find('.account-currency').html($('<select/>', { id: change_currency_id }).html($currencies.html()));
+            Dropdown(`#${change_currency_id}`, true);
+        } else {
+            $change_account_currency.find('.account-currency').html($('<label/>', { id: change_currency_id, 'data-value': available_currencies, text: Currency.getCurrencyFullName(available_currencies) }));
+        }
+
+        // Handler used to revert the check mark back to button
+        $(`#${change_currency_id}`).on('change', () => {
+            showChangeButtonOrSuccess(true);
+        });
     };
 
     const sendCurrencyChangeReq = () => {
@@ -156,9 +180,26 @@ const Accounts = (() => {
             if (res.error) {
                 showError(res.error.message, true);
             } else if (res.set_account_currency === 1) {
-                window.location.reload();
+                showChangeButtonOrSuccess(false);
+                const balance   = BinarySocket.send({ balance: 1 });
+                const authorize = BinarySocket.send({ authorize: Client.get('token') }, { forced: true });
+                Promise.all([balance, authorize]).then(() => {
+                    refreshExistingAccounts();
+                });
             }
         });
+    };
+
+    const refreshExistingAccounts = () => {
+        $('#existing_accounts').find('tbody').empty();
+        populateAccountsList();
+        populateExistingAccounts();
+        populateChangeCurrencyDropdown(getCurrencyChangeOptions());
+    };
+
+    const showChangeButtonOrSuccess = (has_button) => {
+        $('#change_currency_btn').setVisibility(has_button);
+        $('#change_currency_success_icon').setVisibility(!has_button);
     };
 
     const populateExistingAccounts = () => {
