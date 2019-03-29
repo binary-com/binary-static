@@ -57,7 +57,7 @@ const FileSelector = ({
                                                             <input id={`id_number_${j}`} type='text' maxLength='30' />
                                                         </div>
                                                     </div>
-                                                    <div className='gr-row form-row center-text-m'>
+                                                    <div className='gr-row form-row center-text-m' id={`expiry_datepicker_${document.value}`}>
                                                         <div className='gr-4 gr-12-m'>
                                                             <label htmlFor={`exp_date_${j}`}>{it.L('Expiry date')}:</label>
                                                         </div>
