@@ -799,6 +799,14 @@ body #not_authenticated_financial ul.checked > li {
     }
 }
 
+#set_currency {
+    #frm_set_currency {
+        .section-divider {
+            max-width: 500px;
+        }
+    }
+}
+
 .set-currency-content {
     .currency_list > div {
         padding: 15px;
