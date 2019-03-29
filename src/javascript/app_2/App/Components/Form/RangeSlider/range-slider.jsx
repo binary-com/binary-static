@@ -3,11 +3,11 @@ import { observer } from 'mobx-react';
 import PropTypes    from 'prop-types';
 import React        from 'react';
 import { localize } from '_common/localize';
+import { connect }  from 'Stores/connect';
 import TickSteps    from './tick-steps.jsx';
 
 const RangeSlider = ({
     className,
-    ticks,
     max_value,
     min_value,
     name,
@@ -36,21 +36,19 @@ const RangeSlider = ({
         });
     }
 
-    const steps = ticks - min_value;
-
     return (
-        <div className={classNames('range-slider', className, { 'range-slider__error': ((value < min_value) || (value > max_value)) })}>
+        <div className={classNames('range-slider', className, { 'range-slider__error': ((value < +min_value) || (value > +max_value)) })}>
             <label className='range-slider__label' htmlFor='range'>
                 <input
                     id='range'
                     className='input trade-container__input range-slider__track'
                     type='range'
                     min={min_value}
-                    max={ticks}
+                    max={max_value}
                     min_value={min_value}
                     max_value={max_value}
                     name={name}
-                    steps={steps}
+                    steps={max_value - min_value}
                     onChange={handleChange}
                     tabIndex='0'
                     value={value}
@@ -58,15 +56,13 @@ const RangeSlider = ({
                 <div className='range-slider__ticks'>
                     <TickSteps
                         value={value}
-                        ticks={steps + 1}
-                        min_value={min_value}
                         onClick={handleClick}
                     />
                 </div>
                 {/* Calculate line width based on active value and size of range thumb */}
                 <div
                     className='range-slider__line'
-                    style={{ width: `calc(${(value - min_value) * (100 / steps)}% ` }}
+                    style={{ width: `calc(${(value - min_value) * (100 / (max_value - min_value))}% ` }}
                 />
             </label>
             <div className='range-slider__caption'>
@@ -81,7 +77,7 @@ const RangeSlider = ({
                     </span>
                 }
                 <span className='range-slider__caption--last'>
-                    {ticks}
+                    {max_value}
                 </span>
             </div>
         </div>
@@ -108,4 +104,9 @@ RangeSlider.propTypes = {
     ]),
 };
 
-export default observer(RangeSlider);
+export default connect(
+    ({ modules }) => ({
+        max_value: modules.trade.duration_min_max.tick.max,
+        min_value: modules.trade.duration_min_max.tick.min,
+    })
+)(observer(RangeSlider));
