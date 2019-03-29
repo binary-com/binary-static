@@ -708,6 +708,16 @@
     .chart-spot-label {
         &__value-container {
             background: $COLOR_DARK_BLUE_5;
+
+            &--lost {
+                background-color: $COLOR_RED;
+            }
+            &--won {
+                background-color: $COLOR_GREEN_1;
+            }
+            &--won, &--lost {
+                color: $COLOR_WHITE;
+            }
         }
         &__time {
             color: $COLOR_WHITE;
@@ -724,13 +734,6 @@
         &__spot {
             background-color: $COLOR_DARK_BLUE_2;
             color: $COLOR_WHITE;
-
-            &--won {
-                background-color: $COLOR_GREEN_1;
-            }
-            &--lost {
-                background-color: $COLOR_RED;
-            }
         }
         &__entry {
             background-color: unset;
