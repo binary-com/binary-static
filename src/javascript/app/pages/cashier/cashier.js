@@ -102,7 +102,7 @@ const Cashier = (() => {
         elementInnerHtml(el_current_hint, currency_hint);
         el_currency_image.src = urlForStatic(`/images/pages/cashier/icons/icon-${currency}.svg`);
 
-        if (has_no_mt5 && has_no_tx) {
+        if (has_no_mt5 && has_no_tx && !isCryptocurrency(currency)) {
             enablePopupOnDeposit();
         }
 
