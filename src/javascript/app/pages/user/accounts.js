@@ -1,16 +1,16 @@
-const moment               = require('moment');
-const setIsForNewAccount   = require('./account/settings/personal_details').setIsForNewAccount;
-const getCurrencies        = require('./get_currency').getCurrencies;
-const BinaryPjax           = require('../../base/binary_pjax');
-const Client               = require('../../base/client');
-const BinarySocket         = require('../../base/socket');
-const Currency             = require('../../common/currency');
-const FormManager          = require('../../common/form_manager');
-const isCryptocurrency     = require('../../../_common/base/currency_base').isCryptocurrency;
-const getElementById       = require('../../../_common/common_functions').getElementById;
-const localize             = require('../../../_common/localize').localize;
-const State                = require('../../../_common/storage').State;
-const urlFor               = require('../../../_common/url').urlFor;
+const moment             = require('moment');
+const setIsForNewAccount = require('./account/settings/personal_details').setIsForNewAccount;
+const GetCurrency        = require('./get_currency');
+const BinaryPjax         = require('../../base/binary_pjax');
+const Client             = require('../../base/client');
+const BinarySocket       = require('../../base/socket');
+const Currency           = require('../../common/currency');
+const FormManager        = require('../../common/form_manager');
+const isCryptocurrency   = require('../../../_common/base/currency_base').isCryptocurrency;
+const getElementById     = require('../../../_common/common_functions').getElementById;
+const localize           = require('../../../_common/localize').localize;
+const State              = require('../../../_common/storage').State;
+const urlFor             = require('../../../_common/url').urlFor;
 
 const Accounts = (() => {
     let landing_company;
@@ -119,8 +119,10 @@ const Accounts = (() => {
     const addChangeCurrencyOption = () => {
         const table_headers        = TableHeaders.get();
         const loginid              = Client.get('loginid');
-        const available_currencies = Client.getLandingCompanyValue(loginid, landing_company, 'legal_allowed_currencies');
-        const multi_currencies     = available_currencies.length > 1;
+        const allowed_currencies   = Client.getLandingCompanyValue(loginid, landing_company, 'legal_allowed_currencies');
+        const current_currencies   = GetCurrency.getCurrenciesOfOtherAccounts();
+        current_currencies.push(Client.get('currency'));
+        const available_currencies = allowed_currencies.filter(currency => !current_currencies.includes(currency));
 
         // Set the table row
         $(form_id).find('tbody')
@@ -135,7 +137,7 @@ const Accounts = (() => {
 
         // Make available currencies into dropdown if multi, or label if single
         const $change_account_currency = $('#change_account_currency');
-        if (multi_currencies) {
+        if (available_currencies.length > 1) {
             const $currencies = $('<div/>');
             $currencies.append(Currency.getCurrencyList(available_currencies).html());
             $change_account_currency.find('.account-currency').html($('<select/>', { id: 'change_account_currencies' }).html($currencies.html()));
@@ -251,7 +253,7 @@ const Accounts = (() => {
 
     const populateMultiAccount = () => {
         const table_headers = TableHeaders.get();
-        const currencies    = getCurrencies(landing_company);
+        const currencies    = GetCurrency.getCurrencies(landing_company);
         const account       = { real: 1 };
         $(form_id).find('tbody')
             .append($('<tr/>', { id: 'new_account_opening' })
@@ -309,11 +311,11 @@ const Accounts = (() => {
     };
 
     const showError = (localized_text, is_currency_change = false) => {
-        const error_message_id = is_currency_change ? '#change_currency_error' : '#new_account_error';
-        const error_message_parent_id = is_currency_change ? '#change_account_currency' : '#new_account_opening';
+        const error_message_id = is_currency_change ? 'change_currency_error' : 'new_account_error';
+        const error_message_parent_id = is_currency_change ? 'change_account_currency' : 'new_account_opening';
 
-        $(error_message_id).remove();
-        $(error_message_parent_id).find('button').parent().append($('<p/>', { class: 'error-msg', id: error_message_id, text: localized_text }));
+        $(`#${error_message_id}`).remove();
+        $(`#${error_message_parent_id}`).find('button').parent().append($('<p/>', { class: 'error-msg', id: error_message_id, text: localized_text }));
     };
 
     const populateReq = () => {
