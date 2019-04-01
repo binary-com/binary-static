@@ -218,15 +218,11 @@ export default class TradeStore extends BaseStore {
             this.root_store.client.selectCurrency(value);
         } else if (name  === 'expiry_date') {
             this.expiry_time = null;
-        } else if (name === 'contract_type' && value === 'rise_fall') {
-            this.processNewValuesAsync({
-                'expiry_date': null,
-                'expiry_time': null,
-            });
         } else if (!(name in this)) {
             throw new Error(`Invalid Argument: ${name}`);
         }
 
+        this.validateAllProperties();
         this.processNewValuesAsync({ [name]: value }, true);
     }
 
