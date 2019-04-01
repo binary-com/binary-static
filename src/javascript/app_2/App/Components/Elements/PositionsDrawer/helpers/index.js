@@ -1,1 +1,1 @@
-export * from './duration-percentage';
+export * from './positions-helper';

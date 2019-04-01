@@ -1,3 +1,27 @@
+@keyframes data--loading {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.loader {
+    overflow: hidden;
+    @include themify($themes) {
+        background-color: rgba(themed('loader_background'), 0.16);
+    }
+
+    &--loading {
+        width: inherit;
+        height: inherit;
+        animation: data--loading 1s cubic-bezier(1, 0, 0.5, 0) infinite;
+        background-image: linear-gradient(to left, rgba(255, 255, 255, 0), $COLOR_WHITE 10%, rgba(255, 255, 255, 0));
+        opacity: 0.32;
+    }
+}
+
 /** @define trade-container */
 .trade-container {
     @include themify($themes) {
@@ -21,7 +45,7 @@
         &-info {
             @include typeface(--paragraph-left-normal-black);
             @include themify($themes) {
-                color: themed('border_hover_color');
+                color: themed('text_primary_color');
             }
 
             &--left {
@@ -37,7 +61,17 @@
         @include themify($themes) {
             background: themed('container_color');
             border-color: themed('container_color');
-            color: themed('text_primary_color');
+            color: themed('text_color');
+        }
+    }
+    &__loader {
+        width: 92px;
+        height: 8px;
+        margin: 3.5px 0;
+        @extend .loader;
+
+        &--loading {
+            @extend .loader--loading;
         }
     }
     &__error {
@@ -87,7 +121,6 @@
     &__price {
         line-height: 0.9rem;
         border: 0;
-        margin: 8px 0 0;
         width: 100%;
         display: flex;
         justify-content: space-between;
@@ -131,6 +164,9 @@
             }
         }
         &-tooltip {
+            &-i {
+                @extend %inline-icon.disabled;
+            }
             &[data-tooltip] {
                 &:before, &:after {
                     right: 230px !important;
@@ -306,21 +342,19 @@
     overflow: hidden;
     height: 5.6em;
     width: 100%;
-    margin: 0;
+    margin: 5px 0 0;
+    padding: 0;
     text-align: left;
-    margin-top: 5px;
+    transition: box-shadow 0.5s;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.24);
 
-    span.btn-purchase__trade-type-text {
-        @include typeface(--paragraph-left-bold-active);
-    }
-    span.btn-purchase__currency {
-        @include typeface(--xsmall-left-bold-active);
-    }
     &__info {
-        width: 30%;
+        width: 40%;
+        padding-left: 10%;
         float: right;
         text-align: right;
         height: 56px;
+        padding-right: 10px;
         display: flex;
         flex-direction: column;
     }
@@ -339,41 +373,36 @@
         align-items: flex-start;
         line-height: unset;
     }
-    &__content {
-        max-width: 50%;
+    &__trade-type {
+        background-color: $COLOR_GREEN_1;
+        color: $COLOR_WHITE;
         float: left;
         text-align: left;
-        height: 5.6em;
-        display: flex;
-        flex-direction: column;
-    }
-    &__trade-type {
         position: relative;
         display: flex;
         flex-grow: 1;
         align-items: center;
-        width: 100%;
-
-        &-text {
-            margin-left: 26px;
-            position: absolute;
-        }
-        &-icon {
-            @extend %inline-icon.white;
-        }
-    }
-    &__effect-main {
-        width: 60%;
+        padding-left: 10px;
         height: 56px;
-        position: absolute;
-        background-color: $COLOR_GREEN_1;
-        color: $COLOR_WHITE;
-        left: 0;
-        top: 0;
-        bottom: 0;
-        display: inline-block;
-        float: left;
-        text-align: left;
+        width: 60%;
+
+        .btn-purchase__text_wrapper {
+            margin-left: 24px;
+            position: absolute;
+
+            .btn-purchase__text {
+                @include typeface(--paragraph-left-bold-active);
+            }
+        }
+        .btn-purchase__icon_wrapper {
+            @extend %inline-icon.white;
+            /* postcss-bem-linter: ignore */
+            .color1-fill {
+                @include themify($themes) {
+                    fill: themed('text_active_color');
+                }
+            }
+        }
     }
     &__effect-detail {
         width: 0;
@@ -406,27 +435,49 @@
             transition: opacity 0.3s ease-in-out;
         }
     }
-    &:disabled {
-        background-color: $COLOR_DARK_BLUE_8;
+    &--disabled {
         color: $COLOR_DARK_BLUE_7;
         @include themify($themes) {
-            background-color: themed('disabled_color');
-            color: themed('text_secondary_color');
+            background-color: themed('purchase_background_color');
+        }
+
+        .btn-purchase__trade-type {
+            @include themify($themes) {
+                background-color: themed('purchase_detail_background_color');
+            }
+        }
+        .btn-purchase__effect-detail {
+            @include themify($themes) {
+                border-color: transparent transparent transparent themed('purchase_detail_background_color');
+            }
+        }
+    }
+    &--disabled-bar {
+        .btn-purchase__icon_wrapper, .btn-purchase__text_wrapper {
+            @extend .loader;
+        }
+        .btn-purchase__icon_wrapper {
+            width: 16px;
+            height: 16px;
+        }
+        .btn-purchase__text_wrapper {
+            width: 56px;
+            height: 8px;
+
+            .btn-purchase__text {
+                display: block;
+            }
+        }
+        .btn-purchase__info .btn-purchase__text_wrapper {
+            margin: 4px 0;
+        }
+    }
+    &--animated {
+        .btn-purchase__icon, .btn-purchase__text {
+            @extend .loader--loading;
         }
     }
     &__shadow-wrapper:hover:after {
         opacity: 0;
-    }
-    &:disabled .btn-purchase__effect-main {
-        background: $COLOR_DARK_BLUE_8;
-    }
-    &:disabled .btn-purchase__effect-detail {
-        border-color: transparent transparent transparent $COLOR_DARK_BLUE_8;
-    }
-    &:disabled .btn-purchase__trade-type svg {
-        opacity: 0.16;
-    }
-    &:disabled .btn-purchase__currency {
-        color: $COLOR_DARK_BLUE_8;
     }
 }

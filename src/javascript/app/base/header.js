@@ -273,7 +273,7 @@ const Header = (() => {
                         'phone',
                         'tax_identification_number',
                         'tax_residence',
-                        ...(Client.get('residence') === 'gb' ? ['address_postcode'] : []),
+                        ...(Client.get('residence') === 'gb' || Client.get('landing_company_shortcode') === 'iom' ? ['address_postcode'] : []),
                     ] : [];
                 
                 const get_settings = State.getResponse('get_settings');

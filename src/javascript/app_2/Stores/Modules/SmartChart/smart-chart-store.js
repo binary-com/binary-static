@@ -21,11 +21,14 @@ export default class SmartChartStore extends BaseStore {
     @observable barriers = observable.object({});
     @observable markers  = observable.object({});
 
-    @observable is_title_enabled = true;
     @observable is_contract_mode = false;
+    @observable is_title_enabled = true;
 
-    @observable chart_type = 'mountain';
-    @observable granularity = 0;
+    @observable chart_type                  = 'mountain';
+    @observable granularity                 = 0;
+    @observable scroll_to_left_epoch        = null;
+    @observable scroll_to_left_epoch_offset = 0;
+    @observable zoom;
 
     constructor({ root_store }) {
         const local_storage_properties = ['chart_type', 'granularity'];
@@ -46,6 +49,36 @@ export default class SmartChartStore extends BaseStore {
     }
 
     @action.bound
+    updateEpochScrollToValue(epoch) {
+        this.scroll_to_left_epoch = epoch;
+    }
+
+    @action.bound
+    updateEpochScrollToOffset(offset) {
+        this.scroll_to_left_epoch_offset = offset;
+    }
+
+    @action.bound
+    updateChartZoom(percentage) {
+        this.zoom = percentage;
+    }
+
+    @action.bound
+    cleanupContractChartView() {
+        this.removeBarriers();
+        this.removeMarkers();
+        this.resetScrollZoom();
+        this.setContractMode(false);
+    }
+
+    @action.bound
+    resetScrollZoom() {
+        this.zoom = (this.zoom === 100) ? -100 : 0;
+        this.scroll_to_left_epoch = null;
+        this.scroll_to_left_epoch_offset = null;
+    }
+
+    @action.bound
     setContractMode(is_contract_mode) {
         this.is_contract_mode = is_contract_mode;
         this.is_title_enabled = !is_contract_mode;
@@ -57,6 +90,17 @@ export default class SmartChartStore extends BaseStore {
         this.removeBarriers();
         this.removeMarkers();
     };
+
+    // --------- Tick Contracts ---------
+    @action.bound
+    setTickChartView(scroll_to_left_epoch) {
+        if (this.granularity !== 0) {
+            this.updateGranularity(0);
+        }
+        this.updateEpochScrollToOffset(1);
+        this.updateChartZoom(100);
+        this.updateEpochScrollToValue(scroll_to_left_epoch);
+    }
 
     // ---------- Barriers ----------
     @action.bound

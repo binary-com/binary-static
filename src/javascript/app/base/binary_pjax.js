@@ -43,6 +43,11 @@ const BinaryPjax = (() => {
         applyToAllElements('a', (el) => { el.addEventListener('click', handleClick); }, '', getElementById('all-accounts'));
         document.addEventListener('click', handleClick);
         window.addEventListener('popstate', handlePopstate);
+
+        // IE11 PopState
+        if (!!window.MSInputMethodContext && !!document.documentMode) {
+            window.onhashchange = handlePopstate;
+        }
     };
 
     const setDataPage = (content, url) => {
@@ -158,11 +163,24 @@ const BinaryPjax = (() => {
         return false;
     };
 
+    const createEventWithPolyfill = (event_name) => {
+        let event;
+        if (typeof Event === 'function') {
+            event = new Event(event_name);
+        } else {
+            // IE11
+            event = document.createEvent('HTMLEvents');
+            event.initEvent(event_name, true, true);
+        }
+
+        return event;
+    };
+
     const replaceContent = (url, content, replace) => {
         previous_url = window.location.href;
         window.history[replace ? 'replaceState' : 'pushState']({ url }, content.title, url);
 
-        params.container.dispatchEvent(new Event('binarypjax:before'));
+        params.container.dispatchEvent(createEventWithPolyfill('binarypjax:before'));
 
         document.title = content.title;
         const content_selector = params.container.querySelector(params.content_selector);

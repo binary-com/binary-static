@@ -4,6 +4,7 @@ import React                 from 'react';
 import { CSSTransition }     from 'react-transition-group';
 import ContractLink          from 'Modules/Contract/Containers/contract-link.jsx';
 import { localize }          from '_common/localize';
+import { IconPriceMove }     from 'Assets/Trading/icon-price-move.jsx';
 import ContractTypeCell      from './contract-type-cell.jsx';
 import ProgressSlider        from './ProgressSlider';
 import ResultDetails         from './result-details.jsx';
@@ -12,25 +13,21 @@ import { getTimePercentage } from './helpers';
 import Money                 from '../money.jsx';
 import Button                from '../../Form/button.jsx';
 
-// TODO: Find a way to simplify props, maybe we can pass some of props as object from portfolio_store and parse it with helpers
 const PositionsDrawerCard = ({
     active_position,
-    barrier,
     className,
-    chart_config,
+    contract_info,
     currency,
+    current_tick,
     duration,
     duration_unit,
-    entry_spot,
-    expiry_time,
-    id,
-    id_sell,
+    exit_spot,
     indicative,
+    id,
+    is_loading,
     is_sell_requested,
     is_valid_to_sell,
     profit_loss,
-    purchase,
-    purchase_time,
     onClickSell,
     onClickRemove,
     openContract,
@@ -38,12 +35,9 @@ const PositionsDrawerCard = ({
     sell_time,
     server_time,
     status,
-    tick_count,
     type,
-    underlying_code,
-    underlying_name,
 }) => {
-    const percentage = getTimePercentage(server_time, purchase_time, expiry_time);
+    const percentage = getTimePercentage(server_time, contract_info.purchase_time, contract_info.date_expiry);
     return (
         <div className={classNames(
             'positions-drawer-card__wrapper', {
@@ -52,10 +46,9 @@ const PositionsDrawerCard = ({
             className)}
         >
             <ResultOverlay
-                id={id}
+                contract_id={id}
                 onClickRemove={onClickRemove}
                 onClick={openContract}
-                chart_config={chart_config}
                 result={result}
             />
             <ContractLink
@@ -66,7 +59,7 @@ const PositionsDrawerCard = ({
                         'positions-drawer-card--red'   : (profit_loss < 0) && !result,
                     }
                 )}
-                chart_config={chart_config}
+                contract_id={id}
             >
                 <React.Fragment>
                     <div className={classNames(
@@ -78,19 +71,21 @@ const PositionsDrawerCard = ({
                             <div
                                 className={classNames(
                                     'icons-underlying',
-                                    `icons-underlying__ic-${underlying_code || 'unknown'}`
+                                    `icons-underlying__ic-${contract_info.underlying || 'unknown'}`
                                 )}
                             />
-                            <span className='positions-drawer-card__symbol'>{underlying_name}</span>
+                            <span className='positions-drawer-card__symbol'>{contract_info.display_name}</span>
                         </div>
                         <div className='positions-drawer-card__type'>
                             <ContractTypeCell type={type} />
                         </div>
                     </div>
                     <ProgressSlider
-                        remaining_time={expiry_time}
+                        is_loading={is_loading}
+                        remaining_time={contract_info.date_expiry}
                         percentage={percentage}
-                        ticks_count={tick_count}
+                        current_tick={current_tick}
+                        ticks_count={contract_info.tick_count}
                         has_result={!!(result)}
                     />
                     <div className={classNames(
@@ -110,7 +105,7 @@ const PositionsDrawerCard = ({
                             'positions-drawer-card__indicative-label',
                         )}
                         >
-                            {localize('Potential Payout:')}
+                            {!result ? localize('Potential Payout:') : localize('Payout:')}
                         </div>
                         <div className={classNames(
                             'positions-drawer-card__profit-loss', {
@@ -120,15 +115,25 @@ const PositionsDrawerCard = ({
                         >
                             <Money amount={Math.abs(profit_loss)} currency={currency} />
                         </div>
-                        <div className={`positions-drawer-card__indicative positions-drawer-card__indicative--${status}`}>
+                        <div className='positions-drawer-card__indicative'>
                             <Money amount={indicative} currency={currency} />
+                            <div className={classNames(
+                                'positions-drawer-card__indicative--movement', {
+                                    'positions-drawer-card__indicative--movement-complete': (status === 'complete'),
+                                },
+                            )}
+                            >
+                                <IconPriceMove
+                                    type={(status !== 'complete') ? status : null}
+                                />
+                            </div>
                         </div>
                     </div>
                     <div className='positions-drawer-card__purchase-price'>
                         <span className='positions-drawer-card__purchase-label'>
                             {localize('Purchase price')}
                         </span>
-                        <Money amount={purchase} currency={currency} />
+                        <Money amount={contract_info.buy_price} currency={currency} />
                     </div>
                 </React.Fragment>
             </ContractLink>
@@ -157,64 +162,43 @@ const PositionsDrawerCard = ({
                 </div>
             </CSSTransition>
             <ResultDetails
-                barrier={barrier}
+                contract_info={contract_info}
                 contract_end_time={sell_time}
-                contract_start_time={purchase_time}
                 duration={duration}
                 duration_unit={duration_unit}
-                entry_spot={entry_spot}
-                tick_count={tick_count}
+                exit_spot={exit_spot}
                 has_result={!!(result)}
-                id_sell={id_sell}
             />
         </div>
     );
 };
 
 PositionsDrawerCard.propTypes = {
-    active_position: PropTypes.PropTypes.oneOfType([
+    active_position: PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
     ]),
-    barrier      : PropTypes.number,
-    className    : PropTypes.string,
-    currency     : PropTypes.string,
-    duration     : PropTypes.number,
-    duration_unit: PropTypes.string,
-    entry_spot   : PropTypes.number,
-    exit_spot    : PropTypes.number,
-    expiry_time  : PropTypes.PropTypes.oneOfType([
-        PropTypes.number,
-        PropTypes.string,
-    ]),
+    className        : PropTypes.string,
+    contract_info    : PropTypes.object,
+    currency         : PropTypes.string,
+    current_tick     : PropTypes.number,
+    duration         : PropTypes.number,
+    duration_unit    : PropTypes.string,
+    exit_spot        : PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     id               : PropTypes.number,
-    id_sell          : PropTypes.number,
     indicative       : PropTypes.number,
+    is_loading       : PropTypes.bool,
     is_sell_requested: PropTypes.bool,
-    is_valid_to_sell : PropTypes.PropTypes.oneOfType([
-        PropTypes.number,
-        PropTypes.bool,
-    ]),
-    onClickRemove: PropTypes.func,
-    onClickSell  : PropTypes.func,
-    openContract : PropTypes.func,
-    profit_loss  : PropTypes.number,
-    purchase     : PropTypes.number,
-    purchase_time: PropTypes.PropTypes.oneOfType([
-        PropTypes.number,
-        PropTypes.string,
-    ]),
-    result   : PropTypes.string,
-    sell_time: PropTypes.PropTypes.oneOfType([
-        PropTypes.number,
-        PropTypes.string,
-    ]),
-    server_time    : PropTypes.object,
-    status         : PropTypes.string,
-    tick_count     : PropTypes.number,
-    type           : PropTypes.string,
-    underlying_code: PropTypes.string,
-    underlying_name: PropTypes.string,
+    is_valid_to_sell : PropTypes.oneOfType([PropTypes.number, PropTypes.bool]),
+    onClickRemove    : PropTypes.func,
+    onClickSell      : PropTypes.func,
+    openContract     : PropTypes.func,
+    profit_loss      : PropTypes.number,
+    result           : PropTypes.string,
+    sell_time        : PropTypes.number,
+    server_time      : PropTypes.object,
+    status           : PropTypes.string,
+    type             : PropTypes.string,
 };
 
 export default PositionsDrawerCard;
