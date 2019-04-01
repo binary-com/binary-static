@@ -1,4 +1,4 @@
-import React from 'react';
+import React    from 'react';
 import { List } from '../../_common/components/elements.jsx';
 
 const InvisibleHeading = ({ headers = [] }) => (

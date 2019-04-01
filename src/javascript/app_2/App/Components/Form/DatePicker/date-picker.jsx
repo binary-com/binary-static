@@ -50,6 +50,9 @@ class DatePicker extends React.Component {
     }
 
     onClickOutside = (e) => {
+        if (/purchase_/ig.test(e.target.id)) {
+            return;
+        }
         if (!this.mainNode.contains(e.target) && this.state.is_datepicker_visible) {
             this.setState({ is_datepicker_visible: false });
             if (!!this.state.value && this.props.mode !== 'duration') {

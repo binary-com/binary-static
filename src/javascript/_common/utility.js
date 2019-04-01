@@ -103,6 +103,10 @@ const isEqualObject = (obj1, obj2) => (
     )
 );
 
+// Filters out duplicates in an array of objects by key
+const unique = (array, key) => array.filter((e, idx) =>
+    array.findIndex((a, i) => a[key] ? a[key] === e[key] : i === idx) === idx);
+
 const getPropertyValue = (obj, k) => {
     let keys = k;
     if (!Array.isArray(keys)) keys = [keys];
@@ -230,6 +234,7 @@ module.exports = {
     isEmptyObject,
     cloneObject,
     isDeepEqual,
+    unique,
     getPropertyValue,
     handleHash,
     clearable,
