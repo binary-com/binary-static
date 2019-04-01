@@ -44,7 +44,7 @@ const ChartSettings = ({
                     is_enabled={is_layout_default}
                 />
                 <div className='media__form'>
-                    <p><Localize str='Change chart control positions' /></p>
+                    <p><Localize str='Change the position of the toolbar' /></p>
                     <RadioGroup
                         items={[
                             {
@@ -65,7 +65,7 @@ const ChartSettings = ({
         <MediaItem>
             <MediaHeading>
                 <Localize
-                    str='Open-High-Low-Close [_1](OHLC) information[_2]'
+                    str='Open-high-low-close [_1](OHLC) information[_2]'
                     replacers={{ '1_2': <div /> }}
                 />
             </MediaHeading>
@@ -78,7 +78,7 @@ const ChartSettings = ({
                 <div className='media__form'>
                     <Checkbox
                         value={is_asset_visible}
-                        label={localize('Display OHLC information for current chart')}
+                        label={localize('Display open-high-low-close (OHLC) information for current chart')}
                         onClick={toggleAsset}
                     />
                 </div>

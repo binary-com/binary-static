@@ -14,6 +14,7 @@
         height: 120px;
         @include toEm(margin-right, 16px);
         border-radius: $BORDER_RADIUS;
+        min-width: 35%;
 
         &:empty {
             background-color: $COLOR_LIGHT_BLACK_3;
@@ -34,5 +35,6 @@
         justify-content: flex-start;
         align-items: flex-start;
         text-transform: initial;
+        min-width: 65%;
     }
 }
