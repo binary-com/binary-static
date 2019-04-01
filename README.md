@@ -67,6 +67,9 @@ In order to remove the created folders from your gh-pages, you can use either:
   or
 - `grunt shell:remove_folder --folder=br_branchname1,br_branchname2,...`: only removes the specified folder(s) from your gh-pages.
 
+  or
+- `grunt shell:remove_folder --keep --folder=br_branchname1,br_branchname2,...`: only keeps the specified folder(s) on your gh-pages and removes everything else. Just add the `--keep` flag.
+
 ### Preview on your local machine
 - To preview your changes locally, run `sudo grunt serve`
 - It will watch for js/css changes and rebuild on every change you make.
