@@ -160,7 +160,18 @@ module.exports = function (grunt) {
             }
         },
         remove_folder: {
-            command: grunt.option('folder') ?
+            command: grunt.option('keep') && grunt.option('folder') ? (
+                [
+                    ghpagesCommand(),
+                    prompt('Removing folders except the ones specified...'),
+                    `find . -name "br_*" ! -name ${grunt.option('folder').split(',').join(' ! -name ')} | while read folder; do rm -rf "$folder"; done`,
+                    prompt('Committing...'),
+                    'git commit -a -m "Remove all but specified folders" --quiet',
+                    prompt('Pushing to origin...'),
+                    'git push origin gh-pages --quiet'
+                ].join(' && ')
+            ) : (
+                grunt.option('folder') ?
                 [
                     ghpagesCommand(),
                     prompt('Removing folders...'),
@@ -170,7 +181,8 @@ module.exports = function (grunt) {
                     prompt('Pushing to origin...'),
                     'git push origin gh-pages --quiet'
                 ].join(' && ') :
-                prompt('Need to specify folders to remove: --folder=br_fix,br_beta,...', 'warn'),
+                prompt('Need to specify folders to remove: --folder=br_fix,br_beta,...', 'warn')
+            ),
             options: {
                 stdout: true
             }
