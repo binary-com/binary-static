@@ -196,6 +196,9 @@
             @include typeface(--paragraph-left-normal-black);
             height: auto;
             text-decoration: none;
+            @include themify($themes) {
+                color: themed('text_primary_color');
+            }
 
             &-symbols {
                 width: 100%;
