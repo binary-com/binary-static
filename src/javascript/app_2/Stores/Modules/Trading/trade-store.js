@@ -97,6 +97,7 @@ export default class TradeStore extends BaseStore {
     // Purchase
     @observable proposal_info        = {};
     @observable purchase_info        = {};
+    @observable purchase_error       = {};
 
     // Query string
     query = '';
@@ -253,6 +254,11 @@ export default class TradeStore extends BaseStore {
                         this.root_store.ui.openPositionsDrawer();
                     }
                     GTM.pushPurchaseData(contract_data, this.root_store);
+                } else if (response.error) {
+                    this.purchase_error = {
+                        ...response.error,
+                    };
+                    this.root_store.ui.togglePurchaseErrorModal(true);
                 }
                 WS.forgetAll('proposal');
                 this.purchase_info = response;
