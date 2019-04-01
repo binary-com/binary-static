@@ -23,7 +23,6 @@ export default class SmartChartStore extends BaseStore {
     @observable is_contract_mode = false;
     @observable is_title_enabled = true;
 
-    @observable chart_type                  = 'mountain';
     @observable scroll_to_left_epoch        = null;
     @observable scroll_to_left_epoch_offset = 0;
     @observable zoom;
@@ -35,13 +34,7 @@ export default class SmartChartStore extends BaseStore {
     trade_chart_symbol               = null;
 
     constructor({ root_store }) {
-        const local_storage_properties = ['chart_type'];
-        super({ root_store, local_storage_properties, store_name });
-    }
-
-    @action.bound
-    updateChartType(chart_type) {
-        this.chart_type = chart_type;
+        super({ root_store, store_name });
     }
 
     @action.bound

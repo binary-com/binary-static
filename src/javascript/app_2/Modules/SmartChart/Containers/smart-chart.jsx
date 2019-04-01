@@ -17,9 +17,7 @@ class Chart extends React.Component {
     componentWillUnmount() { this.props.onUnmount(); }
 
     chartControlsWidgets = () => (
-        <ControlWidgets
-            updateChartType={this.props.updateChartType}
-        />
+        <ControlWidgets />
     );
 
     topWidgets = () => (
@@ -40,7 +38,6 @@ class Chart extends React.Component {
                 barriers={this.props.barriers_array}
                 bottomWidgets={this.props.should_show_last_digit_stats ? undefined : this.bottomWidgets}
                 chartControlsWidgets={this.chartControlsWidgets}
-                chartType={this.props.chart_type}
                 endEpoch={this.props.end_epoch}
                 id={this.props.chart_id}
                 isMobile={this.props.is_mobile}
@@ -76,7 +73,6 @@ Chart.propTypes = {
     barriers_array              : PropTypes.array,
     BottomWidgets               : PropTypes.node,
     chart_id                    : PropTypes.number,
-    chart_type                  : PropTypes.string,
     chart_zoom                  : PropTypes.number,
     end_epoch                   : PropTypes.number,
     exportLayout                : PropTypes.func,

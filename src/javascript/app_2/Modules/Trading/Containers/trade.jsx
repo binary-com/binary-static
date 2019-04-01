@@ -28,7 +28,6 @@ class Trade extends React.Component {
         const form_wrapper_class = this.props.is_mobile ? 'mobile-wrapper' : 'sidebar__container desktop-only';
         const should_show_last_digit_stats = ['match_diff', 'even_odd', 'over_under'].includes(this.props.contract_type)
             && !this.props.is_contract_mode;
-
         return (
             <div id='trade_container' className='trade-container'>
                 <div className='chart-container'>
@@ -40,8 +39,6 @@ class Trade extends React.Component {
                                 InfoBox={<InfoBox is_trade_page />}
                                 onSymbolChange={this.props.onSymbolChange}
                                 symbol={this.props.symbol}
-                                chart_type={this.props.chart_type}
-                                updateChartType={this.props.updateChartType}
                                 should_show_last_digit_stats={should_show_last_digit_stats}
                                 scroll_to_epoch={this.props.scroll_to_epoch}
                                 scroll_to_offset={this.props.scroll_to_offset}
@@ -105,9 +102,7 @@ export default connect(
         scroll_to_epoch                    : modules.smart_chart.scroll_to_left_epoch,
         scroll_to_offset                   : modules.smart_chart.scroll_to_left_epoch_offset,
         chart_zoom                         : modules.smart_chart.zoom,
-        chart_type                         : modules.smart_chart.chart_type,
         is_contract_mode                   : modules.smart_chart.is_contract_mode,
-        updateChartType                    : modules.smart_chart.updateChartType,
         chart_id                           : modules.trade.chart_id,
         contract_type                      : modules.trade.contract_type,
         is_trade_enabled                   : modules.trade.is_trade_enabled,
