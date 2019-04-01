@@ -53,7 +53,7 @@ const GraduateProgram = () => {
             <section id='page-top' className='intro'>
                 <div className='intro-body'>
                     <h1 className='intro-text'>{(`${it.website_name} Graduate Programme`)}</h1>
-                    <p className='intro-subtext'>{('Build a successful career at the intersection of finance and technology')}</p>
+                    <p className='intro-subtext'>{('Build a successful career at the cutting-edge of finance and technology')}</p>
                 </div>
                 <div className='intro-bg' />
                 <div id='register' className='primary-bg-color-dark section-title-inverse'>
@@ -135,7 +135,7 @@ const GraduateProgram = () => {
                         <div id='frontend' className='tab-content'>
                             <div className='gr-row inline-flex'>
                                 <div className='gr-7 gr-12-m'>
-                                    <h2>{('Front-End Developer')}</h2>
+                                    <h2>{('Front-End')}</h2>
                                     <div className='box fill-bg-color'>
                                         <p>{('Develop and maintain user-facing websites and applications.')}</p>
                                         <p>{('Integrate new features into existing user interfaces.')}</p>
@@ -151,7 +151,7 @@ const GraduateProgram = () => {
                         <div id='backend' className='tab-content'>
                             <div className='gr-row inline-flex'>
                                 <div className='gr-7 gr-12-m'>
-                                    <h2>{('Back-End Developer')}</h2>
+                                    <h2>{('Back-End')}</h2>
                                     <div className='box fill-bg-color'>
                                         <p>{('Build and manage APIs and product features.')}</p>
                                         <p>{('Scale up data architecture.')}</p>
@@ -167,7 +167,7 @@ const GraduateProgram = () => {
                         <div id='quants' className='tab-content'>
                             <div className='gr-row inline-flex'>
                                 <div className='gr-7 gr-12-m'>
-                                    <h2>{('Quantitative Developer')}</h2>
+                                    <h2>{('Quants')}</h2>
                                     <div className='box fill-bg-color'>
                                         <p>{('Manage and optimise pricing and risk management software for exotic options, Forex, and CFDs.')}</p>
                                         <p>{('Develop risk management models and algorithms.')}</p>
@@ -192,7 +192,7 @@ const GraduateProgram = () => {
                     <p>{('Our graduate programme is designed to tap into your true potential, give you deep insights into our business, and provide you with a platform to do amazing work.')}</p>
                     <div className='inline-flex'>
                         <img className='icon-lg margin-left-0' src={it.url_for('images/graduate_program/program1_icon.svg')} />
-                        <p>{('We\'ll kick things off with orientation week – a week spent away from the office that\'s all about learning and having fun. You\'ll participate in team building exercises, learn how to navigate your new workplace, and join a mini hackathon where you\'ll get the chance to make pull requests and contribute to our codebase.')}</p>
+                        <p>{('We\'ll kick things off with orientation week –– a week spent away from the office that\'s all about learning and having fun. You\'ll participate in team building exercises, learn how to navigate your new workplace, and join a mini hackathon where you\'ll get the chance to make pull requests and contribute to our codebase.')}</p>
                     </div>
                     <div className='inline-flex'>
                         <img className='icon-lg margin-left-0' src={it.url_for('images/graduate_program/program2_icon.svg')} />
@@ -204,7 +204,7 @@ const GraduateProgram = () => {
                     </div>
                     <div className='inline-flex'>
                         <img className='icon-lg margin-left-0' src={it.url_for('images/graduate_program/program4_icon.svg')} />
-                        <p>{('Attend our Software Craftsmanship Workshops – interactive lessons on a wide range of software development topics that will give you a better understanding of our codebase.')}</p>
+                        <p>{('Attend our Software Craftsmanship Workshops –– interactive lessons on a wide range of software development topics that will give you a better understanding of our codebase.')}</p>
                     </div>
                 </div>
             </section>
