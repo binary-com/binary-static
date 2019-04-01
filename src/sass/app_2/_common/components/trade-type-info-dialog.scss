@@ -16,7 +16,7 @@
         width: 290px;
         height: 544px;
         right: calc(100% + 10px);
-        top: -55px;
+        top: -66px;
         z-index: 2;
         border-radius: 4px;
         padding: 1.6em;
@@ -64,12 +64,14 @@
         align-items: center;
         margin-bottom: 0.8em;
 
+        /* postcss-bem-linter: ignore */
         .title {
             @include typeface(--paragraph-left-bold-black);
             @include toEm(margin-left, 8px, 1.4em);
             @include themify($themes) {
                 color: themed('text_primary_color');
             }
+            cursor: default;
         }
 
         /* postcss-bem-linter: ignore */
