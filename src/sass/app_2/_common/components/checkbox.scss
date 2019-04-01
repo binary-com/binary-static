@@ -9,8 +9,9 @@
         height: 16px;
         transition: 0.3s ease-in-out;
         flex-shrink: 0;
-        margin-right: 8px;
+        margin: 2px 8px 0 0;
         border-radius: 2px;
+        align-self: flex-start;
         border: 2px solid $COLOR_DARK_BLUE_7;
 
         &--active {
