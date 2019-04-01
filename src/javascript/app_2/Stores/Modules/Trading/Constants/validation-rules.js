@@ -68,7 +68,7 @@ const getValidationRules = () => ({
                 const start_moment_clone = start_moment.clone();
                 const [h, m] = value.split(':');
                 return isSessionAvailable(store.sessions, start_moment_clone.hour(h).minute(m), start_moment);
-            }, message: localize('Start time cannot be in the past.') }],
+            }, message: localize('Expiry time cannot be in the past.') }],
         ],
     },
 });
