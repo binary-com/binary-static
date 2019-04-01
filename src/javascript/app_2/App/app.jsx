@@ -12,7 +12,7 @@ import Footer                      from './Containers/Layout/footer.jsx';
 import Header                      from './Containers/Layout/header.jsx';
 import Routes                      from './Containers/Routes/routes.jsx';
 import DenialOfServiceModal        from './Containers/DenialOfServiceModal';
-import PurchaseErrorModal          from './Containers/PurchaseErrorModal';
+import ServicesErrorModal          from './Containers/ServicesErrorModal';
 
 const App = ({ root_store }) => (
     <Router basename={getBaseName()}>
@@ -28,7 +28,7 @@ const App = ({ root_store }) => (
                         <ToastMessage position={POSITIONS.TOP_RIGHT} />
                     </AppContents>
                     <DenialOfServiceModal />
-                    <PurchaseErrorModal />
+                    <ServicesErrorModal />
                 </ErrorBoundary>
                 <footer className='footer'>
                     <Footer />
