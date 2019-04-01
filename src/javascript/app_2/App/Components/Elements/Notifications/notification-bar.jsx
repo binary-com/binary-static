@@ -64,10 +64,12 @@ class NotificationBar extends React.Component {
 }
 
 NotificationBar.propTypes = {
-    children : PropTypes.node,
     className: PropTypes.string,
-    message  : PropTypes.string,
-    type     : PropTypes.string,
+    content  : PropTypes.oneOfType([
+        PropTypes.object,
+        PropTypes.string,
+    ]),
+    type: PropTypes.string,
 };
 
 export default NotificationBar;
