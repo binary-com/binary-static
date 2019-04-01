@@ -134,6 +134,13 @@
             justify-self: left;
             align-items: center;
 
+            &--disabled {
+                .trade-container__price-info-value, .trade-container__price-info-basis {
+                    @include themify($themes) {
+                        color: themed('disabled_color');
+                    }
+                }
+            }
             &-value {
                 @include typeface(--small-left-bold-black);
                 @include themify($themes) {
@@ -346,8 +353,10 @@
     padding: 0;
     text-align: left;
     transition: box-shadow 0.5s;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.24);
 
+    &:not(&--disabled) {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.24);
+    }
     &__info {
         width: 40%;
         padding-left: 10%;
@@ -442,36 +451,38 @@
         }
     }
     &--disabled {
+        cursor: default;
+
         @include themify($themes) {
             background-color: themed('btn_purchase_disabled_bg');
-            color: themed('btn_purchase_disabled_text');
+            color: themed('disabled_color');
         }
 
         .btn-purchase__trade-type {
             @include themify($themes) {
-                background-color: themed('purchase_detail_background_color');
+                background-color: themed('btn_purchase_disabled_accent');
             }
 
             svg {
                 @include themify($themes) {
-                    @include colorIcon(themed('btn_purchase_disabled_text'), themed('btn_purchase_disabled_text'));
+                    @include colorIcon(themed('disabled_color'), themed('disabled_color'));
                 }
             }
-            .btn-purchase__trade-type-text {
+            .btn-purchase__text {
                 @include themify($themes) {
-                    color: themed('btn_purchase_disabled_text');
+                    color: themed('disabled_color');
                 }
             }
         }
         .btn-purchase__return, .btn-purchase__profit {
             @include themify($themes) {
-                color: themed('btn_purchase_disabled_text');
+                color: themed('disabled_color');
             }
         }
         .btn-purchase__effect-main {
             @include themify($themes) {
                 background-color: themed('btn_purchase_disabled_accent');
-                color: themed('btn_purchase_disabled_text');
+                color: themed('disabled_color');
             }
         }
         .btn-purchase__effect-detail {
