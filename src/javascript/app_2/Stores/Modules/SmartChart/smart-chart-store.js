@@ -34,7 +34,8 @@ export default class SmartChartStore extends BaseStore {
     trade_chart_symbol               = null;
 
     constructor({ root_store }) {
-        super({ root_store, store_name });
+        const local_storage_properties = ['trade_chart_layout'];
+        super({ root_store, local_storage_properties, store_name });
     }
 
     @action.bound
@@ -71,6 +72,13 @@ export default class SmartChartStore extends BaseStore {
     setContractMode(is_contract_mode) {
         this.is_contract_mode = is_contract_mode;
         this.is_title_enabled = !is_contract_mode;
+    }
+
+    @action.bound
+    onMount = () => {
+        if (this.trade_chart_layout && Object.keys(this.trade_chart_layout).length) {
+            this.applySavedTradeChartLayout();
+        }
     }
 
     @action.bound
@@ -135,6 +143,7 @@ export default class SmartChartStore extends BaseStore {
         this.should_export_layout = false;
         this.should_import_layout = true;
         this.should_clear_chart   = false;
+        this.trade_chart_layout.isDone = action(() => this.trade_chart_layout = {});
 
         if (this.trade_chart_symbol !== this.root_store.modules.trade.symbol) {
             this.root_store.modules.trade.updateSymbol(this.trade_chart_symbol);

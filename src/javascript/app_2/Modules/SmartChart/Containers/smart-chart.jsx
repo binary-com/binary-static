@@ -14,6 +14,8 @@ import { symbolChange }        from '../Helpers/symbol';
 setSmartChartsPublicPath(Url.urlForStatic('js/smartcharts/'));
 
 class Chart extends React.Component {
+    componentDidMount() { this.props.onMount(); }
+
     componentWillUnmount() { this.props.onUnmount(); }
 
     chartControlsWidgets = () => (
@@ -82,6 +84,7 @@ Chart.propTypes = {
     is_socket_opened            : PropTypes.bool,
     is_title_enabled            : PropTypes.bool,
     markers_array               : PropTypes.array,
+    onMount                     : PropTypes.func,
     onSymbolChange              : PropTypes.func,
     onUnmount                   : PropTypes.func,
     scroll_to_epoch             : PropTypes.number,
@@ -107,6 +110,7 @@ export default connect(
         exportLayout        : modules.smart_chart.exportLayout,
         is_title_enabled    : modules.smart_chart.is_title_enabled,
         markers_array       : modules.smart_chart.markers_array,
+        onMount             : modules.smart_chart.onMount,
         onUnmount           : modules.smart_chart.onUnmount,
         settings            : modules.smart_chart.settings,
         should_clear_chart  : modules.smart_chart.should_clear_chart,
