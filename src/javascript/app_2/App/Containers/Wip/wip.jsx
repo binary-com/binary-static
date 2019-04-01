@@ -4,15 +4,16 @@ import URL           from '_common/url';
 import Localize      from 'App/Components/Elements/localize.jsx';
 import Button        from 'App/Components/Form/button.jsx';
 import { IconWip }   from 'Assets/Common/icon-wip.jsx';
+import { connect }   from 'Stores/connect';
 
 const onClick = () => {
     window.location.href = URL.websiteUrl();
 };
 
-const Wip = () => (
+const Wip = (ui) => (
     <div className='work-in-progress'>
         <div className='work-in-progress__content'>
-            <IconWip />
+            <IconWip theme={ui.is_dark_mode ? 'dark' : 'light'} />
             <div className='work-in-progress__header'>
                 <Localize str='Work in progress!' />
             </div>
@@ -29,4 +30,8 @@ const Wip = () => (
     </div>
 );
 
-export default Wip;
+export default connect(({ ui }) => (
+    {
+        is_dark_mode: ui.is_dark_mode_on,
+    }
+))(Wip);

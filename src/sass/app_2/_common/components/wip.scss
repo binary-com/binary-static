@@ -18,7 +18,7 @@
     &__header {
         @include typeface(--large-center-bold-black);
         text-transform: none;
-        margin: 0.8em;
+        margin: 0.8em 0 0.4em;
 
         @include themify($themes) {
             color: themed('wip_color');
@@ -28,6 +28,8 @@
         @include typeface(--title-center-normal-black);
         text-transform: none;
         margin: 0 1.6em 2.4em;
+        line-height: 1.3;
+        width: 200px;
 
         @include themify($themes) {
             color: themed('wip_color');
@@ -43,6 +45,7 @@
 
         &--span {
             font-weight: normal;
+            font-size: 1.6em;
 
             @include themify($themes) {
                 color: themed('wip_btn_color');
