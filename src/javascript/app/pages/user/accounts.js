@@ -174,9 +174,9 @@ const Accounts = (() => {
     };
 
     const sendCurrencyChangeReq = () => {
-        BinarySocket.send({
-            set_account_currency: getElementById('change_account_currencies').value,
-        }).then(res => {
+        const set_account_currency = getElementById('change_account_currencies').value || getElementById('change_account_currencies').getAttribute('data-value');
+
+        BinarySocket.send({ set_account_currency }).then(res => {
             if (res.error) {
                 showError(res.error.message, true);
             } else if (res.set_account_currency === 1) {
