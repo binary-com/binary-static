@@ -109,6 +109,15 @@
             color: $COLOR_WHITE;
             margin-top: 2px;
         }
+        &--lost {
+            background-color: $COLOR_RED;
+        }
+        &--won {
+            background-color: $COLOR_GREEN_1;
+        }
+        &--won, &--lost {
+            color: $COLOR_WHITE;
+        }
     }
 }
 
