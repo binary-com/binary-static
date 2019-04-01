@@ -6,14 +6,12 @@ import FullPageModal from 'App/Components/Elements/FullPageModal/full-page-modal
 import Localize      from 'App/Components/Elements/localize.jsx';
 import { connect }   from 'Stores/connect';
 
-const onCancel = () => window.open(URL.websiteUrl()) && this.props.setHasOnlyForwardingContracts(false);
-
 const MarketUnavailableModal = ({ is_visible, setHasOnlyForwardingContracts }) => (
     <FullPageModal
         cancel_button_text={localize('Go to SmartTrader')}
         confirm_button_text={localize('No, Stay on BinaryNex')}
         is_visible={is_visible}
-        onCancel={onCancel}
+        onCancel={() => window.open(URL.websiteUrl()) && setHasOnlyForwardingContracts(false)}
         onConfirm={() => setHasOnlyForwardingContracts(false)}
         title={localize('Market is unavailable')}
     >
