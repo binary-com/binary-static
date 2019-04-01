@@ -29,7 +29,7 @@ class LastDigitPrediction extends React.Component {
             DIGITODD  : (val) => val % 2,
             DIGITEVEN : (val) => !(val % 2),
         };
-
+        if (!contract_type) return null;
         return barrier_map[contract_type](num) ? num : null;
     };
 
