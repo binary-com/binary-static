@@ -8,7 +8,6 @@ import ServerTime             from '_common/base/server_time';
 import { WS }                 from 'Services';
 import { ChartBarrierStore }  from './chart-barrier-store';
 import { ChartMarkerStore }   from './chart-marker-store';
-import { tick_chart_types }   from './Constants/chart';
 import {
     barriersObjectToArray,
     isBarrierSupported }      from './Helpers/barriers';
