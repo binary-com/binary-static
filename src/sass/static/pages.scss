@@ -491,7 +491,7 @@ body #_elev_io {
 }
 
 #content {
-    &.cyberjaya, &.malta, &.labuan {
+    &.cyberjaya, &.malta, &.labuan, &.asuncion {
         &-content {
             margin-top: 0;
         }
@@ -541,7 +541,7 @@ body #_elev_io {
 }
 
 .location {
-    &-cyberjaya, &-labuan, &-malta {
+    &-cyberjaya, &-labuan, &-malta, &-asuncion {
         .introduction {
             h1 {
                 color: $COLOR_ORANGE;

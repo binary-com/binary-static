@@ -56,9 +56,20 @@
     }
     /* postcss-bem-linter: ignore */
     .btn--primary--orange {
+        transition: all 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
+
         /* postcss-bem-linter: ignore */
-        &:hover:not([disabled]) {
-            background: $COLOR_DARK_ORANGE;
+        &:hover:not([disabled]):before {
+            background: $COLOR_LIGHT_BLACK_4;
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            opacity: 0.4;
+            display: block;
+            border-radius: $BORDER_RADIUS;
         }
     }
     /* postcss-bem-linter: ignore */
@@ -68,8 +79,8 @@
 
         /* postcss-bem-linter: ignore */
         &:hover:not([disabled]) {
-            background: $COLOR_LIGHT_BLACK_4_SOLID;
             border: none;
+            background: $COLOR_LIGHT_BLACK_4;
         }
     }
     /* postcss-bem-linter: ignore */

@@ -24,8 +24,7 @@ const TradingDatePicker = ({
     symbol,
     validation_errors,
 }) => {
-    let error_messages,
-        max_date_duration,
+    let max_date_duration,
         min_date_expiry,
         has_today_btn,
         is_read_only;
@@ -49,12 +48,12 @@ const TradingDatePicker = ({
         }
         has_today_btn = false;
         is_read_only = false;
-        error_messages = validation_errors.duration;
     } else {
         has_today_btn = true;
         is_read_only = true;
-        error_messages = validation_errors.expiry_date;
     }
+
+    const error_messages = expiry_type === 'duration' ? validation_errors.duration : validation_errors.expiry_date;
 
     return (
         <DatePicker
