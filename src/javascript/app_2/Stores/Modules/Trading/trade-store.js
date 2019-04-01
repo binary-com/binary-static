@@ -230,7 +230,9 @@ export default class TradeStore extends BaseStore {
 
     @action.bound
     onHoverPurchase(is_over, contract_type) {
-        this.smart_chart.updateBarrierShade(is_over, contract_type);
+        if (this.is_purchase_enabled) {
+            this.smart_chart.updateBarrierShade(is_over, contract_type);
+        }
     }
 
     @action.bound

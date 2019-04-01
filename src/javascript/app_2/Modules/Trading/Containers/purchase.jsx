@@ -11,6 +11,7 @@ import PurchaseLock      from '../Components/Form/Purchase/PurchaseLock';
 import PurchaseButton    from '../Components/Elements/purchase-button.jsx';
 
 const Purchase = ({
+    basis,
     contract_type,
     currency,
     is_contract_mode,
@@ -24,6 +25,7 @@ const Purchase = ({
     togglePurchaseLock,
     proposal_info,
     trade_types,
+    validation_errors,
 }) => (
     Object.keys(trade_types).map((type, idx) => {
         const info        = proposal_info[type] || {};
@@ -31,8 +33,10 @@ const Purchase = ({
             || !is_trade_enabled
             || !info.id
             || !is_client_allowed_to_visit;
-        const is_high_low = /high_low/.test(contract_type.toLowerCase());
-        const is_loading  = !info.has_error && !info.id;
+        const is_high_low         = /high_low/.test(contract_type.toLowerCase());
+        const is_validation_error = Object.values(validation_errors).some(e => e.length);
+        const is_loading          = !is_validation_error && !info.has_error && !info.id;
+
         const purchase_button = (
             <PurchaseButton
                 currency={currency}
@@ -41,11 +45,13 @@ const Purchase = ({
                 is_disabled={is_disabled}
                 is_high_low={is_high_low}
                 is_loading={is_loading}
+                is_validation_error={is_validation_error}
                 onClickPurchase={onClickPurchase}
                 trade_types={trade_types}
                 type={type}
             />
         );
+
         const is_proposal_error = info.has_error && !info.has_error_details;
 
         return (
@@ -60,9 +66,11 @@ const Purchase = ({
                 }
                 <React.Fragment>
                     <ContractInfo
+                        basis={basis}
                         currency={currency}
                         proposal_info={info}
                         has_increased={info.has_increased}
+                        is_loading={is_loading}
                         is_visible={!is_contract_mode}
                     />
                     <div className={classNames('btn-purchase__shadow-wrapper', { 'btn-purchase__shadow-wrapper--disabled': (is_proposal_error || is_disabled) })}>
@@ -90,6 +98,7 @@ const Purchase = ({
 );
 
 Purchase.propTypes = {
+    basis                     : PropTypes.string,
     currency                  : PropTypes.string,
     is_client_allowed_to_visit: PropTypes.bool,
     is_contract_mode          : PropTypes.bool,
@@ -104,6 +113,7 @@ Purchase.propTypes = {
     resetPurchase             : PropTypes.func,
     togglePurchaseLock        : PropTypes.func,
     trade_types               : PropTypes.object,
+    validation_errors         : PropTypes.object,
 };
 
 export default connect(
@@ -111,6 +121,7 @@ export default connect(
         currency                  : client.currency,
         is_client_allowed_to_visit: client.is_client_allowed_to_visit,
         is_contract_mode          : modules.smart_chart.is_contract_mode,
+        basis                     : modules.trade.basis,
         contract_type             : modules.trade.contract_type,
         is_purchase_enabled       : modules.trade.is_purchase_enabled,
         is_trade_enabled          : modules.trade.is_trade_enabled,
@@ -120,6 +131,7 @@ export default connect(
         proposal_info             : modules.trade.proposal_info,
         purchase_info             : modules.trade.purchase_info,
         trade_types               : modules.trade.trade_types,
+        validation_errors         : modules.trade.validation_errors,
         is_purchase_confirm_on    : ui.is_purchase_confirm_on,
         is_purchase_locked        : ui.is_purchase_lock_on,
         togglePurchaseLock        : ui.togglePurchaseLock,
