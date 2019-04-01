@@ -4,75 +4,13 @@ import * as Logic from '../logic';
 
 describe('logic', () => {
     describe('getChartConfig', () => {
-        it('should work as expected with values leading to granularity 0', () => {
+        it('should work assign end_epoch and start_epoch correctly', () => {
             const contract_info = {
                 "exit_tick_time": 1544000100,
                 "date_start": 1544000000,
             };
             expect(Logic.getChartConfig(contract_info)).to.eql({
-                granularity: 0,
-                chart_type: 'mountain',
                 end_epoch: 1544000100,
-                start_epoch: 1544000000,
-            });
-        });
-        it('should work as expected with values leading to granularity 120', () => {
-            const contract_info = {
-                "exit_tick_time": 1544005000,
-                "date_start": 1544000000,
-            };
-            expect(Logic.getChartConfig(contract_info)).to.eql({
-                granularity: 120,
-                chart_type: 'candle',
-                end_epoch: 1544005000,
-                start_epoch: 1544000000,
-            });
-        });
-        it('should work as expected with values leading to granularity 600', () => {
-            const contract_info = {
-                "exit_tick_time": 1544010000,
-                "date_start": 1544000000,
-            };
-            expect(Logic.getChartConfig(contract_info)).to.eql({
-                granularity: 600,
-                chart_type: 'candle',
-                end_epoch: 1544010000,
-                start_epoch: 1544000000,
-            });
-        });
-        it('should work as expected with values leading to granularity 900', () => {
-            const contract_info = {
-                "exit_tick_time": 1544025000,
-                "date_start": 1544000000,
-            };
-            expect(Logic.getChartConfig(contract_info)).to.eql({
-                granularity: 900,
-                chart_type: 'candle',
-                end_epoch: 1544025000,
-                start_epoch: 1544000000,
-            });
-        });
-        it('should work as expected with values leading to granularity 14400', () => {
-            const contract_info = {
-                "exit_tick_time": 1546000000,
-                "date_start": 1544000000,
-            };
-            expect(Logic.getChartConfig(contract_info)).to.eql({
-                granularity: 14400,
-                chart_type: 'candle',
-                end_epoch: 1546000000,
-                start_epoch: 1544000000,
-            });
-        });
-        it('should work as expected when duration is more than 30 * 24 * 3600', () => {
-            const contract_info = {
-                "exit_tick_time": 1546592100,
-                "date_start": 1544000000,
-            };
-            expect(Logic.getChartConfig(contract_info)).to.eql({
-                granularity: 86400,
-                chart_type: 'candle',
-                end_epoch: 1546592100,
                 start_epoch: 1544000000,
             });
         });
