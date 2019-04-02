@@ -16,22 +16,24 @@
         width: 290px;
         height: 544px;
         right: calc(100% + 10px);
-        top: -55px;
+        top: -66px;
         z-index: 2;
-        background: $COLOR_LIGHT_BLACK_4_SOLID;
         border-radius: 4px;
         padding: 1.6em;
         box-shadow: 0 2px 8px 0 $COLOR_LIGHT_BLACK_3;
         display: flex;
         flex-direction: column;
+        @include themify($themes) {
+            background: themed('background_container_color');
+        }
     }
     &__choose-button {
         background: $COLOR_ORANGE;
-        margin: 1em 0;
+        margin: 1.6em 0;
         width: 100%;
 
         span {
-            @include typeface(--paragraph-center-normal-active, uppercase);
+            @include typeface(--paragraph-center-bold-active, uppercase);
         }
     }
     &__content {
@@ -42,6 +44,9 @@
         p {
             @include typeface(--paragraph-left-normal-black, none);
             @include toEm(margin-bottom, 8px, 1.4em);
+            @include themify($themes) {
+                color: themed('text_primary_color');
+            }
         }
     }
     &__gif {
@@ -49,15 +54,24 @@
         height: 140px;
         background-color: $COLOR_WHITE;
         border-radius: 4px;
+        @include themify($themes) {
+            background-color: themed('container_color');
+            color: themed('disabled_color');
+        }
     }
     &__header {
         display: flex;
         align-items: center;
         margin-bottom: 0.8em;
 
+        /* postcss-bem-linter: ignore */
         .title {
             @include typeface(--paragraph-left-bold-black);
             @include toEm(margin-left, 8px, 1.4em);
+            @include themify($themes) {
+                color: themed('text_primary_color');
+            }
+            cursor: default;
         }
 
         /* postcss-bem-linter: ignore */
@@ -100,11 +114,13 @@
         border-radius: 50%;
         display: inline-block;
         margin: 0 0.4em;
-        background-color: $COLOR_WHITE;
         cursor: pointer;
+        @include themify($themes) {
+            background-color: themed('slider_background_color');
 
-        &--active {
-            background-color: $COLOR_LIGHT_GRAY_1;
+            &--active {
+                background-color: themed('border_hover_color');
+            }
         }
     }
     &__icon {
