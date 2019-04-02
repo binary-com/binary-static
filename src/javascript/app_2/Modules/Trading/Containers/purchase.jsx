@@ -57,8 +57,6 @@ const Purchase = ({
             <Fieldset
                 className='trade-container__fieldset purchase-container__option'
                 key={idx}
-                onMouseEnter={() => { onHoverPurchase(true, type); }}
-                onMouseLeave={() => { onHoverPurchase(false); }}
             >
                 {(is_purchase_locked && idx === 0) &&
                 <PurchaseLock onClick={togglePurchaseLock} />
@@ -72,7 +70,11 @@ const Purchase = ({
                         is_loading={is_loading}
                         is_visible={!is_contract_mode}
                     />
-                    <div className={classNames('btn-purchase__shadow-wrapper', { 'btn-purchase__shadow-wrapper--disabled': (is_proposal_error || is_disabled) })}>
+                    <div
+                        className={classNames('btn-purchase__shadow-wrapper', { 'btn-purchase__shadow-wrapper--disabled': (is_proposal_error || is_disabled) })}
+                        onMouseEnter={() => { onHoverPurchase(true, type); }}
+                        onMouseLeave={() => { onHoverPurchase(false); }}
+                    >
                         {is_proposal_error &&
                         <Tooltip message={info.message} alignment='left' className='tooltip--error-secondary' />
                         }
