@@ -26,6 +26,7 @@
         position: relative;
         cursor: help;
         display: block;
+        text-decoration: none;
         @include tooltipColor($COLOR_LIGHT_BLACK_1);
 
         &:hover:after, &:hover:before {
