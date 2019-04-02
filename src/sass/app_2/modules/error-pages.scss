@@ -6,11 +6,13 @@
         margin-top: 4em;
     }
     &__box {
+        @include themify($themes) {
+            background: themed('background_container_color');
+            border: 1px solid themed('background_container_color');
+        }
         padding: 5em;
         text-align: center;
-        background: $COLOR_LIGHT_BLACK_4_SOLID;
         border-radius: $BORDER_RADIUS;
-        border: 1px solid $COLOR_LIGHT_BLACK_4;
 
         /* postcss-bem-linter: ignore */
         .inline-icon {
@@ -18,12 +20,17 @@
         }
     }
     &__header {
-        color: $COLOR_DARK_BLUE_5;
+        @include themify($themes) {
+            color: themed('text_color');
+        }
         font-weight: 400;
         margin-bottom: 0.5em;
+
     }
     &__message {
-        color: $COLOR_LIGHT_BLACK_1;
+        @include themify($themes) {
+            color: themed('text_primary_color');
+        }
         opacity: 0.75;
         font-size: 1.6em;
         margin-top: 0.5em;

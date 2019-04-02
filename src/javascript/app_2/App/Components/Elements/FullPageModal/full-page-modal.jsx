@@ -19,12 +19,14 @@ const FullPageModal = ({
                     <h1 className='full-page-modal__header'>{title}</h1>
                     <p className='full-page-modal__content'>{children}</p>
                     <div className='full-page-modal__footer'>
-                        <Button
-                            className={classNames('full-page-modal__button', 'btn--secondary btn--secondary--orange')}
-                            has_effect
-                            text={cancel_button_text}
-                            onClick={onCancel}
-                        />
+                        { onCancel &&
+                            <Button
+                                className={classNames('full-page-modal__button', 'btn--secondary btn--secondary--orange')}
+                                has_effect
+                                text={cancel_button_text}
+                                onClick={onCancel}
+                            />
+                        }
                         <Button
                             className={classNames('full-page-modal__button', 'btn--primary btn--primary--orange')}
                             has_effect

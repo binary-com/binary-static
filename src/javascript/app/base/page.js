@@ -4,7 +4,6 @@ const Client           = require('./client');
 const Contents         = require('./contents');
 const Header           = require('./header');
 const Footer           = require('./footer');
-const InterviewPopup   = require('./interview_popup');
 const Menu             = require('./menu');
 const BinarySocket     = require('./socket');
 const TrafficSource    = require('../common/traffic_source');
@@ -82,7 +81,8 @@ const Page = (() => {
                 Language.setCookie(Language.urlLang());
 
                 if (!ClientBase.get('is_virtual')) {
-                    InterviewPopup.onLoad();
+                    // TODO: uncomment below to enable interview popup dialog
+                    // InterviewPopup.onLoad();
                 }
             }
             Header.onLoad();
