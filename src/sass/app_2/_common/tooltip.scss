@@ -8,7 +8,7 @@
     &__balloon-icon {
         position: absolute;
         top: 0;
-        left: -525px;
+        left: -319px;
         z-index: 999;
         opacity: 0;
         transition: opacity 0.3s;
@@ -20,10 +20,9 @@
         }
     }
     &[data-tooltip] {
-        position: relative;
         cursor: help;
         display: block;
-        @include tooltipColor($COLOR_LIGHT_BLACK_1);
+        @include themifiedTooltipColor('tooltip_background_color');
 
         &:hover:after, &:hover:before {
             opacity: 0.96;
@@ -37,19 +36,21 @@
             bottom: 100%;
             left: 50%;
             position: absolute;
-            z-index: 10;
+            z-index: 1;
             transform: translate(-50%, 1em);
             transform-origin: top;
         }
         &:before {
             @include typeface(--small-left-normal-active, none);
+            line-height: 1.5;
             text-decoration: none;
             letter-spacing: normal;
             border-radius: 4px;
             content: attr(data-tooltip);
-            padding: 0.8em;
-            white-space: nowrap;
+            padding: 0.7em;
             margin-bottom: 10px;
+            width: max-content;
+            max-width: 280px;
         }
         &:after {
             border: solid transparent;
@@ -105,7 +106,34 @@
             }
         }
     }
+    &--with-label[data-tooltip] {
+        &:before, &:after {
+            margin-top: 1em;
+        }
+    }
     &--error[data-tooltip] {
-        @include tooltipColor($COLOR_RED);
+        @include themifiedTooltipColor('tooltip_background_error');
+
+        &, &[data-tooltip-pos=left] {
+            // always show error tooltips, not just on hover
+            &:after, &:before {
+                opacity: 0.96;
+                pointer-events: auto;
+                transform: translate(0, -50%);
+            }
+        }
+    }
+    &--error-secondary[data-tooltip] {
+        @include themifiedTooltipColor('tooltip_background_color');
+
+        &, &[data-tooltip-pos=left] {
+            // always show error tooltips, not just on hover
+            &:after, &:before {
+                opacity: 0.96;
+                pointer-events: auto;
+                transform: translate(0, -50%);
+                top: 55%;
+            }
+        }
     }
 }
