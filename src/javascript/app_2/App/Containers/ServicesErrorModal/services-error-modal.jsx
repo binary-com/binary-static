@@ -30,7 +30,9 @@ const ServicesErrorModal = ({
 };
 
 ServicesErrorModal.propTypes = {
-    services_error: PropTypes.object,
+    is_services_error_visible: PropTypes.bool,
+    services_error           : PropTypes.object,
+    toggleServicesErrorModal : PropTypes.func,
 };
 
 export default connect (
