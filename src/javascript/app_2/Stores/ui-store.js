@@ -24,7 +24,7 @@ export default class UIStore extends BaseStore {
 
     // Purchase Controls
     @observable is_purchase_confirm_on    = false;
-    @observable is_purchase_error_visible = false;
+    @observable is_services_error_visible = false;
     @observable is_purchase_lock_on       = false;
 
     // SmartCharts Controls
@@ -185,8 +185,8 @@ export default class UIStore extends BaseStore {
     }
 
     @action.bound
-    togglePurchaseErrorModal(is_visible) {
-        this.is_purchase_error_visible = is_visible;
+    toggleServicesErrorModal(is_visible) {
+        this.is_services_error_visible = is_visible;
     }
 
     @action.bound

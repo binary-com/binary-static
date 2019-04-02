@@ -95,9 +95,8 @@ export default class TradeStore extends BaseStore {
     @observable last_digit = 5;
 
     // Purchase
-    @observable proposal_info        = {};
-    @observable purchase_info        = {};
-    @observable purchase_error       = {};
+    @observable proposal_info = {};
+    @observable purchase_info = {};
 
     // Query string
     query = '';
@@ -257,10 +256,11 @@ export default class TradeStore extends BaseStore {
                     }
                     GTM.pushPurchaseData(contract_data, this.root_store);
                 } else if (response.error) {
-                    this.purchase_error = {
+                    this.root_store.common.services_error = {
+                        type: response.msg_type,
                         ...response.error,
                     };
-                    this.root_store.ui.togglePurchaseErrorModal(true);
+                    this.root_store.ui.toggleServicesErrorModal(true);
                 }
                 WS.forgetAll('proposal');
                 this.purchase_info = response;
