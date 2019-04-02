@@ -12,6 +12,8 @@ import Footer                      from './Containers/Layout/footer.jsx';
 import Header                      from './Containers/Layout/header.jsx';
 import Routes                      from './Containers/Routes/routes.jsx';
 import DenialOfServiceModal        from './Containers/DenialOfServiceModal';
+import MarketUnavailableModal      from './Containers/MarketUnavailableModal'
+import ServicesErrorModal          from './Containers/ServicesErrorModal';
 import Wip                         from './Containers/Wip';
 
 const App = ({ root_store }) => (
@@ -31,6 +33,8 @@ const App = ({ root_store }) => (
                                 <ToastMessage position={POSITIONS.TOP_RIGHT} />
                             </AppContents>
                             <DenialOfServiceModal />
+                            <MarketUnavailableModal />
+                            <ServicesErrorModal />
                         </ErrorBoundary>
                         <footer className='footer'>
                             <Footer />

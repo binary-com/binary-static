@@ -49,10 +49,12 @@
 
 /** @define hr */
 .hr {
+    @include themify($themes) {
+        border-top: 1px solid themed('divider_color');
+    }
     display: block;
     height: 1px;
     border: 0;
-    border-top: 1px solid $COLOR_LIGHT_BLACK_4;
     margin: 0.5em 0;
     padding: 0;
 }
@@ -60,4 +62,5 @@
 /** @define binary-app */
 .binary-app {
     height: 100%;
+    overflow: hidden;
 }
