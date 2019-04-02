@@ -1,6 +1,8 @@
 export const CONTRACT_SHADES = {
     CALL       : 'ABOVE',
     PUT        : 'BELOW',
+    CALLE      : 'ABOVE',
+    PUTE       : 'BELOW',
     EXPIRYRANGE: 'BETWEEN',
     EXPIRYMISS : 'OUTSIDE',
     RANGE      : 'BETWEEN',
