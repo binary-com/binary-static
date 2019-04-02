@@ -222,6 +222,7 @@ export default class TradeStore extends BaseStore {
             throw new Error(`Invalid Argument: ${name}`);
         }
 
+        this.validateAllProperties();
         this.processNewValuesAsync({ [name]: value }, true);
     }
 

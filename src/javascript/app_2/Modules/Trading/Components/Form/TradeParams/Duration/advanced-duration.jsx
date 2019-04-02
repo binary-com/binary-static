@@ -101,7 +101,6 @@ const AdvancedDuration = ({
                         <TradingDatePicker
                             name='expiry_date'
                             is_24_hours_contract={is_24_hours_contract}
-                            // validation_errors={validation_errors.expiry_date} TODO: add validation_errors for expiry date
                         />
                         {is_24_hours_contract &&
                             <TradingTimePicker />

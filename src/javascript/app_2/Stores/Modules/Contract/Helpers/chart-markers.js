@@ -59,9 +59,9 @@ const addTickMarker = (SmartChartStore, contract_info) => {
     const tick_stream = unique(contract_info.tick_stream, 'epoch').map(addLabelAlignment);
 
     tick_stream.forEach((tick, idx) => {
-        const is_entry_spot  = idx === 0;
+        const is_entry_spot  = idx === 0 && +tick.epoch !== contract_info.exit_tick_time;
         const is_middle_spot = idx > 0 && +tick.epoch !== +contract_info.exit_tick_time;
-        const is_exit_spot   = idx > 0 && +tick.epoch === +contract_info.exit_tick_time;
+        const is_exit_spot   = +tick.epoch === +contract_info.exit_tick_time;
 
         let marker_config;
         if (is_entry_spot) marker_config = createMarkerSpotEntry(contract_info);
