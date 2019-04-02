@@ -22,7 +22,12 @@ const SetCurrency = (() => {
         $('#upgrade_to_mf').setVisibility(can_upgrade && type === 'financial');
 
         if (Client.get('currency')) {
-            if (is_new_account) {
+            const has_changed_currency = localStorage.getItem('has_changed_currency');
+            if (has_changed_currency) {
+                $('#set_currency_loading').remove();
+                $('#deposit_btn, #set_currency, #show_new_account').setVisibility(1);
+                localStorage.removeItem('has_changed_currency');
+            } else if (is_new_account) {
                 $('#set_currency_loading').remove();
                 $('#deposit_btn, #set_currency').setVisibility(1);
             } else {
