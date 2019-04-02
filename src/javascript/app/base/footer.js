@@ -15,14 +15,21 @@ const Footer = (() => {
             if (Client.isLoggedIn()) {
                 showWarning((Client.get('landing_company_shortcode') === 'maltainvest' ||
                     (Client.get('is_virtual') && State.getResponse('landing_company.financial_company.shortcode') === 'maltainvest')));
+                showAgeRestrictionSign(/iom|maltainvest/.test(Client.get('landing_company_shortcode')) ||
+                    (Client.get('is_virtual') && /iom|maltainvest/.test(Client.get('landing_company_shortcode'))));
             } else {
                 showWarning(isEuCountry());
+                showAgeRestrictionSign(isEuCountry());
             }
         });
     };
 
     const showWarning = (should_show_warning) => {
         $('#footer-regulatory .eu-only').setVisibility(should_show_warning);
+    };
+
+    const showAgeRestrictionSign = (should_show_age_restriction_sign) => {
+        $('#footer-regulatory .age-restriction').setVisibility(should_show_age_restriction_sign);
     };
 
     const clearNotification = () => {
