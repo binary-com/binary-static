@@ -1,5 +1,6 @@
 import classNames        from 'classnames';
 import React             from 'react';
+import PropTypes         from 'prop-types';
 import { localize }      from '_common/localize';
 import Money             from 'App/Components/Elements/money.jsx';
 import Button            from 'App/Components/Form/button.jsx';
@@ -55,5 +56,17 @@ const PurchaseButton = ({
         </React.Fragment>
     </Button>
 );
+
+PurchaseButton.propTypes = {
+    currency        : PropTypes.string,
+    info            : PropTypes.object,
+    is_contract_mode: PropTypes.bool,
+    is_disabled     : PropTypes.bool,
+    is_high_low     : PropTypes.bool,
+    is_loading      : PropTypes.bool,
+    onClickPurchase : PropTypes.func,
+    trade_types     : PropTypes.object,
+    types           : PropTypes.string,
+};
 
 export default PurchaseButton;
