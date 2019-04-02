@@ -2,8 +2,11 @@
 .tooltip {
     text-decoration: underline;
     text-decoration-style: dotted;
-    color: $COLOR_DARK_BLUE_5;
     font-size: inherit;
+    @include themify($themes) {
+        color: themed('text_active_color');
+        @include tooltipColor(themed('background_tooltip_color'));
+    }
 
     &__balloon-icon {
         position: absolute;

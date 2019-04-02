@@ -24,5 +24,8 @@
         &.border_hover_color {
             @include colorIcon(themed('border_hover_color'));
         }
+        &.secondary {
+            @include colorIcon(themed('text_secondary_color'));
+        }
     }
 }

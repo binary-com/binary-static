@@ -60,8 +60,11 @@
         border-radius: $BORDER_RADIUS;
         @include themify($themes) {
             background: themed('container_color');
-            border-color: themed('container_color');
             color: themed('text_color');
+
+            &:hover {
+                border-color: themed('border_hover_color');
+            }
         }
     }
     &__loader {
@@ -148,7 +151,7 @@
                 }
             }
             &-basis {
-                @include typeface(--small-left-normal-black);
+                @include typeface(--paragraph-left-normal-black);
                 margin-left: 0;
                 font-weight: normal;
                 @include themify($themes) {
@@ -172,9 +175,11 @@
         }
         &-tooltip {
             &-i {
-                @extend %inline-icon.disabled;
+                @extend %inline-icon.secondary;
             }
             &[data-tooltip] {
+                text-decoration: none;
+
                 &:before, &:after {
                     right: 230px !important;
                 }
@@ -182,6 +187,11 @@
                     padding-left: 3em;
                     white-space: normal;
                     width: 265px;
+                }
+            }
+            &:hover {
+                .trade-container__price-tooltip-i {
+                    @extend %inline-icon.white;
                 }
             }
         }
@@ -238,7 +248,6 @@
             margin-top: 0.8em;
         }
         &--display {
-            margin-top: 0;
             border-radius: $BORDER_RADIUS 0 0 $BORDER_RADIUS;
 
             /* postcss-bem-linter: ignore */
@@ -519,5 +528,13 @@
     }
     &__shadow-wrapper:hover:after {
         opacity: 0;
+    }
+}
+
+/** @define duration-container */
+.duration-container {
+    /* postcss-bem-linter: ignore */
+    .dropdown-container {
+        margin-top: 0.8em;
     }
 }
