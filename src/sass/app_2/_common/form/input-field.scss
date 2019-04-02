@@ -176,9 +176,6 @@
     &--error {
         color: $COLOR_RED;
         border: 1px solid $COLOR_RED !important;
-
-        &:active, &:focus {
-            box-shadow: 0 0 0 2px rgba(226, 28, 76, 0.3) !important;
-        }
+        box-shadow: 0 0 0 2px rgba(227, 28, 75, 0.32) !important;
     }
 }
