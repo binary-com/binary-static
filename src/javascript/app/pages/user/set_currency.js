@@ -51,10 +51,15 @@ const SetCurrency = (() => {
                 $('#fiat_currencies').setVisibility(1);
                 $('#fiat_currency_list').html(fiat_currencies);
             }
-            const crytpo_currencies = $cryptocurrencies.html();
-            if (crytpo_currencies) {
+            const crypto_currencies = $cryptocurrencies.html();
+            if (crypto_currencies) {
                 $('#crypto_currencies').setVisibility(1);
-                $('#crypto_currency_list').html(crytpo_currencies);
+                $('#crypto_currency_list').html(crypto_currencies);
+            }
+            if ((!fiat_currencies && crypto_currencies) || (fiat_currencies && !crypto_currencies)) {
+                $('#set_currency_text').text(localize('Please select the currency for this account:'));
+            } else {
+                $('#set_currency_text').text(localize('Do you want this to be a fiat account or crypto account? Please choose one:'));
             }
 
             $('#set_currency_loading').remove();

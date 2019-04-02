@@ -1,7 +1,6 @@
 /* eslint-disable no-nested-ternary */
 const Client           = require('../../base/client');
 const BinarySocket     = require('../../base/socket');
-const Dialog           = require('../../common/attach_dom/dialog');
 const isCryptocurrency = require('../../common/currency').isCryptocurrency;
 const elementInnerHtml = require('../../../_common/common_functions').elementInnerHtml;
 const getElementById   = require('../../../_common/common_functions').getElementById;
@@ -102,33 +101,7 @@ const Cashier = (() => {
         elementInnerHtml(el_current_hint, currency_hint);
         el_currency_image.src = urlForStatic(`/images/pages/cashier/icons/icon-${currency}.svg`);
 
-        if (has_no_mt5 && has_no_tx && !isCryptocurrency(currency)) {
-            enablePopupOnDeposit();
-        }
-
         el_acc_currency.setVisibility(1);
-    };
-
-    const enablePopupOnDeposit = () => {
-        const $deposit_btn = $('#deposit_btn_cashier > .deposit');
-        const setEventHandler = () => $deposit_btn.one('click', showPopup);
-
-        const showPopup = (e) => {
-            e.preventDefault();
-
-            Dialog.confirm({
-                id                : 'deposit_currency_change_popup_container',
-                ok_text           : localize('Yes I\'m sure'),
-                cancel_text       : localize('Cancel'),
-                localized_title   : localize('Are you sure?'),
-                localized_message : localize('You will not be able to change your fiat account’s currency after making this deposit. Are you sure you want to proceed?'),
-                localized_footnote: localize('[_1]No, change my fiat account’s currency now[_2]', [`<a href=${urlFor('user/accounts')}>`, '</a>']),
-                onConfirm         : () => $deposit_btn.click(),
-                onAbort           : setEventHandler,
-            });
-        };
-
-        setEventHandler();
     };
 
     const onLoad = () => {
