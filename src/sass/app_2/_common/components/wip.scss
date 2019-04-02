@@ -47,6 +47,7 @@
         &--span {
             font-weight: normal;
             font-size: 1.6em;
+            text-transform: none;
 
             @include themify($themes) {
                 color: themed('wip_btn_color');
