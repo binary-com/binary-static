@@ -23,7 +23,6 @@ const payment_methods_list = [
     { image: 'bitcoin',                 param: '?anchor=bitcoin',        dataShow: '-eucountry' },
     { image: 'tether',                  param: '?anchor=tether',         dataShow: '-eucountry' },
     { image: 'litecoin',                param: '?anchor=litecoin',       dataShow: '-eucountry' },
-    { image: 'bitcoin_cash',            param: '?anchor=bitcoin-cash',   dataShow: '-eucountry' },
 ];
 
 const PaymentLogo = () => payment_methods_list.map((item, inx) => (
