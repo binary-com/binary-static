@@ -3,7 +3,7 @@ import PropTypes     from 'prop-types';
 import { localize }  from '_common/localize';
 import FullPageModal from 'App/Components/Elements/FullPageModal/full-page-modal.jsx';
 import { connect }   from 'Stores/connect';
-import { title }    from './constants';
+import { title }     from './constants';
 
 const ServicesErrorModal = ({
     is_services_error_visible,

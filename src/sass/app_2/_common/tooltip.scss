@@ -8,7 +8,7 @@
     &__balloon-icon {
         position: absolute;
         top: 0;
-        left: -525px;
+        left: -319px;
         z-index: 999;
         opacity: 0;
         transition: opacity 0.3s;
@@ -36,7 +36,7 @@
             bottom: 100%;
             left: 50%;
             position: absolute;
-            z-index: 10;
+            z-index: 1;
             transform: translate(-50%, 1em);
             transform-origin: top;
         }
@@ -51,6 +51,7 @@
             margin-bottom: 10px;
             width: max-content;
             max-width: 280px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.24);
         }
         &:after {
             border: solid transparent;
