@@ -205,19 +205,6 @@ const DepositWithdraw = (() => {
         });
     };
 
-    const canChangeCurrency = () => {
-        const statement  = State.getResponse('statement');
-        const has_no_mt5 = State.getResponse('mt5_login_list').length === 0;
-        const has_no_tx  = (statement.count === 0 && statement.transactions.length === 0);
-
-        // Current BE requirements for user successfully changing their account's currency:
-        // 1. User must not have made any transactions
-        // 2. User must not have any MT5 account
-        // 3. Not be a crypto account
-        // 4. Not be a virtual account
-        return !Client.get('is_virtual') && has_no_tx && has_no_mt5 && !Currency.isCryptocurrency(Client.get('currency'));
-    };
-
     const handleCashierResponse = (response) => {
         hideAll('#messages');
         const error = response.error;
@@ -251,7 +238,7 @@ const DepositWithdraw = (() => {
                     showError('custom_error', error.message);
             }
         } else {
-            if (canChangeCurrency()) {
+            if (Client.canChangeCurrency(State.getResponse('statement'), State.getResponse('mt5_login_list'))) {
                 Dialog.confirm({
                     id                : 'deposit_currency_change_popup_container',
                     ok_text           : localize('Yes I\'m sure'),

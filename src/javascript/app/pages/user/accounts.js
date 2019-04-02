@@ -57,7 +57,7 @@ const Accounts = (() => {
                 element_to_show = '#new_accounts_wrapper';
             }
 
-            if (canChangeCurrency()) {
+            if (Client.canChangeCurrency(State.getResponse('statement'), State.getResponse('mt5_login_list'))) {
                 addChangeCurrencyOption();
                 element_to_show = '#new_accounts_wrapper';
             }
@@ -79,20 +79,6 @@ const Accounts = (() => {
     const getCompanyName = account => Client.getLandingCompanyValue(account, landing_company, 'name');
 
     const getCompanyCountry = account => Client.getLandingCompanyValue(account, landing_company, 'country');
-
-    const canChangeCurrency = () => {
-        const statement  = State.getResponse('statement');
-        const has_no_mt5 = State.getResponse('mt5_login_list').length === 0;
-        const has_no_tx  = (statement.count === 0 && statement.transactions.length === 0);
-        const currency    = Client.get('currency');
-
-        // Current BE requirements for user successfully changing their account's currency:
-        // 1. User must not have made any transactions
-        // 2. User must not have any MT5 account
-        // 3. Not be a crypto account
-        // 4. Not be a virtual account
-        return !Client.get('is_virtual') && has_no_tx && has_no_mt5 && !isCryptocurrency(currency);
-    };
 
     const populateNewAccounts = (upgrade_info) => {
         const table_headers = TableHeaders.get();
@@ -119,8 +105,8 @@ const Accounts = (() => {
     };
 
     const addChangeCurrencyOption = () => {
-        const table_headers        = TableHeaders.get();
-        const loginid              = Client.get('loginid');
+        const table_headers = TableHeaders.get();
+        const loginid       = Client.get('loginid');
 
         // Set the table row
         $(form_id).find('tbody')

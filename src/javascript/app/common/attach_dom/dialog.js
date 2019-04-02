@@ -27,8 +27,8 @@ const Dialog = (() => {
                         elementInnerHtml(container.querySelector($selector), item);
                     };
 
-                    // Set title if `localized_title` field in `options` param exists
-                    if (options.localized_title && el_title) {
+                    const has_title = options.localized_title && el_title;
+                    if (has_title) {
                         el_title.setVisibility(1);
                         setMessage('localized_title', '#dialog_title');
                     }
@@ -36,8 +36,8 @@ const Dialog = (() => {
                     // Set dialog message
                     setMessage('localized_message', '#dialog_message');
 
-                    // Set footnote if `localized_footnote` field in `options` param exists
-                    if (options.localized_footnote && el_footnote) {
+                    const has_footnote = options.localized_footnote && el_footnote;
+                    if (has_footnote) {
                         el_footnote.setVisibility(1);
                         setMessage('localized_footnote', '#dialog_footnote');
 

@@ -1,4 +1,3 @@
-/* eslint-disable no-nested-ternary */
 const Client           = require('../../base/client');
 const BinarySocket     = require('../../base/socket');
 const isCryptocurrency = require('../../common/currency').isCryptocurrency;
@@ -6,9 +5,7 @@ const elementInnerHtml = require('../../../_common/common_functions').elementInn
 const getElementById   = require('../../../_common/common_functions').getElementById;
 const localize         = require('../../../_common/localize').localize;
 const State            = require('../../../_common/storage').State;
-const paramsHash       = require('../../../_common/url').paramsHash;
-const urlFor           = require('../../../_common/url').urlFor;
-const urlForStatic     = require('../../../_common/url').urlForStatic;
+const Url              = require('../../../_common/url');
 const getPropertyValue = require('../../../_common/utility').getPropertyValue;
 
 const Cashier = (() => {
@@ -16,7 +13,7 @@ const Cashier = (() => {
 
     const showContent = () => {
         Client.activateByClientType();
-        const anchor = paramsHash().anchor;
+        const anchor = Url.paramsHash().anchor;
         let $toggler;
         if (anchor) {
             $toggler = $(`[data-anchor='${anchor}']`);
@@ -58,7 +55,7 @@ const Cashier = (() => {
             const classes   = ['toggle', 'button-disabled'];
             const new_el    = { class: $a.attr('class').replace(classes[+can_topup], classes[1 - +can_topup]), html: $a.html(), id: $a.attr('id') };
             if (can_topup) {
-                href        = href || urlFor('/cashier/top_up_virtualws');
+                href        = href || Url.urlFor('/cashier/top_up_virtualws');
                 new_el.href = href;
             }
             el_virtual_topup_info.innerText = can_topup
@@ -75,31 +72,31 @@ const Cashier = (() => {
         const el_current_currency = getElementById('account_currency_current');
         const el_current_hint     = getElementById('account_currency_hint');
 
-        const missingCriteria     = (has_mt5, has_tx) => {
-            const existing_mt5_msg = localize('You can no longer change the currency because you’ve created an MT5 account. [_1]Manage your accounts[_2].', [`<a href=${urlFor('user/accounts')}>`, '</a>']);
-            const existing_tx_msg  = localize('You can no longer change the currency because you’ve made a first-time deposit. [_1]Manage your accounts[_2].', [`<a href=${urlFor('user/accounts')}>`, '</a>']);
+        const missingCriteria = (has_mt5, has_tx) => {
+            const existing_mt5_msg = localize('You can no longer change the currency because you\'ve created an MT5 account. [_1]Manage your accounts[_2].', [`<a href=${Url.urlFor('user/accounts')}>`, '</a>']);
+            const existing_tx_msg  = localize('You can no longer change the currency because you\'ve made a first-time deposit. [_1]Manage your accounts[_2].', [`<a href=${Url.urlFor('user/accounts')}>`, '</a>']);
 
-            return !has_mt5 && has_tx ? existing_tx_msg : (has_mt5 && !has_tx ? existing_mt5_msg : existing_tx_msg);
+            return has_mt5 && !has_tx ? existing_mt5_msg : existing_tx_msg;
         };
 
-        // Set messages based on if currency is crypto or fiat
+        // Set messages based on currency being crypto or fiat
         // If fiat, set message based on if they're allowed to change currency or not
         // Condition is to have no MT5 accounts *and* have no transactions
-        const currency_message    = isCryptocurrency(currency)
+        const currency_message = isCryptocurrency(currency)
             ? localize('This is your [_1] account.', `${currency}`)
             : has_no_mt5 && has_no_tx
-                ? localize('Your fiat account’s currency is currently set to [_1].', `${currency}`)
-                : localize('Your fiat account’s currency is set to [_1].', `${currency}`);
+                ? localize('Your fiat account\'s currency is currently set to [_1].', `${currency}`)
+                : localize('Your fiat account\'s currency is set to [_1].', `${currency}`);
 
-        const currency_hint       = isCryptocurrency(currency)
-            ? localize('Don\'t want to trade in [_1]? You can open another cryptocurrency account. [_2]Manage your accounts[_3].', [`${currency}`, `<a href=${urlFor('user/accounts')}>`, '</a>'])
+        const currency_hint = isCryptocurrency(currency)
+            ? localize('Don\'t want to trade in [_1]? You can open another cryptocurrency account. [_2]Manage your accounts[_3].', [`${currency}`, `<a href=${Url.urlFor('user/accounts')}>`, '</a>'])
             : has_no_mt5 && has_no_tx
-                ? localize('You can set a new currency before you deposit for the first time or create an MT5 account. [_1]Manage your accounts[_2].', [`<a href=${urlFor('user/accounts')}>`, '</a>'])
+                ? localize('You can set a new currency before you deposit for the first time or create an MT5 account. [_1]Manage your accounts[_2].', [`<a href=${Url.urlFor('user/accounts')}>`, '</a>'])
                 : missingCriteria(!has_no_mt5, !has_no_tx);
 
         elementInnerHtml(el_current_currency, currency_message);
         elementInnerHtml(el_current_hint, currency_hint);
-        el_currency_image.src = urlForStatic(`/images/pages/cashier/icons/icon-${currency}.svg`);
+        el_currency_image.src = Url.urlForStatic(`/images/pages/cashier/icons/icon-${currency}.svg`);
 
         el_acc_currency.setVisibility(1);
     };
