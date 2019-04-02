@@ -65,7 +65,7 @@ const GraduateProgram = () => {
                 <div className='section-title'>
                     <h2>Who we are</h2>
                 </div>
-                <p>{('Looking for an exciting, challenging, and highly-rewarding graduate role in software development? Binary.com is looking for A players who want to make a difference and impact the way thousands of people trade online.')}</p>
+                <p>{(`Looking for an exciting, challenging, and highly-rewarding graduate role in software development? ${it.website_name} is looking for A players who want to make a difference and impact the way thousands of people trade online.`)}</p>
                 <p>{('As the pioneer in binary options trading, we\'re no strangers to big ideas and innovation. Here, you\'ll be given the opportunity to break the norm with support from some of the top talents in your field.')}</p>
                 <p>{('Our graduate developers take on responsibilities from Day 1. We\'ve designed a world-class training programme to help you enhance the skills you have and master new ones, even as you\'re pushing the boundaries of what\'s possible at the intersection of finance and technology.')}</p>
             </section>
