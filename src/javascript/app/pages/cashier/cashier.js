@@ -112,7 +112,7 @@ const Cashier = (() => {
 
                 if (Client.get('is_virtual')) {
                     displayTopUpButton();
-                } else {
+                } else if (currency) {
                     showCurrentCurrency(
                         currency,
                         mt5_logins.length === 0,

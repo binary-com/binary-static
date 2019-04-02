@@ -1,3 +1,4 @@
+const Dropdown             = require('@binary-com/binary-style').selectDropdown;
 const moment               = require('moment');
 const setIsForNewAccount   = require('./account/settings/personal_details').setIsForNewAccount;
 const GetCurrency          = require('./get_currency');
@@ -144,6 +145,7 @@ const Accounts = (() => {
             const $currencies = $('<div/>');
             $currencies.append(Currency.getCurrencyList(available_currencies).html());
             $change_account_currency.find('.account-currency').html($('<select/>', { id: change_currency_id }).html($currencies.html()));
+            Dropdown(`#${change_currency_id}`, true); // Explicitly set true to enable option group
         } else {
             $change_account_currency.find('.account-currency').html($('<label/>', { id: change_currency_id, 'data-value': available_currencies, text: Currency.getCurrencyFullName(available_currencies) }));
         }
