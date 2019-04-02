@@ -189,7 +189,7 @@ const InputField = ({
         <Tooltip
             className={classNames('', { 'tooltip--with-label': label })}
             alignment='left'
-            message={has_error ? error_messages[0] : null }
+            message={has_error ? error_messages[0] : null}
             has_error={has_error}
         >
             {!!label &&

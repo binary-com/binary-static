@@ -41,7 +41,7 @@
     }
     &__content {
         @include themify($themes) {
-            color: themed('text_primary_color');
+            color: themed('text_color');
         }
         @include typeface(--paragraph-left-normal-black, unset);
         @include toEm(margin-bottom, 32px, 1.4em);
