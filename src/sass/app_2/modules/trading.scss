@@ -494,9 +494,12 @@
             color: $COLOR_DARK_BLUE_8;
         }
     }
-    &--disabled-bar {
+    &--animated {
         .btn-purchase__icon_wrapper, .btn-purchase__text_wrapper {
             @extend .loader;
+        }
+        .btn-purchase__icon, .btn-purchase__text {
+            @extend .loader--loading;
         }
         .btn-purchase__icon_wrapper {
             width: 16px;
@@ -512,11 +515,6 @@
         }
         .btn-purchase__info .btn-purchase__text_wrapper {
             margin: 4px 0;
-        }
-    }
-    &--animated {
-        .btn-purchase__icon, .btn-purchase__text {
-            @extend .loader--loading;
         }
     }
     &__shadow-wrapper:hover:after {

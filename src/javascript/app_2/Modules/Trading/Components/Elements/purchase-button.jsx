@@ -12,7 +12,6 @@ const PurchaseButton = ({
     is_disabled,
     is_high_low,
     is_loading,
-    is_validation_error,
     onClickPurchase,
     trade_types,
     type,
@@ -23,7 +22,6 @@ const PurchaseButton = ({
         className={classNames(
             'btn-purchase',
             { 'btn-purchase--disabled': (is_contract_mode || is_disabled) && !is_loading },
-            { 'btn-purchase--disabled-bar': !is_contract_mode && is_disabled && !is_validation_error },
             { 'btn-purchase--animated': is_loading })}
         has_effect
         onClick={() => { onClickPurchase(info.id, info.stake, type); }}
@@ -44,12 +42,12 @@ const PurchaseButton = ({
             <div className='btn-purchase__info'>
                 <div className='btn-purchase__return'>
                     <div className='btn-purchase__text_wrapper'>
-                        <span className='btn-purchase__text'>{is_disabled ? '-' : info.returns}</span>
+                        <span className='btn-purchase__text'>{is_disabled ? '' : info.returns}</span>
                     </div>
                 </div>
                 <div className='btn-purchase__profit'>
                     <div className='btn-purchase__text_wrapper'>
-                        <span className='btn-purchase__text'>{is_disabled ? '-' : <Money amount={info.profit} currency={currency} className='btn-purchase__currency' />}</span>
+                        <span className='btn-purchase__text'>{is_disabled ? '' : <Money amount={info.profit} currency={currency} className='btn-purchase__currency' />}</span>
                     </div>
                 </div>
             </div>

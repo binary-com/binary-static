@@ -45,7 +45,6 @@ const Purchase = ({
                 is_disabled={is_disabled}
                 is_high_low={is_high_low}
                 is_loading={is_loading}
-                is_validation_error={is_validation_error}
                 onClickPurchase={onClickPurchase}
                 trade_types={trade_types}
                 type={type}

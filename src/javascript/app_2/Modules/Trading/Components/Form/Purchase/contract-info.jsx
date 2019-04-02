@@ -28,7 +28,7 @@ const ContractInfo = ({
                         <div className='trade-container__price-info-basis'>{is_loaded_with_error ? basis : localize('[_1]', proposal_info.obj_contract_basis.text)}</div>
                         <div className='trade-container__price-info-value'>
                             {is_loaded_with_error ?
-                                <span>&nbsp;-</span>
+                                ''
                                 :
                                 <Money amount={proposal_info.obj_contract_basis.value} className='trade-container__price-info-currency' currency={currency} />
                             }
