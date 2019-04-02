@@ -29,7 +29,7 @@
 
         &:hover:not(.vertical-tab__header--active) {
             @include themify($themes) {
-                background-color: themed('border_outline_color');
+                background-color: themed('tab_hover_color');
             }
         }
         &--active {
