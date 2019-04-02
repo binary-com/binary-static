@@ -171,6 +171,8 @@
                 @extend %inline-icon.secondary;
             }
             &[data-tooltip] {
+                text-decoration: none;
+
                 &:before, &:after {
                     right: 230px !important;
                 }
