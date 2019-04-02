@@ -1,6 +1,7 @@
 /** @define work-in-progress */
 .work-in-progress {
-    height: 100vh;
+    height: 100%;
+    justify-content: center;
     display: flex;
 
     @include themify($themes) {
