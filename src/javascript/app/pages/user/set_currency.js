@@ -56,7 +56,8 @@ const SetCurrency = (() => {
                 $('#crypto_currencies').setVisibility(1);
                 $('#crypto_currency_list').html(crypto_currencies);
             }
-            if ((!fiat_currencies && crypto_currencies) || (fiat_currencies && !crypto_currencies)) {
+            const has_one_group = (!fiat_currencies && crypto_currencies) || (fiat_currencies && !crypto_currencies);
+            if (has_one_group) {
                 $('#set_currency_text').text(localize('Please select the currency for this account:'));
             } else {
                 $('#set_currency_text').text(localize('Do you want this to be a fiat account or crypto account? Please choose one:'));

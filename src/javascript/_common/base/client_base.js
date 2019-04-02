@@ -312,7 +312,7 @@ const ClientBase = (() => {
         const has_no_mt5 = mt5_login_list.length === 0;
         const has_no_tx  = (statement.count === 0 && statement.transactions.length === 0);
 
-        // Current BE requirements for user successfully changing their account's currency:
+        // Current API requirements for user successfully changing their account's currency:
         // 1. User must not have made any transactions
         // 2. User must not have any MT5 account
         // 3. Not be a crypto account

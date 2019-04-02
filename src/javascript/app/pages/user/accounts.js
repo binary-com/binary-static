@@ -164,7 +164,7 @@ const Accounts = (() => {
 
         BinarySocket.send({ set_account_currency }).then(res => {
             if (res.error) {
-                showError(res.error.message, true);
+                showError(res.error.message, 'change_currency_error', 'change_account_currency');
             } else if (res.set_account_currency === 1) {
                 showChangeButtonOrSuccess(false);
                 const balance   = BinarySocket.send({ balance: 1 });
@@ -323,7 +323,7 @@ const Accounts = (() => {
                 // ask client to set any missing information
                 BinaryPjax.load(urlFor('user/settings/detailsws'));
             } else {
-                showError(response.error.message);
+                showError(response.error.message, 'new_account_error', 'new_account_opening');
             }
         } else {
             const new_account = response.new_account_real;
@@ -337,10 +337,7 @@ const Accounts = (() => {
         }
     };
 
-    const showError = (localized_text, is_currency_change = false) => {
-        const error_message_id = is_currency_change ? 'change_currency_error' : 'new_account_error';
-        const error_message_parent_id = is_currency_change ? 'change_account_currency' : 'new_account_opening';
-
+    const showError = (localized_text, error_message_id, error_message_parent_id) => {
         $(`#${error_message_id}`).remove();
         $(`#${error_message_parent_id}`).find('button').parent().append($('<p/>', { class: 'error-msg', id: error_message_id, text: localized_text }));
     };
