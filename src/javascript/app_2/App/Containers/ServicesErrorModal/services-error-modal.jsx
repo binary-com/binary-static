@@ -7,6 +7,7 @@ import { title }     from './constants';
 
 const ServicesErrorModal = ({
     is_services_error_visible,
+    resetPurchase,
     services_error,
     toggleServicesErrorModal,
 }) => {
@@ -18,7 +19,12 @@ const ServicesErrorModal = ({
         <FullPageModal
             title={title[services_error.type]}
             confirm_button_text={localize('OK')}
-            onConfirm={toggleServicesErrorModal.bind(this, false)}
+            onConfirm={() => {
+                toggleServicesErrorModal(false);
+                if (services_error.type === 'buy') {
+                    resetPurchase();
+                }
+            }}
             // TODO: handle onCancel
             // cancel_button_text={cancel_button_text}
             // onCancel={onCancel}
@@ -31,14 +37,16 @@ const ServicesErrorModal = ({
 
 ServicesErrorModal.propTypes = {
     is_services_error_visible: PropTypes.bool,
+    resetPurchase            : PropTypes.func,
     services_error           : PropTypes.object,
     toggleServicesErrorModal : PropTypes.func,
 };
 
 export default connect (
-    ({ common, ui }) => ({
+    ({ common, modules, ui }) => ({
         services_error           : common.services_error,
         is_services_error_visible: ui.is_services_error_visible,
         toggleServicesErrorModal : ui.toggleServicesErrorModal,
+        resetPurchase            : modules.trade.requestProposal,
     }),
 )(ServicesErrorModal);
