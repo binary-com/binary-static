@@ -32,7 +32,7 @@
         }
         &--active {
             @include themify($themes) {
-                background-color: themed('active_color');
+                background-color: themed('active_color') !important;
             }
 
             span {
