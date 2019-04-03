@@ -423,32 +423,22 @@
         @include themify($themes) {
             background-color: themed('btn_purchase_disabled_bg');
             color: themed('disabled_color');
-        }
 
-        .btn-purchase__info--left {
-            @include themify($themes) {
+            .btn-purchase__info--left {
                 background-color: themed('btn_purchase_disabled_accent');
-            }
-        }
-        .btn-purchase__effect-detail {
-            @include themify($themes) {
-                border-color: transparent transparent transparent themed('btn_purchase_disabled_accent');
-            }
-        }
-        .btn-purchase__info--right {
-            @include themify($themes) {
-                background-color: themed('btn_purchase_disabled_bg');
-            }
 
-            svg {
-                @include themify($themes) {
+                svg {
                     @include colorIcon(themed('disabled_color'), themed('disabled_color'));
                 }
-            }
-            .btn-purchase__text {
-                @include themify($themes) {
+                .btn-purchase__text {
                     color: themed('disabled_color');
                 }
+            }
+            .btn-purchase__effect-detail {
+                border-color: transparent transparent transparent themed('btn_purchase_disabled_accent');
+            }
+            .btn-purchase__info--right {
+                background-color: themed('btn_purchase_disabled_bg');
             }
         }
     }
