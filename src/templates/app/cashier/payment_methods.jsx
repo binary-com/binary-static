@@ -536,25 +536,6 @@ const PaymentMethods = () => {
                                 ],
                             },
                             {
-                                id : 'bitcoin-cash',
-                                row: [
-                                    { text: <PaymentLogo logo='bitcoin_cash' /> },
-                                    { attributes: { colSpan: 5, className: 'toggler' }, custom_td : <CustomTableData data={[
-                                        { td: it.L('Bitcoin Cash is a cryptocurrency that emerged from a fork of the original Bitcoin. For more information, please visit [_1].', `${createLink('https://www.bitcoincash.org')}`) },
-                                        { td_list: [
-                                            { text: 'BCH' },
-                                            { text: '0.01' },
-                                            { text: '0.003' },
-                                            { text: <TableValues value={[it.L(`${deposit}${blockchain_confirmations}`, 3), it.L(`${withdrawal}${working_day}`, 1)]} /> },
-                                            { text: <ReferenceLinks pdf_file='Binary.com_BitcoinCash.pdf' video_link='https://youtu.be/jmTx7QMi-Tg' /> },
-                                        ],
-                                        },
-                                    ]}
-                                    />,
-                                    },
-                                ],
-                            },
-                            {
                                 id : 'ethereum-black',
                                 row: [
                                     { text: <PaymentLogo logo='ethereum_black' /> },

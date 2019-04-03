@@ -4,7 +4,6 @@
     position: absolute;
     left: 50%;
     bottom: 4em;
-    background: $COLOR_WHITE;
     box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.14);
     width: 348px;
     min-height: 9em;
@@ -13,8 +12,11 @@
     transform: scale(0, 0) translate(-50%, 0);
     opacity: 0;
     transform-origin: left bottom;
-    transition: all 0.3s;
+    transition: all 0.2s;
     z-index: 3;
+    @include themify($themes) {
+        background: themed('container_secondary_color');
+    }
 
     &--open {
         transform: scale(1, 1) translate(-50%, 0);
@@ -27,14 +29,30 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        transition: background 0.2s, color 0.2s;
+        @include themify($themes) {
+            background: themed('container_secondary_color');
+        }
 
         &-wrapper {
             display: flex;
             justify-content: flex-end;
         }
         &-text {
-            color: $COLOR_DARK_BLUE_5 !important;
-            font-size: 1.2em !important;
+            @include themify($themes) {
+                color: themed('text_primary_color');
+            }
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        &:hover {
+            @include themify($themes) {
+                background: themed('tab_hover_color');
+
+                .popconfirm__button-text {
+                    color: themed('text_color');
+                }
+            }
         }
     }
     &__title {
@@ -49,13 +67,15 @@
         margin-right: 0.8em;
     }
     &__header {
-        color: $COLOR_DARK_BLUE_5;
         font-size: 1.2em;
         font-weight: 300;
         text-transform: none;
         padding: 0;
         margin: 0;
         line-height: 100%;
+        @include themify($themes) {
+            color: themed('text_color');
+        }
     }
     &:after {
         // arrow pointing down
@@ -66,9 +86,11 @@
         margin-left: -0.5em;
         border-width: 5px;
         border-style: solid;
-        border-color: transparent $COLOR_WHITE $COLOR_WHITE transparent;
         transform: rotate(45deg);
         box-shadow: rgba(0, 0, 0, 0.05) 2px 2px 2px;
+        @include themify($themes) {
+            border-color: themed('container_secondary_color');
+        }
     }
     // Alignments
     &--bottom {
