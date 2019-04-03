@@ -238,7 +238,9 @@ const DepositWithdraw = (() => {
                     showError('custom_error', error.message);
             }
         } else {
-            if (Client.canChangeCurrency(State.getResponse('statement'), State.getResponse('mt5_login_list'))) {
+            const popup_valid_for_url = `${Url.urlFor('cashier/forwardws')}?action=deposit`;
+            const popup_valid = popup_valid_for_url === window.location.href;
+            if (popup_valid && Client.canChangeCurrency(State.getResponse('statement'), State.getResponse('mt5_login_list'))) {
                 Dialog.confirm({
                     id                : 'deposit_currency_change_popup_container',
                     ok_text           : localize('Yes I\'m sure'),

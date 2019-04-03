@@ -13,6 +13,7 @@ const getElementById       = require('../../../_common/common_functions').getEle
 const localize             = require('../../../_common/localize').localize;
 const State                = require('../../../_common/storage').State;
 const urlFor               = require('../../../_common/url').urlFor;
+const showLoadingImage     = require('../../../_common/utility').showLoadingImage;
 
 const Accounts = (() => {
     let landing_company;
@@ -154,14 +155,19 @@ const Accounts = (() => {
     const sendCurrencyChangeReq = () => {
         const set_account_currency   = getElementById('change_account_currencies').value || getElementById('change_account_currencies').getAttribute('data-value');
         const currency_before_change = Client.get('currency');
+        const $change_currency_btn   = $('#change_currency_btn');
+        const setLoadingImage        = (is_visible) => is_visible ? showLoadingImage($change_currency_btn, 'white') : $change_currency_btn.html(localize('Change'));
+        setLoadingImage(true);
 
         BinarySocket.send({ set_account_currency }).then(res => {
             if (res.error) {
                 showError(res.error.message, 'change_currency_error', 'change_account_currency');
+                setLoadingImage(false);
             } else if (res.set_account_currency === 1) {
                 const balance   = BinarySocket.send({ balance: 1 });
                 const authorize = BinarySocket.send({ authorize: Client.get('token') }, { forced: true });
                 Promise.all([balance, authorize]).then(() => {
+                    setLoadingImage(false);
                     handleCurrencyChange(currency_before_change, set_account_currency);
                 });
             }
