@@ -3,6 +3,7 @@
     margin: $HEADER_HEIGHT 0 $FOOTER_HEIGHT;
     height: calc(100vh - #{$HEADER_HEIGHT} - #{$FOOTER_HEIGHT});
     overflow: hidden;
+    background-color: $COLOR_WHITE;
 
     &--contract-mode {
         .trade-container {

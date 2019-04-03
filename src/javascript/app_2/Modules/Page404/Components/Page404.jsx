@@ -3,21 +3,26 @@ import { routes }     from 'Constants/index';
 import { localize }   from '_common/localize';
 import { ButtonLink } from 'App/Components/Routes';
 import ErrorBox       from 'App/Components/Elements/ErrorBox';
-import { Icon404 }    from './Icon404.jsx';
 
 const Page404 = () => (
     <div className='page-error__container'>
         <ErrorBox
-            header={localize('Page not found')}
-            icon={<Icon404 />}
-            message={localize('Sorry, we couldn\'t find the page you are looking for.')}
+            header={localize('Oops... Page Not Available')}
+            message={
+                <React.Fragment>
+                    { localize('The page you requested could not be found. Either it no longer exists or the address is wrong. Please check for any typos.') }
+                    <br /><br />
+                    { localize('Error code: 404') }
+                </React.Fragment>
+            }
         >
+            <hr className='hr page-error__hr' />
             <ButtonLink
-                className='btn--secondary btn--secondary--orange'
+                className='page-error__btn btn--primary btn--primary--orange'
                 to={routes.trade}
             >
-                <span>
-                    {localize('Go to trade page')}
+                <span className='page-error__btn-text btn__text'>
+                    {localize('Return')}
                 </span>
             </ButtonLink>
         </ErrorBox>

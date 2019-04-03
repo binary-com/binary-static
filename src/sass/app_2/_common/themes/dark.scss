@@ -2,6 +2,9 @@
 .theme--dark {
     background-color: $COLOR_DARK_BLUE_1;
 
+    .app-contents {
+        background-color: $COLOR_DARK_BLUE_2;
+    }
     .card-list {
         &__card {
             background: $COLOR_DARK_BLUE_5;
@@ -555,15 +558,11 @@
         }
     }
     .page-error {
-        &__box {
-            background-color: $COLOR_DARK_BLUE_3;
-            border-color: $COLOR_DARK_BLUE_3;
-        }
         &__header {
             color: $COLOR_WHITE;
         }
         &__message {
-            color: $COLOR_LIGHT_BLACK_3;
+            color: $COLOR_WHITE;
             opacity: 1;
         }
     }
