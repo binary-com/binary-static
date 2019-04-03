@@ -1,11 +1,30 @@
 import { getDecimalPlaces }                from '_common/base/currency_base';
-import { isDeepEqual }                     from '_common/utility';
+import { isVisible }                       from '_common/common_functions';
+import {
+    getPropertyValue,
+    isDeepEqual }                          from '_common/utility';
 import {
     convertToUnix,
     toMoment }                             from 'Utils/Date';
 import {
     proposal_properties_alternative_names,
     removable_proposal_properties }        from '../Constants/query-string';
+
+const map_error_field = {
+    barrier    : 'barrier_1',
+    barrier2   : 'barrier_2',
+    date_expiry: 'expiry_date',
+};
+
+export const getProposalErrorField = (response) => {
+    const error_field = getPropertyValue(response, ['error', 'details', 'field']);
+    if (!error_field) {
+        return null;
+    }
+    const error_id = map_error_field[error_field] || error_field;
+    const el_error = document.getElementsByName(error_id)[0];
+    return (el_error && isVisible(el_error)) ? error_id : null;
+};
 
 export const getProposalInfo = (store, response, obj_prev_contract_basis) => {
     const proposal   = response.proposal || {};
@@ -29,14 +48,15 @@ export const getProposalInfo = (store, response, obj_prev_contract_basis) => {
     };
 
     return {
-        id       : proposal.id || '',
-        has_error: !!response.error,
+        id               : proposal.id || '',
+        has_error        : !!response.error,
+        has_error_details: !!getProposalErrorField(response),
         has_increased,
-        message  : proposal.longcode || response.error.message,
+        message          : proposal.longcode || response.error.message,
         obj_contract_basis,
-        payout   : proposal.payout,
-        profit   : profit.toFixed(getDecimalPlaces(store.currency)),
-        returns  : `${returns.toFixed(2)}%`,
+        payout           : proposal.payout,
+        profit           : profit.toFixed(getDecimalPlaces(store.currency)),
+        returns          : `${returns.toFixed(2)}%`,
         stake,
     };
 };

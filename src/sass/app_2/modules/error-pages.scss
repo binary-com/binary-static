@@ -7,6 +7,10 @@
         height: calc(100vh - 83px);
     }
     &__box {
+        @include themify($themes) {
+            background: themed('container_color');
+            border: 1px solid themed('container_color');
+        }
         padding: 5em;
         text-align: center;
         display: flex;
@@ -23,13 +27,18 @@
         }
     }
     &__header {
+        @include themify($themes) {
+            color: themed('text_color');
+        }
         @include typeface(--heading-center-bold-black, capitalize);
         line-height: 44px;
     }
     &__message {
+        @include themify($themes) {
+            color: themed('text_color');
+        }
         @include typeface(--paragraph-center-normal-black, none);
         @include toEm(margin, 16px 0px, 14px);
-        opacity: 0.75;
         line-height: 1.45;
         max-width: 400px;
 
