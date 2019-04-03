@@ -12,7 +12,9 @@ const Page404 = () => (
                 <React.Fragment>
                     { localize('The page you requested could not be found. Either it no longer exists or the address is wrong. Please check for any typos.') }
                     <br /><br />
-                    { localize('Error code: 404') }
+                    <span className='page-error__code'>
+                        { localize('Error code: 404') }
+                    </span>
                 </React.Fragment>
             }
         >
