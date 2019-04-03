@@ -7,7 +7,7 @@ import ErrorBox       from 'App/Components/Elements/ErrorBox';
 const Page404 = () => (
     <div className='page-error__container'>
         <ErrorBox
-            header={localize('Oops... Page Not Available')}
+            header={localize('Oops... Page Not Available.')}
             message={
                 <React.Fragment>
                     { localize('The page you requested could not be found. Either it no longer exists or the address is wrong. Please check for any typos.') }
@@ -18,13 +18,12 @@ const Page404 = () => (
                 </React.Fragment>
             }
         >
-            <hr className='hr page-error__hr' />
             <ButtonLink
                 className='page-error__btn btn--primary btn--primary--orange'
                 to={routes.trade}
             >
                 <span className='page-error__btn-text btn__text'>
-                    {localize('Return')}
+                    {localize('Return to Trade')}
                 </span>
             </ButtonLink>
         </ErrorBox>
