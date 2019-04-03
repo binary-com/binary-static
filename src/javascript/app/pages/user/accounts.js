@@ -57,7 +57,7 @@ const Accounts = (() => {
                 element_to_show = '#new_accounts_wrapper';
             }
 
-            if (Client.canChangeCurrency(State.getResponse('statement'), State.getResponse('mt5_login_list'))) {
+            if (Client.get('currency') && Client.canChangeCurrency(State.getResponse('statement'), State.getResponse('mt5_login_list'))) {
                 addChangeCurrencyOption();
                 element_to_show = '#new_accounts_wrapper';
             }
