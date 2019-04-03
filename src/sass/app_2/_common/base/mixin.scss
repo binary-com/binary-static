@@ -271,3 +271,32 @@
         border-bottom-color: $color;
     }
 }
+
+/*
+ * Themified Tooltip colors
+ * @param $color - color property
+ * Usage example:
+   @include tooltipColor($COLOR_RED);
+ */
+@mixin themifiedTooltipColor($color) {
+    @include themify($themes) {
+        &:before {
+            background: themed($color);
+        }
+        &:after, &[data-tooltip-pos=top]:after {
+            border-top-color: themed($color);
+        }
+        &[data-tooltip-pos=right]:after {
+            border-top-color: transparent;
+            border-right-color: themed($color);
+        }
+        &[data-tooltip-pos=left]:after {
+            border-top-color: transparent;
+            border-left-color: themed($color);
+        }
+        &[data-tooltip-pos=bottom]:after {
+            border-top-color: transparent;
+            border-bottom-color: themed($color);
+        }
+    }
+}

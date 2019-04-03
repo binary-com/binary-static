@@ -3,13 +3,15 @@
 .calendar {
     position: absolute;
     top: 0;
-    background: $COLOR_WHITE;
     outline: 0;
     border-radius: 5px;
-    box-shadow: 0 2px 8px 0 rgba(42, 48, 82, 0.2);
     z-index: 999;
     box-sizing: border-box;
     font-size: 1em;
+    @include themify($themes) {
+        background: themed('container_secondary_color');
+        box-shadow: 0 4px 6px 0 rgba($COLOR_BLACK, 0.24);
+    }
 
     &__header, &__footer {
         position: relative;
@@ -23,8 +25,10 @@
         justify-content: center;
     }
     &__body {
-        border-top: 0.1em solid $COLOR_LIGHT_BLACK_4_SOLID;
-        border-bottom: 0.1em solid $COLOR_LIGHT_BLACK_4_SOLID;
+        @include themify($themes) {
+            border-top: 0.1em solid themed('background_color');
+            border-bottom: 0.1em solid themed('background_color');
+        }
 
         &--date, &--month, &--year, &--decade {
             display: grid;
@@ -113,10 +117,16 @@
         }
         &--select {
             @include typeface(--paragraph-left-bold-black);
+            @include themify($themes) {
+                color: themed('text_color');
+            }
         }
     }
     &__text {
         @include typeface(--small-center-normal-black, unset);
+        @include themify($themes) {
+            color: themed('text_color');
+        }
 
         &--bold {
             font-weight: bold;
@@ -128,11 +138,15 @@
         justify-self: center;
         position: relative;
         cursor: pointer;
+        @include themify($themes) {
+            color: themed('text_primary_color');
 
-        &:hover {
-            cursor: pointer;
-            background: $COLOR_LIGHT_BLACK_4_SOLID;
+            &:hover {
+                cursor: pointer;
+                background: themed('cell_hover_color');
+            }
         }
+
         &:nth-child(7n) {
             &:before {
                 padding: 0;
@@ -148,21 +162,19 @@
                 content: none;
             }
         }
-        &:before {
-            cursor: pointer;
-        }
-        &:after {
-            cursor: pointer;
-        }
         &--bold {
             @include typeface(--paragraph-left-bold-black);
         }
         &--disabled:hover {
-            background: $COLOR_WHITE;
-            cursor: default;
+            @include themify($themes) {
+                cursor: default;
+                background: themed('container_secondary_color');
+            }
         }
         &--disabled, &--other {
-            color: $COLOR_LIGHT_BLACK_3;
+            @include themify($themes) {
+                color: themed('disabled_color');
+            }
             transition: none;
         }
         &--today {
@@ -173,39 +185,39 @@
                     background: themed('active_color') !important;
                 }
             }
-            &:hover:not(.calendar__cell--disabled):not(.calendar__cell--active) {
-                background: $COLOR_LIGHT_BLACK_4_SOLID;
-                border: 1px solid $COLOR_LIGHT_GRAY_1;
-            }
         }
         &--active {
-            color: $COLOR_WHITE;
-            background: $COLOR_LIGHT_GRAY_1;
             font-weight: bold;
+            @include themify($themes) {
+                color: themed('text_active_color');
+                background: themed('active_color');
 
-            &:hover {
-                background: $COLOR_LIGHT_GRAY_1;
-            }
-            &-duration {
-                background: $COLOR_LIGHT_GRAY_1;
+                &:hover {
+                    background: themed('active_color');
+                }
+                &-duration {
+                    background: themed('active_color');
 
-                &:after {
-                    position: absolute;
-                    content: '';
-                    width: 100%;
-                    top: 0;
-                    right: 50%;
-                    z-index: -1;
-                    height: 100%;
-                    padding-left: 10px;
-                    background: $COLOR_LIGHT_GRAY_1;
+                    &:after {
+                        position: absolute;
+                        content: '';
+                        width: 100%;
+                        top: 0;
+                        right: 50%;
+                        z-index: -1;
+                        height: 100%;
+                        padding-left: 10px;
+                        background: themed('active_color');
+                    }
                 }
             }
         }
         &--between {
-            background: $COLOR_LIGHT_GRAY_1;
             font-weight: bold;
-            color: $COLOR_WHITE;
+            @include themify($themes) {
+                color: themed('text_active_color');
+                background: themed('active_color');
+            }
 
             &-hover {
                 &:before {
@@ -215,11 +227,15 @@
                     z-index: -2;
                     height: 100%;
                     padding-left: 32px;
-                    background: $COLOR_LIGHT_BLACK_4_SOLID;
+                    @include themify($themes) {
+                        background: themed('cell_hover_color');
+                    }
                 }
             }
             &:hover {
-                background: $COLOR_LIGHT_GRAY_1;
+                @include themify($themes) {
+                    background: themed('active_color');
+                }
             }
             &:before {
                 position: absolute;
@@ -228,7 +244,9 @@
                 z-index: -1;
                 height: 100%;
                 padding-left: 32px;
-                background: $COLOR_LIGHT_GRAY_1;
+                @include themify($themes) {
+                    background: themed('active_color');
+                }
             }
         }
         &-tooltip {

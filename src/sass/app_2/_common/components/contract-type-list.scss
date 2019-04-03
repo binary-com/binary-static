@@ -27,7 +27,9 @@
             border-radius: 4px;
         }
         &:hover:not(.selected) {
-            background: $COLOR_LIGHT_BLACK_4;
+            @include themify($themes) {
+                background: themed('tab_hover_color');
+            }
         }
     }
 }
@@ -43,10 +45,15 @@
     box-sizing: border-box;
     margin-bottom: 0.1em;
     transition: transform 0.3s opacity 0.3s;
-    background-color: $COLOR_WHITE;
+    @include themify($themes) {
+        background-color: themed('container_color');
+        color: themed('text_primary_color');
+    }
 
     &:hover {
-        background-color: $COLOR_LIGHT_BLACK_4;
+        @include themify($themes) {
+            background-color: themed('tab_hover_color');
+        }
 
         .contract-type-item__icon {
             display: block;
@@ -54,6 +61,9 @@
     }
     &__title {
         @include typeface(--paragraph-left-normal-black);
+        @include themify($themes) {
+            color: themed('text_primary_color');
+        }
         padding-left: 0.4em;
     }
     &__icon {
@@ -65,23 +75,27 @@
         /* postcss-bem-linter: ignore */
         svg {
             pointer-events: none;
-
-            .color1-fill {
-                @include themify($themes) {
-                    fill: themed('text_primary_color') !important;
-                }
+            @extend %inline-icon.secondary;
+        }
+        &:hover {
+            /* postcss-bem-linter: ignore */
+            svg {
+                pointer-events: none;
+                @extend %inline-icon.white;
             }
         }
     }
     &--selected {
         @include themify($themes) {
             color: themed('text_active_color');
-            background: themed('active_color');
+            background: themed('active_color') !important;
         }
         /* postcss-bem-linter: ignore */
         span {
             font-weight: bold;
-            color: $COLOR_WHITE;
+            @include themify($themes) {
+                color: themed('text_active_color');
+            }
         }
         .contract-type-item__icon {
             /* postcss-bem-linter: ignore */
@@ -90,7 +104,19 @@
 
                 .color1-fill {
                     @include themify($themes) {
-                        fill: themed('text_active_color') !important;
+                        fill: themed('icon_active_color');
+                    }
+                }
+            }
+            &:hover {
+                /* postcss-bem-linter: ignore */
+                svg {
+                    pointer-events: none;
+
+                    .color1-fill {
+                        @include themify($themes) {
+                            fill: themed('text_active_color') !important;
+                        }
                     }
                 }
             }
@@ -105,6 +131,23 @@
         /* postcss-bem-linter: ignore */
         .category-wrapper {
             margin: 0 0.2em;
+            @include themify($themes) {
+                /* postcss-bem-linter: ignore */
+                path, rect {
+                    /* postcss-bem-linter: ignore */
+                    &:not(.important) {
+                        fill: themed('icon_color');
+                    }
+                    /* postcss-bem-linter: ignore */
+                    &.transparent {
+                        fill: themed('background_icon_color');
+                    }
+                }
+                /* postcss-bem-linter: ignore */
+                .stroke-active {
+                    stroke: themed('icon_color');
+                }
+            }
         }
     }
 }

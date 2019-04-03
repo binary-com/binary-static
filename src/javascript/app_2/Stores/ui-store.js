@@ -23,8 +23,9 @@ export default class UIStore extends BaseStore {
     @observable has_only_forward_starting_contracts = false;
 
     // Purchase Controls
-    @observable is_purchase_confirm_on = false;
-    @observable is_purchase_lock_on    = false;
+    @observable is_purchase_confirm_on    = false;
+    @observable is_services_error_visible = false;
+    @observable is_purchase_lock_on       = false;
 
     // SmartCharts Controls
     @observable is_chart_asset_info_visible = true;
@@ -181,6 +182,11 @@ export default class UIStore extends BaseStore {
     @action.bound
     togglePositionsDrawer() { // toggle Positions Drawer
         this.is_positions_drawer_on = !this.is_positions_drawer_on;
+    }
+
+    @action.bound
+    toggleServicesErrorModal(is_visible) {
+        this.is_services_error_visible = is_visible;
     }
 
     @action.bound

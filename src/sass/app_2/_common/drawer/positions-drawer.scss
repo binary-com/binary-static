@@ -31,7 +31,9 @@ $header-height: 4em;
 
     &--contract-mode {
         &:before {
-            background: $COLOR_LIGHT_BLACK_4_SOLID;
+            @include themify($themes) {
+                background: themed('background_container_color');
+            }
             content: '';
             position: absolute;
             top: 38px;
@@ -85,6 +87,7 @@ $header-height: 4em;
             height: 40px;
             @include themify($themes) {
                 background-color: themed('background_button_color');
+                border-color: themed('background_button_color');
             }
 
             .btn__text {
@@ -99,6 +102,9 @@ $header-height: 4em;
     &__title {
         font-size: 1.4em;
         font-weight: bold;
+        @include themify($themes) {
+            color: themed('text_primary_color');
+        }
     }
     &__icon-main {
         margin-right: 0.8em;

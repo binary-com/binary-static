@@ -135,7 +135,6 @@ const Duration = ({
             { !has_toggle &&
                 <RangeSlider
                     name='duration'
-                    ticks={10}
                     value={duration_t}
                     {...props.shared_input}
                 />

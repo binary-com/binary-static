@@ -34,7 +34,7 @@ class Tooltip extends React.Component {
         return (
             <span
                 className={classNames(className, 'tooltip', { 'tooltip--error': has_error })}
-                data-tooltip={message}
+                data-tooltip={message || undefined}
                 data-tooltip-pos={alignment}
             >
                 {icon === 'info' &&

@@ -31,7 +31,7 @@ const ThemeSelectSettings = ({ is_dark_mode, toggleDarkMode }) => {
                             })}
                             onClick={darkOnClick}
                         />
-                        <p className='theme-select-settings__option__title'><Localize str='Dark mode' /></p>
+                        <p className='theme-select-settings__option__title'><Localize str='Brand Dark' /></p>
                     </div>
                     <div className='theme-select-settings__option'>
                         <LightModeIcon
@@ -40,7 +40,7 @@ const ThemeSelectSettings = ({ is_dark_mode, toggleDarkMode }) => {
                             })}
                             onClick={lightOnClick}
                         />
-                        <p className='theme-select-settings__option__title'><Localize str='Light mode' /></p>
+                        <p className='theme-select-settings__option__title'><Localize str='Light' /></p>
                     </div>
                 </div>
             </div>

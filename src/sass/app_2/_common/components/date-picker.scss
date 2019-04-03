@@ -15,7 +15,7 @@
             color: themed('text_color');
 
             &:hover, &:focus, &:active {
-                border-color: themed('text_color');
+                border-color: themed('border_hover_color');
             }
         }
 

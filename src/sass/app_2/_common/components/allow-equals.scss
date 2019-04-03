@@ -4,8 +4,8 @@
     align-items: center;
 
     &__label {
-        margin: 0.8em 0 0;
-        @include typeface(--small-left-normal-black, none);
+        margin: 0.6em 0 0;
+        @include typeface(--paragraph-left-normal-black, none);
         @include toEm(padding, 0 8px, 1.2em);
         @include themify($themes) {
             color: themed('text_primary_color');
@@ -17,21 +17,26 @@
             width: 12px;
             height: 12px;
             margin-top: 0.3em;
+            text-decoration: none;
 
             &:before {
                 padding-left: 3.25em;
             }
             &:before, &:after {
-                right: 112px;
+                top: 60%;
             }
         }
         &-info {
-            @extend %inline-icon.disabled;
-            transform: scale(0.75);
+            @extend %inline-icon.secondary;
         }
         &-info-balloon-icon {
-            left: -408px;
-            top: -3px;
+            left: -310px;
+            top: 328px;
+        }
+        &:hover {
+            .allow-equals__tooltip-info {
+                @extend %inline-icon.white;
+            }
         }
     }
 }

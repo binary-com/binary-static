@@ -10,13 +10,13 @@ const CalendarButton = ({
 }) => (
     <React.Fragment>
         { !is_hidden &&
-            <button
+            <div
                 className={className}
                 onClick={onClick}
             >
                 {label}
                 {children}
-            </button>
+            </div>
         }
     </React.Fragment>
 );

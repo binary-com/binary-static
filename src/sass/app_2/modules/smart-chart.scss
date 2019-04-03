@@ -11,9 +11,11 @@
         justify-content: center;
         align-items: center;
         font-weight: bold;
-        color: $COLOR_LIGHT_BLACK_1;
-        background-color: $COLOR_WHITE;
-        border: 2px solid $COLOR_LIGHT_GRAY_1;
+        @include themify($themes) {
+            color: themed('text_color');
+            background-color: themed('container_color');
+            border: 2px solid $COLOR_LIGHT_GRAY_1;
+        }
 
         &--lost {
             border-color: $COLOR_RED;
@@ -31,7 +33,9 @@
         margin-bottom: -12px;
         margin-left: -12px;
         border: 6px solid $COLOR_ORANGE;
-        background-color: $COLOR_WHITE;
+        @include themify($themes) {
+            background-color: themed('container_color');
+        }
     }
     &__spot, &__entry {
         width: 24px;
@@ -73,34 +77,46 @@
         align-items: center;
         justify-content: center;
         padding: 0px 8px;
+
+        /* postcss-bem-linter: ignore */
+        svg {
+            /* postcss-bem-linter: ignore */
+            g {
+                stroke: $COLOR_WHITE;
+            }
+        }
     }
     &__time {
+        @include themify($themes) {
+            color: themed('text_color');
+        }
         font-size: 10px;
-        color: $COLOR_LIGHT_BLACK_1;
     }
     &__time-icon {
         margin-right: 2px;
     }
     &__value-container {
-        font-size: 14px;
-        padding: 4px 8px;
-        border-radius: 11px;
-        background-color: $COLOR_LIGHT_GRAY_1;
+        @include themify($themes) {
+            background: themed('active_color');
+            font-size: 14px;
+            padding: 4px 8px;
+            border-radius: 11px;
 
-        /* postcss-bem-linter: ignore */
-        p {
-            font-weight: bold;
-            color: $COLOR_WHITE;
-            margin-top: 2px;
-        }
-        &--lost {
-            background-color: $COLOR_RED;
-        }
-        &--won {
-            background-color: $COLOR_GREEN_1;
-        }
-        &--won, &--lost {
-            color: $COLOR_WHITE;
+            /* postcss-bem-linter: ignore */
+            p {
+                font-weight: bold;
+                color: $COLOR_WHITE;
+                margin-top: 2px;
+            }
+            &--lost {
+                background-color: $COLOR_RED;
+            }
+            &--won {
+                background-color: $COLOR_GREEN_1;
+            }
+            &--won, &--lost {
+                color: $COLOR_WHITE;
+            }
         }
     }
 }

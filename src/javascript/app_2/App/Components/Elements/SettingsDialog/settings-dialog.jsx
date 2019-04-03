@@ -91,7 +91,7 @@ class SettingsDialog extends React.PureComponent {
             value: ChartSettings,
         }, {
             icon : IconPurchase,
-            label: localize('Purchase Section'),
+            label: localize('Purchase'),
             value: PurchaseSettings,
         },
     ]

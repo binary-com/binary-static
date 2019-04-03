@@ -54,7 +54,7 @@
             background: themed('hover_color');
 
             .symbols {
-                background: themed('hover_color');
+                background: transparent;
             }
         }
     }
@@ -168,7 +168,7 @@
                 background: themed('container_color');
 
                 &:hover:not(.acc-switcher__account--selected) {
-                    background-color: themed('tab_hover_color');
+                    background-color: themed('background_button_color');
                 }
                 .acc-switcher__id {
                     color: themed('text_primary_color');

@@ -17,6 +17,11 @@
     .payout, .indicative, .purchase, .remaining_time {
         justify-content: flex-end;
     }
+    .container {
+        @include themify($themes) {
+            background: themed('background_container_color');
+        }
+    }
     .contract-type {
         flex-grow: 1;
         display: flex;
@@ -92,7 +97,9 @@
     }
     &__text {
         font-size: 1.4em;
-        color: $COLOR_LIGHT_BLACK_3;
+        @include themify($themes) {
+            color: themed('disabled_color');
+        }
     }
 }
 

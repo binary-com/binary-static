@@ -9,11 +9,13 @@
     box-sizing: border-box;
 
     &__track {
+        @include themify($themes) {
+            background: themed('hover_color');
+        }
         position: relative;
         margin: 2px 0 8px;
         height: 6px;
         width: 100%;
-        background: $COLOR_LIGHT_BLACK_4;
         border-radius: #{$BORDER_RADIUS * 2};
     }
     &__ticks {
@@ -77,12 +79,14 @@
         }
     }
     &__line {
+        @include themify($themes) {
+            background: themed('slider_icon_color');
+        }
         position: absolute;
         top: 0;
         left: 0;
         height: 100%;
         border-radius: #{$BORDER_RADIUS * 2};
-        background: $COLOR_LIGHT_GRAY_1;
         pointer-events: none;
         transition: width 0.3s;
 
