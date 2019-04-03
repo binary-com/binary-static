@@ -131,7 +131,7 @@ const Footer = () => (
                                 <a className='labuan-icon' href='https://www.labuanibfc.com/' target='_blank' rel='noopener noreferrer'>
                                     <img className='responsive' src={it.url_for('images/pages/footer/labuan_FSA.svg')} />
                                 </a>
-                                <div className='age-restriction invisible'>
+                                <div className='age-restriction-sign invisible'>
                                     <img className='responsive' src={it.url_for('images/pages/footer/18+.svg')} />
                                 </div>
                             </div>
@@ -185,7 +185,7 @@ const Footer = () => (
                                         <img className='responsive' src={it.url_for('images/pages/footer/mga-logo-footer.svg')} />
                                     </a>
                                 </div>
-                                <div className='age-restriction'>
+                                <div className='age-restriction-sign invisible'>
                                     <img className='responsive' src={it.url_for('images/pages/footer/18+.svg')} />
                                 </div>
                             </div>
