@@ -437,9 +437,6 @@
             .btn-purchase__effect-detail {
                 border-color: transparent transparent transparent themed('btn_purchase_disabled_accent');
             }
-            .btn-purchase__info--right {
-                background-color: themed('btn_purchase_disabled_bg');
-            }
         }
     }
     &--animated {
