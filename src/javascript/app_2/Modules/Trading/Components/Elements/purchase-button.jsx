@@ -22,7 +22,6 @@ const PurchaseButton = ({
         className={classNames(
             'btn-purchase',
             { 'btn-purchase--disabled': (is_contract_mode || is_disabled) && !is_loading },
-            { 'btn-purchase--disabled-bar': !is_contract_mode && is_disabled },
             { 'btn-purchase--animated': is_loading })}
         has_effect
         onClick={() => { onClickPurchase(info.id, info.stake, type); }}
@@ -32,23 +31,23 @@ const PurchaseButton = ({
                 <div className='btn-purchase__icon_wrapper'>
                     <IconTradeType
                         className='btn-purchase__icon'
-                        type={!is_disabled ? (!is_high_low ? type.toLowerCase() : `${type.toLowerCase()}_barrier`) : ''}
+                        type={is_high_low ? `${type.toLowerCase()}_barrier` : type.toLowerCase()}
                     />
                 </div>
                 <div className='btn-purchase__text_wrapper'>
-                    <span className='btn-purchase__text'>{!is_disabled && localize('[_1]', trade_types[type])}</span>
+                    <span className='btn-purchase__text'>{localize('[_1]', trade_types[type])}</span>
                 </div>
             </div>
             <div className='btn-purchase__effect-detail' />
             <div className='btn-purchase__info'>
                 <div className='btn-purchase__return'>
                     <div className='btn-purchase__text_wrapper'>
-                        <span className='btn-purchase__text'>{!is_disabled && info.returns}</span>
+                        <span className='btn-purchase__text'>{is_disabled ? '' : info.returns}</span>
                     </div>
                 </div>
                 <div className='btn-purchase__profit'>
                     <div className='btn-purchase__text_wrapper'>
-                        <span className='btn-purchase__text'>{!is_disabled && <Money amount={info.profit} currency={currency} className='btn-purchase__currency' />}</span>
+                        <span className='btn-purchase__text'>{is_disabled ? '' : <Money amount={info.profit} currency={currency} className='btn-purchase__currency' />}</span>
                     </div>
                 </div>
             </div>
