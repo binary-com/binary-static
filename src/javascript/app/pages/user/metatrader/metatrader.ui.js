@@ -640,13 +640,15 @@ const MetaTraderUI = (() => {
     };
 
     const showNewAccountConfirmationPopup = (e, onConfirm, onAbort) => {
+        const is_costarica = Client.get('landing_company_shortcode') === 'costarica';
+
         Dialog.confirm({
             id                : 'create_mt5_popup_container',
             ok_text           : localize('Yes, I\'m sure'),
             cancel_text       : localize('Cancel'),
             localized_title   : localize('Are you sure?'),
             localized_message : localize('You will not be able to change your fiat account\'s currency after creating this MT5 account. Are you sure you want to proceed?'),
-            localized_footnote: `${localize('Note:')} ${localize('You may open one account for each supported cryptocurrency.')}`,
+            localized_footnote: is_costarica ? `${localize('Note:')} ${localize('You may open one account for each supported cryptocurrency.')}` : undefined,
             onConfirm         : () => {
                 onConfirm();
                 submit(e);

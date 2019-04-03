@@ -152,7 +152,8 @@ const Accounts = (() => {
     };
 
     const sendCurrencyChangeReq = () => {
-        const set_account_currency = getElementById('change_account_currencies').value || getElementById('change_account_currencies').getAttribute('data-value');
+        const set_account_currency   = getElementById('change_account_currencies').value || getElementById('change_account_currencies').getAttribute('data-value');
+        const currency_before_change = Client.get('currency');
 
         BinarySocket.send({ set_account_currency }).then(res => {
             if (res.error) {
@@ -161,15 +162,15 @@ const Accounts = (() => {
                 const balance   = BinarySocket.send({ balance: 1 });
                 const authorize = BinarySocket.send({ authorize: Client.get('token') }, { forced: true });
                 Promise.all([balance, authorize]).then(() => {
-                    handleCurrencyChange();
+                    handleCurrencyChange(currency_before_change, set_account_currency);
                 });
             }
         });
     };
 
-    const handleCurrencyChange = () => {
+    const handleCurrencyChange = (from, to) => {
         populateAccountsList();
-        localStorage.setItem('has_changed_currency', 1);
+        localStorage.setItem('has_changed_currency', `${from}-${to}`);
         BinaryPjax.load(urlFor('user/set-currency'));
     };
 

@@ -1,3 +1,4 @@
+const getCurrencies    = require('../user/get_currency').getCurrencies;
 const Client           = require('../../base/client');
 const BinarySocket     = require('../../base/socket');
 const isCryptocurrency = require('../../common/currency').isCryptocurrency;
@@ -98,7 +99,11 @@ const Cashier = (() => {
         elementInnerHtml(el_current_hint, currency_hint);
         el_currency_image.src = Url.urlForStatic(`/images/pages/cashier/icons/icon-${currency}.svg`);
 
-        el_acc_currency.setVisibility(1);
+        const available_currencies  = getCurrencies(State.getResponse('landing_company'));
+        const has_more_crypto       = (available_currencies.find(cur => isCryptocurrency(cur)) || []).length > 0;
+        const show_current_currency = !isCryptocurrency(currency) || (isCryptocurrency(currency) && has_more_crypto);
+
+        el_acc_currency.setVisibility(show_current_currency);
     };
 
     const onLoad = () => {
