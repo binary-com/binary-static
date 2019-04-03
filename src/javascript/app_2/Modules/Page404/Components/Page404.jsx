@@ -7,7 +7,7 @@ import ErrorBox       from 'App/Components/Elements/ErrorBox';
 const Page404 = () => (
     <div className='page-error__container'>
         <ErrorBox
-            header={localize('Oops... Page Not Available.')}
+            header={localize('Oops, page not available.')}
             message={
                 <React.Fragment>
                     { localize('The page you requested could not be found. Either it no longer exists or the address is wrong. Please check for any typos.') }

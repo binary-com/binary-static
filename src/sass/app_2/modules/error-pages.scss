@@ -30,7 +30,7 @@
         @include themify($themes) {
             color: themed('text_color');
         }
-        @include typeface(--heading-center-bold-black, capitalize);
+        @include typeface(--heading-center-bold-black, none);
         line-height: 44px;
     }
     &__message {
