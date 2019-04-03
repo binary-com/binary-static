@@ -63,3 +63,26 @@
         transform: scaleY(2);
     }
 }
+
+/** @define initial-loader */
+.initial-loader {
+    margin: 5em auto;
+    width: 100%;
+    white-space: nowrap;
+    background-color: $COLOR_WHITE;
+
+    &__logo {
+        background: url('../images/app_2/common/logo.svg');
+        width: 100%;
+        height: 100px;
+    }
+    &__circ {
+        margin: 0.2em;
+        border-radius: 20px;
+        height: 100%;
+        width: 0.6em;
+        display: inline-block;
+        -webkit-animation: sk-stretchdelay 1.2s infinite ease-in-out;
+        animation: sk-stretchdelay 1.2s infinite ease-in-out;
+    }
+}
