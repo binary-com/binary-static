@@ -17,8 +17,7 @@
         padding: 0 1.6em;
     }
     &__header {
-        @include typeface(--large-center-bold-black);
-        text-transform: none;
+        @include typeface(--large-center-bold-black, none);
         margin: 0.8em 0 0.4em;
 
         @include themify($themes) {
@@ -26,8 +25,7 @@
         }
     }
     &__text {
-        @include typeface(--title-center-normal-black);
-        text-transform: none;
+        @include typeface(--title-center-normal-black, none);
         margin: 0 1.6em 2.4em;
         line-height: 1.3;
         width: 200px;
