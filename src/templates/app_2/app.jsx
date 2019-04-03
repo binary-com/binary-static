@@ -4,18 +4,20 @@ import Head        from './head.jsx';
 import GTMNoScript from './includes/google/gtm_no_script.jsx';
 import Loading     from './components/loading.jsx';
 
-const BinaryApp = () => (
-    <html>
-        <Head />
-        <body className={classNames('body', it.language, 'theme')}>
-            <GTMNoScript />
-            <Loading />
-            <div id='binary_app' className='binary-app'>
-                <Loading />
-            </div>
-            <div id='modal_root' className='modal-root' />
-        </body>
-    </html>
-);
+const BinaryApp = () => {
+    const loading = true;
+
+    return (
+        <html>
+            <Head />
+            <body className={classNames('body', it.language, 'theme')}>
+                <GTMNoScript />
+                { loading && <Loading /> }
+                <div id='binary_app' className='binary-app' />
+                <div id='modal_root' className='modal-root' />
+            </body>
+        </html>
+    );
+};
 
 export default BinaryApp;
