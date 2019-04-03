@@ -16,7 +16,15 @@ const PurchaseButton = ({
     onClickPurchase,
     type,
 }) => {
+    /*
+        TODO:
+        We should remove the string overriding when backend sends the correct strings
+        as this is a temporary override to satisfy the design changes.
+    */
     const contract_type_display = getContractTypeDisplay();
+    if (is_high_low) {
+        contract_type_display[type] = /CALL/.test(type) ? 'Higher' : 'Lower';
+    }
     return (
         <Button
             is_disabled={ is_contract_mode || is_disabled }

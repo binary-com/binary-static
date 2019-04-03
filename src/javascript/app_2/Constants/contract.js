@@ -3,9 +3,9 @@ import { localize } from '_common/localize';
 export const getContractTypeDisplay = () => ({
     ASIANU      : localize('Asian Up'),
     ASIAND      : localize('Asian Down'),
-    CALL        : localize('Higher'),
+    CALL        : localize('Rise'),
     CALLE       : localize('Higher or equal'),
-    PUT         : localize('Lower'),
+    PUT         : localize('Fall'),
     PUTE        : localize('Lower or equal'),
     DIGITMATCH  : localize('Matches'),
     DIGITDIFF   : localize('Differs'),
