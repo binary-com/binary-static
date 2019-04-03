@@ -24,11 +24,11 @@ const InstallPWA = ({
 
     return (
         <React.Fragment>
-            {localize('Install Binary.com Application on your Home Screen for quicker and easier access.')}
+            {localize('Want quick and easy access to world markets?')}
             <Button
                 className='btn--secondary notification-bar__button'
                 has_effect
-                text={localize('Install')}
+                text={localize('Get the Binary.com app')}
                 onClick={showPrompt}
             />
         </React.Fragment>
