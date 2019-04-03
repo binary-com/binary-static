@@ -18,8 +18,7 @@ const PurchaseButton = ({
 }) => {
     /*
         TODO:
-        We should remove the string overriding when backend sends the correct strings
-        as this is a temporary override to satisfy the design changes.
+        We should remove the string overriding when API sends the correct strings.
     */
     const contract_type_display = getContractTypeDisplay();
     if (is_high_low) {
