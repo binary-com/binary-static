@@ -7,10 +7,12 @@
         text-decoration: none;
         max-width: 450px;
         margin: 0.6em auto;
-        background-color: $COLOR_WHITE;
-        border: 1px solid $COLOR_LIGHT_BLACK_4;
         border-radius: 4px;
-        color: $COLOR_LIGHT_BLACK_1;
+        @include themify($themes) {
+            background-color: themed('background_container_color');
+            border: 1px solid themed('background_container_color');
+            color: themed('text_primary_color');
+        }
 
         &-link {
             cursor: pointer;

@@ -130,13 +130,14 @@ export default class PortfolioStore extends BaseStore {
     handleSell(response) {
         // Toast messages are temporary UI for prompting user of sold contracts
         if (response.error) {
-            // If unable to sell due to error, give error via toast message if not in contract mode
+            // If unable to sell due to error, give error via pop up if not in contract mode
             const i = this.getPositionIndexById(response.echo_req.sell);
             this.positions[i].is_sell_requested = false;
-            this.root_store.ui.addToastMessage({
-                message: response.error.message,
-                type   : 'error',
-            });
+            this.root_store.common.services_error = {
+                type: response.msg_type,
+                ...response.error,
+            };
+            this.root_store.ui.toggleServicesErrorModal(true);
         } else if (!response.error && response.sell) {
             const i = this.getPositionIndexById(response.sell.contract_id);
             this.positions[i].is_sell_requested = false;
