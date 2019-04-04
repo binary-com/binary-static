@@ -23,6 +23,7 @@ const AppContents = ({
         addNotificationBar({
             content : <InstallPWA />,
             autoShow: 10000, // show after 10 secs
+            msg_type: 'pwa',
         });
     });
 

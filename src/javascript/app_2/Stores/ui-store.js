@@ -240,6 +240,13 @@ export default class UIStore extends BaseStore {
 
     @action.bound
     addNotificationBar(message) {
-        this.push_notifications.push(message);
+        if (!this.push_notifications.length) {
+            this.push_notifications.push(message);
+        }
+        this.push_notifications.map(notification => {
+            if (notification.msg_type !== message.msg_type) {
+                this.push_notifications.push(message);
+            }
+        });
     }
 }
