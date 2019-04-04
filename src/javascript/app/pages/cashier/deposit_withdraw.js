@@ -162,20 +162,22 @@ const DepositWithdraw = (() => {
 
     const showPersonalDetailsError = (details) => {
         const msg_id = 'personal_details_message';
-        let error_fields;
-        if (details) {
+        let error_fields,
+            details_fields;
+        if (details && details.fields) {
             error_fields = {
-                province: localize('State/Province'),
-                country : localize('Country'),
-                city    : localize('Town/City'),
-                street  : localize('First line of home address'),
-                pcode   : localize('Postal Code / ZIP'),
-                phone   : localize('Telephone'),
-                email   : localize('Email address'),
+                address_city    : localize('Town/City'),
+                address_line_1  : localize('First line of home address'),
+                address_postcode: localize('Postal Code/ZIP'),
+                address_state   : localize('State/Province'),
+                email           : localize('Email address'),
+                phone           : localize('Telephone'),
+                residence       : localize('Country of Residence'),
             };
+            details_fields = details.fields.map(field => (error_fields[field] || field));
         }
         const $el     = $(`#${msg_id}`);
-        const err_msg = template($el.html(), [details ? error_fields[details] : localize('details')]);
+        const err_msg = template($el.html(), [details_fields ? details_fields.join(', ') : localize('details')]);
         $el.html(err_msg);
         showMessage(msg_id);
     };

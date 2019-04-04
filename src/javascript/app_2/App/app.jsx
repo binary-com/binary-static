@@ -13,6 +13,8 @@ import Footer                      from './Containers/Layout/footer.jsx';
 import Header                      from './Containers/Layout/header.jsx';
 import Routes                      from './Containers/Routes/routes.jsx';
 import DenialOfServiceModal        from './Containers/DenialOfServiceModal';
+import MarketUnavailableModal      from './Containers/MarketUnavailableModal';
+import ServicesErrorModal          from './Containers/ServicesErrorModal';
 
 const App = ({ root_store }) => (
     <Router basename={getBaseName()}>
@@ -29,8 +31,9 @@ const App = ({ root_store }) => (
                         <PushNotification />
                     </AppContents>
                     <DenialOfServiceModal />
+                    <MarketUnavailableModal />
+                    <ServicesErrorModal />
                 </ErrorBoundary>
-
                 <footer className='footer'>
                     <Footer />
                 </footer>

@@ -60,8 +60,11 @@
         border-radius: $BORDER_RADIUS;
         @include themify($themes) {
             background: themed('container_color');
-            border-color: themed('container_color');
             color: themed('text_color');
+
+            &:hover {
+                border-color: themed('border_hover_color');
+            }
         }
     }
     &__loader {
@@ -92,32 +95,6 @@
             border-radius: $BORDER_RADIUS;
         }
     }
-    &__currency {
-        position: absolute;
-        float: left;
-        font-size: 10px;
-        height: 32px;
-        left: 32px;
-        align-items: center;
-        justify-content: center;
-        width: 20px;
-        display: flex;
-        background: transparent;
-        border-color: transparent;
-        z-index: 2;
-        @include themify($themes) {
-            color: themed('text_primary_color');
-        }
-
-        &--symbol {
-            font-size: 1.4em;
-            line-height: 1.5;
-        }
-        &:before {
-            @include typeface(--paragraph-center-normal-black);
-            color: inherit;
-        }
-    }
     &__price {
         line-height: 0.9rem;
         border: 0;
@@ -134,6 +111,13 @@
             justify-self: left;
             align-items: center;
 
+            &--disabled {
+                .trade-container__price-info-value, .trade-container__price-info-basis {
+                    @include themify($themes) {
+                        color: themed('disabled_color');
+                    }
+                }
+            }
             &-value {
                 @include typeface(--small-left-bold-black);
                 @include themify($themes) {
@@ -141,7 +125,7 @@
                 }
             }
             &-basis {
-                @include typeface(--small-left-normal-black);
+                @include typeface(--paragraph-left-normal-black);
                 margin-left: 0;
                 font-weight: normal;
                 @include themify($themes) {
@@ -165,9 +149,11 @@
         }
         &-tooltip {
             &-i {
-                @extend %inline-icon.disabled;
+                @extend %inline-icon.secondary;
             }
             &[data-tooltip] {
+                text-decoration: none;
+
                 &:before, &:after {
                     right: 230px !important;
                 }
@@ -175,6 +161,11 @@
                     padding-left: 3em;
                     white-space: normal;
                     width: 265px;
+                }
+            }
+            &:hover {
+                .trade-container__price-tooltip-i {
+                    @extend %inline-icon.white;
                 }
             }
         }
@@ -231,7 +222,6 @@
             margin-top: 0.8em;
         }
         &--display {
-            margin-top: 0;
             border-radius: $BORDER_RADIUS 0 0 $BORDER_RADIUS;
 
             /* postcss-bem-linter: ignore */
@@ -346,37 +336,15 @@
     padding: 0;
     text-align: left;
     transition: box-shadow 0.5s;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.24);
 
-    &__info {
-        width: 40%;
-        padding-left: 10%;
-        float: right;
-        text-align: right;
-        height: 56px;
-        padding-right: 10px;
-        display: flex;
-        flex-direction: column;
+    &:not(&--disabled) {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.24);
     }
-    &__return {
+    &__text {
         @include typeface(--paragraph-left-bold-active);
-        display: flex;
-        justify-content: flex-end;
-        flex-grow: 1;
-        align-items: flex-end;
     }
-    &__profit {
-        @include typeface(--xsmall-left-bold-active);
-        display: flex;
-        justify-content: flex-end;
-        flex-grow: 1;
-        align-items: flex-start;
-        line-height: unset;
-    }
-    &__trade-type {
-        background-color: $COLOR_GREEN_1;
+    &__info {
         color: $COLOR_WHITE;
-        float: left;
         text-align: left;
         position: relative;
         display: flex;
@@ -384,15 +352,15 @@
         align-items: center;
         padding-left: 10px;
         height: 56px;
+    }
+    &__info--left {
+        background-color: $COLOR_GREEN_1;
         width: 60%;
+        float: left;
 
         .btn-purchase__text_wrapper {
             margin-left: 24px;
             position: absolute;
-
-            .btn-purchase__text {
-                @include typeface(--paragraph-left-bold-active);
-            }
         }
         .btn-purchase__icon_wrapper {
             @extend %inline-icon.white;
@@ -403,6 +371,14 @@
                 }
             }
         }
+    }
+    &__info--right {
+        width: 40%;
+        padding-left: 10%;
+        padding-right: 10px;
+        float: right;
+        justify-content: right;
+        background-color: transparent;
     }
     &__effect-detail {
         width: 0;
@@ -417,44 +393,58 @@
         display: inline-block;
     }
     &__shadow-wrapper {
-        box-shadow: 0 0px 0px rgba(0, 0, 0, 0.15);
         position: relative;
 
-        &:after {
-            content: '';
-            position: absolute;
-            z-index: 1;
-            width: 100%;
-            height: calc(100% - 6px);
-            pointer-events: none;
-            top: 4px;
-            left: 0;
-            border-radius: $BORDER_RADIUS;
-            opacity: 1;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            transition: opacity 0.3s ease-in-out;
+        &:not(&--disabled) {
+            box-shadow: 0 0px 0px rgba(0, 0, 0, 0.15);
+
+            &:after {
+                content: '';
+                position: absolute;
+                z-index: 1;
+                width: 100%;
+                height: calc(100% - 6px);
+                pointer-events: none;
+                top: 4px;
+                left: 0;
+                border-radius: $BORDER_RADIUS;
+                opacity: 1;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+                transition: opacity 0.3s ease-in-out;
+            }
+            &:hover:after {
+                opacity: 0;
+            }
         }
     }
     &--disabled {
-        color: $COLOR_DARK_BLUE_7;
-        @include themify($themes) {
-            background-color: themed('purchase_background_color');
-        }
+        cursor: default;
 
-        .btn-purchase__trade-type {
-            @include themify($themes) {
-                background-color: themed('purchase_detail_background_color');
+        @include themify($themes) {
+            background-color: themed('btn_purchase_disabled_bg');
+            color: themed('disabled_color');
+
+            .btn-purchase__info--left {
+                background-color: themed('btn_purchase_disabled_accent');
+
+                svg {
+                    @include colorIcon(themed('disabled_color'), themed('disabled_color'));
+                }
+                .btn-purchase__text {
+                    color: themed('disabled_color');
+                }
             }
-        }
-        .btn-purchase__effect-detail {
-            @include themify($themes) {
-                border-color: transparent transparent transparent themed('purchase_detail_background_color');
+            .btn-purchase__effect-detail {
+                border-color: transparent transparent transparent themed('btn_purchase_disabled_accent');
             }
         }
     }
-    &--disabled-bar {
+    &--animated {
         .btn-purchase__icon_wrapper, .btn-purchase__text_wrapper {
             @extend .loader;
+        }
+        .btn-purchase__icon, .btn-purchase__text {
+            @extend .loader--loading;
         }
         .btn-purchase__icon_wrapper {
             width: 16px;
@@ -468,16 +458,16 @@
                 display: block;
             }
         }
-        .btn-purchase__info .btn-purchase__text_wrapper {
-            margin: 4px 0;
-        }
-    }
-    &--animated {
-        .btn-purchase__icon, .btn-purchase__text {
-            @extend .loader--loading;
-        }
     }
     &__shadow-wrapper:hover:after {
         opacity: 0;
+    }
+}
+
+/** @define duration-container */
+.duration-container {
+    /* postcss-bem-linter: ignore */
+    .dropdown-container {
+        margin-top: 0.8em;
     }
 }
