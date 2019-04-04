@@ -22,7 +22,7 @@ const Purchase = ({
     validation_errors,
 }) => {
     const components = [];
-    Object.keys(trade_types).map((type, idx) => {
+    Object.keys(trade_types).map((type, index) => {
         const info              = proposal_info[type] || {};
         const is_disabled = !is_purchase_enabled
             || !is_trade_enabled
@@ -37,7 +37,8 @@ const Purchase = ({
                 basis={basis}
                 currency={currency}
                 info={info}
-                key={idx}
+                key={index}
+                index={index}
                 is_contract_mode={is_contract_mode}
                 is_disabled={is_disabled}
                 is_high_low={is_high_low}

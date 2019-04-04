@@ -12,6 +12,7 @@ import PurchaseButton              from 'Modules/Trading/Components/Elements/pur
 const PurchaseFieldset = ({
     basis,
     currency,
+    index,
     info,
     is_contract_mode,
     is_disabled,
@@ -41,7 +42,7 @@ const PurchaseFieldset = ({
         <Fieldset
             className='trade-container__fieldset purchase-container__option'
         >
-            {(is_purchase_locked && idx === 0) &&
+            {(is_purchase_locked && index === 0) &&
             <PurchaseLock onClick={togglePurchaseLock} />
             }
             <React.Fragment>
@@ -83,6 +84,7 @@ const PurchaseFieldset = ({
 PurchaseFieldset.propTypes = {
     basis                 : PropTypes.string,
     currency              : PropTypes.string,
+    index                 : PropTypes.number,
     info                  : PropTypes.object,
     is_contract_mode      : PropTypes.bool,
     is_disabled           : PropTypes.bool,
