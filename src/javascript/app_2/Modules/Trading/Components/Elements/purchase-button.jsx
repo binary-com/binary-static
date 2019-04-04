@@ -18,9 +18,9 @@ const PurchaseButton = ({
         TODO:
         We should remove the string overriding when API sends the correct strings.
     */
-    const contract_type_display = getContractTypeDisplay();
+    let contract_type_display = getContractTypeDisplay(type);
     if (is_high_low) {
-        contract_type_display[type] = /CALL/.test(type) ? 'Higher' : 'Lower';
+        contract_type_display = /CALL/.test(type) ? 'Higher' : 'Lower';
     }
     return (
         <Button
@@ -38,11 +38,11 @@ const PurchaseButton = ({
                     <div className='btn-purchase__icon_wrapper'>
                         <IconTradeType
                             className='btn-purchase__icon'
-                            type={!is_loading && is_high_low ? `${type.toLowerCase()}_barrier` : type.toLowerCase()}
+                            type={!is_loading ? is_high_low ? `${type.toLowerCase()}_barrier` : type.toLowerCase() : ''}
                         />
                     </div>
                     <div className='btn-purchase__text_wrapper'>
-                        <span className='btn-purchase__text'>{ !is_loading && localize('[_1]', contract_type_display[type])}</span>
+                        <span className='btn-purchase__text'>{ !is_loading && localize('[_1]', contract_type_display)}</span>
                     </div>
                 </div>
                 <div className='btn-purchase__effect-detail' />
