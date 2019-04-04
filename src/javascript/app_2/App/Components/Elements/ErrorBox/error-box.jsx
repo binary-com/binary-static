@@ -7,7 +7,7 @@ const ErrorBox = ({ header, icon, message, children }) => (
         <h3 className='page-error__header'>
             {header}
         </h3>
-        <div>
+        <div className='page-error__message-wrapper'>
             <p className='page-error__message'>{message}</p>
         </div>
         {children}
@@ -18,7 +18,10 @@ ErrorBox.propTypes = {
     children: PropTypes.node,
     header  : PropTypes.string,
     icon    : PropTypes.node,
-    message : PropTypes.string,
+    message : PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.node,
+    ]),
 };
 
 export default ErrorBox;

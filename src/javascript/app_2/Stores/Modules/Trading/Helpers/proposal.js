@@ -38,7 +38,7 @@ export const getProposalInfo = (store, response, obj_prev_contract_basis) => {
     const price          = is_stake ? stake : proposal[contract_basis.value];
     let has_increased    = price > obj_prev_contract_basis.value;
 
-    if (price === obj_prev_contract_basis.value) {
+    if (!obj_prev_contract_basis.value || price === obj_prev_contract_basis.value) {
         has_increased = null;
     }
 
