@@ -308,16 +308,17 @@ const ClientBase = (() => {
 
     const hasCostaricaAccount = () => !!(getAllLoginids().find(loginid => /^CR/.test(loginid)));
 
-    const canChangeCurrency = (statement, mt5_login_list) => {
-        const has_no_mt5 = mt5_login_list.length === 0;
-        const has_no_tx  = (statement.count === 0 && statement.transactions.length === 0);
+    const canChangeCurrency = (statement, mt5_login_list, is_current = true) => {
+        const has_no_mt5           = mt5_login_list.length === 0;
+        const has_no_transaction   = (statement.count === 0 && statement.transactions.length === 0);
+        const has_account_criteria = has_no_transaction && has_no_mt5;
 
-        // Current API requirements for user successfully changing their account's currency:
+        // Current API requirements for currently logged-in user successfully changing their account's currency:
         // 1. User must not have made any transactions
         // 2. User must not have any MT5 account
         // 3. Not be a crypto account
         // 4. Not be a virtual account
-        return !get('is_virtual') && has_no_tx && has_no_mt5 && !isCryptocurrency(get('currency'));
+        return is_current ? !get('is_virtual') && has_account_criteria && !isCryptocurrency(get('currency')) : has_account_criteria;
     };
 
     return {

@@ -58,15 +58,15 @@ const Accounts = (() => {
                 element_to_show = '#new_accounts_wrapper';
             }
 
-            if (Client.get('currency') && Client.canChangeCurrency(State.getResponse('statement'), State.getResponse('mt5_login_list'))) {
-                addChangeCurrencyOption();
-                element_to_show = '#new_accounts_wrapper';
-            }
-
             if (upgrade_info.can_open_multi) {
                 populateMultiAccount();
             } else {
                 doneLoading(element_to_show);
+            }
+
+            if (Client.get('currency') && Client.canChangeCurrency(State.getResponse('statement'), State.getResponse('mt5_login_list'))) {
+                addChangeCurrencyOption();
+                element_to_show = '#new_accounts_wrapper';
             }
         });
     };

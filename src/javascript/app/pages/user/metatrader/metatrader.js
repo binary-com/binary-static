@@ -17,7 +17,8 @@ const MetaTrader = (() => {
     const mt_company = {};
 
     const onLoad = () => {
-        BinarySocket.wait('landing_company', 'get_account_status').then(() => {
+        BinarySocket.send({ statement: 1, limit: 1 });
+        BinarySocket.wait('landing_company', 'get_account_status', 'statement').then(() => {
             setMTCompanies();
             if (isEligible()) {
                 if (Client.get('is_virtual')) {
@@ -85,7 +86,7 @@ const MetaTrader = (() => {
     const getAllAccountsInfo = () => {
         MetaTraderUI.init(submit, sendTopupDemo);
         BinarySocket.send({ mt5_login_list: 1 }).then((response) => {
-            show_new_account_popup = (response.mt5_login_list || []).length === 0;
+            show_new_account_popup = Client.canChangeCurrency(State.getResponse('statement'), (response.mt5_login_list || []), false);
             allAccountsResponseHandler(response);
         });
     };

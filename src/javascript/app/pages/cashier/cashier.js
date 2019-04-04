@@ -67,17 +67,23 @@ const Cashier = (() => {
         });
     };
 
-    const showCurrentCurrency = (currency, has_no_mt5, has_no_tx) => {
+    const showCurrentCurrency = (currency, statement, mt5_logins) => {
+        const has_no_mt5          = mt5_logins.length === 0;
+        const has_no_transaction  = (statement.count === 0 && statement.transactions.length === 0);
         const el_acc_currency     = getElementById('account_currency');
         const el_currency_image   = getElementById('account_currency_img');
         const el_current_currency = getElementById('account_currency_current');
         const el_current_hint     = getElementById('account_currency_hint');
+        const upgrade_info        = Client.getUpgradeInfo();
+        const has_upgrade         = upgrade_info.can_upgrade || upgrade_info.can_open_multi
+                                    || Client.canChangeCurrency(statement, mt5_logins);
+        const account_action_text = has_upgrade ? localize('[_1]Manage your accounts[_2].', [`<a href=${Url.urlFor('user/accounts')}>`, '</a>']) : '';
 
-        const missingCriteria = (has_mt5, has_tx) => {
-            const existing_mt5_msg = localize('You can no longer change the currency because you\'ve created an MT5 account. [_1]Manage your accounts[_2].', [`<a href=${Url.urlFor('user/accounts')}>`, '</a>']);
-            const existing_tx_msg  = localize('You can no longer change the currency because you\'ve made a first-time deposit. [_1]Manage your accounts[_2].', [`<a href=${Url.urlFor('user/accounts')}>`, '</a>']);
+        const missingCriteria = (has_mt5, has_transaction) => {
+            const existing_mt5_msg          = localize('You can no longer change the currency because you\'ve created an MT5 account.') + account_action_text;
+            const existing_transaction_msg  = localize('You can no longer change the currency because you\'ve made a first-time deposit.') + account_action_text;
 
-            return has_mt5 && !has_tx ? existing_mt5_msg : existing_tx_msg;
+            return has_mt5 && !has_transaction ? existing_mt5_msg : existing_transaction_msg;
         };
 
         // Set messages based on currency being crypto or fiat
@@ -85,15 +91,15 @@ const Cashier = (() => {
         // Condition is to have no MT5 accounts *and* have no transactions
         const currency_message = isCryptocurrency(currency)
             ? localize('This is your [_1] account.', `${currency}`)
-            : has_no_mt5 && has_no_tx
+            : has_no_mt5 && has_no_transaction
                 ? localize('Your fiat account\'s currency is currently set to [_1].', `${currency}`)
                 : localize('Your fiat account\'s currency is set to [_1].', `${currency}`);
 
         const currency_hint = isCryptocurrency(currency)
-            ? localize('Don\'t want to trade in [_1]? You can open another cryptocurrency account. [_2]Manage your accounts[_3].', [`${currency}`, `<a href=${Url.urlFor('user/accounts')}>`, '</a>'])
-            : has_no_mt5 && has_no_tx
-                ? localize('You can set a new currency before you deposit for the first time or create an MT5 account. [_1]Manage your accounts[_2].', [`<a href=${Url.urlFor('user/accounts')}>`, '</a>'])
-                : missingCriteria(!has_no_mt5, !has_no_tx);
+            ? localize('Don\'t want to trade in [_1]? You can open another cryptocurrency account.', `${currency}`) + account_action_text
+            : has_no_mt5 && has_no_transaction
+                ? localize('You can set a new currency before you deposit for the first time or create an MT5 account.') + account_action_text
+                : missingCriteria(!has_no_mt5, !has_no_transaction);
 
         elementInnerHtml(el_current_currency, currency_message);
         elementInnerHtml(el_current_hint, currency_hint);
@@ -110,8 +116,6 @@ const Cashier = (() => {
         if (Client.isLoggedIn()) {
             BinarySocket.send({ statement: 1, limit: 1 });
             BinarySocket.wait('authorize', 'mt5_login_list', 'statement').then(() => {
-                const mt5_logins = State.getResponse('mt5_login_list');
-                const statement  = State.getResponse('statement');
                 const residence  = Client.get('residence');
                 const currency   = Client.get('currency');
 
@@ -120,8 +124,8 @@ const Cashier = (() => {
                 } else if (currency) {
                     showCurrentCurrency(
                         currency,
-                        mt5_logins.length === 0,
-                        (statement.count === 0 && statement.transactions.length === 0)
+                        State.getResponse('statement'),
+                        State.getResponse('mt5_login_list')
                     );
                 }
 
