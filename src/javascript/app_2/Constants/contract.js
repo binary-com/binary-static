@@ -1,11 +1,5 @@
 import { localize } from '_common/localize';
 
-/*
-* For validation we could :
-*   1. Show the data in order. e.g first bottom, second bottom.
-*   2. Then, print a warning on console.
-*/
-
 const contract_config = {
     ASIANU: {
         name    : localize('Asian Up'),
