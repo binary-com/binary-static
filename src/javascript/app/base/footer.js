@@ -16,7 +16,7 @@ const Footer = (() => {
                 const landing_company_shortcode = Client.get('landing_company_shortcode');
                 showWarning((landing_company_shortcode === 'maltainvest' ||
                     (Client.get('is_virtual') && State.getResponse('landing_company.financial_company.shortcode') === 'maltainvest')));
-                setVisibilityAgeRestrictionSign(/iom|maltainvest/.test(landing_company_shortcode));
+                setVisibilityAgeRestrictionSign(/^(malta|iom)$/.test(landing_company_shortcode));
             } else {
                 const is_eu_country = isEuCountry();
                 showWarning(is_eu_country);
