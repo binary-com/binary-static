@@ -52,17 +52,26 @@
         }
     }
     &__container {
-        @include themify($themes) {
-            background-color: themed('container_secondary_color');
-        }
         width: 736px;
         position: relative;
         overflow: hidden;
         box-shadow: 0 2px 8px 0 $COLOR_LIGHT_BLACK_3;
         border-radius: $BORDER_RADIUS;
+        transition: transform 0.25s ease;
+        @include themify($themes) {
+            background-color: themed('container_secondary_color');
+        }
 
         &--hide {
             display: none;
+        }
+        &--enter, &--exit {
+            transform: translateY(-20%);
+            pointer-events: none;
+        }
+        &--enter-done {
+            transform: translateY(0);
+            pointer-events: auto;
         }
     }
 }

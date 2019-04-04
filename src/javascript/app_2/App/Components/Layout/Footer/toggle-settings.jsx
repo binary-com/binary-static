@@ -1,27 +1,9 @@
 import classNames         from 'classnames';
 import PropTypes          from 'prop-types';
 import React              from 'react';
-// import { CSSTransition }  from 'react-transition-group';
-import posed, { PoseGroup } from 'react-pose';
+import { CSSTransition }  from 'react-transition-group';
 import { SettingsDialog } from 'App/Components/Elements/SettingsDialog/settings-dialog.jsx';
 import { IconSettings }   from 'Assets/Footer';
-
-const Modal = posed.div({
-    enter: {
-        y         : 0,
-        opacity   : 1,
-        delay     : 300,
-        transition: {
-            y      : { type: 'spring', stiffness: 1000, damping: 15 },
-            default: { duration: 300 },
-        },
-    },
-    exit: {
-        y         : 50,
-        opacity   : 0,
-        transition: { duration: 150 },
-    },
-});
 
 const ToggleSettings = ({
     hideBlur,
@@ -43,22 +25,25 @@ const ToggleSettings = ({
             >
                 <IconSettings className='footer__icon ic-settings__icon' />
             </a>
-            <PoseGroup>
-                {is_settings_visible ?
-                    <Modal key='modal' className='modal'>
-                        <SettingsDialog
-                            is_open={is_settings_visible}
-                            is_language_dialog_visible={is_language_visible}
-                            toggleDialog={toggleSettings}
-                            is_dark_mode={is_dark_mode}
-                            showBlur={showBlur}
-                            hideBlur={hideBlur}
-                        />
-                    </Modal>
-                    :
-                    null
-                }
-            </PoseGroup>
+            <CSSTransition
+                in={is_settings_visible}
+                timeout={100}
+                classNames={{
+                    enter    : 'settings-dialog__container--enter',
+                    enterDone: 'settings-dialog__container--enter-done',
+                    exit     : 'settings-dialog__container--exit',
+                }}
+                unmountOnExit
+            >
+                <SettingsDialog
+                    is_open={is_settings_visible}
+                    is_language_dialog_visible={is_language_visible}
+                    toggleDialog={toggleSettings}
+                    is_dark_mode={is_dark_mode}
+                    showBlur={showBlur}
+                    hideBlur={hideBlur}
+                />
+            </CSSTransition>
         </React.Fragment>
     );
 };

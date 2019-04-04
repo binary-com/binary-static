@@ -5,6 +5,9 @@
     overflow: hidden;
     transition: filter 0.25s linear;
     filter: blur(0);
+    @include themify($themes) {
+        background-color: themed('container_color');
+    }
 
     &--contract-mode {
         .trade-container {
