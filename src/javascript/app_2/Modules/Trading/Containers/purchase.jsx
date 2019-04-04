@@ -23,12 +23,12 @@ const Purchase = ({
 }) => {
     const components = [];
     Object.keys(trade_types).map((type, idx) => {
+        const info              = proposal_info[type] || {};
         const is_disabled = !is_purchase_enabled
             || !is_trade_enabled
             || !info.id
             || !is_client_allowed_to_visit;
         const is_high_low       = /high_low/.test(contract_type.toLowerCase());
-        const info              = proposal_info[type] || {};
         const is_validation_error = Object.values(validation_errors).some(e => e.length);
         const is_loading        = !is_validation_error && !info.has_error && !info.id;
         const is_proposal_error = info.has_error && !info.has_error_details;
@@ -37,7 +37,7 @@ const Purchase = ({
                 basis={basis}
                 currency={currency}
                 info={info}
-                idx={idx}
+                key={idx}
                 is_contract_mode={is_contract_mode}
                 is_disabled={is_disabled}
                 is_high_low={is_high_low}
@@ -51,8 +51,6 @@ const Purchase = ({
                 type={type}
             />
         );
-        // 'middle' will automatically fall into the middle of the array
-        // when 'top' and 'bottom' is organized.
         const contract_type_position = getContractTypePosition(type);
         if (contract_type_position === 'top'){
             components.unshift(purchase_fieldset);
