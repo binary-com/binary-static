@@ -14,13 +14,15 @@
         position: absolute;
         width: 290px;
         right: calc(100% + 10px);
-        top: -70px;
+        top: -66px;
         display: grid;
         grid-auto-columns: 1fr;
         z-index: 2;
-        background: $COLOR_LIGHT_BLACK_4_SOLID;
         border-radius: 4px;
-        box-shadow: 0 2px 8px 0 $COLOR_LIGHT_BLACK_3;
+        @include themify($themes) {
+            background: themed('background_container_color');
+            box-shadow: 0 2px 8px 0 rgba($COLOR_BLACK, 0.3);
+        }
     }
     &--enter, &--exit {
         transform: translateX(20%);
