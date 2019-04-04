@@ -65,7 +65,6 @@ PurchaseButton.propTypes = {
     is_high_low     : PropTypes.bool,
     is_loading      : PropTypes.bool,
     onClickPurchase : PropTypes.func,
-    trade_types     : PropTypes.object,
     type            : PropTypes.string,
 };
 
