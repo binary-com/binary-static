@@ -41,11 +41,11 @@ const contract_config = {
     },
     DIGITODD: {
         name    : localize('Odd'),
-        position: 'top',
+        position: 'bottom',
     },
     DIGITEVEN: {
         name    : localize('Even'),
-        position: 'bottom',
+        position: 'top',
     },
     DIGITOVER: {
         name    : localize('Over'),
@@ -98,3 +98,4 @@ const contract_config = {
 };
 
 export const getContractTypeDisplay = (type) => (contract_config[type].name);
+export const getContractTypePosition = (type) => (contract_config[type].position);
