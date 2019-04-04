@@ -57,7 +57,7 @@
         overflow: hidden;
         box-shadow: 0 2px 8px 0 $COLOR_LIGHT_BLACK_3;
         border-radius: $BORDER_RADIUS;
-        transition: transform 0.25s ease;
+        transition: transform 0.25s ease, opacity 0.5s linear;
         @include themify($themes) {
             background-color: themed('container_secondary_color');
         }
@@ -67,10 +67,12 @@
         }
         &--enter, &--exit {
             transform: translateY(-20%);
+            opacity: 0;
             pointer-events: none;
         }
         &--enter-done {
             transform: translateY(0);
+            opacity: 1;
             pointer-events: auto;
         }
     }

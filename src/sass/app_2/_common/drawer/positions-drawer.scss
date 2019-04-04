@@ -12,7 +12,7 @@ $header-height: 4em;
     // removing 2px below for borders
     height: calc(100vh - #{$HEADER_HEIGHT} - #{$FOOTER_HEIGHT} - 2px - (#{$POSITIONS_DRAWER_MARGIN} * 4));
     margin-top: #{$POSITIONS_DRAWER_MARGIN * 2};
-    position: fixed;
+    position: absolute;
     z-index: 2;
     top: 0;
     left: 4px;
