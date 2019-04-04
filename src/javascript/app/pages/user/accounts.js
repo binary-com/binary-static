@@ -47,7 +47,8 @@ const Accounts = (() => {
         }
         BinarySocket.send({ statement: 1, limit: 1 });
         BinarySocket.wait('landing_company', 'get_settings', 'statement', 'mt5_login_list').then(() => {
-            landing_company = State.getResponse('landing_company');
+            landing_company           = State.getResponse('landing_company');
+            const can_change_currency = Client.canChangeCurrency(State.getResponse('statement'), State.getResponse('mt5_login_list'));
 
             populateExistingAccounts();
 
@@ -60,13 +61,16 @@ const Accounts = (() => {
 
             if (upgrade_info.can_open_multi) {
                 populateMultiAccount();
-            } else {
+            } else if (!can_change_currency) {
                 doneLoading(element_to_show);
             }
 
-            if (Client.get('currency') && Client.canChangeCurrency(State.getResponse('statement'), State.getResponse('mt5_login_list'))) {
+            if (can_change_currency) {
                 addChangeCurrencyOption();
                 element_to_show = '#new_accounts_wrapper';
+                if (!upgrade_info.can_open_multi) {
+                    doneLoading(element_to_show);
+                }
             }
         });
     };
