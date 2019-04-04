@@ -33,13 +33,13 @@ const contract_config = {
         name    : localize('Differs'),
         position: 'bottom',
     },
-    DIGITODD: {
-        name    : localize('Odd'),
-        position: 'bottom',
-    },
     DIGITEVEN: {
         name    : localize('Even'),
         position: 'top',
+    },
+    DIGITODD: {
+        name    : localize('Odd'),
+        position: 'bottom',
     },
     DIGITOVER: {
         name    : localize('Over'),
@@ -63,15 +63,15 @@ const contract_config = {
     },
     LBFLOATCALL: {
         name    : localize('Close-Low'),
-        position: 'bottom',
+        position: 'middle',
     },
     LBFLOATPUT: {
         name    : localize('High-Close'),
-        position: 'top',
+        position: 'middle',
     },
     LBHIGHLOW: {
         name    : localize('High-Low'),
-        position: 'bottom',
+        position: 'middle',
     },
     RANGE: {
         name    : localize('Stays Between'),
