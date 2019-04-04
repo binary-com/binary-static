@@ -56,6 +56,8 @@ const Purchase = ({
             components.unshift(purchase_fieldset);
         } else if (contract_type_position === 'bottom') {
             components.push(purchase_fieldset);
+        } else {
+            components.push(purchase_fieldset);
         }
     });
 
