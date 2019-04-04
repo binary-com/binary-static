@@ -2,7 +2,6 @@ const RealityCheckData     = require('./reality_check.data');
 const showLocalTimeOnHover = require('../../../base/clock').showLocalTimeOnHover;
 const BinarySocket         = require('../../../base/socket');
 const FormManager          = require('../../../common/form_manager');
-const InterviewPopup       = require('../../../base/interview_popup');
 const urlFor               = require('../../../../_common/url').urlFor;
 require('../../../../_common/lib/polyfills/array.includes');
 require('../../../../_common/lib/polyfills/string.includes');
@@ -101,7 +100,8 @@ const RealityCheckUI = (() => {
     const closePopUp = () => {
         $('#reality_check').remove();
         startSummaryTimer();
-        InterviewPopup.onLoad();
+        // TODO: uncomment below to enable interview popup dialog
+        // InterviewPopup.onLoad();
     };
 
     const startSummaryTimer = () => {
