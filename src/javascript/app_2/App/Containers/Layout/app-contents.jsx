@@ -11,21 +11,24 @@ const AppContents = ({
     children,
     is_blurred,
     is_contract_mode,
+    is_logged_in,
     is_positions_drawer_on,
     setPWAPromptEvent,
 }) => {
-    window.addEventListener('beforeinstallprompt', e => {
-        console.log('Going to show the installation prompt'); // eslint-disable-line no-console
+    if (is_logged_in) {
+        window.addEventListener('beforeinstallprompt', e => {
+            console.log('Going to show the installation prompt'); // eslint-disable-line no-console
 
-        e.preventDefault();
+            e.preventDefault();
 
-        setPWAPromptEvent(e);
-        addNotificationBar({
-            content : <InstallPWA />,
-            autoShow: 10000, // show after 10 secs
-            msg_type: 'pwa',
+            setPWAPromptEvent(e);
+            addNotificationBar({
+                content : <InstallPWA />,
+                autoShow: 10000, // show after 10 secs
+                msg_type: 'pwa',
+            });
         });
-    });
+    }
 
     return (
         <div
@@ -52,12 +55,14 @@ AppContents.propTypes = {
     children              : PropTypes.any,
     is_blurred            : PropTypes.bool,
     is_contract_mode      : PropTypes.bool,
+    is_logged_in          : PropTypes.bool,
     is_positions_drawer_on: PropTypes.bool,
     setPWAPromptEvent     : PropTypes.func,
 };
 
 export default withRouter(connect(
-    ({ modules, ui }) => ({
+    ({ client, modules, ui }) => ({
+        is_logged_in          : client.is_logged_in,
         is_contract_mode      : modules.smart_chart.is_contract_mode,
         is_blurred            : ui.is_blurred,
         is_positions_drawer_on: ui.is_positions_drawer_on,
