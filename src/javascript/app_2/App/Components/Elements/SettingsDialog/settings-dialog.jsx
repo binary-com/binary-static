@@ -40,10 +40,8 @@ class SettingsDialog extends React.PureComponent {
         this.props.hideBlur();
     }
 
-    // TODO - Simplify this
     handleClickOutside = (event) => {
-        const footer_settings_btn = !(event.target.classList.contains('ic-settings', 'ic-settings ic-settings--active'));
-        if (this.wrapper_ref && !this.wrapper_ref.contains(event.target) && this.props.is_open && footer_settings_btn) {
+        if (this.wrapper_ref && !this.wrapper_ref.contains(event.target) && this.props.is_open) {
             this.props.toggleDialog();
         }
     };
