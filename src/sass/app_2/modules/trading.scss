@@ -177,6 +177,9 @@
             &-i {
                 @extend %inline-icon.secondary;
             }
+            &--disabled {
+                pointer-events: none;
+            }
             &[data-tooltip] {
                 text-decoration: none;
 
