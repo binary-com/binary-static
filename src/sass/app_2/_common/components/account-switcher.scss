@@ -83,6 +83,9 @@
         &:not(:last-child) {
             margin-right: 1em;
         }
+        &:first-letter {
+            text-transform: capitalize;
+        }
     }
 }
 
