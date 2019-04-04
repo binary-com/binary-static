@@ -1,5 +1,6 @@
 import classNames                  from 'classnames';
 import React                       from 'react';
+import PropTypes                   from 'prop-types';
 import { localize }                from '_common/localize';
 import { PopConfirm }              from 'App/Components/Elements/PopConfirm';
 import Tooltip                     from 'App/Components/Elements/tooltip.jsx';
@@ -12,17 +13,16 @@ const PurchaseFieldset = ({
     basis,
     currency,
     info,
-    idx,
     is_contract_mode,
     is_disabled,
     is_high_low,
     is_loading,
-    is_purchase_confirm_on,
     is_proposal_error,
+    is_purchase_confirm_on,
     is_purchase_locked,
-    togglePurchaseLock,
     onClickPurchase,
     onHoverPurchase,
+    togglePurchaseLock,
     type,
 }) => {
     const purchase_button = (
@@ -40,7 +40,6 @@ const PurchaseFieldset = ({
     return (
         <Fieldset
             className='trade-container__fieldset purchase-container__option'
-            key={idx}
         >
             {(is_purchase_locked && idx === 0) &&
             <PurchaseLock onClick={togglePurchaseLock} />
@@ -79,6 +78,23 @@ const PurchaseFieldset = ({
             </React.Fragment>
         </Fieldset>
     );
+};
+
+PurchaseFieldset.propTypes = {
+    basis                 : PropTypes.string,
+    currency              : PropTypes.string,
+    info                  : PropTypes.object,
+    is_contract_mode      : PropTypes.bool,
+    is_disabled           : PropTypes.bool,
+    is_high_low           : PropTypes.bool,
+    is_loading            : PropTypes.bool,
+    is_proposal_error     : PropTypes.bool,
+    is_purchase_confirm_on: PropTypes.bool,
+    is_purchase_locked    : PropTypes.bool,
+    onClickPurchase       : PropTypes.func,
+    onHoverPurchase       : PropTypes.func,
+    togglePurchaseLock    : PropTypes.func,
+    type                  : PropTypes.string,
 };
 
 export default PurchaseFieldset;
