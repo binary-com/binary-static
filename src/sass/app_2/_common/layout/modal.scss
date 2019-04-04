@@ -11,11 +11,23 @@
     background-color: transparentize($COLOR_DARK_BLUE_1, 0.7);
     z-index: 9999;
     display: none;
+    overflow: hidden;
 
     &:not(:empty) {
         display: flex;
         animation: fade-in;
         animation-duration: 0.2s;
+    }
+    &:before {
+        content: '';
+        margin: -35px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        filter: blur(20px);
+        z-index: -1;
     }
 }
 

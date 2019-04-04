@@ -14,7 +14,7 @@ $header-height: 4em;
     margin-top: #{$POSITIONS_DRAWER_MARGIN * 2};
     position: fixed;
     z-index: 2;
-    top: $HEADER_HEIGHT;
+    top: 0;
     left: 4px;
     box-sizing: border-box;
     opacity: 0;

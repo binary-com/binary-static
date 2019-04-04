@@ -1,3 +1,4 @@
+import classNames     from 'classnames';
 import PropTypes      from 'prop-types';
 import React          from 'react';
 import { connect }    from 'Stores/connect';
@@ -10,6 +11,7 @@ import {
 
 const Footer = ({
     hideBlur,
+    is_blurred,
     is_dark_mode,
     is_language_dialog_visible,
     is_logged_in,
@@ -20,7 +22,10 @@ const Footer = ({
     togglePositionsDrawer,
     toggleSettingsDialog,
 }) => (
-    <React.Fragment>
+    <footer className={classNames('footer', {
+        'footer--is-blurred': is_blurred,
+    })}
+    >
         <div className='footer__links footer__links--left'>
             {
                 is_logged_in &&
@@ -43,10 +48,11 @@ const Footer = ({
             />
             <ToggleFullScreen />
         </div>
-    </React.Fragment>
+    </footer>
 );
 
 Footer.propTypes = {
+    is_blurred                : PropTypes.bool,
     is_dark_mode              : PropTypes.bool,
     is_language_dialog_visible: PropTypes.bool,
     is_logged_in              : PropTypes.bool,
@@ -60,6 +66,7 @@ Footer.propTypes = {
 export default connect(
     ({ client, common, ui }) => ({
         hideBlur                  : ui.hideBlur,
+        is_blurred                : ui.is_blurred,
         is_dark_mode              : ui.is_dark_mode_on,
         is_logged_in              : client.is_logged_in,
         network_status            : common.network_status,

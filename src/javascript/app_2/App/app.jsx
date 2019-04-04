@@ -4,7 +4,6 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import getBaseName                 from 'Utils/URL/base-name';
 import { MobxProvider }            from 'Stores/connect';
 import ErrorBoundary               from './Components/Elements/Errors/error-boundary.jsx';
-import PositionsDrawer             from './Components/Elements/PositionsDrawer';
 import { POSITIONS }               from './Components/Elements/ToastMessage';
 import ToastMessage                from './Containers/toast-message.jsx';
 import AppContents                 from './Containers/Layout/app-contents.jsx';
@@ -25,16 +24,13 @@ const App = ({ root_store }) => (
                 <ErrorBoundary>
                     <AppContents>
                         <Routes />
-                        <PositionsDrawer />
                         <ToastMessage position={POSITIONS.TOP_RIGHT} />
                     </AppContents>
                     <DenialOfServiceModal />
                     <MarketUnavailableModal />
                     <ServicesErrorModal />
                 </ErrorBoundary>
-                <footer className='footer'>
-                    <Footer />
-                </footer>
+                <Footer />
             </React.Fragment>
         </MobxProvider>
     </Router>
