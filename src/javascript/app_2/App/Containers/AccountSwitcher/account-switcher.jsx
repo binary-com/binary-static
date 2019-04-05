@@ -2,6 +2,7 @@ import classNames               from 'classnames';
 import PropTypes                from 'prop-types';
 import React                    from 'react';
 import { localize }             from '_common/localize';
+import { urlFor }               from '_common/url';
 import { isEmptyObject }        from '_common/utility';
 import { IconAccountsCurrency } from 'Assets/Header/AccountsCurrency';
 import { IconLogout }           from 'Assets/Header/Drawer';
@@ -87,7 +88,14 @@ class AccountSwitcher extends React.Component {
                             // Update text below for handling types of account to create :- e.g - Investment
                             !!(this.props.is_upgrade_enabled && this.props.upgrade_info.can_open_multi) &&
                             <div className='acc-switcher__new-account'>
-                                <span className='acc-switcher__new-account-title'>{localize('Add new account')}</span>
+                                <a
+                                    className='acc-switcher__new-account-link'
+                                    href={urlFor('user/accounts', undefined, undefined, true)}
+                                    rel='noopener noreferrer'
+                                    target='_blank'
+                                >
+                                    {localize('Add new account')}
+                                </a>
                             </div>
                         }
                     </div>
