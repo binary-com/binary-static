@@ -13,16 +13,24 @@ const Footer = (() => {
             // logged in virtual clients with maltainvest financial landing company or
             // logged out clients with EU IP address
             if (Client.isLoggedIn()) {
-                showWarning((Client.get('landing_company_shortcode') === 'maltainvest' ||
+                const landing_company_shortcode = Client.get('landing_company_shortcode');
+                showWarning((landing_company_shortcode === 'maltainvest' ||
                     (Client.get('is_virtual') && State.getResponse('landing_company.financial_company.shortcode') === 'maltainvest')));
+                setVisibilityAgeRestrictionSign(/^(malta|iom)$/.test(landing_company_shortcode));
             } else {
-                showWarning(isEuCountry());
+                const is_eu_country = isEuCountry();
+                showWarning(is_eu_country);
+                setVisibilityAgeRestrictionSign(is_eu_country);
             }
         });
     };
 
     const showWarning = (should_show_warning) => {
         $('#footer-regulatory .eu-only').setVisibility(should_show_warning);
+    };
+
+    const setVisibilityAgeRestrictionSign = (should_show_age_restriction_sign) => {
+        $('#footer-regulatory .age-restriction-sign').setVisibility(+should_show_age_restriction_sign);
     };
 
     const clearNotification = () => {
