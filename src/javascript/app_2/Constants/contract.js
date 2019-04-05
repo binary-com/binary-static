@@ -14,7 +14,7 @@ const getContractConfig = is_high_low => ({
         position: 'top',
     },
     PUT: {
-        name    : is_high_low ? localize('Low') : localize('Fall'),
+        name    : is_high_low ? localize('Lower') : localize('Fall'),
         position: 'bottom',
     },
     CALLE: {
