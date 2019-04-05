@@ -2,6 +2,7 @@ const setShouldRedirect      = require('../user/account/settings/cashier_passwor
 const BinaryPjax             = require('../../base/binary_pjax');
 const Client                 = require('../../base/client');
 const BinarySocket           = require('../../base/socket');
+const Dialog                 = require('../../common/attach_dom/dialog');
 const showPopup              = require('../../common/attach_dom/popup');
 const Currency               = require('../../common/currency');
 const FormManager            = require('../../common/form_manager');
@@ -237,6 +238,20 @@ const DepositWithdraw = (() => {
                     showError('custom_error', error.message);
             }
         } else {
+            const popup_valid_for_url = `${Url.urlFor('cashier/forwardws')}?action=deposit`;
+            const popup_valid = popup_valid_for_url === window.location.href;
+            if (popup_valid && Client.canChangeCurrency(State.getResponse('statement'), State.getResponse('mt5_login_list'))) {
+                Dialog.confirm({
+                    id                : 'deposit_currency_change_popup_container',
+                    ok_text           : localize('Yes I\'m sure'),
+                    cancel_text       : localize('Cancel'),
+                    localized_title   : localize('Are you sure?'),
+                    localized_message : localize('You will not be able to change your fiat account\'s currency after making this deposit. Are you sure you want to proceed?'),
+                    localized_footnote: localize('[_1]No, change my fiat account\'s currency now[_2]', [`<a href=${Url.urlFor('user/accounts')}>`, '</a>']),
+                    onAbort           : () => BinaryPjax.load(Url.urlFor('cashier')),
+                });
+            }
+
             if (/^BCH/.test(Client.get('currency'))) {
                 getElementById('message_bitcoin_cash').setVisibility(1);
             }
@@ -269,8 +284,10 @@ const DepositWithdraw = (() => {
         getCashierType();
         const req_cashier_password   = BinarySocket.send({ cashier_password: 1 });
         const req_get_account_status = BinarySocket.send({ get_account_status: 1 });
+        const req_statement          = BinarySocket.send({ statement: 1, limit: 1 });
+        const req_mt5_login_list     = BinarySocket.send({ mt5_login_list: 1 });
 
-        Promise.all([req_cashier_password, req_get_account_status]).then(() => {
+        Promise.all([req_cashier_password, req_get_account_status, req_statement, req_mt5_login_list]).then(() => {
             // cannot use State.getResponse because we want to check error which is outside of response[msg_type]
             const response_cashier_password   = State.get(['response', 'cashier_password']);
             const response_get_account_status = State.get(['response', 'get_account_status']);
