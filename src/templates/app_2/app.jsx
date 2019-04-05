@@ -10,7 +10,9 @@ const BinaryApp = () => (
         <body className={classNames('body', it.language, 'theme')}>
             <GTMNoScript />
             <Loading />
-            <div id='binary_app' className='binary-app' />
+            <div id='binary_app' className='binary-app'>
+                <Loading />
+            </div>
             <div id='modal_root' className='modal-root' />
         </body>
     </html>
