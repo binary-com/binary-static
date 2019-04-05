@@ -9,9 +9,6 @@ import { WS }                     from 'Services';
 import { createChartBarrier }     from './Helpers/chart-barriers';
 import { createChartMarkers }     from './Helpers/chart-markers';
 import {
-    createChartTickMarkers,
-    destroyChartTickMarkers }    from './Helpers/chart-tick-markers';
-import {
     getDetailsExpiry,
     getDetailsInfo }             from './Helpers/details';
 import {
@@ -66,12 +63,7 @@ export default class ContractStore extends BaseStore {
         }
 
         createChartBarrier(SmartChartStore, contract_info);
-
-        if (contract_info.tick_count && contract_info.exit_tick_time) { // TODO: remove this.contract_info.exit_tick_time when ongoing contracts are implemented
-            createChartTickMarkers(SmartChartStore, contract_info);
-        } else {
-            createChartMarkers(SmartChartStore, contract_info);
-        }
+        createChartMarkers(SmartChartStore, contract_info);
 
         this.handleDigits();
     }
@@ -87,6 +79,7 @@ export default class ContractStore extends BaseStore {
         this.is_left_epoch_set = has_left_epoch;
 
         if (contract_id) {
+            this.smart_chart.saveAndClearTradeChartLayout();
             this.smart_chart.setContractMode(true);
             WS.subscribeProposalOpenContract(this.contract_id, this.updateProposal, false);
         }
@@ -112,8 +105,8 @@ export default class ContractStore extends BaseStore {
         this.is_left_epoch_set = false;
         this.sell_info         = {};
 
-        destroyChartTickMarkers();
         this.smart_chart.cleanupContractChartView();
+        this.smart_chart.applySavedTradeChartLayout();
     }
 
     @action.bound
@@ -139,9 +132,14 @@ export default class ContractStore extends BaseStore {
             return;
         }
         if (+response.proposal_open_contract.contract_id !== +this.contract_id) return;
-        this.contract_info = response.proposal_open_contract;
-        this.drawChart(this.smart_chart, this.contract_info);
 
+        this.contract_info = response.proposal_open_contract;
+
+        if (this.root_store.modules.trade.symbol !== this.contract_info.underlying) {
+            this.root_store.modules.trade.updateSymbol(this.contract_info.underlying);
+        }
+
+        this.drawChart(this.smart_chart, this.contract_info);
     }
 
     @action.bound

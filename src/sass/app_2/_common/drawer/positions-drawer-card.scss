@@ -155,6 +155,15 @@
         display: flex;
         justify-content: flex-start;
         font-weight: bold;
+
+        /* postcss-bem-linter: ignore */
+        .category-type {
+            .color1-fill {
+                @include themify($themes) {
+                    fill: themed('icon_color');
+                }
+            }
+        }
     }
     &__symbol {
         margin-left: 0.5rem;
@@ -168,9 +177,7 @@
         justify-content: center;
         align-items: center;
         @include themify($themes) {
-            &--price-stable {
-                color: themed('navbar_active_color');
-            }
+            color: themed('navbar_active_color');
         }
 
         &-label {
@@ -179,11 +186,17 @@
             font-weight: normal;
             margin-bottom: 0.5em;
         }
-        &--price-moved-up {
-            color: $COLOR_GREEN_1;
-        }
-        &--price-moved-down {
-            color: $COLOR_RED;
+        &--movement {
+            width: 16px;
+            height: 16px;
+
+            &-complete, &-complete:after {
+                display: none;
+            }
+            &:after {
+                content: '';
+                width: 16px;
+            }
         }
     }
     &__remaining-time {

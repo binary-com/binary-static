@@ -1,3 +1,27 @@
+@keyframes data--loading {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.loader {
+    overflow: hidden;
+    @include themify($themes) {
+        background-color: rgba(themed('loader_background'), 0.16);
+    }
+
+    &--loading {
+        width: inherit;
+        height: inherit;
+        animation: data--loading 1s cubic-bezier(1, 0, 0.5, 0) infinite;
+        background-image: linear-gradient(to left, rgba(255, 255, 255, 0), $COLOR_WHITE 10%, rgba(255, 255, 255, 0));
+        opacity: 0.32;
+    }
+}
+
 /** @define trade-container */
 .trade-container {
     @include themify($themes) {
@@ -36,8 +60,21 @@
         border-radius: $BORDER_RADIUS;
         @include themify($themes) {
             background: themed('container_color');
-            border-color: themed('container_color');
             color: themed('text_color');
+
+            &:hover {
+                border-color: themed('border_hover_color');
+            }
+        }
+    }
+    &__loader {
+        width: 92px;
+        height: 8px;
+        margin: 3.5px 0;
+        @extend .loader;
+
+        &--loading {
+            @extend .loader--loading;
         }
     }
     &__error {
@@ -58,36 +95,9 @@
             border-radius: $BORDER_RADIUS;
         }
     }
-    &__currency {
-        position: absolute;
-        float: left;
-        font-size: 10px;
-        height: 32px;
-        left: 32px;
-        align-items: center;
-        justify-content: center;
-        width: 20px;
-        display: flex;
-        background: transparent;
-        border-color: transparent;
-        z-index: 2;
-        @include themify($themes) {
-            color: themed('text_primary_color');
-        }
-
-        &--symbol {
-            font-size: 1.4em;
-            line-height: 1.5;
-        }
-        &:before {
-            @include typeface(--paragraph-center-normal-black);
-            color: inherit;
-        }
-    }
     &__price {
         line-height: 0.9rem;
         border: 0;
-        margin: 8px 0 0;
         width: 100%;
         display: flex;
         justify-content: space-between;
@@ -101,6 +111,13 @@
             justify-self: left;
             align-items: center;
 
+            &--disabled {
+                .trade-container__price-info-value, .trade-container__price-info-basis {
+                    @include themify($themes) {
+                        color: themed('disabled_color');
+                    }
+                }
+            }
             &-value {
                 @include typeface(--small-left-bold-black);
                 @include themify($themes) {
@@ -108,7 +125,7 @@
                 }
             }
             &-basis {
-                @include typeface(--small-left-normal-black);
+                @include typeface(--paragraph-left-normal-black);
                 margin-left: 0;
                 font-weight: normal;
                 @include themify($themes) {
@@ -132,9 +149,11 @@
         }
         &-tooltip {
             &-i {
-                @extend %inline-icon.disabled;
+                @extend %inline-icon.secondary;
             }
             &[data-tooltip] {
+                text-decoration: none;
+
                 &:before, &:after {
                     right: 230px !important;
                 }
@@ -142,6 +161,11 @@
                     padding-left: 3em;
                     white-space: normal;
                     width: 265px;
+                }
+            }
+            &:hover {
+                .trade-container__price-tooltip-i {
+                    @extend %inline-icon.white;
                 }
             }
         }
@@ -198,7 +222,6 @@
             margin-top: 0.8em;
         }
         &--display {
-            margin-top: 0;
             border-radius: $BORDER_RADIUS 0 0 $BORDER_RADIUS;
 
             /* postcss-bem-linter: ignore */
@@ -309,59 +332,37 @@
     overflow: hidden;
     height: 5.6em;
     width: 100%;
-    margin: 0;
+    margin: 5px 0 0;
+    padding: 0;
     text-align: left;
-    margin-top: 5px;
+    transition: box-shadow 0.5s;
 
-    span.btn-purchase__trade-type-text {
-        @include typeface(--paragraph-left-bold-active);
+    &:not(&--disabled) {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.24);
     }
-    span.btn-purchase__currency {
-        @include typeface(--xsmall-left-bold-active);
+    &__text {
+        @include typeface(--paragraph-left-bold-active);
     }
     &__info {
-        width: 30%;
-        float: right;
-        text-align: right;
-        height: 56px;
-        display: flex;
-        flex-direction: column;
-    }
-    &__return {
-        @include typeface(--paragraph-left-bold-active);
-        display: flex;
-        justify-content: flex-end;
-        flex-grow: 1;
-        align-items: flex-end;
-    }
-    &__profit {
-        @include typeface(--xsmall-left-bold-active);
-        display: flex;
-        justify-content: flex-end;
-        flex-grow: 1;
-        align-items: flex-start;
-        line-height: unset;
-    }
-    &__content {
-        max-width: 50%;
-        float: left;
+        color: $COLOR_WHITE;
         text-align: left;
-        height: 5.6em;
-        display: flex;
-        flex-direction: column;
-    }
-    &__trade-type {
         position: relative;
         display: flex;
         flex-grow: 1;
         align-items: center;
-        width: 100%;
+        padding-left: 10px;
+        height: 56px;
+    }
+    &__info--left {
+        background-color: $COLOR_GREEN_1;
+        width: 60%;
+        float: left;
 
-        &-text {
-            margin-left: 26px;
+        .btn-purchase__text_wrapper {
+            margin-left: 24px;
             position: absolute;
         }
-        &-icon {
+        .btn-purchase__icon_wrapper {
             @extend %inline-icon.white;
             /* postcss-bem-linter: ignore */
             .color1-fill {
@@ -371,18 +372,13 @@
             }
         }
     }
-    &__effect-main {
-        width: 60%;
-        height: 56px;
-        position: absolute;
-        background-color: $COLOR_GREEN_1;
-        color: $COLOR_WHITE;
-        left: 0;
-        top: 0;
-        bottom: 0;
-        display: inline-block;
-        float: left;
-        text-align: left;
+    &__info--right {
+        width: 40%;
+        padding-left: 10%;
+        padding-right: 10px;
+        float: right;
+        justify-content: right;
+        background-color: transparent;
     }
     &__effect-detail {
         width: 0;
@@ -397,45 +393,81 @@
         display: inline-block;
     }
     &__shadow-wrapper {
-        box-shadow: 0 0px 0px rgba(0, 0, 0, 0.15);
         position: relative;
 
-        &:after {
-            content: '';
-            position: absolute;
-            z-index: 1;
-            width: 100%;
-            height: calc(100% - 6px);
-            pointer-events: none;
-            top: 4px;
-            left: 0;
-            border-radius: $BORDER_RADIUS;
-            opacity: 1;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            transition: opacity 0.3s ease-in-out;
+        &:not(&--disabled) {
+            box-shadow: 0 0px 0px rgba(0, 0, 0, 0.15);
+
+            &:after {
+                content: '';
+                position: absolute;
+                z-index: 1;
+                width: 100%;
+                height: calc(100% - 6px);
+                pointer-events: none;
+                top: 4px;
+                left: 0;
+                border-radius: $BORDER_RADIUS;
+                opacity: 1;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+                transition: opacity 0.3s ease-in-out;
+            }
+            &:hover:after {
+                opacity: 0;
+            }
         }
     }
-    &:disabled {
-        background-color: $COLOR_DARK_BLUE_8;
-        color: $COLOR_DARK_BLUE_7;
+    &--disabled {
+        cursor: default;
+
         @include themify($themes) {
-            background-color: themed('disabled_color');
-            color: themed('text_secondary_color');
+            background-color: themed('btn_purchase_disabled_bg');
+            color: themed('disabled_color');
+
+            .btn-purchase__info--left {
+                background-color: themed('btn_purchase_disabled_accent');
+
+                svg {
+                    @include colorIcon(themed('disabled_color'), themed('disabled_color'));
+                }
+                .btn-purchase__text {
+                    color: themed('disabled_color');
+                }
+            }
+            .btn-purchase__effect-detail {
+                border-color: transparent transparent transparent themed('btn_purchase_disabled_accent');
+            }
+        }
+    }
+    &--animated {
+        .btn-purchase__icon_wrapper, .btn-purchase__text_wrapper {
+            @extend .loader;
+        }
+        .btn-purchase__icon, .btn-purchase__text {
+            @extend .loader--loading;
+        }
+        .btn-purchase__icon_wrapper {
+            width: 16px;
+            height: 16px;
+        }
+        .btn-purchase__text_wrapper {
+            width: 56px;
+            height: 8px;
+
+            .btn-purchase__text {
+                display: block;
+            }
         }
     }
     &__shadow-wrapper:hover:after {
         opacity: 0;
     }
-    &:disabled .btn-purchase__effect-main {
-        background: $COLOR_DARK_BLUE_8;
-    }
-    &:disabled .btn-purchase__effect-detail {
-        border-color: transparent transparent transparent $COLOR_DARK_BLUE_8;
-    }
-    &:disabled .btn-purchase__trade-type svg {
-        opacity: 0.16;
-    }
-    &:disabled .btn-purchase__currency {
-        color: $COLOR_DARK_BLUE_8;
+}
+
+/** @define duration-container */
+.duration-container {
+    /* postcss-bem-linter: ignore */
+    .dropdown-container {
+        margin-top: 0.8em;
     }
 }

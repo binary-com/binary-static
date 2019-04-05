@@ -1,16 +1,12 @@
 import PropTypes            from 'prop-types';
 import React                from 'react';
-import URL                  from '_common/url';
 import { getPropertyValue } from '_common/utility';
-import FullPageModal        from 'App/Components/Elements/FullPageModal/full-page-modal.jsx';
-import Localize             from 'App/Components/Elements/localize.jsx';
 import UILoader             from 'App/Components/Elements/ui-loader.jsx';
 import { connect }          from 'Stores/connect';
 import Test                 from './test.jsx';
 import FormLayout           from '../Components/Form/form-layout.jsx';
 import Digits               from '../../Contract/Containers/digits.jsx';
 import InfoBox              from '../../Contract/Containers/info-box.jsx';
-import { localize }         from '../../../../_common/localize';
 
 const SmartChart = React.lazy(() => import(/* webpackChunkName: "smart_chart" */'../../SmartChart'));
 
@@ -28,7 +24,6 @@ class Trade extends React.Component {
         const form_wrapper_class = this.props.is_mobile ? 'mobile-wrapper' : 'sidebar__container desktop-only';
         const should_show_last_digit_stats = ['match_diff', 'even_odd', 'over_under'].includes(this.props.contract_type)
             && !this.props.is_contract_mode;
-
         return (
             <div id='trade_container' className='trade-container'>
                 <div className='chart-container'>
@@ -40,10 +35,6 @@ class Trade extends React.Component {
                                 InfoBox={<InfoBox is_trade_page />}
                                 onSymbolChange={this.props.onSymbolChange}
                                 symbol={this.props.symbol}
-                                chart_type={this.props.chart_type}
-                                granularity={this.props.granularity}
-                                updateChartType={this.props.updateChartType}
-                                updateGranularity={this.props.updateGranularity}
                                 should_show_last_digit_stats={should_show_last_digit_stats}
                                 scroll_to_epoch={this.props.scroll_to_epoch}
                                 scroll_to_offset={this.props.scroll_to_offset}
@@ -64,40 +55,28 @@ class Trade extends React.Component {
                         is_trade_enabled={this.props.is_trade_enabled}
                     />
                 </div>
-                <FullPageModal
-                    confirm_button_text={localize('No, Stay on BinaryNex')}
-                    cancel_button_text={localize('Go to SmartTrader')}
-                    is_visible={this.props.has_only_forward_starting_contracts}
-                    onConfirm={() => this.props.setHasOnlyForwardingContracts(false)}
-                    onCancel={() => window.open(URL.websiteUrl()) && this.props.setHasOnlyForwardingContracts(false)}
-                    title={localize('Market is unavailable')}
-                >
-                    <Localize str='Sorry, but this market is not supported yet on BinaryNex. Do you want to trade this market on SmartTrader?' />
-                </FullPageModal>
             </div>
         );
     }
 }
 
 Trade.propTypes = {
-    chart_id                           : PropTypes.number,
-    chart_zoom                         : PropTypes.number,
-    contract_type                      : PropTypes.string,
-    end_epoch                          : PropTypes.number,
-    has_only_forward_starting_contracts: PropTypes.bool,
-    is_contract_mode                   : PropTypes.bool,
-    is_mobile                          : PropTypes.bool,
-    is_trade_enabled                   : PropTypes.bool,
-    onClickNewTrade                    : PropTypes.func,
-    onMount                            : PropTypes.func,
-    onSymbolChange                     : PropTypes.func,
-    onUnmount                          : PropTypes.func,
-    purchase_info                      : PropTypes.object,
-    scroll_to_epoch                    : PropTypes.number,
-    scroll_to_offset                   : PropTypes.number,
-    setHasOnlyForwardingContracts      : PropTypes.func,
-    start_epoch                        : PropTypes.number,
-    symbol                             : PropTypes.string,
+    chart_id        : PropTypes.number,
+    chart_zoom      : PropTypes.number,
+    contract_type   : PropTypes.string,
+    end_epoch       : PropTypes.number,
+    is_contract_mode: PropTypes.bool,
+    is_mobile       : PropTypes.bool,
+    is_trade_enabled: PropTypes.bool,
+    onClickNewTrade : PropTypes.func,
+    onMount         : PropTypes.func,
+    onSymbolChange  : PropTypes.func,
+    onUnmount       : PropTypes.func,
+    purchase_info   : PropTypes.object,
+    scroll_to_epoch : PropTypes.number,
+    scroll_to_offset: PropTypes.number,
+    start_epoch     : PropTypes.number,
+    symbol          : PropTypes.string,
 };
 
 export default connect(
@@ -107,11 +86,7 @@ export default connect(
         scroll_to_epoch                    : modules.smart_chart.scroll_to_left_epoch,
         scroll_to_offset                   : modules.smart_chart.scroll_to_left_epoch_offset,
         chart_zoom                         : modules.smart_chart.zoom,
-        chart_type                         : modules.smart_chart.chart_type,
-        granularity                        : modules.smart_chart.granularity,
         is_contract_mode                   : modules.smart_chart.is_contract_mode,
-        updateChartType                    : modules.smart_chart.updateChartType,
-        updateGranularity                  : modules.smart_chart.updateGranularity,
         chart_id                           : modules.trade.chart_id,
         contract_type                      : modules.trade.contract_type,
         is_trade_enabled                   : modules.trade.is_trade_enabled,

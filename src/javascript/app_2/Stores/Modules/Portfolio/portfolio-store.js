@@ -5,6 +5,7 @@ import {
 import { WS }                      from 'Services';
 import { formatPortfolioPosition } from './Helpers/format-response';
 import {
+    getCurrentTick,
     getDurationPeriod,
     getDurationTime,
     getDurationUnitText }          from './Helpers/details';
@@ -69,6 +70,8 @@ export default class PortfolioStore extends BaseStore {
             // subscribe to new contract:
             WS.subscribeProposalOpenContract(contract_id, this.proposalOpenContractHandler, false);
         } else if (act === 'sell') {
+            const i = this.getPositionIndexById(contract_id);
+            this.positions[i].is_loading = true;
             WS.subscribeProposalOpenContract(contract_id, this.populateResultDetails, false);
         }
     }
@@ -97,14 +100,19 @@ export default class PortfolioStore extends BaseStore {
         // store contract proposal details that do not require modifiers
         portfolio_position.contract_info    = proposal;
 
-        if (!proposal.is_valid_to_sell) {
-            portfolio_position.status = 'no-resale';
-        } else if (new_indicative > prev_indicative) {
-            portfolio_position.status = 'price-moved-up';
+        // for tick contracts
+        if (proposal.tick_count) {
+            const current_tick = (portfolio_position.current_tick > getCurrentTick(proposal)) ?
+                portfolio_position.current_tick : getCurrentTick(proposal);
+            portfolio_position.current_tick = current_tick;
+        }
+
+        if (new_indicative > prev_indicative) {
+            portfolio_position.status = 'profit';
         } else if (new_indicative < prev_indicative) {
-            portfolio_position.status = 'price-moved-down';
+            portfolio_position.status = 'loss';
         } else {
-            portfolio_position.status = 'price-stable';
+            portfolio_position.status = null;
         }
     }
 
@@ -122,13 +130,14 @@ export default class PortfolioStore extends BaseStore {
     handleSell(response) {
         // Toast messages are temporary UI for prompting user of sold contracts
         if (response.error) {
-            // If unable to sell due to error, give error via toast message if not in contract mode
+            // If unable to sell due to error, give error via pop up if not in contract mode
             const i = this.getPositionIndexById(response.echo_req.sell);
             this.positions[i].is_sell_requested = false;
-            this.root_store.ui.addToastMessage({
-                message: response.error.message,
-                type   : 'error',
-            });
+            this.root_store.common.services_error = {
+                type: response.msg_type,
+                ...response.error,
+            };
+            this.root_store.ui.toggleServicesErrorModal(true);
         } else if (!response.error && response.sell) {
             const i = this.getPositionIndexById(response.sell.contract_id);
             this.positions[i].is_sell_requested = false;
@@ -156,12 +165,15 @@ export default class PortfolioStore extends BaseStore {
         this.positions[i].is_valid_to_sell = isValidToSell(contract_response);
         this.positions[i].result           = getDisplayStatus(contract_response);
         this.positions[i].sell_time        = getEndSpotTime(contract_response) || contract_response.current_spot_time; // same as exit_spot, use latest spot time if no exit_tick_time
+        this.positions[i].status           = 'complete';
 
         // fix for missing barrier and entry_spot
         if (!this.positions[i].contract_info.barrier || !this.positions[i].contract_info.entry_spot) {
             this.positions[i].contract_info.barrier    = this.positions[i].barrier;
             this.positions[i].contract_info.entry_spot = this.positions[i].entry_spot;
         }
+
+        this.positions[i].is_loading = false;
     }
 
     @action.bound

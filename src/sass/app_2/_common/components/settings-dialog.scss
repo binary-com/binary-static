@@ -65,7 +65,7 @@
     }
     &__container {
         @include themify($themes) {
-            background-color: themed('background_container_color');
+            background-color: themed('container_secondary_color');
         }
         width: 736px;
         position: relative;
