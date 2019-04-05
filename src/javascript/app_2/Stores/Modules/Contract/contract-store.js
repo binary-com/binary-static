@@ -79,6 +79,7 @@ export default class ContractStore extends BaseStore {
         this.is_left_epoch_set = has_left_epoch;
 
         if (contract_id) {
+            this.smart_chart.saveAndClearTradeChartLayout();
             this.smart_chart.setContractMode(true);
             WS.subscribeProposalOpenContract(this.contract_id, this.updateProposal, false);
         }
@@ -105,6 +106,7 @@ export default class ContractStore extends BaseStore {
         this.sell_info         = {};
 
         this.smart_chart.cleanupContractChartView();
+        this.smart_chart.applySavedTradeChartLayout();
     }
 
     @action.bound
@@ -130,9 +132,14 @@ export default class ContractStore extends BaseStore {
             return;
         }
         if (+response.proposal_open_contract.contract_id !== +this.contract_id) return;
-        this.contract_info = response.proposal_open_contract;
-        this.drawChart(this.smart_chart, this.contract_info);
 
+        this.contract_info = response.proposal_open_contract;
+
+        if (this.root_store.modules.trade.symbol !== this.contract_info.underlying) {
+            this.root_store.modules.trade.updateSymbol(this.contract_info.underlying);
+        }
+
+        this.drawChart(this.smart_chart, this.contract_info);
     }
 
     @action.bound
