@@ -6,7 +6,6 @@ import {
 import {
     MAX_MOBILE_WIDTH,
     MAX_TABLET_WIDTH } from 'Constants/ui';
-import { unique }      from '_common/utility';
 import BaseStore       from './base-store';
 
 const store_name = 'ui_store';
@@ -34,11 +33,11 @@ export default class UIStore extends BaseStore {
     @observable is_chart_layout_default     = true;
 
     // PWA event and config
-    @observable pwa_prompt_event = null;
+    @observable is_install_button_visible = false;
+    @observable pwa_prompt_event          = null;
 
     @observable screen_width = window.innerWidth;
 
-    @observable push_notifications = [];
     @observable toast_messages = [];
 
     @observable is_advanced_duration   = false;
@@ -207,7 +206,13 @@ export default class UIStore extends BaseStore {
     }
 
     @action.bound
-    removePWAPromptEvent() {
+    showInstallButton() {
+        this.is_install_button_visible = true;
+    }
+
+    @action.bound
+    hideInstallButton() {
+        this.is_install_button_visible = false;
         this.pwa_prompt_event = null;
     }
 
@@ -237,11 +242,5 @@ export default class UIStore extends BaseStore {
     @action.bound
     setHasOnlyForwardingContracts(has_only_forward_starting_contracts) {
         this.has_only_forward_starting_contracts = has_only_forward_starting_contracts;
-    }
-
-    @action.bound
-    addNotificationBar(message) {
-        this.push_notifications.push(message);
-        this.push_notifications = unique(this.push_notifications, 'msg_type');
     }
 }
