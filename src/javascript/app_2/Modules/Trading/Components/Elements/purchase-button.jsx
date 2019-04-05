@@ -30,7 +30,7 @@ const PurchaseButton = ({
                 <div className='btn-purchase__icon_wrapper'>
                     <IconTradeType
                         className='btn-purchase__icon'
-                        type={!is_loading ? is_high_low ? `${type.toLowerCase()}_barrier` : type.toLowerCase() : ''}
+                        type={!is_loading ? (is_high_low ? `${type.toLowerCase()}_barrier` : type.toLowerCase()) : ''}
                     />
                 </div>
                 <div className='btn-purchase__text_wrapper'>
