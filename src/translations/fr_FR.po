@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-04-05 03:51\n"
+"PO-Revision-Date: 2019-04-05 09:49\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: French\n"
 "MIME-Version: 1.0\n"
@@ -411,6 +411,12 @@ msgstr "%1Télécharger MAM pour Windows%2 après que vous ayez configuré votre
 
 msgid "%1Founded%2 October 1999"
 msgstr "%1FFondé%2 en Octobre 1999"
+
+msgid "%1Manage your accounts%2"
+msgstr ""
+
+msgid "%1No, change my fiat account's currency now%2"
+msgstr ""
 
 msgid "%1Your Proof of Identity or Proof of Address%2 did not meet our requirements. Please check your email for further instructions."
 msgstr "%1Votre preuve d’Identité ou Preuve de Domicile%2 ne satisfont pas nos exigences. Veuillez vérifier votre email pour obtenir des instructions supplémentaires."
@@ -1347,6 +1353,12 @@ msgstr "Voulez-vous vraiment supprimer ce jeton de façon permanente"
 
 msgid "Are you sure that you want to permanently revoke access to the application"
 msgstr "Voulez-vous vraiment révoquer l'accès à cette application de façon permanente"
+
+msgid "Are you sure you want to create a fiat account in %1?"
+msgstr ""
+
+msgid "Are you sure you want to create your %1 account now?"
+msgstr ""
 
 msgid "Are you sure?"
 msgstr "Êtes vous sûr?"
@@ -2287,6 +2299,9 @@ msgstr "La session de la caisse a expiré"
 msgid "Certain limits are imposed as to the acceptable levels for barrier/strike prices of contracts. Typically, the barrier/strike may not be too close nor too far from the current underlying market level."
 msgstr "Certaines limites sont imposées comme étant les niveaux acceptables pour les prix barrière/prix d'exercice des contrats. Typiquement, le prix barrière/prix d'exercice ne doit pas être trop proche ni trop éloignée du niveau actuel du marché sous-jacent."
 
+msgid "Change"
+msgstr ""
+
 msgid "Change API Endpoint"
 msgstr "Modifier le point terminal de l'API"
 
@@ -2920,6 +2935,9 @@ msgstr "Employées de l'artisanat, de la métallurgie, ainsi que des secteurs é
 msgid "Create"
 msgstr "Créer"
 
+msgid "Create %1 account"
+msgstr ""
+
 msgid "Create Account"
 msgstr "Créer un compte"
 
@@ -2928,9 +2946,6 @@ msgstr "Créer un compte MAM"
 
 msgid "Create MetaTrader 5 account"
 msgstr "Créer un compte MetaTrader 5"
-
-msgid "Create New Account"
-msgstr "Créer un nouveau compte"
 
 msgid "Create New Token"
 msgstr "Créer un nouveau jeton"
@@ -2967,6 +2982,9 @@ msgstr "Créer les modèles mathématiques/statistiques pour le système de tari
 
 msgid "Create new virtual-money account"
 msgstr "Créer un nouveau compte d’argent virtuel"
+
+msgid "Create or Manage Accounts"
+msgstr ""
 
 msgid "Create strategies against potential risks that might arise due to disruptive innovation"
 msgstr "Créer des stratégies contre les risques potentiels qui peuvent arriver en raison d'innovation disruptive"
@@ -3427,6 +3445,9 @@ msgstr "Offrez vous des outils pour gérer les trades de mes clients ?"
 msgid "Do you run a website that promotes Forex or binary options? Join our global network of affiliates and turn your online traffic into revenue."
 msgstr "Vous avez un site Web qui promeut le Forex ou les options binaires ? Rejoignez notre réseau mondial d'affiliés et transformez votre trafic en ligne en revenus."
 
+msgid "Do you want this to be a fiat account or crypto account? Please choose one:"
+msgstr ""
+
 msgid "Do you want to learn more about the markets and how to trade them? Check out the resources below."
 msgstr "Vous voulez en apprendre davantage sur les marchés ou comment effectuer des trades sur ces marchés? Consultez les ressources ci-dessous."
 
@@ -3459,6 +3480,9 @@ msgstr "Vous n'avez pas encore de compte %1?"
 
 msgid "Don't show again"
 msgstr "Ne plus afficher à nouveau"
+
+msgid "Don't want to trade in %1? You can open another cryptocurrency account."
+msgstr ""
 
 msgid "Don’t share your %1 account or payment methods with any other person."
 msgstr "Ne partagez pas votre compte ou méthodes de paiement %1 avec toute autre personne."
@@ -7048,6 +7072,9 @@ msgstr "N.B. Les transferts par l'intermédiaire d'un Agent de paiement ne sont 
 msgid "Note: This feature is not available if you logged in using a social network."
 msgstr "Remarque : Cette fonctionnalité n’est pas disponible si vous vous connectez en utilisant un réseau social."
 
+msgid "Note: You are limited to one fiat currency account. The currency of your fiat account can be changed before you deposit into your fiat account for the first time or create an MT5 account. You may also open one account for each supported cryptocurrency."
+msgstr ""
+
 msgid "Note: You can only have one fiat currency account and one of each cryptocurrency account."
 msgstr "Remarque : Vous ne pouvez avoir qu'un compte en monnaie fiduciaire et un pour chaque monnaie digitale."
 
@@ -7879,8 +7906,8 @@ msgstr "Veuillez cocher la case."
 msgid "Please select the country where you are a tax resident. If you have any doubts, kindly consult your tax advisor."
 msgstr "Veuillez sélectionner le pays où vous êtes un résident fiscal. Si vous avez des doutes, veuillez consulter votre conseiller fiscal."
 
-msgid "Please select the currency of this account:"
-msgstr "Veuillez sélectionner la devise de ce compte :"
+msgid "Please select the currency for this account:"
+msgstr ""
 
 msgid "Please select the date range of your statement:"
 msgstr "Veuillez sélectionner la plage de dates de votre déclaration :"
@@ -10594,6 +10621,9 @@ msgstr "Il s'agit du prix actuel auquel un sous-jacent peut être acheté ou ven
 msgid "This is why we've come up with the following three-step tutorial to help you bridge that gap and make your first trade:"
 msgstr "C’est pourquoi nous avons mis au point le tutoriel suivant en trois étapes pour vous aider à combler ce fossé et faire votre premier trade :"
 
+msgid "This is your %1 account."
+msgstr ""
+
 msgid "This notice does not explain all of the risks involved in investments or similar products or how such risks relate to your personal circumstances. It is important that you fully understand the risks involved before making a decision to enter into any product with us. If you are in any doubt about the risks involved, you should seek professional advice."
 msgstr "Cet avertissement n'explique pas tous les risques liés aux investissements ou produits associés, et ne permet pas d'évaluer ces risques en fonction de votre situation personnelle. Il est important que vous compreniez pleinement les risques auxquels vous vous exposez avant de prendre la décision de contracter tout produit avec nous. En cas de doutes concernant les risques associés, il convient de faire appel à un professionnel pour obtenir des conseils adaptés."
 
@@ -12313,11 +12343,17 @@ msgstr "Yandex.Money est un fournisseur de services de paiement électronique qu
 msgid "Yes"
 msgstr "Oui"
 
+msgid "Yes I'm sure"
+msgstr ""
+
 msgid "Yes, I understand"
 msgstr "Oui, je comprends"
 
 msgid "Yes, I want to sign up as an affiliate"
 msgstr "Oui, je veux m'inscrire en tant qu'affilié"
+
+msgid "Yes, I'm sure"
+msgstr ""
 
 msgid "Yes, we will provide you with banners, links, reviews, videos, and text ads that you can use to drive referrals to the %1 MT5 platform."
 msgstr "Oui, nous vous fournirons des bannières, liens, commentaires, vidéos et publicités textuelles que vous pouvez utiliser pour obtenir des clients référés sur la plateforme MT5 %1."
@@ -12457,6 +12493,9 @@ msgstr "Vous vous attendez à ce que la devise de base augmente en valeur, afin 
 msgid "You are in default or breach of any covenant, obligation or condition contained in this Agreement, and if such default is not cured within seven days of receipt of written notice from the Company;"
 msgstr "Vous êtes en manquement ou violation concernant tout type d'engagement, d'obligation ou de condition que prévoit le présent Accord, si vous ne remédiez pas à ce manquement dans un délai de sept jours après réception d'un préavis écrit de la part de la Société ;"
 
+msgid "You are limited to one fiat account. You can change the currency of your fiat account anytime before you make a first-time deposit or create an MT5 account."
+msgstr ""
+
 msgid "You are not allowed to rebate any part commission payment onto your referrals and should the company realise you are engaged in such actions; your affiliate account shall be revoked immediately."
 msgstr "Vous n'avez pas l'autorisation de proposer aux clients de votre réseau d'affiliation une réduction quelle qu'elle soit sur le paiement des commissions et si la société apprend que vous menez de telles actions votre compte d'affilié sera immédiatement supprimé."
 
@@ -12508,6 +12547,9 @@ msgstr "Vous êtes prêt et financièrement capable de soutenir une perte totale
 msgid "You bear the responsibility of ensuring that payments made to the Company are correctly received with the specified Client’s Account details."
 msgstr "Vous assumez la responsabilité de veiller à ce que les paiements effectués à la Société parviennent correctement avec les informations de Compte du Client spécifié."
 
+msgid "You can %1set a new currency%2 before you deposit for the first time or create an MT5 account."
+msgstr ""
+
 msgid "You can close this window without interrupting your trade."
 msgstr "Vous pouvez aussi fermer cette fenêtre sans interrompre votre trade."
 
@@ -12525,6 +12567,12 @@ msgstr "Vous pouvez déterminer la marge requise de nos paires de metaux en util
 
 msgid "You can generate all kinds of insightful reports, including the following:"
 msgstr "Vous pouvez générer toutes sortes de rapports intéressants, y compris ce qui suit :"
+
+msgid "You can no longer change the currency because you've created an MT5 account."
+msgstr ""
+
+msgid "You can no longer change the currency because you've made a first-time deposit."
+msgstr ""
 
 msgid "You can sell your contract before expiry to keep any profit you may have made or to minimise your loss."
 msgstr "Vous pouvez vendre votre contrat avant son expiration pour protéger vos bénéfices éventuels et minimiser vos pertes."
@@ -12571,12 +12619,6 @@ msgstr "Vous avez déjà retiré l'équivalent de %2 %1 au total au cours des %3
 msgid "You have already withdrawn the equivalent of %1 %2."
 msgstr "Vous avez déjà retiré l'équivalent de %2 %1."
 
-msgid "You have chosen %1 as the currency for this account. You cannot change this later. You can have more than one cryptocurrency account."
-msgstr "Vous avez sélectionné %1 comme la devise de ce compte. Vous ne pouvez pas changer cela plus tard. Vous pouvez avoir plusieurs comptes crypto devise."
-
-msgid "You have chosen %1 as the currency for this account. You cannot change this later. You can have one fiat currency account only."
-msgstr "Vous avez sélectionné %1 comme la devise de ce compte. Vous ne pouvez pas changer cela plus tard. Vous ne pouvez avoir qu'un seul compte fiat."
-
 msgid "You have created all accounts available to you."
 msgstr "Vous avez créé tous les comptes mis à votre disposition."
 
@@ -12619,11 +12661,14 @@ msgstr "Vous avez lu l'intégralité de la page des Conditions générales et vo
 msgid "You have sold this contract at %1 %2"
 msgstr "Vous avez vendu ce contrat %2 %1"
 
-msgid "You have successfully created your %1account!"
-msgstr "Vous avez créé votre compte %1 avec succès !"
+msgid "You have successfully changed your account currency from %1 to %2."
+msgstr ""
 
 msgid "You have successfully created your Virtual Account."
 msgstr "Vous avez créé votre Compte Virtuel avec succès ."
+
+msgid "You have successfully created your real money %1account."
+msgstr ""
 
 msgid "You have successfully disabled two-factor authentication for your account."
 msgstr "Vous avez désactivé l’authentification deux facteurs avec succès pour votre compte."
@@ -12681,6 +12726,9 @@ msgstr "Vous pouvez uniquement ouvrir un compte sur ce site à condition que:"
 
 msgid "You may only transfer funds between fiat and cryptocurrency accounts."
 msgstr "Vous ne pouvez virer des fonds qu'entre des comptes fiat et crypto devise."
+
+msgid "You may open one account for each supported cryptocurrency."
+msgstr ""
 
 msgid "You may proceed but please <a href=\"%1\">authenticate</a> your account within five days to continue trading."
 msgstr "Vous pouvez procéder, mais veuillez <a href=\"%1\">authentifier</a> votre compte dans les cinq jours suivants afin de continuer à trader."
@@ -12835,6 +12883,12 @@ msgstr "Vous aurez la possibilité de gagner un niveau de revenu supplémentaire
 msgid "You will increase awareness of your services and generate new business."
 msgstr "Vous allez augmenter la connaissance de vos services et générer de nouvelles affaires."
 
+msgid "You will not be able to change your fiat account's currency after creating this MT5 account. Are you sure you want to proceed?"
+msgstr ""
+
+msgid "You will not be able to change your fiat account's currency after making this deposit. Are you sure you want to proceed?"
+msgstr ""
+
 msgid "You will provide us with any information that we may reasonably require to fully satisfy the demand or the requirements of the applicable government authority, upon our request."
 msgstr "Vous nous fournirez toute information que nous pouvons raisonnablement demander pour satisfaire complètement la demande ou les exigences de l'autorité gouvernementale applicable, sur notre demande."
 
@@ -12981,6 +13035,12 @@ msgstr "Vos dettes ne sont pas réglés comme, et lorsqu'elles sont dues."
 
 msgid "Your demo account balance is currently %1 or less. You may top up your account with an additional %2."
 msgstr "Le solde de votre compte démo est actuellement inférieur ou égal à %1. Vous pouvez recharger votre compte avec %2 de plus."
+
+msgid "Your fiat account's currency is currently set to %1."
+msgstr ""
+
+msgid "Your fiat account's currency is set to %1."
+msgstr ""
 
 msgid "Your forex and contracts for differences transactions with %1 are linked to an underlying financial instrument and you will be exposed to price, currency exchange, interest rate or other volatility of the market to which your financial instrument is related to, especially if the market is of a jurisdiction that is foreign to you. Forex and contracts for differences trading over the internet via an electronic trading platform is subject to data latency risk which may result in delays in order execution."
 msgstr "Vos transactions de contrat de forex et pour différences avec %1 sont liés à un instrument financier sous jacent et vous serez exposé au prix, au échange de devises, au taux d’intérêt ou d'autre volatilité de marché pour laquelle votre instrument financier est en rapport, spécialement si le marché est d'une juridiction qui vous est étrangère. Le Forex et les contrats pour différences échangés sur Internet via une plateforme d'échange électronique sont sujets à des risques de latence de données qui peuvent conduire à des délais dans l’exécution des ordres."

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-04-05 03:53\n"
+"PO-Revision-Date: 2019-04-05 09:51\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
@@ -410,6 +410,12 @@ msgstr "%1Загрузите ММС для Windows%2 после настройк
 
 msgid "%1Founded%2 October 1999"
 msgstr "%1Дата основания:%2 октябрь 1999 г."
+
+msgid "%1Manage your accounts%2"
+msgstr ""
+
+msgid "%1No, change my fiat account's currency now%2"
+msgstr ""
 
 msgid "%1Your Proof of Identity or Proof of Address%2 did not meet our requirements. Please check your email for further instructions."
 msgstr "%1Ваше подтверждение личности и адреса%2 не соответствует нашим требованиям. Пожалуйста, проверьте свою электронную почту. Мы отправили Вам дальнейшие инструкции."
@@ -1346,6 +1352,12 @@ msgstr "Вы уверены, что хотите навсегда удалить
 
 msgid "Are you sure that you want to permanently revoke access to the application"
 msgstr "Вы уверены, что хотите навсегда отказаться от доступа к приложению"
+
+msgid "Are you sure you want to create a fiat account in %1?"
+msgstr ""
+
+msgid "Are you sure you want to create your %1 account now?"
+msgstr ""
 
 msgid "Are you sure?"
 msgstr "Вы уверены?"
@@ -2286,6 +2298,9 @@ msgstr "Сессия в разделе Касса истекла"
 msgid "Certain limits are imposed as to the acceptable levels for barrier/strike prices of contracts. Typically, the barrier/strike may not be too close nor too far from the current underlying market level."
 msgstr "Налагаются определенные ограничения на приемлемые уровни рыночных цен для выигрыша контрактов. Обычно уровень рынка для выигрыша не может быть слишком близок к настоящему уровню рынка."
 
+msgid "Change"
+msgstr ""
+
 msgid "Change API Endpoint"
 msgstr "Изменить конечную точку API"
 
@@ -2919,6 +2934,9 @@ msgstr "Ремёсленники, рабочие по металлу, элект
 msgid "Create"
 msgstr "Открыть"
 
+msgid "Create %1 account"
+msgstr ""
+
 msgid "Create Account"
 msgstr "Открыть счёт"
 
@@ -2927,9 +2945,6 @@ msgstr "Открыть счёт ММС"
 
 msgid "Create MetaTrader 5 account"
 msgstr "Открыть счёт MetaTrader 5"
-
-msgid "Create New Account"
-msgstr "Открыть новый счет"
 
 msgid "Create New Token"
 msgstr "Создать новый ключ"
@@ -2966,6 +2981,9 @@ msgstr "Создание математических/статистически
 
 msgid "Create new virtual-money account"
 msgstr "Откройте новый виртуальный счёт"
+
+msgid "Create or Manage Accounts"
+msgstr ""
 
 msgid "Create strategies against potential risks that might arise due to disruptive innovation"
 msgstr "Разработка стратегий, направленных против потенциальных рисков, возникающих в отношении передовых технологий"
@@ -3426,6 +3444,9 @@ msgstr "Предоставляете ли Вы какие-либо инстру�
 msgid "Do you run a website that promotes Forex or binary options? Join our global network of affiliates and turn your online traffic into revenue."
 msgstr "У Вас есть вебсайт, рекламирующий Forex или бинарные опционы? Присоединитесь к нашей мировой сети партнёров и превратите свой онлайн траффик в источник дохода."
 
+msgid "Do you want this to be a fiat account or crypto account? Please choose one:"
+msgstr ""
+
 msgid "Do you want to learn more about the markets and how to trade them? Check out the resources below."
 msgstr "Хотите узнать больше о рынках или как на них работать? Смотрите информацию ниже."
 
@@ -3458,6 +3479,9 @@ msgstr "У Вас ещё нет счёта %1?"
 
 msgid "Don't show again"
 msgstr "Больше не показывать"
+
+msgid "Don't want to trade in %1? You can open another cryptocurrency account."
+msgstr ""
 
 msgid "Don’t share your %1 account or payment methods with any other person."
 msgstr "Не делитесь данным и Вашем счёте %1 или платёжных методов с другими лицами."
@@ -7047,6 +7071,9 @@ msgstr "Примечание: Переводы через Платежных а�
 msgid "Note: This feature is not available if you logged in using a social network."
 msgstr "Примечание: Данная функция недоступна, если Вы вошли на сайт через соц. сети."
 
+msgid "Note: You are limited to one fiat currency account. The currency of your fiat account can be changed before you deposit into your fiat account for the first time or create an MT5 account. You may also open one account for each supported cryptocurrency."
+msgstr ""
+
 msgid "Note: You can only have one fiat currency account and one of each cryptocurrency account."
 msgstr "Примечание: Вы можете открыть лишь один счёт с обычными деньгами и по одному счёту на каждую криптовалюту."
 
@@ -7878,8 +7905,8 @@ msgstr "Пожалуйста, выберите нужный ответ."
 msgid "Please select the country where you are a tax resident. If you have any doubts, kindly consult your tax advisor."
 msgstr "Пожалуйста, укажите страну, где Вы являетесь налоговым резидентом. В случае возникновения любых сомнений свяжитесь со своим налоговым консультантом."
 
-msgid "Please select the currency of this account:"
-msgstr "Пожалуйста, выберите валюту для данного счёта:"
+msgid "Please select the currency for this account:"
+msgstr ""
 
 msgid "Please select the date range of your statement:"
 msgstr "Пожалуйста, выберите временной диапазон для выписки:"
@@ -10593,6 +10620,9 @@ msgstr "Это текущая цена, по которой актив може�
 msgid "This is why we've come up with the following three-step tutorial to help you bridge that gap and make your first trade:"
 msgstr "В этой связи предлагаем Вашему вниманию руководство из трёх шагов, восполняющее возможные пробелы в знаниях и позволяющее заключить первый контракт:"
 
+msgid "This is your %1 account."
+msgstr ""
+
 msgid "This notice does not explain all of the risks involved in investments or similar products or how such risks relate to your personal circumstances. It is important that you fully understand the risks involved before making a decision to enter into any product with us. If you are in any doubt about the risks involved, you should seek professional advice."
 msgstr "Данное положение не объясняет все возможные риски в инвестициях или подобных продуктах, а также соответствие данных рисков Вашим личным обстоятельствам. Важно, чтобы Вы полностью понимали возможные риски перед принятием решения о приобретении у нас любого продукта. Если у Вас есть сомнения относительно рисков, сопряженных с инвестиционными продуктами или игровыми продуктами, рекомендуем получить квалифицированную юридическую консультацию."
 
@@ -12312,11 +12342,17 @@ msgstr "Yandex.Money – это платежный сервис, предост�
 msgid "Yes"
 msgstr "Да"
 
+msgid "Yes I'm sure"
+msgstr ""
+
 msgid "Yes, I understand"
 msgstr "Да, я понимаю"
 
 msgid "Yes, I want to sign up as an affiliate"
 msgstr "Да, я хочу стать Партнёром"
+
+msgid "Yes, I'm sure"
+msgstr ""
 
 msgid "Yes, we will provide you with banners, links, reviews, videos, and text ads that you can use to drive referrals to the %1 MT5 platform."
 msgstr "Да, мы предоставим Вам баннеры, ссылки, обзоры, видео и текстовую рекламу, которой можно пользоваться для привлечения клиентов на платформу MT5 от %1."
@@ -12456,6 +12492,9 @@ msgstr "Вы ожидаете, что базовая валюта подорож
 msgid "You are in default or breach of any covenant, obligation or condition contained in this Agreement, and if such default is not cured within seven days of receipt of written notice from the Company;"
 msgstr "Вы не выполняете или нарушаете любое обязательство, правило или условие данного Соглашения, и если данное нарушение не устранено в течение семи дней после получения письменного уведомления от Компании;"
 
+msgid "You are limited to one fiat account. You can change the currency of your fiat account anytime before you make a first-time deposit or create an MT5 account."
+msgstr ""
+
 msgid "You are not allowed to rebate any part commission payment onto your referrals and should the company realise you are engaged in such actions; your affiliate account shall be revoked immediately."
 msgstr "Вы не имеете права перечислять часть комиссионных выплат клиентам. Если Компания узнает, что Вы причастны к таким действиям, Ваш партнерский счет будет незамедлительно аннулирован."
 
@@ -12507,6 +12546,9 @@ msgstr "Вы согласны и можете себе финансово поз
 msgid "You bear the responsibility of ensuring that payments made to the Company are correctly received with the specified Client’s Account details."
 msgstr "Вы несёте полную ответственность и обязуетесь убедиться, что платежи, выполненные Компании, будут должным образом получены с указанием соответствующих данных счёта клиента."
 
+msgid "You can %1set a new currency%2 before you deposit for the first time or create an MT5 account."
+msgstr ""
+
 msgid "You can close this window without interrupting your trade."
 msgstr "Вы можете закрыть данное окно без ущерба Вашей торговле."
 
@@ -12524,6 +12566,12 @@ msgstr "Вы можете рассчитать маржу для интерес�
 
 msgid "You can generate all kinds of insightful reports, including the following:"
 msgstr "Вы можете получить любые отчёты о Вашей деятельности, включая:"
+
+msgid "You can no longer change the currency because you've created an MT5 account."
+msgstr ""
+
+msgid "You can no longer change the currency because you've made a first-time deposit."
+msgstr ""
 
 msgid "You can sell your contract before expiry to keep any profit you may have made or to minimise your loss."
 msgstr "Вы можете продать контракт до окончания срока его действия, чтобы сохранить имеющуюся прибыль или минимизировать убыток."
@@ -12570,12 +12618,6 @@ msgstr "Вы уже вывели общую сумму, эквивалентну
 msgid "You have already withdrawn the equivalent of %1 %2."
 msgstr "Вы уже вывели со счета сумму, эквивалентную %1 %2."
 
-msgid "You have chosen %1 as the currency for this account. You cannot change this later. You can have more than one cryptocurrency account."
-msgstr "Вы выбрали %1 валютой Вашего счёта. Вы не сможете изменить валюту позже, но можете открыть несколько криптовалютных счетов."
-
-msgid "You have chosen %1 as the currency for this account. You cannot change this later. You can have one fiat currency account only."
-msgstr "Вы выбрали %1 валютой своего счёта. Вы не сможете изменить валюту позже и можете открыть лишь один счёт в фидуциарных валютах."
-
 msgid "You have created all accounts available to you."
 msgstr "Вы открыли все доступные счета."
 
@@ -12618,11 +12660,14 @@ msgstr "Вы полностью прочитали данные юридичес
 msgid "You have sold this contract at %1 %2"
 msgstr "Вы продали данный контракт по цене %1 %2"
 
-msgid "You have successfully created your %1account!"
-msgstr "Вы успешно открыли счёт %1!"
+msgid "You have successfully changed your account currency from %1 to %2."
+msgstr ""
 
 msgid "You have successfully created your Virtual Account."
 msgstr "Вы успешно открыли демо-счёт."
+
+msgid "You have successfully created your real money %1account."
+msgstr ""
 
 msgid "You have successfully disabled two-factor authentication for your account."
 msgstr "Вы успешно отключили двухступенчатую аутентификацию на Вашем счету."
@@ -12680,6 +12725,9 @@ msgstr "Вы можете открыть счет на этом сайте пр�
 
 msgid "You may only transfer funds between fiat and cryptocurrency accounts."
 msgstr "Вы можете переводить средства только между фидуциарными и криптовалютными счетами."
+
+msgid "You may open one account for each supported cryptocurrency."
+msgstr ""
 
 msgid "You may proceed but please <a href=\"%1\">authenticate</a> your account within five days to continue trading."
 msgstr "Вы можете продолжить но для продолжения торговли, пожалуйста, <a href=\"%1\">пройдите аутентификацию</a> своего счёта в течение пяти дней."
@@ -12834,6 +12882,12 @@ msgstr "У Вас появится возможность получать до�
 msgid "You will increase awareness of your services and generate new business."
 msgstr "Вы сможете рассказать о своих услугах и начать новый бизнес."
 
+msgid "You will not be able to change your fiat account's currency after creating this MT5 account. Are you sure you want to proceed?"
+msgstr ""
+
+msgid "You will not be able to change your fiat account's currency after making this deposit. Are you sure you want to proceed?"
+msgstr ""
+
 msgid "You will provide us with any information that we may reasonably require to fully satisfy the demand or the requirements of the applicable government authority, upon our request."
 msgstr "по нашему требованию предоставить нам любую информацию, которая может нам потребоваться для соблюдения условий или требований соответствующего государственного органа."
 
@@ -12980,6 +13034,12 @@ msgstr "Ваши долговые обязательства не были оп�
 
 msgid "Your demo account balance is currently %1 or less. You may top up your account with an additional %2."
 msgstr "В данный момент баланс Вашего демо-счёта составляет %1 или ниже. Вы можете пополнить счёт дополнительными %2."
+
+msgid "Your fiat account's currency is currently set to %1."
+msgstr ""
+
+msgid "Your fiat account's currency is set to %1."
+msgstr ""
 
 msgid "Your forex and contracts for differences transactions with %1 are linked to an underlying financial instrument and you will be exposed to price, currency exchange, interest rate or other volatility of the market to which your financial instrument is related to, especially if the market is of a jurisdiction that is foreign to you. Forex and contracts for differences trading over the internet via an electronic trading platform is subject to data latency risk which may result in delays in order execution."
 msgstr "Ваши сделки на Forex и контрактах на разницу с %1 связаны с базовыми финансовыми инструментами и поэтому будут находиться под влиянием цены, валютного курса, процентной ставки и волатильности на рынке, к которому относится Ваш финансовый инструмент, особенно если рынок находится в незнакомой Вам юрисдикции. Торговля валютными контрактами (Forex) и контрактами на разницу через интернет, посредством электронной торговой платформы, несёт риск задержки данных, который может спровоцировать промедление при исполнении ордеров."
