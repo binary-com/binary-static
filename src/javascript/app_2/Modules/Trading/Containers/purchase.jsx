@@ -23,15 +23,16 @@ const Purchase = ({
 }) => {
     const components = [];
     Object.keys(trade_types).map((type, index) => {
-        const info              = proposal_info[type] || {};
+        const info        = proposal_info[type] || {};
         const is_disabled = !is_purchase_enabled
             || !is_trade_enabled
             || !info.id
             || !is_client_allowed_to_visit;
-        const is_high_low       = /high_low/.test(contract_type.toLowerCase());
+        const is_high_low         = /high_low/.test(contract_type.toLowerCase());
         const is_validation_error = Object.values(validation_errors).some(e => e.length);
-        const is_loading        = !is_validation_error && !info.has_error && !info.id;
-        const is_proposal_error = info.has_error && !info.has_error_details;
+        const is_loading          = !is_validation_error && !info.has_error && !info.id;
+        const is_proposal_error   = info.has_error && !info.has_error_details;
+
         const purchase_fieldset = (
             <PurchaseFieldset
                 basis={basis}
@@ -53,8 +54,10 @@ const Purchase = ({
             />
         );
         const contract_type_position = getContractTypePosition(type);
-        if (contract_type_position === 'top'){
+        if (contract_type_position === 'top') {
             components.unshift(purchase_fieldset);
+        } else if (contract_type_position === 'middle' && components.length > 1) {
+            components.splice(components.length / 2, 0, purchase_fieldset);
         } else if (contract_type_position === 'bottom') {
             components.push(purchase_fieldset);
         } else {

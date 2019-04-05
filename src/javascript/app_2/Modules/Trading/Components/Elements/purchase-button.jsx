@@ -25,7 +25,7 @@ const PurchaseButton = ({
     }
     return (
         <Button
-            is_disabled={ is_contract_mode || is_disabled }
+            is_disabled={is_contract_mode || is_disabled}
             id={`purchase_${type}`}
             className={classNames(
                 'btn-purchase',
@@ -43,7 +43,7 @@ const PurchaseButton = ({
                         />
                     </div>
                     <div className='btn-purchase__text_wrapper'>
-                        <span className='btn-purchase__text'>{ !is_loading && localize('[_1]', contract_type_display)}</span>
+                        <span className='btn-purchase__text'>{!is_loading && localize('[_1]', contract_type_display)}</span>
                     </div>
                 </div>
                 <div className='btn-purchase__effect-detail' />
