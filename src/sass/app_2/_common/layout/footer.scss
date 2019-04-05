@@ -90,6 +90,12 @@
     &__wrapper {
         height: 1.4em;
     }
+    &__tooltip[data-tooltip] {
+        &:before, &:after {
+            left: unset;
+            margin-left: 2em;
+        }
+    }
     &__circle {
         background: $COLOR_LIGHT_BLACK_3;
         width: 1em;
