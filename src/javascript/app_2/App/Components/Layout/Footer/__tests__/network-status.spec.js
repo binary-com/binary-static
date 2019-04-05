@@ -27,7 +27,7 @@ describe('NetworkStatus', () => {
     it('should contain Tooltip message passed in status', () => {
         const wrapper = shallow(<NetworkStatus status={status} />);
         expect(wrapper.contains(
-            <Tooltip alignment='top' message='Network status: Online'>
+            <Tooltip className='network-status__tooltip' alignment='top' message='Network status: Online'>
                 <div className='network-status__circle network-status__circle--online' />
             </Tooltip>
         )).to.be.true;
@@ -37,7 +37,7 @@ describe('NetworkStatus', () => {
         const wrapper = shallow(<NetworkStatus status={status} />);
         console.log(wrapper.toString());
         expect(wrapper.contains(
-            <Tooltip alignment='top' message='Network status: Connecting to server'>
+            <Tooltip className='network-status__tooltip' alignment='top' message='Network status: Connecting to server'>
                 <div className='network-status__circle' />
             </Tooltip>
         )).to.be.true;
