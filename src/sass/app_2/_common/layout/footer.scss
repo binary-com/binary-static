@@ -94,6 +94,7 @@
 .network-status {
     &__wrapper {
         height: 1.4em;
+        position: relative;
     }
     &__circle {
         background: $COLOR_LIGHT_BLACK_3;
