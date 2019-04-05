@@ -56,8 +56,6 @@ const Purchase = ({
         const contract_type_position = getContractTypePosition(type);
         if (contract_type_position === 'top') {
             components.unshift(purchase_fieldset);
-        } else if (contract_type_position === 'middle' && components.length > 1) {
-            components.splice(components.length / 2, 0, purchase_fieldset);
         } else if (contract_type_position === 'bottom') {
             components.push(purchase_fieldset);
         } else {

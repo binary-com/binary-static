@@ -63,15 +63,15 @@ const contract_config = {
     },
     LBFLOATCALL: {
         name    : localize('Close-Low'),
-        position: 'middle',
+        position: 'top',
     },
     LBFLOATPUT: {
         name    : localize('High-Close'),
-        position: 'middle',
+        position: 'bottom',
     },
     LBHIGHLOW: {
         name    : localize('High-Low'),
-        position: 'middle',
+        position: 'top',
     },
     RANGE: {
         name    : localize('Stays Between'),
