@@ -75,9 +75,10 @@ const Cashier = (() => {
         const el_current_currency = getElementById('account_currency_current');
         const el_current_hint     = getElementById('account_currency_hint');
         const upgrade_info        = Client.getUpgradeInfo();
+        const can_change          = Client.canChangeCurrency(statement, mt5_logins);
         const has_upgrade         = upgrade_info.can_upgrade || upgrade_info.can_open_multi
-                                    || Client.canChangeCurrency(statement, mt5_logins);
-        const account_action_text = has_upgrade ? `&nbsp;${localize('[_1]Manage your accounts[_2].', [`<a href=${Url.urlFor('user/accounts')}>`, '</a>'])}` : '';
+                                    || can_change;
+        const account_action_text = has_upgrade ? `<br />${localize('[_1]Manage your accounts[_2]', [`<a href=${Url.urlFor('user/accounts')}>`, '</a>'])}` : '';
 
         const missingCriteria = (has_mt5, has_transaction) => {
             const existing_mt5_msg          = localize('You can no longer change the currency because you\'ve created an MT5 account.') + account_action_text;
@@ -98,7 +99,7 @@ const Cashier = (() => {
         const currency_hint = isCryptocurrency(currency)
             ? localize('Don\'t want to trade in [_1]? You can open another cryptocurrency account.', `${currency}`) + account_action_text
             : has_no_mt5 && has_no_transaction
-                ? localize('You can set a new currency before you deposit for the first time or create an MT5 account.') + account_action_text
+                ? localize('You can [_1]set a new currency[_2] before you deposit for the first time or create an MT5 account.', can_change ? [`<a href=${Url.urlFor('user/accounts')}>`, '</a>'] : ['', ''])
                 : missingCriteria(!has_no_mt5, !has_no_transaction);
 
         elementInnerHtml(el_current_currency, currency_message);
