@@ -42,7 +42,7 @@
             background: $COLOR_ORANGE;
 
             &:hover:not([disabled]) {
-                background: $COLOR_ORANGE;
+                background: rgba($COLOR_ORANGE, 0.84);
             }
             &:active:not([disabled]) {
                 background: $COLOR_ORANGE;
@@ -79,18 +79,13 @@
         background: transparent;
 
         &--orange {
-            border: 1px solid $COLOR_ORANGE;
-
             .btn__text {
                 color: $COLOR_ORANGE;
             }
             &:hover:not([disabled]) {
-                border: 1px solid $COLOR_ORANGE;
-                color: $COLOR_ORANGE;
-                background: rgba(233, 128, 36, 0.1);
+                background: rgba($COLOR_ORANGE, 0.16);
             }
             &:active:not([disabled]) {
-                border: 1px solid $COLOR_ORANGE;
                 color: $COLOR_ORANGE;
             }
             /* postcss-bem-linter: ignore */
