@@ -77,7 +77,7 @@ const Cashier = (() => {
         const upgrade_info        = Client.getUpgradeInfo();
         const has_upgrade         = upgrade_info.can_upgrade || upgrade_info.can_open_multi
                                     || Client.canChangeCurrency(statement, mt5_logins);
-        const account_action_text = has_upgrade ? localize('[_1]Manage your accounts[_2].', [`<a href=${Url.urlFor('user/accounts')}>`, '</a>']) : '';
+        const account_action_text = has_upgrade ? `&nbsp;${localize('[_1]Manage your accounts[_2].', [`<a href=${Url.urlFor('user/accounts')}>`, '</a>'])}` : '';
 
         const missingCriteria = (has_mt5, has_transaction) => {
             const existing_mt5_msg          = localize('You can no longer change the currency because you\'ve created an MT5 account.') + account_action_text;

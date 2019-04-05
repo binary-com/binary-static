@@ -27,7 +27,7 @@ const SetCurrency = (() => {
                 const [ from, to ] = has_changed_currency.split('-');
                 $('#set_currency_loading').remove();
                 $('#hide_new_account').setVisibility(0);
-                $('#congratulations_message').text(localize('You have successfully changed your account currency from [_1] to [_2].', [ from, to ]));
+                $('#congratulations_message').html(localize('You have successfully changed your account currency from [_1] to [_2].', [ `<strong>${from}</strong>`, `<strong>${to}</strong>` ]));
                 $('#deposit_btn, #set_currency, #show_new_account').setVisibility(1);
                 localStorage.removeItem('has_changed_currency');
             } else if (is_new_account) {
