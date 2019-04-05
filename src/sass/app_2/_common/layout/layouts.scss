@@ -99,6 +99,12 @@
                 z-index: 0;
                 display: none;
             }
+            div.stx_jump_today.home > svg {
+                top: 5px;
+                left: 8px;
+                padding: 0;
+                position: absolute;
+            }
         }
         div.cq-chart-control-left {
             .cq-top-ui-widgets {
