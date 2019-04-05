@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-04-04 06:56\n"
+"PO-Revision-Date: 2019-04-05 03:54\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Vietnamese\n"
 "MIME-Version: 1.0\n"
@@ -4425,6 +4425,9 @@ msgstr "Đối với thị trường ngoại tệ: Thị trường ngoại 
 msgid "For full contact details of %3, kindly check our %1Contact Us%2 page."
 msgstr "Để có các chi tiết liên lạc đầy đủ của %3, vui lòng kiểm tra trang %1Liên hệ%2 của chúng tôi."
 
+msgid "For fully covered accounts, no margin will be charged on open positions. However, swaps and other applicable fees can cause your Account Equity to turn negative. In that case the Stop Out process will be triggered."
+msgstr ""
+
 msgid "For general support:"
 msgstr "Hỗ trợ chung:"
 
@@ -4433,9 +4436,6 @@ msgstr "Để biết thông tin về đòn bẩy Ngoại Hối vui lòng tham kh
 
 msgid "For payments-related queries:"
 msgstr "Cho các truy vấn liên quan đến các khoản thanh toán:"
-
-msgid "For perfectly hedged positions, no margin will be charged. However, swaps and other applicable fees can cause your Account Equity to turn negative. In such cases, the company reserves the right to close out your hedged positions in order to protect your Account Equity from decreasing further."
-msgstr "Đối với các phiên hoàn hảo, sẽ không có lãi suất nào phải trả. Tuy nhiên, giao dịch hoán đổi và lệ phí áp dụng khác có thể khiến Tài Khoản Vốn Sở Hữu của bạn chuyển tiêu cực. Trong trường hợp này, Công Ty có quyền đóng cửa phiên của bạn để bảo vệ Tài Khoản Vốn Sở Hữu của bạn khỏi thiệt hại hơn nữa."
 
 msgid "For the purposes of this Agreement, the following shall mean:"
 msgstr "Vì các mục đích của Thỏa Thuận này, sau đây có nghĩa là:"
@@ -5113,8 +5113,8 @@ msgstr "Nếu công ty (theo định nghĩa của nó) không hài lòng rằng 
 msgid "If the Company believes that unauthorised persons are using an account, it reserves the right to, without prior notice, suspend the Client’s rights to use the Trading Facility."
 msgstr "Nếu công ty tin rằng có người đang sử dụng trái phép một tài khoản, họ có quyền, mà không cần thông báo trước, đình chỉ quyền sử dụng cơ sở kinh doanh của khách hàng."
 
-msgid "If the Margin Level for your MT5 Real Account reaches or falls below the Stop Out Level, this will be classified as an Event of Default. In such circumstances, Open Positions are automatically closed in the following order: (i) the server analyses clients' Orders that are not under execution at the moment; (ii) the server deletes Orders with the largest Margin; (iii) if your Margin Level is still under the Stop Out Level, the next order is deleted (orders without margin requirements are not deleted); (iv) if your Margin Level is still under the Stop Out Level, the server closes a position with the largest loss; (v) Open Positions are closed until your Margin Level becomes higher than the Stop Out Level."
-msgstr "Nếu Mức Ký Quỹ cho Tài Khoản Thực MT5 của bạn đạt hoặc hạ thấp hơn Mức Dừng, điều này sẽ được phân loại như một Sự Kiện Mặc Định. Trong những hoàn cảnh như vậy, Phiên Mở là hoàn toàn tự động được đóng lại theo thứ tự sau: (i) máy chủ phân tích lệnh của khách hàng đang không trong thời gian thực thi; (ii) máy chủ thực hiện xóa lệnh với Giá Biên cao nhất; (iii) nếu Mức Ký Quỹ của bạn vẫn thấp hơn Mức Dừng, lệnh tiếp theo sẽ bị xóa (các lệnh không đòi hỏi Giá Ký Quỹ sẽ không bị xóa); (iv) nếu Mức Ký Quỹ của bạn vẫn thấp hơn Mức Dừng, máy chủ đóng các phiên với thiệt hại lớn nhất; (v) Phiên Mở sẽ bị đóng lại cho đến khi Mức Ký Quỹ của bạn cao hơn Mức Dừng."
+msgid "If the Margin Level for your MT5 Real Account reaches or falls below the Stop Out Level, this will be classified as an Event of Default. In such circumstances, Open Positions are automatically closed in the following order: (i) the server analyses clients' Orders that are not under execution at the moment; (ii) the server deletes Orders with the largest Margin; (iii) if your Margin Level is still under the Stop Out Level, the next order is deleted (orders without margin requirements are not deleted); (iv) if your Margin Level is still under the Stop Out Level, the server closes a position with the largest loss; (v) Open Positions are closed until your Margin Level becomes higher than the Stop Out Level. Additionally, for perfectly hedged positions, Stop Out will be performed on accounts having open positions, the zero margin (positions are covered), and negative equity."
+msgstr ""
 
 msgid "If the bid price is 1.05229, you'll buy USD 1.05229 for every EUR 1 you sell."
 msgstr "Nếu giá mua vào là 1.05229, bạn sẽ mua 1.05229 USD cho mỗi 1 EUR bạn bán."

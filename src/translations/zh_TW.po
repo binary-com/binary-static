@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-04-04 06:56\n"
+"PO-Revision-Date: 2019-04-05 03:53\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -4425,6 +4425,9 @@ msgstr "關於外匯交易：外匯市場是銀行和其它大型金融機構相
 msgid "For full contact details of %3, kindly check our %1Contact Us%2 page."
 msgstr "關於%3的完整聯繫資訊, 請查看%1聯繫我們%2頁面。"
 
+msgid "For fully covered accounts, no margin will be charged on open positions. However, swaps and other applicable fees can cause your Account Equity to turn negative. In that case the Stop Out process will be triggered."
+msgstr ""
+
 msgid "For general support:"
 msgstr "一般支援："
 
@@ -4433,9 +4436,6 @@ msgstr "有關外匯槓桿的資訊, 請參閱我們的 %1保證金政策%2。"
 
 msgid "For payments-related queries:"
 msgstr "付款相關的查詢："
-
-msgid "For perfectly hedged positions, no margin will be charged. However, swaps and other applicable fees can cause your Account Equity to turn negative. In such cases, the company reserves the right to close out your hedged positions in order to protect your Account Equity from decreasing further."
-msgstr "對於完全對沖頭寸將不收取保證金。然而, 掉期和其他適用的費用可能導致您的帳戶淨值變成負數。在這種情況下, 公司保留關閉您的對沖頭寸的權利, 以保護您的帳戶權益不進一步降低。"
 
 msgid "For the purposes of this Agreement, the following shall mean:"
 msgstr "就本協定而言, 以下各項的含意為:"
@@ -5112,8 +5112,8 @@ msgstr "如果公司（自行決定）不確定客戶是否遵守這些條款，
 msgid "If the Company believes that unauthorised persons are using an account, it reserves the right to, without prior notice, suspend the Client’s rights to use the Trading Facility."
 msgstr "如果公司認為有未經授權的人在使用帳戶, 它有權在不事先通知的情況下中止客戶使用交易設施的權利。"
 
-msgid "If the Margin Level for your MT5 Real Account reaches or falls below the Stop Out Level, this will be classified as an Event of Default. In such circumstances, Open Positions are automatically closed in the following order: (i) the server analyses clients' Orders that are not under execution at the moment; (ii) the server deletes Orders with the largest Margin; (iii) if your Margin Level is still under the Stop Out Level, the next order is deleted (orders without margin requirements are not deleted); (iv) if your Margin Level is still under the Stop Out Level, the server closes a position with the largest loss; (v) Open Positions are closed until your Margin Level becomes higher than the Stop Out Level."
-msgstr "如果您MT5真實帳戶的保證金層次達到或低於強制平倉層次，將被歸類為默認事件。在這種情況下，未平倉頭寸將按照以下順序自動平倉: (i) 伺服器分析當前沒在執行的客戶訂單;（ii）伺服器刪除保證金最高的訂單;（iii）如果您的保證金層次仍然低於強制平倉層次，下一個訂單將被刪除（沒有保證金要求的訂單不會被刪除）;（iv）如果您的保證金層次仍然低於強制平倉層次，伺服器將虧損最大的頭寸平倉; （v）未平倉頭寸將強制平倉，直到您的保證金層次高於強制平倉層次。"
+msgid "If the Margin Level for your MT5 Real Account reaches or falls below the Stop Out Level, this will be classified as an Event of Default. In such circumstances, Open Positions are automatically closed in the following order: (i) the server analyses clients' Orders that are not under execution at the moment; (ii) the server deletes Orders with the largest Margin; (iii) if your Margin Level is still under the Stop Out Level, the next order is deleted (orders without margin requirements are not deleted); (iv) if your Margin Level is still under the Stop Out Level, the server closes a position with the largest loss; (v) Open Positions are closed until your Margin Level becomes higher than the Stop Out Level. Additionally, for perfectly hedged positions, Stop Out will be performed on accounts having open positions, the zero margin (positions are covered), and negative equity."
+msgstr ""
 
 msgid "If the bid price is 1.05229, you'll buy USD 1.05229 for every EUR 1 you sell."
 msgstr "如果賣價是1.05229，那麼您每賣出1歐元就會買入1.05229美元。"

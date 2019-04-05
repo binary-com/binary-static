@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-04-04 06:55\n"
+"PO-Revision-Date: 2019-04-05 03:52\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Korean\n"
 "MIME-Version: 1.0\n"
@@ -4426,6 +4426,9 @@ msgstr "외환: 외환시장은 은행과 다른 주요 금융 기관들이 중�
 msgid "For full contact details of %3, kindly check our %1Contact Us%2 page."
 msgstr "%3에 대한 세부 연락 정보를 보시려면, %1문의하기%2 페이지를 확인해 주세요."
 
+msgid "For fully covered accounts, no margin will be charged on open positions. However, swaps and other applicable fees can cause your Account Equity to turn negative. In that case the Stop Out process will be triggered."
+msgstr ""
+
 msgid "For general support:"
 msgstr "일반적 지원:"
 
@@ -4434,9 +4437,6 @@ msgstr ""
 
 msgid "For payments-related queries:"
 msgstr ""
-
-msgid "For perfectly hedged positions, no margin will be charged. However, swaps and other applicable fees can cause your Account Equity to turn negative. In such cases, the company reserves the right to close out your hedged positions in order to protect your Account Equity from decreasing further."
-msgstr "완벽하게 헷지된 포지션의 경우, 증거금이 청구되지 않을 것입니다. 그렇지만, 스왑 및 적용될 수 있는 다른 요금들은 귀하의 계좌잔고가 마이너스로 가는 원인이 될 수 있습니다. 이런 경우, 본 회사는 이미 마이너스 상태인 귀하의 계좌의 상황이 더 악화되지 않도록 귀하의 헷지된 포지션을 해지할 수 있는 권한이 있습니다."
 
 msgid "For the purposes of this Agreement, the following shall mean:"
 msgstr ""
@@ -5113,8 +5113,8 @@ msgstr "만약 본 회사가(본 회사의 재량으로) 고객이 이러한 조
 msgid "If the Company believes that unauthorised persons are using an account, it reserves the right to, without prior notice, suspend the Client’s rights to use the Trading Facility."
 msgstr "만약 본 회사가 인가받지 않은 사람이 계좌를 사용하는 것이라 판단될 때, 본 회사는 사전 공지 없이 해당 고객의 거래소 이용 권리를 중지할 권리가 있습니다."
 
-msgid "If the Margin Level for your MT5 Real Account reaches or falls below the Stop Out Level, this will be classified as an Event of Default. In such circumstances, Open Positions are automatically closed in the following order: (i) the server analyses clients' Orders that are not under execution at the moment; (ii) the server deletes Orders with the largest Margin; (iii) if your Margin Level is still under the Stop Out Level, the next order is deleted (orders without margin requirements are not deleted); (iv) if your Margin Level is still under the Stop Out Level, the server closes a position with the largest loss; (v) Open Positions are closed until your Margin Level becomes higher than the Stop Out Level."
-msgstr "귀하의 MT5 실계좌에 대한 마진 레벨이 스탑아웃 레벨에 도달하거나 그 수준에 미치지 못하는 경우, 이는 채무불이행으로 분류됩니다. 이러한 상황에서는, 오픈 포지션은 다음의 순서대로 자동으로 해지됩니다: (i) 서버가 당시에 실행중이지 않은 고객 주문들을 분석합니다; (ii) 서버가 가장 높은 마진이 있는 주문을 제거합니다; (iii) 귀하의 마진 레벨이 여전히 스탑아웃 레벨의 아래인 경우, 그 다음의 주문은 제거됩니다 (증거금률이 없는 주문은 제거되지 않습니다); (iv) 만약 귀하의 마진 레벨이 아직도 스탑아웃 레벨의 아래인 경우, 서버는 가장 큰 손실이 있는 포지션을 닫습니다; (v) 오픈 포지션들은 귀하의 마진 레벨이 스탑아웃 레벨보다 높아질 때까지 닫히게 됩니다."
+msgid "If the Margin Level for your MT5 Real Account reaches or falls below the Stop Out Level, this will be classified as an Event of Default. In such circumstances, Open Positions are automatically closed in the following order: (i) the server analyses clients' Orders that are not under execution at the moment; (ii) the server deletes Orders with the largest Margin; (iii) if your Margin Level is still under the Stop Out Level, the next order is deleted (orders without margin requirements are not deleted); (iv) if your Margin Level is still under the Stop Out Level, the server closes a position with the largest loss; (v) Open Positions are closed until your Margin Level becomes higher than the Stop Out Level. Additionally, for perfectly hedged positions, Stop Out will be performed on accounts having open positions, the zero margin (positions are covered), and negative equity."
+msgstr ""
 
 msgid "If the bid price is 1.05229, you'll buy USD 1.05229 for every EUR 1 you sell."
 msgstr ""

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-04-04 06:57\n"
+"PO-Revision-Date: 2019-04-05 03:54\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Thai\n"
 "MIME-Version: 1.0\n"
@@ -4426,6 +4426,9 @@ msgstr "สำหรับฟอเร็กซ์ หรือ ตลาดค�
 msgid "For full contact details of %3, kindly check our %1Contact Us%2 page."
 msgstr "สำหรับรายละเอียดติดต่อ %3 โปรดตรวจสอบที่หน้า %1 ติดต่อเรา %2"
 
+msgid "For fully covered accounts, no margin will be charged on open positions. However, swaps and other applicable fees can cause your Account Equity to turn negative. In that case the Stop Out process will be triggered."
+msgstr ""
+
 msgid "For general support:"
 msgstr "สำหรับการสนับสนุนทั่วไป:"
 
@@ -4434,9 +4437,6 @@ msgstr "สำหรับข้อมูลเกี่ยวกับเลเ
 
 msgid "For payments-related queries:"
 msgstr "สำหรับการสอบถามเกี่ยวกับการชำระเงิน:"
-
-msgid "For perfectly hedged positions, no margin will be charged. However, swaps and other applicable fees can cause your Account Equity to turn negative. In such cases, the company reserves the right to close out your hedged positions in order to protect your Account Equity from decreasing further."
-msgstr "สำหรับตำแหน่งในการป้องกันความเสี่ยงอย่างสมบูรณ์ จะไม่เรียกเก็บค่าธรรมเนียม แต่อย่างไรก็ตามค่าแลกเปลี่ยนและค่าธรรมเนียมการจัดการธุรกรรมอื่นๆ อาจทำให้บัญชีของท่านเปลี่ยนเป็นมูลค่าติดลบได้ บริษัทฯ ขอสงวนสิทธิ์ในการปิดตำแหน่งการป้องกันความเสี่ยงของท่านเพื่อป้องกันเงินทุนในบัญชีของท่านที่อาจจะลดลงด้วยเหตุต่างๆ"
 
 msgid "For the purposes of this Agreement, the following shall mean:"
 msgstr "สำหรับวัตถุประสงค์ของข้อตกลงนี้ สิ่งต่อไปนี้หมายความว่า:"
@@ -5113,8 +5113,8 @@ msgstr "หากบริษัทฯ (โดยดุลยพินิจข�
 msgid "If the Company believes that unauthorised persons are using an account, it reserves the right to, without prior notice, suspend the Client’s rights to use the Trading Facility."
 msgstr "หากบริษัทฯ ติดตามการใช้งานและเข้าใจว่า มีบุคคลอื่นที่ไม่ได้รับอนุญาตกำลังใช้งานบัญชี บริษัทฯ ขอสงวนสิทธิ์ที่จะพักการใช้งานการซื้อขายต่างๆ โดยไม่ต้องแจ้งให้ท่านทราบล่วงหน้า"
 
-msgid "If the Margin Level for your MT5 Real Account reaches or falls below the Stop Out Level, this will be classified as an Event of Default. In such circumstances, Open Positions are automatically closed in the following order: (i) the server analyses clients' Orders that are not under execution at the moment; (ii) the server deletes Orders with the largest Margin; (iii) if your Margin Level is still under the Stop Out Level, the next order is deleted (orders without margin requirements are not deleted); (iv) if your Margin Level is still under the Stop Out Level, the server closes a position with the largest loss; (v) Open Positions are closed until your Margin Level becomes higher than the Stop Out Level."
-msgstr "ถ้าระดับมาร์จินของบัญชี MT5 จริงของท่าน ถึง หรือ ลดต่ำลงจากระดับยุติการซื้อขาย จะถูกจัดเป็นกรณีเพิกเฉยต่อสัญญา ในสถานการณ์ดังกล่าว โพซิชั่นเปิดจะถูกปิดอัตโนมัติตามลำดับต่อไปนี้ (i) เซิร์ฟเวอร์วิเคราะห์คำสั่งซื้อของลูกค้าซึ่งยังไม่ถูกดำเนินการในขณะนี้ (ii) เซิร์ฟเวอร์ลบคำสั่งซื้อที่มีมาร์จินมากที่สุด (iii) ถ้าระดับมาร์จินยังคงต่ำกว่าระดับยุติการซื้อขาย คำสั่งซื้อต่อไปจะถูกลบออก (คำสั่งซื้อที่ไม่มีการกำหนดมาร์จินจะไม่ถูกลบ) (iv) ถ้าระดับมาร์จินยังคงต่ำกว่าระดับยุติการซื้อขาย เซิร์ฟเวอร์ปิดโพซิชั่นที่มีความสูญเสียสูงสุด (v) โพซิชั่นเปิดจะถูกปิดจนกว่าระดับมาร์จินจะสูงกว่าระดับยุติการซื้อขาย"
+msgid "If the Margin Level for your MT5 Real Account reaches or falls below the Stop Out Level, this will be classified as an Event of Default. In such circumstances, Open Positions are automatically closed in the following order: (i) the server analyses clients' Orders that are not under execution at the moment; (ii) the server deletes Orders with the largest Margin; (iii) if your Margin Level is still under the Stop Out Level, the next order is deleted (orders without margin requirements are not deleted); (iv) if your Margin Level is still under the Stop Out Level, the server closes a position with the largest loss; (v) Open Positions are closed until your Margin Level becomes higher than the Stop Out Level. Additionally, for perfectly hedged positions, Stop Out will be performed on accounts having open positions, the zero margin (positions are covered), and negative equity."
+msgstr ""
 
 msgid "If the bid price is 1.05229, you'll buy USD 1.05229 for every EUR 1 you sell."
 msgstr "ถ้าราคาเสนอซื้อ คือ 1.05229 ท่านจะซื้อที่ราคา 1.05229 เหรียญสหรัฐ สำหรับทุก ๆ 1 ยูโรที่ท่านขาย"

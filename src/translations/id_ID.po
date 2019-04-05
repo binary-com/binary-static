@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-04-04 06:57\n"
+"PO-Revision-Date: 2019-04-05 03:54\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Indonesian\n"
 "MIME-Version: 1.0\n"
@@ -4425,6 +4425,9 @@ msgstr "Untuk forex: Pasar forex adalah pasar OTC (over the counter yaitu disele
 msgid "For full contact details of %3, kindly check our %1Contact Us%2 page."
 msgstr "Untuk detail kontak %3, silahkan periksa halaman %1Hubungi Kami%2."
 
+msgid "For fully covered accounts, no margin will be charged on open positions. However, swaps and other applicable fees can cause your Account Equity to turn negative. In that case the Stop Out process will be triggered."
+msgstr ""
+
 msgid "For general support:"
 msgstr "Untuk bantuan umum:"
 
@@ -4433,9 +4436,6 @@ msgstr "Untuk informasi mengenai leverage Forex lihat ke %1Kebijakan Margin%2 ka
 
 msgid "For payments-related queries:"
 msgstr "Untuk bantuan pembayaran:"
-
-msgid "For perfectly hedged positions, no margin will be charged. However, swaps and other applicable fees can cause your Account Equity to turn negative. In such cases, the company reserves the right to close out your hedged positions in order to protect your Account Equity from decreasing further."
-msgstr "Untuk posisi hedging sempurna, tidak ada margin yang akan dikenakan. Namun, swap dan biaya lain yang berlaku dapat menyebabkan Ekuitas Akun Anda menjadi negatif. Dalam hal tersebut, perusahaan berhak menutup posisi nilai hedging Anda untuk melindungi Ekuitas Akun Anda dari penurunan lebih lanjut."
 
 msgid "For the purposes of this Agreement, the following shall mean:"
 msgstr "Untuk kepentingan Persetujuan ini, hal berikut adalah:"
@@ -5112,8 +5112,8 @@ msgstr "Jika Perusahaan (dengan kebijakannya sendiri) tidak puas meskipun Pelang
 msgid "If the Company believes that unauthorised persons are using an account, it reserves the right to, without prior notice, suspend the Client’s rights to use the Trading Facility."
 msgstr "Jika Perusahaan meyakini bahwa terdapat akses tidak sah pada penggunaan akun, maka Perusahaan berhak untuk, tanpa pemberitahuan sebelumnya, menangguhkan hak-hak Klien untuk menggunakan Fasilitas Trading."
 
-msgid "If the Margin Level for your MT5 Real Account reaches or falls below the Stop Out Level, this will be classified as an Event of Default. In such circumstances, Open Positions are automatically closed in the following order: (i) the server analyses clients' Orders that are not under execution at the moment; (ii) the server deletes Orders with the largest Margin; (iii) if your Margin Level is still under the Stop Out Level, the next order is deleted (orders without margin requirements are not deleted); (iv) if your Margin Level is still under the Stop Out Level, the server closes a position with the largest loss; (v) Open Positions are closed until your Margin Level becomes higher than the Stop Out Level."
-msgstr "Jika Margin Level untuk Akun Riil Anda mencapai atau jatuh di bawah Stop Out Level, maka hal ini akan diklasifikasikan sebagai Pelanggaran. Dalam keadaan seperti itu, Open Position secara otomatis akan ditutup dengan urutan sebagai berikut: (i) server menganalisa Order klien yang tidak di bawah eksekusi pada saat ini; (ii) server menghapus Order dengan Margin terbesar; (iii) jika Margin Level Anda masih di bawah Stop Out Level, order berikutnya akan dihapus (perintah tanpa persyaratan margin tidak dihapus); (iv) jika Margin Level Anda masih di bawah Stop Out Level, server menutup posisi dengan kerugian terbesar; (V) Open Position ditutup hingga Margin Level Anda menjadi lebih tinggi daripada Level Stop Out."
+msgid "If the Margin Level for your MT5 Real Account reaches or falls below the Stop Out Level, this will be classified as an Event of Default. In such circumstances, Open Positions are automatically closed in the following order: (i) the server analyses clients' Orders that are not under execution at the moment; (ii) the server deletes Orders with the largest Margin; (iii) if your Margin Level is still under the Stop Out Level, the next order is deleted (orders without margin requirements are not deleted); (iv) if your Margin Level is still under the Stop Out Level, the server closes a position with the largest loss; (v) Open Positions are closed until your Margin Level becomes higher than the Stop Out Level. Additionally, for perfectly hedged positions, Stop Out will be performed on accounts having open positions, the zero margin (positions are covered), and negative equity."
+msgstr ""
 
 msgid "If the bid price is 1.05229, you'll buy USD 1.05229 for every EUR 1 you sell."
 msgstr "Jika harga ask adalah 1.05229, Anda membeli USD 1.05229 untuk setiap EUR 1 yang Anda jual."
@@ -7924,7 +7924,7 @@ msgid "Positions that are still open on Wednesday at 23:59:59 GMT will be charge
 msgstr "Posisi yang masih berjalan pada hari Rabu pada 23:59:59 GMT akan dikenakan biaya swap tiga kali pada akun untuk akhir pekan - hal yang biasa di lakukan pada semua broker."
 
 msgid "Postal Code/ZIP"
-msgstr ""
+msgstr "Kode Pos"
 
 msgid "Postal code/ZIP"
 msgstr "Kode pos"

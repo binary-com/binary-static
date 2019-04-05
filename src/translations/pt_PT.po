@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-04-04 06:55\n"
+"PO-Revision-Date: 2019-04-05 03:53\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Portuguese\n"
 "MIME-Version: 1.0\n"
@@ -4427,6 +4427,9 @@ msgstr "Para Forex: O mercado forex é um mercado OTC (over the counter - mercad
 msgid "For full contact details of %3, kindly check our %1Contact Us%2 page."
 msgstr "Para dados de contato completos de %3, pedimos que consulte a nossa página %1Contate-nos%2."
 
+msgid "For fully covered accounts, no margin will be charged on open positions. However, swaps and other applicable fees can cause your Account Equity to turn negative. In that case the Stop Out process will be triggered."
+msgstr ""
+
 msgid "For general support:"
 msgstr "Para apoio geral:"
 
@@ -4435,9 +4438,6 @@ msgstr "Para mais informações sobre a alavancagem no forex, consulte a nossa %
 
 msgid "For payments-related queries:"
 msgstr "Para assuntos relacionados com pagamentos:"
-
-msgid "For perfectly hedged positions, no margin will be charged. However, swaps and other applicable fees can cause your Account Equity to turn negative. In such cases, the company reserves the right to close out your hedged positions in order to protect your Account Equity from decreasing further."
-msgstr "Para posições perfeitamente cobertas contra risco, nenhuma margem será cobrada. No entanto, swaps e outras taxas aplicáveis podem fazer com que o capital da sua conta fique negativo. Em tais casos, a empresa reserva o direito de fechar as suas posições abertas a fim de proteger o capital da sua conta diminuir ainda mais."
 
 msgid "For the purposes of this Agreement, the following shall mean:"
 msgstr "Para os fins deste Acordo, o seguinte significará:"
@@ -5114,8 +5114,8 @@ msgstr "Caso a Empresa (a seu exclusivo critério) não esteja satisfeita com um
 msgid "If the Company believes that unauthorised persons are using an account, it reserves the right to, without prior notice, suspend the Client’s rights to use the Trading Facility."
 msgstr "Se a empresa considerar que pessoas não autorizadas estão usando uma conta, ela reserva-se o direito, sem aviso prévio, de suspender os direitos do Cliente de usar os recursos de negociação."
 
-msgid "If the Margin Level for your MT5 Real Account reaches or falls below the Stop Out Level, this will be classified as an Event of Default. In such circumstances, Open Positions are automatically closed in the following order: (i) the server analyses clients' Orders that are not under execution at the moment; (ii) the server deletes Orders with the largest Margin; (iii) if your Margin Level is still under the Stop Out Level, the next order is deleted (orders without margin requirements are not deleted); (iv) if your Margin Level is still under the Stop Out Level, the server closes a position with the largest loss; (v) Open Positions are closed until your Margin Level becomes higher than the Stop Out Level."
-msgstr "Se o nível de margem da sua conta real MT5 atingir ou descer abaixo do nível de interrupção, isto será classificado como um evento de incumprimento. Em tais circunstâncias, posições em aberto serão automaticamente fechadas na seguinte ordem: (i) o servidor analisa as ordens do cliente que não estejam sob execução no momento; (ii) o servidor exclui ordens com a maior margem; (iii) se o seu nível de margem ainda estiver abaixo do nível de interrupção, a próxima ordem é excluída (ordens sem requisitos de margem não são excluídas); (iv) se o seu nível de margem ainda estiver abaixo do nível de interrupção, o servidor fecha uma posição com a maior perda; (v) posições em aberto são fechadas até que o seu nível de margem se torne superior ao nível de interrupção. "
+msgid "If the Margin Level for your MT5 Real Account reaches or falls below the Stop Out Level, this will be classified as an Event of Default. In such circumstances, Open Positions are automatically closed in the following order: (i) the server analyses clients' Orders that are not under execution at the moment; (ii) the server deletes Orders with the largest Margin; (iii) if your Margin Level is still under the Stop Out Level, the next order is deleted (orders without margin requirements are not deleted); (iv) if your Margin Level is still under the Stop Out Level, the server closes a position with the largest loss; (v) Open Positions are closed until your Margin Level becomes higher than the Stop Out Level. Additionally, for perfectly hedged positions, Stop Out will be performed on accounts having open positions, the zero margin (positions are covered), and negative equity."
+msgstr ""
 
 msgid "If the bid price is 1.05229, you'll buy USD 1.05229 for every EUR 1 you sell."
 msgstr "Se o preço de compra for 1,05229, você irá comprar 1,05229 USD por cada 1 EUR que você vender."
@@ -10000,7 +10000,7 @@ msgid "The Republic of Malta is an island country in Southern Europe — located
 msgstr "A República de Malta é um país insular no Sul da Europa — situada a aproximadamente 80kms a sul da Itália. A sua história rica e colorida remonta há milhares de anos até ao período neolítico."
 
 msgid "The Standard account is suitable for a wide range of traders, both new and experienced. It offers you the maximum allowed leverage and variable spreads that give you a great deal of flexibility for whatever position you wish to take in the market."
-msgstr ""
+msgstr "A conta padrão é adequada para um amplo conjunto de negociadores, tantos novos como experientes. Permite-lhe alavancagem de nível médio e spreads variáveis que lhe proporcionam ampla flexibilidade para qualquer posição que você deseje assumir no mercado."
 
 msgid "The Standard account is suitable for a wide range of traders, both new or experienced. It is available in EUR and GBP and offers tight and variable spreads without commissions and a minimum deposit."
 msgstr "A conta padrão é adequada para um amplo conjunto de negociadores, tantos novos como experientes. Está disponível em EUR e GBP e oferece spreads baixas e variáveis sem comissões nem depósitos mínimos."
@@ -11741,7 +11741,7 @@ msgid "We offer all four precious metals – gold, silver, palladium, and platin
 msgstr "Disponibilizamos os quatro metais preciosos – outro, prata, paládio e platina – bem como energias na nossa lista de matérias-primas."
 
 msgid "We offer the following trade types on our MT5 platform:"
-msgstr ""
+msgstr "Oferecemos os seguintes tipos de operações em nossa plataforma MT5:"
 
 msgid "We offer three types of lookbacks:"
 msgstr "Disponibilizamos três tipos de retroativos:"
