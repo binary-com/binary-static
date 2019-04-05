@@ -8,7 +8,6 @@ const InstallPWA = ({
     pwa_prompt_event,
     removePWAPromptEvent,
 }) => {
-    let bar;
     const showPrompt = () => {
         if (pwa_prompt_event) {
             pwa_prompt_event.prompt();
@@ -16,7 +15,6 @@ const InstallPWA = ({
                 .then(choice_result => {
                     if (choice_result.outcome === 'accepted') {
                         removePWAPromptEvent();
-                        bar.setState({ show: false });
                     }
                 });
         }
