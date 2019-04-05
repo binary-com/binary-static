@@ -6,6 +6,7 @@ import {
 import {
     MAX_MOBILE_WIDTH,
     MAX_TABLET_WIDTH } from 'Constants/ui';
+import { unique }      from '_common/utility';
 import BaseStore       from './base-store';
 
 const store_name = 'ui_store';
@@ -240,13 +241,7 @@ export default class UIStore extends BaseStore {
 
     @action.bound
     addNotificationBar(message) {
-        if (!this.push_notifications.length) {
-            this.push_notifications.push(message);
-        }
-        this.push_notifications.map(notification => {
-            if (notification.msg_type !== message.msg_type) {
-                this.push_notifications.push(message);
-            }
-        });
+        this.push_notifications.push(message);
+        this.push_notifications = unique(this.push_notifications, 'msg_type');
     }
 }
