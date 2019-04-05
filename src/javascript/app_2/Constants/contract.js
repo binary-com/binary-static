@@ -1,6 +1,6 @@
 import { localize } from '_common/localize';
 
-const contract_config = {
+const getContractConfig = is_high_low => ({
     ASIANU: {
         name    : localize('Asian Up'),
         position: 'top',
@@ -10,11 +10,11 @@ const contract_config = {
         position: 'bottom',
     },
     CALL: {
-        name    : localize('Rise'),
+        name    : is_high_low ?  localize('Higher') : localize('Rise'),
         position: 'top',
     },
     PUT: {
-        name    : localize('Fall'),
+        name    : is_high_low ? localize('Low') : localize('Fall'),
         position: 'bottom',
     },
     CALLE: {
@@ -89,7 +89,7 @@ const contract_config = {
         name    : localize('No Touch'),
         position: 'bottom',
     },
-};
+});
 
-export const getContractTypeDisplay = (type) => (contract_config[type].name);
-export const getContractTypePosition = (type) => (contract_config[type].position);
+export const getContractTypeDisplay = (type, is_high_low = false) => (getContractConfig(is_high_low)[type].name);
+export const getContractTypePosition = (type, is_high_low = false) => (getContractConfig(is_high_low)[type].position);
