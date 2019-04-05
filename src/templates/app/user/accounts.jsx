@@ -10,7 +10,7 @@ const Accounts = () => (
         </div>
 
         <div className='invisible' id='accounts_wrapper'>
-            <h1>{it.L('Create New Account')}</h1>
+            <h1>{it.L('Create or Manage Accounts')}</h1>
 
             <div className='invisible' id='new_accounts_wrapper'>
                 <form id='new_accounts'>
