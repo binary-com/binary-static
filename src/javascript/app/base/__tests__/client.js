@@ -14,7 +14,7 @@ describe('Client', () => {
             expect(Client.getUpgradeInfo().can_upgrade).to.eq(false);
         });
         it('returns as expected for accounts that can upgrade to real', () => {
-            ['costarica', 'malta', 'iom'].forEach((lc) => {
+            ['svg', 'malta', 'iom'].forEach((lc) => {
                 State.set(['response', 'authorize', 'authorize', 'upgradeable_landing_companies'], [ lc ]);
                 const ugprade_info = Client.getUpgradeInfo();
                 expect(ugprade_info.upgrade_link).to.eq('new_account/realws');
@@ -28,8 +28,8 @@ describe('Client', () => {
             expect(ugprade_info.is_current_path).to.eq(false);
         });
         it('returns as expected for multi account opening', () => {
-            State.set(['response', 'authorize', 'authorize', 'upgradeable_landing_companies'], [ 'costarica' ]);
-            Client.set('landing_company_shortcode', 'costarica');
+            State.set(['response', 'authorize', 'authorize', 'upgradeable_landing_companies'], [ 'svg' ]);
+            Client.set('landing_company_shortcode', 'svg');
             const ugprade_info = Client.getUpgradeInfo();
             expect(ugprade_info.upgrade_link).to.eq(undefined);
             expect(ugprade_info.is_current_path).to.eq(undefined);
