@@ -22,7 +22,7 @@ const InstallPWA = ({
 
     return (
         <React.Fragment>
-            {localize('Want quick and easy access to world markets?')}
+            <p>{localize('Want quick and easy access to world markets?')}</p>
             <Button
                 className='btn--secondary notification-bar__button'
                 has_effect
