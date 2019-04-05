@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-04-04 06:57\n"
+"PO-Revision-Date: 2019-04-05 03:54\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Acholi\n"
 "MIME-Version: 1.0\n"
@@ -4425,6 +4425,9 @@ msgstr "crwdns38486:0crwdne38486:0"
 msgid "For full contact details of %3, kindly check our %1Contact Us%2 page."
 msgstr "crwdns44798:0%3crwdnd44798:0%1Ccrwdnd44798:0%2crwdne44798:0"
 
+msgid "For fully covered accounts, no margin will be charged on open positions. However, swaps and other applicable fees can cause your Account Equity to turn negative. In that case the Stop Out process will be triggered."
+msgstr "crwdns53226:0crwdne53226:0"
+
 msgid "For general support:"
 msgstr "crwdns38487:0crwdne38487:0"
 
@@ -4433,9 +4436,6 @@ msgstr "crwdns43468:0%1crwdnd43468:0%2crwdne43468:0"
 
 msgid "For payments-related queries:"
 msgstr "crwdns38488:0crwdne38488:0"
-
-msgid "For perfectly hedged positions, no margin will be charged. However, swaps and other applicable fees can cause your Account Equity to turn negative. In such cases, the company reserves the right to close out your hedged positions in order to protect your Account Equity from decreasing further."
-msgstr "crwdns43210:0crwdne43210:0"
 
 msgid "For the purposes of this Agreement, the following shall mean:"
 msgstr "crwdns44667:0crwdne44667:0"
@@ -5112,8 +5112,8 @@ msgstr "crwdns38659:0crwdne38659:0"
 msgid "If the Company believes that unauthorised persons are using an account, it reserves the right to, without prior notice, suspend the Client’s rights to use the Trading Facility."
 msgstr "crwdns46050:0crwdne46050:0"
 
-msgid "If the Margin Level for your MT5 Real Account reaches or falls below the Stop Out Level, this will be classified as an Event of Default. In such circumstances, Open Positions are automatically closed in the following order: (i) the server analyses clients' Orders that are not under execution at the moment; (ii) the server deletes Orders with the largest Margin; (iii) if your Margin Level is still under the Stop Out Level, the next order is deleted (orders without margin requirements are not deleted); (iv) if your Margin Level is still under the Stop Out Level, the server closes a position with the largest loss; (v) Open Positions are closed until your Margin Level becomes higher than the Stop Out Level."
-msgstr "crwdns44491:0crwdne44491:0"
+msgid "If the Margin Level for your MT5 Real Account reaches or falls below the Stop Out Level, this will be classified as an Event of Default. In such circumstances, Open Positions are automatically closed in the following order: (i) the server analyses clients' Orders that are not under execution at the moment; (ii) the server deletes Orders with the largest Margin; (iii) if your Margin Level is still under the Stop Out Level, the next order is deleted (orders without margin requirements are not deleted); (iv) if your Margin Level is still under the Stop Out Level, the server closes a position with the largest loss; (v) Open Positions are closed until your Margin Level becomes higher than the Stop Out Level. Additionally, for perfectly hedged positions, Stop Out will be performed on accounts having open positions, the zero margin (positions are covered), and negative equity."
+msgstr "crwdns53228:0crwdne53228:0"
 
 msgid "If the bid price is 1.05229, you'll buy USD 1.05229 for every EUR 1 you sell."
 msgstr "crwdns43221:0crwdne43221:0"

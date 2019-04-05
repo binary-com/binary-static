@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-04-04 06:55\n"
+"PO-Revision-Date: 2019-04-05 03:52\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Polish\n"
 "MIME-Version: 1.0\n"
@@ -4425,6 +4425,9 @@ msgstr "Dla Forex: Rynek forex to rynek obrotu pozagiełdowego, gdzie banki i in
 msgid "For full contact details of %3, kindly check our %1Contact Us%2 page."
 msgstr "Aby uzyskać pełne dane kontaktowe %3, odwiedź naszą stronę %1Skontaktuj się z nami%2."
 
+msgid "For fully covered accounts, no margin will be charged on open positions. However, swaps and other applicable fees can cause your Account Equity to turn negative. In that case the Stop Out process will be triggered."
+msgstr ""
+
 msgid "For general support:"
 msgstr "Jeśli potrzebujesz wsparcia ogólnego:"
 
@@ -4433,9 +4436,6 @@ msgstr "Aby uzyskać więcej informacji na temat dźwigni na rynku Forex, zapozn
 
 msgid "For payments-related queries:"
 msgstr "Jeśli masz pytania dot. płatności:"
-
-msgid "For perfectly hedged positions, no margin will be charged. However, swaps and other applicable fees can cause your Account Equity to turn negative. In such cases, the company reserves the right to close out your hedged positions in order to protect your Account Equity from decreasing further."
-msgstr "W przypadku pozycji z pełnym zabezpieczeniem nie będzie pobierany żaden depozyt zabezpieczający. Jednak swap i inne mogące mieć zastosowanie opłaty mogą skutkować ujemnym stanem środków na Twoim koncie. W takim przypadku firma zastrzega sobie prawo do zamknięcia Twoich pozycji zabezpieczanych w celu zapobiegania dalszemu zmniejszeniu stanu środków na koncie."
 
 msgid "For the purposes of this Agreement, the following shall mean:"
 msgstr "Na cele niniejszej Umowy przyjmuje się następujące definicje:"
@@ -5112,8 +5112,8 @@ msgstr "Jeżeli Firma (według jej własnego uznania) nie jest usatysfakcjonowan
 msgid "If the Company believes that unauthorised persons are using an account, it reserves the right to, without prior notice, suspend the Client’s rights to use the Trading Facility."
 msgstr "Firma zastrzega sobie prawo do zawieszenia prawa Klienta do korzystania z usług handlowania bez uprzedniego powiadomienia, jeśli uzna, że nieuprawnione osoby korzystają z konta."
 
-msgid "If the Margin Level for your MT5 Real Account reaches or falls below the Stop Out Level, this will be classified as an Event of Default. In such circumstances, Open Positions are automatically closed in the following order: (i) the server analyses clients' Orders that are not under execution at the moment; (ii) the server deletes Orders with the largest Margin; (iii) if your Margin Level is still under the Stop Out Level, the next order is deleted (orders without margin requirements are not deleted); (iv) if your Margin Level is still under the Stop Out Level, the server closes a position with the largest loss; (v) Open Positions are closed until your Margin Level becomes higher than the Stop Out Level."
-msgstr "Jeśli poziom depozytu zabezpieczającego na Twoim prawdziwym koncie MT5 osiągnie poziom równy poziomowi Stop Out lub niższy, sytuacja ta zostanie uznana za niewywiązanie się z zobowiązania. Wówczas pozycje otwarte zostaną automatycznie zamknięte w następującej kolejności: (i) serwer przeanalizuje zlecenia klienta, które nie są w trakcie realizacji; (ii) serwer usuwa zlecenia z największym depozytem zabezpieczającym; (iii) jeżeli poziom depozytu zabezpieczającego jest wciąż poniżej poziomu Stop Out, serwer zamyka pozycję z największą stratą; (v) pozycje otwarte pozostają zamknięte do momentu, gdy poziom depozytu zabezpieczającego przewyższy poziom Stop Out."
+msgid "If the Margin Level for your MT5 Real Account reaches or falls below the Stop Out Level, this will be classified as an Event of Default. In such circumstances, Open Positions are automatically closed in the following order: (i) the server analyses clients' Orders that are not under execution at the moment; (ii) the server deletes Orders with the largest Margin; (iii) if your Margin Level is still under the Stop Out Level, the next order is deleted (orders without margin requirements are not deleted); (iv) if your Margin Level is still under the Stop Out Level, the server closes a position with the largest loss; (v) Open Positions are closed until your Margin Level becomes higher than the Stop Out Level. Additionally, for perfectly hedged positions, Stop Out will be performed on accounts having open positions, the zero margin (positions are covered), and negative equity."
+msgstr ""
 
 msgid "If the bid price is 1.05229, you'll buy USD 1.05229 for every EUR 1 you sell."
 msgstr "Jeśli cena sprzedaży wynosi 1,05229, kupisz 1,05229 USD za każde sprzedane 1 EUR."
