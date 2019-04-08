@@ -42,6 +42,8 @@ $themes: (
         tick_step_marked                 : $COLOR_LIGHT_GRAY_1,
         tooltip_background_color         : $COLOR_LIGHT_BLACK_1,
         tooltip_background_error         : $COLOR_RED,
+        wip_btn_color                    : $COLOR_WHITE,
+        wip_color                        : $COLOR_DARK_BLUE_5,
         won_gradient_color               : $COLOR_LIGHT_GREEN_GRADIENT,
     ),
     dark: (
@@ -86,6 +88,8 @@ $themes: (
         tick_step_marked                 : $COLOR_WHITE,
         tooltip_background_color         : $COLOR_DARK_BLUE_5,
         tooltip_background_error         : $COLOR_RED,
+        wip_btn_color                    : $COLOR_DARK_BLUE_2,
+        wip_color                        : $COLOR_WHITE,
         won_gradient_color               : $COLOR_DARK_GREEN_GRADIENT,
     ),
 );

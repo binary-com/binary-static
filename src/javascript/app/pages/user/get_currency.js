@@ -70,6 +70,7 @@ const GetCurrency = (() => {
     };
 
     return {
+        getCurrenciesOfOtherAccounts,
         getCurrencies,
     };
 })();
