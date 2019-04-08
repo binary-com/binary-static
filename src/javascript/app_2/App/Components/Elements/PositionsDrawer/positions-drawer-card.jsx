@@ -161,7 +161,7 @@ const PositionsDrawerCard = ({
                     <Button
                         className={classNames(
                             'btn--primary',
-                            'btn--primary--orange',
+                            'btn--primary--green',
                             'btn--sell', {
                                 'btn--loading': is_sell_requested,
                             })}
