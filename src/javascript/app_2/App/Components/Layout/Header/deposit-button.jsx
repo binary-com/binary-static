@@ -2,6 +2,7 @@ import classNames          from 'classnames';
 import PropTypes           from 'prop-types';
 import React               from 'react';
 import { localize }        from '_common/localize';
+import { urlFor }          from '_common/url';
 import Button              from '../../Form/button.jsx';
 
 const DepositButton = ({ className }) => (
@@ -9,8 +10,9 @@ const DepositButton = ({ className }) => (
         className={classNames(className, 'btn--primary btn--primary--orange')}
         has_effect
         text={localize('Deposit')}
-        // TODO: Redirect to Deposit page in Cashier
-        // onClick={redirectToCashierDeposit}
+        onClick={() => {
+            window.open(urlFor('cashier', undefined, undefined, true), '_blank');
+        }}
     />
 );
 
