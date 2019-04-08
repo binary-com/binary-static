@@ -17,7 +17,7 @@ const onCancel = () => {
 const DenialOfServiceModal = ({ client, is_visible }) => (
     <FullPageModal
         title={localize('Whoops!')}
-        confirm_button_text={localize('Continue with my virtual account')}
+        confirm_button_text={localize('Continue with my Virtual Account')}
         cancel_button_text={localize('Visit main website')}
         onConfirm={() => onConfirm(client)}
         onCancel={onCancel}

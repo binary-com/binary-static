@@ -18,10 +18,6 @@
 
     &__text {
         @include typeface(--paragraph-center-bold-black, unset);
-
-        &:first-letter {
-            text-transform: capitalize;
-        }
     }
     &--link {
         max-width: 220px;
