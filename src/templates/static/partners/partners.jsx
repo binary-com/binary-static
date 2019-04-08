@@ -44,7 +44,7 @@ const Partners = () => (
                     url={it.url_for('ib-programme/ib-signup')}
                     image='ib'
                     header={it.L('IB Programme')}
-                    text={it.L('Earn a commission on each client’s MT5 trading activity – paid out daily.')}
+                    text={it.L('Earn a commission on each client\'s MT5 trading activity – paid out daily.')}
                 />
 
                 <Column

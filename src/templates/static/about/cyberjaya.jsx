@@ -16,7 +16,7 @@ const Cyberjaya = () =>  (
                             <img className='responsive' src={it.url_for('images/pages/careers/cyberjaya/introduction-cyberjaya.jpg')} />
                         </div>
                         <div className='gr-7 gr-12-p gr-12-m'>
-                            <p className='no-margin-top'>{it.L('Cyberjaya is a pioneer tech hub that lies 30 minutes away from Kuala Lumpur. Established in 1997, Cyberjaya is the heartbeat of the Multimedia Super Corridor — a government-designated zone that aims to accelerate Malaysia’s push to achieve Vision 2020.')}</p>
+                            <p className='no-margin-top'>{it.L('Cyberjaya is a pioneer tech hub that lies 30 minutes away from Kuala Lumpur. Established in 1997, Cyberjaya is the heartbeat of the Multimedia Super Corridor — a government-designated zone that aims to accelerate Malaysia\'s push to achieve Vision 2020.')}</p>
                             <p>{it.L('Cyberjaya is also a pioneer green township that is designed for sustainable living. It has an urban environment where almost half of its total development area is reserved for public amenities and greenery. It has also taken measures to cut carbon emissions based on a low carbon city framework, becoming a model for sustainable future cities.')}</p>
                         </div>
                     </div>
@@ -38,11 +38,11 @@ const Cyberjaya = () =>  (
                                 },
                                 {
                                     url    : 'images/pages/careers/cyberjaya/food.jpg',
-                                    caption: it.L('If you call yourself a foodie, you’ll be blown away by the sheer number of choices in town. From Middle Eastern, Indian, Japanese, and international cuisine to essential local fare such as Malay, Chinese, and mamak — you can expect to satisfy any cravings you may have.'),
+                                    caption: it.L('If you call yourself a foodie, you\'ll be blown away by the sheer number of choices in town. From Middle Eastern, Indian, Japanese, and international cuisine to essential local fare such as Malay, Chinese, and mamak — you can expect to satisfy any cravings you may have.'),
                                 },
                                 {
                                     url    : 'images/pages/careers/cyberjaya/lower-cost-living.jpg',
-                                    caption: it.L('Malaysia\'s lower cost of living compared to most western countries means that you can enjoy a high quality of life. You’ll also find easy access to world-class healthcare, plus several international schools, colleges, and universities that offer globally-recognised programmes.'),
+                                    caption: it.L('Malaysia\'s lower cost of living compared to most western countries means that you can enjoy a high quality of life. You\'ll also find easy access to world-class healthcare, plus several international schools, colleges, and universities that offer globally-recognised programmes.'),
                                 },
                             ]}
                         />

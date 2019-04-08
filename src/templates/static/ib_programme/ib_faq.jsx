@@ -28,12 +28,12 @@ const FAQ = () => (
                     <p>{it.L('You will earn a fixed payout based on the volume of individual trades purchased by each referred client. Please refer to our IB commission structure for Forex, metals, and Volatility Indices.')}</p>
 
                     <h3>{it.L('Is there a fee to join the [_1] IB Programme?', it.website_name)}</h3>
-                    <p>{it.L('It’s completely free to join our IB programme. We’ve never charged a fee and we never will.')}</p>
+                    <p>{it.L('It\'s completely free to join our IB programme. We\'ve never charged a fee and we never will.')}</p>
                 </Section>
 
                 <Section id='account-management' header={it.L('Account management')}>
                     <h3>{it.L('How do I register to become a [_1] IB?', it.website_name)}</h3>
-                    <p>{it.L('Thank you for your interest in partnering with us. We’ve made it easy for you to apply online. Just fill out the [_1]online application form[_2] with all necessary details. If you are already registered as a [_3] affiliate, you can email us at [_4] instead. We will contact you directly if your application is successful.', `<a href='${it.affiliate_signup_url}'>`, '</a>', it.website_name, `<a href='mailto:${it.affiliate_email}'>${it.affiliate_email}</a>`)}</p>
+                    <p>{it.L('Thank you for your interest in partnering with us. We\'ve made it easy for you to apply online. Just fill out the [_1]online application form[_2] with all necessary details. If you are already registered as a [_3] affiliate, you can email us at [_4] instead. We will contact you directly if your application is successful.', `<a href='${it.affiliate_signup_url}'>`, '</a>', it.website_name, `<a href='mailto:${it.affiliate_email}'>${it.affiliate_email}</a>`)}</p>
 
                     <h3>{it.L('When are my commissions paid?')}</h3>
                     <p>{it.L('IB earnings from your MT5 referrals are credited daily into your MT5 account.')}</p>
@@ -49,7 +49,7 @@ const FAQ = () => (
                     <h3>{it.L('Are there any minimum client or volume conditions that I need to meet before I can withdraw my commissions?')}</h3>
                     <p>{it.L('No, there are no minimum requirements to withdraw your IB commissions.')}</p>
 
-                    <h3>{it.L('Do you offer any tools to manage my clients’ trades?')}</h3>
+                    <h3>{it.L('Do you offer any tools to manage my clients\' trades?')}</h3>
                     <p>{it.L('Are you a money manager who wants to easily manage multiple client accounts? Our [_1]Multiple Accounts Manager (MAM)[_2] application gives you the ability to view, track, and trade on behalf of all MT5 client accounts under your control.', `<a href='${it.url_for('multiple-accounts-manager')}'>`, '</a>')}</p>
                 </Section>
 
