@@ -35,7 +35,6 @@ describe('NetworkStatus', () => {
     it('should contain Tooltip with default message and div with only default class if status does not contain them', () => {
         status = {};
         const wrapper = shallow(<NetworkStatus status={status} />);
-        console.log(wrapper.toString());
         expect(wrapper.contains(
             <Tooltip className='network-status__tooltip' alignment='top' message='Network status: Connecting to server'>
                 <div className='network-status__circle' />
