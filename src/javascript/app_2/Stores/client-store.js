@@ -49,8 +49,9 @@ export default class ClientStore extends BaseStore {
     get is_client_allowed_to_visit() {
         return !!(
             !this.is_logged_in || this.is_virtual ||
-            this.accounts[this.loginid].landing_company_shortcode === 'costarica'
-        );
+            this.accounts[this.loginid].landing_company_shortcode === 'costarica' ||
+            this.accounts[this.loginid].landing_company_shortcode === 'svg'
+        ); // TODO [->svg]
     }
 
     @computed
@@ -170,7 +171,8 @@ export default class ClientStore extends BaseStore {
                 landing_company !== this.accounts[this.loginid].landing_company_shortcode &&
                 upgradeable_landing_companies.indexOf(landing_company) !== -1
             ));
-            can_upgrade_to   = canUpgrade('costarica', 'iom', 'malta', 'maltainvest');
+            // TODO [->svg]
+            can_upgrade_to   = canUpgrade('costarica', 'svg', 'iom', 'malta', 'maltainvest');
             if (can_upgrade_to) {
                 type = can_upgrade_to === 'maltainvest' ? 'financial' : 'real';
             }

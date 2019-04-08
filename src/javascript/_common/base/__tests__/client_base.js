@@ -254,14 +254,14 @@ describe('ClientBase', () => {
         });
     });
 
-    describe('.hasCostaricaAccount()', () => {
+    describe('.hasSvgAccount()', () => {
         it('works as expected', () => {
             Client.set('loginid', loginid_financial, loginid_financial);
             Client.set('token', 'test', loginid_financial);
-            expect(Client.hasCostaricaAccount()).to.eq(false);
+            expect(Client.hasSvgAccount()).to.eq(false);
             Client.set('loginid', loginid_real, loginid_real);
             Client.set('token', 'test', loginid_real);
-            expect(Client.hasCostaricaAccount()).to.eq(true);
+            expect(Client.hasSvgAccount()).to.eq(true);
         });
     });
 
