@@ -86,7 +86,7 @@ const JobDescriptions = () => (
                 id='quantitative_analysis'
                 title={it.L('Quantitative Analysis')}
                 sections={[
-                    { header: it.L('Quantitative Analyst'),      subsection: 'quantitative_analyst',      text: it.L('[_1] Quantitative Analytics team is responsible for the pricing of our binary options. You will join them in managing the risk and profitability of the company’s options book.', it.website_name) },
+                    { header: it.L('Quantitative Analyst'),      subsection: 'quantitative_analyst',      text: it.L('[_1] Quantitative Analytics team is responsible for the pricing of our binary options. You will join them in managing the risk and profitability of the company\'s options book.', it.website_name) },
                     { header: it.L('Financial Markets Analyst'), subsection: 'financial_markets_analyst', text: it.L('As our Senior Financial Markets Analyst, you will manage the day-to-day risk of our trading books, conduct complex quantitative analysis, carry out performance testing, develop advanced data analytics tools, and support other related operations that have a direct impact on the profitability and future growth of our company.') },
                 ]}
             />
@@ -133,7 +133,7 @@ const JobDescriptions = () => (
                 id='internal_audit'
                 title={it.L('Internal Audit')}
                 sections={[
-                    { header: it.L('Internal Audit Executive'), subsection: 'internal_audit_executive', text: it.L('The Internal Audit team is the catalyst for improving our organisation’s governance, risk management, and internal controls by providing insights and recommendations based on the audits they perform.') },
+                    { header: it.L('Internal Audit Executive'), subsection: 'internal_audit_executive', text: it.L('The Internal Audit team is the catalyst for improving our organisation\'s governance, risk management, and internal controls by providing insights and recommendations based on the audits they perform.') },
                 ]}
             />
 
@@ -151,7 +151,7 @@ const JobDescriptions = () => (
                 title={it.L('Customer Support')}
                 last
                 sections={[
-                    { header: it.L('Customer Support Executive'), subsection: 'customer_support_executive', text: it.L('As our Customer Support Executive, you will serve as the voice of the company, and help our customers resolve and reduce the issues they’re facing with our products and services. The frontline is essential to our business and you are expected to deliver world-class customer service that creates customer loyalty and promotes business growth.') },
+                    { header: it.L('Customer Support Executive'), subsection: 'customer_support_executive', text: it.L('As our Customer Support Executive, you will serve as the voice of the company, and help our customers resolve and reduce the issues they\'re facing with our products and services. The frontline is essential to our business and you are expected to deliver world-class customer service that creates customer loyalty and promotes business growth.') },
                 ]}
             />
 
