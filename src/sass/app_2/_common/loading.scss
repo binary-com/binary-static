@@ -46,12 +46,8 @@
         background: $COLOR_WHITE;
     }
     /* postcss-bem-linter: ignore */
-    20%, 40% {
-        background: $COLOR_ORANGE;
-    }
-    /* postcss-bem-linter: ignore */
     100% {
-        background: $COLOR_WHITE;
+        background: $COLOR_ORANGE;
     }
 
 }
@@ -62,12 +58,8 @@
         background: $COLOR_WHITE;
     }
     /* postcss-bem-linter: ignore */
-    20%, 40%, 80% {
-        background: $COLOR_ORANGE;
-    }
-    /* postcss-bem-linter: ignore */
     100% {
-        background: $COLOR_WHITE;
+        background: $COLOR_ORANGE;
     }
 }
 
@@ -149,29 +141,29 @@
             width: 24px;
             height: 24px;
             background: $COLOR_WHITE;
-            animation: loading 0.6s 0.1s linear infinite, loading2 1s 0.1s linear infinite;
-            -webkit-animation: loading 0.6s 0.1s linear infinite, loading2 1s 0.1s linear infinite;
+            animation: loading 0.6s 0.1s linear infinite, loading2 1s ease-in forwards;
+            -webkit-animation: loading 0.6s 0.1s linear infinite, loading2 1s ease-in forwards;
         }
         &--2 {
             width: 24px;
             height: 24px;
             background: $COLOR_WHITE;
-            animation: loading 0.6s 0.2s linear infinite, loading2 1s 1s linear infinite;
-            -webkit-animation: loading 0.6s 0.2s linear infinite, loading2 1s 1s linear infinite;
+            animation: loading 0.6s 0.2s linear infinite, loading2 1s ease-in 1s forwards;
+            -webkit-animation: loading 0.6s 0.2s linear infinite, loading2 1s ease-in 1s forwards;
         }
         &--3 {
             width: 24px;
             height: 24px;
             background: $COLOR_WHITE;
-            animation: loading 0.6s 0.3s linear infinite, loading2 1s 2s linear infinite;
-            -webkit-animation: loading 0.6s 0.3s linear infinite, loading2 1s 2s linear infinite;
+            animation: loading 0.6s 0.3s linear infinite, loading2 1s ease-in 2s forwards;
+            -webkit-animation: loading 0.6s 0.3s linear infinite, loading2 1s ease-in 2s forwards;
         }
         &--4 {
             width: 24px;
             height: 24px;
             background: $COLOR_WHITE;
-            animation: loading 0.6s 0.4s linear infinite, loading2 1s 3s linear infinite;
-            -webkit-animation: loading 0.6s 0.4s linear infinite, loading2 1s 3s linear infinite;
+            animation: loading 0.6s 0.4s linear infinite, loading2 1s ease-in 3s forwards;
+            -webkit-animation: loading 0.6s 0.4s linear infinite, loading2 1s ease-in 3s forwards;
         }
     }
 }
