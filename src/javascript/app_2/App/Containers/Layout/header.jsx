@@ -2,6 +2,7 @@ import PropTypes       from 'prop-types';
 import React           from 'react';
 import { withRouter }  from 'react-router';
 import { formatMoney } from '_common/base/currency_base';
+import { urlFor }      from '_common/url';
 import {
     AccountInfo,
     DepositButton,
@@ -76,7 +77,12 @@ const Header = ({
                                     toggleDialog={toggleAccountsDialog}
                                 />
                                 { !!(can_upgrade_to && is_virtual) &&
-                                <UpgradeButton className='acc-info__button' />
+                                <UpgradeButton
+                                    className='acc-info__button'
+                                    onClick={() => {
+                                        window.open(urlFor('user/accounts', undefined, undefined, true));
+                                    }}
+                                />
                                 }
                                 { !(is_virtual) &&
                                 <DepositButton className='acc-info__button' />

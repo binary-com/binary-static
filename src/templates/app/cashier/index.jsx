@@ -79,6 +79,14 @@ const Cashier = () => (
             <p className='notice-msg center-text'>{it.L('Sorry, this feature is not available in your jurisdiction.')}</p>
         </div>
 
+        <div className='invisible' id='account_currency'>
+            <img id='account_currency_img' alt='Currency Icon' />
+            <div>
+                <h2 className='no-margin' id='account_currency_current' />
+                <p id='account_currency_hint' />
+            </div>
+        </div>
+
         <div className='gr-padding-10 table-body client_virtual invisible gr-parent'>
             <h3 className='gr-padding-10'>{it.L('Top up virtual account')}</h3>
             <div className='gr-row'>

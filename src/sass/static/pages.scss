@@ -150,6 +150,31 @@
     margin-bottom: 0;
 }
 
+#account_currency {
+    display: flex;
+    align-items: center;
+    background-color: $COLOR_LIGHT_GRAY;
+    padding: 30px;
+    border-radius: 4px;
+
+    &_img {
+        width: 80px;
+        height: 80px;
+        margin-right: 20px;
+        @media screen and (max-width: 500px) {
+            display: none;
+        }
+    }
+    &_current {
+        color: $primaryBrandColor;
+        font-weight: 300;
+    }
+    &_hint {
+        font-size: 1rem;
+        margin: 10px 0 0;
+    }
+}
+
 #payment_methods {
     overflow-y: hidden;
 
@@ -749,7 +774,7 @@ body #not_authenticated_financial ul.checked > li {
                     }
                 }
                 th, td {
-                    text-align: left !important;
+                    text-align: center !important;
                     border: none;
 
                     @media screen and (max-width: 500px) {
@@ -757,6 +782,7 @@ body #not_authenticated_financial ul.checked > li {
                         padding: 10px;
                         width: 40%;
                         width: calc(50% - 20px);
+                        text-align: left !important;
 
                         &:nth-child(2n) {
                             float: right;
@@ -771,6 +797,14 @@ body #not_authenticated_financial ul.checked > li {
     }
     #accounts_wrapper #no_new_accounts_wrapper {
         color: $COLOR_GRAY_SHADE;
+    }
+}
+
+#set_currency {
+    #frm_set_currency {
+        .section-divider {
+            max-width: 500px;
+        }
     }
 }
 
