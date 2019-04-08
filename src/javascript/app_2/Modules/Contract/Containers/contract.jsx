@@ -16,8 +16,6 @@ const Contract = ({
     match,
     symbol,
     chart_config,
-    updateChartType,
-    updateGranularity,
 }) => {
     const form_wrapper_class = is_mobile ? 'mobile-wrapper' : 'sidebar__container desktop-only';
     return (
@@ -35,8 +33,6 @@ const Contract = ({
                                         Digits={<Digits />}
                                         symbol={symbol}
                                         {...chart_config}
-                                        updateChartType={updateChartType}
-                                        updateGranularity={updateGranularity}
                                     />
                                 </React.Suspense>
                             }
@@ -77,12 +73,10 @@ Contract.propTypes = {
 
 export default connect(
     ({ modules, ui }) => ({
-        chart_config     : modules.contract.chart_config,
-        error_message    : modules.contract.error_message,
-        has_error        : modules.contract.has_error,
-        updateChartType  : modules.contract.updateChartType,
-        updateGranularity: modules.contract.updateGranularity,
-        is_mobile        : ui.is_mobile,
-        symbol           : modules.contract.contract_info.underlying,
+        chart_config : modules.contract.chart_config,
+        error_message: modules.contract.error_message,
+        has_error    : modules.contract.has_error,
+        is_mobile    : ui.is_mobile,
+        symbol       : modules.contract.contract_info.underlying,
     }),
 )(Contract);
