@@ -8,6 +8,7 @@ const Contract = ({
     contract_types_list,
     onChange,
     is_mobile,
+    is_equal,
 }) => (
     <ContractTypeWidget
         name='contract_type'
@@ -15,12 +16,14 @@ const Contract = ({
         value={contract_type}
         onChange={onChange}
         is_mobile={is_mobile}
+        is_equal={is_equal}
     />
 );
 
 Contract.propTypes = {
     contract_type      : PropTypes.string,
     contract_types_list: PropTypes.object,
+    is_equal           : PropTypes.bool,
     is_mobile          : PropTypes.bool,
     onChange           : PropTypes.func,
 };
@@ -31,5 +34,6 @@ export default connect(
         contract_types_list: modules.trade.contract_types_list,
         onChange           : modules.trade.onChange,
         is_mobile          : ui.is_mobile,
+        is_equal           : modules.trade.is_equal,
     })
 )(Contract);

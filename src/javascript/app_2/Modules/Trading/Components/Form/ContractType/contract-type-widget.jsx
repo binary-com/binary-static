@@ -161,6 +161,7 @@ class ContractTypeWidget extends React.PureComponent {
                         value={this.props.value}
                         handleSelect={this.handleSelect}
                         handleInfoClick={this.handleInfoClick}
+                        is_equal={this.props.is_equal}
                     />
                 </ContractTypeDialog>
                 <TradeTypeInfoDialog
@@ -187,6 +188,7 @@ class ContractTypeWidget extends React.PureComponent {
 
 ContractTypeWidget.propTypes = {
     is_mobile: PropTypes.bool,
+    is_equal : PropTypes.bool,
     list     : PropTypes.object,
     name     : PropTypes.string,
     onChange : PropTypes.func,

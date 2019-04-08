@@ -44,8 +44,4 @@ ContractTypeItem.propTypes = {
     value          : PropTypes.string,
 };
 
-export default connect(
-    ({ modules }) => ({
-        is_equal: modules.trade.is_equal,
-    })
-)(ContractTypeItem);
+export default ContractTypeItem;

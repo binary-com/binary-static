@@ -6,6 +6,7 @@ import ContractTypeItem               from './contract-type-item.jsx';
 const ContractTypeList = ({
     handleInfoClick,
     handleSelect,
+    is_equal,
     list,
     name,
     value,
@@ -24,6 +25,7 @@ const ContractTypeList = ({
                             value={value}
                             handleSelect={handleSelect}
                             handleInfoClick={handleInfoClick}
+                            is_equal={is_equal}
                         />
                     </div>
                 </div>
