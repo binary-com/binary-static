@@ -127,7 +127,7 @@ const Platform = () => (
         <div className='gr-padding-30 gr-child invisible desktop-app' />
         <div className='container'>
             <h2 className='primary-color center-text gr-padding-30 gr-child'>{it.L('Trading platforms')}</h2>
-            <p className='center-text gr-padding-30 gr-parent'>{it.L('Find a trading platform that suits your experience and preferred strategy – whether you’re a new or seasoned trader.')}</p>
+            <p className='center-text gr-padding-30 gr-parent'>{it.L('Find a trading platform that suits your experience and preferred strategy – whether you\'re a new or seasoned trader.')}</p>
             <TabContainer className='gr-padding-30 gr-parent full-width' theme='light'>
                 <TabsSubtabs
                     id='platforms_tabs'
@@ -145,7 +145,7 @@ const Platform = () => (
                                 image='trading-page'
                                 header='SmartTrader'
                                 description={it.L('Premier binary options trading platform')}
-                                text={it.L('Trade in the world’s financial markets with a simple and user-friendly online platform.')}
+                                text={it.L('Trade in the world\'s financial markets with a simple and user-friendly online platform.')}
                                 url={it.url_for('trading')}
                                 button_text={it.L('Trade now')}
                             />

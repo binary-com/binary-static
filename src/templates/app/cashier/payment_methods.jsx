@@ -358,7 +358,7 @@ const PaymentMethods = () => {
                                 row: [
                                     { text: <PaymentLogo logo='webmoney' /> },
                                     { attributes: { colSpan: 5, className: 'toggler' }, custom_td : <CustomTableData data={[
-                                        { td: it.L('WebMoney is an online payment settlement system that’s been operating since 1998. For more information, please visit [_1].', `${createLink('https://www.wmtransfer.com')}`) },
+                                        { td: it.L('WebMoney is an online payment settlement system that\'s been operating since 1998. For more information, please visit [_1].', `${createLink('https://www.wmtransfer.com')}`) },
                                         { td_list: [
                                             { text: 'USD EUR' },
                                             { text: '5 - 10,000' },
@@ -521,7 +521,7 @@ const PaymentMethods = () => {
                                 row: [
                                     { text: <PaymentLogo logo='bitcoin' /> },
                                     { attributes: { colSpan: 5, className: 'toggler' }, custom_td : <CustomTableData data={[
-                                        { td: it.L('Bitcoin is the world’s first decentralised cryptocurrency, created in 2009. For more information, please visit [_1].', `${createLink('https://bitcoin.org')}`) },
+                                        { td: it.L('Bitcoin is the world\'s first decentralised cryptocurrency, created in 2009. For more information, please visit [_1].', `${createLink('https://bitcoin.org')}`) },
                                         { td_list: [
                                             { text: 'BTC' },
                                             { text: '0.002' },

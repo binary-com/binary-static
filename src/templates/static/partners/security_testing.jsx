@@ -7,7 +7,7 @@ const SecurityTesting = () => (
             <h1>{it.L('Security testing opportunities')}</h1>
             <div>
                 <p>{it.L('Want to help us enhance the strength and security of our platform?')}</p>
-                <p>{it.L('Test our products and services for security vulnerabilities. In the process, you’ll earn a monetary reward for any verifiable issues that you find, courtesy of our bug bounty programme.')}</p>
+                <p>{it.L('Test our products and services for security vulnerabilities. In the process, you\'ll earn a monetary reward for any verifiable issues that you find, courtesy of our bug bounty programme.')}</p>
 
                 <h2>{it.L('Benefits')}</h2>
                 <ul className='bullet'>

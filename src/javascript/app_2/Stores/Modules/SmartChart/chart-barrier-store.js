@@ -30,7 +30,7 @@ export class ChartBarrierStore {
         { color, line_style, not_draggable } = {}
     ) {
         this.color     = color      || BARRIER_COLORS.GREEN;
-        this.lineStyle = line_style || BARRIER_LINE_STYLES.DASHED;
+        this.lineStyle = line_style || BARRIER_LINE_STYLES.SOLID;
         this.onChange  = this.onBarrierChange;
 
         // trade_store's action to process new barriers on dragged
