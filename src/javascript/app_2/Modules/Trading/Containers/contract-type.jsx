@@ -23,7 +23,7 @@ const Contract = ({
 Contract.propTypes = {
     contract_type      : PropTypes.string,
     contract_types_list: PropTypes.object,
-    is_equal           : PropTypes.bool,
+    is_equal           : PropTypes.string,
     is_mobile          : PropTypes.bool,
     onChange           : PropTypes.func,
 };

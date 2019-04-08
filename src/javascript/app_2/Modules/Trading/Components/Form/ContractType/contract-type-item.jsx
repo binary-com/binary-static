@@ -39,6 +39,7 @@ ContractTypeItem.propTypes = {
     contracts      : MobxPropTypes.arrayOrObservableArray,
     handleInfoClick: PropTypes.func,
     handleSelect   : PropTypes.func,
+    is_equal       : PropTypes.string,
     name           : PropTypes.string,
     value          : PropTypes.string,
 };

@@ -36,6 +36,7 @@ const ContractTypeList = ({
 ContractTypeList.propTypes = {
     handleInfoClick: PropTypes.func,
     handleSelect   : PropTypes.func,
+    is_equal       : PropTypes.string,
     list           : MobxPropTypes.objectOrObservableObject,
     name           : PropTypes.string,
     value          : PropTypes.string,
