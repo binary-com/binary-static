@@ -1,6 +1,5 @@
 import { expect }    from 'chai';
 import * as Duration from '../duration.js';
-import BinarySocket  from '_common/base/socket_base';
 import moment        from 'moment';
 
 describe('buildDurationConfig', () => {
