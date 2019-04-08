@@ -18,11 +18,11 @@ const getContractConfig = is_high_low => ({
         position: 'bottom',
     },
     CALLE: {
-        name    : localize('Higher or equal'),
+        name    : localize('Rise'),
         position: 'top',
     },
     PUTE: {
-        name    : localize('Lower or equal'),
+        name    : localize('Fall'),
         position: 'bottom',
     },
     DIGITMATCH: {
