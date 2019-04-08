@@ -30,7 +30,7 @@ export const getContractTypesConfig = () => (
 
 export const getContractCategoriesConfig = () => (
     {
-        [localize('Up/Down')]       : ['rise_fall', 'high_low', 'rise_fall_equal'],
+        [localize('Up/Down')]       : ['rise_fall', 'rise_fall_equal', 'high_low'],
         [localize('Touch/No Touch')]: ['touch'],
         [localize('In/Out')]        : ['end', 'stay'],
         [localize('Asians')]        : ['asian'],
