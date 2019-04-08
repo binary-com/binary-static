@@ -1,7 +1,6 @@
 /** @define tooltip */
 .tooltip {
-    text-decoration: underline;
-    text-decoration-style: dotted;
+    text-decoration: none;
     font-size: inherit;
     @include themify($themes) {
         color: themed('text_active_color');

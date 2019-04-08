@@ -20,6 +20,7 @@
             text-decoration: none;
 
             &:before {
+                width: 270px;
                 padding-left: 3.25em;
             }
             &:before, &:after {
@@ -30,7 +31,7 @@
             @extend %inline-icon.secondary;
         }
         &-info-balloon-icon {
-            left: -307px;
+            left: -315px;
             top: 328px;
         }
         &:hover {
