@@ -5,7 +5,7 @@ const TelegramBot = () => (
     <React.Fragment>
         <h1>{it.L('Telegram Bot')}</h1>
 
-        <p>{it.L('In order to access Telegram Bot, please <a href="[_1]">generate an API Token</a> and enter it in the input box below.', it.url_for('user/security/api_tokenws'))}</p>
+        <p>{it.L('In order to access Telegram Bot, please [_1]generate an API Token[_2] and enter it in the input box below.', `<a href="${it.url_for('user/security/api_tokenws')}">`, '</a>')}</p>
 
         <form className='gr-padding-10' id='frm_telegram_bot'>
             <Fieldset>

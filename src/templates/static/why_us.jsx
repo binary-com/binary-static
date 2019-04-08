@@ -41,8 +41,8 @@ const WhyUs = () => (
                         <div className='gr-7 gr-12-m'>
                             <ul className='checked'>
                                 <li>{it.L('Real-time prices, benchmarked against interbank options markets.')}</li>
-                                <li>{it.L('Returns above 100% on simple <a href=\'[_1]\'>rise/fall</a> contracts.', it.url_for('trading?market=forex&formname=risefall'))}</li>
-                                <li>{it.L('Returns above 1000% on <a href=\'[_1]\'>higher/lower</a> and <a href=\'[_2]\'>touch/no-touch</a> trades.', it.url_for('trading?market=forex&formname=higherlower'), it.url_for('trading?market=forex&formname=touchnotouch'))}</li>
+                                <li>{it.L('Returns above 100% on simple [_1]rise/fall[_2] contracts.', `<a href="${it.url_for('trading?market=forex&formname=risefall')}">`, '</a>')}</li>
+                                <li>{it.L('Returns above 1000% on [_1]higher/lower[_2] and [_3]touch/no-touch[_2] trades.', `<a href="${it.url_for('trading?market=forex&formname=higherlower')}">`, '</a>', `<a href="${it.url_for('trading?market=forex&formname=touchnotouch')}">`)}</li>
                                 <li>{it.L('No hidden fees or commissions.')}</li>
                             </ul>
                         </div>
@@ -66,7 +66,7 @@ const WhyUs = () => (
                 <Section id='controlled-risk' header={it.L('Know what you stand to win or lose')}>
                     <div className='gr-row'>
                         <div className='gr-7 gr-12-m'>
-                            <p>{it.L('With [_1], you’ll know the risk and potential reward before you purchase a contract.', it.website_name)}</p>
+                            <p>{it.L('With [_1], you\'ll know the risk and potential reward before you purchase a contract.', it.website_name)}</p>
                             <ul className='checked'>
                                 <li>{it.L('Choose a payout and our system will calculate the stake required to purchase the contract.')}</li>
                                 <li>{it.L('You risk only your initial stake, and your stake never increases.')}</li>
