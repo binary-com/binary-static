@@ -24,7 +24,7 @@ import { IconRedDot }             from 'Assets/Common/icon-red-dot.jsx';
 import { IconSuccess }            from 'Assets/Common/icon-success.jsx';
 import { IconWarning }            from 'Assets/Common/icon-warning.jsx';
 
-import { IconEntrySpotSVG }       from 'Assets/Contract/icon-entry-spot.jsx';
+// import { IconEntrySpotSVG }       from 'Assets/Contract/icon-entry-spot.jsx';
 import { IconFlagSVG }            from 'Assets/Contract/icon-flag.jsx';
 import { IconTickSVG }            from 'Assets/Contract/icon-tick.jsx';
 
@@ -84,9 +84,9 @@ const ICONS = {
         WARNING             : IconWarning,
     },
     CONTRACT: {
-        ENTRY_SPOT: IconEntrySpotSVG,
-        FLAG      : IconFlagSVG,
-        TICK      : IconTickSVG,
+        // ENTRY_SPOT: IconEntrySpotSVG,
+        FLAG: IconFlagSVG,
+        TICK: IconTickSVG,
     },
     FOOTER: {
         MAXIMIZE : IconMaximize,
