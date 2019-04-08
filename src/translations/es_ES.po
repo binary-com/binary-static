@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-04-05 09:49\n"
+"PO-Revision-Date: 2019-04-08 06:34\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Spanish\n"
 "MIME-Version: 1.0\n"
@@ -4451,7 +4451,7 @@ msgid "For full contact details of %3, kindly check our %1Contact Us%2 page."
 msgstr "Para datos de contacto de %3, ingrese a nuestra página %1Contáctenos%2."
 
 msgid "For fully covered accounts, no margin will be charged on open positions. However, swaps and other applicable fees can cause your Account Equity to turn negative. In that case the Stop Out process will be triggered."
-msgstr ""
+msgstr "Para las cuentas totalmente cubiertas, no se cobrará margen en las posiciones abiertas. Sin embargo, los swaps y otras tarifas aplicables pueden causar que la Equidad de su cuenta se vuelva negativa. En ese caso se activará el proceso de Stop Out."
 
 msgid "For general support:"
 msgstr "Para soporte general:"
@@ -5138,7 +5138,7 @@ msgid "If the Company believes that unauthorised persons are using an account, i
 msgstr "Si la Compañía estima que una cuenta está siendo utilizada por personas que no tienen autorización para hacerlo, se reserva el derecho, sin previo aviso, de suspender los derechos del Cliente a utilizar la plataforma de operaciones."
 
 msgid "If the Margin Level for your MT5 Real Account reaches or falls below the Stop Out Level, this will be classified as an Event of Default. In such circumstances, Open Positions are automatically closed in the following order: (i) the server analyses clients' Orders that are not under execution at the moment; (ii) the server deletes Orders with the largest Margin; (iii) if your Margin Level is still under the Stop Out Level, the next order is deleted (orders without margin requirements are not deleted); (iv) if your Margin Level is still under the Stop Out Level, the server closes a position with the largest loss; (v) Open Positions are closed until your Margin Level becomes higher than the Stop Out Level. Additionally, for perfectly hedged positions, Stop Out will be performed on accounts having open positions, the zero margin (positions are covered), and negative equity."
-msgstr ""
+msgstr "Si el Nivel de Margen de su Cuenta Real MT5 alcanza o cae por debajo del Nivel Stop Out, se clasificará como un Evento de incumplimiento. En tales circunstancias, las posiciones abiertas se cierran automáticamente en el siguiente orden: (i) el servidor analiza las órdenes de los clientes que no están en ejecución en este momento; (ii) el servidor elimina Órdenes con el Margen más grande; (iii) si su Nivel de Margen todavía está por debajo del Nivel Stop Out, la próxima orden se elimina (las órdenes sin requisitos de margen no se eliminan); (iv) si su Nivel de Margen todavía está por debajo del Nivel Stop Out, el servidor cierra una posición con la mayor pérdida; (v) Las posiciones abiertas se cierran hasta que su nivel de margen sea más alto que el nivel Stop Out. Además, para posiciones perfectamente cubiertas, Stop Out se realizará en cuentas que tengan posiciones abiertas, el margen cero (las posiciones están cubiertas) y la equidad negativa."
 
 msgid "If the bid price is 1.05229, you'll buy USD 1.05229 for every EUR 1 you sell."
 msgstr "Si el precio de compra es 1,05229, usted comprará 1,05229 USD por cada euro que venda."
@@ -5511,10 +5511,10 @@ msgid "In the UK, our clients trade through Binary (IOM) Ltd and Binary Investme
 msgstr "En el Reino Unido, nuestros clientes operan a través de Binary (IOM) Ltd y Binary Investments (Europe) Ltd. En la Isla de Man, operan a través de Binary (IOM) Ltd. En la Unión Europea (excepto el Reino Unido), operan mediante Binary (Europe) Ltd y Binary Investments (Europe) Ltd. En el resto del mundo, se opera a través de Binary (C.R.) S.A., Binary (V) Ltd, Binary (BVI) Ltd y Binary (FX) Ltd."
 
 msgid "In the case of a Limit Order, you acknowledge that we will endeavor to open/close a Transaction at a level that is the same or better than the Limit you specified, subject to the availability of the Limit Price."
-msgstr ""
+msgstr "En el caso de una Orden Límite, usted reconoce que nos esforzaremos por abrir / cerrar una Transacción a un nivel que sea igual o mejor que el Límite que especificó, sujeto a la disponibilidad del Precio Límite."
 
 msgid "In the case of a Stop Order, you acknowledge that we will endeavor to open/close a Transaction at a price equal to the one you specified. However, if the specified price is unavailable, a less favourable price may be quoted. You acknowledge that at the time of order execution, our bid/offer price may become less favourable to you."
-msgstr ""
+msgstr "En el caso de una Orden Stop, usted reconoce que nos esforzaremos por abrir / cerrar una transacción a un precio igual al que usted especificó. Sin embargo, si el precio especificado no está disponible, se puede cotizar un precio menos favorable. Usted reconoce que en el momento de la ejecución de la orden, nuestro precio de compra/oferta puede ser menos favorable para usted."
 
 msgid "In the case of some Contracts, there may be no functioning or open market or exchange on which the reference product is traded at the time of the client order. In such cases, the Company sets out to determine a fair underlying price based on a number of factors, such as price movements on associated markets and other market influences and information about the client order."
 msgstr ""
@@ -9724,7 +9724,7 @@ msgid "The Company ensures that complaints received will be investigated thoroug
 msgstr "La Compañía asegura que las quejas recibidas serán investigadas a fondo y de manera justa. Puede enviar una queja por correo electrónico a través de %1."
 
 msgid "The Company has a Stop Out policy which prevents you from losing more than you have deposited. However, in the event that your Open Positions are not closed when the Margin Level for your MT5 Real Account reaches the Stop Out Level, the Company, at its sole discretion, may waive your negative balance by crediting your account if your Account Balance goes into a negative balance. The negative balance is determined by aggregating all the negative balances incurred over a 24-hour period across all accounts held by you. You acknowledge that, unless you are a retail customer of Binary Investments (Europe) Ltd, the offer of the Negative Balance protection by the Company to you is at the Company’s sole discretion and we reserve the right to change the features and eligibility criteria of the Negative Balance Protection at any time. The provisions of the Negative Balance Protection do not apply:"
-msgstr ""
+msgstr "La Compañía tiene una política de Stop Out que le impide perder más de lo que ha depositado. Sin embargo, en el caso de que sus Posiciones Abiertas no están cerradas cuando el Nivel de Margen de su Cuenta Real MT5 alcance el Nivel Stop Out, la Compañía, a su entera discreción, puede renunciar a su saldo negativo acreditando su cuenta si el Saldo de su Cuenta es negativo. El saldo negativo se determina agregando todos los saldos negativos incurridos durante un período de 24 horas en todas las cuentas que tenga. Usted reconoce que, a menos que sea un cliente minorista de Binary Investments (Europe) Ltd, la oferta de la protección del saldo negativo por parte de la Compañía es a su entera discreción y nos reservamos el derecho de cambiar las características y los criterios de elegibilidad de Protección de saldo negativo en cualquier momento. Las disposiciones de la Protección de saldo negativo no se aplican:"
 
 msgid "The Company has a general duty to conduct its business with the client honestly, fairly, and professionally and to act in the client's best interests when opening and closing binary options trades with the client."
 msgstr ""
@@ -10153,7 +10153,7 @@ msgid "The default DNS services provided by your ISP can be slow and insecure. %
 msgstr ""
 
 msgid "The default Stop Out Level applicable to your Account is published on our website. However, the default Stop Out Level is subject to alteration at our absolute discretion. Any changes to the Stop Out Level will take effect immediately. We will endeavor to notify you of an alteration to the default Stop Out Level by publishing the revised default Stop Out Level on our website. It is your responsibility to check our website regularly and remain informed about the default Stop Out Level."
-msgstr ""
+msgstr "El nivel Stop Out predeterminado aplicable a su cuenta está publicado en nuestro sitio web. Sin embargo, el nivel Stop Out predeterminado está sujeto a modificaciones a nuestra absoluta discreción. Cualquier cambio en el Nivel Stop Out tendrá efecto inmediatamente. Nos esforzaremos en notificarle sobre cualquier alteración en el nivel Stop Out predeterminado mediante la publicación de la versión revisada del mismo en nuestro sitio web. Es su responsabilidad revisar nuestro sitio web con regularidad y mantenerse informado sobre el nivel predeterminado de Stop Out."
 
 msgid "The duration is the length of a purchased trade (see 'contract period')."
 msgstr "La duración es el plazo de un contrato que usted compra (vea \"período de contrato\")."
@@ -10249,7 +10249,7 @@ msgid "The minimum required amount for using the account transfer facility is %1
 msgstr "El monto mínimo requerido para utilizar el servicio de transferencias de cuenta es %1."
 
 msgid "The minimum spread (which is comprised of the market spread and our spread) published on our website is subject to alteration, at our absolute discretion. You acknowledge that whilst we endeavor to maintain a competitive spread, both market spread and our spread may widen significantly in some circumstances and such figures will be determined by us at our reasonable discretion."
-msgstr ""
+msgstr "El diferencial mínimo (que se compone del diferencial de mercado y nuestro diferencial) publicado en nuestro sitio web está sujeto a modificaciones, a nuestra absoluta discreción. Usted reconoce que, mientras nos esforzamos por mantener un diferencial competitivo, tanto el diferencial de mercado como nuestro diferencial pueden ampliarse significativamente en algunas circunstancias y tales cifras serán determinadas por nosotros a nuestra discreción razonable."
 
 msgid "The minimum ticket size refers to the minimum volume or number of lots."
 msgstr "El tamaño mínimo de pedido se refiere al volumen mínimo o número de lotes."
@@ -11751,7 +11751,7 @@ msgid "We may release subsequent versions of the %1 API and require that you use
 msgstr "Podemos lanzar versiones posteriores de la API de %1 y requerir que usted use esas versiones posteriores. El uso continuado de las APIs tras el lanzamiento de una versión posterior será considerdo como una aceptación por su parte de las modificaciones."
 
 msgid "We may, at our absolute discretion, accept a Stop Order or a Limit Order from you. We may enable other types of Orders (for example, a trailing stop order) for your execution at any point in time."
-msgstr "Nosotros podemos, a nuestra absoluta discreción, aceptar una orden Stop o una orden Limitada de usted. Es posible que habilitemos otros tipos de órdenes (por ejemplo, una orden Stop de Seguimiento) para su ejecución en cualquier momento."
+msgstr "Nosotros podemos, a nuestra absoluta discreción, aceptar una orden Stop o una orden Límite de usted. Es posible que habilitemos otros tipos de órdenes (por ejemplo, una orden Stop de Seguimiento) para su ejecución en cualquier momento."
 
 msgid "We may, at our absolute discretion, disregard your Order if an Event takes place resulting in it no longer being practicable to act on your Order after indicating an acceptance of your Order."
 msgstr "Podremos, a nuestra entera discreción, desestimar su Órden en caso de que un Evento haga que ya no sea práctico actuar sobre su Órden incluso luego de haber aceptado su Órden."
@@ -12151,7 +12151,7 @@ msgid "Whilst the Company acts as principal in respect of the client's orders, t
 msgstr ""
 
 msgid "Whilst we endeavor to close out your Open Positions if and when the Margin Level for your MT5 Real Account reaches or falls below the Stop Out Level, we do not guarantee that your Open Positions will be closed when the Margin Level for your MT5 Real Account reaches the Stop Out Level."
-msgstr ""
+msgstr "Mientras intentamos cerrar sus Posiciones abiertas cuando el Nivel de Margen para su Cuenta Real de MT5 alcanza o cae por debajo del Nivel Stop Out, no garantizamos que sus Posiciones Abiertas se cerrarán cuando el Nivel de Margen de su Cuenta Real de MT5 alcanza el Nivel Stop Out."
 
 msgid "Whilst we endeavor to open or close the Transaction to which your orders relate at the requested price, acting in accordance with our duty of best execution, there are times when, due to an increase in volatility or volume, orders may be subject to slippage. The difference between the order price and execution price when orders are filled is known as slippage. This means that your order is not filled at the exact intended quoted price when you placed your order. Slippage is usually seen during periods of extremely high or low volatility and generally occurs during fundamental news releases or periods of limited liquidity. Slippages can result in either a positive slippage (more favourable to you) or a negative slippage (less favourable to you)."
 msgstr ""
@@ -12427,7 +12427,7 @@ msgid "You acknowledge that, in the course of dealing under these Terms, you may
 msgstr "Usted reconoce que, durante el tiempo que negocia bajo estos Términos, puede obtener información confidencial relacionada con la Compañía y su matriz, afiliados o terceros. Dicha información confidencial pertenecerá exclusivamente a la Compañía."
 
 msgid "You acknowledge, understand, represent and warrant that you are aware of the functional limitations of the MT5 Trading Platform (for example, Wine, which is not a fully stable application, as disclosed by the MT5 Trading Platform Licensor on their website)."
-msgstr ""
+msgstr "Usted reconoce, comprende, declara y garantiza que conoce las limitaciones funcionales de la Plataforma de Operaciones MT5 (por ejemplo, Wine, que no es una aplicación completamente estable, según lo divulgado por el Licenciante de la Plataforma de Operaciones MT5 en su sitio web)."
 
 msgid "You act in breach of any warranty or representation made under this Agreement, and/or if any information provided to us in connection with this Agreement is, or becomes, untrue or misleading;"
 msgstr "Su actuación en incumplimiento de cualquier garantía o representación hecha bajo este Acuerdo, y / o si la información que nos ha proporcionado en relación con este Acuerdo es, o llega a ser, falsa o engañosa;"
@@ -12718,13 +12718,13 @@ msgid "You may develop Applications using the %1 API as soon as you register an 
 msgstr "Usted puede desarrollar Aplicaciones usando la API de %1 tan pronto como registre una Aplicación y acepte cumplir estos Términos."
 
 msgid "You may make Margin Payments by transferring funds from your %1 account to your MT5 Real Account. In the event that there are insufficient funds in your %1 account to fund your MT5 Real Account, you may make Margin Payments by funding your %1 account and transferring the funds from your %1 account to your MT5 Real Account."
-msgstr ""
+msgstr "Puede realizar pagos de margen transfiriendo fondos de su cuenta %1 a su cuenta real MT5. En el caso de que no haya fondos suficientes en su cuenta %1 para financiar su Cuenta Real MT5, puede realizar Pagos de Margen financiando su cuenta %1 y transfiriendo los fondos de su cuenta %1 a su Cuenta Real MT5."
 
 msgid "You may not assign rights granted in this Agreement without the Company's prior written approval."
 msgstr "Usted no podrá ceder los derechos concedidos en este Acuerdo sin previa autorización por escrito de la Compañía."
 
 msgid "You may not cancel or amend the level of your Stop and Limit Order prior to the closing of your Transaction once the level has been reached."
-msgstr "No puede cancelar o modificar el nivel de sus órdenes Stop y Limitada antes del cierre de su Transacción una vez que se haya alcanzado el nivel."
+msgstr "No puede cancelar o modificar el nivel de sus órdenes Stop y Límite antes del cierre de su Transacción una vez que se haya alcanzado el nivel."
 
 msgid "You may only open an account at this site on conditions that:"
 msgstr "Solo puede abrir una cuenta en este sitio a condición de que:"
@@ -12742,7 +12742,7 @@ msgid "You may revoke the current manager's access."
 msgstr ""
 
 msgid "You may specify your instruction of a Stop Order or a Limit Order may be applied for a limited duration or for an indefinite period (a \"good till cancelled\" or \"GTC\" Order)."
-msgstr "Puede especificar su instrucción de una orden Stop o una orden Limitada se va a aplicar por una duración limitada o por un período indefinido (una orden \"Válida Hasta Cancelación\" o \"GTC\").\n"
+msgstr "Puede especificar su instrucción de una orden Stop o una orden Límite se va a aplicar por una duración limitada o por un período indefinido (una orden \"Válida Hasta Cancelación\" o \"GTC\")."
 
 msgid "You may store the Application-specific alphanumeric user IDs provided (\"API Tokens\") or the authentication tokens provided via Open Authorisation Standard (\"OAuth Tokens\")."
 msgstr "Puede guardar los IDs de usuario alfanuméricos específicos de la Aplicación que le proporcionamos (\"Tokens de la API\") o los tokens de autenticación que le proporcionamos a través del Open Authorisation Standard (\"OAuth Tokens\")."
@@ -13573,7 +13573,7 @@ msgid "where the Agent is an individual, he has reached the age of 18 years or o
 msgstr "cuando el Agente es una persona física, ha alcanzado la edad de 18 años o más y tiene plena capacidad para celebrar este Acuerdo;"
 
 msgid "where the negative balance is connected to or a result of functional limitations and/or malfunction of the MT5 Trading Platform; and"
-msgstr ""
+msgstr "cuando el saldo negativo está conectado con o es resultado de limitaciones funcionales y / o mal funcionamiento de la Plataforma de operaciones MT5; y"
 
 msgid "with insider knowledge of any financial market or instrument."
 msgstr "conocimiento interno de cualquier mercado financiero o instrumento."
