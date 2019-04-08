@@ -2,7 +2,6 @@ import { PropTypes as MobxPropTypes } from 'mobx-react';
 import classNames                     from 'classnames';
 import PropTypes                      from 'prop-types';
 import React                          from 'react';
-import { connect }                    from 'Stores/connect';
 import { IconInfoOutline }            from 'Assets/Common';
 import { IconTradeCategory }          from 'Assets/Trading/Categories';
 
