@@ -41,7 +41,7 @@ const Tour = () => (
             <div className='section border-bottom'>
                 <div className='section-content center-text gr-padding-30'>
                     <h1>{it.L('Exit your trades before expiry')}</h1>
-                    <p>{it.L('With [_1], you can sell your contracts before expiry to keep any profits you may have made or to minimise your losses. You don’t have to wait until the actual expiration time.', it.website_name)}</p>
+                    <p>{it.L('With [_1], you can sell your contracts before expiry to keep any profits you may have made or to minimise your losses. You don\'t have to wait until the actual expiration time.', it.website_name)}</p>
                 </div>
             </div>
             <div className='section border-bottom'>
