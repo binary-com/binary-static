@@ -9,8 +9,15 @@
     &__icon {
         @extend .absolute-center-v;
         @extend .icon--centered;
+        @extend %inline-icon;
         z-index: 1;
         margin: unset;
+        /* postcss-bem-linter: ignore */
+        g {
+            @include themify($themes) {
+                stroke: themed('text_primary_color');
+            }
+        }
     }
     &__dialog {
         background-color: $COLOR_WHITE;
@@ -24,6 +31,9 @@
         transition: transform 0.25s ease, opacity 0.25s linear;
         width: 231px;
         z-index: 1;
+        @include themify($themes) {
+            background-color: themed('container_secondary_color');
+        }
 
         &--enter, &--exit {
             opacity: 0;
@@ -51,10 +61,16 @@
             height: 228px;
             overflow: hidden;
             text-align: center;
-
+            @include themify($themes) {
+                border-color: themed('background_cover');
+                color: themed('text_primary_color');
+            }
         }
         &-list-title {
             @include typeface(--small-center-bold-black, capitalize);
+            @include themify($themes) {
+                color: themed('text_color');
+            }
         }
         &-list-item {
             @include typeface(--small-left-normal-black);
@@ -63,18 +79,26 @@
             display: inline-block;
             margin: 3px;
             padding: 7px;
+            @include themify($themes) {
+                color: themed('text_primary_color');
+            }
 
-            &:hover:not(&--disabled) {
-                background: $COLOR_LIGHT_BLACK_4;
-                color: $COLOR_LIGHT_BLACK_1;
-
-                &--selected {
-                    background: $COLOR_LIGHT_GRAY_1;
-                    color: $COLOR_WHITE;
+            &:hover:not(&--disabled):not(&--selected) {
+                @include themify($themes) {
+                    background: themed('tab_hover_color');
+                    color: themed('text_primary_color');
+                }
+            }
+            &--selected {
+                @include themify($themes) {
+                    background: themed('active_color');
+                    color: themed('text_active_color') !important;
                 }
             }
             &--disabled {
-                color: $COLOR_LIGHT_BLACK_3;
+                @include themify($themes) {
+                    color: themed('disabled_color');
+                }
                 cursor: default;
             }
         }

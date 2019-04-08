@@ -17,6 +17,8 @@ $BASE_FONT_SIZE: 10px;
     Variables
 */
 $FONT_SIZES: (
+    'heading'   em(30px),
+    'large'     em(28px),
     'title'     em(16px),
     'paragraph' em(14px),
     'small'     em(12px),
@@ -123,6 +125,9 @@ html {
     font-family: inherit;
     font-style: inherit;
     padding: 2px 3px;
+    @include themify($themes) {
+        color: themed('text_color');
+    }
 }
 
 // Placeholders

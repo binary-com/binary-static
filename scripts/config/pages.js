@@ -80,6 +80,7 @@ module.exports = [
     ['platforms',                               'static/platforms',                            'full_width', 'Trading Platforms'],
 
     ['about-us',                                'static/about/index',                          'full_width', 'About Us'],
+    ['asuncion',                                'static/about/asuncion',                       'full_width', 'Careers - Asunción'],
     ['binary-in-numbers',                       'static/about/binary_in_numbers',              'default',    'Binary in Numbers'],
     ['careers',                                 'static/about/careers',                        'full_width', 'Careers'],
     ['careers/privacy-policy',                  'static/about/job_applicant_policy',           'full_width', 'Job Applicant Privacy Policy'],
@@ -124,7 +125,7 @@ module.exports = [
     ['style-guide',                             'static/new_layout/style_guide',               'full_width',  'Style guide'],
 
     // ==================== Section: "landing_pages" ====================
-    // ['graduates',                               'landing_pages/graduate_program',              null,        'Binary.com Graduate Program',        'NOT-en'],
+    ['graduates',                               'landing_pages/graduate_program',                 null,        'Binary.com Graduate Program',        'NOT-en'],
     // ['hackathon',                               'landing_pages/hackathon',                     null,        'Hackathon Competition',              'NOT-en'],
     ['introducing-usb',                            'landing_pages/usb',                           null,        'Introducing USB',                    'NOT-en'],
     ['landing/signup-frame',                       'landing_pages/signup_frame',                  null,        'Sign up'],

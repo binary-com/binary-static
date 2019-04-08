@@ -1,12 +1,11 @@
 import PropTypes            from 'prop-types';
 import React                from 'react';
-import { CSSTransition }    from 'react-transition-group';
 import { getPropertyValue } from '_common/utility';
 import UILoader             from 'App/Components/Elements/ui-loader.jsx';
 import { connect }          from 'Stores/connect';
 import Test                 from './test.jsx';
 import FormLayout           from '../Components/Form/form-layout.jsx';
-import ContractDetails      from '../../Contract/Containers/contract-details.jsx';
+import Digits               from '../../Contract/Containers/digits.jsx';
 import InfoBox              from '../../Contract/Containers/info-box.jsx';
 
 const SmartChart = React.lazy(() => import(/* webpackChunkName: "smart_chart" */'../../SmartChart'));
@@ -23,8 +22,8 @@ class Trade extends React.Component {
     render() {
         const contract_id = getPropertyValue(this.props.purchase_info, ['buy', 'contract_id']);
         const form_wrapper_class = this.props.is_mobile ? 'mobile-wrapper' : 'sidebar__container desktop-only';
-        const should_show_last_digit_stats = ['match_diff', 'even_odd', 'over_under'].includes(this.props.contract_type);
-
+        const should_show_last_digit_stats = ['match_diff', 'even_odd', 'over_under'].includes(this.props.contract_type)
+            && !this.props.is_contract_mode;
         return (
             <div id='trade_container' className='trade-container'>
                 <div className='chart-container'>
@@ -32,14 +31,16 @@ class Trade extends React.Component {
                         <React.Suspense fallback={<UILoader />} >
                             <SmartChart
                                 chart_id={this.props.chart_id}
+                                Digits={<Digits is_trade_page />}
                                 InfoBox={<InfoBox is_trade_page />}
                                 onSymbolChange={this.props.onSymbolChange}
                                 symbol={this.props.symbol}
-                                chart_type={this.props.chart_type}
-                                granularity={this.props.granularity}
-                                updateChartType={this.props.updateChartType}
-                                updateGranularity={this.props.updateGranularity}
                                 should_show_last_digit_stats={should_show_last_digit_stats}
+                                scroll_to_epoch={this.props.scroll_to_epoch}
+                                scroll_to_offset={this.props.scroll_to_offset}
+                                start_epoch={this.props.start_epoch}
+                                end_epoch={this.props.end_epoch}
+                                chart_zoom={this.props.chart_zoom}
                             />
                         </React.Suspense>
                     }
@@ -50,26 +51,9 @@ class Trade extends React.Component {
                 >
                     <FormLayout
                         is_mobile={this.props.is_mobile}
-                        is_contract_visible={!!contract_id}
+                        is_contract_visible={!!contract_id || this.props.is_contract_mode}
                         is_trade_enabled={this.props.is_trade_enabled}
                     />
-                    <CSSTransition
-                        in={!!contract_id}
-                        timeout={400}
-                        classNames={{
-                            enter    : 'contract--enter',
-                            enterDone: 'contract--enter-done',
-                            exit     : 'contract--exit',
-                        }}
-                        unmountOnExit
-                    >
-                        <div className='contract__wrapper'>
-                            <ContractDetails
-                                contract_id={contract_id}
-                                onClickNewTrade={this.props.onClickNewTrade}
-                            />
-                        </div>
-                    </CSSTransition>
                 </div>
             </div>
         );
@@ -78,7 +62,9 @@ class Trade extends React.Component {
 
 Trade.propTypes = {
     chart_id        : PropTypes.number,
+    chart_zoom      : PropTypes.number,
     contract_type   : PropTypes.string,
+    end_epoch       : PropTypes.number,
     is_contract_mode: PropTypes.bool,
     is_mobile       : PropTypes.bool,
     is_trade_enabled: PropTypes.bool,
@@ -87,25 +73,31 @@ Trade.propTypes = {
     onSymbolChange  : PropTypes.func,
     onUnmount       : PropTypes.func,
     purchase_info   : PropTypes.object,
+    scroll_to_epoch : PropTypes.number,
+    scroll_to_offset: PropTypes.number,
+    start_epoch     : PropTypes.number,
     symbol          : PropTypes.string,
 };
 
 export default connect(
     ({ modules, ui }) => ({
-        chart_type       : modules.smart_chart.chart_type,
-        granularity      : modules.smart_chart.granularity,
-        is_contract_mode : modules.smart_chart.is_contract_mode,
-        updateChartType  : modules.smart_chart.updateChartType,
-        updateGranularity: modules.smart_chart.updateGranularity,
-        chart_id         : modules.trade.chart_id,
-        contract_type    : modules.trade.contract_type,
-        is_trade_enabled : modules.trade.is_trade_enabled,
-        onClickNewTrade  : modules.trade.onClickNewTrade,
-        onMount          : modules.trade.onMount,
-        onSymbolChange   : modules.trade.onChange,
-        onUnmount        : modules.trade.onUnmount,
-        purchase_info    : modules.trade.purchase_info,
-        symbol           : modules.trade.symbol,
-        is_mobile        : ui.is_mobile,
+        start_epoch                        : modules.contract.chart_config.start_epoch,
+        end_epoch                          : modules.contract.chart_config.end_epoch,
+        scroll_to_epoch                    : modules.smart_chart.scroll_to_left_epoch,
+        scroll_to_offset                   : modules.smart_chart.scroll_to_left_epoch_offset,
+        chart_zoom                         : modules.smart_chart.zoom,
+        is_contract_mode                   : modules.smart_chart.is_contract_mode,
+        chart_id                           : modules.trade.chart_id,
+        contract_type                      : modules.trade.contract_type,
+        is_trade_enabled                   : modules.trade.is_trade_enabled,
+        onClickNewTrade                    : modules.trade.onClickNewTrade,
+        onMount                            : modules.trade.onMount,
+        onSymbolChange                     : modules.trade.onChange,
+        onUnmount                          : modules.trade.onUnmount,
+        purchase_info                      : modules.trade.purchase_info,
+        symbol                             : modules.trade.symbol,
+        has_only_forward_starting_contracts: ui.has_only_forward_starting_contracts,
+        is_mobile                          : ui.is_mobile,
+        setHasOnlyForwardingContracts      : ui.setHasOnlyForwardingContracts,
     })
 )(Trade);

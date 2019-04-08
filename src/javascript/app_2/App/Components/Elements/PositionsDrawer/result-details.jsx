@@ -1,14 +1,16 @@
 import classNames        from 'classnames';
 import PropTypes         from 'prop-types';
 import React             from 'react';
-import { CSSTransition } from 'react-transition-group';
-import {
-    IconArrow,
-    Icon }               from 'Assets/Common';
+import { IconArrow }     from 'Assets/Common';
 import { localize }      from '_common/localize';
 import {
     epochToMoment,
     toGMTFormat }        from 'Utils/Date';
+import {
+    addCommaToNumber,
+    getBarrierLabel,
+    getBarrierValue  }   from './helpers';
+import ResultDetailsItem from './result-details-item.jsx';
 
 class ResultDetails extends React.PureComponent {
     state = {
@@ -21,94 +23,71 @@ class ResultDetails extends React.PureComponent {
 
     render() {
         const {
-            barrier,
             contract_end_time,
-            contract_start_time,
+            contract_info,
             duration,
             duration_unit,
-            entry_spot,
+            exit_spot,
             has_result,
-            id_sell,
-            tick_count,
         } = this.props;
         if (!has_result) return null;
         return (
             <React.Fragment>
-                <div className='result-details__separator' />
-                <CSSTransition
-                    in={this.state.is_open}
-                    timeout={250}
-                    classNames={{
-                        enter    : 'result-details__wrapper--enter',
-                        enterDone: 'result-details__wrapper--enter-done',
-                        exit     : 'result-details__wrapper--exit',
-                    }}
-                    unmountOnExit
+                <div className={classNames('result-details__wrapper', {
+                    'result-details__wrapper--is-open': this.state.is_open,
+                })}
                 >
-                    <div className='result-details__wrapper'>
-                        <div className='result-details__grid'>
-                            <div className='result-details__item'>
-                                <span className='result-details__label'>
-                                    {localize('Reference ID')}
-                                </span>
-                                <span className='result-details__value'>
-                                    {id_sell}
-                                </span>
-                            </div>
-                            <div className='result-details__item'>
-                                <span className='result-details__label'>
-                                    {localize('Duration')}
-                                </span>
-                                <span className='result-details__value'>
-                                    {tick_count ? `${tick_count} ${localize('ticks')}` : `${duration} ${duration_unit}`}
-                                </span>
-                            </div>
-                        </div>
-                        <div className='result-details__grid'>
-                            <div className='result-details__item'>
-                                <span className='result-details__label'>
-                                    {localize('Barrier')}
-                                </span>
-                                <span className='result-details__value'>
-                                    {barrier.toFixed(2)}
-                                </span>
-                            </div>
-                            <div className='result-details__item'>
-                                <span className='result-details__label'>
-                                    {localize('Entry spot')}
-                                </span>
-                                <span className='result-details__value'>
-                                    {entry_spot.toFixed(2)}
-                                </span>
-                            </div>
-                        </div>
-                        <div className='result-details__grid'>
-                            <div className='result-details__item'>
-                                <span className='result-details__label'>
-                                    {localize('Start time')}
-                                </span>
-                                <span className='result-details__value'>
-                                    {toGMTFormat(epochToMoment(contract_start_time))}
-                                </span>
-                            </div>
-                            <div className='result-details__item'>
-                                <span className='result-details__label'>
-                                    {localize('End time')}
-                                </span>
-                                <span className='result-details__value'>
-                                    {toGMTFormat(epochToMoment(contract_end_time))}
-                                </span>
-                            </div>
-                        </div>
+                    <div className='result-details__grid'>
+                        <ResultDetailsItem
+                            label={localize('Ref. ID (Buy)')}
+                            value={contract_info.transaction_ids.buy}
+                        />
+                        <ResultDetailsItem
+                            label={localize('Ref. ID (Sell)')}
+                            value={contract_info.transaction_ids.sell}
+                        />
                     </div>
-                </CSSTransition>
+                    <div className='result-details__grid'>
+                        <ResultDetailsItem
+                            label={localize('Duration')}
+                            value={(contract_info.tick_count > 0) ?
+                                `${contract_info.tick_count} ${(contract_info.tick_count < 2) ? localize('tick') : localize('ticks')}`
+                                :
+                                `${duration} ${duration_unit}`}
+                        />
+                        <ResultDetailsItem
+                            label={getBarrierLabel(contract_info)}
+                            value={getBarrierValue(contract_info) || ' - '}
+                        />
+                    </div>
+                    <div className='result-details__grid'>
+                        <ResultDetailsItem
+                            label={localize('Entry spot')}
+                            value={addCommaToNumber(contract_info.entry_spot) || ' - '}
+                        />
+                        <ResultDetailsItem
+                            label={localize('Exit spot')}
+                            value={addCommaToNumber(exit_spot) || ' - '}
+                        />
+                    </div>
+                    <div className='result-details__grid'>
+                        <ResultDetailsItem
+                            label={localize('Start time')}
+                            value={toGMTFormat(epochToMoment(contract_info.purchase_time)) || ' - '}
+                        />
+                        <ResultDetailsItem
+                            label={localize('End time')}
+                            value={toGMTFormat(epochToMoment(contract_end_time)) || ' - '}
+                        />
+                    </div>
+                </div>
                 <div
                     className={classNames('result-details__toggle', {
                         'result-details__toggle--is-open': this.state.is_open,
                     })}
                     onClick={this.toggleDetails}
                 >
-                    <Icon icon={IconArrow} />
+                    <IconArrow className='result-details__select-arrow' />
                 </div>
             </React.Fragment>
         );
@@ -116,21 +95,15 @@ class ResultDetails extends React.PureComponent {
 }
 
 ResultDetails.propTypes = {
-    barrier          : PropTypes.number,
     contract_end_time: PropTypes.PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
     ]),
-    contract_start_time: PropTypes.PropTypes.oneOfType([
-        PropTypes.number,
-        PropTypes.string,
-    ]),
+    contract_info: PropTypes.object,
     duration     : PropTypes.number,
     duration_unit: PropTypes.string,
-    entry_spot   : PropTypes.number,
+    exit_spot    : PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     has_result   : PropTypes.bool,
-    id_sell      : PropTypes.number,
-    tick_count   : PropTypes.number,
 };
 
 export default ResultDetails;

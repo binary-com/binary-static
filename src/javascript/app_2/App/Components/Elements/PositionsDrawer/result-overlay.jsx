@@ -7,7 +7,8 @@ import IconCross         from 'Images/app_2/portfolio/ic-cross.svg';
 import { localize }      from '_common/localize';
 
 const ResultOverlay = ({
-    id,
+    contract_id,
+    onClick,
     onClickRemove,
     result,
 }) => (
@@ -29,13 +30,15 @@ const ResultOverlay = ({
             >
                 <span
                     className='result__close-btn'
-                    onClick={() => onClickRemove(id)}
+                    onClick={() => onClickRemove(contract_id)}
                 />
-                <span className={classNames('result__caption', {
-                    'result__caption--won' : (result === 'won'),
-                    'result__caption--lost': (result === 'lost'),
-                }
-                )}
+                <span
+                    className={classNames('result__caption', {
+                        'result__caption--won' : (result === 'won'),
+                        'result__caption--lost': (result === 'lost'),
+                    }
+                    )}
+                    onClick={() => onClick(contract_id)}
                 >
                     {
                         (result === 'won') ?
@@ -56,7 +59,8 @@ const ResultOverlay = ({
 );
 
 ResultOverlay.propTypes = {
-    id           : PropTypes.number,
+    contract_id  : PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    onClick      : PropTypes.func,
     onClickRemove: PropTypes.func,
     result       : PropTypes.string,
 };

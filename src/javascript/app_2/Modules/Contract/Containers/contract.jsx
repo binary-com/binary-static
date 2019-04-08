@@ -4,6 +4,7 @@ import { CSSTransition } from 'react-transition-group';
 import ErrorComponent    from 'App/Components/Elements/Errors';
 import { connect }       from 'Stores/connect';
 import ContractDetails   from './contract-details.jsx';
+import Digits            from './digits.jsx';
 import InfoBox           from './info-box.jsx';
 
 const SmartChart = React.lazy(() => import('Modules/SmartChart'));
@@ -15,8 +16,6 @@ const Contract = ({
     match,
     symbol,
     chart_config,
-    updateChartType,
-    updateGranularity,
 }) => {
     const form_wrapper_class = is_mobile ? 'mobile-wrapper' : 'sidebar__container desktop-only';
     return (
@@ -31,10 +30,9 @@ const Contract = ({
                                 <React.Suspense fallback={<div>Loading... </div>}>
                                     <SmartChart
                                         InfoBox={<InfoBox />}
+                                        Digits={<Digits />}
                                         symbol={symbol}
                                         {...chart_config}
-                                        updateChartType={updateChartType}
-                                        updateGranularity={updateGranularity}
                                     />
                                 </React.Suspense>
                             }
@@ -75,12 +73,10 @@ Contract.propTypes = {
 
 export default connect(
     ({ modules, ui }) => ({
-        chart_config     : modules.contract.chart_config,
-        error_message    : modules.contract.error_message,
-        has_error        : modules.contract.has_error,
-        updateChartType  : modules.contract.updateChartType,
-        updateGranularity: modules.contract.updateGranularity,
-        is_mobile        : ui.is_mobile,
-        symbol           : modules.contract.contract_info.underlying,
+        chart_config : modules.contract.chart_config,
+        error_message: modules.contract.error_message,
+        has_error    : modules.contract.has_error,
+        is_mobile    : ui.is_mobile,
+        symbol       : modules.contract.contract_info.underlying,
     }),
 )(Contract);

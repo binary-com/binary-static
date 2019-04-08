@@ -4,76 +4,14 @@ import * as Logic from '../logic';
 
 describe('logic', () => {
     describe('getChartConfig', () => {
-        it('should work as expected with values leading to granularity 0', () => {
+        it('should work assign end_epoch and start_epoch correctly', () => {
             const contract_info = {
-                "date_expiry":1544000100,
-                "date_start":1544000000,
+                "exit_tick_time": 1544000100,
+                "date_start": 1544000000,
             };
             expect(Logic.getChartConfig(contract_info)).to.eql({
-                granularity: 0,
-                chart_type: 'mountain',
-                end_epoch: 1544000103,
-                start_epoch: 1543999997,
-            });
-        });
-        it('should work as expected with values leading to granularity 120', () => {
-            const contract_info = {
-                "date_expiry":1544005000,
-                "date_start":1544000000,
-            };
-            expect(Logic.getChartConfig(contract_info)).to.eql({
-                granularity: 120,
-                chart_type: 'candle',
-                end_epoch: 1544005120,
-                start_epoch: 1543999880,
-            });
-        });
-        it('should work as expected with values leading to granularity 600', () => {
-            const contract_info = {
-                "date_expiry":1544010000,
-                "date_start":1544000000,
-            };
-            expect(Logic.getChartConfig(contract_info)).to.eql({
-                granularity: 600,
-                chart_type: 'candle',
-                end_epoch: 1544010600,
-                start_epoch: 1543999400,
-            });
-        });
-        it('should work as expected with values leading to granularity 900', () => {
-            const contract_info = {
-                "date_expiry":1544025000,
-                "date_start":1544000000,
-            };
-            expect(Logic.getChartConfig(contract_info)).to.eql({
-                granularity: 900,
-                chart_type: 'candle',
-                end_epoch: 1544025900,
-                start_epoch: 1543999100,
-            });
-        });
-        it('should work as expected with values leading to granularity 14400', () => {
-            const contract_info = {
-                "date_expiry":1546000000,
-                "date_start":1544000000,
-            };
-            expect(Logic.getChartConfig(contract_info)).to.eql({
-                granularity: 14400,
-                chart_type: 'candle',
-                end_epoch: 1546014400,
-                start_epoch: 1543985600,
-            });
-        });
-        it('should work as expected when duration is more than 30 * 24 * 3600', () => {
-            const contract_info = {
-                "date_expiry":1546592100,
-                "date_start":1544000000,
-            };
-            expect(Logic.getChartConfig(contract_info)).to.eql({
-                granularity: 86400,
-                chart_type: 'candle',
-                end_epoch: 1546678500,
-                start_epoch: 1543913600,
+                end_epoch: 1544000100,
+                start_epoch: 1544000000,
             });
         });
     });
@@ -150,13 +88,13 @@ describe('logic', () => {
     });
 
     describe('getEndSpot', () => {
-        it('should return contract\'s sell spot if contract is path dependent', () => {
+        it('should return contract\'s exit spot if contract is path dependent', () => {
             const contract_info = {
                 "is_path_dependent": true,
                 "sell_spot": 123456,
                 "exit_tick": 987654321,
             };
-            expect(Logic.getEndSpot(contract_info)).to.eql(123456);
+            expect(Logic.getEndSpot(contract_info)).to.eql(987654321);
         });
         it('should return contract\'s exit tick if contract is not path dependent', () => {
             const contract_info = {
@@ -176,13 +114,13 @@ describe('logic', () => {
     });
 
     describe('getEndSpotTime', () => {
-        it('should return contract\'s sell spot time if it is path dependent', () => {
+        it('should return contract\'s exit tick time if it is path dependent', () => {
             const contract_info = {
                 "is_path_dependent": true,
                 "sell_spot_time": 123456,
                 "exit_tick_time": 987654321,
             };
-            expect(Logic.getEndSpotTime(contract_info)).to.eql(123456);
+            expect(Logic.getEndSpotTime(contract_info)).to.eql(987654321);
         });
         it('should return contract\'s exit tick time if it is not path dependent', () => {
             const contract_info = {
@@ -250,6 +188,29 @@ describe('logic', () => {
                 "bid_price": 12345,
             };
             expect(Logic.getIndicativePrice(contract_info)).to.eql(12345);
+        });
+    });
+
+    describe('getLastTickFromTickStream', () => {
+        it('should return the last tick in the tick_stream array', () => {
+            const tick_stream = [
+                {
+                    "tick" : 766.53,
+                    "epoch": 1000001,
+                },
+                {
+                    "tick" : 800.23,
+                    "epoch": 1000002,
+                },
+            ];
+            expect(Logic.getLastTickFromTickStream(tick_stream)).to.deep.include({
+                "tick" : 800.23,
+                "epoch": 1000002,
+            });
+        });
+        it('should return an empty object if the tick_stream array is empty', () => {
+            const tick_stream = [];
+            expect(Logic.getLastTickFromTickStream(tick_stream)).to.eql({});
         });
     });
 

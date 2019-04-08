@@ -159,8 +159,8 @@ const TypesOfAccounts = () => (
                 number={2}
                 title={it.L('Order execution')}
                 texts={[
-                    it.L('Order execution typically comes in two varieties: market execution and instant execution. With market execution, you will place an order at the broker’s price. You agree on the price in advance. There are no requotes with market execution.'),
-                    it.L('What about instant execution? In this case, your order is placed at the price that’s available at that time. Requotes are possible if the price fluctuates a great deal before the order execution is complete.'),
+                    it.L('Order execution typically comes in two varieties: market execution and instant execution. With market execution, you will place an order at the broker\'s price. You agree on the price in advance. There are no requotes with market execution.'),
+                    it.L('What about instant execution? In this case, your order is placed at the price that\'s available at that time. Requotes are possible if the price fluctuates a great deal before the order execution is complete.'),
                 ]}
             />
             <FootNote

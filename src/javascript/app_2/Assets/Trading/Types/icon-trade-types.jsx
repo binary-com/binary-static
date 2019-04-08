@@ -31,7 +31,7 @@ const IconTradeType = ({ type, className }) => {
                     <g fill='none' fillRule='evenodd'>
                         <path className='transparent' d='M0 0h16v16H0z' />
                         <path className='color1-fill' fill='#2A3052'd='M7.234 9.316l5.183-5.193H10.14a1.988 1.988 0 0 1-1.983-1.988h7.662v5.713h-1.983V5.523L10.05 9.316h5.769v1.987H.045V9.316h7.189z' />
-                        <path className='important' fill='#F93' d='M3.425 15.91H.045v-3.387h2.073v1.874l1.87-1.874h2.818z' />
+                        <path className='color2-fill important' fill='#F93' d='M3.425 15.91H.045v-3.387h2.073v1.874l1.87-1.874h2.818z' />
                     </g>
                 );
                 break;
@@ -41,7 +41,7 @@ const IconTradeType = ({ type, className }) => {
                     <g fill='none' fillRule='evenodd'>
                         <path className='transparent' d='M0 0h16v16H0z' />
                         <path className='color1-fill' fill='#2A3052'd='M8.721.162c0 1.13.902 2.03 1.983 2.03h1.848l-7.55 7.731v2.885l8.97-9.185v1.892c0 1.131.901 2.031 1.983 2.031V.138H8.72v.024z' />
-                        <path className='important' fill='#F93' d='M.135 12.808v2.123h2.817l2.05-2.123z' />
+                        <path className='color2-fill important' fill='#F93' d='M.135 12.808v2.123h2.817l2.05-2.123z' />
                     </g>
                 );
                 break;
@@ -55,7 +55,7 @@ const IconTradeType = ({ type, className }) => {
                     <g fill='none' fillRule='evenodd'>
                         <path className='transparent' d='M0 0h16v16H0z' />
                         <path className='color1-fill' fill='#2A3052'd='M3.493.654l5.746 5.723-5.746 5.747c-.766-.789-.789-2.028 0-2.817l1.848-1.848H.045V5.476H5.5L3.493 3.47a1.973 1.973 0 0 1 0-2.816zm3.448 11.808h1.983v3.493H6.94v-3.493zM6.94.18h1.983v1.893H6.94V.18z' />
-                        <path className='important' fill='#F93' d='M15.82 8.563h-4.305l1.848-1.848c.767-.766.767-2.028 0-2.816L10.051 7.21a.844.844 0 0 1 0 1.172l-1.826 1.825 5.138 5.138c.609-.923.474-2.343-.315-3.132l-1.69-1.69h4.44v-1.96h.022z' />
+                        <path className='color2-fill important' fill='#F93' d='M15.82 8.563h-4.305l1.848-1.848c.767-.766.767-2.028 0-2.816L10.051 7.21a.844.844 0 0 1 0 1.172l-1.826 1.825 5.138 5.138c.609-.923.474-2.343-.315-3.132l-1.69-1.69h4.44v-1.96h.022z' />
                     </g>
                 );
                 break;
@@ -63,7 +63,7 @@ const IconTradeType = ({ type, className }) => {
                 IconType = (
                     <g fill='none' fillRule='evenodd'>
                         <path className='transparent' d='M0 0h16v16H0z' />
-                        <path className='important' fill='#F93' d='M.135 6.49V.158h6.333V6.49H.135zM4.26 2.39H2.366v1.893H4.26V2.389zM9.6 16V9.668h6.332V16H9.6zm4.101-4.124h-1.893v1.893h1.893v-1.893z' />
+                        <path className='color2-fill important' fill='#F93' d='M.135 6.49V.158h6.333V6.49H.135zM4.26 2.39H2.366v1.893H4.26V2.389zM9.6 16V9.668h6.332V16H9.6zm4.101-4.124h-1.893v1.893h1.893v-1.893z' />
                         <path className='color1-fill' fill='#2A3052'd='M9.6.158h6.332V6.49H9.6V.158zm2.208 4.124h1.893V2.389h-1.893v1.893zM.135 16V9.668h6.333V16H.135zm4.124-4.124H2.366v1.893H4.26v-1.893z' />
                     </g>
                 );
@@ -73,7 +73,7 @@ const IconTradeType = ({ type, className }) => {
                     <g fill='none' fillRule='evenodd'>
                         <path className='transparent' d='M0 0h16v16H0z' />
                         <path className='color1-fill' fill='#2A3052'd='M3.556 2.231l5.666 5.724L3.556 13.7c-.756-.788-.778-2.028 0-2.816l1.822-1.848H.156V7.054h5.377L3.556 5.048a1.992 1.992 0 0 1 0-2.817zm3.377 10.231H8.89v3.47H6.933v-3.47zm0-12.304H8.89v3.56H6.933V.158z' />
-                        <path className='important' fill='#F93' d='M12.156 2.344c.755.788.755 2.05-.023 2.817l-1.466 1.487L9.289 5.25l2.867-2.907zm0 11.493L9.2 10.817l1.378-1.397 1.578 1.6c.755.788.755 2.05 0 2.817zm-1.223-4.778l1.045-1.082-.911-.923h4.622v2.005h-4.756z' />
+                        <path className='color2-fill important' fill='#F93' d='M12.156 2.344c.755.788.755 2.05-.023 2.817l-1.466 1.487L9.289 5.25l2.867-2.907zm0 11.493L9.2 10.817l1.378-1.397 1.578 1.6c.755.788.755 2.05 0 2.817zm-1.223-4.778l1.045-1.082-.911-.923h4.622v2.005h-4.756z' />
                     </g>
                 );
                 break;
@@ -81,7 +81,7 @@ const IconTradeType = ({ type, className }) => {
                 IconType = (
                     <g fill='none' fillRule='evenodd'>
                         <path className='transparent' d='M0 0h16v16H0z' />
-                        <path className='important' fill='#F93' d='M11.628 7.827H4.237L7.91 2l3.718 5.827zM7.256 6.155h1.352l-.676-1.068-.676 1.068z' />
+                        <path className='color2-fill important' fill='#F93' d='M11.628 7.827H4.237L7.91 2l3.718 5.827zM7.256 6.155h1.352l-.676-1.068-.676 1.068z' />
                         <path className='color1-fill' fill='#2A3052'd='M7.46 14.86H.067L3.74 9.035l3.718 5.827zm-4.395-1.67h1.352L3.74 12.12l-.676 1.068zm12.755 1.67H8.428l3.673-5.826 3.719 5.827zm-4.372-1.67H12.8l-.676-1.069-.676 1.068z' />
                     </g>
                 );
@@ -90,7 +90,7 @@ const IconTradeType = ({ type, className }) => {
                 IconType = (
                     <g fill='none' fillRule='evenodd'>
                         <path className='transparent' d='M0 0h16v16H0z' />
-                        <path className='important' fill='#F93' d='M6.513 12.544L3.02 15.912H.203l4.89-4.746z' />
+                        <path className='color2-fill important' fill='#F93' d='M6.513 12.544L3.02 15.912H.203l4.89-4.746z' />
                         <path className='color1-fill' fill='#2A3052'd='M.045 11.034H15.82v1.925H.045v-1.925zM13.837 8.06V5.412l-5.792 5.622V8.3l4.372-4.244H9.69c-1.104 0-1.983-.875-1.983-1.925h8.113v7.875c-1.105 0-1.983-.875-1.983-1.947z' />
                     </g>
                 );
@@ -99,7 +99,7 @@ const IconTradeType = ({ type, className }) => {
                 IconType = (
                     <g fill='none' fillRule='evenodd'>
                         <path className='transparent' d='M0 0h16v16H0z' />
-                        <path className='important' fill='#F93' d='M6.603 5.478L3.11 2.088H.293l4.913 4.768z' />
+                        <path className='color2-fill important' fill='#F93' d='M6.603 5.478L3.11 2.088H.293l4.913 4.768z' />
                         <path className='color1-fill' fill='#2A3052'd='M.135 5.04H15.91v1.926H.135V5.04zm13.792 4.9c0-1.071.901-1.924 1.983-1.946v7.875H7.797c0-1.05.88-1.925 1.983-1.925h2.727L8.135 9.7V6.966l5.792 5.621V9.941z' />
                     </g>
                 );
@@ -188,7 +188,7 @@ const IconTradeType = ({ type, className }) => {
                     <g fill='none' fillRule='evenodd'>
                         <path className='transparent' d='M0 0h16v16H0z' />
                         <path className='color1-fill' fill='#2A3052'd='M.068.07h15.774V2.1H.068V.07zm13.769 8.007c0-1.13.878-2.03 1.983-2.054v6.646H9.33c0-1.107.878-2.03 1.983-2.03h1.104L9.059 7.2l-5.363 5.515V9.831l5.363-5.516 4.778 4.893V8.077z' />
-                        <path className='important' fill='#F93' d='M.068 12.692v2.123h1.6l2.05-2.123z' />
+                        <path className='color2-fill important' fill='#F93' d='M.068 12.692v2.123h1.6l2.05-2.123z' />
                     </g>
                 );
                 break;
@@ -197,7 +197,7 @@ const IconTradeType = ({ type, className }) => {
                     <g fill='none' fillRule='evenodd'>
                         <path className='transparent' d='M0 0h16v16H0z' />
                         <path className='color1-fill' fill='#2A3052'd='M11.989 2.1h1.983V.07h1.96V2.1h-1.938v7.408c-1.081 0-1.983-.9-1.983-2.031V5.585l-6.94 7.107V9.785l5.52-5.654H8.745c-1.082 0-1.983-.9-1.983-2.031H.158V.07h11.83V2.1z' />
-                        <path className='important' fill='#F93' d='M.158 12.692v2.123H3.02l2.05-2.123z' />
+                        <path className='color2-fill important' fill='#F93' d='M.158 12.692v2.123H3.02l2.05-2.123z' />
                     </g>
                 );
                 break;
@@ -206,7 +206,7 @@ const IconTradeType = ({ type, className }) => {
                     <g fill='none' fillRule='evenodd'>
                         <path className='transparent' d='M0 0h16v16H0z' />
                         <path className='color1-fill' fill='#2A3052'd='M10.14 8.706l3.787 3.794v-2.326h1.983v5.713H8.248c0-1.084.879-1.987 1.983-1.987h2.276L7.324 8.706H.135V6.72H15.91v1.987h-5.77z' />
-                        <path className='important' fill='#F93' d='M3.515 2.113H.135V5.5h2.073V3.626L4.078 5.5h2.818z' />
+                        <path className='color2-fill important' fill='#F93' d='M3.515 2.113H.135V5.5h2.073V3.626L4.078 5.5h2.818z' />
                     </g>
                 );
                 break;
@@ -216,7 +216,7 @@ const IconTradeType = ({ type, className }) => {
                     <g fill='none' fillRule='evenodd'>
                         <path className='transparent' d='M0 0h16v16H0z' />
                         <path className='color1-fill' fill='#2A3052'd='M8.631 14.862c0-1.131.901-2.031 1.983-2.031h1.848L4.912 5.1V2.215l8.97 9.185V9.508c0-1.131.901-2.031 1.983-2.031v7.408H8.63v-.023z' />
-                        <path className='important' fill='#F93' d='M.045 2.215V.092h2.817l2.05 2.123z' />
+                        <path className='color2-fill important' fill='#F93' d='M.045 2.215V.092h2.817l2.05 2.123z' />
                     </g>
                 );
                 break;

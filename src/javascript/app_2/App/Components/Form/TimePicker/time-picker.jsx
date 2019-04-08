@@ -86,7 +86,7 @@ class TimePicker extends React.Component {
                                     is_read_only
                                     id={`${prefix_class}-input`}
                                     className={classNames(`${prefix_class}-input`)}
-                                    value={selected_time}
+                                    value={`${selected_time} GMT`}
                                     onClick={this.toggleDropDown}
                                     name={name}
                                     placeholder={placeholder}

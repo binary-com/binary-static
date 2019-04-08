@@ -1,4 +1,4 @@
-import React from 'react';
+import React    from 'react';
 import { List } from '../../_common/components/elements.jsx';
 
 const InvisibleHeading = ({ headers = [] }) => (
@@ -46,6 +46,7 @@ const JobDetails = () => (
                             'information_technology',
                             'quality_assurance',
                             'quantitative_analysis',
+                            'data_analytics',
                             'marketing',
                             'accounting',
                             'compliance',
@@ -61,6 +62,7 @@ const JobDetails = () => (
                                 { className: 'information_technology', string: it.L('IT') },
                                 { className: 'quality_assurance',      string: it.L('Quality Assurance') },
                                 { className: 'quantitative_analysis',  string: it.L('Quantitative Analysis') },
+                                { className: 'data_analytics',         string: it.L('Data Analytics') },
                                 { className: 'marketing',              string: it.L('Marketing') },
                                 { className: 'accounting',             string: it.L('Accounts/ Payments') },
                                 { className: 'compliance',             string: it.L('Compliance and Risk Management') },
@@ -87,10 +89,24 @@ const JobDetails = () => (
                         />
 
                         <SideBar
+                            className='quality_assurance'
+                            sidebar_items={[
+                                { href: 'software_tester', string: it.L('Software Tester') },
+                            ]}
+                        />
+
+                        <SideBar
                             className='quantitative_analysis'
                             sidebar_items={[
                                 { href: 'quantitative_analyst',      string: it.L('Quantitative Analyst') },
                                 { href: 'financial_markets_analyst', string: it.L('Financial Markets Analyst') },
+                            ]}
+                        />
+
+                        <SideBar
+                            className='data_analytics'
+                            sidebar_items={[
+                                { href: 'data_scientist', string: it.L('Data Scientist') },
                             ]}
                         />
 
@@ -102,8 +118,13 @@ const JobDetails = () => (
                                 { href: 'marketing_executive',           string: it.L('Marketing Executive') },
                                 { href: 'graphics_designer',             string: it.L('Graphics Designer') },
                                 { href: 'copywriter',                    string: it.L('Copywriter') },
-                                { href: 'translator',                    string: it.L('Translator') },
-                                { href: 'proofreader',                   string: it.L('Proofreader') },
+                            ]}
+                        />
+
+                        <SideBar
+                            className='accounting'
+                            sidebar_items={[
+                                { href: 'accounts_and_payments_executive', string: it.L('Accounts and Payments Executive') },
                             ]}
                         />
 
@@ -117,10 +138,24 @@ const JobDetails = () => (
                         />
 
                         <SideBar
+                            className='internal_audit'
+                            sidebar_items={[
+                                { href: 'internal_audit_executive', string: it.L('Internal Audit Executive') },
+                            ]}
+                        />
+
+                        <SideBar
                             className='human_resources'
                             sidebar_items={[
                                 { href: 'hr_operations_executive',      string: it.L('HR Operations Executive') },
                                 { href: 'talent_acquisition_executive', string: it.L('Talent Acquisition Executive') },
+                            ]}
+                        />
+
+                        <SideBar
+                            className='customer_support'
+                            sidebar_items={[
+                                { href: 'customer_support_executive', string: it.L('Customer Support Executive') },
                             ]}
                         />
                     </div>
@@ -464,7 +499,7 @@ const JobDetails = () => (
                                     { text: it.L('Proficiency in designing intuitive and cohesive screens, pages, and visual elements that work as intended') },
                                     { text: it.L('Proficiency in Photoshop, Illustrator, Sketch, and other design and wireframing software') },
                                     { text: it.L('Knowledge of HTML, CSS, and JavaScript for rapid prototyping of websites and apps') },
-                                    { text: it.L('Bachelor’s degree in graphic design, interaction design, visual communication, multimedia, or equivalent') },
+                                    { text: it.L('Bachelor\'s degree in graphic design, interaction design, visual communication, multimedia, or equivalent') },
                                 ]}
                             />
                         </div>
@@ -495,7 +530,7 @@ const JobDetails = () => (
                                 text={it.L('Preferences:')}
                                 className='bullet'
                                 items={[
-                                    { text: it.L('Bachelor’s degree in computer science, or an equivalent combination of technical education, training, and work experience') },
+                                    { text: it.L('Bachelor\'s degree in computer science, or an equivalent combination of technical education, training, and work experience') },
                                     { text: it.L('Ability to write high-quality, self-documenting code using test-driven development techniques') },
                                     { text: it.L('Minimum two years experience in a software or web application testing role') },
                                     { text: it.L('Experience designing and executing test plans (both automated and manual)') },
@@ -514,7 +549,7 @@ const JobDetails = () => (
                         <div className='invisible' id='quantitative_analyst'>
                             <h1>{it.L('Quantitative Analyst')}</h1>
 
-                            <p>{it.L('[_1]\'s Quantitative Analytics team is responsible for the pricing of our binary options. You will join them in managing the risk and profitability of the company’s options book.', it.website_name)}</p>
+                            <p>{it.L('[_1]\'s Quantitative Analytics team is responsible for the pricing of our binary options. You will join them in managing the risk and profitability of the company\'s options book.', it.website_name)}</p>
 
                             <p>{it.L('The work that you do is complex, challenging, and essential to our future.')}</p>
 
@@ -589,6 +624,67 @@ const JobDetails = () => (
                         </div>
                     </div>
 
+                    <div className='data_analytics'>
+                        <div className='invisible' id='data_scientist'>
+                            <h1>{it.L('Data Scientist')}</h1>
+
+                            <p>{it.L('We need a talented Data Scientist with the technical skills and creative curiosity to explore and solve complex business problems.')}</p>
+
+                            <UlText
+                                text={it.L('You should be passionate about:')}
+                                className='bullet'
+                                items={[
+                                    { text: it.L('Focusing on customer\'s needs in everything that you do.') },
+                                    { text: it.L('Approaching even the smallest task with an open mind and learning new skills.') },
+                                    { text: it.L('Constant, open and honest communication.') },
+                                    { text: it.L('Fixing problems and providing feedback for improvement.') },
+                                    { text: it.L('Doing great work and inspiring others to do the same.') },
+                                    { text: it.L('Being in touch with the latest tools and technology related to your role.') },
+                                    { text: it.L('Solving complex business problems using data-driven techniques.') },
+                                    { text: it.L('Converting data into actionable insights that contribute to business strategies.') },
+                                ]}
+                            />
+
+                            <UlText
+                                text={it.L('We need you to:')}
+                                className='bullet'
+                                items={[
+                                    { text: it.L('Conduct full lifecycle analysis that include requirements, activities, and design.') },
+                                    { text: it.L('Ask the right questions to identify potential problems to be solved, the scope involved and the availability of relevant data.') },
+                                    { text: it.L('Use data governance tools to ensure data is accurate and consistent for effective analysis.') },
+                                    { text: it.L('Convert raw data into an easy-to-understand format for analysis and reporting purposes.') },
+                                    { text: it.L('Translate data into consumable information and assist in making data-driven decisions across departments.') },
+                                    { text: it.L('Develop and implement databases; collect, design, process, analyse, and present data in a meaningful way.') },
+                                    { text: it.L('Communicate and collaborate effectively with members of different teams across the organisation.') },
+                                ]}
+                            />
+
+                            <UlText
+                                text={it.L('You must have:')}
+                                className='bullet'
+                                items={[
+                                    { text: it.L('Experience with reporting packages, SQL, programming (Python/R) and ETL frameworks.') },
+                                    { text: it.L('Experience with machine learning algorithms, decision trees, neural networks, clustering, etc.') },
+                                    { text: it.L('Experience with statistical and data mining techniques like GLM/Regression, Random Forest, Boosting, text mining, social media analysis, etc.') },
+                                    { text: it.L('Strong analytical skills with the ability to transform data into optimal business decisions.') },
+                                    { text: it.L('A strong background in statistics, mathematics or engineering.') },
+                                    { text: it.L('Strong communication skills.') },
+                                    { text: it.L('Ability to present data using various tools to help the team to make informed business decisions.') },
+                                ]}
+                            />
+
+                            <UlText
+                                text={it.L('Good to have:')}
+                                className='bullet'
+                                items={[
+                                    { text: it.L('Experience in data visualisation') },
+                                    { text: it.L('Experience in cybersecurity and data protection') },
+                                    { text: it.L('Experience with MDX query language') },
+                                ]}
+                            />
+                        </div>
+                    </div>
+
                     <div className='marketing'>
                         <div className='invisible' id='affiliate_country_manager'>
                             <h1>{it.L('Affiliate/Country Manager')}</h1>
@@ -603,7 +699,7 @@ const JobDetails = () => (
                                     { text: it.L('Drive rapid growth and business development to support the company\'s sales and marketing objectives') },
                                     { text: it.L('Coordinate business development activities and generate high-quality partnership leads') },
                                     { text: it.L('Adapt affiliate marketing tactics and promotional materials as needed to localise all content for maximum effectiveness') },
-                                    { text: it.L('Utilise a variety of tactics – both online and offline – to grow and support the company’s network of partners in your designated market') },
+                                    { text: it.L('Utilise a variety of tactics – both online and offline – to grow and support the company\'s network of partners in your designated market') },
                                 ]}
                             />
 
@@ -611,7 +707,7 @@ const JobDetails = () => (
                                 text={it.L('Preferences:')}
                                 className='bullet'
                                 items={[
-                                    { text: it.L('Bachelor’s degree in marketing, business administration, or related discipline') },
+                                    { text: it.L('Bachelor\'s degree in marketing, business administration, or related discipline') },
                                     { text: it.L('At least 5 years of experience in affiliate marketing, growth hacking, business development, and other closely-related skills') },
                                     { text: it.L('An assertive, sales-driven personality, able to adapt quickly and achieve powerful results') },
                                     { text: it.L('Strong oral and written communication skills in both the regional language(s) and English') },
@@ -633,8 +729,8 @@ const JobDetails = () => (
                                     { text: it.L('Act as first and second level support for our traders by offering them solutions through basic coding and troubleshooting techniques') },
                                     { text: it.L('Engage in market development to grow the client base for existing products and platforms of the company') },
                                     { text: it.L('Perform market research and analysis to uncover trends, prospects, partners, and competitors for our client base') },
-                                    { text: it.L('Support overall development, planning and execution of the team’s digital marketing efforts in accordance to the marketing objectives of respective projects') },
-                                    { text: it.L('Contribute creative ideas to further the company’s dynamic branding effort') },
+                                    { text: it.L('Support overall development, planning and execution of the team\'s digital marketing efforts in accordance to the marketing objectives of respective projects') },
+                                    { text: it.L('Contribute creative ideas to further the company\'s dynamic branding effort') },
                                 ]}
                             />
 
@@ -667,7 +763,7 @@ const JobDetails = () => (
                                     { text: it.L('Perform market research and analysis to uncover trends, prospects, partners, and competitors') },
                                     { text: it.L('Produce content for websites, blogs, social media, and marketing materials') },
                                     { text: it.L('Maintain relationships with clients and partners to drive retention and loyalty') },
-                                    { text: it.L('Contribute ideas, energy, and creativity to further the company’s dynamic branding efforts') },
+                                    { text: it.L('Contribute ideas, energy, and creativity to further the company\'s dynamic branding efforts') },
                                 ]}
                             />
 
@@ -716,7 +812,7 @@ const JobDetails = () => (
                                     { text: it.L('Strong understanding of colours, typography, identity design, and branding') },
                                     { text: it.L('Creative flair and versatility in developing concepts, graphics, and layouts for a wide range of media') },
                                     { text: it.L('Proficiency in Photoshop, Illustrator, InDesign, Sketch, and other design and wireframing software') },
-                                    { text: it.L('Bachelor’s degree in graphic design, visual communication, multimedia, or equivalent') },
+                                    { text: it.L('Bachelor\'s degree in graphic design, visual communication, multimedia, or equivalent') },
                                 ]}
                             />
                         </div>
@@ -730,7 +826,7 @@ const JobDetails = () => (
                                 text={it.L('Responsibilities:')}
                                 className='bullet'
                                 items={[
-                                    { text: it.L('Create clear, concise, and engaging content for the company’s website, email newsletters, blog, social media channels, and other marketing materials') },
+                                    { text: it.L('Create clear, concise, and engaging content for the company\'s website, email newsletters, blog, social media channels, and other marketing materials') },
                                     { text: it.L('Adapt brand messaging, voice, and tone of content as needed to suit specific audiences, business objectives, and the channel of delivery') },
                                     { text: it.L('Edit, proofread, and improve content from other team members') },
                                     { text: it.L('Follow established workflows for content deliverables') },
@@ -748,67 +844,6 @@ const JobDetails = () => (
                                     { text: it.L('Meticulous English language skills, with keen eye for detail when it comes to punctuation, spelling, grammar, and syntax') },
                                     { text: it.L('Ability to translate complex, technical information into clear, attractive benefits') },
                                     { text: it.L('Capacity to multitask, balance deadlines, and reliably deliver high-quality content') },
-                                ]}
-                            />
-                        </div>
-
-                        <div className='invisible' id='translator'>
-                            <h1>{it.L('Translator')}</h1>
-
-                            <p>{it.L('[_1] is seeking a qualified translation professional who is familiar with specific target markets, languages, and cultures. By delivering a high level of translation and customer support services, you will be the company’s voice to our clients.', it.website_name)}</p>
-
-                            <p>{it.L('You’ll work with colleagues in IT, Customer Support and Marketing to provide localized text and document translation services on our global website [_1]. This position will report to our Head of Translations.', '<a href=\'https://www.binary.com\' target=\'_blank\'>www.binary.com</a>')}</p>
-
-                            <UlText
-                                text={it.L('Responsibilities:')}
-                                className='bullet'
-                                items={[
-                                    { text: it.L('Process website content translations regularly and efficiently') },
-                                    { text: it.L('Ensure compliance with quality control standards governing website content') },
-                                    { text: it.L('Assist in the proofreading and recording of video presentations') },
-                                    { text: it.L('Proofread existing content used on the company’s blogs and social media outlets') },
-                                ]}
-                            />
-
-                            <UlText
-                                text={it.L('Preferences:')}
-                                className='bullet'
-                                items={[
-                                    { text: it.L('Preferably a native speaker with good command of English (oral and written)') },
-                                    { text: it.L('Will work with our simple web-based translation tool') },
-                                    { text: it.L('Previous experience with financial/binary options website services is preferred') },
-                                    { text: it.L('A university degree or accredited translation certification preferred') },
-                                ]}
-                            />
-                        </div>
-
-                        <div className='invisible' id='proofreader'>
-                            <h1>{it.L('Proofreader')}</h1>
-
-                            <p>{it.L('[_1] is seeking a qualified proofreader with a flair for language and a meticulous eye for detail. You must be able to interact with our staff using a web-based translator interface.', it.website_name)}</p>
-
-                            <p>{it.L('You\'ll work with colleagues in IT, Customer Support and Marketing to provide localised text and translation services. This position will report to our Head of Translations.')}</p>
-
-                            <UlText
-                                text={it.L('Responsibilities:')}
-                                className='bullet'
-                                items={[
-                                    { text: it.L('Proofread and correct the content appearing on the company&#39;s website, blog, social media outlets, and marketing materials, from English to the regional language and vice versa') },
-                                    { text: it.L('Use appropriate terminology, taking into account the style and nuance of the original text') },
-                                    { text: it.L('Maintain adequate speed and volume of output') },
-                                    { text: it.L('Process website content translations when a full time translator is unavailable') },
-                                    { text: it.L('Ensure compliance with the quality standards that govern our website content') },
-                                ]}
-                            />
-
-                            <UlText
-                                text={it.L('Preferences:')}
-                                className='bullet'
-                                items={[
-                                    { text: it.L('Preferably a native speaker with good command of English (oral and written)') },
-                                    { text: it.L('Will work with our simple web-based translation tool') },
-                                    { text: it.L('Previous experience with financial/binary options website services is preferred') },
-                                    { text: it.L('A university degree or accredited translation certification preferred') },
                                 ]}
                             />
                         </div>
@@ -874,7 +909,7 @@ const JobDetails = () => (
                                 text={it.L('Preferences:')}
                                 className='bullet'
                                 items={[
-                                    { text: it.L('A bachelor’s degree in commerce or any business-related field, law, or risk management') },
+                                    { text: it.L('A bachelor\'s degree in commerce or any business-related field, law, or risk management') },
                                     { text: it.L('A good understanding of, and keen interest in corporate, legal or regulatory compliance') },
                                     { text: it.L('Thorough understanding of Anti-Money Laundering (AML) and Know Your Customer (KYC) processes') },
                                     { text: it.L('The ability to draft and review legal documents, and prepare licence applications') },
@@ -910,7 +945,7 @@ const JobDetails = () => (
                                 text={it.L('Preferences:')}
                                 className='bullet'
                                 items={[
-                                    { text: it.L('A bachelor’s degree in commerce or any business-related field, IT-related field or criminology') },
+                                    { text: it.L('A bachelor\'s degree in commerce or any business-related field, IT-related field or criminology') },
                                     { text: it.L('Good understanding of the link between payments functionality, as well as money laundering and fraud prevention') },
                                     { text: it.L('Aptitude for working in an international environment') },
                                     { text: it.L('Ability to acquire knowledge of varied AML matters in a multitude of international jurisdictions') },
@@ -932,14 +967,14 @@ const JobDetails = () => (
                                 className='bullet'
                                 items={[
                                     { text: it.L('Investigate client accounts that have been flagged by existing fraud controls and processes') },
-                                    { text: it.L('Scrutinise clients’ user behaviour on our trading platform') },
+                                    { text: it.L('Scrutinise clients\' user behaviour on our trading platform') },
                                     { text: it.L('Review and analyse suspicious client activities') },
                                     { text: it.L('Review and approve KYC documents') },
-                                    { text: it.L('Verify and approve clients’ deposit and withdrawal requests') },
+                                    { text: it.L('Verify and approve clients\' deposit and withdrawal requests') },
                                     { text: it.L('Create strategies against potential risks that might arise due to disruptive innovation') },
                                     { text: it.L('Evaluate existing procedures and policies with respect to risk management and suggest improvements') },
                                     { text: it.L('Maintain trackable records of investigations in AML-CTF-related matters') },
-                                    { text: it.L('Provide guidance to the Company’s operational teams and act as internal second line support for AML-CTF, anti-fraud, and authentication purposes') },
+                                    { text: it.L('Provide guidance to the Company\'s operational teams and act as internal second line support for AML-CTF, anti-fraud, and authentication purposes') },
                                     { text: it.L('Adhere to internal policies, procedures, and guidelines on all matters that concern risk management') },
                                     { text: it.L('Prepare reports on investigations and resolved issues') },
                                     { text: it.L('Handle chargeback disputes and review regulatory complaints') },
@@ -970,7 +1005,7 @@ const JobDetails = () => (
                         <div className='invisible' id='internal_audit_executive'>
                             <h1>{it.L('Internal Audit Executive')}</h1>
 
-                            <p>{it.L('The Internal Audit team is the catalyst for improving our organisation’s governance, risk management, and internal controls by providing insights and recommendations based on the audits they perform.')}</p>
+                            <p>{it.L('The Internal Audit team is the catalyst for improving our organisation\'s governance, risk management, and internal controls by providing insights and recommendations based on the audits they perform.')}</p>
 
                             <UlText
                                 text={it.L('Responsibilities:')}
@@ -1024,7 +1059,7 @@ const JobDetails = () => (
                                 text={it.L('Preferences:')}
                                 className='bullet'
                                 items={[
-                                    { text: it.L('An advanced/higher/graduate diploma or bachelor’s degree') },
+                                    { text: it.L('An advanced/higher/graduate diploma or bachelor\'s degree') },
                                     { text: it.L('Extensive experience in Microsoft Office applications, as well as popular HR management and payroll systems') },
                                     { text: it.L('Well-honed organisational, administrative, and accounting skills') },
                                     { text: it.L('Excellent oral and written communication skills in English and Bahasa Malaysia') },
@@ -1074,7 +1109,7 @@ const JobDetails = () => (
                         <div className='invisible' id='customer_support_executive'>
                             <h1>{it.L('Customer Support Executive')}</h1>
 
-                            <p>{it.L('As our Customer Support Executive, you will serve as the voice of the company, and help our customers resolve and reduce the issues they’re facing with our products and services. The frontline is essential to our business and you are expected to deliver world-class customer service that creates customer loyalty and promotes business growth.')}</p>
+                            <p>{it.L('As our Customer Support Executive, you will serve as the voice of the company, and help our customers resolve and reduce the issues they\'re facing with our products and services. The frontline is essential to our business and you are expected to deliver world-class customer service that creates customer loyalty and promotes business growth.')}</p>
 
                             <UlText
                                 text={it.L('Responsibilities:')}

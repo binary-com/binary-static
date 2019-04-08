@@ -7,8 +7,18 @@
 
     &__input-field {
         border-radius: $BORDER_RADIUS;
+        margin-top: 0.8em;
     }
     &__input {
+        @include themify($themes) {
+            background: themed('background_container_color');
+            color: themed('text_color');
+
+            &:hover, &:focus, &:active {
+                border-color: themed('border_hover_color');
+            }
+        }
+
         &::-ms-clear { // Edge: hide clear icon for increment input
             display: none;
         }
@@ -16,6 +26,7 @@
     &__icon {
         @extend .absolute-center-v;
         @extend .icon--centered;
+        @extend %inline-icon;
         opacity: 1;
         transition: opacity 0.1s;
 
@@ -26,7 +37,7 @@
             opacity: 0;
         }
         &--with-label {
-            top: 40px !important;
+            top: 35px !important;
         }
     }
     // TODO: update datepicker UI in mobile

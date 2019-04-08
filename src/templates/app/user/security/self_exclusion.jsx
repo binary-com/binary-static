@@ -6,7 +6,7 @@ const SelfExclusion = () => (
     <React.Fragment>
         <div className='invisible' id='description'>
             <h1>{it.L('Self-Exclusion Facilities')}</h1>
-            <p>{it.L('Online trading can become addictive. Fill in the form below to limit your participation on the website or send a signed letter or fax to our customer support team. Once set, you can only tighten your limits. Limits will only be removed or loosened after 7 days with the exception of the self-exclusion date, which cannot be removed or altered once you have confirmed it. To remove or increase your limits, please contact <a href="[_1]">customer support</a>.', it.url_for('contact'))}</p>
+            <p>{it.L('Online trading can become addictive. Fill in the form below to limit your participation on the website or send a signed letter or fax to our customer support team. Once set, you can only tighten your limits. Limits will only be removed or loosened after 7 days with the exception of the self-exclusion date, which cannot be removed or altered once you have confirmed it. To remove or increase your limits, please contact [_1]customer support[_2].', `<a href="${it.url_for('contact')}">`, '</a>')}</p>
 
             <div id='gamstop_info_top' className='invisible'>
                 <p>{it.L('If you are considering self-exclusion, you may wish to register with GAMSTOP.')}</p>

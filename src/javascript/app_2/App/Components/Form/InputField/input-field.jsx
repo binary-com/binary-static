@@ -50,7 +50,7 @@ const InputField = ({
     const max_is_disabled = max_value && +value >= +max_value;
     const min_is_disabled = min_value && +value <= +min_value;
 
-    const changeValue = (e) => {
+    const changeValue = (e, callback) => {
         if (unit) {
             e.target.value = e.target.value.replace(unit, '').trim();
         }
@@ -90,6 +90,9 @@ const InputField = ({
         }
 
         onChange(e);
+        if (callback) {
+            callback(e);
+        }
     };
 
     const getDecimals = (val) => {
@@ -175,27 +178,34 @@ const InputField = ({
         />;
 
     const increment_buttons =
-        <div className='input-wrapper'>
-            <IncrementButtons
-                max_is_disabled={max_is_disabled}
-                incrementValue={incrementValue}
-                min_is_disabled={min_is_disabled || (is_negative_disabled && calculateDecrementedValue() < 0)}
-                decrementValue={decrementValue}
-            />
-        </div>;
+        <IncrementButtons
+            max_is_disabled={max_is_disabled}
+            incrementValue={incrementValue}
+            min_is_disabled={min_is_disabled || (is_negative_disabled && calculateDecrementedValue() < 0)}
+            decrementValue={decrementValue}
+        />;
 
     const input_tooltip =
-        <Tooltip className={classNames('', { 'with-label': label })} alignment='left' message={has_error ? error_messages[0] : null }>
+        <Tooltip
+            className={classNames('', { 'tooltip--with-label': label })}
+            alignment='left'
+            message={has_error ? error_messages[0] : null}
+            has_error={has_error}
+        >
             {!!label &&
             <label htmlFor={name} className='input-field__label'>{label}</label>
             }
             {!!helper &&
             <span className='input-field__helper'>{helper}</span>
             }
-            {is_increment_input &&
-                increment_buttons
+            {is_increment_input ?
+                <div className='input-wrapper'>
+                    {increment_buttons}
+                    {input}
+                </div>
+                :
+                input
             }
-            {input}
         </Tooltip>;
 
     return (
@@ -206,7 +216,7 @@ const InputField = ({
                 </div>
             }
             <div
-                className={`input-field ${className}`}
+                className={classNames('input-field', className)}
             >
                 {input_tooltip}
             </div>
@@ -218,7 +228,10 @@ const InputField = ({
 // supports more than two different types of 'value' as a prop.
 // Quick Solution - Pass two different props to input field.
 InputField.propTypes = {
-    checked                 : PropTypes.number,
+    checked: PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
+    ]),
     className               : PropTypes.string,
     classNameInlinePrefix   : PropTypes.string,
     classNameInput          : PropTypes.string,

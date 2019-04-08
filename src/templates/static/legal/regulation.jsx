@@ -84,7 +84,7 @@ const Regulation = () => {
         <div className='static_full'>
             <h1 className='center-text'>{it.L('Regulatory Information')}</h1>
             <div className='gr-parent gr-padding-30'>
-                <p className='center-text'>{it.L('[_1] is a licensed and regulated trading platform that serves over 1,000,000 customers globally. We hold multiple licenses to comply with regulations around the world. Since 1999, we’ve served our clients with a constant and unwavering commitment to integrity and reliability. We always hold ourselves to the highest ethical standards, in addition to our regulatory requirements.', it.website_name)}</p>
+                <p className='center-text'>{it.L('[_1] is a licensed and regulated trading platform that serves over 1,000,000 customers globally. We hold multiple licenses to comply with regulations around the world. Since 1999, we\'ve served our clients with a constant and unwavering commitment to integrity and reliability. We always hold ourselves to the highest ethical standards, in addition to our regulatory requirements.', it.website_name)}</p>
 
                 <SeparatorLine className='gr-parent gr-padding-20' invisible />
             </div>
@@ -177,61 +177,107 @@ const Regulation = () => {
                     </div>
 
                     <h3>{it.L('RTS 27')}</h3>
-                    <div>
-                        <FillBox
-                            padding='5'
-                            center
-                            border='border-dark-gray'
-                            className='margin-top-17'
-                            image='images/pages/regulation/xlsx-icon.svg'
-                            href={it.url_for('/download/rts27/Table_1.xlsx')}
-                            target='_blank'
-                            text={it.L('Table 1 - Type of execution venue')}
-                        />
-                        <FillBox
-                            padding='5'
-                            center
-                            border='border-dark-gray'
-                            className='margin-top-17'
-                            image='images/pages/regulation/xlsx-icon.svg'
-                            href={it.url_for('/download/rts27/Table_3.xlsx')}
-                            target='_blank'
-                            text={it.L('Table 3 - Intra-Day Price information')}
-                        />
-                        <FillBox
-                            padding='5'
-                            center
-                            border='border-dark-gray'
-                            className='margin-top-17'
-                            image='images/pages/regulation/xlsx-icon.svg'
-                            href={it.url_for('/download/rts27/Table_4.xlsx')}
-                            target='_blank'
-                            text={it.L('Table 4 - Daily Price information')}
-                        />
-                        <FillBox
-                            padding='5'
-                            center
-                            border='border-dark-gray'
-                            className='margin-top-17'
-                            image='images/pages/regulation/xlsx-icon.svg'
-                            href={it.url_for('/download/rts27/Table_6.xlsx')}
-                            target='_blank'
-                            text={it.L('Table 6 - Likelihood of execution information')}
-                        />
+                    <div className='gr-row'>
+                        <div className='gr-6 gr-12-m gr-padding-30'>
+                            <h3>{it.L('Q3 2018')}</h3>
+                            <FillBox
+                                align_left
+                                center
+                                border='border-dark-gray'
+                                className='margin-top-17 align-start'
+                                image='images/pages/regulation/xlsx-icon.svg'
+                                href={it.url_for('/download/rts27/Q3/Table_1.xlsx')}
+                                target='_blank'
+                                text={it.L('Table 1 - Type of execution venue')}
+                            />
+                            <FillBox
+                                align_left
+                                center
+                                border='border-dark-gray'
+                                className='margin-top-17 align-start'
+                                image='images/pages/regulation/xlsx-icon.svg'
+                                href={it.url_for('/download/rts27/Q3/Table_3.xlsx')}
+                                target='_blank'
+                                text={it.L('Table 3 - Intra-Day Price information')}
+                            />
+                            <FillBox
+                                align_left
+                                center
+                                border='border-dark-gray'
+                                className='margin-top-17 align-start'
+                                image='images/pages/regulation/xlsx-icon.svg'
+                                href={it.url_for('/download/rts27/Q3/Table_4.xlsx')}
+                                target='_blank'
+                                text={it.L('Table 4 - Daily Price information')}
+                            />
+                            <FillBox
+                                align_left
+                                center
+                                border='border-dark-gray'
+                                className='margin-top-17 align-start'
+                                image='images/pages/regulation/xlsx-icon.svg'
+                                href={it.url_for('/download/rts27/Q3/Table_6.xlsx')}
+                                target='_blank'
+                                text={it.L('Table 6 - Likelihood of execution information')}
+                            />
+                        </div>
+                        <div className='gr-6 gr-12-m gr-padding-30'>
+                            <h3>{it.L('Q4 2018')}</h3>
+                            <FillBox
+                                align_left
+                                center
+                                border='border-dark-gray'
+                                className='margin-top-17 align-start'
+                                image='images/pages/regulation/xlsx-icon.svg'
+                                href={it.url_for('/download/rts27/Q4/Table_1.xlsx')}
+                                target='_blank'
+                                text={it.L('Table 1 - Type of execution venue')}
+                            />
+                            <FillBox
+                                align_left
+                                center
+                                border='border-dark-gray'
+                                className='margin-top-17 align-start'
+                                image='images/pages/regulation/xlsx-icon.svg'
+                                href={it.url_for('/download/rts27/Q4/Table_3.xlsx')}
+                                target='_blank'
+                                text={it.L('Table 3 - Intra-Day Price information')}
+                            />
+                            <FillBox
+                                align_left
+                                center
+                                border='border-dark-gray'
+                                className='margin-top-17 align-start'
+                                image='images/pages/regulation/xlsx-icon.svg'
+                                href={it.url_for('/download/rts27/Q4/Table_4.xlsx')}
+                                target='_blank'
+                                text={it.L('Table 4 - Daily Price information')}
+                            />
+                            <FillBox
+                                align_left
+                                center
+                                border='border-dark-gray'
+                                className='margin-top-17 align-start'
+                                image='images/pages/regulation/xlsx-icon.svg'
+                                href={it.url_for('/download/rts27/Q4/Table_6.xlsx')}
+                                target='_blank'
+                                text={it.L('Table 6 - Likelihood of execution information')}
+                            />
+                        </div>
                     </div>
                 </div>
             </Box>
 
             <div data-show='eucountry'>
                 <Box header={it.L('Binary (Europe) Limited')} >
-                    <p>{it.L('Binary (Europe) Limited, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licensed and regulated (for gambling products only - [_1]\'s Volatility Indices) by the Malta Gaming Authority in Malta (licence no [_2]) and for UK clients by the UK Gambling Commission - [_3]view licence[_4].', it.website_name, 'MGA/B2C/102/2000', '<a href="https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39495" target="_blank">', '</a>')}</p>
+                    <p>{it.L('Binary (Europe) Limited, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licensed and regulated (for gambling products only - [_1]\'s Volatility Indices) by the Malta Gaming Authority in Malta  (licence no. [_2]) - [_3]view licence[_4] and also maintains an Irish licence. For UK clients by the UK Gambling Commission - [_5]view licence[_4].', it.website_name, 'MGA/B2C/102/2000', `<a href="${it.url_for('download/regulation/MGA_licence.pdf')}" target="_blank">`, '</a>', '<a href="https://secure.gamblingcommission.gov.uk/PublicRegister/Search/Detail/39495" target="_blank">')}</p>
                     <p>{it.L('European Union residents who wish to trade gambling products will have their accounts opened with Binary (Europe) Limited.')}</p>
                     <RegulatorText />
                     <RegulatorImage padding='4' padding_m='8' href='http://www.mga.org.mt/' image='images/pages/why-us/mga-logo2.svg' />
                 </Box>
 
                 <Box header={it.L('Binary (IOM) Limited')} >
-                    <p>{it.L('Binary (IOM) Limited, First Floor, Millennium House, Victoria Road, Douglas, Isle of Man, IM2 4RW. Licensed and regulated by the Gambling Supervision Commission in the Isle of Man (current online gambling licence granted on the 31 August 2017) and for UK clients by the UK Gambling Commission - [_1]view licence[_2].', `<a href=${it.url_for('download/regulation/IOM_license.pdf')} target="_blank">`, '</a>')}</p>
+                    <p>{it.L('Binary (IOM) Limited, First Floor, Millennium House, Victoria Road, Douglas, Isle of Man, IM2 4RW. Licensed and regulated by the Gambling Supervision Commission in the Isle of Man (current online gambling licence granted on the 31 August 2017) - [_1]view licence[_2] and for UK clients by the UK Gambling Commission - [_3]view licence[_2].', `<a href=${it.url_for('download/regulation/IOM_license.pdf')} target="_blank">`, '</a>', '<a href="https://secure.gamblingcommission.gov.uk/PublicRegister/Search/Detail/39172" target="_blank">')}</p>
                     <p>{it.L('UK and Manx residents who wish to trade gambling products will have their accounts opened with Binary (IOM) Limited.')}</p>
                     <RegulatorText />
                     <RegulatorImage href='https://www.gov.im/gambling/' image='images/pages/regulation/isle-of-man.png' />
@@ -251,7 +297,7 @@ const Regulation = () => {
             </Box>
 
             <Box header={it.L('Binary (BVI) Ltd')} >
-                <p>{it.L('Binary (BVI) Ltd, 2nd Floor, O’Neal Marketing Associates Building, Wickham’s Cay II, P.O. Box 3174, Road Town, Tortola VB1110, British Virgin Islands. Licensed and regulated by the British Virgin Islands Financial Services Commission - [_1]view licence[_2].', `<a href=${it.url_for('download/regulation/BVI_license.pdf')} target="_blank">`, '</a>')}</p>
+                <p>{it.L('Binary (BVI) Ltd, 2nd Floor, O\'Neal Marketing Associates Building, Wickham\'s Cay II, P.O. Box 3174, Road Town, Tortola VB1110, British Virgin Islands. Licensed and regulated by the British Virgin Islands Financial Services Commission - [_1]view licence[_2].', `<a href=${it.url_for('download/regulation/BVI_license.pdf')} target="_blank">`, '</a>')}</p>
                 <p>{it.L('Clients from the rest of the world (excluding certain countries such as the USA, Canada, Costa Rica, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Binary (BVI) Ltd. [_1] is not available in the British Virgin Islands.', it.website_name)}</p>
                 <RegulatorText />
                 <RegulatorImage href='http://www.bvifsc.vg/' image='images/pages/regulation/bvi.png' />

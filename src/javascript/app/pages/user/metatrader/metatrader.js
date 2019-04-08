@@ -9,14 +9,16 @@ const getPropertyValue = require('../../../../_common/utility').getPropertyValue
 
 const MetaTrader = (() => {
     let mt_companies;
-    const accounts_info = MetaTraderConfig.accounts_info;
-    const actions_info  = MetaTraderConfig.actions_info;
-    const fields        = MetaTraderConfig.fields;
+    let show_new_account_popup = true;
+    const accounts_info        = MetaTraderConfig.accounts_info;
+    const actions_info         = MetaTraderConfig.actions_info;
+    const fields               = MetaTraderConfig.fields;
 
     const mt_company = {};
 
     const onLoad = () => {
-        BinarySocket.wait('landing_company', 'get_account_status').then(() => {
+        BinarySocket.send({ statement: 1, limit: 1 });
+        BinarySocket.wait('landing_company', 'get_account_status', 'statement').then(() => {
             setMTCompanies();
             if (isEligible()) {
                 if (Client.get('is_virtual')) {
@@ -25,10 +27,6 @@ const MetaTrader = (() => {
                     BinarySocket.send({ get_limits: 1 }).then(getAllAccountsInfo);
                     getExchangeRates();
                 }
-            } else if (State.getResponse('landing_company.gaming_company.shortcode') === 'malta') {
-                // TODO: remove this elseif when we enable mt account opening for malta
-                // show specific message to clients from malta landing company as long as there is no mt_company for them
-                MetaTraderUI.displayPageError(localize('Our MT5 service is currently unavailable to EU residents due to pending regulatory approval.'));
             } else {
                 MetaTraderUI.displayPageError(localize('Sorry, this feature is not available in your jurisdiction.'));
             }
@@ -88,6 +86,7 @@ const MetaTrader = (() => {
     const getAllAccountsInfo = () => {
         MetaTraderUI.init(submit, sendTopupDemo);
         BinarySocket.send({ mt5_login_list: 1 }).then((response) => {
+            show_new_account_popup = Client.canChangeCurrency(State.getResponse('statement'), (response.mt5_login_list || []), false);
             allAccountsResponseHandler(response);
         });
     };
@@ -139,6 +138,17 @@ const MetaTrader = (() => {
 
     const submit = (e) => {
         e.preventDefault();
+
+        if (show_new_account_popup) {
+            MetaTraderUI.showNewAccountConfirmationPopup(
+                e,
+                () => show_new_account_popup = false,
+                () => show_new_account_popup = true
+            );
+
+            return;
+        }
+
         const $btn_submit = $(e.target);
         const acc_type    = $btn_submit.attr('acc_type');
         const action      = $btn_submit.attr('action');

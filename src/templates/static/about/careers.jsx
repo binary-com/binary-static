@@ -56,7 +56,7 @@ const ColumnValues = ({ gr, icon, header }) => (
 );
 
 const ColumnLG = ({ center, image, text, link }) => (
-    <div className={`gr-4 gr-12-m${center ? ' center-text' : ''}`}>
+    <div className={`gr-3 gr-12-m${center ? ' center-text' : ''}`}>
         <div>
             <p className='column-margin'>{text}</p>
         </div>
@@ -127,6 +127,7 @@ const Careers = () => {
                         <ColumnLG image='malta@1'   text={it.L('Malta')}               link={it.url_for('malta')} />
                         <ColumnLG image='my@2'      text={it.L('Cyberjaya, Malaysia')} link={it.url_for('cyberjaya')} />
                         <ColumnLG image='labuan@2'  text={it.L('Labuan, Malaysia')}    link={it.url_for('labuan')} />
+                        <ColumnLG image='asuncion@2'  text={it.L('Asunción, Paraguay')}    link={it.url_for('asuncion')} />
                     </div>
                 </div>
 
@@ -198,6 +199,7 @@ const Careers = () => {
                     <Box gr='gr-6' href={`${url_open_positions}?dept=information_technology#devops_engineer`}      text={it.L('IT')} />
                     <Box gr='gr-6' href={`${url_open_positions}?dept=quality_assurance#software_tester`}           text={it.L('Quality Assurance')} />
                     <Box gr='gr-6' href={`${url_open_positions}?dept=quantitative_analysis#quantitative_analyst`}  text={it.L('Quantitative Analysis')} />
+                    <Box gr='gr-6' href={`${url_open_positions}?dept=data_analytics#data_scientist`}               text={it.L('Data Analytics')} />
                     <Box gr='gr-6' href={`${url_open_positions}?dept=marketing#affiliate_country_manager`}         text={it.L('Marketing')} />
                     <Box gr='gr-6' href={`${url_open_positions}?dept=accounting#accounts_and_payments_executive`}  text={it.L('Accounts/Payments')} />
                     <Box gr='gr-6' href={`${url_open_positions}?dept=compliance#compliance_executive`}             text={it.L('Compliance and Risk Management')} />

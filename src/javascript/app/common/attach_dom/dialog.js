@@ -17,16 +17,43 @@ const Dialog = (() => {
                     const el_btn_ok     = container.querySelector('#btn_ok');
                     const el_btn_cancel = container.querySelector('#btn_cancel');
                     const el_title      = container.querySelector('#dialog_title');
+                    const el_footnote   = container.querySelector('#dialog_footnote');
 
                     if (!el_dialog) return;
 
-                    const localized_message = Array.isArray(options.localized_message) ? options.localized_message.join('<p />') : options.localized_message;
-                    elementInnerHtml(container.querySelector('#dialog_message'), localized_message);
+                    // Used for setting the dialog title, message, and footnote
+                    const setMessage = (option_item, $selector) => {
+                        const item = Array.isArray(options[option_item]) ? options[option_item].join('<p />') : options[option_item];
+                        elementInnerHtml(container.querySelector($selector), item);
+                    };
 
-                    const localized_title = options.localized_title;
-                    if (localized_title && el_title) {
+                    const has_title = options.localized_title && el_title;
+                    if (has_title) {
                         el_title.setVisibility(1);
-                        elementInnerHtml(container.querySelector('#dialog_title'), localized_title);
+                        setMessage('localized_title', '#dialog_title');
+                    }
+
+                    // Set dialog message
+                    setMessage('localized_message', '#dialog_message');
+
+                    const has_footnote = options.localized_footnote && el_footnote;
+                    if (has_footnote) {
+                        el_footnote.setVisibility(1);
+                        setMessage('localized_footnote', '#dialog_footnote');
+
+                        // Assigns a click event listener on each anchor tag of footnote
+                        // to close dialog upon click
+                        Array.from(el_footnote.children)
+                            .filter(el => el.nodeName === 'A')
+                            .forEach(el => {
+                                el.addEventListener('click', () => {
+                                    if (typeof options.onAbort === 'function') {
+                                        options.onAbort();
+                                    }
+                                    el_dialog.remove();
+                                    resolve(false);
+                                });
+                            });
                     }
 
                     if (is_alert) {

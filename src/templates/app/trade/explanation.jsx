@@ -7,7 +7,7 @@ const Note = ({ text }) => (
 const Duration = ({ link }) => (
     <React.Fragment>
         <h3>{it.L('Contract duration')}</h3>
-        <p>{it.L('Please refer to the [_1]asset index[_2] for each asset’s minimum and maximum contract durations based on trade type.', `<a href='${it.url_for('resources/asset_indexws')}#${link}' target='_blank'>`, '</a>')}</p>
+        <p>{it.L('Please refer to the [_1]asset index[_2] for each asset\'s minimum and maximum contract durations based on trade type.', `<a href='${it.url_for('resources/asset_indexws')}#${link}' target='_blank'>`, '</a>')}</p>
     </React.Fragment>
 );
 
@@ -106,15 +106,15 @@ const Explanation = () => (
 
             <div id='winning_lookbacklow' className='invisible'>
                 <h3>{it.L('Pay-out')}</h3>
-                <p>{it.L('By purchasing the [_1]‘Close-Low’[_2] contract, you’ll win the multiplier times the difference between the [_1]close[_2] and [_1]low[_2] over the duration of the contract.', '<strong>', '</strong>')}</p>
+                <p>{it.L('By purchasing the [_1]"Close-Low"[_2] contract, you\'ll win the multiplier times the difference between the [_1]close[_2] and [_1]low[_2] over the duration of the contract.', '<strong>', '</strong>')}</p>
             </div>
             <div id='winning_lookbackhigh' className='invisible'>
                 <h3>{it.L('Pay-out')}</h3>
-                <p>{it.L('By purchasing the [_1]‘High-Close’[_2] contract, you’ll win the multiplier times the difference between the [_1]high[_2] and [_1]close[_2] over the duration of the contract.', '<strong>', '</strong>')}</p>
+                <p>{it.L('By purchasing the [_1]"High-Close"[_2] contract, you\'ll win the multiplier times the difference between the [_1]high[_2] and [_1]close[_2] over the duration of the contract.', '<strong>', '</strong>')}</p>
             </div>
             <div id='winning_lookbackhighlow' className='invisible'>
                 <h3>{it.L('Pay-out')}</h3>
-                <p>{it.L('By purchasing the [_1]‘High-Low’[_2] contract, you’ll win the multiplier times the difference between the [_1]high[_2] and [_1]low[_2] over the duration of the contract.', '<strong>', '</strong>')}</p>
+                <p>{it.L('By purchasing the [_1]"High-Low"[_2] contract, you\'ll win the multiplier times the difference between the [_1]high[_2] and [_1]low[_2] over the duration of the contract.', '<strong>', '</strong>')}</p>
             </div>
 
             <div id='winning_reset' className='invisible'>
@@ -148,8 +148,8 @@ const Explanation = () => (
 
             <div id='winning_runs' className='invisible'>
                 <h3>{it.L('Winning the contract')}</h3>
-                <p>{it.L('If you select [_1]"Ups"[_2], you win the payout if consecutive ticks rise successively after the [_1]entry spot[_2].[_3]No payout if any tick falls or is equal to any of the previous ticks.', '<strong>', '</strong>', '<br />')}</p>
-                <p>{it.L('If you select [_1]"Downs"[_2], you win the payout if consecutive ticks fall successively after the [_1]entry spot[_2].[_3]No payout if any tick rises or is equal to any of the previous ticks.', '<strong>', '</strong>', '<br />')}</p>
+                <p>{it.L('If you select [_1]"Only Ups"[_2], you win the payout if consecutive ticks rise successively after the [_1]entry spot[_2].[_3]No payout if any tick falls or is equal to any of the previous ticks.', '<strong>', '</strong>', '<br />')}</p>
+                <p>{it.L('If you select [_1]"Only Downs"[_2], you win the payout if consecutive ticks fall successively after the [_1]entry spot[_2].[_3]No payout if any tick rises or is equal to any of the previous ticks.', '<strong>', '</strong>', '<br />')}</p>
             </div>
         </div>
 

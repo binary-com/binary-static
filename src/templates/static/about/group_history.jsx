@@ -38,7 +38,10 @@ const GroupHistory = () => (
         <div className='gr-padding-10'>
             <div className='timeline'>
                 <UL items={[
+                    { className: 'year center-text',                                                           text: '2019' },
+                    { className: 'event',                header: it.L('New office in Asunción, Paraguay'),     text: it.L('[_1] opens new hub of operations in the capital of Paraguay to drive our growth in South America.', it.website_name) },
                     { className: 'year center-text',                                                           text: '2018' },
+                    { className: 'event right',          header: it.L('New office in Labuan, Malaysia'),       text: it.L('[_1] opens new office in the island of Labuan as part of our business expansion.', it.website_name) },
                     { className: 'event featured',       header: it.L('Global Brands Awards 2018'),            text: it.L('[_1] is awarded \'Best Trading Platform in Asia\' by Global Brands Magazine. The Global Brands Awards honours excellence in performance and exceptional service delivery. ', it.website_name) },
                     { className: 'event right featured', header: it.L('Global Banking & Finance Awards 2018'), text: it.L('[_1] wins \'Best Binary Company Asia Pacific\' in the Global Banking & Finance Awards 2018. This reflects our expertise and leadership in innovation and strategy.', it.website_name) },
 
@@ -68,7 +71,7 @@ const GroupHistory = () => (
                     { className: 'event',                header: it.L('[_1] continues to innovate and grow', it.website_name),                     text: it.L('Our customers clearly like us. In mid-2014, [_1] has over 100 million historical transactions and over 130,000 new daily transactions.', it.website_name) },
 
                     { className: 'year center-text',                                                                                       text: '2013' },
-                    { className: 'event featured',       header: it.L('BetOnMarkets.com is successfully rebranded [_1]', it.website_name), text: it.L('We rebrand BetOnMarkets.com as <a target=\'_blank\' href=\'[_1]\'>www.[_2]</a>. The rebranding is a natural evolution for the platform as it continues to grow market share in the highly competitive field of binary trading. The new brand reflects the nature of the business, and our new tagline - Sharp Prices, Smart Trading - communicates our ethos and commitment to our clients.', it.url_for('/'), it.website_name) },
+                    { className: 'event featured',       header: it.L('BetOnMarkets.com is successfully rebranded [_1]', it.website_name), text: it.L('We rebrand BetOnMarkets.com as [_1]. The rebranding is a natural evolution for the platform as it continues to grow market share in the highly competitive field of binary trading. The new brand reflects the nature of the business, and our new tagline - Sharp Prices, Smart Trading - communicates our ethos and commitment to our clients.', `<a target="_blank" href="${it.url_for('/')}">www.${it.website_name}</a>`) },
 
                     { className: 'year center-text', text: '2012' },
                     { className: 'event right featured', header: it.L('BetOnMarkets.com reaches $1 billion turnover since starting in 1999', it.website_name), text: it.L('BetOnMarkets.com has over 400,000 clients in its database and reach the US$ 1 billion milestone in only our 13th year, making us one of the leading fixed-odds trading providers.') },

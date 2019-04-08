@@ -804,7 +804,6 @@ label + input {
             .scope-types {
                 flex-basis: unset;
                 max-width: unset;
-                flex: unset;
 
                 &:last-child {
                     margin-bottom: 16px;
@@ -826,19 +825,18 @@ label + input {
 
     .popup {
         width: calc(100vw - 20px);
-        max-width: 500px;
+        max-width: 495px;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         background: $COLOR_WHITE;
         box-shadow: 0 2px 31px 0 rgba(0, 0, 0, 0.82);
-        border-radius: 10px;
         overflow: hidden;
 
         &__head {
             box-sizing: border-box;
-            padding: 20px 25px;
+            padding: 57px 115px;
             background-image: url('../images/interview_popup/bg-shape.svg');
             background-size: 100%;
             background-position: bottom;
@@ -856,19 +854,31 @@ label + input {
             transform: translateX(-10px);
         }
         &__body {
-            padding: 20px 35px 30px;
+            padding: 27px 35px 30px;
+
+            p {
+                text-align: justify;
+                padding: 0 10px;
+                margin-top: 13px;
+                margin-bottom: 5px;
+            }
         }
         &__options {
             display: flex;
             flex-direction: row;
             align-items: center;
             justify-content: space-between;
+            padding: 10px;
 
             * {
                 margin: 0;
             }
             #interview_no_thanks {
                 color: $COLOR_NAV;
+                cursor: pointer;
+            }
+            #interview_ask_later {
+                cursor: pointer;
             }
         }
         &__secondary_options {
@@ -897,6 +907,7 @@ label + input {
     .header-1, .header-2 {
         text-align: center;
         line-height: 1.15;
+        font-weight: normal;
     }
     @media screen and (max-width: 768px) {
         .header-1 {
@@ -912,7 +923,7 @@ label + input {
                 height: 100px;
             }
             &__head {
-                padding: 20px 15px;
+                padding: 30px 80px;
             }
             &__body {
                 padding: 20px 15px 7px;
@@ -925,7 +936,7 @@ label + input {
                 font-size: 12px;
             }
             #interview_interested {
-                font-size: 20px;
+                font-size: 14px;
                 margin: 5px 0 30px;
             }
         }

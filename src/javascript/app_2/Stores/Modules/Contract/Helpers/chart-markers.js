@@ -1,91 +1,77 @@
-import extend                  from 'extend';
+import {
+    createMarkerExpiry,
+    createMarkerPurchaseTime,
+    createMarkerSpotEntry,
+    createMarkerSpotExit,
+    createMarkerStartTime,
+    createMarkerSpotMiddle }     from './chart-marker-helpers';
+import { unique } from '../../../../../_common/utility';
 import { MARKER_TYPES_CONFIG } from '../../SmartChart/Constants/markers';
 
-export const createChartMarkers = (SmartChartStore, contract_info, ContractStore = null) => {
+export const createChartMarkers = (SmartChartStore, contract_info) => {
     if (contract_info) {
-        Object.keys(marker_creators).forEach((marker_type) => {
-            if (marker_type in SmartChartStore.markers) return;
-
-            const marker_config = marker_creators[marker_type](contract_info, ContractStore);
-            if (marker_config) {
-                SmartChartStore.createMarker(marker_config);
-            }
-        });
+        if (contract_info.tick_count) {
+            addTickMarker(SmartChartStore, contract_info);
+        } else {
+            addMarker(marker_spots, SmartChartStore, contract_info);
+        }
+        addMarker(marker_lines, SmartChartStore, contract_info);
     }
 };
 
-const marker_creators = {
-    [MARKER_TYPES_CONFIG.LINE_END.type]     : createMarkerEndTime,
-    [MARKER_TYPES_CONFIG.LINE_PURCHASE.type]: createMarkerPurchaseTime,
-    [MARKER_TYPES_CONFIG.LINE_START.type]   : createMarkerStartTime,
-    [MARKER_TYPES_CONFIG.SPOT_ENTRY.type]   : createMarkerSpotEntry,
-    [MARKER_TYPES_CONFIG.SPOT_EXIT.type]    : createMarkerSpotExit,
+const marker_spots = {
+    [MARKER_TYPES_CONFIG.SPOT_ENTRY.type]: createMarkerSpotEntry,
+    [MARKER_TYPES_CONFIG.SPOT_EXIT.type] : createMarkerSpotExit,
 };
 
-// -------------------- Lines --------------------
-function createMarkerEndTime(contract_info) {
-    if (contract_info.status === 'open' || !contract_info.date_expiry) return false;
+const marker_lines = {
+    [MARKER_TYPES_CONFIG.LINE_START.type]   : createMarkerStartTime,
+    [MARKER_TYPES_CONFIG.LINE_END.type]     : createMarkerExpiry,
+    [MARKER_TYPES_CONFIG.LINE_PURCHASE.type]: createMarkerPurchaseTime,
+};
 
-    return createMarkerConfig(
-        MARKER_TYPES_CONFIG.LINE_END.type,
-        contract_info.date_expiry,
-    );
-}
+const addMarker = (marker_obj, SmartChartStore, contract_info) => {
+    Object.keys(marker_obj).forEach(createMarker);
 
-function createMarkerPurchaseTime(contract_info) {
-    if (!contract_info.purchase_time || !contract_info.date_start ||
-        +contract_info.purchase_time === +contract_info.date_start) return false;
+    function createMarker(marker_type) {
+        if (marker_type in SmartChartStore.markers) return;
 
-    return createMarkerConfig(
-        MARKER_TYPES_CONFIG.LINE_PURCHASE.type,
-        contract_info.purchase_time,
-    );
-}
+        const marker_config = marker_obj[marker_type](contract_info);
+        if (marker_config) {
+            SmartChartStore.createMarker(marker_config);
+        }
+    }
+};
 
-function createMarkerStartTime(contract_info) {
-    if (!contract_info.date_start) return false;
+const addLabelAlignment = (tick, idx, arr) => {
+    if (idx > 0 && arr.length) {
+        const prev_tick = arr[idx - 1];
 
-    return createMarkerConfig(
-        MARKER_TYPES_CONFIG.LINE_START.type,
-        contract_info.date_start,
-    );
-}
+        if (+tick > +prev_tick.tick) tick.align_label = 'top';
+        if (+tick.tick < +prev_tick.tick) tick.align_label = 'bottom';
+        if (+tick.tick === +prev_tick.tick) tick.align_label = prev_tick.align_label;
+    }
 
-// -------------------- Spots --------------------
-function createMarkerSpotEntry(contract_info, ContractStore) {
-    if (!contract_info.entry_tick_time || ContractStore.is_sold_before_start) return false;
+    return tick;
+};
 
-    return createMarkerConfig(
-        MARKER_TYPES_CONFIG.SPOT_ENTRY.type,
-        contract_info.entry_tick_time,
-        contract_info.entry_tick,
-        {
-            spot_value: `${contract_info.entry_tick}`,
-        },
-    );
-}
+const addTickMarker = (SmartChartStore, contract_info) => {
+    const tick_stream = unique(contract_info.tick_stream, 'epoch').map(addLabelAlignment);
 
-function createMarkerSpotExit(contract_info, ContractStore) {
-    if (!ContractStore.end_spot_time) return false;
+    tick_stream.forEach((tick, idx) => {
+        const is_entry_spot  = idx === 0 && +tick.epoch !== contract_info.exit_tick_time;
+        const is_middle_spot = idx > 0 && +tick.epoch !== +contract_info.exit_tick_time;
+        const is_exit_spot   = +tick.epoch === +contract_info.exit_tick_time;
 
-    return createMarkerConfig(
-        MARKER_TYPES_CONFIG.SPOT_EXIT.type,
-        ContractStore.end_spot_time,
-        ContractStore.end_spot,
-        {
-            spot_value: `${ContractStore.end_spot}`,
-            status    : `${contract_info.profit > 0 ? 'won' : 'lost' }`,
-        },
-    );
-}
+        let marker_config;
+        if (is_entry_spot) marker_config = createMarkerSpotEntry(contract_info);
+        if (is_middle_spot) marker_config = createMarkerSpotMiddle(contract_info, tick, idx);
+        if (is_exit_spot) marker_config = createMarkerSpotExit(contract_info, tick, idx);
 
-// -------------------- Helpers --------------------
-const createMarkerConfig = (marker_type, x, y, content_config) => (
-    extend(true, {}, MARKER_TYPES_CONFIG[marker_type], {
-        marker_config: {
-            x: +x,
-            y,
-        },
-        content_config,
-    })
-);
+        if (marker_config) {
+            if (marker_config.type in SmartChartStore.markers) return;
+
+            SmartChartStore.createMarker(marker_config);
+        }
+    });
+};

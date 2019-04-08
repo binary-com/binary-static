@@ -13,7 +13,8 @@ const Footer = (() => {
             // logged in virtual clients with maltainvest financial landing company or
             // logged out clients with EU IP address
             if (Client.isLoggedIn()) {
-                showWarning((Client.get('landing_company_shortcode') === 'maltainvest' ||
+                const landing_company_shortcode = Client.get('landing_company_shortcode');
+                showWarning((landing_company_shortcode === 'maltainvest' ||
                     (Client.get('is_virtual') && State.getResponse('landing_company.financial_company.shortcode') === 'maltainvest')));
             } else {
                 showWarning(isEuCountry());

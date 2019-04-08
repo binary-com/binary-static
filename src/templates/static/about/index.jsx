@@ -1,11 +1,11 @@
 import React             from 'react';
 import { SeparatorLine } from '../../_common/components/separator_line.jsx';
 
-const BoxInner = ({ className = '', href, image, text }) => (
+const BoxInner = ({ className = '', href, target, image, text }) => (
     <div className={`gr-6 center-text ${className}`}>
         { href ?
             <React.Fragment>
-                <a href={it.url_for(href)}>
+                <a href={target ? href : it.url_for(href)} target={target || '_self'}>
                     <img className='gr-7 gr-centered' src={it.url_for(`images/pages/about/${image}.svg`)} />
                 </a>
                 <p>{text}</p>
@@ -116,17 +116,17 @@ const Index = () => (
                             <BoxInner className='border-right-top' image='debt-free' text={it.L('Debt-free')} />
                         </Box>
                         <Box>
-                            <BoxInner className='border-right-top' href='/binary-in-numbers?anchor=employee' image='staff' text={it.L('Over [_1] <a href=\'[_2]\'>staff</a> and contractors worldwide', '200', it.url_for('binary-in-numbers?anchor=employee'))} />
+                            <BoxInner className='border-right-top' href='/binary-in-numbers?anchor=employee' image='staff' text={it.L('Over [_1] [_2]staff[_3] and contractors worldwide', '200', `<a href="${it.url_for('binary-in-numbers?anchor=employee')}">`, '</a>')} />
                             <BoxInner image='1mil' text={it.L('Over 1 million registered accounts worldwide')} />
                         </Box>
                     </div>
                     <div className='gr-row gr-parent'>
                         <Box>
-                            <BoxInner className='border-right-bottom gr-padding-30' image='transacts' text={it.L('Binary\'s platform transacts on average [_1] [_2]transactions[_3] per second, 24/7', '20', '<a href="https://binarycom.statuspage.io/#system-metrics" target="_blank" rel="noopener noreferrer">', '</a>')} />
+                            <BoxInner className='border-right-bottom gr-padding-30' href='https://binarycom.statuspage.io/#system-metrics' target='_blank' image='transacts' text={it.L('Binary\'s platform transacts on average [_1] [_2]transactions[_3] per second, 24/7', '20', '<a href="https://binarycom.statuspage.io/#system-metrics" target="_blank" rel="noopener noreferrer">', '</a>')} />
                             <BoxInner className='border-right-bottom gr-padding-30' image='locations' text={it.L('Offices in Malta and Malaysia')} />
                         </Box>
                         <Box>
-                            <BoxInner className='border-right-bottom gr-padding-30' image='license' text={it.L('Licensed and regulated in Malta, the United Kingdom, the Isle of Man, and Ireland. [_1]Learn more[_2]', `<a href="${ it.url_for('regulation') }">`, '</a>')} />
+                            <BoxInner className='border-right-bottom gr-padding-30' href='regulation' image='license' text={it.L('Licensed and regulated in Malta, the United Kingdom, the Isle of Man, and Ireland. [_1]Learn more[_2]', `<a href="${ it.url_for('regulation') }">`, '</a>')} />
                             <BoxInner className='gr-padding-30' image='languages' text={it.L('Published in Chinese, English, French, German, Indonesian, Italian, Polish, Portuguese, Russian, Spanish, Thai and Vietnamese')} />
                         </Box>
                     </div>

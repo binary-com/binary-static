@@ -14,21 +14,32 @@
     }
     &__button {
         margin: 0;
-        background-color: $COLOR_WHITE;
         border-radius: 0px;
         width: 50%;
+        @include themify($themes) {
+            background-color: themed('container_color');
+
+            &:hover:not(.button-menu__button--active) {
+                background-color: themed('tab_hover_color');
+            }
+        }
 
         span {
             @include typeface(--paragraph-left-normal-black);
-        }
-        &:hover:not(&--active) {
-            background-color: $COLOR_LIGHT_BLACK_4;
+            @include themify($themes) {
+                color: themed('text_primary_color');
+            }
         }
         &--active {
-            background-color: $COLOR_LIGHT_GRAY_1;
+            @include themify($themes) {
+                background-color: themed('active_color') !important;
+            }
 
             span {
                 @include typeface(--paragraph-left-bold-active);
+                @include themify($themes) {
+                    color: themed('text_active_color');
+                }
             }
         }
     }

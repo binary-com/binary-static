@@ -5,7 +5,7 @@ import Adapter                from 'enzyme-adapter-react-16';
 import { ToggleSettings }     from '../toggle-settings.jsx';
 import { Icon }               from 'Assets/Common/icon.jsx';
 import { IconSettings }       from 'Assets/Footer';
-import SettingsDialog         from '../../../Elements/SettingsDialog/settings-dialog.jsx';
+import { SettingsDialog }     from '../../../Elements/SettingsDialog/settings-dialog.jsx';
 import { CSSTransition }      from 'react-transition-group';
 
 configure({ adapter: new Adapter() });

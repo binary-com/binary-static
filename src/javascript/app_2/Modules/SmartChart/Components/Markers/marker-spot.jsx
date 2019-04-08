@@ -1,29 +1,21 @@
 import classNames   from 'classnames';
 import { observer } from 'mobx-react';
-import PropTypes    from 'prop-types';
+import PropTypes     from 'prop-types';
 import React        from 'react';
-import { addComma } from '_common/base/currency_base';
 
 const MarkerSpot = ({
-    align,
-    icon,
-    spot_value,
-    status,
+    className,
+    spot_count,
 }) => (
-    <div className={classNames('chart-spot', `chart-spot--${align}`, `chart-spot--${status}`)}>
-        <div className='chart-spot__content'>
-            {icon}
-            {addComma(spot_value)}
-        </div>
-        <div className='chart-spot__arrow' />
-        <div className='chart-spot__spot' />
+    <div
+        className={classNames('chart-spot', className)}
+    >{spot_count}
     </div>
 );
 
 MarkerSpot.propTypes = {
-    align     : PropTypes.oneOf(['left', 'right']),
-    icon      : PropTypes.object,
-    spot_value: PropTypes.string,
-    status    : PropTypes.oneOf(['won', 'lost']),
+    className : PropTypes.string,
+    spot_count: PropTypes.oneOfType([ PropTypes.number, PropTypes.string ]),
 };
+
 export default observer(MarkerSpot);

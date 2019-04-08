@@ -9,11 +9,14 @@ import {
     ToggleSettings }  from '../../Components/Layout/Footer';
 
 const Footer = ({
+    hideBlur,
+    is_dark_mode,
     is_language_dialog_visible,
     is_logged_in,
     is_positions_drawer_on,
     is_settings_dialog_on,
     network_status,
+    showBlur,
     togglePositionsDrawer,
     toggleSettingsDialog,
 }) => (
@@ -30,17 +33,21 @@ const Footer = ({
         <NetworkStatus status={network_status} />
         <ServerTime />
         <div className='footer__links'>
-            <ToggleFullScreen />
             <ToggleSettings
+                is_dark_mode={is_dark_mode}
                 is_language_visible={is_language_dialog_visible}
                 is_settings_visible={is_settings_dialog_on}
                 toggleSettings={toggleSettingsDialog}
+                showBlur={showBlur}
+                hideBlur={hideBlur}
             />
+            <ToggleFullScreen />
         </div>
     </React.Fragment>
 );
 
 Footer.propTypes = {
+    is_dark_mode              : PropTypes.bool,
     is_language_dialog_visible: PropTypes.bool,
     is_logged_in              : PropTypes.bool,
     is_positions_drawer_on    : PropTypes.bool,
@@ -52,11 +59,14 @@ Footer.propTypes = {
 
 export default connect(
     ({ client, common, ui }) => ({
+        hideBlur                  : ui.hideBlur,
+        is_dark_mode              : ui.is_dark_mode_on,
         is_logged_in              : client.is_logged_in,
         network_status            : common.network_status,
         is_language_dialog_visible: ui.is_language_dialog_on,
         is_positions_drawer_on    : ui.is_positions_drawer_on,
         is_settings_dialog_on     : ui.is_settings_dialog_on,
+        showBlur                  : ui.showBlur,
         togglePositionsDrawer     : ui.togglePositionsDrawer,
         toggleSettingsDialog      : ui.toggleSettingsDialog,
     })
