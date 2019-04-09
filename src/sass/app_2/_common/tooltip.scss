@@ -123,6 +123,9 @@
                 pointer-events: auto;
                 transform: translate(0, -50%);
             }
+            &:before {
+                width: 175px;
+            }
         }
     }
     &--error-secondary[data-tooltip] {
