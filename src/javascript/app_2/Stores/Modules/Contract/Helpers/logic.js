@@ -1,11 +1,8 @@
 export const getChartConfig = (contract_info) => {
     const start_epoch = contract_info.date_start;
     const end_epoch   = getEndSpotTime(contract_info) || contract_info.date_expiry;
-    const granularity = calculateGranularity(end_epoch - start_epoch);
 
     return {
-        granularity,
-        chart_type: granularity ? 'candle' : 'mountain',
         end_epoch,
         start_epoch,
     };

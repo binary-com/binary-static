@@ -3,6 +3,7 @@ import {
     Redirect,
     Route }                from 'react-router-dom';
 import { redirectToLogin } from '_common/base/login';
+import BinarySocket        from '_common/base/socket_base';
 import routes              from 'Constants/routes';
 import GTM                 from 'Utils/gtm';
 import LoginPrompt         from '../Elements/login-prompt.jsx';
@@ -31,7 +32,9 @@ const RouteWithSubRoutes = route => {
 
         const title = route.title ? `${route.title} | ` : '';
         document.title = `${ title }${ default_title }`;
-        GTM.pushDataLayer({ event: 'page_load' });
+        BinarySocket.wait('website_status').then(() => {
+            GTM.pushDataLayer({ event: 'page_load' });
+        });
         return result;
     };
 

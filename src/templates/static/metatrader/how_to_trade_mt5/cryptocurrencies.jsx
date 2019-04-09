@@ -42,7 +42,7 @@ const Cryptocurrencies = () => {
             <SeparatorLine className='gr-padding-30' />
 
             <div className='center-text'>
-                <p>{it.L('In a nutshell, when you go long on the BTC/USD with Binary.com, you are not purchasing bitcoin directly. Instead, you\'re taking a position that the BTC/USD will rise in value whereby you will make a profit. If you go long on the BTC/USD and its value falls, then you will make a loss.')}</p>
+                <p>{it.L('In a nutshell, when you go long on the BTC/USD with [_1], you are not purchasing bitcoin directly. Instead, you\'re taking a position that the BTC/USD will rise in value whereby you will make a profit. If you go long on the BTC/USD and its value falls, then you will make a loss.', it.website_name)}</p>
             </div>
         </div>
     );

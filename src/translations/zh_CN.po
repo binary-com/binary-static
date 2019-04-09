@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-04-04 06:56\n"
+"PO-Revision-Date: 2019-04-08 06:36\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -410,6 +410,12 @@ msgstr "设置主账户后, %1下载Windows 版MAM%2 。将提供您的登录凭
 
 msgid "%1Founded%2 October 1999"
 msgstr "%1成立于%2 1999年十月"
+
+msgid "%1Manage your accounts%2"
+msgstr "%1管理您的账户%2"
+
+msgid "%1No, change my fiat account's currency now%2"
+msgstr "%1不，请立刻更改我的法定账户的币种%2"
 
 msgid "%1Your Proof of Identity or Proof of Address%2 did not meet our requirements. Please check your email for further instructions."
 msgstr "%1您的身份证明或地址证明%2 不符合我们的要求。请检查您的电子邮件收取进一步指示。"
@@ -1346,6 +1352,12 @@ msgstr "确定要永久删除令牌吗"
 
 msgid "Are you sure that you want to permanently revoke access to the application"
 msgstr "确定要永久废除应用程序访问权限吗"
+
+msgid "Are you sure you want to create a fiat account in %1?"
+msgstr "确定要在 %1 开立法定账户吗？"
+
+msgid "Are you sure you want to create your %1 account now?"
+msgstr "确定要现在开立 %1 账户吗？"
 
 msgid "Are you sure?"
 msgstr "是否确定？"
@@ -2286,6 +2298,9 @@ msgstr "收银台时段已过期"
 msgid "Certain limits are imposed as to the acceptable levels for barrier/strike prices of contracts. Typically, the barrier/strike may not be too close nor too far from the current underlying market level."
 msgstr "合约障碍/行权价格的可接受水平存在特定限制。一般来说，障碍或行权价格不能离标的资产当前价格水平太近或太远。"
 
+msgid "Change"
+msgstr "变动"
+
 msgid "Change API Endpoint"
 msgstr "更改 API 端点"
 
@@ -2920,6 +2935,9 @@ msgstr "工艺、金属、电气和电子工人"
 msgid "Create"
 msgstr "创建"
 
+msgid "Create %1 account"
+msgstr "开立%1账户"
+
 msgid "Create Account"
 msgstr "开立账户"
 
@@ -2928,9 +2946,6 @@ msgstr "开立MAM账户"
 
 msgid "Create MetaTrader 5 account"
 msgstr "开立 MetaTrader 5 账户"
-
-msgid "Create New Account"
-msgstr "开立新账户"
 
 msgid "Create New Token"
 msgstr "创建新代币"
@@ -2967,6 +2982,9 @@ msgstr "创建用于定价的数学/统计模型, 分析肥尾效应以评估保
 
 msgid "Create new virtual-money account"
 msgstr "开立新的虚拟货币账户"
+
+msgid "Create or Manage Accounts"
+msgstr "开立或管理账户"
 
 msgid "Create strategies against potential risks that might arise due to disruptive innovation"
 msgstr "针对因破坏式创新而可能产生的潜在风险制定策略"
@@ -3427,6 +3445,9 @@ msgstr "您是否提供任何工具，以便我管理客户交易？"
 msgid "Do you run a website that promotes Forex or binary options? Join our global network of affiliates and turn your online traffic into revenue."
 msgstr "您是否在经营促进外汇或二元期权的网站？请加入我们的全球联盟网络, 将您的在线流量转成收益。"
 
+msgid "Do you want this to be a fiat account or crypto account? Please choose one:"
+msgstr "想要法定账户或加密账户？请选择:"
+
 msgid "Do you want to learn more about the markets and how to trade them? Check out the resources below."
 msgstr "想获取更多有关市场及如何进行交易的信息吗？请查看以下资源。"
 
@@ -3459,6 +3480,9 @@ msgstr "还没有%1账户？"
 
 msgid "Don't show again"
 msgstr "别再显示"
+
+msgid "Don't want to trade in %1? You can open another cryptocurrency account."
+msgstr "不想在%1交易？您可以另外开立加密货币账户。"
 
 msgid "Don’t share your %1 account or payment methods with any other person."
 msgstr "不可与任何其他人分享您的％1账户或付款方式。"
@@ -4426,6 +4450,9 @@ msgstr "关于外汇交易：外汇市场是银行和其他大型金融机构相
 msgid "For full contact details of %3, kindly check our %1Contact Us%2 page."
 msgstr "关于%3的完整联系信息, 请查看%1联系我们%2页面。"
 
+msgid "For fully covered accounts, no margin will be charged on open positions. However, swaps and other applicable fees can cause your Account Equity to turn negative. In that case the Stop Out process will be triggered."
+msgstr "受全额保护的账户的未平仓头寸不收保证金。但掉期和其他必须支付的费用可能会导致您的账户净值金额变为负值。此情况下将会触发“强制平仓”程序。"
+
 msgid "For general support:"
 msgstr "一般支持："
 
@@ -4434,9 +4461,6 @@ msgstr "有关外汇杠杆的信息, 请参阅我们的 %1保证金政策%2。"
 
 msgid "For payments-related queries:"
 msgstr "付款相关的查询："
-
-msgid "For perfectly hedged positions, no margin will be charged. However, swaps and other applicable fees can cause your Account Equity to turn negative. In such cases, the company reserves the right to close out your hedged positions in order to protect your Account Equity from decreasing further."
-msgstr "完全对冲头寸将不收取保证金。然而, 掉期和其他适用的费用可能导致您的帐户净值变成负数。在这种情况下, 公司保留关闭您的对冲头寸的权利, 以保护您的账户权益不进一步降低。"
 
 msgid "For the purposes of this Agreement, the following shall mean:"
 msgstr "就本协议而言, 以下各项的含义为:"
@@ -5113,8 +5137,8 @@ msgstr "如果公司（自行决定）不确定客户是否遵守这些条款，
 msgid "If the Company believes that unauthorised persons are using an account, it reserves the right to, without prior notice, suspend the Client’s rights to use the Trading Facility."
 msgstr "如果公司认为有未经授权的人在使用账户, 它有权在不事先通知的情况下中止客户使用交易设施的权利。"
 
-msgid "If the Margin Level for your MT5 Real Account reaches or falls below the Stop Out Level, this will be classified as an Event of Default. In such circumstances, Open Positions are automatically closed in the following order: (i) the server analyses clients' Orders that are not under execution at the moment; (ii) the server deletes Orders with the largest Margin; (iii) if your Margin Level is still under the Stop Out Level, the next order is deleted (orders without margin requirements are not deleted); (iv) if your Margin Level is still under the Stop Out Level, the server closes a position with the largest loss; (v) Open Positions are closed until your Margin Level becomes higher than the Stop Out Level."
-msgstr "如果您MT5真实账户的保证金水平达到或低于强制平仓水平，将被归类为默认事件。在这种情况下，未平仓头寸将按照以下顺序自动平仓: (i) 服务器分析当前没在执行的客户订单;（ii） 服务器删除保证金最高的订单;（iii） 如果您的保证金水平仍然低于强制平仓水平，下一个订单将被删除 （没有保证金要求的订单不会被删除）;（iv）如果您的保证金水平仍然低于强制平仓水平，服务器将亏损最大的头寸平仓;（v） 未平仓头寸将强制平仓，直到您的保证金水平高于强制平仓水平。"
+msgid "If the Margin Level for your MT5 Real Account reaches or falls below the Stop Out Level, this will be classified as an Event of Default. In such circumstances, Open Positions are automatically closed in the following order: (i) the server analyses clients' Orders that are not under execution at the moment; (ii) the server deletes Orders with the largest Margin; (iii) if your Margin Level is still under the Stop Out Level, the next order is deleted (orders without margin requirements are not deleted); (iv) if your Margin Level is still under the Stop Out Level, the server closes a position with the largest loss; (v) Open Positions are closed until your Margin Level becomes higher than the Stop Out Level. Additionally, for perfectly hedged positions, Stop Out will be performed on accounts having open positions, the zero margin (positions are covered), and negative equity."
+msgstr "如果您MT5真实账户的保证金水平达到或低于强制平仓水平，将被归类为默认事件。在这种情况下，未平仓头寸将按照以下顺序自动平仓: (i) 服务器分析当前没在执行的客户订单;（ii） 服务器删除保证金最高的订单;（iii） 如果您的保证金水平仍然低于强制平仓水平，下一个订单将被删除 （没有保证金要求的订单不会被删除）;（iv）如果您的保证金水平仍然低于强制平仓水平，服务器将亏损最大的头寸平仓;（v） 未平仓头寸将强制平仓，直到您的保证金水平高于强制平仓水平。此外，如果是完全对冲的头寸，具有未平仓头寸、零保证金（受全金额保护的头寸）和负净值的账户将执行强制平仓。"
 
 msgid "If the bid price is 1.05229, you'll buy USD 1.05229 for every EUR 1 you sell."
 msgstr "如果卖价是1.05229，那么您每卖出1欧元就会买入1.05229美元。"
@@ -5552,7 +5576,7 @@ msgid "Indemnity and Liability"
 msgstr "赔偿及责任"
 
 msgid "Indicates required field"
-msgstr "表示必填字段"
+msgstr "为必填字段"
 
 msgid "Indicates the availability of cryptocurrency trading on a particular account."
 msgstr "指出特定账户交易加密货币的可行性。"
@@ -7048,6 +7072,9 @@ msgstr "注意：只有在Binary (CR) SA注册的账户才能通过付款代理�
 msgid "Note: This feature is not available if you logged in using a social network."
 msgstr "注意: 如果您使用社交网络登录, 此功能不可用。"
 
+msgid "Note: You are limited to one fiat currency account. The currency of your fiat account can be changed before you deposit into your fiat account for the first time or create an MT5 account. You may also open one account for each supported cryptocurrency."
+msgstr "注意: 您只能使用一个法定货币账户。首次将资金存入法定账户或开立 MT5 账户之前, 可以更改 法定账户的币种。您还可以为每种受支持的加密货币开立专用账户。"
+
 msgid "Note: You can only have one fiat currency account and one of each cryptocurrency account."
 msgstr "注： 您只能拥有一个法定货币账户以及每种加密货币一个账户。"
 
@@ -7730,7 +7757,7 @@ msgid "Please %1deposit%2 to your account."
 msgstr "请%1存%2入您的账户。"
 
 msgid "Please %1log in%2 or %3sign up%4 to view this page."
-msgstr "要查看本页，请 %1登录%2 或 %注册%4 。"
+msgstr "要查看本页，请 %1登录%2 或 %3注册%4 。"
 
 msgid "Please <a href=\"%1\">accept the updated Terms and Conditions</a>."
 msgstr "请<a href=\"%1\">接受更新条款和条件</a>。"
@@ -7879,7 +7906,7 @@ msgstr "请选择复选框。"
 msgid "Please select the country where you are a tax resident. If you have any doubts, kindly consult your tax advisor."
 msgstr "请选择您身为纳税居民的国家。如有任何疑问, 请咨询您的税务顾问。"
 
-msgid "Please select the currency of this account:"
+msgid "Please select the currency for this account:"
 msgstr "请选择此账户的币种："
 
 msgid "Please select the date range of your statement:"
@@ -7925,7 +7952,7 @@ msgid "Positions that are still open on Wednesday at 23:59:59 GMT will be charge
 msgstr "按照所有经纪商标准操作规程，周三格林威治时间23:59:59 过后仍未平仓的头寸须付掉期利率的三倍为周末费率。"
 
 msgid "Postal Code/ZIP"
-msgstr ""
+msgstr "邮编"
 
 msgid "Postal code/ZIP"
 msgstr "邮编"
@@ -10596,6 +10623,9 @@ msgstr "这是标的资产在特定时间可以买入或卖出的即时价格。
 msgid "This is why we've come up with the following three-step tutorial to help you bridge that gap and make your first trade:"
 msgstr "因此我们提出以下三步教程帮助您弥补这一差距, 让您开始第一次交易:"
 
+msgid "This is your %1 account."
+msgstr "这是您的 %1 账户。"
+
 msgid "This notice does not explain all of the risks involved in investments or similar products or how such risks relate to your personal circumstances. It is important that you fully understand the risks involved before making a decision to enter into any product with us. If you are in any doubt about the risks involved, you should seek professional advice."
 msgstr "此通知并不解释投资或同类产品的风险，以及这些风险如何与您的个人情况关联。重要的是，在决定透过我们交易任何产品前，您必须对相关风险有充分的了解。如果您对相关风险有任何疑问，应寻求专业协助。"
 
@@ -10705,7 +10735,7 @@ msgid "Tips:"
 msgstr "提示:"
 
 msgid "Title"
-msgstr "职务"
+msgstr "称谓"
 
 msgid "To"
 msgstr "到"
@@ -12315,11 +12345,17 @@ msgstr "Yandex.Money是为消费者提供简单、安全、可靠的在线支付
 msgid "Yes"
 msgstr "是的"
 
+msgid "Yes I'm sure"
+msgstr "是的, 我确认"
+
 msgid "Yes, I understand"
 msgstr "是的, 我明白"
 
 msgid "Yes, I want to sign up as an affiliate"
 msgstr "是的, 我想注册为联盟会员"
+
+msgid "Yes, I'm sure"
+msgstr "是的, 我确认"
 
 msgid "Yes, we will provide you with banners, links, reviews, videos, and text ads that you can use to drive referrals to the %1 MT5 platform."
 msgstr "是的, 我们将为您提供横幅、链接、评论、视频和文本广告, 您可以使用它来介绍客户使用 %1 MT5 平台。"
@@ -12460,6 +12496,9 @@ msgstr "您预计基础货币将升值，因此您可将其卖出赚取利润。
 msgid "You are in default or breach of any covenant, obligation or condition contained in this Agreement, and if such default is not cured within seven days of receipt of written notice from the Company;"
 msgstr "您已违犯或违反本协议所包含的条款、义务或条件，如果收到本公司书面通知7天内您没对该项错误作出修正；"
 
+msgid "You are limited to one fiat account. You can change the currency of your fiat account anytime before you make a first-time deposit or create an MT5 account."
+msgstr "你只能用一个法定账户。首次存款或开立 MT5 账户之前, 您可以随时更改法定账户的币种。"
+
 msgid "You are not allowed to rebate any part commission payment onto your referrals and should the company realise you are engaged in such actions; your affiliate account shall be revoked immediately."
 msgstr "您不能使用佣金作为给推荐人的回扣，一旦被公司发现，您的账户将立即被撤销。"
 
@@ -12511,6 +12550,9 @@ msgstr "除非您是Binary Investments（Europe）Ltd的零售客户，否则您
 msgid "You bear the responsibility of ensuring that payments made to the Company are correctly received with the specified Client’s Account details."
 msgstr "您承担确保公司将按照指定客户账户详细信息正确接收支付款项的责任。"
 
+msgid "You can %1set a new currency%2 before you deposit for the first time or create an MT5 account."
+msgstr "首次存款或开立 MT5 账户之前, 您可以 %1设定新币种%2。"
+
 msgid "You can close this window without interrupting your trade."
 msgstr "您可以在不中断交易的情况下关闭此窗口。"
 
@@ -12528,6 +12570,12 @@ msgstr "您可以使用以下公式算出所需的金属对保证金:"
 
 msgid "You can generate all kinds of insightful reports, including the following:"
 msgstr "您可以生成各种包含深刻见解的报告，包括以下："
+
+msgid "You can no longer change the currency because you've created an MT5 account."
+msgstr "您已开立了MT5 账户，因此不能再更改币种。"
+
+msgid "You can no longer change the currency because you've made a first-time deposit."
+msgstr "您已存入第一笔资金，因此不能再更改币种。"
 
 msgid "You can sell your contract before expiry to keep any profit you may have made or to minimise your loss."
 msgstr "您可在合约到期前卖出交易合约，以锁定利润或将亏损减至最低。"
@@ -12574,12 +12622,6 @@ msgstr "过去 %3 天里您已累计提取 %1 %2 的等值。"
 msgid "You have already withdrawn the equivalent of %1 %2."
 msgstr "您已提取 %1 %2 的等值。"
 
-msgid "You have chosen %1 as the currency for this account. You cannot change this later. You can have more than one cryptocurrency account."
-msgstr "您已选择 %1 为此账户的货币。以后再也不能更改。您可拥有多个加密货币账户。"
-
-msgid "You have chosen %1 as the currency for this account. You cannot change this later. You can have one fiat currency account only."
-msgstr "您已选择 %1 为此账户的货币。以后再也不能更改。您只可拥有一个法定货币账户。"
-
 msgid "You have created all accounts available to you."
 msgstr "您已开立所有可用的账户。"
 
@@ -12622,11 +12664,14 @@ msgstr "您已经完整阅读此法律条款及条件页面，并理解您将在
 msgid "You have sold this contract at %1 %2"
 msgstr "您已经以 %1 %2 卖出此合约"
 
-msgid "You have successfully created your %1account!"
-msgstr "您已成功开立%1账户!"
+msgid "You have successfully changed your account currency from %1 to %2."
+msgstr "您已成功将账户币种从 %1 更改为 %2。"
 
 msgid "You have successfully created your Virtual Account."
 msgstr "您已成功开立虚拟账户。"
+
+msgid "You have successfully created your real money %1account."
+msgstr "您已成功开立%1真实资金账户。"
 
 msgid "You have successfully disabled two-factor authentication for your account."
 msgstr "您已成功禁用账户的双因素身份验证。"
@@ -12684,6 +12729,9 @@ msgstr "只有满足下列条件，您才能在本网站开户："
 
 msgid "You may only transfer funds between fiat and cryptocurrency accounts."
 msgstr "资金只可在法定账户和加密货币账户之间转移."
+
+msgid "You may open one account for each supported cryptocurrency."
+msgstr "您可以为每种受支持的加密货币开立专用账户。"
 
 msgid "You may proceed but please <a href=\"%1\">authenticate</a> your account within five days to continue trading."
 msgstr "您可以继续操作, 但请在五天内 <a href=\"%1\">验证</a> 您的账户以继续交易。"
@@ -12838,6 +12886,12 @@ msgstr "您将从我们的联盟计划受惠，开辟另一潜在收入源流。
 msgid "You will increase awareness of your services and generate new business."
 msgstr "您的服务将受推广，生意蒸蒸日上。"
 
+msgid "You will not be able to change your fiat account's currency after creating this MT5 account. Are you sure you want to proceed?"
+msgstr "开立此 MT5 账户后, 将无法更改法定账户的币种。确定要继续吗？"
+
+msgid "You will not be able to change your fiat account's currency after making this deposit. Are you sure you want to proceed?"
+msgstr "存入此款项后, 将无法更改法定账户的币种。确定要继续吗？"
+
 msgid "You will provide us with any information that we may reasonably require to fully satisfy the demand or the requirements of the applicable government authority, upon our request."
 msgstr "为了充分满足有关政府机关需求，我们可能向您提出任何合理信息请求，您将为我们提供相关信息。"
 
@@ -12984,6 +13038,12 @@ msgstr "您无法在到期时还清债务."
 
 msgid "Your demo account balance is currently %1 or less. You may top up your account with an additional %2."
 msgstr "您的模拟账户余额当前为 %1 或更低。您可以添加 %2补充账户资金。"
+
+msgid "Your fiat account's currency is currently set to %1."
+msgstr "您的法定账户的币种当前设置为 %1。"
+
+msgid "Your fiat account's currency is set to %1."
+msgstr "您的法定账户的币种设置为 %1。"
 
 msgid "Your forex and contracts for differences transactions with %1 are linked to an underlying financial instrument and you will be exposed to price, currency exchange, interest rate or other volatility of the market to which your financial instrument is related to, especially if the market is of a jurisdiction that is foreign to you. Forex and contracts for differences trading over the internet via an electronic trading platform is subject to data latency risk which may result in delays in order execution."
 msgstr "您与 %1的外汇和差价合约交易与一种标的金融工具相连接，您将承受与金融工具有关的价格、汇率、利率或其他市场波动率的风险，特别是如果市场所属的管辖权与你无关。通过电子交易平台在网络上进行的外汇和差价合约交易承受潜在数据风险，可能导致订单执行的延误。"

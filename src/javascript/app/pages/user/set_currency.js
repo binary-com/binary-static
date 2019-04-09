@@ -22,7 +22,15 @@ const SetCurrency = (() => {
         $('#upgrade_to_mf').setVisibility(can_upgrade && type === 'financial');
 
         if (Client.get('currency')) {
-            if (is_new_account) {
+            const has_changed_currency = localStorage.getItem('has_changed_currency');
+            if (has_changed_currency) {
+                const [ from, to ] = has_changed_currency.split('-');
+                $('#set_currency_loading').remove();
+                $('#hide_new_account').setVisibility(0);
+                $('#congratulations_message').html(localize('You have successfully changed your account currency from [_1] to [_2].', [ `<strong>${from}</strong>`, `<strong>${to}</strong>` ]));
+                $('#deposit_btn, #set_currency, #show_new_account').setVisibility(1);
+                localStorage.removeItem('has_changed_currency');
+            } else if (is_new_account) {
                 $('#set_currency_loading').remove();
                 $('#deposit_btn, #set_currency').setVisibility(1);
             } else {
@@ -51,10 +59,16 @@ const SetCurrency = (() => {
                 $('#fiat_currencies').setVisibility(1);
                 $('#fiat_currency_list').html(fiat_currencies);
             }
-            const crytpo_currencies = $cryptocurrencies.html();
-            if (crytpo_currencies) {
+            const crypto_currencies = $cryptocurrencies.html();
+            if (crypto_currencies) {
                 $('#crypto_currencies').setVisibility(1);
-                $('#crypto_currency_list').html(crytpo_currencies);
+                $('#crypto_currency_list').html(crypto_currencies);
+            }
+            const has_one_group = (!fiat_currencies && crypto_currencies) || (fiat_currencies && !crypto_currencies);
+            if (has_one_group) {
+                $('#set_currency_text').text(localize('Please select the currency for this account:'));
+            } else {
+                $('#set_currency_text').text(localize('Do you want this to be a fiat account or crypto account? Please choose one:'));
             }
 
             $('#set_currency_loading').remove();
@@ -115,21 +129,25 @@ const SetCurrency = (() => {
                 const $clicked_currency = $(this);
                 const currency          = $clicked_currency.attr('id');
                 let localized_message   = '';
+                let localized_footnote   = '';
                 $error.setVisibility(0);
                 $currency_list.find('> div').removeClass('selected');
                 $clicked_currency.addClass('selected');
                 if (isCryptocurrency(currency)) {
-                    localized_message = localize('You have chosen [_1] as the currency for this account. You cannot change this later. You can have more than one cryptocurrency account.', `<strong>${getCurrencyName(currency)} (${currency})</strong>`);
+                    localized_message = localize('Are you sure you want to create your [_1] account now?', `<strong>${getCurrencyName(currency)} (${currency})</strong>`);
+                    localized_footnote = `${localize('Note:')} ${localize('You may open one account for each supported cryptocurrency.')}`;
                 } else {
-                    localized_message = localize('You have chosen [_1] as the currency for this account. You cannot change this later. You can have one fiat currency account only.', `<strong>${currency}</strong>`);
+                    localized_message = localize('Are you sure you want to create a fiat account in [_1]?', `${currency}`);
+                    localized_footnote = `${localize('Note:')} ${localize('You are limited to one fiat account. You can change the currency of your fiat account anytime before you make a first-time deposit or create an MT5 account.')}`;
                 }
 
                 Dialog.confirm({
                     id             : 'set_currency_popup_container',
-                    ok_text        : localize('Confirm'),
-                    cancel_text    : localize('Back'),
-                    localized_title: localize('Are you sure?'),
+                    ok_text        : localize('Yes'),
+                    cancel_text    : localize('Cancel'),
+                    localized_title: localize('Create [_1] account', `${currency}`),
                     localized_message,
+                    localized_footnote,
                     onConfirm,
                     onAbort        : () => $currency_list.find('> div').removeClass('selected'),
                 });
