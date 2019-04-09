@@ -156,6 +156,7 @@ export default class UIStore extends BaseStore {
     @action.bound
     toggleDarkMode() {
         this.is_dark_mode_on = !this.is_dark_mode_on;
+        return this.is_dark_mode_on;
     }
 
     @action.bound

@@ -20,8 +20,9 @@ export const DEFAULT_SHADES = {
 };
 
 export const BARRIER_COLORS = {
-    GREEN: 'green',
+    GREEN: 'rgb(57, 177, 157)',
     RED  : 'red',
+    GRAY : 'rgb(85, 89, 117)',
 };
 
 export const BARRIER_LINE_STYLES = {
