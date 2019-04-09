@@ -52,6 +52,7 @@
             padding: 0.7em;
             margin-bottom: 10px;
             width: max-content;
+            width: 220px;
             max-width: 280px;
         }
         &:after {
@@ -124,7 +125,7 @@
                 transform: translate(0, -50%);
             }
             &:before {
-                width: 175px;
+                width: 180px;
             }
         }
     }
