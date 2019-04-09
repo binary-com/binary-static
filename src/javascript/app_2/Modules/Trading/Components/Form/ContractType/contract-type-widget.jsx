@@ -188,7 +188,7 @@ class ContractTypeWidget extends React.PureComponent {
 
 ContractTypeWidget.propTypes = {
     is_mobile: PropTypes.bool,
-    is_equal : PropTypes.string,
+    is_equal : PropTypes.number,
     list     : PropTypes.object,
     name     : PropTypes.string,
     onChange : PropTypes.func,
