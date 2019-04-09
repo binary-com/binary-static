@@ -133,7 +133,6 @@ const Duration = ({
 
     return (
         <Fieldset className={classNames('trade-container__fieldset', {
-            'trade-container__fieldset--simple'  : !is_advanced_duration,
             'trade-container__fieldset--advanced': is_advanced_duration,
         })}
         >

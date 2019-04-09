@@ -26,7 +26,12 @@ const ButtonToggleMenu = ({
             />
         );
     });
-    return <div className='button-menu'>{menu}</div>;
+    return (
+        <div className='button-menu'>
+            {menu}
+            <div className={classNames('button-menu--highlight')} />
+        </div>
+    );
 };
 
 ButtonToggleMenu.propTypes = {

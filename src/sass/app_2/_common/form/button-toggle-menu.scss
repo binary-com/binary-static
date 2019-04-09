@@ -3,6 +3,7 @@
     display: flex;
     justify-content: center;
     width: 100%;
+    position: relative;
 
     &__button:first-child {
         border-top-left-radius: 4px;
@@ -41,6 +42,18 @@
                     color: themed('text_active_color');
                 }
             }
+        }
+    }
+    &--highlight {
+        position: absolute;
+        height: 100%;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        transition: transform 0.25s ease;
+        z-index: 2;
+        @include themify($themes) {
+            background-color: themed('active_color') !important;
         }
     }
 }

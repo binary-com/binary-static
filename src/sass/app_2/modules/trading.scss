@@ -37,7 +37,8 @@
             border: 1px solid themed('background_container_color');
             color: themed('text_primary_color');
         }
-        transition: height 0.25s ease;
+        transition: max-height 0.25s ease;
+        max-height: 130px;
 
         &-header {
             height: 1.5rem;
@@ -53,11 +54,8 @@
                 left: 5px;
             }
         }
-        &--simple {
-            height: 130px;
-        }
         &--advanced {
-            height: 170px;
+            max-height: 170px;
         }
     }
     &__input {
