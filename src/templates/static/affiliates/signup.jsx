@@ -32,13 +32,13 @@ const Signup = () => (
 
                 <BoxRow top_row>
                     <AffiliateBox title={it.L('Generous commission')}      image='commission-icon'       text={it.L('Choose a commission plan that suits your business strategy.')} />
-                    <AffiliateBox title={it.L('On-time payments')}         image='payment-icon'          text={it.L('Get paid by the 15th of every month. We’ve never missed a payment since we started our programme in March 2004.')} />
+                    <AffiliateBox title={it.L('On-time payments')}         image='payment-icon'          text={it.L('Get paid by the 15th of every month. We\'ve never missed a payment since we started our programme in March 2004.')} />
                     <AffiliateBox title={it.L('Dedicated support')}        image='contact-icon'          text={it.L('Contact our dedicated affiliate support team for help and suggestions.')} />
                 </BoxRow>
                 <BoxRow bottom_row>
                     <AffiliateBox title={it.L('Advanced referral tools')} image='marketing-icon'        text={it.L('Recommend our products easily, and keep track of all your earnings with our nifty referral tools.')} />
-                    <AffiliateBox title={it.L('High conversions')}        image='conversion-icon'       text={it.L('We’ve paid millions in commission to date through our industry-leading affiliate programme.')} />
-                    <AffiliateBox title={it.L('Multiple opportunities')}  image='diversify-income-icon' text={it.L('Diversify your income stream through other partnership opportunities such as the <a href=\'[_1]\'>Introducing Broker Programme</a>.', it.url_for('ib-programme/ib-signup'))} />
+                    <AffiliateBox title={it.L('High conversions')}        image='conversion-icon'       text={it.L('We\'ve paid millions in commission to date through our industry-leading affiliate programme.')} />
+                    <AffiliateBox title={it.L('Multiple opportunities')}  image='diversify-income-icon' text={it.L('Diversify your income stream through other partnership opportunities such as the [_1]Introducing Broker Programme[_2].', `<a href="${it.url_for('ib-programme/ib-signup')}">`, '</a>')} />
                 </BoxRow>
 
                 <div className='gr-padding-30'>

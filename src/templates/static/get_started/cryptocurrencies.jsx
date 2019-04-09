@@ -53,7 +53,7 @@ const Cryptocurrencies = () => (
                     <p>{it.L('The same concept applies to our cryptocurrency pairs.')}</p>
                     <p>{it.L('Let\'s compare the differences between buying and selling, using the BTC/USD as an example:')}</p>
                     <BuySellCurrency currency_one={it.L('BTC')} currency_two={it.L('USD')} />
-                    <p>{it.L('In a nutshell, when you go long on the BTC/USD with Binary.com, you are not purchasing bitcoin directly. Instead, you\'re taking a position that the BTC/USD will rise in value whereby you will make a profit. If you go long on the BTC/USD and its value falls, then you will make a loss.')}</p>
+                    <p>{it.L('In a nutshell, when you go long on the BTC/USD with [_1], you are not purchasing bitcoin directly. Instead, you\'re taking a position that the BTC/USD will rise in value whereby you will make a profit. If you go long on the BTC/USD and its value falls, then you will make a loss.', it.website_name)}</p>
                 </Section>
                 <Section id='margin-policy' header={it.L('Cryptocurrency margin policy')}>
                     <p>{it.L('Margin allows you to trade on leverage – meaning your existing capital can give you a much higher level of market exposure.')}</p>

@@ -48,10 +48,11 @@ export default class ClientStore extends BaseStore {
     @computed
     get is_client_allowed_to_visit() {
         return !!(
-            !this.is_logged_in || this.is_virtual ||
-            this.accounts[this.loginid].landing_company_shortcode === 'costarica' ||
-            this.accounts[this.loginid].landing_company_shortcode === 'svg'
-        ); // TODO [->svg]
+            !this.is_logged_in || this.is_virtual
+            // TODO: [only_virtual] uncomment below line to enable app_2 for costarica
+            // || this.accounts[this.loginid].landing_company_shortcode === 'costarica'
+            // || this.accounts[this.loginid].landing_company_shortcode === 'svg'
+        );  // TODO [->svg]
     }
 
     @computed

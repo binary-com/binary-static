@@ -32,7 +32,7 @@ const StatusNotification = () => (
 
 const DialogNotification = () => (
     <div id='dialog_notification' className='primary-bg-color'>
-        <p id='dialog_notification_text'>{it.L('Our website uses cookies to give you the best user experience. For more information, [_1].', `<a href="${it.url_for('terms-and-conditions')}?anchor=cookies-and-device-information#privacy" target="_blank" rel="noopener noreferrer">${it.L('view our policy')}</a>`)}</p>
+        <p id='dialog_notification_text'>{it.L('Our website uses cookies to give you the best user experience. For more information, [_1]view our policy[_2].', `<a href="${it.url_for('terms-and-conditions')}?anchor=cookies-and-device-information#privacy" target="_blank" rel="noopener noreferrer">`, '</a>')}</p>
         <a className='button-secondary gr-gutter-left gr-no-gutter-m' id='dialog_notification_accept' type='button'><span>{it.L('OK')}</span></a>
     </div>
 );
@@ -135,7 +135,6 @@ const Footer = () => (
                             <SocialIcons
                                 networks={[
                                     { media: 'youtube',     href: 'https://www.youtube.com/user/BinaryTradingVideos' },
-                                    { media: 'google-plus', href: 'https://plus.google.com/+Binarydotcom' },
                                     { media: 'facebook',    href: 'https://www.facebook.com/binarydotcom' },
                                     { media: 'twitter',     href: 'https://twitter.com/Binarydotcom' },
                                     { media: 'telegram',    href: 'https://t.me/binarydotcom' },
@@ -151,13 +150,13 @@ const Footer = () => (
                             {it.L('In the EU, financial products are offered by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority ([_1]licence no. IS/70156[_2]).', `<a href=${it.url_for('download/WS-Binary-Investments-Europe-Limited.pdf')} target="_blank">`, '</a>')}
                         </p>
                         <p>
-                            {it.L('Outside the EU, financial products are offered by Binary (C.R.) S.A., 5th Floor, Building 6 Centro Ejecutivo La Sabana, Sabana Sur, San José, Costa Rica, Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, regulated by the Vanuatu Financial Services Commission ([_1]view licence[_2]), Binary (BVI) Ltd, 2nd Floor, O’Neal Marketing Associates Building, Wickham’s Cay II, P.O. Box 3174, Road Town, Tortola VB1110, British Virgin Islands, regulated by the British Virgin Islands Financial Services Commission ([_3]licence no. SIBA/L/18/1114[_4]), and Binary (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Labuan, Malaysia, regulated by the Labuan Financial Services Authority to carry on a money-broking business ([_5]licence no. MB/18/0024[_6]).',
+                            {it.L('Outside the EU, financial products are offered by Binary (C.R.) S.A., 5th Floor, Building 6 Centro Ejecutivo La Sabana, Sabana Sur, San José, Costa Rica, Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, regulated by the Vanuatu Financial Services Commission ([_1]view licence[_2]), Binary (BVI) Ltd, 2nd Floor, O\'Neal Marketing Associates Building, Wickham\'s Cay II, P.O. Box 3174, Road Town, Tortola VB1110, British Virgin Islands, regulated by the British Virgin Islands Financial Services Commission ([_3]licence no. SIBA/L/18/1114[_4]), and Binary (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Labuan, Malaysia, regulated by the Labuan Financial Services Authority to carry on a money-broking business ([_5]licence no. MB/18/0024[_6]).',
                                 '<a href="https://www.vfsc.vu/wp-content/uploads/2015/12/List-of-Licensees-under-Dealers-in-Securities-Licensing-Act-CAP-70-18.11.2016.pdf" target="_blank" rel="noopener noreferrer">', '</a>',
                                 `<a href=${it.url_for('download/regulation/BVI_license.pdf')} target="_blank">`, '</a>',
                                 `<a href=${it.url_for('download/regulation/Labuan-license.pdf')} target="_blank">`, '</a>')}
                         </p>
                         <p>
-                            {it.L('This website’s services are not made available in certain countries such as the USA, Canada, Costa Rica, Hong Kong, Japan, or to persons under age 18.')}
+                            {it.L('This website\'s services are not made available in certain countries such as the USA, Canada, Costa Rica, Hong Kong, Japan, or to persons under age 18.')}
                         </p>
                         <fieldset className='fld-risk-warning'>
                             <legend>{it.L('Risk Warning')}</legend>
@@ -189,7 +188,6 @@ const Footer = () => (
                             <SocialIcons
                                 networks={[
                                     { media: 'youtube',     href: 'https://www.youtube.com/user/BinaryTradingVideos' },
-                                    { media: 'google-plus', href: 'https://plus.google.com/+Binarydotcom' },
                                     { media: 'facebook',    href: 'https://www.facebook.com/binarydotcom' },
                                     { media: 'twitter',     href: 'https://twitter.com/Binarydotcom' },
                                     { media: 'telegram',    href: 'https://t.me/binarydotcom' },
@@ -216,7 +214,7 @@ const Footer = () => (
                     <div className='gr-12'>
                         <div className='about-binary'>
                             <p>
-                                {it.L('Binary.com is an award-winning online trading provider that helps its clients to trade on financial markets through binary options and CFDs. Trading binary options and CFDs on Volatility Indices is classified as a gambling activity. Remember that gambling can be addictive – please play responsibly. Learn more about [_1]Responsible Trading[_2]. Some products are not available in all countries. This website’s services are not made available in certain countries such as the USA, Canada, Costa Rica, Hong Kong, or to persons under age 18.', `<a href="${it.url_for('responsible-trading')}">`, '</a>')}
+                                {it.L('[_1] is an award-winning online trading provider that helps its clients to trade on financial markets through binary options and CFDs. Trading binary options and CFDs on Volatility Indices is classified as a gambling activity. Remember that gambling can be addictive – please play responsibly. Learn more about [_2]Responsible Trading[_3]. Some products are not available in all countries. This website\'s services are not made available in certain countries such as the USA, Canada, Costa Rica, Hong Kong, or to persons under age 18.', it.website_name, `<a href="${it.url_for('responsible-trading')}">`, '</a>')}
                             </p>
                         </div>
                     </div>

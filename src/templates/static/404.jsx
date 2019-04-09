@@ -9,7 +9,7 @@ const Page404 = () => (
                 </div>
                 <div className='gr-8 gr-12-m gr-12-p gr-6-t'>
                     <p>{it.L('The page you requested could not be found. Either it no longer exists or the address is wrong. Please check for any typos.')}</p>
-                    <p>{it.L('<a href="[_1]">Return to trading page</a>', it.url_for('trading'))}</p>
+                    <p>{it.L('[_1]Return to trading page[_2]', `<a href="${it.url_for('trading')}">`, '</a>')}</p>
                 </div>
                 <div className='gr-4 gr-12-m gr-12-p gr-6-t'>
                     <div className='big-error-code'>404</div>
