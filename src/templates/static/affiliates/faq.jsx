@@ -33,15 +33,15 @@ const FAQ = () => (
                         <ListStrong header={it.L('Trading guru')}               text={it.L('Earn additional income with us as you grow your community of potential and existing online traders through useful trading insights and mentorship.')} />
                         <ListStrong header={it.L('Webinar speaker')}            text={it.L('Monetise your online trading discussions with your audience of trading enthusiasts while helping them improve their trading experience.')} />
                         <ListStrong header={it.L('Web and software developer')} text={it.L('Receive commission when you bring in new clients through trading applications and interfaces you build using the [_1] API.', it.website_name)} />
-                        <ListStrong header={it.L('Social media admin')}         text={it.L('Do you manage a social media page that’s dedicated to online trading? Partner with us and convert your audience into potential profit.')} />
+                        <ListStrong header={it.L('Social media admin')}         text={it.L('Do you manage a social media page that\'s dedicated to online trading? Partner with us and convert your audience into potential profit.')} />
                         <ListStrong header={it.L('Blogger and vlogger')}        text={it.L('Maintaining a page or video channel about online trading? Get rewarded when you refer your followers and viewers to trade on our award-winning binary options platform.')} />
                     </ul>
 
                     <h3>{it.L('Why should I become a [_1] affiliate?', it.website_name)}</h3>
-                    <p>{it.L('[_1] is a licensed and regulated binary options trading platform that’s been operating since 2000. It has:', it.website_name)}</p>
+                    <p>{it.L('[_1] is a licensed and regulated binary options trading platform that\'s been operating since 2000. It has:', it.website_name)}</p>
                     <ul className='bullet'>
                         <li>{it.L('An international appeal with multilingual support in English, Spanish, French, German, Portuguese, Chinese, Italian, Thai, Polish, and Russian')}</li>
-                        <li>{it.L('An intuitive, web-based platform that’s instantly available to traders of all levels – anytime, anywhere')}</li>
+                        <li>{it.L('An intuitive, web-based platform that\'s instantly available to traders of all levels – anytime, anywhere')}</li>
                         <li>{it.L('A competitive and flexible affiliate programme that can be adapted to your needs')}</li>
                     </ul>
 
@@ -56,15 +56,15 @@ const FAQ = () => (
                     </ul>
 
                     <h3>{it.L('Who can be a client on the [_1] platform?', it.website_name)}</h3>
-                    <p>{it.L('Anyone aged 18 years old and above who is not the resident of a “restricted country” (as listed in our <a href=\'[_1]\'>Terms & Conditions</a>) can become a [_2] client.', it.url_for('terms-and-conditions'), it.website_name)}</p>
+                    <p>{it.L('Anyone aged 18 years old and above who is not the resident of a "restricted country" (as listed in our [_1]Terms & Conditions[_2]) can become a [_3] client.', `<a href="${it.url_for('terms-and-conditions')}">`, '</a>', it.website_name)}</p>
                 </Section>
 
                 <Section id='account-management-and-tracking' header={it.L('Account management and tracking')}>
                     <h3>{it.L('How can I become an affiliate?')}</h3>
-                    <p>{it.L('It’s easy. Just go to the signup page and complete the <a href=\'[_1]\'>affiliate registration form</a>. We’ll review your application and get back to you if your application is successful.', it.affiliate_signup_url)}</p>
+                    <p>{it.L('It\'s easy. Just go to the signup page and complete the [_1]affiliate registration form[_2]. We\'ll review your application and get back to you if your application is successful.', `<a href="${it.affiliate_signup_url}">`, '</a>')}</p>
 
                     <h3>{it.L('I forgot my password, what should I do?')}</h3>
-                    <p>{it.L('Don’t worry, you can simply <a href=\'[_1]\'>reset your password</a>.', it.affiliate_password_url)}</p>
+                    <p>{it.L('Don\'t worry, you can simply [_1]reset your password[_2].', `<a href="${it.affiliate_password_url}">`, '</a>')}</p>
 
                     <h3>{it.L('How can I change my payment method?')}</h3>
                     <p>{it.L('Log in to your [_1] affiliate account and go to: Finances → Payment instructions.', it.website_name)}</p>
@@ -94,7 +94,7 @@ const FAQ = () => (
 
                 <Section id='support' header={it.L('Support')}>
                     <h3>{it.L('Where can I send my questions, comments, and suggestions?')}</h3>
-                    <p>{it.L('Feel free to get in touch with us at [_1]. We’d love to hear from you.', `<a href='mailto:${it.affiliate_email}'>${it.affiliate_email}</a>`)}</p>
+                    <p>{it.L('Feel free to get in touch with us at [_1]. We\'d love to hear from you.', `<a href='mailto:${it.affiliate_email}'>${it.affiliate_email}</a>`)}</p>
                 </Section>
 
                 <SeparatorLine className='gr-padding-30' />

@@ -63,7 +63,6 @@ const BinaryLoader = (() => {
 
     const afterContentChange = (e) => {
         Page.onLoad();
-        GTM.pushDataLayer({ event: 'page_load' });
 
         const this_page = e.detail.getAttribute('data-page');
         if (Object.prototype.hasOwnProperty.call(pages_config, this_page)) {
@@ -75,6 +74,8 @@ const BinaryLoader = (() => {
         ContentVisibility.init();
 
         BinarySocket.wait('authorize', 'website_status', 'landing_company').then(() => {
+            GTM.pushDataLayer({ event: 'page_load' }); // we need website_status.clients_country
+
             // first time load.
             const last_image = $('#content img').last();
             if (last_image) {

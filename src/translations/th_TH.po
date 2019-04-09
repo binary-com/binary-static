@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-04-04 06:57\n"
+"PO-Revision-Date: 2019-04-08 06:37\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Thai\n"
 "MIME-Version: 1.0\n"
@@ -411,6 +411,12 @@ msgstr "%1ดาวน์โหลด MAM สำหรับ Windows%2 หลั
 
 msgid "%1Founded%2 October 1999"
 msgstr "%1ก่อตั้งเมื่อ%2 ตุลาคม พ.ศ. 2542 (ค.ศ. 1999)"
+
+msgid "%1Manage your accounts%2"
+msgstr ""
+
+msgid "%1No, change my fiat account's currency now%2"
+msgstr ""
 
 msgid "%1Your Proof of Identity or Proof of Address%2 did not meet our requirements. Please check your email for further instructions."
 msgstr "%1หลักฐานแสดงตัวบุคคล หรือ หลักฐานที่อยู่ของท่าน%2 ไม่เป็นไปตามข้อกำหนดของเรา โปรดตรวจสอบอีเมล์ของท่านสำหรับคำแนะนำเพิ่มเติม"
@@ -1347,6 +1353,12 @@ msgstr "ท่านแน่ใจใช่ไหมที่จะลบโท
 
 msgid "Are you sure that you want to permanently revoke access to the application"
 msgstr "ท่านแน่ใจใช่ไหมที่จะยกเลิกการเข้าใช้ระบบถาวร"
+
+msgid "Are you sure you want to create a fiat account in %1?"
+msgstr ""
+
+msgid "Are you sure you want to create your %1 account now?"
+msgstr ""
 
 msgid "Are you sure?"
 msgstr "ท่านแน่ใจแล้วหรือ?"
@@ -2287,6 +2299,9 @@ msgstr "เซสชันสำหรับการชำระเงินห
 msgid "Certain limits are imposed as to the acceptable levels for barrier/strike prices of contracts. Typically, the barrier/strike may not be too close nor too far from the current underlying market level."
 msgstr "ขอบเขตที่แน่นอนถูกกำหนดอยู่ในระดับที่ยอมรับได้สำหรับราคา Barrier และ Strike ของแต่ละสัญญา โดยทั่วไปแล้ว Barrier/Strike อาจจะไม่เข้าใกล้ และไม่ห่างไปจากระดับปัจจุบันของตลาดผลิตภัณฑ์อ้างอิง"
 
+msgid "Change"
+msgstr ""
+
 msgid "Change API Endpoint"
 msgstr "เปลี่ยน API ปลายทาง"
 
@@ -2920,6 +2935,9 @@ msgstr "เจ้าหน้าที่ช่างฝีมือ โลห�
 msgid "Create"
 msgstr "สร้าง"
 
+msgid "Create %1 account"
+msgstr ""
+
 msgid "Create Account"
 msgstr "สร้างบัญชี"
 
@@ -2928,9 +2946,6 @@ msgstr "สร้างบัญชี MAM"
 
 msgid "Create MetaTrader 5 account"
 msgstr "สร้างบัญชี MetaTrader 5"
-
-msgid "Create New Account"
-msgstr "สร้างบัญชีใหม่"
 
 msgid "Create New Token"
 msgstr "สร้างโทเค่นใหม่"
@@ -2967,6 +2982,9 @@ msgstr "สร้างแบบจำลองทางคณิตศาสต
 
 msgid "Create new virtual-money account"
 msgstr "สร้างบัญชีเงินเสมือนใหม่"
+
+msgid "Create or Manage Accounts"
+msgstr ""
 
 msgid "Create strategies against potential risks that might arise due to disruptive innovation"
 msgstr "สร้างกลยุทธ์เพื่อจัดการความเสี่ยงที่อาจเกิดขึ้นเนื่องจากนวัตกรรมที่เข้ามาขัดขวาง"
@@ -3427,6 +3445,9 @@ msgstr "ท่านมีเครื่องมือใดๆ ที่ช�
 msgid "Do you run a website that promotes Forex or binary options? Join our global network of affiliates and turn your online traffic into revenue."
 msgstr "ท่านมีเว็บไซต์ที่เกี่ยวกับฟอเร็กซ์ หรือ ไบนารีออปชัน ใช่หรือไม่ ร่วมเป็นหนึ่งในเครือข่ายพันธมิตรทั่วโลกกับเรา เพื่อเปลี่ยนผู้เข้าชมเว็บไซต์ออนไลน์ของท่านให้เป็นรายได้"
 
+msgid "Do you want this to be a fiat account or crypto account? Please choose one:"
+msgstr ""
+
 msgid "Do you want to learn more about the markets and how to trade them? Check out the resources below."
 msgstr "ท่านต้องการศึกษาตลาดเพิ่มเติม และวิธีการเทรดไหม? ศึกษาได้ทันทีจากแหล่งข้อมูลที่รวบรวมไว้ด้านล่างนี้"
 
@@ -3459,6 +3480,9 @@ msgstr "ยังไม่มีบัญชี %1 ใช่ไหม?"
 
 msgid "Don't show again"
 msgstr "ไม่ต้องแสดงอีก"
+
+msgid "Don't want to trade in %1? You can open another cryptocurrency account."
+msgstr ""
 
 msgid "Don’t share your %1 account or payment methods with any other person."
 msgstr "อย่าแบ่งปันบัญชี %1 หรือวิธีการชำระเงินให้แก่ผู้อื่น"
@@ -4426,6 +4450,9 @@ msgstr "สำหรับฟอเร็กซ์ หรือ ตลาดค�
 msgid "For full contact details of %3, kindly check our %1Contact Us%2 page."
 msgstr "สำหรับรายละเอียดติดต่อ %3 โปรดตรวจสอบที่หน้า %1 ติดต่อเรา %2"
 
+msgid "For fully covered accounts, no margin will be charged on open positions. However, swaps and other applicable fees can cause your Account Equity to turn negative. In that case the Stop Out process will be triggered."
+msgstr ""
+
 msgid "For general support:"
 msgstr "สำหรับการสนับสนุนทั่วไป:"
 
@@ -4434,9 +4461,6 @@ msgstr "สำหรับข้อมูลเกี่ยวกับเลเ
 
 msgid "For payments-related queries:"
 msgstr "สำหรับการสอบถามเกี่ยวกับการชำระเงิน:"
-
-msgid "For perfectly hedged positions, no margin will be charged. However, swaps and other applicable fees can cause your Account Equity to turn negative. In such cases, the company reserves the right to close out your hedged positions in order to protect your Account Equity from decreasing further."
-msgstr "สำหรับตำแหน่งในการป้องกันความเสี่ยงอย่างสมบูรณ์ จะไม่เรียกเก็บค่าธรรมเนียม แต่อย่างไรก็ตามค่าแลกเปลี่ยนและค่าธรรมเนียมการจัดการธุรกรรมอื่นๆ อาจทำให้บัญชีของท่านเปลี่ยนเป็นมูลค่าติดลบได้ บริษัทฯ ขอสงวนสิทธิ์ในการปิดตำแหน่งการป้องกันความเสี่ยงของท่านเพื่อป้องกันเงินทุนในบัญชีของท่านที่อาจจะลดลงด้วยเหตุต่างๆ"
 
 msgid "For the purposes of this Agreement, the following shall mean:"
 msgstr "สำหรับวัตถุประสงค์ของข้อตกลงนี้ สิ่งต่อไปนี้หมายความว่า:"
@@ -5113,8 +5137,8 @@ msgstr "หากบริษัทฯ (โดยดุลยพินิจข�
 msgid "If the Company believes that unauthorised persons are using an account, it reserves the right to, without prior notice, suspend the Client’s rights to use the Trading Facility."
 msgstr "หากบริษัทฯ ติดตามการใช้งานและเข้าใจว่า มีบุคคลอื่นที่ไม่ได้รับอนุญาตกำลังใช้งานบัญชี บริษัทฯ ขอสงวนสิทธิ์ที่จะพักการใช้งานการซื้อขายต่างๆ โดยไม่ต้องแจ้งให้ท่านทราบล่วงหน้า"
 
-msgid "If the Margin Level for your MT5 Real Account reaches or falls below the Stop Out Level, this will be classified as an Event of Default. In such circumstances, Open Positions are automatically closed in the following order: (i) the server analyses clients' Orders that are not under execution at the moment; (ii) the server deletes Orders with the largest Margin; (iii) if your Margin Level is still under the Stop Out Level, the next order is deleted (orders without margin requirements are not deleted); (iv) if your Margin Level is still under the Stop Out Level, the server closes a position with the largest loss; (v) Open Positions are closed until your Margin Level becomes higher than the Stop Out Level."
-msgstr "ถ้าระดับมาร์จินของบัญชี MT5 จริงของท่าน ถึง หรือ ลดต่ำลงจากระดับยุติการซื้อขาย จะถูกจัดเป็นกรณีเพิกเฉยต่อสัญญา ในสถานการณ์ดังกล่าว โพซิชั่นเปิดจะถูกปิดอัตโนมัติตามลำดับต่อไปนี้ (i) เซิร์ฟเวอร์วิเคราะห์คำสั่งซื้อของลูกค้าซึ่งยังไม่ถูกดำเนินการในขณะนี้ (ii) เซิร์ฟเวอร์ลบคำสั่งซื้อที่มีมาร์จินมากที่สุด (iii) ถ้าระดับมาร์จินยังคงต่ำกว่าระดับยุติการซื้อขาย คำสั่งซื้อต่อไปจะถูกลบออก (คำสั่งซื้อที่ไม่มีการกำหนดมาร์จินจะไม่ถูกลบ) (iv) ถ้าระดับมาร์จินยังคงต่ำกว่าระดับยุติการซื้อขาย เซิร์ฟเวอร์ปิดโพซิชั่นที่มีความสูญเสียสูงสุด (v) โพซิชั่นเปิดจะถูกปิดจนกว่าระดับมาร์จินจะสูงกว่าระดับยุติการซื้อขาย"
+msgid "If the Margin Level for your MT5 Real Account reaches or falls below the Stop Out Level, this will be classified as an Event of Default. In such circumstances, Open Positions are automatically closed in the following order: (i) the server analyses clients' Orders that are not under execution at the moment; (ii) the server deletes Orders with the largest Margin; (iii) if your Margin Level is still under the Stop Out Level, the next order is deleted (orders without margin requirements are not deleted); (iv) if your Margin Level is still under the Stop Out Level, the server closes a position with the largest loss; (v) Open Positions are closed until your Margin Level becomes higher than the Stop Out Level. Additionally, for perfectly hedged positions, Stop Out will be performed on accounts having open positions, the zero margin (positions are covered), and negative equity."
+msgstr ""
 
 msgid "If the bid price is 1.05229, you'll buy USD 1.05229 for every EUR 1 you sell."
 msgstr "ถ้าราคาเสนอซื้อ คือ 1.05229 ท่านจะซื้อที่ราคา 1.05229 เหรียญสหรัฐ สำหรับทุก ๆ 1 ยูโรที่ท่านขาย"
@@ -7048,6 +7072,9 @@ msgstr "ข้อสังเกต: ตัวแทนรับชำระเ�
 msgid "Note: This feature is not available if you logged in using a social network."
 msgstr "หมายเหตุ: จะไม่มีฟังก์ชั่นนี้ หากท่านลงชื่อเข้าระบบโดยใช้เครือข่ายสังคมออนไลน์"
 
+msgid "Note: You are limited to one fiat currency account. The currency of your fiat account can be changed before you deposit into your fiat account for the first time or create an MT5 account. You may also open one account for each supported cryptocurrency."
+msgstr ""
+
 msgid "Note: You can only have one fiat currency account and one of each cryptocurrency account."
 msgstr "หมายเหตุ ท่านสามารถมีได้เพียงบัญชีสกุลเงินกระดาษหนึ่งบัญชี และหนึ่งบัญชีของบัญชีเงินดิจิทัล"
 
@@ -7879,8 +7906,8 @@ msgstr "โปรดระบุค่าจากตัวเลือก"
 msgid "Please select the country where you are a tax resident. If you have any doubts, kindly consult your tax advisor."
 msgstr "กรุณาเลือกประเทศที่คุณเป็นผู้อยู่อาศัยที่ต้องเสียภาษี หากคุณมีข้อสงสัย โปรดปรึกษาที่ปรึกษาด้านภาษี"
 
-msgid "Please select the currency of this account:"
-msgstr "โปรดกำหนดสกุลเงินของบัญชีนี้"
+msgid "Please select the currency for this account:"
+msgstr ""
 
 msgid "Please select the date range of your statement:"
 msgstr "โปรดเลือกช่วงวันที่ในใบแจ้งยอดของคุณ"
@@ -10604,6 +10631,9 @@ msgstr "นี้คือราคาปัจจุบันที่ผลิ
 msgid "This is why we've come up with the following three-step tutorial to help you bridge that gap and make your first trade:"
 msgstr "เราจึงมีโปรแกรมการเรียนรู้ขั้นสามขั้นตอนต่อไปนี้ เพื่อช่วยให้ท่านสามารถซื้อขายครั้งแรกได้เร็วขึ้น"
 
+msgid "This is your %1 account."
+msgstr ""
+
 msgid "This notice does not explain all of the risks involved in investments or similar products or how such risks relate to your personal circumstances. It is important that you fully understand the risks involved before making a decision to enter into any product with us. If you are in any doubt about the risks involved, you should seek professional advice."
 msgstr "ข้อสังเกตนี้ไม่ได้ชี้แจงความเสี่ยงที่เกี่ยวข้องทั้งหมดในการลงทุน หรือ ในผลิตภัณฑ์ที่ใกล้เคียงกัน หรือ ความเสี่ยงเหล่านั้นมีความสัมพันธ์อย่างไรกับกรณีของท่าน มันเป็นสิ่งสำคัญที่ท่านต้องมีความเข้าใจในความเสี่ยงต่างๆ อย่างถ่องแท้ ก่อนที่จะตัดสินใจในการซื้อ หรือ ขายผลิตภัณฑ์ใดๆ กับเรา หากท่านมีข้อสงสัยใดๆ เกี่ยวกับความเสี่ยงที่เกี่ยวข้อง โปรดขอคำแนะนำจากผู้เชี่ยวชาญเพื่อการลงทุน"
 
@@ -12323,11 +12353,17 @@ msgstr "Yandex.Money เป็นผู้ให้บริการชำร�
 msgid "Yes"
 msgstr "ใช่"
 
+msgid "Yes I'm sure"
+msgstr ""
+
 msgid "Yes, I understand"
 msgstr "ใช่ ฉันเข้าใจ"
 
 msgid "Yes, I want to sign up as an affiliate"
 msgstr "ใช่ ฉันต้องการลงทะเบียนในฐานะพันธมิตรนายหน้าออนไลน์"
+
+msgid "Yes, I'm sure"
+msgstr ""
 
 msgid "Yes, we will provide you with banners, links, reviews, videos, and text ads that you can use to drive referrals to the %1 MT5 platform."
 msgstr "ใช่ เราจะให้แบนเนอร์ ลิงค์ รีวิว วีดีโอ และข้อความโฆษณา ซึ่งท่านสามารถใช้เพื่อเพิ่มจำนวนลูกค้าอ้างอิงมายังแพลตฟอร์ม MT5 %1"
@@ -12467,6 +12503,9 @@ msgstr "ท่านกำลังคาดว่า มูลค่าขอ�
 msgid "You are in default or breach of any covenant, obligation or condition contained in this Agreement, and if such default is not cured within seven days of receipt of written notice from the Company;"
 msgstr "ท่านละเลย หรือ ฝ่าฝืนข้อตกลงร่วมกันใดๆ หน้าที่ หรือ เงื่อนไขที่ปรากฏในข้อตกลงฉบับนี้ และหากพฤติกรรมนั้นไม่ได้ถูกแก้ไขภายใน 7 วันที่ได้รับการแจ้งเตือนอย่างเป็นลายลักษณ์อักษรจากทางบริษัทฯ"
 
+msgid "You are limited to one fiat account. You can change the currency of your fiat account anytime before you make a first-time deposit or create an MT5 account."
+msgstr ""
+
 msgid "You are not allowed to rebate any part commission payment onto your referrals and should the company realise you are engaged in such actions; your affiliate account shall be revoked immediately."
 msgstr "ท่านไม่ได้รับอนุญาตในการได้รับส่วนลดการชำระค่าตอบแทนจากการอ้างอิงของท่าน หากบริษัทฯ พบการกระทำของท่านในลักษณะดังกล่าว บัญชีพันธมิตรของท่านจะถูกเพิกถอนทันที"
 
@@ -12518,6 +12557,9 @@ msgstr "ท่านยินดีและมีศักยภาพในก
 msgid "You bear the responsibility of ensuring that payments made to the Company are correctly received with the specified Client’s Account details."
 msgstr "ท่านพึงทราบถึงความรับผิดชอบต่อการชำระเงินต่อบริษัทฯ ตามข้อมูลที่ปรากฏในรายละเอียดบัญชีลูกค้า"
 
+msgid "You can %1set a new currency%2 before you deposit for the first time or create an MT5 account."
+msgstr ""
+
 msgid "You can close this window without interrupting your trade."
 msgstr "ท่านสามารถปิดหน้าต่างนี้ได้โดยไม่ขัดจังหวะการซื้อขายของท่าน"
 
@@ -12535,6 +12577,12 @@ msgstr "ท่านสามารถพิจารณามาร์จิน
 
 msgid "You can generate all kinds of insightful reports, including the following:"
 msgstr "ท่านสามารถเรียกใช้รายงานเจาะลึกต่างๆ รวมถึงรายงานต่อไปนี้"
+
+msgid "You can no longer change the currency because you've created an MT5 account."
+msgstr ""
+
+msgid "You can no longer change the currency because you've made a first-time deposit."
+msgstr ""
 
 msgid "You can sell your contract before expiry to keep any profit you may have made or to minimise your loss."
 msgstr "ท่านสามารถขายสัญญาซื้อขายของท่านก่อนวันหมดอายุเพื่อรักษากำไรของท่านที่พึงได้ หรือ เพื่อย่อภาวะขาดทุนของท่าน"
@@ -12581,12 +12629,6 @@ msgstr "ท่านได้ถอน %1 %2 หรือเทียบเท�
 msgid "You have already withdrawn the equivalent of %1 %2."
 msgstr "ท่านได้ถอน %1 %2 หรือเทียบเท่า"
 
-msgid "You have chosen %1 as the currency for this account. You cannot change this later. You can have more than one cryptocurrency account."
-msgstr "ท่านได้เลือก %1 เป็นสกุลเงินของบัญชีนี้ ท่านไม่สามารถเปลี่ยนแปลงในภายหลัง ทั้งนี้ท่านสามารถมีบัญชีเงินดิจิทัลได้มากกว่า 1 บัญชี"
-
-msgid "You have chosen %1 as the currency for this account. You cannot change this later. You can have one fiat currency account only."
-msgstr "ท่านได้เลือก %1 เป็นสกุลเงินของบัญชีนี้ ท่านไม่สามารถเปลี่ยนแปลงในภายหลัง ทั้งนี้ท่านสามารถมีบัญชีเงินกระดาษ (ธนบัตรเงินสด) ได้เพียง 1 บัญชี"
-
 msgid "You have created all accounts available to you."
 msgstr "ท่านได้สร้างบัญชีทั้งหมดแล้ว"
 
@@ -12629,11 +12671,14 @@ msgstr "ท่านได้อ่านข้อกำหนดทางกฎ
 msgid "You have sold this contract at %1 %2"
 msgstr "ท่านได้ขายสัญญานี้ที่ %1 %2"
 
-msgid "You have successfully created your %1account!"
-msgstr "ท่านได้สร้างบัญชี %1 เรียบร้อยแล้ว!"
+msgid "You have successfully changed your account currency from %1 to %2."
+msgstr ""
 
 msgid "You have successfully created your Virtual Account."
 msgstr "ท่านได้สร้างบัญชีทดลองใช้เรียบร้อยแล้ว"
+
+msgid "You have successfully created your real money %1account."
+msgstr ""
 
 msgid "You have successfully disabled two-factor authentication for your account."
 msgstr "ระบบได้ปิดการใช้งานการรับรองโดยใช้ 2 ตัวแปรผูกกับบัญชีของท่านเรียบร้อยแล้ว"
@@ -12691,6 +12736,9 @@ msgstr "ท่านอาจเปิดบัญชีในเว็บไซ
 
 msgid "You may only transfer funds between fiat and cryptocurrency accounts."
 msgstr "ท่านสามารถโอนเงินได้ระหว่างบัญชีเงินกระดาษและบัญชีเงินดิจิทัลเท่านั้น"
+
+msgid "You may open one account for each supported cryptocurrency."
+msgstr ""
 
 msgid "You may proceed but please <a href=\"%1\">authenticate</a> your account within five days to continue trading."
 msgstr "โปรด <a href=\"%1\">ยืนยัน</a> บัญชีของท่านภายในห้าวันเพื่อการซื้อขายอย่างต่อเนื่อง"
@@ -12845,6 +12893,12 @@ msgstr "ท่านจะมีศักยภาพที่จะเปิด
 msgid "You will increase awareness of your services and generate new business."
 msgstr "ท่านจะเพิ่มความตระหนักรู้ในบริการของท่านและสร้างธุรกิจใหม่"
 
+msgid "You will not be able to change your fiat account's currency after creating this MT5 account. Are you sure you want to proceed?"
+msgstr ""
+
+msgid "You will not be able to change your fiat account's currency after making this deposit. Are you sure you want to proceed?"
+msgstr ""
+
 msgid "You will provide us with any information that we may reasonably require to fully satisfy the demand or the requirements of the applicable government authority, upon our request."
 msgstr "ท่านจะให้ข้อมูลใดๆ ที่เรากำหนดที่สมเหตุสมผลเพื่อตอบสนองความต้องการและข้อกำหนดของหน่วยงานราชการที่เกี่ยวข้อง เมื่อเราร้องขอ"
 
@@ -12991,6 +13045,12 @@ msgstr "หนี้ของท่านยังไม่ได้รับช
 
 msgid "Your demo account balance is currently %1 or less. You may top up your account with an additional %2."
 msgstr "ท่านมียอดเงินคงเหลือในบัญชีทดลอง %1 หรือน้อยกว่า กรุณาฝากเงินในบัญชีของท่านเพิ่ม %2"
+
+msgid "Your fiat account's currency is currently set to %1."
+msgstr ""
+
+msgid "Your fiat account's currency is set to %1."
+msgstr ""
 
 msgid "Your forex and contracts for differences transactions with %1 are linked to an underlying financial instrument and you will be exposed to price, currency exchange, interest rate or other volatility of the market to which your financial instrument is related to, especially if the market is of a jurisdiction that is foreign to you. Forex and contracts for differences trading over the internet via an electronic trading platform is subject to data latency risk which may result in delays in order execution."
 msgstr "อัตราแลกเปลี่ยนและสัญญาสำหรับธุรกรรมส่วนต่างกับ %1ถูกเชื่อมโยงกับเครื่องมือทางการเงินของผลิตภัณฑ์อ้างอิง ซึ่งมีความสัมพันธ์กับราคา อัตราแลกเปลี่ยน อัตราดอกเบี้ย หรือ ความผันผวนอื่นของตลาดซึ่งเกี่ยวข้องกับเครื่องมือทางการเงินของท่าน โดยเฉพาะอย่างยิ่งถ้าตลาดเป็นของเขตพื้นที่ตามกฎมายที่ต่างถิ่นกับท่าน อัตราแลกเปลี่ยนและสัญญาสำหรับการซื้อขายส่วนต่างทางอินเทอร์เน็ตผ่านทางแพลตฟอร์มการซื้อขายอิเล็กทรอนิกส์จะมีความเสี่ยงของการแฝงของข้อมูลซึ่งอาจะทำให้เกิดการล่าช้าในประมวลผลคำสั่งซื้อ"

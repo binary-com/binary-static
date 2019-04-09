@@ -6,8 +6,8 @@ const PaymentAgents = () => (
 
         <h2 data-anchor='scope-of-agreement'>A. {it.L('Scope of Agreement')}</h2>
         <ol>
-            <li>{it.L('This Agreement is between Binary (C.R) S.A. (hereinafter referred to as “the Company” or “[_1]“) and Payment Agent (hereinafter referred to as “the Agent”), both of whom agree to be bound by this Agreement.', it.website_name)}</li>
-            <li>{it.L('The Company and Agent (hereinafter referred to as “the Parties”) desire to enter into this Agreement whereby the Company will offer to its clients local payment processing services through the Agent within a territory as specified in Section D of this Agreement.')}</li>
+            <li>{it.L('This Agreement is between Binary (C.R) S.A. (hereinafter referred to as "the Company" or "[_1]") and Payment Agent (hereinafter referred to as "the Agent"), both of whom agree to be bound by this Agreement.', it.website_name)}</li>
+            <li>{it.L('The Company and Agent (hereinafter referred to as "the Parties") desire to enter into this Agreement whereby the Company will offer to its clients local payment processing services through the Agent within a territory as specified in Section D of this Agreement.')}</li>
         </ol>
 
         <h2 data-anchor='general'>B. {it.L('General')}</h2>
@@ -23,10 +23,10 @@ const PaymentAgents = () => (
 
         <h2 data-anchor='provision-of-services'>D. {it.L('Provision of Services')}</h2>
         <ol>
-            <li>{it.L('The Agent may provide its services to clients of the Company who desire to deposit and/or withdraw money using the Agent. The Agent may provide its services to clients who intend to use e-wallet or e-payment methods other than those used by the Company (hereinafter referred to as the “e-payments”) or local currencies other than those accepted by the Company (hereinafter referred to as the “local currencies”) and local bank wire transfers (hereinafter referred to as the “bank wire transfers”).')}</li>
+            <li>{it.L('The Agent may provide its services to clients of the Company who desire to deposit and/or withdraw money using the Agent. The Agent may provide its services to clients who intend to use e-wallet or e-payment methods other than those used by the Company (hereinafter referred to as the "e-payments") or local currencies other than those accepted by the Company (hereinafter referred to as the "local currencies") and local bank wire transfers (hereinafter referred to as the "bank wire transfers").')}</li>
             <li>{it.L('It is agreed that any deposits through the Agent shall be made as follows:  ')}
                 <ul className='bullet'>
-                    <li>{it.L('The client using e-payments and bank wire transfers may make a deposit to the Agent. The Agent, receiving the deposit, shall thereinafter make a deposit to his [_1] Account (hereinafter referred to as the “[_1] Agent Account”).', it.website_name)}</li>
+                    <li>{it.L('The client using e-payments and bank wire transfers may make a deposit to the Agent. The Agent, receiving the deposit, shall thereinafter make a deposit to his [_1] Account (hereinafter referred to as the "[_1] Agent Account").', it.website_name)}</li>
                     <li>{it.L('The sum received in the [_1] Agent Account shall be subsequently transferred by the Agent to the respective [_1] Client\'s Account.', it.website_name)}</li>
                 </ul>
             </li>
@@ -36,7 +36,7 @@ const PaymentAgents = () => (
                     <li>{it.L('The Agent thereinafter, shall transfer the requested sum to the client. It is noted that these transactions fall out of the scope of this Agreement and as result the Company shall not be liable against the Agent and the client or any other person, under contract or tort law or any other applicable law, for any dispute or potential dispute arising out of or in connection with such transactions.')}</li>
                 </ul>
             </li>
-            <li>{it.L('The Agent shall not be authorized to offer its services, under this Agreement, to clients who reside in restricted countries outlined in our terms and conditions (as amended from time to time), which are published on our website, <a href="[_1]">www.binary.com.</a>', it.url_for('new-account'))}</li>
+            <li>{it.L('The Agent shall not be authorized to offer its services, under this Agreement, to clients who reside in restricted countries outlined in our terms and conditions (as amended from time to time), which are published on our website, [_1]www.binary.com.[_2]', `<a href="${it.url_for('new-account')}">`, '</a>')}</li>
         </ol>
 
         <h2 data-anchor='agents-obligations'>E. {it.L('Agent\'s Obligations')}</h2>
@@ -64,7 +64,7 @@ const PaymentAgents = () => (
             <li>{it.L('The Agent shall not:')}
                 <ul className='bullet'>
                     <li>{it.L('represent itself as a representative of the Company or as an authorised Person by the Company in its advertising activities;')}</li>
-                    <li>{it.L('use the Company’s name or Trademark in its advertising activities without a written authorisation to be given by the Company;')}</li>
+                    <li>{it.L('use the Company\'s name or Trademark in its advertising activities without a written authorisation to be given by the Company;')}</li>
                     <li>{it.L('misrepresent its services provided to the clients;')}</li>
                     <li>{it.L('engage in misleading or illusory or deceptive conduct; ')}</li>
                     <li>{it.L('engage in misleading or illusory or deceptive advertising or promises;')}</li>
@@ -120,21 +120,21 @@ const PaymentAgents = () => (
             </li>
             <li>{it.L('Information outlined in Paragraph 1 of this Section shall be submitted to <a href="mailto:[_1]">[_1]</a>.', 'affiliates@binary.com')}</li>
             <li>{it.L('The application shall be reviewed and assessed by the Company\'s compliance and marketing departments. It is noted that the Company\'s compliance department following and implementing the Anti-Money Laundering Policy and conducting due diligence in accordance with the law and Regulations shall request and collect all required information and documentation as per Section H.')}</li>
-            <li>{it.L('The Company, exercising its absolute discretion, may accept or reject the Agent’s application. Where the Agent’s application is accepted, the Company shall include all relevant information including but not limited to name, address, website (if available), email address, telephone number, commission rates and payment methods used by the Agent in the Payment Agent list which is disclosed on the Company\'s website, <a href="[_1]">www.binary.com</a>.', it.url_for('new-account'))}</li>
+            <li>{it.L('The Company, exercising its absolute discretion, may accept or reject the Agent\'s application. Where the Agent\'s application is accepted, the Company shall include all relevant information including but not limited to name, address, website (if available), email address, telephone number, commission rates and payment methods used by the Agent in the Payment Agent list which is disclosed on the Company\'s website, [_1]www.binary.com[_2].', `<a href="${it.url_for('new-account')}">`, '</a>')}</li>
         </ol>
 
         <h2 data-anchor='events-of-defaults'>K. {it.L('Events of Default')}</h2>
         <ol>
-            <li>{it.L('Each of the following event constitutes an “Event of Default”:')}
+            <li>{it.L('Each of the following event constitutes an "Event of Default":')}
                 <ul className='bullet'>
-                    <li>{it.L('In case of Agent’s death, incapacity or where the Agent becomes of unsound mind;')}</li>
+                    <li>{it.L('In case of Agent\'s death, incapacity or where the Agent becomes of unsound mind;')}</li>
                     <li>{it.L('Where the Agent becomes incapable to pay his debts as they fall due, or is bankrupt or insolvent, as defined under any and all applicable bankruptcy or insolvency law, where the Agent is an individual;')}</li>
                     <li>{it.L('Where the Agent acts in breach of any warranty or representation or promise made under this Agreement, and any information provided to the Company in connection with this Agreement is, or becomes, untrue or misleading;')}</li>
                     <li>{it.L('Where the Agent fails to comply with its obligations or fails to perform any of its duties or other provisions under this Agreement and such failure continues for at least one business day after the receipt of the non-performance notice given by the Company.')}</li>
                     <li>{it.L('Where any procedure is involuntarily initiated against the Agent seeking or proposing liquidation, reorganisation, restructuring, an arrangement or composition, a freeze or moratorium, whatsoever in relation to itself or its debts in accordance with the law.')}</li>
-                    <li>{it.L('Where any law-suit, action or other legal or administrative proceedings whatsoever in connection to this Agreement are initiated for any execution, any attachment or garnishment, or distress against the Agent or where an encumbrance takes possession of, the entire or any part of the Agent’s property, undertakings or assets including tangible and intangible.')}</li>
-                    <li>{it.L('Where the Agent is dissolved, or deregistered from any records of a formal register whatsoever. Furthermore, where any procedure is initiated, seeking or intending or proposing the Agent’s dissolution or deregistration from any records of a formal register. ')}</li>
-                    <li>{it.L('Any event capable to have a material adverse effect on the Agent’s ability to perform any of its duties and obligations in accordance with this Agreement.')}</li>
+                    <li>{it.L('Where any law-suit, action or other legal or administrative proceedings whatsoever in connection to this Agreement are initiated for any execution, any attachment or garnishment, or distress against the Agent or where an encumbrance takes possession of, the entire or any part of the Agent\'s property, undertakings or assets including tangible and intangible.')}</li>
+                    <li>{it.L('Where the Agent is dissolved, or deregistered from any records of a formal register whatsoever. Furthermore, where any procedure is initiated, seeking or intending or proposing the Agent\'s dissolution or deregistration from any records of a formal register. ')}</li>
+                    <li>{it.L('Any event capable to have a material adverse effect on the Agent\'s ability to perform any of its duties and obligations in accordance with this Agreement.')}</li>
                 </ul>
             </li>
             <li>{it.L('It is agreed and understood that the Company may unilaterally terminate this Agreement if any of the events mentioned in the paragraphs above occurs. ')}</li>
@@ -164,16 +164,16 @@ const PaymentAgents = () => (
         <ol>
             <li>{it.L('No Party shall be deemed liable for a partial or complete failure to meet its obligations, under this Agreement, in case of force majeure events including but not limited to civil war, unrest, insurrection, international intervention, any governmental actions, exchange controls, nationalizations, devaluations, forfeitures, natural disasters, act of God and other inevitable or unforeseeable or unanticipated or unpredicted events, not depending on the will of the Parties.')}</li>
             <li>{it.L('The Party which is not able to meet its obligations, under this Agreement due to force majeure events shall, within 5 business days after such event has occurred, inform, in writing, the other Party. The Party shall be deprived of the right to release from any responsibility, under this Agreement where it fails to duly notify the other Party on time.')}</li>
-            <li>{it.L('Force majeure events must be confirmed by an authority and/or government authority of the Party’s residence.')}</li>
+            <li>{it.L('Force majeure events must be confirmed by an authority and/or government authority of the Party\'s residence.')}</li>
             <li>{it.L('If force majeure events last for more than 30 business days, the Party not suffering force majeure events may terminate this Agreement immediately.')}</li>
         </ol>
 
         <h2 data-anchor='confidentiality'>P. {it.L('Confidentiality')}</h2>
         <ol>
-            <li>{it.L('The Agent shall treat all information related to the Company and the client including but not limited to client\'s identity, financial status, trading or transaction performance, as well as Company’s business plans, price points, ideas, concepts, formats, suggestions, developments, arrangements, programs, techniques, methodologies, knowhow, equipment, whatsoever as confidential (hereinafter referred to as the “Confidential Information”).')}</li>
-            <li>{it.L('The Agent shall not produce any copies of any Confidential Information or any content based on the concepts contained within the Confidential Information for personal use or for distribution, without the Company’s request.')}</li>
+            <li>{it.L('The Agent shall treat all information related to the Company and the client including but not limited to client\'s identity, financial status, trading or transaction performance, as well as Company\'s business plans, price points, ideas, concepts, formats, suggestions, developments, arrangements, programs, techniques, methodologies, knowhow, equipment, whatsoever as confidential (hereinafter referred to as the "Confidential Information").')}</li>
+            <li>{it.L('The Agent shall not produce any copies of any Confidential Information or any content based on the concepts contained within the Confidential Information for personal use or for distribution, without the Company\'s request.')}</li>
             <li>{it.L('It is agreed that Confidential Information shall be considered as confidential even after the termination of the business relationship established under this Agreement or any other agreement or arrangement between the Parties.')}</li>
-            <li>{it.L('It is noted that immediately upon termination of the relationship between the Company and the Agent, the Agent shall return to the Company any documents pertaining to the Company’s business whatsoever which are in the Agent’s possession.')}</li>
+            <li>{it.L('It is noted that immediately upon termination of the relationship between the Company and the Agent, the Agent shall return to the Company any documents pertaining to the Company\'s business whatsoever which are in the Agent\'s possession.')}</li>
         </ol>
 
         <h2 data-anchor='choice-of-law-and-venue'>Q. {it.L('Choice of Law and Venue')}</h2>

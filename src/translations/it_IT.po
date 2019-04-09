@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-04-04 06:54\n"
+"PO-Revision-Date: 2019-04-08 06:34\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Italian\n"
 "MIME-Version: 1.0\n"
@@ -410,6 +410,12 @@ msgstr "%1Scarica l'app MAM per Windows%2 dopo aver creato il tuo conto master. 
 
 msgid "%1Founded%2 October 1999"
 msgstr "%1Fondata%2 nell'ottobre 1999"
+
+msgid "%1Manage your accounts%2"
+msgstr ""
+
+msgid "%1No, change my fiat account's currency now%2"
+msgstr ""
 
 msgid "%1Your Proof of Identity or Proof of Address%2 did not meet our requirements. Please check your email for further instructions."
 msgstr "%1 La Verifica dell'identità o la Verifica della residenza%2 non hanno soddisfatto i nostri requisiti. Controlla la tua e-mail per ulteriori istruzioni."
@@ -1346,6 +1352,12 @@ msgstr "Sei sicuro di voler eliminare definitivamente il token"
 
 msgid "Are you sure that you want to permanently revoke access to the application"
 msgstr "Sei sicuro di voler revocare definitivamente l'accesso all'applicazione"
+
+msgid "Are you sure you want to create a fiat account in %1?"
+msgstr ""
+
+msgid "Are you sure you want to create your %1 account now?"
+msgstr ""
 
 msgid "Are you sure?"
 msgstr "Sei sicuro?"
@@ -2286,6 +2298,9 @@ msgstr "Sessione di cassa scaduta"
 msgid "Certain limits are imposed as to the acceptable levels for barrier/strike prices of contracts. Typically, the barrier/strike may not be too close nor too far from the current underlying market level."
 msgstr "Sono imposti alcuni livelli minimi per l'inserimento dei prezzi delle barriere/limiti dei contratti. Generalmente, la barriera/limite non può essere troppo vicina o troppo lontana dall'attuale livello del mercato sottostante."
 
+msgid "Change"
+msgstr ""
+
 msgid "Change API Endpoint"
 msgstr "Modifica l'estremità API"
 
@@ -2919,6 +2934,9 @@ msgstr "Lavoratori addetti all'artigianato, al settore elettrico, dell'elettroni
 msgid "Create"
 msgstr "Crea"
 
+msgid "Create %1 account"
+msgstr ""
+
 msgid "Create Account"
 msgstr "Crea un account"
 
@@ -2927,9 +2945,6 @@ msgstr "Crea un conto MAM"
 
 msgid "Create MetaTrader 5 account"
 msgstr "Crea un conto MetaTrader 5"
-
-msgid "Create New Account"
-msgstr "Crea un nuovo account"
 
 msgid "Create New Token"
 msgstr "Crea un nuovo token"
@@ -2966,6 +2981,9 @@ msgstr "Creare modelli matematici/statistici per i prezzi, analizzare il rischio
 
 msgid "Create new virtual-money account"
 msgstr "Crea un nuovo conto in denaro virtuale"
+
+msgid "Create or Manage Accounts"
+msgstr ""
 
 msgid "Create strategies against potential risks that might arise due to disruptive innovation"
 msgstr "Creare strategie a protezione da eventuali rischi che potrebbero sorgere in seguito a innovazioni dirompenti"
@@ -3426,6 +3444,9 @@ msgstr "Mettete a disposizione qualche strumento per gestire i trade dei clienti
 msgid "Do you run a website that promotes Forex or binary options? Join our global network of affiliates and turn your online traffic into revenue."
 msgstr "Gestisci un sito web che promuove il Forex o le opzioni binarie? Unisci alla nostra rete globale di associati e trasforma il tuo traffico online in entrate."
 
+msgid "Do you want this to be a fiat account or crypto account? Please choose one:"
+msgstr ""
+
 msgid "Do you want to learn more about the markets and how to trade them? Check out the resources below."
 msgstr "Desideri saperne di più sui mercati e su come fare trading? Dai uno sguardo alle risorse qui sotto."
 
@@ -3458,6 +3479,9 @@ msgstr "Non hai ancora un conto %1?"
 
 msgid "Don't show again"
 msgstr "Non mostrare più"
+
+msgid "Don't want to trade in %1? You can open another cryptocurrency account."
+msgstr ""
 
 msgid "Don’t share your %1 account or payment methods with any other person."
 msgstr "Non condividere il tuo conto %1 o i tuoi metodi di pagamento con nessun'altra persona."
@@ -4425,6 +4449,9 @@ msgstr "Per Forex: il mercato Forex è un mercato OTC (over the counter) in cui 
 msgid "For full contact details of %3, kindly check our %1Contact Us%2 page."
 msgstr "Per i dettagli completi relativi a %3, visita la pagina %1Contatti%2."
 
+msgid "For fully covered accounts, no margin will be charged on open positions. However, swaps and other applicable fees can cause your Account Equity to turn negative. In that case the Stop Out process will be triggered."
+msgstr ""
+
 msgid "For general support:"
 msgstr "Per l'assistenza generale:"
 
@@ -4433,9 +4460,6 @@ msgstr "Per informazioni sulla leva nel Forex, consulta la nostra %1 politica su
 
 msgid "For payments-related queries:"
 msgstr "Per le richieste legate ai pagamenti:"
-
-msgid "For perfectly hedged positions, no margin will be charged. However, swaps and other applicable fees can cause your Account Equity to turn negative. In such cases, the company reserves the right to close out your hedged positions in order to protect your Account Equity from decreasing further."
-msgstr "Non verrà addebitato alcun margine alle posizioni perfettamente coperte. Tuttavia, swap e altre commissioni applicabili possono rendere l'equity del tuo conto negativo. In tali casi, la società si riserva il diritto di chiudere le tue posizioni coperte per evitare che l'equity del conto diminuisca ulteriormente."
 
 msgid "For the purposes of this Agreement, the following shall mean:"
 msgstr "Ai fini del presente Contratto, si intende quanto segue:"
@@ -5114,8 +5138,8 @@ msgstr "Se la Società (a sua esclusiva discrezione) ritiene che il Cliente non 
 msgid "If the Company believes that unauthorised persons are using an account, it reserves the right to, without prior notice, suspend the Client’s rights to use the Trading Facility."
 msgstr "La Società si riserva la facoltà di sospendere, senza preavviso alcuno, il diritto del Cliente di utilizzare il sistema di trading, qualora ritenesse che persone non autorizzate stiano usando un conto."
 
-msgid "If the Margin Level for your MT5 Real Account reaches or falls below the Stop Out Level, this will be classified as an Event of Default. In such circumstances, Open Positions are automatically closed in the following order: (i) the server analyses clients' Orders that are not under execution at the moment; (ii) the server deletes Orders with the largest Margin; (iii) if your Margin Level is still under the Stop Out Level, the next order is deleted (orders without margin requirements are not deleted); (iv) if your Margin Level is still under the Stop Out Level, the server closes a position with the largest loss; (v) Open Positions are closed until your Margin Level becomes higher than the Stop Out Level."
-msgstr "Se il livello di margine per il tuo conto reale MT5 raggiunge o scende al di sotto del livello di Stop Out, questo sarà classificato come caso di inadempimento. In tali circostanze, le posizioni aperte vengono automaticamente chiuse nel seguente ordine: (i) il server analizza gli ordini dei clienti che al momento non sono in esecuzione; (ii) il server cancella gli ordini con il margine più ampio; (iii) se il tuo livello di margine è ancora sotto il livello di Stop Out, l'ordine successivo viene cancellato (gli ordini senza requisiti di margine non vengono cancellati); (iv) se il tuo livello di margine è ancora al di sotto del livello di Stop Out, il server chiude una posizione con la perdita maggiore; (v) le posizioni aperte vengono chiuse fino a quando il livello di margine supera il livello di Stop Out."
+msgid "If the Margin Level for your MT5 Real Account reaches or falls below the Stop Out Level, this will be classified as an Event of Default. In such circumstances, Open Positions are automatically closed in the following order: (i) the server analyses clients' Orders that are not under execution at the moment; (ii) the server deletes Orders with the largest Margin; (iii) if your Margin Level is still under the Stop Out Level, the next order is deleted (orders without margin requirements are not deleted); (iv) if your Margin Level is still under the Stop Out Level, the server closes a position with the largest loss; (v) Open Positions are closed until your Margin Level becomes higher than the Stop Out Level. Additionally, for perfectly hedged positions, Stop Out will be performed on accounts having open positions, the zero margin (positions are covered), and negative equity."
+msgstr ""
 
 msgid "If the bid price is 1.05229, you'll buy USD 1.05229 for every EUR 1 you sell."
 msgstr "Se il prezzo di offerta è 1,05229, acquisterai 1,05229 USD per ogni 1 EUR che vendi."
@@ -7049,6 +7073,9 @@ msgstr "Nota: i trasferimenti tramite Agente di pagamento sono disponibili solo 
 msgid "Note: This feature is not available if you logged in using a social network."
 msgstr "Nota: questa funzione non è disponibile se hai effettuato l'accesso tramite social network."
 
+msgid "Note: You are limited to one fiat currency account. The currency of your fiat account can be changed before you deposit into your fiat account for the first time or create an MT5 account. You may also open one account for each supported cryptocurrency."
+msgstr ""
+
 msgid "Note: You can only have one fiat currency account and one of each cryptocurrency account."
 msgstr "Nota: puoi avere solo un conto di moneta reale e uno per ogni conto di criptovaluta."
 
@@ -7880,8 +7907,8 @@ msgstr "Selezionare la casella corrispondente."
 msgid "Please select the country where you are a tax resident. If you have any doubts, kindly consult your tax advisor."
 msgstr "Seleziona il paese in cui hai residenza fiscale. In caso di dubbi, ti invitiamo a rivolgerti al tuo consulente fiscale."
 
-msgid "Please select the currency of this account:"
-msgstr "Seleziona la valuta di questo account:"
+msgid "Please select the currency for this account:"
+msgstr ""
 
 msgid "Please select the date range of your statement:"
 msgstr "Seleziona l'intervallo di tempo dell'estratto conto:"
@@ -10595,6 +10622,9 @@ msgstr "Questo è il prezzo attuale al quale un sottostante può essere acquista
 msgid "This is why we've come up with the following three-step tutorial to help you bridge that gap and make your first trade:"
 msgstr "Ecco perché abbiamo creato questo tutorial suddiviso in tre passi: per aiutarti a colmare le tue lacune e realizzare la tua prima operazione di trading:"
 
+msgid "This is your %1 account."
+msgstr ""
+
 msgid "This notice does not explain all of the risks involved in investments or similar products or how such risks relate to your personal circumstances. It is important that you fully understand the risks involved before making a decision to enter into any product with us. If you are in any doubt about the risks involved, you should seek professional advice."
 msgstr "L'informativa non spiega tutti i possibili rischi legati agli investimenti o a prodotti simili, o quali ripercussioni questi possano avere sulla situazione personale di ogni Cliente. È importante comprenderli a pieno prima di avviare un'operazione con noi su qualsiasi prodotto. Se il Cliente dovesse avere dubbi circa i rischi dell'operazione, è bene che richieda la consulenza di un professionista."
 
@@ -12315,11 +12345,17 @@ msgstr "Yandex.Money e un fornitore di servizi di pagamento elettronici che offr
 msgid "Yes"
 msgstr "Sì"
 
+msgid "Yes I'm sure"
+msgstr ""
+
 msgid "Yes, I understand"
 msgstr "Sì, ho capito"
 
 msgid "Yes, I want to sign up as an affiliate"
 msgstr "Sì, voglio registrarmi come associato"
+
+msgid "Yes, I'm sure"
+msgstr ""
 
 msgid "Yes, we will provide you with banners, links, reviews, videos, and text ads that you can use to drive referrals to the %1 MT5 platform."
 msgstr "Sì, ti forniremo banner, link, recensioni, video e annunci di testo che è possibile utilizzare per indirizzare i clienti alla piattaforma MT5 di %1."
@@ -12459,6 +12495,9 @@ msgstr "Prevedi che il valore della valuta base aumenterà, in modo da poter riv
 msgid "You are in default or breach of any covenant, obligation or condition contained in this Agreement, and if such default is not cured within seven days of receipt of written notice from the Company;"
 msgstr "Sei inadempiente o in violazione di qualsiasi accordo, obbligo o condizione contenuta nel presente Accordo, e se tale inadempienza non venga sanata entro sette giorni dal ricevimento della notifica scritta della Società;"
 
+msgid "You are limited to one fiat account. You can change the currency of your fiat account anytime before you make a first-time deposit or create an MT5 account."
+msgstr ""
+
 msgid "You are not allowed to rebate any part commission payment onto your referrals and should the company realise you are engaged in such actions; your affiliate account shall be revoked immediately."
 msgstr "Non ti è consentito ridurre alcun pagamento parziale delle commissioni sui tuoi referenti e qualora la società dovesse realizzare che sei coinvolto in tali azioni; il tuo account di affiliazione verrà revocato immediatamente."
 
@@ -12510,6 +12549,9 @@ msgstr "Il Cliente è in grado di sostenere finanziariamente e accetta di correr
 msgid "You bear the responsibility of ensuring that payments made to the Company are correctly received with the specified Client’s Account details."
 msgstr "Il Cliente di assume la responsabilità di garantire che i pagamenti a favore della Società vengano ricevuti correttamente con i dettagli specificati relativi al conto del Cliente."
 
+msgid "You can %1set a new currency%2 before you deposit for the first time or create an MT5 account."
+msgstr ""
+
 msgid "You can close this window without interrupting your trade."
 msgstr "Puoi chiudere questa finestra senza interrompere il trade."
 
@@ -12527,6 +12569,12 @@ msgstr "Puoi determinare il margine richiesto per le nostre coppie di metalli ut
 
 msgid "You can generate all kinds of insightful reports, including the following:"
 msgstr "Puoi produrre qualsiasi tipo di report, inclusi i seguenti:"
+
+msgid "You can no longer change the currency because you've created an MT5 account."
+msgstr ""
+
+msgid "You can no longer change the currency because you've made a first-time deposit."
+msgstr ""
 
 msgid "You can sell your contract before expiry to keep any profit you may have made or to minimise your loss."
 msgstr "Puoi vendere i tuoi contratti prima della scadenza in modo da realizzare eventuali guadagni oppure per ridurre le eventuali perdite."
@@ -12573,12 +12621,6 @@ msgstr "Hai già prelevato l'equivalente complessivo di %1 %2 negli ultimi %3 gi
 msgid "You have already withdrawn the equivalent of %1 %2."
 msgstr "Hai già prelevato l'equivalente di %1 %2."
 
-msgid "You have chosen %1 as the currency for this account. You cannot change this later. You can have more than one cryptocurrency account."
-msgstr "Hai selezionato %1 come valuta per questo conto; non sarà possibile modificarla in seguito. Puoi avere più di un conto di criptovalute."
-
-msgid "You have chosen %1 as the currency for this account. You cannot change this later. You can have one fiat currency account only."
-msgstr "Hai selezionato %1 come valuta per questo conto; non sarà possibile modificarla in seguito. Puoi avere un solo conto in valuta fiat."
-
 msgid "You have created all accounts available to you."
 msgstr "Hai creato tutti gli account per te disponibili."
 
@@ -12621,11 +12663,14 @@ msgstr "Hai letto completamente la pagina sui Termini e le Condizioni Legali e h
 msgid "You have sold this contract at %1 %2"
 msgstr "Hai venduto questo contratto a %1 %2"
 
-msgid "You have successfully created your %1account!"
-msgstr "La creazione del tuo conto %1 è andata a buon fine!"
+msgid "You have successfully changed your account currency from %1 to %2."
+msgstr ""
 
 msgid "You have successfully created your Virtual Account."
 msgstr "La creazione del tuo conto virtuale è andata a buon fine."
+
+msgid "You have successfully created your real money %1account."
+msgstr ""
 
 msgid "You have successfully disabled two-factor authentication for your account."
 msgstr "L'autenticazione a due fattori per il tuo conto è stata disabilitata con successo."
@@ -12683,6 +12728,9 @@ msgstr "Puoi aprire un conto su questo sito esclusivamente a condizione che:"
 
 msgid "You may only transfer funds between fiat and cryptocurrency accounts."
 msgstr "Puoi trasferire fondi solo tra conti in valuta fiat e criptovaluta."
+
+msgid "You may open one account for each supported cryptocurrency."
+msgstr ""
 
 msgid "You may proceed but please <a href=\"%1\">authenticate</a> your account within five days to continue trading."
 msgstr "È possibile procedere, ma ti invitiamo a effettuare l'<a href=\"%1\">autenticazione</a> del tuo conto entro cinque giorni per continuare il trading."
@@ -12837,6 +12885,12 @@ msgstr "Avrai la possibilità di guadagnare un ulteriore livello di reddito dal 
 msgid "You will increase awareness of your services and generate new business."
 msgstr "Farai conoscere i tuoi servizi e genererai nuovi affari."
 
+msgid "You will not be able to change your fiat account's currency after creating this MT5 account. Are you sure you want to proceed?"
+msgstr ""
+
+msgid "You will not be able to change your fiat account's currency after making this deposit. Are you sure you want to proceed?"
+msgstr ""
+
 msgid "You will provide us with any information that we may reasonably require to fully satisfy the demand or the requirements of the applicable government authority, upon our request."
 msgstr "Ci fornirai tutte le informazioni che potremmo ragionevolmente richiedere per soddisfare pienamente i requisiti e le domande da parte dell'autorità governativa pertinente, su nostra richiesta."
 
@@ -12983,6 +13037,12 @@ msgstr "I tuoi debiti non sono saldati in scadenza."
 
 msgid "Your demo account balance is currently %1 or less. You may top up your account with an additional %2."
 msgstr "Al momento, il saldo del tuo conto demo è inferiore o uguale a %1; puoi ricaricare il conto aggiungendo un importo pari a %2."
+
+msgid "Your fiat account's currency is currently set to %1."
+msgstr ""
+
+msgid "Your fiat account's currency is set to %1."
+msgstr ""
 
 msgid "Your forex and contracts for differences transactions with %1 are linked to an underlying financial instrument and you will be exposed to price, currency exchange, interest rate or other volatility of the market to which your financial instrument is related to, especially if the market is of a jurisdiction that is foreign to you. Forex and contracts for differences trading over the internet via an electronic trading platform is subject to data latency risk which may result in delays in order execution."
 msgstr "Le tue transazioni in forex e contratti per differenze con %1 sono collegati a uno strumento finanziario sottostante e sarai esposto al prezzo, al cambio di valuta, al tasso di interesse o altra volatilità del mercato a cui è collegato il tuo strumento finanziario, specialmente se il mercato è di una giurisdizione che ti è estranea. Il trading in Forex e contratti per differenze effettuato via Internet tramite una piattaforma elettronica di trading è soggetto al rischio di latenza di dati che può comportare ritardi nell'esecuzione degli ordini."

@@ -54,7 +54,7 @@ const RiskDisclaimer = () => (
         <p>{it.L('The content on this website is subject to change at any time without notice and is provided for the sole purpose of assisting traders in making independent investment decisions. [_1] has taken reasonable measures to ensure the accuracy of the information on the website.', it.website_name)}</p>
 
         <h2 data-anchor='costs-and-charges'>{it.L('Costs and Charges')}</h2>
-        <p>{it.L('Our costs and charges for depositing and withdrawing money are set out <a href="[_1]">here</a>. Please be aware of all costs and charges that apply to you because they will affect your profitability.', it.url_for('cashier/payment_methods'))}</p>
+        <p>{it.L('Our costs and charges for depositing and withdrawing money are set out [_1]here[_2]. Please be aware of all costs and charges that apply to you because they will affect your profitability.', `<a href="${it.url_for('cashier/payment_methods')}">`, '</a>')}</p>
 
         <h2 data-anchor='cryptocurrency-risks'>{it.L('Cryptocurrency Risks')}</h2>
         <p>{it.L('Cryptocurrencies are volatile assets that are extremely vulnerable to market fluctuations. Trading in cryptocurrencies is a highly speculative investment because prices of cryptocurrencies can go up and down &mdash; potentially to a worthless (zero) value. You should not trade in cryptocurrencies unless you fully understand and are aware that trades and /or investments involving cryptocurrencies are complex and high risk in nature and you not only risk incurring significant losses over a short period of time but also risk losing all your invested capital.')}</p>
