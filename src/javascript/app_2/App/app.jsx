@@ -22,9 +22,7 @@ const App = ({ root_store }) => (
                 root_store.ui.is_mobile || root_store.ui.is_tablet ?
                     <Wip /> :
                     <React.Fragment>
-                        <div className='header'>
-                            <Header />
-                        </div>
+                        <Header />
                         <ErrorBoundary>
                             <AppContents>
                                 <Routes />
