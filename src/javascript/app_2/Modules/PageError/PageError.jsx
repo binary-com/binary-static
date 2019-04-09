@@ -1,4 +1,5 @@
 import React          from 'react';
+import { localize }  from '_common/localize';
 import { ButtonLink } from 'App/Components/Routes';
 import ErrorBox       from 'App/Components/Elements/ErrorBox';
 
@@ -20,7 +21,7 @@ const PageError = ({
                         <br />
                         <br />
                         <span className='page-error__code'>
-                            { error_code }
+                            { localize('Error Code : [_1]', error_code) }
                         </span>
                     </React.Fragment>
                     }
