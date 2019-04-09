@@ -12,6 +12,7 @@ const Footer = ({
     hideBlur,
     is_dark_mode,
     is_language_dialog_visible,
+    is_loading,
     is_logged_in,
     is_positions_drawer_on,
     is_settings_dialog_on,
@@ -19,7 +20,7 @@ const Footer = ({
     showBlur,
     togglePositionsDrawer,
     toggleSettingsDialog,
-}) => (
+}) => !is_loading ? (
     <React.Fragment>
         <div className='footer__links footer__links--left'>
             {
@@ -44,7 +45,7 @@ const Footer = ({
             <ToggleFullScreen />
         </div>
     </React.Fragment>
-);
+) : null;
 
 Footer.propTypes = {
     is_dark_mode              : PropTypes.bool,
@@ -64,6 +65,7 @@ export default connect(
         is_logged_in              : client.is_logged_in,
         network_status            : common.network_status,
         is_language_dialog_visible: ui.is_language_dialog_on,
+        is_loading                : ui.is_loading,
         is_positions_drawer_on    : ui.is_positions_drawer_on,
         is_settings_dialog_on     : ui.is_settings_dialog_on,
         showBlur                  : ui.showBlur,

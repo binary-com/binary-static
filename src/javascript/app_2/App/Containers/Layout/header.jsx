@@ -22,6 +22,7 @@ const Header = ({
     // hideInstallButton,
     is_acc_switcher_on,
     // is_install_button_visible,
+    is_loading,
     is_logged_in,
     is_mobile,
     is_virtual,
@@ -43,7 +44,7 @@ const Header = ({
 
     });
 
-    return (
+    return !is_loading ? (
         <header className='header'>
             <div className='header__menu-items'>
                 <div className='header__menu-left'>
@@ -92,7 +93,7 @@ const Header = ({
                 </div>
             </div>
         </header>
-    );
+    ) : null;
 };
 
 Header.propTypes = {
@@ -130,6 +131,7 @@ export default withRouter(connect(
         is_acc_switcher_on       : ui.is_accounts_switcher_on,
         is_dark_mode             : ui.is_dark_mode_on,
         is_install_button_visible: ui.is_install_button_visible,
+        is_loading               : ui.is_loading,
         is_mobile                : ui.is_mobile,
         pwa_prompt_event         : ui.pwa_prompt_event,
         setPWAPromptEvent        : ui.setPWAPromptEvent,

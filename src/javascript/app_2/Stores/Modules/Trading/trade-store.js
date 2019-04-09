@@ -513,6 +513,7 @@ export default class TradeStore extends BaseStore {
         });
         this.updateQueryString();
         this.onSwitchAccount(this.accountSwitcherListener);
+        this.root_store.ui.setAppLoading(false);
     }
 
     @action.bound
