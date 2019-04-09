@@ -23,9 +23,12 @@ const Contract = ({
 Contract.propTypes = {
     contract_type      : PropTypes.string,
     contract_types_list: PropTypes.object,
-    is_equal           : PropTypes.number,
-    is_mobile          : PropTypes.bool,
-    onChange           : PropTypes.func,
+    is_equal           : PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
+    ]),
+    is_mobile: PropTypes.bool,
+    onChange : PropTypes.func,
 };
 
 export default connect(
