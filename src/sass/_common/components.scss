@@ -30,6 +30,8 @@
 
 .highcharts-container {
     .highcharts-subtitle {
+        width: 240px !important;
+
         > div {
             &:not(.delay) {
                 display: inline-block;
