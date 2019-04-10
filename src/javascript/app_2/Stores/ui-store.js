@@ -50,8 +50,8 @@ export default class UIStore extends BaseStore {
     @observable duration_h             = 1;
     @observable duration_d             = 1;
 
-    @observable is_blurred     = false;
-    @observable is_app_blurred = false;
+    @observable is_fully_blurred = false;
+    @observable is_app_blurred   = false;
 
     getDurationFromUnit = (unit) => this[`duration_${unit}`];
 
@@ -126,12 +126,12 @@ export default class UIStore extends BaseStore {
 
     @action.bound
     showFullBlur() {
-        this.is_blurred = true;
+        this.is_fully_blurred = true;
     }
 
     @action.bound
     hideFullBlur() {
-        this.is_blurred = false;
+        this.is_fully_blurred = false;
     }
 
     @action.bound
@@ -198,7 +198,6 @@ export default class UIStore extends BaseStore {
     @action.bound
     toggleServicesErrorModal(is_visible) {
         this.is_services_error_visible = is_visible;
-        this.is_app_blurred            = is_visible;
     }
 
     @action.bound
@@ -253,7 +252,6 @@ export default class UIStore extends BaseStore {
 
     @action.bound
     setHasOnlyForwardingContracts(has_only_forward_starting_contracts) {
-        this.is_app_blurred                      = has_only_forward_starting_contracts;
         this.has_only_forward_starting_contracts = has_only_forward_starting_contracts;
     }
 }

@@ -11,7 +11,7 @@ import {
 
 const Footer = ({
     hideFullBlur,
-    is_blurred,
+    is_fully_blurred,
     is_dark_mode,
     is_language_dialog_visible,
     is_logged_in,
@@ -23,7 +23,7 @@ const Footer = ({
     toggleSettingsDialog,
 }) => (
     <footer className={classNames('footer', {
-        'footer--is-blurred': is_blurred,
+        'footer--is-blurred': is_fully_blurred,
     })}
     >
         <div className='footer__links footer__links--left'>
@@ -52,8 +52,8 @@ const Footer = ({
 );
 
 Footer.propTypes = {
-    is_blurred                : PropTypes.bool,
     is_dark_mode              : PropTypes.bool,
+    is_fully_blurred          : PropTypes.bool,
     is_language_dialog_visible: PropTypes.bool,
     is_logged_in              : PropTypes.bool,
     is_positions_drawer_on    : PropTypes.bool,
@@ -66,7 +66,7 @@ Footer.propTypes = {
 export default connect(
     ({ client, common, ui }) => ({
         hideFullBlur              : ui.hideFullBlur,
-        is_blurred                : ui.is_blurred,
+        is_fully_blurred          : ui.is_fully_blurred,
         is_dark_mode              : ui.is_dark_mode_on,
         is_logged_in              : client.is_logged_in,
         network_status            : common.network_status,
