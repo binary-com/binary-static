@@ -120,6 +120,12 @@
                         font-weight: normal;
                     }
                 }
+                @media screen and (max-width: 480px) {
+                    th {
+                        line-height: 30px;
+                    }
+                }
+
                 .last_cell {
                     border-bottom: 0;
                     min-height: 20px;
@@ -203,6 +209,15 @@
             }
             @media only screen and (min-width: 767px) and (max-width: 768px) { /* ipad */
                 max-height: 450px;
+            }
+            @media screen and (max-width: 480px) {
+                .view-chart {
+                    display: none;
+                }
+                .previous-wrapper {
+                    height: 30px;
+                    width: 45px;
+                }
             }
         }
     }
