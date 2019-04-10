@@ -475,7 +475,8 @@ const PersonalDetails = (() => {
             const account_status = State.getResponse('get_account_status').status;
             get_settings_data = State.getResponse('get_settings');
             is_fully_authenticated = checkStatus(account_status , 'authenticated');
-            has_changeable_fields = Client.get('landing_company_shortcode') === 'costarica' && !is_fully_authenticated;
+            // TODO [->svg]
+            has_changeable_fields = (Client.get('landing_company_shortcode') === 'costarica' || Client.get('landing_company_shortcode') === 'svg') && !is_fully_authenticated;
 
             if (!residence) {
                 displayResidenceList();

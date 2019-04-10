@@ -254,18 +254,19 @@ const Header = (() => {
         BinarySocket.wait('authorize', 'landing_company').then(() => {
             let get_account_status,
                 status;
-            const is_costarica = Client.get('landing_company_shortcode') === 'costarica';
-            const necessary_withdrawal_fields = is_costarica
+            // TODO [->svg]
+            const is_svg = Client.get('landing_company_shortcode') === 'costarica' || Client.get('landing_company_shortcode') === 'svg';
+            const necessary_withdrawal_fields = is_svg
                 ? State.getResponse('landing_company.financial_company.requirements.withdrawal')
                 : [];
-            const necessary_signup_fields = is_costarica
+            const necessary_signup_fields = is_svg
                 ? State.getResponse('landing_company.financial_company.requirements.signup')
                     .map(field => (field === 'residence' ? 'country' : field))
                 : [];
 
             const hasMissingRequiredField = () => {
                 // eslint-disable-next-line no-nested-ternary
-                const required_fields = is_costarica ? [ ...necessary_signup_fields, ...necessary_withdrawal_fields ]
+                const required_fields = is_svg ? [ ...necessary_signup_fields, ...necessary_withdrawal_fields ]
                     : Client.isAccountOfType('financial') ? [
                         'account_opening_reason',
                         'address_line_1',
@@ -283,7 +284,7 @@ const Header = (() => {
             const buildMessage = (string, path, hash = '') => template(string, [`<a href="${Url.urlFor(path)}${hash}">`, '</a>']);
             const hasStatus = (string) => status.findIndex(s => s === string) < 0 ? Boolean(false) : Boolean(true);
 
-            const has_no_tnc_limit = Client.get('landing_company_shortcode') === 'costarica';
+            const has_no_tnc_limit = is_svg;
 
             const messages = {
                 authenticate         : () => buildMessage(localizeKeepPlaceholders('[_1]Authenticate your account[_2] now to take full advantage of all payment methods available.'),                                      'user/authenticate'),
