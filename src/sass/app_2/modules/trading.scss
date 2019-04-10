@@ -95,6 +95,32 @@
             border-radius: $BORDER_RADIUS;
         }
     }
+    &__currency {
+        position: absolute;
+        float: left;
+        font-size: 10px;
+        height: 32px;
+        left: 32px;
+        align-items: center;
+        justify-content: center;
+        width: 20px;
+        display: flex;
+        background: transparent;
+        border-color: transparent;
+        z-index: 2;
+        @include themify($themes) {
+            color: themed('text_primary_color');
+        }
+
+        &--symbol {
+            font-size: 1.4em;
+            line-height: 1.5;
+        }
+        &:before {
+            @include typeface(--paragraph-center-normal-black);
+            color: inherit;
+        }
+    }
     &__price {
         line-height: 0.9rem;
         border: 0;
@@ -150,6 +176,9 @@
         &-tooltip {
             &-i {
                 @extend %inline-icon.secondary;
+            }
+            &--disabled {
+                pointer-events: none;
             }
             &[data-tooltip] {
                 text-decoration: none;
