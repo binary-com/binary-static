@@ -2,7 +2,7 @@ import PropTypes     from 'prop-types';
 import React         from 'react';
 import { localize }  from '_common/localize';
 import PageError     from 'Modules/PageError';
-import { routes }     from 'Constants/index';
+import { routes }    from 'Constants/index';
 import Localize      from '../localize.jsx';
 
 const ErrorComponent = ({ message }) => {
