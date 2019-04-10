@@ -1,7 +1,8 @@
-import classNames from 'classnames';
-import PropTypes  from 'prop-types';
-import React      from 'react';
-import Button     from './button.jsx';
+import classNames       from 'classnames';
+import PropTypes        from 'prop-types';
+import React            from 'react';
+import Button           from 'App/Components/Form/button.jsx';
+import HighlightWrapper from './button-highlight-wrapper.jsx';
 
 const ButtonToggleMenu = ({
     buttons_arr,
@@ -28,8 +29,9 @@ const ButtonToggleMenu = ({
     });
     return (
         <div className='button-menu'>
-            {menu}
-            <div className={classNames('button-menu--highlight')} />
+            <HighlightWrapper>
+                {menu}
+            </HighlightWrapper>
         </div>
     );
 };

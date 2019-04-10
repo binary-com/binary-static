@@ -30,14 +30,14 @@ class SettingsDialog extends React.PureComponent {
     componentDidMount() {
         document.addEventListener('mousedown', this.handleClickOutside);
         this.el.classList.add('settings-dialog');
-        this.props.showBlur();
+        this.props.showFullBlur();
         this.state.modal_root.appendChild(this.el);
     }
 
     componentWillUnmount() {
         document.removeEventListener('mousedown', this.handleClickOutside);
         this.state.modal_root.removeChild(this.el);
-        this.props.hideBlur();
+        this.props.hideFullBlur();
     }
 
     handleClickOutside = (event) => {
@@ -96,11 +96,11 @@ class SettingsDialog extends React.PureComponent {
 }
 
 SettingsDialog.propTypes = {
-    hideBlur                  : PropTypes.func,
+    hideFullBlur              : PropTypes.func,
     is_dark_mode              : PropTypes.bool,
     is_language_dialog_visible: PropTypes.bool,
     is_open                   : PropTypes.bool,
-    showBlur                  : PropTypes.func,
+    showFullBlur              : PropTypes.func,
     toggleDialog              : PropTypes.func,
 };
 

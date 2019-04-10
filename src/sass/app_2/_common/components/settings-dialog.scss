@@ -66,7 +66,7 @@
             display: none;
         }
         &--enter, &--exit {
-            transform: translateY(-10%);
+            transform: translateY(50px);
             opacity: 0;
             pointer-events: none;
         }

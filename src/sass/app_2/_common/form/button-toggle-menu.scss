@@ -44,14 +44,35 @@
             }
         }
     }
+    &__wrapper {
+        position: relative;
+        border-radius: $BORDER_RADIUS;
+        width: 100%;
+        @include themify($themes) {
+            background-color: themed('container_color');
+        }
+
+        .button-menu {
+            &__button, &__button--active {
+                background-color: rgba(0, 0, 0, 0) !important;
+                z-index: 1;
+            }
+            &__button:nth-last-child(2) {
+                border-top-right-radius: 4px;
+                border-bottom-right-radius: 4px;
+            }
+        }
+    }
     &--highlight {
+        display: block;
         position: absolute;
+        content: '';
         height: 100%;
         top: 0;
         left: 0;
-        pointer-events: none;
+        z-index: 0;
         transition: transform 0.25s ease;
-        z-index: 2;
+        pointer-events: none;
         @include themify($themes) {
             background-color: themed('active_color') !important;
         }

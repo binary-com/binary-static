@@ -26,8 +26,8 @@
     }
     &__wrapper {
         position: absolute;
-        left: 25%;
-        top: 25%;
+        left: calc(100vw - 75%);
+        top: calc(100vh - 70%);
     }
     &__dialog {
         max-width: 560px;

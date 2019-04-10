@@ -15,11 +15,14 @@ import MarketUnavailableModal      from './Containers/MarketUnavailableModal';
 import ServicesErrorModal          from './Containers/ServicesErrorModal';
 import Wip                         from './Containers/Wip';
 
+// Check if device is touch capable
+const isTouchDevice = 'ontouchstart' in document.documentElement;
+
 const App = ({ root_store }) => (
     <Router basename={getBaseName()}>
         <MobxProvider store={root_store}>
             {
-                root_store.ui.is_mobile || root_store.ui.is_tablet ?
+                root_store.ui.is_mobile || (root_store.ui.is_tablet && isTouchDevice) ?
                     <Wip /> :
                     <React.Fragment>
                         <Header />

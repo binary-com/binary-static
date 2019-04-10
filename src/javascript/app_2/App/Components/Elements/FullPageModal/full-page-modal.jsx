@@ -12,7 +12,7 @@ const ModalWrapper = posed.div({
         delay     : 300,
         transition: {
             y      : { type: 'spring', stiffness: 1000, damping: 15 },
-            default: { duration: 300 },
+            default: { duration: 250 },
         },
     },
     exit: {
