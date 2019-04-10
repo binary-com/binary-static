@@ -1,6 +1,6 @@
 import React        from 'react';
 import { localize } from '_common/localize';
-import { Icon } from 'Assets/Common';
+import { Icon }     from 'Assets/Common';
 import { IconBell } from 'Assets/Header/NavBar';
 
 const EmptyNotification = () => (

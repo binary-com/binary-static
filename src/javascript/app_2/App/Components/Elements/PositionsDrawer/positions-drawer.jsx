@@ -5,7 +5,9 @@ import React                          from 'react';
 import { CSSTransition }              from 'react-transition-group';
 import { Scrollbars }                 from 'tt-react-custom-scrollbars';
 import { localize }                   from '_common/localize';
-import { Icon, IconMinimize }         from 'Assets/Common';
+import {
+    Icon,
+    IconMinimize }                   from 'Assets/Common';
 import EmptyPortfolioMessage          from 'Modules/Portfolio/Components/empty-portfolio-message.jsx';
 import { connect }                    from 'Stores/connect';
 import PositionsDrawerCard            from './positions-drawer-card.jsx';
