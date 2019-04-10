@@ -27,7 +27,7 @@ const ErrorComponent = ({ message }) => {
                     ]}
             redirect_url={routes.trade}
             redirect_label={localize('Refresh')}
-            buttonOnClick={() => window.location.reload()}
+            buttonOnClick={() => location.reload()}
         />
     );
 };
