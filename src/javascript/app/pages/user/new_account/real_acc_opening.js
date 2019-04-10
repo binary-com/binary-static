@@ -14,7 +14,9 @@ const RealAccOpening = (() => {
             if (AccountOpening.redirectAccount()) return;
 
             BinarySocket.wait('landing_company').then(() => {
-                if (State.getResponse('authorize.upgradeable_landing_companies').indexOf('costarica') !== -1) {
+                // TODO [->svg]
+                if (State.getResponse('authorize.upgradeable_landing_companies').indexOf('svg') !== -1 ||
+                    State.getResponse('authorize.upgradeable_landing_companies').indexOf('costarica') !== -1) {
                     getElementById('risk_disclaimer').setVisibility(1);
                 }
 
