@@ -4,7 +4,7 @@ import React          from 'react';
 import { withRouter } from 'react-router';
 import { Scrollbars } from 'tt-react-custom-scrollbars';
 import { connect }    from 'Stores/connect';
-import Loading        from '../../../../../templates/app_2/components/loading.jsx';     
+import Loading        from '../../../../../templates/app_2/components/loading.jsx';
 
 const AppContents = ({
     children, is_contract_mode,
