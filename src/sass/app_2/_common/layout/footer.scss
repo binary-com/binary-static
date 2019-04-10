@@ -96,6 +96,9 @@
             margin-left: 2em;
             text-decoration-line: none;
         }
+        &:before {
+            width: 122px;
+        }
     }
     &__circle {
         background: $COLOR_LIGHT_BLACK_3;

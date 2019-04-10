@@ -25,14 +25,15 @@
                 padding-left: 3.25em;
             }
             &:before, &:after {
-                top: 62%;
+                top: 18px;
             }
         }
         &-info {
             @extend %inline-icon.secondary;
         }
         &-info-balloon-icon {
-            top: 24%;
+            top: 7.5px;
+            left: -317px;
         }
         &:hover {
             .allow-equals__tooltip-info {
