@@ -60,7 +60,7 @@ const PaymentAgentList = () => (
 
         <p id='no_paymentagent' className='notice-msg center-text invisible'>{it.L('Payment Agent services are not available in your country or in your preferred currency.')}</p>
 
-        <p>{it.L('Apply to become a [_1] <a href="[_2]">payment agent</a>.', it.website_name, it.url_for('payment-agent'))}</p>
+        <p>{it.L('Apply to become a [_1] [_2]payment agent[_3].', it.website_name, `<a href="${it.url_for('payment-agent')}">`, '</a>')}</p>
         <p className='comment'>
             <strong>{it.L('IMPORTANT DISCLAIMER')}</strong> - {it.L('[_1] is not affiliated with any of the payment agents listed above. Each payment agent operates as an independent service provider and is not endorsed, guaranteed or otherwise approved by [_1]. CUSTOMERS DEAL WITH PAYMENT AGENTS AT THEIR SOLE RISK AND PERIL. Customers are advised to check the credentials of payment agents before sending them any money. [_1] shall not in any circumstance be held responsible for transactions made between customers and payment agents.', it.website_name)}
         </p>

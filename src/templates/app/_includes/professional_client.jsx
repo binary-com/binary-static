@@ -12,11 +12,11 @@ const ProfessionalClient = () => (
                 <div id='non_uk' className='invisible'>
                     <p>{it.L('Clients need to satisfy at least two of the following criteria in order to receive Professional Client status:')}</p>
                     <ul className='checked'>
-                        <li>{it.L('You’ve carried out significant transactions on markets similar to the ones we offer, averaging 10 transactions per quarter for the previous four quarters')}</li>
+                        <li>{it.L('You\'ve carried out significant transactions on markets similar to the ones we offer, averaging 10 transactions per quarter for the previous four quarters')}</li>
                         <li>{it.L('The size of your instrument portfolio exceeds EUR 500,000 or its equivalent')}</li>
-                        <li>{it.L('You’ve worked in the financial sector for at least one year in a role that requires knowledge of your intended transactions on our platform')}</li>
+                        <li>{it.L('You\'ve worked in the financial sector for at least one year in a role that requires knowledge of your intended transactions on our platform')}</li>
                     </ul>
-                    <p>{it.L('If you choose to be treated as a Professional Client, we’ll regard you as having the required market knowledge and experience. As such, we’ll take steps to ensure that your request for Professional Client status meets the above criteria, including a request for the following:')}</p>
+                    <p>{it.L('If you choose to be treated as a Professional Client, we\'ll regard you as having the required market knowledge and experience. As such, we\'ll take steps to ensure that your request for Professional Client status meets the above criteria, including a request for the following:')}</p>
                 </div>
                 <div id='uk' className='invisible'>
                     <p>{it.L('By opting to be treated as a Professional Client, we shall not presume that you possess market knowledge and experience as defined by the term \'Professional Client\'. We will contact you with the relevant form to complete and will take all reasonable steps to ensure that your request for this Categorization meets the aforementioned criteria, including, but not limited to copies of:')}</p>
@@ -33,7 +33,7 @@ const ProfessionalClient = () => (
             <p>{it.L('A Professional Client receives a lower degree of client protection due to the following:')}</p>
             <ul className='bullet'>
                 <li>{it.L('We presume that you possess the experience, knowledge, and expertise to make your own investment decisions and properly assess the risks involved')}</li>
-                <li>{it.L('We’re not obliged to conduct an appropriateness test, nor provide you with any risk warnings')}</li>
+                <li>{it.L('We\'re not obliged to conduct an appropriateness test, nor provide you with any risk warnings')}</li>
             </ul>
             <p>{it.L('As a Professional Client, you must keep us informed about any changes that may affect your status.')}</p>
             <div className='center-text'>

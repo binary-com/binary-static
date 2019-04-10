@@ -2,6 +2,7 @@ import classNames               from 'classnames';
 import PropTypes                from 'prop-types';
 import React                    from 'react';
 import { localize }             from '_common/localize';
+import { urlFor }               from '_common/url';
 import { isEmptyObject }        from '_common/utility';
 import { IconAccountsCurrency } from 'Assets/Header/AccountsCurrency';
 import { IconLogout }           from 'Assets/Header/Drawer';
@@ -52,6 +53,19 @@ class AccountSwitcher extends React.Component {
 
         const main_account_title = real_accounts.length > 1 ? localize('Real accounts') : localize('Real account');
 
+        const UpgradeButton = ({ text }) => (
+            <div className='acc-switcher__new-account'>
+                <a
+                    className='acc-switcher__new-account-link'
+                    href={urlFor('user/accounts', undefined, undefined, true)}
+                    rel='noopener noreferrer'
+                    target='_blank'
+                >
+                    {text}
+                </a>
+            </div>
+        );
+
         return (
             <div className='acc-switcher__list' ref={this.setWrapperRef}>
                 {
@@ -86,9 +100,7 @@ class AccountSwitcher extends React.Component {
                         {   // TODO: Add link to account opening page for upgrade or multi account page for new account.
                             // Update text below for handling types of account to create :- e.g - Investment
                             !!(this.props.is_upgrade_enabled && this.props.upgrade_info.can_open_multi) &&
-                            <div className='acc-switcher__new-account'>
-                                <span className='acc-switcher__new-account-title'>{localize('Add new account')}</span>
-                            </div>
+                            <UpgradeButton text={localize('Add new account')} />
                         }
                     </div>
                 }
@@ -113,9 +125,7 @@ class AccountSwitcher extends React.Component {
                     </div>
                 }
                 { !!(this.props.is_upgrade_enabled && this.props.is_virtual) &&
-                <div className='acc-switcher__new-account'>
-                    <span className='acc-switcher__new-account-title'>{localize('Upgrade to Real Account')}</span>
-                </div>
+                    <UpgradeButton text={localize('Upgrade to Real Account')} />
                 }
                 <div className='acc-switcher__logout' onClick={this.handleLogout}>
                     <span className='acc-switcher__logout-text'>{localize('Log out')}</span>

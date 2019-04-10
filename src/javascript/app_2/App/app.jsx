@@ -14,28 +14,33 @@ import Routes                      from './Containers/Routes/routes.jsx';
 import DenialOfServiceModal        from './Containers/DenialOfServiceModal';
 import MarketUnavailableModal      from './Containers/MarketUnavailableModal';
 import ServicesErrorModal          from './Containers/ServicesErrorModal';
+import Wip                         from './Containers/Wip';
 
 const App = ({ root_store }) => (
     <Router basename={getBaseName()}>
         <MobxProvider store={root_store}>
-            <React.Fragment>
-                <div className='header'>
-                    <Header />
-                </div>
-                <ErrorBoundary>
-                    <AppContents>
-                        <Routes />
-                        <PositionsDrawer />
-                        <ToastMessage position={POSITIONS.TOP_RIGHT} />
-                    </AppContents>
-                    <DenialOfServiceModal />
-                    <MarketUnavailableModal />
-                    <ServicesErrorModal />
-                </ErrorBoundary>
-                <footer className='footer'>
-                    <Footer />
-                </footer>
-            </React.Fragment>
+            {
+                root_store.ui.is_mobile || root_store.ui.is_tablet ?
+                    <Wip /> :
+                    <React.Fragment>
+                        <div className='header'>
+                            <Header />
+                        </div>
+                        <ErrorBoundary>
+                            <AppContents>
+                                <Routes />
+                                <PositionsDrawer />
+                                <ToastMessage position={POSITIONS.TOP_RIGHT} />
+                            </AppContents>
+                            <DenialOfServiceModal />
+                            <MarketUnavailableModal />
+                            <ServicesErrorModal />
+                        </ErrorBoundary>
+                        <footer className='footer'>
+                            <Footer />
+                        </footer>
+                    </React.Fragment>
+            }
         </MobxProvider>
     </Router>
 );

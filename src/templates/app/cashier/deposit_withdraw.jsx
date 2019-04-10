@@ -13,21 +13,21 @@ const DepositWithdraw = () => (
         </div>
 
         <div id='messages' className='invisible'>
-            <p id='cashier_locked_message'>{it.L('Your cashier is locked as per your request - to unlock it, please click <a href="[_1]">here</a>.', it.url_for('user/security/cashier_passwordws'))}</p>
+            <p id='cashier_locked_message'>{it.L('Your cashier is locked as per your request - to unlock it, please click [_1]here[_2].', `<a href="${it.url_for('user/security/cashier_passwordws')}">`, '</a>')}</p>
             <p id='check_email_message'>{it.L('Please check your email for the verification link to complete the process.')}</p>
             <p id='personal_details_message'>
-                {it.L('There was a problem validating your personal details. Please update your [_1] <a href="[_2]">here</a>.', '[_1]', it.url_for('user/settings/detailsws'))}
-                <br /> {it.L('If you need assistance feel free to contact our <a href="[_1]">Customer Support</a>.', it.url_for('contact'))}
+                {it.L('There was a problem validating your personal details. Please update your [_1] [_2]here[_3].', '[_1]', `<a href="${it.url_for('user/settings/detailsws')}">`, '</a>')}
+                <br /> {it.L('If you need assistance feel free to contact our [_1]Customer Support[_2].', `<a href="${it.url_for('contact')}">`, '</a>')}
             </p>
             <p id='not_authenticated_message'>{it.L('Please [_1]authenticate[_2] your account.',  `<a href="${it.url_for('user/authenticate')}">`, '</a>')}</p>
         </div>
 
         <div id='errors' className='invisible'>
             <p className='center-text notice-msg'>
-                <span id='financial_risk_error'>{it.L('Financial Risk approval is required. Please contact <a href="[_1]">customer support</a> for more information.', it.url_for('contact'))}</span>
-                <span id='age_error'>{it.L('Account needs age verification, please contact <a href="[_1]">customer support</a> for more information.', it.url_for('contact'))}</span>
-                <span id='tnc_error'>{it.L('Please <a href="[_1]">accept the updated Terms and Conditions</a>.', it.url_for('user/tnc_approvalws'))}</span>
-                <span id='limits_error'>{it.L('Please set your <a href="[_1]">30-day turnover limit</a> to access the cashier.', it.url_for('user/security/self_exclusionws'))}</span>
+                <span id='financial_risk_error'>{it.L('Financial Risk approval is required. Please contact [_1]customer support[_2] for more information.', `<a href="${it.url_for('contact')}">`, '</a>')}</span>
+                <span id='age_error'>{it.L('Account needs age verification, please contact [_1]customer support[_2] for more information.', `<a href="${it.url_for('contact')}">`, '</a>')}</span>
+                <span id='tnc_error'>{it.L('Please [_1]accept the updated Terms and Conditions[_2].', `<a href="${it.url_for('user/tnc_approvalws')}">`, '</a>')}</span>
+                <span id='limits_error'>{it.L('Please set your [_1]30-day turnover limit[_2] to access the cashier.', `<a href="${it.url_for('user/security/self_exclusionws')}">`, '</a>')}</span>
                 <span id='token_error'>{it.L('Verification code is wrong. Please use the link sent to your email.')}</span>
                 <span id='custom_error'>{it.L('Sorry, an error occurred while processing your request.')}</span>
             </p>
