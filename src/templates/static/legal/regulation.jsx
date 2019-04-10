@@ -84,7 +84,7 @@ const Regulation = () => {
         <div className='static_full'>
             <h1 className='center-text'>{it.L('Regulatory Information')}</h1>
             <div className='gr-parent gr-padding-30'>
-                <p className='center-text'>{it.L('[_1] is a licensed and regulated trading platform that serves over 1,000,000 customers globally. We hold multiple licenses to comply with regulations around the world. Since 1999, we’ve served our clients with a constant and unwavering commitment to integrity and reliability. We always hold ourselves to the highest ethical standards, in addition to our regulatory requirements.', it.website_name)}</p>
+                <p className='center-text'>{it.L('[_1] is a licensed and regulated trading platform that serves over 1,000,000 customers globally. We hold multiple licenses to comply with regulations around the world. Since 1999, we\'ve served our clients with a constant and unwavering commitment to integrity and reliability. We always hold ourselves to the highest ethical standards, in addition to our regulatory requirements.', it.website_name)}</p>
 
                 <SeparatorLine className='gr-parent gr-padding-20' invisible />
             </div>
@@ -297,7 +297,7 @@ const Regulation = () => {
             </Box>
 
             <Box header={it.L('Binary (BVI) Ltd')} >
-                <p>{it.L('Binary (BVI) Ltd, 2nd Floor, O’Neal Marketing Associates Building, Wickham’s Cay II, P.O. Box 3174, Road Town, Tortola VB1110, British Virgin Islands. Licensed and regulated by the British Virgin Islands Financial Services Commission - [_1]view licence[_2].', `<a href=${it.url_for('download/regulation/BVI_license.pdf')} target="_blank">`, '</a>')}</p>
+                <p>{it.L('Binary (BVI) Ltd, 2nd Floor, O\'Neal Marketing Associates Building, Wickham\'s Cay II, P.O. Box 3174, Road Town, Tortola VB1110, British Virgin Islands. Licensed and regulated by the British Virgin Islands Financial Services Commission - [_1]view licence[_2].', `<a href=${it.url_for('download/regulation/BVI_license.pdf')} target="_blank">`, '</a>')}</p>
                 <p>{it.L('Clients from the rest of the world (excluding certain countries such as the USA, Canada, Costa Rica, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Binary (BVI) Ltd. [_1] is not available in the British Virgin Islands.', it.website_name)}</p>
                 <RegulatorText />
                 <RegulatorImage href='http://www.bvifsc.vg/' image='images/pages/regulation/bvi.png' />

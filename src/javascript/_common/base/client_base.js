@@ -222,7 +222,8 @@ const ClientBase = (() => {
                 upgradeable_landing_companies.indexOf(landing_company) !== -1
             ));
 
-            can_upgrade_to = canUpgrade('costarica', 'iom', 'malta', 'maltainvest');
+            // TODO [->svg]
+            can_upgrade_to = canUpgrade('costarica', 'svg', 'iom', 'malta', 'maltainvest');
             if (can_upgrade_to) {
                 type = can_upgrade_to === 'maltainvest' ? 'financial' : 'real';
             }
@@ -306,7 +307,21 @@ const ClientBase = (() => {
         return (is_from_crypto ? !is_to_crypto : is_to_crypto);
     };
 
-    const hasCostaricaAccount = () => !!(getAllLoginids().find(loginid => /^CR/.test(loginid)));
+    const hasSvgAccount = () => !!(getAllLoginids().find(loginid => /^CR/.test(loginid)));
+
+    const canChangeCurrency = (statement, mt5_login_list, is_current = true) => {
+        const currency             = get('currency');
+        const has_no_mt5           = mt5_login_list.length === 0;
+        const has_no_transaction   = (statement.count === 0 && statement.transactions.length === 0);
+        const has_account_criteria = has_no_transaction && has_no_mt5;
+
+        // Current API requirements for currently logged-in user successfully changing their account's currency:
+        // 1. User must not have made any transactions
+        // 2. User must not have any MT5 account
+        // 3. Not be a crypto account
+        // 4. Not be a virtual account
+        return is_current ? currency && !get('is_virtual') && has_account_criteria && !isCryptocurrency(currency) : has_account_criteria;
+    };
 
     return {
         init,
@@ -333,7 +348,8 @@ const ClientBase = (() => {
         getLandingCompanyValue,
         getRiskAssessment,
         canTransferFunds,
-        hasCostaricaAccount,
+        hasSvgAccount,
+        canChangeCurrency,
     };
 })();
 

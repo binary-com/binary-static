@@ -9,7 +9,7 @@ const ContractTypeCell = ({ type }) => (
             <IconTradeType type={type.toLowerCase()} className='type' />
         </div>
         <span>
-            {getContractTypeDisplay()[type] || ''}
+            {getContractTypeDisplay(type) || ''}
         </span>
     </div>
 );

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-04-03 05:17\n"
+"PO-Revision-Date: 2019-04-08 06:35\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Korean\n"
 "MIME-Version: 1.0\n"
@@ -368,10 +368,10 @@ msgid "%1's IT team is responsible for the design, development, and operation of
 msgstr ""
 
 msgid "%1's IT team is responsible for the design, development, and operation of our system infrastructure and high-traffic networks. As our Cryptocurrency/Blockchain Developer, you will be taking on the challenge of revamping our existing cashier system and infrastructure for our ICO launch. You will also drive all our future blockchain-based projects. Your work will greatly contribute to the architecture that drives our high-traffic binary options trading website."
-msgstr ""
+msgstr "%1의 IT팀은 고 트래픽 네트워크 및 우리 시스템 인프라 구조의 운영, 디자인, 개발에 책임이 있습니다. 우리의 암호화폐/블록체인 개발자로서, 우리의 ICO 개시를 위해 현존 캐쉬어 시스템 및 인프라 구조를 개편하는 도전을 맡게 됩니다. 또한, 블록체인 기반인 우리의 모든 미래 프로젝트를 구동하게 됩니다. 귀하의 업무는 우리의 고 트래픽 바이너리 옵션 트레이딩 웹사이트를 구동하는 구조에 크게 기여할 것입니다."
 
 msgid "%1's IT team is responsible for the design, development, and operation of our websites, applications, and high-traffic networks. As our Front-End Developer, you will be taking on the challenge of developing and maintaining advanced applications and interfaces that connect clients with our patented trading system."
-msgstr "%1의 IT팀은 우리 웹사이트, 응용 프로그램, 및 고 트래픽 네트워크의 운영, 개발, 설계에 대한 책임이 있습니다. 우리의 프론트엔드 개발자로서, 귀하는 우리의 특허받은 거래 시스템과 고객들을 연결해 주는 고급 응용프로그램과 인터페이스 개발 및 유지하는 도전을 맡게 됩니다."
+msgstr "%1의 IT팀은 우리 웹사이트, 응용프로그램, 및 고 트래픽 네트워크의 운영, 개발, 설계에 대한 책임이 있습니다. 우리의 프론트엔드 개발자로서, 귀하는 우리의 특허받은 거래 시스템과 고객들을 연결해 주는 고급 응용프로그램과 인터페이스 개발 및 유지하는 도전을 맡게 됩니다."
 
 msgid "%1's IT team is responsible for the design, development, and operation of our websites, applications, and high-traffic networks. As our Software Tester, we rely on you to run high-quality tests to ensure the stability, quality, and usability of our website and codebase with each software release."
 msgstr ""
@@ -411,6 +411,12 @@ msgstr ""
 
 msgid "%1Founded%2 October 1999"
 msgstr "1999년 10월 %1F설립%2"
+
+msgid "%1Manage your accounts%2"
+msgstr ""
+
+msgid "%1No, change my fiat account's currency now%2"
+msgstr ""
 
 msgid "%1Your Proof of Identity or Proof of Address%2 did not meet our requirements. Please check your email for further instructions."
 msgstr ""
@@ -1346,6 +1352,12 @@ msgid "Are you sure that you want to permanently delete the token"
 msgstr ""
 
 msgid "Are you sure that you want to permanently revoke access to the application"
+msgstr ""
+
+msgid "Are you sure you want to create a fiat account in %1?"
+msgstr ""
+
+msgid "Are you sure you want to create your %1 account now?"
 msgstr ""
 
 msgid "Are you sure?"
@@ -2287,6 +2299,9 @@ msgstr ""
 msgid "Certain limits are imposed as to the acceptable levels for barrier/strike prices of contracts. Typically, the barrier/strike may not be too close nor too far from the current underlying market level."
 msgstr "계약의 장벽/권리행사가격에 관해 수용 가능 수준으로 특정 제한이 적용될 수 있습니다. 일반적으로, 장벽/권리행사가격은 현재 기본 시장가 수준에서 크게 벗어나지도, 너무 근접하지도 않습니다."
 
+msgid "Change"
+msgstr ""
+
 msgid "Change API Endpoint"
 msgstr "API 종점 교체"
 
@@ -2905,9 +2920,6 @@ msgstr ""
 msgid "Countries report: Displays a list of countries where your clicks are coming from"
 msgstr ""
 
-msgid "Country"
-msgstr ""
-
 msgid "Country of Residence"
 msgstr ""
 
@@ -2923,6 +2935,9 @@ msgstr ""
 msgid "Create"
 msgstr ""
 
+msgid "Create %1 account"
+msgstr ""
+
 msgid "Create Account"
 msgstr "계정 만들기"
 
@@ -2931,9 +2946,6 @@ msgstr ""
 
 msgid "Create MetaTrader 5 account"
 msgstr ""
-
-msgid "Create New Account"
-msgstr "새 계정 만들기"
 
 msgid "Create New Token"
 msgstr "새 토큰 만들기"
@@ -2969,6 +2981,9 @@ msgid "Create mathematical/statistical models for pricing, analyse fat tails to 
 msgstr ""
 
 msgid "Create new virtual-money account"
+msgstr ""
+
+msgid "Create or Manage Accounts"
 msgstr ""
 
 msgid "Create strategies against potential risks that might arise due to disruptive innovation"
@@ -3305,7 +3320,7 @@ msgid "Description"
 msgstr "설명"
 
 msgid "Design and develop applications and platforms based on blockchain technology"
-msgstr ""
+msgstr "블록체인 기술에 기반하는 응용프로그램 및 플랫폼을 디자인 및 개발하게 됩니다"
 
 msgid "Design logos, icons, and other visuals for our websites and applications"
 msgstr "우리 웹사이트 및 어플리케이션을 위해 로고, 아이콘 및 다른 시각적인 부분을 디자인"
@@ -3430,6 +3445,9 @@ msgstr ""
 msgid "Do you run a website that promotes Forex or binary options? Join our global network of affiliates and turn your online traffic into revenue."
 msgstr ""
 
+msgid "Do you want this to be a fiat account or crypto account? Please choose one:"
+msgstr ""
+
 msgid "Do you want to learn more about the markets and how to trade them? Check out the resources below."
 msgstr ""
 
@@ -3461,6 +3479,9 @@ msgid "Don't have a %1 account yet?"
 msgstr "아직 %1계정이 없으신가요?"
 
 msgid "Don't show again"
+msgstr ""
+
+msgid "Don't want to trade in %1? You can open another cryptocurrency account."
 msgstr ""
 
 msgid "Don’t share your %1 account or payment methods with any other person."
@@ -4429,6 +4450,9 @@ msgstr "외환: 외환시장은 은행과 다른 주요 금융 기관들이 중�
 msgid "For full contact details of %3, kindly check our %1Contact Us%2 page."
 msgstr "%3에 대한 세부 연락 정보를 보시려면, %1문의하기%2 페이지를 확인해 주세요."
 
+msgid "For fully covered accounts, no margin will be charged on open positions. However, swaps and other applicable fees can cause your Account Equity to turn negative. In that case the Stop Out process will be triggered."
+msgstr ""
+
 msgid "For general support:"
 msgstr "일반적 지원:"
 
@@ -4437,9 +4461,6 @@ msgstr ""
 
 msgid "For payments-related queries:"
 msgstr ""
-
-msgid "For perfectly hedged positions, no margin will be charged. However, swaps and other applicable fees can cause your Account Equity to turn negative. In such cases, the company reserves the right to close out your hedged positions in order to protect your Account Equity from decreasing further."
-msgstr "완벽하게 헷지된 포지션의 경우, 증거금이 청구되지 않을 것입니다. 그렇지만, 스왑 및 적용될 수 있는 다른 요금들은 귀하의 계좌잔고가 마이너스로 가는 원인이 될 수 있습니다. 이런 경우, 본 회사는 이미 마이너스 상태인 귀하의 계좌의 상황이 더 악화되지 않도록 귀하의 헷지된 포지션을 해지할 수 있는 권한이 있습니다."
 
 msgid "For the purposes of this Agreement, the following shall mean:"
 msgstr ""
@@ -5116,8 +5137,8 @@ msgstr "만약 본 회사가(본 회사의 재량으로) 고객이 이러한 조
 msgid "If the Company believes that unauthorised persons are using an account, it reserves the right to, without prior notice, suspend the Client’s rights to use the Trading Facility."
 msgstr "만약 본 회사가 인가받지 않은 사람이 계좌를 사용하는 것이라 판단될 때, 본 회사는 사전 공지 없이 해당 고객의 거래소 이용 권리를 중지할 권리가 있습니다."
 
-msgid "If the Margin Level for your MT5 Real Account reaches or falls below the Stop Out Level, this will be classified as an Event of Default. In such circumstances, Open Positions are automatically closed in the following order: (i) the server analyses clients' Orders that are not under execution at the moment; (ii) the server deletes Orders with the largest Margin; (iii) if your Margin Level is still under the Stop Out Level, the next order is deleted (orders without margin requirements are not deleted); (iv) if your Margin Level is still under the Stop Out Level, the server closes a position with the largest loss; (v) Open Positions are closed until your Margin Level becomes higher than the Stop Out Level."
-msgstr "귀하의 MT5 실계좌에 대한 마진 레벨이 스탑아웃 레벨에 도달하거나 그 수준에 미치지 못하는 경우, 이는 채무불이행으로 분류됩니다. 이러한 상황에서는, 오픈 포지션은 다음의 순서대로 자동으로 해지됩니다: (i) 서버가 당시에 실행중이지 않은 고객 주문들을 분석합니다; (ii) 서버가 가장 높은 마진이 있는 주문을 제거합니다; (iii) 귀하의 마진 레벨이 여전히 스탑아웃 레벨의 아래인 경우, 그 다음의 주문은 제거됩니다 (증거금률이 없는 주문은 제거되지 않습니다); (iv) 만약 귀하의 마진 레벨이 아직도 스탑아웃 레벨의 아래인 경우, 서버는 가장 큰 손실이 있는 포지션을 닫습니다; (v) 오픈 포지션들은 귀하의 마진 레벨이 스탑아웃 레벨보다 높아질 때까지 닫히게 됩니다."
+msgid "If the Margin Level for your MT5 Real Account reaches or falls below the Stop Out Level, this will be classified as an Event of Default. In such circumstances, Open Positions are automatically closed in the following order: (i) the server analyses clients' Orders that are not under execution at the moment; (ii) the server deletes Orders with the largest Margin; (iii) if your Margin Level is still under the Stop Out Level, the next order is deleted (orders without margin requirements are not deleted); (iv) if your Margin Level is still under the Stop Out Level, the server closes a position with the largest loss; (v) Open Positions are closed until your Margin Level becomes higher than the Stop Out Level. Additionally, for perfectly hedged positions, Stop Out will be performed on accounts having open positions, the zero margin (positions are covered), and negative equity."
+msgstr ""
 
 msgid "If the bid price is 1.05229, you'll buy USD 1.05229 for every EUR 1 you sell."
 msgstr ""
@@ -7051,6 +7072,9 @@ msgstr ""
 msgid "Note: This feature is not available if you logged in using a social network."
 msgstr "각주: 소셜 네트워크 이용을 통해 로그인 할 시 이 기능은 이용할 수 없습니다."
 
+msgid "Note: You are limited to one fiat currency account. The currency of your fiat account can be changed before you deposit into your fiat account for the first time or create an MT5 account. You may also open one account for each supported cryptocurrency."
+msgstr ""
+
 msgid "Note: You can only have one fiat currency account and one of each cryptocurrency account."
 msgstr ""
 
@@ -7882,7 +7906,7 @@ msgstr "체크박스를 선택해주세요."
 msgid "Please select the country where you are a tax resident. If you have any doubts, kindly consult your tax advisor."
 msgstr ""
 
-msgid "Please select the currency of this account:"
+msgid "Please select the currency for this account:"
 msgstr ""
 
 msgid "Please select the date range of your statement:"
@@ -7927,7 +7951,7 @@ msgstr ""
 msgid "Positions that are still open on Wednesday at 23:59:59 GMT will be charged three times the swap rate to account for weekends – a standard practice for all brokers."
 msgstr ""
 
-msgid "Postal Code / ZIP"
+msgid "Postal Code/ZIP"
 msgstr ""
 
 msgid "Postal code/ZIP"
@@ -10597,6 +10621,9 @@ msgstr ""
 msgid "This is why we've come up with the following three-step tutorial to help you bridge that gap and make your first trade:"
 msgstr ""
 
+msgid "This is your %1 account."
+msgstr ""
+
 msgid "This notice does not explain all of the risks involved in investments or similar products or how such risks relate to your personal circumstances. It is important that you fully understand the risks involved before making a decision to enter into any product with us. If you are in any doubt about the risks involved, you should seek professional advice."
 msgstr "이 공지가 투자 또는 비슷한 상품에 관련되어 있는 모든 위험들에 대해서 또는 이러한 위험들이 귀하의 개인 상황에 어떻게 관계되는지에 대하여 설명하지는 않습니다. 우리와 상품에 대한 체결을 하는 결정을 하기 전에 연관되어 있는 위험들에 대하여 완전히 숙지하는 것이 중요합니다. 연관되어 있는 위험들에 관하여 의문이 생길 경우에는, 전문적인 조언을 구해야 합니다."
 
@@ -12316,10 +12343,16 @@ msgstr ""
 msgid "Yes"
 msgstr ""
 
+msgid "Yes I'm sure"
+msgstr ""
+
 msgid "Yes, I understand"
 msgstr "예, 이해합니다"
 
 msgid "Yes, I want to sign up as an affiliate"
+msgstr ""
+
+msgid "Yes, I'm sure"
 msgstr ""
 
 msgid "Yes, we will provide you with banners, links, reviews, videos, and text ads that you can use to drive referrals to the %1 MT5 platform."
@@ -12460,6 +12493,9 @@ msgstr ""
 msgid "You are in default or breach of any covenant, obligation or condition contained in this Agreement, and if such default is not cured within seven days of receipt of written notice from the Company;"
 msgstr "본 계약에 표기된 약속, 의무 또는 조건의 불이행 또는 위반한 경우 및 본 해당되는 불이행 사항으로 회사로부터 서면으로 공지 받은 후 7일 이내에 수정되지 않는 경우;"
 
+msgid "You are limited to one fiat account. You can change the currency of your fiat account anytime before you make a first-time deposit or create an MT5 account."
+msgstr ""
+
 msgid "You are not allowed to rebate any part commission payment onto your referrals and should the company realise you are engaged in such actions; your affiliate account shall be revoked immediately."
 msgstr "당신은 당신의 추천인에 대한 수수료 지불의 어떤 부분이라도 환불을 할 수 없습으며 본 회사가 당신이 이러한 행위를 하는 것을 적발할 경우; 당신의 제휴계좌는 즉시 폐지될 것입니다."
 
@@ -12511,6 +12547,9 @@ msgstr "귀하가 Binary Investments (Europe) Ltd의 개인 고객이 아닌 경
 msgid "You bear the responsibility of ensuring that payments made to the Company are correctly received with the specified Client’s Account details."
 msgstr ""
 
+msgid "You can %1set a new currency%2 before you deposit for the first time or create an MT5 account."
+msgstr ""
+
 msgid "You can close this window without interrupting your trade."
 msgstr ""
 
@@ -12527,6 +12566,12 @@ msgid "You can determine the required margin for our metal pairs by using the fo
 msgstr ""
 
 msgid "You can generate all kinds of insightful reports, including the following:"
+msgstr ""
+
+msgid "You can no longer change the currency because you've created an MT5 account."
+msgstr ""
+
+msgid "You can no longer change the currency because you've made a first-time deposit."
 msgstr ""
 
 msgid "You can sell your contract before expiry to keep any profit you may have made or to minimise your loss."
@@ -12574,12 +12619,6 @@ msgstr ""
 msgid "You have already withdrawn the equivalent of %1 %2."
 msgstr ""
 
-msgid "You have chosen %1 as the currency for this account. You cannot change this later. You can have more than one cryptocurrency account."
-msgstr ""
-
-msgid "You have chosen %1 as the currency for this account. You cannot change this later. You can have one fiat currency account only."
-msgstr ""
-
 msgid "You have created all accounts available to you."
 msgstr ""
 
@@ -12622,10 +12661,13 @@ msgstr "귀하는 이 법적 약관을 모두 읽었고 이 금융 계약들을 
 msgid "You have sold this contract at %1 %2"
 msgstr ""
 
-msgid "You have successfully created your %1account!"
+msgid "You have successfully changed your account currency from %1 to %2."
 msgstr ""
 
 msgid "You have successfully created your Virtual Account."
+msgstr ""
+
+msgid "You have successfully created your real money %1account."
 msgstr ""
 
 msgid "You have successfully disabled two-factor authentication for your account."
@@ -12683,6 +12725,9 @@ msgid "You may only open an account at this site on conditions that:"
 msgstr "귀하는 본 사이트를 통해 다음의 조건으로만 계좌를 개설할 수 있습니다:"
 
 msgid "You may only transfer funds between fiat and cryptocurrency accounts."
+msgstr ""
+
+msgid "You may open one account for each supported cryptocurrency."
 msgstr ""
 
 msgid "You may proceed but please <a href=\"%1\">authenticate</a> your account within five days to continue trading."
@@ -12838,6 +12883,12 @@ msgstr ""
 msgid "You will increase awareness of your services and generate new business."
 msgstr ""
 
+msgid "You will not be able to change your fiat account's currency after creating this MT5 account. Are you sure you want to proceed?"
+msgstr ""
+
+msgid "You will not be able to change your fiat account's currency after making this deposit. Are you sure you want to proceed?"
+msgstr ""
+
 msgid "You will provide us with any information that we may reasonably require to fully satisfy the demand or the requirements of the applicable government authority, upon our request."
 msgstr "적용되는 정부 기관의 요구사항 또는 요청을 완전히 만족시키기 위해 우리가 합리적으로 요청할 수 있는 그 어떠한 정보를 우리의 요청 하에 귀하는 우리에게 제공할 것입니다."
 
@@ -12854,7 +12905,7 @@ msgid "You will, at all times, obtain and comply, and do all that is necessary t
 msgstr "귀하는, 이 조항에서 언급되는 모든 권위, 능력, 동의, 라이센스 및 권한에 대해 최대로 유효할 수 있도록 준수해야 합니다;"
 
 msgid "You will:"
-msgstr ""
+msgstr "귀하는:"
 
 msgid "You win the payout if the market price does not end in the digit you have selected."
 msgstr ""
@@ -12983,6 +13034,12 @@ msgid "Your debts are not settled as, and when, they fall due."
 msgstr "당신의 부채가, 만기시 지불완료되지 않을 때."
 
 msgid "Your demo account balance is currently %1 or less. You may top up your account with an additional %2."
+msgstr ""
+
+msgid "Your fiat account's currency is currently set to %1."
+msgstr ""
+
+msgid "Your fiat account's currency is set to %1."
 msgstr ""
 
 msgid "Your forex and contracts for differences transactions with %1 are linked to an underlying financial instrument and you will be exposed to price, currency exchange, interest rate or other volatility of the market to which your financial instrument is related to, especially if the market is of a jurisdiction that is foreign to you. Forex and contracts for differences trading over the internet via an electronic trading platform is subject to data latency risk which may result in delays in order execution."
