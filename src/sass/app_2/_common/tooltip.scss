@@ -1,7 +1,6 @@
 /** @define tooltip */
 .tooltip {
-    text-decoration: underline;
-    text-decoration-style: dotted;
+    text-decoration: none;
     font-size: inherit;
     @include themify($themes) {
         color: themed('text_active_color');
@@ -53,6 +52,7 @@
             padding: 0.7em;
             margin-bottom: 10px;
             width: max-content;
+            width: 220px;
             max-width: 280px;
         }
         &:after {
@@ -123,6 +123,9 @@
                 opacity: 0.96;
                 pointer-events: auto;
                 transform: translate(0, -50%);
+            }
+            &:before {
+                width: 180px;
             }
         }
     }

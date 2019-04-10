@@ -105,15 +105,27 @@ const PositionsDrawerCard = ({
                             'positions-drawer-card__indicative-label',
                         )}
                         >
-                            {!result ? localize('Potential Payout:') : localize('Payout:')}
+                            {!result ? localize('Indicative Price:') : localize('Payout:')}
                         </div>
                         <div className={classNames(
                             'positions-drawer-card__profit-loss', {
-                                'positions-drawer-card__profit-loss--negative': (profit_loss < 0),
-                                'positions-drawer-card__profit-loss--positive': (profit_loss > 0),
+                                'positions-drawer-card__profit-loss--minus'   : (status !== 'complete' && profit_loss < 0),
+                                'positions-drawer-card__profit-loss--plus'    : (status !== 'complete' && profit_loss > 0),
+                                'positions-drawer-card__profit-loss--negative': (status === 'complete' && profit_loss < 0),
+                                'positions-drawer-card__profit-loss--positive': (status === 'complete' && profit_loss > 0),
                             })}
                         >
                             <Money amount={Math.abs(profit_loss)} currency={currency} />
+                            <div className={classNames(
+                                'positions-drawer-card__indicative--movement', {
+                                    'positions-drawer-card__indicative--movement-complete': (status === 'complete'),
+                                },
+                            )}
+                            >
+                                <IconPriceMove
+                                    type={(status !== 'complete') ? status : null}
+                                />
+                            </div>
                         </div>
                         <div className='positions-drawer-card__indicative'>
                             <Money amount={indicative} currency={currency} />
@@ -151,7 +163,7 @@ const PositionsDrawerCard = ({
                     <Button
                         className={classNames(
                             'btn--primary',
-                            'btn--primary--orange',
+                            'btn--primary--green',
                             'btn--sell', {
                                 'btn--loading': is_sell_requested,
                             })}
