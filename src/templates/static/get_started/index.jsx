@@ -69,8 +69,8 @@ const Index = () => (
                 className='gr-padding-20 gr-parent tab-selector-wrapper'
                 items={[
                     { id: 'binary',   text: it.L('Binary Options') },
-                    { id: 'lookback', text: it.L('Lookbacks'), dataShow: 'default, virtual, costarica, svg' }, // TODO [->svg]
-                    { id: 'mt5',      text: it.L('MetaTrader 5'), dataShow: 'mtcompany' },
+                    { id: 'lookback', text: it.L('Lookbacks') },
+                    { id: 'mt5',      text: it.L('MetaTrader 5') },
                     { id: 'get_started_tabs_selector', className: 'tab-selector' },
                 ]}
             />
