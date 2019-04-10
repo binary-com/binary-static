@@ -3,10 +3,11 @@ import PropTypes      from 'prop-types';
 import React          from 'react';
 import { Link }       from 'react-router-dom';
 
-const ButtonLink = ({ children, className, to }) => (
+const ButtonLink = ({ children, className, to, onClick }) => (
     <Link
         className={classNames('btn btn--link', className, 'effect')}
         to={to}
+        onClick={onClick}
     >
         {children}
     </Link>

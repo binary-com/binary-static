@@ -21,6 +21,7 @@ const ErrorComponent = ({ message }) => {
             message={msg || localize('Sorry, an error occured while processing your request.')}
             redirect_url={routes.trade}
             redirect_label={localize('Refresh')}
+            buttonOnClick={() => window.location.reload()}
         />
     );
 };

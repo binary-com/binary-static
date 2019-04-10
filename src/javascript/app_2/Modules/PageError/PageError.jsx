@@ -9,6 +9,7 @@ const PageError = ({
     error_code,
     redirect_url,
     redirect_label,
+    buttonOnClick,
 }) => (
     <div className='page-error__container'>
         <ErrorBox
@@ -31,6 +32,7 @@ const PageError = ({
             <ButtonLink
                 className='page-error__btn btn--primary btn--primary--orange'
                 to={redirect_url}
+                onClick={buttonOnClick}
             >
                 <span className='page-error__btn-text btn__text'>
                     {redirect_label}
