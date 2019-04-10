@@ -399,6 +399,7 @@ const ViewPopup = (() => {
         getElementById('sell_details_chart_wrapper').setVisibility(!show);
         getElementById('sell_details_audit').setVisibility(show);
         ViewPopupUI.repositionConfirmation();
+        $('body, html, #sell_content_wrapper').scrollTop(0);
     };
 
     const setAuditButtonsVisibility = (show = true) => {
