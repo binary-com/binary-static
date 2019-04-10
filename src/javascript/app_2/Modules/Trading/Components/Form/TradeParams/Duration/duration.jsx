@@ -46,7 +46,7 @@ const Duration = ({
             expiry_list.pop(); // remove end time for contracts with only tick duration
         }
     } else if (!has_end_time) {
-        expiry_list.push({ text: localize('End Time'), value: 'endtime' });
+        expiry_list.push({ text: localize('End time'), value: 'endtime' });
     }
 
     if (is_minimized) {

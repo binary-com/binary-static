@@ -96,6 +96,16 @@
         height: 1.4em;
         position: relative;
     }
+    &__tooltip[data-tooltip] {
+        &:before, &:after {
+            left: unset;
+            margin-left: 2em;
+            text-decoration-line: none;
+        }
+        &:before {
+            width: 122px;
+        }
+    }
     &__circle {
         background: $COLOR_LIGHT_BLACK_3;
         width: 1em;

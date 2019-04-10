@@ -26,7 +26,7 @@
         }
 
         span {
-            @include typeface(--paragraph-left-normal-black);
+            @include typeface(--paragraph-left-normal-black, unset);
             @include themify($themes) {
                 color: themed('text_primary_color');
             }
@@ -37,7 +37,7 @@
             }
 
             span {
-                @include typeface(--paragraph-left-bold-active);
+                @include typeface(--paragraph-left-bold-active, unset);
                 @include themify($themes) {
                     color: themed('text_active_color');
                 }
