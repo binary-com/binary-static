@@ -43,7 +43,8 @@ const SetCurrency = (() => {
             const landing_company = State.getResponse('landing_company');
             let currencies        = State.getResponse('payout_currencies');
 
-            if (Client.get('landing_company_shortcode') === 'costarica') {
+            // TODO [->svg]
+            if (Client.get('landing_company_shortcode') === 'costarica' || Client.get('landing_company_shortcode') === 'svg') {
                 currencies = getCurrencies(landing_company);
             }
             const $fiat_currencies  = $('<div/>');

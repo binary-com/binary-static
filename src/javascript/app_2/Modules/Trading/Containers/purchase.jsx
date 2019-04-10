@@ -1,14 +1,8 @@
-import classNames        from 'classnames';
-import PropTypes         from 'prop-types';
-import React             from 'react';
-import { localize }      from '_common/localize';
-import { PopConfirm }    from 'App/Components/Elements/PopConfirm';
-import Tooltip           from 'App/Components/Elements/tooltip.jsx';
-import Fieldset          from 'App/Components/Form/fieldset.jsx';
-import { connect }       from 'Stores/connect';
-import ContractInfo      from '../Components/Form/Purchase/contract-info.jsx';
-import PurchaseLock      from '../Components/Form/Purchase/PurchaseLock';
-import PurchaseButton    from '../Components/Elements/purchase-button.jsx';
+import PropTypes                   from 'prop-types';
+import React                       from 'react';
+import PurchaseFieldset            from 'Modules/Trading/Components/Elements/purchase-fieldset.jsx';
+import { getContractTypePosition } from 'Constants/contract';
+import { connect }                 from 'Stores/connect';
 
 const Purchase = ({
     basis,
@@ -26,8 +20,9 @@ const Purchase = ({
     proposal_info,
     trade_types,
     validation_errors,
-}) => (
-    Object.keys(trade_types).map((type, idx) => {
+}) => {
+    const components = [];
+    Object.keys(trade_types).map((type, index) => {
         const info        = proposal_info[type] || {};
         const is_disabled = !is_purchase_enabled
             || !is_trade_enabled
@@ -36,67 +31,40 @@ const Purchase = ({
         const is_high_low         = /high_low/.test(contract_type.toLowerCase());
         const is_validation_error = Object.values(validation_errors).some(e => e.length);
         const is_loading          = !is_validation_error && !info.has_error && !info.id;
+        const is_proposal_error   = info.has_error && !info.has_error_details;
 
-        const purchase_button = (
-            <PurchaseButton
+        const purchase_fieldset = (
+            <PurchaseFieldset
+                basis={basis}
                 currency={currency}
                 info={info}
+                key={index}
+                index={index}
                 is_contract_mode={is_contract_mode}
                 is_disabled={is_disabled}
                 is_high_low={is_high_low}
                 is_loading={is_loading}
+                is_purchase_confirm_on={is_purchase_confirm_on}
+                is_proposal_error={is_proposal_error}
+                is_purchase_locked={is_purchase_locked}
+                togglePurchaseLock={togglePurchaseLock}
+                onHoverPurchase={onHoverPurchase}
                 onClickPurchase={onClickPurchase}
-                trade_types={trade_types}
                 type={type}
             />
         );
+        const contract_type_position = getContractTypePosition(type);
+        if (contract_type_position === 'top') {
+            components.unshift(purchase_fieldset);
+        } else if (contract_type_position === 'bottom') {
+            components.push(purchase_fieldset);
+        } else {
+            components.push(purchase_fieldset);
+        }
+    });
 
-        const is_proposal_error = info.has_error && !info.has_error_details;
-
-        return (
-            <Fieldset
-                className='trade-container__fieldset purchase-container__option'
-                key={idx}
-            >
-                {(is_purchase_locked && idx === 0) &&
-                <PurchaseLock onClick={togglePurchaseLock} />
-                }
-                <React.Fragment>
-                    <ContractInfo
-                        basis={basis}
-                        currency={currency}
-                        proposal_info={info}
-                        has_increased={info.has_increased}
-                        is_loading={is_loading}
-                        is_visible={!is_contract_mode}
-                    />
-                    <div
-                        className={classNames('btn-purchase__shadow-wrapper', { 'btn-purchase__shadow-wrapper--disabled': (is_proposal_error || is_disabled) })}
-                        onMouseEnter={() => { onHoverPurchase(true, type); }}
-                        onMouseLeave={() => { onHoverPurchase(false); }}
-                    >
-                        {is_proposal_error &&
-                        <Tooltip message={info.message} alignment='left' className='tooltip--error-secondary' />
-                        }
-                        {
-                            is_purchase_confirm_on ?
-                                <PopConfirm
-                                    alignment='left'
-                                    cancel_text={localize('Cancel')}
-                                    confirm_text={localize('Purchase')}
-                                    message={localize('Are you sure you want to purchase this contract?')}
-                                >
-                                    {purchase_button}
-                                </PopConfirm>
-                                :
-                                purchase_button
-                        }
-                    </div>
-                </React.Fragment>
-            </Fieldset>
-        );
-    })
-);
+    return components;
+};
 
 Purchase.propTypes = {
     basis                     : PropTypes.string,
