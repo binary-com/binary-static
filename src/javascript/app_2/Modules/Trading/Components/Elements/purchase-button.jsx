@@ -1,8 +1,10 @@
-import classNames        from 'classnames';
-import React             from 'react';
-import { localize }      from '_common/localize';
-import Button            from 'App/Components/Form/button.jsx';
-import { IconTradeType } from 'Assets/Trading/Types';
+import classNames                 from 'classnames';
+import PropTypes                  from 'prop-types';
+import React                      from 'react';
+import { localize }               from '_common/localize';
+import Button                     from 'App/Components/Form/button.jsx';
+import { IconTradeType }          from 'Assets/Trading/Types';
+import { getContractTypeDisplay } from 'Constants/contract';
 
 const PurchaseButton = ({
     info,
@@ -11,11 +13,10 @@ const PurchaseButton = ({
     is_high_low,
     is_loading,
     onClickPurchase,
-    trade_types,
     type,
 }) => (
     <Button
-        is_disabled={ is_contract_mode || is_disabled }
+        is_disabled={is_contract_mode || is_disabled}
         id={`purchase_${type}`}
         className={classNames(
             'btn-purchase',
@@ -29,11 +30,15 @@ const PurchaseButton = ({
                 <div className='btn-purchase__icon_wrapper'>
                     <IconTradeType
                         className='btn-purchase__icon'
-                        type={!is_loading && is_high_low ? `${type.toLowerCase()}_barrier` : type.toLowerCase()}
+                        type={!is_loading
+                            ? (is_high_low
+                                ? `${type.toLowerCase()}_barrier`
+                                : type.toLowerCase())
+                            : ''}
                     />
                 </div>
                 <div className='btn-purchase__text_wrapper'>
-                    <span className='btn-purchase__text'>{ !is_loading && localize('[_1]', trade_types[type])}</span>
+                    <span className='btn-purchase__text'>{!is_loading && localize('[_1]', getContractTypeDisplay(type, is_high_low))}</span>
                 </div>
             </div>
             <div className='btn-purchase__effect-detail' />
@@ -45,5 +50,16 @@ const PurchaseButton = ({
         </React.Fragment>
     </Button>
 );
+
+PurchaseButton.propTypes = {
+    currency        : PropTypes.string,
+    info            : PropTypes.object,
+    is_contract_mode: PropTypes.bool,
+    is_disabled     : PropTypes.bool,
+    is_high_low     : PropTypes.bool,
+    is_loading      : PropTypes.bool,
+    onClickPurchase : PropTypes.func,
+    type            : PropTypes.string,
+};
 
 export default PurchaseButton;
