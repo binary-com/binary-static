@@ -16,6 +16,7 @@ const ButtonLink = ({ children, className, to, onClick }) => (
 ButtonLink.propTypes = {
     children : PropTypes.object,
     className: PropTypes.string,
+    onClick  : PropTypes.func,
     to       : PropTypes.string,
 };
 

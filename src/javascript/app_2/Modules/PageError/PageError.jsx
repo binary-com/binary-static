@@ -1,15 +1,16 @@
+import PropTypes      from 'prop-types';
 import React          from 'react';
-import { localize }  from '_common/localize';
+import { localize }   from '_common/localize';
 import { ButtonLink } from 'App/Components/Routes';
 import ErrorBox       from 'App/Components/Elements/ErrorBox';
 
 const PageError = ({
+    buttonOnClick,
+    error_code,
     header,
     message,
-    error_code,
-    redirect_url,
     redirect_label,
-    buttonOnClick,
+    redirect_url,
 }) => (
     <div className='page-error__container'>
         <ErrorBox
@@ -41,5 +42,14 @@ const PageError = ({
         </ErrorBox>
     </div>
 );
+
+PageError.propTypes = {
+    buttonOnClick : PropTypes.func,
+    error_code    : PropTypes.number,
+    header        : PropTypes.string,
+    message       : PropTypes.string,
+    redirect_label: PropTypes.string,
+    redirect_url  : PropTypes.string,
+};
 
 export default PageError;
