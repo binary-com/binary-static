@@ -3,23 +3,25 @@ import BIEL from './biel.jsx';
 
 const Li = ({ title, subtitle, sub_list, paragraph }) => (
     <li><strong>{title}</strong> &mdash; {subtitle}
-        { sub_list && <ol>{sub_list.map(list => <li key={list}>{list}</li>)}</ol> }
-        { paragraph && <p>{paragraph}</p> }
+        {sub_list && <ol>{sub_list.map(list => <li key={list}>{list}</li>)}</ol>}
+        {paragraph && <p>{paragraph}</p>}
     </li>
 );
 
 const TermsAndConditions = () => (
     <div id='mt-tnc'>
-        <h2 data-anchor='introduction-and-scope-of-agreement'>{it.L('A. Introduction and Scope of Agreement')}</h2>
+        <h2 data-anchor='introduction-and-scope-of-agreement'>{it.L('A. Introduction and scope of agreement')}</h2>
         <ol>
             <li>
-                {it.L('Depending on the jurisdiction to which a Client\'s account has been attached in accordance with the account opening procedures of the website, the term \'we\', \'us\', \'our\', \'ours\', \'the Company\', or \'[_1]\' shall denote either', it.website_name)}&nbsp;
-                <span data-show='-eucountry'>{it.L('Binary (V) Ltd.,')}&nbsp;</span>
-                <span data-show='-eucountry'>{it.L('Binary (C.R.) S.A.,')}&nbsp;</span>
-                <span data-show='-eucountry'>{it.L('Binary (BVI) Ltd.,')}&nbsp;</span>
-                <span data-show='-eucountry'>{it.L('Binary (FX) Ltd.,')}&nbsp;</span>
-                <span>{it.L('Binary (Europe) Ltd, or')}&nbsp;</span>
-                <span>{it.L('Binary Investments (Europe) Ltd.')}</span>
+                {it.L('Depending on the jurisdiction to which a Client\'s account has been attached in accordance with the account opening procedures of the website, the terms \'the Company\' and \'[_1]\' shall denote either', it.website_name)}&nbsp;
+                <ul style={{listStyle: 'none'}}>
+                    <span data-show='-eucountry'>{it.L('Binary (V) Ltd.,')}&nbsp;</span><br/>
+                    <span data-show='-eucountry'>{it.L('Binary (C.R.) S.A.,')}&nbsp;</span><br/>
+                    <span data-show='-eucountry'>{it.L('Binary (BVI) Ltd.,')}&nbsp;</span><br/>
+                    <span data-show='-eucountry'>{it.L('Binary (FX) Ltd.,')}&nbsp;</span><br/>
+                    <span>{it.L('Binary (Europe) Ltd, or')}&nbsp;</span><br/>
+                    <span>{it.L('Binary Investments (Europe) Ltd.')}</span>
+                </ul>
             </li>
 
             <li>{it.L('You understand that products based on a random number generator (the "Volatility Indices") are gaming products whereas products based on financial market indices (forex, indices, commodities) are financial instruments.')}</li>
@@ -407,40 +409,40 @@ const TermsAndConditions = () => (
                 ]}
                 paragraph={it.L('Your account balance includes the Margin Requirement. The amount of your account balance in excess of the Margin Requirement is available for your withdrawal. The amount set aside for the Margin Requirement is not available for your withdrawal.')}
             />
-            <Li title={it.L('Account Deposit Currency')}      subtitle={it.L('currency in which your MT5 Real Account will be operated.')} />
-            <Li title={it.L('Account Equity')}                subtitle={it.L('Your Account Equity refers to the sum of your Account Balance and the net of unrealised profit and loss.')} />
-            <Li title={it.L('Account Free Margin')}           subtitle={it.L('Your Account Equity minus your Total Margin.')} />
+            <Li title={it.L('Account Deposit Currency')} subtitle={it.L('currency in which your MT5 Real Account will be operated.')} />
+            <Li title={it.L('Account Equity')} subtitle={it.L('Your Account Equity refers to the sum of your Account Balance and the net of unrealised profit and loss.')} />
+            <Li title={it.L('Account Free Margin')} subtitle={it.L('Your Account Equity minus your Total Margin.')} />
             <Li title={it.L('[_1] account', it.website_name)} subtitle={it.L('Your Real Money Account opened with [_1] which you use to trade binary options with [_1] Trading Platform and Binary Webtrader.', it.website_name)} />
-            <Li title={it.L('CFD')}                           subtitle={it.L('Contract for Difference.')} />
-            <Li title={it.L('Client (or you)')}               subtitle={it.L('a natural person, legal person or organisation who opened an MT5 Real Account.')} />
-            <Li title={it.L('Compensation Scheme')}           subtitle={it.L('the scheme specified in the Investor Compensation Scheme Regulations (Laws of Malta/Subsidiary Legislation 370.09) for the purpose of paying compensation to the Investors.')} />
-            <Li title={it.L('Control of Assets Rules')}       subtitle={it.L('rules and regulations set out in the (Laws of Malta) <i>Investment Services Act (Control of Assets) Regulations, 1998 as amended,</i> or any subsequent regulation thereto.')} />
-            <Li title={it.L('Derivative')}                    subtitle={it.L('a financial instrument as defined in Article 2 Paragraph (5) of Regulation (EU) No 648/2012 of the European Parliament and of the Council (EMIR).')} />
-            <Li title={it.L('Event')}                         subtitle={it.L('Event examples include circumstances whereby the type of Transaction, which your Order is related to, ceased to be offered, or a Corporate Event, or the insolvency of a Company whose shares are related to the subject matter of the Order, and others.')} />
-            <Li title={it.L('Financial Instrument')}          subtitle={it.L('has the meaning attached to it by the Directive 2004/39/EC of the European Parliament and of the Council (MIFID) or subsequent Directive 2014/65/EU of the European Parliament and of the Council (MIFID II), whichever is in force.')} />
-            <Li title={it.L('Lot')}                           subtitle={it.L('a transaction unit representing a standardized quantity of the underlying instrument, as specified in the Product Disclosure and Specifications. On the Forex market 1 Lot constitutes the equivalent of 100,000 units of the base currency.')} />
-            <Li title={it.L('Limit/Limit Price')}             subtitle={it.L('The price specified in your Limit Order.')} />
-            <Li title={it.L('Limit Order')}                   subtitle={it.L('An Order to open or close a transaction if and when a price quote becomes more favourable to you when compared against the current price.')} />
-            <Li title={it.L('Margin')}                        subtitle={it.L('The amount set aside by us from your Account Balance in order to open and maintain a Transaction, to cover your potential loss, if it occurs.')} />
-            <Li title={it.L('Margin Level')}                  subtitle={it.L('Ratio of Account Equity to Total Margin, expressed as a percentage.')} />
-            <Li title={it.L('Market Order')}                  subtitle={it.L('An Order to open or close a position in the market identified by reference to an Underlying Instrument at the current price.')} />
-            <Li title={it.L('Next Available Price')}          subtitle={it.L('Nearest price reasonably available and quoted by [_1] when our Price quotation reaches or goes beyond the level of your Stop Order.', it.website_name)} />
-            <Li title={it.L('Open Position')}                 subtitle={it.L('The position in a market identified by reference to an Underlying Instrument, created by opening a Transaction as a result of placing a buy or sell Order to the extent that such position has not been closed in whole or in part by on opposite Order under this Agreement.')} />
-            <Li title={it.L('Order')}                         subtitle={it.L('An execution instruction given by you to us to open or close a position in a market identified by reference to the Underlying Instrument, including Market Order, Stop Order, Limit Order etc.')} />
-            <Li title={it.L('Price(s)/Pricing Data')}         subtitle={it.L('Bid and Offer Price(s) of each Financial Instrument in the Transaction System, quoted at market price at the moment of pricing.')} />
-            <Li title={it.L('Professional Client')}           subtitle={it.L('a professional client as defined in the Directive 2004/39/EC of the European Parliament and of the Council (MiFID) or subsequent Directive 2014/65/EU of the European Parliament and of the Council (MiFID II), whichever is in force.')} />
-            <Li title={it.L('MT5 Real Account')}              subtitle={it.L('Your Real Money Account opened with the [_1] MT5 Trading Platform licensed by MetaQuotes Software Corporation.', it.website_name)} />
-            <Li title={it.L('Retail Client')}                 subtitle={it.L('A client that is not a Professional Client or Eligible Counterparty.')} />
-            <Li title={it.L('Roll-over')}                     subtitle={it.L('In the event that the Company does not receive Orders from you to close an Open Position by the close of a Business Day, the Company will roll-over the said Open Position to the following day being a Business Day.')} />
-            <Li title={it.L('Roll-over Credit/Debit')}        subtitle={it.L('Accounts with Open Positions being Rolled-over shall be credited or debited with an amount referred to as the Roll-over Credit/Debit which is determined by the Company.')} />
-            <Li title={it.L('Settlement')}                    subtitle={it.L('When the Client\'s Cash Account with us is credited or charged with the net amount of the results of a transaction.')} />
-            <Li title={it.L('Spread')}                        subtitle={it.L('the difference between the bid and ask price of a Financial Instrument.')} />
-            <Li title={it.L('Stop Order/Stop Loss Order')}    subtitle={it.L('An Order to execute a Transaction to close an Open Position when the Price reaches your specified Price.')} />
-            <Li title={it.L('Stop Out Level')}                subtitle={it.L('The Margin Level at, or below which your Open Positions may be closed forcefully and automatically with or without your prior consent.')} />
-            <Li title={it.L('Terms')}                         subtitle={it.L('shall mean these Terms and Conditions regulating the provision of services.')} />
-            <Li title={it.L('Total Margin')}                  subtitle={it.L('the aggregate of all Margin Requirements in your MT5 Real Account.')} />
-            <Li title={it.L('Transaction')}                   subtitle={it.L('A contract entered into by you pursuant to this Agreement.')} />
-            <Li title={it.L('Underlying instrument')}         subtitle={it.L('the underlying currency, or Financial Instrument, on which the price of the CFD is based.')} />
+            <Li title={it.L('CFD')} subtitle={it.L('Contract for Difference.')} />
+            <Li title={it.L('Client (or you)')} subtitle={it.L('a natural person, legal person or organisation who opened an MT5 Real Account.')} />
+            <Li title={it.L('Compensation Scheme')} subtitle={it.L('the scheme specified in the Investor Compensation Scheme Regulations (Laws of Malta/Subsidiary Legislation 370.09) for the purpose of paying compensation to the Investors.')} />
+            <Li title={it.L('Control of Assets Rules')} subtitle={it.L('rules and regulations set out in the (Laws of Malta) <i>Investment Services Act (Control of Assets) Regulations, 1998 as amended,</i> or any subsequent regulation thereto.')} />
+            <Li title={it.L('Derivative')} subtitle={it.L('a financial instrument as defined in Article 2 Paragraph (5) of Regulation (EU) No 648/2012 of the European Parliament and of the Council (EMIR).')} />
+            <Li title={it.L('Event')} subtitle={it.L('Event examples include circumstances whereby the type of Transaction, which your Order is related to, ceased to be offered, or a Corporate Event, or the insolvency of a Company whose shares are related to the subject matter of the Order, and others.')} />
+            <Li title={it.L('Financial Instrument')} subtitle={it.L('has the meaning attached to it by the Directive 2004/39/EC of the European Parliament and of the Council (MIFID) or subsequent Directive 2014/65/EU of the European Parliament and of the Council (MIFID II), whichever is in force.')} />
+            <Li title={it.L('Lot')} subtitle={it.L('a transaction unit representing a standardized quantity of the underlying instrument, as specified in the Product Disclosure and Specifications. On the Forex market 1 Lot constitutes the equivalent of 100,000 units of the base currency.')} />
+            <Li title={it.L('Limit/Limit Price')} subtitle={it.L('The price specified in your Limit Order.')} />
+            <Li title={it.L('Limit Order')} subtitle={it.L('An Order to open or close a transaction if and when a price quote becomes more favourable to you when compared against the current price.')} />
+            <Li title={it.L('Margin')} subtitle={it.L('The amount set aside by us from your Account Balance in order to open and maintain a Transaction, to cover your potential loss, if it occurs.')} />
+            <Li title={it.L('Margin Level')} subtitle={it.L('Ratio of Account Equity to Total Margin, expressed as a percentage.')} />
+            <Li title={it.L('Market Order')} subtitle={it.L('An Order to open or close a position in the market identified by reference to an Underlying Instrument at the current price.')} />
+            <Li title={it.L('Next Available Price')} subtitle={it.L('Nearest price reasonably available and quoted by [_1] when our Price quotation reaches or goes beyond the level of your Stop Order.', it.website_name)} />
+            <Li title={it.L('Open Position')} subtitle={it.L('The position in a market identified by reference to an Underlying Instrument, created by opening a Transaction as a result of placing a buy or sell Order to the extent that such position has not been closed in whole or in part by on opposite Order under this Agreement.')} />
+            <Li title={it.L('Order')} subtitle={it.L('An execution instruction given by you to us to open or close a position in a market identified by reference to the Underlying Instrument, including Market Order, Stop Order, Limit Order etc.')} />
+            <Li title={it.L('Price(s)/Pricing Data')} subtitle={it.L('Bid and Offer Price(s) of each Financial Instrument in the Transaction System, quoted at market price at the moment of pricing.')} />
+            <Li title={it.L('Professional Client')} subtitle={it.L('a professional client as defined in the Directive 2004/39/EC of the European Parliament and of the Council (MiFID) or subsequent Directive 2014/65/EU of the European Parliament and of the Council (MiFID II), whichever is in force.')} />
+            <Li title={it.L('MT5 Real Account')} subtitle={it.L('Your Real Money Account opened with the [_1] MT5 Trading Platform licensed by MetaQuotes Software Corporation.', it.website_name)} />
+            <Li title={it.L('Retail Client')} subtitle={it.L('A client that is not a Professional Client or Eligible Counterparty.')} />
+            <Li title={it.L('Roll-over')} subtitle={it.L('In the event that the Company does not receive Orders from you to close an Open Position by the close of a Business Day, the Company will roll-over the said Open Position to the following day being a Business Day.')} />
+            <Li title={it.L('Roll-over Credit/Debit')} subtitle={it.L('Accounts with Open Positions being Rolled-over shall be credited or debited with an amount referred to as the Roll-over Credit/Debit which is determined by the Company.')} />
+            <Li title={it.L('Settlement')} subtitle={it.L('When the Client\'s Cash Account with us is credited or charged with the net amount of the results of a transaction.')} />
+            <Li title={it.L('Spread')} subtitle={it.L('the difference between the bid and ask price of a Financial Instrument.')} />
+            <Li title={it.L('Stop Order/Stop Loss Order')} subtitle={it.L('An Order to execute a Transaction to close an Open Position when the Price reaches your specified Price.')} />
+            <Li title={it.L('Stop Out Level')} subtitle={it.L('The Margin Level at, or below which your Open Positions may be closed forcefully and automatically with or without your prior consent.')} />
+            <Li title={it.L('Terms')} subtitle={it.L('shall mean these Terms and Conditions regulating the provision of services.')} />
+            <Li title={it.L('Total Margin')} subtitle={it.L('the aggregate of all Margin Requirements in your MT5 Real Account.')} />
+            <Li title={it.L('Transaction')} subtitle={it.L('A contract entered into by you pursuant to this Agreement.')} />
+            <Li title={it.L('Underlying instrument')} subtitle={it.L('the underlying currency, or Financial Instrument, on which the price of the CFD is based.')} />
         </ol>
 
         <BIEL />
