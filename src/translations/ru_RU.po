@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-04-08 07:14\n"
+"PO-Revision-Date: 2019-04-10 10:22\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
@@ -4450,7 +4450,7 @@ msgid "For full contact details of %1, kindly check our %2Contact Us%3 page."
 msgstr ""
 
 msgid "For fully covered accounts, no margin will be charged on open positions. However, swaps and other applicable fees can cause your Account Equity to turn negative. In that case the Stop Out process will be triggered."
-msgstr ""
+msgstr "Маржа не будет взиматься с открытых позиций на полностью покрытых счетах. Тем не менее, свопы и другие применимые сборы могут привести к тому, что остаток средств на Вашем счету станет отрицательным. В данной ситуации будет запущен механизм стоп-аут."
 
 msgid "For general support:"
 msgstr "Для общей поддержки:"
@@ -5137,7 +5137,7 @@ msgid "If the Company believes that unauthorised persons are using an account, i
 msgstr ""
 
 msgid "If the Margin Level for your MT5 Real Account reaches or falls below the Stop Out Level, this will be classified as an Event of Default. In such circumstances, Open Positions are automatically closed in the following order: (i) the server analyses clients' Orders that are not under execution at the moment; (ii) the server deletes Orders with the largest Margin; (iii) if your Margin Level is still under the Stop Out Level, the next order is deleted (orders without margin requirements are not deleted); (iv) if your Margin Level is still under the Stop Out Level, the server closes a position with the largest loss; (v) Open Positions are closed until your Margin Level becomes higher than the Stop Out Level. Additionally, for perfectly hedged positions, Stop Out will be performed on accounts having open positions, the zero margin (positions are covered), and negative equity."
-msgstr ""
+msgstr "Если уровень маржи на Вашем реальном счету MT5 достигает или опускается ниже уровня стоп-аут, данная ситуация будет расцениваться как случай невыполнения обязательств. В данной ситуации открытые позиции будут автоматически закрыты в следующем порядке: (i) сервер произведёт анализ ордеров клиента, которые не были исполнены до настоящего момента; (ii) сервер удалит все ордеры с наибольшим размером маржи; (iii) если уровень маржи по-прежнему остаётся ниже уровня стоп-аут, будет удалён следующий ордер (ордеры без маржевых требований не будут удалены); (iv) если Ваш уровень маржи по-прежнему ниже уровня стоп- аут, сервер закроет позицию с наибольшем размером убытка; (v) открытые позиции будут подлежать принудительному закрытию до тех пор, пока Ваш уровень маржи не будет выше уровня стоп-аут. Кроме того, для лучшего хеджирования позиций уровень стоп-аут будет применён на счетах, имеющих открытые позиции, нулевую маржу (покрытые позиции) и отрицательный баланс."
 
 msgid "If the bid price is 1.05229, you'll buy USD 1.05229 for every EUR 1 you sell."
 msgstr "Если цена бид равна 1.05229, Вы купите 1.05229 USD за каждый проданный 1 EUR."
