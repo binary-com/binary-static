@@ -6,8 +6,8 @@ import PageError    from 'Modules/PageError';
 const Page404 = () => (
     <PageError
         header={localize('Oops, page not available.')}
-        message={localize('The page you requested could not be found. Either it no longer exists or the address is wrong. Please check for any typos.')}
         error_code={404}
+        messages={[localize('The page you requested could not be found. Either it no longer exists or the address is wrong. Please check for any typos.')]}
         redirect_url={routes.trade}
         redirect_label={localize('Return to Trade')}
     />

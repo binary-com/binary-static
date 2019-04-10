@@ -18,7 +18,13 @@ const ErrorComponent = ({ message }) => {
     return (
         <PageError
             header={localize('Oops, something went wrong.')}
-            message={msg || localize('Sorry, an error occured while processing your request.')}
+            messages={
+                msg
+                    ? [msg]
+                    : [
+                        localize('Sorry, an error occured while processing your request.'),
+                        localize('Please refresh this page to continue.'),
+                    ]}
             redirect_url={routes.trade}
             redirect_label={localize('Refresh')}
             buttonOnClick={() => window.location.reload()}
