@@ -9,6 +9,33 @@ import {
     currentLanguage,
 }                          from 'Utils/Language';
 
+const isCurrentLanguage = (lang) => lang === currentLanguage;
+
+const NonClickableLink = ({ children, lang }) => (
+    <div className={classNames('settings-dialog__language-link', {
+        'settings-dialog__language-link--active': isCurrentLanguage(lang),
+    })}
+    >
+        {children}
+    </div>
+);
+
+const LanguageLink = ({ lang }) => (
+    <React.Fragment>
+        <IconCountryFlag
+            className={'settings-dialog__language-link-flag settings-dialog__language-flag'}
+            type={lang.replace(/(\s|_)/, '-').toLowerCase()}
+        />
+        <span
+            className={classNames('settings-dialog__language-name', {
+                'settings-dialog__language-name--active': isCurrentLanguage(lang),
+            })}
+        >
+            {getAllowedLanguages()[lang]}
+        </span>
+    </React.Fragment>
+);
+
 const LanguageDialog = ({ hide, is_visible, is_settings_on }) => {
     const language_dialog_class = classNames('settings-dialog__language-dialog-container', {
         'settings-dialog__language-dialog-container--show': is_visible && is_settings_on,
@@ -24,25 +51,20 @@ const LanguageDialog = ({ hide, is_visible, is_settings_on }) => {
             <div className='settings-dialog__language-container'>
                 {Object.keys(getAllowedLanguages())
                     .map(key => (
-                        <a
-                            key={key}
-                            className={classNames('settings-dialog__language-link', {
-                                'settings-dialog__language-link--active': key === currentLanguage,
-                            })}
-                            href={getURL(key)}
-                        >
-                            <IconCountryFlag
-                                className={'settings-dialog__language-link-flag settings-dialog__language-flag'}
-                                type={key.replace(/(\s|_)/, '-').toLowerCase()}
-                            />
-                            <span
-                                className={classNames('settings-dialog__language-name', {
-                                    'settings-dialog__language-name--active': key === currentLanguage,
+                        isCurrentLanguage(key) ?
+                            <NonClickableLink lang={key} key={key}>
+                                <LanguageLink lang={key} />
+                            </NonClickableLink>
+                            :
+                            <a
+                                key={key}
+                                href={getURL(key)}
+                                className={classNames('settings-dialog__language-link', {
+                                    'settings-dialog__language-link--active': isCurrentLanguage(key),
                                 })}
                             >
-                                {getAllowedLanguages()[key]}
-                            </span>
-                        </a>
+                                <LanguageLink lang={key} key={key} />
+                            </a>
                     ))}
             </div>
         </div>
@@ -53,6 +75,18 @@ LanguageDialog.propTypes = {
     hide          : PropTypes.func,
     is_settings_on: PropTypes.bool,
     is_visible    : PropTypes.bool,
+};
+
+LanguageLink.propTypes = {
+    lang: PropTypes.string,
+};
+
+NonClickableLink.propTypes = {
+    children: PropTypes.oneOfType([
+        PropTypes.arrayOf(PropTypes.node),
+        PropTypes.node,
+    ]).isRequired,
+    lang: PropTypes.string,
 };
 
 export default LanguageDialog;
