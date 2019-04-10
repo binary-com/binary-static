@@ -23,6 +23,8 @@ NetworkStatus.propTypes = {
     status: PropTypes.object,
 };
 
+export { NetworkStatus };
+
 export default connect(
     ({ common }) => ({
         status: common.network_status,
