@@ -2,24 +2,24 @@ import React from 'react';
 
 const Tac = () => (
     <div>
-        <h2 data-anchor='terms-and-conditions'>{it.L('Terms and Conditions')}</h2>
-        <p><i>{it.L('Version 47. Last modified 2018-09-28.')}</i></p>
-        <p>{it.L('It is the responsibility of each Client to read and understand this legal notice and the terms and conditions pursuant to which an acquisition of financial contracts via this site is governed.')}</p>
+        <h2 data-anchor='terms-and-conditions'>{it.L('Terms and conditions')}</h2>
+        <p><i>{it.L('Version 48. Last modified 2019-04-xx.')}</i></p>
+        <p>{it.L('It is the responsibility of each client to read and understand this legal notice and the terms and conditions pursuant to which an acquisition of financial contracts via this site is governed.')}</p>
 
         <h2 data-anchor='interpretation'>A. {it.L('Interpretation')}</h2>
         <p>
-            {it.L('Depending on the jurisdiction to which a Client\'s account has been attached in accordance with the account opening procedures of the website and as detailed in the About Us section of the website and the type of products offered, the term "the Company" shall denote either')}&nbsp;
-            <span data-show='-eucountry'>{it.L('Binary (C.R.) S.A.,')}&nbsp;</span>
-            <span>{it.L('Binary (IOM) Ltd.,')}&nbsp;</span>
-            <span>{it.L('Binary (Europe) Ltd., or')}&nbsp;</span>
-            <span>{it.L('Binary Investments (Europe) Ltd.')}</span>
+            {it.L('Depending on the jurisdiction to which a client\'s account has been attached in accordance with the account opening procedures of the website and as detailed in the About us section of the website and the type of products offered, the term "the Company" shall denote,')}&nbsp;
+            <span data-show='-eucountry'>{it.L('Binary (C.R.) S.A.;')}&nbsp;</span><br/>
+            <span>{it.L('Binary (Europe) Ltd,;')}&nbsp;</span><br/>
+            <span>{it.L('Binary Investments (Europe) Ltd,; or')}</span><br/>
+            <span>{it.L('Binary (IOM) Ltd,.')}&nbsp;</span>
         </p>
-        <p>{it.L('These Terms and Conditions may be supplemented from time to time by Supplementary Terms and Conditions applicable to a particular Company or products.')}</p>
+        <p>{it.L('These terms and conditions may be supplemented from time to time by supplementary terms and conditions applicable to a particular Company or products.')}</p>
 
         <h2 data-anchor='introduction'>B. {it.L('Introduction')}</h2>
-        <p>{it.L('The financial trading services contained within this site are only suitable for Clients who are able to bear the loss of all the money they invest and who understand and have experience of the risks involved in the acquisition of financial contracts.')}</p>
+        <p>{it.L('The financial trading services contained within this site are only suitable for clients who are able to bear the loss of all the money they invest and who understand and have experience of the risks involved in the acquisition of financial contracts.')}</p>
         <p>{it.L('International currency or commodity prices are highly volatile and very difficult to predict. Due to such volatility, plus the bias in the pricing system favouring the website (as described in more detail below), no financial contract purchased in our system (whether or not the payout exceeds the premium amount) can be considered a safe contract.')}</p>
-        <p>{it.L('The maximum loss that may be incurred by any Client is the amount of money paid by oneself to the Company.')}</p>
+        <p>{it.L('The maximum loss that may be incurred by any client is the amount of money paid by the client to the Company.')}</p>
         <p>{it.L('The Company reserves the right in its sole discretion to refuse and/or cancel services, charge deposit and/or withdrawal fees to anyone for any reasons including, but not limited to:')}</p>
         <ul className='bullet'>
             <li>{it.L('any instance where the Company believes that person\'s activities at this site may be illegal in that person\'s country or state;')}</li>
