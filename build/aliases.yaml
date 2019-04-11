@@ -36,6 +36,13 @@ serve:
   - 'connect:livereload'
   - 'concurrent:serve'
 
+start:
+  - 'css'
+  - 'copy'
+  - 'shell:compile_dev'
+  - 'connect:livereload'
+  - 'concurrent:serve'
+
 livereload:
   - 'test'
   - 'css'
