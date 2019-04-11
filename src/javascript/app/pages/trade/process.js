@@ -301,8 +301,7 @@ const Process = (() => {
     const onExpiryTypeChange = (value) => {
         const $expiry_type    = $('#expiry_type');
         const validated_value = value && $expiry_type.find(`option[value=${value}]`).length ? value : 'duration';
-        const is_ie = false || !!document.documentMode;
-        const is_edge = !is_ie && !!window.StyleMedia;
+        const is_edge = window.navigator.userAgent.indexOf('Edge') !== -1;
         $expiry_type.val(validated_value);
 
         let make_price_request = 0;
