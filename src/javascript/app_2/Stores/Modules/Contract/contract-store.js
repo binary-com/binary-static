@@ -50,7 +50,7 @@ export default class ContractStore extends BaseStore {
     @action.bound
     drawChart(SmartChartStore, contract_info) {
         this.forget_id = contract_info.id;
-        if (isEnded(contract_info) || !!(getEndSpotTime(contract_info))) {
+        if (getEndSpotTime(contract_info)) {
             this.chart_config = getChartConfig(contract_info);
         } else {
             delete this.chart_config.end_epoch;
