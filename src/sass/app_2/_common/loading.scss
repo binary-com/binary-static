@@ -40,7 +40,7 @@
     }
 }
 
-@keyframes loading2 {
+@keyframes color-change-delay {
     /* postcss-bem-linter: ignore */
     0% { /* stylelint-disable-line selector-type-no-unknown */
         background: $COLOR_WHITE;
@@ -52,7 +52,7 @@
 
 }
 
-@-webkit-keyframes loading2 {
+@-webkit-keyframes color-change-delay {
     /* postcss-bem-linter: ignore */
     0% { /* stylelint-disable-line selector-type-no-unknown */
         background: $COLOR_WHITE;
@@ -63,7 +63,7 @@
     }
 }
 
-@keyframes loading {
+@keyframes wave-bounce {
     /* postcss-bem-linter: ignore */
     0 { /* stylelint-disable-line selector-type-no-unknown */
         transform: translate(0, 0);
@@ -78,7 +78,7 @@
     }
 }
 
-@-webkit-keyframes loading {
+@-webkit-keyframes wave-bounce {
     /* postcss-bem-linter: ignore */
     0 { /* stylelint-disable-line selector-type-no-unknown */
         -webkit-transform: translate(0, 0);
@@ -125,7 +125,9 @@
     align-items: center;
     flex-direction: column;
     display: flex;
-    background-color: $COLOR_DARK_BLUE_2;
+    @include themify($themes) {
+        background-color: themed('background_cover');
+    }
 
     &__wrapper {
         @include toEm(margin-top, 56px, 12px);
@@ -141,29 +143,29 @@
             width: 24px;
             height: 24px;
             background: $COLOR_WHITE;
-            animation: loading 0.6s 0.1s linear infinite, loading2 1s ease-in forwards;
-            -webkit-animation: loading 0.6s 0.1s linear infinite, loading2 1s ease-in forwards;
+            animation: wave-bounce 0.6s 0.1s linear infinite, color-change-delay 1s ease-in forwards;
+            -webkit-animation: wave-bounce 0.6s 0.1s linear infinite, color-change-delay 1s ease-in forwards;
         }
         &--2 {
             width: 24px;
             height: 24px;
             background: $COLOR_WHITE;
-            animation: loading 0.6s 0.2s linear infinite, loading2 1s ease-in 1s forwards;
-            -webkit-animation: loading 0.6s 0.2s linear infinite, loading2 1s ease-in 1s forwards;
+            animation: wave-bounce 0.6s 0.2s linear infinite, color-change-delay 1s ease-in 1s forwards;
+            -webkit-animation: wave-bounce 0.6s 0.2s linear infinite, color-change-delay 1s ease-in 1s forwards;
         }
         &--3 {
             width: 24px;
             height: 24px;
             background: $COLOR_WHITE;
-            animation: loading 0.6s 0.3s linear infinite, loading2 1s ease-in 2s forwards;
-            -webkit-animation: loading 0.6s 0.3s linear infinite, loading2 1s ease-in 2s forwards;
+            animation: wave-bounce 0.6s 0.3s linear infinite, color-change-delay 1s ease-in 2s forwards;
+            -webkit-animation: wave-bounce 0.6s 0.3s linear infinite, color-change-delay 1s ease-in 2s forwards;
         }
         &--4 {
             width: 24px;
             height: 24px;
             background: $COLOR_WHITE;
-            animation: loading 0.6s 0.4s linear infinite, loading2 1s ease-in 3s forwards;
-            -webkit-animation: loading 0.6s 0.4s linear infinite, loading2 1s ease-in 3s forwards;
+            animation: wave-bounce 0.6s 0.4s linear infinite, color-change-delay 1s ease-in 3s forwards;
+            -webkit-animation: wave-bounce 0.6s 0.4s linear infinite, color-change-delay 1s ease-in 3s forwards;
         }
     }
 }
