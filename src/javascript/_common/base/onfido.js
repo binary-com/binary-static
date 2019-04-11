@@ -1,7 +1,6 @@
 /* eslint-disable no-console */
 const OnfidoSDK    = require('onfido-sdk-ui');
 const websiteUrl   = require('../url').websiteUrl;
-const PromiseClass = require('../utility').PromiseClass;
 
 const Onfido = (() => {
     let api_key, applicant_id, sdk_token, onfidoOut;
@@ -21,30 +20,30 @@ const Onfido = (() => {
         createApplicant(applicant);
     };
 
-    const sendRequest = (method, url, params = null) => {
-        const responsePromise = new PromiseClass();
-        const xhttp           = new XMLHttpRequest();
+    const sendRequest = (method, url, params = null) => (
+        new Promise((resolve, reject) => {
+            const xhttp           = new XMLHttpRequest();
 
-        xhttp.overrideMimeType('application/json');
-        xhttp.open(method, url, true);
-        xhttp.setRequestHeader('Authorization', `Token token=${api_key}`);
+            xhttp.overrideMimeType('application/json');
+            xhttp.open(method, url, true);
+            xhttp.setRequestHeader('Authorization', `Token token=${api_key}`);
 
-        xhttp.onreadystatechange = function () {
-            if (xhttp.readyState === 4) {
-                if (xhttp.status >= 200 && xhttp.status < 400) {
-                    responsePromise.resolve(JSON.parse(xhttp.responseText));
-                } else {
-                    responsePromise.reject({
-                        statusText: xhttp.statusText,
-                        response  : JSON.parse(xhttp.responseText || null),
-                    });
+            xhttp.onreadystatechange = function () {
+                if (xhttp.readyState === 4) {
+                    if (xhttp.status >= 200 && xhttp.status < 400) {
+                        resolve(JSON.parse(xhttp.responseText));
+                    } else {
+                        reject(new Error({
+                            statusText: xhttp.statusText,
+                            response  : JSON.parse(xhttp.responseText || null),
+                        }));
+                    }
                 }
-            }
-        };
+            };
 
-        xhttp.send(method === 'POST' ? params : null);
-        return responsePromise;
-    };
+            xhttp.send(method === 'POST' ? params : null);
+        })
+    );
 
     const createApplicant = ({ first, last }) => {
         const params = `first_name=${first}&last_name=${last}`;
