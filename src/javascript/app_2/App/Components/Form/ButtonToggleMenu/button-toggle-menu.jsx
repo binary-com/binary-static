@@ -6,6 +6,7 @@ import HighlightWrapper from './button-highlight-wrapper.jsx';
 
 const ButtonToggleMenu = ({
     buttons_arr,
+    is_animated,
     name,
     onChange,
     value,
@@ -29,15 +30,22 @@ const ButtonToggleMenu = ({
     });
     return (
         <div className='button-menu'>
-            <HighlightWrapper>
-                {menu}
-            </HighlightWrapper>
+            {is_animated ?
+                <HighlightWrapper>
+                    {menu}
+                </HighlightWrapper>
+                :
+                <React.Fragment>
+                    {menu}
+                </React.Fragment>
+            }
         </div>
     );
 };
 
 ButtonToggleMenu.propTypes = {
     buttons_arr: PropTypes.array,
+    is_animated: PropTypes.bool,
     name       : PropTypes.string,
     onChange   : PropTypes.func,
     value      : PropTypes.oneOfType([

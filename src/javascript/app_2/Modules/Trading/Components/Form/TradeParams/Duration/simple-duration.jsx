@@ -28,6 +28,7 @@ const SimpleDuration = ({
             { duration_units_list.length > 1 &&
                 <ButtonToggleMenu
                     buttons_arr={filterMinutesAndTicks(duration_units_list)}
+                    is_animated={true}
                     name='simple_duration_unit'
                     onChange={changeDurationUnit}
                     value={simple_duration_unit}

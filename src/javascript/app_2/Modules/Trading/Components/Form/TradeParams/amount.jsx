@@ -69,6 +69,7 @@ const Amount = ({
             <ButtonToggleMenu
                 buttons_arr={basis_list}
                 className='dropdown--no-margin'
+                is_animated={true}
                 name='basis'
                 onChange={onChange}
                 value={basis}
