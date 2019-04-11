@@ -24,9 +24,9 @@ export default class UIStore extends BaseStore {
     @observable has_only_forward_starting_contracts = false;
 
     // Purchase Controls
-    @observable is_purchase_confirm_on    = false;
+    // @observable is_purchase_confirm_on    = false;
     @observable is_services_error_visible = false;
-    @observable is_purchase_lock_on       = false;
+    // @observable is_purchase_lock_on       = false;
 
     // SmartCharts Controls
     @observable is_chart_asset_info_visible = true;
@@ -71,8 +71,8 @@ export default class UIStore extends BaseStore {
             'is_chart_layout_default',
             'is_dark_mode_on',
             'is_positions_drawer_on',
-            'is_purchase_confirm_on',
-            'is_purchase_lock_on',
+            // 'is_purchase_confirm_on',
+            // 'is_purchase_lock_on',
         ];
 
         super({ local_storage_properties, store_name });
@@ -149,19 +149,20 @@ export default class UIStore extends BaseStore {
         this.is_chart_countdown_visible = !this.is_chart_countdown_visible;
     }
 
-    @action.bound
-    togglePurchaseLock() {
-        this.is_purchase_lock_on = !this.is_purchase_lock_on;
-    }
+    // @action.bound
+    // togglePurchaseLock() {
+    //     this.is_purchase_lock_on = !this.is_purchase_lock_on;
+    // }
 
-    @action.bound
-    togglePurchaseConfirmation() {
-        this.is_purchase_confirm_on = !this.is_purchase_confirm_on;
-    }
+    // @action.bound
+    // togglePurchaseConfirmation() {
+    //     this.is_purchase_confirm_on = !this.is_purchase_confirm_on;
+    // }
 
     @action.bound
     toggleDarkMode() {
         this.is_dark_mode_on = !this.is_dark_mode_on;
+        return this.is_dark_mode_on;
     }
 
     @action.bound

@@ -11,24 +11,18 @@ const TradeCategories = ({ category }) => {
             case 'rise_fall':
                 TradeTypeTemplate = (
                     <React.Fragment>
-                        <p>
-                            { localize('If you select "Higher", you win the payout if the exit spot is strictly higher than the entry spot.') }
-                        </p>
-                        <p>
-                            { localize('If you select "Lower", you win the payout if the exit spot is strictly lower than the entry spot.') }
-                        </p>
-                        <p>
-                            { localize('If you select "Allow equals", you win the payout if exit spot is higher than or equal to entry spot for "Higher". Similarly, you win the payout if exit spot is lower than or equal to entry spot for "Lower".') }
-                        </p>
+                        <p>{ localize('If you select "Rise", you win the payout if the exit spot is strictly higher than the entry spot.') }</p>
+                        <p>{ localize('If you select "Fall", you win the payout if the exit spot is strictly lower than the entry spot.') }</p>
+                        <p>{ localize('If you select "Allow equals", you win the payout if exit spot is higher than or equal to entry spot for "Rise". Similarly, you win the payout if exit spot is lower than or equal to entry spot for "Fall".') }</p>
                     </React.Fragment>
                 );
                 break;
             case 'rise_fall_equal':
                 TradeTypeTemplate = (
                     <React.Fragment>
-                        <p>{ localize('If you select "Higher", you win the payout if the exit spot is strictly higher than the entry spot.') }</p>
-                        <p>{ localize('If you select "Lower", you win the payout if the exit spot is strictly lower than the entry spot.') }</p>
-                        <p>{ localize('If you select "Allow equals", you win the payout if exit spot is higher than or equal to entry spot for "Higher". Similarly, you win the payout if exit spot is lower than or equal to entry spot for "Lower".') }</p>
+                        <p>{ localize('If you select "Rise", you win the payout if the exit spot is strictly higher than the entry spot.') }</p>
+                        <p>{ localize('If you select "Fall", you win the payout if the exit spot is strictly lower than the entry spot.') }</p>
+                        <p>{ localize('If you select "Allow equals", you win the payout if exit spot is higher than or equal to entry spot for "Rise". Similarly, you win the payout if exit spot is lower than or equal to entry spot for "Fall".') }</p>
                     </React.Fragment>
                 );
                 break;
@@ -85,8 +79,8 @@ const TradeCategories = ({ category }) => {
             case 'touch':
                 TradeTypeTemplate = (
                     <React.Fragment>
-                        <p>{ localize('If you select "Touches", you win the payout if the market touches the barrier at any time during the contract period.') }</p>
-                        <p>{ localize('If you select "Does Not Touch", you win the payout if the market never touches the barrier at any time during the contract period.') }</p>
+                        <p>{ localize('If you select "Touch", you win the payout if the market touches the barrier at any time during the contract period.') }</p>
+                        <p>{ localize('If you select "No Touch", you win the payout if the market never touches the barrier at any time during the contract period.') }</p>
                     </React.Fragment>
                 );
                 break;
@@ -102,9 +96,7 @@ const TradeCategories = ({ category }) => {
                 break;
             default:
                 TradeTypeTemplate = (
-                    <p>
-                        not found
-                    </p>
+                    <p>{ localize('Description not found.') }</p>
                 );
                 break;
         }
