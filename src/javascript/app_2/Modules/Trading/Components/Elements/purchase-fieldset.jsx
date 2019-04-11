@@ -56,8 +56,16 @@ const PurchaseFieldset = ({
                 />
                 <div
                     className={classNames('btn-purchase__shadow-wrapper', { 'btn-purchase__shadow-wrapper--disabled': (is_proposal_error || is_disabled) })}
-                    onMouseEnter={() => { onHoverPurchase(true, type); }}
-                    onMouseLeave={() => { onHoverPurchase(false); }}
+                    onMouseEnter={() => {
+                        if (!is_disabled) {
+                            onHoverPurchase(true, type);
+                        }
+                    }}
+                    onMouseLeave={() => {
+                        if (!is_disabled) {
+                            onHoverPurchase(false);
+                        }
+                    }}
                 >
                     {is_proposal_error &&
                     <Tooltip message={info.message} alignment='left' className='tooltip--error-secondary' />

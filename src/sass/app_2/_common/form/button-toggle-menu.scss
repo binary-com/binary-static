@@ -32,6 +32,7 @@
             }
         }
         &--active {
+            cursor: initial;
             @include themify($themes) {
                 background-color: themed('active_color') !important;
             }

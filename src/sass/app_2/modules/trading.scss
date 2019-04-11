@@ -422,7 +422,7 @@
         bottom: 0;
         display: inline-block;
     }
-    &:hover {
+    &:hover:not(&--disabled) {
         transform: translate3d(0, -4px, 0);
     }
     &__shadow-wrapper {

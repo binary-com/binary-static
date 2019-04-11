@@ -52,6 +52,7 @@ const AdvancedDuration = ({
                 <ButtonToggleMenu
                     buttons_arr={expiry_list}
                     name='advanced_expiry_type'
+                    is_animated={true}
                     onChange={changeExpiry}
                     value={advanced_expiry_type}
                 />
