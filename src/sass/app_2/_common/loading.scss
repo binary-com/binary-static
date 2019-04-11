@@ -65,7 +65,7 @@
 
 @keyframes wave-bounce {
     /* postcss-bem-linter: ignore */
-    0 { /* stylelint-disable-line selector-type-no-unknown */
+    0% { /* stylelint-disable-line selector-type-no-unknown */
         transform: translate(0, 0);
     }
     /* postcss-bem-linter: ignore */
@@ -80,7 +80,7 @@
 
 @-webkit-keyframes wave-bounce {
     /* postcss-bem-linter: ignore */
-    0 { /* stylelint-disable-line selector-type-no-unknown */
+    0% { /* stylelint-disable-line selector-type-no-unknown */
         -webkit-transform: translate(0, 0);
     }
     /* postcss-bem-linter: ignore */
