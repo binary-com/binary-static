@@ -27,7 +27,7 @@ const ToggleSettings = ({
             </a>
             <CSSTransition
                 in={is_settings_visible}
-                timeout={300}
+                timeout={0}
                 classNames={{
                     enter    : 'settings-dialog__container--enter',
                     enterDone: 'settings-dialog__container--enter-done',

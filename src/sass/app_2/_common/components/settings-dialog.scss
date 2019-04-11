@@ -57,7 +57,7 @@
         overflow: hidden;
         box-shadow: 0 2px 8px 0 $COLOR_LIGHT_BLACK_3;
         border-radius: $BORDER_RADIUS;
-        transition: transform 0.25s ease, opacity 0.5s linear;
+        transition: transform 0.25s cubic-bezier(0.25, 0.1, 0.1, 0.25), opacity 0.25s cubic-bezier(0.25, 0.1, 0.1, 0.25);
         @include themify($themes) {
             background-color: themed('container_secondary_color');
         }

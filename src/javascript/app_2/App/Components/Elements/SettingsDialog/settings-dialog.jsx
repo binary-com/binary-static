@@ -42,6 +42,7 @@ class SettingsDialog extends React.PureComponent {
 
     handleClickOutside = (event) => {
         if (this.wrapper_ref && !this.wrapper_ref.contains(event.target) && this.props.is_open) {
+            this.props.hideFullBlur();
             this.props.toggleDialog();
         }
     };
