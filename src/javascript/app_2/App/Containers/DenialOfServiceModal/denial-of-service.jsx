@@ -1,7 +1,7 @@
 import React         from 'react';
 import PropTypes     from 'prop-types';
 import { localize }  from '_common/localize';
-import URL           from '_common/url';
+import { urlFor }    from '_common/url';
 import FullPageModal from 'App/Components/Elements/FullPageModal/full-page-modal.jsx';
 import Localize      from 'App/Components/Elements/localize.jsx';
 import { connect }   from 'Stores/connect';
@@ -11,19 +11,19 @@ const onConfirm = async (client) => {
 };
 
 const onCancel = () => {
-    window.location.href = URL.urlFor('trading');
+    window.open(urlFor('trading', undefined, undefined, true));
 };
 
 const DenialOfServiceModal = ({ client, is_visible }) => (
     <FullPageModal
         title={localize('Whoops!')}
-        confirm_button_text={localize('Continue with my virtual account')}
-        cancel_button_text={localize('Visit main website')}
+        confirm_button_text={localize('Continue with Virtual Account')}
+        cancel_button_text={localize('Back to main website')}
         onConfirm={() => onConfirm(client)}
         onCancel={onCancel}
         is_visible={is_visible}
     >
-        <Localize str='You are not allowed to access this feature with your real money account at the moment.' />
+        <Localize str='You cannot use your real money account with BinaryNex at this time.' />
     </FullPageModal>
 );
 

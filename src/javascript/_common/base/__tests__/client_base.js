@@ -147,7 +147,7 @@ describe('ClientBase', () => {
             expect(Client.getBasicUpgradeInfo().can_upgrade).to.eq(false);
         });
         it('returns as expected for accounts that can upgrade to real', () => {
-            ['costarica', 'malta', 'iom'].forEach((lc) => {
+            ['svg', 'malta', 'iom'].forEach((lc) => {
                 State.set(['response', 'authorize', 'authorize', 'upgradeable_landing_companies'], [ lc ]);
                 const ugprade_info = Client.getBasicUpgradeInfo();
                 expect(ugprade_info.can_upgrade).to.eq(true);
@@ -165,8 +165,8 @@ describe('ClientBase', () => {
             expect(ugprade_info.can_open_multi).to.eq(false);
         });
         it('returns as expected for multi account opening', () => {
-            State.set(['response', 'authorize', 'authorize', 'upgradeable_landing_companies'], [ 'costarica' ]);
-            Client.set('landing_company_shortcode', 'costarica');
+            State.set(['response', 'authorize', 'authorize', 'upgradeable_landing_companies'], [ 'svg' ]);
+            Client.set('landing_company_shortcode', 'svg');
             const ugprade_info = Client.getBasicUpgradeInfo();
             expect(ugprade_info.can_upgrade).to.eq(false);
             expect(ugprade_info.can_upgrade_to).to.eq(undefined);
@@ -254,14 +254,14 @@ describe('ClientBase', () => {
         });
     });
 
-    describe('.hasCostaricaAccount()', () => {
+    describe('.hasSvgAccount()', () => {
         it('works as expected', () => {
             Client.set('loginid', loginid_financial, loginid_financial);
             Client.set('token', 'test', loginid_financial);
-            expect(Client.hasCostaricaAccount()).to.eq(false);
+            expect(Client.hasSvgAccount()).to.eq(false);
             Client.set('loginid', loginid_real, loginid_real);
             Client.set('token', 'test', loginid_real);
-            expect(Client.hasCostaricaAccount()).to.eq(true);
+            expect(Client.hasSvgAccount()).to.eq(true);
         });
     });
 

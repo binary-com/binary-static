@@ -30,7 +30,7 @@ const SetCurrency = () => (
                     <img src={it.url_for('images/pages/set_currency/account-created.svg')} />
                     <div className='gr-padding-10' />
                     <h1>{it.L('Congratulations!')}</h1>
-                    <p>{it.L('You have successfully created your [_1]account!', `<span data-show="iom">${it.L('gaming')}&nbsp;</span>`)}</p>
+                    <p id='congratulations_message'>{it.L('You have successfully created your real money [_1]account.', `<span data-show="iom">${it.L('gaming')}&nbsp;</span>`)}</p>
                 </div>
 
                 <SeparatorLine show_mobile className='gr-parent gr-padding-10' invisible />
@@ -42,7 +42,7 @@ const SetCurrency = () => (
                 </div>
 
                 <div className='invisible select_currency'>
-                    <p>{it.L('Please select the currency of this account:')}</p>
+                    <p id='set_currency_text'>{it.L('Please select the currency for this account:')}</p>
                 </div>
             </div>
 

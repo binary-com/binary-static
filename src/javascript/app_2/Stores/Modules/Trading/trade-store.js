@@ -33,6 +33,7 @@ import {
     getProposalInfo,
     getProposalParametersName }          from './Helpers/proposal';
 import { pickDefaultSymbol }             from './Helpers/symbol';
+import { BARRIER_COLORS }                from '../SmartChart/Constants/barriers';
 import BaseStore                         from '../../base-store';
 
 const store_name = 'trade_store';
@@ -425,7 +426,9 @@ export default class TradeStore extends BaseStore {
         };
 
         if (!this.smart_chart.is_contract_mode) {
-            setChartBarrier(this.smart_chart, response, this.onChartBarrierChange);
+            const color = this.root_store.ui.is_dark_mode_on ? BARRIER_COLORS.GRAY : BARRIER_COLORS.GREEN;
+            const barrier_config = { color };
+            setChartBarrier(this.smart_chart, response, this.onChartBarrierChange, barrier_config);
         }
 
         if (response.error) {
@@ -448,6 +451,13 @@ export default class TradeStore extends BaseStore {
     @action.bound
     onAllowEqualsChange() {
         this.processNewValuesAsync({ contract_type: parseInt(this.is_equal) ? 'rise_fall_equal' : 'rise_fall' }, true);
+    }
+
+    // When you directly need to update the chart symbol
+    // E.g. When opening a contract from positions that has a different symbol from the current symbol.
+    @action.bound
+    updateSymbol(symbol) {
+        if (symbol) this.symbol = symbol;
     }
 
     @action.bound

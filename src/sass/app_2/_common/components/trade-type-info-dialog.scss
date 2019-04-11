@@ -33,7 +33,7 @@
         width: 100%;
 
         span {
-            @include typeface(--paragraph-center-bold-active, uppercase);
+            @include typeface(--paragraph-center-bold-active);
         }
     }
     &__content {

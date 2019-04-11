@@ -114,12 +114,13 @@
         justify-content: center;
         margin: 0.8em 0 1.6em;
 
-        &-title {
+        &-link {
             @include typeface(--small-center-normal-grey, none);
             @include toEm(padding, 8px 16px, 1.2em);
             width: 100%;
             border-radius: 4px;
             cursor: pointer;
+            text-decoration: none;
             @include themify($themes) {
                 color: themed('text_secondary_color');
                 border: 1px dashed themed('text_secondary_color');
@@ -131,6 +132,9 @@
                 }
                 &:hover {
                     background: themed('tab_hover_color');
+                }
+                &:visited, &:active {
+                    color: themed('text_secondary_color');
                 }
             }
         }

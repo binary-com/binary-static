@@ -22,7 +22,7 @@ describe('Details', () => {
         };
         it('Should return an object with values based on object passed to it', () => {
             expect(getDetailsInfo(contract_info)).to.deep.include({
-                'Contract Type' : 'Higher',
+                'Contract Type' : 'Rise',
                 'Start Time'    : '2018-12-05 16:58:55 GMT',
                 'Entry Spot'    : '8,121.081',
                 'Purchase Price': <Money amount='10.00' currency='USD' />,

@@ -8,7 +8,6 @@ import ServerTime             from '_common/base/server_time';
 import { WS }                 from 'Services';
 import { ChartBarrierStore }  from './chart-barrier-store';
 import { ChartMarkerStore }   from './chart-marker-store';
-import { tick_chart_types }   from './Constants/chart';
 import {
     barriersObjectToArray,
     isBarrierSupported }      from './Helpers/barriers';
@@ -24,28 +23,19 @@ export default class SmartChartStore extends BaseStore {
     @observable is_contract_mode = false;
     @observable is_title_enabled = true;
 
-    @observable chart_type                  = 'mountain';
-    @observable granularity                 = 0;
     @observable scroll_to_left_epoch        = null;
     @observable scroll_to_left_epoch_offset = 0;
     @observable zoom;
 
+    @observable should_import_layout = false;
+    @observable should_export_layout = false;
+    @observable should_clear_chart   = false;
+    @observable trade_chart_layout   = observable.object({});
+    trade_chart_symbol               = null;
+
     constructor({ root_store }) {
-        const local_storage_properties = ['chart_type', 'granularity'];
+        const local_storage_properties = ['trade_chart_layout'];
         super({ root_store, local_storage_properties, store_name });
-    }
-
-    @action.bound
-    updateChartType(chart_type) {
-        this.chart_type = chart_type;
-    }
-
-    @action.bound
-    updateGranularity(granularity) {
-        this.granularity = granularity;
-        if (granularity === 0 && !tick_chart_types.includes(this.chart_type)) {
-            this.chart_type = 'mountain';
-        }
     }
 
     @action.bound
@@ -85,6 +75,13 @@ export default class SmartChartStore extends BaseStore {
     }
 
     @action.bound
+    onMount = () => {
+        if (this.trade_chart_layout && Object.keys(this.trade_chart_layout).length) {
+            this.applySavedTradeChartLayout();
+        }
+    }
+
+    @action.bound
     onUnmount = () => {
         this.symbol = null;
         this.removeBarriers();
@@ -94,9 +91,6 @@ export default class SmartChartStore extends BaseStore {
     // --------- Tick Contracts ---------
     @action.bound
     setTickChartView(scroll_to_left_epoch) {
-        if (this.granularity !== 0) {
-            this.updateGranularity(0);
-        }
         this.updateEpochScrollToOffset(1);
         this.updateChartZoom(100);
         this.updateEpochScrollToValue(scroll_to_left_epoch);
@@ -104,11 +98,11 @@ export default class SmartChartStore extends BaseStore {
 
     // ---------- Barriers ----------
     @action.bound
-    createBarriers = (contract_type, high_barrier, low_barrier, onChartBarrierChange, config) => {
+    createBarriers = (contract_type, high_barrier, low_barrier, onChartBarrierChange, barrier_config) => {
         if (isEmptyObject(this.barriers.main)) {
             let main_barrier = {};
             if (isBarrierSupported(contract_type)) {
-                main_barrier = new ChartBarrierStore(high_barrier, low_barrier, onChartBarrierChange, config);
+                main_barrier = new ChartBarrierStore(high_barrier, low_barrier, onChartBarrierChange, barrier_config);
             }
 
             this.barriers = {
@@ -132,8 +126,39 @@ export default class SmartChartStore extends BaseStore {
     }
 
     @action.bound
+    updateBarrierColor(is_dark_mode) {
+        this.barriers.main.updateBarrierColor(is_dark_mode);
+    }
+
+    @action.bound
     removeBarriers() {
         this.barriers = {};
+    }
+
+    @action.bound
+    saveAndClearTradeChartLayout() {
+        this.should_export_layout = true;
+        this.should_import_layout = false;
+
+        this.trade_chart_symbol   = this.root_store.modules.trade.symbol;
+    }
+
+    @action.bound
+    applySavedTradeChartLayout() {
+        this.should_export_layout = false;
+        this.should_import_layout = true;
+        this.should_clear_chart   = false;
+        this.trade_chart_layout.isDone = action(() => this.trade_chart_layout = {});
+
+        if (this.trade_chart_symbol !== this.root_store.modules.trade.symbol) {
+            this.root_store.modules.trade.updateSymbol(this.trade_chart_symbol);
+        }
+    }
+
+    @action.bound
+    exportLayout(layout) {
+        this.trade_chart_layout = layout;
+        this.should_clear_chart = true;
     }
 
     @computed

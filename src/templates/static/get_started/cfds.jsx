@@ -39,7 +39,7 @@ const Cfds = () => (
                     </ul>
 
                     <HeaderSecondary header={it.L('What you can trade with CFDs')} />
-                    <p>{it.L('Contracts for difference (CFDs) allow you to speculate on a number of markets, including indices, shares, and commodities. At Binary.com, we offer popular cash indices, cryptocurrencies, as well as proprietary Volatility Indices that simulate market movement.')}</p>
+                    <p>{it.L('Contracts for difference (CFDs) allow you to speculate on a number of markets, including indices, shares, and commodities. At [_1], we offer popular cash indices, cryptocurrencies, as well as proprietary Volatility Indices that simulate market movement.', it.website_name)}</p>
                 </Section>
 
                 <Section id='how-trade-cfds' header={it.L('How to trade CFDs')}>
@@ -55,7 +55,7 @@ const Cfds = () => (
                     <HeaderSecondary header={it.L('How to calculate your profits and losses')} />
                     <p>{it.L('Let\'s say a US 100 contract is worth USD 1 per point in the underlying asset. If you decide to \'go long\' on the US 100, and the asset price rises by 10 points, that represents a USD 10 profit for you.')}</p>
                     <p>{it.L('However, if the asset price falls by 10 points, that represents a USD 10 loss for you.')}</p>
-                    <p>{it.L('To learn more, please read our <a href=\'[_1]\'>CFD contract specifications</a>.', '#contract-specification')}</p>
+                    <p>{it.L('To learn more, please read our [_1]CFD contract specifications[_2].', '<a href="#contract-specification">', '</a>')}</p>
 
                     <HeaderSecondary header={it.L('How to close a position')} />
                     <p>{it.L('When you decide to close an open contract, you only need to take the opposite position in order to close the contract.')}</p>
@@ -146,7 +146,7 @@ const Cfds = () => (
 
                     <HeaderSecondary header={it.L('How to read the table above')} />
                     <p>{it.L('A Contract for Difference (CFD) is a financial derivative that allows you to profit by speculating on the rise or fall of an underlying asset. Your profit and loss is calculated through the difference in the buy and sell prices of the underlying asset.')}</p>
-                    <p>{it.L('For example, a CFD on Binary.com\'s US 30 index offers a USD 1 per point contract. If you buy a Volume 1.0 contract for the US 30 with a current ask price of USD 20,000 and later sell it at a bid price of USD 20,010, your net profit will be calculated as follows:')}</p>
+                    <p>{it.L('For example, a CFD on [_1]\'s US 30 index offers a USD 1 per point contract. If you buy a Volume 1.0 contract for the US 30 with a current ask price of USD 20,000 and later sell it at a bid price of USD 20,010, your net profit will be calculated as follows:', it.website_name)}</p>
 
                     <Box
                         text={`(${it.L('Sell Price')} – ${it.L('Buy Price')}) x ${it.L('Volume')} x ${it.L('Price Per Point')} = ${it.L('Profit')}`}

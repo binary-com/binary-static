@@ -35,7 +35,7 @@
             text-align: justify;
             margin: 0 0 10px;
         }
-        .age-restriction {
+        .age-restriction-sign {
             width: 45px;
         }
         .fld-risk-warning {
@@ -214,8 +214,28 @@
                 width: 105px;
             }
         }
-        .age-restriction {
+        .age-restriction-sign {
             margin-right: 0;
+        }
+    }
+    @media screen and (max-width: 380px) {
+        .regulation-logos {
+            .vanuatu-icon {
+                width: 75px;
+                margin: 5px;
+            }
+            .bvi-icon {
+                width: 50px;
+                margin: 5px;
+            }
+            .labuan-icon {
+                width: 90px;
+                margin: 5px;
+            }
+            .age-restriction-sign {
+                width: 35px;
+                margin: 5px;
+            }
         }
     }
 }
