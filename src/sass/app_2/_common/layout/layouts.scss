@@ -252,10 +252,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    margin-top: 0.8em;
+    width: calc(100% + 18px);
+    /* margin shorthand for values below does not work */
+    margin-top: 8px;
+    margin-left: -9px;
+    margin-bottom: -9px;
+    margin-right: 0;
+    padding: 8px 0;
+    border-bottom-right-radius: $BORDER_RADIUS;
+    border-bottom-left-radius: $BORDER_RADIUS;
     border: 0;
     background: none;
+    transition: background-color 0.25s linear;
 
     &__icon {
         transition: transform 0.2s ease;
@@ -267,6 +275,9 @@
     }
     &:hover {
         cursor: pointer;
+        @include themify($themes) {
+            background-color: themed('toggle_button_hover_background');
+        }
     }
     &:focus {
         outline: none;
