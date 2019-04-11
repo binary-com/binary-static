@@ -10,13 +10,13 @@ const Purchase = ({
     currency,
     is_contract_mode,
     is_client_allowed_to_visit,
-    is_purchase_confirm_on,
+    // is_purchase_confirm_on,
     is_purchase_enabled,
-    is_purchase_locked,
+    // is_purchase_locked,
     is_trade_enabled,
     onClickPurchase,
     onHoverPurchase,
-    togglePurchaseLock,
+    // togglePurchaseLock,
     proposal_info,
     trade_types,
     validation_errors,
@@ -38,16 +38,16 @@ const Purchase = ({
                 basis={basis}
                 currency={currency}
                 info={info}
-                key={index}
+                // key={index}
                 index={index}
                 is_contract_mode={is_contract_mode}
                 is_disabled={is_disabled}
                 is_high_low={is_high_low}
                 is_loading={is_loading}
-                is_purchase_confirm_on={is_purchase_confirm_on}
+                // is_purchase_confirm_on={is_purchase_confirm_on}
                 is_proposal_error={is_proposal_error}
-                is_purchase_locked={is_purchase_locked}
-                togglePurchaseLock={togglePurchaseLock}
+                // is_purchase_locked={is_purchase_locked}
+                // togglePurchaseLock={togglePurchaseLock}
                 onHoverPurchase={onHoverPurchase}
                 onClickPurchase={onClickPurchase}
                 type={type}
@@ -71,7 +71,7 @@ Purchase.propTypes = {
     currency                  : PropTypes.string,
     is_client_allowed_to_visit: PropTypes.bool,
     is_contract_mode          : PropTypes.bool,
-    is_purchase_confirm_on    : PropTypes.bool,
+    // is_purchase_confirm_on    : PropTypes.bool,
     is_purchase_enabled       : PropTypes.bool,
     is_purchase_locked        : PropTypes.bool,
     is_trade_enabled          : PropTypes.bool,
@@ -79,13 +79,13 @@ Purchase.propTypes = {
     onHoverPurchase           : PropTypes.func,
     proposal_info             : PropTypes.object,
     purchase_info             : PropTypes.object,
-    togglePurchaseLock        : PropTypes.func,
+    // togglePurchaseLock        : PropTypes.func,
     trade_types               : PropTypes.object,
     validation_errors         : PropTypes.object,
 };
 
 export default connect(
-    ({ client, modules, ui }) => ({
+    ({ client, modules }) => ({
         currency                  : client.currency,
         is_client_allowed_to_visit: client.is_client_allowed_to_visit,
         is_contract_mode          : modules.smart_chart.is_contract_mode,
@@ -99,8 +99,8 @@ export default connect(
         purchase_info             : modules.trade.purchase_info,
         trade_types               : modules.trade.trade_types,
         validation_errors         : modules.trade.validation_errors,
-        is_purchase_confirm_on    : ui.is_purchase_confirm_on,
-        is_purchase_locked        : ui.is_purchase_lock_on,
-        togglePurchaseLock        : ui.togglePurchaseLock,
+        // is_purchase_confirm_on    : ui.is_purchase_confirm_on,
+        // is_purchase_locked        : ui.is_purchase_lock_on,
+        // togglePurchaseLock        : ui.togglePurchaseLock,
     }),
 )(Purchase);

@@ -8,13 +8,13 @@ import {
     ChartSettings,
     LanguageSettings,
     ThemeSelectSettings,
-    PurchaseSettings,
+    // PurchaseSettings,
 }                         from 'App/Containers/SettingsDialog';
 import {
     IconCharts,
     IconClose,
     IconLanguage,
-    IconPurchase,
+    // IconPurchase,
     IconTheme,
 }                         from 'Assets/Settings';
 
@@ -89,10 +89,11 @@ class SettingsDialog extends React.PureComponent {
             icon : IconCharts,
             label: localize('Charts'),
             value: ChartSettings,
-        }, {
-            icon : IconPurchase,
-            label: localize('Purchase'),
-            value: PurchaseSettings,
+        // uncomment below lines to bring back purchase lock and purchase confirmation
+        // }, {
+        //     icon : IconPurchase,
+        //     label: localize('Purchase'),
+        //     value: PurchaseSettings,
         },
     ]
 }

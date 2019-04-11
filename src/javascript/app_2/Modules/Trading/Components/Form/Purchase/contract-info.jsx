@@ -40,7 +40,13 @@ const ContractInfo = ({
                         }
                     </div>
                     <span>
-                        <Tooltip alignment='left' className='trade-container__price-tooltip' classNameIcon='trade-container__price-tooltip-i' icon='info' message={is_loaded_with_error ? '' : proposal_info.message} />
+                        <Tooltip
+                            alignment='left'
+                            className={classNames('trade-container__price-tooltip', { 'trade-container__price-tooltip--disabled': is_loaded_with_error })}
+                            classNameIcon='trade-container__price-tooltip-i'
+                            icon='info'
+                            message={is_loaded_with_error ? '' : proposal_info.message}
+                        />
                     </span>
                 </div>
             }
