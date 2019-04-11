@@ -9,7 +9,7 @@ import { connect }   from 'Stores/connect';
 const MarketUnavailableModal = ({ is_visible, setHasOnlyForwardingContracts }) => (
     <FullPageModal
         cancel_button_text={localize('Go to SmartTrader')}
-        confirm_button_text={localize('No, Stay on BinaryNex')}
+        confirm_button_text={localize('No, stay on BinaryNex')}
         is_visible={is_visible}
         onCancel={() => window.open(URL.websiteUrl()) && setHasOnlyForwardingContracts(false)}
         onConfirm={() => setHasOnlyForwardingContracts(false)}

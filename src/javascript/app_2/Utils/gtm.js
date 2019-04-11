@@ -23,7 +23,7 @@ const GTM = (() => {
             settings: {
                 theme           : root_store.ui.is_dark_mode_on ? 'dark' : 'light',
                 positions_drawer: root_store.ui.is_positions_drawer_on ? 'open' : 'closed',
-                purchase_confirm: root_store.ui.is_purchase_confirm_on ? 'enabled' : 'disabled',
+                // purchase_confirm: root_store.ui.is_purchase_confirm_on ? 'enabled' : 'disabled',
                 chart           : {
                     toolbar_position: root_store.ui.is_chart_layout_default ? 'bottom' : 'left',
                     chart_asset_info: root_store.ui.is_chart_asset_info_visible ? 'visible' : 'hidden',

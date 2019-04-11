@@ -421,17 +421,17 @@ const ViewPopup = (() => {
         const div         = Utility.createElement('div', { id: 'sell_details_audit', class: 'gr-8 gr-12-p gr-12-m gr-no-gutter invisible' });
         const table       = Utility.createElement('table', { id: 'audit_header', class: 'gr-12' });
         const tr          = Utility.createElement('tr', { class: 'gr-row' });
-        const th_previous = Utility.createElement('th', { class: 'gr-2 gr-3-t gr-3-p gr-3-m' });
+        const th_previous = Utility.createElement('th', { class: 'gr-2 gr-3-t gr-3-p gr-4-m' });
         const link        = Utility.createElement('a', { class: 'previous-wrapper' });
 
         link.appendChild(Utility.createElement('span', { class: 'previous align-self-center' }));
-        link.appendChild(Utility.createElement('span', { class: 'nowrap', text: localize('View chart') }));
+        link.appendChild(Utility.createElement('span', { class: 'nowrap view-chart', text: localize('View chart') }));
         link.addEventListener('click', () => { setAuditVisibility(0); });
         th_previous.appendChild(link);
 
         tr.appendChild(th_previous);
-        tr.appendChild(Utility.createElement('th', { class: 'gr-8 gr-6-t gr-6-p gr-6-m', text: localize('Audit Page') }));
-        tr.appendChild(Utility.createElement('th', { class: 'gr-2 gr-3-t gr-3-p gr-3-m' }));
+        tr.appendChild(Utility.createElement('th', { class: 'gr-8 gr-6-t gr-6-p gr-4-m', text: localize('Audit Page') }));
+        tr.appendChild(Utility.createElement('th', { class: 'gr-2 gr-3-t gr-3-p gr-4-m' }));
         table.appendChild(tr);
         div.appendChild(table);
         div.insertAfter(getElementById('sell_details_chart_wrapper'));
