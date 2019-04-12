@@ -3,7 +3,6 @@ import React          from 'react';
 import PropTypes      from 'prop-types';
 // import { localize }   from '_common/localize';
 // import { PopConfirm } from 'App/Components/Elements/PopConfirm';
-import Tooltip        from 'App/Components/Elements/tooltip.jsx';
 import Fieldset       from 'App/Components/Form/fieldset.jsx';
 import ContractInfo   from 'Modules/Trading/Components/Form/Purchase/contract-info.jsx';
 // import PurchaseLock   from 'Modules/Trading/Components/Form/Purchase/PurchaseLock';
