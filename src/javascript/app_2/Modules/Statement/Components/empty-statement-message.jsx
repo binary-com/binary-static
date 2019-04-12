@@ -1,6 +1,7 @@
 import PropTypes         from 'prop-types';
 import React             from 'react';
 import { localize }      from '_common/localize';
+import { Icon }          from 'Assets/Common';
 import { IconStatement } from 'Assets/Header/NavBar';
 import { routes }        from 'Constants/index';
 import { ButtonLink }    from 'App/Components/Routes';
@@ -8,7 +9,7 @@ import { ButtonLink }    from 'App/Components/Routes';
 const EmptyStatementMessage = ({ has_selected_date }) => (
     <React.Fragment>
         <div className='statement-empty'>
-            <IconStatement className='statement-empty__icon' />
+            <Icon icon={IconStatement} className='statement-empty__icon' />
             <span className='statement-empty__text'>
                 {
                     !has_selected_date ?

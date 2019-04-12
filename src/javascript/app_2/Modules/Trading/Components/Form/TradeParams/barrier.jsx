@@ -2,6 +2,7 @@ import classNames     from 'classnames';
 import { observer }   from 'mobx-react';
 import PropTypes      from 'prop-types';
 import React          from 'react';
+import { Icon }       from 'Assets/Common/icon.jsx';
 import {
     IconBarrierUp,
     IconBarrierDown } from 'Assets/Trading/Barriers';
@@ -73,8 +74,8 @@ const Barrier = ({
                             is_float
                             is_signed
                         />
-                        <IconBarrierUp className='trade-container__barriers--up' />
-                        <IconBarrierDown className='trade-container__barriers--down' />
+                        <Icon icon={IconBarrierUp} className='trade-container__barriers--up' />
+                        <Icon icon={IconBarrierDown} className='trade-container__barriers--down' />
                     </React.Fragment>
                 }
             </div>

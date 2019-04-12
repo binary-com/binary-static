@@ -1,10 +1,11 @@
 import React                         from 'react';
 import { expect }                    from 'chai';
-import { spy, stub }                       from 'sinon';
+import { spy, stub }                 from 'sinon';
 import { configure, shallow, mount } from 'enzyme';
 import Adapter                       from 'enzyme-adapter-react-16';
 import { ToggleFullScreen }          from '../toggle-fullscreen.jsx';
-import { IconMaximize }              from '../../../../../Assets/Footer';
+import { Icon }                      from 'Assets/Common/icon.jsx';
+import { IconMaximize }              from 'Assets/Footer';
 
 configure({ adapter: new Adapter() });
 spy(ToggleFullScreen.prototype, 'componentDidMount');
@@ -31,9 +32,9 @@ describe('ToggleFullScreen', () => {
         wrapper.setState({ is_full_screen: true });
         expect(wrapper.find('.ic-fullscreen--active').exists()).to.be.true;
     });
-    it('should contain <IconMaximize />', () => {
+    it('should contain <Icon icon={IconMaximize} />', () => {
         const wrapper = shallow(<ToggleFullScreen />);
-        expect(wrapper.contains(<IconMaximize className='footer__icon' />)).to.be.true;
+        expect(wrapper.contains(<Icon icon={IconMaximize} className='footer__icon' />)).to.be.true;
     });
     it('should have onclick property as an instance of a Function', () => {
         const wrapper = shallow(<ToggleFullScreen />);
