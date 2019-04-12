@@ -1,5 +1,6 @@
 import PropTypes       from 'prop-types';
 import React           from 'react';
+import classNames      from 'classnames';
 import { withRouter }  from 'react-router';
 import { formatMoney } from '_common/base/currency_base';
 import { urlFor }      from '_common/url';
@@ -45,8 +46,8 @@ const Header = ({
 
     });
 
-    return !is_loading ? (
-        <header className='header'>
+    return (
+        <header className={classNames('header', { 'header__show': !is_loading })}>
             <div className='header__menu-items'>
                 <div className='header__menu-left'>
                     {is_mobile && <ToggleMenuDrawer />}
@@ -99,7 +100,7 @@ const Header = ({
                 </div>
             </div>
         </header>
-    ) : null;
+    );
 };
 
 Header.propTypes = {

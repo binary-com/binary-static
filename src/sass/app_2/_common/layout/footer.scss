@@ -4,10 +4,12 @@
     bottom: 0;
     padding: 0 1em;
     width: 100%;
-    height: $FOOTER_HEIGHT;
+    height: 0;
+    opacity: 0;
     box-sizing: border-box;
     z-index: 3;
     display: flex;
+    transition: height 0.3s, opacity 0.3s;
     justify-content: flex-end;
     align-items: center;
     @include themify($themes) {
@@ -15,6 +17,10 @@
         color: themed('text_primary_color');
     }
 
+    &__show {
+        opacity: 1;
+        height: $FOOTER_HEIGHT;
+    }
     &__links {
         display: flex;
         justify-content: space-evenly;

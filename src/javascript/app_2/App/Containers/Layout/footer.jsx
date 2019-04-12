@@ -1,5 +1,6 @@
 import PropTypes      from 'prop-types';
 import React          from 'react';
+import classNames     from 'classnames';
 import { connect }    from 'Stores/connect';
 import ServerTime     from '../server-time.jsx';
 import {
@@ -19,8 +20,8 @@ const Footer = ({
     showBlur,
     togglePositionsDrawer,
     toggleSettingsDialog,
-}) => !is_loading ? (
-    <React.Fragment>
+}) => (
+    <div className={classNames('footer', { 'footer__show': !is_loading })}>
         <div className='footer__links footer__links--left'>
             {
                 is_logged_in &&
@@ -43,8 +44,8 @@ const Footer = ({
             />
             <ToggleFullScreen />
         </div>
-    </React.Fragment>
-) : null;
+    </div>
+);
 
 Footer.propTypes = {
     is_dark_mode              : PropTypes.bool,

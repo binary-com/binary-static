@@ -3,14 +3,20 @@
     position: fixed;
     z-index: 99;
     box-sizing: border-box;
+    opacity: 0;
+    height: 0;
     width: 100%;
-    height: $HEADER_HEIGHT;
+    transition: height 0.3s, opacity 0.3s;
     top: 0;
     @include themify($themes) {
         background-color: themed('background_color');
         border-bottom: 1px solid themed('background_color');
     }
 
+    &__show {
+        height: $HEADER_HEIGHT;
+        opacity: 1;
+    }
     &__menu-items {
         display: flex;
         position: relative;
