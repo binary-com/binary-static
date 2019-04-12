@@ -3,6 +3,7 @@ import PropTypes    from 'prop-types';
 import React        from 'react';
 import { localize } from '_common/localize';
 import Money        from 'App/Components/Elements/money.jsx';
+import Icon         from 'Assets/Common/icon.jsx';
 import IconFlag     from 'Assets/Contract/icon-flag.jsx';
 import SellInfo     from '../Sell/sell-info.jsx';
 
@@ -26,7 +27,7 @@ const InfoBoxExpired = ({
                 <SellInfo contract_info={contract_info} sell_info={sell_info} />
             }
             { has_flag &&
-                <IconFlag />
+                <Icon icon={IconFlag} />
             }
             <div>
                 <div>{localize('Profit/Loss')}:</div>

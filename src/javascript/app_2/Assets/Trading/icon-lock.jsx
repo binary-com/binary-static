@@ -3,7 +3,7 @@ import PropTypes  from 'prop-types';
 import React      from 'react';
 
 const IconLock = ({ className }) => (
-    <svg className={classNames('inline-icon', className)} xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'>
+    <svg className={classNames('inline-icon', className)} viewBox='0 0 16 16'>
         <g fill='none' fillRule='evenodd' transform='translate(3 1)'>
             <rect className='color1-stroke' width='9' height='7' x='.5' y='6.5' stroke='none' rx='1' />
             <circle className='color1-fill' cx='5' cy='10' r='1' fill='none' />
