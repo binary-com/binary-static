@@ -17,7 +17,7 @@ const ResponsibleTrading = () => (
             </ol>
 
             <h2>{it.L('Written limits and self-exclusion')}</h2>
-            <p>{it.L('[_1] provides you with the opportunity to either self-exclude or <a href=\'[_2]\'>set limits on your trading activities</a> on this website. You may also <a href=\'[_3]\'>contact us</a> to state the limits you wish to set via email or phone. Available limits are:', it.website_name, it.url_for('user/security/self_exclusionws'), it.url_for('contact'))}</p>
+            <p>{it.L('[_1] provides you with the opportunity to either self-exclude or [_2]set limits on your trading activities[_3] on this website. You may also [_4]contact us[_3] to state the limits you wish to set via email or phone. Available limits are:', it.website_name, `<a href="${it.url_for('user/security/self_exclusionws')}">`, '</a>', `<a href="${it.url_for('contact')}">`)}</p>
             <ol>
                 <li>{it.L('a limit on the amount you may trade within a specified period of time;')}</li>
                 <li>{it.L('a limit on the losses you may incur within a specified period of time;')}</li>
@@ -43,7 +43,7 @@ const ResponsibleTrading = () => (
             </div>
 
             <h2>{it.L('Other Warnings & Regulatory Disclosures')}</h2>
-            <p>{it.L('Investing in complex products, such as CFDs and FX may incur losses as well as gains. Prices may vary and/or fluctuate due to changes in current market prices and conditions, which may impact the return on your investment. Before making an Investment decision, you should refer to our [_1]Key Information Documents[_2] on our website, in particular, the amount of Margin required for particular instruments that we offer. The Products offered by Binary Investments (Europe) Ltd fall under the category of ‘complex products’ and may not be suitable for retail clients.', `<a href='${it.url_for('regulation')}#key_information_documents'>`,'</a>')}</p>
+            <p>{it.L('Investing in complex products, such as CFDs and FX may incur losses as well as gains. Prices may vary and/or fluctuate due to changes in current market prices and conditions, which may impact the return on your investment. Before making an Investment decision, you should refer to our [_1]Key Information Documents[_2] on our website, in particular, the amount of Margin required for particular instruments that we offer. The Products offered by Binary Investments (Europe) Ltd fall under the category of \'complex products\' and may not be suitable for retail clients.', `<a href='${it.url_for('regulation')}#key_information_documents'>`,'</a>')}</p>
         </div>
     </div>
 );

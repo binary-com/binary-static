@@ -35,7 +35,7 @@ const KeepSafe = () => (
                     <Box icon='login_history'    text={it.L('Monitor recent logins to your account using the [_1]login history[_2] facility.', `<a href="${it.url_for('user/security/iphistoryws')}">`, '</a>')} />
                     <Box icon='account_password' text={it.L('Use different passwords for your email and [_1] account and set a [_2]strong password[_3].', it.website_name, `<a href="${it.url_for('user/security/change_passwordws')}">`, '</a>')} />
                     <Box icon='browser'          text={it.L('Always keep your web browser up-to-date. We recommend using the latest version of [_1]Google Chrome[_2].', '<a href="https://www.google.com/chrome/" target="_blank">', '</a>')} />
-                    <Box icon='no_share'         text={it.L('Don’t share your [_1] account or payment methods with any other person.', it.website_name)} />
+                    <Box icon='no_share'         text={it.L('Don\'t share your [_1] account or payment methods with any other person.', it.website_name)} />
                     <Box icon='antivirus'        text={it.L('Install antivirus software (such as Avast Free Antivirus for [_1]Windows[_2] and [_3]Mac[_4]) on your computer.', '<a href="https://www.avast.com/en-gb/free-antivirus-download" target="_blank">', '</a>', '<a href="https://www.avast.com/en-gb/free-mac-security" target="_blank">', '</a>')} />
                 </div>
             </div>

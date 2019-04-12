@@ -98,11 +98,11 @@ export default class SmartChartStore extends BaseStore {
 
     // ---------- Barriers ----------
     @action.bound
-    createBarriers = (contract_type, high_barrier, low_barrier, onChartBarrierChange, config) => {
+    createBarriers = (contract_type, high_barrier, low_barrier, onChartBarrierChange, barrier_config) => {
         if (isEmptyObject(this.barriers.main)) {
             let main_barrier = {};
             if (isBarrierSupported(contract_type)) {
-                main_barrier = new ChartBarrierStore(high_barrier, low_barrier, onChartBarrierChange, config);
+                main_barrier = new ChartBarrierStore(high_barrier, low_barrier, onChartBarrierChange, barrier_config);
             }
 
             this.barriers = {
@@ -123,6 +123,11 @@ export default class SmartChartStore extends BaseStore {
         if (!isEmptyObject(this.barriers.main)) {
             this.barriers.main.updateBarrierShade(should_display, contract_type);
         }
+    }
+
+    @action.bound
+    updateBarrierColor(is_dark_mode) {
+        this.barriers.main.updateBarrierColor(is_dark_mode);
     }
 
     @action.bound

@@ -49,7 +49,7 @@ export const getDetailsInfo = (contract_info) => {
     const txt_entry_spot       = entry_spot && !is_sold_before_start ? addComma(entry_spot) : '-';
 
     return {
-        [details_props.contract_type] : getContractTypeDisplay()[contract_type],
+        [details_props.contract_type] : getContractTypeDisplay(contract_type),
         [details_props.start_time]    : txt_start_time,
         [details_props.entry_spot]    : txt_entry_spot,
         [details_props.purchase_price]: <Money amount={buy_price} currency={currency} />,

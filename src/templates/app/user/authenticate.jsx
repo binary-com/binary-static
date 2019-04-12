@@ -12,11 +12,11 @@ const Authenticate = () => (
             </div>
 
             <p id='fully_authenticated' className='invisible'>
-                {it.L('Your account is fully authenticated. You can view your <a href="[_1]">trading limits here</a>.', it.url_for('user/security/limitsws'))}
+                {it.L('Your account is fully authenticated. You can view your [_1]trading limits here[_2].', `<a href="${it.url_for('user/security/limitsws')}">`, '</a>')}
             </p>
 
             <p id='needs_age_verification' className='invisible'>
-                {it.L('Account needs age verification, please contact <a href="[_1]">customer support</a> for more information.', it.url_for('contact'))}
+                {it.L('Account needs age verification, please contact [_1]customer support[_2] for more information.', `<a href="${it.url_for('contact')}">`, '</a>')}
             </p>
 
             <div id='not_authenticated' className='invisible'>

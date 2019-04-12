@@ -19,14 +19,14 @@ const updateTabDisplay = require('../../_common/tab_selector').updateTabDisplay;
             e.g. 'mt5fin:vanuatu' will match if clients mt5 financial company shortcode is 'vanuatu'
 
     Examples:
-        Show only for logged in clients with costarica landing company:
-            data-show='costarica'
+        Show only for logged in clients with svg landing company:
+            data-show='svg'
 
-        Show for costarica and malta:
-            data-show='costarica, malta'
+        Show for svg and malta:
+            data-show='svg, malta'
 
-        Hide for costarica:
-            data-show='-costarica'
+        Hide for svg:
+            data-show='-svg'
 
         Hide for malta and maltainvest:
             data-show='-malta, -maltainvest'
@@ -39,9 +39,9 @@ const updateTabDisplay = require('../../_common/tab_selector').updateTabDisplay;
 
     Prohibited values:
         Cannot mix includes and excludes:
-            data-show='costarica, -malta' -> throws error
+            data-show='svg, -malta' -> throws error
         Shortcodes are case sensitive:
-            data-show='Costarica'         -> throws error
+            data-show='SVG'         -> throws error
 */
 
 const visible_classname = 'data-show-visible';

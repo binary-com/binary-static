@@ -1,10 +1,11 @@
 import PropTypes     from 'prop-types';
 import React         from 'react';
-import { IconError } from 'Assets/Common/icon-error.jsx';
 import { localize }  from '_common/localize';
+import PageError     from 'Modules/PageError';
+import { routes }    from 'Constants/index';
 import Localize      from '../localize.jsx';
 
-const ErrorComponent = ({ type, message }) => {
+const ErrorComponent = ({ message }) => {
     let msg = '';
     if (typeof message === 'object') {
         msg = <Localize
@@ -14,11 +15,24 @@ const ErrorComponent = ({ type, message }) => {
     } else {
         msg = message;
     }
+    const refresh_message = localize('Please refresh this page to continue.');
     return (
-        <div className='error__container'>
-            <IconError type={type} />
-            <p className='error__message'>{msg || localize('Sorry, an error occured while processing your request.')}</p>
-        </div>
+        <PageError
+            header={localize('Oops, something went wrong.')}
+            messages={
+                msg
+                    ? [
+                        msg,
+                        refresh_message,
+                    ]
+                    : [
+                        localize('Sorry, an error occured while processing your request.'),
+                        refresh_message,
+                    ]}
+            redirect_url={routes.trade}
+            redirect_label={localize('Refresh')}
+            buttonOnClick={() => location.reload()}
+        />
     );
 };
 

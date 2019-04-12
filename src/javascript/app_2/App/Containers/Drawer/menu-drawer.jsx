@@ -19,10 +19,10 @@ const MenuDrawer = ({
     is_mobile,
     is_positions_drawer_on,
     // is_purchase_confirmed,
-    is_purchase_locked,
+    // is_purchase_locked,
     toggleDarkMode,
     togglePositionsDrawer,
-    togglePurchaseLock,
+    // togglePurchaseLock,
     // togglePurchaseConfirmation,
 }) => (
     <div className='drawer__items-container'>
@@ -57,11 +57,11 @@ const MenuDrawer = ({
                     to_toggle={is_purchase_confirmed}
                 />
                 */}
-                <DrawerToggle
-                    text={localize('Purchase Lock')}
-                    toggle={togglePurchaseLock}
-                    to_toggle={is_purchase_locked}
-                />
+                {/* <DrawerToggle */}
+                {/* text={localize('Purchase Lock')} */}
+                {/* toggle={togglePurchaseLock} */}
+                {/* to_toggle={is_purchase_locked} */}
+                {/* /> */}
             </React.Fragment>}
         </div>
         {!!(is_logged_in && is_mobile) &&
@@ -82,29 +82,29 @@ const MenuDrawer = ({
 );
 
 MenuDrawer.propTypes = {
-    is_dark_mode              : PropTypes.bool,
-    is_logged_in              : PropTypes.bool,
-    is_mobile                 : PropTypes.bool,
-    is_positions_drawer_on    : PropTypes.bool,
-    is_purchase_confirmed     : PropTypes.bool,
-    is_purchase_locked        : PropTypes.bool,
-    toggleDarkMode            : PropTypes.func,
-    togglePositionsDrawer     : PropTypes.func,
-    togglePurchaseConfirmation: PropTypes.func,
-    togglePurchaseLock        : PropTypes.func,
+    is_dark_mode          : PropTypes.bool,
+    is_logged_in          : PropTypes.bool,
+    is_mobile             : PropTypes.bool,
+    is_positions_drawer_on: PropTypes.bool,
+    // is_purchase_confirmed     : PropTypes.bool,
+    // is_purchase_locked        : PropTypes.bool,
+    toggleDarkMode        : PropTypes.func,
+    togglePositionsDrawer : PropTypes.func,
+    // togglePurchaseConfirmation: PropTypes.func,
+    // togglePurchaseLock        : PropTypes.func,
 };
 
 export default connect(
     ({ client, ui }) => ({
-        is_logged_in              : client.is_logged_in,
-        is_dark_mode              : ui.is_dark_mode_on,
-        is_mobile                 : ui.is_mobile,
-        is_positions_drawer_on    : ui.is_positions_drawer_on,
-        is_purchase_confirmed     : ui.is_purchase_confirm_on,
-        is_purchase_locked        : ui.is_purchase_lock_on,
-        toggleDarkMode            : ui.toggleDarkMode,
-        togglePositionsDrawer     : ui.togglePositionsDrawer,
-        togglePurchaseConfirmation: ui.togglePurchaseConfirmation,
-        togglePurchaseLock        : ui.togglePurchaseLock,
+        is_logged_in          : client.is_logged_in,
+        is_dark_mode          : ui.is_dark_mode_on,
+        is_mobile             : ui.is_mobile,
+        is_positions_drawer_on: ui.is_positions_drawer_on,
+        // is_purchase_confirmed     : ui.is_purchase_confirm_on,
+        // is_purchase_locked        : ui.is_purchase_lock_on,
+        toggleDarkMode        : ui.toggleDarkMode,
+        togglePositionsDrawer : ui.togglePositionsDrawer,
+        // togglePurchaseConfirmation: ui.togglePurchaseConfirmation,
+        // togglePurchaseLock        : ui.togglePurchaseLock,
     }),
 )(MenuDrawer);

@@ -69,8 +69,8 @@ const Index = () => (
                 className='gr-padding-20 gr-parent tab-selector-wrapper'
                 items={[
                     { id: 'binary',   text: it.L('Binary Options') },
-                    { id: 'lookback', text: it.L('Lookbacks'), dataShow: 'default, virtual, costarica' },
-                    { id: 'mt5',      text: it.L('MetaTrader 5'), dataShow: 'mtcompany' },
+                    { id: 'lookback', text: it.L('Lookbacks') },
+                    { id: 'mt5',      text: it.L('MetaTrader 5') },
                     { id: 'get_started_tabs_selector', className: 'tab-selector' },
                 ]}
             />
@@ -337,7 +337,7 @@ const Index = () => (
                             </div>
                         </div>
                         <SeparatorLine invisible />
-                        <p>{it.L('For example, let’s say the market has a low of 5,200 and a close of 6,000 over the contract duration, then a ‘Close-Low’ lookback with a multiplier of $2 would have a payout of:')}</p>
+                        <p>{it.L('For example, let\'s say the market has a low of 5,200 and a close of 6,000 over the contract duration, then a "Close-Low" lookback with a multiplier of $2 would have a payout of:')}</p>
                         <div className='formula center-text'>
                             <span>{it.L('2 * (6,000 – 5,200) = $1600')}</span>
                         </div>

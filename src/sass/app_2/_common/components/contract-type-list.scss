@@ -85,6 +85,9 @@
             }
         }
     }
+    &--invisible {
+        display: none;
+    }
     &--selected {
         @include themify($themes) {
             color: themed('text_active_color');
