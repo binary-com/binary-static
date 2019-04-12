@@ -3,19 +3,6 @@ import React      from 'react';
 import * as Logic from '../logic';
 
 describe('logic', () => {
-    describe('getChartConfig', () => {
-        it('should work assign end_epoch and start_epoch correctly', () => {
-            const contract_info = {
-                "exit_tick_time": 1544000100,
-                "date_start": 1544000000,
-            };
-            expect(Logic.getChartConfig(contract_info)).to.eql({
-                end_epoch: 1544000100,
-                start_epoch: 1544000000,
-            });
-        });
-    });
-
     describe('isEnded', () => {
         it('should return false when there is status and it\'s equal to open in contract info', () => {
             const contract_info = {

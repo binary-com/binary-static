@@ -1,13 +1,3 @@
-export const getChartConfig = (contract_info) => {
-    const start_epoch = contract_info.date_start;
-    const end_epoch   = getEndSpotTime(contract_info);
-
-    return {
-        end_epoch,
-        start_epoch,
-    };
-};
-
 const hour_to_granularity_map = [
     [1      , 0],
     [2      , 120],

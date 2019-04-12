@@ -15,7 +15,6 @@ import {
     getDigitInfo,
     isDigitContract }            from './Helpers/digits';
 import {
-    getChartConfig,
     getDisplayStatus,
     getEndSpot,
     getEndSpotTime,
@@ -49,17 +48,16 @@ export default class ContractStore extends BaseStore {
     // -------------------
     @action.bound
     drawChart(SmartChartStore, contract_info) {
-        this.forget_id = contract_info.id;
-        if (getEndSpotTime(contract_info)) {
-            this.chart_config = getChartConfig(contract_info);
-        } else {
-            delete this.chart_config.end_epoch;
-            delete this.chart_config.start_epoch;
+        this.forget_id     = contract_info.id;
+        const contract_has_end_spot = !!getEndSpotTime(contract_info);
+        const chart_has_end_and_start = (this.chart_config.end_epoch && this.chart_config.start_epoch);
 
-            if (!this.is_left_epoch_set && contract_info.tick_count) {
-                this.is_left_epoch_set = true;
-                SmartChartStore.setTickChartView(contract_info.purchase_time);
-            }
+        if (contract_has_end_spot && !chart_has_end_and_start) {
+            this.chart_config.start_epoch = contract_info.date_start;
+            this.chart_config.end_epoch   = getEndSpotTime(contract_info);
+        } else if (!this.is_left_epoch_set && contract_info.tick_count) {
+            this.is_left_epoch_set = true;
+            SmartChartStore.setTickChartView(contract_info.purchase_time);
         }
 
         createChartBarrier(SmartChartStore, contract_info);
