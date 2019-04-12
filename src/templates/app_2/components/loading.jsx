@@ -12,7 +12,7 @@ const Loading = ({ id, theme = 'dark' }) => (
             </g>
         </svg>
         <div className='initial-loader__wrapper'>
-            { Array.from(new Array(4)).map((x, inx) => (
+            { Array.from(new Array(5)).map((x, inx) => (
                 <div key={inx} className={`initial-loader__circ initial-loader__circ--${inx + 1} circ${inx + 1}`} />
             ))}
         </div>

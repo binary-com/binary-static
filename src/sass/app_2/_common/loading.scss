@@ -42,69 +42,35 @@
 
 @keyframes color-change-delay {
     /* postcss-bem-linter: ignore */
-    0% { /* stylelint-disable-line selector-type-no-unknown */
-        background: $COLOR_WHITE;
-    }
-    /* postcss-bem-linter: ignore */
-    100% {
+    50% {
         background: $COLOR_ORANGE;
     }
 }
 
 @-webkit-keyframes color-change-delay {
     /* postcss-bem-linter: ignore */
-    0% { /* stylelint-disable-line selector-type-no-unknown */
-        background: $COLOR_WHITE;
-    }
-    /* postcss-bem-linter: ignore */
-    100% {
+    50% {
         background: $COLOR_ORANGE;
     }
 }
 
 @keyframes color-change-delay2 {
-    0% {} /* stylelint-disable-line */
-    10% {
-        transform: translate(0, 0);
-        border-color: $COLOR_WHITE;
-        background-color: $COLOR_DARK_ORANGE;
+    0% { /* stylelint-disable-line */
+        background-color: $COLOR_WHITE;
     }
-    20% {
-        border-color: $COLOR_ORANGE;
-        background-color: $COLOR_DARK_ORANGE;
-    }
-    30% {
-        border-color: $COLOR_WHITE;
-        background-color: $COLOR_DARK_ORANGE;
-    }
-    50% {
-        transform: translate(0, 15px);
-    }
-    100% {
-        transform: translate(0, 0);
-    }
-}
-
-@-webkit-keyframes color-change-delay2 {
-    0% {} /* stylelint-disable-line */
-    10% { /* stylelint-disable-line */
-        -webkit-transform: translate(0, 0);
-        border-color: $COLOR_WHITE;
-        background-color: $COLOR_DARK_ORANGE;
-    }
-    20% { /* stylelint-disable-line */
-        border-color: $COLOR_ORANGE;
-        background-color: $COLOR_DARK_ORANGE;
-    }
-    30% { /* stylelint-disable-line */
-        border-color: $COLOR_WHITE;
-        background-color: $COLOR_DARK_ORANGE;
-    }
+    // 20% {
+    //     border-color: $COLOR_ORANGE;
+    //     background-color: $COLOR_DARK_ORANGE;
+    // }
+    // 30% {
+    //     border-color: $COLOR_WHITE;
+    //     background-color: $COLOR_DARK_ORANGE;
+    // }
     50% { /* stylelint-disable-line */
-        -webkit-transform: translate(0, 15px);
+        background-color: $COLOR_WHITE;
     }
     100% { /* stylelint-disable-line */
-        -webkit-transform: translate(0, 0);
+        background-color: $COLOR_ORANGE;
     }
 }
 
@@ -124,31 +90,14 @@
 
 @keyframes wave-bounce {
     /* postcss-bem-linter: ignore */
-    0% { /* stylelint-disable-line selector-type-no-unknown */
+    0%, 20%, 100% { /* stylelint-disable-line selector-type-no-unknown */
         transform: translate(0, 0);
+        background-color: $COLOR_WHITE;
     }
     /* postcss-bem-linter: ignore */
-    50% {
-        transform: translate(0, 15px);
-    }
-    /* postcss-bem-linter: ignore */
-    100% {
-        transform: translate(0, 0);
-    }
-}
-
-@-webkit-keyframes wave-bounce {
-    /* postcss-bem-linter: ignore */
-    0% { /* stylelint-disable-line selector-type-no-unknown */
-        -webkit-transform: translate(0, 0);
-    }
-    /* postcss-bem-linter: ignore */
-    50% {
-        -webkit-transform: translate(0, 15px);
-    }
-    /* postcss-bem-linter: ignore */
-    100% {
-        -webkit-transform: translate(0, 0);
+    10%, 15% {
+        transform: translate(0, -10px);
+        background-color: $COLOR_ORANGE;
     }
 }
 
@@ -192,7 +141,7 @@
         @include toEm(margin-top, 56px, 12px);
     }
     &__circ {
-        margin: 1.2em;
+        margin: 0.8em;
         border-radius: 20px;
         height: 100%;
         width: 0.6em;
@@ -201,38 +150,74 @@
         &--1 {
             width: 24px;
             height: 24px;
-            background: $COLOR_WHITE;
-            animation: color-change-delay2 1s 0s linear infinite;
-            -webkit-animation: color-change-delay2 1s 0s linear infinite
-            // animation: wave-bounce 0.6s 0.1s linear infinite, color-change-delay 1s ease-in forwards;
-            // -webkit-animation: wave-bounce 0.6s 0.1s linear infinite, color-change-delay 1s ease-in forwards;
+            background-color: $COLOR_WHITE;
+            animation: wave-bounce 1s ease-out 0s infinite;
+            // animation: wave-bounce 0.6s 0.1s linear infinite, color-change-delay 1s step-end 0s infinite;
+            // -webkit-animation: wave-bounce 0.6s 0.1s linear infinite, color-change-delay 1s step-end 0s infinite;
         }
         &--2 {
             width: 24px;
             height: 24px;
-            background: $COLOR_WHITE;
-            animation: color-change-delay2 1s 0.1s linear infinite;
-            -webkit-animation: color-change-delay2 1s 0.1s linear infinite
-            // animation: wave-bounce 0.6s 0.2s linear infinite, color-change-delay 1s ease-in 1s forwards;
-            // -webkit-animation: wave-bounce 0.6s 0.2s linear infinite, color-change-delay 1s ease-in 1s forwards;
+            background-color: $COLOR_WHITE;
+            animation: wave-bounce 1s ease-out 0.2s infinite;
+            // animation: wave-bounce 0.6s 0.1s linear infinite, color-change-delay 1s step-end 0s infinite;
+            // -webkit-animation: wave-bounce 0.6s 0.1s linear infinite, color-change-delay 1s step-end 0s infinite;
         }
         &--3 {
             width: 24px;
             height: 24px;
-            background: $COLOR_WHITE;
-            animation: color-change-delay2 1s 0.2s linear infinite;
-            -webkit-animation: color-change-delay2 1s 0.2s linear infinite
-            // animation: wave-bounce 0.6s 0.3s linear infinite, color-change-delay 1s ease-in 2s forwards;
-            // -webkit-animation: wave-bounce 0.6s 0.3s linear infinite, color-change-delay 1s ease-in 2s forwards;
+            background-color: $COLOR_WHITE;
+            animation: wave-bounce 1s ease-out 0.4s infinite;
+            // animation: wave-bounce 0.6s 0.1s linear infinite, color-change-delay 1s step-end 0s infinite;
+            // -webkit-animation: wave-bounce 0.6s 0.1s linear infinite, color-change-delay 1s step-end 0s infinite;
         }
         &--4 {
             width: 24px;
             height: 24px;
-            background: $COLOR_WHITE;
-            animation: color-change-delay2 1s 0.3s linear infinite;
-            -webkit-animation: color-change-delay2 1s 0.3s linear infinite
-            // animation: wave-bounce 0.6s 0.4s linear infinite, color-change-delay 1s ease-in 3s forwards;
-            // -webkit-animation: wave-bounce 0.6s 0.4s linear infinite, color-change-delay 1s ease-in 3s forwards;
+            background-color: $COLOR_WHITE;
+            animation: wave-bounce 1s ease-out 0.6s infinite;
+            // animation: wave-bounce 0.6s 0.1s linear infinite, color-change-delay 1s step-end 0s infinite;
+            // -webkit-animation: wave-bounce 0.6s 0.1s linear infinite, color-change-delay 1s step-end 0s infinite;
         }
+        &--5 {
+            width: 24px;
+            height: 24px;
+            background-color: $COLOR_WHITE;
+            animation: wave-bounce 1s ease-out 0.8s infinite;
+            // animation: wave-bounce 0.6s 0.1s linear infinite, color-change-delay 1s step-end 0s infinite;
+            // -webkit-animation: wave-bounce 0.6s 0.1s linear infinite, color-change-delay 1s step-end 0s infinite;
+        }
+        // &--2 {
+        //     width: 24px;
+        //     height: 24px;
+        //     background: $COLOR_WHITE;
+        //     animation: wave-bounce 0.6s cubic-bezier(0.22, 0.61, 0.35, 1) 0.1s infinite, color-change-delay 0.6s step-start 0.1s infinite;
+        //     // animation: wave-bounce 0.6s 0.2s linear infinite, color-change-delay 1s step-end 1s infinite;
+        //     // -webkit-animation: wave-bounce 0.6s 0.2s linear infinite, color-change-delay 1s step-end 1s infinite;
+        // }
+        // &--3 {
+        //     width: 24px;
+        //     height: 24px;
+        //     background: $COLOR_WHITE;
+        //     animation: wave-bounce 0.6s cubic-bezier(0.22, 0.61, 0.35, 1) 0.2s infinite, color-change-delay 0.6s step-start 0.2s infinite;
+        //     // animation: wave-bounce 0.6s 0.3s linear infinite, color-change-delay 1s step-end 2s infinite;
+        //     // -webkit-animation: wave-bounce 0.6s 0.3s linear infinite, color-change-delay 1s step-end 2s infinite;
+        // }
+        // &--4 {
+        //     width: 24px;
+        //     height: 24px;
+        //     background: $COLOR_WHITE;
+        //     animation: wave-bounce 0.6s cubic-bezier(0.22, 0.61, 0.35, 1) 0.3s infinite, color-change-delay 0.6s step-start 0.3s infinite;
+        //     // animation: wave-bounce 0.6s 0.4s linear infinite, color-change-delay 1s step-end 3s infinite;
+        //     // -webkit-animation: wave-bounce 0.6s 0.4s linear infinite, color-change-delay 1s step-end 3s infinite;
+        // }
+        // &--5 {
+        //     width: 24px;
+        //     height: 24px;
+        //     background: $COLOR_WHITE;
+        //     animation: wave-bounce 0.6s cubic-bezier(0.22, 0.61, 0.35, 1) 0.4s infinite, color-change-delay 0.6s step-start 0.4s infinite;
+        //     // animation: wave-bounce 0.6s 0.5s linear infinite, color-change-delay 1s step-end 4s infinite;
+        //     // -webkit-animation: wave-bounce 0.6s 0.5s linear infinite, color-change-delay 1s step-end 4s infinite;
+        // }
     }
 }
