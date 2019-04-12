@@ -13,6 +13,7 @@ const PurchaseButton = ({
     is_high_low,
     is_loading,
     onClickPurchase,
+    should_use_blur_animation,
     type,
 }) => (
     <Button
@@ -21,7 +22,8 @@ const PurchaseButton = ({
         className={classNames(
             'btn-purchase',
             { 'btn-purchase--disabled': (is_contract_mode || is_disabled) && !is_loading },
-            { 'btn-purchase--animated': is_loading })}
+            { 'btn-purchase--animated--default': is_loading && !should_use_blur_animation },
+            { 'btn-purchase--animated--blur': is_loading && should_use_blur_animation })}
         has_effect
         onClick={() => { onClickPurchase(info.id, info.stake, type); }}
     >
@@ -52,14 +54,15 @@ const PurchaseButton = ({
 );
 
 PurchaseButton.propTypes = {
-    currency        : PropTypes.string,
-    info            : PropTypes.object,
-    is_contract_mode: PropTypes.bool,
-    is_disabled     : PropTypes.bool,
-    is_high_low     : PropTypes.bool,
-    is_loading      : PropTypes.bool,
-    onClickPurchase : PropTypes.func,
-    type            : PropTypes.string,
+    currency                 : PropTypes.string,
+    info                     : PropTypes.object,
+    is_contract_mode         : PropTypes.bool,
+    is_disabled              : PropTypes.bool,
+    is_high_low              : PropTypes.bool,
+    is_loading               : PropTypes.bool,
+    onClickPurchase          : PropTypes.func,
+    should_use_blur_animation: PropTypes.bool,
+    type                     : PropTypes.string,
 };
 
 export default PurchaseButton;
