@@ -32,7 +32,7 @@ const PurchaseButton = ({
                 <div className='btn-purchase__icon_wrapper'>
                     <IconTradeType
                         className='btn-purchase__icon'
-                        type={!is_loading
+                        type={(!is_loading || should_use_blur_animation)
                             ? (is_high_low
                                 ? `${type.toLowerCase()}_barrier`
                                 : type.toLowerCase())
@@ -40,13 +40,23 @@ const PurchaseButton = ({
                     />
                 </div>
                 <div className='btn-purchase__text_wrapper'>
-                    <span className='btn-purchase__text'>{!is_loading && localize('[_1]', getContractTypeDisplay(type, is_high_low))}</span>
+                    <span className='btn-purchase__text'>
+                        {(!is_loading || should_use_blur_animation)
+                            ? localize('[_1]', getContractTypeDisplay(type, is_high_low))
+                            : ''
+                        }
+                    </span>
                 </div>
             </div>
             <div className='btn-purchase__effect-detail' />
             <div className='btn-purchase__info btn-purchase__info--right'>
                 <div className='btn-purchase__text_wrapper'>
-                    <span className='btn-purchase__text'>{is_loading && is_disabled ? '' : info.returns}</span>
+                    <span className='btn-purchase__text'>
+                        {is_loading && is_disabled
+                            ? '' :
+                            info.returns
+                        }
+                    </span>
                 </div>
             </div>
         </React.Fragment>
