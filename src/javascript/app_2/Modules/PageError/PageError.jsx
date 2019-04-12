@@ -24,7 +24,7 @@ const PageError = ({
                     { error_code &&
                     <React.Fragment>
                         <br />
-                        <p className='page-error__code'>{localize('Error Code : [_1]', error_code)}</p>
+                        <p className='page-error__code'>{localize('Error Code: [_1]', error_code)}</p>
                     </React.Fragment>
                     }
                 </span>
