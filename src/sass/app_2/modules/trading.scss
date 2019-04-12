@@ -468,7 +468,7 @@
             }
         }
     }
-    &--animated {
+    &--animated--default {
         .btn-purchase__icon_wrapper, .btn-purchase__text_wrapper {
             @extend .loader;
         }
@@ -487,6 +487,9 @@
                 display: block;
             }
         }
+    }
+    &--animated--blur .btn-purchase__info--right .btn-purchase__text {
+        opacity: 0.5;
     }
     &__shadow-wrapper:hover:after {
         opacity: 0;

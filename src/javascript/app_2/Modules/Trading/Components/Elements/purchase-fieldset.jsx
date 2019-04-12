@@ -29,6 +29,7 @@ class PurchaseFieldset extends React.Component {
                 is_high_low={this.props.is_high_low}
                 is_loading={this.props.is_loading}
                 onClickPurchase={this.props.onClickPurchase}
+                should_use_blur_animation={this.should_use_blur_animation}
                 type={this.props.type}
             />
         );
