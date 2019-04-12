@@ -2,7 +2,9 @@ import classNames    from 'classnames';
 import PropTypes     from 'prop-types';
 import React         from 'react';
 import { localize }  from '_common/localize';
-import { IconClose } from 'Assets/Common';
+import {
+    Icon,
+    IconClose }      from 'Assets/Common';
 
 export const DrawerHeader = ({
     alignment,
@@ -14,7 +16,7 @@ export const DrawerHeader = ({
             {alignment && alignment === 'right' ?
                 <div className={drawer_header_class}>
                     <div className='drawer__icons drawer__icons-btn-close' onClick={closeBtn}>
-                        <IconClose className='drawer__icons-icon-close' />
+                        <Icon icon={IconClose} className='drawer__icons-icon-close' />
                     </div>
                     <div className='drawer__notifications'>
                         <h4 className='drawer__notifications-header'>{localize('all notifications')}</h4>
@@ -23,7 +25,7 @@ export const DrawerHeader = ({
                 :
                 <div className={drawer_header_class}>
                     <div className='drawer__icons drawer__icons-btn-close' onClick={closeBtn}>
-                        <IconClose className='drawer__icons-icon-close' />
+                        <Icon icon={IconClose} className='drawer__icons-icon-close' />
                     </div>
                     <div className='drawer__icons drawer__brand-logo'>
                         <div className='drawer__image' />

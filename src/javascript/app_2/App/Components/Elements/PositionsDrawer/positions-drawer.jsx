@@ -5,7 +5,9 @@ import React                          from 'react';
 import { CSSTransition }              from 'react-transition-group';
 import { Scrollbars }                 from 'tt-react-custom-scrollbars';
 import { localize }                   from '_common/localize';
-import { IconMinimize }               from 'Assets/Common';
+import {
+    Icon,
+    IconMinimize }                   from 'Assets/Common';
 import EmptyPortfolioMessage          from 'Modules/Portfolio/Components/empty-portfolio-message.jsx';
 import { connect }                    from 'Stores/connect';
 import PositionsDrawerCard            from './positions-drawer-card.jsx';
@@ -82,7 +84,7 @@ class PositionsDrawer extends React.Component {
                         className='positions-drawer__icon-close'
                         onClick={toggleDrawer}
                     >
-                        <IconMinimize />
+                        <Icon icon={IconMinimize} />
                     </div>
                 </div>
                 <div className='positions-drawer__body'>

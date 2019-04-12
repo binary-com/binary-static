@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React     from 'react';
 
 const IconBarrierDown = ({ className }) => (
-    <svg className={className} xmlns='http://www.w3.org/2000/svg' width='16' height='16'>
+    <svg className={className} width='16' height='16'>
         <path
             className='color1-fill'
             fillOpacity='.8'
