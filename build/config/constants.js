@@ -25,7 +25,7 @@ const release_config = {
     production: {
         branch        : 'master',
         target_folder : '',
-        valid_sections: ['app'], // TODO: add app_2 and all when we want to release app_2 to production
+        valid_sections: ['app', 'app_2', 'all'],
         origin        : release_targets.production.repo,
         CNAME         : release_targets.production.CNAME,
     },
