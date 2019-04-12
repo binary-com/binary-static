@@ -46,6 +46,8 @@ $themes: (
         wip_btn_color                    : $COLOR_WHITE,
         wip_color                        : $COLOR_DARK_BLUE_5,
         won_gradient_color               : $COLOR_LIGHT_GREEN_GRADIENT,
+        won_color                        : $COLOR_GREEN_1,
+        loss_color                       : $COLOR_RED,
     ),
     dark: (
         active_color                     : $COLOR_DARK_BLUE_5,
@@ -93,5 +95,7 @@ $themes: (
         wip_btn_color                    : $COLOR_DARK_BLUE_2,
         wip_color                        : $COLOR_WHITE,
         won_gradient_color               : $COLOR_DARK_GREEN_GRADIENT,
+        won_color                        : $COLOR_GREEN_1,
+        loss_color                       : $COLOR_RED,
     ),
 );
