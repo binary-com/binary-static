@@ -59,9 +59,6 @@ const PurchaseFieldset = ({
                     onMouseEnter={() => { onHoverPurchase(true, type); }}
                     onMouseLeave={() => { onHoverPurchase(false); }}
                 >
-                    {is_proposal_error &&
-                    <Tooltip message={info.message} alignment='left' className='tooltip--error-secondary' />
-                    }
                     {
                         // is_purchase_confirm_on ?
                         //     <PopConfirm
