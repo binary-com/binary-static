@@ -52,7 +52,6 @@ export default class ContractStore extends BaseStore {
 
         if (contract_has_end_spot) {
             const { date_start, exit_tick_time } = contract_info;
-
             SmartChartStore.setRange(date_start, exit_tick_time);
         } else if (!this.is_left_epoch_set && contract_info.tick_count) {
             this.is_left_epoch_set = true;
