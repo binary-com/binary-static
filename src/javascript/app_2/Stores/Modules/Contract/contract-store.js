@@ -33,7 +33,6 @@ export default class ContractStore extends BaseStore {
     @observable contract_info = observable.object({});
     @observable digits_info   = observable.object({});
     @observable sell_info     = observable.object({});
-    @observable chart_config  = observable.object({});
 
     @observable has_error         = false;
     @observable error_message     = '';
@@ -48,13 +47,13 @@ export default class ContractStore extends BaseStore {
     // -------------------
     @action.bound
     drawChart(SmartChartStore, contract_info) {
-        this.forget_id     = contract_info.id;
-        const contract_has_end_spot = !!getEndSpotTime(contract_info);
-        const chart_has_end_and_start = (this.chart_config.end_epoch && this.chart_config.start_epoch);
+        this.forget_id                = contract_info.id;
+        const contract_has_end_spot   = !!contract_info.exit_tick_time;
 
-        if (contract_has_end_spot && !chart_has_end_and_start) {
-            this.chart_config.start_epoch = contract_info.date_start;
-            this.chart_config.end_epoch   = getEndSpotTime(contract_info);
+        if (contract_has_end_spot) {
+            const { date_start, exit_tick_time } = contract_info;
+
+            SmartChartStore.setRange(date_start, exit_tick_time);
         } else if (!this.is_left_epoch_set && contract_info.tick_count) {
             this.is_left_epoch_set = true;
             SmartChartStore.setTickChartView(contract_info.purchase_time);
@@ -92,7 +91,6 @@ export default class ContractStore extends BaseStore {
     @action.bound
     onCloseContract() {
         this.forgetProposalOpenContract();
-        this.chart_config      = {};
         this.contract_id       = null;
         this.contract_info     = {};
         this.digits_info       = {};
