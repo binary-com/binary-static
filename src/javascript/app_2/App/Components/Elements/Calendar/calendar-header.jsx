@@ -2,6 +2,7 @@ import classNames           from 'classnames';
 import PropTypes            from 'prop-types';
 import React                from 'react';
 import {
+    Icon,
     IconChevronDoubleLeft,
     IconChevronDoubleRight,
     IconChevronLeft,
@@ -55,7 +56,7 @@ const CalendarHeader = ({
                 })}
                 onClick={is_prev_year_disabled ? undefined : () => navigateTo(subYears(calendar_date, num_of_years))}
             >
-                <IconChevronDoubleLeft className='calendar__icon' />
+                <Icon icon={IconChevronDoubleLeft} className='calendar__icon' />
             </CalendarButton>
             <CalendarButton
                 className={classNames('calendar__nav calendar__nav--prev-month', {
@@ -64,7 +65,7 @@ const CalendarHeader = ({
                 is_hidden={!is_date_view}
                 onClick={is_prev_month_disabled ? undefined : () => navigateTo(subMonths(calendar_date, 1))}
             >
-                <IconChevronLeft className='calendar__icon' />
+                <Icon icon={IconChevronLeft} className='calendar__icon' />
             </CalendarButton>
 
             <React.Fragment>
@@ -105,7 +106,7 @@ const CalendarHeader = ({
                 is_hidden={!is_date_view}
                 onClick={is_next_month_disabled ? undefined : () => navigateTo(addMonths(calendar_date, 1))}
             >
-                <IconChevronRight className='calendar__icon' />
+                <Icon icon={IconChevronRight} className='calendar__icon' />
             </CalendarButton>
             <CalendarButton
                 className={classNames('calendar__nav calendar__nav--next-year', {
@@ -113,7 +114,7 @@ const CalendarHeader = ({
                 })}
                 onClick={is_next_year_disabled ? undefined : () => navigateTo(addYears(calendar_date, num_of_years))}
             >
-                <IconChevronDoubleRight className='calendar__icon' />
+                <Icon icon={IconChevronDoubleRight} className='calendar__icon' />
             </CalendarButton>
         </div>
     );

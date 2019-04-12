@@ -1,6 +1,7 @@
 import classNames        from 'classnames';
 import PropTypes         from 'prop-types';
 import React             from 'react';
+import { Icon }          from 'Assets/Common';
 import { IconPositions } from 'Assets/Footer';
 
 const TogglePositions = ({
@@ -16,7 +17,7 @@ const TogglePositions = ({
             className={toggle_positions_class}
             onClick={togglePositionsDrawer}
         >
-            <IconPositions className='footer__icon ic-positions__icon' />
+            <Icon icon={IconPositions} className='footer__icon ic-positions__icon' />
         </a>
     );
 };

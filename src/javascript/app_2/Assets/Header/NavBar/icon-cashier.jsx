@@ -3,7 +3,7 @@ import PropTypes  from 'prop-types';
 import React      from 'react';
 
 const IconCashier = ({ className }) => (
-    <svg className={classNames('inline-icon', className)} width='16' height='16' viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'>
+    <svg className={classNames('inline-icon', className)} width='16' height='16' viewBox='0 0 16 16'>
         <g fill='none' fillRule='evenodd'>
             <rect stroke='#2A3052' x='.5' y='5.5' width='15' height='9' rx='1' />
             <path fill='#2A3052' d='M0 11h16v1H0z' />

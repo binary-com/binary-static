@@ -12,8 +12,7 @@ const NetworkMonitor = (() => {
 
     const updateStore = action((status, is_online) => {
         if (common_store) {
-            common_store.network_status    = status;
-            common_store.is_network_online = is_online;
+            common_store.setNetworkStatus(status, is_online);
         }
     });
 

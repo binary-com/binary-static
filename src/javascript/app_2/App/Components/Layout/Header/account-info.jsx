@@ -3,7 +3,9 @@ import PropTypes           from 'prop-types';
 import React               from 'react';
 import { CSSTransition }   from 'react-transition-group';
 import { AccountSwitcher } from 'App/Containers/AccountSwitcher';
-import { IconArrow }       from 'Assets/Common';
+import {
+    Icon,
+    IconArrowBold }        from 'Assets/Common';
 
 // todo fix absolute path
 
@@ -40,7 +42,7 @@ const AccountInfo = ({
                     {balance}
                 </p>
             }
-            <IconArrow className='acc-info__select-arrow' is_bold={true} />
+            <Icon icon={IconArrowBold} className='acc-info__select-arrow' />
         </div>
         <CSSTransition
             in={is_dialog_on}

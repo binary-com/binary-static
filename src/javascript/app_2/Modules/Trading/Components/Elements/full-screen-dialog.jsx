@@ -1,7 +1,9 @@
 import classNames    from 'classnames';
 import PropTypes     from 'prop-types';
 import React         from 'react';
-import { IconClose } from 'Assets/Common';
+import {
+    Icon,
+    IconClose }      from 'Assets/Common';
 
 const FullScreenDialog = (props) => {
     const { title, visible, children, wrapperClassName } = props;
@@ -55,7 +57,7 @@ const FullScreenDialog = (props) => {
                     className='icons btn-close fullscreen-dialog__close-btn'
                     onClick={props.onClose}
                 >
-                    <IconClose className='fullscreen-dialog__close-btn-icon' />
+                    <Icon icon={IconClose} className='fullscreen-dialog__close-btn-icon' />
                 </div>
             </div>
             <div className='fullscreen-dialog__header-shadow-cover' />
