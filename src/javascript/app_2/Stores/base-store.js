@@ -185,7 +185,9 @@ export default class BaseStore {
      */
     @action
     setValidationErrorMessages(propertyName, messages) {
-        this.validation_errors[propertyName] = messages;
+        if (!this.validation_errors[propertyName] || this.validation_errors[propertyName] !== messages) {
+            this.validation_errors[propertyName] = messages;
+        }
     }
 
     /**
@@ -245,7 +247,9 @@ export default class BaseStore {
         validator.isPassed();
 
         Object.keys(inputs).forEach(key => {
-            this.setValidationErrorMessages(key, validator.errors.get(key));
+            if (validator.errors.get(key).length > 0) {
+                this.setValidationErrorMessages(key, validator.errors.get(key));
+            }
         });
     }
 
@@ -255,9 +259,18 @@ export default class BaseStore {
      */
     @action
     validateAllProperties() {
-        this.validation_errors = {};
-        Object.keys(this.validation_rules).forEach(p => {
+        const validation_rules  = Object.keys(this.validation_rules);
+        const validation_errors = Object.keys(this.validation_errors);
+
+        validation_rules.forEach(p => {
             this.validateProperty(p, this[p]);
+        });
+
+        // Remove keys that are present in error, but not in rules:
+        validation_errors.forEach(error => {
+            if (!validation_rules.includes(error)) {
+                delete this.validation_errors[error];
+            }
         });
     }
 
