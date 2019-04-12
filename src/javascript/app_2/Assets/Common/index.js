@@ -1,4 +1,5 @@
 export * from './icon-arrow.jsx';
+export * from './icon-arrow-bold.jsx';
 export * from './icon-back.jsx';
 export * from './icon-calendar-today.jsx';
 export * from './icon-calendar.jsx';
@@ -22,3 +23,4 @@ export * from './icon-question.jsx';
 export * from './icon-red-dot.jsx';
 export * from './icon-success.jsx';
 export * from './icon-warning.jsx';
+export * from './icon.jsx';

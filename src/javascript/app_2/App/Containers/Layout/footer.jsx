@@ -16,7 +16,6 @@ const Footer = ({
     is_logged_in,
     is_positions_drawer_on,
     is_settings_dialog_on,
-    network_status,
     showBlur,
     togglePositionsDrawer,
     toggleSettingsDialog,
@@ -31,7 +30,7 @@ const Footer = ({
                 />
             }
         </div>
-        <NetworkStatus status={network_status} />
+        <NetworkStatus />
         <ServerTime />
         <div className='footer__links'>
             <ToggleSettings
@@ -53,17 +52,15 @@ Footer.propTypes = {
     is_logged_in              : PropTypes.bool,
     is_positions_drawer_on    : PropTypes.bool,
     is_settings_dialog_on     : PropTypes.bool,
-    network_status            : PropTypes.object,
     togglePositionsDrawer     : PropTypes.func,
     toggleSettingsDialog      : PropTypes.func,
 };
 
 export default connect(
-    ({ client, common, ui }) => ({
+    ({ client, ui }) => ({
         hideBlur                  : ui.hideBlur,
         is_dark_mode              : ui.is_dark_mode_on,
         is_logged_in              : client.is_logged_in,
-        network_status            : common.network_status,
         is_language_dialog_visible: ui.is_language_dialog_on,
         is_loading                : ui.is_loading,
         is_positions_drawer_on    : ui.is_positions_drawer_on,
