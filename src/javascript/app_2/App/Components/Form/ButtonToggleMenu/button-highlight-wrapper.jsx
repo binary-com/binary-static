@@ -26,7 +26,7 @@ class HighlightWrapper extends React.PureComponent {
 
     componentWillUnMount() {
         window.removeEventListener('resize', this.updateHighlightPosition);
-        this.clearInkBar();
+        this.resetHighlight();
     }
 
     onClick = (e, buttonClick) => {
