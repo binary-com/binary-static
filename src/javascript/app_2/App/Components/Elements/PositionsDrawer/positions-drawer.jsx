@@ -109,16 +109,8 @@ class PositionsDrawer extends React.Component {
 }
 
 PositionsDrawer.propTypes = {
-<<<<<<< HEAD
     active_contract_id    : PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-    active_positions      : MobxPropTypes.arrayOrObservableArray,
-=======
-    active_contract_id: PropTypes.PropTypes.oneOfType([
-        PropTypes.number,
-        PropTypes.string,
-    ]),
     all_positions         : MobxPropTypes.arrayOrObservableArray,
->>>>>>> new-app_positions_footer_steps
     children              : PropTypes.any,
     currency              : PropTypes.string,
     error                 : PropTypes.string,
