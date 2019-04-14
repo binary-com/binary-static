@@ -185,7 +185,10 @@ export default class BaseStore {
      */
     @action
     setValidationErrorMessages(propertyName, messages) {
-        if (!this.validation_errors[propertyName] || this.validation_errors[propertyName] !== messages) {
+        const is_different = () => this.validation_errors[propertyName].filter(x => messages.includes(x)).length > 0;
+        if (!this.validation_errors[propertyName]) {
+            this.validation_errors[propertyName] = messages;
+        } else if (is_different()) {
             this.validation_errors[propertyName] = messages;
         }
     }
@@ -247,9 +250,7 @@ export default class BaseStore {
         validator.isPassed();
 
         Object.keys(inputs).forEach(key => {
-            if (validator.errors.get(key).length > 0) {
-                this.setValidationErrorMessages(key, validator.errors.get(key));
-            }
+            this.setValidationErrorMessages(key, validator.errors.get(key));
         });
     }
 
