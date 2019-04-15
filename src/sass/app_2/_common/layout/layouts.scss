@@ -207,6 +207,7 @@
         margin-left: 1.6em;
         width: $SIDEBAR_WIDTH;
         margin-top: 8px;
+        z-index: 1;
     }
     &__items {
         opacity: 1;
