@@ -14,7 +14,6 @@
         <meta charset="utf-8" />
         <meta name="google-site-verification" content="Myh35QddfEArh0686LcO2zMjrgv0C7L4FCBU0k0oZvU" />
         <script type="text/javascript">
-            var redirectTimeOut;
             function getCookieItem(sKey) {
                 'use strict';
                 if (!sKey) { return null; }
@@ -49,14 +48,6 @@
                 var is_logged_in = client_info && client_info['token'];
                 window.location.href = (lang || 'en').toLowerCase() + '/' + (is_logged_in ? 'trading' : 'home') + '.html' + window.location.search;
             }
-            function isDelayedRedirect() {
-                if(isGtmApplicable() && !redirectTimeOut) {
-                    redirectTimeOut = setTimeout(redirect, 5000);
-                } else {
-                    clearTimeout(redirectTimeOut);
-                    redirect();
-                }
-            }
             function isGtmApplicable() {
                 return /(www|staging)\.binary\.com/i.test(window.location.hostname);
             }
@@ -65,9 +56,11 @@
                     dataLayer.push({
                         'event': 'page_load',
                         'eventCallback': function() {
-                            isDelayedRedirect();
+                            redirect();
                         }
                     });
+                } else {
+                    redirect();
                 }
             }
 
@@ -82,7 +75,7 @@
                     if (/^id$/i.test(lang)) {
                         lang = 'en';
                     }
-                    isDelayedRedirect();
+                    redirect();
                 } else {
                     var ws = new WebSocket('wss://ws.binaryws.com/websockets/v3?app_id=1');
                     ws.onopen = function(e) {
@@ -95,7 +88,6 @@
                                 lang = getLanguage(response.website_status.clients_country);
                             }
                             ws.close();
-                            isDelayedRedirect();
                             pushEvent(); // we need website_status.clients_country
                         }
                     };
