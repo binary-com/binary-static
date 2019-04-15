@@ -301,6 +301,7 @@ const Process = (() => {
     const onExpiryTypeChange = (value) => {
         const $expiry_type    = $('#expiry_type');
         const validated_value = value && $expiry_type.find(`option[value=${value}]`).length ? value : 'duration';
+        const is_edge = window.navigator.userAgent.indexOf('Edge') !== -1;
         $expiry_type.val(validated_value);
 
         let make_price_request = 0;
@@ -311,6 +312,9 @@ const Process = (() => {
                 make_price_request = Durations.selectEndDate(moment(Defaults.get('expiry_date'))) ? -1 : 1;
             }
             Defaults.remove('duration_units', 'duration_amount');
+            if (is_edge) {
+                document.getSelection().empty(); // microsoft edge 18 automatically start selecting text when select expiry time after changing expiry type to end time
+            }
         } else {
             StartDates.enable();
             Durations.display();

@@ -1,7 +1,9 @@
 import PropTypes        from 'prop-types';
 import React            from 'react';
 import classNames       from 'classnames';
-import { IconError }    from 'Assets/Common/icon-error.jsx';
+import {
+    Icon,
+    IconError }         from 'Assets/Common';
 import { IconInfoBlue } from 'Assets/Common/icon-info-blue.jsx';
 import { IconWarning }  from 'Assets/Common/icon-warning.jsx';
 import { IconSuccess }  from 'Assets/Common/icon-success.jsx';
@@ -35,10 +37,10 @@ const Toast = ({
             onClick={onClick}
         >
             <div className='toast__body__icon'>
-                { data.type === 'ERROR'   && <IconError className='toast__icon-type' /> }
-                { data.type === 'INFO'    && <IconInfoBlue className='toast__icon-type' /> }
-                { data.type === 'SUCCESS' && <IconSuccess className='toast__icon-type' /> }
-                { data.type === 'WARNING' && <IconWarning className='toast__icon-type' /> }
+                { data.type === 'ERROR'   && <Icon icon={IconError} className='toast__icon-type' /> }
+                { data.type === 'INFO'    && <Icon icon={IconInfoBlue} className='toast__icon-type' /> }
+                { data.type === 'SUCCESS' && <Icon icon={IconSuccess} className='toast__icon-type' /> }
+                { data.type === 'WARNING' && <Icon icon={IconWarning} className='toast__icon-type' /> }
             </div>
             <div className='toast__message'>
                 {data.message}
