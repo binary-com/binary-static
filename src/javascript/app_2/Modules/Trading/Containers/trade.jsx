@@ -51,7 +51,11 @@ class Trade extends React.Component {
                 </div>
                 <div
                     className={form_wrapper_class}
-                    onClick={this.props.is_contract_mode ? this.props.onCloseContract : null}
+                    onClick={this.props.is_contract_mode ? (e) => {
+                        this.props.onCloseContract();
+                        this.props.onClickNewTrade(e);
+                    } : null}
+                    style={{ cursor: this.props.is_contract_mode ? 'pointer' : 'initial' }}
                 >
                     <FormLayout
                         is_mobile={this.props.is_mobile}

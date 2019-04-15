@@ -211,7 +211,8 @@
     &__items {
         opacity: 1;
         transform: none;
-        transition: filter 0.4s ease;
+        transition: filter 0.25s linear;
+        filter: blur(0);
         position: relative;
         min-height: 460px;
         width: $SIDEBAR_WIDTH;
