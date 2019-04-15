@@ -47,8 +47,8 @@ export default class ContractStore extends BaseStore {
     // -------------------
     @action.bound
     drawChart(SmartChartStore, contract_info) {
-        this.forget_id                = contract_info.id;
-        const contract_has_end_spot   = !!contract_info.exit_tick_time;
+        this.forget_id              = contract_info.id;
+        const contract_has_end_spot = !!contract_info.exit_tick_time;
 
         if (contract_has_end_spot) {
             const { date_start, exit_tick_time } = contract_info;
