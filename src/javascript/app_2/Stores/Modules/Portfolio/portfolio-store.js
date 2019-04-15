@@ -246,10 +246,7 @@ export default class PortfolioStore extends BaseStore {
 
     @computed
     get active_positions() {
-        return this.positions.filter((portfolio_pos) => {
-            const server_epoch = this.root_store.common.server_time.unix();
-            return portfolio_pos.expiry_time > server_epoch;
-        });
+        return this.positions.filter((portfolio_pos) => !portfolio_pos.result);
     }
 
     @computed

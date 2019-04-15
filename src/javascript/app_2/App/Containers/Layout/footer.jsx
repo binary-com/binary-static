@@ -7,7 +7,7 @@ import {
     NetworkStatus,
     ToggleFullScreen,
     TogglePositions,
-    ToggleSettings }  from '../../Components/Layout/Footer';
+    ToggleSettings }                  from '../../Components/Layout/Footer';
 
 const Footer = ({
     active_positions,
