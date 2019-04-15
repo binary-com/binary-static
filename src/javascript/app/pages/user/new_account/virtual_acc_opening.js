@@ -46,8 +46,7 @@ const VirtualAccOpening = (() => {
                 $options_with_disabled.append(makeOption({
                     text       : res.text,
                     value      : res.value,
-                    // is_disabled: res.disabled,
-                    is_disabled: (res.disabled || /^(py|ae)$/i.test(res.value) ? 'disabled' : ''), // TODO: remove py and ae exceptions when API block is implemented
+                    is_disabled: res.disabled,
                 }));
             });
             $residence.html($options_with_disabled.html());
