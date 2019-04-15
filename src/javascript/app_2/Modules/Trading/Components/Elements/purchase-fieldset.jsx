@@ -3,6 +3,7 @@ import React          from 'react';
 import PropTypes      from 'prop-types';
 // import { localize }   from '_common/localize';
 // import { PopConfirm } from 'App/Components/Elements/PopConfirm';
+import Tooltip        from 'App/Components/Elements/tooltip.jsx';
 import Fieldset       from 'App/Components/Form/fieldset.jsx';
 import ContractInfo   from 'Modules/Trading/Components/Form/Purchase/contract-info.jsx';
 // import PurchaseLock   from 'Modules/Trading/Components/Form/Purchase/PurchaseLock';
@@ -58,6 +59,9 @@ const PurchaseFieldset = ({
                     onMouseEnter={() => { onHoverPurchase(true, type); }}
                     onMouseLeave={() => { onHoverPurchase(false); }}
                 >
+                    {is_proposal_error &&
+                    <Tooltip message={info.message} alignment='left' className='tooltip--error-secondary' />
+                    }
                     {
                         // is_purchase_confirm_on ?
                         //     <PopConfirm
