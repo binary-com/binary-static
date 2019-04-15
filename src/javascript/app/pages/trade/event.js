@@ -321,7 +321,8 @@ const TradingEvents = (() => {
             Array.prototype.slice.call(e.currentTarget.attributes).filter(attr => {
                 if (!/^data/.test(attr.name) ||
                     /^data-balloon$/.test(attr.name) ||
-                    /data-balloon/.test(attr.name)) {
+                    /data-balloon/.test(attr.name) ||
+                    /^data-passthrough$/.test(attr.name)) {
                     return false;
                 }
                 return true;
