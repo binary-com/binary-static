@@ -12,9 +12,9 @@ const LoginPrompt = ({
     <PageError
         header={
             <Localize
-                str='[_1] is only[_2]available for existing clients.'
+                str='[_1] page is only[_2]available for existing clients.'
                 replacers={{
-                    '1': page_title ? `${page_title} page` : 'This page',
+                    '1': page_title || 'This',
                     '2': <br key={0} />,
                 }}
             />
