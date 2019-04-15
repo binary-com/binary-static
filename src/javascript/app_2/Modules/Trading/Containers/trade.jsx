@@ -3,6 +3,7 @@ import React                from 'react';
 import { getPropertyValue } from '_common/utility';
 import UILoader             from 'App/Components/Elements/ui-loader.jsx';
 import { connect }          from 'Stores/connect';
+import PositionsDrawer      from 'App/Components/Elements/PositionsDrawer';
 import Test                 from './test.jsx';
 import FormLayout           from '../Components/Form/form-layout.jsx';
 import Digits               from '../../Contract/Containers/digits.jsx';
@@ -26,6 +27,7 @@ class Trade extends React.Component {
             && !this.props.is_contract_mode;
         return (
             <div id='trade_container' className='trade-container'>
+                <PositionsDrawer />
                 <div className='chart-container'>
                     { this.props.symbol &&
                         <React.Suspense fallback={<UILoader />} >
@@ -44,6 +46,7 @@ class Trade extends React.Component {
                             />
                         </React.Suspense>
                     }
+                    {/* Remove Test component for debugging below for production release */}
                     <Test />
                 </div>
                 <div
