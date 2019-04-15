@@ -6,7 +6,7 @@ import { RiskDisclaimer } from '../../../_common/components/forms_common_rows.js
 
 const FinancialAssessment = () => (
     <div>
-        <h1 id='heading'>{it.L('Financial Assessment')}</h1>
+        <h1 id='heading'>{it.L('Financial assessment')}</h1>
 
         <div id='assessment_loading'>
             <Loading />
