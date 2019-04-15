@@ -42,7 +42,11 @@ const TradeTypeInfoItem = ({
             </Scrollbars>
         </div>
         <div>
-            <Button className='trade-type-info-dialog__choose-button' text={localize('Choose')} onClick={() => onSubmitButtonClick(item)} />
+            <Button
+                className='btn--primary--orange trade-type-info-dialog__choose-button'
+                text={localize('Choose')}
+                onClick={() => onSubmitButtonClick(item)}
+            />
         </div>
         <div className='trade-type-info-navigation'>
             <div className='trade-type-info-navigation__icon' onClick={() => handlePrevClick(navigationList)} >
