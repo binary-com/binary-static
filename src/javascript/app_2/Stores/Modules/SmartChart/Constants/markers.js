@@ -38,6 +38,11 @@ export const MARKER_TYPES_CONFIG = {
         marker_config : MARKER_CONTENT_TYPES.LINE,
         content_config: { line_style: 'dash',  label: localize('End Time') },
     },
+    LINE_END_SPOT: {
+        type          : 'LINE_END_SPOT',
+        marker_config : MARKER_CONTENT_TYPES.LINE,
+        content_config: { line_style: 'dash',  label: localize('Exit Spot') },
+    },
     LINE_PURCHASE: {
         type          : 'LINE_PURCHASE',
         marker_config : MARKER_CONTENT_TYPES.LINE,
