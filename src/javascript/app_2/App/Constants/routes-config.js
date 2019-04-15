@@ -16,7 +16,7 @@ const Statement       = lazy(() => import(/* webpackChunkName: "statement" */ 'M
 
 // Settings Routes
 const AccountPassword        = lazy(() => import(/* webpackChunkName: "account_password" */       'Modules/settings/sections/account-password.jsx'));
-const ApiToken               = lazy(() => import(/* webpackChunkName: "api_toke" */               'Modules/settings/sections/api-token.jsx'));
+const ApiToken               = lazy(() => import(/* webpackChunkName: "api_token" */               'Modules/settings/sections/api-token.jsx'));
 const AuthorizedApplications = lazy(() => import(/* webpackChunkName: "authorized_application" */ 'Modules/settings/sections/authorized-applications.jsx'));
 const CashierPassword        = lazy(() => import(/* webpackChunkName: "cashier_password" */       'Modules/settings/sections/cashier-password.jsx'));
 const FinancialAssessment    = lazy(() => import(/* webpackChunkName: "financial_assessment" */   'Modules/settings/sections/financial-assessment.jsx'));
