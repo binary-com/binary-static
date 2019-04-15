@@ -22,7 +22,7 @@ export const getEndSpot = (contract_info) => (
 );
 
 export const getEndSpotTime = (contract_info) => (
-    isUserSold(contract_info) ? +contract_info.sell_spot_time : +contract_info.exit_tick_time
+    isUserSold(contract_info) ? +contract_info.sell_time : +contract_info.exit_tick_time
 );
 
 export const getFinalPrice = (contract_info) => (
