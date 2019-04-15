@@ -4,6 +4,7 @@ import React                    from 'react';
 import { localize }             from '_common/localize';
 import { urlFor }               from '_common/url';
 import { isEmptyObject }        from '_common/utility';
+import { Icon }                 from 'Assets/Common/';
 import { IconAccountsCurrency } from 'Assets/Header/AccountsCurrency';
 import { IconLogout }           from 'Assets/Header/Drawer';
 import { requestLogout }        from 'Services/index';
@@ -86,7 +87,8 @@ class AccountSwitcher extends React.Component {
                                         onClick={this.doSwitch.bind(this, account.loginid)}
                                     >
                                         <span className={'acc-switcher__id'}>
-                                            <IconAccountsCurrency
+                                            <Icon
+                                                icon={IconAccountsCurrency}
                                                 className={`acc-switcher__id-icon acc-switcher__id-icon--${account.icon}`}
                                                 type={account.icon}
                                             />
@@ -129,7 +131,7 @@ class AccountSwitcher extends React.Component {
                 }
                 <div className='acc-switcher__logout' onClick={this.handleLogout}>
                     <span className='acc-switcher__logout-text'>{localize('Log out')}</span>
-                    <IconLogout className='acc-switcher__logout-icon drawer__icon' />
+                    <Icon icon={IconLogout} className='acc-switcher__logout-icon drawer__icon' />
                 </div>
             </div>
         );

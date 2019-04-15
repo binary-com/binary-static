@@ -36,18 +36,15 @@ const getAppId = () => {
         app_id = binary_desktop_app_id;
     } else if (/staging\.binary\.com/i.test(window.location.hostname)) {
         window.localStorage.removeItem('config.default_app_id');
-        app_id = 1098;
+        app_id = is_new_app ? 16303 : 1098;
     } else if (user_app_id.length) {
         window.localStorage.setItem('config.default_app_id', user_app_id); // it's being used in endpoint chrome extension - please do not remove
         app_id = user_app_id;
     } else if (/localhost/i.test(window.location.hostname)) {
         app_id = 1159;
-    } else if (is_new_app) {
-        window.localStorage.removeItem('config.default_app_id');
-        app_id = 15265;
     } else {
         window.localStorage.removeItem('config.default_app_id');
-        app_id = domain_app_ids[getCurrentBinaryDomain()] || 1;
+        app_id = is_new_app ? 15265 : (domain_app_ids[getCurrentBinaryDomain()] || 1);
     }
     return app_id;
 };

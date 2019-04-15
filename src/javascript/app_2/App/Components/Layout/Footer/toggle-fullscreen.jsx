@@ -1,5 +1,6 @@
 import classNames       from 'classnames';
 import React            from 'react';
+import { Icon }         from 'Assets/Common';
 import { IconMaximize } from 'Assets/Footer';
 
 class ToggleFullScreen extends React.Component {
@@ -52,7 +53,7 @@ class ToggleFullScreen extends React.Component {
                 className={full_screen_icon_class}
                 onClick={this.toggleFullScreen}
             >
-                <IconMaximize className='footer__icon' />
+                <Icon icon={IconMaximize} className='footer__icon' />
             </a>
         );
     }

@@ -2,6 +2,7 @@ import classNames   from 'classnames';
 import PropTypes    from 'prop-types';
 import React        from 'react';
 import { localize } from '_common/localize';
+import { connect }  from 'Stores/connect';
 import Tooltip      from '../../Elements/tooltip.jsx';
 
 const NetworkStatus = ({ status }) => (
@@ -23,3 +24,9 @@ NetworkStatus.propTypes = {
 };
 
 export { NetworkStatus };
+
+export default connect(
+    ({ common }) => ({
+        status: common.network_status,
+    })
+)(NetworkStatus);

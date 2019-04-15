@@ -1,7 +1,9 @@
 import classNames          from 'classnames';
 import PropTypes           from 'prop-types';
 import React, { Fragment } from 'react';
-import { IconArrow }       from 'Assets/Common';
+import {
+    Icon,
+    IconArrow }            from 'Assets/Common';
 
 const DurationToggle = ({
     name,
@@ -19,7 +21,7 @@ const DurationToggle = ({
     return (
         <Fragment>
             <button className='advanced-simple-toggle' onClick={toggle}>
-                <IconArrow className={icon_className} classNamePath={'advanced-simple-toggle__icon-path'} />
+                <Icon icon={IconArrow} className={icon_className} classNamePath={'advanced-simple-toggle__icon-path'} />
             </button>
         </Fragment>);
 };

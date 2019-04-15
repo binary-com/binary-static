@@ -50,7 +50,8 @@ export default class UIStore extends BaseStore {
     @observable duration_h             = 1;
     @observable duration_d             = 1;
 
-    @observable is_blurred = false;
+    @observable is_fully_blurred = false;
+    @observable is_app_blurred   = false;
 
     getDurationFromUnit = (unit) => this[`duration_${unit}`];
 
@@ -114,13 +115,23 @@ export default class UIStore extends BaseStore {
     }
 
     @action.bound
-    showBlur() {
-        this.is_blurred = true;
+    showAppBlur() {
+        this.is_app_blurred = true;
     }
 
     @action.bound
-    hideBlur() {
-        this.is_blurred = false;
+    hideAppBlur() {
+        this.is_app_blurred = false;
+    }
+
+    @action.bound
+    showFullBlur() {
+        this.is_fully_blurred = true;
+    }
+
+    @action.bound
+    hideFullBlur() {
+        this.is_fully_blurred = false;
     }
 
     @action.bound
