@@ -51,6 +51,7 @@ class Trade extends React.Component {
                 </div>
                 <div
                     className={form_wrapper_class}
+                    onClick={this.props.is_contract_mode ? this.props.onCloseContract : null}
                 >
                     <FormLayout
                         is_mobile={this.props.is_mobile}
@@ -72,6 +73,7 @@ Trade.propTypes = {
     is_mobile       : PropTypes.bool,
     is_trade_enabled: PropTypes.bool,
     onClickNewTrade : PropTypes.func,
+    onCloseContract : PropTypes.func,
     onMount         : PropTypes.func,
     onSymbolChange  : PropTypes.func,
     onUnmount       : PropTypes.func,
@@ -84,6 +86,7 @@ Trade.propTypes = {
 
 export default connect(
     ({ modules, ui }) => ({
+        onCloseContract                    : modules.contract.onCloseContract,
         start_epoch                        : modules.contract.chart_config.start_epoch,
         end_epoch                          : modules.contract.chart_config.end_epoch,
         scroll_to_epoch                    : modules.smart_chart.scroll_to_left_epoch,

@@ -11,6 +11,7 @@
     justify-content: flex-end;
     align-items: center;
     transition: filter 0.25s linear;
+    backface-visibility: hidden;
     filter: blur(0);
     @include themify($themes) {
         background-color: themed('background_color');
