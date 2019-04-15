@@ -15,10 +15,10 @@ const ApiToken = () => (
 
             <div id='token_form' className='gr-12 gr-padding-10'>
                 <form>
-                    <Fieldset legend={it.L('Create New Token')}>
-                        <FormRow type='text' id='txt_name' label={it.L('Choose token Name')} attributes={{ maxLength: 32 }} />
+                    <Fieldset legend={it.L('Create new token')}>
+                        <FormRow type='text' id='txt_name' label={it.L('Token name')} attributes={{ maxLength: 32 }} />
 
-                        <FormRow row_class='scope-list' sub_row_class='scope-types' type='custom' label={it.L('Choose Scopes:')}>
+                        <FormRow row_class='scope-list' sub_row_class='scope-types' type='custom' label={it.L('Choose scopes:')}>
                             <input id='chk_scopes_read' type='checkbox' value='read' checked='checked' readOnly='readonly' />
                             <label htmlFor='chk_scopes_read'><span data-balloon={it.L('Can be used to view account activity, including settings, limits, balance sheets, trade purchase history, and more.')} data-balloon-length='xlarge'>{it.L('Read')}</span></label>
 
