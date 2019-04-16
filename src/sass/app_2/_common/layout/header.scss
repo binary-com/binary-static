@@ -7,6 +7,7 @@
     height: $HEADER_HEIGHT;
     top: 0;
     transition: filter 0.25s linear;
+    backface-visibility: hidden;
     filter: blur(0);
     @include themify($themes) {
         background-color: themed('background_color');

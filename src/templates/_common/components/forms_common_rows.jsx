@@ -97,7 +97,7 @@ export const AddressLine1 = ({ hint }) => (
     <FormRow
         type='text'
         id='address_line_1'
-        label={it.L('First line of home address')}
+        label={it.L('First line')}
         attributes={{ maxLength: '70', 'data-lpignore': true }}
         hint={hint}
     />
@@ -107,7 +107,7 @@ export const AddressLine2 = ({ hint }) => (
     <FormRow
         type='text'
         id='address_line_2'
-        label={it.L('Second line of home address')}
+        label={it.L('Second line')}
         attributes={{ maxLength: '70', 'data-lpignore': true }}
         hint={hint}
     />
@@ -131,7 +131,7 @@ export const AddressPostcode = ({ children, hint }) => (
     <FormRow
         type='text'
         id='address_postcode'
-        label={it.L('Postal code/ZIP')}
+        label={it.L('Postal/ZIP code')}
         attributes={{ maxLength: '20', 'data-lpignore': true }}
         hint={hint}
         has_geovalidator
@@ -145,7 +145,7 @@ export const Phone = ({ hint, row_class, row_id }) => (
     <FormRow
         type='text'
         id='phone'
-        label={it.L('Telephone')}
+        label={it.L('Contact number')}
         attributes={{ 'data-lpignore': true }}
         hint={hint}
         row_class={row_class}
@@ -205,7 +205,7 @@ export const Jurisdiction = () => (
 export const RiskDisclaimer = () => (
     <fieldset>
         <div className='gr-12'>
-            <p>{it.L('The financial trading services contained within this site are only suitable for customers who are able to bear the loss of all the money they invest and who understand and have experience of the risk involved in the acquistion of financial contracts. Transactions in financial contracts carry a high degree of risk. If purchased contracts expire worthless, you will suffer a total loss of your investment, which consists of the contract premium.')}</p>
+            <p>{it.L('The financial trading services contained within this site are only suitable for customers who accept the possibility of losing all the money they invest and who understand and have experience of the risk involved in the acquisition of financial contracts. Transactions in financial contracts carry a high degree of risk. If purchased contracts expire worthless, you will suffer a total loss of your investment, which consists of the contract premium.')}</p>
         </div>
     </fieldset>
 );

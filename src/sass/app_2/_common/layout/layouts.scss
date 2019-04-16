@@ -4,6 +4,7 @@
     height: calc(100vh - #{$HEADER_HEIGHT} - #{$FOOTER_HEIGHT});
     overflow: hidden;
     transition: filter 0.25s linear;
+    backface-visibility: hidden;
     filter: blur(0);
     @include themify($themes) {
         background-color: themed('container_color');
@@ -206,11 +207,13 @@
         margin-left: 1.6em;
         width: $SIDEBAR_WIDTH;
         margin-top: 8px;
+        z-index: 1;
     }
     &__items {
         opacity: 1;
         transform: none;
-        transition: filter 0.4s ease;
+        transition: filter 0.25s linear;
+        filter: blur(0);
         position: relative;
         min-height: 460px;
         width: $SIDEBAR_WIDTH;
