@@ -3,6 +3,7 @@ import React                from 'react';
 import { getPropertyValue } from '_common/utility';
 import UILoader             from 'App/Components/Elements/ui-loader.jsx';
 import { connect }          from 'Stores/connect';
+import PositionsDrawer      from 'App/Components/Elements/PositionsDrawer';
 import Test                 from './test.jsx';
 import FormLayout           from '../Components/Form/form-layout.jsx';
 import Digits               from '../../Contract/Containers/digits.jsx';
@@ -26,6 +27,7 @@ class Trade extends React.Component {
             && !this.props.is_contract_mode;
         return (
             <div id='trade_container' className='trade-container'>
+                <PositionsDrawer />
                 <div className='chart-container'>
                     { this.props.symbol &&
                         <React.Suspense fallback={<UILoader />} >
@@ -44,10 +46,16 @@ class Trade extends React.Component {
                             />
                         </React.Suspense>
                     }
+                    {/* Remove Test component for debugging below for production release */}
                     <Test />
                 </div>
                 <div
                     className={form_wrapper_class}
+                    onClick={this.props.is_contract_mode ? (e) => {
+                        this.props.onCloseContract();
+                        this.props.onClickNewTrade(e);
+                    } : null}
+                    style={{ cursor: this.props.is_contract_mode ? 'pointer' : 'initial' }}
                 >
                     <FormLayout
                         is_mobile={this.props.is_mobile}
@@ -69,6 +77,7 @@ Trade.propTypes = {
     is_mobile       : PropTypes.bool,
     is_trade_enabled: PropTypes.bool,
     onClickNewTrade : PropTypes.func,
+    onCloseContract : PropTypes.func,
     onMount         : PropTypes.func,
     onSymbolChange  : PropTypes.func,
     onUnmount       : PropTypes.func,
@@ -81,6 +90,7 @@ Trade.propTypes = {
 
 export default connect(
     ({ modules, ui }) => ({
+        onCloseContract                    : modules.contract.onCloseContract,
         start_epoch                        : modules.contract.chart_config.start_epoch,
         end_epoch                          : modules.contract.chart_config.end_epoch,
         scroll_to_epoch                    : modules.smart_chart.scroll_to_left_epoch,
