@@ -1,6 +1,5 @@
 import {
     createMarkerEndTime,
-    createMarkerExitSpotTime,
     createMarkerPurchaseTime,
     createMarkerSpotEntry,
     createMarkerSpotExit,
