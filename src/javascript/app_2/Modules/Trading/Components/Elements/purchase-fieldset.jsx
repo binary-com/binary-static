@@ -9,77 +9,100 @@ import ContractInfo   from 'Modules/Trading/Components/Form/Purchase/contract-in
 // import PurchaseLock   from 'Modules/Trading/Components/Form/Purchase/PurchaseLock';
 import PurchaseButton from 'Modules/Trading/Components/Elements/purchase-button.jsx';
 
-const PurchaseFieldset = ({
-    basis,
-    currency,
-    // index,
-    info,
-    is_contract_mode,
-    is_disabled,
-    is_high_low,
-    is_loading,
-    is_proposal_error,
-    // is_purchase_confirm_on,
-    // is_purchase_locked,
-    onClickPurchase,
-    onHoverPurchase,
-    // togglePurchaseLock,
-    type,
-}) => {
-    const purchase_button = (
-        <PurchaseButton
-            currency={currency}
-            info={info}
-            is_contract_mode={is_contract_mode}
-            is_disabled={is_disabled}
-            is_high_low={is_high_low}
-            is_loading={is_loading}
-            onClickPurchase={onClickPurchase}
-            type={type}
-        />
-    );
-    return (
-        <Fieldset
-            className='trade-container__fieldset purchase-container__option'
-        >
-            {/* {(is_purchase_locked && index === 0) && */}
-            {/* <PurchaseLock onClick={togglePurchaseLock} /> */}
-            {/* } */}
-            <React.Fragment>
-                <ContractInfo
-                    basis={basis}
-                    currency={currency}
-                    proposal_info={info}
-                    has_increased={info.has_increased}
-                    is_loading={is_loading}
-                    is_visible={!is_contract_mode}
-                />
-                <div
-                    className={classNames('btn-purchase__shadow-wrapper', { 'btn-purchase__shadow-wrapper--disabled': (is_proposal_error || is_disabled) })}
-                    onMouseEnter={() => { onHoverPurchase(true, type); }}
-                    onMouseLeave={() => { onHoverPurchase(false); }}
-                >
-                    {is_proposal_error &&
-                    <Tooltip message={info.message} alignment='left' className='tooltip--error-secondary' />
-                    }
-                    {
-                        // is_purchase_confirm_on ?
-                        //     <PopConfirm
-                        //         alignment='left'
-                        //         cancel_text={localize('Cancel')}
-                        //         confirm_text={localize('Purchase')}
-                        //         message={localize('Are you sure you want to purchase this contract?')}
-                        //     >
-                        //         {purchase_button}
-                        //     </PopConfirm>
-                        //     :
-                        purchase_button
-                    }
-                </div>
-            </React.Fragment>
-        </Fieldset>
-    );
-};
+class PurchaseFieldset extends React.PureComponent {
+    state = {
+        show_tooltip: false,
+    }
+
+    onMouseEnter = () => {
+        this.setState({ show_tooltip: true });
+    }
+
+    onMouseLeave = () => {
+        this.setState({ show_tooltip: false });
+    }
+
+    render() {
+        const {
+            basis,
+            currency,
+            // index,
+            info,
+            is_contract_mode,
+            is_disabled,
+            is_high_low,
+            is_loading,
+            is_proposal_error,
+            // is_purchase_confirm_on,
+            // is_purchase_locked,
+            onClickPurchase,
+            onHoverPurchase,
+            // togglePurchaseLock,
+            type,
+        } = this.props;
+
+        const purchase_button = (
+            <PurchaseButton
+                currency={currency}
+                info={info}
+                is_contract_mode={is_contract_mode}
+                is_disabled={is_disabled}
+                is_high_low={is_high_low}
+                is_loading={is_loading}
+                onClickPurchase={onClickPurchase}
+                type={type}
+            />
+        );
+        
+        return (
+            <Fieldset
+                className='trade-container__fieldset purchase-container__option'
+            >
+                {/* {(is_purchase_locked && index === 0) && */}
+                {/* <PurchaseLock onClick={togglePurchaseLock} /> */}
+                {/* } */}
+                <React.Fragment>
+                    <ContractInfo
+                        basis={basis}
+                        currency={currency}
+                        proposal_info={info}
+                        has_increased={info.has_increased}
+                        is_loading={is_loading}
+                        is_visible={!is_contract_mode}
+                    />
+                    <div
+                        className={classNames('btn-purchase__shadow-wrapper', { 'btn-purchase__shadow-wrapper--disabled': (is_proposal_error || is_disabled) })}
+                        onMouseEnter={() => {
+                            onHoverPurchase(true, type);
+                            this.onMouseEnter();
+                        }}
+                        onMouseLeave={() => {
+                            onHoverPurchase(false);
+                            this.onMouseLeave();
+                        }}
+                    >
+                        {(is_proposal_error && this.state.show_tooltip) &&
+                        <Tooltip message={info.message} alignment='left' className='tooltip--error-secondary' />
+                        }
+                        {
+                            // is_purchase_confirm_on ?
+                            //     <PopConfirm
+                            //         alignment='left'
+                            //         cancel_text={localize('Cancel')}
+                            //         confirm_text={localize('Purchase')}
+                            //         message={localize('Are you sure you want to purchase this contract?')}
+                            //     >
+                            //         {purchase_button}
+                            //     </PopConfirm>
+                            //     :
+                            purchase_button
+                        }
+                    </div>
+                </React.Fragment>
+            </Fieldset>
+        );
+    }
+}
 
 PurchaseFieldset.propTypes = {
     basis            : PropTypes.string,
