@@ -26,11 +26,11 @@ const getPlugins = (app, grunt) => ([
             }),
 
             ...(languages.map(lang => new SWPrecachedWebpackPlugin({
-                cachedId                 : 'app_2',
-                dontCacheBustUrlsMatching: /\.\w{8}\./,
-                minify                   : false,
-                navigateFallback         : '',
-                filepath                 : path.resolve(PATHS.DIST, `app/${lang.toLowerCase()}/service-worker.js`),
+                cachedId                     : 'app_2',
+                dontCacheBustUrlsMatching    : /\.\w{8}\./,
+                minify                       : false,
+                navigateFallback             : '',
+                filepath                     : path.resolve(PATHS.DIST, `app/${lang.toLowerCase()}/service-worker.js`),
                 // TODO Uncomment below lines when changing the release process order to execute `js` task after `render`
                 // staticFileGlobs          : [
                 //     path.resolve(PATHS.DIST, `app/${lang.toLowerCase()}/index.html`),
@@ -43,6 +43,7 @@ const getPlugins = (app, grunt) => ([
                         // This message occurs for every build and is a bit too noisy.
                         return;
                     }
+                    // eslint-disable-next-line no-console
                     console.log(message);
                 },
             }))),
@@ -64,6 +65,7 @@ const getPlugins = (app, grunt) => ([
         : [
             function() {
                 this.plugin('watch-run', (watching, callback) => {
+                    // eslint-disable-next-line no-console
                     console.log('\n');
                     grunt.log.ok('Build started at:', new Date().toString().grey);
 
