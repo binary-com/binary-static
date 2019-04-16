@@ -49,7 +49,7 @@
                 window.location.href = (/\/app\//.test(window.location.pathname) ? '' : 'app/') + (lang || 'en').toLowerCase() + '/trade' + window.location.search;
             }
             function isGtmApplicable() {
-                return /www\.binary\.com/i.test(window.location.hostname);
+                return /(www|staging)\.binary\.(com|me)/i.test(window.location.hostname);
             }
             function pushEvent() {
                 if(isGtmApplicable()) {

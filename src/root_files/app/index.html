@@ -49,7 +49,7 @@
                 window.location.href = (lang || 'en').toLowerCase() + '/' + (is_logged_in ? 'trading' : 'home') + '.html' + window.location.search;
             }
             function isGtmApplicable() {
-                return /(www|staging)\.binary\.com/i.test(window.location.hostname);
+                return /(www|staging)\.binary\.(com|me)/i.test(window.location.hostname);
             }
             function pushEvent() {
                 if(isGtmApplicable()) {
