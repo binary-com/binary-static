@@ -52,7 +52,7 @@
             }
             function isDelayedRedirect() {
                 if (isGtmApplicable() && !redirectTimeOut) {
-                    redirectTimeOut = setTimeout(redirect, 3000);
+                    redirectTimeOut = setTimeout(redirect, 5000);
                 } else {
                     clearTimeout(redirectTimeOut);
                     redirect();
