@@ -21,8 +21,8 @@ const Tac = () => (
                 id='legal-menu'
                 items={[
                     {
-                        id: 'legal',
-                        text: it.L('Terms and Conditions'),
+                        id     : 'legal',
+                        text   : it.L('Terms and Conditions'),
                         submenu: [
                             { id: 'legal-binary', text: it.L('Binary Options') },
                             { id: 'legal-mt', text: it.L('MetaTrader') },
@@ -35,16 +35,16 @@ const Tac = () => (
                     { id: 'copyright', text: it.L('Copyright') },
                     { id: 'complaints', text: it.L('Complaints and Disputes') },
                     {
-                        id: 'risk',
-                        text: it.L('Risk Disclaimer'),
+                        id     : 'risk',
+                        text   : it.L('Risk Disclaimer'),
                         submenu: [
                             { id: 'risk-binary', text: it.L('Binary Options') },
                             { id: 'risk-mt', text: it.L('MetaTrader') },
                         ],
                     },
                     {
-                        id: 'order-execution',
-                        text: it.L('Order Execution'),
+                        id     : 'order-execution',
+                        text   : it.L('Order Execution'),
                         submenu: [
                             { id: 'order-execution-binary', text: it.L('Binary Options') },
                             { id: 'order-execution-mt', text: it.L('MetaTrader') },
