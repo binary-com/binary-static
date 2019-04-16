@@ -1,4 +1,5 @@
 import classNames     from 'classnames';
+import { PropTypes as MobxPropTypes } from 'mobx-react';
 import PropTypes      from 'prop-types';
 import React          from 'react';
 import { connect }    from 'Stores/connect';
@@ -7,9 +8,10 @@ import {
     NetworkStatus,
     ToggleFullScreen,
     TogglePositions,
-    ToggleSettings }  from '../../Components/Layout/Footer';
+    ToggleSettings }                  from '../../Components/Layout/Footer';
 
 const Footer = ({
+    active_positions,
     hideFullBlur,
     is_fully_blurred,
     is_dark_mode,
@@ -31,6 +33,7 @@ const Footer = ({
                 <TogglePositions
                     is_positions_drawer_on={is_positions_drawer_on}
                     togglePositionsDrawer={togglePositionsDrawer}
+                    positions_count={active_positions.length || 0}
                 />
             }
         </div>
@@ -51,6 +54,7 @@ const Footer = ({
 );
 
 Footer.propTypes = {
+    active_positions          : MobxPropTypes.arrayOrObservableArray,
     is_dark_mode              : PropTypes.bool,
     is_fully_blurred          : PropTypes.bool,
     is_language_dialog_visible: PropTypes.bool,
@@ -62,7 +66,8 @@ Footer.propTypes = {
 };
 
 export default connect(
-    ({ client, ui }) => ({
+    ({ client, modules, ui }) => ({
+        active_positions          : modules.portfolio.active_positions,
         hideFullBlur              : ui.hideFullBlur,
         is_fully_blurred          : ui.is_fully_blurred,
         is_dark_mode              : ui.is_dark_mode_on,
