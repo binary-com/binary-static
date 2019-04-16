@@ -180,15 +180,16 @@ export default class BaseStore {
      * Sets validation error messages for an observable property of the store
      *
      * @param {String} propertyName - The observable property's name
-     * @param {String} messages - An array of strings that contains validation error messages for the particular property.
+     * @param [{String}] messages - An array of strings that contains validation error messages for the particular property.
      *
      */
     @action
     setValidationErrorMessages(propertyName, messages) {
-        const is_different = () => this.validation_errors[propertyName].filter(x => messages.includes(x)).length > 0;
-        if (!this.validation_errors[propertyName]) {
-            this.validation_errors[propertyName] = messages;
-        } else if (is_different()) {
+        const is_different = () => !!this.validation_errors[propertyName]
+            .filter(x => !messages.includes(x))
+            .concat(messages.filter(x => !this.validation_errors[propertyName].includes(x)))
+            .length;
+        if (!this.validation_errors[propertyName] || is_different()) {
             this.validation_errors[propertyName] = messages;
         }
     }

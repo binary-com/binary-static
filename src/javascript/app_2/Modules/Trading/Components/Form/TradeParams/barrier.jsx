@@ -93,6 +93,7 @@ export default connect(({ modules }) => (
         barrier_1        : modules.trade.barrier_1,
         barrier_2        : modules.trade.barrier_2,
         barrier_count    : modules.trade.barrier_count,
+        onChange         : modules.trade.onChange,
         validation_errors: modules.trade.validation_errors,
     }
 ))(Barrier);
