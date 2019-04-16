@@ -22,7 +22,7 @@ export const getEndSpot = (contract_info) => (
 );
 
 export const getEndSpotTime = (contract_info) => (
-    isUserSold(contract_info) ? +contract_info.sell_time : +contract_info.exit_tick_time
+    isUserSold(contract_info) ? +contract_info.sell_spot_time : +contract_info.exit_tick_time
 );
 
 export const getFinalPrice = (contract_info) => (
@@ -60,3 +60,12 @@ export const isUserSold = (contract_info) => (
 export const isValidToSell = (contract_info) => (
     !isEnded(contract_info) && !isUserSold(contract_info) && +contract_info.is_valid_to_sell === 1
 );
+
+export const getEndTime = (contract_info) => {
+    const { exit_tick_time, date_expiry, sell_time, tick_count : is_tick_contract, is_sold } = contract_info;
+
+    if (is_tick_contract) return exit_tick_time;
+    if (!is_sold) return undefined;
+
+    return  sell_time <  date_expiry ? exit_tick_time : date_expiry;
+};

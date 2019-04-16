@@ -29,7 +29,6 @@ const marker_spots = {
 const marker_lines = {
     [MARKER_TYPES_CONFIG.LINE_START.type]   : createMarkerStartTime,
     [MARKER_TYPES_CONFIG.LINE_END.type]     : createMarkerEndTime,
-    [MARKER_TYPES_CONFIG.LINE_END_SPOT.type]: createMarkerExitSpotTime,
     [MARKER_TYPES_CONFIG.LINE_PURCHASE.type]: createMarkerPurchaseTime,
 };
 

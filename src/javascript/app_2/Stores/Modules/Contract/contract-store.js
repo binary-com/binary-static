@@ -18,6 +18,7 @@ import {
     getDisplayStatus,
     getEndSpot,
     getEndSpotTime,
+    getEndTime,
     getFinalPrice,
     getIndicativePrice,
     isEnded,
@@ -47,12 +48,11 @@ export default class ContractStore extends BaseStore {
     // -------------------
     @action.bound
     drawChart(SmartChartStore, contract_info) {
-        this.forget_id              = contract_info.id;
-        const contract_has_end_spot = !!contract_info.exit_tick_time;
+        this.forget_id = contract_info.id;
+        const end_time = getEndTime(contract_info);
 
-        if (contract_has_end_spot) {
-            const { date_start, exit_tick_time } = contract_info;
-            SmartChartStore.setRange(date_start, exit_tick_time);
+        if (end_time) {
+            SmartChartStore.setRange(contract_info.date_start, end_time);
         } else if (!this.is_left_epoch_set && contract_info.tick_count) {
             this.is_left_epoch_set = true;
             SmartChartStore.setTickChartView(contract_info.purchase_time);
