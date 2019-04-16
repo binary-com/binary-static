@@ -9,10 +9,12 @@ const Tac = () => (
         <h2 data-anchor='interpretation'>A. {it.L('Interpretation')}</h2>
         <p>
             {it.L('Depending on the jurisdiction to which a client\'s account has been attached in accordance with the account opening procedures of the website and as detailed in the About us section of the website and the type of products offered, the term "the Company" shall denote,')}&nbsp;<br />
-            <span data-show='-eucountry'>{it.L('Binary (C.R.) S.A.;')}&nbsp;<br /></span>
-            <span>{it.L('Binary (Europe) Ltd,;')}&nbsp;</span><br />
-            <span>{it.L('Binary Investments (Europe) Ltd,; or')}</span><br />
-            <span>{it.L('Binary (IOM) Ltd,.')}&nbsp;</span>
+            <p>
+                <span data-show='-eucountry'>{it.L('Binary (C.R.) S.A.;')}&nbsp;<br /></span>
+                <span>{it.L('Binary (Europe) Ltd,;')}&nbsp;</span><br />
+                <span>{it.L('Binary Investments (Europe) Ltd,; or')}</span><br />
+                <span>{it.L('Binary (IOM) Ltd,.')}&nbsp;</span>
+            </p>
         </p>
         <p>{it.L('These terms and conditions may be supplemented from time to time by supplementary terms and conditions applicable to a particular Company or products.')}</p>
 
@@ -57,7 +59,7 @@ const Tac = () => (
             `<a href='${it.url_for('cashier/payment_methods')}'>`, '</a>')}
         </p>
         <p>{it.L('A client should not use the client’s account as a banking facility, and deposits should only be made with a view to using funds to place contracts. The Company is not a financial institution, and the client will not receive interest on deposits. Should a client make repeated deposits and withdrawals without placing commensurate contracts, the Company reserves the right to pass on to the client\'s account, without prior notice, any bank charges the Company has incurred before closing the account.')}</p>
-        <p style={{ fontWeight: 'bold' }}>{it.L('Internal currency transfers between accounts are allowed up to a maximum of USD 2000 or equivalent. Transfers are allowed between any available currency pair but cannot be done between the Binary and MT5 accounts.')}</p>
+        <p><strong>{it.L('Internal currency transfers between accounts are allowed up to a maximum of USD 2000 or equivalent. Transfers are allowed between any available currency pair but cannot be done between the Binary and MT5 accounts.')}</strong></p>
 
         <h2 data-anchor='prohibited-trades'>H. {it.L('Prohibited trades')}</h2>
         <p>{it.L('The Company reserves the right to refuse to do business with, to discontinue to do business with, and to reverse the transactions of, clients who engage in any trading activity')}</p>
@@ -132,7 +134,7 @@ const Tac = () => (
 
         <h2 data-anchor='account-closure'>O. {it.L('Account closure')}</h2>
         <p>{it.L('The client may choose to contact the Company to close the client’s account held with the Company. The client’s account may be closed if the client does not have any open trade positions and if the client has complied with the requested "Know Your Client" procedures to enable the client to withdraw any pending funds in the client’s account.')}</p>
-        <p style={{ fontWeight: 'bold' }}>{it.L('Due to the responsibilities under responsible gaming, Binary.com reserves the right to assess and safeguard the client’s account by excluding the client definitely or indefinitely, based on the company’s client assessment.')}</p>
+        <p><strong>{it.L('Due to the responsibilities under responsible gaming, Binary.com reserves the right to assess and safeguard the client’s account by excluding the client definitely or indefinitely, based on the company’s client assessment.')}</strong></p>
     </div>
 );
 
