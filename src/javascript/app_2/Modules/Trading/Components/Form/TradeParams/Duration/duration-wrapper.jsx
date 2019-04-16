@@ -83,8 +83,11 @@ DurationWrapper.propTypes = {
     advanced_duration_unit: PropTypes.string,
     advanced_expiry_type  : PropTypes.string,
     contract_expiry_type  : PropTypes.string,
-    duration              : PropTypes.number,
-    duration_d            : PropTypes.oneOfType([
+    duration              : PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
+    ]),
+    duration_d: PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
     ]),

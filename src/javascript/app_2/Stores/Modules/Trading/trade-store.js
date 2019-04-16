@@ -3,7 +3,6 @@ import {
     action,
     observable,
     reaction,
-    intercept,
     runInAction }                        from 'mobx';
 import BinarySocket                      from '_common/base/socket_base';
 import { localize }                      from '_common/localize';
@@ -146,10 +145,6 @@ export default class TradeStore extends BaseStore {
                 this.onAllowEqualsChange();
             },
         );
-        intercept(this, 'duration', change => {
-            change.newValue = +change.newValue;
-            return change;
-        });
     }
 
     @action.bound
