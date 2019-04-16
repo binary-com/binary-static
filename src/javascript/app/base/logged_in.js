@@ -26,7 +26,7 @@ const LoggedInHandler = (() => {
                 redirect_url = sessionStorage.getItem('redirect_url');
                 sessionStorage.removeItem('redirect_url');
 
-                const is_app_2 = redirect_url.includes('/app/');
+                const is_app_2 = (typeof redirect_url === 'string' || redirect_url instanceof String) && redirect_url.includes('/app/');
                 storeClientAccounts(account_list, is_app_2);
             } else {
                 Client.doLogout({ logout: 1 });

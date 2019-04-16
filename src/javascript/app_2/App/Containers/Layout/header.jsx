@@ -1,3 +1,4 @@
+import classNames      from 'classnames';
 import PropTypes       from 'prop-types';
 import React           from 'react';
 import { withRouter }  from 'react-router';
@@ -22,6 +23,7 @@ const Header = ({
     currency,
     // hideInstallButton,
     is_acc_switcher_on,
+    is_fully_blurred,
     // is_install_button_visible,
     is_logged_in,
     is_mobile,
@@ -45,7 +47,10 @@ const Header = ({
     });
 
     return (
-        <header className='header'>
+        <header className={classNames('header', {
+            'header--is-blurred': is_fully_blurred,
+        })}
+        >
             <div className='header__menu-items'>
                 <div className='header__menu-left'>
                     {is_mobile && <ToggleMenuDrawer />}
@@ -109,6 +114,7 @@ Header.propTypes = {
     hideInstallButton        : PropTypes.func,
     is_acc_switcher_on       : PropTypes.bool,
     is_dark_mode             : PropTypes.bool,
+    is_fully_blurred         : PropTypes.bool,
     is_install_button_visible: PropTypes.bool,
     is_logged_in             : PropTypes.bool,
     is_mobile                : PropTypes.bool,
@@ -134,6 +140,7 @@ export default withRouter(connect(
         loginid                  : client.loginid,
         hideInstallButton        : ui.hideInstallButton,
         is_acc_switcher_on       : ui.is_accounts_switcher_on,
+        is_fully_blurred         : ui.is_fully_blurred,
         is_dark_mode             : ui.is_dark_mode_on,
         is_install_button_visible: ui.is_install_button_visible,
         is_mobile                : ui.is_mobile,

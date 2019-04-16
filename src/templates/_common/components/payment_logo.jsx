@@ -19,10 +19,6 @@ const payment_methods_list = [
     { image: 'jeton',                   param: '?anchor=jeton',          dataShow: '-eucountry' },
     { image: 'iwallet',                 param: '?anchor=iwallet',        dataShow: '-eucountry' },
     { image: 'vload',                   param: '?anchor=vload' },
-    { image: 'ethereum_black',          param: '?anchor=ethereum-black', dataShow: '-eucountry' },
-    { image: 'bitcoin',                 param: '?anchor=bitcoin',        dataShow: '-eucountry' },
-    { image: 'tether',                  param: '?anchor=tether',         dataShow: '-eucountry' },
-    { image: 'litecoin',                param: '?anchor=litecoin',       dataShow: '-eucountry' },
 ];
 
 const PaymentLogo = () => payment_methods_list.map((item, inx) => (

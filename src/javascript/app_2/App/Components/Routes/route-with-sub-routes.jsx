@@ -24,7 +24,7 @@ const RouteWithSubRoutes = route => {
         } else {
             result = (
                 (route.is_authenticated && !route.is_logged_in) ?
-                    <LoginPrompt IconComponent={route.icon_component} onLogin={redirectToLogin} />
+                    <LoginPrompt onLogin={redirectToLogin} page_title={route.title} />
                     :
                     <route.component {...props} routes={route.routes} />
             );

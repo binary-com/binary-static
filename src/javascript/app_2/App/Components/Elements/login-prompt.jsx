@@ -1,34 +1,46 @@
 import PropTypes    from 'prop-types';
 import React        from 'react';
+import { urlFor }   from '_common/url';
+import PageError    from 'Modules/PageError';
 import Localize     from './localize.jsx';
 
 const LoginPrompt = ({
-    IconComponent,
     onLogin,
     onSignup,
+    page_title,
 }) => (
-    <div className='login-prompt'>
-        <div className='login-prompt__icon'>
-            { IconComponent && // TODO: needs a general icon in case not specified in route
-                <IconComponent className='login-prompt__icon-svg disabled' />
-            }
-        </div>
-        <div className='login-prompt__message'>
+    <PageError
+        header={
             <Localize
-                str='Please [_1]log in[_2] or [_3]sign up[_2] to view this page.'
+                str='[_1] page is only[_2]available for existing clients.'
                 replacers={{
-                    '1_2': <a href='javascript:;' onClick={onLogin} />,
-                    '3_2': <a href='javascript:;' onClick={onSignup} />,
+                    '1': page_title || 'This',
+                    '2': <br key={0} />,
                 }}
             />
-        </div>
-    </div>
+        }
+        messages={[
+            <Localize
+                key={0}
+                str='If you have an active account, please [_1]Log in[_2] for full access. Otherwise, please [_3]Sign up[_4] to start trading.'
+                replacers={{
+                    '1_2': <a className='link' href='javascript:;' onClick={onLogin} />,
+                    '3_4': <a className='link' href='javascript:;' onClick={onSignup} />,
+                }}
+            />,
+        ]}
+    />
 );
 
 LoginPrompt.propTypes = {
-    IconComponent: PropTypes.func,
-    onLogin      : PropTypes.func,
-    onSignup     : PropTypes.func,
+    onLogin   : PropTypes.func,
+    onSignup  : PropTypes.func,
+    page_title: PropTypes.string,
+};
+
+// TODO - Remove this default setting once sign-up has been integrated to app 2
+LoginPrompt.defaultProps = {
+    onSignup: () => { window.open(urlFor('new-account', undefined, undefined, true)); },
 };
 
 export default LoginPrompt;

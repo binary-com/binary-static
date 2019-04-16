@@ -1,7 +1,5 @@
 /** @define settings-dialog */
 .settings-dialog {
-    pointer-events: none;
-
     &__language-header {
         font-size: 14px;
         font-weight: bold;
@@ -53,28 +51,29 @@
             }
         }
     }
-    &--enter, &--exit {
-        transform: translateY(-50%) scale(0.2, 0.2);
-        opacity: 0;
-        pointer-events: none;
-    }
-    &--enter-done {
-        transform: translateY(0) scale(1, 1);
-        opacity: 1;
-        pointer-events: auto;
-    }
     &__container {
-        @include themify($themes) {
-            background-color: themed('container_secondary_color');
-        }
         width: 736px;
         position: relative;
         overflow: hidden;
         box-shadow: 0 2px 8px 0 $COLOR_LIGHT_BLACK_3;
         border-radius: $BORDER_RADIUS;
+        transition: transform 0.25s cubic-bezier(0.25, 0.1, 0.1, 0.25), opacity 0.25s cubic-bezier(0.25, 0.1, 0.1, 0.25);
+        @include themify($themes) {
+            background-color: themed('container_secondary_color');
+        }
 
         &--hide {
             display: none;
+        }
+        &--enter, &--exit {
+            transform: translateY(50px);
+            opacity: 0;
+            pointer-events: none;
+        }
+        &--enter-done {
+            transform: translateY(0);
+            opacity: 1;
+            pointer-events: auto;
         }
     }
 }

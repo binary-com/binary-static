@@ -10,11 +10,16 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    transition: filter 0.25s linear;
+    filter: blur(0);
     @include themify($themes) {
         background-color: themed('background_color');
         color: themed('text_primary_color');
     }
 
+    &--is-blurred {
+        filter: blur(3px);
+    }
     &__links {
         display: flex;
         justify-content: space-evenly;
@@ -89,6 +94,7 @@
 .network-status {
     &__wrapper {
         height: 1.4em;
+        position: relative;
     }
     &__tooltip[data-tooltip] {
         &:before, &:after {

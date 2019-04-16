@@ -3,7 +3,7 @@ import { PropTypes as MobxPropTypes } from 'mobx-react';
 import PropTypes                      from 'prop-types';
 import React, { Fragment }            from 'react';
 import Dropdown                       from 'App/Components/Form/DropDown';
-import ButtonToggleMenu               from 'App/Components/Form/button-toggle-menu.jsx';
+import ButtonToggleMenu               from 'App/Components/Form/ButtonToggleMenu';
 import InputField                     from 'App/Components/Form/InputField';
 import RangeSlider                    from 'App/Components/Form/RangeSlider';
 import { hasIntradayDurationUnit }    from 'Stores/Modules/Trading/Helpers/duration';
@@ -52,6 +52,7 @@ const AdvancedDuration = ({
                 <ButtonToggleMenu
                     buttons_arr={expiry_list}
                     name='advanced_expiry_type'
+                    is_animated={true}
                     onChange={changeExpiry}
                     value={advanced_expiry_type}
                 />
