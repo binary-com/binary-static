@@ -30,7 +30,7 @@
 
 .highcharts-container {
     .highcharts-subtitle {
-        width: 240px !important;
+        white-space: normal !important;
 
         > div {
             &:not(.delay) {
