@@ -3,6 +3,9 @@
     margin: $HEADER_HEIGHT 0 $FOOTER_HEIGHT;
     height: calc(100vh - #{$HEADER_HEIGHT} - #{$FOOTER_HEIGHT});
     overflow: hidden;
+    transition: filter 0.25s linear;
+    backface-visibility: hidden;
+    filter: blur(0);
     @include themify($themes) {
         background-color: themed('container_color');
     }
@@ -96,6 +99,12 @@
             div.ciq-asset-information {
                 z-index: 0;
                 display: none;
+            }
+            div.stx_jump_today.home > svg {
+                top: 6px;
+                left: 8px;
+                padding: 0;
+                position: absolute;
             }
         }
         div.cq-chart-control-left {
@@ -198,11 +207,13 @@
         margin-left: 1.6em;
         width: $SIDEBAR_WIDTH;
         margin-top: 8px;
+        z-index: 1;
     }
     &__items {
         opacity: 1;
         transform: none;
-        transition: filter 0.4s ease;
+        transition: filter 0.25s linear;
+        filter: blur(0);
         position: relative;
         min-height: 460px;
         width: $SIDEBAR_WIDTH;
@@ -244,10 +255,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    margin-top: 0.8em;
+    width: calc(100% + 18px);
+    /* margin shorthand for values below does not work */
+    margin-top: 8px;
+    margin-left: -9px;
+    margin-bottom: -9px;
+    margin-right: 0;
+    padding: 8px 0;
+    border-bottom-right-radius: $BORDER_RADIUS;
+    border-bottom-left-radius: $BORDER_RADIUS;
     border: 0;
     background: none;
+    transition: background-color 0.25s linear;
 
     &__icon {
         transition: transform 0.2s ease;
@@ -259,6 +278,9 @@
     }
     &:hover {
         cursor: pointer;
+        @include themify($themes) {
+            background-color: themed('toggle_button_hover_background');
+        }
     }
     &:focus {
         outline: none;

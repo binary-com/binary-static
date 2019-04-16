@@ -17,10 +17,11 @@ const onCancel = () => {
 const DenialOfServiceModal = ({ client, is_visible }) => (
     <FullPageModal
         title={localize('Whoops!')}
-        confirm_button_text={localize('Continue with virtual account')}
+        confirm_button_text={localize('Continue with Virtual Account')}
         cancel_button_text={localize('Back to main website')}
         onConfirm={() => onConfirm(client)}
         onCancel={onCancel}
+        is_closed_on_cancel={false}
         is_visible={is_visible}
     >
         <Localize str='You cannot use your real money account with BinaryNex at this time.' />

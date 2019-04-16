@@ -232,7 +232,7 @@ const IconCountryFlag = ({ type, className }) => {
         }
     }
     return (
-        <svg className={classNames('inline-icon', className)} width='24' height='16' viewBox='0 0 24 16' xmlns='http://www.w3.org/2000/svg'>
+        <svg className={classNames('inline-icon', className)} width='24' height='16' viewBox='0 0 24 16'>
             {IconCountry}
         </svg>
 

@@ -3,7 +3,8 @@ import { expect }             from 'chai';
 import { configure, shallow } from 'enzyme';
 import Adapter                from 'enzyme-adapter-react-16';
 import { EmptyNotification }  from '../empty-notification';
-import { IconBell } from 'Assets/Header/NavBar';
+import { Icon }               from 'Assets/Common/icon.jsx';
+import { IconBell }           from 'Assets/Header/NavBar';
 
 configure({ adapter: new Adapter() });
 
@@ -12,8 +13,8 @@ describe('Notifications', () => {
         const wrapper = shallow(<EmptyNotification />);
         expect(wrapper).to.have.length(1);
     });
-    it('should render IconBell', () => {
+    it('should render Icon icon={IconBell}', () => {
         const wrapper = shallow(<EmptyNotification />);
-        expect(wrapper.find(IconBell).exists()).to.be.true;
+        expect(wrapper.contains(<Icon icon={IconBell} className='drawer__bell-icon' />)).to.be.true;
     });
 });
