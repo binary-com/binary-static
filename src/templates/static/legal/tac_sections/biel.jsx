@@ -60,7 +60,6 @@ const Biel = () => (
         </ol>
         <p>{it.L('BIEL reserves the right to accept or refuse any requests for change in classification.')}</p>
         <p>{it.L('BIEL is entitled under the Rules to rely upon information provided by clients. Clients should ensure that they provide BIEL with accurate and complete information and notify BIEL in the event that any information supplied to BIEL changes. Clients should note that if they provide BIEL with inaccurate information, or if they fail to notify BIEL of any changes to information previously supplied by them, this may adversely affect the quality of the services that BIEL can provide.')}</p>
-        {/*Grammar error: "the wrogn information" */}
         <p>{it.L('Clients are also advised that their rights may be prejudiced if they provide the wrong information as the Company would not be in a position to act in their best interests.')}</p>
 
         <h2 data-anchor='appropriateness-test'>{it.L('Appropriateness test')}</h2>

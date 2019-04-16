@@ -21,33 +21,33 @@ const Tac = () => (
                 id='legal-menu'
                 items={[
                     {
-                        id     : 'legal',
-                        text   : it.L('Terms and Conditions'),
+                        id: 'legal',
+                        text: it.L('Terms and Conditions'),
                         submenu: [
                             { id: 'legal-binary', text: it.L('Binary Options') },
-                            { id: 'legal-mt',     text: it.L('MetaTrader') },
+                            { id: 'legal-mt', text: it.L('MetaTrader') },
                         ],
                     },
-                    { id: 'mam',              text: it.L('MAM'), className: 'invisible' }, // toEnableMAM: remove className
-                    { id: 'datafeed',         text: it.L('Data Feed') },
-                    { id: 'privacy',          text: it.L('Security and Privacy') },
+                    { id: 'mam', text: it.L('MAM'), className: 'invisible' }, // toEnableMAM: remove className
+                    { id: 'datafeed', text: it.L('Data Feed') },
+                    { id: 'privacy', text: it.L('Security and Privacy') },
                     { id: 'conflicts-policy', text: it.L('Conflicts Policy') },
-                    { id: 'copyright',        text: it.L('Copyright') },
-                    { id: 'complaints',       text: it.L('Complaints and Disputes') },
+                    { id: 'copyright', text: it.L('Copyright') },
+                    { id: 'complaints', text: it.L('Complaints and Disputes') },
                     {
-                        id     : 'risk',
-                        text   : it.L('Risk Disclaimer'),
+                        id: 'risk',
+                        text: it.L('Risk Disclaimer'),
                         submenu: [
                             { id: 'risk-binary', text: it.L('Binary Options') },
-                            { id: 'risk-mt',     text: it.L('MetaTrader') },
+                            { id: 'risk-mt', text: it.L('MetaTrader') },
                         ],
                     },
                     {
-                        id     : 'order-execution',
-                        text   : it.L('Order Execution'),
+                        id: 'order-execution',
+                        text: it.L('Order Execution'),
                         submenu: [
                             { id: 'order-execution-binary', text: it.L('Binary Options') },
-                            { id: 'order-execution-mt',     text: it.L('MetaTrader') },
+                            { id: 'order-execution-mt', text: it.L('MetaTrader') },
                         ],
                     },
                     { id: 'payment-agents', text: it.L('Payment Agents'), dataShow: '-eucountry' },
