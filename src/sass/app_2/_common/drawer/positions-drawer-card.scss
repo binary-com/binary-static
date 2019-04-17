@@ -243,18 +243,6 @@
                 color: inherit;
             }
         }
-        &--plus {
-            &:before {
-                content: '+';
-                color: inherit;
-            }
-        }
-        &--minus {
-            &:before {
-                content: '-';
-                color: inherit;
-            }
-        }
     }
     &__underlying-name {
         display: flex;
