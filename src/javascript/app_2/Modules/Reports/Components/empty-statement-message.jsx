@@ -1,10 +1,10 @@
 import PropTypes         from 'prop-types';
 import React             from 'react';
 import { localize }      from '_common/localize';
-import { Icon }          from 'Assets/Common';
-import { IconStatement } from 'Assets/Header/NavBar';
-import { routes }        from 'Constants/index';
 import { ButtonLink }    from 'App/Components/Routes';
+import { Icon }          from 'Assets/Common';
+import { IconStatement } from 'Assets/Reports/icon-statement.jsx';
+import { routes }        from 'Constants/index';
 
 const EmptyStatementMessage = ({ has_selected_date }) => (
     <React.Fragment>
