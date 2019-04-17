@@ -1,7 +1,7 @@
 import PropTypes      from 'prop-types';
 import React          from 'react';
 import { localize }   from '_common/localize';
-import { ButtonLink } from 'App/Components/Routes';
+import ButtonLink     from 'App/Components/Routes/button-link.jsx';
 
 const PageError = ({
     buttonOnClick,
@@ -29,6 +29,7 @@ const PageError = ({
                     }
                 </span>
             </div>
+            { redirect_label &&
             <ButtonLink
                 className='page-error__btn btn--primary btn--primary--orange'
                 to={redirect_url}
@@ -38,6 +39,7 @@ const PageError = ({
                     {redirect_label}
                 </span>
             </ButtonLink>
+            }
         </div>
     </div>
 );
@@ -45,7 +47,7 @@ const PageError = ({
 PageError.propTypes = {
     buttonOnClick : PropTypes.func,
     error_code    : PropTypes.number,
-    header        : PropTypes.string,
+    header        : PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
     messages      : PropTypes.array,
     redirect_label: PropTypes.string,
     redirect_url  : PropTypes.string,

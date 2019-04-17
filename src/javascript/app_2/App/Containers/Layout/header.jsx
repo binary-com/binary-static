@@ -1,6 +1,6 @@
+import classNames      from 'classnames';
 import PropTypes       from 'prop-types';
 import React           from 'react';
-import classNames      from 'classnames';
 import { withRouter }  from 'react-router';
 import { formatMoney } from '_common/base/currency_base';
 import { urlFor }      from '_common/url';
@@ -23,6 +23,7 @@ const Header = ({
     currency,
     // hideInstallButton,
     is_acc_switcher_on,
+    is_fully_blurred,
     // is_install_button_visible,
     is_loading,
     is_logged_in,
@@ -47,7 +48,11 @@ const Header = ({
     });
 
     return (
-        <header className={classNames('header', { 'header__show': !is_loading })}>
+        <header className={classNames('header', {
+            'header--is-blurred': is_fully_blurred,
+            'header--show'      : !is_loading,
+        })}
+        >
             <div className='header__menu-items'>
                 <div className='header__menu-left'>
                     {is_mobile && <ToggleMenuDrawer />}
@@ -111,6 +116,7 @@ Header.propTypes = {
     hideInstallButton        : PropTypes.func,
     is_acc_switcher_on       : PropTypes.bool,
     is_dark_mode             : PropTypes.bool,
+    is_fully_blurred         : PropTypes.bool,
     is_install_button_visible: PropTypes.bool,
     is_logged_in             : PropTypes.bool,
     is_mobile                : PropTypes.bool,
@@ -136,6 +142,7 @@ export default withRouter(connect(
         loginid                  : client.loginid,
         hideInstallButton        : ui.hideInstallButton,
         is_acc_switcher_on       : ui.is_accounts_switcher_on,
+        is_fully_blurred         : ui.is_fully_blurred,
         is_dark_mode             : ui.is_dark_mode_on,
         is_install_button_visible: ui.is_install_button_visible,
         is_loading               : ui.is_loading,

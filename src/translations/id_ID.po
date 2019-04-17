@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-04-12 02:31\n"
-"Last-Translator: binarycom <jy@binary.com>\n"
+"PO-Revision-Date: 2019-04-16 09:18\n"
+"Last-Translator: binarycom\n"
 "Language-Team: Indonesian\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -511,10 +511,10 @@ msgid "3. Selfie or self-portrait photo"
 msgstr "3. Selfie atau foto potret diri"
 
 msgid "30-day limit on losses"
-msgstr "Batas kerugian dalam 30 hari"
+msgstr "Batas kerugian per 30 hari"
 
 msgid "30-day turnover limit"
-msgstr "Batas pembelian kontrak dalam 30 hari"
+msgstr "Batas pembelian kontrak per 30 hari"
 
 msgid "40 transactions or more in the past 12 months"
 msgstr "40 transaksi atau lebih pada 12 bulan terakhir"
@@ -526,10 +526,10 @@ msgid "6-digit code"
 msgstr "Kode 6 digit"
 
 msgid "7-day limit on losses"
-msgstr "Batas 7-hari pada kerugian"
+msgstr "Batas kerugian per 7 hari"
 
 msgid "7-day turnover limit"
-msgstr "Batas 7-hari total pembelian kontrak"
+msgstr "Batas pembelian kontrak per 7 hari"
 
 msgid "<< Back to job descriptions"
 msgstr "<< Kembali ke deskripsi pekerjaan"
@@ -839,9 +839,6 @@ msgstr "Manajemen Akun"
 
 msgid "Account Opening"
 msgstr "Pendaftaran Akun"
-
-msgid "Account Opening Reason"
-msgstr "Alasan Pedaftaran Akun"
 
 msgid "Account Password"
 msgstr "Kata Sandi Akun"
@@ -1254,8 +1251,8 @@ msgstr "Anti Korupsi"
 msgid "Anti-Money Laundering Policy"
 msgstr "Kebijakan Anti Pencucian Uang"
 
-msgid "Anticipated Account Turnover"
-msgstr "Antisipasi Akun Turnover"
+msgid "Anticipated account turnover"
+msgstr ""
 
 msgid "Any Transaction opened by you must be within any credit or position limit in effect with respect to the MT5 Real Account or any Transactions."
 msgstr "Setiap transkasi yang dibuka oleh Anda harus berkisar dalam batas kredit atau batas posisi yang berhubungan dengan Akun Riil MT5 atau transaksi apapun."
@@ -1962,12 +1959,6 @@ msgstr "Binary Limited, yang beralamat di 47 Esplanade, St Helier, Jersey JE1 0B
 msgid "Binary Options"
 msgstr "Opsi Binary"
 
-msgid "Binary Options Trading Experience"
-msgstr "Pengalaman Trading Opsi Binary"
-
-msgid "Binary Options Trading Frequency"
-msgstr "Trading Opsi Binary Frekuensi"
-
 msgid "Binary Options Trading has been disabled on your account. Kindly %1contact customer support%2 for assistance."
 msgstr "Trading Opsi Binary telah dibatalkan pada akun Anda. Silahkan %1hubungi customer support%2 untuk bantuan."
 
@@ -2009,6 +2000,12 @@ msgstr "Opsi Binary kini telah tersedia untuk ditradingkan pada MT5 – platform
 
 msgid "Binary options on MT5 are available exclusively on Volatility Indices which are synthetic indices that simulate market volatility and are available for trading 24 hours a day, seven days a week."
 msgstr "Opsi Binary pada MT5 tersedia secara khusus pada Indeks Volatilitas dimana merupakan indeks sintetis yang mensimulasikan volatilitas pasar dan tersedia untuk trading selama 24 jam sehari, tujuh hari seminggu."
+
+msgid "Binary options trading experience"
+msgstr ""
+
+msgid "Binary options trading frequency"
+msgstr ""
 
 msgid "Binary options trading is now available on our MT5 platform. Learn more about its benefits and available markets."
 msgstr "Trading opsi Binary kini tersedia pada platform MT5 kami. Pelajari lebih lanjut tentang manfaat dan pasar yang tersedia."
@@ -2172,17 +2169,17 @@ msgstr "CFD"
 msgid "CFD Energies"
 msgstr "CFD Energi"
 
-msgid "CFD Trading Experience"
-msgstr "Pengalaman Trading CFD"
-
-msgid "CFD Trading Frequency"
-msgstr "Trading Frekuensi CFD"
-
 msgid "CFD contract specifications"
 msgstr "Spesifikasi kontrak CFD"
 
 msgid "CFD margin policy"
 msgstr "Kebijakan margin CFD"
+
+msgid "CFD trading experience"
+msgstr ""
+
+msgid "CFD trading frequency"
+msgstr ""
 
 msgid "CFDs"
 msgstr "CFD"
@@ -2364,9 +2361,6 @@ msgstr "Kepala Eksekutif, Pejabat Senior dan Legislator"
 msgid "Choice of Law and Venue"
 msgstr "Pilihan Hukum dan Tempat"
 
-msgid "Choose Scopes:"
-msgstr "Pilih Cangkupan:"
-
 msgid "Choose a commission plan that suits your business strategy."
 msgstr "Pilih rencana komisi yang sesuai dengan strategi bisnis Anda."
 
@@ -2400,6 +2394,9 @@ msgstr "Pilih rencana komisi affiliasi berikut:"
 msgid "Choose from three main trade types:"
 msgstr "Pilih dari tiga jenis trading utama:"
 
+msgid "Choose scopes:"
+msgstr ""
+
 msgid "Choose the market, trade type, duration, barrier, and payout."
 msgstr "Pilih pasar, jenis trade, durasi, batasan, dan hasil."
 
@@ -2417,9 +2414,6 @@ msgstr "Pilih jenis token API tertentu yang Anda butuhkan, berdasarkan kemampuan
 
 msgid "Choose timeframes from 10 seconds to 365 days"
 msgstr "Pilih jangka waktu dari 10 detik hingga 365 hari"
-
-msgid "Choose token Name"
-msgstr "Pilih Nama token"
 
 msgid "Choose your own strike."
 msgstr "Pilih modal Anda."
@@ -2766,6 +2760,9 @@ msgstr "Konstruksi"
 msgid "Contact Us"
 msgstr "Hubungi Kami"
 
+msgid "Contact number"
+msgstr ""
+
 msgid "Contact our dedicated affiliate support team for help and suggestions."
 msgstr "Hubungi tim afiliasi kami untuk mendapat bantuan dan saran lebih lanjut."
 
@@ -2946,9 +2943,6 @@ msgstr "Daftar akun MAM"
 msgid "Create MetaTrader 5 account"
 msgstr "Daftar akun MetaTrader 5"
 
-msgid "Create New Token"
-msgstr "Membuat Token Baru"
-
 msgid "Create New Virtual-money Account"
 msgstr "Daftar Akun Dana Virtual Baru"
 
@@ -2978,6 +2972,9 @@ msgstr "Daftar akun gratis menggunakan"
 
 msgid "Create mathematical/statistical models for pricing, analyse fat tails to assess margin requirements, and manage the risk for exotic options, Forex, and CFDs"
 msgstr "Buat model matematika/statistik untuk penentuan harga, analisis fat tails untuk menilai persyaratan marjin, dan kelola risiko untuk opsi eksotis, Forex, dan CFD"
+
+msgid "Create new token"
+msgstr ""
 
 msgid "Create new virtual-money account"
 msgstr "Daftar akun dana virtual baru"
@@ -3130,7 +3127,7 @@ msgid "Daily insights into markets around the world."
 msgstr "Wawasan harian ke pasar di seluruh dunia."
 
 msgid "Daily limit on losses"
-msgstr "Batas harian kerugian"
+msgstr "Batas kerugian per hari"
 
 msgid "Daily market reports"
 msgstr "Laporan pasar harian"
@@ -3139,7 +3136,7 @@ msgid "Daily payouts"
 msgstr "Hasil harian"
 
 msgid "Daily turnover limit"
-msgstr "Batasan pembelian kontrak harian"
+msgstr "Batas pembelian kontrak per hari"
 
 msgid "Dash vs US Dollar"
 msgstr "Dash vs Dolar AS"
@@ -3705,11 +3702,11 @@ msgstr "Mitra Pengimbang Yang Memenuhi Syarat"
 msgid "Email"
 msgstr "Email"
 
-msgid "Email Preferences"
-msgstr "Preferensi Email"
-
 msgid "Email address"
 msgstr "Alamat email"
+
+msgid "Email preference"
+msgstr ""
 
 msgid "Email:"
 msgstr "Email:"
@@ -3723,8 +3720,8 @@ msgstr "Bekerja"
 msgid "Employee handbook"
 msgstr "Buku pedoman karyawan"
 
-msgid "Employment Status"
-msgstr "Status Pekerjaan"
+msgid "Employment status"
+msgstr ""
 
 msgid "Enable"
 msgstr "Aktifkan"
@@ -3816,8 +3813,8 @@ msgstr "Hasilkan koneksi internet yang aman dan melindungi privasi Anda."
 msgid "Establish a secure, encrypted connection to a virtual private network (VPN) server using our VPN app to protect your data and privacy."
 msgstr "Hasilkan koneksi yang aman dan terenkripsi ke server jaringan pribadi virtual (VPN) menggunakan aplikasi VPN kami untuk melindungi data dan privasi Anda."
 
-msgid "Estimated Net Worth"
-msgstr "Estimasi Nilai Bersih"
+msgid "Estimated net worth"
+msgstr ""
 
 msgid "Ether"
 msgstr "Ether"
@@ -3934,7 +3931,7 @@ msgid "Exceptional English communication skills (both oral and written)"
 msgstr "Mahir berkomunikasi dalam bahasa Inggris (baik lisan maupun tertulis)"
 
 msgid "Exclude me from the website until"
-msgstr "Kecualikan saya dari situs web hingga"
+msgstr "Kecualikan saya dari situs web sampai"
 
 msgid "Exclude time cannot be for more than 5 years."
 msgstr "Waktu pengecualian tidak dapat melebihi 5 tahun."
@@ -4097,6 +4094,9 @@ msgstr "Berpengalaman dengan paket pelaporan, SQL, pemrograman (Python/R) dan ke
 
 msgid "Experience with statistical and data mining techniques like GLM/Regression, Random Forest, Boosting, text mining, social media analysis, etc."
 msgstr "Berpengalaman dengan teknik statistik dan data mining seperti GLM/Regression, Random Forest, Boosting, text mining, analisis media sosial, dll."
+
+msgid "Experience with trading other financial instruments"
+msgstr ""
 
 msgid "Experience with web application security and testing, security monitoring, and intrusion detection"
 msgstr "Pengalaman dengan keamanan dan pengujian aplikasi web, pemantauan keamanan, dan deteksi intrusi"
@@ -4302,9 +4302,6 @@ msgstr "Pendaftaran Akun Finansial"
 msgid "Financial Assessment"
 msgstr "Penilaian Keuangan"
 
-msgid "Financial Information"
-msgstr "Informasi Keuangan"
-
 msgid "Financial Instrument"
 msgstr "Instrumen Keuangan"
 
@@ -4314,8 +4311,14 @@ msgstr "Financial Markets Analyst"
 msgid "Financial Risk approval is required. Please contact %1customer support%2 for more information."
 msgstr "Persetujuan pada risiko keuangan diperlukan. Silahkan hubungi %1customer support%2 untuk informasi lebih lanjut."
 
+msgid "Financial assessment"
+msgstr ""
+
 msgid "Financial derivatives that allow you to trade on the movement of underlying assets."
 msgstr "Derivatif finansial yang memungkinkan Anda bertrading pada pergerakan aset dasar."
+
+msgid "Financial information"
+msgstr ""
 
 msgid "Find a trading platform that suits your experience and preferred strategy – whether you're a new or seasoned trader."
 msgstr "Temukan platform trading yang sesuai dengan pengalaman dan strategi pilihan Anda - baik Anda seorang trader baru atau berpengalaman."
@@ -4340,6 +4343,9 @@ msgstr "Selesai"
 
 msgid "Firm grasp of advanced risk management concepts, including hedging, Greeks (first and second generation), Value at Risk models, etc."
 msgstr "Memahami konsep manajemen risiko tingkat lanjut, termasuk hedging, Greeks (generasi pertama dan kedua), model Nilai Risiko, dll."
+
+msgid "First line"
+msgstr ""
 
 msgid "First line of home address"
 msgstr "Alamat Rumah"
@@ -4479,12 +4485,6 @@ msgstr "Forex"
 msgid "Forex & Metals"
 msgstr "Forex & Logam"
 
-msgid "Forex Trading Experience"
-msgstr "Pengalaman Trading Forex"
-
-msgid "Forex Trading Frequency"
-msgstr "Trading Frekuensi Forex"
-
 msgid "Forex and contract for differences transactions involve a high degree of risk and are speculative because they allow you to speculate on the short term movements of the price of the underlying financial instruments. You should not enter into forex and/or contracts for differences transactions unless you are able to sustain losses that exceed your deposited funds. It is important for you to understand that in order to realise any value from your open positions, you would have to enter into a corresponding transaction to close your open positions and you may find it difficult or impossible to do so under certain market conditions."
 msgstr "Forex dan kontrak untuk perbedaan melibatkan risiko tinggi dan sangat spekulatif berhubung memberi peluang kepada Anda untuk menganalisa pergerakan harga jangka pendek pada instrumen pasar dasar. Jangan memasuki dunia forex dan/atau kontrak transaksi berdasarkan selisih kecuali jika Anda dapat mempertahankan kerugian yang melebihi dana yang disetorkan. Hal ini penting bagi Anda untuk memahami bahwa dalam rangka mewujudkan nilai apapun dari posisi berjalan Anda, Anda harus masuk ke dalam transaksi yang sesuai untuk menutup open position tersebut dan Anda mungkin merasa sulit atau tidak mungkin untuk melakukannya di bawah kondisi pasar tertentu."
 
@@ -4496,6 +4496,12 @@ msgstr "Spesifikasi kontrak Forex"
 
 msgid "Forex margin policy"
 msgstr "Kebijakan margin forex"
+
+msgid "Forex trading experience"
+msgstr ""
+
+msgid "Forex trading frequency"
+msgstr ""
 
 msgid "Forex trading involves buying one currency and selling another currency at the same time. This is why you always see them quoted in pairs. For example: EUR/USD and GBP/USD."
 msgstr "Trading forex melibatkan pembelian satu mata uang dan penjualan mata uang lain pada saat yang bersamaan. Ini sebabnya Anda akan selalu mereka dikuotasikan secara berpasangan. Sebagai contoh: EUR/USD dan GBP/USD."
@@ -4523,6 +4529,9 @@ msgstr "Pelatihan gratis oleh para trader profesional."
 
 msgid "Freedom"
 msgstr "Kebebasan"
+
+msgid "Frequency of trading other financial instruments"
+msgstr ""
 
 msgid "Friday"
 msgstr "Jum'at"
@@ -5556,9 +5565,6 @@ msgstr "Kontrak In/Out"
 msgid "Inactive/Dormant Accounts"
 msgstr "Akun Tidak Aktif/Dormant"
 
-msgid "Income Source"
-msgstr "Sumber Penghasilan"
-
 msgid "Income earning"
 msgstr "Hasil pendapatan"
 
@@ -5592,8 +5598,8 @@ msgstr "Logam industri"
 msgid "Industrial metals – also known as base metals – are abundant, but oxidise or corrode easily. Industrial metals feature heavily across a wide range of industrial and commercial applications, including electrical wiring, automobiles, and batteries."
 msgstr "Logam industri - juga dikenal sebagai logam dasar - melimpah, tapi dapat teroksidasi atau berkarat dengan mudah. Logam industri sangat dipakai di berbagai industri dan aplikasi komersil, termasuk kabel listrik, automobil dan baterai."
 
-msgid "Industry of Employment"
-msgstr "Industri Kerja"
+msgid "Industry of employment"
+msgstr ""
 
 msgid "Information & Communications Technology"
 msgstr "Teknologi Informasi & Komunikasi"
@@ -6072,8 +6078,8 @@ msgstr "Mari gunakan pasangan logam mulia XAU/USD (Emas vs Dolar AS) sebagai con
 msgid "Let's use the XAU/USD metal pair again as an example."
 msgstr "Mari gunakan pasangan logam mulia XAU/USD sebagai contoh."
 
-msgid "Level of Education"
-msgstr "Tingkat Pendidikan"
+msgid "Level of education"
+msgstr ""
 
 msgid "Leverage"
 msgstr "Leverage"
@@ -6562,22 +6568,22 @@ msgid "Maximum Profit"
 msgstr "Laba Maksimum"
 
 msgid "Maximum account cash balance"
-msgstr "Maksimum saldo tunai"
+msgstr "Jumlah maksimal saldo akun"
 
 msgid "Maximum aggregate contract purchases over a 30-day period."
-msgstr "Jumlah rata-rata pembelian kontrak maksimal dalam periode 30 hari."
+msgstr "Jumlah rata-rata pembelian kontrak maksimal per 30 hari."
 
 msgid "Maximum aggregate contract purchases over a 7-day period."
-msgstr "Jumlah maksimum rata-rata pembelian kontrak selama periode 7-hari."
+msgstr "Jumlah maksimum rata-rata pembelian kontrak per 7 hari."
 
 msgid "Maximum aggregate contract purchases per day."
 msgstr "Jumlah maksimum pembelian kontrak per hari."
 
 msgid "Maximum aggregate loss over a 30-day period."
-msgstr "Jumlah maksimum rata-rata kerugian dalam periode 30 hari."
+msgstr "Jumlah maksimum rata-rata kerugian per 30 hari."
 
 msgid "Maximum aggregate loss over a 7-day period."
-msgstr "Jumlah maksimum rata-rata kerugian dalam periode 7-hari."
+msgstr "Jumlah maksimum rata-rata kerugian per 7 hari."
 
 msgid "Maximum aggregate loss per day."
 msgstr "Maksimum rata-rata kerugian per hari."
@@ -6595,10 +6601,10 @@ msgid "Maximum multiplier of 1000."
 msgstr "Maksimum kelipatan 1000."
 
 msgid "Maximum number of contracts that can be open at the same time."
-msgstr "Jumlah maksimum kontrak yang dapat ditransaksikan pada waktu yang sama."
+msgstr "Jumlah maksimum kontrak yang dapat ditransaksikan secara bersamaan."
 
 msgid "Maximum number of open positions"
-msgstr "Maksimal jumlah open position"
+msgstr "Maksimal jumlah open posisi"
 
 msgid "Maximum payout"
 msgstr "Hasil Maksimum"
@@ -6906,8 +6912,8 @@ msgstr "Perusahaan maupun direktur Perusahaan, pegawai, manajer, pekerja atau ag
 msgid "Neither you, your direct relatives, or any clients you control are eligible to become clients, and you shall not be entitled to any share of net revenue or any other remuneration from the Company in relation to such relatives, friends, or controlled clients."
 msgstr "Anda, anggota keluarga atau klien yang dapat Anda kontrol tidak berhak untuk menjadi klien, dan Anda tidak akan mendapatkan bagian dari pendapatan bersih atau imbalan lainnya dari Perusahaan sehubungan dengan hubungan kerabat tersebut seperti, teman, atau klien yang dapat Anda kendalikan."
 
-msgid "Net Annual Income"
-msgstr "Penghasilan Bersih Tahunan"
+msgid "Net annual income"
+msgstr ""
 
 msgid "Net deposits"
 msgstr "Deposit bersih"
@@ -7165,7 +7171,7 @@ msgid "Once the bonus is credited to your account, you may withdraw the bonus an
 msgstr "Setelah bonus dikreditkan kedalam akun Anda, Anda dapat menarik dana bonus dan untung yang dihasilkan kapan saja."
 
 msgid "Once this limit is reached, you may no longer deposit."
-msgstr "Saat batasan ini tercapai, Anda tidak dapat mendeposit."
+msgstr "Ketika batasan tercapai, Anda tidak dapat melakukan deposit lebih lanjut."
 
 msgid "Once we receive your application, one of our affiliate managers will contact you to follow up with the next steps in the application process (this will include asking you to submit several documents)."
 msgstr "Setelah kami menerima aplikasi Anda, salah satu manajer afiliasi kami akan menghubungi Anda untuk menindaklanjuti dengan langkah-langkah berikutnya (ini termasuk meminta Anda untuk mengirimkan beberapa dokumen)."
@@ -7201,7 +7207,7 @@ msgid "Online currency exchangers"
 msgstr "Penukar mata uang online"
 
 msgid "Online trading can become addictive. Fill in the form below to limit your participation on the website or send a signed letter or fax to our customer support team. Once set, you can only tighten your limits. Limits will only be removed or loosened after 7 days with the exception of the self-exclusion date, which cannot be removed or altered once you have confirmed it. To remove or increase your limits, please contact %1customer support%2."
-msgstr "Trading online dapat menyebabkan ketagihan. Isikan formulir dibawah ini untuk membatasi keikutsertaan Anda pada situs web ini atau kirimkan surat yang ditandatangani atau kirimkan fax kepada tim customer support kami. Setelah ditetapkan, Anda hanya dapat merubah batasan Anda. Batas hanya akan dihapus atau dirubah setelah 7 hari dengan pengecualian dari tanggal pengecualian diri, yang tidak dapat dihapus atau diubah setelah Anda konfirmasi. Untuk menghapus atau meningkatkan batasan Anda, silahkan hubungi %1customer support%2."
+msgstr "Trading online dapat menyebabkan ketagihan. Isi formulir di bawah ini untuk membatasi partisipasi Anda pada situs web atau kirim surat atau fax yang ditandatangani kepada tim customer support kami. Setelah batasan diatur, Anda hanya dapat memperkecil batasan tersebut. Batasan tersebut hanya dapat dihapus atau ditingkatkan setelah 7 hari dari tanggal pengecualian diri sebelumnya dan tidak dapat dihapus setelah Anda melakukan konfirmasi. Untuk menghapus atau meningkatkan batasan Anda, silahkan hubungi %1customer support%2."
 
 msgid "Only %1 are allowed."
 msgstr "Hanya %1 dibenarkan."
@@ -7337,12 +7343,6 @@ msgstr "Order pada umumnya akan otomatis diterima jika tidak melewati batas pema
 
 msgid "Organisational skills and the ability to work proactively"
 msgstr "Keterampilan organisasi dan kemampuan untuk bekerja secara proaktif"
-
-msgid "Other Financial Instruments Trading Experience"
-msgstr "Pengalaman Trading Instrumen Keuangan Lainnya"
-
-msgid "Other Financial Instruments Trading Frequency"
-msgstr "Frekuensi Trading Instrumen Keuangan Lainnya"
 
 msgid "Other Obligations"
 msgstr "Kewajiban Lainnya"
@@ -7686,6 +7686,9 @@ msgstr "Data Pribadi"
 msgid "Personal Wealth Awards 2017"
 msgstr "Personal Wealth Awards 2017"
 
+msgid "Personal details"
+msgstr ""
+
 msgid "Pillar 3 Disclosures"
 msgstr "Pengungkapan Pilar 3"
 
@@ -7816,16 +7819,19 @@ msgid "Please enter a valid Login ID."
 msgstr "Masukkan Login ID yang berlaku."
 
 msgid "Please enter date in the format DD MMM, YYYY HH:mm (local time)."
-msgstr "Masukkan tanggal dengan format HH BBB, TTTT JJ:mm (waktu lokal)."
+msgstr "Pilih tanggal, bulan, tahun, jam serta menit waktu istirahat yang Anda inginkan."
 
 msgid "Please enter date in the format DD MMM, YYYY."
-msgstr "Masukkan tanggal dalam format HH BBB, TTTT."
+msgstr "Pilih hingga tanggal, bulan dan tahun berapa Anda ingin mengecualikan diri."
 
 msgid "Please enter your %1tax information%2 below to continue."
 msgstr "Masukkan %1informasi pajak Anda%2 dibawah untuk melanjutkan."
 
 msgid "Please enter your full address to avoid authentication delays."
 msgstr "Masukkan alamat lengkap Anda untuk menghindari penundaan otentikasi."
+
+msgid "Please enter your full home address to avoid authentication delays."
+msgstr ""
 
 msgid "Please fill in the Login ID and Amount you wish to transfer to your Client in the form below:"
 msgstr "Silahkan isi Login ID dan jumlah yang ingin Anda transfer ke klien Anda dalam formulir di bawah ini:"
@@ -7950,8 +7956,8 @@ msgstr "Posisi yang masih berjalan pada hari Rabu pada 23:59:59 GMT akan dikenak
 msgid "Postal Code/ZIP"
 msgstr "Kode Pos"
 
-msgid "Postal code/ZIP"
-msgstr "Kode pos"
+msgid "Postal/ZIP code"
+msgstr ""
 
 msgid "PostgreSQL Database Administrator (DBA)"
 msgstr "PostgreSQL Database Administrator (DBA)"
@@ -8379,8 +8385,8 @@ msgstr "Dapatkan bantuan kantor belakang untuk menerima manajemen risiko trading
 msgid "Receive commission when you bring in new clients through trading applications and interfaces you build using the %1 API."
 msgstr "Dapatkan komisi ketika Anda membawa klien baru pada aplikasi trading dan antar muka yang Anda bangun menggunakan API %1."
 
-msgid "Receive emails on %1 products, services, and events"
-msgstr "Terima email pada produk, layanan, dan acara %1"
+msgid "Receive emails on %1 products, services, and events."
+msgstr ""
 
 msgid "Receive instant prices based on your position."
 msgstr "Terima harga instan berdasarkan posisi Anda."
@@ -8754,8 +8760,8 @@ msgstr "Cari..."
 msgid "Second"
 msgstr "Detik"
 
-msgid "Second line of home address"
-msgstr "R.T/R.W"
+msgid "Second line"
+msgstr ""
 
 msgid "Secondary"
 msgstr "Sekunder"
@@ -8890,7 +8896,7 @@ msgid "Session duration limit cannot be more than 6 weeks."
 msgstr "Batas durasi sesi tidak dapat lebih dari 6 minggu."
 
 msgid "Session duration limit, in minutes"
-msgstr "Batasan waktu berlangsung, dalam menit"
+msgstr "Batas durasi sesi per menit"
 
 msgid "Session duration:"
 msgstr "Sesi durasi:"
@@ -9075,8 +9081,11 @@ msgstr "Maaf, kata sandi yang Anda masukkan salah"
 msgid "Sorry, your account is not authorised for any further contract purchases."
 msgstr "Maaf, akun Anda tidak dapat membeli kontrak selanjutnya."
 
-msgid "Source of Wealth"
-msgstr "Sumber Kekayaan"
+msgid "Source of income"
+msgstr ""
+
+msgid "Source of wealth"
+msgstr ""
 
 msgid "South Africa"
 msgstr "Afrika Selatan"
@@ -9453,11 +9462,11 @@ msgstr "Hubungi kami"
 msgid "Target"
 msgstr "Sasaran"
 
-msgid "Tax Information"
-msgstr "Informasi Pajak"
-
 msgid "Tax identification number"
 msgstr "Nomor Pokok Wajib Pajak"
+
+msgid "Tax information"
+msgstr ""
 
 msgid "Tax residence"
 msgstr "Pajak rumah"
@@ -10179,11 +10188,11 @@ msgstr "Penyaringan algoritma sebagai contoh hampir sama seperti sistem volatili
 msgid "The financial products offered via this website include binary options, contracts for difference (\"CFDs\") and other complex derivatives and financial products. Trading binary options may not be suitable for everyone. Trading CFDs carries a high level of risk since leverage can work both to your advantage and disadvantage. As a result, the products offered on this website may not be suitable for all investors because of the risk of losing all of your invested capital. You should never invest money that you cannot afford to lose, and never trade with borrowed money. Before trading in the complex financial products offered, please be sure to understand the risks involved and learn about %1Responsible Trading%2."
 msgstr "Produk keuangan yang ditawarkan melalui situs web ini adalah termasuk opsi binary, kontrak untuk perbedaan (\"CFD\") dan derivatif kompleks lainnya dan produk keuangan. Trading opsi binary mungkin tidak cocok untuk semua orang. Trading CFD memiliki tingkat risiko yang tinggi karena leverage dapat bekerja baik untuk memperoleh keuntungan begitu juga kerugian. Akibatnya, produk yang ditawarkan pada situs web ini mungkin tidak cocok untuk semua investor berhubuhg risiko dimana Anda akan kehilangan semua modal yang telah Anda investasikan. Pastikan untuk tidak menginvestasikan dana dimana Anda tidak sanggup untuk kehilangannya dan jangan pernah bertrading menggunakan dana pinjaman. Sebelum bertrading produk keuangan yang ditawarkan, mohon pastikan untuk memahami risiko yang terlibat dan pelajari lebih lanjut tentang %1Tanggung Jawab Trading%2."
 
-msgid "The financial trading services contained within this site are only suitable for Clients who are able to bear the loss of all the money they invest and who understand and have experience of the risks involved in the acquisition of financial contracts."
-msgstr "Layanan trading finansial yang disediakan pada situs ini hanya cocok untuk klien yang mampu menanggung kerugian pada semua modal yang mereka tanamkan dan bagi yang mengerti dan memiliki pengalaman tentang risiko yang akan dialami pada trading kontrak finansial."
+msgid "The financial trading services contained within this site are only suitable for customers who accept the possibility of losing all the money they invest and who understand and have experience of the risk involved in the acquisition of financial contracts."
+msgstr ""
 
-msgid "The financial trading services contained within this site are only suitable for customers who are able to bear the loss of all the money they invest and who understand and have experience of the risk involved in the acquistion of financial contracts. Transactions in financial contracts carry a high degree of risk. If purchased contracts expire worthless, you will suffer a total loss of your investment, which consists of the contract premium."
-msgstr "Layanan trading finansial yang disediakan pada situs ini hanya cocok untuk Pelanggan yang mampu menanggung kerugian pada semua modal yang mereka tanamkan dan bagi yang mengerti dan memiliki pengalaman tentang risiko yang akan dialami pada trading kontrak finansial. Kontrak transaksi finansial adalah memiliki risiko tinggi. Jika prediksi Anda tidak tepat maka anda akan kehilangan semua modal yang anda tanamkan berupa harga kontrak yang anda bayarkan."
+msgid "The financial trading services contained within this site are only suitable for customers who accept the possibility of losing all the money they invest and who understand and have experience of the risk involved in the acquisition of financial contracts. Transactions in financial contracts carry a high degree of risk. If purchased contracts expire worthless, you will suffer a total loss of your investment, which consists of the contract premium."
+msgstr ""
 
 msgid "The first step is to set the parameters of your trade. There are five trade parameters you need to adjust in order to receive a price for the contract:"
 msgstr "Langkah pertama adalah menetapkan parameter trading Anda. Terdapat lima parameter trading yang Anda harus sesuaikan agar dapat menerima harga untuk kontrak:"
@@ -10714,7 +10723,7 @@ msgid "Time out must be after today."
 msgstr "Time out harus setelah hari ini."
 
 msgid "Time out until"
-msgstr "Waktu berhenti hingga"
+msgstr "Waktu istirahat hingga"
 
 msgid "Timed out until"
 msgstr "Waktu habis hingga"
@@ -10817,6 +10826,9 @@ msgstr "Hari ini, Labuan dikenal sebagai pusat keuangan yang berkembang dan tuju
 
 msgid "Token"
 msgstr "Token"
+
+msgid "Token name"
+msgstr ""
 
 msgid "Top Up Virtual Account"
 msgstr "Isi Ulang Akun Virtual"
@@ -11010,9 +11022,6 @@ msgstr "Trading"
 msgid "Trading Contracts for Difference (CFDs) on Volatility Indices may not be suitable for everyone. Please ensure that you fully understand the risks involved, including the possibility of losing all the funds in your MT5 account. Gambling can be addictive – please play responsibly."
 msgstr "Kontrak untuk Perbedaan (CFDs) pada indeks volatilitas mungkin tidak akan cocok untuk semua orang. Pastikan bahwa Anda mengerti resiko yang terdapat, termasuk kemungkinan kehilangan seluruh dana di akun MT5."
 
-msgid "Trading Experience"
-msgstr "Pengalaman Trading"
-
 msgid "Trading Limits"
 msgstr "Batasan Trading"
 
@@ -11042,6 +11051,9 @@ msgstr "Trading opsi binary mungkin tidak cocok untuk semua orang, maka pastikan
 
 msgid "Trading cryptocurrencies on our MetaTrader 5 platform means taking a position on a cryptocurrency pair when you expect it to rise or fall in value so you can make a profit when your prediction is correct."
 msgstr "Bertrading mata uang kripto pada platform MetaTrader 5 kami berarti mengambil posisi pada pasangan mata uang kripto saat Anda mengharapkannya naik atau turun nilainya sehingga Anda dapat memperoleh keuntungan saat prediksi Anda benar."
+
+msgid "Trading experience"
+msgstr ""
 
 msgid "Trading forex and contracts for differences carries a high level of risk and %1 does not monitor the open positions of your account on your behalf. It is your responsibility to monitor your Open Positions and understand the exposure of your Open Positions whilst ensuring that your exposure commensurate with your risk appetite. Due to the cost associated with overnight open positions, you should consider investing in the market of the instrument in which you ordinarily transact in instead of investing in a CFD."
 msgstr "Trading Forex dan kontrak untuk perbedaan memiliki tingkat resiko yang tinggi dan %1 tidak memonitor open position pada akun atas nama Anda. Hal ini merupakan tanggung jawab Anda untuk memonitor open position dan memahami paparan Open Position Anda sementara memastikan bahwa paparan Anda sepadan dengan risiko yang Anda inginkan. Berhubung biaya yang terkait dengan posisi menginap, Anda harus mempertimbangkan untuk berinvestasi pada pasar instrumen di mana Anda biasa bertransaksi dan bukan berinvestasi pada CFD."
@@ -12857,7 +12869,7 @@ msgid "You will be asked to prove that you are the owner of the account being au
 msgstr "Anda akan diminta untuk membuktikan bahwa Anda adalah pemilik akun yang diautentikasi."
 
 msgid "You will be automatically logged out after such time."
-msgstr "Anda akan secara otomatis keluar setelah waktu tersebut."
+msgstr "Anda akan otomatis keluar setelah waktu yang ditetapkan tercapai."
 
 msgid "You will be redirected to a third-party website which is not owned by Binary.com."
 msgstr "Anda akan diarahkan ke situs pihak ketiga yang tidak dimiliki oleh Binary.com."

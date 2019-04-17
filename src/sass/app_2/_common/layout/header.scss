@@ -8,14 +8,20 @@
     width: 100%;
     transition: height 0.3s, opacity 0.3s;
     top: 0;
+    transition: filter 0.25s linear;
+    backface-visibility: hidden;
+    filter: blur(0);
     @include themify($themes) {
         background-color: themed('background_color');
         border-bottom: 1px solid themed('background_color');
     }
 
-    &__show {
-        height: $HEADER_HEIGHT;
+    &--is-blurred {
+        filter: blur(3px);
+    }
+    &--show {
         opacity: 1;
+        height: $HEADER_HEIGHT;
     }
     &__menu-items {
         display: flex;

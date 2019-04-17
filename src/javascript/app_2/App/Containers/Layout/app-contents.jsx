@@ -9,7 +9,8 @@ import Loading        from '../../../../../templates/app_2/components/loading.js
 const AppContents = ({
     children, is_contract_mode,
     is_positions_drawer_on,
-    is_blurred,
+    is_app_blurred,
+    is_fully_blurred,
     is_loading,
 }) => (
     <React.Fragment>
@@ -19,7 +20,7 @@ const AppContents = ({
             className={classNames('app-contents', {
                 'app-contents--show-positions-drawer': is_positions_drawer_on,
                 'app-contents--contract-mode'        : is_contract_mode,
-                'app-contents--is-blurred'           : is_blurred,
+                'app-contents--is-blurred'           : (is_fully_blurred || is_app_blurred),
             })}
         >
             {/* Calculate height of user screen and offset height of header and footer */}
@@ -42,7 +43,8 @@ export default withRouter(connect(
     ({ modules, ui }) => ({
         is_positions_drawer_on: ui.is_positions_drawer_on,
         is_contract_mode      : modules.smart_chart.is_contract_mode,
-        is_blurred            : ui.is_blurred,
+        is_app_blurred        : ui.is_app_blurred,
+        is_fully_blurred      : ui.is_fully_blurred,
         is_loading            : ui.is_loading,
     })
 )(AppContents));
