@@ -36,24 +36,24 @@ const Values = () => (
 );
 
 const TradingExperienceForm = () => (
-    <Fieldset id='trading_experience_form' legend={it.L('Trading Experience')}>
-        <SelectRow con={Experience} id='forex_trading_experience' label={it.L('Forex Trading Experience')} />
-        <SelectRow con={Frequency}  id='forex_trading_frequency'  label={it.L('Forex Trading Frequency')} />
+    <Fieldset id='trading_experience_form' legend={it.L('Trading experience')}>
+        <SelectRow con={Experience} id='forex_trading_experience' label={it.L('Forex trading experience')} />
+        <SelectRow con={Frequency}  id='forex_trading_frequency'  label={it.L('Forex trading frequency')} />
 
-        <SelectRow con={Experience} id='binary_options_trading_experience' label={it.L('Binary Options Trading Experience')} />
-        <SelectRow con={Frequency}  id='binary_options_trading_frequency'  label={it.L('Binary Options Trading Frequency')} />
+        <SelectRow con={Experience} id='binary_options_trading_experience' label={it.L('Binary options trading experience')} />
+        <SelectRow con={Frequency}  id='binary_options_trading_frequency'  label={it.L('Binary options trading frequency')} />
 
-        <SelectRow con={Experience} id='cfd_trading_experience' label={it.L('CFD Trading Experience')} />
-        <SelectRow con={Frequency}  id='cfd_trading_frequency'  label={it.L('CFD Trading Frequency')} />
+        <SelectRow con={Experience} id='cfd_trading_experience' label={it.L('CFD trading experience')} />
+        <SelectRow con={Frequency}  id='cfd_trading_frequency'  label={it.L('CFD trading frequency')} />
 
-        <SelectRow con={Experience} id='other_instruments_trading_experience' label={it.L('Other Financial Instruments Trading Experience')} />
-        <SelectRow con={Frequency}  id='other_instruments_trading_frequency'  label={it.L('Other Financial Instruments Trading Frequency')} />
+        <SelectRow con={Experience} id='other_instruments_trading_experience' label={it.L('Experience with trading other financial instruments')} />
+        <SelectRow con={Frequency}  id='other_instruments_trading_frequency'  label={it.L('Frequency of trading other financial instruments')} />
     </Fieldset>
 );
 
 const FinancialInformationForm = () => (
-    <Fieldset id='financial_info_form' legend={it.L('Financial Information')}>
-        <FormRow id='income_source' label={it.L('Income Source')} type='select'>
+    <Fieldset id='financial_info_form' legend={it.L('Financial information')}>
+        <FormRow id='income_source' label={it.L('Source of income')} type='select'>
             <option value=''>{it.L('Please select')}</option>
             <option value='Salaried Employee'>{it.L('Salaried Employee')}</option>
             <option value='Self-Employed'>{it.L('Self-Employed')}</option>
@@ -63,7 +63,7 @@ const FinancialInformationForm = () => (
             <option value='Savings &amp; Inheritance'>{it.L('Savings & Inheritance')}</option>
         </FormRow>
 
-        <FormRow id='employment_status' label={it.L('Employment Status')} type='select'>
+        <FormRow id='employment_status' label={it.L('Employment status')} type='select'>
             <option value=''>{it.L('Please select')}</option>
             <option value='Employed'>{it.L('Employed')}</option>
             <option value='Pensioner'>{it.L('Pensioner')}</option>
@@ -72,7 +72,7 @@ const FinancialInformationForm = () => (
             <option value='Unemployed'>{it.L('Unemployed')}</option>
         </FormRow>
 
-        <FormRow id='employment_industry' label={it.L('Industry of Employment')} type='select'>
+        <FormRow id='employment_industry' label={it.L('Industry of employment')} type='select'>
             <option value=''>{it.L('Please select')}</option>
             <option value='Construction'>{it.L('Construction')}</option>
             <option value='Education'>{it.L('Education')}</option>
@@ -108,7 +108,7 @@ const FinancialInformationForm = () => (
             <option value='Unemployed'>{it.L('Unemployed')}</option>
         </FormRow>
 
-        <FormRow id='source_of_wealth' label={it.L('Source of Wealth')} type='select'>
+        <FormRow id='source_of_wealth' label={it.L('Source of wealth')} type='select'>
             <option value=''>{it.L('Please select')}</option>
             <option value='Accumulation of Income/Savings'>{it.L('Accumulation of Income/Savings')}</option>
             <option value='Cash Business'>{it.L('Cash Business')}</option>
@@ -119,18 +119,18 @@ const FinancialInformationForm = () => (
             <option value='Sale of Property'>{it.L('Sale of Property')}</option>
         </FormRow>
 
-        <FormRow id='education_level' label={it.L('Level of Education')} type='select'>
+        <FormRow id='education_level' label={it.L('Level of education')} type='select'>
             <option value=''>{it.L('Please select')}</option>
             <option value='Primary'>{it.L('Primary')}</option>
             <option value='Secondary'>{it.L('Secondary')}</option>
             <option value='Tertiary'>{it.L('Tertiary')}</option>
         </FormRow>
 
-        <FormRow id='net_income' label={it.L('Net Annual Income')} type='select'>
+        <FormRow id='net_income' label={it.L('Net annual income')} type='select'>
             <Values />
         </FormRow>
 
-        <FormRow id='estimated_worth' label={it.L('Estimated Net Worth')} type='select'>
+        <FormRow id='estimated_worth' label={it.L('Estimated net worth')} type='select'>
             <option value=''>{it.L('Please select')}</option>
             <option value='Less than $100,000'>{it.L('Less than $100,000')}</option>
             <option value='$100,000 - $250,000'>{it.L('$100,000 - $250,000')}</option>
@@ -139,7 +139,7 @@ const FinancialInformationForm = () => (
             <option value='Over $1,000,000'>{it.L('Over $1,000,000')}</option>
         </FormRow>
 
-        <FormRow id='account_turnover' label={it.L('Anticipated Account Turnover')} type='select'>
+        <FormRow id='account_turnover' label={it.L('Anticipated account turnover')} type='select'>
             <Values />
         </FormRow>
     </Fieldset>

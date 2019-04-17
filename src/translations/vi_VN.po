@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-04-15 02:28\n"
-"Last-Translator: binarycom <jy@binary.com>\n"
+"PO-Revision-Date: 2019-04-16 09:18\n"
+"Last-Translator: binarycom\n"
 "Language-Team: Vietnamese\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -840,9 +840,6 @@ msgstr "Quản lý tài khoản"
 msgid "Account Opening"
 msgstr "Mở tài khoản"
 
-msgid "Account Opening Reason"
-msgstr "Lý do mở tài khoản"
-
 msgid "Account Password"
 msgstr "Mật Khẩu Tài Khoản"
 
@@ -1254,8 +1251,8 @@ msgstr "Chống tham nhũng"
 msgid "Anti-Money Laundering Policy"
 msgstr "Chính sách chống rửa tiền"
 
-msgid "Anticipated Account Turnover"
-msgstr "Dự đoán doanh thu tài khoản"
+msgid "Anticipated account turnover"
+msgstr ""
 
 msgid "Any Transaction opened by you must be within any credit or position limit in effect with respect to the MT5 Real Account or any Transactions."
 msgstr "Bất kỳ một giao dịch nào được mở từ bạn phải nằm trong bất kỳ hạn mức tín dụng hoặc phiên có hiệu lực đối với tài khoản thực MT5 hoặc bất kỳ giao dịch nào."
@@ -1962,12 +1959,6 @@ msgstr "Công ty TNHH Binary, địa chỉ văn phòng được đăng ký t�
 msgid "Binary Options"
 msgstr "Binary Options"
 
-msgid "Binary Options Trading Experience"
-msgstr "Kinh nghiệm giao dịch Binary Options"
-
-msgid "Binary Options Trading Frequency"
-msgstr "Tần xuất giao dịch Binary Options"
-
 msgid "Binary Options Trading has been disabled on your account. Kindly %1contact customer support%2 for assistance."
 msgstr "Giao dịch Binary Options đã bị khóa trên tài khoản của bạn. Xin vui lòng %1liên hệ hỗ trợ khách hàng%2 để được trợ giúp."
 
@@ -2009,6 +2000,12 @@ msgstr "Bạn có thể giao dịch Binary options trên MT5 - nền tảng giao
 
 msgid "Binary options on MT5 are available exclusively on Volatility Indices which are synthetic indices that simulate market volatility and are available for trading 24 hours a day, seven days a week."
 msgstr "Binary options trên MT5 có sẵn độc quyền trên Chỉ số biến động là chỉ số tổng hợp mô phỏng biến động thị trường và có sẵn để giao dịch 24 giờ một ngày, bảy ngày trong tuần."
+
+msgid "Binary options trading experience"
+msgstr ""
+
+msgid "Binary options trading frequency"
+msgstr ""
 
 msgid "Binary options trading is now available on our MT5 platform. Learn more about its benefits and available markets."
 msgstr "Giao dịch Binary options hiện đã có trên nền tảng MT5 của chúng tôi. Hãy tìm hiểu thêm về lợi ích và thị trường có sẵn của nó."
@@ -2172,17 +2169,17 @@ msgstr "CFD"
 msgid "CFD Energies"
 msgstr "Năng lượng CFD"
 
-msgid "CFD Trading Experience"
-msgstr "Kinh nghiệm giao dịch CFD"
-
-msgid "CFD Trading Frequency"
-msgstr "Tần xuất giao dịch CFD"
-
 msgid "CFD contract specifications"
 msgstr "Điều khoản đặc biệt của CFD"
 
 msgid "CFD margin policy"
 msgstr "Chính sách ký quỹ CFD"
+
+msgid "CFD trading experience"
+msgstr ""
+
+msgid "CFD trading frequency"
+msgstr ""
 
 msgid "CFDs"
 msgstr "Các thị trường CFD"
@@ -2364,9 +2361,6 @@ msgstr "Giám đốc điều hành, quan chức cấp cao và các nhà lập ph
 msgid "Choice of Law and Venue"
 msgstr "Lựa chọn luật và khu vực pháp lý"
 
-msgid "Choose Scopes:"
-msgstr "Chọn Loại:"
-
 msgid "Choose a commission plan that suits your business strategy."
 msgstr "Chọn một kế hoạch hoa hồng phù hợp với chiến lược kinh doanh của bạn."
 
@@ -2400,6 +2394,9 @@ msgstr "Chọn một trong các kế hoạch hoa hồng liên kết sau:"
 msgid "Choose from three main trade types:"
 msgstr "Chọn từ ba loại giao dịch chính:"
 
+msgid "Choose scopes:"
+msgstr ""
+
 msgid "Choose the market, trade type, duration, barrier, and payout."
 msgstr "Chọn thị trường, loại giao dịch, thời lượng, giới hạn, và khoảng được trả."
 
@@ -2417,9 +2414,6 @@ msgstr "Chọn kiểu token API bạn cần, dựa trên khả năng mà bạn m
 
 msgid "Choose timeframes from 10 seconds to 365 days"
 msgstr "Chọn khung thời gian từ 10 giây đến 365 ngày"
-
-msgid "Choose token Name"
-msgstr "Chọn tên token"
 
 msgid "Choose your own strike."
 msgstr "Chọn giá thực hiện của riêng bạn."
@@ -2766,6 +2760,9 @@ msgstr "Xây dựng"
 msgid "Contact Us"
 msgstr "Liên Hệ"
 
+msgid "Contact number"
+msgstr ""
+
 msgid "Contact our dedicated affiliate support team for help and suggestions."
 msgstr "Liên hệ đội ngũ liên kết riêng của chúng tôi để có trợ giúp và đề xuất."
 
@@ -2946,9 +2943,6 @@ msgstr "Tạo tài khoản MAM"
 msgid "Create MetaTrader 5 account"
 msgstr "Tạo tài khoản MetaTrader 5"
 
-msgid "Create New Token"
-msgstr "Tạo Token Mới"
-
 msgid "Create New Virtual-money Account"
 msgstr "Tạo tài khoản tiền ảo mới"
 
@@ -2978,6 +2972,9 @@ msgstr "Tạo tài khoản miễn phí với"
 
 msgid "Create mathematical/statistical models for pricing, analyse fat tails to assess margin requirements, and manage the risk for exotic options, Forex, and CFDs"
 msgstr "Tạo các biểu mẫu toán học/thống kê cho giá cả, phân tích bóng dài để đánh giá các yêu cầu về khoản đặt cọc, và quản lý rủi ro cho quyền chọn lại, giao dịch ngoại hối, và CFD"
+
+msgid "Create new token"
+msgstr ""
 
 msgid "Create new virtual-money account"
 msgstr "Tạo tài khoản tiền ảo mới"
@@ -3705,11 +3702,11 @@ msgstr "Đối Tác Đủ Tư Cách"
 msgid "Email"
 msgstr "Email"
 
-msgid "Email Preferences"
-msgstr "Tuỳ chọn email"
-
 msgid "Email address"
 msgstr "Địa chỉ Email"
+
+msgid "Email preference"
+msgstr ""
 
 msgid "Email:"
 msgstr "Email:"
@@ -3723,8 +3720,8 @@ msgstr "Tuyển dụng"
 msgid "Employee handbook"
 msgstr "Sổ Tay Nhân viên"
 
-msgid "Employment Status"
-msgstr "Tình Trạng Tuyển Dụng"
+msgid "Employment status"
+msgstr ""
 
 msgid "Enable"
 msgstr "Kích hoạt"
@@ -3816,8 +3813,8 @@ msgstr "Thiết lập kết nối Internet an toàn và bảo vệ riêng tư c�
 msgid "Establish a secure, encrypted connection to a virtual private network (VPN) server using our VPN app to protect your data and privacy."
 msgstr "Thiết lập kết nối an toàn, được mã hóa với một máy chủ mạng riêng ảo (VPN) sử dụng ứng dụng VPN của chúng tôi để bảo vệ dữ liệu và sự riêng tư của bạn."
 
-msgid "Estimated Net Worth"
-msgstr "Giá trị Thực dự kiến"
+msgid "Estimated net worth"
+msgstr ""
 
 msgid "Ether"
 msgstr "Ether"
@@ -4098,6 +4095,9 @@ msgstr "Kinh nghiệm với các báo cáo, SQL, lập trình (Python R) và khu
 msgid "Experience with statistical and data mining techniques like GLM/Regression, Random Forest, Boosting, text mining, social media analysis, etc."
 msgstr "Kinh nghiệm với các thống kê và dữ liệu khai thác kỹ thuật như GLM/hồi qui, ngẫu nhiên rừng, tăng cường, văn bản khai thác, phân tích phương tiện truyền thông xã hội, vv."
 
+msgid "Experience with trading other financial instruments"
+msgstr ""
+
 msgid "Experience with web application security and testing, security monitoring, and intrusion detection"
 msgstr "Kinh nghiệm với thử nghiệm và bảo mật ứng dụng web, giám sát bảo mật và phát hiện xâm nhập"
 
@@ -4302,9 +4302,6 @@ msgstr "Mở Tài Khoản Tài Chính"
 msgid "Financial Assessment"
 msgstr "Đánh Giá Tài Chính"
 
-msgid "Financial Information"
-msgstr "Thông Tin Tài Chính"
-
 msgid "Financial Instrument"
 msgstr "Công Cụ Tài Chính"
 
@@ -4314,8 +4311,14 @@ msgstr "Nhà phân tích thị trường tài chính"
 msgid "Financial Risk approval is required. Please contact %1customer support%2 for more information."
 msgstr ""
 
+msgid "Financial assessment"
+msgstr ""
+
 msgid "Financial derivatives that allow you to trade on the movement of underlying assets."
 msgstr "Phái sinh tài chính cho phép bạn giao dịch trên sự di chuyển tài sản cơ bản."
+
+msgid "Financial information"
+msgstr ""
 
 msgid "Find a trading platform that suits your experience and preferred strategy – whether you're a new or seasoned trader."
 msgstr ""
@@ -4340,6 +4343,9 @@ msgstr "Kết thúc"
 
 msgid "Firm grasp of advanced risk management concepts, including hedging, Greeks (first and second generation), Value at Risk models, etc."
 msgstr "Nắm những khái niệm rủi ro quản lý bậc cao, bao gồm cả bảo hiểm rủi ro, Greeks (thế hệ đầu tiên và thứ hai), giá trị tại các mô hình rủi ro, vv."
+
+msgid "First line"
+msgstr ""
 
 msgid "First line of home address"
 msgstr "Dòng đầu tiên của địa chỉ nhà"
@@ -4479,12 +4485,6 @@ msgstr "Thị trường ngoại hối"
 msgid "Forex & Metals"
 msgstr "Ngoại hối & Các kim loại"
 
-msgid "Forex Trading Experience"
-msgstr "Kinh nghiệm giao dịch ngoại hối"
-
-msgid "Forex Trading Frequency"
-msgstr "Tần suất giao dịch ngoại hối"
-
 msgid "Forex and contract for differences transactions involve a high degree of risk and are speculative because they allow you to speculate on the short term movements of the price of the underlying financial instruments. You should not enter into forex and/or contracts for differences transactions unless you are able to sustain losses that exceed your deposited funds. It is important for you to understand that in order to realise any value from your open positions, you would have to enter into a corresponding transaction to close your open positions and you may find it difficult or impossible to do so under certain market conditions."
 msgstr "Ngoại hối và các hợp đồng chênh lệch giá giao dịch liên quan đến một mức độ rủi ro cao và đầu cơ vì chúng cho phép bạn suy đoán trong các bước đi ngắn hạn của giá cả của các công cụ tài chính bên dưới. Bạn không nên tham gia vào ngoại hối hoặc/và các hợp đồng chênh lệch giá giao dịch trừ phi bạn có khả năng duy trì thiệt hại mà vượt quá khoản tiền bạn gửi vào. Điều quan trọng với bạn để hiểu rằng để nhận ra bất cứ giá trị nào từ các phiên mở của bạn, bạn nên tham gia vào một phiên giao dịch chính xác để đóng lại phiên mở của bạn và bạn có thể thấy nó khó khăn hoặc bất khả thi để thực hiện điều đó dưới một vài điều kiện nhất định của thị trường."
 
@@ -4496,6 +4496,12 @@ msgstr "Điều khoản đặc biệt của Ngoại hối"
 
 msgid "Forex margin policy"
 msgstr "Chính sách ký quỹ ngoại hối"
+
+msgid "Forex trading experience"
+msgstr ""
+
+msgid "Forex trading frequency"
+msgstr ""
 
 msgid "Forex trading involves buying one currency and selling another currency at the same time. This is why you always see them quoted in pairs. For example: EUR/USD and GBP/USD."
 msgstr "Giao dịch ngoại hối liên quan đến việc mua một loại tiền tệ và bá một loại tiền tệ khác cùng một lúc. Đây là lý do tại sao bạn luôn luôn nhìn thấy chúng trong cặp. Ví dụ: EUR/USD và GBP/USD."
@@ -4523,6 +4529,9 @@ msgstr "Các phiên họp đào tạo miễn phí bởi các thương nhân chuy
 
 msgid "Freedom"
 msgstr "Tự do"
+
+msgid "Frequency of trading other financial instruments"
+msgstr ""
 
 msgid "Friday"
 msgstr "Thứ Sáu"
@@ -5557,9 +5566,6 @@ msgstr "Giao dịch Trong/Ngoài"
 msgid "Inactive/Dormant Accounts"
 msgstr "Tài khoản không kích hoạt/hoạt động"
 
-msgid "Income Source"
-msgstr "Nguồn Thu Nhập"
-
 msgid "Income earning"
 msgstr "Thu nhập"
 
@@ -5593,8 +5599,8 @@ msgstr "Kim loại công nghiệp"
 msgid "Industrial metals – also known as base metals – are abundant, but oxidise or corrode easily. Industrial metals feature heavily across a wide range of industrial and commercial applications, including electrical wiring, automobiles, and batteries."
 msgstr "Kim loại công nghiệp-còn được gọi là các kim loại cơ bản - là phổ biến, nhưng oxy hóa hoặc ăn mòn một cách dễ dàng. Kim loại công nghiệp có rất nhiều tính năng trên một loạt các ứng dụng công nghiệp và thương mại, bao gồm cả dây điện, xe ô tô và pin."
 
-msgid "Industry of Employment"
-msgstr "Ngành công nghiệp Tuyển Dụng"
+msgid "Industry of employment"
+msgstr ""
 
 msgid "Information & Communications Technology"
 msgstr "Công nghệ thông tin & truyền thông"
@@ -6074,8 +6080,8 @@ msgstr "Hãy sử dụng các cặp kim loại XAU/USD (vàng vs U. S. dollar) n
 msgid "Let's use the XAU/USD metal pair again as an example."
 msgstr "Hãy lấy cặp kim loại XAU/USD làm ví dụ."
 
-msgid "Level of Education"
-msgstr "Trình Độ Học Vấn"
+msgid "Level of education"
+msgstr ""
 
 msgid "Leverage"
 msgstr "Đòn bẩy"
@@ -6908,8 +6914,8 @@ msgstr "Công Ty cũng như bất kỳ các giám đốc, cán bộ, quản lý,
 msgid "Neither you, your direct relatives, or any clients you control are eligible to become clients, and you shall not be entitled to any share of net revenue or any other remuneration from the Company in relation to such relatives, friends, or controlled clients."
 msgstr "Cả bạn, họ hàng thân thiết của bạn, hoặc bất cứ khách hàng nào chịu sự kiểm soát của bạn đều không đủ điều kiện trở thành Khách hàng và bạn sẽ không được thừa hưởng bất kì cổ phần từ doanh thu thuần hoặc bất kì khoản thù lao khác của Công ty có liên quan đến những người thân hoặc khách hàng chịu sự quản lý đó."
 
-msgid "Net Annual Income"
-msgstr "Lợi Nhuận Thuần Hàng Năm"
+msgid "Net annual income"
+msgstr ""
 
 msgid "Net deposits"
 msgstr "Tiền gửi ròng"
@@ -7340,12 +7346,6 @@ msgstr "Các Lệnh thường sẽ được tự động chấp nhận nếu cá
 msgid "Organisational skills and the ability to work proactively"
 msgstr "Các kỹ năng về tổ chức và khả năng làm việc chủ động"
 
-msgid "Other Financial Instruments Trading Experience"
-msgstr "Kinh nghiệm giao dịch công cụ tài chính khác"
-
-msgid "Other Financial Instruments Trading Frequency"
-msgstr "Tần suất giao dịch công cụ tài chính khác"
-
 msgid "Other Obligations"
 msgstr "Các Nghĩa Vụ Khác"
 
@@ -7688,6 +7688,9 @@ msgstr "Thông Tin Cá Nhân"
 msgid "Personal Wealth Awards 2017"
 msgstr "Giải thưởng Personal Wealth Awards năm 2017"
 
+msgid "Personal details"
+msgstr ""
+
 msgid "Pillar 3 Disclosures"
 msgstr "Tiết lộ cột 3"
 
@@ -7829,6 +7832,9 @@ msgstr "Vui lòng nhập %1thông tin thuế%2của bạn vào dưới đây đ�
 msgid "Please enter your full address to avoid authentication delays."
 msgstr "Vui lòng nhập địa chỉ đầy đủ của bạn để tránh sự chậm trễ xác thực."
 
+msgid "Please enter your full home address to avoid authentication delays."
+msgstr ""
+
 msgid "Please fill in the Login ID and Amount you wish to transfer to your Client in the form below:"
 msgstr "Vui lòng điền tên ID Đăng nhập vá Số Tiền bạn muốn chuyển cho Khách Hàng của mình trong bản mẫu dưới đây:"
 
@@ -7952,8 +7958,8 @@ msgstr "Các phiên vẫn mở vào thứ tư lúc 23:59:59 GMT sẽ phải tr�
 msgid "Postal Code/ZIP"
 msgstr "Mã bưu chính/ Mã ZIP"
 
-msgid "Postal code/ZIP"
-msgstr "Mã bưu điện/ZIP"
+msgid "Postal/ZIP code"
+msgstr ""
 
 msgid "PostgreSQL Database Administrator (DBA)"
 msgstr "Quản trị viên cho cơ sở dữ liệu PostgreSQL (DBA)"
@@ -8381,8 +8387,8 @@ msgstr "Nhận được hỗ trợ back-office cho giám sát giao dịch thời
 msgid "Receive commission when you bring in new clients through trading applications and interfaces you build using the %1 API."
 msgstr "Nhận hoa hồng khi bạn mang lại khách hàng mới thông qua các ứng dụng và giao diện mà bạn đã tạo ra bằng API %1."
 
-msgid "Receive emails on %1 products, services, and events"
-msgstr "Nhận email sản phẩm, dịch vụ và sự kiện %1"
+msgid "Receive emails on %1 products, services, and events."
+msgstr ""
 
 msgid "Receive instant prices based on your position."
 msgstr "Nhận giá ngay lập tức dựa trên phiên của bạn."
@@ -8756,8 +8762,8 @@ msgstr "Tìm kiếm..."
 msgid "Second"
 msgstr "Giây"
 
-msgid "Second line of home address"
-msgstr "Dòng thứ hai của địa chỉ nhà"
+msgid "Second line"
+msgstr ""
 
 msgid "Secondary"
 msgstr "Thứ yếu"
@@ -9077,8 +9083,11 @@ msgstr "Rất tiếc, bạn đã nhập sai mật khẩu thu ngân"
 msgid "Sorry, your account is not authorised for any further contract purchases."
 msgstr "Rất tiếc, tài khoản của bạn không có quyền mua thêm hợp đồng."
 
-msgid "Source of Wealth"
-msgstr "Nguồn tài sản"
+msgid "Source of income"
+msgstr ""
+
+msgid "Source of wealth"
+msgstr ""
 
 msgid "South Africa"
 msgstr "Nam Phi"
@@ -9455,11 +9464,11 @@ msgstr "Nói với chúng tôi"
 msgid "Target"
 msgstr "Mục tiêu"
 
-msgid "Tax Information"
-msgstr "Thông tin thuế"
-
 msgid "Tax identification number"
 msgstr "Mã số thuế"
+
+msgid "Tax information"
+msgstr ""
 
 msgid "Tax residence"
 msgstr "Thuế cư trú"
@@ -10181,11 +10190,11 @@ msgstr "Thuật toán lọc điểm sẽ tương tự như hệ thống biến �
 msgid "The financial products offered via this website include binary options, contracts for difference (\"CFDs\") and other complex derivatives and financial products. Trading binary options may not be suitable for everyone. Trading CFDs carries a high level of risk since leverage can work both to your advantage and disadvantage. As a result, the products offered on this website may not be suitable for all investors because of the risk of losing all of your invested capital. You should never invest money that you cannot afford to lose, and never trade with borrowed money. Before trading in the complex financial products offered, please be sure to understand the risks involved and learn about %1Responsible Trading%2."
 msgstr "Các sản phẩm tài chính được cung cấp thông qua trang web này bao gồm binary options, hợp đồng cho sự khác biệt (\"CFDs\") và các sản phẩm tài chính và phái sinh phức tạp khác. Các binary options giao dịch có thể không phù hợp với mọi người. Giao dịch CFD mang mức độ rủi ro cao vì đòn bẩy có thể làm việc cả về lợi thế và bất lợi của bạn. Do đó, các sản phẩm được cung cấp trên trang web này có thể không phù hợp với tất cả các nhà đầu tư vì rủi ro mất tất cả vốn đầu tư của bạn. Bạn không bao giờ nên đầu tư tiền mà bạn không thể đủ khả năng để mất, và không bao giờ giao dịch bằng tiền vay. Trước khi giao dịch trong các sản phẩm tài chính phức tạp được cung cấp, vui lòng đảm bảo hiểu các rủi ro có liên quan và tìm hiểu về %1 Giao Dịch Có Trách Nhiệm%2."
 
-msgid "The financial trading services contained within this site are only suitable for Clients who are able to bear the loss of all the money they invest and who understand and have experience of the risks involved in the acquisition of financial contracts."
-msgstr "Các dịch vụ kinh doanh tài chính có trên trang web này chỉ thích hợp cho những khách hàng có khả năng chịu mất tất cả số tiền họ đầu tư và những người hiểu và có kinh nghiệm về các rủi ro liên quan đến việc mua lại các hợp đồng tài chính."
+msgid "The financial trading services contained within this site are only suitable for customers who accept the possibility of losing all the money they invest and who understand and have experience of the risk involved in the acquisition of financial contracts."
+msgstr ""
 
-msgid "The financial trading services contained within this site are only suitable for customers who are able to bear the loss of all the money they invest and who understand and have experience of the risk involved in the acquistion of financial contracts. Transactions in financial contracts carry a high degree of risk. If purchased contracts expire worthless, you will suffer a total loss of your investment, which consists of the contract premium."
-msgstr "Các dịch vụ kinh doanh tài chính có trên trang web này chỉ thích hợp cho những khách hàng có khả năng chịu mất tất cả số tiền họ đầu tư và những người hiểu và có kinh nghiệm về các rủi ro liên quan trong việc mua lại các hợp đồng tài chính. Các giao dịch hợp đồng tài chính mang một mức độ rủi ro cao. Nếu hợp đồng được mua hết hạn trở nên vô giá trị, bạn sẽ bị mất tổng đầu tư của bạn, bao gồm phí bảo hiểm hợp đồng."
+msgid "The financial trading services contained within this site are only suitable for customers who accept the possibility of losing all the money they invest and who understand and have experience of the risk involved in the acquisition of financial contracts. Transactions in financial contracts carry a high degree of risk. If purchased contracts expire worthless, you will suffer a total loss of your investment, which consists of the contract premium."
+msgstr ""
 
 msgid "The first step is to set the parameters of your trade. There are five trade parameters you need to adjust in order to receive a price for the contract:"
 msgstr "Bước đầu tiên là thiết lập thông số cho giao dịch của bạn. Có năm thông số giao dịch bạn cần phải điều chỉnh để có thể nhận được một mức giá cho hợp đồng:"
@@ -10820,6 +10829,9 @@ msgstr "Ngày nay, Labuan được biết đến như một trung tâm tài chí
 msgid "Token"
 msgstr "Mã Token"
 
+msgid "Token name"
+msgstr ""
+
 msgid "Top Up Virtual Account"
 msgstr "Bổ Sung Tài Khoản Ảo"
 
@@ -11012,9 +11024,6 @@ msgstr "Giao Dịch"
 msgid "Trading Contracts for Difference (CFDs) on Volatility Indices may not be suitable for everyone. Please ensure that you fully understand the risks involved, including the possibility of losing all the funds in your MT5 account. Gambling can be addictive – please play responsibly."
 msgstr "Giao dịch các hợp đồng cho sự khác biệt (CFDs) Chỉ Số Biến Động có thể không phù hợp cho tất cả mọi người. Hãy đảm bảo rằng bạn hoàn toàn hiểu những rủi ro liên quan, bao gồm cả khả năng mất tất cả các khoản tiền trong tài khoản MT5. Cờ bạc có thể gây nghiện - hãy chơi có trách nhiệm."
 
-msgid "Trading Experience"
-msgstr "Trải Nghiệm Giao Dịch"
-
 msgid "Trading Limits"
 msgstr "Giới hạn giao dịch"
 
@@ -11044,6 +11053,9 @@ msgstr "Giao dịch binary options có thể không phù hợp với mọi ngư�
 
 msgid "Trading cryptocurrencies on our MetaTrader 5 platform means taking a position on a cryptocurrency pair when you expect it to rise or fall in value so you can make a profit when your prediction is correct."
 msgstr "Giao dịch cryptocurrencies trên sàn MetaTrader 5 chúng tôi có nghĩa là mở một phiên trên một cặp cryptocurrency, khi bạn mong đợi nó sẽ tăng hay giảm giá trị để bạn có thể đạt lợi nhuận khi dự đoán của bạn là chính xác."
+
+msgid "Trading experience"
+msgstr ""
 
 msgid "Trading forex and contracts for differences carries a high level of risk and %1 does not monitor the open positions of your account on your behalf. It is your responsibility to monitor your Open Positions and understand the exposure of your Open Positions whilst ensuring that your exposure commensurate with your risk appetite. Due to the cost associated with overnight open positions, you should consider investing in the market of the instrument in which you ordinarily transact in instead of investing in a CFD."
 msgstr "Kinh doanh ngoại hối và các hợp đồng chênh lệch giá mang một mức độ rủi ro cao và %1 không theo dõi các phiên mở của tài khoản của bạn thay cho bạn. Bạn có trách nhiệm giám sát các phiên mở của bạn và hiểu sự tiếp xúc của phiên mở của bạn trong khi đảm bảo rằng tiếp xúc của bạn phù hợp với mức độ rủi ro theo ý bạn. Do chi phí liên quan đến phiên mở qua đêm, bạn nên xem xét việc đầu tư vào thị trường nơi có công cụ mà bạn thường giao dịch với hay vì đầu tư vào một hợp đồng chênh lệch giá."
