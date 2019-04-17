@@ -1,9 +1,10 @@
-import classNames         from 'classnames';
-import { observer }       from 'mobx-react';
-import PropTypes          from 'prop-types';
-import React              from 'react';
-import { Icon }           from 'Assets/Common';
-import { IconEndTimeSVG } from 'Assets/Contract/icon-end-time.jsx';
+import classNames           from 'classnames';
+import { observer }         from 'mobx-react';
+import PropTypes            from 'prop-types';
+import React                from 'react';
+import { Icon }             from 'Assets/Common';
+import { IconEndTimeSVG }   from 'Assets/Contract/icon-end-time.jsx';
+import { IconStartTimeSVG } from 'Assets/Contract/icon-start-time.jsx';
 
 const MarkerLine = ({
     label,
@@ -19,6 +20,12 @@ const MarkerLine = ({
                     'chart-marker-line__icon--won' : status === 'won',
                     'chart-marker-line__icon--lost': status === 'lost',
                 })}
+            />
+        }
+        { label === 'Start Time' &&
+            <Icon
+                icon={IconStartTimeSVG}
+                className='chart-marker-line__icon'
             />
         }
     </div>

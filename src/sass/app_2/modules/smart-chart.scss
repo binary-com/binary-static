@@ -147,17 +147,14 @@
         bottom: 0;
         left: -12px;
         white-space: nowrap;
-        opacity: 0;
 
         &--won {
-            opacity: 1;
             /* postcss-bem-linter: ignore */
             circle {
                 fill: $COLOR_GREEN_1;
             }
         }
         &--lost {
-            opacity: 1;
             /* postcss-bem-linter: ignore */
             circle {
                 fill: $COLOR_RED;
