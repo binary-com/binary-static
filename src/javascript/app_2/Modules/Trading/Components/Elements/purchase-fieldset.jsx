@@ -73,9 +73,9 @@ class PurchaseFieldset extends React.PureComponent {
                     <div
                         className={classNames(
                             'btn-purchase__shadow-wrapper', {
-                                'btn-purchase__shadow-wrapper--disabled': (is_proposal_error || is_disabled)
+                                'btn-purchase__shadow-wrapper--disabled': (is_proposal_error || is_disabled),
                             },
-                        )}
+                        )}gi
                         onMouseEnter={() => {
                             if (!is_disabled) {
                                 onHoverPurchase(true, type);
@@ -93,8 +93,9 @@ class PurchaseFieldset extends React.PureComponent {
                         {(is_proposal_error && this.state.show_tooltip) &&
                         <Tooltip
                             alignment='left'
-                            className='tooltip--error-secondary' />
+                            className='tooltip--error-secondary'
                             message={info.message}
+                        />
                         }
                         {
                             // is_purchase_confirm_on ?
