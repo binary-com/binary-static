@@ -1,5 +1,6 @@
 .label {
-    @include typeface(--paragraph-center-bold-black, default);
+    font-size: 14px;
+    font-weight: bold;
     height: 24px;
     line-height: 20px;
     border-radius: $BORDER_RADIUS * 3;
