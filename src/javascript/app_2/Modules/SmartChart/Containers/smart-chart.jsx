@@ -19,7 +19,10 @@ class Chart extends React.Component {
     componentWillUnmount() { this.props.onUnmount(); }
 
     chartControlsWidgets = () => (
-        <ControlWidgets />
+        <ControlWidgets
+            updateChartType={this.props.updateChartType}
+            updateGranularity={this.props.updateGranularity}
+        />
     );
 
     topWidgets = () => (
@@ -40,6 +43,7 @@ class Chart extends React.Component {
                 barriers={this.props.barriers_array}
                 bottomWidgets={this.props.should_show_last_digit_stats ? undefined : this.bottomWidgets}
                 chartControlsWidgets={this.chartControlsWidgets}
+                chartType={this.props.chart_type}
                 endEpoch={this.props.end_epoch}
                 id={this.props.chart_id}
                 isMobile={this.props.is_mobile}
@@ -76,9 +80,11 @@ Chart.propTypes = {
     barriers_array              : PropTypes.array,
     BottomWidgets               : PropTypes.node,
     chart_id                    : PropTypes.number,
+    chart_type                  : PropTypes.string,
     chart_zoom                  : PropTypes.number,
     end_epoch                   : PropTypes.number,
     exportLayout                : PropTypes.func,
+    granularity                 : PropTypes.number,
     InfoBox                     : PropTypes.node,
     is_contract_mode            : PropTypes.bool,
     is_mobile                   : PropTypes.bool,
@@ -98,6 +104,8 @@ Chart.propTypes = {
     start_epoch                 : PropTypes.number,
     symbol                      : PropTypes.string,
     trade_chart_layout          : PropTypes.object,
+    updateChartType             : PropTypes.func,
+    updateGranularity           : PropTypes.func,
     wsForget                    : PropTypes.func,
     wsSendRequest               : PropTypes.func,
     wsSubscribe                 : PropTypes.func,
@@ -107,6 +115,7 @@ export default connect(
     ({ modules, ui, common }) => ({
         is_socket_opened    : common.is_socket_opened,
         barriers_array      : modules.smart_chart.barriers_array,
+        chart_type          : modules.smart_chart.chart_type,
         is_contract_mode    : modules.smart_chart.is_contract_mode,
         exportLayout        : modules.smart_chart.exportLayout,
         granularity         : modules.smart_chart.granularity,
@@ -119,6 +128,8 @@ export default connect(
         should_export_layout: modules.smart_chart.should_export_layout,
         should_import_layout: modules.smart_chart.should_import_layout,
         trade_chart_layout  : modules.smart_chart.trade_chart_layout,
+        updateChartType     : modules.smart_chart.updateChartType,
+        updateGranularity   : modules.smart_chart.updateGranularity,
         wsForget            : modules.smart_chart.wsForget,
         wsSendRequest       : modules.smart_chart.wsSendRequest,
         wsSubscribe         : modules.smart_chart.wsSubscribe,

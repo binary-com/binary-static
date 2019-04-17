@@ -1,3 +1,6 @@
+import moment     from 'moment';
+import ServerTime from '_common/base/server_time';
+
 export const getChartConfig = (contract_info) => {
     const start_epoch = contract_info.date_start;
     const end_epoch   = getEndSpotTime(contract_info) || contract_info.date_expiry;
@@ -8,16 +11,11 @@ export const getChartConfig = (contract_info) => {
     };
 };
 
-const hour_to_granularity_map = [
-    [1      , 0],
-    [2      , 120],
-    [6      , 600],
-    [24     , 900],
-    [5 * 24 , 3600],
-    [30 * 24, 14400],
-];
-export const calculateGranularity = (duration) =>
-    (hour_to_granularity_map.find(m => duration <= m[0] * 3600) || [null, 86400])[1];
+export const calculateGranularityFromTime = (start_time, expiry_time) => {
+    const beginning_time = start_time || ServerTime.get().unix();
+    const duration = moment.duration(moment.unix(expiry_time).diff(moment.unix(beginning_time))).asHours();
+    return (duration < 1) ? 0 : 3600;
+};
 
 export const getDisplayStatus = (contract_info) => {
     let status = 'purchased';

@@ -8,20 +8,29 @@ import {
     StudyLegend,
     Timeperiod,
     Views }           from 'smartcharts-beta';
+import PropTypes      from 'prop-types';
 import React          from 'react';
 
-const ControlWidgets = () => (
+const ControlWidgets = ({
+    updateChartType,
+    updateGranularity,
+}) => (
     <React.Fragment>
         <CrosshairToggle />
-        <ChartTypes />
+        <ChartTypes onChange={updateChartType} />
         <StudyLegend />
         <Comparison />
         <DrawTools />
         <Views />
         <Share />
-        <Timeperiod />
+        <Timeperiod onChange={updateGranularity} />
         <ChartSize />
     </React.Fragment>
 );
+
+ControlWidgets.propTypes = {
+    updateChartType  : PropTypes.func,
+    updateGranularity: PropTypes.func,
+};
 
 export default ControlWidgets;

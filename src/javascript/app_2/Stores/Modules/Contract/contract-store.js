@@ -15,7 +15,7 @@ import {
     getDigitInfo,
     isDigitContract }            from './Helpers/digits';
 import {
-    calculateGranularity,
+    calculateGranularityFromTime,
     getChartConfig,
     getDisplayStatus,
     getEndSpot,
@@ -43,7 +43,8 @@ export default class ContractStore extends BaseStore {
 
     // ---- Normal properties ---
     forget_id;
-    is_left_epoch_set = false;
+    is_granularity_set = false;
+    is_left_epoch_set  = false;
 
     // -------------------
     // ----- Actions -----
@@ -51,9 +52,13 @@ export default class ContractStore extends BaseStore {
     @action.bound
     drawChart(SmartChartStore, contract_info) {
         this.forget_id = contract_info.id;
-        if (!contract_info.tick_count) {
-            const granularity = calculateGranularity(this.root_store.common.server_time - contract_info.date_expiry);
-            SmartChartStore.granularity = granularity;
+        if (!contract_info.tick_count && !this.is_granularity_set) {
+            const granularity = calculateGranularityFromTime(null, contract_info.date_expiry);
+            if (granularity !== 0) {
+                SmartChartStore.granularity = granularity;
+                SmartChartStore.chart_type  = 'candle';
+            }
+            this.is_granularity_set = true;
         }
 
         if (isEnded(contract_info) || !!(getEndSpotTime(contract_info))) {
@@ -101,16 +106,17 @@ export default class ContractStore extends BaseStore {
     @action.bound
     onCloseContract() {
         this.forgetProposalOpenContract();
-        this.chart_config      = {};
-        this.contract_id       = null;
-        this.contract_info     = {};
-        this.digits_info       = {};
-        this.error_message     = '';
-        this.forget_id         = null;
-        this.has_error         = false;
-        this.is_sell_requested = false;
-        this.is_left_epoch_set = false;
-        this.sell_info         = {};
+        this.chart_config       = {};
+        this.contract_id        = null;
+        this.contract_info      = {};
+        this.digits_info        = {};
+        this.error_message      = '';
+        this.forget_id          = null;
+        this.has_error          = false;
+        this.is_sell_requested  = false;
+        this.is_left_epoch_set  = false;
+        this.is_granularity_set = false;
+        this.sell_info          = {};
 
         this.smart_chart.cleanupContractChartView();
         this.smart_chart.applySavedTradeChartLayout();
