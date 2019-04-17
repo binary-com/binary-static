@@ -75,7 +75,7 @@ class PurchaseFieldset extends React.PureComponent {
                             'btn-purchase__shadow-wrapper', {
                                 'btn-purchase__shadow-wrapper--disabled': (is_proposal_error || is_disabled),
                             },
-                        )}gi
+                        )}
                         onMouseEnter={() => {
                             if (!is_disabled) {
                                 onHoverPurchase(true, type);
