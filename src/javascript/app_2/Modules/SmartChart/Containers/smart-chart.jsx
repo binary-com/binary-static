@@ -44,7 +44,7 @@ class Chart extends React.Component {
                 bottomWidgets={this.props.should_show_last_digit_stats ? undefined : this.bottomWidgets}
                 chartControlsWidgets={this.chartControlsWidgets}
                 chartType={this.props.chart_type}
-                endEpoch={this.props.end_epoch}
+                endEpoch={this.props.range.end_epoch}
                 id={this.props.chart_id}
                 isMobile={this.props.is_mobile}
                 granularity={this.props.granularity}
@@ -53,7 +53,7 @@ class Chart extends React.Component {
                 requestSubscribe={this.props.wsSubscribe}
                 settings={this.props.settings}
                 showLastDigitStats={this.props.should_show_last_digit_stats}
-                startEpoch={this.props.start_epoch}
+                startEpoch={this.props.range.start_epoch}
                 scrollToEpoch={this.props.scroll_to_epoch}
                 scrollToEpochOffset={this.props.scroll_to_offset}
                 symbol={this.props.symbol}
@@ -94,6 +94,7 @@ Chart.propTypes = {
     onMount                     : PropTypes.func,
     onSymbolChange              : PropTypes.func,
     onUnmount                   : PropTypes.func,
+    range                       : PropTypes.object,
     scroll_to_epoch             : PropTypes.number,
     scroll_to_epoch_offset      : PropTypes.number,
     settings                    : PropTypes.object,
@@ -123,6 +124,7 @@ export default connect(
         markers_array       : modules.smart_chart.markers_array,
         onMount             : modules.smart_chart.onMount,
         onUnmount           : modules.smart_chart.onUnmount,
+        range               : modules.smart_chart.range,
         settings            : modules.smart_chart.settings,
         should_clear_chart  : modules.smart_chart.should_clear_chart,
         should_export_layout: modules.smart_chart.should_export_layout,

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-04-15 02:26\n"
-"Last-Translator: binarycom <jy@binary.com>\n"
+"PO-Revision-Date: 2019-04-16 09:15\n"
+"Last-Translator: binarycom\n"
 "Language-Team: Spanish\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -840,9 +840,6 @@ msgstr "Administración de cuentas"
 msgid "Account Opening"
 msgstr "Apertura de cuenta"
 
-msgid "Account Opening Reason"
-msgstr "Motivo para abrir la cuenta"
-
 msgid "Account Password"
 msgstr "Contraseña de la Cuenta"
 
@@ -1255,8 +1252,8 @@ msgstr "Anticorrupción"
 msgid "Anti-Money Laundering Policy"
 msgstr "Política antilavado de dinero"
 
-msgid "Anticipated Account Turnover"
-msgstr "Facturación anticipada de cuentas"
+msgid "Anticipated account turnover"
+msgstr ""
 
 msgid "Any Transaction opened by you must be within any credit or position limit in effect with respect to the MT5 Real Account or any Transactions."
 msgstr "Cualquier transacción abierta por usted debe estar dentro de los límites de crédito o posición vigentes con respecto a la cuenta real en MT5 o cualquier transacción."
@@ -1963,12 +1960,6 @@ msgstr "Binary Limited, con domicilio social en 47 Esplanade, St Helier, Jersey 
 msgid "Binary Options"
 msgstr "Opciones binarias"
 
-msgid "Binary Options Trading Experience"
-msgstr "Experiencia en la operación en opciones binarias"
-
-msgid "Binary Options Trading Frequency"
-msgstr "Frecuencia de operación en opciones binarias"
-
 msgid "Binary Options Trading has been disabled on your account. Kindly %1contact customer support%2 for assistance."
 msgstr "Se han desactivado las operaciones con opciones binarias en su cuenta. Por favor, %1póngase en contacto con nuestro servicio de atención al cliente%2 para recibir asistencia."
 
@@ -2010,6 +2001,12 @@ msgstr "Ahora, usted puede operar con opciones binarias en MT5 – nuestra avanz
 
 msgid "Binary options on MT5 are available exclusively on Volatility Indices which are synthetic indices that simulate market volatility and are available for trading 24 hours a day, seven days a week."
 msgstr "Las opciones binarias en MT5 se encuentran disponibles exclusívamente para Índices de Volatilidad, los cuales son índices sintéticos que estimulan la volatilidad del mercado y están disponibles para su operación las 24 horas del día, los siete días de la semana."
+
+msgid "Binary options trading experience"
+msgstr ""
+
+msgid "Binary options trading frequency"
+msgstr ""
 
 msgid "Binary options trading is now available on our MT5 platform. Learn more about its benefits and available markets."
 msgstr "Ahora puede operar con opciones binarias en nuestra plataforma MT5. Aprenda más acerca de los beneficios y los mercados disponibles."
@@ -2173,17 +2170,17 @@ msgstr "CFD"
 msgid "CFD Energies"
 msgstr "Energías CFD"
 
-msgid "CFD Trading Experience"
-msgstr "Experiencia operando CFD"
-
-msgid "CFD Trading Frequency"
-msgstr "Frecuencia de operación de CFDs"
-
 msgid "CFD contract specifications"
 msgstr "Especificaciones del contrato CFD"
 
 msgid "CFD margin policy"
 msgstr "Política de márgenes de CFD"
+
+msgid "CFD trading experience"
+msgstr ""
+
+msgid "CFD trading frequency"
+msgstr ""
 
 msgid "CFDs"
 msgstr "CFD"
@@ -2365,9 +2362,6 @@ msgstr "Directores ejecutivos, altos funcionarios y legisladores"
 msgid "Choice of Law and Venue"
 msgstr "Legislación y jurisdicción aplicables"
 
-msgid "Choose Scopes:"
-msgstr "Seleccione las condiciones:"
-
 msgid "Choose a commission plan that suits your business strategy."
 msgstr "Elija un plan de comisiones que se adapte a su estrategia de negocios."
 
@@ -2401,6 +2395,9 @@ msgstr "Elija entre los siguientes planes de comisión de afiliados:"
 msgid "Choose from three main trade types:"
 msgstr "Escoja entre tres tipos de operación principales:"
 
+msgid "Choose scopes:"
+msgstr ""
+
 msgid "Choose the market, trade type, duration, barrier, and payout."
 msgstr "Escoja el mercado, tipo de operación, duración, barrera y pago."
 
@@ -2418,9 +2415,6 @@ msgstr "Elija el tipo específico de token de la API que necesita, basándose en
 
 msgid "Choose timeframes from 10 seconds to 365 days"
 msgstr "Escoja periodos de 10 segundos a 365 días"
-
-msgid "Choose token Name"
-msgstr "Escoja un nombre para el token"
 
 msgid "Choose your own strike."
 msgstr "Seleccione el precio para ganar."
@@ -2767,6 +2761,9 @@ msgstr "Construcción"
 msgid "Contact Us"
 msgstr "Contáctenos"
 
+msgid "Contact number"
+msgstr ""
+
 msgid "Contact our dedicated affiliate support team for help and suggestions."
 msgstr "Para ayudas y sugerencias, póngase en contacto con nuestro equipo dedicado de soporte a nuestros afiliados."
 
@@ -2947,9 +2944,6 @@ msgstr "Cree una cuenta MAM"
 msgid "Create MetaTrader 5 account"
 msgstr "Cree una cuenta de MetaTrader 5"
 
-msgid "Create New Token"
-msgstr "Crear un token nuevo"
-
 msgid "Create New Virtual-money Account"
 msgstr "Crear una nueva cuenta de dinero virtual"
 
@@ -2979,6 +2973,9 @@ msgstr "Crear una cuenta gratis con"
 
 msgid "Create mathematical/statistical models for pricing, analyse fat tails to assess margin requirements, and manage the risk for exotic options, Forex, and CFDs"
 msgstr "Crear modelos matemáticos/estadísticos para la fijación de precios, analizar los resultados imprevisibles para evaluar los requisitos de margen y gestionar el riesgo de opciones exóticas, Forex y CFDs"
+
+msgid "Create new token"
+msgstr ""
 
 msgid "Create new virtual-money account"
 msgstr "Crear una nueva cuenta de dinero virtual"
@@ -3706,11 +3703,11 @@ msgstr "Contraparte eligible"
 msgid "Email"
 msgstr "Correo electrónico"
 
-msgid "Email Preferences"
-msgstr "Preferencias de correo electrónico"
-
 msgid "Email address"
 msgstr "Dirección de correo electrónico"
+
+msgid "Email preference"
+msgstr ""
 
 msgid "Email:"
 msgstr "Correo electrónico:"
@@ -3724,8 +3721,8 @@ msgstr "Empleado"
 msgid "Employee handbook"
 msgstr "Manual del empleado"
 
-msgid "Employment Status"
-msgstr "Situación laboral"
+msgid "Employment status"
+msgstr ""
 
 msgid "Enable"
 msgstr "Activar"
@@ -3817,8 +3814,8 @@ msgstr "Establezca una conexión segura a Internet y proteja su privacidad."
 msgid "Establish a secure, encrypted connection to a virtual private network (VPN) server using our VPN app to protect your data and privacy."
 msgstr "Establezca una conexión segura y codificada con un servidor de red virtual privado (VPN, por sus siglas en inglés) utilizando nuestra aplicación de VPN para proteger sus datos y su privacidad."
 
-msgid "Estimated Net Worth"
-msgstr "Valor neto estimado"
+msgid "Estimated net worth"
+msgstr ""
 
 msgid "Ether"
 msgstr "Ethereum"
@@ -4099,6 +4096,9 @@ msgstr "Experiencia con paquetes de informes, SQL, programación (Python/R) y fr
 msgid "Experience with statistical and data mining techniques like GLM/Regression, Random Forest, Boosting, text mining, social media analysis, etc."
 msgstr "Experiencia con técnicas estadísticas y de minería de datos así como GLM/Regresión, Random Forest, Boosting, minería de texto, análisis de medios sociales, etc."
 
+msgid "Experience with trading other financial instruments"
+msgstr ""
+
 msgid "Experience with web application security and testing, security monitoring, and intrusion detection"
 msgstr "Experiencia en seguridad y pruebas de aplicaciones web, monitoreo de seguridad y detección de intrusos"
 
@@ -4303,9 +4303,6 @@ msgstr "Abrir Cuenta Financiera"
 msgid "Financial Assessment"
 msgstr "Evaluación financiera"
 
-msgid "Financial Information"
-msgstr "Información financiera"
-
 msgid "Financial Instrument"
 msgstr "Instrumento financiero"
 
@@ -4315,8 +4312,14 @@ msgstr "Analista de Mercados Financieros"
 msgid "Financial Risk approval is required. Please contact %1customer support%2 for more information."
 msgstr "Es necesaria la aprobación de riesgo financiero. Por favor, póngase en contacto con %1nuestro servicio%2 de atención al cliente para obtener más información."
 
+msgid "Financial assessment"
+msgstr ""
+
 msgid "Financial derivatives that allow you to trade on the movement of underlying assets."
 msgstr "Los derivados financieros que le permiten operar con los movimientos de activos subyacentes."
+
+msgid "Financial information"
+msgstr ""
 
 msgid "Find a trading platform that suits your experience and preferred strategy – whether you're a new or seasoned trader."
 msgstr "Encuentre una plataforma de operaciones que se adecúe a su experiencia y a la estrategia que prefiera, ya sea un operador novel o experiente."
@@ -4341,6 +4344,9 @@ msgstr "Terminar"
 
 msgid "Firm grasp of advanced risk management concepts, including hedging, Greeks (first and second generation), Value at Risk models, etc."
 msgstr "Conocimiento fuerte de conceptos avanzados de gestión de riesgos, incluyendo coberturas, griegos (primera y segunda generación), modelos de valor en riesgo, etc."
+
+msgid "First line"
+msgstr ""
 
 msgid "First line of home address"
 msgstr "Primera línea de dirección de residencia"
@@ -4480,12 +4486,6 @@ msgstr "Forex"
 msgid "Forex & Metals"
 msgstr "Forex y metales"
 
-msgid "Forex Trading Experience"
-msgstr "Experiencia de comercio con Forex"
-
-msgid "Forex Trading Frequency"
-msgstr "Frecuencia de comercio en Forex"
-
 msgid "Forex and contract for differences transactions involve a high degree of risk and are speculative because they allow you to speculate on the short term movements of the price of the underlying financial instruments. You should not enter into forex and/or contracts for differences transactions unless you are able to sustain losses that exceed your deposited funds. It is important for you to understand that in order to realise any value from your open positions, you would have to enter into a corresponding transaction to close your open positions and you may find it difficult or impossible to do so under certain market conditions."
 msgstr "Las operaciones en Forex y contratos por diferencias implican un alto grado de riesgo y son de carácter especulativo porque le permiten especular sobre los movimientos a corto plazo del precio de los instrumentos financieros subyacentes. No debe celebrar contratos para operar divisas y/o contratos por diferencias a menos que tenga la solvencia financiera para sustentar pérdidas que excedan los fondos depositados. También es importante que entienda que para recibir cualquier valor de sus posiciones abiertas, usted tendría que realizar la transacción correspondiente para cerrar sus posiciones abiertas y puede encontrar difícil o imposible de hacer bajo ciertas condiciones de mercado."
 
@@ -4497,6 +4497,12 @@ msgstr "Especificaciones del contrato Forex"
 
 msgid "Forex margin policy"
 msgstr "Política de márgenes Forex"
+
+msgid "Forex trading experience"
+msgstr ""
+
+msgid "Forex trading frequency"
+msgstr ""
 
 msgid "Forex trading involves buying one currency and selling another currency at the same time. This is why you always see them quoted in pairs. For example: EUR/USD and GBP/USD."
 msgstr "La operación de Forex consiste en la compra de una moneda y vender otra al mismo tiempo. Por esta razón siempre están en pares. Por ejemplo: EUR/USD y GBP/USD."
@@ -4524,6 +4530,9 @@ msgstr "Sesiones de entrenamiento gratuitas realizadas por operadores profesiona
 
 msgid "Freedom"
 msgstr "Libertad"
+
+msgid "Frequency of trading other financial instruments"
+msgstr ""
 
 msgid "Friday"
 msgstr "Viernes"
@@ -5558,9 +5567,6 @@ msgstr "Contratos Dentro/Fuera"
 msgid "Inactive/Dormant Accounts"
 msgstr "Cuentas inactivas"
 
-msgid "Income Source"
-msgstr "Fuente de ingresos"
-
 msgid "Income earning"
 msgstr "Percibir ingresos"
 
@@ -5594,8 +5600,8 @@ msgstr "Metales industriales"
 msgid "Industrial metals – also known as base metals – are abundant, but oxidise or corrode easily. Industrial metals feature heavily across a wide range of industrial and commercial applications, including electrical wiring, automobiles, and batteries."
 msgstr "Metales industriales (también conocidos como metales básicos) son abundantes, pero se oxidan o corroen fácilmente. Los metales industriales se utilizan en gran medida en una variedad de aplicaciones industriales y comerciales, incluyendo cableado eléctrico, automóviles y baterías."
 
-msgid "Industry of Employment"
-msgstr "Industria de Empleo"
+msgid "Industry of employment"
+msgstr ""
 
 msgid "Information & Communications Technology"
 msgstr "Tecnología de la Información y las Comunicaciones"
@@ -6074,8 +6080,8 @@ msgstr "Usemos el par de metal XAU/USD (oro vs dólar estadounidense) como ejemp
 msgid "Let's use the XAU/USD metal pair again as an example."
 msgstr "Nuevamente, usemos el par de metal XAU/USD como ejemplo."
 
-msgid "Level of Education"
-msgstr "Nivel de formación"
+msgid "Level of education"
+msgstr ""
 
 msgid "Leverage"
 msgstr "Apalancamiento"
@@ -6908,8 +6914,8 @@ msgstr "Ni la Empresa ni ninguno de sus directores, funcionarios, gerentes, empl
 msgid "Neither you, your direct relatives, or any clients you control are eligible to become clients, and you shall not be entitled to any share of net revenue or any other remuneration from the Company in relation to such relatives, friends, or controlled clients."
 msgstr "Ni usted ni sus familiares directos, ni ningún cliente que usted controle, son elegibles para ser clientes, y usted no tendrá derecho a ninguna participación en las ganancias netas ni ninguna otra remuneración de parte de la Compañía en relación con dichos familiares, amigos o clientes controlados."
 
-msgid "Net Annual Income"
-msgstr "Ingreso anual neto"
+msgid "Net annual income"
+msgstr ""
 
 msgid "Net deposits"
 msgstr "Depósitos netos"
@@ -7340,12 +7346,6 @@ msgstr ""
 msgid "Organisational skills and the ability to work proactively"
 msgstr "Competencias organizativas y la capacidad de trabajar proactivamente"
 
-msgid "Other Financial Instruments Trading Experience"
-msgstr "Experiencia de comercio con otros instrumentos financieros"
-
-msgid "Other Financial Instruments Trading Frequency"
-msgstr "Frecuencia de comercio con otros instrumentos financieros"
-
 msgid "Other Obligations"
 msgstr "Otras Obligaciones"
 
@@ -7688,6 +7688,9 @@ msgstr "Datos personales"
 msgid "Personal Wealth Awards 2017"
 msgstr "Personal Wealth Awards 2017"
 
+msgid "Personal details"
+msgstr ""
+
 msgid "Pillar 3 Disclosures"
 msgstr "Divulgaciones del Pilar 3"
 
@@ -7829,6 +7832,9 @@ msgstr "Por favor, ingrese su %1información tributaria%2 abajo para continuar."
 msgid "Please enter your full address to avoid authentication delays."
 msgstr "Por favor, ingrese su dirección completa para evitar demoras en la autenticación."
 
+msgid "Please enter your full home address to avoid authentication delays."
+msgstr ""
+
 msgid "Please fill in the Login ID and Amount you wish to transfer to your Client in the form below:"
 msgstr "Complete con su identificación de acceso y el monto que desea transferir a su cliente en el formulario a continuación:"
 
@@ -7952,8 +7958,8 @@ msgstr "A las posiciones que aún estén abiertas el miércoles a las 23:59:59 G
 msgid "Postal Code/ZIP"
 msgstr "Código postal / C.P."
 
-msgid "Postal code/ZIP"
-msgstr "Código postal / CP"
+msgid "Postal/ZIP code"
+msgstr ""
 
 msgid "PostgreSQL Database Administrator (DBA)"
 msgstr "Administrador de base de datos PostgreSQL (DBA)"
@@ -8381,8 +8387,8 @@ msgstr "Reciba soporte de back-office para la gestión del riesgo posnegociació
 msgid "Receive commission when you bring in new clients through trading applications and interfaces you build using the %1 API."
 msgstr "Reciba comisiones cuando atraiga nuevos clientes a través de las aplicaciones comerciales y las interfaces que construya utilizando la API de %1."
 
-msgid "Receive emails on %1 products, services, and events"
-msgstr "Reciba correos electrónicos sobre %1 productos, servicios y eventos"
+msgid "Receive emails on %1 products, services, and events."
+msgstr ""
 
 msgid "Receive instant prices based on your position."
 msgstr "Reciba precios instantáneamente según su posición."
@@ -8756,8 +8762,8 @@ msgstr "Buscar..."
 msgid "Second"
 msgstr "Segundo"
 
-msgid "Second line of home address"
-msgstr "Segunda línea de domicilio"
+msgid "Second line"
+msgstr ""
 
 msgid "Secondary"
 msgstr "Secundario"
@@ -9077,8 +9083,11 @@ msgstr "Lo sentimos, ingresó una contraseña de cajero incorrecta"
 msgid "Sorry, your account is not authorised for any further contract purchases."
 msgstr "Lo sentimos, su cuenta no está autorizada para continuar con la compra de contratos."
 
-msgid "Source of Wealth"
-msgstr "Fuente de riqueza"
+msgid "Source of income"
+msgstr ""
+
+msgid "Source of wealth"
+msgstr ""
 
 msgid "South Africa"
 msgstr "Sudáfrica"
@@ -9455,11 +9464,11 @@ msgstr "Hable con nosotros"
 msgid "Target"
 msgstr "Objetivo"
 
-msgid "Tax Information"
-msgstr "Información tributaria"
-
 msgid "Tax identification number"
 msgstr "Número de identificación fiscal"
+
+msgid "Tax information"
+msgstr ""
 
 msgid "Tax residence"
 msgstr "Residencia fiscal"
@@ -10182,11 +10191,11 @@ msgstr "El algoritmo de filtrado puede por ejemplo ser similar al sistema de vol
 msgid "The financial products offered via this website include binary options, contracts for difference (\"CFDs\") and other complex derivatives and financial products. Trading binary options may not be suitable for everyone. Trading CFDs carries a high level of risk since leverage can work both to your advantage and disadvantage. As a result, the products offered on this website may not be suitable for all investors because of the risk of losing all of your invested capital. You should never invest money that you cannot afford to lose, and never trade with borrowed money. Before trading in the complex financial products offered, please be sure to understand the risks involved and learn about %1Responsible Trading%2."
 msgstr "Los productos financieros ofrecidos por este sitio web incluyen opciones binarias, contratos por diferencias (CFD) y otros derivativos y productos financieros complejos. Es posible que operar con opciones binarias no sea apropiado para todos. Operar con CFD implica un alto nivel de riesgo, dado que el apalancamiento puede funcionar tanto en su beneficio como en su contra. Como consecuencia de esto, es posible que los productos ofrecidos en este sitio web no sean apropiados para todos los inversores debido al riesgo de perder todo el capital invertido. Nunca invierta más dinero del que puede costear perder, y nunca opere con dinero prestado. Antes de operar con los productos financieros complejos ofrecidos, asegúrese de entender los riesgos que esto implica e infórmese acerca del %1Comercio Responsable%2."
 
-msgid "The financial trading services contained within this site are only suitable for Clients who are able to bear the loss of all the money they invest and who understand and have experience of the risks involved in the acquisition of financial contracts."
-msgstr "Los servicios contractuales financieros en este sitio solo se adecuan a los Clientes que pueden lidiar con la pérdida del dinero que invierten y que comprenden y tienen experiencia con los riesgos implícitos en la adquisición de contratos financieros."
+msgid "The financial trading services contained within this site are only suitable for customers who accept the possibility of losing all the money they invest and who understand and have experience of the risk involved in the acquisition of financial contracts."
+msgstr ""
 
-msgid "The financial trading services contained within this site are only suitable for customers who are able to bear the loss of all the money they invest and who understand and have experience of the risk involved in the acquistion of financial contracts. Transactions in financial contracts carry a high degree of risk. If purchased contracts expire worthless, you will suffer a total loss of your investment, which consists of the contract premium."
-msgstr "Los servicios contractuales financieros de este sitio solo son adecuados para los Clientes que pueden lidiar con la pérdida del dinero que invierten y que comprenden y tienen experiencia con los riesgos implícitos en la adquisición de contratos financieros. Las transacciones en los contractos financieros implican muchas posibilidades de riesgo. Si los contratos comprados caducan sin valor, sufrirá la pérdida total de su inversión, que consistirá en la prima contractual."
+msgid "The financial trading services contained within this site are only suitable for customers who accept the possibility of losing all the money they invest and who understand and have experience of the risk involved in the acquisition of financial contracts. Transactions in financial contracts carry a high degree of risk. If purchased contracts expire worthless, you will suffer a total loss of your investment, which consists of the contract premium."
+msgstr ""
 
 msgid "The first step is to set the parameters of your trade. There are five trade parameters you need to adjust in order to receive a price for the contract:"
 msgstr "El primer paso es establecer los parámetros de su operación. Hay cinco parámetros que necesita ajustar para recibir un precio por el contrato:"
@@ -10822,6 +10831,9 @@ msgstr "Hoy en día, Labuan es conocido como un centro financiero floreciente y 
 msgid "Token"
 msgstr "Token"
 
+msgid "Token name"
+msgstr ""
+
 msgid "Top Up Virtual Account"
 msgstr "Cargar saldo a su cuenta virtual"
 
@@ -11014,9 +11026,6 @@ msgstr "Operar"
 msgid "Trading Contracts for Difference (CFDs) on Volatility Indices may not be suitable for everyone. Please ensure that you fully understand the risks involved, including the possibility of losing all the funds in your MT5 account. Gambling can be addictive – please play responsibly."
 msgstr "Operar contratos por diferencia (CFD) en los índices Volatility puede no ser adecuado para todos. Por favor, asegúrese de entender completamente los riesgos involucrados, incluyendo la posibilidad de perder todos los fondos en su cuenta MT5. El juego puede ser adictivo, por favor juegue responsablemente."
 
-msgid "Trading Experience"
-msgstr "Trading Experience"
-
 msgid "Trading Limits"
 msgstr "Límites"
 
@@ -11046,6 +11055,9 @@ msgstr "Es posible que el las operaciones con opciones binarias no sean apropiad
 
 msgid "Trading cryptocurrencies on our MetaTrader 5 platform means taking a position on a cryptocurrency pair when you expect it to rise or fall in value so you can make a profit when your prediction is correct."
 msgstr "Operar con criptomonedas en nuestra plataforma MetaTrader 5 significa abrir una posición en un par de criptomonedas cuando cree que su valor subirá o bajará, para obtener ganancias cuando su predicción sea correcta."
+
+msgid "Trading experience"
+msgstr ""
 
 msgid "Trading forex and contracts for differences carries a high level of risk and %1 does not monitor the open positions of your account on your behalf. It is your responsibility to monitor your Open Positions and understand the exposure of your Open Positions whilst ensuring that your exposure commensurate with your risk appetite. Due to the cost associated with overnight open positions, you should consider investing in the market of the instrument in which you ordinarily transact in instead of investing in a CFD."
 msgstr "Operar con divisas y contratos por diferencias conlleva un alto nivel de riesgo y %1 no monitorea las posiciones abiertas de su cuenta por usted. Es su responsabilidad supervisar sus posiciones abiertas y entender la exposición de estas mientras se asegura de que su exposición sea acorde con su apetito de riesgo. Debido al costo asociado a las posiciones abiertas overnight, tal vez debería considerar invertir en el mercado del instrumento en el que normalmente opera en lugar de invertir en un CFD."

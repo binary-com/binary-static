@@ -1,5 +1,4 @@
 import classNames     from 'classnames';
-import { observer }   from 'mobx-react';
 import PropTypes      from 'prop-types';
 import React          from 'react';
 import { Icon }       from 'Assets/Common/icon.jsx';
@@ -8,7 +7,7 @@ import {
     IconBarrierDown } from 'Assets/Trading/Barriers';
 import Fieldset       from 'App/Components/Form/fieldset.jsx';
 import InputField     from 'App/Components/Form/InputField';
-
+import { connect }    from 'Stores/connect';
 import { localize }   from '_common/localize';
 
 const Barrier = ({
@@ -22,14 +21,11 @@ const Barrier = ({
     const barrier_title = barrier_count === 1 ? localize('Barrier') : localize('Barriers');
 
     if (is_minimized) {
-        if (barrier_count !== 2) {
-            return (
-                <div className='fieldset-minimized fieldset-minimized__barrier1'>
-                    {barrier_1}
-                </div>
-            );
-        }
-        return (
+        return barrier_count !== 2 ? (
+            <div className='fieldset-minimized fieldset-minimized__barrier1'>
+                {barrier_1}
+            </div>
+        ) : (
             <React.Fragment>
                 <div className='fieldset-minimized fieldset-minimized__barrier1'>
                     {barrier_1}
@@ -60,7 +56,7 @@ const Barrier = ({
                     is_float
                     is_signed
                 />
-    
+
                 {barrier_count === 2 &&
                     <React.Fragment>
                         <InputField
@@ -92,4 +88,12 @@ Barrier.propTypes = {
     validation_errors: PropTypes.object,
 };
 
-export default observer(Barrier);
+export default connect(({ modules }) => (
+    {
+        barrier_1        : modules.trade.barrier_1,
+        barrier_2        : modules.trade.barrier_2,
+        barrier_count    : modules.trade.barrier_count,
+        onChange         : modules.trade.onChange,
+        validation_errors: modules.trade.validation_errors,
+    }
+))(Barrier);

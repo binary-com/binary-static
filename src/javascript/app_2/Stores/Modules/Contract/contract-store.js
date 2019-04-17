@@ -16,10 +16,10 @@ import {
     isDigitContract }            from './Helpers/digits';
 import {
     calculateGranularityFromTime,
-    getChartConfig,
     getDisplayStatus,
     getEndSpot,
     getEndSpotTime,
+    getEndTime,
     getFinalPrice,
     getIndicativePrice,
     isEnded,
@@ -35,7 +35,6 @@ export default class ContractStore extends BaseStore {
     @observable contract_info = observable.object({});
     @observable digits_info   = observable.object({});
     @observable sell_info     = observable.object({});
-    @observable chart_config  = observable.object({});
 
     @observable has_error         = false;
     @observable error_message     = '';
@@ -52,6 +51,8 @@ export default class ContractStore extends BaseStore {
     @action.bound
     drawChart(SmartChartStore, contract_info) {
         this.forget_id = contract_info.id;
+        const end_time = getEndTime(contract_info);
+
         if (!contract_info.tick_count && !this.is_granularity_set) {
             const granularity = calculateGranularityFromTime(null, contract_info.date_expiry);
             if (granularity !== 0) {
@@ -61,16 +62,11 @@ export default class ContractStore extends BaseStore {
             this.is_granularity_set = true;
         }
 
-        if (isEnded(contract_info) || !!(getEndSpotTime(contract_info))) {
-            this.chart_config = getChartConfig(contract_info);
-        } else {
-            delete this.chart_config.end_epoch;
-            delete this.chart_config.start_epoch;
-
-            if (!this.is_left_epoch_set && contract_info.tick_count) {
-                this.is_left_epoch_set = true;
-                SmartChartStore.setTickChartView(contract_info.purchase_time);
-            }
+        if (end_time) {
+            SmartChartStore.setRange(contract_info.date_start, end_time);
+        } else if (!this.is_left_epoch_set && contract_info.tick_count) {
+            this.is_left_epoch_set = true;
+            SmartChartStore.setTickChartView(contract_info.purchase_time);
         }
 
         createChartBarrier(SmartChartStore, contract_info);
@@ -106,17 +102,16 @@ export default class ContractStore extends BaseStore {
     @action.bound
     onCloseContract() {
         this.forgetProposalOpenContract();
-        this.chart_config       = {};
-        this.contract_id        = null;
-        this.contract_info      = {};
-        this.digits_info        = {};
-        this.error_message      = '';
-        this.forget_id          = null;
-        this.has_error          = false;
-        this.is_sell_requested  = false;
-        this.is_left_epoch_set  = false;
+        this.contract_id       = null;
+        this.contract_info     = {};
+        this.digits_info       = {};
+        this.error_message     = '';
+        this.forget_id         = null;
+        this.has_error         = false;
         this.is_granularity_set = false;
-        this.sell_info          = {};
+        this.is_sell_requested = false;
+        this.is_left_epoch_set = false;
+        this.sell_info         = {};
 
         this.smart_chart.cleanupContractChartView();
         this.smart_chart.applySavedTradeChartLayout();
