@@ -18,12 +18,11 @@ class ResultDetails extends React.PureComponent {
     };
 
     toggleDetails = () => {
-        this.setState({ is_open: !this.state.is_open });
-        this.handleShade();
+        this.setState({ is_open: !this.state.is_open }, this.handleShade);
     }
 
     handleShade = () => {
-        this.props.display_shade(this.state.is_open)
+        this.props.display_shade(this.state.is_open);
     }
 
     render() {
