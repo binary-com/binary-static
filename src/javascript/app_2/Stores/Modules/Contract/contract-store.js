@@ -15,6 +15,7 @@ import {
     getDigitInfo,
     isDigitContract }            from './Helpers/digits';
 import {
+    calculateGranularity,
     getChartConfig,
     getDisplayStatus,
     getEndSpot,
@@ -50,6 +51,11 @@ export default class ContractStore extends BaseStore {
     @action.bound
     drawChart(SmartChartStore, contract_info) {
         this.forget_id = contract_info.id;
+        if (!contract_info.tick_count) {
+            const granularity = calculateGranularity(this.root_store.common.server_time - contract_info.date_expiry);
+            SmartChartStore.granularity = granularity;
+        }
+
         if (isEnded(contract_info) || !!(getEndSpotTime(contract_info))) {
             this.chart_config = getChartConfig(contract_info);
         } else {

@@ -17,6 +17,7 @@ const store_name = 'smart_chart_store';
 
 export default class SmartChartStore extends BaseStore {
     @observable symbol;
+    @observable granularity;
     @observable barriers = observable.object({});
     @observable markers  = observable.object({});
 
@@ -55,6 +56,7 @@ export default class SmartChartStore extends BaseStore {
 
     @action.bound
     cleanupContractChartView() {
+        this.granularity = undefined;
         this.removeBarriers();
         this.removeMarkers();
         this.resetScrollZoom();

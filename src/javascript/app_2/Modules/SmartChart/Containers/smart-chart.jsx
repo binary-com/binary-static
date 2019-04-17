@@ -43,6 +43,7 @@ class Chart extends React.Component {
                 endEpoch={this.props.end_epoch}
                 id={this.props.chart_id}
                 isMobile={this.props.is_mobile}
+                granularity={this.props.granularity}
                 requestAPI={this.props.wsSendRequest}
                 requestForget={this.props.wsForget}
                 requestSubscribe={this.props.wsSubscribe}
@@ -108,6 +109,7 @@ export default connect(
         barriers_array      : modules.smart_chart.barriers_array,
         is_contract_mode    : modules.smart_chart.is_contract_mode,
         exportLayout        : modules.smart_chart.exportLayout,
+        granularity         : modules.smart_chart.granularity,
         is_title_enabled    : modules.smart_chart.is_title_enabled,
         markers_array       : modules.smart_chart.markers_array,
         onMount             : modules.smart_chart.onMount,
