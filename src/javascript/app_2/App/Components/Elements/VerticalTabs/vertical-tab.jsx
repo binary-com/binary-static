@@ -24,10 +24,12 @@ class VerticalTab extends React.PureComponent {
                     items={this.props.list}
                     onChange={this.changeSelected}
                     selected={this.state.selected}
+                    is_routed={this.props.is_routed}
                 />
                 <VerticalTabContentContainer
                     items={this.props.list}
                     selected={this.state.selected}
+                    is_routed={this.props.is_routed}
                 />
             </div>
         );
@@ -35,11 +37,13 @@ class VerticalTab extends React.PureComponent {
 }
 
 VerticalTab.propTypes = {
-    list: PropTypes.arrayOf(
+    is_routed: PropTypes.bool,
+    list     : PropTypes.arrayOf(
         PropTypes.shape({
             icon : PropTypes.func,
             label: PropTypes.string,
-            value: PropTypes.func,
+            path : PropTypes.string,
+            value: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
         })
     ).isRequired,
 };

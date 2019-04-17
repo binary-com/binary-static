@@ -2,7 +2,7 @@ import React        from 'react';
 import { localize } from '_common/localize';
 import { Icon }     from 'Assets/Common';
 import {
-    IconStatement,
+    IconReports,
     IconTrade }     from 'Assets/Header/NavBar/index';
 import { routes }   from 'Constants/index';
 
@@ -13,9 +13,9 @@ const header_links = [
         link_to: routes.trade,
     },
     {
-        icon      : <Icon icon={IconStatement} className='header__icon' />,
+        icon      : <Icon icon={IconReports} className='header__icon' />,
         text      : localize('Reports'),
-        link_to   : routes.statement,
+        link_to   : routes.reports,
         login_only: true,
     },
 ];
