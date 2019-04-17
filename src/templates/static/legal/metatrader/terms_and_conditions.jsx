@@ -165,7 +165,12 @@ const TermsAndConditions = () => (
                     <li>{it.L('The Client may specify their instruction of a Stop Order or apply for a Limit Order for a limited duration or for an indefinite period (a "good till cancelled" or "GTC" Order).')}</li>
                     <li>{it.L('In the case of a Stop Order, the Client acknowledges that the Company will endeavour to fill the order at a price equal to the one that the Client has specified. However, if the specified price is unavailable, a less favourable price may be quoted. In other words, the Order is executed either at the price equal to the specified one or worse than that (slippage).  The execution of Stop Orders is guaranteed.')}</li>
                     <li>{it.L('In the case of a Limit Order, the Client acknowledges that the Company will endeavour to fill the Order at a level that is the same or better than the Limit the Client has specified, subject to the availability of the Limit Price.')}</li>
-                    <li>{it.L('The Client may specify their instruction of a Stop Order or apply for a Limit Order for a limited duration or for an indefinite period (a "good till cancelled" or "GTC" Order).')}</li>
+                    <li>{it.L('The Client may specify their instruction of a Stop Order or apply for a Limit Order for a limited duration or for an indefinite period (a "good till cancelled" or "GTC" Order).')}
+                        <ol>
+                            <li>{it.L('In the case of a Stop Order, the Client acknowledges that the Company will endeavour to fill the Order at a price equal to the one that the Client has specified. However, if the specified price is unavailable, a less favourable price may be quoted. In other words, the Order is executed either at the price equal to the specified one or worse than that (slippage). The execution of Stop Orders is guaranteed.')}</li>
+                            <li>{it.L('In the case of a Limit Order, the Client acknowledges that the Company will endeavour to fill the Order at a level that is the same or better than the Limit the Client has specified, subject to the availability of the Limit Price.')}</li>
+                        </ol>
+                    </li>
                     <li>{it.L('Stop Limit Orders are a combination of Stop and Limit Orders. If the price reaches (or passes) the Stop Price, a Limit Order is placed at the specified price, which will be filled at a price equal or better than the specified price. ')}</li>
                     <li>{it.L('A Take Profit Order is intended for gaining profit when the Financial Instrument price has reached a certain level. Execution of this Order results in the complete closing of the whole position. It is always connected to an Open Position or a Pending Order.')}</li>
                     <li>{it.L('A Stop Loss Order is intended for minimising losses when the Financial Instrument price moves in an unprofitable direction. The execution of this Order results in the complete closing of the whole position. It is always connected to an Open Position or a Pending Order.')}</li>
@@ -255,12 +260,6 @@ const TermsAndConditions = () => (
                     <li>{it.L('The personal information that the Company collects and holds is treated as confidential. Confidential information will not be used for any purpose other than in connection with the provision of the Margin trading services described in this agreement. Confidential information will only be disclosed as and when required by law. The Company may also disclose such personal information to: (i) other companies within the Binary Group of companies; (ii) any such third parties as the Company sees fit to assist it in servicing the Client\'s MT5 Real Account; (iii) regulatory authorities upon their reasonable request; (iv) any such third parties as the Company sees fit to assist it in enforcing the Company\'s legal or contractual rights against the Client, including but not limited to legal advisors; (v) third parties as the Company sees fit to investigate or prevent fraud or other illegal activities.')}</li>
                 </ol>
             </li>
-            {/* <li>{it.L('Complaints and disputes')}
-                <ol>
-                    <li>{it.L('If you would like to file a complaint with regards to the margin trading services described in this Agreement, kindly contact us on complaints@binary.com by providing the relevant details related to your complaint. We shall investigate your enquiry and a response will be given to your enquiry. We will usually provide a final response within one to two weeks (and at most within two months) from the receipt of all relevant details.')}</li>
-                    <li>{it.L('If your complaint relates to an outcome of a Transaction and remains unresolved, it will turn into a dispute. Should you be unsatisfied with our response, you can choose to escalate your complaint to an alternative dispute resolution entity.')}</li>
-                </ol>
-            </li> */}
         </ol>
 
         <h2 data-anchor='quotes'>{it.L('I. Quotes')}</h2>
@@ -282,7 +281,7 @@ const TermsAndConditions = () => (
                     <li>{it.L('Any trade opened by the Client must be within the available balance or limits in effect with respect to MT5 Real Account or any Transactions.')}</li>
                 </ol>
             </li>
-            <li>{it.L('Closing a Transaction')}
+            <li>{it.L('Closing a trade')}
                 <ol>
                     <li>{it.L('General provisions')}
                         <ol>
