@@ -9,10 +9,9 @@
     box-sizing: border-box;
     z-index: 3;
     display: flex;
-    transition: height 0.3s, opacity 0.3s;
     justify-content: flex-end;
     align-items: center;
-    transition: filter 0.25s linear;
+    transition: height 0.25s, opacity 0.25s, filter 0.25s linear;
     backface-visibility: hidden;
     filter: blur(0);
     @include themify($themes) {
