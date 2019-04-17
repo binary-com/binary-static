@@ -1,9 +1,8 @@
-import PropTypes                from 'prop-types';
-import React                    from 'react';
-import {
-    PropTypes as MobxPropTypes,
-    observer }                  from 'mobx-react';
-import Duration                 from './duration.jsx';
+import PropTypes                      from 'prop-types';
+import React                          from 'react';
+import { PropTypes as MobxPropTypes } from 'mobx-react';
+import { connect }                    from 'Stores/connect';
+import Duration                       from './duration.jsx';
 
 class DurationWrapper extends React.Component {
     hasDurationUnit = (duration_unit) => {
@@ -22,7 +21,7 @@ class DurationWrapper extends React.Component {
         this.props.onChangeUiStore({ name: `${this.props.is_advanced_duration ? 'advanced' : 'simple'}_duration_unit`, value: new_duration_unit });
         this.props.onChangeMultiple({
             duration_unit: new_duration_unit,
-            duration     : new_duration_value,
+            duration     : +new_duration_value,
         });
     }
 
@@ -124,7 +123,6 @@ DurationWrapper.propTypes = {
     onChange            : PropTypes.func,
     onChangeMultiple    : PropTypes.func,
     onChangeUiStore     : PropTypes.func,
-    server_time         : PropTypes.object,
     sessions            : MobxPropTypes.arrayOrObservableArray,
     simple_duration_unit: PropTypes.string,
     start_date          : PropTypes.oneOfType([
@@ -136,4 +134,25 @@ DurationWrapper.propTypes = {
     validation_errors: PropTypes.object,
 };
 
-export default observer(DurationWrapper);
+export default connect(({ modules, ui }) => ({
+    advanced_duration_unit: ui.advanced_duration_unit,
+    advanced_expiry_type  : ui.advanced_expiry_type,
+    contract_expiry_type  : modules.trade.contract_expiry_type,
+    duration              : modules.trade.duration,
+    duration_unit         : modules.trade.duration_unit,
+    duration_units_list   : modules.trade.duration_units_list,
+    duration_min_max      : modules.trade.duration_min_max,
+    duration_t            : ui.duration_t,
+    expiry_date           : modules.trade.expiry_date,
+    expiry_time           : modules.trade.expiry_time,
+    expiry_type           : modules.trade.expiry_type,
+    getDurationFromUnit   : ui.getDurationFromUnit,
+    is_advanced_duration  : ui.is_advanced_duration,
+    onChange              : modules.trade.onChange,
+    onChangeUiStore       : ui.onChangeUiStore,
+    onChangeMultiple      : modules.trade.onChangeMultiple,
+    simple_duration_unit  : ui.simple_duration_unit,
+    start_date            : modules.trade.start_date,
+    validation_errors     : modules.trade.validation_errors,
+    market_open_times     : modules.trade.market_open_times,
+}))(DurationWrapper);
