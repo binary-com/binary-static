@@ -12,7 +12,6 @@ const MarkerLine = ({
     status,
 }) => (
     <div className={classNames('chart-marker-line__wrapper', `chart-marker-line--${line_style}`)}>
-        <div className='chart-marker-line__label'>{label}</div>
         { label === 'End Time' &&
             <Icon
                 icon={IconEndTimeSVG}

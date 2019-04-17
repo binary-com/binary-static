@@ -125,7 +125,7 @@
 
 /** @define chart-marker-line */
 .chart-marker-line {
-    height: 95%;
+    height: 94.5%;
     margin-bottom: 0.8em;
     z-index: 0 !important;
 
@@ -136,11 +136,6 @@
         @include themify($themes) {
             border-color: themed('text_color');
         }
-    }
-    &__label {
-        position: absolute;
-        bottom: 0;
-        white-space: nowrap;
     }
     &__icon {
         position: absolute;
