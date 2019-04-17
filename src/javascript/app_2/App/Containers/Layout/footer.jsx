@@ -1,3 +1,4 @@
+import classNames     from 'classnames';
 import PropTypes      from 'prop-types';
 import React          from 'react';
 import { connect }    from 'Stores/connect';
@@ -9,17 +10,21 @@ import {
     ToggleSettings }  from '../../Components/Layout/Footer';
 
 const Footer = ({
-    hideBlur,
+    hideFullBlur,
+    is_fully_blurred,
     is_dark_mode,
     is_language_dialog_visible,
     is_logged_in,
     is_positions_drawer_on,
     is_settings_dialog_on,
-    showBlur,
+    showFullBlur,
     togglePositionsDrawer,
     toggleSettingsDialog,
 }) => (
-    <React.Fragment>
+    <footer className={classNames('footer', {
+        'footer--is-blurred': is_fully_blurred,
+    })}
+    >
         <div className='footer__links footer__links--left'>
             {
                 is_logged_in &&
@@ -37,16 +42,17 @@ const Footer = ({
                 is_language_visible={is_language_dialog_visible}
                 is_settings_visible={is_settings_dialog_on}
                 toggleSettings={toggleSettingsDialog}
-                showBlur={showBlur}
-                hideBlur={hideBlur}
+                showFullBlur={showFullBlur}
+                hideFullBlur={hideFullBlur}
             />
             <ToggleFullScreen />
         </div>
-    </React.Fragment>
+    </footer>
 );
 
 Footer.propTypes = {
     is_dark_mode              : PropTypes.bool,
+    is_fully_blurred          : PropTypes.bool,
     is_language_dialog_visible: PropTypes.bool,
     is_logged_in              : PropTypes.bool,
     is_positions_drawer_on    : PropTypes.bool,
@@ -57,13 +63,14 @@ Footer.propTypes = {
 
 export default connect(
     ({ client, ui }) => ({
-        hideBlur                  : ui.hideBlur,
+        hideFullBlur              : ui.hideFullBlur,
+        is_fully_blurred          : ui.is_fully_blurred,
         is_dark_mode              : ui.is_dark_mode_on,
         is_logged_in              : client.is_logged_in,
         is_language_dialog_visible: ui.is_language_dialog_on,
         is_positions_drawer_on    : ui.is_positions_drawer_on,
         is_settings_dialog_on     : ui.is_settings_dialog_on,
-        showBlur                  : ui.showBlur,
+        showFullBlur              : ui.showFullBlur,
         togglePositionsDrawer     : ui.togglePositionsDrawer,
         toggleSettingsDialog      : ui.toggleSettingsDialog,
     })

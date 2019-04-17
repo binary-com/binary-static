@@ -71,18 +71,30 @@ class PurchaseFieldset extends React.PureComponent {
                         is_visible={!is_contract_mode}
                     />
                     <div
-                        className={classNames('btn-purchase__shadow-wrapper', { 'btn-purchase__shadow-wrapper--disabled': (is_proposal_error || is_disabled) })}
+                        className={classNames(
+                            'btn-purchase__shadow-wrapper', {
+                                'btn-purchase__shadow-wrapper--disabled': (is_proposal_error || is_disabled)
+                            },
+                        )}
                         onMouseEnter={() => {
-                            onHoverPurchase(true, type);
+                            if (!is_disabled) {
+                                onHoverPurchase(true, type);
+                            }
                             this.onMouseEnter();
                         }}
                         onMouseLeave={() => {
-                            onHoverPurchase(false);
+                            if (!is_disabled) {
+                                onHoverPurchase(false);
+                            }
                             this.onMouseLeave();
                         }}
                     >
+                        <div className='btn-purchase__box-shadow' />
                         {(is_proposal_error && this.state.show_tooltip) &&
-                        <Tooltip message={info.message} alignment='left' className='tooltip--error-secondary' />
+                        <Tooltip
+                            alignment='left'
+                            className='tooltip--error-secondary' />
+                            message={info.message}
                         }
                         {
                             // is_purchase_confirm_on ?
