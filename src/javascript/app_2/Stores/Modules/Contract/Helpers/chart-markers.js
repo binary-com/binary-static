@@ -1,10 +1,11 @@
 import {
-    createMarkerExpiry,
+    createMarkerEndTime,
     createMarkerPurchaseTime,
     createMarkerSpotEntry,
     createMarkerSpotExit,
     createMarkerStartTime,
-    createMarkerSpotMiddle }     from './chart-marker-helpers';
+    createMarkerSpotMiddle,
+    getSpotCount }     from './chart-marker-helpers';
 import { unique } from '../../../../../_common/utility';
 import { MARKER_TYPES_CONFIG } from '../../SmartChart/Constants/markers';
 
@@ -26,7 +27,7 @@ const marker_spots = {
 
 const marker_lines = {
     [MARKER_TYPES_CONFIG.LINE_START.type]   : createMarkerStartTime,
-    [MARKER_TYPES_CONFIG.LINE_END.type]     : createMarkerExpiry,
+    [MARKER_TYPES_CONFIG.LINE_END.type]     : createMarkerEndTime,
     [MARKER_TYPES_CONFIG.LINE_PURCHASE.type]: createMarkerPurchaseTime,
 };
 
@@ -61,7 +62,8 @@ const addTickMarker = (SmartChartStore, contract_info) => {
     tick_stream.forEach((tick, idx) => {
         const is_entry_spot  = idx === 0 && +tick.epoch !== contract_info.exit_tick_time;
         const is_middle_spot = idx > 0 && +tick.epoch !== +contract_info.exit_tick_time;
-        const is_exit_spot   = +tick.epoch === +contract_info.exit_tick_time;
+        const is_exit_spot   = +tick.epoch === +contract_info.exit_tick_time ||
+            getSpotCount(contract_info, idx) === contract_info.tick_count;
 
         let marker_config;
         if (is_entry_spot) marker_config = createMarkerSpotEntry(contract_info);

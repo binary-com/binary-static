@@ -15,10 +15,10 @@ import {
     getDigitInfo,
     isDigitContract }            from './Helpers/digits';
 import {
-    getChartConfig,
     getDisplayStatus,
     getEndSpot,
     getEndSpotTime,
+    getEndTime,
     getFinalPrice,
     getIndicativePrice,
     isEnded,
@@ -34,7 +34,6 @@ export default class ContractStore extends BaseStore {
     @observable contract_info = observable.object({});
     @observable digits_info   = observable.object({});
     @observable sell_info     = observable.object({});
-    @observable chart_config  = observable.object({});
 
     @observable has_error         = false;
     @observable error_message     = '';
@@ -50,16 +49,13 @@ export default class ContractStore extends BaseStore {
     @action.bound
     drawChart(SmartChartStore, contract_info) {
         this.forget_id = contract_info.id;
-        if (isEnded(contract_info) || !!(getEndSpotTime(contract_info))) {
-            this.chart_config = getChartConfig(contract_info);
-        } else {
-            delete this.chart_config.end_epoch;
-            delete this.chart_config.start_epoch;
+        const end_time = getEndTime(contract_info);
 
-            if (!this.is_left_epoch_set && contract_info.tick_count) {
-                this.is_left_epoch_set = true;
-                SmartChartStore.setTickChartView(contract_info.purchase_time);
-            }
+        if (end_time) {
+            SmartChartStore.setRange(contract_info.date_start, end_time);
+        } else if (!this.is_left_epoch_set && contract_info.tick_count) {
+            this.is_left_epoch_set = true;
+            SmartChartStore.setTickChartView(contract_info.purchase_time);
         }
 
         createChartBarrier(SmartChartStore, contract_info);
@@ -71,6 +67,7 @@ export default class ContractStore extends BaseStore {
     @action.bound
     onMount(contract_id, has_left_epoch) {
         if (contract_id === +this.contract_id) return;
+        if (this.root_store.modules.smart_chart.is_contract_mode) this.onCloseContract();
         this.onSwitchAccount(this.accountSwitcherListener.bind(null));
         this.has_error         = false;
         this.error_message     = '';
@@ -94,7 +91,6 @@ export default class ContractStore extends BaseStore {
     @action.bound
     onCloseContract() {
         this.forgetProposalOpenContract();
-        this.chart_config      = {};
         this.contract_id       = null;
         this.contract_info     = {};
         this.digits_info       = {};
