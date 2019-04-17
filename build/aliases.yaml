@@ -22,6 +22,7 @@ default:
 
 start:
   - 'css'
+  - 'js'
   - 'copy'
   - 'shell:compile_dev'
   - 'connect:livereload'
