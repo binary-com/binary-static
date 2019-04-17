@@ -72,8 +72,6 @@ export default class SmartChartStore extends BaseStore {
 
     @action.bound
     cleanupContractChartView() {
-        this.updateGranularity(undefined);
-        this.updateChartType(undefined);
         this.removeBarriers();
         this.removeMarkers();
         this.removeRange();
