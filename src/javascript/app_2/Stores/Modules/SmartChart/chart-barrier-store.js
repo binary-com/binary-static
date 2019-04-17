@@ -69,11 +69,6 @@ export class ChartBarrierStore {
         this.onChartBarrierChange(...barriersToString(this.relative, high, low));
     }
 
-    @action.bound
-    updateBarrierColor(is_dark_mode) {
-        this.color = is_dark_mode ? BARRIER_COLORS.GRAY : BARRIER_COLORS.GREEN;
-    }
-
     @computed
     get barrier_count() {
         return (typeof this.high !== 'undefined') + (typeof this.low !== 'undefined');
