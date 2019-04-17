@@ -40,8 +40,6 @@ class Trade extends React.Component {
                                 should_show_last_digit_stats={should_show_last_digit_stats}
                                 scroll_to_epoch={this.props.scroll_to_epoch}
                                 scroll_to_offset={this.props.scroll_to_offset}
-                                start_epoch={this.props.start_epoch}
-                                end_epoch={this.props.end_epoch}
                                 chart_zoom={this.props.chart_zoom}
                             />
                         </React.Suspense>
@@ -72,7 +70,6 @@ Trade.propTypes = {
     chart_id        : PropTypes.number,
     chart_zoom      : PropTypes.number,
     contract_type   : PropTypes.string,
-    end_epoch       : PropTypes.number,
     is_contract_mode: PropTypes.bool,
     is_mobile       : PropTypes.bool,
     is_trade_enabled: PropTypes.bool,
@@ -84,15 +81,12 @@ Trade.propTypes = {
     purchase_info   : PropTypes.object,
     scroll_to_epoch : PropTypes.number,
     scroll_to_offset: PropTypes.number,
-    start_epoch     : PropTypes.number,
     symbol          : PropTypes.string,
 };
 
 export default connect(
     ({ modules, ui }) => ({
         onCloseContract                    : modules.contract.onCloseContract,
-        start_epoch                        : modules.contract.chart_config.start_epoch,
-        end_epoch                          : modules.contract.chart_config.end_epoch,
         scroll_to_epoch                    : modules.smart_chart.scroll_to_left_epoch,
         scroll_to_offset                   : modules.smart_chart.scroll_to_left_epoch_offset,
         chart_zoom                         : modules.smart_chart.zoom,
