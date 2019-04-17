@@ -125,7 +125,7 @@
 
 /** @define chart-marker-line */
 .chart-marker-line {
-    height: 98.5%;
+    height: 95%;
     margin-bottom: 0.8em;
     z-index: 0 !important;
 
@@ -144,8 +144,8 @@
     }
     &__icon {
         position: absolute;
-        bottom: 0;
-        left: -12px;
+        bottom: -23px;
+        left: -11px;
         white-space: nowrap;
 
         &--won {
