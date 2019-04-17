@@ -10,10 +10,15 @@ const hour_to_granularity_map = [
     [30 * 24, 14400],
 ];
 
-export const calculateGranularityFromTime = (start_time, expiry_time) => {
+export const getChartType = (start_time, expiry_time) => {
     const beginning_time = start_time || ServerTime.get().unix();
     const duration = moment.duration(moment.unix(expiry_time).diff(moment.unix(beginning_time))).asHours();
-    return (duration < 1) ? 0 : 3600;
+    return (duration < 1) ? 'mountain' : 'candle';
+};
+
+export const getChartGranularity = (start_time, expiry_time) => {
+    const beginning_time = start_time || ServerTime.get().unix();
+    return calculateGranularity(expiry_time - beginning_time);
 };
 
 export const calculateGranularity = (duration) =>

@@ -15,7 +15,8 @@ import {
     getDigitInfo,
     isDigitContract }            from './Helpers/digits';
 import {
-    calculateGranularityFromTime,
+    getChartGranularity,
+    getChartType,
     getDisplayStatus,
     getEndSpot,
     getEndSpotTime,
@@ -54,8 +55,9 @@ export default class ContractStore extends BaseStore {
         const end_time = getEndTime(contract_info);
 
         if (!contract_info.tick_count && !this.is_granularity_set) {
-            const granularity = calculateGranularityFromTime(null, contract_info.date_expiry);
-            if (granularity !== 0) {
+            const chart_type  = getChartType(null, contract_info.date_expiry);
+            const granularity = getChartGranularity(null, contract_info.date_expiry);
+            if (chart_type === 'candle' && granularity !== 0) {
                 SmartChartStore.granularity = granularity;
                 SmartChartStore.chart_type  = 'candle';
             }
