@@ -5,19 +5,25 @@ import { routes }      from 'Constants';
 
 import {
     IconPortfolio,
-    IconStatement }    from 'Assets/Header/NavBar';
+    IconStatement }          from 'Assets/Header/NavBar';
 // import Statement       from 'Modules/Statement';
-import Trade           from 'Modules/Trading';
+import { IconProfitTable }   from 'Assets/Reports/icon-profit-table.jsx';
+import { IconOpenPositions } from 'Assets/Reports/icon-open-positions.jsx';
+import Trade                 from 'Modules/Trading';
 
 const ContractDetails = lazy(() => import(/* webpackChunkName: "contract" */  'Modules/Contract'));
 const Portfolio       = lazy(() => import(/* webpackChunkName: "portfolio" */ 'Modules/Portfolio'));
-const Reports         = lazy(() => import(/* webpackChunkName: "statement" */ 'Modules/Reports'));
 const Settings        = lazy(() => import(/* webpackChunkName: "settings" */  'Modules/settings/settings.jsx'));
-const Statement       = lazy(() => import(/* webpackChunkName: "statement" */ 'Modules/Statement'));
+
+// Reports Routes
+const Reports       = lazy(() => import(/* webpackChunkName: "reports" */        'Modules/Reports'));
+const OpenPositions = lazy(() => import(/* webpackChunkName: "open_positions" */ 'Modules/Reports/Containers/open-positions.jsx'));
+const ProfitTable   = lazy(() => import(/* webpackChunkName: "profit_table" */   'Modules/Reports/Containers/profit-table.jsx'));
+const Statement     = lazy(() => import(/* webpackChunkName: "statement" */      'Modules/Reports/Containers/statement.jsx'));
 
 // Settings Routes
 const AccountPassword        = lazy(() => import(/* webpackChunkName: "account_password" */       'Modules/settings/sections/account-password.jsx'));
-const ApiToken               = lazy(() => import(/* webpackChunkName: "api_token" */               'Modules/settings/sections/api-token.jsx'));
+const ApiToken               = lazy(() => import(/* webpackChunkName: "api_token" */              'Modules/settings/sections/api-token.jsx'));
 const AuthorizedApplications = lazy(() => import(/* webpackChunkName: "authorized_application" */ 'Modules/settings/sections/authorized-applications.jsx'));
 const CashierPassword        = lazy(() => import(/* webpackChunkName: "cashier_password" */       'Modules/settings/sections/cashier-password.jsx'));
 const FinancialAssessment    = lazy(() => import(/* webpackChunkName: "financial_assessment" */   'Modules/settings/sections/financial-assessment.jsx'));
@@ -39,7 +45,9 @@ const initRoutesConfig = () => ([
         component       : Reports,
         is_authenticated: true,
         routes          : [
-            { path: routes.statement, component: Statement, title: localize('Statement'), icon_component: IconStatement },
+            { path: routes.positions, component: OpenPositions, title: localize('Open Positions'), icon_component: IconOpenPositions },
+            { path: routes.profit,    component: ProfitTable,   title: localize('Profit Table'),   icon_component: IconProfitTable },
+            { path: routes.statement, component: Statement,     title: localize('Statement'),      icon_component: IconStatement },
         ],
     },
     { path: routes.trade,     component: Trade,           title: localize('Trade'),             exact: true },
