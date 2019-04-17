@@ -26,6 +26,10 @@ export const createMarkerExpiry = (contract_info) => {
     return createMarkerConfig(
         MARKER_TYPES_CONFIG.LINE_END.type,
         +end_spot_time,
+        null,
+        {
+            status: `${contract_info.profit > 0 ? 'won' : 'lost' }`,
+        },
     );
 };
 

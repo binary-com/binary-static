@@ -8,21 +8,25 @@ import { IconEndTimeSVG } from 'Assets/Contract/icon-end-time.jsx';
 const MarkerLine = ({
     label,
     line_style,
+    status,
 }) => (
     <div className={classNames('chart-marker-line__wrapper', `chart-marker-line--${line_style}`)}>
         <div className='chart-marker-line__label'>{label}</div>
-        <Icon
-            icon={IconEndTimeSVG}
-            className={classNames('chart-marker-line__icon', {
-                'chart-marker-line__icon--won' : this.props.status === 'won',
-                'chart-marker-line__icon--lost': this.props.status === 'lost',
-            })}
-        />
+        { label === 'End Time' &&
+            <Icon
+                icon={IconEndTimeSVG}
+                className={classNames('chart-marker-line__icon', {
+                    'chart-marker-line__icon--won' : status === 'won',
+                    'chart-marker-line__icon--lost': status === 'lost',
+                })}
+            />
+        }
     </div>
 );
 
 MarkerLine.propTypes = {
     label     : PropTypes.string,
     line_style: PropTypes.string,
+    status    : PropTypes.oneOf(['won', 'lost']),
 };
 export default observer(MarkerLine);
