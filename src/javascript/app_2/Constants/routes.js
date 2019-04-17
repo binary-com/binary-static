@@ -13,7 +13,10 @@ const routes = {
     portfolio       : '/portfolio',
     root            : '/',
     settings        : '/settings',
-    statement       : '/statement',
+    reports         : '/reports',
+    profit          : '/reports/profit',
+    positions       : '/reports/positions',
+    statement       : '/reports/statement',
     token           : '/settings/token',
     trade           : '/trade',
 };

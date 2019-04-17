@@ -11,6 +11,7 @@ import Trade           from 'Modules/Trading';
 
 const ContractDetails = lazy(() => import(/* webpackChunkName: "contract" */  'Modules/Contract'));
 const Portfolio       = lazy(() => import(/* webpackChunkName: "portfolio" */ 'Modules/Portfolio'));
+const Reports         = lazy(() => import(/* webpackChunkName: "statement" */ 'Modules/Reports'));
 const Settings        = lazy(() => import(/* webpackChunkName: "settings" */  'Modules/settings/settings.jsx'));
 const Statement       = lazy(() => import(/* webpackChunkName: "statement" */ 'Modules/Statement'));
 
@@ -33,7 +34,14 @@ const initRoutesConfig = () => ([
     { path: routes.index,     component: Redirect,        title: '',                            to: '/trade' },
     { path: routes.portfolio, component: Portfolio,       title: localize('Portfolio'),         is_authenticated: true, icon_component: IconPortfolio },
     { path: routes.root,      component: Redirect,        title: '',                            exact: true, to: '/trade' },
-    { path: routes.statement, component: Statement,       title: localize('Statement'),         is_authenticated: true, icon_component: IconStatement },
+    {
+        path            : routes.reports,
+        component       : Reports,
+        is_authenticated: true,
+        routes          : [
+            { path: routes.statement, component: Statement, title: localize('Statement'), icon_component: IconStatement },
+        ],
+    },
     { path: routes.trade,     component: Trade,           title: localize('Trade'),             exact: true },
     {
         path            : routes.settings,
