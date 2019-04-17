@@ -27,6 +27,13 @@ dev:
   - 'shell:compile_dev'
   - 'gh-pages:main'
 
+start:
+- 'css'
+- 'copy'
+- 'shell:compile_dev'
+- 'connect:livereload'
+- 'concurrent:serve'
+
 deploy:
   - 'shell:check_origin'
   - 'default'

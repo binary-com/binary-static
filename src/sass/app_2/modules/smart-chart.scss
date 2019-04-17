@@ -46,6 +46,27 @@
 
 /** @define chart-spot-label */
 .chart-spot-label {
+    &__icon {
+        position: absolute;
+        bottom: 0;
+        white-space: nowrap;
+        opacity: 0;
+
+        &--won {
+            opacity: 1;
+            /* postcss-bem-linter: ignore */
+            circle {
+                fill: $COLOR_GREEN_1;
+            }
+        }
+        &--lost {
+            opacity: 1;
+            /* postcss-bem-linter: ignore */
+            circle {
+                fill: $COLOR_RED;
+            }
+        }
+    }
     &__info-container {
         width: 100%;
         position: relative;
@@ -82,7 +103,9 @@
         svg {
             /* postcss-bem-linter: ignore */
             g {
-                stroke: $COLOR_WHITE;
+                @include themify($themes) {
+                    stroke: themed('text_color');
+                }
             }
         }
     }
