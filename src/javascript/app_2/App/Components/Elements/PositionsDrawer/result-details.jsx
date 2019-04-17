@@ -3,6 +3,7 @@ import PropTypes         from 'prop-types';
 import React             from 'react';
 import { IconArrow }     from 'Assets/Common';
 import { localize }      from '_common/localize';
+import { connect }       from 'Stores/connect';
 import {
     epochToMoment,
     toGMTFormat }        from 'Utils/Date';
@@ -19,6 +20,7 @@ class ResultDetails extends React.PureComponent {
 
     toggleDetails = () => {
         this.setState({ is_open: !this.state.is_open });
+        this.props.toggleShade();
     }
 
     render() {
@@ -104,6 +106,11 @@ ResultDetails.propTypes = {
     duration_unit: PropTypes.string,
     exit_spot    : PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     has_result   : PropTypes.bool,
+    toggleShade  : PropTypes.func,
 };
 
-export default ResultDetails;
+export default connect(
+    ({ ui }) => ({
+        toggleShade: ui.tgogglePositionDrawerShade,
+    })
+)(ResultDetails);

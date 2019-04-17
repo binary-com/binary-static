@@ -5,12 +5,14 @@ import { CSSTransition } from 'react-transition-group';
 import IconCheck         from 'Images/app_2/portfolio/ic-check.svg';
 import IconCross         from 'Images/app_2/portfolio/ic-cross.svg';
 import { localize }      from '_common/localize';
+import { connect }       from 'Stores/connect';
 
 const ResultOverlay = ({
     contract_id,
     onClick,
     onClickRemove,
     result,
+    is_positions_drawer_shade_on,
 }) => (
     <React.Fragment>
         <CSSTransition
@@ -24,8 +26,9 @@ const ResultOverlay = ({
             unmountOnExit
         >
             <div className={classNames('positions-drawer-card__result', {
-                'positions-drawer-card__result--won' : (result === 'won'),
-                'positions-drawer-card__result--lost': (result === 'lost'),
+                'positions-drawer-card__result--won'         : (result === 'won'),
+                'positions-drawer-card__result--lost'        : (result === 'lost'),
+                'positions-drawer-card__result--hidden-shade': (is_positions_drawer_shade_on === true),
             })}
             >
                 <span
@@ -59,10 +62,15 @@ const ResultOverlay = ({
 );
 
 ResultOverlay.propTypes = {
-    contract_id  : PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-    onClick      : PropTypes.func,
-    onClickRemove: PropTypes.func,
-    result       : PropTypes.string,
+    contract_id                 : PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    is_positions_drawer_shade_on: PropTypes.bool,
+    onClick                     : PropTypes.func,
+    onClickRemove               : PropTypes.func,
+    result                      : PropTypes.string,
 };
 
-export default ResultOverlay;
+export default connect(
+    ({ ui }) => ({
+        is_positions_drawer_shade_on: ui.is_positions_drawer_shade_on,
+    })
+)(ResultOverlay);

@@ -11,9 +11,10 @@ import BaseStore       from './base-store';
 const store_name = 'ui_store';
 
 export default class UIStore extends BaseStore {
-    @observable is_main_drawer_on          = false;
-    @observable is_notifications_drawer_on = false;
-    @observable is_positions_drawer_on     = false;
+    @observable is_main_drawer_on            = false;
+    @observable is_notifications_drawer_on   = false;
+    @observable is_positions_drawer_on       = false;
+    @observable is_positions_drawer_shade_on = false;
 
     @observable is_dark_mode_on         = true;
     @observable is_language_dialog_on   = false;
@@ -94,6 +95,11 @@ export default class UIStore extends BaseStore {
             throw new Error(`Invalid Argument: ${name}`);
         }
         this[name] = value;
+    }
+
+    @action.bound
+    tgogglePositionDrawerShade() {
+        this.is_positions_drawer_shade_on = !this.is_positions_drawer_shade_on;
     }
 
     @action.bound
