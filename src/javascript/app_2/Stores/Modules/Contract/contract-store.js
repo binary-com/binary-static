@@ -101,16 +101,16 @@ export default class ContractStore extends BaseStore {
     @action.bound
     onCloseContract() {
         this.forgetProposalOpenContract();
-        this.contract_id       = null;
-        this.contract_info     = {};
-        this.digits_info       = {};
-        this.error_message     = '';
-        this.forget_id         = null;
-        this.has_error         = false;
+        this.contract_id        = null;
+        this.contract_info      = {};
+        this.digits_info        = {};
+        this.error_message      = '';
+        this.forget_id          = null;
+        this.has_error          = false;
         this.is_granularity_set = false;
-        this.is_sell_requested = false;
-        this.is_left_epoch_set = false;
-        this.sell_info         = {};
+        this.is_sell_requested  = false;
+        this.is_left_epoch_set  = false;
+        this.sell_info          = {};
 
         this.smart_chart.cleanupContractChartView();
         this.smart_chart.applySavedTradeChartLayout();
