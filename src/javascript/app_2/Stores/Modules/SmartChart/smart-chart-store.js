@@ -23,6 +23,11 @@ export default class SmartChartStore extends BaseStore {
     @observable is_contract_mode = false;
     @observable is_title_enabled = true;
 
+    @observable range = observable.object({
+        start_epoch: null,
+        end_epoch  : null,
+    });
+
     @observable scroll_to_left_epoch        = null;
     @observable scroll_to_left_epoch_offset = 0;
     @observable zoom;
@@ -57,6 +62,7 @@ export default class SmartChartStore extends BaseStore {
     cleanupContractChartView() {
         this.removeBarriers();
         this.removeMarkers();
+        this.removeRange();
         this.resetScrollZoom();
         this.setContractMode(false);
     }
@@ -94,6 +100,19 @@ export default class SmartChartStore extends BaseStore {
         this.updateEpochScrollToOffset(1);
         this.updateChartZoom(100);
         this.updateEpochScrollToValue(scroll_to_left_epoch);
+    }
+
+    // --------- All Contracts ---------
+    @action.bound
+    setRange(start, end) {
+        this.range.start_epoch = start;
+        this.range.end_epoch   = end;
+    }
+
+    @action.bound
+    removeRange() {
+        this.range.start_epoch = null;
+        this.range.end_epoch   = null;
     }
 
     // ---------- Barriers ----------

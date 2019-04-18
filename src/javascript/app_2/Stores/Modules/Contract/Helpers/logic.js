@@ -1,13 +1,3 @@
-export const getChartConfig = (contract_info) => {
-    const start_epoch = contract_info.date_start;
-    const end_epoch   = getEndSpotTime(contract_info) || contract_info.date_expiry;
-
-    return {
-        end_epoch,
-        start_epoch,
-    };
-};
-
 const hour_to_granularity_map = [
     [1      , 0],
     [2      , 120],
@@ -70,3 +60,12 @@ export const isUserSold = (contract_info) => (
 export const isValidToSell = (contract_info) => (
     !isEnded(contract_info) && !isUserSold(contract_info) && +contract_info.is_valid_to_sell === 1
 );
+
+export const getEndTime = (contract_info) => {
+    const { exit_tick_time, date_expiry, sell_time, tick_count : is_tick_contract, is_sold } = contract_info;
+
+    if (is_tick_contract) return exit_tick_time;
+    if (!is_sold) return undefined;
+
+    return  sell_time <  date_expiry ? exit_tick_time : date_expiry;
+};
