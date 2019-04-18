@@ -172,7 +172,7 @@ const TickDisplay = (() => {
             is_reset_barrier: has_reset_barrier,
             is_tick_trade   : true,
             shortcode       : contract.shortcode,
-            show_end_time   : contract_category !== 'highlowticks',
+            show_end_time   : true,
         });
         if (data) {
             dispatch(data);
@@ -253,31 +253,6 @@ const TickDisplay = (() => {
                 zIndex: 2,
             });
             calculated_barrier = addComma(calc_barrier, decimal_places);
-        }
-
-        if (barrier_type === 'highlowticks') {
-            if (/^(won|lost)$/.test(contract.status)) {
-                // for contracts that won, highest/lowest tick will be the quote of the selected tick
-                // for contracts that lost, API will send exit tick to mark highest/lowest spot
-                const high_low_barrier = contract.status === 'won' ? ((applicable_ticks[+selected_tick - 1] || {}).quote) : +contract.exit_tick;
-
-                if (high_low_barrier) {
-                    should_set_barrier = false;
-
-                    chart.yAxis[0].addPlotLine({
-                        id   : 'tick-barrier',
-                        value: high_low_barrier,
-                        color: '#e98024',
-                        label: {
-                            text : `${/^tickhigh_/i.test(contract.shortcode) ? localize('Highest Tick') : localize('Lowest Tick')} (${addComma(high_low_barrier)})`,
-                            align: 'center',
-                        },
-                        width    : 2,
-                        zIndex   : 2,
-                        dashStyle: 'dash',
-                    });
-                }
-            }
         }
 
         if (calculated_barrier) {
@@ -398,7 +373,6 @@ const TickDisplay = (() => {
             && applicable_ticks.find(({ epoch }) => +epoch === +contract.exit_tick_time) !== undefined;
 
         if (!has_finished && !has_sold && (!data.tick || !contract.status || contract.status === 'open')) {
-            let should_show_all_ticks = true;
             for (let d = 0; d < epoches.length; d++) {
                 let tick;
                 if (data.tick) {
@@ -414,14 +388,8 @@ const TickDisplay = (() => {
                 }
 
                 const current_tick_count = applicable_ticks.length + 1;
-                // for contracts that lost, exit tick time will have the value of the highest/lowest tick
-                // if current tick is selected tick and current tick occurs after exit tick time (highest/lowest tick), then don't show it
-                if (contract.status === 'lost' && current_tick_count > +selected_tick && tick.epoch > +contract.exit_tick_time) {
-                    should_show_all_ticks = false;
-                }
 
-                if (contract_start_moment && tick.epoch > contract_start_moment.unix() &&
-                    !spots_list[tick.epoch] && should_show_all_ticks) {
+                if (contract_start_moment && tick.epoch > contract_start_moment.unix() && !spots_list[tick.epoch]) {
                     if (!chart || !chart.series) return;
                     chart.series[0].addPoint([counter, tick.quote], true, false);
 
@@ -434,13 +402,13 @@ const TickDisplay = (() => {
                     spots_list[tick.epoch] = tick.quote;
                     const indicator_key    = `_${counter}`;
 
-                    if (!x_indicators[indicator_key] && tick.epoch === +contract.exit_tick_time && contract_category !== 'highlowticks') {
+                    if (!x_indicators[indicator_key] && tick.epoch === +contract.exit_tick_time) {
                         x_indicators[indicator_key] = {
                             index    : counter,
                             label    : localize('Exit Spot'),
                             dashStyle: 'Dash',
                         };
-                    } else if (current_tick_count === ticks_needed && contract_category === 'highlowticks') {
+                    } else if (current_tick_count === ticks_needed) {
                         HighchartUI.updateLabels(chart, {
                             contract_type   : contract_category,
                             has_barrier     : false,
@@ -519,11 +487,6 @@ const TickDisplay = (() => {
     const addExitSpot = () => {
         if (!applicable_ticks || !contract) return;
 
-        if (contract_category === 'highlowticks') {
-            addBarrier();
-            return;
-        }
-
         const index = applicable_ticks.findIndex(({ epoch }) => epoch === +contract.exit_tick_time);
 
         if (index === -1) return;
@@ -573,8 +536,6 @@ const TickDisplay = (() => {
             if (contract.current_spot_time < contract.date_expiry) {
                 request.subscribe = 1;
                 subscribe         = 'true';
-            } else if (!/^(tickhigh|ticklow)_/i.test(contract.shortcode) && contract.exit_tick_time && +contract.exit_tick_time < +contract.date_expiry) {
-                request.end = contract.exit_tick_time;
             } else if (!/^(runhigh|runlow)$/i.test(contract.contract_category)) {
                 request.subscribe = 1;
                 request.end       = contract.exit_tick_time || 'latest';
