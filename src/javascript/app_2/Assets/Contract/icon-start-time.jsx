@@ -18,7 +18,9 @@ export const IconStartTimeSVG = ({ className, classNamePath }) => (
 const IconStartTime = () => <Icon icon={IconStartTimeSVG} />;
 
 IconStartTime.propTypes = {
-    color: PropTypes.string,
+    className    : PropTypes.string,
+    classNamePath: PropTypes.string,
+    color        : PropTypes.string,
 };
 
 export default observer(IconStartTime);
