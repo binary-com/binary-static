@@ -1,9 +1,9 @@
-import { observer }   from 'mobx-react';
 import PropTypes      from 'prop-types';
 import React          from 'react';
 import { localize }   from '_common/localize';
 import NumberSelector from 'App/Components/Form/number-selector.jsx';
 import Fieldset       from 'App/Components/Form/fieldset.jsx';
+import { connect }    from 'Stores/connect';
 
 const LastDigit = ({
     is_minimized,
@@ -43,4 +43,7 @@ LastDigit.propTypes = {
     onChange: PropTypes.func,
 };
 
-export default observer(LastDigit);
+export default connect(({ modules }) => ({
+    last_digit: modules.trade.last_digit,
+    onChange  : modules.trade.onChange,
+}))(LastDigit);

@@ -180,12 +180,18 @@ export default class BaseStore {
      * Sets validation error messages for an observable property of the store
      *
      * @param {String} propertyName - The observable property's name
-     * @param {String} messages - An array of strings that contains validation error messages for the particular property.
+     * @param [{String}] messages - An array of strings that contains validation error messages for the particular property.
      *
      */
     @action
     setValidationErrorMessages(propertyName, messages) {
-        this.validation_errors[propertyName] = messages;
+        const is_different = () => !!this.validation_errors[propertyName]
+            .filter(x => !messages.includes(x))
+            .concat(messages.filter(x => !this.validation_errors[propertyName].includes(x)))
+            .length;
+        if (!this.validation_errors[propertyName] || is_different()) {
+            this.validation_errors[propertyName] = messages;
+        }
     }
 
     /**
@@ -255,9 +261,18 @@ export default class BaseStore {
      */
     @action
     validateAllProperties() {
-        this.validation_errors = {};
-        Object.keys(this.validation_rules).forEach(p => {
+        const validation_rules  = Object.keys(this.validation_rules);
+        const validation_errors = Object.keys(this.validation_errors);
+
+        validation_rules.forEach(p => {
             this.validateProperty(p, this[p]);
+        });
+
+        // Remove keys that are present in error, but not in rules:
+        validation_errors.forEach(error => {
+            if (!validation_rules.includes(error)) {
+                delete this.validation_errors[error];
+            }
         });
     }
 

@@ -3,19 +3,6 @@ import React      from 'react';
 import * as Logic from '../logic';
 
 describe('logic', () => {
-    describe('getChartConfig', () => {
-        it('should work assign end_epoch and start_epoch correctly', () => {
-            const contract_info = {
-                "exit_tick_time": 1544000100,
-                "date_start": 1544000000,
-            };
-            expect(Logic.getChartConfig(contract_info)).to.eql({
-                end_epoch: 1544000100,
-                start_epoch: 1544000000,
-            });
-        });
-    });
-
     describe('isEnded', () => {
         it('should return false when there is status and it\'s equal to open in contract info', () => {
             const contract_info = {
@@ -324,6 +311,45 @@ describe('logic', () => {
             };
             expect(Logic.isValidToSell(contract_info)).to.eql(false);
         });
+    });
 
+    describe('getEndTime', () => {
+        it('Should return exit tick time for tick contracts', () => {
+            const contract_info = {
+                tick_count: 5,
+                exit_tick_time: 9999999,
+                sell_time: 1000000,
+                is_sold: 1,
+                date_expiry: 8888888,
+            };
+            expect(Logic.getEndTime(contract_info)).to.eql(9999999);
+        });
+        it('Should return date expiry if sell time is after date expiry for non-tick contracts', () => {
+            const contract_info = {
+                exit_tick_time: 9999999,
+                sell_time: 8888888,
+                is_sold: 1,
+                date_expiry: 7777777,
+            };
+            expect(Logic.getEndTime(contract_info)).to.eql(7777777);
+        });
+        it('Should return exit tick time if sell time is before date expiry for non-tick contracts', () => {
+            const contract_info = {
+                exit_tick_time: 9999999,
+                sell_time: 7777777,
+                is_sold: 1,
+                date_expiry: 8888888,
+            };
+            expect(Logic.getEndTime(contract_info)).to.eql(9999999);
+        });
+        it('Should return undefined if not sold for non-tick contracts', () => {
+            const contract_info = {
+                exit_tick_time: 9999999,
+                sell_time: 1000000,
+                is_sold: 0,
+                date_expiry: 888888,
+            };
+            expect(Logic.getEndTime(contract_info)).to.eql(undefined);
+        });
     });
 });
