@@ -13,7 +13,7 @@ import { getTimePercentage } from './helpers';
 import Money                 from '../money.jsx';
 import Button                from '../../Form/button.jsx';
 
-class PositionsDrawerCard extends React.Component {
+class PositionsDrawerCard extends React.PureComponent {
     state = {
         is_shade_on: false,
     }
@@ -61,7 +61,7 @@ class PositionsDrawerCard extends React.Component {
                     onClickRemove={onClickRemove}
                     onClick={openContract}
                     result={result}
-                    display_shade={this.state.is_shade_on}
+                    is_shade_visible={this.state.is_shade_on}
                 />
                 <ContractLink
                     className={classNames(
@@ -86,7 +86,9 @@ class PositionsDrawerCard extends React.Component {
                                         `icons-underlying__ic-${contract_info.underlying || 'unknown'}`
                                     )}
                                 />
-                                <span className='positions-drawer-card__symbol'>{contract_info.display_name}</span>
+                                <span className='positions-drawer-card__symbol'>
+                                    {contract_info.display_name}
+                                </span>
                             </div>
                             <div className='positions-drawer-card__type'>
                                 <ContractTypeCell type={type} />
@@ -188,7 +190,7 @@ class PositionsDrawerCard extends React.Component {
                 <ResultDetails
                     contract_info={contract_info}
                     contract_end_time={sell_time}
-                    display_shade={this.handleShade}
+                    is_shade_visible={this.handleShade}
                     duration={duration}
                     duration_unit={duration_unit}
                     exit_spot={exit_spot}

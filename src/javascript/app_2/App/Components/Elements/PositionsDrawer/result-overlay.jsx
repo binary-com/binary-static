@@ -11,7 +11,7 @@ const ResultOverlay = ({
     onClick,
     onClickRemove,
     result,
-    display_shade,
+    is_shade_visible,
 }) => (
     <React.Fragment>
         <CSSTransition
@@ -27,7 +27,7 @@ const ResultOverlay = ({
             <div className={classNames('positions-drawer-card__result', {
                 'positions-drawer-card__result--won'         : (result === 'won'),
                 'positions-drawer-card__result--lost'        : (result === 'lost'),
-                'positions-drawer-card__result--shade-hidden': (display_shade === true),
+                'positions-drawer-card__result--shade-hidden': (is_shade_visible === true),
             })}
             >
                 <span
@@ -61,11 +61,11 @@ const ResultOverlay = ({
 );
 
 ResultOverlay.propTypes = {
-    contract_id  : PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-    display_shade: PropTypes.bool,
-    onClick      : PropTypes.func,
-    onClickRemove: PropTypes.func,
-    result       : PropTypes.string,
+    contract_id     : PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    is_shade_visible: PropTypes.bool,
+    onClick         : PropTypes.func,
+    onClickRemove   : PropTypes.func,
+    result          : PropTypes.string,
 };
 
 export default ResultOverlay;

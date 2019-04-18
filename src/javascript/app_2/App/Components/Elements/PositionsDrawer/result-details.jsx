@@ -22,7 +22,7 @@ class ResultDetails extends React.PureComponent {
     }
 
     handleShade = () => {
-        this.props.display_shade(this.state.is_open);
+        this.props.is_shade_visible(this.state.is_open);
     }
 
     render() {
