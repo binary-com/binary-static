@@ -21,9 +21,9 @@ default:
   - 'js'
 
 start:
+  - 'copy'
   - 'css'
   - 'js'
-  - 'copy'
   - 'shell:compile_dev'
   - 'connect:livereload'
   - 'concurrent:serve'
