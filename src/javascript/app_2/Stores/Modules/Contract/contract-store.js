@@ -54,21 +54,18 @@ export default class ContractStore extends BaseStore {
         this.forget_id = contract_info.id;
         const end_time = getEndTime(contract_info);
 
-        if (!contract_info.tick_count && !this.is_granularity_set) {
-            const chart_type  = getChartType(null, contract_info.date_expiry);
-            const granularity = getChartGranularity(null, contract_info.date_expiry);
-            if (chart_type === 'candle' && granularity !== 0) {
-                SmartChartStore.granularity = granularity;
-                SmartChartStore.chart_type  = 'candle';
-            }
-            this.is_granularity_set = true;
-        }
-
         if (end_time) {
             SmartChartStore.setRange(contract_info.date_start, end_time);
+
+            if (!contract_info.tick_count && !this.is_granularity_set) {
+                this.handleChartType(SmartChartStore, end_time, contract_info.date_start);
+            }
+
         } else if (!this.is_left_epoch_set && contract_info.tick_count) {
             this.is_left_epoch_set = true;
             SmartChartStore.setTickChartView(contract_info.purchase_time);
+        } else if (!contract_info.tick_count && !this.is_granularity_set) {
+            this.handleChartType(SmartChartStore, contract_info.date_expiry, null);
         }
 
         createChartBarrier(SmartChartStore, contract_info);
@@ -185,6 +182,16 @@ export default class ContractStore extends BaseStore {
                 };
             }));
         }
+    }
+
+    handleChartType(SmartChartStore, expiry, start) {
+        const chart_type  = getChartType(start, expiry);
+        const granularity = getChartGranularity(start, expiry);
+        if (chart_type === 'candle' && granularity !== 0) {
+            SmartChartStore.granularity = granularity;
+            SmartChartStore.chart_type  = 'candle';
+        }
+        this.is_granularity_set = true;
     }
 
     forgetProposalOpenContract() {
