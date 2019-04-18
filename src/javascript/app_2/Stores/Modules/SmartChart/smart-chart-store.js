@@ -145,6 +145,11 @@ export default class SmartChartStore extends BaseStore {
     }
 
     @action.bound
+    updateBarrierColor(is_dark_mode) {
+        this.barriers.main.updateBarrierColor(is_dark_mode);
+    }
+
+    @action.bound
     removeBarriers() {
         this.barriers = {};
     }
