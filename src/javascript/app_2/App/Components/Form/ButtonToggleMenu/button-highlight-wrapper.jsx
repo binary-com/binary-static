@@ -12,7 +12,10 @@ class HighlightWrapper extends React.PureComponent {
     componentDidMount() {
         const active_button_el = [...this.node.getElementsByClassName('button-menu__button--active')][0];
         if (!this.node) return;
-        this.updateHighlightPosition(active_button_el);
+        // timeout workaround for sometimes incorrect value received due to element resizing on page refresh/reload
+        setTimeout(() => {
+            this.updateHighlightPosition(active_button_el);
+        }, 250);
     }
 
     componentDidUpdate() {

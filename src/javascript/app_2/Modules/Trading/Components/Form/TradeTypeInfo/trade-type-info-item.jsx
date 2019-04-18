@@ -30,23 +30,25 @@ const TradeTypeInfoItem = ({
             <span className='title'>{item.text}</span>
         </div>
         }
-        <div className='trade-type-info-dialog__gif'>
-            gif explanation
-        </div>
-        <div className='trade-type-info-dialog__content'>
-            <Scrollbars
-                autoHide
-                style={{ height: '100%' }}
-            >
-                <TradeCategories category={item.value} />
-            </Scrollbars>
-        </div>
-        <div>
-            <Button
-                className='btn--primary--orange trade-type-info-dialog__choose-button'
-                text={localize('Choose')}
-                onClick={() => onSubmitButtonClick(item)}
-            />
+        <div className='trade-type-info-dialog__body'>
+            <div className='trade-type-info-dialog__gif'>
+                gif explanation
+            </div>
+            <div className='trade-type-info-dialog__content'>
+                <Scrollbars
+                    autoHide
+                    style={{ height: '100%' }}
+                >
+                    <TradeCategories category={item.value} />
+                </Scrollbars>
+            </div>
+            <div>
+                <Button
+                    className='btn--primary--orange trade-type-info-dialog__choose-button'
+                    text={localize('Choose')}
+                    onClick={() => onSubmitButtonClick(item)}
+                />
+            </div>
         </div>
         <div className='trade-type-info-navigation'>
             <div className='trade-type-info-navigation__icon' onClick={() => handlePrevClick(navigationList)} >

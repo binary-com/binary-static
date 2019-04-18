@@ -37,9 +37,9 @@
         }
     }
     &__content {
-        margin-top: 1.6em;
-        flex: 1;
-        overflow-y: auto;
+        margin-top: 1.5em;
+        height: 260px;
+        overflow: hidden;
 
         p {
             @include typeface(--paragraph-left-normal-black, none);
