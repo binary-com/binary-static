@@ -9,11 +9,11 @@ import { IconStartTimeSVG } from 'Assets/Contract/icon-start-time.jsx';
 const MarkerLine = ({
     label,
     line_style,
-    marker_name,
+    marker_config,
     status,
 }) => (
     <div className={classNames('chart-marker-line__wrapper', `chart-marker-line--${line_style}`)}>
-        { label === marker_name.LINE_END.content_config.label &&
+        { label === marker_config.LINE_END.content_config.label &&
             <Icon
                 icon={IconEndTimeSVG}
                 className={classNames('chart-marker-line__icon', {
@@ -22,7 +22,7 @@ const MarkerLine = ({
                 })}
             />
         }
-        { label === marker_name.LINE_START.content_config.label &&
+        { label === marker_config.LINE_START.content_config.label &&
             <Icon
                 icon={IconStartTimeSVG}
                 className='chart-marker-line__icon'
@@ -32,9 +32,9 @@ const MarkerLine = ({
 );
 
 MarkerLine.propTypes = {
-    label      : PropTypes.string,
-    line_style : PropTypes.string,
-    marker_name: PropTypes.object,
-    status     : PropTypes.oneOf(['won', 'lost']),
+    label        : PropTypes.string,
+    line_style   : PropTypes.string,
+    marker_config: PropTypes.object,
+    status       : PropTypes.oneOf(['won', 'lost']),
 };
 export default observer(MarkerLine);

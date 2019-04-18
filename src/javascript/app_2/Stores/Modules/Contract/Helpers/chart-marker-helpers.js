@@ -28,8 +28,8 @@ export const createMarkerExpiry = (contract_info) => {
         +end_spot_time,
         null,
         {
-            status     : `${contract_info.profit > 0 ? 'won' : 'lost' }`,
-            marker_name: MARKER_TYPES_CONFIG,
+            status       : `${contract_info.profit > 0 ? 'won' : 'lost' }`,
+            marker_config: MARKER_TYPES_CONFIG,
         },
     );
 };
@@ -52,7 +52,7 @@ export const createMarkerStartTime = (contract_info) => {
         +contract_info.date_start,
         null,
         {
-            marker_name: MARKER_TYPES_CONFIG,
+            marker_config: MARKER_TYPES_CONFIG,
         }
     );
 };
