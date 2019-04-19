@@ -454,7 +454,10 @@ const Authenticate = (() => {
     const showSuccess = () => {
         const msg = localize('We are reviewing your documents. For more details [_1]contact us[_2].',
             [`<a href="${Url.urlFor('contact')}">`, '</a>']);
-        displayNotification(msg, false, 'document_under_review');
+
+        BinarySocket.send({ get_account_status: 1 })
+            .then(() => { displayNotification(msg, false, 'document_under_review'); });
+
         setTimeout(() => {
             removeButtonLoading();
             $button.setVisibility(0);
