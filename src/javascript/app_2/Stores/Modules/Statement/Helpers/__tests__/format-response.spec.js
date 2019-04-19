@@ -21,15 +21,16 @@ describe('formatStatementTransaction', () => {
     };
 
     let expected_result = {
-        action  : constant.action_type,
-        date    : '1973-11-29\n21:33:09 GMT',
-        refid   : constant.id,
-        payout  : '1,000.00',
-        amount  : '2,000.00',
-        balance : '3,000.00',
-        desc    : 'test <br /> test <br /> test',
-        id      : constant.id,
-        app_id  : constant.id,
+        action     : constant.action_type,
+        action_type: constant.action_type,
+        date       : '1973-11-29\n21:33:09 GMT',
+        refid      : constant.id,
+        payout     : '1,000.00',
+        amount     : '2,000.00',
+        balance    : '3,000.00',
+        desc       : 'test <br /> test <br /> test',
+        id         : constant.id,
+        app_id     : constant.id,
     }
 
     it('should return an object with values of object passed as argument', () => {

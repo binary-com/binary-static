@@ -1,28 +1,28 @@
 import PropTypes             from 'prop-types';
 import React                 from 'react';
-import { IconTradeCategory } from '../../../Assets/Trading/Categories';
+// import { IconTradeCategory } from '../../../Assets/Trading/Categories';
 import { IconTradeType }     from '../../../Assets/Trading/Types';
 
-const getIconNameForCategory = (category) => {
-    const map = [
-        { key: 'rise_fall', value: ['put'] },
-        { key: 'rise_fall_equal', value: [] },
-        { key: 'high_low', value: [] },
-        { key: 'end', value: [] },
-        { key: 'stay', value: [] },
-        { key: 'match_diff', value: ['digitmatch', 'digitdiff'] },
-        { key: 'even_odd', value: ['digiteven', 'digitodd'] },
-        { key: 'over_under', value: ['digitover', 'digitunder'] },
-        { key: 'touch', value: [] },
-        { key: 'asian', value: [] },
-        { key: 'lb_call', value: [] },
-        { key: 'lb_put', value: ['put'] },
-        { key: 'lb_high_low', value: [] },
-    ];
-
-    const found = map.find(item => item.value.includes(category));
-    return found ? found.key : category;
-};
+// const getIconNameForCategory = (category) => {
+//     const map = [
+//         { key: 'rise_fall', value: ['put'] },
+//         { key: 'rise_fall_equal', value: [] },
+//         { key: 'high_low', value: [] },
+//         { key: 'end', value: [] },
+//         { key: 'stay', value: [] },
+//         { key: 'match_diff', value: ['digitmatch', 'digitdiff'] },
+//         { key: 'even_odd', value: ['digiteven', 'digitodd'] },
+//         { key: 'over_under', value: ['digitover', 'digitunder'] },
+//         { key: 'touch', value: [] },
+//         { key: 'asian', value: [] },
+//         { key: 'lb_call', value: [] },
+//         { key: 'lb_put', value: ['put'] },
+//         { key: 'lb_high_low', value: [] },
+//     ];
+//
+//     const found = map.find(item => item.value.includes(category));
+//     return found ? found.key : category;
+// };
 
 const getMarketInformation = (payload) => {
     const { shortcode } = payload;

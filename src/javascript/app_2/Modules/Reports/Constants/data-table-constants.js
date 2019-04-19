@@ -41,7 +41,9 @@ export const getTableColumnsTemplate = () => [
         key              : 'mode',
         title            : localize('Action'),
         col_index        : 'action_type',
-        renderCellContent: ({ cell_value, row_obj }) => <Label mode={getModeFromValue(cell_value)}>{row_obj.action}</Label>,
+        renderCellContent: ({ cell_value, row_obj }) => (
+            <Label mode={getModeFromValue(cell_value)}>{row_obj.action}</Label>
+        ),
     }, {
         title            : localize('Credit/Debit'),
         col_index        : 'amount',
