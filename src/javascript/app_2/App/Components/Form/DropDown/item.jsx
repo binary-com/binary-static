@@ -13,12 +13,14 @@ class Item extends React.PureComponent {
         this.setState({
             should_show_tooltip: true,
         });
+        console.log('entered');
     }
 
     onMouseLeave = () => {
         this.setState({
             should_show_tooltip: false,
         });
+        console.log('left');
     }
 
     render() {
@@ -29,7 +31,6 @@ class Item extends React.PureComponent {
             name,
             value,
         } = this.props;
-        
         return (
             <div
                 className={classNames(
@@ -42,18 +43,22 @@ class Item extends React.PureComponent {
             >
                 {!!has_symbol && item.has_tooltip &&
                     <React.Fragment>
-                        <i className='list__item-tooltip'>
+                        <div
+                            onMouseEnter={this.onMouseEnter}
+                            onMouseLeave={this.onMouseLeave}
+                        >
                             <span
-                                className={`symbols list__item-tooltip-symbols symbols--${(item.text || '').toLowerCase()}`}
-                                onMouseEnter={this.onMouseEnter}
-                                onMouseLeave={this.onMouseLeave}
+                                className={`symbols list__item-symbol symbols--${(item.text || '').toLowerCase()}`}
+
                             />
-                        </i>
+                        </div>
                         <DropdownTooltip
                             alignment='left'
                             className='list__item-tooltip'
                             message={getCurrencyName(item.value)}
                             should_show_tooltip={this.state.should_show_tooltip}
+                            coordinate_x={500}
+                            coordinate_y={200}
                         />
                     </React.Fragment>
                 }

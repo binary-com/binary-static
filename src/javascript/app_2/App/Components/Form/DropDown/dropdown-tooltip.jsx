@@ -2,47 +2,24 @@ import classNames          from 'classnames';
 import PropTypes           from 'prop-types';
 import React               from 'react';
 import ReactDOM            from 'react-dom';
-import { Icon }            from 'Assets/Common/icon.jsx';
-import { IconInfoBlue }    from 'Assets/Common/icon-info-blue.jsx';
-import { IconInfoOutline } from 'Assets/Common/icon-info-outline.jsx';
-import { IconQuestion }    from 'Assets/Common/icon-question.jsx';
-import { IconRedDot }      from 'Assets/Common/icon-red-dot.jsx';
 
-const DropdownTooltip = (
+const DropdownTooltip = ({
     alignment,
     className,
-    classNameIcon,
-    has_error,
-    icon, // only question or info accepted
     message,
     should_show_tooltip,
-) => {
-    const icon_class = classNames(classNameIcon, icon);
+    coordinate_x,
+    coordinate_y,
+}) => {
     const tooltip = (
         <span
-            className={classNames(
-                'list__item-tooltip',
-                'tooltip')
-            }
+            style={{ left: coordinate_x, top: coordinate_y }}
+            className={
+                classNames(
+                    className,
+                    { 'list__item-tooltip--show': should_show_tooltip }
+                )}
         >
-            {icon === 'info' &&
-                <React.Fragment>
-                    <Icon
-                        icon={IconInfoOutline}
-                        className={icon_class}
-                    />
-                    <Icon
-                        icon={IconInfoBlue}
-                        className={classNames(
-                            `${classNameIcon}-balloon-icon`,
-                            'tooltip__balloon-icon',
-                            { 'tooltip__balloon-icon--show': should_show_tooltip }
-                        )}
-                    />
-                </React.Fragment>
-            }
-            {icon === 'question' && <Icon icon={IconQuestion} className={icon_class} />}
-            {icon === 'dot'      && <Icon icon={IconRedDot} className={icon_class} />}
             { message }
         </span>
     );
