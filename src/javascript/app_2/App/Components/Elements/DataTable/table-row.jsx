@@ -12,7 +12,7 @@ const TableRow = ({
     row_obj = {},
     to,
 }) => {
-    const cells = columns.map(({ col_index, renderCellContent, title }) => {
+    const cells = columns.map(({ col_index, renderCellContent, title, key }) => {
         let cell_content = title;
         if (!is_header) {
             const cell_value = row_obj[col_index] || '';
@@ -22,7 +22,7 @@ const TableRow = ({
         }
 
         return (
-            <TableCell col_index={col_index} key={col_index}>
+            <TableCell col_index={col_index} key={key || col_index}>
                 {cell_content}
             </TableCell>
         );
