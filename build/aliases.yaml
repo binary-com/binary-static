@@ -20,6 +20,14 @@ default:
   - 'css'
   - 'js'
 
+start:
+  - 'copy'
+  - 'css'
+  - 'js'
+  - 'shell:compile_dev'
+  - 'connect:livereload'
+  - 'concurrent:serve'
+
 dev:
   - 'shell:check_origin'
   - 'clean'

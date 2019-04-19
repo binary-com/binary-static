@@ -43,7 +43,7 @@
 
         return {
             isApp2: function() {
-                return /^\/app/i.test(location.pathname);
+                return location.href.includes('/app/');
             },
             redirectToReactRoute: function(lang) {
                 // Converts the path and query strings into just query strings and
@@ -99,7 +99,9 @@
     }
 
     var all_lang_regex = new RegExp('(' + all_languages.join('|') + ')', 'i');
-    var redirectFn = routeHandler.isApp2() ? routeHandler.redirectToReactRoute : routeHandler.redirect;
+    var is_from_404 = location.search &&
+        location.search.toLowerCase().indexOf('from_404')  !== -1;
+    var redirectFn = routeHandler.isApp2() && !is_from_404 ? routeHandler.redirectToReactRoute : routeHandler.redirect;
 
     var lang = location.href
         .split('/')

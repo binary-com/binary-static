@@ -150,7 +150,7 @@ export default class TradeStore extends BaseStore {
     @action.bound
     refresh = () => {
         WS.forgetAll('proposal');
-    }
+    };
 
     @action.bound
     async prepareTradeStore() {
