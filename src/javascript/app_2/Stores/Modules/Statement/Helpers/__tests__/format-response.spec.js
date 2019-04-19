@@ -1,10 +1,11 @@
 import { expect }                       from 'chai';
 import { formatStatementTransaction }   from '../format-response';
+import { toTitleCase }                  from '_common/string_util';
 
 describe('formatStatementTransaction', () => {
     const constant = {
         id: 1234,
-        action_type: 'Buy',
+        action_type: 'buy',
     }
 
     const currency = 'USD';
@@ -18,10 +19,11 @@ describe('formatStatementTransaction', () => {
         longcode        : 'test \n test \n test',
         contract_id     : constant.id,
         app_id          : constant.id,
+        shortcode       : 'shortcode',
     };
 
     let expected_result = {
-        action     : constant.action_type,
+        action     : toTitleCase(constant.action_type),
         action_type: constant.action_type,
         date       : '1973-11-29\n21:33:09 GMT',
         refid      : constant.id,
@@ -31,6 +33,7 @@ describe('formatStatementTransaction', () => {
         desc       : 'test <br /> test <br /> test',
         id         : constant.id,
         app_id     : constant.id,
+        shortcode  : 'shortcode',
     }
 
     it('should return an object with values of object passed as argument', () => {
