@@ -6,18 +6,36 @@ import ReactDOM            from 'react-dom';
 const DropdownTooltip = ({
     alignment,
     className,
+    element_coordinates,
     message,
     should_show_tooltip,
-    coordinate_x,
-    coordinate_y,
 }) => {
+    switch (alignment) {
+        case 'top':
+            element_coordinates.y -= 25;
+            break;
+        case 'right':
+            element_coordinates.x += 25;
+            break;
+        case 'bottom':
+            element_coordinates.y += 25;
+            break;
+        case 'left':
+            element_coordinates.x -= 25;
+            break;
+        default:
+            break;
+    }
+
     const tooltip = (
         <span
-            style={{ left: coordinate_x, top: coordinate_y }}
+            style={{ left: element_coordinates.x, top: element_coordinates.y }}
             className={
                 classNames(
+                    'dropdown-tooltip',
+                    { 'dropdown-tooltip--show': should_show_tooltip },
                     className,
-                    { 'list__item-tooltip--show': should_show_tooltip }
+                    { 'list__item-tooltip--show': should_show_tooltip },
                 )}
         >
             { message }

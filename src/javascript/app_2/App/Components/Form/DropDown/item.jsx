@@ -9,18 +9,33 @@ class Item extends React.PureComponent {
         should_show_tooltip: false,
     }
 
+    constructor(props) {
+        super(props);
+        this.item_reference = React.createRef();
+        this.item_coordinates = {
+            x: 0,
+            y: 0,
+        };
+    }
+
     onMouseEnter = () => {
         this.setState({
             should_show_tooltip: true,
         });
-        console.log('entered');
+        this.item_coordinates = {
+            x: this.item_reference.current.getBoundingClientRect().x,
+            y: this.item_reference.current.getBoundingClientRect().y,
+        };
     }
 
     onMouseLeave = () => {
         this.setState({
             should_show_tooltip: false,
         });
-        console.log('left');
+        this.item_coordinates = {
+            x: 0,
+            y: 0,
+        };
     }
 
     render() {
@@ -46,10 +61,10 @@ class Item extends React.PureComponent {
                         <div
                             onMouseEnter={this.onMouseEnter}
                             onMouseLeave={this.onMouseLeave}
+                            ref={this.item_reference}
                         >
                             <span
                                 className={`symbols list__item-symbol symbols--${(item.text || '').toLowerCase()}`}
-
                             />
                         </div>
                         <DropdownTooltip
@@ -57,8 +72,7 @@ class Item extends React.PureComponent {
                             className='list__item-tooltip'
                             message={getCurrencyName(item.value)}
                             should_show_tooltip={this.state.should_show_tooltip}
-                            coordinate_x={500}
-                            coordinate_y={200}
+                            element_coordinates={this.item_coordinates}
                         />
                     </React.Fragment>
                 }
