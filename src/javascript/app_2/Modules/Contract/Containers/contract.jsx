@@ -15,7 +15,6 @@ const Contract = ({
     has_error,
     match,
     symbol,
-    chart_config,
 }) => {
     const form_wrapper_class = is_mobile ? 'mobile-wrapper' : 'sidebar__container desktop-only';
     return (
@@ -32,7 +31,6 @@ const Contract = ({
                                         InfoBox={<InfoBox />}
                                         Digits={<Digits />}
                                         symbol={symbol}
-                                        {...chart_config}
                                     />
                                 </React.Suspense>
                             }
@@ -63,7 +61,6 @@ const Contract = ({
 };
 
 Contract.propTypes = {
-    chart_config : PropTypes.object,
     error_message: PropTypes.string,
     has_error    : PropTypes.bool,
     is_mobile    : PropTypes.bool,
@@ -73,7 +70,6 @@ Contract.propTypes = {
 
 export default connect(
     ({ modules, ui }) => ({
-        chart_config : modules.contract.chart_config,
         error_message: modules.contract.error_message,
         has_error    : modules.contract.has_error,
         is_mobile    : ui.is_mobile,
