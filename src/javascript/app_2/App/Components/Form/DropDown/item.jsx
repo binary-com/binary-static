@@ -22,9 +22,10 @@ class Item extends React.PureComponent {
         this.setState({
             should_show_tooltip: true,
         });
+        const item_element = this.item_reference.current.getBoundingClientRect();
         this.item_coordinates = {
-            x: this.item_reference.current.getBoundingClientRect().x,
-            y: this.item_reference.current.getBoundingClientRect().y,
+            x: item_element.x,
+            y: item_element.y - item_element.height - 8,
         };
     }
 

@@ -205,15 +205,19 @@
             }
         }
         &-tooltip {
+            border-style: solid;
+            border-color: $COLOR_WHITE;
+            border-width: 1px;
+            border-radius: 3px;
             position: absolute;
-            height: auto;
-            text-decoration: none;
-            font-size: 0.8em !important;
-            line-height: 1em;
-            padding: 0.4em !important;
+            padding: 2px 5px;
+            height: max-content;
             visibility: hidden;
+            @include typeface(--small-center-normal-active, none);
+
             @include themify($themes) {
-                color: themed('text_primary_color');
+                color: themed('text_active_color');
+                @include tooltipColor(themed('background_tooltip_color'));
             }
 
             &--show {

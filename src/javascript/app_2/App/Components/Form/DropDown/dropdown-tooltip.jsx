@@ -10,6 +10,7 @@ const DropdownTooltip = ({
     message,
     should_show_tooltip,
 }) => {
+    let style;
     switch (alignment) {
         case 'top':
             element_coordinates.y -= 25;
@@ -21,7 +22,10 @@ const DropdownTooltip = ({
             element_coordinates.y += 25;
             break;
         case 'left':
-            element_coordinates.x -= 25;
+            style = {
+                right: `calc(100% - ${element_coordinates.x - 5}px)`,
+                top  : element_coordinates.y,
+            };
             break;
         default:
             break;
@@ -29,11 +33,9 @@ const DropdownTooltip = ({
 
     const tooltip = (
         <span
-            style={{ left: element_coordinates.x, top: element_coordinates.y }}
+            style={style}
             className={
                 classNames(
-                    'dropdown-tooltip',
-                    { 'dropdown-tooltip--show': should_show_tooltip },
                     className,
                     { 'list__item-tooltip--show': should_show_tooltip },
                 )}
