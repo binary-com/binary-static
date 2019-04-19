@@ -107,15 +107,6 @@ class PositionsDrawerCard extends React.PureComponent {
                             'positions-drawer-card__grid-profit-payout'
                         )}
                         >
-                            {!result ? localize('Indicative Price:') : localize('Payout:')}
-                        </div>
-                        <div className={classNames(
-                            'positions-drawer-card__profit-loss', {
-                                'positions-drawer-card__profit-loss--negative': (profit_loss < 0),
-                                'positions-drawer-card__profit-loss--positive': (profit_loss > 0),
-                            })}
-                        >
-                            <Money amount={Math.abs(profit_loss)} currency={currency} />
                             <div className={classNames(
                                 'positions-drawer-card__profit-loss',
                                 'positions-drawer-card__profit-loss-label',
@@ -132,10 +123,8 @@ class PositionsDrawerCard extends React.PureComponent {
                             </div>
                             <div className={classNames(
                                 'positions-drawer-card__profit-loss', {
-                                    'positions-drawer-card__profit-loss--minus'   : (status !== 'complete' && profit_loss < 0),
-                                    'positions-drawer-card__profit-loss--plus'    : (status !== 'complete' && profit_loss > 0),
-                                    'positions-drawer-card__profit-loss--negative': (status === 'complete' && profit_loss < 0),
-                                    'positions-drawer-card__profit-loss--positive': (status === 'complete' && profit_loss > 0),
+                                    'positions-drawer-card__profit-loss--negative': (profit_loss < 0),
+                                    'positions-drawer-card__profit-loss--positive': (profit_loss > 0),
                                 })}
                             >
                                 <Money amount={Math.abs(profit_loss)} currency={currency} />
