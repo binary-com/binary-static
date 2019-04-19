@@ -217,7 +217,7 @@
 
             @include themify($themes) {
                 color: themed('text_active_color');
-                @include tooltipColor(themed('background_tooltip_color'));
+                background-color: themed('background_color');
             }
 
             &--show {

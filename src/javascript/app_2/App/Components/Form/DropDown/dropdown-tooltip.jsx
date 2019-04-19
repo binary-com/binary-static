@@ -13,18 +13,27 @@ const DropdownTooltip = ({
     let style;
     switch (alignment) {
         case 'top':
-            element_coordinates.y -= 25;
+            style = {
+                left: element_coordinates.x,
+                top : element_coordinates.y - element_coordinates.height - element_coordinates.height - 5,
+            };
             break;
         case 'right':
-            element_coordinates.x += 25;
+            style = {
+                left: element_coordinates.x + element_coordinates.width + 5,
+                top : element_coordinates.y - element_coordinates.height - 8,
+            };
             break;
         case 'bottom':
-            element_coordinates.y += 25;
+            style = {
+                left: element_coordinates.x,
+                top : element_coordinates.y + 5,
+            };
             break;
         case 'left':
             style = {
                 right: `calc(100% - ${element_coordinates.x - 5}px)`,
-                top  : element_coordinates.y,
+                top  : element_coordinates.y - element_coordinates.height - 8,
             };
             break;
         default:

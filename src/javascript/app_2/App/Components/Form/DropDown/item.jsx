@@ -13,8 +13,14 @@ class Item extends React.PureComponent {
         super(props);
         this.item_reference = React.createRef();
         this.item_coordinates = {
-            x: 0,
-            y: 0,
+            x     : 0,
+            y     : 0,
+            top   : 0,
+            left  : 0,
+            bottom: 0,
+            right : 0,
+            width : 0,
+            height: 0,
         };
     }
 
@@ -22,21 +28,13 @@ class Item extends React.PureComponent {
         this.setState({
             should_show_tooltip: true,
         });
-        const item_element = this.item_reference.current.getBoundingClientRect();
-        this.item_coordinates = {
-            x: item_element.x,
-            y: item_element.y - item_element.height - 8,
-        };
+        this.item_coordinates = this.item_reference.current.getBoundingClientRect();
     }
 
     onMouseLeave = () => {
         this.setState({
             should_show_tooltip: false,
         });
-        this.item_coordinates = {
-            x: 0,
-            y: 0,
-        };
     }
 
     render() {
