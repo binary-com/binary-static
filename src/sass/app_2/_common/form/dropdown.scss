@@ -205,14 +205,13 @@
             }
         }
         &-tooltip {
+            visibility: hidden;
             position: absolute;
             padding: 0.7em;
             margin: 0 1em;
-            visibility: hidden;
             max-width: 280px;
             border-radius: 4px;
             @include typeface(--small-center-normal-active, none);
-
             @include themify($themes) {
                 color: themed('text_active_color');
                 background: themed('background_tooltip_color');
@@ -221,14 +220,44 @@
             &-arrow {
                 content: ' ';
                 position: absolute;
-                left: 100%;
-                top: 50%;
                 border-width: 5px;
-                margin-top: -5px;
                 border-style: solid;
 
-                @include themify($themes) {
-                    border-color: transparent transparent transparent themed('background_tooltip_color');
+                &--left {
+                    left: 100%;
+                    top: 50%;
+                    margin-top: -5px;
+
+                    @include themify($themes) {
+                        border-color: transparent transparent transparent themed('background_tooltip_color');
+                    }
+                }
+                &--right {
+                    right: 100%;
+                    top: 50%;
+                    margin-top: -5px;
+
+                    @include themify($themes) {
+                        border-color: transparent themed('background_tooltip_color') transparent transparent;
+                    }
+                }
+                &--top {
+                    left: 50%;
+                    top: 100%;
+                    margin-left: -5px;
+
+                    @include themify($themes) {
+                        border-color: themed('background_tooltip_color') transparent transparent transparent;
+                    }
+                }
+                &--bottom {
+                    left: 50%;
+                    bottom: 100%;
+                    margin-left: -5px;
+
+                    @include themify($themes) {
+                        border-color: transparent transparent themed('background_tooltip_color') transparent;
+                    }
                 }
             }
             &--show {

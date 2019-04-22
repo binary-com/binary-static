@@ -49,7 +49,12 @@ const DropdownTooltip = ({
                     { 'list__item-tooltip--show': should_show_tooltip },
                 )}
         >
-            <span className='list__item-tooltip-arrow' />
+            <span className={
+                classNames(
+                    'list__item-tooltip-arrow',
+                    `list__item-tooltip-arrow--${alignment}`,
+                )}
+            />
             { message }
         </span>
     );
