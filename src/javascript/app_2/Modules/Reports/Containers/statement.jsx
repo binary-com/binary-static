@@ -2,11 +2,13 @@ import { PropTypes as MobxPropTypes } from 'mobx-react';
 import PropTypes                      from 'prop-types';
 import React                          from 'react';
 import { withRouter }                 from 'react-router-dom';
+import { localize }                   from '_common/localize';
 import DataTable                      from 'App/Components/Elements/DataTable';
 import { getContractPath }            from 'App/Components/Routes/helpers';
 import { connect }                    from 'Stores/connect';
 import EmptyStatementMessage          from '../Components/empty-statement-message.jsx';
 import { getTableColumnsTemplate }    from '../Constants/data-table-constants';
+import { ReportsMeta }                from '../Components/reports-meta.jsx';
 import Loading                        from '../../../../../templates/_common/components/loading.jsx';
 
 const PlaceholderComponent = (props) => (
@@ -35,22 +37,29 @@ class Statement extends React.Component {
         const columns = getTableColumnsTemplate();
 
         return (
-            <div className='statement__content'>
-                <DataTable
-                    className='statement'
-                    data_source={data}
-                    columns={columns}
-                    onScroll={handleScroll}
-                    getRowLink={(row_obj) => row_obj.id ? getContractPath(row_obj.id) : undefined}
-                    is_empty={is_empty}
-                >
-                    <PlaceholderComponent
-                        is_loading={is_loading}
-                        has_selected_date={has_selected_date}
+            <React.Fragment>
+                {/* TODO Add proper messages before the PR */}
+                <ReportsMeta
+                    i18n_heading={localize('Statement')}
+                    i18n_message={localize('Vestibulum rutrum quam fringilla tincidunt. Suspendisse nec tortor.')}
+                />
+                <div className='statement__content'>
+                    <DataTable
+                        className='statement'
+                        data_source={data}
+                        columns={columns}
+                        onScroll={handleScroll}
+                        getRowLink={(row_obj) => row_obj.id ? getContractPath(row_obj.id) : undefined}
                         is_empty={is_empty}
-                    />
-                </DataTable>
-            </div>
+                    >
+                        <PlaceholderComponent
+                            is_loading={is_loading}
+                            has_selected_date={has_selected_date}
+                            is_empty={is_empty}
+                        />
+                    </DataTable>
+                </div>
+            </React.Fragment>
         );
     }
 }

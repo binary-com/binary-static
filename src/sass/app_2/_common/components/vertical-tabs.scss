@@ -4,12 +4,12 @@
     justify-content: flex-start;
 
     &--full-screen {
-        $TOTAL_REPORTS_HEADER: 56px;
-        $END_SPACING_REQUIRED: 32px; // Spacing between last child and end of the container
-        height: calc(100vh - #{$HEADER_HEIGHT + $FOOTER_HEIGHT} - #{$END_SPACING_REQUIRED});
+        $END_SPACE_REQUIRED: 106px; // Spacing between last child and end of the container
+        $BOTTOM_SPACING_REQUIRED: 32px; // Spacing between end of the container and Footer
+        height: calc(100vh - #{$HEADER_HEIGHT + $FOOTER_HEIGHT} - #{$BOTTOM_SPACING_REQUIRED});
 
         .vertical-tab__content {
-            height: calc(100vh - #{$HEADER_HEIGHT + $FOOTER_HEIGHT} - #{$TOTAL_REPORTS_HEADER});
+            height: calc(100vh - #{$HEADER_HEIGHT + $FOOTER_HEIGHT} - #{$END_SPACE_REQUIRED});
         }
     }
     &:not(.vertical-tab--full-screen) {
@@ -24,7 +24,8 @@
         display: flex;
         flex-flow: row-reverse nowrap;
         padding: 16px;
-        margin-bottom: 8px;
+        //margin-bottom: 8px;
+        // TODO check design for margin-bottom
 
         &--icon {
             cursor: pointer;
