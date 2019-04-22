@@ -31,17 +31,22 @@ const Toast = ({
     }
 
     return (
-        <div className={classNames('toast__body', TYPES[data.type.toUpperCase()])}>
-            <div className='toast__icon'>
-                { data.type === 'error'   && <Icon icon={IconError} className='toast__icon-type' /> }
-                { data.type === 'info'    && <Icon icon={IconInfoBlue} className='toast__icon-type' /> }
-                { data.type === 'success' && <Icon icon={IconSuccess} className='toast__icon-type' /> }
-                { data.type === 'warning' && <Icon icon={IconWarning} className='toast__icon-type' /> }
+        <div className={classNames('toast-message', TYPES[data.type.toUpperCase()])}>
+            <div className='toast-message__icon'>
+                { data.type === 'error'   && <Icon icon={IconError} className='toast-message__icon-type' /> }
+                { data.type === 'info'    && <Icon icon={IconInfoBlue} className='toast-message__icon-type' /> }
+                { data.type === 'success' && <Icon icon={IconSuccess} className='toast-message__icon-type' /> }
+                { data.type === 'warning' && <Icon icon={IconWarning} className='toast-message__icon-type' /> }
             </div>
-            <div className='toast__message'>
-                {data.message}
+            <div className='toast-message__text-container'>
+                <div className='toast-message__header'>
+                    <h4>{data.header}</h4>
+                </div>
+                <p className='toast-message__message-text'>
+                    {data.message}
+                </p>
             </div>
-            <CloseButton onClick={onClick} />
+            {/* <CloseButton onClick={onClick} /> */}
         </div>
     );
 };
@@ -50,8 +55,9 @@ Toast.propTypes = {
     data: PropTypes.shape({
         closeOnClick : PropTypes.func,
         delay        : PropTypes.number,
+        header       : PropTypes.string,
         is_auto_close: PropTypes.bool,
-        message      : PropTypes.node,
+        message      : PropTypes.string,
         type         : PropTypes.oneOf(['error', 'info', 'success', 'warning']),
     }),
     removeToastMessage: PropTypes.func,

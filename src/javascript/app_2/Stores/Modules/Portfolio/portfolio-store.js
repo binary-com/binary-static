@@ -3,6 +3,7 @@ import {
     computed,
     observable }                   from 'mobx';
 import { WS }                      from 'Services';
+import { localize }                from '_common/localize';
 import { formatPortfolioPosition } from './Helpers/format-response';
 import {
     getCurrentTick,
@@ -147,7 +148,8 @@ export default class PortfolioStore extends BaseStore {
                 transaction_id: response.sell.transaction_id,
             };
             this.root_store.ui.addToastMessage({
-                message: `Contract was sold for ${response.sell.sold_for}.`,
+                header : localize('Contract sold'),
+                message: `${localize('Contract was sold for')} ${response.sell.sold_for}.`,
                 type   : 'info',
             });
         }

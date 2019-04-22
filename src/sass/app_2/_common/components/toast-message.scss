@@ -1,60 +1,51 @@
-/** @define toast; */
-.toast {
+/** @define toast-container; */
+.toast-container {
     z-index: 9999;
     position: absolute;
     right: 15px;
+}
 
-    &__body {
-        position: relative;
-        border-radius: 4px;
-        cursor: pointer;
-        display: grid;
-        grid-template-columns: 1.6em auto 1.6em;
-        padding: 1.1em 1.6em;
-        min-height: 2vh;
-        min-width: 20vw;
-        max-width: 30vw;
-        margin-top: 1em;
-        font-size: 1.2em;
-        @include themify($themes) {
-            color: themed('text_color');
-        }
+/** @define toast-message; */
+.toast-message {
+    display: flex;
+    border-radius: 4px;
+    min-width: 348px;
+    padding: 16px;
+    color: $COLOR_WHITE;
 
-        &--error {
-            background-color: $COLOR_RED;
-        }
-        &--info {
-            background-color: $COLOR_SKY_BLUE;
-        }
-        &--success {
-            background-color: $COLOR_GREEN_1;
-        }
-        &--warning {
-            background-color: $COLOR_ORANGE;
-        }
+    &--error {
+        background-color: $COLOR_RED;
     }
-    &__message {
-        align-self: center;
-        padding: 0.1em 0.8em;
+    &--info {
+        background-color: $COLOR_SKY_BLUE;
+    }
+    &--success {
+        background-color: $COLOR_GREEN_1;
+    }
+    &--warning {
+        background-color: $COLOR_ORANGE;
+    }
+    &__text-container {
+        display: flex;
+        flex-direction: column;
+    }
+    &__message-text {
+        font-size: 14px;
+    }
+    &__header {
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 1.5;
+        margin-bottom: 8px;
     }
     &__close-button {
-        align-self: center;
-        background: transparent !important;
-        border: 0 !important;
-        padding: 0 !important;
         cursor: pointer;
-        opacity: 0.7;
-
-        &:hover, &:focus {
-            opacity: 1;
-        }
     }
     &__icon {
-        align-self: center;
-
         &-type {
-            margin-right: 0.8em;
-            padding-top: 0.5em;
+            // TODO:
+            // margin-right: 0.8em;
+            // padding-top: 0.5em;
         }
     }
 }

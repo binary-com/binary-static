@@ -6,7 +6,7 @@ import Toast  from '../Components/Elements/ToastMessage';
 class ToastMessage extends React.Component {
     render() {
         return (
-            <div className='toast'>
+            <div className='toast-container'>
                 {
                     this.props.toast_messages.map((toast, idx) => (
                         <Toast
@@ -27,8 +27,9 @@ ToastMessage.propTypes = {
         PropTypes.shape({
             closeOnClick : PropTypes.func,
             delay        : PropTypes.number,
+            header       : PropTypes.string,
             is_auto_close: PropTypes.bool,
-            message      : PropTypes.node,
+            message      : PropTypes.string,
             type         : PropTypes.oneOf(['error', 'info', 'success', 'warning']),
         }),
     ),
