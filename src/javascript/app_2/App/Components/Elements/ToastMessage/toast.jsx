@@ -50,7 +50,7 @@ const Toast = ({
                     {data.message}
                 </p>
             </div>
-            {/* <CloseButton onClick={onClick} /> */}
+            <CloseButton onClick={onClick} />
         </div>
     );
 };

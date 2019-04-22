@@ -8,6 +8,7 @@
 
 /** @define toast-message; */
 .toast-message {
+    position: relative;
     display: flex;
     border-radius: 4px;
     min-width: 348px;
@@ -44,6 +45,9 @@
     }
     &__close-button {
         cursor: pointer;
+        position: absolute;
+        right: 8px;
+        top: 8px;
     }
     &__icon {
         &-type {
