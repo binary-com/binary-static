@@ -1,6 +1,8 @@
+import classNames          from 'classnames';
 import PropTypes           from 'prop-types';
 import React               from 'react';
-import Item                from 'App/Components/Form/DropDown/item.jsx';
+import { getCurrencyName } from '_common/base/currency_base';
+import Tooltip2            from 'App/Components/Elements/tooltip-2.jsx';
 
 const Items = ({
     handleSelect,
@@ -10,14 +12,35 @@ const Items = ({
     value,
 }) => (
     items.map((item, idx) => (
-        <Item
-            handleSelect={handleSelect}
-            has_symbol={has_symbol}
-            item={item}
-            key={idx}
+        <div
+            className={classNames(
+                'list__item',
+                { 'list__item--selected': value === item.value }
+            )}
             name={name}
-            value={value}
-        />
+            value={item.value}
+            onClick={handleSelect.bind(null, item)}
+            key={idx}
+        >
+            {!!has_symbol && item.has_tooltip &&
+                <Tooltip2
+                    alignment='left'
+                    message={getCurrencyName(item.value)}
+                >
+                    <span
+                        className={`symbols list__item-symbol symbols--${(item.text || '').toLowerCase()}`}
+                    />
+                </Tooltip2>
+            }
+
+            {!!has_symbol && !item.has_tooltip &&
+                <span className={`list__item-text symbols symbols--${(item.text || '').toLowerCase()}`} />
+            }
+
+            {!has_symbol &&
+                <span className='list__item-text'>{item.text}</span>
+            }
+        </div>
     ))
 );
 
