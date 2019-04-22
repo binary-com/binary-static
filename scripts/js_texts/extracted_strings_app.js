@@ -66,6 +66,7 @@ module.exports = [
     'Continue trading',
     'Contract',
     'Contract Confirmation',
+    'Contract Details',
     'Contract Ends',
     'Contract Information',
     'Contract Result',
