@@ -206,11 +206,10 @@
         }
         &-tooltip {
             position: absolute;
-            padding: 5px 10px;
-            height: max-content;
+            padding: 0.7em;
+            margin: 0 1em;
             visibility: hidden;
             max-width: 280px;
-            min-width: 60px;
             border-radius: 4px;
             @include typeface(--small-center-normal-active, none);
 

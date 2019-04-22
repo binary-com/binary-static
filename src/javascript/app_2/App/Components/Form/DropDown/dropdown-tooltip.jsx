@@ -14,26 +14,26 @@ const DropdownTooltip = ({
     switch (alignment) {
         case 'top':
             style = {
-                left: element_coordinates.x,
-                top : element_coordinates.y - element_coordinates.height - element_coordinates.height - 5,
+                left  : element_coordinates.x,
+                bottom: `calc(100% - ${element_coordinates.top}px)`,
             };
             break;
         case 'right':
             style = {
-                left: element_coordinates.x + element_coordinates.width + 5,
-                top : element_coordinates.y - element_coordinates.height - 8,
+                left: element_coordinates.x + element_coordinates.width,
+                top : element_coordinates.y,
             };
             break;
         case 'bottom':
             style = {
                 left: element_coordinates.x,
-                top : element_coordinates.y + 5,
+                top : element_coordinates.y + element_coordinates.height,
             };
             break;
         case 'left':
             style = {
-                right: `calc(100% - ${element_coordinates.x - 10}px)`,
-                top  : element_coordinates.y - element_coordinates.height - 8,
+                right: `calc(100% - ${element_coordinates.left}px)`,
+                top  : element_coordinates.y,
             };
             break;
         default:
@@ -56,7 +56,7 @@ const DropdownTooltip = ({
 
     return ReactDOM.createPortal(
         tooltip,
-        document.getElementById('app_contents'),
+        document.getElementById('binary_app'),
     );
 };
 
