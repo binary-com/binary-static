@@ -2,7 +2,7 @@
 .toast {
     z-index: 9999;
     position: absolute;
-    right: 1em;
+    right: 15px;
 
     &__body {
         position: relative;
@@ -56,11 +56,5 @@
             margin-right: 0.8em;
             padding-top: 0.5em;
         }
-    }
-    &--top-right {
-        right: 1em;
-    }
-    &--top-left {
-        left: 1em;
     }
 }

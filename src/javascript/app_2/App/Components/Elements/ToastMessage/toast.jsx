@@ -10,7 +10,6 @@ import { IconSuccess }  from 'Assets/Common/icon-success.jsx';
 import CloseButton      from './close-button.jsx';
 import {
     DEFAULT_DELAY,
-    POSITIONS,
     TYPES }             from './constants';
 
 const Toast = ({
@@ -28,12 +27,12 @@ const Toast = ({
     const onClick = () => destroy(true);
 
     if (data.is_auto_close || data.is_auto_close === undefined) {
-        setTimeout(destroy, data.delay || DEFAULT_DELAY);
+        // setTimeout(destroy, data.delay || DEFAULT_DELAY);
     }
 
     return (
         <div
-            className={classNames('toast__body', POSITIONS.TOP_RIGHT, data.position, TYPES[data.type.toUpperCase()])}
+            className={classNames('toast__body', TYPES[data.type.toUpperCase()])}
             onClick={onClick}
         >
             <div className='toast__body__icon'>
@@ -56,7 +55,6 @@ Toast.propTypes = {
         delay        : PropTypes.number,
         is_auto_close: PropTypes.bool,
         message      : PropTypes.node,
-        position     : PropTypes.string,
         type         : PropTypes.string,
     }),
     removeToastMessage: PropTypes.func,

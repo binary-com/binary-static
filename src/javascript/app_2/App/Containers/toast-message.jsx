@@ -8,7 +8,7 @@ class ToastMessage extends React.Component {
 
     render() {
         return (
-            <div className={classNames('toast', this.props.position)}>
+            <div className='toast'>
                 {
                     this.props.toast_messages.map((toast, id) => (
                         <Toast
@@ -24,7 +24,6 @@ class ToastMessage extends React.Component {
 }
 
 ToastMessage.propTypes = {
-    position          : PropTypes.string,
     removeToastMessage: PropTypes.func,
     toast_messages    : PropTypes.arrayOf(
         PropTypes.shape({
@@ -32,7 +31,6 @@ ToastMessage.propTypes = {
             delay        : PropTypes.number,
             is_auto_close: PropTypes.bool,
             message      : PropTypes.node,
-            position     : PropTypes.string,
             type         : PropTypes.string,
         }),
     ),
