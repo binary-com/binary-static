@@ -99,6 +99,9 @@ export default class TradeStore extends BaseStore {
     @observable proposal_info = {};
     @observable purchase_info = {};
 
+    // Loading
+    @observable loading_status = '';
+
     // Query string
     query = '';
 
@@ -461,6 +464,11 @@ export default class TradeStore extends BaseStore {
     }
 
     @action.bound
+    updateLoadingStatus(status) {
+        this.loading_status = status;
+    }
+
+    @action.bound
     updateQueryString() {
         // Update the url's query string by default values of the store
         const query_params = URLHelper.updateQueryString(
@@ -517,12 +525,22 @@ export default class TradeStore extends BaseStore {
     @action.bound
     async onMount() {
         await this.prepareTradeStore();
+        setTimeout(() => {
+            this.updateLoadingStatus('Retrieving market symbols');
+        }, 300);
         this.debouncedProposal();
         runInAction(() => {
             this.is_trade_component_mounted = true;
+            setTimeout(() => {
+                this.updateLoadingStatus('Retrieving trading times');
+            }, 300);
+
         });
         this.updateQueryString();
         this.onSwitchAccount(this.accountSwitcherListener);
+        setTimeout(() => {
+            this.updateLoadingStatus('Retrieving chart data');
+        }, 300);
         // this.root_store.ui.setAppLoading(false);
     }
 
