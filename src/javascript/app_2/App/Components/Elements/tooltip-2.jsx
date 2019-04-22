@@ -44,7 +44,7 @@ class Tooltip2 extends React.PureComponent {
         }
     }
 
-    createTooltipElement = (
+    createTooltipBubble = (
         alignment,
         style,
         should_show_tooltip,
@@ -73,8 +73,8 @@ class Tooltip2 extends React.PureComponent {
             message,
         } = this.props;
 
-        const tooltip = ReactDOM.createPortal(
-            this.createTooltipElement(
+        const tooltip_bubble = ReactDOM.createPortal(
+            this.createTooltipBubble(
                 alignment,
                 this.createPositionStyle(alignment),
                 this.state.should_show_tooltip,
@@ -94,7 +94,7 @@ class Tooltip2 extends React.PureComponent {
                 </div>
 
                 { this.state.should_show_tooltip &&
-                    tooltip
+                    tooltip_bubble
                 }
             </React.Fragment>
         );
