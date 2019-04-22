@@ -525,22 +525,22 @@ export default class TradeStore extends BaseStore {
     @action.bound
     async onMount() {
         await this.prepareTradeStore();
-        setTimeout(() => {
-            this.updateLoadingStatus('Retrieving market symbols');
-        }, 300);
         this.debouncedProposal();
         runInAction(() => {
             this.is_trade_component_mounted = true;
             setTimeout(() => {
+                this.updateLoadingStatus('Retrieving market symbols');
+            });
+            setTimeout(() => {
                 this.updateLoadingStatus('Retrieving trading times');
-            }, 300);
+            }, 2000);
+            setTimeout(() => {
+                this.updateLoadingStatus('Retrieving chart data');
+            }, 4000);
 
         });
         this.updateQueryString();
         this.onSwitchAccount(this.accountSwitcherListener);
-        setTimeout(() => {
-            this.updateLoadingStatus('Retrieving chart data');
-        }, 300);
         // this.root_store.ui.setAppLoading(false);
     }
 

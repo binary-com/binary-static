@@ -123,4 +123,11 @@
             animation: wave-bounce 0.75s ease-out 0.45s infinite;
         }
     }
+    &__status {
+        font-size: 14px;
+        margin-top: 8px;
+        @include themify($themes) {
+            color: themed('text_color');
+        }
+    }
 }
