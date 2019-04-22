@@ -19,7 +19,6 @@ const Loading = ({ id, status, theme = 'dark' }) => (
                 <g>
                     <mask id='b' y='0' fill='#fff'>
                         <use xlinkHref='#a' />
-                        <rect height='90' width='90' fill='#fff' />
                     </mask>
                     <path fill='#dedede' fillRule='nonzero' d='M0 0h90v91H0z' mask='url(#b)' />
                 </g>
