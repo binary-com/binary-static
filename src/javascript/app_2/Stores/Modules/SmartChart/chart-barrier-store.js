@@ -29,7 +29,7 @@ export class ChartBarrierStore {
         onChartBarrierChange = null,
         { color, line_style, not_draggable } = {}
     ) {
-        this.color     = color      || BARRIER_COLORS.GRAY; // dark mode is the default mode
+        this.color     = color; // dark mode is the default mode
         this.lineStyle = line_style || BARRIER_LINE_STYLES.SOLID;
         this.onChange  = this.onBarrierChange;
 
@@ -71,7 +71,7 @@ export class ChartBarrierStore {
 
     @action.bound
     updateBarrierColor(is_dark_mode) {
-        this.color = is_dark_mode ? BARRIER_COLORS.GRAY : BARRIER_COLORS.GREEN;
+        this.color = is_dark_mode ? BARRIER_COLORS.DARK_GRAY : BARRIER_COLORS.GRAY;
     }
 
     @computed
