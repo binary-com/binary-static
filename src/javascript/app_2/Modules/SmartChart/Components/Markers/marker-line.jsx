@@ -25,7 +25,10 @@ const MarkerLine = ({
         { label === marker_config.LINE_START.content_config.label &&
             <Icon
                 icon={IconStartTimeSVG}
-                className='chart-marker-line__icon'
+                className={classNames(
+                    'chart-marker-line__icon',
+                    'chart-marker-line__icon--time',
+                )}
             />
         }
     </div>
