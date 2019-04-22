@@ -32,7 +32,7 @@ const DropdownTooltip = ({
             break;
         case 'left':
             style = {
-                right: `calc(100% - ${element_coordinates.x - 5}px)`,
+                right: `calc(100% - ${element_coordinates.x - 10}px)`,
                 top  : element_coordinates.y - element_coordinates.height - 8,
             };
             break;
@@ -49,6 +49,7 @@ const DropdownTooltip = ({
                     { 'list__item-tooltip--show': should_show_tooltip },
                 )}
         >
+            <span className='list__item-tooltip-arrow' />
             { message }
         </span>
     );
