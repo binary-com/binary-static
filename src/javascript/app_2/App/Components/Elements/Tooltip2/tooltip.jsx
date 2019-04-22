@@ -3,7 +3,7 @@ import PropTypes           from 'prop-types';
 import React               from 'react';
 import ReactDOM            from 'react-dom';
 
-const DropdownTooltip = ({
+const Tooltip = ({
     alignment,
     className,
     element_coordinates,
@@ -45,16 +45,16 @@ const DropdownTooltip = ({
             style={style}
             className={
                 classNames(
-                    'list__item-tooltip',
-                    `list__item-tooltip--${alignment}`,
-                    { 'list__item-tooltip--show': should_show_tooltip },
+                    'tooltip-2',
+                    `tooltip-2--${alignment}`,
+                    { 'tooltip-2--show': should_show_tooltip },
                     className,
                 )}
         >
             <span className={
                 classNames(
-                    'list__item-tooltip-arrow',
-                    `list__item-tooltip-arrow--${alignment}`,
+                    'tooltip-2-arrow',
+                    `tooltip-2-arrow--${alignment}`,
                 )}
             />
             { message }
@@ -67,7 +67,7 @@ const DropdownTooltip = ({
     );
 };
 
-DropdownTooltip.propTypes = {
+Tooltip.propTypes = {
     alignment    : PropTypes.string,
     children     : PropTypes.node,
     className    : PropTypes.string,
@@ -77,4 +77,4 @@ DropdownTooltip.propTypes = {
     message      : PropTypes.string,
 };
 
-export default DropdownTooltip;
+export default Tooltip;

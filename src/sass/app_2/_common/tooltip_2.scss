@@ -1,0 +1,64 @@
+.tooltip-2 {
+    visibility: hidden;
+    position: absolute;
+    padding: 0.7em;
+    max-width: 280px;
+    border-radius: 4px;
+    @include typeface(--small-center-normal-active, none);
+    @include themify($themes) {
+        color: themed('text_active_color');
+        background: themed('background_tooltip_color');
+    }
+
+    &--left, &--right {
+        margin: 0 1em;
+    }
+    &--top, &--bottom {
+        margin: 1em 0;
+    }
+    &-arrow {
+        position: absolute;
+        border-width: 5px;
+        border-style: solid;
+
+        &--left {
+            left: 100%;
+            top: 50%;
+            margin-top: -5px;
+
+            @include themify($themes) {
+                border-color: transparent transparent transparent themed('background_tooltip_color');
+            }
+        }
+        &--right {
+            right: 100%;
+            top: 50%;
+            margin-top: -5px;
+
+            @include themify($themes) {
+                border-color: transparent themed('background_tooltip_color') transparent transparent;
+            }
+        }
+        &--top {
+            left: 50%;
+            top: 100%;
+            margin-left: -5px;
+
+            @include themify($themes) {
+                border-color: themed('background_tooltip_color') transparent transparent transparent;
+            }
+        }
+        &--bottom {
+            left: 50%;
+            bottom: 100%;
+            margin-left: -5px;
+
+            @include themify($themes) {
+                border-color: transparent transparent themed('background_tooltip_color') transparent;
+            }
+        }
+    }
+    &--show {
+        visibility: visible;
+    }
+}

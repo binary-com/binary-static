@@ -1,7 +1,7 @@
 import classNames          from 'classnames';
 import PropTypes           from 'prop-types';
 import React               from 'react';
-import DropdownTooltip     from 'App/Components/Form/DropDown/dropdown-tooltip.jsx';
+import { TooltipWrapper }  from 'App/Components/Elements/Tooltip2';
 import { getCurrencyName } from '_common/base/currency_base';
 
 class Item extends React.PureComponent {
@@ -56,23 +56,14 @@ class Item extends React.PureComponent {
                 onClick={handleSelect.bind(null, item)}
             >
                 {!!has_symbol && item.has_tooltip &&
-                    <React.Fragment>
-                        <div
-                            onMouseEnter={this.onMouseEnter}
-                            onMouseLeave={this.onMouseLeave}
-                            ref={this.item_reference}
-                        >
-                            <span
-                                className={`symbols list__item-symbol symbols--${(item.text || '').toLowerCase()}`}
-                            />
-                        </div>
-                        <DropdownTooltip
-                            alignment='left'
-                            message={getCurrencyName(item.value)}
-                            should_show_tooltip={this.state.should_show_tooltip}
-                            element_coordinates={this.item_coordinates}
+                    <TooltipWrapper
+                        alignment='left'
+                        message={getCurrencyName(item.value)}
+                    >
+                        <span
+                            className={`symbols list__item-symbol symbols--${(item.text || '').toLowerCase()}`}
                         />
-                    </React.Fragment>
+                    </TooltipWrapper>
                 }
 
                 {!!has_symbol && !item.has_tooltip &&
