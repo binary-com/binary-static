@@ -7,6 +7,12 @@ class VerticalTabHeaders extends React.PureComponent {
     render() {
         return (
             <div className='vertical-tab__tab'>
+                {this.props.header_title &&
+                    <div className='vertical-tab__header-title'>
+                        <p>{ this.props.header_title }</p>
+                    </div>
+                }
+
                 {this.props.items.map(item => (
                     this.props.is_routed ?
                         <NavLink

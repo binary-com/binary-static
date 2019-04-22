@@ -3,7 +3,12 @@ $side-padding: 1.2em;
 
 /** @define statement; weak */
 .statement {
-    height: calc(100vh - #{$HEADER_HEIGHT + $FOOTER_HEIGHT});
+    height: 100%;
+
+    &__content {
+        width: 100%;
+        max-height: 100%;
+    }
     /*
         TABLE STYLES
     */

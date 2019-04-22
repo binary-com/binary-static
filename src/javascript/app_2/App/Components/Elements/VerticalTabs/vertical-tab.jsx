@@ -1,3 +1,4 @@
+import classNames                      from 'classnames';
 import PropTypes                       from 'prop-types';
 import React                           from 'react';
 import { VerticalTabContentContainer } from './vertical-tab-content-container.jsx';
@@ -19,14 +20,20 @@ class VerticalTab extends React.PureComponent {
 
     render() {
         return (
-            <div className='vertical-tab'>
+            <div
+                className={classNames('vertical-tab', {
+                    'vertical-tab--full-screen': this.props.is_full_width,
+                })}
+            >
                 <VerticalTabHeaders
                     items={this.props.list}
                     onChange={this.changeSelected}
                     selected={this.state.selected}
                     is_routed={this.props.is_routed}
+                    header_title={this.props.header_title}
                 />
                 <VerticalTabContentContainer
+                    action_bar={this.props.action_bar}
                     items={this.props.list}
                     selected={this.state.selected}
                     is_routed={this.props.is_routed}
@@ -37,8 +44,17 @@ class VerticalTab extends React.PureComponent {
 }
 
 VerticalTab.propTypes = {
-    is_routed: PropTypes.bool,
-    list     : PropTypes.arrayOf(
+    action_bar: PropTypes.arrayOf(
+        PropTypes.shape({
+            icon   : PropTypes.func,
+            onClick: PropTypes.func,
+            title  : PropTypes.string,
+        })
+    ),
+    header_title : PropTypes.string,
+    is_full_width: PropTypes.bool,
+    is_routed    : PropTypes.bool,
+    list         : PropTypes.arrayOf(
         PropTypes.shape({
             icon : PropTypes.func,
             label: PropTypes.string,

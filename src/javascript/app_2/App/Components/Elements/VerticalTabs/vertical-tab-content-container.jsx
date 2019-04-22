@@ -1,5 +1,6 @@
 import React                       from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
+import { Icon }                    from 'Assets/Common';
 import routes                      from 'Constants/routes';
 
 class VerticalTabContentContainer extends React.PureComponent {
@@ -9,6 +10,15 @@ class VerticalTabContentContainer extends React.PureComponent {
 
         return (
             <div className='vertical-tab__content'>
+                { this.props.action_bar &&
+                    <div className='vertical-tab__action-bar'>
+                        {
+                            this.props.action_bar.map(({ icon, onClick, title }) => (
+                                <Icon className='vertical-tab__action-bar--icon' key={title} icon={icon} onClick={onClick} />
+                            ))
+                        }
+                    </div>
+                }
                 { this.props.is_routed ?
                     <Switch>
                         <Redirect exact from={routes.reports} to={routes.positions} />
