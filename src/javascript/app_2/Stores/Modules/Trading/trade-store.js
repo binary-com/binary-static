@@ -456,8 +456,9 @@ export default class TradeStore extends BaseStore {
     // When you directly need to update the chart symbol
     // E.g. When opening a contract from positions that has a different symbol from the current symbol.
     @action.bound
-    updateSymbol(symbol) {
-        if (symbol) this.symbol = symbol;
+    updateSymbol(e) {
+        const symbol = e.target.value;
+        if (symbol || symbol !== this.symbol) this.symbol = symbol;
     }
 
     @action.bound

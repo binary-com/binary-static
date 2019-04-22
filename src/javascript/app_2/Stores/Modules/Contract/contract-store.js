@@ -143,7 +143,11 @@ export default class ContractStore extends BaseStore {
         this.contract_info = response.proposal_open_contract;
 
         if (this.root_store.modules.trade.symbol !== this.contract_info.underlying) {
-            this.root_store.modules.trade.updateSymbol(this.contract_info.underlying);
+            this.root_store.modules.trade.updateSymbol(
+                { target: {
+                    name : 'symbol',
+                    value: this.contract_info.underlying,
+                } });
         }
 
         this.drawChart(this.smart_chart, this.contract_info);
