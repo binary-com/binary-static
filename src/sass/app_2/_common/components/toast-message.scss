@@ -1,26 +1,3 @@
-$TOAST_BODY_WIDTH: 30vw;
-
-// Colors configs
-$TOAST_TEXT_COLOR     : rgb(92, 92, 92); // #5c5c5c
-$TOAST_TEXT_COLOR_DARK: rgb(255, 255, 255); // #ffffff
-
-$TOAST_CLOSE_BUTTON_COLOR: rgb(92, 92, 92);         // #5c5c5c
-$TOAST_CLOSE_BUTTON_COLOR_DARK: rgb(170, 172, 186); // #aaacba
-
-$TOAST_BACKGROUND_COLOR_ERROR       : rgb(253, 225, 223); // #FDE1DF
-$TOAST_BACKGROUND_COLOR_ERROR_DARK  : rgb(74, 51, 77);    // #4A334D
-$TOAST_BACKGROUND_COLOR_INFO        : rgb(219, 238, 253); // #DBEEFD
-$TOAST_BACKGROUND_COLOR_INFO_DARK   : rgb(40, 64, 107);   // #28406B
-$TOAST_BACKGROUND_COLOR_SUCCESS     : rgb(226, 242, 227); // #E2F2E3
-$TOAST_BACKGROUND_COLOR_SUCCESS_DARK: rgb(47, 68, 81);    // #2F4451
-$TOAST_BACKGROUND_COLOR_WARNING     : rgb(255, 245, 215); // #FFF5D7
-$TOAST_BACKGROUND_COLOR_WARNING_DARK: rgb(76, 71, 69);    // #4C4745
-
-$TOAST_BORDER_COLOR_ERROR     : rgb(244, 67, 54);  // #F44336
-$TOAST_BORDER_COLOR_INFO      : rgb(33, 150, 243); // #2196F3
-$TOAST_BORDER_COLOR_SUCCESS   : rgb(76, 175, 80);  // #4CAF50
-$TOAST_BORDER_COLOR_WARNING   : rgb(255, 193, 7);  // #FFC107
-
 /** @define toast; */
 .toast {
     z-index: 9999;
@@ -28,7 +5,6 @@ $TOAST_BORDER_COLOR_WARNING   : rgb(255, 193, 7);  // #FFC107
     right: 1em;
 
     &__body {
-        background-color: $TOAST_BACKGROUND_COLOR_INFO;
         position: relative;
         border-radius: 4px;
         cursor: pointer;
@@ -40,23 +16,21 @@ $TOAST_BORDER_COLOR_WARNING   : rgb(255, 193, 7);  // #FFC107
         max-width: 30vw;
         margin-top: 1em;
         font-size: 1.2em;
-        color: $TOAST_TEXT_COLOR;
+        @include themify($themes) {
+            color: themed('text_color');
+        }
 
         &--error {
-            background-color: $TOAST_BACKGROUND_COLOR_ERROR !important;
+            background-color: $COLOR_RED;
         }
         &--info {
-            background-color: $TOAST_BACKGROUND_COLOR_INFO !important;
-        }
-        &--news {
-            // TODO: add style
-            // background-color: $TOAST_BACKGROUND_COLOR_INFO !important;
+            background-color: $COLOR_SKY_BLUE;
         }
         &--success {
-            background-color: $TOAST_BACKGROUND_COLOR_SUCCESS !important;
+            background-color: $COLOR_GREEN_1;
         }
         &--warning {
-            background-color: $TOAST_BACKGROUND_COLOR_WARNING !important;
+            background-color: $COLOR_ORANGE;
         }
     }
     &__message {
@@ -70,7 +44,6 @@ $TOAST_BORDER_COLOR_WARNING   : rgb(255, 193, 7);  // #FFC107
         padding: 0 !important;
         cursor: pointer;
         opacity: 0.7;
-        color: $TOAST_CLOSE_BUTTON_COLOR;
 
         &:hover, &:focus {
             opacity: 1;
