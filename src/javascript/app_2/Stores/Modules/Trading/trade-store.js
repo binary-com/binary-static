@@ -529,13 +529,13 @@ export default class TradeStore extends BaseStore {
         runInAction(() => {
             this.is_trade_component_mounted = true;
             setTimeout(() => {
-                this.updateLoadingStatus('Retrieving market symbols');
+                this.updateLoadingStatus('Retrieving market symbols...');
             });
             setTimeout(() => {
-                this.updateLoadingStatus('Retrieving trading times');
+                this.updateLoadingStatus('Retrieving trading times...');
             }, 2000);
             setTimeout(() => {
-                this.updateLoadingStatus('Retrieving chart data');
+                this.updateLoadingStatus('Retrieving chart data...');
             }, 4000);
 
         });

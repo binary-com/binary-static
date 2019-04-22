@@ -40,6 +40,17 @@
     }
 }
 
+/* clean-css ignore:start */
+@keyframes fill-up {
+    0% {
+        y: 0px;
+    }
+    100% {
+        y: 50px;
+    }
+}
+/* clean-css ignore:end */
+
 @keyframes wave-bounce {
     0%, 30%, 100% {
         transform: translate(0, 0);
@@ -130,4 +141,10 @@
             color: themed('text_color');
         }
     }
+    /* clean-css ignore:start */
+    &__fill {
+        fill: $COLOR_WHITE;
+        transform: translateX(50px);
+    }
+    /* clean-css ignore:end */
 }

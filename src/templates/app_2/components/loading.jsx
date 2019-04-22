@@ -17,7 +17,7 @@ const Loading = ({ id, status, theme = 'dark' }) => (
             </defs>
             <g>
                 <g>
-                    <mask id='b' fill='#fff'>
+                    <mask className='initial-loader__fill' id='b'>
                         <use xlinkHref='#a' />
                     </mask>
                     <path fill='#dedede' fillRule='nonzero' d='M0 0h90v91H0z' mask='url(#b)' />
