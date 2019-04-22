@@ -93,7 +93,9 @@ class Tooltip2 extends React.PureComponent {
                     { children }
                 </div>
 
-                { tooltip }
+                { this.state.should_show_tooltip &&
+                    tooltip
+                }
             </React.Fragment>
         );
     }
