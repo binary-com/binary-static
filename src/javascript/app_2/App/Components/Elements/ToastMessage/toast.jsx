@@ -55,7 +55,7 @@ Toast.propTypes = {
         delay        : PropTypes.number,
         is_auto_close: PropTypes.bool,
         message      : PropTypes.node,
-        type         : PropTypes.string,
+        type         : PropTypes.oneOf(['ERROR', 'INFO', 'SUCCESS', 'WARNING']),
     }),
     removeToastMessage: PropTypes.func,
 };

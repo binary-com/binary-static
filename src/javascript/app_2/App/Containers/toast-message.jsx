@@ -1,4 +1,3 @@
-import classNames   from 'classnames';
 import PropTypes    from 'prop-types';
 import React        from 'react';
 import { connect }  from 'Stores/connect';
@@ -31,7 +30,7 @@ ToastMessage.propTypes = {
             delay        : PropTypes.number,
             is_auto_close: PropTypes.bool,
             message      : PropTypes.node,
-            type         : PropTypes.string,
+            type         : PropTypes.oneOf(['ERROR', 'INFO', 'SUCCESS', 'WARNING']),
         }),
     ),
 };
