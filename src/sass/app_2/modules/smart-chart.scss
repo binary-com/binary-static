@@ -134,7 +134,7 @@
         padding-left: 0.5em;
         height: 100%;
         @include themify($themes) {
-            border-color: themed('text_color');
+            border-color: themed('chart_line_color');
         }
     }
     &__icon {
@@ -143,6 +143,14 @@
         left: -11px;
         white-space: nowrap;
 
+        &--time {
+            /* postcss-bem-linter: ignore */
+            path {
+                @include themify($themes) {
+                    fill: themed('icon_start_time');
+                }
+            }
+        }
         &--won {
             /* postcss-bem-linter: ignore */
             circle {
