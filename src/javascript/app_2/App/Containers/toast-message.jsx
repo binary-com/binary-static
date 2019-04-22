@@ -4,14 +4,13 @@ import { connect }  from 'Stores/connect';
 import Toast  from '../Components/Elements/ToastMessage';
 
 class ToastMessage extends React.Component {
-
     render() {
         return (
             <div className='toast'>
                 {
-                    this.props.toast_messages.map((toast, id) => (
+                    this.props.toast_messages.map((toast, idx) => (
                         <Toast
-                            key={id}
+                            key={idx}
                             data={toast}
                             removeToastMessage={this.props.removeToastMessage}
                         />
@@ -30,7 +29,7 @@ ToastMessage.propTypes = {
             delay        : PropTypes.number,
             is_auto_close: PropTypes.bool,
             message      : PropTypes.node,
-            type         : PropTypes.oneOf(['ERROR', 'INFO', 'SUCCESS', 'WARNING']),
+            type         : PropTypes.oneOf(['error', 'info', 'success', 'warning']),
         }),
     ),
 };

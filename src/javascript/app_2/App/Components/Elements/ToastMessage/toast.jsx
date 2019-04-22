@@ -31,15 +31,12 @@ const Toast = ({
     }
 
     return (
-        <div
-            className={classNames('toast__body', TYPES[data.type.toUpperCase()])}
-            onClick={onClick}
-        >
-            <div className='toast__body__icon'>
-                { data.type === 'ERROR'   && <Icon icon={IconError} className='toast__icon-type' /> }
-                { data.type === 'INFO'    && <Icon icon={IconInfoBlue} className='toast__icon-type' /> }
-                { data.type === 'SUCCESS' && <Icon icon={IconSuccess} className='toast__icon-type' /> }
-                { data.type === 'WARNING' && <Icon icon={IconWarning} className='toast__icon-type' /> }
+        <div className={classNames('toast__body', TYPES[data.type.toUpperCase()])}>
+            <div className='toast__icon'>
+                { data.type === 'error'   && <Icon icon={IconError} className='toast__icon-type' /> }
+                { data.type === 'info'    && <Icon icon={IconInfoBlue} className='toast__icon-type' /> }
+                { data.type === 'success' && <Icon icon={IconSuccess} className='toast__icon-type' /> }
+                { data.type === 'warning' && <Icon icon={IconWarning} className='toast__icon-type' /> }
             </div>
             <div className='toast__message'>
                 {data.message}
@@ -55,7 +52,7 @@ Toast.propTypes = {
         delay        : PropTypes.number,
         is_auto_close: PropTypes.bool,
         message      : PropTypes.node,
-        type         : PropTypes.oneOf(['ERROR', 'INFO', 'SUCCESS', 'WARNING']),
+        type         : PropTypes.oneOf(['error', 'info', 'success', 'warning']),
     }),
     removeToastMessage: PropTypes.func,
 };
