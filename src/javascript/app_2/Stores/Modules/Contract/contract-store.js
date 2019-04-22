@@ -142,12 +142,14 @@ export default class ContractStore extends BaseStore {
 
         this.contract_info = response.proposal_open_contract;
 
+        // Set contract symbol if trade_symbol and contract_symbol doesn't match
         if (this.root_store.modules.trade.symbol !== this.contract_info.underlying) {
-            this.root_store.modules.trade.updateSymbol(
-                { target: {
+            this.root_store.modules.trade.onChange({
+                target: {
                     name : 'symbol',
                     value: this.contract_info.underlying,
-                } });
+                },
+            });
         }
 
         this.drawChart(this.smart_chart, this.contract_info);

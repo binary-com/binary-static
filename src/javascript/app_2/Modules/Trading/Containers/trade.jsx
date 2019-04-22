@@ -96,7 +96,7 @@ export default connect(
         is_trade_enabled                   : modules.trade.is_trade_enabled,
         onClickNewTrade                    : modules.trade.onClickNewTrade,
         onMount                            : modules.trade.onMount,
-        onSymbolChange                     : modules.trade.updateSymbol,
+        onSymbolChange                     : modules.trade.onChange,
         onUnmount                          : modules.trade.onUnmount,
         purchase_info                      : modules.trade.purchase_info,
         symbol                             : modules.trade.symbol,
