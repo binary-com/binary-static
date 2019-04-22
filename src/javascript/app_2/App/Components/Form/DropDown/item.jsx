@@ -1,7 +1,7 @@
 import classNames          from 'classnames';
 import PropTypes           from 'prop-types';
 import React               from 'react';
-import { TooltipWrapper }  from 'App/Components/Elements/Tooltip2';
+import Tooltip2            from 'App/Components/Elements/tooltip-2.jsx';
 import { getCurrencyName } from '_common/base/currency_base';
 
 class Item extends React.PureComponent {
@@ -56,14 +56,14 @@ class Item extends React.PureComponent {
                 onClick={handleSelect.bind(null, item)}
             >
                 {!!has_symbol && item.has_tooltip &&
-                    <TooltipWrapper
+                    <Tooltip2
                         alignment='left'
                         message={getCurrencyName(item.value)}
                     >
                         <span
                             className={`symbols list__item-symbol symbols--${(item.text || '').toLowerCase()}`}
                         />
-                    </TooltipWrapper>
+                    </Tooltip2>
                 }
 
                 {!!has_symbol && !item.has_tooltip &&
