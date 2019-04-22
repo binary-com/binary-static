@@ -208,7 +208,6 @@
             visibility: hidden;
             position: absolute;
             padding: 0.7em;
-            margin: 0 1em;
             max-width: 280px;
             border-radius: 4px;
             @include typeface(--small-center-normal-active, none);
@@ -217,6 +216,12 @@
                 background: themed('background_tooltip_color');
             }
 
+            &--left, &--right {
+                margin: 0 1em;
+            }
+            &--top, &--bottom {
+                margin: 1em 0;
+            }
             &-arrow {
                 position: absolute;
                 border-width: 5px;

@@ -68,7 +68,6 @@ class Item extends React.PureComponent {
                         </div>
                         <DropdownTooltip
                             alignment='left'
-                            className='list__item-tooltip'
                             message={getCurrencyName(item.value)}
                             should_show_tooltip={this.state.should_show_tooltip}
                             element_coordinates={this.item_coordinates}
