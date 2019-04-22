@@ -151,6 +151,7 @@ export default class PortfolioStore extends BaseStore {
                 header : localize('Contract sold'),
                 message: `${localize('Contract was sold for')} ${response.sell.sold_for}.`,
                 type   : 'info',
+                size   : 'small',
             });
         }
     }

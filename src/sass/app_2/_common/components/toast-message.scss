@@ -3,6 +3,7 @@
     z-index: 9999;
     position: absolute;
     right: 15px;
+    top: 8px;
 }
 
 /** @define toast-message; */
@@ -24,6 +25,9 @@
     }
     &--warning {
         background-color: $COLOR_ORANGE;
+    }
+    &--small {
+        min-width: 240px;
     }
     &__text-container {
         display: flex;

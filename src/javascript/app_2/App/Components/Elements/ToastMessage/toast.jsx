@@ -31,7 +31,11 @@ const Toast = ({
     }
 
     return (
-        <div className={classNames('toast-message', TYPES[data.type.toUpperCase()])}>
+        <div className={
+            classNames('toast-message', TYPES[data.type.toUpperCase()], {
+                'toast-message--small': data.size === 'small',
+            })}
+        >
             <div className='toast-message__icon'>
                 { data.type === 'error'   && <Icon icon={IconError} className='toast-message__icon-type' /> }
                 { data.type === 'info'    && <Icon icon={IconInfoBlue} className='toast-message__icon-type' /> }
@@ -51,6 +55,10 @@ const Toast = ({
     );
 };
 
+Toast.defaultProps = {
+    type: 'info',
+};
+
 Toast.propTypes = {
     data: PropTypes.shape({
         closeOnClick : PropTypes.func,
@@ -58,6 +66,7 @@ Toast.propTypes = {
         header       : PropTypes.string,
         is_auto_close: PropTypes.bool,
         message      : PropTypes.string,
+        size         : PropTypes.oneOf(['small']),
         type         : PropTypes.oneOf(['error', 'info', 'success', 'warning']),
     }),
     removeToastMessage: PropTypes.func,
