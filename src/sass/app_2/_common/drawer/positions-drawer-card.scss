@@ -27,6 +27,9 @@
         justify-content: center;
         transition: background 0.25s linear, opacity 0.25s linear;
 
+        &--shade-hidden {
+            visibility: hidden;
+        }
         &:hover {
             background: 0 !important;
 
