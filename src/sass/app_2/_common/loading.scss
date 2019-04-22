@@ -43,10 +43,10 @@
 /* clean-css ignore:start */
 @keyframes fill-up {
     0% {
-        y: 0px;
+        y: 90px;
     }
     100% {
-        y: 50px;
+        y: 0px;
     }
 }
 /* clean-css ignore:end */
@@ -144,7 +144,7 @@
     /* clean-css ignore:start */
     &__fill {
         fill: $COLOR_WHITE;
-        transform: translateX(50px);
+        animation: fill-up 4s;
     }
     /* clean-css ignore:end */
 }
