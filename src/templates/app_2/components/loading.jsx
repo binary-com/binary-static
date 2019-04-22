@@ -20,7 +20,8 @@ const Loading = ({ id, status, theme = 'dark' }) => (
                     <mask id='b' y='0' fill='#fff'>
                         <use xlinkHref='#a' />
                     </mask>
-                    <path fill='#dedede' fillRule='nonzero' d='M0 0h90v91H0z' mask='url(#b)' />
+                    <path className='initial-loader__mask' fillRule='nonzero' d='M0 0h90v91H0z' mask='url(#b)' />
+                    <rect className='initial-loader__fill' height='90' width='90' mask='url(#b)' />
                 </g>
                 <path
                     id='try1'

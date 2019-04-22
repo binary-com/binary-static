@@ -141,10 +141,13 @@
             color: themed('text_color');
         }
     }
+    &__mask {
+        fill: transparent;
+    }
     /* clean-css ignore:start */
     &__fill {
         fill: $COLOR_WHITE;
-        animation: fill-up 4s;
+        animation: fill-up 6s;
     }
     /* clean-css ignore:end */
 }
