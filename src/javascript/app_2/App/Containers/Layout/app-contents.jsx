@@ -1,5 +1,5 @@
 import classNames     from 'classnames';
-import ProptTypes     from 'prop-types';
+import PropTypes     from 'prop-types';
 import React          from 'react';
 import { withRouter } from 'react-router';
 import { Scrollbars } from 'tt-react-custom-scrollbars';
@@ -35,8 +35,9 @@ const AppContents = ({
 );
 
 AppContents.propTypes = {
-    children              : ProptTypes.any,
-    is_positions_drawer_on: ProptTypes.bool,
+    children              : PropTypes.any,
+    is_loading            : PropTypes.bool,
+    is_positions_drawer_on: PropTypes.bool,
 };
 
 export default withRouter(connect(
