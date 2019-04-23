@@ -51,6 +51,39 @@
 }
 /* clean-css ignore:end */
 
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes shrink {
+    from {
+        height: 90px;
+        width: 90px;
+    }
+    to {
+        height: 0px;
+        width: 0px;
+    }
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+}
+
 @keyframes wave-bounce {
     0%, 30%, 100% {
         transform: translate(0, 0);
@@ -137,6 +170,7 @@
     &__status {
         font-size: 14px;
         margin-top: 8px;
+        animation: fade-in 1.5s, fade-out 0.5s ease-out 1.5s;
         @include themify($themes) {
             color: themed('text_color');
         }
@@ -150,4 +184,7 @@
         animation: fill-up 6s;
     }
     /* clean-css ignore:end */
+    &__image {
+        animation: shrink 0.5s ease-out 5s;
+    }
 }

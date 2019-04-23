@@ -532,16 +532,19 @@ export default class TradeStore extends BaseStore {
                 this.updateLoadingStatus('Retrieving market symbols...');
             });
             setTimeout(() => {
+                this.updateLoadingStatus('');
                 this.updateLoadingStatus('Retrieving trading times...');
             }, 2000);
             setTimeout(() => {
+                this.updateLoadingStatus('');
                 this.updateLoadingStatus('Retrieving chart data...');
             }, 4000);
-
+            // setTimeout(() => {
+            //     this.root_store.ui.setAppLoading(false);
+            // }, 6000);
         });
         this.updateQueryString();
         this.onSwitchAccount(this.accountSwitcherListener);
-        // this.root_store.ui.setAppLoading(false);
     }
 
     @action.bound
