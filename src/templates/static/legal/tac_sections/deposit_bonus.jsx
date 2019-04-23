@@ -8,7 +8,7 @@ const DepositBonus = () => (
             <li>{it.L('The required minimum deposit has been made by the client.')}</li>
             <li>{it.L('The client has reached a turnover that is 5 times the bonus amount.')}</li>
         </ol>
-        <p>{it.L('Both the deposit and the bonus amounts are clearly displayed when this type of promotion is available. By way of example, if the client chooses to participate in a "Get $25 when you deposit $100" promotion, the Company will add an additional $25 to the client’s account when the client deposits $100, AND when the client has purchased at least $125 worth of trades ($25 * 5= $125). The bonus will only be credited to the client’s account when both of these conditions are met.')}</p>
+        <p>{it.L('Both the deposit and the bonus amounts are clearly displayed when this type of promotion is available. By way of example, if the client chooses to participate in a "Get $25 when you deposit $100" promotion, the Company will add an additional $25 to the client\'s account when the client deposits $100, AND when the client has purchased at least $125 worth of trades ($25 * 5= $125). The bonus will only be credited to the client\'s account when both of these conditions are met.')}</p>
         <p>{it.L('Once the bonus is credited to the client\'s account, the client may withdraw the bonus and any winnings generated from it at any time.')}</p>
         <p>{it.L('Clients may utilise this bonus only when a real money account is opened.')}</p>
         <p>{it.L('This bonus is only available to new clients. Existing or former clients do not qualify. New clients are eligible for this type of bonus only once. This bonus is available only once per household.')}</p>
