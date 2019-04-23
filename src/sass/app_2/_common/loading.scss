@@ -129,44 +129,6 @@
     &__wrapper {
         @include toEm(margin-top, 56px, 12px);
     }
-    &__circ {
-        margin: 0.8em;
-        border-radius: 20px;
-        height: 100%;
-        width: 0.6em;
-        display: inline-block;
-
-        &--1 {
-            width: 24px;
-            height: 24px;
-            background-color: $COLOR_WHITE;
-            animation: wave-bounce 0.75s ease-out 0s infinite;
-        }
-        &--2 {
-            width: 24px;
-            height: 24px;
-            background-color: $COLOR_WHITE;
-            animation: wave-bounce 0.75s ease-out 0.1125s infinite; /* stylelint-disable-line number-max-precision */
-        }
-        &--3 {
-            width: 24px;
-            height: 24px;
-            background-color: $COLOR_WHITE;
-            animation: wave-bounce 0.75s ease-out 0.225s infinite;
-        }
-        &--4 {
-            width: 24px;
-            height: 24px;
-            background-color: $COLOR_WHITE;
-            animation: wave-bounce 0.75s ease-out 0.3375s infinite; /* stylelint-disable-line number-max-precision */
-        }
-        &--5 {
-            width: 24px;
-            height: 24px;
-            background-color: $COLOR_WHITE;
-            animation: wave-bounce 0.75s ease-out 0.45s infinite;
-        }
-    }
     &__status {
         font-size: 14px;
         margin-top: 8px;
