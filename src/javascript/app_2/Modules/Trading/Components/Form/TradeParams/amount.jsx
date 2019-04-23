@@ -1,17 +1,16 @@
-import classNames                from 'classnames';
-import {
-    observer,
-    PropTypes as MobxPropTypes } from 'mobx-react';
-import PropTypes                 from 'prop-types';
-import React                     from 'react';
+import classNames                     from 'classnames';
+import { PropTypes as MobxPropTypes } from 'mobx-react';
+import PropTypes                      from 'prop-types';
+import React                          from 'react';
 import {
     addComma,
-    getDecimalPlaces }           from '_common/base/currency_base';
-import ButtonToggleMenu          from 'App/Components/Form/button-toggle-menu.jsx';
-import Dropdown                  from 'App/Components/Form/DropDown';
-import Fieldset                  from 'App/Components/Form/fieldset.jsx';
-import InputField                from 'App/Components/Form/InputField';
-import AllowEquals               from './allow-equals.jsx';
+    getDecimalPlaces }                from '_common/base/currency_base';
+import ButtonToggleMenu               from 'App/Components/Form/ButtonToggleMenu';
+import Dropdown                       from 'App/Components/Form/DropDown';
+import Fieldset                       from 'App/Components/Form/fieldset.jsx';
+import InputField                     from 'App/Components/Form/InputField';
+import { connect }                    from 'Stores/connect';
+import AllowEquals                    from './allow-equals.jsx';
 
 const Amount = ({
     amount,
@@ -69,6 +68,7 @@ const Amount = ({
             <ButtonToggleMenu
                 buttons_arr={basis_list}
                 className='dropdown--no-margin'
+                is_animated={true}
                 name='basis'
                 onChange={onChange}
                 value={basis}
@@ -130,4 +130,19 @@ Amount.propTypes = {
     validation_errors : PropTypes.object,
 };
 
-export default observer(Amount);
+export default connect(({ modules, client }) => ({
+    amount             : modules.trade.amount,
+    basis              : modules.trade.basis,
+    basis_list         : modules.trade.basis_list,
+    contract_start_type: modules.trade.contract_start_type,
+    contract_type      : modules.trade.contract_type,
+    contract_types_list: modules.trade.contract_types_list,
+    currencies_list    : client.currencies_list,
+    currency           : modules.trade.currency,
+    duration_unit      : modules.trade.duration_unit,
+    expiry_type        : modules.trade.expiry_type,
+    is_equal           : modules.trade.is_equal,
+    is_single_currency : client.is_single_currency,
+    onChange           : modules.trade.onChange,
+    validation_errors  : modules.trade.validation_errors,
+}))(Amount);

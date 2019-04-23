@@ -6,11 +6,17 @@
     width: 100%;
     height: $HEADER_HEIGHT;
     top: 0;
+    transition: filter 0.25s linear;
+    backface-visibility: hidden;
+    filter: blur(0);
     @include themify($themes) {
         background-color: themed('background_color');
         border-bottom: 1px solid themed('background_color');
     }
 
+    &--is-blurred {
+        filter: blur(3px);
+    }
     &__menu-items {
         display: flex;
         position: relative;

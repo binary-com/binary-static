@@ -232,6 +232,8 @@ export default class ClientStore extends BaseStore {
     @action.bound
     switchEndSignal() {
         this.switch_broadcast = false;
+        // TODO: Remove once app enables Real accounts
+        if (this.is_virtual) this.root_store.ui.is_app_blurred = false;
     }
 
     /**

@@ -1,8 +1,8 @@
 import extend                  from 'extend';
 import { isDigitContract }     from 'Stores/Modules/Contract/Helpers/digits';
 import {
-    getEndSpotTime,
-    isUserSold }               from 'Stores/Modules/Contract/Helpers/logic';
+    isUserSold,
+    getEndTime }               from 'Stores/Modules/Contract/Helpers/logic';
 import { MARKER_TYPES_CONFIG } from '../../SmartChart/Constants/markers';
 
 const createMarkerConfig = (marker_type, x, y, content_config) => (
@@ -15,17 +15,22 @@ const createMarkerConfig = (marker_type, x, y, content_config) => (
     })
 );
 
-const getSpotCount = (contract_info, spot_count) =>
+export const getSpotCount = (contract_info, spot_count) =>
     isDigitContract(contract_info.contract_type) ? spot_count + 1 : spot_count;
 
 // -------------------- Lines --------------------
-export const createMarkerExpiry = (contract_info) => {
-    const end_spot_time = getEndSpotTime(contract_info);
-    if (contract_info.status === 'open' || !end_spot_time) return false;
+export const createMarkerEndTime = (contract_info) => {
+    const end_time = getEndTime(contract_info);
+    if (!end_time) return false;
 
     return createMarkerConfig(
         MARKER_TYPES_CONFIG.LINE_END.type,
-        +end_spot_time,
+        +end_time,
+        null,
+        {
+            status       : `${contract_info.profit > 0 ? 'won' : 'lost' }`,
+            marker_config: MARKER_TYPES_CONFIG,
+        },
     );
 };
 
@@ -45,6 +50,10 @@ export const createMarkerStartTime = (contract_info) => {
     return createMarkerConfig(
         MARKER_TYPES_CONFIG.LINE_START.type,
         +contract_info.date_start,
+        null,
+        {
+            marker_config: MARKER_TYPES_CONFIG,
+        }
     );
 };
 
@@ -90,7 +99,7 @@ export const createMarkerSpotExit = (contract_info, tick, idx) => {
         {
             spot_value: `${contract_info.exit_tick}`,
             spot_epoch: `${contract_info.exit_tick_time}`,
-            status    : `${contract_info.profit > 0 ? 'won' : 'lost' }`,
+            status    : `${+contract_info.profit > 0 ? 'won' : 'lost' }`,
             align_label,
             spot_count,
         },

@@ -25,8 +25,11 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        transition: background 0.25s linear;
+        transition: background 0.25s linear, opacity 0.25s linear;
 
+        &--shade-hidden {
+            visibility: hidden;
+        }
         &:hover {
             background: 0 !important;
 
@@ -35,7 +38,6 @@
             }
         }
         &:after {
-
             top: 0;
             left: 0;
             width: 100%;
@@ -52,6 +54,13 @@
             &--lost, &--lost:after {
                 background-image: themed('lost_gradient_color');
             }
+        }
+
+        &--enter, &--exit {
+            opacity: 0;
+        }
+        &--enter-done {
+            opacity: 1;
         }
     }
     &__wrapper {
@@ -234,18 +243,6 @@
 
             &:before {
                 content: '+';
-                color: inherit;
-            }
-        }
-        &--plus {
-            &:before {
-                content: '+';
-                color: inherit;
-            }
-        }
-        &--minus {
-            &:before {
-                content: '-';
                 color: inherit;
             }
         }
