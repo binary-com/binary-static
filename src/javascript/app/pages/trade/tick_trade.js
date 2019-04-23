@@ -72,6 +72,13 @@ const TickDisplay = (() => {
             price  = parseFloat(data.price);
             payout = parseFloat(data.payout);
         }
+
+        selected_tick = '';
+        if (/^(tickhigh|ticklow)_/i.test(data.shortcode)) {
+            const arr_shortcode = data.shortcode.split('_');
+            selected_tick = arr_shortcode[arr_shortcode.length - 1];
+        }
+
         setXIndicators();
         requireHighstock((Highstock) => {
             Highcharts = Highstock;
@@ -142,11 +149,6 @@ const TickDisplay = (() => {
             ticks_needed = number_of_ticks;
             x_indicators = {
                 _0: { label: localize('Entry Spot'), id: 'start_tick' },
-            };
-            x_indicators[`_${exit_tick_index}`] = {
-                label    : localize('Exit Spot'),
-                id       : 'exit_tick',
-                dashStyle: 'Dash',
             };
         } else if (contract_category.match('runs')) {
             ticks_needed = number_of_ticks + 1;
@@ -350,6 +352,7 @@ const TickDisplay = (() => {
                     display_symbol      : contract.display_name,
                     contract_start      : contract.date_start,
                     display_decimals    : chart_display_decimals,
+                    shortcode           : contract.shortcode,
                     show_contract_result: 0,
                 }, data);
                 spots_list = {};
@@ -369,7 +372,7 @@ const TickDisplay = (() => {
         if (contract_category.match('runs')) {
             has_finished = (applicable_ticks.length && contract.exit_tick_time) || false;
         }
-        const has_sold     = contract && contract.exit_tick_time && applicable_ticks
+        const has_sold = contract && contract.exit_tick_time && applicable_ticks
             && applicable_ticks.find(({ epoch }) => +epoch === +contract.exit_tick_time) !== undefined;
 
         if (!has_finished && !has_sold && (!data.tick || !contract.status || contract.status === 'open')) {
@@ -506,13 +509,6 @@ const TickDisplay = (() => {
 
     const updateContract = (proposal_open_contract) => {
         contract = proposal_open_contract;
-
-        if (/^(tickhigh|ticklow)_/i.test(contract.shortcode)) {
-            const arr_shortcode = contract.shortcode.split('_');
-            selected_tick = arr_shortcode[arr_shortcode.length - 1];
-        } else {
-            selected_tick = '';
-        }
     };
 
     const updateChart = (data, proposal_open_contract) => {

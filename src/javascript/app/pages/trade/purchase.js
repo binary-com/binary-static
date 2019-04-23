@@ -246,6 +246,7 @@ const Purchase = (() => {
                 display_decimals    : decimal_points,
                 price               : passthrough['ask-price'],
                 payout              : receipt.payout,
+                shortcode           : receipt.shortcode,
                 show_contract_result: 1,
                 width               : $('#confirmation_message').width(),
                 id_render           : 'trade_tick_chart',
