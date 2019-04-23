@@ -1,5 +1,5 @@
 import classNames     from 'classnames';
-import PropTypes     from 'prop-types';
+import PropTypes      from 'prop-types';
 import React          from 'react';
 import { withRouter } from 'react-router';
 import { Scrollbars } from 'tt-react-custom-scrollbars';

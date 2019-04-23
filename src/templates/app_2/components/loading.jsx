@@ -1,4 +1,5 @@
-import React from 'react';
+import React     from 'react';
+import PropTypes from 'prop-types';
 
 class Loading extends React.Component {
 
@@ -57,4 +58,12 @@ class Loading extends React.Component {
     }
 }
 
+Loading.propTypes = {
+    id: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.number,
+    ]),
+    status: PropTypes.string,
+    theme : PropTypes.string,
+};
 export default Loading;
