@@ -7,9 +7,16 @@ import { VerticalTabHeaders }          from './vertical-tab-headers.jsx';
 class VerticalTab extends React.PureComponent {
     constructor(props) {
         super(props);
-        this.state = {
-            selected: props.list[0],
-        };
+        if (props.is_routed) {
+            const selected = props.list.find(item => item.path === props.current_path);
+            this.state = {
+                selected,
+            };
+        } else {
+            this.state = {
+                selected: props.list[0],
+            };
+        }
     }
 
     changeSelected = (e) => {
@@ -51,6 +58,7 @@ VerticalTab.propTypes = {
             title  : PropTypes.string,
         })
     ),
+    current_path : PropTypes.string,
     header_title : PropTypes.string,
     is_full_width: PropTypes.bool,
     is_routed    : PropTypes.bool,

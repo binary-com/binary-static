@@ -47,7 +47,6 @@ $MIN_HEIGHT: calc(100vh - #{$HEADER_HEIGHT + $FOOTER_HEIGHT} - #{$BOTTOM_SPACING
             color: themed('text_primary_color');
         }
         padding: 16px;
-        margin-bottom: 16px;
         height: 40px;
         display: flex;
         align-items: center;
@@ -111,7 +110,7 @@ $MIN_HEIGHT: calc(100vh - #{$HEADER_HEIGHT + $FOOTER_HEIGHT} - #{$BOTTOM_SPACING
         justify-content: flex-start;
         align-items: flex-start;
         @include themify($themes) {
-            background-color: themed('container_color');
+            background-color: themed('container_secondary_color');
         }
 
         &.vertical-tab:not(.vertical-tab--full-screen) {

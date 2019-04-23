@@ -38,6 +38,7 @@ class Reports extends React.Component {
                     action_bar={this.action_bar_items}
                     alignment='center'
                     classNameHeader='reports__tab-header'
+                    current_path={this.props.location.pathname}
                     is_routed={true}
                     is_full_width={true}
                     list={this.menu_options()}
