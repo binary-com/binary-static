@@ -76,11 +76,11 @@
 }
 
 @keyframes fade-out {
-    from {
+    0% {
         opacity: 1;
         transform: translateY(0px);
     }
-    to {
+    100% {
         opacity: 0;
         transform: translateY(10px);
     }
