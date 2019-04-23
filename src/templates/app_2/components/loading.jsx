@@ -1,14 +1,25 @@
 import React from 'react';
 
 class Loading extends React.Component {
+
+    state = {
+        is_mounted: false,
+    }
+
     shouldComponentUpdate(nextProps) {
-        return nextProps !== this.props;
+        return nextProps.status !== this.props.status || nextProps.theme !== this.props.theme;
+    }
+
+    componentDidMount() {
+        this.setState({
+            is_mounted: true,
+        });
     }
 
     render() {
         return (
             <div id={this.props.id} className={`initial-loader initial-loader--${this.props.theme}`}>
-                { this.props.theme === 'dark' &&
+                { (this.state.is_mounted && this.props.theme === 'dark') &&
                     <svg className='initial-loader__image' xmlns='http://www.w3.org/2000/svg' width='90' height='90' viewBox='0 0 90 90'>
                         <defs>
                             <circle id='a' cx='45' cy='45' r='42' />
@@ -30,7 +41,7 @@ class Loading extends React.Component {
                         </g>
                     </svg>
                 }
-                { this.props.theme === 'light' &&
+                { (this.state.is_mounted && this.props.theme === 'light') &&
                     <svg className='initial-loader__image' xmlns='http://www.w3.org/2000/svg' xmlnsXlink='http://www.w3.org/1999/xlink' width='90' height='90' viewBox='0 0 90 90'>
                         <defs>
                             <circle id='a' cx='45' cy='45' r='42' />
