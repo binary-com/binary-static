@@ -549,7 +549,7 @@ export default class TradeStore extends BaseStore {
         }, 4000);
         setTimeout(() => {
             this.root_store.ui.setAppLoading(false);
-        }, 6000);
+        }, 6500);
     }
 
     @action.bound

@@ -7,7 +7,7 @@ class Loading extends React.Component {
       }
 
     shouldComponentUpdate(nextProps, nextState) {
-        return nextProps.status !== this.props.status;
+        return nextProps !== this.props;
     }
 
     render() {

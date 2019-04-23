@@ -172,6 +172,7 @@
     &__status {
         font-size: 14px;
         margin-top: 8px;
+        opacity: 0;
         animation: fade-in 1.5s, fade-out 0.5s ease-out 1.5s;
         @include themify($themes) {
             color: themed('text_color');
@@ -189,6 +190,6 @@
     }
     /* clean-css ignore:end */
     &__image {
-        animation: shrink 0.5s ease-out 5.5s;
+        animation: shrink 0.5s ease-out 5.7s;
     }
 }
