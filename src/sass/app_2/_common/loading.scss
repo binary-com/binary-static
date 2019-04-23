@@ -66,10 +66,12 @@
     from {
         height: 90px;
         width: 90px;
+        opacity: 1;
     }
     to {
         height: 0px;
         width: 0px;
+        opacity: 0;
     }
 }
 
