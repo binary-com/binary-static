@@ -31,25 +31,25 @@ const Notification = ({
 
     return (
         <div className={
-            classNames('notification-message', TYPES[data.type.toUpperCase()], {
-                'notification-message--small': data.size === 'small',
+            classNames('notification', TYPES[data.type.toUpperCase()], {
+                'notification--small': data.size === 'small',
             })}
         >
-            <div className='notification-message__icon'>
-                { data.type === 'danger'  && <Icon icon={IconDanger} className='notification-message__icon-type' /> }
-                { data.type === 'info'    && <Icon icon={IconInformation} className='notification-message__icon-type' /> }
-                { data.type === 'success' && <Icon icon={IconSuccess} className='notification-message__icon-type' /> }
-                { data.type === 'warning' && <Icon icon={IconWarning} className='notification-message__icon-type' /> }
+            <div className='notification__icon'>
+                { data.type === 'danger'  && <Icon icon={IconDanger} className='notification__icon-type' /> }
+                { data.type === 'info'    && <Icon icon={IconInformation} className='notification__icon-type' /> }
+                { data.type === 'success' && <Icon icon={IconSuccess} className='notification__icon-type' /> }
+                { data.type === 'warning' && <Icon icon={IconWarning} className='notification__icon-type' /> }
             </div>
-            <div className='notification-message__text-container'>
-                <div className='notification-message__header'>
+            <div className='notification__text-container'>
+                <div className='notification__header'>
                     <h4>{data.header}</h4>
                 </div>
-                <p className='notification-message__message-text'>
+                <p className='notification__message'>
                     {data.message}
                 </p>
             </div>
-            <CloseButton onClick={onClick} />
+            <CloseButton onClick={onClick} className='notification__close-button' />
         </div>
     );
 };
@@ -66,7 +66,7 @@ Notification.propTypes = {
         is_auto_close: PropTypes.bool,
         message      : PropTypes.string,
         size         : PropTypes.oneOf(['small']),
-        type         : PropTypes.oneOf(['error', 'info', 'success', 'danger']),
+        type         : PropTypes.oneOf(['error', 'info', 'success', 'danger']).isRequired,
     }),
     removeNotification: PropTypes.func,
 };
