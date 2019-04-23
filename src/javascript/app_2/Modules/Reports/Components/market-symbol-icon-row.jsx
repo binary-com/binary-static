@@ -37,7 +37,7 @@ const getMarketInformation = (payload) => {
     return null;
 };
 
-const StatementRowIcon = ({ payload }) => {
+const MarketSymbolIconRow = ({ payload }) => {
     const should_show_category_icon = typeof payload.shortcode === 'string';
     const market_information = getMarketInformation(payload);
     if (should_show_category_icon && market_information) {
@@ -48,9 +48,9 @@ const StatementRowIcon = ({ payload }) => {
     return <div>{JSON.stringify(payload)}</div>;
 };
 
-StatementRowIcon.propTypes = {
+MarketSymbolIconRow.propTypes = {
     action : PropTypes.string,
     payload: PropTypes.object,
 };
 
-export default StatementRowIcon;
+export default MarketSymbolIconRow;
