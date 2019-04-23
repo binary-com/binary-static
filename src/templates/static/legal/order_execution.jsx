@@ -37,7 +37,7 @@ const OrderExecution = () => (
         <ul>
             <li>
                 {it.L('(a) Price and cost')}
-                <p>{it.L('The Company has internally set appropriate controls and monitoring to verify that its aggregate return on various underlying options and durations is equal to its commission charge of 3 - 5%.  Proper back-testing is conducted on a quarterly basis to certify that the Company\'s return does not exceed this set mark-up and hence ascertain continued fair prices to the clientele, whilst mitigating the Company\'s conflicts of interest.')}</p>
+                <p>{it.L('The Company has internally set appropriate controls and monitoring to verify that its aggregate return on various underlying options and durations is equal to its commission charge of 3 - 5%. Proper back-testing is conducted on a quarterly basis to certify that the Company\'s return does not exceed this set mark-up and hence ascertain continued fair prices to the clientele, whilst mitigating the Company\'s conflicts of interest.')}</p>
             </li>
             <li>
                 {it.L('(b) Speed')}
