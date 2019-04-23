@@ -20,8 +20,6 @@ const ChartSettings = (() => {
             entry_spot   : `<div class='nowrap gr-padding-10 gr-parent'><span style="${common_spot_style} border: 3px solid orange; width: 4px; height: 4px;"></span>${localize('Entry Spot')}&nbsp;</div>`,
             exit_spot    : `<div class='nowrap gr-padding-10 gr-parent'><span style="${common_spot_style} background-color: orange; width:10px; height: 10px;"></span>${localize('Exit Spot')}&nbsp;</div>`,
             delay        : `<div class='nowrap gr-padding-10 gr-parent delay'><span class="chart-delay">${localize('Charting for this underlying is delayed')}&nbsp;</span></div>`,
-            highest_tick : `<div class='nowrap gr-padding-10 gr-parent'><span style="${common_horizontal_line_style} border-color: #e98024; border-style: dashed;"></span>${localize('Highest Tick')}&nbsp;</div>`,
-            lowest_tick  : `<div class='nowrap gr-padding-10 gr-parent'><span style="${common_horizontal_line_style} border-color: #e98024; border-style: dashed;"></span>${localize('Lowest Tick')}&nbsp;</div>`,
             payout_range : `<div class='nowrap gr-padding-10 gr-parent'><span class="chart-payout-range"></span>${localize('Payout Range')}&nbsp;</div>`,
             purchase_time: `<div class='nowrap gr-padding-10 gr-parent'><span style="${common_vertical_line_style} border-color: #7cb5ec; border-style: solid;"></span>${localize('Purchase Time')}&nbsp;</div>`,
             reset_barrier: `<div class='nowrap gr-padding-10 gr-parent'><span style="${common_horizontal_line_style} border-color: green; border-style: solid;"></span>${localize('Reset Barrier')}&nbsp;</div>`,
@@ -37,7 +35,6 @@ const ChartSettings = (() => {
         const barrier_style     = params.is_tick_trade ? labels.barrier_line : labels.barrier_spot;
         const barrier           = params.is_reset_barrier ? labels.reset_barrier : barrier_style;
         const start_time        = labels.getStartTime(params.is_tick_trade);
-        const highest_lowest    = /^tickhigh_/i.test(params.shortcode) ? labels.highest_tick : labels.lowest_tick;
         txt_subtitle = (params.is_chart_delayed ? labels.delay : '') +
             (params.is_forward_starting ? labels.purchase_time : '') +
             (params.is_sold_before_start ? '' : start_time) +
@@ -46,7 +43,6 @@ const ChartSettings = (() => {
             (params.is_tick_type ? ((params.is_user_sold || params.is_tick_trade) ? '' : labels.exit_spot) : '') +
             (isReset(params.contract_type) ? labels.reset_time : '') +
             (is_high_low_ticks ? labels.selected_tick : '') +
-            (is_high_low_ticks ? highest_lowest : '') +
             (params.show_end_time ? labels.getEndTime(params.is_tick_trade) : '') +
             (isCallputspread(params.contract_type) ? labels.payout_range : '');
     };
