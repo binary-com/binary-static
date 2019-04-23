@@ -1,5 +1,4 @@
 .tooltip-2 {
-    visibility: hidden;
     position: absolute;
     padding: 0.7em;
     max-width: 280px;
@@ -57,8 +56,5 @@
                 border-color: transparent transparent themed('background_tooltip_color') transparent;
             }
         }
-    }
-    &--show {
-        visibility: visible;
     }
 }

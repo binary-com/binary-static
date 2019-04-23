@@ -55,12 +55,12 @@ class Tooltip2 extends React.PureComponent {
             className={classNames(
                 'tooltip-2',
                 `tooltip-2--${alignment}`,
-                { 'tooltip-2--show': should_show_tooltip },
             )}
         >
             <span className={classNames(
                 'tooltip-2-arrow',
-                `tooltip-2-arrow--${alignment}`)}
+                `tooltip-2-arrow--${alignment}`,
+            )}
             />
             { message }
         </span>
