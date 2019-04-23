@@ -199,7 +199,6 @@ const Trading = () => (
                                 </div>
                                 <div id='contract_purchase_barrier' />
                                 <div id='contract_purchase_reference' />
-                                <div id='contract_highlowtick' />
                                 <div className='button'>
                                     <span id='contract_purchase_button' className='button open_contract_details' />
                                 </div>
