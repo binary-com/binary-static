@@ -29,6 +29,10 @@ $MIN_HEIGHT: calc(100vh - #{$HEADER_HEIGHT + $FOOTER_HEIGHT} - #{$BOTTOM_SPACING
 
         &--icon {
             cursor: pointer;
+
+            @include themify($themes) {
+                @include colorIcon(themed('text_primary_color'));
+            }
         }
     }
     &__tab {
