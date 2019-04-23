@@ -1,6 +1,10 @@
 import React               from 'react';
 import ReactDOM            from 'react-dom';
 import classNames          from 'classnames';
+import { Icon }            from 'Assets/Common/icon.jsx';
+import { IconInfoBlue }    from 'Assets/Common/icon-info-blue.jsx';
+import { IconQuestion }    from 'Assets/Common/icon-question.jsx';
+import { IconRedDot }      from 'Assets/Common/icon-red-dot.jsx';
 
 class TooltipBubble extends React.PureComponent {
     getBubblePositionStyle = (alignment, tooltip_trigger_rect) => {
@@ -31,10 +35,11 @@ class TooltipBubble extends React.PureComponent {
     render() {
         const {
             alignment,
+            icon,
             message,
             tooltip_trigger_rect,
         } = this.props;
-
+    
         return ReactDOM.createPortal(
             <span
                 style={this.getBubblePositionStyle(
@@ -47,10 +52,17 @@ class TooltipBubble extends React.PureComponent {
                 )}
             >
                 <span className={classNames(
-                    'tooltip-2__bubble-arrow',
-                    `tooltip-2__bubble-arrow--${alignment}`,
+                    'tooltip-2__bubble__arrow',
+                    `tooltip-2__bubble__arrow--${alignment}`,
                 )}
                 />
+                { icon &&
+                    <span className='tooltip-2__bubble__icon'>
+                        {icon === 'info'     && <Icon icon={IconInfoBlue} />}
+                        {icon === 'question' && <Icon icon={IconQuestion} />}
+                        {icon === 'dot'      && <Icon icon={IconRedDot} />}
+                    </span>
+                }
                 { message }
             </span>,
             document.getElementById('binary_app')

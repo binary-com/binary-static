@@ -11,13 +11,16 @@
             color: themed('text_active_color');
         }
 
+        &__icon {
+            margin-right: 5px;
+        }
         &--left, &--right {
             margin: 0 1em;
         }
         &--top, &--bottom {
             margin: 1em 0;
         }
-        &-arrow {
+        &__arrow {
             position: absolute;
             border-width: 5px;
             border-style: solid;
@@ -64,7 +67,7 @@
             @include themify($themes) {
                 background-color: themed('tooltip_background_error');
 
-                .tooltip-2-arrow {
+                .tooltip-2__bubble__arrow {
                     &--left {
                         border-left-color: themed('tooltip_background_error');
                     }
@@ -84,7 +87,7 @@
             @include themify($themes) {
                 background-color: themed('tooltip_background_color');
 
-                .tooltip-2-arrow {
+                .tooltip-2__bubble__arrow {
                     &--left {
                         border-left-color: themed('tooltip_background_color');
                     }
