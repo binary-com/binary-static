@@ -1,31 +1,29 @@
-const moment                   = require('moment');
-const isCallputspread          = require('./callputspread').isCallputspread;
-const Contract                 = require('./contract');
-const hidePriceOverlay         = require('./common').hidePriceOverlay;
-const countDecimalPlaces       = require('./common_independent').countDecimalPlaces;
-const getLookBackFormula       = require('./lookback').getFormula;
-const isLookback               = require('./lookback').isLookback;
-const processPriceRequest      = require('./price').processPriceRequest;
-const Symbols                  = require('./symbols');
-const DigitTicker              = require('./digit_ticker');
-const Tick                     = require('./tick');
-const TickDisplay              = require('./tick_trade');
-const updateValues             = require('./update_values');
-const Client                   = require('../../base/client');
-const Header                   = require('../../base/header');
-const BinarySocket             = require('../../base/socket');
-const formatMoney              = require('../../common/currency').formatMoney;
-const TopUpVirtualPopup        = require('../../pages/user/account/top_up_virtual/pop_up');
-const addComma                 = require('../../../_common/base/currency_base').addComma;
-const CommonFunctions          = require('../../../_common/common_functions');
-const localize                 = require('../../../_common/localize').localize;
-const localizeKeepPlaceholders = require('../../../_common/localize').localizeKeepPlaceholders;
-const State                    = require('../../../_common/storage').State;
-const padLeft                  = require('../../../_common/string_util').padLeft;
-const urlFor                   = require('../../../_common/url').urlFor;
-const createElement            = require('../../../_common/utility').createElement;
-const getPropertyValue         = require('../../../_common/utility').getPropertyValue;
-const template                 = require('../../../_common/utility').template;
+const moment              = require('moment');
+const isCallputspread     = require('./callputspread').isCallputspread;
+const Contract            = require('./contract');
+const hidePriceOverlay    = require('./common').hidePriceOverlay;
+const countDecimalPlaces  = require('./common_independent').countDecimalPlaces;
+const getLookBackFormula  = require('./lookback').getFormula;
+const isLookback          = require('./lookback').isLookback;
+const processPriceRequest = require('./price').processPriceRequest;
+const Symbols             = require('./symbols');
+const DigitTicker         = require('./digit_ticker');
+const Tick                = require('./tick');
+const TickDisplay         = require('./tick_trade');
+const updateValues        = require('./update_values');
+const Client              = require('../../base/client');
+const Header              = require('../../base/header');
+const BinarySocket        = require('../../base/socket');
+const formatMoney         = require('../../common/currency').formatMoney;
+const TopUpVirtualPopup   = require('../../pages/user/account/top_up_virtual/pop_up');
+const addComma            = require('../../../_common/base/currency_base').addComma;
+const CommonFunctions     = require('../../../_common/common_functions');
+const localize            = require('../../../_common/localize').localize;
+const State               = require('../../../_common/storage').State;
+const padLeft             = require('../../../_common/string_util').padLeft;
+const urlFor              = require('../../../_common/url').urlFor;
+const createElement       = require('../../../_common/utility').createElement;
+const getPropertyValue    = require('../../../_common/utility').getPropertyValue;
 
 /*
  * Purchase object that handles all the functions related to
@@ -86,7 +84,7 @@ const Purchase = (() => {
         const button              = CommonFunctions.getElementById('contract_purchase_button');
 
         const error      = details.error;
-        const has_chart  = !/^(digits|highlowticks)$/.test(Contract.form());
+        const has_chart  = !/^digits$/.test(Contract.form());
         const show_chart = !error && passthrough.duration <= 10 && passthrough.duration_unit === 't';
         contract_duration = details.echo_req.passthrough.duration;
 
@@ -189,15 +187,8 @@ const Purchase = (() => {
                 chart.hide();
             }
 
-            CommonFunctions.elementTextContent(CommonFunctions.getElementById('contract_highlowtick'), '');
-            const arr_shortcode = purchase_data.buy.shortcode.split('_');
             tick_config = {
-                is_tick_high        : /^tickhigh$/i.test(contract_type),
-                is_tick_low         : /^ticklow$/i.test(contract_type),
-                is_digit            : /^digit/i.test(contract_type),
-                selected_tick_number: arr_shortcode[arr_shortcode.length - 1],
-                winning_tick_quote  : '',
-                winning_tick_number : '',
+                is_digit: /^digit/i.test(contract_type),
             };
 
             if (has_chart) {
@@ -255,6 +246,7 @@ const Purchase = (() => {
                 display_decimals    : decimal_points,
                 price               : passthrough['ask-price'],
                 payout              : receipt.payout,
+                shortcode           : receipt.shortcode,
                 show_contract_result: 1,
                 width               : $('#confirmation_message').width(),
                 id_render           : 'trade_tick_chart',
@@ -341,20 +333,6 @@ const Purchase = (() => {
                 } else if (status === 'lost') {
                     updateValues.updatePurchaseStatus(0, -cost_value, profit_value, localize('This contract lost'));
                 }
-                if (tick_config.is_tick_high || tick_config.is_tick_low) {
-                    const is_won = +tick_config.selected_tick_number === +tick_config.winning_tick_number;
-                    let localized_text;
-                    if (tick_config.is_tick_high) {
-                        localized_text = is_won
-                            ? localizeKeepPlaceholders('Tick [_1] is the highest tick')
-                            : localizeKeepPlaceholders('Tick [_1] is not the highest tick');
-                    } else {
-                        localized_text = is_won
-                            ? localizeKeepPlaceholders('Tick [_1] is the lowest tick')
-                            : localizeKeepPlaceholders('Tick [_1] is not the lowest tick');
-                    }
-                    CommonFunctions.elementTextContent(CommonFunctions.getElementById('contract_highlowtick'), template(localized_text, [tick_config.selected_tick_number]));
-                }
             }
         }
 
@@ -382,21 +360,7 @@ const Purchase = (() => {
                     break;
                 }
 
-                let is_winning_tick = false;
-                if (tick_config.is_tick_high || tick_config.is_tick_low) {
-                    const $winning_row  = $spots.find('.winning-tick-row');
-                    if (!tick_config.winning_tick_quote ||
-                        (tick_config.winning_tick_quote === tick_d.quote && !$winning_row.length) ||
-                        (tick_config.is_tick_high && +tick_d.quote > tick_config.winning_tick_quote) ||
-                        (tick_config.is_tick_low && +tick_d.quote < tick_config.winning_tick_quote)) {
-                        is_winning_tick = true;
-                        tick_config.winning_tick_quote  = tick_d.quote;
-                        tick_config.winning_tick_number = current_tick_count;
-                        $winning_row.removeClass('winning-tick-row');
-                    }
-                }
-
-                const fragment = createElement('div', { class: `row${is_winning_tick ? ' winning-tick-row' : ''} ${tick_config.is_digit ? ' digit-trade' : ''}` });
+                const fragment = createElement('div', { class: `row${tick_config.is_digit ? ' digit-trade' : ''}` });
 
                 const el1 = createElement('div', { class: 'col', text: `${localize('Tick')} ${current_tick_count}` });
 
@@ -414,8 +378,7 @@ const Purchase = (() => {
                     fragment.appendChild(el2);
                 }
                 const tick_with_comma = addComma(tick_d.quote, countDecimalPlaces(tick_d.quote));
-                const tick = (tick_config.is_tick_high || tick_config.is_tick_low) ?
-                    tick_with_comma : `<div class='quote'>${tick_with_comma.replace(/\d$/, makeBold)}</div>`;
+                const tick = `<div class='quote'>${tick_with_comma.replace(/\d$/, makeBold)}</div>`;
                 const el3  = createElement('div', { class: 'col' });
                 CommonFunctions.elementInnerHtml(el3, tick);
 
@@ -441,16 +404,6 @@ const Purchase = (() => {
                 spots.scrollTop = spots.scrollHeight;
 
                 duration--;
-
-                if (tick_config.is_tick_high || tick_config.is_tick_low) {
-                    const lost_on_selected_tick = !is_winning_tick &&
-                        current_tick_count === +tick_config.selected_tick_number;
-                    const lost_after_selected_tick = is_winning_tick &&
-                        current_tick_count > +tick_config.selected_tick_number;
-                    if (lost_on_selected_tick || lost_after_selected_tick) {
-                        duration = 0; // no need to keep drawing ticks
-                    }
-                }
 
                 if (!duration) {
                     purchase_data.echo_req.passthrough.duration = 0;
