@@ -1,18 +1,18 @@
 import PropTypes    from 'prop-types';
 import React        from 'react';
 import { connect }  from 'Stores/connect';
-import Toast  from '../Components/Elements/ToastMessage';
+import Notification  from '../Components/Elements/NotificationMessage';
 
-class ToastMessage extends React.Component {
+class NotificationMessage extends React.Component {
     render() {
         return (
-            <div className='toast-container'>
+            <div className='notification-container'>
                 {
-                    this.props.toast_messages.map((toast, idx) => (
-                        <Toast
+                    this.props.notifications.map((notification, idx) => (
+                        <Notification
                             key={idx}
-                            data={toast}
-                            removeToastMessage={this.props.removeToastMessage}
+                            data={notification}
+                            removeNotification={this.props.removeNotification}
                         />
                     ))
                 }
@@ -21,9 +21,8 @@ class ToastMessage extends React.Component {
     }
 }
 
-ToastMessage.propTypes = {
-    removeToastMessage: PropTypes.func,
-    toast_messages    : PropTypes.arrayOf(
+NotificationMessage.propTypes = {
+    notifications: PropTypes.arrayOf(
         PropTypes.shape({
             closeOnClick : PropTypes.func,
             delay        : PropTypes.number,
@@ -34,11 +33,12 @@ ToastMessage.propTypes = {
             type         : PropTypes.oneOf(['error', 'info', 'success', 'danger']),
         }),
     ),
+    removeNotification: PropTypes.func,
 };
 
 export default connect(
     ({ ui }) => ({
-        removeToastMessage: ui.removeToastMessage,
-        toast_messages    : ui.toast_messages,
+        notifications     : ui.notifications,
+        removeNotification: ui.removeNotification,
     })
-)(ToastMessage);
+)(NotificationMessage);

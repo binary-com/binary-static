@@ -313,7 +313,7 @@ export default class ClientStore extends BaseStore {
         if (!this.switched || !this.switched.length || !this.getAccount(this.switched).token) {
             // Logout if the switched_account doesn't belong to any loginid.
             if (!this.all_loginids.some(id => id !== this.switched) || this.switched === this.loginid) {
-                this.root_store.ui.addToastMessage({
+                this.root_store.ui.addNotification({
                     message: localize('Could not switch to default account.'),
                     type   : 'error',
                 });
@@ -321,9 +321,7 @@ export default class ClientStore extends BaseStore {
                 requestLogout();
                 return;
             }
-
-            // Send a toast message to let the user know we can't switch his account.
-            this.root_store.ui.addToastMessage({
+            this.root_store.ui.addNotification({
                 message: localize('Switching to default account.'),
                 type   : 'info',
             });

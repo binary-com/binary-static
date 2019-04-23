@@ -129,7 +129,6 @@ export default class PortfolioStore extends BaseStore {
 
     @action.bound
     handleSell(response) {
-        // Toast messages are temporary UI for prompting user of sold contracts
         if (response.error) {
             // If unable to sell due to error, give error via pop up if not in contract mode
             const i = this.getPositionIndexById(response.echo_req.sell);
@@ -147,11 +146,11 @@ export default class PortfolioStore extends BaseStore {
                 sell_price    : response.sell.sold_for,
                 transaction_id: response.sell.transaction_id,
             };
-            this.root_store.ui.addToastMessage({
+            this.root_store.ui.addNotification({
                 header : localize('Contract sold'),
                 message: `${localize('Contract was sold for')} ${response.sell.sold_for}.`,
                 type   : 'info',
-                // size   : 'small',
+                size   : 'small',
             });
         }
     }

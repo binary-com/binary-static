@@ -1,13 +1,13 @@
-/** @define toast-container; */
-.toast-container {
+/** @define notification-container; */
+.notification-container {
     z-index: 9999;
     position: absolute;
     right: 15px;
     top: 8px;
 }
 
-/** @define toast-message; */
-.toast-message {
+/** @define notification-message; */
+.notification-message {
     position: relative;
     display: flex;
     border-radius: 4px;

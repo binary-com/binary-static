@@ -3,7 +3,7 @@ import React     from 'react';
 
 const CloseButton = ({ onClick }) => (
     <button
-        className='toast-message__close-button'
+        className='notification-message__close-button'
         type='button'
         onClick={onClick}
     />

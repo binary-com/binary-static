@@ -8,15 +8,15 @@ import { IconWarning }     from 'Assets/Common/icon-warning.jsx';
 import { IconSuccess }     from 'Assets/Common/icon-success.jsx';
 import CloseButton         from './close-button.jsx';
 import {
-    DEFAULT_DELAY,
+    // DEFAULT_DELAY,
     TYPES }             from './constants';
 
-const Toast = ({
+const Notification = ({
     data,
-    removeToastMessage,
+    removeNotification,
 }) => {
     const destroy = (is_closed_by_user) => {
-        removeToastMessage(data);
+        removeNotification(data);
 
         if (typeof data.closeOnClick === 'function') {
             data.closeOnClick(data, is_closed_by_user);
@@ -31,21 +31,21 @@ const Toast = ({
 
     return (
         <div className={
-            classNames('toast-message', TYPES[data.type.toUpperCase()], {
-                'toast-message--small': data.size === 'small',
+            classNames('notification-message', TYPES[data.type.toUpperCase()], {
+                'notification-message--small': data.size === 'small',
             })}
         >
-            <div className='toast-message__icon'>
-                { data.type === 'danger'  && <Icon icon={IconDanger} className='toast-message__icon-type' /> }
-                { data.type === 'info'    && <Icon icon={IconInformation} className='toast-message__icon-type' /> }
-                { data.type === 'success' && <Icon icon={IconSuccess} className='toast-message__icon-type' /> }
-                { data.type === 'warning' && <Icon icon={IconWarning} className='toast-message__icon-type' /> }
+            <div className='notification-message__icon'>
+                { data.type === 'danger'  && <Icon icon={IconDanger} className='notification-message__icon-type' /> }
+                { data.type === 'info'    && <Icon icon={IconInformation} className='notification-message__icon-type' /> }
+                { data.type === 'success' && <Icon icon={IconSuccess} className='notification-message__icon-type' /> }
+                { data.type === 'warning' && <Icon icon={IconWarning} className='notification-message__icon-type' /> }
             </div>
-            <div className='toast-message__text-container'>
-                <div className='toast-message__header'>
+            <div className='notification-message__text-container'>
+                <div className='notification-message__header'>
                     <h4>{data.header}</h4>
                 </div>
-                <p className='toast-message__message-text'>
+                <p className='notification-message__message-text'>
                     {data.message}
                 </p>
             </div>
@@ -54,11 +54,11 @@ const Toast = ({
     );
 };
 
-Toast.defaultProps = {
+Notification.defaultProps = {
     type: 'info',
 };
 
-Toast.propTypes = {
+Notification.propTypes = {
     data: PropTypes.shape({
         closeOnClick : PropTypes.func,
         delay        : PropTypes.number,
@@ -68,8 +68,8 @@ Toast.propTypes = {
         size         : PropTypes.oneOf(['small']),
         type         : PropTypes.oneOf(['error', 'info', 'success', 'danger']),
     }),
-    removeToastMessage: PropTypes.func,
+    removeNotification: PropTypes.func,
 };
 
-export default Toast;
+export default Notification;
 

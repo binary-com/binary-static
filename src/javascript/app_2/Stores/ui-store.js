@@ -38,7 +38,7 @@ export default class UIStore extends BaseStore {
 
     @observable screen_width = window.innerWidth;
 
-    @observable toast_messages = [];
+    @observable notifications = [];
 
     @observable is_advanced_duration   = false;
     @observable advanced_duration_unit = 't';
@@ -234,21 +234,21 @@ export default class UIStore extends BaseStore {
     }
 
     @action.bound
-    addToastMessage(toast_message) {
-        this.toast_messages.push(toast_message);
+    addNotification(notification) {
+        this.notifications.push(notification);
     }
 
     @action.bound
-    removeToastMessage(toast_message) {
-        const index = this.toast_messages.indexOf(toast_message);
+    removeNotification(notification) {
+        const index = this.notifications.indexOf(notification);
         if (index > -1) {
-            this.toast_messages.splice(index, 1);
+            this.notifications.splice(index, 1);
         }
     }
 
     @action.bound
-    removeAllToastMessages() {
-        this.toast_messages = [];
+    removeAllNotifications() {
+        this.notifications = [];
     }
 
     @action.bound
