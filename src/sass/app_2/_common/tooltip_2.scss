@@ -19,6 +19,7 @@
         position: absolute;
         border-width: 5px;
         border-style: solid;
+        border-color: transparent;
 
         &--left {
             left: 100%;
@@ -26,7 +27,7 @@
             margin-top: -5px;
 
             @include themify($themes) {
-                border-color: transparent transparent transparent themed('background_tooltip_color');
+                border-left-color: themed('background_tooltip_color');
             }
         }
         &--right {
@@ -35,7 +36,7 @@
             margin-top: -5px;
 
             @include themify($themes) {
-                border-color: transparent themed('background_tooltip_color') transparent transparent;
+                border-right-color: themed('background_tooltip_color');
             }
         }
         &--top {
@@ -44,7 +45,7 @@
             margin-left: -5px;
 
             @include themify($themes) {
-                border-color: themed('background_tooltip_color') transparent transparent transparent;
+                border-top-color: themed('background_tooltip_color');
             }
         }
         &--bottom {
@@ -53,7 +54,7 @@
             margin-left: -5px;
 
             @include themify($themes) {
-                border-color: transparent transparent themed('background_tooltip_color') transparent;
+                border-bottom-color: themed('background_tooltip_color');
             }
         }
     }
