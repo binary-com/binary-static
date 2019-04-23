@@ -487,9 +487,6 @@
         #confirmation_message {
             padding-bottom: 34px;
 
-            #contract_highlowtick {
-                margin-top: 10px;
-            }
             div.button {
                 padding-top: 7px;
             }
@@ -521,10 +518,6 @@
         #contract_purchase_profit_list, #contract_purchase_spots .row {
             padding: 3px 0;
             flex-direction: row;
-
-            &.winning-tick-row {
-                font-weight: bold;
-            }
         }
         #contract_purchase_profit_list {
             margin: 10px 0;
