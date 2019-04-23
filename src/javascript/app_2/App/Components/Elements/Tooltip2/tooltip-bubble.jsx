@@ -42,13 +42,13 @@ class TooltipBubble extends React.PureComponent {
                     tooltip_trigger_rect,
                 )}
                 className={classNames(
-                    'tooltip-2',
-                    `tooltip-2--${alignment}`,
+                    'tooltip-2__bubble',
+                    `tooltip-2__bubble--${alignment}`,
                 )}
             >
                 <span className={classNames(
-                    'tooltip-2-arrow',
-                    `tooltip-2-arrow--${alignment}`,
+                    'tooltip-2__bubble-arrow',
+                    `tooltip-2__bubble-arrow--${alignment}`,
                 )}
                 />
                 { message }

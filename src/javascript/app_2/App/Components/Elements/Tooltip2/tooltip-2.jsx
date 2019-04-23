@@ -24,23 +24,27 @@ class Tooltip2 extends React.PureComponent {
         } = this.props;
 
         return (
-            <React.Fragment>
+            <div
+                className='tooltip-2'
+                onMouseEnter={this.onMouseEnter}
+                onMouseLeave={this.onMouseLeave}
+            >
                 <div
                     ref={this.tooltip_trigger_ref}
-                    onMouseEnter={this.onMouseEnter}
-                    onMouseLeave={this.onMouseLeave}
+                    className='tooltip-2__trigger'
                 >
                     { children }
                 </div>
 
                 { this.state.should_show_tooltip_bubble &&
                     <TooltipBubble
+                        className='tooltip-2__bubble'
                         alignment={alignment}
                         message={message}
                         tooltip_trigger_rect={this.tooltip_trigger_ref.current.getBoundingClientRect()}
                     />
                 }
-            </React.Fragment>
+            </div>
         );
     }
 }
