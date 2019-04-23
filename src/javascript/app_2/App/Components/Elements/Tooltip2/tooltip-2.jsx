@@ -1,6 +1,5 @@
-import React      from 'react';
-import ReactDOM   from 'react-dom';
-import classNames from 'classnames';
+import React         from 'react';
+import TooltipBubble from './tooltip-bubble.jsx';
 
 class Tooltip2 extends React.PureComponent {
     constructor(props) {
@@ -44,44 +43,12 @@ class Tooltip2 extends React.PureComponent {
         }
     }
 
-    createTooltipBubble = (
-        alignment,
-        style,
-        should_show_tooltip,
-        message
-    ) => (
-        <span
-            style={style}
-            className={classNames(
-                'tooltip-2',
-                `tooltip-2--${alignment}`,
-            )}
-        >
-            <span className={classNames(
-                'tooltip-2-arrow',
-                `tooltip-2-arrow--${alignment}`,
-            )}
-            />
-            { message }
-        </span>
-    );
-
     render() {
         const {
             alignment,
             children,
             message,
         } = this.props;
-
-        const tooltip_bubble = ReactDOM.createPortal(
-            this.createTooltipBubble(
-                alignment,
-                this.createPositionStyle(alignment),
-                this.state.should_show_tooltip,
-                message
-            ),
-            document.getElementById('binary_app'),
-        );
 
         return (
             <div
@@ -95,7 +62,11 @@ class Tooltip2 extends React.PureComponent {
                 </div>
 
                 { this.state.should_show_tooltip &&
-                    tooltip_bubble
+                    <TooltipBubble
+                        alignment={alignment}
+                        style={this.createPositionStyle(alignment)}
+                        message={message}
+                    />
                 }
             </div>
         );

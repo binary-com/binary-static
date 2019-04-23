@@ -1,8 +1,8 @@
 import classNames          from 'classnames';
 import PropTypes           from 'prop-types';
 import React               from 'react';
+import { Tooltip2 }        from 'App/Components/Elements/Tooltip2';
 import { getCurrencyName } from '_common/base/currency_base';
-import Tooltip2            from 'App/Components/Elements/tooltip-2.jsx';
 
 const Items = ({
     handleSelect,

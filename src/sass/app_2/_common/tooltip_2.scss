@@ -1,13 +1,13 @@
 .tooltip-2 {
+    @include typeface(--small-center-normal-active, none);
     cursor: help;
     position: absolute;
     padding: 0.7em;
     max-width: 280px;
     border-radius: 4px;
-    @include typeface(--small-center-normal-active, none);
     @include themify($themes) {
-        color: themed('text_active_color');
         background: themed('background_tooltip_color');
+        color: themed('text_active_color');
     }
 
     &--left, &--right {
