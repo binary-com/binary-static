@@ -84,10 +84,11 @@ class Tooltip2 extends React.PureComponent {
         );
 
         return (
-            <React.Fragment>
+            <div
+                onMouseEnter={this.onMouseEnter}
+                onMouseLeave={this.onMouseLeave}
+            >
                 <div
-                    onMouseEnter={this.onMouseEnter}
-                    onMouseLeave={this.onMouseLeave}
                     ref={this.item_reference}
                 >
                     { children }
@@ -96,7 +97,7 @@ class Tooltip2 extends React.PureComponent {
                 { this.state.should_show_tooltip &&
                     tooltip_bubble
                 }
-            </React.Fragment>
+            </div>
         );
     }
 }
