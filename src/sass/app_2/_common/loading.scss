@@ -180,7 +180,9 @@
     }
     /* clean-css ignore:start */
     &__fill {
-        fill: $COLOR_WHITE;
+        @include themify($themes) {
+            fill: themed('icon_color');
+        }
         animation: fill-up 6s;
     }
     /* clean-css ignore:end */

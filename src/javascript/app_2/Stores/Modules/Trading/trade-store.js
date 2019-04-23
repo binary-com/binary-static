@@ -548,7 +548,7 @@ export default class TradeStore extends BaseStore {
             this.updateLoadingStatus('Retrieving chart data...');
         }, 4000);
         setTimeout(() => {
-            // this.root_store.ui.setAppLoading(false);
+            this.root_store.ui.setAppLoading(false);
         }, 6000);
     }
 
