@@ -55,7 +55,7 @@ const Security = () => (
 
                 <Column url='two_factor_authentication' image='2fa' header={it.L('Two-Factor Authentication')} text={it.L('Enable two-factor authentication for an extra layer of security.')} />
 
-                <Column url='vpn_app' image='vpn' header={'VPN App'} text={it.L('Establish a secure Internet connection and protect your privacy.')} />
+                <Column url='vpn_app' image='vpn' header={it.L('VPN App')} text={it.L('Establish a secure Internet connection and protect your privacy.')} />
             </div>
         </div>
     </React.Fragment>
