@@ -11,15 +11,15 @@ const hour_to_granularity_map = [
 ];
 
 export const getChartType = (start_time, expiry_time) => {
-    const beginning_time = start_time || ServerTime.get().unix();
-    const duration = moment.duration(moment.unix(expiry_time).diff(moment.unix(beginning_time))).asHours();
+    const ending_time    = expiry_time || ServerTime.get().unix();
+    const duration = moment.duration(moment.unix(ending_time).diff(moment.unix(start_time))).asHours();
     // use line chart if duration is less than 1 hour
     return (duration < 1) ? 'mountain' : 'candle';
 };
 
 export const getChartGranularity = (start_time, expiry_time) => {
-    const beginning_time = start_time || ServerTime.get().unix();
-    return calculateGranularity(expiry_time - beginning_time);
+    const end_time = expiry_time || ServerTime.get().unix();
+    return calculateGranularity(end_time - start_time);
 };
 
 export const calculateGranularity = (duration) =>

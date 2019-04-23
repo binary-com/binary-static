@@ -58,14 +58,14 @@ export default class ContractStore extends BaseStore {
             SmartChartStore.setRange(contract_info.date_start, end_time);
 
             if (!contract_info.tick_count && !this.is_granularity_set) {
-                this.handleChartType(SmartChartStore, end_time, contract_info.date_start);
+                this.handleChartType(SmartChartStore, contract_info.date_start, end_time);
             }
 
         } else if (!this.is_left_epoch_set && contract_info.tick_count) {
             this.is_left_epoch_set = true;
             SmartChartStore.setTickChartView(contract_info.purchase_time);
         } else if (!contract_info.tick_count && !this.is_granularity_set) {
-            this.handleChartType(SmartChartStore, contract_info.date_expiry, null);
+            this.handleChartType(SmartChartStore, contract_info.date_start, null);
         }
 
         createChartBarrier(SmartChartStore, contract_info);
@@ -190,12 +190,16 @@ export default class ContractStore extends BaseStore {
         }
     }
 
-    handleChartType(SmartChartStore, expiry, start) {
+    handleChartType(SmartChartStore, start, expiry) {
         const chart_type  = getChartType(start, expiry);
         const granularity = getChartGranularity(start, expiry);
+
         if (chart_type === 'candle' && granularity !== 0) {
             SmartChartStore.granularity = granularity;
             SmartChartStore.chart_type  = 'candle';
+        } else {
+            SmartChartStore.granularity = 0;
+            SmartChartStore.chart_type  = 'mountain';
         }
         this.is_granularity_set = true;
     }
