@@ -8,7 +8,13 @@ class VerticalTab extends React.PureComponent {
     constructor(props) {
         super(props);
         if (props.is_routed) {
-            const selected = props.list.find(item => item.path === props.current_path);
+            const applicable_routes = props.list.filter(item => (
+                item.path === props.current_path || item.default
+            ));
+            const selected = applicable_routes.length > 1 ?
+                applicable_routes[applicable_routes.length - 1]
+                : applicable_routes.length === 1 ? applicable_routes[0] : undefined;
+
             this.state = {
                 selected,
             };
@@ -64,10 +70,11 @@ VerticalTab.propTypes = {
     is_routed    : PropTypes.bool,
     list         : PropTypes.arrayOf(
         PropTypes.shape({
-            icon : PropTypes.func,
-            label: PropTypes.string,
-            path : PropTypes.string,
-            value: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
+            default: PropTypes.bool,
+            icon   : PropTypes.func,
+            label  : PropTypes.string,
+            path   : PropTypes.string,
+            value  : PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
         })
     ).isRequired,
 };

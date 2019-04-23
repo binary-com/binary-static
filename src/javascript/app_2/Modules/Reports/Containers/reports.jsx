@@ -12,10 +12,11 @@ class Reports extends React.Component {
 
         this.props.routes.forEach(route => {
             options.push({
-                icon : route.icon_component,
-                label: route.title,
-                value: route.component,
-                path : route.path,
+                default: route.default,
+                icon   : route.icon_component,
+                label  : route.title,
+                value  : route.component,
+                path   : route.path,
             });
         });
 
