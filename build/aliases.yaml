@@ -23,6 +23,7 @@ default:
 start:
   - 'copy'
   - 'css'
+  - 'js'
   - 'shell:compile_dev'
   - 'connect:livereload'
   - 'concurrent:serve'
