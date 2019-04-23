@@ -1,13 +1,12 @@
-import PropTypes        from 'prop-types';
-import React            from 'react';
-import classNames       from 'classnames';
-import {
-    Icon,
-    IconError }         from 'Assets/Common';
-import { IconInfoBlue } from 'Assets/Common/icon-info-blue.jsx';
-import { IconWarning }  from 'Assets/Common/icon-warning.jsx';
-import { IconSuccess }  from 'Assets/Common/icon-success.jsx';
-import CloseButton      from './close-button.jsx';
+import PropTypes           from 'prop-types';
+import React               from 'react';
+import classNames          from 'classnames';
+import { Icon }            from 'Assets/Common';
+import { IconDanger }      from 'Assets/Common/icon-danger.jsx';
+import { IconInformation } from 'Assets/Common/icon-information.jsx';
+import { IconWarning }     from 'Assets/Common/icon-warning.jsx';
+import { IconSuccess }     from 'Assets/Common/icon-success.jsx';
+import CloseButton         from './close-button.jsx';
 import {
     DEFAULT_DELAY,
     TYPES }             from './constants';
@@ -37,8 +36,8 @@ const Toast = ({
             })}
         >
             <div className='toast-message__icon'>
-                { data.type === 'error'   && <Icon icon={IconError} className='toast-message__icon-type' /> }
-                { data.type === 'info'    && <Icon icon={IconInfoBlue} className='toast-message__icon-type' /> }
+                { data.type === 'danger'  && <Icon icon={IconDanger} className='toast-message__icon-type' /> }
+                { data.type === 'info'    && <Icon icon={IconInformation} className='toast-message__icon-type' /> }
                 { data.type === 'success' && <Icon icon={IconSuccess} className='toast-message__icon-type' /> }
                 { data.type === 'warning' && <Icon icon={IconWarning} className='toast-message__icon-type' /> }
             </div>
@@ -67,7 +66,7 @@ Toast.propTypes = {
         is_auto_close: PropTypes.bool,
         message      : PropTypes.string,
         size         : PropTypes.oneOf(['small']),
-        type         : PropTypes.oneOf(['error', 'info', 'success', 'warning']),
+        type         : PropTypes.oneOf(['error', 'info', 'success', 'danger']),
     }),
     removeToastMessage: PropTypes.func,
 };

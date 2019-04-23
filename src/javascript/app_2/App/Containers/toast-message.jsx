@@ -31,7 +31,7 @@ ToastMessage.propTypes = {
             is_auto_close: PropTypes.bool,
             message      : PropTypes.string,
             size         : PropTypes.oneOf(['small']),
-            type         : PropTypes.oneOf(['error', 'info', 'success', 'warning']),
+            type         : PropTypes.oneOf(['error', 'info', 'success', 'danger']),
         }),
     ),
 };

@@ -15,7 +15,7 @@
     padding: 16px;
     color: $COLOR_WHITE;
 
-    &--error {
+    &--danger {
         background-color: $COLOR_RED;
     }
     &--info {
@@ -65,9 +65,7 @@
     }
     &__icon {
         &-type {
-            // TODO:
-            // margin-right: 0.8em;
-            // padding-top: 0.5em;
+            margin-right: 8px;
         }
     }
 }
