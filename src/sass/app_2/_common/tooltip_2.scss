@@ -58,4 +58,44 @@
             }
         }
     }
+    &--error {
+        @include themify($themes) {
+            background-color: themed('tooltip_background_error');
+
+            .tooltip-2-arrow {
+                &--left {
+                    border-left-color: themed('tooltip_background_error');
+                }
+                &--right {
+                    border-right-color: themed('tooltip_background_error');
+                }
+                &--top {
+                    border-top-color: themed('tooltip_background_error');
+                }
+                &--bottom {
+                    border-bottom-color: themed('tooltip_background_error');
+                }
+            }
+        }
+    }
+    &--error-secondary {
+        @include themify($themes) {
+            background-color: themed('tooltip_background_color');
+
+            .tooltip-2-arrow {
+                &--left {
+                    border-left-color: themed('tooltip_background_color');
+                }
+                &--right {
+                    border-right-color: themed('tooltip_background_color');
+                }
+                &--top {
+                    border-top-color: themed('tooltip_background_color');
+                }
+                &--bottom {
+                    border-bottom-color: themed('tooltip_background_color');
+                }
+            }
+        }
+    }
 }
