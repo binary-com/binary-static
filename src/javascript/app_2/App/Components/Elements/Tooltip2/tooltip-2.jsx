@@ -10,7 +10,6 @@ class Tooltip2 extends React.PureComponent {
 
     onMouseEnter = () => {
         this.setState({ should_show_tooltip_bubble: true });
-        this.tooltip_trigger_rect = this.tooltip_trigger_ref.current.getBoundingClientRect();
     }
 
     onMouseLeave = () => {
@@ -25,12 +24,11 @@ class Tooltip2 extends React.PureComponent {
         } = this.props;
 
         return (
-            <div
-                onMouseEnter={this.onMouseEnter}
-                onMouseLeave={this.onMouseLeave}
-            >
+            <React.Fragment>
                 <div
                     ref={this.tooltip_trigger_ref}
+                    onMouseEnter={this.onMouseEnter}
+                    onMouseLeave={this.onMouseLeave}
                 >
                     { children }
                 </div>
@@ -39,10 +37,10 @@ class Tooltip2 extends React.PureComponent {
                     <TooltipBubble
                         alignment={alignment}
                         message={message}
-                        tooltip_trigger_rect={this.tooltip_trigger_rect}
+                        tooltip_trigger_rect={this.tooltip_trigger_ref.current.getBoundingClientRect()}
                     />
                 }
-            </div>
+            </React.Fragment>
         );
     }
 }
