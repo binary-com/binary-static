@@ -10,9 +10,9 @@
     text-align: center;
     visibility: hidden;
     opacity: 0;
-    padding: 1.6em;
+    @include toEm(padding, 16px);
     transition: transform 0.7s, visibility 0s linear 0.7s, opacity 0.7s;
-    border-radius: 0 0 $BORDER_RADIUS $BORDER_RADIUS;
+    border-radius: $BORDER_RADIUS;
     box-shadow: 0 2px 8px $COLOR_LIGHT_BLACK_3;
     display: flex;
     justify-content: center;
@@ -23,10 +23,12 @@
         align-items: center;
         justify-content: space-between;
         @include typeface(--small-center-normal-active, unset);
+        @include themify($themes) {
+            color: themed('text_color');
+        }
     }
     &__button {
         margin: 0 0 0 1.6em;
-        margin-left: 1.6em;
         font-size: 0.68em;
         pointer-events: auto;
         cursor: pointer;
@@ -41,14 +43,8 @@
         transition-delay: 0s;
     }
     &--info {
-        background-color: $COLOR_DARK_BLUE_7;
-
-        .btn--secondary {
-            border: 1px solid $COLOR_WHITE;
-
-            .btn__text {
-                color: $COLOR_WHITE;
-            }
+        @include themify($themes) {
+            background-color: themed('container_secondary_color');
         }
     }
 }

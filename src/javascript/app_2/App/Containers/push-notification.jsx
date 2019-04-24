@@ -15,6 +15,7 @@ const PushNotification = ({
                 content={content}
                 duration={duration}
                 type={type || 'info'}
+                has_content_close={true}
             />
         );
     })

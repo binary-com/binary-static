@@ -23,13 +23,14 @@ class NotificationBar extends React.Component {
         this.setState({ show: false }, () => {
             clearTimeout(this.timer);
         });
-    }
+    };
 
     render() {
         const {
             className,
             content,
             duration,
+            has_content_close,
             type, // TODO: add support for different type of notifications
         } = this.props;
 
@@ -49,14 +50,22 @@ class NotificationBar extends React.Component {
                     })}
                 >
                     <div className='notification-bar__message'>
-                        {content}
+                        {
+                            has_content_close ?
+                                React.Children.map(content, child =>
+                                    React.cloneElement(child, { onClose: this.onClose.bind(this) })
+                                )
+                                : content
+                        }
                     </div>
-                    <div
-                        onClick={this.onClose.bind(this)}
-                        className='notification-bar__button'
-                    >
-                        <IconClose className='notification-bar__icon' />
-                    </div>
+                    { !has_content_close &&
+                        <div
+                            onClick={this.onClose.bind(this)}
+                            className='notification-bar__button'
+                        >
+                            <IconClose className='notification-bar__icon' />
+                        </div>
+                    }
                 </div>
             </CSSTransition>
         );
@@ -69,7 +78,8 @@ NotificationBar.propTypes = {
         PropTypes.object,
         PropTypes.string,
     ]),
-    type: PropTypes.string,
+    has_content_close: PropTypes.bool,
+    type             : PropTypes.string,
 };
 
 export default NotificationBar;

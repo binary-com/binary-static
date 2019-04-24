@@ -5,6 +5,7 @@ import { localize } from '_common/localize';
 import Button       from '../../Components/Form/button.jsx';
 
 const InstallPWA = ({
+    onClose,
     pwa_prompt_event,
     removePWAPromptEvent,
 }) => {
@@ -22,11 +23,17 @@ const InstallPWA = ({
 
     return (
         <React.Fragment>
-            <p>{localize('Want quick and easy access to world markets?')}</p>
+            <p className='notification-bar__message'>{localize('Install Binary.com app?')}</p>
             <Button
-                className='btn--secondary notification-bar__button'
+                className='btn--secondary btn--secondary--orange btn--link notification-bar__button'
                 has_effect
-                text={localize('Get the Binary.com app')}
+                text={localize('No')}
+                onClick={onClose}
+            />
+            <Button
+                className='btn--primary btn--primary--orange notification-bar__button'
+                has_effect
+                text={localize('Yes')}
                 onClick={showPrompt}
             />
         </React.Fragment>
@@ -34,6 +41,7 @@ const InstallPWA = ({
 };
 
 InstallPWA.propTypes = {
+    onClose             : PropTypes.func,
     pwa_prompt_event    : PropTypes.object,
     removePWAPromptEvent: PropTypes.func,
 };
