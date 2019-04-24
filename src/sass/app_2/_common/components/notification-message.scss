@@ -1,11 +1,11 @@
-/** @define notification-container; */
-.notification-container {
+/** @define notification-messages; */
+.notification-messages {
     z-index: 9999;
     position: absolute;
     right: 15px;
     top: 8px;
 
-    :not(:last-child) {
+    & > :not(:last-child) {
         margin-bottom: 16px;
     }
 }

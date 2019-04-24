@@ -7,12 +7,12 @@ const NotificationMessage = ({
     notifications,
     removeNotification,
 }) => {
-    const max_display_notifications = 3;
+    const MAX_DISPLAY_NOTIFICATIONS = 3;
 
     return (
-        <div className='notification-container'>
+        <div className='notification-messages'>
             {
-                notifications.slice(0, max_display_notifications).map((notification, idx) => (
+                notifications.slice(0, MAX_DISPLAY_NOTIFICATIONS).map((notification, idx) => (
                     <Notification
                         key={idx}
                         data={notification}

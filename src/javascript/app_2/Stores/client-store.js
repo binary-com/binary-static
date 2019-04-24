@@ -17,6 +17,7 @@ import {
     State }                    from '_common/storage';
 import BaseStore               from './base-store';
 import { buildCurrenciesList } from './Modules/Trading/Helpers/currency';
+import { formatDate }          from 'Utils/date';
 
 const storage_key = 'client.accounts';
 export default class ClientStore extends BaseStore {
@@ -246,13 +247,25 @@ export default class ClientStore extends BaseStore {
         this.loginid  = LocalStore.get('active_loginid');
         this.accounts = LocalStore.getObject(storage_key);
         this.switched = '';
-        if (!this.accounts[this.loginid].currency) {
+
+        const { currency: has_no_currency } = !this.accounts[this.loginid];
+        if (has_no_currency) {
             this.root_store.ui.addNotification({
                 header : localize('Set Currency'),
                 message: localize('Please set the currency of your account to enable trading.'),
                 type   : 'danger',
             });
         }
+
+        const { excluded_until } = this.accounts[this.loginid];
+        if (excluded_until) {
+            this.root_store.ui.addNotification({
+                header : localize('Self-exclusion Detected'),
+                message: localize('You have opted to be excluded from Binary.com until [_1]. Please contact us for assistance.', formatDate(excluded_until, 'DD/MM/YYYY')),
+                type   : 'danger',
+            });
+        }
+
         this.selectCurrency('');
 
         this.responsePayoutCurrencies(await WS.payoutCurrencies());
