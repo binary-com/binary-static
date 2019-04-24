@@ -86,25 +86,6 @@
     }
 }
 
-@keyframes wave-bounce {
-    0%, 30%, 100% {
-        transform: translate(0, 0);
-        background-color: $COLOR_WHITE;
-    }
-    10% {
-        transform: translate(0, -8px);
-        background-color: $COLOR_ORANGE;
-    }
-    15% {
-        transform: translate(0, -12px);
-        background-color: $COLOR_DARK_ORANGE;
-    }
-    20% {
-        transform: translate(0, -8px);
-        background-color: $COLOR_ORANGE;
-    }
-}
-
 @keyframes sk-stretchdelay {
     0%, 40%, 100% {
         transform: scaleY(1);
@@ -133,7 +114,7 @@
         font-size: 14px;
         margin-top: 8px;
         opacity: 0;
-        animation: fade-in 1.5s, fade-out 0.5s ease-out 1.5s;
+        animation: fade-in 0.75s, fade-out 0.25s ease-out 0.5s;
         @include themify($themes) {
             color: themed('text_color');
         }
@@ -146,10 +127,10 @@
         @include themify($themes) {
             fill: themed('icon_color');
         }
-        animation: fill-up 6s;
+        animation: fill-up 3s;
     }
     /* clean-css ignore:end */
     &__image {
-        animation: shrink 0.5s ease-out 6s;
+        animation: shrink 0.25s ease-out 2.65s;
     }
 }
