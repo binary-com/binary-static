@@ -4,6 +4,7 @@ import {
     observable,
     when }                     from 'mobx';
 import moment                  from 'moment';
+import { formatDate }          from 'Utils/Date';
 import {
     requestLogout,
     WS }                       from 'Services';
@@ -17,7 +18,6 @@ import {
     State }                    from '_common/storage';
 import BaseStore               from './base-store';
 import { buildCurrenciesList } from './Modules/Trading/Helpers/currency';
-import { formatDate }          from 'Utils/date';
 
 const storage_key = 'client.accounts';
 export default class ClientStore extends BaseStore {

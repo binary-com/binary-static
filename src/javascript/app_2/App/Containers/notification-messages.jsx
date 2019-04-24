@@ -3,8 +3,8 @@ import React        from 'react';
 import { connect }  from 'Stores/connect';
 import Notification  from '../Components/Elements/NotificationMessage';
 
-const NotificationMessage = ({
-    notifications,
+const NotificationMessages = ({
+    notification_messages,
     removeNotification,
 }) => {
     const MAX_DISPLAY_NOTIFICATIONS = 3;
@@ -12,7 +12,7 @@ const NotificationMessage = ({
     return (
         <div className='notification-messages'>
             {
-                notifications.slice(0, MAX_DISPLAY_NOTIFICATIONS).map((notification, idx) => (
+                notification_messages.slice(0, MAX_DISPLAY_NOTIFICATIONS).map((notification, idx) => (
                     <Notification
                         key={idx}
                         data={notification}
@@ -24,8 +24,8 @@ const NotificationMessage = ({
     );
 };
 
-NotificationMessage.propTypes = {
-    notifications: PropTypes.arrayOf(
+NotificationMessages.propTypes = {
+    notification_messages: PropTypes.arrayOf(
         PropTypes.shape({
             closeOnClick : PropTypes.func,
             delay        : PropTypes.number,
@@ -41,7 +41,7 @@ NotificationMessage.propTypes = {
 
 export default connect(
     ({ ui }) => ({
-        notifications     : ui.notifications,
-        removeNotification: ui.removeNotification,
+        notification_messages: ui.notification_messages,
+        removeNotification   : ui.removeNotification,
     })
-)(NotificationMessage);
+)(NotificationMessages);

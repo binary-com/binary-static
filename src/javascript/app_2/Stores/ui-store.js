@@ -38,7 +38,7 @@ export default class UIStore extends BaseStore {
 
     @observable screen_width = window.innerWidth;
 
-    @observable notifications = [];
+    @observable notification_messages = [];
 
     @observable is_advanced_duration   = false;
     @observable advanced_duration_unit = 't';
@@ -235,20 +235,20 @@ export default class UIStore extends BaseStore {
 
     @action.bound
     addNotification(notification) {
-        this.notifications.push(notification);
+        this.notification_messages.push(notification);
     }
 
     @action.bound
     removeNotification(notification) {
-        const index = this.notifications.indexOf(notification);
+        const index = this.notification_messages.indexOf(notification);
         if (index > -1) {
-            this.notifications.splice(index, 1);
+            this.notification_messages.splice(index, 1);
         }
     }
 
     @action.bound
     removeAllNotifications() {
-        this.notifications = [];
+        this.notification_messages = [];
     }
 
     @action.bound
