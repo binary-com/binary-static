@@ -7,7 +7,8 @@ import { connect }    from 'Stores/connect';
 import Loading        from '../../../../../templates/app_2/components/loading.jsx';
 
 const AppContents = ({
-    children, is_contract_mode,
+    children,
+    is_contract_mode,
     is_positions_drawer_on,
     is_app_blurred,
     is_dark_mode,
@@ -38,7 +39,10 @@ const AppContents = ({
 
 AppContents.propTypes = {
     children              : PropTypes.any,
+    is_app_blurred        : PropTypes.bool,
+    is_contract_mode      : PropTypes.bool,
     is_dark_mode          : PropTypes.bool,
+    is_fully_blurred      : PropTypes.bool,
     is_loading            : PropTypes.bool,
     is_positions_drawer_on: PropTypes.bool,
     loading_status        : PropTypes.string,

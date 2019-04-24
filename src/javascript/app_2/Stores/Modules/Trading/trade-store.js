@@ -537,15 +537,15 @@ export default class TradeStore extends BaseStore {
     @action.bound
     onLoadingMount() {
         setTimeout(() => {
-            this.updateLoadingStatus('Retrieving market symbols...');
+            this.updateLoadingStatus(localize('Retrieving market symbols...'));
         });
         setTimeout(() => {
             this.updateLoadingStatus('');
-            this.updateLoadingStatus('Retrieving trading times...');
+            this.updateLoadingStatus(localize('Retrieving trading times...'));
         }, 1000);
         setTimeout(() => {
             this.updateLoadingStatus('');
-            this.updateLoadingStatus('Retrieving chart data...');
+            this.updateLoadingStatus(localize('Retrieving chart data...'));
         }, 2000);
         setTimeout(() => {
             this.root_store.ui.setAppLoading(false);
