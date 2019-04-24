@@ -1,4 +1,4 @@
-$header-height: 4.2em;
+$header-height: 52px;
 
 /** @define table */
 .table {
@@ -21,7 +21,7 @@ $header-height: 4.2em;
     }
     &__row {
         display: grid;
-        grid-auto-rows: min-content; // safari fix
+        grid-auto-rows: max-content; // safari fix
         padding: 0 1.6em;
         box-sizing: border-box;
         text-decoration: none;

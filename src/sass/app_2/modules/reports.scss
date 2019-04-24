@@ -162,3 +162,35 @@ $side-padding: 1.2em;
         font-size: 1.4em;
     }
 }
+
+/** @define profit-table; weak */
+.profit-table {
+    height: 100%;
+
+    &__content {
+        width: 100%;
+        max-height: 100%;
+    }
+    /*
+        TABLE STYLES
+    */
+    &__table {
+        height: calc(100% - 42px);
+    }
+    &__row {
+        grid-template-columns: repeat(7, 1fr);
+    }
+    .payout, .amount, .balance {
+        justify-content: flex-end;
+    }
+    .amount {
+        font-weight: bold;
+
+        &--profit {
+            color: $COLOR_GREEN_1;
+        }
+        &--loss {
+            color: $COLOR_RED;
+        }
+    }
+}
