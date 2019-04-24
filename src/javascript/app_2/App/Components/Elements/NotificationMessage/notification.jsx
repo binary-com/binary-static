@@ -8,7 +8,7 @@ import { IconWarning }     from 'Assets/Common/icon-warning.jsx';
 import { IconSuccess }     from 'Assets/Common/icon-success.jsx';
 import CloseButton         from './close-button.jsx';
 import {
-    // DEFAULT_DELAY,
+    DEFAULT_DELAY,
     TYPES }             from './constants';
 
 const Notification = ({
@@ -25,8 +25,8 @@ const Notification = ({
 
     const onClick = () => destroy(true);
 
-    if (data.is_auto_close || data.is_auto_close === undefined) {
-        // setTimeout(destroy, data.delay || DEFAULT_DELAY);
+    if (data.is_auto_close) {
+        setTimeout(destroy, data.delay || DEFAULT_DELAY);
     }
 
     return (
@@ -49,15 +49,23 @@ const Notification = ({
                     {data.message}
                 </p>
             </div>
-            <CloseButton onClick={onClick} className='notification__close-button' />
+            { data.has_close_btn && <CloseButton onClick={onClick} className='notification__close-button' />}
         </div>
     );
+};
+
+Notification.defaultProps = {
+    data: {
+        has_close_btn: true,
+        type         : 'info',
+    },
 };
 
 Notification.propTypes = {
     data: PropTypes.shape({
         closeOnClick : PropTypes.func,
         delay        : PropTypes.number,
+        has_close_btn: PropTypes.bool,
         header       : PropTypes.string,
         is_auto_close: PropTypes.bool,
         message      : PropTypes.string,

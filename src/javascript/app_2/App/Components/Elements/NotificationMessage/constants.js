@@ -1,4 +1,4 @@
-export const DEFAULT_DELAY = 5000;
+export const DEFAULT_DELAY = 3000;
 
 export const TYPES = {
     DANGER : 'notification--danger',
