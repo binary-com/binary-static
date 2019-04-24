@@ -1,8 +1,9 @@
-import PropTypes    from 'prop-types';
-import React        from 'react';
-import { connect }  from 'Stores/connect';
-import { localize } from '_common/localize';
-import Button       from '../../Components/Form/button.jsx';
+import PropTypes        from 'prop-types';
+import React            from 'react';
+import { website_name } from 'App/Constants/app-config';
+import { connect }      from 'Stores/connect';
+import { localize }     from '_common/localize';
+import Button           from '../../Components/Form/button.jsx';
 
 const InstallPWA = ({
     onClose,
@@ -23,7 +24,7 @@ const InstallPWA = ({
 
     return (
         <React.Fragment>
-            <p className='notification-bar__message'>{localize('Install Binary.com app?')}</p>
+            <p className='notification-bar__message'>{localize('Install [_1] app?', website_name)}</p>
             <Button
                 className='btn--secondary btn--secondary--orange btn--link notification-bar__button'
                 has_effect
