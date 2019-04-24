@@ -34,7 +34,7 @@ export const FormRow = ({
     const getInnerElement = () => {
         if (type === 'select') {
             return (
-                <select id={id} className={`form_input ${className || ''}`} {...attributes} >
+                <select data-lpignore='true' id={id} className={`form_input ${className || ''}`} {...attributes} >
                     {children}
                 </select>
             );
