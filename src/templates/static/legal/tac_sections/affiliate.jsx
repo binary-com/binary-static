@@ -109,7 +109,7 @@ const Affiliate = () => (
                 header={it.L('Disclaimer')}
                 items={[
                     { text: it.L('The Company makes no claims that the [_1] website will be uninterrupted or provide an error-free service and will not be liable for the consequences of any such errors or interruptions.', it.website_name) },
-                    { text: it.L('The Company provides the [_1] website on an “as is” and “as available” basis and gives no warranty that the [_1] website will be free of errors, or that errors will be corrected, or that the Company\'s website is free of any third-party interferences such as hackers or any other harmful components that arise outside of the Company\'s control.', it.website_name) },
+                    { text: it.L('The Company provides the [_1] website on an "as is" and "as available" basis and gives no warranty that the [_1] website will be free of errors, or that errors will be corrected, or that the Company\'s website is free of any third-party interferences such as hackers or any other harmful components that arise outside of the Company\'s control.', it.website_name) },
                 ]}
             />
 
