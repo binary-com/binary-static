@@ -45,7 +45,7 @@ class OpenPositions extends React.Component {
                     i18n_heading={localize('Open Positions')}
                     i18n_message={localize('Vestibulum rutrum quam fringilla tincidunt. Suspendisse nec tortor.')}
                 />
-                <div className='open-positions container'>
+                <div className='open-positions open-positions__content'>
                     { currency && active_positions.length > 0 && <DataTable
                         className='open-positions'
                         columns={getOpenPositionsColumnsTemplate(currency)}

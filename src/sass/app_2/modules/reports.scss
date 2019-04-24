@@ -47,7 +47,7 @@ $side-padding: 1.2em;
     &__row {
         grid-template-columns: 1fr 1.2fr 1fr 1fr 1fr 1fr;
     }
-    .payout, .amount, .balance {
+    .amount, .balance {
         justify-content: flex-end;
     }
     .amount {
@@ -180,7 +180,7 @@ $side-padding: 1.2em;
     &__row {
         grid-template-columns: repeat(7, 1fr);
     }
-    .payout, .amount, .balance {
+    .buy_price, .sell_price, .profit_loss {
         justify-content: flex-end;
     }
 }

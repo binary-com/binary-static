@@ -40,7 +40,7 @@ class ProfitTable extends React.Component {
                     i18n_heading={localize('Profit Table')}
                     i18n_message={localize('Vestibulum rutrum quam fringilla tincidunt. Suspendisse nec tortor.')}
                 />
-                <div className='profit-table__content'>
+                <div className='profit-table profit-table__content'>
                     <DataTable
                         className='profit-table'
                         data_source={data}

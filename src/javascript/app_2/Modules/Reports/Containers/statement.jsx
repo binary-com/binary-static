@@ -36,7 +36,7 @@ class Statement extends React.Component {
                     i18n_heading={localize('Statement')}
                     i18n_message={localize('Vestibulum rutrum quam fringilla tincidunt. Suspendisse nec tortor.')}
                 />
-                <div className='statement__content'>
+                <div className='statement statement__content'>
                     <DataTable
                         className='statement'
                         data_source={data}
