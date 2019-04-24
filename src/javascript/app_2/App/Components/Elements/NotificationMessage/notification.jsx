@@ -42,12 +42,8 @@ const Notification = ({
                 { data.type === 'warning' && <Icon icon={IconWarning} className='notification__icon-type' /> }
             </div>
             <div className='notification__text-container'>
-                <div className='notification__header'>
-                    <h4>{data.header}</h4>
-                </div>
-                <p className='notification__message'>
-                    {data.message}
-                </p>
+                <h4 className='notification__header'>{data.header}</h4>
+                <p className='notification__text-body'> {data.message}</p>
             </div>
             { data.should_hide_close_btn ? undefined : <CloseButton onClick={onClick} className='notification__close-button' />}
         </div>
