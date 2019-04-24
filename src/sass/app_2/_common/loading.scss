@@ -43,10 +43,10 @@
 /* clean-css ignore:start */
 @keyframes fill-up {
     0% {
-        y: 90px;
+        height: 90px;
     }
     100% {
-        y: 0px;
+        height: 0px;
     }
 }
 /* clean-css ignore:end */
@@ -104,7 +104,7 @@
     flex-direction: column;
     display: flex;
     @include themify($themes) {
-        background-color: themed('background_cover');
+        background-color: themed('initial_loader_background');
     }
 
     &__wrapper {
@@ -120,12 +120,14 @@
         }
     }
     &__mask {
-        fill: transparent;
+        @include themify($themes) {
+            fill: themed('icon_color');
+        }
     }
     /* clean-css ignore:start */
     &__fill {
         @include themify($themes) {
-            fill: themed('icon_color');
+            fill: themed('initial_loader_background');
         }
         animation: fill-up 3s;
     }
