@@ -1,7 +1,7 @@
-import classNames        from 'classnames';
-import PropTypes         from 'prop-types';
-import React             from 'react';
-import { IconTradeType } from '../../../Assets/Trading/Types';
+import PropTypes          from 'prop-types';
+import React              from 'react';
+import { UnderlyingIcon } from 'App/Components/Elements/underlying-icon.jsx';
+import { IconTradeType }  from '../../../Assets/Trading/Types';
 
 const getMarketInformation = (payload) => {
     const { shortcode } = payload;
@@ -24,12 +24,7 @@ const MarketSymbolIconRow = ({ payload }) => {
         return (
             <React.Fragment>
                 <div className='positions-drawer-card__underlying-name'>
-                    <div
-                        className={classNames(
-                            'icons-underlying',
-                            `icons-underlying__ic-${market_information.underlying || 'unknown'}`
-                        )}
-                    />
+                    <UnderlyingIcon market={market_information.underlying} />
                     &nbsp;
                 </div>
 

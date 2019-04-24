@@ -11,6 +11,7 @@ import ResultDetails         from './result-details.jsx';
 import ResultOverlay         from './result-overlay.jsx';
 import { getTimePercentage } from './helpers';
 import Money                 from '../money.jsx';
+import { UnderlyingIcon }    from '../underlying-icon.jsx';
 import Button                from '../../Form/button.jsx';
 
 class PositionsDrawerCard extends React.PureComponent {
@@ -49,7 +50,7 @@ class PositionsDrawerCard extends React.PureComponent {
         } = this.props;
         const percentage = getTimePercentage(server_time, contract_info.purchase_time, contract_info.date_expiry);
         return (
-            
+
             <div className={classNames(
                 'positions-drawer-card__wrapper', {
                     'positions-drawer-card__wrapper--active': (parseInt(active_position) === id),
@@ -80,12 +81,7 @@ class PositionsDrawerCard extends React.PureComponent {
                         )}
                         >
                             <div className='positions-drawer-card__underlying-name'>
-                                <div
-                                    className={classNames(
-                                        'icons-underlying',
-                                        `icons-underlying__ic-${contract_info.underlying || 'unknown'}`
-                                    )}
-                                />
+                                <UnderlyingIcon market={contract_info.underlying} />
                                 <span className='positions-drawer-card__symbol'>
                                     {contract_info.display_name}
                                 </span>
