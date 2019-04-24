@@ -1,8 +1,8 @@
-import ContractStore   from './Contract/contract-store';
-import PortfolioStore  from './Portfolio/portfolio-store';
-import SmartChartStore from './SmartChart/smart-chart-store';
-import StatementStore  from './Statement/statement-store';
-import TradeStore      from './Trading/trade-store';
+import ContractStore    from './Contract/contract-store';
+import PortfolioStore   from './Portfolio/portfolio-store';
+import SmartChartStore  from './SmartChart/smart-chart-store';
+import StatementStore   from './Statement/statement-store';
+import TradeStore       from './Trading/trade-store';
 import ProfitTableStore from './Profit/profit-store';
 
 export default class ModulesStore {
