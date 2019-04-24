@@ -29,7 +29,8 @@ const LimitsInit = (() => {
                     localize('You have already withdrawn the equivalent of [_1] [_2] in aggregate over the last [_3] days.', [currency, limits.withdrawal_for_x_days_monetary, limits.num_of_days]));
                 elementTextContent(el_withdraw_limit_agg,
                     localize('Therefore your current immediate maximum withdrawal (subject to your account having sufficient funds) is [_1] [_2] (or equivalent in other currency).', [currency, remainder]));
-            } else if (Client.get('landing_company_shortcode' === 'costarica')) {
+            } else if (Client.get('landing_company_shortcode') === 'costarica' || Client.get('landing_company_shortcode') === 'svg') {
+                // TODO [->svg]
                 elementTextContent(el_withdraw_limit,
                     localize('Your withdrawal limit is [_1] [_2].', [currency, days_limit]));
                 elementTextContent(el_withdrawn,

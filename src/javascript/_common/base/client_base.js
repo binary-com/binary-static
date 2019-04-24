@@ -211,7 +211,7 @@ const ClientBase = (() => {
         let can_open_multi = false;
         let type,
             can_upgrade_to;
-        if ((upgradeable_landing_companies || []).length && !/^(py|ae)$/i.test(get('residence'))) { // TODO: remove py and ae exceptions when API block is implemented
+        if ((upgradeable_landing_companies || []).length) {
             const current_landing_company = get('landing_company_shortcode');
 
             can_open_multi = upgradeable_landing_companies.indexOf(current_landing_company) !== -1;
@@ -222,7 +222,8 @@ const ClientBase = (() => {
                 upgradeable_landing_companies.indexOf(landing_company) !== -1
             ));
 
-            can_upgrade_to = canUpgrade('costarica', 'iom', 'malta', 'maltainvest');
+            // TODO [->svg]
+            can_upgrade_to = canUpgrade('costarica', 'svg', 'iom', 'malta', 'maltainvest');
             if (can_upgrade_to) {
                 type = can_upgrade_to === 'maltainvest' ? 'financial' : 'real';
             }
@@ -306,7 +307,7 @@ const ClientBase = (() => {
         return (is_from_crypto ? !is_to_crypto : is_to_crypto);
     };
 
-    const hasCostaricaAccount = () => !!(getAllLoginids().find(loginid => /^CR/.test(loginid)));
+    const hasSvgAccount = () => !!(getAllLoginids().find(loginid => /^CR/.test(loginid)));
 
     const canChangeCurrency = (statement, mt5_login_list, is_current = true) => {
         const currency             = get('currency');
@@ -347,7 +348,7 @@ const ClientBase = (() => {
         getLandingCompanyValue,
         getRiskAssessment,
         canTransferFunds,
-        hasCostaricaAccount,
+        hasSvgAccount,
         canChangeCurrency,
     };
 })();

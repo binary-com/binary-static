@@ -4,6 +4,7 @@ import PropTypes            from 'prop-types';
 import React                from 'react';
 import { CSSTransition }    from 'react-transition-group';
 import {
+    Icon,
     IconArrow,
     IconCalendar,
     IconClear }             from 'Assets/Common';
@@ -217,7 +218,7 @@ class DatePicker extends React.Component {
                     />
                     <label className='datepicker__native-overlay' htmlFor={this.props.name}>
                         {this.state.value || this.props.placeholder}
-                        <IconArrow className='datepicker__arrowhead' />
+                        <Icon icon={IconArrow} className='datepicker__arrowhead' />
                     </label>
                 </div>
             );
@@ -232,7 +233,8 @@ class DatePicker extends React.Component {
                 onMouseLeave={this.onMouseLeave}
             >
                 { this.renderInputField() }
-                <IconCalendar
+                <Icon
+                    icon={IconCalendar}
                     className={classNames('datepicker__icon datepicker__icon--calendar', {
                         'datepicker__icon--is-hidden' : this.state.is_clear_btn_visible,
                         'datepicker__icon--with-label': this.props.label,
@@ -240,7 +242,8 @@ class DatePicker extends React.Component {
                     onClick={this.handleVisibility}
                 />
                 {this.props.is_clearable &&
-                    <IconClear
+                    <Icon
+                        icon={IconClear}
                         className={classNames('datepicker__icon datepicker__icon--clear', {
                             'datepicker__icon--is-hidden': !this.state.is_clear_btn_visible,
                         })}

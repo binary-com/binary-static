@@ -9,8 +9,9 @@ import InstallPWA     from './install-pwa.jsx';
 const AppContents = ({
     addNotificationBar,
     children,
-    is_blurred,
+    is_app_blurred,
     is_contract_mode,
+    is_fully_blurred,
     is_logged_in,
     is_positions_drawer_on,
     setPWAPromptEvent,
@@ -36,7 +37,7 @@ const AppContents = ({
             className={classNames('app-contents', {
                 'app-contents--show-positions-drawer': is_positions_drawer_on,
                 'app-contents--contract-mode'        : is_contract_mode,
-                'app-contents--is-blurred'           : is_blurred,
+                'app-contents--is-blurred'           : (is_fully_blurred || is_app_blurred),
             })}
         >
             {/* Calculate height of user screen and offset height of header and footer */}
@@ -64,7 +65,8 @@ export default withRouter(connect(
     ({ client, modules, ui }) => ({
         is_logged_in          : client.is_logged_in,
         is_contract_mode      : modules.smart_chart.is_contract_mode,
-        is_blurred            : ui.is_blurred,
+        is_app_blurred        : ui.is_app_blurred,
+        is_fully_blurred      : ui.is_fully_blurred,
         is_positions_drawer_on: ui.is_positions_drawer_on,
         addNotificationBar    : ui.addNotificationBar,
         pwa_prompt_event      : ui.pwa_prompt_event,

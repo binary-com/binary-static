@@ -210,10 +210,8 @@ const ViewPopup = (() => {
         let current_spot      = contract.status === 'sold' ? '' : contract.current_spot;
         let current_spot_time = contract.status === 'sold' ? '' : contract.current_spot_time;
         if (is_ended && contract.status !== 'sold') {
-            // for tick high/low contracts, only show exit tick information if contract lost (indicates highest/lowest tick)
-            const should_show_exit_tick = !/^(tickhigh|ticklow)$/i.test(contract.contract_type) || contract.status === 'lost';
-            current_spot      = should_show_exit_tick ? contract.exit_tick : '';
-            current_spot_time = should_show_exit_tick ? contract.exit_tick_time : '';
+            current_spot      = contract.exit_tick;
+            current_spot_time = contract.exit_tick_time;
         }
 
         if (current_spot) {
@@ -361,10 +359,6 @@ const ViewPopup = (() => {
         if (Lookback.isLookback(contract.contract_type)) {
             containerSetText('trade_details_spot_label', localize('Close'));
             containerSetText('trade_details_spottime_label', localize('Close Time'));
-        } else if (/^(tickhigh|ticklow)$/i.test(contract.contract_type)) {
-            const is_high_tick = /^(tickhigh)$/i.test(contract.contract_type);
-            containerSetText('trade_details_spot_label', is_high_tick ? localize('Highest Tick') : localize('Lowest Tick'));
-            containerSetText('trade_details_spottime_label', is_high_tick ? localize('Highest Tick Time') : localize('Lowest Tick Time'));
         } else {
             containerSetText('trade_details_spot_label', localize('Exit Spot'));
             containerSetText('trade_details_spottime_label', localize('Exit Spot Time'));
@@ -399,6 +393,7 @@ const ViewPopup = (() => {
         getElementById('sell_details_chart_wrapper').setVisibility(!show);
         getElementById('sell_details_audit').setVisibility(show);
         ViewPopupUI.repositionConfirmation();
+        $('#sell_content_wrapper').scrollTop(0);
     };
 
     const setAuditButtonsVisibility = (show = true) => {
@@ -421,17 +416,17 @@ const ViewPopup = (() => {
         const div         = Utility.createElement('div', { id: 'sell_details_audit', class: 'gr-8 gr-12-p gr-12-m gr-no-gutter invisible' });
         const table       = Utility.createElement('table', { id: 'audit_header', class: 'gr-12' });
         const tr          = Utility.createElement('tr', { class: 'gr-row' });
-        const th_previous = Utility.createElement('th', { class: 'gr-2 gr-3-t gr-3-p gr-3-m' });
+        const th_previous = Utility.createElement('th', { class: 'gr-2 gr-3-t gr-3-p gr-4-m' });
         const link        = Utility.createElement('a', { class: 'previous-wrapper' });
 
         link.appendChild(Utility.createElement('span', { class: 'previous align-self-center' }));
-        link.appendChild(Utility.createElement('span', { class: 'nowrap', text: localize('View chart') }));
+        link.appendChild(Utility.createElement('span', { class: 'nowrap view-chart', text: localize('View chart') }));
         link.addEventListener('click', () => { setAuditVisibility(0); });
         th_previous.appendChild(link);
 
         tr.appendChild(th_previous);
-        tr.appendChild(Utility.createElement('th', { class: 'gr-8 gr-6-t gr-6-p gr-6-m', text: localize('Audit Page') }));
-        tr.appendChild(Utility.createElement('th', { class: 'gr-2 gr-3-t gr-3-p gr-3-m' }));
+        tr.appendChild(Utility.createElement('th', { class: 'gr-8 gr-6-t gr-6-p gr-4-m', text: localize('Audit Page') }));
+        tr.appendChild(Utility.createElement('th', { class: 'gr-2 gr-3-t gr-3-p gr-4-m' }));
         table.appendChild(tr);
         div.appendChild(table);
         div.insertAfter(getElementById('sell_details_chart_wrapper'));
@@ -491,6 +486,7 @@ const ViewPopup = (() => {
                 } else if (audit_data.flag === 'highlight_time') {
                     color = secondary_classes;
                 }
+
                 createAuditRow(table, audit_data.epoch, audit_data.tick, audit_data.name, color);
             });
             resolve();
@@ -500,7 +496,7 @@ const ViewPopup = (() => {
     const createAuditTable = (title) => {
         const div      = Utility.createElement('div', { class: 'audit-table' });
         const fieldset = Utility.createElement('fieldset', { class: 'align-start' });
-        const table    = Utility.createElement('table', { class: 'gr-10 gr-centered gr-12-p gr-12-m' });
+        const table    = Utility.createElement('table', { class: 'gr-12 gr-centered gr-12-p gr-12-m' });
         fieldset.appendChild(Utility.createElement('legend', { text: title }));
         fieldset.appendChild(table);
         div.appendChild(fieldset);
@@ -519,9 +515,9 @@ const ViewPopup = (() => {
     const createAuditHeader = (table) => {
         const tr = Utility.createElement('tr', { class: 'gr-row' });
 
-        tr.appendChild(Utility.createElement('td', { class: 'gr-3' }));
-        tr.appendChild(Utility.createElement('td', { class: 'gr-4 no-margin secondary-color', text: localize('Spot') }));
-        tr.appendChild(Utility.createElement('td', { class: 'gr-5 no-margin secondary-color', text: localize('Spot Time (GMT)') }));
+        tr.appendChild(Utility.createElement('td', { class: 'gr-4' }));
+        tr.appendChild(Utility.createElement('td', { class: 'gr-3 no-margin secondary-color', text: localize('Spot') }));
+        tr.appendChild(Utility.createElement('td', { class: 'gr-4 no-margin secondary-color', text: localize('Spot Time (GMT)') }));
 
         table.insertBefore(tr, table.childNodes[0]);
     };
@@ -534,9 +530,9 @@ const ViewPopup = (() => {
         }
 
         const tr        = Utility.createElement('tr', { class: 'gr-row' });
-        const td_remark = Utility.createElement('td', { class: 'gr-3 remark', text: remark || '' });
-        const td_tick   = Utility.createElement('td', { class: 'gr-4', text: (tick && !isNaN(tick) ? addComma(tick) : (tick || '')) });
-        const td_date   = Utility.createElement('td', { class: 'gr-5 audit-dates', 'data-value': date, 'data-balloon-pos': 'down', text: (date && !isNaN(date) ? moment.unix(date).utc().format('YYYY-MM-DD HH:mm:ss') : (date || '')) });
+        const td_remark = Utility.createElement('td', { class: 'gr-4 remark', text: remark || '' });
+        const td_tick   = Utility.createElement('td', { class: 'gr-3 spot-value', text: (tick && !isNaN(tick) ? addComma(tick) : (tick || '')) });
+        const td_date   = Utility.createElement('td', { class: 'gr-4 audit-dates', 'data-value': date, 'data-balloon-pos': 'down', text: (date && !isNaN(date) ? moment.unix(date).utc().format('YYYY-MM-DD HH:mm:ss') : (date || '')) });
 
         tr.appendChild(td_remark);
         tr.appendChild(td_tick);
@@ -553,30 +549,47 @@ const ViewPopup = (() => {
     };
 
     const populateAuditTable = (show_audit_table) => {
-        const contract_starts = createAuditTable(localize('Contract Starts'));
-        parseAuditResponse(contract_starts.table, contract.audit_details.contract_start).then(() => {
-            if (contract.audit_details.contract_start) {
-                createAuditHeader(contract_starts.table);
-                appendAuditLink('trade_details_entry_spot');
-            } else {
-                contract_starts.div.remove();
-            }
-            // don't show exit tick information if missing or manual sold
-            if (contract.audit_details.contract_end && contract.status !== 'sold') {
-                const contract_ends = createAuditTable(localize('Contract Ends'));
-                parseAuditResponse(contract_ends.table, contract.audit_details.contract_end).then(() => {
-                    if (contract.audit_details.contract_end) {
-                        createAuditHeader(contract_ends.table);
-                        appendAuditLink('trade_details_current_spot');
-                    } else {
-                        contract_ends.div.remove();
-                    }
+        if (!contract.tick_count) {
+            const contract_starts = createAuditTable(localize('Contract Starts'));
+            parseAuditResponse(contract_starts.table, contract.audit_details.contract_start).then(() => {
+                if (contract.audit_details.contract_start) {
+                    createAuditHeader(contract_starts.table);
+                    appendAuditLink('trade_details_entry_spot');
+                } else {
+                    contract_starts.div.remove();
+                }
+                // don't show exit tick information if missing or manual sold
+                if (contract.audit_details.contract_end && contract.status !== 'sold') {
+                    const contract_ends = createAuditTable(localize('Contract Ends'));
+                    parseAuditResponse(contract_ends.table, contract.audit_details.contract_end).then(() => {
+                        if (contract.audit_details.contract_end) {
+                            createAuditHeader(contract_ends.table);
+                            appendAuditLink('trade_details_current_spot');
+                        } else {
+                            contract_ends.div.remove();
+                        }
+                        onAuditTableComplete(show_audit_table);
+                    });
+                } else {
                     onAuditTableComplete(show_audit_table);
-                });
-            } else {
-                onAuditTableComplete(show_audit_table);
-            }
-        });
+                }
+            });
+        } else {
+            const contract_details = createAuditTable(localize('Contract Details'));
+            parseAuditResponse(contract_details.table, contract.audit_details.all_ticks).then(() => {
+                if (contract.audit_details.all_ticks) {
+                    createAuditHeader(contract_details.table);
+                    appendAuditLink('trade_details_entry_spot');
+                    appendAuditLink('trade_details_current_spot');
+                } else {
+                    contract_details.div.remove();
+                }
+
+                if (contract.status !== 'open') {
+                    onAuditTableComplete(show_audit_table);
+                }
+            });
+        }
     };
 
     const onAuditTableComplete = (show_audit_table) => {

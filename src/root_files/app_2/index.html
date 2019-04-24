@@ -14,7 +14,7 @@
         <meta charset="utf-8" />
         <meta name="google-site-verification" content="Myh35QddfEArh0686LcO2zMjrgv0C7L4FCBU0k0oZvU" />
         <script type="text/javascript">
-            var redirectTimeOut;
+            var lang;
             function getCookieItem(sKey) {
                 'use strict';
                 if (!sKey) { return null; }
@@ -36,9 +36,9 @@
                     'zh_cn': 'cn',
                 };
                 var conLang = 'en';
-                if(country) {
+                if (country) {
                     Object.keys(langs).map(function(l) {
-                        if((new RegExp(langs[l], 'i')).test(country)) conLang = l;
+                        if ((new RegExp(langs[l], 'i')).test(country)) conLang = l;
                     });
                 }
                 return conLang;
@@ -49,37 +49,28 @@
                 var is_logged_in = client_info && client_info['token'];
                 window.location.href = (/\/app\//.test(window.location.pathname) ? '' : 'app/') + (lang || 'en').toLowerCase() + '/trade' + window.location.search;
             }
-            function isDelayedRedirect() {
-                if(isGtmApplicable() && !redirectTimeOut) {
-                    redirectTimeOut = setTimeout(redirect, 5000);
-                } else {
-                    clearTimeout(redirectTimeOut);
-                    redirect();
-                }
-            }
-            function isGtmApplicable() {
-                return /www\.binary\.com/i.test(window.location.hostname);
-            }
-            function pushEvent() {
-                if(isGtmApplicable()) {
-                    dataLayer.push({
-                        'event': 'page_load',
-                        'eventCallback': function() {
-                            isDelayedRedirect();
-                        }
-                    });
-                }
-            }
+            // function isGtmApplicable() {
+            //     return /(www|staging)\.binary\.(com|me)/i.test(window.location.hostname);
+            // }
+            // function pushEvent() {
+            //     if (isGtmApplicable()) {
+            //         dataLayer.push({
+            //             'event': 'page_load',
+            //             'eventCallback': function() {
+            //                 redirect();
+            //             }
+            //         });
+            //     } else {
+            //         redirect();
+            //     }
+            // }
 
-            if(document.referrer) {
+            if (document.referrer) {
                 localStorage.setItem('index_referrer', document.referrer);
             }
-            var lang = getCookieItem('language');
-            if(lang) {
-                if (/^id$/i.test(lang)) {
-                    lang = 'en';
-                }
-                isDelayedRedirect();
+            lang = getCookieItem('language');
+            if (lang) {
+                redirect();
             } else {
                 var ws = new WebSocket('wss://ws.binaryws.com/websockets/v3?app_id=1');
                 ws.onopen = function(e) {
@@ -87,26 +78,27 @@
                 };
                 ws.onmessage = function(msg) {
                     var response = JSON.parse(msg.data);
-                    if(response.msg_type === 'website_status') {
-                        if(!response.error && response.hasOwnProperty('website_status')) {
+                    if (response.msg_type === 'website_status') {
+                        if (!response.error && response.hasOwnProperty('website_status')) {
                             lang = getLanguage(response.website_status.clients_country);
                         }
                         ws.close();
-                        isDelayedRedirect();
+                        redirect();
+                        // pushEvent(); // we need website_status.clients_country
                     }
                 };
             }
         </script>
     </head>
-    <body onload="pushEvent()">
-<!-- Google Tag Manager -->
-<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-MZWFF7"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<script data-cfasync="false">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-MZWFF7');</script>
-<!-- End Google Tag Manager -->
+    <body>
+<!--&lt;!&ndash; Google Tag Manager &ndash;&gt;-->
+<!--<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-MZWFF7"-->
+<!--height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>-->
+<!--<script data-cfasync="false">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':-->
+<!--new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],-->
+<!--j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=-->
+<!--'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);-->
+<!--})(window,document,'script','dataLayer','GTM-MZWFF7');</script>-->
+<!--&lt;!&ndash; End Google Tag Manager &ndash;&gt;-->
     </body>
 </html>

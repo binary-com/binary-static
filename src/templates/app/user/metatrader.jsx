@@ -76,7 +76,7 @@ const Metatrader = () => (
             </div>
             <p id='page_msg' className='notice-msg center-text invisible' />
             <p id='financial_authenticate_msg' className='notice-msg center-text invisible'>
-                {it.L('Please <a href="[_1]">authenticate</a> your account to continue trading.', it.url_for('user/authenticate'))}
+                {it.L('Please [_1]authenticate[_2] your account to continue trading.', `<a href="${it.url_for('user/authenticate')}">`, '</a>')}
             </p>
             <div id='mt_loading'><Loading /></div>
             <div id='mt_account_management' className='gr-row invisible'>
@@ -196,7 +196,7 @@ const Metatrader = () => (
                     <div className='account-desc'>
                         <AccountDesc
                             title={it.L('Choose an account')}
-                            description={it.L('[_1] offers a variety of account types to cater to the diverse needs of traders everywhere, whether you’re an experienced trader or just starting out.', it.website_name)}
+                            description={it.L('[_1] offers a variety of account types to cater to the diverse needs of traders everywhere, whether you\'re an experienced trader or just starting out.', it.website_name)}
                         />
                         <AccountDesc
                             account_type={['vanuatu_standard']}
@@ -245,8 +245,9 @@ const Metatrader = () => (
                             ]}
                         />
                         */}
+                        {/* TODO [->svg] */}
                         <AccountDesc
-                            account_type={['costarica', 'malta']}
+                            account_type={['costarica', 'svg', 'malta']}
                             title={it.L('Volatility Indices Account')}
                             description={it.L('Our Volatility Indices account allows you to trade CFDs on Volatility Indices -- our proprietary synthetic assets that simulate market forces.')}
                             items={[
@@ -266,8 +267,9 @@ const Metatrader = () => (
                                 it.L('Market execution'),
                             ]}
                         />
+                        {/* TODO [->svg] */}
                         <AccountDesc
-                            account_type={['costarica_mamm']}
+                            account_type={['costarica_mamm', 'svg_mamm']}
                             title={it.L('MAM Volatility Indices Account')}
                             description={it.L('Our MAM Volatility Indices account can be assigned to a money manager who will trade on your behalf with the same specifications as the regular Volatility Indices account.')}
                             items={[
@@ -303,7 +305,7 @@ const Metatrader = () => (
                                         </TypeGroup>
                                     </div>
                                     <p id='new_account_msg' className='notice-msg center-text invisible' />
-                                    <p id='new_account_financial_authenticate_msg' className='invisible notice-msg hint'>{it.L('You may proceed but please <a href="[_1]">authenticate</a> your account within five days to continue trading.', it.url_for('user/authenticate'))}</p>
+                                    <p id='new_account_financial_authenticate_msg' className='invisible notice-msg hint'>{it.L('You may proceed but please [_1]authenticate[_2] your account within five days to continue trading.', `<a href="${it.url_for('user/authenticate')}">`, '</a>')}</p>
                                     <p id='new_account_no_deposit_bonus_msg' className='center-text hint invisible'>
                                         <strong>{it.L('Note: A no deposit bonus worth USD 10 will be credited into your account within 24 hours after registration.')}</strong>
                                     </p>
@@ -574,18 +576,18 @@ const Metatrader = () => (
                         <div id='msg_set_currency'>{it.L('To perform this action, please set the [_1]currency[_2] of your account.', `<a href="${it.url_for('user/set-currency')}">`, '</a>')}</div>
                         <div id='msg_switch'>{it.L('To perform this action, please switch to your [_1] Real Account.', it.website_name)}</div>
                         <div id='msg_switch_financial'>{it.L('To perform this action, please switch to your [_1] Financial account', it.website_name)}</div>
-                        <div id='msg_upgrade'>{it.L('To perform this action, please <a href="[_1]">upgrade to [_2] Real Account</a>.', it.url_for('new_account/realws'), it.website_name)}</div>
+                        <div id='msg_upgrade'>{it.L('To perform this action, please [_1]upgrade to [_2] Real Account[_3].', `<a href="${it.url_for('new_account/realws')}">` , it.website_name, '</a>')}</div>
                         <div id='msg_real_financial'>
                             <span id='msg_metatrader_account' className='invisible'>{it.L('To create a MetaTrader 5 account, please:')}</span>
                             <span id='msg_mam_account' className='invisible'>{it.L('To create a MAM real account, please:')}</span>
                             <ul className='bullet'>
-                                <li className='maltainvest invisible'>{it.L('Upgrade to [_1] <a href="[_2]">Financial Account</a>.', it.website_name, it.url_for('new_account/maltainvestws'))}</li>
-                                <li className='assessment invisible'>{it.L('Complete the <a href="[_1]">Financial Assessment</a>.', it.url_for('user/settings/assessmentws'))}</li>
-                                <li className='tax invisible'>{it.L('Complete your <a href="[_1]">Tax Information</a>.', it.url_for('user/settings/detailsws'))}</li>
-                                <li className='citizen invisible'>{it.L('Select <a href="[_1]">Citizenship</a>.', it.url_for('user/settings/detailsws'))}</li>
+                                <li className='maltainvest invisible'>{it.L('Upgrade to [_1] [_2]Financial Account[_3].', it.website_name, `<a href="${it.url_for('new_account/maltainvestws')}">`, '</a>')}</li>
+                                <li className='assessment invisible'>{it.L('Complete the [_1]Financial Assessment[_2].', `<a href="${it.url_for('user/settings/assessmentws')}">`, '</a>')}</li>
+                                <li className='tax invisible'>{it.L('Complete your [_1]Tax Information[_2].', `<a href="${it.url_for('user/settings/detailsws')}">`, '</a>')}</li>
+                                <li className='citizen invisible'>{it.L('Select [_1]Citizenship[_2].', `<a href="${it.url_for('user/settings/detailsws')}">`, '</a>')}</li>
                             </ul>
                         </div>
-                        <div id='msg_authenticate'>{it.L('To withdraw from MetaTrader 5 Financial Account please <a href="[_1]">Authenticate</a> your Binary account.', it.url_for('user/authenticate'))}</div>
+                        <div id='msg_authenticate'>{it.L('To withdraw from MetaTrader 5 Financial Account please [_1]Authenticate[_2] your Binary account.', `<a href="${it.url_for('user/authenticate')}">`, '</a>')}</div>
                     </div>
                 </div>
             </div>

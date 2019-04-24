@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React     from 'react';
 
 const IconInfoBlue = ({ className }) => (
-    <svg className={className} xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'>
+    <svg className={className} width='16' height='16' viewBox='0 0 16 16'>
         <g fill='none' fillRule='evenodd'>
             <circle cx='8' cy='8' r='8' fill='#2196F3' />
             <g fill='#FFF' transform='translate(6.5 4)'>

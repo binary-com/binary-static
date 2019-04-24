@@ -1,3 +1,4 @@
+import classNames      from 'classnames';
 import PropTypes       from 'prop-types';
 import React           from 'react';
 import { withRouter }  from 'react-router';
@@ -20,6 +21,7 @@ const Header = ({
     can_upgrade_to,
     currency,
     is_acc_switcher_on,
+    is_fully_blurred,
     is_logged_in,
     is_mobile,
     is_virtual,
@@ -27,7 +29,10 @@ const Header = ({
     onClickUpgrade,
     toggleAccountsDialog,
 }) => (
-    <header className='header'>
+    <header className={classNames('header', {
+        'header--is-blurred': is_fully_blurred,
+    })}
+    >
         <div className='header__menu-items'>
             <div className='header__menu-left'>
                 {is_mobile && <ToggleMenuDrawer />}
@@ -81,6 +86,7 @@ Header.propTypes = {
     currency            : PropTypes.string,
     is_acc_switcher_on  : PropTypes.bool,
     is_dark_mode        : PropTypes.bool,
+    is_fully_blurred    : PropTypes.bool,
     is_logged_in        : PropTypes.bool,
     is_mobile           : PropTypes.bool,
     is_virtual          : PropTypes.bool,
@@ -102,6 +108,7 @@ export default withRouter(connect(
         loginid             : client.loginid,
         is_acc_switcher_on  : ui.is_accounts_switcher_on,
         is_dark_mode        : ui.is_dark_mode_on,
+        is_fully_blurred    : ui.is_fully_blurred,
         is_mobile           : ui.is_mobile,
         toggleAccountsDialog: ui.toggleAccountsDialog,
     })

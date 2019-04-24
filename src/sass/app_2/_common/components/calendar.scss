@@ -257,6 +257,11 @@
                 height: 0;
                 top: 0;
                 justify-content: center;
+
+                &:before {
+                    white-space: nowrap;
+                    width: auto;
+                }
             }
             &-icon {
                 margin-top: 0.1em;

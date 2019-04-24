@@ -7,7 +7,16 @@ export const findRouteByPath = (path, routes_config) => {
     let result;
 
     routes_config.some((route_info) => {
-        if (matchPath(path, route_info)) {
+        let match_path;
+        try {
+            match_path = matchPath(path, route_info);
+        } catch (e) {
+            if (/undefined/.test(e.message)) {
+                return undefined;
+            }
+        }
+
+        if (match_path) {
             result = route_info;
             return true;
         } else if (route_info.routes) {

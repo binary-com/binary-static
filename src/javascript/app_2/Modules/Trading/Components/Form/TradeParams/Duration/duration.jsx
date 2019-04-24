@@ -1,3 +1,4 @@
+import classNames                     from 'classnames';
 import { PropTypes as MobxPropTypes } from 'mobx-react';
 import PropTypes                      from 'prop-types';
 import React, { Fragment }            from 'react';
@@ -45,7 +46,7 @@ const Duration = ({
             expiry_list.pop(); // remove end time for contracts with only tick duration
         }
     } else if (!has_end_time) {
-        expiry_list.push({ text: localize('End Time'), value: 'endtime' });
+        expiry_list.push({ text: localize('End time'), value: 'endtime' });
     }
 
     if (is_minimized) {
@@ -131,7 +132,10 @@ const Duration = ({
     const has_toggle = expiry_list.length > 1 || duration_units_list.length > 1;
 
     return (
-        <Fieldset className='trade-container__fieldset'>
+        <Fieldset className={classNames('trade-container__fieldset', {
+            'trade-container__fieldset--advanced': is_advanced_duration,
+        })}
+        >
             { !has_toggle &&
                 <RangeSlider
                     name='duration'

@@ -82,7 +82,9 @@
         svg {
             /* postcss-bem-linter: ignore */
             g {
-                stroke: $COLOR_WHITE;
+                @include themify($themes) {
+                    stroke: themed('text_color');
+                }
             }
         }
     }
@@ -123,19 +125,44 @@
 
 /** @define chart-marker-line */
 .chart-marker-line {
-    height: 100%;
+    height: 94.5%;
+    margin-bottom: 0.8em;
     z-index: 0 !important;
 
     &__wrapper {
-        border-left-width: 1px;
+        border-left-width: 2px;
         padding-left: 0.5em;
         height: 100%;
-
+        @include themify($themes) {
+            border-color: themed('chart_line_color');
+        }
     }
-    &__label {
+    &__icon {
         position: absolute;
-        bottom: 0;
+        bottom: -23px;
+        left: -11px;
         white-space: nowrap;
+
+        &--time {
+            /* postcss-bem-linter: ignore */
+            path {
+                @include themify($themes) {
+                    fill: themed('icon_start_time');
+                }
+            }
+        }
+        &--won {
+            /* postcss-bem-linter: ignore */
+            circle {
+                fill: $COLOR_GREEN_1;
+            }
+        }
+        &--lost {
+            /* postcss-bem-linter: ignore */
+            circle {
+                fill: $COLOR_RED;
+            }
+        }
     }
     &--solid {
         border-left-style: solid;

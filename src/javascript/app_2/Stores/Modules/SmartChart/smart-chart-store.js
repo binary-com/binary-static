@@ -23,6 +23,11 @@ export default class SmartChartStore extends BaseStore {
     @observable is_contract_mode = false;
     @observable is_title_enabled = true;
 
+    @observable range = observable.object({
+        start_epoch: null,
+        end_epoch  : null,
+    });
+
     @observable scroll_to_left_epoch        = null;
     @observable scroll_to_left_epoch_offset = 0;
     @observable zoom;
@@ -57,6 +62,7 @@ export default class SmartChartStore extends BaseStore {
     cleanupContractChartView() {
         this.removeBarriers();
         this.removeMarkers();
+        this.removeRange();
         this.resetScrollZoom();
         this.setContractMode(false);
     }
@@ -96,13 +102,26 @@ export default class SmartChartStore extends BaseStore {
         this.updateEpochScrollToValue(scroll_to_left_epoch);
     }
 
+    // --------- All Contracts ---------
+    @action.bound
+    setRange(start, end) {
+        this.range.start_epoch = start;
+        this.range.end_epoch   = end;
+    }
+
+    @action.bound
+    removeRange() {
+        this.range.start_epoch = null;
+        this.range.end_epoch   = null;
+    }
+
     // ---------- Barriers ----------
     @action.bound
-    createBarriers = (contract_type, high_barrier, low_barrier, onChartBarrierChange, config) => {
+    createBarriers = (contract_type, high_barrier, low_barrier, onChartBarrierChange, barrier_config) => {
         if (isEmptyObject(this.barriers.main)) {
             let main_barrier = {};
             if (isBarrierSupported(contract_type)) {
-                main_barrier = new ChartBarrierStore(high_barrier, low_barrier, onChartBarrierChange, config);
+                main_barrier = new ChartBarrierStore(high_barrier, low_barrier, onChartBarrierChange, barrier_config);
             }
 
             this.barriers = {
@@ -123,6 +142,11 @@ export default class SmartChartStore extends BaseStore {
         if (!isEmptyObject(this.barriers.main)) {
             this.barriers.main.updateBarrierShade(should_display, contract_type);
         }
+    }
+
+    @action.bound
+    updateBarrierColor(is_dark_mode) {
+        this.barriers.main.updateBarrierColor(is_dark_mode);
     }
 
     @action.bound

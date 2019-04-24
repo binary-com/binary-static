@@ -79,7 +79,7 @@ const MultipleAccountsManager = () => (
                 <MAMStep
                     image='download'
                     header={it.L('Download MAM')}
-                    text={it.L('[_1]Download MAM for Windows[_2] after you’ve set up your master account. Your login credentials will be provided', '<a href="https://s3.amazonaws.com/binary-mt5/binarycom_mam.rar" rel="noopener noreferrer">', '</a>')}
+                    text={it.L('[_1]Download MAM for Windows[_2] after you\'ve set up your master account. Your login credentials will be provided', '<a href="https://s3.amazonaws.com/binary-mt5/binarycom_mam.rar" rel="noopener noreferrer">', '</a>')}
                     circle_no='2'
                 />
                 <MAMStep

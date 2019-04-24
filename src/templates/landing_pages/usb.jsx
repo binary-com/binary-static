@@ -179,7 +179,7 @@ const UsbPage = () => (
                     <div className='gr-3 gr-12-t gr-12-m gr-12-p mb-bottom-30'>
                         <div className='icon-xl icon-trade' />
                         <h3 className='ft-400 content-inverse-color'>{('Trade')}</h3>
-                        <p className='content-inverse-color'>{('We’re applying for listing of the USB token on major cryptocurrency exchanges.')}</p>
+                        <p className='content-inverse-color'>{('We\'re applying for listing of the USB token on major cryptocurrency exchanges.')}</p>
                     </div>
                 </div>
             </div>

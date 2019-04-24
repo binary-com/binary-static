@@ -14,15 +14,22 @@
     right: 0;
     bottom: 0;
 
-    @include themify($themes) {
-        background-color: rgba(themed('container_color'), 0.56);
-    }
-
-    &__dialog {
+    &__background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
         @include themify($themes) {
-            background-color: themed('container_secondary_color');
+            background-color: rgba(themed('container_color'), 0.56);
         }
-
+    }
+    &__wrapper {
+        position: absolute;
+        left: calc(100vw - 70%);
+        top: calc(100vh - 70%);
+    }
+    &__dialog {
         max-width: 560px;
         max-height: 320px;
         min-width: 480px;
@@ -35,12 +42,14 @@
         flex-direction: column;
         align-items: flex-start;
         box-shadow: 0 2px 8px 0 $COLOR_LIGHT_BLACK_3;
+        @include themify($themes) {
+            background-color: themed('container_secondary_color');
+        }
     }
     &__header {
         @include themify($themes) {
             color: themed('text_color');
         }
-
         @include typeface(--title-left-bold-black, none);
         @include toEm(margin-bottom, 16px, 1.6em);
     }
@@ -48,7 +57,6 @@
         @include themify($themes) {
             color: themed('text_color');
         }
-
         @include typeface(--paragraph-left-normal-black, unset);
         @include toEm(margin-bottom, 32px, 1.4em);
         max-width: 448px;
@@ -60,49 +68,7 @@
         width: 100%;
     }
     &__button {
-        margin: 0;
-    }
-
-    /* postcss-bem-linter: ignore */
-    .btn--primary--orange {
-        transition: all 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
-
-        /* postcss-bem-linter: ignore */
-        &:hover:not([disabled]):before {
-            @include themify($themes) {
-                background: themed('tab_hover_color');
-            }
-
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            opacity: 0.4;
-            display: block;
-            border-radius: $BORDER_RADIUS;
-        }
-    }
-
-    /* postcss-bem-linter: ignore */
-    .btn--secondary--orange {
-        border: none;
-        margin-right: 0.8em;
-
-        /* postcss-bem-linter: ignore */
-        &:hover:not([disabled]) {
-            @include themify($themes) {
-                background: themed('tab_hover_color');
-            }
-
-            border: none;
-        }
-    }
-
-    /* postcss-bem-linter: ignore */
-    .btn__text {
-        font-size: 1.4em;
+        margin: 0.4em;
     }
 }
 

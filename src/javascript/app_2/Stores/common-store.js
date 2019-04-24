@@ -27,6 +27,17 @@ export default class CommonStore extends BaseStore {
     }
 
     @action.bound
+    setNetworkStatus(status, is_online) {
+        if (this.network_status.class) {
+            this.network_status.class   = status.class;
+            this.network_status.tooltip = status.tooltip;
+        } else {
+            this.network_status = status;
+        }
+        this.is_network_online = is_online;
+    }
+
+    @action.bound
     setError(has_error, error) {
         this.has_error = has_error;
         this.error     = {

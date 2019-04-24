@@ -34,7 +34,7 @@ const Charity = () => (
             <div className='section-content center-text'>
                 <div className='gr-12'>
                     <h1>{it.L('Making a Positive Impact in Local Communities')}</h1>
-                    <p>{it.L('[_1]’s charitable initiative focuses on small charities and nonprofits around the world that are making a positive difference in their local communities. Our donations have a direct impact, free from the burden of overheads seen in larger charities.', it.website_name)}</p>
+                    <p>{it.L('[_1]\'s charitable initiative focuses on small charities and nonprofits around the world that are making a positive difference in their local communities. Our donations have a direct impact, free from the burden of overheads seen in larger charities.', it.website_name)}</p>
                 </div>
                 <div className='gallery'>
                     <img className='responsive' src={it.url_for('images/pages/charity/charity-1.jpg')} />
@@ -57,7 +57,7 @@ const Charity = () => (
                         },
                         {
                             image   : 'learning_centre',
-                            title   : it.L('Shelter Home’s Shelter Community Learning Centre 3'),
+                            title   : it.L('Shelter Home\'s Shelter Community Learning Centre 3'),
                             text    : it.L('The Shelter Community Learning Centre 3 is a community school for Myanmar refugee children who are awaiting repatriation with their families to a third country. The school aims to provide these children – who are at their most vulnerable age – with an education which will prepare them for the future.'),
                             contacts: [
                                 { text: it.L('URL'), href: 'http://www.shelterhome.org', attr: { rel: 'noopener noreferrer' } },

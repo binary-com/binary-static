@@ -390,8 +390,7 @@ const PersonalDetails = (() => {
                     $options_with_disabled.append(CommonFunctions.makeOption({
                         text       : res.text,
                         value      : res.value,
-                        // is_disabled: res.disabled,
-                        is_disabled: (res.disabled || /^(py|ae)$/i.test(res.value) ? 'disabled' : ''), // TODO: remove py and ae exceptions when API block is implemented
+                        is_disabled: res.disabled,
                     }));
                 });
                 if (residence) {
@@ -475,7 +474,8 @@ const PersonalDetails = (() => {
             const account_status = State.getResponse('get_account_status').status;
             get_settings_data = State.getResponse('get_settings');
             is_fully_authenticated = checkStatus(account_status , 'authenticated');
-            has_changeable_fields = Client.get('landing_company_shortcode') === 'costarica' && !is_fully_authenticated;
+            // TODO [->svg]
+            has_changeable_fields = (Client.get('landing_company_shortcode') === 'costarica' || Client.get('landing_company_shortcode') === 'svg') && !is_fully_authenticated;
 
             if (!residence) {
                 displayResidenceList();

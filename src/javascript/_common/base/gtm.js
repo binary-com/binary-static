@@ -12,7 +12,7 @@ const getPropertyValue = require('../utility').getPropertyValue;
 const getAppId         = require('../../config').getAppId;
 
 const GTM = (() => {
-    const isGtmApplicable = () => (/^(1|1098|14473|15284)$/.test(getAppId()));
+    const isGtmApplicable = () => (/^(1|1098|14473|15284|16303|15265)$/.test(getAppId()));
 
     const getCommonVariables = () => ({
         country_ip: State.getResponse('website_status.clients_country'),
@@ -83,7 +83,8 @@ const GTM = (() => {
             BinarySocket.wait('mt5_login_list').then((response) => {
                 (response.mt5_login_list || []).forEach((obj) => {
                     const acc_type = (ClientBase.getMT5AccountType(obj.group) || '')
-                        .replace('real_vanuatu', 'financial').replace('vanuatu_', '').replace('costarica', 'gaming'); // i.e. financial_cent, demo_cent, demo_gaming, real_gaming
+                        .replace('real_vanuatu', 'financial').replace('vanuatu_', '').replace(/costarica|svg/, 'gaming'); // i.e. financial_cent, demo_cent, demo_gaming, real_gaming
+                        // TODO [->svg]
                     if (acc_type) {
                         data[`mt5_${acc_type}_id`] = obj.login;
                     }

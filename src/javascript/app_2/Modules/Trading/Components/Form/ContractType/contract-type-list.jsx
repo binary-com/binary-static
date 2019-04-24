@@ -6,6 +6,7 @@ import ContractTypeItem               from './contract-type-item.jsx';
 const ContractTypeList = ({
     handleInfoClick,
     handleSelect,
+    is_equal,
     list,
     name,
     value,
@@ -24,6 +25,7 @@ const ContractTypeList = ({
                             value={value}
                             handleSelect={handleSelect}
                             handleInfoClick={handleInfoClick}
+                            is_equal={is_equal}
                         />
                     </div>
                 </div>
@@ -34,9 +36,13 @@ const ContractTypeList = ({
 ContractTypeList.propTypes = {
     handleInfoClick: PropTypes.func,
     handleSelect   : PropTypes.func,
-    list           : MobxPropTypes.objectOrObservableObject,
-    name           : PropTypes.string,
-    value          : PropTypes.string,
+    is_equal       : PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
+    ]),
+    list : MobxPropTypes.objectOrObservableObject,
+    name : PropTypes.string,
+    value: PropTypes.string,
 };
 
 export default ContractTypeList;

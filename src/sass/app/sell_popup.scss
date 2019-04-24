@@ -106,6 +106,10 @@
                 th {
                     line-height: 24px;
                     border-bottom: $COLOR_GRAY_SHADE;
+
+                    @media screen and (max-width: 480px) {
+                        line-height: 30px;
+                    }
                 }
                 td, td[data-balloon] {
                     border-bottom: 1px solid $COLOR_LIGHT_GRAY;
@@ -162,6 +166,7 @@
                         text-align: center;
                         line-height: 24px;
                         padding-left: 4px;
+                        margin-bottom: 5px;
                         border: none;
                         font-size: $FONT_SIZE_S;
 
@@ -176,8 +181,15 @@
                         &.audit-dates {
                             border-radius: 0 $BORDER_RADIUS $BORDER_RADIUS 0;
                         }
+                        &.spot-value {
+                            border-radius: $BORDER_RADIUS 0 0 $BORDER_RADIUS;
+                        }
                         &.secondary-color {
                             font-size: $FONT_SIZE_N;
+                        }
+                        &.remark {
+                            text-align: right;
+                            padding-right: 20px;
                         }
                     }
                     @media screen and (max-width: 768px) {
@@ -200,6 +212,16 @@
             }
             #sell_details_audit {
                 border-left: none;
+
+                @media screen and (max-width: 480px) {
+                    .view-chart {
+                        display: none;
+                    }
+                    .previous-wrapper {
+                        height: 30px;
+                        width: 45px;
+                    }
+                }
             }
             @media only screen and (min-width: 767px) and (max-width: 768px) { /* ipad */
                 max-height: 450px;

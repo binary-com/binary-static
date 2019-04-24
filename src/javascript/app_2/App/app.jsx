@@ -4,7 +4,6 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import getBaseName                 from 'Utils/URL/base-name';
 import { MobxProvider }            from 'Stores/connect';
 import ErrorBoundary               from './Components/Elements/Errors/error-boundary.jsx';
-import PositionsDrawer             from './Components/Elements/PositionsDrawer';
 import { POSITIONS }               from './Components/Elements/ToastMessage';
 import PushNotification            from './Containers/push-notification.jsx';
 import ToastMessage                from './Containers/toast-message.jsx';
@@ -17,21 +16,20 @@ import MarketUnavailableModal      from './Containers/MarketUnavailableModal';
 import ServicesErrorModal          from './Containers/ServicesErrorModal';
 import Wip                         from './Containers/Wip';
 
+// Check if device is touch capable
+const isTouchDevice = 'ontouchstart' in document.documentElement;
+
 const App = ({ root_store }) => (
     <Router basename={getBaseName()}>
         <MobxProvider store={root_store}>
             {
-                root_store.ui.is_mobile || root_store.ui.is_tablet ?
-                    <Wip />
-                    :
+                root_store.ui.is_mobile || (root_store.ui.is_tablet && isTouchDevice) ?
+                    <Wip /> :
                     <React.Fragment>
-                        <div className='header'>
-                            <Header />
-                        </div>
+                        <Header />
                         <ErrorBoundary>
                             <AppContents>
                                 <Routes />
-                                <PositionsDrawer />
                                 <ToastMessage position={POSITIONS.TOP_RIGHT} />
                                 <PushNotification />
                             </AppContents>
@@ -39,9 +37,7 @@ const App = ({ root_store }) => (
                             <MarketUnavailableModal />
                             <ServicesErrorModal />
                         </ErrorBoundary>
-                        <footer className='footer'>
-                            <Footer />
-                        </footer>
+                        <Footer />
                     </React.Fragment>
             }
         </MobxProvider>

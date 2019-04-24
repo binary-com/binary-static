@@ -14,7 +14,8 @@
         <meta charset="utf-8" />
         <meta name="google-site-verification" content="Myh35QddfEArh0686LcO2zMjrgv0C7L4FCBU0k0oZvU" />
         <script type="text/javascript">
-            var redirectTimeOut;
+            var redirectTimeOut,
+                lang;
             function getCookieItem(sKey) {
                 'use strict';
                 if (!sKey) { return null; }
@@ -36,9 +37,9 @@
                     'zh_cn': 'cn',
                 };
                 var conLang = 'en';
-                if(country) {
+                if (country) {
                     Object.keys(langs).map(function(l) {
-                        if((new RegExp(langs[l], 'i')).test(country)) conLang = l;
+                        if ((new RegExp(langs[l], 'i')).test(country)) conLang = l;
                     });
                 }
                 return conLang;
@@ -50,7 +51,7 @@
                 window.location.href = (lang || 'en').toLowerCase() + '/' + (is_logged_in ? 'trading' : 'home') + '.html' + window.location.search;
             }
             function isDelayedRedirect() {
-                if(isGtmApplicable() && !redirectTimeOut) {
+                if (isGtmApplicable() && !redirectTimeOut) {
                     redirectTimeOut = setTimeout(redirect, 5000);
                 } else {
                     clearTimeout(redirectTimeOut);
@@ -58,51 +59,46 @@
                 }
             }
             function isGtmApplicable() {
-                return /(www|staging)\.binary\.com/i.test(window.location.hostname);
+                return /(www|staging)\.binary\.(com|me)/i.test(window.location.hostname);
             }
             function pushEvent() {
-                if(isGtmApplicable()) {
+                if (isGtmApplicable()) {
                     dataLayer.push({
                         'event': 'page_load',
                         'eventCallback': function() {
                             isDelayedRedirect();
                         }
                     });
+                } else {
+                    isDelayedRedirect();
                 }
             }
 
-            if(/^https:\/\/staging\.binary\.com\/translations\//i.test(window.location.href)) {
+            if (/^https:\/\/staging\.binary\.com\/translations\//i.test(window.location.href)) {
                 window.location.href = 'ach/home.html'; // in-context translation
             } else {
-                if(document.referrer) {
+                if (document.referrer) {
                     localStorage.setItem('index_referrer', document.referrer);
                 }
-                var lang = getCookieItem('language');
-                if(lang) {
-                    if (/^id$/i.test(lang)) {
-                        lang = 'en';
-                    }
-                    isDelayedRedirect();
-                } else {
-                    var ws = new WebSocket('wss://ws.binaryws.com/websockets/v3?app_id=1');
-                    ws.onopen = function(e) {
-                        ws.send(JSON.stringify({'website_status': '1'}));
-                    };
-                    ws.onmessage = function(msg) {
-                        var response = JSON.parse(msg.data);
-                        if(response.msg_type === 'website_status') {
-                            if(!response.error && response.hasOwnProperty('website_status')) {
-                                lang = getLanguage(response.website_status.clients_country);
-                            }
-                            ws.close();
-                            isDelayedRedirect();
+                lang = getCookieItem('language');
+                var ws = new WebSocket('wss://ws.binaryws.com/websockets/v3?app_id=1');
+                ws.onopen = function(e) {
+                    ws.send(JSON.stringify({'website_status': '1'}));
+                };
+                ws.onmessage = function(msg) {
+                    var response = JSON.parse(msg.data);
+                    if (response.msg_type === 'website_status') {
+                        if (!lang && !response.error && response.hasOwnProperty('website_status')) {
+                            lang = getLanguage(response.website_status.clients_country);
                         }
-                    };
-                }
+                        ws.close();
+                        pushEvent(); // we need website_status.clients_country
+                    }
+                };
             }
         </script>
     </head>
-    <body onload="pushEvent()">
+    <body>
 <!-- Google Tag Manager -->
 <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-MZWFF7"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>

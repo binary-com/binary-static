@@ -6,30 +6,30 @@ const { parseAttributeString,
 describe('ContentVisibility', () => {
     describe('.parseAttributeString()', () => {
         it('works for a single inclusive', () => {
-            expect(parseAttributeString('costarica')).to.deep.equal({
+            expect(parseAttributeString('svg')).to.deep.equal({
                 is_exclude  : false,
-                names       : ['costarica'],
+                names       : ['svg'],
                 mt5fin_rules: [],
             });
         });
         it('works for two inclusive', () => {
-            expect(parseAttributeString('mtcompany, costarica')).to.deep.equal({
+            expect(parseAttributeString('mtcompany, svg')).to.deep.equal({
                 is_exclude  : false,
-                names       : ['mtcompany', 'costarica'],
+                names       : ['mtcompany', 'svg'],
                 mt5fin_rules: [],
             });
         });
         it('works for a single exclusive', () => {
-            expect(parseAttributeString('-costarica')).to.deep.equal({
+            expect(parseAttributeString('-svg')).to.deep.equal({
                 is_exclude  : true,
-                names       : ['costarica'],
+                names       : ['svg'],
                 mt5fin_rules: [],
             });
         });
         it('works for two exclusive', () => {
-            expect(parseAttributeString('-default, -costarica')).to.deep.equal({
+            expect(parseAttributeString('-default, -svg')).to.deep.equal({
                 is_exclude  : true,
-                names       : ['default', 'costarica'],
+                names       : ['default', 'svg'],
                 mt5fin_rules: [],
             });
         });
@@ -46,9 +46,9 @@ describe('ContentVisibility', () => {
                 names       : ['maltainvest', 'default'],
                 mt5fin_rules: ['vanuatu'],
             });
-            expect(parseAttributeString('maltainvest, mt5fin:vanuatu, costarica')).to.deep.equal({
+            expect(parseAttributeString('maltainvest, mt5fin:vanuatu, svg')).to.deep.equal({
                 is_exclude  : false,
-                names       : ['maltainvest', 'costarica'],
+                names       : ['maltainvest', 'svg'],
                 mt5fin_rules: ['vanuatu'],
             });
         });
@@ -56,18 +56,18 @@ describe('ContentVisibility', () => {
 
     describe('.shouldShowElement()', () => {
         it('works with inclusive landing companies', () => {
-            expect(shouldShowElement('costarica', 'costarica', false, ['vanuatu'])).to.equal(true);
-            expect(shouldShowElement('costarica', 'malta', false, ['vanuatu'])).to.equal(false);
-            expect(shouldShowElement('default, costarica', 'malta', false, '')).to.equal(false);
+            expect(shouldShowElement('svg', 'svg', false, ['vanuatu'])).to.equal(true);
+            expect(shouldShowElement('svg', 'malta', false, ['vanuatu'])).to.equal(false);
+            expect(shouldShowElement('default, svg', 'malta', false, '')).to.equal(false);
             expect(shouldShowElement('default, malta', 'maltainvest', false, '')).to.equal(false);
-            expect(shouldShowElement('costarica, malta', 'malta', false, '')).to.equal(true);
+            expect(shouldShowElement('svg, malta', 'malta', false, '')).to.equal(true);
         });
         it('works with exclusive landing companies', () => {
-            expect(shouldShowElement('-costarica', 'costarica', false, ['vanuatu'])).to.equal(false);
-            expect(shouldShowElement('-costarica', 'malta', false, ['vanuatu'])).to.equal(true);
-            expect(shouldShowElement('-maltainvest, -costarica', 'malta', false, '')).to.equal(true);
+            expect(shouldShowElement('-svg', 'svg', false, ['vanuatu'])).to.equal(false);
+            expect(shouldShowElement('-svg', 'malta', false, ['vanuatu'])).to.equal(true);
+            expect(shouldShowElement('-maltainvest, -svg', 'malta', false, '')).to.equal(true);
             expect(shouldShowElement('-malta, -maltainvest', 'maltainvest', false, ['vanuatu'])).to.equal(false);
-            expect(shouldShowElement('-costarica, -malta', 'costarica', false, ['vanuatu'])).to.equal(false);
+            expect(shouldShowElement('-svg, -malta', 'svg', false, ['vanuatu'])).to.equal(false);
         });
         it('works with inclusive mtcompany check', () => {
             expect(shouldShowElement('mtcompany', 'malta', true, 'vanuatu')).to.equal(true);
@@ -100,16 +100,16 @@ describe('ContentVisibility', () => {
             expect(shouldShowElement('-eucountry', 'malta', true, '')).to.equal(false);
         });
         it('works with inclusive eucountry rule (non-eu-client)', () => {
-            const landing_company = { landing_company: { gaming_company: { shortcode: 'costarica' } }, msg_type: 'landing_company' };
+            const landing_company = { landing_company: { gaming_company: { shortcode: 'svg' } }, msg_type: 'landing_company' };
             State.set(['response', 'landing_company'], landing_company);
             State.set(['response', 'website_status', 'website_status', 'clients_country'], [ 'br' ]);
-            expect(shouldShowElement('eucountry', 'costarica', true, '')).to.equal(false);
+            expect(shouldShowElement('eucountry', 'svg', true, '')).to.equal(false);
         });
         it('works with exclusive eucountry rule (non-eu-client)', () => {
-            const landing_company = { landing_company: { gaming_company: { shortcode: 'costarica' } }, msg_type: 'landing_company' };
+            const landing_company = { landing_company: { gaming_company: { shortcode: 'svg' } }, msg_type: 'landing_company' };
             State.set(['response', 'landing_company'], landing_company);
             State.set(['response', 'website_status', 'website_status', 'clients_country'], [ 'br' ]);
-            expect(shouldShowElement('-eucountry', 'costarica', true, '')).to.equal(true);
+            expect(shouldShowElement('-eucountry', 'svg', true, '')).to.equal(true);
         });
         it('works with inclusive eucountry rule mt country', () => {
             const landing_company = {};

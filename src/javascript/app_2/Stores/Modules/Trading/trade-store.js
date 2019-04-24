@@ -33,6 +33,7 @@ import {
     getProposalInfo,
     getProposalParametersName }          from './Helpers/proposal';
 import { pickDefaultSymbol }             from './Helpers/symbol';
+import { BARRIER_COLORS }                from '../SmartChart/Constants/barriers';
 import BaseStore                         from '../../base-store';
 
 const store_name = 'trade_store';
@@ -149,7 +150,7 @@ export default class TradeStore extends BaseStore {
     @action.bound
     refresh = () => {
         WS.forgetAll('proposal');
-    }
+    };
 
     @action.bound
     async prepareTradeStore() {
@@ -425,7 +426,9 @@ export default class TradeStore extends BaseStore {
         };
 
         if (!this.smart_chart.is_contract_mode) {
-            setChartBarrier(this.smart_chart, response, this.onChartBarrierChange);
+            const color = this.root_store.ui.is_dark_mode_on ? BARRIER_COLORS.DARK_GRAY : BARRIER_COLORS.GRAY;
+            const barrier_config = { color };
+            setChartBarrier(this.smart_chart, response, this.onChartBarrierChange, barrier_config);
         }
 
         if (response.error) {

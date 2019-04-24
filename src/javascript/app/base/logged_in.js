@@ -22,10 +22,12 @@ const LoggedInHandler = (() => {
         BinarySocket.send({ authorize: params.token1 }).then((response) => {
             const account_list = getPropertyValue(response, ['authorize', 'account_list']);
             if (isStorageSupported(localStorage) && isStorageSupported(sessionStorage) && account_list) {
-                storeClientAccounts(account_list);
                 // redirect url
                 redirect_url = sessionStorage.getItem('redirect_url');
                 sessionStorage.removeItem('redirect_url');
+
+                const is_app_2 = (typeof redirect_url === 'string' || redirect_url instanceof String) && redirect_url.includes('/app/');
+                storeClientAccounts(account_list, is_app_2);
             } else {
                 Client.doLogout({ logout: 1 });
             }
@@ -59,7 +61,7 @@ const LoggedInHandler = (() => {
         landing_company_name: 'landing_company_shortcode',
     };
 
-    const storeClientAccounts = (account_list) => {
+    const storeClientAccounts = (account_list, is_app_2) => {
         // Parse url for loginids, tokens, and currencies returned by OAuth
         const params = paramsHash(window.location.href);
 
@@ -69,8 +71,12 @@ const LoggedInHandler = (() => {
         account_list.forEach((account) => {
             Object.keys(account).forEach((param) => {
                 if (param === 'loginid') {
-                    if (!Client.get('loginid') && !account.is_virtual && !account.is_disabled) {
-                        Client.set(param, account[param]);
+                    if (!Client.get('loginid') && !account.is_disabled) {
+                        if (is_app_2 && account.is_virtual) { // TODO: [only_virtual] remove this to stop logging clients into virtual for app_2
+                            Client.set(param, account[param]);
+                        } else if (!is_app_2 && !account.is_virtual) {
+                            Client.set(param, account[param]);
+                        }
                     }
                 } else {
                     const param_to_set = map_names[param] || param;

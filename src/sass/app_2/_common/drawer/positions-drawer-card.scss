@@ -25,8 +25,11 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        transition: background 0.25s linear;
+        transition: background 0.25s linear, opacity 0.25s linear;
 
+        &--shade-hidden {
+            visibility: hidden;
+        }
         &:hover {
             background: 0 !important;
 
@@ -35,7 +38,6 @@
             }
         }
         &:after {
-
             top: 0;
             left: 0;
             width: 100%;
@@ -52,6 +54,13 @@
             &--lost, &--lost:after {
                 background-image: themed('lost_gradient_color');
             }
+        }
+
+        &--enter, &--exit {
+            opacity: 0;
+        }
+        &--enter-done {
+            opacity: 1;
         }
     }
     &__wrapper {
@@ -71,7 +80,7 @@
             left: 0;
             top: 0;
             position: absolute;
-            box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.24);
+            box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.24);
             border-radius: $BORDER_RADIUS;
             pointer-events: none;
         }
