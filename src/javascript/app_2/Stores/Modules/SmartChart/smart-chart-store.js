@@ -171,6 +171,9 @@ export default class SmartChartStore extends BaseStore {
         this.should_export_layout = true;
         this.should_import_layout = false;
 
+        this.updateGranularity(0);
+        this.updateChartType('mountain');
+        
         this.trade_chart_symbol   = this.root_store.modules.trade.symbol;
     }
 
@@ -179,7 +182,7 @@ export default class SmartChartStore extends BaseStore {
         this.should_export_layout = false;
         this.should_import_layout = true;
         this.should_clear_chart   = false;
-        this.trade_chart_layout.isDone = action(() => this.trade_chart_layout = {});
+        this.trade_chart_layout.isDone = action(() => this.trade_chart_layout = null);
 
         // Reset back to symbol before loading contract if trade_symbol and contract_symbol doesn't match
         if (this.trade_chart_symbol !== this.root_store.modules.trade.symbol) {
