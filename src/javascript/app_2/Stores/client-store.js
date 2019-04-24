@@ -248,8 +248,8 @@ export default class ClientStore extends BaseStore {
         this.accounts = LocalStore.getObject(storage_key);
         this.switched = '';
 
-        const { currency: has_no_currency } = !this.accounts[this.loginid];
-        if (has_no_currency) {
+        const { currency } = this.accounts[this.loginid];
+        if (!currency) {
             this.root_store.ui.addNotification({
                 header : localize('Set Currency'),
                 message: localize('Please set the currency of your account to enable trading.'),
