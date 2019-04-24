@@ -1,10 +1,13 @@
-import React               from 'react';
-import { localize }        from '_common/localize';
-import Label               from 'App/Components/Elements/Label';
-import Money               from 'App/Components/Elements/money.jsx';
-import AmountCell          from '../Components/amount-cell.jsx';
-import MarketSymbolIconRow from '../Components/market-symbol-icon-row.jsx';
-import ProfitLossCell      from '../Components/profit_loss_cell.jsx';
+import React                from 'react';
+import { localize }         from '_common/localize';
+import Label                from 'App/Components/Elements/Label';
+import Money                from 'App/Components/Elements/money.jsx';
+import ProgressSliderStream from 'App/Containers/ProgressSliderStream';
+import ContractTypeCell     from 'Modules/Portfolio/Components/contract-type-cell.jsx';
+import IndicativeCell       from 'Modules/Portfolio/Components/indicative-cell.jsx';
+import AmountCell           from '../Components/amount-cell.jsx';
+import MarketSymbolIconRow  from '../Components/market-symbol-icon-row.jsx';
+import ProfitLossCell       from '../Components/profit_loss_cell.jsx';
 
 const getModeFromValue = (key) => {
     const map = {
@@ -91,6 +94,40 @@ export const getProfitTableColumnsTemplate = () => [
             <ProfitLossCell value={cell_value}>
                 <Money amount={cell_value} />
             </ProfitLossCell>
+        ),
+    },
+];
+export const getOpenPositionsColumnsTemplate = (currency) => [
+    {
+        title            : '',
+        col_index        : 'type',
+        renderCellContent: ({ cell_value }) => <ContractTypeCell type={cell_value} />,
+    },{
+        title    : localize('Ref. ID'),
+        col_index: 'reference',
+    }, {
+        title            : localize('Potential Payout'),
+        col_index        : 'payout',
+        renderCellContent: ({ cell_value }) => (
+            <Money amount={cell_value} currency={currency} />
+        ),
+    }, {
+        title            : localize('Purchase'),
+        col_index        : 'purchase',
+        renderCellContent: ({ cell_value }) => (
+            <Money amount={cell_value} currency={currency} />
+        ),
+    }, {
+        title            : localize('Indicative'),
+        col_index        : 'indicative',
+        renderCellContent: ({ cell_value, row_obj }) => (
+            <IndicativeCell amount={+cell_value} currency={currency} status={row_obj.status} />
+        ),
+    }, {
+        title            : localize('Remaining Time'),
+        col_index        : 'id',
+        renderCellContent: ({ cell_value }) => (
+            <ProgressSliderStream id={cell_value} />
         ),
     },
 ];

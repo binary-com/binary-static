@@ -77,6 +77,11 @@ export default class PortfolioStore extends BaseStore {
     }
 
     @action.bound
+    getPositionById(id) {
+        return this.positions.find((position) => +position.id === id);
+    }
+
+    @action.bound
     proposalOpenContractHandler(response) {
         if ('error' in response) return;
 
