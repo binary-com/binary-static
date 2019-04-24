@@ -1,6 +1,6 @@
 $side-padding: 1.2em;
 
-/** @define reports */
+/** @define reports; weak */
 .reports {
     margin: 16px;
     box-shadow: 0 2px 8px 0 $COLOR_LIGHT_BLACK_3;
@@ -27,6 +27,10 @@ $side-padding: 1.2em;
                 }
             }
         }
+    }
+    .unknown-icon {
+        fill: $COLOR_DARK_BLUE_5;
+        border-radius: $BORDER_RADIUS;
     }
 }
 
@@ -201,6 +205,7 @@ $side-padding: 1.2em;
     }
     &__row {
         grid-template-columns: repeat(6, 1fr);
+        width: 100%;
     }
     .purchase, .payout, .indicative {
         justify-content: flex-end;
