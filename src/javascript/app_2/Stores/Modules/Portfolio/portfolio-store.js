@@ -149,7 +149,7 @@ export default class PortfolioStore extends BaseStore {
             this.root_store.ui.addNotification({
                 header : localize('Contract sold'),
                 message: `${localize('Contract was sold for')} ${response.sell.sold_for}.`,
-                type   : 'info',
+                type   : 'success',
                 size   : 'small',
             });
         }

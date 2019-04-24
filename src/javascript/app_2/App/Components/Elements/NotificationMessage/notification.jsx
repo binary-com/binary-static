@@ -54,10 +54,6 @@ const Notification = ({
     );
 };
 
-Notification.defaultProps = {
-    type: 'info',
-};
-
 Notification.propTypes = {
     data: PropTypes.shape({
         closeOnClick : PropTypes.func,
