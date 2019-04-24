@@ -4,10 +4,17 @@ const Note = ({ text }) => (
     <p className='hint'><strong>{it.L('Note')}: </strong>{text}</p>
 );
 
-const Duration = ({ link }) => (
+const Duration = ({ link, market_name }) => (
     <React.Fragment>
         <h3>{it.L('Contract duration')}</h3>
         <p>{it.L('Please refer to the [_1]asset index[_2] for each asset\'s minimum and maximum contract durations based on trade type.', `<a href='${it.url_for('resources/asset_indexws')}#${link}' target='_blank'>`, '</a>')}</p>
+        <h3>{it.L('Duration Offer')}</h3>
+        <div className='gr-row'>
+            <p>{it.L('Supported duration offer of [_1]:', `${market_name}`)}</p>
+            <a className='explanation__asset-link' href={link}>{it.L('Trading duration for others')}</a>
+        </div>
+        <div id='explanation_asset_index' className='has-tabs gr-parent' />
+        <Note text={it.L('A tick is an updated market price. Tick frequency can vary with a minimum price change of zero')} />
     </React.Fragment>
 );
 
