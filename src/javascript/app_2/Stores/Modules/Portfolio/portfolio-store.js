@@ -147,12 +147,12 @@ export default class PortfolioStore extends BaseStore {
                 transaction_id: response.sell.transaction_id,
             };
             this.root_store.ui.addNotification({
-                header       : localize('Contract sold'),
-                message      : `${localize('Contract was sold for')} ${response.sell.sold_for}.`,
-                type         : 'info',
-                size         : 'small',
-                has_close_btn: false,
-                is_auto_close: true,
+                header               : localize('Contract sold'),
+                message              : `${localize('Contract was sold for')} ${response.sell.sold_for}.`,
+                type                 : 'info',
+                size                 : 'small',
+                should_hide_close_btn: true,
+                is_auto_close        : true,
             });
         }
     }

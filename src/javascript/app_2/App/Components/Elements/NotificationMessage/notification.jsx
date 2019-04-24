@@ -49,28 +49,21 @@ const Notification = ({
                     {data.message}
                 </p>
             </div>
-            { data.has_close_btn && <CloseButton onClick={onClick} className='notification__close-button' />}
+            { data.should_hide_close_btn ? undefined : <CloseButton onClick={onClick} className='notification__close-button' />}
         </div>
     );
 };
 
-Notification.defaultProps = {
-    data: {
-        has_close_btn: true,
-        type         : 'info',
-    },
-};
-
 Notification.propTypes = {
     data: PropTypes.shape({
-        closeOnClick : PropTypes.func,
-        delay        : PropTypes.number,
-        has_close_btn: PropTypes.bool,
-        header       : PropTypes.string,
-        is_auto_close: PropTypes.bool,
-        message      : PropTypes.string,
-        size         : PropTypes.oneOf(['small']),
-        type         : PropTypes.oneOf(['error', 'info', 'success', 'danger']).isRequired,
+        closeOnClick         : PropTypes.func,
+        delay                : PropTypes.number,
+        header               : PropTypes.string,
+        is_auto_close        : PropTypes.bool,
+        message              : PropTypes.string,
+        should_hide_close_btn: PropTypes.bool,
+        size                 : PropTypes.oneOf(['small']),
+        type                 : PropTypes.oneOf(['error', 'info', 'success', 'danger']).isRequired,
     }),
     removeNotification: PropTypes.func,
 };

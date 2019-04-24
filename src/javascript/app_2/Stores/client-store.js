@@ -226,6 +226,7 @@ export default class ClientStore extends BaseStore {
      */
     @action.bound
     switchAccount(loginid) {
+        this.root_store.ui.removeAllNotifications();
         this.switched = loginid;
     }
 
@@ -245,7 +246,13 @@ export default class ClientStore extends BaseStore {
         this.loginid  = LocalStore.get('active_loginid');
         this.accounts = LocalStore.getObject(storage_key);
         this.switched = '';
-
+        if (!this.accounts[this.loginid].currency) {
+            this.root_store.ui.addNotification({
+                header : localize('Set Currency'),
+                message: localize('Please set the currency of your account to enable trading.'),
+                type   : 'danger',
+            });
+        }
         this.selectCurrency('');
 
         this.responsePayoutCurrencies(await WS.payoutCurrencies());

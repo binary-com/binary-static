@@ -11,7 +11,7 @@
     position: relative;
     display: flex;
     border-radius: 4px;
-    min-width: 348px;
+    max-width: 348px;
     padding: 16px;
     color: $COLOR_WHITE;
 
@@ -28,7 +28,7 @@
         background-color: $COLOR_ORANGE;
     }
     &--small {
-        min-width: 240px;
+        max-width: 240px;
     }
     &__text-container {
         display: flex;
