@@ -28,16 +28,18 @@ class TooltipBubble extends React.PureComponent {
     getBubblePositionStyle = (alignment, tooltip_trigger_rect) => {
         switch (alignment) {
             case 'top': return {
-                left  : tooltip_trigger_rect.x,
-                bottom: `calc(100% - ${tooltip_trigger_rect.top}px)`,
+                left     : tooltip_trigger_rect.left + (tooltip_trigger_rect.width / 2),
+                transform: 'translateX(-50%)',
+                bottom   : `calc(100% - ${tooltip_trigger_rect.top}px)`,
             };
             case 'right': return {
                 left: tooltip_trigger_rect.x + tooltip_trigger_rect.width,
                 top : tooltip_trigger_rect.y,
             };
             case 'bottom': return {
-                left: tooltip_trigger_rect.x,
-                top : tooltip_trigger_rect.y + tooltip_trigger_rect.height,
+                left     : tooltip_trigger_rect.left + (tooltip_trigger_rect.width / 2),
+                transform: 'translateX(-50%)',
+                top      : tooltip_trigger_rect.y + tooltip_trigger_rect.height,
             };
             case 'left': return {
                 right: `calc(100% - ${tooltip_trigger_rect.left}px)`,
