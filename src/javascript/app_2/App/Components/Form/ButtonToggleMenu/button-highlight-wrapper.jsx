@@ -15,7 +15,7 @@ class HighlightWrapper extends React.PureComponent {
         // Timeout needed here for bug where the el is returning wrong width and offset after mount
         setTimeout(() => {
             this.updateHighlightPosition(active_button_el);
-        }, 300);
+        }, 250);
     }
 
     componentDidUpdate() {
