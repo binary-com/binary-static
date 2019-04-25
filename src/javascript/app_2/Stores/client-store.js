@@ -248,7 +248,7 @@ export default class ClientStore extends BaseStore {
         this.accounts = LocalStore.getObject(storage_key);
         this.switched = '';
 
-        if (this.accounts.length) {
+        if (this.accounts[this.loginid]) {
             const { currency } = this.accounts[this.loginid];
             if (!currency) {
                 this.root_store.ui.addNotification({
@@ -266,6 +266,27 @@ export default class ClientStore extends BaseStore {
                     type   : 'danger',
                 });
             }
+            WS.getAccountStatus().then((response) => {
+                if (response.get_account_status) {
+                    if (response.get_account_status.prompt_client_to_authenticate) {
+                        this.root_store.ui.addNotification({
+                            header : localize('Account Authentication'),
+                            message: localize('Authenticate your account now to take full advantage of all payment methods available.'),
+                            type   : 'info',
+                        });
+                    }
+                    const { status } = response.get_account_status;
+                    if (status) {
+                        if (status.includes('document_under_review')) {
+                            this.root_store.ui.addNotification({
+                                header : localize('Documents in review'),
+                                message: localize('We are reviewing your documents. For more details contact us.'),
+                                type   : 'info',
+                            });
+                        }
+                    }
+                }
+            });
         }
 
         this.selectCurrency('');

@@ -3,7 +3,6 @@ import { setCurrencies }    from '_common/base/currency_base';
 import Login                from '_common/base/login';
 import ServerTime           from '_common/base/server_time';
 import BinarySocket         from '_common/base/socket_base';
-import { localize }         from '_common/localize';
 import { State }            from '_common/storage';
 import { getPropertyValue } from '_common/utility';
 import { requestLogout }    from './logout';
@@ -11,8 +10,7 @@ import WS                   from './ws-methods';
 import GTM                  from '../Utils/gtm';
 
 let client_store,
-    common_store,
-    ui_store;
+    common_store;
 
 // TODO: update commented statements to the corresponding functions from app_2
 const BinarySocketGeneral = (() => {
@@ -81,17 +79,6 @@ const BinarySocketGeneral = (() => {
             case 'landing_company':
                 // Header.upgradeMessageVisibility();
                 break;
-            case 'get_account_status':
-                if (response.get_account_status) {
-                    if (response.get_account_status.prompt_client_to_authenticate) {
-                        ui_store.addNotification({
-                            header : localize('Account Authentication'),
-                            message: localize('Authenticate your account now to take full advantage of all payment methods available.'),
-                            type   : 'info',
-                        });
-                    }
-                }
-                break;
             case 'get_self_exclusion':
                 // SessionDurationLimit.exclusionResponseHandler(response);
                 break;
@@ -157,7 +144,6 @@ const BinarySocketGeneral = (() => {
     const init = (store) => {
         client_store = store.client;
         common_store = store.common;
-        ui_store     = store.ui;
 
         return {
             onDisconnect,
