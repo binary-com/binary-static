@@ -164,26 +164,26 @@ const Regulation = () => {
 
                     <h3>{it.L('RTS 28')}</h3>
                     <div className='gr-row'>
-                        <div className='gr-6 gr-12-m gr-padding-30'>
+                        <div className='gr-6 gr-12-m'>
                             <FillBox
                                 align_left
                                 center
                                 border='border-dark-gray'
                                 className='margin-top-17 align-start'
                                 image='images/pages/regulation/pdf-icon.svg'
-                                href={it.url_for('/download/BIEL-RTS28.pdf')}
+                                href={it.url_for('/download/BIEL-RTS28-for-2017.pdf')}
                                 target='_blank'
                                 text={it.L('BIEL RTS28 for 2017')}
                             />
                         </div>
-                        <div className='gr-6 gr-12-m gr-padding-30'>
+                        <div className='gr-6 gr-12-m'>
                             <FillBox
                                 align_left
                                 center
                                 border='border-dark-gray'
                                 className='margin-top-17 align-start'
-                                image='images/pages/regulation/xlsx-icon.svg'
-                                href={it.url_for('/download/BIEL_RTS28_report_for_2018.xlsx')}
+                                image='images/pages/regulation/pdf-icon.svg'
+                                href={it.url_for('/download/BIEL-RTS28-for-2018.pdf')}
                                 target='_blank'
                                 text={it.L('BIEL RTS28 for 2018')}
                             />
