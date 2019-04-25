@@ -160,7 +160,7 @@ const PaymentAgents = () => (
             <li>{it.L('All [_1]\'s registered or unregistered proprietary rights, including but not limited to patents, trademarks, trade secrets, domain names, URL, pricing information or other proprietary rights materials, ideas, concepts, formats, suggestions, developments, arrangements, programmes, techniques, methodologies, knowhow, equipment, processes, procedures whatsoever shall solely remain with the Company.', it.website_name)}</li>
         </ol>
 
-        <h2 data-anchor='force-majeure-event'>O. {it.L('Force majeure event')}</h2>
+        <h2 data-anchor='force-majeure-event'>O. {it.L('Force majeure events')}</h2>
         <ol>
             <li>{it.L('No Party shall be deemed liable for a partial or complete failure to meet its obligations, under this agreement, in case of force majeure events, including but not limited to civil war, unrest, insurrection, international intervention, any governmental actions, exchange controls, nationalisations, devaluations, forfeitures, natural disasters, act of God, and other inevitable, unforeseeable, unanticipated, or unpredicted events that are not depending on the will of the Parties.')}</li>
             <li>{it.L('The Party that is not able to meet its obligations under this agreement due to force majeure events shall inform the other Party in writing within five business days after such an event has occurred. The Party shall be deprived of the right to be released from any responsibility, under this agreement, where it fails to duly notify the other Party on time.')}</li>

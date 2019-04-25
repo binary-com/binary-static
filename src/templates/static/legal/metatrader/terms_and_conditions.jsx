@@ -14,15 +14,13 @@ const TermsAndConditions = () => (
         <h2 data-anchor='introduction-and-scope-of-agreement'>{it.L('A. Introduction and scope of agreement')}</h2>
         <ol>
             <li>
-                {it.L('Depending on the jurisdiction to which a Client\'s account has been attached in accordance with the account opening procedures of the website, the terms \'the Company\' and \'[_1]\' shall denote either', it.website_name)}&nbsp;<br />
-                <ul>
-                    <span data-show='-eucountry'>{it.L('Binary (V) Ltd,')}&nbsp;<br /></span>
-                    <span data-show='-eucountry'>{it.L('Binary (C.R.) S.A.,')}&nbsp;<br /></span>
-                    <span data-show='-eucountry'>{it.L('Binary (BVI) Ltd,')}&nbsp;<br /></span>
-                    <span data-show='-eucountry'>{it.L('Binary (FX) Ltd,')}&nbsp;<br /></span>
-                    <span>{it.L('Binary (Europe) Ltd, or')}&nbsp;</span><br />
-                    <span>{it.L('Binary Investments (Europe) Ltd.')}</span>
-                </ul>
+                {it.L('Depending on the jurisdiction to which a Client\'s account has been attached in accordance with the account opening procedures of the website, the terms \'the Company\' and \'[_1]\' shall denote either', it.website_name)}&nbsp;
+                <span data-show='-eucountry'>{it.L('Binary (V) Ltd,')}&nbsp;</span>
+                <span data-show='-eucountry'>{it.L('Binary (C.R.) S.A.,')}&nbsp;</span>
+                <span data-show='-eucountry'>{it.L('Binary (BVI) Ltd,')}&nbsp;</span>
+                <span data-show='-eucountry'>{it.L('Binary (FX) Ltd,')}&nbsp;</span>
+                <span>{it.L('Binary (Europe) Ltd, or')}&nbsp;</span>
+                <span>{it.L('Binary Investments (Europe) Ltd.')}</span>
             </li>
 
             <li>{it.L('The Client understands that products based on a random number generator (the "Volatility Indices") are gambling products whereas products based on financial market indices (forex, indices, and commodities) are Financial Instruments.')}</li>
@@ -101,7 +99,7 @@ const TermsAndConditions = () => (
             <li>{it.L('Accounts with debit balance (i.e. credit exposure to [_1])', it.website_name)}
                 <ol>
                     <li>{it.L('The Company does not offer any credit facilities or arrangement to its Clients in normal trading circumstances. The Client acknowledges and agrees that they will not be dealing with the Company on credit, regardless of the amount of the Client\'s Account Balance and Transactions entered into with the Company.')}</li>
-                    <li>{it.L('Accounts with debit balances are required to settle the full amount immediately by making a payment to [_1].')}</li>
+                    <li>{it.L('Accounts with debit balances are required to settle the full amount immediately by making a payment to [_1].', it.website_name)}</li>
                     <li>{it.L('If the Client fails to immediately make a full settlement of the sum due to the Company in accordance with this agreement, the Company reserves the right to accrue interest on the sums due from the Client to the Company in respect of any Transaction that the Company fails to pay on the relevant due date. Interest will accrue on a daily basis from the relevant due date until the date on which payment is received in full at the bank\'s official base rate for short term funds determined by the Company and will be payable on demand.')}</li>
                 </ol>
             </li>
@@ -196,7 +194,7 @@ const TermsAndConditions = () => (
                     <ol>
                         <li>{it.L('Margin Requirement is the amount that the Client needs to have in their account prior to entering into a trade and it is a percentage of the value  of that trade. Margin Requirement will continue to increase/decrease in accordance with the volume and direction of the Open Positions.')}</li>
                         <li>{it.L('The Company may modify Margin Requirements for any Open Positions or new Orders at its sole discretion. Formulas for Margin Requirements published on the website are indicative only and may be changed by the Company at its discretion at any time, due to changing market conditions or other factors.')}</li>
-                        <li>{it.L('Whilst the Company endeavours to close out the Client\'s Open Positions if and when the Margin Level for their MT5 Real Account reaches or falls below the Stop Out Level')}</li>
+                        <li>{it.L('Whilst the Company endeavours to close out the Client\'s Open Positions if and when the Margin Level for their MT5 Real Account reaches or falls below the Stop Out Level.')}</li>
                         <li>{it.L('The Company does not guarantee that the Client\'s Open Positions will be closed when the Margin Level for their MT5 Real Account reaches the Stop Out Level.')}</li>
                         <li>{it.L('For fully covered accounts, no Margin will be charged on open positions. However, swaps and other applicable fees can cause the Client\'s Account Equity to turn negative. In that case, the Stop Out process will be triggered.')}</li>
                         <li>{it.L('The Company reserves the right to charge the Margin per each hedged lot of a position.')}</li>
@@ -399,7 +397,7 @@ const TermsAndConditions = () => (
         <h2 data-anchor='miscellaneous'>{it.L('Q. Miscellaneous')}</h2>
         <ol>
             <li>{it.L('The Client agrees that in any legal, arbitration, mediation, regulatory, administration, or any other proceedings initiated by them or by [_1], the Company\'s records related to the Client\'s dealings shall constitute evidence. Subject to the laws and any court, tribunal, competent authority, or government authority orders, requests, instructions, or guidelines, the Client shall not object to the admission of such records on the grounds that they are not originals or in writing, or that they are produced by computers or any other electronic systems whatsoever. The Client shall not rely on the Company to meet any of their disclosures or other obligations imposed by any court, tribunal, competent authority, or government authority.', it.website_name)}</li>
-            <li>{it.L('The [_1] website is protected by certain copyrights. The materials comprising the website (including, without limitation, all articles, text, images, logos, compilation, systems, code, and design) are protected by Copyright 1999-2018 Binary group of companies, all rights reserved. Such materials may be copied and distributed on a limited basis for non-commercial purposes only, provided that any material copied remain intact and that all copies include the following notice in a clearly visible position: "Copyright 1999-2018 Binary Ltd. All rights reserved." These materials may not be copied or redistributed for commercial purposes or for compensation of any kind without prior written permission from a member of the Binary Group. [_1] and the bull/bear logo are registered trademarks.', it.website_name)}</li>
+            <li>{it.L('The [_1] website is protected by certain copyrights. The materials comprising the website (including, without limitation, all articles, text, images, logos, compilation, systems, code, and design) are protected by Copyright 1999-2019 Binary group of companies, all rights reserved. Such materials may be copied and distributed on a limited basis for non-commercial purposes only, provided that any material copied remain intact and that all copies include the following notice in a clearly visible position: "Copyright 1999-2019 Binary Ltd. All rights reserved." These materials may not be copied or redistributed for commercial purposes or for compensation of any kind without prior written permission from a member of the Binary Group. [_1] and the bull/bear logo are registered trademarks.', it.website_name)}</li>
             <li>{it.L('If any provision of this agreement shall be held invalid or unenforceable by a court or regulatory body of competent jurisdiction, the remainder of this agreement shall remain in full force and effect.')}</li>
             <li>{it.L('In connection with this agreement and all Transactions contemplated by this agreement, the Client agrees to execute and deliver such additional documents and instruments and to perform such additional acts as may be necessary or appropriate to effectuate, carry out, and perform all of the terms, provisions, and conditions of this agreement. The Client shall cooperate fully with any investigation by any regulatory authority and promptly provide the regulatory authority with such information and records as may be requested in compliance with any law, ordinance, charter, by-law, or rule applicable to the Client or the jurisdiction in which they are resident.')}</li>
         </ol>
@@ -425,7 +423,7 @@ const TermsAndConditions = () => (
                 <p><strong>{it.L('Competent Authority')}</strong>{it.L(' means any organisation, whether governmental or not, or physical person or any type of legal person or entity or body of persons and any executor, administrator, or representative of such Competent Authority located in any jurisdiction that has legally delegated or invested authority, capacity, power, or competence to perform a designated function.')}</p>
                 <p><strong>{it.L('Company or Binary')}</strong>{it.L(' means [_1]', it.website_name)}</p>
                 <p><strong>{it.L('Effective Date')}</strong>{it.L(' means the commencement date of this Agreement.')}</p>
-                <p><strong>{it.L('Financial Products')}</strong>{it.L(' means , contract for differences, cryptocurrencies or any other financial instrument added on the website from time to time.')}</p>
+                <p><strong>{it.L('Financial Products')}</strong>{it.L(' means, contract for differences, cryptocurrencies or any other financial instrument added on the website from time to time.')}</p>
                 <p><strong>{it.L('Introducing Broker')}</strong>{it.L(' means any potential individual or entity willing to provide Binary with IB services.')}</p>
                 <p><strong>{it.L('Law')}</strong>{it.L(' means all laws including rules of common law, principals of equity, statutes, regulations, proclamations, ordinances, by-laws, rules, regulatory principles and requirements, policy statements, practice notes, mandatory codes of conduct, writs, orders, injunctions, judgments, determinations, and statutory licence conditions.')}</p>
                 <p><strong>{it.L('Malicious Activity')}</strong>{it.L(' means any manipulations of Binary\'s systems and business in ways which resulted in any adverse, special, incidental, punitive or consequential loss or damages to Binary.')}</p>
@@ -529,7 +527,7 @@ const TermsAndConditions = () => (
                 title={it.L('Limitation of liability')}
             >
                 <p>{it.L('Other than the payment of Commissions, Binary is not liable to the Introducing Broker or their Associates or any other person for any matter arising out of or in relation to this Agreement whether under the law of tort, contract, or equity or otherwise for any loss.')}</p>
-                <p>{it.L('Either party may terminate this Agreement at any time by giving a seven-day (7) advanced written notice to the other party.')}</p>
+                <p>{it.L('The Introducing Broker agrees to indemnify Binary against any loss that Binary may suffer or incur arising out of, or in connection with, any act or omission of the Introducing Broker, or as a result of any fraud, negligence, wilful default, or material breach of this Agreement.')}</p>
             </Li>
             <Li
                 title={it.L('Term and termination of this Agreement')}
