@@ -307,18 +307,17 @@
             padding-bottom: 10px;
         }
         .row-agent {
-            width: fit-content;
-
             > div {
                 &:not(:first-child) {
                     margin-top: 10px;
                 }
                 &:nth-child(2) {
                     text-align: center;
+                    width: 260px;
                 }
             }
             .hint {
-                width: min-content;
+                width: 260px;
                 line-height: 1.4;
             }
         }
@@ -342,7 +341,7 @@
                 margin-right: auto;
                 width: auto;
 
-                .hint {
+                .hint, > div:nth-child(2) {
                     margin-left: auto;
                     margin-right: auto;
                 }
