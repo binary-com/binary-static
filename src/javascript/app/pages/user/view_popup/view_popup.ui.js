@@ -1,3 +1,4 @@
+const debounce          = require('lodash.debounce');
 const setExternalTimer  = require('../../../base/clock').setExternalTimer;
 const BinarySocket      = require('../../../base/socket');
 const getHighestZIndex  = require('../../../../_common/utility').getHighestZIndex;
@@ -52,6 +53,7 @@ const ViewPopupUI = (() => {
             }
         }
         $(window).off('resize', () => { repositionConfirmation(); });
+        window.addEventListener('scroll', debounce(repositionConfirmation, 100));
     };
 
     const forgetStreams = () => {
