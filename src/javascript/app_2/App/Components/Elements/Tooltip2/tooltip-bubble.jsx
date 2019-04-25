@@ -25,25 +25,32 @@ const FadeIn = posed.div({
 });
 
 class TooltipBubble extends React.PureComponent {
+
+    getHorizontalCenter = (rectangle) => rectangle.left + (rectangle.width / 2)
+    
+    getVerticalCenter = (rectangle) => rectangle.top + (rectangle.height / 2)
+
     getBubblePositionStyle = (alignment, tooltip_trigger_rectangle) => {
         switch (alignment) {
             case 'top': return {
-                left     : tooltip_trigger_rectangle.left + (tooltip_trigger_rectangle.width / 2),
+                left     : this.getHorizontalCenter(tooltip_trigger_rectangle),
                 transform: 'translateX(-50%)',
                 bottom   : `calc(100% - ${tooltip_trigger_rectangle.top}px)`,
             };
             case 'right': return {
-                left: tooltip_trigger_rectangle.x + tooltip_trigger_rectangle.width,
-                top : tooltip_trigger_rectangle.y,
+                left     : tooltip_trigger_rectangle.x + tooltip_trigger_rectangle.width,
+                top      : this.getVerticalCenter(tooltip_trigger_rectangle),
+                transform: 'translateY(-50%)',
             };
             case 'bottom': return {
-                left     : tooltip_trigger_rectangle.left + (tooltip_trigger_rectangle.width / 2),
+                left     : this.getHorizontalCenter(tooltip_trigger_rectangle),
                 transform: 'translateX(-50%)',
                 top      : tooltip_trigger_rectangle.y + tooltip_trigger_rectangle.height,
             };
             case 'left': return {
-                right: `calc(100% - ${tooltip_trigger_rectangle.left}px)`,
-                top  : tooltip_trigger_rectangle.y,
+                right    : `calc(100% - ${tooltip_trigger_rectangle.left}px)`,
+                top      : this.getVerticalCenter(tooltip_trigger_rectangle),
+                transform: 'translateY(-50%)',
             };
             default: return {
                 left: tooltip_trigger_rectangle.x,
