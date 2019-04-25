@@ -24,7 +24,7 @@ const InstallPWA = ({
 
     return (
         <React.Fragment>
-            <p className='notification-bar__message'>{localize('Install [_1] app?', website_name)}</p>
+            <p>{localize('Install [_1] app?', website_name)}</p>
             <Button
                 className='btn--secondary btn--secondary--orange btn--link notification-bar__button'
                 has_effect
