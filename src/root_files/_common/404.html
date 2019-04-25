@@ -58,7 +58,7 @@
                 location.replace(
                     base +                                                                            // https://www.binary.com/
                     path_name_split.slice(0, app_url_segment_idx + 1).join('/') + '/'                 // /app/
-                    + lang.toLowerCase() + '?from_404=true&p=' +                                                    // en?p=
+                    + lang.toLowerCase() + '?from_404=true&s=app2&p=' +                                                    // en?p=
                     path_name_split.slice(app_url_segment_idx + 2).join('/').replace(/&/g, '~and~') + // statement
                     (location.search ?
                         '&q=' + location.search.slice(1).replace(/&/g, '~and~') : '')
@@ -97,11 +97,12 @@
             }
         };
     }
-
     var all_lang_regex = new RegExp('(' + all_languages.join('|') + ')', 'i');
     var is_from_404 = location.search &&
-        location.search.toLowerCase().indexOf('from_404')  !== -1;
-    var redirectFn = routeHandler.isApp2() && !is_from_404 ? routeHandler.redirectToReactRoute : routeHandler.redirect;
+        location.search.toLowerCase().indexOf('from_404') !== -1;
+    var is_from_app2 = location.search &&
+        location.search.toLowerCase().indexOf('app2') !== -1;
+    var redirectFn = ((routeHandler.isApp2() && !is_from_404) || is_from_app2) ? routeHandler.redirectToReactRoute : routeHandler.redirect;
 
     var lang = location.href
         .split('/')
