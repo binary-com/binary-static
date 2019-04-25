@@ -4,8 +4,8 @@ import React     from 'react';
 const Highlight = ({ left, width }) => {
     const border_radius_size = '4px';
     const highlight_style = {
-        left                     : 0,
         width,
+        left                     : 0,
         transform                : `translate3d(${left}px, 0, 0)`,
         'borderTopLeftRadius'    : (left === 0) ? border_radius_size : 0,
         'borderTopRightRadius'   : (left === 0) ? 0 : border_radius_size ,
