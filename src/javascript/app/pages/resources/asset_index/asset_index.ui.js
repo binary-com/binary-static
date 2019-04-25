@@ -131,6 +131,9 @@ const AssetIndexUI = (() => {
             asset_index = response.asset_index;
             if (active_symbols) populateTable();
         });
+        BinarySocket.send({ trading_durations: 1 }).then((response) => {
+            console.log(response);
+        });
     };
 
     const loginOnClick = (e) => {
