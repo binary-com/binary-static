@@ -26,9 +26,9 @@ const FadeIn = posed.div({
 
 class TooltipBubble extends React.PureComponent {
 
-    getHorizontalCenter = (rectangle) => rectangle.left + (rectangle.width / 2)
-    
-    getVerticalCenter = (rectangle) => rectangle.top + (rectangle.height / 2)
+    getHorizontalCenter = rectangle => rectangle.left + (rectangle.width / 2)
+
+    getVerticalCenter = rectangle => rectangle.top + (rectangle.height / 2)
 
     getBubblePositionStyle = (alignment, tooltip_trigger_rectangle) => {
         switch (alignment) {
