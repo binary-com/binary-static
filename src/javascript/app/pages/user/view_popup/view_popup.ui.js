@@ -37,6 +37,8 @@ const ViewPopupUI = (() => {
             $(window).on('popstate', onClose);
             $container = $con;
         }
+        // Reposition on scroll event
+        window.addEventListener('scroll', debounce(repositionConfirmation, 100));
         return $container;
     };
 
@@ -53,7 +55,7 @@ const ViewPopupUI = (() => {
             }
         }
         $(window).off('resize', () => { repositionConfirmation(); });
-        window.addEventListener('scroll', debounce(repositionConfirmation, 100));
+        document.removeEventListener('scroll', debounce, true);
     };
 
     const forgetStreams = () => {
