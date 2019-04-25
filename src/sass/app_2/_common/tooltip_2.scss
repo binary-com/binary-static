@@ -7,7 +7,7 @@
         border-radius: 4px;
         @include typeface(--small-center-normal-active, none);
         @include themify($themes) {
-            background: themed('background_tooltip_color');
+            background: themed('tooltip_background_color');
             color: themed('text_active_color');
         }
 
