@@ -56,7 +56,8 @@ class Statement extends React.Component {
                         data_source={data}
                         columns={columns}
                         onScroll={handleScroll}
-                        getRowAction={this.getRowAction}
+                        // getRowAction={this.getRowAction} TODO uncomment once smart-chart component is fixed.
+                        getRowAction={undefined}
                         is_empty={is_empty}
                     >
                         <PlaceholderComponent

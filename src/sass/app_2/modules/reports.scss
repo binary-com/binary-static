@@ -229,3 +229,25 @@ $side-padding: 1.2em;
         }
     }
 }
+
+/** @define empty-open-positions; weak*/
+.empty-open-positions {
+    width: 100%;
+    height: 100%;
+    @include typeface(--paragraph-center-bold-black);
+
+    &__text {
+        @include themify($themes) {
+            color: themed('text_primary_color');
+        }
+    }
+    .btn {
+        width: 100%;
+        height: 40px;
+        @include themify($themes) {
+            border-color: themed('background_button_color');
+            color: themed('text_primary_color');
+            background-color: themed('background_button_color');
+        }
+    }
+}
