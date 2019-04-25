@@ -50,6 +50,15 @@ $side-padding: 1.2em;
     }
     &__row {
         grid-template-columns: 1fr 1.2fr 1fr 1fr 1fr 1fr;
+
+        &--detail {
+            display: flex;
+            justify-content: center;
+            padding: 1.12em;
+            @include themify($themes) {
+                background-color: themed('cell_hover_color');
+            }
+        }
     }
     .amount, .balance {
         justify-content: flex-end;

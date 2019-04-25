@@ -28,21 +28,27 @@ class DataTable extends React.PureComponent {
             children,
             columns,
             footer,
-            getRowLink,
+            getRowAction,
             is_empty,
             onScroll,
         } = this.props;
 
         const TableData =
             <React.Fragment>
-                {this.props.data_source.map((row_obj, id) =>
-                    <TableRow
-                        className={this.props.className}
-                        row_obj={row_obj}
-                        columns={columns}
-                        key={id}
-                        to={getRowLink && getRowLink(row_obj)}
-                    />
+                {this.props.data_source.map((row_obj, id) => {
+                    const action = getRowAction && getRowAction(row_obj);
+
+                    return (
+                        <TableRow
+                            className={this.props.className}
+                            row_obj={row_obj}
+                            columns={columns}
+                            key={id}
+                            to={typeof action === 'string' ? action : undefined}
+                            replace={typeof action === 'object' ? action : undefined}
+                        />
+                    );
+                }
                 )}
                 {children}
             </React.Fragment>;
@@ -89,12 +95,12 @@ DataTable.propTypes = {
         PropTypes.node,
         PropTypes.arrayOf(PropTypes.node),
     ]),
-    className  : PropTypes.string,
-    columns    : PropTypes.array,
-    data_source: MobxPropTypes.arrayOrObservableArray,
-    footer     : PropTypes.object,
-    getRowLink : PropTypes.func,
-    onScroll   : PropTypes.func,
+    className   : PropTypes.string,
+    columns     : PropTypes.array,
+    data_source : MobxPropTypes.arrayOrObservableArray,
+    footer      : PropTypes.object,
+    getRowAction: PropTypes.func,
+    onScroll    : PropTypes.func,
 };
 
 export default DataTable;

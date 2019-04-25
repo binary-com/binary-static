@@ -50,7 +50,7 @@ class OpenPositions extends React.Component {
                         className='open-positions'
                         columns={getOpenPositionsColumnsTemplate(currency)}
                         data_source={active_positions}
-                        getRowLink={(row_obj) => getContractPath(row_obj.id)}
+                        getRowAction={(row_obj) => getContractPath(row_obj.id)}
                     />}
                 </div>
             </React.Fragment>

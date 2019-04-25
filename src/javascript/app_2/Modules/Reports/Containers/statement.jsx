@@ -15,6 +15,20 @@ class Statement extends React.Component {
     componentDidMount()    { this.props.onMount(); }
     componentWillUnmount() { this.props.onUnmount(); }
 
+    getRowAction = (row_obj) => {
+        let action;
+
+        if (row_obj.id && ['buy', 'sell'].includes(row_obj.action_type)) {
+            action = getContractPath(row_obj.id);
+        } else if (['deposit', 'withdrawal'].includes(row_obj.action_type)) {
+            action = {
+                message: row_obj.desc,
+            };
+        }
+
+        return action;
+    };
+
     render() {
         const {
             data,
@@ -42,7 +56,7 @@ class Statement extends React.Component {
                         data_source={data}
                         columns={columns}
                         onScroll={handleScroll}
-                        getRowLink={(row_obj) => row_obj.id ? getContractPath(row_obj.id) : undefined}
+                        getRowAction={this.getRowAction}
                         is_empty={is_empty}
                     >
                         <PlaceholderComponent

@@ -1,14 +1,16 @@
-import classNames  from 'classnames';
-import PropTypes   from 'prop-types';
-import React       from 'react';
-import { NavLink } from 'react-router-dom';
-import TableCell   from './table-cell.jsx';
+import classNames   from 'classnames';
+import PropTypes    from 'prop-types';
+import React        from 'react';
+import { NavLink }  from 'react-router-dom';
+import TableCell    from './table-cell.jsx';
+import TableRowInfo from './table-row-info.jsx';
 
 const TableRow = ({
     className,
     columns,
     is_footer,
     is_header,
+    replace,
     row_obj = {},
     to,
 }) => {
@@ -28,7 +30,7 @@ const TableRow = ({
         );
     });
 
-    const row_class_name = classNames('table__row', { 'table__row-link': to }, { [`${className}__row`]: className });
+    const row_class_name = classNames('table__row', { 'table__row-link': to || replace }, { [`${className}__row`]: className });
 
     return (
         to ?
@@ -36,9 +38,11 @@ const TableRow = ({
                 {cells}
             </NavLink>
             :
-            <div className={row_class_name}>
-                {cells}
-            </div>
+            <TableRowInfo
+                className={row_class_name}
+                cells={cells}
+                replace={replace}
+            />
     );
 };
 
@@ -47,6 +51,7 @@ TableRow.propTypes = {
     columns  : PropTypes.array,
     is_footer: PropTypes.bool,
     is_header: PropTypes.bool,
+    replace  : PropTypes.object,
     row_obj  : PropTypes.object,
     to       : PropTypes.string,
 };
