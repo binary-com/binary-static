@@ -470,6 +470,17 @@ export default class TradeStore extends BaseStore {
     }
 
     @action.bound
+    updateSymbol(underlying) {
+        if (!underlying) return;
+        this.onChange({
+            target: {
+                name : 'symbol',
+                value: underlying,
+            },
+        });
+    }
+
+    @action.bound
     changeDurationValidationRules() {
         if (this.expiry_type === 'endtime') {
             this.validation_errors.duration = [];

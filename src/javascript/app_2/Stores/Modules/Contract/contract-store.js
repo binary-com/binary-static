@@ -53,18 +53,19 @@ export default class ContractStore extends BaseStore {
     drawChart(SmartChartStore, contract_info) {
         this.forget_id = contract_info.id;
         const end_time = getEndTime(contract_info);
+        const should_update_chart_type = !contract_info.tick_count && !this.is_granularity_set;
 
         if (end_time) {
             SmartChartStore.setRange(contract_info.date_start, end_time);
 
-            if (!contract_info.tick_count && !this.is_granularity_set) {
+            if (should_update_chart_type) {
                 this.handleChartType(SmartChartStore, contract_info.date_start, end_time);
             }
 
         } else if (!this.is_left_epoch_set && contract_info.tick_count) {
             this.is_left_epoch_set = true;
             SmartChartStore.setTickChartView(contract_info.purchase_time);
-        } else if (!contract_info.tick_count && !this.is_granularity_set) {
+        } else if (should_update_chart_type) {
             this.handleChartType(SmartChartStore, contract_info.date_start, null);
         }
 
@@ -144,12 +145,7 @@ export default class ContractStore extends BaseStore {
 
         // Set contract symbol if trade_symbol and contract_symbol don't match
         if (this.root_store.modules.trade.symbol !== this.contract_info.underlying) {
-            this.root_store.modules.trade.onChange({
-                target: {
-                    name : 'symbol',
-                    value: this.contract_info.underlying,
-                },
-            });
+            this.root_store.modules.trade.updateSymbol(this.contract_info.underlying);
         }
 
         this.drawChart(this.smart_chart, this.contract_info);
@@ -195,11 +191,11 @@ export default class ContractStore extends BaseStore {
         const granularity = getChartGranularity(start, expiry);
 
         if (chart_type === 'candle' && granularity !== 0) {
-            SmartChartStore.granularity = granularity;
-            SmartChartStore.chart_type  = 'candle';
+            SmartChartStore.updateGranularity(granularity);
+            SmartChartStore.updateChartType(chart_type);
         } else {
-            SmartChartStore.granularity = 0;
-            SmartChartStore.chart_type  = 'mountain';
+            SmartChartStore.updateGranularity(0);
+            SmartChartStore.updateChartType('mountain');
         }
         this.is_granularity_set = true;
     }
