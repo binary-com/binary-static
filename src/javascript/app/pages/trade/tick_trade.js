@@ -302,6 +302,10 @@ const TickDisplay = (() => {
         applicable_ticks      = [];
     };
 
+    const getDecimalPlaces = (number) => (
+        number.toString().split('.')[1].length || 2
+    );
+
     const dispatch = (data) => {
         const tick_chart = CommonFunctions.getElementById(id_render);
 
@@ -322,11 +326,11 @@ const TickDisplay = (() => {
             if (data.tick) {
                 Tick.details(data);
                 if (!chart_display_decimals) {
-                    chart_display_decimals = data.tick.quote.split('.')[1].length || 2;
+                    chart_display_decimals = getDecimalPlaces(data.tick.quote);
                 }
             } else if (data.history) {
                 if (!chart_display_decimals) {
-                    chart_display_decimals = data.history.prices[0].split('.')[1].length || 2;
+                    chart_display_decimals = getDecimalPlaces(data.history.prices[0]);
                 }
             }
             if (!tick_init && contract) {
