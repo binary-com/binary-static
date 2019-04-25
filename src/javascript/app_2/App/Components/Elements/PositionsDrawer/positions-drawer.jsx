@@ -2,15 +2,17 @@ import classNames                     from 'classnames';
 import { PropTypes as MobxPropTypes } from 'mobx-react';
 import PropTypes                      from 'prop-types';
 import React                          from 'react';
-import { CSSTransition }              from 'react-transition-group';
-import { Scrollbars }                 from 'tt-react-custom-scrollbars';
-import { localize }                   from '_common/localize';
+import { NavLink }           from 'react-router-dom';
+import { CSSTransition }     from 'react-transition-group';
+import { Scrollbars }        from 'tt-react-custom-scrollbars';
+import { localize }          from '_common/localize';
 import {
     Icon,
-    IconMinimize }                   from 'Assets/Common';
-import EmptyPortfolioMessage          from 'Modules/Portfolio/Components/empty-portfolio-message.jsx';
-import { connect }                    from 'Stores/connect';
-import PositionsDrawerCard            from './positions-drawer-card.jsx';
+    IconMinimize }           from 'Assets/Common';
+import routes                from 'Constants/routes';
+import EmptyPortfolioMessage from 'Modules/Portfolio/Components/empty-portfolio-message.jsx';
+import { connect }           from 'Stores/connect';
+import PositionsDrawerCard   from './positions-drawer-card.jsx';
 
 class PositionsDrawer extends React.Component {
     componentDidMount()    {
@@ -44,8 +46,8 @@ class PositionsDrawer extends React.Component {
         } else if (is_empty) {
             body_content = <EmptyPortfolioMessage />;
         } else {
-            // Show only 4 most recent open contracts
-            body_content = all_positions.slice(0, 4).map((portfolio_position) => (
+            // Show only 5 most recent open contracts
+            body_content = all_positions.slice(0, 5).map((portfolio_position) => (
                 <CSSTransition
                     key={portfolio_position.id}
                     in={!!(portfolio_position.contract_info.underlying)}
@@ -95,14 +97,13 @@ class PositionsDrawer extends React.Component {
                         {body_content}
                     </Scrollbars>
                 </div>
-                {/* TODO: Re-enable reports button positions drawer footer once implemented */}
-                {/* <div className='positions-drawer__footer'> */}
-                {/* <a className='btn btn--link btn--alternate' href='javascript:;'> */}
-                {/* <span className='btn__text'> */}
-                {/* {localize('Go to Reports')} */}
-                {/* </span> */}
-                {/* </a> */}
-                {/* </div> */}
+                <div className='positions-drawer__footer'>
+                    <NavLink className='btn btn--link btn--alternate' to={routes.reports}>
+                        <span className='btn__text'>
+                            {localize('Go to Reports')}
+                        </span>
+                    </NavLink>
+                </div>
             </div>
         );
     }
