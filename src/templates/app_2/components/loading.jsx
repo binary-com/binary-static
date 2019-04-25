@@ -1,11 +1,9 @@
-import React                    from 'react';
-import PropTypes                from 'prop-types';
+import React               from 'react';
+import PropTypes           from 'prop-types';
 import {
     Icon,
     IconInitialLogoDark,
-    IconInitialLogoLight }      from 'Assets/Common';
-import { IconInitialLogoDark }  from 'Assets/Common/icon-initial-logo-dark';
-import { IconInitialLogoLight } from 'Assets/Common/icon-initial-logo-light';
+    IconInitialLogoLight } from '../../../javascript/app_2/Assets/Common';
 
 class Loading extends React.Component {
 
