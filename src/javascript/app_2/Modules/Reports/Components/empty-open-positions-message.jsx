@@ -1,15 +1,13 @@
 import PropTypes       from 'prop-types';
 import React           from 'react';
 import { localize }    from '_common/localize';
-import { Icon }        from 'Assets/Common';
-import { IconReports } from 'Assets/Header/NavBar';
 import { routes }      from 'Constants/index';
 import { ButtonLink }  from 'App/Components/Routes';
+import Localize        from 'App/Components/Elements/localize.jsx';
 
 const EmptyOpenPositionsMessage = ({ has_selected_date }) => (
     <React.Fragment>
         <div className='empty-open-positions'>
-            <Icon icon={IconReports} className='empty-open-positions__icon' />
             <span className='empty-open-positions__text'>
                 {
                     !has_selected_date ?
@@ -24,7 +22,7 @@ const EmptyOpenPositionsMessage = ({ has_selected_date }) => (
                     className='btn--secondary btn--secondary--orange'
                     to={routes.trade}
                 >
-                    <span>{localize('Trade now')}</span>
+                    <Localize str={'Trade now'} />
                 </ButtonLink>
             }
         </div>
