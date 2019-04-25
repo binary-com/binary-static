@@ -37,7 +37,7 @@ const ViewPopup = (() => {
 
     const init = (button, onClose) => {
         btn_view             = button;
-        contract_id          = $(btn_view).attr('contract_id');
+        contract_id          = +$(btn_view).attr('contract_id');
         contract             = {};
         is_sold              = false;
         is_sold_before_start = false;
@@ -796,15 +796,15 @@ const ViewPopup = (() => {
 
     const responseProposal = (response) => {
         if (response.error) {
-            if (response.error.code !== 'AlreadySubscribed' && response.echo_req.contract_id === contract_id) {
+            if (response.error.code !== 'AlreadySubscribed' && +response.echo_req.contract_id === contract_id) {
                 showErrorPopup(response, response.error.message);
             }
             return;
         }
-        if (response.proposal_open_contract.contract_id === contract_id) {
+        if (+response.proposal_open_contract.contract_id === contract_id) {
             ViewPopupUI.storeSubscriptionID(response.proposal_open_contract.id);
             responseContract(response);
-        } else {
+        } else if (response.proposal_open_contract.id) {
             BinarySocket.send({ forget: response.proposal_open_contract.id });
         }
         const dates = ['#trade_details_start_date', '#trade_details_end_date', '#trade_details_current_date', '#trade_details_live_date'];
