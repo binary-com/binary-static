@@ -33,7 +33,7 @@ NotificationMessages.propTypes = {
             is_auto_close: PropTypes.bool,
             message      : PropTypes.string,
             size         : PropTypes.oneOf(['small']),
-            type         : PropTypes.oneOf(['error', 'info', 'success', 'danger']),
+            type         : PropTypes.oneOf(['warning', 'info', 'success', 'danger']),
         }),
     ),
     removeNotification: PropTypes.func,

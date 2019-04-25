@@ -248,6 +248,7 @@ export default class ClientStore extends BaseStore {
         this.accounts = LocalStore.getObject(storage_key);
         this.switched = '';
 
+        // TODO: Separate out notification handling
         if (this.accounts[this.loginid]) {
             const { currency } = this.accounts[this.loginid];
             if (!currency) {
@@ -282,6 +283,48 @@ export default class ClientStore extends BaseStore {
                                 header : localize('Documents in review'),
                                 message: localize('We are reviewing your documents. For more details contact us.'),
                                 type   : 'info',
+                            });
+                        }
+                        if (status.includes('cashier_locked')) {
+                            this.root_store.ui.addNotification({
+                                header : localize('Cashier Disabled'),
+                                message: localize('Deposits and withdrawals have been disabled on your account. Please check your email for more details.'),
+                                type   : 'warning',
+                            });
+                        }
+                        if (status.includes('mt5_withdrawal_locked')) {
+                            this.root_store.ui.addNotification({
+                                header : localize('MT5 Withdrawal Disabled'),
+                                message: localize('MT5 withdrawals have been disabled on your account. Please check your email for more details.'),
+                                type   : 'warning',
+                            });
+                        }
+                        if (status.includes('document_needs_action')) {
+                            this.root_store.ui.addNotification({
+                                header : localize('Authentication Failed'),
+                                message: localize('Your Proof of Identity or Proof of Address did not meet our requirements. Please check your email for further instructions.'),
+                                type   : 'warning',
+                            });
+                        }
+                        if (status.includes('unwelcome')) {
+                            this.root_store.ui.addNotification({
+                                header : localize('Trading and Deposits Disabled'),
+                                message: localize('Trading and deposits have been disabled on your account. Kindly contact customer support for assistance.'),
+                                type   : 'danger',
+                            });
+                        }
+                        if (status.includes('ukrts_max_turnover_limit_not_set')) {
+                            this.root_store.ui.addNotification({
+                                header : localize('Remove Deposit Limits'),
+                                message: localize('Please set your 30-day turnover limit to remove deposit limits.'),
+                                type   : 'warning',
+                            });
+                        }
+                        if (this.accounts[this.loginid].landing_company_shortcode === 'maltainvest' && !status.includes('professional')) {
+                            this.root_store.ui.addNotification({
+                                header : localize('Binary Options Trading Disabled'),
+                                message: localize('Binary Options Trading has been disabled on your account. Kindly contact customer support  for assistance.'),
+                                type   : 'danger',
                             });
                         }
                     }

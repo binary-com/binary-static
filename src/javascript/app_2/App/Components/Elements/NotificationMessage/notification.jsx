@@ -59,7 +59,7 @@ Notification.propTypes = {
         message              : PropTypes.string,
         should_hide_close_btn: PropTypes.bool,
         size                 : PropTypes.oneOf(['small']),
-        type                 : PropTypes.oneOf(['error', 'info', 'success', 'danger']).isRequired,
+        type                 : PropTypes.oneOf(['warning', 'info', 'success', 'danger']).isRequired,
     }),
     removeNotification: PropTypes.func,
 };
