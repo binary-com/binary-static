@@ -248,22 +248,24 @@ export default class ClientStore extends BaseStore {
         this.accounts = LocalStore.getObject(storage_key);
         this.switched = '';
 
-        const { currency } = this.accounts[this.loginid];
-        if (!currency) {
-            this.root_store.ui.addNotification({
-                header : localize('Set Currency'),
-                message: localize('Please set the currency of your account to enable trading.'),
-                type   : 'danger',
-            });
-        }
+        if (this.accounts.length) {
+            const { currency } = this.accounts[this.loginid];
+            if (!currency) {
+                this.root_store.ui.addNotification({
+                    header : localize('Set Currency'),
+                    message: localize('Please set the currency of your account to enable trading.'),
+                    type   : 'danger',
+                });
+            }
 
-        const { excluded_until } = this.accounts[this.loginid];
-        if (excluded_until) {
-            this.root_store.ui.addNotification({
-                header : localize('Self-exclusion Detected'),
-                message: localize('You have opted to be excluded from Binary.com until [_1]. Please contact us for assistance.', formatDate(excluded_until, 'DD/MM/YYYY')),
-                type   : 'danger',
-            });
+            const { excluded_until } = this.accounts[this.loginid];
+            if (excluded_until) {
+                this.root_store.ui.addNotification({
+                    header : localize('Self-exclusion Detected'),
+                    message: localize('You have opted to be excluded from Binary.com until [_1]. Please contact us for assistance.', formatDate(excluded_until, 'DD/MM/YYYY')),
+                    type   : 'danger',
+                });
+            }
         }
 
         this.selectCurrency('');
