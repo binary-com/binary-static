@@ -1,28 +1,27 @@
 import PropTypes    from 'prop-types';
 import React        from 'react';
 import { connect }  from 'Stores/connect';
-import Notification  from '../Components/Elements/NotificationMessage';
+import Notification, { MAX_DISPLAY_NOTIFICATIONS, sortNotifications } from '../Components/Elements/NotificationMessage';
 
 const NotificationMessages = ({
     notification_messages,
     removeNotification,
-}) => {
-    const MAX_DISPLAY_NOTIFICATIONS = 3;
-
-    return (
-        <div className='notification-messages'>
-            {
-                notification_messages.slice(0, MAX_DISPLAY_NOTIFICATIONS).map((notification, idx) => (
+}) => (
+    <div className='notification-messages'>
+        {
+            notification_messages
+                .slice(0, MAX_DISPLAY_NOTIFICATIONS)
+                .sort(sortNotifications)
+                .map((notification, idx) => (
                     <Notification
                         key={idx}
                         data={notification}
                         removeNotification={removeNotification}
                     />
                 ))
-            }
-        </div>
-    );
-};
+        }
+    </div>
+);
 
 NotificationMessages.propTypes = {
     notification_messages: PropTypes.arrayOf(
