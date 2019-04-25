@@ -8,7 +8,10 @@ import { formatDate }          from 'Utils/Date';
 import {
     requestLogout,
     WS }                       from 'Services';
-import { getAccountTitle }     from '_common/base/client_base';
+import { getAccountTitle,
+    getRiskAssessment,
+    shouldAcceptTnc,
+    shouldCompleteTax }        from '_common/base/client_base';
 import GTM                     from '_common/base/gtm';
 import BinarySocket            from '_common/base/socket_base';
 import * as SocketCache        from '_common/base/socket_cache';
@@ -267,6 +270,7 @@ export default class ClientStore extends BaseStore {
                     type   : 'danger',
                 });
             }
+
             WS.getAccountStatus().then((response) => {
                 if (response.get_account_status) {
                     if (response.get_account_status.prompt_client_to_authenticate) {
@@ -324,6 +328,27 @@ export default class ClientStore extends BaseStore {
                             this.root_store.ui.addNotification({
                                 header : localize('Binary Options Trading Disabled'),
                                 message: localize('Binary Options Trading has been disabled on your account. Kindly contact customer support  for assistance.'),
+                                type   : 'danger',
+                            });
+                        }
+                        if (getRiskAssessment()) {
+                            this.root_store.ui.addNotification({
+                                header : localize('Withdrawal and Trading Limits'),
+                                message: localize('Please complete the Financial Assessment form to lift your withdrawal and trading limits.'),
+                                type   : 'info',
+                            });
+                        }
+                        if (shouldCompleteTax()) {
+                            this.root_store.ui.addNotification({
+                                header : localize('Complete your personal details'),
+                                message: localize('Please complete your Personal Details before you proceed.'),
+                                type   : 'danger',
+                            });
+                        }
+                        if (shouldAcceptTnc()) {
+                            this.root_store.ui.addNotification({
+                                header : localize('Terms & Conditions Updated'),
+                                message: localize('Please accept the updated Terms and Conditions to enable deposit and trading.'),
                                 type   : 'danger',
                             });
                         }
@@ -401,7 +426,7 @@ export default class ClientStore extends BaseStore {
             if (!this.all_loginids.some(id => id !== this.switched) || this.switched === this.loginid) {
                 this.root_store.ui.addNotification({
                     message: localize('Could not switch to default account.'),
-                    type   : 'error',
+                    type   : 'danger',
                 });
                 // request a logout
                 requestLogout();
