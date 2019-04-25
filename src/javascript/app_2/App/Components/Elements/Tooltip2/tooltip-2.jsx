@@ -40,7 +40,7 @@ class Tooltip2 extends React.PureComponent {
                         className='tooltip-2__bubble'
                         alignment={alignment}
                         message={message}
-                        tooltip_trigger_rect={this.tooltip_trigger_reference.current.getBoundingClientRect()}
+                        tooltip_trigger_rectangle={this.tooltip_trigger_reference.current.getBoundingClientRect()}
                     />
                 }
             </div>
