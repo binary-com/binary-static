@@ -4,7 +4,7 @@ import React                               from 'react';
 import { withRouter }                      from 'react-router-dom';
 import { localize }                        from '_common/localize';
 import DataTable                           from 'App/Components/Elements/DataTable';
-import { getContractPath }                 from 'App/Components/Routes/helpers';
+// import { getContractPath }                 from 'App/Components/Routes/helpers';
 import { connect }                         from 'Stores/connect';
 import EmptyOpenPositionsMessage           from '../Components/empty-open-positions-message.jsx';
 import { ReportsMeta }                     from '../Components/reports-meta.jsx';
@@ -50,7 +50,8 @@ class OpenPositions extends React.Component {
                         className='open-positions'
                         columns={getOpenPositionsColumnsTemplate(currency)}
                         data_source={active_positions}
-                        getRowAction={(row_obj) => getContractPath(row_obj.id)}
+                        getRowAction={undefined}
+                        // getRowAction={(row_obj) => getContractPath(row_obj.id)} TODO uncomment once smart-chart component is fixed.
                     />}
                 </div>
             </React.Fragment>

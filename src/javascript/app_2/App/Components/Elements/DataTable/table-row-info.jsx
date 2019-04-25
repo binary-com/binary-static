@@ -12,7 +12,9 @@ export default class TableRowInfo extends React.Component {
     }
 
     toggleDetails = () => {
-        this.setState(state => ({ showDetails: !state.showDetails }));
+        if (this.props.replace) {
+            this.setState(state => ({ showDetails: !state.showDetails }));
+        }
     };
 
     render() {
