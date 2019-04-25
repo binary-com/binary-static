@@ -5,7 +5,7 @@ const Biel = () => (
         <h2 data-anchor='supplementary-terms-and-conditions'>{it.L('Supplementary terms and conditions for Financial Products offered by Binary Investments (Europe) Ltd')}</h2>
         <p>{it.L('These supplementary terms and conditions (these "ST&Cs") apply solely to clients of Binary Investments (Europe) Ltd ("BIEL") and will govern the relationship between clients and BIEL when trading Financial Products (as defined in the Key information documents [_1]here[_2]) with BIEL.', `<a href=${it.url_for('regulation#key_information_documents')}>`, '</a>')}</p>
         <p>{it.L('These ST&Cs form part of, and need to be read together with, the general terms and conditions relating to the use of [_1].', it.website_name)}</p>
-        <p>{it.L('Clients should read these ST&Cs carefully as well as the Summary order execution policy and Summary conflicts policy, the applicable Contract details together with the Risk disclosure notice and any other documents that BIEL has supplied or in the future do supply to clients.')}</p>
+        <p>{it.L('Clients should read these ST&Cs carefully as well as the Summary order execution policy and Summary conflicts policy, the applicable Contract details together with the Risk disclosure notice and any other documents that BIEL has supplied or in the future supplies to clients.')}</p>
         <p>{it.L('These ST&Cs begin to apply on the date BIEL opens the client\'s account, and, for any new versions after that, on the date BIEL notifies the client.')}</p>
 
         <h2 data-anchor='about-us-and-our-regulator'>{it.L('About BIEL and BIEL\'s regulator')}</h2>
@@ -22,7 +22,7 @@ const Biel = () => (
         <ul className='bullet'>
             <li>{it.L('Retail clients')}</li>
             <li>{it.L('Professional clients')}</li>
-            <li>{it.L('Eligible counterparty')}</li>
+            <li>{it.L('Eligible counterparties')}</li>
         </ul>
         {/* Grammatical errors in the next para */}
         <p>{it.L('The level of protection offered and due to each client depends on the category to which each client is assigned. Retail clients benefit from the highest degree of protection. The Company will assess the Client\'s knowledge and experience versus the appropriateness of the requested service/investment product.')}</p>

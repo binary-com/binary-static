@@ -69,7 +69,7 @@ const Api = () => (
                 strong='1'
                 header={it.L('Usage limit')}
                 items={[
-                    { text: it.L('The [_1] API has usage limits enforced to prevent abuse and/or repurposing of the [_1] API. These usage limits may be changed in the future without notice. If the Programmer consistently exceed the usage limit or otherwise abuse the service, the Company may block the Programmer\'s access to the [_1] API.', it.website_name) },
+                    { text: it.L('The [_1] API has usage limits enforced to prevent abuse and/or repurposing of the [_1] API. These usage limits may be changed in the future without notice. If the Programmer consistently exceeds the usage limit or otherwise abuse the service, the Company may block the Programmer\'s access to the [_1] API.', it.website_name) },
                 ]}
             />
 
@@ -116,7 +116,7 @@ const Api = () => (
                         header     : it.L('[_1] property', it.website_name),
                         list_nested: [
                             { text: it.L('As between the Programmer and the Company, the Company owns all rights, title, and interest, including all intellectual property rights, in and to, the [_1] API, and all elements, components, and executables of the [_1] API.', it.website_name) },
-                            { text: it.L('The Programmer\'s use of the [_1] API will not confer to the Programmer any title, ownership interest, or intellectual property rights that otherwise belongs to the Company. The Company\'s trading platform is protected under patent and the Company\'s website, including its content, is protected by copyright laws, and will remain the Company\'s exclusive property, as applicable.', it.website_name) },
+                            { text: it.L('The Programmer\'s use of the [_1] API will not confer to the Programmer any title, ownership interest, or intellectual property rights that otherwise belong to the Company. The Company\'s trading platform is protected under patent and the Company\'s website, including its content, is protected by copyright laws, and will remain the Company\'s exclusive property, as applicable.', it.website_name) },
                             { text: it.L('Except for the licence granted in this Agreement, the Company does not grant the Programmer any right, title, or interest in the [_1] API. The Programmer agrees to take such actions as the Company may reasonably request to perfect the Company\'s rights to the [_1] API.', it.website_name) },
                         ],
                     },
@@ -151,7 +151,7 @@ const Api = () => (
                     {
                         header     : it.L('Improvements'),
                         list_nested: [
-                            { text: it.L('The Programmer also acknowledges that [_1] may continue to make changes to and enhance the [_1] API and that those changes and enhancements will be owned by [_1]. The Programmer hereby assigns and transfers to the Company all of the Programmer\'s right, title, and interest in and to any modifications or derivative works of the [_1] API created by or for the Programmer, regardless of whether they were created in accordance with these Terms; such assignment being effective upon creation of such works, and shall include, without limitation, all rights under any intellectual property laws, including copyright. The Programmer shall not take any action to jeopardise, encumber, limit, or interface in any manner with [_1]\'s ownership of, and rights with respect to, the [_1] API, or any derivative works or updates thereof or thereto. Any components, parts, or mechanics of any system or API programme derived from the [_1] API, or [_1]\'s business practices shall belong solely to [_1]. Further, the Programmer will not, at any time, contest or assist any third party in contesting the rights of [_1] in the [_1] API or any other intellectual property provided in these Terms.', it.website_name) },
+                            { text: it.L('The Programmer also acknowledges that [_1] may continue to make changes to and enhance the [_1] API and that those changes and enhancements will be owned by [_1]. The Programmer hereby assigns and transfers to the Company all of the Programmer\'s rights, title, and interest in and to any modifications or derivative works of the [_1] API created by or for the Programmer, regardless of whether they were created in accordance with these Terms; such assignment being effective upon creation of such works, and shall include, without limitation, all rights under any intellectual property laws, including copyright. The Programmer shall not take any action to jeopardise, encumber, limit, or interface in any manner with [_1]\'s ownership of, and rights with respect to, the [_1] API, or any derivative works or updates thereof or thereto. Any components, parts, or mechanics of any system or API programme derived from the [_1] API, or [_1]\'s business practices shall belong solely to [_1]. Further, the Programmer will not, at any time, contest or assist any third party in contesting the rights of [_1] in the [_1] API or any other intellectual property provided in these Terms.', it.website_name) },
                         ],
                     },
                     {
@@ -173,7 +173,7 @@ const Api = () => (
                         header     : it.L('The use of the [_1] API is at the Programmer\'s own risk, and the Programmer assumes full responsibility and risk of the loss it may suffer as a result of using, or accessing, the [_1] API. Except to the extent that liability under any applicable law or regulation cannot be excluded, the following cases hold:', it.website_name),
                         list_nested: [
                             { text: it.L('The Company is not liable for loss or damage of any kind whatsoever arising as a result of information or prices published on or furnished through the [_1] API, or any errors or omissions of the [_1] API.', it.website_name) },
-                            { text: it.L('The Company shall have no liability arising from orders, investment decisions or purchases of third party goods or services (including financial instruments and currency) based on information published on or furnished through the [_1] API;', it.website_name) },
+                            { text: it.L('The Company shall have no liability arising from orders, investment decisions, or purchases of third-party goods or services (including financial instruments and currency) based on information published on or furnished through the [_1] API;', it.website_name) },
                             { text: it.L('Under no circumstances shall the Company or its directors or employees be liable under this agreement to the Programmer or any third party for any indirect, special, incidental, punitive, or consequential loss or damages or any other similar damages under any theory of liability (whether in contract, tort, strict liability, or any other theory), which are directly or indirectly attributable to the use of, or the inability to use, the [_1] API, or any content contained thereon, even if the Company has been informed of the possibility thereof.', it.website_name) },
                         ],
                     },
@@ -254,15 +254,15 @@ const Api = () => (
                             {
                                 header     : it.L('At any time and for any reason or no reason, the Company, in its sole discretion, may do either of the following immediately:'),
                                 list_nested: [
-                                    { text: it.L('Terminate the Programmer\'s use of the [_1] API; or', it.website_name) },
-                                    { text: it.L('Terminate this Agreement') },
+                                    { text: it.L('Terminate the Programmer\'s use of the API; or') },
+                                    { text: it.L('Terminate this Agreement.') },
                                 ],
                             },
                             { text: it.L('The Programmer may terminate this Agreement at any time, but only by giving the Company a minimum of seven days\' written notice. "Written notice" here includes notice delivered by regular mail or by email.') },
                         ],
                     },
                     {
-                        header     : it.L('Termination for causes'),
+                        header     : it.L('Termination causes'),
                         list_nested: [
                             {
                                 header     : it.L('The following are causes for termination:'),
@@ -276,7 +276,7 @@ const Api = () => (
                     {
                         header     : it.L('Effect of termination'),
                         list_nested: [
-                            { text: it.L('Upon the expiration or termination of this Agreement, for whatever reason, all rights and licence granted to the Programmer in this Agreement, including use of the [_1] API, shall immediately terminate. The Programmer agrees to promptly cease all further use of the [_1] API. Termination of this Agreement shall not act as a waiver of any breach of this Agreement and shall not act as a release of the Programmer\'s liability for the breach of its obligation under this Agreement. The Company shall not be liable to the Programmer for damages of any kind solely as a result of terminating this Agreement in accordance with its terms.', it.website_name) },
+                            { text: it.L('Upon the expiration or termination of this Agreement, for whatever reason, all rights and licences granted to the Programmer in this Agreement, including use of the [_1] API, shall immediately terminate. The Programmer agrees to promptly cease all further use of the [_1] API. Termination of this Agreement shall not act as a waiver of any breach of this Agreement and shall not act as a release of the Programmer\'s liability for the breach of its obligation under this Agreement. The Company shall not be liable to the Programmer for damages of any kind solely as a result of terminating this Agreement in accordance with its terms.', it.website_name) },
                         ],
                     },
                 ]}
