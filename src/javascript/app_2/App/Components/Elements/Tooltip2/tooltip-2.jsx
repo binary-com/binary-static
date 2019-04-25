@@ -4,16 +4,16 @@ import TooltipBubble from './tooltip-bubble.jsx';
 class Tooltip2 extends React.PureComponent {
     constructor(props) {
         super(props);
-        this.state = { should_show_tooltip_bubble: false };
+        this.state = { is_open: false };
         this.tooltip_trigger_reference = React.createRef();
     }
 
     onMouseEnter = () => {
-        this.setState({ should_show_tooltip_bubble: true });
+        this.setState({ is_open: true });
     }
 
     onMouseLeave = () => {
-        this.setState({ should_show_tooltip_bubble: false });
+        this.setState({ is_open: false });
     }
 
     render() {
@@ -35,8 +35,7 @@ class Tooltip2 extends React.PureComponent {
                 >
                     { children }
                 </div>
-
-                { this.state.should_show_tooltip_bubble &&
+                { this.state.is_open &&
                     <TooltipBubble
                         className='tooltip-2__bubble'
                         alignment={alignment}
