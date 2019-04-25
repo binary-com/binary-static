@@ -1,7 +1,9 @@
-import PropTypes    from 'prop-types';
-import React        from 'react';
-import { connect }  from 'Stores/connect';
-import Notification, { MAX_DISPLAY_NOTIFICATIONS, sortNotifications } from '../Components/Elements/NotificationMessage';
+import PropTypes        from 'prop-types';
+import React            from 'react';
+import { connect }      from 'Stores/connect';
+import Notification, {
+    MAX_DISPLAY_NOTIFICATIONS,
+    sortNotifications } from '../Components/Elements/NotificationMessage';
 
 const NotificationMessages = ({
     notification_messages,
