@@ -42,6 +42,7 @@ const TableRow = ({
                 className={row_class_name}
                 cells={cells}
                 replace={replace}
+                is_footer={is_footer}
             />
     );
 };

@@ -29,6 +29,7 @@ class ProfitTable extends React.Component {
             error,
             handleScroll,
             has_selected_date,
+            totals,
         } = this.props;
         if (error) return <p>{error}</p>;
 
@@ -46,6 +47,7 @@ class ProfitTable extends React.Component {
                         data_source={data}
                         columns={columns}
                         onScroll={handleScroll}
+                        footer={totals}
                         getRowAction={(row_obj) => row_obj.id ? getContractPath(row_obj.id) : undefined}
                         is_empty={is_empty}
                     >
@@ -72,6 +74,7 @@ ProfitTable.propTypes = {
     is_loading       : PropTypes.bool,
     onMount          : PropTypes.func,
     onUnmount        : PropTypes.func,
+    totals           : PropTypes.object,
 };
 
 export default connect(
@@ -84,6 +87,7 @@ export default connect(
         is_loading       : modules.profit_table.is_loading,
         onMount          : modules.profit_table.onMount,
         onUnmount        : modules.profit_table.onUnmount,
+        totals           : modules.profit_table.totals,
     })
 )(withRouter(ProfitTable));
 

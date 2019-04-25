@@ -89,6 +89,22 @@ export default class ProfitTableStore extends BaseStore {
         WS.forgetAll('proposal');
     }
 
+    @computed
+    get totals() {
+        let profit_loss = 0;
+
+        this.data.forEach((transaction) => {
+            if (transaction.profit_loss.indexOf('-') !== -1) {
+                profit_loss -= parseFloat(transaction.profit_loss.split('-')[1]);
+            } else {
+                profit_loss += parseFloat(transaction.profit_loss);
+            }
+        });
+        return {
+            profit_loss: profit_loss.toString(),
+        };
+    }
+
     @action.bound
     accountSwitcherListener() {
         return new Promise((resolve) => {

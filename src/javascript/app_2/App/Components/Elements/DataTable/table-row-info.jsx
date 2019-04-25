@@ -18,7 +18,7 @@ export default class TableRowInfo extends React.Component {
     render() {
         return (
             <div
-                onClick={this.toggleDetails}
+                onClick={this.props.is_footer || !this.props.replace ? undefined : this.toggleDetails}
                 className={classNames(this.props.className, { 'statement__row--detail': this.state.showDetails })}
             >
                 {

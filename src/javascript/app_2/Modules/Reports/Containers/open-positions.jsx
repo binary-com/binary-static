@@ -25,6 +25,7 @@ class OpenPositions extends React.Component {
             error,
             is_empty,
             currency,
+            totals,
         } = this.props;
 
         if (error) {
@@ -49,6 +50,7 @@ class OpenPositions extends React.Component {
                     { currency && active_positions.length > 0 && <DataTable
                         className='open-positions'
                         columns={getOpenPositionsColumnsTemplate(currency)}
+                        footer={totals}
                         data_source={active_positions}
                         getRowAction={(row_obj) => getContractPath(row_obj.id)}
                     />}
@@ -70,6 +72,7 @@ OpenPositions.propTypes = {
     is_tablet       : PropTypes.bool,
     onMount         : PropTypes.func,
     onUnmount       : PropTypes.func,
+    totals          : PropTypes.object,
 };
 
 export default connect(
@@ -81,5 +84,6 @@ export default connect(
         is_loading      : modules.portfolio.is_loading,
         onMount         : modules.portfolio.onMount,
         onUnmount       : modules.portfolio.onUnmount,
+        totals          : modules.portfolio.totals,
     })
 )(withRouter(OpenPositions));

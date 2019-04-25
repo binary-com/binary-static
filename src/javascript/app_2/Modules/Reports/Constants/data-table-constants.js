@@ -63,13 +63,17 @@ export const getProfitTableColumnsTemplate = () => [
         key              : 'icon',
         title            : '',
         col_index        : 'action_type',
-        renderCellContent: ({ cell_value, row_obj }) => (
-            <MarketSymbolIconRow
-                action={cell_value}
-                key={row_obj.transaction_id}
-                payload={row_obj}
-            />
-        ),
+        renderCellContent: ({ cell_value, row_obj, is_footer }) => {
+            if (is_footer) return localize('Total profit/loss');
+
+            return (
+                <MarketSymbolIconRow
+                    action={cell_value}
+                    key={row_obj.transaction_id}
+                    payload={row_obj}
+                />
+            );
+        },
     }, {
         title    : localize('Date'),
         col_index: 'purchase_time',
@@ -79,14 +83,22 @@ export const getProfitTableColumnsTemplate = () => [
     }, {
         title            : localize('Purchase'),
         col_index        : 'buy_price',
-        renderCellContent: ({ cell_value }) => <Money amount={cell_value} />,
+        renderCellContent: ({ cell_value, is_footer }) => {
+            if (is_footer) return '';
+
+            return <Money amount={cell_value} />;
+        },
     }, {
         title    : localize('Sale Date'),
         col_index: 'sell_time',
     }, {
         title            : localize('Sale Price'),
         col_index        : 'sell_price',
-        renderCellContent: ({ cell_value }) => <Money amount={cell_value} />,
+        renderCellContent: ({ cell_value, is_footer }) => {
+            if (is_footer) return '';
+
+            return <Money amount={cell_value} />;
+        },
     }, {
         title            : localize('Profit/Loss'),
         col_index        : 'profit_loss',
@@ -101,8 +113,12 @@ export const getOpenPositionsColumnsTemplate = (currency) => [
     {
         title            : '',
         col_index        : 'type',
-        renderCellContent: ({ cell_value }) => <ContractTypeCell type={cell_value} />,
-    },{
+        renderCellContent: ({ cell_value, is_footer }) => {
+            if (is_footer) return localize('Total');
+
+            return <ContractTypeCell type={cell_value} />;
+        },
+    }, {
         title    : localize('Ref. ID'),
         col_index: 'reference',
     }, {
