@@ -5,7 +5,7 @@ const TradingDurations = () => (
         <h1 className='trading-durations__title'>{it.L('Trading Durations')}</h1>
         <div className='gr-padding-10 trading-durations__wrapper'>
             <p id='errorMsg' className='trading-durations__error-msg invisible' />
-            <div id='trading-durations' className='gr-parent trading-durations__content'>
+            <div className='gr-parent trading-durations__content'>
                 <ul className='trading-durations__tabs'>
                     <li>Forex</li>
                     <li>Indices</li>
@@ -34,6 +34,27 @@ const TradingDurations = () => (
                                 ASSETS
                             </div>
                         </td>
+                        <tr>
+                            <td>trade/type</td>
+                            <td>durationtick</td>
+                            <td>durationmin</td>
+                            <td>durationhour</td>
+                            <td>durationday</td>
+                        </tr>
+                        <tr>
+                            <td>trade/type</td>
+                            <td>durationtick</td>
+                            <td>durationmin</td>
+                            <td>durationhour</td>
+                            <td>durationday</td>
+                        </tr>
+                        <tr>
+                            <td>trade/type</td>
+                            <td>durationtick</td>
+                            <td>durationmin</td>
+                            <td>durationhour</td>
+                            <td>durationday</td>
+                        </tr>
                         <tr>
                             <td>trade/type</td>
                             <td>durationtick</td>
