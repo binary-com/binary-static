@@ -34,8 +34,8 @@ const RouteWithSubRoutes = route => {
         const title = route.title ? `${route.title} | ` : '';
         document.title = `${ title }${ default_title }`;
         BinarySocket.wait('website_status').then(() => {
-            const referrer = Url.paramsHash().referrer;
-            GTM.pushDataLayer({ event: 'page_load', ...(referrer && { referrer }) });
+            const utm_source = Url.paramsHash().utm_source;
+            GTM.pushDataLayer({ event: 'page_load', ...(utm_source && { utm_source }) });
         });
         return result;
     };

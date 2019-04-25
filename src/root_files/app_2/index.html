@@ -47,7 +47,7 @@
                 var loginid      = localStorage.getItem('active_loginid');
                 var client_info  = JSON.parse(localStorage.getItem('client.accounts') || '{}')[loginid];
                 var is_logged_in = client_info && client_info['token'];
-                var search       = (window.location.search ? window.location.search : '') + (document.referrer ? ('?referrer=' + document.referrer) : '');
+                var search       = (window.location.search ? window.location.search : '') + (document.referrer ? ('?utm_source=' + document.referrer) : '');
                 window.location.href = (/\/app\//.test(window.location.pathname) ? '' : 'app/') + (lang || 'en').toLowerCase() + '/trade' + search;
             }
 

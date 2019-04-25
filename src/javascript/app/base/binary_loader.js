@@ -74,8 +74,8 @@ const BinaryLoader = (() => {
         ContentVisibility.init();
 
         BinarySocket.wait('authorize', 'website_status', 'landing_company').then(() => {
-            const referrer = Url.paramsHash().referrer;
-            GTM.pushDataLayer({ event: 'page_load', ...(referrer && { referrer }) }); // we need website_status.clients_country
+            const utm_source = Url.paramsHash().utm_source;
+            GTM.pushDataLayer({ event: 'page_load', ...(utm_source && { utm_source }) }); // we need website_status.clients_country
 
             // first time load.
             const last_image = $('#content img').last();
