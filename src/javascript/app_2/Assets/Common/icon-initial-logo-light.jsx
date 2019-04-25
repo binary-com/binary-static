@@ -2,7 +2,7 @@ import PropTypes  from 'prop-types';
 import React      from 'react';
 
 const IconInitialLogoLight = ({ className, classNamePath, classNameRect }) => (
-    <svg className='initial-loader__image' xmlnsXlink='http://www.w3.org/1999/xlink' width='90' height='90' viewBox='0 0 90 90'>
+    <svg className={className} xmlnsXlink='http://www.w3.org/1999/xlink' width='90' height='90' viewBox='0 0 90 90'>
         <defs>
             <circle id='a' cx='45' cy='45' r='43' />
         </defs>
