@@ -10,6 +10,7 @@ const ChartSettings        = require('../../common/chart_settings');
 const addComma             = require('../../../_common/base/currency_base').addComma;
 const CommonFunctions      = require('../../../_common/common_functions');
 const localize             = require('../../../_common/localize').localize;
+const getPropertyValue     = require('../../../_common/utility').getPropertyValue;
 
 const TickDisplay = (() => {
     let number_of_ticks,
@@ -31,7 +32,6 @@ const TickDisplay = (() => {
         counter,
         spots_list,
         tick_init,
-        subscribe,
         reset_spot_plotted,
         response_id,
         contract,
@@ -302,6 +302,10 @@ const TickDisplay = (() => {
         applicable_ticks      = [];
     };
 
+    const getDecimalPlaces = (number) => (
+        number.toString().split('.')[1].length || 2
+    );
+
     const dispatch = (data) => {
         const tick_chart = CommonFunctions.getElementById(id_render);
 
@@ -309,7 +313,7 @@ const TickDisplay = (() => {
             return;
         }
 
-        if (subscribe && data.tick && document.getElementById('sell_content_wrapper')) {
+        if (getPropertyValue(data, ['tick', 'id']) && document.getElementById('sell_content_wrapper')) {
             response_id = data.tick.id;
             ViewPopupUI.storeSubscriptionID(response_id);
         }
@@ -322,11 +326,11 @@ const TickDisplay = (() => {
             if (data.tick) {
                 Tick.details(data);
                 if (!chart_display_decimals) {
-                    chart_display_decimals = data.tick.quote.split('.')[1].length || 2;
+                    chart_display_decimals = getDecimalPlaces(data.tick.quote);
                 }
             } else if (data.history) {
                 if (!chart_display_decimals) {
-                    chart_display_decimals = data.history.prices[0].split('.')[1].length || 2;
+                    chart_display_decimals = getDecimalPlaces(data.history.prices[0]);
                 }
             }
             if (!tick_init && contract) {
@@ -512,7 +516,6 @@ const TickDisplay = (() => {
     };
 
     const updateChart = (data, proposal_open_contract) => {
-        subscribe = 'false';
         if (proposal_open_contract) {
             updateContract(proposal_open_contract);
         }
@@ -524,20 +527,13 @@ const TickDisplay = (() => {
                 id_render = data.id_render;
             }
 
-            const request     = {
-                ticks_history: contract.underlying,
+            const request = {
+                end          : contract.exit_tick_time || 'latest',
                 start        : contract.date_start,
-                end          : 'latest',
+                ticks_history: contract.underlying,
+                ...(!contract.exit_tick_time && { subscribe: 1 }),
             };
-            if (contract.current_spot_time < contract.date_expiry) {
-                request.subscribe = 1;
-                subscribe         = 'true';
-            } else if (!/^(runhigh|runlow)$/i.test(contract.contract_category)) {
-                request.subscribe = 1;
-                request.end       = contract.exit_tick_time || 'latest';
-            } else {
-                request.end = contract.date_expiry;
-            }
+
             if (data.request_ticks) { // we shouldn't send this multiple times on every update
                 tick_init = '';
                 BinarySocket.send(request, { callback: dispatch });
