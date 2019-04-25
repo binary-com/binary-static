@@ -108,7 +108,7 @@ const SubscriptionManager = (() => {
 
     // dispatches the response to subscribers of the specific subscription id (internal use only)
     const dispatch = (response, sub_id) => {
-        const stream_id = getPropertyValue(response, [response.msg_type, 'id']);
+        const stream_id = getPropertyValue(response, [response.msg_type, 'id']) || getPropertyValue(response.subscription, ['id']);
 
         if (!subscriptions[sub_id]) {
             if (!forget_requested[stream_id]) {

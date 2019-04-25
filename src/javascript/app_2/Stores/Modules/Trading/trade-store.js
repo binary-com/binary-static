@@ -426,7 +426,7 @@ export default class TradeStore extends BaseStore {
         };
 
         if (!this.smart_chart.is_contract_mode) {
-            const color = this.root_store.ui.is_dark_mode_on ? BARRIER_COLORS.GRAY : BARRIER_COLORS.GREEN;
+            const color = this.root_store.ui.is_dark_mode_on ? BARRIER_COLORS.DARK_GRAY : BARRIER_COLORS.GRAY;
             const barrier_config = { color };
             setChartBarrier(this.smart_chart, response, this.onChartBarrierChange, barrier_config);
         }

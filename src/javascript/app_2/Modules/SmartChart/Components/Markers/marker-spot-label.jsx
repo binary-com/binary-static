@@ -54,7 +54,8 @@ class MarkerSpotLabel extends React.Component {
                     </div>
                 }
                 { marker_spot }
-            </div>);
+            </div>
+        );
     }
 }
 

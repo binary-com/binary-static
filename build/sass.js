@@ -1,6 +1,9 @@
+const sass = require('node-sass');
+
 module.exports = function (grunt) {
     const options = {
         style: 'expanded',
+        implementation: sass,
     };
 
     const generateConfig = (src, dest) => ({

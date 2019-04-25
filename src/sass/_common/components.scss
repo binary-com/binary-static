@@ -30,6 +30,8 @@
 
 .highcharts-container {
     .highcharts-subtitle {
+        white-space: normal !important;
+
         > div {
             &:not(.delay) {
                 display: inline-block;

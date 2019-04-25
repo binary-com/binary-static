@@ -43,6 +43,7 @@ const getPlugins = (app, grunt) => ([
                         // This message occurs for every build and is a bit too noisy.
                         return;
                     }
+                    // eslint-disable-next-line no-console
                     console.log(message);
                 },
             }))),
@@ -64,6 +65,7 @@ const getPlugins = (app, grunt) => ([
         : [
             function() {
                 this.plugin('watch-run', (watching, callback) => {
+                    // eslint-disable-next-line no-console
                     console.log('\n');
                     grunt.log.ok('Build started at:', new Date().toString().grey);
 

@@ -26,6 +26,11 @@ export const createMarkerEndTime = (contract_info) => {
     return createMarkerConfig(
         MARKER_TYPES_CONFIG.LINE_END.type,
         +end_time,
+        null,
+        {
+            status       : `${contract_info.profit > 0 ? 'won' : 'lost' }`,
+            marker_config: MARKER_TYPES_CONFIG,
+        },
     );
 };
 
@@ -45,6 +50,10 @@ export const createMarkerStartTime = (contract_info) => {
     return createMarkerConfig(
         MARKER_TYPES_CONFIG.LINE_START.type,
         +contract_info.date_start,
+        null,
+        {
+            marker_config: MARKER_TYPES_CONFIG,
+        }
     );
 };
 
