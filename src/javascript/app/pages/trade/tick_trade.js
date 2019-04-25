@@ -536,11 +536,14 @@ const TickDisplay = (() => {
             if (contract.current_spot_time < contract.date_expiry) {
                 request.subscribe = 1;
                 subscribe         = 'true';
-            } else if (!/^(runhigh|runlow)$/i.test(contract.contract_category)) {
-                request.subscribe = 1;
-                request.end       = contract.exit_tick_time || 'latest';
-            } else {
+            } else if (/^(runhigh|runlow)$/i.test(contract.shortcode)) {
                 request.end = contract.date_expiry;
+            } else if (contract.exit_tick_time) {
+                request.end = contract.exit_tick_time;
+            } else {
+                request.end       = 'latest';
+                request.subscribe = 1;
+                subscribe         = 'true';
             }
             if (data.request_ticks) { // we shouldn't send this multiple times on every update
                 tick_init = '';
