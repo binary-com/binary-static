@@ -114,6 +114,7 @@
         font-size: 14px;
         margin-top: 8px;
         opacity: 0;
+        will-change: opacity, transform;
         animation: fade-in 0.75s, fade-out 0.25s ease-out 0.5s;
         @include themify($themes) {
             color: themed('text_color');
@@ -126,13 +127,15 @@
     }
     /* clean-css ignore:start */
     &__fill {
+        animation: fill-up 3s;
+        will-change: height;
         @include themify($themes) {
             fill: themed('initial_loader_background');
         }
-        animation: fill-up 3s;
     }
     /* clean-css ignore:end */
     &__image {
+        will-change: height, width, opacity;
         animation: shrink 0.5s ease-out 2.75s;
     }
 }
