@@ -1,8 +1,8 @@
 import PropTypes             from 'prop-types';
 import React                 from 'react';
+import { getTimePercentage } from 'App/Components/Elements/PositionsDrawer/helpers';
+import ProgressSlider        from 'App/Components/Elements/PositionsDrawer/ProgressSlider/positions-progress-slider.jsx';
 import { connect }           from 'Stores/connect';
-import { getTimePercentage } from '../../Components/Elements/PositionsDrawer/helpers';
-import ProgressSlider        from '../../Components/Elements/PositionsDrawer/ProgressSlider/positions-progress-slider.jsx';
 
 class ProgressSliderStream extends React.Component {
     render () {
@@ -14,6 +14,10 @@ class ProgressSliderStream extends React.Component {
         } = this.props;
 
         const position = getPositionById(id);
+        if (!position) {
+            return <div />;
+        }
+
         const contract_info = position.contract_info;
         const percentage = getTimePercentage(server_time, contract_info.purchase_time, contract_info.date_expiry);
 
@@ -30,9 +34,12 @@ class ProgressSliderStream extends React.Component {
 
 ProgressSliderStream.propTypes = {
     getPositionById: PropTypes.func,
-    id             : PropTypes.number,
-    is_loading     : PropTypes.bool,
-    server_time    : PropTypes.object,
+    id             : PropTypes.oneOfType(
+        PropTypes.number,
+        PropTypes.string
+    ),
+    is_loading : PropTypes.bool,
+    server_time: PropTypes.object,
 };
 
 export default connect(({ modules, common }) => ({
