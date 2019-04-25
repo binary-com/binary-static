@@ -50,14 +50,6 @@
                 var is_logged_in = client_info && client_info['token'];
                 window.location.href = (lang || 'en').toLowerCase() + '/' + (is_logged_in ? 'trading' : 'home') + '.html' + window.location.search;
             }
-            function isDelayedRedirect() {
-                if (isGtmApplicable() && !redirectTimeOut) {
-                    redirectTimeOut = setTimeout(redirect, 5000);
-                } else {
-                    clearTimeout(redirectTimeOut);
-                    redirect();
-                }
-            }
             function isGtmApplicable() {
                 return /(www|staging)\.binary\.(com|me)/i.test(window.location.hostname);
             }
@@ -66,11 +58,12 @@
                     dataLayer.push({
                         'event': 'page_load',
                         'eventCallback': function() {
-                            isDelayedRedirect();
-                        }
+                            redirect();
+                        },
+                        'referrer': document.referrer
                     });
                 } else {
-                    isDelayedRedirect();
+                    redirect();
                 }
             }
 
