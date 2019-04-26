@@ -1,4 +1,3 @@
-const debounce          = require('lodash.debounce');
 const setExternalTimer  = require('../../../base/clock').setExternalTimer;
 const BinarySocket      = require('../../../base/socket');
 const getHighestZIndex  = require('../../../../_common/utility').getHighestZIndex;
@@ -37,8 +36,6 @@ const ViewPopupUI = (() => {
             $(window).on('popstate', onClose);
             $container = $con;
         }
-        // Reposition on scroll event
-        window.addEventListener('scroll', debounce(repositionConfirmation, 100));
         return $container;
     };
 
@@ -55,7 +52,6 @@ const ViewPopupUI = (() => {
             }
         }
         $(window).off('resize', () => { repositionConfirmation(); });
-        document.removeEventListener('scroll', debounce, true);
     };
 
     const forgetStreams = () => {
@@ -107,7 +103,7 @@ const ViewPopupUI = (() => {
             $('.inpage_popup_content', con).html(data);
         }
         const body = $(document.body);
-        con.css('position', 'absolute').css('z-index', getHighestZIndex() + 100);
+        con.css('position', 'fixed').css('z-index', getHighestZIndex() + 100);
         body.append(con);
         con.show();
         // $('html').addClass('no-scroll');
