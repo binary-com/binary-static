@@ -40,16 +40,14 @@
     }
 }
 
-/* clean-css ignore:start */
 @keyframes fill-up {
     0% {
-        height: 90px;
-    }
-    100% {
         height: 0px;
     }
+    100% {
+        height: 90px;
+    }
 }
-/* clean-css ignore:end */
 
 @keyframes fade-in {
     0% {
@@ -121,19 +119,15 @@
         }
     }
     &__mask {
-        @include themify($themes) {
-            fill: themed('icon_color');
-        }
+        fill: transparent;
     }
-    /* clean-css ignore:start */
     &__fill {
         animation: fill-up 3s;
         will-change: height;
         @include themify($themes) {
-            fill: themed('initial_loader_background');
+            fill: themed('icon_color');
         }
     }
-    /* clean-css ignore:end */
     &__image {
         will-change: height, width, opacity;
         animation: shrink 0.5s ease-out 2.75s;

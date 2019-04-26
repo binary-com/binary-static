@@ -12,7 +12,9 @@ const IconInitialLogoDark = ({ className, classNamePath, classNameRect }) => (
                     <use xlinkHref='#a' />
                 </mask>
                 <path className={classNamePath} fillRule='nonzero' d='M0 0h90v90H0z' mask='url(#b)' />
-                <rect className={classNameRect} height='90' width='90' mask='url(#b)' />
+                <rect className={classNameRect} height='90' width='90' mask='url(#b)'>
+                    <animate attributeName='y' from='90' to='0' dur='2.6s' />
+                </rect>
             </g>
             <path
                 fill='#2A3052'
