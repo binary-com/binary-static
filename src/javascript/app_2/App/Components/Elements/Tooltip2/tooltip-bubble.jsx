@@ -1,4 +1,5 @@
 import classNames           from 'classnames';
+import PropTypes            from 'prop-types';
 import React                from 'react';
 import ReactDOM             from 'react-dom';
 import posed, { PoseGroup } from 'react-pose';
@@ -100,5 +101,12 @@ class TooltipBubble extends React.PureComponent {
         );
     }
 }
+
+TooltipBubble.propTypes = {
+    alignment                : PropTypes.string,
+    children                 : PropTypes.node,
+    message                  : PropTypes.string,
+    tooltip_trigger_rectangle: PropTypes.object,
+};
 
 export default TooltipBubble;

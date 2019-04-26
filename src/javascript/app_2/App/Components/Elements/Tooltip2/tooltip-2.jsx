@@ -1,3 +1,4 @@
+import PropTypes     from 'prop-types';
 import React         from 'react';
 import TooltipBubble from './tooltip-bubble.jsx';
 
@@ -47,5 +48,11 @@ class Tooltip2 extends React.PureComponent {
         );
     }
 }
+
+Tooltip2.propTypes = {
+    alignment: PropTypes.string,
+    children : PropTypes.node,
+    message  : PropTypes.string,
+};
 
 export default Tooltip2;
