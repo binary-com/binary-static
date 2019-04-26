@@ -22,7 +22,7 @@
         }
     }
     &[data-tooltip] {
-        cursor: help;
+        cursor: initial;
         display: block;
         @include themifiedTooltipColor('tooltip_background_color');
 
