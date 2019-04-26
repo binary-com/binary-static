@@ -26,7 +26,8 @@ const PaymentAgentWithdraw = (() => {
         txt_desc  : '#txtDescription',
     };
 
-    let $ddl_agents,
+    let $agent_error,
+        $ddl_agents,
         $txt_agents,
         $views,
         agent_name,
@@ -73,7 +74,8 @@ const PaymentAgentWithdraw = (() => {
             const min     = getPaWithdrawalLimit(currency, 'min');
             const max     = getPaWithdrawalLimit(currency, 'max');
 
-            $txt_agents = $(field_ids.txt_agents);
+            $agent_error = $('.row-agent').find('.error-msg');
+            $txt_agents  = $(field_ids.txt_agents);
 
             $form.find('.wrapper-row-agent').find('label').append($('<span />', { text: '*', class: 'required_field_asterisk' }));
             $form.find('label[for="txtAmount"]').text(`${localize('Amount in')} ${currency}`);
@@ -87,8 +89,6 @@ const PaymentAgentWithdraw = (() => {
                 { request_field: 'paymentagent_withdraw', value: 1 },
                 { request_field: 'dry_run',               value: 1 },
             ], true);
-
-            const $agent_error = $('.row-agent').find('.error-msg');
 
             $ddl_agents.on('change', () => {
                 $agent_error.setVisibility(0);
@@ -116,7 +116,7 @@ const PaymentAgentWithdraw = (() => {
             FormManager.handleSubmit({
                 form_selector       : form_id,
                 fnc_response_handler: withdrawResponse,
-                fnc_additional_check: setAgentName,
+                fnc_additional_check: checkAgent,
                 enable_button       : true,
             });
         }
@@ -234,9 +234,18 @@ const PaymentAgentWithdraw = (() => {
         });
     };
 
+    const checkAgent = () => {
+        if (!$ddl_agents.val() && !$txt_agents.val()) {
+            $agent_error.setVisibility(1);
+            return false;
+        }
+        // else
+        setAgentName();
+        return true;
+    };
+
     const setAgentName = () => {
         agent_name = $ddl_agents.val() ? $ddl_agents.find('option:selected').text() : $txt_agents.val();
-        return true;
     };
 
     const onUnload = () => {
