@@ -1,3 +1,4 @@
+const refreshDropdown      = require('@binary-com/binary-style').selectDropdown;
 const BinaryPjax           = require('../../base/binary_pjax');
 const Client               = require('../../base/client');
 const BinarySocket         = require('../../base/socket');
@@ -20,11 +21,15 @@ const PaymentAgentWithdraw = (() => {
     };
     const field_ids = {
         ddl_agents: '#ddlAgents',
+        txt_agents: '#txtAgents',
         txt_amount: '#txtAmount',
         txt_desc  : '#txtDescription',
     };
 
-    let $views,
+    let $agent_error,
+        $ddl_agents,
+        $txt_agents,
+        $views,
         agent_name,
         currency,
         token;
@@ -33,17 +38,17 @@ const PaymentAgentWithdraw = (() => {
     // ----- Agents List -----
     // -----------------------
     const populateAgentsList = (response) => {
-        const $ddl_agents = $(field_ids.ddl_agents);
+        $ddl_agents = $(field_ids.ddl_agents);
         $ddl_agents.empty();
         const pa_list = (response.paymentagent_list || {}).list;
         if (pa_list.length > 0) {
-            checkToken($ddl_agents, pa_list);
+            checkToken(pa_list);
         } else {
             showPageError(localize('Payment Agent services are not available in your country or in your preferred currency.'));
         }
     };
 
-    const checkToken = ($ddl_agents, pa_list) => {
+    const checkToken = (pa_list) => {
         token = token || Url.getHashValue('token');
         if (!token) {
             BinarySocket.send({ verify_email: Client.get('email'), type: 'paymentagent_withdraw' });
@@ -58,36 +63,68 @@ const PaymentAgentWithdraw = (() => {
         } else if (!validEmailToken(token)) {
             showPageError('token_error');
         } else {
-            insertListOption($ddl_agents, localize('Please select a payment agent'), '');
+            insertListOption($ddl_agents, localize('Select payment agent'), '');
             for (let i = 0; i < pa_list.length; i++) {
                 insertListOption($ddl_agents, pa_list[i].name, pa_list[i].paymentagent_loginid);
             }
             setActiveView(view_ids.form);
 
             const form_id = `#${$(view_ids.form).find('form').attr('id')}`;
+            const $form   = $(form_id);
             const min     = getPaWithdrawalLimit(currency, 'min');
             const max     = getPaWithdrawalLimit(currency, 'max');
 
-            $(form_id).find('label[for="txtAmount"]').text(`${localize('Amount')} ${currency}`);
+            $agent_error = $('.row-agent').find('.error-msg');
+            $txt_agents  = $(field_ids.txt_agents);
+
+            $form.find('.wrapper-row-agent').find('label').append($('<span />', { text: '*', class: 'required_field_asterisk' }));
+            $form.find('label[for="txtAmount"]').text(`${localize('Amount in')} ${currency}`);
             trimDescriptionContent();
             FormManager.init(form_id, [
-                { selector: field_ids.ddl_agents,        validations: ['req'], request_field: 'paymentagent_loginid' },
                 { selector: field_ids.txt_amount,        validations: ['req', ['number', { type: 'float', decimals: getDecimalPlaces(currency), min, max }], ['custom', { func: () => +Client.get('balance') >= +$(field_ids.txt_amount).val(), message: localize('Insufficient balance.') }]], request_field: 'amount' },
                 { selector: field_ids.txt_desc,          validations: ['general'], request_field: 'description' },
 
                 { request_field: 'currency',              value: currency },
+                { request_field: 'paymentagent_loginid',  value: getPALoginID },
                 { request_field: 'paymentagent_withdraw', value: 1 },
                 { request_field: 'dry_run',               value: 1 },
             ], true);
 
+            $ddl_agents.on('change', () => {
+                $agent_error.setVisibility(0);
+                if ($txt_agents.val()) {
+                    $txt_agents.val('');
+                }
+                if (!$ddl_agents.val()) {
+                    // error handling
+                    $agent_error.setVisibility(1);
+                }
+            });
+
+            $txt_agents.on('keyup', () => {
+                $agent_error.setVisibility(0);
+                if ($ddl_agents.val()) {
+                    $ddl_agents.val('');
+                    refreshDropdown(field_ids.ddl_agents);
+                }
+                if (!$txt_agents.val()) {
+                    // error handling
+                    $agent_error.setVisibility(1);
+                }
+            });
+
             FormManager.handleSubmit({
                 form_selector       : form_id,
                 fnc_response_handler: withdrawResponse,
-                fnc_additional_check: setAgentName,
+                fnc_additional_check: checkAgent,
                 enable_button       : true,
             });
         }
     };
+
+    const getPALoginID = () => (
+        $ddl_agents.val() || $txt_agents.val()
+    );
 
     // Remove multiline and excess whitespaces from description text.
     const trimDescriptionContent = () => {
@@ -197,9 +234,18 @@ const PaymentAgentWithdraw = (() => {
         });
     };
 
-    const setAgentName = () => {
-        agent_name = $(field_ids.ddl_agents).find('option:selected').text();
+    const checkAgent = () => {
+        if (!$ddl_agents.val() && !$txt_agents.val()) {
+            $agent_error.setVisibility(1);
+            return false;
+        }
+        // else
+        setAgentName();
         return true;
+    };
+
+    const setAgentName = () => {
+        agent_name = $ddl_agents.val() ? $ddl_agents.find('option:selected').text() : $txt_agents.val();
     };
 
     const onUnload = () => {
