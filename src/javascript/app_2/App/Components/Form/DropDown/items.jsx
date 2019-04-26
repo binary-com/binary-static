@@ -11,7 +11,7 @@ const Items = ({
     name,
     value,
 }) =>  items.map((item, idx) => {
-    const symbol_type_class = item.text ? `symbols--${(item.text).toLowerCase()}` : '';
+    const symbol_type_class_name = item.text ? `symbols--${(item.text).toLowerCase()}` : '';
     return (
         <div
             className={classNames(
@@ -32,7 +32,7 @@ const Items = ({
                         className={classNames(
                             'symbols',
                             'list__item-symbol',
-                            symbol_type_class
+                            symbol_type_class_name
                         )}
                     />
                 </Popover>
@@ -43,7 +43,7 @@ const Items = ({
                     className={classNames(
                         'symbols',
                         'list__item-text',
-                        symbol_type_class,
+                        symbol_type_class_name,
                     )}
                 />
             }
