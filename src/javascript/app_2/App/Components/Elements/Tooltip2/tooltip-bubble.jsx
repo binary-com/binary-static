@@ -1,11 +1,11 @@
-import React               from 'react';
-import ReactDOM            from 'react-dom';
-import classNames          from 'classnames';
+import classNames           from 'classnames';
+import React                from 'react';
+import ReactDOM             from 'react-dom';
 import posed, { PoseGroup } from 'react-pose';
-import { Icon }            from 'Assets/Common/icon.jsx';
-import { IconInfoBlue }    from 'Assets/Common/icon-info-blue.jsx';
-import { IconQuestion }    from 'Assets/Common/icon-question.jsx';
-import { IconRedDot }      from 'Assets/Common/icon-red-dot.jsx';
+import { Icon }             from 'Assets/Common/icon.jsx';
+import { IconInfoBlue }     from 'Assets/Common/icon-info-blue.jsx';
+import { IconQuestion }     from 'Assets/Common/icon-question.jsx';
+import { IconRedDot }       from 'Assets/Common/icon-red-dot.jsx';
 
 const FadeIn = posed.div({
     enter: {
