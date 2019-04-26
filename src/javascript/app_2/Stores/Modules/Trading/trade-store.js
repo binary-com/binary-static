@@ -105,9 +105,6 @@ export default class TradeStore extends BaseStore {
     // Query string
     query = '';
 
-    // Chart
-    chart_id = 1;
-
     debouncedProposal = debounce(this.requestProposal, 500);
     proposal_requests = {};
     @action.bound
@@ -456,13 +453,6 @@ export default class TradeStore extends BaseStore {
         this.processNewValuesAsync({ contract_type: parseInt(this.is_equal) ? 'rise_fall_equal' : 'rise_fall' }, true);
     }
 
-    // When you directly need to update the chart symbol
-    // E.g. When opening a contract from positions that has a different symbol from the current symbol.
-    @action.bound
-    updateSymbol(symbol) {
-        if (symbol) this.symbol = symbol;
-    }
-
     @action.bound
     updateLoadingStatus(status) {
         this.loading_status = status;
@@ -482,6 +472,17 @@ export default class TradeStore extends BaseStore {
         [...query_params].forEach(param => config[param[0]] = param[1]);
 
         return config;
+    }
+
+    @action.bound
+    updateSymbol(underlying) {
+        if (!underlying) return;
+        this.onChange({
+            target: {
+                name : 'symbol',
+                value: underlying,
+            },
+        });
     }
 
     @action.bound
