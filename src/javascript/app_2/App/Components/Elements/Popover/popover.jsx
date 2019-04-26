@@ -6,7 +6,7 @@ class Popover extends React.PureComponent {
     constructor(props) {
         super(props);
         this.state = { is_open: false };
-        this.tooltip_trigger_reference = React.createRef();
+        this.popover_trigger_reference = React.createRef();
     }
 
     onMouseEnter = () => this.setState({ is_open: true });
@@ -27,7 +27,7 @@ class Popover extends React.PureComponent {
                 onMouseLeave={this.onMouseLeave}
             >
                 <div
-                    ref={this.tooltip_trigger_reference}
+                    ref={this.popover_trigger_reference}
                     className='popover__trigger'
                 >
                     { children }
@@ -37,7 +37,7 @@ class Popover extends React.PureComponent {
                         className='popover__bubble'
                         alignment={alignment}
                         message={message}
-                        tooltip_trigger_rectangle={this.tooltip_trigger_reference.current.getBoundingClientRect()}
+                        popover_trigger_rectangle={this.popover_trigger_reference.current.getBoundingClientRect()}
                     />
                 }
             </div>

@@ -29,31 +29,31 @@ class PopoverBubble extends React.PureComponent {
 
     getVerticalCenter = rectangle => rectangle.top + (rectangle.height / 2);
 
-    getBubblePositionStyle = (alignment, tooltip_trigger_rectangle) => {
+    getBubblePositionStyle = (alignment, popover_trigger_rectangle) => {
         switch (alignment) {
             case 'top': return {
-                left     : this.getHorizontalCenter(tooltip_trigger_rectangle),
+                left     : this.getHorizontalCenter(popover_trigger_rectangle),
                 transform: 'translateX(-50%)',
-                bottom   : `calc(100% - ${tooltip_trigger_rectangle.top}px)`,
+                bottom   : `calc(100% - ${popover_trigger_rectangle.top}px)`,
             };
             case 'right': return {
-                left     : tooltip_trigger_rectangle.x + tooltip_trigger_rectangle.width,
-                top      : this.getVerticalCenter(tooltip_trigger_rectangle),
+                left     : popover_trigger_rectangle.x + popover_trigger_rectangle.width,
+                top      : this.getVerticalCenter(popover_trigger_rectangle),
                 transform: 'translateY(-50%)',
             };
             case 'bottom': return {
-                left     : this.getHorizontalCenter(tooltip_trigger_rectangle),
+                left     : this.getHorizontalCenter(popover_trigger_rectangle),
                 transform: 'translateX(-50%)',
-                top      : tooltip_trigger_rectangle.y + tooltip_trigger_rectangle.height,
+                top      : popover_trigger_rectangle.y + popover_trigger_rectangle.height,
             };
             case 'left': return {
-                right    : `calc(100% - ${tooltip_trigger_rectangle.left}px)`,
-                top      : this.getVerticalCenter(tooltip_trigger_rectangle),
+                right    : `calc(100% - ${popover_trigger_rectangle.left}px)`,
+                top      : this.getVerticalCenter(popover_trigger_rectangle),
                 transform: 'translateY(-50%)',
             };
             default: return {
-                left: tooltip_trigger_rectangle.x,
-                top : tooltip_trigger_rectangle.y,
+                left: popover_trigger_rectangle.x,
+                top : popover_trigger_rectangle.y,
             };
         }
     }
@@ -63,7 +63,7 @@ class PopoverBubble extends React.PureComponent {
             alignment,
             icon,
             message,
-            tooltip_trigger_rectangle,
+            popover_trigger_rectangle,
         } = this.props;
         
         return ReactDOM.createPortal(
@@ -72,7 +72,7 @@ class PopoverBubble extends React.PureComponent {
                     <span
                         style={this.getBubblePositionStyle(
                             alignment,
-                            tooltip_trigger_rectangle,
+                            popover_trigger_rectangle,
                         )}
                         className={classNames(
                             'popover__bubble',
