@@ -9,13 +9,9 @@ class Tooltip2 extends React.PureComponent {
         this.tooltip_trigger_reference = React.createRef();
     }
 
-    onMouseEnter = () => {
-        this.setState({ is_open: true });
-    }
+    onMouseEnter = () => this.setState({ is_open: true });
 
-    onMouseLeave = () => {
-        this.setState({ is_open: false });
-    }
+    onMouseLeave = () => this.setState({ is_open: false });
 
     render() {
         const {

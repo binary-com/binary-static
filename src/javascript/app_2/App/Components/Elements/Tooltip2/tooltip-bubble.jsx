@@ -10,15 +10,13 @@ import { IconRedDot }       from 'Assets/Common/icon-red-dot.jsx';
 
 const FadeIn = posed.div({
     enter: {
-        opacity: 1,
-
+        opacity   : 1,
         transition: {
             duration: 300,
         },
     },
     exit: {
-        opacity: 0,
-
+        opacity   : 0,
         transition: {
             duration: 300,
         },
@@ -27,9 +25,9 @@ const FadeIn = posed.div({
 
 class TooltipBubble extends React.PureComponent {
 
-    getHorizontalCenter = rectangle => rectangle.left + (rectangle.width / 2)
+    getHorizontalCenter = rectangle => rectangle.left + (rectangle.width / 2);
 
-    getVerticalCenter = rectangle => rectangle.top + (rectangle.height / 2)
+    getVerticalCenter = rectangle => rectangle.top + (rectangle.height / 2);
 
     getBubblePositionStyle = (alignment, tooltip_trigger_rectangle) => {
         switch (alignment) {
