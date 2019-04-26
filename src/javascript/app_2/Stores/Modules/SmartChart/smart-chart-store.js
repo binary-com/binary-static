@@ -13,8 +13,6 @@ import {
     isBarrierSupported }      from './Helpers/barriers';
 import BaseStore              from '../../base-store';
 
-const store_name = 'smart_chart_store';
-
 export default class SmartChartStore extends BaseStore {
     @observable chart_type;
     @observable granularity;
@@ -29,20 +27,15 @@ export default class SmartChartStore extends BaseStore {
         end_epoch  : null,
     });
 
+    @observable chart_id = 'trade';
     @observable scroll_to_left_epoch        = null;
     @observable scroll_to_left_epoch_offset = 0;
-    @observable zoom;
 
     @observable should_import_layout = false;
     @observable should_export_layout = false;
     @observable should_clear_chart   = false;
     @observable trade_chart_layout   = null;
     trade_chart_symbol               = null;
-
-    constructor({ root_store }) {
-        const local_storage_properties = ['trade_chart_layout'];
-        super({ root_store, local_storage_properties, store_name });
-    }
 
     @action.bound
     updateChartType(type) {
@@ -65,22 +58,16 @@ export default class SmartChartStore extends BaseStore {
     }
 
     @action.bound
-    updateChartZoom(percentage) {
-        this.zoom = percentage;
-    }
-
-    @action.bound
     cleanupContractChartView() {
         this.removeBarriers();
         this.removeMarkers();
         this.removeRange();
-        this.resetScrollZoom();
+        this.resetScrollToLeft();
         this.setContractMode(false);
     }
 
     @action.bound
-    resetScrollZoom() {
-        this.zoom = (this.zoom === 100) ? -100 : 0;
+    resetScrollToLeft() {
         this.scroll_to_left_epoch = null;
         this.scroll_to_left_epoch_offset = null;
     }
@@ -107,9 +94,8 @@ export default class SmartChartStore extends BaseStore {
 
     // --------- Tick Contracts ---------
     @action.bound
-    setTickChartView(scroll_to_left_epoch) {
+    setChartView(scroll_to_left_epoch) {
         this.updateEpochScrollToOffset(1);
-        this.updateChartZoom(100);
         this.updateEpochScrollToValue(scroll_to_left_epoch);
     }
 
@@ -169,6 +155,7 @@ export default class SmartChartStore extends BaseStore {
     saveAndClearTradeChartLayout() {
         this.should_export_layout = true;
         this.should_import_layout = false;
+        this.chart_id = 'contract';
         this.trade_chart_symbol   = this.root_store.modules.trade.symbol;
         this.updateGranularity(0);
         this.updateChartType('mountain');
@@ -179,6 +166,7 @@ export default class SmartChartStore extends BaseStore {
         this.should_export_layout = false;
         this.should_import_layout = true;
         this.should_clear_chart   = false;
+        this.chart_id = 'trade';
 
         this.trade_chart_layout.isDone = action(() => {
             this.trade_chart_layout   = null;

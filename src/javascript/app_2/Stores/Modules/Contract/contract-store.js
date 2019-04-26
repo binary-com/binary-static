@@ -62,9 +62,9 @@ export default class ContractStore extends BaseStore {
                 this.handleChartType(SmartChartStore, contract_info.date_start, end_time);
             }
 
-        } else if (!this.is_left_epoch_set && contract_info.tick_count) {
+        } else if (!this.is_left_epoch_set) {
             this.is_left_epoch_set = true;
-            SmartChartStore.setTickChartView(contract_info.purchase_time);
+            SmartChartStore.setChartView(contract_info.purchase_time);
         } else if (should_update_chart_type) {
             this.handleChartType(SmartChartStore, contract_info.date_start, null);
         }
@@ -76,7 +76,7 @@ export default class ContractStore extends BaseStore {
     }
 
     @action.bound
-    onMount(contract_id, has_left_epoch) {
+    onMount(contract_id) {
         if (contract_id === +this.contract_id) return;
         if (this.root_store.modules.smart_chart.is_contract_mode) this.onCloseContract();
         this.onSwitchAccount(this.accountSwitcherListener.bind(null));
@@ -84,7 +84,6 @@ export default class ContractStore extends BaseStore {
         this.error_message     = '';
         this.contract_id       = contract_id;
         this.smart_chart       = this.root_store.modules.smart_chart;
-        this.is_left_epoch_set = has_left_epoch;
 
         if (contract_id) {
             this.smart_chart.saveAndClearTradeChartLayout();

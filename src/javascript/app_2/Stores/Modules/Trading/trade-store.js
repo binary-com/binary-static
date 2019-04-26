@@ -102,9 +102,6 @@ export default class TradeStore extends BaseStore {
     // Query string
     query = '';
 
-    // Chart
-    chart_id = 1;
-
     debouncedProposal = debounce(this.requestProposal, 500);
     proposal_requests = {};
     @action.bound

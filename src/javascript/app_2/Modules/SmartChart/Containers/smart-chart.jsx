@@ -41,7 +41,8 @@ class Chart extends React.Component {
         return (
             <SmartChart
                 barriers={this.props.barriers_array}
-                bottomWidgets={this.props.should_show_last_digit_stats ? undefined : this.bottomWidgets}
+                bottomWidgets={(!this.props.is_digit_contract || this.props.should_show_last_digit_stats) ?
+                    null : this.bottomWidgets }
                 chartControlsWidgets={this.props.is_contract_mode ? null : this.chartControlsWidgets}
                 chartType={this.props.chart_type}
                 endEpoch={this.props.range.end_epoch}
@@ -62,7 +63,6 @@ class Chart extends React.Component {
                 clearChart={this.props.should_clear_chart}
                 importedLayout={this.props.should_import_layout ? this.props.trade_chart_layout : null}
                 onExportLayout={this.props.should_export_layout ? this.props.exportLayout : null}
-                zoom={this.props.chart_zoom}
             >
                 { this.props.markers_array.map((marker, idx) => (
                     <ChartMarker
@@ -79,14 +79,14 @@ class Chart extends React.Component {
 Chart.propTypes = {
     barriers_array              : PropTypes.array,
     BottomWidgets               : PropTypes.node,
-    chart_id                    : PropTypes.number,
+    chart_id                    : PropTypes.string,
     chart_type                  : PropTypes.string,
-    chart_zoom                  : PropTypes.number,
     end_epoch                   : PropTypes.number,
     exportLayout                : PropTypes.func,
     granularity                 : PropTypes.number,
     InfoBox                     : PropTypes.node,
     is_contract_mode            : PropTypes.bool,
+    is_digit_contract           : PropTypes.bool,
     is_mobile                   : PropTypes.bool,
     is_socket_opened            : PropTypes.bool,
     is_title_enabled            : PropTypes.bool,
