@@ -162,18 +162,32 @@ const Regulation = () => {
                         </div>
                     </div>
 
-                    <h3>{it.L('MiFID II RTS 28')}</h3>
-                    <div>
-                        <FillBox
-                            padding='5'
-                            center
-                            border='border-dark-gray'
-                            className='margin-top-17'
-                            image='images/pages/regulation/pdf-icon.svg'
-                            href={it.url_for('/download/BIEL-RTS28.pdf')}
-                            target='_blank'
-                            text={it.L('Annual Best Execution Disclosure 2017')}
-                        />
+                    <h3>{it.L('RTS 28')}</h3>
+                    <div className='gr-row'>
+                        <div className='gr-6 gr-12-m'>
+                            <FillBox
+                                align_left
+                                center
+                                border='border-dark-gray'
+                                className='margin-top-17 align-start'
+                                image='images/pages/regulation/pdf-icon.svg'
+                                href={it.url_for('/download/BIEL-RTS28-for-2017.pdf')}
+                                target='_blank'
+                                text={it.L('BIEL RTS28 for 2017')}
+                            />
+                        </div>
+                        <div className='gr-6 gr-12-m'>
+                            <FillBox
+                                align_left
+                                center
+                                border='border-dark-gray'
+                                className='margin-top-17 align-start'
+                                image='images/pages/regulation/pdf-icon.svg'
+                                href={it.url_for('/download/BIEL-RTS28-for-2018.pdf')}
+                                target='_blank'
+                                text={it.L('BIEL RTS28 for 2018')}
+                            />
+                        </div>
                     </div>
 
                     <h3>{it.L('RTS 27')}</h3>
