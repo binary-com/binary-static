@@ -1,8 +1,8 @@
 import PropTypes     from 'prop-types';
 import React         from 'react';
-import TooltipBubble from './tooltip-bubble.jsx';
+import PopoverBubble from './popover-bubble.jsx';
 
-class Tooltip2 extends React.PureComponent {
+class Popover extends React.PureComponent {
     constructor(props) {
         super(props);
         this.state = { is_open: false };
@@ -22,19 +22,19 @@ class Tooltip2 extends React.PureComponent {
 
         return (
             <div
-                className='tooltip-2'
+                className='popover'
                 onMouseEnter={this.onMouseEnter}
                 onMouseLeave={this.onMouseLeave}
             >
                 <div
                     ref={this.tooltip_trigger_reference}
-                    className='tooltip-2__trigger'
+                    className='popover__trigger'
                 >
                     { children }
                 </div>
                 { this.state.is_open &&
-                    <TooltipBubble
-                        className='tooltip-2__bubble'
+                    <PopoverBubble
+                        className='popover__bubble'
                         alignment={alignment}
                         message={message}
                         tooltip_trigger_rectangle={this.tooltip_trigger_reference.current.getBoundingClientRect()}
@@ -45,10 +45,10 @@ class Tooltip2 extends React.PureComponent {
     }
 }
 
-Tooltip2.propTypes = {
+Popover.propTypes = {
     alignment: PropTypes.string,
     children : PropTypes.node,
     message  : PropTypes.string,
 };
 
-export default Tooltip2;
+export default Popover;

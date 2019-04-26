@@ -23,7 +23,7 @@ const FadeIn = posed.div({
     },
 });
 
-class TooltipBubble extends React.PureComponent {
+class PopoverBubble extends React.PureComponent {
 
     getHorizontalCenter = rectangle => rectangle.left + (rectangle.width / 2);
 
@@ -75,17 +75,17 @@ class TooltipBubble extends React.PureComponent {
                             tooltip_trigger_rectangle,
                         )}
                         className={classNames(
-                            'tooltip-2__bubble',
-                            alignment ? `tooltip-2__bubble--${alignment}` : '',
+                            'popover__bubble',
+                            alignment ? `popover__bubble--${alignment}` : '',
                         )}
                     >
                         <span className={classNames(
-                            'tooltip-2__bubble__arrow',
-                            alignment ? `tooltip-2__bubble__arrow--${alignment}` : '',
+                            'popover__bubble__arrow',
+                            alignment ? `popover__bubble__arrow--${alignment}` : '',
                         )}
                         />
                         { icon &&
-                            <span className='tooltip-2__bubble__icon'>
+                            <span className='popover__bubble__icon'>
                                 {(icon === 'info')     && <Icon icon={IconInfoBlue} />}
                                 {(icon === 'question') && <Icon icon={IconQuestion} />}
                                 {(icon === 'dot')      && <Icon icon={IconRedDot} />}
@@ -100,11 +100,11 @@ class TooltipBubble extends React.PureComponent {
     }
 }
 
-TooltipBubble.propTypes = {
+PopoverBubble.propTypes = {
     alignment                : PropTypes.string,
     children                 : PropTypes.node,
     message                  : PropTypes.string,
     tooltip_trigger_rectangle: PropTypes.object,
 };
 
-export default TooltipBubble;
+export default PopoverBubble;

@@ -1,4 +1,4 @@
-.tooltip-2 {
+.popover {
     &__bubble {
         cursor: help;
         position: absolute;
@@ -67,7 +67,7 @@
             @include themify($themes) {
                 background-color: themed('tooltip_background_error');
 
-                .tooltip-2__bubble__arrow {
+                .popover__bubble__arrow {
                     &--left {
                         border-left-color: themed('tooltip_background_error');
                     }
@@ -87,7 +87,7 @@
             @include themify($themes) {
                 background-color: themed('tooltip_background_color');
 
-                .tooltip-2__bubble__arrow {
+                .popover__bubble__arrow {
                     &--left {
                         border-left-color: themed('tooltip_background_color');
                     }

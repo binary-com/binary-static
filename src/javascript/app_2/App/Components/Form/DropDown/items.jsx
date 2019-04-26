@@ -1,7 +1,7 @@
 import classNames          from 'classnames';
 import PropTypes           from 'prop-types';
 import React               from 'react';
-import { Tooltip2 }        from 'App/Components/Elements/Tooltip2';
+import { Popover }         from 'App/Components/Elements/Popover';
 import { getCurrencyName } from '_common/base/currency_base';
 
 const Items = ({
@@ -24,7 +24,7 @@ const Items = ({
             key={idx}
         >
             {!!has_symbol && item.has_tooltip &&
-                <Tooltip2
+                <Popover
                     alignment='left'
                     message={getCurrencyName(item.value)}
                 >
@@ -35,7 +35,7 @@ const Items = ({
                             symbol_type_class
                         )}
                     />
-                </Tooltip2>
+                </Popover>
             }
 
             {!!has_symbol && !item.has_tooltip &&
