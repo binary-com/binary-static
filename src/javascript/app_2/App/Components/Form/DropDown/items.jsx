@@ -10,8 +10,9 @@ const Items = ({
     items,
     name,
     value,
-}) => (
-    items.map((item, idx) => (
+}) =>  items.map((item, idx) => {
+    const symbol_type_class = item.text ? `symbols--${item.text}` : '';
+    return (
         <div
             className={classNames(
                 'list__item',
@@ -28,21 +29,31 @@ const Items = ({
                     message={getCurrencyName(item.value)}
                 >
                     <span
-                        className={`symbols list__item-symbol symbols--${(item.text || '').toLowerCase()}`}
+                        className={classNames(
+                            'symbols',
+                            'list__item-symbol',
+                            symbol_type_class
+                        )}
                     />
                 </Tooltip2>
             }
 
             {!!has_symbol && !item.has_tooltip &&
-                <span className={`list__item-text symbols symbols--${(item.text || '').toLowerCase()}`} />
+                <span
+                    className={classNames(
+                        'list__item-text',
+                        'symbols',
+                        symbol_type_class,
+                    )}
+                />
             }
 
             {!has_symbol &&
                 <span className='list__item-text'>{item.text}</span>
             }
         </div>
-    ))
-);
+    );
+});
 
 Items.propTypes = {
     handleSelect: PropTypes.func,

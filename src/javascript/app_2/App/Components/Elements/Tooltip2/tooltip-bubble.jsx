@@ -65,7 +65,7 @@ class TooltipBubble extends React.PureComponent {
             message,
             tooltip_trigger_rectangle,
         } = this.props;
-    
+        
         return ReactDOM.createPortal(
             <PoseGroup>
                 <FadeIn key='fade_in' initialPose='exit'>
@@ -76,12 +76,12 @@ class TooltipBubble extends React.PureComponent {
                         )}
                         className={classNames(
                             'tooltip-2__bubble',
-                            `tooltip-2__bubble--${alignment}`,
+                            alignment ? `tooltip-2__bubble--${alignment}` : '',
                         )}
                     >
                         <span className={classNames(
                             'tooltip-2__bubble__arrow',
-                            `tooltip-2__bubble__arrow--${alignment}`,
+                            alignment ? `tooltip-2__bubble__arrow--${alignment}` : '',
                         )}
                         />
                         { icon &&
