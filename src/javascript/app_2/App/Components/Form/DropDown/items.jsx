@@ -11,7 +11,7 @@ const Items = ({
     name,
     value,
 }) =>  items.map((item, idx) => {
-    const symbol_type_class = item.text ? `symbols--${item.text}` : '';
+    const symbol_type_class = item.text ? `symbols--${(item.text).toLowerCase()}` : '';
     return (
         <div
             className={classNames(
@@ -41,8 +41,8 @@ const Items = ({
             {!!has_symbol && !item.has_tooltip &&
                 <span
                     className={classNames(
-                        'list__item-text',
                         'symbols',
+                        'list__item-text',
                         symbol_type_class,
                     )}
                 />
