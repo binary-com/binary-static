@@ -1,16 +1,14 @@
 import PropTypes       from 'prop-types';
 import React           from 'react';
 import { localize }    from '_common/localize';
-import { Icon }        from 'Assets/Common';
-import { IconReports } from 'Assets/Header/NavBar';
 import { routes }      from 'Constants/index';
 import { ButtonLink }  from 'App/Components/Routes';
+import Localize        from 'App/Components/Elements/localize.jsx';
 
-const EmptyProfitTableMessage = ({ has_selected_date }) => (
+const EmptyTradeHistoryMessage = ({ has_selected_date }) => (
     <React.Fragment>
-        <div className='empty-profit-table'>
-            <Icon icon={IconReports} className='empty-profit-table__icon' />
-            <span className='empty-profit-table__text'>
+        <div className='empty-trade-history'>
+            <span className='empty-trade-history__text'>
                 {
                     !has_selected_date ?
                         localize('Your account has no trading activity.')
@@ -24,15 +22,15 @@ const EmptyProfitTableMessage = ({ has_selected_date }) => (
                     className='btn--secondary btn--secondary--orange'
                     to={routes.trade}
                 >
-                    <span>{localize('Trade now')}</span>
+                    <Localize str={'Trade now'} />
                 </ButtonLink>
             }
         </div>
     </React.Fragment>
 );
 
-EmptyProfitTableMessage.propTypes = {
+EmptyTradeHistoryMessage.propTypes = {
     has_selected_date: PropTypes.bool,
 };
 
-export default EmptyProfitTableMessage;
+export default EmptyTradeHistoryMessage;

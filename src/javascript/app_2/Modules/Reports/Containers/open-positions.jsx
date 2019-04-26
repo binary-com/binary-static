@@ -6,10 +6,10 @@ import { localize }                        from '_common/localize';
 import DataTable                           from 'App/Components/Elements/DataTable';
 // import { getContractPath }                 from 'App/Components/Routes/helpers';
 import { connect }                         from 'Stores/connect';
-import EmptyOpenPositionsMessage           from '../Components/empty-open-positions-message.jsx';
+import EmptyTradeHistoryMessage            from '../Components/empty-trade-history-message.jsx';
 import { ReportsMeta }                     from '../Components/reports-meta.jsx';
 import { getOpenPositionsColumnsTemplate } from '../Constants/data-table-constants';
-import Loading                             from '../../../../../templates/_common/components/loading.jsx';
+import PlaceholderComponent                from '../Components/placeholder-component.jsx';
 
 class OpenPositions extends React.Component {
     componentDidMount()    {
@@ -32,12 +32,14 @@ class OpenPositions extends React.Component {
             return <p>{error}</p>;
         }
 
-        if (is_loading || !active_positions) {
-            return <Loading />;
-        }
-
-        if (is_empty) {
-            return <EmptyOpenPositionsMessage />;
+        if (is_loading || is_empty) {
+            return (
+                <PlaceholderComponent
+                    is_loading={is_loading || !active_positions}
+                    is_empty={is_empty}
+                    empty_message_component={EmptyTradeHistoryMessage}
+                />
+            );
         }
 
         return (

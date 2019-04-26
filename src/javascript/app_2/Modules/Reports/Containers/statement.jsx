@@ -1,15 +1,15 @@
-import { PropTypes as MobxPropTypes }          from 'mobx-react';
-import PropTypes                               from 'prop-types';
-import React                                   from 'react';
-import { withRouter }                          from 'react-router-dom';
-import { localize }                            from '_common/localize';
-import DataTable                               from 'App/Components/Elements/DataTable';
-import { getContractPath }                     from 'App/Components/Routes/helpers';
-import { connect }                             from 'Stores/connect';
-import EmptyStatementMessage                   from '../Components/empty-statement-message.jsx';
-import { getStatementTableColumnsTemplate }    from '../Constants/data-table-constants';
-import PlaceholderComponent                    from '../Components/placeholder-component.jsx';
-import { ReportsMeta }                         from '../Components/reports-meta.jsx';
+import { PropTypes as MobxPropTypes }       from 'mobx-react';
+import PropTypes                            from 'prop-types';
+import React                                from 'react';
+import { withRouter }                       from 'react-router-dom';
+import { localize }                         from '_common/localize';
+import DataTable                            from 'App/Components/Elements/DataTable';
+import { getContractPath }                  from 'App/Components/Routes/helpers';
+import { connect }                          from 'Stores/connect';
+import { getStatementTableColumnsTemplate } from '../Constants/data-table-constants';
+import PlaceholderComponent                 from '../Components/placeholder-component.jsx';
+import { ReportsMeta }                      from '../Components/reports-meta.jsx';
+import EmptyTradeHistoryMessage             from '../Components/empty-trade-history-message.jsx';
 
 class Statement extends React.Component {
     componentDidMount()    { this.props.onMount(); }
@@ -43,6 +43,17 @@ class Statement extends React.Component {
 
         const columns = getStatementTableColumnsTemplate();
 
+        if (is_loading || is_empty) {
+            return (
+                <PlaceholderComponent
+                    is_loading={is_loading}
+                    has_selected_date={has_selected_date}
+                    is_empty={is_empty}
+                    empty_message_component={EmptyTradeHistoryMessage}
+                />
+            );
+        }
+
         return (
             <React.Fragment>
                 {/* TODO Add proper messages before the PR */}
@@ -59,14 +70,7 @@ class Statement extends React.Component {
                         // getRowAction={this.getRowAction} TODO uncomment once smart-chart component is fixed.
                         getRowAction={undefined}
                         is_empty={is_empty}
-                    >
-                        <PlaceholderComponent
-                            is_loading={is_loading}
-                            has_selected_date={has_selected_date}
-                            is_empty={is_empty}
-                            empty_message_component={EmptyStatementMessage}
-                        />
-                    </DataTable>
+                    />
                 </div>
             </React.Fragment>
         );

@@ -1,4 +1,4 @@
-import PropTypes                            from 'prop-types';
+import PropTypes                         from 'prop-types';
 import { PropTypes as MobxPropTypes }    from 'mobx-react';
 import React                             from 'react';
 import { withRouter }                    from 'react-router';
@@ -6,7 +6,7 @@ import { localize }                      from '_common/localize';
 import DataTable                         from 'App/Components/Elements/DataTable';
 import { getContractPath }               from 'App/Components/Routes';
 import { connect }                       from 'Stores/connect';
-import EmptyProfitTableMessage           from '../Components/empty-profit-table-message.jsx';
+import EmptyTradeHistoryMessage          from '../Components/empty-trade-history-message.jsx';
 import PlaceholderComponent              from '../Components/placeholder-component.jsx';
 import { ReportsMeta }                   from '../Components/reports-meta.jsx';
 import { getProfitTableColumnsTemplate } from '../Constants/data-table-constants';
@@ -35,6 +35,17 @@ class ProfitTable extends React.Component {
 
         const columns = getProfitTableColumnsTemplate();
 
+        if (is_loading || is_empty) {
+            return (
+                <PlaceholderComponent
+                    is_loading={is_loading}
+                    has_selected_date={has_selected_date}
+                    is_empty={is_empty}
+                    empty_message_component={EmptyTradeHistoryMessage}
+                />
+            );
+        }
+
         return (
             <React.Fragment>
                 <ReportsMeta
@@ -50,14 +61,7 @@ class ProfitTable extends React.Component {
                         footer={totals}
                         getRowAction={(row_obj) => row_obj.id ? getContractPath(row_obj.id) : undefined}
                         is_empty={is_empty}
-                    >
-                        <PlaceholderComponent
-                            is_loading={is_loading}
-                            has_selected_date={has_selected_date}
-                            is_empty={is_empty}
-                            empty_message_component={EmptyProfitTableMessage}
-                        />
-                    </DataTable>
+                    />
                 </div>
             </React.Fragment>
         );
