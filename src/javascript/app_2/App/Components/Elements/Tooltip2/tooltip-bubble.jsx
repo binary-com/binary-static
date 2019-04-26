@@ -86,9 +86,9 @@ class TooltipBubble extends React.PureComponent {
                         />
                         { icon &&
                             <span className='tooltip-2__bubble__icon'>
-                                {icon === 'info'     && <Icon icon={IconInfoBlue} />}
-                                {icon === 'question' && <Icon icon={IconQuestion} />}
-                                {icon === 'dot'      && <Icon icon={IconRedDot} />}
+                                {(icon === 'info')     && <Icon icon={IconInfoBlue} />}
+                                {(icon === 'question') && <Icon icon={IconQuestion} />}
+                                {(icon === 'dot')      && <Icon icon={IconRedDot} />}
                             </span>
                         }
                         { message }
