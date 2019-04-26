@@ -3,7 +3,6 @@ import { localize }         from '_common/localize';
 import Label                from 'App/Components/Elements/Label';
 import Money                from 'App/Components/Elements/money.jsx';
 import ProgressSliderStream from 'App/Containers/ProgressSliderStream';
-import ContractTypeCell     from 'Modules/Portfolio/Components/contract-type-cell.jsx';
 import IndicativeCell       from 'Modules/Portfolio/Components/indicative-cell.jsx';
 import AmountCell           from '../Components/amount-cell.jsx';
 import MarketSymbolIconRow  from '../Components/market-symbol-icon-row.jsx';
@@ -113,10 +112,16 @@ export const getOpenPositionsColumnsTemplate = (currency) => [
     {
         title            : '',
         col_index        : 'type',
-        renderCellContent: ({ cell_value, is_footer }) => {
+        renderCellContent: ({ cell_value, row_obj, is_footer }) => {
             if (is_footer) return localize('Total');
 
-            return <ContractTypeCell type={cell_value} />;
+            return (
+                <MarketSymbolIconRow
+                    action={cell_value}
+                    key={row_obj.id}
+                    payload={row_obj.contract_info}
+                />
+            );
         },
     }, {
         title    : localize('Ref. ID'),
