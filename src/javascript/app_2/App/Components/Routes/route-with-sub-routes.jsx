@@ -4,7 +4,6 @@ import {
     Route }                from 'react-router-dom';
 import { redirectToLogin } from '_common/base/login';
 import BinarySocket        from '_common/base/socket_base';
-import Url                 from '_common/url';
 import routes              from 'Constants/routes';
 import GTM                 from 'Utils/gtm';
 import LoginPrompt         from '../Elements/login-prompt.jsx';
@@ -34,8 +33,7 @@ const RouteWithSubRoutes = route => {
         const title = route.title ? `${route.title} | ` : '';
         document.title = `${ title }${ default_title }`;
         BinarySocket.wait('website_status').then(() => {
-            const utm_source = Url.paramsHash().utm_source;
-            GTM.pushDataLayer({ event: 'page_load', ...(utm_source && { utm_source }) });
+            GTM.pushDataLayer({ event: 'page_load' });
         });
         return result;
     };

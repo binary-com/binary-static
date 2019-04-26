@@ -15,7 +15,7 @@ const localize            = require('../../_common/localize').localize;
 const ScrollToAnchor      = require('../../_common/scroll_to_anchor');
 const isStorageSupported  = require('../../_common/storage').isStorageSupported;
 const ThirdPartyLinks     = require('../../_common/third_party_links');
-const Url                 = require('../../_common/url');
+const urlFor              = require('../../_common/url').urlFor;
 const createElement       = require('../../_common/utility').createElement;
 
 const BinaryLoader = (() => {
@@ -74,8 +74,7 @@ const BinaryLoader = (() => {
         ContentVisibility.init();
 
         BinarySocket.wait('authorize', 'website_status', 'landing_company').then(() => {
-            const utm_source = Url.paramsHash().utm_source;
-            GTM.pushDataLayer({ event: 'page_load', ...(utm_source && { utm_source }) }); // we need website_status.clients_country
+            GTM.pushDataLayer({ event: 'page_load' }); // we need website_status.clients_country
 
             // first time load.
             const last_image = $('#content img').last();
@@ -93,7 +92,7 @@ const BinaryLoader = (() => {
     };
 
     const error_messages = {
-        login            : () => localize('Please [_1]log in[_2] or [_3]sign up[_4] to view this page.', [`<a href="${'javascript:;'}">`, '</a>', `<a href="${Url.urlFor('new-account')}">`, '</a>']),
+        login            : () => localize('Please [_1]log in[_2] or [_3]sign up[_4] to view this page.', [`<a href="${'javascript:;'}">`, '</a>', `<a href="${urlFor('new-account')}">`, '</a>']),
         only_virtual     : () => localize('Sorry, this feature is available to virtual accounts only.'),
         only_real        : () => localize('This feature is not relevant to virtual-money accounts.'),
         not_authenticated: () => localize('This page is only available to logged out clients.'),
