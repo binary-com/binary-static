@@ -5,60 +5,15 @@
   "start_url": "{start_url_base}/?utm_source=pwa",
   "display": "standalone",
   "orientation": "portrait",
-  
+
   "icons": [
     {
-      "src": "{root_url}/images/common/logos/mdpi.png",
-      "type": "image/png",
-      "sizes": "48x48"
-    },
-    {
-      "src": "{root_url}/images/common/logos/hdpi.png",
-      "type": "image/png",
-      "sizes": "72x72"
-    },
-    {
-      "src": "{root_url}/images/common/logos/xhdpi.png",
-      "type": "image/png",
-      "sizes": "96x96"
-    },
-    {
-      "src": "{root_url}/images/common/logos/xxhdpi.png",
-      "type": "image/png",
-      "sizes": "144x144"
-    },
-    {
-      "src": "{root_url}/images/common/logos/xxxhdpi.png",
+      "src": "{root_url}/images/common/logos/platform_logos/ic_platform_binarynex_192x192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "{root_url}/images/common/logos/icon_60pt@2x.png",
-      "type": "image/png",
-      "sizes": "120x120"
-    },
-    {
-      "src": "{root_url}/images/common/logos/icon_60pt@3x.png",
-      "type": "image/png",
-      "sizes": "180x180"
-    },
-    {
-      "src": "{root_url}/images/common/logos/icon_76pt@2x.png",
-      "type": "image/png",
-      "sizes": "76x76"
-    },
-    {
-      "src": "{root_url}/images/common/logos/icon_76pt.png",
-      "type": "image/png",
-      "sizes": "152x152"
-    },
-    {
-      "src": "{root_url}/images/common/logos/icon_83.5@2x.png",
-      "type": "image/png",
-      "sizes": "167x167"
-    },
-    {
-      "src": "{root_url}/images/common/logos/icon_512pt.png",
+      "src": "{root_url}/images/common/logos/platform_logos/ic_platform_binarynex_512x512.png",
       "type": "image/png",
       "sizes": "512x512"
     }

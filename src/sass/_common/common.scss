@@ -538,6 +538,9 @@ ul.bullet.gr-row > li {
     margin-bottom: 20px;
 
     div.select {
+        .select-dropdown {
+            text-transform: none;
+        }
         ul.select-options {
             position: absolute;
             margin: 4px 0 0;
@@ -546,6 +549,7 @@ ul.bullet.gr-row > li {
             li.select-items {
                 margin: 0;
                 display: block;
+                text-transform: none;
             }
         }
     }
