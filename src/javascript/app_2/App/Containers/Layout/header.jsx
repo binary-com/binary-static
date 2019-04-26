@@ -22,6 +22,7 @@ const Header = ({
     currency,
     is_acc_switcher_on,
     is_fully_blurred,
+    is_loading,
     is_logged_in,
     is_mobile,
     is_virtual,
@@ -31,6 +32,7 @@ const Header = ({
 }) => (
     <header className={classNames('header', {
         'header--is-blurred': is_fully_blurred,
+        'header--show'      : !is_loading,
     })}
     >
         <div className='header__menu-items'>
@@ -87,6 +89,7 @@ Header.propTypes = {
     is_acc_switcher_on  : PropTypes.bool,
     is_dark_mode        : PropTypes.bool,
     is_fully_blurred    : PropTypes.bool,
+    is_loading          : PropTypes.bool,
     is_logged_in        : PropTypes.bool,
     is_mobile           : PropTypes.bool,
     is_virtual          : PropTypes.bool,
@@ -103,6 +106,7 @@ export default withRouter(connect(
         can_upgrade         : client.can_upgrade,
         can_upgrade_to      : client.can_upgrade_to,
         currency            : client.currency,
+        is_loading          : ui.is_loading,
         is_logged_in        : client.is_logged_in,
         is_virtual          : client.is_virtual,
         loginid             : client.loginid,
