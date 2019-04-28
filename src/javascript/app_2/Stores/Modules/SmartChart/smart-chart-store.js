@@ -16,7 +16,8 @@ import BaseStore              from '../../base-store';
 const store_name = 'smart_chart_store';
 
 export default class SmartChartStore extends BaseStore {
-    @observable symbol;
+    @observable chart_type;
+    @observable granularity;
     @observable barriers = observable.object({});
     @observable markers  = observable.object({});
 
@@ -30,17 +31,27 @@ export default class SmartChartStore extends BaseStore {
 
     @observable scroll_to_left_epoch        = null;
     @observable scroll_to_left_epoch_offset = 0;
-    @observable zoom;
 
+    @observable chart_id             = 'trade';
     @observable should_import_layout = false;
     @observable should_export_layout = false;
     @observable should_clear_chart   = false;
-    @observable trade_chart_layout   = observable.object({});
+    @observable trade_chart_layout   = null;
     trade_chart_symbol               = null;
 
     constructor({ root_store }) {
         const local_storage_properties = ['trade_chart_layout'];
         super({ root_store, local_storage_properties, store_name });
+    }
+
+    @action.bound
+    updateChartType(type) {
+        this.chart_type = type;
+    }
+
+    @action.bound
+    updateGranularity(granularity) {
+        this.granularity = granularity;
     }
 
     @action.bound
@@ -54,22 +65,16 @@ export default class SmartChartStore extends BaseStore {
     }
 
     @action.bound
-    updateChartZoom(percentage) {
-        this.zoom = percentage;
-    }
-
-    @action.bound
     cleanupContractChartView() {
         this.removeBarriers();
         this.removeMarkers();
         this.removeRange();
-        this.resetScrollZoom();
+        this.resetScrollToLeft();
         this.setContractMode(false);
     }
 
     @action.bound
-    resetScrollZoom() {
-        this.zoom = (this.zoom === 100) ? -100 : 0;
+    resetScrollToLeft() {
         this.scroll_to_left_epoch = null;
         this.scroll_to_left_epoch_offset = null;
     }
@@ -82,7 +87,7 @@ export default class SmartChartStore extends BaseStore {
 
     @action.bound
     onMount = () => {
-        if (this.trade_chart_layout && Object.keys(this.trade_chart_layout).length) {
+        if (this.trade_chart_layout && !isEmptyObject(this.trade_chart_layout)) {
             this.applySavedTradeChartLayout();
         }
     }
@@ -96,9 +101,8 @@ export default class SmartChartStore extends BaseStore {
 
     // --------- Tick Contracts ---------
     @action.bound
-    setTickChartView(scroll_to_left_epoch) {
+    setChartView(scroll_to_left_epoch) {
         this.updateEpochScrollToOffset(1);
-        this.updateChartZoom(100);
         this.updateEpochScrollToValue(scroll_to_left_epoch);
     }
 
@@ -160,6 +164,8 @@ export default class SmartChartStore extends BaseStore {
         this.should_import_layout = false;
 
         this.trade_chart_symbol   = this.root_store.modules.trade.symbol;
+        this.updateGranularity(0);
+        this.updateChartType('mountain');
     }
 
     @action.bound
@@ -167,8 +173,13 @@ export default class SmartChartStore extends BaseStore {
         this.should_export_layout = false;
         this.should_import_layout = true;
         this.should_clear_chart   = false;
-        this.trade_chart_layout.isDone = action(() => this.trade_chart_layout = {});
 
+        this.trade_chart_layout.isDone = action(() => {
+            this.trade_chart_layout   = null;
+            this.should_import_layout = false;
+        });
+
+        // Reset back to symbol before loading contract if trade_symbol and contract_symbol don't match
         if (this.trade_chart_symbol !== this.root_store.modules.trade.symbol) {
             this.root_store.modules.trade.updateSymbol(this.trade_chart_symbol);
         }
