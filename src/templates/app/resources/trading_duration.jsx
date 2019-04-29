@@ -12,58 +12,64 @@ const TradingDurations = () => (
                     <li>Commodities</li>
                     <li>Volatility Indices</li>
                 </ul>
-                <h2>Major Pairs</h2>
-                <table className='trading-durations__table'>
-                    <thead>
-                        <tr>
-                            <th rowSpan='2'>Underlying Assets</th>
-                            <th rowSpan='2'>Trade Type</th>
-                            <th colSpan='5'>Duration Type</th>
-                        </tr>
-                        <tr>
-                            <td className='trading-durations__table--ticks'>Ticks</td>
-                            <td>Seconds</td>
-                            <td>Minutes</td>
-                            <td>Hours</td>
-                            <td>Days</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <td className='trading-durations__table--assets'>
-                            <div className='trading-durations__table--assets-content'>
-                                ASSETS
-                            </div>
-                        </td>
-                        <tr>
-                            <td>trade/type</td>
-                            <td>durationtick</td>
-                            <td>durationmin</td>
-                            <td>durationhour</td>
-                            <td>durationday</td>
-                        </tr>
-                        <tr>
-                            <td>trade/type</td>
-                            <td>durationtick</td>
-                            <td>durationmin</td>
-                            <td>durationhour</td>
-                            <td>durationday</td>
-                        </tr>
-                        <tr>
-                            <td>trade/type</td>
-                            <td>durationtick</td>
-                            <td>durationmin</td>
-                            <td>durationhour</td>
-                            <td>durationday</td>
-                        </tr>
-                        <tr>
-                            <td>trade/type</td>
-                            <td>durationtick</td>
-                            <td>durationmin</td>
-                            <td>durationhour</td>
-                            <td>durationday</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div id='market_name'>
+                    <div id='submarket_name'>
+                        <h3>Major Pairs</h3>
+                        <table className='trading-durations__table'>
+                            <thead>
+                                <tr>
+                                    <th rowSpan='2'>Underlying Assets</th>
+                                    <th rowSpan='2'>Trade Type</th>
+                                    <th colSpan='5'>Duration Type</th>
+                                </tr>
+                                <tr>
+                                    <td className='trading-durations__table--ticks'>Ticks</td>
+                                    <td>Seconds</td>
+                                    <td>Minutes</td>
+                                    <td>Hours</td>
+                                    <td>Days</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <td rowSpan='5' className='trading-durations__table--assets'>
+                                    ASSETS
+                                </td>
+                                <tr>
+                                    <td>trade/type</td>
+                                    <td>durationtick</td>
+                                    <td>durationsecond</td>
+                                    <td>durationmin</td>
+                                    <td>durationhour</td>
+                                    <td>durationday</td>
+                                </tr>
+                                <tr>
+                                    <td>trade/type</td>
+                                    <td>durationtick</td>
+                                    <td>durationsecond</td>
+                                    <td>durationmin</td>
+                                    <td>durationhour</td>
+                                    <td>durationday</td>
+                                </tr>
+                                <tr>
+                                    <td>trade/type</td>
+                                    <td>durationtick</td>
+                                    <td>durationsecond</td>
+                                    <td>durationmin</td>
+                                    <td>durationhour</td>
+                                    <td>durationday</td>
+                                </tr>
+                                <tr>
+                                    <td>trade/type</td>
+                                    <td>durationtick</td>
+                                    <td>durationsecond</td>
+                                    <td>durationmin</td>
+                                    <td>durationhour</td>
+                                    <td>durationday</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
             <p className='notice-msg center-text invisible' id='empty-trading-durations'>
                 {it.L('Trading durations is unavailable in this country. If you have an active [_1] account, please [_2]log in[_3] for full access.', it.website_name, '<a id=\'empty-trading-durations-btn-login\' href=\'javascript:;\'>', '</a>')}
