@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-04-23 03:01\n"
+"PO-Revision-Date: 2019-04-26 08:57\n"
 "Last-Translator: binarycom\n"
 "Language-Team: Spanish\n"
 "MIME-Version: 1.0\n"
@@ -298,7 +298,7 @@ msgid "%1 opens new office in the island of Labuan as part of our business expan
 msgstr "%1 abre una nueva oficina en la isla de Labuan, como parte de nuestra expansión comercial."
 
 msgid "%1 owes the client a duty of best execution when executing orders on the client's behalf, i.e. when the client places a legitimate reliance on the Company to safeguard the client's interest in relation to the execution of the client's order."
-msgstr ""
+msgstr "%1 se compromete a la mejor ejecución posible de los contratos; es decir, cuando el cliente deposita su confianza en la empresa para salvaguardar los intereses del propio cliente en relación a la ejecución de contratos."
 
 msgid "%1 per lot"
 msgstr "%1 por lote"
@@ -1051,7 +1051,7 @@ msgid "All calls are recorded for training and monitoring purposes"
 msgstr "Todas nuestras llamadas se graban para fines de capacitación y supervisión"
 
 msgid "All client orders are processed on a first in, first out basis without any manual intervention. When executing client order, %1 will seek to fill client order transaction as promptly as possible at the instructed price (or at a better price, if available). Exposure limits are established based on internal governance arrangements and risk management framework, which both commensurate with the size, nature, complexity, and risk profile of the Company's activities. These exposure limits are used as benchmarks to distinguish orders that are auto-accepted from orders that will be worked in the market with fill level passed on to the client."
-msgstr ""
+msgstr "Todos los pedidos de los clientes se procesan según el método PEPS (o FIFO en inglés), sin intervención manual. Al ejecutar su operación, %1 se intentará completar la transacción lo antes posible, al precio indicado (o a un mejor precio, si está disponible). Los límites de exposición se establecen en base a las regulaciones internas y al marco de gestión de riesgo, que son proporcionales al tamaño, naturaleza, complejidad y perfil de riesgo de nuestras actividades. Estos límites de exposición se utilizan como puntos de referencia para distinguir entre las órdenes que son auto-aceptadas y las órdenes que se trabajarán en el mercado con el nivel de llenado transferido al cliente."
 
 msgid "All commissions are credited into your account by the 15th of every month."
 msgstr "Todas las comisiones se acreditan en su cuenta antes del día 15 de cada mes."
@@ -1170,6 +1170,9 @@ msgstr "Siempre mantenga su navegador actualizado. Recomendamos utilizar la vers
 msgid "Amount"
 msgstr "Monto"
 
+msgid "Amount in"
+msgstr ""
+
 msgid "An Ends Between trade pays out if the market exit price is strictly higher than the low price target AND strictly lower than the high price target. An Ends Outside binary pays out if the market exit price is EITHER strictly higher than the high price target OR strictly lower than the low price target."
 msgstr "Un contrato \"Finaliza dentro\" se paga si el precio de salida del mercado es estrictamente superior al límite de precio bajo Y estrictamente inferior al límite de precio alto. Un contrato \"Finaliza fuera\" se paga si el precio de salida del mercado es O BIEN estrictamente superior \n"
 "            al límite de precio alto O estrictamente inferior que el límite de precio bajo."
@@ -1236,9 +1239,6 @@ msgstr "Analizar los mercados con una amplia gama de indicadores, rangos de prec
 
 msgid "Android"
 msgstr "Android"
-
-msgid "Annual Best Execution Disclosure 2017"
-msgstr ""
 
 msgid "Another major award. This time we're nominated by the online readers of Global Banking and Finance Review and judged by a panel of industry experts and analysts who recognise our 13 years of platform reliability, range of trades, pricing, customer service and extensive knowledge."
 msgstr "Otro premio importante. Esta vez estamos nominados por los lectores de Global Banking and Finance Review  en línea y juzgados por un jurado de expertos y analistas de la industria que reconocen los 13 años de la fiabilidad de nuestra plataforma, la gama de productos, nuestros precios, el servicio al cliente y el profundo conocimiento de lo que hacemos."
@@ -1508,7 +1508,7 @@ msgid "Ask the right questions to identify potential problems to be solved, the 
 msgstr "Formular las preguntas correctas para identificar los problemas potenciales que deben ser resueltos, el alcance involucrado y la disponibilidad de datos relevantes."
 
 msgid "Aspects of a client order not affected by specific instructions are subject to the application of %1's order execution policy. In the absence of specific instructions from clients, the Company will exercise its own discretion in determining the factors that are required to be taken into account for the purpose of providing clients with best execution, paying regard to the execution criteria listed below:"
-msgstr ""
+msgstr "Los aspectos de la operación de un cliente, sin instrucciones específicas, están sujetos a la Política de ejecución de órdenes %1. En ausencia de instrucciones específicas por parte de nuestros clientes, ejerceremos nuestro propio criterio para determinar los factores que deben tenerse en cuenta con el fin de proporcionarle la mejor ejecución posible, teniendo en cuenta los criterios listados a continuación:"
 
 msgid "Assessment of Appropriateness"
 msgstr "Evaluación de idoneidad"
@@ -1574,7 +1574,7 @@ msgid "At any time and for any reason or no reason, the Company, in its sole dis
 msgstr "En cualquier momento y por cualquier razón o por ninguna razón, la Compañía, a su absoluta discreción, podrá inmediatamente:"
 
 msgid "At bank rollover, liquidity in the Forex market is reduced and may increase the spread and processing time for client orders. This happens around 21:00 GMT during daylight saving time, and 22:00 GMT during non-daylight saving time."
-msgstr ""
+msgstr "Durante prórrogas bancarias, la liquidez del mercado Forex se reduce y puede incrementar el margen y tiempo de proceso de las operaciones de los clientes. Esto ocurre alrededor de las 21:00 GMT en horario de verano, y las 22:00 GMT en horario de invierno."
 
 msgid "At least 5 years of experience in affiliate marketing, growth hacking, business development, and other closely-related skills"
 msgstr "Al menos 5 años de experiencia en marketing de afiliados, growth hacking, desarrollo de negocios, y otras habilidades estrechamente relacionadas"
@@ -1677,6 +1677,12 @@ msgstr "B. Inicio y cancelación"
 
 msgid "B. Scope"
 msgstr "B. Alcance"
+
+msgid "BIEL RTS28 for 2017"
+msgstr ""
+
+msgid "BIEL RTS28 for 2018"
+msgstr ""
 
 msgid "BIEL forms part of %1the Investor Compensation Scheme%2 (the \"Scheme\") which is a rescue fund for investors that are clients of failed investment firms licensed by the MFSA. The Scheme covers 90% of the Company's net liability to a client in respect of investments which qualify for compensation under the Investment Services Act subject to a maximum payment to any one person of €20,000. The Scheme is based on EC Directive 97/9."
 msgstr "BIEL forma parte de %1el Esquema de Indemnización de Inversores%2, o Investor Compensation Scheme, (el \"esquema\") que es un fondo de rescate para los inversionistas que son clientes de empresas de inversión fallidas con licencia de la MFSA (Autoridad de Servicios Financieros de Malta). El Esquema cubre el 90% del monto neto que la Compañía debe a un cliente en concepto de inversiones que tienen derecho a una indemnización según la ley de servicios de inversión, sujeto a un pago máximo de € 20.000 por persona. El Esquema se basa en la directiva de la Unión Europea número 97/9."
@@ -1832,7 +1838,7 @@ msgid "Bid"
 msgstr "Oferta"
 
 msgid "Bid and Offer Price(s) of each Financial Instrument in the Transaction System, quoted at market price at the moment of pricing."
-msgstr ""
+msgstr "El precio (s) de Oferta y Demanda de cada Instrumento Financiero en el Sistema de Transacción, cotizado al precio del mercado al momento de su valoración."
 
 msgid "Bid price"
 msgstr "Precio de compra"
@@ -1840,8 +1846,8 @@ msgstr "Precio de compra"
 msgid "Binary (BVI) Ltd"
 msgstr "Binary (BVI) Ltd"
 
-msgid "Binary (BVI) Ltd, 2nd Floor, O'Neal Marketing Associates Building, Wickham's Cay II, P.O. Box 3174, Road Town, Tortola VB1110, British Virgin Islands. Licensed and regulated by the British Virgin Islands Financial Services Commission - %1view licence%2."
-msgstr "Binary (BVI) Ltd, 2do piso, O'Neal Marketing Associates Building, Wickham's Cay II, P.O. Box 3174, Road Town, Tortola VB1110, Islas Vírgenes Británicas. Con licencia y regulado por la Comisión de Servicios Financieros de las Islas Vírgenes Británicas - %1ver licencia%2."
+msgid "Binary (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, British Virgin Islands. Licensed and regulated by the British Virgin Islands Financial Services Commission - %1view licence%2."
+msgstr "Binary (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, Islas Vírgenes Británicas. Autorizado y regulado por la Comisión de Servicios Financieros de las Islas Vírgenes Británicas -%1ver licencia%2."
 
 msgid "Binary (BVI) Ltd.,"
 msgstr "Binary (BVI) Ltd.,"
@@ -1859,7 +1865,7 @@ msgid "Binary (Europe) Limited"
 msgstr "Binary (Europe) Limited"
 
 msgid "Binary (Europe) Limited, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licensed and regulated (for gambling products only - %1's Volatility Indices) by the Malta Gaming Authority in Malta  (licence no. %2) - %3view licence%4 and also maintains an Irish licence. For UK clients by the UK Gambling Commission - %5view licence%4."
-msgstr ""
+msgstr "Binary (Europe) Limited, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Autorizado y regulado (solo para productos de juego - Índices de Volatilidad %1) por la Autoridad de Juegos de Malta (licencia nº %2) %3ver licencia%4 y para clientes británicos por la Comisión de Apuestas del Reino Unido - %5ver licencia%4."
 
 msgid "Binary (Europe) Ltd & Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825"
 msgstr "Binary (Europe) Ltd & Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825"
@@ -1889,7 +1895,7 @@ msgid "Binary (IOM) Limited"
 msgstr "Binary (IOM) Limited"
 
 msgid "Binary (IOM) Limited, First Floor, Millennium House, Victoria Road, Douglas, Isle of Man, IM2 4RW. Licensed and regulated by the Gambling Supervision Commission in the Isle of Man (current online gambling licence granted on the 31 August 2017) - %1view licence%2 and for UK clients by the UK Gambling Commission - %3view licence%2."
-msgstr ""
+msgstr "Binary (IOM) Limited, First Floor, Millennium House, Victoria Road, Douglas, Isla de Man, IM2 4RW. Autorizado y regulado por la Comisión de Supervisión del Juego de la Isla de Man (licencia actual de juego en línea otorgada el 31 de agosto de 2017) - %1ver licencia%2 y para los clientes británicos por La Comisión de Apuestas del Reino Unido - %3ver licencia%2."
 
 msgid "Binary (IOM) Ltd, First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW"
 msgstr "Binary (IOM) Ltd, Primer piso, Millennium House, Victoria Road, Douglas, IM2 4RW"
@@ -1919,7 +1925,7 @@ msgid "Binary Coin"
 msgstr "Binary Coin"
 
 msgid "Binary Group (hereinafter referred to as 'Binary Group of companies', 'the Company') is commited to protecting the privacy and security of the applicant's personal information. This privacy notice sets out the types of data that the Company collects on the applicant. It also sets out how the Company collect and use the applicant' personal data, and how long it keeps them and other relevant information about the applicant's data in accordance with the General Data Protection Regulation (EU) 2016/679 (hereafter referred to as 'GDPR') and Data Protection Act 2018."
-msgstr ""
+msgstr "Binary Group (en adelante 'Binary Group de Empresas', 'La Empresa') está comprometida a proteger la privacidad y seguridad de la información personal del solicitante. Este aviso de privacidad establece los tipos de datos que La Empresa colecta del solicitante. También establece cómo La Empresa colecta y utiliza la información personal del solicitante, y por cuanto tiempo almacena dichos datos así como otras informaciones relevantes de acuerdo al Reglamento General de Protección de Datos (EU) 2016/679 (en adelante 'RGPD') y la Ley de Protección de datos de 2018."
 
 msgid "Binary Group Services Sdn. Bhd., C-13, iTech Tower, Jalan Impact, Cyber 6, 63000 Cyberjaya, Selangor Darul Ehsan"
 msgstr "Binary Group Services Sdn. Bhd., C-13, iTech Tower, Jalan Impact, Cyber 6, 63000 Cyberjaya, Selangor Darul Ehsan"
@@ -1934,7 +1940,7 @@ msgid "Binary Investments (Europe) Ltd"
 msgstr "Binary Investments (Europe) Ltd"
 
 msgid "Binary Investments (Europe) Ltd aggregates the bid and ask prices from a pool of liquidity providers to determine and offer you the best available price of the instrument. The Company is always the final counterparty to your Transactions. The Company may execute orders on behalf of its clients, wherein the Company will act as a broker and pass on the order to the liquidity provider for execution. Alternatively, the Company may also keep the client's order on its own account, wherein the Company will take the other side of the client's trade. It is further noted that the Company may make a profit as a result of your losses and vice-versa. For further details please refer to our Conflicts of Interest Policy and Order Execution Policy."
-msgstr ""
+msgstr "Binary Investments (Europe) Ltd agrupa los precios de compra y venta de un grupo de proveedores de liquidez para determinar y ofrecer el mejor precio disponible para el instrumento. La Empresa es siempre la contra-parte final de sus transacciones. La Empresa puede ejecutar operaciones en representación de sus clientes, en las cuales La Empresa actúa como corredor y transmite la orden al proveedor de liquidez para su ejecución. Alternativamente, La Empresa puede también almacenar la operación del cliente por cuenta propia, en la cual La Empresa tomará el otro lado de la operación del cliente. Notándose además que La Empresa puede obtener una ganancia como resultado de la perdida de su operación y viceversa. Para más detalles, por favor consulte nuestras Políticas de Conflictos de Interés y de Ejecución de Órdenes."
 
 msgid "Binary Investments (Europe) Ltd shall review your complaint and provide you with the outcome of the investigation as promptly as possible, and at most within 15 days of the submission date. If we are unable to provide you with the final response within this time, due to an ongoing investigation of your complaint, we shall inform you of that fact and the anticipated timeframe to resolve the issue."
 msgstr "Binary Investments (Europe) Ltd revisará su queja y le proporcionará la respuesta sobre el resultado de la investigación tan pronto como sea posible, y en un plazo máximo de 15 días desde la fecha de entrega. Si no podemos proporcionarle la respuesta final dentro de este tiempo, debido a una investigación en curso de su queja, le informaremos de ello y del plazo previsto para resolver el asunto."
@@ -2126,7 +2132,7 @@ msgid "By default, the intelligent order routing system ensures that the top of 
 msgstr "Por defecto, el sistema inteligente de enrutamiento de órdenes garantiza que las cotizaciones siempre estén compuestas por las mejores tarifas de compra y venta de los proveedores de liquidez. Sin embargo, en tiempos de iliquidez del mercado, esto puede cambiar con la probabilidad de que la ejecución sea el principal factor de ejecución."
 
 msgid "By entering into an agreement with us, you understand that CFDs are highly speculative, complex products and carry a high degree of risk, especially those traded on margin. Whilst you may generate profit and increase your capital, you may also expose yourself to losing the entire sum invested and your loss may exceed your deposit. The products attaching this Agreement are not appropriate for everyone. You acknowledge that the trading services described in this Agreement are designed for clients who are knowledgeable and experienced in the types of transactions described in this Agreement and you fully understand the associated risks before entering into this Agreement with us."
-msgstr ""
+msgstr "Al aceptar un Acuerdo con nosotros, entiende y acepta que los CFDs son altamente especulativos, productos complejos, y que conllevan a un alto riesgo, especialmente aquellos comerciados al margen. Mientras que puede generar ganancias e incrementar su capital, también puede exponerse a perder la totalidad de su inversión y su perdida puede exceder su depósito. Los productos adjuntos a este Acuerdo no son apropiados para toda audiencia. Acepta que los servicios de comercio descritos en este Acuerdo están diseñados para clientes con conocimiento y experiencia en los tipos de contratos descritos en este Acuerdo, y acepta que entiende claramente los riesgos asociados antes de aceptar este Acuerdo."
 
 msgid "By indicating your acceptance of these terms and conditions and continuing with your application to join our affiliate programme, you are agreeing to the terms and conditions set out in this Agreement. If you do not agree with the terms and conditions (or are not authorised to do so), you should not continue with your application."
 msgstr "Al indicar su aceptación de estos términos y condiciones y continuar con su solicitud para unirse a nuestro programa de afiliados, usted acepta los términos y condiciones establecidos en este acuerdo. Si no está de acuerdo con los términos y condiciones (o no está autorizados para hacer esto), no debe continuar con su solicitud."
@@ -3787,6 +3793,9 @@ msgstr "Garantizar que el diseño y desarrollo de cada página o producto sea co
 msgid "Ensure the integrity of releases by coordinating testing activities"
 msgstr "Garantizar la integridad de los lanzamientos coordinando las actividades de prueba"
 
+msgid "Enter payment agent ID"
+msgstr ""
+
 msgid "Enter the authentication code generated by the app below:"
 msgstr "Ingrese el código de autenticación generado por la aplicación a continuación:"
 
@@ -4570,11 +4579,11 @@ msgstr "Las transferencias de fondos entre las cuentas no están disponibles."
 msgid "Funding of MT5 Real Account"
 msgstr "Financiamiento de una cuenta real en MT5"
 
-msgid "Further Instructions"
-msgstr "Instrucciones adicionales"
-
 msgid "Further information"
 msgstr "Información adicional"
+
+msgid "Further instructions"
+msgstr ""
 
 msgid "Further, the Company, under the above circumstances, or any other, reserves the right to adjust a client's account should any trade result in a disruption, miscarry or aborted trade."
 msgstr "Además, la Compañía bajo las circunstancias anteriores, o cualquier otra, se reserva el derecho de ajustar la cuenta de un cliente si cualquier contrato  resulta en una interrupción o operación abortada."
@@ -4891,12 +4900,6 @@ msgstr "Los contratos Superiores/Inferiores serán reembolsados con el precio de
 msgid "Higher/Lower trades"
 msgstr "Contratos Superior/Inferior"
 
-msgid "Highest Tick"
-msgstr "El Tick más alto"
-
-msgid "Highest Tick Time"
-msgstr "Tiempo de tick más alto"
-
 msgid "Highlights"
 msgstr "Destacados"
 
@@ -5152,6 +5155,9 @@ msgstr "Si el Nivel de Margen de su Cuenta Real MT5 alcanza o cae por debajo del
 msgid "If the bid price is 1.05229, you'll buy USD 1.05229 for every EUR 1 you sell."
 msgstr "Si el precio de compra es 1,05229, usted comprará 1,05229 USD por cada euro que venda."
 
+msgid "If the payment agent is not listed, type in the payment agent ID. For example: CR000000."
+msgstr ""
+
 msgid "If this Agreement is terminated for any reason, you must permanently delete all Content, except when doing so would cause you to violate any law or obligation imposed by a governmental authority."
 msgstr "Si este Acuerdo está rescindido para cualquier razón, debe eliminar permanentemente todo el Contenido, excepto cuando el hacer esto causaría que usted violase cualquier ley u obligación impuesta por una autoridad gubernamental."
 
@@ -5243,7 +5249,7 @@ msgid "If you score well in the hackathon or talent test, we'll send you a Self-
 msgstr "Si obtiene una buena puntuación en la hackatón o prueba para medir sus capacidades, le enviaremos un cuestionario SATI (entrevista de autoevaluación para definir el mejor candidato o Self-Assessment Topgrading Interview, en inglés). Asegúrese de tener un buen resultado en el SATI y le agendaremos una entrevista con un miembro de nuestro equipo de selección."
 
 msgid "If you score well on the talent test, we'll send you a Self-Assessment Topgrading Interview (SATI) questionnaire. Do well on the SATI and we'll invite you for an interview with a member of our recruitment team."
-msgstr ""
+msgstr "Si obtiene una buena puntuación en la prueba de talento, le enviaremos un cuestionario de autoevaluación SATI (entrevista para definir el mejor candidato o Self-Assessment Topgrading Interview, en inglés). Asegúrese de tener un buen resultado en el SATI y le agendaremos una entrevista con un miembro de nuestro equipo de reclutamiento."
 
 msgid "If you see EUR/USD has a bid price of 1.05229, you will buy USD 1.05229 for every EUR 1 that you sell."
 msgstr "Si el precio de compra del par EUR/USD es 1,05229, usted comprará 1,05229 USD por cada euro que venda."
@@ -6263,12 +6269,6 @@ msgstr "Inferior"
 msgid "Lower or equal"
 msgstr "Inferior o igual"
 
-msgid "Lowest Tick"
-msgstr "El Tick más bajo"
-
-msgid "Lowest Tick Time"
-msgstr "Tiempo de tick más bajo"
-
 msgid "Lush living"
 msgstr "La vida exuberante"
 
@@ -6667,9 +6667,6 @@ msgstr "Método"
 
 msgid "Meticulous English language skills, with keen eye for detail when it comes to punctuation, spelling, grammar, and syntax"
 msgstr "Competencias comunicativas fuertes del idioma inglés, con buen ojo para los detalles cuando se trata de puntuación, ortografía, gramática y sintaxis"
-
-msgid "MiFID II RTS 28"
-msgstr "MiFID II RTS 28"
 
 msgid "Min"
 msgstr "Min"
@@ -7451,8 +7448,8 @@ msgstr "Nuestro sitio web incluye enlaces a otros sitios y puede contener public
 msgid "Our website uses cookies to give you the best user experience. For more information, %1view our policy%2."
 msgstr "Nuestro sitio web utiliza cookies para proporcionarle la mejor experiencia de usuario. Para obtener más información, %1 consulte nuestra política%2."
 
-msgid "Outside the EU, financial products are offered by Binary (C.R.) S.A., 5th Floor, Building 6 Centro Ejecutivo La Sabana, Sabana Sur, San José, Costa Rica, Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, regulated by the Vanuatu Financial Services Commission (%1view licence%2), Binary (BVI) Ltd, 2nd Floor, O'Neal Marketing Associates Building, Wickham's Cay II, P.O. Box 3174, Road Town, Tortola VB1110, British Virgin Islands, regulated by the British Virgin Islands Financial Services Commission (%3licence no. SIBA/L/18/1114%4), and Binary (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Labuan, Malaysia, regulated by the Labuan Financial Services Authority to carry on a money-broking business (%5licence no. MB/18/0024%6)."
-msgstr "Fuera de la Unión Europea, los productos financieros son ofrecidos por Binary (C.R.) S.A., 5to piso, Edificio 6 Centro Ejecutivo La Sabana, Sabana Sur, San José, Costa Rica, Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, regulado por la Comisión de Servicios Financieros de Vanuatu (%1ver licencia%2), Binary (BVI) Ltd, 2do piso, O'Neal Marketing Associates Building, Wickham's Cay II, P.O. Box 3174, Road Town, Tortola VB1110, Islas Vírgenes Británicas, regulado por la Comisión de Servicios Financieros de las Islas Vírgenes Británicas (%3licencia nº SIBA/L/18/1114%4), y Binary (FX) Ltd., Lote nº F16, Primer Piso, Paragon Labuan, Jalan Tun Mustapha, 87000 Labuan, Malasia, regulado por la Autoridad de Servicios Financieros de Labuan para llevar a cabo un negocio corredor de valores (%5licencia nº MB/18/0024%6)."
+msgid "Outside the EU, financial products are offered by Binary (C.R.) S.A., 5th Floor, Building 6 Centro Ejecutivo La Sabana, Sabana Sur, San José, Costa Rica, Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, regulated by the Vanuatu Financial Services Commission (%1view licence%2), Binary (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, British Virgin Islands, regulated by the British Virgin Islands Financial Services Commission (%3licence no. SIBA/L/18/1114%4), and Binary (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Labuan, Malaysia, regulated by the Labuan Financial Services Authority to carry on a money-broking business (%5licence no. MB/18/0024%6)."
+msgstr "Fuera de la UE, los productos financieros son ofrecidos por Binary (CR) SA, 5to piso, Edificio 6 Centro Ejecutivo La Sabana, Sabana Sur, San José, Costa Rica, Binary (V) Ltd, Edificio Govant, Port Vila, PO Box 1276, Vanuatu, regulado por la Comisión de Servicios Financieros de Vanuatu (%1ver licencia%2), Binary (BVI) Ltd, Kingston Chambers, PO Box 173, Road Town, Tortola, Islas Vírgenes Británicas, regulado por la Comisión de Servicios Financieros de las Islas Vírgenes Británicas (%3licencia num. SIBA/L/18/1114%4) y Binary (FX) Ltd., Lote No. F16. Primer piso, Paragon Labuan, Jalan Tun Mustapha, 87000 Labuan, Malasia, regulado por la Autoridad de Servicios Financieros de Labuan para realizar un negocio de corretaje de cambios (%5licencia num. MB/18/0024%6)."
 
 msgid "Over $1,000,000"
 msgstr "Más de $1.000.000"
@@ -7895,9 +7892,6 @@ msgstr "Seleccione"
 msgid "Please select a country"
 msgstr "Seleccione un país"
 
-msgid "Please select a payment agent"
-msgstr "Seleccione un agente de pago"
-
 msgid "Please select a valid time."
 msgstr "Seleccione una hora válida."
 
@@ -8311,6 +8305,9 @@ msgstr "R. Interpretación de los términos"
 
 msgid "RTS 27"
 msgstr "RTS 27"
+
+msgid "RTS 28"
+msgstr ""
 
 msgid "Range of markets"
 msgstr "Variedad de mercados"
@@ -8827,6 +8824,9 @@ msgstr "Seleccionar fecha"
 
 msgid "Select market:"
 msgstr "Seleccione mercado:"
+
+msgid "Select payment agent"
+msgstr ""
 
 msgid "Select your market and underlying asset"
 msgstr "Seleccione el mercado y activo subyacente"
@@ -10156,7 +10156,7 @@ msgid "The cut-off time for performing Roll-overs and booking of the Roll-over C
 msgstr "La hora límite para la realización de Roll-overs y registro de Roll-overs de crédito / débito."
 
 msgid "The default DNS services provided by your ISP can be slow and insecure. %1 recommends using Cloudflare's %2 DNS service that gives you a faster and more private way to browse the Internet."
-msgstr ""
+msgstr "Los servicios DNS predeterminados proporcionados por su ISP pueden ser lentos e inseguros. %1 recomienda usar el servicio %2 DNS de Cloudflare que le ofrece una forma más rápida y privada de navegar por Internet."
 
 msgid "The default Stop Out Level applicable to your Account is published on our website. However, the default Stop Out Level is subject to alteration at our absolute discretion. Any changes to the Stop Out Level will take effect immediately. We will endeavor to notify you of an alteration to the default Stop Out Level by publishing the revised default Stop Out Level on our website. It is your responsibility to check our website regularly and remain informed about the default Stop Out Level."
 msgstr "El nivel Stop Out predeterminado aplicable a su cuenta está publicado en nuestro sitio web. Sin embargo, el nivel Stop Out predeterminado está sujeto a modificaciones a nuestra absoluta discreción. Cualquier cambio en el Nivel Stop Out tendrá efecto inmediatamente. Nos esforzaremos en notificarle sobre cualquier alteración en el nivel Stop Out predeterminado mediante la publicación de la versión revisada del mismo en nuestro sitio web. Es su responsabilidad revisar nuestro sitio web con regularidad y mantenerse informado sobre el nivel predeterminado de Stop Out."
@@ -10690,18 +10690,6 @@ msgstr "Jueves"
 msgid "Tick"
 msgstr "Intervalo"
 
-msgid "Tick %1 is not the highest tick"
-msgstr "El Tick %1 no es el tick más alto"
-
-msgid "Tick %1 is not the lowest tick"
-msgstr "El Tick %1 no es el tick más bajo"
-
-msgid "Tick %1 is the highest tick"
-msgstr "El Tick %1 es el tick más alto. "
-
-msgid "Tick %1 is the lowest tick"
-msgstr "El Tick %1 es el tick más bajo. "
-
 msgid "Tick Prediction"
 msgstr "Tick de Predicción"
 
@@ -11119,6 +11107,9 @@ msgstr "Transfiera fondos desde su cuenta en MetaTrader 5 a su cuenta de opcione
 msgid "Transfer funds from your binary options account into your MetaTrader 5 account."
 msgstr "Transfiera fondos desde su cuenta de opciones binarias a su cuenta en MetaTrader 5."
 
+msgid "Transfer funds to a payment agent"
+msgstr ""
+
 msgid "Transfer funds to your MT5 account"
 msgstr "Transfiera fondos a su cuenta en MT5"
 
@@ -11139,9 +11130,6 @@ msgstr "Transferir a usuario"
 
 msgid "Transfer to MT5"
 msgstr "Transferir a MT5"
-
-msgid "Transfer to Payment Agent"
-msgstr "Transferir a agente de pagos"
 
 msgid "Translate data into consumable information and assist in making data-driven decisions across departments."
 msgstr "Transformar los datos en información consumible y ayudar a tomar decisiones basadas en datos en todos los departamentos."
@@ -11463,7 +11451,7 @@ msgid "Utility bills (electricity, water, gas, broadband and landline)"
 msgstr "Cuenta de servicios básicos (electricidad, agua, gas, banda ancha y red fija)"
 
 msgid "VPN App"
-msgstr "App de VPN"
+msgstr "Aplicación de VPN"
 
 msgid "VPN app"
 msgstr "App de VPN"
@@ -12211,7 +12199,7 @@ msgid "Why you should trade precious metals with %1"
 msgstr "Por qué debería operar con metales preciosos con %1"
 
 msgid "Why you should use %1 instead of your ISP's default DNS service"
-msgstr ""
+msgstr "Por qué debería usar %1 en lugar del servicio DNS predeterminado de su ISP"
 
 msgid "Win maximum payout if the exit spot is higher than or equal to the upper barrier."
 msgstr "Gane el pago máximo si el punto de salida es más alto o igual que la barrera superior."
@@ -13024,7 +13012,7 @@ msgid "Your breach of any of %1's rights;"
 msgstr "Su incumplimiento de cualquiera de los derechos de %1;"
 
 msgid "Your browser does not support JavaScript!"
-msgstr ""
+msgstr "Su navegador no soporta JavaScript!"
 
 msgid "Your cashier is locked as per your request - to unlock it, please click %1here%2."
 msgstr "Su cajero está bloqueado según su solicitud: para desbloquearlo, haga clic %1aquí%2."
@@ -13144,7 +13132,7 @@ msgid "Your violation of any applicable law, rule or regulation;"
 msgstr "Su violación de cualquier ley, regla o regulación aplicable;"
 
 msgid "Your virtual account balance is currently %1 or less. You may top up your account with an additional %2."
-msgstr ""
+msgstr "El saldo de su cuenta virtual es actualmente %1 o menos. Puede recargar su cuenta con unos %2 adicionales."
 
 msgid "Your web browser (%1) is out of date and may affect your trading experience. Proceed at your own risk. %2Update browser%3"
 msgstr "Su buscador web (%1) está desactualizado y puede afectar su experiencia comercial. Continúe bajo su propio riesgo. %2Actualizar buscador%3"
@@ -13462,13 +13450,13 @@ msgid "shall mean these Terms and Conditions regulating the provision of service
 msgstr "significará estos Términos y Condiciones que regulan la provisión de servicios."
 
 msgid "size - the size of client order determined by the volume (number of lots)"
-msgstr ""
+msgstr "tamaño - el tamaño de orden del cliente determinado por el volumen (número de lotes)"
 
 msgid "space"
 msgstr "espacio"
 
 msgid "speed - the speed at which client order can be executed"
-msgstr ""
+msgstr "velocidad - la velocidad a la que se puede ejecutar la orden del cliente"
 
 msgid "stop loss orders."
 msgstr "órdenes stop loss."
@@ -13507,7 +13495,7 @@ msgid "the market conditions of the financial instruments that client orders are
 msgstr ""
 
 msgid "the price at which the client's order will be executed;"
-msgstr ""
+msgstr "el precio al que se ejecutará la orden del cliente;"
 
 msgid "the provisions of this Agreement or any Orders and any applicable laws will not be breached or violated;"
 msgstr "las disposiciones del presente Acuerdo o cualquier Órden y ley aplicable no se incumplirán ni violarán;"
@@ -13519,13 +13507,13 @@ msgid "the scheme specified in the Investor Compensation Scheme Regulations (Law
 msgstr ""
 
 msgid "the specific instructions that the Company receives from the client;"
-msgstr ""
+msgstr "las instrucciones específicas que la Compañía recibe del cliente;"
 
 msgid "the time at which the client's order will be executed; and"
-msgstr ""
+msgstr "la hora en que se ejecutará la orden del cliente; y"
 
 msgid "the timeframe or duration of the contract as defined by the client's order execution."
-msgstr ""
+msgstr "el plazo o la duración del contrato según lo definido por la ejecución de la orden del cliente."
 
 msgid "the underlying currency, or Financial Instrument, on which the price of the CFD is based."
 msgstr "la moneda subyacente, o Instrumento Financiero, en el cual se base el precio del CFD."

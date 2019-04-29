@@ -99,11 +99,11 @@ export default class TradeStore extends BaseStore {
     @observable proposal_info = {};
     @observable purchase_info = {};
 
+    // Loading
+    @observable loading_status = '';
+
     // Query string
     query = '';
-
-    // Chart
-    chart_id = 1;
 
     debouncedProposal = debounce(this.requestProposal, 500);
     proposal_requests = {};
@@ -453,11 +453,9 @@ export default class TradeStore extends BaseStore {
         this.processNewValuesAsync({ contract_type: parseInt(this.is_equal) ? 'rise_fall_equal' : 'rise_fall' }, true);
     }
 
-    // When you directly need to update the chart symbol
-    // E.g. When opening a contract from positions that has a different symbol from the current symbol.
     @action.bound
-    updateSymbol(symbol) {
-        if (symbol) this.symbol = symbol;
+    updateLoadingStatus(status) {
+        this.loading_status = status;
     }
 
     @action.bound
@@ -474,6 +472,17 @@ export default class TradeStore extends BaseStore {
         [...query_params].forEach(param => config[param[0]] = param[1]);
 
         return config;
+    }
+
+    @action.bound
+    updateSymbol(underlying) {
+        if (!underlying) return;
+        this.onChange({
+            target: {
+                name : 'symbol',
+                value: underlying,
+            },
+        });
     }
 
     @action.bound
@@ -523,6 +532,25 @@ export default class TradeStore extends BaseStore {
         });
         this.updateQueryString();
         this.onSwitchAccount(this.accountSwitcherListener);
+        this.onLoadingMount();
+    }
+
+    @action.bound
+    onLoadingMount() {
+        setTimeout(() => {
+            this.updateLoadingStatus(localize('Retrieving market symbols...'));
+        });
+        setTimeout(() => {
+            this.updateLoadingStatus('');
+            this.updateLoadingStatus(localize('Retrieving trading times...'));
+        }, 1000);
+        setTimeout(() => {
+            this.updateLoadingStatus('');
+            this.updateLoadingStatus(localize('Retrieving chart data...'));
+        }, 2000);
+        setTimeout(() => {
+            this.root_store.ui.setAppLoading(false);
+        }, 3250);
     }
 
     @action.bound

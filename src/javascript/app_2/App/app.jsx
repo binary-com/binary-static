@@ -5,6 +5,7 @@ import getBaseName                 from 'Utils/URL/base-name';
 import { MobxProvider }            from 'Stores/connect';
 import ErrorBoundary               from './Components/Elements/Errors/error-boundary.jsx';
 import { POSITIONS }               from './Components/Elements/ToastMessage';
+import PushNotification            from './Containers/push-notification.jsx';
 import ToastMessage                from './Containers/toast-message.jsx';
 import AppContents                 from './Containers/Layout/app-contents.jsx';
 import Footer                      from './Containers/Layout/footer.jsx';
@@ -30,6 +31,7 @@ const App = ({ root_store }) => (
                             <AppContents>
                                 <Routes />
                                 <ToastMessage position={POSITIONS.TOP_RIGHT} />
+                                <PushNotification />
                             </AppContents>
                             <DenialOfServiceModal />
                             <MarketUnavailableModal />
