@@ -87,30 +87,41 @@ const getStatusValidations = status_arr =>
 
 const hasMissingRequiredField = (State, client) => {
     const is_svg = client.landing_company_shortcode === 'svg'
-    || client.landing_company_shortcode === 'costarica';
+        || client.landing_company_shortcode === 'costarica';
 
-    const necessary_withdrawal_fields = is_svg
-        ? State.getResponse('landing_company.financial_company.requirements.withdrawal')
-        : [];
-    const necessary_signup_fields = is_svg
-        ? State.getResponse('landing_company.financial_company.requirements.signup')
-            .map(field => (field === 'residence' ? 'country' : field))
-        : [];
+    let required_fields;
+    if (is_svg) {
+        required_fields = getSVGRequiredFields();
+    } else {
+        required_fields = getRequiredFields();
+    }
 
-    // eslint-disable-next-line no-nested-ternary
-    const required_fields = is_svg ? [ ...necessary_signup_fields, ...necessary_withdrawal_fields ]
-        : isAccountOfType('financial') ? [
+    const get_settings = State.getResponse('get_settings');
+    return required_fields.some(field => !get_settings[field]);
+
+    function getSVGRequiredFields() {
+        const necessary_withdrawal_fields = State.getResponse('landing_company.financial_company.requirements.withdrawal');
+        const necessary_signup_fields     = State.getResponse('landing_company.financial_company.requirements.signup')
+            .map(field => (field === 'residence' ? 'country' : field));
+
+        return [...necessary_withdrawal_fields, ...necessary_signup_fields ];
+    }
+
+    function getRequiredFields() {
+        if (!isAccountOfType('financial')) return [];
+
+        const required_settings_fields = [
             'account_opening_reason',
             'address_line_1',
             'address_city',
             'phone',
             'tax_identification_number',
-            'tax_residence',
-            ...(client.residence === 'gb' || client.landing_company_shortcode === 'iom' ? ['address_postcode'] : []),
-        ] : [];
+            'tax_residence'];
+        const address_postcode_is_required = client.residence === 'gb' || client.landing_company_shortcode === 'iom';
+        if (address_postcode_is_required) required_settings_fields.push('address_postcode');
 
-    const get_settings = State.getResponse('get_settings');
-    return required_fields.some(field => !get_settings[field]);
+        return [...required_settings_fields];
+    }
 };
 
 export const handleClientNotifications = (State, client, UIStore) => {
