@@ -1,10 +1,10 @@
-import PropType        from 'prop-types';
-import React          from 'react';
-import UILoader       from 'App/Components/Elements/ui-loader.jsx';
-import { connect }    from 'Stores/connect';
-import { isEnded }    from 'Stores/Modules/Contract/Helpers/logic';
-import Digits         from './digits.jsx';
-import InfoBox        from './info-box.jsx';
+import PropType    from 'prop-types';
+import React       from 'react';
+import UILoader    from 'App/Components/Elements/ui-loader.jsx';
+import { connect } from 'Stores/connect';
+import { isEnded } from 'Stores/Modules/Contract/Helpers/logic';
+import Digits      from './digits.jsx';
+import InfoBox     from './info-box.jsx';
 
 class ContractReplay extends React.Component {
     componentDidMount() {
@@ -17,7 +17,7 @@ class ContractReplay extends React.Component {
 
     render() {
         const SmartChart = React.lazy(() => import(/* webpackChunkName: "smart_chart" */'../../SmartChart'));
-        const status = this.props.contract_info.status;
+        const { status } = this.props.contract_info;
 
         if (status) {
             return (

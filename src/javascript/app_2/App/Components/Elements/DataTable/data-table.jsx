@@ -67,7 +67,6 @@ class DataTable extends React.PureComponent {
                         TableData
                         :
                         <Scrollbars
-                            style={{ width: '100%' }}
                             autoHeight
                             autoHide
                         >
