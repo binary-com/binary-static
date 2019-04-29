@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-target-blank */
 import React from 'react';
 import Layout from './_common/layout.jsx';
 
@@ -206,3 +207,4 @@ const gridLP = () => (
 );
 
 export default gridLP;
+/* eslint-enable react/jsx-no-target-blank */
