@@ -180,7 +180,7 @@ const gridLP = () => (
                     </div>
                     <div className='gr-row'>
                         <div className='gr-4'>
-                            <a href={it.url_for('contact')}>
+                            <a href={it.url_for('contact')} target='_blank' rel='noopener'>
                                 <div className='lp-icon icon-academy' />
                                 <p className='content-inverse-color font-s'>{('Help Centre')}</p>
                             </a>
