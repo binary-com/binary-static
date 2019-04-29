@@ -1,26 +1,10 @@
 import classNames                 from 'classnames';
 import PropTypes                  from 'prop-types';
 import React                      from 'react';
-import posed, { PoseGroup }       from 'react-pose';
 import { localize }               from '_common/localize';
 import Button                     from 'App/Components/Form/button.jsx';
 import { IconTradeType }          from 'Assets/Trading/Types';
 import { getContractTypeDisplay } from 'Constants/contract';
-
-const FadeIn = posed.div({
-    enter: {
-        opacity   : 1,
-        transition: {
-            duration: 300,
-        },
-    },
-    exit: {
-        opacity   : 0,
-        transition: {
-            duration: 300,
-        },
-    },
-});
 
 const PurchaseButton = ({
     info,
@@ -28,21 +12,27 @@ const PurchaseButton = ({
     is_disabled,
     is_high_low,
     is_loading,
+    is_param_change,
     onClickPurchase,
     type,
 }) => {
     const getIconType = () => {
-        if (is_loading) return '';
+        if (!is_param_change && is_loading) return '';
         return (is_high_low) ? `${type.toLowerCase()}_barrier` : type.toLowerCase();
     };
+
     return (
         <Button
             is_disabled={is_contract_mode || is_disabled}
             id={`purchase_${type}`}
             className={classNames(
                 'btn-purchase',
-                { 'btn-purchase--disabled': (is_contract_mode || is_disabled) && !is_loading },
-                { 'btn-purchase--animated': is_loading })}
+                {
+                    'btn-purchase--disabled'           : (is_contract_mode || is_disabled) && !is_loading,
+                    'btn-purchase--animated--slide'    : !is_param_change && is_loading,
+                    'btn-purchase--animated--fade'     : is_param_change && is_loading,
+                    'btn-purchase--animated--fade-show': is_param_change && !is_loading,
+                })}
             has_effect
             onClick={() => { onClickPurchase(info.id, info.stake, type); }}
         >
@@ -56,22 +46,14 @@ const PurchaseButton = ({
                     </div>
                     <div className='btn-purchase__text_wrapper'>
                         <span className='btn-purchase__text'>
-                            {!is_loading && localize('[_1]', getContractTypeDisplay(type, is_high_low))}
+                            {(!is_param_change && is_loading) ? '' : localize('[_1]', getContractTypeDisplay(type, is_high_low))}
                         </span>
                     </div>
                 </div>
                 <div className='btn-purchase__effect-detail' />
                 <div className='btn-purchase__info btn-purchase__info--right'>
                     <div className='btn-purchase__text_wrapper'>
-                        <span className='btn-purchase__text'>
-                            {!(is_loading || is_disabled) &&
-                                <PoseGroup>
-                                    <FadeIn key='fade_in' initialPose='exit'>
-                                        {info.returns}
-                                    </FadeIn>
-                                </PoseGroup>
-                            }
-                        </span>
+                        <span className='btn-purchase__text'>{!(is_loading || is_disabled) ? info.returns : ''}</span>
                     </div>
                 </div>
             </React.Fragment>

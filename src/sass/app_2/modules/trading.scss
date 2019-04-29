@@ -1,4 +1,4 @@
-@keyframes data--loading {
+@keyframes slide {
     0% {
         transform: translateX(-100%);
     }
@@ -16,7 +16,7 @@
     &--loading {
         width: inherit;
         height: inherit;
-        animation: data--loading 1s cubic-bezier(1, 0, 0.5, 0) infinite;
+        animation: slide 1s cubic-bezier(1, 0, 0.5, 0) infinite;
         background-image: linear-gradient(to left, rgba(255, 255, 255, 0), $COLOR_WHITE 10%, rgba(255, 255, 255, 0));
         opacity: 0.32;
     }
@@ -464,7 +464,7 @@
             }
         }
     }
-    &--animated {
+    &--animated--slide {
         .btn-purchase__icon_wrapper, .btn-purchase__text_wrapper {
             @extend .loader;
         }
@@ -483,6 +483,13 @@
                 display: block;
             }
         }
+    }
+    &--animated--fade .btn-purchase__info--right .btn-purchase__text {
+        opacity: 0;
+    }
+    &--animated--fade-show .btn-purchase__info--right .btn-purchase__text {
+        opacity: 1;
+        transition: 1s;
     }
     &__shadow-wrapper:hover:after {
         opacity: 0;
