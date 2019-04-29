@@ -43,7 +43,7 @@ class Statement extends React.Component {
 
         const columns = getStatementTableColumnsTemplate();
 
-        if (is_loading || is_empty) {
+        if ((is_loading && data.length === 0) || is_empty) {
             return (
                 <PlaceholderComponent
                     is_loading={is_loading}
@@ -70,7 +70,11 @@ class Statement extends React.Component {
                         // getRowAction={this.getRowAction} TODO uncomment once smart-chart component is fixed.
                         getRowAction={undefined}
                         is_empty={is_empty}
-                    />
+                    >
+                        <PlaceholderComponent
+                            is_loading={is_loading}
+                        />
+                    </DataTable>
                 </div>
             </React.Fragment>
         );

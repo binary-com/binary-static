@@ -10,9 +10,10 @@ const ReportsMeta = ({ i18n_heading, i18n_message }) => (
                 { i18n_message }
             </p>
         </div>
-        <div className='reports__meta-filter'>
-            [FILTER COMPONENT]
-        </div>
+        {/* TODO: Add Filter component (daterangepicker) */}
+        {/* <div className='reports__meta-filter'> */}
+        {/*    [FILTER COMPONENT] */}
+        {/* </div> */}
     </div>
 );
 

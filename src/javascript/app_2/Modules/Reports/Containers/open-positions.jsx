@@ -32,7 +32,7 @@ class OpenPositions extends React.Component {
             return <p>{error}</p>;
         }
 
-        if (is_loading || is_empty) {
+        if ((is_loading && active_positions.length === 0) || is_empty) {
             return (
                 <PlaceholderComponent
                     is_loading={is_loading || !active_positions}
@@ -49,14 +49,20 @@ class OpenPositions extends React.Component {
                     i18n_message={localize('Vestibulum rutrum quam fringilla tincidunt. Suspendisse nec tortor.')}
                 />
                 <div className='open-positions open-positions__content'>
-                    { currency && active_positions.length > 0 && <DataTable
-                        className='open-positions'
-                        columns={getOpenPositionsColumnsTemplate(currency)}
-                        footer={totals}
-                        data_source={active_positions}
-                        getRowAction={undefined}
-                        // getRowAction={(row_obj) => getContractPath(row_obj.id)} TODO uncomment once smart-chart component is fixed.
-                    />}
+                    { currency && active_positions.length > 0 &&
+                        <DataTable
+                            className='open-positions'
+                            columns={getOpenPositionsColumnsTemplate(currency)}
+                            footer={totals}
+                            data_source={active_positions}
+                            getRowAction={undefined}
+                            // getRowAction={(row_obj) => getContractPath(row_obj.id)} TODO uncomment once smart-chart component is fixed.
+                        >
+                            <PlaceholderComponent
+                                is_loading={is_loading}
+                            />
+                        </DataTable>
+                    }
                 </div>
             </React.Fragment>
 
@@ -83,7 +89,7 @@ export default connect(
         currency        : client.currency,
         active_positions: modules.portfolio.active_positions,
         error           : modules.portfolio.error,
-        is_empty        : modules.portfolio.is_empty,
+        is_empty        : modules.portfolio.is_active_empty,
         is_loading      : modules.portfolio.is_loading,
         onMount         : modules.portfolio.onMount,
         onUnmount       : modules.portfolio.onUnmount,

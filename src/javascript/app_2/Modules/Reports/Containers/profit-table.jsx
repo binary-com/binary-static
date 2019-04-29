@@ -35,7 +35,7 @@ class ProfitTable extends React.Component {
 
         const columns = getProfitTableColumnsTemplate();
 
-        if (is_loading || is_empty) {
+        if ((is_loading && data.length === 0) || is_empty) {
             return (
                 <PlaceholderComponent
                     is_loading={is_loading}
@@ -61,7 +61,11 @@ class ProfitTable extends React.Component {
                         footer={totals}
                         getRowAction={(row_obj) => row_obj.id ? getContractPath(row_obj.id) : undefined}
                         is_empty={is_empty}
-                    />
+                    >
+                        <PlaceholderComponent
+                            is_loading={is_loading}
+                        />
+                    </DataTable>
                 </div>
             </React.Fragment>
         );
