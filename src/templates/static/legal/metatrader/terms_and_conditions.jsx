@@ -45,7 +45,7 @@ const TermsAndConditions = () => (
             <li>{it.L('The Company will hold the Client responsible for all their obligations under this agreement in the Company\'s course of providing the Margin trading services that are described in this agreement to the Client even if the Client notifies the Company that they are acting as the agent of an identified principal.')}</li>
         </ol>
 
-        <h2 data-anchor='account-management'>{it.L('E. Account management')}</h2>
+        <h2 data-anchor='account-management'>{it.L('D. Account management')}</h2>
         <ol>
             <li>{it.L('Opening an account')}
                 <ol>
@@ -140,7 +140,7 @@ const TermsAndConditions = () => (
             </li>
         </ol>
 
-        <h2 data-anchor='orders'>{it.L('F. Orders')}</h2>
+        <h2 data-anchor='orders'>{it.L('E. Orders')}</h2>
         <ol>
             <li>{it.L('Order execution/cancellation/modification')}
                 <ol>
@@ -179,7 +179,7 @@ const TermsAndConditions = () => (
                 </ol>
             </li>
         </ol>
-        <h2 data-anchor='margin'>{it.L('G. Margin and Leverage')}</h2>
+        <h2 data-anchor='margin'>{it.L('F. Margin and Leverage')}</h2>
         <ol>
             <li>{it.L('General provisions')}
                 <p>{it.L('The Margin used in Margin calculations will be whichever is bigger: the Margin implied by the account\'s Leverage or the symbol\'s Margin. The account has a specific Margin, but symbol\'s Margin may vary. ')}</p>
@@ -229,7 +229,7 @@ const TermsAndConditions = () => (
             </li>
         </ol>
 
-        <h2 data-anchor='regulatory-provisions'>{it.L('H. Regulatory provisions')}</h2>
+        <h2 data-anchor='regulatory-provisions'>{it.L('G. Regulatory provisions')}</h2>
         <ol>
             <li>{it.L('Potential conflicts of interest')}
                 <ol>
@@ -260,7 +260,7 @@ const TermsAndConditions = () => (
             </li>
         </ol>
 
-        <h2 data-anchor='quotes'>{it.L('I. Quotes')}</h2>
+        <h2 data-anchor='quotes'>{it.L('H. Quotes')}</h2>
         <ol>
             <li>{it.L('Quote provision')}
                 <ol>
@@ -271,7 +271,7 @@ const TermsAndConditions = () => (
             </li>
         </ol>
 
-        <h2 data-anchor='trading-transactions'>{it.L('J. Trading')}</h2>
+        <h2 data-anchor='trading-transactions'>{it.L('I. Trading')}</h2>
         <ol>
             <li>{it.L('Opening a trade')}
                 <ol>
@@ -308,7 +308,7 @@ const TermsAndConditions = () => (
             </li>
         </ol>
 
-        <h2 data-anchor='electronic-trading-platform-and-transactions'>{it.L('K. Electronic trading platform and Transactions')}</h2>
+        <h2 data-anchor='electronic-trading-platform-and-transactions'>{it.L('J. Electronic trading platform and Transactions')}</h2>
         <ol>
             <li>{it.L('All intellectual property rights in the MT5 trading platform are owned by the licensor and shall remain the exclusive property of the licensor. Nothing in this agreement intends to transfer any such rights or to vest any such rights in the Client.')}</li>
             <li>{it.L('The Client\'s use of the MT5 trading platform, whether accessed through or downloaded from the Company website or a third-party website, is governed by the terms of use provided by the MT5 trading platform licensor to the Client. In the event of any conflict between the content of this agreement and the agreement between the Client and the MT5 trading platform licensor, the terms of this agreement shall prevail. It is the Client\'s responsibility to ensure that the information technology that they use is compatible with the required information technology to support the MT5 trading platform.')}</li>
@@ -319,7 +319,7 @@ const TermsAndConditions = () => (
             <li>{it.L('The Company sources market data from prime brokers who act as liquidity providers, thus executing the Client\'s Transactions through a pool of aggregated liquidity from top tier banks. The services offered by the Company do not include physical delivery of foreign currency by the Company or the prime brokers to the Client. The Client acknowledges and agrees that such data is proprietary to the Company and any such provider, and the Client will not retransmit, redistribute, publish, disclose, or display in whole or in part such data to third parties. The Client represents and warrants that they will only use such data for purposes of facilitating their entry into Transactions with the Company on the Client\'s MT5 Real Account in accordance with this agreement and not for any other purpose. This clause does not apply to Volatility Indices.')}</li>
         </ol>
 
-        <h2 data-anchor='event-of-default'>{it.L('L. Event of Default')}</h2>
+        <h2 data-anchor='event-of-default'>{it.L('K. Event of Default')}</h2>
         <ol>
             <li>{it.L('Each of the following events constitute an "Event of Default":')}
                 <ol>
@@ -342,13 +342,13 @@ const TermsAndConditions = () => (
             <li>{it.L('In the event of the Client failing to transfer funds to the Client\'s MT5 Real Account, the Company may, at its absolute discretion, allow the Client\'s Open Positions to remain open and allow the Client to place new Orders to open a Transaction. The Client acknowledges that, when their Open Positions are allowed to remain open, they may incur further losses.')}</li>
         </ol>
 
-        <h2 data-anchor='manifest-error'>{it.L('M. Manifest Error')}</h2>
+        <h2 data-anchor='manifest-error'>{it.L('L. Manifest Error')}</h2>
         <ol>
             <li>{it.L('[_1] reserves the right to void or amend the contractual terms of any Transactions that the Company reasonably believes are entered into at prices that do not reflect fair market prices or that are entered into at an abnormally low level of risk due to an obvious or palpable error (a "Manifest Error"). In deciding whether an error is a Manifest Error, the Company may take into account any relevant information, including the state of the underlying market at the time of the error and any error within, or lack of clarity of, any information source or pronouncement. The Client has a duty to report to the Company any such problems, errors, or suspected system inadequacies that the Client may experience and may not abuse or arbitrage such system problems or errors for profit. The Company will endeavour to resolve any such difficulties in the shortest time possible.', it.website_name)}</li>
             <li>{it.L('Any amendments to the contractual terms of Manifestly Erroneous contracts shall be reasonable and fair and may involve closing and/or opening of positions, placing/deleting Orders without the Client\'s involvement, making changes in Open Positions, deleting trades from trading history, etc. Monies exchanged between the Client and the Company in connection with the Manifestly Erroneous contracts shall be returned to the recipient according to the amendments made to the contractual terms and conditions of this agreement.')}</li>
         </ol>
 
-        <h2 data-anchor='force-majeure-events'>{it.L('N. Force majeure events')}</h2>
+        <h2 data-anchor='force-majeure-events'>{it.L('M. Force majeure events')}</h2>
         <ol>
             <li>{it.L('A force majeure event, if and when determined, means, (i) the Company, by reason of force majeure or act of state, is prevented from, hindered, or delayed in delivering or receiving, or is unable to deliver or receive, any quotation of the Bid and Ask Prices of a market in one or more of the instruments in which the Company ordinarily deals in Transactions; (ii) an excessive movement in the market of the instrument or the Company\'s reasonable anticipation of the potential occurrence of market disruption.')}</li>
             <li>{it.L('If the Company determines that a force majeure event exists, the Company shall promptly give notice thereof to the Client. Subsequently, the Company may, at its absolute discretion, take one or more steps, including but not limited to the following:')}
@@ -364,7 +364,7 @@ const TermsAndConditions = () => (
             <li>{it.L('This section on force majeure events does not apply to Volatility Indices.')}</li>
         </ol>
 
-        <h2 data-anchor='representations-and-warranties'>{it.L('O. Representations and warranties')}</h2>
+        <h2 data-anchor='representations-and-warranties'>{it.L('N. Representations and warranties')}</h2>
         <ol>
             <li>{it.L('When the Client enters into this agreement, they make the following representations and warranties to the Company and agree that such representations and warranties are deemed repeated each time the Client opens or closes a Transaction:')}
                 <ol>
@@ -387,14 +387,14 @@ const TermsAndConditions = () => (
             <li>{it.L('The Client acknowledges that the Company reserves the right to void or close out one or more of the Client\'s Transactions if the Company observes any breaches of warranty given under this agreement.')}</li>
         </ol>
 
-        <h2 data-anchor='indemnification'>{it.L('P. Indemnification')}</h2>
+        <h2 data-anchor='indemnification'>{it.L('O. Indemnification')}</h2>
         <ol>
             <li>{it.L('Neither the Company nor any of its directors, officers, managers, employees, or agents shall be liable for any loss, damage, or debt to the Client arising directly or indirectly out of, or in connection with, this agreement. The Client agrees to indemnify the Company and its directors, officers, managers, employees, or agents from, and against, any and all liabilities, losses, damages, costs, and expenses (including reasonable attorney\'s fees) incurred arising out of the Client\'s failure to comply with any and all of their  obligations set forth in this agreement and/or the Company\'s enforcement against the Client of any and all of its rights under this agreement.')}</li>
             <li>{it.L('Without prejudice to any other terms of this agreement, neither the Company nor any of its directors, officers, managers, employees, or agents shall be liable to the Client in relation to any loss that they have incurred whether directly or indirectly by any cause beyond the Company\'s control, including, but not limited to, any delay or defect in or failure of the whole or any part of the MT5 trading platform or any systems or network links.')}</li>
             <li>{it.L('The Company does not make any warranty, express or implied, that any pricing or other information provided through the MT5 trading platform or otherwise is correct.')}</li>
         </ol>
 
-        <h2 data-anchor='miscellaneous'>{it.L('Q. Miscellaneous')}</h2>
+        <h2 data-anchor='miscellaneous'>{it.L('P. Miscellaneous')}</h2>
         <ol>
             <li>{it.L('The Client agrees that in any legal, arbitration, mediation, regulatory, administration, or any other proceedings initiated by them or by [_1], the Company\'s records related to the Client\'s dealings shall constitute evidence. Subject to the laws and any court, tribunal, competent authority, or government authority orders, requests, instructions, or guidelines, the Client shall not object to the admission of such records on the grounds that they are not originals or in writing, or that they are produced by computers or any other electronic systems whatsoever. The Client shall not rely on the Company to meet any of their disclosures or other obligations imposed by any court, tribunal, competent authority, or government authority.', it.website_name)}</li>
             <li>{it.L('The [_1] website is protected by certain copyrights. The materials comprising the website (including, without limitation, all articles, text, images, logos, compilation, systems, code, and design) are protected by Copyright 1999-2019 Binary group of companies, all rights reserved. Such materials may be copied and distributed on a limited basis for non-commercial purposes only, provided that any material copied remain intact and that all copies include the following notice in a clearly visible position: "Copyright 1999-2019 Binary Ltd. All rights reserved." These materials may not be copied or redistributed for commercial purposes or for compensation of any kind without prior written permission from a member of the Binary Group. [_1] and the bull/bear logo are registered trademarks.', it.website_name)}</li>
@@ -402,7 +402,7 @@ const TermsAndConditions = () => (
             <li>{it.L('In connection with this agreement and all Transactions contemplated by this agreement, the Client agrees to execute and deliver such additional documents and instruments and to perform such additional acts as may be necessary or appropriate to effectuate, carry out, and perform all of the terms, provisions, and conditions of this agreement. The Client shall cooperate fully with any investigation by any regulatory authority and promptly provide the regulatory authority with such information and records as may be requested in compliance with any law, ordinance, charter, by-law, or rule applicable to the Client or the jurisdiction in which they are resident.')}</li>
         </ol>
 
-        <h2 data-anchor='introducing-brokers'>{it.L('R. Introducing Brokers')}</h2>
+        <h2 data-anchor='introducing-brokers'>{it.L('Q. Introducing Brokers')}</h2>
         <p>{it.L('This Agreement sets out the terms and conditions between [_1] and the Introducing Broker in providing Introducing Broker services to the Company in accordance with the provisions and terms of this Agreement.', it.website_name)}</p>
         <p>{it.L('The services offered by the Introducing Broker to the Clients are offered because the Introducing Broker is approved and qualified to offer such services. Additionally, such services are offered by the Introducing Broker fairly, honestly and in good faith and in accordance with all business-ethics rules.')}</p>
         <p>{it.L('It is hereby agreed as follows: ')}</p>
@@ -605,7 +605,7 @@ const TermsAndConditions = () => (
             />
         </ol>
 
-        <h2 data-anchor='interpretation-of-terms'>{it.L('S. Interpretation of terms')}</h2>
+        <h2 data-anchor='interpretation-of-terms'>{it.L('R. Interpretation of terms')}</h2>
         <ol>
             <Li
                 title={it.L('Account Balance')}
