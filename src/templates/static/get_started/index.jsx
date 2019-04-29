@@ -27,6 +27,7 @@ const GetStartedSection = ({ link, hash, image, header, text }) => {
 };
 
 const GetStartedSectionWrapper = ({
+    dataShow,
     section_id,
     section_header,
     section_description,
@@ -34,7 +35,7 @@ const GetStartedSectionWrapper = ({
     section_button_text = '',
     children,
 }) => (
-    <React.Fragment>
+    <div data-show={dataShow || undefined}>
         <div className='gr-padding-30 gr-parent' id={section_id}>
             <h2>{section_header}</h2>
             <p>{section_description}</p>
@@ -47,7 +48,7 @@ const GetStartedSectionWrapper = ({
             {children}
         </div>
         <SeparatorLine invisible className='gr-padding-30' />
-    </React.Fragment>
+    </div>
 );
 
 const CTA = () => (
@@ -161,6 +162,7 @@ const Index = () => (
                             </div>
                         </GetStartedSectionWrapper>
                         <GetStartedSectionWrapper
+                            dataShow='-default'
                             section_id='cryptocurrencies'
                             section_header={it.L('Cryptocurrencies')}
                             section_description={it.L('Cryptocurrencies such as Bitcoin and Ethereum are decentralised digital assets that enable instant payments to anywhere in the world.')}
