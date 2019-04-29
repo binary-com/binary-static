@@ -3,7 +3,7 @@ import Layout from './_common/layout.jsx';
 
 const gridLP = () => (
     <Layout
-        meta_description={`${it.broker_name} Our exciting new mobile trading app, seamless trading on your smartphone.`}
+        meta_description={'Our exciting new mobile trading app, seamless trading on your smartphone.'}
         css_files={[
             it.url_for('css/grid_lp_style.css'),
             'https://style.binary.com/binary.css',
@@ -27,8 +27,8 @@ const gridLP = () => (
                         <div className='gr-row gr-row-align-middle'>
                             <div className='gr-5 gr-12-t gr-12-m gr-12-p'>
                                 <h1 className='header-title content-inverse-color ft-300'>{('Our exciting new mobile trading app')}</h1>
-                                <span className='header-sub secondary-color'>{('Seamless trading on your smartphone')}</span>
-                                <p><a className='button' href='https://grid.binary.me/download/BinaryGrid.apk'><span className='button-lg'>{('Get BinaryGrid now')}</span></a></p>
+                                <span className='header-sub secondary-color'>{('Seamless trading on your smartphone.')}</span>
+                                <p><a className='button' href='https://grid.binary.me/download/BinaryGrid.apk'><span className='button-lg'>{('Get Binary Grid now')}</span></a></p>
                             </div>
                             <div className='gr-7 gr-12-t gr-12-m gr-12-p'><img className='phone' src={it.url_for('images/grid_lp/phone@3x-cmp.png')} alt='seamless trading on your smartphone' /></div>
                         </div>
@@ -166,7 +166,7 @@ const gridLP = () => (
                     </div>
                     <div className='gr-row'>
                         <div className='gr-12 center-text'>
-                            <a className='button' href='https://grid.binary.me/download/BinaryGrid.apk'><span className='button-lg'>{('Get BinaryGrid now')}</span></a>
+                            <a className='button' href='https://grid.binary.me/download/BinaryGrid.apk'><span className='button-lg'>{('Get Binary Grid now')}</span></a>
                         </div>
                     </div>
                 </div>
@@ -180,19 +180,19 @@ const gridLP = () => (
                     </div>
                     <div className='gr-row'>
                         <div className='gr-4'>
-                            <a href='https://www.binary.me/en/contact.html'>
+                            <a href={it.url_for('contact')} target='_blank' rel='noopener noreferrer'>
                                 <div className='lp-icon icon-academy' />
                                 <p className='content-inverse-color font-s'>{('Help Centre')}</p>
                             </a>
                         </div>
                         <div className='gr-4'>
-                            <a href='https://www.facebook.com/binarydotcom'>
+                            <a href='https://www.facebook.com/binarydotcom' target='_blank' rel='noopener noreferrer'>
                                 <div className='lp-icon icon-fb' />
                                 <p className='content-inverse-color font-s'>{('Facebook')}</p>
                             </a>
                         </div>
                         <div className='gr-4'>
-                            <a href='https://t.me/binarydotcom'>
+                            <a href='https://t.me/binarydotcom' target='_blank' rel='noopener noreferrer'>
                                 <div className='lp-icon icon-telegram' />
                                 <p className='content-inverse-color font-s'>{('Telegram')}</p>
                             </a>
