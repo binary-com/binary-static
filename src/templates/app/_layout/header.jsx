@@ -116,6 +116,7 @@ const Header = () => (
                                             className: 'ico-only-hide client_logged_in nav-dropdown-toggle invisible',
                                             subitems : [
                                                 { text: it.L('Asset Index'),       href: it.url_for('resources/asset_indexws') },
+                                                { text: it.L('Trading Duration'),  href: it.url_for('resources/trading_duration') },
                                                 { text: it.L('Trading Times'),     href: it.url_for('resources/market_timesws') },
                                                 { text: it.L('Economic Calendar'), href: it.url_for('resources/economic_calendar') },
                                                 { text: it.L('TradingView'),       href: 'https://tradingview.binary.com',         target: '_blank' },
