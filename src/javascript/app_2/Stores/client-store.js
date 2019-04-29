@@ -10,6 +10,7 @@ import {
     WS }                       from 'Services';
 import { getAccountTitle,
     getRiskAssessment,
+    isAccountOfType,
     shouldAcceptTnc,
     shouldCompleteTax }        from '_common/base/client_base';
 import GTM                     from '_common/base/gtm';
@@ -349,6 +350,42 @@ export default class ClientStore extends BaseStore {
                             this.root_store.ui.addNotification({
                                 header : localize('Terms & Conditions Updated'),
                                 message: localize('Please accept the updated Terms and Conditions to enable deposit and trading.'),
+                                type   : 'danger',
+                            });
+                        }
+                        const hasMissingRequiredField = () => {
+                            const is_svg = this.accounts[this.loginid].landing_company_shortcode === 'svg'
+                            || this.accounts[this.loginid].landing_company_shortcode === 'costarica';
+
+                            const necessary_withdrawal_fields = is_svg
+                                ? State.getResponse('landing_company.financial_company.requirements.withdrawal')
+                                : [];
+                            const necessary_signup_fields = is_svg
+                                ? State.getResponse('landing_company.financial_company.requirements.signup')
+                                    .map(field => (field === 'residence' ? 'country' : field))
+                                : [];
+
+                            // eslint-disable-next-line no-nested-ternary
+                            const required_fields = is_svg ? [ ...necessary_signup_fields, ...necessary_withdrawal_fields ]
+                                : isAccountOfType('financial') ? [
+                                    'account_opening_reason',
+                                    'address_line_1',
+                                    'address_city',
+                                    'phone',
+                                    'tax_identification_number',
+                                    'tax_residence',
+                                    'test',
+                                    ...(this.accounts[this.loginid].residence === 'gb' || this.accounts[this.loginid].landing_company_shortcode === 'iom' ? ['address_postcode'] : []),
+                                ] : [];
+
+                            const get_settings = State.getResponse('get_settings');
+                            return required_fields.some(field => !get_settings[field]);
+                        };
+
+                        if (hasMissingRequiredField()) {
+                            this.root_store.ui.addNotification({
+                                header : localize('Complete your personal details'),
+                                message: localize('Please complete your Personal Details before you proceed.'),
                                 type   : 'danger',
                             });
                         }
