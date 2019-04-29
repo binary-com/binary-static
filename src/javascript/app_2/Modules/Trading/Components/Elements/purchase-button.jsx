@@ -63,15 +63,15 @@ const PurchaseButton = ({
                 <div className='btn-purchase__effect-detail' />
                 <div className='btn-purchase__info btn-purchase__info--right'>
                     <div className='btn-purchase__text_wrapper'>
-                        {!(is_loading || is_disabled) ?
-                            <PoseGroup>
-                                <FadeIn key='fade_in' initialPose='exit'>
-                                    <span className='btn-purchase__text'>{info.returns}</span>
-                                </FadeIn>
-                            </PoseGroup>
-                            :
-                            <span className='btn-purchase__text' />
-                        }
+                        <span className='btn-purchase__text'>
+                            {!(is_loading || is_disabled) &&
+                                <PoseGroup>
+                                    <FadeIn key='fade_in' initialPose='exit'>
+                                        {info.returns}
+                                    </FadeIn>
+                                </PoseGroup>
+                            }
+                        </span>
                     </div>
                 </div>
             </React.Fragment>
