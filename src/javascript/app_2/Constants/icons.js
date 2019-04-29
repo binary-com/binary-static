@@ -11,7 +11,7 @@ import { IconClear }              from 'Assets/Common/icon-clear.jsx';
 import { IconClock }              from 'Assets/Common/icon-clock.jsx';
 import { IconClose }              from 'Assets/Common/icon-close.jsx';
 import { IconCountryFlag }        from 'Assets/Common/icon-country-flag.jsx';
-import { IconDanger }              from 'Assets/Common/icon-danger.jsx';
+import { IconDanger }             from 'Assets/Common/icon-danger.jsx';
 import { IconExclamation }        from 'Assets/Common/icon-exclamation.jsx';
 import { IconFlag }               from 'Assets/Common/icon-flag.jsx';
 import { IconInfoBlue }           from 'Assets/Common/icon-info-blue.jsx';

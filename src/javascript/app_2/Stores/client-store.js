@@ -51,10 +51,8 @@ export default class ClientStore extends BaseStore {
         return !!(
             !this.is_logged_in || this.is_virtual
             // TODO: [only_virtual] uncomment below line to enable app_2 for costarica
-            || this.accounts[this.loginid].landing_company_shortcode === 'costarica'
-            || this.accounts[this.loginid].landing_company_shortcode === 'svg'
-            || this.accounts[this.loginid].landing_company_shortcode === 'malta'
-            || this.accounts[this.loginid].landing_company_shortcode === 'maltainvest'
+            // || this.accounts[this.loginid].landing_company_shortcode === 'costarica'
+            // || this.accounts[this.loginid].landing_company_shortcode === 'svg'
         );  // TODO [->svg]
     }
 
@@ -252,7 +250,9 @@ export default class ClientStore extends BaseStore {
 
         const client = this.accounts[this.loginid];
         if (client) {
-            handleClientNotifications(State, client, this.root_store.ui);
+            BinarySocket.wait('landing_company', 'website_status', 'get_settings').then(() => {
+                handleClientNotifications(State, client, this.root_store.ui);
+            });
         }
 
         this.selectCurrency('');
