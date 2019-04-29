@@ -55,13 +55,6 @@ const RiskDisclaimer = () => (
 
         <h2 data-anchor='costs-and-charges'>{it.L('Costs and Charges')}</h2>
         <p>{it.L('Our costs and charges for depositing and withdrawing money are set out [_1]here[_2]. Please be aware of all costs and charges that apply to you because they will affect your profitability.', `<a href="${it.url_for('cashier/payment_methods')}">`, '</a>')}</p>
-
-        <div data-show='-default'>
-            <h2 data-anchor='cryptocurrency-risks'>{it.L('Cryptocurrency Risks')}</h2>
-            <p>{it.L('Cryptocurrencies are volatile assets that are extremely vulnerable to market fluctuations. Trading in cryptocurrencies is a highly speculative investment because prices of cryptocurrencies can go up and down &mdash; potentially to a worthless (zero) value. You should not trade in cryptocurrencies unless you fully understand and are aware that trades and /or investments involving cryptocurrencies are complex and high risk in nature and you not only risk incurring significant losses over a short period of time but also risk losing all your invested capital.')}</p>
-            <p>{it.L('If you lose your cryptocurrencies as a result of exchanges and wallet providers being hacked or becoming insolvent, there is no assurance of a recourse. It is your responsibility to store your cryptocurrencies securely. [_1] will not accept liability for any loss or damage that arise, directly or indirectly, from theft of your cryptocurrency or insolvency of exchanges and wallet providers that you use.', it.website_name)}</p>
-            <p>{it.L('All transactions that occur on the blockchain related to cryptocurrency may not be supervised and regulated by financial institutions and government agencies. The absence of an overarching authority overseeing cryptographic transactions means that there is no recourse to banks, payment service providers, or regulators in the event of erroneous or fraudulent transactions. It is your responsibility to check what rules and protections apply in your relevant jurisdiction before investing and / or trading in virtual currency and / or trading on contracts for differences relating to virtual currency. Please be aware of all the risks associated with cryptocurrency trading and seek advice from an independent financial advisor and / or legal advisor if you have any doubts.')}</p>
-        </div>
     </div>
 );
 
