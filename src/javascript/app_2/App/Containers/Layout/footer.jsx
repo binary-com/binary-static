@@ -16,6 +16,7 @@ const Footer = ({
     is_fully_blurred,
     is_dark_mode,
     is_language_dialog_visible,
+    is_loading,
     is_logged_in,
     is_positions_drawer_on,
     is_settings_dialog_on,
@@ -25,6 +26,7 @@ const Footer = ({
 }) => (
     <footer className={classNames('footer', {
         'footer--is-blurred': is_fully_blurred,
+        'footer--show'      : !is_loading,
     })}
     >
         <div className='footer__links footer__links--left'>
@@ -73,6 +75,7 @@ export default connect(
         is_dark_mode              : ui.is_dark_mode_on,
         is_logged_in              : client.is_logged_in,
         is_language_dialog_visible: ui.is_language_dialog_on,
+        is_loading                : ui.is_loading,
         is_positions_drawer_on    : ui.is_positions_drawer_on,
         is_settings_dialog_on     : ui.is_settings_dialog_on,
         showFullBlur              : ui.showFullBlur,

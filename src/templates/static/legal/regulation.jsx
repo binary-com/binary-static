@@ -162,18 +162,32 @@ const Regulation = () => {
                         </div>
                     </div>
 
-                    <h3>{it.L('MiFID II RTS 28')}</h3>
-                    <div>
-                        <FillBox
-                            padding='5'
-                            center
-                            border='border-dark-gray'
-                            className='margin-top-17'
-                            image='images/pages/regulation/pdf-icon.svg'
-                            href={it.url_for('/download/BIEL-RTS28.pdf')}
-                            target='_blank'
-                            text={it.L('Annual Best Execution Disclosure 2017')}
-                        />
+                    <h3>{it.L('RTS 28')}</h3>
+                    <div className='gr-row'>
+                        <div className='gr-6 gr-12-m'>
+                            <FillBox
+                                align_left
+                                center
+                                border='border-dark-gray'
+                                className='margin-top-17 align-start'
+                                image='images/pages/regulation/pdf-icon.svg'
+                                href={it.url_for('/download/BIEL-RTS28-for-2017.pdf')}
+                                target='_blank'
+                                text={it.L('BIEL RTS28 for 2017')}
+                            />
+                        </div>
+                        <div className='gr-6 gr-12-m'>
+                            <FillBox
+                                align_left
+                                center
+                                border='border-dark-gray'
+                                className='margin-top-17 align-start'
+                                image='images/pages/regulation/pdf-icon.svg'
+                                href={it.url_for('/download/BIEL-RTS28-for-2018.pdf')}
+                                target='_blank'
+                                text={it.L('BIEL RTS28 for 2018')}
+                            />
+                        </div>
                     </div>
 
                     <h3>{it.L('RTS 27')}</h3>
@@ -297,7 +311,7 @@ const Regulation = () => {
             </Box>
 
             <Box header={it.L('Binary (BVI) Ltd')} >
-                <p>{it.L('Binary (BVI) Ltd, 2nd Floor, O\'Neal Marketing Associates Building, Wickham\'s Cay II, P.O. Box 3174, Road Town, Tortola VB1110, British Virgin Islands. Licensed and regulated by the British Virgin Islands Financial Services Commission - [_1]view licence[_2].', `<a href=${it.url_for('download/regulation/BVI_license.pdf')} target="_blank">`, '</a>')}</p>
+                <p>{it.L('Binary (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, British Virgin Islands. Licensed and regulated by the British Virgin Islands Financial Services Commission - [_1]view licence[_2].', `<a href=${it.url_for('download/regulation/BVI_license.pdf')} target="_blank">`, '</a>')}</p>
                 <p>{it.L('Clients from the rest of the world (excluding certain countries such as the USA, Canada, Costa Rica, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Binary (BVI) Ltd. [_1] is not available in the British Virgin Islands.', it.website_name)}</p>
                 <RegulatorText />
                 <RegulatorImage href='http://www.bvifsc.vg/' image='images/pages/regulation/bvi.png' />

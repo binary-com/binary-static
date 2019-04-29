@@ -4,6 +4,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import getBaseName                 from 'Utils/URL/base-name';
 import { MobxProvider }            from 'Stores/connect';
 import ErrorBoundary               from './Components/Elements/Errors/error-boundary.jsx';
+import PushNotification            from './Containers/push-notification.jsx';
 import AppContents                 from './Containers/Layout/app-contents.jsx';
 import Footer                      from './Containers/Layout/footer.jsx';
 import Header                      from './Containers/Layout/header.jsx';
@@ -27,6 +28,7 @@ const App = ({ root_store }) => (
                         <ErrorBoundary>
                             <AppContents>
                                 <Routes />
+                                <PushNotification />
                             </AppContents>
                             <DenialOfServiceModal />
                             <MarketUnavailableModal />
