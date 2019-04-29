@@ -1,10 +1,26 @@
 import classNames                 from 'classnames';
 import PropTypes                  from 'prop-types';
 import React                      from 'react';
+import posed, { PoseGroup }       from 'react-pose';
 import { localize }               from '_common/localize';
 import Button                     from 'App/Components/Form/button.jsx';
 import { IconTradeType }          from 'Assets/Trading/Types';
 import { getContractTypeDisplay } from 'Constants/contract';
+
+const FadeIn = posed.div({
+    enter: {
+        opacity   : 1,
+        transition: {
+            duration: 300,
+        },
+    },
+    exit: {
+        opacity   : 0,
+        transition: {
+            duration: 300,
+        },
+    },
+});
 
 const PurchaseButton = ({
     info,
@@ -47,7 +63,15 @@ const PurchaseButton = ({
                 <div className='btn-purchase__effect-detail' />
                 <div className='btn-purchase__info btn-purchase__info--right'>
                     <div className='btn-purchase__text_wrapper'>
-                        <span className='btn-purchase__text'>{is_loading || is_disabled ? '' : info.returns}</span>
+                        {!(is_loading || is_disabled) ?
+                            <PoseGroup>
+                                <FadeIn key='fade_in' initialPose='exit'>
+                                    <span className='btn-purchase__text'>{info.returns}</span>
+                                </FadeIn>
+                            </PoseGroup>
+                            :
+                            <span className='btn-purchase__text' />
+                        }
                     </div>
                 </div>
             </React.Fragment>
