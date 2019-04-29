@@ -44,8 +44,8 @@ class PositionsDrawer extends React.Component {
         } else if (is_empty) {
             body_content = <EmptyPortfolioMessage />;
         } else {
-            // Show only 4 most recent open contracts
-            body_content = all_positions.slice(0, 4).map((portfolio_position) => (
+            // Show only 5 most recent open contracts
+            body_content = all_positions.slice(0, 5).map((portfolio_position) => (
                 <CSSTransition
                     key={portfolio_position.id}
                     in={!!(portfolio_position.contract_info.underlying)}
