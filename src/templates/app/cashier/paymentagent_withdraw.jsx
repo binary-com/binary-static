@@ -1,6 +1,10 @@
-import React from 'react';
-import { FormRow, Fieldset, SubmitButton } from '../../_common/components/forms.jsx';
+import React                from 'react';
 import FormVerificationCode from '../_includes/form_verification_code.jsx';
+import {
+    FormRow,
+    Fieldset,
+    SubmitButton }          from '../../_common/components/forms.jsx';
+import { SeparatorLine }    from '../../_common/components/separator_line.jsx';
 
 const PaymentAgentWithdraw = () => (
     <React.Fragment>
@@ -49,10 +53,27 @@ const PaymentAgentWithdraw = () => (
 
                 <form className='form gr-padding-10' id='frmWithdrawal'>
                     <Fieldset>
-                        <FormRow label={it.L('Transfer to Payment Agent')} id='ddlAgents' type='select' />
+                        <FormRow label={it.L('Transfer funds to a payment agent')} type='custom' row_class='wrapper-row-agent'>
+                            <div className='row-agent'>
+                                <div>
+                                    <select id='ddlAgents' className='form_input' />
+                                </div>
+                                <div>{it.L('or')}</div>
+                                <div>
+                                    <input id='txtAgents' type='text' className='form_input' maxLength='12' placeholder={it.L('Enter payment agent ID')} data-lpignore='true' />
+                                    <div className='hint'>
+                                        {it.L('If the payment agent is not listed, type in the payment agent ID. For example: CR000000.')}
+                                    </div>
+                                </div>
+                                <p className='error-msg no-margin invisible'>This field is required.</p>
+                            </div>
+                        </FormRow>
+                        <div className='gr-9 gr-centered'>
+                            <SeparatorLine className='gr-padding-10' show_mobile />
+                        </div>
                         <FormRow label={it.L('Amount')} id='txtAmount' type='text' />
                         <FormRow
-                            label={it.L('Further Instructions')}
+                            label={it.L('Further instructions')}
                             id='txtDescription'
                             type='textarea'
                             attributes={{ rows: 4, cols: 19, maxLength: 250 }}

@@ -3,10 +3,11 @@
     position: fixed;
     z-index: 99;
     box-sizing: border-box;
+    opacity: 0;
+    height: 0;
     width: 100%;
-    height: $HEADER_HEIGHT;
     top: 0;
-    transition: filter 0.25s linear;
+    transition: height 0.25s, opacity 0.25s, filter 0.25s linear;
     backface-visibility: hidden;
     filter: blur(0);
     @include themify($themes) {
@@ -16,6 +17,10 @@
 
     &--is-blurred {
         filter: blur(3px);
+    }
+    &--show {
+        opacity: 1;
+        height: $HEADER_HEIGHT;
     }
     &__menu-items {
         display: flex;
