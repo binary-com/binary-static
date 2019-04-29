@@ -25,6 +25,6 @@ Label.propTypes = {
         PropTypes.arrayOf(PropTypes.node),
         PropTypes.node,
     ]),
-    mode: PropTypes.string,
+    mode: PropTypes.oneOf(available_modes),
 };
 export default Label;

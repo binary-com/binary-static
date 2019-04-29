@@ -18,7 +18,7 @@ class ProgressSliderStream extends React.Component {
             return <div />;
         }
 
-        const contract_info = position.contract_info;
+        const { contract_info } = position;
         const percentage = getTimePercentage(server_time, contract_info.purchase_time, contract_info.date_expiry);
 
         return <ProgressSlider

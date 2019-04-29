@@ -1,11 +1,12 @@
 import {
     action,
     computed,
-    observable }                        from 'mobx';
-import moment                           from 'moment';
-import { WS }                           from 'Services';
-import { formatProfitTableTransactions }   from './Helpers/format-response';
-import BaseStore                        from '../../base-store';
+    observable,
+}                                        from 'mobx';
+import moment                            from 'moment';
+import { WS }                            from 'Services';
+import { formatProfitTableTransactions } from './Helpers/format-response';
+import BaseStore                         from '../../base-store';
 
 export default class ProfitTableStore extends BaseStore {
     @observable data           = [];

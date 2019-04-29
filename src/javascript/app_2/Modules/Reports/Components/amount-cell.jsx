@@ -1,8 +1,9 @@
-import React      from 'react';
-import PropTypes  from 'prop-types';
+import React              from 'react';
+import PropTypes          from 'prop-types';
+import { isProfitOrLoss } from '../Helpers/profit-loss';
 
 const AmountCell = ({ value }) => {
-    const status = +value.replace(/,/g, '') >= 0 ? 'profit' : 'loss';
+    const status = isProfitOrLoss(value);
 
     return (
         <span className={`amount--${status}`}>

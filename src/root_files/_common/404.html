@@ -85,7 +85,7 @@
             ws.send(JSON.stringify({ website_status: 1 }));
         };
 
-        ws.onmessage = function(msg) {لهف
+        ws.onmessage = function(msg) {
             var response = JSON.parse(msg.data);
             if (response.msg_type === 'website_status') {
                 var lang;
