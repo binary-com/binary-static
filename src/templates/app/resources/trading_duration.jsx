@@ -58,10 +58,14 @@ const TradingDurations = () => (
                                 </tr>
                             </thead>
                             <tbody>
-                                <td rowSpan='5' className='trading-durations__table--assets'> {/* rowspan=array.symbols.length */}
-                                    {/* Loop array.symbols */}
-                                    ASSETS {/* array.symbols.display_name */}
-                                </td>
+                                <tr>
+                                    <th rowSpan='5' className='trading-durations__table--assets'> {/* rowspan=array.symbols.length */}
+                                        {/* Loop array.symbols */}
+                                        ASSETS
+                                        {/* array.symbols.display_name */}
+                                        <br />
+                                    </th>
+                                </tr>
                                 {/* Loop array.trade_durations */}
                                 <tr>
                                     <td>trade/type</td> {/* array.trade_durations.trade_type.display_name */}
