@@ -7,7 +7,6 @@ import { urlFor }      from '_common/url';
 import {
     AccountInfo,
     DepositButton,
-    // InstallPWAButton,
     LoginButton,
     MenuLinks,
     SignupButton,
@@ -21,132 +20,100 @@ const Header = ({
     can_upgrade,
     can_upgrade_to,
     currency,
-    // hideInstallButton,
     is_acc_switcher_on,
     is_fully_blurred,
-    // is_install_button_visible,
+    is_loading,
     is_logged_in,
     is_mobile,
     is_virtual,
     loginid,
     onClickUpgrade,
-    // pwa_prompt_event,
-    setPWAPromptEvent,
-    showInstallButton,
     toggleAccountsDialog,
-}) => {
-
-    window.addEventListener('beforeinstallprompt', e => {
-        console.log('Going to show the installation prompt'); // eslint-disable-line no-console
-
-        e.preventDefault();
-
-        setPWAPromptEvent(e);
-        showInstallButton();
-
-    });
-
-    return (
-        <header className={classNames('header', {
-            'header--is-blurred': is_fully_blurred,
-        })}
-        >
-            <div className='header__menu-items'>
-                <div className='header__menu-left'>
-                    {is_mobile && <ToggleMenuDrawer />}
-                    <MenuLinks
-                        is_logged_in={is_logged_in}
-                        items={header_links}
-                    />
-                </div>
-                <div className='header__menu-right'>
-                    <div className='acc-info__container'>
-                        {/* TODO: uncomment to show PWA Install button */}
-                        {/* { is_install_button_visible && is_logged_in &&
-                            <InstallPWAButton
-                                className='acc-info__button'
-                                prompt_event={pwa_prompt_event}
-                                onClick={hideInstallButton}
+}) => (
+    <header className={classNames('header', {
+        'header--is-blurred': is_fully_blurred,
+        'header--show'      : !is_loading,
+    })}
+    >
+        <div className='header__menu-items'>
+            <div className='header__menu-left'>
+                {is_mobile && <ToggleMenuDrawer />}
+                <MenuLinks
+                    is_logged_in={is_logged_in}
+                    items={header_links}
+                />
+            </div>
+            <div className='header__menu-right'>
+                <div className='acc-info__container'>
+                    { is_logged_in ?
+                        <React.Fragment>
+                            <AccountInfo
+                                balance={formatMoney(currency, balance, true)}
+                                is_upgrade_enabled={can_upgrade}
+                                is_virtual={is_virtual}
+                                onClickUpgrade={onClickUpgrade}
+                                currency={currency}
+                                loginid={loginid}
+                                is_dialog_on={is_acc_switcher_on}
+                                toggleDialog={toggleAccountsDialog}
                             />
-                        } */}
-                        { is_logged_in ?
-                            <React.Fragment>
-                                <AccountInfo
-                                    balance={formatMoney(currency, balance, true)}
-                                    is_upgrade_enabled={can_upgrade}
-                                    is_virtual={is_virtual}
-                                    onClickUpgrade={onClickUpgrade}
-                                    currency={currency}
-                                    loginid={loginid}
-                                    is_dialog_on={is_acc_switcher_on}
-                                    toggleDialog={toggleAccountsDialog}
-                                />
-                                { !!(can_upgrade_to && is_virtual) &&
-                                <UpgradeButton
-                                    className='acc-info__button'
-                                    onClick={() => {
-                                        window.open(urlFor('user/accounts', undefined, undefined, true));
-                                    }}
-                                />
-                                }
-                                { !(is_virtual) &&
-                                <DepositButton className='acc-info__button' />
-                                }
-                            </React.Fragment>
-                            :
-                            <React.Fragment>
-                                <LoginButton className='acc-info__button' />
-                                <SignupButton className='acc-info__button' />
-                            </React.Fragment>
-                        }
-                    </div>
+                            { !!(can_upgrade_to && is_virtual) &&
+                            <UpgradeButton
+                                className='acc-info__button'
+                                onClick={() => {
+                                    window.open(urlFor('user/accounts', undefined, undefined, true));
+                                }}
+                            />
+                            }
+                            { !(is_virtual) &&
+                            <DepositButton className='acc-info__button' />
+                            }
+                        </React.Fragment>
+                        :
+                        <React.Fragment>
+                            <LoginButton className='acc-info__button' />
+                            <SignupButton className='acc-info__button' />
+                        </React.Fragment>
+                    }
                 </div>
             </div>
-        </header>
-    );
-};
+        </div>
+    </header>
+);
 
 Header.propTypes = {
-    balance                  : PropTypes.string,
-    can_upgrade              : PropTypes.bool,
-    can_upgrade_to           : PropTypes.string,
-    currency                 : PropTypes.string,
-    hideInstallButton        : PropTypes.func,
-    is_acc_switcher_on       : PropTypes.bool,
-    is_dark_mode             : PropTypes.bool,
-    is_fully_blurred         : PropTypes.bool,
-    is_install_button_visible: PropTypes.bool,
-    is_logged_in             : PropTypes.bool,
-    is_mobile                : PropTypes.bool,
-    is_virtual               : PropTypes.bool,
-    loginid                  : PropTypes.string,
-    onClickUpgrade           : PropTypes.func,
-    pwa_prompt_event         : PropTypes.object, // TODO: add click handler
-    setPWAPromptEvent        : PropTypes.func,
-    showInstallButton        : PropTypes.func,
-    toggleAccountsDialog     : PropTypes.func,
+    balance             : PropTypes.string,
+    can_upgrade         : PropTypes.bool,
+    can_upgrade_to      : PropTypes.string,
+    currency            : PropTypes.string,
+    is_acc_switcher_on  : PropTypes.bool,
+    is_dark_mode        : PropTypes.bool,
+    is_fully_blurred    : PropTypes.bool,
+    is_loading          : PropTypes.bool,
+    is_logged_in        : PropTypes.bool,
+    is_mobile           : PropTypes.bool,
+    is_virtual          : PropTypes.bool,
+    loginid             : PropTypes.string,
+    onClickUpgrade      : PropTypes.func,
+    toggleAccountsDialog: PropTypes.func,
 };
 
 // need to wrap withRouter around connect
 // to prevent updates on <MenuLinks /> from being blocked
 export default withRouter(connect(
     ({ client, ui }) => ({
-        balance                  : client.balance,
-        can_upgrade              : client.can_upgrade,
-        can_upgrade_to           : client.can_upgrade_to,
-        currency                 : client.currency,
-        is_logged_in             : client.is_logged_in,
-        is_virtual               : client.is_virtual,
-        loginid                  : client.loginid,
-        hideInstallButton        : ui.hideInstallButton,
-        is_acc_switcher_on       : ui.is_accounts_switcher_on,
-        is_fully_blurred         : ui.is_fully_blurred,
-        is_dark_mode             : ui.is_dark_mode_on,
-        is_install_button_visible: ui.is_install_button_visible,
-        is_mobile                : ui.is_mobile,
-        pwa_prompt_event         : ui.pwa_prompt_event,
-        setPWAPromptEvent        : ui.setPWAPromptEvent,
-        showInstallButton        : ui.showInstallButton,
-        toggleAccountsDialog     : ui.toggleAccountsDialog,
+        balance             : client.balance,
+        can_upgrade         : client.can_upgrade,
+        can_upgrade_to      : client.can_upgrade_to,
+        currency            : client.currency,
+        is_loading          : ui.is_loading,
+        is_logged_in        : client.is_logged_in,
+        is_virtual          : client.is_virtual,
+        loginid             : client.loginid,
+        is_acc_switcher_on  : ui.is_accounts_switcher_on,
+        is_dark_mode        : ui.is_dark_mode_on,
+        is_fully_blurred    : ui.is_fully_blurred,
+        is_mobile           : ui.is_mobile,
+        toggleAccountsDialog: ui.toggleAccountsDialog,
     })
 )(Header));

@@ -12,7 +12,10 @@ class HighlightWrapper extends React.PureComponent {
     componentDidMount() {
         const active_button_el = [...this.node.getElementsByClassName('button-menu__button--active')][0];
         if (!this.node) return;
-        this.updateHighlightPosition(active_button_el);
+        // Timeout needed here for bug where the el is returning wrong width and offset after mount
+        setTimeout(() => {
+            this.updateHighlightPosition(active_button_el);
+        }, 250);
     }
 
     componentDidUpdate() {
