@@ -28,7 +28,7 @@ const gridLP = () => (
                             <div className='gr-5 gr-12-t gr-12-m gr-12-p'>
                                 <h1 className='header-title content-inverse-color ft-300'>{('Our exciting new mobile trading app')}</h1>
                                 <span className='header-sub secondary-color'>{('Seamless trading on your smartphone')}</span>
-                                <p><a className='button' href=''><span className='button-lg'>{('Get BinaryGrid now')}</span></a></p>
+                                <p><a className='button' href='https://grid.binary.me/download/BinaryGrid.apk'><span className='button-lg'>{('Get BinaryGrid now')}</span></a></p>
                             </div>
                             <div className='gr-7 gr-12-t gr-12-m gr-12-p'><img className='phone' src={it.url_for('images/grid_lp/phone@3x-cmp.png')} alt='seamless trading on your smartphone' /></div>
                         </div>
@@ -123,43 +123,50 @@ const gridLP = () => (
                             <h2 className='primary-color'>{('Ready to get started? Get Binary Grid for Android')}</h2>
                         </div>
                     </div>
-                    <div className='gr-row'>
+                    <div className='gr-row center-text'>
                         <div className='gr-3 gr-12-t gr-12-m gr-12-p col-step'>
+                            <div className='line-right' />
                             <div className='step icon-step-1' />
-                            <p>{('Go here to download Binary Grid for Android.')}</p>
+                            <p>{('Go')} <a href='https://grid.binary.me/download/BinaryGrid.apk'>{('here')}</a> {('to download Binary Grid for Android.')}</p>
                         </div>
                         <div className='gr-3 gr-12-t gr-12-m gr-12-p col-step'>
+                            <div className='line-left' />
+                            <div className='line-right' />
                             <div className='step icon-step-2' />
-                            <p>{('Go here to download Binary Grid for Android.')}</p>
+                            <p>{('Choose the downloaded .apk file to install.')}</p>
                         </div>
                         <div className='gr-3 gr-12-t gr-12-m gr-12-p col-step'>
+                            <div className='line-left' />
+                            <div className='line-right' />
                             <div className='step icon-step-3' />
-                            <p>{('to download Binary Grid for Android.')}</p>
+                            <p>{('Once installation is complete, tap on the app icon to open.')}</p>
                         </div>
                         <div className='gr-3 gr-12-t gr-12-m gr-12-p col-step'>
+                            <div className='line-left' />
                             <div className='step icon-step-4' />
-                            <p>{('to download Binary Grid for Android.')}</p>
+                            <p className='ft-bold'>{('Start trading!')}</p>
                         </div>
                     </div>
                     <div className='divider' />
                     <div className='gr-row gr-row-align-around'>
-                        <div className='gr-4 gr-12-t gr-12-m gr-12-p'>
-                            <div className='white-bg-color padding-md'>
-                                <p>{('Only available for Android devices at the moment.')}</p>
-                                <p>{('Binary Grid for iOS devices coming soon.')}</p>
+                        <div className='gr-6 gr-12-t gr-12-m gr-12-p'>
+                            <div className='padding-md ft-bold'>
+                                <p>{('Only available for Android devices at the moment.')}<span className='block-element'>{('Binary Grid for iOS devices coming soon.')}</span></p>
                             </div>
                         </div>
                         <div className='gr-4 gr-12-t gr-12-m gr-12-p'>
                             <div className='white-bg-color padding-md'>
-                                <h3 className='secondary-color'>{('Minimum requirements:')}</h3>
-                                <p>{('Android 6.0')}</p>
-                                <p>{('A USD Binary.com account')}</p>
+                                <p className='secondary-color no-margins ft-bold ft-22'>{('Minimum requirements:')}</p>
+                                <ul className='bullet'>
+                                    <li>{('Android 6.0')}</li>
+                                    <li>{('A USD Binary.com account')}</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
                     <div className='gr-row'>
                         <div className='gr-12 center-text'>
-                            <a className='button' href=''><span className='button-lg'>{('Get BinaryGrid now')}</span></a>
+                            <a className='button' href='https://grid.binary.me/download/BinaryGrid.apk'><span className='button-lg'>{('Get BinaryGrid now')}</span></a>
                         </div>
                     </div>
                 </div>
