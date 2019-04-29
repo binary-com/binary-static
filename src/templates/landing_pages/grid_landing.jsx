@@ -173,16 +173,22 @@ const gridLP = () => (
                     </div>
                     <div className='gr-row'>
                         <div className='gr-4'>
-                            <div className='lp-icon icon-academy' />
-                            <p className='content-inverse-color font-s'>{('Help Centre')}</p>
+                            <a href='https://www.binary.me/en/contact.html'>
+                                <div className='lp-icon icon-academy' />
+                                <p className='content-inverse-color font-s'>{('Help Centre')}</p>
+                            </a>
                         </div>
                         <div className='gr-4'>
-                            <div className='lp-icon icon-fb' />
-                            <p className='content-inverse-color font-s'>{('Facebook')}</p>
+                            <a href='https://www.facebook.com/binarydotcom'>
+                                <div className='lp-icon icon-fb' />
+                                <p className='content-inverse-color font-s'>{('Facebook')}</p>
+                            </a>
                         </div>
                         <div className='gr-4'>
-                            <div className='lp-icon icon-telegram' />
-                            <p className='content-inverse-color font-s'>{('Telegram')}</p>
+                            <a href='https://t.me/binarydotcom'>
+                                <div className='lp-icon icon-telegram' />
+                                <p className='content-inverse-color font-s'>{('Telegram')}</p>
+                            </a>
                         </div>
                     </div>
                 </div>
