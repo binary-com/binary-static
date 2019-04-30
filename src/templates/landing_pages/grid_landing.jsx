@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-no-target-blank */
-import React from 'react';
+import React  from 'react';
 import Layout from './_common/layout.jsx';
+import Gtm    from '../_common/includes/gtm.jsx';
 
 const gridLP = () => (
     <Layout
@@ -16,6 +17,7 @@ const gridLP = () => (
         ]}
     >
 
+        <Gtm />
         <div className='binary-grid-landing'>
             <div className='home--header'>
                 <div className='container'>
