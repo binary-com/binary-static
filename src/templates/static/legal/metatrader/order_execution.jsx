@@ -66,7 +66,7 @@ const OrderExecution = () => (
         <ul className='bullet'>
             <li>{it.L('GBE Brokers')}</li>
             <li>{it.L('FXOpen; or')}</li>
-            <li>{it.L('CFH Clearing Limited.')}</li>
+            <li>{it.L('CFH Clearing Limited')}</li>
         </ul>
 
         <h2 data-anchor='order-handling'>{it.L('G. Order handling')}</h2>
