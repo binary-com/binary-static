@@ -24,8 +24,6 @@ $MIN_HEIGHT: calc(100vh - #{$HEADER_HEIGHT + $FOOTER_HEIGHT} - #{$BOTTOM_SPACING
         display: flex;
         flex-flow: row-reverse nowrap;
         padding: 16px;
-        //margin-bottom: 8px;
-        // TODO check design for margin-bottom
 
         &--icon {
             cursor: pointer;

@@ -20,6 +20,7 @@ export default class PortfolioStore extends BaseStore {
     @observable positions  = [];
     @observable is_loading = false;
     @observable error      = '';
+    getPositionById = (id) => this.positions.find((position) => +position.id === +id);
 
     @action.bound
     initializePortfolio = () => {
@@ -74,11 +75,6 @@ export default class PortfolioStore extends BaseStore {
             this.positions[i].is_loading = true;
             WS.subscribeProposalOpenContract(contract_id, this.populateResultDetails, false);
         }
-    }
-
-    @action.bound
-    getPositionById(id) {
-        return this.positions.find((position) => +position.id === +id);
     }
 
     @action.bound
