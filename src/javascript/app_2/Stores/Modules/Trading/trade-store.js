@@ -199,6 +199,16 @@ export default class TradeStore extends BaseStore {
                 });
             }));
         }
+
+        // Check the current active symbol is open and if it is not show first open symbol to client
+        const current_active_symbol = active_symbols.active_symbols.find(s => s.symbol === this.symbol);
+        if (current_active_symbol.exchange_is_open !== 1) {
+            const first_open_store = active_symbols.active_symbols.find(s => s.exchange_is_open === 1);
+            if (first_open_store !== undefined) {
+                URLHelper.setQueryParam({ 'symbol': first_open_store.symbol });
+                query_string_values = this.updateQueryString();
+            }
+        }
     }
 
     @action.bound
