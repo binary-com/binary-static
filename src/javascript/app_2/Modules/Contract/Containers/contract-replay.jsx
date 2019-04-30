@@ -1,10 +1,11 @@
-import PropType    from 'prop-types';
-import React       from 'react';
-import UILoader    from 'App/Components/Elements/ui-loader.jsx';
-import { connect } from 'Stores/connect';
-import { isEnded } from 'Stores/Modules/Contract/Helpers/logic';
-import Digits      from './digits.jsx';
-import InfoBox     from './info-box.jsx';
+import PropType       from 'prop-types';
+import React          from 'react';
+import ContractDrawer from 'App/Components/Elements/ContractDrawer';
+import UILoader       from 'App/Components/Elements/ui-loader.jsx';
+import { connect }    from 'Stores/connect';
+import { isEnded }    from 'Stores/Modules/Contract/Helpers/logic';
+import Digits         from './digits.jsx';
+import InfoBox        from './info-box.jsx';
 
 class ContractReplay extends React.Component {
     componentDidMount() {
@@ -21,17 +22,20 @@ class ContractReplay extends React.Component {
 
         if (status) {
             return (
-                <React.Suspense fallback={<UILoader />}>
-                    <SmartChart
-                        chart_id={1}
-                        is_contract_mode={true}
-                        Digits={<Digits />}
-                        InfoBox={<InfoBox />}
-                        is_ended={isEnded(this.props.contract_info)}
-                        end_epoch={this.props.contract_info.date_start}
-                        start_epoch={this.props.contract_info.date_expiry}
-                    />
-                </React.Suspense>
+                <React.Fragment>
+                    <ContractDrawer contract_info={this.props.contract_info} heading='Reports' />
+                    <React.Suspense fallback={<UILoader />}>
+                        <SmartChart
+                            chart_id={this.props.chart_id}
+                            is_contract_mode={true}
+                            Digits={<Digits />}
+                            InfoBox={<InfoBox />}
+                            is_ended={isEnded(this.props.contract_info)}
+                            end_epoch={this.props.contract_info.date_start}
+                            start_epoch={this.props.contract_info.date_expiry}
+                        />
+                    </React.Suspense>
+                </React.Fragment>
             );
         }
         return <UILoader />;

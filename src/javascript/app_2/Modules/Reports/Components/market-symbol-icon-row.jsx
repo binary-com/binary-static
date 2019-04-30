@@ -16,20 +16,23 @@ const getMarketInformation = (payload) => {
     return null;
 };
 
-const MarketSymbolIconRow = ({ payload }) => {
+const MarketSymbolIconRow = ({ payload, show_description }) => {
     const should_show_category_icon = typeof payload.shortcode === 'string';
     const market_information = getMarketInformation(payload);
 
     if (should_show_category_icon && market_information) {
         return (
-            <React.Fragment>
-                <div className='positions-drawer-card__underlying-name'>
+            <div className='market-symbol-icon'>
+                <div className='market-symbol-icon-name'>
                     <UnderlyingIcon market={market_information.underlying} />
-                    &nbsp;
+                    {show_description && payload.display_name}
                 </div>
 
-                <IconTradeType type={market_information.category} />
-            </React.Fragment>
+                <div className='market-symbol-icon-category'>
+                    <IconTradeType type={market_information.category} />
+                    {show_description && market_information.category}
+                </div>
+            </div>
         );
     }
 
@@ -41,8 +44,9 @@ const MarketSymbolIconRow = ({ payload }) => {
 };
 
 MarketSymbolIconRow.propTypes = {
-    action : PropTypes.string,
-    payload: PropTypes.object,
+    action          : PropTypes.string,
+    payload         : PropTypes.object,
+    show_description: PropTypes.bool,
 };
 
 export default MarketSymbolIconRow;
