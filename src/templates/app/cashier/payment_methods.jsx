@@ -494,12 +494,12 @@ const PaymentMethods = () => {
                     }}
                 />
                 <TableTitle
-                    dataShow='-eucountry'
+                    dataShow='-default, -malta, -maltainvest, -iom'
                     title={it.L('Cryptocurrencies')}
                     withdrawal={it.L('Min Withdrawal')}
                 />
                 <Table
-                    dataShow='-eucountry'
+                    dataShow='-default, -malta, -maltainvest, -iom'
                     data={{
                         thead: [
                             [
