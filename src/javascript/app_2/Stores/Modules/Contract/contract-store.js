@@ -67,6 +67,8 @@ export default class ContractStore extends BaseStore {
             SmartChartStore.setChartView(contract_info.purchase_time);
         } else if (should_update_chart_type) {
             this.handleChartType(SmartChartStore, contract_info.date_start, null);
+        } else if (this.is_granularity_set) {
+            if (getChartType(contract_info.date_start, null) === 'candle') this.is_granularity_set = false;
         }
 
         createChartBarrier(SmartChartStore, contract_info);
