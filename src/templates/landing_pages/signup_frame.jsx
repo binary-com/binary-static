@@ -1,5 +1,4 @@
 import React from 'react';
-import GTM from '../_common/includes/gtm.jsx';
 import FormVerifyEmail from '../_common/includes/form_verify_email.jsx';
 
 const style = () =>
@@ -36,7 +35,6 @@ const SignUpFrame = () => (
     <html>
         <Head />
         <body>
-            <GTM />
             <div className='home-content'>
                 <FormVerifyEmail text='Create free account' className='secondary-bg-color' dark_button='1'>
                     <FormVerifyEmailChildren />
