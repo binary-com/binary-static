@@ -13,6 +13,7 @@ const gridLP = () => (
             'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js',
             'https://style.binary.com/binary.more.js',
             it.url_for('js/landing_pages/common.js'),
+            it.url_for('js/landing_pages/binary_grid.js'),
         ]}
     >
 
