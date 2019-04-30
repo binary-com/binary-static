@@ -4,9 +4,8 @@ import { toTitleCase } from '_common/string_util';
 import { toMoment }    from 'Utils/Date';
 
 export const formatStatementTransaction = (transaction, currency) => {
-    const moment_obj = toMoment(transaction.transaction_time);
-    const date_str   = moment_obj.format('YYYY-MM-DD');
-    const time_str   = `${moment_obj.format('HH:mm:ss')} GMT`;
+    const format_string = 'DD MMM YYYY - HH:mm:ss';
+    const transaction_time   = toMoment(transaction.transaction_time).format(format_string);
     const payout     = parseFloat(transaction.payout);
     const amount     = parseFloat(transaction.amount);
     const balance    = parseFloat(transaction.balance_after);
@@ -14,7 +13,7 @@ export const formatStatementTransaction = (transaction, currency) => {
 
     return {
         action     : localize(toTitleCase(transaction.action_type) /* localize-ignore */), // handled in static_strings_app_2.js: 'Buy', 'Sell', 'Deposit', 'Withdrawal'
-        date       : `${date_str}\n${time_str}`,
+        date       : transaction_time,
         refid      : transaction.transaction_id,
         payout     : isNaN(payout) ? '-' : formatMoney(currency, payout, should_exclude_currency),
         amount     : isNaN(amount) ? '-' : formatMoney(currency, amount, should_exclude_currency),

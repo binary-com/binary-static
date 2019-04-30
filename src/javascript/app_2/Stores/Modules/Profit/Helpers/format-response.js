@@ -2,7 +2,7 @@ import { formatMoney } from '_common/base/currency_base';
 import { toMoment }    from 'Utils/Date';
 
 export const formatProfitTableTransactions = (transaction, currency) => {
-    const format_string = 'DD MMM YYYY HH:mm:ss';
+    const format_string = 'DD MMM YYYY - HH:mm:ss';
     const purchase_time = `${toMoment(+transaction.purchase_time).format(format_string)  }`;
     const sell_time     = `${toMoment(+transaction.sell_time).format(format_string)  }`;
     const payout        = parseFloat(transaction.payout);

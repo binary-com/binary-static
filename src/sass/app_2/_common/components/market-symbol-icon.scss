@@ -1,0 +1,22 @@
+/** @define .market-symbol-icon */
+.market-symbol-icon {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 8px;
+
+    &-name, &-category {
+        display: flex;
+        justify-content: flex-start;
+        width: 50%;
+        align-items: center;
+        @include typeface(--paragraph-left-bold-active);
+        @include themify($themes) {
+            color: themed('text_color');
+        }
+
+        :first-child {
+            margin-right: 4px;
+        }
+    }
+}
