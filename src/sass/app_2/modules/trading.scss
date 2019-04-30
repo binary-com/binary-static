@@ -150,6 +150,7 @@
                 text-transform: capitalize;
                 text-align: left;
                 line-height: 1.25;
+                margin-left: 0.1em;
                 @include themify($themes) {
                     color: themed('text_color');
                 }
@@ -164,7 +165,7 @@
             }
             &-currency {
                 margin-left: 4px;
-                margin-right: 2px;
+                margin-right: 1px;
                 display: inline-block;
                 position: relative;
                 font-weight: bold;
