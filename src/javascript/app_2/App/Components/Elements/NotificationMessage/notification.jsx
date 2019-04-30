@@ -56,7 +56,7 @@ Notification.propTypes = {
         delay                : PropTypes.number,
         header               : PropTypes.string,
         is_auto_close        : PropTypes.bool,
-        message              : PropTypes.string,
+        message              : PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
         should_hide_close_btn: PropTypes.bool,
         size                 : PropTypes.oneOf(['small']),
         type                 : PropTypes.oneOf(['warning', 'info', 'success', 'danger']).isRequired,

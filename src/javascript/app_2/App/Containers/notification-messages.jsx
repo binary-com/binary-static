@@ -32,7 +32,7 @@ NotificationMessages.propTypes = {
             delay        : PropTypes.number,
             header       : PropTypes.string,
             is_auto_close: PropTypes.bool,
-            message      : PropTypes.string,
+            message      : PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
             size         : PropTypes.oneOf(['small']),
             type         : PropTypes.oneOf(['warning', 'info', 'success', 'danger']),
         }),

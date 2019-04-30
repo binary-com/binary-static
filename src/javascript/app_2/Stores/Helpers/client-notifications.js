@@ -104,7 +104,7 @@ const hasMissingRequiredField = (State, client) => {
         const necessary_signup_fields     = State.getResponse('landing_company.financial_company.requirements.signup')
             .map(field => (field === 'residence' ? 'country' : field));
 
-        return [...necessary_withdrawal_fields, ...necessary_signup_fields ];
+        return [...necessary_withdrawal_fields, ...necessary_signup_fields];
     }
 
     function getRequiredFields() {

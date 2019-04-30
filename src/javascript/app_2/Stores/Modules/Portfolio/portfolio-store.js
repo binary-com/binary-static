@@ -3,8 +3,8 @@ import {
     computed,
     observable }                   from 'mobx';
 import { WS }                      from 'Services';
-import { localize }                from '_common/localize';
 import { formatPortfolioPosition } from './Helpers/format-response';
+import { contractSold }            from './Helpers/portfolio-notifications';
 import {
     getCurrentTick,
     getDurationPeriod,
@@ -146,14 +146,7 @@ export default class PortfolioStore extends BaseStore {
                 sell_price    : response.sell.sold_for,
                 transaction_id: response.sell.transaction_id,
             };
-            this.root_store.ui.addNotification({
-                header               : localize('Contract sold'),
-                message              : `${localize('Contract was sold for')} ${response.sell.sold_for}.`,
-                type                 : 'info',
-                size                 : 'small',
-                should_hide_close_btn: true,
-                is_auto_close        : true,
-            });
+            this.root_store.ui.addNotification(contractSold(this.root_store.client.currency, response.sell.sold_for));
         }
     }
 
