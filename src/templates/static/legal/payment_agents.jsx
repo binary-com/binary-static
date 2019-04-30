@@ -6,7 +6,7 @@ const PaymentAgents = () => (
 
         <h2 data-anchor='scope-of-agreement'>A. {it.L('Scope of agreement')}</h2>
         <ol>
-            <li>{it.L('This agreement is between Binary (C.R) S.A. (hereinafter referred to as "the Company" or "Binary.com") and Payment Agent (hereinafter referred to as "the Agent"), both of whom agree to be bound by this agreement.', it.website_name)}</li>
+            <li>{it.L('This agreement is between Binary (C.R) S.A. (hereinafter referred to as "the Company" or "[_1]") and Payment Agent (hereinafter referred to as "the Agent"), both of whom agree to be bound by this agreement.', it.website_name)}</li>
             <li>{it.L('The Company and the Agent (hereinafter referred to as "the Parties") desire to enter into this agreement whereby the Company will offer to its clients local payment processing services through the Agent within a territory as specified in Section D of this agreement.')}</li>
         </ol>
 
@@ -36,7 +36,7 @@ const PaymentAgents = () => (
                     <li>{it.L('The Agent shall thereinafter transfer the requested sum to the client. It is noted that these transactions fall out of the scope of this agreement, and, as a result, the Company shall not be liable against the Agent and the client or any other person, under contract, tort law, or any other applicable law, for any dispute or potential dispute arising out of or in connection with such transactions.')}</li>
                 </ul>
             </li>
-            <li>{it.L('The Agent shall not be authorised to offer the Agent\'s services, under this agreement, to the clients who reside in restricted countries outlined in the Company\'s terms and conditions (as amended from time to time), which are published on the Company\'s website, [_1]www.binary.com.[_2]', `<a href="${it.url_for('new-account')}">`, '</a>')}</li>
+            <li>{it.L('The Agent shall not be authorised to offer the Agent\'s services, under this agreement, to the clients who reside in restricted countries outlined in the Company\'s terms and conditions (as amended from time to time), which are published on the Company\'s website, [_1].', '<a href="${it.url_for(\'new-account\')}">www.binary.com</a>')}</li>
         </ol>
 
         <h2 data-anchor='agents-obligations'>E. {it.L('Agent\'s obligations')}</h2>
