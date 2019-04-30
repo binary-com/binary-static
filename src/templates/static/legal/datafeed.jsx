@@ -5,7 +5,7 @@ const DataFeed = () => (
         <h2 data-anchor='data-feed'>{it.L('Data feed')}</h2>
         <p>{it.L('Here is some information about the data feeds used by the Company and how the data is processed before being fed into the system.')}</p>
 
-        <h2 data-anchor='filtering-stary-ticks'>{it.L('Filtering stray ticks')}</h2>
+        <h2 data-anchor='filtering-stray-ticks'>{it.L('Filtering stray ticks')}</h2>
         <p>{it.L('Depending on the quality of the data feeds received from the Company\'s feed providers, the Company\'s servers might apply a tick filtering algorithm. The purpose of this filtering algorithm is to strip the feed of stray ticks. Stray ticks are ticks that manifestly fall outside of the current trading range of the market; such ticks are often due to communication delays with the exchanges or banks that provide quotes, human error, or database problems at any point between the originator of the quote and the Company\'s servers.')}</p>
         <p>{it.L('The filtering algorithm may for example be similar to the "Bollinger Bands" volatility system, i.e. short-term volatility bands are determined around the present market value, and ticks that are manifestly outside of such bands are removed.')}</p>
 
