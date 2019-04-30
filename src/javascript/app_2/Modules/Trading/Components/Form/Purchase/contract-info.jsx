@@ -11,49 +11,49 @@ const ContractInfo = ({
     currency,
     has_increased,
     is_loading,
+    is_param_change,
     is_visible,
     proposal_info,
 }) => {
     const has_error_or_not_loaded = proposal_info.has_error || !proposal_info.id;
 
     return (
-        <React.Fragment>
-            {is_loading ?
-                <div className='trade-container__loader'>
-                    <div className='trade-container__loader--loading' />
+        <div className='trade-container__price'>
+            <div className={classNames(
+                'trade-container__price-info',
+                {
+                    'trade-container__price-info--disabled'       : has_error_or_not_loaded,
+                    'trade-container__price-info--animated--slide': is_loading && !is_param_change,
+                    'trade-container__price-info--animated--fade' : is_loading && is_param_change,
+                })}
+            >
+                <div className='trade-container__price-info-basis'>
+                    {has_error_or_not_loaded
+                        ? basis
+                        : localize('[_1]', proposal_info.obj_contract_basis.text)
+                    }
                 </div>
-                :
-                <div className='trade-container__price'>
-                    <div className={classNames('trade-container__price-info', { 'trade-container__price-info--disabled': has_error_or_not_loaded })}>
-                        <div className='trade-container__price-info-basis'>
-                            {has_error_or_not_loaded
-                                ? basis
-                                : localize('[_1]', proposal_info.obj_contract_basis.text)
-                            }
-                        </div>
-                        <div className='trade-container__price-info-value'>
-                            {!has_error_or_not_loaded &&
-                            <Money amount={proposal_info.obj_contract_basis.value} className='trade-container__price-info-currency' currency={currency} />
-                            }
-                        </div>
-                        {is_visible &&
-                        <div className='trade-container__price-info-movement'>
-                            {(!has_error_or_not_loaded && has_increased !== null) &&
-                                <IconPriceMove type={has_increased ? 'profit' : 'loss'} />
-                            }
-                        </div>
-                        }
-                    </div>
-                    <Tooltip
-                        alignment='left'
-                        className={classNames('trade-container__price-tooltip', { 'trade-container__price-tooltip--disabled': has_error_or_not_loaded })}
-                        classNameIcon='trade-container__price-tooltip-i'
-                        icon='info'
-                        message={has_error_or_not_loaded ? '' : proposal_info.message}
-                    />
+                <div className='trade-container__price-info-value'>
+                    {!has_error_or_not_loaded &&
+                    <Money amount={proposal_info.obj_contract_basis.value} className='trade-container__price-info-currency' currency={currency} />
+                    }
                 </div>
-            }
-        </React.Fragment>
+                {is_visible &&
+                <div className='trade-container__price-info-movement'>
+                    {(!has_error_or_not_loaded && has_increased !== null) &&
+                        <IconPriceMove type={has_increased ? 'profit' : 'loss'} />
+                    }
+                </div>
+                }
+            </div>
+            <Tooltip
+                alignment='left'
+                className={classNames('trade-container__price-tooltip', { 'trade-container__price-tooltip--disabled': has_error_or_not_loaded })}
+                classNameIcon='trade-container__price-tooltip-i'
+                icon='info'
+                message={has_error_or_not_loaded ? '' : proposal_info.message}
+            />
+        </div>
     );
 };
 ContractInfo.propTypes = {

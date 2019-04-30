@@ -67,16 +67,6 @@
             }
         }
     }
-    &__loader {
-        width: 92px;
-        height: 8px;
-        margin: 3.5px 0;
-        @extend .loader;
-
-        &--loading {
-            @extend .loader--loading;
-        }
-    }
     &__error {
         justify-content: center;
         align-items: center;
@@ -144,11 +134,26 @@
                     }
                 }
             }
+            &--animated--slide {
+                width: 92px;
+                height: 8px;
+                margin: 3.5px 0;
+                @extend .loader;
+
+                .trade-container__price-info-basis {
+                    @extend .loader--loading;
+                }
+            }
+            &--animated--fade &-value {
+                opacity: 0;
+            }
             &-value {
                 @include typeface(--small-left-bold-black);
                 @include themify($themes) {
                     color: themed('text_color');
                 }
+                opacity: 1;
+                transition: 0.3s;
             }
             &-basis {
                 @include typeface(--paragraph-left-normal-black);
@@ -489,7 +494,7 @@
     }
     &--animated--fade-show .btn-purchase__info--right .btn-purchase__text {
         opacity: 1;
-        transition: 1s;
+        transition: 0.3s;
     }
     &__shadow-wrapper:hover:after {
         opacity: 0;

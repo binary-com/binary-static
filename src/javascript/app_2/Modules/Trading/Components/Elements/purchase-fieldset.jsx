@@ -66,6 +66,7 @@ class PurchaseFieldset extends React.PureComponent {
                         proposal_info={info}
                         has_increased={info.has_increased}
                         is_loading={is_loading}
+                        is_param_change={this.state.is_param_change}
                         is_visible={!is_contract_mode}
                     />
                     <div
