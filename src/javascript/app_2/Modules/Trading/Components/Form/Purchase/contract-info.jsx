@@ -14,7 +14,7 @@ const ContractInfo = ({
     is_visible,
     proposal_info,
 }) => {
-    const is_loaded_with_error = proposal_info.has_error || !proposal_info.id;
+    const has_error_or_not_loaded = proposal_info.has_error || !proposal_info.id;
 
     return (
         <React.Fragment>
@@ -24,30 +24,33 @@ const ContractInfo = ({
                 </div>
                 :
                 <div className='trade-container__price'>
-                    <div className={classNames('trade-container__price-info', { 'trade-container__price-info--disabled': is_loaded_with_error })}>
-                        <div className='trade-container__price-info-basis'>{is_loaded_with_error ? basis : localize('[_1]', proposal_info.obj_contract_basis.text)}</div>
+                    <div className={classNames('trade-container__price-info', { 'trade-container__price-info--disabled': has_error_or_not_loaded })}>
+                        <div className='trade-container__price-info-basis'>
+                            {has_error_or_not_loaded
+                                ? basis
+                                : localize('[_1]', proposal_info.obj_contract_basis.text)
+                            }
+                        </div>
                         <div className='trade-container__price-info-value'>
-                            {is_loaded_with_error ?
-                                ''
-                                :
-                                <Money amount={proposal_info.obj_contract_basis.value} className='trade-container__price-info-currency' currency={currency} />
+                            {!has_error_or_not_loaded &&
+                            <Money amount={proposal_info.obj_contract_basis.value} className='trade-container__price-info-currency' currency={currency} />
                             }
                         </div>
                         {is_visible &&
                         <div className='trade-container__price-info-movement'>
-                            {!is_loaded_with_error && has_increased !== null && <IconPriceMove type={has_increased ? 'profit' : 'loss'} />}
+                            {(!has_error_or_not_loaded && has_increased !== null) &&
+                                <IconPriceMove type={has_increased ? 'profit' : 'loss'} />
+                            }
                         </div>
                         }
                     </div>
-                    <span>
-                        <Tooltip
-                            alignment='left'
-                            className={classNames('trade-container__price-tooltip', { 'trade-container__price-tooltip--disabled': is_loaded_with_error })}
-                            classNameIcon='trade-container__price-tooltip-i'
-                            icon='info'
-                            message={is_loaded_with_error ? '' : proposal_info.message}
-                        />
-                    </span>
+                    <Tooltip
+                        alignment='left'
+                        className={classNames('trade-container__price-tooltip', { 'trade-container__price-tooltip--disabled': has_error_or_not_loaded })}
+                        classNameIcon='trade-container__price-tooltip-i'
+                        icon='info'
+                        message={has_error_or_not_loaded ? '' : proposal_info.message}
+                    />
                 </div>
             }
         </React.Fragment>
