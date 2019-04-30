@@ -64,7 +64,7 @@ const OrderExecution = () => (
         <p>{it.L('[_1] assesses the choice of external execution venues regularly (at least once a year) with the intention of achieving a better result for the client based on the Company\'s best execution obligation.', it.website_name)}</p>
         <p>{it.L('When executing client orders using the A-book model, the Company directs the client\'s trade to one of its liquidity providers, namely:')}</p>
         <ul className='bullet'>
-            <li>{it.L('GBE Brokers;')}</li>
+            <li>{it.L('GBE Brokers')}</li>
             <li>{it.L('FXOpen; or')}</li>
             <li>{it.L('CFH Clearing Limited.')}</li>
         </ul>
