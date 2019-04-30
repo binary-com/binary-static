@@ -136,7 +136,7 @@ const TermsAndConditions = () => (
             </li>
             <li>{it.L('Closing an account')}
                 <ol>
-                    <li>{it.L('If the Client wishes to withdraw funds from their MT5 Real Account and close their MT5 Real Account, they may notify the Company by contacting [_1] helpdesk <a href=\'mailto:[_2]\'>[_2]</a>. The Client\'s MT5 Real Account may be closed if they do not have any Open Positions and all the amounts that were due to the Company have been settled.', it.website_name, 'support@binary.com')}</li>
+                    <li>{it.L('If the Client wishes to withdraw funds from their MT5 Real Account and close their MT5 Real Account, they may notify the Company by contacting [_1] helpdesk [_2]. The Client\'s MT5 Real Account may be closed if they do not have any Open Positions and all the amounts that were due to the Company have been settled.', it.website_name, '<a href=\'mailto:support@binary.com\'>support@binary.com</a>' )}</li>
                     <li>{it.L('If the Client\'s [_1] account is closed, their MT5 Real Account will be automatically closed as well.', it.website_name)}</li>
                 </ol>
             </li>
