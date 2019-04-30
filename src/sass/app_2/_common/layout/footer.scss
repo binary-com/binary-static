@@ -160,7 +160,7 @@
     padding: 0 1em;
     @include typeface(--small-left-normal-black);
     @include themify($themes) {
-        color: themed('text_primary_color');
+        color: themed('text_color');
     }
 }
 

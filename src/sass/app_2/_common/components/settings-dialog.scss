@@ -93,7 +93,7 @@
         @include typeface(--title-left-bold-black);
         @include themify($themes) {
             background-color: themed('background_cover');
-            color: themed('text_primary_color');
+            color: themed('text_color');
         }
         width: 200px;
         line-height: 24px;
