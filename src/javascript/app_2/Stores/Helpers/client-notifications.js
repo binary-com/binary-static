@@ -1,3 +1,4 @@
+import React            from 'react';
 import { formatDate }   from 'Utils/Date';
 import { WS }           from 'Services';
 import { getRiskAssessment,
@@ -5,27 +6,53 @@ import { getRiskAssessment,
     shouldAcceptTnc,
     shouldCompleteTax } from '_common/base/client_base';
 import { localize }     from '_common/localize';
+import { urlFor }       from '_common/url';
+import Localize         from '../../App/Components/Elements/localize.jsx';
 
+// TODO: Update links to app_2 links once components are done.
+/* eslint-disable react/jsx-no-target-blank */
 const client_notifications = {
     currency: {
         header : localize('Set Currency'),
-        message: localize('Please set the currency of your account to enable trading.'),
-        type   : 'danger',
+        message: (
+            <Localize
+                str='Please set the [_1]currency[_2] of your account to enable trading.'
+                replacers={{ '1_2': <a className='link link--white' target='_blank' href={urlFor('user/set-currency', undefined, undefined, true)} /> }}
+            />
+        ),
+        type: 'danger',
     },
     self_exclusion: (excluded_until) => ({
         header : localize('Self-exclusion Detected'),
-        message: localize('You have opted to be excluded from Binary.com until [_1]. Please contact us for assistance.', formatDate(excluded_until, 'DD/MM/YYYY')),
-        type   : 'danger',
+        message: (
+            <Localize
+                str='You have opted to be excluded from Binary.com until [_1]. Please [_2]contact us[_3] for assistance.'
+                replacers={{
+                    '1'  : formatDate(excluded_until, 'DD/MM/YYYY'),
+                    '2_3': <a className='link link--white' target='_blank' href={urlFor('contact', undefined, undefined, true)} /> }}
+            />
+        ),
+        type: 'danger',
     }),
     authenticate: {
         header : localize('Account Authentication'),
-        message: localize('Authenticate your account now to take full advantage of all payment methods available.'),
-        type   : 'info',
+        message: (
+            <Localize
+                str='[_1]Authenticate your account[_2] now to take full advantage of all payment methods available.'
+                replacers={{ '1_2': <a className='link link--white' target='_blank' href={urlFor('user/authenticate', undefined, undefined, true)} /> }}
+            />
+        ),
+        type: 'info',
     },
     document_review: {
         header : localize('Documents in review'),
-        message: localize('We are reviewing your documents. For more details contact us.'),
-        type   : 'info',
+        message: (
+            <Localize
+                str='We are reviewing your documents. For more details [_1]contact us[_2].'
+                replacers={{ '1_2': <a className='link link--white' target='_blank' href={urlFor('contact', undefined, undefined, true)} /> }}
+            />
+        ),
+        type: 'info',
     },
     cashier_locked: {
         header : localize('Cashier Disabled'),
@@ -44,38 +71,73 @@ const client_notifications = {
     },
     unwelcome: {
         header : localize('Trading and Deposits Disabled'),
-        message: localize('Trading and deposits have been disabled on your account. Kindly contact customer support for assistance.'),
-        type   : 'danger',
+        message: (
+            <Localize
+                str='Trading and deposits have been disabled on your account. Kindly contact [_1]customer support[_2] for assistance.'
+                replacers={{ '1_2': <a className='link link--white' target='_blank' href={urlFor('contact', undefined, undefined, true)} /> }}
+            />
+        ),
+        type: 'danger',
     },
     mf_retail: {
         header : localize('Binary Options Trading Disabled'),
-        message: localize('Binary Options Trading has been disabled on your account. Kindly contact customer support  for assistance.'),
-        type   : 'danger',
+        message: (
+            <Localize
+                str='Binary Options Trading has been disabled on your account. Kindly contact [_1]customer support[_2] for assistance.'
+                replacers={{ '1_2': <a className='link link--white' target='_blank' href={urlFor('contact', undefined, undefined, true)} /> }}
+            />
+        ),
+        type: 'danger',
     },
     financial_limit: {
         header : localize('Remove Deposit Limits'),
-        message: localize('Please set your 30-day turnover limit to remove deposit limits.'),
-        type   : 'warning',
+        message: (
+            <Localize
+                str='Please set your [_1]30-day turnover limit[_2] to remove deposit limits.'
+                replacers={{ '1_2': <a className='link link--white' target='_blank' href={urlFor('user/security/self_exclusionws', undefined, undefined, true)} /> }}
+            />
+        ),
+        type: 'warning',
     },
     risk: {
         header : localize('Withdrawal and Trading Limits'),
-        message: localize('Please complete the Financial Assessment form to lift your withdrawal and trading limits.'),
-        type   : 'info',
+        message: (
+            <Localize
+                str='Please complete the [_1]Financial Assessment form[_2] to lift your withdrawal and trading limits.'
+                replacers={{ '1_2': <a className='link link--white' target='_blank' href={urlFor('user/settings/assessmentws', undefined, undefined, true)} /> }}
+            />
+        ),
+        type: 'info',
     },
     tax: {
         header : localize('Complete your personal details'),
-        message: localize('Please complete your Personal Details before you proceed.'),
-        type   : 'danger',
+        message: (
+            <Localize
+                str='Please complete your [_1]Personal Details[_2] before you proceed.'
+                replacers={{ '1_2': <a className='link link--white' target='_blank' href={urlFor('user/settings/detailsws', undefined, undefined, true)} /> }}
+            />
+        ),
+        type: 'danger',
     },
     tnc: {
         header : localize('Terms & Conditions Updated'),
-        message: localize('Please accept the updated Terms and Conditions to enable deposit and trading.'),
-        type   : 'danger',
+        message: (
+            <Localize
+                str='Please [_1]accept the updated Terms and Conditions[_2] to enable deposit and trading.'
+                replacers={{ '1_2': <a className='link link--white' target='_blank' href={urlFor('user/tnc_approvalws', undefined, undefined, true)} /> }}
+            />
+        ),
+        type: 'danger',
     },
     required_fields: {
         header : localize('Complete your personal details'),
-        message: localize('Please complete your Personal Details before you proceed.'),
-        type   : 'danger',
+        message: (
+            <Localize
+                str='Please complete your [_1]Personal Details[_2] before you proceed.'
+                replacers={{ '1_2': <a className='link link--white' target='_blank' href={urlFor('user/settings/detailsws', undefined, undefined, true)} /> }}
+            />
+        ),
+        type: 'danger',
     },
 };
 
@@ -164,7 +226,7 @@ export const handleClientNotifications = (State, client, UIStore) => {
                 const is_mf_retail = client.landing_company_shortcode === 'maltainvest' && !professional;
                 if (is_mf_retail) UIStore.addNotification(client_notifications.mf_retail);
 
-                if (getRiskAssessment()) UIStore.addNotification(client.risk);
+                if (getRiskAssessment()) UIStore.addNotification(client_notifications.risk);
                 if (shouldCompleteTax()) UIStore.addNotification(client_notifications.tax);
             }
         }
