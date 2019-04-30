@@ -284,7 +284,7 @@ const TermsAndConditions = () => (
                     <li>{it.L('General provisions')}
                         <ol>
                             <li>{it.L('In order to profit from trading rate, it is necessary to close the position. To close a position, a trade operation opposite to the first one is executed.')}</li>
-                            <li>{it.L('An Open Position may be closed  by clicking the button "x".')}</li>
+                            <li>{it.L('An Open Position may be closed by clicking the button "x".')}</li>
                             <li>{it.L('An Open Position may be partially closed by double clicking the position, selecting the volume to be partially closed from the context menu, and then clicking "Close".')}</li>
                             <li>{it.L('Upon closing a trade, the realised profit (or loss), which is represented by the difference between the opening level and closing level of the trade multiplied by the number of lots (volume), becomes due and payable by the Company to the Client (or due and payable by the Client to the Company in cases of realised loss).')}</li>
                         </ol>
@@ -389,7 +389,7 @@ const TermsAndConditions = () => (
 
         <h2 data-anchor='indemnification'>{it.L('O. Indemnification')}</h2>
         <ol>
-            <li>{it.L('Neither the Company nor any of its directors, officers, managers, employees, or agents shall be liable for any loss, damage, or debt to the Client arising directly or indirectly out of, or in connection with, this agreement. The Client agrees to indemnify the Company and its directors, officers, managers, employees, or agents from, and against, any and all liabilities, losses, damages, costs, and expenses (including reasonable attorney\'s fees) incurred arising out of the Client\'s failure to comply with any and all of their  obligations set forth in this agreement and/or the Company\'s enforcement against the Client of any and all of its rights under this agreement.')}</li>
+            <li>{it.L('Neither the Company nor any of its directors, officers, managers, employees, or agents shall be liable for any loss, damage, or debt to the Client arising directly or indirectly out of, or in connection with, this agreement. The Client agrees to indemnify the Company and its directors, officers, managers, employees, or agents from, and against, any and all liabilities, losses, damages, costs, and expenses (including reasonable attorney\'s fees) incurred arising out of the Client\'s failure to comply with any and all of their obligations set forth in this agreement and/or the Company\'s enforcement against the Client of any and all of its rights under this agreement.')}</li>
             <li>{it.L('Without prejudice to any other terms of this agreement, neither the Company nor any of its directors, officers, managers, employees, or agents shall be liable to the Client in relation to any loss that they have incurred whether directly or indirectly by any cause beyond the Company\'s control, including, but not limited to, any delay or defect in or failure of the whole or any part of the MT5 trading platform or any systems or network links.')}</li>
             <li>{it.L('The Company does not make any warranty, express or implied, that any pricing or other information provided through the MT5 trading platform or otherwise is correct.')}</li>
         </ol>
@@ -397,7 +397,7 @@ const TermsAndConditions = () => (
         <h2 data-anchor='miscellaneous'>{it.L('P. Miscellaneous')}</h2>
         <ol>
             <li>{it.L('The Client agrees that in any legal, arbitration, mediation, regulatory, administration, or any other proceedings initiated by them or by [_1], the Company\'s records related to the Client\'s dealings shall constitute evidence. Subject to the laws and any court, tribunal, competent authority, or government authority orders, requests, instructions, or guidelines, the Client shall not object to the admission of such records on the grounds that they are not originals or in writing, or that they are produced by computers or any other electronic systems whatsoever. The Client shall not rely on the Company to meet any of their disclosures or other obligations imposed by any court, tribunal, competent authority, or government authority.', it.website_name)}</li>
-            <li>{it.L('The [_1] website is protected by certain copyrights. The materials comprising the website (including, without limitation, all articles, text, images, logos, compilation, systems, code, and design) are protected by Copyright 1999-2019 Binary group of companies, all rights reserved. Such materials may be copied and distributed on a limited basis for non-commercial purposes only, provided that any material copied remain intact and that all copies include the following notice in a clearly visible position: "Copyright 1999-2019 Binary Ltd. All rights reserved." These materials may not be copied or redistributed for commercial purposes or for compensation of any kind without prior written permission from a member of the Binary Group. [_1] and the bull/bear logo are registered trademarks.', it.website_name)}</li>
+            <li>{it.L('The [_1] website is protected by certain copyrights. The materials comprising the website (including, without limitation, all articles, text, images, logos, compilation, systems, code, and design) are protected by Copyright 1999-[_2] Binary group of companies, all rights reserved. Such materials may be copied and distributed on a limited basis for non-commercial purposes only, provided that any material copied remain intact and that all copies include the following notice in a clearly visible position: "Copyright 1999-[_2] Binary Ltd. All rights reserved." These materials may not be copied or redistributed for commercial purposes or for compensation of any kind without prior written permission from a member of the Binary Group. [_1] and the bull/bear logo are registered trademarks.', it.website_name, '<span class=\'currentYear\'></span>')}</li>
             <li>{it.L('If any provision of this agreement shall be held invalid or unenforceable by a court or regulatory body of competent jurisdiction, the remainder of this agreement shall remain in full force and effect.')}</li>
             <li>{it.L('In connection with this agreement and all Transactions contemplated by this agreement, the Client agrees to execute and deliver such additional documents and instruments and to perform such additional acts as may be necessary or appropriate to effectuate, carry out, and perform all of the terms, provisions, and conditions of this agreement. The Client shall cooperate fully with any investigation by any regulatory authority and promptly provide the regulatory authority with such information and records as may be requested in compliance with any law, ordinance, charter, by-law, or rule applicable to the Client or the jurisdiction in which they are resident.')}</li>
         </ol>
@@ -423,7 +423,7 @@ const TermsAndConditions = () => (
                 <p><strong>{it.L('Competent Authority')}</strong>{it.L(' means any organisation, whether governmental or not, or physical person or any type of legal person or entity or body of persons and any executor, administrator, or representative of such Competent Authority located in any jurisdiction that has legally delegated or invested authority, capacity, power, or competence to perform a designated function.')}</p>
                 <p><strong>{it.L('Company or Binary')}</strong>{it.L(' means [_1]', it.website_name)}</p>
                 <p><strong>{it.L('Effective Date')}</strong>{it.L(' means the commencement date of this Agreement.')}</p>
-                <p><strong>{it.L('Financial Products')}</strong>{it.L(' means, contract for differences, cryptocurrencies or any other financial instrument added on the website from time to time.')}</p>
+                <p><strong>{it.L('Financial Products')}</strong>{it.L(' means contract for differences, cryptocurrencies, or any other financial instrument added on the website from time to time.')}</p>
                 <p><strong>{it.L('Introducing Broker')}</strong>{it.L(' means any potential individual or entity willing to provide Binary with IB services.')}</p>
                 <p><strong>{it.L('Law')}</strong>{it.L(' means all laws including rules of common law, principals of equity, statutes, regulations, proclamations, ordinances, by-laws, rules, regulatory principles and requirements, policy statements, practice notes, mandatory codes of conduct, writs, orders, injunctions, judgments, determinations, and statutory licence conditions.')}</p>
                 <p><strong>{it.L('Malicious Activity')}</strong>{it.L(' means any manipulations of Binary\'s systems and business in ways which resulted in any adverse, special, incidental, punitive or consequential loss or damages to Binary.')}</p>
@@ -544,8 +544,8 @@ const TermsAndConditions = () => (
                         <li>{it.L('The Introducing Broker acknowledges that on termination, they have no claims against Binary whatsoever and are not entitled to any compensation or claim arising from the termination.')}</li>
                         <li>{it.L('If the Introducing Broker engages in Malicious Activity, Binary, in its absolute discretion may')}
                             <ol>
-                                <li><em>{it.L('Refuse to pay any Commission to the Introducing Broker engaged in the Malicious Activity')}</em></li>
-                                <li><em>{it.L('Set-off any Commission paid or payable by Binary to the Introducing Broker against any amounts held in any accounts of the Company')}</em></li>
+                                <li>{it.L('Refuse to pay any Commission to the Introducing Broker engaged in the Malicious Activity')}</li>
+                                <li>{it.L('Set-off any Commission paid or payable by Binary to the Introducing Broker against any amounts held in any accounts of the Company')}</li>
                             </ol>
                         </li>
                     </ol>
@@ -556,8 +556,8 @@ const TermsAndConditions = () => (
             >
                 <p>{it.L('Any notice required by this Agreement shall be in writing and shall be emailed to the following addresses:')}
                     <ol>
-                        <li>{it.L('<a href=\'mailto:[_1]\'>[_1]</a>', 'compliance@binary.com')}</li>
-                        <li>{it.L('<a href=\'mailto:[_1]\'>[_1]</a>', 'affiliates@binary.com')}</li>
+                        <li><a href='mailto:compliance@binary.com'>compliance@binary.com</a></li>
+                        <li><a href='mailto:affiliates@binary.com'>affiliates@binary.com</a></li>
                     </ol>
                 </p>
                 <p>{it.L('In any event, an email notice shall be presumably and sufficiently served upon the completion of sending the email. Should the email be sent on a non-Business Day, it shall be presumably and sufficiently served on the next Business Day.')}</p>
