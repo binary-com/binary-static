@@ -1,7 +1,7 @@
 import classNames          from 'classnames';
 import PropTypes           from 'prop-types';
 import React               from 'react';
-import Tooltip             from 'App/Components/Elements/tooltip.jsx';
+import { Popover }         from 'App/Components/Elements/Popover';
 import { getCurrencyName } from '_common/base/currency_base';
 
 const Items = ({
@@ -10,31 +10,50 @@ const Items = ({
     items,
     name,
     value,
-}) => (
-    items.map((item, idx) => (
-        <React.Fragment key={idx}>
-            <div
-                className={classNames('list__item', {
-                    'list__item--selected': value === item.value,
-                })}
-                key={idx}
-                name={name}
-                value={item.value}
-                onClick={handleSelect.bind(null, item)}
-            >
-                {!!has_symbol && item.has_tooltip &&
-                <Tooltip alignment='top' className='list__item-tooltip' message={getCurrencyName(item.value)}>
-                    <i><span className={`symbols list__item-tooltip-symbols symbols--${(item.text || '').toLowerCase()}`} /></i>
-                </Tooltip>
-                }
-                {!!has_symbol && !item.has_tooltip &&
-                <span className={`list__item-text symbols symbols--${(item.text || '').toLowerCase()}`} />
-                }
-                {!has_symbol && <span className='list__item-text'>{item.text}</span>}
-            </div>
-        </React.Fragment>
-    ))
-);
+}) =>  items.map((item, idx) => {
+    const symbol_type_class_name = item.text ? `symbols--${(item.text).toLowerCase()}` : '';
+    return (
+        <div
+            className={classNames(
+                'list__item',
+                { 'list__item--selected': value === item.value }
+            )}
+            name={name}
+            value={item.value}
+            onClick={handleSelect.bind(null, item)}
+            key={idx}
+        >
+            {!!has_symbol && item.has_tooltip &&
+                <Popover
+                    alignment='left'
+                    message={getCurrencyName(item.value)}
+                >
+                    <span
+                        className={classNames(
+                            'symbols',
+                            'list__item-symbol',
+                            symbol_type_class_name
+                        )}
+                    />
+                </Popover>
+            }
+
+            {!!has_symbol && !item.has_tooltip &&
+                <span
+                    className={classNames(
+                        'symbols',
+                        'list__item-text',
+                        symbol_type_class_name,
+                    )}
+                />
+            }
+
+            {!has_symbol &&
+                <span className='list__item-text'>{item.text}</span>
+            }
+        </div>
+    );
+});
 
 Items.propTypes = {
     handleSelect: PropTypes.func,

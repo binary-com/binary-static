@@ -4,6 +4,7 @@ import {
     Route }                from 'react-router-dom';
 import { redirectToLogin } from '_common/base/login';
 import BinarySocket        from '_common/base/socket_base';
+import Language            from '_common/language';
 import routes              from 'Constants/routes';
 import GTM                 from 'Utils/gtm';
 import LoginPrompt         from '../Elements/login-prompt.jsx';
@@ -30,6 +31,7 @@ const RouteWithSubRoutes = route => {
             );
         }
 
+        Language.setCookie();
         const title = route.title ? `${route.title} | ` : '';
         document.title = `${ title }${ default_title }`;
         BinarySocket.wait('website_status').then(() => {

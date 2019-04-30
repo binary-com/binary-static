@@ -9,3 +9,7 @@ function collapseNavbar() {
 
 $(window).scroll(collapseNavbar);
 $(document).ready(collapseNavbar);
+
+window.onload = function () {
+    commonOnload();
+};
