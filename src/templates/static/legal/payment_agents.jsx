@@ -111,7 +111,7 @@ const PaymentAgents = () => (
         <ol>
             <li>{it.L('The Agent shall submit an application including the following information:')}
                 <ul className='bullet'>
-                    <li>{it.L('Name, email address and contact number')}</li>
+                    <li>{it.L('Name, email address, and contact number')}</li>
                     <li>{it.L('Website URL (where applicable)')}</li>
                     <li>{it.L('A list of accepted payment methods')}</li>
                     <li>{it.L('The commissions to be charged on deposits and withdrawals')}</li>

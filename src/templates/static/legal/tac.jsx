@@ -25,7 +25,7 @@ const Tac = () => (
                         text   : it.L('Terms and Conditions'),
                         submenu: [
                             { id: 'legal-binary', text: it.L('General') },
-                            { id: 'legal-mt', text: it.L('MetaTrader') },
+                            { id: 'legal-mt',     text: it.L('MetaTrader') },
                         ],
                     },
                     { id: 'mam',              text: it.L('MAM'), className: 'invisible' }, // toEnableMAM: remove className
