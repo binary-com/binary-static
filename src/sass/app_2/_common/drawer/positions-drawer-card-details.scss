@@ -32,7 +32,7 @@
     &__label {
         font-size: 1em;
         @include themify($themes) {
-            color: themed('text_color');
+            color: themed('text_primary_color');
         }
     }
     &__value {
