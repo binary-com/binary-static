@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-04-29 14:35\n"
+"PO-Revision-Date: 2019-04-30 05:51\n"
 "Last-Translator: binarycom\n"
 "Language-Team: Spanish\n"
 "MIME-Version: 1.0\n"
@@ -1168,7 +1168,7 @@ msgid "Amount"
 msgstr "Monto"
 
 msgid "Amount in"
-msgstr ""
+msgstr "Valor en"
 
 msgid "An Ends Between trade pays out if the market exit price is strictly higher than the low price target AND strictly lower than the high price target. An Ends Outside binary pays out if the market exit price is EITHER strictly higher than the high price target OR strictly lower than the low price target."
 msgstr "Un contrato \"Finaliza dentro\" se paga si el precio de salida del mercado es estrictamente superior al límite de precio bajo Y estrictamente inferior al límite de precio alto. Un contrato \"Finaliza fuera\" se paga si el precio de salida del mercado es O BIEN estrictamente superior \n"
@@ -2147,7 +2147,7 @@ msgid "By purchasing the %1\"High-Close\"%2 contract, you'll win the multiplier 
 msgstr "Al comprar el contrato %1\"Alto-Cerrar\"%2, usted ganará el valor del multiplicador por la diferencia entre %1alto%2 y %1cerrar%2 a lo largo de la duración del contrato."
 
 msgid "By purchasing the %1\"High-Low\"%2 contract, you'll win the multiplier times the difference between the %1high%2 and %1low%2 over the duration of the contract."
-msgstr ""
+msgstr "Al comprar el contrato %1\"Alto-Bajo\"%2, ganará el valor del multiplicador por la diferencia entre %1alto%2 y %1bajo%2 a lo largo de la duración del contrato."
 
 msgid "By registering a software application, website, or product you create or a service you offer (an \"Application\"), you acknowledge that you have read and understood and agree to be bound by these terms."
 msgstr "Al registrar una aplicación de software, sitio web, o producto que usted crea o un servicio que usted ofrece (una \"Aplicación\"), usted reconoce que ha leído y entendido estos términos y los reconoce como vinculantes."
@@ -2198,7 +2198,7 @@ msgid "CFDs on indices."
 msgstr "CFD sobre índices."
 
 msgid "CFH Clearing Limited."
-msgstr ""
+msgstr "CFH Clearing Limited."
 
 msgid "CPA (EU only)"
 msgstr "CPA (solo para la Unión Europea)"
@@ -2600,7 +2600,7 @@ msgid "Commission on withdrawals"
 msgstr "Comisión por retiros"
 
 msgid "Commission per side trade"
-msgstr ""
+msgstr "Comisión por operación alternativa"
 
 msgid "Commission rates"
 msgstr "Tasas de comisión"
@@ -3254,7 +3254,7 @@ msgid "Depending on the jurisdiction to which a Client's account has been attach
 msgstr "Dependiendo de la jurisdicción a la que la cuenta de un Cliente esté sujeta de acuerdo con los procedimientos para la apertura de una cuenta del sitio web los términos \"nosotros\", \"nuestro\", \"nuestros\", \"la Compañía\" o \"%1\" podrán referirse a cualquiera de estos"
 
 msgid "Depending on the level of risk that the Company is exposed to while acting as the client's counterparty, the Company acts largely in a principal capacity of the client's trades. As such, the execution venue will usually be %1. However, the Company may transmit the client's order to third-party liquidity providers, in which case the Company will determine the execution venue on the basis described above."
-msgstr ""
+msgstr "Dependiendo del nivel de riesgo al cual se exponga la Empresa al actuar como contraparte del cliente, la Empresa actúa en gran medida como administrador de las operaciones del cliente. Como tal, el medio de ejecución será usualmente %1. Sin embargo, la Empresa puede transmitir la orden del cliente a proveedores de liquidez externos, en cuyo caso la Empresa determinará el medio de ejecución en base a lo descrito anteriormente."
 
 msgid "Depending on the quality of the data feeds received from our feed providers, our servers might apply a tick filtering algorithm. The purpose of this filtering algorithm is to strip the feed of stray ticks. Stray ticks are ticks that manifestly fall outside of the current trading range of the market; such ticks are often due to communication delays with the exchanges or banks that provide quotes, human error, or database problems at any point between the originator of the quote and our servers."
 msgstr "Dependiendo de la calidad de los datos recibidos de nuestros proveedores de datos, nuestros servidores podrán aplicar un algoritmo de filtro  para quitar el flujo de las cotizaciones erróneas. Las cotizaciones erróneas son intervalos que caen fuera del rango de comercialización actual del mercado; tales intervalos se deben a las demoras en comunicación con las bolsas o bancos que proveen cotizaciones, a errores humanos o problemas en las bases de datos en cualquier punto entre el originador de la cotización y nuestros servidores."
@@ -3446,7 +3446,7 @@ msgid "Do you want to see %1 in other languages, or can you suggest improvements
 msgstr "¿Quiere ver %1 en otros idiomas o sugerir mejoras en las traducciones actuales?"
 
 msgid "Do you want to top up for another %1? If not, you can do this later on the %2Cashier page%3, too."
-msgstr ""
+msgstr "¿Desea recargar otros %1? Si no, puede también hacerlo más adelante en su %2Página de Cajero%3."
 
 msgid "Do you wish to continue?"
 msgstr "¿Desea continuar?"
@@ -3473,7 +3473,7 @@ msgid "Don't share your %1 account or payment methods with any other person."
 msgstr "No comparta su cuenta de %1 ni sus métodos de pago con ninguna otra persona."
 
 msgid "Don't show again"
-msgstr ""
+msgstr "No mostrar de nuevo"
 
 msgid "Don't want to trade in %1? You can open another cryptocurrency account."
 msgstr "¿No quiere comerciar en %1? Puede abrir otra cuenta de criptomoneda."
@@ -3545,7 +3545,7 @@ msgid "Due to the nature of our business as a trading counterparty, company prof
 msgstr "Debido a la naturaleza de nuestro negocio como contraparte comercial, las ganancias de la empresa están vinculadas a los ingresos netos generados por usted a través de la negociación. Sin embargo, nuestro objetivo es establecer, mantener y operar acuerdos organizacionales y administrativos eficaces con vistas a tomar todas las medidas razonables para evitar que los conflictos de intereses constituyan o den lugar a un riesgo material de perjuicio para los intereses de nuestros clientes."
 
 msgid "Due to the online nature of the business and instruments, there is a small delay between an order being entered and the same order being executed on the server. Any significant delay can have negative impacts on clients; therefore, the Company monitors the latency between the entering and execution of client orders. Should this delay exceed the established threshold, then the system administrators will be notified so that they can investigate any possible issue."
-msgstr ""
+msgstr "Debido a la naturaleza del negocio e instrumentos en línea, existe una pequeña demora entre una orden ingresada y la ejecución de la misma por el servidor. Cualquier demora significativa puede tener un impacto negativo en los clientes; por lo tanto, la Empresa monitorea la latencia entre el ingreso y la ejecución de las ordenes de los clientes. Si esta demora supera el umbral establecido, entonces los administradores de sistema serán notificados para que puedan investigar alguna posible situación."
 
 msgid "Duration"
 msgstr "Duración"
@@ -3560,7 +3560,7 @@ msgid "During the term of this Agreement, you grant us a royalty-free, non-exclu
 msgstr "Durante la vigencia de este Acuerdo, usted nos concede un derecho libre de regalías, no exclusivo, mundial e irrevocable, bajo todos sus derechos de propiedad intelectual, para:"
 
 msgid "During volatile markets, the Company's trading platform runs across a high number of concurrent online users, high volumes of client orders, and a high number of imported price ticks.  As part of the Company's best execution delivery to its clients, the Company ensures that its platform runs smoothly under such stressed conditions and takes all reasonable steps to safeguard the continuity and regularity in the performance of investment activities."
-msgstr ""
+msgstr "Durante mercados volátiles, la plataforma de operaciones de la Empresa encuentra un alto número de usuarios simultáneamente conectados, un alto volumen de operaciones, y un alto número de precios de ticks importados. Como parte de las políticas para entregar la mejor ejecución a sus clientes, la Empresa asegura que la plataforma de operaciones funcione sin inconvenientes bajo tales condiciones de estrés y toma todas las medidas razonables para salvaguardar la continuidad y regularidad en el rendimiento de las actividades de inversión."
 
 msgid "E-mail"
 msgstr "Correo electrónico"
@@ -3572,7 +3572,7 @@ msgid "E. Account Management"
 msgstr "E. Gestión de cuentas"
 
 msgid "E. Best execution obligation"
-msgstr ""
+msgstr "E. Obligación de mejor ejecución"
 
 msgid "EGR Operator Award"
 msgstr "Premio EGR Operator"
@@ -3629,7 +3629,7 @@ msgid "Each time you send us an order, you are charged a commission, which is eq
 msgstr "Cada vez que nos envía una orden, se le cobra una comisión, que es igual al precio del activo multiplicado por el porcentaje que se ve en la tabla de arriba."
 
 msgid "Each transfer is subject to a %1 transfer fee or a minimum fee of %2, whichever is higher."
-msgstr ""
+msgstr "Cada transferencia está sujeta a una tasa por transferencia de %1 o una tasa mínima de %2, la que sea mayor."
 
 msgid "Earn"
 msgstr "Gane"
@@ -3647,7 +3647,7 @@ msgid "Earn a monetary reward for any verifiable issues that you find, with a bo
 msgstr "Obtenga una recompensa monetaria por cada problema verificable que encuentre, con un máximo de hasta mil dólares por vulnerabilidades de alto riesgo en la seguridad."
 
 msgid "Earn additional income with us as you grow your community of potential and existing online traders through useful trading insights and mentorship."
-msgstr ""
+msgstr "Obtenga un ingreso adicional con nosotros a la par que expande su comunidad de inversores en línea, potenciales y existentes, mediante útiles consejos y tutoría de inversiones."
 
 msgid "Earn commission on the trading activity of clients that you refer to our MetaTrader 5 platform."
 msgstr "Gane comisiones por las operaciones de clientes a los que haya recomendado la plataforma MetaTrader 5."
@@ -7359,7 +7359,7 @@ msgid "Our MetaTrader 5 Standard account is suitable for both new and experience
 msgstr "Nuestra cuenta estándar de MetaTrader 5 es adecuada tanto para operadores nuevos como para traders experimentados."
 
 msgid "Our New Mobile Trading App"
-msgstr ""
+msgstr "Nuestra nueva App de Trading"
 
 msgid "Our Policy"
 msgstr "Nuestra política"
@@ -10123,7 +10123,7 @@ msgid "The company reserves the right to cancel/prohibit the use of this promoti
 msgstr "La compañía se reserva el derecho a cancelar/prohibir el uso de esta promoción a discreción en cualquier momento."
 
 msgid "The company reserves the right to charge a dormant fee of up to USD/EUR/AUD/GBP 25 or, equivalent of USD25 in any other currency as calculated in accordance with the current exchange rate published by www.xe.com, or any other recognized data provider, as on the date of charging of the fee, every 6 months for every Client account that has had no transaction recorded for over 12 months."
-msgstr ""
+msgstr "La empresa se reserva el derecho a cobrar una tasa por inactividad de hasta USD/EUR/AUD/GBP 25 o; equivalente a USD25 en cualquier otra moneda como se calcule en base a la tasa de cambio disponible y publicada en www.xe.com, o cualquier otro proveedor reconocido, a la fecha del cargo realizado, cada 6 meses para cada cuenta de cliente que no registre transacciones por 12 meses o más."
 
 msgid "The company reserves the right to charge a dormant fee of up to USD/EUR/GBP 25 every 6 months for every Client account that has had no transaction recorded for over 12 months. Clients will be notified before the fee is deducted from the account. Clients need to contact our helpdesk to recover funds from inactive, closed, blocked or excluded accounts."
 msgstr "La Compañía se reserva el derecho de cobrar una tarifa para las cuentas inactivas de hasta 25 USD/EUR/GBP cada 6 meses por cada cuenta de Cliente que no haya registrado ninguna transacción durante más de 12 meses. Los clientes serán notificados antes de que la cuota sea deducida de la cuenta. Los clientes deben ponerse en contacto con nuestro servicio de asistencia para recuperar fondos de cuentas inactivas, cerradas, bloqueadas o excluidas."
