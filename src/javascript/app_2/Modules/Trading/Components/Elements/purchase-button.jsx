@@ -12,12 +12,12 @@ const PurchaseButton = ({
     is_disabled,
     is_high_low,
     is_loading,
-    is_param_change,
+    should_fade,
     onClickPurchase,
     type,
 }) => {
     const getIconType = () => {
-        if (!is_param_change && is_loading) return '';
+        if (!should_fade && is_loading) return '';
         return (is_high_low) ? `${type.toLowerCase()}_barrier` : type.toLowerCase();
     };
 
@@ -29,9 +29,9 @@ const PurchaseButton = ({
                 'btn-purchase',
                 {
                     'btn-purchase--disabled'           : (is_contract_mode || is_disabled) && !is_loading,
-                    'btn-purchase--animated--slide'    : !is_param_change && is_loading,
-                    'btn-purchase--animated--fade'     : is_param_change && is_loading,
-                    'btn-purchase--animated--fade-show': is_param_change && !is_loading,
+                    'btn-purchase--animated--slide'    : !should_fade && is_loading,
+                    'btn-purchase--animated--fade'     : should_fade && is_loading,
+                    'btn-purchase--animated--fade-show': should_fade && !is_loading,
                 })}
             has_effect
             onClick={() => { onClickPurchase(info.id, info.stake, type); }}
@@ -46,7 +46,7 @@ const PurchaseButton = ({
                     </div>
                     <div className='btn-purchase__text_wrapper'>
                         <span className='btn-purchase__text'>
-                            {(!is_param_change && is_loading) ? '' : localize('[_1]', getContractTypeDisplay(type, is_high_low))}
+                            {(!should_fade && is_loading) ? '' : localize('[_1]', getContractTypeDisplay(type, is_high_low))}
                         </span>
                     </div>
                 </div>
