@@ -22,9 +22,9 @@ const ContractInfo = ({
             <div className={classNames(
                 'trade-container__price-info',
                 {
-                    'trade-container__price-info--disabled'       : has_error_or_not_loaded,
-                    'trade-container__price-info--animated--slide': is_loading && !should_fade,
-                    'trade-container__price-info--animated--fade' : is_loading && should_fade,
+                    'trade-container__price-info--disabled': has_error_or_not_loaded,
+                    'trade-container__price-info--slide'   : is_loading && !should_fade,
+                    'trade-container__price-info--fade'    : is_loading && should_fade,
                 })}
             >
                 <div className='trade-container__price-info-basis'>

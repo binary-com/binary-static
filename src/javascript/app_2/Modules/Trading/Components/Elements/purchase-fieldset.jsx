@@ -15,7 +15,10 @@ class PurchaseFieldset extends React.PureComponent {
         should_fade : false,
     }
 
-    componentDidUpdate = () => this.setState({ should_fade: true });
+    componentDidMount() {
+        this.setState({ should_fade: true });
+    }
+
     onMouseEnter = () => this.setState({ show_tooltip: true });
     onMouseLeave = () => this.setState({ show_tooltip: false });
 

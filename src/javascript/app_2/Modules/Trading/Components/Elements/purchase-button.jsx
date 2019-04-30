@@ -29,9 +29,8 @@ const PurchaseButton = ({
                 'btn-purchase',
                 {
                     'btn-purchase--disabled'           : (is_contract_mode || is_disabled) && !is_loading,
-                    'btn-purchase--animated--slide'    : !should_fade && is_loading,
-                    'btn-purchase--animated--fade'     : should_fade && is_loading,
-                    'btn-purchase--animated--fade-show': should_fade && !is_loading,
+                    'btn-purchase--animated--slide'    : is_loading && !should_fade,
+                    'btn-purchase--animated--fade'     : is_loading && should_fade,
                 })}
             has_effect
             onClick={() => { onClickPurchase(info.id, info.stake, type); }}

@@ -134,7 +134,7 @@
                     }
                 }
             }
-            &--animated--slide {
+            &--slide {
                 width: 92px;
                 height: 8px;
                 margin: 6.5px 0;
@@ -144,7 +144,7 @@
                     @extend .loader--loading;
                 }
             }
-            &--animated--fade &-value {
+            &--fade &-value {
                 opacity: 0;
             }
             &-value {
@@ -411,6 +411,11 @@
         float: right;
         justify-content: right;
         background-color: transparent;
+
+        .btn-purchase__text {
+            opacity: 1;
+            transition: 0.3s;
+        }
     }
     &__effect-detail {
         width: 0;
@@ -489,12 +494,8 @@
             }
         }
     }
-    &--animated--fade .btn-purchase__info--right .btn-purchase__text {
+    &--animated--fade &__info--right &__text {
         opacity: 0;
-    }
-    &--animated--fade-show .btn-purchase__info--right .btn-purchase__text {
-        opacity: 1;
-        transition: 0.3s;
     }
     &__shadow-wrapper:hover:after {
         opacity: 0;
