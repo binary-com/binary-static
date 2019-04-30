@@ -3,7 +3,6 @@ import PropTypes       from 'prop-types';
 import React           from 'react';
 import Localize        from 'App/Components/Elements/localize.jsx';
 import Money           from 'App/Components/Elements/money.jsx';
-import { formatMoney } from 'Stores/Modules/Contract/Helpers/details';
 
 class ProfitLossCardContent extends React.Component {
     render() {
