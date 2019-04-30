@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-no-target-blank */
-import React from 'react';
+import React  from 'react';
 import Layout from './_common/layout.jsx';
 
 const gridLP = () => (
@@ -13,6 +13,7 @@ const gridLP = () => (
             'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js',
             'https://style.binary.com/binary.more.js',
             it.url_for('js/landing_pages/common.js'),
+            it.url_for('js/landing_pages/binary_grid.js'),
         ]}
     >
 
