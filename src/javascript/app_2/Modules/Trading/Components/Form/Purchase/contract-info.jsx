@@ -23,8 +23,8 @@ const ContractInfo = ({
                 'trade-container__price-info',
                 {
                     'trade-container__price-info--disabled'       : has_error_or_not_loaded,
-                    'trade-container__price-info--animated--slide': is_loading && is_param_change,
-                    'trade-container__price-info--animated--fade' : is_loading && !is_param_change,
+                    'trade-container__price-info--animated--slide': is_loading && !is_param_change,
+                    'trade-container__price-info--animated--fade' : is_loading && is_param_change,
                 })}
             >
                 <div className='trade-container__price-info-basis'>
