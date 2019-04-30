@@ -37,7 +37,7 @@ const ViewPopup = (() => {
 
     const init = (button, onClose) => {
         btn_view             = button;
-        contract_id          = $(btn_view).attr('contract_id');
+        contract_id          = +$(btn_view).attr('contract_id');
         contract             = {};
         is_sold              = false;
         is_sold_before_start = false;
@@ -210,10 +210,8 @@ const ViewPopup = (() => {
         let current_spot      = contract.status === 'sold' ? '' : contract.current_spot;
         let current_spot_time = contract.status === 'sold' ? '' : contract.current_spot_time;
         if (is_ended && contract.status !== 'sold') {
-            // for tick high/low contracts, only show exit tick information if contract lost (indicates highest/lowest tick)
-            const should_show_exit_tick = !/^(tickhigh|ticklow)$/i.test(contract.contract_type) || contract.status === 'lost';
-            current_spot      = should_show_exit_tick ? contract.exit_tick : '';
-            current_spot_time = should_show_exit_tick ? contract.exit_tick_time : '';
+            current_spot      = contract.exit_tick;
+            current_spot_time = contract.exit_tick_time;
         }
 
         if (current_spot) {
@@ -361,10 +359,6 @@ const ViewPopup = (() => {
         if (Lookback.isLookback(contract.contract_type)) {
             containerSetText('trade_details_spot_label', localize('Close'));
             containerSetText('trade_details_spottime_label', localize('Close Time'));
-        } else if (/^(tickhigh|ticklow)$/i.test(contract.contract_type)) {
-            const is_high_tick = /^(tickhigh)$/i.test(contract.contract_type);
-            containerSetText('trade_details_spot_label', is_high_tick ? localize('Highest Tick') : localize('Lowest Tick'));
-            containerSetText('trade_details_spottime_label', is_high_tick ? localize('Highest Tick Time') : localize('Lowest Tick Time'));
         } else {
             containerSetText('trade_details_spot_label', localize('Exit Spot'));
             containerSetText('trade_details_spottime_label', localize('Exit Spot Time'));
@@ -802,15 +796,15 @@ const ViewPopup = (() => {
 
     const responseProposal = (response) => {
         if (response.error) {
-            if (response.error.code !== 'AlreadySubscribed' && response.echo_req.contract_id === contract_id) {
+            if (response.error.code !== 'AlreadySubscribed' && +response.echo_req.contract_id === contract_id) {
                 showErrorPopup(response, response.error.message);
             }
             return;
         }
-        if (response.proposal_open_contract.contract_id === contract_id) {
+        if (+response.proposal_open_contract.contract_id === contract_id) {
             ViewPopupUI.storeSubscriptionID(response.proposal_open_contract.id);
             responseContract(response);
-        } else {
+        } else if (response.proposal_open_contract.id) {
             BinarySocket.send({ forget: response.proposal_open_contract.id });
         }
         const dates = ['#trade_details_start_date', '#trade_details_end_date', '#trade_details_current_date', '#trade_details_live_date'];
