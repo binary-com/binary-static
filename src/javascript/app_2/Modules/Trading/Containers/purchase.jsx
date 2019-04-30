@@ -54,8 +54,7 @@ const Purchase = ({
             />
         );
 
-        const contract_type_position = getContractTypePosition(type);
-        switch (contract_type_position) {
+        switch (getContractTypePosition(type)) {
             case 'top':
                 components.unshift(purchase_fieldset);
                 break;
