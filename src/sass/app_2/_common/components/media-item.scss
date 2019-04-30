@@ -4,7 +4,7 @@
     &__heading {
         @include typeface(--paragraph-left-bold-black);
         @include themify($themes) {
-            color: themed('text_primary_color');
+            color: themed('text_color');
         }
         margin: 0 0 16px;
         text-transform: none;
@@ -25,7 +25,7 @@
         align-items: flex-start;
         @include typeface(--paragraph-left-normal-black);
         @include themify($themes) {
-            color: themed('text_color');
+            color: themed('text_primary_color');
         }
     }
     &__form {

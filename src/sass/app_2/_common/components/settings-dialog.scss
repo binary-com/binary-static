@@ -5,7 +5,7 @@
         font-weight: bold;
         margin-bottom: 16px;
         @include themify($themes) {
-            color: themed('text_primary_color');
+            color: themed('text_color');
         }
     }
     &__language-container {
@@ -48,6 +48,9 @@
 
             &--active {
                 font-weight: bold;
+                @include themify($themes) {
+                    color: themed('text_color');
+                }
             }
         }
     }

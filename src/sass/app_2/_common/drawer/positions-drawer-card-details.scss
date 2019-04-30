@@ -32,13 +32,16 @@
     &__label {
         font-size: 1em;
         @include themify($themes) {
-            color: themed('text_primary_color');
+            color: themed('text_color');
         }
     }
     &__value {
         padding-top: 2px;
         line-height: 1.5;
         font-size: 1.2em;
+        @include themify($themes) {
+            color: themed('text_primary_color');
+        }
     }
     &__toggle {
         margin: -2px -9px -9px;

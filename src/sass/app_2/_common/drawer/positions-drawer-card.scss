@@ -155,7 +155,7 @@
             font-size: 1em;
             font-weight: normal;
             @include themify($themes) {
-                color: themed('text_primary_color');
+                color: themed('text_color');
             }
         }
     }
@@ -227,7 +227,7 @@
             margin-bottom: 0.5em;
             font-weight: normal;
             @include themify($themes) {
-                color: themed('text_primary_color');
+                color: themed('text_color');
             }
         }
         &--negative {
