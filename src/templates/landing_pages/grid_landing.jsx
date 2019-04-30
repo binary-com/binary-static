@@ -79,7 +79,7 @@ const gridLP = () => (
                             </div>
                             <div className='right-col-feature'>
                                 <h3>{('Limited risks')}</h3>
-                                <p>{('Get started with stakes as low as 10¢.')}</p>
+                                <p>{('Get started with stakes as low as 50¢.')}</p>
                             </div>
                         </div>
                     </div>
@@ -152,7 +152,7 @@ const gridLP = () => (
                     <div className='gr-row gr-row-align-around'>
                         <div className='gr-6 gr-12-t gr-12-m gr-12-p'>
                             <div className='padding-md ft-bold'>
-                                <p>{('Only available for Android devices at the moment.')}<span className='block-element'>{('Binary Grid for iOS devices coming soon.')}</span></p>
+                                <p>{('Only available for Android devices at the moment.')}<span className='block-element block-xs'>{('Binary Grid for iOS devices coming soon.')}</span></p>
                             </div>
                         </div>
                         <div className='gr-4 gr-12-t gr-12-m gr-12-p'>
@@ -176,7 +176,7 @@ const gridLP = () => (
                 <div className='container center-text'>
                     <div className='gr-row'>
                         <div className='gr-12'>
-                            <h4 className='content-inverse-color'>{('Need further assistance? Connect with us')}</h4>
+                            <h4 className='content-inverse-color'>{('Need further assistance?')} <span className='block-xs'>{('Connect with us')}</span></h4>
                         </div>
                     </div>
                     <div className='gr-row'>
