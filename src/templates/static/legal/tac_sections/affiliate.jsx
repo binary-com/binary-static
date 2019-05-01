@@ -49,7 +49,7 @@ const Affiliate = () => (
                 ]}
             >
                 <ul>
-                    <li>{it.L('In the event that the Company is aware of an Affiliate who is in breach of any of the above provisions, the Company shall have the right, in addition to any other right or remedy available to it under this Agreement or applicable law, to immediately block the Affiliate\'s access to this programme. The Affiliate hereby irrevocably waives its rights to, and shall indemnify, the Company and any member of the Binary group of companies for, any claims or demands made against the Company or any member of the Binary group of companies, their directors, officers, shareholders, employees or against the [_1] website in respect of such action taken by the Company.', it.website_name)}</li>
+                    <li>{it.L('In the event that the Company is aware of an Affiliate who is in breach of any of the above provisions, the Company shall have the right, in addition to any other right or remedy available to it under this Agreement or applicable law, to immediately block the Affiliate\'s access to this programme. The Affiliate hereby irrevocably waives their rights to, and shall indemnify, the Company and any member of the Binary group of companies for, any claims or demands made against the Company or any member of the Binary group of companies, their directors, officers, shareholders, employees or against the [_1] website in respect of such action taken by the Company.', it.website_name)}</li>
                 </ul>
             </ListNested>
 
