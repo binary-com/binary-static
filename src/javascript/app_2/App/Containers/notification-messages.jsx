@@ -2,7 +2,7 @@ import PropTypes        from 'prop-types';
 import React            from 'react';
 import { connect }      from 'Stores/connect';
 import Notification, {
-    MAX_DISPLAY_NOTIFICATIONS,
+    max_display_notifications,
     sortNotifications } from '../Components/Elements/NotificationMessage';
 
 const NotificationMessages = ({
@@ -12,7 +12,7 @@ const NotificationMessages = ({
     <div className='notification-messages'>
         {
             notification_messages
-                .slice(0, MAX_DISPLAY_NOTIFICATIONS)
+                .slice(0, max_display_notifications)
                 .sort(sortNotifications)
                 .map((notification, idx) => (
                     <Notification

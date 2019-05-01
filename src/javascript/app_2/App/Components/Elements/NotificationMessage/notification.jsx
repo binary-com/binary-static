@@ -8,8 +8,8 @@ import { IconWarning }     from 'Assets/Common/icon-warning.jsx';
 import { IconSuccess }     from 'Assets/Common/icon-success.jsx';
 import CloseButton         from './close-button.jsx';
 import {
-    DEFAULT_DELAY,
-    TYPES }             from './constants';
+    default_delay,
+    types }             from './constants';
 
 const Notification = ({
     data,
@@ -26,12 +26,12 @@ const Notification = ({
     const onClick = () => destroy(true);
 
     if (data.is_auto_close) {
-        setTimeout(destroy, data.delay || DEFAULT_DELAY);
+        setTimeout(destroy, data.delay || default_delay);
     }
 
     return (
         <div className={
-            classNames('notification', TYPES[data.type.toUpperCase()], {
+            classNames('notification', types[data.type], {
                 'notification--small': data.size === 'small',
             })}
         >

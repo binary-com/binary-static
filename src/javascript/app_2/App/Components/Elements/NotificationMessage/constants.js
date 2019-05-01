@@ -1,12 +1,12 @@
-export const DEFAULT_DELAY = 3000;
+export const default_delay = 3000;
 
-export const MAX_DISPLAY_NOTIFICATIONS = 3;
+export const max_display_notifications = 3;
 
-export const TYPES = {
-    DANGER : 'notification--danger',
-    INFO   : 'notification--info',
-    SUCCESS: 'notification--success',
-    WARNING: 'notification--warning',
+export const types = {
+    danger : 'notification--danger',
+    info   : 'notification--info',
+    success: 'notification--success',
+    warning: 'notification--warning',
 };
 
 export const sortNotifications = (() => {
