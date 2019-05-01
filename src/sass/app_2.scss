@@ -9,6 +9,7 @@
 // General
 @import 'app_2/_common/symbols';
 @import 'app_2/_common/tooltip';
+@import 'app_2/_common//popover.scss';
 @import 'app_2/_common/loading';
 
 // Layout
@@ -46,6 +47,7 @@
 @import 'app_2/_common/components/error-boundary';
 @import 'app_2/_common/components/login-prompt';
 @import 'app_2/_common/components/media-item';
+@import 'app_2/_common/components/notification-bar';
 @import 'app_2/_common/components/number-selector';
 @import 'app_2/_common/components/popconfirm';
 @import 'app_2/_common/components/radio-group';

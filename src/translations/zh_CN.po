@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-04-24 13:15\n"
+"PO-Revision-Date: 2019-04-30 05:53\n"
 "Last-Translator: binarycom\n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -445,7 +445,7 @@ msgid "'Financial Betting Operator of the Year' award by eGaming Review"
 msgstr "《 eGaming Review》颁发的“年度最佳金融投注运营商”奖项"
 
 msgid "(One) Touch trades"
-msgstr "\"触碰\"交易"
+msgstr "\"触及\"交易"
 
 msgid "(This limit may vary depending on current exchange rates.)"
 msgstr "(此限额可能因当前汇率而更改。)"
@@ -1113,9 +1113,6 @@ msgstr "您使用所有软件的风险由您自己承担。公司对使用第三
 msgid "All times are in GMT (Greenwich Mean Time)."
 msgstr "所有时间均采用 格林威治标准时间（GMT）。"
 
-msgid "All transactions that occur on the blockchain related to cryptocurrency may not be supervised and regulated by financial institutions and government agencies. The absence of an overarching authority overseeing cryptographic transactions means that there is no recourse to banks, payment service providers, or regulators in the event of erroneous or fraudulent transactions. It is your responsibility to check what rules and protections apply in your relevant jurisdiction before investing and / or trading in virtual currency and / or trading on contracts for differences relating to virtual currency. Please be aware of all the risks associated with cryptocurrency trading and seek advice from an independent financial advisor and / or legal advisor if you have any doubts."
-msgstr "在与加密货币有关的区块链上发生的所有交易可能不受金融机构和政府机构监督和监管。没有受官方机构监督的加密交易意味着在交易发生错误或欺诈行为时, 无法向银行、支付服务提供商或监管机构求助。在进行虚拟货币投资和/或交易和/或进行与虚拟货币相关的差价合约交易之前, 您有责任检查在您的相关管辖区中适用的规则和保护。请注意与加密货币交易相关的所有风险。如有任何疑问, 请向独立的财务顾问和/或法律顾问寻求意见。"
-
 msgid "All unforeseen openings or closings of positions initiated by the Expert Advisor, whether relevant to system error or otherwise, are out of the scope of the Company's responsibility hence the Company is not liable for such actions or results."
 msgstr "专家顾问发起的所有不可预见的头寸开仓或平仓, 无论是与系统出错有关或是由于其他原因, 都超出了公司的责任范围, 因此公司不承担此类行动或结果的责任。"
 
@@ -1169,6 +1166,9 @@ msgstr "请时刻更新您的网络浏览器。我们建议您使用最新版本
 
 msgid "Amount"
 msgstr "金额"
+
+msgid "Amount in"
+msgstr "金额单位为"
 
 msgid "An Ends Between trade pays out if the market exit price is strictly higher than the low price target AND strictly lower than the high price target. An Ends Outside binary pays out if the market exit price is EITHER strictly higher than the high price target OR strictly lower than the low price target."
 msgstr "如果市场平仓价格严格高于 \"低\" 目标价格以及严格低于 \"高\"目标价格，“收于范围之内”交易将可获利。如果市场平仓价格严格高于 \"高\" 目标价格或严格低于 \"低\"目标价格，“收于范围之外”交易将可获利。"
@@ -1235,9 +1235,6 @@ msgstr "采用范围广泛的指标、价格带和多重覆盖图等分析市场
 
 msgid "Android"
 msgstr "Android"
-
-msgid "Annual Best Execution Disclosure 2017"
-msgstr "2017年年度最佳执行披露"
 
 msgid "Another major award. This time we're nominated by the online readers of Global Banking and Finance Review and judged by a panel of industry experts and analysts who recognise our 13 years of platform reliability, range of trades, pricing, customer service and extensive knowledge."
 msgstr "这是我们赢得的另一大奖项。该奖项由《Global Banking and Finance Review》杂志的在线读者提名，并由行业专家和分析师评审团评选得出。这是对我们13年来的平台可靠性、交易品种范围、定价、客户服务和专业程度的认可。"
@@ -1676,6 +1673,12 @@ msgstr "二、开始和取消"
 
 msgid "B. Scope"
 msgstr "二、范围"
+
+msgid "BIEL RTS28 for 2017"
+msgstr "2017年 BIEL RTS28"
+
+msgid "BIEL RTS28 for 2018"
+msgstr "2018年 BIEL RTS28"
 
 msgid "BIEL forms part of %1the Investor Compensation Scheme%2 (the \"Scheme\") which is a rescue fund for investors that are clients of failed investment firms licensed by the MFSA. The Scheme covers 90% of the Company's net liability to a client in respect of investments which qualify for compensation under the Investment Services Act subject to a maximum payment to any one person of €20,000. The Scheme is based on EC Directive 97/9."
 msgstr "BIEL 是%1投资者补偿方案%2 ( \"方案\") 的一部分，该方案是专为获得MFSA准证而经营失败的投资者设立的救济基金。根据投资服务规定每人最多只补偿20,000欧元的限制，此基金向每位合格者提供的补偿金额为公司对客户投资负债净额的90%。此方案依据欧盟第97/9指令设定。"
@@ -3019,12 +3022,6 @@ msgstr "加密"
 msgid "Cryptocurrencies"
 msgstr "加密货币"
 
-msgid "Cryptocurrencies are volatile assets that are extremely vulnerable to market fluctuations. Trading cryptocurrency contracts for differences is highly speculative investment because prices of cryptocurrencies can go up and down &mdash; potentially to a worthless (zero) value. Investing in cryptocurrency contracts for differences through leveraged accounts amplifies this underlying volatility risk, making the change in prices even more significant. When you invest in a leveraged contract for differences related to cryptocurrencies, your profit or loss is based on the leveraged ratio you set for your account. If the price movement is in your favour, returns generated are of multiple times higher than the amount set aside from your account balance to open and maintain a transaction. However, if the price movement is against your favour, you will suffer losses that are of multiple times higher than the amount set aside from your account balance to open and maintain a transaction. You should not trade in cryptocurrencies unless you fully understand and are aware that trades and / or investments involving cryptocurrencies are complex and high risk in nature and you not only risk incurring significant losses over a short period of time but also risk losing all your invested capital."
-msgstr "加密货币是极易受市场波动影响的波动性资产。进行加密货币差价合约交易是高度投机的投资, 因为 加密货币的价格可以上升和下跌 &mdash; 至潜在性的无 (零) 价值。通过杠杆账户投资于加密货币的差价合约将使此潜在的波动性风险加大, 使得价格的变化更加显著。当您在与加密货币有关的杠杆差价合约中投资, 您的利润或损失将基于您为账户设置的杠杆比率。如果价格变动对您有利, 则所生成的回报将比从账户余额中拨出打开和维护交易的金额多几倍。然而, 如果价格变动对您不利, 您将遭受的损失会比从账户余额预留作打开和维护交易的金额多数倍。除非您完全理解并意识到涉及加密货币的交易和/或投资是复杂和高风险的, 您不应该进行加密货币交易。因您不仅会在短时间内承担重大损失, 而且还冒着失去所有投资资本的风险。"
-
-msgid "Cryptocurrencies are volatile assets that are extremely vulnerable to market fluctuations. Trading in cryptocurrencies is a highly speculative investment because prices of cryptocurrencies can go up and down &mdash; potentially to a worthless (zero) value. You should not trade in cryptocurrencies unless you fully understand and are aware that trades and /or investments involving cryptocurrencies are complex and high risk in nature and you not only risk incurring significant losses over a short period of time but also risk losing all your invested capital."
-msgstr "加密货币是极易受市场波动影响的波动性资产。进行加密货币交易是高度投机的投资, 因为加密货币的价格可以上升和下跌 &mdash; 至潜在性的无 (零) 价值。除非您完全理解并意识到涉及加密货币的交易和/或投资是复杂和高风险的, 您不应该进行加密货币交易。因您不仅会在短时间内承担重大损失, 而且还冒着失去所有投资资本的风险。"
-
 msgid "Cryptocurrencies commission per round trade. Example: A round trade of 1 lot of BTC/USD with spot price of 10,000 will pay USD 30 on standard account."
 msgstr "每回合交易的加密货币佣金。例如: 1手比特币/美元的一回合交易, 如现货价格为 10,000，标准账户将支付30美元。"
 
@@ -3036,9 +3033,6 @@ msgstr "比特币和以太币等加密货币是区块链上的分散式数字货
 
 msgid "Cryptocurrency"
 msgstr "加密货币"
-
-msgid "Cryptocurrency Risks"
-msgstr "加密货币风险"
 
 msgid "Cryptocurrency contract specifications and commission scheme"
 msgstr "加密货币合约规格和佣金计划"
@@ -3787,6 +3781,9 @@ msgstr "确保每个页面或产品的设计和开发与我们的样式指南一
 msgid "Ensure the integrity of releases by coordinating testing activities"
 msgstr "通过协调测试活动确保发布的完整性"
 
+msgid "Enter payment agent ID"
+msgstr "输入付款代理 ID"
+
 msgid "Enter the authentication code generated by the app below:"
 msgstr "输入以下应用程序生成的身份验证代码:"
 
@@ -3800,7 +3797,7 @@ msgid "Entry spot"
 msgstr "入市现价"
 
 msgid "Entry spot price"
-msgstr "入市现价"
+msgstr "入市价格"
 
 msgid "Equals"
 msgstr "等于"
@@ -4289,7 +4286,7 @@ msgid "Final price"
 msgstr "最终价格"
 
 msgid "Finally, make your prediction: will the market price end up higher or lower than the entry spot at the end of the contract? If you need to review a previous transaction, you may browse your full transaction history via the 'History' tab."
-msgstr "最后, 作出您的预测: 市场价格最终会高于或低于合约结束时的入市现价？如果需要审阅之前的交易记录, 您可以通过 \"历史\" 选项卡浏览完整的交易历史。"
+msgstr "最后, 作出您的预测: 市场价格最终会高于或低于合约结束时的入市价格？如果需要审阅之前的交易记录, 您可以通过 \"历史\" 选项卡浏览完整的交易历史。"
 
 msgid "Finance"
 msgstr "金融"
@@ -4570,11 +4567,11 @@ msgstr "账户之间不可转账。"
 msgid "Funding of MT5 Real Account"
 msgstr "MT5真实账户资金存入"
 
-msgid "Further Instructions"
-msgstr "详细说明"
-
 msgid "Further information"
 msgstr "更多信息"
+
+msgid "Further instructions"
+msgstr "详细说明"
 
 msgid "Further, the Company, under the above circumstances, or any other, reserves the right to adjust a client's account should any trade result in a disruption, miscarry or aborted trade."
 msgstr "此外，在以上或其他任何情况之下，如果发生任何交易中断、流产或中止等，公司保留调整客户账户的权利。"
@@ -5078,7 +5075,7 @@ msgid "Ideal for new and experienced traders"
 msgstr "最适于新手和经验丰富的交易者"
 
 msgid "Ideas"
-msgstr "意见"
+msgstr "想法"
 
 msgid "Ideas, opinions and insights from the people behind %1"
 msgstr "％1人员的想法、意见和见解"
@@ -5145,6 +5142,9 @@ msgstr "如果您MT5真实账户的保证金水平达到或低于强制平仓水
 
 msgid "If the bid price is 1.05229, you'll buy USD 1.05229 for every EUR 1 you sell."
 msgstr "如果卖价是1.05229，那么您每卖出1欧元就会买入1.05229美元。"
+
+msgid "If the payment agent is not listed, type in the payment agent ID. For example: CR000000."
+msgstr "如果付款代理没在列表内, 请输入付款代理 ID。例如: CR000000。"
 
 msgid "If this Agreement is terminated for any reason, you must permanently delete all Content, except when doing so would cause you to violate any law or obligation imposed by a governmental authority."
 msgstr "如果协议因任何原因被终止，您必须立即删除所有内容，除非这样做将导致您违反任何法律或政府部门所规定的义务。"
@@ -5226,9 +5226,6 @@ msgstr "如果您已在同一市场持有多个未平仓头寸，您在同一市
 
 msgid "If you keep any positions open overnight, an interest adjustment will be made to your trading account as indication of the cost required to keep your position open."
 msgstr "如果您持仓隔夜，需付持仓费。此费用将以利息名义在您的交易账户中扣除。"
-
-msgid "If you lose your cryptocurrencies as a result of exchanges and wallet providers being hacked or becoming insolvent, there is no assurance of a recourse. It is your responsibility to store your cryptocurrencies securely. %1 will not accept liability for any loss or damage that arise, directly or indirectly, from theft of your cryptocurrency or insolvency of exchanges and wallet providers that you use."
-msgstr "如果您由于交易所和钱包供应商被骇客入侵或无力偿债而损失加密货币, 将没有任何补偿的保障。安全保存加密货币是您的责任。%1 将不对您由于加密货币被盗窃或交易所和钱包供应商破产所造成的直接或间接损失或损害承担任何责任。"
 
 msgid "If you need assistance feel free to contact our %1Customer Support%2."
 msgstr "如果您需要帮助，请联系我们的%1客服部%2。"
@@ -5315,16 +5312,16 @@ msgid "If you select \"Under\", you will win the payout if the <strong>last dig
 msgstr "如果您选择“小于”期权，只要<strong>最新价格的</strong>最后一个数字<strong>小于您的预测，您将获得赔付。</strong>"
 
 msgid "If you select \"falls\", you win the payout if the market price is lower than the <strong>entry spot</strong>."
-msgstr "如果您选择“下跌”期权，只要市场价格低于<strong>入市现价</strong>，您将获得赔付。"
+msgstr "如果您选择“下跌”期权，只要市场价格低于<strong>入市价格</strong>，您将获得赔付。"
 
 msgid "If you select \"falls\", you win the payout if the market price is lower than the entry spot."
 msgstr "如果您选择“下跌”期权，只要市场价格低于入市现价，您将获得赔付。"
 
 msgid "If you select \"rises\", you win the payout if the market price is higher than the <strong>entry spot</strong>."
-msgstr "如果您选择“上涨”期权，只要市场价格高于 <strong>入市现价 </strong>，您将获得赔付。"
+msgstr "如果您选择“上涨”期权，只要市场价格高于 <strong>入市价格 </strong>，您将获得赔付。"
 
 msgid "If you select \"rises\", you win the payout if the market price is higher than the entry spot."
-msgstr "如果您选择“上涨”期权，只要市场价格高于入市现价，您将获得赔付。"
+msgstr "如果您选择“上涨”期权，只要市场价格高于入市价格，您将获得赔付。"
 
 msgid "If you select %1\"High Tick\"%2, you win the payout if the selected tick is the %1highest among the next five ticks%2."
 msgstr "如果您选择 %1\"高跳动点\"%2, 如果所选跳动点是接下来下五个跳动点%2 中%1最高值, 可获得赔付。"
@@ -5339,7 +5336,7 @@ msgid "If you select %1\"Only Ups\"%2, you win the payout if consecutive ticks r
 msgstr "如果您选择%1“只会持续上涨”%2期权，只要%1入市现价%2后的价格持续上涨，您将获得赔付。如果期间内的价格有任何下跌或相等于之前的价格， 您将不会获得%3赔付。"
 
 msgid "If you select a <strong>start time</strong> in the future, the <strong>start time</strong> is that which is selected and the <strong>entry spot</strong> is the price in effect at that time."
-msgstr "如果您选择的 <strong>开始时间</strong> 为未来的某个时间，交易的 <strong>开始时间</strong> 就是您选择的时间，<strong>入市现价</strong> 就是当时的实时价格。"
+msgstr "如果您选择的 <strong>开始时间</strong> 为未来的某个时间，交易的 <strong>开始时间</strong> 就是您选择的时间，<strong>入市价格</strong> 就是当时的实时价格。"
 
 msgid "If you select a <strong>start time</strong> of \"Now\", the <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration)."
 msgstr "如果您选择的 <strong>开始时间</strong> 是“现在”，交易 <strong>结束时间</strong> 就是交易 <strong>开始时间</strong> 之后所选的分钟数或小时数（如果期限短于一天），或在交易日的结束时间（如果期限为一天或更长）。"
@@ -6655,9 +6652,6 @@ msgstr "方式"
 msgid "Meticulous English language skills, with keen eye for detail when it comes to punctuation, spelling, grammar, and syntax"
 msgstr "熟练的英语语言技能, 特别注重关于标点、拼写、语法和句法方面的细节"
 
-msgid "MiFID II RTS 28"
-msgstr "MiFID II RTS 28"
-
 msgid "Min"
 msgstr "最小"
 
@@ -7363,6 +7357,9 @@ msgstr "我们的 MetaTrader 5 高级账户为您提供极低的差价, 更高�
 msgid "Our MetaTrader 5 Standard account is suitable for both new and experienced traders."
 msgstr "我们的 MetaTrader 5 标准账户适用于新手和经验丰富的交易者。"
 
+msgid "Our New Mobile Trading App"
+msgstr ""
+
 msgid "Our Policy"
 msgstr "我们的政策"
 
@@ -7882,9 +7879,6 @@ msgstr "请选择"
 msgid "Please select a country"
 msgstr "请选择国家"
 
-msgid "Please select a payment agent"
-msgstr "请选择支付代理"
-
 msgid "Please select a valid time."
 msgstr "请选择ั有效时间。"
 
@@ -8300,6 +8294,9 @@ msgstr "十三、术语释义"
 msgid "RTS 27"
 msgstr "RTS 27"
 
+msgid "RTS 28"
+msgstr "RTS 28"
+
 msgid "Range of markets"
 msgstr "市场范围"
 
@@ -8669,9 +8666,6 @@ msgstr "风险警告"
 msgid "Risk of Stop Order"
 msgstr "止损单的风险"
 
-msgid "Risk of cryptocurrency contracts for differences"
-msgstr "加密货币差价合约的风险"
-
 msgid "Risk of slippage"
 msgstr "滑点风险"
 
@@ -8815,6 +8809,9 @@ msgstr "选择日期"
 
 msgid "Select market:"
 msgstr "选择市场："
+
+msgid "Select payment agent"
+msgstr "选择付款代理"
 
 msgid "Select your market and underlying asset"
 msgstr "选择您的市场和基础资产"
@@ -9105,7 +9102,7 @@ msgid "Spot Time (GMT)"
 msgstr "现货时间 (GMT)"
 
 msgid "Spot price"
-msgstr "现货价格"
+msgstr "现时价格"
 
 msgid "Spread"
 msgstr "价差交易"
@@ -9618,7 +9615,7 @@ msgid "The <strong>entry spot</strong> is the first tick after the contract is p
 msgstr "<strong>入市现价</strong>指我们服务器处理合约后的第一个跳动点。"
 
 msgid "The <strong>exit spot</strong> is the latest tick at or before the <strong>end time</strong>."
-msgstr "<strong>退市现价</strong>是合约<strong>结束时或之前的</strong>最后跳动价点。"
+msgstr "<strong>退市现价</strong>是合约<strong>结束时或结束之前的</strong>最后跳动价点。"
 
 msgid "The <strong>remaining time</strong> is the time remaining until the contract expires."
 msgstr "<strong>剩余时间</strong> 是合约到期前剩下的时间。"
@@ -10125,8 +10122,8 @@ msgstr "公司把客户资金存在独立的银行账户并已作好安排，如
 msgid "The company reserves the right to cancel/prohibit the use of this promotion at its own discretion at any time."
 msgstr "公司有权在任何时候自行取消/禁止使用本推广。"
 
-msgid "The company reserves the right to charge a dormant fee of up to USD/EUR/AUD/GBP 25 or, for the cryptocurrency accounts, the equivalent of USD25 as calculated in accordance with the current exchange rate published by www.xe.com, or another recognized data provider, as on the date of charging of the fee, every 6 months for every Client account that has had no transaction recorded for over 12 months."
-msgstr "对每一个超过12个月没有交易记录的客户账户，公司保留从收取费用日期开始收取每6个月高达25 美元/欧元/澳元/英镑的账户休眠费用的权利。或者, 对于加密货币账户, 按照www.xe.com 发布的当前汇率或其他公认的数据提供商计算法收取相当于25美元的费用。"
+msgid "The company reserves the right to charge a dormant fee of up to USD/EUR/AUD/GBP 25 or, equivalent of USD25 in any other currency as calculated in accordance with the current exchange rate published by www.xe.com, or any other recognized data provider, as on the date of charging of the fee, every 6 months for every Client account that has had no transaction recorded for over 12 months."
+msgstr ""
 
 msgid "The company reserves the right to charge a dormant fee of up to USD/EUR/GBP 25 every 6 months for every Client account that has had no transaction recorded for over 12 months. Clients will be notified before the fee is deducted from the account. Clients need to contact our helpdesk to recover funds from inactive, closed, blocked or excluded accounts."
 msgstr "对每一个超过12个月没有交易记录的客户账户，公司保留收取每6个月高达25 美元/欧元/澳元/英镑的账户休眠费用的权利。自账户中扣除费用前，客户将会收到通知。如要将没有活动、已关闭、被封或禁用的账户基金取回，客户须联系我们的客服部。"
@@ -10159,7 +10156,7 @@ msgid "The entry spot is the first tick after the contract is processed by our s
 msgstr "入市现价指我们服务器处理合约后的第一个跳动点。"
 
 msgid "The entry spot price is the starting price of the trade purchased by a trader."
-msgstr "入市现价是交易者所买入交易的初始价格。"
+msgstr "入市价格是交易者所买入交易时的市场价格。"
 
 msgid "The execution venues are assessed, on a regular basis, as to whether they provide for the best possible result for the clients."
 msgstr "定期对执行场地进行评估，确保能为客户提供最佳可能结果。"
@@ -11094,6 +11091,9 @@ msgstr "把资金从您的MetaTrader 5账户转移到二元期权账户︰"
 msgid "Transfer funds from your binary options account into your MetaTrader 5 account."
 msgstr "把资金从您的二元期权账户转移到MetaTrader 5账户︰"
 
+msgid "Transfer funds to a payment agent"
+msgstr "将资金转予付款代理"
+
 msgid "Transfer funds to your MT5 account"
 msgstr "将资金转入您的 MT5 账户"
 
@@ -11114,9 +11114,6 @@ msgstr "转给登录 ID"
 
 msgid "Transfer to MT5"
 msgstr "转至 MT5"
-
-msgid "Transfer to Payment Agent"
-msgstr "转给支付代理"
 
 msgid "Translate data into consumable information and assist in making data-driven decisions across departments."
 msgstr "将数据转换为可应用的信息, 并协助各部门做出数据驱动的决策。"
@@ -11491,7 +11488,7 @@ msgid "View all the information you need to manage your client list – includin
 msgstr "查看管理客户列表的所有必要信息 — — 包括登录 ID、分组、杠杆率、均衡、衡平和保证金"
 
 msgid "View available payment methods"
-msgstr "查看可用支付方式"
+msgstr "查看支付方式"
 
 msgid "View chart"
 msgstr "查看图表"
@@ -12076,7 +12073,7 @@ msgid "Where such additional functions/plug-ins affect the reliability and/or sm
 msgstr "如果此类附加功能/插件影响MT5交易平台的可靠性和/或平稳运行和/或正常运作，公司有权通过书面通知立即终止与客户的合约关系。"
 
 msgid "Where supportive colleagues are like a second family."
-msgstr "同事间像家人一样相互帮助。"
+msgstr "同事间像家人那样相互帮助。"
 
 msgid "Where teamwork and a collaborative culture form the platform for personal and corporate growth."
 msgstr "团队精神和协作文化构建个人和企业成长的平台。"
@@ -12220,7 +12217,7 @@ msgid "Windows"
 msgstr "Windows"
 
 msgid "Winning the contract"
-msgstr "盈利合约"
+msgstr "合约盈利"
 
 msgid "With %1, you can count on us to serve you with integrity and reliability."
 msgstr "通过%1，您可放心享用我们诚信及可靠的服务。"
@@ -13523,7 +13520,7 @@ msgid "today"
 msgstr "今天"
 
 msgid "today, Fridays"
-msgstr "今天、周五"
+msgstr "今天，周五"
 
 msgid "trailing stops; and"
 msgstr "追踪止损; 和"
