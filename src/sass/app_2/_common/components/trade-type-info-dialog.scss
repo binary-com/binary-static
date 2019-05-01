@@ -83,7 +83,7 @@
             @include typeface(--paragraph-left-bold-black);
             @include toEm(margin-left, 8px, 1.4em);
             @include themify($themes) {
-                color: themed('text_primary_color');
+                color: themed('text_color');
             }
             cursor: default;
         }
@@ -133,7 +133,7 @@
             background-color: themed('slider_background_color');
 
             &--active {
-                background-color: themed('border_hover_color');
+                background-color: themed('trade_carousel_indicator');
             }
         }
     }

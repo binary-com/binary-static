@@ -186,7 +186,7 @@
             }
         }
         &--selected .list__item-text, &--selected .list__item-symbol, &--selected .list__item-tooltip {
-            @include typeface(--paragraph-left-semibold-active);
+            @include typeface(--paragraph-left-bold-active);
             @include themify($themes) {
                 color: themed('text_active_color');
                 background: themed('active_color');

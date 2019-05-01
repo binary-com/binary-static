@@ -39,6 +39,10 @@
         padding-top: 2px;
         line-height: 1.5;
         font-size: 1.2em;
+        font-weight: bold;
+        @include themify($themes) {
+            color: themed('text_color');
+        }
     }
     &__toggle {
         margin: -2px -9px -9px;
