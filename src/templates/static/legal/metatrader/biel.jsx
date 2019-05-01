@@ -10,7 +10,7 @@ const BIEL = () => (
             <li>{it.L('CFDs on commodities')}</li>
             <li>{it.L('CFDs on indices')}</li>
         </ol>
-        <p>{it.L('The trading services described in this agreement are OTC. This means that one or more of the Underlying Instruments in which the Client transacts with BIEL, though quoted on an exchange, are not traded on an exchange when transacted through the Electronic trading platform as described in this agreement.')}</p>
+        <p>{it.L('The trading services described in this agreement are OTC. This means that one or more of the Underlying Instruments in which the Client transacts with BIEL, though quoted on an exchange, are not traded on an exchange when transacted through the electronic trading platform as described in this agreement.')}</p>
         <p>{it.L('The Client\'s trades will be carried out on an execution-only basis through our online platform.')}</p>
         <p>{it.L('The Company does not provide and is not authorised to provide investment advice. The Company will not make personal recommendations or advise on the merits of buying and/or selling in particular investments.')}</p>
         <p>{it.L('The Client acknowledges that any explanations, trading recommendations, independent investment research, market commentary, or any other information provided by BIEL is provided to the Client as marketing communication and/or educational material, for information purposes only, and does not construe any personal advice on the merits of investing.')}</p>
