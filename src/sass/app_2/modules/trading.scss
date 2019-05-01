@@ -45,7 +45,7 @@
         &-info {
             @include typeface(--paragraph-left-normal-black);
             @include themify($themes) {
-                color: themed('text_primary_color');
+                color: themed('text_color');
             }
 
             &--left {
@@ -145,22 +145,27 @@
                 }
             }
             &-value {
-                @include typeface(--small-left-bold-black);
+                font-size: 1.4em;
+                font-weight: 700;
+                text-transform: capitalize;
+                text-align: left;
+                line-height: 1.25;
+                margin-left: 0.1em;
                 @include themify($themes) {
                     color: themed('text_color');
                 }
             }
             &-basis {
-                @include typeface(--paragraph-left-normal-black);
                 margin-left: 0;
                 font-weight: normal;
+                @include typeface(--paragraph-left-normal-black);
                 @include themify($themes) {
-                    color: themed('text_secondary_color');
+                    color: themed('text_color');
                 }
             }
             &-currency {
                 margin-left: 4px;
-                margin-right: 2px;
+                margin-right: 1px;
                 display: inline-block;
                 position: relative;
                 font-weight: bold;

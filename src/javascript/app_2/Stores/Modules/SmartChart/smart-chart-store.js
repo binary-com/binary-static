@@ -13,8 +13,6 @@ import {
     isBarrierSupported }      from './Helpers/barriers';
 import BaseStore              from '../../base-store';
 
-const store_name = 'smart_chart_store';
-
 export default class SmartChartStore extends BaseStore {
     @observable chart_type;
     @observable granularity;
@@ -38,11 +36,6 @@ export default class SmartChartStore extends BaseStore {
     @observable should_clear_chart   = false;
     @observable trade_chart_layout   = null;
     trade_chart_symbol               = null;
-
-    constructor({ root_store }) {
-        const local_storage_properties = ['trade_chart_layout'];
-        super({ root_store, local_storage_properties, store_name });
-    }
 
     @action.bound
     updateChartType(type) {
@@ -99,7 +92,7 @@ export default class SmartChartStore extends BaseStore {
         this.removeMarkers();
     };
 
-    // --------- Tick Contracts ---------
+    // --------- Set Contract Scroll to Left ---------
     @action.bound
     setChartView(scroll_to_left_epoch) {
         this.updateEpochScrollToOffset(1);
@@ -162,8 +155,8 @@ export default class SmartChartStore extends BaseStore {
     saveAndClearTradeChartLayout() {
         this.should_export_layout = true;
         this.should_import_layout = false;
-
         this.trade_chart_symbol   = this.root_store.modules.trade.symbol;
+        this.chart_id             = 'contract';
         this.updateGranularity(0);
         this.updateChartType('mountain');
     }
@@ -173,16 +166,17 @@ export default class SmartChartStore extends BaseStore {
         this.should_export_layout = false;
         this.should_import_layout = true;
         this.should_clear_chart   = false;
+        this.chart_id             = 'trade';
 
         this.trade_chart_layout.isDone = action(() => {
             this.trade_chart_layout   = null;
             this.should_import_layout = false;
-        });
 
-        // Reset back to symbol before loading contract if trade_symbol and contract_symbol don't match
-        if (this.trade_chart_symbol !== this.root_store.modules.trade.symbol) {
-            this.root_store.modules.trade.updateSymbol(this.trade_chart_symbol);
-        }
+            // Reset back to symbol before loading contract if trade_symbol and contract_symbol don't match
+            if (this.trade_chart_symbol !== this.root_store.modules.trade.symbol) {
+                this.root_store.modules.trade.updateSymbol(this.trade_chart_symbol);
+            }
+        });
     }
 
     @action.bound
