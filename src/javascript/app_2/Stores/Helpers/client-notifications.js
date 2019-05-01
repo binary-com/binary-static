@@ -142,8 +142,8 @@ const client_notifications = {
 };
 
 const hasMissingRequiredField = (State, client) => {
-    const is_svg = client.landing_company_shortcode === 'svg'
-        || client.landing_company_shortcode === 'costarica';
+    const { landing_company_shortcode } = client;
+    const is_svg = landing_company_shortcode === 'svg' || landing_company_shortcode === 'costarica';
 
     let required_fields;
     if (is_svg) {
@@ -165,6 +165,7 @@ const hasMissingRequiredField = (State, client) => {
 
     function getRequiredFields() {
         if (!isAccountOfType('financial')) return [];
+        const { residence } = client;
 
         const required_settings_fields = [
             'account_opening_reason',
@@ -173,7 +174,7 @@ const hasMissingRequiredField = (State, client) => {
             'phone',
             'tax_identification_number',
             'tax_residence'];
-        const address_postcode_is_required = client.residence === 'gb' || client.landing_company_shortcode === 'iom';
+        const address_postcode_is_required = residence === 'gb' || landing_company_shortcode === 'iom';
         if (address_postcode_is_required) required_settings_fields.push('address_postcode');
 
         return [...required_settings_fields];
@@ -222,12 +223,7 @@ const checkAccountStatus = (response, client, UIStore) => {
 };
 
 export const handleClientNotifications = (State, client, UIStore) => {
-    const { currency, excluded_until, is_virtual, residence } = client;
-
-    if (is_virtual) {
-        // Old virtual accounts can have missing residence
-        if (!residence) UIStore.addNotification(client_notifications.residence);
-    }
+    const { currency, excluded_until } = client;
 
     if (!currency)         UIStore.addNotification(client_notifications.currency);
     if (excluded_until)    UIStore.addNotification(client_notifications.self_exclusion(excluded_until));
