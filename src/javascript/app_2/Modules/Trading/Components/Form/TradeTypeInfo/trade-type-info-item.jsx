@@ -31,23 +31,31 @@ const TradeTypeInfoItem = ({
         </div>
         }
         <div className='trade-type-info-dialog__body'>
-            <div className='trade-type-info-dialog__gif'>
-                gif explanation
-            </div>
-            <div className='trade-type-info-dialog__content'>
-                <Scrollbars
-                    autoHide
-                    style={{ height: '100%' }}
-                >
-                    <TradeCategories category={item.value} />
-                </Scrollbars>
-            </div>
-            <div>
-                <Button
-                    className='btn--primary--orange trade-type-info-dialog__choose-button'
-                    text={localize('Choose')}
-                    onClick={() => onSubmitButtonClick(item)}
-                />
+            <div className='trade-type-info-dialog__card-wrapper'>
+                {
+                    navigationList.map((type, idx) => (
+                        <div className='trade-type-info-dialog__card' key={idx}>
+                            <div className='trade-type-info-dialog__gif'>
+                                {localize('gif explanation for [_1]', type.name)}
+                            </div>
+                            <div className='trade-type-info-dialog__content'>
+                                <Scrollbars
+                                    autoHide
+                                    style={{ height: '100%' }}
+                                >
+                                    <TradeCategories category={type.value} />
+                                </Scrollbars>
+                            </div>
+                            <div>
+                                <Button
+                                    className='btn--primary--orange trade-type-info-dialog__choose-button'
+                                    text={localize('Choose')}
+                                    onClick={() => onSubmitButtonClick(type)}
+                                />
+                            </div>
+                        </div>
+                    ))
+                }
             </div>
         </div>
         <div className='trade-type-info-navigation'>

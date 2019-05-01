@@ -11,6 +11,20 @@
     height: 0;
     z-index: 999;
 
+    &__body {
+        overflow: hidden;
+    }
+    &__card {
+        width: 258px;
+        flex: none;
+        margin: 0 16px 0 0;
+
+        &-wrapper {
+            display: flex;
+            flex-direction: row;
+            transition: transform 0.3s linear;
+        }
+    }
     &__info-wrapper {
         position: absolute;
         width: 290px;
