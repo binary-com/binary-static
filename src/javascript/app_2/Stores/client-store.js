@@ -249,7 +249,7 @@ export default class ClientStore extends BaseStore {
         this.switched = '';
 
         const client = this.accounts[this.loginid];
-        if (client) {
+        if (client && !client.is_virtual) {
             BinarySocket.wait('landing_company', 'website_status', 'get_settings').then(() => {
                 handleClientNotifications(State, client, this.root_store.ui);
             });
