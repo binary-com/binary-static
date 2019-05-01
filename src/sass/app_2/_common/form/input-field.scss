@@ -6,7 +6,7 @@
     &__label {
         @include typeface(--paragraph-left-normal-black);
         @include themify($themes) {
-            color: themed('text_primary_color');
+            color: themed('text_color');
         }
         margin-bottom: 0.2em;
         display: inline-block;

@@ -5,7 +5,7 @@
         font-weight: bold;
         margin-bottom: 16px;
         @include themify($themes) {
-            color: themed('text_primary_color');
+            color: themed('text_color');
         }
     }
     &__language-container {
@@ -48,6 +48,9 @@
 
             &--active {
                 font-weight: bold;
+                @include themify($themes) {
+                    color: themed('text_color');
+                }
             }
         }
     }
@@ -90,7 +93,7 @@
         @include typeface(--title-left-bold-black);
         @include themify($themes) {
             background-color: themed('background_cover');
-            color: themed('text_primary_color');
+            color: themed('text_color');
         }
         width: 200px;
         line-height: 24px;

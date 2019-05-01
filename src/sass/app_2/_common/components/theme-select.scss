@@ -8,7 +8,7 @@
         font-weight: bold;
         font-size: 14px;
         @include themify($themes) {
-            color: themed('text_primary_color');
+            color: themed('text_color');
         }
         margin-bottom: 16px;
     }
@@ -31,7 +31,15 @@
             font-size: 14px;
             line-height: 1.43;
             @include themify($themes) {
-                color: themed('text_color');
+                color: themed('text_primary_color');
+            }
+
+            &--selected {
+                font-weight: bold;
+                @include themify($themes) {
+                    color: themed('text_color');
+                }
+
             }
         }
         &__icon {
