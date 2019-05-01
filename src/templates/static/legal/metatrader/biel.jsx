@@ -106,7 +106,7 @@ const BIEL = () => (
             <li>{it.L('Alerting Clients of a potential trading opportunity')}</li>
             <li>{it.L('Execution of trades automatically on their behalf')}</li>
             <li>{it.L('Managing of various aspects of online trading such as sending Orders to the platform')}</li>
-            <li>{it.L('Automatic adjustments of take profit levels')}</li>
+            <li>{it.L('Automatic adjustments of Take Profit levels')}</li>
             <li>{it.L('Trailing stops')}</li>
             <li>{it.L('Stop Loss Orders')}</li>
         </ol>
