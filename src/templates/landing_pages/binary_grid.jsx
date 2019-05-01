@@ -30,7 +30,7 @@ const gridLP = () => (
                             <div className='gr-5 gr-12-t gr-12-m gr-12-p'>
                                 <h1 className='header-title content-inverse-color ft-300'>{('Our exciting new mobile trading app')}</h1>
                                 <span className='header-sub secondary-color'>{('Seamless trading on your smartphone.')}</span>
-                                <p><a className='button' href='https://grid.binary.me/download/BinaryGrid.apk'><span className='button-lg'>{('Get Binary Grid now')}</span></a></p>
+                                <p><a className='button' href='https://grid.binary.com/download/BinaryGrid_v100.apk'><span className='button-lg'>{('Get Binary Grid now')}</span></a></p>
                             </div>
                             <div className='gr-7 gr-12-t gr-12-m gr-12-p'><img className='phone' src={it.url_for('images/grid_lp/phone@3x-cmp.png')} alt='seamless trading on your smartphone' /></div>
                         </div>
@@ -129,7 +129,7 @@ const gridLP = () => (
                         <div className='gr-3 gr-12-t gr-12-m gr-12-p col-step'>
                             <div className='line-right' />
                             <div className='step icon-step-1' />
-                            <p>{('Go')} <a href='https://grid.binary.me/download/BinaryGrid.apk'>{('here')}</a> {('to download Binary Grid for Android.')}</p>
+                            <p>{('Go')} <a href='https://grid.binary.com/download/BinaryGrid_v100.apk'>{('here')}</a> {('to download Binary Grid for Android.')}</p>
                         </div>
                         <div className='gr-3 gr-12-t gr-12-m gr-12-p col-step'>
                             <div className='line-left' />
@@ -168,7 +168,7 @@ const gridLP = () => (
                     </div>
                     <div className='gr-row'>
                         <div className='gr-12 center-text'>
-                            <a className='button' href='https://grid.binary.me/download/BinaryGrid.apk'><span className='button-lg'>{('Get Binary Grid now')}</span></a>
+                            <a className='button' href='https://grid.binary.com/download/BinaryGrid_v100.apk'><span className='button-lg'>{('Get Binary Grid now')}</span></a>
                         </div>
                     </div>
                 </div>
