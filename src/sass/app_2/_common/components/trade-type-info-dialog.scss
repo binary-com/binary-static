@@ -72,6 +72,13 @@
             background-color: themed('container_color');
             color: themed('disabled_color');
         }
+
+        &-image {
+            margin-left: -6px;
+            margin-top: -2px;
+            width: 270px;
+            height: 142px;
+        }
     }
     &__header {
         display: flex;

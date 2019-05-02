@@ -1,15 +1,16 @@
-import classNames           from 'classnames';
-import PropTypes            from 'prop-types';
-import React                from 'react';
-import { Scrollbars }       from 'tt-react-custom-scrollbars';
+import classNames             from 'classnames';
+import PropTypes              from 'prop-types';
+import React                  from 'react';
+import { Scrollbars }         from 'tt-react-custom-scrollbars';
 import {
     Icon,
-    IconBack }              from 'Assets/Common';
-import { IconChevronLeft }  from 'Assets/Common/icon-chevron-left.jsx';
-import { IconChevronRight } from 'Assets/Common/icon-chevron-right.jsx';
-import { TradeCategories }  from 'Assets/Trading/Categories/trade-categories.jsx';
-import Button               from 'App/Components/Form/button.jsx';
-import { localize }         from '_common/localize';
+    IconBack }                from 'Assets/Common';
+import { IconChevronLeft }    from 'Assets/Common/icon-chevron-left.jsx';
+import { IconChevronRight }   from 'Assets/Common/icon-chevron-right.jsx';
+import { TradeCategories }    from 'Assets/Trading/Categories';
+import { TradeCategoriesGIF } from 'Assets/Trading/Categories/trade-categories-gif.jsx';
+import Button                 from 'App/Components/Form/button.jsx';
+import { localize }           from '_common/localize';
 
 const TradeTypeInfoItem = ({
     handleNavigationClick,
@@ -40,7 +41,10 @@ const TradeTypeInfoItem = ({
                     itemList.map((type, idx) => (
                         <div className='trade-type-info-dialog__card' key={idx}>
                             <div className='trade-type-info-dialog__gif'>
-                                {localize('gif explanation for [_1]', type.name)}
+                                <TradeCategoriesGIF
+                                    category={type.value}
+                                    className='trade-type-info-dialog__gif-image'
+                                />
                             </div>
                             <div className='trade-type-info-dialog__content'>
                                 <Scrollbars
