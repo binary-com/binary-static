@@ -17,7 +17,7 @@ const TradeTypeInfoItem = ({
     handlePrevClick,
     is_mobile,
     item,
-    navigationList,
+    itemList,
     onBackButtonClick,
     onSubmitButtonClick,
 }) => (
@@ -38,7 +38,7 @@ const TradeTypeInfoItem = ({
             )}
             >
                 {
-                    navigationList.map((type, idx) => (
+                    itemList.map((type, idx) => (
                         <div className='trade-type-info-dialog__card' key={idx}>
                             <div className='trade-type-info-dialog__gif'>
                                 {localize('gif explanation for [_1]', type.name)}
@@ -64,12 +64,12 @@ const TradeTypeInfoItem = ({
             </div>
         </div>
         <div className='trade-type-info-navigation'>
-            <div className='trade-type-info-navigation__icon' onClick={() => handlePrevClick(navigationList)} >
+            <div className='trade-type-info-navigation__icon' onClick={() => handlePrevClick(itemList)} >
                 <Icon icon={IconChevronLeft} />
             </div>
             <div className='trade-type-info-navigation__list'>
                 {
-                    navigationList.map((contract, idx) => (
+                    itemList.map((contract, idx) => (
                         <React.Fragment key={idx}>
                             <div
                                 className={classNames('trade-type-info-navigation__circle-button', {
@@ -81,7 +81,7 @@ const TradeTypeInfoItem = ({
                     ))
                 }
             </div>
-            <div className='trade-type-info-navigation__icon' onClick={() => handleNextClick(navigationList)} >
+            <div className='trade-type-info-navigation__icon' onClick={() => handleNextClick(itemList)} >
                 <Icon icon={IconChevronRight} />
             </div>
         </div>
@@ -94,7 +94,7 @@ TradeTypeInfoItem.propTypes = {
     handlePrevClick      : PropTypes.func,
     is_mobile            : PropTypes.bool,
     item                 : PropTypes.object,
-    navigationList       : PropTypes.array,
+    itemList             : PropTypes.array,
     onBackButtonClick    : PropTypes.func,
     onSubmitButtonClick  : PropTypes.func,
 };
