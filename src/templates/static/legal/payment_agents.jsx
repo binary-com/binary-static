@@ -118,7 +118,7 @@ const PaymentAgents = () => (
                     <li>{it.L('Any other information as requested by the Company')}</li>
                 </ul>
             </li>
-            <li>{it.L('The information outlined in Paragraph 1 of this Section shall be submitted to <a href="mailto:[_1]">[_1]</a>.', 'affiliates@binary.com')}</li>
+            <li>{it.L('The information outlined in Paragraph 1 of this section shall be submitted to <a href="mailto:[_1]">[_1]</a>.', 'affiliates@binary.com')}</li>
             <li>{it.L('The application shall be reviewed and assessed by the Company\'s compliance and marketing departments. It is noted that, following and implementing the anti-money laundering policy and conducting due diligence in accordance with the law and regulations, the Company\'s compliance department shall request and collect all required information and documentation as per Section H.')}</li>
             <li>{it.L('The Company, exercising its absolute discretion, may accept or reject the Agent\'s application. Where the Agent\'s application is accepted, the Company shall include all relevant information, including but not limited to name, address, website URL (if available), email address, telephone number, commission rates, and payment methods used by the Agent, in the payment agent list which is disclosed on the Company\'s website, [_1]www.binary.com[_2].', `<a href="${it.url_for('new-account')}">`, '</a>')}</li>
         </ol>
@@ -134,7 +134,7 @@ const PaymentAgents = () => (
                     <li>{it.L('Where any proceedings are involuntarily initiated against the Agent by any third parties who seek or propose liquidation, reorganisation, restructuring, an arrangement or composition, or a freeze or moratorium in relation to the Agent or the Agent\'s debts in accordance with the law')}</li>
                     <li>{it.L('Where any law-suit, action, or other legal or administrative proceedings in connection to this agreement are initiated for any execution, attachment or garnishment, or distress against the Agent or where an encumbrance takes possession of the entire or any part of the Agent\'s property, undertakings, or assets, whether tangible and intangible')}</li>
                     <li>{it.L('Where the Agent is dissolved or deregistered from any records of a formal register whatsoever; furthermore, where any procedure is initiated that is seeking, intending, or proposing the Agent\'s dissolution or deregistration from any records of a formal register')}</li>
-                    <li>{it.L('Any event capable to have a material adverse effect on the Agent\'s ability to perform any of its duties and obligations in accordance with this agreement')}</li>
+                    <li>{it.L('Any event capable to have a material adverse effect on the Agent\'s ability to perform any of their duties and obligations in accordance with this agreement')}</li>
                 </ul>
             </li>
             <li>{it.L('It is agreed and understood that the Company may unilaterally terminate this agreement if any of the events mentioned in the paragraphs above occurs')}</li>
