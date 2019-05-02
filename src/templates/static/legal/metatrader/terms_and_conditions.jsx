@@ -481,14 +481,14 @@ const TermsAndConditions = () => (
                 <p>{it.L('The Introducing Broker consents to the disclosure of their identity on the webpage of [_1] or any publicly accessible medium managed by Binary.', it.website_name)}</p>
                 <p>{it.L('The Introducing Broker pledges that they shall not at any time')}
                     <ol>
-                        <li>{it.L('Indicate that Binary or the Introducing Broker and their Associates will guarantee a Client\'s profit or loss, or limit the losses of any Client')}</li>
+                        <li>{it.L('Indicate that Binary or the Introducing Broker and their Associates will guarantee a Client\'s profit or loss or limit the losses of any Client')}</li>
                         <li>{it.L('Misrepresent Binary or the services that are offered by Binary')}</li>
                         <li>{it.L('Engage in misleading or deceptive conduct or illusory or deceptive advertising')}</li>
                         <li>{it.L('Prepare and publish any content or place any advertisements that refer to Binary and its relationship with Binary without the prior written consent of Binary')}</li>
                         <li>{it.L('Amend or change all or any part of the Marketing Material without Binary\'s prior written consent')}</li>
                         <li>{it.L('Use the name \'Binary\' or any derivation of that name such as \'[_1]\' or the Binary Trademarks in a way that might compete with Binary\'s search engine optimisation without the prior written consent of Binary, which includes using the name \'[_1]\' on the title tag of the Introducing Broker\'s website', it.website_name)}</li>
                         <li>{it.L('Refer Clients to Binary with the knowledge, or with a reasonably expected knowledge, that these Clients engage in such conduct that constitutes Malicious Activity')}</li>
-                        <li>{it.L('Provide any financial/investment trading advice to Clients (Binary shall not be liable to the Introducing Broker and the Client for any misrepresentation or fraudulent or negligent misstatement made by the Introducing Broker. The Introducing Broker shall also hold Binary harmless and shall indemnify Binary and its directors, officers, managers, employees, or agents from and against any liabilities, losses, damages, costs and expenses, including all and any legal fees incurred arising out of the failure of the Introducing Brokers to comply with any or all of its obligations set forth in this Agreement.)')}</li>
+                        <li>{it.L('Provide any financial/investment trading advice to Clients (Binary shall not be liable to the Introducing Broker and the Client for any misrepresentation or fraudulent or negligent misstatement made by the Introducing Broker. The Introducing Broker shall also hold Binary harmless and shall indemnify Binary and its directors, officers, managers, employees, or agents from and against any liabilities, losses, damages, costs, and expenses, including all and any legal fees incurred arising out of the failure of the Introducing Brokers to comply with any or all of its obligations set forth in this Agreement.)')}</li>
                     </ol>
                 </p>
             </Li>
@@ -518,8 +518,8 @@ const TermsAndConditions = () => (
                 <ol>
                     <li>{it.L('All information/documentations provided by the Introducing Broker when applying for Binary\'s Introducing Broker programme is true and accurate')}</li>
                     <li>{it.L('They have obtained all Authorisations and are not aware of anything that shall or might reasonably be expected to prevent them from entering and performing all of their obligations under this Agreement')}</li>
-                    <li>{it.L('They are not aware of anything that shall, or might reasonably be expected to, prevent or obstruct them from performing all of their obligations under this Agreement, in the manner and at the times contemplated by this Agreement')}</li>
-                    <li>{it.L('They will comply with all Laws when performing their obligations under this Agreement')}</li>
+                    <li>{it.L('They are not aware of anything that shall, or might reasonably be expected to, prevent, or obstruct them from performing all of their obligations under this Agreement, in the manner and at the times contemplated by this Agreement')}</li>
+                    <li>{it.L('They will comply with all laws when performing their obligations under this Agreement')}</li>
                     <li>{it.L('This Agreement has been duly executed and constitutes binding obligations on both parties, enforceable against it in accordance with its terms ')}</li>
                 </ol>
             </Li>
@@ -540,12 +540,12 @@ const TermsAndConditions = () => (
                 <p>{it.L('On termination of this Agreement')}
                     <ol>
                         <li>{it.L('Binary shall pay Commissions for any trades placed by Clients prior to the date of termination but shall not be liable to pay Commissions for any trades placed by Clients on or after the date of termination. In the case of the Introducing Brokers who are contracted with Binary Investments (Europe) Ltd, any pending Commission from the CPA deal prior to the date of termination shall be paid in full.')}</li>
-                        <li>{it.L('The Introducing Broker shall immediately cease using the Marketing Materials whether in hard copy or electronically on any website, and return all Marketing Materials to Binary. They shall also cease referring to Binary and shall remove all of the Binary Trademarks, including logos, branding, and other references to Binary from their website and/or marketing materials.')}</li>
+                        <li>{it.L('The Introducing Broker shall immediately cease using the Marketing Materials whether in hard copy or electronically on any website and return all Marketing Materials to Binary. They shall also cease referring to Binary and shall remove all of the Binary Trademarks, including logos, branding, and other references to Binary from their website and/or marketing materials.')}</li>
                         <li>{it.L('The Introducing Broker acknowledges that on termination, they have no claims against Binary whatsoever and are not entitled to any compensation or claim arising from the termination.')}</li>
                         <li>{it.L('If the Introducing Broker engages in Malicious Activity, Binary, in its absolute discretion may')}
                             <ol>
                                 <li>{it.L('Refuse to pay any Commission to the Introducing Broker engaged in the Malicious Activity')}</li>
-                                <li>{it.L('Set-off any Commission paid or payable by Binary to the Introducing Broker against any amounts held in any accounts of the Company')}</li>
+                                <li>{it.L('Set off any Commission paid or payable by Binary to the Introducing Broker against any amounts held in any accounts of the Company')}</li>
                             </ol>
                         </li>
                     </ol>

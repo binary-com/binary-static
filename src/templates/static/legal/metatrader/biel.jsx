@@ -120,7 +120,7 @@ const BIEL = () => (
         <p>{it.L('All unforeseen openings or closings of positions initiated by the Expert Advisor, whether relevant to system error or otherwise, are out of the scope of the Company\'s responsibility; hence the Company is not liable for such actions or results.')}</p>
 
         <h2 data-anchor='governing-law-and-jurisdiction'>{it.L('Governing law and jurisdiction')}</h2>
-        <p>{it.L('These ST&Cs are to be governed by and construed in accordance with Maltese law and the parties hereto agree to submit to the non-exclusive jurisdiction of the Maltese courts.')}</p>
+        <p>{it.L('These ST&Cs are to be governed by and construed in accordance with Maltese law, and the parties hereto agree to submit to the non-exclusive jurisdiction of the Maltese courts.')}</p>
     </div>
 );
 
