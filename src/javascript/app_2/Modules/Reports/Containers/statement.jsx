@@ -61,10 +61,9 @@ class Statement extends React.Component {
 
         return (
             <React.Fragment>
-                {/* TODO Add proper messages before the PR */}
                 <ReportsMeta
                     i18n_heading={localize('Statement')}
-                    i18n_message={localize('Vestibulum rutrum quam fringilla tincidunt. Suspendisse nec tortor.')}
+                    i18n_message={localize('View all transactions on your account, including trades, deposits, and withdrawals.')}
                 />
                 <div className='statement statement__content'>
                     <DataTable

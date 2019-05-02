@@ -50,7 +50,7 @@ class ProfitTable extends React.Component {
             <React.Fragment>
                 <ReportsMeta
                     i18n_heading={localize('Profit Table')}
-                    i18n_message={localize('Vestibulum rutrum quam fringilla tincidunt. Suspendisse nec tortor.')}
+                    i18n_message={localize('View all active trades on your account that can still incur a profit or a loss.')}
                 />
                 <div className='profit-table profit-table__content'>
                     <DataTable
