@@ -52,21 +52,19 @@ class ProfitTable extends React.Component {
                     i18n_heading={localize('Profit Table')}
                     i18n_message={localize('View all active trades on your account that can still incur a profit or a loss.')}
                 />
-                <div className='profit-table profit-table__content'>
-                    <DataTable
-                        className='profit-table'
-                        data_source={data}
-                        columns={columns}
-                        onScroll={handleScroll}
-                        footer={totals}
-                        getRowAction={(row_obj) => row_obj.id ? getContractPath(row_obj.id) : undefined}
-                        is_empty={is_empty}
-                    >
-                        <PlaceholderComponent
-                            is_loading={is_loading}
-                        />
-                    </DataTable>
-                </div>
+                <DataTable
+                    className='profit-table'
+                    data_source={data}
+                    columns={columns}
+                    onScroll={handleScroll}
+                    footer={totals}
+                    getRowAction={(row_obj) => row_obj.id ? getContractPath(row_obj.id) : undefined}
+                    is_empty={is_empty}
+                >
+                    <PlaceholderComponent
+                        is_loading={is_loading}
+                    />
+                </DataTable>
             </React.Fragment>
         );
     }

@@ -11,6 +11,19 @@ import TableRow                       from './table-row.jsx';
 */
 
 class DataTable extends React.PureComponent {
+    constructor(props) {
+        super(props);
+        this.state = {
+            height: 200,
+        };
+    }
+
+    componentDidMount() {
+        this.setState({
+            height: this.el_table_body.clientHeight,
+        });
+    }
+
     componentDidUpdate() {
         this.alignHeader();
     }
@@ -68,6 +81,7 @@ class DataTable extends React.PureComponent {
                         :
                         <Scrollbars
                             autoHeight
+                            autoHeightMax={this.state.height}
                             autoHide
                         >
                             {TableData}
