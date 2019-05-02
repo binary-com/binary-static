@@ -4,7 +4,7 @@ import React                 from 'react';
 import { IconArrow }         from 'Assets/Common';
 import { IconTradeCategory } from 'Assets/Trading/Categories';
 import ContractTypeDialog    from './contract-type-dialog.jsx';
-import ContractTypeList      from './contract-type-list.jsx';
+import ContractitemList      from './contract-type-list.jsx';
 import TradeTypeInfoDialog   from '../TradeTypeInfo/trade-type-info-dialog.jsx';
 import TradeTypeInfoItem     from '../TradeTypeInfo/trade-type-info-item.jsx';
 
@@ -50,27 +50,27 @@ class ContractTypeWidget extends React.PureComponent {
         this.setState({ item });
     };
 
-    handleNextClick = (navigationList) => {
-        const navigationLength = navigationList.length;
+    handleNextClick = (itemList) => {
+        const navigationLength = itemList.length;
         const item = this.state.item;
-        const currentIndex = navigationList.findIndex((list_item) => list_item.value === item.value);
+        const currentIndex = itemList.findIndex((list_item) => list_item.value === item.value);
         const nextIndex = currentIndex + 1;
         if (nextIndex < navigationLength) {
-            this.handleNavigationClick(navigationList[nextIndex]);
+            this.handleNavigationClick(itemList[nextIndex]);
         } else {
-            this.handleNavigationClick(navigationList[0]);
+            this.handleNavigationClick(itemList[0]);
         }
     };
 
-    handlePrevClick = (navigationList) => {
-        const navigationLength = navigationList.length;
+    handlePrevClick = (itemList) => {
+        const navigationLength = itemList.length;
         const item = this.state.item;
-        const currentIndex = navigationList.findIndex((list_item) => list_item.value === item.value);
+        const currentIndex = itemList.findIndex((list_item) => list_item.value === item.value);
         const prevIndex = currentIndex - 1;
         if (prevIndex > -1) {
-            this.handleNavigationClick(navigationList[prevIndex]);
+            this.handleNavigationClick(itemList[prevIndex]);
         } else {
-            this.handleNavigationClick(navigationList[navigationLength - 1]);
+            this.handleNavigationClick(itemList[navigationLength - 1]);
         }
     };
 
@@ -82,7 +82,10 @@ class ContractTypeWidget extends React.PureComponent {
         if (this.wrapper_ref && !this.wrapper_ref.contains(event.target) && this.state.is_dialog_open) {
             this.setState({ is_dialog_open: false });
         } else if (this.wrapper_ref && !this.wrapper_ref.contains(event.target) && this.state.is_info_dialog_open) {
-            this.setState({ is_info_dialog_open: false, is_dialog_open: false });
+            this.setState({
+                is_dialog_open     : false,
+                is_info_dialog_open: false,
+            });
         }
     };
 
@@ -117,17 +120,17 @@ class ContractTypeWidget extends React.PureComponent {
         return text;
     };
 
-    getNavigationList = () => {
-        const navigationList = [];
+    getItemList = () => {
+        const itemList = [];
         const list = this.props.list;
         /* eslint-disable */
         Object.keys(list).map(key => {
             !['In/Out', 'Asians'].includes(key) && list[key].map(contract => {
-                (contract.value !== 'rise_fall_equal') && navigationList.push(contract);
+                (contract.value !== 'rise_fall_equal') && itemList.push(contract);
             });
         });
         /* eslint-disable */
-        return navigationList;
+        return itemList;
     };
 
     render() {
@@ -155,7 +158,7 @@ class ContractTypeWidget extends React.PureComponent {
                     open={this.state.is_dialog_open}
                     onClose={this.handleVisibility}
                 >
-                    <ContractTypeList
+                    <ContractitemList
                         list={this.props.list}
                         name={this.props.name}
                         value={this.props.value}
@@ -176,7 +179,7 @@ class ContractTypeWidget extends React.PureComponent {
                         handlePrevClick={this.handlePrevClick}
                         is_mobile={this.props.is_mobile}
                         item={this.state.item}
-                        navigationList={this.getNavigationList()}
+                        itemList={this.getItemList()}
                         onBackButtonClick={this.onBackButtonClick}
                         onSubmitButtonClick={this.onSubmitButtonClick}
                     />
