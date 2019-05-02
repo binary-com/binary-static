@@ -35,13 +35,13 @@ const TradingDurationUI = (() => {
             $(market_header).append($('<div/>', { id: duration_data.submarket.name })
                 .append($('<h3/>', { text: duration_data.submarket.display_name })));
             createEmptyTable(duration_data.submarket.name);
-            generateData(duration_data.submarket.name, duration_data.data);
+            setTableData(duration_data.submarket.name, duration_data.data);
         } else {
             data_wrapper.append($('<div/>', { id: market_header.slice(1) })
                 .append($('<div/>', { id: duration_data.submarket.name })
                     .append($('<h3/>', { text: duration_data.submarket.display_name }))));
             createEmptyTable(duration_data.submarket.name);
-            generateData(duration_data.submarket.name, duration_data.data);
+            setTableData(duration_data.submarket.name, duration_data.data);
         }
     };
 
@@ -62,22 +62,51 @@ const TradingDurationUI = (() => {
                     .append($('<td/>', { text: localize('Days') }))
                 )
             )
-            .append($('<tbody/>')
-                .append($('<tr/>')
-                    .append($('<th/>', { rowspan: 5, class: 'trading-durations__table--assets' })))));
+            .append($('<tbody/>')));
     };
 
-    const generateData = (submarket_name, datas) => {
+    const setTableData = (submarket_name, datas) => {
         const $submarket_table_body = $(`#${submarket_name}`).find('tbody');
-        datas.forEach((data) => {
-            console.log(data)
+        datas.forEach((data, data_index) => {
+            $submarket_table_body.append($('<tr/>', { id: `${submarket_name}${data_index}` })
+                .append($('<tr/>')
+                    .append($('<th/>', { class: 'trading-durations__table--assets', rowspan: data.symbol.length }))
+                )
+            );
             data.symbol.forEach((symbol) => {
-                $submarket_table_body.find('.trading-durations__table--assets')
+                $submarket_table_body.find(`#${submarket_name}${data_index} .trading-durations__table--assets`)
                     .append(document.createTextNode(symbol.display_name))
                     .append($('<br/>'));
             });
+            data.trade_durations.forEach((trade_duration, duration_index) => {
+                const trade_duration_assets = getTradeDurationAssets(trade_duration);
+                $submarket_table_body.find(`#${submarket_name}${data_index}`)
+                    .append($('<tr/>', { id: `${submarket_name}${data_index}${duration_index}` }));
+                
+                trade_duration_assets.forEach((asset) => {
+                    $submarket_table_body.find(`#${submarket_name}${data_index}${duration_index}`)
+                        .append($('<td/>', { text: asset }));
+                });
+            });
         });
         console.log(datas);
+    };
+
+    const getTradeDurationAssets = (trade_duration) => {
+        const asset_array = [];
+        const duration_type_array = ['ticks', 's', 'm', 'h', 'days'];
+
+        asset_array.push(trade_duration.trade_type.display_name);
+        duration_type_array.forEach((type) => {
+            if (trade_duration.durations.some((duration) => duration.name === type)) {
+                const duration_min = trade_duration.durations.find((unit) => unit.name === type).min;
+                const duration_max = trade_duration.durations.find((unit) => unit.name === type).max;
+                asset_array.push(`${duration_min} - ${duration_max}`);
+            } else {
+                asset_array.push('-');
+            }
+        });
+        return asset_array;
     };
 
     const sendRequest = () => {
@@ -86,6 +115,7 @@ const TradingDurationUI = (() => {
             const trading_duration_market = TradingDuration.getMarketColumns();
 
             setHeader(trading_duration_market);
+            console.log(trading_duration_data)
 
             trading_duration_data.forEach((duration_data) => initializeData(duration_data));
         });
