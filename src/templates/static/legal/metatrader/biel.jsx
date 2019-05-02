@@ -16,10 +16,10 @@ const BIEL = () => (
         <p>{it.L('You acknowledge that any explanation, trading recommendations, independent investment research, market commentary or any other information provided by the Company, is provided to you as marketing communication and/or educational material, for information purposes only, and does not construe any personal advice on the merits of investing.')}</p>
 
         <h2 data-anchor='about-us-and-our-regulator'>{it.L('About Us and Our Regulator')}</h2>
-        <p>{it.L('BIEL is a company established in Malta under registration number C70156 and having its registered office at Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta.')}</p>
+        <p>{it.L('BIEL is a company established in Malta under registration number C70156 and having its registered office at W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta.')}</p>
         <p>{it.L('We are authorised and regulated by the Malta Financial Services Authority ("MFSA") under the Investment Services Act (Cap. 370, Laws of Malta) (the "Act") to carry on investment business. We are authorised by the MFSA to deal on own account (i.e. offer and act as counterparty to trades) and to execute orders on behalf of other persons, both services are in relation to financial derivative products relating to foreign exchange, indices and other financial products or assets ("Financial Products"). We are not authorised to and do not offer or provide investment advice or any other investment services other than those described above. Should you feel that you require investment advice or investment services other than those described above then you should contact an independent financial advisor or firm.')}</p>
         <p>{it.L('In providing these services, we are bound by the Act, any applicable regulations, by-laws, licence conditions, guidelines, exchange requirements and other provisions or market practices (the "Rules"). In the event of conflict between these ST&Cs and the Rules, the latter should prevail.')}</p>
-        
+
         <h2 data-anchor='restrictions'>{it.L('Restrictions')}</h2>
         <p>{it.L('Residents of countries which have been identified by the FATF as having strategic deficiencies shall be restricted from opening an account with Binary Investments (Europe) Ltd.')}</p>
 
