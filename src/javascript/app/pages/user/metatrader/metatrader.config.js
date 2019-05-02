@@ -295,8 +295,6 @@ const MetaTraderConfig = (() => {
             prerequisites: () => new Promise((resolve) => {
                 if (Client.get('is_virtual')) {
                     resolve(needsRealMessage());
-                } else if (Client.get('landing_company_shortcode') === 'iom') {
-                    resolve(needsFinancialMessage());
                 } else {
                     BinarySocket.send({ cashier_password: 1 }).then((response) => {
                         if (!response.error && response.cashier_password === 1) {
@@ -331,8 +329,6 @@ const MetaTraderConfig = (() => {
             prerequisites: acc_type => new Promise((resolve) => {
                 if (Client.get('is_virtual')) {
                     resolve(needsRealMessage());
-                } else if (Client.get('landing_company_shortcode') === 'iom') {
-                    resolve(needsFinancialMessage());
                 } else if (accounts_info[acc_type].account_type === 'financial') {
                     BinarySocket.send({ get_account_status: 1 }).then(() => {
                         resolve(!isAuthenticated() ? $messages.find('#msg_authenticate').html() : '');
