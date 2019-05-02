@@ -1,10 +1,15 @@
-/** @define .market-symbol-icon */
+/** @define .market-symbol-icon; weak */
 .market-symbol-icon {
     display: flex;
     justify-content: space-around;
     width: 100%;
     padding: 8px;
 
+    .color1-fill {
+        @include themify($themes) {
+            fill: themed('text_color');
+        }
+    }
     &-name, &-category {
         display: flex;
         justify-content: flex-start;
