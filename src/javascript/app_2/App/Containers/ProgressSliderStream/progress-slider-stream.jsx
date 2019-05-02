@@ -4,33 +4,29 @@ import { getTimePercentage } from 'App/Components/Elements/PositionsDrawer/helpe
 import ProgressSlider        from 'App/Components/Elements/PositionsDrawer/ProgressSlider/positions-progress-slider.jsx';
 import { connect }           from 'Stores/connect';
 
-class ProgressSliderStream extends React.Component {
-    render () {
-        const {
-            id,
-            is_loading,
-            getPositionById,
-            server_time,
-        } = this.props;
-
-        const position = getPositionById(id);
-        if (!position) {
-            return <div />;
-        }
-
-        const { contract_info } = position;
-        const percentage = getTimePercentage(server_time, contract_info.purchase_time, contract_info.date_expiry);
-
-        return <ProgressSlider
-            is_loading={is_loading}
-            remaining_time={contract_info.date_expiry}
-            percentage={percentage}
-            has_result={false}
-            current_tick={position.current_tick}
-            ticks_count={contract_info.ticks_count}
-        />;
+const ProgressSliderStream = ({
+    id,
+    is_loading,
+    getPositionById,
+    server_time,
+}) => {
+    const position = getPositionById(id);
+    if (!position) {
+        return <div />;
     }
-}
+
+    const { contract_info } = position;
+    const percentage = getTimePercentage(server_time, contract_info.purchase_time, contract_info.date_expiry);
+
+    return <ProgressSlider
+        is_loading={is_loading}
+        remaining_time={contract_info.date_expiry}
+        percentage={percentage}
+        has_result={false}
+        current_tick={position.current_tick}
+        ticks_count={contract_info.ticks_count}
+    />;
+};
 
 ProgressSliderStream.propTypes = {
     getPositionById: PropTypes.func,

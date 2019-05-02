@@ -16,7 +16,12 @@ import Money                 from '../money.jsx';
 
 class ContractDrawer extends Component {
     getBodyContent () {
-        const { buy_price } = this.props.contract_info;
+        const {
+            buy_price,
+            currency,
+            payout,
+            profit,
+        } = this.props.contract_info;
 
         return (
             <ContractCard contract_info={this.props.contract_info}>
@@ -28,9 +33,9 @@ class ContractDrawer extends Component {
                 </ContractCardHeader>
                 <ContractCardBody>
                     <ProfitLossCardContent
-                        pl_value={+this.props.contract_info.profit}
-                        payout={+this.props.contract_info.payout}
-                        currency={this.props.contract_info.currency}
+                        pl_value={+profit}
+                        payout={+payout}
+                        currency={currency}
                     />
                 </ContractCardBody>
                 <ContractCardFooter>
@@ -38,7 +43,7 @@ class ContractDrawer extends Component {
                         <Localize str='Purchase Price:' />&nbsp;
                         <span className='purchase-price' >
                             <Money
-                                currency={this.props.contract_info.currency}
+                                currency={currency}
                                 amount={buy_price}
                             />
                         </span>

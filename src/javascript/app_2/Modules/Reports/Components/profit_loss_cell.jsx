@@ -1,9 +1,9 @@
-import React              from 'react';
-import PropTypes          from 'prop-types';
-import { isProfitOrLoss } from '../Helpers/profit-loss';
+import React               from 'react';
+import PropTypes           from 'prop-types';
+import { getProfitOrLoss } from 'Modules/Reports/Helpers/profit-loss';
 
 const ProfitLossCell = ({ value, children }) => {
-    const status = isProfitOrLoss(value);
+    const status = getProfitOrLoss(value);
 
     return (
         <span className={`amount--${status}`}>

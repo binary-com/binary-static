@@ -1,16 +1,11 @@
-import PropTypes            from 'prop-types';
-import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import React     from 'react';
 
-class ContractCardHeader extends Component {
-    render() {
-        const { children } = this.props;
-        return (
-            <div className='contract-card__header'>
-                {children}
-            </div>
-        );
-    }
-}
+const ContractCardHeader = ({ children }) => (
+    <div className='contract-card__header'>
+        {children}
+    </div>
+);
 
 ContractCardHeader.propTypes = {
     children: PropTypes.oneOfType([

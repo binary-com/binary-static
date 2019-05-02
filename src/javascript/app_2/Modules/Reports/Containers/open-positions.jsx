@@ -5,18 +5,20 @@ import { withRouter }                      from 'react-router-dom';
 import { localize }                        from '_common/localize';
 import DataTable                           from 'App/Components/Elements/DataTable';
 // import { getContractPath }                 from 'App/Components/Routes/helpers';
+import EmptyTradeHistoryMessage            from 'Modules/Reports/Components/empty-trade-history-message.jsx';
+import { ReportsMeta }                     from 'Modules/Reports/Components/reports-meta.jsx';
+import { getOpenPositionsColumnsTemplate } from 'Modules/Reports/Constants/data-table-constants';
+import PlaceholderComponent                from 'Modules/Reports/Components/placeholder-component.jsx';
 import { connect }                         from 'Stores/connect';
-import EmptyTradeHistoryMessage            from '../Components/empty-trade-history-message.jsx';
-import { ReportsMeta }                     from '../Components/reports-meta.jsx';
-import { getOpenPositionsColumnsTemplate } from '../Constants/data-table-constants';
-import PlaceholderComponent                from '../Components/placeholder-component.jsx';
 
 class OpenPositions extends React.Component {
-    componentDidMount()    {
+    componentDidMount() {
         this.props.onMount();
     }
 
-    componentWillUnmount() { this.props.onUnmount(); }
+    componentWillUnmount() {
+        this.props.onUnmount();
+    }
 
     render() {
         const {

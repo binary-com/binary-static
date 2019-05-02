@@ -20,7 +20,7 @@ export default class PortfolioStore extends BaseStore {
     @observable positions  = [];
     @observable is_loading = false;
     @observable error      = '';
-    getPositionById = (id) => this.positions.find((position) => +position.id === +id);
+    getPositionById        = (id) => this.positions.find((position) => +position.id === +id);
 
     @action.bound
     initializePortfolio = () => {

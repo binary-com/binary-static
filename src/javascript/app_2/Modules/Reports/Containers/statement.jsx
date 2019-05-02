@@ -12,8 +12,13 @@ import { ReportsMeta }                      from '../Components/reports-meta.jsx
 import EmptyTradeHistoryMessage             from '../Components/empty-trade-history-message.jsx';
 
 class Statement extends React.Component {
-    componentDidMount()    { this.props.onMount(); }
-    componentWillUnmount() { this.props.onUnmount(); }
+    componentDidMount() {
+        this.props.onMount();
+    }
+
+    componentWillUnmount() {
+        this.props.onUnmount();
+    }
 
     getRowAction = (row_obj) => {
         let action;

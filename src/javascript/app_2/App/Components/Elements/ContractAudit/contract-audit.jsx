@@ -1,9 +1,9 @@
-import moment                  from 'moment';
 import classNames              from 'classnames';
+import moment                  from 'moment';
 import PropTypes               from 'prop-types';
 import React, { Component }    from 'react';
+import Localize                from 'App/Components/Elements/localize.jsx';
 import { Icon, IconArrowBold } from 'Assets/Common';
-import Localize                from '../localize.jsx';
 
 const Pair = ({ value, label }) => (
     <div className='pair'>
@@ -15,6 +15,7 @@ const Pair = ({ value, label }) => (
         </div>
     </div>
 );
+
 class ContractAudit extends Component {
     constructor(props) {
         super(props);
@@ -36,14 +37,14 @@ class ContractAudit extends Component {
             date_expiry,
         } = this.props.contract;
 
-        const is_tick_contract = !!this.props.contract.tick_count;
+        const is_tick_contract = !!tick_count;
         if (is_tick_contract) {
             return `${tick_count} tick${tick_count > 1 ? 's' : ''}`;
         }
 
         const start_time = moment(date_start * 1000);
-        const end_time = moment(date_expiry * 1000);
-        const duration = moment.duration(end_time.diff(start_time));
+        const end_time   = moment(date_expiry * 1000);
+        const duration   = moment.duration(end_time.diff(start_time));
 
         return moment.utc(duration.as('milliseconds')).format('HH:mm:ss');
     }
