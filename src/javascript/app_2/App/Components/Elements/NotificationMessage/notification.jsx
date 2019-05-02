@@ -9,7 +9,7 @@ import { IconSuccess }     from 'Assets/Common/icon-success.jsx';
 import CloseButton         from './close-button.jsx';
 import {
     default_delay,
-    types }             from './constants';
+    types }                from './constants';
 
 const Notification = ({
     data,
@@ -18,7 +18,7 @@ const Notification = ({
     const destroy = (is_closed_by_user) => {
         removeNotification(data);
 
-        if (typeof data.closeOnClick === 'function') {
+        if (data.closeOnClick) {
             data.closeOnClick(data, is_closed_by_user);
         }
     };
@@ -32,7 +32,7 @@ const Notification = ({
     return (
         <div className={
             classNames('notification', types[data.type], {
-                'notification--small': data.size === 'small',
+                'notification--small': (data.size === 'small'),
             })}
         >
             <div className='notification__icon'>

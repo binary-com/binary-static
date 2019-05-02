@@ -2,21 +2,21 @@ import {
     action,
     computed,
     observable,
-    when }                     from 'mobx';
-import moment                  from 'moment';
+    when }                           from 'mobx';
+import moment                        from 'moment';
 import {
     requestLogout,
-    WS }                       from 'Services';
-import { getAccountTitle }     from '_common/base/client_base';
-import GTM                     from '_common/base/gtm';
-import BinarySocket            from '_common/base/socket_base';
-import * as SocketCache        from '_common/base/socket_cache';
-import { localize }            from '_common/localize';
+    WS }                             from 'Services';
+import { getAccountTitle }           from '_common/base/client_base';
+import GTM                           from '_common/base/gtm';
+import BinarySocket                  from '_common/base/socket_base';
+import * as SocketCache              from '_common/base/socket_cache';
+import { localize }                  from '_common/localize';
 import {
     LocalStore,
-    State }                    from '_common/storage';
-import BaseStore               from './base-store';
-import { buildCurrenciesList } from './Modules/Trading/Helpers/currency';
+    State }                          from '_common/storage';
+import BaseStore                     from './base-store';
+import { buildCurrenciesList }       from './Modules/Trading/Helpers/currency';
 import { handleClientNotifications } from './Helpers/client-notifications';
 
 const storage_key = 'client.accounts';

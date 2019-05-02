@@ -143,7 +143,7 @@ const client_notifications = {
 
 const hasMissingRequiredField = (State, client) => {
     const { landing_company_shortcode } = client;
-    const is_svg = landing_company_shortcode === 'svg' || landing_company_shortcode === 'costarica';
+    const is_svg = (landing_company_shortcode === 'svg' || landing_company_shortcode === 'costarica');
 
     let required_fields;
     if (is_svg) {
@@ -174,7 +174,7 @@ const hasMissingRequiredField = (State, client) => {
             'phone',
             'tax_identification_number',
             'tax_residence'];
-        const address_postcode_is_required = residence === 'gb' || landing_company_shortcode === 'iom';
+        const address_postcode_is_required = (residence === 'gb' || landing_company_shortcode === 'iom');
         if (address_postcode_is_required) required_settings_fields.push('address_postcode');
 
         return [...required_settings_fields];
