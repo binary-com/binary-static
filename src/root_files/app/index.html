@@ -26,6 +26,7 @@
                     'de': 'de|at|li',
                     'es': 'ar|bo|cl|co|cr|cu|do|ec|sv|gt|hn|mx|ni|pa|py|pr|es|uy|ve',
                     'fr': 'fr|ad|bj|bf|cf|cg|ga|gn|ml|mc|ne|sn|tg',
+                    'id': 'id',
                     'it': 'it',
                     'ko': 'kr',
                     'pl': 'po',
@@ -48,30 +49,13 @@
                 var loginid      = localStorage.getItem('active_loginid');
                 var client_info  = JSON.parse(localStorage.getItem('client.accounts') || '{}')[loginid];
                 var is_logged_in = client_info && client_info['token'];
-                window.location.href = (lang || 'en').toLowerCase() + '/' + (is_logged_in ? 'trading' : 'home') + '.html' + window.location.search;
-            }
-            function isDelayedRedirect() {
-                if (isGtmApplicable() && !redirectTimeOut) {
-                    redirectTimeOut = setTimeout(redirect, 5000);
-                } else {
-                    clearTimeout(redirectTimeOut);
-                    redirect();
-                }
-            }
-            function isGtmApplicable() {
-                return /(www|staging)\.binary\.(com|me)/i.test(window.location.hostname);
-            }
-            function pushEvent() {
-                if (isGtmApplicable()) {
-                    dataLayer.push({
-                        'event': 'page_load',
-                        'eventCallback': function() {
-                            isDelayedRedirect();
-                        }
-                    });
-                } else {
-                    isDelayedRedirect();
-                }
+
+                var search                = window.location.search ? window.location.search : '';
+                var has_external_referrer = document.referrer && !/\.binary\.(com|me)/.test(document.referrer);
+                var has_utm_source        = /utm_source/.test(search);
+                var utm_source            = has_external_referrer && !has_utm_source ? ((search ? '&' : '?') + 'utm_source=' + new URL(document.referrer).hostname) : '';
+
+                window.location.href = (lang || 'en').toLowerCase() + '/' + (is_logged_in ? 'trading' : 'home') + '.html' + search + utm_source;
             }
 
             if (/^https:\/\/staging\.binary\.com\/translations\//i.test(window.location.href)) {
@@ -81,32 +65,25 @@
                     localStorage.setItem('index_referrer', document.referrer);
                 }
                 lang = getCookieItem('language');
-                var ws = new WebSocket('wss://ws.binaryws.com/websockets/v3?app_id=1');
-                ws.onopen = function(e) {
-                    ws.send(JSON.stringify({'website_status': '1'}));
-                };
-                ws.onmessage = function(msg) {
-                    var response = JSON.parse(msg.data);
-                    if (response.msg_type === 'website_status') {
-                        if (!lang && !response.error && response.hasOwnProperty('website_status')) {
-                            lang = getLanguage(response.website_status.clients_country);
+                if (lang) {
+                    redirect();
+                } else {
+                    var ws = new WebSocket('wss://ws.binaryws.com/websockets/v3?app_id=1');
+                    ws.onopen = function(e) {
+                        ws.send(JSON.stringify({'website_status': '1'}));
+                    };
+                    ws.onmessage = function(msg) {
+                        var response = JSON.parse(msg.data);
+                        if (response.msg_type === 'website_status') {
+                            if (!response.error && response.hasOwnProperty('website_status')) {
+                                lang = getLanguage(response.website_status.clients_country);
+                            }
+                            ws.close();
+                            redirect();
                         }
-                        ws.close();
-                        pushEvent(); // we need website_status.clients_country
-                    }
-                };
+                    };
+                }
             }
         </script>
     </head>
-    <body>
-<!-- Google Tag Manager -->
-<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-MZWFF7"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<script data-cfasync="false">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-MZWFF7');</script>
-<!-- End Google Tag Manager -->
-    </body>
 </html>
