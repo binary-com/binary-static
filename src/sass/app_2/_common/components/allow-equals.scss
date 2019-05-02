@@ -9,7 +9,7 @@
         @include typeface(--paragraph-left-normal-black, none);
         @include toEm(padding, 0 8px, 1.2em);
         @include themify($themes) {
-            color: themed('text_primary_color');
+            color: themed('text_color');
         }
         cursor: pointer;
     }
