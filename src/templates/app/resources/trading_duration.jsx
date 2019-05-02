@@ -1,21 +1,17 @@
 import React from 'react';
 
 const TradingDurations = () => (
-    <div className='trading-durations'>
+    <div className=' gr-centered gr-12-p gr-12-m'>
         <h1 className='trading-durations__title'>{it.L('Trading Durations')}</h1>
         <div className='gr-padding-10 trading-durations__wrapper'>
             <p id='errorMsg' className='trading-durations__error-msg invisible' />
             <div className='gr-parent trading-durations__content'>
-                <ul className='trading-durations__tabs'>
+                <ul id='trading_duration_tabs' className='trading-durations__tabs'>
                     {/*
                         loop through the market array showing display name
                         and name as id to navigate on the market trading durations
                     */}
                     {/* ARRAY LOOP BEGIN */ }
-                    <li>Forex</li> {/* array.market.display_name */ }
-                    <li>Indices</li>
-                    <li>Commodities</li>
-                    <li>Volatility Indices</li>
                 </ul>
                 {/*
                     the array structure for this will be
@@ -63,8 +59,9 @@ const TradingDurations = () => (
                                     <th rowSpan='5' className='trading-durations__table--assets'> {/* rowspan=array.symbols.length */}
                                         {/* Loop array.symbols */}
                                         ASSETS
-                                        {/* array.symbols.display_name */}
                                         <br />
+                                        ASSETS
+                                        {/* array.symbols.display_name */}
                                     </th>
                                 </tr>
                                 {/* Loop array.trade_durations */}

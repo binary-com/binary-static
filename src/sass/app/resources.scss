@@ -53,27 +53,56 @@
     }
 }
 
-// .trading-durations {
-//     &__title {
+.trading-durations {
+    &__title {
+        margin: 0;
+    }
+    &__wrapper {
+        margin: 0;
+    }
+    &__error-msg {
+        margin: 0;
+    }
+    &__content {
+        margin: 0;
+    }
+    &__tabs {
+        position: relative;
+        padding: 0;
+        margin: 40px auto;
+        user-select: none;
 
-//     }
-//     &__wrapper {
-
-//     }
-//     &__error-msg {
-
-//     }
-//     &__content {
-
-//     }
-//     &__tabs {
-
-//     }
-//     &__table {
-//         &--ticks {
-
-//         }
-//         &--assets {
-//         }
-//     }
-// }
+        li {
+            display: inline-block;
+            background: $COLOR_WHITE;
+            font-size: 18px;
+            width: 175px;
+            text-align: center;
+            line-height: 60px;
+            color: $COLOR_BLUE_SHADE;
+            text-transform: uppercase;
+            position: relative;
+            border-bottom: 2px solid $COLOR_GRAY_SHADE;
+            margin: -5px;
+            cursor: pointer;
+        }
+        .slider {
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 3px;
+            border-color: $COLOR_BLUE_SHADE;
+            background: $COLOR_BLUE_SHADE;
+            transition: all 0.5s;
+        }
+    }
+    &__table {
+        &--ticks {
+            margin: 0;
+        }
+        &--assets {
+            margin: 0;
+        }
+    }
+}
