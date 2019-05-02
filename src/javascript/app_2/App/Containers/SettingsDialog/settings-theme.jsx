@@ -33,7 +33,12 @@ const ThemeSelectSettings = ({ is_dark_mode, toggleDarkMode, updateBarrierColor 
                             })}
                             onClick={darkOnClick}
                         />
-                        <p className='theme-select-settings__option__title'><Localize str='Brand Dark' /></p>
+                        <p className={classNames('theme-select-settings__option__title', {
+                            'theme-select-settings__option__title--selected': is_dark_mode,
+                        })}
+                        >
+                            <Localize str='Brand Dark' />
+                        </p>
                     </div>
                     <div className='theme-select-settings__option'>
                         <LightModeIcon
@@ -42,7 +47,12 @@ const ThemeSelectSettings = ({ is_dark_mode, toggleDarkMode, updateBarrierColor 
                             })}
                             onClick={lightOnClick}
                         />
-                        <p className='theme-select-settings__option__title'><Localize str='Light' /></p>
+                        <p className={classNames('theme-select-settings__option__title', {
+                            'theme-select-settings__option__title--selected': !is_dark_mode,
+                        })}
+                        >
+                            <Localize str='Light' />
+                        </p>
                     </div>
                 </div>
             </div>
