@@ -65,21 +65,19 @@ class Statement extends React.Component {
                     i18n_heading={localize('Statement')}
                     i18n_message={localize('View all transactions on your account, including trades, deposits, and withdrawals.')}
                 />
-                <div className='statement statement__content'>
-                    <DataTable
-                        className='statement'
-                        data_source={data}
-                        columns={columns}
-                        onScroll={handleScroll}
-                        // getRowAction={this.getRowAction} TODO uncomment when chart layout is ready for statements
-                        getRowAction={undefined}
-                        is_empty={is_empty}
-                    >
-                        <PlaceholderComponent
-                            is_loading={is_loading}
-                        />
-                    </DataTable>
-                </div>
+                <DataTable
+                    className='statement'
+                    data_source={data}
+                    columns={columns}
+                    onScroll={handleScroll}
+                    // getRowAction={this.getRowAction} TODO uncomment when chart layout is ready for statements
+                    getRowAction={undefined}
+                    is_empty={is_empty}
+                >
+                    <PlaceholderComponent
+                        is_loading={is_loading}
+                    />
+                </DataTable>
             </React.Fragment>
         );
     }

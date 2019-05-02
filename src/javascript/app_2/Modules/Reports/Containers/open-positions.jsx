@@ -50,22 +50,20 @@ class OpenPositions extends React.Component {
                     i18n_heading={localize('Open Positions')}
                     i18n_message={localize('View all active trades on your account that can still incur a profit or a loss.')}
                 />
-                <div className='open-positions open-positions__content'>
-                    { currency && active_positions.length > 0 &&
-                        <DataTable
-                            className='open-positions'
-                            columns={getOpenPositionsColumnsTemplate(currency)}
-                            footer={totals}
-                            data_source={active_positions}
-                            getRowAction={undefined}
-                            // getRowAction={(row_obj) => getContractPath(row_obj.id)} TODO uncomment once smart-chart component is fixed.
-                        >
-                            <PlaceholderComponent
-                                is_loading={is_loading}
-                            />
-                        </DataTable>
-                    }
-                </div>
+                { currency && active_positions.length > 0 &&
+                <DataTable
+                    className='open-positions'
+                    columns={getOpenPositionsColumnsTemplate(currency)}
+                    footer={totals}
+                    data_source={active_positions}
+                    getRowAction={undefined}
+                    // getRowAction={(row_obj) => getContractPath(row_obj.id)} TODO uncomment once smart-chart component is fixed.
+                >
+                    <PlaceholderComponent
+                        is_loading={is_loading}
+                    />
+                </DataTable>
+                }
             </React.Fragment>
 
         );

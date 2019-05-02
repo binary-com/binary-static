@@ -47,6 +47,7 @@ $side-padding: 1.2em;
     */
     &__table {
         height: calc(100% - 42px);
+        flex: 1;
     }
     &__row {
         grid-template-columns: 1fr 1.2fr 1fr 1fr 1fr 1fr;
@@ -189,6 +190,7 @@ $side-padding: 1.2em;
     */
     &__table {
         height: calc(100% - 42px);
+        flex: 1;
     }
     &__row {
         grid-template-columns: repeat(7, 1fr);
@@ -211,6 +213,7 @@ $side-padding: 1.2em;
     */
     &__table {
         height: calc(100% - 42px);
+        flex: 1;
     }
     &__row {
         grid-template-columns: repeat(6, 1fr);
