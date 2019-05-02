@@ -31,7 +31,12 @@ const TradeTypeInfoItem = ({
         </div>
         }
         <div className='trade-type-info-dialog__body'>
-            <div className='trade-type-info-dialog__card-wrapper'>
+            <div className={classNames(
+                'trade-type-info-dialog__card-wrapper', {
+                    [`trade-type-info-dialog__card-wrapper--${item.value}`]: !!item.value,
+                },
+            )}
+            >
                 {
                     navigationList.map((type, idx) => (
                         <div className='trade-type-info-dialog__card' key={idx}>
