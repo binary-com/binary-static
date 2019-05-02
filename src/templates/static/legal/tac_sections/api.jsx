@@ -276,7 +276,7 @@ const Api = () => (
                     {
                         header     : it.L('Effect of termination'),
                         list_nested: [
-                            { text: it.L('Upon the expiration or termination of this Agreement, for whatever reason, all rights and licences granted to the Programmer in this Agreement, including use of the [_1] API, shall immediately terminate. The Programmer agrees to promptly cease all further use of the [_1] API. Termination of this Agreement shall not act as a waiver of any breach of this Agreement and shall not act as a release of the Programmer\'s liability for the breach of its obligation under this Agreement. The Company shall not be liable to the Programmer for damages of any kind solely as a result of terminating this Agreement in accordance with its terms.', it.website_name) },
+                            { text: it.L('Upon the expiration or termination of this Agreement, for whatever reason, all rights and licences granted to the Programmer in this Agreement, including use of the [_1] API, shall immediately terminate. The Programmer agrees to promptly cease all further use of the [_1] API. Termination of this Agreement shall not act as a waiver of any breach of this Agreement and shall not act as a release of the Programmer\'s liability for the breach of the Programmer\'s obligation under this Agreement. The Company shall not be liable to the Programmer for damages of any kind solely as a result of terminating this Agreement in accordance with its terms.', it.website_name) },
                         ],
                     },
                 ]}
