@@ -1,7 +1,5 @@
 $header-height: 4em;
 
-// TODO: Split into smaller sass files for card, result-overlay and result-details
-
 // Trade page animation performance fix #perfmatters
 .trade-container + .positions-drawer {
     transition: opacity 0.4s ease;
@@ -105,7 +103,7 @@ $header-height: 4em;
         font-size: 1.4em;
         font-weight: bold;
         @include themify($themes) {
-            color: themed('text_primary_color');
+            color: themed('text_color');
         }
     }
     &__icon-main {

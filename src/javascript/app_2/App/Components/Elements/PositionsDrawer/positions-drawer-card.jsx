@@ -126,7 +126,7 @@ class PositionsDrawerCard extends React.PureComponent {
                                 <Money amount={Math.abs(profit_loss)} currency={currency} />
                                 <div className={classNames(
                                     'positions-drawer-card__indicative--movement', {
-                                        'positions-drawer-card__indicative--movement-complete': (status === 'complete'),
+                                        'positions-drawer-card__indicative--movement-complete': !!result,
                                     },
                                 )}
                                 >
@@ -139,7 +139,7 @@ class PositionsDrawerCard extends React.PureComponent {
                                 <Money amount={indicative} currency={currency} />
                                 <div className={classNames(
                                     'positions-drawer-card__indicative--movement', {
-                                        'positions-drawer-card__indicative--movement-complete': (status === 'complete'),
+                                        'positions-drawer-card__indicative--movement-complete': !!result,
                                     },
                                 )}
                                 >

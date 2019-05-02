@@ -1,15 +1,13 @@
-import React        from 'react';
-import { localize } from '_common/localize';
-import { Icon }     from 'Assets/Common';
-import {
-    IconReports,
-    IconTrade }     from 'Assets/Header/NavBar/index';
-import { routes }   from 'Constants/index';
+import React           from 'react';
+import { localize }    from '_common/localize';
+import { Icon }        from 'Assets/Common';
+import { IconReports } from 'Assets/Header/NavBar/index';
+import { routes }      from 'Constants/index';
 
 const header_links = [
     {
-        icon   : <Icon icon={IconTrade} className='header__icon' />,
-        text   : localize('Trade'),
+        logo   : <div className='header__logo'>{localize('BETA')}</div>,
+        text   : localize('BinaryNex'),
         link_to: routes.trade,
     },
     {

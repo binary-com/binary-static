@@ -1,8 +1,6 @@
 const error_class = 'error-field';
 
 window.onload = function () {
-    dataLayer.push({ event: 'page_load' });
-
     const el_email   = document.getElementById('email');
     const el_signup  = document.getElementById('signup');
     const el_success = document.getElementById('success');
@@ -58,6 +56,8 @@ window.onload = function () {
     if (gclid) {
         localStorage.setItem('gclid', gclid);
     }
+
+    commonOnload();
 };
 
 function validateEmail(email) {
