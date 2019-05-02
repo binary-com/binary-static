@@ -69,9 +69,7 @@ const TradingDurationUI = (() => {
         const $submarket_table_body = $(`#${submarket_name}`).find('tbody');
         datas.forEach((data, data_index) => {
             $submarket_table_body.append($('<tr/>', { id: `${submarket_name}${data_index}` })
-                .append($('<tr/>')
-                    .append($('<th/>', { class: 'trading-durations__table--assets', rowspan: data.symbol.length }))
-                )
+                .append($('<th/>', { class: 'trading-durations__table--assets', rowspan: data.trade_durations.length + 1 }))
             );
             data.symbol.forEach((symbol) => {
                 $submarket_table_body.find(`#${submarket_name}${data_index} .trading-durations__table--assets`)
@@ -80,7 +78,7 @@ const TradingDurationUI = (() => {
             });
             data.trade_durations.forEach((trade_duration, duration_index) => {
                 const trade_duration_assets = getTradeDurationAssets(trade_duration);
-                $submarket_table_body.find(`#${submarket_name}${data_index}`)
+                $submarket_table_body
                     .append($('<tr/>', { id: `${submarket_name}${data_index}${duration_index}` }));
                 
                 trade_duration_assets.forEach((asset) => {
