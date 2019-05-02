@@ -43,6 +43,7 @@ export default class ContractStore extends BaseStore {
 
     // ---- Normal properties ---
     forget_id;
+    chart_type         = 'mountain';
     is_granularity_set = false;
     is_left_epoch_set  = false;
 
@@ -67,6 +68,10 @@ export default class ContractStore extends BaseStore {
             SmartChartStore.setChartView(contract_info.purchase_time);
         } else if (should_update_chart_type) {
             this.handleChartType(SmartChartStore, contract_info.date_start, null);
+        } else if (this.is_granularity_set) {
+            if (getChartType(contract_info.date_start, null) !== this.chart_type) {
+                this.is_granularity_set = false;
+            }
         }
 
         createChartBarrier(SmartChartStore, contract_info);
@@ -101,6 +106,7 @@ export default class ContractStore extends BaseStore {
     @action.bound
     onCloseContract() {
         this.forgetProposalOpenContract();
+        this.chart_type         = 'mountain';
         this.contract_id        = null;
         this.contract_info      = {};
         this.digits_info        = {};
@@ -192,9 +198,11 @@ export default class ContractStore extends BaseStore {
         if (chart_type === 'candle' && granularity !== 0) {
             SmartChartStore.updateGranularity(granularity);
             SmartChartStore.updateChartType(chart_type);
+            this.chart_type = chart_type;
         } else {
             SmartChartStore.updateGranularity(0);
             SmartChartStore.updateChartType('mountain');
+            this.chart_type = 'mountain';
         }
         this.is_granularity_set = true;
     }
