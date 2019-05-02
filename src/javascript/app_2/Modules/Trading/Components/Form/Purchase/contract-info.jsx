@@ -1,10 +1,11 @@
-import classNames        from 'classnames';
-import PropTypes         from 'prop-types';
-import React             from 'react';
-import { localize }      from '_common/localize';
-import Money             from 'App/Components/Elements/money.jsx';
-import Tooltip           from 'App/Components/Elements/tooltip.jsx';
-import { IconPriceMove } from 'Assets/Trading/icon-price-move.jsx';
+import classNames            from 'classnames';
+import PropTypes             from 'prop-types';
+import React                 from 'react';
+import { getLocalizedBasis } from 'Stores/Modules/Trading/Constants/contract';
+import { localize }          from '_common/localize';
+import Money                 from 'App/Components/Elements/money.jsx';
+import Tooltip               from 'App/Components/Elements/tooltip.jsx';
+import { IconPriceMove }     from 'Assets/Trading/icon-price-move.jsx';
 
 const ContractInfo = ({
     basis,
@@ -15,8 +16,19 @@ const ContractInfo = ({
     is_visible,
     proposal_info,
 }) => {
-    const has_error_or_not_loaded = proposal_info.has_error || !proposal_info.id;
+    const localized_basis = getLocalizedBasis();
+    const basisOrPayout = () => {
+        switch (basis) {
+            case 'stake':
+                return localized_basis.payout;
+            case 'payout':
+                return localized_basis.stake;
+            default:
+                return basis;
+        }
+    };
 
+    const has_error_or_not_loaded = proposal_info.has_error || !proposal_info.id;
     return (
         <div className='trade-container__price'>
             <div className={classNames(
@@ -29,7 +41,7 @@ const ContractInfo = ({
             >
                 <div className='trade-container__price-info-basis'>
                     {has_error_or_not_loaded
-                        ? basis
+                        ? basisOrPayout()
                         : localize('[_1]', proposal_info.obj_contract_basis.text)
                     }
                 </div>
