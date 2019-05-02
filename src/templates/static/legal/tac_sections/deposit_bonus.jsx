@@ -2,7 +2,7 @@ import React from 'react';
 
 const DepositBonus = () => (
     <div data-show='-eucountry'>
-        <h2 data-anchor='deposit-bonus'>{it.L('Deposit Bonus')}</h2>
+        <h2 data-anchor='deposit-bonus'>{it.L('Deposit bonus')}</h2>
         <p>{it.L('This bonus will be processed and credited to a client\'s account when both of the following cases are true:')}</p>
         <ol>
             <li>{it.L('The required minimum deposit has been made by the client.')}</li>

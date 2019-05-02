@@ -15,7 +15,7 @@ const PaymentAgents = () => (
             <li>{it.L('This agreement constitutes the entire agreement between the Parties and no earlier representation, arrangement, or agreement, whether written or oral, relating to any matter dealt with in this agreement between the Parties, shall have any force or effect before the Commencement Date.')}</li>
             <li>{it.L('This agreement is supplied to the Agent in English. In the event that there is a difference between the English version and any translated versions of this document, the English version shall prevail. The Company shall not be liable for any loss or damage whatsoever caused by an error, inaccuracy, or misspelling and, as a result, by misunderstanding or misinterpretation of any of the terms or conditions or clauses or provisions of any translated versions of this agreement.')}</li>
             <li>{it.L('Each Party shall do anything reasonably required by the other Party to give effect to the provisions of this agreement.')}</li>
-            <li>{it.L('If any provision of this agreement is held to be invalid, void, or unenforceable in any way by any court, arbitration, regulatory body, competent authority, or any other authority or law whatsoever in any jurisdiction in which the Agent provides the Agent\'s services, the remainder of this agreement shall remain in full force and effect.')}</li>
+            <li>{it.L('If any provision of this agreement is held to be invalid, void, or unenforceable in any way by any court, arbitration, regulatory body, competent authority, or any other authority or law whatsoever in any jurisdiction in which the Agent provides their services, the remainder of this agreement shall remain in full force and effect.')}</li>
         </ol>
 
         <h2 data-anchor='commencement-date'>C. {it.L('Commencement Date')}</h2>
@@ -23,7 +23,7 @@ const PaymentAgents = () => (
 
         <h2 data-anchor='provision-of-services'>D. {it.L('Provision of services')}</h2>
         <ol>
-            <li>{it.L('The Agent may provide the Agent\'s services to those clients of the Company who desire to deposit and/or withdraw money using the Agent. The Agent may provide the Agent\'s services to clients who intend to use e-wallet or e-payment methods other than those used by the Company (hereinafter referred to as the "e-payments") or local currencies other than those accepted by the Company (hereinafter referred to as the "local currencies") and local bank wire transfers (hereinafter referred to as the "bank wire transfers").')}</li>
+            <li>{it.L('The Agent may provide the Agent\'s services to those clients of the Company who desire to deposit and/or withdraw money using the Agent. The Agent may provide their services to clients who intend to use e-wallet or e-payment methods other than those used by the Company (hereinafter referred to as the "e-payments") or local currencies other than those accepted by the Company (hereinafter referred to as the "local currencies") and local bank wire transfers (hereinafter referred to as the "bank wire transfers").')}</li>
             <li>{it.L('It is agreed that any deposits through the Agent shall be made as follows:')}
                 <ul className='bullet'>
                     <li>{it.L('The client using e-payments and bank wire transfers may make a deposit to the Agent. The Agent, receiving the deposit, shall thereinafter make a deposit to the Agent\'s [_1] account (hereinafter referred to as the "[_1] Agent Account").', it.website_name)}</li>
@@ -41,22 +41,22 @@ const PaymentAgents = () => (
 
         <h2 data-anchor='agents-obligations'>E. {it.L('Agent\'s obligations')}</h2>
         <ol>
-            <li>{it.L('Upon demand, the Agent shall provide the Company with all the requested information and documentation regarding its operations and competence, including but not limited to its registration, incorporation, memberships, authorisations, knowledge, expertise, and experience.')}</li>
-            <li>{it.L('The Agent shall further undertake to perform all necessary due diligence on the Agent\'s clients, and the Company shall be entitled, at any time, to request the Agent to provide all information and documentation relating to its clients for the purposes of the Company\'s AML compliance. ')}</li>
+            <li>{it.L('Upon demand, the Agent shall provide the Company with all the requested information and documentation regarding their operations and competence, including but not limited to their registration, incorporation, memberships, authorisations, knowledge, expertise, and experience.')}</li>
+            <li>{it.L('The Agent shall further undertake to perform all necessary due diligence on the Agent\'s clients, and the Company shall be entitled, at any time, to request the Agent to provide all information and documentation relating to their clients for the purposes of the Company\'s AML compliance. ')}</li>
             <li>{it.L('Where the Agent ceases to be competent, capable, adequate, or qualified to effectively perform all of the Agent\'s duties and obligations that are undertaken and agreed to under this agreement, for any reason, including but not limited to lack of knowledge, expertise, experience, skills, and time, the Agent shall notify the Company immediately and without any delay.')}
                 <p>{it.L('In providing the Agent\'s services, the Agent shall do the following:')}</p>
                 <ul className='bullet'>
-                    <li>{it.L('Use its best endeavours and diligence to transfer funds deposited to [_1] Agent Account to its respective [_1] Client account', it.website_name)}</li>
+                    <li>{it.L('Use their best endeavours and diligence to transfer funds deposited to [_1] Agent Account to its respective [_1] Client account', it.website_name)}</li>
                     <li>{it.L('Provide the Company with all and any information whatsoever that the Agent may become aware of that may be harmful, adverse, or detrimental to the Company and its reputation')}</li>
                     <li>{it.L('Follow, comply, and implement with all business-related directions, policies, and procedures of the Company as amended or re-enacted or replaced from time to time')}</li>
                     <li>{it.L('Fairly and accurately describe the Agent\'s services to the clients')}</li>
-                    <li>{it.L('Perform the Agent\'s services and other obligations hereunder at its own cost and risk')}</li>
+                    <li>{it.L('Perform the Agent\'s services and other obligations hereunder at their own cost and risk')}</li>
                 </ul>
             </li>
             <li>{it.L('Where the Agent owns or operates website/s, the Agent shall do the following:')}
                 <ul className='bullet'>
                     <li>{it.L('Receive the approval of the Company to include any information in relation to the Company')}</li>
-                    <li>{it.L('Include a disclaimer and/or notice that any intellectual property rights, including any trademark or slogan whatsoever, belong to the Company and any unauthorised use is strictly prohibited')}</li>
+                    <li>{it.L('Include a disclaimer and/or notice that any intellectual property rights, including any trademark or slogan whatsoever, belong to the Company, and any unauthorised use is strictly prohibited')}</li>
                 </ul>
             </li>
             <li>{it.L('It is agreed that the Company shall not be responsible or liable for any matter arising out of or in relation to the use and operation of any website owned or used by the Agent. It is understood that the Agent shall indemnify the Company for all and any losses that the Company may suffer arising out of, or in relation to the use or operations of any website used or owned by the Agent.')}</li>
@@ -83,7 +83,7 @@ const PaymentAgents = () => (
                 <p>{it.L('It is agreed that on the Commencement Date of this agreement and on the date of each transaction, the Agent represents and warrants the following:')}</p>
                 <ul className='bullet'>
                     <li>{it.L('Where the Agent is an individual, the Agent has reached the age of 18 years or over and has full capacity to enter into this agreement.')}</li>
-                    <li>{it.L('The Agent has all the necessary authority, power, consents, licences, or authorisations and has taken all necessary actions to enable himself to lawfully enter into and perform this agreement.')}</li>
+                    <li>{it.L('The Agent has all the necessary authority, power, consents, licences, or authorisations and has taken all necessary actions to enable themselves to lawfully enter into and perform this agreement.')}</li>
                     <li>{it.L('This agreement, as well as any and all obligations or rights deriving from this agreement, is binding and enforceable against the Agent.')}</li>
                     <li>{it.L('The provisions of this agreement or any orders and any applicable laws will not be breached or violated.')}</li>
                     <li>{it.L('Any information that the Agent provided or will provide to the Company in relation to the Agent\'s financial position, domicile, or other matters is accurate and not misleading.')}</li>
@@ -97,8 +97,8 @@ const PaymentAgents = () => (
         <h2 data-anchor='antimoney-laundering-policy'>H. {it.L('Anti-money laundering policy')}</h2>
         <ol>
             <li>{it.L('The Agent shall provide any and all information and documentation required in the context of the due diligence that the Company shall conduct from time to time. The Company, complying with the law and providing its services under this agreement, shall be entitled, at any time, to request the Agent to provide all and any due diligence information and documentation related to the Agent and any other person connected or associated with the Agent for the purposes of this agreement.')}</li>
-            <li>{it.L('The Agent represents and warrants that the Agent is and will be in compliance with all laws related to anti-money laundering as well as any financial or economic sanction programmes in the jurisdiction in which he operates.')}</li>
-            <li>{it.L('Where the Agent omits, fails, or refuses in any manner to provide the Company with evidence of his identity or any other evidence as required by the law in relation to anti-money laundering within a reasonable time, the Company reserves the right to cease to deal with him.')}</li>
+            <li>{it.L('The Agent represents and warrants that the Agent is and will be in compliance with all laws related to anti-money laundering as well as any financial or economic sanction programmes in the jurisdiction in which the Agent operates.')}</li>
+            <li>{it.L('Where the Agent omits, fails, or refuses in any manner to provide the Company with evidence of the Agent\'s identity or any other evidence as required by the law in relation to anti-money laundering within a reasonable time, the Company reserves the right to cease to deal with the Agent.')}</li>
         </ol>
 
         <h2 data-anchor='anti-corruption'>I. {it.L('Anti-corruption policy')}</h2>
@@ -127,9 +127,9 @@ const PaymentAgents = () => (
         <ol>
             <li>{it.L('Each of the following events constitutes an "Event of Default":')}
                 <ul className='bullet'>
-                    <li>{it.L('In case of the Agent\'s death, incapacity, or mental unsoundness;')}</li>
-                    <li>{it.L('Where the Agent becomes incapable to pay his debts as they fall due, or is bankrupt or insolvent, as defined under any and all applicable bankruptcy or insolvency law where the Agent is an individual;')}</li>
-                    <li>{it.L('Where the Agent acts in breach of any warranty, representation, or promise made under this agreement, and any information provided to the Company in connection with this agreement is, or becomes, untrue or misleading;')}</li>
+                    <li>{it.L('In case of the Agent\'s death, incapacity, or mental unsoundness')}</li>
+                    <li>{it.L('Where the Agent becomes incapable to pay their debts as they fall due, or is bankrupt or insolvent, as defined under any and all applicable bankruptcy or insolvency law where the Agent is an individual')}</li>
+                    <li>{it.L('Where the Agent acts in breach of any warranty, representation, or promise made under this agreement, and any information provided to the Company in connection with this agreement is, or becomes, untrue or misleading')}</li>
                     <li>{it.L('Where the Agent fails to comply with the Agent\'s obligations or fails to perform any of the Agent\'s duties or other provisions under this agreement and such failure continues for at least one business day after the receipt of the non-performance notice given by the Company')}</li>
                     <li>{it.L('Where any proceedings are involuntarily initiated against the Agent by any third parties who seek or propose liquidation, reorganisation, restructuring, an arrangement or composition, or a freeze or moratorium in relation to the Agent or the Agent\'s debts in accordance with the law')}</li>
                     <li>{it.L('Where any law-suit, action, or other legal or administrative proceedings in connection to this agreement are initiated for any execution, attachment or garnishment, or distress against the Agent or where an encumbrance takes possession of the entire or any part of the Agent\'s property, undertakings, or assets, whether tangible and intangible')}</li>

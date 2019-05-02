@@ -194,7 +194,7 @@ const TermsAndConditions = () => (
                     <ol>
                         <li>{it.L('Margin Requirement is the amount that the Client needs to have in their account prior to entering into a trade and it is a percentage of the value of that trade. Margin Requirement will continue to increase/decrease in accordance with the volume and direction of the Open Positions.')}</li>
                         <li>{it.L('The Company may modify Margin Requirements for any Open Positions or new Orders at its sole discretion. Formulas for Margin Requirements published on the website are indicative only and may be changed by the Company at its discretion at any time, due to changing market conditions or other factors.')}</li>
-                        <li>{it.L('Whilst the Company endeavours to close out the Client\'s Open Positions if and when the Margin Level for their MT5 Real Account reaches or falls below the Stop Out Level.')}</li>
+                        <li>{it.L('The Company endeavours to close out the Client\'s Open Positions if and when the Margin Level for their MT5 Real Account reaches or falls below the Stop Out Level.')}</li>
                         <li>{it.L('The Company does not guarantee that the Client\'s Open Positions will be closed when the Margin Level for their MT5 Real Account reaches the Stop Out Level.')}</li>
                         <li>{it.L('For fully covered accounts, no Margin will be charged on open positions. However, swaps and other applicable fees can cause the Client\'s Account Equity to turn negative. In that case, the Stop Out process will be triggered.')}</li>
                         <li>{it.L('The Company reserves the right to charge the Margin per each hedged lot of a position.')}</li>
@@ -241,7 +241,7 @@ const TermsAndConditions = () => (
             </li>
             <li>{it.L('Client money')}
                 <ol>
-                    <li>{it.L('The money collected from Clients is not invested in any securities, futures, or other investments, on behalf of Clients.')}</li>
+                    <li>{it.L('The money collected from Clients is not invested in any securities, futures, or other investments on behalf of Clients.')}</li>
                     <li>{it.L('The Company holds customer funds in bank accounts separate from the operational accounts, and arrangements have been made to ensure that the assets in the customer accounts will be distributed to the customers in the event of insolvency.')}</li>
                     <li>{it.L('The Client\'s account should not be used as a banking facility, and deposits should only be made with a view to using funds for placing contracts. The Company is not a financial institution. Clients will not receive interest on deposits. Should the Client make repeated deposits and withdrawals without commensurate contracts being placed, the Company reserves the right to pass on to the Client\'s account, without prior notice, any bank charges that the Company has incurred before closing the account.')}</li>
                 </ol>

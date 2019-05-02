@@ -3,7 +3,7 @@ import React from 'react';
 const Biel = () => (
     <div>
         <h2 data-anchor='supplementary-terms-and-conditions'>{it.L('Supplementary terms and conditions for Financial Products offered by Binary Investments (Europe) Ltd')}</h2>
-        <p>{it.L('These supplementary terms and conditions (these "ST&Cs") apply solely to clients of Binary Investments (Europe) Ltd ("BIEL") and will govern the relationship between clients and BIEL when trading Financial Products (as defined in the Key information documents [_1]here[_2]) with BIEL.', `<a href=${it.url_for('regulation#key_information_documents')}>`, '</a>')}</p>
+        <p>{it.L('These supplementary terms and conditions (these "ST&Cs") apply solely to the clients of Binary Investments (Europe) Ltd ("BIEL") and will govern the relationship between clients and BIEL when trading Financial Products (as defined in the Key information documents [_1]here[_2]) with BIEL.', `<a href=${it.url_for('regulation#key_information_documents')}>`, '</a>')}</p>
         <p>{it.L('These ST&Cs form part of, and need to be read together with, the general terms and conditions relating to the use of [_1].', it.website_name)}</p>
         <p>{it.L('Clients should read these ST&Cs carefully as well as the Summary order execution policy and Summary conflicts policy, the applicable Contract details together with the Risk disclosure notice and any other documents that BIEL has supplied or in the future supplies to clients.')}</p>
         <p>{it.L('These ST&Cs begin to apply on the date BIEL opens the client\'s account, and, for any new versions after that, on the date BIEL notifies the client.')}</p>
@@ -11,8 +11,8 @@ const Biel = () => (
         <h2 data-anchor='about-us-and-our-regulator'>{it.L('About BIEL and BIEL\'s regulator')}</h2>
         <p>{it.L('BIEL is a company established in Malta under registration number C70156 and having its registered office at Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta.')}</p>
         <p>{it.L('BIEL is authorised and regulated by the Malta Financial Services Authority ("MFSA") under the Investment Services Act (Cap. 370, Laws of Malta) (the "Act") to carry on investment business. BIEL is authorised by the MFSA to deal on own account (i.e. offer and act as counterparty to trades) and to execute orders on behalf of other clients; both services are in relation to financial derivative products relating to foreign exchange, indices and other financial products or assets ("Financial Products"). BIEL is not authorised to and does not offer investment, financial, legal, tax, regulatory, and/or other types of advice or state an opinion in relation to a Transaction under any circumstances. Clients should get independent advice from an investment adviser if they have any doubts about dealing in financial products.')}</p>
-        <p>{it.L('From time to time, BIEL may decide to provide the Client with written or video information, which BIEL may publish on its website or provide to the Client in any other manner. BIEL will endeavour to ensure the accuracy and completeness of this information, but it will not constitute independent investment research or investment advice provided by BIEL to the Client.')}</p>
-        <p>{it.L('In providing these services, BIEL is bound by the Act, any applicable regulations, bye-laws, licence conditions, guidelines, exchange requirements and other provisions or market practices (the "Rules"). In the event of conflict between these ST&Cs and the Rules, the latter should prevail.')}</p>
+        <p>{it.L('From time to time, BIEL may decide to provide the client with written or video information, which BIEL may publish on its website or provide to the client in any other manner. BIEL will endeavour to ensure the accuracy and completeness of this information, but it will not constitute independent investment research or investment advice provided by BIEL to the client.')}</p>
+        <p>{it.L('In providing these services, BIEL is bound by the Act, any applicable regulations, by-laws, licence conditions, guidelines, exchange requirements, and other provisions or market practices (the "Rules"). In the event of conflict between these ST&Cs and the Rules, the latter should prevail.')}</p>
 
         <h2 data-anchor='restrictions'>{it.L('Restrictions')}</h2>
         <p>{it.L('Residents of countries that have been identified by the FATF as having strategic deficiencies shall be restricted from opening an account with Binary Investments (Europe) Ltd.')}</p>
@@ -34,9 +34,9 @@ const Biel = () => (
             </li>
             <li>
                 <h4>{it.L('Professional clients')}</h4>
-                <p>{it.L('If the Client asks to be treated as a Professional Client, they need to meet certain specified quantitative and qualitative criteria. On the basis of the Client\'s request to be categorised as Professional, the Company undertakes an assessment of the Client\'s expertise, knowledge, and experience to determine whether they fall within this Category and whether they are able to make their own investment decisions and understand the risks involved. If the relevant criteria are not met, the Company reserves the right to choose whether to provide its services under this requested classification.')}</p>
-                <p>{it.L('Professional Clients are offered the possibility to request reclassification, and thus increase the level of regulatory protection afforded, at any time during the relationship.')}</p>
-                <p>{it.L('BIEL shall not be obliged to provide Professional Clients with the following:')}
+                <p>{it.L('If the client asks to be treated as a professional client, they need to meet certain specified quantitative and qualitative criteria. On the basis of the client\'s request to be categorised as professional, the Company undertakes an assessment of the client\'s expertise, knowledge, and experience to determine whether they fall within this category and whether they are able to make their own investment decisions and understand the risks involved. If the relevant criteria are not met, the Company reserves the right to choose whether to provide its services under this requested classification.')}</p>
+                <p>{it.L('Professional clients are offered the possibility to request reclassification, and thus increase the level of regulatory protection afforded, at any time during the relationship.')}</p>
+                <p>{it.L('BIEL shall not be obliged to provide professional clients with the following:')}
                     <ol>
                         <li>{it.L('Assessment of appropriateness of the requested service or product as BIEL assumes that the client appreciates the risks associated with such investment services and products offered by the Company')}</li>
                         <li>{it.L('Risk warnings and notices related to Transactions and investments in the proposed instruments')}</li>
@@ -53,7 +53,7 @@ const Biel = () => (
                         <li>{it.L('Assessment of appropriateness of the requested service or product, as BIEL assumes that the client appreciates risk disclosures associated with the requested investment services and products offered by the Company')}</li>
                         <li>{it.L('Risk warnings and notices related to the client\'s Transactions')}</li>
                         <li>{it.L('Client reporting')}</li>
-                        <li>{it.L('The Investors Compensation Scheme')}</li>
+                        <li>{it.L('The Investor Compensation Scheme')}</li>
                     </ol>
                 </p>
             </li>
@@ -86,8 +86,8 @@ const Biel = () => (
 
         <h2 data-anchor='investor-compensation-scheme'>{it.L('Investor Compensation Scheme')}</h2>
         <p>{it.L('BIEL forms part of [_1]the Investor Compensation Scheme[_2] (the "Scheme"), which is a rescue fund for investors that are clients of failed investment firms licensed by the MFSA. The Scheme covers 90% of the Company\'s net liability to a client in respect of investments that qualify for compensation under the Investment Services Act subject to a maximum payment to any one person of €20,000. The Scheme is based on EC Directive 97/9.', '<a href="http://www.compensationschemes.org.mt" target="_blank" rel="noopener noreferrer">', '</a>')}</p>
-        <p>{it.L('Cover is made available on the basis of the depositor rather than on the basis of the number of deposits, meaning that if an individual has multiple accounts, he will only be covered up to €20,000 on the global amount. Any other amount exceeding such a threshold is not protected and will thus have to be borne by the investor.')}</p>
-        <p>{it.L('Professional Clients and Eligible Counterparties do not fall within the scope of the Investor Compensation Scheme.')}</p>
+        <p>{it.L('Cover is made available on the basis of the depositor rather than on the basis of the number of deposits, meaning that if an individual has multiple accounts, they will only be covered up to €20,000 on the global amount. Any other amount exceeding such a threshold is not protected and will thus have to be borne by the investor.')}</p>
+        <p>{it.L('Professional clients and eligible counterparties do not fall within the scope of the Investor Compensation Scheme.')}</p>
 
         <h2 data-anchor='governing-law-and-jurisdiction'>{it.L('Governing law and jurisdiction')}</h2>
         <p>{it.L('These ST&Cs are to be governed by and construed in accordance with Maltese law and the parties hereto agree to submit to the non-exclusive jurisdiction of the Maltese courts.')}</p>
