@@ -39,7 +39,9 @@ class DataTable extends React.PureComponent {
     render() {
         const {
             children,
+            className,
             columns,
+            data_source,
             footer,
             getRowAction,
             is_empty,
@@ -48,12 +50,12 @@ class DataTable extends React.PureComponent {
 
         const TableData =
             <React.Fragment>
-                {this.props.data_source.map((row_obj, id) => {
+                {data_source.map((row_obj, id) => {
                     const action = getRowAction && getRowAction(row_obj);
 
                     return (
                         <TableRow
-                            className={this.props.className}
+                            className={className}
                             row_obj={row_obj}
                             columns={columns}
                             key={id}
@@ -67,9 +69,14 @@ class DataTable extends React.PureComponent {
             </React.Fragment>;
 
         return (
-            <div className={classNames('table', { [`${this.props.className}__table`]: this.props.className })}>
+            <div className={classNames('table', {
+                [`${className}`]         : className,
+                [`${className}__table`]  : className,
+                [`${className}__content`]: className,
+            })}
+            >
                 <div className='table__head' ref={el => { this.el_table_head = el; }}>
-                    <TableRow className={this.props.className} columns={columns} is_header />
+                    <TableRow className={className} columns={columns} is_header />
                 </div>
                 <div
                     className='table__body'
@@ -89,10 +96,10 @@ class DataTable extends React.PureComponent {
                     }
                 </div>
 
-                {this.props.footer &&
+                {footer &&
                     <div className='table__foot'>
                         <TableRow
-                            className={this.props.className}
+                            className={className}
                             row_obj={footer}
                             columns={columns}
                             is_footer
