@@ -17,6 +17,7 @@ const TradeTypeInfoItem = ({
     handlePrevClick,
     is_mobile,
     item,
+    item_index,
     itemList,
     onBackButtonClick,
     onSubmitButtonClick,
@@ -27,15 +28,13 @@ const TradeTypeInfoItem = ({
             <span onClick={() => onBackButtonClick()}>
                 <Icon icon={IconBack} />
             </span>
-            <span className='title'>{item.text}</span>
+            <span className='title'>{item.text} {item_index}</span>
         </div>
         }
         <div className='trade-type-info-dialog__body'>
-            <div className={classNames(
-                'trade-type-info-dialog__card-wrapper', {
-                    [`trade-type-info-dialog__card-wrapper--${item.value}`]: !!item.value,
-                },
-            )}
+            <div
+                className='trade-type-info-dialog__card-wrapper'
+                style={{ 'transform': `translate3d(-${(274 * item_index)}px, 0, 0)`  }}
             >
                 {
                     itemList.map((type, idx) => (
@@ -94,6 +93,7 @@ TradeTypeInfoItem.propTypes = {
     handlePrevClick      : PropTypes.func,
     is_mobile            : PropTypes.bool,
     item                 : PropTypes.object,
+    item_index           : PropTypes.number,
     itemList             : PropTypes.array,
     onBackButtonClick    : PropTypes.func,
     onSubmitButtonClick  : PropTypes.func,

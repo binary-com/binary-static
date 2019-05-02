@@ -120,6 +120,8 @@ class ContractTypeWidget extends React.PureComponent {
         return text;
     };
 
+    getItemIndex = (curr_item, itemList) => itemList.findIndex((list_item) => list_item.value === curr_item.value);
+
     getItemList = () => {
         const itemList = [];
         const list = this.props.list;
@@ -179,6 +181,7 @@ class ContractTypeWidget extends React.PureComponent {
                         handlePrevClick={this.handlePrevClick}
                         is_mobile={this.props.is_mobile}
                         item={this.state.item}
+                        item_index={this.getItemIndex(this.state.item, this.getItemList())}
                         itemList={this.getItemList()}
                         onBackButtonClick={this.onBackButtonClick}
                         onSubmitButtonClick={this.onSubmitButtonClick}
