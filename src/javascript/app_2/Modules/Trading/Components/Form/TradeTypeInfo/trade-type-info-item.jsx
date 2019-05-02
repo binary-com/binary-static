@@ -28,7 +28,7 @@ const TradeTypeInfoItem = ({
             <span onClick={() => onBackButtonClick()}>
                 <Icon icon={IconBack} />
             </span>
-            <span className='title'>{item.text} {item_index}</span>
+            <span className='title'>{item.text}</span>
         </div>
         }
         <div className='trade-type-info-dialog__body'>
