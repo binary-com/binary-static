@@ -94,7 +94,7 @@ const Regulation = () => {
             </Box>
 
             <Box header={it.L('Binary Investments (Europe) Ltd')} >
-                <p>{it.L('Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority ([_1]licence no. IS/70156[_2]).',`<a href="${it.url_for('/download/WS-Binary-Investments-Europe-Limited.pdf')}" target="_blank">`, '</a>')}</p>
+                <p>{it.L('Binary Investments (Europe) Ltd, W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta. Licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority ([_1]licence no. IS/70156[_2]).',`<a href="${it.url_for('/download/WS-Binary-Investments-Europe-Limited.pdf')}" target="_blank">`, '</a>')}</p>
                 <p>{it.L('European Union residents who wish to trade investment products will have their accounts opened with Binary Investments (Europe) Ltd.')}</p>
                 <div className='gr-padding-30 gr-12' id='accordion'>
                     <h3 aria-expanded='true' aria-selected='true'>{it.L('EU Passport Rights')}</h3>
@@ -284,7 +284,7 @@ const Regulation = () => {
 
             <div data-show='eucountry'>
                 <Box header={it.L('Binary (Europe) Limited')} >
-                    <p>{it.L('Binary (Europe) Limited, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licensed and regulated (for gambling products only - [_1]\'s Volatility Indices) by the Malta Gaming Authority in Malta  (licence no. [_2]) - [_3]view licence[_4] and also maintains an Irish licence. For UK clients by the UK Gambling Commission - [_5]view licence[_4].', it.website_name, 'MGA/B2C/102/2000', `<a href="${it.url_for('download/regulation/MGA_licence.pdf')}" target="_blank">`, '</a>', '<a href="https://secure.gamblingcommission.gov.uk/PublicRegister/Search/Detail/39495" target="_blank">')}</p>
+                    <p>{it.L('Binary (Europe) Limited, W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta. Licensed and regulated (for gambling products only - [_1]\'s Volatility Indices) by the Malta Gaming Authority in Malta  (licence no. [_2]) - [_3]view licence[_4] and also maintains an Irish licence. For UK clients by the UK Gambling Commission - [_5]view licence[_4].', it.website_name, 'MGA/B2C/102/2000', `<a href="${it.url_for('download/regulation/MGA_licence.pdf')}" target="_blank">`, '</a>', '<a href="https://secure.gamblingcommission.gov.uk/PublicRegister/Search/Detail/39495" target="_blank">')}</p>
                     <p>{it.L('European Union residents who wish to trade gambling products will have their accounts opened with Binary (Europe) Limited.')}</p>
                     <RegulatorText />
                     <RegulatorImage padding='4' padding_m='8' href='http://www.mga.org.mt/' image='images/pages/why-us/mga-logo2.svg' />
