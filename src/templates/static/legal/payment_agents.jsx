@@ -63,7 +63,7 @@ const PaymentAgents = () => (
             <li>{it.L('It is further agreed and understood that the Agent shall not use any domain name that includes the name [_1] and any derivation or variation of this name that might give the impression that the Company and the Agent are the same person.', it.website_name)}</li>
             <li>{it.L('The Agent shall not do the following:')}
                 <ul className='bullet'>
-                    <li>{it.L('Represent itself as a representative of the Company or as an authorised person by the Company in its advertising activities')}</li>
+                    <li>{it.L('Represent themselves as a representative of the Company or as an authorised person by the Company in their advertising activities')}</li>
                     <li>{it.L('Use the Company\'s name or trademark in the Agent\'s advertising activities without a written authorisation to be given by the Company')}</li>
                     <li>{it.L('Misrepresent the services that the Agent provides to the clients')}</li>
                     <li>{it.L('Engage in misleading, illusory, or deceptive conduct')}</li>
