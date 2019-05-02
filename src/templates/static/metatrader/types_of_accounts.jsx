@@ -67,8 +67,8 @@ const TypesOfAccounts = () => (
             />
             <Box
                 image='volatility_indices'
-                title={it.L('Volatility Indices')}
-                text={it.L('The Volatility Indices account allows you to trade CFDs on Volatility Indices – our proprietary synthetic assets that mimic real-world market volatility and are available for trading 24/7.')}
+                title={it.L('Synthetic Indices')}
+                text={it.L('The Synthetic Indices account allows you to trade CFDs on Synthetic Indices – our proprietary synthetic assets that mimic real-world market volatility and are available for trading 24/7.')}
             />
             {/* toEnableMAM: remove className */}
             <Box
@@ -81,8 +81,8 @@ const TypesOfAccounts = () => (
             <Box
                 className='invisible'
                 image='volatility_indices'
-                title={it.L('MAM Volatility Indices*')}
-                text={it.L('The MAM Volatility Indices account can be assigned to a money manager who will trade on your behalf with the same specifications as the regular Volatility Indices account.')}
+                title={it.L('MAM Synthetic Indices*')}
+                text={it.L('The MAM Synthetic Indices account can be assigned to a money manager who will trade on your behalf with the same specifications as the regular Synthetic Indices account.')}
             />
 
             {/* toEnableMAM: remove 'invisible' from className */}
@@ -99,13 +99,13 @@ const TypesOfAccounts = () => (
                         scroll
                         data={{
                             thead: [
-                                [{ text: '' }, { text: it.L('Standard') }, { text: it.L('Advanced') }, { text: it.L('Volatility Indices') }],
+                                [{ text: '' }, { text: it.L('Standard') }, { text: it.L('Advanced') }, { text: it.L('Synthetic Indices') }],
                             ],
                             tbody: [
                                 [{ text: <Row             text={it.L('Account currency')} /> },       { text: it.L('USD') },                            { text: it.L('USD') },                            { text: it.L('USD/EUR') }],
-                                [{ text: <Row number={1}  text={it.L('Maximum leverage')} /> },       { text: it.L('Up to [_1]', '1:1000') },           { text: it.L('Up to [_1]', '1:100') },            { text: it.L('Up to [_1]', '1:500') }],
+                                [{ text: <Row number={1}  text={it.L('Maximum leverage')} /> },       { text: it.L('Up to [_1]', '1:1000') },           { text: it.L('Up to [_1]', '1:100') },            { text: it.L('Up to [_1]', '1:1000') }],
                                 [{ text: <Row number={2}  text={it.L('Order execution')} /> },        { text: it.L('Market') },                         { text: it.L('Market') },                         { text: it.L('Market') }],
-                                [{ text: <Row number={3}  text={it.L('Spread')} /> },                 { text: it.L('Variable from [_1] pips', '1.2') }, { text: it.L('Variable from [_1] pips', '0.9') }, { text: it.L('Fixed') }],
+                                [{ text: <Row number={3}  text={it.L('Spread')} /> },                 { text: it.L('Variable') },                       { text: it.L('Variable') },                       { text: it.L('Fixed/Variable') }],
                                 [{ text: <Row number={4}  text={it.L('Commission')} /> },             { text: it.L('No') },                             { text: it.L('No') },                             { text: it.L('No') }],
                                 [{ text: <Row             text={it.L('Minimum deposit')} /> },        { text: it.L('No') },                             { text: it.L('No') },                             { text: it.L('No') }],
                                 [{ text: <Row number={5}  text={it.L('Margin call')} /> },            { text: '150%' },                                 { text: '150%' },                                 { text: '100%' }],
@@ -124,7 +124,7 @@ const TypesOfAccounts = () => (
                         scroll
                         data={{
                             thead: [
-                                [{ text: '' }, { text: it.L('Standard') }, { text: it.L('Volatility Indices') }],
+                                [{ text: '' }, { text: it.L('Standard') }, { text: it.L('Synthetic Indices') }],
                             ],
                             tbody: [
                                 [{ text: <Row             text={it.L('Account currency')} /> },       { text: it.L('EUR/GBP') },            { text: it.L('EUR') }],
