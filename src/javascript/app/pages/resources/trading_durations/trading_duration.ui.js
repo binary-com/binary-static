@@ -24,7 +24,6 @@ const TradingDurationUI = (() => {
                 ))
             );
             $tab_header.append($header_slider);
-            console.log(market)
         });
     };
 
@@ -87,7 +86,6 @@ const TradingDurationUI = (() => {
                 });
             });
         });
-        console.log(datas);
     };
 
     const getTradeDurationAssets = (trade_duration) => {
@@ -113,7 +111,6 @@ const TradingDurationUI = (() => {
             const trading_duration_market = TradingDuration.getMarketColumns();
 
             setHeader(trading_duration_market);
-            console.log(trading_duration_data)
 
             trading_duration_data.forEach((duration_data) => initializeData(duration_data));
         });
