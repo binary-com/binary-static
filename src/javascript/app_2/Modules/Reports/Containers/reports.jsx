@@ -3,7 +3,7 @@ import React          from 'react';
 import { withRouter } from 'react-router-dom';
 import VerticalTab    from 'App/Components/Elements/VerticalTabs/vertical-tab.jsx';
 import { IconClose }  from 'Assets/Settings';
-import * as AppRoutes from 'Constants/routes';
+import AppRoutes      from 'Constants/routes';
 import { localize }   from '_common/localize';
 
 const Reports = ({ routes, location, history }) => {

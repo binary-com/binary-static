@@ -23,6 +23,7 @@ class ProfitTable extends React.Component {
 
     render () {
         const {
+            component_icon,
             data,
             is_empty,
             is_loading,
@@ -35,42 +36,44 @@ class ProfitTable extends React.Component {
 
         const columns = getProfitTableColumnsTemplate();
 
-        if ((is_loading && data.length === 0) || is_empty) {
-            return (
-                <PlaceholderComponent
-                    is_loading={is_loading}
-                    has_selected_date={has_selected_date}
-                    is_empty={is_empty}
-                    empty_message_component={EmptyTradeHistoryMessage}
-                />
-            );
-        }
-
         return (
             <React.Fragment>
                 <ReportsMeta
                     i18n_heading={localize('Profit Table')}
                     i18n_message={localize('View all active trades on your account that can still incur a profit or a loss.')}
                 />
-                <DataTable
-                    className='profit-table'
-                    data_source={data}
-                    columns={columns}
-                    onScroll={handleScroll}
-                    footer={totals}
-                    getRowAction={(row_obj) => row_obj.id ? getContractPath(row_obj.id) : undefined}
-                    is_empty={is_empty}
-                >
+                { (is_loading && data.length === 0) || is_empty ?
                     <PlaceholderComponent
                         is_loading={is_loading}
+                        has_selected_date={has_selected_date}
+                        is_empty={is_empty}
+                        empty_message_component={EmptyTradeHistoryMessage}
+                        component_icon={component_icon}
+                        localized_message={localize('You have no trading activity yet.')}
+                        localized_period_message={localize('You have no trading activity for this period.')}
                     />
-                </DataTable>
+                    :
+                    <DataTable
+                        className='profit-table'
+                        data_source={data}
+                        columns={columns}
+                        onScroll={handleScroll}
+                        footer={totals}
+                        getRowAction={(row_obj) => row_obj.id ? getContractPath(row_obj.id) : undefined}
+                        is_empty={is_empty}
+                    >
+                        <PlaceholderComponent
+                            is_loading={is_loading}
+                        />
+                    </DataTable>
+                }
             </React.Fragment>
         );
     }
 }
 
 ProfitTable.propTypes = {
+    component_icon   : PropTypes.func,
     data             : MobxPropTypes.arrayOrObservableArray,
     error            : PropTypes.string,
     handleScroll     : PropTypes.func,

@@ -5,31 +5,37 @@ import routes                      from 'Constants/routes';
 
 class VerticalTabContentContainer extends React.PureComponent {
     render() {
-        const selected   = this.props.items.find(item => item.label === this.props.selected.label);
-        const TabContent = selected.value;
+        const {
+            action_bar,
+            is_routed,
+            items,
+            selected,
+        } = this.props;
+        const selected_item = items.find(item => item.label === selected.label);
+        const TabContent    = selected_item.value;
 
         return (
             <div className='vertical-tab__content'>
-                { this.props.action_bar &&
+                { action_bar &&
                     <div className='vertical-tab__action-bar'>
                         {
-                            this.props.action_bar.map(({ icon, onClick, title }) => (
+                            action_bar.map(({ icon, onClick, title }) => (
                                 <Icon className='vertical-tab__action-bar--icon' key={title} icon={icon} onClick={onClick} />
                             ))
                         }
                     </div>
                 }
-                { this.props.is_routed ?
+                { is_routed ?
                     <Switch>
                         <Redirect exact from={routes.reports} to={routes.positions} />
                         {
-                            this.props.items.map(({ value, path }) => {
+                            items.map(({ value, path, icon }) => {
                                 const Component = value;
                                 return (
                                     <Route
                                         key={path}
                                         path={path}
-                                        render={() => <Component />}
+                                        render={() => <Component component_icon={icon} />}
                                     />
                                 );
                             })
@@ -37,7 +43,7 @@ class VerticalTabContentContainer extends React.PureComponent {
                     </Switch>
                     :
                     <TabContent
-                        key={selected.label}
+                        key={selected_item.label}
                         className='item-id'
                     />
                 }

@@ -23,6 +23,7 @@ class OpenPositions extends React.Component {
     render() {
         const {
             active_positions,
+            component_icon,
             is_loading,
             error,
             is_empty,
@@ -34,35 +35,34 @@ class OpenPositions extends React.Component {
             return <p>{error}</p>;
         }
 
-        if ((is_loading && active_positions.length === 0) || is_empty) {
-            return (
-                <PlaceholderComponent
-                    is_loading={is_loading || !active_positions}
-                    is_empty={is_empty}
-                    empty_message_component={EmptyTradeHistoryMessage}
-                />
-            );
-        }
-
         return (
             <React.Fragment>
                 <ReportsMeta
                     i18n_heading={localize('Open Positions')}
                     i18n_message={localize('View all active trades on your account that can still incur a profit or a loss.')}
                 />
-                { currency && active_positions.length > 0 &&
-                <DataTable
-                    className='open-positions'
-                    columns={getOpenPositionsColumnsTemplate(currency)}
-                    footer={totals}
-                    data_source={active_positions}
-                    getRowAction={undefined}
-                    // getRowAction={(row_obj) => getContractPath(row_obj.id)} TODO uncomment once smart-chart component is fixed.
-                >
+                {(is_loading && active_positions.length === 0) || is_empty ?
                     <PlaceholderComponent
-                        is_loading={is_loading}
+                        is_loading={is_loading || !active_positions}
+                        is_empty={is_empty}
+                        empty_message_component={EmptyTradeHistoryMessage}
+                        component_icon={component_icon}
+                        localized_message={localize('You have no open positions yet.')}
                     />
-                </DataTable>
+                    :
+                    currency && active_positions.length > 0 &&
+                    <DataTable
+                        className='open-positions'
+                        columns={getOpenPositionsColumnsTemplate(currency)}
+                        footer={totals}
+                        data_source={active_positions}
+                        getRowAction={undefined}
+                        // getRowAction={(row_obj) => getContractPath(row_obj.id)} TODO uncomment once smart-chart component is fixed.
+                    >
+                        <PlaceholderComponent
+                            is_loading={is_loading}
+                        />
+                    </DataTable>
                 }
             </React.Fragment>
 
@@ -72,6 +72,7 @@ class OpenPositions extends React.Component {
 
 OpenPositions.propTypes = {
     active_positions: MobxPropTypes.arrayOrObservableArray,
+    component_icon  : PropTypes.func,
     currency        : PropTypes.string,
     error           : PropTypes.string,
     history         : PropTypes.object,

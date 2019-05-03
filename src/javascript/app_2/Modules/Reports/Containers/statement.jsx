@@ -36,6 +36,7 @@ class Statement extends React.Component {
 
     render() {
         const {
+            component_icon,
             data,
             is_empty,
             is_loading,
@@ -48,42 +49,44 @@ class Statement extends React.Component {
 
         const columns = getStatementTableColumnsTemplate();
 
-        if ((is_loading && data.length === 0) || is_empty) {
-            return (
-                <PlaceholderComponent
-                    is_loading={is_loading}
-                    has_selected_date={has_selected_date}
-                    is_empty={is_empty}
-                    empty_message_component={EmptyTradeHistoryMessage}
-                />
-            );
-        }
-
         return (
             <React.Fragment>
                 <ReportsMeta
                     i18n_heading={localize('Statement')}
                     i18n_message={localize('View all transactions on your account, including trades, deposits, and withdrawals.')}
                 />
-                <DataTable
-                    className='statement'
-                    data_source={data}
-                    columns={columns}
-                    onScroll={handleScroll}
-                    // getRowAction={this.getRowAction} TODO uncomment when chart layout is ready for statements
-                    getRowAction={undefined}
-                    is_empty={is_empty}
-                >
+                { (is_loading && data.length === 0) || is_empty ?
                     <PlaceholderComponent
                         is_loading={is_loading}
+                        has_selected_date={has_selected_date}
+                        is_empty={is_empty}
+                        empty_message_component={EmptyTradeHistoryMessage}
+                        component_icon={component_icon}
+                        localized_message={localize('You have no transactions for this period.')}
+                        localized_period_message={localize('You have no transactions for this period.')}
                     />
-                </DataTable>
+                    :
+                    <DataTable
+                        className='statement'
+                        data_source={data}
+                        columns={columns}
+                        onScroll={handleScroll}
+                        // getRowAction={this.getRowAction} // TODO uncomment when chart layout is ready for statements
+                        getRowAction={undefined}
+                        is_empty={is_empty}
+                    >
+                        <PlaceholderComponent
+                            is_loading={is_loading}
+                        />
+                    </DataTable>
+                }
             </React.Fragment>
         );
     }
 }
 
 Statement.propTypes = {
+    component_icon   : PropTypes.func,
     data             : MobxPropTypes.arrayOrObservableArray,
     error            : PropTypes.string,
     handleScroll     : PropTypes.func,
