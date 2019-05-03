@@ -1,47 +1,24 @@
 const TradingDuration  = require('./trading_duration');
 const BinarySocket     = require('../../../base/socket');
 const localize         = require('../../../../_common/localize').localize;
+const TabSelector      = require('../../../../_common/tab_selector');
 const Login            = require('../../../../_common/base/login');
 const CommonFunctions  = require('../../../../_common/common_functions');
 const showLoadingImage = require('../../../../_common/utility').showLoadingImage;
 
 const TradingDurationUI = (() => {
-    let $trading_durations;
     const onLoad = () => {
-        $trading_durations = $('#trading_durations');
+        TabSelector.onLoad();
         sendRequest();
     };
 
-    const setHeader = (duration_market) => {
-        const $tab_header = $trading_durations.find('#trading_duration_tabs');
-        const $header_slider = $('<li/>', { id: 'slider', class: 'slider' });
-        duration_market.forEach((market) => {
-            $tab_header.append($('<li/>')
-                .append($('<a/>', {
-                    href: `#${market.name}`,
-                    text: market.display_name,
-                    id  : market.name }
-                ))
-            );
-            $tab_header.append($header_slider);
-        });
-    };
-
     const initializeData = (duration_data) => {
-        const data_wrapper = $trading_durations.find('#trading_durations_data');
-        const market_header = `#market_${duration_data.market.name}`;
-        if ($trading_durations.find(market_header).length) {
-            $(market_header).append($('<div/>', { id: duration_data.submarket.name })
-                .append($('<h3/>', { text: duration_data.submarket.display_name })));
-            createEmptyTable(duration_data.submarket.name);
-            setTableData(duration_data.submarket.name, duration_data.data);
-        } else {
-            data_wrapper.append($('<div/>', { id: market_header.slice(1) })
-                .append($('<div/>', { id: duration_data.submarket.name })
-                    .append($('<h3/>', { text: duration_data.submarket.display_name }))));
-            createEmptyTable(duration_data.submarket.name);
-            setTableData(duration_data.submarket.name, duration_data.data);
-        }
+        const market_header = `#tab_${duration_data.market.name}-content`;
+        
+        $(market_header).append($('<div/>', { id: duration_data.submarket.name })
+            .append($('<h3/>', { text: duration_data.submarket.display_name })));
+        createEmptyTable(duration_data.submarket.name);
+        setTableData(duration_data.submarket.name, duration_data.data);
     };
 
     const createEmptyTable = (submarket_name) => {
@@ -108,9 +85,8 @@ const TradingDurationUI = (() => {
     const sendRequest = () => {
         BinarySocket.send({ trading_durations: 1 }).then((response) => {
             const trading_duration_data = TradingDuration.getTradingDurationData(response);
-            const trading_duration_market = TradingDuration.getMarketColumns();
 
-            setHeader(trading_duration_market);
+            TabSelector.repositionSelector();
 
             trading_duration_data.forEach((duration_data) => initializeData(duration_data));
         });

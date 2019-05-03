@@ -1,40 +1,35 @@
 import React from 'react';
+import { TabContainer, TabsSubtabs, TabContentContainer, TabContent } from '../../_common/components/tabs.jsx';
 
 const TradingDurations = () => (
-    <div id='trading_durations' className='trading-durations'>
+    <div id='trading_durations' className='gr-centered gr-12-p gr-12-m trading-durations'>
         <h1 className='trading-durations__title'>{it.L('Trading Durations')}</h1>
-        <div className='gr-padding-10 trading-durations__wrapper'>
+        <div className='gr-padding-20 trading-durations__wrapper'>
             <p id='errorMsg' className='trading-durations__error-msg invisible' />
-            <div className='gr-parent trading-durations__content'>
-                <ul id='trading_duration_tabs' className='trading-durations__tabs'>
-                    {/*
-                        loop through the market array showing display name
-                        and name as id to navigate on the market trading durations
-                    */}
-                    {/* ARRAY LOOP BEGIN */ }
-                </ul>
-                {/*
-                    the array structure for this will be
-                    [{
-                        market: { name: 'forex', display_name: localize('Forex') },
-                        submarket: { name: 'minor_pair', display_name: localize('Minor Pair') },
-                        data: [    #basically data is an array of objects with 'symbols' and 'trade_durations' as its properties
-                            {
-                            symbols: [ { name: 'frxAUDJPY', display_name: localize('AUD/JPY') }, { name: 'frxAUDUSD', display_name: localize('AUD/USD') }, ... ],
-                            trade_durations: [
-                                {
-                                    trade_type: { name: 'rise_fall', display_name: localize('Rise/Fall') },
-                                    durations : [
-                                        {name: ticks, display_name: localize('ticks'), min: 1, max: 10 }, ...
-                                    ]
-                                },
-                            ...]
-                            },
-                        ],
+            <div className='trading-durations__content'>
+                <TabContainer className='gr-padding-20 full-width' theme='light'>
+                    <TabsSubtabs
+                        id='duration_assets'
+                        className='gr-parent tab-selector-wrapper'
+                        items={[
+                            { id: 'tab_forex',       text: it.L('Forex') },
+                            { id: 'tab_indices',     text: it.L('Indices') },
+                            { id: 'tab_commodities', text: it.L('Commodities') },
+                            { id: 'tab_volidx',        text: it.L('Volatility Indices') },
+                            { id: 'duration_assets_selector', className: 'tab-selector' },
+                        ]}
+                    />
+                    <div className='tab-content'>
+                        <TabContentContainer>
+                            <TabContent id='tab_forex' className='selectedTab' />
+                            <TabContent id='tab_indices' />
+                            <TabContent id='tab_commodities' />
+                            <TabContent id='tab_volidx' />
+                        </TabContentContainer>
+                    </div>
+                </TabContainer>
 
-                    }, ...]
-                */}
-                {/* ARRAY LOOP BEGIN */ }
+                <ul id='trading_duration_tabs' className='trading-durations__tabs' />
                 <div id='trading_durations_data' />
             </div>
             <p className='notice-msg center-text invisible' id='empty-trading-durations'>
