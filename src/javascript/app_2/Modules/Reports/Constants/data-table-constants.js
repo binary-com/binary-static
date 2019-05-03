@@ -36,14 +36,14 @@ export const getStatementTableColumnsTemplate = () => [
             />
         ),
     }, {
-        title    : localize('Date'),
-        col_index: 'date',
-    }, {
         title    : localize('Ref. ID'),
         col_index: 'refid',
     }, {
+        title    : localize('Transaction time'),
+        col_index: 'date',
+    }, {
         key              : 'mode',
-        title            : localize('Action'),
+        title            : localize('Transaction'),
         col_index        : 'action_type',
         renderCellContent: ({ cell_value, row_obj }) => (
             <Label mode={getModeFromValue(cell_value)}>{row_obj.action}</Label>
@@ -74,13 +74,13 @@ export const getProfitTableColumnsTemplate = () => [
             );
         },
     }, {
-        title    : localize('Date'),
-        col_index: 'purchase_time',
-    }, {
         title    : localize('Ref. ID'),
         col_index: 'transaction_id',
     }, {
-        title            : localize('Purchase'),
+        title    : localize('Buy time'),
+        col_index: 'purchase_time',
+    }, {
+        title            : localize('Buy price'),
         col_index        : 'buy_price',
         renderCellContent: ({ cell_value, is_footer }) => {
             if (is_footer) return '';
@@ -88,10 +88,10 @@ export const getProfitTableColumnsTemplate = () => [
             return <Money amount={cell_value} />;
         },
     }, {
-        title    : localize('Sale Date'),
+        title    : localize('Sell time'),
         col_index: 'sell_time',
     }, {
-        title            : localize('Sale Price'),
+        title            : localize('Sell price'),
         col_index        : 'sell_price',
         renderCellContent: ({ cell_value, is_footer }) => {
             if (is_footer) return '';
@@ -127,19 +127,19 @@ export const getOpenPositionsColumnsTemplate = (currency) => [
         title    : localize('Ref. ID'),
         col_index: 'reference',
     }, {
-        title            : localize('Potential Payout'),
+        title            : localize('Buy price'),
+        col_index        : 'buy_price',
+        renderCellContent: ({ cell_value }) => (
+            <Money amount={cell_value} currency={currency} />
+        ),
+    }, {
+        title            : localize('Potential payout'),
         col_index        : 'payout',
         renderCellContent: ({ cell_value }) => (
             <Money amount={cell_value} currency={currency} />
         ),
     }, {
-        title            : localize('Purchase'),
-        col_index        : 'purchase',
-        renderCellContent: ({ cell_value }) => (
-            <Money amount={cell_value} currency={currency} />
-        ),
-    }, {
-        title            : localize('Indicative'),
+        title            : localize('Indicative price'),
         col_index        : 'indicative',
         renderCellContent: ({ cell_value, row_obj }) => (
             <IndicativeCell amount={+cell_value} currency={currency} status={row_obj.status} />

@@ -219,7 +219,7 @@ $side-padding: 1.2em;
         grid-template-columns: repeat(6, 1fr);
         width: 100%;
     }
-    .purchase, .payout, .indicative {
+    .buy_price, .payout, .indicative {
         justify-content: flex-end;
     }
     .progress-slider {
