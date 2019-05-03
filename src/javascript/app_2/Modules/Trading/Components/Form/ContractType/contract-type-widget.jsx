@@ -133,12 +133,12 @@ class ContractTypeWidget extends React.PureComponent {
     };
 
     render() {
-        const { is_dark_theme, is_equal, is_mobile, list, name, value  } = this.props;
-        const { is_dialog_open, is_info_dialog_open, item }              = this.state;
+        const { is_dark_theme, is_equal, is_mobile, list, name, value } = this.props;
+        const { is_dialog_open, is_info_dialog_open, item }             = this.state;
         return (
             <div
-                ref={this.setWrapperRef}
                 className='contract-type-widget dropdown--left'
+                ref={this.setWrapperRef}
                 tabIndex='0'
             >
                 <div
@@ -148,8 +148,8 @@ class ContractTypeWidget extends React.PureComponent {
                     onClick={this.onWidgetClick}
                 >
                     <IconTradeCategory
-                        className='contract-type-widget__icon-wrapper'
                         category={value}
+                        className='contract-type-widget__icon-wrapper'
                     />
                     <span name={name} value={value}>
                         {this.getDisplayText()}
