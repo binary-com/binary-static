@@ -16,6 +16,7 @@ const TradeTypeInfoItem = ({
     handleNavigationClick,
     handleNextClick,
     handlePrevClick,
+    is_dark_theme,
     is_mobile,
     item,
     item_index,
@@ -35,6 +36,7 @@ const TradeTypeInfoItem = ({
         <div className='trade-type-info-dialog__body'>
             <div
                 className='trade-type-info-dialog__card-wrapper'
+                // total calculated below is from 258px and 16px horizontal margin set in trade-info-dialog css
                 style={{ 'transform': `translate3d(-${(274 * item_index)}px, 0, 0)`  }}
             >
                 {
@@ -44,6 +46,7 @@ const TradeTypeInfoItem = ({
                                 <TradeCategoriesGIF
                                     category={type.value}
                                     className='trade-type-info-dialog__gif-image'
+                                    is_dark={is_dark_theme}
                                 />
                             </div>
                             <div className='trade-type-info-dialog__content'>
@@ -95,6 +98,7 @@ TradeTypeInfoItem.propTypes = {
     handleNavigationClick: PropTypes.func,
     handleNextClick      : PropTypes.func,
     handlePrevClick      : PropTypes.func,
+    is_dark_theme        : PropTypes.bool,
     is_mobile            : PropTypes.bool,
     item                 : PropTypes.object,
     item_index           : PropTypes.number,

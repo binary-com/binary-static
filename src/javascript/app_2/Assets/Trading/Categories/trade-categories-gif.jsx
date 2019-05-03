@@ -14,7 +14,7 @@ import ImageRiseFallLight    from 'Images/app_2/trade_explanations/img-rise-fall
 import ImageTouchDark        from 'Images/app_2/trade_explanations/img-touch-no-touch-dark.svg';
 import ImageTouchLight       from 'Images/app_2/trade_explanations/img-touch-no-touch-light.svg';
 
-// TODO: Replace static image svgs with themed GIFs
+// TODO: Replace static image svgs with themed GIFs or animated SVGs
 const TradeCategoriesGIF = ({ category, className, is_dark }) => {
     let TradeTypeGIF;
     const themed_classes = classNames(className,

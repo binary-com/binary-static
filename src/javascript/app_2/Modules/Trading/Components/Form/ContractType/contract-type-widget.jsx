@@ -133,8 +133,8 @@ class ContractTypeWidget extends React.PureComponent {
     };
 
     render() {
-        const { is_equal, is_mobile, list, name, value  }   = this.props;
-        const { is_dialog_open, is_info_dialog_open, item } = this.state;
+        const { is_dark_theme, is_equal, is_mobile, list, name, value  } = this.props;
+        const { is_dialog_open, is_info_dialog_open, item }              = this.state;
         return (
             <div
                 ref={this.setWrapperRef}
@@ -184,6 +184,7 @@ class ContractTypeWidget extends React.PureComponent {
                         handleNavigationClick={this.handleNavigationClick}
                         handleNextClick={this.handleNextClick}
                         handlePrevClick={this.handlePrevClick}
+                        is_dark_theme={is_dark_theme}
                         is_mobile={is_mobile}
                         item={item}
                         item_index={this.getItemIndex(item, this.getItemList())}
@@ -198,11 +199,12 @@ class ContractTypeWidget extends React.PureComponent {
 }
 
 ContractTypeWidget.propTypes = {
-    is_mobile: PropTypes.bool,
+    is_dark_theme: PropTypes.bool,
     is_equal           : PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
     ]),
+    is_mobile: PropTypes.bool,
     list     : PropTypes.object,
     name     : PropTypes.string,
     onChange : PropTypes.func,
