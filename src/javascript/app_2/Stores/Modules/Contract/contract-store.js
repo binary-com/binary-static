@@ -64,6 +64,7 @@ export default class ContractStore extends BaseStore {
             }
 
         } else if (!this.is_left_epoch_set) {
+            // For tick contracts, it is necessary to set the chartType and granularity after saving and clearing trade layout
             if (contract_info.tick_count) {
                 SmartChartStore.updateGranularity(0);
                 SmartChartStore.updateChartType('mountain');
