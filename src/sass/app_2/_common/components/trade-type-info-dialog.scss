@@ -74,10 +74,13 @@
         }
 
         &-image {
-            margin-left: -6px;
-            margin-top: -2px;
             width: 270px;
             height: 142px;
+
+            &--dark {
+                margin-left: -6px;
+                margin-top: -2px;
+            }
         }
     }
     &__header {

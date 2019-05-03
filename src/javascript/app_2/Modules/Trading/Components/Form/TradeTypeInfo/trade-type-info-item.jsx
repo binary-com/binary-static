@@ -7,8 +7,8 @@ import {
     IconBack }                from 'Assets/Common';
 import { IconChevronLeft }    from 'Assets/Common/icon-chevron-left.jsx';
 import { IconChevronRight }   from 'Assets/Common/icon-chevron-right.jsx';
-import { TradeCategories }    from 'Assets/Trading/Categories';
-import { TradeCategoriesGIF } from 'Assets/Trading/Categories/trade-categories-gif.jsx';
+import { TradeCategories,
+    TradeCategoriesGIF }      from 'Assets/Trading/Categories';
 import Button                 from 'App/Components/Form/button.jsx';
 import { localize }           from '_common/localize';
 

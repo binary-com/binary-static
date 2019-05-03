@@ -9,14 +9,11 @@ import TradeTypeInfoDialog   from '../TradeTypeInfo/trade-type-info-dialog.jsx';
 import TradeTypeInfoItem     from '../TradeTypeInfo/trade-type-info-item.jsx';
 
 class ContractTypeWidget extends React.PureComponent {
-    constructor(props) {
-        super(props);
-        this.state = {
-            is_dialog_open     : false,
-            is_info_dialog_open: false,
-            item               : {},
-        };
-    }
+    state = {
+        is_dialog_open     : false,
+        is_info_dialog_open: false,
+        item               : {},
+    };
 
     componentDidMount() {
         document.addEventListener('mousedown', this.handleClickOutside);
@@ -136,6 +133,8 @@ class ContractTypeWidget extends React.PureComponent {
     };
 
     render() {
+        const { is_equal, is_mobile, list, name, value  }   = this.props;
+        const { is_dialog_open, is_info_dialog_open, item } = this.state;
         return (
             <div
                 ref={this.setWrapperRef}
@@ -144,44 +143,50 @@ class ContractTypeWidget extends React.PureComponent {
             >
                 <div
                     className={classNames('contract-type-widget__display', {
-                        'contract-type-widget__display--clicked': this.state.is_dialog_open,
+                        'contract-type-widget__display--clicked': is_dialog_open,
                     })}
                     onClick={this.onWidgetClick}
                 >
-                    <IconTradeCategory category={this.props.value} className='contract-type-widget__icon-wrapper' />
-                    <span name={this.props.name} value={this.props.value}>
+                    <IconTradeCategory
+                        className='contract-type-widget__icon-wrapper'
+                        category={value}
+                    />
+                    <span name={name} value={value}>
                         {this.getDisplayText()}
                     </span>
-                    <IconArrow className='contract-type-widget__select-arrow contract-type-widget__select-arrow--left' />
+                    <IconArrow className={classNames(
+                          'contract-type-widget__select-arrow',
+                          'contract-type-widget__select-arrow--left')}
+                    />
                 </div>
 
                 <ContractTypeDialog
-                    is_mobile={this.props.is_mobile}
-                    open={this.state.is_dialog_open}
+                    is_mobile={is_mobile}
                     onClose={this.handleVisibility}
+                    open={is_dialog_open}
                 >
                     <ContractitemList
-                        list={this.props.list}
-                        name={this.props.name}
-                        value={this.props.value}
-                        handleSelect={this.handleSelect}
                         handleInfoClick={this.handleInfoClick}
-                        is_equal={this.props.is_equal}
+                        handleSelect={this.handleSelect}
+                        is_equal={is_equal}
+                        list={list}
+                        name={name}
+                        value={value}
                     />
                 </ContractTypeDialog>
                 <TradeTypeInfoDialog
-                    is_mobile={this.props.is_mobile}
+                    is_mobile={is_mobile}
                     onClose={this.handleInfoClick}
-                    open={this.state.is_info_dialog_open}
-                    title={this.state.item.text}
+                    open={is_info_dialog_open}
+                    title={item.text}
                 >
                     <TradeTypeInfoItem
                         handleNavigationClick={this.handleNavigationClick}
                         handleNextClick={this.handleNextClick}
                         handlePrevClick={this.handlePrevClick}
-                        is_mobile={this.props.is_mobile}
-                        item={this.state.item}
-                        item_index={this.getItemIndex(this.state.item, this.getItemList())}
+                        is_mobile={is_mobile}
+                        item={item}
+                        item_index={this.getItemIndex(item, this.getItemList())}
                         itemList={this.getItemList()}
                         onBackButtonClick={this.onBackButtonClick}
                         onSubmitButtonClick={this.onSubmitButtonClick}
