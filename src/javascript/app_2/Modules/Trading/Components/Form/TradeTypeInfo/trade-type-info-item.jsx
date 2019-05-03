@@ -60,8 +60,8 @@ const TradeTypeInfoItem = ({
                             <div>
                                 <Button
                                     className='btn--primary--orange trade-type-info-dialog__choose-button'
-                                    text={localize('Choose')}
                                     onClick={() => onSubmitButtonClick(type)}
+                                    text={localize('Choose')}
                                 />
                             </div>
                         </div>
