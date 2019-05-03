@@ -25,6 +25,10 @@ class DurationWrapper extends React.Component {
         });
     }
 
+    symbolHasEndTime() {
+        return this.props.duration_units_list.length > 1;
+    }
+
     componentDidMount() {
         const current_unit = this.props.is_advanced_duration ?
             this.props.advanced_duration_unit : this.props.simple_duration_unit;
@@ -37,9 +41,19 @@ class DurationWrapper extends React.Component {
         if (this.props.duration !== current_duration) {
             this.props.onChangeUiStore({ name: `duration_${current_unit}`, value: this.props.duration });
         }
+
+        if (this.props.expiry_type === 'endtime' && this.symbolHasEndTime()) {
+            if (!this.props.is_advanced_duration) this.props.onChangeUiStore({ name: 'is_advanced_duration', value: true });
+            this.props.onChangeUiStore({ name: 'advanced_expiry_type', value: 'endtime' });
+        }
+
+        if (this.props.is_advanced_duration && this.props.expiry_type !== this.props.advanced_expiry_type) {
+            this.props.onChangeUiStore({ name: 'advanced_expiry_type', value: this.props.expiry_type });
+        }
     }
 
     componentWillReact() {
+        console.log('componentWillReact');
         const simple_is_missing_duration_unit = !this.props.is_advanced_duration && this.props.simple_duration_unit === 'd' && this.props.duration_units_list.length === 4;
         const current_duration_unit           = this.props.is_advanced_duration ?
             this.props.advanced_duration_unit : this.props.simple_duration_unit;
