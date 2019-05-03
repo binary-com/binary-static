@@ -251,7 +251,7 @@ const Metatrader = () => (
                             title={it.L('Synthetic Indices Account')}
                             description={it.L('Our Synthetic Indices account allows you to trade CFDs on Synthetic Indices - our proprietary synthetic assets that simulate market forces.')}
                             items={[
-                                it.L('Leverage up to [_1]', '1:500'),
+                                it.L('Leverage up to [_1]', '1:1000'),
                                 it.L('Fixed spreads'),
                                 it.L('Market execution'),
                                 it.L('No commission'),
@@ -273,7 +273,7 @@ const Metatrader = () => (
                             title={it.L('MAM Synthetic Indices Account')}
                             description={it.L('Our MAM Synthetic Indices account can be assigned to a money manager who will trade on your behalf with the same specifications as the regular Synthetic Indices account.')}
                             items={[
-                                it.L('Leverage up to [_1]', '1:500'),
+                                it.L('Leverage up to [_1]', '1:1000'),
                                 it.L('Fixed spreads'),
                                 it.L('Market execution'),
                             ]}

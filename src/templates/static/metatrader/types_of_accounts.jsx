@@ -128,9 +128,9 @@ const TypesOfAccounts = () => (
                             ],
                             tbody: [
                                 [{ text: <Row             text={it.L('Account currency')} /> },       { text: it.L('EUR/GBP') },            { text: it.L('EUR') }],
-                                [{ text: <Row number={1}  text={it.L('Maximum leverage')} /> },       { text: it.L('Up to [_1]', '1:30') }, { text: it.L('Up to [_1]', '1:500') }],
+                                [{ text: <Row number={1}  text={it.L('Maximum leverage')} /> },       { text: it.L('Up to [_1]', '1:30') }, { text: it.L('Up to [_1]', '1:1000') }],
                                 [{ text: <Row number={2}  text={it.L('Order execution')} /> },        { text: it.L('Market') },             { text: it.L('Market') }],
-                                [{ text: <Row number={3}  text={it.L('Spread')} /> },                 { text: it.L('Variable') },           { text: it.L('Fixed') }],
+                                [{ text: <Row number={3}  text={it.L('Spread')} /> },                 { text: it.L('Variable') },           { text: it.L('Fixed/Variable') }],
                                 [{ text: <Row number={4}  text={it.L('Commission')} /> },             { text: it.L('No') },                 { text: it.L('No') }],
                                 [{ text: <Row             text={it.L('Minimum deposit')} /> },        { text: it.L('No') },                 { text: it.L('No') }],
                                 [{ text: <Row number={5}  text={it.L('Margin call')} /> },            { text: '100%' },                     { text: '100%' }],
