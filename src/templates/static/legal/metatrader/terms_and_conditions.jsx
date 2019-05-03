@@ -194,8 +194,7 @@ const TermsAndConditions = () => (
                     <ol>
                         <li>{it.L('Margin Requirement is the amount that the Client needs to have in their account prior to entering into a trade and it is a percentage of the value of that trade. Margin Requirement will continue to increase/decrease in accordance with the volume and direction of the Open Positions.')}</li>
                         <li>{it.L('The Company may modify Margin Requirements for any Open Positions or new Orders at its sole discretion. Formulas for Margin Requirements published on the website are indicative only and may be changed by the Company at its discretion at any time, due to changing market conditions or other factors.')}</li>
-                        <li>{it.L('The Company endeavours to close out the Client\'s Open Positions if and when the Margin Level for their MT5 Real Account reaches or falls below the Stop Out Level.')}</li>
-                        <li>{it.L('The Company does not guarantee that the Client\'s Open Positions will be closed when the Margin Level for their MT5 Real Account reaches the Stop Out Level.')}</li>
+                        <li>{it.L('Whilst the Company endeavours to close out the Client\'s Open Positions if and when the Margin Level for their MT5 Real Account reaches or falls below the Stop Out Level, the company does not guarantee that the Client\'s Open Positions will be closed when the Margin Level for their MT5 Real Account reaches the Stop Out Level.')}</li>
                         <li>{it.L('For fully covered accounts, no Margin will be charged on open positions. However, swaps and other applicable fees can cause the Client\'s Account Equity to turn negative. In that case, the Stop Out process will be triggered.')}</li>
                         <li>{it.L('The Company reserves the right to charge the Margin per each hedged lot of a position.')}</li>
                     </ol>
