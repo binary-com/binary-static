@@ -1,14 +1,12 @@
-import React        from 'react';
-import { localize } from '_common/localize';
-import {
-    // IconStatement,
-    IconTrade }     from 'Assets/Header/NavBar/index';
-import { routes }   from 'Constants/index';
+import React             from 'react';
+import { localize }      from '_common/localize';
+// import { IconStatement } from 'Assets/Header/NavBar/index';
+import { routes }        from 'Constants/index';
 
 const header_links = [
     {
-        icon   : <IconTrade className='header__icon' />,
-        text   : localize('Trade'),
+        logo   : <div className='header__logo'>{localize('BETA')}</div>,
+        text   : localize('BinaryNex'),
         link_to: routes.trade,
     },
     // {
