@@ -4,7 +4,7 @@ import React                 from 'react';
 import { IconArrow }         from 'Assets/Common';
 import { IconTradeCategory } from 'Assets/Trading/Categories';
 import ContractTypeDialog    from './contract-type-dialog.jsx';
-import ContractitemList      from './contract-type-list.jsx';
+import ContractTypeList      from './contract-type-list.jsx';
 import TradeTypeInfoDialog   from '../TradeTypeInfo/trade-type-info-dialog.jsx';
 import TradeTypeInfoItem     from '../TradeTypeInfo/trade-type-info-item.jsx';
 
@@ -165,7 +165,7 @@ class ContractTypeWidget extends React.PureComponent {
                     onClose={this.handleVisibility}
                     open={is_dialog_open}
                 >
-                    <ContractitemList
+                    <ContractTypeList
                         handleInfoClick={this.handleInfoClick}
                         handleSelect={this.handleSelect}
                         is_equal={is_equal}
