@@ -173,6 +173,7 @@ function setupCrowdin() {
 
 function commonOnload() {
     setupCrowdin();
+    dataLayer.push({ event: 'page_load' });
 }
 
 // displays notification on outdated browsers
