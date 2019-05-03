@@ -1,56 +1,71 @@
-import classNames        from 'classnames';
-import PropTypes         from 'prop-types';
-import React             from 'react';
-import { localize }      from '_common/localize';
-import Money             from 'App/Components/Elements/money.jsx';
-import Tooltip           from 'App/Components/Elements/tooltip.jsx';
-import { IconPriceMove } from 'Assets/Trading/icon-price-move.jsx';
+import classNames            from 'classnames';
+import PropTypes             from 'prop-types';
+import React                 from 'react';
+import { getLocalizedBasis } from 'Stores/Modules/Trading/Constants/contract';
+import { localize }          from '_common/localize';
+import Money                 from 'App/Components/Elements/money.jsx';
+import Tooltip               from 'App/Components/Elements/tooltip.jsx';
+import { IconPriceMove }     from 'Assets/Trading/icon-price-move.jsx';
 
 const ContractInfo = ({
     basis,
     currency,
     has_increased,
     is_loading,
+    should_fade,
     is_visible,
     proposal_info,
 }) => {
-    const is_loaded_with_error = proposal_info.has_error || !proposal_info.id;
+    const localized_basis = getLocalizedBasis();
+    const basisOrPayout = () => {
+        switch (basis) {
+            case 'stake':
+                return localized_basis.payout;
+            case 'payout':
+                return localized_basis.stake;
+            default:
+                return basis;
+        }
+    };
 
+    const has_error_or_not_loaded = proposal_info.has_error || !proposal_info.id;
     return (
-        <React.Fragment>
-            {is_loading ?
-                <div className='trade-container__loader'>
-                    <div className='trade-container__loader--loading' />
+        <div className='trade-container__price'>
+            <div className={classNames(
+                'trade-container__price-info',
+                {
+                    'trade-container__price-info--disabled': has_error_or_not_loaded,
+                    'trade-container__price-info--slide'   : is_loading && !should_fade,
+                    'trade-container__price-info--fade'    : is_loading && should_fade,
+                })}
+            >
+                <div className='trade-container__price-info-basis'>
+                    {has_error_or_not_loaded
+                        ? basisOrPayout()
+                        : localize('[_1]', proposal_info.obj_contract_basis.text)
+                    }
                 </div>
-                :
-                <div className='trade-container__price'>
-                    <div className={classNames('trade-container__price-info', { 'trade-container__price-info--disabled': is_loaded_with_error })}>
-                        <div className='trade-container__price-info-basis'>{is_loaded_with_error ? basis : localize('[_1]', proposal_info.obj_contract_basis.text)}</div>
-                        <div className='trade-container__price-info-value'>
-                            {is_loaded_with_error ?
-                                ''
-                                :
-                                <Money amount={proposal_info.obj_contract_basis.value} className='trade-container__price-info-currency' currency={currency} />
-                            }
-                        </div>
-                        {is_visible &&
-                        <div className='trade-container__price-info-movement'>
-                            {!is_loaded_with_error && has_increased !== null && <IconPriceMove type={has_increased ? 'profit' : 'loss'} />}
-                        </div>
-                        }
-                    </div>
-                    <span>
-                        <Tooltip
-                            alignment='left'
-                            className={classNames('trade-container__price-tooltip', { 'trade-container__price-tooltip--disabled': is_loaded_with_error })}
-                            classNameIcon='trade-container__price-tooltip-i'
-                            icon='info'
-                            message={is_loaded_with_error ? '' : proposal_info.message}
-                        />
-                    </span>
+                <div className='trade-container__price-info-value'>
+                    {!has_error_or_not_loaded &&
+                    <Money amount={proposal_info.obj_contract_basis.value} className='trade-container__price-info-currency' currency={currency} />
+                    }
                 </div>
-            }
-        </React.Fragment>
+                {is_visible &&
+                <div className='trade-container__price-info-movement'>
+                    {(!has_error_or_not_loaded && has_increased !== null) &&
+                        <IconPriceMove type={has_increased ? 'profit' : 'loss'} />
+                    }
+                </div>
+                }
+            </div>
+            <Tooltip
+                alignment='left'
+                className={classNames('trade-container__price-tooltip', { 'trade-container__price-tooltip--disabled': has_error_or_not_loaded })}
+                classNameIcon='trade-container__price-tooltip-i'
+                icon='info'
+                message={has_error_or_not_loaded ? '' : proposal_info.message}
+            />
+        </div>
     );
 };
 ContractInfo.propTypes = {
