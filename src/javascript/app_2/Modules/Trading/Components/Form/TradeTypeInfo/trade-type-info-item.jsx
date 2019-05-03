@@ -1,16 +1,16 @@
-import classNames             from 'classnames';
-import PropTypes              from 'prop-types';
-import React                  from 'react';
-import { Scrollbars }         from 'tt-react-custom-scrollbars';
+import classNames           from 'classnames';
+import PropTypes            from 'prop-types';
+import React                from 'react';
+import { Scrollbars }       from 'tt-react-custom-scrollbars';
 import {
     Icon,
-    IconBack }                from 'Assets/Common';
-import { IconChevronLeft }    from 'Assets/Common/icon-chevron-left.jsx';
-import { IconChevronRight }   from 'Assets/Common/icon-chevron-right.jsx';
+    IconBack }              from 'Assets/Common';
+import { IconChevronLeft }  from 'Assets/Common/icon-chevron-left.jsx';
+import { IconChevronRight } from 'Assets/Common/icon-chevron-right.jsx';
 import { TradeCategories,
-    TradeCategoriesGIF }      from 'Assets/Trading/Categories';
-import Button                 from 'App/Components/Form/button.jsx';
-import { localize }           from '_common/localize';
+    TradeCategoriesGIF }    from 'Assets/Trading/Categories';
+import Button               from 'App/Components/Form/button.jsx';
+import { localize }         from '_common/localize';
 
 const TradeTypeInfoItem = ({
     handleNavigationClick,
@@ -79,7 +79,7 @@ const TradeTypeInfoItem = ({
                         <React.Fragment key={idx}>
                             <div
                                 className={classNames('trade-type-info-navigation__circle-button', {
-                                    'trade-type-info-navigation__circle-button--active': contract.value === item.value,
+                                    'trade-type-info-navigation__circle-button--active': (contract.value === item.value),
                                 })}
                                 onClick={() => handleNavigationClick(contract)}
                             />
