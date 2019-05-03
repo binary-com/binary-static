@@ -17,7 +17,7 @@ const ContractInfo = ({
     proposal_info,
 }) => {
     const localized_basis = getLocalizedBasis();
-    const basisOrPayout = () => {
+    const stakeOrPayout = () => {
         switch (basis) {
             case 'stake':
                 return localized_basis.payout;
@@ -41,7 +41,7 @@ const ContractInfo = ({
             >
                 <div className='trade-container__price-info-basis'>
                     {has_error_or_not_loaded
-                        ? basisOrPayout()
+                        ? stakeOrPayout()
                         : localize('[_1]', proposal_info.obj_contract_basis.text)
                     }
                 </div>
