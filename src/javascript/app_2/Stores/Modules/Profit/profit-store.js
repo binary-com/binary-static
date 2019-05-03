@@ -8,6 +8,8 @@ import { WS }                            from 'Services';
 import { formatProfitTableTransactions } from './Helpers/format-response';
 import BaseStore                         from '../../base-store';
 
+const batch_size = 50;
+
 export default class ProfitTableStore extends BaseStore {
     @observable data           = [];
     @observable date_from      = '';
@@ -64,6 +66,7 @@ export default class ProfitTableStore extends BaseStore {
             ));
 
         this.data           = [...this.data, ...formatted_transactions];
+        this.has_loaded_all = formatted_transactions.length < batch_size;
         this.is_loading     = false;
     }
 
