@@ -6,6 +6,7 @@ const TabSelector      = require('../../../../_common/tab_selector');
 const TradingDurationUI = (() => {
     const onLoad = () => {
         TabSelector.onLoad();
+        TabSelector.onChangeTab(onChangeTabSelector);
         sendRequest();
     };
 
@@ -85,10 +86,18 @@ const TradingDurationUI = (() => {
         return asset_array;
     };
 
+    const onChangeTabSelector = () => {
+        const active_tab = document.getElementsByClassName('a-active');
+        const mobile_header_tab = document.getElementById('tab_mobile_header');
+        mobile_header_tab.innerHTML = active_tab[0].innerHTML;
+    };
+
     const sendRequest = () => {
         BinarySocket.send({ trading_durations: 1 }).then((response) => {
             const trading_duration_data = TradingDuration.getTradingDurationData(response);
-
+            const active_tab = document.getElementsByClassName('a-active');
+            const mobile_header_tab = document.getElementById('tab_mobile_header');
+            mobile_header_tab.innerHTML = active_tab[0].innerHTML;
             TabSelector.repositionSelector();
 
             trading_duration_data.forEach((duration_data) => initializeData(duration_data));

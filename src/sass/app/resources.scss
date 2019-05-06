@@ -64,6 +64,13 @@
         &_selector {
             margin-top: 10px;
         }
+
+        @media (max-width: 480px) {
+            display: none;
+        }
+    }
+    #tab_mobile_header {
+        text-align: center;
     }
     &_title {
         margin-top: 54px;
@@ -92,7 +99,14 @@
             right: 20px;
             bottom: 9px;
             font-size: 10px;
+
+            @media (max-width: 480px) {
+                right: -1px;
+            }
         }
+    }
+    .toggle-content > div {
+        overflow-x: auto;
     }
     .table-container {
         border: 1px solid $COLOR_LIGHT_GRAY;
