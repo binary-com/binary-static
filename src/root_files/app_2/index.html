@@ -64,7 +64,7 @@
             if (lang) {
                 redirect();
             } else {
-                var ws = new WebSocket('wss://ws.binaryws.com/websockets/v3?app_id=1');
+                var ws = new WebSocket('wss://frontend.binaryws.com/websockets/v3?app_id=1');
                 ws.onopen = function(e) {
                     ws.send(JSON.stringify({'website_status': '1'}));
                 };
