@@ -62,7 +62,7 @@ class Statement extends React.Component {
                         is_empty={is_empty}
                         empty_message_component={EmptyTradeHistoryMessage}
                         component_icon={component_icon}
-                        localized_message={localize('You have no transactions for this period.')}
+                        localized_message={localize('You have no transactions yet.')}
                         localized_period_message={localize('You have no transactions for this period.')}
                     />
                     :
