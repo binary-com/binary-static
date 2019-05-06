@@ -59,6 +59,10 @@ const client_notifications = {
         message: localize('Deposits and withdrawals have been disabled on your account. Please check your email for more details.'),
         type   : 'warning',
     },
+    withdrawal_locked: {
+        header : localize('Withdrawal Disabled'),
+        message: localize('Withdrawals have been disabled on your account. Please check your email for more details.'),
+    },
     mt5_withdrawal_locked: {
         header : localize('MT5 Withdrawal Disabled'),
         message: localize('MT5 withdrawals have been disabled on your account. Please check your email for more details.'),
@@ -192,6 +196,7 @@ const checkAccountStatus = (response, client, UIStore) => {
             const {
                 document_under_review,
                 cashier_locked,
+                withdrawal_locked,
                 mt5_withdrawal_locked,
                 document_needs_action,
                 unwelcome,
@@ -202,6 +207,7 @@ const checkAccountStatus = (response, client, UIStore) => {
 
             if (document_under_review) UIStore.addNotification(client_notifications.document_review);
             if (cashier_locked)        UIStore.addNotification(client_notifications.cashier_locked);
+            if (withdrawal_locked)     UIStore.addNotification(client_notifications.withdrawal_locked);
             if (mt5_withdrawal_locked) UIStore.addNotification(client_notifications.mt5_withdrawal_locked);
             if (document_needs_action) UIStore.addNotification(client_notifications.document_needs_action);
             if (unwelcome)             UIStore.addNotification(client_notifications.unwelcome);
