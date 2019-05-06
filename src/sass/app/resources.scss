@@ -100,7 +100,10 @@
             bottom: 9px;
             font-size: 10px;
 
-            @media (max-width: 480px) {
+            @media (max-width: 1024px) {
+                right: 12px;
+            }
+            @media (max-width: 768px) {
                 right: -1px;
             }
         }
