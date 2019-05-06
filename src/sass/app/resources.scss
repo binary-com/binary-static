@@ -81,6 +81,17 @@
         padding: 5px;
         border-bottom: none !important;
     }
+    &_ticks {
+        position: relative;
+
+        &:before {
+            content: '1';
+            position: absolute;
+            left: 51px;
+            bottom: 9px;
+            font-size: 10px;
+        }
+    }
     .table-container {
         border: 1px solid $COLOR_LIGHT_GRAY;
 
@@ -104,5 +115,9 @@
                 border-bottom: 1px solid $COLOR_GRAY;
             }
         }
+    }
+    .hint {
+        padding-top: 16px;
+        padding-bottom: 32px;
     }
 }

@@ -31,7 +31,7 @@ const TradingDurationUI = (() => {
                     .append($('<th/>', { colspan: 5, text: localize('Duration Type'), id: 'trading_durations_type' }))
                 )
                 .append($('<tr/>')
-                    .append($('<td/>', { class: 'trading-durations__table--ticks', text: localize('Ticks') }))
+                    .append($('<td/>', { id: 'trading_durations_ticks', text: localize('Ticks') }))
                     .append($('<td/>', { text: localize('Seconds') }))
                     .append($('<td/>', { text: localize('Minutes') }))
                     .append($('<td/>', { text: localize('Hours') }))
@@ -39,6 +39,7 @@ const TradingDurationUI = (() => {
                 )
             )
             .append($('<tbody/>')));
+        $submarket_header.append($('<div/>', { class: 'hint', text: localize('1. A tick is an updated market price. Tick frequency can vary with a minimum price change of zero') }));
     };
 
     const setTableData = (submarket_name, datas) => {
