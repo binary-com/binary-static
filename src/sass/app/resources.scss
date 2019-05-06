@@ -76,10 +76,12 @@
         line-height: 1.5;
         font-weight: 400;
         border-bottom: 1px solid $COLOR_GRAY;
+        width: 155px;
     }
     &_type {
         padding: 5px;
         border-bottom: none !important;
+        text-align: center !important;
     }
     &_ticks {
         position: relative;
@@ -87,7 +89,7 @@
         &:before {
             content: '1';
             position: absolute;
-            left: 51px;
+            right: 20px;
             bottom: 9px;
             font-size: 10px;
         }
@@ -96,12 +98,28 @@
         border: 1px solid $COLOR_LIGHT_GRAY;
 
         thead {
+            tr:first-child {
+                th {
+                    text-align: left;
+                }
+            }
             tr:last-child {
                 font-weight: 500;
                 font-style: italic;
             }
             th, td {
                 border-bottom: 1px solid $COLOR_GRAY;
+                text-align: center;
+            }
+        }
+        tbody {
+            tr {
+                td {
+                    text-align: center;
+                }
+                td:first-child {
+                    text-align: left;
+                }
             }
         }
         th {
