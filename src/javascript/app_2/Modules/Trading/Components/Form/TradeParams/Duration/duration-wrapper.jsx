@@ -25,12 +25,22 @@ class DurationWrapper extends React.Component {
         });
     }
 
-    symbolHasEndTime() {
-        return this.props.duration_units_list.length > 1;
-    }
+    advancedHasWrongExpiry = () => (this.props.is_advanced_duration
+        && this.props.expiry_type !== this.props.advanced_expiry_type && this.props.duration_units_list.length > 1);
 
-    advancedHasWrongExpiry = () => this.props.is_advanced_duration
-        && this.props.expiry_type !== this.props.advanced_expiry_type && this.props.duration_units_list.length > 1;
+    handleEndTime = () => {
+        const symbol_has_endtime = this.props.duration_units_list.length > 1;
+
+        if (symbol_has_endtime) {
+            // simple duration does not have endtime
+            if (!this.props.is_advanced_duration) this.props.onChangeUiStore({ name: 'is_advanced_duration', value: true });
+
+            this.props.onChangeUiStore({ name: 'advanced_expiry_type', value: 'endtime' });
+        } else {
+            // If query string contains endtime but contract type does not e.g. digits (only ticks contracts)
+            this.props.onChange({ target: { name: 'expiry_type', value: 'duration' } });
+        }
+    }
 
     componentDidMount() {
         const current_unit = this.props.is_advanced_duration ?
@@ -45,27 +55,22 @@ class DurationWrapper extends React.Component {
             this.props.onChangeUiStore({ name: `duration_${current_unit}`, value: this.props.duration });
         }
 
-        if (this.props.expiry_type === 'endtime' && this.symbolHasEndTime()) {
-            if (!this.props.is_advanced_duration) this.props.onChangeUiStore({ name: 'is_advanced_duration', value: true });
-            this.props.onChangeUiStore({ name: 'advanced_expiry_type', value: 'endtime' });
-        } else if (this.props.expiry_type === 'endtime' && !this.symbolHasEndTime()) {
-            this.props.onChange({ target: { name: 'expiry_type', value: 'duration' } });
-        }
+        if (this.props.expiry_type === 'endtime') this.handleEndTime();
 
         if (this.advancedHasWrongExpiry()) {
             this.props.onChange({ target: { name: 'expiry_type', value: this.props.advanced_expiry_type } });
         }
     }
 
+    // intercept changes to contract duration and check that trade_store and ui_store are aligned.
     componentWillReact() {
-        const simple_is_missing_duration_unit = !this.props.is_advanced_duration && this.props.simple_duration_unit === 'd' && this.props.duration_units_list.length === 4;
-        const current_duration_unit           = this.props.is_advanced_duration ?
-            this.props.advanced_duration_unit : this.props.simple_duration_unit;
+        const simple_is_missing_duration_unit = (!this.props.is_advanced_duration && this.props.simple_duration_unit === 'd' && this.props.duration_units_list.length === 4);
+        const current_duration_unit           = (this.props.is_advanced_duration ?
+            this.props.advanced_duration_unit : this.props.simple_duration_unit);
         const current_duration                = this.props.getDurationFromUnit(this.props.duration_unit);
         const has_missing_duration_unit       = !this.hasDurationUnit(current_duration_unit);
-        const simple_is_not_type_duration     = !this.props.is_advanced_duration && this.props.expiry_type !== 'duration';
+        const simple_is_not_type_duration     = (!this.props.is_advanced_duration && this.props.expiry_type !== 'duration');
 
-        // intercept changes to current contracts duration_units_list - if they are missing change duration_unit and value in trade_store and ui_store
         if (has_missing_duration_unit || simple_is_missing_duration_unit) {
             this.setDurationUnit();
             return;
