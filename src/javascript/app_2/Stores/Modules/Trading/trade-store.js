@@ -25,7 +25,9 @@ import getValidationRules                from './Constants/validation-rules';
 import { isRiseFallEqual }               from './Helpers/allow-equals';
 import { setChartBarrier }               from './Helpers/chart';
 import ContractType                      from './Helpers/contract-type';
-import { convertDurationLimit }          from './Helpers/duration';
+import {
+    convertDurationLimit,
+    resetEndTimeOnVolatilityIndices }    from './Helpers/duration';
 import { processTradeParams }            from './Helpers/process';
 import {
     createProposalRequests,
@@ -144,6 +146,16 @@ export default class TradeStore extends BaseStore {
             () => {
                 this.onAllowEqualsChange();
             },
+        );
+
+        reaction(
+            () => this.symbol,
+            () => {
+                const date = resetEndTimeOnVolatilityIndices(this.symbol, this.expiry_type);
+                if (date) {
+                    this.expiry_date = date;
+                }
+            }
         );
     }
 
