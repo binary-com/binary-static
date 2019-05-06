@@ -12,15 +12,15 @@ import PurchaseButton from 'Modules/Trading/Components/Elements/purchase-button.
 class PurchaseFieldset extends React.PureComponent {
     state = {
         show_tooltip: false,
+        should_fade : false,
     }
 
-    onMouseEnter = () => {
-        this.setState({ show_tooltip: true });
+    componentDidMount() {
+        this.setState({ should_fade: true });
     }
 
-    onMouseLeave = () => {
-        this.setState({ show_tooltip: false });
-    }
+    onMouseEnter = () => this.setState({ show_tooltip: true });
+    onMouseLeave = () => this.setState({ show_tooltip: false });
 
     render() {
         const {
@@ -50,6 +50,7 @@ class PurchaseFieldset extends React.PureComponent {
                 is_high_low={is_high_low}
                 is_loading={is_loading}
                 onClickPurchase={onClickPurchase}
+                should_fade={this.state.should_fade}
                 type={type}
             />
         );
@@ -68,6 +69,7 @@ class PurchaseFieldset extends React.PureComponent {
                         proposal_info={info}
                         has_increased={info.has_increased}
                         is_loading={is_loading}
+                        should_fade={this.state.should_fade}
                         is_visible={!is_contract_mode}
                     />
                     <div

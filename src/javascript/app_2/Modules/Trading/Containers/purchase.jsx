@@ -21,17 +21,17 @@ const Purchase = ({
     trade_types,
     validation_errors,
 }) => {
+    const is_high_low = /high_low/.test(contract_type.toLowerCase());
+    const isLoading = info => {
+        const has_validation_error = Object.values(validation_errors).some(e => e.length);
+        return !has_validation_error && !info.has_error && !info.id;
+    };
+
     const components = [];
     Object.keys(trade_types).map((type, index) => {
-        const info        = proposal_info[type] || {};
-        const is_disabled = !is_purchase_enabled
-            || !is_trade_enabled
-            || !info.id
-            || !is_client_allowed_to_visit;
-        const is_high_low         = /high_low/.test(contract_type.toLowerCase());
-        const is_validation_error = Object.values(validation_errors).some(e => e.length);
-        const is_loading          = !is_validation_error && !info.has_error && !info.id;
-        const is_proposal_error   = info.has_error && !info.has_error_details;
+        const info              = proposal_info[type] || {};
+        const is_disabled       = !is_purchase_enabled || !is_trade_enabled || !info.id || !is_client_allowed_to_visit;
+        const is_proposal_error = info.has_error && !info.has_error_details;
 
         const purchase_fieldset = (
             <PurchaseFieldset
@@ -43,7 +43,7 @@ const Purchase = ({
                 is_contract_mode={is_contract_mode}
                 is_disabled={is_disabled}
                 is_high_low={is_high_low}
-                is_loading={is_loading}
+                is_loading={isLoading(info)}
                 // is_purchase_confirm_on={is_purchase_confirm_on}
                 is_proposal_error={is_proposal_error}
                 // is_purchase_locked={is_purchase_locked}
@@ -53,13 +53,17 @@ const Purchase = ({
                 type={type}
             />
         );
-        const contract_type_position = getContractTypePosition(type);
-        if (contract_type_position === 'top') {
-            components.unshift(purchase_fieldset);
-        } else if (contract_type_position === 'bottom') {
-            components.push(purchase_fieldset);
-        } else {
-            components.push(purchase_fieldset);
+
+        switch (getContractTypePosition(type)) {
+            case 'top':
+                components.unshift(purchase_fieldset);
+                break;
+            case 'bottom':
+                components.push(purchase_fieldset);
+                break;
+            default:
+                components.push(purchase_fieldset);
+                break;
         }
     });
 
