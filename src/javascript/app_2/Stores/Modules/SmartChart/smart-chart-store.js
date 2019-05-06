@@ -157,8 +157,6 @@ export default class SmartChartStore extends BaseStore {
         this.should_import_layout = false;
         this.trade_chart_symbol   = this.root_store.modules.trade.symbol;
         this.chart_id             = 'contract';
-        this.updateGranularity(0);
-        this.updateChartType('mountain');
     }
 
     @action.bound
