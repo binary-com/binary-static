@@ -47,6 +47,7 @@ class Chart extends React.Component {
                 chartType={this.props.chart_type}
                 endEpoch={this.props.range.end_epoch}
                 id={this.props.chart_id}
+                chartStatusListener={this.props.getChartStatus}
                 isMobile={this.props.is_mobile}
                 granularity={this.props.granularity}
                 requestAPI={this.props.wsSendRequest}
@@ -83,6 +84,7 @@ Chart.propTypes = {
     chart_type                  : PropTypes.string,
     end_epoch                   : PropTypes.number,
     exportLayout                : PropTypes.func,
+    getChartStatus              : PropTypes.func,
     granularity                 : PropTypes.number,
     InfoBox                     : PropTypes.node,
     is_contract_mode            : PropTypes.bool,
@@ -119,6 +121,7 @@ export default connect(
         chart_type          : modules.smart_chart.chart_type,
         is_contract_mode    : modules.smart_chart.is_contract_mode,
         exportLayout        : modules.smart_chart.exportLayout,
+        getChartStatus      : modules.smart_chart.getChartStatus,
         granularity         : modules.smart_chart.granularity,
         is_title_enabled    : modules.smart_chart.is_title_enabled,
         markers_array       : modules.smart_chart.markers_array,
