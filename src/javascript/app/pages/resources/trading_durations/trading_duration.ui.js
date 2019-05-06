@@ -16,19 +16,19 @@ const TradingDurationUI = (() => {
         const market_header = `#tab_${duration_data.market.name}-content`;
         
         $(market_header).append($('<div/>', { id: duration_data.submarket.name })
-            .append($('<h3/>', { text: duration_data.submarket.display_name })));
+            .append($('<h2/>', { text: duration_data.submarket.display_name, id: 'trading_durations_subtitle' })));
         createEmptyTable(duration_data.submarket.name);
         setTableData(duration_data.submarket.name, duration_data.data);
     };
 
     const createEmptyTable = (submarket_name) => {
         const $submarket_header = $(`#${submarket_name}`);
-        $submarket_header.append($('<table/>', { class: 'trading-durations__table' })
+        $submarket_header.append($('<table/>', { class: 'table-container' })
             .append($('<thead/>')
                 .append($('<tr/>')
                     .append($('<th/>', { rowspan: 2, text: localize('Underlying Assets') }))
                     .append($('<th/>', { rowspan: 2, text: localize('Trade Types') }))
-                    .append($('<th/>', { colspan: 5, text: localize('Duration Type') }))
+                    .append($('<th/>', { colspan: 5, text: localize('Duration Type'), id: 'trading_durations_type' }))
                 )
                 .append($('<tr/>')
                     .append($('<td/>', { class: 'trading-durations__table--ticks', text: localize('Ticks') }))
@@ -45,17 +45,22 @@ const TradingDurationUI = (() => {
         const $submarket_table_body = $(`#${submarket_name}`).find('tbody');
         datas.forEach((data, data_index) => {
             $submarket_table_body.append($('<tr/>', { id: `${submarket_name}${data_index}` })
-                .append($('<th/>', { class: 'trading-durations__table--assets', rowspan: data.trade_durations.length + 1 }))
+                .append($('<th/>', { id: 'trading_durations_assets', rowspan: data.trade_durations.length + 1 }))
             );
             data.symbol.forEach((symbol) => {
-                $submarket_table_body.find(`#${submarket_name}${data_index} .trading-durations__table--assets`)
+                $submarket_table_body.find(`#${submarket_name}${data_index} #trading_durations_assets`)
                     .append(document.createTextNode(symbol.display_name))
                     .append($('<br/>'));
             });
             data.trade_durations.forEach((trade_duration, duration_index) => {
                 const trade_duration_assets = getTradeDurationAssets(trade_duration);
-                $submarket_table_body
-                    .append($('<tr/>', { id: `${submarket_name}${data_index}${duration_index}` }));
+                if (duration_index === data.trade_durations.length - 1) {
+                    $submarket_table_body
+                        .append($('<tr/>', { id: `${submarket_name}${data_index}${duration_index}`, class: 'table_last_item' }));
+                } else {
+                    $submarket_table_body
+                        .append($('<tr/>', { id: `${submarket_name}${data_index}${duration_index}` }));
+                }
                 
                 trade_duration_assets.forEach((asset) => {
                     $submarket_table_body.find(`#${submarket_name}${data_index}${duration_index}`)

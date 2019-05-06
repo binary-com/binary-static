@@ -53,58 +53,56 @@
     }
 }
 
-.trading-durations {
+#trading_durations {
     max-width: 1200px;
 
-    &__title {
-        margin: 0;
+    #duration_assets {
+        .tm-li .tm-a {
+            font-weight: 300;
+            padding-bottom: 10px;
+        }
+        &_selector {
+            margin-top: 10px;
+        }
     }
-    &__wrapper {
-        margin: 0;
+    &_title {
+        margin-top: 54px;
+        margin-bottom: 0;
     }
-    &__error-msg {
-        margin: 0;
+    &_subtitle {
+        color: $COLOR_BLUE;
     }
-    &__content {
-        margin: 0;
+    &_assets {
+        line-height: 1.5;
+        font-weight: 400;
+        border-bottom: 1px solid $COLOR_GRAY;
     }
-    &__tabs {
-        position: relative;
-        padding: 0;
-        margin: 40px auto;
-        user-select: none;
+    &_type {
+        padding: 5px;
+        border-bottom: none !important;
+    }
+    .table-container {
+        border: 1px solid $COLOR_LIGHT_GRAY;
 
-        li {
-            display: inline-block;
-            background: $COLOR_WHITE;
-            font-size: 18px;
-            width: 175px;
+        thead {
+            tr:last-child {
+                font-weight: 500;
+                font-style: italic;
+            }
+            th, td {
+                border-bottom: 1px solid $COLOR_GRAY;
+            }
+        }
+        th {
             text-align: center;
-            line-height: 60px;
-            color: $COLOR_BLUE_SHADE;
-            text-transform: uppercase;
-            position: relative;
-            border-bottom: 2px solid $COLOR_GRAY_SHADE;
-            margin: -5px;
-            cursor: pointer;
         }
-        .slider {
-            display: block;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            height: 3px;
-            border-color: $COLOR_BLUE_SHADE;
-            background: $COLOR_BLUE_SHADE;
-            transition: all 0.5s;
+        td {
+            border-bottom: 1px solid $COLOR_LIGHT_GRAY;
         }
-    }
-    &__table {
-        &--ticks {
-            margin: 0;
-        }
-        &--assets {
-            margin: 0;
+        .table_last_item {
+            td {
+                border-bottom: 1px solid $COLOR_GRAY;
+            }
         }
     }
 }

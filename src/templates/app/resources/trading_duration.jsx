@@ -3,11 +3,11 @@ import { TabContainer, TabsSubtabs, TabContentContainer, TabContent } from '../.
 
 const TradingDurations = () => (
     <div id='trading_durations' className='gr-centered gr-12-p gr-12-m trading-durations'>
-        <h1 className='trading-durations__title'>{it.L('Trading Durations')}</h1>
-        <div className='gr-padding-20 trading-durations__wrapper'>
-            <p id='errorMsg' className='trading-durations__error-msg invisible' />
-            <div className='trading-durations__content'>
-                <TabContainer className='gr-padding-20 full-width' theme='light'>
+        <h1 id='trading_durations_title'>{it.L('Trading Durations')}</h1>
+        <div id='trading_durations_wrapper' className='gr-padding-20'>
+            <p id='errorMsg' className='invisible' />
+            <div id='trading_durations_content'>
+                <TabContainer className='gr-padding-10 full-width' theme='light'>
                     <TabsSubtabs
                         id='duration_assets'
                         className='gr-parent tab-selector-wrapper'
@@ -15,7 +15,7 @@ const TradingDurations = () => (
                             { id: 'tab_forex',       text: it.L('Forex') },
                             { id: 'tab_indices',     text: it.L('Indices') },
                             { id: 'tab_commodities', text: it.L('Commodities') },
-                            { id: 'tab_volidx',        text: it.L('Volatility Indices') },
+                            { id: 'tab_volidx',      text: it.L('Volatility Indices') },
                             { id: 'duration_assets_selector', className: 'tab-selector' },
                         ]}
                     />
@@ -29,7 +29,7 @@ const TradingDurations = () => (
                     </div>
                 </TabContainer>
 
-                <ul id='trading_duration_tabs' className='trading-durations__tabs' />
+                <ul id='trading_duration_tabs' />
                 <div id='trading_durations_data' />
             </div>
             <p className='notice-msg center-text invisible' id='empty-trading-durations'>
