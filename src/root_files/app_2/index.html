@@ -141,7 +141,8 @@
             if (lang && !obj_params.token1) { // we have language and client is not trying to log in
                 redirect();
             } else {
-                var ws = new WebSocket('wss://frontend.binaryws.com/websockets/v3?app_id=1');
+                var server_url = localStorage.getItem('config.server_url');
+                var ws = new WebSocket('wss://' + (server_url || 'frontend.binaryws.com') + '/websockets/v3?app_id=1');
                 var requests = [];
                 var responses = [];
                 ws.onopen = function(e) {
