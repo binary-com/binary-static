@@ -30,7 +30,7 @@ const SelfExclusion = () => (
             <Fieldset>
                 <FormRow type='text' id='max_balance' label={it.L('Maximum account cash balance')} attributes={{ maxLength: 20 }} className='prepend_currency' hint={it.L('Once this limit is reached, you may no longer deposit.')} />
 
-                <div data-show='iom'>
+                <div data-show='iom' className='form-row no-padding'>
                     <FormRow type='text' id='max_deposit' label={it.L('Maximum deposit amount limit')} attributes={{ maxLength: 20 }} className='prepend_currency' hint={it.L('Once this limit is reached, you may no longer deposit.')} />
 
                     <FormRow type='text' id='max_deposit_end_date' label={it.L('Limit applies until')} attributes={{ maxLength: 15, autoComplete: 'off', readOnly: 'readonly' }} className='clearable' hint={it.L('Please enter date in the format DD MMM, YYYY.')} />
