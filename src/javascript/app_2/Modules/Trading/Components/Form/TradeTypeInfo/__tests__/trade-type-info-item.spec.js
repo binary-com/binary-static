@@ -14,8 +14,8 @@ describe('TradeTypeInfoItem', () => {
         const wrapper = shallow(<TradeTypeInfoItem item={item} itemList={itemList} />);
         expect(wrapper).to.have.length(1);
     });
-    it('should have 2 .circle-button (equal to navigationList\'s length)', () => {
+    it('should have 2 .circle-button (equal to itemList\'s length)', () => {
         const wrapper = shallow(<TradeTypeInfoItem item={item} itemList={itemList} />);
-        expect(wrapper.find('.trade-type-info-navigation__circle-button')).to.have.length(2);
+        expect(wrapper.find('.trade-type-info-navigation__circle-button')).to.have.length(3);
     });
 });

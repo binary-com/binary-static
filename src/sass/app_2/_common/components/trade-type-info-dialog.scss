@@ -131,6 +131,7 @@
         display: inline-block;
         text-align: center;
         margin: 0 auto;
+        position: relative;
     }
     &__circle-button {
         width: 0.8em;
@@ -141,8 +142,15 @@
         cursor: pointer;
         @include themify($themes) {
             background-color: themed('slider_background_color');
+        }
 
-            &--active {
+        &--active {
+            position: absolute;
+            top: 0;
+            left: 0;
+            cursor: initial;
+            transition: transform 0.3s linear;
+            @include themify($themes) {
                 background-color: themed('trade_carousel_indicator');
             }
         }

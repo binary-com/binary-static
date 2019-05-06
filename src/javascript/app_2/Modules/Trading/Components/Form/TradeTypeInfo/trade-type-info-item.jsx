@@ -74,13 +74,17 @@ const TradeTypeInfoItem = ({
                 <Icon icon={IconChevronLeft} />
             </div>
             <div className='trade-type-info-navigation__list'>
+                <i
+                    className={classNames(
+                        'trade-type-info-navigation__circle-button',
+                        'trade-type-info-navigation__circle-button--active')}
+                    style={{ 'transform': `translate3d(${16 * item_index}px, 0, 0)` }}
+                />
                 {
                     itemList.map((contract, idx) => (
                         <React.Fragment key={idx}>
                             <div
-                                className={classNames('trade-type-info-navigation__circle-button', {
-                                    'trade-type-info-navigation__circle-button--active': (contract.value === item.value),
-                                })}
+                                className='trade-type-info-navigation__circle-button'
                                 onClick={() => handleNavigationClick(contract)}
                             />
                         </React.Fragment>
