@@ -83,6 +83,10 @@ export default class ContractStore extends BaseStore {
         createChartMarkers(SmartChartStore, contract_info);
 
         this.handleDigits();
+
+        if (SmartChartStore.is_chart_ready) {
+            SmartChartStore.is_chart_loading = false;
+        }
     }
 
     @action.bound
@@ -98,6 +102,7 @@ export default class ContractStore extends BaseStore {
         if (contract_id) {
             this.smart_chart.saveAndClearTradeChartLayout();
             this.smart_chart.setContractMode(true);
+            this.smart_chart.is_chart_loading = true;
             WS.subscribeProposalOpenContract(this.contract_id, this.updateProposal, false);
         }
     }
@@ -125,6 +130,7 @@ export default class ContractStore extends BaseStore {
 
         this.smart_chart.cleanupContractChartView();
         this.smart_chart.applySavedTradeChartLayout();
+        this.smart_chart.is_chart_loading = false;
     }
 
     @action.bound
@@ -139,6 +145,7 @@ export default class ContractStore extends BaseStore {
             this.has_error     = true;
             this.error_message = response.error.message;
             this.contract_info = {};
+            this.smart_chart.is_chart_loading = false;
             return;
         }
         if (isEmptyObject(response.proposal_open_contract)) {
@@ -146,6 +153,7 @@ export default class ContractStore extends BaseStore {
             this.error_message = localize('Contract does not exist or does not belong to this client.');
             this.contract_info = {};
             this.contract_id   = null;
+            this.smart_chart.is_chart_loading = false;
             this.smart_chart.setContractMode(false);
             return;
         }

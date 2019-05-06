@@ -21,15 +21,17 @@ class Trade extends React.Component {
     }
 
     render() {
-        const contract_id = getPropertyValue(this.props.purchase_info, ['buy', 'contract_id']);
+        const contract_id        = getPropertyValue(this.props.purchase_info, ['buy', 'contract_id']);
         const form_wrapper_class = this.props.is_mobile ? 'mobile-wrapper' : 'sidebar__container desktop-only';
-        const is_digit_contract = ['match_diff', 'even_odd', 'over_under'].includes(this.props.contract_type);
+        const is_digit_contract  = ['match_diff', 'even_odd', 'over_under'].includes(this.props.contract_type);
+        const is_chart_loading   = (this.props.is_chart_loading || !this.props.is_chart_ready);
         return (
             <div id='trade_container' className='trade-container'>
                 <PositionsDrawer />
                 <div className='chart-container'>
                     { this.props.symbol &&
                         <React.Suspense fallback={<UILoader />} >
+                            {is_chart_loading && <UILoader />}
                             <SmartChart
                                 chart_id={this.props.chart_id}
                                 Digits={<Digits is_trade_page />}
@@ -55,8 +57,8 @@ class Trade extends React.Component {
                     style={{ cursor: this.props.is_contract_mode ? 'pointer' : 'initial' }}
                 >
                     <FormLayout
-                        is_mobile={this.props.is_mobile}
                         is_contract_visible={!!contract_id || this.props.is_contract_mode}
+                        is_mobile={this.props.is_mobile}
                         is_trade_enabled={this.props.is_trade_enabled}
                     />
                 </div>
@@ -69,6 +71,8 @@ Trade.propTypes = {
     chart_id        : PropTypes.string,
     chart_zoom      : PropTypes.number,
     contract_type   : PropTypes.string,
+    is_chart_loading: PropTypes.bool,
+    is_chart_ready  : PropTypes.bool,
     is_contract_mode: PropTypes.bool,
     is_mobile       : PropTypes.bool,
     is_trade_enabled: PropTypes.bool,
@@ -87,9 +91,11 @@ export default connect(
     ({ modules, ui }) => ({
         onCloseContract                    : modules.contract.onCloseContract,
         chart_id                           : modules.smart_chart.chart_id,
+        is_chart_loading                   : modules.smart_chart.is_chart_loading,
+        is_chart_ready                     : modules.smart_chart.is_chart_ready,
+        is_contract_mode                   : modules.smart_chart.is_contract_mode,
         scroll_to_epoch                    : modules.smart_chart.scroll_to_left_epoch,
         scroll_to_offset                   : modules.smart_chart.scroll_to_left_epoch_offset,
-        is_contract_mode                   : modules.smart_chart.is_contract_mode,
         contract_type                      : modules.trade.contract_type,
         is_trade_enabled                   : modules.trade.is_trade_enabled,
         onClickNewTrade                    : modules.trade.onClickNewTrade,
