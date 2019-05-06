@@ -186,36 +186,22 @@
             }
         }
         &--selected .list__item-text, &--selected .list__item-symbol, &--selected .list__item-tooltip {
-            @include typeface(--paragraph-left-semibold-active);
+            @include typeface(--paragraph-left-bold-active);
             @include themify($themes) {
                 color: themed('text_active_color');
                 background: themed('active_color');
             }
         }
-        &-tooltip {
+        &-symbol {
             @include typeface(--paragraph-left-normal-black);
-            height: auto;
-            text-decoration: none;
+            width: 100%;
+            padding: 6.25px 0;
+            margin: 0;
+            text-align: center;
+            justify-content: center;
+            display: flex;
             @include themify($themes) {
                 color: themed('text_primary_color');
-            }
-
-            &-symbols {
-                width: 100%;
-                padding: 6.25px 0;
-                margin: 0;
-                text-align: center;
-                justify-content: center;
-                display: flex;
-            }
-            &:before {
-                font-size: 0.8em !important;
-                line-height: 1em;
-                padding: 0.4em !important;
-                left: 25px !important;
-            }
-            &:after {
-                left: 25px !important;
             }
         }
     }

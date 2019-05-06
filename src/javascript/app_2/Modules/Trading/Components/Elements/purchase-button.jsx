@@ -12,21 +12,26 @@ const PurchaseButton = ({
     is_disabled,
     is_high_low,
     is_loading,
+    should_fade,
     onClickPurchase,
     type,
 }) => {
     const getIconType = () => {
-        if (is_loading) return '';
+        if (!should_fade && is_loading) return '';
         return (is_high_low) ? `${type.toLowerCase()}_barrier` : type.toLowerCase();
     };
+
     return (
         <Button
             is_disabled={is_contract_mode || is_disabled}
             id={`purchase_${type}`}
             className={classNames(
                 'btn-purchase',
-                { 'btn-purchase--disabled': (is_contract_mode || is_disabled) && !is_loading },
-                { 'btn-purchase--animated': is_loading })}
+                {
+                    'btn-purchase--disabled'       : (is_contract_mode || is_disabled) && !is_loading,
+                    'btn-purchase--animated--slide': is_loading && !should_fade,
+                    'btn-purchase--animated--fade' : is_loading && should_fade,
+                })}
             has_effect
             onClick={() => { onClickPurchase(info.id, info.stake, type); }}
         >
@@ -40,14 +45,14 @@ const PurchaseButton = ({
                     </div>
                     <div className='btn-purchase__text_wrapper'>
                         <span className='btn-purchase__text'>
-                            {!is_loading && localize('[_1]', getContractTypeDisplay(type, is_high_low))}
+                            {(!should_fade && is_loading) ? '' : localize('[_1]', getContractTypeDisplay(type, is_high_low))}
                         </span>
                     </div>
                 </div>
                 <div className='btn-purchase__effect-detail' />
                 <div className='btn-purchase__info btn-purchase__info--right'>
                     <div className='btn-purchase__text_wrapper'>
-                        <span className='btn-purchase__text'>{is_loading || is_disabled ? '' : info.returns}</span>
+                        <span className='btn-purchase__text'>{!(is_loading || is_disabled) ? info.returns : ''}</span>
                     </div>
                 </div>
             </React.Fragment>

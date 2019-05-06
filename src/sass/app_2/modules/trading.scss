@@ -1,4 +1,4 @@
-@keyframes data--loading {
+@keyframes slide {
     0% {
         transform: translateX(-100%);
     }
@@ -16,7 +16,7 @@
     &--loading {
         width: inherit;
         height: inherit;
-        animation: data--loading 1s cubic-bezier(1, 0, 0.5, 0) infinite;
+        animation: slide 1s cubic-bezier(1, 0, 0.5, 0) infinite;
         background-image: linear-gradient(to left, rgba(255, 255, 255, 0), $COLOR_WHITE 10%, rgba(255, 255, 255, 0));
         opacity: 0.32;
     }
@@ -45,7 +45,7 @@
         &-info {
             @include typeface(--paragraph-left-normal-black);
             @include themify($themes) {
-                color: themed('text_primary_color');
+                color: themed('text_color');
             }
 
             &--left {
@@ -65,16 +65,6 @@
             &:hover {
                 border-color: themed('border_hover_color');
             }
-        }
-    }
-    &__loader {
-        width: 92px;
-        height: 8px;
-        margin: 3.5px 0;
-        @extend .loader;
-
-        &--loading {
-            @extend .loader--loading;
         }
     }
     &__error {
@@ -144,23 +134,43 @@
                     }
                 }
             }
+            &--slide {
+                width: 92px;
+                height: 8px;
+                margin: 6.5px 0;
+                @extend .loader;
+
+                .trade-container__price-info-basis {
+                    @extend .loader--loading;
+                }
+            }
+            &--fade &-value {
+                opacity: 0;
+            }
             &-value {
-                @include typeface(--small-left-bold-black);
+                font-size: 1.4em;
+                font-weight: 700;
+                text-transform: capitalize;
+                text-align: left;
+                line-height: 1.25;
+                margin-left: 0.1em;
+                @include themify($themes) {
+                    color: themed('text_color');
+                }
+                opacity: 1;
+                transition: 0.3s;
+            }
+            &-basis {
+                margin-left: 0;
+                font-weight: normal;
+                @include typeface(--paragraph-left-normal-black);
                 @include themify($themes) {
                     color: themed('text_color');
                 }
             }
-            &-basis {
-                @include typeface(--paragraph-left-normal-black);
-                margin-left: 0;
-                font-weight: normal;
-                @include themify($themes) {
-                    color: themed('text_secondary_color');
-                }
-            }
             &-currency {
                 margin-left: 4px;
-                margin-right: 2px;
+                margin-right: 1px;
                 display: inline-block;
                 position: relative;
                 font-weight: bold;
@@ -406,6 +416,11 @@
         float: right;
         justify-content: right;
         background-color: transparent;
+
+        .btn-purchase__text {
+            opacity: 1;
+            transition: 0.3s;
+        }
     }
     &__effect-detail {
         width: 0;
@@ -464,7 +479,7 @@
             }
         }
     }
-    &--animated {
+    &--animated--slide {
         .btn-purchase__icon_wrapper, .btn-purchase__text_wrapper {
             @extend .loader;
         }
@@ -483,6 +498,9 @@
                 display: block;
             }
         }
+    }
+    &--animated--fade &__info--right &__text {
+        opacity: 0;
     }
     &__shadow-wrapper:hover:after {
         opacity: 0;

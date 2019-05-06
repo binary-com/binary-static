@@ -190,10 +190,12 @@
         }
 
         &-label {
-            color: $COLOR_LIGHT_BLACK_1;
             font-size: 1em;
             font-weight: normal;
             margin-bottom: 0.5em;
+            @include themify($themes) {
+                color: themed('text_primary_color');
+            }
         }
         &--movement {
             width: 16px;
