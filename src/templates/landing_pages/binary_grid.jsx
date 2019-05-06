@@ -32,7 +32,7 @@ const gridLP = () => (
                                 <span className='header-sub secondary-color'>{('Seamless trading on your smartphone.')}</span>
                                 <p><a className='button' href='https://grid.binary.me/download/BinaryGrid_v101.apk'><span className='button-lg'>{('Get Binary Grid now')}</span></a></p>
                             </div>
-                            <div className='gr-7 gr-12-t gr-12-m gr-12-p'><img className='phone' src={it.url_for('images/grid_lp/phone@3x-cmp.png')} alt='seamless trading on your smartphone' /></div>
+                            <div className='gr-7 gr-12-t gr-12-m gr-12-p'><img className='phone' src={it.url_for('images/grid_lp/phone@2x.png')} alt='seamless trading on your smartphone' /></div>
                         </div>
                     </div>
                 </div>
@@ -91,7 +91,7 @@ const gridLP = () => (
                             </div>
                             <div className='right-col-feature'>
                                 <h3>{('Multiple contracts at a time')}</h3>
-                                <p>{('Open several single-cell and multi-cell contracts simultaneously.')}</p>
+                                <p>{('Open several positions across multiple cells simultaneously.')}</p>
                             </div>
                         </div>
                         <div className='gr-6 gr-12-m gr-12-p'>
@@ -129,24 +129,29 @@ const gridLP = () => (
                         <div className='gr-3 gr-12-t gr-12-m gr-12-p col-step'>
                             <div className='line-right' />
                             <div className='step icon-step-1' />
-                            <p>{('Go')} <a href='https://grid.binary.me/download/BinaryGrid_v101.apk'>{('here')}</a> {('to download Binary Grid for Android.')}</p>
+                            <p>{('Click')} <a href='https://grid.binary.me/download/BinaryGrid_v101.apk'>{('here')}</a> {('to download Binary Grid for Android.')}</p>
                         </div>
                         <div className='gr-3 gr-12-t gr-12-m gr-12-p col-step'>
                             <div className='line-left' />
                             <div className='line-right' />
                             <div className='step icon-step-2' />
-                            <p>{('Choose the downloaded .apk file to install.')}</p>
+                            <p>{('Locate the downloaded file on your device and open it to begin installation.')}</p>
                         </div>
                         <div className='gr-3 gr-12-t gr-12-m gr-12-p col-step'>
                             <div className='line-left' />
                             <div className='line-right' />
                             <div className='step icon-step-3' />
-                            <p>{('Once installation is complete, tap on the app icon to open.')}</p>
+                            <p>{('Update your device’s security settings to allow installs from this source.')}</p>
                         </div>
                         <div className='gr-3 gr-12-t gr-12-m gr-12-p col-step'>
                             <div className='line-left' />
                             <div className='step icon-step-4' />
-                            <p className='ft-bold'>{('Start trading!')}</p>
+                            <p className='ft-bold'>{('Approve the installation by clicking on ‘Install’')}</p>
+                        </div>
+                        <div className='gr-3 gr-12-t gr-12-m gr-12-p col-step'>
+                            <div className='line-left' />
+                            <div className='step icon-step-4' />
+                            <p className='ft-bold'>{('Once installation is complete, tap on the app icon to open.')}</p>
                         </div>
                     </div>
                     <div className='divider' />
