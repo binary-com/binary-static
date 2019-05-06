@@ -1,10 +1,10 @@
 import PropTypes            from 'prop-types';
 import React                from 'react';
+import ChartLoader          from 'App/Components/Elements/chart-loader.jsx';
 import { getPropertyValue } from '_common/utility';
 import UILoader             from 'App/Components/Elements/ui-loader.jsx';
 import { connect }          from 'Stores/connect';
 import PositionsDrawer      from 'App/Components/Elements/PositionsDrawer';
-import ChartLoader          from 'App/Components/Elements/chart-loader.jsx';
 import Test                 from './test.jsx';
 import FormLayout           from '../Components/Form/form-layout.jsx';
 import Digits               from '../../Contract/Containers/digits.jsx';
