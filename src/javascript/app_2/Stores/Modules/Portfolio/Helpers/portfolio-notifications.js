@@ -11,7 +11,7 @@ export const contractSold = (currency, sold_for) => ({
             replacers={{ '1': <Money key={sold_for} amount={sold_for} currency={currency} /> }}
         />
     ),
-    type                 : 'info',
+    type                 : 'contract_sold',
     size                 : 'small',
     should_hide_close_btn: true,
     is_auto_close        : true,

@@ -1,9 +1,8 @@
-import PropTypes        from 'prop-types';
-import React            from 'react';
-import { connect }      from 'Stores/connect';
+import PropTypes                from 'prop-types';
+import React                    from 'react';
+import { connect }              from 'Stores/connect';
 import Notification, {
-    max_display_notifications,
-    sortNotifications } from '../Components/Elements/NotificationMessage';
+    max_display_notifications } from '../Components/Elements/NotificationMessage';
 
 const NotificationMessages = ({
     notification_messages,
@@ -13,7 +12,6 @@ const NotificationMessages = ({
         {
             notification_messages
                 .slice(0, max_display_notifications)
-                .sort(sortNotifications)
                 .map((notification, idx) => (
                     <Notification
                         key={idx}
@@ -34,7 +32,7 @@ NotificationMessages.propTypes = {
             is_auto_close: PropTypes.bool,
             message      : PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
             size         : PropTypes.oneOf(['small']),
-            type         : PropTypes.oneOf(['warning', 'info', 'success', 'danger']),
+            type         : PropTypes.oneOf(['warning', 'info', 'success', 'danger', 'contract_sold']),
         }),
     ),
     removeNotification: PropTypes.func,

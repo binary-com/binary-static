@@ -62,6 +62,7 @@ const client_notifications = {
     withdrawal_locked: {
         header : localize('Withdrawal Disabled'),
         message: localize('Withdrawals have been disabled on your account. Please check your email for more details.'),
+        type   : 'warning',
     },
     mt5_withdrawal_locked: {
         header : localize('MT5 Withdrawal Disabled'),

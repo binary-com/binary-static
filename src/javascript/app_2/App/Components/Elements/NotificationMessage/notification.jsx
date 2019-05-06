@@ -37,7 +37,8 @@ const Notification = ({
         >
             <div className='notification__icon'>
                 { data.type === 'danger'  && <Icon icon={IconDanger} className='notification__icon-type' /> }
-                { data.type === 'info'    && <Icon icon={IconInformation} className='notification__icon-type' /> }
+                { (data.type === 'info' || data.type === 'contract_sold')
+                    && <Icon icon={IconInformation} className='notification__icon-type' /> }
                 { data.type === 'success' && <Icon icon={IconSuccess} className='notification__icon-type' /> }
                 { data.type === 'warning' && <Icon icon={IconWarning} className='notification__icon-type' /> }
             </div>
@@ -59,7 +60,7 @@ Notification.propTypes = {
         message              : PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
         should_hide_close_btn: PropTypes.bool,
         size                 : PropTypes.oneOf(['small']),
-        type                 : PropTypes.oneOf(['warning', 'info', 'success', 'danger']).isRequired,
+        type                 : PropTypes.oneOf(['warning', 'info', 'success', 'danger', 'contract_sold']).isRequired,
     }),
     removeNotification: PropTypes.func,
 };

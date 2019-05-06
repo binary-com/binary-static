@@ -2,12 +2,13 @@ import {
     action,
     autorun,
     computed,
-    observable }       from 'mobx';
+    observable }             from 'mobx';
 import {
     MAX_MOBILE_WIDTH,
-    MAX_TABLET_WIDTH } from 'Constants/ui';
-import { unique }      from '_common/utility';
-import BaseStore       from './base-store';
+    MAX_TABLET_WIDTH }       from 'Constants/ui';
+import { unique }            from '_common/utility';
+import BaseStore             from './base-store';
+import { sortNotifications } from '../App/Components/Elements/NotificationMessage';
 
 const store_name = 'ui_store';
 
@@ -236,7 +237,7 @@ export default class UIStore extends BaseStore {
 
     @action.bound
     addNotification(notification) {
-        this.notification_messages.push(notification);
+        this.notification_messages = [...this.notification_messages, notification].sort(sortNotifications);
     }
 
     @action.bound
