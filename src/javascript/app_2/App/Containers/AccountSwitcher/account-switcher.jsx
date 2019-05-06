@@ -142,6 +142,7 @@ class AccountSwitcher extends React.Component {
 AccountSwitcher.propTypes = {
     account_list          : PropTypes.array,
     account_loginid       : PropTypes.string,
+    cleanUp               : PropTypes.func,
     is_logged_in          : PropTypes.bool,
     is_positions_drawer_on: PropTypes.bool,
     is_upgrade_enabled    : PropTypes.bool,
