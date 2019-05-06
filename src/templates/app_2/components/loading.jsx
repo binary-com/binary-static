@@ -50,7 +50,7 @@ class Loading extends React.Component {
                                 classNameRect='initial-loader__fill'
                             />
                         }
-                        { status && <h1 className='initial-loader__status'>{status}</h1>}
+                        { status && <h1 className='initial-loader__status'>{status}</h1> }
                     </React.Fragment>
                 }
             </div>

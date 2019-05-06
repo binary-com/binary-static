@@ -44,26 +44,26 @@ class Chart extends React.Component {
                 bottomWidgets={(!this.props.is_digit_contract || this.props.should_show_last_digit_stats) ?
                     null : this.bottomWidgets }
                 chartControlsWidgets={this.props.is_contract_mode ? null : this.chartControlsWidgets}
+                chartStatusListener={this.props.getChartStatus}
                 chartType={this.props.chart_type}
+                clearChart={this.props.should_clear_chart}
                 endEpoch={this.props.range.end_epoch}
                 id={this.props.chart_id}
-                chartStatusListener={this.props.getChartStatus}
+                importedLayout={this.props.should_import_layout ? this.props.trade_chart_layout : null}
+                isConnectionOpened={this.props.is_socket_opened}
                 isMobile={this.props.is_mobile}
                 granularity={this.props.granularity}
+                onExportLayout={this.props.should_export_layout ? this.props.exportLayout : null}
                 requestAPI={this.props.wsSendRequest}
                 requestForget={this.props.wsForget}
                 requestSubscribe={this.props.wsSubscribe}
+                scrollToEpoch={this.props.scroll_to_epoch}
+                scrollToEpochOffset={this.props.scroll_to_offset}
                 settings={this.props.settings}
                 showLastDigitStats={this.props.should_show_last_digit_stats}
                 startEpoch={this.props.range.start_epoch}
-                scrollToEpoch={this.props.scroll_to_epoch}
-                scrollToEpochOffset={this.props.scroll_to_offset}
                 symbol={this.props.symbol}
                 topWidgets={this.topWidgets}
-                isConnectionOpened={this.props.is_socket_opened}
-                clearChart={this.props.should_clear_chart}
-                importedLayout={this.props.should_import_layout ? this.props.trade_chart_layout : null}
-                onExportLayout={this.props.should_export_layout ? this.props.exportLayout : null}
             >
                 { this.props.markers_array.map((marker, idx) => (
                     <ChartMarker
