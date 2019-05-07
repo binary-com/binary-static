@@ -371,4 +371,14 @@ export default class ClientStore extends BaseStore {
     setEmail(email) {
         this.accounts[this.loginid].email = email;
     }
+
+    @action.bound
+    cleanUp() {
+        this.loginid = null;
+        this.upgrade_info = undefined;
+        this.accounts = [];
+        this.currencies_list  = {};
+        this.selected_currency = '';
+    }
+
 }
