@@ -6,17 +6,19 @@ import ContractTypeWidget from '../Components/Form/ContractType/contract-type-wi
 const Contract = ({
     contract_type,
     contract_types_list,
-    onChange,
-    is_mobile,
+    is_dark_theme,
     is_equal,
+    is_mobile,
+    onChange,
 }) => (
     <ContractTypeWidget
-        name='contract_type'
-        list={contract_types_list}
-        value={contract_type}
-        onChange={onChange}
-        is_mobile={is_mobile}
+        is_dark_theme={is_dark_theme}
         is_equal={is_equal}
+        is_mobile={is_mobile}
+        list={contract_types_list}
+        name='contract_type'
+        onChange={onChange}
+        value={contract_type}
     />
 );
 
@@ -35,8 +37,9 @@ export default connect(
     ({ modules, ui }) => ({
         contract_type      : modules.trade.contract_type,
         contract_types_list: modules.trade.contract_types_list,
-        onChange           : modules.trade.onChange,
-        is_mobile          : ui.is_mobile,
         is_equal           : modules.trade.is_equal,
+        onChange           : modules.trade.onChange,
+        is_dark_theme      : ui.is_dark_mode_on,
+        is_mobile          : ui.is_mobile,
     })
 )(Contract);
