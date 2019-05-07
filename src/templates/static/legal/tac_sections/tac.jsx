@@ -17,7 +17,7 @@ const Tac = () => (
         <p>{it.L('These terms and conditions may be supplemented from time to time by supplementary terms and conditions applicable to a particular Company or products.')}</p>
 
         <h2 data-anchor='introduction'>B. {it.L('Introduction')}</h2>
-        <p>{it.L('The financial trading services contained within this site are only suitable for customers who accept the possibility of losing all the money they invest and who understand and have experience of the risk involved in the acquisition of financial contracts. Transactions in financial contracts carry a high degree of risk. If purchased contracts expire worthless, the Client will suffer a total loss of their investment, which consists of the contract premium.')}</p>
+        <p>{it.L('The financial trading services contained within this site are only suitable for clients who are able to bear the loss of all the money they invest and who understand and have experience of the risks involved in the acquisition of financial contracts.')}</p>
         <p>{it.L('International currency or commodity prices are highly volatile and very difficult to predict. Due to such volatility, plus the bias in the pricing system favouring the website (as described in more detail below), no financial contract purchased in our system (whether or not the payout exceeds the premium amount) can be considered a safe contract.')}</p>
         <p>{it.L('The maximum loss that may be incurred by any client is the amount of money paid by the client to the Company.')}</p>
         <p>{it.L('The Company reserves the right in its sole discretion to refuse and/or cancel services and charge deposit and/or withdrawal fees to anyone for any reasons including, but not limited to the following:')}</p>
