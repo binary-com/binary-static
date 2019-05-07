@@ -143,7 +143,7 @@ class ContractTypeWidget extends React.PureComponent {
             >
                 <div
                     className={classNames('contract-type-widget__display', {
-                        'contract-type-widget__display--clicked': is_dialog_open,
+                        'contract-type-widget__display--clicked': (is_dialog_open || is_info_dialog_open),
                     })}
                     onClick={this.onWidgetClick}
                 >
