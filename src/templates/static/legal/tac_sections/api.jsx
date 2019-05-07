@@ -254,7 +254,7 @@ const Api = () => (
                             {
                                 header     : it.L('At any time and for any reason or no reason, the Company, in its sole discretion, may do either of the following immediately:'),
                                 list_nested: [
-                                    { text: it.L('Terminate the Programmer\'s use of the API') },
+                                    { text: it.L('Terminate the Programmer\'s use of the [_1] API', it.website_name) },
                                     { text: it.L('Terminate this Agreement') },
                                 ],
                             },
