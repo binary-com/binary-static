@@ -137,6 +137,7 @@ const Purchase = (() => {
                         } else if (/ClientUnwelcome/.test(error.code) && /gb/.test(State.getResponse('authorize.country'))) {
                             let message_text = '';
                             let additional_message = '';
+
                             if (!Client.hasAccountType('real') && /^VRTC/.test(State.getResponse('authorize.loginid'))) {
                                 message_text = localize('Please complete the [_1]Real Account form[_2] to verify your age as required by the <strong>UK Gambling</strong> Commission (UKGC).', [`<a href='${urlFor('new_account/realws')}'>`, '</a>']);
                                 additional_message = localize('Once verified, you will be able to trade on both real and virtual accounts.');
