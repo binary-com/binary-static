@@ -2,11 +2,16 @@ const TradingDuration  = require('./trading_duration');
 const BinarySocket     = require('../../../base/socket');
 const localize         = require('../../../../_common/localize').localize;
 const TabSelector      = require('../../../../_common/tab_selector');
+const showLoadingImage = require('../../../../_common/utility').showLoadingImage;
 
 const TradingDurationUI = (() => {
     const onLoad = () => {
+
+        const $container = $('#trading_durations');
+        showLoadingImage($container[0]);
         TabSelector.onLoad();
         TabSelector.onChangeTab(onChangeTabSelector);
+
         sendRequest();
     };
 

@@ -18,7 +18,6 @@ const AssetIndexUI = (() => {
         $('#empty-asset-index').setVisibility(0);
         asset_index = market_columns = undefined;
         active_symbols = undefined;
-
         if ($container.contents().length) return;
 
         showLoadingImage($container[0]);
