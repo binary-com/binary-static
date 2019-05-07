@@ -23,7 +23,7 @@ const PaymentAgents = () => (
 
         <h2 data-anchor='provision-of-services'>D. {it.L('Provision of services')}</h2>
         <ol>
-            <li>{it.L('The Agent may provide the Agent\'s services to those clients of the Company who desire to deposit and/or withdraw money using the Agent. The Agent may provide their services to clients who intend to use e-wallet or e-payment methods other than those used by the Company (hereinafter referred to as the "e-payments") or local currencies other than those accepted by the Company (hereinafter referred to as the "local currencies") and local bank wire transfers (hereinafter referred to as the "bank wire transfers").')}</li>
+            <li>{it.L('The Agent may provide their services to those clients of the Company who desire to deposit and/or withdraw money using the Agent. The Agent may provide their services to clients who intend to use e-wallet or e-payment methods other than those used by the Company (hereinafter referred to as the "e-payments") or local currencies other than those accepted by the Company (hereinafter referred to as the "local currencies") and local bank wire transfers (hereinafter referred to as the "bank wire transfers").')}</li>
             <li>{it.L('It is agreed that any deposits through the Agent shall be made as follows:')}
                 <ul className='bullet'>
                     <li>{it.L('The client using e-payments and bank wire transfers may make a deposit to the Agent. The Agent, receiving the deposit, shall thereinafter make a deposit to the Agent\'s [_1] account (hereinafter referred to as the "[_1] Agent Account").', it.website_name)}</li>
