@@ -108,9 +108,9 @@ const VirtualAccOpening = (() => {
         const error = response.error;
         if (!error) {
             BinarySocket.wait('get_account_status').then(() => {
-                const new_account    = response.new_account_virtual;
-                const residence      = response.echo_req.residence;
-                const unwelcome_ukgc = State.getResponse('get_account_status.status').some(status => status === 'unwelcome') && (/gb/.test(residence));
+                const new_account     = response.new_account_virtual;
+                const residence       = response.echo_req.residence;
+                const is_unwelcome_uk = State.getResponse('get_account_status.status').some(status => status === 'unwelcome') && (/gb/.test(residence));
                 Client.set('residence', residence, new_account.client_id);
                 LocalStore.remove('gclid');
                 State.set('skip_response', 'authorize');
@@ -123,7 +123,7 @@ const VirtualAccOpening = (() => {
                             loginid     : new_account.client_id,
                             token       : new_account.oauth_token,
                             is_virtual  : true,
-                            redirect_url: unwelcome_ukgc ? urlFor('new_account/realws') : urlFor('new_account/welcome'),
+                            redirect_url: is_unwelcome_uk ? urlFor('new_account/realws') : urlFor('new_account/welcome'),
                         });
                     }
                 });
