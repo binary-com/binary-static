@@ -113,3 +113,14 @@ export const convertDurationLimit = (value, unit) => {
 export const hasIntradayDurationUnit = (duration_units_list) => (
     duration_units_list.some(unit => ['m', 'h'].indexOf(unit.value) !== -1)
 );
+
+/**
+ * On switching symbols, end_time value of volatility indices should be set to today
+ *
+ * @param {String} symbol
+ * @param {String} expiry_type
+ * @returns {*}
+ */
+export const resetEndTimeOnVolatilityIndices = (symbol, expiry_type) => (
+    (/^R_/.test(symbol) && expiry_type === 'endtime') ? toMoment(null).format('DD MMM YYYY') : null
+);

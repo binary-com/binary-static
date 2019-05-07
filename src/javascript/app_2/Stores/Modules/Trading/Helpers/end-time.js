@@ -1,7 +1,7 @@
 const getClosestTime = (
     time,
     interval,
-) => time.minute(Math.round(time.minute() / interval) * interval);
+) => time.minute((Math.ceil(time.minute() / interval) * interval));
 
 export const getSelectedTime = (
     server_time,
