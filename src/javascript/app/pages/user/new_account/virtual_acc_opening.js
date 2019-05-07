@@ -107,23 +107,26 @@ const VirtualAccOpening = (() => {
         if (!response) return false;
         const error = response.error;
         if (!error) {
-            const new_account = response.new_account_virtual;
-            const residence   = response.echo_req.residence;
-            Client.set('residence', residence, new_account.client_id);
-            LocalStore.remove('gclid');
-            State.set('skip_response', 'authorize');
-            BinarySocket.send({ authorize: new_account.oauth_token }, { forced: true }).then((response_auth) => {
-                if (!response_auth.error) {
-                    LocalStore.remove('date_first_contact');
-                    LocalStore.remove('signup_device');
-                    Client.processNewAccount({
-                        email       : new_account.email,
-                        loginid     : new_account.client_id,
-                        token       : new_account.oauth_token,
-                        is_virtual  : true,
-                        redirect_url: /gb/.test(residence) ? urlFor('new_account/realws') : urlFor('new_account/welcome'),
-                    });
-                }
+            BinarySocket.wait('get_account_status').then(() => {
+                const new_account    = response.new_account_virtual;
+                const residence      = response.echo_req.residence;
+                const unwelcome_ukgc = State.getResponse('get_account_status.status').some(status => status === 'unwelcome') && (/gb/.test(residence));
+                Client.set('residence', residence, new_account.client_id);
+                LocalStore.remove('gclid');
+                State.set('skip_response', 'authorize');
+                BinarySocket.send({ authorize: new_account.oauth_token }, { forced: true }).then((response_auth) => {
+                    if (!response_auth.error) {
+                        LocalStore.remove('date_first_contact');
+                        LocalStore.remove('signup_device');
+                        Client.processNewAccount({
+                            email       : new_account.email,
+                            loginid     : new_account.client_id,
+                            token       : new_account.oauth_token,
+                            is_virtual  : true,
+                            redirect_url: unwelcome_ukgc ? urlFor('new_account/realws') : urlFor('new_account/welcome'),
+                        });
+                    }
+                });
             });
             return true;
         }
