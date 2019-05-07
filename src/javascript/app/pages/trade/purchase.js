@@ -145,11 +145,6 @@ const Purchase = (() => {
                                 additional_message = localize('[_1]Telephone numbers in other locations[_2]', [`<a href='${urlFor('contact')}'>`, '</a>']);
                             }
                             message = `${message_text} <br/><br/> ${additional_message}`;
-                            // console.log(State.getResponse('authorize.country'));
-                            // console.log(State.getResponse('authorize.loginid'));
-                            // console.log(Client.hasAccountType('real'))
-                            // message = 'testingtesting';
-                            /* (/^MLT|MX/.test(loginid)) */
                         }
                         CommonFunctions.elementInnerHtml(confirmation_error, message);
                     });
