@@ -199,7 +199,7 @@ const DigitTicker = (() => {
         setElements(epoch);
         el_container.classList.remove('invisible');
         adjustBoxSizes();
-        current_spot = quote.substr(-1);
+        current_spot = quote.toString().substr(-1);
 
         el_mask.innerText = `${current_tick_count} / ${total_tick_count}`;
 

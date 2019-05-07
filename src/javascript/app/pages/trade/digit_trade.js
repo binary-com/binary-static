@@ -135,11 +135,11 @@ const DigitDisplay = (() => {
         }
         if (proposal_open_contract.status === 'won') {
             DigitTicker.markAsWon();
-            DigitTicker.markDigitAsWon(proposal_open_contract.exit_tick.slice(-1));
+            DigitTicker.markDigitAsWon(proposal_open_contract.exit_tick.toString().slice(-1));
         }
         if (proposal_open_contract.status === 'lost') {
             DigitTicker.markAsLost();
-            DigitTicker.markDigitAsLost(proposal_open_contract.exit_tick.slice(-1));
+            DigitTicker.markDigitAsLost(proposal_open_contract.exit_tick.toString().slice(-1));
         }
     };
 

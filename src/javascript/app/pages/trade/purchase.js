@@ -315,7 +315,7 @@ const Purchase = (() => {
         } else {
             message_element = columnElement({ text: message_text });
         }
-        
+
         button_element.appendChild(createElement('span', { text: button_text }));
         cta_element.appendChild(button_element);
         row_element.appendChild(message_element);
@@ -438,7 +438,7 @@ const Purchase = (() => {
         if (el_epoch && el_epoch.classList) {
             el_epoch.classList.add('is-visible');
             el_epoch.setAttribute('style', `position: absolute; right: ${((el_epoch.parentElement.offsetWidth - el_epoch.nextSibling.offsetWidth) / 2) + adjustment}px`);
-            const last_digit_quote = last_tick_quote ? last_tick_quote.slice(-1) : '';
+            const last_digit_quote = last_tick_quote ? last_tick_quote.toString().slice(-1) : '';
             if (contract_status === 'won') {
                 DigitTicker.markAsWon();
                 DigitTicker.markDigitAsWon(last_digit_quote);
