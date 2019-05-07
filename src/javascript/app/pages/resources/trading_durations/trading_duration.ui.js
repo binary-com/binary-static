@@ -7,7 +7,7 @@ const showLoadingImage = require('../../../../_common/utility').showLoadingImage
 const TradingDurationUI = (() => {
     const onLoad = () => {
 
-        const $container = $('#trading_durations');
+        const $container = $('#trading_durations_data');
         showLoadingImage($container[0]);
         TabSelector.onLoad();
         TabSelector.onChangeTab(onChangeTabSelector);
