@@ -37,6 +37,7 @@ class Statement extends React.Component {
     render() {
         const {
             component_icon,
+            currency,
             data,
             is_empty,
             is_loading,
@@ -47,7 +48,7 @@ class Statement extends React.Component {
 
         if (error) return <p>{error}</p>;
 
-        const columns = getStatementTableColumnsTemplate();
+        const columns = getStatementTableColumnsTemplate(currency);
 
         return (
             <React.Fragment>
@@ -99,7 +100,8 @@ Statement.propTypes = {
 };
 
 export default connect(
-    ({ modules }) => ({
+    ({ modules, client }) => ({
+        currency         : client.currency,
         data             : modules.statement.data,
         error            : modules.statement.error,
         handleScroll     : modules.statement.handleScroll,

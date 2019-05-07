@@ -4,7 +4,7 @@ import Label                from 'App/Components/Elements/Label';
 import Money                from 'App/Components/Elements/money.jsx';
 import ProgressSliderStream from 'App/Containers/ProgressSliderStream';
 import IndicativeCell       from 'Modules/Portfolio/Components/indicative-cell.jsx';
-import AmountCell           from '../Components/amount-cell.jsx';
+import { getProfitOrLoss }  from 'Modules/Reports/Helpers/profit-loss';
 import MarketSymbolIconRow  from '../Components/market-symbol-icon-row.jsx';
 import ProfitLossCell       from '../Components/profit_loss_cell.jsx';
 
@@ -23,7 +23,7 @@ const getModeFromValue = (key) => {
     return map.default;
 };
 /* eslint-disable react/display-name, react/prop-types */
-export const getStatementTableColumnsTemplate = () => [
+export const getStatementTableColumnsTemplate = (currency) => [
     {
         key              : 'icon',
         title            : '',
@@ -51,10 +51,11 @@ export const getStatementTableColumnsTemplate = () => [
     }, {
         title            : localize('Credit/Debit'),
         col_index        : 'amount',
-        renderCellContent: ({ cell_value }) => <AmountCell value={cell_value} />,
+        renderCellContent: ({ cell_value }) => <div className={`amount--${getProfitOrLoss(cell_value)}`} ><Money has_sign amount={cell_value.replace(/[,]+/g, '')} currency={currency} /></div>,
     }, {
-        title    : localize('Balance'),
-        col_index: 'balance',
+        title            : localize('Balance'),
+        col_index        : 'balance',
+        renderCellContent: ({ cell_value }) => <Money amount={cell_value.replace(/[,]+/g, '')} currency={currency} />,
     },
 ];
 export const getProfitTableColumnsTemplate = () => [
@@ -145,7 +146,7 @@ export const getOpenPositionsColumnsTemplate = (currency) => [
             <IndicativeCell amount={+cell_value} currency={currency} status={row_obj.status} />
         ),
     }, {
-        title            : localize('Remaining Time'),
+        title            : localize('Remaining time'),
         col_index        : 'id',
         renderCellContent: ({ cell_value }) => (
             <ProgressSliderStream id={cell_value} />
