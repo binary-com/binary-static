@@ -11,6 +11,20 @@
     height: 0;
     z-index: 999;
 
+    &__body {
+        overflow: hidden;
+    }
+    &__card {
+        width: 258px;
+        flex: none;
+        margin: 0 16px 0 0;
+
+        &-wrapper {
+            display: flex;
+            flex-direction: row;
+            transition: transform 0.3s linear;
+        }
+    }
     &__info-wrapper {
         position: absolute;
         width: 290px;
@@ -19,7 +33,7 @@
         top: -66px;
         z-index: 2;
         border-radius: 4px;
-        padding: 1.6em;
+        padding: 1.6em 1.6em 1em;
         box-shadow: 0 2px 8px 0 $COLOR_LIGHT_BLACK_3;
         display: flex;
         flex-direction: column;
@@ -37,9 +51,9 @@
         }
     }
     &__content {
-        margin-top: 1.6em;
-        flex: 1;
-        overflow-y: auto;
+        margin-top: 1.5em;
+        height: 260px;
+        overflow: hidden;
 
         p {
             @include typeface(--paragraph-left-normal-black, none);
@@ -57,6 +71,16 @@
         @include themify($themes) {
             background-color: themed('container_color');
             color: themed('disabled_color');
+        }
+
+        &-image {
+            width: 270px;
+            height: 142px;
+
+            &--dark {
+                margin-left: -6px;
+                margin-top: -2px;
+            }
         }
     }
     &__header {
@@ -100,13 +124,14 @@
 /** @define trade-type-info-navigation; */
 .trade-type-info-navigation {
     display: flex;
-    align-self: flex-end;
+    align-items: center;
     width: 100%;
 
     &__list {
         display: inline-block;
         text-align: center;
         margin: 0 auto;
+        position: relative;
     }
     &__circle-button {
         width: 0.8em;
@@ -117,8 +142,15 @@
         cursor: pointer;
         @include themify($themes) {
             background-color: themed('slider_background_color');
+        }
 
-            &--active {
+        &--active {
+            position: absolute;
+            top: 0;
+            left: 0;
+            cursor: initial;
+            transition: transform 0.3s linear;
+            @include themify($themes) {
                 background-color: themed('trade_carousel_indicator');
             }
         }
