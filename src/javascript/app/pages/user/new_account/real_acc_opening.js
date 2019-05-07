@@ -19,7 +19,7 @@ const RealAccOpening = (() => {
                     State.getResponse('authorize.upgradeable_landing_companies').indexOf('costarica') !== -1) {
                     getElementById('risk_disclaimer').setVisibility(1);
                 }
-                if (/gb/.test(State.getResponse('authorize.country'))) {
+                if (/gb/.test(Client.get('residence'))) {
                     getElementById('ukgc_age_verification').setVisibility(1);
                 }
 
