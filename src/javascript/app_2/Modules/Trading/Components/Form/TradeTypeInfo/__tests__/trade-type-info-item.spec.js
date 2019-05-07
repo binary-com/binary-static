@@ -8,14 +8,14 @@ configure({ adapter: new Adapter() });
 
 describe('TradeTypeInfoItem', () => {
     const item = { text: 'Higher/Lower' , value: 'high_low' };
-    const navigationList = ['high_low', 'rise_fall'];
+    const itemList = ['high_low', 'rise_fall'];
 
     it('should render one <TradeTypeInfoItem /> component', () => {
-        const wrapper = shallow(<TradeTypeInfoItem item={item} navigationList={navigationList} />);
+        const wrapper = shallow(<TradeTypeInfoItem item={item} itemList={itemList} />);
         expect(wrapper).to.have.length(1);
     });
-    it('should have 2 .circle-button (equal to navigationList\'s length)', () => {
-        const wrapper = shallow(<TradeTypeInfoItem item={item} navigationList={navigationList} />);
-        expect(wrapper.find('.trade-type-info-navigation__circle-button')).to.have.length(2);
+    it('should have 2 .circle-button (equal to itemList\'s length)', () => {
+        const wrapper = shallow(<TradeTypeInfoItem item={item} itemList={itemList} />);
+        expect(wrapper.find('.trade-type-info-navigation__circle-button')).to.have.length(3);
     });
 });
