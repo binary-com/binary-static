@@ -7,7 +7,8 @@ import {
     IconBack }              from 'Assets/Common';
 import { IconChevronLeft }  from 'Assets/Common/icon-chevron-left.jsx';
 import { IconChevronRight } from 'Assets/Common/icon-chevron-right.jsx';
-import { TradeCategories }  from 'Assets/Trading/Categories/trade-categories.jsx';
+import { TradeCategories,
+    TradeCategoriesGIF }    from 'Assets/Trading/Categories';
 import Button               from 'App/Components/Form/button.jsx';
 import { localize }         from '_common/localize';
 
@@ -15,9 +16,11 @@ const TradeTypeInfoItem = ({
     handleNavigationClick,
     handleNextClick,
     handlePrevClick,
+    is_dark_theme,
     is_mobile,
     item,
-    navigationList,
+    item_index,
+    itemList,
     onBackButtonClick,
     onSubmitButtonClick,
 }) => (
@@ -30,43 +33,65 @@ const TradeTypeInfoItem = ({
             <span className='title'>{item.text}</span>
         </div>
         }
-        <div className='trade-type-info-dialog__gif'>
-            gif explanation
-        </div>
-        <div className='trade-type-info-dialog__content'>
-            <Scrollbars
-                autoHide
-                style={{ height: '100%' }}
+        <div className='trade-type-info-dialog__body'>
+            <div
+                className='trade-type-info-dialog__card-wrapper'
+                // total calculated below is from 258px and 16px horizontal margin set in trade-info-dialog css
+                style={{ 'transform': `translate3d(-${(274 * item_index)}px, 0, 0)`  }}
             >
-                <TradeCategories category={item.value} />
-            </Scrollbars>
-        </div>
-        <div>
-            <Button
-                className='btn--primary--orange trade-type-info-dialog__choose-button'
-                text={localize('Choose')}
-                onClick={() => onSubmitButtonClick(item)}
-            />
+                {
+                    itemList.map((type, idx) => (
+                        <div className='trade-type-info-dialog__card' key={idx}>
+                            <div className='trade-type-info-dialog__gif'>
+                                <TradeCategoriesGIF
+                                    category={type.value}
+                                    className='trade-type-info-dialog__gif-image'
+                                    is_dark={is_dark_theme}
+                                />
+                            </div>
+                            <div className='trade-type-info-dialog__content'>
+                                <Scrollbars
+                                    autoHide
+                                    style={{ height: '100%' }}
+                                >
+                                    <TradeCategories category={type.value} />
+                                </Scrollbars>
+                            </div>
+                            <div>
+                                <Button
+                                    className='btn--primary--orange trade-type-info-dialog__choose-button'
+                                    onClick={() => onSubmitButtonClick(type)}
+                                    text={localize('Choose')}
+                                />
+                            </div>
+                        </div>
+                    ))
+                }
+            </div>
         </div>
         <div className='trade-type-info-navigation'>
-            <div className='trade-type-info-navigation__icon' onClick={() => handlePrevClick(navigationList)} >
+            <div className='trade-type-info-navigation__icon' onClick={() => handlePrevClick(itemList)} >
                 <Icon icon={IconChevronLeft} />
             </div>
             <div className='trade-type-info-navigation__list'>
+                <i
+                    className={classNames(
+                        'trade-type-info-navigation__circle-button',
+                        'trade-type-info-navigation__circle-button--active')}
+                    style={{ 'transform': `translate3d(${16 * item_index}px, 0, 0)` }}
+                />
                 {
-                    navigationList.map((contract, idx) => (
+                    itemList.map((contract, idx) => (
                         <React.Fragment key={idx}>
                             <div
-                                className={classNames('trade-type-info-navigation__circle-button', {
-                                    'trade-type-info-navigation__circle-button--active': contract.value === item.value,
-                                })}
+                                className='trade-type-info-navigation__circle-button'
                                 onClick={() => handleNavigationClick(contract)}
                             />
                         </React.Fragment>
                     ))
                 }
             </div>
-            <div className='trade-type-info-navigation__icon' onClick={() => handleNextClick(navigationList)} >
+            <div className='trade-type-info-navigation__icon' onClick={() => handleNextClick(itemList)} >
                 <Icon icon={IconChevronRight} />
             </div>
         </div>
@@ -77,9 +102,11 @@ TradeTypeInfoItem.propTypes = {
     handleNavigationClick: PropTypes.func,
     handleNextClick      : PropTypes.func,
     handlePrevClick      : PropTypes.func,
+    is_dark_theme        : PropTypes.bool,
     is_mobile            : PropTypes.bool,
     item                 : PropTypes.object,
-    navigationList       : PropTypes.array,
+    item_index           : PropTypes.number,
+    itemList             : PropTypes.array,
     onBackButtonClick    : PropTypes.func,
     onSubmitButtonClick  : PropTypes.func,
 };
