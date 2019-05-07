@@ -13,11 +13,14 @@ const RealAccOpening = (() => {
         if (Client.get('residence')) {
             if (AccountOpening.redirectAccount()) return;
 
-            BinarySocket.wait('landing_company').then(() => {
+            BinarySocket.wait('authorize', 'landing_company').then(() => {
                 // TODO [->svg]
                 if (State.getResponse('authorize.upgradeable_landing_companies').indexOf('svg') !== -1 ||
                     State.getResponse('authorize.upgradeable_landing_companies').indexOf('costarica') !== -1) {
                     getElementById('risk_disclaimer').setVisibility(1);
+                }
+                if (/gb/.test(State.getResponse('authorize.country'))) {
+                    getElementById('ukgc_age_verification').setVisibility(1);
                 }
 
                 AccountOpening.populateForm(form_id, getValidations, false);

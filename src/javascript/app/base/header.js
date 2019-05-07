@@ -301,6 +301,7 @@ const Header = (() => {
                 risk                 : () => buildMessage(localizeKeepPlaceholders('Please complete the [_1]financial assessment form[_2] to lift your withdrawal and trading limits.'),                                   'user/settings/assessmentws'),
                 tax                  : () => buildMessage(localizeKeepPlaceholders('Please [_1]complete your account profile[_2] to lift your withdrawal and trading limits.'),                                            'user/settings/detailsws'),
                 unwelcome            : () => buildMessage(localizeKeepPlaceholders('Trading and deposits have been disabled on your account. Kindly [_1]contact customer support[_2] for assistance.'),                    'contact'),
+                virtual_unwelcome    : () => buildMessage(localizeKeepPlaceholders('Trading has been disabled on your account. Kindly [_1]contact customer support[_2] for assistance.'),                                  'contact'),
                 withdrawal_locked    : () => localize('Withdrawals have been disabled on your account. Please check your email for more details.'),
                 tnc                  : () => buildMessage(has_no_tnc_limit
                     ? localizeKeepPlaceholders('Please [_1]accept the updated Terms and Conditions[_2].')
@@ -323,6 +324,7 @@ const Header = (() => {
                 tax                  : () => Client.shouldCompleteTax(),
                 tnc                  : () => Client.shouldAcceptTnc(),
                 unwelcome            : () => hasStatus('unwelcome'),
+                virtual_unwelcome    : () => hasStatus('unwelcome'),
                 withdrawal_locked    : () => hasStatus('withdrawal_locked'),
             };
 
@@ -348,6 +350,7 @@ const Header = (() => {
             // virtual checks
             const check_statuses_virtual = [
                 'residence',
+                'virtual_unwelcome',
             ];
 
             const checkStatus = (check_statuses) => {

@@ -134,6 +134,18 @@ const Purchase = (() => {
                                 additional_message = localize('Try our other markets.');
                             }
                             message = `${error.message}. ${additional_message}`;
+                        } else if (/ClientUnwelcome/.test(error.code) && /gb/.test(State.getResponse('authorize.country'))) {
+                            if (!Client.hasAccountType('real') && /^VRTC/.test(State.getResponse('authorize.loginid'))) {
+                                message = localize('Trading is disabled, upgrade to Real......');
+                            } else if (Client.hasAccountType('real') && /^MX|VRTC/.test(State.getResponse('authorize.loginid'))) {
+                                message = localize('Trading is disabled, please contact CS......');
+                            }
+                            console.log(error.message)
+                            // console.log(State.getResponse('authorize.country'));
+                            // console.log(State.getResponse('authorize.loginid'));
+                            // console.log(Client.hasAccountType('real'))
+                            // message = 'testingtesting';
+                            /* (/^MLT|MX/.test(loginid)) */
                         }
                         CommonFunctions.elementInnerHtml(confirmation_error, message);
                     });

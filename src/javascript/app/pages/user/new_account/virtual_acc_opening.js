@@ -116,13 +116,23 @@ const VirtualAccOpening = (() => {
                 if (!response_auth.error) {
                     LocalStore.remove('date_first_contact');
                     LocalStore.remove('signup_device');
-                    Client.processNewAccount({
-                        email       : new_account.email,
-                        loginid     : new_account.client_id,
-                        token       : new_account.oauth_token,
-                        is_virtual  : true,
-                        redirect_url: urlFor('new_account/welcome'),
-                    });
+                    if (/gb/.test(residence)) {
+                        Client.processNewAccount({
+                            email       : new_account.email,
+                            loginid     : new_account.client_id,
+                            token       : new_account.oauth_token,
+                            is_virtual  : true,
+                            redirect_url: urlFor('new_account/realws'),
+                        });
+                    } else {
+                        Client.processNewAccount({
+                            email       : new_account.email,
+                            loginid     : new_account.client_id,
+                            token       : new_account.oauth_token,
+                            is_virtual  : true,
+                            redirect_url: urlFor('new_account/welcome'),
+                        });
+                    }
                 }
             });
             return true;
