@@ -13,7 +13,7 @@ const RealAccOpening = (() => {
         if (Client.get('residence')) {
             if (AccountOpening.redirectAccount()) return;
 
-            BinarySocket.wait('authorize', 'landing_company').then(() => {
+            BinarySocket.wait('landing_company').then(() => {
                 // TODO [->svg]
                 if (State.getResponse('authorize.upgradeable_landing_companies').indexOf('svg') !== -1 ||
                     State.getResponse('authorize.upgradeable_landing_companies').indexOf('costarica') !== -1) {
