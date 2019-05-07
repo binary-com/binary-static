@@ -15,7 +15,6 @@ const TradingDurations = () => (
     <div id='trading_durations' className='gr-centered gr-12-p gr-12-m trading-durations'>
         <h1 id='trading_durations_title'>{it.L('Trading Durations')}</h1>
         <div id='trading_durations_wrapper' className='gr-padding-20'>
-            <p id='errorMsg' className='invisible' />
             <div id='trading_durations_content'>
                 <TabContainer className='gr-padding-10 full-width' theme='light'>
                     <div className='gr-row gr-padding-20-m'>
@@ -46,7 +45,7 @@ const TradingDurations = () => (
 
                 <div id='trading_durations_loading' />
             </div>
-            <p className='notice-msg center-text invisible' id='empty-trading-durations'>
+            <p className='notice-msg center-text invisible' id='trading_durations_empty'>
                 {it.L('Trading durations is unavailable in this country. If you have an active [_1] account, please [_2]log in[_3] for full access.', it.website_name, '<a id=\'empty-trading-durations-btn-login\' href=\'javascript:;\'>', '</a>')}
             </p>
         </div>

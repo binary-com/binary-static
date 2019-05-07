@@ -2,6 +2,8 @@ const TradingDuration  = require('./trading_duration');
 const BinarySocket     = require('../../../base/socket');
 const localize         = require('../../../../_common/localize').localize;
 const TabSelector      = require('../../../../_common/tab_selector');
+const Login            = require('../../../../_common/base/login');
+const CommonFunctions  = require('../../../../_common/common_functions');
 const showLoadingImage = require('../../../../_common/utility').showLoadingImage;
 
 const TradingDurationUI = (() => {
@@ -105,12 +107,26 @@ const TradingDurationUI = (() => {
             const trading_duration_data = TradingDuration.getTradingDurationData(response);
             const active_tab = document.getElementsByClassName('a-active');
             const mobile_header_tab = document.getElementById('tab_mobile_header');
-            mobile_header_tab.innerHTML = active_tab[0].innerHTML;
+            if (trading_duration_data.length) {
+                mobile_header_tab.innerHTML = active_tab[0].innerHTML;
 
-            trading_duration_data.forEach((duration_data) => initializeData(duration_data));
-            TabSelector.repositionSelector();
-            $container.setVisibility(0);
+                trading_duration_data.forEach((duration_data) => initializeData(duration_data));
+                TabSelector.repositionSelector();
+                $container.setVisibility(0);
+            } else {
+                $('#trading_durations_empty').setVisibility(1);
+                const empty_asset_index_btn_login = CommonFunctions.getElementById('empty-trading-durations-btn-login');
+                empty_asset_index_btn_login.removeEventListener('click', loginOnClick);
+                empty_asset_index_btn_login.addEventListener('click', loginOnClick);
+                $container.setVisibility(0);
+            }
+
         });
+    };
+
+    const loginOnClick = (e) => {
+        e.preventDefault();
+        Login.redirectToLogin();
     };
 
     return { onLoad };
