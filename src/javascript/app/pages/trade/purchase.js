@@ -135,12 +135,15 @@ const Purchase = (() => {
                             }
                             message = `${error.message}. ${additional_message}`;
                         } else if (/ClientUnwelcome/.test(error.code) && /gb/.test(State.getResponse('authorize.country'))) {
+                            let message_text = '';
+                            let additional_message = '';
                             if (!Client.hasAccountType('real') && /^VRTC/.test(State.getResponse('authorize.loginid'))) {
-                                message = localize('Trading is disabled, upgrade to Real......');
+                                message_text = localize('Please complete the [_1]Real Account[_2] form to verify your age as required by the UK GamblingCommission (UKGC).', [`<a href='${urlFor('new_account/realws')}'>`, '</a>']);
+                                additional_message = localize('');
                             } else if (Client.hasAccountType('real') && /^MX|VRTC/.test(State.getResponse('authorize.loginid'))) {
                                 message = localize('Trading is disabled, please contact CS......');
                             }
-                            console.log(error.message)
+                            message = `${message_text} <br/> ${additional_message}`;
                             // console.log(State.getResponse('authorize.country'));
                             // console.log(State.getResponse('authorize.loginid'));
                             // console.log(Client.hasAccountType('real'))
