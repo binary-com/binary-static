@@ -145,6 +145,7 @@ const Purchase = (() => {
                                 message_text = localize('Your age verification failed. Please contact customer service for assistance. <br/><br/> <strong>Telephone:</strong> <br/> United Kingdom <br/> +44 (0) 1666 800042 <br/> 0800 011 9847 (Toll Free)');
                                 additional_message = localize('[_1]Telephone numbers in other locations[_2]', [`<a href='${urlFor('contact')}'>`, '</a>']);
                             }
+
                             message = `${message_text} <br/><br/> ${additional_message}`;
                         }
                         CommonFunctions.elementInnerHtml(confirmation_error, message);
