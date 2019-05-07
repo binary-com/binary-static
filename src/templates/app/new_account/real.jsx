@@ -29,7 +29,7 @@ const Real = () => (
     <div className='gr-12 static_full'>
         <h1>{it.L('Real Money Account Opening')}</h1>
         <div className='notice-msg invisible' id='ukgc_age_verification'>
-            <p>{it.L('Please complete the Real Account form to verify your age as required by the <strong>UK Gambling</strong> Commission (UKGC). Once verified, you will be able to trade on both real and virtual accounts.')}</p>
+            <p>{it.L('Please complete the Real Account form to verify your age as required by the [_1]UK Gambling[_2] Commission (UKGC). Once verified, you will be able to trade on both real and virtual accounts.', '<strong>', '</strong>')}</p>
         </div>
         <form id='frm_real' className='gr-padding-10'>
             <Fieldset legend={it.L('Details')}>
