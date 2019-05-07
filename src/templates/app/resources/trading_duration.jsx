@@ -34,7 +34,7 @@ const TradingDurations = () => (
                             { id: 'duration_assets_selector',                           className: 'tab-selector' },
                         ]}
                     />
-                    <div className='tab-content'>
+                    <div className='tab-content gr-padding-20'>
                         <TabContentContainer>
                             <TabContent id='tab_forex' className='selectedTab' />
                             <TabContent id='tab_indices' />
