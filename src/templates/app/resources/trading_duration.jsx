@@ -18,7 +18,7 @@ const TradingDurations = () => (
             <p id='errorMsg' className='invisible' />
             <div id='trading_durations_content'>
                 <TabContainer className='gr-padding-10 full-width' theme='light'>
-                    <div className='gr-row gr-padding-20'>
+                    <div className='gr-row gr-padding-20-m'>
                         <ArrowsMobile parent='duration_assets' direction='left' />
                         <strong id='tab_mobile_header' className='align-self-center gr-hide gr-show-m gr-8' />
                         <ArrowsMobile parent='duration_assets' direction='right' />
@@ -27,11 +27,11 @@ const TradingDurations = () => (
                         id='duration_assets'
                         className='gr-parent tab-selector-wrapper'
                         items={[
-                            { id: 'tab_forex',       text: it.L('Forex') },
-                            { id: 'tab_indices',     text: it.L('Indices') },
-                            { id: 'tab_commodities', text: it.L('Commodities') },
-                            { id: 'tab_volidx',      text: it.L('Volatility Indices') },
-                            { id: 'duration_assets_selector', className: 'tab-selector' },
+                            { id: 'tab_forex',       text: it.L('Forex'),               className: 'invisible' },
+                            { id: 'tab_indices',     text: it.L('Indices'),             className: 'invisible' },
+                            { id: 'tab_commodities', text: it.L('Commodities'),         className: 'invisible' },
+                            { id: 'tab_volidx',      text: it.L('Volatility Indices'),  className: 'invisible' },
+                            { id: 'duration_assets_selector',                           className: 'tab-selector' },
                         ]}
                     />
                     <div className='tab-content'>
@@ -44,8 +44,7 @@ const TradingDurations = () => (
                     </div>
                 </TabContainer>
 
-                <ul id='trading_duration_tabs' />
-                <div id='trading_durations_data' />
+                <div id='trading_durations_loading' />
             </div>
             <p className='notice-msg center-text invisible' id='empty-trading-durations'>
                 {it.L('Trading durations is unavailable in this country. If you have an active [_1] account, please [_2]log in[_3] for full access.', it.website_name, '<a id=\'empty-trading-durations-btn-login\' href=\'javascript:;\'>', '</a>')}

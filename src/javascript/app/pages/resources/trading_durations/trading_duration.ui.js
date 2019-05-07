@@ -5,9 +5,10 @@ const TabSelector      = require('../../../../_common/tab_selector');
 const showLoadingImage = require('../../../../_common/utility').showLoadingImage;
 
 const TradingDurationUI = (() => {
-    const onLoad = () => {
+    let $container;
 
-        const $container = $('#trading_durations_data');
+    const onLoad = () => {
+        $container = $('#trading_durations_loading');
         showLoadingImage($container[0]);
         TabSelector.onLoad();
         TabSelector.onChangeTab(onChangeTabSelector);
@@ -16,8 +17,10 @@ const TradingDurationUI = (() => {
     };
 
     const initializeData = (duration_data) => {
+        const $market_tab = $(`#tab_${duration_data.market.name}`);
         const market_header = `#tab_${duration_data.market.name}-content`;
         
+        $market_tab.setVisibility(1);
         $(market_header).append($('<div/>', { id: duration_data.submarket.name })
             .append($('<h2/>', { text: duration_data.submarket.display_name, id: 'trading_durations_subtitle' })));
         createEmptyTable(duration_data.submarket.name);
@@ -103,9 +106,10 @@ const TradingDurationUI = (() => {
             const active_tab = document.getElementsByClassName('a-active');
             const mobile_header_tab = document.getElementById('tab_mobile_header');
             mobile_header_tab.innerHTML = active_tab[0].innerHTML;
-            TabSelector.repositionSelector();
 
             trading_duration_data.forEach((duration_data) => initializeData(duration_data));
+            TabSelector.repositionSelector();
+            $container.setVisibility(0);
         });
     };
 
