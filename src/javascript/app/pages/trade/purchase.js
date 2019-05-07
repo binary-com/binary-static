@@ -138,10 +138,10 @@ const Purchase = (() => {
                             let message_text = '';
                             let additional_message = '';
                             if (!Client.hasAccountType('real') && /^VRTC/.test(State.getResponse('authorize.loginid'))) {
-                                message_text = localize('Please complete the [_1]Real Account[_2] form to verify your age as required by the UK GamblingCommission (UKGC).', [`<a href='${urlFor('new_account/realws')}'>`, '</a>']);
-                                additional_message = localize('The verification process will take two to three minutes. Once verified, you will be ableto trade on both real and virtual accounts.');
+                                message_text = localize('Please complete the [_1]Real Account form[_2] to verify your age as required by the <strong>UK Gambling</strong> Commission (UKGC).', [`<a href='${urlFor('new_account/realws')}'>`, '</a>']);
+                                additional_message = localize('Once verified, you will be able to trade on both real and virtual accounts.');
                             } else if (Client.hasAccountType('real') && /^MX|VRTC/.test(State.getResponse('authorize.loginid'))) {
-                                message = localize('Your age verification failed. Please contact customer service for assistance. <br/> <strong>Telephone:</strong> <br/> United Kingdom <br/> +44 (0) 1666 800042 <br/> 0800 011 9847 (Toll Free)');
+                                message_text = localize('Your age verification failed. Please contact customer service for assistance. <br/><br/> <strong>Telephone:</strong> <br/> United Kingdom <br/> +44 (0) 1666 800042 <br/> 0800 011 9847 (Toll Free)');
                                 additional_message = localize('[_1]Telephone numbers in other locations[_2]', [`<a href='${urlFor('contact')}'>`, '</a>']);
                             }
                             message = `${message_text} <br/><br/> ${additional_message}`;

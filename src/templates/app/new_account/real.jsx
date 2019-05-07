@@ -28,12 +28,11 @@ import {
 const Real = () => (
     <div className='gr-12 static_full'>
         <h1>{it.L('Real Money Account Opening')}</h1>
+        <div className='notice-msg invisible' id='ukgc_age_verification'>
+            <p>{it.L('Please complete the Real Account form to verify your age as required by the <strong>UK Gambling</strong> Commission (UKGC). Once verified, you will be able to trade on both real and virtual accounts.')}</p>
+        </div>
         <form id='frm_real' className='gr-padding-10'>
             <Fieldset legend={it.L('Details')}>
-                <div id='ukgc_age_verification'>
-                    <p className='invisible'>{it.L('Please complete the [_1]Real Account[_2] form to verify your age as required by the UK GamblingCommission (UKGC).', `<a href='${it.url_for('new_account/realws')}'>`, '</a>')}</p>
-                    <p>{it.L('The verification process will take two to three minutes. Once verified, you will be able to trade on both real and virtual accounts.')}</p>
-                </div>
                 <Salutation />
                 <FirstName />
                 <LastName />
