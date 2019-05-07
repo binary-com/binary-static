@@ -30,7 +30,7 @@ const TermsAndConditions = () => (
             <li>{it.L('A glossary of the capitalised terms can be found in paragraph S, entitled "Interpretation of terms".')}</li>
         </ol>
 
-        <h2 data-anchor='commencement-and-cancellation'>{it.L('B. Commencement and cancellation')}</h2>
+        <h2 data-anchor='commencement'>{it.L('B. Commencement')}</h2>
         <ol>
             <li>{it.L('This agreement will commence on the date that the Client receives their MT5 Real Account number and, for any new versions thereafter, on the date the new versions are published on the Company\'s website.')}</li>
         </ol>

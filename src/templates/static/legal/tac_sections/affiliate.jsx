@@ -76,7 +76,7 @@ const Affiliate = () => (
             />
 
             <ListNested
-                header={it.L('Spam - the Company does not condone Spam')}
+                header={it.L('Spam - The Company does not condone Spam')}
                 items={[
                     { text: it.L('Any form of Spam will result in the Affiliate\'s account being placed under review and all funds due being withheld pending an investigation into the Affiliate\'s account. The Affiliate needs to be aware that [_1] is liable to incur expenses in dealing with Spam generated mail and these same expenses will be deducted from the Affiliate\'s account. In this instance, the amount determined will be fair and deemed final and acceptable based on good faith, and such amount will be collectable by law and deemed to have been accepted by the Affiliate as fair and reasonable and as agreed to by registration as an affiliate of [_1].', it.website_name) },
                     { text: it.L('Should these expenses not be covered by funds in the Affiliate\'s account, the Company reserves the right to investigate other alternative means for obtaining payment. For example, should the Affiliate\'s account have generated purchasing accounts, the Company will hold payment of commission for these accounts until such a time as the account for damages has been cleared.') },
