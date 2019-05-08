@@ -107,17 +107,17 @@ const VirtualAccOpening = (() => {
         if (!response) return false;
         const error = response.error;
         if (!error) {
-            BinarySocket.wait('get_account_status').then(() => {
-                const new_account     = response.new_account_virtual;
-                const residence       = response.echo_req.residence;
-                const is_unwelcome_uk = State.getResponse('get_account_status.status').some(status => status === 'unwelcome') && (/gb/.test(residence));
-                Client.set('residence', residence, new_account.client_id);
-                LocalStore.remove('gclid');
-                State.set('skip_response', 'authorize');
-                BinarySocket.send({ authorize: new_account.oauth_token }, { forced: true }).then((response_auth) => {
-                    if (!response_auth.error) {
-                        LocalStore.remove('date_first_contact');
-                        LocalStore.remove('signup_device');
+            const new_account     = response.new_account_virtual;
+            const residence       = response.echo_req.residence;
+            Client.set('residence', residence, new_account.client_id);
+            LocalStore.remove('gclid');
+            State.set('skip_response', 'authorize');
+            BinarySocket.send({ authorize: new_account.oauth_token }, { forced: true }).then((response_auth) => {
+                if (!response_auth.error) {
+                    LocalStore.remove('date_first_contact');
+                    LocalStore.remove('signup_device');
+                    BinarySocket.send({ get_account_status: 1 }).then((account_status) => {
+                        const is_unwelcome_uk = account_status.get_account_status.status.some(status => status === 'unwelcome') && (/gb/.test(residence));
                         Client.processNewAccount({
                             email       : new_account.email,
                             loginid     : new_account.client_id,
@@ -125,8 +125,8 @@ const VirtualAccOpening = (() => {
                             is_virtual  : true,
                             redirect_url: is_unwelcome_uk ? urlFor('new_account/realws') : urlFor('new_account/welcome'),
                         });
-                    }
-                });
+                    });
+                }
             });
             return true;
         }
