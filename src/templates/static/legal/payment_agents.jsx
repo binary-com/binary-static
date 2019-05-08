@@ -177,8 +177,8 @@ const PaymentAgents = () => (
         </ol>
 
         <h2 data-anchor='choice-of-law-and-venue'>Q. {it.L('Choice of Law and Venue')}</h2>
-        <p>{it.L('The parties agree that this Agreement and the relationship between the parties is to be governed by and construed under the laws of Costa Rica. The parties further agree that all disputes shall be resolved exclusively in the courts of Costa Rica (the "Identified Courts"). Each party hereby: (i) submits to the jurisdiction of the Identified Courts for any proceeding; (ii) shall not commence any proceeding except in the Identified Courts; (iii) waives, and shall not plead or make, any objection to the venue of any proceeding in the Identified Courts; (iv) waives, and shall not plead or make, any claim that any proceeding brought in the Identified Courts has been brought in an improper or otherwise inconvenient forum; and (v) waives, and shall not plead or make, any claim that the Identified Courts lack personal jurisdiction over it.')}</p>
-        
+        <p>{it.L('The parties agree that this Agreement and the relationship between the parties is to be governed by and construed under the laws of St. Vincent and the Grenadines. The parties further agree that all disputes shall be resolved exclusively in the courts of St. Vincent and the Grenadines (the "Identified Courts"). Each party hereby: (i) submits to the jurisdiction of the Identified Courts for any proceeding; (ii) shall not commence any proceeding except in the Identified Courts; (iii) waives, and shall not plead or make, any objection to the venue of any proceeding in the Identified Courts; (iv) waives, and shall not plead or make, any claim that any proceeding brought in the Identified Courts has been brought in an improper or otherwise inconvenient forum; and (v) waives, and shall not plead or make, any claim that the Identified Courts lack personal jurisdiction over it.')}</p>
+
         <h2 data-anchor='termination'>R. {it.L('Termination')}</h2>
         <p>{it.L('It is agreed and understood that any of the Parties may terminate this Agreement by giving 7 days written notice to the other Party.')}</p>
     </div>

@@ -9,7 +9,7 @@ const Tac = () => (
         <h2 data-anchor='interpretation'>A. {it.L('Interpretation')}</h2>
         <p>
             {it.L('Depending on the jurisdiction to which a Client\'s account has been attached in accordance with the account opening procedures of the website and as detailed in the About Us section of the website and the type of products offered, the term "the Company" shall denote either')}&nbsp;
-            <span data-show='-eucountry'>{it.L('Binary (C.R.) S.A.,')}&nbsp;</span>
+            <span data-show='-eucountry'>{it.L('Binary (SVG) Ltd.,')}&nbsp;</span>
             <span>{it.L('Binary (IOM) Ltd.,')}&nbsp;</span>
             <span>{it.L('Binary (Europe) Ltd., or')}&nbsp;</span>
             <span>{it.L('Binary Investments (Europe) Ltd.')}</span>
@@ -38,7 +38,7 @@ const Tac = () => (
         <p>{it.L('The transactions performed on this site and the relationship between Clients and the Company are to be governed by and construed in accordance with the laws of the country of incorporation of the Company (the "Jurisdiction"). You agree that the Jurisdiction\'s courts will have sole jurisdiction to settle any disputes that may arise in relation thereto. For such purposes, you irrevocably submit to the jurisdiction of the courts of the Jurisdiction in relation to any such dispute and you agree that any claim you might have against the Company shall only be brought before the courts of the Jurisdiction. For further information on complaints and disputes, kindly refer to the Company\'s [_1]Complaints and Disputes[_2] section.', `<a href=${it.url_for('terms-and-conditions#complaints')}>`, '</a>')}</p>
         <p>{it.L('For Binary Investments (Europe) Ltd and Binary (Europe) Ltd, the applicable Jurisdiction shall be Malta.')}</p>
         <p>{it.L('For Binary (IOM) Ltd, the applicable Jurisdiction shall be the Isle of Man.')}</p>
-        <p data-show='-eucountry'>{it.L('For Binary (C.R.) S.A., the applicable Jurisdiction shall be Costa Rica.')}</p>
+        <p data-show='-eucountry'>{it.L('For Binary (SVG) Ltd., the applicable Jurisdiction shall be St. Vincent and the Grenadines.')}</p>
 
         <h2 data-anchor='contracts'>E. {it.L('Contracts')}</h2>
         <p>{it.L('The Company does not provide a market amongst or between Clients for investments, securities, derivatives or speculations. Each financial contract purchased by a Client via this site is an individual agreement between that Client and the Company and is not a security, nor is it transferable, negotiable or assignable to or with any third party.')}</p>
@@ -123,7 +123,7 @@ const Tac = () => (
                 <li>{it.L('you have read this Legal Terms and Conditions page in full and understood that you will be buying and selling financial contracts subject to these terms and conditions;')}</li>
                 <li>{it.L('you have read our privacy statement and hereby give us consent to process your personal information as outlined there;')}</li>
                 <li>{it.L('you are over 18 years of age, unless you are an Estonian resident whereby you would have to be over 21;')}</li>
-                <li>{it.L('you are not resident in a restricted country such as Canada, Costa Rica, Hong Kong, Israel, Jersey, Malaysia, Malta, Paraguay, United Arab Emirates, USA or any other restricted country which has been identified by the FATF as having strategic deficiencies;')}</li>
+                <li>{it.L('you are not resident in a restricted country such as Canada, St. Vincent and the Grenadines, Hong Kong, Israel, Jersey, Malaysia, Malta, Paraguay, United Arab Emirates, USA or any other restricted country which has been identified by the FATF as having strategic deficiencies;')}</li>
                 <li>{it.L('you have sufficient experience and knowledge in matters of financial trading to be capable of evaluating the merits and risks of acquiring financial contracts via this site and have done so without relying on any information contained in this site.')}</li>
             </ul>
         </p>
