@@ -38,7 +38,7 @@ class OpenPositions extends React.Component {
         return (
             <React.Fragment>
                 <ReportsMeta
-                    i18n_heading={localize('Open Positions')}
+                    i18n_heading={localize('Open positions')}
                     i18n_message={localize('View all active trades on your account that can still incur a profit or a loss.')}
                 />
                 {(is_loading && active_positions.length === 0) || is_empty ?

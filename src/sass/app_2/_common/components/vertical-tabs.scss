@@ -44,7 +44,7 @@ $MIN_HEIGHT: calc(100vh - #{$HEADER_HEIGHT + $FOOTER_HEIGHT} - #{$BOTTOM_SPACING
         }
     }
     &__header-title {
-        @include typeface(--paragraph-center-bold-black);
+        @include typeface(--paragraph-center-bold-black, none);
         @include toEm(line-height, 20px);
         @include themify($themes) {
             color: themed('text_primary_color');
@@ -57,7 +57,7 @@ $MIN_HEIGHT: calc(100vh - #{$HEADER_HEIGHT + $FOOTER_HEIGHT} - #{$BOTTOM_SPACING
         text-decoration: none;
     }
     &__header {
-        @include typeface(--paragraph-center-bold-black);
+        @include typeface(--paragraph-center-bold-black, none);
         @include toEm(line-height, 20px);
         @include themify($themes) {
             color: themed('text_primary_color');
@@ -76,7 +76,7 @@ $MIN_HEIGHT: calc(100vh - #{$HEADER_HEIGHT + $FOOTER_HEIGHT} - #{$BOTTOM_SPACING
             }
         }
         &--active {
-            @include typeface(--paragraph-left-bold-active);
+            @include typeface(--paragraph-left-bold-active, none);
             @include themify($themes) {
                 background-color: themed('tab_active_background_color');
                 color: themed('tab_active_color');

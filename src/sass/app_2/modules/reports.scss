@@ -14,7 +14,7 @@ $side-padding: 1.2em;
 
         &-description {
             &--heading {
-                @include typeface(--title-left-bold-black, capitalize);
+                @include typeface(--title-left-bold-black, none);
                 @include themify($themes) {
                     color: themed('text_primary_color');
                 }
