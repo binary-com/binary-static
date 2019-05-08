@@ -16,7 +16,7 @@ describe('ContractTypeWidget', () => {
             { value:'touch', text:'Touch/No Touch' }
         ]
     };
-    const navigationList = [
+    const itemList = [
         { value:'rise_fall', text:'Rise/Fall' },
         { value:'high_low', text:'Higher/Lower' },
         { value:'touch', text:'Touch/No Touch' }
@@ -93,22 +93,22 @@ describe('ContractTypeWidget', () => {
         const wrapper = shallow(<ContractTypeWidget list={list} value='rise_fall' />);
         wrapper.setState({ item: { value:'rise_fall', text:'Rise/Fall' } });
         const instance = wrapper.instance();
-        instance.handleNextClick(navigationList);
+        instance.handleNextClick(itemList);
         expect(wrapper.state('item')).to.deep.eql({ value:'high_low', text:'Higher/Lower' });
-        instance.handleNextClick(navigationList);
+        instance.handleNextClick(itemList);
         expect(wrapper.state('item')).to.deep.eql({ value:'touch', text:'Touch/No Touch' });
-        instance.handleNextClick(navigationList);
+        instance.handleNextClick(itemList);
         expect(wrapper.state('item')).to.deep.eql({ value:'rise_fall', text:'Rise/Fall' });
     });
     it('should set previous item in state on handlePrevClick', () => {
         const wrapper = shallow(<ContractTypeWidget list={list} value='rise_fall' />);
         wrapper.setState({ item: { value:'rise_fall', text:'Rise/Fall' } });
         const instance = wrapper.instance();
-        instance.handlePrevClick(navigationList);
+        instance.handlePrevClick(itemList);
         expect(wrapper.state('item')).to.deep.eql({ value:'touch', text:'Touch/No Touch' });
-        instance.handlePrevClick(navigationList);
+        instance.handlePrevClick(itemList);
         expect(wrapper.state('item')).to.deep.eql({ value:'high_low', text:'Higher/Lower' });
-        instance.handlePrevClick(navigationList);
+        instance.handlePrevClick(itemList);
         expect(wrapper.state('item')).to.deep.eql({ value:'rise_fall', text:'Rise/Fall' });
     });
     it('should return the name of item getDisplayText() which it\'s value is passed as value in props', () => {
@@ -119,6 +119,6 @@ describe('ContractTypeWidget', () => {
     it('should return the correct classes in getStyles() when is_dialog_open is true', () => {
         const wrapper = shallow(<ContractTypeWidget list={list} value='rise_fall' />);
         const instance = wrapper.instance();
-        expect(instance.getNavigationList()).to.deep.eql(navigationList);
+        expect(instance.getItemList()).to.deep.eql(itemList);
     });
 });
