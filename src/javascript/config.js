@@ -45,7 +45,9 @@ const getAppId = () => {
         app_id = 1159;
     } else {
         window.localStorage.removeItem('config.default_app_id');
-        app_id = is_new_app ? 15265 : (domain_app_ids[getCurrentBinaryDomain()] || 1);
+        const current_domain = getCurrentBinaryDomain();
+        // TODO: remove is_new_app && deriv.com check when repos are split
+        app_id = (is_new_app && current_domain !== 'deriv.com') ? 15265 : (domain_app_ids[current_domain] || 1);
     }
     return app_id;
 };
