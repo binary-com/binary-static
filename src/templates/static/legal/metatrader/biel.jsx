@@ -39,8 +39,8 @@ const BIEL = () => (
                 <ol>
                     <li>{it.L('Open a [_1] account through BIEL\'s website [_2]', it.website_name, `<a href=${it.url_for('new-account')} target="_blank">www.binary.com</a>`)}</li>
                     <li>
-                        <p>{it.L('a) Access the MT5 trading platform through the direct link [_1] from BIEL\'s web interface, or', `<a href=${it.url_for('platforms')} target="_blank">https://www.binary.com/en/platforms.html</a>`)}</p>
-                        <p>{it.L('b) Download and install the MT5 trading platform through the link [_1]', `<a href=${it.url_for('user/metatrader')} target="_blank">https://www.binary.com/en/user/metatrader.html</a>`)}</p>
+                        <p>{it.L('a. Access the MT5 trading platform through the direct link [_1] from BIEL\'s web interface, or', `<a href=${it.url_for('platforms')} target="_blank">https://www.binary.com/en/platforms.html</a>`)}</p>
+                        <p>{it.L('b. Download and install the MT5 trading platform through the link [_1]', `<a href=${it.url_for('user/metatrader')} target="_blank">https://www.binary.com/en/user/metatrader.html</a>`)}</p>
                     </li>
                 </ol>
             </li>
