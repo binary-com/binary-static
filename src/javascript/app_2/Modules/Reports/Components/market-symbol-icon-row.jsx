@@ -4,7 +4,7 @@ import { UnderlyingIcon } from 'App/Components/Elements/underlying-icon.jsx';
 import { IconTradeType }  from 'Assets/Trading/Types';
 
 const getMarketInformation = (payload) => {
-    const pattern = new RegExp('(^[A-Z]+)_((R_\\d{2,3})|[A-Z]+)'); // Used to get market name from shortcode
+    const pattern = new RegExp('^([A-Z]+)_((OTC_[A-Z0-9]+)|R_[\\d]{2,3}|[A-Z]+)_'); // Used to get market name from shortcode
     const extracted = pattern.exec(payload.shortcode);
     if (extracted !== null) {
         return {
