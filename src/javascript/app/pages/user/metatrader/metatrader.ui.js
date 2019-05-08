@@ -473,10 +473,11 @@ const MetaTraderUI = (() => {
 
         let count = 0;
         Object.keys(accounts_info)
-            .filter(acc_type => !accounts_info[acc_type].is_demo && accounts_info[acc_type].mt5_account_type !== 'mamm') // toEnableMAM: remove second check
+            .filter(acc_type => !accounts_info[acc_type].is_demo)
             .forEach((acc_type) => {
                 // toEnableVanuatuAdvanced: remove vanuatu_advanced from regex below
-                if (/labuan_standard|vanuatu_advanced|iom|maltainvest_advanced/.test(acc_type)) {
+                // toEnableMAMAdvanced: remove mamm_advanced from regex below
+                if (/labuan_standard|vanuatu_advanced|iom|maltainvest_advanced|mamm_advanced/.test(acc_type)) {
                     return;
                 }
                 count++;
