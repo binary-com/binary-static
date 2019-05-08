@@ -23,11 +23,11 @@ const OrderExecution = () => (
 
         <h2 data-anchor='client-instructions'>{it.L('D. Client instructions')}</h2>
         <p>{it.L('When the Company accepts an order from the client to open or close a transaction, or any other specific instructions in relation to the client\'s order, the Company will endeavour to follow the client\'s instructions as far as reasonably possible, acting in accordance with the Company\'s duty of best execution in accordance with the client\'s instructions. These specific instructions include, but are not limited to, the following:')}</p>
-        <ul>
-            <li>a)&nbsp;{it.L('The venue at which the client\'s order will be executed')}</li>
-            <li>b)&nbsp;{it.L('The price at which the client\'s order will be executed')}</li>
-            <li>c)&nbsp;{it.L('The time at which the client\'s order will be executed')}</li>
-            <li>d)&nbsp;{it.L('The timeframe or duration of the contract as defined by the client\'s order execution')}</li>
+        <ul className='bullet'>
+            <li>{it.L('The venue at which the client\'s order will be executed')}</li>
+            <li>{it.L('The price at which the client\'s order will be executed')}</li>
+            <li>{it.L('The time at which the client\'s order will be executed')}</li>
+            <li>{it.L('The timeframe or duration of the contract as defined by the client\'s order execution')}</li>
         </ul>
         <p>{it.L('Where a particular venue has been specified in the client\'s instructions with respect to the execution of an order, the Company will not be responsible for the venue selection.')}</p>
         <p>{it.L('Where a particular time or timeframe has been specified in a client\'s instructions with respect to the execution of an order, regardless of the price available, the Company will endeavour to execute the order at the specified time or over the specified timeframe in the best possible manner after taking all sufficient steps. However, the Company will not be responsible for any consequences related to pricing that are resulted from the time or timeframe of the execution.')}</p>

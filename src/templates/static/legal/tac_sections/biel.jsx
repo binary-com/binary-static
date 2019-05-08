@@ -46,7 +46,7 @@ const Biel = () => (
                 </p>
             </li>
             <li>
-                <h4>{it.L('Eligible counterparty')}</h4>
+                <h4>{it.L('Eligible counterparties')}</h4>
                 <p>{it.L('When a client is classified as an Eligible Counterparty, BIEL shall not provide them with')}
                     <ol>
                         <li>{it.L('Best execution requirements')}</li>
