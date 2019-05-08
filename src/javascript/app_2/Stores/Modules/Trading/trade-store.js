@@ -201,31 +201,32 @@ export default class TradeStore extends BaseStore {
             }));
         }
 
-        // Change default symbol based on client's favorites and symbol exchange_is_open status
+        // Change default symbol based on client's favorite's symbols, current symbol and exchange_is_open status
         const current_active_symbol = active_symbols.active_symbols.find(s => s.symbol === this.symbol);
         const client_favorite_store = JSON.parse(LocalStore.get('cq-favorites'))['chartTitle&Comparison'];
+        const updateDefaultSymbol = (symbol) => {
+            URLHelper.setQueryParam({ 'symbol': symbol });
+            query_string_values = this.updateQueryString();
+        };
 
-        // Have not favorites
         if (client_favorite_store.length === 0) {
             if (current_active_symbol.exchange_is_open !== 1) {
                 const first_open_store = active_symbols.active_symbols.find(s => s.exchange_is_open === 1);
                 if (first_open_store !== undefined) {
-                    URLHelper.setQueryParam({ 'symbol': first_open_store.symbol });
-                    query_string_values = this.updateQueryString();
+                    updateDefaultSymbol(pickDefaultSymbol(first_open_store.symbol));
+                } else {
+                    updateDefaultSymbol(pickDefaultSymbol(active_symbols.active_symbols));
                 }
             }
         } else {
-            // Have favorites
-            const clinet_first_open_symbol = active_symbols.active_symbols.find(symbol => client_favorite_store
+            const client_first_open_symbol = active_symbols.active_symbols.find(symbol => client_favorite_store
                 .find(favorite_symbol => symbol.symbol === favorite_symbol && symbol.exchange_is_open === 1));
-            if (clinet_first_open_symbol !== undefined) {
-                URLHelper.setQueryParam({ 'symbol': clinet_first_open_symbol.symbol });
-                query_string_values = this.updateQueryString();
+            if (client_first_open_symbol !== undefined) {
+                updateDefaultSymbol(client_first_open_symbol.symbol);
             } else {
                 const first_open_store = active_symbols.active_symbols.find(s => s.exchange_is_open === 1);
                 if (first_open_store !== undefined) {
-                    URLHelper.setQueryParam({ 'symbol': first_open_store.symbol });
-                    query_string_values = this.updateQueryString();
+                    updateDefaultSymbol(first_open_store.symbol);
                 }
                 
             }
