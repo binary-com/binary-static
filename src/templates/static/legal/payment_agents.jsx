@@ -176,7 +176,7 @@ const PaymentAgents = () => (
             <li>{it.L('It is noted that immediately upon the termination of the relationship between the Company and the Agent, the Agent shall return to the Company any documents pertaining to the Company\'s business whatsoever which are in the Agent\'s possession.')}</li>
         </ol>
 
-        <h2 data-anchor='termination'>R. {it.L('Termination')}</h2>
+        <h2 data-anchor='termination'>Q. {it.L('Termination')}</h2>
         <p>{it.L('It is agreed and understood that any of the Parties may terminate this agreement by giving seven days written notice to the other Party.')}</p>
     </div>
 );
