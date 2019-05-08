@@ -126,7 +126,7 @@ const Highchart = (() => {
 
         HighchartUI.updateLabels(chart, getHighchartLabelParams());
 
-        const display_decimals = (history ? history.prices[0] : candles[0].open).split('.')[1].length || 3;
+        const display_decimals = (history ? history.prices[0] : candles[0].open).toString().split('.')[1].length || 3;
 
         chart_options = {
             data,
