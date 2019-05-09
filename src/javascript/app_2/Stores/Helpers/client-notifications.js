@@ -146,7 +146,9 @@ const client_notifications = {
     },
 };
 
-const hasMissingRequiredField = (State, client) => {
+const hasMissingRequiredField = (response, State, client) => {
+    if (!response.get_settings) return false;
+
     const { landing_company_shortcode } = client;
     const is_svg = (landing_company_shortcode === 'svg' || landing_company_shortcode === 'costarica');
 
@@ -157,7 +159,7 @@ const hasMissingRequiredField = (State, client) => {
         required_fields = getRequiredFields();
     }
 
-    const get_settings = State.getResponse('get_settings');
+    const get_settings = response.get_settings;
     return required_fields.some(field => !get_settings[field]);
 
     function getSVGRequiredFields() {
@@ -187,43 +189,42 @@ const hasMissingRequiredField = (State, client) => {
 };
 
 const checkAccountStatus = (response, client, UIStore) => {
-    if (response.get_account_status) {
-        const { prompt_client_to_authenticate, status } = response.get_account_status;
+    if (!response.get_account_status) return;
 
-        if (prompt_client_to_authenticate) {
-            UIStore.addNotification(client_notifications.authenticate);
-        }
-        if (status) {
-            const {
-                document_under_review,
-                cashier_locked,
-                withdrawal_locked,
-                mt5_withdrawal_locked,
-                document_needs_action,
-                unwelcome,
-                ukrts_max_turnover_limit_not_set,
-                professional,
-            } = getStatusValidations(status);
-            const is_mf_retail = client.landing_company_shortcode === 'maltainvest' && !professional;
+    const { prompt_client_to_authenticate, status } = response.get_account_status;
 
-            if (document_under_review) UIStore.addNotification(client_notifications.document_review);
-            if (cashier_locked)        UIStore.addNotification(client_notifications.cashier_locked);
-            if (withdrawal_locked)     UIStore.addNotification(client_notifications.withdrawal_locked);
-            if (mt5_withdrawal_locked) UIStore.addNotification(client_notifications.mt5_withdrawal_locked);
-            if (document_needs_action) UIStore.addNotification(client_notifications.document_needs_action);
-            if (unwelcome)             UIStore.addNotification(client_notifications.unwelcome);
-            if (is_mf_retail)          UIStore.addNotification(client_notifications.mf_retail);
-            if (ukrts_max_turnover_limit_not_set) {
-                UIStore.addNotification(client_notifications.financial_limit);
-            }
-            if (getRiskAssessment()) UIStore.addNotification(client_notifications.risk);
-            if (shouldCompleteTax()) UIStore.addNotification(client_notifications.tax);
-        }
+    const {
+        document_under_review,
+        cashier_locked,
+        withdrawal_locked,
+        mt5_withdrawal_locked,
+        document_needs_action,
+        unwelcome,
+        ukrts_max_turnover_limit_not_set,
+        professional,
+    } = getStatusValidations(status);
+    const is_mf_retail = client.landing_company_shortcode === 'maltainvest' && !professional;
+
+    if (document_under_review) UIStore.addNotification(client_notifications.document_review);
+    if (cashier_locked)        UIStore.addNotification(client_notifications.cashier_locked);
+    if (withdrawal_locked)     UIStore.addNotification(client_notifications.withdrawal_locked);
+    if (mt5_withdrawal_locked) UIStore.addNotification(client_notifications.mt5_withdrawal_locked);
+    if (document_needs_action) UIStore.addNotification(client_notifications.document_needs_action);
+    if (unwelcome)             UIStore.addNotification(client_notifications.unwelcome);
+    if (is_mf_retail)          UIStore.addNotification(client_notifications.mf_retail);
+    if (ukrts_max_turnover_limit_not_set) {
+        UIStore.addNotification(client_notifications.financial_limit);
+    }
+    if (getRiskAssessment()) UIStore.addNotification(client_notifications.risk);
+    if (shouldCompleteTax()) UIStore.addNotification(client_notifications.tax);
+
+    if (prompt_client_to_authenticate && !(document_under_review || document_needs_action)) {
+        UIStore.addNotification(client_notifications.authenticate);
     }
 
     function getStatusValidations(status_arr) {
-        return status_arr.reduce((validations, status) => {
-            validations[status] = true;
+        return status_arr.reduce((validations, account_status) => {
+            validations[account_status] = true;
             return validations;
         }, {});
     }
@@ -231,13 +232,15 @@ const checkAccountStatus = (response, client, UIStore) => {
 
 export const handleClientNotifications = (State, client, UIStore) => {
     const { currency, excluded_until } = client;
-
     if (!currency)         UIStore.addNotification(client_notifications.currency);
     if (excluded_until)    UIStore.addNotification(client_notifications.self_exclusion(excluded_until));
     if (shouldAcceptTnc()) UIStore.addNotification(client_notifications.tnc);
-    if (hasMissingRequiredField(State, client)) {
-        UIStore.addNotification(client_notifications.required_fields);
-    }
 
     WS.getAccountStatus().then((response) => checkAccountStatus(response, client, UIStore));
+
+    WS.sendRequest({ get_settings: 1 }, { forced: true }).then((response) => {
+        if (hasMissingRequiredField(response, State, client)) {
+            UIStore.addNotification(client_notifications.required_fields);
+        }
+    });
 };
