@@ -147,7 +147,7 @@ const gridLP = () => (
                             <div className='line-left' />
                             <div className='line-right' />
                             <div className='step icon-step-4' />
-                            <p>{('Approve the installation by clicking on Install.')}</p>
+                            <p>{('Approve the installation by clicking on')} <a className='download'>{('Install.')}</a></p>
                         </div>
                         <div className='gr-1on5 gr-12-t gr-12-m gr-12-p col-step'>
                             <div className='line-left' />
