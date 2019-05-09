@@ -298,21 +298,21 @@ const Regulation = () => {
                 </Box>
             </div>
 
-            <Box header={it.L('Binary (C.R.) S.A.')} >
-                <p>{it.L('Binary (C.R.) S.A., registered in Costa Rica. Clients from the rest of the world (excluding certain countries such as the USA, Canada, Costa Rica, Hong Kong) will have their account opened with Binary (C.R.) S.A.')}</p>
-                <p>{it.L('[_1] is not available in Costa Rica and is not regulated or supervised by any regulatory body in the Costa Rican financial system.', it.website_name)}</p>
+            <Box header={it.L('Binary (SVG) Ltd')} >
+                <p>{it.L('Binary (SVG) Ltd is registered in St. Vincent and the Grenadines. Clients from the rest of the world (excluding certain countries such as the USA, Canada, and Hong Kong) will have their account opened with Binary (SVG) Ltd.')}</p>
+                <p>{it.L('[_1] Binary.com is not available in St. Vincent and the Grenadines and is not regulated or supervised by any regulatory body in the financial system of St. Vincent and the Grenadines.', it.website_name)}</p>
             </Box>
 
             <Box header={it.L('Binary (V) Ltd')} >
                 <p>{it.L('Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, Republic of Vanuatu. Licensed and regulated by the Vanuatu Financial Services Commission - [_1]view licence[_2].', '<a href="https://www.vfsc.vu/wp-content/uploads/2015/12/List-of-Licensees-under-Dealers-in-Securities-Licensing-Act-CAP-70-18.11.2016.pdf" target="_blank">', '</a>')}</p>
-                <p>{it.L('Clients from the rest of the world (excluding certain countries such as the USA, Canada, Costa Rica, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Binary (V) Ltd. [_1] is not available in the Republic of Vanuatu.', it.website_name)}</p>
+                <p>{it.L('Clients from the rest of the world (excluding certain countries such as the USA, Canada, St. Vincent and the Grenadines, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Binary (V) Ltd. [_1] is not available in the Republic of Vanuatu.', it.website_name)}</p>
                 <RegulatorText />
                 <RegulatorImage href='https://www.vfsc.vu/' image='images/pages/regulation/vanuatu-logo.png' />
             </Box>
 
             <Box header={it.L('Binary (BVI) Ltd')} >
                 <p>{it.L('Binary (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, British Virgin Islands. Licensed and regulated by the British Virgin Islands Financial Services Commission - [_1]view licence[_2].', `<a href=${it.url_for('download/regulation/BVI_license.pdf')} target="_blank">`, '</a>')}</p>
-                <p>{it.L('Clients from the rest of the world (excluding certain countries such as the USA, Canada, Costa Rica, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Binary (BVI) Ltd. [_1] is not available in the British Virgin Islands.', it.website_name)}</p>
+                <p>{it.L('Clients from the rest of the world (excluding certain countries such as the USA, Canada, St. Vincent and the Grenadines, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Binary (BVI) Ltd. [_1] is not available in the British Virgin Islands.', it.website_name)}</p>
                 <RegulatorText />
                 <RegulatorImage href='http://www.bvifsc.vg/' image='images/pages/regulation/bvi.png' />
             </Box>

@@ -16,7 +16,7 @@ const TermsAndConditions = () => (
             <li>
                 {it.L('Depending on the jurisdiction to which a Client\'s account has been attached in accordance with the account opening procedures of the website, the terms \'the Company\' and \'[_1]\' shall denote either', it.website_name)}&nbsp;
                 <span data-show='-eucountry'>{it.L('Binary (V) Ltd,')}&nbsp;</span>
-                <span data-show='-eucountry'>{it.L('Binary (C.R.) S.A.,')}&nbsp;</span>
+                <span data-show='-eucountry'>{it.L('Binary (SVG) Ltd,')}&nbsp;</span>
                 <span data-show='-eucountry'>{it.L('Binary (BVI) Ltd,')}&nbsp;</span>
                 <span data-show='-eucountry'>{it.L('Binary (FX) Ltd,')}&nbsp;</span>
                 <span>{it.L('Binary (Europe) Ltd, or')}&nbsp;</span>
@@ -56,7 +56,7 @@ const TermsAndConditions = () => (
                             <li>{it.L('The Client has read this Legal terms and conditions page in full and has understood that they will be buying and selling financial contracts subject to these terms and conditions.')}</li>
                             <li>{it.L('The Client has read the Company\'s privacy statement and hereby gives the Company consent to process the Client\'s personal information as outlined there.')}</li>
                             <li>{it.L('The Client is over 18 years of age, unless they are an Estonian resident whereby they will have to be over 21.')}</li>
-                            <li>{it.L('The Client is not residing in a restricted country such as Costa Rica, Hong Kong, Israel, Jersey, Malaysia, Malta, Paraguay, United Arab Emirates, the USA, Canada, or any other restricted country which has been identified by the FATF as having strategic deficiencies.')}</li>
+                            <li>{it.L('The Client is not residing in a restricted country such as St. Vincent and the Grenadines, Hong Kong, Israel, Jersey, Malaysia, Malta, Paraguay, United Arab Emirates, the USA, Canada, or any other restricted country which has been identified by the FATF as having strategic deficiencies.')}</li>
                             <li>{it.L('The Client has sufficient experience and knowledge about contracts for difference to be capable of evaluating the merits and risks of acquiring contracts via this site and have done so without relying on any information contained in this site.')}</li>
                         </ol>
                     </li>
