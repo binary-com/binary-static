@@ -9,14 +9,11 @@ import TradeTypeInfoDialog   from '../TradeTypeInfo/trade-type-info-dialog.jsx';
 import TradeTypeInfoItem     from '../TradeTypeInfo/trade-type-info-item.jsx';
 
 class ContractTypeWidget extends React.PureComponent {
-    constructor(props) {
-        super(props);
-        this.state = {
-            is_dialog_open     : false,
-            is_info_dialog_open: false,
-            item               : {},
-        };
-    }
+    state = {
+        is_dialog_open     : false,
+        is_info_dialog_open: false,
+        item               : {},
+    };
 
     componentDidMount() {
         document.addEventListener('mousedown', this.handleClickOutside);
@@ -50,27 +47,27 @@ class ContractTypeWidget extends React.PureComponent {
         this.setState({ item });
     };
 
-    handleNextClick = (navigationList) => {
-        const navigationLength = navigationList.length;
+    handleNextClick = (itemList) => {
+        const navigationLength = itemList.length;
         const item = this.state.item;
-        const currentIndex = navigationList.findIndex((list_item) => list_item.value === item.value);
+        const currentIndex = itemList.findIndex((list_item) => list_item.value === item.value);
         const nextIndex = currentIndex + 1;
         if (nextIndex < navigationLength) {
-            this.handleNavigationClick(navigationList[nextIndex]);
+            this.handleNavigationClick(itemList[nextIndex]);
         } else {
-            this.handleNavigationClick(navigationList[0]);
+            this.handleNavigationClick(itemList[0]);
         }
     };
 
-    handlePrevClick = (navigationList) => {
-        const navigationLength = navigationList.length;
+    handlePrevClick = (itemList) => {
+        const navigationLength = itemList.length;
         const item = this.state.item;
-        const currentIndex = navigationList.findIndex((list_item) => list_item.value === item.value);
+        const currentIndex = itemList.findIndex((list_item) => list_item.value === item.value);
         const prevIndex = currentIndex - 1;
         if (prevIndex > -1) {
-            this.handleNavigationClick(navigationList[prevIndex]);
+            this.handleNavigationClick(itemList[prevIndex]);
         } else {
-            this.handleNavigationClick(navigationList[navigationLength - 1]);
+            this.handleNavigationClick(itemList[navigationLength - 1]);
         }
     };
 
@@ -82,7 +79,10 @@ class ContractTypeWidget extends React.PureComponent {
         if (this.wrapper_ref && !this.wrapper_ref.contains(event.target) && this.state.is_dialog_open) {
             this.setState({ is_dialog_open: false });
         } else if (this.wrapper_ref && !this.wrapper_ref.contains(event.target) && this.state.is_info_dialog_open) {
-            this.setState({ is_info_dialog_open: false, is_dialog_open: false });
+            this.setState({
+                is_dialog_open     : false,
+                is_info_dialog_open: false,
+            });
         }
     };
 
@@ -117,66 +117,78 @@ class ContractTypeWidget extends React.PureComponent {
         return text;
     };
 
-    getNavigationList = () => {
-        const navigationList = [];
+    getItemIndex = (curr_item, itemList) => itemList.findIndex((list_item) => list_item.value === curr_item.value);
+
+    getItemList = () => {
+        const itemList = [];
         const list = this.props.list;
         /* eslint-disable */
         Object.keys(list).map(key => {
             !['In/Out', 'Asians'].includes(key) && list[key].map(contract => {
-                (contract.value !== 'rise_fall_equal') && navigationList.push(contract);
+                (contract.value !== 'rise_fall_equal') && itemList.push(contract);
             });
         });
         /* eslint-disable */
-        return navigationList;
+        return itemList;
     };
 
     render() {
+        const { is_dark_theme, is_equal, is_mobile, list, name, value } = this.props;
+        const { is_dialog_open, is_info_dialog_open, item }             = this.state;
         return (
             <div
-                ref={this.setWrapperRef}
                 className='contract-type-widget dropdown--left'
+                ref={this.setWrapperRef}
                 tabIndex='0'
             >
                 <div
                     className={classNames('contract-type-widget__display', {
-                        'contract-type-widget__display--clicked': this.state.is_dialog_open,
+                        'contract-type-widget__display--clicked': (is_dialog_open || is_info_dialog_open),
                     })}
                     onClick={this.onWidgetClick}
                 >
-                    <IconTradeCategory category={this.props.value} className='contract-type-widget__icon-wrapper' />
-                    <span name={this.props.name} value={this.props.value}>
+                    <IconTradeCategory
+                        category={value}
+                        className='contract-type-widget__icon-wrapper'
+                    />
+                    <span name={name} value={value}>
                         {this.getDisplayText()}
                     </span>
-                    <IconArrow className='contract-type-widget__select-arrow contract-type-widget__select-arrow--left' />
+                    <IconArrow className={classNames(
+                          'contract-type-widget__select-arrow',
+                          'contract-type-widget__select-arrow--left')}
+                    />
                 </div>
 
                 <ContractTypeDialog
-                    is_mobile={this.props.is_mobile}
-                    open={this.state.is_dialog_open}
+                    is_mobile={is_mobile}
                     onClose={this.handleVisibility}
+                    open={is_dialog_open}
                 >
                     <ContractTypeList
-                        list={this.props.list}
-                        name={this.props.name}
-                        value={this.props.value}
-                        handleSelect={this.handleSelect}
                         handleInfoClick={this.handleInfoClick}
-                        is_equal={this.props.is_equal}
+                        handleSelect={this.handleSelect}
+                        is_equal={is_equal}
+                        list={list}
+                        name={name}
+                        value={value}
                     />
                 </ContractTypeDialog>
                 <TradeTypeInfoDialog
-                    is_mobile={this.props.is_mobile}
+                    is_mobile={is_mobile}
                     onClose={this.handleInfoClick}
-                    open={this.state.is_info_dialog_open}
-                    title={this.state.item.text}
+                    open={is_info_dialog_open}
+                    title={item.text}
                 >
                     <TradeTypeInfoItem
                         handleNavigationClick={this.handleNavigationClick}
                         handleNextClick={this.handleNextClick}
                         handlePrevClick={this.handlePrevClick}
-                        is_mobile={this.props.is_mobile}
-                        item={this.state.item}
-                        navigationList={this.getNavigationList()}
+                        is_dark_theme={is_dark_theme}
+                        is_mobile={is_mobile}
+                        item={item}
+                        item_index={this.getItemIndex(item, this.getItemList())}
+                        itemList={this.getItemList()}
                         onBackButtonClick={this.onBackButtonClick}
                         onSubmitButtonClick={this.onSubmitButtonClick}
                     />
@@ -187,11 +199,12 @@ class ContractTypeWidget extends React.PureComponent {
 }
 
 ContractTypeWidget.propTypes = {
-    is_mobile: PropTypes.bool,
+    is_dark_theme: PropTypes.bool,
     is_equal           : PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
     ]),
+    is_mobile: PropTypes.bool,
     list     : PropTypes.object,
     name     : PropTypes.string,
     onChange : PropTypes.func,
