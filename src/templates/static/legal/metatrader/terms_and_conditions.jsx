@@ -27,7 +27,7 @@ const TermsAndConditions = () => (
             <li>{it.L('All products traded on Margin carry a high degree of risk and can result in losses that exceed the Client\'s initial deposit. The Margin trading services described in this agreement is not suitable for everyone. The Client acknowledges that the Margin trading services described in this agreement are designed for the Clients who are knowledgeable and experienced in the types of Transactions described in this agreement, and the Client fully understands the associated risks before entering into this agreement with the Company.')}</li>
             <li>{it.L('The Client should not sign up to receive the Margin trading services described in this agreement without understanding their nature and the associated risks.')}</li>
             <li>{it.L('This agreement is supplied to the Client in English. In the event that there is a difference between the English version and any translated versions of this document, the English version shall prevail.')}</li>
-            <li>{it.L('A glossary of the capitalised terms can be found in paragraph S, entitled "Interpretation of terms".')}</li>
+            <li>{it.L('A glossary of the capitalised terms can be found in paragraph R, entitled "Interpretation of terms".')}</li>
         </ol>
 
         <h2 data-anchor='commencement'>{it.L('B. Commencement')}</h2>
