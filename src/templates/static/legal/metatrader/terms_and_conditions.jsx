@@ -16,7 +16,7 @@ const TermsAndConditions = () => (
             <li>
                 {it.L('Depending on the jurisdiction to which a Client\'s account has been attached in accordance with the account opening procedures of the website, the terms \'the Company\' and \'[_1]\' shall denote either', it.website_name)}&nbsp;
                 <span data-show='-eucountry'>{it.L('Binary (V) Ltd,')}&nbsp;</span>
-                <span data-show='-eucountry'>{it.L('Binary (C.R.) S.A.,')}&nbsp;</span>
+                <span data-show='-eucountry'>{it.L('Binary (SVG) Ltd,')}&nbsp;</span>
                 <span data-show='-eucountry'>{it.L('Binary (BVI) Ltd,')}&nbsp;</span>
                 <span data-show='-eucountry'>{it.L('Binary (FX) Ltd,')}&nbsp;</span>
                 <span>{it.L('Binary (Europe) Ltd, or')}&nbsp;</span>
@@ -27,7 +27,7 @@ const TermsAndConditions = () => (
             <li>{it.L('All products traded on Margin carry a high degree of risk and can result in losses that exceed the Client\'s initial deposit. The Margin trading services described in this agreement is not suitable for everyone. The Client acknowledges that the Margin trading services described in this agreement are designed for the Clients who are knowledgeable and experienced in the types of Transactions described in this agreement, and the Client fully understands the associated risks before entering into this agreement with the Company.')}</li>
             <li>{it.L('The Client should not sign up to receive the Margin trading services described in this agreement without understanding their nature and the associated risks.')}</li>
             <li>{it.L('This agreement is supplied to the Client in English. In the event that there is a difference between the English version and any translated versions of this document, the English version shall prevail.')}</li>
-            <li>{it.L('A glossary of the capitalised terms can be found in paragraph S, entitled "Interpretation of terms".')}</li>
+            <li>{it.L('A glossary of the capitalised terms can be found in paragraph R, entitled "Interpretation of terms".')}</li>
         </ol>
 
         <h2 data-anchor='commencement'>{it.L('B. Commencement')}</h2>
@@ -56,7 +56,7 @@ const TermsAndConditions = () => (
                             <li>{it.L('The Client has read this Legal terms and conditions page in full and has understood that they will be buying and selling financial contracts subject to these terms and conditions.')}</li>
                             <li>{it.L('The Client has read the Company\'s privacy statement and hereby gives the Company consent to process the Client\'s personal information as outlined there.')}</li>
                             <li>{it.L('The Client is over 18 years of age, unless they are an Estonian resident whereby they will have to be over 21.')}</li>
-                            <li>{it.L('The Client is not residing in a restricted country such as Costa Rica, Hong Kong, Israel, Jersey, Malaysia, Malta, Paraguay, United Arab Emirates, the USA, Canada, or any other restricted country which has been identified by the FATF as having strategic deficiencies.')}</li>
+                            <li>{it.L('The Client is not residing in a restricted country such as St. Vincent and the Grenadines, Hong Kong, Israel, Jersey, Malaysia, Malta, Paraguay, United Arab Emirates, the USA, Canada, or any other restricted country which has been identified by the FATF as having strategic deficiencies.')}</li>
                             <li>{it.L('The Client has sufficient experience and knowledge about contracts for difference to be capable of evaluating the merits and risks of acquiring contracts via this site and have done so without relying on any information contained in this site.')}</li>
                         </ol>
                     </li>
