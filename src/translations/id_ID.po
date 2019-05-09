@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-05-09 07:22\n"
+"PO-Revision-Date: 2019-05-09 09:36\n"
 "Last-Translator: binarycom\n"
 "Language-Team: Indonesian\n"
 "MIME-Version: 1.0\n"
@@ -22,10 +22,10 @@ msgid " All calls are recorded for training and monitoring purposes."
 msgstr " Semua percakapan adalah direkam untuk pelatihan dan pemantauan."
 
 msgid " means %1."
-msgstr ""
+msgstr " adalah %1."
 
 msgid " means Monday to Friday (UTC+8)."
-msgstr ""
+msgstr " adalah Senin hingga Jumat (UTC+8)."
 
 msgid " means a Client's trading account opened with Binary in accordance with the account procedure provided on %1."
 msgstr ""
@@ -70,7 +70,7 @@ msgid " means organisation, whether governmental or not, or physical person or a
 msgstr ""
 
 msgid " means the commencement date of this Agreement."
-msgstr ""
+msgstr " adalah tanggal dimulainya Perjanjian ini."
 
 msgid " means the commission payable by Binary to the Introducing Broker as set out in the Appendix below."
 msgstr ""
@@ -174,6 +174,9 @@ msgstr "Program Afiliasi %1"
 msgid "%1 Application Programme Interface (\"API\") terms and conditions"
 msgstr ""
 
+msgid "%1 Binary.com is not available in St. Vincent and the Grenadines and is not regulated or supervised by any regulatory body in the financial system of St. Vincent and the Grenadines."
+msgstr ""
+
 msgid "%1 Expert Advisor (EA)"
 msgstr "Expert Advisor (EA) %1"
 
@@ -273,8 +276,8 @@ msgstr "%1 adalah anggota aktif komunitas Perl dan sedang dalam proses penyediaa
 msgid "%1 is an active proponent of the open-source movement and is in the process of open-sourcing a number of components of its codebase."
 msgstr "%1 membuka peluang kearah open-source dan sedang dalam proses membuka beberapa komponen codebase yang dimilikinya."
 
-msgid "%1 is an award-winning online trading provider that helps its clients to trade on financial markets through binary options and CFDs. Trading binary options and CFDs on Volatility Indices is classified as a gambling activity. Remember that gambling can be addictive – please play responsibly. Learn more about %2Responsible Trading%3. Some products are not available in all countries. This website's services are not made available in certain countries such as the USA, Canada, Costa Rica, Hong Kong, or to persons under age 18."
-msgstr "%1 adalah pemenang penghargaan sebagai penyedia trading online yang membantu para pelanggan untuk bertrading pada pasar finansial melalui opsi binary dan CFD. Beberapa produk mungkin tidak tersedia di semua negara. Fasilitas situs web ini tidak tersedia di beberapa negara seperti AS, Kanada, Costa Rica, Hong Kong atau siapapun dibawah umur 18."
+msgid "%1 is an award-winning online trading provider that helps its clients to trade on financial markets through binary options and CFDs. Trading binary options and CFDs on Volatility Indices is classified as a gambling activity. Remember that gambling can be addictive – please play responsibly. Learn more about %2Responsible Trading%3. Some products are not available in all countries. This website's services are not made available in certain countries such as the USA, Canada, St. Vincent and the Grenadines, Hong Kong, or to persons under age 18."
+msgstr ""
 
 msgid "%1 is awarded 'Best Trading Platform in Asia' by Global Brands Magazine. The Global Brands Awards honours excellence in performance and exceptional service delivery. "
 msgstr "%1 telah dianugerahi sebagai 'Platform Trading Terbaik di Asia' oleh Majalah Global Brands. Penghargaan Global Brands Awards ini diberikan sebagai penghormatan pada keunggulan kinerja dan penyampaian layanan yang luar biasa. "
@@ -290,9 +293,6 @@ msgstr "%1 tidak berafiliasi dengan Agen Pembayaran manapun. Setiap Agen Pembaya
 
 msgid "%1 is not affiliated with any of the payment agents listed above. Each payment agent operates as an independent service provider and is not endorsed, guaranteed or otherwise approved by %1. CUSTOMERS DEAL WITH PAYMENT AGENTS AT THEIR SOLE RISK AND PERIL. Customers are advised to check the credentials of payment agents before sending them any money. %1 shall not in any circumstance be held responsible for transactions made between customers and payment agents."
 msgstr "%1 tidak berafiliasi dengan agen pembayaran manapun. Setiap agen pembayaran beroperasi sendiri dan %1 tidak bertanggungjawab atas risiko penggunaannya. PELANGGAN BERURUSAN DENGAN AGEN PEMBAYARAN ATAS RISIKO SENDIRI. Pelanggan disarankan untuk mengecek kredibilitas dan eksistensi agen pembayaran bersangkutan sebelum bertransaksi dengan mereka. %1 dengan apapun alasan tidak bertanggungjawab kepada transaksi yang dilakukan antara pelanggan dengan agen pembayaran."
-
-msgid "%1 is not available in Costa Rica and is not regulated or supervised by any regulatory body in the Costa Rican financial system."
-msgstr "%1 tidak tersedia di Kosta Rika dan tidak diatur atau diawasi oleh badan pengawas keuangan di Kosta Rika."
 
 msgid "%1 is owned and operated by the Binary Group Ltd. group of companies. For more information, %2visit our history page%3."
 msgstr "%1 dimiliki dan dioperasikan oleh grup perusahaan Binary Ltd. Untuk informasi lebih lanjut, %2kunjungi halaman sejarah kami%3."
@@ -388,7 +388,7 @@ msgid "%1 rows displayed:"
 msgstr "%1 baris yang ditampilkan:"
 
 msgid "%1 shall act purely on an execution-only basis."
-msgstr ""
+msgstr "%1 akan bertindak murni berdasarkan eksekusi saja."
 
 msgid "%1 shall also act at times as a principal and at other times as an agent on the Client's behalf for all Transactions entered into by the Client, depending on the company that the Client has opened their account with."
 msgstr ""
@@ -415,7 +415,7 @@ msgid "%1's  IT team is responsible for the design, development, and operation o
 msgstr "Tim IT %1 bertanggung jawab atas desain, pengembangan, dan pengoperasian jaringan trafik tinggi kami. Sebagai PostgreSQL Database Administrator, Anda akan merencanakan, menerapkan, dan mengelola sistem basis data yang penting bagi arsitektur platform trafik tinggi trading opsi binary kami."
 
 msgid "%1's Affiliate Programme terms and conditions"
-msgstr ""
+msgstr "Syarat dan ketentuan Program Afiliasi %1"
 
 msgid "%1's CPAN contributions"
 msgstr "kontribusi CPAN %1"
@@ -523,7 +523,7 @@ msgid "(a) Price and cost"
 msgstr "(a) Harga dan biaya"
 
 msgid "(a) The nature of the client's Contracts"
-msgstr ""
+msgstr "(a) Sifat Kontrak klien"
 
 msgid "(b) Speed"
 msgstr "(b) Kecepatan"
@@ -693,7 +693,7 @@ msgstr "Pegang teguh peraturan, tipologi, dan red flag AML-CTF, serta proses dan
 msgid "A force majeure event, if and when determined, means, (i) the Company, by reason of force majeure or act of state, is prevented from, hindered, or delayed in delivering or receiving, or is unable to deliver or receive, any quotation of the Bid and Ask Prices of a market in one or more of the instruments in which the Company ordinarily deals in Transactions; (ii) an excessive movement in the market of the instrument or the Company's reasonable anticipation of the potential occurrence of market disruption."
 msgstr ""
 
-msgid "A glossary of the capitalised terms can be found in paragraph S, entitled \"Interpretation of terms\"."
+msgid "A glossary of the capitalised terms can be found in paragraph R, entitled \"Interpretation of terms\"."
 msgstr ""
 
 msgid "A good understanding of attacks and mitigations such as timing, injection (e.g. form parameter/SQL), side-channel, DoS, buffer overflows and DNS cache poisoning"
@@ -715,7 +715,7 @@ msgid "A lifelong interest in accounting, and an aptitude for numbers"
 msgstr "Minat seumur hidup dalam bidang akuntansi, dan kecakapan untuk angka"
 
 msgid "A list of accepted payment methods"
-msgstr ""
+msgstr "Daftar metode pembayaran yang diterima"
 
 msgid "A list of payment methods you will accept from Clients"
 msgstr "Daftar jenis metode pembayaran yang akan Anda sediakan"
@@ -763,7 +763,7 @@ msgid "A. Introduction"
 msgstr "A. Pendahuluan"
 
 msgid "A. Introduction and scope of agreement"
-msgstr ""
+msgstr "A. Pendahuluan dan ruang lingkup perjanjian"
 
 msgid "A. Spot FX"
 msgstr "A. Spot FX"
@@ -820,16 +820,16 @@ msgid "Able to assess the security impact of bugs and API inconsistencies"
 msgstr "Mampu menilai dampak keamanan bug dan inkonsistensi API"
 
 msgid "About BIEL and BIEL's regulator"
-msgstr ""
+msgstr "Tentang BIEL dan regulator BIEL"
 
 msgid "About Us"
 msgstr "Tentang Kami"
 
 msgid "About the Company and these Terms"
-msgstr ""
+msgstr "Tentang Perusahaan dan Ketentuan ini"
 
 msgid "Abusively or fraudulently use, for any purpose, the Application Programme Interface (API) of %1"
-msgstr ""
+msgstr "Menggunakan Application Programme Interface (API) %1 secara kasar atau curang, untuk tujuan apa pun"
 
 msgid "Academy"
 msgstr "Akademi"
@@ -844,7 +844,7 @@ msgid "Acceptance"
 msgstr "Penerimaan"
 
 msgid "Acceptance of Agreement"
-msgstr ""
+msgstr "Penerimaan Perjanjian"
 
 msgid "Access MT5 dashboard"
 msgstr "Akses dashboard MT5"
@@ -880,7 +880,7 @@ msgid "Access to multi-asset liquidity and back-office functionality via margin 
 msgstr "Akses kedalam berbagai aset likuiditas dan fungsi kantor belakang melalui akun margin"
 
 msgid "Access to personal data"
-msgstr ""
+msgstr "Akses ke data pribadi"
 
 msgid "Access to the client's personal data is strictly prohibited, with the exception of key %1 personnel and only as needed for the performance of their duties."
 msgstr ""
@@ -928,7 +928,7 @@ msgid "Account balance: "
 msgstr "Saldo akun Anda: "
 
 msgid "Account closure"
-msgstr ""
+msgstr "Penutupan akun"
 
 msgid "Account comparison"
 msgstr "Perbandingan akun"
@@ -991,7 +991,7 @@ msgid "Accumulation of Income/Savings"
 msgstr "Akumulasi Pendapatan/Tabungan"
 
 msgid "Accuracy of information"
-msgstr ""
+msgstr "Akurasi informasi"
 
 msgid "Acknowledge"
 msgstr "Mengetahui"
@@ -1075,7 +1075,7 @@ msgid "Affiliate"
 msgstr "Afiliasi"
 
 msgid "Affiliate Arrangement"
-msgstr ""
+msgstr "Pengaturan afiliasi"
 
 msgid "Affiliate FAQ"
 msgstr "Pertanyaan Umum Afiliasi"
@@ -1108,16 +1108,16 @@ msgid "Aged 18 years old and above"
 msgstr "Berumur 18 tahun ke atas"
 
 msgid "Agency or partnership"
-msgstr ""
+msgstr "Agensi atau kemitraan"
 
 msgid "Agent's obligations"
-msgstr ""
+msgstr "Kewajiban agen"
 
 msgid "Agreement"
-msgstr ""
+msgstr "Perjanjian"
 
 msgid "Agreement restrictions"
-msgstr ""
+msgstr "Batasan perjanjian"
 
 msgid "Agricultural, Forestry and Fishery Workers"
 msgstr "Pekerja Pertanian, Kehutanan dan Perikanan"
@@ -1330,10 +1330,10 @@ msgid "Answer to secret question"
 msgstr "Jawaban Pertanyaan Rahasia"
 
 msgid "Anti-corruption policy"
-msgstr ""
+msgstr "Kebijakan anti korupsi"
 
 msgid "Anti-money laundering policy"
-msgstr ""
+msgstr "Kebijakan anti pencucian uang"
 
 msgid "Anticipated account turnover"
 msgstr "Antisipasi perputaran akun"
@@ -1387,13 +1387,13 @@ msgid "Any other consideration relevant to the execution of the transaction"
 msgstr "Pertimbangan lainnya berkaitan dengan pelaksanaan transaksi"
 
 msgid "Any other information as requested by the Company"
-msgstr ""
+msgstr "Informasi lain yang diminta oleh Perusahaan"
 
 msgid "Any restriction to its clients from purchasing any contracts during certain hours"
 msgstr "Setiap batasan bagi kliennya dalam pembelian kontrak apa pun selama jam-jam tertentu"
 
 msgid "Any third-party claims arising out of, or relating to, the Programmer's use of, or inability to use, the %1 API"
-msgstr ""
+msgstr "Setiap tuntutan pihak ketiga manapun yang timbul dari, atau terkait dengan, penggunaan Programmer, atau ketidakmampuan untuk menggunakan, API %1"
 
 msgid "Any trade opened by the Client must be within the available balance or limits in effect with respect to MT5 Real Account or any Transactions."
 msgstr ""
@@ -1435,7 +1435,7 @@ msgid "Appropriateness"
 msgstr "Kelayakan"
 
 msgid "Appropriateness test"
-msgstr ""
+msgstr "Tes kelayakan"
 
 msgid "Approve e-wallet payouts and withdrawal rules"
 msgstr "Meluluskan pembayaran e-wallet dan aturan pencairan"
@@ -1486,7 +1486,7 @@ msgid "As a high-tech knowledge hub, Cyberjaya enjoys the presence of several mu
 msgstr "Sebagai pusat pengetahuan teknologi, Cyberjaya menikmati kehadiran beberapa perusahaan multinasional dan universitas swasta. Hal ini menciptakan komunitas yang bersemangat dan berkembang dengan adanya banyak ekspatriat dan siswa internasional yang menjadikan Cyberjaya seperti \"rumah\" bagi mereka."
 
 msgid "As a result, the Client's trades are executed at market as follows:"
-msgstr ""
+msgstr "Sebagai hasil, kontrak Klien adalah diselesaikan pada pasar sebagai berikut:"
 
 msgid "As a strong proponent of open source, we encourage publication of findings, methods, and tools via GitHub and our technical blog at %1 You will also assist our developers in understanding and patching the bugs that you find."
 msgstr "Sebagai pendukung kuat open source, kami mendorong publikasi temuan, metode, dan alat-alat melalui GitHub dan blog teknis kami di %1 Anda juga akan membantu developer kami dalam memahami dan menambal bug yang Anda temukan."
@@ -1612,7 +1612,7 @@ msgid "Aspects of a client order not affected by specific instructions are subje
 msgstr "Aspek order klien yang tidak terpengaruh oleh instruksi khusus tunduk pada penerapan kebijakan eksekusi order %1. Dengan tidak adanya instruksi khusus dari klien, Perusahaan akan melaksanakan kebijaksanaannya sendiri dalam menentukan faktor-faktor yang perlu dipertimbangkan untuk tujuan menyediakan klien dengan eksekusi terbaik, dengan memperhatikan kriteria pelaksanaan yang tercantum di bawah ini:"
 
 msgid "Assessment of appropriateness"
-msgstr ""
+msgstr "Penilaian kesesuaian"
 
 msgid "Assessment of appropriateness of the requested service or product as BIEL assumes that the client appreciates the risks associated with such investment services and products offered by the Company"
 msgstr ""
@@ -1636,7 +1636,7 @@ msgid "Assigned manager's account ID:"
 msgstr "Menentukan Akun ID manajer:"
 
 msgid "Assignment"
-msgstr ""
+msgstr "Tugas"
 
 msgid "Assist and participate in recruitment activities including career fairs and campus recruitment"
 msgstr "Membantu dan berpartisipasi dalam kegiatan rekrutmen termasuk pameran karir dan perekrutan kampus"
@@ -1663,7 +1663,7 @@ msgid "Assisting to prepare monthly/yearly recruitment analytics and hiring stat
 msgstr "Membantu menyiapkan analisa perekrutan bulanan/tahunan dan laporan status perekrutan"
 
 msgid "Associate"
-msgstr ""
+msgstr "Asosiasi"
 
 msgid "Asunción"
 msgstr "Asunción"
@@ -1738,7 +1738,7 @@ msgid "Authentication"
 msgstr "Pembuktian"
 
 msgid "Authorisation"
-msgstr ""
+msgstr "Otorisasi"
 
 msgid "Authorised Applications"
 msgstr "Aplikasi Resmi"
@@ -1747,7 +1747,7 @@ msgid "Authorised payment agents are exempted from paying any transfer fees."
 msgstr "Akun Agen Pembayaran tidak dikenakan biaya transfer."
 
 msgid "Authority"
-msgstr ""
+msgstr "Otoritas"
 
 msgid "Auto-trader programming tool"
 msgstr "Alat pemrograman auto-trader"
@@ -1803,8 +1803,8 @@ msgstr "BIEL RTS28 untuk 2018"
 msgid "BIEL forms part of %1the Investor Compensation Scheme%2 (the \"Scheme\"), which is a rescue fund for investors that are clients of failed investment firms licensed by the MFSA. The Scheme covers 90% of the Company's net liability to a client in respect of investments that qualify for compensation under the Investment Services Act subject to a maximum payment to any one person of €20,000. The Scheme is based on EC Directive 97/9."
 msgstr ""
 
-msgid "BIEL is a company established in Malta under registration number C70156 and having its registered office at Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta."
-msgstr "BIEL adalah perusahaan yang didirikan di Malta dengan nomor pendaftaran C70156 dan memiliki kantor terdaftar di Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta."
+msgid "BIEL is a company established in Malta under registration number C70156 and having its registered office at W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta."
+msgstr ""
 
 msgid "BIEL is authorised and regulated by the Malta Financial Services Authority (\"MFSA\") under the Investment Services Act (Cap. 370, Laws of Malta) (the \"Act\") to carry on investment business. BIEL is authorised by the MFSA to deal on own account (i.e. offer and act as counterparty to trades) and to execute orders on behalf of other clients; both services are in relation to financial derivative products relating to foreign exchange, indices and other financial products or assets (\"Financial Products\"). BIEL is not authorised to and does not offer investment, financial, legal, tax, regulatory, and/or other types of advice or state an opinion in relation to a Transaction under any circumstances. Clients should get independent advice from an investment adviser if they have any doubts about dealing in financial products."
 msgstr ""
@@ -1980,15 +1980,6 @@ msgstr "Binary (BVI) Ltd,"
 msgid "Binary (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, British Virgin Islands. Licensed and regulated by the British Virgin Islands Financial Services Commission - %1view licence%2."
 msgstr "Binary (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, Kepulauan Virgin Britania Raya. Dilisensikan dan diatur oleh Komisi Layanan Keuangan Kepulauan Virgin Britania Raya - %1lihat lisensi%2."
 
-msgid "Binary (C.R.) S.A."
-msgstr "Binary (C.R.) S.A."
-
-msgid "Binary (C.R.) S.A.,"
-msgstr "Binary (C.R.) S.A.,"
-
-msgid "Binary (C.R.) S.A., registered in Costa Rica. Clients from the rest of the world (excluding certain countries such as the USA, Canada, Costa Rica, Hong Kong) will have their account opened with Binary (C.R.) S.A."
-msgstr "Binary (C.R.) S.A., terdaftar di Kosta Rika. Pelanggan dari seluruh dunia (kecuali Amerika Serikat, Kanada, Kosta Rika, Hong Kong) akan terdaftar dibawah Binary (C.R.) S.A."
-
 msgid "Binary (Europe) Limited"
 msgstr "Binary (Europe) Limited"
 
@@ -2030,6 +2021,15 @@ msgstr "Binary (IOM) Ltd, First Floor, Millennium House, Victoria Road, Douglas,
 
 msgid "Binary (IOM) Ltd."
 msgstr "Binary (IOM) Ltd."
+
+msgid "Binary (SVG) Ltd"
+msgstr ""
+
+msgid "Binary (SVG) Ltd is registered in St. Vincent and the Grenadines. Clients from the rest of the world (excluding certain countries such as the USA, Canada, and Hong Kong) will have their account opened with Binary (SVG) Ltd."
+msgstr ""
+
+msgid "Binary (SVG) Ltd,"
+msgstr ""
 
 msgid "Binary (V) Ltd"
 msgstr "Binary (V) Ltd"
@@ -2227,7 +2227,7 @@ msgid "Build, maintain, and optimise the technology that powers our servers, app
 msgstr "Membangun, memelihara, dan mengoptimalkan teknologi yang mendukung server, aplikasi, dan basis data kami"
 
 msgid "Business Day"
-msgstr ""
+msgstr "Hari bisnis"
 
 msgid "But if you are new to Forex or financial trading of any kind, there is still a long way to go before you even purchase your first contract. This is why we have come up with a basic, step-by-step tutorial to help you bridge that gap and make your first trade."
 msgstr "Tapi jika Anda baru mengenal Forex atau trading finansial dalam bentuk apapun, masih ada jalan yang panjang sebelum Anda sebelum membeli kontrak pertama Anda. Inilah sebabnya mengapa kami membuat tutorial langkah-demi-langkah dasar untuk membantu Anda melakukan trading pertama Anda."
@@ -2593,10 +2593,10 @@ msgid "Click here to retry"
 msgstr "Klik disini untuk mencoba lagi"
 
 msgid "Client"
-msgstr ""
+msgstr "Klien"
 
 msgid "Client Information"
-msgstr ""
+msgstr "Informasi Klien"
 
 msgid "Client classification"
 msgstr "Klasifikasi klien"
@@ -2634,11 +2634,11 @@ msgstr "Klien setuju untuk mematuhi permintaan wajar dari Perusahaan untuk memen
 msgid "Clients are also advised that their rights may be prejudiced if they provide the wrong information as the Company would not be in a position to act in their best interests."
 msgstr ""
 
-msgid "Clients from the rest of the world (excluding certain countries such as the USA, Canada, Costa Rica, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Binary (BVI) Ltd. %1 is not available in the British Virgin Islands."
-msgstr "Klien dari seluruh dunia (tidak termasuk negara-negara tertentu seperti Amerika Serikat, Kanada, Kosta Rika, Hong Kong) akan memiliki akun FX dan CFD Metatrader 5 yang terdaftar dengan Binary (BVI) Ltd. %1 tidak tersedia di Kepulauan Virgin Inggris."
+msgid "Clients from the rest of the world (excluding certain countries such as the USA, Canada, St. Vincent and the Grenadines, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Binary (BVI) Ltd. %1 is not available in the British Virgin Islands."
+msgstr ""
 
-msgid "Clients from the rest of the world (excluding certain countries such as the USA, Canada, Costa Rica, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Binary (V) Ltd. %1 is not available in the Republic of Vanuatu."
-msgstr "Pelanggan dari seluruh dunia (kecuali Amerika Serikat, Kanada, Kosta Rika, Hong Kong) akan mendaftar akun FX dan CFD Metatrader 5 dibawah Binary (V) Ltd. %1 tidak tersedia untuk warga Republik Vanuatu."
+msgid "Clients from the rest of the world (excluding certain countries such as the USA, Canada, St. Vincent and the Grenadines, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Binary (V) Ltd. %1 is not available in the Republic of Vanuatu."
+msgstr ""
 
 msgid "Clients from the rest of the world (excluding certain jurisdictions such as the USA, Canada, Japan, and the European Union) who wish to trade CFDs will have their MetaTrader 5 account opened with Binary (FX) Ltd. %1 is not available in Malaysia."
 msgstr "Klien dari seluruh dunia (diluar yurisdiksi tertentu seperti Amerika Serikat, Kanada, Jepang, dan Uni Eropa) yang ingin bertrading CFD akan memiliki akun MetaTrader 5 yang didaftarkan pada Binary (FX) Ltd. %1 tidak tersedia di Malaysia."
@@ -2815,13 +2815,13 @@ msgid "Company addresses"
 msgstr "Alamat Perusahaan"
 
 msgid "Company or Binary"
-msgstr ""
+msgstr "Perusahaan atau Binary"
 
 msgid "Company's Representation"
 msgstr "Representasi Perusahaan"
 
 msgid "Company's obligations"
-msgstr ""
+msgstr "Kewajiban perusahaan"
 
 msgid "Company's rights"
 msgstr "Hak perusahaan"
@@ -2839,7 +2839,7 @@ msgid "Competence"
 msgstr "Kompetensi"
 
 msgid "Competent Authority"
-msgstr ""
+msgstr "Otoritas Kompeten"
 
 msgid "Competitive and transparent pricing"
 msgstr "Harga kompetitif dan transparan"
@@ -3814,7 +3814,7 @@ msgid "EUR/GBP"
 msgstr "EUR/GBP"
 
 msgid "Each Party shall do anything reasonably required by the other Party to give effect to the provisions of this agreement."
-msgstr ""
+msgstr "Setiap Pihak harus melakukan segala sesuatu yang secara wajar diperlukan oleh Pihak lainnya untuk memberlakukan ketentuan perjanjian ini."
 
 msgid "Each Party shall do anything reasonably required by the other Party to give effect to the terms of this Agreement."
 msgstr "Setiap Pihak harus melakukan segala sesuatu yang secara wajar diperlukan oleh Pihak lainnya untuk memberlakukan ketentuan Perjanjian ini."
@@ -3907,7 +3907,7 @@ msgid "Effect of termination"
 msgstr ""
 
 msgid "Effective Date"
-msgstr ""
+msgstr "Tanggal Berlaku"
 
 msgid "Either party may terminate this Agreement at any time by giving a seven-day (7) advanced written notice to the other party."
 msgstr ""
@@ -3982,10 +3982,10 @@ msgid "Engage in misleading or deceptive conduct or illusory or deceptive advert
 msgstr ""
 
 msgid "Engage in misleading, illusory, or deceptive advertising or promises"
-msgstr ""
+msgstr "Terlibat dalam iklan atau janji yang menyesatkan, ilusi, atau menipu"
 
 msgid "Engage in misleading, illusory, or deceptive conduct"
-msgstr ""
+msgstr "Melakukan tindakan yang menyesatkan, ilusi atau menipu"
 
 msgid "Enhanced performance"
 msgstr "Peningkatan kinerja"
@@ -4444,7 +4444,7 @@ msgid "Fairly and accurately describe Binary's business and services in a transp
 msgstr ""
 
 msgid "Fairly and accurately describe the Agent's services to the clients"
-msgstr ""
+msgstr "Secara wajar dan akurat menggambarkan fasilitas layanan Agen kepada klien"
 
 msgid "Familiar with our website? Our desktop app is designed to give you the same intuitive experience."
 msgstr "Sudah mengenal situs kami? Aplikasi desktop ini dirancang untuk memberi Anda pengalaman yang sama."
@@ -4555,7 +4555,7 @@ msgid "Financial Markets Analyst"
 msgstr "Financial Markets Analyst"
 
 msgid "Financial Products"
-msgstr ""
+msgstr "Produk Keuangan"
 
 msgid "Financial Risk approval is required. Please contact %1customer support%2 for more information."
 msgstr "Persetujuan pada risiko keuangan diperlukan. Silahkan hubungi %1customer support%2 untuk informasi lebih lanjut."
@@ -4642,16 +4642,16 @@ msgid "Follow up on the recommendations and timeline for corrective actions with
 msgstr "Menindak lanjuti rekomendasi dan garis waktu untuk tindakan korektif dengan kepala departemen"
 
 msgid "Follow, comply, and implement with all business-related directions, policies, and procedures of the Company as amended or re-enacted or replaced from time to time"
-msgstr ""
+msgstr "Mengikuti, mematuhi, dan menerapkan semua arahan, kebijakan, dan prosedur yang terkait dengan bisnis Perusahaan sebagaimana telah diubah atau diberlakukan kembali atau diganti dari waktu ke waktu"
 
 msgid "Food Services"
 msgstr "Layanan Makanan"
 
-msgid "For Binary (C.R.) S.A., the applicable Jurisdiction shall be Costa Rica."
-msgstr "Untuk Binary (C.R.) S.A., yurisdiksi yang berlaku adalah Kosta Rika."
-
 msgid "For Binary (IOM) Ltd, the applicable Jurisdiction shall be the Isle of Man."
 msgstr "Untuk Binary (IOM) Ltd, yuridiksi yang berlaku adalah Isle of Man."
+
+msgid "For Binary (SVG) Ltd, the applicable Jurisdiction shall be St. Vincent and the Grenadines."
+msgstr ""
 
 msgid "For Binary Investments (Europe) Ltd and Binary (Europe) Ltd, the applicable Jurisdiction shall be Malta."
 msgstr "Untuk Binary Investments (Europe) Ltd dan Binary (Europe) Ltd, Yurisdiksi yang berlaku adalah Malta."
@@ -5380,7 +5380,7 @@ msgid "If any provision of this Agreement is held to be void or unenforceable in
 msgstr "Jika ketentuan apapun dalam Perjanjian ini dianggap tidak berlaku atau tidak dapat dilaksanakan secara keseluruhan atau sebagian, ketentuan impugned (atau bagian daripadanya) akan dianggap dihapus dari Perjanjian ini dan ketentuan lainnya (termasuk sisa ketentuan yang terkena) wajib tetap sah dan berlaku."
 
 msgid "If any provision of this agreement is held to be invalid, void, or unenforceable in any way by any court, arbitration, regulatory body, competent authority, or any other authority or law whatsoever in any jurisdiction in which the Agent provides their services, the remainder of this agreement shall remain in full force and effect."
-msgstr ""
+msgstr "Jika terdapat ketentuan dalam perjanjian ini yang dianggap tidak sah, batal, atau tidak dapat dilaksanakan dengan cara apa pun oleh pengadilan, arbitrase, badan pengawas, otoritas yang kompeten, atau otoritas atau hukum lain apa pun dalam yurisdiksi di mana Agen menyediakan layanan mereka, sisa dari perjanjian ini akan tetap berlaku sepenuhnya."
 
 msgid "If any provision of this agreement shall be held invalid or unenforceable by a court or regulatory body of competent jurisdiction, the remainder of this agreement shall remain in full force and effect."
 msgstr ""
@@ -5761,7 +5761,7 @@ msgid "In providing IB services, the Introducing Broker shall:"
 msgstr ""
 
 msgid "In providing the Agent's services, the Agent shall do the following:"
-msgstr ""
+msgstr "Dalam memberikan layanan Agen, Agen harus melakukan hal berikut:"
 
 msgid "In providing these services, BIEL is bound by the Act, any applicable regulations, by-laws, licence conditions, guidelines, exchange requirements, and other provisions or market practices (the \"Rules\"). In the event of conflict between these ST&Cs and the Rules, the latter should prevail."
 msgstr ""
@@ -5790,8 +5790,8 @@ msgstr "Di Uni Eropa, produk keuangan ditawarkan oleh Binary Investments (Europe
 msgid "In the Isle of Man and the UK, Volatility Indices are offered by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles; licensed and regulated respectively by (1) the Gambling Supervision Commission in the Isle of Man (current licence issued on 31 August 2017) and by (2) the Gambling Commission in the UK (licence %1reference no: 39172%2)."
 msgstr "Di negara Isle of Man dan Inggris, Indeks Volatilitas disediakan oleh Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles; berlisensi dan diatur."
 
-msgid "In the UK, our clients trade through Binary (IOM) Ltd and Binary Investments (Europe) Ltd. In the Isle of Man, they trade through Binary (IOM) Ltd. In the European Union (except UK), they trade through Binary (Europe) Ltd and Binary Investments (Europe) Ltd. In the rest of the world, they trade through Binary (C.R.) S.A., Binary (V) Ltd, Binary (BVI) Ltd and Binary (FX) Ltd."
-msgstr "Di Inggris, klien kami bertrading melalui Binary (IOM) Ltd Binary Investments (Europe) Ltd. Di Isle of Man, mereka bertrading melalui Binary (IOM) Ltd. Di Uni Eropa (kecuali Inggris), mereka bertrading melalui Binary (Europe) Ltd dan Binary Investments (Europe) Ltd. Pada sisa bagian dunia lainnya, mereka bertrading melalui Binary (C.R.) S.A. Binary (V) Ltd, Binary (BVI) Ltd dan Binary (FX) Ltd."
+msgid "In the UK, our clients trade through Binary (IOM) Ltd and Binary Investments (Europe) Ltd. In the Isle of Man, they trade through Binary (IOM) Ltd. In the European Union (except UK), they trade through Binary (Europe) Ltd and Binary Investments (Europe) Ltd. In the rest of the world, they trade through Binary (SVG) Ltd, Binary (V) Ltd, Binary (BVI) Ltd and Binary (FX) Ltd."
+msgstr ""
 
 msgid "In the case of a Limit Order, the Client acknowledges that the Company will endeavour to fill the Order at a level that is the same or better than the Limit the Client has specified, subject to the availability of the Limit Price."
 msgstr ""
@@ -5848,7 +5848,7 @@ msgid "Inactive/dormant accounts"
 msgstr ""
 
 msgid "Include a disclaimer and/or notice that any intellectual property rights, including any trademark or slogan whatsoever, belong to the Company, and any unauthorised use is strictly prohibited"
-msgstr ""
+msgstr "Termasuk penafian dan/atau perhatikan bahwa setiap hak kekayaan intelektual termasuk merek dagang atau slogan apapun yang dimiliki Perusahaan, dan penggunaan yang tidak sah adalah terlarang"
 
 msgid "Include a disclaimer or notice that the intellectual property rights of the Trademark solely belong to Binary and any use of it is strictly prohibited unless Binary has given such authorisation."
 msgstr ""
@@ -5971,10 +5971,10 @@ msgid "Introduce %1"
 msgstr "Memperkenalkan %1"
 
 msgid "Introducing Broker"
-msgstr ""
+msgstr "Introducing Broker"
 
 msgid "Introducing Broker warranties"
-msgstr ""
+msgstr "Jaminan Introducing Broker"
 
 msgid "Introducing USB"
 msgstr "Memperkenalkan USB"
@@ -5986,7 +5986,7 @@ msgid "Introduction"
 msgstr "Pendahuluan"
 
 msgid "Introduction of Clients and instructions"
-msgstr ""
+msgstr "Pengenalan Klien dan instruksi"
 
 msgid "Introduction to binary options on MT5"
 msgstr "Pengenalan opsi binary pada MT5"
@@ -6073,13 +6073,13 @@ msgid "It is agreed that any withdrawals through the Agent shall be made as foll
 msgstr "Telah disepakati bahwa setiap penarikan melalui Agen akan dilakukan sebagai berikut:"
 
 msgid "It is agreed that on the Commencement Date of this agreement and on the date of each transaction, the Agent represents and warrants the following:"
-msgstr ""
+msgstr "Disepakati bahwa pada Tanggal Mulai perjanjian ini dan pada tanggal setiap transaksi, Agen mewakili dan menjamin sebagai berikut:"
 
 msgid "It is agreed that the Company shall not be responsible or liable for any matter arising out of or in relation to the use and operation of any website owned or used by the Agent. It is understood that the Agent shall indemnify the Company for all and any losses that the Company may suffer arising out of, or in relation to the use or operations of any website used or owned by the Agent."
 msgstr "Disepakati bahwa Perusahaan tidak akan bertanggung jawab atau berkewajiban atas masalah apa pun yang timbul dari atau sehubungan dengan penggunaan dan pengoperasian situs web apa pun yang dimiliki atau digunakan oleh Agen. Telah dipahami bahwa Agen harus mengganti rugi Perusahaan atas semua kerugian yang diderita Perusahaan yang timbul karena, atau terkait dengan penggunaan atau pengoperasian situs web apa pun yang digunakan atau dimiliki oleh Agen."
 
 msgid "It is further agreed and understood that the Agent shall not use any domain name that includes the name %1 and any derivation or variation of this name that might give the impression that the Company and the Agent are the same person."
-msgstr ""
+msgstr "Lebih lanjut disepakati dan dipahami bahwa Agen tidak akan menggunakan nama domain yang mencakup nama %1 dan setiap derivasi atau variasi dari nama ini yang mungkin dapat memberikan kesan bahwa Perusahaan dan Agen adalah orang yang sama."
 
 msgid "It is further noted that the Company shall be the sole owner of all rights, titles, or interests whatsoever of data and other information generated or produced and distributed by or through %1 electronic systems and other electronic systems used by %1, along with any modifications."
 msgstr ""
@@ -6301,7 +6301,7 @@ msgid "Latest bank statement or any government-issued letter which contains your
 msgstr "Rekening koran terbaru atau surat yang dikeluarkan pemerintah yang berisi nama dan alamat Anda"
 
 msgid "Law"
-msgstr ""
+msgstr "Hukum"
 
 msgid "Laws regarding financial contracts vary throughout the world, and it is the responsibility of clients accessing this site to ensure that they understand and fully comply with any laws or regulations relevant to themselves in their own country. This site does not constitute, and may not be used for the purposes of, an offer or solicitation to anyone in any jurisdiction in which such offer or solicitation is not authorised or to any person to whom it is unlawful to make such offer or solicitation. Access to this site and the offering of financial contracts via this site in certain jurisdictions may be restricted and, accordingly, clients accessing this site are required to inform themselves about, and to observe, such restrictions."
 msgstr "Undang-undang tentang kontrak keuangan bervariasi di seluruh dunia, dan merupakan tanggung jawab klien yang mengakses situs ini untuk memastikan bahwa mereka memahami dan sepenuhnya mematuhi hukum atau peraturan yang relevan dengan diri mereka sendiri di negara mereka sendiri. Situs ini bukan merupakan, dan tidak dapat digunakan untuk tujuan, penawaran atau ajakan kepada siapa pun pada yurisdiksi mana pun di mana tawaran atau ajakan tersebut tidak diotorisasi atau kepada siapa pun yang melanggar hukum untuk melakukan penawaran atau ajakan tersebut. Akses pada situs ini dan penawaran kontrak keuangan melalui situs ini pada yurisdiksi tertentu dapat dibatasi dan, oleh karena itu, klien yang mengakses situs ini diharuskan untuk memberi tahu diri mereka sendiri tentang, dan untuk mengamati, pembatasan tersebut."
@@ -6433,7 +6433,7 @@ msgid "Limit/Limit Price"
 msgstr "Batas/Batas Harga"
 
 msgid "Limitation of liability"
-msgstr ""
+msgstr "Batasan tanggung jawab"
 
 msgid "Limitations on liability"
 msgstr ""
@@ -6724,7 +6724,7 @@ msgid "Malaysia's lower cost of living compared to most western countries means 
 msgstr "Biaya hidup di Malaysia yang lebih rendah dibandingkan dengan kebanyakan negara barat dimana hal ini berarti Anda dapat menikmati kualitas hidup yang lebih tinggi. Anda juga akan menemukan akses mudah ke layanan kesehatan kelas dunia, ditambah beberapa sekolah internasional, akademi, dan universitas yang menawarkan program yang diakui secara global."
 
 msgid "Malicious Activity"
-msgstr ""
+msgstr "Aktivitas Berbahaya"
 
 msgid "Malta"
 msgstr "Malta"
@@ -6868,7 +6868,7 @@ msgid "Marketing Executive"
 msgstr "Marketing Executive"
 
 msgid "Marketing Materials"
-msgstr ""
+msgstr "Materi Pemasaran"
 
 msgid "Marketing and promotion"
 msgstr "Pemasaran dan promosi"
@@ -7051,7 +7051,7 @@ msgid "Misrepresent Binary or the services that are offered by Binary"
 msgstr ""
 
 msgid "Misrepresent the services that the Agent provides to the clients"
-msgstr ""
+msgstr "Salah menggambarkan layanan yang diberikan Agen kepada klien"
 
 msgid "Miss"
 msgstr "Nona"
@@ -7410,8 +7410,8 @@ msgstr "Catatan: Bonus tanpa deposit senilai USD 10 akan dikredtikan kedalam aku
 msgid "Note: For any enquiries regarding disabled or excluded accounts, please contact %1Customer Support%2."
 msgstr "Nota: Untuk pertanyaan mengenai akun non aktif atau pembatalan akun, silahkan hubungi %1Customer Support%2."
 
-msgid "Note: Payment Agent transfers are only available for accounts registered with Binary (CR) SA. Transactions are accepted only in US dollars."
-msgstr "Catatan: Transfer Agen Pembayaran hanya tersedia untuk akun terdaftar di Binary (CR) SA. Transaksi diterima hanya dalam dolar AS."
+msgid "Note: Payment Agent transfers are only available for accounts registered with Binary (SVG) Ltd. Transactions are accepted only in US dollars."
+msgstr ""
 
 msgid "Note: This feature is not available if you logged in using a social network."
 msgstr "Catatan: Fitur ini tidak tersedia jika Anda mengakses menggunakan jejaring sosial."
@@ -7773,8 +7773,8 @@ msgstr "Nilai kami"
 msgid "Our website uses cookies to give you the best user experience. For more information, %1view our policy%2."
 msgstr "Situs web kami menggunakan cookie untuk memberi Anda pengalaman terbaik. Untuk informasi lebih lanjut, %1lihat kebijakan kami%2."
 
-msgid "Outside the EU, financial products are offered by Binary (C.R.) S.A., 5th Floor, Building 6 Centro Ejecutivo La Sabana, Sabana Sur, San José, Costa Rica, Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, regulated by the Vanuatu Financial Services Commission (%1view licence%2), Binary (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, British Virgin Islands, regulated by the British Virgin Islands Financial Services Commission (%3licence no. SIBA/L/18/1114%4), and Binary (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Labuan, Malaysia, regulated by the Labuan Financial Services Authority to carry on a money-broking business (%5licence no. MB/18/0024%6)."
-msgstr "Di luar Uni Eropa, produk layanan keuangan ditawarkan oleh Binary (C.R.) S.A, 5th Floor, Building 6 Centro Ejecutivo La Sabana, Sabana Sur, San José, Kosta Rika, Binary (V) Ltd, beralamat di Govant Building, Port Vila, PO Box 1276, Vanuatu, diatur oleh Komisi Jasa Keuangan Vanuatu (%1lihat lisensi%2), Binary (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, Kepulauan Virgin Britania Raya, dilisensikan dan diatur oleh Komisi Layanan Keuangan Kepulauan Virgin Britania Raya (%3lihat no. lisensi SIBA/L/18/1114%4), dan Binary (FX) Ltd., beralamat di Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Labuan, Malaysia, diatur oleh Otoritas Jasa Keuangan Labuan untuk menjalankan bisnis pialang (%5no. lisensi MB/18/0024%6)."
+msgid "Outside the EU, financial products are offered by Binary (SVG) Ltd, Hinds Building, Kingstown, St. Vincent and the Grenadines; Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, regulated by the Vanuatu Financial Services Commission (%1view licence%2); Binary (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, British Virgin Islands, regulated by the British Virgin Islands Financial Services Commission (%3licence no. SIBA/L/18/1114%4); and Binary (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Labuan, Malaysia, regulated by the Labuan Financial Services Authority to carry on a money-broking business (%5licence no. MB/18/0024%6)."
+msgstr ""
 
 msgid "Over $1,000,000"
 msgstr "Lebih dari $1.000.000"
@@ -7993,7 +7993,7 @@ msgid "Perform tests to ensure database performance and security, as well as dat
 msgstr "Melakukan tes untuk memastikan kinerja dan keamanan basis data, serta integritas data"
 
 msgid "Perform the Agent's services and other obligations hereunder at their own cost and risk"
-msgstr ""
+msgstr "Menyediakan layanan Agen dan kewajiban lain sebagai berikut dengan biaya dan risiko sendiri"
 
 msgid "Performance Tuning,"
 msgstr "Penyetelan Kinerja,"
@@ -8410,7 +8410,7 @@ msgid "Prepare and publish any content or place any advertisements that refer to
 msgstr ""
 
 msgid "Prepare and publish any material or place any advertisements that refer to the Company and the Agent's relationship with the Company without an authorisation being given by the Company"
-msgstr ""
+msgstr "Mempersiapkan dan mempublikasikan materi apa pun atau menempatkan iklan apa pun yang merujuk pada Perusahaan dan hubungan Agen dengan Perusahaan tanpa izin yang diberikan oleh Perusahaan"
 
 msgid "Prepare daily, weekly, and monthly financial reports"
 msgstr "Mempersiapkan laporan keuangan harian, mingguan, dan bulanan"
@@ -8584,7 +8584,7 @@ msgid "Provide technical leadership on cryptocurrencies and blockchain technolog
 msgstr "Memberikan kepemimpinan teknis pada mata uang kripto dan teknologi blockchain"
 
 msgid "Provide the Company with all and any information whatsoever that the Agent may become aware of that may be harmful, adverse, or detrimental to the Company and its reputation"
-msgstr ""
+msgstr "Memberikan kepada Perusahaan semua dan segala informasi apa pun yang mungkin disadari oleh Agen yang dapat membahayakan, atau merugikan Perusahaan dan reputasinya"
 
 msgid "Provide the customer support agent with the four-digit verification code below for confirmation."
 msgstr "Informasikan kepada customer support mengenai empat angka kode verifikasi berikut untuk konfirmasi."
@@ -8593,7 +8593,7 @@ msgid "Provision of service"
 msgstr ""
 
 msgid "Provision of services"
-msgstr ""
+msgstr "Penyediaan layanan"
 
 msgid "Provisions of Agreement"
 msgstr "Ketentuan Persetujuan"
@@ -8866,13 +8866,13 @@ msgid "Replication,"
 msgstr "Replikasi,"
 
 msgid "Represent themselves as a representative of the Company or as an authorised person by the Company in their advertising activities"
-msgstr ""
+msgstr "Mewakili diri mereka sebagai perwakilan Perusahaan atau sebagai orang yang diberi wewenang oleh Perusahaan dalam kegiatan iklan mereka"
 
 msgid "Representation or Warranty"
 msgstr "Representasi atau Garansi"
 
 msgid "Representations and warranties"
-msgstr ""
+msgstr "Perwakilan dan jaminan"
 
 msgid "Represents the amount in base currency per round trade. Example: A round trade of 1 lot of EUR/USD would pay EUR 10 on standard accounts. A round trade of 1 lot of USD/CAD would pay USD 5 on advanced account."
 msgstr "Mewakili jumlah dalam mata uang dasar per putaran trading. Contoh: Trading putaran 1 lot EUR/USD akan membayar EUR10 pada akun standard. Trading perputaran penuh 1 lot USD/CAD akan membayar USD5 pada akun advanced."
@@ -10132,13 +10132,13 @@ msgid "The Agent agrees to indemnify the Company for all and any losses that the
 msgstr ""
 
 msgid "The Agent has all the necessary authority, power, consents, licences, or authorisations and has taken all necessary actions to enable themselves to lawfully enter into and perform this agreement."
-msgstr ""
+msgstr "Agen memiliki semua wewenang, kekuasaan, persetujuan, lisensi, atau otorisasi yang diperlukan dan telah mengambil semua tindakan yang diperlukan untuk memungkinkan diri mereka secara sah masuk ke dalam dan melakukan perjanjian ini."
 
 msgid "The Agent has taken all measures required to obtain and maintain in full force and effect all authority and/or powers and/or consents and/or licences and/or authorities to enter into and perform this agreement."
 msgstr ""
 
 msgid "The Agent may provide the Agent's services to those clients of the Company who desire to deposit and/or withdraw money using the Agent. The Agent may provide the Agent's services to clients who intend to use e-wallet or e-payment methods other than those used by the Company (hereinafter referred to as the \"e-payments\") or local currencies other than those accepted by the Company (hereinafter referred to as the \"local currencies\") and local bank wire transfers (hereinafter referred to as the \"bank wire transfers\")."
-msgstr ""
+msgstr "Agen dapat memberikan layanan Agen kepada klien Perusahaan yang ingin mendeposit dan/atau menarik dana menggunakan Agen. Agen dapat memberikan layanan Agen kepada klien yang berniat untuk menggunakan e-wallet atau metode pembayaran elektronik selain yang disediakan oleh Perusahaan (selanjutnya disebut sebagai \"pembayaran elektronik\") atau mata uang lokal selain yang diterima oleh Perusahaan (selanjutnya disebut \"mata uang lokal\") dan transfer bank lokal (selanjutnya disebut sebagai \"bank transfer\")."
 
 msgid "The Agent promises to the Company that the Agent shall comply with, and the Agent's services will be performed in accordance with, any applicable anti-corruption laws."
 msgstr ""
@@ -10147,13 +10147,13 @@ msgid "The Agent represents and warrants that the Agent is and will be in compli
 msgstr ""
 
 msgid "The Agent shall further undertake to perform all necessary due diligence on the Agent's clients, and the Company shall be entitled, at any time, to request the Agent to provide all information and documentation relating to their clients for the purposes of the Company's AML compliance. "
-msgstr ""
+msgstr "Agen selanjutnya akan melakukan semua uji tuntas yang diperlukan pada klien Agen, dan Perusahaan berhak, kapan saja, untuk meminta Agen untuk memberikan semua informasi dan dokumentasi yang berkaitan dengan klien mereka untuk keperluan kepatuhan AML Perusahaan. "
 
 msgid "The Agent shall not be authorised to offer the Agent's services, under this agreement, to the clients who reside in restricted countries outlined in the Company's terms and conditions (as amended from time to time), which are published on the Company's website, %1."
-msgstr ""
+msgstr "Agen tidak diperkenankan untuk memberikan layanannya, berdasarkan perjanjian ini, kepada klien yang berdomisili di negara-negara terbatas yang diuraikan dalam syarat dan ketentuan Perusahaan (sebagaimana telah diubah dari waktu ke waktu), yang dipublikasikan pada situs Perusahaan, %1."
 
 msgid "The Agent shall not do the following:"
-msgstr ""
+msgstr "Agen tidak akan melakukan hal sebagai berikut:"
 
 msgid "The Agent shall not produce any copies of any Confidential Information or any content based on the concepts contained within the Confidential Information for personal use or for distribution without the Company's request."
 msgstr ""
@@ -10165,7 +10165,7 @@ msgid "The Agent shall submit an application including the following information
 msgstr "Agen harus mengajukan permohonan termasuk informasi berikut:"
 
 msgid "The Agent shall thereinafter transfer the requested sum to the client. It is noted that these transactions fall out of the scope of this agreement, and, as a result, the Company shall not be liable against the Agent and the client or any other person, under contract, tort law, or any other applicable law, for any dispute or potential dispute arising out of or in connection with such transactions."
-msgstr ""
+msgstr "Agen selanjutnya akan mentransfer jumlah yang diminta ke klien. Tercatat bahwa transaksi ini tidak termasuk dalam ruang lingkup perjanjian ini, dan, sebagai akibatnya, Perusahaan tidak akan bertanggung jawab terhadap Agen dan klien atau orang lain, berdasarkan kontrak, hukum gugatan, atau hukum lain yang berlaku, untuk setiap sengketa atau sengketa potensial yang timbul dari atau sehubungan dengan transaksi tersebut."
 
 msgid "The Agent shall treat all information related to the Company and the client, including but not limited to client's identity, financial status, trading, or transaction performance, as well as the Company's business plans, price points, ideas, concepts, formats, suggestions, developments, arrangements, programmes, techniques, methodologies, knowhow, equipment whatsoever, as confidential (hereinafter referred to as the \"Confidential Information\")."
 msgstr ""
@@ -10260,7 +10260,7 @@ msgstr ""
 msgid "The Client is also reminded that their internet connection can influence what price is displayed after the trade has been executed."
 msgstr ""
 
-msgid "The Client is not residing in a restricted country such as Costa Rica, Hong Kong, Israel, Jersey, Malaysia, Malta, Paraguay, United Arab Emirates, the USA, Canada, or any other restricted country which has been identified by the FATF as having strategic deficiencies."
+msgid "The Client is not residing in a restricted country such as St. Vincent and the Grenadines, Hong Kong, Israel, Jersey, Malaysia, Malta, Paraguay, United Arab Emirates, the USA, Canada, or any other restricted country which has been identified by the FATF as having strategic deficiencies."
 msgstr ""
 
 msgid "The Client is not trading in the actual Underlying Instrument, or the actual foreign currency; all Transactions are settled in cash only."
@@ -10333,7 +10333,7 @@ msgid "The Client's use of the MT5 trading platform, whether accessed through or
 msgstr ""
 
 msgid "The Commencement Date of this agreement shall mean the date on which the Agent account is approved by the Company."
-msgstr ""
+msgstr "Tanggal Dimulainya perjanjian ini adalah tanggal di mana akun Agen disetujui oleh Perusahaan."
 
 msgid "The Company Prices are determined by reference to the price of the Underlying Instrument which is quoted on external exchanges or dealing facilities that %1 selects at the Company's discretion. The Company's IT infrastructure and price aggregator system facilitates the reception of quotes from shortlisted prime brokers, who act as liquidity providers for the Company and the delivery of the quotes, derived with reference against relevant benchmark and markets, to the Client. The Client acknowledges that the Company Prices may differ from the Bid and Ask Prices made available by external exchanges or dealing facilities and the Company is not liable for any losses that the Client might incur arising from such differences. This clause does not apply to Volatility Indices."
 msgstr ""
@@ -10345,7 +10345,7 @@ msgid "The Company also collects basic tax residence information for the purpose
 msgstr ""
 
 msgid "The Company and the Agent (hereinafter referred to as \"the Parties\") desire to enter into this agreement whereby the Company will offer to its clients local payment processing services through the Agent within a territory as specified in Section D of this agreement."
-msgstr ""
+msgstr "Perusahaan dan Agen (selanjutnya disebut \"Pihak\") berkeinginan untuk menandatangani perjanjian ini dimana Perusahaan akan menawarkan kepada kliennya layanan pemrosesan pembayaran lokal melalui Agen dalam wilayah sebagaimana ditentukan dalam Bagian D dari perjanjian ini."
 
 msgid "The Company collects and assesses the client's data to profile the client in relation to the Company's products. The Company does this manually with the assistance of automated processing. By categorisation, the Company will be able to provide the most appropriate products and services to the client."
 msgstr ""
@@ -10789,7 +10789,7 @@ msgid "The Introducing Broker warrants to the Company at all times that"
 msgstr ""
 
 msgid "The Introducing Broker's obligations"
-msgstr ""
+msgstr "Kewajiban Introducing Broker"
 
 msgid "The Investor Compensation Scheme"
 msgstr ""
@@ -11040,7 +11040,7 @@ msgstr ""
 msgid "The client is asked to note that weekend quotes are ignored for the purpose of contract settlement. During weekends, the forex markets may occasionally generate prices; however, these prices are often artificial (traders sometimes take advantage of the illiquidity of the markets during weekends to push prices up or down). To avoid settling prices based on such artificial prices, it is %1's policy not to count weekend prices towards contract settlement values (except for Volatility Indices, which are open during weekends)."
 msgstr ""
 
-msgid "The client is not resident in a restricted country such as Canada, Costa Rica, Hong Kong, Israel, Jersey, Malaysia, Malta, Paraguay, the United Arab Emirates, the USA, or any other restricted country that has been identified by the FATF as having strategic deficiencies."
+msgid "The client is not resident in a restricted country such as Canada, St. Vincent and the Grenadines, Hong Kong, Israel, Jersey, Malaysia, Malta, Paraguay, the United Arab Emirates, the USA, or any other restricted country that has been identified by the FATF as having strategic deficiencies."
 msgstr ""
 
 msgid "The client is over 18 years of age, unless the client is an Estonian resident whereby the client would have to be over 21."
@@ -11077,7 +11077,7 @@ msgid "The client should note that the Company's website generates log files tha
 msgstr ""
 
 msgid "The client using e-payments and bank wire transfers may make a deposit to the Agent. The Agent, receiving the deposit, shall thereinafter make a deposit to the Agent's %1 account (hereinafter referred to as the \"%1 Agent Account\")."
-msgstr ""
+msgstr "Setiap klien yang menggunakan e-payment dan transfer bank lokal dapat melakukan deposit menggunakan Agen. Agen yang menerima deposit tersebut, selanjutnya akan melakukan deposit ke dalam Akun %1 Klien bersangkutan (selanjutnya disebut sebagai \"akun Agen %1\")."
 
 msgid "The client's forex and contract-for-difference transactions with %1 are linked to an underlying financial instrument, and the client will be exposed to price, currency exchange, interest rate, or other volatility of the market to which the client's financial instrument is related to, especially if the market is of a jurisdiction that is foreign to the client. Forex and contract-for-difference trading over the Internet via an electronic trading platform is subject to data latency risk, which may result in delays in order execution."
 msgstr ""
@@ -11290,7 +11290,7 @@ msgid "The provision of the trading services described in this agreement utilise
 msgstr ""
 
 msgid "The provisions of this agreement or any orders and any applicable laws will not be breached or violated."
-msgstr ""
+msgstr "Ketentuan perjanjian ini atau perintah apa pun dan hukum apa pun yang berlaku tidak akan dilanggar atau disalahgunakan."
 
 msgid "The requested transfer would reduce the Client's Account Balance to less than the Margin required for the Client's Open Positions."
 msgstr ""
@@ -11356,7 +11356,7 @@ msgid "The stake is the amount that a trader must pay to enter into a trade."
 msgstr "Modal adalah jumlah yang dibayarkan oleh trader pada saat membeli kontrak."
 
 msgid "The sum received in the %1 Agent Account shall be subsequently transferred by the Agent to the respective client's %1 account (hereinafter referred to as the \"%1 Client Account\")."
-msgstr ""
+msgstr "Jumlah yang diterima dalam Akun Agen %1 akan ditransfer oleh Agen ke dalam masing-masing Akun Klien %1 (selanjutnya disebut sebagai \"Akun Klien %1\")."
 
 msgid "The system fills orders on a first-in, first-out basis, i.e. based on the sequence of the order received, and this is beyond the Company's control. As a result, the client may find it difficult or impossible to close a position at the intended price stipulated in the client's stop order during certain market conditions. The placement of stop order by the client, though useful as a risk management tool, will not necessarily limit the client's losses to the client's intended amounts in the event of highly volatile trading conditions, since market conditions may make it impossible to execute such orders, and there is uncertainty about the client's possible exit price. In short, a stop order is not guaranteed because it cannot operate in all market circumstances."
 msgstr ""
@@ -11587,13 +11587,13 @@ msgid "This account is excluded until %1"
 msgstr "Akun ini di kecualikan hingga %1"
 
 msgid "This agreement constitutes the entire agreement between the Parties and no earlier representation, arrangement, or agreement, whether written or oral, relating to any matter dealt with in this agreement between the Parties, shall have any force or effect before the Commencement Date."
-msgstr ""
+msgstr "Persetujuan ini merupakan keseluruhan perjanjian antara Kedua Belah Pihak dan tanpa perwakilan, atau pengaturan, atau kesepakatan sebelumnya baik itu secara tertulis, atau lisan yang berhubungan dengan masalah yang diatur dalam perjanjian ini antara Kedua Belah Pihak, harus diselesaikan sebelum Tanggal Mulai."
 
-msgid "This agreement is between Binary (C.R) S.A. (hereinafter referred to as \"the Company\" or \"%1\") and Payment Agent (hereinafter referred to as \"the Agent\"), both of whom agree to be bound by this agreement."
+msgid "This agreement is between Binary (SVG) Ltd (hereinafter referred to as \"the Company\" or \"%1\") and Payment Agent (hereinafter referred to as \"the Agent\"), both of whom agree to be bound by this agreement."
 msgstr ""
 
 msgid "This agreement is supplied to the Agent in English. In the event that there is a difference between the English version and any translated versions of this document, the English version shall prevail. The Company shall not be liable for any loss or damage whatsoever caused by an error, inaccuracy, or misspelling and, as a result, by misunderstanding or misinterpretation of any of the terms or conditions or clauses or provisions of any translated versions of this agreement."
-msgstr ""
+msgstr "Perjanjian ini disampaikan kedapa Agen dalam bahasa Inggris. Jika ada perbedaan antara versi bahasa Inggris dan versi terjemahan dokumen ini, versi Bahasa Inggris yang akan berlaku. Perusahaan tidak bertanggung jawab atas kehilangan, atau kerusakan apapun yang disebabkan oleh kesalahan, ketidakakuratan, atau kesalahan ejaan, dan akibatnya salah paham, atau salah tafsirkan terhadap salah satu syarat, atau ketentuan, atau klausul, atau ketentuan dari versi terjemahan pada perjanjian ini."
 
 msgid "This agreement is supplied to the Client in English. In the event that there is a difference between the English version and any translated versions of this document, the English version shall prevail."
 msgstr ""
@@ -11602,7 +11602,7 @@ msgid "This agreement will commence on the date that the Client receives their M
 msgstr ""
 
 msgid "This agreement, as well as any and all obligations or rights deriving from this agreement, is binding and enforceable against the Agent."
-msgstr ""
+msgstr "Perjanjian ini, serta semua kewajiban atau hak yang berasal dari perjanjian ini, mengikat dan dapat ditegakkan terhadap Agen."
 
 msgid "This application only supports Windows operating systems."
 msgstr "Aplikasi ini hanya mendukung sistem operasi Windows."
@@ -11706,8 +11706,8 @@ msgstr ""
 msgid "This symbol is not active. Please try another symbol."
 msgstr "Simbol ini tidak aktif. Silakan coba simbol lain."
 
-msgid "This website's services are not made available in certain countries such as the USA, Canada, Costa Rica, Hong Kong, Japan, or to persons under age 18."
-msgstr "Layanan situs web ini tidak tersedia di negara-negara tertentu seperti Amerika Serikat, Kanada, Kosta Rika, Hong Kong, Jepang, atau orang-orang di bawah usia 18 tahun."
+msgid "This website's services are not made available in certain countries such as the USA, Canada, St. Vincent and the Grenadines, Hong Kong, Japan, or to persons under age 18."
+msgstr ""
 
 msgid "Thorough knowledge of bash scripting, and experience with the Perl scripting language"
 msgstr "Memiliki pengetahuan menyeluruh tentang bash scripting, dan pengalaman dengan bahasa skrip Perl"
@@ -12433,7 +12433,7 @@ msgid "Upon closing a trade, the realised profit (or loss), which is represented
 msgstr ""
 
 msgid "Upon demand, the Agent shall provide the Company with all the requested information and documentation regarding their operations and competence, including but not limited to their registration, incorporation, memberships, authorisations, knowledge, expertise, and experience."
-msgstr ""
+msgstr "Sesuai permintaan, Agen akan memberikan kepada Perusahaan semua informasi dan dokumentasi yang diminta mengenai operasi dan kompetensinya, termasuk namun tidak terbatas pada pendaftaran, penggabungan, keanggotaan, otorisasi, pengetahuan, keahlian, dan pengalaman."
 
 msgid "Upon request from the Company or its legal representatives or government regulators, the Introducing Broker must promptly grant Binary with unlimited access to information to the extent that Binary requires to satisfy any legal or regulatory requirement or obligation."
 msgstr ""
@@ -12481,7 +12481,7 @@ msgid "Use the %1 API for any purpose that violates any law or regulation or any
 msgstr ""
 
 msgid "Use the Company's name or trademark in the Agent's advertising activities without a written authorisation to be given by the Company"
-msgstr ""
+msgstr "Menggunakan nama atau merek dagang Perusahaan dalam kegiatan periklanan Agen tanpa izin tertulis yang diberikan oleh Perusahaan"
 
 msgid "Use the Marketing Materials provided by Binary solely for the purpose of providing IB services and in accordance with Binary's instructions"
 msgstr ""
@@ -12496,7 +12496,7 @@ msgid "Use the web platform from any Windows, MacOS, or Linux operating system �
 msgstr "Gunakan platform web dari sistem Windows, MacOS, atau Linux – tanpa memerlukan download atau instalasi."
 
 msgid "Use their best endeavours and diligence to transfer funds deposited to %1 Agent Account to its respective %1 Client account"
-msgstr ""
+msgstr "Menggunakan upaya terbaik dan ketekunan mereka untuk mentransfer dana yang didepositkan ke dalam Akun Agen %1 ke dalam masing-masing akun klien %1"
 
 msgid "Use their best endeavours to attract potential Clients for Binary"
 msgstr ""
@@ -12564,8 +12564,8 @@ msgstr "Ketik ulang kata sandi MT5 baru"
 msgid "Verify new password"
 msgstr "Verifikasi kata sandi baru"
 
-msgid "Version 48. Last modified 2019-04-xx."
-msgstr "Versi 48. Terakhir dimodifikasi xx-04-2019."
+msgid "Version 48. Last modified 2019-05-10."
+msgstr ""
 
 msgid "Video Room Facility"
 msgstr "Fasilitas Ruang Video"
@@ -12985,7 +12985,7 @@ msgid "When the client opens an account with the Company, the Company will reque
 msgstr ""
 
 msgid "When the client requests a withdrawal from %1 Client Account, such request shall be automatically proceeded, and, as a result, the requested sum shall be transferred from the %1 Client Account to the %1 Agent Account. However, it is noted that when the client reaches the client's withdrawal limits, a withdrawal request shall not be automatically proceeded before the required authentication process is conducted."
-msgstr ""
+msgstr "Ketika klien meminta penarikan dari Akun Klien %1, permintaan tersebut akan diproses secara otomatis, dan, sebagai akibatnya, jumlah yang diminta akan ditransfer dari Akun Klien %1 ke Akun Agen %1. Namun, perlu dicatat bahwa ketika klien mencapai batas penarikan maka permintaan penarikan tidak akan diproses sebelum otentikasi yang diperlukan terpenuhi."
 
 msgid "When the market conditions or market movements/volatility are abnormal"
 msgstr ""
@@ -13081,13 +13081,13 @@ msgid "Where the Agent becomes incapable to pay their debts as they fall due, or
 msgstr ""
 
 msgid "Where the Agent ceases to be competent, capable, adequate, or qualified to effectively perform all of the Agent's duties and obligations that are undertaken and agreed to under this agreement, for any reason, including but not limited to lack of knowledge, expertise, experience, skills, and time, the Agent shall notify the Company immediately and without any delay."
-msgstr ""
+msgstr "Jika Agen tidak lagi kompeten, mampu, memadai, atau memenuhi syarat untuk secara efektif menjalankan semua tugas dan kewajiban Agen yang dijalankan dan disepakati dalam perjanjian ini, untuk alasan apa pun, termasuk namun tidak terbatas pada kurangnya pengetahuan, keahlian, pengalaman, keterampilan, dan waktu, Agen harus segera memberi tahu Perusahaan dan tanpa penundaan."
 
 msgid "Where the Agent fails to comply with the Agent's obligations or fails to perform any of the Agent's duties or other provisions under this agreement and such failure continues for at least one business day after the receipt of the non-performance notice given by the Company"
 msgstr ""
 
 msgid "Where the Agent is an individual, the Agent has reached the age of 18 years or over and has full capacity to enter into this agreement."
-msgstr ""
+msgstr "Di mana Agen adalah seorang individu, Agen telah mencapai usia 18 tahun atau lebih dan memiliki kapasitas penuh untuk masuk ke dalam perjanjian ini."
 
 msgid "Where the Agent is dissolved or deregistered from any records of a formal register whatsoever; furthermore, where any procedure is initiated that is seeking, intending, or proposing the Agent's dissolution or deregistration from any records of a formal register"
 msgstr ""
@@ -13096,13 +13096,13 @@ msgid "Where the Agent omits, fails, or refuses in any manner to provide the Com
 msgstr ""
 
 msgid "Where the Agent owns or operates website/s, the Agent shall do the following:"
-msgstr ""
+msgstr "Dimana Agen memiliki, atau mengoperasikan situs web, Agen harus melakukan hal berikut:"
 
 msgid "Where the Client's obligations to the Company are due and payable, the Company shall cease to treat as Client Money the amount equal to the amount of such obligations."
 msgstr ""
 
 msgid "Where the Company ascertains any mistakes or flaws related to deposits or withdrawals from or to %1 Agent Account or %1 Client Account, the Company shall, within a reasonable time, take all corrective measures to rectify such mistakes or flaws."
-msgstr ""
+msgstr "Apabila Perusahaan memastikan adanya kesalahan atau kekurangan yang terkait dengan deposit, atau penarikan dari atau ke Akun Agen %1 atau Akun Klien %1, Perusahaan harus, dalam waktu yang wajar, akan melakukan semua tindakan perbaikan untuk memperbaiki kesalahan atau kekurangan tersebut."
 
 msgid "Where the Introducing Broker owns, or operates, a website and wishes to include Binary's services, the Introducing Broker shall"
 msgstr ""

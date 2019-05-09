@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-05-09 07:21\n"
+"PO-Revision-Date: 2019-05-09 09:35\n"
 "Last-Translator: binarycom\n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -174,6 +174,9 @@ msgstr "%1 聯盟計劃"
 msgid "%1 Application Programme Interface (\"API\") terms and conditions"
 msgstr "%1 應用程式編程介面(\"API\") 的條款和條件"
 
+msgid "%1 Binary.com is not available in St. Vincent and the Grenadines and is not regulated or supervised by any regulatory body in the financial system of St. Vincent and the Grenadines."
+msgstr ""
+
 msgid "%1 Expert Advisor (EA)"
 msgstr "%1 專家顧問 (EA)"
 
@@ -273,8 +276,8 @@ msgstr "%1是Perl 社群的活躍成員，正在將一些內部使用模組上�
 msgid "%1 is an active proponent of the open-source movement and is in the process of open-sourcing a number of components of its codebase."
 msgstr "%1是開源運動的積極倡導者，並正在開啓一批程式碼基底元件。"
 
-msgid "%1 is an award-winning online trading provider that helps its clients to trade on financial markets through binary options and CFDs. Trading binary options and CFDs on Volatility Indices is classified as a gambling activity. Remember that gambling can be addictive – please play responsibly. Learn more about %2Responsible Trading%3. Some products are not available in all countries. This website's services are not made available in certain countries such as the USA, Canada, Costa Rica, Hong Kong, or to persons under age 18."
-msgstr "%1 是多次獲獎的線上交易提供商，幫助客戶通過二元期權和差價合約在金融市場進行交易。基於波動率指數的二元期權和差價合約交易被歸類為博彩活動。請記住博彩活動可能會上癮，並提醒自己要承擔責任。查閱 %2負責任交易%3的詳細資訊。一些產品在所有國家都不可用。本網站不向一些國家如美國、加拿大、哥斯達黎加、香港、或18歲以下的使用者提供服務。"
+msgid "%1 is an award-winning online trading provider that helps its clients to trade on financial markets through binary options and CFDs. Trading binary options and CFDs on Volatility Indices is classified as a gambling activity. Remember that gambling can be addictive – please play responsibly. Learn more about %2Responsible Trading%3. Some products are not available in all countries. This website's services are not made available in certain countries such as the USA, Canada, St. Vincent and the Grenadines, Hong Kong, or to persons under age 18."
+msgstr ""
 
 msgid "%1 is awarded 'Best Trading Platform in Asia' by Global Brands Magazine. The Global Brands Awards honours excellence in performance and exceptional service delivery. "
 msgstr "%1被全球品牌雜誌評為「亞洲最佳交易平台」。全球品牌大獎旨在表彰卓越性能和卓越的服務提供。 "
@@ -290,9 +293,6 @@ msgstr "%1 與上述所有支付代理不存在附屬關係。各支付代理均
 
 msgid "%1 is not affiliated with any of the payment agents listed above. Each payment agent operates as an independent service provider and is not endorsed, guaranteed or otherwise approved by %1. CUSTOMERS DEAL WITH PAYMENT AGENTS AT THEIR SOLE RISK AND PERIL. Customers are advised to check the credentials of payment agents before sending them any money. %1 shall not in any circumstance be held responsible for transactions made between customers and payment agents."
 msgstr "%1 與上述所有支付代理不存在附屬關係。各支付代理均以獨立服務提供商的身份運營，未由%1支持、擔保或經其它方式批准。客戶與支付代理的業務往來，風險自負。我們建議客戶在向支付代理匯款前，應事先查詢其信用狀況。在任何情況下，%1 都不對客戶與支付代理之間的交易承擔責任。"
-
-msgid "%1 is not available in Costa Rica and is not regulated or supervised by any regulatory body in the Costa Rican financial system."
-msgstr "%1在哥斯大黎加還不可使用，並不受哥斯大黎加金融體系任何監管機構的監管或監督。"
 
 msgid "%1 is owned and operated by the Binary Group Ltd. group of companies. For more information, %2visit our history page%3."
 msgstr "%1 由 Binary 集團有限公司擁有和經營。欲了解更多資訊，請%2訪問我們的歷史頁面%3。"
@@ -478,7 +478,7 @@ msgid "%1Founded%2 October 1999"
 msgstr "%1成立於%2 1999年十月"
 
 msgid "%1In regard to customers of Binary (IOM) Ltd, online gambling debts are enforceable by law in the Isle of Man.%2"
-msgstr ""
+msgstr "%1根據曼島法律的強制規定，Binary (IOM) Ltd的客戶必須償還線上博彩的債務。%2"
 
 msgid "%1Manage your accounts%2"
 msgstr "%1管理您的帳戶%2"
@@ -523,19 +523,19 @@ msgid "(a) Price and cost"
 msgstr "(一) 價格和成本"
 
 msgid "(a) The nature of the client's Contracts"
-msgstr ""
+msgstr "(一) 客戶的合約性質"
 
 msgid "(b) Speed"
 msgstr "(二) 速度"
 
 msgid "(b) The priorities that the client has identified for the Company in relation to entering into those Contracts"
-msgstr ""
+msgstr "(二) 客戶為制定合約給公司指定的優先事項"
 
 msgid "(c) Likelihood of execution"
 msgstr "(三) 執行的可能性"
 
 msgid "(c) The practices relating to the market in question, with the aim of producing a result that provides, in the Company's view, the best balance across a range of sometimes conflicting factors"
-msgstr ""
+msgstr "(三) 與市場有關的實行方式，目的是根據公司的觀點，在廣泛的、有時會相衝突的因素間實現最佳平衡"
 
 msgid "(d) Likelihood of settlement"
 msgstr "(四) 結算的可能性"
@@ -625,7 +625,7 @@ msgid "A MAM account can be assigned to a money manager who will trade on your b
 msgstr "MAM帳戶可以分配給資金經理代表您交易。您可以查看資金經理執行的所有交易。"
 
 msgid "A Market Order is an Order to buy or sell at the available market price, which results from the aggregation of prices and volumes received from third-party LPs."
-msgstr ""
+msgstr "市價訂單是以來自第三方LP價格和交易量的匯總產生的目前市場價格買入或賣出的訂單。"
 
 msgid "A PEP is an individual who is or has been entrusted with a prominent public function. This status extends to a PEP's relatives and close associates."
 msgstr "PEP是被委託進行特出公眾任務的個人。此身份包括了PEP的親屬和親近的人。"
@@ -634,22 +634,22 @@ msgid "A Payment Agent acts like an exchange between the Client (that is, our cu
 msgstr "付款代理人扮演客戶（即我們的顧客）和 %1之間的兌換員。如果客戶希望使用某種特定電子錢包方式或1%不支持的本地貨幣，付款代理人將負責為客戶處理充值和提款事宜。匯款費用由客戶支付。"
 
 msgid "A Pending Order is the trader's instruction to a brokerage company to buy or sell a security in future, under pre-defined conditions, when price reaches a specific level."
-msgstr ""
+msgstr "待定訂單是指交易者對經紀公司發出的將來在預定條件下，當證券價格達到特定水平時買入或賣出的指示。"
 
 msgid "A Professional Client receives a lower degree of client protection due to the following:"
 msgstr "由於以下原因, 專業客戶會收到程度較低的用戶端保護:"
 
 msgid "A Settlement occurs when the Client's account with the Company is credited or charged with the net amount of the results of a Transaction."
-msgstr ""
+msgstr "結算是當交易結果淨額在公司客戶的帳戶裡記入或扣除時發生的。"
 
 msgid "A Stays Between trade pays out if the market stays between (does not touch) BOTH the high barrier or the low barrier at any time during the period chosen by a trader. A Goes Outside trade pays out if the market touches EITHER the high barrier or the low barrier at any time during the period chosen by a trader."
 msgstr "如果市場在所選期限內一直保持在（沒有觸及）高障礙或低障礙之間，所選擇的「保持在範圍之內」交易即可獲利。如果市場在所選期限內只要觸及高障礙或低障礙，所選擇的「超出範圍之外」交易即可獲利。"
 
 msgid "A Stop Loss Order is intended for minimising losses when the Financial Instrument price moves in an unprofitable direction. The execution of this Order results in the complete closing of the whole position. It is always connected to an Open Position or a Pending Order."
-msgstr ""
+msgstr "止損訂單旨在當金融工具價格開始向無利可圖的方向移動時最大限度地減少損失。此訂單一旦執行會導致整個頭寸完全平倉。它始終與未平倉頭寸或待定訂單相連。"
 
 msgid "A Take Profit Order is intended for gaining profit when the Financial Instrument price has reached a certain level. Execution of this Order results in the complete closing of the whole position. It is always connected to an Open Position or a Pending Order."
-msgstr ""
+msgstr "止盈訂單旨在當金融工具價格達到指定水平時贏取盈利。此訂單一旦執行會導致整個頭寸完全平倉。它始終與未平倉頭寸或待定訂單相連。"
 
 msgid "A bachelor's degree in commerce or any business-related field, IT-related field or criminology"
 msgstr "商業或任何商業相關領域、資訊技術相關領域或犯罪學學士學位"
@@ -658,7 +658,7 @@ msgid "A bachelor's degree in commerce or any business-related field, law, or ri
 msgstr "商業或任何商業相關領域、法律或風險管理學士學位"
 
 msgid "A binary option is a contract in which one party undertakes to pay the other party a specified amount if the value of a given asset changes in a specific direction within a predetermined period. The three major underlying asset classes for binary options offered by the Company are"
-msgstr ""
+msgstr "二元期權是指一方承諾如果某一資產的價值在預定期間內朝著特定方向發生變化，將向另一方支付特定數額的合約 。公司提供的二元期權三大基礎資產類別是"
 
 msgid "A binary option is a contract purchased by a trader, which pays a pre-determined amount if their prediction is correct."
 msgstr "二元期權為交易者所買入之合約，如果預測正確即可獲得預先確定的獲利金額。"
@@ -673,10 +673,10 @@ msgid "A clear understanding of the OSI model, TCP/IP, and other industry-standa
 msgstr "對OSI 模型、TCP/IP和其他行業標準網絡防禦概念了解得很清晰"
 
 msgid "A client may only open an account on this site on the following conditions:"
-msgstr ""
+msgstr "客戶必須符合以下條件才能在此網站開立帳戶："
 
 msgid "A client should not use the client's account as a banking facility, and deposits should only be made with a view to using funds to place contracts. The Company is not a financial institution, and the client will not receive interest on deposits. Should a client make repeated deposits and withdrawals without placing commensurate contracts, the Company reserves the right to pass on to the client's account, without prior notice, any bank charges the Company has incurred before closing the account."
-msgstr ""
+msgstr "客戶的帳戶不應該被用來作為銀行信貸，而存款應該被視為只用以進行交易的資金。公司不是金融機構，客戶存款將不會有利息。如果客戶重覆進行存款和取款，卻沒有進行相稱的交易，在關閉帳戶之前，公司保留在不事先通知的情況下把公司所承擔的任何銀行費用轉到客戶帳戶的權利。"
 
 msgid "A competitive and flexible affiliate programme that can be adapted to your needs"
 msgstr "可根據您的需要調整的具競爭性和靈活的聯盟計劃"
@@ -691,9 +691,9 @@ msgid "A firm grasp of AML-CTF regulations, typologies, and red flags, as well a
 msgstr "非常熟悉AML-CTF法規、類型學和紅旗規則, 以及欺詐流程和應用程式"
 
 msgid "A force majeure event, if and when determined, means, (i) the Company, by reason of force majeure or act of state, is prevented from, hindered, or delayed in delivering or receiving, or is unable to deliver or receive, any quotation of the Bid and Ask Prices of a market in one or more of the instruments in which the Company ordinarily deals in Transactions; (ii) an excessive movement in the market of the instrument or the Company's reasonable anticipation of the potential occurrence of market disruption."
-msgstr ""
+msgstr "不可抗力事件，如果發生及一旦確定，是指(i) 公司因不可抗力或政府行為因素，被阻止或妨礙或延遲通過公司通常用於進行交易處理的一或多個工具交付或接收，或無法提供或接收任何市場買入和賣出價格; (ii) 交易工具的市場動盪過度或公司合理預期可能發生的市場擾亂。"
 
-msgid "A glossary of the capitalised terms can be found in paragraph S, entitled \"Interpretation of terms\"."
+msgid "A glossary of the capitalised terms can be found in paragraph R, entitled \"Interpretation of terms\"."
 msgstr ""
 
 msgid "A good understanding of attacks and mitigations such as timing, injection (e.g. form parameter/SQL), side-channel, DoS, buffer overflows and DNS cache poisoning"
@@ -706,7 +706,7 @@ msgid "A high level of integrity, reliability, and work ethic"
 msgstr "高水平的完整性、可靠性和職業道德"
 
 msgid "A higher price (Ask), at which a Client can buy, and a lower price (Bid), at which a Client can sell, are quoted for each Financial Instrument, and they are referred to as Company Prices. The difference between the Bid and Ask Prices is called the Spread."
-msgstr ""
+msgstr "客戶可以買入的較高價格（Ask）和客戶可以賣出的較低價格（Bid）均針對每種金融工具報出，並且被稱為公司價格。買入價和賣出價之間的差異稱為價差。"
 
 msgid "A keen eye to identify new trends in marketing, evaluate new technologies and ensure the brand is at the forefront of industry developments"
 msgstr "具敏銳眼光, 可確定行銷的新趨勢, 評估新技術, 並確保品牌處於行業發展的前沿"
@@ -715,7 +715,7 @@ msgid "A lifelong interest in accounting, and an aptitude for numbers"
 msgstr "對會計極感興趣，願意終身投入其中，以及對數字具備高敏感性"
 
 msgid "A list of accepted payment methods"
-msgstr ""
+msgstr "可接受的付款方式清單"
 
 msgid "A list of payment methods you will accept from Clients"
 msgstr "您可接受之客戶付款方式列表"
@@ -1803,7 +1803,7 @@ msgstr "2018年 BIEL RTS28"
 msgid "BIEL forms part of %1the Investor Compensation Scheme%2 (the \"Scheme\"), which is a rescue fund for investors that are clients of failed investment firms licensed by the MFSA. The Scheme covers 90% of the Company's net liability to a client in respect of investments that qualify for compensation under the Investment Services Act subject to a maximum payment to any one person of €20,000. The Scheme is based on EC Directive 97/9."
 msgstr ""
 
-msgid "BIEL is a company established in Malta under registration number C70156 and having its registered office at Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta."
+msgid "BIEL is a company established in Malta under registration number C70156 and having its registered office at W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta."
 msgstr ""
 
 msgid "BIEL is authorised and regulated by the Malta Financial Services Authority (\"MFSA\") under the Investment Services Act (Cap. 370, Laws of Malta) (the \"Act\") to carry on investment business. BIEL is authorised by the MFSA to deal on own account (i.e. offer and act as counterparty to trades) and to execute orders on behalf of other clients; both services are in relation to financial derivative products relating to foreign exchange, indices and other financial products or assets (\"Financial Products\"). BIEL is not authorised to and does not offer investment, financial, legal, tax, regulatory, and/or other types of advice or state an opinion in relation to a Transaction under any circumstances. Clients should get independent advice from an investment adviser if they have any doubts about dealing in financial products."
@@ -1980,15 +1980,6 @@ msgstr ""
 msgid "Binary (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, British Virgin Islands. Licensed and regulated by the British Virgin Islands Financial Services Commission - %1view licence%2."
 msgstr "Binary (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, British Virgin Islands. 由英屬維爾京群島金融服務委員會授權和管理- %1查看許可證%2。"
 
-msgid "Binary (C.R.) S.A."
-msgstr "Binary (C.R.) S.A."
-
-msgid "Binary (C.R.) S.A.,"
-msgstr "Binary (C.R.) S.A.,"
-
-msgid "Binary (C.R.) S.A., registered in Costa Rica. Clients from the rest of the world (excluding certain countries such as the USA, Canada, Costa Rica, Hong Kong) will have their account opened with Binary (C.R.) S.A."
-msgstr "Binary (C.R.) S.A.，在哥斯大黎加註冊。全球其他地區的客戶(不包括某些國家如美國、加拿大、哥斯大黎加、香港)可在 Binary (CR) SA 開設帳戶。"
-
 msgid "Binary (Europe) Limited"
 msgstr "Binary (歐洲) 有限公司"
 
@@ -2029,6 +2020,15 @@ msgid "Binary (IOM) Ltd, First Floor, Millennium House, Victoria Road, Douglas, 
 msgstr "Binary(IOM) Ltd, First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW"
 
 msgid "Binary (IOM) Ltd."
+msgstr ""
+
+msgid "Binary (SVG) Ltd"
+msgstr ""
+
+msgid "Binary (SVG) Ltd is registered in St. Vincent and the Grenadines. Clients from the rest of the world (excluding certain countries such as the USA, Canada, and Hong Kong) will have their account opened with Binary (SVG) Ltd."
+msgstr ""
+
+msgid "Binary (SVG) Ltd,"
 msgstr ""
 
 msgid "Binary (V) Ltd"
@@ -2634,11 +2634,11 @@ msgstr "客戶同意遵守本公司為驗證此條款是否合規而提出的合
 msgid "Clients are also advised that their rights may be prejudiced if they provide the wrong information as the Company would not be in a position to act in their best interests."
 msgstr ""
 
-msgid "Clients from the rest of the world (excluding certain countries such as the USA, Canada, Costa Rica, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Binary (BVI) Ltd. %1 is not available in the British Virgin Islands."
-msgstr "全球其他地區的客戶(不包括某些國家如美國、加拿大、哥斯大黎加、香港) 可在 Binary (BVI) Ltd. 開設外匯和差價合約Metatrader 5帳戶。%1在英屬維爾京群島不能使用。"
+msgid "Clients from the rest of the world (excluding certain countries such as the USA, Canada, St. Vincent and the Grenadines, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Binary (BVI) Ltd. %1 is not available in the British Virgin Islands."
+msgstr ""
 
-msgid "Clients from the rest of the world (excluding certain countries such as the USA, Canada, Costa Rica, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Binary (V) Ltd. %1 is not available in the Republic of Vanuatu."
-msgstr "全球其他地區的客戶(不包括某些國家如美國、加拿大、哥斯大黎加、香港) 可在 Binary (V) Ltd. 開設外匯和差價合約Metatrader 5帳戶。%1在萬那杜不能使用。"
+msgid "Clients from the rest of the world (excluding certain countries such as the USA, Canada, St. Vincent and the Grenadines, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Binary (V) Ltd. %1 is not available in the Republic of Vanuatu."
+msgstr ""
 
 msgid "Clients from the rest of the world (excluding certain jurisdictions such as the USA, Canada, Japan, and the European Union) who wish to trade CFDs will have their MetaTrader 5 account opened with Binary (FX) Ltd. %1 is not available in Malaysia."
 msgstr "全球其他地區想要進行差價合約交易的客戶 (不包括某些管轄區如美國、加拿大、日本和歐盟國家) 可在 Binary (FX) Ltd. 開設MetaTrader 5帳戶。%1不可在馬來西亞使用。"
@@ -4647,11 +4647,11 @@ msgstr ""
 msgid "Food Services"
 msgstr "飲食服務"
 
-msgid "For Binary (C.R.) S.A., the applicable Jurisdiction shall be Costa Rica."
-msgstr "Binary (C.R.) S.A.適用的管轄權應為哥斯大黎加。"
-
 msgid "For Binary (IOM) Ltd, the applicable Jurisdiction shall be the Isle of Man."
 msgstr "Binary (IOM) Ltd適用的管轄權應為曼島。"
+
+msgid "For Binary (SVG) Ltd, the applicable Jurisdiction shall be St. Vincent and the Grenadines."
+msgstr ""
 
 msgid "For Binary Investments (Europe) Ltd and Binary (Europe) Ltd, the applicable Jurisdiction shall be Malta."
 msgstr "Binary Investments (Europe) Ltd 和 Binary (Europe) Ltd適用的管轄權應為馬爾他。"
@@ -5790,8 +5790,8 @@ msgstr "歐盟國家的金融產品交易由Binary Investments (Europe) Ltd提�
 msgid "In the Isle of Man and the UK, Volatility Indices are offered by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles; licensed and regulated respectively by (1) the Gambling Supervision Commission in the Isle of Man (current licence issued on 31 August 2017) and by (2) the Gambling Commission in the UK (licence %1reference no: 39172%2)."
 msgstr "英國和曼島的波動率指數交易由Binary (IOM) Ltd. 提供，地址為：First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles；(1) 由不列顛群島曼島投資監管委員會授予執照和監管，目前線上博彩執照於2012 年8 月31 日頒發；及(2) 由英國博彩委員會授予執照和監管(執照 %1編號: 39172%2)-"
 
-msgid "In the UK, our clients trade through Binary (IOM) Ltd and Binary Investments (Europe) Ltd. In the Isle of Man, they trade through Binary (IOM) Ltd. In the European Union (except UK), they trade through Binary (Europe) Ltd and Binary Investments (Europe) Ltd. In the rest of the world, they trade through Binary (C.R.) S.A., Binary (V) Ltd, Binary (BVI) Ltd and Binary (FX) Ltd."
-msgstr "在英國，我們的客戶通過 Binary (IOM) Ltd. 和 Binary Investments (Europe) Ltd. 進行交易。在曼島，他們通過 Binary (IOM) Ltd. 進行交易。在歐盟（除了英國），他們通過 Binary (Europe) Ltd. 和 Binary Investments (Europe) Ltd. 進行交易。在全世界其他地區，他們通過 Binary (C.R.) S.A.，Binary (V) Ltd.，Binary (BVI) Ltd. 和Binary (FX) Ltd.進行交易。"
+msgid "In the UK, our clients trade through Binary (IOM) Ltd and Binary Investments (Europe) Ltd. In the Isle of Man, they trade through Binary (IOM) Ltd. In the European Union (except UK), they trade through Binary (Europe) Ltd and Binary Investments (Europe) Ltd. In the rest of the world, they trade through Binary (SVG) Ltd, Binary (V) Ltd, Binary (BVI) Ltd and Binary (FX) Ltd."
+msgstr ""
 
 msgid "In the case of a Limit Order, the Client acknowledges that the Company will endeavour to fill the Order at a level that is the same or better than the Limit the Client has specified, subject to the availability of the Limit Price."
 msgstr ""
@@ -7410,8 +7410,8 @@ msgstr "注: 註冊後24小時內, 值10美元的無存款獎金將存入您的�
 msgid "Note: For any enquiries regarding disabled or excluded accounts, please contact %1Customer Support%2."
 msgstr "注: 如有任何關於禁用或隔離帳戶的查詢, 請與%1客服部%2聯繫。"
 
-msgid "Note: Payment Agent transfers are only available for accounts registered with Binary (CR) SA. Transactions are accepted only in US dollars."
-msgstr "注意：僅在Binary (CR) SA註冊的帳號才能通過付款代理匯款。僅接受以美元進行所有交易。"
+msgid "Note: Payment Agent transfers are only available for accounts registered with Binary (SVG) Ltd. Transactions are accepted only in US dollars."
+msgstr ""
 
 msgid "Note: This feature is not available if you logged in using a social network."
 msgstr "注意: 如果您使用社交網路登入, 此功能不可用。"
@@ -7773,8 +7773,8 @@ msgstr "我們的價值觀"
 msgid "Our website uses cookies to give you the best user experience. For more information, %1view our policy%2."
 msgstr "我們網站使用 cookie 為您提供最佳的使用者體驗。請%1參閱我們的政策 %2。"
 
-msgid "Outside the EU, financial products are offered by Binary (C.R.) S.A., 5th Floor, Building 6 Centro Ejecutivo La Sabana, Sabana Sur, San José, Costa Rica, Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, regulated by the Vanuatu Financial Services Commission (%1view licence%2), Binary (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, British Virgin Islands, regulated by the British Virgin Islands Financial Services Commission (%3licence no. SIBA/L/18/1114%4), and Binary (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Labuan, Malaysia, regulated by the Labuan Financial Services Authority to carry on a money-broking business (%5licence no. MB/18/0024%6)."
-msgstr "歐盟以外地區，金融產品由Binary (C.R.) S.A., 5th Floor, Building 6 Centro Ejecutivo La Sabana, Sabana Sur, San José, Costa Rica和Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu提供服務，受瓦努阿圖金融服務委員會監管（%1查看執照%2），或由Binary (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, British Virgin Islands 提供服務，受英屬維爾京群島金融服務委員會監管（%3執照編號SIBA/L/18/1114%4）以及由Binary (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Labuan, Malaysia提供服務，受納閩金融服務管理局監管，並開展貨幣經紀業務（%5執照編號MB/18/0024%6）。"
+msgid "Outside the EU, financial products are offered by Binary (SVG) Ltd, Hinds Building, Kingstown, St. Vincent and the Grenadines; Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, regulated by the Vanuatu Financial Services Commission (%1view licence%2); Binary (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, British Virgin Islands, regulated by the British Virgin Islands Financial Services Commission (%3licence no. SIBA/L/18/1114%4); and Binary (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Labuan, Malaysia, regulated by the Labuan Financial Services Authority to carry on a money-broking business (%5licence no. MB/18/0024%6)."
+msgstr ""
 
 msgid "Over $1,000,000"
 msgstr "大於$1,000,000"
@@ -10260,7 +10260,7 @@ msgstr ""
 msgid "The Client is also reminded that their internet connection can influence what price is displayed after the trade has been executed."
 msgstr ""
 
-msgid "The Client is not residing in a restricted country such as Costa Rica, Hong Kong, Israel, Jersey, Malaysia, Malta, Paraguay, United Arab Emirates, the USA, Canada, or any other restricted country which has been identified by the FATF as having strategic deficiencies."
+msgid "The Client is not residing in a restricted country such as St. Vincent and the Grenadines, Hong Kong, Israel, Jersey, Malaysia, Malta, Paraguay, United Arab Emirates, the USA, Canada, or any other restricted country which has been identified by the FATF as having strategic deficiencies."
 msgstr ""
 
 msgid "The Client is not trading in the actual Underlying Instrument, or the actual foreign currency; all Transactions are settled in cash only."
@@ -11040,7 +11040,7 @@ msgstr ""
 msgid "The client is asked to note that weekend quotes are ignored for the purpose of contract settlement. During weekends, the forex markets may occasionally generate prices; however, these prices are often artificial (traders sometimes take advantage of the illiquidity of the markets during weekends to push prices up or down). To avoid settling prices based on such artificial prices, it is %1's policy not to count weekend prices towards contract settlement values (except for Volatility Indices, which are open during weekends)."
 msgstr ""
 
-msgid "The client is not resident in a restricted country such as Canada, Costa Rica, Hong Kong, Israel, Jersey, Malaysia, Malta, Paraguay, the United Arab Emirates, the USA, or any other restricted country that has been identified by the FATF as having strategic deficiencies."
+msgid "The client is not resident in a restricted country such as Canada, St. Vincent and the Grenadines, Hong Kong, Israel, Jersey, Malaysia, Malta, Paraguay, the United Arab Emirates, the USA, or any other restricted country that has been identified by the FATF as having strategic deficiencies."
 msgstr ""
 
 msgid "The client is over 18 years of age, unless the client is an Estonian resident whereby the client would have to be over 21."
@@ -11589,7 +11589,7 @@ msgstr "此帳戶已被隔離, 直到%1"
 msgid "This agreement constitutes the entire agreement between the Parties and no earlier representation, arrangement, or agreement, whether written or oral, relating to any matter dealt with in this agreement between the Parties, shall have any force or effect before the Commencement Date."
 msgstr ""
 
-msgid "This agreement is between Binary (C.R) S.A. (hereinafter referred to as \"the Company\" or \"%1\") and Payment Agent (hereinafter referred to as \"the Agent\"), both of whom agree to be bound by this agreement."
+msgid "This agreement is between Binary (SVG) Ltd (hereinafter referred to as \"the Company\" or \"%1\") and Payment Agent (hereinafter referred to as \"the Agent\"), both of whom agree to be bound by this agreement."
 msgstr ""
 
 msgid "This agreement is supplied to the Agent in English. In the event that there is a difference between the English version and any translated versions of this document, the English version shall prevail. The Company shall not be liable for any loss or damage whatsoever caused by an error, inaccuracy, or misspelling and, as a result, by misunderstanding or misinterpretation of any of the terms or conditions or clauses or provisions of any translated versions of this agreement."
@@ -11706,8 +11706,8 @@ msgstr ""
 msgid "This symbol is not active. Please try another symbol."
 msgstr "這是個非活躍符號。請試用另一符號。"
 
-msgid "This website's services are not made available in certain countries such as the USA, Canada, Costa Rica, Hong Kong, Japan, or to persons under age 18."
-msgstr "某些國家如美國、加拿大、哥斯達黎加、香港、日本或18歲以下人士無法使用本網站的服務。"
+msgid "This website's services are not made available in certain countries such as the USA, Canada, St. Vincent and the Grenadines, Hong Kong, Japan, or to persons under age 18."
+msgstr ""
 
 msgid "Thorough knowledge of bash scripting, and experience with the Perl scripting language"
 msgstr "全面瞭解 bash 腳本編寫, 並具有 Perl 指令碼語言的編寫經驗"
@@ -12564,7 +12564,7 @@ msgstr "MT5新密碼驗證"
 msgid "Verify new password"
 msgstr "驗證新密碼"
 
-msgid "Version 48. Last modified 2019-04-xx."
+msgid "Version 48. Last modified 2019-05-10."
 msgstr ""
 
 msgid "Video Room Facility"
