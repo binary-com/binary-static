@@ -914,6 +914,19 @@ body #not_authenticated_financial ul.checked > li {
 }
 
 .authenticate-content {
+    #onfido {
+        // Below styles are set according to Onfido's styles
+        // This is because binary-styles overrides Onfido's own styles
+        .onfido-sdk-ui-NavigationBar-back {
+            background: transparent;
+        }
+        .onfido-sdk-ui-Button-button-primary:hover {
+            background: rgb(53, 63, 244); // Onfido's primary color
+        }
+        .onfido-sdk-ui-Button-button-outline:hover {
+            background-color: transparent;
+        }
+    }
     .fields > .gr-row > div {
         > .button {
             display: block;

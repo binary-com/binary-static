@@ -34,7 +34,7 @@ const Onfido = (() => {
     const changeOnfidoOptions = options => { onfidoOut.setOptions(options); };
 
     const simulateCallForApiKey = () => new Promise(resolve => {
-        setTimeout(() => resolve('eyJhbGciOiJIUzI1NiJ9.eyJwYXlsb2FkIjoicEVUV3NIUTJJdVljZ2FJSnl4dkdseEYxTmtXS0NFdVlqZXZhYlAyUVl4ZVA5clU1UTJZV2toZGRycUY5XG5NTFdxeGFJZENSdEEwUlRObnR1eUhyYXRmVGZCNzJKcmNsZGMyYzNoUkNZa1pZbnNSVE5TMUVKcGlnMnBcbjYzUm9FUm53XG4iLCJ1dWlkIjoiSHhzYTA5dXZrQTgiLCJleHAiOjE1NTY3ODMzNTZ9.PWEAP1f5nnu0VnyTIoKW4ylf_ktjUht9zua4kqbCQRo'), Math.random() * 1000);
+        setTimeout(() => resolve('eyJhbGciOiJIUzI1NiJ9.eyJwYXlsb2FkIjoiV1M0dWsvbUwwcU9PZE1mM3EvckdNS0t3QndWZWF1bDFqbU9KbmhYUXB4VlliRGhxWDJqRUVDL1IzaWNJXG4xbGNvWCs2aEs2TWlXajJCQ0VpVHhNcnRqS2J0TTdTZWh2djlGMFlhWDlYSHJqdz1cbiIsInV1aWQiOiJIeHNhMDl1dmtBOCIsImV4cCI6MTU1NzM5Njk1N30.UY1IULB4B5hItGXlqQws_4vF9-G2ixx1hqBxDTOxzws'), Math.random() * 1000);
     });
 
     return {
