@@ -25,6 +25,7 @@ const Input = ({
     required,
     type,
 }) => {
+    const computedMaxLength = fractional_digits ? max_length + fractional_digits + 1 : max_length;
     const onChange = (e) => {
         /**
          * fix for Safari
@@ -58,7 +59,7 @@ const Input = ({
                 data-value={data_value}
                 disabled={is_disabled}
                 id={id}
-                maxLength={fractional_digits ? max_length + fractional_digits + 1 : max_length}
+                maxLength={max_length && computedMaxLength}
                 name={name}
                 onChange={onChange}
                 onClick={onClick}
