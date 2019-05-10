@@ -97,8 +97,8 @@
         &:before {
             content: '1';
             position: absolute;
-            right: 18px;
-            bottom: 9px;
+            right: 15px;
+            bottom: 16px;
             font-size: 10px;
 
             @media (max-width: 1024px) {
@@ -135,6 +135,14 @@
                 border-bottom: 1px solid $COLOR_GRAY;
                 text-align: center;
             }
+            th {
+                padding-left: 15px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+            td {
+                padding-bottom: 10px;
+            }
         }
         tbody {
             tr {
@@ -151,6 +159,7 @@
         }
         td {
             border-bottom: 1px solid $COLOR_LIGHT_GRAY;
+            padding-left: 15px;
         }
         .table_last_item {
             td {
