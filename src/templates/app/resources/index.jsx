@@ -32,6 +32,13 @@ const Resources = () => (
             />
 
             <Column
+                header={it.L('Trading Durations')}
+                image='trading-times'
+                text={it.L('View the trading durations of assets, contract types, and markets')}
+                url='trading_duration'
+            />
+
+            <Column
                 header={it.L('Trading Times')}
                 image='trading-times'
                 text={it.L('View the operating hours of the markets you can trade.')}

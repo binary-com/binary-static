@@ -7,11 +7,11 @@ const Note = ({ text }) => (
 const Duration = ({ link, symbol_name }) => (
     <React.Fragment>
         <h3>{it.L('Contract duration')}</h3>
-        <p>{it.L('Pleas refer to the [_1]asset index[_2] for each asset\'s minimum and maximum contract durations based on trade type.', `<a href='${it.url_for('resources/asset_indexws')}#market-${link}' target='_blank'>`, '</a>')}</p>
+        <p>{it.L('Pleas refer to the [_1]asset index[_2] for each asset\'s minimum and maximum contract durations based on trade type.', `<a href='${it.url_for('resources/asset_indexws')}#market-${link}' target='_blank' rel='noopener noreferer'>`, '</a>')}</p>
         <h3>{it.L('Duration Offer')}</h3>
         <div id='duration_container' className='row no-margin'>
             <p className='gr-6 gr-no-gutter no-margin align-start'>{it.L('Supported duration offer of [_1]:', `${symbol_name}`)}</p>
-            <a className='gr-6 gr-no-gutter align-end duration-link' href={`${it.url_for('resources/trading_duration')}?duration_assets=tab_${link}`}>
+            <a className='gr-6 gr-no-gutter align-end duration-link' href={`${it.url_for('resources/trading_duration')}?duration_assets=tab_${link}`} target='_blank' rel='noopener noreferer'>
                 <span>{it.L('Trading duration for others')}</span>
                 <span className='arrow-right' />
             </a>
