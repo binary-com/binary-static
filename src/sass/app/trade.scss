@@ -984,6 +984,16 @@
     #digit_underlying ~ ul.select-options {
         font-size: 85%;
     }
+    .duration-link {
+        &:before {
+            position: absolute;
+            border-color: $COLOR_BLUE;
+            border-style: solid;
+            border-width: 5px 0px 5px 5px;
+            height: 0px;
+            width: 0px;
+        }
+    }
 }
 
 #deposit_btn_trade, #upgrade_btn_trade {

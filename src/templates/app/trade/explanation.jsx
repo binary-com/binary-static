@@ -4,17 +4,17 @@ const Note = ({ text }) => (
     <p className='hint'><strong>{it.L('Note')}: </strong>{text}</p>
 );
 
-const Duration = ({ link, market_name }) => (
+const Duration = ({ link, symbol_name }) => (
     <React.Fragment>
         <h3>{it.L('Contract duration')}</h3>
-        <p>{it.L('Pleas refer to the [_1]asset index[_2] for each asset\'s minimum and maximum contract durations based on trade type.', `<a href='${it.url_for('resources/asset_indexws')}#${link}' target='_blank'>`, '</a>')}</p>
+        <p>{it.L('Pleas refer to the [_1]asset index[_2] for each asset\'s minimum and maximum contract durations based on trade type.', `<a href='${it.url_for('resources/asset_indexws')}#market-${link}' target='_blank'>`, '</a>')}</p>
         <h3>{it.L('Duration Offer')}</h3>
-        <div className='row'>
-            <p className='explanation__asset-name'>{it.L('Supported duration offer of [_1]:', `${market_name}`)}</p>
-            <a className='explanation__asset-link' href={link}>{it.L('Trading duration for others')}</a>
+        <div className='row no-margin'>
+            <p className='gr-6 gr-no-gutter no-margin align-start'>{it.L('Supported duration offer of [_1]:', `${symbol_name}`)}</p>
+            <a className='gr-6 gr-no-gutter align-end duration-link' href={`${it.url_for('resources/trading_duration')}?duration_assets=tab_${link}`}>{it.L('Trading duration for others')}</a>
         </div>
-        <div id='explanation_asset_index' className='has-tabs gr-parent' />
-        <Note text={it.L('A tick is an updated market price. Tick frequency can vary with a minimum price change of zero')} />
+        <div id='explanation_asset_index' className='gr-parent' />
+        <p className='duration-note'>{it.L('1. A tick is an updated market price. Tick frequency can vary with a minimum price change of zero')}</p>
     </React.Fragment>
 );
 
@@ -320,19 +320,19 @@ const Explanation = () => (
         {/* ========== Duration ========== */}
         <div id='explanation_duration'>
             <div id='duration_forex' className='invisible'>
-                <Duration link='market-forex' />
+                <Duration link='forex' />
             </div>
 
             <div id='duration_indices' className='invisible'>
-                <Duration link='market-indices' />
+                <Duration link='indices' />
             </div>
 
             <div id='duration_commodities' className='invisible'>
-                <Duration link='market-commodities' />
+                <Duration link='commodities' />
             </div>
 
             <div id='duration_volidx' className='invisible'>
-                <Duration link='market-volidx' />
+                <Duration link='volidx' />
             </div>
         </div>
 
