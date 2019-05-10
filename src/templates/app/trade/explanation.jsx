@@ -9,12 +9,65 @@ const Duration = ({ link, symbol_name }) => (
         <h3>{it.L('Contract duration')}</h3>
         <p>{it.L('Pleas refer to the [_1]asset index[_2] for each asset\'s minimum and maximum contract durations based on trade type.', `<a href='${it.url_for('resources/asset_indexws')}#market-${link}' target='_blank'>`, '</a>')}</p>
         <h3>{it.L('Duration Offer')}</h3>
-        <div className='row no-margin'>
+        <div id='duration_container' className='row no-margin'>
             <p className='gr-6 gr-no-gutter no-margin align-start'>{it.L('Supported duration offer of [_1]:', `${symbol_name}`)}</p>
-            <a className='gr-6 gr-no-gutter align-end duration-link' href={`${it.url_for('resources/trading_duration')}?duration_assets=tab_${link}`}>{it.L('Trading duration for others')}</a>
+            <a className='gr-6 gr-no-gutter align-end duration-link' href={`${it.url_for('resources/trading_duration')}?duration_assets=tab_${link}`}>
+                <span>{it.L('Trading duration for others')}</span>
+                <span className='arrow-right' />
+            </a>
         </div>
-        <div id='explanation_asset_index' className='gr-parent' />
-        <p className='duration-note'>{it.L('1. A tick is an updated market price. Tick frequency can vary with a minimum price change of zero')}</p>
+        <div id='explanation_trading_duration' className='gr-parent'>
+            <table>
+                <thead>
+                    <tr>
+                        <th rowSpan='2'>Trade Type</th>
+                        <th colSpan='5'>Duration Type</th>
+                    </tr>
+                    <tr>
+                        <td className='duration-tick'>Ticks</td>
+                        <td>Seconds</td>
+                        <td>Minutes</td>
+                        <td>Hours</td>
+                        <td>Days</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Rise/Fall (Forward Start)</td>
+                        <td>1 - 24</td>
+                        <td>1 - 24</td>
+                        <td>1 - 24</td>
+                        <td>1 - 24</td>
+                        <td>1 - 24</td>
+                    </tr>
+                    <tr>
+                        <td>Rise/Fall (Forward Start)</td>
+                        <td>1 - 24</td>
+                        <td>1 - 24</td>
+                        <td>1 - 24</td>
+                        <td>1 - 24</td>
+                        <td>1 - 24</td>
+                    </tr>
+                    <tr>
+                        <td>Rise/Fall (Forward Start)</td>
+                        <td>1 - 24</td>
+                        <td>1 - 24</td>
+                        <td>1 - 24</td>
+                        <td>1 - 24</td>
+                        <td>1 - 24</td>
+                    </tr>
+                    <tr className='table-last-item'>
+                        <td>Rise/Fall (Forward Start)</td>
+                        <td>1 - 24</td>
+                        <td>1 - 24</td>
+                        <td>1 - 24</td>
+                        <td>1 - 24</td>
+                        <td>1 - 24</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p className='hint'>{it.L('1. A tick is an updated market price. Tick frequency can vary with a minimum price change of zero')}</p>
     </React.Fragment>
 );
 

@@ -984,14 +984,99 @@
     #digit_underlying ~ ul.select-options {
         font-size: 85%;
     }
-    .duration-link {
-        &:before {
-            position: absolute;
-            border-color: $COLOR_BLUE;
-            border-style: solid;
-            border-width: 5px 0px 5px 5px;
-            height: 0px;
-            width: 0px;
+    #duration_container {
+        position: relative;
+
+        .duration-link {
+            span:first-child {
+                padding-right: 10px;
+            }
+            .arrow-right {
+                position: absolute;
+                border-color: transparent $COLOR_BLUE;
+                border-style: solid;
+                border-width: 4px 0px 4px 4px;
+                height: 0;
+                width: 0;
+                right: 0;
+                top: 14px;
+            }
+        }
+    }
+    #explanation_trading_duration {
+        overflow-x: auto;
+
+        table {
+            border: 1px solid $COLOR_GRAY;
+
+            thead {
+                tr:first-child {
+                    th {
+                        text-align: left;
+                    }
+                    th:last-child {
+                        padding: 10px;
+                        border-bottom: none !important;
+                        text-align: center !important;
+                    }
+                }
+                tr:last-child {
+                    font-weight: 500;
+                    font-style: italic;
+                }
+                th, td {
+                    border-bottom: 1px solid $COLOR_GRAY;
+                    text-align: center;
+                }
+                th {
+                    padding-left: 15px;
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                }
+                td {
+                    padding-bottom: 10px;
+                }
+            }
+            tbody {
+                tr {
+                    td {
+                        text-align: center;
+                    }
+                    td:first-child {
+                        text-align: left;
+                    }
+                }
+            }
+            th {
+                text-align: center;
+            }
+            td {
+                border-bottom: 1px solid $COLOR_LIGHT_GRAY;
+                padding-left: 15px;
+            }
+            .table-last-item {
+                td {
+                    border-bottom: 1px solid $COLOR_GRAY;
+                }
+            }
+            .duration-tick {
+                position: relative;
+
+                &:before {
+                    content: '1';
+                    position: absolute;
+                    right: 20px;
+                    bottom: 16px;
+                    font-size: 10px;
+
+                    @media (max-width: 1024px) {
+                        right: 10px;
+                    }
+                    @media (max-width: 768px) {
+                        right: -1px;
+                    }
+                }
+            }
         }
     }
 }
