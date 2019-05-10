@@ -53,8 +53,12 @@ const TradingDurationUI = (() => {
     const setTableData = (submarket_name, datas) => {
         const $submarket_table_body = $(`#${submarket_name}`).find('tbody');
         datas.forEach((data, data_index) => {
+            const trade_durations_length = data.trade_durations.length;
+            const asset_symbol_length    = data.symbol.length;
+            const length_difference      = asset_symbol_length > trade_durations_length ? asset_symbol_length - trade_durations_length : 0;
+            const rowspan_length         = trade_durations_length + length_difference + 1;
             $submarket_table_body.append($('<tr/>', { id: `${submarket_name}${data_index}` })
-                .append($('<th/>', { id: 'trading_durations_assets', rowspan: data.trade_durations.length + 1 }))
+                .append($('<th/>', { id: 'trading_durations_assets', rowspan: rowspan_length }))
             );
             data.symbol.forEach((symbol) => {
                 $submarket_table_body.find(`#${submarket_name}${data_index} #trading_durations_assets`)
@@ -63,7 +67,7 @@ const TradingDurationUI = (() => {
             });
             data.trade_durations.forEach((trade_duration, duration_index) => {
                 const trade_duration_assets = getTradeDurationAssets(trade_duration);
-                if (duration_index === data.trade_durations.length - 1) {
+                if (duration_index === data.trade_durations.length - 1 && asset_symbol_length <= trade_durations_length) {
                     $submarket_table_body
                         .append($('<tr/>', { id: `${submarket_name}${data_index}${duration_index}`, class: 'table_last_item' }));
                 } else {
@@ -76,6 +80,24 @@ const TradingDurationUI = (() => {
                         .append($('<td/>', { text: asset }));
                 });
             });
+            if (asset_symbol_length > trade_durations_length) {
+                const length_array = [...Array(length_difference).keys()];
+                const empty_asset_array = [...Array(6).keys()];
+
+                length_array.forEach((length, length_index) => {
+                    if (length_array.length === length_index + 1) {
+                        $submarket_table_body
+                            .append($('<tr/>', { id: `${submarket_name}${data_index}empty${length_index}`, class: 'table_last_item' }));
+                    } else {
+                        $submarket_table_body
+                            .append($('<tr/>', { id: `${submarket_name}${data_index}empty${length_index}`, class: 'empty_data' }));
+                    }
+                    empty_asset_array.forEach(() => {
+                        $submarket_table_body.find(`#${submarket_name}${data_index}empty${length_index}`)
+                            .append($('<td/>').html('&nbsp;'));
+                    });
+                });
+            }
         });
     };
 

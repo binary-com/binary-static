@@ -152,6 +152,11 @@
                 border-bottom: 1px solid $COLOR_GRAY;
             }
         }
+        .empty_data {
+            td {
+                border-bottom: none;
+            }
+        }
     }
     .hint {
         padding-top: 16px;
