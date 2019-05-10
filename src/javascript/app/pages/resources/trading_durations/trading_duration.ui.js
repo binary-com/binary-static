@@ -127,6 +127,7 @@ const TradingDurationUI = (() => {
                 asset_array.push('-');
             }
         });
+
         return asset_array;
     };
 

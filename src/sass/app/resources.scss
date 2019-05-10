@@ -85,7 +85,6 @@
         line-height: 1.5;
         font-weight: 400;
         border-bottom: 1px solid $COLOR_GRAY;
-        width: 155px;
     }
     &_type {
         padding: 5px;
@@ -98,12 +97,12 @@
         &:before {
             content: '1';
             position: absolute;
-            right: 20px;
+            right: 18px;
             bottom: 9px;
             font-size: 10px;
 
             @media (max-width: 1024px) {
-                right: 12px;
+                right: 10px;
             }
             @media (max-width: 768px) {
                 right: -1px;
@@ -120,6 +119,12 @@
             tr:first-child {
                 th {
                     text-align: left;
+                }
+                th:first-child {
+                    width: 155px;
+                }
+                th:nth-child(2) {
+                    width: 430px;
                 }
             }
             tr:last-child {
