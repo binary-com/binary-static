@@ -1,14 +1,16 @@
-const showChart      = require('./charts/webtrader_chart').showChart;
-const Defaults       = require('./defaults');
-const getActiveTab   = require('./get_active_tab').getActiveTab;
-const GetTicks       = require('./get_ticks');
-const MBDefaults     = require('../mb_trade/mb_defaults');
-const MBPortfolio    = require('../mb_trade/mb_portfolio');
-const getElementById = require('../../../_common/common_functions').getElementById;
-const getLanguage    = require('../../../_common/language').get;
-const State          = require('../../../_common/storage').State;
-const TabSelector    = require('../../../_common/tab_selector');
-const Url            = require('../../../_common/url');
+const showChart       = require('./charts/webtrader_chart').showChart;
+const Defaults        = require('./defaults');
+const getActiveTab    = require('./get_active_tab').getActiveTab;
+const GetTicks        = require('./get_ticks');
+const MBDefaults      = require('../mb_trade/mb_defaults');
+const MBPortfolio     = require('../mb_trade/mb_portfolio');
+const getElementById  = require('../../../_common/common_functions').getElementById;
+const getLanguage     = require('../../../_common/language').get;
+const State           = require('../../../_common/storage').State;
+const TabSelector     = require('../../../_common/tab_selector');
+const Url             = require('../../../_common/url');
+const BinarySocket    = require('../../base/socket');
+const TradingDuration = require('../resources/trading_durations/trading_duration');
 
 /*
  * This file contains the code related to loading of trading page bottom analysis
@@ -178,6 +180,9 @@ const TradingAnalysis = (() => {
         $container.find('#explanation_winning > div, #explanation_explain > div, #explanation_image, #explanation_note, #explanation_note > div, #explanation_duration > div').setVisibility(0);
         $container.find(`#explanation_winning, #winning_${form_name}, #explanation_explain, #explain_${form_name}, #duration_${Defaults.get('market')}`).setVisibility(1);
         const market_duration = $container.find(`#duration_${form_name}`);
+
+        populateTableExplanation(Defaults.get('market'), Defaults.get('underlying'));
+
         if (market_duration.length) {
             market_duration.setVisibility(1);
             $(`#duration_${Defaults.get('market')}`).setVisibility(0);
@@ -261,6 +266,13 @@ const TradingAnalysis = (() => {
             }
             $container.find('#explanation_image').setVisibility(1);
         }
+    };
+
+    const populateTableExplanation = (market, underlying_symbol) => {
+        BinarySocket.send({ trading_durations: 1 }).then((response) => {
+            const asset_data = TradingDuration.getTradingDurationSymbol(response, market, underlying_symbol);
+            console.log(asset_data);
+        });
     };
 
     const onUnload = () => {
