@@ -1,18 +1,19 @@
-const moment         = require('moment');
-const ViewPopupUI    = require('./view_popup.ui');
-const Highchart      = require('../../trade/charts/highchart');
-const Callputspread  = require('../../trade/callputspread');
-const DigitDisplay   = require('../../trade/digit_trade');
-const Lookback       = require('../../trade/lookback');
-const Reset          = require('../../trade/reset');
-const TickDisplay    = require('../../trade/tick_trade');
-const Clock          = require('../../../base/clock');
-const BinarySocket   = require('../../../base/socket');
-const getElementById = require('../../../../_common/common_functions').getElementById;
-const localize       = require('../../../../_common/localize').localize;
-const State          = require('../../../../_common/storage').State;
-const urlFor         = require('../../../../_common/url').urlFor;
-const Utility        = require('../../../../_common/utility');
+const moment                       = require('moment');
+const ViewPopupUI                  = require('./view_popup.ui');
+const Highchart                    = require('../../trade/charts/highchart');
+const Callputspread                = require('../../trade/callputspread');
+const getHighestDecimalPlaceOfList = require('../../trade/common_independent').getHighestDecimalPlaceOfList;
+const DigitDisplay                 = require('../../trade/digit_trade');
+const Lookback                     = require('../../trade/lookback');
+const Reset                        = require('../../trade/reset');
+const TickDisplay                  = require('../../trade/tick_trade');
+const Clock                        = require('../../../base/clock');
+const BinarySocket                 = require('../../../base/socket');
+const getElementById               = require('../../../../_common/common_functions').getElementById;
+const localize                     = require('../../../../_common/localize').localize;
+const State                        = require('../../../../_common/storage').State;
+const urlFor                       = require('../../../../_common/url').urlFor;
+const Utility                      = require('../../../../_common/utility');
 
 const ViewPopup = (() => {
     let contract_id,
@@ -236,7 +237,6 @@ const ViewPopup = (() => {
         containerSetText('trade_details_ref_id', `${contract.transaction_ids.buy} (${localize('Buy')}) ${contract.transaction_ids.sell ? `<br>${contract.transaction_ids.sell} (${localize('Sell')})` : ''}`);
         containerSetText('trade_details_indicative_price', indicative_price ? formatMoney(contract.currency, indicative_price) : '-');
 
-        contract.sell_price = contract.sell_price.toString();
         if (is_ended && !contract.sell_price) {
             containerSetText('trade_details_profit_loss', localize('Waiting for contract settlement.'), { class: 'pending' });
         } else if (contract.sell_price || contract.bid_price) {
@@ -804,7 +804,7 @@ const ViewPopup = (() => {
         }
         if (+response.proposal_open_contract.contract_id === contract_id) {
             ViewPopupUI.storeSubscriptionID(response.proposal_open_contract.id);
-            responseContract(response);
+            responseContract(changeNumbersToString(response));
         } else if (response.proposal_open_contract.id) {
             BinarySocket.send({ forget: response.proposal_open_contract.id });
         }
@@ -819,6 +819,23 @@ const ViewPopup = (() => {
         $(container_selector).on('click', '.open_contract_details', function (e) {
             e.preventDefault();
             init(this);
+        });
+    };
+
+    const changeNumbersToString = (response) => {
+        const { sell_price } = response.proposal_open_contract;
+
+        return $.extend({}, {
+            ...response,
+            proposal_open_contract: {
+                ...response.proposal_open_contract,
+                sell_price: sell_price ?
+                    addComma(
+                        sell_price.toString(),
+                        getHighestDecimalPlaceOfList(response.proposal_open_contract)
+                    )
+                    : undefined,
+            },
         });
     };
 

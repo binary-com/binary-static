@@ -1,12 +1,10 @@
 const moment               = require('moment');
 const DigitTicker          = require('./digit_ticker');
 const ViewPopupUI          = require('../user/view_popup/view_popup.ui');
-const Client               = require('../../base/client');
 const showLocalTimeOnHover = require('../../base/clock').showLocalTimeOnHover;
 const BinarySocket         = require('../../base/socket');
 const LoadingSpinner       = require('../../components/loading-spinner');
 const addComma             = require('../../../_common/base/currency_base').addComma;
-const getDecimalPlaces     = require('../../../_common/base/currency_base').getDecimalPlaces;
 const localize             = require('../../../_common/localize').localize;
 const getPropertyValue     = require('../../../_common/utility').getPropertyValue;
 
@@ -82,7 +80,7 @@ const DigitDisplay = (() => {
             time,
         });
 
-        const csv_spot = addComma(spot, getDecimalPlaces(Client.get('currency')));
+        const csv_spot = addComma(spot);
 
         $container
             .find('#table_digits')

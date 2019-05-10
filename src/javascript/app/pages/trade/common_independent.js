@@ -30,6 +30,25 @@ const countDecimalPlaces = (num) => {
     return 0;
 };
 
+const getHighestDecimalPlaceOfList = (list) => {
+    let decimal_places = 2; // Initialised with minimum number of decimal places we employ
+
+    if (list instanceof Object) {
+        Object.keys(list).forEach(key => {
+            const property = list[key];
+            decimal_places = countDecimalPlaces(property) > decimal_places ?
+                countDecimalPlaces(property) : decimal_places;
+        });
+    } else if (list instanceof Array) {
+        list.forEach(el => {
+            decimal_places = countDecimalPlaces(el) > decimal_places ?
+                countDecimalPlaces(el) : decimal_places;
+        });
+    }
+
+    return decimal_places;
+};
+
 const trading_times = {};
 
 const processTradingTimesAnswer = (response) => {
@@ -136,6 +155,7 @@ const getSelectedOption = ($selector) => {
 module.exports = {
     displayPriceMovement,
     countDecimalPlaces,
+    getHighestDecimalPlaceOfList,
     processTradingTimesAnswer,
     checkValidTime,
     getSelectedOption,
