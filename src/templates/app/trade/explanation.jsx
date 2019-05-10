@@ -20,51 +20,18 @@ const Duration = ({ link, symbol_name }) => (
             <table>
                 <thead>
                     <tr>
-                        <th rowSpan='2'>Trade Type</th>
-                        <th colSpan='5'>Duration Type</th>
+                        <th rowSpan='2'>{it.L('Trade Type')}</th>
+                        <th colSpan='5'>{it.L('Duration Type')}</th>
                     </tr>
                     <tr>
-                        <td className='duration-tick'>Ticks</td>
-                        <td>Seconds</td>
-                        <td>Minutes</td>
-                        <td>Hours</td>
-                        <td>Days</td>
+                        <td className='duration-tick'>{it.L('Ticks')}</td>
+                        <td>{it.L('Seconds')}</td>
+                        <td>{it.L('Minutes')}</td>
+                        <td>{it.L('Hours')}</td>
+                        <td>{it.L('Days')}</td>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>Rise/Fall (Forward Start)</td>
-                        <td>1 - 24</td>
-                        <td>1 - 24</td>
-                        <td>1 - 24</td>
-                        <td>1 - 24</td>
-                        <td>1 - 24</td>
-                    </tr>
-                    <tr>
-                        <td>Rise/Fall (Forward Start)</td>
-                        <td>1 - 24</td>
-                        <td>1 - 24</td>
-                        <td>1 - 24</td>
-                        <td>1 - 24</td>
-                        <td>1 - 24</td>
-                    </tr>
-                    <tr>
-                        <td>Rise/Fall (Forward Start)</td>
-                        <td>1 - 24</td>
-                        <td>1 - 24</td>
-                        <td>1 - 24</td>
-                        <td>1 - 24</td>
-                        <td>1 - 24</td>
-                    </tr>
-                    <tr className='table-last-item'>
-                        <td>Rise/Fall (Forward Start)</td>
-                        <td>1 - 24</td>
-                        <td>1 - 24</td>
-                        <td>1 - 24</td>
-                        <td>1 - 24</td>
-                        <td>1 - 24</td>
-                    </tr>
-                </tbody>
+                <tbody />
             </table>
         </div>
         <p className='hint'>{it.L('1. A tick is an updated market price. Tick frequency can vary with a minimum price change of zero')}</p>

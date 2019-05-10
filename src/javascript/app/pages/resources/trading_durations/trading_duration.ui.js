@@ -74,7 +74,7 @@ const TradingDurationUI = (() => {
                     .append($('<br/>'));
             });
             data.trade_durations.forEach((trade_duration, duration_index) => {
-                const trade_duration_assets = getTradeDurationAssets(trade_duration);
+                const trade_duration_assets = TradingDuration.getTradeDurationAssets(trade_duration);
                 if (duration_index === data.trade_durations.length - 1 &&
                     asset_symbol_length <= trade_durations_length) {
                     $submarket_table_body
@@ -111,24 +111,6 @@ const TradingDurationUI = (() => {
                 });
             }
         });
-    };
-
-    const getTradeDurationAssets = (trade_duration) => {
-        const asset_array = [];
-        const duration_type_array = ['ticks', 's', 'm', 'h', 'days'];
-
-        asset_array.push(trade_duration.trade_type.display_name);
-        duration_type_array.forEach((type) => {
-            if (trade_duration.durations.some((duration) => duration.name === type)) {
-                const duration_min = trade_duration.durations.find((unit) => unit.name === type).min;
-                const duration_max = trade_duration.durations.find((unit) => unit.name === type).max;
-                asset_array.push(`${duration_min} - ${duration_max}`);
-            } else {
-                asset_array.push('-');
-            }
-        });
-
-        return asset_array;
     };
 
     const onChangeTabSelector = () => {

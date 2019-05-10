@@ -271,7 +271,22 @@ const TradingAnalysis = (() => {
     const populateTableExplanation = (market, underlying_symbol) => {
         BinarySocket.send({ trading_durations: 1 }).then((response) => {
             const asset_data = TradingDuration.getTradingDurationSymbol(response, market, underlying_symbol);
-            console.log(asset_data);
+            const $explanation_duration_data = $('#explanation_duration').find('tbody');
+            asset_data.forEach((data, index) => {
+                const trade_duration_assets = TradingDuration.getTradeDurationAssets(data);
+                if (asset_data.length === index + 1) {
+                    $explanation_duration_data
+                        .append($('<tr/>', { id: `${market}${index}`, class: 'table_last_item' }));
+                } else {
+                    $explanation_duration_data
+                        .append($('<tr/>', { id: `${market}${index}` }));
+                }
+                
+                trade_duration_assets.forEach((asset) => {
+                    $explanation_duration_data.find(`#${market}${index}`)
+                        .append($('<td/>', { text: asset }));
+                });
+            });
         });
     };
 
