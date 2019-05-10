@@ -5,6 +5,7 @@ describe('ThirdPartyLinks', () => {
     [
         'https://www.binary.com',
         'https://www.binary.me',
+        'https://www.deriv.com',
     ].forEach(url => {
         describe(url, () => {
             runTests(url);

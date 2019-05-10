@@ -4,6 +4,7 @@ const Url                = require('../url');
 const urls = [
     'https://www.binary.com',
     'https://www.binary.me',
+    'https://www.deriv.com',
 ];
 
 describe('Url', () => {

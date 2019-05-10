@@ -61,6 +61,9 @@ export default class ContractStore extends BaseStore {
 
             if (should_update_chart_type) {
                 this.handleChartType(SmartChartStore, contract_info.date_start, end_time);
+            } else {
+                SmartChartStore.updateGranularity(0);
+                SmartChartStore.updateChartType('mountain');
             }
 
         } else if (!this.is_left_epoch_set) {
