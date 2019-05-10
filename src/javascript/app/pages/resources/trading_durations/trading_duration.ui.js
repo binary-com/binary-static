@@ -55,7 +55,8 @@ const TradingDurationUI = (() => {
         datas.forEach((data, data_index) => {
             const trade_durations_length = data.trade_durations.length;
             const asset_symbol_length    = data.symbol.length;
-            const length_difference      = asset_symbol_length > trade_durations_length ? asset_symbol_length - trade_durations_length : 0;
+            const length_difference      = asset_symbol_length > trade_durations_length ?
+                asset_symbol_length - trade_durations_length : 0;
             const rowspan_length         = trade_durations_length + length_difference + 1;
             $submarket_table_body.append($('<tr/>', { id: `${submarket_name}${data_index}` })
                 .append($('<th/>', { id: 'trading_durations_assets', rowspan: rowspan_length }))
@@ -67,7 +68,8 @@ const TradingDurationUI = (() => {
             });
             data.trade_durations.forEach((trade_duration, duration_index) => {
                 const trade_duration_assets = getTradeDurationAssets(trade_duration);
-                if (duration_index === data.trade_durations.length - 1 && asset_symbol_length <= trade_durations_length) {
+                if (duration_index === data.trade_durations.length - 1 &&
+                    asset_symbol_length <= trade_durations_length) {
                     $submarket_table_body
                         .append($('<tr/>', { id: `${submarket_name}${data_index}${duration_index}`, class: 'table_last_item' }));
                 } else {
