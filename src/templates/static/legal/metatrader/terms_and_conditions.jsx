@@ -23,8 +23,8 @@ const TermsAndConditions = () => (
                 <span>{it.L('Binary Investments (Europe) Ltd.')}</span>
             </li>
 
-            <li data-show='eucountry default'>{it.L('The Client understands that products based on a random number generator (the "Volatility Indices") are gambling products whereas products based on financial market indices (forex, indices, and commodities) are Financial Instruments.')}</li>
-            <li>{it.L('All products traded on Margin carry a high degree of risk and can result in losses that exceed the Client\'s initial deposit. The Margin trading services described in this agreement is not suitable for everyone. The Client acknowledges that the Margin trading services described in this agreement are designed for the Clients who are knowledgeable and experienced in the types of Transactions described in this agreement, and the Client fully understands the associated risks before entering into this agreement with the Company.')}</li>
+            <li data-show='eucountry default'>{it.L('The Client understands that products based on a random number generator (the "Volatility Indices") are gaming products whereas products based on financial market indices (forex, indices, and commodities) are Financial Instruments.')}</li>
+            <li>{it.L('All products traded on Margin carry a high degree of risk and can result in losses that exceed the Client\'s initial deposit. The Margin trading services described in this agreement are not suitable for everyone. The client acknowledges that the Margin trading services described in this agreement are designed for the Clients who are knowledgeable and experienced in the types of Transactions described in this agreement, and the Client fully understands the associated risks before entering into this agreement with the Company.')}</li>
             <li>{it.L('The Client should not sign up to receive the Margin trading services described in this agreement without understanding their nature and the associated risks.')}</li>
             <li>{it.L('This agreement is supplied to the Client in English. In the event that there is a difference between the English version and any translated versions of this document, the English version shall prevail.')}</li>
             <li>{it.L('A glossary of the capitalised terms can be found in paragraph R, entitled "Interpretation of terms".')}</li>
@@ -106,7 +106,7 @@ const TermsAndConditions = () => (
             <li>{it.L('Self-exclusion limits')}
                 <ol>
                     <li data-show='eucountry'>{it.L('When a self-exclusion limit is set on the Client\'s [_1] account registered with Binary (Europe) Ltd, the Client\'s MT5 Real Account will be disabled until the self-exclusion limit on their [_1] account is removed.', it.website_name)}</li>
-                    <li>{it.L('Due to the responsibilities under Responsible Gaming, the Company reserves the right to assess and safeguard the client\'s account by setting limits to the Client\'s activity as deemed proportionate and necessary for their protection.')}</li>
+                    <li>{it.L('Due to the responsibilities under Responsible Trading, the Company reserves the right to assess and safeguard the client\'s account by setting limits to the Client\'s activity as deemed proportionate and necessary for their protection.')}</li>
                     <li>{it.L('In relation to 5.2, the Company also reserves the right to exclude the Client definitely or indefinitely, based on the Company\'s client assessment.')}</li>
                 </ol>
             </li>
