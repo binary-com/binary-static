@@ -177,10 +177,11 @@ const MetaTraderConfig = (() => {
                         $message.find(message_selector).setVisibility(1);
                         resolve($message.html());
                     } else if (accounts_info[acc_type].account_type === 'gaming') {
-                        const response_get_account_status = State.getResponse('get_account_status');
-                        const is_volatility = !accounts_info[acc_type].mt5_account_type;
-                        const is_high_risk = /high/.test(response_get_account_status.risk_classification);
                         BinarySocket.wait('get_account_status', 'landing_company').then(() => {
+                            const response_get_account_status = State.getResponse('get_account_status');
+                            const is_volatility = !accounts_info[acc_type].mt5_account_type;
+                            const is_high_risk = /high/.test(response_get_account_status.risk_classification);
+
                             if (/(financial_assessment|trading_experience)_not_complete/.test(response_get_account_status.status)
                                 && is_volatility
                                 && is_high_risk) {
