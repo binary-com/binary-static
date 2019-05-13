@@ -25,7 +25,7 @@ const Affiliate = () => (
             <ListNested
                 header={it.L('The Affiliate\'s obligations')}
                 items={[
-                    { text: it.L('The Affiliate must provide such information to the licensee as they may reasonably require in order to be able to comply with their information reporting and other obligations to the UK Gambling Commission.') },
+                    { text: it.L('The Affiliate must provide such information to the licensee as they may reasonably require in order to be able to comply with their information reporting and other obligations[_1] to the UK Gambling Commission[_2].', '<span data-show="eucountry default">','</span>') },
                     { text: it.L('The Affiliate must comply with the applicable laws, rules, and regulations (including, but not limited to, advertising, data protection, and privacy laws, rules, and regulations) of the jurisdiction(s) in which the Affiliate operates or targets business.') },
                     { text: it.L('The Affiliate must ensure that any historical trading records and performance figures presented to the Affiliate\'s referrals related to trading on the website [_1] are accurate and not misleading.', it.website_name) },
                     { text: it.L('All affiliate activities must be conducted in a professional and proper manner. The Affiliate shall be expected to act with good faith and integrity in relationship with the Affiliate\'s referrals and always act in the best interests of the Affiliate\'s referrals.') },
