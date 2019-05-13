@@ -986,6 +986,7 @@
     }
     #duration_container {
         position: relative;
+        padding-top: 0;
 
         .duration-link {
             span:first-child {
@@ -999,7 +1000,7 @@
                 height: 0;
                 width: 0;
                 right: 0;
-                top: 14px;
+                top: 4px;
             }
         }
     }
