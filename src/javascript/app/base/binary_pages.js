@@ -13,7 +13,7 @@ const Endpoint                = require('../pages/endpoint');
 const MBTradePage             = require('../pages/mb_trade/mb_tradepage');
 const EconomicCalendar        = require('../pages/resources/economic_calendar/economic_calendar');
 const AssetIndexUI            = require('../pages/resources/asset_index/asset_index.ui');
-const TradingDurationUI       = require('../pages/resources/trading_durations/trading_duration.ui');
+const TradingDurationsUI       = require('../pages/resources/trading_durations/trading_durations.ui');
 const MetatraderDownloadUI    = require('../pages/resources/metatrader/download.ui');
 const TradingTimesUI          = require('../pages/resources/trading_times/trading_times.ui');
 const NewAccount              = require('../pages/new_account');
@@ -122,7 +122,7 @@ const pages_config = {
     tnc_approvalws           : { module: TNCApproval,                is_authenticated: true, only_real: true },
     top_up_virtualws         : { module: TopUpVirtual,               is_authenticated: true, only_virtual: true },
     trading                  : { module: TradePage,                  needs_currency: true },
-    trading_duration         : { module: TradingDurationUI },
+    trading_durations        : { module: TradingDurationsUI },
     transferws               : { module: PaymentAgentTransfer,       is_authenticated: true, only_real: true },
     two_factor_authentication: { module: TwoFactorAuthentication,    is_authenticated: true },
     virtualws                : { module: VirtualAccOpening,          not_authenticated: true },
