@@ -87,6 +87,7 @@ module.exports = [
     ['contact',                                 'static/about/contact',                        'full_width', 'Contact Us'],
     ['contact-2',                               'static/about/contact_2',                      'full_width', 'Contact Us'],
     ['cyberjaya',                               'static/about/cyberjaya',                      'full_width', 'Careers - Cyberjaya'],
+    ['dubai',                                   'static/about/dubai',                          'full_width', 'Careers - Dubai'],
     ['labuan',                                  'static/about/labuan',                         'full_width', 'Careers - Labuan'],
     ['malta',                                   'static/about/malta',                          'full_width', 'Careers - Malta'],
     ['group-history',                           'static/about/group_history',                  'full_width', 'Group History'],
