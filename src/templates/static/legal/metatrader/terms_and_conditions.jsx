@@ -106,7 +106,7 @@ const TermsAndConditions = () => (
             <li>{it.L('Self-exclusion limits')}
                 <ol>
                     <li data-show='eucountry'>{it.L('When a self-exclusion limit is set on the Client\'s [_1] account registered with Binary (Europe) Ltd, the Client\'s MT5 Real Account will be disabled until the self-exclusion limit on their [_1] account is removed.', it.website_name)}</li>
-                    <li>{it.L('Due to the responsibilities under Responsible Gaming, the Company reserves the right to assess and safeguard the client\'s account by setting limits to the Client\'s activity as deemed proportionate and necessary for their protection.')}</li>
+                    <li>{it.L('Due to the responsibilities under Responsible Trading, the Company reserves the right to assess and safeguard the client\'s account by setting limits to the Client\'s activity as deemed proportionate and necessary for their protection.')}</li>
                     <li>{it.L('In relation to 5.2, the Company also reserves the right to exclude the Client definitely or indefinitely, based on the Company\'s client assessment.')}</li>
                 </ol>
             </li>
