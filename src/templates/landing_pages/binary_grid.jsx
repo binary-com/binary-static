@@ -40,7 +40,7 @@ const gridLP = () => (
             <div className='section'>
                 <div className='container'>
                     <div className='gr-row'>
-                        <div className='gr-12'>
+                        <div className='gr-12 section-header'>
                             <h2 className='primary-color'>{('Built for your convenience, designed by traders')}</h2>
                         </div>
                     </div>
@@ -80,7 +80,7 @@ const gridLP = () => (
                             </div>
                             <div className='right-col-feature'>
                                 <h3>{('Limited risks')}</h3>
-                                <p>{('Get started with stakes as low as 50¢.')}</p>
+                                <p>{('Get started with stakes as low as 20¢.')}</p>
                             </div>
                         </div>
                     </div>
@@ -121,8 +121,9 @@ const gridLP = () => (
             <div className='section fill-bg-color lg-center'>
                 <div className='container'>
                     <div className='gr-row'>
-                        <div className='gr-12'>
+                        <div className='gr-12 section-header'>
                             <h2 className='primary-color'>{('Ready to get started? Get Binary Grid for Android')}</h2>
+                            <p className='section-subtitle primary-color'>{('Take our trading platform with you wherever you go.')}</p>
                         </div>
                     </div>
                     <div className='gr-row center-text gr-row-align-between'>
