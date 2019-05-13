@@ -10,7 +10,7 @@ const State           = require('../../../_common/storage').State;
 const TabSelector     = require('../../../_common/tab_selector');
 const Url             = require('../../../_common/url');
 const BinarySocket    = require('../../base/socket');
-const TradingDuration = require('../resources/trading_durations/trading_duration');
+const TradingDuration = require('../resources/trading_durations/trading_durations');
 
 /*
  * This file contains the code related to loading of trading page bottom analysis
