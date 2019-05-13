@@ -422,7 +422,6 @@ const TermsAndConditions = () => (
                 <p><strong>{it.L('Competent Authority')}</strong>{it.L(' means any organisation, whether governmental or not, or physical person or any type of legal person or entity or body of persons and any executor, administrator, or representative of such Competent Authority located in any jurisdiction that has legally delegated or invested authority, capacity, power, or competence to perform a designated function.')}</p>
                 <p><strong>{it.L('Company or Binary')}</strong>{it.L(' means [_1].', it.website_name)}</p>
                 <p><strong>{it.L('Effective Date')}</strong>{it.L(' means the commencement date of this Agreement.')}</p>
-                <p><strong>{it.L('Financial Products')}</strong>{it.L(' means contract for differences, cryptocurrencies, or any other financial instrument added on the website from time to time.')}</p>
                 <p><strong>{it.L('Introducing Broker')}</strong>{it.L(' means any potential individual or entity willing to provide Binary with IB services.')}</p>
                 <p><strong>{it.L('Law')}</strong>{it.L(' means all laws including rules of common law, principles of equity, statutes, regulations, proclamations, ordinances, by-laws, rules, regulatory principles and requirements, policy statements, practice notes, mandatory codes of conduct, writs, orders, injunctions, judgments, determinations, and statutory licence conditions.')}</p>
                 <p><strong>{it.L('Malicious Activity')}</strong>{it.L(' means any manipulations of Binary\'s systems and business in ways which resulted in any adverse, special, incidental, punitive or consequential loss or damages to Binary.')}</p>
@@ -466,7 +465,7 @@ const TermsAndConditions = () => (
                         <li>{it.L('Perform IB services and other obligations mentioned here at its own cost and risk')}</li>
                         <li>{it.L('Fairly and accurately describe Binary\'s business and services in a transparent manner to the clients')}</li>
                         <li>{it.L('Provide information to clients only on technical and educational matters')}</li>
-                        <li>{it.L('Inform any clients introduced to Binary that the trading services and Financial Products are offered by or through Binary and not the Introducing Broker')}</li>
+                        <li>{it.L('Inform any clients introduced to Binary that the trading services and products are offered by or through Binary and not the Introducing Broker')}</li>
                         <li>{it.L('Inform any clients introduced to Binary of any matter that the Company may reasonably consider necessary in order to comply with any legal/regulatory requirements ')}</li>
                     </ol>
                 </p>
