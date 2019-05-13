@@ -6,7 +6,6 @@ const MBDefaults      = require('../mb_trade/mb_defaults');
 const MBPortfolio     = require('../mb_trade/mb_portfolio');
 const getElementById  = require('../../../_common/common_functions').getElementById;
 const getLanguage     = require('../../../_common/language').get;
-const localize        = require('../../../_common/localize').localize;
 const State           = require('../../../_common/storage').State;
 const TabSelector     = require('../../../_common/tab_selector');
 const Url             = require('../../../_common/url');
