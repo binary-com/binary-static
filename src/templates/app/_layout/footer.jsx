@@ -156,7 +156,7 @@ const Footer = () => (
                                 `<a href=${it.url_for('download/regulation/Labuan-license.pdf')} target="_blank">`, '</a>')}
                         </p>
                         <p>
-                            {it.L('This website\'s services are not made available in certain countries such as the USA, Canada, St. Vincent and the Grenadines, Hong Kong, Japan, or to persons under age 18.')}
+                            {it.L('This website\'s services are not made available in certain countries such as the USA, Canada, Hong Kong, Japan, or to persons under age 18.')}
                         </p>
                         <fieldset className='fld-risk-warning'>
                             <legend>{it.L('Risk Warning')}</legend>
@@ -214,7 +214,7 @@ const Footer = () => (
                     <div className='gr-12'>
                         <div className='about-binary'>
                             <p>
-                                {it.L('[_1] is an award-winning online trading provider that helps its clients to trade on financial markets through binary options and CFDs. Trading binary options and CFDs on Volatility Indices is classified as a gambling activity. Remember that gambling can be addictive – please play responsibly. Learn more about [_2]Responsible Trading[_3]. Some products are not available in all countries. This website\'s services are not made available in certain countries such as the USA, Canada, St. Vincent and the Grenadines, Hong Kong, or to persons under age 18.', it.website_name, `<a href="${it.url_for('responsible-trading')}">`, '</a>')}
+                                {it.L('[_1] is an award-winning online trading provider that helps its clients to trade on financial markets through binary options and CFDs. Trading binary options and CFDs on Volatility Indices is classified as a gambling activity. Remember that gambling can be addictive – please play responsibly. Learn more about [_2]Responsible Trading[_3]. Some products are not available in all countries. This website\'s services are not made available in certain countries such as the USA, Canada, Hong Kong, or to persons under age 18.', it.website_name, `<a href="${it.url_for('responsible-trading')}">`, '</a>')}
                             </p>
                         </div>
                     </div>
