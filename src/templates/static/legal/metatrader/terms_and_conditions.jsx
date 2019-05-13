@@ -23,7 +23,7 @@ const TermsAndConditions = () => (
                 <span>{it.L('Binary Investments (Europe) Ltd.')}</span>
             </li>
 
-            <li>{it.L('The Client understands that products based on a random number generator (the "Volatility Indices") are gambling products whereas products based on financial market indices (forex, indices, and commodities) are Financial Instruments.')}</li>
+            <li data-show='eucountry default'>{it.L('The Client understands that products based on a random number generator (the "Volatility Indices") are gambling products whereas products based on financial market indices (forex, indices, and commodities) are Financial Instruments.')}</li>
             <li>{it.L('All products traded on Margin carry a high degree of risk and can result in losses that exceed the Client\'s initial deposit. The Margin trading services described in this agreement is not suitable for everyone. The Client acknowledges that the Margin trading services described in this agreement are designed for the Clients who are knowledgeable and experienced in the types of Transactions described in this agreement, and the Client fully understands the associated risks before entering into this agreement with the Company.')}</li>
             <li>{it.L('The Client should not sign up to receive the Margin trading services described in this agreement without understanding their nature and the associated risks.')}</li>
             <li>{it.L('This agreement is supplied to the Client in English. In the event that there is a difference between the English version and any translated versions of this document, the English version shall prevail.')}</li>
@@ -56,7 +56,7 @@ const TermsAndConditions = () => (
                             <li>{it.L('The Client has read this Legal terms and conditions page in full and has understood that they will be buying and selling financial contracts subject to these terms and conditions.')}</li>
                             <li>{it.L('The Client has read the Company\'s privacy statement and hereby gives the Company consent to process the Client\'s personal information as outlined there.')}</li>
                             <li>{it.L('The Client is over 18 years of age, unless they are an Estonian resident whereby they will have to be over 21.')}</li>
-                            <li>{it.L('The Client is not residing in a restricted country such as St. Vincent and the Grenadines, Hong Kong, Israel, Jersey, Malaysia, Malta, Paraguay, United Arab Emirates, the USA, Canada, or any other restricted country which has been identified by the FATF as having strategic deficiencies.')}</li>
+                            <li>{it.L('The Client is not residing in a restricted country such as Hong Kong, Israel, Jersey, Malaysia, Malta, Paraguay, United Arab Emirates, the USA, Canada, or any other restricted country which has been identified by the FATF as having strategic deficiencies.')}</li>
                             <li>{it.L('The Client has sufficient experience and knowledge about contracts for difference to be capable of evaluating the merits and risks of acquiring contracts via this site and have done so without relying on any information contained in this site.')}</li>
                         </ol>
                     </li>
@@ -105,7 +105,7 @@ const TermsAndConditions = () => (
             </li>
             <li>{it.L('Self-exclusion limits')}
                 <ol>
-                    <li>{it.L('When a self-exclusion limit is set on the Client\'s [_1] account registered with Binary (Europe) Ltd, the Client\'s MT5 Real Account will be disabled until the self-exclusion limit on their [_1] account is removed.', it.website_name)}</li>
+                    <li data-show='eucountry'>{it.L('When a self-exclusion limit is set on the Client\'s [_1] account registered with Binary (Europe) Ltd, the Client\'s MT5 Real Account will be disabled until the self-exclusion limit on their [_1] account is removed.', it.website_name)}</li>
                     <li>{it.L('Due to the responsibilities under Responsible Gaming, the Company reserves the right to assess and safeguard the client\'s account by setting limits to the Client\'s activity as deemed proportionate and necessary for their protection.')}</li>
                     <li>{it.L('In relation to 5.2, the Company also reserves the right to exclude the Client definitely or indefinitely, based on the Company\'s client assessment.')}</li>
                 </ol>
@@ -425,7 +425,7 @@ const TermsAndConditions = () => (
                 <p><strong>{it.L('Effective Date')}</strong>{it.L(' means the commencement date of this Agreement.')}</p>
                 <p><strong>{it.L('Financial Products')}</strong>{it.L(' means contract for differences, cryptocurrencies, or any other financial instrument added on the website from time to time.')}</p>
                 <p><strong>{it.L('Introducing Broker')}</strong>{it.L(' means any potential individual or entity willing to provide Binary with IB services.')}</p>
-                <p><strong>{it.L('Law')}</strong>{it.L(' means all laws including rules of common law, principals of equity, statutes, regulations, proclamations, ordinances, by-laws, rules, regulatory principles and requirements, policy statements, practice notes, mandatory codes of conduct, writs, orders, injunctions, judgments, determinations, and statutory licence conditions.')}</p>
+                <p><strong>{it.L('Law')}</strong>{it.L(' means all laws including rules of common law, principles of equity, statutes, regulations, proclamations, ordinances, by-laws, rules, regulatory principles and requirements, policy statements, practice notes, mandatory codes of conduct, writs, orders, injunctions, judgments, determinations, and statutory licence conditions.')}</p>
                 <p><strong>{it.L('Malicious Activity')}</strong>{it.L(' means any manipulations of Binary\'s systems and business in ways which resulted in any adverse, special, incidental, punitive or consequential loss or damages to Binary.')}</p>
                 <p><strong>{it.L('Marketing Materials')}</strong>{it.L(' means any content, whether in electronic or hard copy form, created by or at the direction of Binary, for the purpose of marketing the Binary business or services, and incorporating the Binary Trademarks.')}</p>
                 <p><strong>{it.L('Trademark')}</strong>{it.L(' means any trademarks, signs, logos, designs, expressions, and trading names owned by or licensed to Binary, whether registered or not registered, and any subsequent trademark created.')}</p>
