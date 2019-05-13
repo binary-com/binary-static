@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-05-13 05:10\n"
+"PO-Revision-Date: 2019-05-13 06:09\n"
 "Last-Translator: binarycom\n"
 "Language-Team: Thai\n"
 "MIME-Version: 1.0\n"
@@ -3450,8 +3450,8 @@ msgstr "การสาธิตขั้นสูง"
 msgid "Demo Standard"
 msgstr "การสาธิตตามมาตรฐาน"
 
-msgid "Demo Volatility Indices"
-msgstr "จำลองดัชนีความผันผวน"
+msgid "Demo Synthetic Indices"
+msgstr ""
 
 msgid "Depending on the jurisdiction to which a Client's account has been attached in accordance with the account opening procedures of the website, the terms 'the Company' and '%1' shall denote either"
 msgstr "ขึ้นอยู่กับหลักเกณฑ์ตามกฏหมายของบัญชีของลูกค้าที่ได้แนบให้ทราบตามขั้นตอนในการเปิดบัญชีของเว็บไซต์ คำว่า 'บริษัทฯ' และ '%1' จะหมายถึงอย่างใดอย่างหนึ่งต่อไปนี้"
@@ -4611,11 +4611,11 @@ msgstr "บริการลูกค้าชั้นเลิศ"
 msgid "Five total assets are available for you to choose from:"
 msgstr "มีสินทรัพย์ทั้งหมดห้ากลุ่มให้ท่านเลือกจาก:"
 
-msgid "Fixed"
-msgstr "ถาวร คงที่"
-
 msgid "Fixed spreads"
 msgstr "สเปรดแบบคงที่"
+
+msgid "Fixed/Variable"
+msgstr ""
 
 msgid "Fixing problems and providing feedback for improvement."
 msgstr "แก้ปัญหาและให้ข้อมูลเพื่อการปรับปรุงแก้ไขในระยะยาว"
@@ -6429,6 +6429,9 @@ msgstr "วงเงิน"
 msgid "Limit Order"
 msgstr "Limit Order"
 
+msgid "Limit applies until"
+msgstr ""
+
 msgid "Limit/Limit Price"
 msgstr "Limit/Limit Price"
 
@@ -6594,14 +6597,14 @@ msgstr "บัญชี MAM ขั้นสูง"
 msgid "MAM Advanced*"
 msgstr "MAM ขั้นสูง*"
 
-msgid "MAM Volatility Indices"
-msgstr "ดัชนีความผันผวน MAM"
+msgid "MAM Synthetic Indices"
+msgstr ""
 
-msgid "MAM Volatility Indices Account"
-msgstr "บัญชีดัชนีผันผวน MAM"
+msgid "MAM Synthetic Indices Account"
+msgstr ""
 
-msgid "MAM Volatility Indices*"
-msgstr "ดัชนีความผันผวน MAM*"
+msgid "MAM Synthetic Indices*"
+msgstr ""
 
 msgid "MENA FFXPO Award"
 msgstr "รางวัล MENA FFXPO"
@@ -6621,8 +6624,8 @@ msgstr "การเงิน MT5"
 msgid "MT5 Real Account"
 msgstr "บัญชี MT5 จริง"
 
-msgid "MT5 Volatility Indices"
-msgstr "ดัชนีความผันผวน MT5"
+msgid "MT5 Synthetic Indices"
+msgstr ""
 
 msgid "MT5 for Android"
 msgstr "MT5 สำหรับแอนดรอยด์"
@@ -6648,8 +6651,8 @@ msgstr "MT5 สำหรับแพลตฟอร์มเว็บ"
 msgid "MT5 real-money account for Forex and CFDs."
 msgstr "บัญชีเงินจริง MT5 สำหรับฟอเร็กซ์และ CFD"
 
-msgid "MT5 real-money account for Volatility Indices only."
-msgstr "บัญชีเงินจริง MT5 สำหรับดัชนีความผันผวนเท่านั้น"
+msgid "MT5 real-money account for Synthetic Indices only."
+msgstr ""
 
 msgid "MT5 withdrawals have been disabled on your account. Please check your email for more details."
 msgstr "ได้มีการปิดการใช้งานการถอนเงิน MT5 ในบัญชีของท่าน โปรดตรวจสอบอีเมล์เพื่อศึกษารายละเอียดเพิ่มเติม"
@@ -6914,6 +6917,9 @@ msgstr "มูลค่าการชำระเงินรวมสูงส
 
 msgid "Maximum daily turnover"
 msgstr "มูลค่าการซื้อขายสูงสุดรายวัน"
+
+msgid "Maximum deposit amount limit"
+msgstr ""
 
 msgid "Maximum leverage"
 msgstr "เลเวอเรจสูงสุด"
@@ -7713,8 +7719,8 @@ msgstr "บริษัทฯ ของเรา"
 msgid "Our MAM Advanced account can be assigned to a money manager who will trade on your behalf with more competitive spreads than the regular Advanced account."
 msgstr "สามารถมอบหมายบัญชี MAM ขั้นสูงของเราให้กับผู้จัดการการเงิน ผู้ที่จะซื้อขายแทนท่านด้วยสเปรดที่มากกว่าบัญชีขั้นสูงปกติ"
 
-msgid "Our MAM Volatility Indices account can be assigned to a money manager who will trade on your behalf with the same specifications as the regular Volatility Indices account."
-msgstr "สามารถมอบหมายบัญชีผันผวน MAM ขั้นสูงของเราให้กับผู้จัดการการเงิน ผู้ที่จะซื้อขายแทนท่านด้วยข้อกำหนดเดียวกันกับบัญชีดัชนีผันผวนปกติ"
+msgid "Our MAM Synthetic Indices account can be assigned to a money manager who will trade on your behalf with the same specifications as the regular Synthetic Indices account."
+msgstr ""
 
 msgid "Our MetaTrader 5 Advanced account provides you with tight spreads, higher ticket size and offers more products."
 msgstr "บัญชี MetaTrader 5 ขั้นสูงของเรามีสเปรดน้อย ขนาดทิกเก็ตสูงกว่า และมีผลิตภัณฑ์มากกว่า"
@@ -7725,8 +7731,8 @@ msgstr "บัญชีมาตรฐาน MetaTrader 5 ของเราเ�
 msgid "Our New Mobile Trading App"
 msgstr "แอพใหม่ของเราสำหรับซื้อขายบนอุปกรณ์พกพา"
 
-msgid "Our Volatility Indices account allows you to trade CFDs on Volatility Indices -- our proprietary synthetic assets that simulate market forces."
-msgstr "บัญชีดัชนีผันผวนของเราอนุญาตให้ท่านได้ซื้อขาย CFD จากฐานดัชนีผันผวน ซึ่งเป็นดัชนีที่พัฒนาขึ้นเอง เป็นกรรมสิทธิ์ของเรา สามารถจำลองเหตุการณ์ที่เป็นไปตามกลไกตลาด"
+msgid "Our Synthetic Indices account allows you to trade CFDs on Synthetic Indices - our proprietary synthetic assets that simulate market forces."
+msgstr ""
 
 msgid "Our active client base is expected to reach over 100,000 total clients this year."
 msgstr "ในปีนี้เราคาดว่า ฐานลูกค้าที่ใช้งานอยู่ของบริษัทฯ ทั้งหมดจะเกิน 100,000 ราย"
@@ -8715,8 +8721,8 @@ msgstr "การเปิดบัญชีเงินจริง"
 msgid "Real Standard"
 msgstr "มาตรฐานจริง"
 
-msgid "Real Volatility Indices"
-msgstr "ดัชนีผันผวนจริง"
+msgid "Real Synthetic Indices"
+msgstr ""
 
 msgid "Real-Money Account"
 msgstr "บัญชีเงินจริง"
@@ -9600,8 +9606,8 @@ msgstr "ขั้นตอนที่ 1: กำหนดโพซิชั่�
 msgid "Step 1: Learn to read currency pairs"
 msgstr "ขั้นตอนที่ 1: เรียนรู้การอ่านคู่สกุลเงิน"
 
-msgid "Step 1: Log in to MT5 using your MT5 Volatility Indices account"
-msgstr "ขั้นตอนที่ 1: ลงชื่อเข้าใช้ MT5 โดยใช้บัญชีดัชนีผันผวน MT5 ของท่าน"
+msgid "Step 1: Log in to MT5 using your MT5 Synthetic Indices account"
+msgstr ""
 
 msgid "Step 2"
 msgstr "ขั้นตอนที่ 2"
@@ -9830,6 +9836,12 @@ msgstr "ฟรังก์สวิส เทียบกับ เงินเ�
 
 msgid "Symbol"
 msgstr "สัญลักษณ์"
+
+msgid "Synthetic Indices"
+msgstr ""
+
+msgid "Synthetic Indices Account"
+msgstr ""
 
 msgid "Synthetic indices that mimic market volatility."
 msgstr "ดัชนีที่ทำขึ้นเองโดยจำลองความผันผวนของตลาด"
@@ -10797,8 +10809,8 @@ msgstr "แผนผลประโยชน์ของนักลงทุน
 msgid "The MAM Advanced account can be assigned to a money manager who will trade on your behalf with more competitive spreads than the regular Advanced account. Other account specifications remain the same."
 msgstr "ท่านสามารถมอบหมายบัญชี MAM ขั้นสูงของเราให้กับผู้จัดการการเงิน ผู้ที่จะซื้อขายแทนท่านด้วยสเปรดที่มากกว่าบัญชีขั้นสูงปกติ ข้อกำหนดอื่นๆ ของบัญชียังคงเดิม"
 
-msgid "The MAM Volatility Indices account can be assigned to a money manager who will trade on your behalf with the same specifications as the regular Volatility Indices account."
-msgstr "สามารถมอบหมายบัญชีผันผวน MAM ขั้นสูงให้กับผู้จัดการการเงิน ผู้ที่จะซื้อขายแทนท่านด้วยข้อกำหนดเดียวกันกับบัญชีดัชนีผันผวนปกติ"
+msgid "The MAM Synthetic Indices account can be assigned to a money manager who will trade on your behalf with the same specifications as the regular Synthetic Indices account."
+msgstr ""
 
 msgid "The MAM tool is ideal for money managers who want to easily manage multiple client accounts. It gives you the ability to simultaneously view, track, and trade on behalf of all MT5 client accounts under your control."
 msgstr "เครื่องมือ MAM เหมาะสำหรับผู้บริหารจัดการเงินที่ต้องการจัดการบัญชีลูกค้าหลายๆ บัญชีโดยง่าย ซึ่งให้ท่านสามารถดู ติดตาม และซื้อขายในเวลาเดียวกัน ในนามของบัญชีลูกค้า MT5 ทั้งหมดภายใต้การควบคุมของท่าน"
@@ -10929,11 +10941,11 @@ msgstr "บัญชีมาตรฐานมีความเหมาะส
 msgid "The Stop Out Level applicable to the Client's MT5 Real Account may differ from the default Stop Out Level published on the Company website."
 msgstr "ระดับยุติการซื้อขายที่ใช้กับบัญชี MT5 จริงของลูกค้าอาจจะแตกต่างจากระดับยุติการซื้อขายที่เป็นค่าเริ่มต้นที่แจ้งไว้บนเว็บไซต์ของบริษัทฯ"
 
+msgid "The Synthetic Indices account allows you to trade CFDs on Synthetic Indices – our proprietary synthetic assets that mimic real-world market volatility and are available for trading 24/7."
+msgstr ""
+
 msgid "The System Administration team is responsible for the upkeep, configuration, and reliable operation of our computer software, hardware, and networks."
 msgstr "ทีมเจ้าหน้าที่ดูแลระบบรับผิดชอบในการดูแล ตั้งค่า และดำเนินการงานปฏิบัติการที่เกี่ยวข้องกับงานซอฟท์แวร์ ฮาร์ดแวร์ และเครือข่าย"
-
-msgid "The Volatility Indices account allows you to trade CFDs on Volatility Indices – our proprietary synthetic assets that mimic real-world market volatility and are available for trading 24/7."
-msgstr "บัญชีดัชนีผันผวนอนุญาตให้ท่านได้ซื้อขาย CFD จากดัชนีผันผวน ซึ่งดัชนีนี้เป็นดัชนีกรรมสิทธิ์ของเราที่พัฒนาขึ้นเอง ซึ่งจำลองความผันผวนตามกลไกตลาดจริง และสามารถซื้อขายได้ตลอด 24 ชั่วโมง ตลอด 7 วัน"
 
 msgid "The ability to absorb and understand varied compliance matters in a number of international jurisdictions"
 msgstr "ความสามารถในกาสร้างความเข้าใจเกี่ยวกับการปฏิบัติตามข้อกำหนดที่มีความหลากหลายของเขตอำนาจตามกฎหมายนานาชาติ"
@@ -12056,8 +12068,8 @@ msgstr "นักลงทุนเลือกซื้อคู่สกุล
 msgid "Trading"
 msgstr "การซื้อขาย"
 
-msgid "Trading Contracts for Difference (CFDs) on Volatility Indices may not be suitable for everyone. Please ensure that you fully understand the risks involved, including the possibility of losing all the funds in your MT5 account. Gambling can be addictive – please play responsibly."
-msgstr "การซื้อขายสัญญาส่วนต่าง (CFDs) ดัชนีผันผวนอาจะไม่เหมาะสมสำหรับนักลงทุนทุกคน โปรดแน่ใจว่า ลูกค้าเข้าใจถึงความเสี่ยงที่เกี่ยวข้องอย่างแท้จริง รวมถึงความเป็นไปได้ที่จะสูญเสียเงินทุนในบัญชี MT5 ของลูกค้า การพนันสามารถเสพติดได้ โปรดดำเนินธุรกรรมซื้อขายด้วยความรับผิดชอบ"
+msgid "Trading Contracts for Difference (CFDs) on Synthetic Indices may not be suitable for everyone. Please ensure that you fully understand the risks involved, including the possibility of losing all the funds in your MT5 account. Gambling can be addictive – please play responsibly."
+msgstr ""
 
 msgid "Trading Limits"
 msgstr "วงเงินในการซื้อขาย"
@@ -12536,9 +12548,6 @@ msgstr "แอพพลิเคชัน VPN"
 msgid "Variable"
 msgstr "แปรตาม"
 
-msgid "Variable from %1 pips"
-msgstr "ตัวแปรจาก %1 pips"
-
 msgid "Variable spreads"
 msgstr "สเปรดตัวแปร"
 
@@ -12673,9 +12682,6 @@ msgstr "ดัชนีผันผวน 75"
 
 msgid "Volatility Indices"
 msgstr "ดัชนีความผันผวน"
-
-msgid "Volatility Indices Account"
-msgstr "บัญชีดัชนีผันผวน"
 
 msgid "Volatility Indices are further categorised into two classes:"
 msgstr "ดัชนีความผันผวนถูกจำแนกเป็น 2 ระดับ"

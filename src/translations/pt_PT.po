@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-05-13 05:09\n"
+"PO-Revision-Date: 2019-05-13 06:07\n"
 "Last-Translator: binarycom\n"
 "Language-Team: Portuguese\n"
 "MIME-Version: 1.0\n"
@@ -3452,8 +3452,8 @@ msgstr "Demo avançada"
 msgid "Demo Standard"
 msgstr "Demo padrão"
 
-msgid "Demo Volatility Indices"
-msgstr "Demo de índices \"Volatility\""
+msgid "Demo Synthetic Indices"
+msgstr ""
 
 msgid "Depending on the jurisdiction to which a Client's account has been attached in accordance with the account opening procedures of the website, the terms 'the Company' and '%1' shall denote either"
 msgstr ""
@@ -4613,11 +4613,11 @@ msgstr "Assistência de primeira classe a clientes."
 msgid "Five total assets are available for you to choose from:"
 msgstr "Estão disponíveis na totalidade cinco ativos à escolha:"
 
-msgid "Fixed"
-msgstr "Fixo"
-
 msgid "Fixed spreads"
 msgstr "Spreads fixos"
+
+msgid "Fixed/Variable"
+msgstr ""
 
 msgid "Fixing problems and providing feedback for improvement."
 msgstr ""
@@ -6432,6 +6432,9 @@ msgstr "Limite"
 msgid "Limit Order"
 msgstr "Ordem de limite"
 
+msgid "Limit applies until"
+msgstr ""
+
 msgid "Limit/Limit Price"
 msgstr "Limite/Preço do limite"
 
@@ -6597,14 +6600,14 @@ msgstr "Conta avançada gestor multi-contas"
 msgid "MAM Advanced*"
 msgstr "Gestor multi-contas avançado*"
 
-msgid "MAM Volatility Indices"
-msgstr "Índices Volatility do gestor multi-contas"
+msgid "MAM Synthetic Indices"
+msgstr ""
 
-msgid "MAM Volatility Indices Account"
-msgstr "Conta de índices \"Volatility\" do gestor multi-contas"
+msgid "MAM Synthetic Indices Account"
+msgstr ""
 
-msgid "MAM Volatility Indices*"
-msgstr "Índices Volatility do gestor multi-contas*"
+msgid "MAM Synthetic Indices*"
+msgstr ""
 
 msgid "MENA FFXPO Award"
 msgstr "Prêmio FFXPO do MENA"
@@ -6624,8 +6627,8 @@ msgstr "Finanças MT5"
 msgid "MT5 Real Account"
 msgstr "Conta real MT5"
 
-msgid "MT5 Volatility Indices"
-msgstr "Índices Volatility da MT5"
+msgid "MT5 Synthetic Indices"
+msgstr ""
 
 msgid "MT5 for Android"
 msgstr "MT5 para Android"
@@ -6651,8 +6654,8 @@ msgstr "MT5 para a plataforma da Web"
 msgid "MT5 real-money account for Forex and CFDs."
 msgstr "Conta de dinheiro real MT5 para forex e CFDs."
 
-msgid "MT5 real-money account for Volatility Indices only."
-msgstr "Conta de dinheiro real MT5 somente para índices \"Volatility\"."
+msgid "MT5 real-money account for Synthetic Indices only."
+msgstr ""
 
 msgid "MT5 withdrawals have been disabled on your account. Please check your email for more details."
 msgstr "Retiradas da MT5 foram desativadas na sua conta. Confira o seu e-mail para mais detalhes."
@@ -6917,6 +6920,9 @@ msgstr "Máximo de pagamentos agregados sobre posições em aberto"
 
 msgid "Maximum daily turnover"
 msgstr "Volume de negócios máximo diário"
+
+msgid "Maximum deposit amount limit"
+msgstr ""
 
 msgid "Maximum leverage"
 msgstr "Alavancagem máxima"
@@ -7716,8 +7722,8 @@ msgstr "A nossa empresa"
 msgid "Our MAM Advanced account can be assigned to a money manager who will trade on your behalf with more competitive spreads than the regular Advanced account."
 msgstr "A nossa conta gestor multi-contas pode ser atribuída a um gestor de dinheiro que irá negociar em seu nome com spreads mais competitivos do que numa conta avançada regular."
 
-msgid "Our MAM Volatility Indices account can be assigned to a money manager who will trade on your behalf with the same specifications as the regular Volatility Indices account."
-msgstr "A nossa conta de indíces \"Volatility\" do gestor multi-contas pode ser atribuída a um gestor de dinheiro que irá negociar em seu nome com as mesmas especificações que numa conta de índices \"Volatility\"."
+msgid "Our MAM Synthetic Indices account can be assigned to a money manager who will trade on your behalf with the same specifications as the regular Synthetic Indices account."
+msgstr ""
 
 msgid "Our MetaTrader 5 Advanced account provides you with tight spreads, higher ticket size and offers more products."
 msgstr "A nossa conta avançada da MetaTrader 5 proporciona-lhe spreads baixos, tamanhos de pedidos superiores e mais produtos."
@@ -7728,8 +7734,8 @@ msgstr "A conta padrão da MetaTrader 5 é adequada para negociadores novos como
 msgid "Our New Mobile Trading App"
 msgstr ""
 
-msgid "Our Volatility Indices account allows you to trade CFDs on Volatility Indices -- our proprietary synthetic assets that simulate market forces."
-msgstr "A nossa conta de índices \"Volatility\" permite-lhe negociar CFDs sobre índices \"Volatility\" – os nossos ativos sintéticos proprietários que simulam forças de mercado."
+msgid "Our Synthetic Indices account allows you to trade CFDs on Synthetic Indices - our proprietary synthetic assets that simulate market forces."
+msgstr ""
 
 msgid "Our active client base is expected to reach over 100,000 total clients this year."
 msgstr "É esperado que a nossa base de clientes ativos ultrapasse um total de 100.000 clientes este ano."
@@ -8718,8 +8724,8 @@ msgstr "Abertura de conta de dinheiro real"
 msgid "Real Standard"
 msgstr "Padrão real"
 
-msgid "Real Volatility Indices"
-msgstr "Índices Volatility reais"
+msgid "Real Synthetic Indices"
+msgstr ""
 
 msgid "Real-Money Account"
 msgstr "Conta de dinheiro real"
@@ -9603,8 +9609,8 @@ msgstr "Passo 1: Defina a sua posição"
 msgid "Step 1: Learn to read currency pairs"
 msgstr "Etapa 1: Aprenda como ler pares de moedas"
 
-msgid "Step 1: Log in to MT5 using your MT5 Volatility Indices account"
-msgstr "Etapa 1: Conecte-se à MT5 usando a sua conta de índices Volatility MT5"
+msgid "Step 1: Log in to MT5 using your MT5 Synthetic Indices account"
+msgstr ""
 
 msgid "Step 2"
 msgstr "Etapa 2"
@@ -9833,6 +9839,12 @@ msgstr "Franco suíço vs. Iene japonês"
 
 msgid "Symbol"
 msgstr "Símbolo"
+
+msgid "Synthetic Indices"
+msgstr ""
+
+msgid "Synthetic Indices Account"
+msgstr ""
 
 msgid "Synthetic indices that mimic market volatility."
 msgstr "Índices sintéticos que imitam a volatilidade do mercado."
@@ -10800,8 +10812,8 @@ msgstr ""
 msgid "The MAM Advanced account can be assigned to a money manager who will trade on your behalf with more competitive spreads than the regular Advanced account. Other account specifications remain the same."
 msgstr "A nossa conta gestor multi-contas pode ser atribuída a um gestor de dinheiro que irá negociar em seu nome com spreads mais competitivos do que numa conta avançada regular. As outras especificações da conta permanecem iguais."
 
-msgid "The MAM Volatility Indices account can be assigned to a money manager who will trade on your behalf with the same specifications as the regular Volatility Indices account."
-msgstr "A conta de indíces \"Volatility\" do gestor multi-contas pode ser atribuída a um gestor de dinheiro que irá negociar em seu nome com as mesmas especificações que numa conta de índices \"Volatility\"."
+msgid "The MAM Synthetic Indices account can be assigned to a money manager who will trade on your behalf with the same specifications as the regular Synthetic Indices account."
+msgstr ""
 
 msgid "The MAM tool is ideal for money managers who want to easily manage multiple client accounts. It gives you the ability to simultaneously view, track, and trade on behalf of all MT5 client accounts under your control."
 msgstr "A ferramenta de gestão de contas múltiplas é ideal para gestores de dinheiro que desejam gerir múltiplas contas de cliente facilmente. Ela permite-lhe ver, controlar e negociar simultaneamente em nome de todas as contas de cliente MT5 sob o seu controle."
@@ -10932,11 +10944,11 @@ msgstr "A conta padrão é adequada para um amplo conjunto de negociadores, tant
 msgid "The Stop Out Level applicable to the Client's MT5 Real Account may differ from the default Stop Out Level published on the Company website."
 msgstr ""
 
+msgid "The Synthetic Indices account allows you to trade CFDs on Synthetic Indices – our proprietary synthetic assets that mimic real-world market volatility and are available for trading 24/7."
+msgstr ""
+
 msgid "The System Administration team is responsible for the upkeep, configuration, and reliable operation of our computer software, hardware, and networks."
 msgstr "A equipe de Administração do Sistema é responsável pela manutenção, configuração e operação confiável de nosso software, hardware e redes."
-
-msgid "The Volatility Indices account allows you to trade CFDs on Volatility Indices – our proprietary synthetic assets that mimic real-world market volatility and are available for trading 24/7."
-msgstr "A conta de índices \"Volatility\" permite-lhe negociar CFDs sobre índices \"Volatility\" – os nossos ativos sintéticos proprietários que simulam a volatilidade dos mercados do mundo real e que estão disponíveis para negociações 24/7."
 
 msgid "The ability to absorb and understand varied compliance matters in a number of international jurisdictions"
 msgstr "A capacidade de adquirir conhecimentos sobre assuntos relacionados com a conformidade numa multiplicidade de jurisdições internacionais"
@@ -12058,8 +12070,8 @@ msgstr "Os negociadores escolhem comprar um certo par de moedas caso pensem que 
 msgid "Trading"
 msgstr "Negociação"
 
-msgid "Trading Contracts for Difference (CFDs) on Volatility Indices may not be suitable for everyone. Please ensure that you fully understand the risks involved, including the possibility of losing all the funds in your MT5 account. Gambling can be addictive – please play responsibly."
-msgstr "A negociação de contratos por diferenças (CFDs) em índices Volatility pode não ser adequada para todos. Certifique-se de que compreenda totalmente os riscos envolvidos, incluindo a possibilidade de perder todos os fundos na sua conta MT5. Os jogos de azar podem ser viciantes – jogue responsavelmente."
+msgid "Trading Contracts for Difference (CFDs) on Synthetic Indices may not be suitable for everyone. Please ensure that you fully understand the risks involved, including the possibility of losing all the funds in your MT5 account. Gambling can be addictive – please play responsibly."
+msgstr ""
 
 msgid "Trading Limits"
 msgstr "Limites de Negociação"
@@ -12538,9 +12550,6 @@ msgstr "Aplicato de VPN"
 msgid "Variable"
 msgstr "Variável"
 
-msgid "Variable from %1 pips"
-msgstr "Variável de %1 pips"
-
 msgid "Variable spreads"
 msgstr "Spreads variáveis"
 
@@ -12675,9 +12684,6 @@ msgstr "Índice Volatility 75"
 
 msgid "Volatility Indices"
 msgstr "Índices Volatility"
-
-msgid "Volatility Indices Account"
-msgstr "Conta de índices \"Volatility\""
 
 msgid "Volatility Indices are further categorised into two classes:"
 msgstr "Os índices \"Volatility\" são ainda categorizados em duas classes:"
