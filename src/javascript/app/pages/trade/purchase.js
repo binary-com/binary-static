@@ -363,7 +363,7 @@ const Purchase = (() => {
         for (let s = 0; s < epoches.length; s++) {
             const tick_d = {
                 epoch: epoches[s],
-                quote: spots2[epoches[s]],
+                quote: addComma(spots2[epoches[s]], Tick.pipSize()),
             };
 
             if (CommonFunctions.isVisible(spots) && tick_d.epoch && tick_d.epoch > purchase_data.buy.start_time) {
@@ -391,8 +391,7 @@ const Purchase = (() => {
                 if (!tick_config.is_digit) {
                     fragment.appendChild(el2);
                 }
-                const tick_with_comma = addComma(tick_d.quote, countDecimalPlaces(tick_d.quote));
-                const tick = `<div class='quote'>${tick_with_comma.replace(/\d$/, makeBold)}</div>`;
+                const tick = `<div class='quote'>${tick_d.quote.replace(/\d$/, makeBold)}</div>`;
                 const el3  = createElement('div', { class: 'col' });
                 CommonFunctions.elementInnerHtml(el3, tick);
 

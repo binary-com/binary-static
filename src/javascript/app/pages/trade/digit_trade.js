@@ -1,8 +1,11 @@
 const moment               = require('moment');
+const countDecimalPlaces   = require('./common_independent').countDecimalPlaces;
 const DigitTicker          = require('./digit_ticker');
+const details              = require('./symbols').details;
 const ViewPopupUI          = require('../user/view_popup/view_popup.ui');
 const showLocalTimeOnHover = require('../../base/clock').showLocalTimeOnHover;
 const BinarySocket         = require('../../base/socket');
+const getSymbols           = require('../../common/active_symbols').getSymbols;
 const LoadingSpinner       = require('../../components/loading-spinner');
 const addComma             = require('../../../_common/base/currency_base').addComma;
 const localize             = require('../../../_common/localize').localize;
@@ -80,12 +83,10 @@ const DigitDisplay = (() => {
             time,
         });
 
-        const csv_spot = addComma(spot);
-
         $container
             .find('#table_digits')
             .append($('<p />', { class: 'gr-3', text: tick_count }))
-            .append($('<p />', { class: 'gr-3 gray', html: tick_count === contract.tick_count ? `${csv_spot.slice(0, csv_spot.length - 1)}<strong>${csv_spot.substr(-1)}</strong>` : csv_spot }))
+            .append($('<p />', { class: 'gr-3 gray', html: tick_count === contract.tick_count ? `${spot.slice(0, spot.length - 1)}<strong>${spot.substr(-1)}</strong>` : spot }))
             .append($('<p />', { class: 'gr-6 gray digit-spot-time no-underline', text: moment(+time * 1000).utc().format('YYYY-MM-DD HH:mm:ss') }));
 
         DigitTicker.update(
@@ -106,21 +107,31 @@ const DigitDisplay = (() => {
             ViewPopupUI.storeSubscriptionID(response.tick.id);
         }
         LoadingSpinner.hide('table_digits');
-        if (response.history) {
-            response.history.times.some((time, idx) => {
-                if (+time >= +contract.entry_tick_time) {
-                    updateTable(response.history.prices[idx], time);
+
+        BinarySocket.send({ active_symbols: 'brief' }).then(active_symbols => {
+            details(active_symbols);
+            const market   = getSymbols(active_symbols);
+
+            if (response.history) {
+                const pip_size = countDecimalPlaces(market[response.echo_req.ticks_history].pip);
+                response.history.times.some((time, idx) => {
+                    if (+time >= +contract.entry_tick_time) {
+                        updateTable(addComma(response.history.prices[idx], pip_size), time);
+                        tick_count += 1;
+                    }
+                    return tick_count > contract.tick_count;
+                });
+            } else if (response.tick) {
+                const pip_size = countDecimalPlaces(market[response.tick.symbol].pip);
+                if (tick_count <= contract.tick_count &&
+                    +response.tick.epoch >= +contract.entry_tick_time) {
+                    // Pass in response object to changeNumberToString and get string quote
+                    updateTable(addComma(response.tick.quote, pip_size), response.tick.epoch);
                     tick_count += 1;
                 }
-                return tick_count > contract.tick_count;
-            });
-        } else if (response.tick) {
-            if (tick_count <= contract.tick_count &&
-                +response.tick.epoch >= +contract.entry_tick_time) {
-                updateTable(response.tick.quote, response.tick.epoch);
-                tick_count += 1;
             }
-        }
+        });
+
         showLocalTimeOnHover('.digit-spot-time');
     };
 
