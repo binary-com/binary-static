@@ -471,25 +471,6 @@ const PaymentMethods = () => {
                                     },
                                 ],
                             },
-                            {
-                                id : 'vload',
-                                row: [
-                                    { text: <PaymentLogo logo='vload' /> },
-                                    { attributes: { colSpan: 5, className: 'toggler' }, custom_td : <CustomTableData data={[
-                                        { td: it.L('Vload is an eVoucher facility that’s available as a payment method to deposit and withdraw funds. For more information, please visit [_1].', '<a target="_blank" href="https://www.vload.expert/">www.vload.expert</a>') },
-                                        { td_list: [
-                                            { text: 'USD EUR' },
-                                            { text: '10 - 5,000' },
-                                            { text: '10 - 5,000' },
-                                            { text: <TableValues value={[it.L(`${deposit}${instant}`), it.L(`${withdrawal}${instant}`, 1)]} /> },
-                                            { text: <ReferenceLinks /> },
-                                        ],
-                                        },
-                                    ]}
-                                    />,
-                                    },
-                                ],
-                            },
                         ],
                     }}
                 />
