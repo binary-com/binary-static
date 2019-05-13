@@ -1,11 +1,9 @@
 module.exports = function (grunt) {
     const src = {
-        app  : `${global.dist}/css/{app,common,static}.css`,
-        app_2: `${global.dist_app_2}/css/app_2.css`,
+        app: `${global.dist}/css/{app,common,static}.css`,
         get all() {
             return [
                 this.app,
-                this.app_2,
             ];
         },
     };

@@ -67,10 +67,6 @@ module.exports = [
     ['logged_inws',                             'app/logged_in',                               null],
     ['redirect',                                'app/logged_in',                               null,         'Redirecting...'],
 
-    // ==================== Section: "app_2" ====================
-    // According to its section path ('app') would be saved to: /app/{lang}/index.html
-    ['index',                                   'app_2/app',                                   null,         'Trusted by traders since 2000',     null, 'app_2'],
-
     // ==================== Section: "static" ====================
     ['404',                                     'static/404',                                  'full_width', '404'],
     ['home',                                    'static/home',                                 'full_width', 'Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices'],
@@ -121,8 +117,6 @@ module.exports = [
     ['metatrader/download',                     'static/metatrader/download',                  'default',     'Start Trading with MetaTrader 5'],
     ['metatrader/how-to-trade-mt5',             'static/metatrader/how_to_trade_mt5',          'default',     'How to Trade in MetaTrader 5'],
     ['metatrader/types-of-accounts',            'static/metatrader/types_of_accounts',         'default',     'Types of MetaTrader 5 accounts'],
-
-    ['style-guide',                             'static/new_layout/style_guide',               'full_width',  'Style guide'],
 
     // ==================== Section: "landing_pages" ====================
     ['graduates',                               'landing_pages/graduate_program',                 null,        'Binary.com Graduate Program',        'NOT-en'],

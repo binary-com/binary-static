@@ -17,7 +17,6 @@ module.exports = function (grunt) {
                 },
             ],
         },
-        app_2: {},
         get all() {
             return this.app;
         },
