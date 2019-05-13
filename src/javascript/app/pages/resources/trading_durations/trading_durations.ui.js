@@ -21,10 +21,12 @@ const TradingDurationUI = (() => {
 
     const populateTable = (duration_data) => {
         const $market_tab   = $(`#tab_${duration_data.market.name}`);
-        const market_header = `#tab_${duration_data.market.name}-content`;
+        const $market_header = $(`#tab_${duration_data.market.name}-content`);
         
         $market_tab.setVisibility(1);
-        $(market_header).append($('<div/>', { id: duration_data.submarket.name })
+        $market_header.setVisibility(1);
+        $market_tab.addClass('selectedTab');
+        $market_header.append($('<div/>', { id: duration_data.submarket.name })
             .append($('<h2/>', { text: duration_data.submarket.display_name, id: 'trading_durations_subtitle' })));
 
         createEmptyTable(duration_data.submarket.name);

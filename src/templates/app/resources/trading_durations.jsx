@@ -35,7 +35,7 @@ const TradingDurations = () => (
                     />
                     <div className='tab-content gr-padding-20'>
                         <TabContentContainer>
-                            <TabContent id='tab_forex' className='selectedTab' />
+                            <TabContent id='tab_forex' />
                             <TabContent id='tab_indices' />
                             <TabContent id='tab_commodities' />
                             <TabContent id='tab_volidx' />
