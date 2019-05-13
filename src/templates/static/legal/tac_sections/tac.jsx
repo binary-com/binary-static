@@ -127,7 +127,7 @@ const Tac = () => (
                 <li>{it.L('The client has read this legal Terms and conditions page in full and understood that the client will be buying and selling financial contracts subject to these terms and conditions.')}</li>
                 <li>{it.L('The client has read the Company\'s privacy statement and is aware how the Company processes information.')}</li>
                 <li>{it.L('The client is over 18 years of age, unless the client is an Estonian resident whereby the client would have to be over 21.')}</li>
-                <li>{it.L('The client is not resident in a restricted country such as Canada, St. Vincent and the Grenadines, Hong Kong, Israel, Jersey, Malaysia, Malta, Paraguay, the United Arab Emirates, the USA, or any other restricted country that has been identified by the FATF as having strategic deficiencies.')}</li>
+                <li>{it.L('The client is not resident in a restricted country such as Canada, Hong Kong, Israel, Jersey, Malaysia, Malta, Paraguay, the United Arab Emirates, the USA, or any other restricted country that has been identified by the FATF as having strategic deficiencies.')}</li>
                 <li>{it.L('The client has sufficient experience and knowledge in matters of financial trading to be capable of evaluating the merits and risks of acquiring financial contracts via this site and has done so without relying on any information contained on this site.')}</li>
             </ul>
         </p>
