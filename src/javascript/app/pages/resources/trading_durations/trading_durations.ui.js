@@ -138,6 +138,7 @@ const TradingDurationUI = (() => {
                 $loading_container.setVisibility(0);
             } else {
                 $('#trading_durations_empty').setVisibility(1);
+                $('#trading_durations_content').setVisibility(0);
                 const empty_trading_durations_btn_login = CommonFunctions.getElementById('empty-trading-durations-btn-login');
                 empty_trading_durations_btn_login.removeEventListener('click', loginOnClick);
                 empty_trading_durations_btn_login.addEventListener('click', loginOnClick);
