@@ -6,8 +6,6 @@ const Note = ({ text }) => (
 
 const Duration = ({ link }) => (
     <React.Fragment>
-        <h3>{it.L('Contract duration')}</h3>
-        <p>{it.L('Pleas refer to the [_1]asset index[_2] for each asset\'s minimum and maximum contract durations based on trade type.', `<a href='${it.url_for('resources/asset_indexws')}#market-${link}' target='_blank' rel='noopener noreferer'>`, '</a>')}</p>
         <h3>{it.L('Duration Offer')}</h3>
         <div id='duration_container' className='row no-margin'>
             <p className='gr-6 gr-no-gutter no-margin align-start'>{it.L('Supported duration offer of')} <strong id='duration_symbol' />:</p>

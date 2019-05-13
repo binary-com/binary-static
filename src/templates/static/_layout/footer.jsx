@@ -93,10 +93,10 @@ const Footer = () => (
                             <FooterColumn
                                 header={it.L('Trading')}
                                 items={[
-                                    { text: it.L('Platforms'),      href: it.url_for('platforms') },
-                                    { text: it.L('Asset Index'),    href: it.url_for('resources/asset_indexws') },
-                                    { text: it.L('Trading Times'),  href: it.url_for('resources/market_timesws') },
-                                    { text: it.L('Network Status'), href: 'https://binarycom.statuspage.io', target: '_blank' },
+                                    { text: it.L('Platforms'),         href: it.url_for('platforms') },
+                                    { text: it.L('Trading Durations'), href: it.url_for('resources/trading_durations') },
+                                    { text: it.L('Trading Times'),     href: it.url_for('resources/market_timesws') },
+                                    { text: it.L('Network Status'),    href: 'https://binarycom.statuspage.io', target: '_blank' },
                                 ]}
                             />
 

@@ -25,16 +25,9 @@ const Resources = () => (
         <p>{it.L('Do you want to learn more about the markets and how to trade them? Check out the resources below.')}</p>
         <div className='gr-row'>
             <Column
-                header={it.L('Asset Index')}
+                header={it.L('Trading Durations')}
                 image='asset-index'
                 text={it.L('View the full list of assets, contract types and durations.')}
-                url='asset_indexws'
-            />
-
-            <Column
-                header={it.L('Trading Durations')}
-                image='trading-times'
-                text={it.L('View the trading durations of assets, contract types, and markets')}
                 url='trading_durations'
             />
 

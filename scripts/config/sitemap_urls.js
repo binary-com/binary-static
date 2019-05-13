@@ -48,7 +48,7 @@ module.exports = {
         ['trading',                            'monthly', 0.80],
         ['multi_barriers_trading',             'monthly', 0.80],
 
-        ['resources/asset_indexws',            'monthly', 0.80],
+        ['resources/trading_durations',        'monthly', 0.80],
         ['resources/market_timesws',           'monthly', 0.80],
 
         // ==================== Section: "landing_pages" ====================

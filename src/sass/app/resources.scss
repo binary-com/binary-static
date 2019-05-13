@@ -30,29 +30,6 @@
     }
 }
 
-#asset_index_wrapper {
-    max-width: 1200px;
-
-    #asset-index {
-        &.has-tabs.ui-tabs .ui-tabs-panel {
-            padding: 0;
-        }
-        .table-container {
-            overflow-x: auto;
-        }
-        th {
-            width: calc(100% / 7);
-
-            &:nth-child(2):nth-last-child(1) {
-                width: 24%;
-            }
-            &:nth-child(2):nth-last-child(2), &:nth-child(3):nth-last-child(1) {
-                width: 18%;
-            }
-        }
-    }
-}
-
 #trading_durations {
     max-width: 1200px;
 

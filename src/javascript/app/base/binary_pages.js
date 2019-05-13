@@ -12,8 +12,7 @@ const PaymentAgentWithdraw    = require('../pages/cashier/payment_agent_withdraw
 const Endpoint                = require('../pages/endpoint');
 const MBTradePage             = require('../pages/mb_trade/mb_tradepage');
 const EconomicCalendar        = require('../pages/resources/economic_calendar/economic_calendar');
-const AssetIndexUI            = require('../pages/resources/asset_index/asset_index.ui');
-const TradingDurationsUI       = require('../pages/resources/trading_durations/trading_durations.ui');
+const TradingDurationsUI      = require('../pages/resources/trading_durations/trading_durations.ui');
 const MetatraderDownloadUI    = require('../pages/resources/metatrader/download.ui');
 const TradingTimesUI          = require('../pages/resources/trading_times/trading_times.ui');
 const NewAccount              = require('../pages/new_account');
@@ -70,7 +69,6 @@ const pages_config = {
     accounts                 : { module: Accounts,                   is_authenticated: true, needs_currency: true },
     api_tokenws              : { module: APIToken,                   is_authenticated: true },
     assessmentws             : { module: FinancialAssessment,        is_authenticated: true, only_real: true },
-    asset_indexws            : { module: AssetIndexUI },
     asuncion                 : { module: StaticPages.Locations },
     authenticate             : { module: Authenticate,               is_authenticated: true, only_real: true },
     authorised_appsws        : { module: AuthorisedApps,             is_authenticated: true },
