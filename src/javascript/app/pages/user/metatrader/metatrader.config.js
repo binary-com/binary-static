@@ -176,6 +176,25 @@ const MetaTraderConfig = (() => {
                         showCitizenshipMessage();
                         $message.find(message_selector).setVisibility(1);
                         resolve($message.html());
+                    } else if (accounts_info[acc_type].account_type === 'gaming') {
+                        const response_get_account_status = State.getResponse('get_account_status');
+                        const is_volatility = !accounts_info[acc_type].mt5_account_type;
+                        const is_high_risk = /low/.test(response_get_account_status.risk_classification);
+                        BinarySocket.wait('get_account_status', 'landing_company').then(() => {
+                            if (/(financial_assessment|trading_experience)_not_complete/.test(response_get_account_status.status)
+                                && is_volatility
+                                && is_high_risk) {
+                                $message.find('.assessment').setVisibility(1).find('a').attr('onclick', `localStorage.setItem('financial_assessment_redirect', '${urlFor('user/metatrader')}#${acc_type}')`);
+                                is_ok = false;
+                            }
+
+                            if (is_ok) {
+                                resolve();
+                            } else {
+                                $message.find(message_selector).setVisibility(1);
+                                resolve($message.html());
+                            }
+                        });
                     } else {
                         resolve();
                     }
