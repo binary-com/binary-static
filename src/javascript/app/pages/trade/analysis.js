@@ -6,6 +6,7 @@ const MBDefaults      = require('../mb_trade/mb_defaults');
 const MBPortfolio     = require('../mb_trade/mb_portfolio');
 const getElementById  = require('../../../_common/common_functions').getElementById;
 const getLanguage     = require('../../../_common/language').get;
+const localize        = require('../../../_common/localize').localize;
 const State           = require('../../../_common/storage').State;
 const TabSelector     = require('../../../_common/tab_selector');
 const Url             = require('../../../_common/url');
@@ -271,8 +272,14 @@ const TradingAnalysis = (() => {
     const populateTableExplanation = (market, underlying_symbol) => {
         BinarySocket.send({ trading_durations: 1 }).then((response) => {
             const asset_data = TradingDuration.getTradingDurationSymbol(response, market, underlying_symbol);
-            const $explanation_duration_data = $('#explanation_duration').find('tbody');
-            asset_data.forEach((data, index) => {
+            const $explanation_duration_data = $(`#duration_${market}`).find('tbody');
+            const $explanation_duration_symbol = $(`#duration_${market}`).find('#duration_symbol');
+
+            if ($explanation_duration_data.length) $explanation_duration_data.empty();
+            if ($explanation_duration_symbol.length) $explanation_duration_symbol.empty();
+
+            $explanation_duration_symbol.html(asset_data.symbol.display_name);
+            asset_data.durations.forEach((data, index) => {
                 const trade_duration_assets = TradingDuration.getTradeDurationAssets(data);
                 if (asset_data.length === index + 1) {
                     $explanation_duration_data

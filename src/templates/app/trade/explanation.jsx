@@ -4,13 +4,13 @@ const Note = ({ text }) => (
     <p className='hint'><strong>{it.L('Note')}: </strong>{text}</p>
 );
 
-const Duration = ({ link, symbol_name }) => (
+const Duration = ({ link }) => (
     <React.Fragment>
         <h3>{it.L('Contract duration')}</h3>
         <p>{it.L('Pleas refer to the [_1]asset index[_2] for each asset\'s minimum and maximum contract durations based on trade type.', `<a href='${it.url_for('resources/asset_indexws')}#market-${link}' target='_blank' rel='noopener noreferer'>`, '</a>')}</p>
         <h3>{it.L('Duration Offer')}</h3>
         <div id='duration_container' className='row no-margin'>
-            <p className='gr-6 gr-no-gutter no-margin align-start'>{it.L('Supported duration offer of [_1]:', `${symbol_name}`)}</p>
+            <p className='gr-6 gr-no-gutter no-margin align-start'>{it.L('Supported duration offer of')} <strong id='duration_symbol' />:</p>
             <a className='gr-6 gr-no-gutter align-end duration-link' href={`${it.url_for('resources/trading_durations')}?duration_assets=tab_${link}`} rel='noopener noreferrer' target='_blank'>
                 <span>{it.L('Trading duration for others')}</span>
                 <span className='arrow-right' />

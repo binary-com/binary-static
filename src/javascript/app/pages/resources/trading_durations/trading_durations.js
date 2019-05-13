@@ -14,13 +14,14 @@ const TradingDuration = (() => {
     };
 
     const getTradingDurationSymbol = (trading_duration_asset, market, symbol) => {
-        let trading_duration_symbol = [];
+        const trading_duration_symbol = {};
 
         trading_duration_asset.trading_durations.map((duration_data) => {
             if (duration_data.market.name === market) {
                 duration_data.data.map((data) => {
                     if (data.symbol.some((data_symbol) => data_symbol.name === symbol)) {
-                        trading_duration_symbol = data.trade_durations;
+                        trading_duration_symbol.durations = data.trade_durations;
+                        trading_duration_symbol.symbol = data.symbol.find((data_symbol) => data_symbol.name === symbol);
                     }
                 });
             }
