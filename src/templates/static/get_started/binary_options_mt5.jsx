@@ -66,7 +66,7 @@ const BinaryOptionsForMT5 = () => (
 
                     <SeparatorLine invisible show_mobile className='gr-padding-10' />
 
-                    <h3 className='secondary-color'>{it.L('Step 1: Log in to MT5 using your MT5 Volatility Indices account')}</h3>
+                    <h3 className='secondary-color'>{it.L('Step 1: Log in to MT5 using your MT5 Synthetic Indices account')}</h3>
                     <div>
                         <img className='responsive' src={it.url_for('images/pages/get-started/mt5/how-to-trade-binary/step-1.png')} />
                     </div>

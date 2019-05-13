@@ -227,8 +227,8 @@ const Home = () => {
                                     list_header_two={it.L('MT5 Financial')}
                                     list_text_two={it.L('MT5 real-money account for Forex and CFDs.')}
                                     image_three='images/pages/home/icons/mt5_volatility.svg'
-                                    list_header_three={it.L('MT5 Volatility Indices')}
-                                    list_text_three={it.L('MT5 real-money account for Volatility Indices only.')}
+                                    list_header_three={it.L('MT5 Synthetic Indices')}
+                                    list_text_three={it.L('MT5 real-money account for Synthetic Indices only.')}
                                 />
                             </TabContent>
                         </TabContentContainer>
