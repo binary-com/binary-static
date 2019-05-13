@@ -309,8 +309,6 @@ const MetaTraderUI = (() => {
                     msg = MetaTraderConfig.needsRealMessage();
                 } else if (!Client.get('currency')) { // client should set currency before accessing fund management section
                     msg = $templates.find('#msg_set_currency').html();
-                } else if (Client.get('landing_company_shortcode') === 'iom') {
-                    msg = MetaTraderConfig.needsFinancialMessage();
                 }
                 if (msg) {
                     displayMainMessage(msg, false);
