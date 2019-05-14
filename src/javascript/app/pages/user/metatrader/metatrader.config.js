@@ -154,6 +154,8 @@ const MetaTraderConfig = (() => {
                      */
                     if (is_financial || is_gaming) {
                         BinarySocket.wait('get_account_status', 'landing_company').then(() => {
+
+                            /* If anything other than maltainvest without a financial account, run this. */
                             if (!(is_maltainvest && !has_financial_account)) {
                                 const response_get_account_status = State.getResponse('get_account_status');
 
