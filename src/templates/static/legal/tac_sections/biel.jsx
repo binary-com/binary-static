@@ -25,11 +25,11 @@ const Biel = () => (
             <li>{it.L('Eligible counterparties')}</li>
         </ul>
         {/* Grammatical errors in the next para */}
-        <p>{it.L('The level of protection offered and due to each client depends on the category to which each client is assigned. Retail clients benefit from the highest degree of protection. The Company will assess the Client\'s knowledge and experience versus the appropriateness of the requested service/investment product.')}</p>
+        <p>{it.L('The level of protection offered and due to each client depends on the category to which each client is assigned. Retail clients benefit from the highest degree of protection. The Company will assess the client\'s knowledge and experience versus the appropriateness of the requested service/investment product.')}</p>
         <ol>
             <li>
                 <h4>{it.L('Retail clients')}</h4>
-                <p>{it.L('Unless otherwise advised, BIEL shall treat a client as a retail client. Clients may also request, by writing to BIEL, to change the category in which they have been classified, and this may have an effect on the level of protection afforded to them. BIEL will assess the Client\'s knowledge and experience versus the appropriateness of the requested service/investment product.')}</p>
+                <p>{it.L('Unless otherwise advised, BIEL shall treat a client as a retail client. Clients may also request, by writing to BIEL, to change the category in which they have been classified, and this may have an effect on the level of protection afforded to them. BIEL will assess the client\'s knowledge and experience versus the appropriateness of the requested service/investment product.')}</p>
                 <p>{it.L('Clients hereby declare that they are dealing with BIEL outside the scope of their economic or professional activity, and BIEL will therefore treat the client as an individual retail client for the purposes of EMIR compliance, unless advised otherwise.')}</p>
             </li>
             <li>
@@ -78,9 +78,9 @@ const Biel = () => (
         <p>{it.L('The Financial Products that BIEL offers to deal in are contracts entered into between clients and BIEL. Under these contracts and subject to the specific terms of the relevant contract, in consideration for the premium or price that clients pay BIEL, BIEL promises to pay clients a certain amount if the reference assets or measurements perform in a particular manner. These contracts accordingly are not instruments that BIEL holds on clients\' behalf and neither benefits from clients\' assets protection in the event of BIEL\'s insolvency. Similarly, the premium or price that clients pay to take out a trade is not held as clients\' money but as consideration for BIEL\'s undertaking to pay.')}</p>
         <p>{it.L('The client acknowledges and agrees to the following:')}
             <ul className='bullet'>
-                <li>{it.L('The Company will not pay interest on the Client Money.')}</li>
-                <li>{it.L('Where the Client\'s obligations to the Company are due and payable, the Company shall cease to treat as Client Money the amount equal to the amount of such obligations.')}</li>
-                <li>{it.L('The Company may use the Client Money for the purposes of meeting obligations that are incurred by the Company in connection with the margining, guaranteeing, securing, transferring, adjusting, or settling of the client\'s dealings in derivatives.')}</li>
+                <li>{it.L('The Company will not pay interest on the client Money.')}</li>
+                <li>{it.L('Where the client\'s obligations to the Company are due and payable, the Company shall cease to treat as client Money the amount equal to the amount of such obligations.')}</li>
+                <li>{it.L('The Company may use the client Money for the purposes of meeting obligations that are incurred by the Company in connection with the margining, guaranteeing, securing, transferring, adjusting, or settling of the client\'s dealings in derivatives.')}</li>
             </ul>
         </p>
 
