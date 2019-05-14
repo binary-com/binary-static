@@ -6,6 +6,7 @@ const TabSelector      = require('../../../../_common/tab_selector');
 const Login            = require('../../../../_common/base/login');
 const CommonFunctions  = require('../../../../_common/common_functions');
 const showLoadingImage = require('../../../../_common/utility').showLoadingImage;
+const urlFor           = require('../../../../_common/url').urlFor;
 
 const TradingDurationUI = (() => {
     let $loading_container;
@@ -23,11 +24,16 @@ const TradingDurationUI = (() => {
     const populateTable = (duration_data) => {
         const $market_tab   = $(`#tab_${duration_data.market.name}`);
         const $market_header = $(`#tab_${duration_data.market.name}-content`);
+        const url_anchor = duration_data.market.name === 'volidx' ? 'volatility-indices' : duration_data.market.name;
         
         $market_tab.setVisibility(1);
         $market_header.setVisibility(1);
+
         $market_header.append($('<div/>', { id: duration_data.submarket.name })
-            .append($('<h2/>', { text: duration_data.submarket.display_name, id: 'trading_durations_subtitle' })));
+            .append($('<h2/>', { id: 'trading_durations_subtitle' })
+                .append($('<span/>', { text: duration_data.submarket.display_name  }))
+                .append($('<a/>', { text: 'ⓘ', target: '_blank', rel: 'noopener noreferer', href: `${urlFor('get-started/binary-options')}?anchor=${url_anchor}#range-of-markets` }))
+            ));
 
         createEmptyTable(duration_data.submarket.name);
         setTableData(duration_data.submarket.name, duration_data.data);

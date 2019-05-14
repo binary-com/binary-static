@@ -57,6 +57,20 @@
     }
     &_subtitle {
         color: $COLOR_BLUE;
+
+        span {
+            position: relative;
+            top: 3px;
+        }
+        a {
+            cursor: pointer;
+            position: relative;
+            font-size: 15px;
+            bottom: 10px;
+            left: 1px;
+            text-decoration: none;
+            font-weight: 400;
+        }
     }
     &_assets {
         line-height: 1.5;
