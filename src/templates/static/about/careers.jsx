@@ -56,7 +56,7 @@ const ColumnValues = ({ gr, icon, header }) => (
 );
 
 const ColumnLG = ({ center, image, text, link }) => (
-    <div className={`gr-3 gr-12-m${center ? ' center-text' : ''}`}>
+    <div className={`gr-4 gr-12-m${center ? ' center-text' : ''}`}>
         <div>
             <p className='column-margin'>{text}</p>
         </div>
@@ -124,10 +124,11 @@ const Careers = () => {
                         <div className='gr-12 gr-padding-20'>
                             <h1>{it.L('Our locations')}</h1>
                         </div>
-                        <ColumnLG image='malta@1'   text={it.L('Malta')}               link={it.url_for('malta')} />
-                        <ColumnLG image='my@2'      text={it.L('Cyberjaya, Malaysia')} link={it.url_for('cyberjaya')} />
-                        <ColumnLG image='labuan@2'  text={it.L('Labuan, Malaysia')}    link={it.url_for('labuan')} />
-                        <ColumnLG image='asuncion@2'  text={it.L('Asunción, Paraguay')}    link={it.url_for('asuncion')} />
+                        <ColumnLG image='malta2x'    text={it.L('Malta')}                       link={it.url_for('malta')} />
+                        <ColumnLG image='my2x'       text={it.L('Cyberjaya, Malaysia')}         link={it.url_for('cyberjaya')} />
+                        <ColumnLG image='labuan2x'   text={it.L('Labuan, Malaysia')}            link={it.url_for('labuan')} />
+                        <ColumnLG image='asuncion2x' text={it.L('Asunción, Paraguay')}          link={it.url_for('asuncion')} />
+                        <ColumnLG image='dubai2x'    text={it.L('Dubai, United Arab Emirates')} link={it.url_for('dubai')} />
                     </div>
                 </div>
 

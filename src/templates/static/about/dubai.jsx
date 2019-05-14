@@ -3,7 +3,7 @@ import { BoxOverlayImage } from '../../_common/components/box_row.jsx';
 import ImageSlider         from '../../_common/components/image_slider.jsx';
 
 const Asuncion = () =>  (
-    <div className='static_full location-asuncion'>
+    <div className='static_full location-dubai'>
         <div className='introduction'>
             <div className='container gr-row gr-padding-20'>
                 <div className='gr-12 gr-padding-20 center-text'>
@@ -13,7 +13,7 @@ const Asuncion = () =>  (
                 <div className='gr-12 gr-padding-20 gr-centered'>
                     <div className='gr-row'>
                         <div className='gr-5 gr-12-p gr-12-m'>
-                            <img className='responsive' src={it.url_for('images/pages/careers/dubai/dubai-city-of-gold.jpg')} />
+                            <img className='responsive' src={it.url_for('images/pages/careers/dubai/dubai-city-of-gold@2x.jpg')} />
                         </div>
                         <div className='gr-7 gr-12-p gr-12-m'>
                             <p className='no-margin-top'>{it.L('Dubai is an independent city-state and one of the seven emirates that make up the United Arab Emirates. Dubai is the largest and most advanced emirate; since oil was discovered in 1966, it has rapidly evolved from a humble port city into a global metropolis well-known for its futuristic architecture.')}</p>
