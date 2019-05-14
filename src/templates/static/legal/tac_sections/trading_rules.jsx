@@ -26,7 +26,7 @@ const TradingRules = () => (
             <h2 data-anchor='trading-limits'>{it.L('Trading limits')}</h2>
             <p>{it.L('The Company reserves the right to have risk limits in place, which affect the trading limits of all clients trading, and may not be limited solely to instruments and contract types.')}</p>
             <p>{it.L('The Company may also impose volume trading limits on clients\' accounts at its sole discretion. Trading volume limits can be viewed in the Security & limits section of the client\'s account. If the account balance exceeds the maximum account size, then withdrawals must be made to bring the balance down to under this limit.')}</p>
-            <p>{it.L('Due to the responsibilities under Responsible Trading, [_1] reserves the right to assess and safeguard the client\'s account by setting limits to the client\'s activity as deemed proportionate and necessary for their protection.', it.website_name)}</p>
+            <p data-show='eucountry'>{it.L('Due to the responsibilities under responsible gaming, [_1] reserves the right to assess and safeguard the client\'s account by setting limits to the client\'s activity as deemed proportionate and necessary for their protection.', it.website_name)}</p>
         </p>
     </div>
 );

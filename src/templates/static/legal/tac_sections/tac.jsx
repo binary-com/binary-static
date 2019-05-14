@@ -134,7 +134,7 @@ const Tac = () => (
 
         <h2 data-anchor='account-closure'>O. {it.L('Account closure')}</h2>
         <p>{it.L('The client may choose to contact the Company to close the client\'s account held with the Company. The client\'s account may be closed if the client does not have any open trade positions and if the client has complied with the requested "Know Your Client" procedures to enable the client to withdraw any pending funds in the client\'s account.')}</p>
-        <p>{it.L('Due to the responsibilities under responsible gaming, [_1] reserves the right to assess and safeguard the client\'s account by excluding the client definitely or indefinitely, based on the company\'s client assessment.', it.website_name)}</p>
+        <p data-show='eucountry'>{it.L('Due to the responsibilities under responsible gaming, [_1] reserves the right to assess and safeguard the client\'s account by excluding the client definitely or indefinitely, based on the company\'s client assessment.', it.website_name)}</p>
     </div>
 );
 
