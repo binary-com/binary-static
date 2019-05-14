@@ -1,4 +1,6 @@
-const ActiveSymbols = require('../../common/active_symbols');
+const countDecimalPlaces = require('./common_independent').countDecimalPlaces;
+const ActiveSymbols      = require('../../common/active_symbols');
+const BinarySocket       = require('../../base/socket');
 
 /*
  * Symbols object parses the active_symbols json that we get from socket.send({active_symbols: 'brief'}
@@ -30,12 +32,24 @@ const Symbols = (() => {
         names              = ActiveSymbols.getSymbolNames(all_symbols);
     };
 
+    const getUnderlyingPipSize = (underlying) => (
+        new Promise((resolve) => {
+            BinarySocket.send({ active_symbols: 'brief' }).then(active_symbols => {
+                details(active_symbols);
+                const market = ActiveSymbols.getSymbols(active_symbols);
+
+                resolve(countDecimalPlaces(market[underlying].pip));
+            });
+        })
+    );
+
     return {
         details,
         markets      : list => (list ? trade_markets_list : trade_markets),
         getName      : symbol => names[symbol],
         underlyings  : () => trade_underlyings,
         getAllSymbols: () => names,
+        getUnderlyingPipSize,
     };
 })();
 

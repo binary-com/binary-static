@@ -1,21 +1,19 @@
-const moment             = require('moment');
-const ViewPopupUI        = require('./view_popup.ui');
-const Highchart          = require('../../trade/charts/highchart');
-const Callputspread      = require('../../trade/callputspread');
-const countDecimalPlaces = require('../../trade/common_independent').countDecimalPlaces;
-const DigitDisplay       = require('../../trade/digit_trade');
-const Lookback           = require('../../trade/lookback');
-const Reset              = require('../../trade/reset');
-const details            = require('../../trade/symbols').details;
-const TickDisplay        = require('../../trade/tick_trade');
-const Clock              = require('../../../base/clock');
-const BinarySocket       = require('../../../base/socket');
-const getSymbols         = require('../../../common/active_symbols').getSymbols;
-const getElementById     = require('../../../../_common/common_functions').getElementById;
-const localize           = require('../../../../_common/localize').localize;
-const State              = require('../../../../_common/storage').State;
-const urlFor             = require('../../../../_common/url').urlFor;
-const Utility            = require('../../../../_common/utility');
+const moment                   = require('moment');
+const ViewPopupUI              = require('./view_popup.ui');
+const Highchart                = require('../../trade/charts/highchart');
+const Callputspread            = require('../../trade/callputspread');
+const DigitDisplay             = require('../../trade/digit_trade');
+const Lookback                 = require('../../trade/lookback');
+const Reset                    = require('../../trade/reset');
+const TickDisplay              = require('../../trade/tick_trade');
+const Clock                    = require('../../../base/clock');
+const BinarySocket             = require('../../../base/socket');
+const changePocNumbersToString = require('../../../common/request_middleware').changePocNumbersToString;
+const getElementById           = require('../../../../_common/common_functions').getElementById;
+const localize                 = require('../../../../_common/localize').localize;
+const State                    = require('../../../../_common/storage').State;
+const urlFor                   = require('../../../../_common/url').urlFor;
+const Utility                  = require('../../../../_common/utility');
 
 const ViewPopup = (() => {
     let contract_id,
@@ -806,7 +804,7 @@ const ViewPopup = (() => {
         }
         if (+response.proposal_open_contract.contract_id === contract_id) {
             ViewPopupUI.storeSubscriptionID(response.proposal_open_contract.id);
-            responseContract(await changeNumbersToString(response));
+            responseContract(await changePocNumbersToString(response));
         } else if (response.proposal_open_contract.id) {
             BinarySocket.send({ forget: response.proposal_open_contract.id });
         }
@@ -821,35 +819,6 @@ const ViewPopup = (() => {
         $(container_selector).on('click', '.open_contract_details', function (e) {
             e.preventDefault();
             init(this);
-        });
-    };
-
-    const changeNumbersToString = (response) => {
-        const {
-            current_spot,
-            exit_tick,
-            sell_price,
-        } = response.proposal_open_contract;
-
-        return new Promise((resolve) => {
-            BinarySocket.send({ active_symbols: 'brief' }).then(active_symbols => {
-                details(active_symbols);
-                const market   = getSymbols(active_symbols)[response.proposal_open_contract.underlying];
-                const pip_size = countDecimalPlaces(market.pip);
-                const toString = (property) => (
-                    property || property === 0 ? addComma(property, pip_size) : undefined
-                );
-
-                resolve($.extend({}, {
-                    ...response,
-                    proposal_open_contract: {
-                        ...response.proposal_open_contract,
-                        sell_price  : toString(sell_price),
-                        current_spot: toString(current_spot),
-                        exit_tick   : toString(exit_tick),
-                    },
-                }));
-            });
         });
     };
 

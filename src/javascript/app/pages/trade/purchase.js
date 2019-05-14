@@ -1,29 +1,30 @@
-const moment              = require('moment');
-const isCallputspread     = require('./callputspread').isCallputspread;
-const Contract            = require('./contract');
-const hidePriceOverlay    = require('./common').hidePriceOverlay;
-const countDecimalPlaces  = require('./common_independent').countDecimalPlaces;
-const getLookBackFormula  = require('./lookback').getFormula;
-const isLookback          = require('./lookback').isLookback;
-const processPriceRequest = require('./price').processPriceRequest;
-const Symbols             = require('./symbols');
-const DigitTicker         = require('./digit_ticker');
-const Tick                = require('./tick');
-const TickDisplay         = require('./tick_trade');
-const updateValues        = require('./update_values');
-const Client              = require('../../base/client');
-const Header              = require('../../base/header');
-const BinarySocket        = require('../../base/socket');
-const formatMoney         = require('../../common/currency').formatMoney;
-const TopUpVirtualPopup   = require('../../pages/user/account/top_up_virtual/pop_up');
-const addComma            = require('../../../_common/base/currency_base').addComma;
-const CommonFunctions     = require('../../../_common/common_functions');
-const localize            = require('../../../_common/localize').localize;
-const State               = require('../../../_common/storage').State;
-const padLeft             = require('../../../_common/string_util').padLeft;
-const urlFor              = require('../../../_common/url').urlFor;
-const createElement       = require('../../../_common/utility').createElement;
-const getPropertyValue    = require('../../../_common/utility').getPropertyValue;
+const moment                   = require('moment');
+const isCallputspread          = require('./callputspread').isCallputspread;
+const Contract                 = require('./contract');
+const hidePriceOverlay         = require('./common').hidePriceOverlay;
+const countDecimalPlaces       = require('./common_independent').countDecimalPlaces;
+const getLookBackFormula       = require('./lookback').getFormula;
+const isLookback               = require('./lookback').isLookback;
+const processPriceRequest      = require('./price').processPriceRequest;
+const Symbols                  = require('./symbols');
+const DigitTicker              = require('./digit_ticker');
+const Tick                     = require('./tick');
+const TickDisplay              = require('./tick_trade');
+const updateValues             = require('./update_values');
+const Client                   = require('../../base/client');
+const Header                   = require('../../base/header');
+const BinarySocket             = require('../../base/socket');
+const formatMoney              = require('../../common/currency').formatMoney;
+const changePocNumbersToString = require('../../common/request_middleware').changePocNumbersToString;
+const TopUpVirtualPopup        = require('../../pages/user/account/top_up_virtual/pop_up');
+const addComma                 = require('../../../_common/base/currency_base').addComma;
+const CommonFunctions          = require('../../../_common/common_functions');
+const localize                 = require('../../../_common/localize').localize;
+const State                    = require('../../../_common/storage').State;
+const padLeft                  = require('../../../_common/string_util').padLeft;
+const urlFor                   = require('../../../_common/url').urlFor;
+const createElement            = require('../../../_common/utility').createElement;
+const getPropertyValue         = require('../../../_common/utility').getPropertyValue;
 
 /*
  * Purchase object that handles all the functions related to
@@ -274,8 +275,10 @@ const Purchase = (() => {
                 contract_id           : receipt.contract_id,
                 subscribe             : 1,
             };
-            BinarySocket.send(request, { callback: (response) => {
-                const contract = response.proposal_open_contract;
+            BinarySocket.send(request, { callback: async (response) => {
+                const mw_response = response.proposal_open_contract ?
+                    await changePocNumbersToString(response) : undefined;
+                const contract = mw_response ? mw_response.proposal_open_contract : undefined;
                 if (contract) {
                     status = contract.status;
                     profit_value = contract.profit;
