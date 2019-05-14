@@ -70,7 +70,9 @@ const TypesOfAccounts = () => (
                 title={it.L('Synthetic Indices')}
                 text={it.L('The Synthetic Indices account allows you to trade CFDs on Synthetic Indices – our proprietary synthetic assets that mimic real-world market volatility and are available for trading 24/7.')}
             />
+            {/* toEnableMAMAdvanced: remove classname */}
             <Box
+                className='invisible'
                 image='advanced'
                 title={it.L('MAM Advanced*')}
                 text={it.L('The MAM Advanced account can be assigned to a money manager who will trade on your behalf with more competitive spreads than the regular Advanced account. Other account specifications remain the same.')}
