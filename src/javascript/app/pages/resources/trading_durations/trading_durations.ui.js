@@ -1,5 +1,6 @@
 const TradingDuration  = require('./trading_durations');
 const BinarySocket     = require('../../../base/socket');
+const isEuCountry      = require('../../../common/country_base').isEuCountry;
 const localize         = require('../../../../_common/localize').localize;
 const TabSelector      = require('../../../../_common/tab_selector');
 const Login            = require('../../../../_common/base/login');
@@ -25,7 +26,6 @@ const TradingDurationUI = (() => {
         
         $market_tab.setVisibility(1);
         $market_header.setVisibility(1);
-        $market_tab.addClass('selectedTab');
         $market_header.append($('<div/>', { id: duration_data.submarket.name })
             .append($('<h2/>', { text: duration_data.submarket.display_name, id: 'trading_durations_subtitle' })));
 
@@ -115,6 +115,14 @@ const TradingDurationUI = (() => {
         });
     };
 
+    const setSelectedTab = () => {
+        const default_tab = '#tab_forex';
+
+        if ($('#duration_assets').find(default_tab).hasClass('invisible')) {
+            TabSelector.slideSelector('duration_assets', CommonFunctions.getElementById('tab_volidx'));
+            $('#tab_volidx-content').removeClass('invisible');
+        }
+    };
     const onChangeTabSelector = () => {
         const active_tab = document.getElementsByClassName('a-active');
         const mobile_header_tab = document.getElementById('tab_mobile_header');
@@ -135,8 +143,13 @@ const TradingDurationUI = (() => {
                 // populate data into table
                 trading_duration_data.forEach((duration_data) => populateTable(duration_data));
 
-                // tab selector positioning and remove loading
                 TabSelector.repositionSelector();
+
+                if (isEuCountry()) {
+                    setSelectedTab();
+                }
+
+                // tab selector positioning and remove loading
                 $loading_container.setVisibility(0);
             } else {
                 $('#trading_durations_empty').setVisibility(1);
