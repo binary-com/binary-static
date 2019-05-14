@@ -238,7 +238,7 @@ const TermsAndConditions = () => (
                     <li>{it.L('Given the Company\'s role as a Margin trading service provider as described in this agreement, the Company seeks to avoid undue market influence to the extent consistent with the client\'s trading needs and the Company\'s risk management policies and procedures. By continuing to use the Margin trading services described in this agreement, the client acknowledges that they are aware of the potential conflict of interest disclosed that may arise and cannot be completely eliminated, and they consent to the Company acting notwithstanding such potential conflict of interests.')}</li>
                 </ol>
             </li>
-            <li>{it.L('client money')}
+            <li>{it.L('Client money')}
                 <ol>
                     <li>{it.L('The money collected from clients is not invested in any securities, futures, or other investments on behalf of clients.')}</li>
                     <li>{it.L('The Company holds customer funds in bank accounts separate from the operational accounts, and arrangements have been made to ensure that the assets in the customer accounts will be distributed to the customers in the event of insolvency.')}</li>

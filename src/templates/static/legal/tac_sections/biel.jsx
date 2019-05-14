@@ -78,9 +78,9 @@ const Biel = () => (
         <p>{it.L('The Financial Products that BIEL offers to deal in are contracts entered into between clients and BIEL. Under these contracts and subject to the specific terms of the relevant contract, in consideration for the premium or price that clients pay BIEL, BIEL promises to pay clients a certain amount if the reference assets or measurements perform in a particular manner. These contracts accordingly are not instruments that BIEL holds on clients\' behalf and neither benefits from clients\' assets protection in the event of BIEL\'s insolvency. Similarly, the premium or price that clients pay to take out a trade is not held as clients\' money but as consideration for BIEL\'s undertaking to pay.')}</p>
         <p>{it.L('The client acknowledges and agrees to the following:')}
             <ul className='bullet'>
-                <li>{it.L('The Company will not pay interest on the client Money.')}</li>
-                <li>{it.L('Where the client\'s obligations to the Company are due and payable, the Company shall cease to treat as client Money the amount equal to the amount of such obligations.')}</li>
-                <li>{it.L('The Company may use the client Money for the purposes of meeting obligations that are incurred by the Company in connection with the margining, guaranteeing, securing, transferring, adjusting, or settling of the client\'s dealings in derivatives.')}</li>
+                <li>{it.L('The Company will not pay interest on the client money.')}</li>
+                <li>{it.L('Where the client\'s obligations to the Company are due and payable, the Company shall cease to treat as client money the amount equal to the amount of such obligations.')}</li>
+                <li>{it.L('The Company may use the client money for the purposes of meeting obligations that are incurred by the Company in connection with the margining, guaranteeing, securing, transferring, adjusting, or settling of the client\'s dealings in derivatives.')}</li>
             </ul>
         </p>
 
