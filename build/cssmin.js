@@ -1,6 +1,9 @@
-module.exports = function (grunt) {
-    const files = {
-        app: [
+module.exports = {
+    app: {
+        options: {
+            inline: ['none'],
+        },
+        files: [
             {
                 src: [
                     `${global.dist}/css/common.css`,
@@ -12,19 +15,5 @@ module.exports = function (grunt) {
             { src: `${global.dist}/css/app.css`,    dest: `${global.dist}/css/app.min.css` },
             { src: `${global.dist}/css/static.css`, dest: `${global.dist}/css/static.min.css` },
         ],
-        get all() {
-            return [
-                ...this.app,
-            ];
-        },
-    };
-
-    return {
-        [global.section]: {
-            options: {
-                inline: ['none'],
-            },
-            files: files[global.section],
-        },
-    };
+    }
 };

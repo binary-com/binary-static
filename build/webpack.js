@@ -8,18 +8,7 @@ const PATHS          = require('./webpack/paths');
 const getPlugins     = require('./webpack/plugins');
 
 module.exports = function (grunt) {
-    const common_config = commonConfig(grunt);
-
-    const config = {
-        app: [webpackMerge.smart(common_config, appConfig(grunt))],
-        get all() {
-            return [
-                ...this.app,
-            ];
-        },
-    };
-
-    const section = config[global.section];
+    const section = [webpackMerge.smart(commonConfig(grunt), appConfig(grunt))];
 
     const watch_config = {
         watch: true,

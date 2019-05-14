@@ -1,13 +1,4 @@
 module.exports = function (grunt) {
-    const src = {
-        app: `${global.dist}/css/{app,common,static}.css`,
-        get all() {
-            return [
-                this.app,
-            ];
-        },
-    };
-
     return {
         options: {
             processors: [
@@ -15,7 +6,7 @@ module.exports = function (grunt) {
             ],
         },
         dist: {
-            src: src[global.section],
+            src: `${global.dist}/css/{app,common,static}.css`,
         },
     };
 };

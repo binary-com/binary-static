@@ -54,10 +54,6 @@ if (is_translation && (program.dev || program.path || program.section)) {
     outputHelp('-t or -j cannot be used alongside other parameters');
 }
 
-if (program.section === 'app') {
-    program.section = '';
-}
-
 function outputHelp(error_message) {
     program.outputHelp(str => {
         console.error(color.red(`  ERROR: ${error_message}`));
