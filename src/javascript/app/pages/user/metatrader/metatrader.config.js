@@ -171,14 +171,17 @@ const MetaTraderConfig = (() => {
                                         is_ok = false;
                                     }
                                 }
-                                if (+State.getResponse('landing_company.config.tax_details_required') === 1 && (!response_get_settings.tax_residence || !response_get_settings.tax_identification_number)) {
+
+                                if (+State.getResponse('landing_company.config.tax_details_required') === 1 && (!response_get_settings.tax_residence || !response_get_settings.tax_identification_number) && !is_gaming) {
                                     $message.find('.tax').setVisibility(1).find('a').attr('onclick', `localStorage.setItem('personal_details_redirect', '${acc_type}')`);
                                     is_ok = false;
                                 }
+
                                 if (!response_get_settings.citizen) {
                                     showCitizenshipMessage();
                                     is_ok = false;
                                 }
+                                
                                 if (is_ok && !isAuthenticated() && !is_gaming) {
                                     $new_account_financial_authenticate_msg.setVisibility(1);
                                 }
