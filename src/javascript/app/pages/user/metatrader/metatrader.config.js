@@ -152,7 +152,7 @@ const MetaTraderConfig = (() => {
                      * The checks for financial and gaming accounts are combined
                      * to prevent code duplication (only assessment check are different).
                      */
-                    if (is_financial || is_gaming) { // financial and gaming accounts have their own checks
+                    if (is_financial || is_gaming) {
                         BinarySocket.wait('get_account_status', 'landing_company').then(() => {
                             if (!(is_maltainvest && !has_financial_account)) {
                                 const response_get_account_status = State.getResponse('get_account_status');
