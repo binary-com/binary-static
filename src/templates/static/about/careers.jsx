@@ -127,8 +127,8 @@ const Careers = () => {
                         <ColumnLG image='malta2x'    text={it.L('Malta')}                       link={it.url_for('malta')} />
                         <ColumnLG image='my2x'       text={it.L('Cyberjaya, Malaysia')}         link={it.url_for('cyberjaya')} />
                         <ColumnLG image='labuan2x'   text={it.L('Labuan, Malaysia')}            link={it.url_for('labuan')} />
-                        <ColumnLG image='asuncion2x' text={it.L('Asunción, Paraguay')}          link={it.url_for('asuncion')} margin_top={true} />
-                        <ColumnLG image='dubai2x'    text={it.L('Dubai, United Arab Emirates')} link={it.url_for('dubai')}    margin_top={true} />
+                        <ColumnLG image='asuncion2x' text={it.L('Asunción, Paraguay')}          link={it.url_for('asuncion')} margin_top />
+                        <ColumnLG image='dubai2x'    text={it.L('Dubai, United Arab Emirates')} link={it.url_for('dubai')}    margin_top />
                     </div>
                 </div>
 
