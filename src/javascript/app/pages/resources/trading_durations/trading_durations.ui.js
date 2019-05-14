@@ -128,9 +128,6 @@ const TradingDurationUI = (() => {
 
         if ($('#duration_assets').find(`#${default_tab}`).hasClass('invisible')) default_tab = 'tab_volidx';
 
-        TabSelector.slideSelector('duration_assets', CommonFunctions.getElementById(default_tab));
-        $(`#${default_tab}-content`).removeClass('invisible');
-
         Url.updateParamsWithoutReload({
             [selector]: default_tab,
         }, true);
@@ -155,11 +152,11 @@ const TradingDurationUI = (() => {
                 // populate data into table
                 trading_duration_data.forEach((duration_data) => populateTable(duration_data));
 
-                TabSelector.repositionSelector();
-
                 if (isEuCountry()) {
                     setSelectedTab();
                 }
+
+                TabSelector.repositionSelector();
 
                 // tab selector positioning and remove loading
                 $loading_container.setVisibility(0);
