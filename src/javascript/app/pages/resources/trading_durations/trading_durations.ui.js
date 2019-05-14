@@ -81,6 +81,7 @@ const TradingDurationUI = (() => {
                     .append(document.createTextNode(symbol.display_name))
                     .append($('<br/>'));
             });
+
             data.trade_durations.forEach((trade_duration, duration_index) => {
                 const trade_duration_assets = TradingDuration.getTradeDurationAssets(trade_duration);
                 if (duration_index === data.trade_durations.length - 1 &&
