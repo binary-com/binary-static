@@ -49,7 +49,7 @@ program
     .parse(process.argv);
 
 const is_translation = (program.translations || program.jsTranslations);
-if (is_translation && (program.dev || program.path || program.section)) {
+if (is_translation && (program.dev || program.path)) {
     outputHelp('-t or -j cannot be used alongside other parameters');
 }
 
