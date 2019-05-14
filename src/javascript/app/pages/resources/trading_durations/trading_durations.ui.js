@@ -6,7 +6,7 @@ const TabSelector      = require('../../../../_common/tab_selector');
 const Login            = require('../../../../_common/base/login');
 const CommonFunctions  = require('../../../../_common/common_functions');
 const showLoadingImage = require('../../../../_common/utility').showLoadingImage;
-const urlFor           = require('../../../../_common/url').urlFor;
+const Url              = require('../../../../_common/url');
 
 const TradingDurationUI = (() => {
     let $loading_container;
@@ -32,7 +32,7 @@ const TradingDurationUI = (() => {
         $market_header.append($('<div/>', { id: duration_data.submarket.name })
             .append($('<h2/>', { id: 'trading_durations_subtitle' })
                 .append($('<span/>', { text: duration_data.submarket.display_name  }))
-                .append($('<a/>', { text: 'ⓘ', target: '_blank', rel: 'noopener noreferer', href: `${urlFor('get-started/binary-options')}?anchor=${url_anchor}#range-of-markets` }))
+                .append($('<a/>', { text: 'ⓘ', target: '_blank', rel: 'noopener noreferer', href: `${Url.urlFor('get-started/binary-options')}?anchor=${url_anchor}#range-of-markets` }))
             ));
 
         createEmptyTable(duration_data.submarket.name);
@@ -123,15 +123,17 @@ const TradingDurationUI = (() => {
     };
 
     const setSelectedTab = () => {
-        const default_tab = 'tab_forex';
+        let default_tab = 'tab_forex';
+        const selector = 'duration_assets';
 
-        if ($('#duration_assets').find(`#${default_tab}`).hasClass('invisible')) {
-            TabSelector.slideSelector('duration_assets', CommonFunctions.getElementById('tab_volidx'));
-            $('#tab_volidx-content').removeClass('invisible');
-        } else {
-            TabSelector.slideSelector('duration_assets', CommonFunctions.getElementById(default_tab));
-            $(`#${default_tab}-content`).removeClass('invisible');
-        }
+        if ($('#duration_assets').find(`#${default_tab}`).hasClass('invisible')) default_tab = 'tab_volidx';
+
+        TabSelector.slideSelector('duration_assets', CommonFunctions.getElementById(default_tab));
+        $(`#${default_tab}-content`).removeClass('invisible');
+
+        Url.updateParamsWithoutReload({
+            [selector]: default_tab,
+        }, true);
     };
     const onChangeTabSelector = () => {
         const active_tab = document.getElementsByClassName('a-active');
