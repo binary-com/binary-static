@@ -154,40 +154,44 @@ const MetaTraderConfig = (() => {
                      */
                     if (is_financial || is_gaming) {
                         BinarySocket.wait('get_account_status', 'landing_company').then(() => {
-                            // If maltainvest without financial account, resolve.
-                            if (is_maltainvest && !has_financial_account) resolve();
-    
-                            const response_get_account_status = State.getResponse('get_account_status');
-                            if (!response_get_settings.citizen) {
-                                showCitizenshipMessage();
-                                is_ok = false;
-                            }
-
-                            if (is_financial) {
-                                if (/(financial_assessment|trading_experience)_not_complete/.test(response_get_account_status.status)) {
-                                    $message.find('.assessment').setVisibility(1).find('a').attr('onclick', `localStorage.setItem('financial_assessment_redirect', '${urlFor('user/metatrader')}#${acc_type}')`);
+                            /* If maltainvest and has no financial account, don't run this. */
+                            if (!(is_maltainvest && !has_financial_account)) {
+                                const response_get_account_status = State.getResponse('get_account_status');
+                                if (!response_get_settings.citizen) {
+                                    showCitizenshipMessage();
                                     is_ok = false;
                                 }
 
-                                if (+State.getResponse('landing_company.config.tax_details_required') === 1 && (!response_get_settings.tax_residence || !response_get_settings.tax_identification_number)) {
-                                    $message.find('.tax').setVisibility(1).find('a').attr('onclick', `localStorage.setItem('personal_details_redirect', '${acc_type}')`);
-                                    is_ok = false;
-                                }
+                                if (is_financial) {
+                                    if (/(financial_assessment|trading_experience)_not_complete/.test(response_get_account_status.status)) {
+                                        $message.find('.assessment').setVisibility(1).find('a').attr('onclick', `localStorage.setItem('financial_assessment_redirect', '${urlFor('user/metatrader')}#${acc_type}')`);
+                                        is_ok = false;
+                                    }
 
-                                if (is_ok && !isAuthenticated()) {
-                                    $new_account_financial_authenticate_msg.setVisibility(1);
-                                }
-                            } else if (is_gaming) {
-                                const is_volatility = !accounts_info[acc_type].mt5_account_type;
-                                const is_high_risk = /high/.test(response_get_account_status.risk_classification);
-    
-                                if (/financial_assessment_not_complete/.test(response_get_account_status.status) && is_volatility && is_high_risk) {
-                                    $message.find('.assessment').setVisibility(1).find('a').attr('onclick', `localStorage.setItem('financial_assessment_redirect', '${urlFor('user/metatrader')}#${acc_type}')`);
+                                    if (+State.getResponse('landing_company.config.tax_details_required') === 1 && (!response_get_settings.tax_residence || !response_get_settings.tax_identification_number)) {
+                                        $message.find('.tax').setVisibility(1).find('a').attr('onclick', `localStorage.setItem('personal_details_redirect', '${acc_type}')`);
+                                        is_ok = false;
+                                    }
+
+                                    if (is_ok && !isAuthenticated()) {
+                                        $new_account_financial_authenticate_msg.setVisibility(1);
+                                    }
+                                } else if (is_gaming) {
+                                    const is_volatility = !accounts_info[acc_type].mt5_account_type;
+                                    const is_high_risk = /high/.test(response_get_account_status.risk_classification);
+        
+                                    if (/financial_assessment_not_complete/.test(response_get_account_status.status) && is_volatility && is_high_risk) {
+                                        $message.find('.assessment').setVisibility(1).find('a').attr('onclick', `localStorage.setItem('financial_assessment_redirect', '${urlFor('user/metatrader')}#${acc_type}')`);
+                                    }
                                 }
                             }
 
-                            $message.find(message_selector).setVisibility(1);
-                            resolve($message.html());
+                            if (is_ok) {
+                                resolve();
+                            } else {
+                                $message.find(message_selector).setVisibility(1);
+                                resolve($message.html());
+                            }
                         });
                     } else if (!is_virtual && !response_get_settings.citizen) { // all accounts need to have citizenship set - if current client is virtual we don't have citizenship
                         showCitizenshipMessage();
