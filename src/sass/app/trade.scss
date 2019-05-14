@@ -990,7 +990,8 @@
 
         .duration-link {
             span:first-child {
-                padding-right: 10px;
+                position: relative;
+                right: 7px;
             }
             .arrow-right {
                 position: absolute;
@@ -1009,6 +1010,7 @@
 
         table {
             border: 1px solid $COLOR_GRAY;
+            width: 940px;
 
             thead {
                 tr:first-child {
@@ -1069,14 +1071,10 @@
                     right: 20px;
                     bottom: 16px;
                     font-size: 10px;
-
-                    @media (max-width: 1024px) {
-                        right: 10px;
-                    }
-                    @media (max-width: 768px) {
-                        right: -1px;
-                    }
                 }
+            }
+            @media all and (max-width: 425px) {
+                font-size: 14px;
             }
         }
     }

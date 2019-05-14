@@ -77,13 +77,6 @@
             right: 15px;
             bottom: 16px;
             font-size: 10px;
-
-            @media (max-width: 1024px) {
-                right: 10px;
-            }
-            @media (max-width: 768px) {
-                right: -1px;
-            }
         }
     }
     .toggle-content > div {
@@ -91,6 +84,7 @@
     }
     .table-container {
         border: 1px solid $COLOR_LIGHT_GRAY;
+        width: 1200px;
 
         thead {
             tr:first-child {
@@ -99,6 +93,10 @@
                 }
                 th:first-child {
                     width: 155px;
+
+                    @media (max-width: 425px) {
+                        border-right: 1px solid $COLOR_GRAY;
+                    }
                 }
                 th:nth-child(2) {
                     width: 430px;
@@ -147,6 +145,9 @@
             td {
                 border-bottom: none;
             }
+        }
+        @media (max-width: 425px) {
+            font-size: 14px;
         }
     }
     .hint {
