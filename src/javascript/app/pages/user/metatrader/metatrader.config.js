@@ -179,7 +179,7 @@ const MetaTraderConfig = (() => {
                                     showCitizenshipMessage();
                                     is_ok = false;
                                 }
-                                if (is_ok && !isAuthenticated()) {
+                                if (is_ok && !isAuthenticated() && !is_gaming) {
                                     $new_account_financial_authenticate_msg.setVisibility(1);
                                 }
                             }
