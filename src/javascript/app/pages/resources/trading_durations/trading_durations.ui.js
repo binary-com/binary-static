@@ -122,11 +122,14 @@ const TradingDurationUI = (() => {
     };
 
     const setSelectedTab = () => {
-        const default_tab = '#tab_forex';
+        const default_tab = 'tab_forex';
 
-        if ($('#duration_assets').find(default_tab).hasClass('invisible')) {
+        if ($('#duration_assets').find(`#${default_tab}`).hasClass('invisible')) {
             TabSelector.slideSelector('duration_assets', CommonFunctions.getElementById('tab_volidx'));
             $('#tab_volidx-content').removeClass('invisible');
+        } else {
+            TabSelector.slideSelector('duration_assets', CommonFunctions.getElementById(default_tab));
+            $(`#${default_tab}-content`).removeClass('invisible');
         }
     };
     const onChangeTabSelector = () => {
