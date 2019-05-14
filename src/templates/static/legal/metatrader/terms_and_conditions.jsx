@@ -502,7 +502,7 @@ const TermsAndConditions = () => (
                     <li>{it.L('Closed/complete trades')}</li>
                     <li>{it.L('Closed trades made by clients introduced by an Introducing Broker and duly approved by Binary')}</li>
                 </ol>
-                <p>{it.L('However, Introducing Brokers contracted with Binary Investments (Europe) Ltd shall be paid on a Cost Per Acquisition (CPA) deal only, whereby the Introducing Broker shall become eligible for payment of a set amount only upon the introduction of a Client to Binary and as long as the Introducing Broker is providing an enhanced service to the clients.')}</p>
+                <p>{it.L('However, Introducing Brokers contracted with Binary Investments (Europe) Ltd shall be paid on a Cost Per Acquisition (CPA) deal only, whereby the Introducing Broker shall become eligible for payment of a set amount only upon the introduction of a client to Binary and as long as the Introducing Broker is providing an enhanced service to the clients.')}</p>
                 <p>{it.L('Commission will not be paid for Accounts that have been opened or traded by an Associate of the Introducing Broker.')}</p>
                 <p>{it.L('Binary will pay the Commission to the Introducing Broker before or on the 15th day of the month following the calendar month in which the trades were made (Due Date).')}</p>
                 <p>{it.L('The Introducing Broker acknowledges that the Commission received by the Introducing Broker pursuant to this Agreement fully compensates for its obligations under this Agreement.')}</p>
