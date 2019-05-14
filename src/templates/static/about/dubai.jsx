@@ -34,16 +34,16 @@ const Asuncion = () =>  (
                         <ImageSlider
                             images={[
                                 {
-                                    url    : 'images/pages/careers/dubai/dubai-tax-free-salary@2x.jpg',
-                                    caption: it.L('In Dubai, you\'ll be earning a tax-free salary. Furthermore, health insurance coverage is provided by your employer and there are numerous dining options to suit all types of budgets. Accommodation and your children\'s education are likely to be your biggest expenses, but you will have numerous, first-rate options to choose from.'),
+                                    url    : 'images/pages/careers/dubai/dubai-quality-of-life@2x.jpg',
+                                    caption: it.L('Dubai offers an excellent quality of life, from safety and education to childcare and healthcare, befitting its reputation as a global, modern city with sunny weather all year round. Expats make up over 90% of Dubai\'s total population; you may never need to learn a word of Arabic since English is so widely spoken.'),
                                 },
                                 {
                                     url    : 'images/pages/careers/dubai/dubai-food-choices@2x.jpg',
                                     caption: it.L('When it comes to food, you\'ll be spoilt for choice. Cuisine from every part of the world can be found in Dubai, but that doesn\'t mean that local flavours should be ignored: chebab (saffron pancakes), khameer (puffed flatbreads), harees (savoury porridge), tender roasted meats, and pistachio-stuffed sweets are some of the local dishes that will excite your taste buds. There are also numerous economical options in the form of chain restaurants that cater to a variety of tastes.'),
                                 },
                                 {
-                                    url    : 'images/pages/careers/dubai/dubai-quality-of-life@2x.jpg',
-                                    caption: it.L('Dubai offers an excellent quality of life, from safety and education to childcare and healthcare, befitting its reputation as a global, modern city with sunny weather all year round. Expats make up over 90% of Dubai\'s total population; you may never need to learn a word of Arabic since English is so widely spoken.'),
+                                    url    : 'images/pages/careers/dubai/dubai-tax-free-salary@2x.jpg',
+                                    caption: it.L('In Dubai, you\'ll be earning a tax-free salary. Furthermore, health insurance coverage is provided by your employer and there are numerous dining options to suit all types of budgets. Accommodation and your children\'s education are likely to be your biggest expenses, but you will have numerous, first-rate options to choose from.'),
                                 },
                             ]}
                         />
