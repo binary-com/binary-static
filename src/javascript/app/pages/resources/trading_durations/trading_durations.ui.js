@@ -15,9 +15,6 @@ const TradingDurationUI = (() => {
         // Initialize loading and tab selector
         $loading_container = $('#trading_durations_loading');
         showLoadingImage($loading_container[0]);
-        TabSelector.onLoad();
-        TabSelector.onChangeTab(onChangeTabSelector);
-
         sendRequest();
     };
 
@@ -144,20 +141,24 @@ const TradingDurationUI = (() => {
     const sendRequest = () => {
         BinarySocket.send({ trading_durations: 1 }).then((response) => {
             const trading_duration_data = TradingDuration.getTradingDurationData(response);
-            const active_tab = document.getElementsByClassName('a-active');
             const mobile_header_tab = document.getElementById('tab_mobile_header');
 
             // handle empty trading duration, E.g: unsupported accounts or residence
             if (trading_duration_data.length) {
                 // initialize tab selector for mobile view
-                mobile_header_tab.innerHTML = active_tab[0].innerHTML;
-
                 // populate data into table
                 trading_duration_data.forEach((duration_data) => populateTable(duration_data));
+
+                TabSelector.onLoad();
+                TabSelector.onChangeTab(onChangeTabSelector);
 
                 if (isEuCountry()) {
                     setSelectedTab();
                 }
+
+                const active_tab = document.getElementsByClassName('a-active');
+
+                mobile_header_tab.innerHTML = active_tab[0].innerHTML;
 
                 $loading_container.setVisibility(0);
             } else {

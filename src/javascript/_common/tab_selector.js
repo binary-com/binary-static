@@ -59,13 +59,16 @@ const TabSelector = (() => {
         const selector      = e.target.closest('ul').getAttribute('id');
         const current_index = obj_tabs[selector].id_tabs.indexOf(e.target.parentNode.getAttribute('id'));
         slideSelector(selector, e.target);
-        Array.from(obj_tabs[selector].circles).forEach((circle, idx) => {
-            if (idx === current_index) {
-                circle.classList.add('selected');
-            } else {
-                circle.classList.remove('selected');
-            }
-        });
+        if (obj_tabs[selector].circles.length) {
+            Array.from(obj_tabs[selector].circles).forEach((circle, idx) => {
+                if (idx === current_index) {
+                    circle.classList.add('selected');
+                } else {
+                    circle.classList.remove('selected');
+                }
+            });
+        }
+
         updateURL(selector, e.target.parentNode.getAttribute('id'));
     };
 
