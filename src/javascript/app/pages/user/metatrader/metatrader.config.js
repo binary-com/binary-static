@@ -166,7 +166,7 @@ const MetaTraderConfig = (() => {
                                     const is_volatility = !accounts_info[acc_type].mt5_account_type;
                                     const is_high_risk = /high/.test(response_get_account_status.risk_classification);
         
-                                    if (/(financial_assessment|trading_experience)_not_complete/.test(response_get_account_status.status) && is_volatility && is_high_risk) {
+                                    if (/financial_assessment_not_complete/.test(response_get_account_status.status) && is_volatility && is_high_risk) {
                                         $message.find('.assessment').setVisibility(1).find('a').attr('onclick', `localStorage.setItem('financial_assessment_redirect', '${urlFor('user/metatrader')}#${acc_type}')`);
                                         is_ok = false;
                                     }
