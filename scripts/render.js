@@ -36,7 +36,6 @@ const Url            = require('url');
 const common         = require('./common');
 const js_translation = require('./js_translation');
 const Gettext        = require('./gettext');
-const build_config   = require('../build/config/constants').config;
 
 program
     .version('0.2.2')
@@ -293,13 +292,8 @@ async function compile(page) {
 }
 
 const getFilteredPages = () => {
-    const section_pages =
-        program.section === build_config.default_section
-            ? common.pages
-            : common.pages.filter(p => (p.section) === program.section);
-
     const path_regex = new RegExp(program.path, 'i');
-    return section_pages.filter(p => path_regex.test(p.save_as));
+    return common.pages.filter(p => path_regex.test(p.save_as));
 };
 
 (async () => {
