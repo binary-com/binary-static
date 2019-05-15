@@ -20,7 +20,7 @@ const commonConfig = (grunt) => ({
         minimizer  : [
             new UglifyJsPlugin({
                 test     : /\.min\.js/,
-                exclude  : /(vendors~|smartcharts)/,
+                exclude  : /vendors~/,
                 parallel : true,
                 sourceMap: true,
             }),

@@ -24,12 +24,6 @@ exports.sections_config = {
         css_files: ['common.min', 'app.min', 'static.min'],
         has_pjax : true,
     },
-    app_2: {
-        path     : 'app',
-        js_files : ['vendor', 'react_mobx', 'binary_common', 'binary'],
-        css_files: ['app_2.min', 'smartcharts'],
-        has_pjax : false,
-    },
 };
 
 // ---------- Languages ----------
