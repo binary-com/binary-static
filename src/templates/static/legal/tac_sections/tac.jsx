@@ -80,19 +80,28 @@ const Tac = () => (
         <p>{it.L('No person shall abuse this site for the purpose of money laundering. The Company employs best-practice anti-money laundering procedures. All transactions are checked to prevent money laundering, which may have several effects on clients. The Company reserves the right to refuse to do business with, to discontinue to do business with, and to reverse the transactions of clients who do not accept or adhere to these anti-money laundering processes. Acceptable funds should not originate from criminal activity. The Company is bound to report suspicious transactions to relevant authorities.')}</p>
         <p>{it.L('The anti-money laundering processes have the following effects on clients:')}
             <ul className='bullet'>
-                <li>{it.L('Clients must fill into the account opening form all requested details that establish their identity. Clients must give a valid identification, address, contact email address, and personal telephone number.')}</li>
-                <li>{it.L('Withdrawals may only be paid to the initiator of an account. When a client maintains an account by means of telegraphic deposits, withdrawals are only paid to the holder of the originating bank account, and it is the onus of the client to ensure that account number and name accompany all transfers to the Company. When a client maintains an account by means of credit/debit card deposits, withdrawals are only paid back to the same card.')}</li>
                 <li>{it.L('Clients must register personally.')}</li>
+                <li>{it.L('Clients must fill into the account opening form all requested details that establish their identity. Clients must give a valid identification, address, contact email address, and personal telephone number.')}</li>
+                <li>{it.L('')}</li>
+                <li>{it.L('The Company may, at its sole discretion or as required by regulations in place conduct appropriate "Know Your Customer" (KYC) procedures and require a client to provide proof of identity and suspend an account until satisfactory evidence of identity and address, source of funds, and/or source of wealth have been provided.')}</li>
+                <li>{it.L('In order for a UK resident to make use of the virtual account, the client will first have to be age verified. The client will also need to be fully verified before making use of the real money account. Verification can be done electronically or submission of KYC documents.')}</li>
+                <li>{it.L('Requested KYC documentation could include:')}
+                    <ul className='bullet'>
+                        <li>{it.L('Proof of identity – such as ID card, passport or driving licence.')}</li>
+                        <li>{it.L('Proof of address – such as bank statements/ building society statement or utility bills (mobile phone bills are unacceptable).')}</li>
+                        <li>{it.L('Proof of wealth / Source of funds – such as payslips or bank statements.')}</li>
+                    </ul>
+                </li>
+                <li>{it.L('If such documents expire, the Company reserves the rights to request updated documentation.')}</li>
+                <li>{it.L('The Company also reserves the right to request documentation pertaining to any other legal obligation.')}</li>
+                <li>{it.L('Clients agree that the Company may use personal information provided by them in order to conduct appropriate anti-fraud checks. The personal information that clients provide may be disclosed to a credit reference or fraud prevention agency, which may keep a record of that information.')}</li>
+                <li>{it.L('Withdrawals may only be paid to the initiator of an account. When a client maintains an account by means of telegraphic deposits, withdrawals are only paid to the holder of the originating bank account, and it is the onus of the client to ensure that account number and name accompany all transfers to the Company. When a client maintains an account by means of credit/debit card deposits, withdrawals are only paid back to the same card.')}</li>
                 <li>{it.L('Clients shall not hold or pool third-party funds into their own account held with the Company.')}</li>
                 <li>{it.L('It is prohibited to sell, transfer, and/or acquire accounts to/from other clients. Transfer of funds among other clients is also prohibited.')}</li>
                 <li>{it.L('Only one account is allowed per person. No withdrawals and/or refunds may be collected on accounts opened in false names or on multiple accounts opened by the same person.')}</li>
-                <li>{it.L('The Company may, at its sole discretion or as required by regulations in place conduct appropriate "Know Your Customer" (KYC) procedures and require a client to provide proof of identity (such as notarised copy of passport or other means of identity verification as the Company deems required under the circumstances) and suspend an account until satisfactory identification information, evidence of identity and address, source of funds, and/or source of wealth have been provided.')}</li>
-                <li>{it.L('If a client opens an account with Binary (Europe) Ltd or Binary (IOM) Ltd, the client will need to provide the Company with age verification documentation when the client performs a deposit for the first time. The client will also be required to provide KYC documentation to verify the client\'s identity for cumulative deposits and/or withdrawals of EUR 2,000.00. If the client opens an account with Binary Investments (Europe) Ltd, the client will need to provide KYC documentation as part of the client\'s account opening process.')}</li>
-                <li>{it.L('Clients agree that the Company may use personal information provided by them in order to conduct appropriate anti-fraud checks. The personal information that clients provide may be disclosed to a credit reference or fraud prevention agency, which may keep a record of that information.')}</li>
-                <li>{it.L('The Company records and monitors telephone conversations and/or electronic communications involving transactions concluded when dealing on own account and the provision of client order services that relate to the reception and execution of client orders. Recordings may also be used for quality and anti-fraud purposes.')}</li>
+                <li>{it.L('The Company has the right and obligation not to accept the information provided by clients if the Company knows or has a reason to believe that it is incorrect, inaccurate, or incomplete. In such case, the Company may ask clients to clarify or correct the details provided.')}</li>
             </ul>
         </p>
-        <p>{it.L('The Company has the right and obligation not to accept the information provided by clients if the Company knows or has a reason to believe that it is incorrect, inaccurate, or incomplete. In such case, the Company may ask clients to clarify or correct the details provided.')}</p>
 
         <h2 data-anchor='companys-rights'>J. {it.L('Company\'s rights')}</h2>
         <p>{it.L('The Company reserves the right to suspend the operation of this site or sections thereof in the following cases:')}
@@ -124,7 +133,7 @@ const Tac = () => (
         <h2 data-anchor='account-opening'>N. {it.L('Account opening')}</h2>
         <p>{it.L('A client may only open an account on this site on the following conditions:')}
             <ul className='bullet'>
-                <li>{it.L('The client has read this legal Terms and conditions page in full and understood that the client will be buying and selling financial contracts subject to these terms and conditions.')}</li>
+                <li>{it.L('The client has read this legal Terms and conditions page in full and understood that the client will be buying and selling contracts subject to these terms and conditions.')}</li>
                 <li>{it.L('The client has read the Company\'s privacy statement and is aware how the Company processes information.')}</li>
                 <li>{it.L('The client is over 18 years of age, unless the client is an Estonian resident whereby the client would have to be over 21.')}</li>
                 <li>{it.L('The client is not resident in a restricted country such as Canada, Hong Kong, Israel, Jersey, Malaysia, Malta, Paraguay, the United Arab Emirates, the USA, or any other restricted country that has been identified by the FATF as having strategic deficiencies.')}</li>
