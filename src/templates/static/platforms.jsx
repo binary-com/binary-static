@@ -82,40 +82,40 @@ const Platform = () => (
             <h1 className='center-text'>{it.L('Platforms')}</h1>
             <p className='center-text gr-padding-20 gr-parent'>{it.L('Explore all the trading platforms, apps, and tools we offer')}</p>
         </div>
-        <div className='fill-bg-color gr-padding-30 invisible desktop-app'>
+        <div className='fill-bg-color gr-padding-30 binary-grid-app'>
             <div className='container gr-padding-30 gr-child'>
                 <h2 className='primary-color center-text'>
-                    <span>{it.L('Introducing the new [_1] desktop app', it.website_name)}</span>
+                    <span>{it.L('Introducing Binary Grid')}</span>
                     <span><img id='new_badge' src={it.url_for('images/pages/platforms/new_badge.svg')} /></span>
                 </h2>
-                <p className='center-text'>{it.L('Access our products and services from a single app')}</p>
-                <div className='gr-row'>
+                <p className='center-text'>{it.L('Our exciting new mobile trading app')}</p>
+                <div className='gr-row gr-row-align-around'>
                     <div className='gr-5 gr-12-p gr-12-m'>
                         <ul className='bullet'>
                             <li>
-                                <strong>{it.L('Enhanced performance')}</strong>
+                                <strong>{it.L('Limited risks')}</strong>
                                 <br />
-                                {it.L('Use our native desktop app for a more secure and faster trading experience.')}
+                                {it.L('Get started with stakes as low as 20¢.')}
                             </li>
                             <li>
-                                <strong>{it.L('Intuitively simple')}</strong>
+                                <strong>{it.L('Multiple contracts at a time')}</strong>
                                 <br />
-                                {it.L('Familiar with our website? Our desktop app is designed to give you the same intuitive experience.')}
+                                {it.L('Open several positions across multiple cells simultaneously.')}
                             </li>
                             <li>
-                                <strong>{it.L('Unified ecosystem')}</strong>
+                                <strong>{it.L('Speed of touch')}</strong>
                                 <br />
-                                {it.L('Access all our trading platforms and charting tools from a single app.')}
+                                {it.L('Trade in the moment with your touch screen device.')}
                             </li>
                         </ul>
                     </div>
-                    <div className='gr-7 gr-12-p gr-12-m center-text align-self-center'>
-                        <img className='responsive' src={it.url_for('images/pages/platforms/devices.svg')} />
+                    <div className='gr-5 gr-12-p gr-12-m center-text align-self-center'>
+                        <img className='responsive' src={it.url_for('images/pages/platforms/binary-grid-app.png')} />
                     </div>
 
                 </div>
                 <div className='center-text'>
-                    <p>{it.L('Download our desktop app now:')}</p>
+                    <p>{it.L('download Binary Grid for Android now')}</p>
                     <div className='gr-row'>
                         <DownloadApp push='4' image='mac' />
                         <DownloadApp push='6' image='windows' />
@@ -124,7 +124,7 @@ const Platform = () => (
                 </div>
             </div>
         </div>
-        <div className='gr-padding-30 gr-child invisible desktop-app' />
+        <div className='gr-padding-30 gr-child not-invisible grid-desktop-app' />
         <div className='container'>
             <h2 className='primary-color center-text gr-padding-30 gr-child'>{it.L('Trading platforms')}</h2>
             <p className='center-text gr-padding-30 gr-parent'>{it.L('Find a trading platform that suits your experience and preferred strategy – whether you\'re a new or seasoned trader.')}</p>
@@ -161,6 +161,15 @@ const Platform = () => (
                             <Platforms
                                 image='trading-multibarrier'
                                 header={it.L('Ladders')}
+                                className='financial-only'
+                                description={it.L('Multi-barrier trading')}
+                                text={it.L('Trade FX binary options on our multi-barrier platform, Ladders.')}
+                                url={it.url_for('multi_barriers_trading')}
+                                button_text={it.L('Trade now')}
+                            />
+                            <Platforms
+                                image='trading-multibarrier'
+                                header={it.L('Introducing the new [_1] desktop app', it.website_name)}
                                 className='financial-only'
                                 description={it.L('Multi-barrier trading')}
                                 text={it.L('Trade FX binary options on our multi-barrier platform, Ladders.')}
