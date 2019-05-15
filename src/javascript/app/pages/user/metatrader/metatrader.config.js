@@ -138,16 +138,14 @@ const MetaTraderConfig = (() => {
                     const is_demo_financial     = accounts_info[acc_type].account_type === 'demo' && accounts_info[acc_type].mt5_account_type; // is not demo vol account
                     const is_gaming             = accounts_info[acc_type].account_type === 'gaming';
 
-                    let is_ok = true; // Used to only show financial authentication message if there is no other message.
                     if (is_maltainvest && (is_financial || is_demo_financial) && !has_financial_account) {
                         $message.find('.maltainvest').setVisibility(1);
-                        is_ok = false;
                         $message.find(message_selector).setVisibility(1);
                         resolve($message.html());
                     }
 
-                    /* Financial and gaming accounts have their own checks */
-                    if (is_financial) {
+                    let is_ok = true;
+                    if (is_financial) { // Financial and gaming accounts have their own checks
                         BinarySocket.wait('get_account_status', 'landing_company').then(() => {
                             /* If maltainvest and has no financial account, don't run this. */
                             if (!(is_maltainvest && !has_financial_account)) {
@@ -170,7 +168,6 @@ const MetaTraderConfig = (() => {
 
                                 if (is_ok && !isAuthenticated()) {
                                     $new_account_financial_authenticate_msg.setVisibility(1);
-                                    is_ok = false;
                                 }
                             }
 
