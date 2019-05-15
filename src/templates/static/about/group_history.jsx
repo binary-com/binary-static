@@ -47,8 +47,7 @@ const GroupHistory = () => (
 
                     { className: 'year center-text',                                                                      text: '2017' },
                     { className: 'event',                header: it.L('Personal Wealth Awards 2017'),                     text: it.L('[_1] is awarded Best Binary Options Broker by the UK-based Online Personal Wealth Awards 2017, as voted by investors worldwide.', it.website_name) },
-                    // { className: 'event right featured', header: it.L('[_1] launches Bitcoin accounts', it.website_name), text: it.L('[_1] launches Bitcoin (BTC) accounts for non-EU customers.', it.website_name) },
-
+                    
                     { className: 'year center-text',                                                            text: '2016' },
                     { className: 'event featured',       header: it.L('Binary KK granted Japan license'),       text: it.L('Binary\'s Japanese subsidiary Binary KK is licensed by the KLFB as a Type 1 Financial Instruments Business in Japan.') },
                     { className: 'event right',          header: it.L('Kuala Lumpur Office'),                   text: it.L('[_1] opens an office in the QSentral office building in central Kuala Lumpur to further expand its IT development team.', it.website_name) },
