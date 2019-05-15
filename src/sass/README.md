@@ -43,7 +43,7 @@ $COLOR_LIGHT_BLACK_1: rgba(0, 0, 0, 0.8);
 $COLOR_DARK_BLUE_1: #0b0e18;
 ```
 
-Keep all common variables in the [constants.scss](https://github.com/binary-com/binary-static/blob/master/src/sass/app_2/_common/base/constants.scss) file.
+Keep all common variables in the [constants.scss](https://github.com/binary-com/binary-static/blob/master/src/sass/_common/base/constants.scss) file.
 
 ---
 
@@ -72,39 +72,7 @@ span {
     padding: 1.6em; // 16px;
 }
 ```
-2. Or use the `@toEm($property, $px-to-be-converted, $font-size)` mixin. This is particularly helpful when you want to convert the padding/margin `px` values of an element that also has a `font-size`.
-```scss
-// Converts padding 10px into `em` value
-p {
-    font-size: 1.4em;
-    @include toEm(padding, 10px, 1.4em); // font-size in em
-}
-```
-3. Or any online converter tool.
-
----
-
-### Typography
-The `@typeface($var, $text-transform)` mixin can be used to style any text element. Simply pass in a typeface `$var` name to the mixin.
-The `$var` name is in the format `--$FONT_SIZE-$TEXT_ALIGN-$FONT_WEIGHT-$COLOR`.
-
-Refer to `typography.scss` for a list of valid font-sizes, text-align, font-weights & colors.
-
-```scss
-// Define bold red title, align to the left
-h1 {
-    @include typeface(--title-left-bold-red);
-}
-```
-The optional second argumant in the `@typeface` mixin sets the `text-transform`.
-```scss
-// Define an uppercased paragraph with color orange and font-weight 300
-p {
-    @include typeface(--paragraph-center-light-orange, uppercase);
-}
-```
-
-To define new typefaces, add the name and value in the `$FONT_SIZES`, `$FONT_WEIGHTS` or `$COLORS` maps accordingly in `typography.scss` file. 
+2. Or any online converter tool.
 
 ---
 
@@ -132,22 +100,6 @@ To define new typefaces, add the name and value in the `$FONT_SIZES`, `$FONT_WEI
 }
 ```
 
-
----
-
-### SVG
-
-<a id="svg-template-versus-sass"></a>
-**[Template versus Sass:](#svg-template-versus-sass)** Add `SVG`s as components if you need to add classes to modify them in different themes. Otherwise you may import them in Sass, or you may import the `SVG` directly to a `Component` from `src/images`:
-
-```jsx
-import SomeIconSvg from 'Images/folder_name/some_icon.svg';
-
-<SomeIconSvg width='15px' height='15px' />
-```
-
-<a id="svg-theme"></a>
-**[Theme:](#svg-theme)** Use declared classes such as `color1-fill` to handle colouring of SVGs between different themes instead of adding extra Sass for each new image. If the existing classes don't cover what you need, create more [here](https://github.com/binary-com/binary-static/blob/master/src/sass/app_2/_common/inline_icons.scss#L1-L10).
 
 ---
 
