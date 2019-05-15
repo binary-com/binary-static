@@ -16,7 +16,7 @@ const Asuncion = () =>  (
                             <img className='responsive' src={it.url_for('images/pages/careers/dubai/dubai-city-of-gold@2x.jpg')} />
                         </div>
                         <div className='gr-7 gr-12-p gr-12-m'>
-                            <p className='no-margin-top'>{it.L('Dubai is an independent city-state and one of the seven emirates that make up the United Arab Emirates. Dubai is the largest and most advanced emirate; since oil was discovered in 1966, it has rapidly evolved from a humble port city into a global metropolis well-known for its futuristic architecture.')}</p>
+                            <p className='no-margin-top'>{it.L('Dubai is an independent city-state and one of the seven emirates that make up the United Arab Emirates. Dubai is the largest and most advanced emirate; it has rapidly evolved from a humble port city into a global metropolis well-known for its futuristic architecture.')}</p>
                             <p>{it.L('Today, Dubai\'s state-of-the-art infrastructure and free-market economic opportunities continue to attract skilled talents and businesses from all over the world. It\'s also one of the world\'s leading tourist destinations with something for everyone, from theme parks and beaches to desert safaris and shopping havens.')}</p>
                             <p>{it.L('Our office in Dubai is located at the world-class Jumeirah Lake Towers (JLT) free zone. JLT is home to universities, commercial and residential towers, parks, and over 500 retail outlets, giving you exceptional convenience and a quality of life that you won\'t find anywhere else.')}</p>
                         </div>
