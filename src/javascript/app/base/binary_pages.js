@@ -84,6 +84,7 @@ const pages_config = {
     cyberjaya                : { module: StaticPages.Locations },
     detailsws                : { module: PersonalDetails,            is_authenticated: true, needs_currency: true },
     download                 : { module: MetatraderDownloadUI },
+    dubai                    : { module: StaticPages.Locations },
     economic_calendar        : { module: EconomicCalendar },
     endpoint                 : { module: Endpoint },
     epg_forwardws            : { module: DepositWithdraw,            is_authenticated: true, only_real: true },
