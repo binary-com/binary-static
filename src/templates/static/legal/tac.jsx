@@ -46,7 +46,7 @@ const Tac = () => (
                         id     : 'order-execution',
                         text   : it.L('Order Execution'),
                         submenu: [
-                            { id: 'order-execution-binary', text: it.L('Binary Options'), datashow: 'eucountry' },
+                            { id: 'order-execution-binary', text: it.L('Binary Options'), dataShow: 'eucountry' },
                             { id: 'order-execution-mt',     text: it.L('MetaTrader') },
                         ],
                     },
