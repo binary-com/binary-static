@@ -6,7 +6,6 @@ const hundredth   = '0.01';
 const tenth       = '0.10';
 const three_tenth = '0.30';
 const five_tenth  = '0.50';
-const one         = '1';
 
 const Cfds = () => (
     <div className='static_full get-started'>
@@ -98,7 +97,11 @@ const Cfds = () => (
                                 { text: it.L('Volume step'),    className: 'gr-padding-10 w-80' },
                             ]],
                             tbody: [
-                                [{ text: 'DAX_30'  }, { text: 'Germany 30 Cash Index'     }, { text: it.L('EUR 1 per point') }, { text: one }, { text: tenth }],
+                                [{ text: 'DAX_30' }, { text: 'Germany 30 Cash Index' }, { text: it.L('EUR 1 per point') }, { text: tenth }, { text: tenth }],
+                                [{ text: 'AUS_200' }, { text: 'Australian Cash Index' }, { text: it.L('AUD 1 per point') }, { text: tenth }, { text: tenth }],
+                                [{ text: 'EU_50' }, { text: 'EURO Cash Index' }, { text: it.L('EUR 1 per point') }, { text: tenth }, { text: tenth }],
+                                [{ text: 'GBR_100' }, { text: 'UK Cash Index' }, { text: it.L('GBP 1 per point') }, { text: tenth }, { text: tenth }],
+                                [{ text: 'US_500' }, { text: 'US 500 Cash Index' }, { text: it.L('USD 1 per point') }, { text: tenth }, { text: tenth }],
                             ],
                         }}
                     />
@@ -126,26 +129,25 @@ const Cfds = () => (
                         }}
                     />
 
-                    <HeaderSecondary header={it.L('CFD Energies')} />
+                    <HeaderSecondary header={it.L('Crash/Boom Indices')} />
                     <Table
                         scroll
                         data={{
                             thead: [[
                                 { text: it.L('Symbol'),         className: 'gr-padding-10' },
-                                { text: it.L('Description'),    className: 'gr-padding-10' },
                                 { text: it.L('Lot size'),       className: 'gr-padding-10' },
                                 { text: it.L('Minimum volume'), className: 'gr-padding-10 w-80' },
                                 { text: it.L('Volume step'),    className: 'gr-padding-10 w-80' },
                             ]],
                             tbody: [
-                                [{ text: 'CL_BRENT' }, { text: 'Crude Oil Brent Cash'                   }, { text: it.L('USD 1 per point') }, { text: one }, { text: one }],
-                                [{ text: 'WTI'      }, { text: 'West Texas Intermediate Crude Oil Cash' }, { text: it.L('USD 1 per point') }, { text: one }, { text: one }],
+                                [{ text: 'Crash 1000 Index' }, { text: '1' }, { text: tenth }, { text: hundredth }],
+                                [{ text: 'Boom 1000 Index' }, { text: '1' }, { text: tenth }, { text: hundredth }],
                             ],
                         }}
                     />
 
                     <HeaderSecondary header={it.L('How to read the table above')} />
-                    <p>{it.L('A Contract for Difference (CFD) is a financial derivative that allows you to profit by speculating on the rise or fall of an underlying asset. Your profit and loss is calculated through the difference in the buy and sell prices of the underlying asset.')}</p>
+                    <p>{it.L('A Contract for Difference (CFD) is a derivative contract that allows you to profit by speculating on the rise or fall of an underlying asset. Your profit and loss is calculated through the difference in the buy and sell prices of the underlying asset.')}</p>
                     <p>{it.L('For example, a CFD on [_1]\'s US 30 index offers a USD 1 per point contract. If you buy a Volume 1.0 contract for the US 30 with a current ask price of USD 20,000 and later sell it at a bid price of USD 20,010, your net profit will be calculated as follows:', it.website_name)}</p>
 
                     <Box
@@ -154,12 +156,12 @@ const Cfds = () => (
                     />
 
                     <p>{it.L('Each time you open a position on an index symbol, you can start with a minimum volume transaction as indicated in the table above.')}</p>
-                    <p>{it.L('To learn more, read our [_1]Margin Policy[_2] that further explains our margin requirements.', '<a href="#margin-policy">', '</a>')}</p>
+                    <p>{it.L('With Crash 1000 Index, there\'s an average of one drop in the price series that occurs at anytime within 1000 ticks.')}</p>
+                    <p>{it.L('With Boom 1000 Index, there\'s an average of one spike in the price series that occurs at anytime within 1000 ticks.')}</p>
 
                     <HeaderSecondary header={it.L('Important notes on our swap rates (overnight funding)')} />
                     <p>{it.L('If you keep any positions open overnight, an interest adjustment will be made to your trading account as indication of the cost required to keep your position open.')}</p>
-                    <p>{it.L('This interest adjustment (or swap rate) is based on market rates, on top of a 2% fee.')}</p>
-                    <p>{it.L('The interest adjustment is calculated in points, meaning we will convert the relevant market rates to points in the base instrument.')}</p>
+                    <p>{it.L('The interest adjustment is calculated in annual base for long and short positions according to the formula: (volume in lot *specified swap size/100)/360.')}</p>
                     <p>{it.L('Please take note that our swap rate also depends on the time and days you hold your positions open:')}</p>
                     <ul className='bullet'>
                         <li>{it.L('You will be subjected to swap rates if you keep a position open past the market close.')}</li>
