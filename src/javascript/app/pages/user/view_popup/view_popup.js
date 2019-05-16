@@ -162,6 +162,7 @@ const ViewPopup = (() => {
     const update = () => {
         const is_started       = !contract.is_forward_starting || contract.current_spot_time > contract.date_start;
         const is_ended         = contract.status !== 'open' || contract.is_expired || contract.is_settleable;
+        console.log('is_ended? %o', is_ended);
         const indicative_price = contract.sell_price || (contract.bid_price || null);
 
         if (is_sold_before_start) {

@@ -284,7 +284,7 @@ const Purchase = (() => {
                     profit_value = contract.profit;
                     TickDisplay.setStatus(contract);
                     if (/^digit/i.test(contract.contract_type)) {
-                        if (contract.status !== 'open') {
+                        if (contract.status !== 'open' || contract.is_sold || contract.is_settleable) {
                             digitShowExitTime(contract.status, contract.exit_tick);
                         }
                     }

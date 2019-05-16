@@ -23,7 +23,7 @@ const changePocNumbersToString = (response) => {
                 ...response,
                 proposal_open_contract: {
                     ...response.proposal_open_contract,
-                    barrier          : barrier.toString(),
+                    barrier          : barrier ? barrier.toString() : undefined,
                     sell_price       : toString(sell_price),
                     sell_spot        : toString(sell_spot),
                     current_spot     : toString(current_spot),
