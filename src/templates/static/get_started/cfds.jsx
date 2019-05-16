@@ -1,5 +1,5 @@
 import React from 'react';
-import { Section, HeaderSecondary, ListStrong, BuySellImage, MtBox, Box, NavButtons, MTAccountOpeningButton } from './common.jsx';
+import { Section, HeaderSecondary, ListStrong, BuySellImage, MtBox, NavButtons, MTAccountOpeningButton } from './common.jsx';
 import { List, Table } from '../../_common/components/elements.jsx';
 
 const hundredth   = '0.01';
@@ -98,10 +98,6 @@ const Cfds = () => (
                             ]],
                             tbody: [
                                 [{ text: 'DAX_30' }, { text: 'Germany 30 Cash Index' }, { text: it.L('EUR 1 per point') }, { text: tenth }, { text: tenth }],
-                                [{ text: 'AUS_200' }, { text: 'Australian Cash Index' }, { text: it.L('AUD 1 per point') }, { text: tenth }, { text: tenth }],
-                                [{ text: 'EU_50' }, { text: 'EURO Cash Index' }, { text: it.L('EUR 1 per point') }, { text: tenth }, { text: tenth }],
-                                [{ text: 'GBR_100' }, { text: 'UK Cash Index' }, { text: it.L('GBP 1 per point') }, { text: tenth }, { text: tenth }],
-                                [{ text: 'US_500' }, { text: 'US 500 Cash Index' }, { text: it.L('USD 1 per point') }, { text: tenth }, { text: tenth }],
                             ],
                         }}
                     />
@@ -148,13 +144,6 @@ const Cfds = () => (
 
                     <HeaderSecondary header={it.L('How to read the table above')} />
                     <p>{it.L('A Contract for Difference (CFD) is a derivative contract that allows you to profit by speculating on the rise or fall of an underlying asset. Your profit and loss is calculated through the difference in the buy and sell prices of the underlying asset.')}</p>
-                    <p>{it.L('For example, a CFD on [_1]\'s US 30 index offers a USD 1 per point contract. If you buy a Volume 1.0 contract for the US 30 with a current ask price of USD 20,000 and later sell it at a bid price of USD 20,010, your net profit will be calculated as follows:', it.website_name)}</p>
-
-                    <Box
-                        text={`(${it.L('Sell Price')} – ${it.L('Buy Price')}) x ${it.L('Volume')} x ${it.L('Price Per Point')} = ${it.L('Profit')}`}
-                        text_two={`(20010 – 20000) x 1 x 1 = ${it.L('USD')} 10`}
-                    />
-
                     <p>{it.L('Each time you open a position on an index symbol, you can start with a minimum volume transaction as indicated in the table above.')}</p>
                     <p>{it.L('With Crash 1000 Index, there\'s an average of one drop in the price series that occurs at anytime within 1000 ticks.')}</p>
                     <p>{it.L('With Boom 1000 Index, there\'s an average of one spike in the price series that occurs at anytime within 1000 ticks.')}</p>
@@ -162,12 +151,7 @@ const Cfds = () => (
                     <HeaderSecondary header={it.L('Important notes on our swap rates (overnight funding)')} />
                     <p>{it.L('If you keep any positions open overnight, an interest adjustment will be made to your trading account as indication of the cost required to keep your position open.')}</p>
                     <p>{it.L('The interest adjustment is calculated in annual base for long and short positions according to the formula: (volume in lot *specified swap size/100)/360.')}</p>
-                    <p>{it.L('Please take note that our swap rate also depends on the time and days you hold your positions open:')}</p>
-                    <ul className='bullet'>
-                        <li>{it.L('You will be subjected to swap rates if you keep a position open past the market close.')}</li>
-                        <li>{it.L('Positions that are still open on Friday at market close will be charged three times the swap rate to account for weekends, a standard practice for all brokers.')}</li>
-                        <li>{it.L('Our swap rate may also be adjusted to take holidays into account.')}</li>
-                    </ul>
+                    <p>{it.L('Please take note that our swap rate also depends on the time and days you hold your positions open.')}</p>
                 </Section>
                 <NavButtons parent='mt5' section='cfds' />
             </div>
