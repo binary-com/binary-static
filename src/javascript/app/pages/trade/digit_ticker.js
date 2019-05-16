@@ -170,10 +170,14 @@ const DigitTicker = (() => {
         if (!el_peek_box || !el_peek) {
             setElements();
         }
-        el_peek_box.classList.remove('digit-losing', 'digit-running');
-        el_peek_box.classList.add('digit-winning');
-        el_peek.classList.remove('digit-losing', 'digit-running');
-        el_peek.classList.add('digit-winning');
+        if (el_peek_box) {
+            el_peek_box.classList.remove('digit-losing', 'digit-running');
+            el_peek_box.classList.add('digit-winning');
+        }
+        if (el_peek) {
+            el_peek.classList.remove('digit-losing', 'digit-running');
+            el_peek.classList.add('digit-winning');
+        }
     };
 
     const setElements = () => {
@@ -200,13 +204,12 @@ const DigitTicker = (() => {
         el_container.classList.remove('invisible');
         adjustBoxSizes();
         current_spot = quote.toString().substr(-1);
-
-        el_mask.innerText = `${current_tick_count} / ${total_tick_count}`;
-
-        el_peek_box.classList.add('digit-running');
-        el_peek.classList.add('digit-running');
-
-        el_peek_box.setAttribute('style', `transform: translateX(${calculateOffset()}px)`);
+        if (el_mask) el_mask.innerText = `${current_tick_count} / ${total_tick_count}`;
+        if (el_peek_box) {
+            el_peek_box.classList.add('digit-running');
+            el_peek_box.setAttribute('style', `transform: translateX(${calculateOffset()}px)`);
+        }
+        if (el_peek) el_peek.classList.add('digit-running');
     };
 
     const remove = () => {
