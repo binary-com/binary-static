@@ -207,7 +207,7 @@ const TermsAndConditions = () => (
             </li>
             <li>
                 {it.L('Negative Balance Protection')}
-                <p>{it.L('The Company has a Stop Out policy which prevents the client from losing more than they have deposited. However, in the event that the client\'s Open Positions are not closed when the Margin Level for their MT5 Real Account reaches the Stop Out Level, the Company, at its sole discretion, may waive the client\'s negative balance by crediting their account if their Account Balance goes into a negative balance. The negative balance is determined by aggregating all the negative balances incurred over a 24-hour period across all accounts held by the client. The client acknowledges that, unless they are a retail customer of Binary Investments (Europe) Ltd or clients of Binary (Europe) Ltd or Binary (IOM) Ltd, the offer of the negative balance protection by the Company to the client is at the Company\'s sole discretion and the Company reserves the right to change the features and eligibility criteria of the negative nalance protection at any time. The provisions of the negative balance protection do not apply in the following situations:')}
+                <p>{it.L('The Company has a Stop Out policy which prevents the client from losing more than they have deposited. However, in the event that the client\'s Open Positions are not closed when the Margin Level for their MT5 Real Account reaches the Stop Out Level, the Company, at its sole discretion, may waive the client\'s negative balance by crediting their account if their Account Balance goes into a negative balance. The negative balance is determined by aggregating all the negative balances incurred over a 24-hour period across all accounts held by the client. The client acknowledges that, unless they are a retail customer of Binary Investments (Europe) Ltd or a client of Binary (Europe) Ltd or Binary (IOM) Ltd, the offer of the negative balance protection by the Company to the client is at the Company\'s sole discretion and the Company reserves the right to change the features and eligibility criteria of the negative nalance protection at any time. The provisions of the negative balance protection do not apply in the following situations:')}
                     <ol>
                         <li>{it.L('When a force majeure event occurs')}</li>
                         <li>{it.L('When the market conditions or market movements/volatility are abnormal')}</li>
@@ -387,7 +387,7 @@ const TermsAndConditions = () => (
 
         <h2 data-anchor='introducing-brokers'>{it.L('Q. Introducing Brokers')}</h2>
         <p>{it.L('This Agreement sets out the terms and conditions between [_1] and the Introducing Broker in providing Introducing Broker services to the Company in accordance with the provisions and terms of this Agreement.', it.website_name)}</p>
-        <p>{it.L('The services offered by the Introducing Broker to the clients are offered because the Introducing Broker is approved and qualified to offer such services. Additionally, such services are offered by the Introducing Broker fairly, honestly and in good faith and in accordance with all business-ethics rules.')}</p>
+        <p>{it.L('The services offered by the Introducing Broker to the clients are offered because the Introducing Broker is approved and qualified to offer such services. Additionally, such services are offered by the Introducing Broker fairly, honestly, and in good faith and in accordance with all business-ethics rules.')}</p>
         <p>{it.L('It is hereby agreed as follows: ')}</p>
         <ol>
             <Li
@@ -439,14 +439,14 @@ const TermsAndConditions = () => (
                 title={it.L('The Introducing Broker\'s obligations')}
             >
                 <p>{it.L('The Introducing Broker must notify the Company immediately if they cease to possess any relevant Authorisation required or cease to be competent, capable, adequate, or qualified to effectively perform all their duties and obligations undertaken and agreed under this Agreement for any reason, including but not limited to lack of knowledge, expertise, experience, skills, and time. The Introducing Broker must also promptly notify the Company in writing upon the initiation of any proceedings in bankruptcy, dissolution, or liquidation.')}</p>
-                <p>{it.L('In providing IB services, the Introducing Broker shall:')}
+                <p>{it.L('In providing IB services, the Introducing Broker shall')}
                     <ol>
                         <li>{it.L('Use their best endeavours to attract potential clients for Binary')}</li>
                         <li>{it.L('Use the Marketing Materials provided by Binary solely for the purpose of providing IB services and in accordance with Binary\'s instructions')}</li>
                         <li>{it.L('Provide Binary with any information that they have become aware of which may result in an adverse or harmful consequence for Binary and its reputations')}</li>
                         <li>{it.L('Implement and comply with all business-related directions, policies, and procedures of Binary as enacted, amended, or replaced from time to time')}</li>
                         <li>{it.L('Comply with any Competent Authorities\' requests or directions')}</li>
-                        <li>{it.L('Perform IB services and other obligations mentioned here at its own cost and risk')}</li>
+                        <li>{it.L('Perform IB services and other obligations mentioned here at their own cost and risk')}</li>
                         <li>{it.L('Fairly and accurately describe Binary\'s business and services in a transparent manner to the clients')}</li>
                         <li>{it.L('Provide information to clients only on technical and educational matters')}</li>
                         <li>{it.L('Inform any clients introduced to Binary that the trading services and products are offered by or through Binary and not the Introducing Broker')}</li>
@@ -524,7 +524,7 @@ const TermsAndConditions = () => (
                         <li>{it.L('Binary shall pay Commissions for any trades placed by clients prior to the date of termination but shall not be liable to pay Commissions for any trades placed by clients on or after the date of termination. In the case of the Introducing Brokers who are contracted with Binary Investments (Europe) Ltd, any pending Commission from the CPA deal prior to the date of termination shall be paid in full.')}</li>
                         <li>{it.L('The Introducing Broker shall immediately cease using the Marketing Materials whether in hard copy or electronically on any website and return all Marketing Materials to Binary. They shall also cease referring to Binary and shall remove all of the Binary Trademarks, including logos, branding, and other references to Binary from their website and/or marketing materials.')}</li>
                         <li>{it.L('The Introducing Broker acknowledges that on termination, they have no claims against Binary whatsoever and are not entitled to any compensation or claim arising from the termination.')}</li>
-                        <li>{it.L('If the Introducing Broker engages in Malicious Activity, Binary, in its absolute discretion may')}
+                        <li>{it.L('If the Introducing Broker engages in Malicious Activity, Binary, in its absolute discretion, may')}
                             <ol>
                                 <li>{it.L('Refuse to pay any Commission to the Introducing Broker engaged in the Malicious Activity')}</li>
                                 <li>{it.L('Set off any Commission paid or payable by Binary to the Introducing Broker against any amounts held in any accounts of the Company')}</li>
@@ -583,7 +583,7 @@ const TermsAndConditions = () => (
             </Li>
             <Li
                 title={it.L('Governing law')}
-                paragraph={it.L('This Agreement will be governed and construed in accordance with the laws of the country in which the relevant subsidiary is located and the parties submit to the non-exclusive jurisdiction of the same courts.')}
+                paragraph={it.L('This Agreement will be governed and construed in accordance with the laws of the country in which the relevant subsidiary is located, and the parties shall submit to the non-exclusive jurisdiction of the same courts.')}
             />
         </ol>
 
@@ -603,7 +603,7 @@ const TermsAndConditions = () => (
             <Li title={it.L('Account Equity')} subtitle={it.L('The client\'s Account Equity refers to the sum of their Account Balance and the net of unrealised profit and loss.')} />
             <Li title={it.L('Account Free Margin')} subtitle={it.L('The client\'s Account Equity minus their Total Margin')} />
             <Li title={it.L('[_1] account', it.website_name)} subtitle={it.L('The client\'s Real Money Account opened with [_1], which the client uses to trade binary options with [_1] trading platform and Binary Webtrader', it.website_name)} />
-            <Li title={it.L('Event')} subtitle={it.L('Event examples include circumstances whereby the type of transaction, to which the client\'s Order is related, ceases to be offered, or a Corporate Event, or the insolvency of a company whose shares are related to the subject matter of the Order, and others')} />
+            <Li title={it.L('Event')} subtitle={it.L('Event examples include circumstances whereby the type of transaction, to which the client\'s Order is related, ceases to be offered, or a Corporate Event, or the insolvency of a company whose shares are related to the subject matter of the Order, and others.')} />
             <Li title={it.L('Leverage')} subtitle={it.L('a ratio which determines the minimum Margin requirement for a trader to open a trade')} />
             <Li title={it.L('Lot')} subtitle={it.L('a transaction unit representing a standardised quantity of the Underlying Instrument, as specified in the Product Disclosure and Specifications. One Lot constitutes the equivalent of 100,000 units of the base currency.')} />
             <Li title={it.L('Limit/Limit Price')} subtitle={it.L('the price specified in the client\'s Limit Order')} />
