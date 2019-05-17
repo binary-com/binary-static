@@ -91,7 +91,7 @@ const Tac = () => (
                         <li>{it.L('Proof of wealth / Source of funds – such as payslips or bank statements.')}</li>
                     </ul>
                 </li>
-                <li>{it.L('If such documents expire, the Company reserves the rights to request updated documentation.')}</li>
+                <li>{it.L('If such documents expire, the Company reserves the right to request updated documentation.')}</li>
                 <li>{it.L('The Company also reserves the right to request documentation pertaining to any other legal obligation.')}</li>
                 <li>{it.L('Clients agree that the Company may use personal information provided by them in order to conduct appropriate anti-fraud checks. The personal information that clients provide may be disclosed to a credit reference or fraud prevention agency, which may keep a record of that information.')}</li>
                 <li>{it.L('Withdrawals may only be paid to the initiator of an account. When a client maintains an account by means of telegraphic deposits, withdrawals are only paid to the holder of the originating bank account, and it is the onus of the client to ensure that account number and name accompany all transfers to the Company. When a client maintains an account by means of credit/debit card deposits, withdrawals are only paid back to the same card.')}</li>
