@@ -1,8 +1,15 @@
 import React from 'react';
 import BIEL from './biel.jsx';
 
-const Li = ({ title, subtitle, sub_list, paragraph, children }) => (
-    <li><strong>{title}</strong> {subtitle && <span>&mdash; {subtitle}</span>}
+const Li = ({
+    dataShow,
+    title,
+    subtitle,
+    sub_list,
+    paragraph,
+    children,
+}) => (
+    <li data-show={dataShow}><strong>{title}</strong> {subtitle && <span>&mdash; {subtitle}</span>}
         {sub_list && <ol>{sub_list.map(list => <li key={list}>{list}</li>)}</ol>}
         {paragraph && <p>{paragraph}</p>}
         {children}
@@ -596,7 +603,7 @@ const TermsAndConditions = () => (
             <Li title={it.L('Account Equity')} subtitle={it.L('The client\'s Account Equity refers to the sum of their Account Balance and the net of unrealised profit and loss.')} />
             <Li title={it.L('Account Free Margin')} subtitle={it.L('The client\'s Account Equity minus their Total Margin')} />
             <Li title={it.L('[_1] account', it.website_name)} subtitle={it.L('The client\'s Real Money Account opened with [_1], which the client uses to trade binary options with [_1] trading platform and Binary Webtrader', it.website_name)} />
-            <Li data-show='eucountry' title={it.L('Event')} subtitle={it.L('Event examples include circumstances whereby the type of transaction, to which the client\'s Order is related, ceases to be offered, or a Corporate Event, or the insolvency of a company whose shares are related to the subject matter of the Order, and others')} />
+            <Li dataShow='eucountry' title={it.L('Event')} subtitle={it.L('Event examples include circumstances whereby the type of transaction, to which the client\'s Order is related, ceases to be offered, or a Corporate Event, or the insolvency of a company whose shares are related to the subject matter of the Order, and others')} />
             <Li title={it.L('Leverage')} subtitle={it.L('a ratio which determines the minimum Margin requirement for a trader to open a trade')} />
             <Li title={it.L('Lot')} subtitle={it.L('a transaction unit representing a standardised quantity of the Underlying Instrument, as specified in the Product Disclosure and Specifications. One Lot constitutes the equivalent of 100,000 units of the base currency.')} />
             <Li title={it.L('Limit/Limit Price')} subtitle={it.L('the price specified in the client\'s Limit Order')} />
@@ -610,9 +617,9 @@ const TermsAndConditions = () => (
             <Li title={it.L('Open Position')} subtitle={it.L('the position in a market identified by reference to an Underlying Instrument, created by opening a transaction as a result of placing a buy or sell Order to the extent that such position has not been closed in whole or in part by on opposite Order under this agreement')} />
             <Li title={it.L('Order')} subtitle={it.L('an execution instruction given by the client to the Company to open or close a position in a market identified by reference to the Underlying Instrument, including Market Order, Stop Order, Limit Order etc.')} />
             <Li title={it.L('Price(s)/Pricing Data')} subtitle={it.L('Bid and Ask Price(s) of each financial instrument in the transaction system, quoted at market price at the moment of pricing')} />
-            <Li data-show='eucountry' title={it.L('Professional Client')} subtitle={it.L('a professional client as defined in the Directive 2004/39/EC of the European Parliament and of the Council (MiFID) or subsequent Directive 2014/65/EU of the European Parliament and of the Council (MiFID II), whichever is in force')} />
+            <Li dataShow='eucountry' title={it.L('Professional Client')} subtitle={it.L('a professional client as defined in the Directive 2004/39/EC of the European Parliament and of the Council (MiFID) or subsequent Directive 2014/65/EU of the European Parliament and of the Council (MiFID II), whichever is in force')} />
             <Li title={it.L('MT5 Real Account')} subtitle={it.L('The client\'s Real Money Account opened with the [_1] MT5 trading platform and licensed by MetaQuotes Software Corporation', it.website_name)} />
-            <Li data-show='eucountry' title={it.L('Retail Client')} subtitle={it.L('a client that is not a Professional client or Eligible Counterparty')} />
+            <Li dataShow='eucountry' title={it.L('Retail Client')} subtitle={it.L('a client that is not a Professional client or Eligible Counterparty')} />
             <Li title={it.L('Roll-over')} subtitle={it.L('In the event that the Company does not receive Orders from the client to close an Open Position by the close of a Business Day, the Company will roll over the said Open Position to the following Business Day.')} />
             <Li title={it.L('Roll-over Credit/Debit')} subtitle={it.L('Accounts with Open Positions being rolled over shall be credited or debited with an amount referred to as the Roll-over Credit/Debit, which is determined by the Company.')} />
             <Li title={it.L('Settlement')} subtitle={it.L('A Settlement occurs when the client\'s account with the Company is credited or charged with the net amount of the results of a transaction.')} />
