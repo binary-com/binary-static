@@ -20,7 +20,7 @@ const Platforms = ({
     download = '',
 }) => (
     <div className={`gr-row gr-padding-30 ${className || ''}`} data-show={data_show}>
-        <div className='gr-4 gr-12-m gr-12-p gr-no-gutter-left gr-gutter-left-p gr-gutter-left-m center-text no-center-text-p-m fill-bg-color'>
+        <div className='gr-4 gr-12-m gr-12-p gr-no-gutter-left gr-gutter-left-p gr-gutter-left-m center-text no-center-text-p-m'>
             <img className='platform responsive' src={it.url_for(`images/pages/${image_path}/${image}.png`)} />
         </div>
         <div className='gr-8 gr-12-m gr-12-p'>
