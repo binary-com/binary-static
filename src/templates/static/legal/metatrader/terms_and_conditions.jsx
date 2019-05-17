@@ -61,14 +61,14 @@ const TermsAndConditions = () => (
                     <li>{it.L('By opening an MT5 Real Account with [_1], the client represents, warrants, and undertakes the following:', it.website_name)}
                         <ol>
                             <li>{it.L('The client is acting for their sole benefit, and not for or on behalf of any other person.')}</li>
-                            <li>{it.L('The client has read these terms and conditions page in full and has understood that they will be buying and selling financial contracts subject to these terms and conditions.')}</li>
+                            <li>{it.L('The client has read these terms and conditions in full and has understood that they will be buying and selling financial contracts subject to these terms and conditions.')}</li>
                             <li>{it.L('The client has sufficient experience and knowledge about contracts for difference to be capable of evaluating the merits and risks of acquiring contracts via this site and have done so without relying on any information contained in this site.')}</li>
                         </ol>
                     </li>
                     <li>{it.L('The Company reserves the right to refuse the client\'s request to open an MT5 Real Account for any reason, and any MT5 Real Account may be closed at the Company\'s discretion at any time.')}</li>
                 </ol>
             </li>
-            <li>{it.L('Assessment of appropriateness')}
+            <li data-show='eucountry' >{it.L('Assessment of appropriateness')}
                 <ol>
                     <li>{it.L('In the course of providing services, the Company may, where applicable, conduct an appropriateness test, in accordance with the Company\'s regulatory obligations, in order to determine whether the client, in the Company\'s view and on the basis of the information provided by the client, possesses the necessary knowledge and experience in the investment field to understand the risks involved in the specific type of product or service offered or demanded.')}</li>
                     <li>{it.L('If the Company considers, on the basis of the information provided by the client, that the client does not possess the knowledge and experience to appreciate the risks associated with an investment in the proposed instrument, the Company will issue a warning to the client. Such a warning shall be displayed on the website.')}</li>
@@ -145,14 +145,14 @@ const TermsAndConditions = () => (
                     <li>{it.L('The client acknowledges that it is their responsibility to understand the features, characteristics, terms, and conditions of an Order and the implications of executing an Order before they place an Order with the Company.')}</li>
                     <li>{it.L('Subject to network latency, the Company endeavours to execute the client\'s Order within a reasonable time from the time that they trigger the Order, at the price nearest to the client\'s specified price. The Company does not guarantee that a transaction will be opened/closed following an Order being triggered by the client at their specified price. This can happen under certain trading conditions when there are sharp price movements in the market. In that case, the Company has the right to execute the Order at the first available price.')}</li>
                     <li>{it.L('The Company endeavours to open or close the transaction to which the client\'s Order relates at a price reasonably available to the Company, acting in accordance with the Company\'s duty of best execution. Best execution means that, when executing Orders, the Company must take all sufficient steps to obtain the best possible result for the client, taking into account the price, costs, speed, likelihood of execution and settlement, size, nature, or any other consideration relevant to the execution of the Order.')}</li>
-                    <li>{it.L('The Company Prices are determined by reference to the price of the Underlying Instrument which is quoted on external exchanges or dealing facilities that [_1] selects at the Company\'s discretion. The Company\'s IT infrastructure and price aggregator system facilitates the reception of quotes from shortlisted prime brokers, who act as liquidity providers for the Company and the delivery of the quotes, derived with reference against relevant benchmark and markets, to the client. The client acknowledges that the Company Prices may differ from the Bid and Ask Prices made available by external exchanges or dealing facilities and the Company is not liable for any losses that the client might incur arising from such differences. This clause does not apply to Volatility Indices.', it.website_name)}</li>
+                    <li>{it.L('The Company Prices are determined by reference to the price of the Underlying Instrument which is quoted on external exchanges or dealing facilities that [_1] selects at the Company\'s discretion. The Company\'s IT infrastructure and price aggregator system facilitate the reception of quotes from shortlisted prime brokers, who act as liquidity providers for the Company and the delivery of the quotes, derived with reference against relevant benchmark and markets, to the client. The client acknowledges that the Company Prices may differ from the Bid and Ask Prices made available by external exchanges or dealing facilities and the Company is not liable for any losses that the client might incur arising from such differences. This clause does not apply to Volatility Indices.', it.website_name)}</li>
                 </ol>
             </li>
         </ol>
         <h2 data-anchor='types-of-orders'>{it.L('Types of Orders')}</h2>
         <ol>
             <li><h4>{it.L('Market Orders')}</h4>
-                <p>{it.L('A Market Order is an Order to buy or sell at the available market price, which results from the aggregation of prices and volumes received from third-party LPs.')}</p>
+                <p>{it.L('A Market Order is an Order to buy or sell at the available market price, which results from the aggregation of prices and volumes received from third-party liquidity providers.')}</p>
             </li>
             <li><h4>{it.L('Pending Orders')}</h4>
                 <p>{it.L('A Pending Order is the trader\'s instruction to a brokerage company to buy or sell a security in future, under pre-defined conditions, when price reaches a specific level.')}</p>
@@ -603,7 +603,7 @@ const TermsAndConditions = () => (
             <Li title={it.L('Account Equity')} subtitle={it.L('The client\'s Account Equity refers to the sum of their Account Balance and the net of unrealised profit and loss.')} />
             <Li title={it.L('Account Free Margin')} subtitle={it.L('The client\'s Account Equity minus their Total Margin')} />
             <Li title={it.L('[_1] account', it.website_name)} subtitle={it.L('The client\'s Real Money Account opened with [_1], which the client uses to trade binary options with [_1] trading platform and Binary Webtrader', it.website_name)} />
-            <Li dataShow='eucountry' title={it.L('Event')} subtitle={it.L('Event examples include circumstances whereby the type of transaction, to which the client\'s Order is related, ceases to be offered, or a Corporate Event, or the insolvency of a company whose shares are related to the subject matter of the Order, and others')} />
+            <Li title={it.L('Event')} subtitle={it.L('Event examples include circumstances whereby the type of transaction, to which the client\'s Order is related, ceases to be offered, or a Corporate Event, or the insolvency of a company whose shares are related to the subject matter of the Order, and others')} />
             <Li title={it.L('Leverage')} subtitle={it.L('a ratio which determines the minimum Margin requirement for a trader to open a trade')} />
             <Li title={it.L('Lot')} subtitle={it.L('a transaction unit representing a standardised quantity of the Underlying Instrument, as specified in the Product Disclosure and Specifications. One Lot constitutes the equivalent of 100,000 units of the base currency.')} />
             <Li title={it.L('Limit/Limit Price')} subtitle={it.L('the price specified in the client\'s Limit Order')} />
