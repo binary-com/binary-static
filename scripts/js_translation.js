@@ -6,16 +6,12 @@ const GetText = require('./gettext');
 const extract = require('./extract_js_texts');
 
 const static_app   = require('./js_texts/static_strings_app');
-// const static_app_2 = require('./js_texts/static_strings_app_2'); // TODO: uncomment when decided to push app_2 texts to Crowdin
 
 const all_languages = [...common.languages, 'ach'].map(l => l.toLowerCase());
 const map = {
     app: {
         static: static_app,
     },
-    // app_2: {
-    //     static: static_app_2,
-    // },
 };
 
 const build = () => {

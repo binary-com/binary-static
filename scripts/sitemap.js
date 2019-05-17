@@ -26,23 +26,12 @@ const config = [
         lang_filter: '^id$',
         section    : 'app',
     },
-    {
-        url_prefix: 'https://www.deriv.com/',
-        filename  : 'sitemap.app_2.xml',
-        section   : 'app_2',
-    },
 ];
 let excluded;
 
 const getApplicableLanguages = (lang_filter) => common.languages.filter(lang => new RegExp(lang_filter, 'i').test(lang));
 
-const urlFor = (section, lang, path) => {
-    if (section === 'app') {
-        return `${lang}/${path}.html`;
-    }
-    // else: app_2
-    return `app/${lang}/${path}`;
-};
+const urlFor = (section, lang, path) => `${lang}/${path}.html`;
 
 const createSitemap = (conf) => {
     excluded = 0;
