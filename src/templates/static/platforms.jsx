@@ -20,7 +20,7 @@ const Platforms = ({
     download = '',
 }) => (
     <div className={`gr-row gr-padding-30 ${className || ''}`} data-show={data_show}>
-        <div className='gr-4 gr-12-m gr-12-p gr-no-gutter-left gr-gutter-left-p gr-gutter-left-m center-text no-center-text-p-m'>
+        <div className='gr-4 gr-12-m gr-12-p gr-no-gutter-left gr-gutter-left-p gr-gutter-left-m center-text no-center-text-p-m fill-bg-color'>
             <img className='platform responsive' src={it.url_for(`images/pages/${image_path}/${image}.png`)} />
         </div>
         <div className='gr-8 gr-12-m gr-12-p'>
@@ -30,8 +30,36 @@ const Platforms = ({
             <div className='gr-row'>
                 <div className='gr-12'>
                     { url &&
-                        <a className='button' download={download || undefined} href={url} target={target || undefined} rel={/http/.test(url) ? 'noopener noreferrer' : undefined}><span>{button_text}</span></a>
+                        <a className='button-secondary' download={download || undefined} href={url} target={target || undefined} rel={/http/.test(url) ? 'noopener noreferrer' : undefined}><span>{button_text}</span></a>
                     }
+                </div>
+            </div>
+        </div>
+    </div>
+);
+
+const PlatformsDesktop = ({
+    className,
+    data_show,
+    image_path = 'platforms',
+    image,
+    header,
+    description,
+    text,
+}) => (
+    <div className={`gr-row gr-padding-30 ${className || ''}`} data-show={data_show}>
+        <div className='gr-4 gr-12-m gr-12-p gr-no-gutter-left gr-gutter-left-p gr-gutter-left-m center-text no-center-text-p-m'>
+            <img className='platform responsive' src={it.url_for(`images/pages/${image_path}/${image}.svg`)} />
+        </div>
+        <div className='gr-8 gr-12-m gr-12-p'>
+            <h3>{header}</h3>
+            <strong>{description}</strong>
+            <p>{text}</p>
+            <div className='gr-row'>
+                <div className='gr-12'>
+                    <DownloadApp push='4' image='mac' />
+                    <DownloadApp push='6' image='windows' />
+                    {/* <DownloadApp image='linux' /> */}
                 </div>
             </div>
         </div>
@@ -62,7 +90,7 @@ const PlatformsSmall = ({
             <div className='gr-row'>
                 <div className='gr-12'>
                     { url &&
-                        <a className='button' download={download || undefined} href={url} target={target || undefined} rel={/http/.test(url) ? 'noopener noreferrer' : undefined}><span>{button_text}</span></a>
+                        <a className='button-secondary' download={download || undefined} href={url} target={target || undefined} rel={/http/.test(url) ? 'noopener noreferrer' : undefined}><span>{button_text}</span></a>
                     }
                 </div>
             </div>
@@ -71,8 +99,8 @@ const PlatformsSmall = ({
 );
 
 const DownloadApp = ({ image }) => (
-    <div className='download-app gr-2 gr-5-m gr-5-p gr-push-4 gr-push-1-p gr-push-1-m'>
-        <a id={`app_${image}`} download><img src={it.url_for(`images/pages/platforms/${image}.svg`)} /></a>
+    <div className='download-app'>
+        <a id={`app_${image}`}><img src={it.url_for(`images/pages/platforms/${image}.svg`)} /></a>
     </div>
 );
 
@@ -110,21 +138,17 @@ const Platform = () => (
                         </ul>
                     </div>
                     <div className='gr-5 gr-12-p gr-12-m center-text align-self-center'>
-                        <img className='responsive' src={it.url_for('images/pages/platforms/binary-grid-app.png')} />
+                        <img className='responsive header-img' src={it.url_for('images/pages/platforms/grid-app.png')} />
                     </div>
 
                 </div>
                 <div className='center-text'>
-                    <p>{it.L('download Binary Grid for Android now')}</p>
-                    <div className='gr-row'>
-                        <DownloadApp push='4' image='mac' />
-                        <DownloadApp push='6' image='windows' />
-                        {/* <DownloadApp image='linux' /> */}
-                    </div>
+                    <p>{it.L('Download Binary Grid for Android now')}</p>
+                    <p><a className='button download-grid-app'><span>{it.L('Download')}</span></a></p>
                 </div>
             </div>
         </div>
-        <div className='gr-padding-30 gr-child not-invisible grid-desktop-app' />
+        <div className='gr-padding-30 gr-child' />
         <div className='container'>
             <h2 className='primary-color center-text gr-padding-30 gr-child'>{it.L('Trading platforms')}</h2>
             <p className='center-text gr-padding-30 gr-parent'>{it.L('Find a trading platform that suits your experience and preferred strategy – whether you\'re a new or seasoned trader.')}</p>
@@ -150,6 +174,15 @@ const Platform = () => (
                                 button_text={it.L('Trade now')}
                             />
                             <Platforms
+                                image='grid-app-sm'
+                                header={it.L('Binary Grid')}
+                                description={it.L('Micro-trading on the go')}
+                                text={it.L('Seamless trading on your mobile device, at the speed of touch.')}
+                                url='https://grid.binary.me/download/BinaryGrid_v101.apk'
+                                button_text={it.L('Download Binary Grid')}
+                                download='true'
+                            />
+                            <Platforms
                                 image='tick-trade'
                                 header={it.L('Binary Tick Trade App')}
                                 description={it.L('Ultra fast on-the-go trading')}
@@ -167,14 +200,12 @@ const Platform = () => (
                                 url={it.url_for('multi_barriers_trading')}
                                 button_text={it.L('Trade now')}
                             />
-                            <Platforms
-                                image='trading-multibarrier'
-                                header={it.L('Introducing the new [_1] desktop app', it.website_name)}
-                                className='financial-only'
-                                description={it.L('Multi-barrier trading')}
-                                text={it.L('Trade FX binary options on our multi-barrier platform, Ladders.')}
-                                url={it.url_for('multi_barriers_trading')}
-                                button_text={it.L('Trade now')}
+                            <PlatformsDesktop
+                                image='devices'
+                                header={it.L('[_1] desktop app', it.website_name)}
+                                className='desktop-app financial-only'
+                                description={it.L('Enhanced performance. Intuitively simple.')}
+                                text={it.L('Access out products and services from a single app.')}
                             />
                         </TabContent>
                         <TabContent id='advanced'>
