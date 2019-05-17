@@ -574,10 +574,10 @@ msgstr ""
 msgid "<strong>Appropriateness Test: WARNING:</strong> In providing our services to you, we are required to obtain information from you in order to assess whether a given product or service is appropriate for you (that is, whether you possess the experience and knowledge to understand the risks involved)."
 msgstr ""
 
-msgid "A Contract for Difference (CFD) is a financial derivative that allows you to potentially profit by speculating on the rise or fall of an underlying asset, without actually owning that asset."
+msgid "A Contract for Difference (CFD) is a derivative contract that allows you to profit by speculating on the rise or fall of an underlying asset. Your profit and loss is calculated through the difference in the buy and sell prices of the underlying asset."
 msgstr ""
 
-msgid "A Contract for Difference (CFD) is a financial derivative that allows you to profit by speculating on the rise or fall of an underlying asset. Your profit and loss is calculated through the difference in the buy and sell prices of the underlying asset."
+msgid "A Contract for Difference (CFD) is a financial derivative that allows you to potentially profit by speculating on the rise or fall of an underlying asset, without actually owning that asset."
 msgstr ""
 
 msgid "A Diploma in Financial Crime, Risk Management and Compliance (ICA) will be an advantage"
@@ -2209,9 +2209,6 @@ msgstr ""
 msgid "Buy = go long"
 msgstr ""
 
-msgid "Buy Price"
-msgstr ""
-
 msgid "Buy or sell all four available precious metals – depending on your market view. Also, learn what factors affect prices."
 msgstr ""
 
@@ -2288,9 +2285,6 @@ msgid "C. Provision of services"
 msgstr ""
 
 msgid "CFD"
-msgstr ""
-
-msgid "CFD Energies"
 msgstr ""
 
 msgid "CFD contract specifications"
@@ -3098,6 +3092,9 @@ msgid "Cover is made available on the basis of the depositor rather than on the 
 msgstr ""
 
 msgid "Craft, Metal, Electrical and Electronics Workers"
+msgstr ""
+
+msgid "Crash/Boom Indices"
 msgstr ""
 
 msgid "Create"
@@ -4051,7 +4048,16 @@ msgstr ""
 msgid "Euro vs Great Britain Pound"
 msgstr ""
 
+msgid "Euro vs Hong Kong Dollar"
+msgstr ""
+
+msgid "Euro vs Israeli New Shekel"
+msgstr ""
+
 msgid "Euro vs Japanese Yen"
+msgstr ""
+
+msgid "Euro vs Mexican Peso"
 msgstr ""
 
 msgid "Euro vs New Zealand Dollar"
@@ -4064,6 +4070,9 @@ msgid "Euro vs Polish Zloty"
 msgstr ""
 
 msgid "Euro vs Singapore Dollar"
+msgstr ""
+
+msgid "Euro vs South African Rand"
 msgstr ""
 
 msgid "Euro vs Swedish Krona"
@@ -4642,9 +4651,6 @@ msgstr ""
 msgid "For e-wallets or local currencies not supported by %1."
 msgstr ""
 
-msgid "For example, a CFD on %1's US 30 index offers a USD 1 per point contract. If you buy a Volume 1.0 contract for the US 30 with a current ask price of USD 20,000 and later sell it at a bid price of USD 20,010, your net profit will be calculated as follows:"
-msgstr ""
-
 msgid "For example, if you buy a US 100 contract and it's not going as planned, you just need to sell it to cut your losses at the current market price."
 msgstr ""
 
@@ -5009,6 +5015,9 @@ msgid "Great Britain Pound vs Swedish Krona"
 msgstr ""
 
 msgid "Great Britain Pound vs Swiss Franc"
+msgstr ""
+
+msgid "Great Britain Pound vs Turkish Lira"
 msgstr ""
 
 msgid "Great Britain Pound vs US Dollar"
@@ -8248,6 +8257,9 @@ msgstr ""
 msgid "Please submit the above information to %1."
 msgstr ""
 
+msgid "Please take note that our swap rate also depends on the time and days you hold your positions open."
+msgstr ""
+
 msgid "Please take note that our swap rate also depends on the time and days you hold your positions open:"
 msgstr ""
 
@@ -8258,9 +8270,6 @@ msgid "Poland"
 msgstr ""
 
 msgid "Portfolio"
-msgstr ""
-
-msgid "Positions that are still open on Friday at market close will be charged three times the swap rate to account for weekends, a standard practice for all brokers."
 msgstr ""
 
 msgid "Positions that are still open on Wednesday at 23:59:59 GMT will be charged three times the swap rate to account for weekends – a standard practice for all Forex brokers."
@@ -8420,9 +8429,6 @@ msgid "Previous work experience in a customer service and/or marketing role"
 msgstr ""
 
 msgid "Price - the price at which the transaction in relation to the client's order is executed"
-msgstr ""
-
-msgid "Price Per Point"
 msgstr ""
 
 msgid "Price(s)/Pricing Data"
@@ -9235,9 +9241,6 @@ msgstr ""
 msgid "Sell = go short"
 msgstr ""
 
-msgid "Sell Price"
-msgstr ""
-
 msgid "Sell at market"
 msgstr ""
 
@@ -9404,6 +9407,9 @@ msgid "Since all transactions on the %1 website are fully automated, our pricing
 msgstr ""
 
 msgid "Since you feel the need to self-exclude, we strongly encourage you to exclude yourself from similar services that you may have signed up for."
+msgstr ""
+
+msgid "Singapore Dollar vs Japanese Yen"
 msgstr ""
 
 msgid "Size - the size of client order determined by the volume (number of lots)"
@@ -11182,10 +11188,10 @@ msgstr ""
 msgid "The interest adjustment is calculated in 'points' – meaning we will convert the relevant interbank lending rates to 'points' in the base currency."
 msgstr ""
 
-msgid "The interest adjustment is calculated in points, meaning we will convert the relevant interbank lending rates to points in the base currency."
+msgid "The interest adjustment is calculated in annual base for long and short positions according to the formula: (volume in lot *specified swap size/100)/360."
 msgstr ""
 
-msgid "The interest adjustment is calculated in points, meaning we will convert the relevant market rates to points in the base instrument."
+msgid "The interest adjustment is calculated in points, meaning we will convert the relevant interbank lending rates to points in the base currency."
 msgstr ""
 
 msgid "The level of protection offered and due to each client depends on the category to which each client is assigned. Retail clients benefit from the highest degree of protection. The Company will assess the client's knowledge and experience versus the appropriateness of the requested service/investment product."
@@ -11636,9 +11642,6 @@ msgid "This includes decisions on new markets to launch in, and the spreads and 
 msgstr ""
 
 msgid "This interest adjustment (or swap rate) is based on interbank lending rates, on top of a 2% fee."
-msgstr ""
-
-msgid "This interest adjustment (or swap rate) is based on market rates, on top of a 2% fee."
 msgstr ""
 
 msgid "This is a staging server - For testing purposes only"
@@ -12277,6 +12280,9 @@ msgstr ""
 msgid "US Dollar vs Hong Kong Dollar"
 msgstr ""
 
+msgid "US Dollar vs Israeli New Shekel"
+msgstr ""
+
 msgid "US Dollar vs Japanese Yen"
 msgstr ""
 
@@ -12302,6 +12308,9 @@ msgid "US Dollar vs Swedish Krona"
 msgstr ""
 
 msgid "US Dollar vs Swiss Franc"
+msgstr ""
+
+msgid "US Dollar vs Thai Baht"
 msgstr ""
 
 msgid "US Dollar vs Turkish Lira"
@@ -12665,9 +12674,6 @@ msgid "Volatility Indices are further categorised into two classes:"
 msgstr ""
 
 msgid "Volatility Indices commission rates in account currency per round trade. Example: A round trade of 1 lot of Volatility 100 Index would pay USD 0.75 for a USD denominated account."
-msgstr ""
-
-msgid "Volume"
 msgstr ""
 
 msgid "Volume step"
@@ -13210,6 +13216,12 @@ msgstr ""
 msgid "With %1, you'll know the risk and potential reward before you purchase a contract."
 msgstr ""
 
+msgid "With Boom 1000 Index, there's an average of one spike in the price series that occurs at anytime within 1000 ticks."
+msgstr ""
+
+msgid "With Crash 1000 Index, there's an average of one drop in the price series that occurs at anytime within 1000 ticks."
+msgstr ""
+
 msgid "With insider knowledge of any financial market or instrument"
 msgstr ""
 
@@ -13553,9 +13565,6 @@ msgid "You will be redirected to a third-party website which is not owned by Bin
 msgstr ""
 
 msgid "You will be subjected to swap rates if you keep a position open past 23:59:59 GMT."
-msgstr ""
-
-msgid "You will be subjected to swap rates if you keep a position open past the market close."
 msgstr ""
 
 msgid "You will charge a commission to process the transactions."
