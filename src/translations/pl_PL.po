@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-05-16 10:46\n"
+"PO-Revision-Date: 2019-05-17 05:06\n"
 "Last-Translator: binarycom\n"
 "Language-Team: Polish\n"
 "MIME-Version: 1.0\n"
@@ -588,11 +588,11 @@ msgstr "<< Wróć do opisu stanowiska"
 msgid "<strong>Appropriateness Test: WARNING:</strong> In providing our services to you, we are required to obtain information from you in order to assess whether a given product or service is appropriate for you (that is, whether you possess the experience and knowledge to understand the risks involved)."
 msgstr "<strong>Ocena zdolności: UWAGA:</strong> Świadcząc nasze usługi, jesteśmy zobligowani do uzyskania od Ciebie informacji w celu przeprowadzenia oceny, czy dany produkt lub usługa jest odpowiednia dla Ciebie (tzn. czy posiadasz odpowiednie doświadczenie i wiedzę potrzebne do zrozumienia ryzyka związanego z danym produktem)."
 
+msgid "A Contract for Difference (CFD) is a derivative contract that allows you to profit by speculating on the rise or fall of an underlying asset. Your profit and loss is calculated through the difference in the buy and sell prices of the underlying asset."
+msgstr ""
+
 msgid "A Contract for Difference (CFD) is a financial derivative that allows you to potentially profit by speculating on the rise or fall of an underlying asset, without actually owning that asset."
 msgstr "Kontrakt na różnice kursowe (CFD) to finansowy instrument pochodny, który pozwala osiągać zyski, spekulując, czy cena aktywa bazowego wzrośnie czy spadnie, bez posiadania tego aktywa."
-
-msgid "A Contract for Difference (CFD) is a financial derivative that allows you to profit by speculating on the rise or fall of an underlying asset. Your profit and loss is calculated through the difference in the buy and sell prices of the underlying asset."
-msgstr "Kontrakt na różnice kursowe (CFD) to finansowy instrument pochodny, który pozwala osiągać zyski, spekulując, czy cena aktywa bazowego wzrośnie czy spadnie. Zysk lub stratę oblicza się, porównując różnicę cen zakupu i sprzedaży aktywa bazowego."
 
 msgid "A Diploma in Financial Crime, Risk Management and Compliance (ICA) will be an advantage"
 msgstr "Dyplom studiów w zakresie przestępstw finansowych, zarządzania ryzykiem i zgodności (ICA) będzie dodatkowym atutem"
@@ -2223,9 +2223,6 @@ msgstr "Kup"
 msgid "Buy = go long"
 msgstr "Kup = pozycja długa "
 
-msgid "Buy Price"
-msgstr "Cena kupna"
-
 msgid "Buy or sell all four available precious metals – depending on your market view. Also, learn what factors affect prices."
 msgstr "Sprzedawaj lub kupuj wszystkie cztery dostępne metale szlachetne – w zależności od swoich poglądów rynkowych. Dowiedz się też, jakie czynniki wpływają na ceny."
 
@@ -2303,9 +2300,6 @@ msgstr "C. Świadczenie usług"
 
 msgid "CFD"
 msgstr "CFD"
-
-msgid "CFD Energies"
-msgstr "Kontrakty na różnice kursowe surowców energetycznych"
 
 msgid "CFD contract specifications"
 msgstr "Szczegóły kontraktu CFD"
@@ -3113,6 +3107,9 @@ msgstr ""
 
 msgid "Craft, Metal, Electrical and Electronics Workers"
 msgstr "Pracownicy sektora rzemieślniczego, metalurgicznego, elektrycznego i elektronicznego"
+
+msgid "Crash/Boom Indices"
+msgstr ""
 
 msgid "Create"
 msgstr "Utwórz"
@@ -4065,8 +4062,17 @@ msgstr "Euro vs dolar kanadyjski"
 msgid "Euro vs Great Britain Pound"
 msgstr "Euro vs funt szterling"
 
+msgid "Euro vs Hong Kong Dollar"
+msgstr ""
+
+msgid "Euro vs Israeli New Shekel"
+msgstr ""
+
 msgid "Euro vs Japanese Yen"
 msgstr "Euro vs jen japoński"
+
+msgid "Euro vs Mexican Peso"
+msgstr ""
 
 msgid "Euro vs New Zealand Dollar"
 msgstr "Euro vs dolar nowozelandzki"
@@ -4079,6 +4085,9 @@ msgstr "Euro vs złoty polski"
 
 msgid "Euro vs Singapore Dollar"
 msgstr "Euro vs dolar singapurski"
+
+msgid "Euro vs South African Rand"
+msgstr ""
 
 msgid "Euro vs Swedish Krona"
 msgstr "Euro vs korona szwedzka"
@@ -4656,9 +4665,6 @@ msgstr ""
 msgid "For e-wallets or local currencies not supported by %1."
 msgstr "Rozwiązanie stosowane w przypadku e-portfeli i lokalnych walut nieobsługiwanych przez %1."
 
-msgid "For example, a CFD on %1's US 30 index offers a USD 1 per point contract. If you buy a Volume 1.0 contract for the US 30 with a current ask price of USD 20,000 and later sell it at a bid price of USD 20,010, your net profit will be calculated as follows:"
-msgstr "Na przykład, kontrakty CFD na amerykański indeks US 30 %1 oferują kontrakt: 1 USD za punkt. Jeśli kupisz kontrakt na indeks gotówkowy US 30 o wolumenie 1.0 z ceną bieżącą wynoszącą 20 000 USD, a potem sprzedaż go po cenie sprzedaży 20 010 USD, Twój zysk netto zostanie obliczony następująco:"
-
 msgid "For example, if you buy a US 100 contract and it's not going as planned, you just need to sell it to cut your losses at the current market price."
 msgstr "Na przykład, jeśli kupisz kontrakt 100 US, ale notowania aktywa bazowego nie wyglądają tak, jak było to planowane, musisz tylko sprzedać go po obecnej cenie rynkowej, aby zminimalizować straty."
 
@@ -5024,6 +5030,9 @@ msgstr "Funt szterling vs korona szwedzka"
 
 msgid "Great Britain Pound vs Swiss Franc"
 msgstr "Funt szterling vs frank szwajcarski"
+
+msgid "Great Britain Pound vs Turkish Lira"
+msgstr ""
 
 msgid "Great Britain Pound vs US Dollar"
 msgstr "Funt szterling vs dolar amerykański"
@@ -8262,6 +8271,9 @@ msgstr "Proszę określić w minutach preferowany odstęp czasu pomiędzy kontro
 msgid "Please submit the above information to %1."
 msgstr "Proszę przesłać powyższe informacje na adres: %1."
 
+msgid "Please take note that our swap rate also depends on the time and days you hold your positions open."
+msgstr ""
+
 msgid "Please take note that our swap rate also depends on the time and days you hold your positions open:"
 msgstr "Należy zauważyć, że nasze stawki swapowe zależą również od czasu i od dni utrzymywania pozycji otwartych:"
 
@@ -8273,9 +8285,6 @@ msgstr "Polska"
 
 msgid "Portfolio"
 msgstr "Portfolio"
-
-msgid "Positions that are still open on Friday at market close will be charged three times the swap rate to account for weekends, a standard practice for all brokers."
-msgstr "W przypadku pozycji, które będą wciąż otwarte w piętek w momencie zamknięcia rynku zostanie pobrana potrójna wartość stawek swapowych, aby uwzględnić dni weekendowe – jest to standardowa praktyka w przypadku wszystkich brokerów."
 
 msgid "Positions that are still open on Wednesday at 23:59:59 GMT will be charged three times the swap rate to account for weekends – a standard practice for all Forex brokers."
 msgstr "W przypadku pozycji, które będą wciąż otwarte w piętek o godzinie 23:59:59 czasu uniwersalnego (GMT) zostanie pobrana potrójna wartość stawek swapowych, aby uwzględnić dni weekendowe – jest to standardowa praktyka w przypadku wszystkich brokerów."
@@ -8435,9 +8444,6 @@ msgstr "Wcześniejsze doświadczenie na stanowisku związanym z obsługą klient
 
 msgid "Price - the price at which the transaction in relation to the client's order is executed"
 msgstr "Cena – cena, po której zostaje zrealizowana transakcja powiązana ze zleceniem klienta"
-
-msgid "Price Per Point"
-msgstr "Cena za punkt"
 
 msgid "Price(s)/Pricing Data"
 msgstr "Ceny/dane dot. wyceny"
@@ -9249,9 +9255,6 @@ msgstr "Sprzedaj"
 msgid "Sell = go short"
 msgstr "Sprzedaj = pozycja krótka"
 
-msgid "Sell Price"
-msgstr "Cena sprzedaży"
-
 msgid "Sell at market"
 msgstr "Sprzedawaj na rynku"
 
@@ -9419,6 +9422,9 @@ msgstr "W związku z tym, że wszystkie transakcje na stronie internetowej %1 s�
 
 msgid "Since you feel the need to self-exclude, we strongly encourage you to exclude yourself from similar services that you may have signed up for."
 msgstr "Skoro czujesz potrzebę skorzystania z opcji samo-wykluczenia, zachęcamy do samo-wykluczenia również z podobnych usług, z których być może korzystasz."
+
+msgid "Singapore Dollar vs Japanese Yen"
+msgstr ""
 
 msgid "Size - the size of client order determined by the volume (number of lots)"
 msgstr ""
@@ -11196,11 +11202,11 @@ msgstr ""
 msgid "The interest adjustment is calculated in 'points' – meaning we will convert the relevant interbank lending rates to 'points' in the base currency."
 msgstr "Korekta oprocentowania jest obliczana w „punktach”, co oznacza, że zamienimy odpowiednie stopy procentowe kredytów międzybankowych na „punkty” w walucie bazowej."
 
+msgid "The interest adjustment is calculated in annual base for long and short positions according to the formula: (volume in lot *specified swap size/100)/360."
+msgstr ""
+
 msgid "The interest adjustment is calculated in points, meaning we will convert the relevant interbank lending rates to points in the base currency."
 msgstr "Korekta oprocentowania jest obliczana w punktach, co oznacza, że zamienimy odpowiednie stopy procentowe kredytów międzybankowych na punkty w walucie bazowej."
-
-msgid "The interest adjustment is calculated in points, meaning we will convert the relevant market rates to points in the base instrument."
-msgstr "Korekta oprocentowania jest obliczana w punktach, co oznacza, że zamienimy odpowiednie rynkowe stopy procentowe na punkty odpowiadające instrumentowi bazowemu."
 
 msgid "The level of protection offered and due to each client depends on the category to which each client is assigned. Retail clients benefit from the highest degree of protection. The Company will assess the client's knowledge and experience versus the appropriateness of the requested service/investment product."
 msgstr ""
@@ -11651,9 +11657,6 @@ msgstr "Obejmuje to podejmowanie decyzji w sprawie wejścia na nowe rynki i usta
 
 msgid "This interest adjustment (or swap rate) is based on interbank lending rates, on top of a 2% fee."
 msgstr "Ta korekta oprocentowania (zwana też stopą swap) zależy od stóp międzybankowych, a jej maksymalny poziom to 2%."
-
-msgid "This interest adjustment (or swap rate) is based on market rates, on top of a 2% fee."
-msgstr "Ta korekta oprocentowania (zwana też stopą swap) zależy od stóp rynkowych, a jej maksymalny poziom to 2%."
 
 msgid "This is a staging server - For testing purposes only"
 msgstr "To jest serwer testowy służący wyłącznie testowaniu"
@@ -12291,6 +12294,9 @@ msgstr "Dolar amerykański vs renminbi"
 msgid "US Dollar vs Hong Kong Dollar"
 msgstr "Dolar amerykański vs dolar hongkoński"
 
+msgid "US Dollar vs Israeli New Shekel"
+msgstr ""
+
 msgid "US Dollar vs Japanese Yen"
 msgstr "Dolar amerykański vs jen japoński"
 
@@ -12317,6 +12323,9 @@ msgstr "Dolar amerykański vs korona szwedzka"
 
 msgid "US Dollar vs Swiss Franc"
 msgstr "Dolar amerykański vs frank szwajcarski"
+
+msgid "US Dollar vs Thai Baht"
+msgstr ""
 
 msgid "US Dollar vs Turkish Lira"
 msgstr "Dolar amerykański vs lira turecka"
@@ -12680,9 +12689,6 @@ msgstr "Istnieją dwa rodzaje wskaźników zmienności:"
 
 msgid "Volatility Indices commission rates in account currency per round trade. Example: A round trade of 1 lot of Volatility 100 Index would pay USD 0.75 for a USD denominated account."
 msgstr "Wskaźniki zmienności: stawki prowizji w walucie konta za zakład. Przykład: Runda handlowa składająca się z 1 partii Wskaźnika zmienności 100 to 0,75 USD na konto prowadzone w USD."
-
-msgid "Volume"
-msgstr "Wolumen"
 
 msgid "Volume step"
 msgstr "Krok – wolumen"
@@ -13224,6 +13230,12 @@ msgstr "Z %1 możesz sprzedawać swoje kontrakty przed ich wygaśnięciem, aby z
 msgid "With %1, you'll know the risk and potential reward before you purchase a contract."
 msgstr "Handlując z %1, zapoznasz się z ryzykiem i potencjalnym zyskiem jeszcze przed kupnem kontraktu."
 
+msgid "With Boom 1000 Index, there's an average of one spike in the price series that occurs at anytime within 1000 ticks."
+msgstr ""
+
+msgid "With Crash 1000 Index, there's an average of one drop in the price series that occurs at anytime within 1000 ticks."
+msgstr ""
+
 msgid "With insider knowledge of any financial market or instrument"
 msgstr "Z dostępem do poufnych informacji dotycZących jakiegokolwiek rynku lub instrumentu finansowego"
 
@@ -13568,9 +13580,6 @@ msgstr "Nastąpi przekierowanie do witryny internetowej strony trzeciej, której
 
 msgid "You will be subjected to swap rates if you keep a position open past 23:59:59 GMT."
 msgstr "Jeśli utrzymasz pozycję otwartą po godzinie 23:59:59 GMT, będą miały zastosowanie stawki swapowe."
-
-msgid "You will be subjected to swap rates if you keep a position open past the market close."
-msgstr "Jeśli utrzymasz pozycję otwartą po zamknięciu rynku, będą miały zastosowanie stawki swapowe."
 
 msgid "You will charge a commission to process the transactions."
 msgstr "Za przeprowadzenie transakcji zostanie pobrana prowizja."
