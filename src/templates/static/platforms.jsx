@@ -136,7 +136,7 @@ const Platform = () => (
             <h1 className='center-text'>{it.L('Platforms')}</h1>
             <p className='center-text gr-padding-20 gr-parent'>{it.L('Explore all the trading platforms, apps, and tools we offer')}</p>
         </div>
-        <div className='fill-bg-color gr-padding-30 binary-grid-app'>
+        <div className='fill-bg-color gr-padding-30 binary-grid-app' data-show='-eucountry'>
             <div className='container gr-padding-30 gr-child'>
                 <h2 className='primary-color center-text'>
                     <span>{it.L('Introducing Binary Grid')}</span>
@@ -201,7 +201,9 @@ const Platform = () => (
                             />
                             <PlatformsGridApp
                                 image='grid-app-sm'
+                                data_show='-eucountry'
                                 header={it.L('Binary Grid')}
+                                className='binary-grid-app'
                                 description={it.L('Micro-trading on the go')}
                                 text={it.L('Seamless trading on your mobile device, at the speed of touch.')}
                             />
