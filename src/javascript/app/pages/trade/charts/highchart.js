@@ -252,7 +252,7 @@ const Highchart = (() => {
                 }
                 // only initialize chart if it hasn't already been initialized
                 if (!chart && !is_initialized) {
-                    chart_promise = await initChart(options);
+                    chart_promise = initChart(options);
                     if (!chart_promise || typeof chart_promise.then !== 'function') return;
                     chart_promise.then(() => {
                         if (!chart) return;
