@@ -4,6 +4,7 @@ const Elevio          = require('../../_common/base/elevio');
 const Contact = (() => {
     const onLoad = () => {
         initPhoneNumber(true);
+        Elevio.injectElevio();
         window._elev.on('ready', embedElevioComponents); // eslint-disable-line no-underscore-dangle
 
         $('#contact_loading').remove();
