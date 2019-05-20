@@ -261,9 +261,9 @@ const ViewPopup = (() => {
 
         const is_digit = /digit/i.test(contract.contract_type);
         if (is_digit) {
-            if (!chart_started && contract.entry_tick_time) {
+            if (!chart_started) {
                 DigitDisplay.init(id_tick_chart, contract);
-                chart_started = true;
+                if (contract.entry_tick_time) chart_started = true;
             }
         } else if (!chart_started && !contract.tick_count) {
             if (!chart_init) {
