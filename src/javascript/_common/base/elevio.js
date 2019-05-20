@@ -15,13 +15,10 @@ const Elevio = (() => {
 
         el_shell = document.getElementById(el_shell_id);
 
-        el_shell.addEventListener('click', () => {
-            injectElevio();
-            window._elev.open(); // eslint-disable-line no-underscore-dangle
-        });
+        el_shell.addEventListener('click', () => injectElevio(true));
     };
 
-    const injectElevio = () => {
+    const injectElevio = (is_open = false) => {
         const account_id = '5bbc2de0b7365';
         window._elev = {}; // eslint-disable-line no-underscore-dangle
         window._elev.account_id = account_id; // eslint-disable-line no-underscore-dangle
@@ -38,15 +35,17 @@ const Elevio = (() => {
             window._elev.q.push([z, y]); // eslint-disable-line no-underscore-dangle
         };
 
-        script.onload = loadElevio;
+        script.onload = () => loadElevio(is_open);
     };
 
-    const loadElevio = () => {
+    const loadElevio = (is_open = false) => {
         if (!window._elev) return; // eslint-disable-line no-underscore-dangle
 
         window._elev.on('load', (elev) => { // eslint-disable-line no-underscore-dangle
-            el_shell.parentNode.removeChild(el_shell);
-            el_shell = undefined;
+            if (el_shell) {
+                el_shell.parentNode.removeChild(el_shell);
+                el_shell = undefined;
+            }
 
             const available_elev_languages = ['es', 'id', 'pt', 'ru'];
             const current_language         = getLanguage().toLowerCase();
@@ -59,6 +58,10 @@ const Elevio = (() => {
             setTranslations(elev);
             addEventListenerGTM();
             makeLauncherVisible();
+
+            if (is_open) {
+                elev.open();
+            }
         });
     };
 
