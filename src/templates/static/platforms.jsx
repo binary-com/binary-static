@@ -57,7 +57,7 @@ const PlatformsGridApp = ({
             <p>{text}</p>
             <div className='gr-row'>
                 <div className='gr-12'>
-                    <p><a className='button-secondary download-grid-app'><span>{it.L('Download')}</span></a></p>
+                    <p><a className='button-secondary download-grid-app'><span>{it.L('Download Binary Grid')}</span></a></p>
                 </div>
             </div>
         </div>
