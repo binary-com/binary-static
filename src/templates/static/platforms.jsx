@@ -209,11 +209,11 @@ const Platform = () => (
                             />
                             <Platforms
                                 image='tick-trade'
-                                header={it.L('Binary Tick Trade App')}
+                                header={it.L('Tick Trade Android App')}
                                 description={it.L('Ultra fast on-the-go trading')}
                                 text={it.L('Enjoy our fastest type of trading with our Tick Trade app, wherever you are.')}
                                 url='https://ticktrade.binary.com/download/ticktrade-app.apk'
-                                button_text={it.L('Download the Android app')}
+                                button_text={it.L('Download Tick Trade App')}
                                 download='true'
                             />
                             <Platforms
@@ -228,7 +228,7 @@ const Platform = () => (
                             <PlatformsDesktop
                                 image='devices'
                                 header={it.L('[_1] desktop app', it.website_name)}
-                                className='desktop-app financial-only'
+                                className='desktop-app invisible financial-only'
                                 description={it.L('Enhanced performance. Intuitively simple.')}
                                 text={it.L('Access out products and services from a single app.')}
                             />
@@ -273,7 +273,7 @@ const Platform = () => (
                 <div className='gr-row'>
                     <PlatformsSmall
                         image='tradingview'
-                        header={it.L('TradingView for [_1]', it.website_name)}
+                        header={it.L('TradingView')}
                         description={it.L('Powerful charting and technical analysis')}
                         text={it.L('Analyse the markets with an extensive range of indicators, price bands, and overlays.')}
                         url='https://tradingview.binary.com'
