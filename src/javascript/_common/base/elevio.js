@@ -4,12 +4,15 @@ const BinarySocket  = require('./socket_base');
 const getLanguage   = require('../language').get;
 const localize      = require('../localize').localize;
 const createElement = require('../utility').createElement;
+const isLoginPages  = require('../../_common/base/login').isLoginPages;
 
 const Elevio = (() => {
     const el_shell_id = 'elevio-shell';
     let el_shell;
 
     const init = () => {
+        if (isLoginPages()) return;
+
         el_shell = document.getElementById(el_shell_id);
 
         el_shell.addEventListener('click', () => {
@@ -35,10 +38,11 @@ const Elevio = (() => {
 
     const loadElevio = () => {
         if (!window._elev) return; // eslint-disable-line no-underscore-dangle
-        el_shell.parentNode.removeChild(el_shell);
-        el_shell = undefined;
 
         window._elev.on('load', (elev) => { // eslint-disable-line no-underscore-dangle
+            el_shell.parentNode.removeChild(el_shell);
+            el_shell = undefined;
+
             const available_elev_languages = ['es', 'id', 'pt', 'ru'];
             const current_language         = getLanguage().toLowerCase();
             if (available_elev_languages.indexOf(current_language) !== -1) {
