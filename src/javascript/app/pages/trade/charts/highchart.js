@@ -1,19 +1,20 @@
-const HighchartUI      = require('./highchart.ui');
-const getHighstock     = require('../common').requireHighstock;
-const MBContract       = require('../../mb_trade/mb_contract');
-const MBDefaults       = require('../../mb_trade/mb_defaults');
-const Callputspread    = require('../../trade/callputspread');
-const Defaults         = require('../../trade/defaults');
-const GetTicks         = require('../../trade/get_ticks');
-const Lookback         = require('../../trade/lookback');
-const Reset            = require('../../trade/reset');
-const ViewPopupUI      = require('../../user/view_popup/view_popup.ui');
-const BinarySocket     = require('../../../base/socket');
-const addComma         = require('../../../common/currency').addComma;
-const localize         = require('../../../../_common/localize').localize;
-const State            = require('../../../../_common/storage').State;
-const getPropertyValue = require('../../../../_common/utility').getPropertyValue;
-const isEmptyObject    = require('../../../../_common/utility').isEmptyObject;
+const HighchartUI          = require('./highchart.ui');
+const getHighstock         = require('../common').requireHighstock;
+const getUnderlyingPipSize = require('../symbols').getUnderlyingPipSize;
+const MBContract           = require('../../mb_trade/mb_contract');
+const MBDefaults           = require('../../mb_trade/mb_defaults');
+const Callputspread        = require('../../trade/callputspread');
+const Defaults             = require('../../trade/defaults');
+const GetTicks             = require('../../trade/get_ticks');
+const Lookback             = require('../../trade/lookback');
+const Reset                = require('../../trade/reset');
+const ViewPopupUI          = require('../../user/view_popup/view_popup.ui');
+const BinarySocket         = require('../../../base/socket');
+const addComma             = require('../../../common/currency').addComma;
+const localize             = require('../../../../_common/localize').localize;
+const State                = require('../../../../_common/storage').State;
+const getPropertyValue     = require('../../../../_common/utility').getPropertyValue;
+const isEmptyObject        = require('../../../../_common/utility').isEmptyObject;
 
 const Highchart = (() => {
     let chart,
@@ -69,7 +70,7 @@ const Highchart = (() => {
     };
 
     // initialize the chart only once with ticks or candles data
-    const initChart = (init_options) => {
+    const initChart = async (init_options) => {
         let data = [];
         let type = '';
         let i;
@@ -126,7 +127,8 @@ const Highchart = (() => {
 
         HighchartUI.updateLabels(chart, getHighchartLabelParams());
 
-        const display_decimals = (history ? history.prices[0] : candles[0].open).toString().split('.')[1].length || 3;
+        // const display_decimals = (history ? history.prices[0] : candles[0].open).toString().split('.')[1].length || 3;
+        const display_decimals = await getUnderlyingPipSize(contract.underlying);
 
         chart_options = {
             data,
@@ -203,7 +205,7 @@ const Highchart = (() => {
         $(window).off('resize', updateHighchartOptions);
     };
 
-    const handleResponse = (response) => {
+    const handleResponse = async (response) => {
         const type  = response.msg_type;
         const error = response.error;
 
@@ -250,7 +252,7 @@ const Highchart = (() => {
                 }
                 // only initialize chart if it hasn't already been initialized
                 if (!chart && !is_initialized) {
-                    chart_promise = initChart(options);
+                    chart_promise = await initChart(options);
                     if (!chart_promise || typeof chart_promise.then !== 'function') return;
                     chart_promise.then(() => {
                         if (!chart) return;
