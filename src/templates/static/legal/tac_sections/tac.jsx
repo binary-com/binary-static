@@ -83,12 +83,12 @@ const Tac = () => (
                 <li>{it.L('Clients must register personally.')}</li>
                 <li>{it.L('Clients must fill into the account opening form all requested details that establish their identity. Clients must give a valid identification, address, contact email address, and personal telephone number.')}</li>
                 <li>{it.L('The Company may, at its sole discretion or as required by regulations in place conduct appropriate "Know Your Customer" (KYC) procedures and require a client to provide proof of identity and suspend an account until satisfactory evidence of identity and address, source of funds, and/or source of wealth have been provided.')}</li>
-                <li>{it.L('In order for a UK resident to make use of the virtual account, the client will first have to be age verified. The client will also need to be fully verified before making use of the real money account. Verification can be done electronically or on submission of KYC documents.')}</li>
-                <li>{it.L('Requested KYC documentation could include:')}
+                <li>{it.L('In order for a UK resident to make use of the virtual account, the client will first have to be age-verified. The client will also need to be fully verified before making use of the real money account. Verification can be done electronically or through submission of KYC documents.')}</li>
+                <li>{it.L('Requested KYC documentation could include')}
                     <ul className='bullet'>
-                        <li>{it.L('Proof of identity – such as ID card, passport or driving licence.')}</li>
-                        <li>{it.L('Proof of address – such as bank statements/ building society statement or utility bills (mobile phone bills are unacceptable).')}</li>
-                        <li>{it.L('Proof of wealth / Source of funds – such as payslips or bank statements.')}</li>
+                        <li>{it.L('Proof of identity – such as ID card, passport or driving licence')}</li>
+                        <li>{it.L('Proof of address – such as bank statements/ building society statement or utility bills (mobile phone bills are unacceptable)')}</li>
+                        <li>{it.L('Proof of wealth / Source of funds – such as payslips or bank statements')}</li>
                     </ul>
                 </li>
                 <li>{it.L('If such documents expire, the Company reserves the right to request updated documentation.')}</li>
@@ -98,7 +98,7 @@ const Tac = () => (
                 <li>{it.L('Clients shall not hold or pool third-party funds into their own account held with the Company.')}</li>
                 <li>{it.L('It is prohibited to sell, transfer, and/or acquire accounts to/from other clients. Transfer of funds among other clients is also prohibited.')}</li>
                 <li>{it.L('Only one account is allowed per person. No withdrawals and/or refunds may be collected on accounts opened in false names or on multiple accounts opened by the same person.')}</li>
-                <li>{it.L('The Company has the right and obligation not to accept the information provided by clients if the Company knows or has a reason to believe that it is incorrect, inaccurate, or incomplete. In such case, the Company may ask clients to clarify or correct the details provided.')}</li>
+                <li>{it.L('The Company has the right and obligation not to accept the information provided by clients if the Company knows or has a reason to believe that it is incorrect, inaccurate, or incomplete. In such cases, the Company may ask clients to clarify or correct the details provided.')}</li>
             </ul>
         </p>
 

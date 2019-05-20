@@ -498,11 +498,11 @@ const TermsAndConditions = () => (
                 paragraph={it.L('The Introducing Broker warrants to the Company at all times that')}
             >
                 <ol>
-                    <li>{it.L('All information/documentations provided by the Introducing Broker when applying for Binary\'s Introducing Broker programme is true and accurate')}</li>
-                    <li>{it.L('They have obtained all Authorisations and are not aware of anything that shall or might reasonably be expected to prevent them from entering and performing all of their obligations under this Agreement')}</li>
-                    <li>{it.L('They are not aware of anything that shall, or might reasonably be expected to, prevent, or obstruct them from performing all of their obligations under this Agreement, in the manner and at the times contemplated by this Agreement')}</li>
-                    <li>{it.L('They will comply with all laws when performing their obligations under this Agreement')}</li>
-                    <li>{it.L('This Agreement has been duly executed and constitutes binding obligations on both parties, enforceable against it in accordance with its terms ')}</li>
+                    <li>{it.L('All information/documentations provided by the Introducing Broker when applying for Binary\'s Introducing Broker programme is true and accurate.')}</li>
+                    <li>{it.L('They have obtained all Authorisations and are not aware of anything that shall or might reasonably be expected to prevent them from entering and performing all of their obligations under this Agreement.')}</li>
+                    <li>{it.L('They are not aware of anything that shall, or might reasonably be expected to, prevent, or obstruct them from performing all of their obligations under this Agreement, in the manner and at the times contemplated by this Agreement.')}</li>
+                    <li>{it.L('They will comply with all laws when performing their obligations under this Agreement.')}</li>
+                    <li>{it.L('This Agreement has been duly executed and constitutes binding obligations on both parties, enforceable against it in accordance with its terms.')}</li>
                 </ol>
             </Li>
             <Li
