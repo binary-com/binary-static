@@ -847,11 +847,14 @@ body #not_authenticated_financial ul.checked > li {
         display: inline-block;
         margin-right: 30px;
     }
+    .platforms-image-container {
+        vertical-align: middle;
+    }
     img.platform {
         max-height: 150px;
         width: auto;
         max-width: 100%;
-        vertical-align: baseline;
+        vertical-align: middle;
     }
     @media screen and (max-width: 768px) {
         .no-center-text-p-m {

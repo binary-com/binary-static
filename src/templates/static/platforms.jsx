@@ -38,6 +38,32 @@ const Platforms = ({
     </div>
 );
 
+const PlatformsGridApp = ({
+    className,
+    data_show,
+    image_path = 'platforms',
+    image,
+    header,
+    description,
+    text,
+}) => (
+    <div className={`gr-row gr-padding-30 ${className || ''}`} data-show={data_show}>
+        <div className='gr-4 gr-12-m gr-12-p gr-no-gutter-left gr-gutter-left-p gr-gutter-left-m center-text no-center-text-p-m align-self-center'>
+            <img className='platform responsive' src={it.url_for(`images/pages/${image_path}/${image}.png`)} />
+        </div>
+        <div className='gr-8 gr-12-m gr-12-p'>
+            <h3>{header}</h3>
+            <strong>{description}</strong>
+            <p>{text}</p>
+            <div className='gr-row'>
+                <div className='gr-12'>
+                    <p><a className='button-secondary download-grid-app'><span>{it.L('Download')}</span></a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+);
+
 const PlatformsDesktop = ({
     className,
     data_show,
@@ -173,14 +199,11 @@ const Platform = () => (
                                 url={it.url_for('trading')}
                                 button_text={it.L('Trade now')}
                             />
-                            <Platforms
+                            <PlatformsGridApp
                                 image='grid-app-sm'
                                 header={it.L('Binary Grid')}
                                 description={it.L('Micro-trading on the go')}
                                 text={it.L('Seamless trading on your mobile device, at the speed of touch.')}
-                                url='https://grid.binary.me/download/BinaryGrid_v101.apk'
-                                button_text={it.L('Download Binary Grid')}
-                                download='true'
                             />
                             <Platforms
                                 image='tick-trade'
