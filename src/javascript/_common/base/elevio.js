@@ -4,11 +4,50 @@ const BinarySocket  = require('./socket_base');
 const getLanguage   = require('../language').get;
 const localize      = require('../localize').localize;
 const createElement = require('../utility').createElement;
+const isLoginPages  = require('../../_common/base/login').isLoginPages;
 
 const Elevio = (() => {
+    const el_shell_id = 'elevio-shell';
+    let el_shell;
+
     const init = () => {
+        if (isLoginPages()) return;
+
+        el_shell = document.getElementById(el_shell_id);
+
+        el_shell.addEventListener('click', () => {
+            injectElevio();
+            window._elev.open(); // eslint-disable-line no-underscore-dangle
+        });
+    };
+
+    const injectElevio = () => {
+        const account_id = '5bbc2de0b7365';
+        window._elev = {}; // eslint-disable-line no-underscore-dangle
+        window._elev.account_id = account_id; // eslint-disable-line no-underscore-dangle
+
+        const script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.async = 1;
+        script.src = `https://cdn.elev.io/sdk/bootloader/v4/elevio-bootloader.js?cid=${account_id}`;
+        script.id = 'loaded-elevio-script';
+        document.body.appendChild(script);
+
+        window._elev.q = []; // eslint-disable-line no-underscore-dangle
+        window._elev.on = function(z, y) { // eslint-disable-line no-underscore-dangle
+            window._elev.q.push([z, y]); // eslint-disable-line no-underscore-dangle
+        };
+
+        script.onload = loadElevio;
+    };
+
+    const loadElevio = () => {
         if (!window._elev) return; // eslint-disable-line no-underscore-dangle
+
         window._elev.on('load', (elev) => { // eslint-disable-line no-underscore-dangle
+            el_shell.parentNode.removeChild(el_shell);
+            el_shell = undefined;
+
             const available_elev_languages = ['es', 'id', 'pt', 'ru'];
             const current_language         = getLanguage().toLowerCase();
             if (available_elev_languages.indexOf(current_language) !== -1) {
@@ -67,6 +106,7 @@ const Elevio = (() => {
 
     return {
         init,
+        injectElevio,
         createComponent,
     };
 })();
