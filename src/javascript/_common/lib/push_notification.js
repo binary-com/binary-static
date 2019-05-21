@@ -28,11 +28,12 @@ const BinaryPushwoosh = (() => {
     const sendTags = () => {
         pw.push((api) => {
             api.getTags().then((result) => {
-                if (!result.result['Login ID'] || !result.result['Site Language']) {
+                if (!result.result['Login ID'] || !result.result['Site Language'] || !result.result['Residence']) {
                     // send login id and site language
                     return api.setTags({
                         'Login ID'     : Client.get('loginid'),
                         'Site Language': getLanguage(),
+                        'Residence'    : Client.get('residence'),
                     });
                 }
                 return null;
