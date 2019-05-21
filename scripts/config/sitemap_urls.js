@@ -55,7 +55,4 @@ module.exports = {
         // ['graduates',                          'monthly', 0.80, 'NOT-en'],
         // ['hackathon',                          'monthly', 0.80, 'NOT-en'],
     ],
-    app_2: [
-        ['trade',                              'monthly', 1.00],
-    ],
 };

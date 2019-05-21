@@ -841,12 +841,14 @@ body #not_authenticated_financial ul.checked > li {
         top: -15px;
     }
     .download-app {
-        padding-bottom: 30px;
+        display: inline-block;
+        margin-right: 30px;
     }
     img.platform {
         max-height: 150px;
         width: auto;
         max-width: 100%;
+        vertical-align: middle;
     }
     @media screen and (max-width: 768px) {
         .no-center-text-p-m {

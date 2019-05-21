@@ -42,6 +42,11 @@ const Platforms = (() => {
                 el_button.setAttribute('href', os.download_url);
             });
         });
+        fetch('https://grid.binary.me/version.json')
+            .then(response => response.json())
+            .then(gridapp => {
+                $('.download-grid-app').attr('href', `https://grid.binary.me/download/${gridapp.name}`);
+            });
     };
 
     return {

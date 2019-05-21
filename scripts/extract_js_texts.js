@@ -12,7 +12,7 @@ const common      = require('./common');
 const config = {
     base_folder          : './src/javascript/',
     excluded_folders     : ['__tests__', '_common/lib'],
-    supported_apps       : ['app', 'app_2'],
+    supported_apps       : ['app'],
     localize_method_names: ['localize', 'localizeKeepPlaceholders'],
     ignore_comment       : 'localize-ignore', // put /* localize-ignore */ right after the first argument to ignore
     parser_options       : {
