@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-05-17 10:00\n"
+"PO-Revision-Date: 2019-05-21 03:10\n"
 "Last-Translator: binarycom\n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -215,6 +215,9 @@ msgstr "%1 天 %2 小時 %3 分鐘"
 
 msgid "%1 deposit from %2 to account number %3 is done. Transaction ID: %4"
 msgstr "已完成從%2至帳號%3的%1存款。交易編號: %4"
+
+msgid "%1 desktop app"
+msgstr "%1 桌面應用程式"
 
 msgid "%1 does not charge any transfer fees."
 msgstr "%1不收取任何轉帳費用。"
@@ -589,7 +592,7 @@ msgid "<strong>Appropriateness Test: WARNING:</strong> In providing our services
 msgstr "<strong>合適性測試:警告:</strong>為了給您提供服務，我們必須向您獲取資訊，以便評估某項產品或服務對您是否合適（就是說要看您是否擁有足夠經驗和知識來了解相關的風險）。"
 
 msgid "A Contract for Difference (CFD) is a derivative contract that allows you to profit by speculating on the rise or fall of an underlying asset. Your profit and loss is calculated through the difference in the buy and sell prices of the underlying asset."
-msgstr ""
+msgstr "差價合約（CFD）是一種衍生合約，通過猜測相關資產的上漲或下跌，使您可能獲利。通過相關資產的買入和賣出價差算出您的利潤和損失。"
 
 msgid "A Contract for Difference (CFD) is a financial derivative that allows you to potentially profit by speculating on the rise or fall of an underlying asset, without actually owning that asset."
 msgstr "差價合約（CFD）是一種金融衍生產品，通過猜測相關資產的上漲或下跌，使您可能獲利，而實際上並不擁有該資產。"
@@ -834,17 +837,14 @@ msgstr "存取 MT5 儀表板"
 msgid "Access all available tools and features for trading on MT5, including Expert Advisors (EAs), charts, and order types"
 msgstr "存取所有可用的工具和功能包括專家顧問 (EAs)、圖表和訂單類型，以便在MT5交易"
 
-msgid "Access all our trading platforms and charting tools from a single app."
-msgstr "透過單一的應用程式存取我們所有的交易平台和圖表工具。"
-
 msgid "Access market quotes and trade execution from top-tier liquidity providers, including banks and non-banks."
 msgstr "通過頂級流動性提供商，包括銀行和非銀行機構存取市場報價和執行交易。"
 
 msgid "Access multi-asset liquidity from top-tier institutions."
 msgstr "頂級機構提供多種資產的流動性服務。"
 
-msgid "Access our products and services from a single app"
-msgstr "透過單個應用程式存取我們的產品和服務"
+msgid "Access out products and services from a single app."
+msgstr "透過單個應用程式存取外部產品和服務。"
 
 msgid "Access the markets anytime, anywhere from your Android device."
 msgstr "隨時隨地透過Android 設備存取市場。"
@@ -2034,6 +2034,9 @@ msgstr "Binary Bot 已發布"
 msgid "Binary Coin"
 msgstr "Binary 硬幣"
 
+msgid "Binary Grid"
+msgstr "Binary 網格"
+
 msgid "Binary Group (hereinafter referred to as 'Binary Group of companies', 'the Company') is commited to protecting the privacy and security of the applicant's personal information. This privacy notice sets out the types of data that the Company collects on the applicant. It also sets out how the Company collect and use the applicant' personal data, and how long it keeps them and other relevant information about the applicant's data in accordance with the General Data Protection Regulation (EU) 2016/679 (hereafter referred to as 'GDPR') and Data Protection Act 2018."
 msgstr "Binary集團 (以下簡稱「Binary集團」、「公司」) 致力於保護申請人個人資料的隱私和安全。本隱私聲明列出了公司向申請人收集的資料類型。同時還列出了公司如何根據(EU) 2016/679《一般資料保護條例》 (以下簡稱為「GDPR」) 和2018資料保護法收集和使用申請人的個人資料、保存期限以及關於申請人資料的其他相關資訊。"
 
@@ -2087,9 +2090,6 @@ msgstr "MT5二元期權"
 
 msgid "Binary Shop"
 msgstr "Binary商店"
-
-msgid "Binary Tick Trade App"
-msgstr "Binary跳動交易應用程式"
 
 msgid "Binary WebTrader"
 msgstr "Binary WebTrader"
@@ -3109,7 +3109,7 @@ msgid "Craft, Metal, Electrical and Electronics Workers"
 msgstr "工藝、金屬、電氣和電子工人"
 
 msgid "Crash/Boom Indices"
-msgstr ""
+msgstr "崩盤/興旺指數"
 
 msgid "Create"
 msgstr "新增"
@@ -3663,6 +3663,12 @@ msgstr "休眠和非使用中帳戶"
 msgid "Download"
 msgstr "下載"
 
+msgid "Download Binary Grid"
+msgstr "下載 Binary 網格"
+
+msgid "Download Binary Grid for Android now"
+msgstr "立刻下載Android版Binary網格"
+
 msgid "Download Binary VPN app For Android"
 msgstr "下載android版Binary VPN 應用程式"
 
@@ -3687,20 +3693,17 @@ msgstr "Windows版MT5下載"
 msgid "Download MT5 for your desktop or laptop to access the powerful tools and features enjoyed by millions of traders."
 msgstr "MT5是強大的多功能交易工具，備受百萬多名交易員的愛載，請下載到桌上型電腦或膝上型電腦上使用。"
 
+msgid "Download Tick Trade App"
+msgstr "下載跳動點交易應用程式"
+
 msgid "Download our VPN app for your preferred device"
 msgstr "為您傾向的設備下載 VPN 應用程式"
 
 msgid "Download our VPN app now"
 msgstr "立刻下載VPN應用程式"
 
-msgid "Download our desktop app now:"
-msgstr "立刻下載我們的桌面應用程式:"
-
 msgid "Download the %1desktop app%2 for the most secure way to access the %3 website."
 msgstr "下載 %1桌面應用程式%2 以獲得 %3 網站最安全的存取方式。"
-
-msgid "Download the Android app"
-msgstr "下載Android應用程式"
 
 msgid "Download your statement"
 msgstr "下載您的月結單"
@@ -3978,8 +3981,8 @@ msgstr "從事誤導性、虛幻或虛假的廣告或承諾"
 msgid "Engage in misleading, illusory, or deceptive conduct"
 msgstr "從事誤導性、虛幻或欺騙行為"
 
-msgid "Enhanced performance"
-msgstr "增強的性能"
+msgid "Enhanced performance. Intuitively simple."
+msgstr "性能增強。直覺型簡化。"
 
 msgid "Enjoy a trading platform that's easy to navigate and use"
 msgstr "享受簡單操作、輕鬆瀏覽的交易平台"
@@ -4063,16 +4066,16 @@ msgid "Euro vs Great Britain Pound"
 msgstr "歐元兌英鎊"
 
 msgid "Euro vs Hong Kong Dollar"
-msgstr ""
+msgstr "歐元兌港元"
 
 msgid "Euro vs Israeli New Shekel"
-msgstr ""
+msgstr "歐元兌以色列新錫客爾"
 
 msgid "Euro vs Japanese Yen"
 msgstr "歐元兌日圓"
 
 msgid "Euro vs Mexican Peso"
-msgstr ""
+msgstr "歐元兌墨西哥披索"
 
 msgid "Euro vs New Zealand Dollar"
 msgstr "歐元兌紐西蘭元"
@@ -4087,7 +4090,7 @@ msgid "Euro vs Singapore Dollar"
 msgstr "歐元兌新加坡元"
 
 msgid "Euro vs South African Rand"
-msgstr ""
+msgstr "歐元兌南非蘭特"
 
 msgid "Euro vs Swedish Krona"
 msgstr "歐元兌瑞典克朗"
@@ -4451,9 +4454,6 @@ msgstr "以透明的方式向客戶公平準確地描述Binary的業務和服務
 
 msgid "Fairly and accurately describe the Agent's services to the clients"
 msgstr "公正準確地向客戶描述代理的服務"
-
-msgid "Familiar with our website? Our desktop app is designed to give you the same intuitive experience."
-msgstr "對我們的網站很熟悉？我們的桌面應用程式設計為您提供相同的直觀體驗。"
 
 msgid "Familiarity with Git"
 msgstr "熟悉 Git"
@@ -4911,6 +4911,9 @@ msgstr "每月十五日前準時付款。自從2004年3月開始推展計畫以�
 msgid "Get started with MT5"
 msgstr "開始使用MT5"
 
+msgid "Get started with stakes as low as 20¢."
+msgstr "起始投注金額低至二十美分即可交易。"
+
 msgid "Get started with the %1 Expert Advisor (EA) for binary options trading on MT5 by following these steps:"
 msgstr "執行以下步驟, 開始使用 %1 專家顧問 (EA) 在MT5 進行二元期權交易:"
 
@@ -5032,7 +5035,7 @@ msgid "Great Britain Pound vs Swiss Franc"
 msgstr "英鎊兌瑞士法郎"
 
 msgid "Great Britain Pound vs Turkish Lira"
-msgstr ""
+msgstr "英鎊兌土耳其里拉"
 
 msgid "Great Britain Pound vs US Dollar"
 msgstr "英鎊兌美元"
@@ -5893,10 +5896,10 @@ msgid "Industry of employment"
 msgstr "職業領域"
 
 msgid "Inform any clients introduced to Binary of any matter that the Company may reasonably consider necessary in order to comply with any legal/regulatory requirements "
-msgstr ""
+msgstr "告知任何經過介紹的Binary客戶，公司可合理認為任何事項有必要遵守任何法律/監管要求 "
 
 msgid "Inform any clients introduced to Binary that the trading services and products are offered by or through Binary and not the Introducing Broker"
-msgstr ""
+msgstr "通知任何經過介紹的Binary客戶，交易服務和產品由Binary提供，不是推介經紀提供"
 
 msgid "Information & Communications Technology"
 msgstr "資訊和通信技術"
@@ -5920,10 +5923,10 @@ msgid "Integrity"
 msgstr "誠信"
 
 msgid "Intellectual property rights"
-msgstr ""
+msgstr "智慧財產權"
 
 msgid "Intelligently routing incoming orders to different types of execution modes based on configurations and algorithms established using best execution factors"
-msgstr ""
+msgstr "根據以最佳執行因素建立的設定和算法將傳入的訂單通過智慧路由歸納成不同類型的執行模式"
 
 msgid "Interactive charting tool"
 msgstr "互動式圖表工具"
@@ -5953,13 +5956,13 @@ msgid "Internal Audit Executive"
 msgstr "內部稽核主管"
 
 msgid "Internal currency transfers between accounts are allowed up to a maximum of USD 2,000 or equivalent. Transfers are allowed between any available currency pair but cannot be done between the Binary and MT5 accounts."
-msgstr ""
+msgstr "帳戶之間的內部貨幣轉帳最高可達2,000美元或等值。允許任何可用貨幣對之間轉帳，但Binary和MT5帳戶之間不可轉帳。"
 
 msgid "International currency or commodity prices are highly volatile and very difficult to predict. Due to such volatility, plus the bias in the pricing system favouring the website (as described in more detail below), no financial contract purchased in our system (whether or not the payout exceeds the premium amount) can be considered a safe contract."
 msgstr "國際外匯或商品價格波動非常劇烈，很難預測。由於波動幅度較大，加上報價體系對網站有利(以下將詳細說明)，因此在我們系統中買入的金融合約都不得視為安全合約（不論賠付額是否大於期權費金額）。"
 
 msgid "Internet trading risks"
-msgstr ""
+msgstr "網路交易風險"
 
 msgid "Interpretation"
 msgstr "釋義"
@@ -5970,29 +5973,26 @@ msgstr "釋義"
 msgid "Introduce %1"
 msgstr "介紹%1"
 
+msgid "Introducing Binary Grid"
+msgstr "導入 Binary 網格"
+
 msgid "Introducing Broker"
-msgstr ""
+msgstr "推介經紀"
 
 msgid "Introducing Broker warranties"
-msgstr ""
+msgstr "推介經紀擔保"
 
 msgid "Introducing USB"
 msgstr "推出USB"
-
-msgid "Introducing the new %1 desktop app"
-msgstr "推出新的 %1 桌面應用程式"
 
 msgid "Introduction"
 msgstr "簡介"
 
 msgid "Introduction of clients and instructions"
-msgstr ""
+msgstr "客戶介紹和說明"
 
 msgid "Introduction to binary options on MT5"
 msgstr "MT5 二元期權交易簡介"
-
-msgid "Intuitively simple"
-msgstr "直觀式簡易"
 
 msgid "Invalid document format."
 msgstr "無效的文檔格式."
@@ -6004,7 +6004,7 @@ msgid "Invalid verification code."
 msgstr "無效的驗證代碼。"
 
 msgid "Invast Financial Services Pty Ltd"
-msgstr ""
+msgstr "Invast Financial Services Pty Ltd"
 
 msgid "Investigate client accounts that have been flagged by existing fraud controls and processes"
 msgstr "對已被現有欺詐控制和流程標記的用戶端帳戶進行調查"
@@ -6016,7 +6016,7 @@ msgid "Investing in complex products, such as CFDs and FX may incur losses as we
 msgstr "差價合約和外匯等複雜產品投資可能會令您蒙受損失，但也可能獲利。價格可能會因為目前市場價格和條件的變化而變動和/或波動，這可能會影響您的投資回報。做出投資決定之前，您應該參考我們網站上的%1關鍵資訊文檔%2，特別是我們提供的特定工具所需的保證金金額。 Binary Investments（Europe）Ltd提供的產品屬於「複雜產品」類別，可能不適合零售客戶。"
 
 msgid "Investing or trading in contracts exposes the client to the performance of the underlying or reference instrument or asset to which the Binary contract refers, including foreign exchange, indices, and commodities, each of which have their own features and risks."
-msgstr ""
+msgstr "合同投資或交易將客戶顯示在 Binary 合同所指的標的或參考工具或資產的效能中，包括外匯、指數和商品，每一種都各有其自身的特點和風險。"
 
 msgid "Investment"
 msgstr "投資"
@@ -6025,7 +6025,7 @@ msgid "Investment Income"
 msgstr "投資收入"
 
 msgid "Investment Products to EEA residents are provided by Binary Investments (Europe) Ltd (\"BIEL\"), which is authorised and regulated by the Malta Financial Services Authority under the Malta Investment Services Act to deal on own account in Investment Products."
-msgstr ""
+msgstr "想要進行產品投資的 EEA 居民由 Binary 投資(歐洲) 有限公司 (\"BIEL\") 提供服務，其受馬爾他金融投資服務機構根據馬爾他投資服務法授予執照及監管，使用者可通過自己的帳戶進行產品投資。"
 
 msgid "Investments &amp; Dividends"
 msgstr "投資&amp;分紅"
@@ -6058,61 +6058,61 @@ msgid "Issued under your own name"
 msgstr "以您自己的名字發出"
 
 msgid "It is agreed and understood that any of the Parties may terminate this agreement by giving seven days written notice to the other Party."
-msgstr ""
+msgstr "雙方同意並理解, 任何一方均可通過給予另一方七天書面通知終止本協議。"
 
 msgid "It is agreed and understood that the Company may unilaterally terminate this agreement if any of the events mentioned in the paragraphs above occurs"
-msgstr ""
+msgstr "雙方同意並理解如發生任何上述各段所述的事件，公司可單方面終止本協議"
 
 msgid "It is agreed that Confidential Information shall be considered as confidential even after the termination of the business relationship established under this agreement or any other agreement or arrangement between the Parties."
-msgstr ""
+msgstr "雙方同意機密資訊即使在根據本協議或雙方訂下的任何其他協議或安排建立的商業關係終止後必須持續視為機密。"
 
 msgid "It is agreed that any deposits through the Agent shall be made as follows:"
-msgstr ""
+msgstr "雙方同意任何通過代理的存款須以如下方式執行:"
 
 msgid "It is agreed that any withdrawals through the Agent shall be made as follows:"
 msgstr "雙方同意任何通過代理的提款須以如下方式執行："
 
 msgid "It is agreed that on the Commencement Date of this agreement and on the date of each transaction, the Agent represents and warrants the following:"
-msgstr ""
+msgstr "雙方同意代理須於本協議的生效日期和每次交易的日期聲明並保證如下："
 
 msgid "It is agreed that the Company shall not be responsible or liable for any matter arising out of or in relation to the use and operation of any website owned or used by the Agent. It is understood that the Agent shall indemnify the Company for all and any losses that the Company may suffer arising out of, or in relation to the use or operations of any website used or owned by the Agent."
 msgstr "雙方同意公司不須對代理擁有與使用和操作任何網站所造成的任何事項承擔任何責任。雙方理解，由於代理擁有與使用或操作任何網站所造成公司可能遭受的所有和任何損失，代理須負責賠償。"
 
 msgid "It is further agreed and understood that the Agent shall not use any domain name that includes the name %1 and any derivation or variation of this name that might give the impression that the Company and the Agent are the same person."
-msgstr ""
+msgstr "雙方進一步同意並理解代理不可使用任何包括 %1 的名稱和此名稱的任何能夠給人印象為公司和代理是同一法人的衍生或變化的域名。"
 
 msgid "It is further noted that the Company shall be the sole owner of all rights, titles, or interests whatsoever of data and other information generated or produced and distributed by or through %1 electronic systems and other electronic systems used by %1, along with any modifications."
-msgstr ""
+msgstr "雙方進一步指定公司須是通過%1 電子系統和其他%1使用的電子系統生成和產生和分發的任何數據和其他資料，包括任何修改版本的所有權利、名份或利益的唯一擁有者。"
 
 msgid "It is hereby agreed as follows: "
-msgstr ""
+msgstr "特此同意如下： "
 
 msgid "It is important that clients refer their disputes to the appropriate ADR for the claims to be valid."
-msgstr ""
+msgstr "客戶必須將爭議交給適合的其他糾紛調解機構，這樣客戶的索賠才會有效，這點很重要。"
 
 msgid "It is important that the client monitor all of the client's positions closely. It is the client's responsibility to monitor the client's positions, and during the period that the client has any open contracts, the client should always have the ability to access the client's accounts."
-msgstr ""
+msgstr "至關重要的是客戶必須緊密監控所有頭寸。監控頭寸是客戶的責任，而且在客戶擁有任何未平倉合約期間，客戶必須能夠隨時存取其帳戶。"
 
 msgid "It is noted that immediately upon the termination of the relationship between the Company and the Agent, the Agent shall return to the Company any documents pertaining to the Company's business whatsoever which are in the Agent's possession."
-msgstr ""
+msgstr "雙方理解，公司與代理之間的關係終止後，代理須立刻將與公司業務有關的任何由代理暫時保管的文件退還公司。"
 
 msgid "It is prohibited to sell, transfer, and/or acquire accounts to/from other clients. Transfer of funds among other clients is also prohibited."
-msgstr ""
+msgstr "禁止售出、轉讓和/或獲取其他客戶的帳戶。也禁止跟其他客戶互相轉匯資金。"
 
 msgid "It is sometimes possible to sell an option before the expiry of a trade, but only if a fair price can be determined. If this option is available, you will see a 'Sell' button inside the popup window, after clicking on the 'View' button next to your trade in the portfolio."
 msgstr "有時候您能在交易到期前賣出合約，但僅在可確定公平價格時方可實現。如果此選項可用，在點選投資組合中您的交易一側的「檢視」按鈕後，您會在快顯視窗中看到「賣出」按鈕。"
 
 msgid "It is the Company's commitment to safeguard the client's privacy online at all times. The Company only uses the client's personal information to help the Company service the client's account, to improve the Company's services to the client, and to provide the client with products that the client has requested. The Company does not sell the client's personal information to third parties, but the Company may provide it to payment providers to facilitate transactions on the client's account."
-msgstr ""
+msgstr "公司承諾將隨時保護客戶的線上隱私。公司僅使用客戶的個人資訊服務客戶的帳戶、改善對客戶的服務和為客戶提供要求的產品。公司不會向第三方出售客戶的個人資訊，但是公司可能會向支付提供者提供客戶的個人資訊以方便交易。"
 
 msgid "It is the client's responsibility to keep their password and login ID confidential. The client agrees not to disclose their password and login ID to any other person."
-msgstr ""
+msgstr "維護客戶的密碼和登入 ID 保密性是客戶的責任。客戶同意不會向任何其他人透露其密碼和登入 ID。"
 
 msgid "It is the responsibility of each client to read and understand this legal notice and the terms and conditions pursuant to which an acquisition of financial contracts via this site is governed."
-msgstr ""
+msgstr "所有客戶都有責任閱讀並理解本法律通知，以及通過本網站買入金融合約需要遵循的條款和條件。"
 
 msgid "It will be released to the client's account upon approval."
-msgstr ""
+msgstr "一經批准，公司將把獎金匯入客戶的帳戶。"
 
 msgid "It's completely free to join our IB programme. We've never charged a fee and we never will."
 msgstr "加入IB計劃是完全免費的。我們從未、將來也不會收取費用。"
@@ -6127,7 +6127,7 @@ msgid "Item"
 msgstr "項目"
 
 msgid "J. Electronic trading platform and Transactions"
-msgstr ""
+msgstr "十、電子交易平台和交易"
 
 msgid "Jan"
 msgstr "一月"
@@ -6169,7 +6169,7 @@ msgid "Jurisdiction and Choice of Law"
 msgstr "管轄和法律規定"
 
 msgid "K. Event of Default"
-msgstr ""
+msgstr "十一、違約事件"
 
 msgid "Keep Safe"
 msgstr "保持安全"
@@ -6262,7 +6262,7 @@ msgid "Kuala Lumpur Office"
 msgstr "吉隆坡辦公室"
 
 msgid "L. Manifest Error"
-msgstr ""
+msgstr "十二、清單錯誤"
 
 msgid "Labuan"
 msgstr "納閩"
@@ -6301,10 +6301,10 @@ msgid "Latest bank statement or any government-issued letter which contains your
 msgstr "包含您的姓名和地址的最新銀行月結單或任何由政府出具的信函"
 
 msgid "Law"
-msgstr ""
+msgstr "法律"
 
 msgid "Laws regarding financial contracts vary throughout the world, and it is the responsibility of clients accessing this site to ensure that they understand and fully comply with any laws or regulations relevant to themselves in their own country. This site does not constitute, and may not be used for the purposes of, an offer or solicitation to anyone in any jurisdiction in which such offer or solicitation is not authorised or to any person to whom it is unlawful to make such offer or solicitation. Access to this site and the offering of financial contracts via this site in certain jurisdictions may be restricted and, accordingly, clients accessing this site are required to inform themselves about, and to observe, such restrictions."
-msgstr ""
+msgstr "世界各地有關金融合約的法律各不相同，存取本網站的客戶有責任確保自己了解並完全遵守所在國家與其相關的法律規定。本網站既不構成、也不能用於任何在司法管轄區未經授權或非法的要約或要約邀請。存取本網站以及本網站提供的金融合約在部分司法管轄區受到限制，存取本網站的客戶須自行獲知，並遵守此類限制。"
 
 msgid "Lay out mockups and wireframes for app screens and web pages"
 msgstr "為應用螢幕和網頁佈局模型和線框"
@@ -6355,7 +6355,7 @@ msgid "Legal"
 msgstr "法律"
 
 msgid "Legal compliance"
-msgstr ""
+msgstr "遵守法律"
 
 msgid "Less than $100,000"
 msgstr "少於$100,000"
@@ -6391,7 +6391,7 @@ msgid "Leverage"
 msgstr "槓桿"
 
 msgid "Leverage can be used to generate returns that are of multiple times higher than the amount set aside from the client's account balance to open and maintain a transaction (the client's margin). However, investments that have the potential to deliver greater investment returns carry higher levels of risk. This means that if the price movement is against the client's favour, the client will suffer losses that are multiple times higher than the amount set aside from the client's account balance to open and maintain a transaction (the client's margin)."
-msgstr ""
+msgstr "槓桿可以用於生成比從客戶的帳戶餘額撥出進行開盤持倉交易（客戶的保證金）的金額高出多倍的回報。然而，進行可能帶來更大投資回報的投資具更高風險。這意味著，如果價格走勢對客戶不利，客戶將蒙受比從其帳戶餘額撥出進行開盤持倉交易（客戶的保證金）的金額高出多倍的虧損。"
 
 msgid "Leverage gives you the ability to trade a larger position using your existing capital."
 msgstr "槓桿使您能夠以現有資本進行更大頭寸交易。"
@@ -6400,7 +6400,7 @@ msgid "Leverage up to %1"
 msgstr "槓桿率高達%1"
 
 msgid "Leverage, in the context of margin trading, refers to the use of margin to increase/amplify the value of a trade. Leverage is expressed as a ratio. A 50:1 leverage, for example, means that the client would be able to enter into a trade position that is of 50 times higher than the client's margin. When the client invests in a leveraged product, the client's profit or loss is based on the leveraged position, i.e. the increased/amplified value of the client's trade is determined based on the leverage ratio that the client has set for the client's account."
-msgstr ""
+msgstr "融資融券交易中，槓桿指使用保證金增加/擴大交易數值。槓桿的表達方式是比率。舉個例子，如果槓桿是50: 1，客戶將能夠持有比保證金高出 50 倍的交易頭寸。當客戶投資一種槓桿產品時，其盈利或虧損將根據槓桿的頭寸計算，也就是說，客戶為帳戶設定的槓桿比率決定了其交易增加/擴大數值。"
 
 msgid "Liability"
 msgstr "責任"
@@ -6421,7 +6421,7 @@ msgid "Life in Malta moves at a slower pace with a number of colourful festiviti
 msgstr "馬爾他的生活步伐比較緩慢, 每年都有許多豐富多彩的慶祝活動和宗教節日。其中一些最受歡迎的包括諾特·比安卡、馬爾他爵士音樂節、聖誕節和復活節。如果您注重的是文化交流, 馬爾他有的是博物館、考古遺址和其他名勝古蹟。"
 
 msgid "Likelihood of execution and settlement - the depth of liquidity of the market to which client order is related"
-msgstr ""
+msgstr "執行和結算可能性 - 客戶的訂單相關的市場流動性深度"
 
 msgid "Limit"
 msgstr "限額"
@@ -6430,19 +6430,22 @@ msgid "Limit Order"
 msgstr "限價訂單"
 
 msgid "Limit applies until"
-msgstr ""
+msgstr "限制有效期至"
 
 msgid "Limit/Limit Price"
 msgstr "限制/限價"
 
 msgid "Limitation of liability"
-msgstr ""
+msgstr "責任限制"
 
 msgid "Limitations on liability"
-msgstr ""
+msgstr "責任限制"
 
 msgid "Limited license grant"
-msgstr ""
+msgstr "有限的許可授權"
+
+msgid "Limited risks"
+msgstr "有限風險"
 
 msgid "Limits"
 msgstr "限額"
@@ -6451,7 +6454,7 @@ msgid "Limits 1 to 3 may only be changed or increased after 7 days' notice."
 msgstr "1 到3 的限額僅可在7 天通知期後才可更改或增加。"
 
 msgid "Link to and direct the Company's clients to the Programmer's Application."
-msgstr ""
+msgstr "連結並引導公司客戶加入程式設計員的應用程式。"
 
 msgid "Links"
 msgstr "連結"
@@ -6996,6 +6999,9 @@ msgstr "方式"
 msgid "Meticulous English language skills, with keen eye for detail when it comes to punctuation, spelling, grammar, and syntax"
 msgstr "熟練的英語語言技能, 特別注重關於標點、拼寫、語法和句法方面的細節"
 
+msgid "Micro-trading on the go"
+msgstr ""
+
 msgid "Min"
 msgstr "最小"
 
@@ -7176,6 +7182,9 @@ msgstr "多個帳戶管理器 (MAM)"
 msgid "Multiple Accounts Manager (MAM) for MetaTrader 5 (MT5)"
 msgstr "MetaTrader 5 (MT5) 的多個帳戶管理器 (MAM)"
 
+msgid "Multiple contracts at a time"
+msgstr ""
+
 msgid "Multiple opportunities"
 msgstr "多重機會"
 
@@ -7196,6 +7205,9 @@ msgstr ""
 
 msgid "N/A"
 msgstr "不可用"
+
+msgid "NEED HELP?"
+msgstr ""
 
 msgid "NETELLER provides businesses and individuals with a fast, simple, and secure way to transfer money online. For more information, please visit %1."
 msgstr "NETELLER 為企業和個人提供快速、簡單、安全的線上匯款。欲知詳情, 請存取 %1。"
@@ -7644,6 +7656,9 @@ msgstr "訂立合約"
 msgid "Open positions"
 msgstr "空缺"
 
+msgid "Open several positions across multiple cells simultaneously."
+msgstr ""
+
 msgid "Open-Source Projects"
 msgstr "開源專案"
 
@@ -7748,6 +7763,9 @@ msgstr "我們公司繼續茁壯成長，並在曼島獲得執照，可以為我
 
 msgid "Our customers clearly like us. In mid-2014, %1 has over 100 million historical transactions and over 130,000 new daily transactions."
 msgstr "毋庸置疑，我們深受客戶喜愛。 2014年中旬，%1的歷史交易數量和每日新交易數量分別超過1億筆和13萬筆。"
+
+msgid "Our exciting new mobile trading app"
+msgstr ""
 
 msgid "Our fast organic growth is supplemented by the acquisition of the client base of BetsForTraders, one of our main competitors."
 msgstr "我們獲取了主要競爭對手之一 BetsForTraders 的客戶群，給予我們公司茁壯成長為的能量。"
@@ -9144,6 +9162,9 @@ msgstr "篩選和批准網站內容和市場行銷活動"
 msgid "Scrutinise clients' user behaviour on our trading platform"
 msgstr "透過我們的交易平台查看客戶的使用者行為"
 
+msgid "Seamless trading on your mobile device, at the speed of touch."
+msgstr ""
+
 msgid "Search..."
 msgstr "搜索..."
 
@@ -9505,6 +9526,9 @@ msgid "Speculative"
 msgstr "投機"
 
 msgid "Speed - the speed at which client order can be executed"
+msgstr ""
+
+msgid "Speed of touch"
 msgstr ""
 
 msgid "Spot"
@@ -11293,7 +11317,7 @@ msgid "The price of the currency pair indicates how much of the quote currency i
 msgstr "貨幣對的價格表示買入一單位基準貨幣需要多少報價貨幣。這通常被稱為匯率。"
 
 msgid "The products offered via this website include binary options, contracts for difference (\"CFDs\") and other complex derivatives. Trading binary options may not be suitable for everyone. Trading CFDs carries a high level of risk since leverage can work both to your advantage and disadvantage. As a result, the products offered on this website may not be suitable for all investors because of the risk of losing all of your invested capital. You should never invest money that you cannot afford to lose, and never trade with borrowed money. Before trading in the complex products offered, please be sure to understand the risks involved and learn about %1Responsible Trading%2."
-msgstr ""
+msgstr "通過本網站提供的產品包括二元期權、差價合約 (CFD) 以及其他復雜衍生產品。二元期權交易不是每個人都適合。差價合約交易有很高的風險, 因為槓桿作用可能對您有利，但也可能會對您不利。因此, 本網站提供的產品可能不適合所有投資者, 因為您的所有投入資金都有虧損的風險。您不應該將您無法承擔虧損的資金投入交易, 也不可使用借來的錢交易。對所提供的複雜產品開始交易前, 請務必了解所涉及的風險, 並了解%1負責任交易%2。"
 
 msgid "The profit is the difference between the purchase price (the stake) and the payout on a winning trade."
 msgstr "利潤即盈利交易中所得賠付金額與購買價格（成本）之間的差額。"
@@ -11736,6 +11760,9 @@ msgstr "跳動點"
 msgid "Tick Prediction"
 msgstr "跳動點預測"
 
+msgid "Tick Trade Android App"
+msgstr ""
+
 msgid "Ticks"
 msgstr "跳動點"
 
@@ -12003,6 +12030,9 @@ msgstr "讓您了解個人資料、交易和資金總是安全並充滿信心進
 msgid "Trade currencies, indices, commodities and more in rising, falling, sideways, quiet, and volatile markets"
 msgstr "在各種市場環境（上漲、下跌、橫盤整理、交易清淡和震盪）中交易外匯、指數、商品及其它"
 
+msgid "Trade in the moment with your touch screen device."
+msgstr ""
+
 msgid "Trade in the world's financial markets"
 msgstr "在世界金融市場交易"
 
@@ -12128,9 +12158,6 @@ msgstr "此國家不提供交易時間。如果您有活躍的 %1 帳戶, 請%2�
 
 msgid "TradingView"
 msgstr "TradingView"
-
-msgid "TradingView for %1"
-msgstr "%1專用的TradingView"
 
 msgid "Trailing stops"
 msgstr ""
@@ -12396,9 +12423,6 @@ msgstr "理解"
 msgid "Unemployed"
 msgstr "Unemployed"
 
-msgid "Unified ecosystem"
-msgstr "統一生態系統"
-
 msgid "United Kingdom"
 msgstr "英國"
 
@@ -12488,9 +12512,6 @@ msgstr ""
 
 msgid "Use or reproduce the %1 API other than as permitted by these Terms"
 msgstr ""
-
-msgid "Use our native desktop app for a more secure and faster trading experience."
-msgstr "使用我們的本機桌面應用程式, 獲得更安全和更快的交易體驗。"
 
 msgid "Use the %1 API for any purpose that violates any law or regulation or any right of any person, including but not limited to intellectual property rights, rights of privacy, or rights of personality, or is in any manner inconsistent with these Terms or privacy policy"
 msgstr ""
