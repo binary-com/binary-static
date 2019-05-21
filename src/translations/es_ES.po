@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-05-21 03:06\n"
+"PO-Revision-Date: 2019-05-21 04:55\n"
 "Last-Translator: binarycom\n"
 "Language-Team: Spanish\n"
 "MIME-Version: 1.0\n"
@@ -473,9 +473,6 @@ msgstr "%1No, cambie la moneda de mi cuenta fiat ahora%2"
 
 msgid "%1Return to trading page%2"
 msgstr "%1Volver a la página de comercio%2"
-
-msgid "%1Telephone numbers in other locations%2"
-msgstr "%1Números telefónicos en otras ubicaciones%2"
 
 msgid "%1Your Proof of Identity or Proof of Address%2 did not meet our requirements. Please check your email for further instructions."
 msgstr "%1Su comprobante de identidad o de domicilio%2 no cumple nuestros requisitos. Por favor, revise su correo electrónico para más instrucciones."
@@ -2663,7 +2660,7 @@ msgid "Clients shall not hold or pool third-party funds into their own account h
 msgstr "Los clientes no retendrán ni juntarán los fondos de otros clientes o de terceros en su propia cuenta con la Empresa."
 
 msgid "Clients should read these ST&Cs carefully as well as the Summary order execution policy and Summary conflicts policy, the applicable Contract details together with the Risk disclosure notice and any other documents that BIEL has supplied or in the future supplies to clients."
-msgstr ""
+msgstr "Los clientes deben leer estos T&C's con mucha atención, así como el resumen de la política de ejecución de órdenes y el resumen de la política de conflictos, los detalles de contrato aplicables y el aviso de divulgación de riesgos, y cualquier otro documento que BIEL haya ofrecido u ofrecerá en el futuro a los clientes para su atención."
 
 msgid "Clients who do not wish to renew the self-exclusion and make a request to begin trading again, shall be given one day to cool off before being allowed access to the website. It is important to note that contact must be made to our customer services via telephone. Email contact is not sufficient."
 msgstr "A los clientes que no deseen renovar la auto-exclusión y hacen una solicitud para volver a operar en su cuenta, se les dará un día de reflexión antes de poder acceder a la página web. Es importante tener en cuenta que el contacto con nuestro servicio al cliente debe hacerse a través del teléfono. El contacto por correo electrónico no se considera suficiente."
@@ -5444,7 +5441,7 @@ msgid "If the Programmer is developing on the Company's API on behalf of a compa
 msgstr "Si el Programador está desarrollando en nuestra API en nombre de una empresa u otra entidad, usted declara y garantiza que tiene autoridad legal plena para registrar una Aplicación en nombre de esa entidad y la somete a estos Términos. Si usted no está autorizado, no puede aceptar estos Términos o registrar una Aplicación para otra persona."
 
 msgid "If the Programmer is entering into this Agreement on behalf of the Programmer's employer or other entity, the Programmer represents and warrants that the Programmer has full legal authority to bind the Programmer's employer or such entity to this Agreement."
-msgstr ""
+msgstr "El Programador está aceptando este Acuerdo en nombre de su empleador u otra entidad, el mismo declara y garantiza que tiene autoridad legal plena para vincular a su empleador o a dicha entidad a este Acuerdo."
 
 msgid "If the bid price is 1.05229, you'll buy USD 1.05229 for every EUR 1 you sell."
 msgstr "Si el precio de compra es 1,05229, usted comprará 1,05229 USD por cada euro que venda."
@@ -9816,7 +9813,7 @@ msgid "Sunday"
 msgstr "Domingo"
 
 msgid "Supplementary terms and conditions for Financial Products offered by Binary Investments (Europe) Ltd"
-msgstr ""
+msgstr "Términos y Condiciones Suplementarios para los productos financieros ofrecidos por Binary Investments (Europe) Ltd"
 
 msgid "Supply - Decline or increase in supply"
 msgstr "Oferta - Disminución o aumento de la oferta"
@@ -10750,7 +10747,7 @@ msgid "The Programmer may develop Applications using the %1 API as soon as the P
 msgstr "El Programador podrá desarrollar Aplicaciones usando la API de %1 tan pronto como registre una Aplicación y acepte cumplir estos Términos."
 
 msgid "The Programmer may not assign rights granted in this Agreement without the Company's prior written approval."
-msgstr ""
+msgstr "El Programador no podrá ceder los derechos concedidos en este Acuerdo sin previa autorización por escrito de la Empresa."
 
 msgid "The Programmer may store the Application-specific alphanumeric user IDs provided (\"API Tokens\") or the authentication tokens provided via Open Authorisation Standard (\"OAuth Tokens\")."
 msgstr "El Programador podrá guardar los IDs de usuario alfanuméricos específicos de la Aplicación (\"Tokens de la API\") o los tokens de autenticación que se le proporcionen a través de la Norma de Autorización Abierta ( \" Tokens OAuth\")."
@@ -11397,6 +11394,9 @@ msgstr "La apuesta es el monto que el comerciante debe pagar para comprar un con
 msgid "The sum received in the %1 Agent Account shall be subsequently transferred by the Agent to the respective client's %1 account (hereinafter referred to as the \"%1 Client Account\")."
 msgstr ""
 
+msgid "The system failed to verify your identity. Please check your email for details and the next steps."
+msgstr ""
+
 msgid "The system fills orders on a first-in, first-out basis, i.e. based on the sequence of the order received, and this is beyond the Company's control. As a result, the client may find it difficult or impossible to close a position at the intended price stipulated in the client's stop order during certain market conditions. The placement of stop order by the client, though useful as a risk management tool, will not necessarily limit the client's losses to the client's intended amounts in the event of highly volatile trading conditions, since market conditions may make it impossible to execute such orders, and there is uncertainty about the client's possible exit price. In short, a stop order is not guaranteed because it cannot operate in all market circumstances."
 msgstr ""
 
@@ -11507,10 +11507,10 @@ msgid "These ST&Cs are to be governed by and construed in accordance with Maltes
 msgstr ""
 
 msgid "These ST&Cs begin to apply on the date BIEL opens the client's account, and, for any new versions after that, on the date BIEL notifies the client."
-msgstr ""
+msgstr "Estos T&C's comenzarán a aplicarse desde la fecha en la que BIEL abra la cuenta del cliente y, para cualquier versión posterior a esta fecha BIEL le notificará aparte."
 
 msgid "These ST&Cs form part of, and need to be read together with, the general terms and conditions relating to the use of %1."
-msgstr ""
+msgstr "Estos T&C's forman parte de y tienen que ser leídos junto con los Términos y Condiciones Generales relevantes al uso de %1."
 
 msgid "These are trades where the trader predicts if a market will finish higher or lower than a specified price target."
 msgstr "Estos son los contratos en los que el comerciante predice si el mercado terminará por encima o debajo de un determinado objetivo de precio."
@@ -11534,7 +11534,7 @@ msgid "These materials may not be copied or redistributed for commercial purpose
 msgstr "Estos materiales no pueden ser copiados o redistribuidos con fines comerciales o para compensación de ningún tipo sin el permiso previo por escrito de alguna empresa del grupo Binary."
 
 msgid "These supplementary terms and conditions (these \"ST&Cs\") apply solely to the client of Binary Investments (Europe) Ltd (\"BIEL\") and will govern the relationship between clients and BIEL when trading Financial Products (as defined in the Key information documents %1here%2) with BIEL."
-msgstr ""
+msgstr "Estos Términos y Condiciones Complementarios (estos \"T&C's\") se aplican únicamente a los clientes (\"usted\") de Binary Investments (Europe) Ltd (\"BIEL\", \"nosotros\" o \"nos\") y regirán la relación entre los clientes y BIEL al momento de operar con Productos Financieros de BIEL (como se define en los documentos de Información Clave %1aquí%2)."
 
 msgid "These supplementary terms and conditions (these \"ST&Cs\") apply solely to the clients of Binary Investments (Europe) Ltd (\"BIEL\") and will govern the relationship between the client and BIEL when trading Financial Products (as defined below) with BIEL."
 msgstr ""
@@ -13687,9 +13687,6 @@ msgstr "Se abrirá tu cuenta con %1, y estará sujeta a la jurisdicción y a las
 
 msgid "Your address has been recognised by our system."
 msgstr "Su dirección ha sido reconocida por nuestro sistema."
-
-msgid "Your age verification failed. Please contact customer service for assistance. %1%1 %2Telephone:%3 %1 United Kingdom %1 +44 (0) 1666 800042 %1 0800 011 9847 (Toll Free)"
-msgstr "Su verificación de edad falló. Por favor, póngase en contacto con el servicio de atención al cliente para obtener ayuda.  %1%1 %2Teléfono:%3 %1 Reino Unido %1 +44 (0) 1666 800042 %1 0800 011 9847 (llamada gratuita)"
 
 msgid "Your application to be treated as a professional client is being processed."
 msgstr "Su solicitud para ser tratado como un cliente profesional es procesada."
