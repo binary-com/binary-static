@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-05-20 04:45\n"
+"PO-Revision-Date: 2019-05-21 01:34\n"
 "Last-Translator: binarycom\n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -215,6 +215,9 @@ msgstr "%1 天 %2 小时 %3 分钟"
 
 msgid "%1 deposit from %2 to account number %3 is done. Transaction ID: %4"
 msgstr "已完成从%2至账号%3的%1存款。交易编号: %4"
+
+msgid "%1 desktop app"
+msgstr ""
 
 msgid "%1 does not charge any transfer fees."
 msgstr "%1不收取任何转账费用。"
@@ -834,17 +837,14 @@ msgstr "访问 MT5 仪表板"
 msgid "Access all available tools and features for trading on MT5, including Expert Advisors (EAs), charts, and order types"
 msgstr "访问所有可用的工具和功能包括智能交易系统 (EAs)、图表和订单类型，以便在MT5交易"
 
-msgid "Access all our trading platforms and charting tools from a single app."
-msgstr "透过单一的应用程序访问我们所有的交易平台和图表工具。"
-
 msgid "Access market quotes and trade execution from top-tier liquidity providers, including banks and non-banks."
 msgstr "通过顶级流动性提供商，包括银行和非银行机构访问市场报价和执行交易。"
 
 msgid "Access multi-asset liquidity from top-tier institutions."
 msgstr "顶级机构提供多种资产的流动性服务。"
 
-msgid "Access our products and services from a single app"
-msgstr "透过单个应用程序访问我们的产品和服务"
+msgid "Access out products and services from a single app."
+msgstr ""
 
 msgid "Access the markets anytime, anywhere from your Android device."
 msgstr "随时随地透过Android设备访问市场。"
@@ -1252,7 +1252,7 @@ msgid "Amount in"
 msgstr "金额单位为"
 
 msgid "An Ends Between trade pays out if the market exit price is strictly higher than the low price target AND strictly lower than the high price target. An Ends Outside binary pays out if the market exit price is EITHER strictly higher than the high price target OR strictly lower than the low price target."
-msgstr "如果市场平仓价格严格高于 \"低\" 目标价格以及严格低于 \"高\"目标价格，“收于范围之内”交易将可获利。如果市场平仓价格严格高于 \"高\" 目标价格或严格低于 \"低\"目标价格，“收于范围之外”交易将可获利。"
+msgstr "如果市场平仓价格严格高于 \"低\" 目标价格以及严格低于 \"高\"目标价格，“到期在范围之内”交易将可获利。如果市场平仓价格严格高于 \"高\" 目标价格或严格低于 \"低\"目标价格，“到期在范围之外”交易将可获利。"
 
 msgid "An Open Position may be closed by clicking the button \"x\"."
 msgstr "单击“x”按钮可以将持仓头寸平仓。"
@@ -2034,6 +2034,9 @@ msgstr "Binary Bot 已发布"
 msgid "Binary Coin"
 msgstr "Binary 硬币"
 
+msgid "Binary Grid"
+msgstr ""
+
 msgid "Binary Group (hereinafter referred to as 'Binary Group of companies', 'the Company') is commited to protecting the privacy and security of the applicant's personal information. This privacy notice sets out the types of data that the Company collects on the applicant. It also sets out how the Company collect and use the applicant' personal data, and how long it keeps them and other relevant information about the applicant's data in accordance with the General Data Protection Regulation (EU) 2016/679 (hereafter referred to as 'GDPR') and Data Protection Act 2018."
 msgstr "Binary集团 (以下简称 \"Binary集团\"、\"公司\") 致力于保护申请人个人信息的隐私和安全。本隐私声明列出了公司向申请人收集的数据类型。同时还列出了公司如何根据(EU) 2016/679《一般数据保护条例》 (以下简称为 \"GDPR ') 和2018数据保护法收集和使用申请人的个人数据、保存期限以及关于申请人数据的其他相关信息。"
 
@@ -2087,9 +2090,6 @@ msgstr "MT5二元期权"
 
 msgid "Binary Shop"
 msgstr "Binary商店"
-
-msgid "Binary Tick Trade App"
-msgstr "Binary跳动交易应用程序"
 
 msgid "Binary WebTrader"
 msgstr "Binary WebTrader"
@@ -3664,6 +3664,12 @@ msgstr "睡眠和非活跃账户"
 msgid "Download"
 msgstr "下载"
 
+msgid "Download Binary Grid"
+msgstr ""
+
+msgid "Download Binary Grid for Android now"
+msgstr ""
+
 msgid "Download Binary VPN app For Android"
 msgstr "下载android版Binary VPN 应用程序"
 
@@ -3688,20 +3694,17 @@ msgstr "Windows版MT5下载"
 msgid "Download MT5 for your desktop or laptop to access the powerful tools and features enjoyed by millions of traders."
 msgstr "MT5是强大的多功能交易工具，备受百万多名交易员的爱载，请下载到台式电脑或笔记本电脑上使用。"
 
+msgid "Download Tick Trade App"
+msgstr ""
+
 msgid "Download our VPN app for your preferred device"
 msgstr "为您倾向的设备下载VPN 应用程序"
 
 msgid "Download our VPN app now"
 msgstr "立刻下载VPN应用程序"
 
-msgid "Download our desktop app now:"
-msgstr "立刻下载我们的桌面应用程序:"
-
 msgid "Download the %1desktop app%2 for the most secure way to access the %3 website."
 msgstr "下载 %1桌面应用程序%2 以获得 %3 网站最安全的访问方式。"
-
-msgid "Download the Android app"
-msgstr "下载 Android 应用程序"
 
 msgid "Download your statement"
 msgstr "下载月结单"
@@ -3953,19 +3956,19 @@ msgid "Endpoint"
 msgstr "终结点"
 
 msgid "Ends Between"
-msgstr "区间之内结束"
+msgstr "到期在范围之内"
 
 msgid "Ends Between/Ends Outside"
-msgstr "到期范围之内/之外"
+msgstr "到期在范围之内/之外"
 
 msgid "Ends Between/Ends Outside contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
-msgstr "如果开始和结束期间价格跳动次数少于2，“到期时价格处于某个范围之内/之外”合约购入价将全额退还。"
+msgstr "如果开始和结束期间价格跳动次数少于2，“到期在范围之内/之外”合约购入价将全额退还。"
 
 msgid "Ends Between/Ends Outside trades"
-msgstr "“收于范围之内/之外”的交易"
+msgstr "“到期在范围之内/之外”的交易"
 
 msgid "Ends Outside"
-msgstr "区间之外结束"
+msgstr "到期在范围之外"
 
 msgid "Engage in market development to grow the client base for existing products and platforms of the company"
 msgstr "参与市场开发, 扩大公司现有产品和平台的客户群"
@@ -3979,8 +3982,8 @@ msgstr "从事误导性、虚幻或虚假的广告或承诺"
 msgid "Engage in misleading, illusory, or deceptive conduct"
 msgstr "从事误导性、虚幻或欺骗的行为"
 
-msgid "Enhanced performance"
-msgstr "增强的性能"
+msgid "Enhanced performance. Intuitively simple."
+msgstr ""
 
 msgid "Enjoy a trading platform that's easy to navigate and use"
 msgstr "享受简单操作、轻松浏览的交易平台"
@@ -4453,9 +4456,6 @@ msgstr "以透明的方式向客户公平准确地描述Binary的业务和服务
 msgid "Fairly and accurately describe the Agent's services to the clients"
 msgstr "公正准确地向客户描述代理的服务"
 
-msgid "Familiar with our website? Our desktop app is designed to give you the same intuitive experience."
-msgstr "对我们的网站很熟悉？我们的桌面应用程序设计为您提供相同的直观体验。"
-
 msgid "Familiarity with Git"
 msgstr "熟悉 Git"
 
@@ -4911,6 +4911,9 @@ msgstr "每月十五日前准时付款。自从2004年3月开始推展计划以�
 
 msgid "Get started with MT5"
 msgstr "开始使用MT5"
+
+msgid "Get started with stakes as low as 20¢."
+msgstr ""
 
 msgid "Get started with the %1 Expert Advisor (EA) for binary options trading on MT5 by following these steps:"
 msgstr "执行以下步骤, 开始使用 %1 智能交易系统 (EA) 在MT5 进行二元期权交易:"
@@ -5555,10 +5558,10 @@ msgid "If you select \"Does Not Touch\", you win the payout if the market never 
 msgstr "如果您选择“未触及”期权，假设市场在 <strong>合约期限内</strong>一直没有触及<strong>障碍水平</strong>，您将获得赔付。"
 
 msgid "If you select \"Ends Between\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>Low barrier</strong> AND strictly lower than the <strong>High barrier</strong>."
-msgstr "如果您选择“收于区间内”期权，假设<strong>退市现价</strong>严格高于<strong>低障碍</strong>，并且严格低于<strong>高障碍</strong>，您将获得赔付。"
+msgstr "如果您选择“到期在范围之内”期权，假设<strong>退市现价</strong>严格高于<strong>低障碍</strong>，并且严格低于<strong>高障碍</strong>，您将获得赔付。"
 
 msgid "If you select \"Ends Outside\", you win the payout if the <strong>exit spot</strong> is EITHER strictly higher than the <strong>High barrier</strong>, OR strictly lower than the <strong>Low barrier</strong>."
-msgstr "如果您选择“收于区间外”期权，只要<strong>退市现价</strong>严格高于<strong>高障碍</strong>，或者严格低于<strong>低障碍</strong>，您将获得赔付。"
+msgstr "如果您选择“到期在范围之外”期权，只要<strong>退市现价</strong>严格高于<strong>高障碍</strong>，或者严格低于<strong>低障碍</strong>，您将获得赔付。"
 
 msgid "If you select \"Even\", you will win the payout if the <strong>last digit</strong> of the last tick is an <strong>even number (i.e., 2, 4, 6, 8, or 0).</strong>"
 msgstr "如果您选择“偶数”期权，只要<strong>最新价格的</strong>最后一个数字<strong>是偶数（如2、4、6、8或0），您将获得赔付。</strong>"
@@ -5971,6 +5974,9 @@ msgstr "释义"
 msgid "Introduce %1"
 msgstr "介绍%1"
 
+msgid "Introducing Binary Grid"
+msgstr ""
+
 msgid "Introducing Broker"
 msgstr "推介经纪"
 
@@ -5980,9 +5986,6 @@ msgstr "推介经纪担保"
 msgid "Introducing USB"
 msgstr "推出USB"
 
-msgid "Introducing the new %1 desktop app"
-msgstr "推出新的 %1 桌面应用程序"
-
 msgid "Introduction"
 msgstr "概述"
 
@@ -5991,9 +5994,6 @@ msgstr "客户介绍和说明"
 
 msgid "Introduction to binary options on MT5"
 msgstr "MT5二元期权交易简介"
-
-msgid "Intuitively simple"
-msgstr "直观性简易"
 
 msgid "Invalid document format."
 msgstr "无效的文档格式."
@@ -6443,6 +6443,9 @@ msgid "Limitations on liability"
 msgstr ""
 
 msgid "Limited license grant"
+msgstr ""
+
+msgid "Limited risks"
 msgstr ""
 
 msgid "Limits"
@@ -6997,6 +7000,9 @@ msgstr "方式"
 msgid "Meticulous English language skills, with keen eye for detail when it comes to punctuation, spelling, grammar, and syntax"
 msgstr "熟练的英语语言技能, 特别注重关于标点、拼写、语法和句法方面的细节"
 
+msgid "Micro-trading on the go"
+msgstr ""
+
 msgid "Min"
 msgstr "最小"
 
@@ -7176,6 +7182,9 @@ msgstr "多个账户管理器 (MAM)"
 
 msgid "Multiple Accounts Manager (MAM) for MetaTrader 5 (MT5)"
 msgstr "MetaTrader 5 (MT5) 的多个账户管理器 (MAM)"
+
+msgid "Multiple contracts at a time"
+msgstr ""
 
 msgid "Multiple opportunities"
 msgstr "多重机会"
@@ -7648,6 +7657,9 @@ msgstr "订立合约"
 msgid "Open positions"
 msgstr "空缺"
 
+msgid "Open several positions across multiple cells simultaneously."
+msgstr ""
+
 msgid "Open-Source Projects"
 msgstr "开源项目"
 
@@ -7752,6 +7764,9 @@ msgstr "我们公司继续茁壮成长，并在马恩岛获得牌照，可以为
 
 msgid "Our customers clearly like us. In mid-2014, %1 has over 100 million historical transactions and over 130,000 new daily transactions."
 msgstr "毋庸置疑，我们深受客户喜爱。2014 年中期，%1的历史交易数量和每日新交易数量分别超过1亿笔和13万笔。"
+
+msgid "Our exciting new mobile trading app"
+msgstr ""
 
 msgid "Our fast organic growth is supplemented by the acquisition of the client base of BetsForTraders, one of our main competitors."
 msgstr "我们获取了主要竞争对手之一BetsForTraders 的客户群，为公司快速的内生性增长提供支持。"
@@ -8357,7 +8372,7 @@ msgid "Predict if the market will touch or not touch a price target"
 msgstr "预测市场价格是否会触及目标价格"
 
 msgid "Predict market movement using up/down, touch/no touch, and in/out trade types."
-msgstr "使用上涨/下跌、触及/未触及和范围内/范围外交易类型预测市场变动。"
+msgstr "使用涨/跌、触及/未触及和范围内/范围外交易类型预测市场变动。"
 
 msgid "Predict that the last digit is an even number or odd number after the last tick"
 msgstr "预测最后跳动点后最后一个数字是偶数或奇数\n"
@@ -9149,6 +9164,9 @@ msgstr "筛选和批准网站内容和市场营销活动"
 msgid "Scrutinise clients' user behaviour on our trading platform"
 msgstr "透过我们的交易平台查看客户的用户行为"
 
+msgid "Seamless trading on your mobile device, at the speed of touch."
+msgstr ""
+
 msgid "Search..."
 msgstr "搜索..."
 
@@ -9510,6 +9528,9 @@ msgid "Speculative"
 msgstr "投机"
 
 msgid "Speed - the speed at which client order can be executed"
+msgstr ""
+
+msgid "Speed of touch"
 msgstr ""
 
 msgid "Spot"
@@ -11299,7 +11320,7 @@ msgid "The price of the currency pair indicates how much of the quote currency i
 msgstr "货币对的价格表示买入一单位基准货币需要多少报价货币。这通常被称为汇率。"
 
 msgid "The products offered via this website include binary options, contracts for difference (\"CFDs\") and other complex derivatives. Trading binary options may not be suitable for everyone. Trading CFDs carries a high level of risk since leverage can work both to your advantage and disadvantage. As a result, the products offered on this website may not be suitable for all investors because of the risk of losing all of your invested capital. You should never invest money that you cannot afford to lose, and never trade with borrowed money. Before trading in the complex products offered, please be sure to understand the risks involved and learn about %1Responsible Trading%2."
-msgstr ""
+msgstr "通过本网站提供的产品包括二元期权、差价合约 (CFD) 以及其他复杂衍生品。二元期权交易不是每个人都适合。差价合约交易有很高的风险, 因为杠杆作用可能对您有利，但也可能会对您不利。因此, 本网站提供的产品可能不适合所有投资者, 因为您的所有投入资金都有亏损的风险。您不应该将您无法承担亏损的资金投入交易, 也不可使用借来的钱交易。对所提供的复杂产品开始交易前, 请务必了解所涉及的风险, 并了解%1负责任交易%2。"
 
 msgid "The profit is the difference between the purchase price (the stake) and the payout on a winning trade."
 msgstr "利润即交易中所得的赔付金额与购买价格（成本）之间的差额。"
@@ -11440,7 +11461,7 @@ msgid "There are two types of In/Out trades:"
 msgstr "范围内/外交易有两种类型："
 
 msgid "There are two types of Up/Down trades:"
-msgstr "上涨/下跌交易有两种类型："
+msgstr "涨/跌交易有两种类型："
 
 msgid "There are two types of reset trades:"
 msgstr "重设交易有两种类型："
@@ -11742,6 +11763,9 @@ msgstr "跳动点"
 msgid "Tick Prediction"
 msgstr "跳动点预测"
 
+msgid "Tick Trade Android App"
+msgstr ""
+
 msgid "Ticks"
 msgstr "跳动点"
 
@@ -12009,6 +12033,9 @@ msgstr "让您了解个人数据、交易和资金总是安全并充满信心进
 msgid "Trade currencies, indices, commodities and more in rising, falling, sideways, quiet, and volatile markets"
 msgstr "在各种市场环境（上涨、下跌、横盘整理、交易清淡和震荡）中交易外汇、指数、大宗商品及其它"
 
+msgid "Trade in the moment with your touch screen device."
+msgstr ""
+
 msgid "Trade in the world's financial markets"
 msgstr "在世界金融市场交易"
 
@@ -12134,9 +12161,6 @@ msgstr "此国家不提供交易时间。如果您有活跃的 %1 账户, 请%2�
 
 msgid "TradingView"
 msgstr "TradingView"
-
-msgid "TradingView for %1"
-msgstr "%专用的TradingView"
 
 msgid "Trailing stops"
 msgstr ""
@@ -12402,9 +12426,6 @@ msgstr "理解"
 msgid "Unemployed"
 msgstr "Unemployed"
 
-msgid "Unified ecosystem"
-msgstr "统一生态系统"
-
 msgid "United Kingdom"
 msgstr "英国"
 
@@ -12494,9 +12515,6 @@ msgstr ""
 
 msgid "Use or reproduce the %1 API other than as permitted by these Terms"
 msgstr ""
-
-msgid "Use our native desktop app for a more secure and faster trading experience."
-msgstr "使用我们的本机桌面应用程序, 获得更安全和更快的交易体验。"
 
 msgid "Use the %1 API for any purpose that violates any law or regulation or any right of any person, including but not limited to intellectual property rights, rights of privacy, or rights of personality, or is in any manner inconsistent with these Terms or privacy policy"
 msgstr ""
@@ -13462,8 +13480,7 @@ msgid "You can top up your virtual account with an additional %1 if your balance
 msgstr "如果您的余额为 %2 或更低, 您可以在虚拟账户内添加 %1。"
 
 msgid "You can trade Volatility Indices on all three main trade types: Up/Down, Touch/No Touch, and In/Out. That's not all – Volatility Indices also give you exclusive access to two additional trade types: Asians and Digits."
-msgstr "您可以对所有三种主要交易类型进行波动率指数交易：上涨/下跌、触及/未触及和范围内/范围外。还有 - 波动率指数也让您独家获得另外两种交易类型：\n"
-"亚式期权和数字期权。"
+msgstr "您可以对所有三种主要交易类型进行波动率指数交易：涨/跌、触及/未触及和范围之内/范围之外。还有 - 波动率指数也让您独家获得另外两种交易类型：亚式期权和数字期权。"
 
 msgid "You can use an authorized payment agent to process deposits and withdrawals for payment methods or local currencies not supported by %1. It's easy to do."
 msgstr "对于 %1 不支持的支付方式或货币， 您可以授权给支付代理，轻松处理存款和取款。"
