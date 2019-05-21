@@ -230,7 +230,7 @@ const Platform = () => (
                                 header={it.L('[_1] desktop app', it.website_name)}
                                 className='desktop-app invisible financial-only'
                                 description={it.L('Enhanced performance. Intuitively simple.')}
-                                text={it.L('Access out products and services from a single app.')}
+                                text={it.L('Access our products and services from a single app.')}
                             />
                         </TabContent>
                         <TabContent id='advanced'>
