@@ -566,7 +566,7 @@ body #_elev_io {
 }
 
 .location {
-    &-cyberjaya, &-labuan, &-malta, &-asuncion {
+    &-cyberjaya, &-labuan, &-malta, &-asuncion, &-dubai {
         .introduction {
             h1 {
                 color: $COLOR_ORANGE;
@@ -1146,6 +1146,15 @@ body #not_authenticated_financial ul.checked > li {
                 .fill-text {
                     margin-bottom: 30px;
                 }
+            }
+
+            .col-margin-top {
+                @media (min-width: 768px) {
+                    margin-top: 26px;
+                }
+            }
+            .container {
+                justify-content: center;
             }
         }
         .values-group {

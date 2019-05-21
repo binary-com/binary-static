@@ -247,11 +247,11 @@ const Metatrader = () => (
                         */}
                         {/* TODO [->svg] */}
                         <AccountDesc
-                            account_type={['costarica', 'svg', 'malta']}
-                            title={it.L('Volatility Indices Account')}
-                            description={it.L('Our Volatility Indices account allows you to trade CFDs on Volatility Indices -- our proprietary synthetic assets that simulate market forces.')}
+                            account_type={['costarica', 'svg', 'malta', 'iom']}
+                            title={it.L('Synthetic Indices Account')}
+                            description={it.L('Our Synthetic Indices account allows you to trade CFDs on Synthetic Indices - our proprietary synthetic assets that simulate market forces.')}
                             items={[
-                                it.L('Leverage up to [_1]', '1:500'),
+                                it.L('Leverage up to [_1]', '1:1000'),
                                 it.L('Fixed spreads'),
                                 it.L('Market execution'),
                                 it.L('No commission'),
@@ -270,10 +270,10 @@ const Metatrader = () => (
                         {/* TODO [->svg] */}
                         <AccountDesc
                             account_type={['costarica_mamm', 'svg_mamm']}
-                            title={it.L('MAM Volatility Indices Account')}
-                            description={it.L('Our MAM Volatility Indices account can be assigned to a money manager who will trade on your behalf with the same specifications as the regular Volatility Indices account.')}
+                            title={it.L('MAM Synthetic Indices Account')}
+                            description={it.L('Our MAM Synthetic Indices account can be assigned to a money manager who will trade on your behalf with the same specifications as the regular Synthetic Indices account.')}
                             items={[
-                                it.L('Leverage up to [_1]', '1:500'),
+                                it.L('Leverage up to [_1]', '1:1000'),
                                 it.L('Fixed spreads'),
                                 it.L('Market execution'),
                             ]}
@@ -305,7 +305,7 @@ const Metatrader = () => (
                                         </TypeGroup>
                                     </div>
                                     <p id='new_account_msg' className='notice-msg center-text invisible' />
-                                    <p id='new_account_financial_authenticate_msg' className='invisible notice-msg hint'>{it.L('You may proceed but please [_1]authenticate[_2] your account within five days to continue trading.', `<a href="${it.url_for('user/authenticate')}">`, '</a>')}</p>
+                                    <p id='new_account_financial_authenticate_msg' className='invisible notice-msg hint'>{it.L('You may proceed but please [_1]authenticate[_2] your account within 10 days to continue trading, otherwise your account will be disabled and any open positions will be closed.', `<a href="${it.url_for('user/authenticate')}">`, '</a>')}</p>
                                     <p id='new_account_no_deposit_bonus_msg' className='center-text hint invisible'>
                                         <strong>{it.L('Note: A no deposit bonus worth USD 10 will be credited into your account within 24 hours after registration.')}</strong>
                                     </p>
