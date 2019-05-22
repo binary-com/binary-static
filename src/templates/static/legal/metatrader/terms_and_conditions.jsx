@@ -45,8 +45,7 @@ const TermsAndConditions = () => (
 
         <h2 data-anchor='provision-of-services'>{it.L('C. Provision of services')}</h2>
         <ol>
-            <li>{it.L('The Company mainly provides contracts for difference (CFDs).')}</li>
-            <li>{it.L('Under no circumstances shall the Company provide investment advice or recommendation to the client or state an opinion in relation to a transaction. From time to time, the Company may decide to provide the client with written information, which the Company may publish on its website or provide to the client in any other manner. The Company will endeavour to ensure the accuracy and completeness of this written information, but it will not constitute investment advice or recommendation provided by the Company to the client.')}</li>
+            <li>{it.L('The Company mainly provides contracts for difference (CFDs) via MT5 platform.')}</li>
             <li>{it.L('The provision of the Margin trading services described in this agreement utilises a third-party system, acquired via a non-exclusive, non-transferable, non-sublicensable, and terminable licence from the third-party system provider/licensor (the "MT5 trading platform"). The client acknowledges that the Company reserves the right to change the third-party system provider/licensor during the course of providing the Margin trading services described in this agreement to the client.')}</li>
             <li>{it.L('[_1] shall act purely on an execution-only basis.', it.website_name)}</li>
             <li>{it.L('[_1] shall also act at times as a principal and at other times as an agent on the client\'s behalf for all transactions entered into by the client, depending on the company that the client has opened their account with.', it.website_name)}</li>
@@ -103,9 +102,9 @@ const TermsAndConditions = () => (
             </li>
             <li>{it.L('Accounts with debit balance (i.e. credit exposure to [_1])', it.website_name)}
                 <ol>
-                    <li>{it.L('The Company does not offer any credit facilities or arrangement to its clients in normal trading circumstances. The client acknowledges and agrees that they will not be dealing with the Company on credit, regardless of the amount of the client\'s Account Balance and transactions entered into with the Company.')}</li>
+                    <li>{it.L('The Company does not offer credit to its clients. The client acknowledges and agrees that they will not be dealing with the Company on credit.')}</li>
                     <li>{it.L('Accounts with debit balances are required to settle the full amount immediately by making a payment to [_1].', it.website_name)}</li>
-                    <li>{it.L('If the client fails to immediately make a full settlement of the sum due to the Company in accordance with this agreement, the Company reserves the right to accrue interest on the sums due from the client to the Company in respect of any transaction that the Company fails to pay on the relevant due date. Interest will accrue on a daily basis from the relevant due date until the date on which payment is received in full at the bank\'s official base rate for short term funds determined by the Company and will be payable on demand.')}</li>
+                    <li>{it.L('If the client fails to immediately make a full settlement of the sum due to the Company in accordance with this agreement, the Company reserves the right to accrue interest on the sums due from the client to the Company in respect of any transaction that the client fails to pay on the relevant due date. Interest will accrue on a daily basis from the relevant due date until the date on which payment is received in full at the bank\'s official base rate for short term funds determined by the Company and will be payable on demand.')}</li>
                 </ol>
             </li>
             <li data-show='eucountry'>{it.L('Self-exclusion limits')}

@@ -116,7 +116,6 @@ const BIEL = () => (
         <p>{it.L('The client shall accept the risk of using any additional functions provided by the Expert Advisor on the MT5 trading platform. The Company has no responsibility for the outcome of such trading and reserves the right to accept or reject the use of such functions with absolute discretion.')}</p>
         <p>{it.L('Where such additional functions/plug-ins affect the reliability and/or smooth operation and/or orderly functioning of the MT5 trading platform, the Company has the right to immediately terminate its contractual relationship with its clients by written notice.')}</p>
         <p>{it.L('By using the electronic trading system, including the MT5 trading platform, clients accept full responsibility for using such platforms and for any Orders transmitted via such platforms.')}</p>
-        <p>{it.L('The Company does not accept any liability for any inconsistencies or results related to the clients utilising Expert Advisors on the MT5 trading platform. Clients are liable for their use of Expert Advisors and the trading activity they conduct. The Company takes a neutral position on the clients\' use of Expert Advisors.')}</p>
         <p>{it.L('All unforeseen openings or closings of positions initiated by the Expert Advisor, whether relevant to system error or otherwise, are out of the scope of the Company\'s responsibility; hence the Company is not liable for such actions or results.')}</p>
 
         <h2 data-anchor='governing-law-and-jurisdiction'>{it.L('Governing law and jurisdiction')}</h2>
