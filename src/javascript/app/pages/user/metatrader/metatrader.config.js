@@ -153,16 +153,16 @@ const MetaTraderConfig = (() => {
 
                     const has_financial_account = Client.hasAccountType('financial', 1);
                     const is_maltainvest        = State.getResponse(`landing_company.mt_financial_company.${getMTFinancialAccountType(acc_type)}.shortcode`) === 'maltainvest';
-                    const is_financial          = accounts_info[acc_type].account_type === 'financial';
+                    const is_demo_or_financial  = /financial|demo/.test(accounts_info[acc_type].account_type); // to show messages when creating demo or financial accounts
                     const is_demo_financial     = accounts_info[acc_type].account_type === 'demo' && accounts_info[acc_type].mt5_account_type; // is not demo vol account
 
-                    if (is_maltainvest && (is_financial || is_demo_financial) && !has_financial_account) {
+                    if (is_maltainvest && (is_demo_or_financial || is_demo_financial) && !has_financial_account) {
                         $message.find('.maltainvest').setVisibility(1);
                         resolveWithMessage();
                     }
 
                     const response_get_settings = State.getResponse('get_settings');
-                    if (is_financial) {
+                    if (is_demo_or_financial) {
                         let is_ok = true;
                         BinarySocket.wait('get_account_status', 'landing_company').then(() => {
                             if (is_maltainvest && !has_financial_account) resolve();
