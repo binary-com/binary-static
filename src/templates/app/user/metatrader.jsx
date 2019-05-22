@@ -592,7 +592,8 @@ const Metatrader = () => (
                             <span id='msg_mam_account' className='invisible'>{it.L('To create a MAM real account, please:')}</span>
                             <ul className='bullet'>
                                 <li className='maltainvest invisible'>{it.L('Upgrade to [_1] [_2]Financial Account[_3].', it.website_name, `<a href="${it.url_for('new_account/maltainvestws')}">`, '</a>')}</li>
-                                <li className='assessment invisible'>{it.L('Complete the [_1]Financial Assessment[_2].', `<a href="${it.url_for('user/settings/assessmentws')}">`, '</a>')}</li>
+                                <li className='trading_experience invisible'>{it.L('Please [_1]complete the trading experience section[_2] in the financial assessment to open an MT5 account.', `<a href="${it.url_for('user/settings/assessmentws')}">`, '</a>')}</li>
+                                <li className='assessment invisible'>{it.L('Please [_1]complete the financial assessment[_2] to open an MT5 account.', `<a href="${it.url_for('user/settings/assessmentws')}">`, '</a>')}</li>
                                 <li className='tax invisible'>{it.L('Complete your [_1]Tax Information[_2].', `<a href="${it.url_for('user/settings/detailsws')}">`, '</a>')}</li>
                                 <li className='citizen invisible'>{it.L('Select [_1]Citizenship[_2].', `<a href="${it.url_for('user/settings/detailsws')}">`, '</a>')}</li>
                             </ul>
