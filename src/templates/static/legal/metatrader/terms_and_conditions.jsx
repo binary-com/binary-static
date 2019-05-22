@@ -364,7 +364,7 @@ const TermsAndConditions = () => (
                 <ol>
                     <li>{it.L('They will, at all times, obtain, comply with, and do all that is necessary to maintain in full force and effect all authority, powers, consents, licences, and authorities referred to in this clause.')}</li>
                     <li>{it.L('They will take all reasonable steps to comply with any law, ordinance, charter, by-law, or rule applicable to the client or the jurisdiction in which the client is resident.')}</li>
-                    <li>{it.L('They will provide the Company with any information that [_1] may reasonably require to fully satisfy the demand or the requirements of the applicable government authority, upon the Company\'s request.', it.website_name)}</li>
+                    <li>{it.L('They will provide the Company with any information that [_1] may reasonably require to fully satisfy the demands or the requirements of the applicable government authority, upon the Company\'s request.', it.website_name)}</li>
                     <li>{it.L('They will use the Margin trading services described in this agreement in good faith and will not use any software, algorithm, or any trading strategy to manipulate or take unfair advantage of the way that the Company\'s Bid and Ask Prices are quoted. The client shall observe the standard of behaviour reasonably expected of persons in the client\'s position and not take any step which would cause [_1] to fail to observe the standard of behaviour reasonably expected of persons in the Company\'s position.', it.website_name)}</li>
                 </ol>
             </li>
@@ -620,7 +620,7 @@ const TermsAndConditions = () => (
             <Li dataShow='eucountry' title={it.L('Professional Client')} subtitle={it.L('a professional client as defined in the Directive 2004/39/EC of the European Parliament and of the Council (MiFID) or subsequent Directive 2014/65/EU of the European Parliament and of the Council (MiFID II), whichever is in force')} />
             <Li title={it.L('MT5 Real Account')} subtitle={it.L('The client\'s Real Money Account opened with the [_1] MT5 trading platform and licensed by MetaQuotes Software Corporation', it.website_name)} />
             <Li dataShow='eucountry' title={it.L('Retail Client')} subtitle={it.L('a client that is not a Professional client or Eligible Counterparty')} />
-            <Li title={it.L('Roll-over')} subtitle={it.L('In the event that the Company does not receive Orders from the client to close an Open Position by the close of a Business Day, the Company will roll over the said Open Position to the following Business Day.')} />
+            <Li title={it.L('Roll-over')} subtitle={it.L('In the event that the Company does not receive Orders from the client to close an Open Position by the close of a business day, the Company will roll over the said Open Position to the following business day.')} />
             <Li title={it.L('Roll-over Credit/Debit')} subtitle={it.L('Accounts with Open Positions being rolled over shall be credited or debited with an amount referred to as the Roll-over Credit/Debit, which is determined by the Company.')} />
             <Li title={it.L('Settlement')} subtitle={it.L('A Settlement occurs when the client\'s account with the Company is credited or charged with the net amount of the results of a transaction.')} />
             <Li title={it.L('Spread')} subtitle={it.L('the difference between the Bid and Ask Price of a financial instrument')} />
