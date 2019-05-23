@@ -71,8 +71,8 @@ const PaymentAgentWithdraw = (() => {
 
             const form_id = `#${$(view_ids.form).find('form').attr('id')}`;
             const $form   = $(form_id);
-            const min     = getPaWithdrawalLimit(currency, 'min');
-            const max     = getPaWithdrawalLimit(currency, 'max');
+            let   min     = getPaWithdrawalLimit(currency, 'min');
+            let   max     = getPaWithdrawalLimit(currency, 'max');
 
             $agent_error = $('.row-agent').find('.error-msg');
             $txt_agents  = $(field_ids.txt_agents);
@@ -81,8 +81,8 @@ const PaymentAgentWithdraw = (() => {
             $form.find('label[for="txtAmount"]').text(`${localize('Amount in')} ${currency}`);
             trimDescriptionContent();
             FormManager.init(form_id, [
-                { selector: field_ids.txt_amount,        validations: ['req', ['number', { type: 'float', decimals: getDecimalPlaces(currency), min, max }], ['custom', { func: () => +Client.get('balance') >= +$(field_ids.txt_amount).val(), message: localize('Insufficient balance.') }]], request_field: 'amount' },
-                { selector: field_ids.txt_desc,          validations: ['general'], request_field: 'description' },
+                { selector: field_ids.txt_amount,         validations: ['req', ['number', { type: 'float', decimals: getDecimalPlaces(currency), min, max }], ['custom', { func: () => +Client.get('balance') >= +$(field_ids.txt_amount).val(), message: localize('Insufficient balance.') }]], request_field: 'amount' },
+                { selector: field_ids.txt_desc,           validations: ['general'], request_field: 'description' },
 
                 { request_field: 'currency',              value: currency },
                 { request_field: 'paymentagent_loginid',  value: getPALoginID },
@@ -95,9 +95,26 @@ const PaymentAgentWithdraw = (() => {
                 if ($txt_agents.val()) {
                     $txt_agents.val('');
                 }
-                if (!$ddl_agents.val()) {
+                const selected_val = $ddl_agents.val();
+                if (!selected_val) {
                     // error handling
                     $agent_error.setVisibility(1);
+                } else {
+                    // change min and max withdrawal limit
+                    const selected_pa = pa_list.find(pa => pa.paymentagent_loginid === selected_val);
+
+                    min = selected_pa.min_withdrawal;
+                    max = selected_pa.max_withdrawal;
+
+                    FormManager.init(form_id, [
+                        { selector: field_ids.txt_amount,         validations: ['req', ['number', { type: 'float', decimals: getDecimalPlaces(currency), min, max }], ['custom', { func: () => +Client.get('balance') >= +$(field_ids.txt_amount).val(), message: localize('Insufficient balance.') }]], request_field: 'amount' },
+                        { selector: field_ids.txt_desc,           validations: ['general'], request_field: 'description' },
+        
+                        { request_field: 'currency',              value: currency },
+                        { request_field: 'paymentagent_loginid',  value: getPALoginID },
+                        { request_field: 'paymentagent_withdraw', value: 1 },
+                        { request_field: 'dry_run',               value: 1 },
+                    ], true);
                 }
             });
 
@@ -107,9 +124,26 @@ const PaymentAgentWithdraw = (() => {
                     $ddl_agents.val('');
                     refreshDropdown(field_ids.ddl_agents);
                 }
-                if (!$txt_agents.val()) {
+                const entered_val = $txt_agents.val();
+                if (!entered_val) {
                     // error handling
                     $agent_error.setVisibility(1);
+                } else {
+                    // change min and max withdrawal limit
+                    const selected_pa = pa_list.find(pa => pa.paymentagent_loginid === entered_val);
+                    if (selected_pa){
+                        min = selected_pa.min_withdrawal;
+                        max = selected_pa.max_withdrawal;
+                        FormManager.init(form_id, [
+                            { selector: field_ids.txt_amount,         validations: ['req', ['number', { type: 'float', decimals: getDecimalPlaces(currency), min, max }], ['custom', { func: () => +Client.get('balance') >= +$(field_ids.txt_amount).val(), message: localize('Insufficient balance.') }]], request_field: 'amount' },
+                            { selector: field_ids.txt_desc,           validations: ['general'], request_field: 'description' },
+            
+                            { request_field: 'currency',              value: currency },
+                            { request_field: 'paymentagent_loginid',  value: getPALoginID },
+                            { request_field: 'paymentagent_withdraw', value: 1 },
+                            { request_field: 'dry_run',               value: 1 },
+                        ], true);
+                    }
                 }
             });
 
