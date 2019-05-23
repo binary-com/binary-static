@@ -23,7 +23,7 @@ const changePocNumbersToString = (response) => {
                 ...response,
                 proposal_open_contract: {
                     ...response.proposal_open_contract,
-                    barrier          : barrier ? addComma(barrier, pip_size) : undefined, // Because `barrier` must not be displayed when zero
+                    barrier          : barrier ? addComma(barrier) : undefined, // Because `barrier` must not be displayed when zero
                     sell_price       : toString(sell_price),
                     sell_spot        : toString(sell_spot),
                     current_spot     : toString(current_spot),
