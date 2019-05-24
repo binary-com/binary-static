@@ -72,22 +72,17 @@ const PaymentAgentWithdraw = (() => {
             const form_id = `#${$(view_ids.form).find('form').attr('id')}`;
             const $form   = $(form_id);
 
-            const min  = () => {
-                const selected_val = $ddl_agents.val() || $txt_agents.val();
+            const getAPILimit = limit => {
+                const selected_val = getPALoginID();
                 if (selected_val){
                     const selected_pa = pa_list.find(pa => pa.paymentagent_loginid === selected_val);
-                    if (selected_pa) return selected_pa.min_withdrawal;
+                    if (selected_pa) return selected_pa[`${limit}_withdrawal`];
                 }
-                return getPaWithdrawalLimit(currency, 'min');
+                return getPaWithdrawalLimit(currency, limit);
             };
-            const max  = () => {
-                const selected_val = $ddl_agents.val() || $txt_agents.val();
-                if (selected_val){
-                    const selected_pa = pa_list.find(pa => pa.paymentagent_loginid === selected_val);
-                    if (selected_pa) return selected_pa.max_withdrawal;
-                }
-                return getPaWithdrawalLimit(currency, 'max');
-            };
+            
+            const min  = () => getAPILimit('min');
+            const max  = () => getAPILimit('max');
 
             $agent_error = $('.row-agent').find('.error-msg');
             $txt_agents  = $(field_ids.txt_agents);
