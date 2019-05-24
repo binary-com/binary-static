@@ -1,4 +1,5 @@
 const refreshDropdown      = require('@binary-com/binary-style').selectDropdown;
+const Validation           = require('../../common/form_validation');
 const BinaryPjax           = require('../../base/binary_pjax');
 const Client               = require('../../base/client');
 const BinarySocket         = require('../../base/socket');
@@ -108,6 +109,9 @@ const PaymentAgentWithdraw = (() => {
                 if (!$ddl_agents.val()) {
                     // error handling
                     $agent_error.setVisibility(1);
+                }
+                if ($(field_ids.txt_amount).val()) {
+                    Validation.validate(form_id);
                 }
             });
 
