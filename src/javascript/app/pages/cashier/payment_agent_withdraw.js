@@ -127,6 +127,12 @@ const PaymentAgentWithdraw = (() => {
                 }
             });
 
+            $txt_agents.on('focusout', () => {
+                if ($(field_ids.txt_amount).val()) {
+                    Validation.validate(form_id);
+                }
+            });
+
             FormManager.handleSubmit({
                 form_selector       : form_id,
                 fnc_response_handler: withdrawResponse,
