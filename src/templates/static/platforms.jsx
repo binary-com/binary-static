@@ -14,6 +14,7 @@ const Platforms = ({
     header,
     description,
     text,
+    status,
     url = '',
     target,
     button_text,
@@ -24,13 +25,13 @@ const Platforms = ({
             <img className='platform responsive' src={it.url_for(`images/pages/${image_path}/${image}.png`)} />
         </div>
         <div className='gr-8 gr-12-m gr-12-p'>
-            <h3>{header}</h3>
+            <h3 className={`section-title ${status || ''}`}>{header}</h3>
             <strong>{description}</strong>
             <p>{text}</p>
             <div className='gr-row'>
                 <div className='gr-12'>
                     { url &&
-                        <a className='button-secondary' download={download || undefined} href={url} target={target || undefined} rel={/http/.test(url) ? 'noopener noreferrer' : undefined}><span>{button_text}</span></a>
+                        <a className='button' download={download || undefined} href={url} target={target || undefined} rel={/http/.test(url) ? 'noopener noreferrer' : undefined}><span>{button_text}</span></a>
                     }
                 </div>
             </div>
@@ -52,12 +53,12 @@ const PlatformsGridApp = ({
             <img className='platform responsive' src={it.url_for(`images/pages/${image_path}/${image}.png`)} />
         </div>
         <div className='gr-8 gr-12-m gr-12-p'>
-            <h3>{header}</h3>
+            <h3>{header}<img id='new_badge' src={it.url_for('images/pages/platforms/new_badge.svg')} /></h3>
             <strong>{description}</strong>
             <p>{text}</p>
             <div className='gr-row'>
                 <div className='gr-12'>
-                    <p><a className='button-secondary download-grid-app'><span>{it.L('Download Binary Grid')}</span></a></p>
+                    <p><a className='button download-grid-app'><span>{it.L('Download Binary Grid')}</span></a></p>
                 </div>
             </div>
         </div>
@@ -136,16 +137,13 @@ const Platform = () => (
             <h1 className='center-text'>{it.L('Platforms')}</h1>
             <p className='center-text gr-padding-20 gr-parent'>{it.L('Explore all the trading platforms, apps, and tools we offer')}</p>
         </div>
-        <div className='fill-bg-color gr-padding-30 binary-grid-app'>
+        <div className='fill-bg-color gr-padding-30' data-show='-eucountry'>
             <div className='container gr-padding-30 gr-child'>
-                <h2 className='primary-color center-text'>
-                    <span>{it.L('Try Deriv.com: our latest innovation')}</span>
-                    <span><img id='new_badge' src={it.url_for('images/pages/platforms/new_badge.svg')} /></span>
-                </h2>
+                <h2 className='primary-color center-text new'>{it.L('Try Deriv.app: our latest innovation')}</h2>
                 <p className='center-text'>{it.L('An all-new trading experience.')}</p>
                 <div className='gr-row gr-row-align-around'>
                     <div className='gr-5 gr-12-p gr-12-m'>
-                        <ul className='bullet'>
+                        <ul className='bullet b-m-md'>
                             <li>
                                 <strong>{it.L('Powerful and intuitive')}</strong>
                                 <br />
@@ -169,7 +167,7 @@ const Platform = () => (
 
                 </div>
                 <div className='center-text'>
-                    <p>{it.L('Go ahead, experience it for yourself')}</p>
+                    <p>{it.L('Go ahead, experience it for yourself.')}</p>
                     <p><a className='button' href='https://deriv.app/?utm_source=binary&utm_medium=referral&utm_campaign=platforms_page' target='_blank' rel='noopener noreferrer'><span>{it.L('Try Deriv.app now')}</span></a></p>
                 </div>
             </div>
@@ -192,6 +190,17 @@ const Platform = () => (
                     <TabContentContainer>
                         <TabContent id='beginner'>
                             <Platforms
+                                image='deriv-app'
+                                data_show='-eucountry'
+                                header='Deriv.app'
+                                status='new'
+                                description={it.L('The next-gen online trading experience')}
+                                text={it.L('A whole new easy-to-use platform that\'s rich with features.')}
+                                url='https://deriv.app/?utm_source=binary&utm_medium=referral&utm_campaign=platforms_page'
+                                target='_blank'
+                                button_text={it.L('Trade now')}
+                            />
+                            <Platforms
                                 image='trading-page'
                                 header='SmartTrader'
                                 description={it.L('Premier binary options trading platform')}
@@ -203,7 +212,6 @@ const Platform = () => (
                                 image='grid-app-sm'
                                 data_show='-eucountry'
                                 header={it.L('Binary Grid')}
-                                className='binary-grid-app'
                                 description={it.L('Micro-trading on the go')}
                                 text={it.L('Seamless trading on your mobile device, at the speed of touch.')}
                             />

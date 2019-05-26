@@ -839,6 +839,11 @@ body #not_authenticated_financial ul.checked > li {
     h2 {
         line-height: 36px;
     }
+    .new:after {
+        content: url('../images/pages/platforms/new_badge.svg');
+        position: relative;
+        top: -10px;
+    }
     #new_badge {
         position: relative;
         top: -15px;
@@ -852,6 +857,9 @@ body #not_authenticated_financial ul.checked > li {
         width: auto;
         max-width: 100%;
         vertical-align: middle;
+    }
+    .b-m-md li {
+        margin-bottom: 20px;
     }
     @media screen and (max-width: 768px) {
         .no-center-text-p-m {
