@@ -1,12 +1,11 @@
 const refreshDropdown      = require('@binary-com/binary-style').selectDropdown;
-const Validation           = require('../../common/form_validation');
 const BinaryPjax           = require('../../base/binary_pjax');
 const Client               = require('../../base/client');
 const BinarySocket         = require('../../base/socket');
 const getDecimalPlaces     = require('../../common/currency').getDecimalPlaces;
 const getPaWithdrawalLimit = require('../../common/currency').getPaWithdrawalLimit;
 const FormManager          = require('../../common/form_manager');
-const validEmailToken      = require('../../common/form_validation').validEmailToken;
+const Validation           = require('../../common/form_validation');
 const handleVerifyCode     = require('../../common/verification_code').handleVerifyCode;
 const localize             = require('../../../_common/localize').localize;
 const Url                  = require('../../../_common/url');
@@ -112,7 +111,7 @@ const PaymentAgentWithdraw = (() => {
                     // error handling
                     $agent_error.setVisibility(1);
                 }
-                checkValidation();
+                validateAmount();
             });
 
             $txt_agents.on('keyup', () => {
@@ -128,10 +127,10 @@ const PaymentAgentWithdraw = (() => {
             });
 
             $txt_agents.on('focusout', () => {
-                checkValidation();
+                validateAmount();
             });
 
-            const checkValidation = () => {
+            const validateAmount = () => {
                 if ($txt_amount.val()) {
                     Validation.validate(form_id);
                 }
