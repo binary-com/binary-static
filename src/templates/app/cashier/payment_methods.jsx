@@ -156,26 +156,6 @@ const PaymentMethods = () => {
                                 ],
                             },
                             {
-                                id      : 'paysec',
-                                dataShow: '-eucountry',
-                                row     : [
-                                    { text: <PaymentLogo logo='paysec' /> },
-                                    { attributes: { colSpan: 5, className: 'toggler' }, custom_td : <CustomTableData data={[
-                                        { td: it.L('PaySec was founded in 2014 to provide customers and merchants in the Asian region with a comprehensive range of payment methods through one payment gateway.') },
-                                        { td_list: [
-                                            { text: 'USD' },
-                                            { text: '25 - 4,000' },
-                                            { text: 'N/A' },
-                                            { text: <TableValues value={[it.L(`${deposit}${instant}`), it.L(`${withdrawal}${not_applicable}`)]} /> },
-                                            { text: <ReferenceLinks pdf_file='Binary.com_PaySec.pdf' video_link='https://youtu.be/DTVspCgnx0M' /> },
-                                        ],
-                                        },
-                                    ]}
-                                    />,
-                                    },
-                                ],
-                            },
-                            {
                                 id      : 'paytrust',
                                 dataShow: '-eucountry',
                                 row     : [
