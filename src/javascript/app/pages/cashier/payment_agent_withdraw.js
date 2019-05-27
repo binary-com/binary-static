@@ -61,7 +61,7 @@ const PaymentAgentWithdraw = (() => {
             } else {
                 setActiveView(view_ids.notice);
             }
-        } else if (!validEmailToken(token)) {
+        } else if (!Validation.validEmailToken(token)) {
             showPageError('token_error');
         } else {
             insertListOption($ddl_agents, localize('Select payment agent'), '');
