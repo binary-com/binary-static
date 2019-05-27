@@ -247,7 +247,7 @@ const PaymentMethods = () => {
                 />
 
                 <div className='gr-padding-10'>
-                    <p className='hint'>{it.L('Note:')} {it.L('MasterCard and Maestro withdrawals are only available for UK Clients.')}</p>
+                    <p className='hint'>{it.L('Note:')} {it.L('Mastercard and Maestro withdrawals are only available for UK Clients.')}</p>
                 </div>
 
                 <TableTitle title={it.L('E-wallet')} />
