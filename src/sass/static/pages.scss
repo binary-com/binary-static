@@ -842,7 +842,8 @@ body #not_authenticated_financial ul.checked > li {
     .new:after {
         content: url('../images/pages/platforms/new_badge.svg');
         position: relative;
-        top: -10px;
+        top: -15px;
+        left: 5px;
     }
     #new_badge {
         position: relative;

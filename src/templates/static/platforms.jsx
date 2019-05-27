@@ -31,7 +31,7 @@ const Platforms = ({
             <div className='gr-row'>
                 <div className='gr-12'>
                     { url &&
-                        <a className='button' download={download || undefined} href={url} target={target || undefined} rel={/http/.test(url) ? 'noopener noreferrer' : undefined}><span>{button_text}</span></a>
+                        <a className='button-secondary' download={download || undefined} href={url} target={target || undefined} rel={/http/.test(url) ? 'noopener noreferrer' : undefined}><span>{button_text}</span></a>
                     }
                 </div>
             </div>
@@ -45,6 +45,7 @@ const PlatformsGridApp = ({
     image_path = 'platforms',
     image,
     header,
+    status,
     description,
     text,
 }) => (
@@ -53,12 +54,12 @@ const PlatformsGridApp = ({
             <img className='platform responsive' src={it.url_for(`images/pages/${image_path}/${image}.png`)} />
         </div>
         <div className='gr-8 gr-12-m gr-12-p'>
-            <h3>{header}<img id='new_badge' src={it.url_for('images/pages/platforms/new_badge.svg')} /></h3>
+            <h3 className={`section-title ${status || ''}`}>{header}</h3>
             <strong>{description}</strong>
             <p>{text}</p>
             <div className='gr-row'>
                 <div className='gr-12'>
-                    <p><a className='button download-grid-app'><span>{it.L('Download Binary Grid')}</span></a></p>
+                    <p><a className='button-secondary download-grid-app'><span>{it.L('Download Binary Grid')}</span></a></p>
                 </div>
             </div>
         </div>
@@ -211,6 +212,7 @@ const Platform = () => (
                             <PlatformsGridApp
                                 image='grid-app-sm'
                                 data_show='-eucountry'
+                                status='new'
                                 header={it.L('Binary Grid')}
                                 description={it.L('Micro-trading on the go')}
                                 text={it.L('Seamless trading on your mobile device, at the speed of touch.')}
