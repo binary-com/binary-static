@@ -1,3 +1,4 @@
+const Cookies             = require('js-cookie');
 const Client              = require('./client_base');
 const getLanguage         = require('../language').get;
 const isMobile            = require('../os_detect').isMobile;
@@ -19,7 +20,7 @@ const Login = (() => {
         const language   = getLanguage();
         const signup_device      = LocalStore.get('signup_device') || (isMobile() ? 'mobile' : 'desktop');
         const date_first_contact = LocalStore.get('date_first_contact');
-        const marketing_queries   = `&signup_device=${signup_device}${date_first_contact ? `&date_first_contact=${date_first_contact}` : ''}`;
+        const marketing_queries  = `&signup_device=${signup_device}${date_first_contact ? `&date_first_contact=${date_first_contact}` : ''}`;
 
         return ((server_url && /qa/.test(server_url)) ?
             `https://${server_url}/oauth2/authorize?app_id=${getAppId()}&l=${language}${marketing_queries}` :
@@ -29,13 +30,16 @@ const Login = (() => {
 
     const isLoginPages = () => /logged_inws|redirect/i.test(window.location.pathname);
 
-    const socialLoginUrl = brand => (`${loginUrl()}&social_signup=${brand}`);
+    const socialLoginUrl = (brand, affiliate_token) => (`${loginUrl()}&social_signup=${brand}&affiliate_token=${affiliate_token}`);
 
     const initOneAll = () => {
         ['google', 'facebook'].forEach(provider => {
             $(`#button_${provider}`).off('click').on('click', e => {
                 e.preventDefault();
-                window.location.href = socialLoginUrl(provider);
+
+                const affiliate_tracking = Cookies.getJSON('affiliate_tracking');
+                const affiliate_token    = affiliate_tracking ? affiliate_tracking.t : '';
+                window.location.href     = socialLoginUrl(provider, affiliate_token);
             });
         });
     };
