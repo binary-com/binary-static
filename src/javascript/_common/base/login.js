@@ -10,7 +10,8 @@ const getAppId            = require('../../config').getAppId;
 
 const Login = (() => {
     const redirectToLogin = () => {
-        if (!Client.isLoggedIn() && !isLoginPages() && isStorageSupported(sessionStorage)) {
+        const is_login_pages = /logged_inws|redirect/i.test(window.location.pathname);
+        if (!Client.isLoggedIn() && !is_login_pages && isStorageSupported(sessionStorage)) {
             sessionStorage.setItem('redirect_url', window.location.href);
             window.location.href = loginUrl();
         }
@@ -29,17 +30,22 @@ const Login = (() => {
         );
     };
 
-    const socialLoginUrl = (brand, affiliate_token) => (`${loginUrl()}&social_signup=${brand}&affiliate_token=${affiliate_token}&utm_medium=`);
+    const socialLoginUrl = (brand, affiliate_token, utm_source, utm_medium, utm_campaign) => (
+        `${loginUrl()}&social_signup=${brand}${affiliate_token}${utm_source}${utm_medium}${utm_campaign}`
+    );
 
     const initOneAll = () => {
         ['google', 'facebook'].forEach(provider => {
             $(`#button_${provider}`).off('click').on('click', e => {
                 e.preventDefault();
 
-                const utm_data = TrafficSource.getData();
+                const utm_data     = TrafficSource.getData();
+                const utm_source   = TrafficSource.getSource(utm_data) ? `&utm_source=${TrafficSource.getSource(utm_data)}` : '';
+                const utm_medium   = utm_data.utm_medium ? `&utm_medium=${utm_data.utm_medium}` : '';
+                const utm_campaign = utm_data.utm_campaign ? `&utm_campaign=${utm_data.utm_campaign}` : '';
                 const affiliate_tracking = Cookies.getJSON('affiliate_tracking');
-                const affiliate_token    = affiliate_tracking ? affiliate_tracking.t : '';
-                window.location.href     = socialLoginUrl(provider, affiliate_token);
+                const affiliate_token    = affiliate_tracking ? `&affiliate_token=${affiliate_tracking.t}` : '';
+                window.location.href = socialLoginUrl(provider, affiliate_token, utm_source, utm_medium, utm_campaign);
             });
         });
     };

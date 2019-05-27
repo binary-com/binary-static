@@ -26,8 +26,8 @@ const GTM = (() => {
     });
 
     const pushDataLayer = (data) => {
-        const is_login_page = /logged_inws|redirect/i.test(window.location.pathname);
-        if (isGtmApplicable() && !is_login_page) {
+        const is_login_pages = /logged_inws|redirect/i.test(window.location.pathname);
+        if (isGtmApplicable() && !is_login_pages) {
             dataLayer.push({
                 ...getCommonVariables(),
                 ...data,
