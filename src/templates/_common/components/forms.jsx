@@ -162,6 +162,7 @@ export const SubmitButton = ({
     custom_btn_class,
     custom_btn_href,
     custom_btn_id,
+    custom_msg_text,
 }) => {
     const content =
         <React.Fragment>
@@ -180,6 +181,9 @@ export const SubmitButton = ({
                     >
                         <span className='button'>{custom_btn_text}</span>
                     </a>
+                }
+                { custom_msg_text &&
+                    <p className={`${is_centered ? 'center-text' : ''}`}>{custom_msg_text}</p>
                 }
                 <button
                     id={id || 'btn_submit'}

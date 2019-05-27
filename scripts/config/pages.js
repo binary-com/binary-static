@@ -49,6 +49,7 @@ module.exports = [
     ['user/security/vpn_app',                   'app/user/security/vpn_app',                   'default',    'VPN app'],
     ['user/set-currency',                       'app/user/set_currency',                       'default',    'Set Currency'],
     ['user/settingsws',                         'app/user/settings',                           'default',    'Settings'],
+    ['user/settings/closurews',                 'app/user/settings/account_closure',           'default',    'Account Closure'],
     ['user/settings/assessmentws',              'app/user/settings/financial_assessment',      'default',    'Financial Assessment'],
     ['user/settings/detailsws',                 'app/user/settings/personal_details',          'default',    'Personal Details'],
     ['user/settings/professional',              'app/user/settings/professional',              'default',    'Professional Client'],

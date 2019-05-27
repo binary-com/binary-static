@@ -31,6 +31,7 @@ const Settings = () => (
                 <Column className='real invisible' url='assessmentws' image='financial-assessment' header={it.L('Financial Assessment')} text={it.L('View your financial assessment settings.')} />
                 <Column className='real invisible' url='../authenticate' id='authenticate' image='authenticate' header={it.L('Authentication')} text={it.L('View your account\'s authentication status.')} />
                 <Column className='invisible' id='professional_client' url='professional' image='professional' header={it.L('Account Categorisation')} />
+                <Column url='closurews' image='detail' header={it.L('Account Closure')} text={it.L('Close your account entirely.')} />
             </div>
         </div>
     </React.Fragment>
