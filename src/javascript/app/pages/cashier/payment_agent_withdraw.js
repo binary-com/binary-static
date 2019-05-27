@@ -82,8 +82,8 @@ const PaymentAgentWithdraw = (() => {
                 return getPaWithdrawalLimit(currency, limit);
             };
             
-            const min  = () => getAPILimit('min');
-            const max  = () => getAPILimit('max');
+            const min = () => getAPILimit('min');
+            const max = () => getAPILimit('max');
 
             $agent_error = $('.row-agent').find('.error-msg');
             $txt_agents  = $(field_ids.txt_agents);
