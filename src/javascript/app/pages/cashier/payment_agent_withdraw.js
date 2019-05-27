@@ -30,6 +30,7 @@ const PaymentAgentWithdraw = (() => {
     let $agent_error,
         $ddl_agents,
         $txt_agents,
+        $txt_amount,
         $views,
         agent_name,
         currency,
@@ -87,12 +88,13 @@ const PaymentAgentWithdraw = (() => {
 
             $agent_error = $('.row-agent').find('.error-msg');
             $txt_agents  = $(field_ids.txt_agents);
+            $txt_amount  = $(field_ids.txt_amount);
 
             $form.find('.wrapper-row-agent').find('label').append($('<span />', { text: '*', class: 'required_field_asterisk' }));
             $form.find('label[for="txtAmount"]').text(`${localize('Amount in')} ${currency}`);
             trimDescriptionContent();
             FormManager.init(form_id, [
-                { selector: field_ids.txt_amount, validations: ['req', ['number', { type: 'float', decimals: getDecimalPlaces(currency), min, max }], ['custom', { func: () => +Client.get('balance') >= +$(field_ids.txt_amount).val(), message: localize('Insufficient balance.') }]], request_field: 'amount' },
+                { selector: field_ids.txt_amount, validations: ['req', ['number', { type: 'float', decimals: getDecimalPlaces(currency), min, max }], ['custom', { func: () => +Client.get('balance') >= +$txt_amount.val(), message: localize('Insufficient balance.') }]], request_field: 'amount' },
                 { selector: field_ids.txt_desc,   validations: ['general'], request_field: 'description' },
 
                 { request_field: 'currency',              value: currency },
@@ -110,9 +112,7 @@ const PaymentAgentWithdraw = (() => {
                     // error handling
                     $agent_error.setVisibility(1);
                 }
-                if ($(field_ids.txt_amount).val()) {
-                    Validation.validate(form_id);
-                }
+                checkValidation();
             });
 
             $txt_agents.on('keyup', () => {
@@ -128,10 +128,14 @@ const PaymentAgentWithdraw = (() => {
             });
 
             $txt_agents.on('focusout', () => {
-                if ($(field_ids.txt_amount).val()) {
+                checkValidation();
+            });
+
+            const checkValidation = () => {
+                if ($txt_amount.val()) {
                     Validation.validate(form_id);
                 }
-            });
+            };
 
             FormManager.handleSubmit({
                 form_selector       : form_id,
