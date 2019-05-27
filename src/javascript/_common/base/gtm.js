@@ -1,7 +1,6 @@
 const Cookies          = require('js-cookie');
 const moment           = require('moment');
 const ClientBase       = require('./client_base');
-const Login            = require('./login');
 const ServerTime       = require('./server_time');
 const BinarySocket     = require('./socket_base');
 const getElementById   = require('../common_functions').getElementById;
@@ -27,7 +26,8 @@ const GTM = (() => {
     });
 
     const pushDataLayer = (data) => {
-        if (isGtmApplicable() && !Login.isLoginPages()) {
+        const is_login_page = /logged_inws|redirect/i.test(window.location.pathname);
+        if (isGtmApplicable() && !is_login_page) {
             dataLayer.push({
                 ...getCommonVariables(),
                 ...data,

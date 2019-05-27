@@ -1,5 +1,6 @@
 const Cookies             = require('js-cookie');
 const Client              = require('./client_base');
+const TrafficSource       = require('../../app/common/traffic_source');
 const getLanguage         = require('../language').get;
 const isMobile            = require('../os_detect').isMobile;
 const isStorageSupported  = require('../storage').isStorageSupported;
@@ -28,15 +29,14 @@ const Login = (() => {
         );
     };
 
-    const isLoginPages = () => /logged_inws|redirect/i.test(window.location.pathname);
-
-    const socialLoginUrl = (brand, affiliate_token) => (`${loginUrl()}&social_signup=${brand}&affiliate_token=${affiliate_token}`);
+    const socialLoginUrl = (brand, affiliate_token) => (`${loginUrl()}&social_signup=${brand}&affiliate_token=${affiliate_token}&utm_medium=`);
 
     const initOneAll = () => {
         ['google', 'facebook'].forEach(provider => {
             $(`#button_${provider}`).off('click').on('click', e => {
                 e.preventDefault();
 
+                const utm_data = TrafficSource.getData();
                 const affiliate_tracking = Cookies.getJSON('affiliate_tracking');
                 const affiliate_token    = affiliate_tracking ? affiliate_tracking.t : '';
                 window.location.href     = socialLoginUrl(provider, affiliate_token);
@@ -46,7 +46,6 @@ const Login = (() => {
 
     return {
         redirectToLogin,
-        isLoginPages,
         initOneAll,
     };
 })();
