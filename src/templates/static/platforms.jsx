@@ -138,9 +138,9 @@ const Platform = () => (
             <h1 className='center-text'>{it.L('Platforms')}</h1>
             <p className='center-text gr-padding-20 gr-parent'>{it.L('Explore all the trading platforms, apps, and tools we offer')}</p>
         </div>
-        <div className='fill-bg-color gr-padding-30' data-show='-eucountry'>
+        <div className='fill-bg-color gr-padding-30 mobile-hide' data-show='-eucountry'>
             <div className='container gr-padding-30 gr-child'>
-                <h2 className='primary-color center-text new'>{it.L('Try Deriv.app: our latest innovation')}</h2>
+                <h2 className='primary-color center-text new'>{it.L('Try Deriv: our latest innovation')}</h2>
                 <p className='center-text'>{it.L('An all-new trading experience.')}</p>
                 <div className='gr-row gr-row-align-around'>
                     <div className='gr-5 gr-12-p gr-12-m'>
@@ -193,8 +193,9 @@ const Platform = () => (
                             <Platforms
                                 image='deriv-app'
                                 data_show='-eucountry'
-                                header='Deriv.app'
+                                header='Deriv'
                                 status='new'
+                                className='mobile-hide'
                                 description={it.L('The next-gen online trading experience')}
                                 text={it.L('A whole new easy-to-use platform that\'s rich with features.')}
                                 url='https://deriv.app/?utm_source=binary&utm_medium=referral&utm_campaign=platforms_page'
