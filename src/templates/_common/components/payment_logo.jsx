@@ -6,7 +6,6 @@ const payment_methods_list = [
     { image: 'maestro',                 param: '?anchor=maestro' },
     { image: 'bank_transfer',           param: '?anchor=bank-transfer' },
     { image: 'internet_bank_transfer',  param: '?anchor=internet-bank-transfer' },
-    { image: 'paysec',                  param: '?anchor=paysec',         dataShow: '-eucountry' },
     { image: 'paytrust',                param: '?anchor=paytrust',       dataShow: '-eucountry' },
     { image: 'neteller',                param: '?anchor=neteller' },
     { image: 'fasapay',                 param: '?anchor=fasapay',        dataShow: '-eucountry' },
