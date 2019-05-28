@@ -34,28 +34,11 @@ const Partners = () => (
 
             <div className='gr-row gr-clear'>
                 <Column
-                    url={it.url_for('affiliate/signup')}
-                    image='affiliate-program'
-                    header={it.L('Affiliate Programme')}
-                    text={it.L('Earn commissions by introducing new customers to [_1].', it.website_name)}
-                />
-
-                <Column
-                    url={it.url_for('ib-programme/ib-signup')}
-                    image='ib'
-                    header={it.L('IB Programme')}
-                    text={it.L('Earn a commission on each client\'s MT5 trading activity – paid out daily.')}
-                />
-
-                <Column
                     url={it.url_for('payment-agent')}
                     image='payment-agents'
                     header={it.L('Payment Agent')}
                     text={it.L('Apply to become a Payment Agent')}
                 />
-            </div>
-
-            <div className='gr-row gr-clear'>
                 <Column
                     url='https://developers.binary.com'
                     target='_blank'
@@ -70,7 +53,9 @@ const Partners = () => (
                     header={it.L('Open Source')}
                     text={it.L('Contribute to [_1]\'s open-source projects.', it.website_name) }
                 />
+            </div>
 
+            <div className='gr-row gr-clear'>
                 <Column
                     url='https://academy.binary.com/en/contributors/'
                     image='contributors'
@@ -78,9 +63,6 @@ const Partners = () => (
                     header={it.L('Contributors')}
                     text={it.L('Apply to become a contributor')}
                 />
-            </div>
-
-            <div className='gr-row gr-clear'>
                 <Column
                     url={it.url_for('security-testing')}
                     image='tester'
@@ -94,6 +76,9 @@ const Partners = () => (
                     header={it.L('Liquidity solutions')}
                     text={it.L('Access multi-asset liquidity from top-tier institutions.') }
                 />
+            </div>
+
+            <div className='gr-row gr-clear'>
 
                 <Column
                     url={it.url_for('multiple-accounts-manager')}
