@@ -27,6 +27,39 @@ const AffiliateIbLanding = () => (
                 </article>
             </div>
         </section>
+        <section className='how-it-works'>
+            <div className='container'>
+                <h2>How it works</h2>
+                <div className='gr-row'>
+                    <div className='gr-4'>
+                        <h3>Sign up</h3>
+                        <p>
+                            Choose your preferred programme,
+                            complete the application form,
+                            and receive your affiliate link upon approval
+                        </p>
+                    </div>
+                    <div className='gr-4'>
+                        <h3>Introduce Binary.com</h3>
+                        <p>
+                            Spread the word to your audience.
+                            Use your unique referral link and our
+                            tried-and-tested referral tools to drive
+                            traffic to Binary.com.
+                        </p>
+                    </div>
+                    <div className='gr-4'>
+                        <h3>Earn</h3>
+                        <p>
+                            Refer new clients to us.
+                            Receive commissions based
+                            on your chosen partnership
+                            programme.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
         <section className='who-apply'>
             <div className='container'>
                 <h2 className='center-text'>Who can apply as a Binary.com partner</h2>
