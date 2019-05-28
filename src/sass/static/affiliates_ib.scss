@@ -30,67 +30,39 @@
 .affiliate-ib-content {
     margin: 0 !important;
 
-    h1, h2, h3 {
-        margin: 0;
-    }
     h1 {
-        font-size: 62px;
-        margin-bottom: 20px;
+        font-size: 64px;
+    }
+    h2 {
+        font-size: 36px;
+        font-weight: 700;
+    }
+    h4 {
+        font-weight: 700;
     }
     .hero {
         background: $COLOR_ORANGE;
         height: 400px;
     }
     .statistics {
-        display: flex;
-        align-items: center;
-        justify-content: center;
         background: url('../../images/pages/contact/banner-bg.svg');
         height: 200px;
+    }
+    .who-apply {
+        display: flex;
+        align-items: center;
+        height: 560px;
 
-        &-item {
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-            text-align: center;
-            padding: 40px;
+        .gr-row {
+            max-width: 780px;
         }
     }
-}
-// will do the styling here
-// .affiliates-signup-page, .ib-signup-page {
-//     h2 {
-//         margin-top: 30px;
-//     }
-//     #commission_tabs {
-//         margin-bottom: 0 !important;
-//     }
-//     .margin-bottom-50 {
-//         margin-bottom: 50px;
-//     }
-//     .fixed-height-img {
-//         height: 50px;
-//     }
-//     .faq-box {
-//         padding: 1rem;
-//     }
-//     .table-container.center-text {
-//         & th, td {
-//             text-align: center;
-//         }
-//     }
-//     @media screen and (max-width: 480px) {
-//         table, .mobile-text-small {
-//             font-size: 0.9rem;
-//         }
-//     }
-// }
+    .how-it-works {
+        text-align: center;
 
-.how-it-works {
-    text-align: center;
-
-    h2, h3 {
-        font-weight: 700;
-        margin: 20px 0;
+        h2, h3 {
+            font-weight: 700;
+            margin: 20px 0;
+        }
     }
 }
