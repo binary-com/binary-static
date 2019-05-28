@@ -1,11 +1,11 @@
 const Cookies             = require('js-cookie');
 const Client              = require('./client_base');
 const getLanguage         = require('../language').get;
-const isLoginPages        = require('../utility').isLoginPages;
 const isMobile            = require('../os_detect').isMobile;
 const isStorageSupported  = require('../storage').isStorageSupported;
 const LocalStore          = require('../storage').LocalStore;
 const urlForCurrentDomain = require('../url').urlForCurrentDomain;
+const isLoginPages        = require('../utility').isLoginPages;
 const TrafficSource       = require('../../app/common/traffic_source');
 const getAppId            = require('../../config').getAppId;
 
