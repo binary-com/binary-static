@@ -4,8 +4,8 @@ const AffiliateIbLanding = () => (
     <React.Fragment>
         <section id='page_top' className='hero'>
             <div className='container full-height'>
-                <div className='gr-row center-text full-height'>
-                    <div className='gr-10 gr-centered align-self-center'>
+                <div className='gr-row full-height'>
+                    <div className='gr-10 gr-centered center-text align-self-center'>
                         <p className='hero-header'>Build a rewarding and long-term business relationship with an industry pioneer</p>
                         <button>Become our partner</button>
                     </div>
@@ -34,7 +34,7 @@ const AffiliateIbLanding = () => (
             </div>
         </section>
         <section className='how-it-works'>
-            <div className='container'>
+            <div className='container center-text'>
                 <h2>How it works</h2>
                 <div className='gr-row'>
                     <div className='gr-4'>
