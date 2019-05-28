@@ -1,17 +1,16 @@
 const Cookies             = require('js-cookie');
 const Client              = require('./client_base');
-const TrafficSource       = require('../../app/common/traffic_source');
 const getLanguage         = require('../language').get;
 const isMobile            = require('../os_detect').isMobile;
 const isStorageSupported  = require('../storage').isStorageSupported;
 const LocalStore          = require('../storage').LocalStore;
 const urlForCurrentDomain = require('../url').urlForCurrentDomain;
+const TrafficSource       = require('../../app/common/traffic_source');
 const getAppId            = require('../../config').getAppId;
 
 const Login = (() => {
     const redirectToLogin = () => {
-        const is_login_pages = /logged_inws|redirect/i.test(window.location.pathname);
-        if (!Client.isLoggedIn() && !is_login_pages && isStorageSupported(sessionStorage)) {
+        if (!Client.isLoggedIn() && !isLoginPages() && isStorageSupported(sessionStorage)) {
             sessionStorage.setItem('redirect_url', window.location.href);
             window.location.href = loginUrl();
         }
@@ -39,20 +38,26 @@ const Login = (() => {
             $(`#button_${provider}`).off('click').on('click', e => {
                 e.preventDefault();
 
-                const utm_data     = TrafficSource.getData();
-                const utm_source   = TrafficSource.getSource(utm_data) ? `&utm_source=${TrafficSource.getSource(utm_data)}` : '';
-                const utm_medium   = utm_data.utm_medium ? `&utm_medium=${utm_data.utm_medium}` : '';
-                const utm_campaign = utm_data.utm_campaign ? `&utm_campaign=${utm_data.utm_campaign}` : '';
-                const affiliate_tracking = Cookies.getJSON('affiliate_tracking');
-                const affiliate_token    = affiliate_tracking ? `&affiliate_token=${affiliate_tracking.t}` : '';
-                window.location.href = socialLoginUrl(provider, affiliate_token, utm_source, utm_medium, utm_campaign);
+                const affiliate_tracking   = Cookies.getJSON('affiliate_tracking');
+                const utm_data             = TrafficSource.getData();
+                const utm_source           = TrafficSource.getSource(utm_data);
+                const utm_source_link      = utm_source ? `&utm_source=${utm_source}` : '';
+                const utm_medium_link      = utm_data.utm_medium ? `&utm_medium=${utm_data.utm_medium}` : '';
+                const utm_campaign_link    = utm_data.utm_campaign ? `&utm_campaign=${utm_data.utm_campaign}` : '';
+                const affiliate_token_link = affiliate_tracking ? `&affiliate_token=${affiliate_tracking.t}` : '';
+
+                window.location.href = socialLoginUrl(provider, affiliate_token_link,
+                    utm_source_link, utm_medium_link, utm_campaign_link);
             });
         });
     };
 
+    const isLoginPages = () => /logged_inws|redirect/i.test(window.location.pathname);
+
     return {
         redirectToLogin,
         initOneAll,
+        isLoginPages,
     };
 })();
 
