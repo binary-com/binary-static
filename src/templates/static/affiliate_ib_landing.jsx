@@ -31,29 +31,29 @@ const AffiliateIbLanding = () => (
             <div className='container'>
                 <h2 className='center-text'>Who can apply as a Binary.com partner</h2>
                 <div className='gr-row'>
-                    <div className='gr-6 gr-12-m gr-padding-20 gr-child'>
+                    <div className='gr-6 gr-12-m gr-padding-30 gr-child'>
                         <h4>Webmaster</h4>
                         <p>Runs and manages a website that promotes Forex or binary options</p>
                     </div>
-                    <div className='gr-6 gr-12-m gr-padding-20 gr-child'>
+                    <div className='gr-6 gr-12-m gr-padding-30 gr-child'>
                         <h4>Trading guru</h4>
                         <p> Nurtures a community of potential and existing online
                             traders through insights and mentorship
                         </p>
                     </div>
-                    <div className='gr-6 gr-12-m gr-padding-20 gr-child'>
+                    <div className='gr-6 gr-12-m gr-padding-30 gr-child'>
                         <h4>Webinar speaker</h4>
                         <p>Conducts trading discussions and interactive sessions online with trading enthusiasts</p>
                     </div>
-                    <div className='gr-6 gr-12-m gr-padding-20 gr-child'>
+                    <div className='gr-6 gr-12-m gr-padding-30 gr-child'>
                         <h4>Web and software developer</h4>
                         <p>Builds trading applications and interfaces using the Binary.com API</p>
                     </div>
-                    <div className='gr-6 gr-12-m gr-padding-20 gr-child'>
+                    <div className='gr-6 gr-12-m gr-padding-30 gr-child'>
                         <h4>Social media admin</h4>
                         <p>Manages a social media page dedicated to online trading</p>
                     </div>
-                    <div className='gr-6 gr-12-m gr-padding-20 gr-child'>
+                    <div className='gr-6 gr-12-m gr-padding-30 gr-child'>
                         <h4>Blogger and vlogger</h4>
                         <p>Maintains a page or video channel about online trading</p>
                     </div>
