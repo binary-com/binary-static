@@ -169,7 +169,7 @@ const Platform = () => (
                 </div>
                 <div className='center-text'>
                     <p>{it.L('Go ahead, experience it for yourself.')}</p>
-                    <p><a className='button' href='https://deriv.app/?utm_source=binary&utm_medium=referral&utm_campaign=platforms_page' target='_blank' rel='noopener noreferrer'><span>{it.L('Try Deriv.app now')}</span></a></p>
+                    <p><a className='button' href='https://deriv.app/?utm_source=binary&utm_medium=referral&utm_campaign=platforms_page' target='_blank' rel='noopener noreferrer'><span>{it.L('Try Deriv now')}</span></a></p>
                 </div>
             </div>
         </div>
