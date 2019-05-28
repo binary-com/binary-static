@@ -27,6 +27,36 @@
     }
 }
 
+.affiliate-ib-content {
+    margin: 0 !important;
+
+    h1, h2, h3 {
+        margin: 0;
+    }
+    h1 {
+        font-size: 62px;
+        margin-bottom: 20px;
+    }
+    .hero {
+        background: $COLOR_ORANGE;
+        height: 400px;
+    }
+    .statistics {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: url('../../images/pages/contact/banner-bg.svg');
+        height: 200px;
+
+        &-item {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            padding: 40px;
+        }
+    }
+}
 // will do the styling here
 // .affiliates-signup-page, .ib-signup-page {
 //     h2 {
