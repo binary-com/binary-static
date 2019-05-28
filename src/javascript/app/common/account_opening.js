@@ -197,9 +197,11 @@ const AccountOpening = (() => {
     const handleNewAccount = (response, message_type) => {
         if (response.error) {
             const errorMessage = response.error.message;
+            const noticeBox    = $('#client_message').find('.notice-msg');
             $('#submit-message').empty();
-            $('#client_message').find('.notice-msg').text(response.msg_type === 'sanity_check' ? localize('There was some invalid character in an input field.') : errorMessage).end()
+            noticeBox.text(response.msg_type === 'sanity_check' ? localize('There was some invalid character in an input field.') : errorMessage).end()
                 .setVisibility(1);
+            $.scrollTo(noticeBox, 500, { offset: -150 });
         } else {
             localStorage.setItem('is_new_account', 1);
             Client.processNewAccount({
