@@ -3,7 +3,7 @@ import React from 'react';
 const AffiliateIbLanding = () => (
     <React.Fragment>
         <section id='page_top' className='hero'>
-            <div className='container full-height'>
+            <div className='container full-height gr-padding-20'>
                 <div className='gr-row full-height'>
                     <div className='gr-10 gr-centered center-text align-self-center'>
                         <p className='hero-header'>Build a rewarding and long-term business relationship with an industry pioneer</p>
@@ -14,7 +14,7 @@ const AffiliateIbLanding = () => (
         </section>
 
         <section className='statistics'>
-            <div className='container gr-row full-height gr-row-align-middle center-text'>
+            <div className='container gr-row full-height gr-row-align-middle center-text gr-padding-20'>
                 <article className='gr-3'>
                     <h1>40K+</h1>
                     <h3>Partners</h3>
@@ -34,7 +34,7 @@ const AffiliateIbLanding = () => (
             </div>
         </section>
         <section className='how-it-works'>
-            <div className='container center-text'>
+            <div className='container center-text gr-padding-20'>
                 <h2>How it works</h2>
                 <div className='gr-row'>
                     <div className='gr-4'>
@@ -67,7 +67,7 @@ const AffiliateIbLanding = () => (
             </div>
         </section>
         <section className='who-apply'>
-            <div className='container'>
+            <div className='container gr-padding-20'>
                 <h2 className='center-text'>Who can apply as a Binary.com partner</h2>
                 <div className='gr-row'>
                     <div className='gr-6 gr-12-m gr-padding-30 gr-child'>
@@ -95,6 +95,49 @@ const AffiliateIbLanding = () => (
                     <div className='gr-6 gr-12-m gr-padding-30 gr-child'>
                         <h4>Blogger and vlogger</h4>
                         <p>Maintains a page or video channel about online trading</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section className='why-partner primary-bg-color'>
+            <div className='container center-text full-height gr-padding-30'>
+                <h2 className='center-text color-white'>Why partner with us</h2>
+                <div className='gr-row gr-padding-20'>
+                    <div className='gr-4 gr-padding-10'>
+                        <img src='/images/pages/affiliates/commission-icon.svg' alt='Generous commissions' className='gr-centered' />
+                        <h4 className='secondary-color'>Generous commissions</h4>
+                    </div>
+                    <div className='gr-4 gr-padding-10'>
+                        <img src='/images/pages/affiliates/commission-icon.svg' alt='High conversions' className='gr-centered' />
+                        <h4 className='secondary-color'>High conversions</h4>
+                    </div>
+                    <div className='gr-4 gr-padding-10'>
+                        <img src='/images/pages/affiliates/commission-icon.svg' alt='On-time payments' className='gr-centered' />
+                        <h4 className='secondary-color'>On-time payments</h4>
+                    </div>
+                    <div className='gr-4 gr-padding-10'>
+                        <img src='/images/pages/affiliates/commission-icon.svg' alt='No hidden fees' className='gr-centered' />
+                        <h4 className='secondary-color'>No hidden fees</h4>
+                    </div>
+                    <div className='gr-4 gr-padding-10'>
+                        <img src='/images/pages/affiliates/commission-icon.svg' alt='Customer-centric partnership' className='gr-centered' />
+                        <h4 className='secondary-color'>Customer-centric partnership</h4>
+                    </div>
+                    <div className='gr-4 gr-padding-10'>
+                        <img src='/images/pages/affiliates/commission-icon.svg' alt='Multiple income opportunities' className='gr-centered' />
+                        <h4 className='secondary-color'>Multiple income opportunities</h4>
+                    </div>
+                    <div className='gr-4 gr-padding-10'>
+                        <img src='/images/pages/affiliates/commission-icon.svg' alt='Advanced referral tools' className='gr-centered' />
+                        <h4 className='secondary-color'>Advanced referral tools</h4>
+                    </div>
+                    <div className='gr-4 gr-padding-10'>
+                        <img src='/images/pages/affiliates/commission-icon.svg' alt='International support' className='gr-centered' />
+                        <h4 className='secondary-color'>International support</h4>
+                    </div>
+                    <div className='gr-4 gr-padding-10'>
+                        <img src='/images/pages/affiliates/commission-icon.svg' alt='Multilingual platforms' className='gr-centered' />
+                        <h4 className='secondary-color'>Multilingual platforms</h4>
                     </div>
                 </div>
             </div>
