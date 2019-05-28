@@ -27,30 +27,31 @@
     }
 }
 
-.affiliates-signup-page, .ib-signup-page {
-    h2 {
-        margin-top: 30px;
-    }
-    #commission_tabs {
-        margin-bottom: 0 !important;
-    }
-    .margin-bottom-50 {
-        margin-bottom: 50px;
-    }
-    .fixed-height-img {
-        height: 50px;
-    }
-    .faq-box {
-        padding: 1rem;
-    }
-    .table-container.center-text {
-        & th, td {
-            text-align: center;
-        }
-    }
-    @media screen and (max-width: 480px) {
-        table, .mobile-text-small {
-            font-size: 0.9rem;
-        }
-    }
-}
+// will do the styling here
+// .affiliates-signup-page, .ib-signup-page {
+//     h2 {
+//         margin-top: 30px;
+//     }
+//     #commission_tabs {
+//         margin-bottom: 0 !important;
+//     }
+//     .margin-bottom-50 {
+//         margin-bottom: 50px;
+//     }
+//     .fixed-height-img {
+//         height: 50px;
+//     }
+//     .faq-box {
+//         padding: 1rem;
+//     }
+//     .table-container.center-text {
+//         & th, td {
+//             text-align: center;
+//         }
+//     }
+//     @media screen and (max-width: 480px) {
+//         table, .mobile-text-small {
+//             font-size: 0.9rem;
+//         }
+//     }
+// }
