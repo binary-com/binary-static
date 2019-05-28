@@ -3,8 +3,14 @@ import React from 'react';
 const AffiliateIbLanding = () => (
     <React.Fragment>
         <section id='page_top' className='hero'>
-            <h1>Build a rewarding and long-term business relationship with an industry pioneer</h1>
-            <button><span className='btn-text'>Become our partner</span></button>
+            <div className='container full-height'>
+                <div className='gr-row center-text full-height'>
+                    <div className='gr-10 gr-centered align-self-center'>
+                        <p className='hero-header'>Build a rewarding and long-term business relationship with an industry pioneer</p>
+                        <button>Become our partner</button>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section className='statistics'>

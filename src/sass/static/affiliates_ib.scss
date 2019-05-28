@@ -41,8 +41,17 @@
         font-weight: 700;
     }
     .hero {
-        background: $COLOR_ORANGE;
-        height: 400px;
+        background-size: cover;
+        background-image: url('../../images/pages/affiliates/hero-background.png');
+        height: 417px;
+
+        &-header {
+            font-size: 36px;
+            font-weight: 300;
+            line-height: 1.25;
+            color: $COLOR_WHITE;
+            margin: 20px 0;
+        }
     }
     .statistics {
         background: url('../../images/pages/contact/banner-bg.svg');
@@ -58,8 +67,6 @@
         }
     }
     .how-it-works {
-        text-align: center;
-
         h2, h3 {
             font-weight: 700;
             margin: 20px 0;
