@@ -8,6 +8,7 @@ const isVisible        = require('../common_functions').isVisible;
 const getLanguage      = require('../language').get;
 const State            = require('../storage').State;
 const getPropertyValue = require('../utility').getPropertyValue;
+const isLoginPages     = require('../utility').isLoginPages;
 const getAppId         = require('../../config').getAppId;
 
 const GTM = (() => {
@@ -26,8 +27,7 @@ const GTM = (() => {
     });
 
     const pushDataLayer = (data) => {
-        const is_login_pages = /logged_inws|redirect/i.test(window.location.pathname);
-        if (isGtmApplicable() && !is_login_pages) {
+        if (isGtmApplicable() && !isLoginPages()) {
             dataLayer.push({
                 ...getCommonVariables(),
                 ...data,
