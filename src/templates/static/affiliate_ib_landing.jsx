@@ -241,39 +241,39 @@ const AffiliateIbLanding = () => (
                 <h2 className='center-text color-white'>Why partner with us</h2>
                 <div className='gr-row gr-padding-20'>
                     <div className='gr-4 gr-padding-10'>
-                        <img src='/images/pages/affiliates/commission-icon.svg' alt='Generous commissions' className='gr-centered' />
+                        <img src='/images/pages/affiliates_ib/icons/commission-icon.svg' alt='Generous commissions' className='gr-centered' />
                         <h4 className='secondary-color'>Generous commissions</h4>
                     </div>
                     <div className='gr-4 gr-padding-10'>
-                        <img src='/images/pages/affiliates/commission-icon.svg' alt='High conversions' className='gr-centered' />
+                        <img src='/images/pages/affiliates_ib/icons/conversion-icon.svg' alt='High conversions' className='gr-centered' />
                         <h4 className='secondary-color'>High conversions</h4>
                     </div>
                     <div className='gr-4 gr-padding-10'>
-                        <img src='/images/pages/affiliates/commission-icon.svg' alt='On-time payments' className='gr-centered' />
+                        <img src='/images/pages/affiliates_ib/icons/payment-icon.svg' alt='On-time payments' className='gr-centered' />
                         <h4 className='secondary-color'>On-time payments</h4>
                     </div>
                     <div className='gr-4 gr-padding-10'>
-                        <img src='/images/pages/affiliates/commission-icon.svg' alt='No hidden fees' className='gr-centered' />
+                        <img src='/images/pages/affiliates_ib/icons/hidden-icon.svg' alt='No hidden fees' className='gr-centered' />
                         <h4 className='secondary-color'>No hidden fees</h4>
                     </div>
                     <div className='gr-4 gr-padding-10'>
-                        <img src='/images/pages/affiliates/commission-icon.svg' alt='Customer-centric partnership' className='gr-centered' />
+                        <img src='/images/pages/affiliates_ib/icons/customer-icon.svg' alt='Customer-centric partnership' className='gr-centered' />
                         <h4 className='secondary-color'>Customer-centric partnership</h4>
                     </div>
                     <div className='gr-4 gr-padding-10'>
-                        <img src='/images/pages/affiliates/commission-icon.svg' alt='Multiple income opportunities' className='gr-centered' />
+                        <img src='/images/pages/affiliates_ib/icons/income-icon.svg' alt='Multiple income opportunities' className='gr-centered' />
                         <h4 className='secondary-color'>Multiple income opportunities</h4>
                     </div>
                     <div className='gr-4 gr-padding-10'>
-                        <img src='/images/pages/affiliates/commission-icon.svg' alt='Advanced referral tools' className='gr-centered' />
+                        <img src='/images/pages/affiliates_ib/icons/referral-icon.svg' alt='Advanced referral tools' className='gr-centered' />
                         <h4 className='secondary-color'>Advanced referral tools</h4>
                     </div>
                     <div className='gr-4 gr-padding-10'>
-                        <img src='/images/pages/affiliates/commission-icon.svg' alt='International support' className='gr-centered' />
+                        <img src='/images/pages/affiliates_ib/icons/support-icon.svg' alt='International support' className='gr-centered' />
                         <h4 className='secondary-color'>International support</h4>
                     </div>
                     <div className='gr-4 gr-padding-10'>
-                        <img src='/images/pages/affiliates/commission-icon.svg' alt='Multilingual platforms' className='gr-centered' />
+                        <img src='/images/pages/affiliates_ib/icons/multilingual-icon.svg' alt='Multilingual platforms' className='gr-centered' />
                         <h4 className='secondary-color'>Multilingual platforms</h4>
                     </div>
                 </div>
