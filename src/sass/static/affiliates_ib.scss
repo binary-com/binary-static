@@ -58,6 +58,9 @@
         height: 200px;
     }
     .how-it-works {
+        background-image: url('../../images/pages/affiliates/howprogrammeworks-bg.png');
+        background-size: cover;
+
         h2, h3 {
             margin: 20px 0;
         }
@@ -106,6 +109,33 @@
         }
         h2 {
             margin: 25px 0;
+        }
+    }
+    .faq {
+        background-image: url('../../images/pages/affiliates/howprogrammeworks-bg.png');
+        background-size: cover;
+        padding: 40px;
+
+        &-header {
+            font-size: 36px;
+            font-weight: 700;
+            line-height: 45px;
+            color: $COLOR_WHITE;
+        }
+        &-item {
+            background-color: $COLOR_WHITE;
+            border-radius: 8px;
+            height: 220px;
+            padding: 10px;
+
+            &-header {
+                font-weight: 700;
+            }
+            &-content {
+                font-size: 16px;
+                font-weight: bold;
+                text-align: start;
+            }
         }
     }
 }
