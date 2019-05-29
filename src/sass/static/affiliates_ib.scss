@@ -31,10 +31,10 @@
     margin: 0 !important;
 
     h1 {
-        font-size: 64px;
+        font-size: 3.5rem;
     }
     h2 {
-        font-size: 36px;
+        font-size: 2rem;
         font-weight: 500;
     }
     h4 {
@@ -44,21 +44,26 @@
         text-align: left;
     }
     .hero {
+        display: flex;
+        align-items: center;
         background-size: cover;
         background-image: url('../../images/pages/affiliates_ib_landing/background/hero.png');
-        height: 417px;
+        min-height: 417px;
 
         &-header {
-            font-size: 36px;
             font-weight: 300;
             line-height: 1.25;
-            color: $COLOR_WHITE;
-            margin: 20px 0;
         }
     }
     .statistics {
+        display: flex;
+        align-items: center;
         background: url('../../images/pages/contact/banner-bg.svg');
-        height: 200px;
+        min-height: 200px;
+
+        h3 {
+            margin: 0;
+        }
     }
     .how-it-works {
         background-image: url('../../images/pages/affiliates_ib_landing/background/orange.png');
@@ -86,7 +91,7 @@
         }
     }
     .why-partner {
-        height: 580px;
+        min-height: 580px;
         display: flex;
         align-items: center;
 

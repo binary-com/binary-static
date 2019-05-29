@@ -12,27 +12,27 @@ const AffiliateIbLanding = () => (
             <div className='container full-height gr-padding-20'>
                 <div className='gr-row full-height'>
                     <div className='gr-10 gr-centered center-text align-self-center'>
-                        <p className='hero-header'>Build a rewarding and long-term business relationship with an industry pioneer</p>
+                        <h2 className='hero-header color-white'>Build a rewarding and long-term business relationship with an industry pioneer</h2>
                         <button>Become our partner</button>
                     </div>
                 </div>
             </div>
         </section>
         <section className='statistics'>
-            <div className='container gr-row full-height gr-row-align-middle center-text gr-padding-20'>
-                <article className='gr-3'>
+            <div className='container gr-row full-height full-width gr-row-align-middle center-text gr-padding-20'>
+                <article className='gr-3 gr-6-p gr-12-m gr-padding-20'>
                     <h1>40K+</h1>
                     <h3>Partners</h3>
                 </article>
-                <article className='gr-3'>
+                <article className='gr-3 gr-6-p gr-12-m gr-padding-20'>
                     <h1>$12M+</h1>
                     <h3>Partner earnings</h3>
                 </article>
-                <article className='gr-3'>
+                <article className='gr-3 gr-6-p gr-12-m gr-padding-20'>
                     <h1>150+</h1>
                     <h3>Countries</h3>
                 </article>
-                <article className='gr-3'>
+                <article className='gr-3 gr-6-p gr-12-m gr-padding-20'>
                     <h1>1M+</h1>
                     <h3>Clients</h3>
                 </article>
