@@ -602,7 +602,7 @@ const Highchart = (() => {
     const endContract = () => {
         if (chart && !stop_streaming) {
             drawLineX({
-                value     : (is_sold_before_expiry ? sell_time : end_time),
+                value     : (is_sold_before_expiry && exit_tick_time >= end_time ? sell_time : end_time),
                 text_left : 'textLeft',
                 dash_style: 'Dash',
             });
