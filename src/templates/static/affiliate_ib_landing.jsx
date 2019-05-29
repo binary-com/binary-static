@@ -188,6 +188,25 @@ const AffiliateIbLanding = () => (
             <div className='container center-text gr-padding-20'>
                 <h2>How it works</h2>
                 <div className='gr-row'>
+                    <div className='gr-1' />
+                    <div className='gr-2 gr-centered'>
+                        <img src='/images/pages/affiliates_ib_landing/icons/signup.svg' />
+                    </div>
+                    <div className='gr-1 gr-centered align-self-center'>
+                        <img src='/images/pages/affiliates_ib_landing/icons/circle_arrow.svg' />
+                    </div>
+                    <div className='gr-3 gr-centered'>
+                        <img src='/images/pages/affiliates_ib_landing/icons/introduce.svg' />
+                    </div>
+                    <div className='gr-1 gr-centered align-self-center'>
+                        <img src='/images/pages/affiliates_ib_landing/icons/circle_arrow.svg' />
+                    </div>
+                    <div className='gr-2 gr-centered'>
+                        <img src='/images/pages/affiliates_ib_landing/icons/earn.svg' />
+                    </div>
+                    <div className='gr-1' />
+                </div>
+                <div className='gr-row'>
                     <div className='gr-4'>
                         <h3>Sign up</h3>
                         <p>
