@@ -23,7 +23,9 @@ const AffiliateIbLanding = () => (
                 <div className='gr-row full-height'>
                     <div className='gr-10 gr-centered center-text align-self-center'>
                         <h2 className='hero-header color-white'>Build a rewarding and long-term business relationship with an industry pioneer</h2>
-                        <button>Become our partner</button>
+                        <a href='https://login.binary.com/signup.php?lang=0' className='button' target='_blank' rel='noopener noreferrer'>
+                            <span>Become our partner</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -170,7 +172,9 @@ const AffiliateIbLanding = () => (
                                                     or more (one-time or accumulative) in the account. This
                                                     commission plan is only available to affiliates based in the EU.
                                                 </p>
-                                                <button className='gr-centered'>Sign up Now</button>
+                                                <a href='https://login.binary.com/signup.php?lang=0' className='button center-text gr-centered gr-padding-20' target='_blank' rel='noopener noreferrer'>
+                                                    <span>Sgn up Now</span>
+                                                </a>
                                             </div>
                                         </TabContent>
                                     </TabContentContainer>
@@ -266,7 +270,9 @@ const AffiliateIbLanding = () => (
                         <h4>Blogger and vlogger</h4>
                         <p>Maintains a page or video channel about online trading</p>
                     </div>
-                    <button className='gr-centered gr-10-m'>Join our global network of partners now</button>
+                    <a href='https://login.binary.com/signup.php?lang=0' className='button gr-centered gr-10-m gr-padding-20' target='_blank' rel='noopener noreferrer'>
+                        <span>Join our global network of partners now</span>
+                    </a>
                 </div>
             </div>
         </section>
