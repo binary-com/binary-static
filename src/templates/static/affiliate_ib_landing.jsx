@@ -204,39 +204,45 @@ const AffiliateIbLanding = () => (
                 <h2 className='faq-header'>Frequently Asked Questions</h2>
 
                 <div className='gr-row'>
-                    <div className='gr-4 gr-centered faq-item'>
+                    <div className='gr-4 faq-item' id='faq-item-1'>
                         <p className='faq-item-header secondary-color'>Affiliate</p>
 
                         <ul className='faq-item-content'>
                             <li>
-                                <a>General</a>
+                                <img className='faq-item-content-image' src='/images/pages/affiliates/marketing-icon-dark.svg' alt='General' />
+                                <a className='faq-item-content-text'>General</a>
                             </li>
                             <li>
-                                <a>Account Management</a>
+                                <img className='faq-item-content-image' src='/images/pages/affiliates/account-icon-dark.svg' alt='Account Management' />
+                                <a className='faq-item-content-text'>Account Management</a>
                             </li>
                             <li>
-                                <a>Referral Tools</a>
+                                <img className='faq-item-content-image' src='/images/pages/affiliates/general-faq-icon-dark.svg' alt='Referral Tools' />
+                                <a className='faq-item-content-text'>Referral Tools</a>
                             </li>
                         </ul>
                     </div>
-                    <div className='gr-4 gr-centered faq-item'>
+                    <div className='gr-4 faq-item' id='faq-item-2'>
                         <p className='faq-item-header secondary-color'>Introducing Broker</p>
 
                         <ul className='faq-item-content'>
                             <li>
-                                <a>General</a>
+                                <img className='faq-item-content-image' src='/images/pages/affiliates/marketing-icon-dark.svg' alt='General' />
+                                <a className='faq-item-content-text'>General</a>
                             </li>
                             <li>
-                                <a>Account Management</a>
+                                <img className='faq-item-content-image' src='/images/pages/affiliates/account-icon-dark.svg' alt='Account Management' />
+                                <a className='faq-item-content-text'>Account Management</a>
                             </li>
                             <li>
-                                <a>Referral Tools</a>
+                                <img className='faq-item-content-image' src='/images/pages/affiliates/general-faq-icon-dark.svg' alt='Referral Tools' />
+                                <a className='faq-item-content-text'>Referral Tools</a>
                             </li>
                         </ul>
                     </div>
                 </div>
 
-                <p>For further assistance, email us at <a href='mailto:affiliates@binary.com'>affiliates@binary.com</a></p>
+                <p className='faq-message'>For further assistance, email us at <a href='mailto:affiliates@binary.com'>affiliates@binary.com</a></p>
             </div>
         </section>
         <section className='payment-method white-bg-color'>
