@@ -127,6 +127,7 @@ const pages_config = {
     welcome                  : { module: WelcomePage,                is_authenticated: true, only_virtual: true },
     withdrawws               : { module: PaymentAgentWithdraw,       is_authenticated: true, only_real: true },
 
+    'affiliate-ib'           : { module: StaticPages.AffiliatesIb },
     'binary-in-numbers'      : { module: StaticPages.BinaryInNumbers },
     'binary-options'         : { module: GetStarted.BinaryOptions },
     'binary-options-mt5'     : { module: GetStarted.BinaryOptionsForMT5 },
@@ -135,7 +136,6 @@ const pages_config = {
     'get-started'            : { module: TabSelector },
     'how-to-trade-mt5'       : { module: TabSelector },
     'ib-faq'                 : { module: StaticPages.IBProgrammeFAQ },
-    'ib-signup'              : { module: TabSelector },
     'job-details'            : { module: JobDetails },
     'keep-safe'              : { module: KeepSafe },
     'new-account'            : { module: NewAccount,                     not_authenticated: true },
