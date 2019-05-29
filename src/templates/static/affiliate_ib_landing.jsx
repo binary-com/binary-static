@@ -1,5 +1,10 @@
 import React       from 'react';
 import PaymentLogo from '../_common/components/payment_logo.jsx';
+import {
+    TabContainer,
+    TabContent,
+    TabContentContainer,
+    TabsSubtabs }        from '../_common/components/tabs.jsx';
 
 const AffiliateIbLanding = () => (
     <React.Fragment>
@@ -13,7 +18,6 @@ const AffiliateIbLanding = () => (
                 </div>
             </div>
         </section>
-
         <section className='statistics'>
             <div className='container gr-row full-height gr-row-align-middle center-text gr-padding-20'>
                 <article className='gr-3'>
@@ -32,6 +36,57 @@ const AffiliateIbLanding = () => (
                     <h1>1M+</h1>
                     <h3>Clients</h3>
                 </article>
+            </div>
+        </section>
+        <section className='type-of-partner primary-bg-color'>
+            <div className='container center-text gr-padding-30'>
+                <h2>The types of partnerships we offer</h2>
+                <p className='color-white'> Depending on what you do, you can apply as our Affiliate or Introducing Broker,
+                    or both. More new clients from you means higher potential commissions.
+                </p>
+                <div className='has-tabs'>
+                    <ul className='gr-row'>
+                        <li className='gr-6'><a href='#affiliate'>Affiliate</a></li>
+                        <li className='gr-6'><a href='#ib'>Introducing Broker (IB)</a></li>
+                    </ul>
+                    <div id='affiliate'>
+                        <div className='gr-12 white-bg-color'>
+                            <p className='gr-padding-20 no-margin'> Earn up to 35% in commission by referring new clients to trade on our premier
+                                platforms for binary options. All commissions are credited into your account
+                                by the 15th of every month.
+                            </p>
+                            <h3 className='secondary-color'>Commision structure</h3>
+                            <TabContainer className='gr-padding-30 gr-parent full-width gr-11 gr-centered' theme='light'>
+                                <TabsSubtabs
+                                    id='commission_structure'
+                                    className='gr-padding-20 gr-parent tab-selector-wrapper'
+                                    items={[
+                                        { id: 'revenue',   text: it.L('Revenue Share') },
+                                        { id: 'turnover', text: it.L('Turnover') },
+                                        { id: 'cpa',      text: it.L('CPA (EU Only)') },
+                                        { id: 'commission_structure_selector', className: 'tab-selector' },
+                                    ]}
+                                />
+                                <div className='tab-content'>
+                                    <TabContentContainer>
+                                        <TabContent id='revenue' className='selectedTab'>
+                                            <p>Hello from revenue</p>
+                                        </TabContent>
+                                        <TabContent id='turnover'>
+                                            <p>Hello from turnover</p>
+                                        </TabContent>
+                                        <TabContent id='cpa'>
+                                            <p>Hello from cpa</p>
+                                        </TabContent>
+                                    </TabContentContainer>
+                                </div>
+                            </TabContainer>
+                        </div>
+                    </div>
+                    <div id='ib'>
+                        content of tab 2
+                    </div>
+                </div>
             </div>
         </section>
         <section className='how-it-works'>

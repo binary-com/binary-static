@@ -111,6 +111,46 @@
             margin: 25px 0;
         }
     }
+    .type-of-partner {
+        .container {
+            max-width: 780px;
+
+            & > p {
+                font-weight: 300;
+            }
+            h2 {
+                margin: 20px 0;
+            }
+            h3 {
+                margin: 20px 0;
+            }
+            .has-tabs {
+                margin: 20px 0;
+
+                .ui-tabs-nav {
+                    border-width: 2px;
+                    border-color: $COLOR_ORANGE;
+                    margin-bottom: 0;
+
+                    li {
+                        padding: 10px;
+                        margin: 0;
+
+                        a {
+                            width: 100%;
+                        }
+                        &:first-child {
+                            flex-basis: 48%;
+                            margin-right: 2%;
+                        }
+                        &.ui-tabs-active {
+                            background: $COLOR_ORANGE;
+                        }
+                    }
+                }
+            }
+        }
+    }
     .faq {
         background-image: url('../../images/pages/affiliates/howprogrammeworks-bg.png');
         background-size: cover;
