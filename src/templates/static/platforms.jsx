@@ -14,6 +14,7 @@ const Platforms = ({
     header,
     description,
     text,
+    status,
     url = '',
     target,
     button_text,
@@ -24,7 +25,7 @@ const Platforms = ({
             <img className='platform responsive' src={it.url_for(`images/pages/${image_path}/${image}.png`)} />
         </div>
         <div className='gr-8 gr-12-m gr-12-p'>
-            <h3>{header}</h3>
+            <h3 className={`section-title ${status === 'beta' ? '' : status || ''}`}>{header}{status === 'beta' ? <span className='beta'>{it.L('BETA')}</span> : ''}</h3>
             <strong>{description}</strong>
             <p>{text}</p>
             <div className='gr-row'>
@@ -44,6 +45,7 @@ const PlatformsGridApp = ({
     image_path = 'platforms',
     image,
     header,
+    status,
     description,
     text,
 }) => (
@@ -52,7 +54,7 @@ const PlatformsGridApp = ({
             <img className='platform responsive' src={it.url_for(`images/pages/${image_path}/${image}.png`)} />
         </div>
         <div className='gr-8 gr-12-m gr-12-p'>
-            <h3>{header}</h3>
+            <h3 className={`section-title ${status || ''}`}>{header}</h3>
             <strong>{description}</strong>
             <p>{text}</p>
             <div className='gr-row'>
@@ -136,41 +138,40 @@ const Platform = () => (
             <h1 className='center-text'>{it.L('Platforms')}</h1>
             <p className='center-text gr-padding-20 gr-parent'>{it.L('Explore all the trading platforms, apps, and tools we offer')}</p>
         </div>
-        <div className='fill-bg-color gr-padding-30 binary-grid-app' data-show='-eucountry'>
+        <div className='fill-bg-color gr-padding-30 mobile-hide' data-show='-eucountry'>
             <div className='container gr-padding-30 gr-child'>
                 <h2 className='primary-color center-text'>
-                    <span>{it.L('Introducing Binary Grid')}</span>
-                    <span><img id='new_badge' src={it.url_for('images/pages/platforms/new_badge.svg')} /></span>
+                    {it.L('Deriv — an all-new trading experience')}
+                    <span className='beta'>{it.L('BETA')}</span>
                 </h2>
-                <p className='center-text'>{it.L('Our exciting new mobile trading app')}</p>
                 <div className='gr-row gr-row-align-around'>
                     <div className='gr-5 gr-12-p gr-12-m'>
-                        <ul className='bullet'>
+                        <ul className='bullet b-m-md'>
                             <li>
-                                <strong>{it.L('Limited risks')}</strong>
+                                <strong>{it.L('Powerful and intuitive')}</strong>
                                 <br />
-                                {it.L('Get started with stakes as low as 20¢.')}
+                                {it.L('Easy to use and feature-rich.')}
                             </li>
                             <li>
-                                <strong>{it.L('Multiple contracts at a time')}</strong>
+                                <strong>{it.L('Quick access to your favourite markets')}</strong>
                                 <br />
-                                {it.L('Open several positions across multiple cells simultaneously.')}
+                                {it.L('World markets at your fingertips.')}
                             </li>
                             <li>
-                                <strong>{it.L('Speed of touch')}</strong>
+                                <strong>{it.L('Easily monitor your open positions')}</strong>
                                 <br />
-                                {it.L('Trade in the moment with your touch screen device.')}
+                                {it.L('Keep track of all ongoing contracts.')}
                             </li>
                         </ul>
                     </div>
                     <div className='gr-5 gr-12-p gr-12-m center-text align-self-center'>
-                        <img className='responsive header-img' src={it.url_for('images/pages/platforms/grid-app.png')} />
+                        <img className='responsive header-img' src={it.url_for('images/pages/platforms/deriv-app.png')} />
                     </div>
 
                 </div>
                 <div className='center-text'>
-                    <p>{it.L('Download Binary Grid for Android now')}</p>
-                    <p><a className='button download-grid-app'><span>{it.L('Download')}</span></a></p>
+                    <p>{it.L('Go ahead, experience it for yourself.')}</p>
+                    <p><a className='button' href='https://deriv.app/?utm_source=binary&utm_medium=referral&utm_campaign=platforms_page' target='_blank' rel='noopener noreferrer'><span>{it.L('Try Deriv now')}</span></a></p>
                 </div>
             </div>
         </div>
@@ -192,6 +193,18 @@ const Platform = () => (
                     <TabContentContainer>
                         <TabContent id='beginner'>
                             <Platforms
+                                image='deriv-app'
+                                data_show='-eucountry'
+                                header='Deriv'
+                                status='beta'
+                                className='mobile-hide'
+                                description={it.L('The next-gen online trading experience')}
+                                text={it.L('A whole new easy-to-use platform that\'s rich with features.')}
+                                url='https://deriv.app/?utm_source=binary&utm_medium=referral&utm_campaign=platforms_page'
+                                target='_blank'
+                                button_text={it.L('Trade now')}
+                            />
+                            <Platforms
                                 image='trading-page'
                                 header='SmartTrader'
                                 description={it.L('Premier binary options trading platform')}
@@ -202,8 +215,8 @@ const Platform = () => (
                             <PlatformsGridApp
                                 image='grid-app-sm'
                                 data_show='-eucountry'
+                                status='new'
                                 header={it.L('Binary Grid')}
-                                className='binary-grid-app'
                                 description={it.L('Micro-trading on the go')}
                                 text={it.L('Seamless trading on your mobile device, at the speed of touch.')}
                             />
