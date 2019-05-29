@@ -24,6 +24,7 @@ const scrollToTop      = require('../../_common/scroll').scrollToTop;
 const toISOFormat      = require('../../_common/string_util').toISOFormat;
 const Url              = require('../../_common/url');
 const createElement    = require('../../_common/utility').createElement;
+const isLoginPages     = require('../../_common/utility').isLoginPages;
 const isProduction     = require('../../config').isProduction;
 require('../../_common/lib/polyfills/array.includes');
 require('../../_common/lib/polyfills/string.includes');
@@ -77,7 +78,7 @@ const Page = (() => {
             updateLinksURL('#content');
         } else {
             init();
-            if (!Login.isLoginPages()) {
+            if (!isLoginPages()) {
                 Language.setCookie(Language.urlLang());
 
                 if (!ClientBase.get('is_virtual')) {
