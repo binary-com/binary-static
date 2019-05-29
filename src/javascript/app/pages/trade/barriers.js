@@ -167,7 +167,7 @@ const Barriers = (() => {
     const validateBarrier = () => {
         const barrier_element      = getElementById('barrier');
         const barrier_high_element = getElementById('barrier_high');
-        const empty = isNaN(parseFloat(barrier_element.value)) || parseFloat(barrier_element.value) === 0;
+        const empty = isNaN(parseFloat(barrier_element.value)) || isAbsoluteZero(barrier_element.value);
 
         if (isVisible(barrier_element) && empty) {
             barrier_element.classList.add('error-field');
@@ -196,6 +196,17 @@ const Barriers = (() => {
                 el.removeAttribute('data-balloon-length');
             }
         });
+    };
+
+    const isAbsoluteZero = num =>  {
+        if (parseFloat(num) !== 0) {
+            return false;
+        } else if (Object.is(parseFloat(num), -0)) {
+            return false;
+        } else if (num.toString().charAt(0) === '+') {
+            return false;
+        }
+        return true;
     };
 
     return {
