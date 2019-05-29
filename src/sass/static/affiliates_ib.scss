@@ -143,6 +143,7 @@
                     li {
                         padding: 10px;
                         margin: 0;
+                        white-space: normal;
 
                         a {
                             width: 100%;
@@ -158,6 +159,11 @@
                 }
                 table {
                     margin-top: 1em;
+                }
+                .gr-show-m {
+                    @media screen and (max-width: 480px) {
+                        display: flex;
+                    }
                 }
             }
         }

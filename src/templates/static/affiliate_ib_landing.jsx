@@ -6,6 +6,16 @@ import {
     TabContentContainer,
     TabsSubtabs }        from '../_common/components/tabs.jsx';
 
+const ArrowsMobile = ({ direction, parent }) => (
+    <div className='align-self-center gr-2 gr-hide gr-show-m gr-no-gutter'>
+        <img
+            className={`go-${direction} gr-5 gr-no-gutter gr-centered`}
+            data-parent={parent}
+            src={it.url_for(`images/pages/home/arrow_${direction}.svg`)}
+        />
+    </div>
+);
+
 const AffiliateIbLanding = () => (
     <React.Fragment>
         <section id='page_top' className='hero'>
@@ -56,10 +66,15 @@ const AffiliateIbLanding = () => (
                                 by the 15th of every month.
                             </p>
                             <h3 className='secondary-color'>Commision structure</h3>
-                            <TabContainer className='gr-padding-30 gr-parent full-width gr-11 gr-centered' theme='light'>
+                            <TabContainer className='gr-padding-30 gr-parent full-width gr-11 gr-12-m gr-centered' theme='light'>
+                                <div className='gr-row gr-hide gr-show-m'>
+                                    <ArrowsMobile parent='commission_structure' direction='left' />
+                                    <strong id='tab_mobile_header' className='align-self-center gr-8' />
+                                    <ArrowsMobile parent='commission_structure' direction='right' />
+                                </div>
                                 <TabsSubtabs
                                     id='commission_structure'
-                                    className='gr-parent tab-selector-wrapper'
+                                    className='gr-parent tab-selector-wrapper gr-hide-m'
                                     items={[
                                         { id: 'revenue',   text: it.L('Revenue Share') },
                                         { id: 'turnover', text: it.L('Turnover') },
@@ -67,10 +82,10 @@ const AffiliateIbLanding = () => (
                                         { id: 'commission_structure_selector', className: 'tab-selector' },
                                     ]}
                                 />
-                                <div className='tab-content'>
+                                <div className='tab-content gr-padding-20'>
                                     <TabContentContainer>
                                         <TabContent id='revenue' className='selectedTab'>
-                                            <div className='gr-11 gr-centered'>
+                                            <div className='gr-11 gr-12-m gr-centered'>
                                                 <p className='no-margin text-align-left'>
                                                     Earn increasingly higher payouts with tiered and laddered commission
                                                     rates that reward you based on the net
