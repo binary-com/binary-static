@@ -305,7 +305,9 @@ const AffiliateIbLanding = () => (
                                 </p>
                             </div>
 
-                            <button>Sign up Now</button>
+                            <a href='https://login.binary.com/signup.php?lang=0' className='button' target='_blank' rel='noopener noreferrer'>
+                                <span>Sign Up Now</span>
+                            </a>
                         </div>
                     </div>
                 </div>
