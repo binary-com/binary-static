@@ -397,15 +397,15 @@ const AffiliateIbLanding = () => (
                         <ul className='faq-item-content'>
                             <li>
                                 <img className='faq-item-content-image' src={it.url_for('images/pages/affiliates_ib_landing/icons/marketing-dark.svg')} alt='General' />
-                                <a className='faq-item-content-text'>{it.L('General')}</a>
+                                <a href={`${it.url_for('affiliate/faq')}#general`} className='faq-item-content-text'>{it.L('General')}</a>
                             </li>
                             <li>
                                 <img className='faq-item-content-image' src={it.url_for('images/pages/affiliates_ib_landing/icons/account-dark.svg')} alt='Account Management' />
-                                <a className='faq-item-content-text'>{it.L('Account Management')}</a>
+                                <a href={`${it.url_for('affiliate/faq')}#account-management-and-tracking`} className='faq-item-content-text'>{it.L('Account Management')}</a>
                             </li>
                             <li>
                                 <img className='faq-item-content-image' src={it.url_for('images/pages/affiliates_ib_landing/icons/general-faq-dark.svg')} alt='Referral Tools' />
-                                <a className='faq-item-content-text'>{it.L('Referral Tools')}</a>
+                                <a href={`${it.url_for('affiliate/faq')}#referral-tools`} className='faq-item-content-text'>{it.L('Referral Tools')}</a>
                             </li>
                         </ul>
                     </div>
@@ -415,15 +415,15 @@ const AffiliateIbLanding = () => (
                         <ul className='faq-item-content'>
                             <li>
                                 <img className='faq-item-content-image' src={it.url_for('images/pages/affiliates_ib_landing/icons/marketing-dark.svg')} alt='General' />
-                                <a className='faq-item-content-text'>{it.L('General')}</a>
+                                <a href={`${it.url_for('ib-programme/ib-faq')}#general`} className='faq-item-content-text'>{it.L('General')}</a>
                             </li>
                             <li>
                                 <img className='faq-item-content-image' src={it.url_for('images/pages/affiliates_ib_landing/icons/account-dark.svg')} alt='Account Management' />
-                                <a className='faq-item-content-text'>{it.L('Account Management')}</a>
+                                <a href={`${it.url_for('ib-programme/ib-faq')}#account-management`} className='faq-item-content-text'>{it.L('Account Management')}</a>
                             </li>
                             <li>
                                 <img className='faq-item-content-image' src={it.url_for('images/pages/affiliates_ib_landing/icons/general-faq-dark.svg')} alt='Referral Tools' />
-                                <a className='faq-item-content-text'>{it.L('Referral Tools')}</a>
+                                <a href={`${it.url_for('ib-programme/ib-faq')}#referral-tools`} className='faq-item-content-text'>{it.L('Referral Tools')}</a>
                             </li>
                         </ul>
                     </div>
