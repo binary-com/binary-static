@@ -96,6 +96,7 @@ const AffiliateIbLanding = () => (
                         <h4>Blogger and vlogger</h4>
                         <p>Maintains a page or video channel about online trading</p>
                     </div>
+                    <button className='gr-centered'>Join our global network of partners now</button>
                 </div>
             </div>
         </section>

@@ -65,10 +65,18 @@
     .who-apply {
         display: flex;
         align-items: center;
-        height: 560px;
 
         .gr-row {
             max-width: 780px;
+        }
+        h2 {
+            margin: 20px 0;
+        }
+        h4 {
+            font-weight: 700;
+        }
+        button {
+            margin: 20px 0;
         }
     }
     .why-partner {
