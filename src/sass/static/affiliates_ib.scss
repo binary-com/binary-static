@@ -40,6 +40,9 @@
     h4 {
         font-weight: 500;
     }
+    .text-align-left {
+        text-align: left;
+    }
     .hero {
         background-size: cover;
         background-image: url('../../images/pages/affiliates_ib_landing/background/hero.png');
@@ -147,6 +150,9 @@
                             background: $COLOR_ORANGE;
                         }
                     }
+                }
+                table {
+                    margin-top: 1em;
                 }
             }
         }
