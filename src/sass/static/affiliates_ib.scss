@@ -52,7 +52,9 @@
 
         &-header {
             font-weight: 300;
-            line-height: 1.25;
+            line-height: 45px;
+            font-size: 36px;
+            color: $COLOR_WHITE;
         }
     }
     .statistics {

@@ -263,7 +263,9 @@ const AffiliateIbLanding = () => (
                                 <p className='text-align-left'>**{it.L('Cryptocurrencies commission per round trade. For example, a round trade of 1 lot of BTC/USD with spot price of 10,000 will pay USD 30 on Standard accounts.')}</p>
                             </div>
 
-                            <button>{it.L('Sign up Now')}</button>
+                            <a href='https://login.binary.com/signup.php?lang=0' className='button' target='_blank' rel='noopener noreferrer'>
+                                <span>{it.L('Sign Up Now')}</span>
+                            </a>
                         </div>
                     </div>
                 </div>
