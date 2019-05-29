@@ -199,6 +199,46 @@ const AffiliateIbLanding = () => (
                 </div>
             </div>
         </section>
+        <section className='faq'>
+            <div className='container center-text'>
+                <h2 className='faq-header'>Frequently Asked Questions</h2>
+
+                <div className='gr-row'>
+                    <div className='gr-4 gr-centered faq-item'>
+                        <p className='faq-item-header secondary-color'>Affiliate</p>
+
+                        <ul className='faq-item-content'>
+                            <li>
+                                <a>General</a>
+                            </li>
+                            <li>
+                                <a>Account Management</a>
+                            </li>
+                            <li>
+                                <a>Referral Tools</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div className='gr-4 gr-centered faq-item'>
+                        <p className='faq-item-header secondary-color'>Introducing Broker</p>
+
+                        <ul className='faq-item-content'>
+                            <li>
+                                <a>General</a>
+                            </li>
+                            <li>
+                                <a>Account Management</a>
+                            </li>
+                            <li>
+                                <a>Referral Tools</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <p>For further assistance, email us at <a href='mailto:affiliates@binary.com'>affiliates@binary.com</a></p>
+            </div>
+        </section>
         <section className='payment-method white-bg-color'>
             <div className='container center-text full-height gr-padding-30'>
                 <h2>Receive your earnings through your favourite payment method</h2>
