@@ -167,7 +167,7 @@ const Barriers = (() => {
     const validateBarrier = () => {
         const barrier_element      = getElementById('barrier');
         const barrier_high_element = getElementById('barrier_high');
-        const empty = isNaN(parseFloat(barrier_element.value)) || parseFloat(barrier_element.value) === 0;
+        const empty = isNaN(parseFloat(barrier_element.value)) || isAbsoluteZero(barrier_element.value);
 
         if (isVisible(barrier_element) && empty) {
             barrier_element.classList.add('error-field');
@@ -197,6 +197,8 @@ const Barriers = (() => {
             }
         });
     };
+
+    const isAbsoluteZero = num => !(parseFloat(num) !== 0 || /\+|-/.test(num.toString().charAt(0)));
 
     return {
         display,
