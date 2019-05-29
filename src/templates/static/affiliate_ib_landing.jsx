@@ -239,7 +239,7 @@ const AffiliateIbLanding = () => (
         <section className='who-apply'>
             <div className='container gr-padding-20 white-bg-color'>
                 <h2 className='center-text'>Who can apply as a Binary.com partner</h2>
-                <div className='gr-row'>
+                <div className='gr-row center-text-m'>
                     <div className='gr-6 gr-12-m gr-padding-30 gr-child'>
                         <h4>Webmaster</h4>
                         <p>Runs and manages a website that promotes Forex or binary options</p>
@@ -266,7 +266,7 @@ const AffiliateIbLanding = () => (
                         <h4>Blogger and vlogger</h4>
                         <p>Maintains a page or video channel about online trading</p>
                     </div>
-                    <button className='gr-centered'>Join our global network of partners now</button>
+                    <button className='gr-centered gr-10-m'>Join our global network of partners now</button>
                 </div>
             </div>
         </section>
