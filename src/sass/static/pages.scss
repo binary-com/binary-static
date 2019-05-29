@@ -839,6 +839,27 @@ body #not_authenticated_financial ul.checked > li {
     h2 {
         line-height: 36px;
     }
+    .beta {
+        position: relative;
+        top: -15px;
+        left: 5px;
+        background-color: rgb(244, 67, 54);
+        border-radius: 10px;
+        color: $COLOR_WHITE;
+        display: inline-block;
+        font-size: 10px;
+        font-weight: 400;
+        height: 16px;
+        line-height: 1.8;
+        text-align: center;
+        width: 34px;
+    }
+    .new:after {
+        content: url('../images/pages/platforms/new_badge.svg');
+        position: relative;
+        top: -15px;
+        left: 5px;
+    }
     #new_badge {
         position: relative;
         top: -15px;
@@ -853,10 +874,16 @@ body #not_authenticated_financial ul.checked > li {
         max-width: 100%;
         vertical-align: middle;
     }
+    .b-m-md li {
+        margin-bottom: 20px;
+    }
     @media screen and (max-width: 768px) {
         .no-center-text-p-m {
             text-align: inherit;
             padding-bottom: 30px;
+        }
+        .mobile-hide {
+            display: none;
         }
     }
 }
