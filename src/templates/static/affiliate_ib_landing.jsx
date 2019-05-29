@@ -1,4 +1,5 @@
-import React from 'react';
+import React       from 'react';
+import PaymentLogo from '../_common/components/payment_logo.jsx';
 
 const AffiliateIbLanding = () => (
     <React.Fragment>
@@ -67,7 +68,7 @@ const AffiliateIbLanding = () => (
             </div>
         </section>
         <section className='who-apply'>
-            <div className='container gr-padding-20'>
+            <div className='container gr-padding-20 white-bg-color'>
                 <h2 className='center-text'>Who can apply as a Binary.com partner</h2>
                 <div className='gr-row'>
                     <div className='gr-6 gr-12-m gr-padding-30 gr-child'>
@@ -140,6 +141,14 @@ const AffiliateIbLanding = () => (
                         <img src='/images/pages/affiliates/commission-icon.svg' alt='Multilingual platforms' className='gr-centered' />
                         <h4 className='secondary-color'>Multilingual platforms</h4>
                     </div>
+                </div>
+            </div>
+        </section>
+        <section className='payment-method white-bg-color'>
+            <div className='container center-text full-height gr-padding-30'>
+                <h2>Receive your earnings through your favourite payment method</h2>
+                <div className='gr-row gr-row-align-center'>
+                    <PaymentLogo />
                 </div>
             </div>
         </section>
