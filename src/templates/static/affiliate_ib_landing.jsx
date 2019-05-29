@@ -241,39 +241,39 @@ const AffiliateIbLanding = () => (
                 <h2 className='center-text color-white'>Why partner with us</h2>
                 <div className='gr-row gr-padding-20'>
                     <div className='gr-4 gr-padding-10'>
-                        <img src='/images/pages/affiliates_ib/icons/commission-icon.svg' alt='Generous commissions' className='gr-centered' />
+                        <img src='/images/pages/affiliates_ib_landing/icons/commission.svg' alt='Generous commissions' className='gr-centered' />
                         <h4 className='secondary-color'>Generous commissions</h4>
                     </div>
                     <div className='gr-4 gr-padding-10'>
-                        <img src='/images/pages/affiliates_ib/icons/conversion-icon.svg' alt='High conversions' className='gr-centered' />
+                        <img src='/images/pages/affiliates_ib_landing/icons/conversion.svg' alt='High conversions' className='gr-centered' />
                         <h4 className='secondary-color'>High conversions</h4>
                     </div>
                     <div className='gr-4 gr-padding-10'>
-                        <img src='/images/pages/affiliates_ib/icons/payment-icon.svg' alt='On-time payments' className='gr-centered' />
+                        <img src='/images/pages/affiliates_ib_landing/icons/payment.svg' alt='On-time payments' className='gr-centered' />
                         <h4 className='secondary-color'>On-time payments</h4>
                     </div>
                     <div className='gr-4 gr-padding-10'>
-                        <img src='/images/pages/affiliates_ib/icons/hidden-icon.svg' alt='No hidden fees' className='gr-centered' />
+                        <img src='/images/pages/affiliates_ib_landing/icons/no-hidden-fees.svg' alt='No hidden fees' className='gr-centered' />
                         <h4 className='secondary-color'>No hidden fees</h4>
                     </div>
                     <div className='gr-4 gr-padding-10'>
-                        <img src='/images/pages/affiliates_ib/icons/customer-icon.svg' alt='Customer-centric partnership' className='gr-centered' />
+                        <img src='/images/pages/affiliates_ib_landing/icons/contact.svg' alt='Customer-centric partnership' className='gr-centered' />
                         <h4 className='secondary-color'>Customer-centric partnership</h4>
                     </div>
                     <div className='gr-4 gr-padding-10'>
-                        <img src='/images/pages/affiliates_ib/icons/income-icon.svg' alt='Multiple income opportunities' className='gr-centered' />
+                        <img src='/images/pages/affiliates_ib_landing/icons/diversify-income.svg' alt='Multiple income opportunities' className='gr-centered' />
                         <h4 className='secondary-color'>Multiple income opportunities</h4>
                     </div>
                     <div className='gr-4 gr-padding-10'>
-                        <img src='/images/pages/affiliates_ib/icons/referral-icon.svg' alt='Advanced referral tools' className='gr-centered' />
+                        <img src='/images/pages/affiliates_ib_landing/icons/marketing.svg' alt='Advanced referral tools' className='gr-centered' />
                         <h4 className='secondary-color'>Advanced referral tools</h4>
                     </div>
                     <div className='gr-4 gr-padding-10'>
-                        <img src='/images/pages/affiliates_ib/icons/support-icon.svg' alt='International support' className='gr-centered' />
+                        <img src='/images/pages/affiliates_ib_landing/icons/support-faq.svg' alt='International support' className='gr-centered' />
                         <h4 className='secondary-color'>International support</h4>
                     </div>
                     <div className='gr-4 gr-padding-10'>
-                        <img src='/images/pages/affiliates_ib/icons/multilingual-icon.svg' alt='Multilingual platforms' className='gr-centered' />
+                        <img src='/images/pages/affiliates_ib_landing/icons/globe.svg' alt='Multilingual platforms' className='gr-centered' />
                         <h4 className='secondary-color'>Multilingual platforms</h4>
                     </div>
                 </div>
@@ -289,15 +289,15 @@ const AffiliateIbLanding = () => (
 
                         <ul className='faq-item-content'>
                             <li>
-                                <img className='faq-item-content-image' src='/images/pages/affiliates/marketing-icon-dark.svg' alt='General' />
+                                <img className='faq-item-content-image' src='/images/pages/affiliates_ib_landing/icons/marketing-dark.svg' alt='General' />
                                 <a className='faq-item-content-text'>General</a>
                             </li>
                             <li>
-                                <img className='faq-item-content-image' src='/images/pages/affiliates/account-icon-dark.svg' alt='Account Management' />
+                                <img className='faq-item-content-image' src='/images/pages/affiliates_ib_landing/icons/account-dark.svg' alt='Account Management' />
                                 <a className='faq-item-content-text'>Account Management</a>
                             </li>
                             <li>
-                                <img className='faq-item-content-image' src='/images/pages/affiliates/general-faq-icon-dark.svg' alt='Referral Tools' />
+                                <img className='faq-item-content-image' src='/images/pages/affiliates_ib_landing/icons/general-faq-dark.svg' alt='Referral Tools' />
                                 <a className='faq-item-content-text'>Referral Tools</a>
                             </li>
                         </ul>
@@ -307,15 +307,15 @@ const AffiliateIbLanding = () => (
 
                         <ul className='faq-item-content'>
                             <li>
-                                <img className='faq-item-content-image' src='/images/pages/affiliates/marketing-icon-dark.svg' alt='General' />
+                                <img className='faq-item-content-image' src='/images/pages/affiliates_ib_landing/icons/marketing-dark.svg' alt='General' />
                                 <a className='faq-item-content-text'>General</a>
                             </li>
                             <li>
-                                <img className='faq-item-content-image' src='/images/pages/affiliates/account-icon-dark.svg' alt='Account Management' />
+                                <img className='faq-item-content-image' src='/images/pages/affiliates_ib_landing/icons/account-dark.svg' alt='Account Management' />
                                 <a className='faq-item-content-text'>Account Management</a>
                             </li>
                             <li>
-                                <img className='faq-item-content-image' src='/images/pages/affiliates/general-faq-icon-dark.svg' alt='Referral Tools' />
+                                <img className='faq-item-content-image' src='/images/pages/affiliates_ib_landing/icons/general-faq-dark.svg' alt='Referral Tools' />
                                 <a className='faq-item-content-text'>Referral Tools</a>
                             </li>
                         </ul>
