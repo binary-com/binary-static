@@ -1,7 +1,6 @@
 const Cookies          = require('js-cookie');
 const moment           = require('moment');
 const ClientBase       = require('./client_base');
-const Login            = require('./login');
 const ServerTime       = require('./server_time');
 const BinarySocket     = require('./socket_base');
 const getElementById   = require('../common_functions').getElementById;
@@ -9,6 +8,7 @@ const isVisible        = require('../common_functions').isVisible;
 const getLanguage      = require('../language').get;
 const State            = require('../storage').State;
 const getPropertyValue = require('../utility').getPropertyValue;
+const isLoginPages     = require('../utility').isLoginPages;
 const getAppId         = require('../../config').getAppId;
 
 const GTM = (() => {
@@ -27,7 +27,7 @@ const GTM = (() => {
     });
 
     const pushDataLayer = (data) => {
-        if (isGtmApplicable() && !Login.isLoginPages()) {
+        if (isGtmApplicable() && !isLoginPages()) {
             dataLayer.push({
                 ...getCommonVariables(),
                 ...data,
