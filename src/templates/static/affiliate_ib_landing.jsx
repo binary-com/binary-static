@@ -164,8 +164,8 @@ const AffiliateIbLanding = () => (
                         </div>
                     </div>
                     <div id='ib'>
-                        <div className='gr-12 white-bg-color'>
-                            <p className='gr-padding-20 no-margin'>
+                        <div className='gr-12 gr-padding-20 white-bg-color'>
+                            <p className='no-margin'>
                                 Earn daily commissions on the trading activities of the
                                 clients you refer to the Binary.com MetaTrader 5 (MT5) platform.
                                 Your total commissions will be credited into your
@@ -272,7 +272,6 @@ const AffiliateIbLanding = () => (
                                     </tr>
                                 </table>
 
-
                                 <p className='text-align-left'>
                                     *Represents the amount in base currency per round trade.
                                     For example, a round trade of 1 lot of EUR/USD would pay
@@ -286,6 +285,8 @@ const AffiliateIbLanding = () => (
                                     Standard accounts.
                                 </p>
                             </div>
+
+                            <button>Sign up Now</button>
                         </div>
                     </div>
                 </div>
