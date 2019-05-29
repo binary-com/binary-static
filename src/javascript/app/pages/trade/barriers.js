@@ -198,16 +198,7 @@ const Barriers = (() => {
         });
     };
 
-    const isAbsoluteZero = num =>  {
-        if (parseFloat(num) !== 0) {
-            return false;
-        } else if (Object.is(parseFloat(num), -0)) {
-            return false;
-        } else if (num.toString().charAt(0) === '+') {
-            return false;
-        }
-        return true;
-    };
+    const isAbsoluteZero = num => !(parseFloat(num) !== 0 || /\+|-/.test(num.toString().charAt(0)));
 
     return {
         display,
