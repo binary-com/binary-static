@@ -96,4 +96,16 @@
             width: 64px;
         }
     }
+    .payment-method {
+        .container {
+            max-width: 1012px;
+        }
+        .gr-row {
+            max-width: 940px;
+            margin: 0 auto;
+        }
+        h2 {
+            margin: 25px 0;
+        }
+    }
 }
