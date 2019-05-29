@@ -164,6 +164,23 @@
                 table {
                     margin-top: 1em;
                 }
+                #ib {
+                    table {
+                        th, td {
+                            text-align: left;
+                            font-weight: bold;
+                            padding-left: 42px;
+                        }
+                        th + th, td + td, th:only-child {
+                            width: 300px;
+                            text-align: center;
+                        }
+                        th + th {
+                            border-bottom-width: 1px;
+                            border-color: $COLOR_WHITE;
+                        }
+                    }
+                }
             }
         }
     }
