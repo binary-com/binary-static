@@ -1,5 +1,6 @@
 import React from 'react';
 import Loading from '../../../_common/components/loading.jsx';
+import { SeparatorLine } from '../../../_common/components/separator_line.jsx';
 import { SubmitButton } from '../../../_common/components/forms.jsx';
 
 const AccountClosure = () => (
@@ -42,6 +43,16 @@ const AccountClosure = () => (
                     />
                 </div>
             </fieldset>
+            {/* TODO: complete these component */}
+            <h2 className='primary-color'>{it.L('Close open positions')}</h2>
+            <ClosureDescription
+                title={it.L('Close open positions')}
+                list_items={[
+                    it.L('Remember to close all open positions in [_1]all[_2] your accounts.', '<strong>', '</strong>'),
+                    it.L('Go to portfolio page to close your open positions.'),
+                ]}
+            />
+            <SeparatorLine className='gr-padding-10' />
         </div>
 
         <form className='invisible' id='frm_closure'>
