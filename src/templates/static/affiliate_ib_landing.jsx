@@ -183,7 +183,130 @@ const AffiliateIbLanding = () => (
                         </div>
                     </div>
                     <div id='ib'>
-                        content of tab 2
+                        <div className='gr-12 gr-padding-20 white-bg-color'>
+                            <p className='no-margin'>
+                                Earn daily commissions on the trading activities of the
+                                clients you refer to the Binary.com MetaTrader 5 (MT5) platform.
+                                Your total commissions will be credited into your
+                                account by the end of the day.
+                            </p>
+
+                            <div className='gr-10 gr-parent gr-centered'>
+                                <h3 className='secondary-color'>Commision structure</h3>
+                                
+                                <h3>Synthetic Indices Account</h3>
+                                <table>
+                                    <tr>
+                                        <th rowSpan='2'>Asset</th>
+                                        <th className='second-header'>Commission per round trade</th>
+                                    </tr>
+                                    <tr>
+                                        <th className='center-text'>$ per USD 100,000 of turnover</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Crash 1000 Index</td>
+                                        <td>0.20</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Boom 1000 Index</td>
+                                        <td>0.20</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Volatility 100 Index</td>
+                                        <td>15.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Volatility 75 Index</td>
+                                        <td>10.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Volatility 50 Index</td>
+                                        <td>7.50</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Volatility 25 Index</td>
+                                        <td>3.50</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Volatility 10 Index</td>
+                                        <td>1.50</td>
+                                    </tr>
+                                    <tr>
+                                        <td>HF Volatility 100 Index</td>
+                                        <td>15.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>HF Volatility 50 Index</td>
+                                        <td>7.50</td>
+                                    </tr>
+                                    <tr>
+                                        <td>HF Volatility 10 Index</td>
+                                        <td>1.50</td>
+                                    </tr>
+                                </table>
+
+                                <p className='text-align-left'>
+                                    For example, a round trade (i.e., open and close position)
+                                    of 1 lot of Vol 75 Index for a price of 125,000
+                                    would pay USD 8.
+                                </p>
+                                <p className='text-align-left'><strong>USD 10 X 1 lot x USD 100,000/125,000 = USD 8</strong></p>
+                                <p className='text-align-left'>
+                                    If your account currency is EUR or GBP,
+                                    your commission will be converted based
+                                    on the current Forex rate.
+                                </p>
+                                
+                                <h3>Standard Account</h3>
+                                <table>
+                                    <tr>
+                                        <th rowSpan='2'>Asset</th>
+                                        <th>Commission</th>
+                                    </tr>
+                                    <tr>
+                                        <th className='center-text'>per lot</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Forex and metals*</td>
+                                        <td>10</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cryptocurrencies**</td>
+                                        <td>0.3%</td>
+                                    </tr>
+                                </table>
+
+                                <h3>Advanced Account</h3>
+                                <table>
+                                    <tr>
+                                        <th rowSpan='2'>Asset</th>
+                                        <th>Commission</th>
+                                    </tr>
+                                    <tr>
+                                        <th className='center-text'>per lot</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Forex*</td>
+                                        <td>5</td>
+                                    </tr>
+                                </table>
+
+                                <p className='text-align-left'>
+                                    *Represents the amount in base currency per round trade.
+                                    For example, a round trade of 1 lot of EUR/USD would pay
+                                    EUR 10 on Standard accounts. A round trade of 1 lot of
+                                    USD/CAD would pay USD 5 on Advanced accounts.
+                                </p>
+                                <p className='text-align-left'>
+                                    **Cryptocurrencies commission per round trade.
+                                    For example, a round trade of 1 lot of BTC/USD
+                                    with spot price of 10,000 will pay USD 30 on
+                                    Standard accounts.
+                                </p>
+                            </div>
+
+                            <button>Sign up Now</button>
+                        </div>
                     </div>
                 </div>
             </div>
