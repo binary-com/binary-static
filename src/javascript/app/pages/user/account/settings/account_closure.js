@@ -24,7 +24,7 @@ const AccountClosure = (() => {
 
         if (Validation.validate(form_selector)) {
             let has_changed = false;
-            const data = { account_closure: 1 };
+            const data  = { account_closure: 1 };
             const value = $reason_select.val();
             const id    = $reason_select.attr('id');
 
