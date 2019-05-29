@@ -121,7 +121,7 @@ const Price = (() => {
             proposal.duration_unit = 'm';
         }
 
-        if (barrier && CommonFunctions.isVisible(barrier) && barrier.value) {
+        if (barrier && CommonFunctions.isVisible(barrier)) {
             proposal.barrier = barrier.value;
         }
 
