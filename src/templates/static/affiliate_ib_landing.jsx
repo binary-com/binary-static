@@ -6,33 +6,45 @@ import {
     TabContentContainer,
     TabsSubtabs }        from '../_common/components/tabs.jsx';
 
+const ArrowsMobile = ({ direction, parent }) => (
+    <div className='align-self-center gr-2 gr-hide gr-show-m gr-no-gutter'>
+        <img
+            className={`go-${direction} gr-5 gr-no-gutter gr-centered`}
+            data-parent={parent}
+            src={it.url_for(`images/pages/home/arrow_${direction}.svg`)}
+        />
+    </div>
+);
+
 const AffiliateIbLanding = () => (
     <React.Fragment>
         <section id='page_top' className='hero'>
             <div className='container full-height gr-padding-20'>
                 <div className='gr-row full-height'>
                     <div className='gr-10 gr-centered center-text align-self-center'>
-                        <p className='hero-header'>Build a rewarding and long-term business relationship with an industry pioneer</p>
-                        <button>Become our partner</button>
+                        <h2 className='hero-header color-white'>Build a rewarding and long-term business relationship with an industry pioneer</h2>
+                        <a href='https://login.binary.com/signup.php?lang=0' className='button' target='_blank' rel='noopener noreferrer'>
+                            <span>Become our partner</span>
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
         <section className='statistics'>
-            <div className='container gr-row full-height gr-row-align-middle center-text gr-padding-20'>
-                <article className='gr-3'>
+            <div className='container gr-row full-height full-width gr-row-align-middle center-text gr-padding-20'>
+                <article className='gr-3 gr-6-p gr-12-m gr-padding-20'>
                     <h1>40K+</h1>
                     <h3>Partners</h3>
                 </article>
-                <article className='gr-3'>
+                <article className='gr-3 gr-6-p gr-12-m gr-padding-20'>
                     <h1>$12M+</h1>
                     <h3>Partner earnings</h3>
                 </article>
-                <article className='gr-3'>
+                <article className='gr-3 gr-6-p gr-12-m gr-padding-20'>
                     <h1>150+</h1>
                     <h3>Countries</h3>
                 </article>
-                <article className='gr-3'>
+                <article className='gr-3 gr-6-p gr-12-m gr-padding-20'>
                     <h1>1M+</h1>
                     <h3>Clients</h3>
                 </article>
@@ -56,10 +68,15 @@ const AffiliateIbLanding = () => (
                                 by the 15th of every month.
                             </p>
                             <h3 className='secondary-color'>Commision structure</h3>
-                            <TabContainer className='gr-padding-30 gr-parent full-width gr-11 gr-centered' theme='light'>
+                            <TabContainer className='gr-padding-30 gr-parent full-width gr-11 gr-12-m gr-centered' theme='light'>
+                                <div className='gr-row gr-hide gr-show-m'>
+                                    <ArrowsMobile parent='commission_structure' direction='left' />
+                                    <strong id='tab_mobile_header' className='align-self-center gr-8' />
+                                    <ArrowsMobile parent='commission_structure' direction='right' />
+                                </div>
                                 <TabsSubtabs
                                     id='commission_structure'
-                                    className='gr-parent tab-selector-wrapper'
+                                    className='gr-parent tab-selector-wrapper gr-hide-m'
                                     items={[
                                         { id: 'revenue',   text: it.L('Revenue Share') },
                                         { id: 'turnover', text: it.L('Turnover') },
@@ -67,10 +84,10 @@ const AffiliateIbLanding = () => (
                                         { id: 'commission_structure_selector', className: 'tab-selector' },
                                     ]}
                                 />
-                                <div className='tab-content'>
+                                <div className='tab-content gr-padding-20'>
                                     <TabContentContainer>
                                         <TabContent id='revenue' className='selectedTab'>
-                                            <div className='gr-11 gr-centered'>
+                                            <div className='gr-11 gr-12-m gr-centered'>
                                                 <p className='no-margin text-align-left'>
                                                     Earn increasingly higher payouts with tiered and laddered commission
                                                     rates that reward you based on the net
@@ -155,7 +172,9 @@ const AffiliateIbLanding = () => (
                                                     or more (one-time or accumulative) in the account. This
                                                     commission plan is only available to affiliates based in the EU.
                                                 </p>
-                                                <button className='gr-centered'>Sign up Now</button>
+                                                <a href='https://login.binary.com/signup.php?lang=0' className='button center-text gr-centered gr-padding-20' target='_blank' rel='noopener noreferrer'>
+                                                    <span>Sgn up Now</span>
+                                                </a>
                                             </div>
                                         </TabContent>
                                     </TabContentContainer>
@@ -347,7 +366,7 @@ const AffiliateIbLanding = () => (
         <section className='who-apply'>
             <div className='container gr-padding-20 white-bg-color'>
                 <h2 className='center-text'>Who can apply as a Binary.com partner</h2>
-                <div className='gr-row'>
+                <div className='gr-row center-text-m'>
                     <div className='gr-6 gr-12-m gr-padding-30 gr-child'>
                         <h4>Webmaster</h4>
                         <p>Runs and manages a website that promotes Forex or binary options</p>
@@ -374,7 +393,9 @@ const AffiliateIbLanding = () => (
                         <h4>Blogger and vlogger</h4>
                         <p>Maintains a page or video channel about online trading</p>
                     </div>
-                    <button className='gr-centered'>Join our global network of partners now</button>
+                    <a href='https://login.binary.com/signup.php?lang=0' className='button gr-centered gr-10-m gr-padding-20' target='_blank' rel='noopener noreferrer'>
+                        <span>Join our global network of partners now</span>
+                    </a>
                 </div>
             </div>
         </section>
