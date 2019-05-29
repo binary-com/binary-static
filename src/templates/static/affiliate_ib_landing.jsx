@@ -23,7 +23,7 @@ const AffiliateIbLanding = () => (
                 <div className='gr-row full-height'>
                     <div className='gr-10 gr-centered center-text align-self-center'>
                         <h2 className='hero-header color-white'>{it.L('Build a rewarding and long-term business relationship with an industry pioneer')}</h2>
-                        <a href='https://login.binary.com/signup.php?lang=0' className='button' target='_blank' rel='noopener noreferrer'>
+                        <a href={it.affiliate_signup_url} className='button' target='_blank' rel='noopener noreferrer'>
                             <span>{it.L('Become our partner')}</span>
                         </a>
                     </div>
@@ -75,8 +75,8 @@ const AffiliateIbLanding = () => (
                                     className='gr-parent tab-selector-wrapper gr-hide-m'
                                     items={[
                                         { id: 'revenue',   text: it.L('Revenue Share') },
-                                        { id: 'turnover', text: it.L('Turnover') },
-                                        { id: 'cpa',      text: it.L('CPA (EU Only)') },
+                                        { id: 'turnover',  text: it.L('Turnover') },
+                                        { id: 'cpa',       text: it.L('CPA (EU Only)') },
                                         { id: 'commission_structure_selector', className: 'tab-selector' },
                                     ]}
                                 />
@@ -153,7 +153,7 @@ const AffiliateIbLanding = () => (
                                             <div className='gr-11 gr-centered text-align-left'>
                                                 <h3 className='no-margin'>{it.L('Cost per acquisition (CPA) for EU affiliates only')}</h3>
                                                 <p>{it.L('Earn USD 100 in commission for each successful referral. Your referred client must open areal money investment account through your unique affiliate link and deposit a total of USD 100 or more (one-time or accumulative) in the account. This commission plan is only available to affiliates based in the EU.')}</p>
-                                                <a href='https://login.binary.com/signup.php?lang=0' className='button center-text gr-centered gr-padding-20' target='_blank' rel='noopener noreferrer'>
+                                                <a href={it.affiliate_signup_url} className='button center-text gr-centered gr-padding-20' target='_blank' rel='noopener noreferrer'>
                                                     <span>{it.L('Sign up Now')}</span>
                                                 </a>
                                             </div>
@@ -263,7 +263,7 @@ const AffiliateIbLanding = () => (
                                 <p className='text-align-left'>**{it.L('Cryptocurrencies commission per round trade. For example, a round trade of 1 lot of BTC/USD with spot price of 10,000 will pay USD 30 on Standard accounts.')}</p>
                             </div>
 
-                            <a href='https://login.binary.com/signup.php?lang=0' className='button' target='_blank' rel='noopener noreferrer'>
+                            <a href={it.affiliate_signup_url} className='button' target='_blank' rel='noopener noreferrer'>
                                 <span>{it.L('Sign Up Now')}</span>
                             </a>
                         </div>
@@ -277,19 +277,19 @@ const AffiliateIbLanding = () => (
                 <div className='gr-row'>
                     <div className='gr-1' />
                     <div className='gr-2 gr-centered'>
-                        <img src='/images/pages/affiliates_ib_landing/icons/signup.svg' />
+                        <img src={it.url_for('images/pages/affiliates_ib_landing/icons/signup.svg')} />
                     </div>
                     <div className='gr-1 gr-centered align-self-center'>
-                        <img src='/images/pages/affiliates_ib_landing/icons/circle_arrow.svg' />
+                        <img src={it.url_for('images/pages/affiliates_ib_landing/icons/circle_arrow.svg')} />
                     </div>
                     <div className='gr-3 gr-centered'>
-                        <img src='/images/pages/affiliates_ib_landing/icons/introduce.svg' />
+                        <img src={it.url_for('images/pages/affiliates_ib_landing/icons/introduce.svg')} />
                     </div>
                     <div className='gr-1 gr-centered align-self-center'>
-                        <img src='/images/pages/affiliates_ib_landing/icons/circle_arrow.svg' />
+                        <img src={it.url_for('images/pages/affiliates_ib_landing/icons/circle_arrow.svg')} />
                     </div>
                     <div className='gr-2 gr-centered'>
-                        <img src='/images/pages/affiliates_ib_landing/icons/earn.svg' />
+                        <img src={it.url_for('images/pages/affiliates_ib_landing/icons/earn.svg')} />
                     </div>
                     <div className='gr-1' />
                 </div>
@@ -337,7 +337,7 @@ const AffiliateIbLanding = () => (
                         <h4>{it.L('Blogger and vlogger')}</h4>
                         <p>{it.L('Maintains a page or video channel about online trading')}</p>
                     </div>
-                    <a href='https://login.binary.com/signup.php?lang=0' className='button gr-centered gr-10-m gr-padding-20' target='_blank' rel='noopener noreferrer'>
+                    <a href={it.affiliate_signup_url} className='button gr-centered gr-10-m gr-padding-20' target='_blank' rel='noopener noreferrer'>
                         <span>{it.L('Join our global network of partners now')}</span>
                     </a>
                 </div>
@@ -348,39 +348,39 @@ const AffiliateIbLanding = () => (
                 <h2 className='center-text color-white'>{it.L('Why partner with us')}</h2>
                 <div className='gr-row gr-padding-20'>
                     <div className='gr-4 gr-padding-10'>
-                        <img src='/images/pages/affiliates_ib_landing/icons/commission.svg' alt='Generous commissions' className='gr-centered' />
+                        <img src={it.url_for('images/pages/affiliates_ib_landing/icons/commission.svg')} alt='Generous commissions' className='gr-centered' />
                         <h4 className='secondary-color'>{it.L('Generous commissions')}</h4>
                     </div>
                     <div className='gr-4 gr-padding-10'>
-                        <img src='/images/pages/affiliates_ib_landing/icons/conversion.svg' alt='High conversions' className='gr-centered' />
+                        <img src={it.url_for('images/pages/affiliates_ib_landing/icons/conversion.svg')} alt='High conversions' className='gr-centered' />
                         <h4 className='secondary-color'>{it.L('High conversions')}</h4>
                     </div>
                     <div className='gr-4 gr-padding-10'>
-                        <img src='/images/pages/affiliates_ib_landing/icons/payment.svg' alt='On-time payments' className='gr-centered' />
+                        <img src={it.url_for('images/pages/affiliates_ib_landing/icons/payment.svg')} alt='On-time payments' className='gr-centered' />
                         <h4 className='secondary-color'>{it.L('On-time payments')}</h4>
                     </div>
                     <div className='gr-4 gr-padding-10'>
-                        <img src='/images/pages/affiliates_ib_landing/icons/no-hidden-fees.svg' alt='No hidden fees' className='gr-centered' />
+                        <img src={it.url_for('images/pages/affiliates_ib_landing/icons/no-hidden-fees.svg')} alt='No hidden fees' className='gr-centered' />
                         <h4 className='secondary-color'>{it.L('No hidden fees')}</h4>
                     </div>
                     <div className='gr-4 gr-padding-10'>
-                        <img src='/images/pages/affiliates_ib_landing/icons/contact.svg' alt='Customer-centric partnership' className='gr-centered' />
+                        <img src={it.url_for('images/pages/affiliates_ib_landing/icons/contact.svg')} alt='Customer-centric partnership' className='gr-centered' />
                         <h4 className='secondary-color'>{it.L('Customer-centric partnership')}</h4>
                     </div>
                     <div className='gr-4 gr-padding-10'>
-                        <img src='/images/pages/affiliates_ib_landing/icons/diversify-income.svg' alt='Multiple income opportunities' className='gr-centered' />
+                        <img src={it.url_for('images/pages/affiliates_ib_landing/icons/diversify-income.svg')} alt='Multiple income opportunities' className='gr-centered' />
                         <h4 className='secondary-color'>{it.L('Multiple income opportunities')}</h4>
                     </div>
                     <div className='gr-4 gr-padding-10'>
-                        <img src='/images/pages/affiliates_ib_landing/icons/marketing.svg' alt='Advanced referral tools' className='gr-centered' />
+                        <img src={it.url_for('images/pages/affiliates_ib_landing/icons/marketing.svg')} alt='Advanced referral tools' className='gr-centered' />
                         <h4 className='secondary-color'>{it.L('Advanced referral tools')}</h4>
                     </div>
                     <div className='gr-4 gr-padding-10'>
-                        <img src='/images/pages/affiliates_ib_landing/icons/support-faq.svg' alt='International support' className='gr-centered' />
+                        <img src={it.url_for('images/pages/affiliates_ib_landing/icons/support-faq.svg')} alt='International support' className='gr-centered' />
                         <h4 className='secondary-color'>{it.L('International support')}</h4>
                     </div>
                     <div className='gr-4 gr-padding-10'>
-                        <img src='/images/pages/affiliates_ib_landing/icons/globe.svg' alt='Multilingual platforms' className='gr-centered' />
+                        <img src={it.url_for('images/pages/affiliates_ib_landing/icons/globe.svg')} alt='Multilingual platforms' className='gr-centered' />
                         <h4 className='secondary-color'>{it.L('Multilingual platforms')}</h4>
                     </div>
                 </div>
@@ -396,15 +396,15 @@ const AffiliateIbLanding = () => (
 
                         <ul className='faq-item-content'>
                             <li>
-                                <img className='faq-item-content-image' src={it.url_for('/images/pages/affiliates_ib_landing/icons/marketing-dark.svg')} alt='General' />
+                                <img className='faq-item-content-image' src={it.url_for('images/pages/affiliates_ib_landing/icons/marketing-dark.svg')} alt='General' />
                                 <a href={`${it.url_for('affiliate/faq')}#general`} className='faq-item-content-text'>{it.L('General')}</a>
                             </li>
                             <li>
-                                <img className='faq-item-content-image' src={it.url_for('/images/pages/affiliates_ib_landing/icons/account-dark.svg')} alt='Account Management' />
+                                <img className='faq-item-content-image' src={it.url_for('images/pages/affiliates_ib_landing/icons/account-dark.svg')} alt='Account Management' />
                                 <a href={`${it.url_for('affiliate/faq')}#account-management-and-tracking`} className='faq-item-content-text'>{it.L('Account Management')}</a>
                             </li>
                             <li>
-                                <img className='faq-item-content-image' src={it.url_for('/images/pages/affiliates_ib_landing/icons/general-faq-dark.svg')} alt='Referral Tools' />
+                                <img className='faq-item-content-image' src={it.url_for('images/pages/affiliates_ib_landing/icons/general-faq-dark.svg')} alt='Referral Tools' />
                                 <a href={`${it.url_for('affiliate/faq')}#referral-tools`} className='faq-item-content-text'>{it.L('Referral Tools')}</a>
                             </li>
                         </ul>
@@ -414,15 +414,15 @@ const AffiliateIbLanding = () => (
 
                         <ul className='faq-item-content'>
                             <li>
-                                <img className='faq-item-content-image' src={it.url_for('/images/pages/affiliates_ib_landing/icons/marketing-dark.svg')} alt='General' />
+                                <img className='faq-item-content-image' src={it.url_for('images/pages/affiliates_ib_landing/icons/marketing-dark.svg')} alt='General' />
                                 <a href={`${it.url_for('ib-programme/ib-faq')}#general`} className='faq-item-content-text'>{it.L('General')}</a>
                             </li>
                             <li>
-                                <img className='faq-item-content-image' src={it.url_for('/images/pages/affiliates_ib_landing/icons/account-dark.svg')} alt='Account Management' />
+                                <img className='faq-item-content-image' src={it.url_for('images/pages/affiliates_ib_landing/icons/account-dark.svg')} alt='Account Management' />
                                 <a href={`${it.url_for('ib-programme/ib-faq')}#account-management`} className='faq-item-content-text'>{it.L('Account Management')}</a>
                             </li>
                             <li>
-                                <img className='faq-item-content-image' src={it.url_for('/images/pages/affiliates_ib_landing/icons/general-faq-dark.svg')} alt='Referral Tools' />
+                                <img className='faq-item-content-image' src={it.url_for('images/pages/affiliates_ib_landing/icons/general-faq-dark.svg')} alt='Referral Tools' />
                                 <a href={`${it.url_for('ib-programme/ib-faq')}#referral-tools`} className='faq-item-content-text'>{it.L('Referral Tools')}</a>
                             </li>
                         </ul>
