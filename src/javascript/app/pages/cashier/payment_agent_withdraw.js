@@ -5,7 +5,7 @@ const BinarySocket         = require('../../base/socket');
 const getDecimalPlaces     = require('../../common/currency').getDecimalPlaces;
 const getPaWithdrawalLimit = require('../../common/currency').getPaWithdrawalLimit;
 const FormManager          = require('../../common/form_manager');
-const validEmailToken      = require('../../common/form_validation').validEmailToken;
+const Validation           = require('../../common/form_validation');
 const handleVerifyCode     = require('../../common/verification_code').handleVerifyCode;
 const getElementById       = require('../../../_common/common_functions').getElementById;
 const isVisible            = require('../../../_common/common_functions').isVisible;
@@ -32,6 +32,7 @@ const PaymentAgentWithdraw = (() => {
     let $agent_error,
         $ddl_agents,
         $txt_agents,
+        $txt_amount,
         $views,
         agent_name,
         currency,
@@ -63,7 +64,7 @@ const PaymentAgentWithdraw = (() => {
             } else {
                 setActiveView(view_ids.notice);
             }
-        } else if (!validEmailToken(token)) {
+        } else if (!Validation.validEmailToken(token)) {
             showPageError('token_error');
         } else {
             insertListOption($ddl_agents, localize('Select payment agent'), '');
@@ -74,18 +75,29 @@ const PaymentAgentWithdraw = (() => {
 
             const form_id = `#${$(view_ids.form).find('form').attr('id')}`;
             const $form   = $(form_id);
-            const min     = getPaWithdrawalLimit(currency, 'min');
-            const max     = getPaWithdrawalLimit(currency, 'max');
+
+            const getAPILimit = limit => {
+                const selected_val = getPALoginID();
+                if (selected_val){
+                    const selected_pa = pa_list.find(pa => pa.paymentagent_loginid === selected_val);
+                    if (selected_pa) return selected_pa[`${limit}_withdrawal`];
+                }
+                return getPaWithdrawalLimit(currency, limit);
+            };
+            
+            const min = () => getAPILimit('min');
+            const max = () => getAPILimit('max');
 
             $agent_error = $('.row-agent').find('.error-msg');
             $txt_agents  = $(field_ids.txt_agents);
+            $txt_amount  = $(field_ids.txt_amount);
 
             $form.find('.wrapper-row-agent').find('label').append($('<span />', { text: '*', class: 'required_field_asterisk' }));
             $form.find('label[for="txtAmount"]').text(`${localize('Amount in')} ${currency}`);
             trimDescriptionContent();
             FormManager.init(form_id, [
-                { selector: field_ids.txt_amount,        validations: ['req', ['number', { type: 'float', decimals: getDecimalPlaces(currency), min, max }], ['custom', { func: () => +Client.get('balance') >= +$(field_ids.txt_amount).val(), message: localize('Insufficient balance.') }]], request_field: 'amount' },
-                { selector: field_ids.txt_desc,          validations: ['general'], request_field: 'description' },
+                { selector: field_ids.txt_amount, validations: ['req', ['number', { type: 'float', decimals: getDecimalPlaces(currency), min, max }], ['custom', { func: () => +Client.get('balance') >= +$txt_amount.val(), message: localize('Insufficient balance.') }]], request_field: 'amount' },
+                { selector: field_ids.txt_desc,   validations: ['general'], request_field: 'description' },
 
                 { request_field: 'currency',              value: currency },
                 { request_field: 'paymentagent_loginid',  value: getPALoginID },
@@ -102,6 +114,7 @@ const PaymentAgentWithdraw = (() => {
                     // error handling
                     $agent_error.setVisibility(1);
                 }
+                validateAmount();
             });
 
             $txt_agents.on('keyup', () => {
@@ -115,6 +128,16 @@ const PaymentAgentWithdraw = (() => {
                     $agent_error.setVisibility(1);
                 }
             });
+
+            $txt_agents.on('focusout', () => {
+                validateAmount();
+            });
+
+            const validateAmount = () => {
+                if ($txt_amount.val()) {
+                    Validation.validate(form_id);
+                }
+            };
 
             FormManager.handleSubmit({
                 form_selector       : form_id,
