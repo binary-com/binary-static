@@ -167,7 +167,7 @@ const AffiliateIbLanding = () => (
                         <div className='gr-12 gr-padding-20 white-bg-color'>
                             <p className='no-margin'>{it.L(`Earn daily commissions on the trading activities of the clients you refer to the ${it.website_name} MetaTrader 5 (MT5) platform. Your total commissions will be credited into your account by the end of the day.`)}</p>
 
-                            <div className='gr-10 gr-parent gr-centered'>
+                            <div className='gr-10 gr-12-m gr-parent gr-centered'>
                                 <h3 className='secondary-color'>{it.L('Commision structure')}</h3>
                                 
                                 <h3>{it.L('Synthetic Indices Account')}</h3>
