@@ -391,9 +391,9 @@ const AffiliateIbLanding = () => (
                 <h2 className='faq-header'>{it.L('Frequently Asked Questions')}</h2>
 
                 <div className='gr-row'>
-                    <div className='gr-centered'>
+                    <div className='gr-10 gr-12-m gr-12-p gr-centered'>
                         <div className='gr-row'>
-                            <div className='gr-4 gr-12-m gr-padding-10'>
+                            <div className='gr-6 gr-12-m gr-padding-10'>
                                 <div className='faq-item'>
                                     <p className='faq-item-header secondary-color'>{it.L('Affiliate')}</p>
 
@@ -413,7 +413,7 @@ const AffiliateIbLanding = () => (
                                     </ul>
                                 </div>
                             </div>
-                            <div className='gr-4 gr-12-m gr-padding-10'>
+                            <div className='gr-6 gr-12-m gr-padding-10'>
                                 <div className='faq-item'>
                                     <p className='faq-item-header secondary-color'>{it.L('Introducing Broker')}</p>
 
