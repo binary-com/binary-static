@@ -1,6 +1,6 @@
-import React       from 'react';
-import { Table }   from '../_common/components/elements.jsx';
-import PaymentLogo from '../_common/components/payment_logo.jsx';
+import React             from 'react';
+import { Table }         from '../_common/components/elements.jsx';
+import PaymentLogo       from '../_common/components/payment_logo.jsx';
 import {
     TabContainer,
     TabContent,
