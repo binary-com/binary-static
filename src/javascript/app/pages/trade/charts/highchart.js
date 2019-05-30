@@ -62,7 +62,7 @@ const Highchart = (() => {
         end_time              = parseInt(contract.date_expiry);
         entry_tick_time       = parseInt(contract.entry_tick_time);
         exit_tick_time        = parseInt(contract.exit_tick_time);
-        sell_time             = +contract.is_path_dependent && contract.status !== 'sold' ? exit_tick_time : parseInt(contract.sell_time);
+        sell_time             = +contract.is_path_dependent && contract.status !== 'sold' ? contract.date_expiry : parseInt(contract.sell_time);
         is_sold_before_expiry = sell_time < end_time;
         exit_time             = is_sold_before_expiry ? sell_time : (exit_tick_time || end_time);
         prev_barriers         = [];
@@ -602,7 +602,7 @@ const Highchart = (() => {
     const endContract = () => {
         if (chart && !stop_streaming) {
             drawLineX({
-                value     : (is_sold_before_expiry && exit_tick_time >= end_time) ? sell_time : end_time,
+                value     : (is_sold_before_expiry ? sell_time : end_time),
                 text_left : 'textLeft',
                 dash_style: 'Dash',
             });
