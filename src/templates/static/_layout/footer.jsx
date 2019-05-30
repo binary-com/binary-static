@@ -104,10 +104,10 @@ const Footer = () => (
                                 header={it.L('Partner With Us')}
                                 items={[
                                     { text: it.L('Affiliate and IB Programme'), href: it.url_for('affiliate-ib') },
-                                    { text: it.L('API'),                     href: 'https://developers.binary.com', target: '_blank' },
-                                    { text: it.L('Binary Shop'),             href: 'https://shop.binary.com',       target: '_blank' },
+                                    { text: it.L('API'),                        href: 'https://developers.binary.com', target: '_blank' },
+                                    { text: it.L('Binary Shop'),                href: 'https://shop.binary.com',       target: '_blank' },
                                     /* { text: it.L('Charitable Activities'),   href: it.url_for('charity') }, */
-                                    { text: it.L('All Partnership Options'), href: it.url_for('partners') },
+                                    { text: it.L('All Partnership Options'),    href: it.url_for('partners') },
                                 ]}
                             />
                         </div>

@@ -90,7 +90,7 @@ module.exports = [
     ['open-positions',                          'static/about/job_descriptions',               'full_width', 'Open Positions'],
     ['open-positions/job-details',              'static/about/job_details',                    'full_width', 'Job Details'],
 
-    ['affiliate-ib',                            'static/affiliate_ib_landing',                 'full_width', 'Affiliate and Ib Programme'],
+    ['affiliate-ib',                            'static/affiliate_ib_landing',                 'full_width', 'Affiliate and IB Programme'],
     ['affiliate/faq',                           'static/affiliates/faq',                       'default',    'Affiliate FAQ'],
     // ['charity',                                 'static/charity',                              'default',    'Charity'],
     ['ib-programme/ib-faq',                     'static/ib_programme/ib_faq',                  'default',    'IB programme FAQ'],

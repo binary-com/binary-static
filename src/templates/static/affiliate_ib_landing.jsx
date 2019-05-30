@@ -1,6 +1,6 @@
 import React       from 'react';
-import PaymentLogo from '../_common/components/payment_logo.jsx';
 import { Table }   from '../_common/components/elements.jsx';
+import PaymentLogo from '../_common/components/payment_logo.jsx';
 import {
     TabContainer,
     TabContent,
@@ -98,23 +98,23 @@ const AffiliateIbLanding = () => (
                                                         tbody: [
                                                             [
                                                                 { text: '1' },
-                                                                { text: it.L('$0 - $10,000') },
-                                                                { text: it.L('20%') },
+                                                                { text: '$0 - $10,000' },
+                                                                { text: '20%' },
                                                             ],
                                                             [
                                                                 { text: '2' },
-                                                                { text: it.L('$10,001 – $50,000') },
-                                                                { text: it.L('25%') },
+                                                                { text: '$10,001 – $50,000' },
+                                                                { text: '25%' },
                                                             ],
                                                             [
                                                                 { text: '3' },
-                                                                { text: it.L('$50,001 – $100,000') },
-                                                                { text: it.L('30%') },
+                                                                { text: '$50,001 – $100,000' },
+                                                                { text: '30%' },
                                                             ],
                                                             [
                                                                 { text: '4' },
                                                                 { text: it.L('$100,001 and above') },
-                                                                { text: it.L('35%') },
+                                                                { text: '35%' },
                                                             ],
                                                         ],
                                                     }}
@@ -134,28 +134,28 @@ const AffiliateIbLanding = () => (
                                                         ],
                                                         tbody: [
                                                             [
-                                                                { text: it.L('0 – 19.999%') },
-                                                                { text: it.L('1.25%') },
+                                                                { text: '0 – 19.999%' },
+                                                                { text: '1.25%' },
                                                             ],
                                                             [
-                                                                { text: it.L('20 – 39.999%') },
-                                                                { text: it.L('1%') },
+                                                                { text: '20 – 39.999%' },
+                                                                { text: '1%' },
                                                             ],
                                                             [
-                                                                { text: it.L('40 – 59.999%') },
-                                                                { text: it.L('0.75%') },
+                                                                { text: '40 – 59.999%' },
+                                                                { text: '0.75%' },
                                                             ],
                                                             [
-                                                                { text: it.L('60 – 79.999%') },
-                                                                { text: it.L('5%') },
+                                                                { text: '60 – 79.999%' },
+                                                                { text: '5%' },
                                                             ],
                                                             [
-                                                                { text: it.L('80 – 94.999%') },
-                                                                { text: it.L('0.25%') },
+                                                                { text: '80 – 94.999%' },
+                                                                { text: '0.25%' },
                                                             ],
                                                             [
-                                                                { text: it.L('95%+') },
-                                                                { text: it.L('0%') },
+                                                                { text: '95%+' },
+                                                                { text: '0%' },
                                                             ],
                                                         ],
                                                     }}
@@ -198,43 +198,43 @@ const AffiliateIbLanding = () => (
                                         tbody: [
                                             [
                                                 { text: it.L('Crash 1000 Index') },
-                                                { text: it.L('0.20') },
+                                                { text: '0.20' },
                                             ],
                                             [
                                                 { text: it.L('Boom 1000 Index') },
-                                                { text: it.L('0.20') },
+                                                { text: '0.20' },
                                             ],
                                             [
                                                 { text: it.L('Volatility 100 Index') },
-                                                { text: it.L('15.00') },
+                                                { text: '15.00' },
                                             ],
                                             [
                                                 { text: it.L('Volatility 75 Index') },
-                                                { text: it.L('10.00') },
+                                                { text: '10.00' },
                                             ],
                                             [
                                                 { text: it.L('Volatility 50 Index') },
-                                                { text: it.L('7.50') },
+                                                { text: '7.50' },
                                             ],
                                             [
                                                 { text: it.L('Volatility 25 Index') },
-                                                { text: it.L('3.50') },
+                                                { text: '3.50' },
                                             ],
                                             [
                                                 { text: it.L('Volatility 10 Index') },
-                                                { text: it.L('1.50') },
+                                                { text: '1.50' },
                                             ],
                                             [
                                                 { text: it.L('HF Volatility 100 Index') },
-                                                { text: it.L('15.00') },
+                                                { text: '15.00' },
                                             ],
                                             [
                                                 { text: it.L('HF Volatility 50 Index') },
-                                                { text: it.L('7.50') },
+                                                { text: '7.50' },
                                             ],
                                             [
                                                 { text: it.L('HF Volatility 10 Index') },
-                                                { text: it.L('1.50') },
+                                                { text: '1.50' },
                                             ],
                                         ],
                                     }}
