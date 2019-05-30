@@ -92,22 +92,22 @@ const AffiliateIbLanding = () => (
                                                         <th>{it.L('Commission rates')}</th>
                                                     </tr>
                                                     <tr>
-                                                        <td>{it.L('1')}</td>
+                                                        <td>1</td>
                                                         <td>{it.L('$0 – $10,000')}</td>
                                                         <td>{it.L('20%')}</td>
                                                     </tr>
                                                     <tr>
-                                                        <td>{it.L('2')}</td>
+                                                        <td>2</td>
                                                         <td>{it.L('$10,001 – $50,000')}</td>
                                                         <td>{it.L('25%')}</td>
                                                     </tr>
                                                     <tr>
-                                                        <td>{it.L('3')}</td>
+                                                        <td>3</td>
                                                         <td>{it.L('$50,001 – $100,000')}</td>
                                                         <td>{it.L('30%')}</td>
                                                     </tr>
                                                     <tr>
-                                                        <td>{it.L('4')}</td>
+                                                        <td>4</td>
                                                         <td>{it.L('$100,001 and above')}</td>
                                                         <td>{it.L('35%')}</td>
                                                     </tr>
