@@ -184,55 +184,61 @@ const AffiliateIbLanding = () => (
                                 <h3 className='secondary-color'>{it.L('Commision structure')}</h3>
                                 
                                 <h3>{it.L('Synthetic Indices Account')}</h3>
-                                <table>
-                                    <tr>
-                                        <th rowSpan='2'>{it.L('Asset')}</th>
-                                        <th className='second-header'>{it.L('Commission per round trade')}</th>
-                                    </tr>
-                                    <tr>
-                                        <th className='center-text'>{it.L('$ per USD 100,000 of turnover')}</th>
-                                    </tr>
-                                    <tr>
-                                        <td>{it.L('Crash 1000 Index')}</td>
-                                        <td>{it.L('0.20')}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>{it.L('Boom 1000 Index')}</td>
-                                        <td>{it.L('0.20')}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>{it.L('Volatility 100 Index')}</td>
-                                        <td>{it.L('15.00')}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>{it.L('Volatility 75 Index')}</td>
-                                        <td>{it.L('10.00')}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>{it.L('Volatility 50 Index')}</td>
-                                        <td>{it.L('7.50')}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>{it.L('Volatility 25 Index')}</td>
-                                        <td>{it.L('3.50')}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>{it.L('Volatility 10 Index')}</td>
-                                        <td>{it.L('1.50')}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>{it.L('HF Volatility 100 Index')}</td>
-                                        <td>{it.L('15.00')}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>{it.L('HF Volatility 50 Index')}</td>
-                                        <td>{it.L('7.50')}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>{it.L('HF Volatility 10 Index')}</td>
-                                        <td>{it.L('1.50')}</td>
-                                    </tr>
-                                </table>
+                                <Table
+                                    data={{
+                                        thead: [
+                                            [
+                                                { text: it.L('Asset'), attributes: { rowSpan: 2 } },
+                                                { text: it.L('Commission per round trade') },
+                                            ],
+                                            [
+                                                { text: it.L('$ per USD 100,000 of turnover'), className: 'center-text' },
+                                            ],
+                                        ],
+                                        tbody: [
+                                            [
+                                                { text: it.L('Crash 1000 Index') },
+                                                { text: it.L('0.20') },
+                                            ],
+                                            [
+                                                { text: it.L('Boom 1000 Index') },
+                                                { text: it.L('0.20') },
+                                            ],
+                                            [
+                                                { text: it.L('Volatility 100 Index') },
+                                                { text: it.L('15.00') },
+                                            ],
+                                            [
+                                                { text: it.L('Volatility 75 Index') },
+                                                { text: it.L('10.00') },
+                                            ],
+                                            [
+                                                { text: it.L('Volatility 50 Index') },
+                                                { text: it.L('7.50') },
+                                            ],
+                                            [
+                                                { text: it.L('Volatility 25 Index') },
+                                                { text: it.L('3.50') },
+                                            ],
+                                            [
+                                                { text: it.L('Volatility 10 Index') },
+                                                { text: it.L('1.50') },
+                                            ],
+                                            [
+                                                { text: it.L('HF Volatility 100 Index') },
+                                                { text: it.L('15.00') },
+                                            ],
+                                            [
+                                                { text: it.L('HF Volatility 50 Index') },
+                                                { text: it.L('7.50') },
+                                            ],
+                                            [
+                                                { text: it.L('HF Volatility 10 Index') },
+                                                { text: it.L('1.50') },
+                                            ],
+                                        ],
+                                    }}
+                                />
 
                                 <p className='text-align-left'>{it.L('For example, a round trade (i.e., open and close position) of 1 lot of Vol 75 Index for a price of 125,000 would pay USD 8.')}</p>
                                 <p className='text-align-left'><strong>{it.L('USD 10 X 1 lot x USD 100,000/125,000 = USD 8')}</strong></p>
