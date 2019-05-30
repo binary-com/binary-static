@@ -222,6 +222,7 @@
             background-color: $COLOR_WHITE;
             border-radius: 8px;
             padding: 30px;
+            margin: 10px;
 
             &-header {
                 font-size: 28px;
@@ -245,14 +246,6 @@
         }
         &-message {
             color: $COLOR_WHITE;
-        }
-        #faq-item-1 {
-            margin-left: auto;
-            margin-right: 10px;
-        }
-        #faq-item-2 {
-            margin-right: auto;
-            margin-left: 10px;
         }
     }
 }
