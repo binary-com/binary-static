@@ -1,7 +1,7 @@
 import React from 'react';
 import Loading from '../../../_common/components/loading.jsx';
 import { SeparatorLine } from '../../../_common/components/separator_line.jsx';
-import { SubmitButton } from '../../../_common/components/forms.jsx';
+import { FormRow, SubmitButton } from '../../../_common/components/forms.jsx';
 
 const AccountClosure = () => (
     <React.Fragment>
@@ -52,6 +52,47 @@ const AccountClosure = () => (
                     it.L('Go to portfolio page to close your open positions.'),
                 ]}
             />
+            <ClosureDescription
+                title={it.L('Withdraw funds')}
+                subtitle={it.L('Remember to withdraw your funds from [_1]all[_2] your accounts', '<strong>', '</strong>')}
+                list_items={[
+                    it.L('Go to Cashier to withdraw.'),
+                    it.L('Go to MT5 dashboard to withdraw from your [_1] MT5 account.', it.website_name),
+                ]}
+            />
+            <SeparatorLine className='gr-padding-10' />
+            
+            <h2 className='primary-color'>{it.L('Reason for closure')}</h2>
+
+            <FormRow
+                type='radio'
+                id='reason_for_closure'
+                className='password-type'
+                options={[
+                    {
+                        label: it.L('Financial concerns'),
+                        value: 'financial',
+                    },
+                    {
+                        label: it.L('Too addictive'),
+                        value: 'addictive',
+                    },
+                    {
+                        label: it.L('Not interested in trading'),
+                        value: 'not interested',
+                    },
+                    {
+                        label: it.L('Prefer another trading website'),
+                        value: 'another website',
+                    },
+                    {
+                        label: it.L('Others (please specify)'),
+                        value: 'other',
+                    },
+
+                ]}
+            />
+
             <SeparatorLine className='gr-padding-10' />
         </div>
 
