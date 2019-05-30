@@ -245,38 +245,50 @@ const AffiliateIbLanding = () => (
                                 <p className='text-align-left'>{it.L('If your account currency is EUR or GBP, your commission will be converted based on the current Forex rate.')}</p>
                                 
                                 <h3>{it.L('Standard Account')}</h3>
-                                <table>
-                                    <tr>
-                                        <th rowSpan='2'>{it.L('Asset')}</th>
-                                        <th>{it.L('Commission')}</th>
-                                    </tr>
-                                    <tr>
-                                        <th className='center-text'>{it.L('per lot')}</th>
-                                    </tr>
-                                    <tr>
-                                        <td>{it.L('Forex and metals')}*</td>
-                                        <td>{it.L('10')}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>{it.L('Cryptocurrencies')}**</td>
-                                        <td>{it.L('0.3%')}</td>
-                                    </tr>
-                                </table>
+                                <Table
+                                    data={{
+                                        thead: [
+                                            [
+                                                { text: it.L('Asset'), attributes: { rowSpan: 2 } },
+                                                { text: it.L('Commission') },
+                                            ],
+                                            [
+                                                { text: it.L('per lot'), className: 'center-text' },
+                                            ],
+                                        ],
+                                        tbody: [
+                                            [
+                                                { text: it.L('Forex and metals*') },
+                                                { text: '10' },
+                                            ],
+                                            [
+                                                { text: it.L('Cryptocurrencies**') },
+                                                { text: '0.3%' },
+                                            ],
+                                        ],
+                                    }}
+                                />
 
                                 <h3>{it.L('Advanced Account')}</h3>
-                                <table>
-                                    <tr>
-                                        <th rowSpan='2'>{it.L('Asset')}</th>
-                                        <th>{it.L('Commission')}</th>
-                                    </tr>
-                                    <tr>
-                                        <th className='center-text'>{it.L('per lot')}</th>
-                                    </tr>
-                                    <tr>
-                                        <td>{it.L('Forex')}*</td>
-                                        <td>{it.L('5')}</td>
-                                    </tr>
-                                </table>
+                                <Table
+                                    data={{
+                                        thead: [
+                                            [
+                                                { text: it.L('Asset'), attributes: { rowSpan: 2 } },
+                                                { text: it.L('Commission') },
+                                            ],
+                                            [
+                                                { text: it.L('per lot'), className: 'center-text' },
+                                            ],
+                                        ],
+                                        tbody: [
+                                            [
+                                                { text: it.L('Forex*') },
+                                                { text: '5' },
+                                            ],
+                                        ],
+                                    }}
+                                />
 
                                 <p className='text-align-left'>*{it.L('Represents the amount in base currency per round trade. For example, a round trade of 1 lot of EUR/USD would pay EUR 10 on Standard accounts. A round trade of 1 lot of USD/CAD would pay USD 5 on Advanced accounts.')}</p>
                                 <p className='text-align-left'>**{it.L('Cryptocurrencies commission per round trade. For example, a round trade of 1 lot of BTC/USD with spot price of 10,000 will pay USD 30 on Standard accounts.')}</p>
