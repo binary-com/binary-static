@@ -165,7 +165,7 @@ const AffiliateIbLanding = () => (
                     </div>
                     <div id='ib'>
                         <div className='gr-12 gr-padding-20 white-bg-color'>
-                            <p className='no-margin'>{it.L(`Earn daily commissions on the trading activities of the clients you refer to the ${it.website_name} MetaTrader 5 (MT5) platform. Your total commissions will be credited into your account by the end of the day.`)}</p>
+                            <p className='no-margin'>{it.L('Earn daily commissions on the trading activities of the clients you refer to the [_1] MetaTrader 5 (MT5) platform. Your total commissions will be credited into your account by the end of the day.', it.website_name)}</p>
 
                             <div className='gr-10 gr-12-m gr-parent gr-centered'>
                                 <h3 className='secondary-color'>{it.L('Commision structure')}</h3>
@@ -298,8 +298,8 @@ const AffiliateIbLanding = () => (
                                 <img src={it.url_for('images/pages/affiliates_ib_landing/icons/circle_arrow.svg')} />
                             </div>
                         </div>
-                        <h3>{it.L(`Introduce ${it.website_name}`)}</h3>
-                        <p>{it.L(`Spread the word to your audience. Use your unique referral link and our tried-and-tested referral tools to drive traffic to ${it.website_name}.`)}</p>
+                        <h3>{it.L('Introduce [_1]', it.website_name)}</h3>
+                        <p>{it.L('Spread the word to your audience. Use your unique referral link and our tried-and-tested referral tools to drive traffic to [_1].', it.website_name)}</p>
                     </div>
                     <div className='gr-4 gr-12-m gr-centered'>
                         <img src={it.url_for('images/pages/affiliates_ib_landing/icons/earn.svg')} />
@@ -311,7 +311,7 @@ const AffiliateIbLanding = () => (
         </section>
         <section className='who-apply'>
             <div className='container gr-padding-20 white-bg-color'>
-                <h2 className='center-text'>{it.L(`Who can apply as a ${it.website_name} partner`)}</h2>
+                <h2 className='center-text'>{it.L('Who can apply as a [_1] partner', it.website_name)}</h2>
                 <div className='gr-row center-text-m'>
                     <div className='gr-6 gr-12-m gr-padding-30 gr-child'>
                         <h4>{it.L('Webmaster')}</h4>
@@ -327,7 +327,7 @@ const AffiliateIbLanding = () => (
                     </div>
                     <div className='gr-6 gr-12-m gr-padding-30 gr-child'>
                         <h4>{it.L('Web and software developer')}</h4>
-                        <p>{it.L(`Builds trading applications and interfaces using the ${it.website_name} API`)}</p>
+                        <p>{it.L('Builds trading applications and interfaces using the [_1] API', it.website_name)}</p>
                     </div>
                     <div className='gr-6 gr-12-m gr-padding-30 gr-child'>
                         <h4>{it.L('Social media admin')}</h4>
