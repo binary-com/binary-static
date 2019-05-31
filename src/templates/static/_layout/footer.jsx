@@ -103,7 +103,7 @@ const Footer = () => (
                             <FooterColumn
                                 header={it.L('Partner With Us')}
                                 items={[
-                                    { text: it.L('Affiliate and IB Programme'), href: it.url_for('affiliate-ib') },
+                                    { text: it.L('Affiliate and IB Programmes'), href: it.url_for('affiliate-ib') },
                                     { text: it.L('API'),                        href: 'https://developers.binary.com', target: '_blank' },
                                     { text: it.L('Binary Shop'),                href: 'https://shop.binary.com',       target: '_blank' },
                                     /* { text: it.L('Charitable Activities'),   href: it.url_for('charity') }, */
