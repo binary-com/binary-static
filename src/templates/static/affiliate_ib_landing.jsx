@@ -75,7 +75,7 @@ const AffiliateIbLanding = () => (
                                     items={[
                                         { id: 'revenue',   text: it.L('Revenue Share') },
                                         { id: 'turnover',  text: it.L('Turnover') },
-                                        { id: 'cpa',       text: it.L('CPA (EU Only)') },
+                                        { id: 'cpa',       text: it.L('CPA (EU only)') },
                                         { id: 'commission_structure_selector', className: 'tab-selector' },
                                     ]}
                                 />
@@ -119,13 +119,13 @@ const AffiliateIbLanding = () => (
                                                 />
 
                                                 <a href={it.affiliate_signup_url} className='button' target='_blank' rel='noopener noreferrer'>
-                                                    <span>{it.L('Sign Up Now')}</span>
+                                                    <span>{it.L('Sign up now')}</span>
                                                 </a>
                                             </div>
                                         </TabContent>
                                         <TabContent id='turnover'>
                                             <div className='gr-11 gr-centered'>
-                                                <p className='no-margin text-align-left'>{it.L('Our turnover-based commission plan depends on the payout probability for each contract. Contracts with higher returns for the client offer lower commissions to the affiliate.')}</p>
+                                                <p className='no-margin text-align-left'>{it.L('Our turnover-based commission plan depends on the payout probability for each contract. Contracts with higher returns for the client offer you lower commissions.')}</p>
                                                 <Table
                                                     data={{
                                                         thead: [
@@ -166,10 +166,10 @@ const AffiliateIbLanding = () => (
                                         </TabContent>
                                         <TabContent id='cpa'>
                                             <div className='gr-11 gr-centered text-align-left'>
-                                                <h3 className='no-margin'>{it.L('Cost per acquisition (CPA) for EU affiliates only')}</h3>
-                                                <p>{it.L('Earn USD 100 in commission for each successful referral. Your referred client must open areal money investment account through your unique affiliate link and deposit a total of USD 100 or more (one-time or accumulative) in the account. This commission plan is only available to affiliates based in the EU.')}</p>
+                                                <h3 className='no-margin'>{it.L('Cost per acquisition (CPA) for EU Affiliates only')}</h3>
+                                                <p>{it.L('Earn USD 100 in commission for each successful referral. Your referred client must open a real money investment account through your unique affiliate link and deposit a total of USD 100 or more (one-time or accumulative) in the account. This commission plan is only available to Affiliates based in the EU.')}</p>
                                                 <a href={it.affiliate_signup_url} className='button center-text gr-centered gr-padding-20' target='_blank' rel='noopener noreferrer'>
-                                                    <span>{it.L('Sign up Now')}</span>
+                                                    <span>{it.L('Sign up now')}</span>
                                                 </a>
                                             </div>
                                         </TabContent>
@@ -242,11 +242,11 @@ const AffiliateIbLanding = () => (
                                     }}
                                 />
 
-                                <p className='text-align-left'>{it.L('For example, a round trade (i.e., open and close position) of 1 lot of Vol 75 Index for a price of 125,000 would pay USD 8.')}</p>
+                                <p className='text-align-left'>{it.L('For example, a round trade (i.e. open and close position) of 1 lot of Vol 75 Index for a price of USD 125,000 would pay USD 8.')}</p>
                                 <p className='text-align-left'><strong>{it.L('USD 10 X 1 lot x USD 100,000/125,000 = USD 8')}</strong></p>
-                                <p className='text-align-left'>{it.L('If your account currency is EUR or GBP, your commission will be converted based on the current Forex rate.')}</p>
+                                <p className='text-align-left'>{it.L('If your account currency is EUR or GBP, your commission will be converted based on the current forex rate.')}</p>
                                 
-                                <h3>{it.L('Standard Account')}</h3>
+                                <h3>{it.L('Standard account')}</h3>
                                 <Table
                                     data={{
                                         thead: [
@@ -271,7 +271,7 @@ const AffiliateIbLanding = () => (
                                     }}
                                 />
 
-                                <h3>{it.L('Advanced Account')}</h3>
+                                <h3>{it.L('Advanced account')}</h3>
                                 <Table
                                     data={{
                                         thead: [
@@ -292,12 +292,12 @@ const AffiliateIbLanding = () => (
                                     }}
                                 />
 
-                                <p className='text-align-left'>*{it.L('Represents the amount in base currency per round trade. For example, a round trade of 1 lot of EUR/USD would pay EUR 10 on Standard accounts. A round trade of 1 lot of USD/CAD would pay USD 5 on Advanced accounts.')}</p>
-                                <p className='text-align-left'>**{it.L('Cryptocurrencies commission per round trade. For example, a round trade of 1 lot of BTC/USD with spot price of 10,000 will pay USD 30 on Standard accounts.')}</p>
+                                <p className='text-align-left'>*{it.L('Represents the amount in base currency per round trade. For example, a round trade of 1 lot of EUR/USD would pay EUR 10 on standard accounts. A round trade of 1 lot of USD/CAD would pay USD 5 on advanced accounts.')}</p>
+                                <p className='text-align-left'>**{it.L('Cryptocurrencies commission per round trade. For example, a round trade of 1 lot of BTC/USD with spot price of USD 10,000 will pay USD 30 on standard accounts.')}</p>
                             </div>
 
                             <a href={it.affiliate_signup_url} className='button' target='_blank' rel='noopener noreferrer'>
-                                <span>{it.L('Sign Up Now')}</span>
+                                <span>{it.L('Sign up now')}</span>
                             </a>
                         </div>
                     </div>
@@ -319,7 +319,7 @@ const AffiliateIbLanding = () => (
                             </div>
                         </div>
                         <h3>{it.L('Sign up')}</h3>
-                        <p>{it.L('Choose your preferred programme, complete the application form, and receive your affiliate link upon approval')}</p>
+                        <p>{it.L('Choose your preferred programme, complete the application form, and receive your affiliate link upon approval.')}</p>
                     </div>
                     <div className='gr-4 gr-12-m gr-centered'>
                         <div className='gr-row'>
@@ -348,11 +348,11 @@ const AffiliateIbLanding = () => (
                 <div className='gr-row center-text-m'>
                     <div className='gr-6 gr-12-m gr-padding-30 gr-child'>
                         <h4>{it.L('Webmaster')}</h4>
-                        <p>{it.L('Runs and manages a website that promotes Forex or binary options')}</p>
+                        <p>{it.L('Runs and manages a website that promotes forex or binary options')}</p>
                     </div>
                     <div className='gr-6 gr-12-m gr-padding-30 gr-child'>
                         <h4>{it.L('Trading guru')}</h4>
-                        <p>{it.L('Nurtures a community of potential and existing online traders through insights and mentorship')}</p>
+                        <p>{it.L('Nurtures a community of potential and existing online traders through insight and mentorship')}</p>
                     </div>
                     <div className='gr-6 gr-12-m gr-padding-30 gr-child'>
                         <h4>{it.L('Webinar speaker')}</h4>
@@ -421,7 +421,7 @@ const AffiliateIbLanding = () => (
         </section>
         <section className='faq'>
             <div className='container center-text'>
-                <h2 className='faq-header'>{it.L('Frequently Asked Questions')}</h2>
+                <h2 className='faq-header'>{it.L('Frequently asked questions')}</h2>
 
                 <div className='gr-row'>
                     <div className='gr-10 gr-12-m gr-12-p gr-centered'>
