@@ -1,9 +1,6 @@
 .affiliate-ib-content {
     margin: 0 !important;
 
-    h1 {
-        font-size: 3.5rem;
-    }
     h2 {
         font-size: 36px;
         font-weight: 700;
@@ -15,14 +12,14 @@
     .text-align-left {
         text-align: left;
     }
-    .hero {
+    #hero {
         display: flex;
-        background: url('../images/pages/affiliates_ib_landing/background/hero.png');
+        background-image: url('../images/pages/affiliates_ib_landing/background/hero.png');
         background-size: cover;
         background-position: center;
         min-height: 417px;
 
-        &-header {
+        h2 {
             font-weight: 300;
             color: $COLOR_WHITE;
         }
