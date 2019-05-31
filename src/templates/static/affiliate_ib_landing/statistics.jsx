@@ -1,8 +1,8 @@
 import React from 'react';
 
 const Statistics = () => (
-    <section className='statistics'>
-        <div className='container gr-row full-height full-width gr-row-align-middle center-text gr-padding-20'>
+    <section id='statistics'>
+        <div className='container gr-row full-width center-text gr-padding-20'>
             <article className='gr-3 gr-6-p gr-12-m gr-padding-20'>
                 <h1>{it.L('40K+')}</h1>
                 <h3>{it.L('Partners')}</h3>
