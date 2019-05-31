@@ -1,56 +1,220 @@
-.ib-signup-content {
-    margin-bottom: 0 !important;
-}
+.affiliate-ib-content {
+    margin: 0 !important;
 
-.ib-signup-page {
-    &__commission-table td:not(:last-child) {
-        font-weight: bold;
+    h1 {
+        font-size: 3.5rem;
     }
-}
+    h2 {
+        font-size: 36px;
+        font-weight: 700;
+        line-height: 45px;
+    }
+    h4 {
+        font-weight: 500;
+    }
+    .text-align-left {
+        text-align: left;
+    }
+    .hero {
+        display: flex;
+        background: url('../images/pages/affiliates_ib_landing/background/hero.png');
+        background-size: cover;
+        background-position: center;
+        min-height: 417px;
 
-.affiliates-faq-page, .ib-faq-page {
-    h3 {
-        color: $COLOR_ORANGE;
-
-        &:not(:first-of-type) {
-            margin-top: 3rem;
+        &-header {
+            font-weight: 300;
+            color: $COLOR_WHITE;
         }
     }
-    @media screen and (max-width: 480px) {
-        .sidebar-container {
-            margin-bottom: 2rem;
+    .statistics {
+        display: flex;
+        align-items: center;
+        background: url('../images/pages/contact/banner-bg.svg');
+        min-height: 200px;
 
-            .sidebar a {
-                line-height: 2.5rem;
+        h1 {
+            font-size: 64px;
+        }
+        h3 {
+            margin: 0;
+        }
+    }
+    .how-it-works {
+        background: url('../images/pages/affiliates_ib_landing/background/orange.png');
+        background-size: cover;
+        color: $COLOR_WHITE;
+
+        h2, h3 {
+            color: $COLOR_WHITE;
+            margin: 20px 0;
+        }
+        h3 {
+            font-weight: 700;
+        }
+        p {
+            font-size: 22px;
+            font-weight: normal;
+            line-height: 28px;
+        }
+    }
+    .who-apply {
+        display: flex;
+        align-items: center;
+
+        .gr-row {
+            max-width: 780px;
+
+            h2 {
+                margin: 20px 0;
+            }
+            h2, h4 {
+                font-weight: 700;
             }
         }
     }
-}
+    .why-partner {
+        display: flex;
 
-.affiliates-signup-page, .ib-signup-page {
-    h2 {
-        margin-top: 30px;
-    }
-    #commission_tabs {
-        margin-bottom: 0 !important;
-    }
-    .margin-bottom-50 {
-        margin-bottom: 50px;
-    }
-    .fixed-height-img {
-        height: 50px;
-    }
-    .faq-box {
-        padding: 1rem;
-    }
-    .table-container.center-text {
-        & th, td {
-            text-align: center;
+        h2, h4 {
+            margin-top: 25px;
+        }
+        h4 {
+            margin-bottom: 15px;
+        }
+        img {
+            height: 64px;
+        }
+        @media screen and (max-width: 480px) {
+            h4 {
+                font-size: 1rem;
+            }
+            img {
+                height: 56px;
+            }
         }
     }
-    @media screen and (max-width: 480px) {
-        table, .mobile-text-small {
-            font-size: 0.9rem;
+    .payment-method {
+        .container {
+            max-width: 1012px;
+        }
+        .gr-row {
+            max-width: 940px;
+            margin: 0 auto;
+        }
+        h2 {
+            margin: 25px 0;
+        }
+    }
+    .type-of-partner {
+        p {
+            font-size: 18px;
+            line-height: 27px;
+        }
+        .container {
+            max-width: 780px;
+
+            & > p {
+                font-weight: 300;
+            }
+            h2, h3 {
+                margin: 20px 0;
+            }
+            .has-tabs {
+                margin: 20px 0;
+
+                .ui-tabs-nav {
+                    border-width: 2px;
+                    border-color: $COLOR_ORANGE;
+                    margin-bottom: 0;
+
+                    li {
+                        padding: 10px;
+                        margin: 0;
+                        white-space: normal;
+
+                        a {
+                            outline: none;
+                            width: 100%;
+                            font-size: 18px;
+                            line-height: 27px;
+                        }
+                        &:first-child {
+                            flex-basis: 48%;
+                            margin-right: 2%;
+                        }
+                        &.ui-tabs-active {
+                            background: $COLOR_ORANGE;
+                        }
+                    }
+                }
+                table {
+                    margin-top: 1em;
+                    margin-bottom: 1em;
+                }
+                .gr-show-m {
+                    @media screen and (max-width: 480px) {
+                        display: flex;
+                    }
+                }
+                #ib {
+                    &-header {
+                        margin: 24px 0;
+                        font-size: 28px;
+                    }
+                    table {
+                        th, td {
+                            text-align: left;
+                            font-weight: bold;
+                            padding-left: 42px;
+                        }
+                        th + th, td + td, th:only-child {
+                            text-align: center;
+                        }
+                        th + th {
+                            border-bottom-width: 1px;
+                            border-color: $COLOR_WHITE;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .faq {
+        background-image: url('../images/pages/affiliates_ib_landing/background/orange.png');
+        background-size: cover;
+        padding: 40px;
+
+        &-header {
+            color: $COLOR_WHITE;
+        }
+        &-item {
+            background-color: $COLOR_WHITE;
+            border-radius: 8px;
+            padding: 30px;
+
+            &-header {
+                font-size: 28px;
+                font-weight: 700;
+                margin-top: 0;
+            }
+            &-content {
+                font-size: 16px;
+                font-weight: 500;
+                text-align: start;
+                margin-left: 20px;
+
+                &-image {
+                    margin-right: 10px;
+                    vertical-align: middle;
+                }
+                &-text {
+                    vertical-align: middle;
+                }
+            }
+        }
+        &-message {
+            color: $COLOR_WHITE;
         }
     }
 }
