@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-05-31 01:26\n"
+"PO-Revision-Date: 2019-05-31 07:39\n"
 "Last-Translator: binarycom\n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -105,6 +105,9 @@ msgstr "「第三方供應商」指通過使用%1的API提供可用功能和作�
 msgid "\"Transaction\" means any purchase or sale of any financial Instrument including but not limited to CFDs, Rolling Spot FX, Commodities and any other securities or products may be offered by the Company to the Client, from time to time in accordance with the Client Agreement."
 msgstr "「交易」指公司根據客戶協議隨時向客戶提供的任何金融工具的任何購買或銷售, 包括但不限於差價合約、滾動現貨外匯、大宗商品及任何其它證券或產品。"
 
+msgid "$ per USD 100,000 of turnover"
+msgstr ""
+
 msgid "$100,000 - $250,000"
 msgstr "$100,000 - $250,000"
 
@@ -113,6 +116,9 @@ msgstr "$100,001 - $500,000"
 
 msgid "$100,001 and above"
 msgstr "100001元及以上"
+
+msgid "$12M+"
+msgstr ""
 
 msgid "$25,000 - $50,000"
 msgstr "$25,000 - $50,000"
@@ -162,9 +168,6 @@ msgstr "%1帳戶"
 msgid "%1 Account %2"
 msgstr "%1帳戶%2"
 
-msgid "%1 Affiliate Programme"
-msgstr "%1 聯盟計劃"
-
 msgid "%1 Application Programme Interface (\"API\") terms and conditions"
 msgstr "%1 應用程式編程介面(\"API\") 的條款和條件"
 
@@ -173,9 +176,6 @@ msgstr "%1 專家顧問 (EA)"
 
 msgid "%1 Graduate Programme"
 msgstr "%1 研究生課程"
-
-msgid "%1 Introducing Broker (IB) Programme"
-msgstr "%1 推介經紀 (IB) 計劃"
 
 msgid "%1 Please click the link below to restart the password recovery process."
 msgstr "%1 請點擊下方連結，重新開啟密碼恢復過程。"
@@ -338,9 +338,6 @@ msgstr "%1 在Labuan島開設新辦事處, 作為我們業務擴張的一部分�
 
 msgid "%1 owes the client a duty of best execution when executing orders on the client's behalf, i.e. when the client places a legitimate reliance on the Company to safeguard the client's interest in relation to the execution of the client's order."
 msgstr "當公司代替客戶執行訂單時，也就是說，當客戶依法託付公司執行客戶的訂單並維護客戶的利益時，%1有義務以最佳方式執行。"
-
-msgid "%1 per lot"
-msgstr "%1 每手"
 
 msgid "%1 property"
 msgstr "%1的財產"
@@ -528,9 +525,6 @@ msgstr "(四) 結算的可能性"
 msgid "(e) Size and nature"
 msgstr "(五) 大小和性質"
 
-msgid "*Already registered as an affiliate? Send us an email at %1 instead."
-msgstr "* 已註冊為聯盟會員？請在 %1 發電子郵件給我們。"
-
 msgid "0-1 year"
 msgstr "0-1 年"
 
@@ -549,8 +543,14 @@ msgstr "1. 身份證明"
 msgid "11-39 transactions in the past 12 months"
 msgstr "過去12個月內11-39次交易"
 
+msgid "150+"
+msgstr ""
+
 msgid "16th MENA Financial Forum & Expo"
 msgstr "十六屆MENA金融論壇&博覽會"
+
+msgid "1M+"
+msgstr ""
 
 msgid "2 * (6,000 – 5,200) = $1600"
 msgstr "2 * (6,000 – 5,200) = $1600"
@@ -572,6 +572,9 @@ msgstr "30天期交易限額"
 
 msgid "40 transactions or more in the past 12 months"
 msgstr "過去12個月內40次交易或以上"
+
+msgid "40K+"
+msgstr ""
 
 msgid "6-10 transactions in the past 12 months"
 msgstr "過去12個月內6-10次交易"
@@ -966,9 +969,6 @@ msgstr "有借方餘額的帳戶需立即付款給%1結算全額。"
 msgid "Accounts/ Payments"
 msgstr "會計/付款"
 
-msgid "Accounts/Assets"
-msgstr "帳戶/資產"
-
 msgid "Accounts/Payments"
 msgstr "會計/付款"
 
@@ -1038,6 +1038,9 @@ msgstr "高階"
 msgid "Advanced Account"
 msgstr "高級帳戶"
 
+msgid "Advanced account"
+msgstr ""
+
 msgid "Advanced binary options trading interface"
 msgstr "進階二元期權交易介面"
 
@@ -1065,8 +1068,11 @@ msgstr "聯盟安排"
 msgid "Affiliate FAQ"
 msgstr "聯盟會員常見問題"
 
-msgid "Affiliate Programme"
-msgstr "聯盟計劃"
+msgid "Affiliate and IB Programme"
+msgstr ""
+
+msgid "Affiliate and IB Programmes"
+msgstr ""
 
 msgid "Affiliate/Country Manager"
 msgstr "聯盟/區域經理"
@@ -1133,9 +1139,6 @@ msgstr "為了利於培訓和監控, 所有通話將被錄音"
 
 msgid "All client orders are processed on a first in, first out basis without any manual intervention. When executing client order, %1 will seek to fill client order transaction as promptly as possible at the instructed price (or at a better price, if available). Exposure limits are established based on internal governance arrangements and risk management framework, which both commensurate with the size, nature, complexity, and risk profile of the Company's activities. These exposure limits are used as benchmarks to distinguish orders that are auto-accepted from orders that will be worked in the market with fill level passed on to the client."
 msgstr "所有客戶訂單將以先進先出，沒有任何人工干預的方式處理。執行客戶的訂單時，%1將盡快以指示價格 （或更佳的可用價格）填補客戶的訂單交易記錄。基於內部治理安排和風險管理框架建立的接觸限值將與公司活動的大小、性質、複雜性和風險架構相配合。這些接觸限值是區分自動接受訂單和可用於將填補層次傳遞給客戶端市場的訂單的基準。"
-
-msgid "All commissions are credited into your account by the 15th of every month."
-msgstr "所有佣金將於每月十五日前準時存入您的帳戶。"
 
 msgid "All conditions and durations"
 msgstr "所有環境和期限"
@@ -1394,9 +1397,6 @@ msgstr "申請人的權利"
 
 msgid "Applications"
 msgstr "應用程式"
-
-msgid "Apply now"
-msgstr "立即申請"
 
 msgid "Apply now as a professional investor"
 msgstr "立刻申請成為專業投資者"
@@ -1896,6 +1896,9 @@ msgstr "加入由世界各地的客服團隊成員組成的全年無休、隨時
 msgid "Because of the leverage effect, the Margin required in Margined Transactions, and price changes in the Underlying Instruments, the client may suffer significant losses."
 msgstr "由於杠杆效應、保證金交易所需要的保證金和基礎工具的價格變化等影響因素, 客戶可能蒙受重大損失."
 
+msgid "Become our partner"
+msgstr ""
+
 msgid "Before the Company opens an account for the client in which the client can trade or invest in Investment Products with BIEL, the Company is required to make an assessment of whether products or services that the client has chosen are appropriate for the client and to warn the client if, on the basis of the information that the client has provided to the Company, any such product or service is deemed not appropriate for the client. Any decision to open an account and to use the Company's products or services is the client's. It is the client's responsibility to understand the risks involved with the Company's products or services."
 msgstr "在為客戶開立 BIEL 帳戶、對投資產品進行交易或投資之前，公司必須先評估，看客戶所選擇的產品或服務對其是否合適。如果公司根據客戶所提供的資訊發現該產品或服務對其並不合適，公司必須提醒客戶。最後將由客戶自行決定是否開立帳戶，並使用公司的產品或服務。客戶必須完全了解使用公司產品和服務的風險，並承擔所有責任。"
 
@@ -2190,6 +2193,9 @@ msgstr "區塊鏈技術 - 所有加密貨幣使用各式的區塊鏈技術（一
 msgid "Blogger and vlogger"
 msgstr "部落客和影音部落客"
 
+msgid "Boom 1000 Index"
+msgstr ""
+
 msgid "Both the deposit and the bonus amounts are clearly displayed when this type of promotion is available. By way of example, if the client chooses to participate in a \"Get $25 when you deposit $100\" promotion, the Company will add an additional $25 to the client's account when the client deposits $100, AND when the client has purchased at least $125 worth of trades ($25 * 5= $125). The bonus will only be credited to the client's account when both of these conditions are met."
 msgstr "開展此類促銷活動時，存款和獎金數額都會清楚顯示。舉例來說，如果客戶選擇參加「存100元獎25元」促銷活動，當客戶存入100 美元並且執行價值125 美元以上的交易後（25 *5 = 125美元），公司將添加25 美元存入客戶帳戶。只有同時滿足這兩個條件，獎金才會記入客戶的帳戶。"
 
@@ -2202,6 +2208,9 @@ msgstr "使用您傾向的設備安全瀏覽和交易"
 msgid "Browser"
 msgstr "瀏覽"
 
+msgid "Build a rewarding and long-term business relationship with an industry pioneer"
+msgstr ""
+
 msgid "Build our applicant database by researching and contacting various sources (eg: universities and job portals)"
 msgstr "通過研究工作和跟各種來源聯繫（例如：大學和工作門戶網站）以建立我們的申請人資料庫"
 
@@ -2213,6 +2222,9 @@ msgstr "為支持我們的伺服器、應用程式和資料庫的技術提供構
 
 msgid "Build, maintain, and optimise the technology that powers our servers, applications, and databases"
 msgstr "為支持我們的伺服器、應用程式和資料庫的技術提供構建、維護和優化服務"
+
+msgid "Builds trading applications and interfaces using the %1 API"
+msgstr ""
 
 msgid "Business Day"
 msgstr "營業日"
@@ -2496,9 +2508,6 @@ msgstr "檢查中"
 msgid "Chief Executives, Senior Officials and Legislators"
 msgstr "執行長、高級官員和立法委員"
 
-msgid "Choose a commission plan that suits your business strategy."
-msgstr "選擇適合您的業務策略的佣金計劃。"
-
 msgid "Choose a duration from 10 seconds to 365 days."
 msgstr "合約期限的選擇範圍為10 秒到365 天。"
 
@@ -2522,9 +2531,6 @@ msgstr "從四個可用市場中選擇:"
 
 msgid "Choose from over one million possible trade variations at any time, and customise your trades according to your preferred strategy"
 msgstr "隨時從一百多萬個交易選項中挑選並按照您傾向的策略自訂交易"
-
-msgid "Choose from the following affiliate commission plans:"
-msgstr "從以下聯盟佣金計劃中選擇:"
 
 msgid "Choose from three main trade types:"
 msgstr "從三種主要交易類型中挑選："
@@ -2552,6 +2558,9 @@ msgstr "選擇時間範圍為10 秒到365 天"
 
 msgid "Choose your own strike."
 msgstr "選擇您自己的履約價格。"
+
+msgid "Choose your preferred programme, complete the application form, and receive your affiliate link upon approval."
+msgstr ""
 
 msgid "Christmas Day"
 msgstr "聖誕節"
@@ -2609,6 +2618,9 @@ msgstr "客戶的存款或取款會立即實時反映在相應的主帳戶餘額
 
 msgid "Client's liability"
 msgstr "客戶的責任"
+
+msgid "Clients"
+msgstr ""
 
 msgid "Clients agree that the Company may use personal information provided by them in order to conduct appropriate anti-fraud checks. The personal information that clients provide may be disclosed to a credit reference or fraud prevention agency, which may keep a record of that information."
 msgstr "客戶同意公司使用客戶的個人資訊以執行適當的反欺詐檢查。客戶提供的個人資訊可能會披露給信用參考或欺詐預防機構，這些機構也可能會保留資訊記錄。"
@@ -2739,6 +2751,9 @@ msgstr "提出有凝聚力的設計解決方案, 以實現我們的業務/產品
 msgid "Commencement Date"
 msgstr "開始日期"
 
+msgid "Commision structure"
+msgstr ""
+
 msgid "Commission"
 msgstr "佣金"
 
@@ -2751,6 +2766,9 @@ msgstr "存款佣金"
 msgid "Commission on withdrawals"
 msgstr "取款佣金"
 
+msgid "Commission per round trade"
+msgstr ""
+
 msgid "Commission per side trade"
 msgstr "每筆交易的佣金"
 
@@ -2759,9 +2777,6 @@ msgstr "佣金費率"
 
 msgid "Commission shall only be paid where the following are met cumulatively:"
 msgstr "只有在陸續滿足以下條件的情況下才能支付佣金："
-
-msgid "Commission structure"
-msgstr "佣金結構"
 
 msgid "Commission will not be paid for Accounts that have been opened or traded by an Associate of the Introducing Broker."
 msgstr "佣金不會支付給由推介經紀的聯繫人開立或交易的帳戶。"
@@ -2886,6 +2901,9 @@ msgstr "使用各种定性和定量方法进行研究"
 msgid "Conduct security reviews of production infrastructure"
 msgstr "對生產基礎設施進行安全審查"
 
+msgid "Conducts trading discussions and interactive sessions online with trading enthusiasts"
+msgstr ""
+
 msgid "Confidential information"
 msgstr "機密資訊"
 
@@ -2939,9 +2957,6 @@ msgstr "聯繫我們"
 
 msgid "Contact number"
 msgstr "聯繫電話"
-
-msgid "Contact our dedicated affiliate support team for help and suggestions."
-msgstr "聯繫我們的專業聯盟支援小組尋求説明和意見。"
 
 msgid "Contact the payment agent directly for more information on how to transfer money to them."
 msgstr "請直接聯繫支付代理，詢問關於如何匯款給他們的資訊。"
@@ -3078,8 +3093,8 @@ msgstr "版權"
 msgid "Copywriter"
 msgstr "文案"
 
-msgid "Cost per acquisition (CPA) for EU affiliates only"
-msgstr "僅適用于歐盟區聯盟的每行動成本 (CPA)"
+msgid "Cost per acquisition (CPA) for EU Affiliates only"
+msgstr ""
 
 msgid "Costs - the costs of executing client order, predominantly comprising of spread, i.e. the difference between the Company's bid and the Company's offer price"
 msgstr "成本 - 執行客戶訂單的成本, 主要包括價差, 即公司的出價與公司的報價之間的差額"
@@ -3089,6 +3104,9 @@ msgstr "成本和費用"
 
 msgid "Counterparty"
 msgstr "相對方"
+
+msgid "Countries"
+msgstr ""
 
 msgid "Countries report: Displays a list of countries where your clicks are coming from"
 msgstr "國家報表: 顯示您的點擊率來源國家清單"
@@ -3104,6 +3122,9 @@ msgstr "補償保障的根據是存款個體，而不是存款次數。意思是
 
 msgid "Craft, Metal, Electrical and Electronics Workers"
 msgstr "工藝、金屬、電氣和電子工人"
+
+msgid "Crash 1000 Index"
+msgstr ""
 
 msgid "Crash/Boom Indices"
 msgstr "崩盤/興旺指數"
@@ -3198,14 +3219,17 @@ msgstr "加密"
 msgid "Cryptocurrencies"
 msgstr "加密貨幣"
 
-msgid "Cryptocurrencies commission per round trade. Example: A round trade of 1 lot of BTC/USD with spot price of 10,000 will pay USD 30 on standard account."
-msgstr "每回合交易的加密貨幣佣金。例如: 1手比特幣/美元的一回合交易, 如現貨價格為 10,000，標準帳戶將支付30美元。"
+msgid "Cryptocurrencies commission per round trade. For example, a round trade of 1 lot of BTC/USD with spot price of USD 10,000 will pay USD 30 on standard accounts."
+msgstr ""
 
 msgid "Cryptocurrencies such as Bitcoin and Ethereum are decentralised digital assets that enable instant payments to anywhere in the world."
 msgstr "像比特幣和以太幣這樣的加密貨幣是分散式的數字資產，可以在全世界任何地方即時支付。"
 
 msgid "Cryptocurrencies such as Bitcoin and Ethereum are decentralised digital currencies on the blockchain."
 msgstr "比特幣和以太幣等加密貨幣是區塊鏈上的分散式數字貨幣。"
+
+msgid "Cryptocurrencies**"
+msgstr ""
 
 msgid "Cryptocurrency"
 msgstr "加密貨幣"
@@ -3267,6 +3291,9 @@ msgstr "客戶焦點"
 msgid "Customer funds"
 msgstr "客戶資金"
 
+msgid "Customer-centric partnership"
+msgstr ""
+
 msgid "Cyberjaya"
 msgstr "Cyberjaya"
 
@@ -3302,9 +3329,6 @@ msgstr "每日損失限額"
 
 msgid "Daily market reports"
 msgstr "市場日報表"
-
-msgid "Daily payouts"
-msgstr "每日賠付"
 
 msgid "Daily turnover limit"
 msgstr "每日交易限額"
@@ -3381,9 +3405,6 @@ msgstr "分散 - 加密貨幣的分散性質意味著沒有任何一個政府機
 msgid "Decline"
 msgstr "下降"
 
-msgid "Dedicated support"
-msgstr "專用支援"
-
 msgid "Deep Perl expertise"
 msgstr "豐富的 Perl 專業知識"
 
@@ -3431,6 +3452,9 @@ msgstr "根據網站的開戶程式對客戶帳戶所附的管轄權, 「公司�
 
 msgid "Depending on the level of risk that the Company is exposed to while acting as the client's counterparty, the Company acts largely in a principal capacity of the client's trades. As such, the execution venue will usually be %1. However, the Company may transmit the client's order to third-party liquidity providers, in which case the Company will determine the execution venue on the basis described above."
 msgstr "基於公司作為客戶的交易相對方所接觸的風險層次，公司在客戶的交易中參與大部分的主要活動。因此，執行場所通常是在%1。然而，公司可能會將客戶的訂單轉給第三方流動性提供商。在這種情況下，公司將根據以上所述自行確定執行場所。"
+
+msgid "Depending on what you do, you can apply as our Affiliate or Introducing Broker, or both. More new clients from you means higher potential commissions."
+msgstr ""
 
 msgid "Depending on your broker or trading platform, you can start trading from the time the Sydney market opens on Monday morning to the time the New York market closes on Friday evening – up to 24 hours a day, five days a week."
 msgstr "您可根據經紀商或交易平台的規定，從週一早上悉尼市場開放時間到週五晚上紐約市場關閉時間這段期間內隨時開始，每週五天，每天24小時交易。"
@@ -3578,9 +3602,6 @@ msgstr "出現提示時請提交身份證明。"
 
 msgid "Diverse platforms and account types"
 msgstr "不同的平台和帳戶類型"
-
-msgid "Diversify your income stream through other partnership opportunities such as the %1Introducing Broker Programme%2."
-msgstr "通過其他合作機會如%1推介經紀方案%2, 使您的收入流多樣化。"
 
 msgid "Diversify your portfolio with all four types of precious metals that are widely known as \"safe haven\" investments: gold, silver, platinum, and palladium."
 msgstr "讓您的投資組合具備各式的選項，包含全部四種被廣泛稱為「安全保障」投資的貴重金屬：黃金、白銀、鉑金和鈀金。"
@@ -3849,14 +3870,8 @@ msgstr "每次轉帳需支付%1轉帳費或最低費用%2, 以較高者為準。
 msgid "Earn"
 msgstr "賺取"
 
-msgid "Earn USD 100 in commission for each successful referral. Your referred client must open a %1real money investment account%2 through your unique affiliate link and deposit a total of USD 100 or more (one-time or accumulative) in the account. This commission plan is only available to affiliates based in the EU."
-msgstr "每次推薦成功可獲得100美元佣金。您推薦的客戶必須通過您專用的聯盟連結開立％1真實貨幣投資帳戶％2，並在帳戶中存入總計100美元或更多（一次性或累計）的資金。該佣金計劃僅適用於歐盟區的聯盟會員。"
-
-msgid "Earn a commission on each client's MT5 trading activity – paid out daily."
-msgstr "在每個客戶進行 MT5 交易時賺取每天支付的佣金。"
-
-msgid "Earn a commission when your referred clients trade Forex and CFDs on our MT5 platform."
-msgstr "當您介紹的客戶在我們的 MT5 平台上交易外匯和差價合約時, 您可賺取佣金。"
+msgid "Earn USD 100 in commission for each successful referral. Your referred client must open a real money investment account through your unique affiliate link and deposit a total of USD 100 or more (one-time or accumulative) in the account. This commission plan is only available to Affiliates based in the EU."
+msgstr ""
 
 msgid "Earn a monetary reward for any verifiable issues that you find, with a bounty worth up to USD 1,000 for high-risk security vulnerabilities."
 msgstr "如果發現任何可驗證問題，您可獲得金錢獎勵，高風險安全漏洞的獎金最高可達1,000美元。"
@@ -3864,11 +3879,8 @@ msgstr "如果發現任何可驗證問題，您可獲得金錢獎勵，高風險
 msgid "Earn additional income with us as you grow your community of potential and existing online traders through useful trading insights and mentorship."
 msgstr "通過有用的交易知識和指導, 您的潛在和現有線上交易者社區將陸續成長, 從而讓您獲得額外收入。"
 
-msgid "Earn commission on the trading activity of clients that you refer to our MetaTrader 5 platform."
-msgstr "當您介紹的客戶在我們的 MetaTrader 5 平台上交易時, 您可賺取佣金。"
-
-msgid "Earn commissions by introducing new customers to %1."
-msgstr "通過介紹新客戶給 %1，以賺取佣金。"
+msgid "Earn daily commissions on the trading activities of the clients you refer to the %1 MetaTrader 5 (MT5) platform. Your total commissions will be credited into your account by the end of the day."
+msgstr ""
 
 msgid "Earn increasingly higher payouts with tiered and laddered commission rates that reward you based on the net revenue generated by your referred clients."
 msgstr "通過您介紹的客戶產生的淨收入，賺取分級和梯級佣金率，讓您的收入日益增加。"
@@ -3881,6 +3893,9 @@ msgstr "賺取高達50,000美元的賠付額。損失僅限於您的初始下注
 
 msgid "Earn the same proportional return on stakes of all values"
 msgstr "無論投入多少資金進行交易，均可獲得同等回報率"
+
+msgid "Earn up to 35% in commission by referring new clients to trade on our premier platforms for binary options. All commissions are credited into your account by the 15th of every month."
+msgstr ""
 
 msgid "Easily monitor your open positions"
 msgstr "輕鬆監控您的持倉頭寸"
@@ -4431,9 +4446,6 @@ msgstr "六、執行場地"
 msgid "F. Margin and Leverage"
 msgstr "六、保證金和槓桿交易"
 
-msgid "FAQ"
-msgstr "常見問題集"
-
 msgid "FIX API"
 msgstr "FIX API"
 
@@ -4665,6 +4677,9 @@ msgstr "關於就公司的資料處理方式事宜向公司的主要監督機構
 msgid "For e-wallets or local currencies not supported by %1."
 msgstr "%1不支持的電子錢包方式或本地貨幣。"
 
+msgid "For example, a round trade (i.e. open and close position) of 1 lot of Vol 75 Index for a price of USD 125,000 would pay USD 8."
+msgstr ""
+
 msgid "For example, if you buy a US 100 contract and it's not going as planned, you just need to sell it to cut your losses at the current market price."
 msgstr "例如，如果您買入美國100合約，但它的走勢與您的推測不同，您只要按照當前的市價賣出就可以減少損失。"
 
@@ -4707,6 +4722,9 @@ msgstr "關於％1的完整詳細聯繫資訊，建議客戶查看％1的％2聯
 msgid "For fully covered accounts, no Margin will be charged on open positions. However, swaps and other applicable fees can cause the client's Account Equity to turn negative. In that case, the Stop Out process will be triggered."
 msgstr "受全額保護的帳戶的未平倉頭寸不收保證金。但掉期和其他必須支付的費用可能會導致客戶的帳戶淨值金額變為負值。此情況下將會觸發「強制平倉」程序。"
 
+msgid "For further assistance, email us at %1affiliates@binary.com%2"
+msgstr ""
+
 msgid "For general support:"
 msgstr "一般支援："
 
@@ -4734,14 +4752,14 @@ msgstr "不可抗力事件必須經雙方所在地的地方當局或政府機構
 msgid "Forex"
 msgstr "外匯"
 
-msgid "Forex & Metals"
-msgstr "外匯和金屬"
-
 msgid "Forex and contract for differences transactions involve a high degree of risk and are speculative because they allow the client to speculate on the short-term price movements of the underlying financial instruments. The client should not enter into forex and/or contract-for-difference transactions unless the client is able to sustain losses that exceed the client's deposited funds. It is important for the client to understand that in order to realise any value from the client's open positions, the client would have to enter into a corresponding transaction to close the client's open positions and may find it difficult or impossible to do so under certain market conditions."
 msgstr "外匯和差價交易合約涉及高風險，是一種投機活動，因為客戶可推測基礎金融工具價格的短期變動。除非客戶能接受比其存入資金更大的虧損，不然客戶不適合參與外匯交易和 （或） 簽訂差價交易合約。重要的是客戶需了解，如果要從持倉頭寸獲取任何回報，客戶必須參與相應的交易將持倉頭寸平倉，有時候在一些市場條件下客戶可能很難或無法做到此點。"
 
 msgid "Forex and contracts for differences are high risk and speculative"
 msgstr "外匯和差價交易合約涉及高風險，是一種投機活動"
+
+msgid "Forex and metals*"
+msgstr ""
 
 msgid "Forex contract specifications"
 msgstr "外匯合約規格"
@@ -4760,6 +4778,9 @@ msgstr "外匯交易涉及買入一種貨幣並同時賣出另一種貨幣。因
 
 msgid "Forex trading involves buying or selling these \"currency pairs\". When you buy a currency pair such as EUR/USD, it means that you are buying the EURO and selling the USD at the same time."
 msgstr "外匯交易涉及買入或賣出這些「貨幣對」。當您買入例如歐元/美元的貨幣對時，意味著您正在買入歐元並同時賣出美元。"
+
+msgid "Forex*"
+msgstr ""
 
 msgid "Founded in 1999, %1 is one of the oldest and most respected names in online binary trading."
 msgstr "%1 成立於1999年，是線上二元期權交易行業中歷史最悠久、享有最高聲譽之佼佼者之一。"
@@ -4781,6 +4802,9 @@ msgstr "自由"
 
 msgid "Frequency of trading other financial instruments"
 msgstr "其它金融工具的交易頻率"
+
+msgid "Frequently asked questions"
+msgstr ""
 
 msgid "Friday"
 msgstr "星期五"
@@ -4890,8 +4914,8 @@ msgstr "完成客戶交易趨勢的定期及特別總結"
 msgid "Generated verification code:"
 msgstr "生成的驗證碼︰"
 
-msgid "Generous commission"
-msgstr "高額佣金"
+msgid "Generous commissions"
+msgstr ""
 
 msgid "Get %1"
 msgstr "獲取 %1"
@@ -4905,17 +4929,11 @@ msgstr "獲取10,000.00美元"
 msgid "Get out of the city centre and enjoy the serenity of island life free from the excesses of commercialisation. Friendly, helpful locals are also never far off."
 msgstr "離開繁忙的市中心，享受寧靜的島嶼生活，擺脫過度商業化的壓力。還有友好和樂於助人的當地人與您為鄰。"
 
-msgid "Get paid by the 15th of every month. We've never missed a payment since we started our programme in March 2004."
-msgstr "每月十五日前準時付款。自從2004年3月開始推展計畫以來, 我們從未錯過付款。"
-
 msgid "Get started with MT5"
 msgstr "開始使用MT5"
 
 msgid "Get started with the %1 Expert Advisor (EA) for binary options trading on MT5 by following these steps:"
 msgstr "執行以下步驟, 開始使用 %1 專家顧問 (EA) 在MT5 進行二元期權交易:"
-
-msgid "Get your IB commission credited daily into your MT5 account."
-msgstr "每天領取 IB 佣金並存入您的 MT5 帳戶。"
 
 msgid "Get your price"
 msgstr "獲取報價"
@@ -4925,12 +4943,6 @@ msgstr "開始交易"
 
 msgid "Getting started"
 msgstr "開始交易"
-
-msgid "Getting started is free and easy – just %1fill out the application form%2, choose your preferred commission plan and wait for our approval."
-msgstr "用法簡易，隨時可以免費開始使用，只需%1填寫申請表%2, 選好自己傾向的佣金計劃，然後等待我們批准。"
-
-msgid "Getting started is free and easy. Just %1fill out the application form%2* and wait for our approval."
-msgstr "用法簡易，隨時可以免費開始使用，只需%1填寫申請表%2*, 然後等待我們批准。"
 
 msgid "Given the Company's role as a Margin trading service provider as described in this agreement, the Company seeks to avoid undue market influence to the extent consistent with the client's trading needs and the Company's risk management policies and procedures. By continuing to use the Margin trading services described in this agreement, the client acknowledges that they are aware of the potential conflict of interest disclosed that may arise and cannot be completely eliminated, and they consent to the Company acting notwithstanding such potential conflict of interests."
 msgstr "公司是融資融券交易服務提供商，如本協議所述，公司盡量不讓市場影響客戶的交易需求，同時維護公司的風險管理政策和程序。通過繼續使用本協議所述的融資融券交易服務，客戶承認並已了解，所披露利益的潛在衝突可能會出現以及不能完全排除，即使存在這種潛在利益衝突，客戶也同意公司的行動。"
@@ -5052,14 +5064,14 @@ msgstr "八、監測和審查"
 msgid "H. Quotes"
 msgstr "八、 報價"
 
-msgid "HF Vol 10"
-msgstr "HF 卷10"
+msgid "HF Volatility 10 Index"
+msgstr ""
 
-msgid "HF Vol 100"
-msgstr "HF 卷100"
+msgid "HF Volatility 100 Index"
+msgstr ""
 
-msgid "HF Vol 50"
-msgstr "HF 卷50"
+msgid "HF Volatility 50 Index"
+msgstr ""
 
 msgid "HR Operations Executive"
 msgstr "人力資源運營主管"
@@ -5310,17 +5322,11 @@ msgstr "我很感興趣"
 msgid "I. Trading"
 msgstr "九、交易"
 
-msgid "IB Programme"
-msgstr "IB 計劃"
-
 msgid "IB commissions are credited directly into your MT5 account. You can transfer funds from your MT5 account to your %1 Real Account, then withdraw the funds using your preferred withdrawal method."
 msgstr "IB 佣金直接存入您的 MT5 帳戶。您可以將資金從您的 MT5 帳戶轉到您的 %1 真實帳戶, 然後使用您的首選提款方式提取資金。"
 
 msgid "IB earnings from your MT5 referrals are credited daily into your MT5 account."
 msgstr "您介紹的 MT5 使用者的 IB 收入將每天存入您的 MT5 帳戶。"
-
-msgid "IB programme"
-msgstr "IB 計劃"
 
 msgid "IB programme FAQ"
 msgstr "IB 計劃常見問題集"
@@ -5658,6 +5664,9 @@ msgstr "如果您進入初選名單，我們會邀請您參與駭客松測試或
 msgid "If you're shortlisted, we'll send you a talent test to be completed."
 msgstr "如果您通過初選, 我們將給您發送人才招聘測試。"
 
+msgid "If your account currency is EUR or GBP, your commission will be converted based on the current forex rate."
+msgstr ""
+
 msgid "If your account is placed under margin call for an extended period of time, it will reach the stop out level where it is unable to sustain an open position. This will lead to your pending orders being cancelled and your open positions being forcibly closed (also known as “forced liquidation”)."
 msgstr "如果您的帳戶處於追加保證金通知延長期內，在無法繼續持倉時將達到強制平倉水平。這將導致您的待處理訂單被取消，以及持倉頭寸被強制平倉 （也稱為「強制清算」）。"
 
@@ -5961,6 +5970,9 @@ msgstr "帳戶之間的內部貨幣轉帳最高可達2,000美元或等值。允�
 msgid "International currency or commodity prices are highly volatile and very difficult to predict. Due to such volatility, plus the bias in the pricing system favouring the website (as described in more detail below), no financial contract purchased in our system (whether or not the payout exceeds the premium amount) can be considered a safe contract."
 msgstr "國際外匯或商品價格波動非常劇烈，很難預測。由於波動幅度較大，加上報價體系對網站有利(以下將詳細說明)，因此在我們系統中買入的金融合約都不得視為安全合約（不論賠付額是否大於期權費金額）。"
 
+msgid "International support"
+msgstr ""
+
 msgid "Internet trading risks"
 msgstr "網路交易風險"
 
@@ -5975,6 +5987,9 @@ msgstr "介紹%1"
 
 msgid "Introducing Broker"
 msgstr "推介經紀"
+
+msgid "Introducing Broker (IB)"
+msgstr ""
 
 msgid "Introducing Broker warranties"
 msgstr "推介經紀擔保"
@@ -6141,8 +6156,8 @@ msgstr "工作詳細資料"
 msgid "Job applicant privacy policy"
 msgstr "求職者隱私政策"
 
-msgid "Join the %1 Affiliate Programme and earn commission by referring new clients to our award-winning binary options trading platform."
-msgstr "加入％1聯盟計劃，向我們屢獲殊榮的二元期權交易平台推薦新客戶並賺取佣金。"
+msgid "Join our global network of partners now"
+msgstr ""
 
 msgid "Jul"
 msgstr "七月"
@@ -6690,6 +6705,9 @@ msgstr "保存與 AML-CTF有關的調查記錄"
 msgid "Maintaining a page or video channel about online trading? Get rewarded when you refer your followers and viewers to trade on our award-winning binary options platform."
 msgstr "正在維護網上交易相關的頁面或影音頻道？ 推介您的關注者和觀眾在我們屢獲殊榮的二元期權平台上交易，從而獲得獎勵。"
 
+msgid "Maintains a page or video channel about online trading"
+msgstr ""
+
 msgid "Major and minor pairs, plus Smart FX indices"
 msgstr "主要和次要貨幣對，加上智能外匯指數"
 
@@ -6791,6 +6809,9 @@ msgstr "經理已成功撤銷"
 
 msgid "Managers"
 msgstr "經理"
+
+msgid "Manages a social media page dedicated to online trading"
+msgstr ""
 
 msgid "Managing of various aspects of online trading such as sending Orders to the platform"
 msgstr "網上交易各方面的管理, 如向平台發送訂單"
@@ -7170,6 +7191,9 @@ msgstr "多個資產的流動性解決方案"
 msgid "Multi-barrier trading"
 msgstr "多重障礙交易"
 
+msgid "Multilingual platforms"
+msgstr ""
+
 msgid "Multiple Accounts Manager"
 msgstr "多個帳戶管理器"
 
@@ -7179,8 +7203,8 @@ msgstr "多個帳戶管理器 (MAM)"
 msgid "Multiple Accounts Manager (MAM) for MetaTrader 5 (MT5)"
 msgstr "MetaTrader 5 (MT5) 的多個帳戶管理器 (MAM)"
 
-msgid "Multiple opportunities"
-msgstr "多重機會"
+msgid "Multiple income opportunities"
+msgstr ""
 
 msgid "Multiplier"
 msgstr "倍數值"
@@ -7356,6 +7380,9 @@ msgstr "任何一方對另一方執行本協議的條款和條件方面的延遲
 msgid "No fiduciary duty"
 msgstr "無誠信責任"
 
+msgid "No hidden fees"
+msgstr ""
+
 msgid "No hidden fees or commissions."
 msgstr "無隱藏費用或佣金。"
 
@@ -7475,6 +7502,9 @@ msgstr "跳動點數目:"
 
 msgid "Number of transactions"
 msgstr "交易次數"
+
+msgid "Nurtures a community of potential and existing online traders through insight and mentorship"
+msgstr ""
 
 msgid "O. Indemnification"
 msgstr "十·五、賠償"
@@ -7701,6 +7731,9 @@ msgstr "如果客戶未選取公司的接觸限值，且帳戶中有足夠餘額
 msgid "Organisational skills and the ability to work proactively"
 msgstr "組織技能和主動工作的能力"
 
+msgid "Other Partnership Options"
+msgstr ""
+
 msgid "Other Risks: There are other risks related to trading Investment Products and foreign currencies that cannot be described in detail in this document. Generally, however, securities, options, and currency transactions involve exposure to a combination of the following risk factors: market risk, credit risk, settlement risk, liquidity risk, operational risk, and legal risk. For example, there can be serious market disruptions if local or overseas economic, political, or other unforeseen events affect the market. In addition to these types of risk, there may be other factors such as accounting and tax treatment issues that the client should consider."
 msgstr "其它風險: 關於投資產品交易和外匯的其它風險無法在此文件中一一詳細說明。但是，一般來說，證卷、期權和貨幣交易所牽涉的集合性風險包括以下因素：市場風險、信用風險、結算風險、流動性風險、運作風險和法律風險。例如，本地或海外可能會發生經濟、政治或其它不可預測事件而造成市場嚴重紛亂。除了這些風險以外，客戶還應該考慮諸如會計和稅務處理問題等其它因素。"
 
@@ -7779,8 +7812,8 @@ msgstr "我們網站不收取任何轉帳費用。"
 msgid "Our swap rate may also be adjusted to take holidays into account."
 msgstr "我們也可能會因為假期調整掉期利率。"
 
-msgid "Our turnover-based commission plan depends on the payout probability for each contract. Contracts with higher returns for the client offer lower commissions to the affiliate."
-msgstr "我們基於交易額的佣金計劃取決於每個合約的投注賠率。客戶可賺取的回報越高，會員的佣金率也越低。"
+msgid "Our turnover-based commission plan depends on the payout probability for each contract. Contracts with higher returns for the client offer you lower commissions."
+msgstr ""
 
 msgid "Our values"
 msgstr "我們的價值觀"
@@ -7859,6 +7892,9 @@ msgstr "參與產品製作的所有過程"
 
 msgid "Partner With Us"
 msgstr "成為我們的合作夥伴"
+
+msgid "Partner earnings"
+msgstr ""
 
 msgid "Partners"
 msgstr "合作夥伴"
@@ -8781,14 +8817,11 @@ msgstr "獲得公司批准, 提供與Binary有關的任何資料"
 msgid "Receive the approval of the Company to include any information in relation to the Company"
 msgstr "獲得公司批准, 提供與公司有關的任何資料"
 
-msgid "Receive your affiliate commission once your referred clients start trading on our platform."
-msgstr "一旦您的客戶在我們的平台開始交易，您就可得到聯盟佣金。"
+msgid "Receive your earnings through your favourite payment method"
+msgstr ""
 
 msgid "Recommend alternatives to redundant or obsolete systems"
 msgstr "推薦冗余或過時系統的替代品"
-
-msgid "Recommend our products easily, and keep track of all your earnings with our nifty referral tools."
-msgstr "輕鬆推薦我們的產品，並透過我們卓越的推介工具對您的收入保持追踪。"
 
 msgid "Recruit, train, and nurture affiliates and IBs in countries where Binary Group is active, leveraging your direct knowledge and experience of the local market"
 msgstr "利用您在本地市場的直接知識和經驗，負責對Binary集團活躍的國家招聘、培訓和培養聯盟會員和推介經紀(IB)"
@@ -8804,6 +8837,9 @@ msgstr "知道或合理地預料到客戶涉及構成惡意活動的行為，並
 
 msgid "Refer new clients to our MetaTrader 5 platform and earn a commission on their Forex and CFD trading activity."
 msgstr "請將我們的 MetaTrader 5 平台介紹給新客戶, 並在其進行外匯和差價合約交易時賺取佣金。"
+
+msgid "Refer new clients to trade with us. Receive commissions based on your chosen partnership programme."
+msgstr ""
 
 msgid "Reference"
 msgstr "參考"
@@ -8895,8 +8931,8 @@ msgstr "陳述和保證"
 msgid "Representations and warranties"
 msgstr "陳述和保證"
 
-msgid "Represents the amount in base currency per round trade. Example: A round trade of 1 lot of EUR/USD would pay EUR 10 on standard accounts. A round trade of 1 lot of USD/CAD would pay USD 5 on advanced account."
-msgstr "表示每回合交易的基礎貨幣金額。例如: 1手歐元/美元的一回合交易將在標準帳戶上支付10歐元。1手美元/加元的一回合交易將在高級帳戶上支付5美元。"
+msgid "Represents the amount in base currency per round trade. For example, a round trade of 1 lot of EUR/USD would pay EUR 10 on standard accounts. A round trade of 1 lot of USD/CAD would pay USD 5 on advanced accounts."
+msgstr ""
 
 msgid "Represents the maximum amount of cash that you may hold in your account.  If the maximum is reached, you will be asked to withdraw funds."
 msgstr "表示您的帳戶中可持有的最高現金額。如果達到該最高額，將會要求您提取資金。"
@@ -9000,8 +9036,8 @@ msgstr "簡單%1上漲/下跌%2合約的回報率高於100%。"
 msgid "Returns above 1000% on %1higher/lower%2 and %3touch/no-touch%2 trades."
 msgstr "%1「高於/低於」%2以及%3「觸及/未觸及」%2交易的回報率高於1000%。"
 
-msgid "Revenue share"
-msgstr "收入共享"
+msgid "Revenue Share"
+msgstr ""
 
 msgid "Reverse Side"
 msgstr "反面"
@@ -9098,6 +9134,9 @@ msgstr "轉到借入/貸出"
 
 msgid "Rolling Spot Forex"
 msgstr "起伏現貨外匯"
+
+msgid "Runs and manages a website that promotes forex or binary options"
+msgstr ""
 
 msgid "Russia"
 msgstr "俄國"
@@ -9405,8 +9444,8 @@ msgstr "登出"
 msgid "Sign up"
 msgstr "註冊"
 
-msgid "Sign up for the %1 Affiliate Programme today:"
-msgstr "立刻注冊%1 聯盟計劃:"
+msgid "Sign up now"
+msgstr ""
 
 msgid "Signup"
 msgstr "註冊"
@@ -9540,6 +9579,9 @@ msgstr "現時價格"
 msgid "Spread"
 msgstr "價差交易"
 
+msgid "Spread the word to your audience. Use your unique referral link and our tried-and-tested referral tools to drive traffic to %1."
+msgstr ""
+
 msgid "Stake"
 msgstr "投注資金"
 
@@ -9548,6 +9590,9 @@ msgstr "標準"
 
 msgid "Standard Account"
 msgstr "標準帳戶"
+
+msgid "Standard account"
+msgstr ""
 
 msgid "Start Time"
 msgstr "開始時間"
@@ -11373,6 +11418,9 @@ msgstr ""
 msgid "The two passwords that you entered do not match."
 msgstr "兩次輸入的密碼不相符。"
 
+msgid "The types of partnerships we offer"
+msgstr ""
+
 msgid "The use of the %1 API is at the Programmer's own risk, and the Programmer assumes full responsibility and risk of the loss it may suffer as a result of using, or accessing, the %1 API. Except to the extent that liability under any applicable law or regulation cannot be excluded, the following cases hold:"
 msgstr ""
 
@@ -11925,9 +11973,6 @@ msgstr "徹底跟蹤和記錄您發現的錯誤"
 msgid "Track and manage transactions and accounts using proprietary and non-proprietary software and systems"
 msgstr "使用專有和非專有軟體和系統跟蹤和管理交易和帳戶"
 
-msgid "Track every click, impression, download, and signup to increase your conversions."
-msgstr "跟踪每次點擊、顯示、下載和註冊以增加您的轉換率。"
-
 msgid "Track laws and regulations that may affect all group companies and implement necessary changes to internal policies in order to manage and mitigate our risk and exposure"
 msgstr "跟蹤可能影響所有集團公司的法律和法規, 並對內部政策進行必要的修改, 以管理和減輕我們的風險和風險敞口"
 
@@ -12246,9 +12291,6 @@ msgstr "MetaTrader 5 帳戶的類型"
 msgid "Types of Orders"
 msgstr ""
 
-msgid "Types of affiliate commission plans"
-msgstr "聯盟佣金計劃的類型"
-
 msgid "Types of lookbacks"
 msgstr "回顧類型"
 
@@ -12317,6 +12359,9 @@ msgstr "美元"
 
 msgid "USD 1 per point"
 msgstr "每點 1 美元"
+
+msgid "USD 10 X 1 lot x USD 100,000/125,000 = USD 8"
+msgstr ""
 
 msgid "USD Index – Measures the value of the US Dollar against a basket of five global currencies (EUR, GBP, JPY, CAD, AUD), each weighted by 20%"
 msgstr "美元 - 衡量美元相對於五種國際貨幣（歐元、英鎊、日圓、加元、澳元）的價值，各貨幣的權重均為20%。"
@@ -12489,12 +12534,6 @@ msgstr ""
 msgid "Use two different exclusion types: 'Allocation' excludes a client from future trades only, while 'Full' also closes open positions and removes its balance from the master account. Clients can choose to close any open position."
 msgstr "使用兩種不同的禁止類型：'分配'僅禁止客戶進行未來交易，而'完全'也關閉未結頭寸並從主帳戶中移除餘額。客戶可以選擇關閉任何未結頭寸。"
 
-msgid "Use your unique affiliate link and the referral tools we provide to introduce %1 to your audience."
-msgstr "使用您專用的聯盟連結和我們提供的推介工具, 對您的觀眾介紹%1 。"
-
-msgid "Use your unique affiliate link and the referral tools we provide to introduce our MT5 service to your audience."
-msgstr "使用您專用的聯盟連結和我們提供的推介工具, 對您的觀眾介紹MT5服務。"
-
 msgid "Use, perform, and display the Programmer's Application and its content for purposes of marketing, demonstrating, and making the Programmer's Application available to the Company's clients."
 msgstr ""
 
@@ -12621,21 +12660,6 @@ msgstr "虛擬帳戶"
 msgid "Visa is an international company that supports digital payments around the world, most commonly through their brand of credit and debit cards. For more information, please visit %1."
 msgstr "Visa是支援世界各地數位支付的國際公司, 最普遍的是通過其品牌的信用和轉帳卡。欲知詳情, 請存取 %1。"
 
-msgid "Vol 10"
-msgstr "卷10"
-
-msgid "Vol 100"
-msgstr "卷100"
-
-msgid "Vol 25"
-msgstr "卷25"
-
-msgid "Vol 50"
-msgstr "卷50"
-
-msgid "Vol 75"
-msgstr "卷75"
-
 msgid "Volatility 10 Index"
 msgstr "波動率 10 指數"
 
@@ -12656,9 +12680,6 @@ msgstr "波動率指數"
 
 msgid "Volatility Indices are further categorised into two classes:"
 msgstr "波動率指數進一步分為兩種級別 ："
-
-msgid "Volatility Indices commission rates in account currency per round trade. Example: A round trade of 1 lot of Volatility 100 Index would pay USD 0.75 for a USD denominated account."
-msgstr "** 波動指數佣金按每次完成交易的帳戶貨幣計算。例如: 完成一次透過美元計價的帳戶購入1手波動性100指數交易將支付0.75 美元。"
 
 msgid "Volume step"
 msgstr "量額步驟"
@@ -12809,9 +12830,6 @@ msgstr "獲得這個獎項，我們真的很自豪。我們堅定地致力於提
 
 msgid "We've grown in size over the years - both in terms of manpower and offices. We currently have over %1 employees across three offices in Malaysia and Malta. Further growth in headcount is expected this year to cater to the increased demand in our products and services."
 msgstr "多年來，無論在人力和辦公室方面， 我們的規模不斷擴大。目前在馬來西亞和馬爾他這兩個國家有三個辦事處和%1名員工以上。預計今年的員工人數將進一步增長, 以滿足我們產品和服務需求的增加。"
-
-msgid "We've paid millions in commission to date through our industry-leading affiliate programme."
-msgstr "迄今為止，我們已經透過在此行業中首屈一指的聯盟計劃支付了金額高達百萬元的佣金。"
 
 msgid "Web and software developer"
 msgstr "網路和軟體編程員"
@@ -13113,6 +13131,9 @@ msgstr ""
 msgid "Who can apply as a %1 affiliate?"
 msgstr "誰可以申請為 %1 聯盟會員？"
 
+msgid "Who can apply as a %1 partner"
+msgstr ""
+
 msgid "Who can apply to be a Payment Agent?"
 msgstr "誰能申請成為付款代理?"
 
@@ -13131,17 +13152,14 @@ msgstr "為何客戶選擇採用付款代理?"
 msgid "Why limit yourself? Whatever your market view, %1 allows you to put your strategy to work and profit from your predictions."
 msgstr "何需限制自己？無論您的市場觀點如何，%1 都能實現您的交易策略，讓您能通過預測市場獲利。"
 
+msgid "Why partner with us"
+msgstr ""
+
 msgid "Why pay more?"
 msgstr "為何花費更多？"
 
 msgid "Why should I become a %1 affiliate?"
 msgstr "我為什麼要成為%1聯盟會員？"
-
-msgid "Why you should join the %1 Affiliate Programme"
-msgstr "為什麼您應該加入 %1 聯盟計劃"
-
-msgid "Why you should join the %1 IB Programme"
-msgstr "為什麼您應該加入 %1 IB計劃"
 
 msgid "Why you should trade binary options on MT5"
 msgstr "為什麼要在MT5進行二元期權交易"
@@ -13313,9 +13331,6 @@ msgstr "是的, 我確認"
 
 msgid "Yes, I understand"
 msgstr "是的, 我明白"
-
-msgid "Yes, I want to sign up as an affiliate"
-msgstr "是的, 我想註冊為聯盟會員"
 
 msgid "Yes, I'm sure"
 msgstr "是的, 我確認"
@@ -13877,6 +13892,9 @@ msgstr "或"
 
 msgid "paysafecard offers a voucher-based online payment method that does not require a bank account, credit card, or other personal information. For more information, please visit %1."
 msgstr "paysafecard 提供基於憑證，不需要銀行帳戶、信用卡或其他個人資料的線上支付方法 。欲知詳情, 請存取 %1。"
+
+msgid "per lot"
+msgstr ""
 
 msgid "ratio of Account Equity to Total Margin, expressed as a percentage"
 msgstr ""
