@@ -5,7 +5,7 @@
         font-size: 3.5rem;
     }
     h2 {
-        font-size: 2rem;
+        font-size: 36px;
         font-weight: 700;
         line-height: 45px;
     }
@@ -19,12 +19,11 @@
         display: flex;
         background: url('../images/pages/affiliates_ib_landing/background/hero.png');
         background-size: cover;
+        background-position: center;
         min-height: 417px;
 
         &-header {
             font-weight: 300;
-            line-height: 45px;
-            font-size: 36px;
             color: $COLOR_WHITE;
         }
     }
@@ -34,6 +33,9 @@
         background: url('../images/pages/contact/banner-bg.svg');
         min-height: 200px;
 
+        h1 {
+            font-size: 64px;
+        }
         h3 {
             margin: 0;
         }
@@ -43,10 +45,6 @@
         background-size: cover;
         color: $COLOR_WHITE;
 
-        h2 {
-            font-size: 36px;
-            font-weight: bold;
-        }
         h2, h3 {
             color: $COLOR_WHITE;
             margin: 20px 0;
@@ -119,11 +117,7 @@
             & > p {
                 font-weight: 300;
             }
-            h2 {
-                margin: 20px 0;
-                font-weight: 700;
-            }
-            h3 {
+            h2, h3 {
                 margin: 20px 0;
             }
             .has-tabs {
@@ -192,9 +186,6 @@
         padding: 40px;
 
         &-header {
-            font-size: 36px;
-            font-weight: 700;
-            line-height: 45px;
             color: $COLOR_WHITE;
         }
         &-item {
