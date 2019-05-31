@@ -25,7 +25,7 @@ const AccountClosure = () => (
                 <div className='gr-padding-20 gr-gutter-left gr-gutter-right'>
                     <ClosureDescription
                         title={it.L('Create crypto account')}
-                        subtitle={it.L('Open an account in the cryptocurrency of your choice:')}
+                        subtitle={it.L('[_1]Open an account[_2] in the cryptocurrency of your choice:', `<a href="${it.url_for('new_account/realws')}">`, '</a>')}
                         list_items={[
                             it.L('Bitcoin (BTC)'),
                             it.L('Ether (ETH)'),
@@ -35,11 +35,11 @@ const AccountClosure = () => (
                     />
                     <ClosureDescription
                         title={it.L('Change my affiliate')}
-                        subtitle={it.L('Contact affiliates@binary.com for more info on changing your affiliate.')}
+                        subtitle={it.L('Contact [_1]affiliates@binary.com[_2] for more info on changing your affiliate.', '<a href="mailto:affiliates@binary.com">', '</a>')}
                     />
                     <ClosureDescription
                         title={it.L('Change my account limits')}
-                        subtitle={it.L('You may set limits in your account to help prevent unwanted losses.[_1]Go to self-exclusion page to manage your account limits.', '<br />')}
+                        subtitle={it.L('You may set limits in your account to help prevent unwanted losses.[_1]Go to [_2]self-exclusion page[_3] to manage your account limits.', '<br />', '<a href="#">', '</a>')}
                     />
                 </div>
             </fieldset>
@@ -49,25 +49,26 @@ const AccountClosure = () => (
                 title={it.L('Close open positions')}
                 list_items={[
                     it.L('Remember to close all open positions in [_1]all[_2] your accounts.', '<strong>', '</strong>'),
-                    it.L('Go to portfolio page to close your open positions.'),
+                    it.L('Go to [_1]portfolio[_2] page to close your open positions.', `<a href="${it.url_for('user/portfoliows')}">`, '</a>'),
                 ]}
             />
             <ClosureDescription
                 title={it.L('Withdraw funds')}
                 subtitle={it.L('Remember to withdraw your funds from [_1]all[_2] your accounts', '<strong>', '</strong>')}
                 list_items={[
-                    it.L('Go to Cashier to withdraw.'),
-                    it.L('Go to MT5 dashboard to withdraw from your [_1] MT5 account.', it.website_name),
+                    it.L('Go to [_1]Cashier[_2] to withdraw.', `<a href="${it.url_for('cashier')}">`, '</a>'),
+                    it.L('Go to [_1]MT5 dashboard[_2] to withdraw from your [_3] MT5 account.', `<a href="${it.url_for('cashier')}">`, '</a>', it.website_name),
                 ]}
             />
             <SeparatorLine className='gr-padding-10' />
             
             <h2 className='primary-color'>{it.L('Reason for closure')}</h2>
-
+            <p>{it.L('Why do you want to close your account?: (Please select one)')}</p>
             <FormRow
                 type='radio'
                 id='reason_for_closure'
-                className='password-type'
+                className='account-closure'
+                label_row_id='invisible-label'
                 options={[
                     {
                         label: it.L('Financial concerns'),
@@ -86,8 +87,9 @@ const AccountClosure = () => (
                         value: 'another website',
                     },
                     {
-                        label: it.L('Others (please specify)'),
-                        value: 'other',
+                        label       : it.L('Others (please specify)'),
+                        value       : 'other',
+                        textfield_id: 'other-reason',
                     },
 
                 ]}

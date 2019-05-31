@@ -1539,6 +1539,19 @@ body #not_authenticated_financial ul.checked > li {
     }
 }
 
+.account-closure {
+    text-align: left;
+    line-height: 40px;
+
+    span {
+        padding-left: 15px;
+    }
+}
+
+#invisible-label {
+    display: none;
+}
+
 .paymentagent_description {
     height: 4em;
     width: 206px;
