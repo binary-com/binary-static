@@ -17,7 +17,7 @@ const ArrowsMobile = ({ direction, parent }) => (
     </div>
 );
 
-const AffiliateIbLanding = () => (
+const AffiliateIBLanding = () => (
     <React.Fragment>
         <section id='page_top' className='hero'>
             <div className='container gr-row gr-padding-20 full-height align-self-center center-text'>
@@ -484,4 +484,4 @@ const AffiliateIbLanding = () => (
     </React.Fragment>
 );
 
-export default AffiliateIbLanding;
+export default AffiliateIBLanding;
