@@ -34,14 +34,14 @@ const WhoCanApply = () => {
                 <h2 className='center-text'>{it.L('Who can apply as a [_1] partner', it.website_name)}</h2>
 
                 <div className='gr-row center-text-m'>
-                    { who_can_apply.map(who => (
-                        <div key='' className='gr-5 gr-12-m gr-padding-30 gr-centered gr-child'>
+                    { who_can_apply.map((who, index) => (
+                        <div key={index} className='gr-5 gr-12-m gr-padding-30 gr-centered gr-child'>
                             <h4>{ who.title }</h4>
                             <p>{ who.description }</p>
                         </div>
                     ))}
 
-                    <a href={it.affiliate_signup_url} className='button gr-centered gr-10-m gr-padding-20' target='_blank' rel='noopener noreferrer'>
+                    <a href={it.affiliate_signup_url} className='button gr-10-m gr-centered gr-padding-30 gr-child no-margin' target='_blank' rel='noopener noreferrer'>
                         <span>{it.L('Join our global network of partners now')}</span>
                     </a>
                 </div>
