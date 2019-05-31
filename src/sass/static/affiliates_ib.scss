@@ -37,22 +37,24 @@
             margin: 0;
         }
     }
-    .how-it-works {
+    #how-it-works {
         background: url('../images/pages/affiliates_ib_landing/background/orange.png');
         background-size: cover;
-        color: $COLOR_WHITE;
 
-        h2, h3 {
-            color: $COLOR_WHITE;
-            margin: 20px 0;
-        }
-        h3 {
-            font-weight: 700;
-        }
         p {
             font-size: 22px;
             font-weight: normal;
             line-height: 28px;
+        }
+        h2 {
+            margin: 40px 0;
+        }
+        h3 {
+            font-weight: 700;
+            margin: 20px 0;
+        }
+        p, h2, h3 {
+            color: $COLOR_WHITE;
         }
     }
     .who-apply {
