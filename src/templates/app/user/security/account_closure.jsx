@@ -98,7 +98,7 @@ const AccountClosure = () => (
             <SeparatorLine className='gr-padding-10' />
         </div>
 
-        <form className='invisible' id='frm_closure'>
+        <form className='invisible' id='form_closure'>
             <SubmitButton
                 text={it.L('Close my account')}
                 custom_msg_text={it.L('Click the button below to initiate the account closure process.')}

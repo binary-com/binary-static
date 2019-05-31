@@ -42,7 +42,7 @@ export const FormRow = ({
         if (type === 'radio') {
             return (
                 <div id={id} className={className}>
-                    {options.map(({ value, label: label_text, data_balloon_text }, i) => {
+                    {options.map(({ value, label: label_text, data_balloon_text, textfield_id }, i) => {
                         const option_id = `${id}_option_${i}`;
                         return (
                             <div key={value}>
@@ -58,6 +58,12 @@ export const FormRow = ({
                                         {label_text}
                                     </span>
                                 </label>
+                                {textfield_id &&
+                                    <input
+                                        type='text'
+                                        id={textfield_id}
+                                    />
+                                }
                             </div>
                         );
                     })}

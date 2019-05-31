@@ -5,7 +5,7 @@ const localize         = require('../../../../../_common/localize').localize;
 const showLoadingImage = require('../../../../../_common/utility').showLoadingImage;
 
 const AccountClosure = (() => {
-    const form_selector = '#frm_closure';
+    const form_selector = '#form_closure';
 
     const onLoad = () => {
         $(form_selector).on('submit', (event) => {
@@ -13,7 +13,7 @@ const AccountClosure = (() => {
             submitForm();
         });
         getElementById('closure_description').setVisibility(1);
-        getElementById('frm_closure').setVisibility(1);
+        getElementById('form_closure').setVisibility(1);
     };
 
     const submitForm = () => {
