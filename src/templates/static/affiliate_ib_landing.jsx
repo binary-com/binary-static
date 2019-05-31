@@ -20,14 +20,12 @@ const ArrowsMobile = ({ direction, parent }) => (
 const AffiliateIbLanding = () => (
     <React.Fragment>
         <section id='page_top' className='hero'>
-            <div className='container full-height gr-padding-20'>
-                <div className='gr-row full-height'>
-                    <div className='gr-10 gr-centered center-text align-self-center'>
-                        <h2 className='hero-header color-white'>{it.L('Build a rewarding and long-term business relationship with an industry pioneer')}</h2>
-                        <a href={it.affiliate_signup_url} className='button' target='_blank' rel='noopener noreferrer'>
-                            <span>{it.L('Become our partner')}</span>
-                        </a>
-                    </div>
+            <div className='container gr-row gr-padding-20 full-height align-self-center center-text'>
+                <div className='gr-10 gr-centered'>
+                    <h2 className='hero-header color-white'>{it.L('Build a rewarding and long-term business relationship with an industry pioneer')}</h2>
+                    <a href={it.affiliate_signup_url} className='button' target='_blank' rel='noopener noreferrer'>
+                        <span>{it.L('Become our partner')}</span>
+                    </a>
                 </div>
             </div>
         </section>

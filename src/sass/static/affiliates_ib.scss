@@ -1,32 +1,3 @@
-.ib-signup-content {
-    margin-bottom: 0 !important;
-}
-
-.ib-signup-page {
-    &__commission-table td:not(:last-child) {
-        font-weight: bold;
-    }
-}
-
-.affiliates-faq-page, .ib-faq-page {
-    h3 {
-        color: $COLOR_ORANGE;
-
-        &:not(:first-of-type) {
-            margin-top: 3rem;
-        }
-    }
-    @media screen and (max-width: 480px) {
-        .sidebar-container {
-            margin-bottom: 2rem;
-
-            .sidebar a {
-                line-height: 2.5rem;
-            }
-        }
-    }
-}
-
 .affiliate-ib-content {
     margin: 0 !important;
 
@@ -46,7 +17,6 @@
     }
     .hero {
         display: flex;
-        align-items: center;
         background: url('../images/pages/affiliates_ib_landing/background/hero.png');
         background-size: cover;
         min-height: 417px;
@@ -96,16 +66,14 @@
 
         .gr-row {
             max-width: 780px;
-        }
-        h2 {
-            margin: 20px 0;
-            font-weight: 700;
-        }
-        h4 {
-            font-weight: 700;
-        }
-        button {
-            margin: 20px 0;
+
+            h2 {
+                margin: 20px 0;
+                font-weight: 700;
+            }
+            h4 {
+                font-weight: 700;
+            }
         }
     }
     .why-partner {
