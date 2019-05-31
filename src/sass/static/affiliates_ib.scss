@@ -190,6 +190,10 @@
                     }
                 }
                 #ib {
+                    &-header {
+                        margin: 24px 0;
+                        font-size: 28px;
+                    }
                     table {
                         th, td {
                             text-align: left;
