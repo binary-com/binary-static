@@ -335,7 +335,7 @@ const AffiliateIbLanding = () => (
                     <div className='gr-4 gr-12-m gr-centered'>
                         <img src={it.url_for('images/pages/affiliates_ib_landing/icons/earn.svg')} />
                         <h3>{it.L('Earn')}</h3>
-                        <p>{it.L('Refer new clients to us. Receive commissions based on your chosen partnership programme.')}</p>
+                        <p>{it.L('Refer new clients to trade with us. Receive commissions based on your chosen partnership programme.')}</p>
                     </div>
                 </div>
             </div>
