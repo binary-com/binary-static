@@ -57,19 +57,11 @@
             color: $COLOR_WHITE;
         }
     }
-    .who-apply {
-        display: flex;
-        align-items: center;
+    #who-can-apply {
+        padding: 50px 0;
 
-        .gr-row {
-            max-width: 780px;
-
-            h2 {
-                margin: 20px 0;
-            }
-            h2, h4 {
-                font-weight: 700;
-            }
+        h4 {
+            font-weight: 700;
         }
     }
     .why-partner {

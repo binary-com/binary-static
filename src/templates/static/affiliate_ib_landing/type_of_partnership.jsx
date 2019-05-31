@@ -210,8 +210,8 @@ const TypesOfPartnership = () => (
                                 }}
                             />
 
-                            <p className='text-align-left'>{it.L('For example, a round trade (i.e. open and close position) of 1 lot of Vol 75 Index for a price of USD 125,000 would pay USD 8.')}</p>
-                            <p className='text-align-left'><strong>{it.L('USD 10 X 1 lot x USD 100,000/125,000 = USD 8')}</strong></p>
+                            <p className='text-align-left'>{it.L('For example, a round trade (i.e. open and close position) of 1 lot of Vol 75 Index for a price of USD 125,000 would pay USD 12.5.')}</p>
+                            <p className='text-align-left'><strong>{it.L('USD 10 X 1 lot x USD 125,000/100,000 = USD 12.5')}</strong></p>
                             <p className='text-align-left'>{it.L('If your account currency is EUR or GBP, your commission will be converted based on the current forex rate.')}</p>
                             
                             <h3>{it.L('Standard account')}</h3>
