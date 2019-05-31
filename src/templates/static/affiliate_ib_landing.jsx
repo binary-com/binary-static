@@ -119,6 +119,10 @@ const AffiliateIbLanding = () => (
                                                         ],
                                                     }}
                                                 />
+
+                                                <a href={it.affiliate_signup_url} className='button' target='_blank' rel='noopener noreferrer'>
+                                                    <span>{it.L('Sign Up Now')}</span>
+                                                </a>
                                             </div>
                                         </TabContent>
                                         <TabContent id='turnover'>
