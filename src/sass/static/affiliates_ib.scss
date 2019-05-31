@@ -1,9 +1,6 @@
 .affiliate-ib-content {
     margin: 0 !important;
 
-    h1 {
-        font-size: 3.5rem;
-    }
     h2 {
         font-size: 36px;
         font-weight: 700;
@@ -12,22 +9,19 @@
     h4 {
         font-weight: 500;
     }
-    .text-align-left {
-        text-align: left;
-    }
-    .hero {
+    #hero {
         display: flex;
-        background: url('../images/pages/affiliates_ib_landing/background/hero.png');
+        background-image: url('../images/pages/affiliates_ib_landing/background/hero.png');
         background-size: cover;
         background-position: center;
         min-height: 417px;
 
-        &-header {
+        h2 {
             font-weight: 300;
             color: $COLOR_WHITE;
         }
     }
-    .statistics {
+    #statistics {
         display: flex;
         align-items: center;
         background: url('../images/pages/contact/banner-bg.svg');
@@ -40,40 +34,34 @@
             margin: 0;
         }
     }
-    .how-it-works {
+    #how-it-works {
         background: url('../images/pages/affiliates_ib_landing/background/orange.png');
         background-size: cover;
-        color: $COLOR_WHITE;
 
-        h2, h3 {
-            color: $COLOR_WHITE;
-            margin: 20px 0;
-        }
-        h3 {
-            font-weight: 700;
-        }
         p {
             font-size: 22px;
             font-weight: normal;
             line-height: 28px;
         }
-    }
-    .who-apply {
-        display: flex;
-        align-items: center;
-
-        .gr-row {
-            max-width: 780px;
-
-            h2 {
-                margin: 20px 0;
-            }
-            h2, h4 {
-                font-weight: 700;
-            }
+        h2 {
+            margin: 40px 0;
+        }
+        h3 {
+            font-weight: 700;
+            margin: 20px 0;
+        }
+        p, h2, h3 {
+            color: $COLOR_WHITE;
         }
     }
-    .why-partner {
+    #who-can-apply {
+        padding: 50px 0;
+
+        h4 {
+            font-weight: 700;
+        }
+    }
+    #why-partner {
         display: flex;
 
         h2, h4 {
@@ -94,7 +82,7 @@
             }
         }
     }
-    .payment-method {
+    #payment-method {
         .container {
             max-width: 1012px;
         }
@@ -107,6 +95,9 @@
         }
     }
     .type-of-partner {
+        .text-align-left {
+            text-align: left;
+        }
         p {
             font-size: 18px;
             line-height: 27px;
