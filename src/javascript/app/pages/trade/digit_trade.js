@@ -59,7 +59,7 @@ const DigitDisplay = (() => {
 
         const request = {
             ticks_history: contract.underlying,
-            start        : +contract.entry_tick_time,
+            start        : +contract.entry_tick_time || +contract.purchase_time,
         };
 
         subscribe(request);
