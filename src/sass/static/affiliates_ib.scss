@@ -9,6 +9,10 @@
     h4 {
         font-weight: 500;
     }
+    p, a {
+        font-size: 18px;
+        line-height: 27px;
+    }
     #hero {
         display: flex;
         background-image: url('../images/pages/affiliates_ib_landing/background/hero.png');
@@ -102,10 +106,6 @@
         .text-align-left {
             text-align: left;
         }
-        p {
-            font-size: 18px;
-            line-height: 27px;
-        }
         .container {
             max-width: 780px;
 
@@ -131,8 +131,6 @@
                         a {
                             outline: none;
                             width: 100%;
-                            font-size: 18px;
-                            line-height: 27px;
                         }
                         &:first-child {
                             flex-basis: 48%;
@@ -186,13 +184,14 @@
         &-item {
             background-color: $COLOR_WHITE;
             border-radius: 8px;
-            margin: 10px;
+            margin: 12px;
             padding: 30px;
 
             &-header {
                 font-size: 28px;
                 font-weight: 700;
                 margin-top: 0;
+                line-height: 35px;
             }
             &-content {
                 font-size: 16px;
