@@ -171,7 +171,7 @@
             }
         }
     }
-    .faq {
+    #faq {
         background-image: url('../images/pages/affiliates_ib_landing/background/orange.png');
         background-size: cover;
         padding: 40px;
@@ -197,9 +197,8 @@
 
                 &-image {
                     margin-right: 10px;
-                    vertical-align: middle;
                 }
-                &-text {
+                &-image, &-text {
                     vertical-align: middle;
                 }
             }
