@@ -1,8 +1,10 @@
 const getUnderlyingPipSize = require('../pages/trade/symbols').getUnderlyingPipSize;
 const addComma             = require('../../_common/base/currency_base').addComma;
+const isEmptyObject        = require('../../_common/utility').isEmptyObject;
 
 const changePocNumbersToString = (response) => {
     const {
+        audit_details,
         barrier,
         current_spot,
         entry_spot,
@@ -19,7 +21,7 @@ const changePocNumbersToString = (response) => {
                 property || property === 0 ? addComma(property, decimal_places) : undefined
             );
 
-            resolve($.extend({}, {
+            let new_response = $.extend({}, {
                 ...response,
                 proposal_open_contract: {
                     ...response.proposal_open_contract,
@@ -32,7 +34,25 @@ const changePocNumbersToString = (response) => {
                     exit_tick        : toString(exit_tick),
                     profit_percentage: toString(profit_percentage, 2),
                 },
-            }));
+            });
+
+            if (!isEmptyObject(audit_details)) {
+                if (!isEmptyObject(audit_details.all_ticks)) {
+                    const formatAuditDetails = (obj) => ({ ...obj, all_ticks: obj.all_ticks.map(tick_obj => (
+                        { ...tick_obj, tick: toString(tick_obj.tick) }
+                    )) });
+
+                    new_response =  $.extend({}, {
+                        ...new_response,
+                        proposal_open_contract: {
+                            ...new_response.proposal_open_contract,
+                            audit_details: formatAuditDetails(audit_details),
+                        },
+                    });
+                }
+            }
+
+            resolve(new_response);
         });
     });
 };
