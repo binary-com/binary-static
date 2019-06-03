@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-05-31 01:24\n"
+"PO-Revision-Date: 2019-05-31 07:37\n"
 "Last-Translator: binarycom\n"
 "Language-Team: Spanish\n"
 "MIME-Version: 1.0\n"
@@ -105,6 +105,9 @@ msgstr "\"Proveedor(es) Tercero\" significa una entidad tercera (no afiliada) qu
 msgid "\"Transaction\" means any purchase or sale of any financial Instrument including but not limited to CFDs, Rolling Spot FX, Commodities and any other securities or products may be offered by the Company to the Client, from time to time in accordance with the Client Agreement."
 msgstr "\"Transacción\" se refiere a la compra o venta de cualquier instrumento financiero, incluyendo, entre otros, CFD, Rolling Spot FX, materias primas y cualquier otro producto que la Empresa pueda ofrecer al Cliente en virtud del Acuerdo con el cliente."
 
+msgid "$ per USD 100,000 of turnover"
+msgstr ""
+
 msgid "$100,000 - $250,000"
 msgstr "$100.000 - $250.000"
 
@@ -113,6 +116,9 @@ msgstr "$100.001 - $500.000"
 
 msgid "$100,001 and above"
 msgstr "$100.001 y más"
+
+msgid "$12M+"
+msgstr ""
 
 msgid "$25,000 - $50,000"
 msgstr "$25.000 - $50.000"
@@ -162,9 +168,6 @@ msgstr "Cuenta %1"
 msgid "%1 Account %2"
 msgstr "Cuenta %1 %2"
 
-msgid "%1 Affiliate Programme"
-msgstr "Programa de afiliados de %1"
-
 msgid "%1 Application Programme Interface (\"API\") terms and conditions"
 msgstr "Términos y Condiciones de la Interfaz de Programa de Aplicación (\"API\") %1"
 
@@ -173,9 +176,6 @@ msgstr "%1 Expert Advisor (EA)"
 
 msgid "%1 Graduate Programme"
 msgstr "Programa de Graduado de %1"
-
-msgid "%1 Introducing Broker (IB) Programme"
-msgstr "Programa de brokers introductores (IB) de %1"
 
 msgid "%1 Please click the link below to restart the password recovery process."
 msgstr "%1 Haga clic en el siguiente enlace para reiniciar el proceso de recuperación de contraseña."
@@ -338,9 +338,6 @@ msgstr "%1 abre una nueva oficina en la isla de Labuan, como parte de nuestra ex
 
 msgid "%1 owes the client a duty of best execution when executing orders on the client's behalf, i.e. when the client places a legitimate reliance on the Company to safeguard the client's interest in relation to the execution of the client's order."
 msgstr "%1 se compromete a la mejor ejecución posible de los contratos; es decir, cuando el cliente deposita su confianza en la empresa para salvaguardar los intereses del propio cliente en relación a la ejecución de contratos."
-
-msgid "%1 per lot"
-msgstr "%1 por lote"
 
 msgid "%1 property"
 msgstr "propiedad de %1"
@@ -528,9 +525,6 @@ msgstr "(d) Probabilidad de liquidación"
 msgid "(e) Size and nature"
 msgstr "(e) Tamaño y naturaleza"
 
-msgid "*Already registered as an affiliate? Send us an email at %1 instead."
-msgstr "*¿Ya está registrado como afiliado? En ese caso envíenos un correo electrónico a %1."
-
 msgid "0-1 year"
 msgstr "0-1 año(s)"
 
@@ -549,8 +543,14 @@ msgstr "1. Comprobante de identidad"
 msgid "11-39 transactions in the past 12 months"
 msgstr "11-39 transacciones en los úlitmos 12 meses"
 
+msgid "150+"
+msgstr ""
+
 msgid "16th MENA Financial Forum & Expo"
 msgstr "16th MENA Financial Forum & Expo"
+
+msgid "1M+"
+msgstr ""
 
 msgid "2 * (6,000 – 5,200) = $1600"
 msgstr "2 * (6.000 – 5.200) = $1.600"
@@ -572,6 +572,9 @@ msgstr "El límite de volumen de transacciones de 30 días"
 
 msgid "40 transactions or more in the past 12 months"
 msgstr "40 transacciones o más en los úlitmos 12 meses"
+
+msgid "40K+"
+msgstr ""
 
 msgid "6-10 transactions in the past 12 months"
 msgstr "6-10 transacciones en los úlitmos 12 meses"
@@ -966,9 +969,6 @@ msgstr ""
 msgid "Accounts/ Payments"
 msgstr "Cuentas/ Pagos"
 
-msgid "Accounts/Assets"
-msgstr "Cuentas/Activos"
-
 msgid "Accounts/Payments"
 msgstr "Cuentas/Pagos"
 
@@ -1038,6 +1038,9 @@ msgstr "Avanzado"
 msgid "Advanced Account"
 msgstr "Cuenta avanzada"
 
+msgid "Advanced account"
+msgstr ""
+
 msgid "Advanced binary options trading interface"
 msgstr "Interfaz avanzada de trading de opciones binarias"
 
@@ -1065,8 +1068,11 @@ msgstr "Acuerdo de afiliados"
 msgid "Affiliate FAQ"
 msgstr "Preguntas frecuentes sobre Programa de afiliados"
 
-msgid "Affiliate Programme"
-msgstr "Programa de afiliados"
+msgid "Affiliate and IB Programme"
+msgstr ""
+
+msgid "Affiliate and IB Programmes"
+msgstr ""
 
 msgid "Affiliate/Country Manager"
 msgstr "Manager de afiliados/de región"
@@ -1133,9 +1139,6 @@ msgstr "Todas nuestras llamadas se graban para fines de capacitación y supervis
 
 msgid "All client orders are processed on a first in, first out basis without any manual intervention. When executing client order, %1 will seek to fill client order transaction as promptly as possible at the instructed price (or at a better price, if available). Exposure limits are established based on internal governance arrangements and risk management framework, which both commensurate with the size, nature, complexity, and risk profile of the Company's activities. These exposure limits are used as benchmarks to distinguish orders that are auto-accepted from orders that will be worked in the market with fill level passed on to the client."
 msgstr "Todos los pedidos de los clientes se procesan según el método PEPS (o FIFO en inglés), sin intervención manual. Al ejecutar su operación, %1 se intentará completar la transacción lo antes posible, al precio indicado (o a un mejor precio, si está disponible). Los límites de exposición se establecen en base a las regulaciones internas y al marco de gestión de riesgo, que son proporcionales al tamaño, naturaleza, complejidad y perfil de riesgo de nuestras actividades. Estos límites de exposición se utilizan como puntos de referencia para distinguir entre las órdenes que son auto-aceptadas y las órdenes que se trabajarán en el mercado con el nivel de llenado transferido al cliente."
-
-msgid "All commissions are credited into your account by the 15th of every month."
-msgstr "Todas las comisiones se acreditan en su cuenta antes del día 15 de cada mes."
 
 msgid "All conditions and durations"
 msgstr "Todas las condiciones y duraciones"
@@ -1395,9 +1398,6 @@ msgstr "Derechos del solicitante"
 
 msgid "Applications"
 msgstr "Aplicaciones"
-
-msgid "Apply now"
-msgstr "Inscríbase ahora"
 
 msgid "Apply now as a professional investor"
 msgstr "Solicite ahora como un inversor profesional"
@@ -1897,6 +1897,9 @@ msgstr "Ser parte de un horario de turnos rotativos de 24/7, alternando con los 
 msgid "Because of the leverage effect, the Margin required in Margined Transactions, and price changes in the Underlying Instruments, the client may suffer significant losses."
 msgstr ""
 
+msgid "Become our partner"
+msgstr ""
+
 msgid "Before the Company opens an account for the client in which the client can trade or invest in Investment Products with BIEL, the Company is required to make an assessment of whether products or services that the client has chosen are appropriate for the client and to warn the client if, on the basis of the information that the client has provided to the Company, any such product or service is deemed not appropriate for the client. Any decision to open an account and to use the Company's products or services is the client's. It is the client's responsibility to understand the risks involved with the Company's products or services."
 msgstr ""
 
@@ -2191,6 +2194,9 @@ msgstr "Tecnología de blockchain - todas las criptomonedas utilizan la variaci�
 msgid "Blogger and vlogger"
 msgstr "Blogger y vlogger"
 
+msgid "Boom 1000 Index"
+msgstr ""
+
 msgid "Both the deposit and the bonus amounts are clearly displayed when this type of promotion is available. By way of example, if the client chooses to participate in a \"Get $25 when you deposit $100\" promotion, the Company will add an additional $25 to the client's account when the client deposits $100, AND when the client has purchased at least $125 worth of trades ($25 * 5= $125). The bonus will only be credited to the client's account when both of these conditions are met."
 msgstr "Tanto las cantidades del depósito como del bono se muestran claramente cuando este tipo de promoción está disponible. Por ejemplo, si el cliente decide participar en la promoción \"Reciba $25 cuando deposita $100\" significa que añadiremos $25 a la cuenta del cliente cuando este deposite $100, Y cuando haya comprado operaciones por un valor de al menos $125 ($25*5 = $125). El bono sólo será acreditado a la cuenta del cliente cuando se cumplan ambas condiciones."
 
@@ -2203,6 +2209,9 @@ msgstr "Navegue y opere con seguridad utilizando el dispositivo de su preferenci
 msgid "Browser"
 msgstr "Navegador"
 
+msgid "Build a rewarding and long-term business relationship with an industry pioneer"
+msgstr ""
+
 msgid "Build our applicant database by researching and contacting various sources (eg: universities and job portals)"
 msgstr "Crear nuestra base de datos de solicitantes investigando y contactando varias fuentes (por ejemplo, universidades y portales de empleo)"
 
@@ -2214,6 +2223,9 @@ msgstr "Crear, mantener y optimizar la tecnología que impulsa nuestros servidor
 
 msgid "Build, maintain, and optimise the technology that powers our servers, applications, and databases"
 msgstr "Crear, mantener y optimizar la tecnología que impulsa nuestros servidores, aplicaciones y bases de datos"
+
+msgid "Builds trading applications and interfaces using the %1 API"
+msgstr ""
 
 msgid "Business Day"
 msgstr "Día Hábil"
@@ -2497,9 +2509,6 @@ msgstr "Verificando"
 msgid "Chief Executives, Senior Officials and Legislators"
 msgstr "Directores ejecutivos, altos funcionarios y legisladores"
 
-msgid "Choose a commission plan that suits your business strategy."
-msgstr "Elija un plan de comisiones que se adapte a su estrategia de negocios."
-
 msgid "Choose a duration from 10 seconds to 365 days."
 msgstr "Seleccione una duración desde 10 segundos hasta 365 días."
 
@@ -2523,9 +2532,6 @@ msgstr "Elija entre cuatro mercados disponibles:"
 
 msgid "Choose from over one million possible trade variations at any time, and customise your trades according to your preferred strategy"
 msgstr "Elija entre más de un millón de posibles variaciones comerciales en cualquier momento y personalice sus operaciones de acuerdo con su estrategia preferida"
-
-msgid "Choose from the following affiliate commission plans:"
-msgstr "Elija entre los siguientes planes de comisión de afiliados:"
 
 msgid "Choose from three main trade types:"
 msgstr "Escoja entre tres tipos de operación principales:"
@@ -2553,6 +2559,9 @@ msgstr "Escoja periodos de 10 segundos a 365 días"
 
 msgid "Choose your own strike."
 msgstr "Seleccione su inversión."
+
+msgid "Choose your preferred programme, complete the application form, and receive your affiliate link upon approval."
+msgstr ""
 
 msgid "Christmas Day"
 msgstr "Día de Navidad"
@@ -2610,6 +2619,9 @@ msgstr "Los depósitos o retiros de clientes se ven reflejados inmediatamente en
 
 msgid "Client's liability"
 msgstr "Responsabilidad del Cliente"
+
+msgid "Clients"
+msgstr ""
 
 msgid "Clients agree that the Company may use personal information provided by them in order to conduct appropriate anti-fraud checks. The personal information that clients provide may be disclosed to a credit reference or fraud prevention agency, which may keep a record of that information."
 msgstr "Los clientes aceptan que la Empresa puede utilizar la información personal suministrada para realizar verificaciones contra fraude. Dicha información personal puede ser divulgada a una agencia de prevención de fraude o de referencias de crédito, tal agencia podría guardar registros de esa información."
@@ -2740,6 +2752,9 @@ msgstr "Crear soluciones de diseño cohesivo que puedan alcanzar nuestros objeti
 msgid "Commencement Date"
 msgstr "Fecha de inicio"
 
+msgid "Commision structure"
+msgstr ""
+
 msgid "Commission"
 msgstr "Comisión"
 
@@ -2752,6 +2767,9 @@ msgstr "Comisión por depósitos"
 msgid "Commission on withdrawals"
 msgstr "Comisión por retiros"
 
+msgid "Commission per round trade"
+msgstr ""
+
 msgid "Commission per side trade"
 msgstr "Comisión por operación alternativa"
 
@@ -2760,9 +2778,6 @@ msgstr "Tasas de comisión"
 
 msgid "Commission shall only be paid where the following are met cumulatively:"
 msgstr ""
-
-msgid "Commission structure"
-msgstr "Estructura de las comisiones"
 
 msgid "Commission will not be paid for Accounts that have been opened or traded by an Associate of the Introducing Broker."
 msgstr ""
@@ -2887,6 +2902,9 @@ msgstr "Realizar investigaciones utilizando una variedad de métodos cualitativo
 msgid "Conduct security reviews of production infrastructure"
 msgstr "Realizar revisiones de seguridad de infraestructura de producción"
 
+msgid "Conducts trading discussions and interactive sessions online with trading enthusiasts"
+msgstr ""
+
 msgid "Confidential information"
 msgstr ""
 
@@ -2940,9 +2958,6 @@ msgstr "Contáctenos"
 
 msgid "Contact number"
 msgstr "Número de contacto"
-
-msgid "Contact our dedicated affiliate support team for help and suggestions."
-msgstr "Para ayudas y sugerencias, póngase en contacto con nuestro equipo dedicado de soporte a nuestros afiliados."
 
 msgid "Contact the payment agent directly for more information on how to transfer money to them."
 msgstr "Póngase en contacto con el agente de pago directamente para obtener más información sobre cómo hacer una transferencia de dinero a través de él."
@@ -3079,8 +3094,8 @@ msgstr "Copyright"
 msgid "Copywriter"
 msgstr "Redactor (Copywriter)"
 
-msgid "Cost per acquisition (CPA) for EU affiliates only"
-msgstr "Costo por adquisición (CPA) únicamente para afiliados de la Unión Europea"
+msgid "Cost per acquisition (CPA) for EU Affiliates only"
+msgstr ""
 
 msgid "Costs - the costs of executing client order, predominantly comprising of spread, i.e. the difference between the Company's bid and the Company's offer price"
 msgstr ""
@@ -3090,6 +3105,9 @@ msgstr ""
 
 msgid "Counterparty"
 msgstr "Contraparte"
+
+msgid "Countries"
+msgstr ""
 
 msgid "Countries report: Displays a list of countries where your clicks are coming from"
 msgstr "Informes de países: Muestra una lista de países de los que provienen los clics"
@@ -3105,6 +3123,9 @@ msgstr "La indemnización está disponible sobre la base del depositante y no el
 
 msgid "Craft, Metal, Electrical and Electronics Workers"
 msgstr "Trabajadores de la industria metalúrgica, eléctrica y electrónica"
+
+msgid "Crash 1000 Index"
+msgstr ""
 
 msgid "Crash/Boom Indices"
 msgstr ""
@@ -3199,14 +3220,17 @@ msgstr "Cripto"
 msgid "Cryptocurrencies"
 msgstr "Criptomonedas"
 
-msgid "Cryptocurrencies commission per round trade. Example: A round trade of 1 lot of BTC/USD with spot price of 10,000 will pay USD 30 on standard account."
-msgstr "Comisión de criptomonedas por ronda de operaciones. Por ejemplo: una operación completa de un lote de BTC/USD con un precio de venta de USD 10.000 pagará USD 30 en una cuenta estándar."
+msgid "Cryptocurrencies commission per round trade. For example, a round trade of 1 lot of BTC/USD with spot price of USD 10,000 will pay USD 30 on standard accounts."
+msgstr ""
 
 msgid "Cryptocurrencies such as Bitcoin and Ethereum are decentralised digital assets that enable instant payments to anywhere in the world."
 msgstr "Las criptomonedas tales como el Bitcoin y Ethereum son activos digitales descentralizados que permiten un pago inmediato en cualquier parte del mundo."
 
 msgid "Cryptocurrencies such as Bitcoin and Ethereum are decentralised digital currencies on the blockchain."
 msgstr "Las criptomonedas como el Bitcoin y Ethereum son activos digitales descentralizados en la cadena de bloques."
+
+msgid "Cryptocurrencies**"
+msgstr ""
 
 msgid "Cryptocurrency"
 msgstr "Criptomonedas"
@@ -3268,6 +3292,9 @@ msgstr "Orientación al cliente"
 msgid "Customer funds"
 msgstr "Fondos del Cliente"
 
+msgid "Customer-centric partnership"
+msgstr ""
+
 msgid "Cyberjaya"
 msgstr "Cyberjaya"
 
@@ -3303,9 +3330,6 @@ msgstr "Límite diario de pérdidas"
 
 msgid "Daily market reports"
 msgstr "Informes diarios de mercado"
-
-msgid "Daily payouts"
-msgstr "Pagos diarios"
 
 msgid "Daily turnover limit"
 msgstr "Límite diario de volumen de transacciones"
@@ -3382,9 +3406,6 @@ msgstr "Descentralización – La naturaleza descentralizada de las criptomoneda
 msgid "Decline"
 msgstr "Rechazar"
 
-msgid "Dedicated support"
-msgstr "Soporte dedicado"
-
 msgid "Deep Perl expertise"
 msgstr "Experiencia profunda de Perl"
 
@@ -3433,6 +3454,9 @@ msgstr "Dependiendo de la jurisdicción a la que la cuenta de un Cliente esté s
 msgid "Depending on the level of risk that the Company is exposed to while acting as the client's counterparty, the Company acts largely in a principal capacity of the client's trades. As such, the execution venue will usually be %1. However, the Company may transmit the client's order to third-party liquidity providers, in which case the Company will determine the execution venue on the basis described above."
 msgstr "Dependiendo del nivel de riesgo al cual se exponga la Empresa al actuar como contraparte del cliente, la Empresa actúa en gran medida como administrador de las operaciones del cliente. Como tal, el medio de ejecución será usualmente %1. Sin embargo, la Empresa puede transmitir la orden del cliente a proveedores de liquidez externos, en cuyo caso la Empresa determinará el medio de ejecución en base a lo descrito anteriormente."
 
+msgid "Depending on what you do, you can apply as our Affiliate or Introducing Broker, or both. More new clients from you means higher potential commissions."
+msgstr ""
+
 msgid "Depending on your broker or trading platform, you can start trading from the time the Sydney market opens on Monday morning to the time the New York market closes on Friday evening – up to 24 hours a day, five days a week."
 msgstr "Según su broker o plataforma de operaciones, usted puede comenzar a operar desde la apertura del mercado en Sydney un lunes por la mañana hasta el cierre del mercado de Nueva York un viernes en la noche – hasta 24 horas por día, cinco días de la semana."
 
@@ -3473,7 +3497,7 @@ msgid "Deposits and/or payments due are to be made in the currency chosen by the
 msgstr ""
 
 msgid "Deriv"
-msgstr ""
+msgstr "Deriv"
 
 msgid "Deriv — an all-new trading experience"
 msgstr "Deriv - una experiencia de operación completamente nueva"
@@ -3579,9 +3603,6 @@ msgstr "Presente tu comprobante de identidad cuando se le solicite."
 
 msgid "Diverse platforms and account types"
 msgstr "Diversas plataformas y tipos de cuentas"
-
-msgid "Diversify your income stream through other partnership opportunities such as the %1Introducing Broker Programme%2."
-msgstr "Diversifique el flujo de sus ingresos a través de otras oportunidades de asociación, asi como el%1Programa de Brokers Introductores (IB)%2."
 
 msgid "Diversify your portfolio with all four types of precious metals that are widely known as \"safe haven\" investments: gold, silver, platinum, and palladium."
 msgstr "Diversifique su cartera con los cuatro tipos de metales preciosos ampliamente conocidos como valores refugio: oro, plata, platino y paladio."
@@ -3850,14 +3871,8 @@ msgstr "Cada transferencia está sujeta a una tasa por transferencia de %1 o una
 msgid "Earn"
 msgstr "Gane"
 
-msgid "Earn USD 100 in commission for each successful referral. Your referred client must open a %1real money investment account%2 through your unique affiliate link and deposit a total of USD 100 or more (one-time or accumulative) in the account. This commission plan is only available to affiliates based in the EU."
-msgstr "Obtenga USD 100 en comisiones por cada referencia exitosa. Su cliente referido debe abrir una %1cuenta de inversión de dinero real%2 a través de su enlace único de afiliado y depositar un total de USD 100 o más (en un solo depósito o acumulativo) en la cuenta. Este plan de comisión se encuentra disponible solo para afiliados que residan en la Unión Europea."
-
-msgid "Earn a commission on each client's MT5 trading activity – paid out daily."
-msgstr "Gane comisiones diarias por cada operación de sus clientes en la plataforma MT5."
-
-msgid "Earn a commission when your referred clients trade Forex and CFDs on our MT5 platform."
-msgstr "Gane comisiones cada vez que recomiende a un cliente operar Forex y CFD en nuestra plataforma MT5."
+msgid "Earn USD 100 in commission for each successful referral. Your referred client must open a real money investment account through your unique affiliate link and deposit a total of USD 100 or more (one-time or accumulative) in the account. This commission plan is only available to Affiliates based in the EU."
+msgstr ""
 
 msgid "Earn a monetary reward for any verifiable issues that you find, with a bounty worth up to USD 1,000 for high-risk security vulnerabilities."
 msgstr "Obtenga una recompensa monetaria por cada problema verificable que encuentre, con un máximo de hasta mil dólares por vulnerabilidades de alto riesgo en la seguridad."
@@ -3865,11 +3880,8 @@ msgstr "Obtenga una recompensa monetaria por cada problema verificable que encue
 msgid "Earn additional income with us as you grow your community of potential and existing online traders through useful trading insights and mentorship."
 msgstr "Obtenga un ingreso adicional con nosotros a la par que expande su comunidad de inversores en línea, potenciales y existentes, mediante útiles consejos y tutoría de inversiones."
 
-msgid "Earn commission on the trading activity of clients that you refer to our MetaTrader 5 platform."
-msgstr "Gane comisiones por las operaciones de clientes a los que haya recomendado la plataforma MetaTrader 5."
-
-msgid "Earn commissions by introducing new customers to %1."
-msgstr "Gane comisiones introduciendo nuevos clientes a %1."
+msgid "Earn daily commissions on the trading activities of the clients you refer to the %1 MetaTrader 5 (MT5) platform. Your total commissions will be credited into your account by the end of the day."
+msgstr ""
 
 msgid "Earn increasingly higher payouts with tiered and laddered commission rates that reward you based on the net revenue generated by your referred clients."
 msgstr "Obtenga beneficios de pagos cada vez más altos con tasas de comisión por niveles que le recompensan con base en los ingresos netos generados por sus clientes referidos."
@@ -3882,6 +3894,9 @@ msgstr "Reciba pagos de hasta USD 50.000. Las pérdidas solo están limitadas a 
 
 msgid "Earn the same proportional return on stakes of all values"
 msgstr "Obtenga el mismo rendimiento proporcional en las inversiones de todos los valores"
+
+msgid "Earn up to 35% in commission by referring new clients to trade on our premier platforms for binary options. All commissions are credited into your account by the 15th of every month."
+msgstr ""
 
 msgid "Easily monitor your open positions"
 msgstr "Controla fácilmente sus posiciones abiertas"
@@ -4432,9 +4447,6 @@ msgstr "F. Medios de ejecución"
 msgid "F. Margin and Leverage"
 msgstr ""
 
-msgid "FAQ"
-msgstr "Preguntas Frecuentes"
-
 msgid "FIX API"
 msgstr "API FIX"
 
@@ -4666,6 +4678,9 @@ msgstr ""
 msgid "For e-wallets or local currencies not supported by %1."
 msgstr "Para monederos electrónicos o divisas locales no admitidos por %1."
 
+msgid "For example, a round trade (i.e. open and close position) of 1 lot of Vol 75 Index for a price of USD 125,000 would pay USD 8."
+msgstr ""
+
 msgid "For example, if you buy a US 100 contract and it's not going as planned, you just need to sell it to cut your losses at the current market price."
 msgstr "Por ejemplo, si compra un contrato de 100 USD y no va según lo planeado, solo necesita venderlo al precio actual de mercado para reducir sus pérdidas."
 
@@ -4708,6 +4723,9 @@ msgstr ""
 msgid "For fully covered accounts, no Margin will be charged on open positions. However, swaps and other applicable fees can cause the client's Account Equity to turn negative. In that case, the Stop Out process will be triggered."
 msgstr ""
 
+msgid "For further assistance, email us at %1affiliates@binary.com%2"
+msgstr ""
+
 msgid "For general support:"
 msgstr "Para soporte general:"
 
@@ -4735,14 +4753,14 @@ msgstr ""
 msgid "Forex"
 msgstr "Forex"
 
-msgid "Forex & Metals"
-msgstr "Forex y metales"
-
 msgid "Forex and contract for differences transactions involve a high degree of risk and are speculative because they allow the client to speculate on the short-term price movements of the underlying financial instruments. The client should not enter into forex and/or contract-for-difference transactions unless the client is able to sustain losses that exceed the client's deposited funds. It is important for the client to understand that in order to realise any value from the client's open positions, the client would have to enter into a corresponding transaction to close the client's open positions and may find it difficult or impossible to do so under certain market conditions."
 msgstr ""
 
 msgid "Forex and contracts for differences are high risk and speculative"
 msgstr "Forex y contratos por diferencias son instrumentos de alto riesgo y especulativos"
+
+msgid "Forex and metals*"
+msgstr ""
 
 msgid "Forex contract specifications"
 msgstr "Especificaciones del contrato Forex"
@@ -4761,6 +4779,9 @@ msgstr "La operación de Forex consiste en la compra de una moneda y vender otra
 
 msgid "Forex trading involves buying or selling these \"currency pairs\". When you buy a currency pair such as EUR/USD, it means that you are buying the EURO and selling the USD at the same time."
 msgstr "La operación de Forex consiste en la compra o venta de este \"par de divisas\". Cuando se compra un par como el EUR/USD, significa que está comprando el EUR y vendiendo el USD al mismo tiempo."
+
+msgid "Forex*"
+msgstr ""
 
 msgid "Founded in 1999, %1 is one of the oldest and most respected names in online binary trading."
 msgstr "Fundada en 1999, %1 es uno de los nombres más antiguos y respetados del comercio de opciones binarias en línea."
@@ -4782,6 +4803,9 @@ msgstr "Libertad"
 
 msgid "Frequency of trading other financial instruments"
 msgstr "Frecuencia en operación con otros instrumentos financieros"
+
+msgid "Frequently asked questions"
+msgstr ""
 
 msgid "Friday"
 msgstr "Viernes"
@@ -4891,8 +4915,8 @@ msgstr "Generar informes periódicos y especiales que resuman las tendencias com
 msgid "Generated verification code:"
 msgstr "Código de verificación generado:"
 
-msgid "Generous commission"
-msgstr "Generosas comisiones"
+msgid "Generous commissions"
+msgstr ""
 
 msgid "Get %1"
 msgstr "Obtenga %1"
@@ -4906,17 +4930,11 @@ msgstr "Consiga USD 10,000.00"
 msgid "Get out of the city centre and enjoy the serenity of island life free from the excesses of commercialisation. Friendly, helpful locals are also never far off."
 msgstr "Salga del centro de la ciudad y disfrute de la serenidad de la vida en la isla libre de los excesos de la comercialización. Siempre listos para ayudarle, los amigables locales nunca están demasiado lejos."
 
-msgid "Get paid by the 15th of every month. We've never missed a payment since we started our programme in March 2004."
-msgstr "Reciba pagos los días 15 de cada mes. Nunca hemos dejado de pagar desde que comenzamos nuestro programa en marzo de 2004."
-
 msgid "Get started with MT5"
 msgstr "Empezar con MT5"
 
 msgid "Get started with the %1 Expert Advisor (EA) for binary options trading on MT5 by following these steps:"
 msgstr "Comience con el Expert Advisor (EA) %1 para operar con opciones binarias en MT5 a través de los siguientes pasos:"
-
-msgid "Get your IB commission credited daily into your MT5 account."
-msgstr "Su comisión IB se acreditará diariamente en su cuenta MT5."
 
 msgid "Get your price"
 msgstr "Obtenga su precio"
@@ -4926,12 +4944,6 @@ msgstr "Cómo empezar"
 
 msgid "Getting started"
 msgstr "Introducción"
-
-msgid "Getting started is free and easy – just %1fill out the application form%2, choose your preferred commission plan and wait for our approval."
-msgstr "Comenzar es fácil y gratis – solo %1complete el formulario de solicitud%2, elija su plan de comisión preferido y aguarde nuestra aprobación."
-
-msgid "Getting started is free and easy. Just %1fill out the application form%2* and wait for our approval."
-msgstr "Comenzar es fácil y gratis: solo %1llene este formulario%2 y espere nuestra aprobación."
 
 msgid "Given the Company's role as a Margin trading service provider as described in this agreement, the Company seeks to avoid undue market influence to the extent consistent with the client's trading needs and the Company's risk management policies and procedures. By continuing to use the Margin trading services described in this agreement, the client acknowledges that they are aware of the potential conflict of interest disclosed that may arise and cannot be completely eliminated, and they consent to the Company acting notwithstanding such potential conflict of interests."
 msgstr ""
@@ -5053,14 +5065,14 @@ msgstr "H. Supervisión y revisión"
 msgid "H. Quotes"
 msgstr ""
 
-msgid "HF Vol 10"
-msgstr "HF Vol 10"
+msgid "HF Volatility 10 Index"
+msgstr ""
 
-msgid "HF Vol 100"
-msgstr "HF Vol 100"
+msgid "HF Volatility 100 Index"
+msgstr ""
 
-msgid "HF Vol 50"
-msgstr "HF Vol 50"
+msgid "HF Volatility 50 Index"
+msgstr ""
 
 msgid "HR Operations Executive"
 msgstr "Ejecutivo de Operaciones de RRHH"
@@ -5311,17 +5323,11 @@ msgstr "Me interesa"
 msgid "I. Trading"
 msgstr ""
 
-msgid "IB Programme"
-msgstr "Programa IB"
-
 msgid "IB commissions are credited directly into your MT5 account. You can transfer funds from your MT5 account to your %1 Real Account, then withdraw the funds using your preferred withdrawal method."
 msgstr "Las comisiones de IB se acreditan directamente en su cuenta de MT5. Puede transferir fondos desde esta cuenta a su cuenta real en %1 y retirar los fondos a través de su método preferido."
 
 msgid "IB earnings from your MT5 referrals are credited daily into your MT5 account."
 msgstr "Las ganancias por IB de sus referidos para la plataforma MT5 se acreditan diariamente en su cuenta."
-
-msgid "IB programme"
-msgstr "Programa IB"
 
 msgid "IB programme FAQ"
 msgstr "Preguntas frecuentes sobre el programa IB"
@@ -5659,6 +5665,9 @@ msgstr "Si es seleccionado, lo invitaremos a participar de una hackatón o le en
 msgid "If you're shortlisted, we'll send you a talent test to be completed."
 msgstr "Si está preseleccionado, le enviaremos una prueba de talento para completar."
 
+msgid "If your account currency is EUR or GBP, your commission will be converted based on the current forex rate."
+msgstr ""
+
 msgid "If your account is placed under margin call for an extended period of time, it will reach the stop out level where it is unable to sustain an open position. This will lead to your pending orders being cancelled and your open positions being forcibly closed (also known as “forced liquidation”)."
 msgstr "En caso de que su cuenta se encuentre bajo el nivel de margen por un período extendido, activará el stop out cuando ya no pueda mantener una posición abierta. Esto provocará la cancelación de sus órdenes pendientes y el cierre forzado de sus posiciones abiertas, lo que se conoce también como \"liquidación forzada\"."
 
@@ -5963,6 +5972,9 @@ msgstr "Las transferencias de cambio de moneda entre sus cuentas son permitidas 
 msgid "International currency or commodity prices are highly volatile and very difficult to predict. Due to such volatility, plus the bias in the pricing system favouring the website (as described in more detail below), no financial contract purchased in our system (whether or not the payout exceeds the premium amount) can be considered a safe contract."
 msgstr "Las divisas internacionales o los precios de materias primas son altamente volátiles y muy difíciles de predecir. Debido a dicha volatilidad, además del sesgo en el sistema de precios que favorece al sitio web (como se describe con más detalle a continuación), ningún contrato financiero comprado en nuestro sistema (ya sea que el pago exceda el monto de la prima o no) puede considerarse un contrato seguro."
 
+msgid "International support"
+msgstr ""
+
 msgid "Internet trading risks"
 msgstr ""
 
@@ -5976,6 +5988,9 @@ msgid "Introduce %1"
 msgstr "Presentar %1"
 
 msgid "Introducing Broker"
+msgstr ""
+
+msgid "Introducing Broker (IB)"
 msgstr ""
 
 msgid "Introducing Broker warranties"
@@ -6143,8 +6158,8 @@ msgstr "Detalles del trabajo"
 msgid "Job applicant privacy policy"
 msgstr "Política de Privacidad para Solicitantes de empleo"
 
-msgid "Join the %1 Affiliate Programme and earn commission by referring new clients to our award-winning binary options trading platform."
-msgstr "Únase al Programa de afiliados %1 y gane comisiones por referir a nuevos clientes a nuestra galardonada plataforma de operaciones con opciones binarias."
+msgid "Join our global network of partners now"
+msgstr ""
 
 msgid "Jul"
 msgstr "Jul"
@@ -6692,6 +6707,9 @@ msgstr "Mantener registros de las investigaciones en los asuntos de AML-CTF"
 msgid "Maintaining a page or video channel about online trading? Get rewarded when you refer your followers and viewers to trade on our award-winning binary options platform."
 msgstr "¿Tiene o administra un sitio o canal de online trading? Obtenga recompensas por recomendar nuestra galardonada plataforma de opciones binarias a sus seguidores."
 
+msgid "Maintains a page or video channel about online trading"
+msgstr ""
+
 msgid "Major and minor pairs, plus Smart FX indices"
 msgstr "Pares mayores y menores, más índices Smart FX"
 
@@ -6793,6 +6811,9 @@ msgstr "Manager revocado con éxito"
 
 msgid "Managers"
 msgstr "Gestores"
+
+msgid "Manages a social media page dedicated to online trading"
+msgstr ""
 
 msgid "Managing of various aspects of online trading such as sending Orders to the platform"
 msgstr ""
@@ -7172,6 +7193,9 @@ msgstr "Soluciones de liquidez de activos múltiples"
 msgid "Multi-barrier trading"
 msgstr "Operaciones multibarreras"
 
+msgid "Multilingual platforms"
+msgstr ""
+
 msgid "Multiple Accounts Manager"
 msgstr "Administrador de cuentas de múltiples"
 
@@ -7181,8 +7205,8 @@ msgstr "Administrador de cuentas de múltiples (MAM)"
 msgid "Multiple Accounts Manager (MAM) for MetaTrader 5 (MT5)"
 msgstr "Administrador de cuentas múltiples (MAM) para MetaTrader 5 (MT5)"
 
-msgid "Multiple opportunities"
-msgstr "Múltiples oportunidades"
+msgid "Multiple income opportunities"
+msgstr ""
 
 msgid "Multiplier"
 msgstr "Multiplicador"
@@ -7358,6 +7382,9 @@ msgstr "Ningún retraso, negligencia o tolerancia por parte de cualquiera de las
 msgid "No fiduciary duty"
 msgstr "Sin deber fiduciario"
 
+msgid "No hidden fees"
+msgstr ""
+
 msgid "No hidden fees or commissions."
 msgstr "Sin tarifas o comisiones ocultas."
 
@@ -7477,6 +7504,9 @@ msgstr "Número de intervalos:"
 
 msgid "Number of transactions"
 msgstr "Número de transacciones"
+
+msgid "Nurtures a community of potential and existing online traders through insight and mentorship"
+msgstr ""
 
 msgid "O. Indemnification"
 msgstr ""
@@ -7703,6 +7733,9 @@ msgstr "Las órdenes serán generalmente auto-aceptadas si no llevan a la Empres
 msgid "Organisational skills and the ability to work proactively"
 msgstr "Competencias organizativas y la capacidad de trabajar proactivamente"
 
+msgid "Other Partnership Options"
+msgstr ""
+
 msgid "Other Risks: There are other risks related to trading Investment Products and foreign currencies that cannot be described in detail in this document. Generally, however, securities, options, and currency transactions involve exposure to a combination of the following risk factors: market risk, credit risk, settlement risk, liquidity risk, operational risk, and legal risk. For example, there can be serious market disruptions if local or overseas economic, political, or other unforeseen events affect the market. In addition to these types of risk, there may be other factors such as accounting and tax treatment issues that the client should consider."
 msgstr ""
 
@@ -7781,8 +7814,8 @@ msgstr "Nuestro sitio no cobra ninguna tarifa de transferencia."
 msgid "Our swap rate may also be adjusted to take holidays into account."
 msgstr "Nuestra tasa de swap también se puede ajustar para tener en cuenta los días festivos."
 
-msgid "Our turnover-based commission plan depends on the payout probability for each contract. Contracts with higher returns for the client offer lower commissions to the affiliate."
-msgstr "Nuestro plan de comisiones basado en el volumen de ventas depende de la probabilidad de rentabilidad de cada contrato. Los contratos con mayor rentabilidad para el cliente ofrecen menores comisiones al afiliado."
+msgid "Our turnover-based commission plan depends on the payout probability for each contract. Contracts with higher returns for the client offer you lower commissions."
+msgstr ""
 
 msgid "Our values"
 msgstr "Nuestros valores"
@@ -7861,6 +7894,9 @@ msgstr "Participar en todos los aspectos del ciclo de la vida del producto"
 
 msgid "Partner With Us"
 msgstr "Sea nuestro socio"
+
+msgid "Partner earnings"
+msgstr ""
 
 msgid "Partners"
 msgstr "Socios"
@@ -8783,14 +8819,11 @@ msgstr ""
 msgid "Receive the approval of the Company to include any information in relation to the Company"
 msgstr ""
 
-msgid "Receive your affiliate commission once your referred clients start trading on our platform."
-msgstr "Reciba su comisión por afiliados una vez que sus clientes referidos comiencen a operar en la plataforma."
+msgid "Receive your earnings through your favourite payment method"
+msgstr ""
 
 msgid "Recommend alternatives to redundant or obsolete systems"
 msgstr "Recomendar alternativas a sistemas redundantes u obsoletos"
-
-msgid "Recommend our products easily, and keep track of all your earnings with our nifty referral tools."
-msgstr "Recomiende nuestros productos fácilmente y lleve un registro de sus ganancias con nuestras cómodas herramientas de referencia."
 
 msgid "Recruit, train, and nurture affiliates and IBs in countries where Binary Group is active, leveraging your direct knowledge and experience of the local market"
 msgstr "Reclutar, educar y ocuparse de los afiliados e IBs en los países donde Binary Group está activo, aprovechando su conocimiento directo y la experiencia del mercado local"
@@ -8806,6 +8839,9 @@ msgstr ""
 
 msgid "Refer new clients to our MetaTrader 5 platform and earn a commission on their Forex and CFD trading activity."
 msgstr "Refiera nuevos clientes a nuestra plataforma MetaTrader 5 y gane una comisión por operaciones de Forex y CFD que lleven a cabo."
+
+msgid "Refer new clients to trade with us. Receive commissions based on your chosen partnership programme."
+msgstr ""
 
 msgid "Reference"
 msgstr "Referencia"
@@ -8897,8 +8933,8 @@ msgstr "Declaraciones o garantías"
 msgid "Representations and warranties"
 msgstr ""
 
-msgid "Represents the amount in base currency per round trade. Example: A round trade of 1 lot of EUR/USD would pay EUR 10 on standard accounts. A round trade of 1 lot of USD/CAD would pay USD 5 on advanced account."
-msgstr "Representa el importe en moneda base por operación completa. Ejemplo: Una operación completa de un lote de EUR/USD pagaría EUR 10 en cuentas estándar. Por otro lado, un lote de USD/CAD pagaría USD 5 en una cuenta avanzada."
+msgid "Represents the amount in base currency per round trade. For example, a round trade of 1 lot of EUR/USD would pay EUR 10 on standard accounts. A round trade of 1 lot of USD/CAD would pay USD 5 on advanced accounts."
+msgstr ""
 
 msgid "Represents the maximum amount of cash that you may hold in your account.  If the maximum is reached, you will be asked to withdraw funds."
 msgstr "Representa el monto máximo de dinero que puede tener en su cuenta. Si se alcanza el máximo se le pedirá que retire sus fondos."
@@ -9002,8 +9038,8 @@ msgstr "Retornos por encima de 100% en contratos de %1Alza/Baja%2."
 msgid "Returns above 1000% on %1higher/lower%2 and %3touch/no-touch%2 trades."
 msgstr "Retornos por encima de 1000% en contratos %1Superior/Inferior%2 y %3Toca/No Toca.%2"
 
-msgid "Revenue share"
-msgstr "Ingresos"
+msgid "Revenue Share"
+msgstr ""
 
 msgid "Reverse Side"
 msgstr "Reverso"
@@ -9099,6 +9135,9 @@ msgid "Roll-over Credit/Debit"
 msgstr "Roll-over de Crédito/Débito"
 
 msgid "Rolling Spot Forex"
+msgstr ""
+
+msgid "Runs and manages a website that promotes forex or binary options"
 msgstr ""
 
 msgid "Russia"
@@ -9407,8 +9446,8 @@ msgstr "Cerrar sesión"
 msgid "Sign up"
 msgstr "Crear cuenta"
 
-msgid "Sign up for the %1 Affiliate Programme today:"
-msgstr "Regístrese en el programa de afiliados de %1 hoy mismo:"
+msgid "Sign up now"
+msgstr ""
 
 msgid "Signup"
 msgstr "Registrarse"
@@ -9542,6 +9581,9 @@ msgstr "Precio spot"
 msgid "Spread"
 msgstr "Spread"
 
+msgid "Spread the word to your audience. Use your unique referral link and our tried-and-tested referral tools to drive traffic to %1."
+msgstr ""
+
 msgid "Stake"
 msgstr "Inversión"
 
@@ -9550,6 +9592,9 @@ msgstr "Estándar"
 
 msgid "Standard Account"
 msgstr "Cuenta estándar"
+
+msgid "Standard account"
+msgstr ""
 
 msgid "Start Time"
 msgstr "Hora de comienzo"
@@ -11376,6 +11421,9 @@ msgstr "Las transacciones realizadas en este sitio y la relación entre los Clie
 msgid "The two passwords that you entered do not match."
 msgstr "Las dos contraseñas introducidas no coinciden."
 
+msgid "The types of partnerships we offer"
+msgstr ""
+
 msgid "The use of the %1 API is at the Programmer's own risk, and the Programmer assumes full responsibility and risk of the loss it may suffer as a result of using, or accessing, the %1 API. Except to the extent that liability under any applicable law or regulation cannot be excluded, the following cases hold:"
 msgstr "El uso de la API de %1 es a riesgo del Programador y este asume la responsabilidad plena y el riesgo de pérdidas que puede sufrir como resultado de usar o acceder a la API de %1. Excepto en la medida en la que dicha responsabilidad no puede excluirse según la ley o regulación vigente:"
 
@@ -11929,9 +11977,6 @@ msgstr "Rastrear y documentar a fondo los errores encontrados"
 msgid "Track and manage transactions and accounts using proprietary and non-proprietary software and systems"
 msgstr "Supervisar y administrar las transacciones y cuentas utilizando software y sistemas patentados y no patentados"
 
-msgid "Track every click, impression, download, and signup to increase your conversions."
-msgstr "Rastree cada clic, impresión, descarga y registro para aumentar sus conversiones."
-
 msgid "Track laws and regulations that may affect all group companies and implement necessary changes to internal policies in order to manage and mitigate our risk and exposure"
 msgstr "Seguir las leyes y reglamentos que puedan afectar a todas las empresas del grupo e implementar los cambios necesarios en las políticas internas con el fin de gestionar y mitigar nuestros riesgos y exposición"
 
@@ -12250,9 +12295,6 @@ msgstr "Tipos de cuentas de MetaTrader 5"
 msgid "Types of Orders"
 msgstr ""
 
-msgid "Types of affiliate commission plans"
-msgstr "Tipos de planes de comisiones para afiliados"
-
 msgid "Types of lookbacks"
 msgstr "Tipos de contratos retroactivos"
 
@@ -12321,6 +12363,9 @@ msgstr "USD"
 
 msgid "USD 1 per point"
 msgstr "1 USD por punto"
+
+msgid "USD 10 X 1 lot x USD 100,000/125,000 = USD 8"
+msgstr ""
 
 msgid "USD Index – Measures the value of the US Dollar against a basket of five global currencies (EUR, GBP, JPY, CAD, AUD), each weighted by 20%"
 msgstr "El índice de USD mide el valor del dólar estadounidense frente a una cesta de cinco divisas mundiales (EUR, GBP, JPY, CAD, AUD), cada una ponderada por 20%"
@@ -12494,12 +12539,6 @@ msgid "Use two different exclusion types: 'Allocation' excludes a client from fu
 msgstr "Utilice dos tipos de exclusión diferentes: 'Asignación' excluye a un cliente solo de las operaciones futuras, mientras que 'Completo' cierra las posiciones abiertas y elimina el saldo de la cuenta maestra. Los clientes pueden elegir cerrar cualquier posición abierta.\n"
 " "
 
-msgid "Use your unique affiliate link and the referral tools we provide to introduce %1 to your audience."
-msgstr "Utilice su enlace único de afiliado y las herramientas de referencia que le proporcionamos para introducir %1 a su audiencia."
-
-msgid "Use your unique affiliate link and the referral tools we provide to introduce our MT5 service to your audience."
-msgstr "Utilice su enlace único de afiliado y las herramientas de referencia que le proporcionamos para introducirle nuestro servicio MT5 a su audiencia."
-
 msgid "Use, perform, and display the Programmer's Application and its content for purposes of marketing, demonstrating, and making the Programmer's Application available to the Company's clients."
 msgstr "Para usar, realizar y mostrar la Aplicación del Programador y su contenido para propósitos de marketing, demostración y para hacer que la Aplicación del Programador esté disponible los clientes de la Empresa."
 
@@ -12626,21 +12665,6 @@ msgstr "Cuenta virtual"
 msgid "Visa is an international company that supports digital payments around the world, most commonly through their brand of credit and debit cards. For more information, please visit %1."
 msgstr "Visa es una compañía internacional que admite pagos digitales en todo el mundo, comúnmente a través de su marca de tarjetas de crédito y débito. Para más información, visite %1."
 
-msgid "Vol 10"
-msgstr "Vol 10"
-
-msgid "Vol 100"
-msgstr "Vol 100"
-
-msgid "Vol 25"
-msgstr "Vol 25"
-
-msgid "Vol 50"
-msgstr "Vol 50"
-
-msgid "Vol 75"
-msgstr "Vol 75"
-
 msgid "Volatility 10 Index"
 msgstr "Índice de volatilidad 10"
 
@@ -12661,9 +12685,6 @@ msgstr "Índices de Volatilidad"
 
 msgid "Volatility Indices are further categorised into two classes:"
 msgstr "Los índices de volatilidad se categorizan en dos clases:"
-
-msgid "Volatility Indices commission rates in account currency per round trade. Example: A round trade of 1 lot of Volatility 100 Index would pay USD 0.75 for a USD denominated account."
-msgstr ""
 
 msgid "Volume step"
 msgstr "Paso de volumen"
@@ -12814,9 +12835,6 @@ msgstr "Nos orgullecemos de este premio. Estamos firmemente comprometidos a ofre
 
 msgid "We've grown in size over the years - both in terms of manpower and offices. We currently have over %1 employees across three offices in Malaysia and Malta. Further growth in headcount is expected this year to cater to the increased demand in our products and services."
 msgstr "Hemos crecido en tamaño a lo largo de los años - tanto en términos de personal como de oficinas. Actualmente tenemos más de %1 de empleados en tres oficinas en Malasia y Malta. Se espera que este año se produzca un mayor crecimiento en personal para atender la mayor demanda de nuestros productos y servicios."
-
-msgid "We've paid millions in commission to date through our industry-leading affiliate programme."
-msgstr "A la fecha, hemos pagado millones en comisiones a través de nuestro programa de afiliados líder en la industria."
 
 msgid "Web and software developer"
 msgstr "Desarrollador de web y de software"
@@ -13118,6 +13136,9 @@ msgstr ""
 msgid "Who can apply as a %1 affiliate?"
 msgstr "¿Quien puede ser afiliado de %1?"
 
+msgid "Who can apply as a %1 partner"
+msgstr ""
+
 msgid "Who can apply to be a Payment Agent?"
 msgstr "¿Quién puede solicitar ser un Agente de Pago?"
 
@@ -13136,17 +13157,14 @@ msgstr "¿Por qué los clientes eligen utilizar Agentes de Pago?"
 msgid "Why limit yourself? Whatever your market view, %1 allows you to put your strategy to work and profit from your predictions."
 msgstr "¿Por qué limitarse? Sea cual sea su visión del mercado, %1 le permite poner en funcionamiento su estrategia y beneficiarse de sus predicciones."
 
+msgid "Why partner with us"
+msgstr ""
+
 msgid "Why pay more?"
 msgstr "¿Por qué pagar de más?"
 
 msgid "Why should I become a %1 affiliate?"
 msgstr "¿Por qué debería afiliarme a %1?"
-
-msgid "Why you should join the %1 Affiliate Programme"
-msgstr "Por qué debería unirse al Programa de afiliados de %1"
-
-msgid "Why you should join the %1 IB Programme"
-msgstr "¿Por qué debería unirse al Programa IB de %1?"
 
 msgid "Why you should trade binary options on MT5"
 msgstr "Por qué debería operar con opciones binarias en MT5"
@@ -13318,9 +13336,6 @@ msgstr "Sí estoy seguro"
 
 msgid "Yes, I understand"
 msgstr "Sí, lo entiendo"
-
-msgid "Yes, I want to sign up as an affiliate"
-msgstr "Sí, quiero registrarme como afiliado"
 
 msgid "Yes, I'm sure"
 msgstr "Sí, estoy seguro"
@@ -13882,6 +13897,9 @@ msgstr "O"
 
 msgid "paysafecard offers a voucher-based online payment method that does not require a bank account, credit card, or other personal information. For more information, please visit %1."
 msgstr "paysafecard ofrece un método de pago en línea basado en cupones que no requiere una cuenta bancaria, tarjeta de crédito u otra información personal. Para más información, visite %1."
+
+msgid "per lot"
+msgstr ""
 
 msgid "ratio of Account Equity to Total Margin, expressed as a percentage"
 msgstr ""
