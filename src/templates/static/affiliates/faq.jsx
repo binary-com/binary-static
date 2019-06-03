@@ -99,7 +99,7 @@ const FAQ = () => (
 
                 <SeparatorLine className='gr-padding-30' />
                 <div className='gr-padding-30 gr-parent center-text'>
-                    <a className='button-secondary' href={it.url_for('affiliate/signup')}>
+                    <a className='button-secondary' href={it.url_for('affiliate-ib')}>
                         <span>{it.L('Back to affiliate programme')}</span>
                     </a>
                 </div>
