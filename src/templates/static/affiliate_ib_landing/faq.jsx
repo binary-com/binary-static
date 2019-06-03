@@ -42,33 +42,29 @@ const FAQ = () => {
             <h2 className='faq-header'>{it.L('Frequently asked questions')}</h2>
 
             <div className='gr-row gr-row-align-center'>
-                <div className='gr-4 gr-12-m gr-padding-10'>
-                    <div className='faq-item'>
-                        <p className='faq-item-header secondary-color'>{it.L('Affiliate')}</p>
+                <div className='faq-item gr-3 gr-12-m'>
+                    <p className='faq-item-header secondary-color'>{it.L('Affiliate')}</p>
 
-                        <ul className='faq-item-content'>
-                            { affiliate_faq_items.map((item, index) => (
-                                <li key={index}>
-                                    <img className='faq-item-content-image' src={item.image} alt={item.text} />
-                                    <a href={item.link} className='faq-item-content-text'>{item.text}</a>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
+                    <ul className='faq-item-content'>
+                        { affiliate_faq_items.map((item, index) => (
+                            <li key={index}>
+                                <img className='faq-item-content-image' src={item.image} alt={item.text} />
+                                <a href={item.link} className='faq-item-content-text'>{item.text}</a>
+                            </li>
+                        ))}
+                    </ul>
                 </div>
-                <div className='gr-4 gr-12-m gr-padding-10'>
-                    <div className='faq-item'>
-                        <p className='faq-item-header secondary-color'>{it.L('Introducing Broker')}</p>
+                <div className='faq-item gr-3 gr-12-m'>
+                    <p className='faq-item-header secondary-color'>{it.L('Introducing Broker')}</p>
 
-                        <ul className='faq-item-content'>
-                            { ib_faq_item.map((item, index) => (
-                                <li key={index}>
-                                    <img className='faq-item-content-image' src={item.image} alt={item.text} />
-                                    <a href={item.link} className='faq-item-content-text'>{item.text}</a>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
+                    <ul className='faq-item-content'>
+                        { ib_faq_item.map((item, index) => (
+                            <li key={index}>
+                                <img className='faq-item-content-image' src={item.image} alt={item.text} />
+                                <a href={item.link} className='faq-item-content-text'>{item.text}</a>
+                            </li>
+                        ))}
+                    </ul>
                 </div>
             </div>
 
