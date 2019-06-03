@@ -47,6 +47,7 @@ const updateTabDisplay = require('../../_common/tab_selector').updateTabDisplay;
 const visible_classname = 'data-show-visible';
 const mt_company_rule   = 'mtcompany';
 const eu_country_rule   = 'eucountry';
+const all_rule          = 'all';
 
 const ContentVisibility = (() => {
     const init = () => {
@@ -140,6 +141,7 @@ const ContentVisibility = (() => {
         const rule_set_has_current    = rule_set.has(current_landing_company_shortcode);
         const rule_set_has_mt         = rule_set.has(mt_company_rule);
         const rule_set_has_eu_country = rule_set.has(eu_country_rule);
+        const rule_set_has_all        = rule_set.has(all_rule);
 
         let show_element = false;
 
@@ -152,7 +154,7 @@ const ContentVisibility = (() => {
             if (arr_mt5fin_shortcodes.some(el => mt5fin_rules.includes(el))) show_element = !is_exclude;
         }
 
-        return show_element;
+        return rule_set_has_all ? !is_exclude : show_element;
     };
 
     const controlVisibility = (current_landing_company_shortcode, client_has_mt_company, mt5_login_list) => {
