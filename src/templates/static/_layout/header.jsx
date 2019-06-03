@@ -103,7 +103,7 @@ const Header = () => (
                                                 { text: it.L('Binary Bot'),   href: 'https://bot.binary.com',       target: '_blank' },
                                                 { text: it.L('MetaTrader 5'), href: it.url_for('user/metatrader'),  className: 'invisible mt_visibility' },
                                                 { text: it.L('Ladders'),      href: it.url_for('multi_barriers_trading'), className: 'financial-only' },
-                                                { text: it.L('Deriv'),        href: 'https://deriv.app/?utm_source=binary&utm_medium=referral', target: '_blank', dataShow: '-eucountry, -all' }, // TODO: Remove `-all` from data-show when ready to promote Deriv
+                                                { text: it.L('Deriv'),        href: 'https://deriv.app/?utm_source=binary&utm_medium=referral', target: '_blank', dataShow: '-eucountry' },
                                             ],
                                         },
                                         { text: it.L('Portfolio'),    href: it.url_for('user/portfoliows'),    className: 'ico-only-hide client_logged_in invisible' },
