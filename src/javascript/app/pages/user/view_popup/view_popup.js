@@ -8,7 +8,6 @@ const Reset          = require('../../trade/reset');
 const TickDisplay    = require('../../trade/tick_trade');
 const Clock          = require('../../../base/clock');
 const BinarySocket   = require('../../../base/socket');
-const LoadingSpinner = require('../../../components/loading-spinner');
 const getElementById = require('../../../../_common/common_functions').getElementById;
 const localize       = require('../../../../_common/localize').localize;
 const State          = require('../../../../_common/storage').State;

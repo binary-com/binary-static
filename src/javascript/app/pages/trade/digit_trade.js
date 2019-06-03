@@ -30,7 +30,7 @@ const DigitDisplay = (() => {
         }
     };
 
-    const initTable = (id_render, calculated_height) =>{
+    const initTable = (id_render, calculated_height) => {
         $container = $(`#${id_render}`);
         $container
             .addClass('normal-font')
@@ -63,7 +63,7 @@ const DigitDisplay = (() => {
                 id   : 'digit_ticker_container',
             }));
         LoadingSpinner.show('table_digits');
-    }
+    };
 
     const calculateTableHeight = (proposal_open_contract) => (proposal_open_contract.tick_count + 1) * 40;
 
