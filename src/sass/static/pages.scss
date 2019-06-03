@@ -1548,6 +1548,11 @@ body #not_authenticated_financial ul.checked > li {
     }
 }
 
+.reason-textfield {
+    border-color: $COLOR_GRAY;
+    color: $COLOR_BLACK;
+}
+
 #invisible-label {
     display: none;
 }

@@ -1,8 +1,6 @@
 const BinarySocket     = require('../../../../base/socket');
-const Validation       = require('../../../../common/form_validation');
-const getElementById   = require('../../../../../_common/common_functions').getElementById;
 const localize         = require('../../../../../_common/localize').localize;
-const showLoadingImage = require('../../../../../_common/utility').showLoadingImage;
+const Url              = require('../../../../../_common/url');
 
 const AccountClosure = (() => {
     const form_selector = '#form_closure';
@@ -12,39 +10,29 @@ const AccountClosure = (() => {
             event.preventDefault();
             submitForm();
         });
-        getElementById('closure_description').setVisibility(1);
-        getElementById('form_closure').setVisibility(1);
+        $('#closure-container').setVisibility(1);
+        $('#other-reason').on('keyup', () => $('#other-reason').removeClass('error-field'));
     };
 
     const submitForm = () => {
         const $btn_submit = $(`${form_selector} #btn_submit`);
-        const $reason_select = $('#reason');
-        $btn_submit.attr('disabled', 'disabled');
-        showLoadingImage(getElementById('msg_form'));
+        const reason = getReason();
+        if (reason) {
+            $('#closure_loading').setVisibility(1);
+            $btn_submit.attr('disabled', true);
 
-        if (Validation.validate(form_selector)) {
-            let has_changed = false;
-            const data  = { account_closure: 1 };
-            const value = $reason_select.val();
-            const id    = $reason_select.attr('id');
-
-            if ($reason_select.val()) has_changed = true;
-            if (!has_changed) {
-                showFormMessage(localize('You did not change anything.'), false);
-                setTimeout(() => { $btn_submit.removeAttr('disabled'); }, 1000);
-                return;
-            }
-            if (value.length) {
-                data[id] = value;
-            }
+            const data  = { account_closure: 1, reason };
 
             BinarySocket.send(data).then((response) => {
-                $btn_submit.removeAttr('disabled');
                 if (response.error) {
                     showFormMessage(localize('Sorry, an error occurred while processing your request.'), false);
+                    $btn_submit.attr('disabled', false);
                 } else {
-                    showFormMessage(localize('Your changes have been updated successfully.'), true);
-                    $('#closure_loading').remove();
+                    $('#closure_loading').setVisibility(0);
+                    $('#closure-container').setVisibility(0);
+                    $('#msg_main').setVisibility(1);
+
+                    setTimeout(() => window.location.href = Url.urlFor('home'), 10000);
                 }
             });
         } else {
@@ -58,13 +46,36 @@ const AccountClosure = (() => {
             $(form_selector).setVisibility(0);
             $('#msg_main').setVisibility(1);
         } else {
+            $.scrollTo($('#reason'), 500, { offset: -20 });
             $('#msg_form')
                 .attr('class', is_success ? 'success-msg' : 'errorfield')
                 .html(is_success ? $('<ul/>', { class: 'checked', style: 'display: inline-block;' }).append($('<li/>', { text: localized_msg })) : localized_msg)
                 .css('display', 'block')
                 .delay(5000)
-                .fadeOut(1000);
+                .fadeOut(500);
         }
+    };
+
+    const getReason = () => {
+        const $textField = $('#other-reason');
+        const value      = $('input[type=radio]:checked').val();
+        const id         = $('input[type=radio]:checked').attr('id');
+        const radioText  = $(`label[for=${id}]`).text();
+        const textInput  = $textField.val();
+        if (value){
+            if (value === 'other') {
+                if (!textInput) {
+                    $textField.addClass('error-field');
+                    showFormMessage(localize('Please specify your reason.'));
+                    return false;
+                } else if (textInput.length > 3 && textInput.length < 50) return textInput;
+                showFormMessage(localize('Maximum lenght: 50 characters'));
+                return false;
+            }
+            return radioText;
+        }
+        showFormMessage(localize('Please select a reason.'));
+        return false;
     };
 
     return {
