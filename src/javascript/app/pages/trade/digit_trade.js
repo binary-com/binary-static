@@ -30,25 +30,48 @@ const DigitDisplay = (() => {
         }
     };
 
-    const init = (id_render, proposal_open_contract) => {
-        const calculated_height = (proposal_open_contract.tick_count + 1) * 40;
-
-        tick_count = 1;
-        contract   = proposal_open_contract;
-        spot_times = [];
-
+    const initTable = (id_render, calculated_height) =>{
         $container = $(`#${id_render}`);
         $container
             .addClass('normal-font')
-            .html($('<h5 />', { text: contract.display_name, class: 'center-text' }))
-            .append($('<div />', { class: 'gr-8 gr-centered gr-12-m', style: `height: ${calculated_height}px;` })
-                .append($('<div />', { class: 'gr-row', id: 'table_digits' })
-                    .append($('<strong />', { class: 'gr-3', text: localize('Tick') }))
-                    .append($('<strong />', { class: 'gr-3', text: localize('Spot') }))
-                    .append($('<strong />', { class: 'gr-6', text: localize('Spot Time (GMT)') }))))
-            .append($('<div />', { class: 'digit-ticker invisible', id: 'digit_ticker_container' }));
+            .html($('<h5 />', {
+                text : contract.display_name,
+                class: 'center-text',
+            }))
+            .append($('<div />', {
+                class: 'gr-8 gr-centered gr-12-m',
+                style: `height: ${calculated_height}px;`,
+            })
+                .append($('<div />', {
+                    class: 'gr-row',
+                    id   : 'table_digits',
+                })
+                    .append($('<strong />', {
+                        class: 'gr-3',
+                        text : localize('Tick'),
+                    }))
+                    .append($('<strong />', {
+                        class: 'gr-3',
+                        text : localize('Spot'),
+                    }))
+                    .append($('<strong />', {
+                        class: 'gr-6',
+                        text : localize('Spot Time (GMT)'),
+                    }))))
+            .append($('<div />', {
+                class: 'digit-ticker invisible',
+                id   : 'digit_ticker_container',
+            }));
         LoadingSpinner.show('table_digits');
+    }
 
+    const calculateTableHeight = (proposal_open_contract) => (proposal_open_contract.tick_count + 1) * 40;
+
+    const init = (id_render, proposal_open_contract) => {
+        contract                = proposal_open_contract;
+        tick_count              = 1;
+        spot_times              = [];
+        initTable(id_render, calculateTableHeight(proposal_open_contract));
         DigitTicker.init(
             'digit_ticker_container',
             contract.contract_type,
@@ -57,9 +80,10 @@ const DigitDisplay = (() => {
             contract.status
         );
 
+        const tick_start_time = +contract.entry_tick_time || +contract.date_start; // In some situations, entry_tick_time is undefined, define a fallback.
         const request = {
             ticks_history: contract.underlying,
-            start        : +contract.entry_tick_time || +contract.purchase_time,
+            start        : tick_start_time,
         };
 
         subscribe(request);
@@ -144,8 +168,10 @@ const DigitDisplay = (() => {
     };
 
     return {
+        calculateTableHeight,
         end,
         init,
+        initTable,
         update,
     };
 })();

@@ -8,6 +8,7 @@ const Reset          = require('../../trade/reset');
 const TickDisplay    = require('../../trade/tick_trade');
 const Clock          = require('../../../base/clock');
 const BinarySocket   = require('../../../base/socket');
+const LoadingSpinner = require('../../../components/loading-spinner');
 const getElementById = require('../../../../_common/common_functions').getElementById;
 const localize       = require('../../../../_common/localize').localize;
 const State          = require('../../../../_common/storage').State;
@@ -260,9 +261,12 @@ const ViewPopup = (() => {
 
         const is_digit = /digit/i.test(contract.contract_type);
         if (is_digit) {
-            if (!chart_started) {
+            if (!chart_started && contract.entry_tick_time) {
                 DigitDisplay.init(id_tick_chart, contract);
                 chart_started = true;
+            } else if (!chart_started && !contract.entry_tick_time) {
+                // Since the contract not started yet, display the loading table:
+                DigitDisplay.initTable(id_tick_chart, DigitDisplay.calculateTableHeight(contract));
             }
         } else if (!chart_started && !contract.tick_count) {
             if (!chart_init) {
