@@ -150,13 +150,16 @@
                         display: flex;
                     }
                 }
+                #affiliate .tm-a {
+                    text-transform: none;
+                }
                 #ib {
                     &-header {
                         margin: 24px 0;
                         font-size: 28px;
                     }
                     table {
-                        th, td {
+                        th, td:first-child {
                             text-align: left;
                             font-weight: bold;
                             padding-left: 42px;
