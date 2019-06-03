@@ -63,24 +63,24 @@ const TypesOfPartnership = () => (
                                                     ],
                                                     tbody: [
                                                         [
-                                                            { text: '1' },
-                                                            { text: '$0 - $10,000' },
-                                                            { text: '20%' },
+                                                            { text: it.L('1') },
+                                                            { text: it.L('$0 - $10,000') },
+                                                            { text: it.L('20%') },
                                                         ],
                                                         [
-                                                            { text: '2' },
-                                                            { text: '$10,001 – $50,000' },
-                                                            { text: '25%' },
+                                                            { text: it.L('2') },
+                                                            { text: it.L('$10,001 – $50,000') },
+                                                            { text: it.L('25%') },
                                                         ],
                                                         [
-                                                            { text: '3' },
-                                                            { text: '$50,001 – $100,000' },
-                                                            { text: '30%' },
+                                                            { text: it.L('3') },
+                                                            { text: it.L('$50,001 – $100,000') },
+                                                            { text: it.L('30%') },
                                                         ],
                                                         [
-                                                            { text: '4' },
+                                                            { text: it.L('4') },
                                                             { text: it.L('$100,001 and above') },
-                                                            { text: '35%' },
+                                                            { text: it.L('35%') },
                                                         ],
                                                     ],
                                                 }}
@@ -104,28 +104,28 @@ const TypesOfPartnership = () => (
                                                     ],
                                                     tbody: [
                                                         [
-                                                            { text: '0 – 19.999%' },
-                                                            { text: '1.25%' },
+                                                            { text: it.L('0 – 19.999%') },
+                                                            { text: it.L('1.25%') },
                                                         ],
                                                         [
-                                                            { text: '20 – 39.999%' },
-                                                            { text: '1%' },
+                                                            { text: it.L('20 – 39.999%') },
+                                                            { text: it.L('1%') },
                                                         ],
                                                         [
-                                                            { text: '40 – 59.999%' },
-                                                            { text: '0.75%' },
+                                                            { text: it.L('40 – 59.999%') },
+                                                            { text: it.L('0.75%') },
                                                         ],
                                                         [
-                                                            { text: '60 – 79.999%' },
-                                                            { text: '5%' },
+                                                            { text: it.L('60 – 79.999%') },
+                                                            { text: it.L('5%') },
                                                         ],
                                                         [
-                                                            { text: '80 – 94.999%' },
-                                                            { text: '0.25%' },
+                                                            { text: it.L('80 – 94.999%') },
+                                                            { text: it.L('0.25%') },
                                                         ],
                                                         [
-                                                            { text: '95%+' },
-                                                            { text: '0%' },
+                                                            { text: it.L('95%+') },
+                                                            { text: it.L('0%') },
                                                         ],
                                                     ],
                                                 }}
@@ -168,43 +168,43 @@ const TypesOfPartnership = () => (
                                     tbody: [
                                         [
                                             { text: it.L('Crash 1000 Index') },
-                                            { text: '0.20' },
+                                            { text: it.L('0.20') },
                                         ],
                                         [
                                             { text: it.L('Boom 1000 Index') },
-                                            { text: '0.20' },
+                                            { text: it.L('0.20') },
                                         ],
                                         [
                                             { text: it.L('Volatility 100 Index') },
-                                            { text: '15.00' },
+                                            { text: it.L('15.00') },
                                         ],
                                         [
                                             { text: it.L('Volatility 75 Index') },
-                                            { text: '10.00' },
+                                            { text: it.L('10.00') },
                                         ],
                                         [
                                             { text: it.L('Volatility 50 Index') },
-                                            { text: '7.50' },
+                                            { text: it.L('7.50') },
                                         ],
                                         [
                                             { text: it.L('Volatility 25 Index') },
-                                            { text: '3.50' },
+                                            { text: it.L('3.50') },
                                         ],
                                         [
                                             { text: it.L('Volatility 10 Index') },
-                                            { text: '1.50' },
+                                            { text: it.L('1.50') },
                                         ],
                                         [
                                             { text: it.L('HF Volatility 100 Index') },
-                                            { text: '15.00' },
+                                            { text: it.L('15.00') },
                                         ],
                                         [
                                             { text: it.L('HF Volatility 50 Index') },
-                                            { text: '7.50' },
+                                            { text: it.L('7.50') },
                                         ],
                                         [
                                             { text: it.L('HF Volatility 10 Index') },
-                                            { text: '1.50' },
+                                            { text: it.L('1.50') },
                                         ],
                                     ],
                                 }}
@@ -229,11 +229,11 @@ const TypesOfPartnership = () => (
                                     tbody: [
                                         [
                                             { text: it.L('Forex and metals*') },
-                                            { text: '10' },
+                                            { text: it.L('10') },
                                         ],
                                         [
                                             { text: it.L('Cryptocurrencies**') },
-                                            { text: '0.3%' },
+                                            { text: it.L('0.3%') },
                                         ],
                                     ],
                                 }}
@@ -254,7 +254,7 @@ const TypesOfPartnership = () => (
                                     tbody: [
                                         [
                                             { text: it.L('Forex*') },
-                                            { text: '5' },
+                                            { text: it.L('5') },
                                         ],
                                     ],
                                 }}
