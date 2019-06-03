@@ -138,7 +138,8 @@ const Platform = () => (
             <h1 className='center-text'>{it.L('Platforms')}</h1>
             <p className='center-text gr-padding-20 gr-parent'>{it.L('Explore all the trading platforms, apps, and tools we offer')}</p>
         </div>
-        <div className='fill-bg-color gr-padding-30 mobile-hide' data-show='-eucountry'>
+        {/* TODO: Remove `-all` from data-show when ready to promote Deriv */}
+        <div className='fill-bg-color gr-padding-30 mobile-hide' data-show='-eucountry, -all'>
             <div className='container gr-padding-30 gr-child'>
                 <h2 className='primary-color center-text'>
                     {it.L('Deriv — an all-new trading experience')}
@@ -192,9 +193,10 @@ const Platform = () => (
                 <div className='tab-content'>
                     <TabContentContainer>
                         <TabContent id='beginner'>
+                            {/* TODO: Remove `-all` from data-show when ready to promote Deriv */}
                             <Platforms
                                 image='deriv-app'
-                                data_show='-eucountry'
+                                data_show='-eucountry, -all'
                                 header='Deriv'
                                 status='beta'
                                 className='mobile-hide'
