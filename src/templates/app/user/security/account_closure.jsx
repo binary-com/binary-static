@@ -35,7 +35,7 @@ const AccountClosure = () => (
                         />
                         <ClosureDescription
                             title={it.L('Change my account limits')}
-                            subtitle={it.L('You may set limits in your account to help prevent unwanted losses.[_1]Go to [_2]self-exclusion page[_3] to manage your account limits.', '<br />', '<a href="#">', '</a>')}
+                            subtitle={it.L('You may set limits in your account to help prevent unwanted losses.[_1]Go to [_2]self-exclusion page[_3] to manage your account limits.', '<br />', `<a href=${it.url_for('user/security/self_exclusionws')}>`, '</a>')}
                         />
                     </div>
                 </fieldset>
@@ -45,7 +45,7 @@ const AccountClosure = () => (
                     title={it.L('Close open positions')}
                     list_items={[
                         it.L('Remember to close all open positions in [_1]all[_2] your accounts.', '<strong>', '</strong>'),
-                        it.L('Go to [_1]portfolio[_2] page to close your open positions.', `<a href="${it.url_for('user/portfoliows')}">`, '</a>'),
+                        it.L('Go to [_1]portfolio page[_2] to close your open positions.', `<a href="${it.url_for('user/portfoliows')}">`, '</a>'),
                     ]}
                 />
                 <ClosureDescription
@@ -53,7 +53,7 @@ const AccountClosure = () => (
                     subtitle={it.L('Remember to withdraw your funds from [_1]all[_2] your accounts', '<strong>', '</strong>')}
                     list_items={[
                         it.L('Go to [_1]Cashier[_2] to withdraw.', `<a href="${it.url_for('cashier')}">`, '</a>'),
-                        it.L('Go to [_1]MT5 dashboard[_2] to withdraw from your [_3] MT5 account.', `<a href="${it.url_for('cashier')}">`, '</a>', it.website_name),
+                        it.L('Go to [_1]MT5 dashboard[_2] to withdraw from your [_3] MT5 account.', `<a href="${it.url_for('user/metatrader')}">`, '</a>', it.website_name),
                     ]}
                 />
                 <SeparatorLine className='gr-padding-10' />
