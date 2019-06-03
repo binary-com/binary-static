@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-05-31 10:11\n"
+"PO-Revision-Date: 2019-06-03 02:56\n"
 "Last-Translator: binarycom\n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -14,6 +14,24 @@ msgstr ""
 "X-Crowdin-Language: zh-CN\n"
 "X-Crowdin-File: messages.pot\n"
 "Language: zh_CN\n"
+
+msgid "1"
+msgstr ""
+
+msgid "2"
+msgstr ""
+
+msgid "3"
+msgstr ""
+
+msgid "4"
+msgstr ""
+
+msgid "5"
+msgstr ""
+
+msgid "10"
+msgstr ""
 
 msgid "404"
 msgstr "404"
@@ -108,6 +126,12 @@ msgstr "\"交易\" 指公司根据客户协议随时向客户提供的任何金�
 msgid "$ per USD 100,000 of turnover"
 msgstr ""
 
+msgid "$0 - $10,000"
+msgstr ""
+
+msgid "$10,001 – $50,000"
+msgstr ""
+
 msgid "$100,000 - $250,000"
 msgstr "$100,000 - $250,000"
 
@@ -128,6 +152,9 @@ msgstr "$250,001 - $500,000"
 
 msgid "$50,001 - $100,000"
 msgstr "$50,001 - $100,000"
+
+msgid "$50,001 – $100,000"
+msgstr ""
 
 msgid "$500,001 - $1,000,000"
 msgstr "$500,001 - $1,000,000"
@@ -525,14 +552,35 @@ msgstr "（四）结算的可能性"
 msgid "(e) Size and nature"
 msgstr "（五）大小和性质"
 
+msgid "0 – 19.999%"
+msgstr ""
+
+msgid "0%"
+msgstr ""
+
 msgid "0-1 year"
 msgstr "0-1 年"
 
 msgid "0-5 transactions in the past 12 months"
 msgstr "过去12个月内0-5次交易"
 
+msgid "0.20"
+msgstr ""
+
+msgid "0.25%"
+msgstr ""
+
+msgid "0.3%"
+msgstr ""
+
+msgid "0.75%"
+msgstr ""
+
 msgid "1 million transactions/day"
 msgstr "一百万笔交易/天"
+
+msgid "1%"
+msgstr ""
 
 msgid "1-2 years"
 msgstr "1-2 年"
@@ -540,8 +588,20 @@ msgstr "1-2 年"
 msgid "1. Proof of identity"
 msgstr "1. 身份证明"
 
+msgid "1.25%"
+msgstr ""
+
+msgid "1.50"
+msgstr ""
+
+msgid "10.00"
+msgstr ""
+
 msgid "11-39 transactions in the past 12 months"
 msgstr "过去12个月内11-39次交易"
+
+msgid "15.00"
+msgstr ""
 
 msgid "150+"
 msgstr ""
@@ -561,8 +621,23 @@ msgstr "双向报价"
 msgid "2. Proof of address"
 msgstr "2. 地址证明"
 
+msgid "20 – 39.999%"
+msgstr ""
+
+msgid "20%"
+msgstr ""
+
+msgid "25%"
+msgstr ""
+
 msgid "3. Selfie or self-portrait photo"
 msgstr "3. 自拍或自拍肖像"
+
+msgid "3.50"
+msgstr ""
+
+msgid "30%"
+msgstr ""
 
 msgid "30-day limit on losses"
 msgstr "30天损失限额"
@@ -570,10 +645,19 @@ msgstr "30天损失限额"
 msgid "30-day turnover limit"
 msgstr "30天交易限额"
 
+msgid "35%"
+msgstr ""
+
 msgid "40 transactions or more in the past 12 months"
 msgstr "过去12个月内40次交易或以上"
 
+msgid "40 – 59.999%"
+msgstr ""
+
 msgid "40K+"
+msgstr ""
+
+msgid "5%"
 msgstr ""
 
 msgid "6-10 transactions in the past 12 months"
@@ -582,11 +666,23 @@ msgstr "过去12个月内6-10次交易"
 msgid "6-digit code"
 msgstr "6位数代码"
 
+msgid "60 – 79.999%"
+msgstr ""
+
 msgid "7-day limit on losses"
 msgstr "7天期损失限额"
 
 msgid "7-day turnover limit"
 msgstr "7天期交易限额"
+
+msgid "7.50"
+msgstr ""
+
+msgid "80 – 94.999%"
+msgstr ""
+
+msgid "95%+"
+msgstr ""
 
 msgid "<< Back to job descriptions"
 msgstr "<< 返回工作说明"
@@ -4678,7 +4774,7 @@ msgstr "关于就公司的数据处理方式事宜向公司的主要监督机构
 msgid "For e-wallets or local currencies not supported by %1."
 msgstr "%1不支持的电子錢包或本地货币。"
 
-msgid "For example, a round trade (i.e. open and close position) of 1 lot of Vol 75 Index for a price of USD 125,000 would pay USD 8."
+msgid "For example, a round trade (i.e. open and close position) of 1 lot of Vol 75 Index for a price of USD 125,000 would pay USD 12.5."
 msgstr ""
 
 msgid "For example, if you buy a US 100 contract and it's not going as planned, you just need to sell it to cut your losses at the current market price."
@@ -12363,7 +12459,7 @@ msgstr "美元"
 msgid "USD 1 per point"
 msgstr "每点 1 美元"
 
-msgid "USD 10 X 1 lot x USD 100,000/125,000 = USD 8"
+msgid "USD 10 X 1 lot x USD 125,000/100,000 = USD 12.5"
 msgstr ""
 
 msgid "USD Index – Measures the value of the US Dollar against a basket of five global currencies (EUR, GBP, JPY, CAD, AUD), each weighted by 20%"
