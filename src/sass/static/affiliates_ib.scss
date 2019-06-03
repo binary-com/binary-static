@@ -162,7 +162,7 @@
                         th, td:first-child {
                             text-align: left;
                             font-weight: bold;
-                            padding-left: 42px;
+                            padding-left: 0 10%;
                         }
                         th + th, td + td, th:only-child {
                             text-align: center;
@@ -170,6 +170,7 @@
                         th + th {
                             border-bottom-width: 1px;
                             border-color: $COLOR_WHITE;
+                            width: 50%;
                         }
                     }
                 }
