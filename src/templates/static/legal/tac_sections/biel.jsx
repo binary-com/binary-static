@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Biel = () => (
-    <div>
+    <div data-show='eucountry'>
         <h2 data-anchor='supplementary-terms-and-conditions'>{it.L('Supplementary terms and conditions for Financial Products offered by Binary Investments (Europe) Ltd')}</h2>
         <p>{it.L('These supplementary terms and conditions (these "ST&Cs") apply solely to the client of Binary Investments (Europe) Ltd ("BIEL") and will govern the relationship between clients and BIEL when trading Financial Products (as defined in the Key information documents [_1]here[_2]) with BIEL.', `<a href=${it.url_for('regulation#key_information_documents')}>`, '</a>')}</p>
         <p>{it.L('These ST&Cs form part of, and need to be read together with, the general terms and conditions relating to the use of [_1].', it.website_name)}</p>
