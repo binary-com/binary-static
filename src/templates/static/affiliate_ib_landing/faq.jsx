@@ -19,7 +19,7 @@ const FAQ = () => {
         },
     ];
 
-    const ib_faq_item = [
+    const ib_faq_items = [
         {
             image: it.url_for('images/pages/affiliates_ib_landing/icons/marketing-dark.svg'),
             link : `${it.url_for('ib-programme/ib-faq')}#general`,
@@ -58,7 +58,7 @@ const FAQ = () => {
                     <p className='faq-item-header secondary-color'>{it.L('Introducing Broker')}</p>
 
                     <ul className='faq-item-content'>
-                        { ib_faq_item.map((item, index) => (
+                        { ib_faq_items.map((item, index) => (
                             <li key={index}>
                                 <img className='faq-item-content-image' src={item.image} alt={item.text} />
                                 <a href={item.link} className='faq-item-content-text'>{item.text}</a>
