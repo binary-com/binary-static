@@ -117,7 +117,7 @@ const TypesOfPartnership = () => (
                                                         ],
                                                         [
                                                             { text: it.L('60 – 79.999%') },
-                                                            { text: it.L('5%') },
+                                                            { text: it.L('0.5%') },
                                                         ],
                                                         [
                                                             { text: it.L('80 – 94.999%') },
