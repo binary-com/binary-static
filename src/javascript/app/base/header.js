@@ -254,8 +254,7 @@ const Header = (() => {
         BinarySocket.wait('authorize', 'landing_company').then(() => {
             let get_account_status,
                 status;
-            // TODO [->svg]
-            const is_svg = Client.get('landing_company_shortcode') === 'costarica' || Client.get('landing_company_shortcode') === 'svg';
+            const is_svg = Client.get('landing_company_shortcode') === 'svg';
             const necessary_withdrawal_fields = is_svg
                 ? State.getResponse('landing_company.financial_company.requirements.withdrawal')
                 : [];
@@ -276,7 +275,7 @@ const Header = (() => {
                         'tax_residence',
                         ...(Client.get('residence') === 'gb' || Client.get('landing_company_shortcode') === 'iom' ? ['address_postcode'] : []),
                     ] : [];
-                
+
                 const get_settings = State.getResponse('get_settings');
                 return required_fields.some(field => !get_settings[field]);
             };

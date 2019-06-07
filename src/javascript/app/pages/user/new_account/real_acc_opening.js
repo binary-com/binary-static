@@ -14,11 +14,9 @@ const RealAccOpening = (() => {
             if (AccountOpening.redirectAccount()) return;
 
             BinarySocket.wait('landing_company', 'get_account_status').then(() => {
-                // TODO [->svg]
                 const is_unwelcome_uk = State.getResponse('get_account_status.status').some(status => status === 'unwelcome') && (/gb/.test(Client.get('residence')));
 
-                if (State.getResponse('authorize.upgradeable_landing_companies').indexOf('svg') !== -1 ||
-                    State.getResponse('authorize.upgradeable_landing_companies').indexOf('costarica') !== -1) {
+                if (State.getResponse('authorize.upgradeable_landing_companies').indexOf('svg') !== -1) {
                     getElementById('risk_disclaimer').setVisibility(1);
                 }
                 if (is_unwelcome_uk) {
