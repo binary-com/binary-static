@@ -42,20 +42,14 @@ const AccountClosure = (() => {
         }
     };
 
-    const showFormMessage = (localized_msg, is_success) => {
-        if (is_success) {
-            $.scrollTo($('h1#heading'), 500, { offset: -10 });
-            $(form_selector).setVisibility(0);
-            $('#msg_main').setVisibility(1);
-        } else {
-            $.scrollTo($('#reason'), 500, { offset: -20 });
-            $('#msg_form')
-                .attr('class', is_success ? 'success-msg' : 'errorfield')
-                .html(is_success ? $('<ul/>', { class: 'checked', style: 'display: inline-block;' }).append($('<li/>', { text: localized_msg })) : localized_msg)
-                .css('display', 'block')
-                .delay(5000)
-                .fadeOut(500);
-        }
+    const showFormMessage = (localized_msg) => {
+        $.scrollTo($('#reason'), 500, { offset: -20 });
+        $('#msg_form')
+            .attr('class', 'errorfield')
+            .html(localized_msg)
+            .css('display', 'block')
+            .delay(5000)
+            .fadeOut(500);
     };
 
     const getReason = () => {
