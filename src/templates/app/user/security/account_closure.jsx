@@ -7,12 +7,12 @@ const AccountClosure = () => (
     <React.Fragment>
         <div id='msg_main' className='center-text gr-gutter gr-padding-10 invisible'>
             <h1>{it.L('Account closure confirmed')}</h1>
-            <p className='notice-msg'>{it.L(`Accounts closed successfully. A confirmation email will be sent to your email.[_1]This page will redirect to the ${it.website_name} homepage after 10 seconds.`, '<br />')}</p>
+            <p className='notice-msg'>{it.L('Accounts closed successfully. A confirmation email will be sent to your email.[_1]This page will redirect to the [_2] homepage after 10 seconds.', '<br />', it.website_name)}</p>
         </div>
         <div id='closure-container'>
             <div id='main-header' className='gr-padding-30'>
                 <h1 id='heading'>{it.L('Account Closure')}</h1>
-                <p>{it.L(`Closing your ${it.website_name} accounts involves closing all open positions in your accounts, and withdrawing your funds, and deactivating your accounts with ${it.website_name}`)}</p>
+                <p>{it.L('Closing your [_1] accounts involves closing all open positions in your accounts, and withdrawing your funds, and deactivating your accounts with [_1]', it.website_name)}</p>
             </div>
 
             <div className='gr-no-gutter' id='closure_description'>

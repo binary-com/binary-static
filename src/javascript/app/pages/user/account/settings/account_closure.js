@@ -1,17 +1,20 @@
-const BinarySocket     = require('../../../../base/socket');
-const localize         = require('../../../../../_common/localize').localize;
-const Url              = require('../../../../../_common/url');
+const BinarySocket = require('../../../../base/socket');
+const localize     = require('../../../../../_common/localize').localize;
+const Url          = require('../../../../../_common/url');
 
 const AccountClosure = (() => {
     const form_selector = '#form_closure';
-
+    let $textField;
+    
     const onLoad = () => {
+        $textField = $('#other-reason');
+
         $(form_selector).on('submit', (event) => {
             event.preventDefault();
             submitForm();
         });
         $('#closure-container').setVisibility(1);
-        $('#other-reason').on('keyup', () => $('#other-reason').removeClass('error-field'));
+        $textField.on('keyup', () => $textField.removeClass('error-field'));
     };
 
     const submitForm = () => {
@@ -22,7 +25,6 @@ const AccountClosure = (() => {
             $btn_submit.attr('disabled', true);
 
             const data  = { account_closure: 1, reason };
-
             BinarySocket.send(data).then((response) => {
                 if (response.error) {
                     showFormMessage(localize('Sorry, an error occurred while processing your request.'), false);
@@ -57,7 +59,6 @@ const AccountClosure = (() => {
     };
 
     const getReason = () => {
-        const $textField = $('#other-reason');
         const value      = $('input[type=radio]:checked').val();
         const id         = $('input[type=radio]:checked').attr('id');
         const radioText  = $(`label[for=${id}]`).text();
@@ -69,7 +70,7 @@ const AccountClosure = (() => {
                     showFormMessage(localize('Please specify your reason.'));
                     return false;
                 } else if (textInput.length > 3 && textInput.length < 50) return textInput;
-                showFormMessage(localize('Maximum lenght: 50 characters'));
+                showFormMessage(localize('Maximum length: 50 characters'));
                 return false;
             }
             return radioText;

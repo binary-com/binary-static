@@ -80,7 +80,7 @@ const pages_config = {
     cfds                     : { module: GetStarted.CFDs },
     // charity                  : { module: Charity },
     change_passwordws        : { module: ChangePassword,             is_authenticated: true },
-    closurews                : { module: AccountClosure,             is_authenticated: true },
+    closure                  : { module: AccountClosure,             is_authenticated: true },
     contact                  : { module: Contact },
     cryptocurrencies         : { module: GetStarted.Cryptocurrencies },
     cyberjaya                : { module: StaticPages.Locations },
