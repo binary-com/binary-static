@@ -30,12 +30,12 @@ const DigitDisplay = (() => {
         }
     };
 
-    const initTable = (id_render, calculated_height) => {
+    const initTable = (id_render, calculated_height, poc) => {
         $container = $(`#${id_render}`);
         $container
             .addClass('normal-font')
             .html($('<h5 />', {
-                text : contract.display_name,
+                text : poc.display_name,
                 class: 'center-text',
             }))
             .append($('<div />', {
@@ -71,7 +71,7 @@ const DigitDisplay = (() => {
         contract                = proposal_open_contract;
         tick_count              = 1;
         spot_times              = [];
-        initTable(id_render, calculateTableHeight(proposal_open_contract));
+        initTable(id_render, calculateTableHeight(proposal_open_contract), proposal_open_contract);
         DigitTicker.init(
             'digit_ticker_container',
             contract.contract_type,
@@ -80,7 +80,7 @@ const DigitDisplay = (() => {
             contract.status
         );
 
-        const tick_start_time = +contract.entry_tick_time || +contract.date_start; // In some situations, entry_tick_time is undefined, define a fallback.
+        const tick_start_time = +contract.entry_tick_time;
         const request = {
             ticks_history: contract.underlying,
             start        : tick_start_time,
