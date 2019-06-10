@@ -131,6 +131,8 @@
                         a {
                             outline: none;
                             width: 100%;
+                            font-size: 18px;
+                            font-weight: 700;
                         }
                         &:first-child {
                             flex-basis: 48%;
@@ -152,6 +154,7 @@
                 }
                 #affiliate .tm-a {
                     text-transform: none;
+                    font-weight: 300;
                 }
                 #ib {
                     &-header {
