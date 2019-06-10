@@ -168,11 +168,11 @@ const MetaTraderConfig = (() => {
                             if (is_maltainvest && !has_financial_account) resolve();
 
                             const response_get_account_status = State.getResponse('get_account_status');
-                            if (/trading_experience_not_complete/.test(response_get_account_status.status)) {
-                                showAssessment('.trading_experience');
-                                is_ok = false;
-                            } else if (/financial_assessment_not_complete/.test(response_get_account_status.status)) {
+                            if (/financial_assessment_not_complete/.test(response_get_account_status.status)) {
                                 showAssessment('.assessment');
+                                is_ok = false;
+                            } else if (/trading_experience_not_complete/.test(response_get_account_status.status)) {
+                                showAssessment('.trading_experience');
                                 is_ok = false;
                             }
                             if (+State.getResponse('landing_company.config.tax_details_required') === 1 && (!response_get_settings.tax_residence || !response_get_settings.tax_identification_number)) {
