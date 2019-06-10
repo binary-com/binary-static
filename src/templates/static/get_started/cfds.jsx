@@ -2,10 +2,10 @@ import React from 'react';
 import { Section, HeaderSecondary, ListStrong, BuySellImage, MtBox, NavButtons, MTAccountOpeningButton } from './common.jsx';
 import { List, Table } from '../../_common/components/elements.jsx';
 
-const hundredth   = '0.01';
-const tenth       = '0.10';
-const three_tenth = '0.30';
-const five_tenth  = '0.50';
+const hundredth  = '0.01';
+const tenth      = '0.10';
+const five_tenth = '0.50';
+const three      = '3.00';
 
 const Cfds = () => (
     <div className='static_full get-started'>
@@ -113,14 +113,14 @@ const Cfds = () => (
                                 { text: it.L('Volume step'),    className: 'gr-padding-10 w-80' },
                             ]],
                             tbody: [
-                                [{ text: 'Volatility 10 Index'     }, { text: it.L('USD 1 per point') }, { text: tenth       }, { text: hundredth }],
-                                [{ text: 'Volatility 25 Index'     }, { text: it.L('USD 1 per point') }, { text: five_tenth  }, { text: hundredth }],
-                                [{ text: 'Volatility 50 Index'     }, { text: it.L('USD 1 per point') }, { text: five_tenth  }, { text: hundredth }],
-                                [{ text: 'Volatility 75 Index'     }, { text: it.L('USD 1 per point') }, { text: hundredth   }, { text: hundredth }],
-                                [{ text: 'Volatility 100 Index'    }, { text: it.L('USD 1 per point') }, { text: hundredth   }, { text: hundredth }],
-                                [{ text: 'HF Volatility 10 Index'  }, { text: it.L('USD 1 per point') }, { text: tenth       }, { text: hundredth }],
-                                [{ text: 'HF Volatility 50 Index'  }, { text: it.L('USD 1 per point') }, { text: five_tenth  }, { text: hundredth }],
-                                [{ text: 'HF Volatility 100 Index' }, { text: it.L('USD 1 per point') }, { text: three_tenth }, { text: hundredth }],
+                                [{ text: 'Volatility 10 Index'     }, { text: it.L('USD 1 per point') }, { text: five_tenth }, { text: hundredth }],
+                                [{ text: 'Volatility 25 Index'     }, { text: it.L('USD 1 per point') }, { text: five_tenth }, { text: hundredth }],
+                                [{ text: 'Volatility 50 Index'     }, { text: it.L('USD 1 per point') }, { text: three      }, { text: hundredth }],
+                                [{ text: 'Volatility 75 Index'     }, { text: it.L('USD 1 per point') }, { text: hundredth  }, { text: hundredth }],
+                                [{ text: 'Volatility 100 Index'    }, { text: it.L('USD 1 per point') }, { text: tenth      }, { text: hundredth }],
+                                [{ text: 'HF Volatility 10 Index'  }, { text: it.L('USD 1 per point') }, { text: five_tenth }, { text: hundredth }],
+                                [{ text: 'HF Volatility 50 Index'  }, { text: it.L('USD 1 per point') }, { text: three      }, { text: hundredth }],
+                                [{ text: 'HF Volatility 100 Index' }, { text: it.L('USD 1 per point') }, { text: three      }, { text: hundredth }],
                             ],
                         }}
                     />
