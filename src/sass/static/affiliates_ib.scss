@@ -133,6 +133,7 @@
                             width: 100%;
                             font-size: 18px;
                             font-weight: 700;
+                            color: $COLOR_BLUE;
                         }
                         &:first-child {
                             flex-basis: 49%;
@@ -144,6 +145,10 @@
                         }
                         &.ui-tabs-active {
                             background: $COLOR_ORANGE;
+
+                            a {
+                                color: $COLOR_WHITE;
+                            }
                         }
                     }
                 }
