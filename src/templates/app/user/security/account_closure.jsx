@@ -1,16 +1,22 @@
-import React from 'react';
-import Loading from '../../../_common/components/loading.jsx';
+import React             from 'react';
+import {
+    FormRow,
+    SubmitButton }       from '../../../_common/components/forms.jsx';
+import Loading           from '../../../_common/components/loading.jsx';
 import { SeparatorLine } from '../../../_common/components/separator_line.jsx';
-import { FormRow, SubmitButton } from '../../../_common/components/forms.jsx';
-
+    
 const AccountClosure = () => (
     <React.Fragment>
         <div id='msg_main' className='center-text gr-gutter gr-padding-10 invisible'>
             <h1>{it.L('Account closure confirmed')}</h1>
-            <p className='notice-msg'>{it.L('Accounts closed successfully. A confirmation email will be sent to your email.[_1]This page will redirect to the [_2] homepage after 10 seconds.', '<br />', it.website_name)}</p>
+            <p className='notice-msg'>
+                {it.L('Accounts closed successfully. A confirmation email will be sent to your email.')}
+                <br />
+                {it.L('This page will redirect to the [_1] homepage after 10 seconds.', it.website_name)}
+            </p>
         </div>
-        <div id='closure-container'>
-            <div id='main-header' className='gr-padding-30'>
+        <div id='closure_container'>
+            <div id='main_header' className='gr-padding-30'>
                 <h1 id='heading'>{it.L('Account Closure')}</h1>
                 <p>{it.L('Closing your [_1] accounts involves closing all open positions in your accounts, and withdrawing your funds, and deactivating your accounts with [_1]', it.website_name)}</p>
             </div>
@@ -31,15 +37,14 @@ const AccountClosure = () => (
                         />
                         <ClosureDescription
                             title={it.L('Change my affiliate')}
-                            subtitle={it.L('Contact [_1]affiliates@binary.com[_2] for more info on changing your affiliate.', '<a href="mailto:affiliates@binary.com">', '</a>')}
+                            subtitle={it.L('Contact [_1] for more info on changing your affiliate.', '<a href="mailto:affiliates@binary.com">affiliates@binary.com</a>')}
                         />
                         <ClosureDescription
                             title={it.L('Change my account limits')}
-                            subtitle={it.L('You may set limits in your account to help prevent unwanted losses.[_1]Go to [_2]self-exclusion page[_3] to manage your account limits.', '<br />', `<a href=${it.url_for('user/security/self_exclusionws')}>`, '</a>')}
+                            subtitle={<span>{it.L('You may set limits in your account to help prevent unwanted losses.')}<br />{it.L('Go to [_1]self-exclusion page[_2] to manage your account limits.', `<a href=${it.url_for('user/security/self_exclusionws')}>`, '</a>')}</span>}
                         />
                     </div>
                 </fieldset>
-                {/* TODO: complete these component */}
                 <h2 className='primary-color'>{it.L('Close open positions')}</h2>
                 <ClosureDescription
                     title={it.L('Close open positions')}
@@ -64,7 +69,7 @@ const AccountClosure = () => (
                     type='radio'
                     id='reason'
                     className='account-closure'
-                    label_row_id='invisible-label'
+                    label_row_class='invisible'
                     options={[
                         {
                             label: it.L('Financial concerns'),
@@ -85,7 +90,7 @@ const AccountClosure = () => (
                         {
                             label       : it.L('Others (please specify)'),
                             value       : 'other',
-                            textfield_id: 'other-reason',
+                            textfield_id: 'other_reason',
                         },
 
                     ]}

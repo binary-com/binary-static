@@ -4,35 +4,43 @@ const Url          = require('../../../../../_common/url');
 
 const AccountClosure = (() => {
     const form_selector = '#form_closure';
-    let $textField;
+    let $txt_other_reason,
+        $closure_loading,
+        $closure_container,
+        $success_msg,
+        $error_msg;
     
     const onLoad = () => {
-        $textField = $('#other-reason');
+        $txt_other_reason  = $('#other_reason');
+        $closure_loading   = $('#closure_loading');
+        $closure_container = $('#closure_container');
+        $success_msg       = $('#msg_main');
+        $error_msg         = $('#msg_form');
 
         $(form_selector).on('submit', (event) => {
             event.preventDefault();
             submitForm();
         });
-        $('#closure-container').setVisibility(1);
-        $textField.on('keyup', () => $textField.removeClass('error-field'));
+        $closure_container.setVisibility(1);
+        $txt_other_reason.on('keyup', () => $txt_other_reason.removeClass('error-field'));
     };
 
     const submitForm = () => {
         const $btn_submit = $(`${form_selector} #btn_submit`);
         const reason = getReason();
         if (reason) {
-            $('#closure_loading').setVisibility(1);
+            $closure_loading.setVisibility(1);
             $btn_submit.attr('disabled', true);
 
             const data  = { account_closure: 1, reason };
             BinarySocket.send(data).then((response) => {
                 if (response.error) {
-                    showFormMessage(localize('Sorry, an error occurred while processing your request.'), false);
+                    showFormMessage(response.error.message || localize('Sorry, an error occurred while processing your request.'));
                     $btn_submit.attr('disabled', false);
                 } else {
-                    $('#closure_loading').setVisibility(0);
-                    $('#closure-container').setVisibility(0);
-                    $('#msg_main').setVisibility(1);
+                    $closure_loading.setVisibility(0);
+                    $closure_container.setVisibility(0);
+                    $success_msg.setVisibility(1);
 
                     setTimeout(() => window.location.href = Url.urlFor('home'), 10000);
                 }
@@ -44,7 +52,7 @@ const AccountClosure = (() => {
 
     const showFormMessage = (localized_msg) => {
         $.scrollTo($('#reason'), 500, { offset: -20 });
-        $('#msg_form')
+        $error_msg
             .attr('class', 'errorfield')
             .html(localized_msg)
             .css('display', 'block')
@@ -53,21 +61,25 @@ const AccountClosure = (() => {
     };
 
     const getReason = () => {
-        const value      = $('input[type=radio]:checked').val();
-        const id         = $('input[type=radio]:checked').attr('id');
-        const radioText  = $(`label[for=${id}]`).text();
-        const textInput  = $textField.val();
-        if (value){
-            if (value === 'other') {
-                if (!textInput) {
-                    $textField.addClass('error-field');
+        const $selected_reason   = $('#reason input[type=radio]:checked');
+        const reason_radio_val   = $selected_reason.val();
+        const reason_radio_id    = $selected_reason.attr('id');
+        const reason_radio_text  = $(`label[for=${reason_radio_id }]`).text();
+        const other_reason_input = $txt_other_reason.val();
+
+        if (reason_radio_val) {
+            if (reason_radio_val === 'other') {
+                if (!other_reason_input) {
+                    $txt_other_reason.addClass('error-field');
                     showFormMessage(localize('Please specify your reason.'));
                     return false;
-                } else if (textInput.length > 3 && textInput.length < 50) return textInput;
-                showFormMessage(localize('Maximum length: 50 characters'));
-                return false;
+                } else if (other_reason_input.length < 3 || other_reason_input.length > 50) {
+                    showFormMessage(localize('The reason should be between 3 and 50 characters'));
+                    return false;
+                }
+                return other_reason_input;
             }
-            return radioText;
+            return reason_radio_text;
         }
         showFormMessage(localize('Please select a reason.'));
         return false;

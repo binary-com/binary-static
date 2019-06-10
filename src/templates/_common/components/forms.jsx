@@ -19,7 +19,7 @@ export const FormRow = ({
     row_class,
     row_id,
     sub_row_class,
-    label_row_id,
+    label_row_class,
     is_two_rows,
     is_bold,
     tooltip,
@@ -131,7 +131,7 @@ export const FormRow = ({
             className={`gr-row form-row center-text-m ${is_two_rows ? 'two-rows' : ''} ${row_class || ''}`}
             id={row_id}
         >
-            <div className={`${is_two_rows ? 'gr-12' : 'gr-4 gr-12-m'}`} id={label_row_id}>
+            <div className={`${is_two_rows ? `gr-12 ${label_row_class}` : `gr-4 gr-12-m ${label_row_class}`}`}>
                 <label htmlFor={type !== 'label' ? id : undefined}>
                     {tooltip ?
                         <span data-balloon-length='xlarge' data-balloon={tooltip}>
