@@ -42,7 +42,7 @@ const FAQ = () => {
             <h2 className='faq-header'>{it.L('Frequently asked questions')}</h2>
 
             <div className='gr-row gr-row-align-center'>
-                <div className='faq-item gr-3 gr-12-m'>
+                <div className='faq-item gr-3 gr-12-m gr-5-p gr-5-t'>
                     <p className='faq-item-header secondary-color'>{it.L('Affiliate')}</p>
 
                     <ul className='faq-item-content'>
@@ -54,7 +54,7 @@ const FAQ = () => {
                         ))}
                     </ul>
                 </div>
-                <div className='faq-item gr-3 gr-12-m'>
+                <div className='faq-item gr-3 gr-12-m gr-5-p gr-5-t'>
                     <p className='faq-item-header secondary-color'>{it.L('Introducing Broker')}</p>
 
                     <ul className='faq-item-content'>
