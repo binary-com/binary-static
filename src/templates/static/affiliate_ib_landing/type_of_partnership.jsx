@@ -85,7 +85,6 @@ const TypesOfPartnership = () => (
                                                     ],
                                                 }}
                                             />
-
                                             <a href={it.affiliate_signup_url} className='button' target='_blank' rel='noopener noreferrer'>
                                                 <span>{it.L('Sign up now')}</span>
                                             </a>
@@ -131,6 +130,9 @@ const TypesOfPartnership = () => (
                                                 }}
                                             />
                                         </div>
+                                        <a href={it.affiliate_signup_url} className='button' target='_blank' rel='noopener noreferrer'>
+                                            <span>{it.L('Sign up now')}</span>
+                                        </a>
                                     </TabContent>
                                     <TabContent id='cpa'>
                                         <div className='gr-11 gr-centered text-align-left'>
