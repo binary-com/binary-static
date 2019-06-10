@@ -22,7 +22,7 @@ const FinancialAssessment = () => (
         </div>
 
         <form className='invisible' id='frm_assessment'>
-            <p className='invisible' id='high_risk_classification'>{it.L('Due to recent changes in the regulations, we are required to ask our clients to complete the following Financial Assessment. Please note that you will not be able to continue trading until this is completed.')}</p>
+            <p className='invisible' id='high_risk_classification'>{it.L('Due to regulatory requirements, we are required to ask our clients to complete the following Financial Assessment.')}</p>
 
             <FinancialForm />
 
