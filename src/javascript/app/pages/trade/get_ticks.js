@@ -27,7 +27,7 @@ const GetTicks = (() => {
                     count        : 20,
                     subscribe    : 1,
                 }, {
-                    callback: (response) => {
+                    callback: async (response) => {
                         const type = response.msg_type;
 
                         if (typeof callback === 'function') {
@@ -42,12 +42,12 @@ const GetTicks = (() => {
                         if (type === 'tick') {
                             processTick(response);
                             if (getActiveTab() === 'tab_last_digit') {
-                                DigitInfo.updateChart(response);
+                                await DigitInfo.updateChart(response);
                             }
                         } else if (type === 'history') {
                             processHistory(response);
                             if (getActiveTab() === 'tab_last_digit') {
-                                DigitInfo.showChart(response.echo_req.ticks_history, response.history.prices);
+                                await DigitInfo.showChart(response.echo_req.ticks_history, response.history.prices);
                             }
                         }
                     },
