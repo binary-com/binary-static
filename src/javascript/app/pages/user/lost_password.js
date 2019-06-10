@@ -11,7 +11,6 @@ const LostPassword = (() => {
     const responseHandler = (response) => {
         if (response.verify_email) {
             $('#password_reset_description').setVisibility(0);
-            $('#password_reset_social').setVisibility(0);
             $('#check_spam').setVisibility(1);
             if (isBinaryApp()) {
                 $(form_id).setVisibility(0);
