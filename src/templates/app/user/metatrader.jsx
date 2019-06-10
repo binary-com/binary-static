@@ -257,9 +257,8 @@ const Metatrader = () => (
                             ]}
                         />
                         */}
-                        {/* TODO [->svg] */}
                         <AccountDesc
-                            account_type={['costarica', 'svg', 'malta', 'iom']}
+                            account_type={['svg', 'malta', 'iom']}
                             title={it.L('Synthetic Indices Account')}
                             description={it.L('Our Synthetic Indices account allows you to trade CFDs on Synthetic Indices - our proprietary synthetic assets that simulate market forces.')}
                             items={[
@@ -279,9 +278,8 @@ const Metatrader = () => (
                                 it.L('Market execution'),
                             ]}
                         />
-                        {/* TODO [->svg] */}
                         <AccountDesc
-                            account_type={['costarica_mamm', 'svg_mamm']}
+                            account_type={['svg_mamm']}
                             title={it.L('MAM Synthetic Indices Account')}
                             description={it.L('Our MAM Synthetic Indices account can be assigned to a money manager who will trade on your behalf with the same specifications as the regular Synthetic Indices account.')}
                             items={[
