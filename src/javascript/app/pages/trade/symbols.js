@@ -19,10 +19,11 @@ const BinarySocket       = require('../../base/socket');
  */
 
 const Symbols = (() => {
-    let trade_markets      = {};
-    let trade_markets_list = {};
-    let trade_underlyings  = {};
-    let names              = {};
+    let trade_markets             = {};
+    let trade_markets_list        = {};
+    let trade_underlyings         = {};
+    let names                     = {};
+    let is_active_symbols_cached  = false;
 
     const details = (data) => {
         const all_symbols  = data.active_symbols;
@@ -34,9 +35,12 @@ const Symbols = (() => {
 
     const getUnderlyingPipSize = (underlying) => (
         new Promise((resolve) => {
-            BinarySocket.send({ active_symbols: 'brief' }).then(active_symbols => {
+            const req = { active_symbols: 'brief' };
+            const options = { skip_cache_update: is_active_symbols_cached };
+            BinarySocket.send(req, options).then(active_symbols => {
                 details(active_symbols);
-                const market = ActiveSymbols.getSymbols(active_symbols);
+                const market             = ActiveSymbols.getSymbols(active_symbols);
+                is_active_symbols_cached = true;
 
                 resolve(countDecimalPlaces(market[underlying].pip));
             });
