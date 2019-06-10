@@ -9,7 +9,7 @@ const AccountClosure = (() => {
         $closure_container,
         $success_msg,
         $error_msg;
-    
+
     const onLoad = () => {
         $txt_other_reason  = $('#other_reason');
         $closure_loading   = $('#closure_loading');
