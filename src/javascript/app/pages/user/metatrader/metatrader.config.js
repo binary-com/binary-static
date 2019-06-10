@@ -168,7 +168,7 @@ const MetaTraderConfig = (() => {
                             if (is_maltainvest && !has_financial_account) resolve();
 
                             const response_get_account_status = State.getResponse('get_account_status');
-                            if (/financial_assessment_not_complete/.test(response_get_account_status.status)) {
+                            if (/financial_information_not_complete/.test(response_get_account_status.status)) {
                                 showAssessment('.assessment');
                                 is_ok = false;
                             } else if (/trading_experience_not_complete/.test(response_get_account_status.status)) {
