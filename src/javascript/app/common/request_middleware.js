@@ -18,8 +18,10 @@ const changePocNumbersToString = (response) => {
 
     return new Promise((resolve) => {
         getUnderlyingPipSize(response.proposal_open_contract.underlying).then(pip_size => {
-            const toString = (property, decimal_places = pip_size) => (
-                property || property === 0 ? addComma(property, decimal_places) : undefined
+            const toString = (property, has_comma, decimal_places = pip_size) => (
+                property || property === 0 ?
+                    has_comma ? addComma(property, decimal_places) : addComma(property).replace(',', '')
+                    : undefined
             );
 
             let new_response = $.extend({}, {
@@ -31,10 +33,10 @@ const changePocNumbersToString = (response) => {
                     sell_price       : toString(sell_price),
                     sell_spot        : toString(sell_spot),
                     current_spot     : toString(current_spot),
-                    entry_spot       : toString(entry_spot),
+                    entry_spot       : toString(entry_spot, false),
                     entry_tick       : toString(entry_tick),
                     exit_tick        : toString(exit_tick),
-                    profit_percentage: toString(profit_percentage, 2),
+                    profit_percentage: toString(profit_percentage, true, 2),
                 },
             });
 
