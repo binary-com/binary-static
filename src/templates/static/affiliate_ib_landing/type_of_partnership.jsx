@@ -32,7 +32,7 @@ const TypesOfPartnership = () => (
                         <p className='gr-padding-20 no-margin'>{it.L('Earn up to 35% in commission by referring new clients to trade on our premier platforms for binary options. All commissions are credited into your account by the 15th of every month.')}</p>
                         <h3 className='secondary-color'>{it.L('Commision structure')}</h3>
                         <TabContainer className='gr-padding-30 gr-parent full-width gr-11 gr-12-m gr-centered' theme='light'>
-                            <div className='gr-row gr-hide gr-show-m'>
+                            <div className='gr-row gr-hide gr-show-m mobile-menu'>
                                 <ArrowsMobile parent='commission_structure' direction='left' />
                                 <strong id='tab_mobile_header' className='align-self-center gr-8' />
                                 <ArrowsMobile parent='commission_structure' direction='right' />
