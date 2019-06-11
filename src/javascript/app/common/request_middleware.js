@@ -41,19 +41,25 @@ const changePocNumbersToString = (response) => {
             });
 
             if (!isEmptyObject(audit_details)) {
-                if (!isEmptyObject(audit_details.all_ticks)) {
-                    const formatAuditDetails = (obj) => ({ ...obj, all_ticks: obj.all_ticks.map(tick_obj => (
-                        { ...tick_obj, tick: toString(tick_obj.tick) }
-                    )) });
+                const formatAuditDetails = (obj) => {
+                    const modded_obj = { ...obj };
 
-                    new_response =  $.extend({}, {
-                        ...new_response,
-                        proposal_open_contract: {
-                            ...new_response.proposal_open_contract,
-                            audit_details: formatAuditDetails(audit_details),
-                        },
+                    Object.keys(obj).forEach(key => {
+                        modded_obj[key] = modded_obj[key].map(tick_obj => (
+                            tick_obj.tick ? { ...tick_obj, tick: toString(tick_obj.tick) } : tick_obj
+                        ));
                     });
-                }
+
+                    return modded_obj;
+                };
+
+                new_response =  $.extend({}, {
+                    ...new_response,
+                    proposal_open_contract: {
+                        ...new_response.proposal_open_contract,
+                        audit_details: formatAuditDetails(audit_details),
+                    },
+                });
             }
 
             resolve(new_response);
