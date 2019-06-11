@@ -21,7 +21,10 @@ const AffiliateIBLanding = (() => {
         }
 
         navigation_tabs.each((index, element) => {
-            $(element).on('click', () => Url.updateParamsWithoutReload({ tabs: getTabAnchorWithoutHashTag(element) }, true));
+            $(element).on('click', () => {
+                Url.updateParamsWithoutReload({ tabs: getTabAnchorWithoutHashTag(element) }, true);
+                TabSelector.repositionSelector();
+            });
         });
 
         TabSelector.onLoad();
