@@ -1,7 +1,6 @@
 const tabListener  = require('@binary-com/binary-style').tabListener;
 const ImageSlider  = require('../../_common/image_slider');
 const MenuSelector = require('../../_common/menu_selector');
-const TabSelector  = require('../../_common/tab_selector');
 const Scroll       = require('../../_common/scroll');
 const handleHash   = require('../../_common/utility').handleHash;
 const BinaryPjax   = require('../../app/base/binary_pjax');
@@ -38,10 +37,6 @@ module.exports = {
                 Header.upgradeMessageVisibility();
             }
         },
-    },
-    AffiliatesIb: {
-        onLoad  : () => { $('.has-tabs').tabs(); TabSelector.onLoad(); },
-        onUnload: () => { TabSelector.onUnload(); },
     },
     AffiliatesFAQ: {
         onLoad  : () => { MenuSelector.init(['general', 'account-management-and-tracking', 'referral-tools', 'support']); },
