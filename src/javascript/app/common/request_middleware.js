@@ -18,9 +18,9 @@ const changePocNumbersToString = (response) => {
 
     return new Promise((resolve) => {
         getUnderlyingPipSize(response.proposal_open_contract.underlying).then(pip_size => {
-            const toString = (property, has_comma, decimal_places = pip_size) => (
+            const toString = (property, has_comma = true, decimal_places = pip_size) => (
                 property || property === 0 ?
-                    has_comma ? addComma(property, decimal_places) : addComma(property).replace(',', '')
+                    has_comma ? addComma(property, decimal_places) : addComma(property, decimal_places).replace(',', '')
                     : undefined
             );
 
@@ -28,7 +28,7 @@ const changePocNumbersToString = (response) => {
                 ...response,
                 proposal_open_contract: {
                     ...response.proposal_open_contract,
-                    barrier          : barrier ? addComma(barrier) : undefined, // Because `barrier` must not be displayed when zero
+                    barrier          : barrier ? addComma(barrier).replace(',', '') : undefined, // Because `barrier` must not be displayed when zero
                     bid_price        : toString(bid_price),
                     sell_price       : toString(sell_price),
                     sell_spot        : toString(sell_spot),
