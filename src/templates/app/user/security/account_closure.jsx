@@ -18,7 +18,7 @@ const AccountClosure = () => (
         <div id='closure_container'>
             <div id='main_header' className='gr-padding-30'>
                 <h1 id='heading'>{it.L('Account Closure')}</h1>
-                <p>{it.L('Closing your [_1] accounts involves closing all open positions in your accounts, and withdrawing your funds, and deactivating your accounts with [_1]', it.website_name)}</p>
+                <p>{it.L('Closing your [_1] accounts involves closing all open positions in your accounts, withdrawing your funds, and deactivating your accounts with [_1].', it.website_name)}</p>
             </div>
 
             <div className='gr-no-gutter' id='closure_description'>
@@ -37,7 +37,7 @@ const AccountClosure = () => (
                         />
                         <ClosureDescription
                             title={it.L('Change my affiliate')}
-                            subtitle={it.L('Contact [_1] for more info on changing your affiliate.', '<a href="mailto:affiliates@binary.com">affiliates@binary.com</a>')}
+                            subtitle={it.L('Contact [_1] for more information on changing your affiliate.', '<a href="mailto:affiliates@binary.com">affiliates@binary.com</a>')}
                         />
                         <ClosureDescription
                             title={it.L('Change my account limits')}
@@ -50,7 +50,7 @@ const AccountClosure = () => (
                     title={it.L('Close open positions')}
                     list_items={[
                         it.L('Remember to close all open positions in [_1]all[_2] your accounts.', '<strong>', '</strong>'),
-                        it.L('Go to [_1]portfolio page[_2] to close your open positions.', `<a href="${it.url_for('user/portfoliows')}">`, '</a>'),
+                        it.L('Go to the [_1]portfolio page[_2] to close your open positions.', `<a href="${it.url_for('user/portfoliows')}">`, '</a>'),
                     ]}
                 />
                 <ClosureDescription
@@ -64,7 +64,7 @@ const AccountClosure = () => (
                 <SeparatorLine className='gr-padding-10' />
             
                 <h2 className='primary-color'>{it.L('Reason for closure')}</h2>
-                <p>{it.L('Why do you want to close your account?: (Please select one)')}</p>
+                <p>{it.L('Why do you want to close your account? (Please select one)')}</p>
                 <FormRow
                     type='radio'
                     id='reason'

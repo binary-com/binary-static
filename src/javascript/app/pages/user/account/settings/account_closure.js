@@ -71,7 +71,7 @@ const AccountClosure = (() => {
             if (reason_radio_val === 'other') {
                 if (!other_reason_input) {
                     $txt_other_reason.addClass('error-field');
-                    showFormMessage(localize('Please specify your reason.'));
+                    showFormMessage(localize('Please specify the reasons for closing your accounts'));
                     return false;
                 } else if (other_reason_input.length < 3 || other_reason_input.length > 50) {
                     showFormMessage(localize('The reason should be between 3 and 50 characters'));
