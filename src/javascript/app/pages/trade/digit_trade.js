@@ -48,10 +48,7 @@ const DigitDisplay = (() => {
 
     const renderTable = (id_render, poc) => {
         const el_tick_chart = document.getElementById(id_render);
-        if (!el_tick_chart || el_tick_chart.childElementCount < 3) {
-            init(id_render, poc);
-            return;
-        }
+        if (!el_tick_chart || el_tick_chart.childElementCount < 3) return;
 
         if (DigitTicker.isInitialized()) {
             DigitTicker.update(
@@ -147,7 +144,6 @@ const DigitDisplay = (() => {
             proposal_open_contract.status
         );
         renderTable(id_render, proposal_open_contract);
-
     };
 
     const end = (proposal_open_contract) => {
