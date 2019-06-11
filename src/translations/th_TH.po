@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-06-11 06:22\n"
+"PO-Revision-Date: 2019-06-11 11:33\n"
 "Last-Translator: binarycom\n"
 "Language-Team: Thai\n"
 "MIME-Version: 1.0\n"
@@ -573,6 +573,9 @@ msgstr "0.25%"
 msgid "0.3%"
 msgstr "0.3%"
 
+msgid "0.5%"
+msgstr ""
+
 msgid "0.75%"
 msgstr "0.75%"
 
@@ -656,9 +659,6 @@ msgstr "40 – 59.999%"
 
 msgid "40K+"
 msgstr "4 หมื่น+"
-
-msgid "5%"
-msgstr "5%"
 
 msgid "6-10 transactions in the past 12 months"
 msgstr "มี 6-10 ธุรกรรมใน 12 เดือนที่ผ่านมา"
@@ -3963,8 +3963,8 @@ msgstr "ในการโอนแต่ละครั้ง จะมีค�
 msgid "Earn"
 msgstr "รับรายได้"
 
-msgid "Earn USD 100 in commission for each successful referral. Your referred client must open a real money investment account through your unique affiliate link and deposit a total of USD 100 or more (one-time or accumulative) in the account. This commission plan is only available to Affiliates based in the EU."
-msgstr "รับค่าคอมมิชชัน 100 เหรียญสหรัฐต่อลูกค้าใหม่แต่ละรายที่เชิญมา ลูกค้าที่ได้รับการเชิญจะต้องเปิดบัญชีลงทุนเงินจริง ผ่านทางลิงค์พันธมิตรของคุณและฝากเงินจำนวน 100 เหรียญสหรัฐ หรือ มากกว่า (ครั้งเดียว หรือ ยอดรวมสะสม) ในบัญชี แผนคอมมิชชันนี้มีให้สำหรับพันธมิตรในสหภาพยุโรปเท่านั้น"
+msgid "Earn USD 100 in commission for each successful referral. Your referred client must open a %1real money investment account%2 through your unique affiliate link and deposit a total of USD 100 or more (one-time or accumulative) in the account. This commission plan is only available to Affiliates based in the EU."
+msgstr ""
 
 msgid "Earn a monetary reward for any verifiable issues that you find, with a bounty worth up to USD 1,000 for high-risk security vulnerabilities."
 msgstr "ได้รับรางวัลที่เป็นตัวเงินจากปัญหาที่ท่านพบ ด้วยเงินรางวัลที่มีมูลค่าสูงถึง 1,000 เหรียญสหรัฐ สำหรับปัญหาความเปราะบางด้านความปลอดภัยที่มีความเสี่ยงระดับสูง"
@@ -12457,8 +12457,8 @@ msgstr "USD"
 msgid "USD 1 per point"
 msgstr "1 เหรียญสหรัฐ ต่อหน่วย"
 
-msgid "USD 10 X 1 lot x USD 125,000/100,000 = USD 12.5"
-msgstr "10 เหรียญสหรัฐ X 1 ล็อต x 125,000/100,000 เหรียญสหรัฐ = 12.5 เหรียญสหรัฐ"
+msgid "USD 10 x 1 lot x USD 125,000/100,000 = USD 12.5"
+msgstr ""
 
 msgid "USD Index – Measures the value of the US Dollar against a basket of five global currencies (EUR, GBP, JPY, CAD, AUD), each weighted by 20%"
 msgstr "ดัชนี USD - วัดค่าของดอลลาร์สหรัฐต่อ 5 สกุลเงินหลักของโลก (EUR, GBP, JPY, CAD, AUD) โดยมีน้ำหนักของแต่ละสกุลเงินที่ 20%"

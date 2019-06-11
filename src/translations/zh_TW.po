@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-06-11 06:21\n"
+"PO-Revision-Date: 2019-06-11 11:33\n"
 "Last-Translator: binarycom\n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -573,6 +573,9 @@ msgstr "0.25%"
 msgid "0.3%"
 msgstr "0.3%"
 
+msgid "0.5%"
+msgstr ""
+
 msgid "0.75%"
 msgstr "0.75%"
 
@@ -656,9 +659,6 @@ msgstr "40 – 59.999%"
 
 msgid "40K+"
 msgstr "4萬+"
-
-msgid "5%"
-msgstr "5%"
 
 msgid "6-10 transactions in the past 12 months"
 msgstr "過去12個月內6-10次交易"
@@ -3853,7 +3853,7 @@ msgid "Due to market volatility and gold's reputation as a safe-haven asset, you
 msgstr "由於市場波動和黃金作為安全保障資產的聲譽，您預測黃金價格將上漲。"
 
 msgid "Due to regulatory requirements, we are required to ask our clients to complete the following Financial Assessment."
-msgstr ""
+msgstr "根據法規要求，我們要求客戶完成以下財務評估。"
 
 msgid "Due to the high degree of risk involved, which could result in the loss of the entire investment, the Company has adequate internal procedures in place to ensure that the client is in all cases treated fairly and that the risk of damage to client interests will be mitigated."
 msgstr "由于涉及高风险，可能导致整个投资虧損，公司有适当的内部程序，以确保客户在所有情况下得到公平对待，并且客户利益受损的风险將會降低。"
@@ -3963,8 +3963,8 @@ msgstr "每次轉帳需支付%1轉帳費或最低費用%2, 以較高者為準。
 msgid "Earn"
 msgstr "賺取"
 
-msgid "Earn USD 100 in commission for each successful referral. Your referred client must open a real money investment account through your unique affiliate link and deposit a total of USD 100 or more (one-time or accumulative) in the account. This commission plan is only available to Affiliates based in the EU."
-msgstr "每次推薦成功可獲得100美元佣金。您推薦的客戶必須通過您專用的聯盟連結開立真實貨幣投資帳戶，並在帳戶中存入總計100美元或更多（一次性或累計）的資金。該佣金計劃僅適用於歐盟區的聯盟會員。"
+msgid "Earn USD 100 in commission for each successful referral. Your referred client must open a %1real money investment account%2 through your unique affiliate link and deposit a total of USD 100 or more (one-time or accumulative) in the account. This commission plan is only available to Affiliates based in the EU."
+msgstr ""
 
 msgid "Earn a monetary reward for any verifiable issues that you find, with a bounty worth up to USD 1,000 for high-risk security vulnerabilities."
 msgstr "如果發現任何可驗證問題，您可獲得金錢獎勵，高風險安全漏洞的獎金最高可達1,000美元。"
@@ -8227,10 +8227,10 @@ msgid "Please %1authenticate%2 your account."
 msgstr "請%1驗證%2您的帳戶。"
 
 msgid "Please %1complete the financial assessment%2 to open an MT5 account."
-msgstr ""
+msgstr "請％1完成財務評估％2，以開立MT5帳戶。"
 
 msgid "Please %1complete the trading experience section%2 in the financial assessment to open an MT5 account."
-msgstr ""
+msgstr "請完成財務評估中的％1交易經驗部分％2，以開立MT5帳戶。"
 
 msgid "Please %1complete your account profile%2 to lift your withdrawal and trading limits."
 msgstr "請%1完成帳戶資料%2，以提高取款和交易限額。"
@@ -11383,13 +11383,13 @@ msgid "The parties agree that the relationship between Binary and the Introducin
 msgstr "雙方同意Binary與推介經紀之間的關係不是排他性關係，推介經紀和Binary可以與其他方建立類似的關係。"
 
 msgid "The party that, due to force majeure events, is not able to meet their obligations under this Agreement, shall inform the other party in writing within six (6) days after the occurrence of such an event."
-msgstr ""
+msgstr "因不可抗力事件而無法履行本協議義務的一方，須在事件發生後六（6）天內以書面形式通知另一方。"
 
 msgid "The password you entered is one of the world's most commonly used passwords. You should not be using this password."
 msgstr "您輸入的密碼是世界上最常用的密碼之一。您不應該使用此密碼。"
 
 msgid "The patent means Regent Markets is the recognised pioneer of binary trading. The patent helps protect our innovations."
-msgstr ""
+msgstr "該專利意味著Regent Markets 為公認的二元交易先驅。這項專利有助於保護我們的創新。"
 
 msgid "The payout is the amount paid to an options trader if their prediction is correct."
 msgstr "賠付金額即期權交易者預測正確所獲得的金額。"
@@ -11398,10 +11398,10 @@ msgid "The premier platform for trading binary options in the world's financial 
 msgstr "全世界金融市場二元期權交易的頂尖平台"
 
 msgid "The price at which the client's order will be executed"
-msgstr ""
+msgstr "客戶的訂單執行價格"
 
 msgid "The price of the client's chosen investment appears on the platform/on the client's screen."
-msgstr ""
+msgstr "客戶選擇的投資價格將出現在平台/客戶的螢幕上。"
 
 msgid "The price of the contract is automatically calculated by our patented pricing technology based on the parameters you've defined in Step 1. Our prices are benchmarked against the interbank options market, so you always get the most competitive prices. This means that you'll always receive fair and transparent pricing, whatever your position."
 msgstr "我們的受專利保護定價技術會根據您在第一步中定義的參數自動計算合約價格。我們的價格以銀行間期權市場為基準，所以您始終可以獲得最具競爭力的價格。這意味著無論您持的是什麼頭寸，您都將始終獲得公平透明的定價。"
@@ -11416,19 +11416,19 @@ msgid "The profit is the difference between the purchase price (the stake) and t
 msgstr "利潤即盈利交易中所得賠付金額與購買價格（成本）之間的差額。"
 
 msgid "The provision of the Margin trading services described in this agreement utilises a third-party system, acquired via a non-exclusive, non-transferable, non-sublicensable, and terminable licence from the third-party system provider/licensor (the \"MT5 trading platform\"). The client acknowledges that the Company reserves the right to change the third-party system provider/licensor during the course of providing the Margin trading services described in this agreement to the client."
-msgstr ""
+msgstr "本協定所述的保證金交易服務通過第三方系統提供商/許可方（\"MT5 交易平台\"）採用非獨占、不可轉讓、非從屬許可、可終止的第三方系統牌照 。客戶確認，向客戶提供本協定所述的保證金交易服務過程中，公司保留更換第三方系統提供商/許可方的權利。"
 
 msgid "The provision of the trading services described in this agreement utilises a third-party system acquired via a non-exclusive, non-transferable, non-sub-licensable, terminable licence from the third-party system provider/licensor (the \"MT5 trading platform\"). The client acknowledges that, when providing trading services described in this agreement to the client, BIEL may decide to change its third–party system provider/licensor and use a trading platform other than the MT5 trading platform. Hence, in such cases, BIEL may decide to use an entirely new third–party system provider/licensor (hereinafter referred to as the \"new trading platform\") or to introduce an additional third–party system provider/licensor (hereinafter referred to as the \"additional trading platform\")."
-msgstr ""
+msgstr "本協議所述交易服務由第三方系統提供, 通過第三方系統提供商/許可方的非獨占、不可轉讓、不可再授權、可終止許可證 (「MT5 交易平台」) 獲得。客戶確認, 向客戶提供本協議中描述的交易服務時，BIEL可以決定更換其第三方系統提供商/許可方, 並使用MT5 交易平台以外的其他交易平台。因此, 在這種情況下, BIEL可以決定使用全新的第三方系統提供商/許可方(以下簡稱為「新交易平台」) 或引入額外的第三方系統提供商/許可方(以下簡稱「附加交易平台」)。"
 
 msgid "The provisions of this agreement or any orders and any applicable laws will not be breached or violated."
-msgstr ""
+msgstr "不得違反或侵犯本協議或任何法令及任何適用法律的規定。"
 
 msgid "The requested transfer would reduce the client's Account Balance to less than the Margin required for the client's Open Positions."
-msgstr ""
+msgstr "要求的轉帳將使客戶的帳戶餘額低於其未平倉頭寸所需的保證金。"
 
 msgid "The required minimum deposit has been made by the client."
-msgstr ""
+msgstr "客戶已經存入所需的最低存款。"
 
 msgid "The resale price indicates a contract's current market price. Resale prices are on a best-efforts basis and may not be available at all times after purchase. See 'Sell option' for more details on selling contracts before expiry."
 msgstr "轉售價格表示合約的目前市場價格。轉售價格在盡最大努力的基礎上提供，且買入合約後有可能一直不可用。請參閱「賣出期權」以了解在到期前賣出合約的更多細節。"
@@ -11440,7 +11440,7 @@ msgid "The return is the money realized when the contract expires (see 'Payout')
 msgstr "收益指當合約到期時實現的收益（參閱「賠付金額」）。"
 
 msgid "The right is also reserved to amend or change the rules and scope of this service from time to time. Any change to the rules made whilst the site is in operation will not apply retrospectively and will only apply to acquisitions of financial contracts made after such a change. It is the Company's responsibility to notify clients before any changes to its terms come into effect."
-msgstr ""
+msgstr "公司也保留不時修改或更改本服務規則和範圍的權利。網站運營期間作出的任何規則修改並不會進行追溯調整，且只適用於更改之後發生的金融合約購買行為。在任何修改條款生效前公司有責任通知客戶。"
 
 msgid "The right to be informed of the use of their personal data. This privacy policy is dedicated for this purpose."
 msgstr "被告知使用其個人資料的權利。本隱私政策專用於此目的。"
@@ -11458,19 +11458,19 @@ msgid "The same concept applies to our cryptocurrency pairs."
 msgstr "同樣的概念適用於我們的加密貨幣對。"
 
 msgid "The section headings are for convenience only and shall not control or affect the meaning, construction, scope, and intent of any of the provisions of this Agreement."
-msgstr ""
+msgstr "章節標題僅為提供方便，不得控制或影響本協議任何條款的含義、結構、範圍和意圖。"
 
 msgid "The server <a href=\"%1\">endpoint</a> is: %2"
 msgstr "伺服器<a href=\"%1\">終端</a>是: %2"
 
 msgid "The services offered by the Introducing Broker to the clients are offered because the Introducing Broker is approved and qualified to offer such services. Additionally, such services are offered by the Introducing Broker fairly, honestly, and in good faith and in accordance with all business-ethics rules."
-msgstr ""
+msgstr "推介經紀向客戶提供服務是因為推介經紀獲得批准並有資格提供此類服務。此外，推介經紀須按照所有商業道德規則公平、誠實、真誠地提供此類服務。"
 
 msgid "The size of your instrument portfolio exceeds EUR 500,000 or its equivalent"
 msgstr "您的工具組合大小已超過50萬歐元或相同價值"
 
 msgid "The specific instructions that the Company receives from the client"
-msgstr ""
+msgstr "公司從客戶處收到的具體指示"
 
 msgid "The spread is the difference between the ask and bid price."
 msgstr "價差是要價和出價之間的差額。"
@@ -11485,28 +11485,28 @@ msgid "The stake is the amount that a trader must pay to enter into a trade."
 msgstr "投注金額即交易者為執行交易所必需支付的金額。"
 
 msgid "The sum received in the %1 Agent Account shall be subsequently transferred by the Agent to the respective client's %1 account (hereinafter referred to as the \"%1 Client Account\")."
-msgstr ""
+msgstr "在％1代理帳戶中收到的金额随后由代理转移到相应客户的％1帳戶（以下简称「％1客户帳戶」）。"
 
 msgid "The system failed to verify your identity. Please check your email for details and the next steps."
-msgstr ""
+msgstr "系統無法驗證您的身份。請查看您的電子郵件，了解詳細資訊和後續步驟。"
 
 msgid "The system fills orders on a first-in, first-out basis, i.e. based on the sequence of the order received, and this is beyond the Company's control. As a result, the client may find it difficult or impossible to close a position at the intended price stipulated in the client's stop order during certain market conditions. The placement of stop order by the client, though useful as a risk management tool, will not necessarily limit the client's losses to the client's intended amounts in the event of highly volatile trading conditions, since market conditions may make it impossible to execute such orders, and there is uncertainty about the client's possible exit price. In short, a stop order is not guaranteed because it cannot operate in all market circumstances."
-msgstr ""
+msgstr "系統按先進先出的次序，即按照收到訂單的順序處理訂單，這是公司無法控制的。因此，客戶可能會發現很難或無法在某些市場條件下按照其止損單規定的預期價位平倉。客戶設定的止損單雖然是有用的風險管理工具，卻不一定能按照其原先設想的數額限制損失。在極不穩定的交易條件下，由於市場情況可能無法執行這些指令，客戶的退出價格具不確定性。簡而言之，止損單是無法提供保證的，因為無法在所有市場情況下運作。"
 
 msgid "The terms 'the Company' and '%1' shall denote"
 msgstr "「公司」與「%1」字詞指"
 
 msgid "The time at which the client's order will be executed"
-msgstr ""
+msgstr "客戶訂單執行地點"
 
 msgid "The timeframe or duration of the contract as defined by the client's order execution"
-msgstr ""
+msgstr "客戶的訂單執行所界定的時間範圍或合同期限"
 
 msgid "The trading services described in this agreement are OTC. This means that one or more of the Underlying Instruments in which the client transacts with BIEL, though quoted on an exchange, are not traded on an exchange when transacted through the electronic trading platform as described in this agreement."
-msgstr ""
+msgstr "本協定所描述的保證金交易服務為場外交易。這意味著，客戶與BIEL進行交易的一個或多個標的工具，雖然由交易所報價，但通過本協議所述電子交易平台交易時卻不是在交易所交易。"
 
 msgid "The transactions performed on this site and the relationship between clients and the Company are to be governed by, and construed in accordance with, the laws of the country of incorporation of the Company (the \"Jurisdiction\"). The client agrees that the Jurisdiction's courts will have sole jurisdiction to settle any disputes that may arise in relation thereto. For such purposes, the client irrevocably submits to the jurisdiction of the courts of the Jurisdiction in relation to any such dispute and agrees that any claim the client might have against the Company shall only be brought before the courts of the Jurisdiction. For further information on complaints and disputes, kindly refer to the Company's %1Complaints and disputes%2 section."
-msgstr ""
+msgstr "通過本網站完成的交易以及客戶和本公司之間的關係由本公司註冊成立所在國（即「管轄地」）的法律管轄和解譯。對於可能出現的與之相關的任何糾紛，客戶同意司法管轄地法院擁有處置這些糾紛的專屬管轄權。因此，客戶不可撤銷地服從司法管轄地法院對與所有此類糾紛相關的司法管轄權，且客戶同意對公司的任何索賠主張只能在司法管轄地法院提起。有關投訴和糾紛的詳細資訊，請參閱公司的%1投訴和糾紛%2部份。"
 
 msgid "The two passwords that you entered do not match."
 msgstr "兩次輸入的密碼不相符。"
@@ -11515,16 +11515,16 @@ msgid "The types of partnerships we offer"
 msgstr "我們的合作夥伴類型"
 
 msgid "The use of the %1 API is at the Programmer's own risk, and the Programmer assumes full responsibility and risk of the loss it may suffer as a result of using, or accessing, the %1 API. Except to the extent that liability under any applicable law or regulation cannot be excluded, the following cases hold:"
-msgstr ""
+msgstr "除了不能排除的任何適用法律、法規所規定的賠償責任範圍以外，程式設計員使用%1 API須自行承擔所有風險和責任，並承擔所有因使用或存取%1 API而可能遭受的虧損風險，包括以下︰"
 
 msgid "The use, operation, or combination of the %1 API with non-%1 API(s), data, equipment, or documentation if liability would have been avoided but for such use, operation, or combination"
-msgstr ""
+msgstr "如原本可以避免承擔責任，但因為將%1 API與非%1 API系統、資料、設備或文件同時使用、操作或組合"
 
 msgid "The various trade types available on our MT5 platform."
 msgstr "我們的 MT5 平台提供各種交易類型。"
 
 msgid "The venue at which the client's order will be executed"
-msgstr ""
+msgstr "客戶的訂單執行地點"
 
 msgid "The volatility indices simulate various real market situations and provide an ideal platform for getting used to trading and testing strategies under various market conditions. These indices depend on volatility and drift, and help users to try out scenarios like - high volatility, low volatility, bullish and bearish trends."
 msgstr "波動率指數類比各種真實的市場情況，並根據不同的市場情況提供理想的平台交易實踐和測試策略。這些指數取決於波動率和漂移率，並協助使用者嘗試各種場景，如高波動率、低波動率、看漲和看跌趨勢。"
@@ -11542,16 +11542,16 @@ msgid "There are four types of Smart FX indices that you can trade:"
 msgstr "有四種類型的智能外匯指數可以交易："
 
 msgid "There are no charges for transferring money from the client's %1 account to their MT5 Real Account."
-msgstr ""
+msgstr "將資金從客戶的%1帳戶轉到其MT5真實帳戶，不必支付任何費用。"
 
 msgid "There are no guaranteed profits in investment trading."
 msgstr "投資交易不保證能獲利."
 
 msgid "There are no restrictions to the use of Expert Advisors on the MT5 trading platform apart from unethical trading."
-msgstr ""
+msgstr "除了不道德交易之外, 在 MT5 交易平台使用專家顧問沒有任何限制。"
 
 msgid "There are risks associated with utilising an Internet-based deal execution trading system, including, but not limited to, the failure of hardware, software, and Internet connection. Since %1 does not control signal power, its reception or routing via Internet, the configuration of the client's equipment, or the reliability of its connection, the Company cannot be responsible for communication failures, distortions, or delays during online trading."
-msgstr ""
+msgstr "在通過基於網際網路的交易系統執行交易時會存在諸多風險，包括但不僅限於硬體、軟體故障和網際網路連接故障。由於 %1 並不控制訊號功率、經由網路的訊號接收或路由以及客戶設備的配置或連接的可靠性，所以當客戶通過網路進行交易時公司並不會對通訊故障、失真或延遲等問題負責。"
 
 msgid "There are two types of In/Out trades:"
 msgstr "範圍內/外交易有兩種類型:"
@@ -11563,10 +11563,10 @@ msgid "There are two types of reset trades:"
 msgstr "重設交易有兩種類型:"
 
 msgid "There is an amount outstanding from the client to BIEL."
-msgstr ""
+msgstr "客戶尚欠BIEL一筆款項。"
 
 msgid "There is an amount outstanding from the client to the Company."
-msgstr ""
+msgstr "客戶尚欠公司一筆款項。"
 
 msgid "There may be times when transfers are not available because the market is closed (weekends or holidays), there is high volatility in the market or because of technical issues."
 msgstr "有時可能會因為市場關閉 (週末或公休日)、市場波動太大或技術問題而無法轉帳。"
@@ -11587,7 +11587,7 @@ msgid "There was some invalid character in an input field."
 msgstr "某字欄的輸入字元無效。"
 
 msgid "There will be no charges for fund transfers from the client's %1 account to their MT5 Real Account in the same currency. Should the client's %1 account and MT5 Real Account be in different currencies, the Company reserves the right to charge a currency conversion fee."
-msgstr ""
+msgstr "用相同貨幣將資金從客戶的%1帳戶轉到其MT5真實帳戶，不必支付任何費用。如果客戶的 %1 帳戶和其 MT5 真實帳戶貨幣不相同, 公司保留收取1% 貨幣兌換費的權利。"
 
 msgid "Therefore your current immediate maximum withdrawal (subject to your account having sufficient funds) is %1 %2 (or equivalent in other currency)."
 msgstr "因此您目前的即時最高取款額（要求您的帳戶有充足資金）為 %1 %2（或其他等值貨幣)。"
@@ -11599,13 +11599,13 @@ msgid "These ST&Cs are to be governed by and construed in accordance with Maltes
 msgstr "這些補充條款和條件將遵循馬耳他法律的約束和釋義，各方同意接受馬耳他法庭非專屬性司法管轄權。"
 
 msgid "These ST&Cs are to be governed by and construed in accordance with Maltese law, and the parties hereto agree to submit to the non-exclusive jurisdiction of the Maltese courts."
-msgstr ""
+msgstr "這些補充條款和條件將遵循馬耳他法律的約束和釋義，各方同意接受馬耳他法庭非專屬性司法管轄權。"
 
 msgid "These ST&Cs begin to apply on the date BIEL opens the client's account, and, for any new versions after that, on the date BIEL notifies the client."
-msgstr ""
+msgstr "這些補充條款和條件於公司為客戶開立帳戶之日開始生效，之後如有任何新版本，則於公司通知客戶的日期開始生效。"
 
 msgid "These ST&Cs form part of, and need to be read together with, the general terms and conditions relating to the use of %1."
-msgstr ""
+msgstr "這些補充條款和條件是關於使用%1的一般條款和條件的組成部份，且必須一併閱讀。"
 
 msgid "These are trades where the trader predicts if a market will finish higher or lower than a specified price target."
 msgstr "交易者預測市場收盤價會高於或低於設定目標價的交易。"
@@ -11629,16 +11629,16 @@ msgid "These materials may not be copied or redistributed for commercial purpose
 msgstr "未經 Binary Group 公司事先書面許可，不得基於商業目的或者以其他任何有償方式複製或者傳播這些材料。"
 
 msgid "These supplementary terms and conditions (these \"ST&Cs\") apply solely to the client of Binary Investments (Europe) Ltd (\"BIEL\") and will govern the relationship between clients and BIEL when trading Financial Products (as defined in the Key information documents %1here%2) with BIEL."
-msgstr ""
+msgstr "這些補充條款和條件（英文簡寫為「ST&Cs」）僅適用於 Binary 投資（歐洲）有限公司（「BIEL」) 的客戶，而且將在與BIEL進行金融產品（如%1此處%2的關鍵資訊文件所定義）交易時監控客戶和BIEL之間的關係。"
 
 msgid "These supplementary terms and conditions (these \"ST&Cs\") apply solely to the clients of Binary Investments (Europe) Ltd (\"BIEL\") and will govern the relationship between the client and BIEL when trading Financial Products (as defined below) with BIEL."
-msgstr ""
+msgstr "這些補充條款和條件（英文簡寫為「ST&Cs」）僅適用於 Binary 投資（歐洲）有限公司（「BIEL」) 的客戶，而且將在與BIEL進行金融產品（定義如下）交易時監控客戶和BIEL之間的關係。"
 
 msgid "These terms and conditions are provided in several different languages for clients' convenience; however, these translations do reflect the same principles. The Company attempts, as much as possible, to provide a faithful translation in English of the official language of several countries. In the event of any differences between the English version of the website and any other language, the English version shall prevail."
-msgstr ""
+msgstr "為了客戶的方便，公司以多種語言提供這些條款和條件。不過，這些翻譯件所反映的是相同的原則。公司盡量為多個國家的官方語言提供忠實的英語譯文。如果網站上有任何語言跟英語版本有任何差異的話，須以英語版本為準。"
 
 msgid "These terms and conditions may be supplemented from time to time by supplementary terms and conditions applicable to a particular Company or products."
-msgstr ""
+msgstr "這些條款和條件可能陸續會增加適用於某一公司或產品的補充條款和條件。"
 
 msgid "They also generate monthly management accounts, annual audited accounts, and reconcile all transactions. As our Accounts &amp; Payments Executive, you will be able to contribute to all these key areas and increase the efficiency of our financial operations."
 msgstr "他們也製作每月管理帳目、年度審計帳目、並對所有交易記錄進行協調。身為帳戶和支付主管, 您須能夠為所有這些關鍵領域做出貢獻, 並提高我們財務運營的效率。"
@@ -11647,25 +11647,25 @@ msgid "They also manage our suppliers and contractors, as well as general admini
 msgstr "他們也管理我們的供應商和承包商, 以及一般的行政職責和程序。身為我們的人力資源運營主管, 您須能領導、執行和支持一系列與人力資源和管理相關的任務, 以確保我們世界各地的辦事處順利運作。"
 
 msgid "They are not aware of anything that shall, or might reasonably be expected to, prevent, or obstruct them from performing all of their obligations under this Agreement, in the manner and at the times contemplated by this Agreement."
-msgstr ""
+msgstr "他們不知道任何應當或可能合理地預期會以本協議規定的方式和時間阻止或妨礙他們履行本協議項下的所有義務的任何事項。"
 
 msgid "They have obtained all Authorisations and are not aware of anything that shall or might reasonably be expected to prevent them from entering and performing all of their obligations under this Agreement."
-msgstr ""
+msgstr "他們已獲得所有授權，並且不知道任何應該或可能合理預期會阻止他們進入並履行本協議項下所有義務的任何授權。"
 
 msgid "They will comply with all laws when performing their obligations under this Agreement."
-msgstr ""
+msgstr "履行本協議規定的義務時，他們將遵守所有法律。"
 
 msgid "They will provide the Company with any information that %1 may reasonably require to fully satisfy the demands or the requirements of the applicable government authority, upon the Company's request."
-msgstr ""
+msgstr "為了充分滿足有關政府機關需求，公司可能向客户提出%1的任何合理資料請求，客户將為公司提供相關資料。"
 
 msgid "They will take all reasonable steps to comply with any law, ordinance, charter, by-law, or rule applicable to the client or the jurisdiction in which the client is resident."
-msgstr ""
+msgstr "客戶將採取一切合理步驟，遵守其居住的管轄區適用的法律、條例、憲章、法令或規則。"
 
 msgid "They will use the Margin trading services described in this agreement in good faith and will not use any software, algorithm, or any trading strategy to manipulate or take unfair advantage of the way that the Company's Bid and Ask Prices are quoted. The client shall observe the standard of behaviour reasonably expected of persons in the client's position and not take any step which would cause %1 to fail to observe the standard of behaviour reasonably expected of persons in the Company's position."
-msgstr ""
+msgstr "客戶將誠信使用本協定所述的保證金交易服務，客戶不會對公司的出價和要價方式使用任何軟體、算法或任何交易策略操作或採取不公平的優勢。客戶應遵守其立場的標準和合理行為，不採取任何使公司無法遵守立場的標準和合理行為的措施。"
 
 msgid "They will, at all times, obtain, comply with, and do all that is necessary to maintain in full force and effect all authority, powers, consents, licences, and authorities referred to in this clause."
-msgstr ""
+msgstr "客戶將一直獲取和遵守並執行所有必要措施以對此條款所述的所有權限、權力、同意書、牌照和當局保持十足效力及作用。"
 
 msgid "Think that a certain currency will go up or down? Learn when you should buy (or \"go long\") and when to sell (or \"go short\")."
 msgstr "您認為某種貨幣會上漲或下跌？學習什麼時候應該買入 (或 「持多頭頭寸」) 和賣出 (或「持空頭頭寸」)。"
@@ -11674,16 +11674,16 @@ msgid "This Agreement constitutes the entire Agreement between the Parties and n
 msgstr "本協議構成雙方之間的全部協議。本協議中之前的書面或口頭陳述或安排或協議涉及的任何有關事項, 均不得在開始日期前生效或施行。"
 
 msgid "This Agreement constitutes the entire agreement between the parties, and no earlier representation or arrangement, written or oral, relating to any matter dealt with in this Agreement between the parties shall have any force or effect before the Effective Date."
-msgstr ""
+msgstr "本協議構成雙方之間的全部協議。本協議中之前的書面或口頭陳述或安排或協議涉及的任何有關事項, 均不得在開始日期前生效或施行。"
 
 msgid "This Agreement contains the entire agreement between the parties with respect to its subject matter and supersedes all previous agreements and understandings between the parties with respect to its subject matter."
 msgstr "本協議載有各方關於其主題的全部約定，並取代各方關於其主題的所有先前協議及解釋。"
 
 msgid "This Agreement governs the Programmer's use of the Company's API unless the Programmer has executed another agreement with the Company that expressly governs the Programmer's use of the Company's API."
-msgstr ""
+msgstr "本協議管轄程式設計員對公司API的使用，除非程式設計員已與公司簽署了另一份明確規定程式設計員使用公司API的協議。"
 
 msgid "This Agreement has been duly executed and constitutes binding obligations on both parties, enforceable against it in accordance with its terms."
-msgstr ""
+msgstr "本協議已經正式簽署，並構成雙方的約束性義務，可根據其條款對其強制執行。"
 
 msgid "This Agreement is between Binary (V) Ltd (hereinafter referred to as 'the Company') and Client who authorises a Multi-Account Manager (hereinafter referred to as 'Money Manager') to manage the Account on behalf of the Client, both of whom agree to bound by this Agreement as a supplement to the Client Agreement."
 msgstr "本協定是Binary (V) 有限公司 (以下簡稱「公司」) 和客戶授權代表客戶管理的多帳戶經理 (以下簡稱 「資金經理」) 之間的協定, 雙方同意接受本協定作為客戶協定的補充協定。"
@@ -11695,7 +11695,7 @@ msgid "This Agreement may be terminated forthwith by either party on written not
 msgstr "如果一方嚴重違反本協議條款，且在能夠補救的情況下，於收到關於違約的書面通知後十五天內未能對該等違約進行補救，另一方可以通過書面通知的方式立即終止本協議。"
 
 msgid "This Agreement sets out the terms and conditions between %1 and the Introducing Broker in providing Introducing Broker services to the Company in accordance with the provisions and terms of this Agreement."
-msgstr ""
+msgstr "本協議規定了％1與推介經紀之間根據本協議的條規和條款向公司提供推介經紀服務的條款和條件。"
 
 msgid "This Agreement shall be equally terminated in the event of bankruptcy, insolvency, or liquidation of either party. "
 msgstr ""
@@ -12453,8 +12453,8 @@ msgstr "美元"
 msgid "USD 1 per point"
 msgstr "每點 1 美元"
 
-msgid "USD 10 X 1 lot x USD 125,000/100,000 = USD 12.5"
-msgstr "10 美元 x 1 手 x 125,000 美元/100,000 = 12.5 美元"
+msgid "USD 10 x 1 lot x USD 125,000/100,000 = USD 12.5"
+msgstr ""
 
 msgid "USD Index – Measures the value of the US Dollar against a basket of five global currencies (EUR, GBP, JPY, CAD, AUD), each weighted by 20%"
 msgstr "美元 - 衡量美元相對於五種國際貨幣（歐元、英鎊、日圓、加元、澳元）的價值，各貨幣的權重均為20%。"
