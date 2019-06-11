@@ -124,6 +124,7 @@ const DigitTicker = (() => {
     };
 
     const highlightWinningNumbers = (winning_numbers) => {
+        if (!el_container) return;
         winning_numbers.forEach(digit => {
             const element = el_container.querySelector(`.digit-${digit}`);
             element.classList.remove('digit-losing');
