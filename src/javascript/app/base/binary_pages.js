@@ -51,17 +51,18 @@ const VideoFacility           = require('../pages/user/video_facility');
 
 // ==================== static ====================
 // const Charity            = require('../../static/pages/charity');
-const Contact            = require('../../static/pages/contact');
-const Contact2           = require('../../static/pages/contact_2');
-const GetStarted         = require('../../static/pages/get_started');
-const Home               = require('../../static/pages/home');
-const KeepSafe           = require('../../static/pages/keep_safe');
-const JobDetails         = require('../../static/pages/job_details');
-const Platforms          = require('../../static/pages/platforms');
-const Regulation         = require('../../static/pages/regulation');
-const StaticPages        = require('../../static/pages/static_pages');
-const TermsAndConditions = require('../../static/pages/tnc');
-const WhyUs              = require('../../static/pages/why_us');
+const Contact             = require('../../static/pages/contact');
+const Contact2            = require('../../static/pages/contact_2');
+const GetStarted          = require('../../static/pages/get_started');
+const Home                = require('../../static/pages/home');
+const KeepSafe            = require('../../static/pages/keep_safe');
+const JobDetails          = require('../../static/pages/job_details');
+const Platforms           = require('../../static/pages/platforms');
+const Regulation          = require('../../static/pages/regulation');
+const StaticPages         = require('../../static/pages/static_pages');
+const TermsAndConditions  = require('../../static/pages/tnc');
+const WhyUs               = require('../../static/pages/why_us');
+const AffiliatesIBLanding = require('../../static/pages/affiliate_ib_landing');
 
 /* eslint-disable max-len */
 const pages_config = {
@@ -127,7 +128,7 @@ const pages_config = {
     welcome                  : { module: WelcomePage,                is_authenticated: true, only_virtual: true },
     withdrawws               : { module: PaymentAgentWithdraw,       is_authenticated: true, only_real: true },
 
-    'affiliate-ib'           : { module: StaticPages.AffiliatesIb },
+    'affiliate-ib'           : { module: AffiliatesIBLanding },
     'binary-in-numbers'      : { module: StaticPages.BinaryInNumbers },
     'binary-options'         : { module: GetStarted.BinaryOptions },
     'binary-options-mt5'     : { module: GetStarted.BinaryOptionsForMT5 },
