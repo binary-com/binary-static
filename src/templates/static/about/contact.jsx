@@ -37,7 +37,6 @@ const Contact = () => (
                                             id='cs_telephone_number'
                                             options={[
                                                 { text: it.L('Australia'),      value: it.L('[_1] (Toll Free)', '+61 (02) 8294 5448, 1800 093570') },
-                                                { text: it.L('Poland'),         value: '+48 58 881 00 02' },
                                                 { text: it.L('Russia'),         value: it.L('[_1] (Toll Free)', '8 10 8002 8553011') },
                                                 { text: it.L('South Africa'),   value: it.L('[_1] (Toll Free)', '+27 80 099 0561') },
                                                 { text: it.L('United Kingdom'), value: it.L('[_1] (Toll Free)', '+44 (0) 1666 800042, 0800 011 9847'), selected: true },
