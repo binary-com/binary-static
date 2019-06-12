@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-06-11 06:20\n"
+"PO-Revision-Date: 2019-06-11 11:31\n"
 "Last-Translator: binarycom\n"
 "Language-Team: Polish\n"
 "MIME-Version: 1.0\n"
@@ -573,6 +573,9 @@ msgstr "0,25%"
 msgid "0.3%"
 msgstr "0,3%"
 
+msgid "0.5%"
+msgstr ""
+
 msgid "0.75%"
 msgstr "0,75%"
 
@@ -656,9 +659,6 @@ msgstr "40 – 59,999%"
 
 msgid "40K+"
 msgstr "40 tyś.+"
-
-msgid "5%"
-msgstr "5%"
 
 msgid "6-10 transactions in the past 12 months"
 msgstr "6-10 transakcji w ciągu ostatnich 12 miesięcy"
@@ -3322,7 +3322,7 @@ msgid "Cryptocurrencies such as Bitcoin and Ethereum are decentralised digital c
 msgstr "Kryptowaluty, takie jak Bitcoin czy Ethereum, to zdecentralizowane waluty cyfrowe w bazie blockchain."
 
 msgid "Cryptocurrencies**"
-msgstr ""
+msgstr "Kryptowaluty**"
 
 msgid "Cryptocurrency"
 msgstr "Kryptowaluta"
@@ -3963,7 +3963,7 @@ msgstr "Każdy przelew jest objęty opłatą za przelew w wysokości %1 lub mini
 msgid "Earn"
 msgstr "Zarabiaj"
 
-msgid "Earn USD 100 in commission for each successful referral. Your referred client must open a real money investment account through your unique affiliate link and deposit a total of USD 100 or more (one-time or accumulative) in the account. This commission plan is only available to Affiliates based in the EU."
+msgid "Earn USD 100 in commission for each successful referral. Your referred client must open a %1real money investment account%2 through your unique affiliate link and deposit a total of USD 100 or more (one-time or accumulative) in the account. This commission plan is only available to Affiliates based in the EU."
 msgstr ""
 
 msgid "Earn a monetary reward for any verifiable issues that you find, with a bounty worth up to USD 1,000 for high-risk security vulnerabilities."
@@ -10420,10 +10420,10 @@ msgid "The Company is licensed to deal in derivatives on its own account. Client
 msgstr ""
 
 msgid "The Company is not liable for loss or damage of any kind whatsoever arising as a result of information or prices published on or furnished through the %1 API, or any errors or omissions of the %1 API."
-msgstr ""
+msgstr "Firma nie ponosi odpowiedzialności za jakiekolwiek straty lub szkody związane z informacjami lub cenami opublikowanymi lub dostarczonymi poprzez API %1 ani jakimikolwiek błędami czy pominięciami związanymi z API %1."
 
 msgid "The Company is not under any obligation of confidentiality with respect to the Contributions."
-msgstr ""
+msgstr "Firma nie jest zobowiązana do zachowania poufności w odniesieniu do Wkładu."
 
 msgid "The Company is required by its licence to inform clients about what happens to the funds that the Company holds on account for clients, and the extent to which funds are protected in the event of insolvency. To learn more, please refer %1here%2."
 msgstr ""
@@ -12453,7 +12453,7 @@ msgstr "USD"
 msgid "USD 1 per point"
 msgstr "1 USD za punkt"
 
-msgid "USD 10 X 1 lot x USD 125,000/100,000 = USD 12.5"
+msgid "USD 10 x 1 lot x USD 125,000/100,000 = USD 12.5"
 msgstr ""
 
 msgid "USD Index – Measures the value of the US Dollar against a basket of five global currencies (EUR, GBP, JPY, CAD, AUD), each weighted by 20%"
@@ -13987,7 +13987,7 @@ msgid "paysafecard offers a voucher-based online payment method that does not re
 msgstr "paysafecard oferuje elektroniczną metodę płatności opartą na systemie pre-paid, która nie wymaga posiadania konta bankowego, karty kredytowej ani podawania danych osobowych. Odwiedź %1, aby uzyskać więcej informacji."
 
 msgid "per lot"
-msgstr ""
+msgstr "za partię"
 
 msgid "ratio of Account Equity to Total Margin, expressed as a percentage"
 msgstr "stosunek środków na koncie do całkowitej kwoty marży wyrażony w procentach"
