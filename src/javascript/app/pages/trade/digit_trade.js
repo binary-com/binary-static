@@ -2,134 +2,154 @@ const moment               = require('moment');
 const DigitTicker          = require('./digit_ticker');
 const ViewPopupUI          = require('../user/view_popup/view_popup.ui');
 const showLocalTimeOnHover = require('../../base/clock').showLocalTimeOnHover;
-const BinarySocket         = require('../../base/socket');
 const LoadingSpinner       = require('../../components/loading-spinner');
 const addComma             = require('../../../_common/base/currency_base').addComma;
 const localize             = require('../../../_common/localize').localize;
-const getPropertyValue     = require('../../../_common/utility').getPropertyValue;
 
 const DigitDisplay = (() => {
-    let $container,
-        contract,
-        tick_count,
-        spot_times;
+    let $container;
 
-    // Subscribe if contract is still ongoing/running.
-    const subscribe = (request) => {
-        request.end = 'latest';
-
-        if (contract.exit_tick_time) {
-            request.end = +contract.exit_tick_time;
-            request.count = +contract.tick_count;
-            if (+contract.tick_count === 1) {
-                request.end += 1; // TODO: API sends the improper response when end and start are the same for 1 tick contracts. remove this block on fix
-            }
-        } else {
-            request.subscribe = 1;
-            request.end       = 'latest';
-        }
-    };
-
-    const init = (id_render, proposal_open_contract) => {
-        const calculated_height = (proposal_open_contract.tick_count + 1) * 40;
-
-        tick_count = 1;
-        contract   = proposal_open_contract;
-        spot_times = [];
-
+    const initTable = (id_render, calculated_height, poc) => {
         $container = $(`#${id_render}`);
         $container
             .addClass('normal-font')
-            .html($('<h5 />', { text: contract.display_name, class: 'center-text' }))
-            .append($('<div />', { class: 'gr-8 gr-centered gr-12-m', style: `height: ${calculated_height}px;` })
-                .append($('<div />', { class: 'gr-row', id: 'table_digits' })
-                    .append($('<strong />', { class: 'gr-3', text: localize('Tick') }))
-                    .append($('<strong />', { class: 'gr-3', text: localize('Spot') }))
-                    .append($('<strong />', { class: 'gr-6', text: localize('Spot Time (GMT)') }))))
-            .append($('<div />', { class: 'digit-ticker invisible', id: 'digit_ticker_container' }));
+            .html($('<h5 />', {
+                text : poc.display_name,
+                class: 'center-text',
+            }))
+            .append($('<div />', {
+                class: 'gr-8 gr-centered gr-12-m',
+                style: `height: ${calculated_height}px;`,
+            })
+                .append($('<div />', {
+                    class: 'gr-row',
+                    id   : 'table_digits',
+                })
+                    .append($('<strong />', {
+                        class: 'gr-3',
+                        text : localize('Tick'),
+                    }))
+                    .append($('<strong />', {
+                        class: 'gr-3',
+                        text : localize('Spot'),
+                    }))
+                    .append($('<strong />', {
+                        class: 'gr-6',
+                        text : localize('Spot Time (GMT)'),
+                    }))))
+            .append($('<div />', {
+                class: 'digit-ticker invisible',
+                id   : 'digit_ticker_container',
+            }));
         LoadingSpinner.show('table_digits');
+    };
 
+    const calculateTableHeight = (proposal_open_contract) => (proposal_open_contract.tick_count + 1) * 40;
+
+    const renderTable = (id_render, poc) => {
+        const el_tick_chart = document.getElementById(id_render);
+        if (!el_tick_chart || el_tick_chart.childElementCount < 3) return;
+
+        if (DigitTicker.isInitialized()) {
+            DigitTicker.update(
+                poc.tick_stream.length,
+                {
+                    quote: poc.status !== 'open' ? poc.exit_tick : poc.current_spot,
+                    epoch: +poc.exit_tick_time || +poc.current_spot_time,
+                }
+            );
+        }
+
+        const el_container = document.getElementById('table_digits');
+        if (el_container.childElementCount > 3) {
+            el_container.innerHTML = '';
+            el_container.append(createHeadingElements());
+        }
+
+        ViewPopupUI.storeSubscriptionID(poc.id);
+        LoadingSpinner.hide('table_digits');
+        poc.tick_stream.forEach((tick, index) => {
+            $('#table_digits')
+                .append(
+                    renderRow(tick, index + 1, poc.tick_count)
+                );
+        });
+        showLocalTimeOnHover('.digit-spot-time');
+    };
+
+    const createCounterElement = (csv_spot, index, total) => {
+        const el_counter = document.createElement('p');
+        el_counter.classList.add('gr-3', 'gray');
+        el_counter.innerHTML = index === total ? `${csv_spot.slice(0,
+            csv_spot.length - 1,
+        )}<strong>${csv_spot.substr(-1)}</strong>` : csv_spot;
+        return el_counter;
+    };
+
+    const createIndexElement = (index) => {
+        const el_index = document.createElement('p');
+        el_index.classList.add('gr-3');
+        el_index.innerText = index;
+        return el_index;
+    };
+
+    const createSpotElement = (tick) => {
+        const el_spot = document.createElement('p');
+        'gr-6 gray digit-spot-time no-underline'
+            .split(' ')
+            .forEach(class_name => {
+                el_spot.classList.add(class_name);
+            });
+        el_spot.innerText = moment(+tick.epoch * 1000).utc().format('YYYY-MM-DD HH:mm:ss');
+        return el_spot;
+    };
+
+    const renderRow = (tick, index, total) => {
+        const csv_spot   = addComma(tick.tick);
+        const el_fragment   = document.createDocumentFragment();
+        el_fragment.append(createIndexElement(index));
+        el_fragment.append(createCounterElement(csv_spot, index, total));
+        el_fragment.append(createSpotElement(tick));
+
+        return el_fragment;
+    };
+
+    const createHeadingElements = () => {
+        const tick      = document.createElement('strong');
+        const spot      = document.createElement('strong');
+        const spot_time = document.createElement('strong');
+
+        tick.innerText = localize('Tick');
+        tick.classList.add('gr-3');
+
+        spot.innerText = localize('Spot');
+        spot.classList.add('gr-3');
+
+        spot_time.innerText = localize('Spot Time (GMT)');
+        spot_time.classList.add('gr-6');
+
+        const fragment = document.createDocumentFragment();
+        fragment.append(tick, spot, spot_time);
+
+        return fragment;
+    };
+
+    const init = (id_render, proposal_open_contract) => {
+        initTable(id_render, calculateTableHeight(proposal_open_contract), proposal_open_contract);
         DigitTicker.init(
             'digit_ticker_container',
-            contract.contract_type,
-            contract.shortcode,
-            contract.tick_count,
-            contract.status
+            proposal_open_contract.contract_type,
+            proposal_open_contract.shortcode,
+            proposal_open_contract.tick_count,
+            proposal_open_contract.status
         );
-
-        const request = {
-            ticks_history: contract.underlying,
-            start        : +contract.entry_tick_time,
-        };
-
-        subscribe(request);
-
-        BinarySocket.send(request, { callback: update });
-    };
-
-    const updateTable = (spot, time) => {
-        if (spot_times.some(item => item.spot === spot && item.time === time)) {
-            return;
-        }
-        if (spot_times.filter(spot_time => spot_time.spot === spot && spot_time.time === time).length !== 0) {
-            return;
-        }
-
-        spot_times.push({
-            spot,
-            time,
-        });
-
-        const csv_spot = addComma(spot);
-
-        $container
-            .find('#table_digits')
-            .append($('<p />', { class: 'gr-3', text: tick_count }))
-            .append($('<p />', { class: 'gr-3 gray', html: tick_count === contract.tick_count ? `${csv_spot.slice(0, csv_spot.length - 1)}<strong>${csv_spot.substr(-1)}</strong>` : csv_spot }))
-            .append($('<p />', { class: 'gr-6 gray digit-spot-time no-underline', text: moment(+time * 1000).utc().format('YYYY-MM-DD HH:mm:ss') }));
-
-        DigitTicker.update(
-            tick_count,
-            {
-                quote: contract.status !== 'open' ? contract.exit_tick : spot,
-                epoch: +contract.exit_tick_time || +contract.current_spot_time,
-            }
-        );
-    };
-
-    const update = (response) => {
-        if (!$container.is(':visible') || !response || (!response.tick && !response.history)) {
-            return;
-        }
-
-        if (getPropertyValue(response, ['tick', 'id']) && document.getElementById('sell_content_wrapper')) {
-            ViewPopupUI.storeSubscriptionID(response.tick.id);
-        }
-        LoadingSpinner.hide('table_digits');
-        if (response.history) {
-            response.history.times.some((time, idx) => {
-                if (+time >= +contract.entry_tick_time) {
-                    updateTable(response.history.prices[idx], time);
-                    tick_count += 1;
-                }
-                return tick_count > contract.tick_count;
-            });
-        } else if (response.tick) {
-            if (tick_count <= contract.tick_count &&
-                +response.tick.epoch >= +contract.entry_tick_time) {
-                updateTable(response.tick.quote, response.tick.epoch);
-                tick_count += 1;
-            }
-        }
-        showLocalTimeOnHover('.digit-spot-time');
+        renderTable(id_render, proposal_open_contract);
     };
 
     const end = (proposal_open_contract) => {
         if (proposal_open_contract.status !== 'open') {
-            // if there is no exit tick inside proposal open contract, select a fallback from history instead.
-            const fallback_exit_tick = spot_times.find(spot => +spot.time === +proposal_open_contract.exit_tick_time);
             DigitTicker.update(proposal_open_contract.tick_count, {
-                quote: proposal_open_contract.exit_tick || fallback_exit_tick.spot,
+                quote: proposal_open_contract.exit_tick || proposal_open_contract.tick_stream.slice(-1).tick,
                 epoch: +proposal_open_contract.exit_tick_time,
             });
         }
@@ -144,9 +164,11 @@ const DigitDisplay = (() => {
     };
 
     return {
+        calculateTableHeight,
         end,
         init,
-        update,
+        initTable,
+        renderTable,
     };
 })();
 

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-06-11 06:21\n"
+"PO-Revision-Date: 2019-06-12 04:36\n"
 "Last-Translator: binarycom\n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -573,6 +573,9 @@ msgstr "0.25%"
 msgid "0.3%"
 msgstr "0.3%"
 
+msgid "0.5%"
+msgstr "0.5%"
+
 msgid "0.75%"
 msgstr "0.75%"
 
@@ -656,9 +659,6 @@ msgstr "40 – 59.999%"
 
 msgid "40K+"
 msgstr "4万+"
-
-msgid "5%"
-msgstr "5%"
 
 msgid "6-10 transactions in the past 12 months"
 msgstr "过去12个月内6-10次交易"
@@ -3964,8 +3964,8 @@ msgstr "每次转账需支付%1转账费或最低费用%2, 以较高者为准。
 msgid "Earn"
 msgstr "赚取"
 
-msgid "Earn USD 100 in commission for each successful referral. Your referred client must open a real money investment account through your unique affiliate link and deposit a total of USD 100 or more (one-time or accumulative) in the account. This commission plan is only available to Affiliates based in the EU."
-msgstr "每次推荐成功可获得100美元佣金。您推荐的客户必须通过您专用的联盟链接开立真实货币投资账户, 并在账户中存入总计100美元或更多 (一次性或累计) 的资金。该佣金计划仅适用于欧盟区的联盟会员。"
+msgid "Earn USD 100 in commission for each successful referral. Your referred client must open a %1real money investment account%2 through your unique affiliate link and deposit a total of USD 100 or more (one-time or accumulative) in the account. This commission plan is only available to Affiliates based in the EU."
+msgstr "每次推荐成功可获得100美元佣金。您推荐的客户必须通过您专用的联盟链接开立 %1真实货币投资账户%2, 并在账户中存入总计100美元或更多 (一次性或累计) 的资金。该佣金计划仅适用于欧盟区的联盟成员。"
 
 msgid "Earn a monetary reward for any verifiable issues that you find, with a bounty worth up to USD 1,000 for high-risk security vulnerabilities."
 msgstr "如果发现任何可验证问题，您可获得金钱奖励，高风险安全漏洞的奖金最高可达1,000美元。"
@@ -11605,10 +11605,10 @@ msgid "These ST&Cs are to be governed by and construed in accordance with Maltes
 msgstr "这些补充条款和条件遵照马耳他法律的约束和解释，各方同意接受马耳他法庭非专属性司法管辖权。"
 
 msgid "These ST&Cs begin to apply on the date BIEL opens the client's account, and, for any new versions after that, on the date BIEL notifies the client."
-msgstr ""
+msgstr "这些补充条款和条件于客户的账户开立之日生效，之后如有新版本，则于BIEL通知客户的当日开始生效。"
 
 msgid "These ST&Cs form part of, and need to be read together with, the general terms and conditions relating to the use of %1."
-msgstr ""
+msgstr "这些补充条款和条件是%1 一般使用条款和条件的组成部分，必须一并阅读。"
 
 msgid "These are trades where the trader predicts if a market will finish higher or lower than a specified price target."
 msgstr "交易者预测市场收盘价将高于或低于设定目标价的交易。"
@@ -11632,16 +11632,16 @@ msgid "These materials may not be copied or redistributed for commercial purpose
 msgstr "在未得到 Binary Group 公司书面许可的情况下，用户不得因商业目的以其他任何有偿方式复制或者传播这些材料。"
 
 msgid "These supplementary terms and conditions (these \"ST&Cs\") apply solely to the client of Binary Investments (Europe) Ltd (\"BIEL\") and will govern the relationship between clients and BIEL when trading Financial Products (as defined in the Key information documents %1here%2) with BIEL."
-msgstr ""
+msgstr "这些补充条款和条件(ST&C) 仅适用于 Binary 投资（欧洲）有限公司（即：“BIEL”) 的客户，并将在金融产品（如%1此处%2的关键信息文件所定义）交易中约束客户和BIEL之间的关系。"
 
 msgid "These supplementary terms and conditions (these \"ST&Cs\") apply solely to the clients of Binary Investments (Europe) Ltd (\"BIEL\") and will govern the relationship between the client and BIEL when trading Financial Products (as defined below) with BIEL."
-msgstr ""
+msgstr "这些补充条款和条件仅适用于 Binary 投资（欧洲）有限公司（即：“BIEL”) 的客户，并将在金融产品（定义见下）交易中约束客户和BIEL之间的关系。"
 
 msgid "These terms and conditions are provided in several different languages for clients' convenience; however, these translations do reflect the same principles. The Company attempts, as much as possible, to provide a faithful translation in English of the official language of several countries. In the event of any differences between the English version of the website and any other language, the English version shall prevail."
-msgstr ""
+msgstr "为了方便客户，公司以多种语言提供这些条款和条件。不过，这些翻译件所反映的是相同的原则。公司尽量为多个国家的官方语言提供准确的英语译文。如果其他语言版本和英语版本有任何差异，则以英语版本为准。"
 
 msgid "These terms and conditions may be supplemented from time to time by supplementary terms and conditions applicable to a particular Company or products."
-msgstr ""
+msgstr "这些条款和条件可能陆续添加适用于某一公司或产品的补充条款和条件。"
 
 msgid "They also generate monthly management accounts, annual audited accounts, and reconcile all transactions. As our Accounts &amp; Payments Executive, you will be able to contribute to all these key areas and increase the efficiency of our financial operations."
 msgstr "他们也制作每月管理账目、年度审计账目、并对所有交易记录进行协调。身为账户和支付主管, 您须能够为所有这些关键领域做出贡献, 并提高我们财务运营的效率。"
@@ -11650,25 +11650,25 @@ msgid "They also manage our suppliers and contractors, as well as general admini
 msgstr "他们也管理我们的供应商和承包商, 以及一般的行政职责和程序。身为我们的人力资源运营主管, 您须能领导、执行和支持一系列与人力资源和管理相关的任务, 以确保我们世界各地的办事处顺利运作。"
 
 msgid "They are not aware of anything that shall, or might reasonably be expected to, prevent, or obstruct them from performing all of their obligations under this Agreement, in the manner and at the times contemplated by this Agreement."
-msgstr ""
+msgstr "他们不知道任何应当或可能合理地预期会以本协议规定的方式和时间阻止或妨碍他们履行本协议项下的所有义务的任何事项。"
 
 msgid "They have obtained all Authorisations and are not aware of anything that shall or might reasonably be expected to prevent them from entering and performing all of their obligations under this Agreement."
-msgstr ""
+msgstr "他们已获得所有授权，并且不知道任何应该或可能合理预期会阻止他们进入并履行本协议项下所有义务的任何授权。"
 
 msgid "They will comply with all laws when performing their obligations under this Agreement."
-msgstr ""
+msgstr "履行本协议规定的义务时，他们将遵守所有法律。"
 
 msgid "They will provide the Company with any information that %1 may reasonably require to fully satisfy the demands or the requirements of the applicable government authority, upon the Company's request."
-msgstr ""
+msgstr "为了充分满足有关政府机关需求，公司可能向客户提出%1的任何合理信息请求，客户将为公司提供相关信息。"
 
 msgid "They will take all reasonable steps to comply with any law, ordinance, charter, by-law, or rule applicable to the client or the jurisdiction in which the client is resident."
-msgstr ""
+msgstr "客户将采取一切合理步骤，遵守其居住的管辖区适用的法律、条例、宪章、法令或规则；"
 
 msgid "They will use the Margin trading services described in this agreement in good faith and will not use any software, algorithm, or any trading strategy to manipulate or take unfair advantage of the way that the Company's Bid and Ask Prices are quoted. The client shall observe the standard of behaviour reasonably expected of persons in the client's position and not take any step which would cause %1 to fail to observe the standard of behaviour reasonably expected of persons in the Company's position."
-msgstr ""
+msgstr "客户将诚信使用本协议所述的保证金交易服务，不会对公司的出价和要价方式使用任何软件、算法或任何交易策略操作或采取不公平的优势。客户应遵守其立场的标准和合理行为，不采取任何使公司无法遵守其立场的标准和合理行为的措施。"
 
 msgid "They will, at all times, obtain, comply with, and do all that is necessary to maintain in full force and effect all authority, powers, consents, licences, and authorities referred to in this clause."
-msgstr ""
+msgstr "客户将一直获取和遵守并执行所有必要措施以对此条款所述的所有权限、权力、同意书、牌照和当局保持十足效力及作用。"
 
 msgid "Think that a certain currency will go up or down? Learn when you should buy (or \"go long\") and when to sell (or \"go short\")."
 msgstr "您认为某种货币会上涨或下跌？学习什么时候应该买入 (或 \"持多头头寸\") 和卖出 (或 \"持空头头寸\")。"
@@ -11677,16 +11677,16 @@ msgid "This Agreement constitutes the entire Agreement between the Parties and n
 msgstr "本协议构成双方之间的全部协议, 本协议中之前的书面或口头陈述或安排或协议涉及的任何有关事项, 均不得在开始日期前生效或施行。"
 
 msgid "This Agreement constitutes the entire agreement between the parties, and no earlier representation or arrangement, written or oral, relating to any matter dealt with in this Agreement between the parties shall have any force or effect before the Effective Date."
-msgstr ""
+msgstr "本协议构成双方之间的全部协议, 本协议中之前的书面或口头陈述或安排或协议涉及的任何有关事项, 均不得在开始日期前生效或施行。"
 
 msgid "This Agreement contains the entire agreement between the parties with respect to its subject matter and supersedes all previous agreements and understandings between the parties with respect to its subject matter."
 msgstr "本协议包含各方关于其标的的全部约定，并取代各方所有关于其标的的先前协议及解释。"
 
 msgid "This Agreement governs the Programmer's use of the Company's API unless the Programmer has executed another agreement with the Company that expressly governs the Programmer's use of the Company's API."
-msgstr ""
+msgstr "本协议管辖程序员对公司API的使用，除非程序员已与公司签署了另一份明确规定程序员使用公司API的协议。"
 
 msgid "This Agreement has been duly executed and constitutes binding obligations on both parties, enforceable against it in accordance with its terms."
-msgstr ""
+msgstr "本协议已经正式签署，并构成双方的约束性义务，可根据其条款对其强制执行。"
 
 msgid "This Agreement is between Binary (V) Ltd (hereinafter referred to as 'the Company') and Client who authorises a Multi-Account Manager (hereinafter referred to as 'Money Manager') to manage the Account on behalf of the Client, both of whom agree to bound by this Agreement as a supplement to the Client Agreement."
 msgstr "本协议是Binary (V) 有限公司 (以下简称 \"公司\") 和客户授权代表客户管理的多账户经理 (以下简称 \"资金经理\") 之间的协议, 双方同意接受本协议作为客户协议的补充协议。"
@@ -11698,22 +11698,22 @@ msgid "This Agreement may be terminated forthwith by either party on written not
 msgstr "如果一方严重违反本协议条款，且在能够补救的情况下，在收到书面的违约通知后的十五天内未能进行相应补救，另一方可立即通过书面形式终止本协议。"
 
 msgid "This Agreement sets out the terms and conditions between %1 and the Introducing Broker in providing Introducing Broker services to the Company in accordance with the provisions and terms of this Agreement."
-msgstr ""
+msgstr "本协议规定了％1与推介经纪之间根据本协议的条规和条款向公司提供推介经纪服务的条款和条件。"
 
 msgid "This Agreement shall be equally terminated in the event of bankruptcy, insolvency, or liquidation of either party. "
-msgstr ""
+msgstr "如果任何一方破产、无法清还债务或清算，本协议将在平等条件下终止。 "
 
 msgid "This Agreement shall be terminated should the behaviour of the Introducing Broker constitute negligence, misconduct, or wilful default."
-msgstr ""
+msgstr "如果推介经纪的行为构成疏忽、不当或故意违约，本协议将终止。"
 
 msgid "This Agreement shall commence on the Effective Date and will continue to be in full force and effect until this Agreement is terminated in accordance with the provisions and terms of this Agreement."
-msgstr ""
+msgstr "本协议自生效日期开始生效，并将继续完全有效，直至本协议根据其中条文和条款终止。"
 
 msgid "This Agreement shall commence on the date that the Programmer first accepts this Agreement and shall continue unless and until terminated in accordance with the term and termination conditions set forth in this Agreement."
-msgstr ""
+msgstr "本协议自程序员接受本协议之日起开始生效，并将继续生效，除非及直至本协议按照所定期限和条件终止为止。"
 
 msgid "This Agreement will be governed and construed in accordance with the laws of the country in which the relevant subsidiary is located, and the parties shall submit to the non-exclusive jurisdiction of the same courts."
-msgstr ""
+msgstr "本协议将根据相关子公司所在国家的法律进行管辖和解释，并且各方须遵从同一法院的非专属管辖权。"
 
 msgid "This Policy applies to retail and professional clients of %1 dealing in financial products offered by %1."
 msgstr "此政策适用于在买卖%1提供的金融产品的%1零售和专业客户。"
@@ -11725,22 +11725,22 @@ msgid "This account is excluded until %1"
 msgstr "此账户已被隔离, 直到%1"
 
 msgid "This agreement constitutes the entire agreement between the Parties and no earlier representation, arrangement, or agreement, whether written or oral, relating to any matter dealt with in this agreement between the Parties, shall have any force or effect before the Commencement Date."
-msgstr ""
+msgstr "本协议构成双方之间的全部协议, 本协议中之前的书面或口头陈述或安排或协议涉及的任何有关事项, 均不得在开始日期前生效或施行。"
 
 msgid "This agreement is between Binary (SVG) Ltd (hereinafter referred to as \"the Company\" or \"%1\") and Payment Agent (hereinafter referred to as \"the Agent\"), both of whom agree to be bound by this agreement."
-msgstr ""
+msgstr "本协议由Binary (SVG) Ltd (以下简称“公司”或“%1”) 和付款代理 (以下简称“代理”) 签订, 双方都同意受本协议约束。"
 
 msgid "This agreement is supplied to the Agent in English. In the event that there is a difference between the English version and any translated versions of this document, the English version shall prevail. The Company shall not be liable for any loss or damage whatsoever caused by an error, inaccuracy, or misspelling and, as a result, by misunderstanding or misinterpretation of any of the terms or conditions or clauses or provisions of any translated versions of this agreement."
-msgstr ""
+msgstr "本协议以英语版本为代理提供。若本协议的英文版和其他翻译语言版本之间存在冲突或歧义，则应以英文版为准。公司将不对协议的翻译版本误差、不准确或拼写错误所引起的对任何条款或条件或规定或字句误解或误译所造成的任何损害或损失负责。"
 
 msgid "This agreement is supplied to the client in English. In the event that there is a difference between the English version and any translated versions of this document, the English version shall prevail."
-msgstr ""
+msgstr "本协议给客户提供英文版本。如果英文版本与本文件的任何翻译版本有差异, 须以英文版本为准。"
 
 msgid "This agreement will commence on the date that the client receives their MT5 Real Account number and, for any new versions thereafter, on the date the new versions are published on the Company's website."
-msgstr ""
+msgstr "本协议将于客户收到MT5真实账户编号的日期开始生效。关于之后的任何新版本，则于公司网站发布新版本之日期开始生效。"
 
 msgid "This agreement, as well as any and all obligations or rights deriving from this agreement, is binding and enforceable against the Agent."
-msgstr ""
+msgstr "本协议以及从本协议中获得的任何和所有义务或权利均对代理具有约束力并可强制执行。"
 
 msgid "This application only supports Windows operating systems."
 msgstr "此应用程序仅支持 Windows 操作系统。"
@@ -11749,7 +11749,7 @@ msgid "This bonus is only available to new clients. Existing or former clients d
 msgstr "本奖金仅适用于新客户。现有或以往客户不符合条件。此类奖金新客户只能获取一次。此奖金每一个家庭仅能获得一次。"
 
 msgid "This bonus will be processed and credited to a client's account when both of the following cases are true:"
-msgstr ""
+msgstr "当以下两种情况均属实时，此奖金将被处理并记入客户的账户："
 
 msgid "This contract lost"
 msgstr "此合约亏损"
@@ -11761,13 +11761,13 @@ msgid "This contract won"
 msgstr "此合约获利"
 
 msgid "This document"
-msgstr ""
+msgstr "本文件"
 
 msgid "This document (the \"Agreement\") sets out the terms and conditions (\"Terms\") between \"the Company\" which is Binary Services Ltd, and \"the Programmer\" (the person who registered for the %1 Application Programme Interface (\"API\")."
-msgstr ""
+msgstr "本文件（“协议”）规定了“公司”即 Binary Services Ltd. 与“程序员”（%1 应用程序接口 (\"API\") 注册者）之间的条款和条件（”条款“）。"
 
 msgid "This document (the \"Agreement\") sets out the terms and conditions between \"the Company\", which is Binary Services Ltd, and the person who has applied for this programme (\"the Affiliate\"), in relation to the Affiliate's application to setup an affiliate account (and membership of the affiliate programme if the Affiliate's application is deemed successful)."
-msgstr ""
+msgstr "本文件（“协议”）规定了“公司”（即 Binary Services Ltd.）与本项目申请人（“联盟会员”）之间关于联盟会员申请设立联盟会员账户（申请成功后还包括联盟项目的会员资格）以推广网站的条款和条件。"
 
 msgid "This feature is not relevant to virtual-money accounts."
 msgstr "此功能不适用于虚拟资金账户。"
@@ -11806,7 +11806,7 @@ msgid "This is your %1 account."
 msgstr "这是您的 %1 账户。"
 
 msgid "This notice does not explain all of the risks involved in investments or similar products or how such risks relate to the client's personal circumstances. It is important that the client fully understand the risks involved before making a decision to enter into a trade with the Company%1. If the client is in any doubt about the risks involved, the client should seek professional advice%2."
-msgstr ""
+msgstr "此通知并不解释投资或同类产品的风险，以及这些风险如何与客户的个人情况关联。重要的是，在决定透过公司%1交易前，客户必须对相关风险有充分的了解。如果客户对相关风险有任何疑问，应寻求专业协助%2。"
 
 msgid "This notice provides the client with information about the risks associated with the contracts the client may purchase through services provided by %1 services."
 msgstr ""
@@ -12456,8 +12456,8 @@ msgstr "美元"
 msgid "USD 1 per point"
 msgstr "每点 1 美元"
 
-msgid "USD 10 X 1 lot x USD 125,000/100,000 = USD 12.5"
-msgstr "10 美元 x 1 手 x 125,000 美元/100,000 = 12.5 美元"
+msgid "USD 10 x 1 lot x USD 125,000/100,000 = USD 12.5"
+msgstr ""
 
 msgid "USD Index – Measures the value of the US Dollar against a basket of five global currencies (EUR, GBP, JPY, CAD, AUD), each weighted by 20%"
 msgstr "美元指数 - 衡量美元相对于五种全球货币（欧元、英镑、日元、加元、澳元）的价值，每种货币的权重均为20%。"

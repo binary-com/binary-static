@@ -32,7 +32,7 @@ const TypesOfPartnership = () => (
                         <p className='gr-padding-20 no-margin'>{it.L('Earn up to 35% in commission by referring new clients to trade on our premier platforms for binary options. All commissions are credited into your account by the 15th of every month.')}</p>
                         <h3 className='secondary-color'>{it.L('Commision structure')}</h3>
                         <TabContainer className='gr-padding-30 gr-parent full-width gr-11 gr-12-m gr-centered' theme='light'>
-                            <div className='gr-row gr-hide gr-show-m'>
+                            <div className='gr-row gr-hide gr-show-m mobile-menu'>
                                 <ArrowsMobile parent='commission_structure' direction='left' />
                                 <strong id='tab_mobile_header' className='align-self-center gr-8' />
                                 <ArrowsMobile parent='commission_structure' direction='right' />
@@ -47,7 +47,7 @@ const TypesOfPartnership = () => (
                                     { id: 'commission_structure_selector', className: 'tab-selector' },
                                 ]}
                             />
-                            <div className='tab-content gr-padding-20'>
+                            <div className='tab-content'>
                                 <TabContentContainer>
                                     <TabContent id='revenue' className='selectedTab'>
                                         <div className='gr-11 gr-12-m gr-centered'>
@@ -85,7 +85,6 @@ const TypesOfPartnership = () => (
                                                     ],
                                                 }}
                                             />
-
                                             <a href={it.affiliate_signup_url} className='button' target='_blank' rel='noopener noreferrer'>
                                                 <span>{it.L('Sign up now')}</span>
                                             </a>
@@ -117,7 +116,7 @@ const TypesOfPartnership = () => (
                                                         ],
                                                         [
                                                             { text: it.L('60 – 79.999%') },
-                                                            { text: it.L('5%') },
+                                                            { text: it.L('0.5%') },
                                                         ],
                                                         [
                                                             { text: it.L('80 – 94.999%') },
@@ -131,11 +130,14 @@ const TypesOfPartnership = () => (
                                                 }}
                                             />
                                         </div>
+                                        <a href={it.affiliate_signup_url} className='button' target='_blank' rel='noopener noreferrer'>
+                                            <span>{it.L('Sign up now')}</span>
+                                        </a>
                                     </TabContent>
                                     <TabContent id='cpa'>
                                         <div className='gr-11 gr-centered text-align-left'>
                                             <h3 className='no-margin'>{it.L('Cost per acquisition (CPA) for EU Affiliates only')}</h3>
-                                            <p>{it.L('Earn USD 100 in commission for each successful referral. Your referred client must open a real money investment account through your unique affiliate link and deposit a total of USD 100 or more (one-time or accumulative) in the account. This commission plan is only available to Affiliates based in the EU.')}</p>
+                                            <p>{it.L('Earn USD 100 in commission for each successful referral. Your referred client must open a [_1]real money investment account[_2] through your unique affiliate link and deposit a total of USD 100 or more (one-time or accumulative) in the account. This commission plan is only available to Affiliates based in the EU.', '<strong>', '</strong>')}</p>
                                             <a href={it.affiliate_signup_url} className='button center-text gr-centered gr-padding-20' target='_blank' rel='noopener noreferrer'>
                                                 <span>{it.L('Sign up now')}</span>
                                             </a>
@@ -151,7 +153,7 @@ const TypesOfPartnership = () => (
                         <p className='no-margin'>{it.L('Earn daily commissions on the trading activities of the clients you refer to the [_1] MetaTrader 5 (MT5) platform. Your total commissions will be credited into your account by the end of the day.', it.website_name)}</p>
 
                         <div className='gr-10 gr-12-m gr-parent gr-centered'>
-                            <h3 className='secondary-color'>{it.L('Commision structure')}</h3>
+                            <h3 id='ib_header' className='secondary-color'>{it.L('Commision structure')}</h3>
                             
                             <h3>{it.L('Synthetic Indices Account')}</h3>
                             <Table
@@ -211,7 +213,7 @@ const TypesOfPartnership = () => (
                             />
 
                             <p className='text-align-left'>{it.L('For example, a round trade (i.e. open and close position) of 1 lot of Vol 75 Index for a price of USD 125,000 would pay USD 12.5.')}</p>
-                            <p className='text-align-left'><strong>{it.L('USD 10 X 1 lot x USD 125,000/100,000 = USD 12.5')}</strong></p>
+                            <p className='text-align-left'><strong>{it.L('USD 10 x 1 lot x USD 125,000/100,000 = USD 12.5')}</strong></p>
                             <p className='text-align-left'>{it.L('If your account currency is EUR or GBP, your commission will be converted based on the current forex rate.')}</p>
                             
                             <h3>{it.L('Standard account')}</h3>

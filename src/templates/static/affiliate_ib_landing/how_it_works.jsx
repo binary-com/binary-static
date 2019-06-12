@@ -2,7 +2,7 @@ import React from 'react';
 
 const HowItWorks = () => (
     <section id='how-it-works' className='gr-row'>
-        <div className='gr-10 gr-centered center-text'>
+        <div className='gr-9 gr-centered center-text'>
             <h2>{it.L('How it works')}</h2>
 
             <div className='gr-row'>

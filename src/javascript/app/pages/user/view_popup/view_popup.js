@@ -260,9 +260,14 @@ const ViewPopup = (() => {
 
         const is_digit = /digit/i.test(contract.contract_type);
         if (is_digit) {
-            if (!chart_started) {
+            if (!chart_started && contract.entry_tick_time) {
                 DigitDisplay.init(id_tick_chart, contract);
                 chart_started = true;
+            } else if (!chart_started && !contract.entry_tick_time) {
+                // Since the contract not started yet, display the loading table:
+                DigitDisplay.initTable(id_tick_chart, DigitDisplay.calculateTableHeight(contract), contract);
+            } else if (chart_started) {
+                DigitDisplay.renderTable(id_tick_chart, contract);
             }
         } else if (!chart_started && !contract.tick_count) {
             if (!chart_init) {
