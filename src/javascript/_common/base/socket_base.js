@@ -136,7 +136,7 @@ const BinarySocketBase = (() => {
             const response = SocketCache.get(data, msg_type);
             if (response) {
                 State.set(['response', msg_type], cloneObject(response));
-                if (isReady() && is_available) { // make the request to keep the cache updated
+                if (isReady() && is_available && !options.skip_cache_update) { // make the request to keep the cache updated
                     binary_socket.send(JSON.stringify(data));
                 }
                 promise_obj.resolve(response);
