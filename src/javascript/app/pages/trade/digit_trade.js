@@ -1,6 +1,5 @@
 const moment               = require('moment');
 const DigitTicker          = require('./digit_ticker');
-const getUnderlyingPipSize = require('./symbols').getUnderlyingPipSize;
 const ViewPopupUI          = require('../user/view_popup/view_popup.ui');
 const showLocalTimeOnHover = require('../../base/clock').showLocalTimeOnHover;
 const LoadingSpinner       = require('../../components/loading-spinner');
