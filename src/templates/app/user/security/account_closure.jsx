@@ -26,6 +26,18 @@ const AccountClosure = () => (
                 <fieldset>
                     <div className='gr-padding-20 gr-gutter-left gr-gutter-right'>
                         <ClosureDescription
+                            id='change-fiat'
+                            title={it.L('Change my account currency')}
+                            subtitle={it.L('[_1]Change your fiat currency[_2] to any of the following:', `<a href="${it.url_for('new_account/realws')}">`, '</a>')}
+                            list_items={[
+                                it.L('USD'),
+                                it.L('AUD'),
+                                it.L('EUR'),
+                                it.L('GBP'),
+                            ]}
+                        />
+                        <ClosureDescription
+                            id='crypto'
                             title={it.L('Create crypto account')}
                             subtitle={it.L('[_1]Open an account[_2] in the cryptocurrency of your choice:', `<a href="${it.url_for('new_account/realws')}">`, '</a>')}
                             list_items={[
@@ -116,11 +128,12 @@ const AccountClosure = () => (
 );
 
 const ClosureDescription = ({
+    id,
     list_items,
     subtitle,
     title,
 }) => (
-    <div className='gr-padding-10'>
+    <div id={id} className='gr-padding-10'>
         <h3 className='secondary-color'>{title}</h3>
         <p>{subtitle}</p>
         { list_items &&
