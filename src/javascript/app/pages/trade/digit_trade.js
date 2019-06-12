@@ -105,8 +105,8 @@ const DigitDisplay = (() => {
     };
 
     const renderRow = (tick, index, total) => {
-        const csv_spot   = addComma(tick.tick);
-        const el_fragment   = document.createDocumentFragment();
+        const csv_spot    = addComma(tick.tick);
+        const el_fragment = document.createDocumentFragment();
         el_fragment.append(createIndexElement(index));
         el_fragment.append(createCounterElement(csv_spot, index, total));
         el_fragment.append(createSpotElement(tick));
@@ -155,11 +155,11 @@ const DigitDisplay = (() => {
         }
         if (proposal_open_contract.status === 'won') {
             DigitTicker.markAsWon();
-            DigitTicker.markDigitAsWon(proposal_open_contract.exit_tick.slice(-1));
+            DigitTicker.markDigitAsWon(proposal_open_contract.exit_tick.toString().slice(-1));
         }
         if (proposal_open_contract.status === 'lost') {
             DigitTicker.markAsLost();
-            DigitTicker.markDigitAsLost(proposal_open_contract.exit_tick.slice(-1));
+            DigitTicker.markDigitAsLost(proposal_open_contract.exit_tick.toString().slice(-1));
         }
     };
 
