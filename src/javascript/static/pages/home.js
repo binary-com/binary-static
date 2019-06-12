@@ -1,16 +1,16 @@
-const moment       = require('moment');
-const GTM          = require('../../_common/base/gtm');
-const Login        = require('../../_common/base/login');
-const localize     = require('../../_common/localize').localize;
-const State        = require('../../_common/storage').State;
-const TabSelector  = require('../../_common/tab_selector');
-const urlFor       = require('../../_common/url').urlFor;
-const BinaryPjax   = require('../../app/base/binary_pjax');
-const BinarySocket = require('../../app/base/socket');
-const isEuCountry  = require('../../app/common/country_base').isEuCountry;
-const FormManager  = require('../../app/common/form_manager');
-const VerifyEmail  = require('../../app/common/verify_email');
-const isBinaryApp  = require('../../config').isBinaryApp;
+const moment         = require('moment');
+const GTM            = require('../../_common/base/gtm');
+const Login          = require('../../_common/base/login');
+const localize       = require('../../_common/localize').localize;
+const State          = require('../../_common/storage').State;
+const TabSelector    = require('../../_common/tab_selector');
+const urlFor         = require('../../_common/url').urlFor;
+const BinaryPjax     = require('../../app/base/binary_pjax');
+const BinarySocket   = require('../../app/base/socket');
+const isEuCountry    = require('../../app/common/country_base').isEuCountry;
+const FormManager    = require('../../app/common/form_manager');
+const getFormRequest = require('../../app/common/verify_email');
+const isBinaryApp    = require('../../config').isBinaryApp;
 
 const Home = (() => {
     let clients_country;
@@ -26,7 +26,7 @@ const Home = (() => {
             TabSelector.repositionSelector();
 
             const form_id = '#frm_verify_email';
-            FormManager.init(form_id, VerifyEmail.getFormRequest());
+            FormManager.init(form_id, getFormRequest());
             FormManager.handleSubmit({
                 form_selector       : form_id,
                 fnc_response_handler: handler,
