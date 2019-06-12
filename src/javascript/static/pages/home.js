@@ -1,15 +1,17 @@
-const moment       = require('moment');
-const GTM          = require('../../_common/base/gtm');
-const Login        = require('../../_common/base/login');
-const localize     = require('../../_common/localize').localize;
-const State        = require('../../_common/storage').State;
-const TabSelector  = require('../../_common/tab_selector');
-const urlFor       = require('../../_common/url').urlFor;
-const BinaryPjax   = require('../../app/base/binary_pjax');
-const BinarySocket = require('../../app/base/socket');
-const isEuCountry  = require('../../app/common/country_base').isEuCountry;
-const FormManager  = require('../../app/common/form_manager');
-const isBinaryApp  = require('../../config').isBinaryApp;
+const Cookies       = require('js-cookie');
+const moment        = require('moment');
+const GTM           = require('../../_common/base/gtm');
+const Login         = require('../../_common/base/login');
+const localize      = require('../../_common/localize').localize;
+const State         = require('../../_common/storage').State;
+const TabSelector   = require('../../_common/tab_selector');
+const urlFor        = require('../../_common/url').urlFor;
+const BinaryPjax    = require('../../app/base/binary_pjax');
+const BinarySocket  = require('../../app/base/socket');
+const isEuCountry   = require('../../app/common/country_base').isEuCountry;
+const FormManager   = require('../../app/common/form_manager');
+const TrafficSource = require('../../app/common/traffic_source');
+const isBinaryApp   = require('../../config').isBinaryApp;
 
 const Home = (() => {
     let clients_country;
@@ -24,11 +26,23 @@ const Home = (() => {
             // we need to initiate selector after it becoming visible
             TabSelector.repositionSelector();
 
-            const form_id = '#frm_verify_email';
-            FormManager.init(form_id, [
+            const utm_data = TrafficSource.getData();
+            const req = [
                 { selector: '#email', validations: ['req', 'email'], request_field: 'verify_email' },
                 { request_field: 'type', value: 'account_opening' },
-            ]);
+                {
+                    request_field: 'url_parameters',
+                    value        : { utm_source: TrafficSource.getSource(utm_data) },
+                },
+            ];
+
+            if (utm_data.utm_medium) req.push({ request_field: 'utm_medium',   value: utm_data.utm_medium });
+            if (utm_data.utm_campaign) req.push({ request_field: 'utm_campaign', value: utm_data.utm_campaign });
+            const affiliate_token = Cookies.getJSON('affiliate_tracking');
+            if (affiliate_token) req.push({ request_field: 'affiliate_token', value: affiliate_token.t });
+
+            const form_id = '#frm_verify_email';
+            FormManager.init(form_id, req);
             FormManager.handleSubmit({
                 form_selector       : form_id,
                 fnc_response_handler: handler,
