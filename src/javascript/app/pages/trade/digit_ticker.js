@@ -1,5 +1,6 @@
 const DigitTicker = (() => {
     let barrier,
+        container_ref,
         el_container,
         el_peek,
         el_peek_box,
@@ -9,6 +10,7 @@ const DigitTicker = (() => {
         type,
         current_spot;
     let style_offset_correction = 5;
+    let is_initialized          = false;
 
     const array_of_digits         = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
@@ -18,6 +20,8 @@ const DigitTicker = (() => {
         type                 = contract_type;
         current_spot         = '-';
         el_container         = document.querySelector(`#${container_id}`);
+        container_ref        = container_id;
+        is_initialized       = true;
 
         setBarrierFromShortcode(type, shortcode);
         populateContainer(el_container);
@@ -27,9 +31,8 @@ const DigitTicker = (() => {
 
     const populateContainer = (container_element) => {
         // remove previous elements and start fresh.
-        while (container_element && container_element.firstChild) {
-            container_element.removeChild(container_element.firstChild);
-        }
+        if (!container_element) return;
+        container_element.innerHTML = '';
 
         const temp_epoch_el = document.createElement('div');
         temp_epoch_el.classList.add('epoch');
@@ -121,6 +124,7 @@ const DigitTicker = (() => {
     };
 
     const highlightWinningNumbers = (winning_numbers) => {
+        if (!el_container) return;
         winning_numbers.forEach(digit => {
             const element = el_container.querySelector(`.digit-${digit}`);
             element.classList.remove('digit-losing');
@@ -181,7 +185,7 @@ const DigitTicker = (() => {
     };
 
     const setElements = () => {
-        el_peek     = el_container ? el_container.querySelector('.peek') : null;
+        el_peek     = el_container ? el_container.querySelector('.peek') : populateContainer(container_ref);
         el_peek_box = el_peek ? el_container.querySelector('.peek-box') : null;
         el_mask     = el_peek_box ? el_peek_box.querySelector('.mask') : null;
     };
@@ -253,6 +257,8 @@ const DigitTicker = (() => {
         requestAnimationFrame(renderTick);
     };
 
+    const isInitialized = () => is_initialized;
+
     return {
         init,
         update,
@@ -263,6 +269,7 @@ const DigitTicker = (() => {
         markDigitAsLost,
         markDigitAsWon,
         remove,
+        isInitialized,
     };
 })();
 
