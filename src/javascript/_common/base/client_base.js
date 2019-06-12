@@ -144,6 +144,7 @@ const ClientBase = (() => {
         set('is_virtual', +authorize.is_virtual);
         set('session_start', parseInt(moment().valueOf() / 1000));
         set('landing_company_shortcode', authorize.landing_company_name);
+        set('user_id', authorize.user_id);
         updateAccountList(authorize.account_list);
     };
 
