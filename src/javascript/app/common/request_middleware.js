@@ -1,6 +1,8 @@
+const getDecimalPlaces     = require('./currency').getDecimalPlaces;
 const getUnderlyingPipSize = require('../pages/trade/symbols').getUnderlyingPipSize;
 const addComma             = require('../../_common/base/currency_base').addComma;
 const isEmptyObject        = require('../../_common/utility').isEmptyObject;
+const Client               = require('../base/client');
 
 const changePocNumbersToString = (response) => {
     const {
@@ -18,6 +20,7 @@ const changePocNumbersToString = (response) => {
 
     return new Promise((resolve) => {
         getUnderlyingPipSize(response.proposal_open_contract.underlying).then(pip_size => {
+            const currency_decimal_places = getDecimalPlaces(Client.get('currency'));
             const toString = (property, has_comma = true, decimal_places = pip_size) => (
                 property || property === 0 ?
                     has_comma ? addComma(property, decimal_places) : addComma(property, decimal_places).replace(',', '')
@@ -29,8 +32,8 @@ const changePocNumbersToString = (response) => {
                 proposal_open_contract: {
                     ...response.proposal_open_contract,
                     barrier          : barrier ? addComma(barrier).replace(',', '') : undefined, // Because `barrier` must not be displayed when zero
-                    bid_price        : toString(bid_price),
-                    sell_price       : toString(sell_price),
+                    bid_price        : toString(bid_price, true, currency_decimal_places),
+                    sell_price       : toString(sell_price, true, currency_decimal_places),
                     sell_spot        : toString(sell_spot),
                     current_spot     : toString(current_spot),
                     entry_spot       : toString(entry_spot, false),
