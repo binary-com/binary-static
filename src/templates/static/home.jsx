@@ -357,7 +357,7 @@ const Home = () => {
                 </div>
             </div>
 
-            <div className='container gr-padding-30 gr-child academy-section'>
+            <div className='container gr-padding-30 gr-child'>
                 <h2 className='center-text gr-padding-20'>{it.L('[_1] Academy', it.website_name)}</h2>
                 <p className='center-text'>{it.L('Learn to be a better trader and keep up with the latest news and trends in financial trading - all for free.')}</p>
                 <div className='gr-row gr-row-align-center'>
