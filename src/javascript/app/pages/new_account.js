@@ -31,17 +31,20 @@ const NewAccount = (() => {
             const req = [
                 { selector: '#email', validations: ['req', 'email'], request_field: 'verify_email' },
                 { request_field: 'type', value: 'account_opening' },
-                {
-                    request_field: 'url_parameters',
-                    value        : { utm_source: TrafficSource.getSource(utm_data) },
-                },
             ];
 
-            if (utm_data.utm_medium) req.push({ request_field: 'utm_medium',   value: utm_data.utm_medium });
-            if (utm_data.utm_campaign) req.push({ request_field: 'utm_campaign', value: utm_data.utm_campaign });
-            const affiliate_token = Cookies.getJSON('affiliate_tracking');
-            if (affiliate_token) req.push({ request_field: 'affiliate_token', value: affiliate_token.t });
+            const url_parameters_req = {
+                request_field: 'url_parameters',
+                value        : { utm_source: TrafficSource.getSource(utm_data) },
+            };
 
+            if (utm_data.utm_campaign) url_parameters_req.value.utm_medium = utm_data.utm_medium;
+            if (utm_data.utm_campaign) url_parameters_req.value.utm_campaign = utm_data.utm_campaign;
+            const affiliate_token = Cookies.getJSON('affiliate_tracking');
+            if (affiliate_token) url_parameters_req.value.affiliate_token = affiliate_token.t;
+
+            req.push(url_parameters_req);
+            
             FormManager.init(form_id, req);
             FormManager.handleSubmit({
                 form_selector       : form_id,
