@@ -15,6 +15,7 @@ const changePocNumbersToString = (response) => {
         exit_tick,
         sell_price,
         sell_spot,
+        tick_stream,
         profit_percentage,
     } = response.proposal_open_contract;
 
@@ -61,6 +62,20 @@ const changePocNumbersToString = (response) => {
                     proposal_open_contract: {
                         ...new_response.proposal_open_contract,
                         audit_details: formatAuditDetails(audit_details),
+                    },
+                });
+            }
+
+            if (!isEmptyObject(tick_stream)) {
+                const formatTickStream = (arr) => arr.map(tick_obj => (
+                    tick_obj.tick ? { ...tick_obj, tick: toString(tick_obj.tick) } : tick_obj
+                ));
+
+                new_response =  $.extend({}, {
+                    ...new_response,
+                    proposal_open_contract: {
+                        ...new_response.proposal_open_contract,
+                        tick_stream: formatTickStream(tick_stream),
                     },
                 });
             }

@@ -105,8 +105,8 @@ const DigitDisplay = (() => {
     };
 
     const renderRow = (tick, index, total) => {
-        const csv_spot   = addComma(tick.tick);
-        const el_fragment   = document.createDocumentFragment();
+        const csv_spot    = addComma(tick.tick);
+        const el_fragment = document.createDocumentFragment();
         el_fragment.append(createIndexElement(index));
         el_fragment.append(createCounterElement(csv_spot, index, total));
         el_fragment.append(createSpotElement(tick));
