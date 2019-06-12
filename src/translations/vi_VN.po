@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-06-03 02:56\n"
+"PO-Revision-Date: 2019-06-12 04:36\n"
 "Last-Translator: binarycom\n"
 "Language-Team: Vietnamese\n"
 "MIME-Version: 1.0\n"
@@ -16,22 +16,22 @@ msgstr ""
 "Language: vi_VN\n"
 
 msgid "1"
-msgstr ""
+msgstr "1"
 
 msgid "2"
-msgstr ""
+msgstr "2"
 
 msgid "3"
-msgstr ""
+msgstr "3"
 
 msgid "4"
-msgstr ""
+msgstr "4"
 
 msgid "5"
-msgstr ""
+msgstr "5"
 
 msgid "10"
-msgstr ""
+msgstr "10"
 
 msgid "404"
 msgstr "404"
@@ -127,10 +127,10 @@ msgid "$ per USD 100,000 of turnover"
 msgstr "Lãi suất $ theo mỗi 100000 USD doanh số"
 
 msgid "$0 - $10,000"
-msgstr ""
+msgstr "$0 - $10,000"
 
 msgid "$10,001 – $50,000"
-msgstr ""
+msgstr "$10,001 – $50,000"
 
 msgid "$100,000 - $250,000"
 msgstr "$100.000-250.000 USD"
@@ -154,7 +154,7 @@ msgid "$50,001 - $100,000"
 msgstr "$50,001 - $100,000"
 
 msgid "$50,001 – $100,000"
-msgstr ""
+msgstr "$50,001 – $100,000"
 
 msgid "$500,001 - $1,000,000"
 msgstr "$500,001 - $1.000.000"
@@ -553,10 +553,10 @@ msgid "(e) Size and nature"
 msgstr "(e) Kích thước và tính chất"
 
 msgid "0 – 19.999%"
-msgstr ""
+msgstr "0 – 19.999%"
 
 msgid "0%"
-msgstr ""
+msgstr "0%"
 
 msgid "0-1 year"
 msgstr "0-1 năm"
@@ -565,22 +565,25 @@ msgid "0-5 transactions in the past 12 months"
 msgstr "0-5 giao dịch trong 12 tháng trước"
 
 msgid "0.20"
-msgstr ""
+msgstr "0.20"
 
 msgid "0.25%"
-msgstr ""
+msgstr "0.25%"
 
 msgid "0.3%"
+msgstr "0.3%"
+
+msgid "0.5%"
 msgstr ""
 
 msgid "0.75%"
-msgstr ""
+msgstr "0.75%"
 
 msgid "1 million transactions/day"
 msgstr "1 triệu giao dịch/ ngày"
 
 msgid "1%"
-msgstr ""
+msgstr "1%"
 
 msgid "1-2 years"
 msgstr "1-2 năm"
@@ -589,19 +592,19 @@ msgid "1. Proof of identity"
 msgstr "1. chứng minh nhân thân"
 
 msgid "1.25%"
-msgstr ""
+msgstr "1.25%"
 
 msgid "1.50"
-msgstr ""
+msgstr "1.50"
 
 msgid "10.00"
-msgstr ""
+msgstr "10.00"
 
 msgid "11-39 transactions in the past 12 months"
 msgstr "11-39 giao dịch trong 12 tháng qua"
 
 msgid "15.00"
-msgstr ""
+msgstr "15.00"
 
 msgid "150+"
 msgstr "150+"
@@ -622,22 +625,22 @@ msgid "2. Proof of address"
 msgstr "2. Chứng minh về địa chỉ"
 
 msgid "20 – 39.999%"
-msgstr ""
+msgstr "20 – 39.999%"
 
 msgid "20%"
-msgstr ""
+msgstr "20%"
 
 msgid "25%"
-msgstr ""
+msgstr "25%"
 
 msgid "3. Selfie or self-portrait photo"
 msgstr "3. Ảnh tự sướng hoặc ảnh chân dung"
 
 msgid "3.50"
-msgstr ""
+msgstr "3.50"
 
 msgid "30%"
-msgstr ""
+msgstr "30%"
 
 msgid "30-day limit on losses"
 msgstr "Giới hạn 30 ngày thua lỗ"
@@ -646,19 +649,16 @@ msgid "30-day turnover limit"
 msgstr "Giới hạn doanh thu 30 ngày"
 
 msgid "35%"
-msgstr ""
+msgstr "35%"
 
 msgid "40 transactions or more in the past 12 months"
 msgstr "40 giao dịch hoặc nhiều hơn trong 12 tháng vừa qua"
 
 msgid "40 – 59.999%"
-msgstr ""
+msgstr "40 – 59.999%"
 
 msgid "40K+"
 msgstr "40K+"
-
-msgid "5%"
-msgstr ""
 
 msgid "6-10 transactions in the past 12 months"
 msgstr "6-10 giao dịch trong vòng 12 tháng trước"
@@ -667,7 +667,7 @@ msgid "6-digit code"
 msgstr "Mã 6 chữ số"
 
 msgid "60 – 79.999%"
-msgstr ""
+msgstr "60 – 79.999%"
 
 msgid "7-day limit on losses"
 msgstr "Giới hạn 7 ngày thua lỗ"
@@ -676,13 +676,13 @@ msgid "7-day turnover limit"
 msgstr "Giới hạn doanh thu 7 ngày"
 
 msgid "7.50"
-msgstr ""
+msgstr "7.50"
 
 msgid "80 – 94.999%"
-msgstr ""
+msgstr "80 – 94.999%"
 
 msgid "95%+"
-msgstr ""
+msgstr "95%+"
 
 msgid "<< Back to job descriptions"
 msgstr "<< Quay lại mô tả công việc"
@@ -2949,9 +2949,6 @@ msgstr "Khiếu Nại và Tranh Chấp"
 msgid "Complaints and disputes"
 msgstr "Khiếu nại và Tranh chấp"
 
-msgid "Complete the %1Financial Assessment%2."
-msgstr "Hoàn thành %1FĐánh giá tài chính%2."
-
 msgid "Complete your %1Tax Information%2."
 msgstr "Hoàn thành %1Thông Tin Thuế%2 của bạn."
 
@@ -3855,8 +3852,8 @@ msgstr "Dubai, Tiểu Vương Quốc Ả-rập"
 msgid "Due to market volatility and gold's reputation as a safe-haven asset, you predict that the price of gold will rise."
 msgstr "Do thị trường biến động và danh tiếng của vàng như là một tài sản vô cùng an toàn, bạn dự đoán rằng giá vàng sẽ tăng lên."
 
-msgid "Due to recent changes in the regulations, we are required to ask our clients to complete the following Financial Assessment. Please note that you will not be able to continue trading until this is completed."
-msgstr "Vì những thay đổi gần đây trong các quy định, chúng tôi buộc phải yêu cầu khách hàng hoàn tất bản Đánh giá Tài chính sau. Xin lưu ý rằng bạn sẽ không thể tiếp tục giao dịch cho đến khi bản đánh giá được hoàn thành."
+msgid "Due to regulatory requirements, we are required to ask our clients to complete the following Financial Assessment."
+msgstr "Vì các qui định bắt buộc, Chúng tôi bắt buộc phải yêu cầu khách hàng hoàn thành Đánh giá Tài chính sau."
 
 msgid "Due to the high degree of risk involved, which could result in the loss of the entire investment, the Company has adequate internal procedures in place to ensure that the client is in all cases treated fairly and that the risk of damage to client interests will be mitigated."
 msgstr "Do có sự rủi ro cao, có thể dẫn đến việc mất hoàn toàn vốn đầu tư, Công Ty đã đưa ra các thủ tục tương xứng để đảm bảo rằng khách hàng trong mọi trường hợp được đối xử công bằng và các rửi ro ảnh hưởng đến lợi ích của khách hàng sẽ được giảm thiểu."
@@ -3966,8 +3963,8 @@ msgstr "Mỗi giao dịch chuyển tiền sẽ phải chịu phí chuyển %1 ho
 msgid "Earn"
 msgstr "Kiếm được"
 
-msgid "Earn USD 100 in commission for each successful referral. Your referred client must open a real money investment account through your unique affiliate link and deposit a total of USD 100 or more (one-time or accumulative) in the account. This commission plan is only available to Affiliates based in the EU."
-msgstr "Nhận được hoa hồng 100 USD cho mỗi lần giới thiệu thành công. Khách hàng được giới thiệu của bạn phải mở một tài khoản đầu tư tiền thực thông qua đường dẫn liên kết duy nhất của bạn và gửi vào tổng cộng 100 USD trở lên (một lần hoặc cộng dồn) trong tài khoản. Kế hoạch hoa hồng này chỉ có sẵn cho các liên kết có trụ sở tại EU."
+msgid "Earn USD 100 in commission for each successful referral. Your referred client must open a %1real money investment account%2 through your unique affiliate link and deposit a total of USD 100 or more (one-time or accumulative) in the account. This commission plan is only available to Affiliates based in the EU."
+msgstr ""
 
 msgid "Earn a monetary reward for any verifiable issues that you find, with a bounty worth up to USD 1,000 for high-risk security vulnerabilities."
 msgstr "Kiếm được tiền thưởng cho bất kỳ vấn đề kiểm chứng rằng bạn tìm thấy, với một khoản tiền thưởng trị giá lên đến 1.000 USD cho các lỗ hổng bảo mật nguy cơ cao."
@@ -4774,7 +4771,7 @@ msgid "For e-wallets or local currencies not supported by %1."
 msgstr "Đối với ví điện tử hoặc nội tệ không được hỗ trợ bởi %1."
 
 msgid "For example, a round trade (i.e. open and close position) of 1 lot of Vol 75 Index for a price of USD 125,000 would pay USD 12.5."
-msgstr ""
+msgstr "Ví dụ, Với một lượt giao dịch (cả phiên mở và đóng) của lô Vol 75 chỉ số với giá là 125000 USD sẽ mang về 12.5 USD hoa hồng."
 
 msgid "For example, if you buy a US 100 contract and it's not going as planned, you just need to sell it to cut your losses at the current market price."
 msgstr "Ví dụ, nếu bạn mua một hợp đồng US 100 và nó sẽ không theo kế hoạch, bạn chỉ cần bán nó đi để cắt lỗ của bạn ở mức giá thị trường hiện nay."
@@ -6219,7 +6216,7 @@ msgid "It is the responsibility of each client to read and understand this legal
 msgstr "Mỗi khách hàng phải có trách nhiệm đọc và hiểu các thông báo pháp lý, các điều khoản và điều kiện theo đúng các vụ mua bán hợp đồng tài chính thông qua trang web đã được quản lý."
 
 msgid "It will be released to the client's account upon approval."
-msgstr ""
+msgstr "Khách hàng sẽ nhận tài khoản sau khi được phê duyệt."
 
 msgid "It's completely free to join our IB programme. We've never charged a fee and we never will."
 msgstr "Tham gia chương trình IB của chúng tôi là hoàn toàn miễn phí. Chúng tôi đã không bao giờ tính một khoản phí và chúng tôi sẽ không bao giờ làm vậy."
@@ -6510,7 +6507,7 @@ msgid "Leverage up to %1"
 msgstr "Đòn bẩy lên tới %1"
 
 msgid "Leverage, in the context of margin trading, refers to the use of margin to increase/amplify the value of a trade. Leverage is expressed as a ratio. A 50:1 leverage, for example, means that the client would be able to enter into a trade position that is of 50 times higher than the client's margin. When the client invests in a leveraged product, the client's profit or loss is based on the leveraged position, i.e. the increased/amplified value of the client's trade is determined based on the leverage ratio that the client has set for the client's account."
-msgstr ""
+msgstr "Đòn bẩy, trong trường hợp giao dịch ký quỹ, ý nói đến việc sử dụng biên để tăng/khuếch đại giá trị của một giao dịch. Đòn bẩy được thể hiện như một tỷ lệ. Ví dụ, một đòn bẩy với tỉ lệ 50: 1, có nghĩa là khách hàng sẽ có thể mở một phiên giao dịch gấp 50 lần so với biên của họ. Khi khách hàng đầu tư vào một sản phẩm sử dụng đòn bẩy, lợi nhuận hoặc thua lỗ của họ được xác định dựa trên phiên đòn bẩy, tức là, giá trị gia tăng/khuếch đại của giao dịch của khách hàng được xác định dựa trên tỷ lệ đòn bẩy họ đặt cho tài khoản."
 
 msgid "Liability"
 msgstr "Trách nhiệm pháp lý"
@@ -6540,7 +6537,7 @@ msgid "Limit Order"
 msgstr "Lệnh Giới Hạn"
 
 msgid "Limit applies until"
-msgstr ""
+msgstr "Giới hạn áp dụng đến"
 
 msgid "Limit/Limit Price"
 msgstr "Giới Hạn/ Giá Giới Hạn"
@@ -6552,13 +6549,13 @@ msgid "Limitations on liability"
 msgstr "Các giới hạn về trách nhiệm pháp lý"
 
 msgid "Limited license grant"
-msgstr ""
+msgstr "Giới hạn giấy phép"
 
 msgid "Limits"
 msgstr "Giới hạn"
 
 msgid "Limits 1 to 3 may only be removed or increased after 24 hours after receiving the notice and the client reconfirms that they wish to amend such limit."
-msgstr ""
+msgstr "Các giới hạn từ 1 đến 3 chỉ có thể được hủy hoặc tăng sau 24 giờ tính từ lúc nhận được thông báo và khách hàng xác nhận rằng mình muốn thay đổi giới hạn đó."
 
 msgid "Link to and direct the Company's clients to the Programmer's Application."
 msgstr ""
@@ -7553,9 +7550,6 @@ msgstr "Lưu ý: Đối với bất kỳ thắc mắc liên quan đến các tà
 msgid "Note: Payment Agent transfers are only available for accounts registered with Binary (SVG) Ltd. Transactions are accepted only in US dollars."
 msgstr ""
 
-msgid "Note: This feature is not available if you logged in using a social network."
-msgstr "Lưu ý: Tính năng này không phải là có sẵn nếu bạn đăng nhập bằng cách liên kết với một mạng xã hội."
-
 msgid "Note: You are limited to one fiat currency account. The currency of your fiat account can be changed before you deposit into your fiat account for the first time or create an MT5 account. You may also open one account for each supported cryptocurrency."
 msgstr "Lưu ý: Bạn chỉ được phép sở hữu 1 tài khoản fiat. Đơn vị tiền tệ của tài khoản fiat có thể được thay đổi trước lần gửi tiền đầu tiên hoặc khi bạn tạo tài khoản MT5. Bạn cũng có thể mở một tài khoản cho mỗi loại cryptocurrency được hỗ trợ."
 
@@ -8234,6 +8228,12 @@ msgstr "Vui lòng %1xác thực tài khoản%2 của bạn để tiếp tục gi
 msgid "Please %1authenticate%2 your account."
 msgstr "Xin vui lòng %1xác minh%2 tài khoản của bạn."
 
+msgid "Please %1complete the financial assessment%2 to open an MT5 account."
+msgstr ""
+
+msgid "Please %1complete the trading experience section%2 in the financial assessment to open an MT5 account."
+msgstr ""
+
 msgid "Please %1complete your account profile%2 to lift your withdrawal and trading limits."
 msgstr "Xin %1 vui lòng hoàn thành hồ sơ tài khoản %2 của bạn để nâng mức rút tiền và các giới hạn giao dịch."
 
@@ -8410,9 +8410,6 @@ msgstr "Xin hãy lưu ý rằng tỷ lệ trao đổi của chúng tôi cũng ph
 
 msgid "Please wait for confirmation. Our customer support team will get back to you regarding your account status via email within four hours."
 msgstr "Xin vui lòng chờ đợi để xác nhận. Nhóm hỗ trợ khách hàng của chúng tôi sẽ liên lạc với bạn về trạng thái tài khoản thông qua email trong vòng bốn giờ."
-
-msgid "Poland"
-msgstr "Ba Lan"
 
 msgid "Portfolio"
 msgstr "Hồ sơ"
@@ -12458,7 +12455,7 @@ msgstr "USD"
 msgid "USD 1 per point"
 msgstr "1 USD cho mỗi điểm"
 
-msgid "USD 10 X 1 lot x USD 125,000/100,000 = USD 12.5"
+msgid "USD 10 x 1 lot x USD 125,000/100,000 = USD 12.5"
 msgstr ""
 
 msgid "USD Index – Measures the value of the US Dollar against a basket of five global currencies (EUR, GBP, JPY, CAD, AUD), each weighted by 20%"
