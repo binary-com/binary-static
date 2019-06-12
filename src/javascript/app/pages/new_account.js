@@ -1,9 +1,8 @@
-const Cookies        = require('js-cookie');
 const BinaryPjax     = require('../base/binary_pjax');
 const BinarySocket   = require('../base/socket');
 const isEuCountry    = require('../common/country_base').isEuCountry;
 const FormManager    = require('../common/form_manager');
-const TrafficSource  = require('../../app/common/traffic_source');
+const VerifyEmail    = require('../../app/common/verify_email');
 const Login          = require('../../_common/base/login');
 const getElementById = require('../../_common/common_functions').getElementById;
 const localize       = require('../../_common/localize').localize;
@@ -26,26 +25,8 @@ const NewAccount = (() => {
 
         BinarySocket.wait('website_status', 'authorize', 'landing_company').then(() => {
             clients_country = State.getResponse('website_status.clients_country');
-
-            const utm_data = TrafficSource.getData();
-            const req = [
-                { selector: '#email', validations: ['req', 'email'], request_field: 'verify_email' },
-                { request_field: 'type', value: 'account_opening' },
-            ];
-
-            const url_parameters_req = {
-                request_field: 'url_parameters',
-                value        : { utm_source: TrafficSource.getSource(utm_data) },
-            };
-
-            if (utm_data.utm_campaign) url_parameters_req.value.utm_medium = utm_data.utm_medium;
-            if (utm_data.utm_campaign) url_parameters_req.value.utm_campaign = utm_data.utm_campaign;
-            const affiliate_token = Cookies.getJSON('affiliate_tracking');
-            if (affiliate_token) url_parameters_req.value.affiliate_token = affiliate_token.t;
-
-            req.push(url_parameters_req);
             
-            FormManager.init(form_id, req);
+            FormManager.init(form_id, VerifyEmail.getFormRequest());
             FormManager.handleSubmit({
                 form_selector       : form_id,
                 fnc_response_handler: verifyEmailHandler,
