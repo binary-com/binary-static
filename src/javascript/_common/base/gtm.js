@@ -23,6 +23,7 @@ const GTM = (() => {
         ...ClientBase.isLoggedIn() && {
             visitorId: ClientBase.get('loginid'),
             bom_email: ClientBase.get('email'),
+            userId   : ClientBase.get('user_id'),
         },
     });
 
