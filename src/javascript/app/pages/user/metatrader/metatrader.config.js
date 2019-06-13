@@ -119,11 +119,14 @@ const MetaTraderConfig = (() => {
             const $new_account_financial_authenticate_msg = $('#new_account_financial_authenticate_msg');
             $new_account_financial_authenticate_msg.setVisibility(0);
             const is_virtual = Client.get('is_virtual');
+            const is_demo = accounts_info[acc_type].is_demo;
 
             if (!Client.get('currency')) {
                 resolve($messages.find('#msg_set_currency').html());
-            } else if (is_virtual && !accounts_info[acc_type].is_demo) { // virtual clients can only open demo MT accounts
+            } else if (is_virtual && !is_demo) { // virtual clients can only open demo MT accounts
                 resolve(needsRealMessage());
+            } else if (is_demo) {
+                resolve();
             } else {
                 BinarySocket.wait('get_settings').then(() => {
                     const showCitizenshipMessage = () => {
