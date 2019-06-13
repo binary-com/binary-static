@@ -2,6 +2,7 @@ const CreateDropdown = require('@binary-com/binary-style').selectDropdown;
 const getHighstock   = require('../common').requireHighstock;
 const Symbols        = require('../symbols');
 const BinarySocket   = require('../../../base/socket');
+const addComma       = require('../../../../_common/base/currency_base').addComma;
 const localize       = require('../../../../_common/localize').localize;
 const template       = require('../../../../_common/utility').template;
 
@@ -136,22 +137,26 @@ const DigitInfo = (() => {
                     stream_id = null;
                 }
             }
-            BinarySocket.send(request, { callback: (response) => {
+            BinarySocket.send(request, { callback: async (response) => {
                 const type = response.msg_type;
                 if (type === 'tick') {
                     updateChart(response);
                 } else if (type === 'history') {
-                    showChart(response.echo_req.ticks_history, response.history.prices);
+                    await showChart(response.echo_req.ticks_history, response.history.prices);
                 }
             } });
         };
         $('#digit_underlying, #tick_count').off('change').on('change', getLatest);
     };
 
-    const showChart = (underlying, underlying_spots) => {
+    const showChart = async (underlying, underlying_spots) => {
         if (underlying_spots.length !== +$('#tick_count').val()) return;
+
+        const decimal_places             = await Symbols.getUnderlyingPipSize(underlying);
+        const formatted_underlying_spots = underlying_spots.map(price => addComma(price, decimal_places).replace(',', ''));
+
         getHighstock((Highcharts) => {
-            const new_spots = underlying_spots;
+            const new_spots = formatted_underlying_spots;
             if (typeof new_spots === 'undefined' || new_spots.length <= 0) {
                 return;
             }
@@ -239,7 +244,8 @@ const DigitInfo = (() => {
         return series.setData(filtered_spots);
     };
 
-    const updateChart = (tick) => {
+    const updateChart = async (tick) => {
+        const decimal_places = await Symbols.getUnderlyingPipSize(tick.tick.symbol);
         if (stream_id) {
             if (chart.series[0].name === tick.tick.symbol) {
                 stream_id = tick.tick.id || null;
@@ -248,7 +254,7 @@ const DigitInfo = (() => {
                 BinarySocket.send({ forget: (tick.tick.id).toString() });
             }
         } else {
-            update(tick.tick.symbol, tick.tick.quote);
+            update(tick.tick.symbol, addComma(tick.tick.quote, decimal_places).replace(',', ''));
         }
     };
 
