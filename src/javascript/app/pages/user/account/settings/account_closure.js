@@ -1,7 +1,6 @@
-const BinarySocket     = require('../../../../base/socket');
-const localize         = require('../../../../../_common/localize').localize;
-const Url              = require('../../../../../_common/url');
-const isCryptoCurrency = require('../../../../../_common/base/currency_base').isCryptoCurrency;
+const BinarySocket         = require('../../../../base/socket');
+const localize             = require('../../../../../_common/localize').localize;
+const Url                  = require('../../../../../_common/url');
 
 const AccountClosure = (() => {
     const form_selector = '#form_closure';
@@ -9,9 +8,7 @@ const AccountClosure = (() => {
         $closure_loading,
         $closure_container,
         $success_msg,
-        $error_msg,
-        $fiat_options,
-        $crypto_options;
+        $error_msg;
 
     const onLoad = () => {
         $txt_other_reason  = $('#other_reason');
@@ -19,30 +16,6 @@ const AccountClosure = (() => {
         $closure_container = $('#closure_container');
         $success_msg       = $('#msg_main');
         $error_msg         = $('#msg_form');
-        $fiat_options      = $('#change-fiat');
-        $crypto_options    = $('#crypto');
-
-        BinarySocket.wait('authorize')
-            .then((response) => {
-                const accounts = response.authorize.account_list;
-                let only_virtual, fiat, crypto;
-                accounts.forEach((account) => {
-                    if (isCryptoCurrency(account.currency)) {
-                        crypto = true;
-                    } else {
-                        fiat = true;
-                    }
-                    only_virtual = !crypto && !fiat;
-                });
-
-                $fiat_options.setVisibility(fiat || only_virtual);
-                $crypto_options.setVisibility(crypto || only_virtual);
-
-            }).catch((err) => {
-                showFormMessage(err.message);
-                $fiat_options.setVisibility(1);
-                $crypto_options.setVisibility(1);
-            });
 
         $(form_selector).on('submit', (event) => {
             event.preventDefault();

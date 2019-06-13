@@ -28,7 +28,7 @@ const AccountClosure = () => (
                         <ClosureDescription
                             id='change-fiat'
                             title={it.L('Change my account currency')}
-                            subtitle={it.L('[_1]Change your fiat currency[_2] to any of the following:', `<a href="${it.url_for('new_account/realws')}">`, '</a>')}
+                            subtitle={it.L('[_1]Change your fiat currency[_2] to any of the following:', `<a href="${it.url_for('user/accounts')}">`, '</a>')}
                             list_items={[
                                 it.L('USD'),
                                 it.L('AUD'),
@@ -38,8 +38,8 @@ const AccountClosure = () => (
                         />
                         <ClosureDescription
                             id='crypto'
-                            title={it.L('Create crypto account')}
-                            subtitle={it.L('[_1]Open an account[_2] in the cryptocurrency of your choice:', `<a href="${it.url_for('new_account/realws')}">`, '</a>')}
+                            title={it.L('Create a crypto account')}
+                            subtitle={it.L('[_1]Open an account[_2] in the cryptocurrency of your choice:', `<a href="${it.url_for('user/accounts')}">`, '</a>')}
                             list_items={[
                                 it.L('Bitcoin (BTC)'),
                                 it.L('Ether (ETH)'),
