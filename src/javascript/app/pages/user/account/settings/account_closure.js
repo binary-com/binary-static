@@ -1,5 +1,4 @@
 const BinarySocket         = require('../../../../base/socket');
-const hasCurrencyType      = require('../../../../../_common/base/client_base').hasCurrencyType;
 const localize             = require('../../../../../_common/localize').localize;
 const Url                  = require('../../../../../_common/url');
 
@@ -9,9 +8,7 @@ const AccountClosure = (() => {
         $closure_loading,
         $closure_container,
         $success_msg,
-        $error_msg,
-        $change_fiat,
-        $open_fiat;
+        $error_msg;
 
     const onLoad = () => {
         $txt_other_reason  = $('#other_reason');
@@ -19,19 +16,6 @@ const AccountClosure = (() => {
         $closure_container = $('#closure_container');
         $success_msg       = $('#msg_main');
         $error_msg         = $('#msg_form');
-        $change_fiat       = $('#change-fiat');
-        $open_fiat         = $('#open-fiat');
-
-        BinarySocket.wait('authorize')
-            .then((response) => {
-                const logedin_account = response.authorize;
-                const hasFiat = hasCurrencyType('fiat');
-
-                $change_fiat.setVisibility(hasFiat && !parseFloat(logedin_account.balance));
-                $open_fiat.setVisibility(!hasFiat);
-
-            // eslint-disable-next-line no-console
-            }).catch((err) => console.log(err.message));
 
         $(form_selector).on('submit', (event) => {
             event.preventDefault();
