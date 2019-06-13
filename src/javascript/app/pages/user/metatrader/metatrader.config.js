@@ -123,10 +123,10 @@ const MetaTraderConfig = (() => {
 
             if (!Client.get('currency')) {
                 resolve($messages.find('#msg_set_currency').html());
-            } else if (is_virtual && !is_demo) { // virtual clients can only open demo MT accounts
-                resolve(needsRealMessage());
             } else if (is_demo) {
                 resolve();
+            } else if (is_virtual) { // virtual clients can only open demo MT accounts
+                resolve(needsRealMessage());
             } else {
                 BinarySocket.wait('get_settings').then(() => {
                     const showCitizenshipMessage = () => {
