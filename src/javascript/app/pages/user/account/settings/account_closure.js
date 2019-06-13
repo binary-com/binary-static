@@ -1,6 +1,7 @@
-const BinarySocket = require('../../../../base/socket');
-const localize     = require('../../../../../_common/localize').localize;
-const Url          = require('../../../../../_common/url');
+const BinarySocket     = require('../../../../base/socket');
+const localize         = require('../../../../../_common/localize').localize;
+const Url              = require('../../../../../_common/url');
+const isCryptoCurrency = require('../../../../../_common/base/currency_base').isCryptoCurrency;
 
 const AccountClosure = (() => {
     const form_selector = '#form_closure';
@@ -26,10 +27,9 @@ const AccountClosure = (() => {
                 const accounts = response.authorize.account_list;
                 let only_virtual, fiat, crypto;
                 accounts.forEach((account) => {
-                    if (account.currency === 'ETH' || account.currency === 'BTC' || account.currency === 'UST' || account.currency === 'LTC') {
+                    if (isCryptoCurrency(account.currency)) {
                         crypto = true;
-                    }
-                    if (account.currency === 'USD' || account.currency === 'AUD' || account.currency === 'GBP' || account.currency === 'EUR') {
+                    } else {
                         fiat = true;
                     }
                     only_virtual = !crypto && !fiat;
