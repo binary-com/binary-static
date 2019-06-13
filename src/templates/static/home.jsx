@@ -135,12 +135,16 @@ const AccountsTabContent = ({
 );
 
 const AcademySection = ({ image, header, text }) => (
-    <div className='gr-4 gr-12-m center-text'>
-        <div className='gr-4 gr-3-m gr-centered gr-padding-10'>
-            <img className='responsive' src={it.url_for(image)} />
+    <div className='gr-5 gr-12-m'>
+        <div className='gr-row gr-padding-30'>
+            <div className='gr-3'>
+                <img className='responsive' src={it.url_for(image)} />
+            </div>
+            <div className='gr-9 gr-padding-10'>
+                <strong>{header}</strong>
+                <p>{text}</p>
+            </div>
         </div>
-        <strong>{header}</strong>
-        <p>{text}</p>
     </div>
 );
 
@@ -356,16 +360,11 @@ const Home = () => {
             <div className='container gr-padding-30 gr-child'>
                 <h2 className='center-text gr-padding-20'>{it.L('[_1] Academy', it.website_name)}</h2>
                 <p className='center-text'>{it.L('Learn to be a better trader and keep up with the latest news and trends in financial trading - all for free.')}</p>
-                <div className='gr-row'>
+                <div className='gr-row gr-row-align-center'>
                     <AcademySection
                         image='images/pages/home/icons/webinars.svg'
                         header={it.L('Interactive webinars')}
                         text={it.L('Free training sessions by professional traders.')}
-                    />
-                    <AcademySection
-                        image='images/pages/home/icons/daily.svg'
-                        header={it.L('Daily market reports')}
-                        text={it.L('Daily insights into markets around the world.')}
                     />
                     <AcademySection
                         image='images/pages/home/icons/video.svg'

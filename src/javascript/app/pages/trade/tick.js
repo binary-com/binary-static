@@ -1,6 +1,7 @@
 const moment               = require('moment');
 const countDecimalPlaces   = require('./common_independent').countDecimalPlaces;
 const displayPriceMovement = require('./common_independent').displayPriceMovement;
+const underlyings          = require('./symbols').underlyings;
 const addComma             = require('../../../_common/base/currency_base').addComma;
 const elementTextContent   = require('../../../_common/common_functions').elementTextContent;
 const getElementById       = require('../../../_common/common_functions').getElementById;
@@ -28,6 +29,7 @@ const Tick = (() => {
     let epoch         = '';
     let error_message = '';
     let spots         = {};
+    let pip_size      = 2;
 
     const details = (data) => {
         error_message = '';
@@ -36,6 +38,12 @@ const Tick = (() => {
             if (data.error) {
                 error_message = data.error.message;
             } else {
+                const all_underlyings = underlyings();
+                Object.keys(all_underlyings).forEach(key => {
+                    if (Object.prototype.hasOwnProperty.call(all_underlyings[key], data.tick.symbol)) {
+                        pip_size = countDecimalPlaces(all_underlyings[key][data.tick.symbol].pip);
+                    }
+                });
                 const tick = data.tick;
                 quote      = tick.quote;
                 id         = tick.id;
@@ -58,8 +66,7 @@ const Tick = (() => {
             message = error_message;
             message_number = error_message;
         } else {
-            const decimal_places = parseInt(countDecimalPlaces(Tick.quote()));
-            message = addComma(quote, decimal_places);
+            message = addComma(quote, pip_size);
             message_number = quote;
         }
 
@@ -165,6 +172,7 @@ const Tick = (() => {
         errorMessage: () => error_message,
         spots       : () => spots,
         setQuote    : (q) => { quote = q; },
+        pipSize     : () => pip_size,
     };
 })();
 
