@@ -57,7 +57,7 @@ const Security = () => (
 
                 <Column url='vpn_app' image='vpn' header={it.L('VPN App')} text={it.L('Establish a secure Internet connection and protect your privacy.')} />
 
-                <Column url='closure' image='detail' header={it.L('Account Closure')} text={it.L('Close your account entirely.')} />
+                <Column url='closure' image='close' header={it.L('Account Closure')} text={it.L('Close your [_1] account.', it.website_name)} />
             </div>
         </div>
     </React.Fragment>

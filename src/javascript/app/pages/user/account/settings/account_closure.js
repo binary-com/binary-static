@@ -25,12 +25,12 @@ const AccountClosure = (() => {
         BinarySocket.wait('authorize')
             .then((response) => {
                 const logedin_account = response.authorize;
-                // const hasCrypto = hasCurrencyType('crypto');
                 const hasFiat = hasCurrencyType('fiat');
 
                 $change_fiat.setVisibility(hasFiat && !parseFloat(logedin_account.balance));
                 $open_fiat.setVisibility(!hasFiat);
 
+            // eslint-disable-next-line no-console
             }).catch((err) => console.log(err.message));
 
         $(form_selector).on('submit', (event) => {
