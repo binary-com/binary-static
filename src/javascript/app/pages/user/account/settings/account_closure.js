@@ -1,10 +1,11 @@
-const BinarySocket         = require('../../../../base/socket');
-const localize             = require('../../../../../_common/localize').localize;
-const Url                  = require('../../../../../_common/url');
+const BinarySocket = require('../../../../base/socket');
+const localize     = require('../../../../../_common/localize').localize;
+const Url          = require('../../../../../_common/url');
 
 const AccountClosure = (() => {
     const form_selector = '#form_closure';
-    let $txt_other_reason,
+    let $form,
+        $txt_other_reason,
         $closure_loading,
         $closure_container,
         $success_msg,
@@ -16,6 +17,7 @@ const AccountClosure = (() => {
         $closure_container = $('#closure_container');
         $success_msg       = $('#msg_main');
         $error_msg         = $('#msg_form');
+        $form              = $(form_selector);
 
         $(form_selector).on('submit', (event) => {
             event.preventDefault();
@@ -26,7 +28,7 @@ const AccountClosure = (() => {
     };
 
     const submitForm = () => {
-        const $btn_submit = $(`${form_selector} #btn_submit`);
+        const $btn_submit = $form.find('#btn_submit');
         const reason = getReason();
         if (reason) {
             $closure_loading.setVisibility(1);
