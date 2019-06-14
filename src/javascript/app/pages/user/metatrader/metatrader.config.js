@@ -212,8 +212,6 @@ const MetaTraderConfig = (() => {
                             if (is_ok) resolve();
                             else resolveWithMessage();
                         });
-                    } else {
-                        resolve();
                     }
                 });
             }
