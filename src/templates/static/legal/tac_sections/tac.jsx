@@ -30,7 +30,7 @@ const Tac = () => (
 
         <h2 data-anchor='languages'>C. {it.L('Languages')}</h2>
         <p>{it.L('These terms and conditions are provided in several different languages for clients\' convenience; however, these translations do reflect the same principles. The Company attempts, as much as possible, to provide a faithful translation in English of the official language of several countries. In the event of any differences between the English version of the website and any other language, the English version shall prevail.')}</p>
-        <p><span>{it.L('The client may communicate with us through this website or by means of e-mail, phone or, exceptionally, by post. Details can be found in the Contact us page.')}</span><span data-show='eucountry'>{it.L(' All calls are recorded for training and monitoring purposes.')}</span></p>
+        <p><span>{it.L('The client may communicate with the Company through this website or by means of e-mail, phone or, exceptionally, by post. Details can be found in the Contact us page.')}</span><span data-show='eucountry'>{it.L(' All calls are recorded for training and monitoring purposes.')}</span></p>
         <p>{it.L('Generally the Company will communicate with the client through this website or by email to the email address given by the client upon account opening. The Company will communicate with the client in English or, if another preferred language is selected at account opening, in that language.')}</p>
         <p>{it.L('In cases where the client uses excessive anti-spam filtering which requires the Company to pay a fee in order to send a reply or a notification to the client, the Company will try to find an alternative way to communicate with the client but will not pay the requested fees to do so.')}</p>
 
@@ -50,19 +50,19 @@ const Tac = () => (
         <p>{it.L('[_1]In regard to customers of Binary (IOM) Ltd, online gambling debts are enforceable by law in the Isle of Man.[_2]', '<span data-show="eucountry">', '</span>')}</p>
 
         <h2 data-anchor='customer-funds'>G. {it.L('Customer funds')}</h2>
-        <p>{it.L('Money collected from clients are not invested in any securities, futures, currencies, derivatives or other investments, on behalf of clients.')}</p>
+        <p>{it.L('Money collected from clients is not invested in any securities, futures, currencies, derivatives or other investments, on behalf of clients.')}</p>
         <p data-show='eucountry'>{it.L('The Company is required by its licence to inform clients about what happens to the funds that the Company holds on account for clients, and the extent to which funds are protected in the event of insolvency. To learn more, please refer [_1]here[_2].',
             '<a href="http://www.gamblingcommission.gov.uk/for-the-public/Your-rights/Protection-of-customer-funds.aspx" target="_blank" rel="noopener noreferrer">', '</a>')}
         </p>
         <p data-show='eucountry'>{it.L('The Company holds customer funds in bank accounts separate from the operational accounts. Binary (IOM) Ltd & Binary (Europe) Ltd have arrangements in place so that in the event of insolvency they are able to meet their obligations to clients. These arrangements are in the form of a loan agreement between each respective company and the parent company, Binary Limited, this loan will always at minimum cover the client liabilities. This meets the Gambling Commission\'s requirements for the segregation of customer funds at the level of medium protection.')}</p>
-        <p>{it.L('The Company has various deposit methods available, each with their own timing for deposits, some of which might not be available for withdrawals. Full details of available methods for deposits and withdrawals, including settlement times, can be seen [_1]here[_2].',
+        <p>{it.L('The Company has various deposit methods available, each with its own timing for deposits, some of which might not be available for withdrawals. Full details of available methods for deposits and withdrawals, including settlement times, can be seen [_1]here[_2].',
             `<a href='${it.url_for('cashier/payment_methods')}'>`, '</a>')}
         </p>
         <p>{it.L('A client should not use the client\'s account as a banking facility, and deposits should only be made with a view to using funds to place contracts. The Company is not a financial institution, and the client will not receive interest on deposits. Should a client make repeated deposits and withdrawals without placing commensurate contracts, the Company reserves the right to pass on to the client\'s account, without prior notice, any bank charges the Company has incurred before closing the account.')}</p>
         <p>{it.L('Internal currency transfers between accounts are allowed up to a maximum of USD 2,000 or equivalent. Transfers are allowed between any available currency pair but cannot be done between the Binary and MT5 accounts.')}</p>
 
         <h2 data-anchor='prohibited-trades'>H. {it.L('Prohibited trades')}</h2>
-        <p>{it.L('The Company reserves the right to refuse to do business with, to discontinue to do business with, and to reverse the transactions of, clients who engage in any trading activity')}</p>
+        <p>{it.L('The Company reserves the right to refuse to do business with, to discontinue to do business with, and to reverse the transactions of clients who engage in any trading activity')}</p>
         <ul className='bullet'>
             <li>{it.L('That contravenes any laws, regulations, instruments, ordinances, or rules that govern the operation of any exchange, financial market, or financial regulatory environment')}</li>
             <li>{it.L('With insider knowledge of any financial market or instrument')}</li>
@@ -133,7 +133,7 @@ const Tac = () => (
         <p>{it.L('A client may only open an account on this site on the following conditions:')}
             <ul className='bullet'>
                 <li>{it.L('The client has read this legal Terms and conditions page in full and understood that the client will be buying and selling contracts subject to these terms and conditions.')}</li>
-                <li>{it.L('The client has read the Company\'s privacy statement and is aware how the Company processes information.')}</li>
+                <li>{it.L('The client has read the Company\'s privacy statement and is aware of how the Company processes information.')}</li>
                 <li>{it.L('The client is over 18 years of age, unless the client is an Estonian resident whereby the client would have to be over 21.')}</li>
                 <li>{it.L('The client is not resident in a restricted country such as Canada, Hong Kong, Israel, Jersey, Malaysia, Malta, Paraguay, the United Arab Emirates, the USA, or any other restricted country that has been identified by the FATF as having strategic deficiencies.')}</li>
                 <li>{it.L('The client has sufficient experience and knowledge in matters of financial trading to be capable of evaluating the merits and risks of acquiring financial contracts via this site and has done so without relying on any information contained on this site.')}</li>

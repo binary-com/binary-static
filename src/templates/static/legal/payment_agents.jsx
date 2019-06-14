@@ -12,7 +12,7 @@ const PaymentAgents = () => (
 
         <h2 data-anchor='general'>B. {it.L('General')}</h2>
         <ol>
-            <li>{it.L('This agreement constitutes the entire agreement between the Parties and no earlier representation, arrangement, or agreement, whether written or oral, relating to any matter dealt with in this agreement between the Parties, shall have any force or effect before the Commencement Date.')}</li>
+            <li>{it.L('This agreement constitutes the entire agreement between the Parties, and no earlier representation, arrangement, or agreement, whether written or oral, relating to any matter dealt with in this agreement between the Parties, shall have any force or effect before the Commencement Date.')}</li>
             <li>{it.L('This agreement is supplied to the Agent in English. In the event that there is a difference between the English version and any translated versions of this document, the English version shall prevail. The Company shall not be liable for any loss or damage whatsoever caused by an error, inaccuracy, or misspelling and, as a result, by misunderstanding or misinterpretation of any of the terms or conditions or clauses or provisions of any translated versions of this agreement.')}</li>
             <li>{it.L('Each Party shall do anything reasonably required by the other Party to give effect to the provisions of this agreement.')}</li>
             <li>{it.L('If any provision of this agreement is held to be invalid, void, or unenforceable in any way by any court, arbitration, regulatory body, competent authority, or any other authority or law whatsoever in any jurisdiction in which the Agent provides their services, the remainder of this agreement shall remain in full force and effect.')}</li>
