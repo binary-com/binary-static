@@ -124,5 +124,4 @@ module.exports = [
     // ['hackathon',                               'landing_pages/hackathon',                     null,        'Hackathon Competition',              'NOT-en'],
     ['introducing-usb',                            'landing_pages/usb',                           null,        'Introducing USB',                    'NOT-en'],
     ['binary-grid',                                'landing_pages/binary_grid',                   null,        'Our New Mobile Trading App',         'NOT-en'],
-    ['landing/signup-frame',                       'landing_pages/signup_frame',                  null,        'Sign up'],
 ];
