@@ -1,3 +1,4 @@
+const Client       = require('../../../../base/client');
 const BinarySocket = require('../../../../base/socket');
 const localize     = require('../../../../../_common/localize').localize;
 const Url          = require('../../../../../_common/url');
@@ -19,6 +20,9 @@ const AccountClosure = (() => {
         $error_msg         = $('#msg_form');
         $form              = $(form_selector);
 
+        const currency = Client.get('currency');
+        $closure_container.find(`li:contains('${currency}')`).setVisibility(0);
+
         $(form_selector).on('submit', (event) => {
             event.preventDefault();
             submitForm();
@@ -37,6 +41,7 @@ const AccountClosure = (() => {
             const data  = { account_closure: 1, reason };
             BinarySocket.send(data).then((response) => {
                 if (response.error) {
+                    $closure_loading.setVisibility(0);
                     showFormMessage(response.error.message || localize('Sorry, an error occurred while processing your request.'));
                     $btn_submit.attr('disabled', false);
                 } else {
@@ -75,7 +80,7 @@ const AccountClosure = (() => {
                     $txt_other_reason.addClass('error-field');
                     showFormMessage(localize('Please specify the reasons for closing your accounts'));
                     return false;
-                } else if (other_reason_input.length < 3 || other_reason_input.length > 50) {
+                } else if (other_reason_input.length < 5 || other_reason_input.length > 250) {
                     showFormMessage(localize('The reason should be between 3 and 50 characters'));
                     return false;
                 }
