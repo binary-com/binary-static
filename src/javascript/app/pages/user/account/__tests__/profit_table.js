@@ -19,7 +19,7 @@ describe('Profit Table', () => {
             .and.to.have.property('buyDate')
             .and.to.be.a('string');
         expect(profit_table_data).to.have.property('ref')
-            .and.to.be.a('string');
+            .and.to.be.a('number');
         expect(profit_table_data).to.have.property('payout')
             .and.to.be.a('string');
         expect(profit_table_data).to.have.property('buyPrice')
@@ -33,6 +33,6 @@ describe('Profit Table', () => {
         expect(profit_table_data).to.have.property('desc')
             .and.to.be.a('string');
         expect(profit_table_data).to.have.property('id')
-            .and.to.be.a('string');
+            .and.to.be.a('number');
     });
 });
