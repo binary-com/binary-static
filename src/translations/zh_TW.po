@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-06-12 10:34\n"
+"PO-Revision-Date: 2019-06-17 02:19\n"
 "Last-Translator: binarycom\n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -3414,14 +3414,8 @@ msgstr "四、客戶的指示"
 msgid "Daily Reset Indices – Daily Reset Indices replicate markets with a bullish and bearish trend with a constant volatility. The Bull Market and Bear Market indices start at 00:00 GMT each day, replicating bullish and bearish markets respectively"
 msgstr "每日重置指數 - 每日重置指數複製具看漲和看跌走勢與持續波動的市場。牛市和熊市指數每天從格林威治時間00:00開始，分別複製看漲和看跌市場"
 
-msgid "Daily insights into markets around the world."
-msgstr "世界各地市場的每日分析報告。"
-
 msgid "Daily limit on losses"
 msgstr "每日損失限額"
-
-msgid "Daily market reports"
-msgstr "市場日報表"
 
 msgid "Daily turnover limit"
 msgstr "每日交易限額"
@@ -6057,8 +6051,8 @@ msgstr "內部審計"
 msgid "Internal Audit Executive"
 msgstr "內部稽核主管"
 
-msgid "Internal currency transfers between accounts are allowed up to a maximum of USD 2,000 or equivalent. Transfers are allowed between any available currency pair but cannot be done between the Binary and MT5 accounts."
-msgstr "帳戶之間的內部貨幣轉帳最高可達2,000美元或等值。允許任何可用貨幣對之間轉帳，但Binary和MT5帳戶之間不可轉帳。"
+msgid "Internal currency transfers between accounts are allowed up to a maximum of USD 2,500.00 or equivalent. Transfers are allowed between any available currency pair but cannot be done between the Binary and MT5 accounts."
+msgstr "帳戶之間的內部貨幣轉帳最高可達2,500.00美元或等值。允許任何可用貨幣對之間轉帳，但Binary和MT5帳戶之間不可轉帳。"
 
 msgid "International currency or commodity prices are highly volatile and very difficult to predict. Due to such volatility, plus the bias in the pricing system favouring the website (as described in more detail below), no financial contract purchased in our system (whether or not the payout exceeds the premium amount) can be considered a safe contract."
 msgstr "國際外匯或商品價格波動非常劇烈，很難預測。由於波動幅度較大，加上報價體系對網站有利(以下將詳細說明)，因此在我們系統中買入的金融合約都不得視為安全合約（不論賠付額是否大於期權費金額）。"
@@ -7684,7 +7678,7 @@ msgid "Online currency exchangers"
 msgstr "線上貨幣兌換"
 
 msgid "Online trading can be addictive. Self-exclusion is a facility to limit your online trading activity, should you need it. You can set limits in your account to help prevent unwanted losses. You may adjust these limits any time, but remove them only after 24 hours. %1Contact us%2 to remove or adjust your limits."
-msgstr ""
+msgstr "線上交易可能้會上癮。如果您覺得有必要限制自己參與線上交易, 請使用自我禁止設施。您可以在帳戶中設置限制，以防止意外虧損。您可以隨時調整限制設定，但需等24小時過後才能將其刪除。要刪除或調整限制請％1聯繫我們％2。"
 
 msgid "Only %1 are allowed."
 msgstr "只允許 %1 。"
@@ -9385,7 +9379,7 @@ msgid "Self-Employed"
 msgstr "自雇者"
 
 msgid "Self-Exclusion"
-msgstr ""
+msgstr "自我禁止"
 
 msgid "Self-exclusion limits"
 msgstr "自我禁止限額"
@@ -13612,7 +13606,7 @@ msgid "You hereby confirm that in addition to the Client Agreement, you have car
 msgstr "您確認, 除客戶協議外, 您已仔細閱讀並已理解本協議的內容, 並同意接受其法律約束。"
 
 msgid "You may also instruct us to exclude you from trading on %1 for a specific period of time. This self-exclusion date cannot be amended once it is set."
-msgstr ""
+msgstr "您還可以指示我們在指定時期內禁止您在％1交易。設定好之後，該自我禁止日期不能修改。"
 
 msgid "You may only transfer funds between fiat and cryptocurrency accounts."
 msgstr "資金只可在法定帳戶和加密貨幣帳戶之間轉移."
@@ -13879,28 +13873,28 @@ msgid "a professional client as defined in the Directive 2004/39/EC of the Europ
 msgstr "根據歐洲議會和歐盟理事會 (MiFID) 2004/39/EC 法令或隨後的歐洲議會和歐盟理事會 (MiFID II) 2014/65/EC 法令定義的專業客戶，以生效者為準"
 
 msgid "a ratio which determines the minimum Margin requirement for a trader to open a trade"
-msgstr ""
+msgstr "確定交易者開盤交易的最低保證金要求的比率"
 
 msgid "a transaction unit representing a standardised quantity of the Underlying Instrument, as specified in the Product Disclosure and Specifications. One Lot constitutes the equivalent of 100,000 units of the base currency."
-msgstr ""
+msgstr "代表產品披露和規範規定的標的工具的標準化數量的交易單位。外匯市場上, 一手相當於10萬個標的貨幣單位。"
 
 msgid "a. Access the MT5 trading platform through the direct link %1 from BIEL's web interface, or"
-msgstr ""
+msgstr "a. 通過BIEL的網絡介面上的直接連結 %1存取 MT5 交易平台，或"
 
 msgid "an Order to execute a transaction to close an Open Position when the price reaches the client's specified price"
-msgstr ""
+msgstr "當價格達到客戶指定的基準時對持倉頭寸執行平倉交易的指令"
 
 msgid "an Order to open or close a position in the market identified by reference to an Underlying Instrument at the current price"
-msgstr ""
+msgstr "通過目前價格參考相關工具在市場上確定執行開倉或平倉交易的指令"
 
 msgid "an Order to open or close a transaction if and when a price quote becomes more favourable to the client when compared against the current price"
-msgstr ""
+msgstr "當報價比目前價格對客戶更有利時進行開盤或平倉交易的指令"
 
 msgid "an execution instruction given by the client to the Company to open or close a position in a market identified by reference to the Underlying Instrument, including Market Order, Stop Order, Limit Order etc."
-msgstr ""
+msgstr "客戶在參考相關工具包括市場訂單、止損單、限價單等之後給予公司在指定市場內對某個頭寸開盤或平倉的執行指令"
 
 msgid "b. Download and install the MT5 trading platform through the link %1"
-msgstr ""
+msgstr "b. 通過連結 %1 下載並安裝 MT5 交易平台"
 
 msgid "binary options, forex, forex trading, online trading, financial trading, binary trading, index trading, trading indices, forex trades, trading commodities, binary options strategy, binary broker, binary bet, binary options trading platform, binary strategy, finance, investment, trading"
 msgstr "二元期權、外匯、外匯交易、線上交易、金融交易、二元期權交易、指數交易、交易指數、外匯交易、交易商品、二元期權策略、二元經紀、二元投注、二元期權交易平台、二元策略、金融、投資、交易"
@@ -13978,7 +13972,7 @@ msgid "months"
 msgstr "月份"
 
 msgid "nearest price reasonably available and quoted by %1 when the Company Price quotation reaches or goes beyond the level of the client's Stop Order"
-msgstr ""
+msgstr "當公司的報價達到或超出客戶的止損訂單水準時%1所報的最接近及合理可用價格"
 
 msgid "numbers"
 msgstr "號碼"
@@ -13993,7 +13987,7 @@ msgid "per lot"
 msgstr "每手"
 
 msgid "ratio of Account Equity to Total Margin, expressed as a percentage"
-msgstr ""
+msgstr "帳戶資金與保證金總額的比率，以百分比表示"
 
 msgid "restrict the further processing of their personal data, as well as in certain circumstances; and"
 msgstr "限制對其個人資料以及某些情況下的進一步處理; 和"
@@ -14023,34 +14017,34 @@ msgid "space"
 msgstr "空間"
 
 msgid "the Margin Level at or below which the client's Open Positions may be closed forcefully and automatically with or without the client's prior consent"
-msgstr ""
+msgstr "客戶的未平倉頭寸將在已徵得或未徵得客戶事先同意的情況下被強逼和自動平倉的保證金水平"
 
 msgid "the aggregate of all Margin Requirements in the client's MT5 Real Account"
-msgstr ""
+msgstr "客戶的MT5真實帳戶的所有保證金要求累計金額"
 
 msgid "the amount set aside by the Company from the client's Account Balance in order to open and maintain a transaction, to cover the client's potential loss, if it occurs"
-msgstr ""
+msgstr "公司從客戶的帳戶餘額撥出進行開盤持倉交易, 以彌補客戶可能會產生的潛在損失的金額"
 
 msgid "the applicant's personal details, including name, address, and contract details, comprising email address and telephone number, date of birth, and gender;"
 msgstr "申請人的個人詳細資訊, 包括姓名、位址和聯繫方法, 包含電子郵件地址和電話號碼、出生日期和性別;"
 
 msgid "the currency in which the client's MT5 Real Account will be operated"
-msgstr ""
+msgstr "客户的 MT5 真實帳戶運作的幣種"
 
 msgid "the difference between the Bid and Ask Price of a financial instrument"
-msgstr ""
+msgstr "金融工具的出價和要價之間的區別"
 
 msgid "the position in a market identified by reference to an Underlying Instrument, created by opening a transaction as a result of placing a buy or sell Order to the extent that such position has not been closed in whole or in part by an opposite Order under this agreement"
-msgstr ""
+msgstr "市場開盤交易下購入或賣出單後參照基礎工具所建立，在本協議有效期內未經相反訂單全部或部分平倉的頭寸"
 
 msgid "the price specified in the client's Limit Order"
-msgstr ""
+msgstr "客戶的限價單指定的價格"
 
 msgid "the right to data portability"
 msgstr "資料可攜權"
 
 msgid "the underlying currency, or financial instrument, on which the price of the CFD is based"
-msgstr ""
+msgstr "差價合約價格採用的基礎貨幣或金融工具"
 
 msgid "thousand"
 msgstr "千"
