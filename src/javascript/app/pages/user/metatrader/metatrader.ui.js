@@ -390,6 +390,7 @@ const MetaTraderUI = (() => {
             $form.find('#view_2').find('.error-msg, .days_to_crack').setVisibility(0);
             $form.find('input').val('');
             $form.find(`.${/demo/.test(newAccountGetType()) ? 'real' : 'demo'}-only`).setVisibility(0);
+            refreshAction();
         };
         $form.find('#btn_next').click(function() {
             if (!$(this).hasClass('button-disabled')) {
