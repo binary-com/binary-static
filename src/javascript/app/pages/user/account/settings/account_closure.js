@@ -1,3 +1,4 @@
+const MetaTrader          = require('../../../user/metatrader/metatrader');
 const getCurrencyFullName = require('../../../../common/currency').getCurrencyFullName;
 const Client              = require('../../../../base/client');
 const BinarySocket        = require('../../../../base/socket');
@@ -26,11 +27,11 @@ const AccountClosure = (() => {
         $fiat              = $('#change-fiat');
         $form              = $(form_selector);
 
-        BinarySocket.wait('landing_company').then((response) => {
-            const company = response.landing_company.gaming_company || response.landing_company.financial_company;
-            const currencies = company.legal_allowed_currencies;
+        BinarySocket.wait('landing_company').then(() => {
+            const currencies = Client.currentLandingCompany().legal_allowed_currencies;
             const current_currency = Client.get('currency');
             const show_currencies = currencies.filter((val) => val !== current_currency);
+
             if (show_currencies) {
                 show_currencies.forEach((currency) => {
                     if (isCryptocurrency(currency)) {
@@ -42,9 +43,7 @@ const AccountClosure = (() => {
                 if (!$crypto.find('li').length) $crypto.setVisibility(0);
                 if (!$fiat.find('li').length) $fiat.setVisibility(0);
             }
-            const hasMT5 = response.landing_company.mt_gaming_company ||
-                           response.landing_company.mt_financial_company;
-            if (!hasMT5) {
+            if (!MetaTrader.isEligible()) {
                 $('#mt5_withdraw').setVisibility(0);
             }
         }).catch((error) => {
