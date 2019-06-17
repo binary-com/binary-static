@@ -271,8 +271,13 @@ const MetaTrader = (() => {
         });
     };
 
+    const onUnload = () => {
+        MetaTraderUI.refreshAction();
+    };
+
     return {
         onLoad,
+        onUnload,
         isEligible,
     };
 })();
