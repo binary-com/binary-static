@@ -47,6 +47,8 @@ const AccountClosure = (() => {
             if (!hasMT5) {
                 $('#mt5_withdraw').setVisibility(0);
             }
+        }).catch((error) => {
+            showFormMessage(error.message);
         });
         $closure_container.setVisibility(1);
 
