@@ -59,7 +59,11 @@ const Reset = (() => {
 
     const hideResetTime = () => { CommonFunctions.getElementById('reset_time').style.display = 'none'; };
 
-    const isNewBarrier = (entry_barrier, current_barrier) => (+entry_barrier !== +current_barrier);
+    const isNewBarrier = (entry_barrier, current_barrier) => (
+        (entry_barrier || entry_barrier === 0) && (current_barrier || current_barrier === 0) ?
+            (+(entry_barrier.toString().replace(',', '')) !== +(current_barrier.toString().replace(',', '')))
+            : entry_barrier !== current_barrier
+    );
 
     const isReset = (contract_type) => /reset/i.test(contract_type);
 
