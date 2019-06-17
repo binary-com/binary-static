@@ -97,9 +97,8 @@ const Client = (() => {
 
         let upgrade_link;
         if (upgrade_info.can_upgrade_to) {
-            // TODO [->svg]
             const upgrade_link_map = {
-                realws       : ['costarica', 'svg', 'iom', 'malta'],
+                realws       : ['svg', 'iom', 'malta'],
                 maltainvestws: ['maltainvest'],
             };
             upgrade_link = Object.keys(upgrade_link_map).find(link =>

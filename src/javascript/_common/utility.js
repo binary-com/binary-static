@@ -73,6 +73,8 @@ const isEmptyObject = (obj) => {
     return is_empty;
 };
 
+const isLoginPages = () => /logged_inws|redirect/i.test(window.location.pathname);
+
 const cloneObject = obj => (!isEmptyObject(obj) ? extend(true, Array.isArray(obj) ? [] : {}, obj) : obj);
 
 const isDeepEqual = (a, b) => {
@@ -232,6 +234,7 @@ module.exports = {
     downloadCSV,
     template,
     isEmptyObject,
+    isLoginPages,
     cloneObject,
     isDeepEqual,
     unique,

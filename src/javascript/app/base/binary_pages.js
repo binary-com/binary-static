@@ -51,17 +51,18 @@ const VideoFacility           = require('../pages/user/video_facility');
 
 // ==================== static ====================
 // const Charity            = require('../../static/pages/charity');
-const Contact            = require('../../static/pages/contact');
-const Contact2           = require('../../static/pages/contact_2');
-const GetStarted         = require('../../static/pages/get_started');
-const Home               = require('../../static/pages/home');
-const KeepSafe           = require('../../static/pages/keep_safe');
-const JobDetails         = require('../../static/pages/job_details');
-const Platforms          = require('../../static/pages/platforms');
-const Regulation         = require('../../static/pages/regulation');
-const StaticPages        = require('../../static/pages/static_pages');
-const TermsAndConditions = require('../../static/pages/tnc');
-const WhyUs              = require('../../static/pages/why_us');
+const Contact             = require('../../static/pages/contact');
+const Contact2            = require('../../static/pages/contact_2');
+const GetStarted          = require('../../static/pages/get_started');
+const Home                = require('../../static/pages/home');
+const KeepSafe            = require('../../static/pages/keep_safe');
+const JobDetails          = require('../../static/pages/job_details');
+const Platforms           = require('../../static/pages/platforms');
+const Regulation          = require('../../static/pages/regulation');
+const StaticPages         = require('../../static/pages/static_pages');
+const TermsAndConditions  = require('../../static/pages/tnc');
+const WhyUs               = require('../../static/pages/why_us');
+const AffiliatesIBLanding = require('../../static/pages/affiliate_ib_landing');
 
 /* eslint-disable max-len */
 const pages_config = {
@@ -117,7 +118,6 @@ const pages_config = {
     securityws               : { module: Settings,                   is_authenticated: true },
     self_exclusionws         : { module: SelfExclusion,              is_authenticated: true, only_real: true },
     settingsws               : { module: Settings,                   is_authenticated: true },
-    signup                   : { module: TabSelector }, // for /affiliate/signup.html
     statementws              : { module: Statement,                  is_authenticated: true, needs_currency: true },
     tnc_approvalws           : { module: TNCApproval,                is_authenticated: true, only_real: true },
     top_up_virtualws         : { module: TopUpVirtual,               is_authenticated: true, only_virtual: true },
@@ -128,6 +128,7 @@ const pages_config = {
     welcome                  : { module: WelcomePage,                is_authenticated: true, only_virtual: true },
     withdrawws               : { module: PaymentAgentWithdraw,       is_authenticated: true, only_real: true },
 
+    'affiliate-ib'           : { module: AffiliatesIBLanding },
     'binary-in-numbers'      : { module: StaticPages.BinaryInNumbers },
     'binary-options'         : { module: GetStarted.BinaryOptions },
     'binary-options-mt5'     : { module: GetStarted.BinaryOptionsForMT5 },
@@ -136,7 +137,6 @@ const pages_config = {
     'get-started'            : { module: TabSelector },
     'how-to-trade-mt5'       : { module: TabSelector },
     'ib-faq'                 : { module: StaticPages.IBProgrammeFAQ },
-    'ib-signup'              : { module: TabSelector },
     'job-details'            : { module: JobDetails },
     'keep-safe'              : { module: KeepSafe },
     'new-account'            : { module: NewAccount,                     not_authenticated: true },

@@ -90,10 +90,9 @@ module.exports = [
     ['open-positions',                          'static/about/job_descriptions',               'full_width', 'Open Positions'],
     ['open-positions/job-details',              'static/about/job_details',                    'full_width', 'Job Details'],
 
-    ['affiliate/signup',                        'static/affiliates/signup',                    'full_width', 'Affiliate'],
+    ['affiliate-ib',                            'static/affiliate_ib_landing',                 'full_width', 'Affiliate and IB Programmes'],
     ['affiliate/faq',                           'static/affiliates/faq',                       'default',    'Affiliate FAQ'],
     // ['charity',                                 'static/charity',                              'default',    'Charity'],
-    ['ib-programme/ib-signup',                  'static/ib_programme/ib_signup',               'full_width', 'IB programme'],
     ['ib-programme/ib-faq',                     'static/ib_programme/ib_faq',                  'default',    'IB programme FAQ'],
     ['legal/us_patents',                        'static/legal/us_patents',                     'default',    'US Patents'],
     ['regulation',                              'static/legal/regulation',                     'default',    'Regulation'],
@@ -124,5 +123,4 @@ module.exports = [
     // ['hackathon',                               'landing_pages/hackathon',                     null,        'Hackathon Competition',              'NOT-en'],
     ['introducing-usb',                            'landing_pages/usb',                           null,        'Introducing USB',                    'NOT-en'],
     ['binary-grid',                                'landing_pages/binary_grid',                   null,        'Our New Mobile Trading App',         'NOT-en'],
-    ['landing/signup-frame',                       'landing_pages/signup_frame',                  null,        'Sign up'],
 ];

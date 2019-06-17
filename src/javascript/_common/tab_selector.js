@@ -38,6 +38,8 @@ const TabSelector = (() => {
         applyToAllElements('.go-right', (element) => {
             element.addEventListener('click', goRight);
         });
+
+        setMobileHeader();
     };
 
     const repositionSelector = () => {
@@ -75,6 +77,14 @@ const TabSelector = (() => {
         }, true);
     };
 
+    const setMobileHeader = () => {
+        const el_mobile_tab = getElementById('tab_mobile_header');
+        if (el_mobile_tab) {
+            const active_tab = document.getElementsByClassName('a-active');
+            el_mobile_tab.innerHTML = active_tab[0].innerHTML;
+        }
+    };
+
     const goLeft = (e) => {
         changeTab({ selector: e.target.getAttribute('data-parent'), direction: 'left' });
     };
@@ -106,6 +116,7 @@ const TabSelector = (() => {
         selectCircle(options.selector, current_index, index_to_show);
         slideSelector(options.selector, options.el_to_show);
         options.el_to_show.getElementsByTagName('a')[0].click();
+        setMobileHeader();
 
         if (params_hash.section) {
             setTimeout(() => { $.scrollTo($(`#${params_hash.section}`), 500, { offset: -10 }); }, 500);

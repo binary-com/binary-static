@@ -1,18 +1,19 @@
-const moment         = require('moment');
-const ViewPopupUI    = require('./view_popup.ui');
-const Highchart      = require('../../trade/charts/highchart');
-const Callputspread  = require('../../trade/callputspread');
-const DigitDisplay   = require('../../trade/digit_trade');
-const Lookback       = require('../../trade/lookback');
-const Reset          = require('../../trade/reset');
-const TickDisplay    = require('../../trade/tick_trade');
-const Clock          = require('../../../base/clock');
-const BinarySocket   = require('../../../base/socket');
-const getElementById = require('../../../../_common/common_functions').getElementById;
-const localize       = require('../../../../_common/localize').localize;
-const State          = require('../../../../_common/storage').State;
-const urlFor         = require('../../../../_common/url').urlFor;
-const Utility        = require('../../../../_common/utility');
+const moment                   = require('moment');
+const ViewPopupUI              = require('./view_popup.ui');
+const Highchart                = require('../../trade/charts/highchart');
+const Callputspread            = require('../../trade/callputspread');
+const DigitDisplay             = require('../../trade/digit_trade');
+const Lookback                 = require('../../trade/lookback');
+const Reset                    = require('../../trade/reset');
+const TickDisplay              = require('../../trade/tick_trade');
+const Clock                    = require('../../../base/clock');
+const BinarySocket             = require('../../../base/socket');
+const changePocNumbersToString = require('../../../common/request_middleware').changePocNumbersToString;
+const getElementById           = require('../../../../_common/common_functions').getElementById;
+const localize                 = require('../../../../_common/localize').localize;
+const State                    = require('../../../../_common/storage').State;
+const urlFor                   = require('../../../../_common/url').urlFor;
+const Utility                  = require('../../../../_common/utility');
 
 const ViewPopup = (() => {
     let contract_id,
@@ -251,7 +252,7 @@ const ViewPopup = (() => {
             containerSetText('trade_details_entry_spot > span', '-');
             containerSetText('trade_details_message', localize('Contract has not started yet'));
         } else {
-            if (contract.entry_spot > 0) {
+            if (parseFloat(contract.entry_spot) > 0) {
                 // only show entry spot if available and contract was not sold before start time
                 containerSetText('trade_details_entry_spot > span', is_sold_before_start ? '-' : addComma(contract.entry_spot));
             }
@@ -260,9 +261,14 @@ const ViewPopup = (() => {
 
         const is_digit = /digit/i.test(contract.contract_type);
         if (is_digit) {
-            if (!chart_started) {
+            if (!chart_started && contract.entry_tick_time) {
                 DigitDisplay.init(id_tick_chart, contract);
-                chart_started = true;
+                if (contract.entry_tick_time) chart_started = true;
+            } else if (!chart_started && !contract.entry_tick_time) {
+                // Since the contract not started yet, display the loading table:
+                DigitDisplay.initTable(id_tick_chart, DigitDisplay.calculateTableHeight(contract), contract);
+            } else if (chart_started) {
+                DigitDisplay.renderTable(id_tick_chart, contract);
             }
         } else if (!chart_started && !contract.tick_count) {
             if (!chart_init) {
@@ -794,7 +800,7 @@ const ViewPopup = (() => {
         getContract('no-subscribe');
     };
 
-    const responseProposal = (response) => {
+    const responseProposal = async (response) => {
         if (response.error) {
             if (response.error.code !== 'AlreadySubscribed' && +response.echo_req.contract_id === contract_id) {
                 showErrorPopup(response, response.error.message);
@@ -803,7 +809,7 @@ const ViewPopup = (() => {
         }
         if (+response.proposal_open_contract.contract_id === contract_id) {
             ViewPopupUI.storeSubscriptionID(response.proposal_open_contract.id);
-            responseContract(response);
+            responseContract(await changePocNumbersToString(response));
         } else if (response.proposal_open_contract.id) {
             BinarySocket.send({ forget: response.proposal_open_contract.id });
         }
