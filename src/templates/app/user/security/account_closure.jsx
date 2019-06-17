@@ -15,7 +15,7 @@ const AccountClosure = () => (
                 {it.L('This page will redirect to the [_1] homepage after 10 seconds.', it.website_name)}
             </p>
         </div>
-        <div id='closure_container'>
+        <div id='closure_container' className='invisible'>
             <div id='main_header' className='gr-padding-30'>
                 <h1 id='heading'>{it.L('Account Closure')}</h1>
                 <p>{it.L('Closing your [_1] accounts involves closing all open positions in your accounts, withdrawing your funds, and deactivating your accounts with [_1].', it.website_name)}</p>
@@ -29,23 +29,13 @@ const AccountClosure = () => (
                             id='change-fiat'
                             title={it.L('Change my account currency')}
                             subtitle={it.L('[_1]Change your fiat currency[_2] to any of the following:', `<a href="${it.url_for('user/accounts')}">`, '</a>')}
-                            list_items={[
-                                it.L('USD'),
-                                it.L('AUD'),
-                                it.L('EUR'),
-                                it.L('GBP'),
-                            ]}
+                            list_items={[]}
                         />
                         <ClosureDescription
                             id='crypto'
                             title={it.L('Create a crypto account')}
                             subtitle={it.L('[_1]Open an account[_2] in the cryptocurrency of your choice:', `<a href="${it.url_for('user/accounts')}">`, '</a>')}
-                            list_items={[
-                                it.L('Bitcoin (BTC)'),
-                                it.L('Ether (ETH)'),
-                                it.L('Litecoin (LTC)'),
-                                it.L('Tether (UST)'),
-                            ]}
+                            list_items={[]}
                         />
                         <ClosureDescription
                             title={it.L('Change my affiliate')}
@@ -61,20 +51,23 @@ const AccountClosure = () => (
                 <ClosureDescription
                     title={it.L('Close open positions')}
                     list_items={[
-                        it.L('Remember to close all open positions in [_1]all[_2] your accounts.', '<strong>', '</strong>'),
-                        it.L('Go to the [_1]portfolio page[_2] to close your open positions.', `<a href="${it.url_for('user/portfoliows')}">`, '</a>'),
+                        { text: it.L('Remember to close all open positions in [_1]all[_2] your accounts.', '<strong>', '</strong>') },
+                        { text: it.L('Go to the [_1]portfolio page[_2] to close your open positions.', `<a href="${it.url_for('user/portfoliows')}">`, '</a>') },
                     ]}
                 />
                 <ClosureDescription
                     title={it.L('Withdraw funds')}
                     subtitle={it.L('Remember to withdraw your funds from [_1]all[_2] your accounts', '<strong>', '</strong>')}
                     list_items={[
-                        it.L('Go to [_1]Cashier[_2] to withdraw.', `<a href="${it.url_for('cashier')}">`, '</a>'),
-                        it.L('Go to [_1]MT5 dashboard[_2] to withdraw from your [_3] MT5 account.', `<a href="${it.url_for('user/metatrader')}">`, '</a>', it.website_name),
+                        { text: it.L('Go to [_1]Cashier[_2] to withdraw.', `<a href="${it.url_for('cashier')}">`, '</a>') },
+                        {
+                            id  : 'mt5_withdraw',
+                            text: it.L('Go to [_1]MT5 dashboard[_2] to withdraw from your [_3] MT5 account.', `<a href="${it.url_for('user/metatrader')}">`, '</a>', it.website_name),
+                        },
                     ]}
                 />
                 <SeparatorLine className='gr-padding-10' />
-            
+
                 <h2 className='primary-color'>{it.L('Reason for closure')}</h2>
                 <p>{it.L('Why do you want to close your account? (Please select one)')}</p>
                 <FormRow
@@ -139,7 +132,7 @@ const ClosureDescription = ({
         { list_items &&
             <ul className='bullet'>
                 { list_items.map((item, idx) => (
-                    <li key={idx}>{item}</li>
+                    <li id={item.id} key={idx}>{item.text}</li>
                 ))
                 }
             </ul>

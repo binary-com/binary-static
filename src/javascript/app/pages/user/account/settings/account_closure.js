@@ -1,7 +1,9 @@
-const Client       = require('../../../../base/client');
-const BinarySocket = require('../../../../base/socket');
-const localize     = require('../../../../../_common/localize').localize;
-const Url          = require('../../../../../_common/url');
+const getCurrencyFullName = require('../../../../common/currency').getCurrencyFullName;
+const Client              = require('../../../../base/client');
+const BinarySocket        = require('../../../../base/socket');
+const localize            = require('../../../../../_common/localize').localize;
+const Url                 = require('../../../../../_common/url');
+const isCryptocurrency    = require('../../../../../_common/base/currency_base').isCryptocurrency;
 
 const AccountClosure = (() => {
     const form_selector = '#form_closure';
@@ -10,7 +12,9 @@ const AccountClosure = (() => {
         $closure_loading,
         $closure_container,
         $success_msg,
-        $error_msg;
+        $error_msg,
+        $crypto,
+        $fiat;
 
     const onLoad = () => {
         $txt_other_reason  = $('#other_reason');
@@ -18,17 +22,52 @@ const AccountClosure = (() => {
         $closure_container = $('#closure_container');
         $success_msg       = $('#msg_main');
         $error_msg         = $('#msg_form');
+        $crypto            = $('#crypto');
+        $fiat              = $('#change-fiat');
         $form              = $(form_selector);
 
-        const currency = Client.get('currency');
-        $closure_container.find(`li:contains('${currency}')`).setVisibility(0);
+        BinarySocket.wait('landing_company').then((response) => {
+            const company = response.landing_company.gaming_company || response.landing_company.financial_company;
+            const currencies = company.legal_allowed_currencies;
+            const current_currency = Client.get('currency');
+            const show_currencies = currencies.filter((val) => val !== current_currency);
+            if (show_currencies) {
+                show_currencies.forEach((currency) => {
+                    if (isCryptocurrency(currency)) {
+                        $crypto.find('ul').append(`<li>${getCurrencyFullName(currency)}</li>`);
+                    } else {
+                        $fiat.find('ul').append(`<li>${getCurrencyFullName(currency)}</li>`);
+                    }
+                });
+                if (!$crypto.find('li').length) $crypto.setVisibility(0);
+                if (!$fiat.find('li').length) $fiat.setVisibility(0);
+            }
+            const hasMT5 = response.landing_company.mt_gaming_company ||
+                           response.landing_company.mt_financial_company;
+            if (!hasMT5) {
+                $('#mt5_withdraw').setVisibility(0);
+            }
+        });
+        $closure_container.setVisibility(1);
 
         $(form_selector).on('submit', (event) => {
             event.preventDefault();
             submitForm();
         });
         $closure_container.setVisibility(1);
-        $txt_other_reason.on('keyup', () => $txt_other_reason.removeClass('error-field'));
+        $txt_other_reason.on('keyup', () => {
+            const input = $txt_other_reason.val();
+            if (input && (input.length < 5 || input.length > 250)) {
+                $txt_other_reason.addClass('error-field');
+                $error_msg
+                    .addClass('error-field')
+                    .html('The reason should be between 5 and 250 characters')
+                    .css('display', 'block');
+            } else {
+                $txt_other_reason.removeClass('error-field');
+                $error_msg.css('display', 'none');
+            }
+        });
     };
 
     const submitForm = () => {
@@ -81,7 +120,7 @@ const AccountClosure = (() => {
                     showFormMessage(localize('Please specify the reasons for closing your accounts'));
                     return false;
                 } else if (other_reason_input.length < 5 || other_reason_input.length > 250) {
-                    showFormMessage(localize('The reason should be between 3 and 50 characters'));
+                    showFormMessage(localize('The reason should be between 5 and 250 characters'));
                     return false;
                 }
                 return other_reason_input;
