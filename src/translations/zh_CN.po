@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-06-12 10:34\n"
+"PO-Revision-Date: 2019-06-17 00:29\n"
 "Last-Translator: binarycom\n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -3128,7 +3128,7 @@ msgid "Contracts for difference (CFDs) allow you to speculate on a number of mar
 msgstr "差价合约（CFDs）让您在包括指数、股票和商品等多个市场投机交易。%1提供受欢迎的现金指数、加密货币以及模拟市场走势的专有波动指数。"
 
 msgid "Contracts may not expire on a weekend; therefore, the expiry date of a contract may be pushed back to the following Monday in the event of a contract expiry date falling on a Saturday or a Sunday."
-msgstr "合约不能在周末到期，因此，如果合约的原定到期日为周六或周日，可能需延后至下周周一。"
+msgstr "有些合约不能在周末到期，因此，如果合约的原定到期日为周六或周日，可能需延后至下周周一。"
 
 msgid "Contracts offered by Binary Investments (Europe) Ltd have a minimum purchase price of USD/GBP/EUR 5."
 msgstr "Binary投资 (欧洲) 有限公司的合约最小购入价为5美元/英镑/欧元。"
@@ -3415,14 +3415,8 @@ msgstr "四、客户的指示"
 msgid "Daily Reset Indices – Daily Reset Indices replicate markets with a bullish and bearish trend with a constant volatility. The Bull Market and Bear Market indices start at 00:00 GMT each day, replicating bullish and bearish markets respectively"
 msgstr "每日重置指数 - 每日重置指数复制具看涨和看跌走势与持续波动的市场。牛市和熊市指数每天从格林威治时间00:00开始，分别复制看涨和看跌市场"
 
-msgid "Daily insights into markets around the world."
-msgstr "世界各地市场的每日分析报告。"
-
 msgid "Daily limit on losses"
 msgstr "每日损失限额"
-
-msgid "Daily market reports"
-msgstr "市场日报表"
 
 msgid "Daily turnover limit"
 msgstr "每日交易限额"
@@ -5852,7 +5846,7 @@ msgid "In light of the EU General Data Protection Regulation 2016/679 and the Da
 msgstr "根据欧盟2016/679一般数据保护条例 和2018数据保护法, 申请人对其个人资料有以下权利:"
 
 msgid "In order for a UK resident to make use of the virtual account, the client will first have to be age-verified. The client will also need to be fully verified before making use of the real money account. Verification can be done electronically or through submission of KYC documents."
-msgstr "为了让英国居民能够使用虚拟账户，客户首先必须通过年龄验证。使用真实资金账户前，客户还必须通过全面验证。验证可以通过电子方式或提交KYC文件完成。"
+msgstr "英国居民必须通过年龄验证才能够使用虚拟账户。使用真实资金账户前，客户还必须通过全面验证。验证可以通过电子方式或提交KYC文件完成。"
 
 msgid "In order to access Telegram Bot, please %1generate an API Token%2 and enter it in the input box below."
 msgstr "要访问Telegram Bot，请%1创建 API 令牌%2并在下面的输入框中输入。"
@@ -6058,8 +6052,8 @@ msgstr "内部审计"
 msgid "Internal Audit Executive"
 msgstr "内部审计主管"
 
-msgid "Internal currency transfers between accounts are allowed up to a maximum of USD 2,000 or equivalent. Transfers are allowed between any available currency pair but cannot be done between the Binary and MT5 accounts."
-msgstr "账户之间的内部货币转账最高可达2,000美元或等值。允许任何可用货币对之间转账，但Binary和MT5账户之间不可转账。"
+msgid "Internal currency transfers between accounts are allowed up to a maximum of USD 2,500.00 or equivalent. Transfers are allowed between any available currency pair but cannot be done between the Binary and MT5 accounts."
+msgstr ""
 
 msgid "International currency or commodity prices are highly volatile and very difficult to predict. Due to such volatility, plus the bias in the pricing system favouring the website (as described in more detail below), no financial contract purchased in our system (whether or not the payout exceeds the premium amount) can be considered a safe contract."
 msgstr "国际外汇或大宗商品价格波动非常剧烈，很难预测。由于波动幅度较大，加上报价体系对网站有利，在我们系统中买入的金融合约不得视为安全合约（不论赔付额是否大于期权费金额）。"
@@ -7685,7 +7679,7 @@ msgid "Online currency exchangers"
 msgstr "在线货币兑换"
 
 msgid "Online trading can be addictive. Self-exclusion is a facility to limit your online trading activity, should you need it. You can set limits in your account to help prevent unwanted losses. You may adjust these limits any time, but remove them only after 24 hours. %1Contact us%2 to remove or adjust your limits."
-msgstr ""
+msgstr "在线交易可能้会上瘾。如果您觉得有必要限制自己参与在线交易, 请使用自我禁止设施。您可以在账户中设置限制，以防止意外亏损。您可以随时调整限制设定，但需等24小时过后才能将其删除。要删除或调整限制请％1联系我们％2。"
 
 msgid "Only %1 are allowed."
 msgstr "只允许 %1 。"
@@ -8685,10 +8679,10 @@ msgid "Proof of identity in your selfie must be clear, identifiable, and same as
 msgstr "您的自拍照片中的身份证明必须清晰、可识别, 并且与您之前提交的相同"
 
 msgid "Proof of identity – such as ID card, passport or driving licence"
-msgstr "身份证明 - 如身份证、护照或驾驶执照"
+msgstr "身份证明 - 如身份证，护照或驾驶执照"
 
 msgid "Proof of wealth / Source of funds – such as payslips or bank statements"
-msgstr "财富证明/资金来源 - 例如工资单或银行月结单"
+msgstr "财务证明/资金来源 - 例如工资单或银行月结单"
 
 msgid "Proof of your employment"
 msgstr "您的职业证明"
@@ -9387,7 +9381,7 @@ msgid "Self-Employed"
 msgstr "个体经营"
 
 msgid "Self-Exclusion"
-msgstr ""
+msgstr "自我禁止"
 
 msgid "Self-exclusion limits"
 msgstr "自我禁止限额"
@@ -10137,7 +10131,7 @@ msgid "Thank you, we'll get back to you within 24 hours"
 msgstr "谢谢, 我们会在24小时内回复您"
 
 msgid "That contravenes any laws, regulations, instruments, ordinances, or rules that govern the operation of any exchange, financial market, or financial regulatory environment"
-msgstr "違反任何管制任何交易所、金融市場或金融監管環境運作的法律、規例、文書、條例或規則"
+msgstr "违反任何管制任何交易所、金融市场或金融监管环境运作的法律、规例、文书、条例或规则"
 
 msgid "That the parties agree in writing that both parties will be exempt from the provisions of this clause"
 msgstr "双方书面同意双方将免受本条款的规定约束"
@@ -11344,7 +11338,7 @@ msgid "The materials comprising the %1 website (including without limitation all
 msgstr "%1 网站所包含的各种材料（包括但不限于所有文章、文字、图片、标识、整理材料、系统、代码和设计）版权归由 %2 Binary Group 各公司（1999-年）所有 。公司保留所有权利。"
 
 msgid "The maximum loss that may be incurred by any client is the amount of money paid by the client to the Company."
-msgstr "客户可能蒙受的最大损失就是其向公司支付的金额。"
+msgstr "客户可能蒙受的最大损失就是其向本公司支付的金额。"
 
 msgid "The maximum number of tokens (%1) has been reached."
 msgstr "已达令牌 (%1) 最大限数。"
@@ -13615,7 +13609,7 @@ msgid "You hereby confirm that in addition to the Client Agreement, you have car
 msgstr "您确认, 除客户协议外, 您已仔细阅读并已理解本协议的内容, 并同意接受其法律约束。"
 
 msgid "You may also instruct us to exclude you from trading on %1 for a specific period of time. This self-exclusion date cannot be amended once it is set."
-msgstr ""
+msgstr "您还可以指示我们在指定时期内禁止您在％1交易。设定好之后，该自我禁止日期不能修改。"
 
 msgid "You may only transfer funds between fiat and cryptocurrency accounts."
 msgstr "资金只可在法定账户和加密货币账户之间转移."
@@ -13882,28 +13876,28 @@ msgid "a professional client as defined in the Directive 2004/39/EC of the Europ
 msgstr "根据欧洲议会和欧盟理事会 (MiFID) 2004/39/EC 法令或随后的欧洲议会和欧盟理事会 (MiFID II) 2014/65/EC 法令定义的专业客户，以生效者为准"
 
 msgid "a ratio which determines the minimum Margin requirement for a trader to open a trade"
-msgstr ""
+msgstr "确定交易者开盘交易的最低保证金要求的比率"
 
 msgid "a transaction unit representing a standardised quantity of the Underlying Instrument, as specified in the Product Disclosure and Specifications. One Lot constitutes the equivalent of 100,000 units of the base currency."
-msgstr ""
+msgstr "代表产品披露和规范规定的标的工具的标准化数量的交易单位。外汇市场上, 一手相当于10万个标的货币单位。"
 
 msgid "a. Access the MT5 trading platform through the direct link %1 from BIEL's web interface, or"
-msgstr ""
+msgstr "a. 通过BIEL的网络界面上的直接链接 %1 访问 MT5 交易平台，或"
 
 msgid "an Order to execute a transaction to close an Open Position when the price reaches the client's specified price"
-msgstr ""
+msgstr "当价格达到客户指定的水平时对持仓头寸执行平仓交易的指令"
 
 msgid "an Order to open or close a position in the market identified by reference to an Underlying Instrument at the current price"
-msgstr ""
+msgstr "通过当前价格参考相关工具在市场上确定执行开仓或平仓交易的指令"
 
 msgid "an Order to open or close a transaction if and when a price quote becomes more favourable to the client when compared against the current price"
-msgstr ""
+msgstr "当报价比当前价格对客户更有利时进行开盘或平仓交易的指令"
 
 msgid "an execution instruction given by the client to the Company to open or close a position in a market identified by reference to the Underlying Instrument, including Market Order, Stop Order, Limit Order etc."
-msgstr ""
+msgstr "客户在参考相关工具包括市场订单、止损单、限价单等之后给予公司在指定市场内对某个头寸开盘或平仓的执行指令"
 
 msgid "b. Download and install the MT5 trading platform through the link %1"
-msgstr ""
+msgstr "b. 通过链接 %1 下载并安装 MT5 交易平台"
 
 msgid "binary options, forex, forex trading, online trading, financial trading, binary trading, index trading, trading indices, forex trades, trading commodities, binary options strategy, binary broker, binary bet, binary options trading platform, binary strategy, finance, investment, trading"
 msgstr "二元期权、外汇、外汇交易、在线交易、金融交易、二元期权交易、指数交易、交易指数、外汇交易、交易大宗商品、二元期权策略、二元经纪、二元投注、二元期权交易平台、二元策略、金融、投资、交易"
@@ -13981,7 +13975,7 @@ msgid "months"
 msgstr "月份"
 
 msgid "nearest price reasonably available and quoted by %1 when the Company Price quotation reaches or goes beyond the level of the client's Stop Order"
-msgstr ""
+msgstr "当公司的报价达到或超出客户的止损订单水平时%1所报的最接近及合理可用价格"
 
 msgid "numbers"
 msgstr "号码"
@@ -13996,7 +13990,7 @@ msgid "per lot"
 msgstr "每手"
 
 msgid "ratio of Account Equity to Total Margin, expressed as a percentage"
-msgstr ""
+msgstr "账户资金与保证金总额的比率，以百分比表示"
 
 msgid "restrict the further processing of their personal data, as well as in certain circumstances; and"
 msgstr "限制对其个人数据以及某些情况下的进一步处理; 和"
@@ -14026,34 +14020,34 @@ msgid "space"
 msgstr "空间"
 
 msgid "the Margin Level at or below which the client's Open Positions may be closed forcefully and automatically with or without the client's prior consent"
-msgstr ""
+msgstr "客户的未平仓头寸将在已征得或未征得客户事先同意的情况下被强逼和自动平仓的保证金水平"
 
 msgid "the aggregate of all Margin Requirements in the client's MT5 Real Account"
-msgstr ""
+msgstr "客户的MT5真实账户的所有保证金要求累计金额"
 
 msgid "the amount set aside by the Company from the client's Account Balance in order to open and maintain a transaction, to cover the client's potential loss, if it occurs"
-msgstr ""
+msgstr "公司从客户的账户余额拨出进行开盘持仓交易, 以弥补客户可能会产生的潜在损失的金额"
 
 msgid "the applicant's personal details, including name, address, and contract details, comprising email address and telephone number, date of birth, and gender;"
 msgstr "申请人的个人详细信息, 包括姓名、地址和联系方法, 包含电子邮件地址和电话号码、出生日期和性别;"
 
 msgid "the currency in which the client's MT5 Real Account will be operated"
-msgstr ""
+msgstr "客户的 MT5 真实账户运作的币种"
 
 msgid "the difference between the Bid and Ask Price of a financial instrument"
-msgstr ""
+msgstr "金融工具的出价和要价之间的区别"
 
 msgid "the position in a market identified by reference to an Underlying Instrument, created by opening a transaction as a result of placing a buy or sell Order to the extent that such position has not been closed in whole or in part by an opposite Order under this agreement"
-msgstr ""
+msgstr "市场开盘交易下购入或卖出单后参照基础工具所创建，在本协议有效期内未经相反订单全部或部分平仓的头寸"
 
 msgid "the price specified in the client's Limit Order"
-msgstr ""
+msgstr "客户的限价单指定的价格"
 
 msgid "the right to data portability"
 msgstr "数据可携权"
 
 msgid "the underlying currency, or financial instrument, on which the price of the CFD is based"
-msgstr ""
+msgstr "差价合约价格采用的基础货币或金融工具"
 
 msgid "thousand"
 msgstr "千"

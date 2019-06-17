@@ -2,6 +2,7 @@ const BinaryPjax     = require('../base/binary_pjax');
 const BinarySocket   = require('../base/socket');
 const isEuCountry    = require('../common/country_base').isEuCountry;
 const FormManager    = require('../common/form_manager');
+const getFormRequest = require('../../app/common/verify_email');
 const Login          = require('../../_common/base/login');
 const getElementById = require('../../_common/common_functions').getElementById;
 const localize       = require('../../_common/localize').localize;
@@ -24,11 +25,8 @@ const NewAccount = (() => {
 
         BinarySocket.wait('website_status', 'authorize', 'landing_company').then(() => {
             clients_country = State.getResponse('website_status.clients_country');
-
-            FormManager.init(form_id, [
-                { selector: '#email', validations: ['req', 'email'], request_field: 'verify_email' },
-                { request_field: 'type', value: 'account_opening' },
-            ]);
+            
+            FormManager.init(form_id, getFormRequest());
             FormManager.handleSubmit({
                 form_selector       : form_id,
                 fnc_response_handler: verifyEmailHandler,
