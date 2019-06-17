@@ -124,7 +124,15 @@ const MetaTraderConfig = (() => {
             if (!Client.get('currency')) {
                 resolve($messages.find('#msg_set_currency').html());
             } else if (is_demo) {
-                resolve();
+                BinarySocket.wait('get_settings').then(() => {
+                    const response_get_settings = State.getResponse('get_settings');
+                    if (response_get_settings.residence === 'United Kingdom' && response_get_settings.date_of_birth === null) {
+                        $messages.find('#msg_age_verification').setVisibility(1);
+                        resolve($messages.find('#msg_age_verification').html());
+                    }
+                });
+
+                resolve($messages.find('#msg_age_verification').html());
             } else if (is_virtual) { // virtual clients can only open demo MT accounts
                 resolve(needsRealMessage());
             } else {
