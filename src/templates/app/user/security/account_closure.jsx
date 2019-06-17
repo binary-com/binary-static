@@ -133,8 +133,7 @@ const ClosureDescription = ({
             <ul className='bullet'>
                 { list_items.map((item, idx) => (
                     <li id={item.id} key={idx}>{item.text}</li>
-                ))
-                }
+                ))}
             </ul>
         }
     </div>

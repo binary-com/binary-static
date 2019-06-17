@@ -55,7 +55,7 @@ const AccountClosure = (() => {
             event.preventDefault();
             submitForm();
         });
-        $closure_container.setVisibility(1);
+
         $txt_other_reason.on('keyup', () => {
             const input = $txt_other_reason.val();
             if (input && (input.length < 5 || input.length > 250)) {
