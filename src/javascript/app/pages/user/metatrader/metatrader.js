@@ -212,6 +212,7 @@ const MetaTrader = (() => {
                         }
                     }
                     MetaTraderUI.enableButton(action, response);
+                    MetaTraderUI.refreshAction();
                 });
             });
         }
