@@ -58,12 +58,14 @@ const GetCurrency = (() => {
             (!client_currency && (available_crypto.length > 1 || (can_open_crypto && !currency_values.has_fiat)))) {
             // if have sub account with fiat currency, or master account is fiat currency, only show cryptocurrencies
             // else show all
+            const is_virtual = Client.get('is_virtual');
             currencies_to_show =
-                currency_values.has_fiat || (!is_crypto && client_currency) ?
+                currency_values.has_fiat || (!is_crypto && client_currency && !is_virtual) ?
                     available_crypto : allowed_currencies;
             // remove client's currency and sub account currencies from list of currencies to show
-            currencies_to_show = currencies_to_show.filter(c =>
-                currency_values.other_currencies.concat(client_currency).indexOf(c) < 0);
+            const currencies_to_compare = is_virtual ?
+                currency_values.other_currencies : currency_values.other_currencies.concat(client_currency);
+            currencies_to_show = currencies_to_show.filter(c => currencies_to_compare.indexOf(c) < 0);
         }
 
         return currencies_to_show;

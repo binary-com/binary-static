@@ -1,7 +1,7 @@
+const getCurrencies       = require('../../get_currency').getCurrencies;
 const MetaTrader          = require('../../../user/metatrader/metatrader');
-const getCurrencyFullName = require('../../../../common/currency').getCurrencyFullName;
-const Client              = require('../../../../base/client');
 const BinarySocket        = require('../../../../base/socket');
+const getCurrencyFullName = require('../../../../common/currency').getCurrencyFullName;
 const localize            = require('../../../../../_common/localize').localize;
 const Url                 = require('../../../../../_common/url');
 const isCryptocurrency    = require('../../../../../_common/base/currency_base').isCryptocurrency;
@@ -27,13 +27,10 @@ const AccountClosure = (() => {
         $fiat              = $('#change-fiat');
         $form              = $(form_selector);
 
-        BinarySocket.wait('landing_company').then(() => {
-            const currencies = Client.currentLandingCompany().legal_allowed_currencies;
-            const current_currency = Client.get('currency');
-            const show_currencies = currencies.filter((val) => val !== current_currency);
-
-            if (show_currencies) {
-                show_currencies.forEach((currency) => {
+        BinarySocket.wait('landing_company').then((response) => {
+            const currencies = getCurrencies(response.landing_company);
+            if (currencies) {
+                currencies.forEach((currency) => {
                     if (isCryptocurrency(currency)) {
                         $crypto.find('ul').append(`<li>${getCurrencyFullName(currency)}</li>`);
                     } else {
@@ -62,7 +59,7 @@ const AccountClosure = (() => {
                 $txt_other_reason.addClass('error-field');
                 $error_msg
                     .addClass('error-field')
-                    .html('The reason should be between 5 and 250 characters')
+                    .text(localize('The reason should be between 5 and 250 characters'))
                     .css('display', 'block');
             } else {
                 $txt_other_reason.removeClass('error-field');
