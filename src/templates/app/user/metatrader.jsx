@@ -168,7 +168,7 @@ const Metatrader = () => (
                                 </a>
                             </div>
                         </div>
-                        <div className='mt-sidebar-button'>
+                        <div className='mt-sidebar-button border-bottom'>
                             <div className='small-icon'>
                                 <a href={it.url_for('metatrader/download')}>
                                     <img src={it.url_for('images/pages/metatrader/dashboard/mt5.png')} />
@@ -177,6 +177,18 @@ const Metatrader = () => (
                             <div className='mt-link'>
                                 <a href={it.url_for('metatrader/download')}>
                                     {it.L('Go to MT5 download page')}
+                                </a>
+                            </div>
+                        </div>
+                        <div className='mt-sidebar-button'>
+                            <div className='small-icon'>
+                                <a href='https://trade.mql5.com' target='_blank' rel='noopener noreferrer'>
+                                    <img src={it.url_for('images/pages/metatrader/dashboard/img-app-mac@2x.png')} />
+                                </a>
+                            </div>
+                            <div className='mt-link'>
+                                <a href='https://trade.mql5.com' target='_blank' rel='noopener noreferrer'>
+                                    {it.L('MT5 Web platform')}
                                 </a>
                             </div>
                         </div>
@@ -245,13 +257,12 @@ const Metatrader = () => (
                             ]}
                         />
                         */}
-                        {/* TODO [->svg] */}
                         <AccountDesc
-                            account_type={['costarica', 'svg', 'malta']}
-                            title={it.L('Volatility Indices Account')}
-                            description={it.L('Our Volatility Indices account allows you to trade CFDs on Volatility Indices -- our proprietary synthetic assets that simulate market forces.')}
+                            account_type={['svg', 'malta', 'iom']}
+                            title={it.L('Synthetic Indices Account')}
+                            description={it.L('Our Synthetic Indices account allows you to trade CFDs on Synthetic Indices - our proprietary synthetic assets that simulate market forces.')}
                             items={[
-                                it.L('Leverage up to [_1]', '1:500'),
+                                it.L('Leverage up to [_1]', '1:1000'),
                                 it.L('Fixed spreads'),
                                 it.L('Market execution'),
                                 it.L('No commission'),
@@ -267,13 +278,12 @@ const Metatrader = () => (
                                 it.L('Market execution'),
                             ]}
                         />
-                        {/* TODO [->svg] */}
                         <AccountDesc
-                            account_type={['costarica_mamm', 'svg_mamm']}
-                            title={it.L('MAM Volatility Indices Account')}
-                            description={it.L('Our MAM Volatility Indices account can be assigned to a money manager who will trade on your behalf with the same specifications as the regular Volatility Indices account.')}
+                            account_type={['svg_mamm']}
+                            title={it.L('MAM Synthetic Indices Account')}
+                            description={it.L('Our MAM Synthetic Indices account can be assigned to a money manager who will trade on your behalf with the same specifications as the regular Synthetic Indices account.')}
                             items={[
-                                it.L('Leverage up to [_1]', '1:500'),
+                                it.L('Leverage up to [_1]', '1:1000'),
                                 it.L('Fixed spreads'),
                                 it.L('Market execution'),
                             ]}
@@ -582,7 +592,8 @@ const Metatrader = () => (
                             <span id='msg_mam_account' className='invisible'>{it.L('To create a MAM real account, please:')}</span>
                             <ul className='bullet'>
                                 <li className='maltainvest invisible'>{it.L('Upgrade to [_1] [_2]Financial Account[_3].', it.website_name, `<a href="${it.url_for('new_account/maltainvestws')}">`, '</a>')}</li>
-                                <li className='assessment invisible'>{it.L('Complete the [_1]Financial Assessment[_2].', `<a href="${it.url_for('user/settings/assessmentws')}">`, '</a>')}</li>
+                                <li className='trading_experience invisible'>{it.L('Please [_1]complete the trading experience section[_2] in the financial assessment to open an MT5 account.', `<a href="${it.url_for('user/settings/assessmentws')}">`, '</a>')}</li>
+                                <li className='assessment invisible'>{it.L('Please [_1]complete the financial assessment[_2] to open an MT5 account.', `<a href="${it.url_for('user/settings/assessmentws')}">`, '</a>')}</li>
                                 <li className='tax invisible'>{it.L('Complete your [_1]Tax Information[_2].', `<a href="${it.url_for('user/settings/detailsws')}">`, '</a>')}</li>
                                 <li className='citizen invisible'>{it.L('Select [_1]Citizenship[_2].', `<a href="${it.url_for('user/settings/detailsws')}">`, '</a>')}</li>
                             </ul>

@@ -187,7 +187,7 @@ const Download = () => {
                 <div className='gr-row'>
                     <div className='gr-10 gr-push-1 gr-10-p gr-push-1-p gr-12-m gr-push-0-m gr-padding-30'>
                         <div className='gr-row browsers'>
-                            {['chrome', 'safari', 'firefox', 'edge', 'opera'].map((browser, idx) => (
+                            {['chrome', 'safari', 'firefox', 'opera'].map((browser, idx) => (
                                 <img
                                     key={idx}
                                     className='gr-centered mt-browser-icon'

@@ -1,29 +1,30 @@
-const moment              = require('moment');
-const isCallputspread     = require('./callputspread').isCallputspread;
-const Contract            = require('./contract');
-const hidePriceOverlay    = require('./common').hidePriceOverlay;
-const countDecimalPlaces  = require('./common_independent').countDecimalPlaces;
-const getLookBackFormula  = require('./lookback').getFormula;
-const isLookback          = require('./lookback').isLookback;
-const processPriceRequest = require('./price').processPriceRequest;
-const Symbols             = require('./symbols');
-const DigitTicker         = require('./digit_ticker');
-const Tick                = require('./tick');
-const TickDisplay         = require('./tick_trade');
-const updateValues        = require('./update_values');
-const Client              = require('../../base/client');
-const Header              = require('../../base/header');
-const BinarySocket        = require('../../base/socket');
-const formatMoney         = require('../../common/currency').formatMoney;
-const TopUpVirtualPopup   = require('../../pages/user/account/top_up_virtual/pop_up');
-const addComma            = require('../../../_common/base/currency_base').addComma;
-const CommonFunctions     = require('../../../_common/common_functions');
-const localize            = require('../../../_common/localize').localize;
-const State               = require('../../../_common/storage').State;
-const padLeft             = require('../../../_common/string_util').padLeft;
-const urlFor              = require('../../../_common/url').urlFor;
-const createElement       = require('../../../_common/utility').createElement;
-const getPropertyValue    = require('../../../_common/utility').getPropertyValue;
+const moment                   = require('moment');
+const isCallputspread          = require('./callputspread').isCallputspread;
+const Contract                 = require('./contract');
+const hidePriceOverlay         = require('./common').hidePriceOverlay;
+const countDecimalPlaces       = require('./common_independent').countDecimalPlaces;
+const getLookBackFormula       = require('./lookback').getFormula;
+const isLookback               = require('./lookback').isLookback;
+const processPriceRequest      = require('./price').processPriceRequest;
+const Symbols                  = require('./symbols');
+const DigitTicker              = require('./digit_ticker');
+const Tick                     = require('./tick');
+const TickDisplay              = require('./tick_trade');
+const updateValues             = require('./update_values');
+const Client                   = require('../../base/client');
+const Header                   = require('../../base/header');
+const BinarySocket             = require('../../base/socket');
+const formatMoney              = require('../../common/currency').formatMoney;
+const changePocNumbersToString = require('../../common/request_middleware').changePocNumbersToString;
+const TopUpVirtualPopup        = require('../../pages/user/account/top_up_virtual/pop_up');
+const addComma                 = require('../../../_common/base/currency_base').addComma;
+const CommonFunctions          = require('../../../_common/common_functions');
+const localize                 = require('../../../_common/localize').localize;
+const State                    = require('../../../_common/storage').State;
+const padLeft                  = require('../../../_common/string_util').padLeft;
+const urlFor                   = require('../../../_common/url').urlFor;
+const createElement            = require('../../../_common/utility').createElement;
+const getPropertyValue         = require('../../../_common/utility').getPropertyValue;
 
 /*
  * Purchase object that handles all the functions related to
@@ -133,22 +134,18 @@ const Purchase = (() => {
                             } else if (/Random/.test(error.code)) {
                                 additional_message = localize('Try our other markets.');
                             }
+
                             message = `${error.message}. ${additional_message}`;
                         } else if (/ClientUnwelcome/.test(error.code) && /gb/.test(Client.get('residence'))) {
-                            let message_text = '';
-                            let additional_message = '';
-
                             if (!Client.hasAccountType('real') && Client.get('is_virtual')) {
-                                message_text = localize('Please complete the [_1]Real Account form[_2] to verify your age as required by the [_3]UK Gambling[_4] Commission (UKGC).', [`<a href='${urlFor('new_account/realws')}'>`, '</a>', '<strong>', '</strong>']);
-                                message = message_text;
+                                message = localize('Please complete the [_1]Real Account form[_2] to verify your age as required by the [_3]UK Gambling[_4] Commission (UKGC).', [`<a href='${urlFor('new_account/realws')}'>`, '</a>', '<strong>', '</strong>']);
                             } else if (Client.hasAccountType('real') && /^virtual|iom$/i.test(Client.get('landing_company_shortcode'))) {
-                                message_text = localize('Your age verification failed. Please contact customer service for assistance. [_1][_1] [_2]Telephone:[_3] [_1] United Kingdom [_1] +44 (0) 1666 800042 [_1] 0800 011 9847 (Toll Free)', ['<br/>', '<strong>', '</strong>']);
-                                additional_message = localize('[_1]Telephone numbers in other locations[_2]', [`<a href='${urlFor('contact')}'>`, '</a>']);
-                                message = `${message_text} <br/><br/> ${additional_message}`;
+                                message = localize('The system failed to verify your identity. Please check your email for details and the next steps.');
                             } else {
                                 message = error.message;
                             }
                         }
+
                         CommonFunctions.elementInnerHtml(confirmation_error, message);
                     });
                 }
@@ -274,14 +271,16 @@ const Purchase = (() => {
                 contract_id           : receipt.contract_id,
                 subscribe             : 1,
             };
-            BinarySocket.send(request, { callback: (response) => {
-                const contract = response.proposal_open_contract;
+            BinarySocket.send(request, { callback: async (response) => {
+                const mw_response = response.proposal_open_contract ?
+                    await changePocNumbersToString(response) : undefined;
+                const contract = mw_response ? mw_response.proposal_open_contract : undefined;
                 if (contract) {
                     status = contract.status;
                     profit_value = contract.profit;
                     TickDisplay.setStatus(contract);
                     if (/^digit/i.test(contract.contract_type)) {
-                        if (contract.status !== 'open') {
+                        if (contract.status !== 'open' || contract.is_sold || contract.is_settleable) {
                             digitShowExitTime(contract.status, contract.exit_tick);
                         }
                     }
@@ -315,7 +314,7 @@ const Purchase = (() => {
         } else {
             message_element = columnElement({ text: message_text });
         }
-        
+
         button_element.appendChild(createElement('span', { text: button_text }));
         cta_element.appendChild(button_element);
         row_element.appendChild(message_element);
@@ -363,7 +362,7 @@ const Purchase = (() => {
         for (let s = 0; s < epoches.length; s++) {
             const tick_d = {
                 epoch: epoches[s],
-                quote: spots2[epoches[s]],
+                quote: addComma(spots2[epoches[s]], Tick.pipSize()),
             };
 
             if (CommonFunctions.isVisible(spots) && tick_d.epoch && tick_d.epoch > purchase_data.buy.start_time) {
@@ -391,8 +390,7 @@ const Purchase = (() => {
                 if (!tick_config.is_digit) {
                     fragment.appendChild(el2);
                 }
-                const tick_with_comma = addComma(tick_d.quote, countDecimalPlaces(tick_d.quote));
-                const tick = `<div class='quote'>${tick_with_comma.replace(/\d$/, makeBold)}</div>`;
+                const tick = `<div class='quote'>${tick_d.quote.replace(/\d$/, makeBold)}</div>`;
                 const el3  = createElement('div', { class: 'col' });
                 CommonFunctions.elementInnerHtml(el3, tick);
 
@@ -438,7 +436,7 @@ const Purchase = (() => {
         if (el_epoch && el_epoch.classList) {
             el_epoch.classList.add('is-visible');
             el_epoch.setAttribute('style', `position: absolute; right: ${((el_epoch.parentElement.offsetWidth - el_epoch.nextSibling.offsetWidth) / 2) + adjustment}px`);
-            const last_digit_quote = last_tick_quote ? last_tick_quote.slice(-1) : '';
+            const last_digit_quote = last_tick_quote ? last_tick_quote.toString().slice(-1) : '';
             if (contract_status === 'won') {
                 DigitTicker.markAsWon();
                 DigitTicker.markDigitAsWon(last_digit_quote);

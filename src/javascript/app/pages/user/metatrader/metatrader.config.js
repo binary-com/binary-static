@@ -28,7 +28,7 @@ const MetaTraderConfig = (() => {
             const volatility_config = {
                 account_type: '',
                 leverage    : 500,
-                short_title : localize('Volatility Indices'),
+                short_title : localize('Synthetic Indices'),
             };
 
             return ({
@@ -40,9 +40,9 @@ const MetaTraderConfig = (() => {
                     real_mamm    : { mt5_account_type: 'mamm_advanced',              max_leverage: advanced_config.leverage, title: localize('MAM Advanced'),  short_title: advanced_config.short_title },
                 },
                 gaming: {
-                    demo_volatility: { mt5_account_type: volatility_config.account_type, max_leverage: volatility_config.leverage, title: localize('Demo Volatility Indices'), short_title: volatility_config.short_title },
-                    real_volatility: { mt5_account_type: volatility_config.account_type, max_leverage: volatility_config.leverage, title: localize('Real Volatility Indices'), short_title: volatility_config.short_title },
-                    real_mamm      : { mt5_account_type: 'mamm',                         max_leverage: volatility_config.leverage, title: localize('MAM Volatility Indices') , short_title: volatility_config.short_title },
+                    demo_volatility: { mt5_account_type: volatility_config.account_type, max_leverage: volatility_config.leverage, title: localize('Demo Synthetic Indices'), short_title: volatility_config.short_title },
+                    real_volatility: { mt5_account_type: volatility_config.account_type, max_leverage: volatility_config.leverage, title: localize('Real Synthetic Indices'), short_title: volatility_config.short_title },
+                    real_mamm      : { mt5_account_type: 'mamm',                         max_leverage: volatility_config.leverage, title: localize('MAM Synthetic Indices') , short_title: volatility_config.short_title },
                 },
             });
         };
@@ -126,56 +126,89 @@ const MetaTraderConfig = (() => {
                 resolve(needsRealMessage());
             } else {
                 BinarySocket.wait('get_settings').then(() => {
-                    const response_get_settings = State.getResponse('get_settings');
-
                     const showCitizenshipMessage = () => {
-                        $message.find('.citizen').setVisibility(1).find('a').attr('onclick', `localStorage.setItem('personal_details_redirect', '${acc_type}')`);
+                        $message
+                            .find('.citizen')
+                            .setVisibility(1)
+                            .find('a')
+                            .attr(
+                                'onclick',
+                                `localStorage.setItem('personal_details_redirect', '${acc_type}')`
+                            );
+                    };
+                    const showAssessment = (selector) => {
+                        $message
+                            .find(selector)
+                            .setVisibility(1)
+                            .find('a')
+                            .attr(
+                                'onclick',
+                                `localStorage.setItem('financial_assessment_redirect', '${urlFor('user/metatrader')}#${acc_type}')`
+                            );
+                    };
+                    const resolveWithMessage = () => {
+                        $message.find(message_selector).setVisibility(1);
+                        resolve($message.html());
                     };
 
                     const has_financial_account = Client.hasAccountType('financial', 1);
-                    const is_maltainvest = State.getResponse(`landing_company.mt_financial_company.${getMTFinancialAccountType(acc_type)}.shortcode`) === 'maltainvest';
-                    const is_financial = accounts_info[acc_type].account_type === 'financial';
-                    const is_demo = accounts_info[acc_type].account_type === 'demo';
-                    let is_ok = true;
+                    const is_maltainvest        = State.getResponse(`landing_company.mt_financial_company.${getMTFinancialAccountType(acc_type)}.shortcode`) === 'maltainvest';
+                    const is_financial          = accounts_info[acc_type].account_type === 'financial';
+                    const is_demo_financial     = accounts_info[acc_type].account_type === 'demo' && accounts_info[acc_type].mt5_account_type; // is not demo vol account
 
-                    if (is_maltainvest && (is_financial || is_demo) && !has_financial_account) {
+                    if (is_maltainvest && (is_financial || is_demo_financial) && !has_financial_account) {
                         $message.find('.maltainvest').setVisibility(1);
-                        is_ok = false;
-                        $message.find(message_selector).setVisibility(1);
-                        resolve($message.html());
+                        resolveWithMessage();
                     }
 
-                    if (is_financial) { // financial accounts have their own checks
+                    const response_get_settings = State.getResponse('get_settings');
+                    if (is_financial) {
+                        let is_ok = true;
                         BinarySocket.wait('get_account_status', 'landing_company').then(() => {
-                            if (!(is_maltainvest && !has_financial_account)) {
-                                const response_get_account_status = State.getResponse('get_account_status');
-                                if (/(financial_assessment|trading_experience)_not_complete/.test(response_get_account_status.status)) {
-                                    $message.find('.assessment').setVisibility(1).find('a').attr('onclick', `localStorage.setItem('financial_assessment_redirect', '${urlFor('user/metatrader')}#${acc_type}')`);
-                                    is_ok = false;
-                                }
-                                if (+State.getResponse('landing_company.config.tax_details_required') === 1 && (!response_get_settings.tax_residence || !response_get_settings.tax_identification_number)) {
-                                    $message.find('.tax').setVisibility(1).find('a').attr('onclick', `localStorage.setItem('personal_details_redirect', '${acc_type}')`);
-                                    is_ok = false;
-                                }
-                                if (!response_get_settings.citizen) {
-                                    showCitizenshipMessage();
-                                    is_ok = false;
-                                }
-                                if (is_ok && !isAuthenticated()) {
-                                    $new_account_financial_authenticate_msg.setVisibility(1);
-                                }
+                            if (is_maltainvest && !has_financial_account) resolve();
+
+                            const response_get_account_status = State.getResponse('get_account_status');
+                            if (/financial_information_not_complete/.test(response_get_account_status.status)) {
+                                showAssessment('.assessment');
+                                is_ok = false;
+                            } else if (/trading_experience_not_complete/.test(response_get_account_status.status)) {
+                                showAssessment('.trading_experience');
+                                is_ok = false;
                             }
-                            if (is_ok) {
-                                resolve();
-                            } else {
-                                $message.find(message_selector).setVisibility(1);
-                                resolve($message.html());
+                            if (+State.getResponse('landing_company.config.tax_details_required') === 1 && (!response_get_settings.tax_residence || !response_get_settings.tax_identification_number)) {
+                                $message.find('.tax').setVisibility(1).find('a').attr('onclick', `localStorage.setItem('personal_details_redirect', '${acc_type}')`);
+                                is_ok = false;
                             }
+                            if (!response_get_settings.citizen) {
+                                showCitizenshipMessage();
+                                is_ok = false;
+                            }
+                            if (is_ok && !isAuthenticated()) {
+                                $new_account_financial_authenticate_msg.setVisibility(1);
+                            }
+
+                            if (is_ok) resolve();
+                            else resolveWithMessage();
                         });
-                    } else if (!is_virtual && !response_get_settings.citizen) { // all accounts need to have citizenship set - if current client is virtual we don't have citizenship
-                        showCitizenshipMessage();
-                        $message.find(message_selector).setVisibility(1);
-                        resolve($message.html());
+                    } else if (accounts_info[acc_type].account_type === 'gaming') {
+                        let is_ok = true;
+                        BinarySocket.wait('get_account_status', 'landing_company').then(() => {
+                            const response_get_account_status = State.getResponse('get_account_status');
+                            if (/financial_assessment_not_complete/.test(response_get_account_status.status)
+                                && !accounts_info[acc_type].mt5_account_type // is_volatility
+                                && /high/.test(response_get_account_status.risk_classification)
+                            ) {
+                                showAssessment('.assessment');
+                                is_ok = false;
+                            }
+                            if (!response_get_settings.citizen && !(is_maltainvest && !has_financial_account)) {
+                                showCitizenshipMessage();
+                                is_ok = false;
+                            }
+
+                            if (is_ok) resolve();
+                            else resolveWithMessage();
+                        });
                     } else {
                         resolve();
                     }
@@ -198,7 +231,7 @@ const MetaTraderConfig = (() => {
                     if (is_volatility && !accounts_info[acc_type].is_demo && State.getResponse('landing_company.gaming_company.shortcode') === 'malta') {
                         Dialog.confirm({
                             id               : 'confirm_new_account',
-                            localized_message: localize(['Trading Contracts for Difference (CFDs) on Volatility Indices may not be suitable for everyone. Please ensure that you fully understand the risks involved, including the possibility of losing all the funds in your MT5 account. Gambling can be addictive – please play responsibly.', 'Do you wish to continue?']),
+                            localized_message: localize(['Trading Contracts for Difference (CFDs) on Synthetic Indices may not be suitable for everyone. Please ensure that you fully understand the risks involved, including the possibility of losing all the funds in your MT5 account. Gambling can be addictive – please play responsibly.', 'Do you wish to continue?']),
                         }).then((is_ok) => {
                             if (!is_ok) {
                                 BinaryPjax.load(Client.defaultRedirectUrl());
@@ -295,8 +328,6 @@ const MetaTraderConfig = (() => {
             prerequisites: () => new Promise((resolve) => {
                 if (Client.get('is_virtual')) {
                     resolve(needsRealMessage());
-                } else if (Client.get('landing_company_shortcode') === 'iom') {
-                    resolve(needsFinancialMessage());
                 } else {
                     BinarySocket.send({ cashier_password: 1 }).then((response) => {
                         if (!response.error && response.cashier_password === 1) {
@@ -331,8 +362,6 @@ const MetaTraderConfig = (() => {
             prerequisites: acc_type => new Promise((resolve) => {
                 if (Client.get('is_virtual')) {
                     resolve(needsRealMessage());
-                } else if (Client.get('landing_company_shortcode') === 'iom') {
-                    resolve(needsFinancialMessage());
                 } else if (accounts_info[acc_type].account_type === 'financial') {
                     BinarySocket.send({ get_account_status: 1 }).then(() => {
                         resolve(!isAuthenticated() ? $messages.find('#msg_authenticate').html() : '');

@@ -24,6 +24,7 @@ const scrollToTop      = require('../../_common/scroll').scrollToTop;
 const toISOFormat      = require('../../_common/string_util').toISOFormat;
 const Url              = require('../../_common/url');
 const createElement    = require('../../_common/utility').createElement;
+const isLoginPages     = require('../../_common/utility').isLoginPages;
 const isProduction     = require('../../config').isProduction;
 require('../../_common/lib/polyfills/array.includes');
 require('../../_common/lib/polyfills/string.includes');
@@ -77,7 +78,7 @@ const Page = (() => {
             updateLinksURL('#content');
         } else {
             init();
-            if (!Login.isLoginPages()) {
+            if (!isLoginPages()) {
                 Language.setCookie(Language.urlLang());
 
                 if (!ClientBase.get('is_virtual')) {
@@ -176,10 +177,10 @@ const Page = (() => {
             vs     : { i: 11, f: -4, o: -4, s: 9, c: 65 },
             api    : 4,
             l      : Language.get().toLowerCase(),
-            url    : 'https://whatbrowser.org/',
+            url    : 'https://browsehappy.com/',
             noclose: true, // Do not show the 'ignore' button to close the notification
             text   : localize('Your web browser ([_1]) is out of date and may affect your trading experience. Proceed at your own risk. [_2]Update browser[_3]',
-                ['{brow_name}', '<a href="https://www.whatbrowser.org/" target="_blank">', '</a>']),
+                ['{brow_name}', '<a href="https://browsehappy.com/" target="_blank">', '</a>']),
             reminder: 0, // show all the time
         };
         if (document.body) {

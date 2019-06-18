@@ -21,13 +21,14 @@ const SelfExclusion = (() => {
         is_gamstop_client,
         has_exclude_until;
 
-    const form_id               = '#frm_self_exclusion';
-    const timeout_date_id       = '#timeout_until_date';
-    const timeout_time_id       = '#timeout_until_time';
-    const exclude_until_id      = '#exclude_until';
-    const max_30day_turnover_id = '#max_30day_turnover';
-    const error_class           = 'errorfield';
-    const TURNOVER_LIMIT        = 999999999999999; // 15 digits
+    const form_id                 = '#frm_self_exclusion';
+    const timeout_date_id         = '#timeout_until_date';
+    const timeout_time_id         = '#timeout_until_time';
+    const exclude_until_id        = '#exclude_until';
+    const max_30day_turnover_id   = '#max_30day_turnover';
+    const max_deposit_end_date_id = '#max_deposit_end_date';
+    const error_class             = 'errorfield';
+    const TURNOVER_LIMIT          = 999999999999999; // 15 digits
 
     const onLoad = () => {
         $form = $(form_id);
@@ -86,6 +87,10 @@ const SelfExclusion = (() => {
                         $form.find('label[for="timeout_until_date"]').text(localize('Timed out until'));
                         return;
                     }
+                    if (key === 'max_deposit_end_date') {
+                        setDateTimePicker(max_deposit_end_date_id, value);
+                        return;
+                    }
                     if (key === 'exclude_until') {
                         setDateTimePicker(exclude_until_id, value);
                         $form.find('label[for="exclude_until"]').text(localize('Excluded from the website until'));
@@ -133,7 +138,7 @@ const SelfExclusion = (() => {
         $form.find('input[type="text"]').each(function () {
             const id = $(this).attr('id');
 
-            if (/timeout_until|exclude_until/.test(id)) return;
+            if (/timeout_until|exclude_until|max_deposit_end_date/.test(id)) return;
 
             const checks  = [];
             const options = { min: 0 };
@@ -191,6 +196,11 @@ const SelfExclusion = (() => {
                     ['custom', { func: value => !value.length || getMoment(exclude_until_id).isAfter(moment().add(6, 'months')), message: localize('Exclude time cannot be less than 6 months.') }],
                     ['custom', { func: value => !value.length || getMoment(exclude_until_id).isBefore(moment().add(5, 'years')), message: localize('Exclude time cannot be for more than 5 years.') }],
                 ],
+            },
+            {
+                selector        : max_deposit_end_date_id,
+                exclude_if_empty: 1,
+                value           : () => getDate(max_deposit_end_date_id),
             });
 
         FormManager.init(form_id, validations);
@@ -224,6 +234,14 @@ const SelfExclusion = (() => {
             minDate : 0,
             maxDate : 6 * 7, // 6 weeks
         });
+
+        if (Client.get('landing_company_shortcode') === 'iom') {
+            // max_deposit_until
+            DatePicker.init({
+                selector: max_deposit_end_date_id,
+                minDate : moment().add(1, 'day').toDate(),
+            });
+        }
 
         // exclude_until
         DatePicker.init({

@@ -6,7 +6,6 @@ const payment_methods_list = [
     { image: 'maestro',                 param: '?anchor=maestro' },
     { image: 'bank_transfer',           param: '?anchor=bank-transfer' },
     { image: 'internet_bank_transfer',  param: '?anchor=internet-bank-transfer' },
-    { image: 'paysec',                  param: '?anchor=paysec',         dataShow: '-eucountry' },
     { image: 'paytrust',                param: '?anchor=paytrust',       dataShow: '-eucountry' },
     { image: 'neteller',                param: '?anchor=neteller' },
     { image: 'fasapay',                 param: '?anchor=fasapay',        dataShow: '-eucountry' },
@@ -18,7 +17,6 @@ const payment_methods_list = [
     { image: 'paysafe',                 param: '?anchor=paysafe' },
     { image: 'jeton',                   param: '?anchor=jeton',          dataShow: '-eucountry' },
     { image: 'iwallet',                 param: '?anchor=iwallet',        dataShow: '-eucountry' },
-    { image: 'vload',                   param: '?anchor=vload' },
 ];
 
 const PaymentLogo = () => payment_methods_list.map((item, inx) => (

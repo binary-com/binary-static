@@ -1,15 +1,15 @@
 import React from 'react';
 
 const Biel = () => (
-    <div>
+    <div data-show='eucountry'>
         <h2 data-anchor='supplementary-terms-and-conditions'>{it.L('Supplementary terms and conditions for Financial Products offered by Binary Investments (Europe) Ltd')}</h2>
-        <p>{it.L('These supplementary terms and conditions (these "ST&Cs") apply solely to the clients of Binary Investments (Europe) Ltd ("BIEL") and will govern the relationship between clients and BIEL when trading Financial Products (as defined in the Key information documents [_1]here[_2]) with BIEL.', `<a href=${it.url_for('regulation#key_information_documents')}>`, '</a>')}</p>
+        <p>{it.L('These supplementary terms and conditions (these "ST&Cs") apply solely to the client of Binary Investments (Europe) Ltd ("BIEL") and will govern the relationship between clients and BIEL when trading Financial Products (as defined in the Key information documents [_1]here[_2]) with BIEL.', `<a href=${it.url_for('regulation#key_information_documents')}>`, '</a>')}</p>
         <p>{it.L('These ST&Cs form part of, and need to be read together with, the general terms and conditions relating to the use of [_1].', it.website_name)}</p>
         <p>{it.L('Clients should read these ST&Cs carefully as well as the Summary order execution policy and Summary conflicts policy, the applicable Contract details together with the Risk disclosure notice and any other documents that BIEL has supplied or in the future supplies to clients.')}</p>
         <p>{it.L('These ST&Cs begin to apply on the date BIEL opens the client\'s account, and, for any new versions after that, on the date BIEL notifies the client.')}</p>
 
         <h2 data-anchor='about-us-and-our-regulator'>{it.L('About BIEL and BIEL\'s regulator')}</h2>
-        <p>{it.L('BIEL is a company established in Malta under registration number C70156 and having its registered office at Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta.')}</p>
+        <p>{it.L('BIEL is a company established in Malta under registration number C70156 and having its registered office at W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta.')}</p>
         <p>{it.L('BIEL is authorised and regulated by the Malta Financial Services Authority ("MFSA") under the Investment Services Act (Cap. 370, Laws of Malta) (the "Act") to carry on investment business. BIEL is authorised by the MFSA to deal on own account (i.e. offer and act as counterparty to trades) and to execute orders on behalf of other clients; both services are in relation to financial derivative products relating to foreign exchange, indices and other financial products or assets ("Financial Products"). BIEL is not authorised to and does not offer investment, financial, legal, tax, regulatory, and/or other types of advice or state an opinion in relation to a Transaction under any circumstances. Clients should get independent advice from an investment adviser if they have any doubts about dealing in financial products.')}</p>
         <p>{it.L('From time to time, BIEL may decide to provide the client with written or video information, which BIEL may publish on its website or provide to the client in any other manner. BIEL will endeavour to ensure the accuracy and completeness of this information, but it will not constitute independent investment research or investment advice provided by BIEL to the client.')}</p>
         <p>{it.L('In providing these services, BIEL is bound by the Act, any applicable regulations, by-laws, licence conditions, guidelines, exchange requirements, and other provisions or market practices (the "Rules"). In the event of conflict between these ST&Cs and the Rules, the latter should prevail.')}</p>
@@ -25,11 +25,11 @@ const Biel = () => (
             <li>{it.L('Eligible counterparties')}</li>
         </ul>
         {/* Grammatical errors in the next para */}
-        <p>{it.L('The level of protection offered and due to each client depends on the category to which each client is assigned. Retail clients benefit from the highest degree of protection. The Company will assess the Client\'s knowledge and experience versus the appropriateness of the requested service/investment product.')}</p>
+        <p>{it.L('The level of protection offered and due to each client depends on the category to which each client is assigned. Retail clients benefit from the highest degree of protection. The Company will assess the client\'s knowledge and experience versus the appropriateness of the requested service/investment product.')}</p>
         <ol>
             <li>
                 <h4>{it.L('Retail clients')}</h4>
-                <p>{it.L('Unless otherwise advised, BIEL shall treat a client as a retail client. Clients may also request, by writing to BIEL, to change the category in which they have been classified, and this may have an effect on the level of protection afforded to them. BIEL will assess the Client\'s knowledge and experience versus the appropriateness of the requested service/investment product.')}</p>
+                <p>{it.L('Unless otherwise advised, BIEL shall treat a client as a retail client. Clients may also request, by writing to BIEL, to change the category in which they have been classified, and this may have an effect on the level of protection afforded to them. BIEL will assess the client\'s knowledge and experience versus the appropriateness of the requested service/investment product.')}</p>
                 <p>{it.L('Clients hereby declare that they are dealing with BIEL outside the scope of their economic or professional activity, and BIEL will therefore treat the client as an individual retail client for the purposes of EMIR compliance, unless advised otherwise.')}</p>
             </li>
             <li>
@@ -78,9 +78,9 @@ const Biel = () => (
         <p>{it.L('The Financial Products that BIEL offers to deal in are contracts entered into between clients and BIEL. Under these contracts and subject to the specific terms of the relevant contract, in consideration for the premium or price that clients pay BIEL, BIEL promises to pay clients a certain amount if the reference assets or measurements perform in a particular manner. These contracts accordingly are not instruments that BIEL holds on clients\' behalf and neither benefits from clients\' assets protection in the event of BIEL\'s insolvency. Similarly, the premium or price that clients pay to take out a trade is not held as clients\' money but as consideration for BIEL\'s undertaking to pay.')}</p>
         <p>{it.L('The client acknowledges and agrees to the following:')}
             <ul className='bullet'>
-                <li>{it.L('The Company will not pay interest on the Client Money.')}</li>
-                <li>{it.L('Where the Client\'s obligations to the Company are due and payable, the Company shall cease to treat as Client Money the amount equal to the amount of such obligations.')}</li>
-                <li>{it.L('The Company may use the Client Money for the purposes of meeting obligations that are incurred by the Company in connection with the margining, guaranteeing, securing, transferring, adjusting, or settling of the client\'s dealings in derivatives.')}</li>
+                <li>{it.L('The Company will not pay interest on the client money.')}</li>
+                <li>{it.L('Where the client\'s obligations to the Company are due and payable, the Company shall cease to treat as client money the amount equal to the amount of such obligations.')}</li>
+                <li>{it.L('The Company may use the client money for the purposes of meeting obligations that are incurred by the Company in connection with the margining, guaranteeing, securing, transferring, adjusting, or settling of the client\'s dealings in derivatives.')}</li>
             </ul>
         </p>
 

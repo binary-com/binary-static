@@ -144,6 +144,7 @@ const ClientBase = (() => {
         set('is_virtual', +authorize.is_virtual);
         set('session_start', parseInt(moment().valueOf() / 1000));
         set('landing_company_shortcode', authorize.landing_company_name);
+        set('user_id', authorize.user_id);
         updateAccountList(authorize.account_list);
     };
 
@@ -222,8 +223,7 @@ const ClientBase = (() => {
                 upgradeable_landing_companies.indexOf(landing_company) !== -1
             ));
 
-            // TODO [->svg]
-            can_upgrade_to = canUpgrade('costarica', 'svg', 'iom', 'malta', 'maltainvest');
+            can_upgrade_to = canUpgrade('iom', 'svg', 'malta', 'maltainvest');
             if (can_upgrade_to) {
                 type = can_upgrade_to === 'maltainvest' ? 'financial' : 'real';
             }

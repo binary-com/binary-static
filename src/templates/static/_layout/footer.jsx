@@ -103,12 +103,11 @@ const Footer = () => (
                             <FooterColumn
                                 header={it.L('Partner With Us')}
                                 items={[
-                                    { text: it.L('Affiliate Programme'),     href: it.url_for('affiliate/signup') },
-                                    { text: it.L('IB Programme'),            href: it.url_for('ib-programme/ib-signup') },
-                                    { text: it.L('API'),                     href: 'https://developers.binary.com', target: '_blank' },
-                                    { text: it.L('Binary Shop'),             href: 'https://shop.binary.com',       target: '_blank' },
+                                    { text: it.L('Affiliate and IB Programmes'), href: it.url_for('affiliate-ib') },
+                                    { text: it.L('API'),                        href: 'https://developers.binary.com', target: '_blank' },
+                                    { text: it.L('Binary Shop'),                href: 'https://shop.binary.com',       target: '_blank' },
                                     /* { text: it.L('Charitable Activities'),   href: it.url_for('charity') }, */
-                                    { text: it.L('All Partnership Options'), href: it.url_for('partners') },
+                                    { text: it.L('Other Partnership Options'),    href: it.url_for('partners') },
                                 ]}
                             />
                         </div>
@@ -150,17 +149,17 @@ const Footer = () => (
                             {it.L('In the EU, financial products are offered by Binary Investments (Europe) Ltd., W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta, regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority ([_1]licence no. IS/70156[_2]).', `<a href=${it.url_for('download/WS-Binary-Investments-Europe-Limited.pdf')} target="_blank">`, '</a>')}
                         </p>
                         <p>
-                            {it.L('Outside the EU, financial products are offered by Binary (C.R.) S.A., 5th Floor, Building 6 Centro Ejecutivo La Sabana, Sabana Sur, San José, Costa Rica, Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, regulated by the Vanuatu Financial Services Commission ([_1]view licence[_2]), Binary (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, British Virgin Islands, regulated by the British Virgin Islands Financial Services Commission ([_3]licence no. SIBA/L/18/1114[_4]), and Binary (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Labuan, Malaysia, regulated by the Labuan Financial Services Authority to carry on a money-broking business ([_5]licence no. MB/18/0024[_6]).',
+                            {it.L('Outside the EU, financial products are offered by Binary (SVG) Ltd, Hinds Building, Kingstown, St. Vincent and the Grenadines; Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, regulated by the Vanuatu Financial Services Commission ([_1]view licence[_2]); Binary (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, British Virgin Islands, regulated by the British Virgin Islands Financial Services Commission ([_3]licence no. SIBA/L/18/1114[_4]); and Binary (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Labuan, Malaysia, regulated by the Labuan Financial Services Authority to carry on a money-broking business ([_5]licence no. MB/18/0024[_6]).',
                                 '<a href="https://www.vfsc.vu/wp-content/uploads/2015/12/List-of-Licensees-under-Dealers-in-Securities-Licensing-Act-CAP-70-18.11.2016.pdf" target="_blank" rel="noopener noreferrer">', '</a>',
                                 `<a href=${it.url_for('download/regulation/BVI_license.pdf')} target="_blank">`, '</a>',
                                 `<a href=${it.url_for('download/regulation/Labuan-license.pdf')} target="_blank">`, '</a>')}
                         </p>
                         <p>
-                            {it.L('This website\'s services are not made available in certain countries such as the USA, Canada, Costa Rica, Hong Kong, Japan, or to persons under age 18.')}
+                            {it.L('This website\'s services are not made available in certain countries such as the USA, Canada, Hong Kong, Japan, or to persons under age 18.')}
                         </p>
                         <fieldset className='fld-risk-warning'>
                             <legend>{it.L('Risk Warning')}</legend>
-                            <p>{it.L('The financial products offered via this website include binary options, contracts for difference ("CFDs") and other complex derivatives and financial products. Trading binary options may not be suitable for everyone. Trading CFDs carries a high level of risk since leverage can work both to your advantage and disadvantage. As a result, the products offered on this website may not be suitable for all investors because of the risk of losing all of your invested capital. You should never invest money that you cannot afford to lose, and never trade with borrowed money. Before trading in the complex financial products offered, please be sure to understand the risks involved and learn about [_1]Responsible Trading[_2].', `<a href="${it.url_for('responsible-trading')}">`, '</a>')}</p>
+                            <p>{it.L('The products offered via this website include binary options, contracts for difference ("CFDs") and other complex derivatives. Trading binary options may not be suitable for everyone. Trading CFDs carries a high level of risk since leverage can work both to your advantage and disadvantage. As a result, the products offered on this website may not be suitable for all investors because of the risk of losing all of your invested capital. You should never invest money that you cannot afford to lose, and never trade with borrowed money. Before trading in the complex products offered, please be sure to understand the risks involved and learn about [_1]Responsible Trading[_2].', `<a href="${it.url_for('responsible-trading')}">`, '</a>')}</p>
                         </fieldset>
                     </div>
                 </div>
@@ -214,7 +213,7 @@ const Footer = () => (
                     <div className='gr-12'>
                         <div className='about-binary'>
                             <p>
-                                {it.L('[_1] is an award-winning online trading provider that helps its clients to trade on financial markets through binary options and CFDs. Trading binary options and CFDs on Volatility Indices is classified as a gambling activity. Remember that gambling can be addictive – please play responsibly. Learn more about [_2]Responsible Trading[_3]. Some products are not available in all countries. This website\'s services are not made available in certain countries such as the USA, Canada, Costa Rica, Hong Kong, or to persons under age 18.', it.website_name, `<a href="${it.url_for('responsible-trading')}">`, '</a>')}
+                                {it.L('[_1] is an award-winning online trading provider that helps its clients to trade on financial markets through binary options and CFDs. Trading binary options and CFDs on Volatility Indices is classified as a gambling activity. Remember that gambling can be addictive – please play responsibly. Learn more about [_2]Responsible Trading[_3]. Some products are not available in all countries. This website\'s services are not made available in certain countries such as the USA, Canada, Hong Kong, or to persons under age 18.', it.website_name, `<a href="${it.url_for('responsible-trading')}">`, '</a>')}
                             </p>
                         </div>
                     </div>

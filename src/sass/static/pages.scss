@@ -566,7 +566,7 @@ body #_elev_io {
 }
 
 .location {
-    &-cyberjaya, &-labuan, &-malta, &-asuncion {
+    &-cyberjaya, &-labuan, &-malta, &-asuncion, &-dubai {
         .introduction {
             h1 {
                 color: $COLOR_ORANGE;
@@ -725,6 +725,9 @@ body #not_authenticated_financial ul.checked > li {
     .btn-margin-top {
         margin-top: 1.5em;
     }
+    .mac {
+        width: 100%;
+    }
 }
 
 .accounts-content {
@@ -839,22 +842,51 @@ body #not_authenticated_financial ul.checked > li {
     h2 {
         line-height: 36px;
     }
+    .beta {
+        position: relative;
+        top: -15px;
+        left: 5px;
+        background-color: rgb(244, 67, 54);
+        border-radius: 10px;
+        color: $COLOR_WHITE;
+        display: inline-block;
+        font-size: 10px;
+        font-weight: 400;
+        height: 16px;
+        line-height: 1.8;
+        text-align: center;
+        width: 34px;
+    }
+    .new:after {
+        content: url('../images/pages/platforms/new_badge.svg');
+        position: relative;
+        top: -15px;
+        left: 5px;
+    }
     #new_badge {
         position: relative;
         top: -15px;
     }
     .download-app {
-        padding-bottom: 30px;
+        display: inline-block;
+        margin-right: 30px;
     }
     img.platform {
         max-height: 150px;
         width: auto;
         max-width: 100%;
+        vertical-align: middle;
+    }
+    .b-m-md li {
+        margin-bottom: 20px;
     }
     @media screen and (max-width: 768px) {
         .no-center-text-p-m {
             text-align: inherit;
             padding-bottom: 30px;
+        }
+        .mobile-hide {
+            display: none;
         }
     }
 }
@@ -1159,6 +1191,15 @@ body #not_authenticated_financial ul.checked > li {
                 .fill-text {
                     margin-bottom: 30px;
                 }
+            }
+
+            .col-margin-top {
+                @media (min-width: 768px) {
+                    margin-top: 26px;
+                }
+            }
+            .container {
+                justify-content: center;
             }
         }
         .values-group {

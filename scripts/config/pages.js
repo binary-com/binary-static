@@ -67,10 +67,6 @@ module.exports = [
     ['logged_inws',                             'app/logged_in',                               null],
     ['redirect',                                'app/logged_in',                               null,         'Redirecting...'],
 
-    // ==================== Section: "app_2" ====================
-    // According to its section path ('app') would be saved to: /app/{lang}/index.html
-    ['index',                                   'app_2/app',                                   null,         'Trusted by traders since 2000',     null, 'app_2'],
-
     // ==================== Section: "static" ====================
     ['404',                                     'static/404',                                  'full_width', '404'],
     ['home',                                    'static/home',                                 'full_width', 'Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices'],
@@ -87,16 +83,16 @@ module.exports = [
     ['contact',                                 'static/about/contact',                        'full_width', 'Contact Us'],
     ['contact-2',                               'static/about/contact_2',                      'full_width', 'Contact Us'],
     ['cyberjaya',                               'static/about/cyberjaya',                      'full_width', 'Careers - Cyberjaya'],
+    ['dubai',                                   'static/about/dubai',                          'full_width', 'Careers - Dubai'],
     ['labuan',                                  'static/about/labuan',                         'full_width', 'Careers - Labuan'],
     ['malta',                                   'static/about/malta',                          'full_width', 'Careers - Malta'],
     ['group-history',                           'static/about/group_history',                  'full_width', 'Group History'],
     ['open-positions',                          'static/about/job_descriptions',               'full_width', 'Open Positions'],
     ['open-positions/job-details',              'static/about/job_details',                    'full_width', 'Job Details'],
 
-    ['affiliate/signup',                        'static/affiliates/signup',                    'full_width', 'Affiliate'],
+    ['affiliate-ib',                            'static/affiliate_ib_landing',                 'full_width', 'Affiliate and IB Programmes'],
     ['affiliate/faq',                           'static/affiliates/faq',                       'default',    'Affiliate FAQ'],
     // ['charity',                                 'static/charity',                              'default',    'Charity'],
-    ['ib-programme/ib-signup',                  'static/ib_programme/ib_signup',               'full_width', 'IB programme'],
     ['ib-programme/ib-faq',                     'static/ib_programme/ib_faq',                  'default',    'IB programme FAQ'],
     ['legal/us_patents',                        'static/legal/us_patents',                     'default',    'US Patents'],
     ['regulation',                              'static/legal/regulation',                     'default',    'Regulation'],
@@ -122,12 +118,9 @@ module.exports = [
     ['metatrader/how-to-trade-mt5',             'static/metatrader/how_to_trade_mt5',          'default',     'How to Trade in MetaTrader 5'],
     ['metatrader/types-of-accounts',            'static/metatrader/types_of_accounts',         'default',     'Types of MetaTrader 5 accounts'],
 
-    ['style-guide',                             'static/new_layout/style_guide',               'full_width',  'Style guide'],
-
     // ==================== Section: "landing_pages" ====================
     ['graduates',                               'landing_pages/graduate_program',                 null,        'Binary.com Graduate Program',        'NOT-en'],
     // ['hackathon',                               'landing_pages/hackathon',                     null,        'Hackathon Competition',              'NOT-en'],
     ['introducing-usb',                            'landing_pages/usb',                           null,        'Introducing USB',                    'NOT-en'],
     ['binary-grid',                                'landing_pages/binary_grid',                   null,        'Our New Mobile Trading App',         'NOT-en'],
-    ['landing/signup-frame',                       'landing_pages/signup_frame',                  null,        'Sign up'],
 ];

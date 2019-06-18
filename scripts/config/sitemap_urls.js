@@ -15,7 +15,6 @@ module.exports = {
         ['open-positions',                     'monthly', 0.80],
         ['open-positions/job-details',         'monthly', 0.80],
 
-        ['affiliate/signup',                   'monthly', 0.80],
         // ['charity',                            'monthly', 0.80],
         ['legal/us_patents',                   'monthly', 0.80],
         ['regulation',                         'monthly', 0.80, 'id'],
@@ -54,8 +53,5 @@ module.exports = {
         // ==================== Section: "landing_pages" ====================
         // ['graduates',                          'monthly', 0.80, 'NOT-en'],
         // ['hackathon',                          'monthly', 0.80, 'NOT-en'],
-    ],
-    app_2: [
-        ['trade',                              'monthly', 1.00],
     ],
 };

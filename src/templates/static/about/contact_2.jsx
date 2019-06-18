@@ -24,22 +24,20 @@ const Contact2 = () => (
                                             <Select
                                                 id='cs_telephone_number'
                                                 options={[
-                                                    { text: it.L('Australia'),      value: it.L('[_1] (Toll Free)', '+61 (02) 8294 5448, 1800 093570') },
+                                                    { text: it.L('Australia'),      value: it.L('[_1] (Toll Free)', '+61 (2) 8294 5448') },
                                                     { text: it.L('Ireland'),        value: it.L('[_1] (Toll Free)', '+353 (0) 76 888 7500, 1800931084') },
-                                                    { text: it.L('Poland'),         value: '+48 58 881 00 02' },
-                                                    { text: it.L('Russia'),         value: it.L('[_1] (Toll Free)', '8 10 8002 8553011') },
-                                                    { text: it.L('United Kingdom'), value: it.L('[_1] (Toll Free)', '+44 (0) 1666 800042, 0800 011 9847'), selected: true },
+                                                    { text: it.L('United Kingdom'), value: it.L('[_1] (Toll Free)', '+44 1666 800042, +44 800 011 9847'), selected: true },
                                                 ]}
                                             />
                                         </div>
                                     </div>
                                     <div className='gr-row'>
                                         <div className='gr-12' id='display_cs_telephone'>
-                                            <a href='tel: +44 (0) 1666 800042'>
-                                                {('+44 (0) 1666 800042')}
+                                            <a href='tel: +44 1666 800042'>
+                                                {('+44 1666 800042')}
                                             </a>
                                             <br />
-                                            {it.L('[_1] (Toll Free)', '<a href="tel:0800 011 9847">0800 011 9847</a>')}
+                                            {it.L('[_1] (Toll Free)', '<a href="tel:+44 800 011 9847">+44 800 011 9847</a>')}
                                         </div>
                                     </div>
                                 </div>

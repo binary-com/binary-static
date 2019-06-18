@@ -11,7 +11,6 @@ const setCurrencies          = require('../common/currency').setCurrencies;
 const SessionDurationLimit   = require('../common/session_duration_limit');
 const updateBalance          = require('../pages/user/update_balance');
 const GTM                    = require('../../_common/base/gtm');
-const Login                  = require('../../_common/base/login');
 const SubscriptionManager    = require('../../_common/base/subscription_manager').default;
 const Crowdin                = require('../../_common/crowdin');
 const localize               = require('../../_common/localize').localize;
@@ -19,12 +18,13 @@ const LocalStore             = require('../../_common/storage').LocalStore;
 const State                  = require('../../_common/storage').State;
 const urlFor                 = require('../../_common/url').urlFor;
 const getPropertyValue       = require('../../_common/utility').getPropertyValue;
+const isLoginPages           = require('../../_common/utility').isLoginPages;
 
 const BinarySocketGeneral = (() => {
     const onOpen = (is_ready) => {
         Header.hideNotification();
         if (is_ready) {
-            if (!Login.isLoginPages()) {
+            if (!isLoginPages()) {
                 if (!Client.isValidLoginid()) {
                     Client.sendLogoutRequest();
                     return;
@@ -76,7 +76,7 @@ const BinarySocketGeneral = (() => {
                         Dialog.alert({ id: 'authorize_error_alert', localized_message: response.error.message });
                     }
                     Client.sendLogoutRequest(is_active_tab);
-                } else if (!Login.isLoginPages() && !/authorize/.test(State.get('skip_response'))) {
+                } else if (!isLoginPages() && !/authorize/.test(State.get('skip_response'))) {
                     if (response.authorize.loginid !== Client.get('loginid')) {
                         Client.sendLogoutRequest(true);
                     } else {
