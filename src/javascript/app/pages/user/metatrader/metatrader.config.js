@@ -137,6 +137,8 @@ const MetaTraderConfig = (() => {
                         }
                     });
                 }
+
+                resolve();
             } else if (is_virtual) { // virtual clients can only open demo MT accounts
                 resolve(needsRealMessage());
             } else {
