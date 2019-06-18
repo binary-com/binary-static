@@ -181,24 +181,6 @@ const MetaTrader = (() => {
                             getExchangeRates();
                         }
                     } else {
-                        const login = actions_info[action].login ?
-                            actions_info[action].login(response) : accounts_info[acc_type].info.login;
-                        if (!accounts_info[acc_type].info) { // it's a new account
-                            accounts_info[acc_type].info = { login, currency: getPropertyValue(response, ['mt5_new_account', 'currency']) };
-                            MetaTraderUI.setAccountType(acc_type, true);
-                            BinarySocket.send({ mt5_login_list: 1 });
-                            MetaTraderUI.loadAction(null, acc_type);
-                        } else {
-                            // other than revoke mam, other actions are two forms in one action, so we need the parent action to be loaded for them
-                            const parent_action = /password/.test(action) ? 'manage_password' : 'cashier';
-                            MetaTraderUI.loadAction(action === 'revoke_mam' ? action : parent_action);
-                        }
-                        BinarySocket.send({ mt5_login_list: 1 }).then((response_login_list) => {
-                            setAccountDetails(login, acc_type, response_login_list);
-                            if (/^(revoke_mam|new_account_mam)/.test(action)) {
-                                MetaTraderUI.showHideMAM(acc_type);
-                            }
-                        });
                         if (typeof actions_info[action].success_msg === 'function') {
                             const success_msg = actions_info[action].success_msg(response, acc_type);
                             if (actions_info[action].success_msg_selector) {
@@ -210,9 +192,23 @@ const MetaTrader = (() => {
                         if (typeof actions_info[action].onSuccess === 'function') {
                             actions_info[action].onSuccess(response, MetaTraderUI.$form());
                         }
+
+                        BinarySocket.send({ mt5_login_list: 1 }).then((response_login_list) => {
+                            allAccountsResponseHandler(response_login_list);
+                            MetaTraderUI.refreshAction();
+                            MetaTraderUI.setAccountType(acc_type, true);
+                            if (!accounts_info[acc_type].info) {
+                                MetaTraderUI.loadAction(null, acc_type);
+                            } else {
+                                const parent_action = /password/.test(action) ? 'manage_password' : 'cashier';
+                                MetaTraderUI.loadAction(action === 'revoke_mam' ? action : parent_action);
+                            }
+                            if (/^(revoke_mam|new_account_mam)/.test(action)) {
+                                MetaTraderUI.showHideMAM(acc_type);
+                            }
+                        });
                     }
                     MetaTraderUI.enableButton(action, response);
-                    MetaTraderUI.refreshAction();
                 });
             });
         }
