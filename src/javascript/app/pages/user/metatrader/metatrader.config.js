@@ -125,7 +125,9 @@ const MetaTraderConfig = (() => {
                 resolve($messages.find('#msg_set_currency').html());
             } else if (is_demo) {
                 if (Client.get('residence') === 'gb') {
-                    resolve($messages.find('#msg_upgrade').html());
+                    if (is_virtual) {
+                        resolve(needsRealMessage());
+                    }
 
                     BinarySocket.wait('get_account_status').then((response) => {
                         if (!/age_verification/.test(response.get_account_status.status)) {
