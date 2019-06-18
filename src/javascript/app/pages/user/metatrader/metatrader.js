@@ -179,6 +179,7 @@ const MetaTrader = (() => {
                         if (/^MT5(Deposit|Withdrawal)Error$/.test(response.error.code)) {
                             getExchangeRates();
                         }
+                        MetaTraderUI.enableButton(action, response);
                     } else {
                         if (typeof actions_info[action].success_msg === 'function') {
                             const success_msg = actions_info[action].success_msg(response, acc_type);
@@ -207,7 +208,6 @@ const MetaTrader = (() => {
                             }
                         });
                     }
-                    MetaTraderUI.enableButton(action, response);
                 });
             });
         }
