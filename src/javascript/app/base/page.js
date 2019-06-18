@@ -177,10 +177,10 @@ const Page = (() => {
             vs     : { i: 11, f: -4, o: -4, s: 9, c: 65 },
             api    : 4,
             l      : Language.get().toLowerCase(),
-            url    : 'https://whatbrowser.org/',
+            url    : 'https://browsehappy.com/',
             noclose: true, // Do not show the 'ignore' button to close the notification
             text   : localize('Your web browser ([_1]) is out of date and may affect your trading experience. Proceed at your own risk. [_2]Update browser[_3]',
-                ['{brow_name}', '<a href="https://www.whatbrowser.org/" target="_blank">', '</a>']),
+                ['{brow_name}', '<a href="https://browsehappy.com/" target="_blank">', '</a>']),
             reminder: 0, // show all the time
         };
         if (document.body) {
