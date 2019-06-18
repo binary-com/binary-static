@@ -5,7 +5,6 @@ const BinarySocket     = require('../../../base/socket');
 const Validation       = require('../../../common/form_validation');
 const localize         = require('../../../../_common/localize').localize;
 const State            = require('../../../../_common/storage').State;
-const getPropertyValue = require('../../../../_common/utility').getPropertyValue;
 
 const MetaTrader = (() => {
     let mt_companies;
