@@ -188,9 +188,11 @@ const MetaTrader = (() => {
                             } else {
                                 MetaTraderUI.displayMainMessage(success_msg);
                             }
+                            MetaTraderUI.enableButton(action, response);
                         }
                         if (typeof actions_info[action].onSuccess === 'function') {
                             actions_info[action].onSuccess(response, MetaTraderUI.$form());
+                            MetaTraderUI.enableButton(action, response);
                         }
 
                         BinarySocket.send({ mt5_login_list: 1 }).then((response_login_list) => {
