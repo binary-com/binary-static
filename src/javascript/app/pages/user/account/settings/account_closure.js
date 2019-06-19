@@ -28,7 +28,7 @@ const AccountClosure = (() => {
         $form              = $(form_selector);
 
         BinarySocket.wait('landing_company').then((response) => {
-            const currencies = getCurrencies(response.landing_company);
+            const currencies = getCurrencies(response.landing_company, true);
             if (currencies) {
                 currencies.forEach((currency) => {
                     if (isCryptocurrency(currency)) {
@@ -55,13 +55,7 @@ const AccountClosure = (() => {
 
         $txt_other_reason.on('keyup', () => {
             const input = $txt_other_reason.val();
-            if (input && (input.length < 5 || input.length > 250)) {
-                $txt_other_reason.addClass('error-field');
-                $error_msg
-                    .addClass('error-field')
-                    .text(localize('The reason should be between 5 and 250 characters'))
-                    .css('display', 'block');
-            } else {
+            if (input && validateReasonTextField(false)) {
                 $txt_other_reason.removeClass('error-field');
                 $error_msg.css('display', 'none');
             }
@@ -94,14 +88,30 @@ const AccountClosure = (() => {
         }
     };
 
-    const showFormMessage = (localized_msg) => {
-        $.scrollTo($('#reason'), 500, { offset: -20 });
+    const showFormMessage = (localized_msg, scroll_on_error) => {
+        if (scroll_on_error) $.scrollTo($('#reason'), 500, { offset: -20 });
         $error_msg
             .attr('class', 'errorfield')
             .html(localized_msg)
-            .css('display', 'block')
-            .delay(5000)
-            .fadeOut(500);
+            .css('display', 'block');
+    };
+
+    const validateReasonTextField = (scroll_on_error) => {
+        const other_reason_input = $txt_other_reason.val();
+        if (!other_reason_input) {
+            $txt_other_reason.addClass('error-field');
+            showFormMessage(localize('Please specify the reasons for closing your accounts'), scroll_on_error);
+            return false;
+        } else if (other_reason_input.length < 5 || other_reason_input.length > 250) {
+            $txt_other_reason.addClass('error-field');
+            showFormMessage(localize('The reason should be between 5 and 250 characters'), scroll_on_error);
+            return false;
+        } else if (!/^[0-9A-Za-z .,'-]{5,250}$/.test(other_reason_input)) {
+            $txt_other_reason.addClass('error-field');
+            showFormMessage(localize('Only letters, numbers, space, hyphen, period, comma, and apostrophe are allowed.'), scroll_on_error);
+            return false;
+        }
+        return true;
     };
 
     const getReason = () => {
@@ -113,15 +123,10 @@ const AccountClosure = (() => {
 
         if (reason_radio_val) {
             if (reason_radio_val === 'other') {
-                if (!other_reason_input) {
-                    $txt_other_reason.addClass('error-field');
-                    showFormMessage(localize('Please specify the reasons for closing your accounts'));
-                    return false;
-                } else if (other_reason_input.length < 5 || other_reason_input.length > 250) {
-                    showFormMessage(localize('The reason should be between 5 and 250 characters'));
-                    return false;
+                if (validateReasonTextField(true)){
+                    return other_reason_input;
                 }
-                return other_reason_input;
+                return false;
             }
             return reason_radio_text;
         }

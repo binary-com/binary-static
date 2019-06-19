@@ -38,7 +38,7 @@ const GetCurrency = (() => {
         };
     };
 
-    const getCurrencies = (landing_company) => {
+    const getCurrencies = (landing_company, all_fiat) => {
         const client_currency = Client.get('currency');
         const is_crypto       = Currency.isCryptocurrency(client_currency);
         const currency_values = getCurrencyValues();
@@ -60,7 +60,7 @@ const GetCurrency = (() => {
             // else show all
             const is_virtual = Client.get('is_virtual');
             currencies_to_show =
-                currency_values.has_fiat || (!is_crypto && client_currency && !is_virtual) ?
+                !all_fiat && (currency_values.has_fiat || (!is_crypto && client_currency && !is_virtual)) ?
                     available_crypto : allowed_currencies;
             // remove client's currency and sub account currencies from list of currencies to show
             const currencies_to_compare = is_virtual ?
