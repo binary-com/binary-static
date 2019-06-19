@@ -219,6 +219,10 @@ const MetaTraderUI = (() => {
         return type;
     };
 
+    const refreshAction = () => {
+        current_action_ui = '';
+    };
+
     const loadAction = (action, acc_type) => {
         $container.find(`[class~=act_${action || defaultAction(acc_type)}]`).click();
     };
@@ -666,6 +670,7 @@ const MetaTraderUI = (() => {
         displayPageError,
         disableButton,
         enableButton,
+        refreshAction,
         showHideMAM,
         setTopupLoading,
         showNewAccountConfirmationPopup,
