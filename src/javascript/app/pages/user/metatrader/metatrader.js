@@ -179,7 +179,6 @@ const MetaTrader = (() => {
                         if (/^MT5(Deposit|Withdrawal)Error$/.test(response.error.code)) {
                             getExchangeRates();
                         }
-                        MetaTraderUI.enableButton(action, response);
                     } else {
                         if (typeof actions_info[action].success_msg === 'function') {
                             const success_msg = actions_info[action].success_msg(response, acc_type);
@@ -202,6 +201,7 @@ const MetaTrader = (() => {
                             } else {
                                 const parent_action = /password/.test(action) ? 'manage_password' : 'cashier';
                                 MetaTraderUI.loadAction(action === 'revoke_mam' ? action : parent_action);
+                                MetaTraderUI.enableButton(action, response);
                             }
                             if (/^(revoke_mam|new_account_mam)/.test(action)) {
                                 MetaTraderUI.showHideMAM(acc_type);
