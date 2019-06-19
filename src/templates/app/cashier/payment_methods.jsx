@@ -101,7 +101,7 @@ const PaymentMethods = () => {
     return (
         <div id='cashier-content'>
             <h1>{it.L('Available payment methods')}</h1>
-            <p className='pm-description'>{it.L('This is a complete list of supported payment methods. We\'ll show you which payment methods are available in your location on the Deposit page')}</p>
+            <p className='pm-description'>{it.L('This is a complete list of supported payment methods. We\'ll show you which payment methods are available in your location on the [_1]Deposit page[_2].', `<a href=${it.url_for('cashier/forwardws?action=deposit')}>`, '</a>')}</p>
 
             <div className='center-text'>
                 <p>
