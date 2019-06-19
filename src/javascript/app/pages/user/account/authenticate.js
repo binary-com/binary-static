@@ -1,6 +1,6 @@
-const Onfido = require('onfido-sdk-ui');
+const Onfido       = require('onfido-sdk-ui');
 const BinarySocket = require('../../../base/socket');
-const getLanguage     = require('../../../../_common/language').get;
+const getLanguage  = require('../../../../_common/language').get;
 
 const Authenticate = (() => {
     let onfido;
@@ -21,7 +21,7 @@ const Authenticate = (() => {
             const sdk_token = await simulateCallForApiKey();
             onfido = Onfido.init({
                 containerId: 'onfido',
-                language   : getLanguage().toLowerCase(),
+                language   : getLanguage().toLowerCase() || 'en',
                 token      : sdk_token,
                 useModal   : false,
                 onComplete : handleComplete,
