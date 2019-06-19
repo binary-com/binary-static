@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-06-17 02:20\n"
+"PO-Revision-Date: 2019-06-19 07:56\n"
 "Last-Translator: binarycom\n"
 "Language-Team: Vietnamese\n"
 "MIME-Version: 1.0\n"
@@ -4531,7 +4531,7 @@ msgid "F. Execution venues"
 msgstr "F. Các địa điểm thi hành"
 
 msgid "F. Margin and Leverage"
-msgstr "F. Khoảng và Đòn Bẩy"
+msgstr "F. Biên và Đòn Bẩy"
 
 msgid "FIX API"
 msgstr "FIX API"
@@ -4735,7 +4735,7 @@ msgid "Follow our step-by-step guide to start trading binary options on MT5."
 msgstr "Thực hiện theo hướng dẫn từng bước của chúng tôi để bắt đầu giao dịch các lựa chọn nhị phân trên MT5."
 
 msgid "Follow the law and these Terms"
-msgstr "Thực hiện theo Luật và những Điều khoản Sau đây"
+msgstr "Tuân thủ Luật và những Điều khoản Sau đây"
 
 msgid "Follow up on the recommendations and timeline for corrective actions with department heads"
 msgstr "Theo dõi trên các khuyến nghị và thời gian cho các hành động khắc phục với lãnh đạo các phòng ban"
@@ -4879,7 +4879,7 @@ msgid "Fraud and money laundering"
 msgstr "Gian lận và rửa tiền"
 
 msgid "Free bonus"
-msgstr "Tiền thưởng tự do"
+msgstr "Tiền thưởng"
 
 msgid "Free training sessions by professional traders."
 msgstr "Các phiên họp đào tạo miễn phí bởi các thương nhân chuyên nghiệp."
@@ -6054,7 +6054,7 @@ msgid "Internal Audit Executive"
 msgstr "Điều hành Kiểm Toán Nội Bộ"
 
 msgid "Internal currency transfers between accounts are allowed up to a maximum of USD 2,500.00 or equivalent. Transfers are allowed between any available currency pair but cannot be done between the Binary and MT5 accounts."
-msgstr ""
+msgstr "Việc tự chuyển tiền giữa các tài khoản được giới hạn mức tối đa tương đương với 2,500 USD. Việc chuyển đổi được cho phép với bất kỳ cặp tiền tệ sẵn có nhưng không thể thực hiện giữa các tài khoản Binary và MT5."
 
 msgid "International currency or commodity prices are highly volatile and very difficult to predict. Due to such volatility, plus the bias in the pricing system favouring the website (as described in more detail below), no financial contract purchased in our system (whether or not the payout exceeds the premium amount) can be considered a safe contract."
 msgstr "Tiền tệ quốc tế hoặc giá cả hàng hóa rất dễ biến động và rất khó dự đoán. Do sự biến động như vậy, cộng với sự thiên vị trong hệ thống định giá ưu tiên trang web (như được mô tả chi tiết hơn bên dưới), không có hợp đồng tài chính nào được mua trong hệ thống của chúng tôi (cho dù khoản thanh toán vượt quá số tiền cao cấp) có thể được coi là hợp đồng an toàn."
@@ -6529,9 +6529,6 @@ msgstr "Giới hạn"
 
 msgid "Limit Order"
 msgstr "Lệnh Giới Hạn"
-
-msgid "Limit applies until"
-msgstr "Giới hạn áp dụng đến"
 
 msgid "Limit/Limit Price"
 msgstr "Giới Hạn/ Giá Giới Hạn"
@@ -7031,8 +7028,11 @@ msgstr "Tổng khoảng được trả tối đa trong phiên mở"
 msgid "Maximum daily turnover"
 msgstr "Thu nhập tối đa hàng ngày"
 
-msgid "Maximum deposit amount limit"
-msgstr "Giới hạn tiền gửi tối đa"
+msgid "Maximum deposit limit"
+msgstr ""
+
+msgid "Maximum deposit limit expiry"
+msgstr ""
 
 msgid "Maximum leverage"
 msgstr "Đòn bẩy tối đa"
@@ -9227,9 +9227,6 @@ msgstr "Rolling Spot Ngoại Hối"
 msgid "Runs and manages a website that promotes forex or binary options"
 msgstr "Chạy hoặc quản lý một trang web quảng cáo về ngoại hối hoặc các lựa chọn nhị phân"
 
-msgid "Russia"
-msgstr "Nga"
-
 msgid "SQL,"
 msgstr "SQL,"
 
@@ -10062,13 +10059,13 @@ msgid "Term"
 msgstr "Điều khoản"
 
 msgid "Term and termination"
-msgstr ""
+msgstr "Điều khoản và điều kiện chấm dứt"
 
 msgid "Term and termination of this Agreement"
 msgstr ""
 
 msgid "Terminate the Programmer's use of the %1 API"
-msgstr ""
+msgstr "Chấm dứt việc sử dụng %1 API của Lập trình viên"
 
 msgid "Terminate this Agreement"
 msgstr "Chấm dứt Thỏa Thuận này"
@@ -10077,7 +10074,7 @@ msgid "Termination"
 msgstr "Chấm Dứt"
 
 msgid "Termination causes"
-msgstr ""
+msgstr "Các nguyên nhân dẫn đến hủy Thỏa Thuận"
 
 msgid "Termination of this Agreement shall not prejudice any rights of any party which may have arisen on or before the date of termination."
 msgstr "Chấm dứt Thỏa Thuận này sẽ không ảnh hưởng tới bất cứ quyền gì của các bên có thể phát sinh vào đúng hoặc trước ngày chấm dứt."
@@ -10143,22 +10140,22 @@ msgid "The  acknowledges, recognises, and understands that"
 msgstr ""
 
 msgid "The %1 API has usage limits enforced to prevent abuse and/or repurposing of the %1 API. These usage limits may be changed in the future without notice. If the Programmer consistently exceeds the usage limit or otherwise abuse the service, the Company may block the Programmer's access to the %1 API."
-msgstr ""
+msgstr "API %1 có giới hạn sử dụng thực thi để ngăn chặn lạm dụng hoặc sử dụng sai mục đích. Các giới hạn sử dụng có thể thay đổi trong tương lai mà không báo trước. Nếu Bên liên kết liên tục vượt quá giới hạn sử dụng hoặc lạm dụng dịch vụ, Công ty có thể ngăn chặn truy cập của họ vào API %1."
 
 msgid "The %1 Affiliate Programme allows you to benefit from referring new clients to our site."
 msgstr "Chương trình liên kết %1 cho phép bạn hưởng lợi từ việc giới thiệu khách hàng mới vào trang web của chúng tôi."
 
 msgid "The %1 order execution policy"
-msgstr ""
+msgstr "Chính sách thực hiện lệnh của %1"
 
 msgid "The %1 password of account number %2 has been changed."
 msgstr "Mật khẩu %1 của tài khoản số %2 đã được thay đổi."
 
 msgid "The %1 privacy and security policy"
-msgstr ""
+msgstr "Riêng tư và chính sách bảo mật của %1"
 
 msgid "The %1 terms and conditions"
-msgstr ""
+msgstr "Điều khoản và điều kiện của %1"
 
 msgid "The %1 website is protected by certain copyrights."
 msgstr "Trang web %1 được bảo vệ bởi bản quyền tác giả nhất định."
@@ -10224,13 +10221,13 @@ msgid "The Affiliate and the Company are independent contractors, and nothing in
 msgstr "Bên liên kết và Công ty là những bên độc lập, và không có điều gì trong Hiệp định này sẽ tạo mối quan hệ hợp tác, liên doanh, đại lý, nhượng quyền thương mại, đại diện bán hàng, hoặc quan hệ công việc giữa hai bên. Bên liên kết sẽ không có thẩm quyền để thực hiện hoặc nhận bất cứ đề nghị hoặc đại diện nào thay mặt Công ty. Bên liên kết sẽ không phải thực hiện bất kỳ báo cáo nào ở trang web của họ hoặc nếu không, sẽ nảy sinh mâu thuẫn với bản hiệp định này."
 
 msgid "The Affiliate has not obtained and has not maintained all necessary licences and consents to operate within any laws, rules, and regulations applicable under the authority of any regulatory body of the jurisdiction(s) in which the Affiliate operates or targets business."
-msgstr ""
+msgstr "Bên liên kết không nhận được và không lưu giữ những giấy phép cần thiết để hoạt động theo bất kỳ điều luật, quy tắc và quy định được ban hành bởi bất kỳ cơ quan có thẩm quyền nào tại khu vực họ hoạt động kinh doanh hoặc hướng mục tiêu kinh doanh tới."
 
 msgid "The Affiliate has placed digital advertisements for the licensed activities on websites providing unauthorised access to copyrighted content."
-msgstr ""
+msgstr "Bên liên kết đã đặt các quảng cáo kỹ thuật số cho các hoạt động cấp phép trên các trang web cung cấp các truy cập trái phép vào nội dung có bản quyền."
 
 msgid "The Affiliate is not allowed to rebate any part commission payment onto the Affiliate's referrals and should the Company realise that the Affiliate is engaged in such actions; the Affiliate's account shall be revoked immediately."
-msgstr ""
+msgstr "Bên liên kết không được phép giảm bất kỳ khoản hoa hồng nào cho người giới thiệu của mình, nếu như công ty nhận thấy Bên liên kết đang làm việc đó; tài khoản liên kết của họ sẽ bị thu hồi ngay lập tức."
 
 msgid "The Affiliate must avoid the disclosure of any confidential information that may come to the Affiliate's knowledge or possession to third parties or external parties."
 msgstr "Bên liên kết phải tránh tiết lộ bất kỳ thông tin mật mà Bên liên kết nắm được hay sở hữu về các bên thứ ba hoặc các đối tác bên ngoài."
@@ -10248,13 +10245,13 @@ msgid "The Affiliate must provide such information to the licensee as they may r
 msgstr "Bên liên kết phải cung cấp thông tin đó tới nhà cung cấp giấy phép khi họ có thể yều cầu một cách hợp lý để tạo điều kiện cho nhà cấp giấy phép chấp hành việc báo cáo thông tin của họ và các bổn phận khác với %1ủy ban cờ bạc Anh Quốc%2."
 
 msgid "The Affiliate represents, warrants, and undertakes that the Affiliate has obtained and shall maintain all necessary licences and consents to operate within any laws, rules, and regulations applicable under the authority of any regulatory body of the jurisdiction(s) in which the Affiliate operates or targets business."
-msgstr ""
+msgstr "Bạn liên kết, đảm bảo và cam kết rằng họ được nhận và sẽ lưu trữ tất cả những giấy phép, giấy tờ cần thiết để hoạt động theo những điều luật, quy tắc và quy định được ban hành bởi cơ quan pháp lý có thẩm quyền tại khu vực mà Bên liên kết hoạt động kinh doanh hoặc hướng mục tiêu kinh doanh tới."
 
 msgid "The Affiliate represents, warrants, and undertakes that the Affiliate's website or promotion shall contain no material that is defamatory, pornographic, unlawful, harmful, threatening, obscene, harassing, or racially, ethnically, or otherwise objectionable or discriminatory, violent, politically sensitive, or otherwise controversial or in breach of any third party rights and shall not link to any such material."
-msgstr ""
+msgstr "Bên liên kết đại diện, bảo đảm và cam kết rằng trang web hay quảng cáo của họ sẽ không chứa các tài liệu nói xấu, khiêu dâm, bất hợp pháp, độc hại, đe dọa, quấy rối, hoặc phân biệt chủng tộc, tôn giáo, hoặc gây khó chịu hoặc phân biệt đối xử, bạo lực, nhạy cảm về chính trị hoặc tranh cãi hay vi phạm các quyền của bên thứ ba và sẽ không kết nối với các loại tài liệu này."
 
 msgid "The Affiliate shall indemnify on demand and hold the Company harmless from and against any and all losses, demands, claims, damages, costs, expenses (including, but not limited to, consequential losses, loss of profit, and reasonable legal costs, if applicable), and liabilities suffered or incurred, directly or indirectly, by the Company in consequence of any breach, non-performance, or non-observance by the Affiliate of any of the Affiliate's obligations or warranties under this Agreement."
-msgstr ""
+msgstr "Bên liên kết sẽ phải bồi thường theo yêu cầu và giữ cho Công ty không bị tổn hại gì từ các thiệt hại, nhu cầu, khiếu nại, phá hủy, phí, chi phí (bao gồm, nhưng không giới hạn, thiệt hại do hậu quả, mất lợi nhuận, chi phí pháp lý nếu có) và các khoản nợ phải chịu hoặc phát sinh, trực tiếp hoặc gián tiếp trong Công ty do hậu quả của hành vi vi phạm, không thực hiện hoặc không tuân thủ nghĩa vụ mà Bên liên kết cam kết theo Thỏa thuận này."
 
 msgid "The Affiliate shall not develop and implement marketing, advertising, and promotional activities that infringe any applicable laws, rules, regulations, or codes of practice relating to marketing, advertising, and promotional activities applicable under the authority of any regulatory body of the jurisdiction(s) in which the Affiliate operates or targets business."
 msgstr "Bên liên kết không được phát triển và thực hiện những hoạt động tiếp thị, quảng cáo và khuyến mại vi phạm bất cứ điều luật, quy tắc, quy định, hoặc mã của những hoạt động tiếp thị, quảng cáo, khuyến mại được áp dụng theo thẩm quyền của cơ quan chức năng nơi họ hoạt động kinh doanh hoặc đang hướng mục tiêu kinh doanh tới."
@@ -10335,7 +10332,7 @@ msgid "The Commencement Date of this agreement shall mean the date on which the 
 msgstr ""
 
 msgid "The Company Prices are determined by reference to the price of the Underlying Instrument which is quoted on external exchanges or dealing facilities that %1 selects at the Company's discretion. The Company's IT infrastructure and price aggregator system facilitate the reception of quotes from shortlisted prime brokers, who act as liquidity providers for the Company and the delivery of the quotes, derived with reference against relevant benchmark and markets, to the client. The client acknowledges that the Company Prices may differ from the Bid and Ask Prices made available by external exchanges or dealing facilities and the Company is not liable for any losses that the client might incur arising from such differences. This clause does not apply to Volatility Indices."
-msgstr ""
+msgstr "Giá của Công ty được xác định bằng cách tham chiếu đến mức giá của các công cụ cơ bản được trích dẫn bên ngoài giao dịch hoặc các cơ sở xử lý mà %1 lựa chọn theo ý của Công ty. Cơ sở hạ tầng công nghệ thông tin và hệ thống tổng hợp giá của Công ty tạo điều kiện tiếp nhận báo giá từ người môi giới quan trọng lọt vào danh sách những người hoạt động như các nhà cung cấp thanh khoản đối với Công ty và gửi báo giá, với tài liệu tham khảo chuẩn mực và thị trường có liên quan, cho khách hàng. Khách hàng thừa nhận rằng giá của Công ty có thể khác với giá thầu và cung cấp giá thực có sẵn bằng các trao đổi bên ngoài hoặc cơ sở xử lý và Công ty không chịu trách nhiệm về bất kỳ mất mát nào khách hàng phải trả phát sinh từ sự khác biệt như vậy. Điều khoản này không áp dụng cho Chỉ số Biến động."
 
 msgid "The Company aims to keep a record of the kinds of activity that the Company carries on in which a material conflict could arise or has arisen. The Company also maintains procedures to manage actual or potential conflicts. This includes procedures to maintain appropriate independence among members of the Company's staff who are involved in potentially conflicting activities. Such independence-upholding procedures can be followed, for example, through the operation of information barriers, physical separation of staff, the segregation of duties and responsibilities, and the maintenance of a policy of independence, which requires the Company's staff, when providing services to a client, to act in the best interests of the client and to disregard any conflicts of interest, or in some circumstances, to decline to act for a client or potential client in order to avoid conflicts of interest."
 msgstr ""
@@ -10365,7 +10362,7 @@ msgid "The Company does not make any warranty, express or implied, that any pric
 msgstr ""
 
 msgid "The Company does not offer credit to its clients. The client acknowledges and agrees that they will not be dealing with the Company on credit."
-msgstr ""
+msgstr "Công ty không cung cấp tín dụng cho khách hàng của mình. Khách hàng thừa nhận và đồng ý rằng họ sẽ không giao dịch với Công ty về tín dụng."
 
 msgid "The Company does not provide a market amongst or between clients for investments, securities, derivatives, or speculations. Each financial contract purchased by a client via this site is an individual agreement between that client and the Company and is not a security, nor is it transferable, negotiable, or assignable to, or with, any third party."
 msgstr "Công ty không cung cấp một thị trường ở giữa các khách hàng đầu tư, chứng khoán, phái sinh hoặc suy đoán. Mỗi hợp đồng tài chính được mua bởi khách hàng qua trang web này là một thỏa thuận cá nhân giữa khách hàng và Công ty và không bảo mật, cũng không chuyển giao, đàm phán hoặc chuyển nhượng tới hoặc với bất kì bên thứ ba nào."
@@ -10374,10 +10371,10 @@ msgid "The Company does not provide and is not authorised to provide investment 
 msgstr "Công Ty không cung cấp và không được phép tư vấn đầu tư. Công Ty sẽ không đưa ra các khuyến nghị cá nhân hoặc tư vấn về giá trị của việc mua và / hoặc bán các khoản đầu tư cụ thể."
 
 msgid "The Company endeavours to open or close the transaction to which the client's Order relates at a price reasonably available to the Company, acting in accordance with the Company's duty of best execution. Best execution means that, when executing Orders, the Company must take all sufficient steps to obtain the best possible result for the client, taking into account the price, costs, speed, likelihood of execution and settlement, size, nature, or any other consideration relevant to the execution of the Order."
-msgstr ""
+msgstr "Công ty cố gắng để mở hoặc đóng các giao dịch mà Lệnh của khách hàng được đưa ra với mức giá hợp lý có thể chấp nhận với Công ty, phù hợp với nhiệm vụ mang lại dịch vụ tốt nhất cho khách hàng của Công ty. Nghĩa là Công ty phải thực hiện đầy đủ nghĩa vụ, khi lệnh đang được thực hiện để mang lại kết quả tốt nhất có thể cho các khách hàng, khi tính đến giá cả, chi phí, tốc độ, khả năng thực hiện và giải quyết, kích thước, tính tự nhiên hay bất kỳ điều gì khác liên quan đến việc thực hiện Lệnh giao dịch."
 
 msgid "The Company has a Stop Out policy which prevents the client from losing more than they have deposited. However, in the event that the client's Open Positions are not closed when the Margin Level for their MT5 Real Account reaches the Stop Out Level, the Company, at its sole discretion, may waive the client's negative balance by crediting their account if their Account Balance goes into a negative balance. The negative balance is determined by aggregating all the negative balances incurred over a 24-hour period across all accounts held by the client. The client acknowledges that, unless they are a retail customer of Binary Investments (Europe) Ltd or a client of Binary (Europe) Ltd or Binary (IOM) Ltd, the offer of the negative balance protection by the Company to the client is at the Company's sole discretion and the Company reserves the right to change the features and eligibility criteria of the negative balance protection at any time. The provisions of the negative balance protection do not apply in the following situations:"
-msgstr ""
+msgstr "Công Ty có chính sách Dừng khi khách hàng mất nhiều hơn số tiền họ đã ký gửi. Tuy nhiên, trong trường hợp các Phiên mở của khách hàng không được đóng khi Mức ký quỹ cho Tài khoản Thực MT5 đạt đến Mức Dừng, Công ty có thể từ bỏ số dư âm của khách hàng bằng cách ghi thêm vào tài khoản của mình nếu Số dư Tài khoản của khách hàng đi vào số dư âm. Số dư âm được xác định bằng cách tổng hợp tất cả số dư âm phát sinh trong khoảng thời gian 24 giờ trên tất cả các tài khoản do khách hàng nắm giữ. khách hàng chấp nhận, trừ khi họ là khách hàng bán lẻ của Công ty Binary Investments (Europe) Ltd hoặc của Binary (Châu Âu) hoặc Binary (IOM), việc Công Ty bảo vệ Số Dư Âm cho khách hàng là được quyết định hoàn toàn bởi Công ty và chúng tôi có quyền thay đổi các tính năng và tiêu chí để đáp ứng điều kiện của Bảo Vệ Số Dư Âm bất cứ lúc nào. Các điều khoản của Bảo Vệ Số Dư Âm không áp dụng cho các trường hợp sau:"
 
 msgid "The Company has a general duty to conduct its business with the client honestly, fairly, and professionally and to act in the client's best interests when opening and closing Binary Options trades with the client."
 msgstr "Nhiệm vụ chung của Công Ty là hoạt động kinh doanh trung thực, công bằng, chuyên nghiệp, và mang lại cho khách hàng mức lãi suất tốt nhất khi mở và đóng những giao dịch Các lựa chọn Nhị phân."
@@ -10416,16 +10413,16 @@ msgid "The Company is licensed to deal in derivatives on its own account. Client
 msgstr "Công Ty được cấp phép kinh doanh các công cụ phái sinh trên tài khoản của chính mình. Các đơn đặt hàng của khách hàng sẽ được Công Ty thực hiện và Công Ty sẽ luôn là địa điểm thực hiện duy nhất của khách hàng đối với tất cả các giao dịch mà khách hàng thực hiện binary options. Điều này có nghĩa là Công Ty sẽ luôn đóng vai trò là đối tác của khách hàng, hoặc đối tác của đầu bên kia giao dịch của khách hàng. Khách hàng cần lưu ý rằng họ phải chịu rủi ro cao hơn vì tất cả các hợp đồng Các lựa chọn nhị Phân được giao dịch trên thị trường phi tập trung (OTC), đối lập với các giao dịch theo quy định. Phần này của chính sách sẽ phác thảo cách Công Ty sẽ tuân thủ các nghĩa vụ thực thi tốt nhất của mình."
 
 msgid "The Company is not liable for loss or damage of any kind whatsoever arising as a result of information or prices published on or furnished through the %1 API, or any errors or omissions of the %1 API."
-msgstr ""
+msgstr "Công ty không phải là trách nhiệm đối với tổn thất hoặc thiệt hại của bất kỳ loại nào phát sinh do hậu quả của thông tin hoặc mức giá được công bố trên %1 API, hoặc bất kỳ lỗi hoặc thiếu sót của %1 API."
 
 msgid "The Company is not under any obligation of confidentiality with respect to the Contributions."
-msgstr ""
+msgstr "Công Ty chúng tôi không chịu sự ràng buộc của bất kỳ quy định nào về sự bảo mật tương ứng với các khoản đóng góp."
 
 msgid "The Company is required by its licence to inform clients about what happens to the funds that the Company holds on account for clients, and the extent to which funds are protected in the event of insolvency. To learn more, please refer %1here%2."
 msgstr "Công ty có nghĩa vụ phải thông báo cho khách hàng về những điều xảy ra với số tiền Công ty giữ trong tài khoản của khách hàng, và mức độ tiền được bảo toàn trong trường hợp bị phá sản. Để tìm hiểu thêm, vui lòng truy cập %1tại đây%2."
 
 msgid "The Company is required to do so in accordance with any relevant law or regulation."
-msgstr ""
+msgstr "Công ty bị yêu cầu buộc dừng dịch vụ vì các lý do liên quan đến pháp luật hoặc quản lý."
 
 msgid "The Company is required to take a number of factors into account when considering how to give the client best execution, specifically:"
 msgstr "Công Ty bắt buộc phải cân nhắc đến một số yếu tố khi xem xét cách thực thi tốt nhất cho khách hàng, cụ thể là:"
@@ -10437,13 +10434,13 @@ msgid "The Company is the sole owner of all rights, titles, or interests whatsoe
 msgstr ""
 
 msgid "The Company mainly provides contracts for difference (CFDs) via MT5 platform."
-msgstr ""
+msgstr "Công ty chủ yếu cung cấp các hợp đồng chênh lệch (CFDs) thông qua nền tảng MT5."
 
 msgid "The Company maintains customer balances in cash or cash equivalent. The Company ensures that 100% of each customer's balance is available for immediate withdrawal, subject to verification."
 msgstr ""
 
 msgid "The Company makes no claims that the %1 website will be uninterrupted or provide an error-free service and will not be liable for the consequences of any such errors or interruptions."
-msgstr ""
+msgstr "Công ty không khẳng định rằng trang web %1 sẽ không bị gián đoạn hoặc dịch vụ cung cấp không có lỗi và sẽ không chịu hậu quả với những lỗi và gián đoạn xảy ra."
 
 msgid "The Company may also collect personal data about the applicant from third parties, such as further references supplied by former employers and information from criminal records checks. "
 msgstr "Công Ty cũng có thể thu thập dữ liệu cá nhân về người nộp đơn từ bên thứ ba, chẳng hạn như các tài liệu tham khảo thêm được cung cấp bởi các nhà tuyển dụng cũ và thông tin từ kiểm tra hồ sơ tội phạm. "
@@ -10458,7 +10455,7 @@ msgid "The Company may change the commission structure at any time at its sole a
 msgstr "Công ty có thể thay đổi chính sách chiết khấu tại bất kỳ thời điểm nào, tùy theo quyết định duy nhất và tuyệt đối của Công ty. Chúng tôi sẽ nỗ lực để đảm bảo rằng các Bên liên kết sẽ được thông báo khi chính sách chiết khấu được thay đổi."
 
 msgid "The Company may change, suspend, terminate, or discontinue any aspect of the %1 API, including the availability of any services, information features, or functions accessible by means of the %1 API, on no less than seven days' advance notice to the Programmer."
-msgstr ""
+msgstr "Công ty có thể thay đổi, tạm ngừng, chấm dứt hoặc ngừng cung cấp bất kỳ lĩnh vực nào của %1 API, bao gồm cả sự sẵn có của bất kỳ dịch vụ, thông tin các tính năng hoặc chức năng có thể truy cập bằng công cụ của %1 API, và thông báo cho Lập trình viên trước bảy ngày."
 
 msgid "The Company may collect this information in a variety of ways. Data is collected and contained in CVs or resumes, via Self-Assessment Topgrading Questionnaires/Interview (SATI), or through interviews or other forms of assessment, including online tests."
 msgstr "Công Ty có thể thu thập thông tin này theo nhiều cách khác nhau. Dữ liệu được thu thập và chứa trong sơ yếu lý lịch hoặc hồ sơ, thông qua Phiếu Đánh Giá / Phỏng Vấn Xếp Hạng (SATI), hoặc thông qua các cuộc phỏng vấn hoặc các hình thức đánh giá khác, bao gồm các bài kiểm tra trực tuyến."
@@ -10470,16 +10467,16 @@ msgid "The Company may impose certain rules and restrictions on the placing of m
 msgstr "Công ty có thể áp đặt các quy tắc và hạn chế nhất định liên quan đến việc đặt các lệnh thị trường trên trang web này. Quy tắc này có thể thay đổi theo thời gian, theo điều kiện thị trường và các yếu tố khác. Các quy tắc chỉ định sau đây đều đang có tại:"
 
 msgid "The Company may modify Margin Requirements for any Open Positions or new Orders at its sole discretion. Formulas for Margin Requirements published on the website are indicative only and may be changed by the Company at its discretion at any time, due to changing market conditions or other factors."
-msgstr ""
+msgstr "Công ty, với quyền quyết định tuyệt đối có thể sửa đổi Điều Kiện Ký Quỹ cho bất kỳ Phiên Mở hoặc phiên Giao Dịch mới được nhập vào. Cách tính Điều Kiện Ký quỹ được công bố trên website chỉ mang tính tham khảo và có thể được thay đổi bởi Công Ty tại bất kỳ thời điểm nào, khi có sự thay đổi điều kiện thị trường hoặc những yếu tố khác."
 
 msgid "The Company may modify any provisions or terms of this Agreement at any time. It is the responsibility of the Introducing Broker to consistently review all modifications in the Agreement made on the website."
 msgstr ""
 
 msgid "The Company may release subsequent versions of the %1 API and require that the Programmer use those subsequent versions. The Programmer's continued use of the APIs following a subsequent release will be deemed the Programmer's acceptance of modifications."
-msgstr ""
+msgstr "Công ty có thể tung ra các phiên bản tiếp theo của %1 API và yêu cầu Lập trình viên sử dụng những phiên bản cập nhật này. Việc Lập trình viên tiếp tục sử dụng các phiên bản cập nhật của API sẽ được coi là họ đã chấp thuận việc điều chỉnh."
 
 msgid "The Company may use or disclose (or choose not to use or disclose) such Contributions for any purpose, in any way, in any media worldwide."
-msgstr ""
+msgstr "Công ty chúng tôi có thể sử dụng hay tiết lộ (hoặc lựa chọn không sử dụng hay tiết lộ) những phần Bồi thường như thế này cho mọi mục đích, mọi quy cách, trên mọi phương tiện thông tin toàn cầu."
 
 msgid "The Company may use the client money for the purposes of meeting obligations that are incurred by the Company in connection with the margining, guaranteeing, securing, transferring, adjusting, or settling of the client's dealings in derivatives."
 msgstr ""
@@ -10488,16 +10485,16 @@ msgid "The Company may withhold payment of funds accumulated in a client's accou
 msgstr "Công ty có thể giữ lại thanh toán của quỹ tích lũy trong tài khoản của khách hàng trong khi tiến hành các bước để kiểm tra việc tuân thủ các điều khoản."
 
 msgid "The Company may, at its absolute discretion, accept a Stop Order, a Limit Order, or a Stop Limit Order from the client."
-msgstr ""
+msgstr "Công ty có thể, với khả năng đưa ra quyết định tuyệt đối, chấp nhận một Lệnh Dừng, một Lệnh Giới hạn, hoặc một Lệnh Giới hạn Dừng từ khách hàng."
 
 msgid "The Company may, at its absolute discretion, disregard the client's Order if an Event takes place resulting in it no longer being practicable to act on the client's Order after indicating an acceptance of their Order."
-msgstr ""
+msgstr "Công ty có thể, theo quyết định tuyệt đối của mình, bỏ qua Lệnh của khách hàng nếu một Sự Kiện diễn ra dẫn đến việc không còn khả thi để thực hiện Lệnh của khách hàng sau khi đã chấp nhận Lệnh của họ."
 
 msgid "The Company may, at its sole discretion or as required by regulations in place conduct appropriate \"Know Your Customer\" (KYC) procedures and require a client to provide proof of identity and suspend an account until satisfactory evidence of identity and address, source of funds, and/or source of wealth have been provided."
 msgstr "Công ty có thể, theo quyết định riêng của mình hoặc khi được yêu cầu theo quy định của khu vực thực hiện \"Lấy thông tin khách hàng\" (KYC) phù hợp và yêu cầu khách hàng cung cấp bằng chứng nhận dạng và đình chỉ tài khoản cho đến khi có bằng chứng nhận dạng và địa chỉ, nguồn tiền và / hoặc nguồn của cải đã được cung cấp."
 
 msgid "The Company may, however, withhold the client's withdrawal request from their MT5 Real Account to their %1 account, in whole or in part, in one or more of the following cases:"
-msgstr ""
+msgstr "Công ty có thể tạm dừng yêu cầu rút tiền của khách hàng từ Tài Khoản Thực MT% sang tài khoản %1, một phần hay toàn phần, vì các lý do sau:"
 
 msgid "The Company offers binary options through its online interactive platform."
 msgstr "Công ty cung cấp các lựa chọn nhị phân thông qua nền tảng tương tác trực tuyến."
@@ -10509,13 +10506,13 @@ msgid "The Company provides here a summary of the policy that the Company mainta
 msgstr ""
 
 msgid "The Company provides the %1 API on an \"as is\" and \"as available\" basis with no warranties, either express or implied, of any kind. To the fullest extent permissible under applicable law, the Company disclaims any and all warranties and representations, including, without limitation, any implied warranties of merchantability, fitness for a particular purpose, title, accuracy of data, and non-infringement."
-msgstr ""
+msgstr "Công ty cung cấp %1 API một cách sẵn có, không đảm bào hay bất kỳ hình thức nào. Để đạt mức tối đa cho phép theo luật áp dụng, các công ty từ chối bất kỳ và tất cả các bảo đảm và đại diện, bao gồm, nhưng không giới hạn, bất kỳ bảo đảm nào, cho một mục đích cụ thể, tiêu đề, tính chính xác của dữ liệu, và không vi phạm."
 
 msgid "The Company provides the %1 website on an \"as is\" and \"as available\" basis and gives no warranty that the %1 website will be free of errors, or that errors will be corrected, or that the Company's website is free of any third-party interferences such as hackers or any other harmful components that arise outside of the Company's control."
-msgstr ""
+msgstr "Công ty cung cấp trang web %1 như là một cơ sở \"sẵn có\", và không đảm bảo rằng trang web %1 sẽ không có lỗi, hoặc lỗi sẽ được sửa chữa, hoặc sẽ không có sự xuất hiện của bên thứ ba như tin tặc hoặc bất kỳ thành phần gây hại khác phát sinh ngoài tầm kiểm soát của Công ty."
 
 msgid "The Company reasonably considers that funds may be required to meet any Margin Requirement."
-msgstr ""
+msgstr "Công ty xem xét một cách hợp lý rằng tiền có thể được yêu cầu để đáp ứng bất kỳ Điều Kiện Ký Quỹ nào."
 
 msgid "The Company reasonably considers that funds may be required to meet any current or future Margin Requirements on Open Positions due to the underlying market conditions."
 msgstr ""
@@ -10524,7 +10521,7 @@ msgid "The Company reasonably determines that there is an unresolved dispute bet
 msgstr ""
 
 msgid "The Company receives a complaint which could have involved the Alternate Dispute Resolution entity, or the Company believes that the Affiliate is in breach of any laws, rules, and regulations that may be relevant or applicable to the jurisdiction(s) in which the Affiliate operates or targets business."
-msgstr ""
+msgstr "Công ty nhận được đơn khiếu nại có liên quan tới cơ quan Giải quyết Tranh chấp, hoặc Công ty tin rằng Bên liên kết, đã vi phạm bất cứ điều luật, quy tắc, và quy định được ban hành bởi cơ quan có thẩm quyền, nơi họ đang hoạt động kinh doanh hoặc hướng mục tiêu kinh doanh đến."
 
 msgid "The Company recognises the importance of protecting the client's personal and financial information."
 msgstr ""
@@ -10542,19 +10539,19 @@ msgid "The Company reserves the right to change any part of this Agreement at an
 msgstr "Công ty có quyền thay đổi bất kỳ phần nào của Thỏa Thuận này vào bất cứ lúc nào. Công ty sẽ nỗ lực để đảm bảo rằng các chi nhánh sẽ được thông bảo khi bản Thỏa Thuận được thay đổi, nhưng Bên liên kết có trách nhiệm phải thường xuyên kiểm tra những điều khoản và điều kiện. Việc Bên liên kết tiếp tục tham gia vào chương trình liên kết của Công ty sau khi Công ty thông báo có nghĩa là Bên liên kết đã chấp nhận sự thay đổi đó."
 
 msgid "The Company reserves the right to charge the Margin per each hedged lot of a position."
-msgstr ""
+msgstr "Công ty có quyền tính phí Ký quỹ cho mỗi lô bảo hiểm của một vị trí."
 
 msgid "The Company reserves the right to have risk limits in place, which affect the trading limits of all clients trading, and may not be limited solely to instruments and contract types."
 msgstr "Công ty có quyền đặt giới hạn rủi ro, ảnh hưởng đến các giới hạn giao dịch của tất cả các khách hàng thương mại, và có thể không giới hạn với cả công cụ và các loại hợp đồng."
 
 msgid "The Company reserves the right to modify, supplement, or replace these Terms at any time. The Programmer will be notified of any material changes. The Programmer's continued registration with the %1 API and the Programmer's continued use of the %1 API will constitute binding acceptance of such changes."
-msgstr ""
+msgstr "Công ty có quyền điều chỉnh, bổ sung, hay thay thế những Điều khoản này bất kỳ lúc nào. Bất kỳ sự thay đổi nào về nội dung sẽ được thông báo tới Lập trình viên. Việc Lập trình viên tiếp tục đăng ký và sử dụng API %1 được coi như sự chấp thuận của họ với những thay đổi này."
 
 msgid "The Company reserves the right to refuse the Affiliate's referrals' application to open an account (or to close the Affiliate's account), as deemed necessary, to comply with any requirements that the Company may periodically establish and/or that may be required under applicable laws, rules, and regulations."
 msgstr "Nhằm tuân thủ những yêu cầu mà Công ty thiết lập theo định kỳ và/ hoặc có thể được yêu cầu theo điều luật, quy tắc và quy định hiện hành, nếu được coi là cần thiết, Công ty có quyền từ chối đơn xin mở tài khoản của người mà Bên liên kết giới thiệu (hoặc đóng tài khoản của họ)."
 
 msgid "The Company reserves the right to refuse the client's request to open an MT5 Real Account for any reason, and any MT5 Real Account may be closed at the Company's discretion at any time."
-msgstr ""
+msgstr "Công ty có quyền từ chối yêu cầu mở một Tài Khoản Thực MT5 của khách hàng vì bất kỳ lý do nào, và bất kỳ Tài Khoản Thực MT5 nào cũng có thể bị đóng lại theo quyết định của Công ty vào bất kỳ lúc nào."
 
 msgid "The Company reserves the right to refuse to do business with, to discontinue to do business with, and to reverse the transactions of, clients who engage in any trading activity"
 msgstr "Công Ty có quyền từ chối, không tiếp tục làm ăn với, và đảo ngược các giao dịch của Khách Hàng, người tham gia vào bất kỳ hoạt giao dịch nào"
@@ -10581,7 +10578,7 @@ msgid "The Company shall further disclose information about the applicant to any
 msgstr "Công Ty sẽ tiết lộ thêm thông tin về người nộp đơn cho bất kỳ nhà cung cấp dịch vụ bên thứ ba nào trong Binary Group. Công Ty phải đảm bảo rằng thỏa thuận chia sẻ dữ liệu được đưa ra và dữ liệu của người nộp đơn được giữ an toàn và phù hợp với các yêu cầu của GDPR. Công Ty sẽ tiết lộ thêm thông tin về người nộp đơn khi có nghĩa vụ pháp lý phải làm như vậy."
 
 msgid "The Company shall have no liability arising from orders, investment decisions, or purchases of third-party goods or services (including financial instruments and currency) based on information published on or furnished through the %1 API."
-msgstr ""
+msgstr "Công ty sẽ không có trách nhiệm pháp lý phát sinh từ các đơn đặt hàng, quyết định đầu tư hay mua sản phẩm hoặc dịch vụ của bên thứ ba (bao gồm các công cụ tài chính và tiền tệ) dựa trên thông tin được công bố trên hoặc cung cấp thông qua %1 API."
 
 msgid "The Company shall have the right to suspend or terminate this agreement with immediate effect if the Company has reasonable suspicion that the Agent is undertaking any practices that are in breach of any applicable anti-corruption laws."
 msgstr ""
@@ -10590,7 +10587,7 @@ msgid "The Company shall not be in breach of its obligation under this agreement
 msgstr ""
 
 msgid "The Company shall not be liable to the Affiliate in contract, or otherwise (including liability for negligence) for any loss, whether direct or indirect, of the Affiliate's business, revenue or profits, anticipated savings, or wasted expenditure, corruption, or destruction of data or for any indirect or consequential loss whatsoever when such outcome is the consequence of any breach, non-performance, or non-observance by the Affiliate of any of the Affiliate's obligations or warranties under this Agreement."
-msgstr ""
+msgstr "Công Ty sẽ không chịu trách nhiệm với Bên liên kết trong hợp đồng, hoặc bằng cách khác (bao gồm trách nhiệm cho sơ suất) cho bất kỳ tổn thất nào, trực tiếp hoặc gián tiếp, về kinh doanh, doanh thu hoặc lợi nhuận của hoạt động kinh doanh của Bên liên kết, tiền tiết kiệm dự đoán hoặc chi phí lãng phí, tham nhũng hoặc phá hủy dữ liệu hoặc cho bất kỳ tổn thất gián tiếp hoặc hậu quả nào khi kết quả là hậu quả của bất kỳ vi phạm, không thực hiện hoặc không tuân thủ bất kỳ nghĩa vụ hoặc bảo đảm nào của Bên liên kết."
 
 msgid "The Company shall not be responsible or liable for any advice on financial services provided by the Agent to any client."
 msgstr ""
@@ -10611,7 +10608,7 @@ msgid "The Company shall pay the Affiliate the currently published percentage of
 msgstr "Công ty sẽ trả cho Bên liên kết theo tỷ lệ được công bố của doanh thu thuần đạt được trong suốt thời hạn của Thỏa thuận (chi tiết như trong trang hoa hồng của tài khoản liên kết của Bên liên kết). Các khoản thanh toán hoa hồng liên kết sẽ chỉ được trả cho người giới thiệu khách hàng có thiện chí và Công ty có quyền bỏ qua những tài khoản trùng lặp hoặc tài khoản mà Công ty suy xét thấy khách hàng không thiện chí."
 
 msgid "The Company shall provide the Affiliate with statements accessible through an electronic system detailing the revenues generated by clients the Affiliate has referred, if any, which have accrued to the Affiliate over the course of the calendar month. Such statements shall be updated daily. At the end of a calendar month, the Company shall record the Affiliate's total share of Net Revenues, if any, during the previous calendar month. In the event that a revenue share in any calendar month is a negative amount, the Company shall be entitled but not obliged to carry forward and set off such negative amount against future revenue shares which would otherwise be payable to the Affiliate. However, the Company shall also be entitled but not obliged to zeroise the negative balance that would otherwise be carried forward."
-msgstr ""
+msgstr "Công Ty sẽ cung cấp cho Bên liên kết các báo cáo mà họ có thể truy cập thông qua một hệ thống điện tử ghi nhận doanh thu của những khách hàng mà Bên liên kết giới thiệu, nếu có, và đã được tích luỹ cho Bên liên kết trong cả tiến trình của tháng. Những báo cáo này sẽ được cập nhật hàng ngày. Vào cuối một tháng, Nếu có, Công Ty sẽ ghi tổng số cổ phiếu của doanh thu thuần, trong tháng trước đó. Trong trường hợp doanh thu cổ phiếu trong một tháng là một số âm, Công Ty có quyền nhưng không có nghĩa vụ phải thực hiện chuyển tiếp hoặc bù vào mức âm này đối với doanh thu sẽ phải trả trong tương lai."
 
 msgid "The Company shall provide you with online access to the trading platform on which the balance, margin, credit, and equity is displayed so you are able to monitor the status and performance of the Account. You agree that in case of incongruity, you will immediately contact the Company at %1."
 msgstr "Công Ty sẽ cung cấp cho bạn quyền truy cập trực tuyến nền tảng kinh doanh mà trên đó sự cân bằng, ký quỹ, tín dụng và vốn chủ sở hữu sẽ được hiển thị để bạn có thể theo dõi tình trạng và hiệu suất của tài khoản. Bạn đồng ý rằng trong trường hợp tình trạng không hợp lý, bạn sẽ ngay lập tức liên hệ với Công Ty tại %1."
@@ -10632,13 +10629,13 @@ msgid "The Company uses identity verification services and real-time fraud detec
 msgstr ""
 
 msgid "The Company uses identity verification services and real-time fraud detection measures to help protect the client from unauthorised access to their account. The Company also monitors account activity for signs of unusual activity that might indicate fraud and works with collection agencies and law-enforcement agencies to address fraud issues."
-msgstr ""
+msgstr "Công ty sử dụng dịch vụ xác minh danh tính và công cụ phát hiện gian lận thời gian thực để bảo vệ khách hàng khỏi những truy cập trái phép vào tài khoản của mình. Công ty cũng quản lý hoạt động tài khoản để phát hiện dấu hiệu của các hoạt động bất thường để tìm ra sự gian lận và làm việc với các cơ quan thực thi pháp luật để giải quyết các vấn đề về gian lận."
 
 msgid "The Company will act on any instructions given, or appearing to be given, by the client and received by the Company in relation to the Margin trading services provided through the MT5 trading platform, as deemed instructed by the client. However, it is not the Company's obligation to act on any instructions deemed given by the client, and the Company is not obligated to give the client any reasons for declining to do so. Instructions received by the Company from the client are deemed final and will not be revocable. It is the client's responsibility to ensure the genuineness and accuracy of the instructions given by them to the Company."
 msgstr ""
 
 msgid "The Company will hold the client responsible for all their obligations under this agreement in the Company's course of providing the Margin trading services that are described in this agreement to the client even if the client notifies the Company that they are acting as the agent of an identified principal."
-msgstr ""
+msgstr "Công ty sẽ đảm bảo khách hàng chịu trách nhiệm về tất cả các nghĩa vụ theo thỏa thuận này trong khóa học của Công ty cung cấp dịch vụ giao dịch Ký quỹ được mô tả trong thỏa thuận này cho khách hàng, thậm chí nếu khách hàng thông báo choCông ty rằng họ đang làm đại diện cho một bên xác định."
 
 msgid "The Company will mainly ensure best execution for the client by giving due consideration to the market price when calculating the Company's bid/offer price for the underlying reference product to which the client's Contract relates. In order to ascertain the market price, the Company has access to a number of different data sources, which provide the Company with an objective view of the bids and offers available to arms' length traders."
 msgstr "Công Ty chủ yếu sẽ đảm bảo thực hiện tốt nhất cho khách hàng bằng cách xem xét đúng mức giá thị trường khi tính giá mua / giá bán của công ty cho sản phẩm trên thị trường cơ sở mà Hợp Đồng của khách hàng có liên quan đến. Để xác định giá thị trường, Công Ty có quyền truy cập đối với một số nguồn dữ liệu khác nhau, cung cấp cho Công Ty một cái nhìn khách quan về giá mua và giá bán cho các nhà giao dịch lâu năm."
@@ -10659,7 +10656,7 @@ msgid "The Company will provide advertising collaterals with links containing af
 msgstr "Công ty sẽ cung cấp tài sản thế chấp quảng cáo với đường dẫn có chứa ID liên kết, đường dẫn này có thể được Công ty sửa đổi theo thời gian."
 
 msgid "The Company will rely on the transactions and other instructions entered into and/or given by the client's username and password, and the client is bound by any transaction or expense incurred in reliance on such Orders and/or instructions."
-msgstr ""
+msgstr "Công Ty sẽ dựa vào các giao dịch và các hướng dẫn khác được nhập vào và/ hoặc được cung cấp bởi tên người dùng và mật khẩu của khách hàng, và khách hàng bị ràng buộc bởi bất kỳ giao dịch hoặc chi phí phát sinh nào dựa vào thứ tự và/ hoặc hướng dẫn đó."
 
 msgid "The Company will use reasonable endeavours within its control to ensure that all electronic data provided on the MT5 trading platform and all electronic transactions instructed by the client and accepted and executed by the Company are not subject to network latency."
 msgstr ""
@@ -10689,7 +10686,7 @@ msgid "The Company's determination of the relative importance of the execution f
 msgstr "Công Ty xác định tầm quan trọng tương đối của các yếu tố thực hiện có thể khác nhau từ khách hàng trong một số trường hợp, và sẽ hành động từ chính lòng quan tâm đến khách hàng mà phù hợp với nghĩa vụ thực hiện tốt nhất của Công Ty."
 
 msgid "The Company's information security policies are based on industry best practices in access control and business continuity."
-msgstr ""
+msgstr "Chính sách bảo mật thông tin của Công ty dựa trên những chính sách tốt nhất trong ngành công nghiệp về việc kiểm soát truy cập và tính liên tục của giao dịch."
 
 msgid "The Company's obligations"
 msgstr "Nghĩa vụ của Công ty"
@@ -10791,10 +10788,10 @@ msgid "The Margin Level of the client's MT5 Real Account reaches or falls below 
 msgstr ""
 
 msgid "The Margin trading services described in this agreement are conducted over the counter (\"OTC\"). "
-msgstr ""
+msgstr "Các dịch vụ giao dịch Ký quỹ được mô tả trong thỏa thuận này được thực hiện qua quầy (\"OTC\"). "
 
 msgid "The Margin used in Margin calculations will be whichever is bigger: the Margin implied by the account's Leverage or the symbol's Margin. The account has a specific Margin, but symbol's Margin may vary. "
-msgstr ""
+msgstr "Biên được sử dụng trong các tính toán Biên sẽ được lấy theo độ lớn: Biên được đưa ra từ Đòn bẩy của tài khoản hoặc ký hiệu Biên. Mỗi tài khoản có một Biên cố định, nhưng ký hiệu biên có thể giao động. "
 
 msgid "The Marketing team oversees all our marketing and advertising initiatives, such as our affiliate programme, social media presence, webinars, and emails. As our Marketing Executive, you will coordinate and execute marketing campaigns across a variety of channels, and continuously identify the best ways to reach current and prospective customers."
 msgstr "Đội ngũ tiếp thị giám sát tất cả những sáng kiến tiếp thị và quảng cáo của chúng tôi, như chương trình liên kết, sử dụng các kênh truyền thông mạng, hội thảo trực tuyến và email của chúng tôi. Với vai trò là chuyên viên tiếp thị, bạn sẽ phối hợp thực hiện các chiến dịch tiếp thị trên nhiều kênh và liên tục xác định cách tốt nhất để tiếp cận khách hàng hiện tại và tiềm năng."
@@ -10818,82 +10815,83 @@ msgid "The Policy is supplemented by Appendix A, which provides further details 
 msgstr "Chính Sách được bổ sung bởi Phụ Lục A, sẽ cung cấp thêm thông tin chi tiết cho các cân nhắc của Công Ty bởi chúng có liên quan đến các loại tài sản khác nhau. Phụ Lục A đi kèm cần được đọc kết hợp với Chính Sách này."
 
 msgid "The Programmer acknowledges and agrees that the Programmer is solely and exclusively responsible for the control, operation, and security of transactions and communications made through access to or use of the %1 API. The Programmer acknowledges that there are risks associated with utilising an Internet-based deal execution trading system including, but not limited to, the failure of hardware, software, and Internet connections. The Programmer acknowledges that the Company does not control signal power, its reception or routing via the Internet, the configuration of the Programmer's equipment, or the reliability of its connection, and the Company shall not be responsible for any communication failures, disruptions, errors, distortions, or delays the Programmer may experience when trading via the Internet using the %1 API."
-msgstr ""
+msgstr "Lập trình viên thừa nhận và đồng ý rằng chỉ riêng cá nhân họ có trách nhiệm trong việc kiểm soát, triển khai hoạt động và bảo mật những giao dịch và những trao đổi được tạo ra thông qua việc truy cập hay sử dụng %1 API. Lập trình viên thừa nhận rằng có những rủi ro liên quan đến việc sử dụng một hệ thống giao dịch thực hiện thỏa thuận dựa trên Internet, bao gồm nhưng không giới hạn, lỗi của phần cứng, phần mềm và kết nối Internet. Lập trình viên thừa nhận rằng Công ty không kiểm soát tín hiệu, tiếp nhận hoặc định tuyến thông qua Internet, cấu hình của thiết bị hoặc độ tin cậy của kết nối, chúng tôi không chịu trách nhiệm cho những lỗi kết nối liên lạc, sự gián đoạn, sự xuyên tạc hoặc sự chậm trễ mà Lập trình viên có thể gặp phải khi giao dịch qua Internet sử dụng hệ thống %1 API."
 
 msgid "The Programmer acknowledges that, in the course of dealing under these Terms, the Programmer may obtain confidential information relating to the Company and its parent, subsidiaries, affiliates, or other third parties. Such confidential information shall belong solely to the Company."
-msgstr ""
+msgstr "Lập trình viên thừa nhận rằng, khi họ giao dịch dựa theo những Điều khoản này, Lập trình viên có thể có được những thông tin bí mật liên quan đến Công ty và công ty mẹ, các công ty con, các chi nhánh và các bên thứ ba khác. Những thông tin bí mật này sẽ chỉ được thuộc về Công ty."
 
 msgid "The Programmer agrees that the Programmer will not"
-msgstr ""
+msgstr "Lập trình viên cam kết rằng họ sẽ không"
 
 msgid "The Programmer agrees that, by developing on the %1 API, the Programmer is entering into a legally binding agreement with the Company."
-msgstr ""
+msgstr "Lập trình viên đồng ý rằng bằng việc phát triển trên API %1, Lập trình viên đang tham gia vào một thỏa thuận liên kết hợp pháp với Công ty."
 
 msgid "The Programmer also acknowledges that %1 may continue to make changes to and enhance the %1 API and that those changes and enhancements will be owned by %1. The Programmer hereby assigns and transfers to the Company all of the Programmer's rights, title, and interest in and to any modifications or derivative works of the %1 API created by or for the Programmer, regardless of whether they were created in accordance with these Terms; such assignment being effective upon creation of such works, and shall include, without limitation, all rights under any intellectual property laws, including copyright. The Programmer shall not take any action to jeopardise, encumber, limit, or interface in any manner with %1's ownership of, and rights with respect to, the %1 API, or any derivative works or updates thereof or thereto. Any components, parts, or mechanics of any system or API programme derived from the %1 API, or %1's business practices shall belong solely to %1. Further, the Programmer will not, at any time, contest or assist any third party in contesting the rights of %1 in the %1 API or any other intellectual property provided in these Terms."
-msgstr ""
+msgstr "Lập trình viên cũng thừa nhận rằng %1 có thể tiếp tục tạo ra những thay đổi để tăng cường hệ thống %1 API và những thay đổi và sự củng cố này sẽ được sở hữu bởi %1. Do đó Lập trình viên chỉ định và chuyển lại cho Công ty tất cả các quyền, chức danh và lợi ích của họ trong bất kỳ sự thay đổi hay các sản phẩm phát sinh của %1 API được tạo ra bởi Lập trình viên, không phụ thuộc vào việc liệu chúng có được tạo ra dựa theo những Điều khoản này hay không; sự chuyển nhượng này sẽ có hiệu lực dựa trên sự tạo ra những sản phẩm, và sẽ bao gồm, nhưng không giới hạn, tất cả các quyền theo các luật sở hữu trí tuệ, bao gồm bản quyền. Lập trình viên không được thực hiện bất kỳ hành động nào đe dọa, kìm hãm, giới hạn hoặc đối đầu với bất kỳ quyền sở hữu của %1 tương ứng với %1 API, hay các sản phẩm được tạo ra hoặc các cập nhật nếu có. Các thành phần, bộ phận, hoặc yếu tố cơ học của bất kỳ hệ thống hay chương trình API có nguồn gốc từ %1 API, hoặc những hoạt động kinh doanh của %1 sẽ chỉ thuộc về %1. Hơn thế nữa, tại bất kỳ thời điểm nào, Lập trình viên không được có bất kỳ sự tranh chấp hay hỗ trợ với bên thứ ba trong việc tranh đấu các quyền của %1 trong hệ thống %1 API hoặc các quyền sở hữu trí tuệ khác sẽ được cung cấp trong những Điều khoản này."
 
 msgid "The Programmer and the Programmer's Application must also comply with the following, which are hereby incorporated by reference:"
-msgstr ""
+msgstr "Lập trình viên và đơn đăng ký của Lập trình viên cũng phải tuân thủ những điều sau, nhờ đó, chúng sẽ được thống nhất bởi phần tham khảo:"
 
 msgid "The Programmer irrevocably and non-exclusively licenses to the Company rights to use the Programmer's Contributions."
-msgstr ""
+msgstr "Lập trình viên không thể chối bỏ cũng như không độc quyền cấp phép cho Công ty các quyền sử dụng các Đóng góp của Lập trình viên."
 
 msgid "The Programmer is in default or breach of any covenant, obligation, or condition contained in this Agreement, and such default is not cured within seven days of receipt of written notice from the Company."
-msgstr ""
+msgstr "Nếu Lập trình viên thực hiện không đầy đủ hoặc vi phạm bất kỳ điều khoản, quy định hay điều kiện nào của Thỏa thuận này, và nếu sự vi phạm này không được xử lý trong vòng bảy ngày kể từ ngày nhận được biên bản thông báo của Công ty."
 
 msgid "The Programmer is not allowed to store any Content (such as feed data)."
-msgstr ""
+msgstr "Lập trình viên không được phép lưu trữ bất kỳ nội dung nào (ví dụ dữ liệu nguồn)."
 
 msgid "The Programmer is not entitled to any compensation or reimbursement of any kind from the Company under any circumstances."
-msgstr ""
+msgstr "Lập trình viên không có quyền nhận bất kỳ khoản bồi thường hay đền bù đối với bất kỳ tài sản nào của Công ty dưới mọi trường hợp."
 
 msgid "The Programmer may cache the Content for up to 24 hours from a request for that Content through the %1 API."
-msgstr ""
+msgstr "Lập trình viên có thể lưu trữ Nội dung trong 24 giờ kể từ khi có yêu cầu cho Nội dung đó thông qua API %1."
 
 msgid "The Programmer may develop Applications using the %1 API as soon as the Programmer registers an Application and agrees to follow these Terms."
-msgstr ""
+msgstr "Lập trình viên có thể phát triển ứng dụng bằng việc sử dụng API %1 ngay sau khi đã đăng ký và đồng ý tuân thủ các Điều khoản sau."
 
 msgid "The Programmer may not assign rights granted in this Agreement without the Company's prior written approval."
-msgstr ""
+msgstr "Lập trình viên không có quyền chuyển nhượng Thỏa thuận này nếu không có sự chấp thuận trước bằng văn bản của Công ty."
 
 msgid "The Programmer may store the Application-specific alphanumeric user IDs provided (\"API Tokens\") or the authentication tokens provided via Open Authorisation Standard (\"OAuth Tokens\")."
-msgstr ""
+msgstr "Lập trình viên có thể lưu tên đăng nhập người dùng dạng số đã được cung cấp (\"Chuỗi số API\") hoặc chuỗi số xác nhận được cung cấp thông qua Tiêu chuẩn Cấp phép Mở (\"Chuỗi OAuth\")."
 
 msgid "The Programmer may terminate this Agreement at any time, but only by giving the Company a minimum of seven days' written notice. \"Written notice\" here includes notice delivered by regular mail or by email."
-msgstr ""
+msgstr "Lập trình viên có thể chấm dứt Thỏa thuận này bất cứ lúc nào, nhưng chỉ khi gửi cho Công ty một thông báo bằng văn bản trước ít nhất bảy ngày. \"Thông báo bằng văn bản\" ở đây bao gồm thông báo được chuyển bằng thư thông thường hay thư điện tử."
 
 msgid "The Programmer must comply with these Terms in order to use the %1 API."
-msgstr ""
+msgstr "Bên liên kết phải tuân thủ những Điều khoản này để có thể sử dụng API %1."
 
 msgid "The Programmer must promptly report any security deficiencies in, or intrusions to, the Programmer's Application that the Programmer discovers to %1 by writing in to %2 or by raising a discussion thread on %3 which is part of our Developer Site. The Programmer will work with %1 to immediately correct any security deficiency and will immediately disconnect any intrusions or intruder. In the event of any security deficiency or intrusion involving the Application, APIs, or Content, the Programmer will make no public statements (e.g. press, blogs, social media, bulletin boards, etc.) without prior written and express permission from %1 in each instance."
-msgstr ""
+msgstr "Lập trình viên phải nhanh chóng báo cáo nếu có bất kỳ nguy cơ nào về bảo mật, hay sự xâm nhập, vào Ứng dụng của họ mà lập trình viên phát hiện ra %1 bằng việc viết lên %2 hoặc mở một chủ đề thảo luận trên %3 tại một góc trong Mục Phát triển. Lập trình viên sẽ làm việc với %1 để ngay lập tức giải quyết bất kỳ mối nguy cơ về bảo mật này, và sẽ ngay lập tức ngắt kết nối với bất kỳ sự xâm nhập hoặc kẻ xâm nhập nào.\n"
+"Trong trường hợp nguy cơ về bảo mật hay sự xâm nhập liên quan đến Ứng dụng, API hoặc Bộ nhớ, Lập trình viên sẽ không được phép thông báo một cách công khai (ví dụ: trên báo chí, các trang blog, phương tiện truyền thông xã hội, các bảng tin tức,..) nếu không có sự cho phép đặc biệt và bằng văn bản từ %1 cho từng trường hợp."
 
 msgid "The Programmer or the Programmer's employees' or agents' acts or omissions, including the Programmer's or their breach or alleged breach of these Terms"
-msgstr ""
+msgstr "Các hành vi thiếu sót của Lập trình viên hay các nhân viên hoặc các đại lý của họ, bao gồm hành vi vi phạm hay hành vi được coi là vi phạm của Lập trình viên và những người nới trên đối với các Điều khoản này"
 
 msgid "The Programmer represents and warrants to the Company that, excluding the Content, the Programmer has the right to use, reproduce, transmit, copy, publicly display, publicly perform, and distribute the Programmer's Application, and that the use or promotion of the Programmer's Application will not violate the rights of any third party (e.g. copyright, patent, trademark, privacy, publicity, or other proprietary right of any person or entity) or any applicable regulation or law and the laws of any country in which the Programmer's Application is made available."
-msgstr ""
+msgstr "Lập trình viên đại diện và đảm bảo với Công ty rằng, ngoại trừ Nội dung này, Lập trình viên có quyền sử dụng, mô phỏng lại, chuyển tiếp, sao chép, hiển thị một cách công khai, thực hiện một cách công khai, và sắp xếp Ứng dụng của họ, và việc sử dụng hay Quảng bá Ứng dụng của họ sẽ không vi phạm các quyền của bất kỳ bên thứ ba nào khác (ví dụ: quyền bản quyền, quyền sáng chế, quyền thương hiệu, quyền riêng tư, quyền công khai hay quyền sở hữu tài sản khác của bất kỳ một người hay thực thể nào), hay luật hoặc quy định đang ban hành, và luật của bất kỳ đất nước mà Ứng dụng này được tạo ra."
 
 msgid "The Programmer shall be solely responsible for, and shall indemnify and hold the Company free and harmless from, any and all third-party claims, damages, or lawsuits (including, but not limited to, consequential losses and loss of profit and the Company's reasonable legal costs and expenses if applicable):"
-msgstr ""
+msgstr "Lập trình viên sẽ phải chịu trách nhiệm, và sẽ phải bồi thường theo yêu cầu và giữ cho Công ty không bị thiệt hại về bất kỳ các khiếu nại, thiệt hại, các tố tụng của bên thứ ba (bao gồm, nhưng không giới hạn, thiệt hại do hậu quả và mất lợi nhuận, chi phí pháp lý chấp nhận được của Công ty chúng tôi và các chi phí phát sinh nếu có):"
 
 msgid "The Programmer shall discontinue the Programmer's use of all prior versions of the %1 API in favour of the revised %1 API. While it is the Company's intention that the revised %1 API shall be backward compatible with the immediately prior version of the %1 API, the Company does not guarantee or warrant that this shall be so, and the Company shall have no liability whatsoever to the Programmer for any failure of the revised %1 API to be backward compatible with any prior version of the %1 API."
-msgstr ""
+msgstr "Lập trìn viên sẽ phải ngưng sử dụng tất cả các phiên bản trước của %1 API và chuyển sang sử dụng phiên bản %1 API được cập nhật. Dù mong muốn của Công ty là phiên bản %1 API được cập nhật này sẽ tương thích với phiên bản %1 API trước đó, Công ty không chắc chắn hay bảo đảm rằng nó sẽ luôn như vậy, và Công ty sẽ không chịu bất kỳ trách nhiệm pháp lý nào đối với bạn cho bất cứ tổn thất nào về tính tương thích của phiên bản %1 API cập nhật với phiên bản %1 API trước đó."
 
 msgid "The Programmer's breach of any of %1's rights"
-msgstr ""
+msgstr "Lập trình viên vi phạm bất cứ quyền nào của %1"
 
 msgid "The Programmer's property"
-msgstr ""
+msgstr "Tài sản của Lập trình viên"
 
 msgid "The Programmer's use of the %1 API causes damage to the %1 trading platform, then %1 may, at its option, forthwith suspend the Programmer's use of the %1 API and/or terminate this Agreement without further written notice."
-msgstr ""
+msgstr "Nếu việc Lập trình viên sử dụng %1 API gây tổn thất cho sàn giao dịch %1, thì sau đó %1 có thể, cân nhắc trong các khả năng, ngay lập tức ngừng việc sử dụng %1 API của họ và/hoặc chấm dứt Thỏa thuận này mà không có bất kỳ thông báo bằng văn bản nào."
 
 msgid "The Programmer's use of the %1 API will not confer to the Programmer any title, ownership interest, or intellectual property rights that otherwise belong to the Company. The Company's trading platform is protected under patent and the Company's website, including its content, is protected by copyright laws, and will remain the Company's exclusive property, as applicable."
-msgstr ""
+msgstr "Việc sử dụng %1 API sẽ không đem lại cho Lập trình viên bất kỳ chức danh, hay lợi ích sở hữu hoặc quyền sở hữu trí tuệ, mà những quyền này thuộc về sở hữu của Công ty. Sàn giao dịch của Công ty được bảo vệ bởi bằng sáng chế và trang web của Công ty, bao gồm tất cả nội dung trong đó, được bảo vệ bởi luật bản quyền, và sẽ vẫn là tài sản độc quyền của Công ty, như đang được áp dụng."
 
 msgid "The Programmer's violation of any applicable law, rule, or regulation"
-msgstr ""
+msgstr "Lập trình viên vi phạm bất kỳ luật, quy tắc hoặc quy định hiện hành nào"
 
 msgid "The Recruitment team plays a challenging role in the company by sourcing and selecting quality applicants that will contribute to the company growth."
 msgstr "Đội ngũ Tuyển Dụng đóng một vai trò thử thách trong công ty với việc tìm kiếm và tuyển chọn những ứng viên chất lượng cao mà sẽ đóng góp cho sự tăng trưởng của công ty."
@@ -10911,7 +10909,7 @@ msgid "The Standard account is suitable for a wide range of traders, both new or
 msgstr "Tài khoản chuẩn thích hợp cho một loạt các nhà giao dịch, không kinh và có kinh nghiệm. Nó có sẵn trong EUR và GBP và có biến chặt chẽ và lây lan không kèm hoa hồng và một khoản tiền gửi tối thiểu."
 
 msgid "The Stop Out Level applicable to the client's MT5 Real Account may differ from the default Stop Out Level published on the Company website."
-msgstr ""
+msgstr "Mức Dừng áp dụng đối với Tài Khoản Thực MT5 của khách hàng có thể khác với Mức Dừng mặc định được công bố trên trang web của Công ty."
 
 msgid "The Synthetic Indices account allows you to trade CFDs on Synthetic Indices – our proprietary synthetic assets that mimic real-world market volatility and are available for trading 24/7."
 msgstr ""
@@ -11004,22 +11002,22 @@ msgid "The client acknowledges that any explanations, trading recommendations, i
 msgstr ""
 
 msgid "The client acknowledges that it is their responsibility to cancel the Stop or Limit Order if they do not want the Stop or Limit Order to remain valid. If the client fails to cancel the Stop or Limit Order, the Company shall be entitled, at its absolute discretion, to treat the Stop or Limit Order as an instruction to enter into a new transaction for the client if and when the Company quote reaches or goes beyond the level of the Stop or Limit Order."
-msgstr ""
+msgstr "Khách hàng xác nhận rằng họ có trách nhiệm hủy Lệnh Dừng hoặc Lệnh Giới hạn nếu khách hàng không muốn Lệnh Dừng hoặc Lệnh Giới hạn vẫn có hiệu lực. Nếu khách hàng không hủy Lệnh Dừng hoặc Giới hạn, Công ty sẽ có quyền, theo quyết định tuyệt đối của mình, xử lý Lệnh Dừng hoặc Lệnh Giới hạn như một chỉ dẫn khi tham gia Giao Dịch mới cho khách hàng nếu và khi báo giá của Công ty đạt hoặc vượt quá mức của Lệnh Dừng hoặc Giới hạn."
 
 msgid "The client acknowledges that it is their responsibility to monitor their Account Balance and Margin Requirement, and the Company is not under any obligation to keep the client informed (i.e. to make a Margin Call)."
-msgstr ""
+msgstr "Khách hàng thừa nhận rằng họ có trách nhiệm theo dõi số dư tài khoản của và yêu cầu ký quỹ của mình và Công ty không có bất cứ nghĩa vụ phải thông báo cho khách hàng (ví dụ, để thực hiện một cuộc gọi ký quỹ)."
 
 msgid "The client acknowledges that it is their responsibility to understand the features, characteristics, terms, and conditions of an Order and the implications of executing an Order before they place an Order with the Company."
-msgstr ""
+msgstr "Khách hàng thừa nhận rằng họ có trách nhiệm hiểu rõ các tính năng, đặc điểm, điều khoản và điều kiện của một Lệnh giao dịch và những hệ lụy khi thực hiện Lệnh trước khi Khách hàng thực hiện một Lệnh giao dịch với Công ty."
 
 msgid "The client acknowledges that the Company reserves the right to establish a minimum and maximum transaction size, as well as a total net position size, which may be subject to alteration, and that the Company will only execute Orders that fall within the range of the minimum and maximum transaction sizes."
-msgstr ""
+msgstr "Khách hàng thừa nhận rằng Công ty có quyền để thiết lập một mức giao dịch tối thiểu và tối đa cũng như một mức thu nhập tối đa, có thể bị thay đổi và rằng Côngtr sẽ chỉ thực hiện các lệnh nằm trong phạm vi của các mức giao dịch tối thiểu và tối đa."
 
 msgid "The client acknowledges that the Company reserves the right to void or close out one or more of the client's transactions if the Company observes any breaches of warranty given under this agreement."
 msgstr ""
 
 msgid "The client acknowledges that the Company will determine, at its discretion, the transactions that will be kept in the Company's own book (known as B booking) and the transactions that will be passed through to the prime brokers who act as liquidity providers for the Company (known as A booking). For the former, the Company is the counterparty in these transactions, and a correlation exists between the profit/loss made by the client and the profit/loss made by the Company. At any point in time, the Company may be entering into or may have entered into transactions with a large number of clients, each of whose interests may diverge from those of other clients. As such, the Company may be holding Open Positions that may not be aligned with the client's objectives/interests as an individual client of the Company."
-msgstr ""
+msgstr "Khách hàng thừa nhận rằng công ty, với quyền hạn tuyệt đối, sẽ xác định các giao dịch sẽ được lưu giữ trong sổ đặt trước của công ty (được biết như bên B đặt trước) và các giao dịch sẽ được chuyển qua cho môi giới chính, những người hoạt động như các nhà cung cấp thanh khoản cho công ty (được biết như A đặt trước). với vế sau, công ty đối tác trong các giao dịch và sự tương quan giữa lợi nhuận/tổn thất được thực hiện bởi khách hàng và lợi nhuận/tổn thất được thực hiện bởi Công ty tồn tại. Tại bất kỳ thời điểm nào, Công ty có thể nhập vào hoặc có thể đã nhập vào các giao dịch với một số lượng lớn các khách hàng, mỗi khách hàng sẽ có những quyền lợi khác nhau. Như vậy, Công ty có thể giữ các vị trí mở không liên kết với lợi ích/mục tiêu của một cá nhân khách hàng của Công ty."
 
 msgid "The client acknowledges, understands, represents, and warrants that they are aware of the functional limitations of the MT5 trading platform (for example Wine, which is not a fully stable application, as disclosed by the MT5 trading platform licensor on their website)."
 msgstr ""
@@ -11061,13 +11059,13 @@ msgid "The client has read the Company's privacy statement and is aware how the 
 msgstr "Khách hàng đã đọc báo cáo bảo mật của Công ty và hiểu cách Công ty xử lý thông tin."
 
 msgid "The client has read these terms and conditions in full and has understood that they will be buying and selling financial contracts subject to these terms and conditions."
-msgstr ""
+msgstr "Khách hàng đã đọc trang chứa các điều khoản và điều kiện pháp lý và hiểu rằng họ sẽ mua và bán các hợp đồng tài chính tuân thủ các điều khoản và điều kiện đó."
 
 msgid "The client has read this legal Terms and conditions page in full and understood that the client will be buying and selling contracts subject to these terms and conditions."
 msgstr "Khách hàng đã đọc trang chứa Các Điều khoản và Điều kiện pháp lý và hiểu rằng họ sẽ mua và bán các hợp đồng tài chính tuân thủ các điều khoản và điều kiện đó."
 
 msgid "The client has sufficient experience and knowledge about contracts for difference to be capable of evaluating the merits and risks of acquiring contracts via this site and have done so without relying on any information contained in this site."
-msgstr ""
+msgstr "Khách hàng có đủ kinh nghiệm và kiến thức trong các vấn đề về hợp đồng chênh lệch để có thể đánh giá ích lợi và rủi ro của việc mua các hợp đồng thông qua trang web này và đã giao dịch mà không dựa vào bất kỳ thông tin nào trên trang web này."
 
 msgid "The client has sufficient experience and knowledge in matters of financial trading to be capable of evaluating the merits and risks of acquiring financial contracts via this site and has done so without relying on any information contained on this site."
 msgstr "Khách hàng có đủ kinh nghiệm và kiến thức trong các vấn đề kinh doanh tài chính để có thể đánh giá ích lợi và rủi ro của việc mua các hợp đồng tài chính thông qua trang web này và đã giao dịch mà không dựa vào bất kỳ thông tin nào trên trang web này."
@@ -11076,13 +11074,13 @@ msgid "The client has the right to object to the direct distribution of marketin
 msgstr ""
 
 msgid "The client has unrealised losses on their MT5 Real Account."
-msgstr ""
+msgstr "Khách hàng đã mất quá nhiều tiền trong Tài Khoản Thực MT5 của mình."
 
 msgid "The client hereby agrees that they will not participate in any illegal, deceptive, misleading, or unethical practices including, but not limited to, disparagement of the MT5 trading platform or other practices which may be detrimental to the MT5 trading platform, the licensor, or public interest."
 msgstr ""
 
 msgid "The client is acting for their sole benefit, and not for or on behalf of any other person."
-msgstr ""
+msgstr "Khách hàng đang hành động cho quyền lợi của mình và không thay mặt cho bất kỳ người nào khác."
 
 msgid "The client is advised that the Binary Options offered by %1 are not traded under the rules of any recognised, designated, or regulated exchange. Consequently, engaging in Binary Options trading may expose the client to substantially greater risks than the investments that are so traded."
 msgstr ""
@@ -11115,7 +11113,7 @@ msgid "The client is responsible for managing the client's tax and legal affairs
 msgstr ""
 
 msgid "The client is to immediately notify the Company if they become aware of the loss, theft, or disclosure to third parties of their login details."
-msgstr ""
+msgstr "Khách hàng sẽ ngay lập tức thông báo cho Công ty nếu họ phát hiện bất kỳ mất mát, trộm cắp hoặc tiết lộ cho bên thứ ba về thông tin đăng nhập của mình."
 
 msgid "The client is warned of the following additional risks:"
 msgstr ""
@@ -11130,13 +11128,13 @@ msgid "The client may communicate with us through this website or by means of e-
 msgstr "Khách hàng có thể liên lạc với chúng tôi qua trang web này hoặc qua e-mail, điện thoại, hoặc cả qua đường bưu điện. Thông tin chi tiết có thể được tìm thấy tại trang Liên Hệ."
 
 msgid "The client may make Margin Payments by transferring funds from their %1 account to their MT5 Real Account. In the event that there are insufficient funds in the client's %1 account to fund their MT5 Real Account, they may make Margin Payments by funding their %1 account and transferring the funds from their %1 account to their MT5 Real Account."
-msgstr ""
+msgstr "Khách hàng có thể thực hiện Thanh Toán Ký Quỹ bằng cách chuyển tiền từ tài khoản %1 sang Tài Khoản Thực MT5 của họ. Trong trường hợp không có đủ tiền trong tài khoản %1 của khách hàng để nạp tiền vào Tài Khoản Thực MT5, họ có thể thực hiện Thanh Toán Ký Quỹ bằng cách cấp tiền cho tài khoản %1 của mình và chuyển tiền từ tài khoản %1 sang Tài Khoản Thực MT5."
 
 msgid "The client may not cancel or amend the level of their Stop and Limit Order once the level has been reached."
-msgstr ""
+msgstr "Khách hàng có thể sẽ không hủy hoặc thay đổi mức của Lệnh Dừng hoặc giớ hạn của họ khi đạt đến mức đó."
 
 msgid "The client may specify their instruction of a Stop Order or apply for a Limit Order for a limited duration or for an indefinite period (a \"good till cancelled\" or \"GTC\" Order)."
-msgstr ""
+msgstr "Khách hàng có thể đưa ra chỉ dẫn chi tiết cho một Lệnh Dừng hoặc áp dụng cho một Lệnh Giới hạn trong một khoảng thời gian nhất định hoặc vô thời hạn (\"sử dụng cho đến khi hủy\" hoặc Lệnh \"GTC\")."
 
 msgid "The client may update the client's personal information at any time by logging in to the \"Settings\" section of the client's account. It is the client's responsibility to ensure that %1 is promptly and continually informed of any change in the client's personal information. The client should note that if the client provides the Company with inaccurate information, or if the client fails to notify the Company of any changes to the information previously supplied by the client, this may adversely affect the quality of the services that the Company can provide."
 msgstr ""
@@ -11154,7 +11152,7 @@ msgid "The client shall accept the risk of using any additional functions provid
 msgstr ""
 
 msgid "The client should not sign up to receive the Margin trading services described in this agreement without understanding their nature and the associated risks."
-msgstr ""
+msgstr "Khách hàng không nên đăng ký để nhận được dịch vụ kinh doanh ký quỹ được mô tả trong thỏa thuận này trừ khi khách hảng hiểucrõ bản chất và các rủi ro liên quan."
 
 msgid "The client should not sign up to receive the trading services described in this agreement unless they understand the nature of these services and the associated risks."
 msgstr ""
@@ -11190,10 +11188,10 @@ msgid "The client's MT5 Real Account as well as all payments and withdrawals the
 msgstr ""
 
 msgid "The client's MT5 Real Account password and login ID are unique, and passwords are hashed so that not even %1 staff can read them. This is the reason why the Company cannot retrieve the client's password and has to send a link for setting a new password to the client's email if they cannot recall their password."
-msgstr ""
+msgstr "Mật khẩu Tài Khoản Thực MT5 và ID đăng nhập của khách hàng là duy nhất và mật khẩu được mã khóa để ngay cả nhân viên %1 cũng không thể đọc chúng. Đây là lý do tại sao Công ty không thể lấy lại mật khẩu của khách hàng và phải cấp cho khách hàng một cái mới tới địa chỉ email của họ nếu khách hàng quên mật khẩu của mình."
 
 msgid "The client's MT5 Real Account shall be funded by transferring funds from their %1 account, subject to the availability and sufficiency of funds in their %1 account and any daily transfer limits. No fund transfers shall be made to any other account in the name of any third party."
-msgstr ""
+msgstr "Tài Khoản Thực MT5 của khách hàng sẽ được tài trợ bằng cách chuyển tiền từ tài khoản %1 của họ, tùy thuộc vào tính khả dụng và đủ tiền trong tài khoản %1 của họ. Việc chuyển tiền không được thực hiện cho bất kỳ tài khoản nào khác dưới tên của bất kỳ bên thứ ba nào."
 
 msgid "The client's Real Money Account opened with %1, which the client uses to trade binary options with %1 trading platform and Binary Webtrader"
 msgstr ""
@@ -11250,7 +11248,7 @@ msgid "The default DNS services provided by your ISP can be slow and insecure. %
 msgstr "Các dịch vụ DNS mặc định được cung cấp bởi ISP của bạn có thể chậm và không an toàn. %1 đề xuất sử dụng dịch vụ %2 DNS của Cloudflare cung cấp cho bạn cách duyệt Internet nhanh hơn và riêng tư hơn."
 
 msgid "The default Stop Out Level applicable to the client's account is published on the Company website. However, the default Stop Out Level is subject to alteration at the Company's absolute discretion. Any changes to the Stop Out Level will take effect immediately. The Company will endeavour to notify the client of an alteration to the default Stop Out Level by publishing the revised default Stop Out Level on the Company website. It is the client's responsibility to check the Company website regularly and remain informed about the default Stop Out Level."
-msgstr ""
+msgstr "Mức dừng mặc định áp dụng đối với tài khoản của khách hàng được đưa ra trên trang web của Công ty. Tuy nhiên, Mức dừng mặc định có thể được thay đổi bởi Công ty. Bất kỳ thay đổi nào tới Mức dừng sẽ có hiệu lực ngay lập tức. Công ty sẽ nỗ lực để thông báo cho khách hàng về sự thay đổi Mức dừng mặc định bằng cách đưa ra Mức dừng mặc định đã chỉnh sửa trên trang web của Công ty. Trách nhiệm của khách hàng là thường xuyên kiểm tra trang web của Công ty và theo sát thông tin về Mức dừng mặc định."
 
 msgid "The duration is the length of a purchased trade (see 'contract period')."
 msgstr "Khoảng thời gian là độ dài thời gian của giao dịch được mua (xem 'thời hạn hợp đồng')."
@@ -11286,7 +11284,7 @@ msgid "The first step is to set the parameters of your trade. There are five tra
 msgstr "Bước đầu tiên là thiết lập thông số cho giao dịch của bạn. Có năm thông số giao dịch bạn cần phải điều chỉnh để có thể nhận được một mức giá cho hợp đồng:"
 
 msgid "The following are causes for termination:"
-msgstr ""
+msgstr "Sau đây là các nguyên nhân có thể dẫn đến hủy Thỏa Thuận:"
 
 msgid "The following are conditions of using the website:"
 msgstr "Sau đây là các điều kiện khi sử dụng trang web:"
@@ -11307,7 +11305,7 @@ msgid "The information outlined in Paragraph 1 of this section shall be submitte
 msgstr ""
 
 msgid "The information provided during the sign-up process warranted by the Affiliate to be true and correct is determined by the Company to be false or incorrect during the term of this Agreement."
-msgstr ""
+msgstr "Thông tin được cung cấp trong quá trình đăng ký đã được Bên liên kết đảm bảo là đúng và chính xác được Công ty xác nhận là sai hoặc không chính xác trong thời hạn của Thoả thuận này."
 
 msgid "The instruments available on the electronic trading platform (including their availability for trading)"
 msgstr ""
@@ -11412,7 +11410,7 @@ msgid "The profit is the difference between the purchase price (the stake) and t
 msgstr "Lợi nhuận là phần chênh lệch giữa giá mua (vốn đầu tư) và khoảng được trả trên giao dịch đã thắng."
 
 msgid "The provision of the Margin trading services described in this agreement utilises a third-party system, acquired via a non-exclusive, non-transferable, non-sublicensable, and terminable licence from the third-party system provider/licensor (the \"MT5 trading platform\"). The client acknowledges that the Company reserves the right to change the third-party system provider/licensor during the course of providing the Margin trading services described in this agreement to the client."
-msgstr ""
+msgstr "Việc cung cấp các dịch vụ kinh doanh ký quỹ được mô tả trong Thỏa Thuận này sử dụng một hệ thống bên thứ ba được mua thông qua một giấy phép không độc quyền, không thể chuyển nhượng, không cấp phép phụ, có thể hủy từ bên thứ ba hệ thống nhà cung cấp/cấp phép (Sàn Giao Dịch MT5\"). Khách hàng thừa nhận rằng Công ty có quyền để thay đổi hệ thống nhà cung cấp/cấp phép của bên thứ ba trong quá trình cung cấp dịch vụ kinh doanh ký quỹ được mô tả trong Thỏa Thuận này cho cho khách hàng."
 
 msgid "The provision of the trading services described in this agreement utilises a third-party system acquired via a non-exclusive, non-transferable, non-sub-licensable, terminable licence from the third-party system provider/licensor (the \"MT5 trading platform\"). The client acknowledges that, when providing trading services described in this agreement to the client, BIEL may decide to change its third–party system provider/licensor and use a trading platform other than the MT5 trading platform. Hence, in such cases, BIEL may decide to use an entirely new third–party system provider/licensor (hereinafter referred to as the \"new trading platform\") or to introduce an additional third–party system provider/licensor (hereinafter referred to as the \"additional trading platform\")."
 msgstr ""
@@ -11511,10 +11509,10 @@ msgid "The types of partnerships we offer"
 msgstr "Các loại hình hợp tác mà chúng tôi cung cấp"
 
 msgid "The use of the %1 API is at the Programmer's own risk, and the Programmer assumes full responsibility and risk of the loss it may suffer as a result of using, or accessing, the %1 API. Except to the extent that liability under any applicable law or regulation cannot be excluded, the following cases hold:"
-msgstr ""
+msgstr "Sử dụng %1 API rất rủi ro, và Lập trình viênphải chịu trách nhiệm hoàn toàn và nguy cơ bị lỗ có thể phải chịu do hậu quả của việc sử dụng hoặc truy cập vào %1 API. Ngoại trừ trong phạm vi mà không thể được loại trừ trách nhiệm pháp lý theo bất kỳ luật hoặc quy định theo những trường hợp sau:"
 
 msgid "The use, operation, or combination of the %1 API with non-%1 API(s), data, equipment, or documentation if liability would have been avoided but for such use, operation, or combination"
-msgstr ""
+msgstr "Việc sử dụng, thao tác hoặc sự kết hợp dữ liệu, thiết bị hoặc tài liệu hướng dẫn của %1 API với không %1 API(s), nếu trách nhiệm pháp lý nào có tránh được, cho hoạt động, hoặc kết hợp"
 
 msgid "The various trade types available on our MT5 platform."
 msgstr "Các hình thức giao dịch khác nhau có sẵn trên sàn MT5 của chúng tôi."
@@ -11562,7 +11560,7 @@ msgid "There is an amount outstanding from the client to BIEL."
 msgstr ""
 
 msgid "There is an amount outstanding from the client to the Company."
-msgstr ""
+msgstr "Có một số tiền chưa thanh toán từ khách hàng cho Công ty."
 
 msgid "There may be times when transfers are not available because the market is closed (weekends or holidays), there is high volatility in the market or because of technical issues."
 msgstr "Có thể sẽ có những thời điểm không chuyển khoản được bởi vì thị trường đóng cửa (ngày cuối tuần hoặc ngày nghỉ), vì có biến động lớn trên thị trường hoặc vì vấn đề kỹ thuật."
@@ -11583,7 +11581,7 @@ msgid "There was some invalid character in an input field."
 msgstr "Có một vài ký tự không hợp lệ trong dữ liệu nhập vào."
 
 msgid "There will be no charges for fund transfers from the client's %1 account to their MT5 Real Account in the same currency. Should the client's %1 account and MT5 Real Account be in different currencies, the Company reserves the right to charge a currency conversion fee."
-msgstr ""
+msgstr "Sẽ không có phí chuyển tiền từ tài khoản %1 của khách hàng vào Tài khoản Thực MT5 của họ bằng cùng loại tiền tệ. Nếu tài khoản %1 và Tài khoản thực MT5 của khách hàng quy định bởi các loại tiền tệ khác nhau, Công Ty có quyền tính phí chuyển đổi tiền tệ."
 
 msgid "Therefore your current immediate maximum withdrawal (subject to your account having sufficient funds) is %1 %2 (or equivalent in other currency)."
 msgstr "Vì vậy khoản tiền rút tối đa hiện giờ của bạn (tùy thuộc vào tài khoản đang có đủ tiền để rút hay không) là %1 %2 (hoặc đồng tiền khác có giá trị tương đương)."
@@ -11676,7 +11674,7 @@ msgid "This Agreement contains the entire agreement between the parties with res
 msgstr "Thỏa Thuận này bao gồm toàn bộ thỏa thuận giữa các bên, và thay thế mọi hiệp định trước đó và bao gồm cả sự hiểu biết lẫn nhau giữa các bên liên quan."
 
 msgid "This Agreement governs the Programmer's use of the Company's API unless the Programmer has executed another agreement with the Company that expressly governs the Programmer's use of the Company's API."
-msgstr ""
+msgstr "Thỏa thuận này quản lý cách Lập trình viên sử dụng API của Công ty trừ khi Lập trình viên đã có một thỏa thuận khác với Công ty rõ ràng cho phép quản lý việc Lập trình viên sử dụng API của Công ty."
 
 msgid "This Agreement has been duly executed and constitutes binding obligations on both parties, enforceable against it in accordance with its terms."
 msgstr ""
@@ -11703,7 +11701,7 @@ msgid "This Agreement shall commence on the Effective Date and will continue to 
 msgstr ""
 
 msgid "This Agreement shall commence on the date that the Programmer first accepts this Agreement and shall continue unless and until terminated in accordance with the term and termination conditions set forth in this Agreement."
-msgstr ""
+msgstr "Thỏa thuận này sẽ bắt đầu có hiệu lực kể từ ngày Lập trinh viên chấp thuận Thỏa thuận này lần đầu tiên, và sẽ tiếp tục có hiệu lực cho đến khi nào kết thúc dựa theo những điều khoản và điều điện Chấm dứt được đặt ra trong Thỏa thuận này."
 
 msgid "This Agreement will be governed and construed in accordance with the laws of the country in which the relevant subsidiary is located, and the parties shall submit to the non-exclusive jurisdiction of the same courts."
 msgstr ""
@@ -11727,10 +11725,10 @@ msgid "This agreement is supplied to the Agent in English. In the event that the
 msgstr ""
 
 msgid "This agreement is supplied to the client in English. In the event that there is a difference between the English version and any translated versions of this document, the English version shall prevail."
-msgstr ""
+msgstr "Thỏa thuận được cung cấp tới khách hàng bằng tiếng Anh. Trong trường hợp có một sự khác biệt giữa phiên bản tiếng Anh và bất kì phiên bản được phiên dịch của tài liệu này, phiên bản tiếng Anh sẽ được áp dụng."
 
 msgid "This agreement will commence on the date that the client receives their MT5 Real Account number and, for any new versions thereafter, on the date the new versions are published on the Company's website."
-msgstr ""
+msgstr "Thỏa thuận này sẽ bắt đầu vào ngày khách hàng nhận được số Tài Khoản Thực MT5 của mình, và, cho bất kỳ phiên bản mới sau đó, vào ngày các phiên bản mới được công bố trên trang web của Công ty."
 
 msgid "This agreement, as well as any and all obligations or rights deriving from this agreement, is binding and enforceable against the Agent."
 msgstr ""
@@ -11757,7 +11755,7 @@ msgid "This document"
 msgstr "Tài liệu"
 
 msgid "This document (the \"Agreement\") sets out the terms and conditions (\"Terms\") between \"the Company\" which is Binary Services Ltd, and \"the Programmer\" (the person who registered for the %1 Application Programme Interface (\"API\")."
-msgstr ""
+msgstr "Tài liệu này (\"Thỏa thuận\" này) đưa ra các điều khoản và điều kiện (\"Các điều khoản\") giữa \"Công ty\" là công ty TNHH Binary Services, và Lập trình viên (người đăng ký Giao Diện Lập Trình Ứng Dụng (\"API\") %1."
 
 msgid "This document (the \"Agreement\") sets out the terms and conditions between \"the Company\", which is Binary Services Ltd, and the person who has applied for this programme (\"the Affiliate\"), in relation to the Affiliate's application to setup an affiliate account (and membership of the affiliate programme if the Affiliate's application is deemed successful)."
 msgstr "Tài liệu (\"Thỏa Thuận\") này đặt ra các điều khoản và điều kiện giữa \"Công Ty\" là Binary Services Ltd và người đăng ký tham gia chương trình; (\"Bên liên kết\"), liên quan đến ứng dụng của Bên liên kết để thiết lập tài khoản liên kết (và là thành viên của chương trình liên kết nếu ứng dụng của Bên liên kết được coi là thành công)."
@@ -11946,7 +11944,7 @@ msgid "To learn more, read our %1Margin Policy%2 that further explains our margi
 msgstr "Để biết thêm, vui lòng đọc %1Chính Sách Biên%2 của chúng tôi sẽ giải thích về điều kiện biên."
 
 msgid "To maintain Open Positions, the client is required to have sufficient Account Equity to cover any Margin Requirement. If a client's Margin Level is less than the Margin Level set for their account, the client has entered into a Margin Call and is required to increase their Margin Level above the account's specified level in order to avoid a Stop Out to occur. The client may not be able to place an Order to open a transaction unless there is sufficient Account Equity to cover the Total Margin."
-msgstr ""
+msgstr "Để duy trì các Vị trí Mớ, khách hàng sẽ cần phải có đủ Vốn sở Hữu để trả cho bất kỳ Yêu cầu Ký quỹ nào. Nếu mức độ Ký quỹ của một khách hàng thấp hơn mức độ được đặt trong tài khoản của khách hàng, họ đã bước vào một đợt Gọi Ký quỹ và cần phải nâng mức Ký quỹ lên trên mức mà tài khoản chỉ định để tránh việc Dừng Bán ra xảy ra. Khách hàng có thể sẽ không đặt được một Lệnh mở giao dịch trừ khi Vốn sở Hữu đủ để thanh toán Tổng Ký quỹ."
 
 msgid "To perform this action, please %1upgrade to %2 Real Account%3."
 msgstr "Để thực hiện hành động này, xin vui lòng %1nâng cấp lên %2tài khoản thực%3."
@@ -12291,7 +12289,7 @@ msgid "Transfer of data"
 msgstr ""
 
 msgid "Transfer of funds"
-msgstr ""
+msgstr "Chuyển vốn"
 
 msgid "Transfer of funds from the MT5 Real Account"
 msgstr ""
@@ -12378,7 +12376,7 @@ msgid "Types of MetaTrader 5 accounts"
 msgstr "Các tài khoản MetaTrader 5"
 
 msgid "Types of Orders"
-msgstr ""
+msgstr "Các loại Lệnh"
 
 msgid "Types of lookbacks"
 msgstr "Trong số các loại lookbacks"
@@ -12465,7 +12463,7 @@ msgid "Unable to read file %1"
 msgstr "Không thể đọc tập tin %1"
 
 msgid "Under no circumstances shall the Company or its directors or employees be liable under this agreement to the Programmer or any third party for any indirect, special, incidental, punitive, or consequential loss or damages or any other similar damages under any theory of liability (whether in contract, tort, strict liability, or any other theory), which are directly or indirectly attributable to the use of, or the inability to use, the %1 API, or any content contained thereon, even if the Company has been informed of the possibility thereof."
-msgstr ""
+msgstr "Trong bất cứ trường hợp nào, kể cả khi Công ty đã được thông báo về khả năng xảy ra sự việc, Công ty hay các giám đốc hoặc các nhân viên trong công ty sẽ không chịu trách nhiệm pháp lý theo thỏa thuận này với Lập trình viên hoặc với bất kỳ một bên thứ ba nào khác về các thiệt hại hay thua lỗ gián tiếp, bất thường, ngẫu nhiên, có tính trừng phạt hay tổn thất hậu quả hay bất kỳ loại tổn thất tương tự khác theo lý thuyết về trách nhiệm pháp lý (có trong hợp đồng, sai lầm cá nhân, trách nhiệm pháp lý nghiêm ngặt hay bất kỳ một lý thuyết khác), cái mà có thể trực tiếp hay gián tiếp ảnh hưởng tới việc sử dụng, hoặc không thể sử dụng, %1 API, hay bất kỳ nội dung được chứa theo đó."
 
 msgid "Under the Rules, clients may be categorised into one of the following three categories:"
 msgstr "Theo Quy tắc, khách hàng có thể được phân loại theo một trong ba nhóm sau:"
@@ -12567,10 +12565,10 @@ msgid "Upon the Company's request, the Agent provides the Company with any and a
 msgstr ""
 
 msgid "Upon the expiration or termination of this Agreement, for whatever reason, all rights and licences granted to the Programmer in this Agreement, including use of the %1 API, shall immediately terminate. The Programmer agrees to promptly cease all further use of the %1 API. Termination of this Agreement shall not act as a waiver of any breach of this Agreement and shall not act as a release of the Programmer's liability for the breach of the Programmer's obligation under this Agreement. The Company shall not be liable to the Programmer for damages of any kind solely as a result of terminating this Agreement in accordance with its terms."
-msgstr ""
+msgstr "Khi Thỏa thuận này hết hạn hay chấm dứt, vì bất kỳ lý do nào, tất cả các quyền và sự cho phép mà bạn được hưởng theo Thỏa thuận này, bao gồm việc sử dụng %1 API, sẽ lập tức chấm dứt. Lập trình viên đồng ý ngừng ngay việc sử dụng %1 API. Sự chấm dứt của Thỏa thuận này sẽ không được coi là sẽ bỏ qua bất kỳ một sự vi phạm nào của Thỏa thuận này và cũng không có nghĩa là Lập trình viên sẽ không phải chịu bất kỳ trách nhiệm pháp lý nào từ việc vi phạm Thỏa thuận này. Công ty sẽ không chịu trách nhiệm với các thiệt hại là kết quả của việc chấm dứt Thỏa thuận này theo các điều khoản của nó."
 
 msgid "Usage limit"
-msgstr ""
+msgstr "Giới hạn sử dụng"
 
 msgid "Use a variety of allocation methods (e.g equity, balance, even, and lot) to distribute trade volumes, starting from 0.01 lots"
 msgstr "Sử dụng một loạt các phương pháp phân bổ (ví dụ như vốn chủ sở hữu, cân bằng, thậm chí, và nhiều) để phân phối các khối lượng thương mại, bắt đầu từ 0,01 lô"
@@ -12594,10 +12592,10 @@ msgid "Use of information"
 msgstr ""
 
 msgid "Use or reproduce the %1 API other than as permitted by these Terms"
-msgstr ""
+msgstr "Sử dụng hay sao chép lại API %1 ngoài những điều được cho phép bởi những Điều khoản này"
 
 msgid "Use the %1 API for any purpose that violates any law or regulation or any right of any person, including but not limited to intellectual property rights, rights of privacy, or rights of personality, or is in any manner inconsistent with these Terms or privacy policy"
-msgstr ""
+msgstr "Việc sử dụng API %1 với bất kỳ mục đích nào mà vi phạm các luật hay quy định, các quyền của con người, bao gồm nhưng không giới hạn quyền sở hữu trí tuệ, quyền riêng tư hay quyền cá nhân, hay bất kỳ thái độ không phù hợp với những Điều khoản hoặc chính sách riêng tư đã được đưa ra"
 
 msgid "Use the Company's name or trademark in the Agent's advertising activities without a written authorisation to be given by the Company"
 msgstr ""
@@ -12624,7 +12622,7 @@ msgid "Use two different exclusion types: 'Allocation' excludes a client from fu
 msgstr "Sử dụng 2 loại loại trừ khác nhau: 'Chỉ định' chỉ loại trừ một khách hàng khỏi các giao dịch tương lai, trong khi 'Toàn bộ' cũng đóng các phiên mở và gỡ bỏ số dư khỏi tài khoản chủ. Các Khách Hàng có thể chọn đóng bất kì phiên mở nào."
 
 msgid "Use, perform, and display the Programmer's Application and its content for purposes of marketing, demonstrating, and making the Programmer's Application available to the Company's clients."
-msgstr ""
+msgstr "Việc sử dụng, thể hiện hay trình bày Ứng Dụng của Lập trình viên và nội dung của nó nhằm mục đích tiếp thị, quảng bá và khiến cho các khách hàng của Công ty biết đến Ứng Dụng của bạn; và."
 
 msgid "Using our website, customers can trade currencies, indices, commodities, and volatility indices 24/7. We have the most flexible pricing and the most comprehensive suite of products available."
 msgstr "Sử dụng trang web của chúng tôi, khách hàng có thể giao dịch tiền tệ, chỉ số, hàng hóa và các chỉ số biến động 24/7. Chúng tôi có giá cả linh hoạt nhất và bộ sản phẩm toàn diện nhất."
@@ -12801,7 +12799,7 @@ msgid "Warranties"
 msgstr "Bảo đảm"
 
 msgid "Warranty disclaimer"
-msgstr ""
+msgstr "Miễn trách nhiệm bảo hiểm"
 
 msgid "We"
 msgstr "Thứ 4"
@@ -13020,13 +13018,13 @@ msgid "When a client is classified as an Eligible Counterparty, BIEL shall not p
 msgstr ""
 
 msgid "When a force majeure event occurs"
-msgstr ""
+msgstr "Khi các trường hợp bất khả kháng xảy ra"
 
 msgid "When a negative balance results from the breach of any of the terms of this agreement by the client"
-msgstr ""
+msgstr "Khi mà tài khoản âm là kết quả của việc khách hàng vi phạm bất cứ quy định của thỏa thuận này"
 
 msgid "When a self-exclusion limit is set on the client's %1 account, the client's MT5 Real Account will be disabled until the self-exclusion limit on their %1 account is removed."
-msgstr ""
+msgstr "Khi giới hạn tự loại trừ được đặt trên tài khoản %1 của khách hàng được đăng ký với Công ty TNHH Binary (Europe), Tài khoản thực MT5 của khách hàng sẽ bị vô hiệu hóa cho đến khi giới hạn tự loại trừ trên tài khoản %1 được loại bỏ."
 
 msgid "When are my commissions paid?"
 msgstr "Khi nào tôi nhận được khoản hoa hồng của mình?"
@@ -13056,13 +13054,13 @@ msgid "When the client gives the Company specific instructions, including (a) sp
 msgstr "Khi mà khách hàng đưa cho Công Ty các chỉ dẫn chi tiết, bao gồm (a) chi tiết giá của Hợp đồng với Công Ty hoặc (b) chi tiết giá tại lúc Hợp đồng được kết thúc, thì những chỉ dẫn này sẽ được ưu tiên hơn những điều khác có trong chính sách của Công Ty."
 
 msgid "When the client is a professional client"
-msgstr ""
+msgstr "Khi khách hàng là một khách hàng chuyên nghiệp"
 
 msgid "When the client opens an account with the Company, the Company will request the client's consent for the distribution of marketing materials to the e-mail address that the client provides to the Company upon sign-up."
 msgstr ""
 
 msgid "When the client opens any transactions in relation to Prohibited Trades"
-msgstr ""
+msgstr "Trong trường hợp khách hàng mở bất kỳ giao dịch liên quan đến Các Giao Dịch Bị Cấm"
 
 msgid "When the client requests a withdrawal from %1 Client Account, such request shall be automatically proceeded, and, as a result, the requested sum shall be transferred from the %1 Client Account to the %1 Agent Account. However, it is noted that when the client reaches the client's withdrawal limits, a withdrawal request shall not be automatically proceeded before the required authentication process is conducted."
 msgstr ""
@@ -13071,7 +13069,7 @@ msgid "When the client transfers their money to BIEL for trading purposes, the c
 msgstr ""
 
 msgid "When the market conditions or market movements/volatility are abnormal"
-msgstr ""
+msgstr "Khi điều kiện thị trường hoặc thị trường biến động bất thường"
 
 msgid "When the remaining funds in your account is unable to cover the leverage or margin requirement, your account will be placed under margin call. To prevent a margin call escalating into a stop out level, you can deposit additional funds into your account or close any open positions."
 msgstr "Khi những khoản tiền còn lại trong tài khoản của bạn không thể để trang trải các đòn bẩy hoặc ký quỹ yêu cầu, tài khoản của bạn sẽ được đặt dưới yêu cần bảo chứng. Để ngăn chặn một cuộc yêu cần bảo chứng leo thang chạm tới mức dừng, bạn có thể gửi thêm tiền vào tài khoản của bạn hoặc đóng bất kỳ phiên mở nào."
@@ -13191,7 +13189,7 @@ msgid "Where the client's obligations to the Company are due and payable, the Co
 msgstr ""
 
 msgid "Where the negative balance is connected to or a result of functional limitations and/or malfunction of the MT5 trading platform"
-msgstr ""
+msgstr "Khi số dư âm được kết nối với hoặc là kết quả của những hạn chế chức năng và/hoặc sự cố của các Sàn Giao Dịch MT5"
 
 msgid "Where you can go"
 msgstr "Nơi bạn có thể tới"
@@ -13209,7 +13207,7 @@ msgid "Whilst the Company acts as principal in respect of the client's orders, t
 msgstr "Trong khi Công Ty đóng vai trò là người quyết định đối với các lệnh của khách hàng, Công Ty cũng đánh giá các địa điểm thực hiện mà Công Ty sử dụng và Công Ty luôn mong muốn sẽ cung cấp kết quả tốt nhất có thể cho việc thực hiện các lệnh của khách hàng. Những địa điểm này thường bao gồm các công ty đầu tư, môi giới và / hoặc nhà cung cấp thanh khoản của bên thứ ba."
 
 msgid "Whilst the Company endeavours to close out the client's Open Positions if and when the Margin Level for their MT5 Real Account reaches or falls below the Stop Out Level, the company does not guarantee that the client's Open Positions will be closed when the Margin Level for their MT5 Real Account reaches the Stop Out Level."
-msgstr ""
+msgstr "Trong khi Công ty cố gắng đóng các Phiên Mở của khách hàng nếu và khi mức ký quỹ của tài khoản thực MT5 của khách hàng đạt tới hay thấp hơn mức Ngừng Giao dịch, Công ty không đảm bảo rằng Phiên Mở của khách hàng sẽ bị đóng khi đạt đến Mức Ký quỹ để Tài Khoản Thực MT5 của họ chạm đến Mức Dừng."
 
 msgid "Whilst the Company endeavours to open or close the transaction to which the client's orders relate at the requested price, acting in accordance with the Company's duty of best execution, there are times when, due to an increase in volatility or volume, orders may be subject to slippage. The difference between the order price and execution price when orders are filled is known as slippage. This means that the client's order is not filled at the exact intended quoted price when the client places their order. Slippage is usually seen during periods of extremely high or low volatility and generally occurs during fundamental news releases or periods of limited liquidity. Slippages can result in either a positive slippage (more favourable to the client) or a negative slippage (less favourable to the client)."
 msgstr ""
@@ -13341,10 +13339,10 @@ msgid "Withdrawal for your account is not allowed at this moment."
 msgstr "Rút tiền từ tài khoản của bạn không được phép tại thời điểm này."
 
 msgid "Withdrawal of funds from MT5 Real Account"
-msgstr ""
+msgstr "Rút tiền từ Tài Khoản Thực MT5"
 
 msgid "Withdrawal of funds from the client's MT5 Real Account can be made in a different currency from the one maintained in the client's %1 account subject to a currency transfer fee charge."
-msgstr ""
+msgstr "Khách hàng có thể rút tiền từ Tài khoản Thực MT5 bằng một loại tiền tệ khác với loại tiền tệ được duy trì trong tài khoản %1 của họ và sẽ phải trả một khoản phí chuyển tiền."
 
 msgid "Withdrawal via payment agent is available only if you deposit exclusively via payment agent."
 msgstr "Rút tiền thông qua đại lý thanh toán chỉ khả dụng nếu bạn gửi độc quyền qua đại lý đó."
