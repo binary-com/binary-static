@@ -101,15 +101,15 @@ const PaymentMethods = () => {
     return (
         <div id='cashier-content'>
             <h1>{it.L('Available payment methods')}</h1>
-            <p className='pm-description'>{it.L('This is a complete list of supported payment methods. We\'ll show you which payment methods are available in your location on the [_1]Deposit page[_2].', `<a href=${it.url_for('cashier/forwardws?action=deposit')}>`, '</a>')}</p>
 
+            <p className='pm-description'>{it.L('This is a complete list of supported payment methods. We\'ll show you which payment methods are available in your location on the deposit page.')}</p>
+            <CashierNote className='gr-parent' text={it.L('Please do not share your bank account, credit card, or e-wallet with another client, as this may cause delays in your withdrawals.')} />
             <div className='center-text'>
                 <p>
                     <Button url='new-account' text={it.L('Open an account now')} />
                     <Button url='cashier/forwardws?action=deposit'  real className='deposit'  text={it.L('Deposit')} />
                     <Button url='cashier/forwardws?action=withdraw' real className='withdraw' text={it.L('Withdraw')} />
                 </p>
-                <CashierNote className='gr-parent' text={it.L('Please do not share your bank account, credit card, or e-wallet with another client, as this may cause delays in your withdrawals.')} />
             </div>
 
             <div id='payment_methods' className='table-container'>
