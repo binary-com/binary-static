@@ -33,8 +33,8 @@ const Onfido = (() => {
 
     const changeOnfidoOptions = options => { onfidoOut.setOptions(options); };
 
-    const simulateCallForApiKey = () => new Promise(resolve => {
-        setTimeout(() => resolve('eyJhbGciOiJIUzI1NiJ9.eyJwYXlsb2FkIjoiV1M0dWsvbUwwcU9PZE1mM3EvckdNS0t3QndWZWF1bDFqbU9KbmhYUXB4VlliRGhxWDJqRUVDL1IzaWNJXG4xbGNvWCs2aEs2TWlXajJCQ0VpVHhNcnRqS2J0TTdTZWh2djlGMFlhWDlYSHJqdz1cbiIsInV1aWQiOiJIeHNhMDl1dmtBOCIsImV4cCI6MTU1NzM5Njk1N30.UY1IULB4B5hItGXlqQws_4vF9-G2ixx1hqBxDTOxzws'), Math.random() * 1000);
+    const simulateCallForApiKey = () => new Promise((resolve, reject) => {
+        setTimeout(() => resolve('eyJhbGciOiJIUzI1NiJ9.eyJwYXlsb2FkIjoiNHZlS0ROeEdQMWoyTUV4QlBQQnVXSklxMDM0akpiWjBNTGdvK3M1YjNRd1NtOXdKODkwb29oVkFBa3B1XG4wM2w1Y1UwNEpETTduaU5hU3BqQitoUUVkalVEYk9abmdLU25yaTNERlZlbFVXcz1cbiIsInV1aWQiOiJIeHNhMDl1dmtBOCIsImV4cCI6MTU2MDkyMjc1OX0.g7fVginRed7rsMHIwc4v5q4UAcxbnAthCYHEraI0M7M'), Math.random() * 1000);
     });
 
     return {
