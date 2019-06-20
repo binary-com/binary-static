@@ -1,8 +1,9 @@
 import React from 'react';
+import Loading from '../../_common/components/loading.jsx';
 
 const Authenticate = () => (
-    <React.Fragment>
-        <div id='onfido' />
+    <div id='onfido'>
+        <Loading id='onfido_loading' />
 
         <div id='upload_complete' className='center-text gr-padding-20 invisible'>
             <img className='gr-padding-20' src={it.url_for('images/pages/authenticate/letter.svg')} />
@@ -26,7 +27,7 @@ const Authenticate = () => (
             <img className='gr-padding-20' src={it.url_for('images/pages/authenticate/valid.svg')} />
             <h1 className='gr-padding-10'>{it.L('You have been successfully verified')}</h1>
         </div>
-    </React.Fragment>
+    </div>
 );
 
 export default Authenticate;

@@ -958,6 +958,9 @@ body #not_authenticated_financial ul.checked > li {
         .onfido-sdk-ui-Button-button-outline:hover {
             background-color: transparent;
         }
+        button:hover {
+            background-color: inherit;
+        }
     }
     .fields > .gr-row > div {
         > .button {
