@@ -11,7 +11,7 @@ const MAM = () => (
 
         <h2 data-anchor='general'>B. {it.L('General')}</h2>
         <ol>
-            <li>{it.L('This Agreement constitutes the entire Agreement between the Parties and no earlier representation, arrangement or agreement written or oral relation to any matter dealt with in this Agreement between the Parties shall have any force or effect before the Commencement Date.')}</li>
+            <li>{it.L('This Agreement constitutes the entire Agreement between the Parties, and no earlier representation, arrangement or agreement written or oral relation to any matter dealt with in this Agreement between the Parties shall have any force or effect before the Commencement Date.')}</li>
             <li>{it.L('This Agreement is supplied to the Client in English. In the event that there is a difference between the English version and any translated versions of this document, the English version shall prevail.')}</li>
             <li>{it.L('Each Party shall do anything reasonably required by the other Party to give effect to the terms of this Agreement.')}</li>
             <li>{it.L('If any terms of this Agreement be held invalid, void, or unenforceable by any relevant authority or regulatory body, the remainder of this Agreement shall remain in full force and effect.')}</li>

@@ -4,14 +4,14 @@ import ListNested from '../../../_common/components/list_nested.jsx';
 const Api = () => (
     <div>
         <h2 data-anchor='api-terms-and-conditions'>{it.L('[_1] Application Programme Interface ("API") terms and conditions', it.website_name)}</h2>
-        <p>{it.L('This document (the "Agreement") sets out the terms and conditions ("Terms") between "the Company" which is Binary Services Ltd, and "the Programmer" (the person who registered for the [_1] Application Programme Interface ("API").', it.website_name)}</p>
+        <p>{it.L('This document (the "Agreement") sets out the terms and conditions ("Terms") between Binary Services Ltd (“the Company”) and the person who registered for the [_1] Application Programme Interface (“the Programmer”).', it.website_name)}</p>
         <ol className='reset_ol'>
             <ListNested
                 strong='1'
                 header={it.L('Definitions')}
                 items={[
                     { text: it.L('"[_1] API" means the [_1] proprietary set of programmatic routines, protocols, tools, and resources created and maintained by [_1] that allows the Programmer to use a registered Application to interface with the [_1] trading platform.', it.website_name) },
-                    { text: it.L('"Content" means any data or content either from the Company\'s Website or accessed via the API. The Company\'s "Website" means [_1]\'s website at www.binary.com and any other website or service owned or operated [_1].', it.website_name) },
+                    { text: it.L('"Content" means any data or content either from the Company\'s Website or accessed via the API. The Company\'s "Website" means [_1]\'s website at www.binary.com and any other website or service owned or operated by [_1].', it.website_name) },
                     { text: it.L('"Third-party Provider(s)" means the third party (non-affiliated) entity that makes available features and functions through use of the [_1] API.', it.website_name) },
                 ]}
             />
@@ -159,7 +159,7 @@ const Api = () => (
                         list_nested: [
                             { text: it.L('The Company may release subsequent versions of the [_1] API and require that the Programmer use those subsequent versions. The Programmer\'s continued use of the APIs following a subsequent release will be deemed the Programmer\'s acceptance of modifications.', it.website_name) },
                             { text: it.L('The Programmer shall discontinue the Programmer\'s use of all prior versions of the [_1] API in favour of the revised [_1] API. While it is the Company\'s intention that the revised [_1] API shall be backward compatible with the immediately prior version of the [_1] API, the Company does not guarantee or warrant that this shall be so, and the Company shall have no liability whatsoever to the Programmer for any failure of the revised [_1] API to be backward compatible with any prior version of the [_1] API.', it.website_name) },
-                            { text: it.L('The Company may change, suspend, terminate, or discontinue any aspect of the [_1] API, including the availability of any services, information features, or functions accessible by means of the [_1] API, on no less than seven days\' advance notice to the Programmer.', it.website_name) },
+                            { text: it.L('The Company may change, suspend, terminate, or discontinue any aspect of the [_1] API, including the availability of any services, information, features, or functions accessible by means of the [_1] API, on no less than seven days\' advance notice to the Programmer.', it.website_name) },
                         ],
                     },
                 ]}
@@ -174,7 +174,7 @@ const Api = () => (
                         list_nested: [
                             { text: it.L('The Company is not liable for loss or damage of any kind whatsoever arising as a result of information or prices published on or furnished through the [_1] API, or any errors or omissions of the [_1] API.', it.website_name) },
                             { text: it.L('The Company shall have no liability arising from orders, investment decisions, or purchases of third-party goods or services (including financial instruments and currency) based on information published on or furnished through the [_1] API.', it.website_name) },
-                            { text: it.L('Under no circumstances shall the Company or its directors or employees be liable under this agreement to the Programmer or any third party for any indirect, special, incidental, punitive, or consequential loss or damages or any other similar damages under any theory of liability (whether in contract, tort, strict liability, or any other theory), which are directly or indirectly attributable to the use of, or the inability to use, the [_1] API, or any content contained thereon, even if the Company has been informed of the possibility thereof.', it.website_name) },
+                            { text: it.L('Under no circumstances shall the Company or its directors or employees be liable under this Agreement to the Programmer or any third party for any indirect, special, incidental, punitive, or consequential loss or damages or any other similar damages under any theory of liability (whether in contract, tort, strict liability, or any other theory), which are directly or indirectly attributable to the use of, or the inability to use, the [_1] API, or any content contained thereon, even if the Company has been informed of the possibility thereof.', it.website_name) },
                         ],
                     },
                 ]}
@@ -206,7 +206,7 @@ const Api = () => (
                 header={it.L('Indemnification')}
                 items={[
                     {
-                        header     : it.L('The Programmer shall be solely responsible for, and shall indemnify and hold the Company free and harmless from, any and all third-party claims, damages, or lawsuits (including, but not limited to, consequential losses and loss of profit and the Company\'s reasonable legal costs and expenses if applicable):'),
+                        header     : it.L('The Programmer shall be solely responsible for, and shall indemnify and hold the Company free and harmless from any and all third-party claims, damages, or lawsuits (including, but not limited to, consequential losses and loss of profit and the Company\'s reasonable legal costs and expenses if applicable):'),
                         list_nested: [
                             { text: it.L('The Programmer or the Programmer\'s employees\' or agents\' acts or omissions, including the Programmer\'s or their breach or alleged breach of these Terms') },
                             { text: it.L('The Programmer\'s breach of any of [_1]\'s rights', it.website_name) },
@@ -232,8 +232,8 @@ const Api = () => (
                 header={it.L('Security')}
                 items={[
                     {
-                        text: it.L('The Programmer must promptly report any security deficiencies in, or intrusions to, the Programmer\'s Application that the Programmer discovers to [_1] by writing in to [_2] or by raising a discussion thread on [_3] which is part of our Developer Site. The Programmer will work with [_1] to immediately correct any security deficiency and will immediately disconnect any intrusions or intruder. In the event of any security deficiency or intrusion involving the Application, APIs, or Content, the Programmer will make no public statements (e.g. press, blogs, social media, bulletin boards, etc.) without prior written and express permission from [_1] in each instance.', it.website_name,
-                            '<a href="https://hackerone.com/binary" target="_blank" rel="noopener noreferrer">Hackerone</a>', '<a href="https://binary.vanillacommunity.com" target="_blank" rel="noopener noreferrer">Vanilla Community</a>'),
+                        text: it.L('The Programmer must promptly report any security deficiencies in, or intrusions to, the Programmer\'s Application that the Programmer discovers to [_1] by writing in to [_2] or by raising a discussion thread on [_3] which is part of our [_4]. The Programmer will work with [_1] to immediately correct any security deficiency and will immediately disconnect any intrusions or intruders. In the event of any security deficiency or intrusion involving the Application, APIs, or Content, the Programmer will make no public statements (e.g. press, blogs, social media, bulletin boards, etc.) without prior written and express permission from [_1] in each instance.', it.website_name,
+                            '<a href="https://hackerone.com/binary" target="_blank" rel="noopener noreferrer">Hackerone</a>', '<a href="https://binary.vanillacommunity.com" target="_blank" rel="noopener noreferrer">Vanilla Community</a>', '<a href="https://developers.binary.com" target="_blank" rel="noopener noreferrer">Developer Site</a>'),
                     },
                 ]}
             />
@@ -268,7 +268,7 @@ const Api = () => (
                                 header     : it.L('The following are causes for termination:'),
                                 list_nested: [
                                     { text: it.L('The Programmer is in default or breach of any covenant, obligation, or condition contained in this Agreement, and such default is not cured within seven days of receipt of written notice from the Company.') },
-                                    { text: it.L('The Programmer\'s use of the [_1] API causes damage to the [_1] trading platform, then [_1] may, at its option, forthwith suspend the Programmer\'s use of the [_1] API and/or terminate this Agreement without further written notice.', it.website_name) },
+                                    { text: it.L('The Programmer\'s use of the [_1] API causes damage to the [_1] trading platform; in which case then [_1] may, at its option, forthwith suspend the Programmer\'s use of the [_1] API and/or terminate this Agreement without further written notice.', it.website_name) },
                                 ],
                             },
                         ],
@@ -276,7 +276,7 @@ const Api = () => (
                     {
                         header     : it.L('Effect of termination'),
                         list_nested: [
-                            { text: it.L('Upon the expiration or termination of this Agreement, for whatever reason, all rights and licences granted to the Programmer in this Agreement, including use of the [_1] API, shall immediately terminate. The Programmer agrees to promptly cease all further use of the [_1] API. Termination of this Agreement shall not act as a waiver of any breach of this Agreement and shall not act as a release of the Programmer\'s liability for the breach of the Programmer\'s obligation under this Agreement. The Company shall not be liable to the Programmer for damages of any kind solely as a result of terminating this Agreement in accordance with its terms.', it.website_name) },
+                            { text: it.L('Upon the expiration or termination of this Agreement, for whatever reason, all rights and licences granted to the Programmer in this Agreement, including use of the [_1] API, shall immediately terminate. The Programmer agrees to promptly cease all further use of the [_1] API. Termination of this Agreement shall not act as a waiver of any breach of this Agreement and shall not act as a release of the Programmer\'s liability for the breach of the Programmer\'s obligation under this Agreement. The Company shall not be liable to the Programmer for damages of any kind solely as a result of terminating this Agreement in accordance with its Terms.', it.website_name) },
                         ],
                     },
                 ]}
