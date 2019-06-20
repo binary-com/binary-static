@@ -3,7 +3,7 @@ import React from 'react';
 const OrderExecution = () => (
     <div>
         <h2 data-anchor='summary-order-execution-policy'>{it.L('Summary of the order execution policy')}</h2>
-        <p>{it.L('The Company has a general duty to conduct its business with the client honestly, fairly, and professionally and to act in the client\'s best interests when opening and closing Binary Options trades with the client.')}</p>
+        <p>{it.L('The Company has a general duty to conduct its business with the client honestly, fairly, and professionally and to act in the client\'s best interests when opening and closing binary options trades with the client.')}</p>
         <p>{it.L('More specifically, when the Company enters into a Binary Option trade with the client (each, a "Contract"), the Company has a duty to provide the client with \'best execution\'. Best execution means that the Company must take reasonable steps to obtain the best possible result for the client when executing a client order. This document provides a summary of the Company\'s best execution policy.')}</p>
         <p data-show='eucountry'>{it.L('The client should note that the Company\'s duty to provide the client with best execution does not apply to any gambling products that the client places with the Company when there is no underlying financial market.')}</p>
         <p>{it.L('This policy applies to clients classified as retail or professional. Clients classified as eligible counterparties are outside the scope of this policy.')}</p>
@@ -31,7 +31,7 @@ const OrderExecution = () => (
 
         <h2 data-anchor='best-execution-factors'>{it.L('Best execution factors')}</h2>
         <p>{it.L('In relation to Contracts that the client enters into with the Company, the Company acts as principal and not as agent on the client\'s behalf; therefore, the Company acts as the sole execution venue for the execution of the client\'s Contracts.')}</p>
-        <p>{it.L('The Company will mainly ensure best execution for the client by giving due consideration to the market price when calculating the Company\'s bid/offer price for the underlying reference product to which the client\'s Contract relates. In order to ascertain the market price, the Company has access to a number of different data sources, which provide the Company with an objective view of the bids and offers available to arms\' length traders.')}</p>
+        <p>{it.L('The Company will mainly ensure best execution for the client by giving due consideration to the market price when calculating the Company\'s Bid/Ask for the underlying reference product to which the client\'s Contract relates. In order to ascertain the market price, the Company has access to a number of different data sources, which provide the Company with an objective view of the bids and offers available to arms\' length traders.')}</p>
         <p>{it.L('In the case of some Contracts, there may be no functioning or open market or exchange on which the reference product is traded at the time of the client order. In such cases, the Company sets out to determine a fair underlying price based on a number of factors, such as price movements on associated markets and other market influences and information about the client order.')}</p>
         <p>{it.L('The Company is required to take a number of factors into account when considering how to give the client best execution, specifically:')}</p>
         <ul>
