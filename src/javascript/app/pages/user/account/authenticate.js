@@ -1,6 +1,6 @@
-const Onfido              = require('onfido-sdk-ui');
 const Cookies             = require('js-cookie');
 const DocumentUploader    = require('@binary-com/binary-document-uploader');
+const Onfido              = require('onfido-sdk-ui');
 const Client              = require('../../../base/client');
 const displayNotification = require('../../../base/header').displayNotification;
 const BinarySocket        = require('../../../base/socket');

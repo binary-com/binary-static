@@ -1,7 +1,7 @@
-import React from 'react';
-import Loading from '../../_common/components/loading.jsx';
+import React                        from 'react';
+import Loading                      from '../../_common/components/loading.jsx';
 import AuthenticateMessageFinancial from '../_includes/authenticate_message_financial.jsx';
-import AuthenticateMessage from '../_includes/authenticate_message.jsx';
+import AuthenticateMessage          from '../_includes/authenticate_message.jsx';
 
 const Authenticate = () => (
     <React.Fragment>
