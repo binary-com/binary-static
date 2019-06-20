@@ -126,19 +126,17 @@ const MetaTraderConfig = (() => {
             } else if (is_demo) {
                 if (Client.get('residence') === 'gb') {
                     if (is_virtual) {
-                        resolve(needsRealMessage());
+                        resolve($messages.find('#msg_upgrade').html());
                     }
 
                     BinarySocket.wait('get_account_status').then((response) => {
                         if (!/age_verification/.test(response.get_account_status.status)) {
-                            $message.find('#msg_metatrader_account').setVisibility(1);
-                            $message.find('.authenticate').setVisibility(1);
-                            resolve($message.html());
+                            resolve($messages.find('#msg_proceed_authentication').html());
                         }
+
+                        resolve();
                     });
                 }
-
-                resolve();
             } else if (is_virtual) { // virtual clients can only open demo MT accounts
                 resolve(needsRealMessage());
             } else {
