@@ -23,9 +23,6 @@ const Authenticate = (() => {
         $submit_table;
 
     const simulateCallForApiKey = () => new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve('eyJhbGciOiJIUzI1NiJ9.eyJwYXlsb2FkIjoiNHZlS0ROeEdQMWoyTUV4QlBQQnVXSklxMDM0akpiWjBNTGdvK3M1YjNRd1NtOXdKODkwb29oVkFBa3B1XG4wM2w1Y1UwNEpETTduaU5hU3BqQitoUUVkalVEYk9abmdLU25yaTNERlZlbFVXcz1cbiIsInV1aWQiOiJIeHNhMDl1dmtBOCIsImV4cCI6MTU2MTAxMDQyNn0.W2fR0UU8Npi_8L7NbZOU-4Xx9WMuu7TIioIVx4vQiQ0');
-        }, 500);
         if (Cookies.get('onfido_token')) {
             resolve(Cookies.get('onfido_token'));
         } else {
