@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-06-17 02:19\n"
+"PO-Revision-Date: 2019-06-20 01:36\n"
 "Last-Translator: binarycom\n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -3131,7 +3131,7 @@ msgid "Contracts may not expire on a weekend; therefore, the expiry date of a co
 msgstr "有些合约不能在周末到期，因此，如果合约的原定到期日为周六或周日，可能需延后至下周周一。"
 
 msgid "Contracts offered by Binary Investments (Europe) Ltd have a minimum purchase price of USD/GBP/EUR 5."
-msgstr "Binary投资 (欧洲) 有限公司的合约最小购入价为5美元/英镑/欧元。"
+msgstr "Binary Investments (Europe) Ltd 的合约最小购入价为5美元/英镑/欧元。"
 
 msgid "Contracts sold"
 msgstr "售出合约"
@@ -6529,9 +6529,6 @@ msgstr "限额"
 msgid "Limit Order"
 msgstr "限价订单"
 
-msgid "Limit applies until"
-msgstr "限制有效期至"
-
 msgid "Limit/Limit Price"
 msgstr "限制/限价"
 
@@ -7030,8 +7027,11 @@ msgstr "未平仓头寸的最大赔付总额"
 msgid "Maximum daily turnover"
 msgstr "最大日成交量"
 
-msgid "Maximum deposit amount limit"
+msgid "Maximum deposit limit"
 msgstr "最大存款限额"
+
+msgid "Maximum deposit limit expiry"
+msgstr "最大存款限额到期日"
 
 msgid "Maximum leverage"
 msgstr "最大杠杆"
@@ -7493,7 +7493,7 @@ msgid "No payout if exit spot is below or equal to the lower barrier."
 msgstr "如果退市现价低于或等于低障碍, 不能获得赔付。"
 
 msgid "No person shall abuse this site for the purpose of money laundering. The Company employs best-practice anti-money laundering procedures. All transactions are checked to prevent money laundering, which may have several effects on clients. The Company reserves the right to refuse to do business with, to discontinue to do business with, and to reverse the transactions of clients who do not accept or adhere to these anti-money laundering processes. Acceptable funds should not originate from criminal activity. The Company is bound to report suspicious transactions to relevant authorities."
-msgstr "任何人都不得以洗钱为目的滥用本网站。公司采用最佳反洗钱程序。所有交易都会被检查，以防止可能对客户造成影响的洗钱活动。公司保留权利拒绝、中断或撤销不接受或不遵守反洗钱规定的客户所执行的交易。基金不可来自非法活动。公司会向有关当局申报可疑的交易。"
+msgstr "任何人都不得以洗钱为目的滥用本网站。公司采用最佳反洗钱程序。所有交易都会被检查以防止洗钱活动, 对此可能对客户造成影响。公司保留权利拒绝、中断或撤销不接受或不遵守反洗钱规定的客户所执行的交易。基金不可来自非法活动。公司会向有关当局申报可疑的交易。"
 
 msgid "No thanks"
 msgstr "不，谢谢"
@@ -9227,9 +9227,6 @@ msgstr "起伏现货外汇"
 msgid "Runs and manages a website that promotes forex or binary options"
 msgstr "促进外汇或二元期权的网站运行和管理"
 
-msgid "Russia"
-msgstr "俄罗斯"
-
 msgid "SQL,"
 msgstr "SQL,"
 
@@ -9924,7 +9921,7 @@ msgid "Such a withdrawal would result in the client's Account Equity being less 
 msgstr "此项提款将导致客户账户的资金小于零。"
 
 msgid "Such materials may be copied and distributed on a limited basis for noncommercial purposes only, provided that any material copied remains intact and that all copies include the following notice in a clearly visible position: &ldquo;Copyright 1999-<span class='currentYear'></span> Binary Ltd. All rights reserved.&rdquo;"
-msgstr "这类材料可以复制和传播，并用于非商业目的，前提是所有复制的材料必须保持完整，且在明显位置标注以下声明：&ldquo;Copyright 1999-<span class='currentYear'></span>Binary Ltd.。版权所有。&rdquo;"
+msgstr "这类材料可以复制和传播，并用于非商业目的，前提是所有复制的材料必须保持完整，且在明显位置标注以下声明：&ldquo;Copyright 1999-<span class='currentYear'></span>Binary Ltd. All rights reserved.&rdquo;"
 
 msgid "Summarise audit findings and work with department heads on the proposed solutions"
 msgstr "总结审计结果, 并与部门负责人合作制定拟议的解决方案"
@@ -11095,7 +11092,7 @@ msgid "The client is also reminded that their internet connection can influence 
 msgstr "还有考虑客户的网路连接可能会影响到交易执行后的显示价格。"
 
 msgid "The client is asked to note that weekend quotes are ignored for the purpose of contract settlement. During weekends, the forex markets may occasionally generate prices; however, these prices are often artificial (traders sometimes take advantage of the illiquidity of the markets during weekends to push prices up or down). To avoid settling prices based on such artificial prices, it is Company's policy not to count weekend prices towards contract settlement values (except for Volatility Indices, which are open during weekends)."
-msgstr "请客户注意，为进行合约结算，周末报价将忽略不计。周末，外汇交易市场也许会偶尔产生价格，但这些价格只是人为的（交易商有时会利用周末市场缺乏流动性而抬高或压低价格）。为了避免结算受人为价格影响，公司的%1策略是在合约结算时不计算周末报价（波动率指数除外，因为这些指数周末也开放）。"
+msgstr "请客户注意，为进行合约结算，周末报价将忽略不计。周末，外汇交易市场也许会偶尔产生价格，但这些价格只是人为的（交易商有时会利用周末市场缺乏流动性而抬高或压低价格）。为了避免结算受人为价格影响，公司的策略是在合约结算时不计算周末报价（波动率指数除外，因为这些指数周末也开放）。"
 
 msgid "The client is not resident in a restricted country such as Canada, Hong Kong, Israel, Jersey, Malaysia, Malta, Paraguay, the United Arab Emirates, the USA, or any other restricted country that has been identified by the FATF as having strategic deficiencies."
 msgstr "客户不是被FATF认定具有策略缺陷的国家和地区如加拿大、香港、以色列、泽西岛、马来西亚、马耳他、巴拉圭、阿拉伯联合酋长国、美国或任何其他受限制国家的居民。"
@@ -11335,7 +11332,7 @@ msgid "The market exit price is the price in effect at the end of the contract p
 msgstr "市场平仓价为合约到期时的有效价格。"
 
 msgid "The materials comprising the %1 website (including without limitation all articles, text, images, logos, compilation, systems, code, and design) are under Copyright 1999-%2 Binary Group of companies with all rights reserved."
-msgstr "%1 网站所包含的各种材料（包括但不限于所有文章、文字、图片、标识、整理材料、系统、代码和设计）版权归由 %2 Binary Group 各公司（1999-年）所有 。公司保留所有权利。"
+msgstr "%1 网站所包含的各种材料（包括但不限于所有文章、文字、图片、标识、整理材料、系统、代码和设计）版权归由 Binary Group 各公司（1999-%2年）所有 。公司保留所有权利。"
 
 msgid "The maximum loss that may be incurred by any client is the amount of money paid by the client to the Company."
 msgstr "客户可能蒙受的最大损失就是其向本公司支付的金额。"
@@ -11777,6 +11774,9 @@ msgstr "这包括关于推出新市场的决定, 以及我们可能提供的价�
 
 msgid "This interest adjustment (or swap rate) is based on interbank lending rates, on top of a 2% fee."
 msgstr "此利率调整 (或掉期利率) 是基于银行间借贷利率，再加上2%费用。"
+
+msgid "This is a complete list of supported payment methods. We'll show you which payment methods are available in your location on the deposit page."
+msgstr ""
 
 msgid "This is a staging server - For testing purposes only"
 msgstr "这是分期服务器 -仅用于测试目的"
