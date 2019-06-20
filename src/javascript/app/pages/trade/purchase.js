@@ -258,7 +258,7 @@ const Purchase = (() => {
                 price               : passthrough['ask-price'],
                 payout              : receipt.payout,
                 shortcode           : receipt.shortcode,
-                show_contract_result: 1,
+                show_contract_result: has_chart,
                 width               : $('#confirmation_message').width(),
                 id_render           : 'trade_tick_chart',
             });
