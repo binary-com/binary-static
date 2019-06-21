@@ -127,7 +127,9 @@ const MetaTraderConfig = (() => {
                 if (Client.get('residence') === 'gb') {
                     BinarySocket.wait('get_account_status').then((response) => {
                         if (!/age_verification/.test(response.get_account_status.status)) {
-                            resolve($messages.find('#msg_proceed_authentication').html());
+                            $message.find('#msg_metatrader_account').setVisibility(1);
+                            $message.find('.authenticate').setVisibility(1);
+                            resolve($message);
                         }
 
                         resolve();
@@ -196,6 +198,10 @@ const MetaTraderConfig = (() => {
                                 showCitizenshipMessage();
                                 is_ok = false;
                             }
+                            if (!/age_verification/.test(response_get_account_status.status)) {
+                                $message.find('.authenticate').setVisibility(1);
+                                is_ok = false;
+                            }
                             if (is_ok && !isAuthenticated()) {
                                 $new_account_financial_authenticate_msg.setVisibility(1);
                             }
@@ -216,6 +222,10 @@ const MetaTraderConfig = (() => {
                             }
                             if (!response_get_settings.citizen && !(is_maltainvest && !has_financial_account)) {
                                 showCitizenshipMessage();
+                                is_ok = false;
+                            }
+                            if (!/age_verification/.test(response_get_account_status.status)) {
+                                $message.find('.authenticate').setVisibility(1);
                                 is_ok = false;
                             }
 
