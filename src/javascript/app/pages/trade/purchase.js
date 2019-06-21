@@ -258,7 +258,7 @@ const Purchase = (() => {
                 price               : passthrough['ask-price'],
                 payout              : receipt.payout,
                 shortcode           : receipt.shortcode,
-                show_contract_result: has_chart,
+                show_contract_result: 1,
                 width               : $('#confirmation_message').width(),
                 id_render           : 'trade_tick_chart',
             });
@@ -278,7 +278,9 @@ const Purchase = (() => {
                 if (contract) {
                     status = contract.status;
                     profit_value = contract.profit;
-                    TickDisplay.setStatus(contract);
+                    if (has_chart) {
+                        TickDisplay.setStatus(contract);
+                    }
                     if (/^digit/i.test(contract.contract_type)) {
                         if (contract.status !== 'open' || contract.is_sold || contract.is_settleable) {
                             digitShowExitTime(contract.status, contract.exit_tick);
