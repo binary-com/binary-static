@@ -725,7 +725,8 @@ const ViewPopup = (() => {
                 e.stopPropagation();
                 is_sell_clicked = true;
                 sellSetVisibility(false);
-                BinarySocket.send({ sell: contract_id, price: contract.bid_price }).then((response) => {
+                const bid_price_number = parseFloat(contract.bid_price.replace(',', '')); // API request should not have comma
+                BinarySocket.send({ sell: contract_id, price: bid_price_number }).then((response) => {
                     responseSell(response);
                 });
             });
