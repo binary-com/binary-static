@@ -129,7 +129,7 @@ const MetaTraderConfig = (() => {
                         if (!/age_verification/.test(response.get_account_status.status)) {
                             $message.find('#msg_metatrader_account').setVisibility(1);
                             $message.find('.authenticate').setVisibility(1);
-                            resolve($message);
+                            resolve($message.html());
                         }
 
                         resolve();
@@ -174,13 +174,17 @@ const MetaTraderConfig = (() => {
                     if (is_maltainvest && (is_financial || is_demo_financial) && !has_financial_account) {
                         $message.find('.maltainvest').setVisibility(1);
                         
-                        BinarySocket.wait('get_account_status').then((response) => {
-                            if (Client.get('residence') === 'gb' && !/age_verification/.test(response.get_account_status.status)) {
-                                $message.find('.authenticate').setVisibility(1);
-                            }
+                        if (Client.get('residence') === 'gb') {
+                            BinarySocket.wait('get_account_status').then((response) => {
+                                if (!/age_verification/.test(response.get_account_status.status)) {
+                                    $message.find('.authenticate').setVisibility(1);
+                                }
 
+                                resolveWithMessage();
+                            });
+                        } else {
                             resolveWithMessage();
-                        });
+                        }
                     }
 
                     const response_get_settings = State.getResponse('get_settings');
