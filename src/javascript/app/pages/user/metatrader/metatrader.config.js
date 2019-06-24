@@ -169,11 +169,18 @@ const MetaTraderConfig = (() => {
                     const has_financial_account = Client.hasAccountType('financial', 1);
                     const is_maltainvest        = State.getResponse(`landing_company.mt_financial_company.${getMTFinancialAccountType(acc_type)}.shortcode`) === 'maltainvest';
                     const is_demo_financial     = accounts_info[acc_type].account_type === 'demo' && accounts_info[acc_type].mt5_account_type; // is not demo vol account
-                    const is_financial = accounts_info[acc_type].account_type === 'financial';
+                    const is_financial          = accounts_info[acc_type].account_type === 'financial';
 
                     if (is_maltainvest && (is_financial || is_demo_financial) && !has_financial_account) {
                         $message.find('.maltainvest').setVisibility(1);
-                        resolveWithMessage();
+                        
+                        BinarySocket.wait('get_account_status').then((response) => {
+                            if (Client.get('residence') === 'gb' && !/age_verification/.test(response.get_account_status.status)) {
+                                $message.find('.authenticate').setVisibility(1);
+                            }
+
+                            resolveWithMessage();
+                        });
                     }
 
                     const response_get_settings = State.getResponse('get_settings');
@@ -198,7 +205,7 @@ const MetaTraderConfig = (() => {
                                 showCitizenshipMessage();
                                 is_ok = false;
                             }
-                            if (!/age_verification/.test(response_get_account_status.status)) {
+                            if (Client.get('residence') === 'gb' && !/age_verification/.test(response_get_account_status.status)) {
                                 $message.find('.authenticate').setVisibility(1);
                                 is_ok = false;
                             }
@@ -224,7 +231,7 @@ const MetaTraderConfig = (() => {
                                 showCitizenshipMessage();
                                 is_ok = false;
                             }
-                            if (!/age_verification/.test(response_get_account_status.status)) {
+                            if (Client.get('residence') === 'gb' && !/age_verification/.test(response_get_account_status.status)) {
                                 $message.find('.authenticate').setVisibility(1);
                                 is_ok = false;
                             }
