@@ -129,9 +129,10 @@ const MetaTraderConfig = (() => {
                         if (!/age_verification/.test(response.get_account_status.status)) {
                             $message.find('#msg_metatrader_account').setVisibility(1);
                             $message.find('.authenticate').setVisibility(1);
+                            resolve($message.html());
                         }
 
-                        resolve($message.html());
+                        resolve();
                     });
                 } else {
                     resolve();
