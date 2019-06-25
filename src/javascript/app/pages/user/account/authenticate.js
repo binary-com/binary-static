@@ -1,6 +1,6 @@
 const DocumentUploader    = require('@binary-com/binary-document-uploader');
 const Client              = require('../../../base/client');
-const displayNotification = require('../../../base/header').displayNotification;
+const Header              = require('../../../base/header');
 const BinarySocket        = require('../../../base/socket');
 const CompressImage       = require('../../../../_common/image_utility').compressImg;
 const ConvertToBase64     = require('../../../../_common/image_utility').convertToBase64;
@@ -452,12 +452,9 @@ const Authenticate = (() => {
     };
 
     const showSuccess = () => {
-        const msg = localize('We are reviewing your documents. For more details [_1]contact us[_2].',
-            [`<a href="${Url.urlFor('contact')}">`, '</a>']);
-
-        BinarySocket.send({ get_account_status: 1 })
-            .then(() => { displayNotification(msg, false, 'document_under_review'); });
-
+        BinarySocket.send({ get_account_status: 1 }, { forced: true }).then(() => {
+            Header.displayAccountStatus();
+        });
         setTimeout(() => {
             removeButtonLoading();
             $button.setVisibility(0);

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-06-20 05:30\n"
+"PO-Revision-Date: 2019-06-25 11:15\n"
 "Last-Translator: binarycom\n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
@@ -43,7 +43,7 @@ msgid " means %1."
 msgstr " означает %1."
 
 msgid " means Monday to Friday (UTC+8)."
-msgstr ""
+msgstr " означает с понедельника по пятницу (UTC+8)."
 
 msgid " means a client's trading account opened with Binary in accordance with the account procedure provided on %1."
 msgstr ""
@@ -109,7 +109,7 @@ msgid "\"Company\" means Binary (V) Ltd, operating under the brand or trademark 
 msgstr "\"Компания\" означает компанию Binary (V) Ltd, работающую под брендом или торговой маркой %1, зарегистрированную в республике Вануату в рамках главы 222 Закона о международных компаниях и Закона о лицензировании финансовых услуг (глава 70), имеющую лицензию на предоставление инвестиционных услуг и работу с ценными бумагами."
 
 msgid "\"Content\" means any data or content either from the Company's Website or accessed via the API. The Company's \"Website\" means %1's website at www.binary.com and any other website or service owned or operated by %1."
-msgstr ""
+msgstr "\"Контент\" означает любые данные, текст вебсайте Компании или доступ к ним через API (интерфейс прикладного программирования). \"Вебсайт\" Компании обозначает сайт %1, находящийся по адресу www.binary.com, а также любой другой сайт или услуги, принадлежащие или предоставляемые ресурсом %1."
 
 msgid "\"Money Manager\" means any physical person including any executor, representative, administrator or successor in law, authorised to manage the Account on behalf of the Client in accordance with this Agreement."
 msgstr "\"Фондовый менеджер\" означает любое физическое лицо, включая любого исполнителя, представителя, администратора или законного приемника, уполномоченного управлять счётом от имени Клиента, согласно данному Соглашению."
@@ -633,8 +633,8 @@ msgstr "20%"
 msgid "25%"
 msgstr "25%"
 
-msgid "3. Selfie or self-portrait photo"
-msgstr "3. Сэлфи или автопортретное фото"
+msgid "3. Selfie with proof of ID"
+msgstr ""
 
 msgid "3.50"
 msgstr "3.50"
@@ -1438,7 +1438,7 @@ msgid "Any failure on the Programmer's part to maintain the security of any secu
 msgstr "неспособность Программиста поддерживать безопасность любого устройства защиты или процедур, применимых на сайте или в отношении интерфейса прикладного программирования (API) %1,"
 
 msgid "Any form of spam will result in the Affiliate's account being placed under review and all funds due being withheld pending an investigation into the Affiliate's account. The Affiliate needs to be aware that %1 is liable to incur expenses in dealing with spam generated mail and these same expenses will be deducted from the Affiliate's account. In this instance, the amount determined will be fair and deemed final and acceptable based on good faith, and such amount will be collectable by law and deemed to have been accepted by the Affiliate as fair and reasonable and as agreed to by registration as an affiliate of %1."
-msgstr ""
+msgstr "Любой вид спама приведёт к проверке Партнёрского счета и удержанию средств в течение всего времени расследования деятельности на Партнёрском счету. Партнёру необходимо знать, что %1 несет материальную ответственности за почту, считающуюся спамом, и все расходы такого рода будут вычтены с Партнёрского счета. В подобных случаях сумма рассчитывается по усмотрению Компании и считается окончательной, а также пригодной к сбору с точки зрения закона и признанной Партнёром справедливой и разумной, в соответствии с принятым Партнерским соглашением с %1."
 
 msgid "Any information given on these pages, and/or emails or newsletters sent by the Company related thereto, is not intended as financial or investment advice and the Company will not accept any liability in this respect."
 msgstr "Любая информация, перечисленная на данных страницах, предоставленная в электронных сообщениях или информационной рассылке, отправляемой Компанией, не должна рассматриваться в качестве финансового или инвестиционного совета. Компания не принимает никакой ответственности в отношении данной информации."
@@ -1459,7 +1459,7 @@ msgid "Any instance where the Company may suffer any pecuniary, fiscal, or regul
 msgstr "любой инцидент, в котором Компания может пострадать в финансовом, налоговом или законном плане как следствие действий того человека на данном сайте,"
 
 msgid "Any notice given or made under this Agreement to the Company shall be by email to %1. The Company shall send the Affiliate any notices given or made under this Agreement to the email address supplied on the Affiliate's application form or such other email addresses as notified by the Affiliate to the Company."
-msgstr ""
+msgstr "Любое уведомление, предоставленное или сделанное Компании в рамках данного Соглашения, должно быть отправлено по эл. почте на адрес %1. Компания будет отправлять Партнёру любые уведомления по данному Соглашению на электронный адрес, предоставленный Партнёром при подаче заявления, или другой электронный адрес, который Партнёр сообщит Компании."
 
 msgid "Any notice required by this Agreement shall be in writing and shall be emailed to the following addresses:"
 msgstr ""
@@ -2398,7 +2398,7 @@ msgid "By submitting suggestions or other feedback regarding the %1 API to the C
 msgstr "Отправляя Компании предложения или иные отзывы относительно API %1 (\"Дополнения\"), Программист признаёт и соглашается со следующими положениями:"
 
 msgid "By using or interacting with the %1 website, the client is giving permission to the use of the Google Analytics User ID Feature, which allows Google to capture the client's %1 login ID such as VRTC1234 and MT1234. When this feature is enabled, no personally identifiable information other than the client's %1 login ID, or other data that can be linked to such information by Google, is shared with or disclosed to Google."
-msgstr ""
+msgstr "Используя сайт %1 и работая на нем, клиент соглашается с применением функции User ID от Google Analytics, которая позволяет Google идентифицировать номер счёта клиента на %1 (например, VRTC1234 и MT1234). Когда включена эта функция, никакая другая личная информация, кроме номера счёта %1, или другие связанные с ним данные не передаются и не сохраняются в Google при помощи функции User ID от Google Analytics."
 
 msgid "By using the electronic trading system, including the MT5 trading platform, clients accept full responsibility for using such platforms and for any Orders transmitted via such platforms."
 msgstr ""
@@ -2884,7 +2884,7 @@ msgid "Commissions"
 msgstr "Комиссионные"
 
 msgid "Commissions will be earned throughout the life of the client, on all transactions the client undertakes with the Company, for as long as the Affiliate remains a member of this affiliate programme. The Company reserves the right to cancel the commissions that are not reclaimed after 2 years."
-msgstr ""
+msgstr "Комиссии будут начисляться в течение всего срока работы клиента, со всех транзакций, подлежащих начислению комиссии, пока Партнёр участвует в партнёрской программе. Компания оставляет за собой право отменять комиссии, не востребованные по истечении 2 лет."
 
 msgid "Commissions:"
 msgstr "Комиссионные:"
@@ -3097,7 +3097,7 @@ msgid "Contract payouts"
 msgstr "Выплата по контрактам"
 
 msgid "Contract payouts shall be determined by the Company by reference to the market quotes as displayed on the website relevant to the underlying index(ices) of the contract(s) or from the interbank trading data received by the Company for forex quotes or commodity prices as displayed on the website, provided that the Company has the right to make corrections to such data in the event of mispriced or typographically incorrect data. Clients should note that different markets may close at different times during the day due to local trading hours and time zones."
-msgstr ""
+msgstr "Выплата по контрактам будет определяться Компанией со ссылкой на рыночные котировки, указанные на данном сайте в отношении соответствующих индексов, контрактов, или согласно межбанковской торговой информации, полученной Компанией по котировкам для рынка Forex или по ценам на сырьевые товары, как указано на данном сайте, с правом внесения коррективов в случае неправильных котировок или типографических ошибок в данных. Клиенты должны обратить внимание, что различные рынки могут закрываться в разное время в течение дня, в связи с разницей во времени открытия и часовыми зонами."
 
 msgid "Contract period"
 msgstr "Период контракта"
@@ -3172,7 +3172,7 @@ msgid "Cookies and device information"
 msgstr "Куки и информация об устройстве"
 
 msgid "Cookies are small text files stored on computer drives and are widely used in order to make websites work and to improve the user experience. All recent versions of browsers give the client a level of control over cookies. The client can delete all cookies that are already on the client's computer, and the browser can be set to prevent them from being placed. However, if the client chooses not to receive the Company's cookies, the full usability of the Company's website may be adversely affected."
-msgstr ""
+msgstr "Куки — это небольшие текстовые файлы, хранящиеся на дисках компьютера и широко используемые для работы сайта и улучшения опыта его использования. Все новые версии браузеров дают клиенту значительный уровень контроля над куки. Клиент может удалить все куки, уже имеющиеся на его компьютере, а настройки браузера могут быть изменены так, чтобы больше не устанавливать куки. Тем не менее, если клиент предпочтёт не хранить куки Компании, это может значительно повлиять на процесс использования сайта."
 
 msgid "Coordinate business development activities and generate high-quality partnership leads"
 msgstr "Координация развития бизнеса и предложение эффективных партнёрских инициатив"
@@ -4012,7 +4012,7 @@ msgid "Either party may terminate this Agreement at any time by giving a seven-d
 msgstr ""
 
 msgid "Either party may terminate this Agreement forthwith on written notice if a receiver, examiner, or administrator is appointed of the whole or any part of the other party's assets or the other party is struck off the Register of Companies in the jurisdiction where it was incorporated or an order is made or a resolution passed for winding up of the other party (unless such order or resolution is part of a voluntary scheme for the reconstruction or amalgamation of that party as a solvent corporation and the resulting corporation if a different legal person undertakes to be bound by this Agreement)."
-msgstr ""
+msgstr "Данное Соглашение может быть незамедлительно расторгнуто любой стороной путем отправки письменного уведомления другой стороне, если в отношении всех или части активов другой стороны был назначен управляющий, эксперт или администратор; если другая сторона покинула реестр компаний в юрисдикции, в которой она находилась; в случае выхода постановления или резолюции о прекращении деятельности другой стороны (если данное постановление или резолюция не является частью добровольной схемы реконструкции или объединения этой стороны в крупную корпорацию, которая, являясь другим юридическим лицом, будет согласна взять на себя обязательства в рамках данного Соглашения)."
 
 msgid "Either party may terminate this Agreement on the delivery of one week's prior written notice to the other party."
 msgstr "Любая из сторон может расторгнуть данное Соглашение путем письменного уведомления другой стороны за одну неделю до предполагаемого окончания его действия."
@@ -4795,7 +4795,7 @@ msgid "For features and trading illustration of Spot FX offered by %1, refer to 
 msgstr "Подробную характеристику и примеры торговли контрактами на спот Forex, предлагаемыми на %1, можно найти на странице Заявления об ограничении ответственности в отношении отдельных продуктов. Данная политика является приложением к основной Политике исполнения ордеров %1 и должна рассматриваться в совокупности с ней."
 
 msgid "For forex quotes, the closing times are defined by the Company as shown in the market opening times section of the website. In the event of any dispute regarding market or settlement values, the decision of the Company shall be final and binding. Clients should note that certain markets (such as indices) are not open throughout the day and that trading may not be available when the markets are closed."
-msgstr ""
+msgstr "Для котировок рынка Forex время закрытия определяется Компанией, как указано в разделе \"Время открытия рынков\" на данном сайте. В случае несогласия с рыночными ценами и котировками, решение Компании является окончательным и не подлежит обжалованию. Клиенты должны обратить внимание, что определенные рынки (как, например, индексы) открыты не весь день, и торги на них могут не быть доступны, когда рынки закрыты."
 
 msgid "For forex: The forex market is an OTC (over the counter) market, where banks and other major financial institutions trade currencies amongst themselves without there being any central clearing house. Accordingly, there is no 'official' price source for forex quotes. Different data feeds will contain quotes from a different sub-set of international banks. Accordingly, prices may differ among providers, depending on which bank(s) they obtain prices from."
 msgstr "Для валютных котировок: Forex является внебиржевым рынком. Банки и другие крупные финансовые учреждения торгуют валютами между собой без наличия единого контролирующего этот процесс органа. В связи с этим, на котировки Форекс нет единой официальной цены. В различных источниках котировки могут быть разными. Соответственно, цены могут различаться у различных провайдеров котировок в зависимости от того, от каких банков или из каких источников они получают информацию."
@@ -5917,7 +5917,7 @@ msgid "In the event that the Company does not receive Orders from the client to 
 msgstr ""
 
 msgid "In the event that the Company is aware of an Affiliate who is in breach of any of the above provisions, the Company shall have the right, in addition to any other right or remedy available to it under this Agreement or applicable law, to immediately block the Affiliate's access to this programme. The Affiliate hereby irrevocably waives their rights to, and shall indemnify the Company and any member of the Binary group of companies for, any claims or demands made against the Company or any member of the Binary group of companies, their directors, officers, shareholders, or employees or against the %1 website if the Company revokes the Affiliate's access to the programme."
-msgstr ""
+msgstr "Если Компании станет известно о нарушении Партнёром любых вышеперечисленных положений, Компания оставляет за собой право (в дополнение к любым правам и средствам правовой защиты, предоставленным ей в рамках данного Соглашения или применимого законодательства) незамедлительно заблокировать доступ Партнёра к данной программе. Настоящим Партнёр окончательно отказывается от своего права, а также обязуется оградить Компанию и любого члена группы компаний Binary Group от подачи любой претензии или иска против Компании или любого другого представителя группы компаний Binary Group, их директоров, акционеров, работников, а также против сайта %1 (в случае, когда Компания заблокировала доступ Партнёра к данной программе)."
 
 msgid "In the rest of the EU, Volatility Indices are offered by Binary (Europe) Ltd., W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta; licensed and regulated by (1) the Malta Gaming Authority in Malta (licence no. MGA/B2C/102/2000 issued on 01 August 2018), for UK clients by (2) the UK Gambling Commission (licence %1reference no: 39495%2), and for Irish clients by (3) the Revenue Commissioners in Ireland (Remote Bookmaker's Licence no. 1010285 issued on 1 July 2017). View complete %3Regulatory Information%2."
 msgstr "В остальной части ЕС Индексы волатильности предоставлены компанией Binary (Europe) Ltd., расположенной по адресу W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta. Компания лицензирована и регулируется (1) Управлением по азартным играм Мальты (лицензия номер MGA/B2C/102/2000 выдана 1 августа 2018 г.), для клиентов из Великобритании - (2) Управлением по азартным играм Великобритании (%1номер лицензии: 39495%2), а для клиентов из Ирландии - (3) Налоговой службой Ирландии (лицензия удалённого букмекера номер 1010285, выданная 1 июля 2017 г). Ознакомьтесь с %3Информацией о регулировании%2."
@@ -6046,7 +6046,7 @@ msgid "Internal Audit Executive"
 msgstr "Сотрудник отдела внутреннего аудита"
 
 msgid "Internal currency transfers between accounts are allowed up to a maximum of USD 2,500.00 or equivalent. Transfers are allowed between any available currency pair but cannot be done between the Binary and MT5 accounts."
-msgstr ""
+msgstr "Внутренний перевод средств между счетами разрешен в размере до USD 2,500.00 или эквивалентной суммы в других валютах. Переводы могут осуществляться между любыми доступными валютными парами, но не могут производиться между счетами Binary и MT5."
 
 msgid "International currency or commodity prices are highly volatile and very difficult to predict. Due to such volatility, plus the bias in the pricing system favouring the website (as described in more detail below), no financial contract purchased in our system (whether or not the payout exceeds the premium amount) can be considered a safe contract."
 msgstr "Валютные и сырьевые рынки чрезвычайно волатильны, и часто на них сложно делать точные прогнозы. В связи с такой нестабильностью, а также уклоном в оценочной системе в пользу сайта (как более подробно описано ниже), никакие контракты, приобретенные на сайте (независимо от того, превышает сумма чистого выигрыша ставку или нет), не могут гарантировать прибыль."
@@ -6958,7 +6958,7 @@ msgid "Market opinions"
 msgstr "Информация о рынках"
 
 msgid "Market prices are updated at most once per second.  For any given second, the market price will be updated to the first tick, if any, received in that particular second on the Company data feed."
-msgstr ""
+msgstr "Рыночные цены обновляются не чаще одного раза в секунду. Каждую секунду рыночная цена будет обновляться на первом полученном от поставщика компании значении для этой секунды, если таковое вообще имеется."
 
 msgid "Market volatility – Political, economic, or social instability may lead to more volatile financial markets that affect the prices of certain metals"
 msgstr "Рыночная волатильность – политическая, экономическая или социальная нестабильность способна вызвать волатильность на финансовых рынках, что также повлияет на цены отдельных металлов"
@@ -7042,7 +7042,7 @@ msgid "Maximum payout"
 msgstr "Макс. выплата"
 
 msgid "Maximum ticket size"
-msgstr "Макс. размер билета"
+msgstr "Макс. размер лота"
 
 msgid "Maximum upload size for each file is %1"
 msgstr "Максимальный размер каждого файла: %1"
@@ -7135,7 +7135,7 @@ msgid "Minimum of six months validity"
 msgstr "Минимальный срок действия: 6 месяцев"
 
 msgid "Minimum ticket size"
-msgstr "Мин. размер билета"
+msgstr "Мин. размер лота"
 
 msgid "Minimum two years experience in a software or web application testing role"
 msgstr "Минимум два года опыта тестирования программного обеспечения и веб приложений"
@@ -7183,7 +7183,7 @@ msgid "Monetise your online trading discussions with your audience of trading en
 msgstr "Превращайте в прибыль дискуссии с Вашими посетителями об онлайн торговле, помогая им улучшать и совершенствовать торговый опыт."
 
 msgid "Money collected from clients is not invested in any securities, futures, currencies, derivatives or other investments, on behalf of clients."
-msgstr ""
+msgstr "Денежные средства, полученные от клиентов, не могут быть инвестированы в какие-либо ценные бумаги, фьючерсы, валюты, производные и другие активы от имени клиентов."
 
 msgid "Monies deposited by clients with BIEL in advance of a trade or pending withdrawal is treated by BIEL as clients' money. BIEL holds such monies in pooled or omnibus clients' money bank accounts opened with banks or other institutions (\"Institutions\"), segregated from BIEL's own money. Such clients' money bank accounts may be opened with EEA Institutions or Institutions outside the EEA. Where clients' money is held with non-EEA Institutions, this means that such accounts will be subject to laws other than those of an EEA member state and clients' rights may differ accordingly."
 msgstr ""
@@ -9511,7 +9511,7 @@ msgid "Should the applicant's application be successful and an employment with t
 msgstr "Если заявка будет одобрена и заявитель получит должность в Binary Group, данные заявителя будут храниться в компании до конца срока его работы. С началом работы в компании на заявителя будет распространяться отдельная политика конфиденциальности."
 
 msgid "Should these expenses not be covered by funds in the Affiliate's account, the Company reserves the right to investigate alternative means for obtaining payment. For example, should the Affiliate's account have generated purchasing accounts, the Company will hold payment of commission for these accounts until such a time as the account for damages has been cleared."
-msgstr ""
+msgstr "Если такие расходы не будут покрыты средствами на Партнёрском счету, Компания оставляет за собой право применить альтернативные способы получения оплаты. Например, если Партнёрский счёт связан с рядом счетов, Компания удержит выплату комиссионных по данным счетам до полной компенсации причинённого ущерба."
 
 msgid "Show all historical transactions up to"
 msgstr "Показать историю всех контрактов до"
@@ -9625,7 +9625,7 @@ msgid "South Africa"
 msgstr "Южная Африка"
 
 msgid "Spam - The Company does not condone spam"
-msgstr ""
+msgstr "Спам - Компания не поощряет спам"
 
 msgid "Spanish and Guaraní are the two official languages of the country. Most Paraguayans are comfortably bilingual, although Guaraní is more widely spoken outside urban areas. In the capital, Spanish is the dominant language but you can easily find English speakers too."
 msgstr "Испанский и гуарани – два официальных языка в стране. Большинство парагвайцев свободно общаются на обоих языках, а гуарани чаще звучит за пределами больших городов. Основным языком в столице является испанский, но найти англоязычных жителей также не составит труда."
@@ -10219,7 +10219,7 @@ msgid "The Affiliate has placed digital advertisements for the licensed activiti
 msgstr "Партнёр разместил цифровые рекламные материалы на лицензированную деятельность на сайтах, предоставляющих несанкционированный доступ к контенту, защищённому авторским правом."
 
 msgid "The Affiliate is not allowed to rebate any part of the commission payment onto the Affiliate's referrals, and should the Company realise that the Affiliate is engaged in such actions, the Affiliate's account shall be revoked immediately."
-msgstr ""
+msgstr "Партнёр не имеет права перечислять часть комиссионных выплат клиентам, привлечённым Партнёром. Если Компания узнает, что Партнёр причастен к таким действиям, его партнёрский счет будет незамедлительно закрыт."
 
 msgid "The Affiliate must avoid the disclosure of any confidential information that may come to the Affiliate's knowledge or possession to third parties or external parties."
 msgstr "Партнёр должен избегать разглашения любой конфиденциальной информации, которая может быть известна Партнёру, а также попасть в распоряжение третьим лицам или сторонним организациям."
@@ -10330,7 +10330,7 @@ msgid "The Company aims to keep a record of the kinds of activity that the Compa
 msgstr "Компания стремится сохранять записи обо всей деятельности, ввиду которой может возникнуть или уже возник материальный конфликт. Компания также поддерживает процедуры управления фактическими или потенциальными конфликтами. Данные процедуры включают поддержание необходимой независимости между персоналом Компании, вовлечённым в потенциально конфликтную деятельность. Данные процедуры могут осуществляться, например, посредством поддержания информационных барьеров, физического разделения персонала, распределения обязанностей и ответственности, а также соблюдения политики независимости, которая требует от сотрудников Компании при предоставлении услуг клиенту действовать в лучших интересах клиента и игнорировать любые конфликты интересов; в некоторых случаях данные процедуры требуют отказа действовать для клиента или потенциального клиента с целью избежания конфликта интересов."
 
 msgid "The Company also collects basic tax residence information for the purposes of CRS/FATCA compliance. The tax information that the client provides may only be disclosed to the authorities who are legally charged with collecting this information for CRS/FATCA reporting, and %1 will only do so to the extent that it is legally obliged to collect it from the clients and disclose it to the authorities. The Company does not use, disclose, or process this information in any other way at any time."
-msgstr ""
+msgstr "Также компания собирает основную информацию о налоговой регистрации с целью соответствия требованиям единого стандарта по обмену налоговой информацией/Закона о налоговом соответствии иностранных счетов (CRS/FATCA). Предоставляемая клиентом налоговая информация может быть разглашена лишь органам, имеющим юридическое право на сбор данной информации с целью отчётности CRS/FATCA и лишь в той мере, в которой %1 разрешено собирать и разглашать данную информацию. Данная информация не используется и не разглашается Компанией ни в каких других целях."
 
 msgid "The Company also reserves the right to request documentation pertaining to any other legal obligation."
 msgstr "Также Компания оставляет за собой право запросить документы для соблюдения любых других юридических обязательств."
@@ -10348,7 +10348,7 @@ msgid "The Company does not guarantee that the %1 API it provides will function 
 msgstr "Компания не гарантирует, что предоставляемый ей API %1 будет функционировать без ошибок или прерываний. В частности, работа API %1 может быть прервана, в связи с проведением технического обслуживания, внесением обновлений, возникновением системных или сетевых сбоев. Компания не несёт ответственности за ущерб, вызванный по причине любого такого прерывания или ошибок в процессе работы."
 
 msgid "The Company does not guarantee the ability to sell a contract prior to its expiration time."
-msgstr "Компания не гарантирует возможность продажи ставок до истечения срока контракта."
+msgstr "Компания не гарантирует возможность продажи контракта до истечения срока его действия."
 
 msgid "The Company does not make any warranty, express or implied, that any pricing or other information provided through the MT5 trading platform or otherwise is correct."
 msgstr ""
@@ -10387,7 +10387,7 @@ msgid "The Company has the right and obligation not to accept the information pr
 msgstr "Компания имеет право и обязанность не принимать предоставляемую клиентами информацию, если Компания знает или имеет основания полагать, что данная информация является недостоверной, неточной или неполной. В данном случае Компания может обратиться к клиентам для пояснений или внесения исправлений в данную информацию."
 
 msgid "The Company has various deposit methods available, each with its own timing for deposits, some of which might not be available for withdrawals. Full details of available methods for deposits and withdrawals, including settlement times, can be seen %1here%2."
-msgstr ""
+msgstr "Компания предлагает различные способы пополнения счёта с разными сроками обработки, некоторые из которых могут быть впоследствии недоступны для вывода средств. Полная информация о доступных способах пополнения и вывода, включая время обработки, находится %1здесь%2."
 
 msgid "The Company holds all the personal data that the Company collects from the client with due diligence and only processes them for purposes as required or allowed by law. This includes the process of obtaining and sharing of certain information with third parties for credit or identity checks to comply with legal and regulatory obligations. In certain cases, the Company may process the client's data to fulfill the Company's contractual obligations with the client."
 msgstr "Компания должным образом хранит все личные данные, получаемые от клиентов, и пользуется ими лишь при необходимости или в случаях, разрешенных законом. Это относится к процессам получения и распространения определённой информации третьим лицам для проверки кредитной информации или проверки личности, чтобы соблюдать нормативно-правовые требования. В ряде случаев Компания может использовать данные клиента для соблюдения своих договорных обязательств перед клиентом."
@@ -10546,7 +10546,7 @@ msgid "The Company reserves the right to refuse the client's request to open an 
 msgstr "Компания оставляет за собой право отказать клиенту в открытии Реального счёта MT5 по любой причине. Каждый Реальный счёт MT5 может быть в любое время закрыт по усмотрению Компании."
 
 msgid "The Company reserves the right to refuse to do business with, to discontinue to do business with, and to reverse the transactions of clients who engage in any trading activity"
-msgstr ""
+msgstr "Компания оставляет за собой право отказаться от ведения бизнеса, а также прекратить любое сотрудничество и отменить транзакции клиентов, занимающихся следующей деятельностью"
 
 msgid "The Company reserves the right to request further information from the client whenever deemed appropriate under the circumstances. For example, the Company may ask the client to send the Company additional acceptable documents to confirm the authenticity of the client's account details or of any withdrawal request."
 msgstr "Компания оставляет за собой право запрашивать у клиента дополнительную информацию, которая может потребоваться нам при определённых обстоятельствах. Например, Компания может попросить клиента прислать копии дополнительных документов для подтверждения подлинности данных счёта или любых запросов на вывод средств."
@@ -10579,7 +10579,7 @@ msgid "The Company shall not be in breach of its obligation under this agreement
 msgstr ""
 
 msgid "The Company shall not be liable to the Affiliate in contract or otherwise (including liability for negligence) for any loss, whether direct or indirect, of the Affiliate's business, revenue or profits, anticipated savings, or wasted expenditure, corruption, or destruction of data or for any indirect or consequential loss whatsoever when such outcome is the consequence of any breach, non-performance, or non-observance by the Affiliate of any of the Affiliate's obligations or warranties under this Agreement."
-msgstr ""
+msgstr "Компания не несет ответственности перед Партнёром в отношении контрактов или иных случаев (в том числе ответственности за халатность) за прямую или косвенную потерю партнёрского бизнеса или прибыли, предполагаемых накоплений или произведенных затрат, искажение или потерю данных, а также любую косвенную или следственную потерю, являющуюся следствием любого нарушения, неисполнения или несоблюдения Партнёром любых обязательств или гарантий, предоставленных в рамках данного Соглашения."
 
 msgid "The Company shall not be responsible or liable for any advice on financial services provided by the Agent to any client."
 msgstr "Компания не должна нести ответственности за любые советы относительно финансовых услуг, предоставляемых Агентом любому клиенту."
@@ -10600,7 +10600,7 @@ msgid "The Company shall pay the Affiliate the currently published percentage of
 msgstr "Компания обязуется заплатить Партнёру действующий в данное время процент от чистой прибыли (как описано на странице Комиссионных на Партнёрском счете), полученный в течение срока действия Соглашения. Партнёрская комиссия рассчитывается только на основе комиссий от добросовестных рефералов клиента, а Компания оставляет за собой право не принимать во внимание дубликаты счетов или номинальные счета, которые Компания по своему усмотрению может рассматривать как недобросовестные."
 
 msgid "The Company shall provide the Affiliate with statements accessible through an electronic system detailing the revenues generated by clients the Affiliate has referred, if any, which have accrued to the Affiliate over the course of the calendar month. Such statements shall be updated daily. At the end of a calendar month, the Company shall record the Affiliate's total share of net revenues, if any, during the previous calendar month. In the event that a revenue share in any calendar month is a negative amount, the Company shall be entitled but not obliged to carry forward and set off such negative amount against future revenue shares which would otherwise be payable to the Affiliate. However, the Company shall also be entitled but not obliged to zeroise the negative balance that would otherwise be carried forward."
-msgstr ""
+msgstr "Компания предоставляет Партнёру выписку по счёту, доступную в электронной системе, с подробным описанием доходов от зарегистрированных через Партнёра клиентов (если таковые имеются), которые были накоплены в течение календарного месяца. Эти данные обновляются ежедневно. В конце календарного месяца Компания рассчитывает общую чистую прибыль Партнёра (если таковая имеется) за предыдущий календарный месяц. В случае, если доля доходов в любой календарный месяц является отрицательным числом, Компания имеет право, но не обязанность переносить такие отрицательные суммы в счет будущих доходов Партнёра. Компания также имеет право, но не обязанность обнулять отрицательный баланс счёта, который иначе будет перенесен в счет будущих выплат."
 
 msgid "The Company shall provide you with online access to the trading platform on which the balance, margin, credit, and equity is displayed so you are able to monitor the status and performance of the Account. You agree that in case of incongruity, you will immediately contact the Company at %1."
 msgstr "Компания обязуется предоставить Вам онлайн доступ к торговой платформе, на которой отображены баланс, маржа, кредиты и остаток средств на счету, чтобы Вы могли следить за статусом и деятельностью на Вашем счету. Настоящим Вы обязуетесь незамедлительно связаться с Компанией по адресу %1 в случае любого несоответствия данных на Вашем счету."
@@ -10669,7 +10669,7 @@ msgid "The Company's data feed is designed to be one of the best and most robust
 msgstr "Система котировок Компании является одной из самых лучших и надежных в индустрии трейдинга."
 
 msgid "The Company's data feed may at times differ slightly from other data feeds found on the Internet (which may themselves differ from each other). Reasons for differences in feed providers include:"
-msgstr ""
+msgstr "Котировки на сайте Компании иногда могут слегка отличаться от данных на других интернет-ресурсах (которые, в свою очередь, также немного отличаются друг от друга). Это происходит по следующим причинам:"
 
 msgid "The Company's data protection officer can be contacted at %1"
 msgstr ""
@@ -11047,7 +11047,7 @@ msgid "The client has reached a turnover that is 5 times the bonus amount."
 msgstr "объём покупок Клиента превышает сумму бонуса в 5 раз."
 
 msgid "The client has read the Company's privacy statement and is aware of how the Company processes information."
-msgstr ""
+msgstr "Клиент прочёл заявление Компании о конфиденциальности и знает, как Компания обрабатывает доверенную ей информацию."
 
 msgid "The client has read these terms and conditions in full and has understood that they will be buying and selling financial contracts subject to these terms and conditions."
 msgstr "Клиент полностью прочитал данные юридические правила и условия, а также осознал, что он/она будет покупать и продавать финансовые контракты в рамках данных правил и условий."
@@ -11098,7 +11098,7 @@ msgid "The client is responsible for all third-party electronic transfer fees in
 msgstr ""
 
 msgid "The client is responsible for keeping the client's log-in details secure, the security of any linked email address, and the security (password protection, screen locking, etc.) of any personal computer or device on which the client's account is accessible. The Company shall not be held responsible if there is unauthorised use of the account when the Company is not at fault."
-msgstr ""
+msgstr "Клиент несёт ответственность за сохранность и безопасность своих учётных данных, электронного адреса, а также любого персонального компьютера или устройства (защиту пароля, блокировку экрана и т. д.), с которого клиент осуществляет вход на свой счёт. Компания не несёт ответственности за несанкционированный вход и использование счёта клиента, если это произошло не по вине компании."
 
 msgid "The client is responsible for managing the client's tax and legal affairs, including making any regulatory filings and payments and complying with applicable laws and regulations. The Company does not provide any regulatory, tax, or legal advice. If the client is in any doubt as to the tax treatment or liabilities%2 of Products available through %1%3, the client may wish to seek independent advice."
 msgstr "Клиент несёт ответственность за оплату своих налогов и правовых обязательств, включая любые нормативные требования и платежи, а также соблюдение соответствующих законов и правил. Компания не предоставляет каких-либо законодательных, налоговых или юридических консультаций. Если у клиента есть сомнения относительно налогообложения или обязательств в связи с%2 продуктами, доступными на %1%3, клиент может обратиться за независимой консультацией."
@@ -11116,7 +11116,7 @@ msgid "The client may choose to contact the Company to close the client's accoun
 msgstr "Клиент может связаться с Компанией, чтобы закрыть свой счёт. Счёт клиента может быть закрыт, если на нём нет открытых торговых позиций, а также если клиент прошел необходимую процедуру идентификации личности в рамках политики Знай своего клиента, чтобы снять оставшиеся на счете средства."
 
 msgid "The client may communicate with the Company through this website or by means of e-mail, phone or, exceptionally, by post. Details can be found in the Contact us page."
-msgstr ""
+msgstr "Клиенты могут общаться с Компанией на данном сайте, по электронной почте, телефону или, в отдельных случаях, по обычной почте. Более подробную информацию можно найти на странице Контакты."
 
 msgid "The client may make Margin Payments by transferring funds from their %1 account to their MT5 Real Account. In the event that there are insufficient funds in the client's %1 account to fund their MT5 Real Account, they may make Margin Payments by funding their %1 account and transferring the funds from their %1 account to their MT5 Real Account."
 msgstr "Клиент может оплачивать маржу путём перевода средств со счёта %1 на Реальный счёт MT5. Если на счету клиента %1 недостаточно средств для пополнения Реального счёта MT5, клиент может оплатить маржу путём пополнения своего счёта %1 и перевести средства со счёта %1 на Реальный счёт MT5."
@@ -11326,7 +11326,7 @@ msgid "The market exit price is the price in effect at the end of the contract p
 msgstr "Выходная цена рынка – это действительная на момент окончания контракта котировка."
 
 msgid "The materials comprising the %1 website (including without limitation all articles, text, images, logos, compilation, systems, code, and design) are under Copyright 1999-%2 Binary Group companies with all rights reserved."
-msgstr ""
+msgstr "Материалы на сайте %1 (включая, но не ограничиваясь всеми статьями, текстами, картинками, логотипами, подборками, системами, кодами и дизайном) являются собственностью группы компаний Binary Group и охраняются законом об авторском праве 1999-%2. Все права защищены."
 
 msgid "The maximum loss that may be incurred by any client is the amount of money paid by the client to the Company."
 msgstr "Максимальный убыток, который может потерпеть клиент, — это сумма, уплаченная им Компании."
@@ -11752,7 +11752,7 @@ msgid "This document (the \"Agreement\") sets out the terms and conditions (\"Te
 msgstr ""
 
 msgid "This document (the \"Agreement\") sets out the terms and conditions between \"the Company\", which is Binary Services Ltd, and the person who has applied for this programme (\"the Affiliate\"), in relation to the Affiliate's application to set up an affiliate account (and membership of the affiliate programme if the Affiliate's application is deemed successful)."
-msgstr ""
+msgstr "Данный документ (далее именуемый \"Соглашением\") устанавливает правила и условия, распространяющиеся на \"Компанию,\" что означает Binary Services Ltd, и лицо, подавшее заявку на участие в данной программе (\"Партнёр\") в отношении заявки на открытие партнёрского счёта (и участия в партнёрской программе, если таковая заявка на участие будет одобрена)."
 
 msgid "This feature is not relevant to virtual-money accounts."
 msgstr "Данная функция недоступна на демо-счетах."
@@ -12583,7 +12583,7 @@ msgid "Use different passwords for your email and %1 account and set a %2strong 
 msgstr "Пользуйтесь разными паролями для электронного адреса и счёта на %1. Выбирайте %2сложные пароли%3."
 
 msgid "Use of Bid/Ask: When the market is illiquid, the data feed may contain many Bids and Asks, without there actually being any traded price for quite a while. By taking an average of the Bid/Ask (i.e. bid + ask, divided by 2), a market quote is generated that reflects the current market, without it actually being a traded price. The Company's system will generate prices from these Bids and Asks, whereas other websites might not. As a result, the Company's website might display ticks that do not appear in the data feeds of other websites."
-msgstr ""
+msgstr "Использование цен Бид/Аск: Когда рынок ликвиден, к услугам трейдеров есть достаточно цен бид и аск. В периоды неликвидности на рынке данные могут содержать значения спроса и предложения при отсутствии реальных торгов. Рыночная котировка в таких случаях рассчитывается как среднее значение между ценами купли/продажи (то есть, (Бид + Аск), разделенные на два) и не является реальной торговой ценой. Таким образом, в некоторые моменты система Компании может генерировать котировки, которых не будет на других сайтах."
 
 msgid "Use of information"
 msgstr "Использование информации"
@@ -12812,9 +12812,6 @@ msgstr "Наша деятельность лицензирована и регу
 
 msgid "We are required by our license to inform you about what happens to funds which we hold on account for you, and the extent to which funds are protected in the event of insolvency %1."
 msgstr "Наша лицензия требует от нас, чтобы мы информировали Вас о состоянии средств, которые мы держим на Вашем счету, и о степени защиты средств в случае неплатежеспособности %1."
-
-msgid "We are reviewing your documents. For more details %1contact us%2."
-msgstr "Мы рассматриваем Ваши документы. Для получения более подробной информации, %1cвяжитесь с нами%2."
 
 msgid "We believe that we should always do the right thing. This includes serving our customers with honesty and transparency, settling all contracts by the book, and communicating in plain language that can be easily understood."
 msgstr "Мы считаем, что всегда должны поступать честно. Это относится к добросовестному обслуживанию клиентов, прозрачному распределению контрактов и своевременной коммуникации на понятном клиенту языке."
