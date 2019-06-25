@@ -1,5 +1,6 @@
 const DocumentUploader    = require('@binary-com/binary-document-uploader');
 const Client              = require('../../../base/client');
+const Header              = require('../../../base/header');
 const BinarySocket        = require('../../../base/socket');
 const CompressImage       = require('../../../../_common/image_utility').compressImg;
 const ConvertToBase64     = require('../../../../_common/image_utility').convertToBase64;
@@ -451,6 +452,9 @@ const Authenticate = (() => {
     };
 
     const showSuccess = () => {
+        BinarySocket.send({ get_account_status: 1 }).then(() => {
+            Header.displayAccountStatus();
+        });
         setTimeout(() => {
             removeButtonLoading();
             $button.setVisibility(0);
