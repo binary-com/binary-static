@@ -290,7 +290,6 @@ const Header = (() => {
                 cashier_locked       : () => localize('Deposits and withdrawals have been disabled on your account. Please check your email for more details.'),
                 currency             : () => buildMessage(localizeKeepPlaceholders('Please set the [_1]currency[_2] of your account.'),                                                                                    'user/set-currency'),
                 document_needs_action: () => buildMessage(localizeKeepPlaceholders('[_1]Your Proof of Identity or Proof of Address[_2] did not meet our requirements. Please check your email for further instructions.'), 'user/authenticate'),
-                document_review      : () => buildMessage(localizeKeepPlaceholders('We are reviewing your documents. For more details [_1]contact us[_2].'),                                                               'contact'),
                 excluded_until       : () => buildMessage(localizeKeepPlaceholders('Your account is restricted. Kindly [_1]contact customer support[_2] for assistance.'),                                                 'contact'),
                 financial_limit      : () => buildMessage(localizeKeepPlaceholders('Please set your [_1]30-day turnover limit[_2] to remove deposit limits.'),                                                             'user/security/self_exclusionws'),
                 mf_retail            : () => buildMessage(localizeKeepPlaceholders('Binary Options Trading has been disabled on your account. Kindly [_1]contact customer support[_2] for assistance.'),                   'contact'),
@@ -353,7 +352,7 @@ const Header = (() => {
                 const notified = check_statuses.some((check_type) => {
                     if (validations[check_type]()) {
                         // show MF retail message on Trading pages only
-                        if (check_type === 'mf_retail' && !(State.get('is_trading') || State.get('is_mb_trading'))) {
+                        if (hasStatus('document_under_review') || (check_type === 'mf_retail' && !(State.get('is_trading') || State.get('is_mb_trading')))) {
                             return false;
                         }
                         displayNotification(messages[check_type](), false, check_type === 'mf_retail' ? 'MF_RETAIL_MESSAGE' : '');
