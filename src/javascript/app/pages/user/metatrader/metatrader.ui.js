@@ -422,12 +422,16 @@ const MetaTraderUI = (() => {
         $('#new_account_financial_authenticate_msg').setVisibility(0);
         const selected_acc_type = $item.attr('data-acc-type');
         const action            = `new_account${/mamm/.test(selected_acc_type) ? '_mam' : ''}`;
+
+        const account_list = Client.getAllAccountsObject();
+        const is_virtual_only = !Object.values(account_list).some(value => value.is_virtual === 0);
+
         if (/(demo|real)/.test(selected_acc_type)) {
             displayAccountDescription(action);
             updateAccountTypesUI(selected_acc_type);
             $form.find('#view_1 #btn_next').addClass('button-disabled');
             $form.find('#view_1 .step-2').setVisibility(1);
-            displayMessage('#new_account_msg', (selected_acc_type === 'real' && Client.get('is_virtual')) ? MetaTraderConfig.needsRealMessage() : '', true);
+            displayMessage('#new_account_msg', (selected_acc_type === 'real' && is_virtual_only) ? MetaTraderConfig.needsRealMessage() : '', true);
             $form.find('#new_account_no_deposit_bonus_msg').setVisibility(0);
         } else {
             const new_acc_type = newAccountGetType();
@@ -446,10 +450,8 @@ const MetaTraderUI = (() => {
         Object.keys(accounts_info)
             .filter(acc_type => acc_type.indexOf(type) === 0)
             .forEach((acc_type) => {
-                let class_name = (type === 'real' && Client.get('is_virtual')) ? 'disabled' : '';
-                if (accounts_info[acc_type].info) {
-                    class_name = 'existed';
-                }
+                // let class_name = (type === 'real' && Client.get('is_virtual')) ? 'disabled' : '';
+                const class_name = accounts_info[acc_type].info ? 'existed' : '';
                 $form.find(`.step-2 #${acc_type.replace(type, 'rbtn')}`)
                     .removeClass('existed disabled selected')
                     .addClass(class_name);
