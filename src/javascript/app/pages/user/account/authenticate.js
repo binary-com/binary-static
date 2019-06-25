@@ -452,7 +452,7 @@ const Authenticate = (() => {
     };
 
     const showSuccess = () => {
-        BinarySocket.send({ get_account_status: 1 }).then(() => {
+        BinarySocket.send({ get_account_status: 1 }, { forced: true }).then(() => {
             Header.displayAccountStatus();
         });
         setTimeout(() => {
