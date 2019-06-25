@@ -306,11 +306,10 @@ const Header = (() => {
             };
 
             const validations = {
-                authenticate         : () => +get_account_status.prompt_client_to_authenticate,
+                authenticate         : () => +get_account_status.prompt_client_to_authenticate && !hasStatus('document_under_review'),
                 cashier_locked       : () => hasStatus('cashier_locked'),
                 currency             : () => !Client.get('currency'),
                 document_needs_action: () => hasStatus('document_needs_action'),
-                document_review      : () => hasStatus('document_under_review'),
                 excluded_until       : () => Client.get('excluded_until'),
                 financial_limit      : () => hasStatus('ukrts_max_turnover_limit_not_set'),
                 mf_retail            : () => Client.get('landing_company_shortcode') === 'maltainvest' && !hasStatus('professional'),
@@ -333,7 +332,6 @@ const Header = (() => {
                 'risk',
                 'tax',
                 'currency',
-                'document_review',
                 'document_needs_action',
                 'authenticate',
                 'cashier_locked',
@@ -352,7 +350,7 @@ const Header = (() => {
                 const notified = check_statuses.some((check_type) => {
                     if (validations[check_type]()) {
                         // show MF retail message on Trading pages only
-                        if (hasStatus('document_under_review') || (check_type === 'mf_retail' && !(State.get('is_trading') || State.get('is_mb_trading')))) {
+                        if (check_type === 'mf_retail' && !(State.get('is_trading') || State.get('is_mb_trading'))) {
                             return false;
                         }
                         displayNotification(messages[check_type](), false, check_type === 'mf_retail' ? 'MF_RETAIL_MESSAGE' : '');
