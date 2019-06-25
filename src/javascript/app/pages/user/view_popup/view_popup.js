@@ -793,7 +793,7 @@ const ViewPopup = (() => {
         $container.find('#errMsg').setVisibility(0);
         sellSetVisibility(false);
         if (is_sell_clicked) {
-            const formatted_sell_price = formatMoney(contract.currency, response.sell.sold_for);
+            const formatted_sell_price = formatMoney(contract.currency, response.sell.sold_for, true);
             containerSetText('contract_sell_message',
                 `${localize('You have sold this contract at [_1] [_2]', [contract.currency, formatted_sell_price])}
                 <br />
