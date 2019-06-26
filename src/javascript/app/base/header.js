@@ -3,6 +3,7 @@ const Client                   = require('./client');
 const BinarySocket             = require('./socket');
 const showHidePulser           = require('../common/account_opening').showHidePulser;
 const MetaTrader               = require('../pages/user/metatrader/metatrader');
+const getLandingCompanyValue   = require('../../_common/base/client_base').getLandingCompanyValue;
 const GTM                      = require('../../_common/base/gtm');
 const Login                    = require('../../_common/base/login');
 const SocketCache              = require('../../_common/base/socket_cache');
@@ -254,8 +255,10 @@ const Header = (() => {
         BinarySocket.wait('authorize', 'landing_company').then(() => {
             let get_account_status,
                 status;
-            const is_svg       = Client.get('landing_company_shortcode') === 'svg';
-            const requirements = (State.getResponse('landing_company.financial_company') || State.getResponse('landing_company.gaming_company')).requirements;
+            const is_svg            = Client.get('landing_company_shortcode') === 'svg';
+            const loginid           = Client.get('loginid');
+            const lnading_companies = State.getResponse('landing_company');
+            const requirements      = getLandingCompanyValue(loginid, lnading_companies, 'requirements');
             const necessary_withdrawal_fields = is_svg
                 ? requirements.withdrawal
                 : [];

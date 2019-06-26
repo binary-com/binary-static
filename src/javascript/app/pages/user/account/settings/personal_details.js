@@ -6,6 +6,7 @@ const Header           = require('../../../../base/header');
 const BinarySocket     = require('../../../../base/socket');
 const FormManager      = require('../../../../common/form_manager');
 const DatePicker       = require('../../../../components/date_picker');
+const ClientBase       = require('../../../../../_common/base/client_base');
 const CommonFunctions  = require('../../../../../_common/common_functions');
 const Geocoder         = require('../../../../../_common/geocoder');
 const localize         = require('../../../../../_common/localize').localize;
@@ -64,8 +65,9 @@ const PersonalDetails = (() => {
     const populateChangeableFields = () => {
         if (!has_changeable_fields) return;
 
-        const landing_company = State.getResponse('landing_company.financial_company') || State.getResponse('landing_company.gaming_company');
-        const changeable      = landing_company.changeable_fields;
+        const loginid           = Client.get('loginid');
+        const lnading_companies = State.getResponse('landing_company');
+        const changeable        = ClientBase.getLandingCompanyValue(loginid, lnading_companies, 'changeable_fields');
         if (changeable && changeable.only_before_auth) {
             changeable_fields = changeable_fields.concat(changeable.only_before_auth);
         }
