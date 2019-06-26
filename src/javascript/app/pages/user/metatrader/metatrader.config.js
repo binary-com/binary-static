@@ -120,12 +120,9 @@ const MetaTraderConfig = (() => {
             $new_account_financial_authenticate_msg.setVisibility(0);
             const is_virtual = Client.get('is_virtual');
 
-            const account_list = Client.getAllAccountsObject();
-            const is_virtual_only = !Object.values(account_list).some(value => value.is_virtual === 0);
-
             if (!Client.get('currency')) {
                 resolve($messages.find('#msg_set_currency').html());
-            } else if (is_virtual && is_virtual_only) { // virtual clients without a real account can only open demo MT accounts
+            } else if (is_virtual && Client.hasOnlyVirtualAccounts()) { // virtual clients without a real account can only open demo MT accounts
                 resolve(needsRealMessage());
             } else {
                 BinarySocket.wait('get_settings').then(() => {

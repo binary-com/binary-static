@@ -423,15 +423,12 @@ const MetaTraderUI = (() => {
         const selected_acc_type = $item.attr('data-acc-type');
         const action            = `new_account${/mamm/.test(selected_acc_type) ? '_mam' : ''}`;
 
-        const account_list = Client.getAllAccountsObject();
-        const is_virtual_only = !Object.values(account_list).some(value => value.is_virtual === 0);
-
         if (/(demo|real)/.test(selected_acc_type)) {
             displayAccountDescription(action);
             updateAccountTypesUI(selected_acc_type);
             $form.find('#view_1 #btn_next').addClass('button-disabled');
             $form.find('#view_1 .step-2').setVisibility(1);
-            displayMessage('#new_account_msg', (selected_acc_type === 'real' && is_virtual_only) ? MetaTraderConfig.needsRealMessage() : '', true);
+            displayMessage('#new_account_msg', (selected_acc_type === 'real' && Client.hasOnlyVirtualAccounts()) ? MetaTraderConfig.needsRealMessage() : '', true);
             $form.find('#new_account_no_deposit_bonus_msg').setVisibility(0);
         } else {
             const new_acc_type = newAccountGetType();

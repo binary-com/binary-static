@@ -91,6 +91,8 @@ const ClientBase = (() => {
             (only_enabled ? !get('is_disabled', loginid) : true));
     };
 
+    const hasOnlyVirtualAccounts = () => !Object.values(getAllAccountsObject()).some(value => value.is_virtual === 0);
+
     const getAccountOfType = (type, only_enabled) => {
         const id = getAllLoginids().find(loginid => isAccountOfType(type, loginid, only_enabled));
         return id ? Object.assign({ loginid: id }, get(null, id)) : {};
@@ -332,6 +334,7 @@ const ClientBase = (() => {
         getAllLoginids,
         getAccountType,
         isAccountOfType,
+        hasOnlyVirtualAccounts,
         getAccountOfType,
         hasAccountType,
         hasCurrencyType,
