@@ -447,7 +447,10 @@ const MetaTraderUI = (() => {
         Object.keys(accounts_info)
             .filter(acc_type => acc_type.indexOf(type) === 0)
             .forEach((acc_type) => {
-                const class_name = accounts_info[acc_type].info ? 'existed' : '';
+                let class_name = (type === 'real' && Client.hasOnlyVirtualAccounts()) ? 'disabled' : '';
+                if (accounts_info[acc_type].info) {
+                    class_name = 'existed';
+                }
                 $form.find(`.step-2 #${acc_type.replace(type, 'rbtn')}`)
                     .removeClass('existed disabled selected')
                     .addClass(class_name);
