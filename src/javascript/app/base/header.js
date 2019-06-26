@@ -254,13 +254,13 @@ const Header = (() => {
         BinarySocket.wait('authorize', 'landing_company').then(() => {
             let get_account_status,
                 status;
-            const is_svg = Client.get('landing_company_shortcode') === 'svg';
+            const is_svg       = Client.get('landing_company_shortcode') === 'svg';
+            const requirements = (State.getResponse('landing_company.financial_company') || State.getResponse('landing_company.gaming_company')).requirements;
             const necessary_withdrawal_fields = is_svg
-                ? State.getResponse('landing_company.financial_company.requirements.withdrawal')
+                ? requirements.withdrawal
                 : [];
             const necessary_signup_fields = is_svg
-                ? State.getResponse('landing_company.financial_company.requirements.signup')
-                    .map(field => (field === 'residence' ? 'country' : field))
+                ? requirements.signup.map(field => (field === 'residence' ? 'country' : field))
                 : [];
 
             const hasMissingRequiredField = () => {

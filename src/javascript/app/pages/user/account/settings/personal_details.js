@@ -64,8 +64,8 @@ const PersonalDetails = (() => {
     const populateChangeableFields = () => {
         if (!has_changeable_fields) return;
 
-        const landing_companies = State.getResponse('landing_company');
-        const changeable        = landing_companies.financial_company.changeable_fields;
+        const landing_company = State.getResponse('landing_company.financial_company') || State.getResponse('landing_company.gaming_company');
+        const changeable      = landing_company.changeable_fields;
         if (changeable && changeable.only_before_auth) {
             changeable_fields = changeable_fields.concat(changeable.only_before_auth);
         }
