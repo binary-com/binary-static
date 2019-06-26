@@ -44,7 +44,7 @@ const OrderExecution = () => (
         <p>{it.L('In executing orders on the client\'s behalf, [_1] takes into consideration the following to achieve the best possible result for the client:', it.website_name)}</p>
         <ul className='bullet'>
             <li>{it.L('Price - the price at which the transaction in relation to the client\'s order is executed')}</li>
-            <li>{it.L('Costs - the costs of executing client order, predominantly comprising of spread, i.e. the difference between the Company\'s bid and the Company\'s offer price')}</li>
+            <li>{it.L('Costs - the costs of executing client order, predominantly comprising of spread, i.e. the difference between the Company\'s Bid and the Company\'s Ask')}</li>
             <li>{it.L('Speed - the speed at which client order can be executed')}</li>
             <li>{it.L('Likelihood of execution and settlement - the depth of liquidity of the market to which client order is related')}</li>
             <li>{it.L('Size - the size of client order determined by the volume (number of lots)')}</li>
@@ -84,7 +84,7 @@ const OrderExecution = () => (
             <li>{it.L('Consolidating liquidity from several providers into a single stream of blended feed')}</li>
             <li>{it.L('Intelligently routing incoming orders to different types of execution modes based on configurations and algorithms established using best execution factors')}</li>
         </ul>
-        <p>{it.L('By default, the intelligent order routing system ensures that the top of the book is always comprised of the best bid and offer rates quoted by the competing liquidity providers. However, during times of market illiquidity, this may change with likelihood of execution being the primary execution factor.')}</p>
+        <p>{it.L('By default, the intelligent order routing system ensures that the top of the book is always comprised of the best Bids and Asks quoted by the competing liquidity providers. However, during times of market illiquidity, this may change with likelihood of execution being the primary execution factor.')}</p>
         <p>{it.L('Depending on the level of risk that the Company is exposed to while acting as the client\'s counterparty, the Company acts largely in a principal capacity of the client\'s trades. As such, the execution venue will usually be [_1]. However, the Company may transmit the client\'s order to third-party liquidity providers, in which case the Company will determine the execution venue on the basis described above.', it.website_name)}</p>
         <p>{it.L('The execution venues are assessed, on a regular basis, as to whether they provide for the best possible result for the clients.')}</p>
     </div>

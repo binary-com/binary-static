@@ -19,7 +19,7 @@ const DigitDisplay = (() => {
             }))
             .append($('<div />', {
                 class: 'gr-8 gr-centered gr-12-m',
-                style: `height: ${calculated_height}px;`,
+                id   : 'table_digits_container',
             })
                 .append($('<div />', {
                     class: 'gr-row',

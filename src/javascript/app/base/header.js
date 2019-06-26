@@ -290,7 +290,6 @@ const Header = (() => {
                 cashier_locked       : () => localize('Deposits and withdrawals have been disabled on your account. Please check your email for more details.'),
                 currency             : () => buildMessage(localizeKeepPlaceholders('Please set the [_1]currency[_2] of your account.'),                                                                                    'user/set-currency'),
                 document_needs_action: () => buildMessage(localizeKeepPlaceholders('[_1]Your Proof of Identity or Proof of Address[_2] did not meet our requirements. Please check your email for further instructions.'), 'user/authenticate'),
-                document_review      : () => buildMessage(localizeKeepPlaceholders('We are reviewing your documents. For more details [_1]contact us[_2].'),                                                               'contact'),
                 excluded_until       : () => buildMessage(localizeKeepPlaceholders('Your account is restricted. Kindly [_1]contact customer support[_2] for assistance.'),                                                 'contact'),
                 financial_limit      : () => buildMessage(localizeKeepPlaceholders('Please set your [_1]30-day turnover limit[_2] to remove deposit limits.'),                                                             'user/security/self_exclusionws'),
                 mf_retail            : () => buildMessage(localizeKeepPlaceholders('Binary Options Trading has been disabled on your account. Kindly [_1]contact customer support[_2] for assistance.'),                   'contact'),
@@ -307,11 +306,10 @@ const Header = (() => {
             };
 
             const validations = {
-                authenticate         : () => +get_account_status.prompt_client_to_authenticate,
+                authenticate         : () => +get_account_status.prompt_client_to_authenticate && !hasStatus('document_under_review'),
                 cashier_locked       : () => hasStatus('cashier_locked'),
                 currency             : () => !Client.get('currency'),
                 document_needs_action: () => hasStatus('document_needs_action'),
-                document_review      : () => hasStatus('document_under_review'),
                 excluded_until       : () => Client.get('excluded_until'),
                 financial_limit      : () => hasStatus('ukrts_max_turnover_limit_not_set'),
                 mf_retail            : () => Client.get('landing_company_shortcode') === 'maltainvest' && !hasStatus('professional'),
@@ -334,7 +332,6 @@ const Header = (() => {
                 'risk',
                 'tax',
                 'currency',
-                'document_review',
                 'document_needs_action',
                 'authenticate',
                 'cashier_locked',
