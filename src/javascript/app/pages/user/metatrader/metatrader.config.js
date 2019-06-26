@@ -122,7 +122,7 @@ const MetaTraderConfig = (() => {
 
             if (!Client.get('currency')) {
                 resolve($messages.find('#msg_set_currency').html());
-            } else if (is_virtual && Client.hasOnlyVirtualAccounts()) { // virtual clients without a real account can only open demo MT accounts
+            } else if (is_virtual && !Client.hasAccountType('real')) { // virtual clients without a real account can only open demo MT accounts
                 resolve(needsRealMessage());
             } else {
                 BinarySocket.wait('get_settings').then(() => {
