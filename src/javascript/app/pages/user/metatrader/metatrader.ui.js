@@ -220,7 +220,7 @@ const MetaTraderUI = (() => {
     };
 
     const refreshAction = () => {
-        current_action_ui = '';
+        current_action_ui = null;
     };
 
     const loadAction = (action, acc_type) => {
