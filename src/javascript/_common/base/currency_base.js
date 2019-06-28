@@ -4,7 +4,7 @@ const getPropertyValue = require('../utility').getPropertyValue;
 
 let currencies_config = {};
 
-const getTextFormat = (number, currency) => `${currency} ${addComma(number, getDecimalPlaces(currency), isCryptocurrency(currency))}`;
+const getTextFormat = (number, currency) => `${currency} ${addComma(number, getDecimalPlaces(currency), isCryptocurrency(currency) && currency !== 'UST')}`;
 
 const formatMoney = (currency_value, amount, exclude_currency, decimals = 0, minimumFractionDigits = 0) => {
     let money = amount;
