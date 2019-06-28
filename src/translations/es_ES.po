@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-06-26 06:51\n"
+"PO-Revision-Date: 2019-06-28 05:20\n"
 "Last-Translator: binarycom\n"
 "Language-Team: Spanish\n"
 "MIME-Version: 1.0\n"
@@ -730,10 +730,10 @@ msgid "A Stays Between trade pays out if the market stays between (does not touc
 msgstr "Un binario \"Permanece Dentro\" se paga si el mercado permanece entre (sin tocar) el límite superior e inferior (AMBOS) durante todo el período establecido. Un binario \"Sale\" se paga si el mercado alcanza el límite superior o el inferior en cualquier momento durante el período establecido."
 
 msgid "A Stop Loss Order is intended for minimising losses when the financial instrument price moves in an unprofitable direction. The execution of this Order results in the complete closing of the whole position. It is always connected to an Open Position or a Pending Order."
-msgstr "Una Orden de Stop Loss es la que está destinada a minimizar las perdidas cuando el precio del instrumento financiero se mueve hacia una dirección no rentable. La ejecución de esta Orden da como resultado el cierre completo de toda la posición. Siempre está conectada a una Posición Abierta o una Orden Pendiente."
+msgstr "Una Orden Stop Loss es la que está destinada a minimizar las perdidas cuando el precio del instrumento financiero se mueve hacia una dirección no rentable. La ejecución de esta Orden da como resultado el cierre completo de toda la posición. Siempre está conectada a una Posición Abierta o a una Orden Pendiente."
 
 msgid "A Take Profit Order is intended for gaining profit when the financial instrument price has reached a certain level. Execution of this Order results in the complete closing of the whole position. It is always connected to an Open Position or a Pending Order."
-msgstr "Una Orden de Tomar Beneficios es la que está destinada a obtener ganancias cuando el precio del instrumento financiero ha alcanzado un cierto nivel. La ejecución de esta Orden da como resultado el cierre completo de toda la posición. Siempre está conectada a una Posición Abierta o una Orden Pendiente."
+msgstr "Una Orden de Colectar Ganancias es la que está destinada a obtener ganancias cuando el precio del instrumento financiero ha alcanzado un cierto nivel. La ejecución de esta Orden da como resultado el cierre completo de toda la posición. Siempre está conectada a una Posición Abierta o a una Orden Pendiente."
 
 msgid "A bachelor's degree in commerce or any business-related field, IT-related field or criminology"
 msgstr "Una licenciatura en comercio o en cualquier campo relacionado con los negocios, la tecnología de la información o la criminología"
@@ -1234,7 +1234,7 @@ msgid "All calls are recorded for training and monitoring purposes"
 msgstr "Todas nuestras llamadas se graban para fines de capacitación y supervisión"
 
 msgid "All client orders are processed on a first in, first out basis without any manual intervention. When executing client order, %1 will seek to fill client order transaction as promptly as possible at the instructed price (or at a better price, if available). Exposure limits are established based on internal governance arrangements and risk management framework, which both commensurate with the size, nature, complexity, and risk profile of the Company's activities. These exposure limits are used as benchmarks to distinguish orders that are auto-accepted from orders that will be worked in the market with fill level passed on to the client."
-msgstr "Todos los pedidos de los clientes se procesan según el método PEPS (o FIFO en inglés), sin intervención manual. Al ejecutar su operación, %1 se intentará completar la transacción lo antes posible, al precio indicado (o a un mejor precio, si está disponible). Los límites de exposición se establecen en base a las regulaciones internas y al marco de gestión de riesgo, que son proporcionales al tamaño, naturaleza, complejidad y perfil de riesgo de nuestras actividades. Estos límites de exposición se utilizan como puntos de referencia para distinguir entre las órdenes que son auto-aceptadas y las órdenes que se trabajarán en el mercado con el nivel de llenado transferido al cliente."
+msgstr "Todas las órdenes de los clientes se procesan según el método PEPS (o FIFO en inglés), sin intervención manual. Al ejecutar su operación, %1 intentará completar la transacción lo antes posible, al precio indicado (o a un mejor precio, si está disponible). Los límites de exposición se establecen en base a las regulaciones internas y al marco de gestión de riesgo, que son proporcionales al tamaño, naturaleza, complejidad y perfil de riesgo de las actividades de la Empresa. Estos límites de exposición se utilizan como puntos de referencia para distinguir entre las órdenes que son auto-aceptadas y las órdenes que se trabajarán en el mercado con el nivel de llenado transferido al cliente."
 
 msgid "All conditions and durations"
 msgstr "Todas las condiciones y duraciones"
@@ -4805,7 +4805,7 @@ msgid "For full contact details of %1, the client is encouraged to check %1's %2
 msgstr "Para todos los datos de contacto de %1, se invita al cliente a que revise la pagina de Contacto de %1."
 
 msgid "For fully covered accounts, no Margin will be charged on open positions. However, swaps and other applicable fees can cause the client's Account Equity to turn negative. In that case, the Stop Out process will be triggered."
-msgstr "Para las cuentas totalmente cubiertas, no se cobrará Margen en las posiciones abiertas. Sin embargo, los intercambios y otras tarifas aplicables pueden causar que la Equidad de la Cuenta del cliente se vuelva negativa. En ese caso se activará el proceso de Stop Out."
+msgstr "Para las cuentas totalmente cubiertas, no se cobrará Margen en las posiciones abiertas. Sin embargo, los swaps y otras tarifas aplicables pueden causar que el Capital de la Cuenta del cliente se vuelva negativo. En ese caso se activará el proceso de Stop Out."
 
 msgid "For further assistance, email us at %1affiliates@binary.com%2"
 msgstr "Para más asistencia envíenos un correo electrónico a %1affiliates@binary.com%2"
@@ -6924,10 +6924,10 @@ msgid "Margin Requirement"
 msgstr "Requisitos del margen"
 
 msgid "Margin Requirement and calculation"
-msgstr "Requisitos y cálculo del margen"
+msgstr "Requisitos y cálculo del Margen"
 
 msgid "Margin Requirement is the amount that the client needs to have in their account prior to entering into a trade and it is a percentage of the value of that trade. Margin Requirement will continue to increase/decrease in accordance with the volume and direction of the Open Positions."
-msgstr "El Requisito de Margen es la cantidad que el cliente debe tener en su cuenta antes de realizar una operación y es un porcentaje del valor de esa operación. El Requisito de Margen continuará aumentando / disminuyendo de acuerdo con el volumen y la dirección de las Posiciones Abiertas."
+msgstr "El Requisito de Margen es la cantidad que el cliente debe tener en su cuenta antes de realizar una operación y es un porcentaje del valor de esa operación. El Requisito de Margen continuará aumentando / disminuyendo de acuerdo al volumen y la dirección de las Posiciones Abiertas."
 
 msgid "Margin allows you to trade on leverage – giving you the same level of market exposure using much less capital."
 msgstr "El margen le permite operar con apalancamiento, lo que le proporciona el mismo nivel de exposición al mercado con mucho menos capital."
@@ -8054,8 +8054,8 @@ msgstr "Términos y condiciones de los agentes de pago"
 msgid "Payment methods"
 msgstr "Métodos de pago"
 
-msgid "Payment of commission earned for the previous calendar month will be made monthly, on or around the 15th day of each month, and may be credited to any payment method as agreed between the Company and the Affiliate."
-msgstr "El pago de la comisión ganada el mes anterior se realizará mensualmente, en o alrededor del día 15 de cada mes y puede realizarse mediante cualquier método de pago según lo acordado entre la Empresa y el Afiliado."
+msgid "Payment of commission earned for the previous calendar month will be made as soon as practicable after the 15th day of each month."
+msgstr "El pago de la comisión obtenida por el mes calendario anterior se realizará tan pronto como sea posible después del día 15 de cada mes."
 
 msgid "Payments"
 msgstr "Pagos"
@@ -8209,6 +8209,9 @@ msgstr "Por favor, %1acepte los Términos y Condiciones actualizados%2 para elev
 
 msgid "Please %1accept the updated Terms and Conditions%2."
 msgstr "Por favor, %1acepte los Términos y Condiciones actializados%2."
+
+msgid "Please %1authenticate your account%2 before creating an MT5 account."
+msgstr "Por favor, %1autentique su cuenta%2 antes de crear una cuenta en MT5."
 
 msgid "Please %1authenticate%2 your account to continue trading."
 msgstr "Por favor, %1autentique%2 su cuenta para continuar operando."
@@ -8571,7 +8574,7 @@ msgid "Primary"
 msgstr "Primario"
 
 msgid "Prior to placing an Order, which results in opening a position, the client acknowledges that it is their responsibility to ensure that their Account Free Margin is sufficient to cover the Margin required in relation to the opening of the position (the \"Margin Requirement\"), and to continuously meet the Margin Requirement."
-msgstr "Antes de realizar una Orden que resulte en la apertura de una posición, el cliente reconoce que es su responsabilidad garantizar que el Margen Libre de su cuenta sea suficiente para cubrir el Margen requerido en relación con la apertura de la posición (el \"Requisito de Margen\"), y para cumplir continuamente con el Requisito de Margen."
+msgstr "Antes de realizar una Orden que resulte en la apertura de una posición, el cliente reconoce que es su responsabilidad garantizar que el Margen Libre de su cuenta sea suficiente para cubrir el Margen requerido en relación a la apertura de la posición (el \"Requisito de Margen\"), y para cumplir continuamente con el Requisito de Margen."
 
 msgid "Proactive approach in problem-solving and solution delivery"
 msgstr "Enfoque proactivo en la resolución de problemas y la entrega de soluciones"
@@ -8772,7 +8775,7 @@ msgid "Q. Introducing Brokers"
 msgstr "Q. Brokers Introductorios"
 
 msgid "Q1 2019"
-msgstr ""
+msgstr "Q1 2019"
 
 msgid "Q3 2018"
 msgstr "Q3 2018"
@@ -8805,10 +8808,10 @@ msgid "R. Interpretation of terms"
 msgstr "R. Interpretación de los términos"
 
 msgid "RTS 27 2018"
-msgstr ""
+msgstr "RTS 27 2018"
 
 msgid "RTS 27 2019"
-msgstr ""
+msgstr "RTS 27 2019"
 
 msgid "RTS 28"
 msgstr "RTS 28"
@@ -10468,7 +10471,7 @@ msgid "The Company may impose certain rules and restrictions on the placing of m
 msgstr "La Empresa podrá implementar ciertas reglas y restricciones en relación a cómo operar con órdenes de mercado en este sitio web. Tales reglas pueden cambiar de vez en cuando en base a las condiciones del mercado y otros factores. Las siguientes reglas indicadoras están vigentes:"
 
 msgid "The Company may modify Margin Requirements for any Open Positions or new Orders at its sole discretion. Formulas for Margin Requirements published on the website are indicative only and may be changed by the Company at its discretion at any time, due to changing market conditions or other factors."
-msgstr "La Empresa puede modificar, a su exclusiva elección, los Requisitos de Margen para cualquier Posición Abierta o nuevas Ordenes realizadas. Las fórmulas para los Requisitos de Margen publicadas en el sitio web son solo indicativas y pueden ser modificadas por la Empresa a su discreción en cualquier momento, debido a condiciones cambiantes del mercado u otros factores."
+msgstr "La Empresa puede modificar, a su entera discreción, los Requisitos de Margen para cualquier Posición Abierta o nuevas Órdenes realizadas. Las fórmulas para los Requisitos de Margen publicadas en el sitio web son solo indicativas y pueden ser modificadas por la Empresa a su discreción en cualquier momento, debido a condiciones cambiantes del mercado u otros factores."
 
 msgid "The Company may modify any provisions or terms of this Agreement at any time. It is the responsibility of the Introducing Broker to consistently review all modifications in the Agreement made on the website."
 msgstr "La Empresa puede, en cualquier momento, modificar cualquier disposición o términos de este Acuerdo. Es responsabilidad del Broker Introductorio el revisar sistemáticamente todas las modificaciones en el Acuerdo hechas en el sitio web."
@@ -10489,7 +10492,7 @@ msgid "The Company may, at its absolute discretion, accept a Stop Order, a Limit
 msgstr "La Empresa puede, a su entera discreción, aceptar una Orden Stop, una Orden Límite, o una Orden Stop Limit del cliente."
 
 msgid "The Company may, at its absolute discretion, disregard the client's Order if an Event takes place resulting in it no longer being practicable to act on the client's Order after indicating an acceptance of their Order."
-msgstr "La Empresa podrá, a su entera discreción, desestimar la Orden del cliente en caso de que un Evento haga que ya no sea práctico actuar sobre dicha Orden, incluso luego de haber aceptado la misma."
+msgstr "La Empresa podrá, a su entera discreción, desestimar la Orden del cliente en caso que un Evento cause que ya no sea práctico actuar sobre dicha Orden, incluso luego de haberla aceptado."
 
 msgid "The Company may, at its sole discretion or as required by regulations in place conduct appropriate \"Know Your Customer\" (KYC) procedures and require a client to provide proof of identity and suspend an account until satisfactory evidence of identity and address, source of funds, and/or source of wealth have been provided."
 msgstr "La Empresa puede, a su sola discreción o como sea requerido por las regulaciones vigentes, realizar verificaciones adecuadas de \"Conozca a sus Clientes (KYC, por sus siglas en inglés)\" y solicitar al cliente proveer comprobantes de identidad y suspender la cuenta hasta que evidencias de identidad y dirección, fuentes de ingresos, y/o recursos financieros hayan sido provistos en forma satisfactoria."
@@ -10540,7 +10543,7 @@ msgid "The Company reserves the right to change any part of this Agreement at an
 msgstr "La Empresa se reserva el derecho a cambiar cualquier parte de este Acuerdo en cualquier momento. Nos esforzaremos para garantizar que los afiliados sean notificados cuando se realicen cambios a este acuerdo, pero en última instancia es responsabilidad de los afiliados revisar estos términos y condiciones regularmente. Su continua participación en nuestro programa de afiliados tras haberse publicado los cambios, constituirá la aceptación vinculante de tales cambios."
 
 msgid "The Company reserves the right to charge the Margin per each hedged lot of a position."
-msgstr "La Empresa se reserva el derecho de cobrar el Margen por cada lote cubierto de una posición."
+msgstr "La Empresa se reserva el derecho a cobrar el Margen por cada lote cubierto de una posición."
 
 msgid "The Company reserves the right to have risk limits in place, which affect the trading limits of all clients trading, and may not be limited solely to instruments and contract types."
 msgstr "La Empresa se reserva el derecho de aplicar límites de riesgo, lo que afecta los límites de operaciones de todos los clientes, y puede que no se limiten únicamente a los instrumentos y tipos de contratos."
@@ -11002,16 +11005,16 @@ msgid "The client acknowledges that any explanations, trading recommendations, i
 msgstr "El cliente reconoce que cualquier explicación, recomendación comercial, estudio de inversión independiente, comentario sobre un mercado o cualquier otro tipo de información brindado por BIEL, son proporcionados al cliente como una herramienta de comunicación publicitaria o material educativo, con fines puramente informativos, y no debe ser interpretado como asesoramiento personal de inversión."
 
 msgid "The client acknowledges that it is their responsibility to cancel the Stop or Limit Order if they do not want the Stop or Limit Order to remain valid. If the client fails to cancel the Stop or Limit Order, the Company shall be entitled, at its absolute discretion, to treat the Stop or Limit Order as an instruction to enter into a new transaction for the client if and when the Company quote reaches or goes beyond the level of the Stop or Limit Order."
-msgstr "El cliente reconoce que es su responsabilidad el cancelar una Orden de Finalización o de Limitación si no desea que estas continúen siendo válidas. Si el cliente falla en cancelar la Orden de Finalización o de Limitación, la Empresa tendrá el derecho, a su entera discreción, de tratar la Orden de Finalización o de Limitación como un instructivo para ingresar a una nueva transacción para el cliente cuando y si la cotización de la Empresa alcance o sobrepase el nivel de la Orden de Limitación o de Finalización."
+msgstr "El cliente reconoce que es su responsabilidad el cancelar una Orden Stop o Límite si no desea que estas continúen siendo válidas. Si el cliente falla en cancelar la Orden Stop o Límite, la Empresa tendrá el derecho, a su entera discreción, de tratar dicha Orden Stop o Límite como una instrucción para ingresar a una nueva transacción para el cliente cuando y si la cotización de la Empresa alcance o sobrepase el nivel de la Orden Stop o Límite."
 
 msgid "The client acknowledges that it is their responsibility to monitor their Account Balance and Margin Requirement, and the Company is not under any obligation to keep the client informed (i.e. to make a Margin Call)."
-msgstr "El cliente reconoce que es su responsabilidad controlar el Saldo de su Cuenta y el Requisito de Margen y que la Empresa no tiene ninguna obligación de mantenerlo informado (es decir, realizar una Llamada de Margen)."
+msgstr "El cliente reconoce que es su responsabilidad controlar el Saldo de su Cuenta y el Requisito de Margen, y que la Empresa no tiene obligación alguna de mantenerlo informado (es decir, realizar una Llamada de Margen)."
 
 msgid "The client acknowledges that it is their responsibility to understand the features, characteristics, terms, and conditions of an Order and the implications of executing an Order before they place an Order with the Company."
 msgstr "El cliente reconoce que es su responsabilidad comprender las características, detalles, términos, y condiciones de una orden y las implicaciones de ejecutarla antes de concretar la orden con la Empresa."
 
 msgid "The client acknowledges that the Company reserves the right to establish a minimum and maximum transaction size, as well as a total net position size, which may be subject to alteration, and that the Company will only execute Orders that fall within the range of the minimum and maximum transaction sizes."
-msgstr "El cliente reconoce que la Empresa se reserva el derecho de establecer un tamaño de transacciones mínimo y máximo, así como un tamaño de posición neta total, que puede estar sujeto a alteración, y que la Empresa solo ejecutará Ordenes que se encuentren dentro del rango del mínimo y los tamaños máximos de transacción."
+msgstr "El cliente reconoce que la Empresa se reserva el derecho a establecer un volumen mínimo y máximo de transacciones, así como un volumen total de posición neta, que puede estar sujeto a alteración, y que la Empresa solo ejecutará Ordenes que se encuentren dentro del rango de volumen mínimo y máximo de transacción."
 
 msgid "The client acknowledges that the Company reserves the right to void or close out one or more of the client's transactions if the Company observes any breaches of warranty given under this agreement."
 msgstr "El cliente reconoce que la Empresa se reserva el derecho a anular o cerrar una o más de las operaciones del cliente si la Empresa observar algún incumplimiento de las garantías presentes en este Acuerdo."
@@ -11131,7 +11134,7 @@ msgid "The client may make Margin Payments by transferring funds from their %1 a
 msgstr "El cliente puede realizar Pagos de Margen transfiriendo fondos de su cuenta %1 a su cuenta real MT5. En el caso de que no hayan fondos suficientes en su cuenta %1 para financiar su Cuenta Real MT5, el cliente puede realizar Pagos de Margen financiando su cuenta %1 y transfiriendo los fondos de su cuenta %1 a su Cuenta Real MT5."
 
 msgid "The client may not cancel or amend the level of their Stop and Limit Order once the level has been reached."
-msgstr "El cliente no podrá cancelar o modificar el nivel de su Orden de Finalización y su Orden de Limitación una vez que se haya alcanzado el nivel."
+msgstr "El cliente no podrá cancelar o modificar el nivel de su Orden Stop y su Orden Límite una vez se haya alcanzado el nivel."
 
 msgid "The client may specify their instruction of a Stop Order or apply for a Limit Order for a limited duration or for an indefinite period (a \"good till cancelled\" or \"GTC\" Order)."
 msgstr "El cliente puede especificar su instrucción para una Orden Stop o aplicar para una Orden Límite de duración limitada o período indefinido (una orden \"Válida Hasta Cancelación\" u Orden \"GTC\")."
@@ -11920,7 +11923,7 @@ msgstr "Para cambiar su nombre, fecha de nacimiento, país de residencia, correo
 msgid "To create a MAM real account, please:"
 msgstr "Para crear una cuenta real para la gestión de cuentas múltiples o GCM, por favor:"
 
-msgid "To create a MetaTrader 5 account, please:"
+msgid "To create a MetaTrader 5 account:"
 msgstr "Para crear una cuenta MetaTrader 5:"
 
 msgid "To disable two-factor authentication, please enter the code generated by the app below:"
@@ -11951,7 +11954,7 @@ msgid "To learn more, read our %1Margin Policy%2 that further explains our margi
 msgstr "Para más detalles, lea nuestra %1Política de márgenes%2 que explica con más detalle nuestros requisitos de margen."
 
 msgid "To maintain Open Positions, the client is required to have sufficient Account Equity to cover any Margin Requirement. If a client's Margin Level is less than the Margin Level set for their account, the client has entered into a Margin Call and is required to increase their Margin Level above the account's specified level in order to avoid a Stop Out to occur. The client may not be able to place an Order to open a transaction unless there is sufficient Account Equity to cover the Total Margin."
-msgstr "Para mantener las Posiciones Abiertas, se requiere que el cliente tenga suficiente Capital en Cuenta para cubrir cualquier Requisito de Margen. Si el Nivel de Margen de un cliente es menor que el Nivel de Margen establecido para su cuenta, el cliente habrá ingresado en una Llamada de Margen y se exigirá que aumente su Nivel de Margen por encima del nivel especificado de la cuenta para evitar que se produzca un Stop Out. Es posible que el cliente no pueda realizar una Orden para abrir una transacción a menos que haya suficiente Capital en Cuenta para cubrir el Margen Total."
+msgstr "Para mantener las Posiciones Abiertas, se requiere que el cliente tenga suficiente Capital en la Cuenta para cubrir cualquier Requisito de Margen. Si el Nivel de Margen de un cliente es menor al Nivel de Margen establecido para su cuenta, el cliente habrá ingresado en una Llamada de Margen y se exigirá que aumente su Nivel de Margen por encima del nivel especificado de la cuenta para evitar que se produzca un Stop Out. Es posible que el cliente no pueda realizar una Orden para abrir una transacción a menos que haya suficiente Capital en la Cuenta para cubrir el Margen Total."
 
 msgid "To perform this action, please %1upgrade to %2 Real Account%3."
 msgstr "Para realizar esta acción, %1actualice a una cuenta real %2%3."
@@ -12702,7 +12705,7 @@ msgid "View chart"
 msgstr "Vea la gráfica"
 
 msgid "View essential information for open positions associated with each login ID – including order type (buy/sell), open time, open price,  stop loss, take profit, swap, and profit"
-msgstr "Vea la información esencial para las posiciones abiertas asociadas con cada login ID - inclyendo tipo de contrato (compra / venta), tiempo de apertura, precio de apertura, límite de pérdida (stop loss), recogida de ganancias, cambio (swap) y ganancias.\n"
+msgstr "Vea la información esencial para las posiciones abiertas asociadas con cada login ID - inclyendo tipo de contrato (compra / venta), tiempo de apertura, precio de apertura, límite de pérdida (stop loss), colectar ganancias, cambio (swap) y ganancias"
 
 msgid "View guide"
 msgstr "Ver la guía"
@@ -13212,7 +13215,7 @@ msgid "Whilst the Company acts as principal in respect of the client's orders, t
 msgstr "Si bien la Empresa actúa como administrador respecto a las órdenes del cliente, esta también evalúa los lugares de ejecución que y en los cuales confía significativamente para proporcionar el mejor resultado posible para la ejecución de las órdenes del cliente. Estos lugares suelen consistir en empresas de inversión de terceros, corredores y / o proveedores de liquidez."
 
 msgid "Whilst the Company endeavours to close out the client's Open Positions if and when the Margin Level for their MT5 Real Account reaches or falls below the Stop Out Level, the company does not guarantee that the client's Open Positions will be closed when the Margin Level for their MT5 Real Account reaches the Stop Out Level."
-msgstr "Aunque la Empresa se esfuerza por cerrar las Posiciones Abiertas del cliente si y cuando el Nivel de Margen de su cuenta real de MT5 alcance o caiga por debajo del nivel Stop Out, esta no garantiza que sus Posiciones Abiertas se cerrarán cuando el Nivel de Margen de su cuenta real MT5 alcance el nivel de Stop Out."
+msgstr "Aunque la Empresa se esfuerza por cerrar las Posiciones Abiertas del cliente si y cuando el Nivel de Margen de su cuenta Real de MT5 alcance o caiga por debajo del nivel Stop Out, esta no garantiza que sus Posiciones Abiertas se cerrarán cuando el Nivel de Margen de su cuenta Real MT5 alcance el nivel de Stop Out."
 
 msgid "Whilst the Company endeavours to open or close the transaction to which the client's orders relate at the requested price, acting in accordance with the Company's duty of best execution, there are times when, due to an increase in volatility or volume, orders may be subject to slippage. The difference between the order price and execution price when orders are filled is known as slippage. This means that the client's order is not filled at the exact intended quoted price when the client places their order. Slippage is usually seen during periods of extremely high or low volatility and generally occurs during fundamental news releases or periods of limited liquidity. Slippages can result in either a positive slippage (more favourable to the client) or a negative slippage (less favourable to the client)."
 msgstr "Mientras la Empresa se esfuerza por abrir o cerrar la Transacción a la que se relacionan las Órdenes del cliente al precio solicitado, de acuerdo con el deber de mejor ejecución de la propia Empresa existen momentos en los que, debido a un aumento en la volatilidad o el volumen, las Órdenes pueden estar sujetas al slippage. La diferencia entre el precio de órden y el precio de su ejecución cuando las órdenes están filiazadas se conoce como deslizamiento (el slippage). Esto significa que la orden del cliente no ha finalizado al precio esperado y exacto, sino al otro diferente al precio de apertura. El deslizamiento se observa generalmente durante periodos de volatilidad extremadamente alta o baja y generalmente ocurre durante fundamentales noticias de prensa o períodos de liquidez limitada. Los slippages pueden resultar en un deslizamiento positivo (más favorable para el cliente) o en un deslizamiento negativo (menos favorable para el cliente)."
