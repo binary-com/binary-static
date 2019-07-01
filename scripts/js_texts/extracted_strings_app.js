@@ -456,7 +456,6 @@ module.exports = [
     'Waiting for entry tick.',
     'Waiting for exit tick.',
     'We',
-    'We are reviewing your documents. For more details [_1]contact us[_2].',
     'Wednesday',
     'When you click "OK" you will be excluded from trading on the site until the selected date.',
     'Withdraw',

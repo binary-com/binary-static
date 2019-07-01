@@ -220,7 +220,7 @@ const MetaTraderUI = (() => {
     };
 
     const refreshAction = () => {
-        current_action_ui = '';
+        current_action_ui = null;
     };
 
     const loadAction = (action, acc_type) => {
@@ -428,7 +428,15 @@ const MetaTraderUI = (() => {
             updateAccountTypesUI(selected_acc_type);
             $form.find('#view_1 #btn_next').addClass('button-disabled');
             $form.find('#view_1 .step-2').setVisibility(1);
-            displayMessage('#new_account_msg', (selected_acc_type === 'real' && !Client.hasAccountType('real')) ? MetaTraderConfig.needsRealMessage() : '', true);
+            displayMessage(
+                '#new_account_msg',
+                (((selected_acc_type === 'demo' && Client.get('residence') === 'gb')
+                        || selected_acc_type === 'real')
+                        && !Client.hasAccountType('real'))
+                    ? MetaTraderConfig.needsRealMessage()
+                    : '',
+                true
+            );
             $form.find('#new_account_no_deposit_bonus_msg').setVisibility(0);
         } else {
             const new_acc_type = newAccountGetType();
@@ -447,7 +455,12 @@ const MetaTraderUI = (() => {
         Object.keys(accounts_info)
             .filter(acc_type => acc_type.indexOf(type) === 0)
             .forEach((acc_type) => {
-                let class_name = (type === 'real' && !Client.hasAccountType('real')) ? 'disabled' : '';
+                let class_name = (
+                    ((type === 'demo' && Client.get('residence') === 'gb')
+                        || type === 'real')
+                        && !Client.hasAccountType('real'))
+                    ? 'disabled'
+                    : '';
                 if (accounts_info[acc_type].info) {
                     class_name = 'existed';
                 }
