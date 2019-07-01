@@ -6,6 +6,8 @@ let currencies_config = {};
 
 const getTextFormat = (number, currency) => `${currency} ${addComma(number, getDecimalPlaces(currency), isCryptocurrency(currency))}`;
 
+const getNumberFormat = (number, currency) => addComma(number, getDecimalPlaces(currency), isCryptocurrency(currency));
+
 const formatMoney = (currency_value, amount, exclude_currency, decimals = 0, minimumFractionDigits = 0) => {
     let money = amount;
     if (money) money = String(money).replace(/,/g, '');
@@ -129,6 +131,7 @@ module.exports = {
     isCryptocurrency,
     getCurrencyName,
     getMinWithdrawal,
+    getNumberFormat,
     getTransferLimits,
     getTransferFee,
     getMinimumTransferFee,

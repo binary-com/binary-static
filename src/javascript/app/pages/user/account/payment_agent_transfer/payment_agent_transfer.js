@@ -2,7 +2,7 @@ const PaymentAgentTransferUI = require('./payment_agent_transfer.ui');
 const Client                 = require('../../../../base/client');
 const BinarySocket           = require('../../../../base/socket');
 const getDecimalPlaces       = require('../../../../common/currency').getDecimalPlaces;
-const getTextFormat          = require('../../../../common/currency').getTextFormat;
+const getNumberFormat        = require('../../../../common/currency').getNumberFormat;
 const FormManager            = require('../../../../common/form_manager');
 const localize               = require('../../../../../_common/localize').localize;
 const State                  = require('../../../../../_common/storage').State;
@@ -105,7 +105,7 @@ const PaymentAgentTransfer = (() => {
             PaymentAgentTransferUI.hideFirstForm();
             PaymentAgentTransferUI.showConfirmation();
             PaymentAgentTransferUI.updateConfirmView(response.client_to_full_name, req.transfer_to.toUpperCase(),
-                getTextFormat(req.amount, req.currency), req.currency);
+                getNumberFormat(req.amount, req.currency), req.currency);
             initConfirm(req);
             return;
         }
@@ -113,7 +113,7 @@ const PaymentAgentTransfer = (() => {
         if (response.paymentagent_transfer === 1) {
             PaymentAgentTransferUI.hideFirstForm();
             PaymentAgentTransferUI.showDone();
-            PaymentAgentTransferUI.updateDoneView(Client.get('loginid'), req.transfer_to.toUpperCase(), getTextFormat(req.amount, req.currency), req.currency);
+            PaymentAgentTransferUI.updateDoneView(Client.get('loginid'), req.transfer_to.toUpperCase(), getNumberFormat(req.amount, req.currency), req.currency);
         }
     };
 
@@ -122,7 +122,7 @@ const PaymentAgentTransfer = (() => {
 
         FormManager.init(confirm_form_id, [
             { request_field: 'transfer_to', value: req.transfer_to },
-            { request_field: 'amount',      value: getTextFormat(req.amount, req.currency) },
+            { request_field: 'amount',      value: getNumberFormat(req.amount, req.currency) },
             { request_field: 'description', value: req.description },
         ].concat(common_request_fields));
 
