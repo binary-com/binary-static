@@ -108,7 +108,6 @@ module.exports = [
 
     ['get-started',                             'static/get_started/index',                    'default',     'Get Started'],
     ['get-started/binary-options',              'static/get_started/binary_options',           'default',     'Binary Options'],
-    ['get-started/binary-options-mt5',          'static/get_started/binary_options_mt5',       'default',     'Binary Options on MT5'],
     ['get-started/cfds',                        'static/get_started/cfds',                     'default',     'CFDs'],
     ['get-started/cryptocurrencies',            'static/get_started/cryptocurrencies',         'default',     'Cryptocurrencies'],
     ['get-started/forex',                       'static/get_started/forex',                    'default',     'Forex'],
