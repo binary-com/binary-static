@@ -3,6 +3,7 @@ const BinaryPjax           = require('../../base/binary_pjax');
 const Client               = require('../../base/client');
 const BinarySocket         = require('../../base/socket');
 const getDecimalPlaces     = require('../../common/currency').getDecimalPlaces;
+const getNumberFormat      = require('../../common/currency').getNumberFormat;
 const getPaWithdrawalLimit = require('../../common/currency').getPaWithdrawalLimit;
 const FormManager          = require('../../common/form_manager');
 const Validation           = require('../../common/form_validation');
@@ -171,11 +172,11 @@ const PaymentAgentWithdraw = (() => {
 
                 $('#lblAgentName').text(agent_name);
                 $('#lblCurrency').text(request.currency);
-                $('#lblAmount').text(request.amount);
+                $('#lblAmount').text(getNumberFormat(request.amount, request.currency));
 
                 FormManager.init(view_ids.confirm, [
                     { request_field: 'paymentagent_loginid',  value: request.paymentagent_loginid },
-                    { request_field: 'amount',                value: request.amount },
+                    { request_field: 'amount',                value: getNumberFormat(request.amount, request.currency) },
                     { request_field: 'description',           value: request.description },
                     { request_field: 'currency',              value: request.currency },
                     { request_field: 'paymentagent_withdraw', value: 1 },
@@ -195,7 +196,7 @@ const PaymentAgentWithdraw = (() => {
                 setActiveView(view_ids.success);
                 $('#successMessage').css('display', '')
                     .attr('class', 'success-msg')
-                    .html($('<ul/>', { class: 'checked' }).append($('<li/>', { text: localize('Your request to withdraw [_1] [_2] from your account [_3] to Payment Agent [_4] account has been successfully processed.', [request.currency, request.amount, Client.get('loginid'), agent_name]) })));
+                    .html($('<ul/>', { class: 'checked' }).append($('<li/>', { text: localize('Your request to withdraw [_1] [_2] from your account [_3] to Payment Agent [_4] account has been successfully processed.', [request.currency, getNumberFormat(request.amount, request.currency), Client.get('loginid'), agent_name]) })));
                 break;
 
             default: // error

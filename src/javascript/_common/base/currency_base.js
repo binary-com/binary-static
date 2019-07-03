@@ -6,6 +6,8 @@ let currencies_config = {};
 
 const getTextFormat = (number, currency) => `${currency} ${addComma(number, getDecimalPlaces(currency), isCryptocurrency(currency))}`;
 
+const getNumberFormat = (number, currency) => addComma(number, getDecimalPlaces(currency), isCryptocurrency(currency));
+
 const formatMoney = (currency_value, amount, exclude_currency, decimals = 0, minimumFractionDigits = 0) => {
     let money = amount;
     if (money) money = String(money).replace(/,/g, '');
@@ -30,11 +32,11 @@ const formatCurrency = currency => `<span class="symbols ${(currency || '').toLo
 
 const addComma = (num, decimal_points, is_crypto) => {
     let number = String(num || 0).replace(/,/g, '');
-    if (typeof decimal_points !== 'undefined') {
-        number = (+number).toFixed(decimal_points);
-    }
     if (is_crypto) {
         number = parseFloat(+number);
+    }
+    if (typeof decimal_points !== 'undefined') {
+        number = (+number).toFixed(decimal_points);
     }
 
     return number.toString().replace(/(^|[^\w.])(\d{4,})/g, ($0, $1, $2) => (
@@ -129,6 +131,7 @@ module.exports = {
     isCryptocurrency,
     getCurrencyName,
     getMinWithdrawal,
+    getNumberFormat,
     getTransferLimits,
     getTransferFee,
     getMinimumTransferFee,
