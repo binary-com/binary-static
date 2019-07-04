@@ -251,7 +251,9 @@ const ClientBase = (() => {
         } else {
             const financial_company = (getPropertyValue(landing_company, 'financial_company') || {})[key] || [];
             const gaming_company    = (getPropertyValue(landing_company, 'gaming_company') || {})[key] || [];
-            landing_company_object  = financial_company.concat(gaming_company);
+            landing_company_object  = typeof financial_company === 'object'
+                ? Object.assign(financial_company, gaming_company)
+                : financial_company.concat(gaming_company);
             return landing_company_object;
         }
         return (landing_company_object || {})[key];
