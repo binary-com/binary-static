@@ -503,7 +503,7 @@ const PersonalDetails = (() => {
                     BinarySocket.send({ states_list: residence }).then(response_state => {
                         populateStates(response_state).then(() => {
                             getDetailsResponse(get_settings_data, response.residence_list);
-                            // if it's virtual account without real accounts
+                            // if it's not virtual account without real accounts
                             if (!(is_virtual && !Client.hasAccountType('real')) && !is_fully_authenticated) {
                                 Geocoder.validate(form_id);
                             }
