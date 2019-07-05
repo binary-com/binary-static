@@ -125,7 +125,7 @@ const PersonalDetails = (() => {
         get_settings.date_of_birth = 'date_of_birth' in get_settings ? moment.utc(new Date(get_settings.date_of_birth * 1000)).format('YYYY-MM-DD') : '';
         const accounts             = Client.getAllLoginids();
         // for subaccounts, back-end sends loginid of the master account as name
-        const hide_name            = accounts.some(loginid => new RegExp(loginid, 'i').test(get_settings.first_name)) || is_virtual;
+        const hide_name            = accounts.some(loginid => new RegExp(loginid, 'i').test(get_settings.first_name)) || (is_virtual && !Client.hasAccountType('real'));
         if (!hide_name) {
             get_settings.name = `${(get_settings.salutation || '')} ${(get_settings.first_name || '')} ${(get_settings.last_name || '')}`;
         }
@@ -149,7 +149,7 @@ const PersonalDetails = (() => {
             CommonFunctions.getElementById('tax_information_form').setVisibility(1);
             CommonFunctions.getElementById('address_form').setVisibility(1);
             showHideTaxMessage();
-        } else if (is_virtual) {
+        } else if (is_virtual && !Client.hasAccountType('real')) {
             $(real_acc_elements).remove();
         } else {
             $(real_acc_elements).setVisibility(1);
@@ -231,7 +231,7 @@ const PersonalDetails = (() => {
             $('#residence').replaceWith($('<label/>').append($('<strong/>', { id: 'country' })));
             $('#country').text(get_settings.country);
         }
-        if (is_virtual) {
+        if (is_virtual && !Client.hasAccountType('real')) {
             CommonFunctions.getElementById('row_date_of_birth').setVisibility(0);
         }
     };
@@ -253,7 +253,7 @@ const PersonalDetails = (() => {
 
     const getValidations = () => {
         let validations;
-        if (is_virtual) {
+        if (is_virtual && !Client.hasAccountType('real')) {
             validations = [
                 { selector: '#email_consent' },
                 { selector: '#residence', validations: ['req'] },
@@ -327,7 +327,7 @@ const PersonalDetails = (() => {
 
             // to update the State with latest get_settings data
             BinarySocket.send({ get_settings: 1 }, { forced: true }).then((data) => {
-                if (is_virtual && response.echo_req.residence) {
+                if (is_virtual && !Client.hasAccountType('real') && response.echo_req.residence) {
                     window.location.reload(); // reload page if we are setting residence
                     return;
                 }
@@ -476,11 +476,12 @@ const PersonalDetails = (() => {
             const account_status = State.getResponse('get_account_status').status;
             get_settings_data = State.getResponse('get_settings');
             is_fully_authenticated = checkStatus(account_status , 'authenticated');
-            has_changeable_fields = (Client.get('landing_company_shortcode') === 'svg') && !is_fully_authenticated;
+            const has_real_svg_account = Object.values(Client.getAllAccountsObject()).some((values) => values.landing_company_shortcode === 'svg');
+            has_changeable_fields = (Client.get('landing_company_shortcode') === 'svg' || has_real_svg_account) && !is_fully_authenticated;
 
             if (!residence) {
                 displayResidenceList();
-            } else if (is_virtual) {
+            } else if (is_virtual && !Client.hasAccountType('real')) {
                 getDetailsResponse(get_settings_data);
             } else if (has_changeable_fields) {
                 populateChangeableFields();
@@ -502,7 +503,8 @@ const PersonalDetails = (() => {
                     BinarySocket.send({ states_list: residence }).then(response_state => {
                         populateStates(response_state).then(() => {
                             getDetailsResponse(get_settings_data, response.residence_list);
-                            if (!is_virtual && !is_fully_authenticated) {
+                            // if it's virtual account without real accounts
+                            if (!(is_virtual && !Client.hasAccountType('real')) && !is_fully_authenticated) {
                                 Geocoder.validate(form_id);
                             }
                         });
