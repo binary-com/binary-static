@@ -27,7 +27,8 @@ exports.sections_config = {
 };
 
 // ---------- Languages ----------
-exports.languages = ['EN', 'DE', 'ES', 'FR', 'ID', 'IT', 'KO', 'PL', 'PT', 'RU', 'TH', 'VI', 'ZH_CN', 'ZH_TW'];
+// TODO: add 'DE' after 'EN' in the array below to enable German language
+exports.languages = ['EN', 'ES', 'FR', 'ID', 'IT', 'KO', 'PL', 'PT', 'RU', 'TH', 'VI', 'ZH_CN', 'ZH_TW'];
 
 const affiliates_signup_language_map = { // object used instead of array to prevent accidental index changes
     EN   : 0,
@@ -37,7 +38,7 @@ const affiliates_signup_language_map = { // object used instead of array to prev
     ID   : 4,
     PL   : 5,
     VI   : 6,
-    DE   : 7,
+    // DE   : 7, // TODO: uncomment to enable German language
     ES   : 8,
     PT   : 9,
     ZH_CN: 10,
