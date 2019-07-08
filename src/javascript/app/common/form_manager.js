@@ -137,6 +137,7 @@ const FormManager = (() => {
                 const req = $.extend({}, options.obj_request, getFormData(options.form_selector));
                 if (typeof options.fnc_additional_check === 'function') {
                     Promise.resolve(options.fnc_additional_check(req)).then((result) => {
+                        console.log(req)
                         if (result) submit(req);
                     });
                 } else {

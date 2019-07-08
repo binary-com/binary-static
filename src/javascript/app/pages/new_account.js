@@ -33,9 +33,6 @@ const NewAccount = (() => {
                 fnc_additional_check: checkCountry,
             });
             $('.error-msg').addClass('center-text'); // this element exist only after calling FormManager.init
-            if (isEuCountry()) {
-                $('.mfsa_message').slideDown(300);
-            }
         });
 
         $login_btn.off('click').on('click', (e) => {
