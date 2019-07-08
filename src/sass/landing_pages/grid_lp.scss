@@ -191,6 +191,9 @@
         margin-top: 0;
         margin-bottom: 0;
     }
+    .try-desktop {
+        margin-left: 10px;
+    }
 }
 
 .home--header {
@@ -292,6 +295,9 @@
             text-align: left;
             margin-left: auto;
             margin-right: auto;
+        }
+        .try-desktop {
+            display: none;
         }
     }
 }

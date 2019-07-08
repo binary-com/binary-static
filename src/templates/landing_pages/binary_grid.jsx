@@ -10,7 +10,7 @@ const gridLP = () => (
             'https://style.binary.com/binary.css',
         ]}
         js_files={[
-            'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js',
+            'https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js',
             'https://style.binary.com/binary.more.js',
             it.url_for('js/landing_pages/common.js'),
             it.url_for('js/landing_pages/binary_grid.js'),
@@ -27,12 +27,15 @@ const gridLP = () => (
                     </div>
                     <div className='home-header-content lg-center'>
                         <div className='gr-row gr-row-align-middle'>
-                            <div className='gr-5 gr-12-t gr-12-m gr-12-p'>
+                            <div className='gr-6 gr-12-t gr-12-m gr-12-p'>
                                 <h1 className='header-title content-inverse-color ft-300'>{('Our exciting new mobile trading app')}</h1>
                                 <span className='header-sub secondary-color'>{('Seamless trading on your smartphone.')}</span>
-                                <p><a className='button download'><span className='button-lg'>{('Get Binary Grid now')}</span></a></p>
+                                <p>
+                                    <a className='button download'><span className='button-lg'>{('Get Binary Grid now')}</span></a>
+                                    <a className='button try-desktop' href='https://grid.binary.com/' target='_blank' rel='noopener noreferrer'><span className='button-lg'>{('Try on desktop')}</span></a>
+                                </p>
                             </div>
-                            <div className='gr-7 gr-12-t gr-12-m gr-12-p'><img className='phone' src={it.url_for('images/grid_lp/phone.png')} alt='seamless trading on your smartphone' /></div>
+                            <div className='gr-6 gr-12-t gr-12-m gr-12-p'><img className='phone' src={it.url_for('images/grid_lp/phone.png')} alt='seamless trading on your smartphone' /></div>
                         </div>
                     </div>
                 </div>
@@ -80,7 +83,7 @@ const gridLP = () => (
                             </div>
                             <div className='right-col-feature'>
                                 <h3>{('Limited risks')}</h3>
-                                <p>{('Get started with stakes as low as 20¢.')}</p>
+                                <p>{('Get started with stakes as low as $1.')}</p>
                             </div>
                         </div>
                     </div>
@@ -176,6 +179,7 @@ const gridLP = () => (
                     <div className='gr-row'>
                         <div className='gr-12 center-text'>
                             <a className='button download'><span className='button-lg'>{('Get Binary Grid now')}</span></a>
+                            <a className='button try-desktop' href='https://grid.binary.com/' target='_blank' rel='noopener noreferrer'><span className='button-lg'>{('Try on desktop')}</span></a>
                         </div>
                     </div>
                 </div>

@@ -48,6 +48,9 @@ const PlatformsGridApp = ({
     status,
     description,
     text,
+    url = '',
+    target,
+    button_text,
 }) => (
     <div className={`gr-row gr-padding-30 ${className || ''}`} data-show={data_show}>
         <div className='gr-4 gr-12-m gr-12-p gr-no-gutter-left gr-gutter-left-p gr-gutter-left-m center-text no-center-text-p-m align-self-center'>
@@ -59,7 +62,13 @@ const PlatformsGridApp = ({
             <p>{text}</p>
             <div className='gr-row'>
                 <div className='gr-12'>
-                    <p><a className='button-secondary download-grid-app'><span>{it.L('Download Binary Grid')}</span></a></p>
+                    <p>
+                        <a className='button-secondary download-grid-app'><span>{it.L('Download for Android')}</span></a>
+                        <span className='divider-sm' />
+                        { url &&
+                            <a className='button-secondary mobile-hide' href={url} target={target || undefined} rel={/http/.test(url) ? 'noopener noreferrer' : undefined}><span>{button_text}</span></a>
+                        }
+                    </p>
                 </div>
             </div>
         </div>
@@ -218,7 +227,10 @@ const Platform = () => (
                                 status='new'
                                 header={it.L('Binary Grid')}
                                 description={it.L('Micro-trading on the go')}
-                                text={it.L('Seamless trading on your mobile device, at the speed of touch.')}
+                                text={it.L('In the new, exciting Binary Grid, win whenever the trade ends outside your selected cell!')}
+                                url='https://grid.binary.com/'
+                                target='_blank'
+                                button_text={it.L('Try on desktop')}
                             />
                             <Platforms
                                 image='tick-trade'
