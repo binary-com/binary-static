@@ -122,9 +122,10 @@ const Purchase = (() => {
 
                                 message = prepareConfirmationErrorCta(message_text, button_text, true);
                             } else {
+                                const message_text = localize('In the EU, financial binary options are only available to professional investors.');
                                 const button_text  = localize('Apply now as a professional investor');
 
-                                message = prepareConfirmationErrorCta('', button_text);
+                                message = prepareConfirmationErrorCta(message_text, button_text);
                             }
                         } else if (/RestrictedCountry/.test(error.code)) {
                             let additional_message = '';
