@@ -9,7 +9,7 @@ const Language = (() => {
     const all_languages = {
         ACH  : 'Translations',
         EN   : 'English',
-        DE   : 'Deutsch',
+        // DE   : 'Deutsch',
         ES   : 'Español',
         FR   : 'Français',
         ID   : 'Indonesia',
