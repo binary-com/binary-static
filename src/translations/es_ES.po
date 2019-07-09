@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-07-04 08:51\n"
+"PO-Revision-Date: 2019-07-09 06:07\n"
 "Last-Translator: binarycom\n"
 "Language-Team: Spanish\n"
 "MIME-Version: 1.0\n"
@@ -724,7 +724,7 @@ msgid "A Settlement occurs when the client's account with the Company is credite
 msgstr "Cuando la Cuenta de Efectivo del cliente con la Empresa es acreditada o cargada con la cantidad neta de los resultados de una transacción."
 
 msgid "A Stays Between trade pays out if the market stays between (does not touch) BOTH the high barrier or the low barrier at any time during the period chosen by a trader. A Goes Outside trade pays out if the market touches EITHER the high barrier or the low barrier at any time during the period chosen by a trader."
-msgstr "Un binario \"Permanece Dentro\" se paga si el mercado permanece entre (sin tocar) el límite superior e inferior (AMBOS) durante todo el período establecido. Un binario \"Sale\" se paga si el mercado alcanza el límite superior o el inferior en cualquier momento durante el período establecido."
+msgstr "Un contrato \"Permanece Dentro\" paga si el mercado permanece entre (sin tocar) el límite superior e inferior (AMBOS) durante todo el período establecido. Un contrato \"Sale\" paga si el mercado alcanza el límite superior o el inferior en cualquier momento durante el período establecido."
 
 msgid "A Stop Loss Order is intended for minimising losses when the financial instrument price moves in an unprofitable direction. The execution of this Order results in the complete closing of the whole position. It is always connected to an Open Position or a Pending Order."
 msgstr "Una Orden Stop Loss es la que está destinada a minimizar las perdidas cuando el precio del instrumento financiero se mueve hacia una dirección no rentable. La ejecución de esta Orden da como resultado el cierre completo de toda la posición. Siempre está conectada a una Posición Abierta o a una Orden Pendiente."
@@ -11570,7 +11570,7 @@ msgid "They will, at all times, obtain, comply with, and do all that is necessar
 msgstr "En todo momento, obtendrá, cumplirá, y hará todo lo necesario para mantener en plena vigencia y efecto, toda autoridad, poderes, consentimientos, licencias y autoridades mencionadas en esta cláusula;"
 
 msgid "Think that a certain currency will go up or down? Learn when you should buy (or \"go long\") and when to sell (or \"go short\")."
-msgstr "¿Cree que el valor alguna divisa subirá o caerá? Aprenda cuándo comprar (abrir una posición larga) y cuándo vender (abrir una posición corta)."
+msgstr "¿Cree que el valor de alguna divisa subirá o caerá? Aprenda cuándo comprar (abrir una posición larga) y cuándo vender (abrir una posición corta)."
 
 msgid "This Agreement constitutes the entire Agreement between the Parties, and no earlier representation, arrangement or agreement written or oral relation to any matter dealt with in this Agreement between the Parties shall have any force or effect before the Commencement Date."
 msgstr "Este Acuerdo constituye la totalidad del Acuerdo entre las Partes y ninguna manifestación, arreglo o acuerdo anterior, sea escrito u oral, relacionado con cualquier asunto tratado en este Acuerdo entre las Partes tendrá vigor o efecto antes de la Fecha de Inicio."
@@ -12020,7 +12020,7 @@ msgid "Trade currencies, indices, commodities and more in rising, falling, sidew
 msgstr "Opere divisas, índices bursátiles, materias primas y otros en mercados al alza, a la baja, laterales, tranquilos y volátiles"
 
 msgid "Trade forex and contracts for difference (CFDs) on MetaTrader 5 - a multi-asset platform that offers outstanding trading possibilities and technical analysis tools."
-msgstr ""
+msgstr "Opere Forex y contratos por diferencias (CFD) en MetaTrader 5, una plataforma multiactivos que ofrece excelentes posibilidades para operar y herramientas de análisis técnico."
 
 msgid "Trade in the world's financial markets"
 msgstr "Opere en los mercados financieros del mundo"
@@ -13161,10 +13161,10 @@ msgid "Win maximum payout if the exit spot is lower than or equal to the lower b
 msgstr "Gane el pago máximo si el punto de salida es menor o igual a la barrera inferior."
 
 msgid "Win payout if consecutive ticks fall successively. Contract is lost when at least one tick rises or is equal to any of the previous ticks."
-msgstr "Gane el pago si las marcas consecutivas caen sucesivamente. El contrato se pierde cuando al menos una marca aumenta o es igual a cualquiera de las marcas anteriores."
+msgstr "Gane el pago si ticks consecutivos caen sucesivamente. El contrato se pierde cuando al menos un tick aumenta o es igual a cualquiera de los ticks anteriores."
 
 msgid "Win payout if consecutive ticks rise successively. Contract is lost when at least one tick falls or is equal to any of the previous ticks."
-msgstr "Gane el pago si las marcas consecutivas caen sucesivamente. El contrato se pierde cuando al menos una marca aumenta o es igual a cualquiera de las marcas anteriores."
+msgstr "Gane el pago si ticks consecutivos aumentan sucesivamente. El contrato se pierde cuando al menos un tick cae o es igual a cualquiera de los ticks anteriores."
 
 msgid "Win payout if exit spot is also equal to entry spot."
 msgstr "Gane el pago si el punto de salida es igual que el punto de entrada."
