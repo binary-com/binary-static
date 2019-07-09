@@ -7,7 +7,6 @@ const TabSelector    = require('../../_common/tab_selector');
 const urlFor         = require('../../_common/url').urlFor;
 const BinaryPjax     = require('../../app/base/binary_pjax');
 const BinarySocket   = require('../../app/base/socket');
-const isEuCountry    = require('../../app/common/country_base').isEuCountry;
 const FormManager    = require('../../app/common/form_manager');
 const getFormRequest = require('../../app/common/verify_email');
 const isBinaryApp    = require('../../config').isBinaryApp;
@@ -32,9 +31,6 @@ const Home = (() => {
                 fnc_response_handler: handler,
                 fnc_additional_check: checkCountry,
             });
-            if (isEuCountry()) {
-                $('.mfsa_message').slideDown(300);
-            }
         });
     };
 
