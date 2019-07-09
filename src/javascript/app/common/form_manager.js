@@ -106,14 +106,13 @@ const FormManager = (() => {
             can_submit;
 
         const submit = (req) => {
+            const modded_req = transformFieldsToNumber(req);
             disableButton($btn_submit);
             form.can_submit = false;
-            if (isEmptyObject(req)) {
+            if (isEmptyObject(modded_req)) {
                 onSuccess();
             } else {
-                BinarySocket.send(req).then((response) => {
-                    onSuccess(response);
-                });
+                BinarySocket.send(modded_req).then(onSuccess);
             }
         };
 
@@ -145,6 +144,13 @@ const FormManager = (() => {
             }
         });
     };
+
+    const transformFieldsToNumber = (req) => (
+        $.extend({}, {
+            ...req,
+            amount: req.amount ? parseFloat(req.amount.replace(/,/g, '')) : undefined,
+        })
+    );
 
     return {
         handleSubmit,

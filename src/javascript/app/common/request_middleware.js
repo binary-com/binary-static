@@ -24,7 +24,7 @@ const changePocNumbersToString = (response) => {
             const currency_decimal_places = getDecimalPlaces(Client.get('currency'));
             const toString = (property, has_comma = true, decimal_places = pip_size) => (
                 property || property === 0 ?
-                    has_comma ? addComma(property, decimal_places) : addComma(property, decimal_places).replace(',', '')
+                    has_comma ? addComma(property, decimal_places) : addComma(property, decimal_places).replace(/,/g, '')
                     : undefined
             );
 
@@ -32,7 +32,7 @@ const changePocNumbersToString = (response) => {
                 ...response,
                 proposal_open_contract: {
                     ...response.proposal_open_contract,
-                    barrier          : barrier ? addComma(barrier).replace(',', '') : undefined, // Because `barrier` must not be displayed when zero
+                    barrier          : barrier ? addComma(barrier).replace(/,/g, '') : undefined, // Because `barrier` must not be displayed when zero
                     bid_price        : toString(bid_price, true, currency_decimal_places),
                     sell_price       : toString(sell_price, true, currency_decimal_places),
                     sell_spot        : toString(sell_spot),
