@@ -95,7 +95,7 @@ const BinaryLoader = (() => {
         login            : () => localize('Please [_1]log in[_2] or [_3]sign up[_4] to view this page.', [`<a href="${'javascript:;'}">`, '</a>', `<a href="${urlFor('new-account')}">`, '</a>']),
         only_virtual     : () => localize('Sorry, this feature is available to virtual accounts only.'),
         only_real        : () => localize('This feature is not relevant to virtual-money accounts.'),
-        virtual_with_real: () => localize(''),
+        virtual_with_real: () => localize('Please upgrade to a real money account to enable access.'),
         not_authenticated: () => localize('This page is only available to logged out clients.'),
     };
 
