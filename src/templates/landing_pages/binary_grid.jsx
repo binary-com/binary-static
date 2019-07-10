@@ -181,7 +181,7 @@ const gridLP = () => (
                         <div className='gr-12 center-text'>
                             <a className='android-button invisible button download'><span className='button-lg'>{('Get Binary Grid now')}</span></a>
                             <a className='try-desktop invisible' href='https://grid.binary.me/' target='_blank' rel='noopener noreferrer'><span className='button-lg button-transparent'>{('Open in browser')}</span></a>
-                            <span className='content-inverse-color ios-message invisible'>{('Binary Grid is currently only available on Windows, Linux, macOS, and Android devices.')}</span>
+                            <span className='ios-message invisible'>{('Binary Grid is currently only available on Windows, Linux, macOS, and Android devices.')}</span>
                         </div>
                     </div>
                 </div>
