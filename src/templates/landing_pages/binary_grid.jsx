@@ -32,7 +32,7 @@ const gridLP = () => (
                                 <span className='header-sub secondary-color'>{('Seamless trading on your smartphone.')}</span>
                                 <p>
                                     <a className='android-button invisible button download'><span className='button-lg'>{('Get Binary Grid now')}</span></a>
-                                    <a className='try-desktop invisible button-lg button-transparent' href='https://grid.binary.com/' target='_blank' rel='noopener noreferrer'><span className='button-lg button-transparent'>{('Try on desktop')}</span></a>
+                                    <a className='try-desktop invisible button-lg button-transparent' href='https://grid.binary.me/' target='_blank' rel='noopener noreferrer'><span className='button-lg button-transparent'>{('Try on desktop')}</span></a>
                                     <span className='ios-message invisible'>{('iOS coming soon.')}</span>
                                 </p>
                             </div>
@@ -180,7 +180,7 @@ const gridLP = () => (
                     <div className='gr-row'>
                         <div className='gr-12 center-text'>
                             <a className='android-button invisible button download'><span className='button-lg'>{('Get Binary Grid now')}</span></a>
-                            <a className='try-desktop invisible' href='https://grid.binary.com/' target='_blank' rel='noopener noreferrer'><span className='button-lg button-transparent'>{('Try on desktop')}</span></a>
+                            <a className='try-desktop invisible' href='https://grid.binary.me/' target='_blank' rel='noopener noreferrer'><span className='button-lg button-transparent'>{('Try on desktop')}</span></a>
                             <span className='ios-message invisible'>{('iOS coming soon.')}</span>
                         </div>
                     </div>

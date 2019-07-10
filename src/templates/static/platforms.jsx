@@ -229,7 +229,7 @@ const Platform = () => (
                                 header={it.L('Binary Grid')}
                                 description={it.L('Micro-trading on the go')}
                                 text={it.L('In the new, exciting Binary Grid, win whenever the trade ends outside your selected cell!')}
-                                url='https://grid.binary.com/'
+                                url='https://grid.binary.me/'
                                 target='_blank'
                                 button_text={it.L('Try on desktop')}
                             />
