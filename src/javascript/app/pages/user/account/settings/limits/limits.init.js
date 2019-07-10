@@ -1,7 +1,6 @@
 const LimitsUI           = require('./limits.ui');
 const Client             = require('../../../../../base/client');
 const formatMoney        = require('../../../../../common/currency').formatMoney;
-const getDecimalPlaces   = require('../../../../../common/currency').getDecimalPlaces;
 const elementTextContent = require('../../../../../../_common/common_functions').elementTextContent;
 const getElementById     = require('../../../../../../_common/common_functions').getElementById;
 const localize           = require('../../../../../../_common/localize').localize;
@@ -19,9 +18,13 @@ const LimitsInit = (() => {
         if (/authenticated/.test(getPropertyValue(response_get_account_status, ['get_account_status', 'status']))) {
             elementTextContent(el_withdraw_limit, localize('Your account is fully authenticated and your withdrawal limits have been lifted.'));
         } else {
-            const currency          = Client.get('currency') || Client.currentLandingCompany().legal_default_currency;
-            const days_limit        = formatMoney(currency, limits.num_of_days_limit, 1);
-            const remainder         = formatMoney(currency, limits.remainder, 1);
+            const currency                            = Client.get('currency') || Client.currentLandingCompany().legal_default_currency;
+            const days_limit                          = formatMoney(currency, limits.num_of_days_limit, 1);
+            const remainder                           = formatMoney(currency, limits.remainder, 1);
+            const withdrawal_since_inception_monetary = formatMoney(
+                currency,
+                limits.withdrawal_since_inception_monetary
+            );
         
             if (Client.get('landing_company_shortcode') === 'iom') {
                 elementTextContent(el_withdraw_limit,
@@ -34,14 +37,14 @@ const LimitsInit = (() => {
                 elementTextContent(el_withdraw_limit,
                     localize('Your withdrawal limit is [_1] [_2].', [currency, days_limit]));
                 elementTextContent(el_withdrawn,
-                    localize('You have already withdrawn [_1] [_2].', [currency, limits.withdrawal_since_inception_monetary.toFixed(getDecimalPlaces(currency))]));
+                    localize('You have already withdrawn [_1] [_2].', [currency, withdrawal_since_inception_monetary]));
                 elementTextContent(el_withdraw_limit_agg,
                     localize('Therefore your current immediate maximum withdrawal (subject to your account having sufficient funds) is [_1] [_2].', [currency, remainder]));
             } else {
                 elementTextContent(el_withdraw_limit,
                     localize('Your withdrawal limit is [_1] [_2] (or equivalent in other currency).', [currency, days_limit]));
                 elementTextContent(el_withdrawn,
-                    localize('You have already withdrawn the equivalent of [_1] [_2].', [currency, limits.withdrawal_since_inception_monetary]));
+                    localize('You have already withdrawn the equivalent of [_1] [_2].', [currency, withdrawal_since_inception_monetary]));
                 elementTextContent(el_withdraw_limit_agg,
                     localize('Therefore your current immediate maximum withdrawal (subject to your account having sufficient funds) is [_1] [_2] (or equivalent in other currency).', [currency, remainder]));
             }
