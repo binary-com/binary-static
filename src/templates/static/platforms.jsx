@@ -231,7 +231,7 @@ const Platform = () => (
                                 text={it.L('In the new, exciting Binary Grid, win whenever the trade ends outside your selected cell!')}
                                 url='https://grid.binary.me/'
                                 target='_blank'
-                                button_text={it.L('Try on desktop')}
+                                button_text={it.L('Open in browser')}
                             />
                             <Platforms
                                 image='tick-trade'
