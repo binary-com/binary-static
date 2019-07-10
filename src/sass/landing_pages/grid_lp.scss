@@ -52,7 +52,22 @@
     .button-lg {
         padding: 13px 40px;
         margin-top: 30px;
+        text-align: center;
+        line-height: 100%;
+        display: inline-block;
+        font-weight: 400;
         font-size: 24px;
+    }
+    .button-transparent {
+        background: none;
+        border: 3px solid #2e8836;
+        border-radius: 3px;
+        color: #2e8836;
+
+        &:hover {
+            background-color: #2e8836;
+            color: #ffffff;
+        }
     }
     .icon-block {
         width: 50px;
