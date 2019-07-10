@@ -33,7 +33,7 @@ const LimitsInit = (() => {
                 elementTextContent(el_withdraw_limit,
                     localize('Your withdrawal limit is [_1] [_2].', [currency, days_limit]));
                 elementTextContent(el_withdrawn,
-                    localize('You have already withdrawn [_1] [_2].', [currency, limits.withdrawal_since_inception_monetary]));
+                    localize('You have already withdrawn [_1] [_2].', [currency, limits.withdrawal_since_inception_monetary.toFixed(2)]));
                 elementTextContent(el_withdraw_limit_agg,
                     localize('Therefore your current immediate maximum withdrawal (subject to your account having sufficient funds) is [_1] [_2].', [currency, remainder]));
             } else {
