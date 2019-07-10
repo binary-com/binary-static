@@ -3,7 +3,7 @@ const isIndonesia    = require('../../app/common/country_base').isIndonesia;
 const getElementById = require('../../_common/common_functions').getElementById;
 const TabSelector    = require('../../_common/tab_selector');
 const isBinaryApp    = require('../../config').isBinaryApp;
-const { OSDetect }   = require('../../_common/os_detect')
+const { OSDetect }   = require('../../_common/os_detect');
 
 const os_list = [
     {
