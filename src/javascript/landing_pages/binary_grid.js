@@ -63,19 +63,19 @@ const OSDetect = () => {
 
 window.onload = function () {
     const os = OSDetect();
-    const desktop_button = document.querySelector('.try-desktop');
-    const ios_message    = document.querySelector('.ios-message');
-    const android_button = document.querySelector('.android-button');
+    const desktop_buttons = document.querySelectorAll('.try-desktop');
+    const ios_messages    = document.querySelectorAll('.ios-message');
+    const android_buttons = document.querySelectorAll('.android-button');
     if (os === 'android') {
         // hide desktop
-        android_button.classList.remove('invisible');
+        android_buttons.forEach(element => element.classList.remove('invisible'));
     } else if (os === 'ios') {
         // hide all button
-        ios_message.classList.remove('invisible');
+        ios_messages.forEach(element => element.classList.remove('invisible'));
     } else {
         // show both buttons on desktop
-        android_button.classList.remove('invisible');
-        desktop_button.classList.remove('invisible');
+        android_buttons.forEach(element => element.classList.remove('invisible'));
+        desktop_buttons.forEach(element => element.classList.remove('invisible'));
     }
 
     commonOnload();
