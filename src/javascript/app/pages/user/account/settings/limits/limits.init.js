@@ -23,8 +23,8 @@ const LimitsInit = (() => {
             const remainder                           = formatMoney(currency, limits.remainder, 1);
             const withdrawal_since_inception_monetary = formatMoney(
                 currency,
-                limits.withdrawal_since_inception_monetary
-            );
+                limits.withdrawal_since_inception_monetary,
+                1);
         
             if (Client.get('landing_company_shortcode') === 'iom') {
                 elementTextContent(el_withdraw_limit,
