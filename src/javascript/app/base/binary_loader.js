@@ -114,7 +114,7 @@ const BinaryLoader = (() => {
                             displayMessage(error_messages.only_virtual());
                         } else if (config.only_real && Client.get('is_virtual')) {
                             displayMessage(error_messages.only_real());
-                        } else if (config.virtual_with_real && Client.get('virtual') && !Client.hasAccountType('real')) {
+                        } else if (config.only_with_real && !Client.hasAccountType('real')) {
                             displayMessage(error_messages.virtual_with_real());
                         } else {
                             loadActiveScript(config);
