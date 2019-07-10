@@ -63,10 +63,11 @@ const PlatformsGridApp = ({
             <div className='gr-row'>
                 <div className='gr-12'>
                     <p>
-                        <a className='button-secondary download-grid-app'><span>{it.L('Download for Android')}</span></a>
+                        <a className='button-secondary android-download-grid-app download-grid-app'><span>{it.L('Download for Android')}</span></a>
+                        <span className='ios-download-grid-app invisible'>{it.L('iOS coming soon')}</span>
                         <span className='divider-sm' />
                         { url &&
-                            <a className='button-secondary mobile-hide' href={url} target={target || undefined} rel={/http/.test(url) ? 'noopener noreferrer' : undefined}><span>{button_text}</span></a>
+                            <a className='desktop-download-grid-app button-secondary mobile-hide' href={url} target={target || undefined} rel={/http/.test(url) ? 'noopener noreferrer' : undefined}><span>{button_text}</span></a>
                         }
                     </p>
                 </div>
