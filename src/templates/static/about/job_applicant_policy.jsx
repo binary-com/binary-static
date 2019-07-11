@@ -3,13 +3,13 @@ import React from 'react';
 const JobApplicantPrivacyPolicy = () =>  (
     <div className='container'>
         <h2 data-anchor='job-applicant-policy'>{it.L('Job applicant privacy policy')}</h2>
-        <p>{it.L('Binary Group (hereinafter referred to as \'Binary Group of companies\', \'the Company\') is commited to protecting the privacy and security of the applicant\'s personal information. This privacy notice sets out the types of data that the Company collects on the applicant. It also sets out how the Company collect and use the applicant\' personal data, and how long it keeps them and other relevant information about the applicant\'s data in accordance with the General Data Protection Regulation (EU) 2016/679 (hereafter referred to as \'GDPR\') and Data Protection Act 2018.')}</p>
+        <p>{it.L('Binary Group (hereinafter referred to as \'Binary Group companies\', \'the Company\') is commited to protecting the privacy and security of the applicant\'s personal information. This privacy notice sets out the types of data that the Company collects on the applicant. It also sets out how the Company collect and use the applicant\' personal data, and how long it keeps them and other relevant information about the applicant\'s data in accordance with the General Data Protection Regulation (EU) 2016/679 (hereafter referred to as \'GDPR\') and Data Protection Act 2018.')}</p>
         <p>{it.L('This privacy notice only applies to job applicants residing in the EU.')}</p>
         <p>{it.L('The Company is required under data protection legislation to notify the applicant of the information contained in this privacy notice. As such, it is important that the applicant read this notice, together with any other privacy notice that the Company may provide for the applicant on specific occasions when the Company is collectiong or processing personal data about the applicant, so that the applicant is aware of how and why the Company is using such information.')}</p>
 
         <h2 data-anchor='interpretations'>{it.L('Interpretations')}</h2>
         <p>{it.L('The following terms shall have the meaning set out below and cognate terms shall be construed accordingly:')}</p>
-        <p><strong>&#39;{it.L('Data Controller')}&#39;</strong> {it.L('shall mean the Binary Group of companies. This means that the Company is responsible for deciding how it holds and uses any personal data about the applicant.')}</p>
+        <p><strong>&#39;{it.L('Data Controller')}&#39;</strong> {it.L('shall mean the Binary Group companies. This means that the Company is responsible for deciding how it holds and uses any personal data about the applicant.')}</p>
         <p><strong>&#39;{it.L('Data Protection Act (DPA)')}&#39;</strong> {it.L('shall mean Data Protection Act 2018, Chapter 440 of the Laws of Malta.')}</p>
         <p><strong>&#39;{it.L('Data Subject')}&#39;</strong> {it.L('shall mean the applicant, whose personal data is collected by the Company.')}</p>
         <p><strong>&#39;{it.L('GDPR')}&#39;</strong> {it.L('shall mean EU General Data Protection Regulation 2016/679.')}</p>

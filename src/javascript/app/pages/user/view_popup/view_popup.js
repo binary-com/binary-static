@@ -744,7 +744,8 @@ const ViewPopup = (() => {
                 e.stopPropagation();
                 is_sell_clicked = true;
                 sellSetVisibility(false);
-                BinarySocket.send({ sell: contract_id, price: contract.bid_price }).then((response) => {
+                const bid_price_number = parseFloat(contract.bid_price.replace(/,/g, '')); // API request should not have comma
+                BinarySocket.send({ sell: contract_id, price: bid_price_number }).then((response) => {
                     responseSell(response);
                 });
             });
@@ -792,8 +793,9 @@ const ViewPopup = (() => {
         $container.find('#errMsg').setVisibility(0);
         sellSetVisibility(false);
         if (is_sell_clicked) {
+            const formatted_sell_price = formatMoney(contract.currency, response.sell.sold_for, true);
             containerSetText('contract_sell_message',
-                `${localize('You have sold this contract at [_1] [_2]', [contract.currency, response.sell.sold_for])}
+                `${localize('You have sold this contract at [_1] [_2]', [contract.currency, formatted_sell_price])}
                 <br />
                 ${localize('Your transaction reference number is [_1]', response.sell.transaction_id)}`);
         }

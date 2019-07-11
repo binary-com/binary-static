@@ -1,6 +1,5 @@
 import React                from 'react';
 import FormVerifyEmail      from '../_common/includes/form_verify_email.jsx';
-import MFSA                 from '../_common/includes/mfsa.jsx';
 import { SocialButton }     from '../_common/components/elements.jsx';
 import PaymentLogo          from '../_common/components/payment_logo.jsx';
 import {
@@ -165,7 +164,6 @@ const Home = () => {
 
     return (
         <React.Fragment>
-            <MFSA />
             <div id='banner'>
                 <div className='container gr-padding-20'>
                     <h1 className='dark center-text gr-padding-20 gr-child'>{it.L('Online Trading with [_1]', `<strong>${it.website_name}</strong>`)}</h1>

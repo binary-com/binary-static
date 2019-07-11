@@ -133,7 +133,6 @@ const pages_config = {
     'affiliate-ib'           : { module: AffiliatesIBLanding },
     'binary-in-numbers'      : { module: StaticPages.BinaryInNumbers },
     'binary-options'         : { module: GetStarted.BinaryOptions },
-    'binary-options-mt5'     : { module: GetStarted.BinaryOptionsForMT5 },
     'contact-2'              : { module: Contact2 },
     'contract-specifications': { module: TabSelector },
     'get-started'            : { module: TabSelector },
