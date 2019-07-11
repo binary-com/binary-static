@@ -164,7 +164,7 @@ const gridLP = () => (
                     <div className='gr-row gr-row-align-around'>
                         <div className='gr-6 gr-12-t gr-12-m gr-12-p'>
                             <div className='padding-md ft-bold'>
-                                <p>{('Only available for Android devices at the moment.')}<span className='block-element block-xs'>{('Binary Grid for iOS devices coming soon.')}</span></p>
+                                <p>{('Only available for Android devices at the moment.')}</p>
                             </div>
                         </div>
                         <div className='gr-4 gr-12-t gr-12-m gr-12-p'>
