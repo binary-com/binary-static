@@ -98,6 +98,7 @@ const AccountClosure = (() => {
 
     const validateReasonTextField = (scroll_on_error) => {
         const other_reason_input = $txt_other_reason.val();
+
         if (!other_reason_input) {
             $txt_other_reason.addClass('error-field');
             showFormMessage(localize('Please specify the reasons for closing your accounts'), scroll_on_error);

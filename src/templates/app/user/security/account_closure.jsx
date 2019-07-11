@@ -26,6 +26,11 @@ const AccountClosure = () => (
                 <fieldset>
                     <div className='gr-padding-20 gr-gutter-left gr-gutter-right'>
                         <ClosureDescription
+                            id='open-real'
+                            title={it.L('[_1]Open a real account[_2] in the currency of your choice', `<a href="${it.url_for('user/accounts')}">`, '</a>')}
+                            list_items={[]}
+                        />
+                        {/* <ClosureDescription
                             id='change-fiat'
                             title={it.L('Change my account currency')}
                             subtitle={it.L('[_1]Change your fiat currency[_2] to any of the following:', `<a href="${it.url_for('user/accounts')}">`, '</a>')}
@@ -36,14 +41,20 @@ const AccountClosure = () => (
                             title={it.L('Create a crypto account')}
                             subtitle={it.L('[_1]Open an account[_2] in the cryptocurrency of your choice:', `<a href="${it.url_for('user/accounts')}">`, '</a>')}
                             list_items={[]}
-                        />
+                        /> */}
                         <ClosureDescription
                             title={it.L('Change my affiliate')}
                             subtitle={it.L('Contact [_1] for more information on changing your affiliate.', '<a href="mailto:affiliates@binary.com">affiliates@binary.com</a>')}
                         />
                         <ClosureDescription
                             title={it.L('Change my account limits')}
-                            subtitle={<span>{it.L('You may set limits in your account to help prevent unwanted losses.')}<br />{it.L('Go to [_1]self-exclusion page[_2] to manage your account limits.', `<a href=${it.url_for('user/security/self_exclusionws')}>`, '</a>')}</span>}
+                            subtitle={
+                                <span>
+                                    {it.L('You may set limits in your account to help prevent unwanted losses.')}<br />
+                                    {it.L('Go to [_1]self-exclusion page[_2] to manage your account limits.', `<a href=${it.url_for('user/security/self_exclusionws')}>`, '</a>')}<br />
+                                    {it.L('[_1]Note:[_2] These limits are only applicable to your <currency> account. To set limits for the rest of your real accounts, switch to the respective account and set your limits accordingly. this applies when client has more than 1 real account', '<strong>', '</strong>')}
+                                </span>
+                            }
                         />
                     </div>
                 </fieldset>
