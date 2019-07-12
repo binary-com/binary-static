@@ -32,7 +32,7 @@ const gridLP = () => (
                                 <span className='header-sub secondary-color'>{('Seamless trading on your smartphone.')}</span>
                                 <p>
                                     <a className='android-button invisible button download'><span className='button-lg'>{('Get Binary Grid now')}</span></a>
-                                    <a className='try-desktop invisible' href='https://grid.binary.me/' target='_blank' rel='noopener noreferrer'><span className='button-lg button-transparent'>{('Open in browser')}</span></a>
+                                    <a className='try-desktop invisible' href='https://grid.binary.me/webapp/' target='_blank' rel='noopener noreferrer'><span className='button-lg button-transparent'>{('Open in browser')}</span></a>
                                     <span className='ios-message invisible content-inverse-color'>{('Binary Grid is currently only available on Windows, Linux, macOS, and Android devices.')}</span>
                                 </p>
                             </div>
@@ -180,7 +180,7 @@ const gridLP = () => (
                     <div className='gr-row'>
                         <div className='gr-12 center-text'>
                             <a className='android-button invisible button download'><span className='button-lg'>{('Get Binary Grid now')}</span></a>
-                            <a className='try-desktop invisible' href='https://grid.binary.me/' target='_blank' rel='noopener noreferrer'><span className='button-lg button-transparent'>{('Open in browser')}</span></a>
+                            <a className='try-desktop invisible' href='https://grid.binary.me/webapp/' target='_blank' rel='noopener noreferrer'><span className='button-lg button-transparent'>{('Open in browser')}</span></a>
                         </div>
                     </div>
                 </div>
