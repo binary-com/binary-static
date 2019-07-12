@@ -29,7 +29,6 @@ const Authenticate = (() => {
             BinarySocket.send({
                 service_token: 1,
                 service      : 'onfido',
-                referrer     : 'https://www.binary.com/', // TODO: remove after https://trello.com/c/Oc7W9RS0/8996-set-referrer-as-optional-in-get-token-service-onfido done
             }).then((response) => {
                 if (response.error) reject(Error(response.error.message));
                 resolve(response.service_token.token);
