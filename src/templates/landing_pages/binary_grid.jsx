@@ -32,8 +32,7 @@ const gridLP = () => (
                                 <span className='header-sub secondary-color'>{('Seamless trading on your smartphone.')}</span>
                                 <p>
                                     <a className='android-button invisible button download'><span className='button-lg'>{('Get Binary Grid now')}</span></a>
-                                    <a className='try-desktop invisible' href='https://grid.binary.me/webapp/' target='_blank' rel='noopener noreferrer'><span className='button-lg button-transparent'>{('Open in browser')}</span></a>
-                                    <span className='ios-message invisible content-inverse-color'>{('Binary Grid is currently only available on Windows, Linux, macOS, and Android devices.')}</span>
+                                    <span className='ios-message invisible content-inverse-color'>{('Binary Grid is currently only available on Android devices.')}</span>
                                 </p>
                             </div>
                             <div className='gr-6 gr-12-t gr-12-m gr-12-p'><img className='phone' src={it.url_for('images/grid_lp/phone.png')} alt='seamless trading on your smartphone' /></div>
@@ -180,7 +179,6 @@ const gridLP = () => (
                     <div className='gr-row'>
                         <div className='gr-12 center-text'>
                             <a className='android-button invisible button download'><span className='button-lg'>{('Get Binary Grid now')}</span></a>
-                            <a className='try-desktop invisible' href='https://grid.binary.me/webapp/' target='_blank' rel='noopener noreferrer'><span className='button-lg button-transparent'>{('Open in browser')}</span></a>
                         </div>
                     </div>
                 </div>
