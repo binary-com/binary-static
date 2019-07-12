@@ -279,13 +279,13 @@ const TickDisplay = (() => {
             if (contract.status === 'won') {
                 if (show_contract_result) {
                     $(`#${id_render}`).css('background-color', winning_color);
+                    updatePurchaseStatus(payout, price, contract.profit, localize('This contract won'));
                 }
-                updatePurchaseStatus(payout, price, contract.profit, localize('This contract won'));
             } else if (contract.status === 'lost') {
                 if (show_contract_result) {
                     $(`#${id_render}`).css('background-color', losing_color);
+                    updatePurchaseStatus(0, -price, contract.profit, localize('This contract lost'));
                 }
-                updatePurchaseStatus(0, -price, contract.profit, localize('This contract lost'));
             }
 
             addExitSpot();

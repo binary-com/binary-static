@@ -1,6 +1,5 @@
 const BinaryPjax     = require('../base/binary_pjax');
 const BinarySocket   = require('../base/socket');
-const isEuCountry    = require('../common/country_base').isEuCountry;
 const FormManager    = require('../common/form_manager');
 const getFormRequest = require('../../app/common/verify_email');
 const Login          = require('../../_common/base/login');
@@ -33,9 +32,6 @@ const NewAccount = (() => {
                 fnc_additional_check: checkCountry,
             });
             $('.error-msg').addClass('center-text'); // this element exist only after calling FormManager.init
-            if (isEuCountry()) {
-                $('.mfsa_message').slideDown(300);
-            }
         });
 
         $login_btn.off('click').on('click', (e) => {

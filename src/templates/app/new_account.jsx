@@ -1,11 +1,9 @@
 import React                     from 'react';
 import { SocialButton }          from '../_common/components/elements.jsx';
 import { SeparatorLineWithText } from '../_common/components/separator_line.jsx';
-import MFSA                      from '../_common/includes/mfsa.jsx';
 
 const NewAccount = () => (
     <React.Fragment>
-        <MFSA />
         <div id='signup_form'className='center-text gr-padding-20'>
             <h1 className='dark gr-padding-20 gr-child'>{it.L('Start Trading with [_1]', `<strong>${it.website_name}</strong>`)}</h1>
             <div>
