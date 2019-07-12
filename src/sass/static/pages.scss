@@ -846,7 +846,7 @@ body #not_authenticated_financial ul.checked > li {
         position: relative;
         top: -15px;
         left: 5px;
-        background-color: rgb(244, 67, 54);
+        background-color: rgb(42, 48, 82);
         border-radius: 10px;
         color: $COLOR_WHITE;
         display: inline-block;
@@ -879,6 +879,10 @@ body #not_authenticated_financial ul.checked > li {
     }
     .b-m-md li {
         margin-bottom: 20px;
+    }
+    .divider-sm {
+        width: 10px;
+        display: inline-block;
     }
     @media screen and (max-width: 768px) {
         .no-center-text-p-m {
