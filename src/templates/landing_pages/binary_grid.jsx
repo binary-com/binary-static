@@ -133,8 +133,7 @@ const gridLP = () => (
                         <div className='gr-1on5 gr-12-t gr-12-m gr-12-p col-step'>
                             <div className='line-right' />
                             <div className='step icon-step-1' />
-                            <p className='android-button invisible'>{('Click')} <a className='download'>{('here')}</a> {('to download Binary Grid for Android.')}</p>
-                            <p className='ios-message invisible'>{('Download Binary Grid for Android.')}</p>
+                            <p><a className='android-button download invisible'>{('Download Binary Grid')}</a><span className='ios-message invisible'>{('Download Binary Grid')}</span> {('for Android.')}</p>
                         </div>
                         <div className='gr-1on5 gr-12-t gr-12-m gr-12-p col-step'>
                             <div className='line-left' />
