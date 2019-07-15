@@ -145,7 +145,7 @@ export const Phone = ({ hint, row_class, row_id }) => (
     <FormRow
         type='text'
         id='phone'
-        label={it.L('Contact number')}
+        label={it.L('Mobile number')}
         attributes={{ 'data-lpignore': true }}
         hint={hint}
         row_class={row_class}
