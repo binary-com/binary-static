@@ -44,7 +44,7 @@ const gridLP = () => (
                 <div className='container'>
                     <div className='gr-row'>
                         <div className='gr-12 section-header'>
-                            <h2 className='primary-color'>{('Built for your convenience, designed by traders')}</h2>
+                            <h2 className='primary-color'>{('The all-new Binary Grid experience')}</h2>
                         </div>
                     </div>
                     <div className='gr-row gr-row-align-middle'>
