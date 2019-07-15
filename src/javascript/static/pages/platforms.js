@@ -49,15 +49,11 @@ const Platforms = (() => {
                 $('.download-grid-app').attr('href', `https://grid.binary.me/download/${gridapp.name}`);
             });
         const os = OSDetect();
-        const desktop_button = document.querySelector('.desktop-download-grid-app');
         const android_app = document.querySelector('.android-download-grid-app');
         if (os === 'ios') {
             const ios_message = document.querySelector('.ios-download-grid-app');
             ios_message.classList.remove('invisible');
-            desktop_button.classList.add('invisible');
             android_app.classList.add('invisible');
-        } else if (os === 'android') {
-            desktop_button.classList.add('invisible');
         }
 
     };
