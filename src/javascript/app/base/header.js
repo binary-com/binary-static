@@ -286,7 +286,8 @@ const Header = (() => {
 
             const buildMessage = (string, path, hash = '') => template(string, [`<a href="${Url.urlFor(path)}${hash}">`, '</a>']);
             const hasStatus = (string) => status.findIndex(s => s === string) < 0 ? Boolean(false) : Boolean(true);
-            const hasVerification = (string) => needs_verification.findIndex(s => s === string) < 0 ? Boolean(false) : Boolean(true);
+            const hasVerification = (string) => needs_verification.findIndex(s => s === string) < 0
+                ? Boolean(false) : Boolean(true);
 
             const has_no_tnc_limit = is_svg;
 
