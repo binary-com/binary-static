@@ -84,6 +84,7 @@ const BinarySocketGeneral = (() => {
                         BinarySocket.send({ balance: 1, subscribe: 1 });
                         BinarySocket.send({ get_settings: 1 });
                         BinarySocket.send({ get_account_status: 1 });
+                        // TODO: add authentication api call
                         BinarySocket.send({ payout_currencies: 1 });
                         BinarySocket.send({ mt5_login_list: 1 });
                         SubscriptionManager.subscribe('transaction', { transaction: 1, subscribe: 1 }, () => false);

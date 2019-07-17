@@ -509,7 +509,7 @@ const Authenticate = (() => {
     };
 
     const getAuthenticationStatus = () => new Promise((resolve) => {
-        const flow_1 = {
+        const mock_response = {
             needs_verification: ['identity', 'document'],
             identity          : {
                 status     : 'none',
@@ -521,7 +521,7 @@ const Authenticate = (() => {
             },
         };
         setTimeout(() => {
-            resolve(flow_1);
+            resolve(mock_response);
         }, 300);
     });
 
