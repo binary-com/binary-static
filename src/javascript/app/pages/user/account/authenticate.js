@@ -12,9 +12,9 @@ const localize            = require('../../../../_common/localize').localize;
 const toTitleCase         = require('../../../../_common/string_util').toTitleCase;
 const Url                 = require('../../../../_common/url');
 const showLoadingImage    = require('../../../../_common/utility').showLoadingImage;
+const TabSelector         = require('../../../../_common/tab_selector');
 
 const Authenticate = (() => {
-    let is_action_needed     = false;
     let is_any_upload_failed = false;
     let file_checks          = {};
     let onfido,
@@ -26,18 +26,27 @@ const Authenticate = (() => {
         if (Cookies.get('onfido_token')) {
             resolve(Cookies.get('onfido_token'));
         } else {
-            BinarySocket.send({
-                service_token: 1,
-                service      : 'onfido',
-            }).then((response) => {
-                if (response.error) reject(Error(response.error.message));
-                resolve(response.service_token.token);
-                const in_90_minutes = 1 / 16;
-                Cookies.set('onfido_token', response.service_token.token, {
-                    expires: in_90_minutes,
-                    secure : true,
+            let token = '';
+
+            if (window.location.host === 'localhost') {
+                token = 'eyJhbGciOiJIUzI1NiJ9.eyJwYXlsb2FkIjoiNHZlS0ROeEdQMWoyTUV4QlBQQnVXSklxMDM0akpiWjBNTGdvK3M1YjNRd1NtOXdKODkwb29oVkFBa3B1XG4wM2w1Y1UwNEpETTduaU5hU3BqQitoUUVkalVEYk9abmdLU25yaTNERlZlbFVXcz1cbiIsInV1aWQiOiJIeHNhMDl1dmtBOCIsImV4cCI6MTU2MzMzNzg1MH0.ofMCHCFqPNeJedp2Z_U6x1FdCnhVkSkDdVyYJfPScIc';
+                resolve(token);
+            } else {
+                BinarySocket.send({
+                    service_token: 1,
+                    service      : 'onfido',
+                }).then((response) => {
+                    if (response.error) reject(Error(response.error.message));
+                    token = response.service_token.token;
+                    resolve(token);
+                    const in_90_minutes = 1 / 16;
+                    Cookies.set('onfido_token', token, {
+                        expires: in_90_minutes,
+                        secure : true,
+                    });
                 });
-            });
+            }
+
         }
     });
 
@@ -83,42 +92,6 @@ const Authenticate = (() => {
     const handleComplete = () => {
         onfido.tearDown();
         $('#upload_complete').setVisibility(1);
-    };
-
-    const authenticateInit = () => {
-        $('#authentication').setVisibility(1);
-        $('#authentication_loading').setVisibility(0);
-        BinarySocket.send({ get_account_status: 1 }).then((response) => {
-            $('#loading_authenticate').remove();
-            if (response.error) {
-                $('#error_message').setVisibility(1).text(response.error.message);
-            } else {
-                const status = response.get_account_status.status;
-                is_action_needed = /document_needs_action/.test(response.get_account_status.status);
-                if (!/authenticated/.test(status)) {
-                    init();
-                    const language            = getLanguage();
-                    const language_based_link = ['ID', 'RU', 'PT'].includes(language) ? `_${language}` : '';
-                    const $not_authenticated  = $('#not_authenticated');
-                    $not_authenticated.setVisibility(1);
-                    let link = Url.urlForCurrentDomain(`https://marketing.binary.com/authentication/Authentication_Process${language_based_link}.pdf`);
-                    if (Client.isAccountOfType('financial')) {
-                        $('#not_authenticated_financial').setVisibility(1);
-                        link = Url.urlForCurrentDomain('https://marketing.binary.com/authentication/MF_Authentication_Process.pdf');
-                    }
-                    $not_authenticated.find('.learn_more').setVisibility(1).find('a').attr('href', link);
-
-                    if (isIdentificationNoExpiry(Client.get('residence'))) {
-                        $('#expiry_datepicker_proofid').setVisibility(0);
-                        $('#exp_date_2').datepicker('setDate', '2099-12-31');
-                    }
-                } else if (!/age_verification/.test(status)) {
-                    $('#needs_age_verification').setVisibility(1);
-                } else {
-                    $('#fully_authenticated').setVisibility(1);
-                }
-            }
-        });
     };
 
     const init = () => {
@@ -447,12 +420,6 @@ const Authenticate = (() => {
         });
     };
 
-    const sides = ['front', 'back'];
-    const getReverseClass = (class_name) => {
-        const is_front = /front/.test(class_name);
-        return class_name.replace(sides[+!is_front], sides[+is_front]);
-    };
-
     // Validate user input
     const validate = (file) => {
         const required_docs = ['passport', 'proofid', 'driverslicense'];
@@ -487,19 +454,6 @@ const Authenticate = (() => {
             onErrorResolved('exp_date', file.passthrough.class);
             return localize('Expiry date is required for [_1].', doc_name[file.documentType]);
         }
-        // These checks will only be executed when the user uploads the files for the first time, otherwise skipped.
-        if (!is_action_needed) {
-            if (file.documentType === 'proofid' && file_checks.proofid &&
-                (file_checks.proofid.front_file ^ file_checks.proofid.back_file)) { // eslint-disable-line no-bitwise
-                onErrorResolved(null, file.passthrough.class, getReverseClass(file.passthrough.class));
-                return localize('Front and reverse side photos of [_1] are required.', doc_name.proofid);
-            }
-            if (file.documentType === 'driverslicense' && file_checks.driverslicense &&
-                (file_checks.driverslicense.front_file ^ file_checks.driverslicense.back_file)) { // eslint-disable-line no-bitwise
-                onErrorResolved(null, file.passthrough.class, getReverseClass(file.passthrough.class));
-                return localize('Front and reverse side photos of [_1] are required.', doc_name.driverslicense);
-            }
-        }
 
         return null;
     };
@@ -527,7 +481,7 @@ const Authenticate = (() => {
             removeButtonLoading();
             $button.setVisibility(0);
             $('.submit-status').setVisibility(0);
-            $('#success-message').setVisibility(1);
+            $('#success_message').setVisibility(1);
         }, 3000);
     };
 
@@ -535,7 +489,7 @@ const Authenticate = (() => {
         if ($button) {
             $button.setVisibility(1);
         }
-        $('#success-message').setVisibility(0);
+        $('#success_message').setVisibility(0);
     };
 
     const onResponse = (response, is_last_upload) => {
@@ -550,25 +504,101 @@ const Authenticate = (() => {
         }
     };
 
-    const onLoad = () => {
-        BinarySocket.wait('landing_company').then((response) => {
-            if (response.error) {
-                $('#error_occured').setVisibility(1);
-                return;
-            }
+    const initializeTab = () => {
+        TabSelector.onLoad();
+    };
 
-            const is_svg = Client.get('landing_company_shortcode') === 'svg';
+    const getAuthenticationStatus = () => new Promise((resolve) => {
+        const flow_1 = {
+            needs_verification: ['identity', 'document'],
+            identity          : {
+                status     : 'none',
+                expiry_date: 0,
+            },
+            document: {
+                status     : 'none',
+                expiry_date: 0,
+            },
+        };
+        setTimeout(() => {
+            resolve(flow_1);
+        }, 300);
+    });
 
-            if (is_svg) {
+    const AuthenticationInit = async () => {
+        // TODO: call the authentication API
+        const authentication_status = await getAuthenticationStatus();
+        if (!authentication_status && authentication_status.error) return;
+        const { identity, document } = authentication_status;
+
+        switch (identity.status) {
+            case 'none':
                 onfidoInit();
-            } else {
-                authenticateInit();
+                break;
+            case 'pending':
+                $('#upload_complete').setVisibility(1);
+                break;
+            case 'rejected':
+                $('#unverified').setVisibility(1);
+                break;
+            case 'verified':
+                $('#verified').setVisibility(1);
+                break;
+            default:
+                break;
+        }
+        switch (document.status) {
+            case 'none': {
+                init();
+                $('#not_authenticated').setVisibility(1);
+                const language            = getLanguage();
+                const language_based_link = ['ID', 'RU', 'PT'].includes(language) ? `_${language}` : '';
+                const $not_authenticated  = $('#not_authenticated');
+                let link = Url.urlForCurrentDomain(`https://marketing.binary.com/authentication/Authentication_Process${language_based_link}.pdf`);
+
+                $not_authenticated.setVisibility(1);
+
+                if (Client.isAccountOfType('financial')) {
+                    $('#not_authenticated_financial').setVisibility(1);
+                    link = Url.urlForCurrentDomain('https://marketing.binary.com/authentication/MF_Authentication_Process.pdf');
+                }
+
+                $not_authenticated.find('.learn_more').setVisibility(1).find('a').attr('href', link);
+
+                if (isIdentificationNoExpiry(Client.get('residence'))) {
+                    $('#expiry_datepicker_proofid').setVisibility(0);
+                    $('#exp_date_2').datepicker('setDate', '2099-12-31');
+                }
+                break;
             }
-        });
+            case 'pending':
+                $('#success_message').setVisibility(1);
+                break;
+            case 'rejected':
+                $('#unverified_message').setVisibility(1);
+                break;
+            case 'verified':
+                $('#fully_authenticated').setVisibility(1);
+                break;
+            default:
+                break;
+        }
+        $('#authentication_loading').setVisibility(0);
+    };
+
+    const onLoad = () => {
+        initializeTab();
+        AuthenticationInit();
+        
+    };
+
+    const onUnload = () => {
+        TabSelector.onUnload();
     };
 
     return {
         onLoad,
+        onUnload,
     };
 })();
 
