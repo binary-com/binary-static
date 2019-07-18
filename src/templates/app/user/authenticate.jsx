@@ -67,26 +67,30 @@ const Authenticate = () => (
                 <TabContent id='poa'>
                     <div id='authentication'>
                         <div id='authentication-message'>
-                            <p id='fully_authenticated' className='invisible'>
-                                {it.L('Your account is fully authenticated. You can view your [_1]trading limits here[_2].', `<a href="${it.url_for('user/security/limitsws')}">`, '</a>')}
-                            </p>
-
                             <div id='not_authenticated' className='invisible'>
                                 <AuthenticateMessage />
                             </div>
 
-                            <div id='success_message' className='center-text gr-gutter gr-padding-10 invisible'>
-                                <h2>{it.L('Thank you')}</h2>
+                            <div id='not_authenticated_financial' className='invisible'>
+                                <AuthenticateMessageFinancial />
+                            </div>
+
+                            <div id='verified_poa' className='center-text gr-gutter gr-padding-20 invisible'>
+                                <img className='gr-padding-20' src={it.url_for('images/pages/authenticate/valid.svg')} />
+                                <h1>{it.L('You have been successfully verified')}</h1>
+                                {it.L('You can view your [_1]trading limits here[_2].', `<a href="${it.url_for('user/security/limitsws')}">`, '</a>')}
+                            </div>
+
+                            <div id='pending_poa' className='center-text gr-gutter gr-padding-20 invisible'>
+                                <img className='gr-padding-20' src={it.url_for('images/pages/authenticate/letter.svg')} />
+                                <h1>{it.L('Thank you')}</h1>
                                 <p>{it.L('We will review your documents and get back to you within 3 working days.')}</p>
                             </div>
 
-                            <div id='unverified_message' className='center-text gr-gutter gr-padding-10 invisible'>
-                                <h2>{it.L('Sorry, the authentication was not successful.')}</h2>
-                                <p>{it.L('Sorry, the authentication was not successful.')}</p>
-                            </div>
-
-                            <div id='not_authenticated_financial' className='invisible'>
-                                <AuthenticateMessageFinancial />
+                            <div id='unverified_poa' className='center-text gr-gutter gr-padding-20 invisible'>
+                                <img className='gr-padding-20' src={it.url_for('images/pages/authenticate/invalid.svg')} />
+                                <h1 className='gr-padding-10'>{it.L('Sorry, the authentication was not successful.')}</h1>
+                                <p>{it.L('Don\'t worry, we will send you an email to assist you further.')}</p>
                             </div>
 
                             <p className='center-text notice-msg invisible' id='error_message' />

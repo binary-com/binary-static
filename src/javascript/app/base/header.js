@@ -286,7 +286,15 @@ const Header = (() => {
 
             const buildMessage = (string, path, hash = '') => template(string, [`<a href="${Url.urlFor(path)}${hash}">`, '</a>']);
             const hasStatus = (string) => status.findIndex(s => s === string) < 0 ? Boolean(false) : Boolean(true);
-            const hasVerification = (string) => needs_verification.findIndex(s => s === string) >= 0;
+            const hasVerification = (string) => {
+                const verification_length = needs_verification.length;
+                if (string === 'unauthenticated') {
+                    return verification_length === 2;
+                }
+                if (verification_length === 2) return false;
+
+                return needs_verification.findIndex(s => s === string) >= 0;
+            };
 
             const has_no_tnc_limit = is_svg;
 
@@ -294,11 +302,11 @@ const Header = (() => {
                 authenticate         : () => buildMessage(localizeKeepPlaceholders('[_1]Authenticate your account[_2] now to take full advantage of all payment methods available.'),                                      'user/authenticate'),
                 cashier_locked       : () => localize('Deposits and withdrawals have been disabled on your account. Please check your email for more details.'),
                 currency             : () => buildMessage(localizeKeepPlaceholders('Please set the [_1]currency[_2] of your account.'),                                                                                    'user/set-currency'),
-                document             : () => buildMessage(localizeKeepPlaceholders('[_1]Your Proof of Address[_2] did not meet our requirements. Please check your email for further instructions.'),                      'user/authenticate'),
-                document_needs_action: () => buildMessage(localizeKeepPlaceholders('[_1]Your Proof of Identity or Proof of Address[_2] did not meet our requirements. Please check your email for further instructions.'), 'user/authenticate'),
+                document             : () => buildMessage(localizeKeepPlaceholders('[_1]Your Proof of Address[_2] did not meet our requirements. Please check your email for further instructions.'),                      'user/authenticate', '?authentication_tab=poa'),
+                unauthenticated      : () => buildMessage(localizeKeepPlaceholders('[_1]Your Proof of Address and Proof of Identity[_2] did not meet our requirements. Please check your email for further instructions.'),'user/authenticate'),
                 excluded_until       : () => buildMessage(localizeKeepPlaceholders('Your account is restricted. Kindly [_1]contact customer support[_2] for assistance.'),                                                 'contact'),
                 financial_limit      : () => buildMessage(localizeKeepPlaceholders('Please set your [_1]30-day turnover limit[_2] to remove deposit limits.'),                                                             'user/security/self_exclusionws'),
-                identity             : () => buildMessage(localizeKeepPlaceholders('[_1]Your Proof of Identity[_2] did not meet our requirements. Please check your email for further instructions.'),                     'user/authenticate'),
+                identity             : () => buildMessage(localizeKeepPlaceholders('[_1]Your Proof of Identity[_2] did not meet our requirements. Please check your email for further instructions.'),                     'user/authenticate', '?authentication_tab=poi'),
                 mf_retail            : () => buildMessage(localizeKeepPlaceholders('Binary Options Trading has been disabled on your account. Kindly [_1]contact customer support[_2] for assistance.'),                   'contact'),
                 mt5_withdrawal_locked: () => localize('MT5 withdrawals have been disabled on your account. Please check your email for more details.'),
                 required_fields      : () => buildMessage(localizeKeepPlaceholders('Please complete your [_1]personal details[_2] before you proceed.'),                                                                   'user/settings/detailsws'),
@@ -318,6 +326,7 @@ const Header = (() => {
                 currency             : () => !Client.get('currency'),
                 document             : () => hasVerification('document'),
                 document_needs_action: () => hasStatus('document_needs_action'),
+                unauthenticated      : () => hasVerification('unauthenticated'),
                 excluded_until       : () => Client.get('excluded_until'),
                 financial_limit      : () => hasStatus('ukrts_max_turnover_limit_not_set'),
                 identity             : () => hasVerification('identity'),
@@ -350,6 +359,7 @@ const Header = (() => {
                 'mf_retail',
                 'identity',
                 'document',
+                'unauthenticated',
             ];
 
             // virtual checks

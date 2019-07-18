@@ -31,7 +31,7 @@ const Authenticate = (() => {
 
             if (window.location.host === 'localhost') {
                 // TODO: service token API does not support localhost regex, below is temporary token to handle localhost
-                token = 'eyJhbGciOiJIUzI1NiJ9.eyJwYXlsb2FkIjoiNHZlS0ROeEdQMWoyTUV4QlBQQnVXSklxMDM0akpiWjBNTGdvK3M1YjNRd1NtOXdKODkwb29oVkFBa3B1XG4wM2w1Y1UwNEpETTduaU5hU3BqQitoUUVkalVEYk9abmdLU25yaTNERlZlbFVXcz1cbiIsInV1aWQiOiJIeHNhMDl1dmtBOCIsImV4cCI6MTU2MzMzNzg1MH0.ofMCHCFqPNeJedp2Z_U6x1FdCnhVkSkDdVyYJfPScIc';
+                token = 'eyJhbGciOiJIUzI1NiJ9.eyJwYXlsb2FkIjoiNHZlS0ROeEdQMWoyTUV4QlBQQnVXSklxMDM0akpiWjBNTGdvK3M1YjNRd1NtOXdKODkwb29oVkFBa3B1XG4wM2w1Y1UwNEpETTduaU5hU3BqQitoUUVkalVEYk9abmdLU25yaTNERlZlbFVXcz1cbiIsInV1aWQiOiJIeHNhMDl1dmtBOCIsImV4cCI6MTU2MzQyNjkxMn0.GSES8TRcbfwNvqnz6KhTEy60FK23pfJFSCKRAp_GCYE';
                 resolve(token);
             } else {
                 BinarySocket.send({
@@ -483,7 +483,7 @@ const Authenticate = (() => {
             removeButtonLoading();
             $button.setVisibility(0);
             $('.submit-status').setVisibility(0);
-            $('#success_message').setVisibility(1);
+            $('#pending_poa').setVisibility(1);
         }, 3000);
     };
 
@@ -491,7 +491,7 @@ const Authenticate = (() => {
         if ($button) {
             $button.setVisibility(1);
         }
-        $('#success_message').setVisibility(0);
+        $('#pending_poa').setVisibility(0);
     };
 
     const onResponse = (response, is_last_upload) => {
@@ -512,13 +512,13 @@ const Authenticate = (() => {
 
     const getAuthenticationStatus = () => new Promise((resolve) => {
         const mock_response = {
-            needs_verification: ['identity', 'document'],
+            needs_verification: ['identity'],
             identity          : {
-                status     : 'none',
+                status     : 'verified',
                 expiry_date: 0,
             },
             document: {
-                status     : 'none',
+                status     : 'verified',
                 expiry_date: 0,
             },
         };
@@ -577,13 +577,13 @@ const Authenticate = (() => {
                 break;
             }
             case 'pending':
-                $('#success_message').setVisibility(1);
+                $('#pending_poa').setVisibility(1);
                 break;
             case 'rejected':
-                $('#unverified_message').setVisibility(1);
+                $('#unverified_poa').setVisibility(1);
                 break;
             case 'verified':
-                $('#fully_authenticated').setVisibility(1);
+                $('#verified_poa').setVisibility(1);
                 break;
             default:
                 break;
