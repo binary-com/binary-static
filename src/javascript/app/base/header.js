@@ -286,8 +286,7 @@ const Header = (() => {
 
             const buildMessage = (string, path, hash = '') => template(string, [`<a href="${Url.urlFor(path)}${hash}">`, '</a>']);
             const hasStatus = (string) => status.findIndex(s => s === string) < 0 ? Boolean(false) : Boolean(true);
-            const hasVerification = (string) => needs_verification.findIndex(s => s === string) < 0
-                ? Boolean(false) : Boolean(true);
+            const hasVerification = (string) => needs_verification.findIndex(s => s === string) >= 0;
 
             const has_no_tnc_limit = is_svg;
 
@@ -380,7 +379,7 @@ const Header = (() => {
                 // TODO: wait for authentication api call
                 BinarySocket.wait('website_status', 'get_account_status', 'get_settings', 'balance').then(() => {
                     const mock_response = {
-                        needs_verification: ['identity', 'document'],
+                        needs_verification: ['document', 'identity'],
                         identity          : {
                             status     : 'none',
                             expiry_date: 0,

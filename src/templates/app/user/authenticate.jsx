@@ -4,7 +4,7 @@ import {
     TabContainer,
     TabContent,
     TabContentContainer,
-    TabsSubtabs } from '../../_common/components/tabs.jsx';
+    TabsSubtabs }                   from '../../_common/components/tabs.jsx';
 import AuthenticateMessageFinancial from '../_includes/authenticate_message_financial.jsx';
 import AuthenticateMessage          from '../_includes/authenticate_message.jsx';
 

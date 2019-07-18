@@ -1,5 +1,5 @@
-const Cookies             = require('js-cookie');
 const DocumentUploader    = require('@binary-com/binary-document-uploader');
+const Cookies             = require('js-cookie');
 const Onfido              = require('onfido-sdk-ui');
 const Client              = require('../../../base/client');
 const Header              = require('../../../base/header');
@@ -10,9 +10,9 @@ const isImageType         = require('../../../../_common/image_utility').isImage
 const getLanguage         = require('../../../../_common/language').get;
 const localize            = require('../../../../_common/localize').localize;
 const toTitleCase         = require('../../../../_common/string_util').toTitleCase;
+const TabSelector         = require('../../../../_common/tab_selector');
 const Url                 = require('../../../../_common/url');
 const showLoadingImage    = require('../../../../_common/utility').showLoadingImage;
-const TabSelector         = require('../../../../_common/tab_selector');
 
 const Authenticate = (() => {
     let is_any_upload_failed = false;
@@ -23,12 +23,14 @@ const Authenticate = (() => {
         $submit_table;
 
     const simulateCallForApiKey = () => new Promise((resolve, reject) => {
-        if (Cookies.get('onfido_token')) {
-            resolve(Cookies.get('onfido_token'));
+        const onfido_cookie = Cookies.get('onfido_token');
+        if (onfido_cookie) {
+            resolve(onfido_cookie);
         } else {
             let token = '';
 
             if (window.location.host === 'localhost') {
+                // TODO: service token API does not support localhost regex, below is temporary token to handle localhost
                 token = 'eyJhbGciOiJIUzI1NiJ9.eyJwYXlsb2FkIjoiNHZlS0ROeEdQMWoyTUV4QlBQQnVXSklxMDM0akpiWjBNTGdvK3M1YjNRd1NtOXdKODkwb29oVkFBa3B1XG4wM2w1Y1UwNEpETTduaU5hU3BqQitoUUVkalVEYk9abmdLU25yaTNERlZlbFVXcz1cbiIsInV1aWQiOiJIeHNhMDl1dmtBOCIsImV4cCI6MTU2MzMzNzg1MH0.ofMCHCFqPNeJedp2Z_U6x1FdCnhVkSkDdVyYJfPScIc';
                 resolve(token);
             } else {
@@ -50,7 +52,7 @@ const Authenticate = (() => {
         }
     });
 
-    const onfidoInit = async () => {
+    const initOnfido = async () => {
         $('#onfido').setVisibility(1);
         try {
             const sdk_token = await simulateCallForApiKey();
@@ -62,7 +64,7 @@ const Authenticate = (() => {
                         TODO: will move to steps after this issue resolved
                         https://github.com/onfido/onfido-sdk-ui/issues/391
                     */
-                    phrases: { welcome: { next_button: 'Verify identity' } },
+                    phrases: { welcome: { next_button: localize('Verify identity') } },
                 },
                 token     : sdk_token,
                 useModal  : false,
@@ -72,7 +74,7 @@ const Authenticate = (() => {
                         type   : 'welcome',
                         options: {
                             title       : localize('Verify it\'s you'),
-                            nextButton  : localize('submit button'),
+                            nextButton  : localize('Submit button'),
                             descriptions: [
                                 localize('Please verify your identity. This will only take a couple of minutes.'),
                             ],
@@ -504,7 +506,7 @@ const Authenticate = (() => {
         }
     };
 
-    const initializeTab = () => {
+    const initTab = () => {
         TabSelector.onLoad();
     };
 
@@ -525,15 +527,18 @@ const Authenticate = (() => {
         }, 300);
     });
 
-    const AuthenticationInit = async () => {
+    const initAuthentication = async () => {
         // TODO: call the authentication API
         const authentication_status = await getAuthenticationStatus();
-        if (!authentication_status && authentication_status.error) return;
+        if (!authentication_status || authentication_status.error) {
+            $('#error_occured').setVisibility(1);
+            return;
+        }
         const { identity, document } = authentication_status;
 
         switch (identity.status) {
             case 'none':
-                onfidoInit();
+                initOnfido();
                 break;
             case 'pending':
                 $('#upload_complete').setVisibility(1);
@@ -587,9 +592,8 @@ const Authenticate = (() => {
     };
 
     const onLoad = () => {
-        initializeTab();
-        AuthenticationInit();
-        
+        initTab();
+        initAuthentication();
     };
 
     const onUnload = () => {
