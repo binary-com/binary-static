@@ -15,6 +15,7 @@ const isEuCountry       = require('../../common/country_base').isEuCountry;
 const Guide             = require('../../common/guide');
 const TopUpVirtualPopup = require('../../pages/user/account/top_up_virtual/pop_up');
 const State             = require('../../../_common/storage').State;
+const getElementById    = require('../../../_common/common_functions');
 
 const TradePage = (() => {
     let events_initialized = 0;
@@ -85,8 +86,8 @@ const TradePage = (() => {
     const displayBanner = () => {
         BinarySocket.wait('website_status', 'authorize', 'landing_company').then(() => {
             if (!isEuCountry()) {
-                const $binary_grid_banner = $('#binary_grid_banner');
-                $binary_grid_banner.setVisibility(true);
+                const el_binary_grid_banner = getElementById('binary_grid_banner');
+                el_binary_grid_banner.setVisibility(1);
             }
         });
     };
