@@ -251,7 +251,12 @@ const ClientBase = (() => {
         } else {
             const financial_company = (getPropertyValue(landing_company, 'financial_company') || {})[key] || [];
             const gaming_company    = (getPropertyValue(landing_company, 'gaming_company') || {})[key] || [];
-            landing_company_object  = financial_company.concat(gaming_company);
+
+            landing_company_object = Array.isArray(financial_company) ?
+                financial_company.concat(gaming_company)
+                :
+                $.extend({}, financial_company, gaming_company);
+
             return landing_company_object;
         }
         return (landing_company_object || {})[key];
