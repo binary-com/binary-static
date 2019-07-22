@@ -1023,12 +1023,14 @@
         top: -1px;
         margin-bottom: -1px;
         position: relative;
+        max-height: 90px;
 
         @media (max-width: 480px) {
             visibility: hidden;
             display: none;
 
             &-m {
+                max-height: 180px;
                 position: relative;
                 top: -1px;
                 left: -0.5px;
@@ -1037,5 +1039,12 @@
                 display: flex !important;
             }
         }
+
+        @media (max-width: 768px) {
+            max-height: 110px;
+        }
+    }
+    .button {
+        margin-bottom: 0;
     }
 }
