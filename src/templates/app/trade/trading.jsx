@@ -10,11 +10,12 @@ const Trading = () => (
             <div id='loading_container' className='overlay_container' />
             <div id='binary_grid_banner' className='container gr-padding-30 invisible'>
                 <div className='gr-row'>
-                    <img src={it.url_for('images/pages/trade/binary_grid_banner.png')} className='gr-4 gr-12-m gr-no-gutter banner-image' />
-                    <img src={it.url_for('images/pages/trade/binary_grid_banner_m.png')} className='gr-4 gr-12-m gr-no-gutter banner-image-m invisible' />
-                    <div className='container gr-8 gr-12-m gr-row row center-align center-text'>
-                        <h3 className='gr-9 gr-12-m gr-padding-20 no-margin'>{it.L('The all-new rapid trading experience')}</h3>
-                        <a className='gr-3 gr-12-m gr-padding-10 button' href={it.url_for('binary-grid')} target='_blank' rel='noopener noreferrer'><span>{it.L('Try now')}</span></a>
+                    <img src={it.url_for('images/pages/trade/binary_grid_banner.png')} className='gr-4 gr-no-gutter banner-image' />
+                    <img src={it.url_for('images/pages/trade/binary_grid_banner_m.png')} className='gr-4 gr-no-gutter banner-image-m invisible' />
+                    <div className='container gr-8 gr-row row center-align center-text'>
+                        <h3 className='gr-9 gr-8-p gr-12-m gr-padding-20 no-margin banner-text'>{it.L('The all-new rapid trading experience')}</h3>
+                        <h4 className='gr-9 gr-12-m no-margin banner-text-m invisible'><span>{it.L('All-new [_1]Binary Grid[_2]', '<strong>', '</strong>')}</span></h4>
+                        <a className='gr-3 gr-4-p gr-12-m gr-padding-10 button' href={it.url_for('binary-grid')} target='_blank' rel='noopener noreferrer'><span>{it.L('Try now')}</span></a>
                     </div>
                 </div>
             </div>
