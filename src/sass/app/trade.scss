@@ -1030,7 +1030,7 @@
             display: none;
 
             &-m {
-                max-height: 180px;
+                max-height: 215px;
                 position: relative;
                 top: -1px;
                 left: -0.5px;
@@ -1042,6 +1042,11 @@
 
         @media (max-width: 768px) {
             max-height: 110px;
+        }
+        @media (max-width: 375px) {
+            &-m {
+                max-height: 180px;
+            }
         }
     }
     .button {
