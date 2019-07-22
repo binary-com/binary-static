@@ -452,6 +452,25 @@ const PaymentMethods = () => {
                                     },
                                 ],
                             },
+                            {
+                                id : 'sticpay',
+                                row: [
+                                    { text: <PaymentLogo logo='sticpay' /> },
+                                    { attributes: { colSpan: 5, className: 'toggler' }, custom_td : <CustomTableData data={[
+                                        { td: it.L('Sticpay is a global e-wallet service for money transfers and online payments. For more information, please visit [_1].', '<a href="https://www.sticpay.com" target="_blank">https://www.sticpay.com</a>') },
+                                        { td_list: [
+                                            { text: 'USD GBP EUR' },
+                                            { text: '5 - 10,000' },
+                                            { text: '5 - 10,000' },
+                                            { text: <TableValues value={[it.L(`${deposit}${instant}`), it.L(`${withdrawal}${working_day}`, 1)]} /> },
+                                            { text: <ReferenceLinks /> },
+                                        ],
+                                        },
+                                    ]}
+                                    />,
+                                    },
+                                ],
+                            },
                         ],
                     }}
                 />
