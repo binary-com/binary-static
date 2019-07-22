@@ -11,9 +11,9 @@ const Trading = () => (
             <div id='binary_grid_banner' className='gr-padding-30 invisible'>
                 <div className='row'>
                     <img src={it.url_for('images/pages/trade/binary_grid_banner.png')} className='gr-4 gr-no-gutter gr-12-m' />
-                    <div className='gr-8 row center-align center-text'>
+                    <div className='gr-8 gr-12-m row center-align center-text'>
                         <h3 className='no-margin'>{it.L('The all-new rapid trading experience')}</h3>
-                        <a type='button' className='button'><span>{it.L('Try now')}</span></a>
+                        <a type='button' className='button' href={it.url_for('binary-grid')}><span>{it.L('Try now')}</span></a>
                     </div>
                 </div>
             </div>
