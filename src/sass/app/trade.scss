@@ -1013,16 +1013,27 @@
 }
 
 #binary_grid_banner {
+    h3 {
+        line-height: 1.14;
+    }
     & > * {
         padding: 0 !important;
         border: solid 0.5px $COLOR_GRAY;
     }
     .banner-image {
+        left: -1px;
+        top: -1px;
+        margin-bottom: -2px;
+        position: relative;
+
         @media (max-width: 480px) {
             visibility: hidden;
             display: none;
 
             &-m {
+                position: relative;
+                top: -1px;
+                left: -0.5px;
                 visibility: visible;
                 display: flex !important;
             }

@@ -12,9 +12,9 @@ const Trading = () => (
                 <div className='gr-row'>
                     <img src={it.url_for('images/pages/trade/binary_grid_banner.png')} className='gr-4 gr-12-m gr-no-gutter banner-image' />
                     <img src={it.url_for('images/pages/trade/binary_grid_banner_m.png')} className='gr-4 gr-12-m gr-no-gutter banner-image-m invisible' />
-                    <div className='gr-8 gr-12-m row center-align center-text'>
-                        <h3 className='no-margin'>{it.L('The all-new rapid trading experience')}</h3>
-                        <a type='button' className='button' href={it.url_for('binary-grid')}><span>{it.L('Try now')}</span></a>
+                    <div className='gr-8 gr-12-m gr-row row center-align center-text'>
+                        <h3 className='gr-9 gr-12-m gr-padding-20 no-margin'>{it.L('The all-new rapid trading experience')}</h3>
+                        <a type='button' className='gr-3 gr-12-m gr-padding-10 button' href={it.url_for('binary-grid')}><span>{it.L('Try now')}</span></a>
                     </div>
                 </div>
             </div>
