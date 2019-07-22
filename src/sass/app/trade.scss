@@ -1017,4 +1017,15 @@
         padding: 0 !important;
         border: solid 0.5px $COLOR_GRAY;
     }
+    .banner-image {
+        @media (max-width: 480px) {
+            visibility: hidden;
+            display: none;
+
+            &-m {
+                visibility: visible;
+                display: flex !important;
+            }
+        }
+    }
 }

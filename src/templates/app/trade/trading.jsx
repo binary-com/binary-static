@@ -10,7 +10,8 @@ const Trading = () => (
             <div id='loading_container' className='overlay_container' />
             <div id='binary_grid_banner' className='container gr-padding-30 invisible'>
                 <div className='gr-row'>
-                    <img src={it.url_for('images/pages/trade/binary_grid_banner.png')} className='gr-4 gr-12-m gr-no-gutter' />
+                    <img src={it.url_for('images/pages/trade/binary_grid_banner.png')} className='gr-4 gr-12-m gr-no-gutter banner-image' />
+                    <img src={it.url_for('images/pages/trade/binary_grid_banner_m.png')} className='gr-4 gr-12-m gr-no-gutter banner-image-m invisible' />
                     <div className='gr-8 gr-12-m row center-align center-text'>
                         <h3 className='no-margin'>{it.L('The all-new rapid trading experience')}</h3>
                         <a type='button' className='button' href={it.url_for('binary-grid')}><span>{it.L('Try now')}</span></a>
