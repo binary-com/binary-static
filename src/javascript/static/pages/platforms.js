@@ -3,6 +3,7 @@ const isIndonesia    = require('../../app/common/country_base').isIndonesia;
 const getElementById = require('../../_common/common_functions').getElementById;
 const TabSelector    = require('../../_common/tab_selector');
 const isBinaryApp    = require('../../config').isBinaryApp;
+const { OSDetect }   = require('../../_common/os_detect');
 
 const os_list = [
     {
@@ -47,6 +48,14 @@ const Platforms = (() => {
             .then(gridapp => {
                 $('.download-grid-app').attr('href', `https://grid.binary.me/download/${gridapp.name}`);
             });
+        const os = OSDetect();
+        const android_app = document.querySelector('.android-download-grid-app');
+        if (os === 'ios') {
+            const ios_message = document.querySelector('.ios-download-grid-app');
+            ios_message.classList.remove('invisible');
+            android_app.classList.add('invisible');
+        }
+
     };
 
     return {
