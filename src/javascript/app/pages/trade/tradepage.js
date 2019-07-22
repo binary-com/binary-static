@@ -15,7 +15,7 @@ const isEuCountry       = require('../../common/country_base').isEuCountry;
 const Guide             = require('../../common/guide');
 const TopUpVirtualPopup = require('../../pages/user/account/top_up_virtual/pop_up');
 const State             = require('../../../_common/storage').State;
-const getElementById    = require('../../../_common/common_functions');
+const getElementById    = require('../../../_common/common_functions').getElementById;
 
 const TradePage = (() => {
     let events_initialized = 0;
