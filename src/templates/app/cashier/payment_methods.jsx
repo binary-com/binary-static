@@ -421,7 +421,7 @@ const PaymentMethods = () => {
                                         { td: it.L('Jeton is an international e-wallet for money transfers and online payments. For more information, please visit [_1].', '<a href="https://www.jeton.com/" target="_blank">www.jeton.com</a>') },
                                         { td_list: [
                                             { text: 'USD EUR' },
-                                            { text: '10 - 10,000' },
+                                            { text: '5 - 10,000' },
                                             { text: 'N/A' },
                                             { text: <TableValues value={[it.L(`${deposit}${instant}`), it.L(`${withdrawal}${working_day}`, 1)]} /> },
                                             { text: <ReferenceLinks /> },
