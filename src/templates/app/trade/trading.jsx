@@ -15,7 +15,7 @@ const Trading = () => (
                     <div className='container gr-8 gr-row row center-align center-text'>
                         <h3 className='gr-9 gr-8-p gr-12-m gr-padding-20 no-margin banner-text'>{it.L('The all-new rapid trading experience')}</h3>
                         <h4 className='gr-9 gr-12-m no-margin banner-text-m invisible'><span>{it.L('All-new [_1]Binary Grid[_2]', '<strong>', '</strong>')}</span></h4>
-                        <a className='gr-3 gr-4-p gr-12-m gr-padding-10 button' href={it.url_for('binary-grid')} target='_blank' rel='noopener noreferrer'><span>{it.L('Try now')}</span></a>
+                        <a className='gr-3 gr-4-p gr-12-m gr-padding-10 button' href={it.url_for('binary-grid', 'en')} target='_blank' rel='noopener noreferrer'><span>{it.L('Try now')}</span></a>
                     </div>
                 </div>
             </div>
