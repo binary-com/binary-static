@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-07-23 02:06\n"
+"PO-Revision-Date: 2019-07-23 10:28\n"
 "Last-Translator: binarycom\n"
 "Language-Team: Polish\n"
 "MIME-Version: 1.0\n"
@@ -6003,9 +6003,6 @@ msgstr "Kontrole wewnętrzne"
 msgid "Internal Audit Executive"
 msgstr "Kierownik ds. kontroli wewnętrznych"
 
-msgid "Internal currency transfers between accounts are allowed up to a maximum of USD 2,500.00 or equivalent. Transfers are allowed between any available currency pair but cannot be done between the Binary and MT5 accounts."
-msgstr "Wewnętrzne przelewy walutowe między kontami są dozwolone w maksymalnej kwocie do 2500 USD lub odpowiadającej kwocie. Zezwala się na przelewy między parami walutowymi, ale nie mogą one być dokonywane między kontem Binary a kontem MT5."
-
 msgid "International currency or commodity prices are highly volatile and very difficult to predict. Due to such volatility, plus the bias in the pricing system favouring the website (as described in more detail below), no financial contract purchased in our system (whether or not the payout exceeds the premium amount) can be considered a safe contract."
 msgstr "Waluty międzynarodowe oraz ceny towarów są bardzo zmienne i trudne do przewidzenia. Z powodu tej zmienności oraz czynników w systemie wyceny faworyzujących portal (szczegóły poniżej) żaden kontrakt finansowy zakupiony w naszym systemie (niezależnie od tego, czy wysokość wypłaty przekracza kwotę premii czy nie) nie może być uznany za bezpieczny kontrakt."
 
@@ -10053,9 +10050,6 @@ msgstr "Że strony zgadzają się na piśmie, że obie będą wyłączone z obow
 msgid "That the recipient is obliged by Law to disclose such information, provided that the recipient promptly advises the other party of the legal obligation to disclose such information"
 msgstr "Że odbiorca jest zobligowany na mocy prawa do ujawnienia takich informacji, pod warunkiem, że odbiorca szybko poinformuje drugą stronę o prawnym zobowiązaniu do ujawnienia takich informacji"
 
-msgid "The  acknowledges, recognises, and understands that"
-msgstr "Uznaje i rozumie, że"
-
 msgid "The %1 API has usage limits enforced to prevent abuse and/or repurposing of the %1 API. These usage limits may be changed in the future without notice. If the Programmer consistently exceeds the usage limit or otherwise abuse the service, the Company may block the Programmer's access to the %1 API."
 msgstr "API %1 jest obarczone limitami użytkowania w celu zapobiegania nadużyciom i wykorzystywania API %1 do innych celów. Limity użytkowania mogą zostać zmienione w przyszłości bez powiadomienia. W przypadku stałego przekraczania limitów użytkowania przez Programistę lub innych nadużyć, Firma może zablokować dostęp Programisty do API %1."
 
@@ -10937,6 +10931,9 @@ msgstr "Klient przyjmuje do wiadomości, że Firma zastrzega sobie prawo do unie
 
 msgid "The client acknowledges that the Company will determine, at its discretion, the transactions that will be kept in the Company's own book (known as B booking) and the transactions that will be passed through to the prime brokers who act as liquidity providers for the Company (known as A booking). For the former, the Company is the counterparty in these transactions, and a correlation exists between the profit/loss made by the client and the profit/loss made by the Company. At any point in time, the Company may be entering into or may have entered into transactions with a large number of clients, each of whose interests may diverge from those of other clients. As such, the Company may be holding Open Positions that may not be aligned with the client's objectives/interests as an individual client of the Company."
 msgstr "Klient przyjmuje do wiadomości, że Firma wybierze, według własnego uznania, transakcje, które zostaną zachowane w księdze firmy (księgowanie B) i Transakcje które zostaną przekazane podmiotom działającym jako dostawcy płynności w odniesieniu do Firmy (księgowanie A). W poprzednim przypadku Firma występuje w roli kontrahenta w tych transakcjach i występuje współzależność między zyskiem/stratą klienta a zyskiem/stratą Firmy. W dowolnej chwili Firma może zawrzeć transakcję z wieloma klientami, a interes każdego z nich może różnić się od interesu pozostałych klientów. Firma może więc posiadać pozycje otwarte, które nie są zgodne z celami/interesem klienta jako indywidualnego klienta Firmy."
+
+msgid "The client acknowledges, recognises, and understands that"
+msgstr ""
 
 msgid "The client acknowledges, understands, represents, and warrants that they are aware of the functional limitations of the MT5 trading platform (for example Wine, which is not a fully stable application, as disclosed by the MT5 trading platform licensor on their website)."
 msgstr "Klient przyjmuje do wiadomości, rozumie, zapewnia i oświadcza, że jest świadomy ograniczeń funkcjonalnych platformy handlowej MT5 (np. aplikacji Wine, która nie jest w pełni stabilna według informacji podanych przez licencjodawcę platformy handlowej MT5 na jego stronie internetowej)."
@@ -12218,6 +12215,9 @@ msgstr "Przelew dla loginu"
 
 msgid "Transfer to MT5"
 msgstr "Przelew na konto MT5"
+
+msgid "Transfers between Binary fiat and cryptocurrency accounts are allowed up to a maximum of USD 2,500.00 or equivalent. Fiat and cryptocurrency transfers are also allowed between Binary and MT5 accounts. Charges may apply for every successful transaction."
+msgstr ""
 
 msgid "Translate data into consumable information and assist in making data-driven decisions across departments."
 msgstr "Przekształcanie danych w łatwe do wykorzystania informacje i pomoc w podejmowaniu decyzji na ich bazie w różnych działach firmy."

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-07-23 02:07\n"
+"PO-Revision-Date: 2019-07-23 10:28\n"
 "Last-Translator: binarycom\n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
@@ -6003,9 +6003,6 @@ msgstr "Внутренний аудит"
 msgid "Internal Audit Executive"
 msgstr "Сотрудник отдела внутреннего аудита"
 
-msgid "Internal currency transfers between accounts are allowed up to a maximum of USD 2,500.00 or equivalent. Transfers are allowed between any available currency pair but cannot be done between the Binary and MT5 accounts."
-msgstr "Внутренний перевод средств между счетами разрешен в размере до USD 2,500.00 или эквивалентной суммы в других валютах. Переводы могут осуществляться между любыми доступными валютными парами, но не могут производиться между счетами Binary и MT5."
-
 msgid "International currency or commodity prices are highly volatile and very difficult to predict. Due to such volatility, plus the bias in the pricing system favouring the website (as described in more detail below), no financial contract purchased in our system (whether or not the payout exceeds the premium amount) can be considered a safe contract."
 msgstr "Валютные и сырьевые рынки чрезвычайно волатильны, и часто на них сложно делать точные прогнозы. В связи с такой нестабильностью, а также уклоном в оценочной системе в пользу сайта (как более подробно описано ниже), никакие контракты, приобретенные на сайте (независимо от того, превышает сумма чистого выигрыша ставку или нет), не могут гарантировать прибыль."
 
@@ -10053,9 +10050,6 @@ msgstr "в ситуации, когда обе стороны подписали
 msgid "That the recipient is obliged by Law to disclose such information, provided that the recipient promptly advises the other party of the legal obligation to disclose such information"
 msgstr "которую получатель обязан раскрыть по закону, при условии, что получатель своевременно уведомит вторую сторону о юридическом обязательстве разгласить данную информацию,"
 
-msgid "The  acknowledges, recognises, and understands that"
-msgstr "Настоящим следует признать и согласится с нижеследующим:"
-
 msgid "The %1 API has usage limits enforced to prevent abuse and/or repurposing of the %1 API. These usage limits may be changed in the future without notice. If the Programmer consistently exceeds the usage limit or otherwise abuse the service, the Company may block the Programmer's access to the %1 API."
 msgstr "API %1 имеет ограничения использования, введённые с целью предотвращения злоупотреблений и/или использования API %1 для других целей. Данные ограничения использования могут быть изменены в будущем без предварительного уведомления. Если Программист регулярно превышает лимиты использования или иным образом злоупотребляет услугами, Компания может заблокировать доступ Программиста к API %1."
 
@@ -10937,6 +10931,9 @@ msgstr "Клиент признаёт, что Компания оставляе�
 
 msgid "The client acknowledges that the Company will determine, at its discretion, the transactions that will be kept in the Company's own book (known as B booking) and the transactions that will be passed through to the prime brokers who act as liquidity providers for the Company (known as A booking). For the former, the Company is the counterparty in these transactions, and a correlation exists between the profit/loss made by the client and the profit/loss made by the Company. At any point in time, the Company may be entering into or may have entered into transactions with a large number of clients, each of whose interests may diverge from those of other clients. As such, the Company may be holding Open Positions that may not be aligned with the client's objectives/interests as an individual client of the Company."
 msgstr "Настоящим клиент соглашается с тем, что Компания будет по своему единоличному усмотрению определять контракты, которые будут оставаться в системе Компании (данная процедура известна как B booking) и контракты, которые будут передаваться прайм-брокерам, выступающим в качестве поставщиков ликвидности для Компании (данная процедура известна как A booking). Во втором случае Компания выступает в качестве контрагента по данным контрактам и возникает корреляция между прибылью/убытком клиента и прибылью/убытком Компании. В любое время Компания может заключить контракты с большим количеством клиентов, интересы которых могут противоречить друг другу. В этой связи Компания может держать открытые позиции, которые могут не соответствовать целям/интересам клиента Компании."
+
+msgid "The client acknowledges, recognises, and understands that"
+msgstr ""
 
 msgid "The client acknowledges, understands, represents, and warrants that they are aware of the functional limitations of the MT5 trading platform (for example Wine, which is not a fully stable application, as disclosed by the MT5 trading platform licensor on their website)."
 msgstr "Клиент признаёт, понимает, соглашается и гарантирует, что он/она знает о функциональных ограничениях на торговой платформе MT5 (например, о том, что Wine является не совсем стабильным приложением по версии лицензиара торговой платформы MT5, изложенной на его сайте)."
@@ -12218,6 +12215,9 @@ msgstr "Перевести на логин"
 
 msgid "Transfer to MT5"
 msgstr "Перевести на MT5"
+
+msgid "Transfers between Binary fiat and cryptocurrency accounts are allowed up to a maximum of USD 2,500.00 or equivalent. Fiat and cryptocurrency transfers are also allowed between Binary and MT5 accounts. Charges may apply for every successful transaction."
+msgstr ""
 
 msgid "Translate data into consumable information and assist in making data-driven decisions across departments."
 msgstr "Преобразование данных в готовую к применению информацию и помощь различным отделам компании в принятии решений на основе данных."

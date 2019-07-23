@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-07-23 02:07\n"
+"PO-Revision-Date: 2019-07-23 10:29\n"
 "Last-Translator: binarycom\n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -2428,7 +2428,7 @@ msgid "Call Spread"
 msgstr "買權價差"
 
 msgid "Call Spread/Put Spread"
-msgstr "買權價差/賣權價差"
+msgstr "看漲期權價差/看跌期權價差"
 
 msgid "Can I offer my referrals an incentive to sign up through my unique affiliate link rather than sign up directly?"
 msgstr "我是否可以讓我推薦的客戶不要直接註冊，而是通過我的聯盟專用連結註冊，從而獲得獎金？"
@@ -2782,7 +2782,7 @@ msgid "Close all or any of the client's Open Positions at a closing level that i
 msgstr "以合理可用的平倉層次將客戶所有或任何未平倉頭寸平倉"
 
 msgid "Close-Low"
-msgstr "收盤-低"
+msgstr "收盤-最低值"
 
 msgid "Closed Bid"
 msgstr "密封出價"
@@ -4039,7 +4039,7 @@ msgid "Ends Between"
 msgstr "區間之內結束"
 
 msgid "Ends Between/Ends Outside"
-msgstr "到期時價格處於範圍之內/之外"
+msgstr "到期在範圍之內/之外"
 
 msgid "Ends Between/Ends Outside contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
 msgstr "如果開始和結束期間價格跳動次數少於2，「到期時價格處於範圍之內/之外」合約購入價將全額退還。"
@@ -6003,9 +6003,6 @@ msgstr "內部審計"
 msgid "Internal Audit Executive"
 msgstr "內部稽核主管"
 
-msgid "Internal currency transfers between accounts are allowed up to a maximum of USD 2,500.00 or equivalent. Transfers are allowed between any available currency pair but cannot be done between the Binary and MT5 accounts."
-msgstr "帳戶之間的內部貨幣轉帳最高可達2,500.00美元或等值。允許任何可用貨幣對之間轉帳，但Binary和MT5帳戶之間不可轉帳。"
-
 msgid "International currency or commodity prices are highly volatile and very difficult to predict. Due to such volatility, plus the bias in the pricing system favouring the website (as described in more detail below), no financial contract purchased in our system (whether or not the payout exceeds the premium amount) can be considered a safe contract."
 msgstr "國際外匯或商品價格波動非常劇烈，很難預測。由於波動幅度較大，加上報價體系對網站有利(以下將詳細說明)，因此在我們系統中買入的金融合約都不得視為安全合約（不論賠付額是否大於期權費金額）。"
 
@@ -6940,7 +6937,7 @@ msgid "Mastercard is an international company that processes payments made with 
 msgstr "萬事達卡是國際公司, 專門處理用萬事達卡品牌的信用卡和轉帳卡支付的款項。欲知詳情, 請存取 %1。"
 
 msgid "Matches/Differs"
-msgstr "相符/差異"
+msgstr "符合/相差"
 
 msgid "Maximum Payout"
 msgstr "最大賠付"
@@ -7645,7 +7642,7 @@ msgid "Only Ups"
 msgstr "只會持續上漲"
 
 msgid "Only Ups/Only Downs"
-msgstr "只會持續上漲/只會持續下跌"
+msgstr "持續上漲/持續下跌"
 
 msgid "Only five years after inception, we pick up this major award for our online trading services. The award recognises BetOnMarkets.com's reliable, fast and secure online trading for novice and expert traders. At this time, our website has received over 15 million trades."
 msgstr "成立後僅五年，我們的線上交易服務即斬獲這一重要獎項。該獎項旨在表彰 BetOnMarkets.com 向交易新手和資深交易者提供可靠、快速和安全的網上交易。此時，我們網站的交易數量已超過1500萬筆。"
@@ -9004,7 +9001,7 @@ msgid "Reset Call"
 msgstr "重設買權"
 
 msgid "Reset Call/Reset Put"
-msgstr "重設買/賣權"
+msgstr "重置看漲/重置看跌"
 
 msgid "Reset MT5 password"
 msgstr "重設MT5密碼"
@@ -10053,9 +10050,6 @@ msgstr "雙方書面同意雙方將免受本條款的規定約束"
 msgid "That the recipient is obliged by Law to disclose such information, provided that the recipient promptly advises the other party of the legal obligation to disclose such information"
 msgstr "法律規定接收人有義務披露此類信息，前提是接收人須及時告知另一方其根據法律規定有義務披露此類信息"
 
-msgid "The  acknowledges, recognises, and understands that"
-msgstr "確認、識別和理解"
-
 msgid "The %1 API has usage limits enforced to prevent abuse and/or repurposing of the %1 API. These usage limits may be changed in the future without notice. If the Programmer consistently exceeds the usage limit or otherwise abuse the service, the Company may block the Programmer's access to the %1 API."
 msgstr "%1 API的使用受到限制，以防止%1 API被濫用和/或改變用途。將來這些使用限制可能不另行通知而更改。如果程式設計員持續超出使用限制，或以其他方式濫用該服務，公司可能會阻止其存取%1 API。"
 
@@ -10937,6 +10931,9 @@ msgstr "客戶確認如果公司發覺任何違反本協定項下提供的擔保
 
 msgid "The client acknowledges that the Company will determine, at its discretion, the transactions that will be kept in the Company's own book (known as B booking) and the transactions that will be passed through to the prime brokers who act as liquidity providers for the Company (known as A booking). For the former, the Company is the counterparty in these transactions, and a correlation exists between the profit/loss made by the client and the profit/loss made by the Company. At any point in time, the Company may be entering into or may have entered into transactions with a large number of clients, each of whose interests may diverge from those of other clients. As such, the Company may be holding Open Positions that may not be aligned with the client's objectives/interests as an individual client of the Company."
 msgstr "客戶確認公司將自行決定將交易記錄保存在公司自己的記錄本（稱為B記錄本）或交給充當公司流動性提供商的主要經紀人保存（稱為A記錄本）。對於前者，公司是交易中的另一方，客戶的盈虧和公司的盈虧之間有相互關係。公司可能會隨時與大量客戶開始或已開始進行交易，每個客戶的利益都可能與其他客戶有分歧。因此，公司可能持有與客戶作為公司單一客戶的目標和利益不一致的未平倉頭寸。"
+
+msgid "The client acknowledges, recognises, and understands that"
+msgstr ""
 
 msgid "The client acknowledges, understands, represents, and warrants that they are aware of the functional limitations of the MT5 trading platform (for example Wine, which is not a fully stable application, as disclosed by the MT5 trading platform licensor on their website)."
 msgstr "客戶確認、理解、聲明並保證客戶了解MT5交易平台的功能限制（例如，Wine，如MT5交易平台許可方在其網站上披露的，不是完全穩定的應用程式）。"
@@ -12218,6 +12215,9 @@ msgstr "轉給登入 ID"
 
 msgid "Transfer to MT5"
 msgstr "轉至 MT5"
+
+msgid "Transfers between Binary fiat and cryptocurrency accounts are allowed up to a maximum of USD 2,500.00 or equivalent. Fiat and cryptocurrency transfers are also allowed between Binary and MT5 accounts. Charges may apply for every successful transaction."
+msgstr ""
 
 msgid "Translate data into consumable information and assist in making data-driven decisions across departments."
 msgstr "將資料轉換為可應用的資訊, 並協助各部門做出資料驅動的決策。"

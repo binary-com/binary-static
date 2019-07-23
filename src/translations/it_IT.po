@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-07-23 02:06\n"
+"PO-Revision-Date: 2019-07-23 10:27\n"
 "Last-Translator: binarycom\n"
 "Language-Team: Italian\n"
 "MIME-Version: 1.0\n"
@@ -1300,7 +1300,7 @@ msgid "All your deposits and withdrawals are processed by %1 within 24 hours. Ho
 msgstr "Tutti i tuoi depositi e prelievi sono elaborati da %1 entro 24 ore. Tuttavia, la tua banca o il servizio utilizzato per il trasferimento del denaro potrebbero richiedere un maggior tempo di elaborazione."
 
 msgid "All-new %1Binary Grid%2"
-msgstr ""
+msgstr "Nuovissima %1Binary Grid%2"
 
 msgid "Allow Clients to deposit with lower amounts (via local currency)"
 msgstr "Consentono ai Clienti di effettuare depositi con importi inferiori (tramite valuta locale)"
@@ -6005,9 +6005,6 @@ msgstr "Internal Audit"
 msgid "Internal Audit Executive"
 msgstr "Responsabile dei controlli interni"
 
-msgid "Internal currency transfers between accounts are allowed up to a maximum of USD 2,500.00 or equivalent. Transfers are allowed between any available currency pair but cannot be done between the Binary and MT5 accounts."
-msgstr "I trasferimenti di valuta interni tra conti sono permessi fino a un massimo di 2.500,000 USD, o una cifra equivalente. Possono essere realizzati tra qualsiasi coppia di valuta disponibile, ma non tra conti Binary e MT5."
-
 msgid "International currency or commodity prices are highly volatile and very difficult to predict. Due to such volatility, plus the bias in the pricing system favouring the website (as described in more detail below), no financial contract purchased in our system (whether or not the payout exceeds the premium amount) can be considered a safe contract."
 msgstr "I prezzi delle valute internazionali e delle materie prime sono estremamente volatili e molto difficili da prevedere. A causa di tale volatilità, e della tendenza del sistema di determinazione dei prezzi a favorire il sito (come descritto più dettagliatamente di seguito), nessun contratto finanziario acquistato nel nostro sistema (indipendentemente dal fatto che il payout superi o non superi l'importo del premio) può essere considerato sicuro."
 
@@ -10055,9 +10052,6 @@ msgstr "le parti concordano nell'annotare che entrambe verranno escluse dalle di
 msgid "That the recipient is obliged by Law to disclose such information, provided that the recipient promptly advises the other party of the legal obligation to disclose such information"
 msgstr "il ricevente è tenuto per legge a divulgare tali informazioni, a patto di avvisare prontamente l'altra parte di tale obbligo legale;"
 
-msgid "The  acknowledges, recognises, and understands that"
-msgstr "Il  comprende e accetta quanto segue:"
-
 msgid "The %1 API has usage limits enforced to prevent abuse and/or repurposing of the %1 API. These usage limits may be changed in the future without notice. If the Programmer consistently exceeds the usage limit or otherwise abuse the service, the Company may block the Programmer's access to the %1 API."
 msgstr "L'API di %1 ha dei limiti d'uso imposti per prevenire l'abuso e/o il riutilizzo dell'API di %1. Tali limiti d'uso potranno essere modificati senza preavviso. Se il Programmatore supera costantemente il limite d'uso o abusa del servizio in altro modo, la Società può bloccarne l'accesso all'API di %1."
 
@@ -10845,7 +10839,7 @@ msgid "The ability to make rational decisions even based on limited information"
 msgstr "La capacità di prendere decisioni razionali pur disponendo di informazioni limitate"
 
 msgid "The all-new rapid trading experience"
-msgstr ""
+msgstr "Nuova esperienza di trading"
 
 msgid "The anti-money laundering processes have the following effects on clients:"
 msgstr "Le conseguenze delle procedure di anti-riciclaggio per i clienti sono le seguenti:"
@@ -10939,6 +10933,9 @@ msgstr "Il cliente è consapevole che la Società si riserva il diritto di annul
 
 msgid "The client acknowledges that the Company will determine, at its discretion, the transactions that will be kept in the Company's own book (known as B booking) and the transactions that will be passed through to the prime brokers who act as liquidity providers for the Company (known as A booking). For the former, the Company is the counterparty in these transactions, and a correlation exists between the profit/loss made by the client and the profit/loss made by the Company. At any point in time, the Company may be entering into or may have entered into transactions with a large number of clients, each of whose interests may diverge from those of other clients. As such, the Company may be holding Open Positions that may not be aligned with the client's objectives/interests as an individual client of the Company."
 msgstr "Il cliente riconosce che la Società determinerà a sua discrezione le operazioni che verranno conservate nel libro della Società (note come B booking) e quelle che passeranno agli intermediari principali che operano da fornitori di liquidità per la Società (note come A booking). Per i primi, la Società è la controparte in queste operazioni, e sussiste una correlazione tra profitto/perdite del cliente e profitto/perdite della Società. Quest'ultima potrà avviare o aver avviato in qualsiasi momento delle operazioni con un ampio numero di clienti, i cui interessi possono divergere da quelli di altri clienti. Pertanto, è possibile che la Società detenga posizioni aperte non in linea con gli obiettivi/interessi del singolo cliente."
+
+msgid "The client acknowledges, recognises, and understands that"
+msgstr ""
 
 msgid "The client acknowledges, understands, represents, and warrants that they are aware of the functional limitations of the MT5 trading platform (for example Wine, which is not a fully stable application, as disclosed by the MT5 trading platform licensor on their website)."
 msgstr "Il cliente accetta, comprende e garantisce di essere a conoscenza dei limiti funzionali della piattaforma di trading MT5 (relativi, per esempio, all'applicazione Wine, che non risulta totalmente affidabile come precisato dal licenziatario di MT5 sul suo sito web)."
@@ -12221,6 +12218,9 @@ msgstr "Trasferisci a ID di login"
 msgid "Transfer to MT5"
 msgstr "Trasferisci su MT5"
 
+msgid "Transfers between Binary fiat and cryptocurrency accounts are allowed up to a maximum of USD 2,500.00 or equivalent. Fiat and cryptocurrency transfers are also allowed between Binary and MT5 accounts. Charges may apply for every successful transaction."
+msgstr ""
+
 msgid "Translate data into consumable information and assist in making data-driven decisions across departments."
 msgstr "Tradurre i dati in informazioni utilizzabili e fornire assistenza nel prendere decisioni basate sui dati in vari dipartimenti."
 
@@ -12258,7 +12258,7 @@ msgid "Try WebTrader"
 msgstr "Prova Webtrader"
 
 msgid "Try now"
-msgstr ""
+msgstr "Provalo subito"
 
 msgid "Try our %1Volatility Indices%2."
 msgstr "Prova i nostri %1indici di volatilità%2."
