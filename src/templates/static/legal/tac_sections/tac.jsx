@@ -59,7 +59,7 @@ const Tac = () => (
             `<a href='${it.url_for('cashier/payment_methods')}'>`, '</a>')}
         </p>
         <p>{it.L('A client should not use the client\'s account as a banking facility, and deposits should only be made with a view to using funds to place contracts. The Company is not a financial institution, and the client will not receive interest on deposits. Should a client make repeated deposits and withdrawals without placing commensurate contracts, the Company reserves the right to pass on to the client\'s account, without prior notice, any bank charges the Company has incurred before closing the account.')}</p>
-        <p>{it.L('Transfers between Binary fiat and crypto accounts are allowed up to a maximum of USD 2,500.00 or equivalent. Transfers between Binary and MT5 accounts are allowed for fiat currencies only.')}</p>
+        <p>{it.L('Transfers between Binary fiat and cryptocurrency accounts are allowed up to a maximum of USD 2,500.00 or equivalent. Fiat and cryptocurrency transfers are also allowed between Binary and MT5 accounts. Charges may apply for every successful transaction.')}</p>
 
         <h2 data-anchor='prohibited-trades'>H. {it.L('Prohibited trades')}</h2>
         <p>{it.L('The Company reserves the right to refuse to do business with, to discontinue to do business with, and to reverse the transactions of clients who engage in any trading activity')}</p>
