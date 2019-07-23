@@ -132,8 +132,8 @@ const Accounts = (() => {
     };
 
     const getCurrencyChangeOptions = () => {
-        const allowed_currencies   = Client.getLandingCompanyValue(Client.get('loginid'), landing_company, 'legal_allowed_currencies');
-        const current_currencies   = GetCurrency.getCurrenciesOfOtherAccounts();
+        const allowed_currencies = Client.getLandingCompanyValue(Client.get('loginid'), landing_company, 'legal_allowed_currencies');
+        const current_currencies = GetCurrency.getCurrenciesOfOtherAccounts();
 
         current_currencies.push(Client.get('currency'));
 
