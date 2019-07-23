@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-07-23 02:07\n"
+"PO-Revision-Date: 2019-07-23 10:29\n"
 "Last-Translator: binarycom\n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -6004,9 +6004,6 @@ msgstr "内部审计"
 msgid "Internal Audit Executive"
 msgstr "内部审计主管"
 
-msgid "Internal currency transfers between accounts are allowed up to a maximum of USD 2,500.00 or equivalent. Transfers are allowed between any available currency pair but cannot be done between the Binary and MT5 accounts."
-msgstr "账户之间的内部货币转账最高可达2,500.00美元或等值。允许任何可用货币对之间转账，但Binary和MT5账户之间不可转账。"
-
 msgid "International currency or commodity prices are highly volatile and very difficult to predict. Due to such volatility, plus the bias in the pricing system favouring the website (as described in more detail below), no financial contract purchased in our system (whether or not the payout exceeds the premium amount) can be considered a safe contract."
 msgstr "国际外汇或大宗商品价格波动非常剧烈，很难预测。由于波动幅度较大，加上报价体系对网站有利，在我们系统中买入的金融合约不得视为安全合约（不论赔付额是否大于期权费金额）。"
 
@@ -10055,9 +10052,6 @@ msgstr "双方书面同意双方将免受本条款的规定约束"
 msgid "That the recipient is obliged by Law to disclose such information, provided that the recipient promptly advises the other party of the legal obligation to disclose such information"
 msgstr "法律规定接收人有义务披露此类信息，前提是接收人须及时通知另一方关于披露此类信息的法律规定义务"
 
-msgid "The  acknowledges, recognises, and understands that"
-msgstr "确认、识别并理解"
-
 msgid "The %1 API has usage limits enforced to prevent abuse and/or repurposing of the %1 API. These usage limits may be changed in the future without notice. If the Programmer consistently exceeds the usage limit or otherwise abuse the service, the Company may block the Programmer's access to the %1 API."
 msgstr "%1 API的使用受到限制，以防止%1 API被滥用和/或改变用途。将来这些使用限制可能不另行通知而更改。如果程序员持续超出使用限制，或以其他方式滥用该服务，公司可能会阻止其访问%1 API。"
 
@@ -10940,6 +10934,9 @@ msgstr "客户确认如果公司发觉任何违反本协议项下提供的担保
 
 msgid "The client acknowledges that the Company will determine, at its discretion, the transactions that will be kept in the Company's own book (known as B booking) and the transactions that will be passed through to the prime brokers who act as liquidity providers for the Company (known as A booking). For the former, the Company is the counterparty in these transactions, and a correlation exists between the profit/loss made by the client and the profit/loss made by the Company. At any point in time, the Company may be entering into or may have entered into transactions with a large number of clients, each of whose interests may diverge from those of other clients. As such, the Company may be holding Open Positions that may not be aligned with the client's objectives/interests as an individual client of the Company."
 msgstr "客户确认公司将自行决定将交易记录保存在公司自己的记录本（称为B记录本）或交给充当公司流动性提供商的主要经纪人保存（称为A记录本）。对于前者，公司是交易中的另一方，客户的盈亏和公司的盈亏之间有相互关系。公司可能会随时与大量客户开始或已开始进行交易，每个客户的利益都可能与其他客户有分歧。因此，公司可能持有与客户作为公司单一客户的目标和利益不一致的未平仓头寸。"
+
+msgid "The client acknowledges, recognises, and understands that"
+msgstr ""
 
 msgid "The client acknowledges, understands, represents, and warrants that they are aware of the functional limitations of the MT5 trading platform (for example Wine, which is not a fully stable application, as disclosed by the MT5 trading platform licensor on their website)."
 msgstr "客户确认、理解、声明并保证客户了解MT5交易平台的功能限制（例如，Wine，如MT5交易平台许可方在其网站上披露的，不是完全稳定的应用程序）。"
@@ -12221,6 +12218,9 @@ msgstr "转给登录 ID"
 
 msgid "Transfer to MT5"
 msgstr "转至 MT5"
+
+msgid "Transfers between Binary fiat and cryptocurrency accounts are allowed up to a maximum of USD 2,500.00 or equivalent. Fiat and cryptocurrency transfers are also allowed between Binary and MT5 accounts. Charges may apply for every successful transaction."
+msgstr ""
 
 msgid "Translate data into consumable information and assist in making data-driven decisions across departments."
 msgstr "将数据转换为可应用的信息, 并协助各部门做出数据驱动的决策。"
