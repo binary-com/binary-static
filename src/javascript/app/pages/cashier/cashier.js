@@ -142,9 +142,6 @@ const Cashier = (() => {
                     });
                 }
                 $(isCryptocurrency(currency) ? '.crypto_currency' : '.normal_currency').setVisibility(1);
-                if (/^BCH/.test(currency)) {
-                    getElementById('message_bitcoin_cash').setVisibility(1);
-                }
             });
         }
         showContent();

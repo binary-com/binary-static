@@ -33,15 +33,6 @@ const DepositWithdraw = () => (
             </p>
         </div>
 
-        <div className='invisible'>
-            <div className='gr-padding-10 gr-parent invisible' id='message_bitcoin_cash'>
-                <div className='notice-msg center-text'>
-                    <div className='gr-padding-10'>{it.L('Please note that you are currently using your [_1]Bitcoin Cash[_2] account. You can only fund your account in [_1]Bitcoin Cash[_2], and not Bitcoin.', '<a href="https://www.bitcoincash.org" target="_blank" rel="noopener noreferrer">', '</a>')}</div>
-                </div>
-            </div>
-            <iframe id='cashier_iframe' src='' frameBorder='0' width='100%' scrolling='auto' />
-        </div>
-
         <FormVerificationCode />
 
         <form id='frm_ukgc' className='gr-row gr-parent invisible'>

@@ -130,7 +130,6 @@ const Header = (() => {
         // set local storage
         GTM.setLoginFlag('account_switch');
         Client.set('cashier_confirmed', 0);
-        Client.set('accepted_bch', 0);
         Client.set('loginid', loginid);
         SocketCache.clear();
         window.location.reload();

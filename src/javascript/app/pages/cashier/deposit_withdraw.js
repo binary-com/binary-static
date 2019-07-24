@@ -110,8 +110,8 @@ const DepositWithdraw = (() => {
         return req;
     };
 
-    const getCashierURL = (bch_has_confirmed) => {
-        if (!/^BCH/.test(Client.get('currency')) || bch_has_confirmed || Client.get('cashier_confirmed')) {
+    const getCashierURL = () => {
+        if (Client.get('cashier_confirmed')) {
             BinarySocket.send(populateReq()).then(response => handleCashierResponse(response));
         } else {
             showPopup({
@@ -250,10 +250,6 @@ const DepositWithdraw = (() => {
                     localized_footnote: localize('[_1]No, change my fiat account\'s currency now[_2]', [`<a href=${Url.urlFor('user/accounts')}>`, '</a>']),
                     onAbort           : () => BinaryPjax.load(Url.urlFor('cashier')),
                 });
-            }
-
-            if (/^BCH/.test(Client.get('currency'))) {
-                getElementById('message_bitcoin_cash').setVisibility(1);
             }
 
             $iframe = $(container).find('#cashier_iframe');
