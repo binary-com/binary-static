@@ -6,7 +6,6 @@ const Header                 = require('./header');
 const BinarySocket           = require('./socket');
 const Dialog                 = require('../common/attach_dom/dialog');
 const createLanguageDropDown = require('../common/attach_dom/language_dropdown');
-const showPopup              = require('../common/attach_dom/popup');
 const setCurrencies          = require('../common/currency').setCurrencies;
 const SessionDurationLimit   = require('../common/session_duration_limit');
 const updateBalance          = require('../pages/user/update_balance');
@@ -16,7 +15,6 @@ const Crowdin                = require('../../_common/crowdin');
 const localize               = require('../../_common/localize').localize;
 const LocalStore             = require('../../_common/storage').LocalStore;
 const State                  = require('../../_common/storage').State;
-const urlFor                 = require('../../_common/url').urlFor;
 const getPropertyValue       = require('../../_common/utility').getPropertyValue;
 const isLoginPages           = require('../../_common/utility').isLoginPages;
 
