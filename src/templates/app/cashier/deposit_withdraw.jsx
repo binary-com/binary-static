@@ -33,6 +33,10 @@ const DepositWithdraw = () => (
             </p>
         </div>
 
+        <div className='invisible'>
+            <iframe id='cashier_iframe' src='' frameBorder='0' width='100%' scrolling='auto' />
+        </div>
+
         <FormVerificationCode />
 
         <form id='frm_ukgc' className='gr-row gr-parent invisible'>
