@@ -111,31 +111,7 @@ const DepositWithdraw = (() => {
     };
 
     const getCashierURL = () => {
-        if (Client.get('cashier_confirmed')) {
-            BinarySocket.send(populateReq()).then(response => handleCashierResponse(response));
-        } else {
-            showPopup({
-                url               : Url.urlFor('cashier/confirmation'),
-                popup_id          : 'confirm_popup',
-                form_id           : '#frm_confirm',
-                content_id        : '#confirm_content',
-                validations       : [{ selector: '#chk_confirm', validations: [['req', { hide_asterisk: true }]] }],
-                additionalFunction: () => {
-                    const el_cancel = getElementById('cancel');
-                    const el_popup  = getElementById('confirm_popup');
-                    el_cancel.addEventListener('click', () => {
-                        if (el_popup) {
-                            el_popup.remove();
-                        }
-                        BinaryPjax.load(Client.defaultRedirectUrl());
-                    });
-                },
-                onAccept: () => {
-                    Client.set('cashier_confirmed', 1);
-                    getCashierURL();
-                },
-            });
-        }
+        BinarySocket.send(populateReq()).then(response => handleCashierResponse(response));
     };
 
     const hideAll = (option) => {
