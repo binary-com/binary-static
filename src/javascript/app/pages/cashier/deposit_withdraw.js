@@ -132,7 +132,7 @@ const DepositWithdraw = (() => {
                 },
                 onAccept: () => {
                     Client.set('cashier_confirmed', 1);
-                    getCashierURL(1);
+                    getCashierURL();
                 },
             });
         }
