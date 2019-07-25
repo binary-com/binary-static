@@ -11,7 +11,6 @@ const BinarySocket             = require('../../../base/socket');
 const changePocNumbersToString = require('../../../common/request_middleware').changePocNumbersToString;
 const getElementById           = require('../../../../_common/common_functions').getElementById;
 const localize                 = require('../../../../_common/localize').localize;
-const State                    = require('../../../../_common/storage').State;
 const urlFor                   = require('../../../../_common/url').urlFor;
 const Utility                  = require('../../../../_common/utility');
 
@@ -153,10 +152,6 @@ const ViewPopup = (() => {
         Clock.setExternalTimer(updateTimers);
         update();
         ViewPopupUI.repositionConfirmation();
-
-        if (State.get('is_mb_trading')) {
-            State.call('ViewPopup.onDisplayed');
-        }
     };
 
     const update = () => {

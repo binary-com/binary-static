@@ -20,7 +20,6 @@ const MobileMenu = () => (
                         { text: it.L('WebTrader'),    href: 'https://webtrader.binary.com', target: '_blank' },
                         { text: it.L('Binary Bot'),   href: 'https://bot.binary.com',       target: '_blank' },
                         { text: it.L('MetaTrader 5'), href: it.url_for('user/metatrader'), className: 'invisible mt_visibility' },
-                        { text: it.L('Ladders'),      href: it.url_for('multi_barriers_trading'), className: 'financial-only' },
                     ]}
                 />
                 <Li text={it.L('Portfolio')}    href={it.url_for('user/portfoliows')}    className='ico-only-hide client_logged_in invisible' />

@@ -233,15 +233,6 @@ const Platform = () => (
                                 button_text={it.L('Download Tick Trade App')}
                                 download='true'
                             />
-                            <Platforms
-                                image='trading-multibarrier'
-                                header={it.L('Ladders')}
-                                className='financial-only'
-                                description={it.L('Multi-barrier trading')}
-                                text={it.L('Trade FX binary options on our multi-barrier platform, Ladders.')}
-                                url={it.url_for('multi_barriers_trading')}
-                                button_text={it.L('Trade now')}
-                            />
                             <PlatformsDesktop
                                 image='devices'
                                 header={it.L('[_1] desktop app', it.website_name)}

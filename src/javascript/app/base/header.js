@@ -351,7 +351,7 @@ const Header = (() => {
                 const notified = check_statuses.some((check_type) => {
                     if (validations[check_type]()) {
                         // show MF retail message on Trading pages only
-                        if (check_type === 'mf_retail' && !(State.get('is_trading') || State.get('is_mb_trading'))) {
+                        if (check_type === 'mf_retail' && !State.get('is_trading')) {
                             return false;
                         }
                         displayNotification(messages[check_type](), false, check_type === 'mf_retail' ? 'MF_RETAIL_MESSAGE' : '');

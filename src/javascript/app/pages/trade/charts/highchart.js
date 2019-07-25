@@ -1,8 +1,6 @@
 const HighchartUI          = require('./highchart.ui');
 const getHighstock         = require('../common').requireHighstock;
 const getUnderlyingPipSize = require('../symbols').getUnderlyingPipSize;
-const MBContract           = require('../../mb_trade/mb_contract');
-const MBDefaults           = require('../../mb_trade/mb_defaults');
 const Callputspread        = require('../../trade/callputspread');
 const Defaults             = require('../../trade/defaults');
 const GetTicks             = require('../../trade/get_ticks');
@@ -219,8 +217,8 @@ const Highchart = (() => {
             is_tick_type  = !isEmptyObject(history) || !isEmptyObject(tick);
             // send view popup the response ID so view popup can forget the calls if it's closed before contract ends
             if (response_id && !is_response_id_set) {
-                if (State.get('is_trading') || State.get('is_mb_trading')) {
-                    const page_underlying = State.get('is_mb_trading') ? MBDefaults.get('underlying') : Defaults.get('underlying');
+                if (State.get('is_trading')) {
+                    const page_underlying = Defaults.get('underlying');
                     if (page_underlying !== (tick || ohlc).symbol) {
                         ViewPopupUI.storeSubscriptionID(response_id, true);
                         ViewPopupUI.setOnCloseFunction(onClose);
@@ -348,7 +346,7 @@ const Highchart = (() => {
             request.subscribe = 1;
         }
 
-        const contracts_response = State.get('is_mb_trading') ? MBContract.getContractsResponse() : State.get(['response', 'contracts_for']);
+        const contracts_response = State.get(['response', 'contracts_for']);
         const stored_delay       = sessionStorage.getItem(`license.${contract.underlying}`);
 
         if (contracts_response && contracts_response.echo_req.contracts_for === contract.underlying) {
