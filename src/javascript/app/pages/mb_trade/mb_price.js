@@ -180,7 +180,7 @@ const MBPrice = (() => {
 
     const getAskPrice = proposal => (
         // In case of RateLimit error, there is no display_value, so we display the request amount
-        (proposal.error || +proposal.ask_price === 0) ? proposal.echo_req.amount : proposal.ask_price
+        (proposal.error || proposal.ask_price === 0) ? proposal.echo_req.amount : proposal.ask_price
     );
 
     const getMovementDirection = (prev, current) => {

@@ -271,9 +271,8 @@ const Purchase = (() => {
                 contract_id           : receipt.contract_id,
                 subscribe             : 1,
             };
-            BinarySocket.send(request, { callback: async (response) => {
-                const mw_response = response.proposal_open_contract ?
-                    await changePocNumbersToString(response) : undefined;
+            BinarySocket.send(request, { callback: (response) => {
+                const mw_response = response.proposal_open_contract ? changePocNumbersToString(response) : undefined;
                 const contract = mw_response ? mw_response.proposal_open_contract : undefined;
                 if (contract) {
                     status = contract.status;
@@ -283,7 +282,7 @@ const Purchase = (() => {
                     }
                     if (/^digit/i.test(contract.contract_type)) {
                         if (contract.status !== 'open' || contract.is_sold || contract.is_settleable) {
-                            digitShowExitTime(contract.status, contract.exit_tick);
+                            digitShowExitTime(contract.status, contract.exit_tick_display_value);
                         }
                     }
                     if (!/^digit/i.test(contract.contract_type) && contract.exit_tick_time && +contract.exit_tick_time < contract.date_expiry) {
@@ -438,7 +437,7 @@ const Purchase = (() => {
         if (el_epoch && el_epoch.classList) {
             el_epoch.classList.add('is-visible');
             el_epoch.setAttribute('style', `position: absolute; right: ${((el_epoch.parentElement.offsetWidth - el_epoch.nextSibling.offsetWidth) / 2) + adjustment}px`);
-            const last_digit_quote = last_tick_quote ? last_tick_quote.toString().slice(-1) : '';
+            const last_digit_quote = last_tick_quote ? last_tick_quote.slice(-1) : '';
             if (contract_status === 'won') {
                 DigitTicker.markAsWon();
                 DigitTicker.markDigitAsWon(last_digit_quote);
