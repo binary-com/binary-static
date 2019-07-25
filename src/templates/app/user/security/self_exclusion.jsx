@@ -47,7 +47,7 @@ const SelfExclusion = () => (
 
                 <FormRow type='custom' row_class='max_30day_turnover' label={it.L('30-day turnover limit')} hint={it.L('Maximum aggregate contract purchases over a 30-day period.')}>
                     <input id='max_30day_turnover' className='prepend_currency' type='text' maxLength={20} />
-                    <div data-show='iom' className=' gr-12-m gr-centered-m inline-flex'>
+                    <div data-show='iom, malta' className=' gr-12-m gr-centered-m inline-flex'>
                         <input id='chk_no_limit' type='checkbox' />
                         <label htmlFor='chk_no_limit'>{it.L('No limit')}</label>
                     </div>
