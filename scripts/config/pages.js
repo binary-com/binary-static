@@ -3,7 +3,6 @@ module.exports = [
     // ==================== Section: "app" ====================
     ['cashier',                                 'app/cashier/index',                           'default',    'Cashier'],
     ['cashier/account_transfer',                'app/cashier/account_transfer',                'default',    'Transfer Between Accounts'],
-    ['cashier/confirmation',                    'app/cashier/confirmation',                    'default',    'Confirm'],
     ['cashier/epg_forwardws',                   'app/cashier/deposit_withdraw',                'default',    'Cashier'],
     ['cashier/forwardws',                       'app/cashier/deposit_withdraw',                'default',    'Cashier'],
     ['cashier/payment_agent_listws',            'app/cashier/payment_agent_list',              'default',    'Payment Agent Deposit'],
@@ -57,7 +56,6 @@ module.exports = [
     ['user/top_up_virtual_pop_up',              'app/user/top_up_virtual/pop_up',              'default',    'Top Up Virtual Account'],
     ['user/tnc_approvalws',                     'app/user/tnc_approval',                       'default',    'Terms and Conditions Approval'],
     ['user/video-facility',                     'app/user/video_facility',                     'default',    'Video Room Facility'],
-    ['user/warning',                            'app/user/warning',                            'default',    'Warning'],
 
     ['endpoint',                                'app/endpoint',                                'default',    'Endpoint'],
     ['new-account',                             'app/new_account',                             'default',    'Signup'],
