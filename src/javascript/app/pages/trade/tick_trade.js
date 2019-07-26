@@ -3,6 +3,7 @@ const HighchartUI          = require('./charts/highchart.ui');
 const requireHighstock     = require('./common').requireHighstock;
 const countDecimalPlaces   = require('./common_independent').countDecimalPlaces;
 const Reset                = require('./reset');
+const getUnderlyingPipSize = require('./symbols').getUnderlyingPipSize;
 const Tick                 = require('./tick');
 const updatePurchaseStatus = require('./update_values').updatePurchaseStatus;
 const ViewPopupUI          = require('../user/view_popup/view_popup.ui');
@@ -303,7 +304,7 @@ const TickDisplay = (() => {
         applicable_ticks      = [];
     };
 
-    const dispatch = (data) => {
+    const dispatch = async (data) => {
         const tick_chart = CommonFunctions.getElementById(id_render);
 
         if (!CommonFunctions.isVisible(tick_chart) || !data || (!data.tick && !data.history)) {
@@ -322,7 +323,9 @@ const TickDisplay = (() => {
         if (document.getElementById('sell_content_wrapper')) {
             if (!chart_display_decimals) {
                 // We're getting the pip size based on standard `display_value` provided by API
-                chart_display_decimals = countDecimalPlaces(contract.display_value);
+                chart_display_decimals = countDecimalPlaces(contract.display_value) ||
+                data.history ? await getUnderlyingPipSize(data.echo_req.ticks_history)
+                    : data.tick ? await getUnderlyingPipSize(data.echo_req.ticks) : Tick.pipSize();
             }
             if (data.tick) {
                 Tick.details(data);
