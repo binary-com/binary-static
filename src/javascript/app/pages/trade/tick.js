@@ -113,7 +113,7 @@ const Tick = (() => {
                 const barrier_value = isNaN(parseFloat(barrier_element.value)) ? 0 : parseFloat(barrier_element.value);
 
                 indicative_barrier_tooltip.textContent =
-                    (parseFloat(current_tick) + barrier_value).toFixed(decimal_places);
+                    addComma((parseFloat(current_tick) + barrier_value), decimal_places);
                 tooltip.style.display = 'inherit';
                 span.style.display    = 'none';
             } else {
