@@ -1,5 +1,4 @@
 const moment             = require('moment');
-const countDecimalPlaces = require('./common_independent').countDecimalPlaces;
 const Contract           = require('./contract');
 const Defaults           = require('./defaults');
 const Tick               = require('./tick');
@@ -33,7 +32,7 @@ const Barriers = (() => {
             const barrier = barriers[form_name][is_daily ? 'daily' : 'intraday'];
             if (barrier) {
                 const current_tick   = Tick.quote();
-                const decimal_places = countDecimalPlaces(current_tick);
+                const decimal_places = Tick.pipSize();
 
                 const indicative_barrier_tooltip      = getElementById('indicative_barrier_tooltip');
                 const indicative_high_barrier_tooltip = getElementById('indicative_high_barrier_tooltip');

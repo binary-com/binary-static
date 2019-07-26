@@ -108,7 +108,7 @@ const Tick = (() => {
         const end_time = getElementById('expiry_date');
         if (unit && (!isVisible(unit) || unit.value !== 'd') && current_tick && !isNaN(current_tick) &&
             (end_time && (!isVisible(end_time) || moment(end_time.getAttribute('data-value')).isBefore(moment().add(1, 'day'), 'day')))) {
-            const decimal_places = countDecimalPlaces(current_tick);
+            const decimal_places = Tick.pipSize();
             if (isVisible(indicative_barrier_tooltip) && String(barrier_element.value).match(/^[+-]/)) {
                 const barrier_value = isNaN(parseFloat(barrier_element.value)) ? 0 : parseFloat(barrier_element.value);
 
