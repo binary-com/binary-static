@@ -7,11 +7,12 @@ const getActiveTab = (item) => {
     let selected_tab       = sessionStorage.getItem(tab) || default_tab;
     let selected_element   = document.getElementById(selected_tab);
     if (!selected_element) {
-        selected_tab     = 'tab_explanation';
+        selected_tab     = default_tab;
         selected_element = document.getElementById(selected_tab);
     }
 
-    if (selected_element && selected_element.classList.contains('invisible') && item) {
+    if (selected_element && selected_element.classList.contains('invisible')
+        || (selected_element && selected_element.classList.contains('invisible') && item)) {
         selected_tab = default_tab;
         sessionStorage.setItem(tab, selected_tab);
     }
