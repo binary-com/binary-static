@@ -3,12 +3,10 @@ const BinaryPjax             = require('../../base/binary_pjax');
 const Client                 = require('../../base/client');
 const BinarySocket           = require('../../base/socket');
 const Dialog                 = require('../../common/attach_dom/dialog');
-const showPopup              = require('../../common/attach_dom/popup');
 const Currency               = require('../../common/currency');
 const FormManager            = require('../../common/form_manager');
 const validEmailToken        = require('../../common/form_validation').validEmailToken;
 const handleVerifyCode       = require('../../common/verification_code').handleVerifyCode;
-const getElementById         = require('../../../_common/common_functions').getElementById;
 const localize               = require('../../../_common/localize').localize;
 const State                  = require('../../../_common/storage').State;
 const Url                    = require('../../../_common/url');
@@ -110,32 +108,8 @@ const DepositWithdraw = (() => {
         return req;
     };
 
-    const getCashierURL = (bch_has_confirmed) => {
-        if (!/^BCH/.test(Client.get('currency')) || bch_has_confirmed || Client.get('cashier_confirmed')) {
-            BinarySocket.send(populateReq()).then(response => handleCashierResponse(response));
-        } else {
-            showPopup({
-                url               : Url.urlFor('cashier/confirmation'),
-                popup_id          : 'confirm_popup',
-                form_id           : '#frm_confirm',
-                content_id        : '#confirm_content',
-                validations       : [{ selector: '#chk_confirm', validations: [['req', { hide_asterisk: true }]] }],
-                additionalFunction: () => {
-                    const el_cancel = getElementById('cancel');
-                    const el_popup  = getElementById('confirm_popup');
-                    el_cancel.addEventListener('click', () => {
-                        if (el_popup) {
-                            el_popup.remove();
-                        }
-                        BinaryPjax.load(Client.defaultRedirectUrl());
-                    });
-                },
-                onAccept: () => {
-                    Client.set('cashier_confirmed', 1);
-                    getCashierURL(1);
-                },
-            });
-        }
+    const getCashierURL = () => {
+        BinarySocket.send(populateReq()).then(response => handleCashierResponse(response));
     };
 
     const hideAll = (option) => {
@@ -250,10 +224,6 @@ const DepositWithdraw = (() => {
                     localized_footnote: localize('[_1]No, change my fiat account\'s currency now[_2]', [`<a href=${Url.urlFor('user/accounts')}>`, '</a>']),
                     onAbort           : () => BinaryPjax.load(Url.urlFor('cashier')),
                 });
-            }
-
-            if (/^BCH/.test(Client.get('currency'))) {
-                getElementById('message_bitcoin_cash').setVisibility(1);
             }
 
             $iframe = $(container).find('#cashier_iframe');
