@@ -230,18 +230,8 @@ const Purchase = (() => {
         if (show_chart && has_chart) {
             // calculate number of decimals needed to display tick-chart according to the spot
             // value of the underlying
-            let decimal_points     = 2;
-            const tick_spots       = Tick.spots();
-            const tick_spot_epochs = Object.keys(tick_spots);
-            if (tick_spot_epochs.length > 0) {
-                const last_quote = tick_spots[tick_spot_epochs[0]].toString();
-
-                if (last_quote.indexOf('.') !== -1) {
-                    decimal_points = last_quote.split('.')[1].length;
-                }
-            }
-
-            let category = sessionStorage.getItem('formname');
+            const decimal_points = Tick.pipSize();
+            let category         = sessionStorage.getItem('formname');
             if (/^(risefall|higherlower)$/.test(category)) {
                 category = 'callput';
             }
