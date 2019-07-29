@@ -21,7 +21,7 @@ const TopUpVirtualPopup = (() => {
 
     const shouldShowPopup = (balance, should_ignore_hide) => {
         // this is only applicable to virtual clients who are on smart trader page or ladders page
-        if (!(Client.get('is_virtual') && (State.get('is_trading') || State.get('is_mb_trading')))) {
+        if (!(Client.get('is_virtual') && State.get('is_trading'))) {
             return false;
         }
         // this is only applicable to clients who have less than 1k balance and have not set popup to remain hidden

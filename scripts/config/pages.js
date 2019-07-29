@@ -13,7 +13,6 @@ module.exports = [
     ['paymentagent/transferws',                 'app/cashier/paymentagent_transfer',           'default',    'Payment Agent Transfer'],
     ['paymentagent/withdrawws',                 'app/cashier/paymentagent_withdraw',           'default',    'Payment Agent Withdrawal'],
 
-    ['multi_barriers_trading',                  'app/trade/mb_trading',                        'full_width', 'Ladders'],
     ['trading',                                 'app/trade/trading',                           'default',    'SmartTrader'],
 
     ['new_account/maltainvestws',               'app/new_account/financial',                   'default',    'Financial Account Opening'],
