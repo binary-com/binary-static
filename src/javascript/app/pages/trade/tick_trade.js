@@ -323,9 +323,20 @@ const TickDisplay = (() => {
         if (document.getElementById('sell_content_wrapper')) {
             if (!chart_display_decimals) {
                 // We're getting the pip size based on standard `display_value` provided by API
-                chart_display_decimals = countDecimalPlaces(contract.display_value) ||
-                data.history ? await getUnderlyingPipSize(data.echo_req.ticks_history)
-                    : data.tick ? await getUnderlyingPipSize(data.echo_req.ticks) : Tick.pipSize();
+                const {
+                    entry_spot_display_value,
+                    entry_tick_display_value,
+                    exit_tick_display_value,
+                    sell_spot_display_value,
+                } = contract;
+                const available_display_value = entry_spot_display_value
+                    || entry_tick_display_value
+                    || exit_tick_display_value
+                    || sell_spot_display_value;
+                const available_underlying = data.echo_req.ticks_history || data.echo_req.ticks || data.tick.symbol;
+                chart_display_decimals = countDecimalPlaces(available_display_value)
+                    || await getUnderlyingPipSize(available_underlying)
+                    || Tick.pipSize();
             }
             if (data.tick) {
                 Tick.details(data);
