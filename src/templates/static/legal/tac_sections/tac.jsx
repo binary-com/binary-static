@@ -103,6 +103,7 @@ const Tac = () => (
         </p>
 
         <h2 data-anchor='companys-rights'>J. {it.L('Company\'s rights')}</h2>
+        <p>{it.L('We do not tolerate any form of inappropriate behaviour. This includes the usage of offensive language. We reserve the right to restrict or terminate your account if there is any form of inappropriate behaviour on your part.')}</p>
         <p>{it.L('The Company reserves the right to suspend the operation of this site or sections thereof in the following cases:')}
             <ul className='bullet'>
                 <li>{it.L('When, as a result of political, economic, military, or monetary events (including unusual market volatility or illiquidity) or any circumstances outside the control, responsibility, and power of the Company, the continued operation of this site is not reasonably practicable without materially and adversely affecting and prejudicing the interests of clients or the Company, or if, in the opinion of the Company, a price cannot be calculated for financial contracts')}</li>
