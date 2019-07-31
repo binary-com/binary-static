@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-07-26 05:24\n"
+"PO-Revision-Date: 2019-07-31 03:50\n"
 "Last-Translator: binarycom\n"
 "Language-Team: Italian\n"
 "MIME-Version: 1.0\n"
@@ -158,30 +158,6 @@ msgstr "$50.001 – $100.000"
 
 msgid "$500,001 - $1,000,000"
 msgstr "$500.001 - $1.000.000"
-
-msgid "%1 %2 payout if %3 does not touch Barrier through close on %4."
-msgstr "Il payout di %1 %2 se %3 non tocca la Barriera vicino a %4."
-
-msgid "%1 %2 payout if %3 ends on or between low and high values of Barrier at close on %4."
-msgstr "Il payout di %1 %2 se %3 termina su o tra i valori inferiori e superiori del prezzo d'esercizio vicino a %4."
-
-msgid "%1 %2 payout if %3 ends outside low and high values of Barrier at close on %4."
-msgstr "Il payout di %1 %2 se %3 termina al di fuori dei valori inferiori e superiori del prezzo d'esercizio vicino a %4."
-
-msgid "%1 %2 payout if %3 goes outside of low and high values of Barrier through close on %4."
-msgstr "Il payout di %1 %2 se %3 termina al di fuori dei valori inferiori e superiori della Barriera vicino a %4."
-
-msgid "%1 %2 payout if %3 is strictly higher than or equal to Barrier at close on %4."
-msgstr "Il payout di %1 %2 se %3 è molto più alto o uguale alla Barriera vicino a %4."
-
-msgid "%1 %2 payout if %3 is strictly lower than Barrier at close on %4."
-msgstr "Il payout di %1 %2 se %3 è molto più basso alla Barriera vicino a %4."
-
-msgid "%1 %2 payout if %3 stays between low and high values of Barrier through close on %4."
-msgstr "Il payout di %1 %2 se %3 termina tra i valori inferiori e superiori della Barriera vicino a %4."
-
-msgid "%1 %2 payout if %3 touches Barrier through close on %4."
-msgstr "Il payout di %1 %2 se %3 tocca la Barriera vicino a %4."
 
 msgid "%1 (Toll Free)"
 msgstr "%1 (Numero verde)"
@@ -1215,9 +1191,6 @@ msgstr "Tutte le opzioni di partnership"
 msgid "All affiliate activities must be conducted in a professional and proper manner. The Affiliate shall be expected to act with good faith and integrity in relationship with the Affiliate's referrals and always act in the best interests of the Affiliate's referrals."
 msgstr "Tutte le attività d'affiliazione devono essere condotte in modo adeguato e professionale. L'Associato è tenuto ad agire in buona fede e con integrità nella relazione con i clienti da lui invitati all'affiliazione e dovrà sempre agire nel loro miglior interesse."
 
-msgid "All barriers in this trading window are expired"
-msgstr "Tutte le barriere in questa finestra di trading sono scadute"
-
 msgid "All calls are recorded for training and monitoring purposes"
 msgstr "Tutte le chiamate vengono registrate a fini formativi e di monitoraggio"
 
@@ -1295,9 +1268,6 @@ msgstr "Tutte le versioni per iOS"
 
 msgid "All your deposits and withdrawals are processed by %1 within 24 hours. However, there may be additional processing time required by your bank or money transfer service."
 msgstr "Tutti i tuoi depositi e prelievi sono elaborati da %1 entro 24 ore. Tuttavia, la tua banca o il servizio utilizzato per il trasferimento del denaro potrebbero richiedere un maggior tempo di elaborazione."
-
-msgid "All-new %1Binary Grid%2"
-msgstr "Nuovissima %1Binary Grid%2"
 
 msgid "Allow Clients to deposit with lower amounts (via local currency)"
 msgstr "Consentono ai Clienti di effettuare depositi con importi inferiori (tramite valuta locale)"
@@ -3447,12 +3417,6 @@ msgstr "Data di nascita"
 msgid "Dated within the last six months"
 msgstr "Con data compresa negli ultimi sei mesi"
 
-msgid "Day"
-msgstr "Giorno"
-
-msgid "Days"
-msgstr "Giorni"
-
 msgid "Debt-free"
 msgstr "Senza debiti"
 
@@ -5223,9 +5187,6 @@ msgstr "Dollaro di Hong Kong vs Yes giapponese"
 msgid "Hour"
 msgstr "Ora"
 
-msgid "Hours"
-msgstr "Ore"
-
 msgid "How and when will I receive my affiliate earnings?"
 msgstr "Quando e come riceverò i miei guadagni da associato?"
 
@@ -6314,9 +6275,6 @@ msgstr "Labuan è un territorio federale costituito da un'isola principale, l'Is
 msgid "Labuan, Malaysia"
 msgstr "Labuan, Malesia"
 
-msgid "Ladders"
-msgstr "Opzioni Ladder"
-
 msgid "Languages"
 msgstr "Lingue"
 
@@ -6896,9 +6854,6 @@ msgstr "Esecuzione a mercato"
 msgid "Market exit price"
 msgstr "Prezzo d'uscita del mercato"
 
-msgid "Market is closed. Please try again later."
-msgstr "Il mercato è chiuso. Si prega di riprovare più tardi."
-
 msgid "Market opinions"
 msgstr "Opinioni sul mercato"
 
@@ -7103,9 +7058,6 @@ msgstr "Coppie secondarie: sono costituite da coppie di valute meno liquide"
 msgid "Minute"
 msgstr "Minuto"
 
-msgid "Minutes"
-msgstr "Minuti"
-
 msgid "Misrepresent Binary or the services that are offered by Binary"
 msgstr "travisare l'immagine di Binary o i servizi da essa offerti"
 
@@ -7166,12 +7118,6 @@ msgstr "Controlla i tuoi contratti in tempo reale."
 msgid "Monitoring and review of this policy"
 msgstr "Monitoraggio e revisione della presente politica"
 
-msgid "Month"
-msgstr "Mese"
-
-msgid "Months"
-msgstr "Mesi"
-
 msgid "More benefits"
 msgstr "Maggiori vantaggi"
 
@@ -7213,9 +7159,6 @@ msgstr "Esecuzione multi-asset"
 
 msgid "Multi-asset liquidity solutions"
 msgstr "Soluzioni di liquidità multi-asset"
-
-msgid "Multi-barrier trading"
-msgstr "Trading con barriere multiple"
 
 msgid "Multilingual platforms"
 msgstr "Piattaforme multilingue"
@@ -8252,9 +8195,6 @@ msgstr "Inserisci il tuo indirizzo di residenza completo per evitare ritardi nel
 msgid "Please fill in the Login ID and Amount you wish to transfer to your Client in the form below:"
 msgstr "Inserisci l'ID di accesso e l'Importo che desideri trasferire al tuo Cliente nel modulo sottostante:"
 
-msgid "Please log in."
-msgstr "Effettua il login."
-
 msgid "Please make sure that you first agree with the Agent on the terms of payment before submitting your request."
 msgstr "Prima di inviare la tua richiesta, assicurati di essere d'accordo con l'Agente sui termini di pagamento."
 
@@ -9215,17 +9155,11 @@ msgstr "Esaminare il comportamento dei clienti sulla nostra piattaforma di tradi
 msgid "Search..."
 msgstr "Cerca..."
 
-msgid "Second"
-msgstr "Secondo"
-
 msgid "Second line"
 msgstr "Seconda riga"
 
 msgid "Secondary"
 msgstr "Secondario"
-
-msgid "Seconds"
-msgstr "Secondi"
 
 msgid "Secret question"
 msgstr "Domanda segreta"
@@ -9538,9 +9472,6 @@ msgstr "Siamo spiacenti, questa funzione non è disponibile nella tua giurisdizi
 
 msgid "Sorry, you have entered an incorrect cashier password"
 msgstr "Siamo spiacenti, hai inserito una password della cassa non corretta"
-
-msgid "Sorry, your account is not authorised for any further contract purchases."
-msgstr "Siamo spiacenti, il tuo account non è autorizzato all'acquisto di ulteriori contratti."
 
 msgid "Source of income"
 msgstr "Fonte di reddito"
@@ -10826,9 +10757,6 @@ msgstr "La capacità di redigere e revisionare documenti legali e preparare le d
 msgid "The ability to make rational decisions even based on limited information"
 msgstr "La capacità di prendere decisioni razionali pur disponendo di informazioni limitate"
 
-msgid "The all-new rapid trading experience"
-msgstr "Nuova esperienza di trading"
-
 msgid "The anti-money laundering processes have the following effects on clients:"
 msgstr "Le conseguenze delle procedure di anti-riciclaggio per i clienti sono le seguenti:"
 
@@ -11735,9 +11663,6 @@ msgstr "Questa informativa sui rischi non è esaustiva e non è destinata a cost
 msgid "This section on force majeure events does not apply to Volatility Indices."
 msgstr "La presente sezione relativa agli eventi di forza maggiore non si applica agli indici di volatilità."
 
-msgid "This symbol is not active. Please try another symbol."
-msgstr "Questo simbolo non è attivo. Prova un altro simbolo."
-
 msgid "This website's services are not made available in certain countries such as the USA, Canada, Hong Kong, Japan, or to persons under age 18."
 msgstr "I servizi di questo sito web non sono disponibili in alcuni paesi quali USA, Canada, Hong Kong e Giappone, così come agli individui di età inferiore ai 18 anni."
 
@@ -11978,9 +11903,6 @@ msgstr "Puoi fare trading 24 ore su 24, anche durante il fine settimana."
 msgid "Trade Bitcoin, Ethereum, and Litecoin pairs without owning them. Our cryptocurrency pairs quote a cryptocurrency such as Bitcoin against a fiat currency, such as the US dollar."
 msgstr "Fai trading su coppie di Bitcoin, Ethereum e Litecoin senza possederle. Le nostre coppie di criptovalute quotano una criptovaluta, come il Bitcoin, in relazione a una moneta legale, come ad esempio il Dollaro statunitense."
 
-msgid "Trade FX binary options on our multi-barrier platform, Ladders."
-msgstr "Fai trading con le opzioni binarie FX sulla nostra piattaforma multi-barriera, Ladders."
-
 msgid "Trade Forex and CFDs on our popular multi-asset platform."
 msgstr "Puoi fare trading sul Forex e CFD grazie alla nostra famosa piattaforma multi-asset."
 
@@ -12094,9 +12016,6 @@ msgstr "Piattaforme di trading"
 
 msgid "Trading Times"
 msgstr "Orari di trading"
-
-msgid "Trading Window"
-msgstr "Finestra di trading"
 
 msgid "Trading and Withdrawal Limits"
 msgstr "Limiti di trading e dei prelievi"
@@ -12244,9 +12163,6 @@ msgstr "Prova TradingView"
 
 msgid "Try WebTrader"
 msgstr "Prova Webtrader"
-
-msgid "Try now"
-msgstr "Provalo subito"
 
 msgid "Try our %1Volatility Indices%2."
 msgstr "Prova i nostri %1indici di volatilità%2."
@@ -13812,9 +13728,6 @@ msgstr "per il conto %1"
 msgid "gaming"
 msgstr "gioco online"
 
-msgid "h"
-msgstr "h"
-
 msgid "hour"
 msgstr "ora"
 
@@ -13853,12 +13766,6 @@ msgstr "minuto"
 
 msgid "minutes"
 msgstr "minuti"
-
-msgid "month"
-msgstr "mese"
-
-msgid "months"
-msgstr "mesi"
 
 msgid "nearest price reasonably available and quoted by %1 when the Company Price quotation reaches or goes beyond the level of the client's Stop Order"
 msgstr "Prezzo più vicino ragionevolmente disponibile e quotato da %1 quando la quotazione del prezzo della Società raggiunge o supera il livello di ordine stop del cliente"
@@ -13952,15 +13859,6 @@ msgstr "oggi, venerdì"
 
 msgid "virtual money credit to account"
 msgstr "credito denaro virtuale sul conto"
-
-msgid "week"
-msgstr "settimana"
-
-msgid "weeks"
-msgstr "settimane"
-
-msgid "year"
-msgstr "anno"
 
 msgid "years"
 msgstr "anni"

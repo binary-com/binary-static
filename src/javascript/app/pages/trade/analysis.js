@@ -2,11 +2,8 @@ const showChart      = require('./charts/webtrader_chart').showChart;
 const Defaults       = require('./defaults');
 const getActiveTab   = require('./get_active_tab').getActiveTab;
 const GetTicks       = require('./get_ticks');
-const MBDefaults     = require('../mb_trade/mb_defaults');
-const MBPortfolio    = require('../mb_trade/mb_portfolio');
 const getElementById = require('../../../_common/common_functions').getElementById;
 const getLanguage    = require('../../../_common/language').get;
-const State          = require('../../../_common/storage').State;
 const TabSelector    = require('../../../_common/tab_selector');
 const Url            = require('../../../_common/url');
 
@@ -30,7 +27,7 @@ const TradingAnalysis = (() => {
     let form_name, current_tab;
 
     const requestTradeAnalysis = () => {
-        form_name = (State.get('is_mb_trading') ? MBDefaults.get('category') : Defaults.get('formname')) || 'risefall';
+        form_name = Defaults.get('formname') || 'risefall';
 
         const map_obj = { matchdiff: 'digits', callputequal: 'risefall', callput: 'higherlower' };
         form_name     = map_obj[form_name] || form_name;
@@ -67,46 +64,37 @@ const TradingAnalysis = (() => {
         $('#trade_analysis').find('li').removeClass('active');
         $(`#${current_tab}`).addClass('active');
         toggleActiveAnalysisTabs();
-        MBPortfolio.init();
-        if (State.get('is_mb_trading')) {
+        if (current_tab === 'tab_graph') {
             showChart();
-        }
-        if (current_tab === 'tab_portfolio') {
-            MBPortfolio.show();
-        } else {
-            MBPortfolio.hide();
-            if (current_tab === 'tab_graph') {
-                showChart();
-            } else if (current_tab === 'tab_last_digit') {
-                const $digit_underlying = $('#digit_underlying');
-                const $underlying       = $('#underlying');
-                const underlying        = $underlying.val();
-                const underlying_text   = $underlying.attr('data-text');
-                const tick              = $('#tick_count').val() || 100;
+        } else if (current_tab === 'tab_last_digit') {
+            const $digit_underlying = $('#digit_underlying');
+            const $underlying       = $('#underlying');
+            const underlying        = $underlying.val();
+            const underlying_text   = $underlying.attr('data-text');
+            const tick              = $('#tick_count').val() || 100;
 
-                if (underlying !== $digit_underlying.val() && $digit_underlying.val() !== null) {
-                    $digit_underlying.find(`option[value="${underlying}"]`).prop('selected', true).trigger('change');
-                    const $digit_underlying_dropdown = $digit_underlying.next('div.select-dropdown');
+            if (underlying !== $digit_underlying.val() && $digit_underlying.val() !== null) {
+                $digit_underlying.find(`option[value="${underlying}"]`).prop('selected', true).trigger('change');
+                const $digit_underlying_dropdown = $digit_underlying.next('div.select-dropdown');
 
-                    // check if custom dropdown exists and sync with underlying dropdown
-                    if ($digit_underlying_dropdown) {
-                        const $digit_underlying_list = $digit_underlying_dropdown.next('ul.select-options').children('li');
-                        $digit_underlying_dropdown.text(underlying_text);
-                        $digit_underlying_list.not(this).each((idx, el) => {
-                            el.classList.remove('selected');
-                        });
-                        $digit_underlying_list.filter(`[value='${underlying}']`).addClass('selected');
-                    }
-                } else {
-                    GetTicks.request('', {
-                        ticks_history: underlying,
-                        count        : tick.toString(),
-                        end          : 'latest',
+                // check if custom dropdown exists and sync with underlying dropdown
+                if ($digit_underlying_dropdown) {
+                    const $digit_underlying_list = $digit_underlying_dropdown.next('ul.select-options').children('li');
+                    $digit_underlying_dropdown.text(underlying_text);
+                    $digit_underlying_list.not(this).each((idx, el) => {
+                        el.classList.remove('selected');
                     });
+                    $digit_underlying_list.filter(`[value='${underlying}']`).addClass('selected');
                 }
-            } else if (current_tab === 'tab_explanation') {
-                showExplanation();
+            } else {
+                GetTicks.request('', {
+                    ticks_history: underlying,
+                    count        : tick.toString(),
+                    end          : 'latest',
+                });
             }
+        } else if (current_tab === 'tab_explanation') {
+            showExplanation();
         }
         if (current_tab) {
             const el_to_show           = getElementById(current_tab);

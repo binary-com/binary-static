@@ -253,7 +253,7 @@ const Price = (() => {
                 const multiplier_value = formatMoney(Client.get('currency'), proposal.multiplier, false, 3, 2);
                 CommonFunctions.elementInnerHtml(comment, `${localize('Payout')}: ${getLookBackFormula(type, multiplier_value)}`);
             } else {
-                commonTrading.displayCommentPrice(comment, (currency.value || currency.getAttribute('value')), proposal.ask_price, proposal.payout);
+                commonTrading.displayCommentPrice(comment, (currency.value || currency.getAttribute('value')), proposal.display_value, proposal.payout);
             }
             const old_price  = purchase.getAttribute('data-display_value');
             const old_payout = purchase.getAttribute('data-payout');
