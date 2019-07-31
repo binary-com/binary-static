@@ -17,9 +17,9 @@ const MetaTrader = (() => {
 
     const onLoad = () => {
         BinarySocket.send({ statement: 1, limit: 1 });
-        BinarySocket.wait('landing_company', 'get_account_status', 'statement').then(() => {
-            setMTCompanies();
-            if (isEligible()) {
+        BinarySocket.wait('landing_company', 'get_account_status', 'statement').then(async () => {
+            const is_eligible = await isEligible();
+            if (is_eligible) {
                 if (Client.get('is_virtual')) {
                     getAllAccountsInfo();
                 } else {
@@ -49,20 +49,29 @@ const MetaTrader = (() => {
         mt_companies = mt_companies || MetaTraderConfig[is_financial ? 'configMtFinCompanies' : 'configMtCompanies']();
     };
 
-    const isEligible = () => {
-        setMTCompanies();
-        let has_mt_company = false;
-        Object.keys(mt_companies).forEach((company) => {
-            Object.keys(mt_companies[company]).forEach((acc_type) => {
-                mt_company[company] = State.getResponse(`landing_company.mt_${company}_company.${MetaTraderConfig.getMTFinancialAccountType(acc_type)}.shortcode`);
-                if (mt_company[company]) {
-                    has_mt_company = true;
-                    addAccount(company);
+    const isEligible = () => (
+        new Promise((resolve) => {
+            // eslint-disable-next-line consistent-return
+            BinarySocket.wait('mt5_login_list').then((response_login_list) => {
+                // don't allow account opening for IOM accounts but let them see the dashboard if they have existing MT5 accounts
+                if (Client.get('landing_company_shortcode') === 'iom' && !response_login_list.mt5_login_list.length) {
+                    resolve(false);
                 }
+                setMTCompanies();
+                let has_mt_company = false;
+                Object.keys(mt_companies).forEach((company) => {
+                    Object.keys(mt_companies[company]).forEach((acc_type) => {
+                        mt_company[company] = State.getResponse(`landing_company.mt_${company}_company.${MetaTraderConfig.getMTFinancialAccountType(acc_type)}.shortcode`);
+                        if (mt_company[company]) {
+                            has_mt_company = true;
+                            addAccount(company);
+                        }
+                    });
+                });
+                resolve(has_mt_company);
             });
-        });
-        return has_mt_company;
-    };
+        })
+    );
 
     const addAccount = (company) => {
         Object.keys(mt_companies[company]).forEach((acc_type) => {
