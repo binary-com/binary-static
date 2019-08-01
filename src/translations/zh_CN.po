@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-07-26 05:25\n"
+"PO-Revision-Date: 2019-08-01 02:28\n"
 "Last-Translator: binarycom\n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -158,30 +158,6 @@ msgstr "$50,001 – $100,000"
 
 msgid "$500,001 - $1,000,000"
 msgstr "$500,001 - $1,000,000"
-
-msgid "%1 %2 payout if %3 does not touch Barrier through close on %4."
-msgstr "%4闭市时如果%3未触及障碍价格，可获取%1 %2的赔付额。"
-
-msgid "%1 %2 payout if %3 ends on or between low and high values of Barrier at close on %4."
-msgstr "%4闭市时如果%3平仓价相等于或介于障碍价格最低和最高价位间，可获取%1 %2 赔付额。"
-
-msgid "%1 %2 payout if %3 ends outside low and high values of Barrier at close on %4."
-msgstr "%4闭市时如果%3平仓价在障碍价格最低和最高价位范围外，可获取%1 %2 赔付额。"
-
-msgid "%1 %2 payout if %3 goes outside of low and high values of Barrier through close on %4."
-msgstr "%4闭市时如果%3价在障碍价格最低和最高价位范围外，可获取%1 %2 赔付额。"
-
-msgid "%1 %2 payout if %3 is strictly higher than or equal to Barrier at close on %4."
-msgstr "%4闭市时如果%3严格高于或相等于障碍价格，可获取%1 %2 赔付额。"
-
-msgid "%1 %2 payout if %3 is strictly lower than Barrier at close on %4."
-msgstr "%4闭市时如果%3严格低于障碍价格，可获取%1 %2 赔付额。"
-
-msgid "%1 %2 payout if %3 stays between low and high values of Barrier through close on %4."
-msgstr "%4闭市时如果%3在障碍价格最低和最高价位范围内，可获取%1 %2 赔付额。"
-
-msgid "%1 %2 payout if %3 touches Barrier through close on %4."
-msgstr "%4闭市时如果%3触及障碍价格，可获取%1 %2 赔付额。"
 
 msgid "%1 (Toll Free)"
 msgstr "%1(免费电话)"
@@ -1215,9 +1191,6 @@ msgstr "所有合作伙伴选项"
 msgid "All affiliate activities must be conducted in a professional and proper manner. The Affiliate shall be expected to act with good faith and integrity in relationship with the Affiliate's referrals and always act in the best interests of the Affiliate's referrals."
 msgstr "所有联盟活动必须以专业和适当的方式进行。联盟会员须与其推介人保持善意和诚信关系并以联盟会员的最大利益行事。"
 
-msgid "All barriers in this trading window are expired"
-msgstr "此交易窗口的所有障碍已过期"
-
 msgid "All calls are recorded for training and monitoring purposes"
 msgstr "为了利于培训和监控，所有通话将被录音"
 
@@ -1295,9 +1268,6 @@ msgstr "所有适用于iOS的版本"
 
 msgid "All your deposits and withdrawals are processed by %1 within 24 hours. However, there may be additional processing time required by your bank or money transfer service."
 msgstr "%1将于24小时内处理您的所有存取款。但您的银行或汇款服务商可能需要额外的处理时间。"
-
-msgid "All-new %1Binary Grid%2"
-msgstr "全新的 %1Binary Grid%2"
 
 msgid "Allow Clients to deposit with lower amounts (via local currency)"
 msgstr "允许客户以较少金额（通过本地货币）充值"
@@ -2719,7 +2689,7 @@ msgid "Clients from the rest of the world (excluding certain jurisdictions such 
 msgstr "全球其他地区想要进行差价合约交易的客户 (不包括某些管辖区如美国、加拿大、日本和欧盟国家) 可在 Binary (FX) Ltd. 开设MetaTrader 5账户。%1不可在马来西亚使用。"
 
 msgid "Clients have the opportunity to consider whether to ask for more information by sending an email to compliance@binary.com, in which case further details of the conflicts of interest policy will be made available."
-msgstr "客户有机会考虑是否通过向 compliance@binary.com 发送电子邮件询问更多信息, 在这种情况下, 将提供有关利益冲突政策的进一步细节。"
+msgstr "客户可考虑是否通过向 compliance@binary.com 发送电子邮件询问更多信息, 在这种情况下, 将提供有关利益冲突政策的进一步细节。"
 
 msgid "Clients hereby declare that they are dealing with BIEL outside the scope of their economic or professional activity, and BIEL will therefore treat the client as an individual retail client for the purposes of EMIR compliance, unless advised otherwise."
 msgstr "客户在此声明，其与BIEL之间的活动范围属于其当前的经济或职业之外。除非另行通知，BIEL将视客户为符合EMIR规则的个人零售客户。"
@@ -3447,12 +3417,6 @@ msgstr "出生日期"
 
 msgid "Dated within the last six months"
 msgstr "过去六个月内的日期"
-
-msgid "Day"
-msgstr "天"
-
-msgid "Days"
-msgstr "日"
 
 msgid "Debt-free"
 msgstr "无负债"
@@ -5224,9 +5188,6 @@ msgstr "港元兑日元"
 msgid "Hour"
 msgstr "小时"
 
-msgid "Hours"
-msgstr "小时"
-
 msgid "How and when will I receive my affiliate earnings?"
 msgstr "我收到联盟收益的方式和时间是？"
 
@@ -6313,9 +6274,6 @@ msgstr "Labuan是联邦直辖区，由主要岛屿、Labuan岛和沙巴沿岸六
 msgid "Labuan, Malaysia"
 msgstr "马来西亚Labuan"
 
-msgid "Ladders"
-msgstr "梯子"
-
 msgid "Languages"
 msgstr "语言"
 
@@ -6895,9 +6853,6 @@ msgstr "市场执行"
 msgid "Market exit price"
 msgstr "平仓价"
 
-msgid "Market is closed. Please try again later."
-msgstr "市场已关闭。请稍后重试。"
-
 msgid "Market opinions"
 msgstr "市场观点"
 
@@ -7102,9 +7057,6 @@ msgstr "次要货币对-由流通量较低的货币对组成"
 msgid "Minute"
 msgstr "分钟"
 
-msgid "Minutes"
-msgstr "分钟"
-
 msgid "Misrepresent Binary or the services that are offered by Binary"
 msgstr "对Binary或其提供的服务产生曲解"
 
@@ -7165,12 +7117,6 @@ msgstr "实时监测您的投资组合。"
 msgid "Monitoring and review of this policy"
 msgstr "监管和评估此政策"
 
-msgid "Month"
-msgstr "月份"
-
-msgid "Months"
-msgstr "月份"
-
 msgid "More benefits"
 msgstr "更多福利"
 
@@ -7212,9 +7158,6 @@ msgstr "多个资产交易执行"
 
 msgid "Multi-asset liquidity solutions"
 msgstr "多个资产的流动性解决方案"
-
-msgid "Multi-barrier trading"
-msgstr "多重障碍交易"
 
 msgid "Multilingual platforms"
 msgstr "多语言平台"
@@ -7748,7 +7691,7 @@ msgid "Order execution/cancellation/modification"
 msgstr "订单的执行/取消/修改"
 
 msgid "Orders will generally be auto-accepted if they do not take the Company over exposure limits and the client has enough remaining balance in their account. With every contract purchased, the Company has systems in place that automatically carry out a large exposure check, and, in case the new total exposure result is greater than or equal to 25% of the eligible capital, the contract cannot be sold to the client."
-msgstr "如果客户未选取公司的接触限值，且账户中有足够余额，通常会自动接受订单。购买每份合约时，公司系统会自动进行大量风险接触检查。如果新的总风险接触量大于或等于合格资本的25％，则无法出售合约给客户。"
+msgstr "如果订单未触及限值，且客户的账户中有足够余额，订单通常会自动接受执行。购买每份合约时，公司系统会自动进行大量风险接触检查。如果新的总风险接触量大于或等于合格资本的25％，则无法出售合约给客户。"
 
 msgid "Organisational skills and the ability to work proactively"
 msgstr "组织技能和主动工作的能力"
@@ -8250,9 +8193,6 @@ msgstr "请输入您的完整居住地址以避免身份验证被延迟。"
 
 msgid "Please fill in the Login ID and Amount you wish to transfer to your Client in the form below:"
 msgstr "请在下表中填写登录 ID 以及要转给客户的金额："
-
-msgid "Please log in."
-msgstr "请登录。"
 
 msgid "Please make sure that you first agree with the Agent on the terms of payment before submitting your request."
 msgstr "在提交请求前，请您确认同意代理的支付条款。"
@@ -9215,17 +9155,11 @@ msgstr "透过我们的交易平台查看客户的用户行为"
 msgid "Search..."
 msgstr "搜索..."
 
-msgid "Second"
-msgstr "秒"
-
 msgid "Second line"
 msgstr "第二行"
 
 msgid "Secondary"
 msgstr "次要"
-
-msgid "Seconds"
-msgstr "秒"
 
 msgid "Secret question"
 msgstr "密码提示问题"
@@ -9539,9 +9473,6 @@ msgstr "对不起，您的管辖权内无法使用此功能。"
 msgid "Sorry, you have entered an incorrect cashier password"
 msgstr "对不起，您输入的收银台密码不正确"
 
-msgid "Sorry, your account is not authorised for any further contract purchases."
-msgstr "对不起，您的账户无权进一步买入任何合约。"
-
 msgid "Source of income"
 msgstr "收入来源"
 
@@ -9843,7 +9774,7 @@ msgid "Sunday"
 msgstr "周日"
 
 msgid "Supplementary terms and conditions for Financial Products offered by Binary Investments (Europe) Ltd"
-msgstr "Binary 投资 (欧洲) 有限公司提供的金融产品补充条款和条件"
+msgstr "Binary Investments (Europe) Ltd提供的金融产品补充条款和条件"
 
 msgid "Supply - Decline or increase in supply"
 msgstr "供应 - 减少或增加供应"
@@ -10765,7 +10696,7 @@ msgid "The Programmer must comply with these Terms in order to use the %1 API."
 msgstr "要使用%1 API，程序员必须遵守这些条款。"
 
 msgid "The Programmer must promptly report any security deficiencies in, or intrusions to, the Programmer's Application that the Programmer discovers to %1 by writing in to %2 or by raising a discussion thread on %3 which is part of our %4. The Programmer will work with %1 to immediately correct any security deficiency and will immediately disconnect any intrusions or intruders. In the event of any security deficiency or intrusion involving the Application, APIs, or Content, the Programmer will make no public statements (e.g. press, blogs, social media, bulletin boards, etc.) without prior written and express permission from %1 in each instance."
-msgstr "如果发现应用程序有任何安全缺陷或受入侵，程序员必须及时以书面方式发送到%2向%1报告，或通过我们%4的%3提交讨论线程。程序员将与%1合作，立即纠正任何安全缺陷，并须立即切除任何侵犯或入侵者。如果发现任何关于应用程序、Api 或内容的安全缺陷或入侵，每个事件未经%1事先书面和明示许可，程序员不可发表公开声明 （例如新闻、博客、社交媒体、电子公告板等） 。"
+msgstr "如果发现应用程序有任何安全缺陷或受入侵，程序员必须及时以书面方式发送到%2向%1报告，或通过我们%4的%3提交主题帖。程序员将与%1合作，立即纠正任何安全缺陷，并须立即切除任何侵犯或入侵者。如果发现任何关于应用程序、Api 或内容的安全缺陷或入侵，每个事件未经%1事先书面和明示许可，程序员不可发表公开声明 （例如新闻、博客、社交媒体、电子公告板等） 。"
 
 msgid "The Programmer or the Programmer's employees' or agents' acts or omissions, including the Programmer's or their breach or alleged breach of these Terms"
 msgstr "程序员或其雇员或代理人的行为或疏忽，包括程序员或他们对这些条款的违反或涉嫌违反"
@@ -10777,7 +10708,7 @@ msgid "The Programmer shall be solely responsible for, and shall indemnify and h
 msgstr "程序员须全权负责，并须对公司提供保障与保证公司免于任何和所有第三方索赔、损害赔偿或诉讼 （包括但不限于间接损失和利润损失、公司合理的法律费用和开支，如适用）："
 
 msgid "The Programmer shall discontinue the Programmer's use of all prior versions of the %1 API in favour of the revised %1 API. While it is the Company's intention that the revised %1 API shall be backward compatible with the immediately prior version of the %1 API, the Company does not guarantee or warrant that this shall be so, and the Company shall have no liability whatsoever to the Programmer for any failure of the revised %1 API to be backward compatible with any prior version of the %1 API."
-msgstr "程序员须停止使用所有先前版本的%1 API 并使用修訂後的%1 API版本。雖然公司的意圖是，修訂後的%1 API版本应与之前版本相容，公司並不擔保或保證一定会如此，且公司一概不承擔任何因修訂後的%1 API版本与之前版本不相容对程序员所引起的責任。"
+msgstr "程序员须停止使用所有先前版本的%1 API 并使用修訂后的%1 API版本。虽然公司的意图是，修订后的%1 API版本应与之前版本相容，公司並不担保或保证一定会如此，且公司一概不承担任何因修订后的%1 API版本与之前版本不相容对程序员所引起的责任。"
 
 msgid "The Programmer's breach of any of %1's rights"
 msgstr "程序员违反％1的任何权利"
@@ -10826,9 +10757,6 @@ msgstr "起草和审查法律文档以及准备申请许可证的能力"
 
 msgid "The ability to make rational decisions even based on limited information"
 msgstr "即使基于有限的信息，也能够做出理性的决定"
-
-msgid "The all-new rapid trading experience"
-msgstr "全新的快速交易体验"
 
 msgid "The anti-money laundering processes have the following effects on clients:"
 msgstr "反洗钱程序对客户有以下影响："
@@ -10969,7 +10897,7 @@ msgid "The client has read these terms and conditions in full and has understood
 msgstr "客户已经完整阅读这些条款和条件，并理解其将在这些条款和条件下买卖金融合约。"
 
 msgid "The client has read this legal Terms and conditions page in full and understood that the client will be buying and selling contracts subject to these terms and conditions."
-msgstr "客户已经完整阅读此法律条款和条件，并理解其将在这些条款和条件下买卖金融合约。"
+msgstr "客户已经完整阅读此法律条款和条件，并理解其将在这些条款和条件下买卖合约。"
 
 msgid "The client has sufficient experience and knowledge about contracts for difference to be capable of evaluating the merits and risks of acquiring contracts via this site and have done so without relying on any information contained in this site."
 msgstr "客户拥有足够的差价合约交易经验和知识，能够评估经由本网站购买合约的收益与风险，并且不依赖于本网站中包含的任何信息作出购买决定。"
@@ -11736,9 +11664,6 @@ msgstr "此风险披露声明并非详尽无遗，也并非包含客户可能会
 msgid "This section on force majeure events does not apply to Volatility Indices."
 msgstr "此不可抗力事件章节不适用于波动率指数。"
 
-msgid "This symbol is not active. Please try another symbol."
-msgstr "这是个非活跃符号。请试另一符号。"
-
 msgid "This website's services are not made available in certain countries such as the USA, Canada, Hong Kong, Japan, or to persons under age 18."
 msgstr "某些国家如美国、加拿大、香港、日本或18岁以下人士无法使用本网站的服务。"
 
@@ -11979,9 +11904,6 @@ msgstr "全天均可交易，包括周末。"
 msgid "Trade Bitcoin, Ethereum, and Litecoin pairs without owning them. Our cryptocurrency pairs quote a cryptocurrency such as Bitcoin against a fiat currency, such as the US dollar."
 msgstr "不需拥有实物也能交易比特币、以太币和莱特币。我们的加密货币对报出例如比特币的加密货币与例如美元的法定货币的兑换价格。"
 
-msgid "Trade FX binary options on our multi-barrier platform, Ladders."
-msgstr "在我们的多障碍平台, 梯子(Ladders) 交易外汇二元期权。"
-
 msgid "Trade Forex and CFDs on our popular multi-asset platform."
 msgstr "在我们受欢迎的多资产平台进行外汇和差价合约交易。"
 
@@ -12095,9 +12017,6 @@ msgstr "交易平台"
 
 msgid "Trading Times"
 msgstr "交易时间"
-
-msgid "Trading Window"
-msgstr "交易窗口"
 
 msgid "Trading and Withdrawal Limits"
 msgstr "交易和取款限额"
@@ -12245,9 +12164,6 @@ msgstr "体验TradingView"
 
 msgid "Try WebTrader"
 msgstr "体验WebTrader"
-
-msgid "Try now"
-msgstr "立即体验"
 
 msgid "Try our %1Volatility Indices%2."
 msgstr "请试试%1波动率指数%2。"
@@ -12731,6 +12647,9 @@ msgstr "我们删除订单，并保留金额最大的保证金"
 
 msgid "We do it again. BetOnMarkets.com follows up our 2007 award by being voted 'Best Fixed-Odds Financial Trading Provider' for 2008."
 msgstr "我们再次获奖。在2007年获奖之后，BetOnMarkets.com 再一次被《Shares Magazine》杂志选为2008年度“最佳固定赔率金融交易提供商”。"
+
+msgid "We do not tolerate any form of inappropriate behaviour. This includes the usage of offensive language. We reserve the right to restrict or terminate your account if there is any form of inappropriate behaviour on your part."
+msgstr "我们不容忍任何形式的不当行为，包括使用冒犯性语言。如果您有任何形式的不当行为，我们保留限制或终止您的账户的权力。"
 
 msgid "We have a proven track record since we launched our platform in 2000."
 msgstr "自2000年推出平台以来，我们保持良好的经营纪录。"
@@ -13812,9 +13731,6 @@ msgstr "用于账户%1"
 msgid "gaming"
 msgstr "游戏"
 
-msgid "h"
-msgstr "小时"
-
 msgid "hour"
 msgstr "小时"
 
@@ -13853,12 +13769,6 @@ msgstr "分钟"
 
 msgid "minutes"
 msgstr "分钟"
-
-msgid "month"
-msgstr "月份"
-
-msgid "months"
-msgstr "月份"
 
 msgid "nearest price reasonably available and quoted by %1 when the Company Price quotation reaches or goes beyond the level of the client's Stop Order"
 msgstr "当公司的报价达到或超出客户的止损订单水平时%1所报的最接近及合理可用价格"
@@ -13952,15 +13862,6 @@ msgstr "今天，周五"
 
 msgid "virtual money credit to account"
 msgstr "虚拟资金进入账户"
-
-msgid "week"
-msgstr "周"
-
-msgid "weeks"
-msgstr "周"
-
-msgid "year"
-msgstr "年"
 
 msgid "years"
 msgstr "年"

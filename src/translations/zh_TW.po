@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-07-26 05:26\n"
+"PO-Revision-Date: 2019-08-01 02:28\n"
 "Last-Translator: binarycom\n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -158,30 +158,6 @@ msgstr "$50,001 – $100,000"
 
 msgid "$500,001 - $1,000,000"
 msgstr "$500,001 - $1,000,000"
-
-msgid "%1 %2 payout if %3 does not touch Barrier through close on %4."
-msgstr "%4閉市時如果%3未觸及障礙價格，可獲取%1 %2的賠付額。"
-
-msgid "%1 %2 payout if %3 ends on or between low and high values of Barrier at close on %4."
-msgstr "%4閉市時如果%3平倉價相等於或介於障礙價格最低和最高價位間，可獲取%1 %2 賠付額。"
-
-msgid "%1 %2 payout if %3 ends outside low and high values of Barrier at close on %4."
-msgstr "%4閉市時如果%3平倉價在障礙價格最低和最高價位範圍外，可獲取%1 %2 賠付額。"
-
-msgid "%1 %2 payout if %3 goes outside of low and high values of Barrier through close on %4."
-msgstr "%4閉市時如果%3價在障礙價格最低和最高價位範圍外，可獲取%1 %2 賠付額。"
-
-msgid "%1 %2 payout if %3 is strictly higher than or equal to Barrier at close on %4."
-msgstr "%4閉市時如果%3嚴格高於或相等於障礙價格，可獲取%1 %2 賠付額。"
-
-msgid "%1 %2 payout if %3 is strictly lower than Barrier at close on %4."
-msgstr "%4閉市時如果%3嚴格低於障礙價格，可獲取%1 %2 賠付額。"
-
-msgid "%1 %2 payout if %3 stays between low and high values of Barrier through close on %4."
-msgstr "%4閉市時如果%3在障礙價格最低和最高價位範圍內，可獲取%1 %2 賠付額。"
-
-msgid "%1 %2 payout if %3 touches Barrier through close on %4."
-msgstr "%4閉市時如果%3觸及障礙價格，可獲取%1 %2 賠付額。"
 
 msgid "%1 (Toll Free)"
 msgstr "%1(免費電話)"
@@ -1215,9 +1191,6 @@ msgstr "所有合作夥伴選項"
 msgid "All affiliate activities must be conducted in a professional and proper manner. The Affiliate shall be expected to act with good faith and integrity in relationship with the Affiliate's referrals and always act in the best interests of the Affiliate's referrals."
 msgstr "所有聯盟活動必須以專業和適當的方式進行。聯盟會員須與其推介人保持善意和誠信關係並以推聯盟會員最大利益行事。"
 
-msgid "All barriers in this trading window are expired"
-msgstr "此交易窗口的所有障礙已過期"
-
 msgid "All calls are recorded for training and monitoring purposes"
 msgstr "為了利於培訓和監控, 所有通話將被錄音"
 
@@ -1295,9 +1268,6 @@ msgstr "所有適用於iOS的版本"
 
 msgid "All your deposits and withdrawals are processed by %1 within 24 hours. However, there may be additional processing time required by your bank or money transfer service."
 msgstr "%1將於24小時內處理您的所有存取款。但您的銀行或匯款服務商可能需要額外的處理時間。"
-
-msgid "All-new %1Binary Grid%2"
-msgstr "全新的 %1Binary Grid%2"
 
 msgid "Allow Clients to deposit with lower amounts (via local currency)"
 msgstr "允許客戶以較少金額（通過本地貨幣）充值"
@@ -1417,7 +1387,7 @@ msgid "Any changes in the Company's privacy policy or security statement will be
 msgstr "公司的隱私政策或安全聲明的任何變化都會公佈在本網站上。如果發生直接影響個人資訊使用的重大變化，公司將在對客戶的帳戶實施該等變化之前獲得客戶的書面授權。"
 
 msgid "Any client that is employed in the banking and/or finance sector must only conduct trades through the website with the knowledge of his/her employer and in accordance with the employer's policies."
-msgstr "任何在銀行和/或金融行業工作的客戶只能通過其雇主已知悉並符合雇主政策的網站進行交易。"
+msgstr "任何在銀行和/或金融行業工作的客戶只能在其雇主已知情和符合雇主政策的情況下在網站進行交易。"
 
 msgid "Any disputes, controversy, or claims that arise out of or relating to this Agreement against the Company will be referred to, and finally determined by, an arbitration firm selected by the Company. The language to be used in the arbitral proceedings will be English. Judgement upon the award rendered by the arbitrator(s) may be entered in any court having jurisdiction thereof. The Affiliate is also responsible for any and all costs related to such arbitration."
 msgstr "本協議有關或引致的對公司的任何糾紛、爭議或申索將由公司向選定仲裁公司提交並作最後確定。 仲裁過程中使用的語言將是英語。 仲裁人所作的裁決判決可遞交管轄區法院。 聯盟會員須負責任何仲裁相關的所有費用。"
@@ -2701,7 +2671,7 @@ msgid "Clients agree to be fully and personally liable for the due settlement of
 msgstr "客戶同意對其在本公司開立帳戶內所有交易的結算承擔全部個人責任，包括有權存取該帳戶的客戶家庭成員或隨行人員進行的交易。客戶有責任確保他們對於帳戶存取權限的控制，不能向未成年人提供在網站上交易的權限。在任何情況下，客戶對其帳戶上的任何頭寸以及網站帳戶的任何信用卡交易承擔全部責任。所有客戶都應保護公司免受因客戶沒能執行或結算該交易而對公司造成的所有直接或間接成本或損失。"
 
 msgid "Clients agree to comply with the reasonable requests made by the Company for the purpose of verifying compliance with this term."
-msgstr "客戶同意遵守本公司為驗證此條款是否合規而提出的合理要求。"
+msgstr "客戶同意遵守本公司提出的合理要求以確保符合此條款"
 
 msgid "Clients are also advised that their rights may be prejudiced if they provide the wrong information as the Company would not be in a position to act in their best interests."
 msgstr "客戶也被告知，如果客戶提供錯誤的資訊，其權利可能會受到損害，因為公司無法以客戶的最佳利益行事。"
@@ -3106,7 +3076,7 @@ msgid "Contracts may not expire on a weekend; therefore, the expiry date of a co
 msgstr "合約不能在週末到期，因此，如果合約的原定到期日為星期六或星期日，可能需延後至下個星期一。"
 
 msgid "Contracts offered by Binary Investments (Europe) Ltd have a minimum purchase price of USD/GBP/EUR 5."
-msgstr "Binary 投資(歐洲) 有限公司的合約最小購入價是5美元/英鎊/歐元。"
+msgstr "Binary Investments (Europe) Ltd 的合約最小購入價是5美元/英鎊/歐元。"
 
 msgid "Contracts sold"
 msgstr "售出合約"
@@ -3446,12 +3416,6 @@ msgstr "出生日期"
 
 msgid "Dated within the last six months"
 msgstr "過去六個月內的日期"
-
-msgid "Day"
-msgstr "天"
-
-msgid "Days"
-msgstr "日"
 
 msgid "Debt-free"
 msgstr "無負債"
@@ -5223,9 +5187,6 @@ msgstr "港元兌日圓"
 msgid "Hour"
 msgstr "小時"
 
-msgid "Hours"
-msgstr "小時"
-
 msgid "How and when will I receive my affiliate earnings?"
 msgstr "我收到聯盟收益的方式和時間是？"
 
@@ -6312,9 +6273,6 @@ msgstr "Labuan是聯邦直轄區，由主要島嶼、Labuan島和沙巴沿岸六
 msgid "Labuan, Malaysia"
 msgstr "馬來西亞Labuan"
 
-msgid "Ladders"
-msgstr "梯子"
-
 msgid "Languages"
 msgstr "語言"
 
@@ -6894,9 +6852,6 @@ msgstr "市場執行"
 msgid "Market exit price"
 msgstr "平倉價"
 
-msgid "Market is closed. Please try again later."
-msgstr "市場已關閉。請稍後重試。"
-
 msgid "Market opinions"
 msgstr "市場觀點"
 
@@ -7101,9 +7056,6 @@ msgstr "次要貨幣對 - 由流通量較低的貨幣對組成"
 msgid "Minute"
 msgstr "分鐘"
 
-msgid "Minutes"
-msgstr "分鐘"
-
 msgid "Misrepresent Binary or the services that are offered by Binary"
 msgstr "對Binary或其提供的服務產生曲解"
 
@@ -7164,12 +7116,6 @@ msgstr "實時監測您的投資組合。"
 msgid "Monitoring and review of this policy"
 msgstr "監管和評估此政策"
 
-msgid "Month"
-msgstr "月份"
-
-msgid "Months"
-msgstr "月份"
-
 msgid "More benefits"
 msgstr "更多福利"
 
@@ -7211,9 +7157,6 @@ msgstr "多個資產交易執行"
 
 msgid "Multi-asset liquidity solutions"
 msgstr "多個資產的流動性解決方案"
-
-msgid "Multi-barrier trading"
-msgstr "多重障礙交易"
 
 msgid "Multilingual platforms"
 msgstr "多語言平台"
@@ -7657,7 +7600,7 @@ msgid "Only numbers, hyphens, and spaces are allowed."
 msgstr "只允許數字、連字符和空格。"
 
 msgid "Only one account is allowed per person. No withdrawals and/or refunds may be collected on accounts opened in false names or on multiple accounts opened by the same person."
-msgstr "每人只能開立一個帳戶。使用假名開立的帳戶或同一人開立的多個帳戶將不會提取款項和/或退款。"
+msgstr "每人只能開立一個帳戶。使用假名開立的帳戶或同一人開立的多個帳戶將不允許提取款項和/或退款。"
 
 msgid "Oops... Page Not Available"
 msgstr "抱歉!找不到頁面"
@@ -8249,9 +8192,6 @@ msgstr "請輸入您的完整居住地址以避免身份驗證被延遲。"
 
 msgid "Please fill in the Login ID and Amount you wish to transfer to your Client in the form below:"
 msgstr "請在下表中填寫登入ID 以及您希望轉給客戶的金額："
-
-msgid "Please log in."
-msgstr "請登入。"
 
 msgid "Please make sure that you first agree with the Agent on the terms of payment before submitting your request."
 msgstr "在送出要求前，請確保您首先同意代理的支付條款。"
@@ -9213,17 +9153,11 @@ msgstr "透過我們的交易平台查看客戶的使用者行為"
 msgid "Search..."
 msgstr "搜索..."
 
-msgid "Second"
-msgstr "秒"
-
 msgid "Second line"
 msgstr "第二行"
 
 msgid "Secondary"
 msgstr "次要"
-
-msgid "Seconds"
-msgstr "秒"
 
 msgid "Secret question"
 msgstr "密碼提示問題"
@@ -9536,9 +9470,6 @@ msgstr "對不起，您的管轄權內無法使用此功能。"
 
 msgid "Sorry, you have entered an incorrect cashier password"
 msgstr "對不起，您輸入的收銀台密碼不正確"
-
-msgid "Sorry, your account is not authorised for any further contract purchases."
-msgstr "對不起，您的帳戶沒有進一步買入任何合約的權限。"
 
 msgid "Source of income"
 msgstr "收入來源"
@@ -10390,7 +10321,7 @@ msgid "The Company may, at its absolute discretion, disregard the client's Order
 msgstr "在表示接受客戶的訂單後，如果發生導致公司無法繼續執行客戶的訂單的事件，公司可能自行決定忽略客戶的訂單。"
 
 msgid "The Company may, at its sole discretion or as required by regulations in place conduct appropriate \"Know Your Customer\" (KYC) procedures and require a client to provide proof of identity and suspend an account until satisfactory evidence of identity and address, source of funds, and/or source of wealth have been provided."
-msgstr "公司可以自行決定或根據現行法規的要求，執行適當的「了解您的客戶」（KYC）程式，並要求客戶提供身份證明，同時暫停帳戶，直至已經收到齊全的身份證明和地址、資金來源和/或財富來源。"
+msgstr "公司可以自行決定或根據現行法規的要求，執行適當的「了解您的客戶」（KYC）程式，並要求客戶提供身份證明，同時暫停帳戶，直至收到齊全的身份證明和地址、資金來源和/或財富來源。"
 
 msgid "The Company may, however, withhold the client's withdrawal request from their MT5 Real Account to their %1 account, in whole or in part, in one or more of the following cases:"
 msgstr "但是，如果發生下列的一種或多種情況，公司可以將客戶把資金從MT5真實帳戶轉到其％1帳戶的提款請求全部或部分暫停："
@@ -10762,7 +10693,7 @@ msgid "The Programmer must comply with these Terms in order to use the %1 API."
 msgstr "要使用%1 API，程式設計員必須遵守這些條款。"
 
 msgid "The Programmer must promptly report any security deficiencies in, or intrusions to, the Programmer's Application that the Programmer discovers to %1 by writing in to %2 or by raising a discussion thread on %3 which is part of our %4. The Programmer will work with %1 to immediately correct any security deficiency and will immediately disconnect any intrusions or intruders. In the event of any security deficiency or intrusion involving the Application, APIs, or Content, the Programmer will make no public statements (e.g. press, blogs, social media, bulletin boards, etc.) without prior written and express permission from %1 in each instance."
-msgstr "如果發現應用程式有任何安全缺陷或受入侵，程式設計員必須及時以書面方式發送到%2向%1報告，或通過我們%4的%3提交討論執行緒。 程式設計員將與%1合作，立即糾正任何安全缺陷，並須立即切除任何侵犯或入侵者。 如果發現任何關於應用程式、Api 或內容的安全缺陷或入侵，每個事件未經%1事先書面和明示許可，程式設計員不可發表公開聲明 （例如新聞、部落格、社交媒介、電子公告板等） 。"
+msgstr "如果發現應用程式有任何安全缺陷或受入侵，程式設計員必須及時以書面方式發送到%2向%1報告，或通過我們%4的%3提交討論主題帖。 程式設計員將與%1合作，立即糾正任何安全缺陷，並須立即切除任何侵犯或入侵者。 如果發現任何關於應用程式、API 或內容的安全缺陷或入侵，每個事件未經%1事先書面和明示許可，程式設計員不可發表公開聲明 （例如新聞、部落格、社交媒介、電子公告板等） 。"
 
 msgid "The Programmer or the Programmer's employees' or agents' acts or omissions, including the Programmer's or their breach or alleged breach of these Terms"
 msgstr "程式設計員或您的其雇員或代理人的行為或疏忽，包括程式設計員或他們對這些條款的違反或涉嫌違反"
@@ -10823,9 +10754,6 @@ msgstr "起草和審查法律文檔以及準備申請許可證的能力"
 
 msgid "The ability to make rational decisions even based on limited information"
 msgstr "即使基於有限的資料，也能夠做出理性的決定"
-
-msgid "The all-new rapid trading experience"
-msgstr "全新的快速交易體驗"
 
 msgid "The anti-money laundering processes have the following effects on clients:"
 msgstr "反洗黑錢程序對客戶有以下影響："
@@ -11722,7 +11650,7 @@ msgid "This privacy notice only applies to job applicants residing in the EU."
 msgstr "本隱私權聲明僅適用于居住在歐盟的求職者。"
 
 msgid "This promotion is only available to new clients. Existing or former clients do not qualify. It is only available once to each client."
-msgstr "本促銷活動僅適用於新客戶。目前或以往客戶不符合條件。每一客戶僅能獲得一次。"
+msgstr "本促銷活動僅適用於新客戶。已開立帳戶或以往的客戶不符合條件。每一客戶僅能獲得一次。"
 
 msgid "This requirement is mandated by the Common Reporting Standard (CRS) and the Foreign Account Tax Compliance Act (FATCA)."
 msgstr "此要求由《統一報告標準》 (CRS) 和《外國帳戶稅收遵守法》 (FATCA) 規定。"
@@ -11732,9 +11660,6 @@ msgstr "此風險披露聲明並非詳盡無遺，也並非包含客戶可能會
 
 msgid "This section on force majeure events does not apply to Volatility Indices."
 msgstr "此不可抗力事件章節不適用於波動率指數。"
-
-msgid "This symbol is not active. Please try another symbol."
-msgstr "這是個非活躍符號。請試用另一符號。"
 
 msgid "This website's services are not made available in certain countries such as the USA, Canada, Hong Kong, Japan, or to persons under age 18."
 msgstr "某些國家如美國、加拿大、香港、日本或18歲以下人士無法使用本網站的服務。"
@@ -11976,9 +11901,6 @@ msgstr "全天均可交易，包括週末。"
 msgid "Trade Bitcoin, Ethereum, and Litecoin pairs without owning them. Our cryptocurrency pairs quote a cryptocurrency such as Bitcoin against a fiat currency, such as the US dollar."
 msgstr "不需擁有實物也能交易比特幣、以太幣和萊特幣。我們的加密貨幣對報出例如比特幣的加密貨幣與例如美元的法定貨幣的兌換價格。"
 
-msgid "Trade FX binary options on our multi-barrier platform, Ladders."
-msgstr "在我們的多障礙平台臺, 梯子(Ladders) 交易外匯二元期權。"
-
 msgid "Trade Forex and CFDs on our popular multi-asset platform."
 msgstr "在我們受歡迎的多資產平台進行外匯和差價合約交易。"
 
@@ -12092,9 +12014,6 @@ msgstr "交易平台"
 
 msgid "Trading Times"
 msgstr "交易時間"
-
-msgid "Trading Window"
-msgstr "交易視窗"
 
 msgid "Trading and Withdrawal Limits"
 msgstr "交易和取款限額"
@@ -12242,9 +12161,6 @@ msgstr "體驗TradingView"
 
 msgid "Try WebTrader"
 msgstr "體驗WebTrader"
-
-msgid "Try now"
-msgstr "立即嘗試"
 
 msgid "Try our %1Volatility Indices%2."
 msgstr "請試試%1波動率指數%2。"
@@ -12728,6 +12644,9 @@ msgstr "我們刪除訂單，並保留金額最大的保證金"
 
 msgid "We do it again. BetOnMarkets.com follows up our 2007 award by being voted 'Best Fixed-Odds Financial Trading Provider' for 2008."
 msgstr "我們再次得獎。 2007年獲獎之後，BetOnMarkets.com 又一次被《Shares Magazine》雜誌選為2008年度「最佳固定賠率金融交易提供商」。"
+
+msgid "We do not tolerate any form of inappropriate behaviour. This includes the usage of offensive language. We reserve the right to restrict or terminate your account if there is any form of inappropriate behaviour on your part."
+msgstr "我們不容忍任何形式的不當行為，包括使用冒犯性語言。如果您有任何形式的不當行為，我們保留限制或終止您的帳戶的權力。"
 
 msgid "We have a proven track record since we launched our platform in 2000."
 msgstr "自2000年推出平台以來，我們保持良好的追蹤記錄。"
@@ -13249,7 +13168,7 @@ msgid "Withdrawals have been disabled on your account. Please check your email f
 msgstr "您的帳戶已被禁提款。請檢查您的電子郵件, 以瞭解更多詳情。"
 
 msgid "Withdrawals may only be paid to the initiator of an account. When a client maintains an account by means of telegraphic deposits, withdrawals are only paid to the holder of the originating bank account, and it is the onus of the client to ensure that account number and name accompany all transfers to the Company. When a client maintains an account by means of credit/debit card deposits, withdrawals are only paid back to the same card."
-msgstr "提款利潤只會支付給帳戶的起始者。如果客戶通過電匯存款方式維持帳戶，提款只會支付給匯出銀行帳戶的持有人，且客戶有責任確保帳號及戶名和所有匯款資訊一併發送至本公司。如果客戶通過信用卡/扣款卡存款的方式維持帳戶，則提款僅會支付給同一張卡。"
+msgstr "提款只會支付給帳戶的起始者。如果客戶通過電匯存款方式維持帳戶，提款只會支付給匯出銀行帳戶的持有人，且客戶有責任確保帳號及戶名和所有匯款資訊一併發送至本公司。如果客戶通過信用卡/扣款卡存款的方式維持帳戶，提款僅會支付給同一張卡。"
 
 msgid "Without margin, purchasing one lot of the XAU/USD pair will cost you:"
 msgstr "如果沒有保證金，您購買一手黃金/美元對需花費:"
@@ -13809,9 +13728,6 @@ msgstr "用於帳戶%1"
 msgid "gaming"
 msgstr "遊戲"
 
-msgid "h"
-msgstr "小時"
-
 msgid "hour"
 msgstr "小時"
 
@@ -13850,12 +13766,6 @@ msgstr "分鐘"
 
 msgid "minutes"
 msgstr "分鐘"
-
-msgid "month"
-msgstr "月份"
-
-msgid "months"
-msgstr "月份"
 
 msgid "nearest price reasonably available and quoted by %1 when the Company Price quotation reaches or goes beyond the level of the client's Stop Order"
 msgstr "當公司的報價達到或超出客戶的止損訂單水準時%1所報的最接近及合理可用價格"
@@ -13949,15 +13859,6 @@ msgstr "今天，週五"
 
 msgid "virtual money credit to account"
 msgstr "虛擬資金存入帳戶"
-
-msgid "week"
-msgstr "週"
-
-msgid "weeks"
-msgstr "週"
-
-msgid "year"
-msgstr "年"
 
 msgid "years"
 msgstr "年"
