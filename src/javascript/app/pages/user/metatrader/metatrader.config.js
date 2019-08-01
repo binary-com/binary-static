@@ -67,16 +67,20 @@ const MetaTraderConfig = (() => {
                 short_title : localize('Standard'),
             };
 
+            const has_iom_gaming = State.getResponse('landing_company.gaming_company.shortcode') === 'iom';
+
             return ({
                 // for financial mt company with shortcode maltainvest, only offer standard account with different leverage
                 financial: {
                     demo_standard: { mt5_account_type: standard_config.account_type, max_leverage: standard_config.leverage, title: localize('Demo Standard'), short_title: standard_config.short_title },
                     real_standard: { mt5_account_type: standard_config.account_type, max_leverage: standard_config.leverage, title: localize('Real Standard'), short_title: standard_config.short_title },
                 },
-                gaming: {
-                    demo_volatility: configMtCompanies.get().gaming.demo_volatility,
-                    real_volatility: configMtCompanies.get().gaming.real_volatility,
-                },
+                ...(!has_iom_gaming && {
+                    gaming: {
+                        demo_volatility: configMtCompanies.get().gaming.demo_volatility,
+                        real_volatility: configMtCompanies.get().gaming.real_volatility,
+                    },
+                }),
             });
         };
 
