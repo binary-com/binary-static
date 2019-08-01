@@ -96,8 +96,11 @@ const MetaTraderConfig = (() => {
     const accounts_info = {};
 
     let $messages;
-    const needsRealMessage = () => $messages.find(`#msg_${Client.hasAccountType('real') ? 'switch' : 'upgrade'}`).html();
-    const needsFinancialMessage = () => $messages.find('#msg_switch_financial').html();
+    const needsRealMessage = () => {
+        const has_iom_gaming = State.getResponse('landing_company.gaming_company.shortcode') === 'iom';
+        const id_to_show = `#msg_switch${has_iom_gaming ? '_financial' : ''}`;
+        return $messages.find(id_to_show).html();
+    };
 
     // currency equivalent to 1 USD
     // or 1 of donor currency if both accounts have the same currency
@@ -173,7 +176,7 @@ const MetaTraderConfig = (() => {
 
                     if (is_maltainvest && (is_financial || is_demo_financial) && !has_financial_account) {
                         $message.find('.maltainvest').setVisibility(1);
-                        
+
                         if (Client.get('residence') === 'gb') {
                             BinarySocket.wait('get_account_status').then((response) => {
                                 if (!/age_verification/.test(response.get_account_status.status)) {
@@ -563,7 +566,6 @@ const MetaTraderConfig = (() => {
         fields,
         validations,
         needsRealMessage,
-        needsFinancialMessage,
         hasAccount,
         getCurrency,
         isAuthenticated,
