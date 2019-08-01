@@ -575,7 +575,7 @@ const Metatrader = () => (
                         <div id='msg_switch'>
                             {it.L('To perform this action, please switch to your [_1] Real Account.', it.website_name)}
                             <br />
-                            {it.L('If you do not have a [_1] Real Account yet, please [_2]create one[_3].', it.website_name, `<a href="${it.url_for('new_account/realws')}">` , it.website_name, '</a>')}
+                            {it.L('If you do not have a [_1] Real Account yet, please [_2]create one[_3].', it.website_name, `<a href="${it.url_for('new_account/realws')}">` , '</a>')}
                         </div>
                         <div id='msg_switch_financial'>
                             {it.L('To perform this action, please switch to your [_1] financial account.', it.website_name)}
