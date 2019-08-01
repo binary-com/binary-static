@@ -3,7 +3,6 @@ const DigitTicker          = require('./digit_ticker');
 const ViewPopupUI          = require('../user/view_popup/view_popup.ui');
 const showLocalTimeOnHover = require('../../base/clock').showLocalTimeOnHover;
 const LoadingSpinner       = require('../../components/loading-spinner');
-const addComma             = require('../../../_common/base/currency_base').addComma;
 const localize             = require('../../../_common/localize').localize;
 
 const DigitDisplay = (() => {
@@ -54,7 +53,7 @@ const DigitDisplay = (() => {
             DigitTicker.update(
                 poc.tick_stream.length,
                 {
-                    quote: poc.status !== 'open' ? poc.exit_tick : poc.current_spot,
+                    quote: poc.status !== 'open' ? poc.exit_tick_display_value : poc.current_spot_display_value,
                     epoch: +poc.exit_tick_time || +poc.current_spot_time,
                 }
             );
@@ -105,10 +104,9 @@ const DigitDisplay = (() => {
     };
 
     const renderRow = (tick, index, total) => {
-        const csv_spot    = addComma(tick.tick);
         const el_fragment = document.createDocumentFragment();
         el_fragment.append(createIndexElement(index));
-        el_fragment.append(createCounterElement(csv_spot, index, total));
+        el_fragment.append(createCounterElement(tick.tick_display_value, index, total));
         el_fragment.append(createSpotElement(tick));
 
         return el_fragment;
@@ -149,7 +147,8 @@ const DigitDisplay = (() => {
     const end = (proposal_open_contract) => {
         if (proposal_open_contract.status !== 'open') {
             DigitTicker.update(proposal_open_contract.tick_count, {
-                quote: proposal_open_contract.exit_tick || proposal_open_contract.tick_stream.slice(-1).tick,
+                quote: proposal_open_contract.exit_tick_display_value
+                    || proposal_open_contract.tick_stream.slice(-1).tick_display_value,
                 epoch: +proposal_open_contract.exit_tick_time,
             });
         }

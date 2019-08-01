@@ -1,7 +1,9 @@
 const moment               = require('moment');
 const HighchartUI          = require('./charts/highchart.ui');
 const requireHighstock     = require('./common').requireHighstock;
+const countDecimalPlaces   = require('./common_independent').countDecimalPlaces;
 const Reset                = require('./reset');
+const getUnderlyingPipSize = require('./symbols').getUnderlyingPipSize;
 const Tick                 = require('./tick');
 const updatePurchaseStatus = require('./update_values').updatePurchaseStatus;
 const ViewPopupUI          = require('../user/view_popup/view_popup.ui');
@@ -302,11 +304,7 @@ const TickDisplay = (() => {
         applicable_ticks      = [];
     };
 
-    const getDecimalPlaces = (number) => (
-        number.toString().split('.')[1].length || 2
-    );
-
-    const dispatch = (data) => {
+    const dispatch = async (data) => {
         const tick_chart = CommonFunctions.getElementById(id_render);
 
         if (!CommonFunctions.isVisible(tick_chart) || !data || (!data.tick && !data.history)) {
@@ -323,15 +321,25 @@ const TickDisplay = (() => {
             chart_display_decimals;
 
         if (document.getElementById('sell_content_wrapper')) {
+            if (!chart_display_decimals) {
+                // We're getting the pip size based on standard `display_value` provided by API
+                const {
+                    entry_spot_display_value,
+                    entry_tick_display_value,
+                    exit_tick_display_value,
+                    sell_spot_display_value,
+                } = contract;
+                const available_display_value = entry_spot_display_value
+                    || entry_tick_display_value
+                    || exit_tick_display_value
+                    || sell_spot_display_value;
+                const available_underlying = data.echo_req.ticks_history || data.echo_req.ticks || data.tick.symbol;
+                chart_display_decimals = countDecimalPlaces(available_display_value)
+                    || await getUnderlyingPipSize(available_underlying)
+                    || Tick.pipSize();
+            }
             if (data.tick) {
                 Tick.details(data);
-                if (!chart_display_decimals) {
-                    chart_display_decimals = getDecimalPlaces(data.tick.quote);
-                }
-            } else if (data.history) {
-                if (!chart_display_decimals) {
-                    chart_display_decimals = getDecimalPlaces(data.history.prices[0]);
-                }
             }
             if (!tick_init && contract) {
                 let category = 'callput';

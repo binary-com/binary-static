@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-07-23 02:06\n"
+"PO-Revision-Date: 2019-08-01 02:27\n"
 "Last-Translator: binarycom\n"
 "Language-Team: Korean\n"
 "MIME-Version: 1.0\n"
@@ -97,7 +97,7 @@ msgid "\"Account\" means Client Trading Account opened with Binary (V) Ltd."
 msgstr "\"계좌\"는 Binary (V) Ltd를 통해 개설된 고객 거래 계좌를 의미합니다."
 
 msgid "\"Binary\" or \"digital\" options are options that pay a pre-determined, fixed amount, depending on whether or not an event occurs at the time the Binary Option expires. binary options can have only one of two possible outcomes and allow the client to take a simple \"Yes or No\" approach. Like traditional options, binary options are based on an underlying asset such as currencies, commodities, or indices; however, one of the most significant differences between binary options and traditional options, among others, is that there can only be two outcomes for the option, either the client is paid the return upon the occurrence of the event, or the client loses the investment amount as determined in each option."
-msgstr ""
+msgstr "\"바이너리\" 또는 \"디지털\" 옵션은 바이너리 옵션이 만기되는 시점에 이벤트가 일어나거나 또는 일어나지 않음에 따라 미리 결정되어 있는 고정된 금액을 지불하는 옵션을 의미합니다. 바이너리 옵션은 가능한 두가지 결과중 단 하나만을 가질수 있으며 고객으로 하여금 간단한 \"네 또는 아니오\"로 접근할 수 있도록 해 줍니다. 전통적인 옵션처럼, 바이너리 옵션은 통화, 상품 또는 지수처럼 기초자산에 기초합니다; 하지만, 바이너리 옵션과 전통적인 옵션과 다른 것과의 가장 두드러지는 차이점은 옵션에 있어서 오직 두가지 결과만 가질 수 있다는 것입니다. 여기에서 두가지 결과는 이벤트의 발생에 따라 수익을 받거나, 또는 고객이 각 옵션에서 결정되어 있는 투자 금액을 잃는 것입니다."
 
 msgid "\"Client Agreement\" means the Agreement between the Client and the Company including but not limited to the Terms and Conditions, Order Execution Policy, and Slippage Policy."
 msgstr ""
@@ -127,10 +127,10 @@ msgid "$ per USD 100,000 of turnover"
 msgstr ""
 
 msgid "$0 - $10,000"
-msgstr ""
+msgstr "$0 - $10,000"
 
 msgid "$10,001 – $50,000"
-msgstr ""
+msgstr "$10,001 – $50,000"
 
 msgid "$100,000 - $250,000"
 msgstr "$100,000 - $250,000"
@@ -139,7 +139,7 @@ msgid "$100,001 - $500,000"
 msgstr "$100,001 - $500,000"
 
 msgid "$100,001 and above"
-msgstr ""
+msgstr "$100,001 및 그 이상"
 
 msgid "$12M+"
 msgstr "$12M+"
@@ -154,34 +154,10 @@ msgid "$50,001 - $100,000"
 msgstr "$50,001 - $100,000"
 
 msgid "$50,001 – $100,000"
-msgstr ""
+msgstr "$50,001 – $100,000"
 
 msgid "$500,001 - $1,000,000"
 msgstr "$500,001 - $1,000,000"
-
-msgid "%1 %2 payout if %3 does not touch Barrier through close on %4."
-msgstr ""
-
-msgid "%1 %2 payout if %3 ends on or between low and high values of Barrier at close on %4."
-msgstr ""
-
-msgid "%1 %2 payout if %3 ends outside low and high values of Barrier at close on %4."
-msgstr ""
-
-msgid "%1 %2 payout if %3 goes outside of low and high values of Barrier through close on %4."
-msgstr ""
-
-msgid "%1 %2 payout if %3 is strictly higher than or equal to Barrier at close on %4."
-msgstr ""
-
-msgid "%1 %2 payout if %3 is strictly lower than Barrier at close on %4."
-msgstr ""
-
-msgid "%1 %2 payout if %3 stays between low and high values of Barrier through close on %4."
-msgstr ""
-
-msgid "%1 %2 payout if %3 touches Barrier through close on %4."
-msgstr ""
 
 msgid "%1 (Toll Free)"
 msgstr "%1 (수신자 부담)"
@@ -323,7 +299,7 @@ msgid "%1 lots"
 msgstr ""
 
 msgid "%1 may have access to information that is not available to the client, may have acquired trading positions at prices that are not available to the client, and may have interests different from the client's interests. %1 does not undertake any obligation to provide the client with market or other information that the Company possesses, nor to alter or refrain from the Company's own trading."
-msgstr ""
+msgstr "%1은 고객이 접근할 수 없는 정보에 접근권한이 있을 수 있으며, 고객에게 적용되지 않는 가격으로 거래 포지션을 획득했을 수 있읍니다. 또한 고객의 이자와 다른 이자를 가지고 있을 수 있습니다. %1은 본 회사가 소유하는 시장에 관한 또는 다른 정보를 고객에게 제공해야 하는 그 어떠한 의무를 가지지 않으며 본 회사 자신의 거래를 변경하거나 자제하지 않습니다."
 
 msgid "%1 offers a variety of MT5 Real Accounts depending on the jurisdiction to which a client’s %1 account has been attached subject to any verification or authentication requirements."
 msgstr "그 어떠한 확인 또는 검증 요구사항에 따라 고객의 %1 계좌에 해당되는 관할권에 따라 %1은 다양한 종류의 MT5 실계좌를 제공합니다."
@@ -335,7 +311,7 @@ msgid "%1 offers a variety of account types to cater to the diverse needs of tra
 msgstr ""
 
 msgid "%1 offers forex and contracts for differences via a series of models - either solely dealing on own account (dealing desk), or wholly hedging client orders with the Company's liquidity providers (no-dealing desk), or a hybrid model, depending on the company with which the client has a contract. For the hybrid model, client orders are typically hedged when the total transaction volume exceeds a predefined threshold of risk tolerance level. For these execution models, %1 acts as the contractual counterparty to the transactions that the client enters into with the Company, as opposed to entering into a contractual counterparty with a central clearing house as would be the case with exchange-traded financial instruments. As such, counterparty risk exists. Counterparty risk refers to the risk of loss for clients resulting from the fact that the counterparty to the forex and/or contract-for-difference transaction that the client has entered into may default on its obligations prior to the final settlement of the transaction's cash flow."
-msgstr ""
+msgstr "%1은 다양한 모델을 통해 외환 및 차액거래를 제공합니다 - 고객이 어느 회사와 거래를 진행하는지에 따라 개인 계좌로 단독으로 거래하는 것 (딜링 데스크), 또는 본 회사의 유동성 공급자와 완전한 헤징 고객 주문 (노 딜링 데스크), 또는 하이브리드 모델이 이러한 모델들에 해당됩니다. 하이브리드 모델의 경우, 총 거래량이 미리 정의된 위험 허용한계 수준의 기준을 초과하는 경우 일반적으로 고객의 모든 주문은 헤지됩니다. 이러한 실행 모델의 경우, 상장지수 금융 상품들의 경우인 중앙거래청산소를 통해 계약상 거래상대방으로 체결하는것과는 대조적으로 %1은 고객이 본 회사와 체결하는 거래에 계약상 거래상대방으로서 역할합니다. 이와같이, 거래상대방 위험은 존재합니다. 거래상대방 위험은 고객이 체결한 외환과/또는 차액거래로의 거래상대방이 해당 거래의 현금 유출입의 최종 결제 이전에 의무사항을 이행하지 않을 수 있는 결과로 인한 고객의 손실의 위험을 나타냅니다."
 
 msgid "%1 offers forex and contracts for differences via the hybrid model, i.e. dealing on own account (dealing desk – B-book) or partially hedging client orders with the Company's liquidity providers (no-dealing desk – A-book)."
 msgstr ""
@@ -410,7 +386,7 @@ msgid "%1 takes home first prize in the Financial Trading Operator category at t
 msgstr "%1은 런던에서 개최된 권위있는 2015 EGR 오퍼레이터 시상식에서 금융 거래 오퍼레이터 부문으로 일등상을 받았습니다."
 
 msgid "%1 tries to maintain a reasonable relation between the quoted prices of each underlying asset that a Binary Option refers to and the actual market prices of such an asset. %1 makes no warranty, expressed or implied, that the quoted prices represent prevailing market prices."
-msgstr ""
+msgstr "%1은 바이너리 옵션이 나타내는 각 기초자산의 견적가격과 이러한 자산에 대한 실제 시장가격 사이에서 합리적인 관계를 유지하려고 노력합니다. %1은 견적 가격이 시장가격을 나타낼 것이라는 보증, 표현, 암시하지 않습니다."
 
 msgid "%1 wins 'Best Binary Company Asia Pacific' in the Global Banking & Finance Awards 2018. This reflects our expertise and leadership in innovation and strategy."
 msgstr "%1이 글로벌 뱅킹 & 파이낸스 어워드 2018에서 '아시아 태평양 베스트 바이너리 회사'상을 수상합니다. 이는 혁신 및 전략에 있어 우리의 전문성과 리더십을 반영합니다."
@@ -1204,9 +1180,6 @@ msgstr ""
 msgid "Agriculture"
 msgstr ""
 
-msgid "Alert"
-msgstr ""
-
 msgid "Alerting clients of a potential trading opportunity"
 msgstr ""
 
@@ -1218,9 +1191,6 @@ msgstr "모든 파트너쉽 옵션"
 
 msgid "All affiliate activities must be conducted in a professional and proper manner. The Affiliate shall be expected to act with good faith and integrity in relationship with the Affiliate's referrals and always act in the best interests of the Affiliate's referrals."
 msgstr "모든 제휴활동은 반드시 전문적이고 올바른 방법으로 수행되어져야 합니다. 제휴자는 제휴자의 추천자와 관련하여 좋은 신뢰도와 진실성을 가지고 활동할 것이 기대되며 제휴자의 추천자의 이익이 항상 최선으로 항상 활동할 것이 기대되어집니다."
-
-msgid "All barriers in this trading window are expired"
-msgstr ""
 
 msgid "All calls are recorded for training and monitoring purposes"
 msgstr "모든 상담내용은 교육 및 모니터링 목적으로 녹음됩니다"
@@ -1265,7 +1235,7 @@ msgid "All markets are closed now. Please try again later."
 msgstr "현재 모든 시장이 마감되었습니다. 나중에 다시 시도해주십시오."
 
 msgid "All opinions, news, research, analysis, prices, or other information contained on this website are provided as general market commentary and do not constitute investment advice. %1 will not accept liability for any loss or damage, including, but without limitation to, any loss of profit that may arise directly or indirectly from the use of, or reliance on, such information."
-msgstr ""
+msgstr "이 웹사이트에 포함되어 있는 모든 견해, 연구, 분석, 가격 또는 다른 정보는 일반적인 시장 논평으로써 제공되며 투자 조언으로는 구성되지 않습니다. 이러한 정보의 의존 또는 직접적 또는 간접적 이용으로 인한 어떠한 손실에만 국한되지 않는 그 어떠한 손해에 대해서 %1은 법적 책임을 받아들이지 않을 것입니다."
 
 msgid "All payouts"
 msgstr "모든 지불금"
@@ -1299,9 +1269,6 @@ msgstr ""
 
 msgid "All your deposits and withdrawals are processed by %1 within 24 hours. However, there may be additional processing time required by your bank or money transfer service."
 msgstr "귀하의 모든 입금과 인출은 %1에 의해 24시간 내로 처리됩니다. 그렇지만, 귀하의 은행 또는 송금 서비스에 의해 추가적인 처리시간이 요구될 수 있습니다."
-
-msgid "All-new %1Binary Grid%2"
-msgstr ""
 
 msgid "Allow Clients to deposit with lower amounts (via local currency)"
 msgstr ""
@@ -1406,7 +1373,7 @@ msgid "Answer to secret question"
 msgstr ""
 
 msgid "Anti-corruption policy"
-msgstr ""
+msgstr "부패방지정책"
 
 msgid "Anti-money laundering policy"
 msgstr "자금세탁방지 정책"
@@ -1418,7 +1385,7 @@ msgid "Any amendments to the contractual terms of Manifestly Erroneous contracts
 msgstr ""
 
 msgid "Any changes in the Company's privacy policy or security statement will be posted on this website. For any material changes that directly affect the economic use of the client's personal information, the Company will request the client's prior authorisation in writing before effecting such changes on the client's account."
-msgstr ""
+msgstr "본 회사의 개인정보보호정책 또는 보안 표명에 대한 그 어떠한 변경사항은 본 웹사이트에 공지될 것입니다. 고객 개인정보의 경제적 사용에 직접적으로 영향이 있는 어떠한 자료의 변경에 있어서, 본 회사는 이러한 변경이 고객의 계좌에 적용되기 이전에 고객의 사전 허가 서면을 요청할 것입니다."
 
 msgid "Any client that is employed in the banking and/or finance sector must only conduct trades through the website with the knowledge of his/her employer and in accordance with the employer's policies."
 msgstr "은행 및/또는 금융 부문에 종사하는 고객은 해당 고객의 고용주와 해당 고용주의 정책에 따르며 웹사이트를 통해 거래해야 합니다."
@@ -2147,7 +2114,7 @@ msgid "Binary Group Services Sdn. Bhd., C-13, iTech Tower, Jalan Impact, Cyber 6
 msgstr ""
 
 msgid "Binary Group members are sometimes referred to collectively as \"%1\" or \"the Company\"."
-msgstr ""
+msgstr "Binary Group 멤버는 때때로 집합적으로 \"%1\" 또는 \"회사\"로 표현됩니다."
 
 msgid "Binary Investments (Europe) Limited is entitled to provide services in another EU Member State through EU passporting rights. Refer to the map below for the list of EU countries that have access to %1 via EU passporting rights - freedom to provide cross border services."
 msgstr "바이너리 투자(유럽) 유한회사는 유럽연합 여권 권리를 통해 또다른 유럽연합 회원국에 서비스를 제공할 권리가 있습니다. 다음의 지도에서 유럽 연합의 여권 권리 (국경간의 서비스를 제공할 수 있는 자유)를 통해 %1에 접근할 수 있는 유럽연합 국가 목록을 참고하세요."
@@ -2253,9 +2220,6 @@ msgstr ""
 
 msgid "Bitcoin"
 msgstr "비트코인"
-
-msgid "Bitcoin Cash"
-msgstr "비트코인 캐시"
 
 msgid "Bitcoin Cash vs US Dollar"
 msgstr "비트코인 캐시 vs 미국 달러"
@@ -2381,7 +2345,7 @@ msgid "By submitting suggestions or other feedback regarding the %1 API to the C
 msgstr "%1 API와 관련한 제안사항 또는 다른 피드백을 본 회사에 제출함으로써(\"기여\"), 프로그래머는 다음의 사항에 대해 인정하고 동의합니다:"
 
 msgid "By using or interacting with the %1 website, the client is giving permission to the use of the Google Analytics User ID Feature, which allows Google to capture the client's %1 login ID such as VRTC1234 and MT1234. When this feature is enabled, no personally identifiable information other than the client's %1 login ID, or other data that can be linked to such information by Google, is shared with or disclosed to Google."
-msgstr ""
+msgstr "고객께서는 %1 웹사이트를 사용하거나 또는 상호작용함으로써, 고객께서는 VRTC1234 및 MT1234같은 고객의 %1 로그인 아이디를 캡쳐할 수 있도록 하는 구글 애널리틱스 유저 아이디 기능에 대해 사용 승인을 합니다. 이 기능이 활성화되면 고객의 %1 로그인 아이디 또는 구글에 의해 이러한 정보가 연결될 수 있는 다른 정보를 제외하고는 개인을 식별할 수 있는 정보는 구글과 공유되지 않으며 구글에 공개되지 않습니다."
 
 msgid "By using the electronic trading system, including the MT5 trading platform, clients accept full responsibility for using such platforms and for any Orders transmitted via such platforms."
 msgstr ""
@@ -3155,7 +3119,7 @@ msgid "Cookies and device information"
 msgstr "쿠키 및 장치 정보"
 
 msgid "Cookies are small text files stored on computer drives and are widely used in order to make websites work and to improve the user experience. All recent versions of browsers give the client a level of control over cookies. The client can delete all cookies that are already on the client's computer, and the browser can be set to prevent them from being placed. However, if the client chooses not to receive the Company's cookies, the full usability of the Company's website may be adversely affected."
-msgstr ""
+msgstr "쿠키는 컴퓨터 드라이브에 저장되는 작은 텍스트 파일이며 웹사이트가 작동될 수 있도록 그리고 사용자 경험을 향상시키기 위해 사용됩니다. 최근의 모든 브라우저 버전들은 고객으로 하여금 쿠키에 대하여 어떠한 수준의 통제력을 제공합니다. 고객께서는 고객의 컴퓨터 상에 이미 있는 모든 쿠키를 삭제할 수 있으며 브라우저는 쿠키가 저장되는 것을 방지할 수 있도록 설정될 수 있습니다. 그렇지만 만약 고객께서 본 회사의 쿠키를 받지 않도록 선택하면, 본 회사의 웹사이트에 대한 완전한 사용성에 좋지 않은 영향이 있을 수 있습니다."
 
 msgid "Coordinate business development activities and generate high-quality partnership leads"
 msgstr "비즈니스 개발 활동 및 고품질 파트너십 리드 힙력"
@@ -3454,12 +3418,6 @@ msgstr "생년월일"
 msgid "Dated within the last six months"
 msgstr ""
 
-msgid "Day"
-msgstr "일"
-
-msgid "Days"
-msgstr ""
-
 msgid "Debt-free"
 msgstr "부채 없음"
 
@@ -3575,7 +3533,7 @@ msgid "Derivative"
 msgstr "파생상품"
 
 msgid "Derivative investment instruments such as binary options and related markets can be highly volatile. The prices of the underlying instrument that a Binary Option refers to may fluctuate rapidly and over wide ranges and may reflect unforeseeable events or changes in conditions, none of which can be controlled by the client or %1."
-msgstr ""
+msgstr "바이너리 옵션같은 파생투자 상품과 관련시장은 아주 가변적입니다. 바이너리 옵션이 나타내는 기본 자산의 가격은 빠르게 그리고 폭넓게 변화할 수 있으며 예견할 수 없는 상황 또는 조건의 변화를 반영할 수 있으며 이는 고객 또는 %1 누구도 통제할 수 없습니다."
 
 msgid "Description"
 msgstr "설명"
@@ -3680,9 +3638,6 @@ msgid "Diversity"
 msgstr ""
 
 msgid "Divorce Settlement"
-msgstr ""
-
-msgid "Do not send Bitcoin to a Bitcoin Cash account (or Bitcoin Cash to a Bitcoin account). Doing so may lead to the loss of your funds."
 msgstr ""
 
 msgid "Do not trade when you are tired or are under the influence of alcohol."
@@ -3851,7 +3806,7 @@ msgid "During fast markets (i.e. periods of very fast market movements), contrac
 msgstr "빠른 시장 (즉, 시장의 움직임이 아주 빠른 기간)에는, 일반적인 시장 조건보다 불리한 가격에 계약이 제공될 수 있습니다."
 
 msgid "During the application process, the Company may ask the client for information about the client's background, experience, and investment assets and earnings. The Company does not monitor on the client's behalf whether the amount of money that the client has sent to the Company or the client's profits or losses are consistent with that information. It is up to the client to assess whether the client's investment resources are adequate for the client's investment activity with the Company and the client's risk appetite in the products and services that the client uses."
-msgstr ""
+msgstr "지원 과정에서, 본 회사는 고객에게 고객의 배경, 경험 및 투자 자산 및 소득에 대한 정보를 요구할 수 있습니다. 본 회사는 이러한 정보를 가지고 고객을 대신해서 고객이 본 회사로 송금하는 금액이나 고객의 수익 또는 손해가 일정한지 검사하지 않습니다. 고객의 투자자원이 고객이 본 회사를 통해 진행하는 투자활동과 고객이 사용하는 상품과 서비스에 대해 고객의 위험 수용범위에 대하여 적합한지 평가하는 것은 고객의 몫입니다."
 
 msgid "During the term of this Agreement, the Programmer grants the Company a royalty-free, non-exclusive, worldwide, irrevocable right, under all of the Programmer's intellectual property rights, to do the following:"
 msgstr "본 계약의 기간동안, 프로그래머는 본 회사에게 다음의 목적으로 프로그래머의 모든 지적재산권 아래 이용료가 없고, 비독점적이며, 전세계적, 변경할 수 없는 권리를 승인합니다:"
@@ -4253,7 +4208,7 @@ msgid "Exceptional English communication skills (both oral and written)"
 msgstr "특출난 영어 의사소통 능력 (구두 및 작문 모두)"
 
 msgid "Exchange rate risk: Exchange rates between foreign currencies can change rapidly due to a wide range of economic, political, and other conditions, exposing the client to the risk of exchange rate losses in addition to the inherent risk of loss from trading the underlying Investment Product. If the client deposits funds in a currency to trade contracts denominated in a different currency, the client's gains or losses on the underlying investment may be affected by changes in the exchange rate between the currencies."
-msgstr ""
+msgstr "환율 위험: 외국 통화간의 위험은 광범위환 경제적, 정치적 및 다른 상황들에 따라 빠르게 변할 수 있으며 기초 투자상품을 거래함으로써 내재하는 손실위험 뿐만 아니라 환차손에 고객을 노출시킵니다. 만약 고객이 거래를 위해서 표시된 통화가 아닌 다른 통화로 예금할시에는 고객의 기초투자상의 손익은 해당되는 통화간의 환율 차이에 의해 영향을 받을 수 있습니다."
 
 msgid "Exclude me from the website until"
 msgstr ""
@@ -4769,7 +4724,7 @@ msgid "For full contact details of %1, the client is encouraged to check %1's %2
 msgstr ""
 
 msgid "For fully covered accounts, no Margin will be charged on open positions. However, swaps and other applicable fees can cause the client's Account Equity to turn negative. In that case, the Stop Out process will be triggered."
-msgstr ""
+msgstr "완전히 커버되는 계좌의 경우, 오픈 포지션에 대한 증거금 청구는 없을 것입니다. 하지만, 스왑과 다른 적용되는 비용은 고객의 계좌가 음수로 되도록 야기할 수 있습니다. 이러한 상황에서는 스탑아웃 프로세스가 작동될것입니다."
 
 msgid "For further assistance, email us at %1affiliates@binary.com%2"
 msgstr ""
@@ -4802,7 +4757,7 @@ msgid "Forex"
 msgstr "외환"
 
 msgid "Forex and contract-for-difference transactions involve a high degree of risk and are speculative because they allow the client to speculate on the short-term price movements of the underlying financial instruments. The client should not enter into forex and/or contract-for-difference transactions unless the client is able to sustain losses that exceed the client's deposited funds. It is important for the client to understand that in order to realise any value from the client's open positions, the client would have to enter into a corresponding transaction to close the client's open positions and may find it difficult or impossible to do so under certain market conditions."
-msgstr ""
+msgstr "외환과 차액거래는 고객으로 하여금 기초 금융상품의 단기간 가격 변동상에서 투기 가능하기 때문에 투기적이며 높은 위험이 연관되어 있습니다. 고객은 고객이 예치한 금액을 초과하는 손실을 감당할 수 없다면 외환 및/또는 차액거래를 체결하지 않아야 합니다. 고객의 오픈 포지션에서 어떠한 가치를 알기 위해서, 고객의 오픈 포지션을 닫기 위해 해당하는 한 거래에 체결해야 하며 특정한 시장 상황 아래에서는 그렇게 하는 것이 어렵거나 불가능할 수 있다는 것을 고객께서 이해하는 것이 중요합니다."
 
 msgid "Forex and metals*"
 msgstr ""
@@ -4910,7 +4865,7 @@ msgid "G. Order handling"
 msgstr "G. 주문 처리"
 
 msgid "G. Regulatory provisions"
-msgstr ""
+msgstr "G. 규제 조항"
 
 msgid "GAMSTOP is a free service that enables you to self-exclude from all online gambling companies licensed in Great Britain."
 msgstr "GAMSTOP은 귀하로 하여금 그레이트 브리튼에서 인가된 모든 온라인 도박 회사로부터 자가 제한을 설정할 수 있는 무료 서비스입니다."
@@ -5233,9 +5188,6 @@ msgstr "홍콩달러 vs 일본 엔"
 msgid "Hour"
 msgstr "시간"
 
-msgid "Hours"
-msgstr ""
-
 msgid "How and when will I receive my affiliate earnings?"
 msgstr "제 제휴 소득을 어떻게 그리고 언제 받게 되나요?"
 
@@ -5474,7 +5426,7 @@ msgid "If the Introducing Broker engages in Malicious Activity, Binary, in its a
 msgstr ""
 
 msgid "If the Margin Level for the client's MT5 Real Account reaches or falls below the Stop Out Level, this will be classified as an Event of Default. In such circumstances, Open Positions are automatically closed in the following order: (i) the server analyses those Orders that are not under execution at the moment; (ii) the server deletes Orders with the largest Margin; (iii) if the client's Margin Level is still under the Stop Out Level, the next Order is deleted (Orders without Margin Requirements are not deleted); (iv) if the client's Margin Level is still under the Stop Out Level, the server closes a position with the largest loss; (v) Open Positions are closed until the client's Margin Level becomes higher than the Stop Out Level. Additionally, for fully hedged positions, Stop Out will be performed on accounts having Open Positions, zero Margin (positions are covered), and negative equity."
-msgstr ""
+msgstr "만약 고객의 MT5 실계좌에 대한 증거금 비율이 스탑아웃 레벨아래로 떨어지거나 또는 도달하는 경우, 이는 채무불이행 사유로 분류될 것입니다. 이러한 상황에서는 오픈 포지션은 다음의 순서에 따라 자동적으로 닫힙니다: (i) 서버가 실행되고 있지 않는 주문을 분석합니다; (ii) 서버가 가장 큰 증거금이 있는 주문을 제거합니다; (iii) 만약 고객의 증거금 비율이 스탑아웃 레벨보다 여전히 아래인 경우, 다음의 주문이 제거됩니다 (증거금률이 없는 주문은 제거되지 않습니다); (iv) 만약 고객의 증거금 비율이 여전히 스탑아웃 레벨보다 아래인 경우, 서버는 가장 큰 손실이 있는 포지션을 닫습니다; (v) 오픈 포지션은 고객의 증거금 비율이 스탑아웃 레벨보다 높아질때까지 닫히며 완전히 헤지된 포지션의 경우, 0에 해당하는 증거금과 (포지션은 커버됩니다), 음수의 가치를 지니는 오픈 포지션을 가지는 계좌에 스탑아웃이 수행됩니다."
 
 msgid "If the Programmer is an affiliate of %1, the Programmer must also comply with %1's Affiliate Programme terms and conditions."
 msgstr "만약 프로그래머가 %1의 제휴자인 경우, 프로그래머는 %1의 제휴 프로그램의 약관 또한 반드시 준수해야 합니다."
@@ -5492,10 +5444,10 @@ msgid "If the client asks to be treated as a professional client, they need to m
 msgstr ""
 
 msgid "If the client chooses to close the client's %1 account, the client's data will be kept only until the Company's legal and regulatory obligations on data retention are met. The Company will delete the client's data once the applicable retention period expires."
-msgstr ""
+msgstr "만약 고객께서 고객의 %1계좌를 해지하기를 선택한다면 본 회사의 데이터 보존상에 관한 법적 및 규제적 의무사항이 유효할 때까지 고객의 데이터는 보존될 것입니다. 본 회사는 데이터의 적용되는 보존 기간이 만료되면 고객의 데이터를 삭제할 것입니다."
 
 msgid "If the client chooses to enter into a contract with the Company, it is important that the client remains aware of the risks involved, that the client has adequate investment resources to bear such risks, and that the client monitors the client's positions carefully."
-msgstr ""
+msgstr "만약 고객께서 본 회사를 통해 계약 체결하기를 선잭한다면, 고객께서는 연관되어 있는 위험들에 대해서 알고 있으며 이러한 위험들을 극복할 수 있는 적절한 투자 자원을 가지는 것 및 고객의 포지션을 주의깊게 모니터링하는 것이 중요합니다."
 
 msgid "If the client fails to immediately make a full settlement of the sum due to the Company in accordance with this agreement, the Company reserves the right to accrue interest on the sums due from the client to the Company in respect of any transaction that the client fails to pay on the relevant due date. Interest will accrue on a daily basis from the relevant due date until the date on which payment is received in full at the bank's official base rate for short term funds determined by the Company and will be payable on demand."
 msgstr "고객이 이 동의문에 따라 본 회사로 총 금액을 지불하지 못할 경우, 본 회사는 고객으로부터 해당되는 총 금액에 대해 관련 날짜까지 지불하지 못한 거래에 관한 이자를 누적시킬 권리가 있습니다. 이자는 본 회사가 결정한 단기자금에 대한 은행의 공식 기준금리가 적용된 총 금액이 지불완료되는 날짜까지 매일 이자가 누적될 것이며 요청이 있을 시 지불 가능합니다."
@@ -6004,9 +5956,6 @@ msgstr "내부 감사"
 msgid "Internal Audit Executive"
 msgstr "내부감사 임원"
 
-msgid "Internal currency transfers between accounts are allowed up to a maximum of USD 2,500.00 or equivalent. Transfers are allowed between any available currency pair but cannot be done between the Binary and MT5 accounts."
-msgstr "계좌간에 내부 통화거래는 최대 USD 2,500.00 또는 그에 동등한 금액까지만 허용됩니다. 거래는 Binary와 MT5 계좌간을 제외하고는 가능한 그 어떠한 통화쌍끼리도 가능합니다."
-
 msgid "International currency or commodity prices are highly volatile and very difficult to predict. Due to such volatility, plus the bias in the pricing system favouring the website (as described in more detail below), no financial contract purchased in our system (whether or not the payout exceeds the premium amount) can be considered a safe contract."
 msgstr "국제통화 또는 상품가격은 변동성이 높으며 예측하기 상당히 힘듭니다. 이러한 변동성과 웹사이트에 우호적인 가격체계의 편향때문에 (하단에 상세히 나와 있는 것처럼) 우리 시스템을 통해 구매되어진 그 어떤 금융 계약도 안전한 계약이라고 볼 수 없습니다 (지불금액이 프리미엄 수준에 해당하는 금액을 초과하더라도)."
 
@@ -6062,7 +6011,7 @@ msgid "Investing in complex products, such as CFDs and FX may incur losses as we
 msgstr ""
 
 msgid "Investing or trading in contracts exposes the client to the performance of the underlying or reference instrument or asset to which the Binary contract refers, including foreign exchange, indices, and commodities, each of which have their own features and risks."
-msgstr ""
+msgstr "거래를 투자하거나 거래하는 것은 각각의 특징과 위험이 있는 외환, 지수 및 상품을 포함해서 바이너리 거래가 나타내는 참조 또는 기준 상품 또는 자산의 실적에 고객을 노출시킵니다."
 
 msgid "Investment"
 msgstr ""
@@ -6137,7 +6086,7 @@ msgid "It is important that clients refer their disputes to the appropriate ADR 
 msgstr ""
 
 msgid "It is important that the client monitors all of the client's positions closely. It is the client's responsibility to monitor the client's positions, and during the period that the client has any open contracts, the client should always have the ability to access the client's accounts."
-msgstr ""
+msgstr "고객의 모든 포지션을 면밀히 모니터링하는 것은 중요합니다. 고객의 포지션을 모니터링하는 것인 고객의 책임이며 고객께서 활성화되어 있는 계약이 있는 기간동안 고객은 고객의 계좌에 항상 접근할 수 있는 능력이 있어야 합니다."
 
 msgid "It is noted that immediately upon the termination of the relationship between the Company and the Agent, the Agent shall return to the Company any documents pertaining to the Company's business whatsoever which are in the Agent's possession."
 msgstr ""
@@ -6324,9 +6273,6 @@ msgstr ""
 
 msgid "Labuan, Malaysia"
 msgstr "라부안, 말레이시아"
-
-msgid "Ladders"
-msgstr "Ladders"
 
 msgid "Languages"
 msgstr "언어"
@@ -6872,16 +6818,16 @@ msgid "Margin Level"
 msgstr "마진 레벨"
 
 msgid "Margin Payments are due immediately and shall be received in full by the Company."
-msgstr ""
+msgstr "증거금 지불은 본 회사에 의해 그 즉시 그리고 전부 지불되어야 합니다."
 
 msgid "Margin Requirement"
-msgstr ""
+msgstr "증거금률"
 
 msgid "Margin Requirement and calculation"
 msgstr "증거금 및 계산"
 
 msgid "Margin Requirement is the amount that the client needs to have in their account prior to entering into a trade and it is a percentage of the value of that trade. Margin Requirement will continue to increase/decrease in accordance with the volume and direction of the Open Positions."
-msgstr ""
+msgstr "증거금률은 고객께서 거래를 체결하기 이전에 고객의 계좌에 있어야 하는 금액이며 해당되는 거래 가치의 퍼센트입니다. 증거금률은 해당되는 오픈 포지션의 부피와 방향에 따라 꾸준히 증가/감소할 것입니다."
 
 msgid "Margin allows you to trade on leverage – giving you the same level of market exposure using much less capital."
 msgstr ""
@@ -6905,9 +6851,6 @@ msgid "Market execution"
 msgstr ""
 
 msgid "Market exit price"
-msgstr ""
-
-msgid "Market is closed. Please try again later."
 msgstr ""
 
 msgid "Market opinions"
@@ -7114,9 +7057,6 @@ msgstr ""
 msgid "Minute"
 msgstr ""
 
-msgid "Minutes"
-msgstr ""
-
 msgid "Misrepresent Binary or the services that are offered by Binary"
 msgstr ""
 
@@ -7177,12 +7117,6 @@ msgstr "귀하의 증권 일람표를 실시간으로 확인하세요."
 msgid "Monitoring and review of this policy"
 msgstr "본 정책의 모니터링 및 검토"
 
-msgid "Month"
-msgstr ""
-
-msgid "Months"
-msgstr ""
-
 msgid "More benefits"
 msgstr "더 많은 혜택"
 
@@ -7224,9 +7158,6 @@ msgstr ""
 
 msgid "Multi-asset liquidity solutions"
 msgstr ""
-
-msgid "Multi-barrier trading"
-msgstr "다중장벽 거래"
 
 msgid "Multilingual platforms"
 msgstr ""
@@ -7778,7 +7709,7 @@ msgid "Other obligations"
 msgstr "다른 의무사항"
 
 msgid "Other risks: There are other risks related to trading Investment Products and foreign currencies that cannot be described in detail in this document. Generally, however, securities, options, and currency transactions involve exposure to a combination of the following risk factors: market risk, credit risk, settlement risk, liquidity risk, operational risk, and legal risk. For example, there can be serious market disruptions if local or overseas economic, political, or other unforeseen events affect the market. In addition to these types of risk, there may be other factors such as accounting and tax treatment issues that the client should consider."
-msgstr ""
+msgstr "다른 위험: 거래투자상품 및 외환 거래와 관련하여 본 문서에는 자세히 명시될 수 없는 다른 위험들이 있습니다. 일반적으로는, 하지만, 증권, 옵션 및 환거래는 다음의 위험요소들에 노출될 수 있습니다: 시장위험, 신용위험, 결제위험, 유동성 위험, 운영위험 및 법적위험들이 이에 해당됩니다. 예를 들어서, 만약 지역적 또는 해외적으로 경제적, 정치적 또는 다른 예상치 못한 사건들이 시장에 영향을 줄 경우 심각한 시장 혼란이 있을 수 있습니다. 이러한 종류의 위험뿐만 아니라, 고객께서 고려해야 하는 회계 및 세금 관련 문제가 있을 수 있습니다."
 
 msgid "Other than the payment of Commissions, Binary is not liable to the Introducing Broker or their Associates or any other person for any matter arising out of or in relation to this Agreement whether under the law of tort, contract, or equity or otherwise for any loss."
 msgstr ""
@@ -8009,7 +7940,7 @@ msgid "Payment methods"
 msgstr "결제 수단"
 
 msgid "Payment of commission earned for the previous calendar month will be made as soon as practicable after the 15th day of each month."
-msgstr ""
+msgstr "이전 캘린더의 달에 벌어진 수수료의 지불은 각 달의 15일 이후에 실행가능해 질때 바로 가능하게 됩니다."
 
 msgid "Payments"
 msgstr "지불"
@@ -8263,9 +8194,6 @@ msgstr ""
 msgid "Please fill in the Login ID and Amount you wish to transfer to your Client in the form below:"
 msgstr ""
 
-msgid "Please log in."
-msgstr ""
-
 msgid "Please make sure that you first agree with the Agent on the terms of payment before submitting your request."
 msgstr ""
 
@@ -8276,9 +8204,6 @@ msgid "Please note that one lot is equivalent to 100 units, based on our %1contr
 msgstr ""
 
 msgid "Please note that one lot is equivalent to 100 units, based on our contract specifications. Your profit or loss will be calculated as follows:"
-msgstr ""
-
-msgid "Please note that you are currently using your %1Bitcoin Cash%2 account. You can only fund your account in %1Bitcoin Cash%2, and not Bitcoin."
 msgstr ""
 
 msgid "Please provide the tax identification number for the country where you are a tax resident. If you cannot provide this information, kindly contact our customer support team."
@@ -8384,7 +8309,7 @@ msgid "Potential Profit/Loss"
 msgstr ""
 
 msgid "Potential conflicts of interest"
-msgstr ""
+msgstr "잠재적 이해관계 충돌"
 
 msgid "Potential profit"
 msgstr ""
@@ -8513,7 +8438,7 @@ msgid "Primary"
 msgstr ""
 
 msgid "Prior to placing an Order, which results in opening a position, the client acknowledges that it is their responsibility to ensure that their Account Free Margin is sufficient to cover the Margin required in relation to the opening of the position (the \"Margin Requirement\"), and to continuously meet the Margin Requirement."
-msgstr ""
+msgstr "포지션을 개설하는 결과를 가지는 주문을 하기 전에, 고객은 포지션을 개설함과(\"증거금률\") 관련하여 요구되는 증거금을 커버할 수 있을만큼 충분한 계좌 잔여 증거금이 있도록 하는 것과 증거금률에 대해 지속적으로 만족시키는 것은 고객의 책임이라는 것을 인정합니다."
 
 msgid "Proactive approach in problem-solving and solution delivery"
 msgstr ""
@@ -8744,7 +8669,7 @@ msgid "Quote provision"
 msgstr ""
 
 msgid "R. Interpretation of terms"
-msgstr ""
+msgstr "R. 용어의 해석"
 
 msgid "RTS 27 2018"
 msgstr ""
@@ -9229,16 +9154,10 @@ msgstr ""
 msgid "Search..."
 msgstr ""
 
-msgid "Second"
-msgstr ""
-
 msgid "Second line"
 msgstr ""
 
 msgid "Secondary"
-msgstr ""
-
-msgid "Seconds"
 msgstr ""
 
 msgid "Secret question"
@@ -9269,7 +9188,7 @@ msgid "Security disclaimer"
 msgstr "보안 공지"
 
 msgid "Security statement"
-msgstr ""
+msgstr "보안"
 
 msgid "Security testing opportunities"
 msgstr ""
@@ -9552,9 +9471,6 @@ msgstr ""
 
 msgid "Sorry, you have entered an incorrect cashier password"
 msgstr "죄송합니다. 잘못된 캐쉬어 비밀번호를 입력하셨습니다"
-
-msgid "Sorry, your account is not authorised for any further contract purchases."
-msgstr ""
 
 msgid "Source of income"
 msgstr ""
@@ -9932,7 +9848,7 @@ msgid "Take necessary measures to correct and enhance IT operations"
 msgstr "IT 운영을 증진 및 정정을 위한 필요한 조치 진행"
 
 msgid "Taking the following measures, the Company is committed to making sure that the client's personal data and transactions are secure:"
-msgstr ""
+msgstr "다음의 사항을 따름으로써, 본 회사는 고객의 개인정보 및 거래사항이 안전하도록 하는 것에 헌신합니다:"
 
 msgid "Talent Acquisition Executive"
 msgstr "인재 확보 임원"
@@ -10052,9 +9968,6 @@ msgid "That the parties agree in writing that both parties will be exempt from t
 msgstr ""
 
 msgid "That the recipient is obliged by Law to disclose such information, provided that the recipient promptly advises the other party of the legal obligation to disclose such information"
-msgstr ""
-
-msgid "The  acknowledges, recognises, and understands that"
 msgstr ""
 
 msgid "The %1 API has usage limits enforced to prevent abuse and/or repurposing of the %1 API. These usage limits may be changed in the future without notice. If the Programmer consistently exceeds the usage limit or otherwise abuse the service, the Company may block the Programmer's access to the %1 API."
@@ -10256,7 +10169,7 @@ msgid "The Company aims to keep a record of the kinds of activity that the Compa
 msgstr "본 회사는 물질적 갈등에 일어날 수 있거나 일어난 상황에 대한 행위에 대해 기록저장을 하고자 합니다. 본 회사는 또한 실제적인 또는 잠재적인 갈등을 관리하기 위한 절차를 유지합니다. 이는 잠재적으로 갈등상황에 연루될 수 있는 본 회사의 직원 멤버 사이에 적절한 독립성을 유지하기 위한 절차들을 포함합니다. 독립성을 유지하는 이러한 절차는 고객의 이익을 위한 최선의 이익을 위해 행동하고 이해관계 충돌을 외면하거나 또는 어떠한 상황에서는 이해관계 충돌을 피하기 위해 고객 또는 잠재적인 고객을 위하여 행위하는 것을 거부하기 위해 예를 들어서 본 회사의 직원이 요구되는 정보장벽의 수행, 임무 및 책임의 분리 및 독립 정책의 유지를 통해서 이러한 절차가 따를 수 있습니다."
 
 msgid "The Company also collects basic tax residence information for the purposes of CRS/FATCA compliance. The tax information that the client provides may only be disclosed to the authorities who are legally charged with collecting this information for CRS/FATCA reporting, and %1 will only do so to the extent that it is legally obliged to collect it from the clients and disclose it to the authorities. The Company does not use, disclose, or process this information in any other way at any time."
-msgstr ""
+msgstr "본 회사는 또한 CRS/FATCA를 준수하기 위한 목적으로 기본 세금목적 거주인 정보 또한 수집합니다. 고객께서 제공하는 세금정보는 CRS/FATCA 보고를 위해 합법적으로 공개될 수 있는 권위기관에게만 공개될 수 있으며 %1은 고객으로부터 합법적으로 수집될 수 있는 정도까지만 수집할 것이며 권위기관에게 공개할 것입니다. 본 회사는 그 언제라도 다른 수단을 통해서 해당정보를 사용, 공개 또는 처리하지 않습니다."
 
 msgid "The Company also reserves the right to request documentation pertaining to any other legal obligation."
 msgstr "본 회사는 다른 법률상의 의무와 관계된 문서를 요구할 수 있는 권리가 있습니다."
@@ -10265,7 +10178,7 @@ msgid "The Company and the Agent (hereinafter referred to as \"the Parties\") de
 msgstr ""
 
 msgid "The Company collects and assesses the client's data to profile the client in relation to the Company's products. The Company does this manually with the assistance of automated processing. By categorisation, the Company will be able to provide the most appropriate products and services to the client."
-msgstr ""
+msgstr "본 회사는 본 회사의 상품들과 관련하여 고객 프로파일링을 위해 고객의 데이터를 수집하고 평가합니다. 본 회사는 자동화된 프로세스의 지원과 함께 수동으로 이러한 작업을 수행합니다. 분류화를 통해 본 회사는 고객에게 가장 적합한 상품들과 서비스를 제공할 수 있습니다."
 
 msgid "The Company collects, stores, and processes a range of information about the applicant, such as, but not limited to:"
 msgstr ""
@@ -10292,7 +10205,7 @@ msgid "The Company endeavours to open or close the transaction to which the clie
 msgstr "본 회사는 고객의 주문이 본회사로 하여금 합리적으로 가능한 가격과 관계하여 본 회사의 최선집행의무에 따라 고객의 주문을 개시 및 종료하도록 노력합니다. 최선집행의무란, 주문 실행시, 본 회사가 가격, 비용, 속도, 시행 및 지불의 실행가능도, 사이즈, 기질 또는 주문 시행과 관련하여 다른 관련사항들을 고려하며 고객을 위해 가능한 가장 나은 결과를 얻기 위해 충분한 모든 조치를 취해야 한다는 것을 의미합니다."
 
 msgid "The Company has a Stop Out policy which prevents the client from losing more than they have deposited. However, in the event that the client's Open Positions are not closed when the Margin Level for their MT5 Real Account reaches the Stop Out Level, the Company, at its sole discretion, may waive the client's negative balance by crediting their account if their Account Balance goes into a negative balance. The negative balance is determined by aggregating all the negative balances incurred over a 24-hour period across all accounts held by the client. The client acknowledges that, unless they are a retail customer of Binary Investments (Europe) Ltd or a client of Binary (Europe) Ltd or Binary (IOM) Ltd, the offer of the negative balance protection by the Company to the client is at the Company's sole discretion and the Company reserves the right to change the features and eligibility criteria of the negative balance protection at any time. The provisions of the negative balance protection do not apply in the following situations:"
-msgstr ""
+msgstr "본 회사는 고객이 예치한 금액 이상으로 잃는 것을 방지하는 스탑아웃 정책이 있습니다. 그렇지만 고객의 MT5 실계좌에 대한 증거금 비율이 스탑아웃 레벨에 도달했을 때 고객의 오픈 포지션이 닫히지 않는 경우, 본 회사는 본 회사의 전적인 재량으로 고객의 계좌가 마이너스가 되는 경우 해당 고객의 계좌를 처리하여 마이너스 잔액을 탕감해 줄 수 있습니다. 마이너스 잔액은 해당 고객이 소유하고 있는 모든 계좌에 걸쳐 24시간의 기간동안 발생된 모든 마이너스 잔액을 합계하여 결정됩니다. 고객은 고객이 Binary Investments (Europe) Ltd의 소매고객 또는 Binary (Europe) Ltd 또는 Binary (IOM) Ltd의 고객이 아닌 경우, 본 회사의 고객을 위한 마이너스 잔액 보호의 제공은 본 회사의 전적인 재량이며 본 회사는 언제든지 마이너스 잔액 보호의 자격 기준 및 특징들을 변경할 수 있는 권리가 있습니다. 마이너스 잔액 보호 조항은 다음의 상황에서는 적용되지 않습니다:"
 
 msgid "The Company has a general duty to conduct its business with the client honestly, fairly, and professionally and to act in the client's best interests when opening and closing binary options trades with the client."
 msgstr "본 회사는 고객과 정직한, 공정한, 그리고 전문적인 비즈니스를 수행하기 위해 및 고객과 바이너리 옵션 거래를 개시하거나 종결할 시 고객을 위해 최선의 위익을 위해야 하는 일반적 의무가 있습니다."
@@ -10316,7 +10229,7 @@ msgid "The Company has various deposit methods available, each with its own timi
 msgstr "본 회사는 각 예금 방식의 개별 예금 시기가 있는 다양한 예금 방식이 있으며, 그 중 어떤 방식은 인출이 가능하지 않는 것이 있을 수 있습니다. 가능한 결제시간을 포함하여 예금과 인출이 가능한 방식에 대한 자세한 사항은 %1여기%2에서 확인할 수 있습니다."
 
 msgid "The Company holds all the personal data that the Company collects from the client with due diligence and only processes them for purposes as required or allowed by law. This includes the process of obtaining and sharing of certain information with third parties for credit or identity checks to comply with legal and regulatory obligations. In certain cases, the Company may process the client's data to fulfill the Company's contractual obligations with the client."
-msgstr ""
+msgstr "본 회사는 상당한 주의를 기울여 고객으로부터 수집하는 모든 개인정보를 다루며 법적으로 요구되어지거나 허용되는 목적으로만 처리되어집니다. 이는 법적 및 규제적 의무에 따르기 위해 신용 또는 신원확인을 위해 특정 정보에 대한 제 3자와의 공유 및 습득절차를 포함합니다. 특정한 경우에는, 본 회사는 본 회사와 고객과의 계약적 의무사항을 수행하기 위해 고객의 데이터를 처리할 수 있습니다."
 
 msgid "The Company holds customer funds in bank accounts separate from the operational accounts, and arrangements have been made to ensure that the assets in the customer accounts will be distributed to the customers in the event of insolvency."
 msgstr ""
@@ -10355,7 +10268,7 @@ msgid "The Company mainly provides contracts for difference (CFDs) via MT5 platf
 msgstr "본 회사는 MT5 플랫폼을 통해 주로 차액거래 (CFDs)를 제공합니다."
 
 msgid "The Company maintains customer balances in cash or cash equivalent. The Company ensures that 100% of each customer's balance is available for immediate withdrawal, subject to verification."
-msgstr ""
+msgstr "본 회사는 고객의 잔액을 현금 또는 현금과 동일한 수단으로 유지할 것입니다. 본 회사는 각 고객의 잔액 100%가 확인 여부에 따라 즉시 인출 가능하도록 확실히 합니다."
 
 msgid "The Company makes no claims that the %1 website will be uninterrupted or provide an error-free service and will not be liable for the consequences of any such errors or interruptions."
 msgstr "본 회사는 %1 웹사이트가 중단되지 않거나 에러가 없는 서비스를 제공한다는 주장을 전혀 하지 않으며 이러한 에러나 방해로 인한 결과에 대해 법적 책임이 없을 것입니다."
@@ -10385,7 +10298,7 @@ msgid "The Company may impose certain rules and restrictions on the placing of m
 msgstr "본 회사는 이 웹사이트에 시장 주문을 배치함과 관련하여 특정 규정 및 제한을 도입할 수 있습니다. 이러한 규정은 시장 조건과 다른 요인에 따라 때때로 변경 될 수 있습니다. 이와 관련한 규칙은 현재 여기에서 확인할 수 있습니다:"
 
 msgid "The Company may modify Margin Requirements for any Open Positions or new Orders at its sole discretion. Formulas for Margin Requirements published on the website are indicative only and may be changed by the Company at its discretion at any time, due to changing market conditions or other factors."
-msgstr ""
+msgstr "본 회사는 본 회사의 전적인 재량으로 그 어떠한 오픈 포지션 또는 새로운 주문에 대한 증거금률을 변경할 수 있습니다. 웹사이트 상에 공개되어 있는 증거금률에 대한 공식은 오직 나타내는 것이며 변동되는 시장 상황 또는 다른 요소에 따라 본 회사 전적인 재량으로 그 언제든지 변경될 수 있습니다."
 
 msgid "The Company may modify any provisions or terms of this Agreement at any time. It is the responsibility of the Introducing Broker to consistently review all modifications in the Agreement made on the website."
 msgstr ""
@@ -10457,7 +10370,7 @@ msgid "The Company reserves the right to change any part of this Agreement at an
 msgstr "본 회사는 언제라도 이 동의문의 그 어떠한 부분이라도 변경할 권리가 있습니다. 이 동의문에 변경이 있는 경우 본 회사는 제휴자들에게 공지할 수 있도록 하겠습니다. 하지만 이 약관을 정기적으로 확인하는 것은 전적으로 제휴자의 책임입니다. 본 회사가 변경된 내용을 공시한 후에 제휴자의 지속되는 본 회사 제휴 프로그램은 이러한 변경에 대한 수락을 구성합니다."
 
 msgid "The Company reserves the right to charge the Margin per each hedged lot of a position."
-msgstr ""
+msgstr "본 회사는 포지션에 있어서 각 헤지되는 부분에 대한 증거금을 변경할 권리가 있습니다."
 
 msgid "The Company reserves the right to have risk limits in place, which affect the trading limits of all clients trading, and may not be limited solely to instruments and contract types."
 msgstr "본 회사는 위험한도를 설정할 수 있는 권리가 있습니다. 이러한 위험한도는 거래하는 모든 고객의 거래에 영향을 주며, 단지 상품과 계약의 종류에만 국한되는 것이 아닐 수 있습니다."
@@ -10544,7 +10457,7 @@ msgid "The Company typically collects and uses the applicant's Personal Data for
 msgstr ""
 
 msgid "The Company uses identity verification services and real-time fraud detection measures to help protect the client from unauthorised access to the client's account. The Company also monitors account activity for signs of unusual activity that might indicate fraud and work with collection and law-enforcement agencies to address fraud issues."
-msgstr ""
+msgstr "본 회사는 고객의 계좌로 허가되지 않은 접근으로부터 보호될 수 있도록 신원확인 서비스를 사용하며 실시간 사기 적발조치 서비스를 활용합니다. 본 회사는 또한 사기를 나타낼 수 있는 비정상적인 활동의 신호에 대한 계좌 활동을 모니터링하며 사기문제를 다루기 위해 수집기관 및 법 집행기관과 협동합니다."
 
 msgid "The Company uses identity verification services and real-time fraud detection measures to help protect the client from unauthorised access to their account. The Company also monitors account activity for signs of unusual activity that might indicate fraud and works with collection agencies and law-enforcement agencies to address fraud issues."
 msgstr "본 회사는 고객의 계좌가 허가되지 않은 접근으로부터 보호될 수 있도록 실시간 사기 적발 조치 및 신원확인 서비스를 활용합니다. 그 뿐만 아니라 사기를 나타내는 비정상적인 활동의 신호에 대해 계좌를 모니터링하며 사기문제를 해결하기 위해 수집기관 및 법 집행기관과 협동합니다."
@@ -10586,10 +10499,10 @@ msgid "The Company's commitment to provide the client with 'best execution' does
 msgstr "고객에게 '최선집행의무'를 제공하고자 하는 전념은 본 회사가 고객에게 본 회사로 맡긴 특정 규정적인 의무사항이나 또는 본 회사와 귀하 사이 따로 체결되어진 계약적인 부분에 대하여 신용적으로 수행해야 하는 의무가 있다는 의미는 아닙니다."
 
 msgid "The Company's cookies are not deemed dangerous and cannot access any other information on the client's computer."
-msgstr ""
+msgstr "본 회사의 쿠키는 위험한 것이 아니며 고객의 컴퓨터 상에 다른 정보에는 접근할 수 없습니다."
 
 msgid "The Company's costs and charges for depositing and withdrawing money are set out %1here%2. The client should be aware of all costs and charges that apply to the client because they will affect the client's profitability."
-msgstr ""
+msgstr "예금 및 인출에 대한 본 회사의 비용과 요금은 %1여기%2에 나와 있습니다. 고객께서는 고객의 수익에 영향을 주게 되는 고객에게 적용되는 모든 비용과 요금에 대해서 알고 계셔야 합니다."
 
 msgid "The Company's data feed is designed to be one of the best and most robust available for a trading environment."
 msgstr "본 회사의 데이터 피드는 거래환경에 있어 가장 탄탄하며 최고의 수준으로 디자인되었습니다."
@@ -10622,10 +10535,10 @@ msgid "The Company's policy cannot provide a guarantee, however, that when enter
 msgstr "본 회사의 정책은 확실한 보장을 제공할 수 없습니다. 하지만, 고객과 계약을 체결할 시에, 적용되는 가격은 다른 곳에서 적용되어온 또는 적용되는 가격보다는 항상 더 좋을 것입니다."
 
 msgid "The Company's services are provided on an execution-only basis. The Company does not provide investment advice in relation to the Company's products or services. The Company sometimes provides factual information or research recommendations about a market, information about transaction procedures, and information about the potential risks involved and how those risks may be minimised. However, any decision to use the Company's products or services is made by the client."
-msgstr ""
+msgstr "본 회사의 서비스는 실행 전용으로만 제공됩니다. 본 회사는 본 회사의 상품 또는 서비스와 관련있는 투자조언을 제공하지 않습니다. 본 회사는 때때로 시장에 대한 사실적 정보 또는 리서치 추천 및 관련되어 있는 잠재적인 위험에 대한 정보와 이러한 위험들이 어떻게 최소화될 수 있는지에 대해 제공합니다. 그렇지만 본 회사의 상품 또는 서비스 사용에 대한 결정은 고객에 의해 결정됩니다."
 
 msgid "The Company's website contains links to other websites and may contain banner or icon advertisements related to third-party websites. These websites and their advertisements may submit cookies to the client's web browser, which is beyond the Company's control. The Company is not responsible for the privacy practices or the content of such websites. The Company encourages the client to read the privacy policies of these websites because their practices may differ from the Company's."
-msgstr ""
+msgstr "본 회사의 웹사이트는 다른 웹사이트로의 링크를 포함하며 제 3자 업체의 웹사이트에 관련한 배너 또는 아이콘 광고를 포함할 수 있습니다. 이러한 웹사이트와 광고들은 고객의 웹 브라우저로 쿠키를 보낼 수 있으며 이는 본 회사가 제어할 수 있는 범위 밖입니다. 본 회사는 이러한 웹사이트들의 개인정보 보호정책이나 또는 내용에 대해 책임이 없습니다. 본 회사와의 다른 정책이 있을 수 있기 때문에 본 회사는 고객으로 하여금 이러한 웹사이트의 개인정보 보호 정책을 읽을 수 있도록 장려합니다."
 
 msgid "The Company, exercising its absolute discretion, may accept or reject the Agent's application. Where the Agent's application is accepted, the Company shall include all relevant information, including but not limited to name, address, website URL (if available), email address, telephone number, commission rates, and payment methods used by the Agent, in the payment agent list which is disclosed on the Company's website, %1www.binary.com%2."
 msgstr ""
@@ -10706,10 +10619,10 @@ msgid "The Margin Level of the client's MT5 Real Account reaches or falls below 
 msgstr ""
 
 msgid "The Margin trading services described in this agreement are conducted over the counter (\"OTC\"). "
-msgstr ""
+msgstr "이 동의문에 명시되어 있는 마진 거래 서비스는 장외시장(\"OTC\")상에서 수행됩니다."
 
 msgid "The Margin used in Margin calculations will be whichever is bigger: the Margin implied by the account's Leverage or the symbol's Margin. The account has a specific Margin, but symbol's Margin may vary. "
-msgstr ""
+msgstr "증거금 계산에 사용된 증거금의 경우 다음의 사항에서 둘 중 하나가 높을 것입니다: 계좌의 레버리지에 의해 나타나는 증거금 또는 해당 기호의 증거금이 이에 해당합니다. 계좌는 특정한 증거금이 있지만 기호의 증거금은 다양할 수 있습니다."
 
 msgid "The Marketing team oversees all our marketing and advertising initiatives, such as our affiliate programme, social media presence, webinars, and emails. As our Marketing Executive, you will coordinate and execute marketing campaigns across a variety of channels, and continuously identify the best ways to reach current and prospective customers."
 msgstr "마케팅팀은 우리의 제휴 프로그램, 소셜 미디어 참여, 웨비나 및 이메일과 같은 모든 광고 계획 및 마케팅을 감독합니다. 우리의 마케팅 임원으로서, 귀하는 다양한 채널에 걸쳐 마케팅 캠페인을 수행하고 조직화 할 것이며, 현재 및 잠재고객에게 닿기 위한 최선의 방법을 지속적으로 강구할 것입니다."
@@ -10826,7 +10739,7 @@ msgid "The Standard account is suitable for a wide range of traders, both new or
 msgstr ""
 
 msgid "The Stop Out Level applicable to the client's MT5 Real Account may differ from the default Stop Out Level published on the Company website."
-msgstr ""
+msgstr "고객의 MT5 실계좌에 적용될 수 있는 스탑아웃 레벨은 본 회사의 웹사이트에 게시되어 있는 기준 스탑아웃 레벨과는 다를 수 있습니다."
 
 msgid "The Synthetic Indices account allows you to trade CFDs on Synthetic Indices – our proprietary synthetic assets that mimic real-world market volatility and are available for trading 24/7."
 msgstr ""
@@ -10841,9 +10754,6 @@ msgid "The ability to draft and review legal documents, and prepare licence appl
 msgstr ""
 
 msgid "The ability to make rational decisions even based on limited information"
-msgstr ""
-
-msgid "The all-new rapid trading experience"
 msgstr ""
 
 msgid "The anti-money laundering processes have the following effects on clients:"
@@ -10925,7 +10835,7 @@ msgid "The client acknowledges that it is their responsibility to cancel the Sto
 msgstr "역지정가 또는 지정가 주문이 유효한 상태로 있는 것을 원하지 않는 경우 역지정가 또는 지정가주문을 취소하는 것은 고객의 책임인 것을 고객께서는 인정합니다. 만약 고객께서 역지정가 또는 지정가 주문을 취소하지 않는 경우, 본 회사는 본 회사의 견적이 해당되는 역지정가 또는 지정가 주문의 수준에 도달하거나 넘어가는 경우 본 회사의 전적인 재량으로 해당되는 역지정가 또는 지정가 주문을 해당되는 고객을 위해 새로운 거래를 체결하는 지침으로써 다룰 자격이 있습니다."
 
 msgid "The client acknowledges that it is their responsibility to monitor their Account Balance and Margin Requirement, and the Company is not under any obligation to keep the client informed (i.e. to make a Margin Call)."
-msgstr ""
+msgstr "고객의 계좌 잔액과 증거금률을 모니터링 할 책임이 있다는 것과 본 회사는 고객이 항상 알도록 할 (예로, 마진콜) 그 어떠한 의무사항이 없다는 것을 고객은 인정합니다."
 
 msgid "The client acknowledges that it is their responsibility to understand the features, characteristics, terms, and conditions of an Order and the implications of executing an Order before they place an Order with the Company."
 msgstr "고객은 고객께서 본 회사와 함께 주문을 신청하기 이전에 주문실행의 특성, 특징, 용어, 조건을 이해하는 것이 고객의 책임인 것을 인정합니다."
@@ -10937,6 +10847,9 @@ msgid "The client acknowledges that the Company reserves the right to void or cl
 msgstr ""
 
 msgid "The client acknowledges that the Company will determine, at its discretion, the transactions that will be kept in the Company's own book (known as B booking) and the transactions that will be passed through to the prime brokers who act as liquidity providers for the Company (known as A booking). For the former, the Company is the counterparty in these transactions, and a correlation exists between the profit/loss made by the client and the profit/loss made by the Company. At any point in time, the Company may be entering into or may have entered into transactions with a large number of clients, each of whose interests may diverge from those of other clients. As such, the Company may be holding Open Positions that may not be aligned with the client's objectives/interests as an individual client of the Company."
+msgstr ""
+
+msgid "The client acknowledges, recognises, and understands that"
 msgstr ""
 
 msgid "The client acknowledges, understands, represents, and warrants that they are aware of the functional limitations of the MT5 trading platform (for example Wine, which is not a fully stable application, as disclosed by the MT5 trading platform licensor on their website)."
@@ -10958,7 +10871,7 @@ msgid "The client also has the right to request that the Company copy, modify, o
 msgstr ""
 
 msgid "The client also has the right to request that the Company inform the client about the personal data that the Company processes about the client and to provide its correction where necessary."
-msgstr ""
+msgstr "고객은 또한 본 회사가 고객에게 본 회사가 고객에 대해 처리하는 개인정보에대하여 그리고 필요한 경우 이에 대한 올바른 수정을 제공할 수 있도록 요청할 권리가 있습니다."
 
 msgid "The client bears the responsibility of ensuring that payments made to BIEL are correctly received with the specified client's account details."
 msgstr ""
@@ -11003,7 +10916,7 @@ msgid "The client is acting for their sole benefit, and not for or on behalf of 
 msgstr "고객은 단지 고객 단독만의 이익을 위해 활동하며, 타인을 위하거나 대신해서 활동하지 않습니다."
 
 msgid "The client is advised that the binary options offered by %1 are not traded under the rules of any recognised, designated, or regulated exchange. Consequently, engaging in binary options trading may expose the client to substantially greater risks than the investments that are so traded."
-msgstr ""
+msgstr "고객은 %1으로부터 제공되는 바이너리 옵션들은 인정되거나, 지정되었거나 또는 규제되는 거래소 아래 거래되는 것이 아니라는 것에 대해 권고받았습니다. 결과적으로 바이너리 옵션 거래에 관여하는 것은 고객으로 하여금 투자한 금액보다 상당히 더 큰 위험에 노출될 수 있습니다."
 
 msgid "The client is advised to note that prices can change very quickly in the market, so the execution price may not necessarily be visible instantly once the Order has been filled."
 msgstr ""
@@ -11027,7 +10940,7 @@ msgid "The client is responsible for all third-party electronic transfer fees in
 msgstr ""
 
 msgid "The client is responsible for keeping the client's log-in details secure, the security of any linked email address, and the security (password protection, screen locking, etc.) of any personal computer or device on which the client's account is accessible. The Company shall not be held responsible if there is unauthorised use of the account when the Company is not at fault."
-msgstr ""
+msgstr "고객의 로그인 상세정보, 연결된 이메일 주소의 보안 및 고객의 개인 계좌에 접근가능한 어떠한 개인 컴퓨터 또는 장치의 보안(비밀번호 보호, 화면 잠금 등)에 대하여 안전하게 보안을 유지하는 것은 고객의 책임입니다. 본 회사의 잘못이 아닌 경우 허가되지 않은 계좌 사용에 대해서 본 회사는 책임이 없습니다."
 
 msgid "The client is responsible for managing the client's tax and legal affairs, including making any regulatory filings and payments and complying with applicable laws and regulations. The Company does not provide any regulatory, tax, or legal advice. If the client is in any doubt as to the tax treatment or liabilities%2 of Products available through %1%3, the client may wish to seek independent advice."
 msgstr ""
@@ -11048,7 +10961,7 @@ msgid "The client may communicate with the Company through this website or by me
 msgstr "고객께서는 본 웹사이트 또는 이메일, 전화 또는 예외적으로는 우편을 통하여 본 회사와 소통할 수 있습니다. 자세한 사항은 Contact us 페이지에서 찾을 수 있습니다."
 
 msgid "The client may make Margin Payments by transferring funds from their %1 account to their MT5 Real Account. In the event that there are insufficient funds in the client's %1 account to fund their MT5 Real Account, they may make Margin Payments by funding their %1 account and transferring the funds from their %1 account to their MT5 Real Account."
-msgstr ""
+msgstr "고객은 고객의 %1 계좌로부터 고객의 MT5 실계좌로 자금을 이체함으로써 증거금 지불을 처리할 수 있습니다. 고객의 %1 계좌에서 고객의 MT5 실계좌로 이체할 수 있는 충분한 자금이 없는 경우, 고객은 고객의 %1 계좌에 자금을 추가하여 해당 자금을 %1 계좌에서 고객의 MT5 실계좌로 이체함으로써 증거금 지불을 처리할 수 있습니다."
 
 msgid "The client may not cancel or amend the level of their Stop and Limit Order once the level has been reached."
 msgstr "고객께서는 고객의 역지정가 주문 및 지정가 주문의 레벨에 도달하는 경우 해당 레벨을 취소하거나 수정할 수 없습니다."
@@ -11057,7 +10970,7 @@ msgid "The client may specify their instruction of a Stop Order or apply for a L
 msgstr "고객은 고객의 역지정가 주문의 지침을 명시하거나 제한된 기한 또는 무기한의 기한 동안에 해당하는(\"해지될 때까지 지속되는\" 또는 \"GTC\" 주문) 지정가주문을 적용할 수 있습니다."
 
 msgid "The client may update the client's personal information at any time by logging in to the \"Settings\" section of the client's account. It is the client's responsibility to ensure that %1 is promptly and continually informed of any change in the client's personal information. The client should note that if the client provides the Company with inaccurate information, or if the client fails to notify the Company of any changes to the information previously supplied by the client, this may adversely affect the quality of the services that the Company can provide."
-msgstr ""
+msgstr "고객께서는 로그인 후 고객의 계좌 섹션에 있는 \"환경설정\"을 통해 언제든지 고객의 정보를 업데이트할 수 있습니다. 고객 개인정보에 대한 그 어떠한 변경사항에 대하여 %1이 즉시 그리고 지속적으로 공지를 받도록 확실히 하는 것은 고객의 책임입니다. 만약 고객께서 본 회사에 부정확한 정보를 제공하거나 사전에 고객께서 본 회사로 제공한 정보에 대해 어떠한 변경을 공지 하지 않는다면 본 회사가 제공할 수 있는 서비스의 품질에 불리하게 작용할 수 있습니다."
 
 msgid "The client may withdraw the bonus amount once the client has exceeded an account turnover of 25 times the bonus amount value."
 msgstr "고객께서는 계좌 턴오버가 보너스 금액의 25배를 초과한 경우에 보너스 금액을 인출할 수 있습니다."
@@ -11078,13 +10991,13 @@ msgid "The client should not sign up to receive the trading services described i
 msgstr ""
 
 msgid "The client should not trade or invest in binary options unless the client knows and understands the products' risks involved and that the client may lose all the money invested."
-msgstr ""
+msgstr "고객은 연관되어 있는 상품의 위험과 고객이 투자한 모든 자금을 잃을 수 있다는 점에 대해 알고 이해하지 않는 이상 바이너리 옵션에 투자를 하거나 거래해서는 안됩니다."
 
 msgid "The client should note that the Company's duty to provide the client with best execution does not apply to any gambling products that the client places with the Company when there is no underlying financial market."
 msgstr ""
 
 msgid "The client should note that the Company's website generates log files that record the IP addresses of accesses to the client's account, login attempts, and device information such as the manufacturer, model, operating system, and browser. This information is gathered for the sole purpose of providing assistance with investigating a client's account in the unlikely event that the account is accessed by unauthorised users. Information supplied by some cookies also helps the Company understand how visitors use the website, so that the Company can improve how it presents its content."
-msgstr ""
+msgstr "본 회사는 본 회사의 웹사이트가 고객의 계좌에 접근되는 IP주소, 로그인 시도 및 제조사, 모델명, 운영체제 및 브라우저와 같은 장치 정보를 기록하는 로그 파일을 생성한다는 것을 아셔야 합니다. 이러한 정보는 고객의 계좌가 인가되지 않은 사용자들에 의해 접근되는 예상치 않은 상황에 대해 고객의 계좌를 조사하는 것에 지원을 제공하기 위한 단독 목적으로 수집됩니다. 쿠키가 제공하는 정보는 본 회사가 웹사이트의 내용을 표시하는 방식을 향상시키기 위해 본 회사가 방문객들이 어떻게 웹사이트를 이용하는지 잘 이해할 수 있도록 도와줍니다."
 
 msgid "The client understands that products based on a random number generator (the \"Volatility Indices\") are gaming products whereas products based on financial market indices (forex, indices, and commodities) are financial instruments."
 msgstr ""
@@ -11096,7 +11009,7 @@ msgid "The client's Account Balance includes Margin Requirement. The amount of t
 msgstr ""
 
 msgid "The client's Account Balance represents"
-msgstr ""
+msgstr "고객의 계좌 잔액은 다음을 나타냅니다"
 
 msgid "The client's Account Equity minus their Total Margin"
 msgstr ""
@@ -11126,7 +11039,7 @@ msgid "The client's forex and contract-for-difference transactions with %1 are l
 msgstr ""
 
 msgid "The client's password and login ID are unique, and passwords are hashed so that not even %1 staff can read them. This is the reason why the Company cannot retrieve the client's password and has to issue the client with a new one, sent to the client's email address, if the client cannot recall it."
-msgstr ""
+msgstr "고객의 비밀번호와 로그인 아이디는 독특하며 비밀번호는 %1의 직원들도 읽을 수 없도록 우물정자로 표기됩니다. 이점이 고객께서 비밀번호를 잊은 경우에 고객의 비밀번호를 되찾을 수 없으며 고객의 이메일로 새로운 비밀번호를 제공해야 하는 이유입니다."
 
 msgid "The client's personal information is used primarily as a way of validating the client as the legitimate account owner and proper recipient of withdrawal payments. The Company also uses this information to process the client's trades. The Company collects from the client all personal and financial data directly relating to the client when the client fills in the Company's account opening form. In all instances, the client has either a legal or a contractual obligation to provide the Company with the information. If such information is not provided, the Company will be unable to provide the client with its services."
 msgstr "고객의 개인정보는 고객의 합법적인 계좌 소유자 여부 및 인출지불 금액의 올바른 수령인인지를 확인하기 위한 주된 수단으로 이용됩니다. 본 회사는 또한 고객의 거래를 처리하기 위해 이 정보를 이용합니다. 본 회사는 고객이 본 회사의 계좌 개설 서류에 작성한 내용과 관련하여 고객의 모든 개인정보 및 금융정보를 수집합니다. 모든 상황에서 고객께서는 본 회사에게 이런 정보를 제공해야 하는 법적 또는 계약상의 의무가 있습니다. 만약 이러한 정보가 제공되지 않는다면, 본 회사는 고객에게 서비스를 제공하지 못합니다."
@@ -11168,7 +11081,7 @@ msgid "The default DNS services provided by your ISP can be slow and insecure. %
 msgstr ""
 
 msgid "The default Stop Out Level applicable to the client's account is published on the Company website. However, the default Stop Out Level is subject to alteration at the Company's absolute discretion. Any changes to the Stop Out Level will take effect immediately. The Company will endeavour to notify the client of an alteration to the default Stop Out Level by publishing the revised default Stop Out Level on the Company website. It is the client's responsibility to check the Company website regularly and remain informed about the default Stop Out Level."
-msgstr ""
+msgstr "고객의 계좌에 적용 가능한 기준 스탑아웃 레벨은 본 회사의 웹사이트에 게시되어 있습니다. 그렇지만, 기준 스탑아웃 레벨은 본 회사의 전적인 재량에 따라 변경될 수 있습니다. 스탑아웃 레벨에 대하여 변경되는 부분은 그 즉시 효력이 발생됩니다. 본 회사는 본 회사의 웹사이트에 개정된 기준 스탑아웃 레벨을 고객의 계좌에 적용 가능한 기준 스탑아웃 레벨은 본 회사의 웹사이트에 게시되어 있습니다. 그렇지만, 기준 스탑아웃 레벨은 본 회사의 전적인 재량에 따라 변경될 수 있습니다. 스탑아웃 레벨에 대하여 변경되는 부분은 그 즉시 효력이 발생됩니다. 본 회사는 본 회사의 웹사이트에 개정된 기준 스탑아웃 레벨을 게시하여 고객에게 기준 스탑아웃 레벨의 변경에 대해 공지할 수 있도록 노력할 것입니다. 본 회사의 웹사이트를 정기적으로 확인하고 기준 스탑아웃 레벨에 대하여 알고 있는 것은 고객의 책임입니다."
 
 msgid "The duration is the length of a purchased trade (see 'contract period')."
 msgstr ""
@@ -11222,7 +11135,7 @@ msgid "The great outdoors"
 msgstr ""
 
 msgid "The high-risk and speculative nature of forex and CFDs"
-msgstr ""
+msgstr "외환과 차액거래의 고위험 및 투기적인 성질"
 
 msgid "The information outlined in Paragraph 1 of this section shall be submitted to <a href=\"mailto:%1\">%1</a>."
 msgstr ""
@@ -11465,7 +11378,7 @@ msgid "There are no restrictions to the use of Expert Advisors on the MT5 tradin
 msgstr ""
 
 msgid "There are risks associated with utilising an Internet-based deal execution trading system, including, but not limited to, the failure of hardware, software, and Internet connection. Since %1 does not control signal power, its reception or routing via Internet, the configuration of the client's equipment, or the reliability of its connection, the Company cannot be responsible for communication failures, distortions, or delays during online trading."
-msgstr ""
+msgstr "인터넷을 기반으로 하는 거래 시행 트레이딩 시스템을 사용함과 관련한 위험들이 있습니다. 이 위험에는 하드웨어, 소프퉤어 및 인터넷 연결에만 국한되지 않습니다. %1이 신호의 강도, 신호의 수신 또는 인터넷을 통한 라우팅, 고객 장비의 환경설정 또는 장비 연결의 안전성을 제어하지 않기 때문에, 본 회사는 온라인 거래에 있어서 통신장애, 왜곡 또는 지연에 대해 책임을 질 수 없습니다."
 
 msgid "There are two types of In/Out trades:"
 msgstr "인/아웃 트레이드에는 두 종류가 있습니다:"
@@ -11720,7 +11633,7 @@ msgid "This notice does not explain all of the risks involved in investments or 
 msgstr ""
 
 msgid "This notice provides the client with information about the risks associated with the contracts the client may purchase through services provided by %1 services."
-msgstr ""
+msgstr "이 공지는 고객에게 %1 서비스들로부터 제공되는 서비스를 통해 구매할 수 있는 계약과 연관된 위험들에 관한 정보를 제공합니다."
 
 msgid "This obligation encompasses the prohibition of unlawful payments or the granting of any form of unlawful benefits to public officials, business partners, employees, family members, or any other partners."
 msgstr ""
@@ -11744,12 +11657,9 @@ msgid "This requirement is mandated by the Common Reporting Standard (CRS) and t
 msgstr ""
 
 msgid "This risk disclosure statement is not exhaustive and is not intended to constitute a comprehensive statement of all the risks to which the client might be exposed and does not describe all the risks inherent to forex and contracts for differences that exist now or which may arise in the future. Its objective is rather to provide the client with information, so that the client can reasonably understand the risks associated with forex and contracts for differences offered by %1, as it is the Company's intention to provide the client with the best possible trading experience."
-msgstr ""
+msgstr "이 위험공시약관은 철저하지 않으며 고객이 노출될 수 있는 모든 위험들에 대해 포괄적인 내용을 구성하는 의도가 아니며 외환과 차액거래에 있어 현재 또는 미래에 초래할 수 있는 모든 위험들에 대해서는 설명하지 않습니다. 본 내용의 목적은 고객을 위해 가능한 최상의 거래 경험을 제공하기 위한 본 회사의 의도로써, %1에 의해 제공되는 외환과 차액거래를 고객께서 합리적으로 이해할 수 있도록 고객에게 정보를 제공하고자 하는 목적입니다."
 
 msgid "This section on force majeure events does not apply to Volatility Indices."
-msgstr ""
-
-msgid "This symbol is not active. Please try another symbol."
 msgstr ""
 
 msgid "This website's services are not made available in certain countries such as the USA, Canada, Hong Kong, Japan, or to persons under age 18."
@@ -11864,7 +11774,7 @@ msgid "To learn more, read our %1Margin Policy%2 that further explains our margi
 msgstr ""
 
 msgid "To maintain Open Positions, the client is required to have sufficient Account Equity to cover any Margin Requirement. If a client's Margin Level is less than the Margin Level set for their account, the client has entered into a Margin Call and is required to increase their Margin Level above the account's specified level in order to avoid a Stop Out to occur. The client may not be able to place an Order to open a transaction unless there is sufficient Account Equity to cover the Total Margin."
-msgstr ""
+msgstr "오픈 포지션을 유지하기 위해 고객께서는 그 어떠한 증거금률을 만족시킬 수 있는 충분한 계좌 가치가 있도록 요구됩니다. 만약 고객의 증거금 수준이 고객의 계좌에 설정된 증거금 수준보다 작을 경우, 고객께서는 마진콜을 체결하며 스탑아웃이 일어나는 것을 피하기 위해 계좌의 명시되어 있는 수준 위로 증거금 수준이 증가될 수 있도록 요구됩니다. 고객께서는 토탈 마진을 커버할 수 있는 충분한 계좌가치가 있지 않으면 거래를 개설하기 위해 주문을 할 수 없을 수도 있습니다."
 
 msgid "To perform this action, please %1upgrade to %2 Real Account%3."
 msgstr ""
@@ -11992,9 +11902,6 @@ msgstr "24시간 7일 내내, 그리고 주말에도 거래하실 수 있습니�
 msgid "Trade Bitcoin, Ethereum, and Litecoin pairs without owning them. Our cryptocurrency pairs quote a cryptocurrency such as Bitcoin against a fiat currency, such as the US dollar."
 msgstr ""
 
-msgid "Trade FX binary options on our multi-barrier platform, Ladders."
-msgstr "우리의 다중장벽 플랫폼인 Ladders에서 외환 바이너리 옵션을 거래하세요."
-
 msgid "Trade Forex and CFDs on our popular multi-asset platform."
 msgstr "저희의 멀티 자산 플랫폼에서 외환과 CFDs를 거래하세요."
 
@@ -12109,9 +12016,6 @@ msgstr "트레이딩 플랫폼"
 msgid "Trading Times"
 msgstr "거래 시간"
 
-msgid "Trading Window"
-msgstr "거래기간"
-
 msgid "Trading and Withdrawal Limits"
 msgstr "거래 및 인출 한도"
 
@@ -12137,7 +12041,7 @@ msgid "Trading guru"
 msgstr "트레이딩 전문가"
 
 msgid "Trading in binary options is speculative and involves a high degree of risk that can result in the loss of the client's entire investment. Therefore, trading in binary options is appropriate only for persons that understand and are willing to assume the economic, legal, and other risks involved in such transactions. The client should be satisfied that binary options trading is suitable for the client in light of the client's investment circumstances and attitude towards risk before trading. The client should not engage in speculative binary options trading unless the client understands the basic aspects of such trading and its risks. If the client is in any doubt as to whether Binary Option trading is appropriate and suitable for the client, the client should seek independent advice from an investment consulting professional. %1 does not provide such advice. It is the client's responsibility, taking into account the client's personal circumstances and investment resources, to take particular care and make careful considerations independently, both prior to applying to engage in binary options with %1 and prior to making any individual order. Where the client does not understand the risks involved in applying for a trading account with %1 or in making any individual order, the client should seek advice and consultation from an independent investment advisor. If the client continues to not understand the risks involved in trading in binary options, the client should not trade at all."
-msgstr ""
+msgstr "바이너리 옵션을 거래하는 것은 투기적이며 고객이 투자한 모든 금액을 잃을 수 있는 결과를 초래하는 높은 수준의 위험이 따를 수 있습니다. 그렇기 때문에, 바이너리 옵션을 거래하는 것은 이러한 거래에 연관되어 있는 경제적, 법적 및 다른 위험들을 예측할 의향이 있고 이해하는 사람만에게만 적합합니다. 고객은 거래를 하기 전에 위험에 대하는 고객의 투자상황과 자세에 관해서 바이너리 옵션 거래가 고객에게 적합하다는 것에 대해 고객은 만족해야 합니다. 고객은 고객이 이러한 거래와 이에 따를 수 있는 위험에 대한 기본적인 양상에 대해 이해하지 못한다면 투기적인 바이너리 옵션 거래에 관여하지 않아야 합니다. 만약 바이너리 옵션 거래가 해당 고객에게 적절하거나 적합한지에 대해 고객께서 의문이 있다면, 해당 고객은 투자 상담 전문가로부터 독립적인 조언을 구해야 합니다. %1은 이러한 조언을 제공하지 않습니다. %1을 통해 바이너리 옵션에 관여하기 전 지원하기전과 개별적인 주문을 하기 전에 고객의 개인 상황과 투자자원에 대해 고려하는 것과, 개별적으로 신중하고 주의깊은 고려를 하는 것은 고객의 책임입니다. %1을 통해 거래 계좌를 지원함과 어떠한 개별적인 주문을 하기 이전에 관련 위험을 고객이 이해하지 못하는 경우에는 해당 고객은 독립투자자문가로부터 조언과 상담을 구해야 합니다. 만약 고객이 그래도 바이너리 옵션을 거래함에 관련된 위험에 대해 이해하지 못한다면, 해당 고객은 거래를 전혀 하지 않아야 합니다."
 
 msgid "Trading is unavailable at this time."
 msgstr ""
@@ -12206,7 +12110,7 @@ msgid "Transfer of data"
 msgstr ""
 
 msgid "Transfer of funds"
-msgstr ""
+msgstr "자금의 이체"
 
 msgid "Transfer of funds from the MT5 Real Account"
 msgstr ""
@@ -12219,6 +12123,9 @@ msgstr "로그인 ID로 이체하세요"
 
 msgid "Transfer to MT5"
 msgstr "MT5로 이체하세요"
+
+msgid "Transfers between Binary fiat and cryptocurrency accounts are allowed up to a maximum of USD 2,500.00 or equivalent. Fiat and cryptocurrency transfers are also allowed between Binary and MT5 accounts. Charges may apply for every successful transaction."
+msgstr "Binary 피앗과 암호화폐간의 거래는 최대 미화 2,500.00달러 또는 그에 동등한 금액만큼 허용됩니다. 피앗과 암호화폐의 거래는 또한 Binary와 MT5 계좌간에도 허용됩니다. 모든 성공적인 거래에는 수수료가 청구될 수 있습니다."
 
 msgid "Translate data into consumable information and assist in making data-driven decisions across departments."
 msgstr "데이터를 소모가능한 정보로 번역하고 부서에 걸쳐 데이터 중심적 결정을 만드는 데에 지원."
@@ -12255,9 +12162,6 @@ msgstr "TradingView를 사용해보세요"
 
 msgid "Try WebTrader"
 msgstr "WebTrader를 이용해보세요"
-
-msgid "Try now"
-msgstr ""
 
 msgid "Try our %1Volatility Indices%2."
 msgstr ""
@@ -12398,7 +12302,7 @@ msgid "Underlying"
 msgstr ""
 
 msgid "Underlying Instrument"
-msgstr ""
+msgstr "기초상품"
 
 msgid "Underlying market"
 msgstr "기본 시장"
@@ -12709,9 +12613,6 @@ msgstr ""
 msgid "Want to telecommute?"
 msgstr "재택근무를 희망하십니까?"
 
-msgid "Warning"
-msgstr "주의사항"
-
 msgid "Warranties"
 msgstr "보증"
 
@@ -12744,6 +12645,9 @@ msgstr ""
 
 msgid "We do it again. BetOnMarkets.com follows up our 2007 award by being voted 'Best Fixed-Odds Financial Trading Provider' for 2008."
 msgstr "우리는 다시 한번 더 이룹니다. BetOnMarkets.com은 2007년 수상한 'Best Fixed-Odds Financial Trading Provider'상을 2008년 다시 한번 더 수상합니다."
+
+msgid "We do not tolerate any form of inappropriate behaviour. This includes the usage of offensive language. We reserve the right to restrict or terminate your account if there is any form of inappropriate behaviour on your part."
+msgstr ""
 
 msgid "We have a proven track record since we launched our platform in 2000."
 msgstr "저희는 2000년 플랫폼을 출시한 이래로 검증된 트랙 기록을 가지고 있습니다."
@@ -12929,10 +12833,10 @@ msgid "When a client is classified as an Eligible Counterparty, BIEL shall not p
 msgstr ""
 
 msgid "When a force majeure event occurs"
-msgstr ""
+msgstr "불가항력 상황이 발생하는 경우"
 
 msgid "When a negative balance results from the breach of any of the terms of this agreement by the client"
-msgstr ""
+msgstr "마이너스 잔고가 고객에 의한 이 동의문의 어떠한 조항의 위반의 결과인 경우"
 
 msgid "When a self-exclusion limit is set on the client's %1 account, the client's MT5 Real Account will be disabled until the self-exclusion limit on their %1 account is removed."
 msgstr ""
@@ -12965,13 +12869,13 @@ msgid "When the client gives the Company specific instructions, including (a) sp
 msgstr "고객이 본 회사에 (a)본 회사와의 계약에 있어 구체적인 가격 또는 (b)계약이 종결될 때의 구체적인 가격을 명시하는 경우에는, 본 회사의 정책적인 면보다 해당되는 지시사항이 우선시 될 것입니다."
 
 msgid "When the client is a professional client"
-msgstr ""
+msgstr "고객이 전문가 고객인 경우"
 
 msgid "When the client opens an account with the Company, the Company will request the client's consent for the distribution of marketing materials to the e-mail address that the client provides to the Company upon sign-up."
 msgstr ""
 
 msgid "When the client opens any transactions in relation to Prohibited Trades"
-msgstr ""
+msgstr "고객이 금지된 거래와 관련한 그 어떠한 거래를 개설하는 경우"
 
 msgid "When the client requests a withdrawal from %1 Client Account, such request shall be automatically proceeded, and, as a result, the requested sum shall be transferred from the %1 Client Account to the %1 Agent Account. However, it is noted that when the client reaches the client's withdrawal limits, a withdrawal request shall not be automatically proceeded before the required authentication process is conducted."
 msgstr ""
@@ -12980,7 +12884,7 @@ msgid "When the client transfers their money to BIEL for trading purposes, the c
 msgstr ""
 
 msgid "When the market conditions or market movements/volatility are abnormal"
-msgstr ""
+msgstr "시장 상황 또는 시장 동향/변동성이 비정상인 경우"
 
 msgid "When the remaining funds in your account is unable to cover the leverage or margin requirement, your account will be placed under margin call. To prevent a margin call escalating into a stop out level, you can deposit additional funds into your account or close any open positions."
 msgstr ""
@@ -13100,7 +13004,7 @@ msgid "Where the client's obligations to the Company are due and payable, the Co
 msgstr ""
 
 msgid "Where the negative balance is connected to or a result of functional limitations and/or malfunction of the MT5 trading platform"
-msgstr ""
+msgstr "마이너스 잔액이 기능 제한 및/또는 MT5 트레이딩 플랫폼의 기능이상의 결과이거나 이에 연관된 경우"
 
 msgid "Where you can go"
 msgstr "여러분이 갈 수 있는 곳"
@@ -13118,7 +13022,7 @@ msgid "Whilst the Company acts as principal in respect of the client's orders, t
 msgstr "고객 주문에 관하여 본 회사가 주체로 역할하는 동안에, 본 회사는 또한 본 회사가 고객 주문의 실행에 있어 가장 좋은 결과를 제공함에 중요한 의지를 가지는 실행 장소를 평가합니다. 이러한 장소들은 일반적으로 제 3자 투자회사, 브로커, 그리고/또는 유동성 공급자들로 이루어져 있습니다."
 
 msgid "Whilst the Company endeavours to close out the client's Open Positions if and when the Margin Level for their MT5 Real Account reaches or falls below the Stop Out Level, the company does not guarantee that the client's Open Positions will be closed when the Margin Level for their MT5 Real Account reaches the Stop Out Level."
-msgstr ""
+msgstr "고객의 MT5 실계좌의 증거금 수준이 스탑아웃 레벨 아래로 떨어지거나 도달할 경우에 본 회사가 고객의 오픈 포지션을 닫으려 노력하는 동안, 본 회사는 고객의 MT5 실계좌가 스탑아웃 레벨에 도달 할 때 고객의 오픈 포지션이 해지 된다는 것을 보장하지는 않습니다."
 
 msgid "Whilst the Company endeavours to open or close the transaction to which the client's orders relate at the requested price, acting in accordance with the Company's duty of best execution, there are times when, due to an increase in volatility or volume, orders may be subject to slippage. The difference between the order price and execution price when orders are filled is known as slippage. This means that the client's order is not filled at the exact intended quoted price when the client places their order. Slippage is usually seen during periods of extremely high or low volatility and generally occurs during fundamental news releases or periods of limited liquidity. Slippages can result in either a positive slippage (more favourable to the client) or a negative slippage (less favourable to the client)."
 msgstr ""
@@ -13324,9 +13228,6 @@ msgstr ""
 msgid "Yes I'm sure"
 msgstr ""
 
-msgid "Yes, I understand"
-msgstr "예, 이해합니다"
-
 msgid "Yes, I'm sure"
 msgstr ""
 
@@ -13388,9 +13289,6 @@ msgid "You are expecting the base currency to rise in value so you can sell it b
 msgstr ""
 
 msgid "You are limited to one fiat account. You can change the currency of your fiat account anytime before you make a first-time deposit or create an MT5 account."
-msgstr ""
-
-msgid "You are now using your %1Bitcoin Cash%2 account. Please fund your account in %1Bitcoin Cash%2, and not Bitcoin."
 msgstr ""
 
 msgid "You are responsible for mitigating the risks and abuse that we face from fraud and money laundering. To accomplish this, you must monitor, analyse, and conduct various anti-fraud and AML checks on client accounts and deposits. You will join us in Malta and report to our Head of Payments."
@@ -13831,9 +13729,6 @@ msgstr ""
 msgid "gaming"
 msgstr ""
 
-msgid "h"
-msgstr ""
-
 msgid "hour"
 msgstr ""
 
@@ -13871,12 +13766,6 @@ msgid "minute"
 msgstr ""
 
 msgid "minutes"
-msgstr ""
-
-msgid "month"
-msgstr ""
-
-msgid "months"
 msgstr ""
 
 msgid "nearest price reasonably available and quoted by %1 when the Company Price quotation reaches or goes beyond the level of the client's Stop Order"
@@ -13970,15 +13859,6 @@ msgid "today, Fridays"
 msgstr "오늘, 매 금요일"
 
 msgid "virtual money credit to account"
-msgstr ""
-
-msgid "week"
-msgstr ""
-
-msgid "weeks"
-msgstr ""
-
-msgid "year"
 msgstr ""
 
 msgid "years"

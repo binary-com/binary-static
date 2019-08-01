@@ -17,7 +17,7 @@ const BIEL = () => (
 
         <h2 data-anchor='risk-acknowledgement'>{it.L('Risk acknowledgement')}</h2>
         <p>{it.L('By entering into an agreement with BIEL, the client understands that CFDs are highly speculative, complex products and carry a high degree of risk, especially those traded on Margin. Whilst the client may generate profit and increase their capital, they may also expose themselves to losing the entire sum invested, and their loss may exceed their deposit. The products referred to in this agreement are not appropriate for everyone. The client acknowledges that the trading services described in this agreement are designed for clients who are knowledgeable and experienced in the types of Transactions described in this agreement, and the client fully understands the associated risks before entering into this agreement with BIEL.')}</p>
-        <p>{it.L('The  acknowledges, recognises, and understands that')}</p>
+        <p>{it.L('The client acknowledges, recognises, and understands that')}</p>
         <ol>
             <li>{it.L('Because of the leverage effect, the Margin required in Margined Transactions, and price changes in the Underlying Instruments, the client may suffer significant losses.')}</li>
             <li>{it.L('Transaction monitoring is the client\'s responsibility in its entirety. The Company shall not conduct any monitoring of the client\'s trades.')}</li>
