@@ -159,7 +159,8 @@ const MetaTraderUI = (() => {
                 $acc_item.find('.mt-balance').html(mt_balance);
                 $action.find('.mt5-balance').html(mt_balance);
             }
-            if (Object.keys(accounts_info).every(type => accounts_info[type].info)) {
+            // disable MT5 account opening for iom clients as well as client who created all available accounts
+            if (Client.get('landing_company_shortcode') === 'iom' || Object.keys(accounts_info).every(type => accounts_info[type].info)) {
                 $container.find('.act_new_account').remove();
             }
         } else {
@@ -427,7 +428,14 @@ const MetaTraderUI = (() => {
             updateAccountTypesUI(selected_acc_type);
             $form.find('#view_1 #btn_next').addClass('button-disabled');
             $form.find('#view_1 .step-2').setVisibility(1);
-            displayMessage('#new_account_msg', (((selected_acc_type === 'demo' && Client.get('residence') === 'gb') || selected_acc_type === 'real') && Client.get('is_virtual')) ? MetaTraderConfig.needsRealMessage() : '', true);
+            displayMessage('#new_account_msg', (
+                ((selected_acc_type === 'demo' && Client.get('residence') === 'gb') || selected_acc_type === 'real') &&
+                Client.get('is_virtual'))
+                ?
+                MetaTraderConfig.needsRealMessage()
+                :
+                '',
+            true);
             $form.find('#new_account_no_deposit_bonus_msg').setVisibility(0);
         } else {
             const new_acc_type = newAccountGetType();

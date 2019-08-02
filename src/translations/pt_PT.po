@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-08-01 02:27\n"
+"PO-Revision-Date: 2019-08-02 01:34\n"
 "Last-Translator: binarycom\n"
 "Language-Team: Portuguese\n"
 "MIME-Version: 1.0\n"
@@ -5520,6 +5520,12 @@ msgstr "Se você decidir vender ou \"assumir uma posição curta\" no XAU/USD, v
 msgid "If you decided that the British economy will underperform instead, then you will go short on the GBP/USD."
 msgstr "Caso você decidisse que a economia britânica terá, pelo contrário, um desempenho abaixo do esperado, então você assumiria uma posição curta no GBP/USD."
 
+msgid "If you do not have a %1 Real Account yet, please %2create one%3."
+msgstr "Se você ainda não tem uma Conta Real %1, por favor %2crie uma%3."
+
+msgid "If you do not have a %1 financial account yet, please create one."
+msgstr "Se você ainda não tiver uma conta financeira %1, por favor crie uma."
+
 msgid "If you don't receive the email within the next few minutes, please check your junk/spam folder."
 msgstr "Caso você não receba o e-mail dentro dos próximos minutos, verifique a pasta de lixo/spam da sua conta."
 
@@ -9092,7 +9098,7 @@ msgid "Roll-over Credit/Debit"
 msgstr "Débito/Crédito acumulado"
 
 msgid "Rolling Spot Forex"
-msgstr ""
+msgstr "Forex de preço à vista móvel"
 
 msgid "Runs and manages a website that promotes forex or binary options"
 msgstr "Gerenciam websites que promovem forex ou opções binárias"
@@ -9647,7 +9653,7 @@ msgid "Stop Limit Orders are a combination of Stop and Limit Orders. If the pric
 msgstr "Ordens de limite de Stop são uma combinação de ordens de Stop e Limite. Se o preço atingir (ou ultrapassar) o Preço Stop, um Pedido Limite será colocado ao preço especificado, que será preenchido a um preço igual ou melhor que o preço especificado. "
 
 msgid "Stop Loss Orders"
-msgstr ""
+msgstr "Ordens de limite de perdas"
 
 msgid "Stop Order/Stop Loss Order"
 msgstr "Ordem de interrupção/Ordem de limite de perdas"
@@ -11780,17 +11786,14 @@ msgstr "Para saber mais, leia a nossa %1política de margens%2 que explica melho
 msgid "To maintain Open Positions, the client is required to have sufficient Account Equity to cover any Margin Requirement. If a client's Margin Level is less than the Margin Level set for their account, the client has entered into a Margin Call and is required to increase their Margin Level above the account's specified level in order to avoid a Stop Out to occur. The client may not be able to place an Order to open a transaction unless there is sufficient Account Equity to cover the Total Margin."
 msgstr "Para manter as posições abertas, o cliente deve ter um Patrimônio de Conta suficiente para cobrir qualquer Requisito de margem. Se o Nível de Margem de um cliente for menor que o Nível de Margem definido para sua conta, o cliente entrou em uma chamada de margem e é obrigado a aumentar seu Nível de Margem acima do nível especificado da conta para evitar que um Stop Out ocorra. O cliente pode não conseguir fazer um Pedido para abrir uma transação, a menos que haja um Patrimônio de Conta suficiente para cobrir a Margem Total."
 
-msgid "To perform this action, please %1upgrade to %2 Real Account%3."
-msgstr "Para executar esta ação atualize para uma %2conta real%3 %1."
-
 msgid "To perform this action, please set the %1currency%2 of your account."
 msgstr "Para executar esta ação, defina a %1moeda%2 da sua conta."
 
-msgid "To perform this action, please switch to your %1 Financial account"
-msgstr "Para executar esta ação, mude para a sua conta financeira %1"
-
 msgid "To perform this action, please switch to your %1 Real Account."
 msgstr "Para executar esta ação mude para a sua conta real %2."
+
+msgid "To perform this action, please switch to your %1 financial account."
+msgstr "Para executar esta ação, mude para a sua conta financeira %1."
 
 msgid "To reset your password, enter the email address you used to create your account into the field below and click 'Reset password'."
 msgstr "Para redefinir a sua senha, digite o endereço de e-mail que você usou para criar a sua conta no campo abaixo e clique em \"Redefinir senha\"."
@@ -12069,7 +12072,7 @@ msgid "TradingView"
 msgstr "TradingView"
 
 msgid "Trailing stops"
-msgstr ""
+msgstr "Limites móveis"
 
 msgid "Transaction ID"
 msgstr "ID da transação"
@@ -12231,7 +12234,7 @@ msgid "US Dollar vs Hong Kong Dollar"
 msgstr "Dólar americano vs. Dólar de Hong Kong"
 
 msgid "US Dollar vs Israeli New Shekel"
-msgstr ""
+msgstr "Dólar Americano vs Novo Shekel Israelense"
 
 msgid "US Dollar vs Japanese Yen"
 msgstr "Dólar americano vs. Iene japonês"
@@ -12261,7 +12264,7 @@ msgid "US Dollar vs Swiss Franc"
 msgstr "Dólar americano vs. Franco suíço"
 
 msgid "US Dollar vs Thai Baht"
-msgstr ""
+msgstr "Dólar Americano vs Baht tailandês"
 
 msgid "US Dollar vs Turkish Lira"
 msgstr "Dólar americano vs. Lira turca"

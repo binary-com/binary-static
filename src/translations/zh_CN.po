@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-08-01 02:28\n"
+"PO-Revision-Date: 2019-08-02 01:34\n"
 "Last-Translator: binarycom\n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -5517,6 +5517,12 @@ msgstr "如果您决定卖出黄金/美元对或持“空头”头寸，那么�
 
 msgid "If you decided that the British economy will underperform instead, then you will go short on the GBP/USD."
 msgstr "如果您认为英国的经济表现会不佳，那么您应对英镑/美元持“空头”头寸。"
+
+msgid "If you do not have a %1 Real Account yet, please %2create one%3."
+msgstr ""
+
+msgid "If you do not have a %1 financial account yet, please create one."
+msgstr ""
 
 msgid "If you don't receive the email within the next few minutes, please check your junk/spam folder."
 msgstr "如果在几分钟内未收到电子邮件，请检查您的垃圾/广告文件夹。"
@@ -11778,17 +11784,14 @@ msgstr "要了解关于保证金要求的更多信息，请阅读我们的%1保�
 msgid "To maintain Open Positions, the client is required to have sufficient Account Equity to cover any Margin Requirement. If a client's Margin Level is less than the Margin Level set for their account, the client has entered into a Margin Call and is required to increase their Margin Level above the account's specified level in order to avoid a Stop Out to occur. The client may not be able to place an Order to open a transaction unless there is sufficient Account Equity to cover the Total Margin."
 msgstr "要继续保留持仓头寸，客户需要有足够支付任何保证金要求的账户净值。如果客户的保证金额低于其账户指定的保证金额，则客户已触发追加保证金通知，必须将其保证金额提高到账户指定的金额以上，以避免发生止损。除非有足够支付总保证金的账户净值，否则客户无法下订单交易。"
 
-msgid "To perform this action, please %1upgrade to %2 Real Account%3."
-msgstr "如要执行此操作，请%1升级到%2真实账户%3。"
-
 msgid "To perform this action, please set the %1currency%2 of your account."
 msgstr "要执行此操作, 请设置账户的%1货币%2。"
 
-msgid "To perform this action, please switch to your %1 Financial account"
-msgstr "如要执行此操作，请切换到 %1 金融账户"
-
 msgid "To perform this action, please switch to your %1 Real Account."
 msgstr "如要执行此操作，请切换到 %1 真实账户。"
+
+msgid "To perform this action, please switch to your %1 financial account."
+msgstr ""
 
 msgid "To reset your password, enter the email address you used to create your account into the field below and click 'Reset password'."
 msgstr "如要重新设置密码，在下面字段输入您注册的电子邮件并点击“重设密码”。"
