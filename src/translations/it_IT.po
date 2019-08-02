@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-08-01 02:26\n"
+"PO-Revision-Date: 2019-08-02 01:33\n"
 "Last-Translator: binarycom\n"
 "Language-Team: Italian\n"
 "MIME-Version: 1.0\n"
@@ -5518,6 +5518,12 @@ msgstr "Se decidi di vendere o \"aprire una posizione corta\" su XAU/USD, avrai 
 
 msgid "If you decided that the British economy will underperform instead, then you will go short on the GBP/USD."
 msgstr "Se ritieni invece che l'economia britannica avrà una performance inferiore al previsto, aprirai una posizione corta su GBP/USD."
+
+msgid "If you do not have a %1 Real Account yet, please %2create one%3."
+msgstr ""
+
+msgid "If you do not have a %1 financial account yet, please create one."
+msgstr ""
 
 msgid "If you don't receive the email within the next few minutes, please check your junk/spam folder."
 msgstr "Se non ricevi l'email nei prossimi minuti, controlla la cartella spam."
@@ -11777,17 +11783,14 @@ msgstr "Per ulteriori informazioni, leggi la nostra %1Politica sul margine%2 che
 msgid "To maintain Open Positions, the client is required to have sufficient Account Equity to cover any Margin Requirement. If a client's Margin Level is less than the Margin Level set for their account, the client has entered into a Margin Call and is required to increase their Margin Level above the account's specified level in order to avoid a Stop Out to occur. The client may not be able to place an Order to open a transaction unless there is sufficient Account Equity to cover the Total Margin."
 msgstr "Per mantenere le proprie posizioni aperte, il cliente deve disporre di un equity del conto sufficiente a coprire eventuali requisiti di margine. Se il suo livello di margine è inferiore a quello previsto per il conto, il cliente ha ricevuto una chiamata a margine e deve portare il proprio livello di margine al di sopra di quello specificato al fine di evitare uno Stop Out. Il cliente potrebbe non essere in grado di inoltrare un ordine per avviare un'operazione a meno che non ci sia una equity del conto sufficiente a coprire il margine totale."
 
-msgid "To perform this action, please %1upgrade to %2 Real Account%3."
-msgstr "Per eseguire questa operazione, effettua %1l'upgrade al conto reale %2%3."
-
 msgid "To perform this action, please set the %1currency%2 of your account."
 msgstr "Per eseguire questa azione, inserisci la %1valuta%2 del tuo conto."
 
-msgid "To perform this action, please switch to your %1 Financial account"
-msgstr "Per effettuare questa operazione, passa al tuo conto finanziario %1"
-
 msgid "To perform this action, please switch to your %1 Real Account."
 msgstr "Per effettuare questa operazione, passa al tuo conto reale in %1."
+
+msgid "To perform this action, please switch to your %1 financial account."
+msgstr ""
 
 msgid "To reset your password, enter the email address you used to create your account into the field below and click 'Reset password'."
 msgstr "Per reimpostare la password, inserire nel campo sottostante l'indirizzo e-mail utilizzato per aprire il conto e fare clic su \"Reimposta password\"."
