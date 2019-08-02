@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-08-01 02:28\n"
+"PO-Revision-Date: 2019-08-02 01:34\n"
 "Last-Translator: binarycom\n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
@@ -5516,6 +5516,12 @@ msgstr "Если Вы хотите приобрести контракт на п
 
 msgid "If you decided that the British economy will underperform instead, then you will go short on the GBP/USD."
 msgstr "Если же Вы считаете, что британская экономика покажет плохие результаты, следует занять короткую позицию на паре GBP/USD."
+
+msgid "If you do not have a %1 Real Account yet, please %2create one%3."
+msgstr ""
+
+msgid "If you do not have a %1 financial account yet, please create one."
+msgstr ""
 
 msgid "If you don't receive the email within the next few minutes, please check your junk/spam folder."
 msgstr "Если вы не получите сообщения от нас в следующие несколько минут, пожалуйста, проверьте папку со спамом."
@@ -11775,17 +11781,14 @@ msgstr "Чтобы получить более подробную информа
 msgid "To maintain Open Positions, the client is required to have sufficient Account Equity to cover any Margin Requirement. If a client's Margin Level is less than the Margin Level set for their account, the client has entered into a Margin Call and is required to increase their Margin Level above the account's specified level in order to avoid a Stop Out to occur. The client may not be able to place an Order to open a transaction unless there is sufficient Account Equity to cover the Total Margin."
 msgstr "Для поддержания открытых позиций клиенту необходимо иметь на счету достаточный баланс для покрытия всех маржевых требований. Если уровень маржи клиента меньше маржевого уровня, установленного на счёте, клиент получает запрос на увеличение маржи и должен повысить уровень маржи, чтобы он был выше уровня, указанного на счёте, чтобы избежать принудительного закрытия позиций (стоп аут). Клиент не сможет разместить ордер для открытия контракта, если на его счёте нет достаточного баланса для покрытия всей маржи."
 
-msgid "To perform this action, please %1upgrade to %2 Real Account%3."
-msgstr "Чтобы выполнить данное действие, %1откройте Реальный счёт%3 %2."
-
 msgid "To perform this action, please set the %1currency%2 of your account."
 msgstr "Чтобы выполнить данное действие, пожалуйста, укажите %1валюту%2 Вашего счёта."
 
-msgid "To perform this action, please switch to your %1 Financial account"
-msgstr "Чтобы выполнить данное действие, перейдите на Финансовый счёт %1"
-
 msgid "To perform this action, please switch to your %1 Real Account."
 msgstr "Чтобы выполнить данное действие, перейдите на Реальный счет %1."
+
+msgid "To perform this action, please switch to your %1 financial account."
+msgstr ""
 
 msgid "To reset your password, enter the email address you used to create your account into the field below and click 'Reset password'."
 msgstr "Чтобы изменить пароль, введите Ваш зарегистрированный эл. адрес в поле внизу и нажмите \"Изменить пароль\"."
