@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-08-01 02:29\n"
+"PO-Revision-Date: 2019-08-02 01:35\n"
 "Last-Translator: binarycom\n"
 "Language-Team: Acholi\n"
 "MIME-Version: 1.0\n"
@@ -5516,6 +5516,12 @@ msgstr "crwdns42199:0crwdne42199:0"
 
 msgid "If you decided that the British economy will underperform instead, then you will go short on the GBP/USD."
 msgstr "crwdns42200:0crwdne42200:0"
+
+msgid "If you do not have a %1 Real Account yet, please %2create one%3."
+msgstr "crwdns67046:0%1crwdnd67046:0%2ccrwdnd67046:0%3crwdne67046:0"
+
+msgid "If you do not have a %1 financial account yet, please create one."
+msgstr "crwdns67048:0%1crwdne67048:0"
 
 msgid "If you don't receive the email within the next few minutes, please check your junk/spam folder."
 msgstr "crwdns53394:0crwdne53394:0"
@@ -11775,17 +11781,14 @@ msgstr "crwdns43248:0%1crwdnd43248:0%2crwdne43248:0"
 msgid "To maintain Open Positions, the client is required to have sufficient Account Equity to cover any Margin Requirement. If a client's Margin Level is less than the Margin Level set for their account, the client has entered into a Margin Call and is required to increase their Margin Level above the account's specified level in order to avoid a Stop Out to occur. The client may not be able to place an Order to open a transaction unless there is sufficient Account Equity to cover the Total Margin."
 msgstr "crwdns57004:0crwdne57004:0"
 
-msgid "To perform this action, please %1upgrade to %2 Real Account%3."
-msgstr "crwdns53502:0%1ucrwdnd53502:0%2crwdnd53502:0%3crwdne53502:0"
-
 msgid "To perform this action, please set the %1currency%2 of your account."
 msgstr "crwdns44742:0%1ccrwdnd44742:0%2crwdne44742:0"
 
-msgid "To perform this action, please switch to your %1 Financial account"
-msgstr "crwdns50528:0%1crwdne50528:0"
-
 msgid "To perform this action, please switch to your %1 Real Account."
 msgstr "crwdns40206:0%1crwdne40206:0"
+
+msgid "To perform this action, please switch to your %1 financial account."
+msgstr "crwdns67050:0%1crwdne67050:0"
 
 msgid "To reset your password, enter the email address you used to create your account into the field below and click 'Reset password'."
 msgstr "crwdns40208:0crwdne40208:0"
