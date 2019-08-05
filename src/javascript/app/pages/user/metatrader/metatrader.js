@@ -44,7 +44,7 @@ const MetaTrader = (() => {
         const mt_gaming_company = has_iom_gaming_company ? State.getResponse('landing_company.mt_gaming_company') : {};
 
         // Check if mt_gaming_company is offered, if not found, switch to mt_financial_company
-        const mt_landing_company = !isEmptyObject(mt_gaming_company) ? mt_gaming_company : mt_financial_company;
+        const mt_landing_company = isEmptyObject(mt_gaming_company) ? mt_financial_company : mt_gaming_company;
 
         // Check if any of the account type shortcodes from mt_landing_company account is maltainvest
         const is_financial = mt_landing_company ? Object.keys(mt_landing_company)
