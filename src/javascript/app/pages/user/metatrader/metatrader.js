@@ -5,6 +5,7 @@ const BinarySocket     = require('../../../base/socket');
 const Validation       = require('../../../common/form_validation');
 const localize         = require('../../../../_common/localize').localize;
 const State            = require('../../../../_common/storage').State;
+const isEmptyObject    = require('../../../../_common/utility').isEmptyObject;
 
 const MetaTrader = (() => {
     let mt_companies;
@@ -40,11 +41,10 @@ const MetaTrader = (() => {
 
         const has_iom_gaming_company = State.getResponse('landing_company.gaming_company.shortcode') === 'iom';
 
-        // for iom landing company ignore mt_gaming_company for now
-        const mt_gaming_company = has_iom_gaming_company ? {} : State.getResponse('landing_company.mt_gaming_company');
+        const mt_gaming_company = has_iom_gaming_company ? State.getResponse('landing_company.mt_gaming_company') : {};
 
-        // Check if mt_financial_company is offered, if not found, switch to mt_gaming_company
-        const mt_landing_company = mt_financial_company || mt_gaming_company;
+        // Check if mt_gaming_company is offered, if not found, switch to mt_financial_company
+        const mt_landing_company = isEmptyObject(mt_gaming_company) ? mt_financial_company : mt_gaming_company;
 
         // Check if any of the account type shortcodes from mt_landing_company account is maltainvest
         const is_financial = mt_landing_company ? Object.keys(mt_landing_company)
