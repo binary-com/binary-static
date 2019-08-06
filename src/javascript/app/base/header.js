@@ -255,7 +255,7 @@ const Header = (() => {
             let get_account_status,
                 status;
             const is_svg          = Client.get('landing_company_shortcode') === 'svg';
-            const loginid         = Client.get('loginid');
+            const loginid         = Client.get('loginid') || {};
             const landing_company = State.getResponse('landing_company');
             const requirements    = getLandingCompanyValue(loginid, landing_company, 'requirements');
             const necessary_withdrawal_fields = is_svg
