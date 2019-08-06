@@ -11,7 +11,6 @@ const BinarySocket             = require('../../../base/socket');
 const changePocNumbersToString = require('../../../common/request_middleware').changePocNumbersToString;
 const getElementById           = require('../../../../_common/common_functions').getElementById;
 const localize                 = require('../../../../_common/localize').localize;
-const State                    = require('../../../../_common/storage').State;
 const urlFor                   = require('../../../../_common/url').urlFor;
 const Utility                  = require('../../../../_common/utility');
 
@@ -153,10 +152,6 @@ const ViewPopup = (() => {
         Clock.setExternalTimer(updateTimers);
         update();
         ViewPopupUI.repositionConfirmation();
-
-        if (State.get('is_mb_trading')) {
-            State.call('ViewPopup.onDisplayed');
-        }
     };
 
     const update = () => {
@@ -197,7 +192,7 @@ const ViewPopup = (() => {
             if (Reset.isReset(contract.contract_type) && Reset.isNewBarrier(contract.entry_spot, contract.barrier)) {
                 containerSetText(
                     'trade_details_barrier',
-                    is_sold_before_start ? '-' : addComma(contract.entry_spot),
+                    is_sold_before_start ? '-' : contract.entry_spot_display_value,
                     '',
                     true);
                 containerSetText(
@@ -208,15 +203,15 @@ const ViewPopup = (() => {
             }
         }
 
-        let current_spot      = contract.status === 'sold' ? '' : contract.current_spot;
+        let current_spot      = contract.status === 'sold' ? '' : contract.current_spot_display_value;
         let current_spot_time = contract.status === 'sold' ? '' : contract.current_spot_time;
         if (is_ended && contract.status !== 'sold') {
-            current_spot      = contract.exit_tick;
+            current_spot      = contract.exit_tick_display_value;
             current_spot_time = contract.exit_tick_time;
         }
 
         if (current_spot) {
-            containerSetText('trade_details_current_spot > span', addComma(current_spot));
+            containerSetText('trade_details_current_spot > span', current_spot);
             $('#trade_details_current_spot').parent().setVisibility(1);
         } else {
             $('#trade_details_current_spot').parent().setVisibility(0);
@@ -252,9 +247,9 @@ const ViewPopup = (() => {
             containerSetText('trade_details_entry_spot > span', '-');
             containerSetText('trade_details_message', localize('Contract has not started yet'));
         } else {
-            if (parseFloat(contract.entry_spot) > 0) {
+            if (contract.entry_spot > 0) {
                 // only show entry spot if available and contract was not sold before start time
-                containerSetText('trade_details_entry_spot > span', is_sold_before_start ? '-' : addComma(contract.entry_spot));
+                containerSetText('trade_details_entry_spot > span', is_sold_before_start ? '-' : contract.entry_spot_display_value);
             }
             containerSetText('trade_details_message', contract.validation_error ? contract.validation_error : '&nbsp;');
         }
@@ -452,7 +447,7 @@ const ViewPopup = (() => {
         '(call|put)spread': 'callputspread',
         'tick(high|low)'  : 'highlowticks',
         'run(high|low)'   : 'runs',
-        'call|put'        : () => +contract.entry_tick === +contract.barrier ? 'risefall' : 'higherlower',
+        'call|put'        : () => contract.entry_tick === +contract.barrier ? 'risefall' : 'higherlower',
     };
 
     const showExplanation = (div) => {
@@ -493,7 +488,14 @@ const ViewPopup = (() => {
                     color = secondary_classes;
                 }
 
-                createAuditRow(table, audit_data.epoch, audit_data.tick, audit_data.name, color);
+                createAuditRow(
+                    table,
+                    audit_data.epoch,
+                    audit_data.tick,
+                    audit_data.tick_display_value,
+                    audit_data.name,
+                    color
+                );
             });
             resolve();
         })
@@ -528,7 +530,7 @@ const ViewPopup = (() => {
         table.insertBefore(tr, table.childNodes[0]);
     };
 
-    const createAuditRow = (table, date, tick, remark, td_class) => {
+    const createAuditRow = (table, date, tick, tick_display, remark, td_class) => {
         // if we have already added this timestamp in first table, skip adding it again to second table
         // unless it is a highlighted tick like entry or exit spot, or start or end time
         if (document.querySelector(`.audit-dates[data-value='${date}']`) && !remark) {
@@ -537,7 +539,7 @@ const ViewPopup = (() => {
 
         const tr        = Utility.createElement('tr', { class: 'gr-row' });
         const td_remark = Utility.createElement('td', { class: 'gr-4 remark', text: remark || '' });
-        const td_tick   = Utility.createElement('td', { class: 'gr-3 spot-value', text: (tick && !isNaN(tick) ? addComma(tick) : (tick || '')) });
+        const td_tick   = Utility.createElement('td', { class: 'gr-3 spot-value', text: tick_display || '' });
         const td_date   = Utility.createElement('td', { class: 'gr-4 audit-dates', 'data-value': date, 'data-balloon-pos': 'down', text: (date && !isNaN(date) ? moment.unix(date).utc().format('YYYY-MM-DD HH:mm:ss') : (date || '')) });
 
         tr.appendChild(td_remark);
@@ -802,7 +804,7 @@ const ViewPopup = (() => {
         getContract('no-subscribe');
     };
 
-    const responseProposal = async (response) => {
+    const responseProposal = (response) => {
         if (response.error) {
             if (response.error.code !== 'AlreadySubscribed' && +response.echo_req.contract_id === contract_id) {
                 showErrorPopup(response, response.error.message);
@@ -811,7 +813,7 @@ const ViewPopup = (() => {
         }
         if (+response.proposal_open_contract.contract_id === contract_id) {
             ViewPopupUI.storeSubscriptionID(response.proposal_open_contract.id);
-            responseContract(await changePocNumbersToString(response));
+            responseContract(changePocNumbersToString(response));
         } else if (response.proposal_open_contract.id) {
             BinarySocket.send({ forget: response.proposal_open_contract.id });
         }

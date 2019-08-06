@@ -10,7 +10,6 @@ const DepositWithdraw         = require('../pages/cashier/deposit_withdraw');
 const PaymentAgentList        = require('../pages/cashier/payment_agent_list');
 const PaymentAgentWithdraw    = require('../pages/cashier/payment_agent_withdraw');
 const Endpoint                = require('../pages/endpoint');
-const MBTradePage             = require('../pages/mb_trade/mb_tradepage');
 const EconomicCalendar        = require('../pages/resources/economic_calendar/economic_calendar');
 const AssetIndexUI            = require('../pages/resources/asset_index/asset_index.ui');
 const MetatraderDownloadUI    = require('../pages/resources/metatrader/download.ui');
@@ -104,7 +103,6 @@ const pages_config = {
     market_timesws           : { module: TradingTimesUI },
     metals                   : { module: GetStarted.Metals },
     metatrader               : { module: MetaTrader,                 is_authenticated: true, needs_currency: true },
-    multi_barriers_trading   : { module: MBTradePage,                needs_currency: true },
     payment_agent_listws     : { module: PaymentAgentList,           is_authenticated: true },
     payment_methods          : { module: Cashier.PaymentMethods },
     platforms                : { module: Platforms },

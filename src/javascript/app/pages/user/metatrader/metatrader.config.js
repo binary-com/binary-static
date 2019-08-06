@@ -67,16 +67,20 @@ const MetaTraderConfig = (() => {
                 short_title : localize('Standard'),
             };
 
+            const has_iom_gaming = State.getResponse('landing_company.gaming_company.shortcode') === 'iom';
+
             return ({
                 // for financial mt company with shortcode maltainvest, only offer standard account with different leverage
                 financial: {
                     demo_standard: { mt5_account_type: standard_config.account_type, max_leverage: standard_config.leverage, title: localize('Demo Standard'), short_title: standard_config.short_title },
                     real_standard: { mt5_account_type: standard_config.account_type, max_leverage: standard_config.leverage, title: localize('Real Standard'), short_title: standard_config.short_title },
                 },
-                gaming: {
-                    demo_volatility: configMtCompanies.get().gaming.demo_volatility,
-                    real_volatility: configMtCompanies.get().gaming.real_volatility,
-                },
+                ...(!has_iom_gaming && {
+                    gaming: {
+                        demo_volatility: configMtCompanies.get().gaming.demo_volatility,
+                        real_volatility: configMtCompanies.get().gaming.real_volatility,
+                    },
+                }),
             });
         };
 
@@ -96,8 +100,11 @@ const MetaTraderConfig = (() => {
     const accounts_info = {};
 
     let $messages;
-    const needsRealMessage = () => $messages.find(`#msg_${Client.hasAccountType('real') ? 'switch' : 'upgrade'}`).html();
-    const needsFinancialMessage = () => $messages.find('#msg_switch_financial').html();
+    const needsRealMessage = () => {
+        const has_iom_gaming = State.getResponse('landing_company.gaming_company.shortcode') === 'iom';
+        const id_to_show = `#msg_switch${has_iom_gaming ? '_financial' : ''}`;
+        return $messages.find(id_to_show).html();
+    };
 
     // currency equivalent to 1 USD
     // or 1 of donor currency if both accounts have the same currency
@@ -173,7 +180,7 @@ const MetaTraderConfig = (() => {
 
                     if (is_maltainvest && (is_financial || is_demo_financial) && !has_financial_account) {
                         $message.find('.maltainvest').setVisibility(1);
-                        
+
                         if (Client.get('residence') === 'gb') {
                             BinarySocket.wait('get_account_status').then((response) => {
                                 if (!/age_verification/.test(response.get_account_status.status)) {
@@ -563,7 +570,6 @@ const MetaTraderConfig = (() => {
         fields,
         validations,
         needsRealMessage,
-        needsFinancialMessage,
         hasAccount,
         getCurrency,
         isAuthenticated,

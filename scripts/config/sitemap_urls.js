@@ -45,7 +45,6 @@ module.exports = {
         ['cashier/payment_methods',            'monthly', 0.80],
 
         ['trading',                            'monthly', 0.80],
-        ['multi_barriers_trading',             'monthly', 0.80],
 
         ['resources/asset_indexws',            'monthly', 0.80],
         ['resources/market_timesws',           'monthly', 0.80],

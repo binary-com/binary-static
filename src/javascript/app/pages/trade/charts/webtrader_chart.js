@@ -1,5 +1,4 @@
 const getAllSymbols    = require('../symbols').getAllSymbols;
-const MBDefaults       = require('../../mb_trade/mb_defaults');
 const getElementById   = require('../../../../_common/common_functions').getElementById;
 const getLanguage      = require('../../../../_common/language').get;
 const localize         = require('../../../../_common/localize').localize;
@@ -30,13 +29,10 @@ const WebtraderChart = (() => {
     };
 
     const setChart = () => {
-        const is_mb_trading  = State.get('is_mb_trading');
-        const new_underlying = is_mb_trading ? $('#underlying').attr('value') : getElementById('underlying').value;
-        if (($('#tab_graph').hasClass('active') || is_mb_trading) &&
-            (!chart || chart.data().instrumentCode !== new_underlying ||
-                (is_mb_trading &&
-                    (getChartSettings().time_frame !== chart.data().timePeriod ||
-                    getChartSettings().chart_type !== chart.data().type)))) {
+        const new_underlying = getElementById('underlying').value;
+        if ($('#tab_graph').hasClass('active') &&
+            (!chart || chart.data().instrumentCode !== new_underlying)
+        ) {
             cleanupChart();
             initChart();
         }
@@ -65,10 +61,9 @@ const WebtraderChart = (() => {
     };
 
     const addChart = () => {
-        const is_mb_trading    = State.get('is_mb_trading');
         const $underlying      = $('#underlying');
-        const $underlying_code = is_mb_trading ? $underlying.attr('value') : $underlying.val();
-        const $underlying_name = is_mb_trading ? $underlying.find('.current .name').text() : getAllSymbols()[$underlying_code];
+        const $underlying_code = $underlying.val();
+        const $underlying_name = getAllSymbols()[$underlying_code];
 
         const chart_config = {
             instrumentCode    : $underlying_code,
@@ -77,7 +72,7 @@ const WebtraderChart = (() => {
             timePeriod        : getChartSettings().time_frame,
             type              : getChartSettings().chart_type,
             lang              : getLanguage().toLowerCase(),
-            showShare         : !is_mb_trading,
+            showShare         : true,
         };
 
         chart = WebtraderCharts.chartWindow.addNewChart($('#webtrader_chart'), chart_config);
@@ -89,22 +84,7 @@ const WebtraderChart = (() => {
         }
     };
 
-    const getChartSettings = () => {
-        let chart_settings = { time_frame: '1t', chart_type: 'line' };
-        if (State.get('is_mb_trading')) {
-            const period     = MBDefaults.get('period').split('_')[2].substr(0, 2).toUpperCase();
-            const period_map = {
-                '5H': { time_frame: '1m',  chart_type: 'line' },
-                '0D': { time_frame: '30m', chart_type: 'ohlc' },
-                '1W': { time_frame: '1d',  chart_type: 'ohlc' },
-                '1M': { time_frame: '1d',  chart_type: 'candlestick' },
-                '3M': { time_frame: '1d',  chart_type: 'candlestick' },
-                '1Y': { time_frame: '1d',  chart_type: 'candlestick' },
-            };
-            chart_settings   = period_map[period] || chart_settings;
-        }
-        return chart_settings;
-    };
+    const getChartSettings = () => ({ time_frame: '1t', chart_type: 'line' });
 
     return {
         showChart,
