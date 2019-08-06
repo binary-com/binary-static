@@ -23,7 +23,7 @@ const Authenticate = (() => {
         $submit_status,
         $submit_table;
 
-    const simulateCallForApiKey = () => new Promise((resolve, reject) => {
+    const getOnfidoServiceToken = () => new Promise((resolve, reject) => {
         const onfido_cookie = Cookies.get('onfido_token');
         if (onfido_cookie) {
             resolve(onfido_cookie);
@@ -48,7 +48,7 @@ const Authenticate = (() => {
     const initOnfido = async () => {
         $('#onfido').setVisibility(1);
         try {
-            const sdk_token = await simulateCallForApiKey();
+            const sdk_token = await getOnfidoServiceToken();
             onfido = Onfido.init({
                 containerId: 'onfido',
                 language   : {

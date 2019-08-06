@@ -962,6 +962,17 @@ body #not_authenticated_financial ul.checked > li {
         .onfido-sdk-ui-Button-button-outline:hover {
             background-color: transparent;
         }
+        .onfido-sdk-ui-crossDevice-CrossDeviceLink-copyToClipboard {
+            background: $COLOR_WHITE;
+            color: $COLOR_BLACK;
+            border-radius: 0;
+        }
+        input, textarea {
+            &:hover, &:focus {
+                outline: 0;
+                border: none;
+            }
+        }
         button {
             &:hover, &:focus {
                 background-color: inherit;
