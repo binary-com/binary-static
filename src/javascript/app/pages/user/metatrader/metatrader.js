@@ -55,31 +55,40 @@ const MetaTrader = (() => {
 
     const isEligible = () => (
         new Promise((resolve) => {
-            BinarySocket.wait('mt5_login_list').then((response_login_list) => {
-                const financial_company = State.getResponse('landing_company.financial_company.shortcode');
-                // client is currently IOM landing company
-                // or has IOM landing company and doesn't have a non-IOM financial company
-                const has_iom_gaming_company = Client.get('landing_company_shortcode') === 'iom' ||
-                    (State.getResponse('landing_company.gaming_company.shortcode') === 'iom' && financial_company && financial_company === 'iom');
-                // don't allow account opening for IOM accounts but let them see the dashboard if they have existing MT5 accounts
-                if (has_iom_gaming_company && !response_login_list.mt5_login_list.length) {
+            const financial_company = State.getResponse('landing_company.financial_company.shortcode');
+            // client is currently IOM landing company
+            // or has IOM landing company and doesn't have a non-IOM financial company
+            const has_iom_gaming_company = Client.get('landing_company_shortcode') === 'iom' ||
+                (State.getResponse('landing_company.gaming_company.shortcode') === 'iom' && financial_company && financial_company === 'iom');
+            if (has_iom_gaming_company) {
+                if (Client.isLoggedIn()) {
+                    BinarySocket.wait('mt5_login_list').then((response_login_list) => {
+                        // don't allow account opening for IOM accounts but let them see the dashboard if they have existing MT5 accounts
+                        resolve(response_login_list.mt5_login_list.length ? hasMTCompany() : false);
+                    });
+                } else {
                     resolve(false);
                 }
-                setMTCompanies();
-                let has_mt_company = false;
-                Object.keys(mt_companies).forEach((company) => {
-                    Object.keys(mt_companies[company]).forEach((acc_type) => {
-                        mt_company[company] = State.getResponse(`landing_company.mt_${company}_company.${MetaTraderConfig.getMTFinancialAccountType(acc_type)}.shortcode`);
-                        if (mt_company[company]) {
-                            has_mt_company = true;
-                            addAccount(company);
-                        }
-                    });
-                });
-                resolve(has_mt_company);
-            });
+            } else {
+                resolve(hasMTCompany());
+            }
         })
     );
+
+    const hasMTCompany = () => {
+        setMTCompanies();
+        let has_mt_company = false;
+        Object.keys(mt_companies).forEach((company) => {
+            Object.keys(mt_companies[company]).forEach((acc_type) => {
+                mt_company[company] = State.getResponse(`landing_company.mt_${company}_company.${MetaTraderConfig.getMTFinancialAccountType(acc_type)}.shortcode`);
+                if (mt_company[company]) {
+                    has_mt_company = true;
+                    addAccount(company);
+                }
+            });
+        });
+        return has_mt_company;
+    };
 
     const addAccount = (company) => {
         Object.keys(mt_companies[company]).forEach((acc_type) => {
