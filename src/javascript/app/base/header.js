@@ -291,8 +291,6 @@ const Header = (() => {
                     return verification_length === 2;
                 }
                 if (verification_length === 2) return false;
-                console.log('anyeong')
-                console.log(needs_verification)
 
                 return needs_verification.findIndex(s => s === string) >= 0;
             };

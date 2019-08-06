@@ -506,7 +506,6 @@ const Authenticate = (() => {
     const getAuthenticationStatus = () => new Promise((resolve) => {
         BinarySocket.wait('get_account_status').then(() => {
             const authentication_response = State.getResponse('get_account_status.authentication');
-            console.log(authentication_response);
             resolve(authentication_response);
         });
     });
