@@ -170,12 +170,12 @@ const Metatrader = () => (
                         </div>
                         <div className='mt-sidebar-button'>
                             <div className='small-icon'>
-                                <a href='https://trade.mql5.com' target='_blank' rel='noopener noreferrer'>
+                                <a href='https://trade.mql5.com/trade?servers=Binary.com-Server&amp;trade_server=Binary.com-Server' target='_blank' rel='noopener noreferrer'>
                                     <img src={it.url_for('images/pages/metatrader/dashboard/img-app-mac@2x.png')} />
                                 </a>
                             </div>
                             <div className='mt-link'>
-                                <a href='https://trade.mql5.com' target='_blank' rel='noopener noreferrer'>
+                                <a href='https://trade.mql5.com/trade?servers=Binary.com-Server&amp;trade_server=Binary.com-Server' target='_blank' rel='noopener noreferrer'>
                                     {it.L('MT5 Web platform')}
                                 </a>
                             </div>
@@ -572,9 +572,16 @@ const Metatrader = () => (
 
                     <div id='messages'>
                         <div id='msg_set_currency'>{it.L('To perform this action, please set the [_1]currency[_2] of your account.', `<a href="${it.url_for('user/set-currency')}">`, '</a>')}</div>
-                        <div id='msg_switch'>{it.L('To perform this action, please switch to your [_1] Real Account.', it.website_name)}</div>
-                        <div id='msg_switch_financial'>{it.L('To perform this action, please switch to your [_1] Financial account', it.website_name)}</div>
-                        <div id='msg_upgrade'>{it.L('To perform this action, please [_1]upgrade to [_2] Real Account[_3].', `<a href="${it.url_for('new_account/realws')}">` , it.website_name, '</a>')}</div>
+                        <div id='msg_switch'>
+                            {it.L('To perform this action, please switch to your [_1] Real Account.', it.website_name)}
+                            <br />
+                            {it.L('If you do not have a [_1] Real Account yet, please [_2]create one[_3].', it.website_name, `<a href="${it.url_for('new_account/realws')}">` , '</a>')}
+                        </div>
+                        <div id='msg_switch_financial'>
+                            {it.L('To perform this action, please switch to your [_1] financial account.', it.website_name)}
+                            <br />
+                            {it.L('If you do not have a [_1] financial account yet, please create one.', it.website_name)}
+                        </div>
                         <div id='msg_real_financial'>
                             <span id='msg_metatrader_account' className='invisible'>{it.L('To create a MetaTrader 5 account:')}</span>
                             <span id='msg_mam_account' className='invisible'>{it.L('To create a MAM real account, please:')}</span>

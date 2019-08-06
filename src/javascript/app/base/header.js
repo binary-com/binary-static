@@ -108,8 +108,9 @@ const Header = (() => {
     };
 
     const metatraderMenuItemVisibility = () => {
-        BinarySocket.wait('landing_company', 'get_account_status').then(() => {
-            if (MetaTrader.isEligible()) {
+        BinarySocket.wait('landing_company', 'get_account_status').then(async () => {
+            const is_eligible = await MetaTrader.isEligible();
+            if (is_eligible) {
                 const mt_visibility = document.getElementsByClassName('mt_visibility');
                 applyToAllElements(mt_visibility, (el) => {
                     el.setVisibility(1);
@@ -129,8 +130,6 @@ const Header = (() => {
         sessionStorage.setItem('active_tab', '1');
         // set local storage
         GTM.setLoginFlag('account_switch');
-        Client.set('cashier_confirmed', 0);
-        Client.set('accepted_bch', 0);
         Client.set('loginid', loginid);
         SocketCache.clear();
         window.location.reload();
@@ -371,7 +370,7 @@ const Header = (() => {
                 const notified = check_statuses.some((check_type) => {
                     if (validations[check_type]()) {
                         // show MF retail message on Trading pages only
-                        if (check_type === 'mf_retail' && !(State.get('is_trading') || State.get('is_mb_trading'))) {
+                        if (check_type === 'mf_retail' && !State.get('is_trading')) {
                             return false;
                         }
                         displayNotification(messages[check_type](), false, check_type === 'mf_retail' ? 'MF_RETAIL_MESSAGE' : '');

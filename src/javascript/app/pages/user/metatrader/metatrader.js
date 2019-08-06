@@ -5,6 +5,7 @@ const BinarySocket     = require('../../../base/socket');
 const Validation       = require('../../../common/form_validation');
 const localize         = require('../../../../_common/localize').localize;
 const State            = require('../../../../_common/storage').State;
+const isEmptyObject    = require('../../../../_common/utility').isEmptyObject;
 
 const MetaTrader = (() => {
     let mt_companies;
@@ -17,9 +18,9 @@ const MetaTrader = (() => {
 
     const onLoad = () => {
         BinarySocket.send({ statement: 1, limit: 1 });
-        BinarySocket.wait('landing_company', 'get_account_status', 'statement').then(() => {
-            setMTCompanies();
-            if (isEligible()) {
+        BinarySocket.wait('landing_company', 'get_account_status', 'statement').then(async () => {
+            const is_eligible = await isEligible();
+            if (is_eligible) {
                 if (Client.get('is_virtual')) {
                     getAllAccountsInfo();
                 } else {
@@ -37,10 +38,13 @@ const MetaTrader = (() => {
 
     const setMTCompanies = () => {
         const mt_financial_company = State.getResponse('landing_company.mt_financial_company');
-        const mt_gaming_company    = State.getResponse('landing_company.mt_gaming_company');
 
-        // Check if mt_financial_company is offered, if not found, switch to mt_gaming_company
-        const mt_landing_company = mt_financial_company || mt_gaming_company;
+        const has_iom_gaming_company = State.getResponse('landing_company.gaming_company.shortcode') === 'iom';
+
+        const mt_gaming_company = has_iom_gaming_company ? State.getResponse('landing_company.mt_gaming_company') : {};
+
+        // Check if mt_gaming_company is offered, if not found, switch to mt_financial_company
+        const mt_landing_company = isEmptyObject(mt_gaming_company) ? mt_financial_company : mt_gaming_company;
 
         // Check if any of the account type shortcodes from mt_landing_company account is maltainvest
         const is_financial = mt_landing_company ? Object.keys(mt_landing_company)
@@ -49,20 +53,33 @@ const MetaTrader = (() => {
         mt_companies = mt_companies || MetaTraderConfig[is_financial ? 'configMtFinCompanies' : 'configMtCompanies']();
     };
 
-    const isEligible = () => {
-        setMTCompanies();
-        let has_mt_company = false;
-        Object.keys(mt_companies).forEach((company) => {
-            Object.keys(mt_companies[company]).forEach((acc_type) => {
-                mt_company[company] = State.getResponse(`landing_company.mt_${company}_company.${MetaTraderConfig.getMTFinancialAccountType(acc_type)}.shortcode`);
-                if (mt_company[company]) {
-                    has_mt_company = true;
-                    addAccount(company);
+    const isEligible = () => (
+        new Promise((resolve) => {
+            BinarySocket.wait('mt5_login_list').then((response_login_list) => {
+                const financial_company = State.getResponse('landing_company.financial_company.shortcode');
+                // client is currently IOM landing company
+                // or has IOM landing company and doesn't have a non-IOM financial company
+                const has_iom_gaming_company = Client.get('landing_company_shortcode') === 'iom' ||
+                    (State.getResponse('landing_company.gaming_company.shortcode') === 'iom' && financial_company && financial_company === 'iom');
+                // don't allow account opening for IOM accounts but let them see the dashboard if they have existing MT5 accounts
+                if (has_iom_gaming_company && !response_login_list.mt5_login_list.length) {
+                    resolve(false);
                 }
+                setMTCompanies();
+                let has_mt_company = false;
+                Object.keys(mt_companies).forEach((company) => {
+                    Object.keys(mt_companies[company]).forEach((acc_type) => {
+                        mt_company[company] = State.getResponse(`landing_company.mt_${company}_company.${MetaTraderConfig.getMTFinancialAccountType(acc_type)}.shortcode`);
+                        if (mt_company[company]) {
+                            has_mt_company = true;
+                            addAccount(company);
+                        }
+                    });
+                });
+                resolve(has_mt_company);
             });
-        });
-        return has_mt_company;
-    };
+        })
+    );
 
     const addAccount = (company) => {
         Object.keys(mt_companies[company]).forEach((acc_type) => {

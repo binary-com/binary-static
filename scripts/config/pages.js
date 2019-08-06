@@ -3,7 +3,6 @@ module.exports = [
     // ==================== Section: "app" ====================
     ['cashier',                                 'app/cashier/index',                           'default',    'Cashier'],
     ['cashier/account_transfer',                'app/cashier/account_transfer',                'default',    'Transfer Between Accounts'],
-    ['cashier/confirmation',                    'app/cashier/confirmation',                    'default',    'Confirm'],
     ['cashier/epg_forwardws',                   'app/cashier/deposit_withdraw',                'default',    'Cashier'],
     ['cashier/forwardws',                       'app/cashier/deposit_withdraw',                'default',    'Cashier'],
     ['cashier/payment_agent_listws',            'app/cashier/payment_agent_list',              'default',    'Payment Agent Deposit'],
@@ -14,7 +13,6 @@ module.exports = [
     ['paymentagent/transferws',                 'app/cashier/paymentagent_transfer',           'default',    'Payment Agent Transfer'],
     ['paymentagent/withdrawws',                 'app/cashier/paymentagent_withdraw',           'default',    'Payment Agent Withdrawal'],
 
-    ['multi_barriers_trading',                  'app/trade/mb_trading',                        'full_width', 'Ladders'],
     ['trading',                                 'app/trade/trading',                           'default',    'SmartTrader'],
 
     ['new_account/maltainvestws',               'app/new_account/financial',                   'default',    'Financial Account Opening'],
@@ -57,7 +55,6 @@ module.exports = [
     ['user/top_up_virtual_pop_up',              'app/user/top_up_virtual/pop_up',              'default',    'Top Up Virtual Account'],
     ['user/tnc_approvalws',                     'app/user/tnc_approval',                       'default',    'Terms and Conditions Approval'],
     ['user/video-facility',                     'app/user/video_facility',                     'default',    'Video Room Facility'],
-    ['user/warning',                            'app/user/warning',                            'default',    'Warning'],
 
     ['endpoint',                                'app/endpoint',                                'default',    'Endpoint'],
     ['new-account',                             'app/new_account',                             'default',    'Signup'],

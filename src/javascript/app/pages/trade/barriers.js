@@ -1,8 +1,8 @@
 const moment             = require('moment');
-const countDecimalPlaces = require('./common_independent').countDecimalPlaces;
 const Contract           = require('./contract');
 const Defaults           = require('./defaults');
 const Tick               = require('./tick');
+const addComma           = require('../../../_common/base/currency_base').addComma;
 const elementTextContent = require('../../../_common/common_functions').elementTextContent;
 const getElementById     = require('../../../_common/common_functions').getElementById;
 const isVisible          = require('../../../_common/common_functions').isVisible;
@@ -32,7 +32,7 @@ const Barriers = (() => {
             const barrier = barriers[form_name][is_daily ? 'daily' : 'intraday'];
             if (barrier) {
                 const current_tick   = Tick.quote();
-                const decimal_places = countDecimalPlaces(current_tick);
+                const decimal_places = Tick.pipSize();
 
                 const indicative_barrier_tooltip      = getElementById('indicative_barrier_tooltip');
                 const indicative_high_barrier_tooltip = getElementById('indicative_high_barrier_tooltip');
@@ -66,8 +66,8 @@ const Barriers = (() => {
                         span.style.display    = 'none';
                         tooltip.style.display = 'inherit';
                         if (current_tick && !isNaN(current_tick)) {
-                            elementTextContent(indicative_barrier_tooltip, (parseFloat(current_tick) +
-                                parseFloat(barrier_def)).toFixed(decimal_places));
+                            elementTextContent(indicative_barrier_tooltip, addComma((parseFloat(current_tick) +
+                                parseFloat(barrier_def)), decimal_places));
                         } else {
                             elementTextContent(indicative_barrier_tooltip, '');
                         }

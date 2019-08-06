@@ -69,12 +69,6 @@ const Cashier = () => (
     <React.Fragment>
         <h1>{it.L('Cashier')}</h1>
 
-        <div className='invisible' id='message_bitcoin_cash'>
-            <div className='notice-msg center-text'>
-                <div className='gr-padding-10'>{it.L('Please note that you are currently using your [_1]Bitcoin Cash[_2] account. You can only fund your account in [_1]Bitcoin Cash[_2], and not Bitcoin.', '<a href="https://www.bitcoincash.org" target="_blank" rel="noopener noreferrer">', '</a>')}</div>
-            </div>
-        </div>
-
         <div className='invisible' id='message_cashier_unavailable'>
             <p className='notice-msg center-text'>{it.L('Sorry, this feature is not available in your jurisdiction.')}</p>
         </div>

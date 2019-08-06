@@ -29,15 +29,17 @@ const Authenticate = (() => {
         } else {
             let token = '';
 
-            if (window.location.host === 'localhost') {
+            if (window.location.host !== 'localhost') {
                 // TODO: service token API does not support localhost regex, below is temporary token to handle localhost
-                token = 'eyJhbGciOiJIUzI1NiJ9.eyJwYXlsb2FkIjoiNHZlS0ROeEdQMWoyTUV4QlBQQnVXSklxMDM0akpiWjBNTGdvK3M1YjNRd1NtOXdKODkwb29oVkFBa3B1XG4wM2w1Y1UwNEpETTduaU5hU3BqQitoUUVkalVEYk9abmdLU25yaTNERlZlbFVXcz1cbiIsInV1aWQiOiJIeHNhMDl1dmtBOCIsImV4cCI6MTU2MzQyNjkxMn0.GSES8TRcbfwNvqnz6KhTEy60FK23pfJFSCKRAp_GCYE';
+                token = 'eyJhbGciOiJIUzI1NiJ9.eyJwYXlsb2FkIjoiNHZlS0ROeEdQMWoyTUV4QlBQQnVXSklxMDM0akpiWjBNTGdvK3M1YjNRd1NtOXdKODkwb29oVkFBa3B1XG4wM2w1Y1UwNEpETTduaU5hU3BqQitoUUVkalVEYk9abmdLU25yaTNERlZlbFVXcz1cbiIsInV1aWQiOiJIeHNhMDl1dmtBOCIsImV4cCI6MTU2NDU3Mjc3OX0.odI0ISrQDvdKw13hrWKotCKpZac-HmwPm0D0DJV67M4';
                 resolve(token);
             } else {
                 BinarySocket.send({
                     service_token: 1,
                     service      : 'onfido',
+                    referrer     : 'https://*.binary.com/*',
                 }).then((response) => {
+                    console.log(response)
                     if (response.error) reject(Error(response.error.message));
                     token = response.service_token.token;
                     resolve(token);
@@ -514,7 +516,7 @@ const Authenticate = (() => {
         const mock_response = {
             needs_verification: ['identity'],
             identity          : {
-                status     : 'verified',
+                status     : 'none',
                 expiry_date: 0,
             },
             document: {

@@ -6,7 +6,6 @@ const Header                 = require('./header');
 const BinarySocket           = require('./socket');
 const Dialog                 = require('../common/attach_dom/dialog');
 const createLanguageDropDown = require('../common/attach_dom/language_dropdown');
-const showPopup              = require('../common/attach_dom/popup');
 const setCurrencies          = require('../common/currency').setCurrencies;
 const SessionDurationLimit   = require('../common/session_duration_limit');
 const updateBalance          = require('../pages/user/update_balance');
@@ -16,7 +15,6 @@ const Crowdin                = require('../../_common/crowdin');
 const localize               = require('../../_common/localize').localize;
 const LocalStore             = require('../../_common/storage').LocalStore;
 const State                  = require('../../_common/storage').State;
-const urlFor                 = require('../../_common/url').urlFor;
 const getPropertyValue       = require('../../_common/utility').getPropertyValue;
 const isLoginPages           = require('../../_common/utility').isLoginPages;
 
@@ -98,16 +96,6 @@ const BinarySocketGeneral = (() => {
                             BinarySocket.send({ get_self_exclusion: 1 });
                         }
                         BinarySocket.sendBuffered();
-                        if (/bch/i.test(response.authorize.currency) && !Client.get('accepted_bch')) {
-                            showPopup({
-                                url        : urlFor('user/warning'),
-                                popup_id   : 'warning_popup',
-                                form_id    : '#frm_warning',
-                                content_id : '#warning_content',
-                                validations: [{ selector: '#chk_accept', validations: [['req', { hide_asterisk: true }]] }],
-                                onAccept   : () => { Client.set('accepted_bch', 1); },
-                            });
-                        }
                         LocalStore.remove('date_first_contact');
                         LocalStore.remove('signup_device');
                     }

@@ -25,7 +25,6 @@ const Analysis = ({ no_graph }) => (
                 id='trade_analysis'
                 className='gr-padding-20 gr-parent tab-selector-wrapper'
                 items={[
-                    { id: 'tab_portfolio',    className: 'invisible' , text: it.L('Portfolio') },
                     { id: 'tab_graph',        disabled: no_graph, text: it.L('Chart') },
                     { id: 'tab_explanation',  text: it.L('Explanation') },
                     { id: 'tab_last_digit',   className: 'invisible', text: it.L('Last Digit Stats') },
@@ -34,8 +33,6 @@ const Analysis = ({ no_graph }) => (
             />
             <div className='tab-content'>
                 <TabContentContainer id='analysis_content'>
-                    <TabContent id='tab_portfolio' />
-
                     { !no_graph &&
                     <TabContent id='tab_graph'>
                         <p className='error-msg' id='chart-error' />
