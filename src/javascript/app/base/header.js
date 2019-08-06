@@ -291,6 +291,8 @@ const Header = (() => {
                     return verification_length === 2;
                 }
                 if (verification_length === 2) return false;
+                console.log('anyeong')
+                console.log(needs_verification)
 
                 return needs_verification.findIndex(s => s === string) >= 0;
             };
@@ -385,20 +387,8 @@ const Header = (() => {
                 checkStatus(check_statuses_virtual);
             } else {
                 const el_account_status = createElement('span', { class: 'authenticated', 'data-balloon': localize('Account Authenticated'), 'data-balloon-pos': 'down' });
-                // TODO: wait for authentication api call
                 BinarySocket.wait('website_status', 'get_account_status', 'get_settings', 'balance').then(() => {
-                    const mock_response = {
-                        needs_verification: ['document', 'identity'],
-                        identity          : {
-                            status     : 'none',
-                            expiry_date: 0,
-                        },
-                        document: {
-                            status     : 'none',
-                            expiry_date: 0,
-                        },
-                    };
-                    needs_verification = mock_response.needs_verification;
+                    needs_verification = State.getResponse('get_account_status.authentication.needs_verification') || {};
                     get_account_status = State.getResponse('get_account_status') || {};
                     status             = get_account_status.status;
                     checkStatus(check_statuses_real);

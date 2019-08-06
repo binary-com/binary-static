@@ -13,6 +13,7 @@ const toTitleCase         = require('../../../../_common/string_util').toTitleCa
 const TabSelector         = require('../../../../_common/tab_selector');
 const Url                 = require('../../../../_common/url');
 const showLoadingImage    = require('../../../../_common/utility').showLoadingImage;
+const State               = require('../../../../_common/storage').State;
 
 const Authenticate = (() => {
     let is_any_upload_failed = false;
@@ -27,29 +28,19 @@ const Authenticate = (() => {
         if (onfido_cookie) {
             resolve(onfido_cookie);
         } else {
-            let token = '';
-
-            if (window.location.host !== 'localhost') {
-                // TODO: service token API does not support localhost regex, below is temporary token to handle localhost
-                token = 'eyJhbGciOiJIUzI1NiJ9.eyJwYXlsb2FkIjoiNHZlS0ROeEdQMWoyTUV4QlBQQnVXSklxMDM0akpiWjBNTGdvK3M1YjNRd1NtOXdKODkwb29oVkFBa3B1XG4wM2w1Y1UwNEpETTduaU5hU3BqQitoUUVkalVEYk9abmdLU25yaTNERlZlbFVXcz1cbiIsInV1aWQiOiJIeHNhMDl1dmtBOCIsImV4cCI6MTU2NDU3Mjc3OX0.odI0ISrQDvdKw13hrWKotCKpZac-HmwPm0D0DJV67M4';
+            BinarySocket.send({
+                service_token: 1,
+                service      : 'onfido',
+            }).then((response) => {
+                if (response.error) reject(Error(response.error.message));
+                const token = response.service_token.token;
                 resolve(token);
-            } else {
-                BinarySocket.send({
-                    service_token: 1,
-                    service      : 'onfido',
-                    referrer     : 'https://*.binary.com/*',
-                }).then((response) => {
-                    console.log(response)
-                    if (response.error) reject(Error(response.error.message));
-                    token = response.service_token.token;
-                    resolve(token);
-                    const in_90_minutes = 1 / 16;
-                    Cookies.set('onfido_token', token, {
-                        expires: in_90_minutes,
-                        secure : true,
-                    });
+                const in_90_minutes = 1 / 16;
+                Cookies.set('onfido_token', token, {
+                    expires: in_90_minutes,
+                    secure : true,
                 });
-            }
+            });
 
         }
     });
@@ -513,20 +504,11 @@ const Authenticate = (() => {
     };
 
     const getAuthenticationStatus = () => new Promise((resolve) => {
-        const mock_response = {
-            needs_verification: ['identity'],
-            identity          : {
-                status     : 'none',
-                expiry_date: 0,
-            },
-            document: {
-                status     : 'verified',
-                expiry_date: 0,
-            },
-        };
-        setTimeout(() => {
-            resolve(mock_response);
-        }, 300);
+        BinarySocket.wait('get_account_status').then(() => {
+            const authentication_response = State.getResponse('get_account_status.authentication');
+            console.log(authentication_response);
+            resolve(authentication_response);
+        });
     });
 
     const initAuthentication = async () => {
