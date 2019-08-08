@@ -65,7 +65,7 @@ const SelfExclusion = (() => {
                 return;
             }
             BinarySocket.send({ get_account_status: 1 }).then((data) => {
-                const has_to_set_30day_turnover = !has_exclude_until && /ukrts_max_turnover_limit_not_set/.test(data.get_account_status.status);
+                const has_to_set_30day_turnover = !has_exclude_until && /max_turnover_limit_not_set/.test(data.get_account_status.status);
                 if (typeof set_30day_turnover === 'undefined') {
                     set_30day_turnover = has_to_set_30day_turnover;
                 }
