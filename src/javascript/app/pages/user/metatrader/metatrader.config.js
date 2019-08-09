@@ -532,7 +532,7 @@ const MetaTraderConfig = (() => {
             { selector: fields.new_account_mam.txt_main_pass.id,     validations: [['req', { hide_asterisk: true }], ['password', 'mt']] },
             { selector: fields.new_account_mam.txt_re_main_pass.id,  validations: [['req', { hide_asterisk: true }], ['compare', { to: fields.new_account_mam.txt_main_pass.id }]] },
             { selector: fields.new_account_mam.txt_investor_pass.id, validations: [['req', { hide_asterisk: true }], ['password', 'mt'], ['not_equal', { to: fields.new_account_mam.txt_main_pass.id, name1: localize('Main password'), name2: localize('Investor password') }]] },
-            { selector: fields.new_account_mam.chk_tnc.id,           validations: [['req', { hide_asterisk: true }]] },
+            { selector: fields.new_account_mam.chk_tnc.id,           validations: [['req', { hide_asterisk: true, message: localize('Please accept the terms and conditions.') }]] },
         ],
         password_change: [
             { selector: fields.password_change.ddl_password_type.id,   validations: [['req', { hide_asterisk: true }]] },

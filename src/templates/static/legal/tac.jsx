@@ -28,7 +28,7 @@ const Tac = () => (
                             { id: 'legal-mt',     text: it.L('MetaTrader') },
                         ],
                     },
-                    { id: 'mam',              text: it.L('MAM') },
+                    { id: 'mam',              text: it.L('MAM'), dataShow: '-default, -malta, -maltainvest, -iom' },
                     { id: 'datafeed',         text: it.L('Data Feed') },
                     { id: 'privacy',          text: it.L('Security and Privacy') },
                     { id: 'conflicts-policy', text: it.L('Conflicts Policy') },
@@ -65,7 +65,7 @@ const Tac = () => (
                     <TermsAndConditionsMT />
                 </SidebarContent>
 
-                <SidebarContent id='mam'>
+                <SidebarContent id='mam' dataShow='-default, -malta, -maltainvest, -iom'>
                     <MAM />
                 </SidebarContent>
 

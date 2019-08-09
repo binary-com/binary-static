@@ -26,7 +26,6 @@ const MAM = () => (
         <p>{it.L('"Money Manager" means any physical person including any executor, representative, administrator or successor in law, authorised to manage the Account on behalf of the Client in accordance with this Agreement.')}</p>
         <p>{it.L('"Orders" means any Order or Orders for any transaction, under the Client Agreement and this Multi-Account Manager (MAM) Agreement.')}</p>
         <p>{it.L('"Transaction" means any purchase or sale of any financial Instrument including but not limited to CFDs, Rolling Spot FX, Commodities and any other securities or products may be offered by the Company to the Client, from time to time in accordance with the Client Agreement.')}</p>
-        <p>{it.L('Binary options transactions fall out of the scope of this Multi-Account Manager (MAM) Agreement.')}</p>
 
         <h2 data-anchor='provisions-of-agreement'>D. {it.L('Provisions of Agreement')}</h2>
         <ol>

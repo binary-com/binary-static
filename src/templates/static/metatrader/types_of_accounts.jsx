@@ -2,8 +2,8 @@ import React from 'react';
 import { Table } from '../../_common/components/elements.jsx';
 import Loading from '../../_common/components/loading.jsx';
 
-const Box = ({ image, text, title, className }) => (
-    <div className={`gr-padding-10${className ? ` ${className}` : ''}`}>
+const Box = ({ image, text, title, className, dataShow }) => (
+    <div className={`gr-padding-10${className ? ` ${className}` : ''}`} data-show={dataShow || undefined}>
         <div className='box'>
             <div className='gr-row gr-row-align-middle'>
                 <div className='gr-2 gr-3-p gr-12-m center-text gr-centered'>
@@ -73,11 +73,13 @@ const TypesOfAccounts = () => (
             {/* toEnableMAMAdvanced: remove classname */}
             <Box
                 className='invisible'
+                dataShow='-default, -malta, -maltainvest, -iom'
                 image='advanced'
                 title={it.L('MAM Advanced*')}
                 text={it.L('The MAM Advanced account can be assigned to a money manager who will trade on your behalf with more competitive spreads than the regular Advanced account. Other account specifications remain the same.')}
             />
             <Box
+                dataShow='-default, -malta, -maltainvest, -iom'
                 image='volatility_indices'
                 title={it.L('MAM Synthetic Indices*')}
                 text={it.L('The MAM Synthetic Indices account can be assigned to a money manager who will trade on your behalf with the same specifications as the regular Synthetic Indices account.')}

@@ -6,18 +6,18 @@ export const SidebarContentContainer = ({ id, children }) => (
     </div>
 );
 
-export const SidebarContent = ({ id, visible, children }) => (
-    <div id={`${id}-content`} className={`toggle-content ${visible ? '' : 'invisible'}`}>
+export const SidebarContent = ({ id, visible, children, dataShow }) => (
+    <div id={`${id}-content`} className={`toggle-content ${visible ? '' : 'invisible'}`} data-show={dataShow || undefined}>
         {children}
     </div>
 );
 
-export const SidebarSubmenu = ({ id, items = [] }) => {
+export const SidebarSubmenu = ({ id, dataShow, items = [] }) => {
     const getHref = item_id => `#${item_id}`;
     return (
         <div className='sidebar-collapsible-container'>
             <div className='sidebar-collapsible'>
-                <ul id={id}>
+                <ul id={id} data-show={dataShow || undefined}>
                     {items.map((item, idx) => (
                         <li key={idx} id={`${item.id}-link`} className={`${item.submenu ? 'has-submenu' : ''}`} data-show={item.dataShow}>
                             { item.submenu &&
