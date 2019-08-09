@@ -260,7 +260,7 @@ const MetaTraderUI = (() => {
             }
 
             if (action === 'revoke_mam') {
-                $form.find('#mam_id').text(accounts_info[acc_type].info.manager_id);
+                $form.find('.mam-id').text(accounts_info[acc_type].info.manager_id);
             }
 
             $form.find('button[type="submit"]').each(function() { // cashier has two different actions

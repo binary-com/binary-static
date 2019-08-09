@@ -135,10 +135,10 @@ const Metatrader = () => (
                                 <span>{it.L('Manage funds')}</span>
                             </a>
                             <a href='javascript:;' className='act_manage_password has-account center-text invisible'>
-                                <span>{it.L('Manage MT5 password')}</span>
+                                <span>{it.L('MT5 password')}</span>
                             </a>
                             <a href='javascript:;' className='act_revoke_mam has-mam center-text invisible'>
-                                <span>{it.L('Manage MAM account')}</span>
+                                <span>{it.L('Account manager')}</span>
                             </a>
                         </div>
                         <div className='fst-container mt-container'>
@@ -481,16 +481,23 @@ const Metatrader = () => (
                     </div>
 
                     <form className='center-text' id='frm_revoke_mam'>
-                        <h2>{it.L('Revoke manager')}</h2>
-                        <p>{it.L('You may revoke the current manager\'s access.')}</p>
-                        <p>{it.L('Assigned manager\'s account ID:')}&nbsp;<span id='mam_id' /></p>
+                        <p>{it.L('You\'ve assigned [_1] as your account manager.', '<span class="mam-id"></span>')}</p>
+                        <p>{it.L('Your account manager will be able to place trades on your behalf.')}</p>
+                        <h3>{it.L('Removing your account manager\'s access')}</h3>
+                        <p>{it.L('Before removing your account manager’s access, you’ll need to:')}</p>
+                        <ul className='bullet'>
+                            <li>{it.L('Close any open positions in your MT5 MAM account.')}</li>
+                            <li>{it.L('Transfer your MT5 MAM account balance to your [_1] account.', it.website_name)}</li>
+                        </ul>
+                        <p>{it.L('After clicking on the button below, [_1] will not be able to trade on your behalf anymore.', '<span class="mam-id"></span>')}</p>
                         <SubmitButton
                             no_wrapper
                             type='submit'
                             id='btn_revoke_mam'
-                            text={it.L('Revoke manager')}
+                            text={it.L('Remove [_1]', '<span class="mam-id"></span>')}
                             attributes={{ action: 'revoke_mam' }}
                         />
+                        <p>{it.L('To assign a new manager, please contact us at [_1].', '<a href="mailto:marketing@binary.com">marketing@binary.com</a>')}</p>
                     </form>
 
                     <div id='frm_cashier'>
