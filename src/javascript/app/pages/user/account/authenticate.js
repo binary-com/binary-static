@@ -85,8 +85,10 @@ const Authenticate = (() => {
     };
 
     const handleComplete = () => {
-        onfido.tearDown();
-        $('#upload_complete').setVisibility(1);
+        BinarySocket.send({ reset_password: 1, loginid: Client.get('loginid') }).then(() => {
+            onfido.tearDown();
+            $('#upload_complete').setVisibility(1);
+        });
     };
 
     const init = () => {
@@ -511,7 +513,6 @@ const Authenticate = (() => {
     });
 
     const initAuthentication = async () => {
-        // TODO: call the authentication API
         const authentication_status = await getAuthenticationStatus();
         if (!authentication_status || authentication_status.error) {
             $('#error_occured').setVisibility(1);
@@ -519,21 +520,28 @@ const Authenticate = (() => {
         }
         const { identity, document } = authentication_status;
 
-        switch (identity.status) {
-            case 'none':
-                initOnfido();
-                break;
-            case 'pending':
-                $('#upload_complete').setVisibility(1);
-                break;
-            case 'rejected':
-                $('#unverified').setVisibility(1);
-                break;
-            case 'verified':
-                $('#verified').setVisibility(1);
-                break;
-            default:
-                break;
+        if (!identity.further_resubmissions_allowed) {
+            switch (identity.status) {
+                case 'none':
+                    initOnfido();
+                    break;
+                case 'pending':
+                    $('#upload_complete').setVisibility(1);
+                    break;
+                case 'rejected':
+                    $('#unverified').setVisibility(1);
+                    break;
+                case 'verified':
+                    $('#verified').setVisibility(1);
+                    break;
+                case 'suspected':
+                    $('#unverified').setVisibility(1);
+                    break;
+                default:
+                    break;
+            }
+        } else {
+            initOnfido();
         }
         switch (document.status) {
             case 'none': {
@@ -563,6 +571,9 @@ const Authenticate = (() => {
                 $('#pending_poa').setVisibility(1);
                 break;
             case 'rejected':
+                $('#unverified_poa').setVisibility(1);
+                break;
+            case 'suspected':
                 $('#unverified_poa').setVisibility(1);
                 break;
             case 'verified':
