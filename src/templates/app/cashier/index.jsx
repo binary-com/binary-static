@@ -110,7 +110,7 @@ const Cashier = () => (
                     <span className='invisible normal_currency client_logged_out'>{it.L('Deposit or withdraw to your account via bank wire, credit card, or e-wallet.')}</span>
                     <span className='invisible crypto_currency'>{it.L('Manage the funds in your cryptocurrency account.')}</span>
                     &nbsp;
-                    <a href={it.url_for('cashier/payment_methods')} id='view_payment_methods'>
+                    <a href={`${it.url_for('cashier/payment_methods')}?anchor=bitcoin`} id='view_payment_methods'>
                         <span>{it.L('View available payment methods')}</span>
                     </a>
                     <CashierNote className='gr-hide-m gr-child' text={it.L('Please do not share your bank account, credit card, or e-wallet with another client, as this may cause delays in your withdrawals.')} />
