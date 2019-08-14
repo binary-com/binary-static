@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-08-09 06:28\n"
+"PO-Revision-Date: 2019-08-14 07:29\n"
 "Last-Translator: binarycom\n"
 "Language-Team: Portuguese\n"
 "MIME-Version: 1.0\n"
@@ -975,6 +975,9 @@ msgstr "Limites da Conta"
 
 msgid "Account Password"
 msgstr "Senha da conta"
+
+msgid "Account access is temporarily limited. Please check your inbox for more details."
+msgstr ""
 
 msgid "Account balance:"
 msgstr "Saldo da conta:"
@@ -10141,8 +10144,8 @@ msgstr "O Agente declara e garante que o Agente está e estará em conformidade 
 msgid "The Agent shall further undertake to perform all necessary due diligence on the Agent's clients, and the Company shall be entitled, at any time, to request the Agent to provide all information and documentation relating to their clients for the purposes of the Company's AML compliance. "
 msgstr "O Agente também se comprometerá a realizar todas as diligências necessárias nos clientes do Agente, e a Empresa terá o direito, a qualquer momento, de solicitar que o Agente forneça todas as informações e documentação relativas aos seus clientes para os propósitos de cumprimento da AML da Empresa. "
 
-msgid "The Agent shall not be authorised to offer the Agent's services, under this agreement, to the clients who reside in restricted countries outlined in the Company's terms and conditions (as amended from time to time), which are published on the Company's website, %1."
-msgstr "O Agente não estará autorizado a oferecer os serviços do Agente, nos termos deste contrato, aos clientes que residam em países restritos descritos nos termos e condições da Empresa (conforme aditados de tempos em tempos), que são publicados no site da Empresa, %1."
+msgid "The Agent shall not be authorised to offer the Agent's services, under this agreement, to the clients who reside in restricted countries outlined in the Company's terms and conditions (as amended from time to time), which are published on the Company's website, %1www.binary.com%2."
+msgstr ""
 
 msgid "The Agent shall not do the following:"
 msgstr "O Agente não fará o seguinte:"
@@ -11328,9 +11331,6 @@ msgstr "Uma aposta é a quantia que o negociador deve pagar para iniciar uma neg
 
 msgid "The sum received in the %1 Agent Account shall be subsequently transferred by the Agent to the respective client's %1 account (hereinafter referred to as the \"%1 Client Account\")."
 msgstr "A quantia recebida na Conta do Agente %1 será subsequentemente transferida pelo Agente para a respectiva conta %1 do cliente (a seguir denominada \"Conta do Cliente %1\")."
-
-msgid "The system failed to verify your identity. Please check your email for details and the next steps."
-msgstr "O sistema não conseguiu confirmar sua identidade. Por favor, verifique seu e-mail para detalhes dos próximos passos."
 
 msgid "The system fills orders on a first-in, first-out basis, i.e. based on the sequence of the order received, and this is beyond the Company's control. As a result, the client may find it difficult or impossible to close a position at the intended price stipulated in the client's stop order during certain market conditions. The placement of stop order by the client, though useful as a risk management tool, will not necessarily limit the client's losses to the client's intended amounts in the event of highly volatile trading conditions, since market conditions may make it impossible to execute such orders, and there is uncertainty about the client's possible exit price. In short, a stop order is not guaranteed because it cannot operate in all market circumstances."
 msgstr "O sistema preenche os pedidos de primeiro a entrar, primeiro a sair, ou seja, com base na seqüência do pedido recebido, e isso está além do controle da Empresa. Como resultado, o cliente pode achar difícil ou impossível fechar uma posição pelo preço pretendido estipulado na ordem de parada do cliente durante certas condições de mercado. A colocação de ordem stop pelo cliente, apesar de útil como uma ferramenta de gerenciamento de risco, não necessariamente limitará as perdas do cliente aos valores pretendidos do cliente no caso de condições comerciais altamente voláteis, uma vez que as condições do mercado podem impossibilitar a execução de tais ordens, e há incerteza quanto ao possível preço de saída do cliente. Em suma, uma ordem de parada não é garantida porque não pode operar em todas as circunstâncias do mercado."

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-08-09 06:29\n"
+"PO-Revision-Date: 2019-08-14 07:30\n"
 "Last-Translator: binarycom\n"
 "Language-Team: Vietnamese\n"
 "MIME-Version: 1.0\n"
@@ -975,6 +975,9 @@ msgstr "Giới hạn Tài khoản"
 msgid "Account Password"
 msgstr "Mật Khẩu Tài Khoản"
 
+msgid "Account access is temporarily limited. Please check your inbox for more details."
+msgstr ""
+
 msgid "Account balance:"
 msgstr "Số Dư Tài Khoản:"
 
@@ -1282,7 +1285,7 @@ msgid "Already have an account?"
 msgstr "Đã có tài khoản?"
 
 msgid "Already have an account? %1Log in%2 here"
-msgstr "Đã có tài khoản? %1Đăng nhập%2 ở đây"
+msgstr "Đã có tài khoản? Đăng nhập%2 ở đây"
 
 msgid "Also known as counter currency"
 msgstr "Còn được gọi là tiền tệ thứ hai"
@@ -10139,8 +10142,8 @@ msgstr "Đại Lý đại diện và cam kết rằng họ hiện đang và s�
 msgid "The Agent shall further undertake to perform all necessary due diligence on the Agent's clients, and the Company shall be entitled, at any time, to request the Agent to provide all information and documentation relating to their clients for the purposes of the Company's AML compliance. "
 msgstr "Đại Lý sẽ tiếp tục thực hiện tất cả các biện pháp cần thiết về khách hàng của mình và Công Ty, tại bất kỳ lúc nào sẽ được phép yêu cầu Đại Lý cung cấp tất cả thông tin và tài liệu liên quan đến khách hàng của mình cho các mục đích tuân thủ AML của Công ty. "
 
-msgid "The Agent shall not be authorised to offer the Agent's services, under this agreement, to the clients who reside in restricted countries outlined in the Company's terms and conditions (as amended from time to time), which are published on the Company's website, %1."
-msgstr "Đại lý sẽ không được phép cung cấp các dịch vụ của mình, theo thỏa thuận này, cho những khách hàng cư trú ở các quốc gia bị hạn chế được nêu trong điều khoản và điều kiện của Công ty (được sửa đổi theo thời gian), được xuất bản trên trang web của Công ty, %1."
+msgid "The Agent shall not be authorised to offer the Agent's services, under this agreement, to the clients who reside in restricted countries outlined in the Company's terms and conditions (as amended from time to time), which are published on the Company's website, %1www.binary.com%2."
+msgstr ""
 
 msgid "The Agent shall not do the following:"
 msgstr "Đại lý sẽ không được phép thực hiện các điều sau:"
@@ -10209,7 +10212,7 @@ msgid "The Company does not provide and is not authorised to provide investment 
 msgstr "Công Ty không cung cấp và không được phép tư vấn đầu tư. Công Ty sẽ không đưa ra các khuyến nghị cá nhân hoặc tư vấn về giá trị của việc mua và / hoặc bán các khoản đầu tư cụ thể."
 
 msgid "The Company does not tolerate any form of inappropriate behaviour. This includes the usage of offensive language. The Company reserves the right to restrict or terminate the client's account if there is any form of inappropriate behaviour on the client's part."
-msgstr ""
+msgstr "Công ty không dung thứ bất cứ hành vi thiếu chuẩn mực nào. Điều này cũng bao gồm việc sử dụng các ngôn từ có tính xúc phạm. Công ty có quyền giới hạn hoặc hủy tài khoản của khách hàng nếu họ có bất cứ hành vi thiếu chuẩn mực nào."
 
 msgid "The Company endeavours to open or close the transaction to which the client's Order relates at a price reasonably available to the Company, acting in accordance with the Company's duty of best execution. Best execution means that, when executing Orders, the Company must take all sufficient steps to obtain the best possible result for the client, taking into account the price, costs, speed, likelihood of execution and settlement, size, nature, or any other consideration relevant to the execution of the Order."
 msgstr "Công ty cố gắng để mở hoặc đóng các giao dịch mà Lệnh của khách hàng được đưa ra với mức giá hợp lý có thể chấp nhận với Công ty, phù hợp với nhiệm vụ mang lại dịch vụ tốt nhất cho khách hàng của Công ty. Nghĩa là Công ty phải thực hiện đầy đủ nghĩa vụ, khi lệnh đang được thực hiện để mang lại kết quả tốt nhất có thể cho các khách hàng, khi tính đến giá cả, chi phí, tốc độ, khả năng thực hiện và giải quyết, kích thước, tính tự nhiên hay bất kỳ điều gì khác liên quan đến việc thực hiện Lệnh giao dịch."
@@ -11035,7 +11038,7 @@ msgid "The client's MT5 Real Account shall be funded by transferring funds from 
 msgstr "Tài Khoản Thực MT5 của khách hàng sẽ được tài trợ bằng cách chuyển tiền từ tài khoản %1 của họ, tùy thuộc vào tính khả dụng và đủ tiền trong tài khoản %1 của họ. Việc chuyển tiền không được thực hiện cho bất kỳ tài khoản nào khác dưới tên của bất kỳ bên thứ ba nào."
 
 msgid "The client's MT5 Real Account, as well as all payments and withdrawals therefrom, must be made in the same currency as maintained in the client's %1 account; otherwise, a currency conversion fee shall be applied."
-msgstr ""
+msgstr "Tài Khoản Thực MT5 của khách hàng cũng như tất cả các khoản thanh toán và rút tiền từ tài khoản phải được thực hiện bằng cùng đơn vị tiền tệ như được duy trì trong tài khoản %1 của họ; nếu không, một khoản phí chuyển đổi tiền tệ sẽ được áp dụng."
 
 msgid "The client's Real Money Account opened with %1, which the client uses to trade binary options with %1 trading platform and Binary Webtrader"
 msgstr "Tài Khoản Tiền Thực mà khách hàng mở với %1 để giao dịch lựa chọn nhị phân với sàn giao dịch %1 và Binary Webtrader"
@@ -11327,9 +11330,6 @@ msgstr "Vốn đầu tư là số tiền nhà giao dịch cần phải tra�
 
 msgid "The sum received in the %1 Agent Account shall be subsequently transferred by the Agent to the respective client's %1 account (hereinafter referred to as the \"%1 Client Account\")."
 msgstr "Số tiền nhận được trong Tài khoản Đại lý của %1 sẽ được chuyển ngay lập tức bởi Đại lý cho tài khoản 1% của khách hàng đó ( sau đây sẽ được coi là \"Tài khoản %1 của khách hàng\")."
-
-msgid "The system failed to verify your identity. Please check your email for details and the next steps."
-msgstr "Hệ thống không thể xác nhận danh tính của bạn, vui lòng kiểm tra email để biết thêm chi tiết và thực hiện các bước tiếp theo."
 
 msgid "The system fills orders on a first-in, first-out basis, i.e. based on the sequence of the order received, and this is beyond the Company's control. As a result, the client may find it difficult or impossible to close a position at the intended price stipulated in the client's stop order during certain market conditions. The placement of stop order by the client, though useful as a risk management tool, will not necessarily limit the client's losses to the client's intended amounts in the event of highly volatile trading conditions, since market conditions may make it impossible to execute such orders, and there is uncertainty about the client's possible exit price. In short, a stop order is not guaranteed because it cannot operate in all market circumstances."
 msgstr "Hệ thống điền lệnh dựa trên phuơng pháp vào trước-ra trước, tức là dựa trên các chuỗi theo thứ tự nhận được, và điều này là ngoài tầm kiểm soát của Công ty. Kết quả là, khách hàng có thể cảm thấy khó khăn hoặc không thể đóng một phiên theo mức giá dự định bằng lệnh dừng đã được đặt ra trong các điều kiện thị trường nhất định. Sự đặt vào lệnh dừng bởi khách hàng, mặc dù hữu ích như là một công cụ quản lý rủi ro, sẽ không đảm bảo giới hạn thiệt hại của khách hàng theo số lượng họ đã dự tính, trong trường hợp có điều kiện kinh doanh với rủi ro cao, vì các điều kiện thị trường có thể khiến việc thực hiện các đơn đặt hàng trở nên bất khả thi và cũng có sự không chắc chắn về giá thoát của khách hàng. Tóm lại, một lệnh dừng sẽ không được bảo đảm chắc chắn bởi vì nó không thể hoạt động trong mọi bối cảnh của thị trường."
