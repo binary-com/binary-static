@@ -140,7 +140,7 @@ const Purchase = (() => {
                             if (!Client.hasAccountType('real') && Client.get('is_virtual')) {
                                 message = localize('Please complete the [_1]Real Account form[_2] to verify your age as required by the [_3]UK Gambling[_4] Commission (UKGC).', [`<a href='${urlFor('new_account/realws')}'>`, '</a>', '<strong>', '</strong>']);
                             } else if (Client.hasAccountType('real') && /^virtual|iom$/i.test(Client.get('landing_company_shortcode'))) {
-                                message = localize('The system failed to verify your identity. Please check your email for details and the next steps.');
+                                message = localize('Account access is temporarily limited. Please check your inbox for more details.');
                             } else {
                                 message = error.message;
                             }
