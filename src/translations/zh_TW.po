@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-08-08 03:20\n"
+"PO-Revision-Date: 2019-08-14 07:30\n"
 "Last-Translator: binarycom\n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -974,6 +974,9 @@ msgstr "帳戶限額"
 
 msgid "Account Password"
 msgstr "帳戶密碼"
+
+msgid "Account access is temporarily limited. Please check your inbox for more details."
+msgstr ""
 
 msgid "Account balance:"
 msgstr "帳戶餘額："
@@ -10137,8 +10140,8 @@ msgstr "代理聲明和保證其目前及將來會遵守有關反洗錢，以及
 msgid "The Agent shall further undertake to perform all necessary due diligence on the Agent's clients, and the Company shall be entitled, at any time, to request the Agent to provide all information and documentation relating to their clients for the purposes of the Company's AML compliance. "
 msgstr "代理須進一步承諾對其客戶執行一切必要的盡職調查措施, 而公司有權隨時要求代理提供與其客戶有關的所有資訊和文件, 以便執行公司的反洗錢合規性。 "
 
-msgid "The Agent shall not be authorised to offer the Agent's services, under this agreement, to the clients who reside in restricted countries outlined in the Company's terms and conditions (as amended from time to time), which are published on the Company's website, %1."
-msgstr "根據本協議，代理不被授權向居住在由刊登在公司網站%1的條款和條件（經不時修訂）規定的受限制的國家的客戶提供服務。"
+msgid "The Agent shall not be authorised to offer the Agent's services, under this agreement, to the clients who reside in restricted countries outlined in the Company's terms and conditions (as amended from time to time), which are published on the Company's website, %1www.binary.com%2."
+msgstr ""
 
 msgid "The Agent shall not do the following:"
 msgstr "代理不可做以下:"
@@ -10205,6 +10208,9 @@ msgstr "公司不提供客戶之間進行投資、證券、衍生品或投機的
 
 msgid "The Company does not provide and is not authorised to provide investment advice. The Company will not make personal recommendations or advise on the merits of buying and/or selling in particular investments."
 msgstr "公司不提供, 也無權提供投資建議。公司不會就購買和/或銷售特定投資的好處提出個人推薦或建議。"
+
+msgid "The Company does not tolerate any form of inappropriate behaviour. This includes the usage of offensive language. The Company reserves the right to restrict or terminate the client's account if there is any form of inappropriate behaviour on the client's part."
+msgstr "公司不容忍任何形式的不當行為，包括使用冒犯性語言。如果客戶有任何形式的不當行為，公司保留限制或終止客戶的帳戶的權力。"
 
 msgid "The Company endeavours to open or close the transaction to which the client's Order relates at a price reasonably available to the Company, acting in accordance with the Company's duty of best execution. Best execution means that, when executing Orders, the Company must take all sufficient steps to obtain the best possible result for the client, taking into account the price, costs, speed, likelihood of execution and settlement, size, nature, or any other consideration relevant to the execution of the Order."
 msgstr "公司按照最佳執行責任行事，努力以與客戶的訂單相關的合理可用價格開盤或平倉交易。最佳執行意味著公司在執行訂單時必須採取足夠措施，考慮價格、成本、速度、執行和結算的可能性、大小、性質或任何其他考慮因素以為客戶獲取最大效益。"
@@ -11022,14 +11028,14 @@ msgstr "客戶的帳戶資金減去保證金總額"
 msgid "The client's Account Equity refers to the sum of their Account Balance and the net of unrealised profit and loss."
 msgstr "客戶的帳戶資金是指客戶的帳戶餘額與未實現利潤和虧損淨值總和。"
 
-msgid "The client's MT5 Real Account as well as all payments and withdrawals therefrom must be made in the same currency as maintained in the client's %1 account."
-msgstr "客戶的 MT5 真實帳戶以及所有付款和提款的貨幣必須與其%1帳戶貨幣相同。"
-
 msgid "The client's MT5 Real Account password and login ID are unique, and passwords are hashed so that not even %1 staff can read them. This is the reason why the Company cannot retrieve the client's password and has to send a link for setting a new password to the client's email if they cannot recall their password."
 msgstr "客戶的MT5真實帳戶密碼和登入ID都是唯一的，而且密碼已經被雜湊處理，即使是%1職員也無法看到它們。因此，如果客戶忘記密碼，公司不能讀取客戶的密碼，而是必須向客戶的電子郵箱傳送新的密碼。"
 
 msgid "The client's MT5 Real Account shall be funded by transferring funds from their %1 account, subject to the availability and sufficiency of funds in their %1 account and any daily transfer limits. No fund transfers shall be made to any other account in the name of any third party."
 msgstr "客戶需從%1帳戶把資金轉入MT5真實帳戶，條件是客戶的%1帳戶和任何日常匯款限額是有效的並具足夠資金。不可向任何第三方名下帳戶轉入資金。"
+
+msgid "The client's MT5 Real Account, as well as all payments and withdrawals therefrom, must be made in the same currency as maintained in the client's %1 account; otherwise, a currency conversion fee shall be applied."
+msgstr "客戶的 MT5 真實帳戶以及所有付款和提款的貨幣必須與其%1帳戶貨幣相同，否則需付貨幣兌換費。"
 
 msgid "The client's Real Money Account opened with %1, which the client uses to trade binary options with %1 trading platform and Binary Webtrader"
 msgstr "客戶透過 %1 開立及使用 %1 交易平台和Binary Webtrader 進行二元期權交易的真實資金帳戶"
@@ -11321,9 +11327,6 @@ msgstr "投注金額即交易者為執行交易所必需支付的金額。"
 
 msgid "The sum received in the %1 Agent Account shall be subsequently transferred by the Agent to the respective client's %1 account (hereinafter referred to as the \"%1 Client Account\")."
 msgstr "在％1代理帳戶中收到的金额随后由代理转移到相应客户的％1帳戶（以下简称「％1客户帳戶」）。"
-
-msgid "The system failed to verify your identity. Please check your email for details and the next steps."
-msgstr "系統無法驗證您的身份。請查看您的電子郵件，了解詳細資訊和後續步驟。"
 
 msgid "The system fills orders on a first-in, first-out basis, i.e. based on the sequence of the order received, and this is beyond the Company's control. As a result, the client may find it difficult or impossible to close a position at the intended price stipulated in the client's stop order during certain market conditions. The placement of stop order by the client, though useful as a risk management tool, will not necessarily limit the client's losses to the client's intended amounts in the event of highly volatile trading conditions, since market conditions may make it impossible to execute such orders, and there is uncertainty about the client's possible exit price. In short, a stop order is not guaranteed because it cannot operate in all market circumstances."
 msgstr "系統按先進先出的次序，即按照收到訂單的順序處理訂單，這是公司無法控制的。因此，客戶可能會發現很難或無法在某些市場條件下按照其止損單規定的預期價位平倉。客戶設定的止損單雖然是有用的風險管理工具，卻不一定能按照其原先設想的數額限制損失。在極不穩定的交易條件下，由於市場情況可能無法執行這些指令，客戶的退出價格具不確定性。簡而言之，止損單是無法提供保證的，因為無法在所有市場情況下運作。"
@@ -12647,9 +12650,6 @@ msgstr "我們刪除訂單，並保留金額最大的保證金"
 
 msgid "We do it again. BetOnMarkets.com follows up our 2007 award by being voted 'Best Fixed-Odds Financial Trading Provider' for 2008."
 msgstr "我們再次得獎。 2007年獲獎之後，BetOnMarkets.com 又一次被《Shares Magazine》雜誌選為2008年度「最佳固定賠率金融交易提供商」。"
-
-msgid "We do not tolerate any form of inappropriate behaviour. This includes the usage of offensive language. We reserve the right to restrict or terminate your account if there is any form of inappropriate behaviour on your part."
-msgstr "我們不容忍任何形式的不當行為，包括使用冒犯性語言。如果您有任何形式的不當行為，我們保留限制或終止您的帳戶的權力。"
 
 msgid "We have a proven track record since we launched our platform in 2000."
 msgstr "自2000年推出平台以來，我們保持良好的追蹤記錄。"

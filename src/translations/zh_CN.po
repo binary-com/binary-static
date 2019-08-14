@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-08-08 03:20\n"
+"PO-Revision-Date: 2019-08-14 07:29\n"
 "Last-Translator: binarycom\n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -974,6 +974,9 @@ msgstr "账户限额"
 
 msgid "Account Password"
 msgstr "账户密码"
+
+msgid "Account access is temporarily limited. Please check your inbox for more details."
+msgstr ""
 
 msgid "Account balance:"
 msgstr "账户余额："
@@ -6824,7 +6827,7 @@ msgid "Margin Level"
 msgstr "保证金水平"
 
 msgid "Margin Payments are due immediately and shall be received in full by the Company."
-msgstr "保证金支付现在到期，公司须收到全额款项。"
+msgstr "保证金支付即刻到期，公司须收到全额款项。"
 
 msgid "Margin Requirement"
 msgstr "保证金要求"
@@ -10139,8 +10142,8 @@ msgstr "代理声明和保证其目前及将来会遵守有关反洗钱，以及
 msgid "The Agent shall further undertake to perform all necessary due diligence on the Agent's clients, and the Company shall be entitled, at any time, to request the Agent to provide all information and documentation relating to their clients for the purposes of the Company's AML compliance. "
 msgstr "代理须进一步承诺对其客户执行一切必要的尽职调查措施, 而公司有权随时要求代理提供与其客户有关的所有信息和文件, 以便执行公司的反洗钱合规性。 "
 
-msgid "The Agent shall not be authorised to offer the Agent's services, under this agreement, to the clients who reside in restricted countries outlined in the Company's terms and conditions (as amended from time to time), which are published on the Company's website, %1."
-msgstr "根据本协议，代理不被授权向居住在由刊登在公司网站%1的公司条款和条件 （经不时修订）规定的受限制的国家的客户提供服务。"
+msgid "The Agent shall not be authorised to offer the Agent's services, under this agreement, to the clients who reside in restricted countries outlined in the Company's terms and conditions (as amended from time to time), which are published on the Company's website, %1www.binary.com%2."
+msgstr ""
 
 msgid "The Agent shall not do the following:"
 msgstr "代理不可做以下："
@@ -10208,11 +10211,14 @@ msgstr "公司不提供客户之间进行投资、证券、衍生品或投机的
 msgid "The Company does not provide and is not authorised to provide investment advice. The Company will not make personal recommendations or advise on the merits of buying and/or selling in particular investments."
 msgstr "公司不提供, 也无权提供投资建议。公司不会就购买和/或销售特定投资的好处提出个人推荐或建议。"
 
+msgid "The Company does not tolerate any form of inappropriate behaviour. This includes the usage of offensive language. The Company reserves the right to restrict or terminate the client's account if there is any form of inappropriate behaviour on the client's part."
+msgstr "公司不容忍任何形式的不当行为，包括使用冒犯性语言。如果客户有任何形式的不当行为，公司保留限制或终止客户的账户的权力。"
+
 msgid "The Company endeavours to open or close the transaction to which the client's Order relates at a price reasonably available to the Company, acting in accordance with the Company's duty of best execution. Best execution means that, when executing Orders, the Company must take all sufficient steps to obtain the best possible result for the client, taking into account the price, costs, speed, likelihood of execution and settlement, size, nature, or any other consideration relevant to the execution of the Order."
 msgstr "公司按照最佳执行责任行事，努力以与客户的订单相关的合理可用价格开盘或平仓交易。最佳执行意味着公司在执行订单时必须采取足够措施，考虑价格、成本、速度、执行和结算的可能性、大小、性质或任何其他考虑因素以为客户获取最大效益。"
 
 msgid "The Company has a Stop Out policy which prevents the client from losing more than they have deposited. However, in the event that the client's Open Positions are not closed when the Margin Level for their MT5 Real Account reaches the Stop Out Level, the Company, at its sole discretion, may waive the client's negative balance by crediting their account if their Account Balance goes into a negative balance. The negative balance is determined by aggregating all the negative balances incurred over a 24-hour period across all accounts held by the client. The client acknowledges that, unless they are a retail customer of Binary Investments (Europe) Ltd or a client of Binary (Europe) Ltd or Binary (IOM) Ltd, the offer of the negative balance protection by the Company to the client is at the Company's sole discretion and the Company reserves the right to change the features and eligibility criteria of the negative balance protection at any time. The provisions of the negative balance protection do not apply in the following situations:"
-msgstr "公司制定了“强制平仓”政策，可以防止客户的损失超过其存入的金额。 但是，当客户的MT5真实账户的保证金水平达到止损水平时其持仓头寸未平仓，而且如果客户的账户余额已是负余额，则公司可以自行决定是否通过贷记其账户来免除客户的负余额。负余额是通过汇总客户持有的所有账户在24小时内发生的所有负余额而确定的。除非客户是Binary投资（欧洲）有限公司或Binary（IOM）有限公司的零售客户，客户确认公司提供的负余额保护是由公司自行决定的，公司保留随时更改负余额保护的功能和资格标准的权利。负余额保护的规定不适用于以下情况："
+msgstr "公司制定了“强制平仓”政策，可以防止客户的损失超过其存入的金额。 但是，当客户的MT5真实账户的保证金水平达到止损水平时其持仓头寸未平仓，而且如果客户的账户余额已是负余额，则公司可以自行决定是否通过贷记其账户来免除客户的负余额。负余额是通过汇总客户持有的所有账户在24小时内发生的所有负余额而确定的。除非客户是Binary Investments (Europe) Ltd或Binary (IOM) Ltd的零售客户，客户确认公司提供的负余额保护是由公司自行决定的，公司保留随时更改负余额保护的功能和资格标准的权利。负余额保护的规定不适用于以下情况："
 
 msgid "The Company has a general duty to conduct its business with the client honestly, fairly, and professionally and to act in the client's best interests when opening and closing binary options trades with the client."
 msgstr "公司的一般性义务包括：以诚实、公正和专业的方式向客户提供服务，并在开始和结束二元期权交易时为客户争取最大的利益。"
@@ -10392,7 +10398,7 @@ msgid "The Company reserves the right to refuse the client's request to open an 
 msgstr "不论是什么原因，公司保留拒绝客户开立MT5真实账户请求， 并随时由公司自主决定关闭任何MT5真实账户的权利。"
 
 msgid "The Company reserves the right to refuse to do business with, to discontinue to do business with, and to reverse the transactions of clients who engage in any trading activity"
-msgstr "公司保留拒绝与从事任何交易活动的客户进行业务、停止业务运作以及撤销交易的权利"
+msgstr "如果客户从事任何的交易活动如下，公司保留拒绝与客户进行业务、停止业务运作以及撤销交易的权利"
 
 msgid "The Company reserves the right to request further information from the client whenever deemed appropriate under the circumstances. For example, the Company may ask the client to send the Company additional acceptable documents to confirm the authenticity of the client's account details or of any withdrawal request."
 msgstr "公司保留在适当情况下酌情要求客户提供进一步信息的权利。例如，公司可能会要求客户向公司发送其他可接受的文件以确认客户的账户详细信息或任何提款请求的真实性。"
@@ -10470,7 +10476,7 @@ msgid "The Company uses identity verification services and real-time fraud detec
 msgstr "公司通过身份核实服务和实时防欺诈措施防止客户的账户遭到非法访问。另外，公司还会对客户的账户活动进行监控，来发现不正常的欺诈活动迹象。公司还会和征管机构及执法机关合作，应对欺诈问题。"
 
 msgid "The Company will act on any instructions given, or appearing to be given, by the client and received by the Company in relation to the Margin trading services provided through the MT5 trading platform, as deemed instructed by the client. However, it is not the Company's obligation to act on any instructions deemed given by the client, and the Company is not obligated to give the client any reasons for declining to do so. Instructions received by the Company from the client are deemed final and will not be revocable. It is the client's responsibility to ensure the genuineness and accuracy of the instructions given by them to the Company."
-msgstr "公司会根据所收到的，由客户提供或看来是客户提供的关于通过 MT5 交易平台进行保证金交易的任何指示采取行动。然而，公司没有义务对客户所给的任何指示采取行动，公司也没有义务对拒绝采取行动向客户提供任何理由。公司从客户收到的指示被视为最后并不可撤销指示。确保客户给公司的指示真实性和准确性是客户的责任。"
+msgstr "公司会根据所收到的，由客户提供或看来是客户提供的关于通过 MT5 交易平台进行保证金交易的任何指示采取行动。然而，公司没有义务对客户所给的任何指示采取行动，公司也没有义务对拒绝采取行动向客户提供任何理由。公司从客户收到的指示被视为最终指示并不可撤销指示。确保客户给公司的指示真实性和准确性是客户的责任。"
 
 msgid "The Company will hold the client responsible for all their obligations under this agreement in the Company's course of providing the Margin trading services that are described in this agreement to the client even if the client notifies the Company that they are acting as the agent of an identified principal."
 msgstr "在公司根据此协议所述向客户提供保证金交易服务期间，客户必须对本协议项下其所有义务负责，即使客户通知公司其是某指定委托人的代理。"
@@ -11025,14 +11031,14 @@ msgstr "客户的账户资金减去保证金总额"
 msgid "The client's Account Equity refers to the sum of their Account Balance and the net of unrealised profit and loss."
 msgstr "客户的账户资金是指其账户余额与未实现利润和亏损净值总和。"
 
-msgid "The client's MT5 Real Account as well as all payments and withdrawals therefrom must be made in the same currency as maintained in the client's %1 account."
-msgstr "客户的 MT5 真实账户以及所有付款和提款的货币必须与其%1账户货币相同。"
-
 msgid "The client's MT5 Real Account password and login ID are unique, and passwords are hashed so that not even %1 staff can read them. This is the reason why the Company cannot retrieve the client's password and has to send a link for setting a new password to the client's email if they cannot recall their password."
 msgstr "客户的MT5真实账户密码和登录 ID 都是唯一的，且密码已经被散列处理，即使是%1的员工也无法看到它们。因此，如果客户忘记密码，公司也无法帮客户找回，只能向其电子邮箱发送新的密码。"
 
 msgid "The client's MT5 Real Account shall be funded by transferring funds from their %1 account, subject to the availability and sufficiency of funds in their %1 account and any daily transfer limits. No fund transfers shall be made to any other account in the name of any third party."
 msgstr "客户需从%1账户把资金转入MT5真实账户，条件是其%1账户和任何日常汇款限额是有效的并具足够资金。不可向任何第三方名下账户转入资金。"
+
+msgid "The client's MT5 Real Account, as well as all payments and withdrawals therefrom, must be made in the same currency as maintained in the client's %1 account; otherwise, a currency conversion fee shall be applied."
+msgstr "客户的 MT5 真实账户以及所有付款和提款的货币必须与其%1账户货币相同，否则需付货币兑换费。"
 
 msgid "The client's Real Money Account opened with %1, which the client uses to trade binary options with %1 trading platform and Binary Webtrader"
 msgstr "客户透过 %1 开立及使用 %1 交易平台和Binary Webtrader 进行二元期权交易的真实资金账户"
@@ -11324,9 +11330,6 @@ msgstr "投注金额即交易者执行交易而必需支付的金额。"
 
 msgid "The sum received in the %1 Agent Account shall be subsequently transferred by the Agent to the respective client's %1 account (hereinafter referred to as the \"%1 Client Account\")."
 msgstr "在％1代理账户中收到的金额随后由代理转移到相应客户的％1账户（以下简称“％1客户账户”）。"
-
-msgid "The system failed to verify your identity. Please check your email for details and the next steps."
-msgstr "系统无法验证您的身份。请查看您的电子邮件，了解详细信息和后续步骤。"
 
 msgid "The system fills orders on a first-in, first-out basis, i.e. based on the sequence of the order received, and this is beyond the Company's control. As a result, the client may find it difficult or impossible to close a position at the intended price stipulated in the client's stop order during certain market conditions. The placement of stop order by the client, though useful as a risk management tool, will not necessarily limit the client's losses to the client's intended amounts in the event of highly volatile trading conditions, since market conditions may make it impossible to execute such orders, and there is uncertainty about the client's possible exit price. In short, a stop order is not guaranteed because it cannot operate in all market circumstances."
 msgstr "系统按先进先出的次序，即按照收到订单的顺序处理订单，这是公司无法控制的。因此，客户可能会发现很难或无法在某些市场条件下按照其止损单规定的预期价位平仓。客户设定的止损单虽然是有用的风险管理工具，却不一定能按照其原先设想的数额限制损失。在极不稳定的交易条件下，由于市场情况可能无法执行这些指令，客户的退出价格具不确定性。简而言之，止损单是无法提供保证的，因为无法在所有市场情况下运作。"
@@ -12650,9 +12653,6 @@ msgstr "我们删除订单，并保留金额最大的保证金"
 
 msgid "We do it again. BetOnMarkets.com follows up our 2007 award by being voted 'Best Fixed-Odds Financial Trading Provider' for 2008."
 msgstr "我们再次获奖。在2007年获奖之后，BetOnMarkets.com 再一次被《Shares Magazine》杂志选为2008年度“最佳固定赔率金融交易提供商”。"
-
-msgid "We do not tolerate any form of inappropriate behaviour. This includes the usage of offensive language. We reserve the right to restrict or terminate your account if there is any form of inappropriate behaviour on your part."
-msgstr "我们不容忍任何形式的不当行为，包括使用冒犯性语言。如果您有任何形式的不当行为，我们保留限制或终止您的账户的权力。"
 
 msgid "We have a proven track record since we launched our platform in 2000."
 msgstr "自2000年推出平台以来，我们保持良好的经营纪录。"
