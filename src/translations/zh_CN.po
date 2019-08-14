@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-08-09 06:29\n"
+"PO-Revision-Date: 2019-08-14 07:29\n"
 "Last-Translator: binarycom\n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -974,6 +974,9 @@ msgstr "账户限额"
 
 msgid "Account Password"
 msgstr "账户密码"
+
+msgid "Account access is temporarily limited. Please check your inbox for more details."
+msgstr ""
 
 msgid "Account balance:"
 msgstr "账户余额："
@@ -10139,8 +10142,8 @@ msgstr "代理声明和保证其目前及将来会遵守有关反洗钱，以及
 msgid "The Agent shall further undertake to perform all necessary due diligence on the Agent's clients, and the Company shall be entitled, at any time, to request the Agent to provide all information and documentation relating to their clients for the purposes of the Company's AML compliance. "
 msgstr "代理须进一步承诺对其客户执行一切必要的尽职调查措施, 而公司有权随时要求代理提供与其客户有关的所有信息和文件, 以便执行公司的反洗钱合规性。 "
 
-msgid "The Agent shall not be authorised to offer the Agent's services, under this agreement, to the clients who reside in restricted countries outlined in the Company's terms and conditions (as amended from time to time), which are published on the Company's website, %1."
-msgstr "根据本协议，代理不被授权向居住在由刊登在公司网站%1的公司条款和条件 （经不时修订）规定的受限制的国家的客户提供服务。"
+msgid "The Agent shall not be authorised to offer the Agent's services, under this agreement, to the clients who reside in restricted countries outlined in the Company's terms and conditions (as amended from time to time), which are published on the Company's website, %1www.binary.com%2."
+msgstr ""
 
 msgid "The Agent shall not do the following:"
 msgstr "代理不可做以下："
@@ -10209,7 +10212,7 @@ msgid "The Company does not provide and is not authorised to provide investment 
 msgstr "公司不提供, 也无权提供投资建议。公司不会就购买和/或销售特定投资的好处提出个人推荐或建议。"
 
 msgid "The Company does not tolerate any form of inappropriate behaviour. This includes the usage of offensive language. The Company reserves the right to restrict or terminate the client's account if there is any form of inappropriate behaviour on the client's part."
-msgstr ""
+msgstr "公司不容忍任何形式的不当行为，包括使用冒犯性语言。如果客户有任何形式的不当行为，公司保留限制或终止客户的账户的权力。"
 
 msgid "The Company endeavours to open or close the transaction to which the client's Order relates at a price reasonably available to the Company, acting in accordance with the Company's duty of best execution. Best execution means that, when executing Orders, the Company must take all sufficient steps to obtain the best possible result for the client, taking into account the price, costs, speed, likelihood of execution and settlement, size, nature, or any other consideration relevant to the execution of the Order."
 msgstr "公司按照最佳执行责任行事，努力以与客户的订单相关的合理可用价格开盘或平仓交易。最佳执行意味着公司在执行订单时必须采取足够措施，考虑价格、成本、速度、执行和结算的可能性、大小、性质或任何其他考虑因素以为客户获取最大效益。"
@@ -11035,7 +11038,7 @@ msgid "The client's MT5 Real Account shall be funded by transferring funds from 
 msgstr "客户需从%1账户把资金转入MT5真实账户，条件是其%1账户和任何日常汇款限额是有效的并具足够资金。不可向任何第三方名下账户转入资金。"
 
 msgid "The client's MT5 Real Account, as well as all payments and withdrawals therefrom, must be made in the same currency as maintained in the client's %1 account; otherwise, a currency conversion fee shall be applied."
-msgstr ""
+msgstr "客户的 MT5 真实账户以及所有付款和提款的货币必须与其%1账户货币相同，否则需付货币兑换费。"
 
 msgid "The client's Real Money Account opened with %1, which the client uses to trade binary options with %1 trading platform and Binary Webtrader"
 msgstr "客户透过 %1 开立及使用 %1 交易平台和Binary Webtrader 进行二元期权交易的真实资金账户"
@@ -11327,9 +11330,6 @@ msgstr "投注金额即交易者执行交易而必需支付的金额。"
 
 msgid "The sum received in the %1 Agent Account shall be subsequently transferred by the Agent to the respective client's %1 account (hereinafter referred to as the \"%1 Client Account\")."
 msgstr "在％1代理账户中收到的金额随后由代理转移到相应客户的％1账户（以下简称“％1客户账户”）。"
-
-msgid "The system failed to verify your identity. Please check your email for details and the next steps."
-msgstr "系统无法验证您的身份。请查看您的电子邮件，了解详细信息和后续步骤。"
 
 msgid "The system fills orders on a first-in, first-out basis, i.e. based on the sequence of the order received, and this is beyond the Company's control. As a result, the client may find it difficult or impossible to close a position at the intended price stipulated in the client's stop order during certain market conditions. The placement of stop order by the client, though useful as a risk management tool, will not necessarily limit the client's losses to the client's intended amounts in the event of highly volatile trading conditions, since market conditions may make it impossible to execute such orders, and there is uncertainty about the client's possible exit price. In short, a stop order is not guaranteed because it cannot operate in all market circumstances."
 msgstr "系统按先进先出的次序，即按照收到订单的顺序处理订单，这是公司无法控制的。因此，客户可能会发现很难或无法在某些市场条件下按照其止损单规定的预期价位平仓。客户设定的止损单虽然是有用的风险管理工具，却不一定能按照其原先设想的数额限制损失。在极不稳定的交易条件下，由于市场情况可能无法执行这些指令，客户的退出价格具不确定性。简而言之，止损单是无法提供保证的，因为无法在所有市场情况下运作。"
