@@ -71,21 +71,23 @@ const BinaryLoader = (() => {
             loadHandler('get-started');
         }
 
-        ContentVisibility.init();
+        // Make sure content is properly loaded or visible before scrolling to anchor.
+        ContentVisibility.init().then(() => {
+            BinarySocket.wait('authorize', 'website_status', 'landing_company').then(() => {
+                GTM.pushDataLayer({ event: 'page_load' }); // we need website_status.clients_country
 
-        BinarySocket.wait('authorize', 'website_status', 'landing_company').then(() => {
-            GTM.pushDataLayer({ event: 'page_load' }); // we need website_status.clients_country
+                // first time load.
+                const last_image = $('#content img').last();
+                if (last_image) {
+                    last_image.on('load', () => {
+                        ScrollToAnchor.init();
+                    });
+                }
 
-            // first time load.
-            const last_image = $('#content img').last();
-            if (last_image) {
-                last_image.on('load', () => {
-                    ScrollToAnchor.init();
-                });
-            }
-
-            ScrollToAnchor.init();
+                ScrollToAnchor.init();
+            });
         });
+
         if (active_script) {
             BinarySocket.setOnReconnect(active_script.onReconnect);
         }
