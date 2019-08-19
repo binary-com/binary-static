@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-08-19 01:21\n"
+"PO-Revision-Date: 2019-08-19 07:05\n"
 "Last-Translator: binarycom\n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
@@ -9060,8 +9060,8 @@ msgstr "Ripple против доллара США"
 msgid "Rise/Fall"
 msgstr "Повышение/Падение"
 
-msgid "Rise/Fall contracts will be refunded at the purchase price if the following conditions occur: (1) there are less than 2 ticks between the start and end times, or (2) for contracts of tick duration, if the contract doesn't end within 5 minutes, or (3) for contracts starting in the future, if there are no ticks in the 5 minutes before the contract's start time."
-msgstr "Цена покупки контрактов Повышение/Падение будет возмещена трейдеру в случае возникновения следующих условий: (1) разница между временем начала и окончания контракта составляет менее двух тиков; (2) для контрактов, длительность которых измеряется тиками – если контракт не заканчивается в течение 5 минут; (3) для контрактов, начинающихся в будущем – если в течение 5 минут до начала действия контракта не было отмечено ни одного тика."
+msgid "Rise/Fall contracts will be refunded if:"
+msgstr ""
 
 msgid "Rise/Fall trades"
 msgstr "Контракты Повышение/Падение"
@@ -10470,8 +10470,8 @@ msgstr "Компания обязуется предоставить Вам он
 msgid "The Company shall, in its absolute discretion, determine whether the application of the Introducing Broker has been successful. The Company's decision is final and is not subject to any appeal."
 msgstr "Компания по своему усмотрению решает, одобрять ли заявление Представляющего брокера. Решение Компании окончательно и не подлежит обсуждению."
 
-msgid "The Company sources market data from prime brokers who act as liquidity providers, thus executing the client's transactions through a pool of aggregated liquidity from top tier banks. The services offered by the Company do not include physical delivery of foreign currency by the Company or the prime brokers to the client. the client acknowledges and agrees that such data is proprietary to the Company and any such provider, and the client will not retransmit, redistribute, publish, disclose, or display in whole or in part such data to third parties. The client represents and warrants that they will only use such data for purposes of facilitating their entry into transactions with the Company on the client's MT5 Real Account in accordance with this agreement and not for any other purpose. This clause does not apply to Volatility Indices."
-msgstr "Компания получает рыночные данные от прайм-брокеров, выступающих в качестве поставщиков ликвидности, исполняя контракты клиента с помощью совокупного резерва ликвидности, полученного от ведущих банков. Услуги, предоставляемые Компанией, не включают физическое предоставление клиенту иностранных валют от самой Компании или прайм-брокеров. Клиент признаёт и соглашается с тем, что эта информация принадлежит Компании и любым соответствующим провайдерам, а клиент обязуется не передавать, не публиковать, не разглашать и не отображать эти данные (целиком или частично) на сторонних ресурсах. Настоящим клиент гарантирует, что будет использовать данную информацию лишь с целью заключения контрактов с Компанией на Реальном счёте MT5, в рамках данного соглашения, и не использовать её в любых других целях. Данное положение не распространяется на Индексы волатильности."
+msgid "The Company sources market data from prime brokers who act as liquidity providers, thus executing the client's transactions through a pool of aggregated liquidity from top tier banks. The services offered by the Company do not include physical delivery of foreign currency by the Company or the prime brokers to the client. The client acknowledges and agrees that such data is proprietary to the Company and any such provider, and the client will not retransmit, redistribute, publish, disclose, or display in whole or in part such data to third parties. The client represents and warrants that they will only use such data for purposes of facilitating their entry into transactions with the Company on the client's MT5 Real Account in accordance with this agreement and not for any other purpose. This clause does not apply to Volatility Indices."
+msgstr ""
 
 msgid "The Company strives to ensure that all the orders placed are executed; however, this is not always possible due to material difficulty or unusual circumstances. In any instance that the Company is aware of any material difficulty relevant to the proper execution of an order, it promptly informs the client of the issue."
 msgstr "Компания стремится к тому, чтобы все размещённые ордеры были исполнены. Тем не менее, это не всегда представляется возможным, ввиду материальных сложностей или возникновения необычных обстоятельств. В любом случае материальных затруднений в отношении исполнения ордера, о которых становится известно Компании, она обязуется своевременно уведомлять клиента о данных обстоятельствах."
@@ -11091,6 +11091,9 @@ msgstr "Компания оставляет за собой право взим�
 msgid "The content on this website is subject to change at any time without notice and is provided for the sole purpose of assisting traders in making independent investment decisions. %1 has taken reasonable measures to ensure the accuracy of the information on the website."
 msgstr "Контент данного вебсайта в любое время подлежит изменениям без предварительного уведомления и предоставляется исключительно с целью помощи трейдерам при принятии независимых инвестиционных решений. %1 предпринял разумные меры для обеспечения точности информации на сайте."
 
+msgid "The contract doesn't end within 5 minutes (for tick duration contracts)"
+msgstr ""
+
 msgid "The contract period is the timeframe of a trade. It is also called the duration."
 msgstr "Период контракта – это временные рамки контракта. Также он называется длительностью."
 
@@ -11387,6 +11390,9 @@ msgstr "Потом купите контракт"
 
 msgid "There are four types of Smart FX indices that you can trade:"
 msgstr "Представляем Вашему вниманию четыре вида индексов Smart FX, доступных для торговли:"
+
+msgid "There are less than 2 ticks between the start and end times"
+msgstr ""
 
 msgid "There are no charges for transferring money from the client's %1 account to their MT5 Real Account."
 msgstr "Перевод средств между счётом %1 и Реальным счётом MT5 клиента осуществляется без комиссии."

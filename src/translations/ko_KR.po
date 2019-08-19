@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-08-19 01:20\n"
+"PO-Revision-Date: 2019-08-19 07:04\n"
 "Last-Translator: binarycom\n"
 "Language-Team: Korean\n"
 "MIME-Version: 1.0\n"
@@ -9061,7 +9061,7 @@ msgstr "리플 vs 미국 달러"
 msgid "Rise/Fall"
 msgstr ""
 
-msgid "Rise/Fall contracts will be refunded at the purchase price if the following conditions occur: (1) there are less than 2 ticks between the start and end times, or (2) for contracts of tick duration, if the contract doesn't end within 5 minutes, or (3) for contracts starting in the future, if there are no ticks in the 5 minutes before the contract's start time."
+msgid "Rise/Fall contracts will be refunded if:"
 msgstr ""
 
 msgid "Rise/Fall trades"
@@ -10471,8 +10471,8 @@ msgstr ""
 msgid "The Company shall, in its absolute discretion, determine whether the application of the Introducing Broker has been successful. The Company's decision is final and is not subject to any appeal."
 msgstr ""
 
-msgid "The Company sources market data from prime brokers who act as liquidity providers, thus executing the client's transactions through a pool of aggregated liquidity from top tier banks. The services offered by the Company do not include physical delivery of foreign currency by the Company or the prime brokers to the client. the client acknowledges and agrees that such data is proprietary to the Company and any such provider, and the client will not retransmit, redistribute, publish, disclose, or display in whole or in part such data to third parties. The client represents and warrants that they will only use such data for purposes of facilitating their entry into transactions with the Company on the client's MT5 Real Account in accordance with this agreement and not for any other purpose. This clause does not apply to Volatility Indices."
-msgstr "본 회사는 유동성 공급자로 역할하는 프라임 브로커로부터 시장데이터를 받습니다. 그러므로 최상위 은행으로부터 집계된 유동성의 풀로부터 고객의 거래를 처리합니다. 본 회사에 의해 제공되는 서비스는 본 회사가 고객에게 외화를 물리적으로 인도하거나 프라임 브로커로부터 고객에게 인도되는 부분을 포함하지 않습니다. 고객은 이러한 데이터가 본 회사 및 이러한 다른 제공자에게 소유권이 있으며 고객은 제 3자에게 이러한 데이터의 일부분이나 또는 전체를 제 3자에게 재전송, 재분배, 게시, 공개, 전시하지 않을 것을 인정하고 동의합니다. 고객은 이러한 데이터를 이 동의문에 따라 고객의 MT5 실계좌에 대하여 본 회사와 고래를 체결하게 하는 목적으로만 사용할 것이며 다른 목적으로는 사용하지 않을 것에 대해 대표하고 보장합니다. 이 조항은 유동성 지수에는 적용되지 않습니다."
+msgid "The Company sources market data from prime brokers who act as liquidity providers, thus executing the client's transactions through a pool of aggregated liquidity from top tier banks. The services offered by the Company do not include physical delivery of foreign currency by the Company or the prime brokers to the client. The client acknowledges and agrees that such data is proprietary to the Company and any such provider, and the client will not retransmit, redistribute, publish, disclose, or display in whole or in part such data to third parties. The client represents and warrants that they will only use such data for purposes of facilitating their entry into transactions with the Company on the client's MT5 Real Account in accordance with this agreement and not for any other purpose. This clause does not apply to Volatility Indices."
+msgstr ""
 
 msgid "The Company strives to ensure that all the orders placed are executed; however, this is not always possible due to material difficulty or unusual circumstances. In any instance that the Company is aware of any material difficulty relevant to the proper execution of an order, it promptly informs the client of the issue."
 msgstr "본 회사는 신청된 모든 주문들이 모두 실행될 수 있도록 노력합니다; 그렇지만, 이는 물적 여러움 또는 비정상적인 상황으로 인하여 항상 가능한 것은 아닙니다. 본 회사는 주문의 적절한 실행과 관련하여 그 어떠한 물적 어려움에 대해 알게 된 경우 해당하는 문제에 대해 고객에게 즉시 공지가 됩니다."
@@ -11092,6 +11092,9 @@ msgstr ""
 msgid "The content on this website is subject to change at any time without notice and is provided for the sole purpose of assisting traders in making independent investment decisions. %1 has taken reasonable measures to ensure the accuracy of the information on the website."
 msgstr "본 웹사이트에 나와있는 내용물은 공지없이 언제든지 변경될 수 있으며 본 내용들은 트레이더로 하여금 독립적인 투자 결정을 할 수 있도록 도와주는 유일한 목적에 있습니다. %1은 본 웹사이트의 정보의 정확성을 확고히 하기 위해 합당한 조치를 취했습니다."
 
+msgid "The contract doesn't end within 5 minutes (for tick duration contracts)"
+msgstr ""
+
 msgid "The contract period is the timeframe of a trade. It is also called the duration."
 msgstr ""
 
@@ -11387,6 +11390,9 @@ msgid "Then, make your trade"
 msgstr "그다음, 거래를 실행하세요"
 
 msgid "There are four types of Smart FX indices that you can trade:"
+msgstr ""
+
+msgid "There are less than 2 ticks between the start and end times"
 msgstr ""
 
 msgid "There are no charges for transferring money from the client's %1 account to their MT5 Real Account."
