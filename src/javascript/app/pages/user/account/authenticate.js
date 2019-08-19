@@ -84,7 +84,9 @@ const Authenticate = (() => {
         }
     };
 
-    const handleComplete = () => {
+    const handleComplete = (response) => {
+        // eslint-disable-next-line
+        console.log(response)
         BinarySocket.send({ reset_password: 1, loginid: Client.get('loginid') }).then(() => {
             onfido.tearDown();
             $('#upload_complete').setVisibility(1);
