@@ -108,6 +108,7 @@ const AccountTransfer = (() => {
         if (/iom|malta/.test(Client.get('landing_company_shortcode'))) {
             el_transfer_fee.setVisibility(0);
         }
+        hideLoading();
     };
 
     const setTransferFeeAmount = () => {
@@ -128,8 +129,14 @@ const AccountTransfer = (() => {
     };
 
     const showError = () => {
+        hideLoading();
         getElementById(messages.parent).setVisibility(1);
         getElementById(messages.error).setVisibility(1);
+    };
+
+    const hideLoading = () => {
+        getElementById('loading').setVisibility(0);
+        getElementById('transfer_between_accounts').setVisibility(1);
     };
 
     const showForm = () => {
@@ -149,7 +156,6 @@ const AccountTransfer = (() => {
         FormManager.handleSubmit({
             form_selector       : form_id_hash,
             fnc_response_handler: responseHandler,
-            enable_button       : true,
         });
     };
 
@@ -207,6 +213,7 @@ const AccountTransfer = (() => {
             client_currency  = Client.get('currency');
             const min_amount = Currency.getTransferLimits(client_currency, 'min');
             if (!client_balance || client_balance < +min_amount) {
+                hideLoading();
                 getElementById(messages.parent).setVisibility(1);
                 if (client_currency) {
                     elementTextContent(getElementById('min_required_amount'), `${client_currency} ${min_amount}`);
