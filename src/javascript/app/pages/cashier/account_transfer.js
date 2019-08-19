@@ -108,7 +108,7 @@ const AccountTransfer = (() => {
         if (/iom|malta/.test(Client.get('landing_company_shortcode'))) {
             el_transfer_fee.setVisibility(0);
         }
-        hideLoading();
+        setLoadingVisibility(0);
     };
 
     const setTransferFeeAmount = () => {
@@ -129,14 +129,14 @@ const AccountTransfer = (() => {
     };
 
     const showError = () => {
-        hideLoading();
+        setLoadingVisibility(0);
         getElementById(messages.parent).setVisibility(1);
         getElementById(messages.error).setVisibility(1);
     };
 
-    const hideLoading = () => {
-        getElementById('loading').setVisibility(0);
-        getElementById('transfer_between_accounts').setVisibility(1);
+    const setLoadingVisibility = (is_loading_visible) => {
+        getElementById('loading').setVisibility(is_loading_visible);
+        getElementById('transfer_between_accounts').setVisibility(!is_loading_visible);
     };
 
     const showForm = () => {
@@ -167,7 +167,13 @@ const AccountTransfer = (() => {
             // Auto hide error after 5 seconds.
             setTimeout(() => el_error.setVisibility(0), 5000);
         } else {
-            BinarySocket.send({ transfer_between_accounts: 1 }).then(data => populateReceipt(response, data));
+            BinarySocket.send({ transfer_between_accounts: 1 }).then(data => {
+                populateReceipt(response, data);
+                // manually enable the button instead of inside form manager since the API response is slow
+                const el_button_submit = getElementById('btn_submit');
+                el_button_submit.removeAttribute('disabled');
+                el_button_submit.html(el_button_submit.getElementsByTagName('span')[0].textContent);
+            });
         }
     };
 
@@ -201,6 +207,7 @@ const AccountTransfer = (() => {
             return;
         }
 
+        setLoadingVisibility(1);
         el_transfer_fee   = getElementById('transfer_fee');
         el_fee_amount     = getElementById('transfer_fee_amount');
         el_fee_minimum    = getElementById('transfer_fee_minimum');
@@ -213,7 +220,7 @@ const AccountTransfer = (() => {
             client_currency  = Client.get('currency');
             const min_amount = Currency.getTransferLimits(client_currency, 'min');
             if (!client_balance || client_balance < +min_amount) {
-                hideLoading();
+                setLoadingVisibility(0);
                 getElementById(messages.parent).setVisibility(1);
                 if (client_currency) {
                     elementTextContent(getElementById('min_required_amount'), `${client_currency} ${min_amount}`);
