@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-08-19 01:21\n"
+"PO-Revision-Date: 2019-08-19 07:06\n"
 "Last-Translator: binarycom\n"
 "Language-Team: Vietnamese\n"
 "MIME-Version: 1.0\n"
@@ -9062,8 +9062,8 @@ msgstr "Ripple vs đô-la Mỹ"
 msgid "Rise/Fall"
 msgstr "Tăng/Giảm"
 
-msgid "Rise/Fall contracts will be refunded at the purchase price if the following conditions occur: (1) there are less than 2 ticks between the start and end times, or (2) for contracts of tick duration, if the contract doesn't end within 5 minutes, or (3) for contracts starting in the future, if there are no ticks in the 5 minutes before the contract's start time."
-msgstr "Hợp đồng Tăng/Giảm sẽ được hoàn lại bằng giá mua trong những trường hợp sau: (1) có ít hơn 2 tick trong khoảng thời gian từ khi bắt đầu đến thời điểm kết thúc, hoặc (2) đối với các hợp đồng có thời hạn tick, nếu hợp đồng không kết thúc trong vòng 5 phút, hoặc (3) đối với những hợp đồng có thời gian bắt đầu trong tương lai, nếu không có tick nào trong vòng 5 phút trước khi hợp đồng bắt đầu."
+msgid "Rise/Fall contracts will be refunded if:"
+msgstr ""
 
 msgid "Rise/Fall trades"
 msgstr "Giao dịch Tăng/Giảm"
@@ -10472,8 +10472,8 @@ msgstr "Công Ty sẽ cung cấp cho bạn quyền truy cập trực tuyến n�
 msgid "The Company shall, in its absolute discretion, determine whether the application of the Introducing Broker has been successful. The Company's decision is final and is not subject to any appeal."
 msgstr "Công Ty sẽ tự mình xác định xem ứng dụng của Nhà môi giới đã thành công hay chưa. Quyết định của Công Ty là cuối cùng và không thể kháng cáo."
 
-msgid "The Company sources market data from prime brokers who act as liquidity providers, thus executing the client's transactions through a pool of aggregated liquidity from top tier banks. The services offered by the Company do not include physical delivery of foreign currency by the Company or the prime brokers to the client. the client acknowledges and agrees that such data is proprietary to the Company and any such provider, and the client will not retransmit, redistribute, publish, disclose, or display in whole or in part such data to third parties. The client represents and warrants that they will only use such data for purposes of facilitating their entry into transactions with the Company on the client's MT5 Real Account in accordance with this agreement and not for any other purpose. This clause does not apply to Volatility Indices."
-msgstr "Nguồn dữ liệu thị trường của Công Ty từ môi giới chính, những người hoạt động như các nhà cung cấp thanh khoản, do đó thực hiện các giao dịch của khách hàng thông qua một khoản các khả năng thanh toán tổng hợp từ các ngân hàng hàng đầu. Các dịch vụ được cung cấp bởi Công ty không bao gồm giao ngoại tệ tại nhà bởi Công ty hoặc người môi giới chính cho khách hàng. Khách hàng công nhận và đồng ý rằng các dữ liệu đó là độc quyền của Công ty và bất kỳ nhà cung cấp như vậy, và khách hàng sẽ không phải tái chuyển khoản, phân phối lại, xuất bản, tiết lộ hoặc hiển thị toàn bộ hoặc một phần dữ liệu đó cho bên thứ ba. Khách hàng tuyên bố và bảo đảm rằng họ chỉ sẽ sử dụng dữ liệu đó để tạo điều kiện giao dịch với Công ty vào tài khoản của họ phù hợp với thỏa thuận này và không cho bất kỳ mục đích nào khác. Khoản này không áp dụng cho chỉ số biến động."
+msgid "The Company sources market data from prime brokers who act as liquidity providers, thus executing the client's transactions through a pool of aggregated liquidity from top tier banks. The services offered by the Company do not include physical delivery of foreign currency by the Company or the prime brokers to the client. The client acknowledges and agrees that such data is proprietary to the Company and any such provider, and the client will not retransmit, redistribute, publish, disclose, or display in whole or in part such data to third parties. The client represents and warrants that they will only use such data for purposes of facilitating their entry into transactions with the Company on the client's MT5 Real Account in accordance with this agreement and not for any other purpose. This clause does not apply to Volatility Indices."
+msgstr ""
 
 msgid "The Company strives to ensure that all the orders placed are executed; however, this is not always possible due to material difficulty or unusual circumstances. In any instance that the Company is aware of any material difficulty relevant to the proper execution of an order, it promptly informs the client of the issue."
 msgstr "Công Ty cố gắng đảm bảo rằng tất cả các lệnh sẽ được thực hiện, tuy nhiên, điều này không phải lúc nào cũng có thể do khó khăn về vật chất hoặc hoàn cảnh bất thường. Trong mọi trường hợp, khi Công Ty nhận thấy bất kỳ khó khăn quan trọng nào liên quan đến việc thực hiện lệnh thì Công Ty sẽ thông báo kịp thời cho khách hàng về vấn đề này."
@@ -11094,6 +11094,9 @@ msgstr "Công ty có quyền tính phí không hoạt động lên đến USD / 
 msgid "The content on this website is subject to change at any time without notice and is provided for the sole purpose of assisting traders in making independent investment decisions. %1 has taken reasonable measures to ensure the accuracy of the information on the website."
 msgstr "Nội dung trên trang web này có thể thay đổi bất kỳ lúc nào mà không cần thông báo và được cung cấp cho mục đích duy nhất là hỗ trợ các nhà giao dịch trong việc ra quyết định đầu tư độc lập. %1 đã thực hiện các biện pháp hợp lý để đảm bảo tính chính xác của thông tin trên trang web."
 
+msgid "The contract doesn't end within 5 minutes (for tick duration contracts)"
+msgstr ""
+
 msgid "The contract period is the timeframe of a trade. It is also called the duration."
 msgstr "Thời hạn hợp đồng là khung thời gian của một giao dịch. Nó cũng được gọi là khoảng thời gian."
 
@@ -11390,6 +11393,9 @@ msgstr "Sau đó, giao dịch"
 
 msgid "There are four types of Smart FX indices that you can trade:"
 msgstr "Có bốn loại chỉ số Smart FX mà bạn có thể giao dịch:"
+
+msgid "There are less than 2 ticks between the start and end times"
+msgstr ""
 
 msgid "There are no charges for transferring money from the client's %1 account to their MT5 Real Account."
 msgstr "Không có phí chuyển tiền từ Tài Khoản %1 của khách hàng vào Tài Khoản Thực MT5 của họ."

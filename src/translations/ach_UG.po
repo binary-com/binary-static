@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-08-19 01:22\n"
+"PO-Revision-Date: 2019-08-19 07:07\n"
 "Last-Translator: binarycom\n"
 "Language-Team: Acholi\n"
 "MIME-Version: 1.0\n"
@@ -9060,8 +9060,8 @@ msgstr "crwdns43240:0crwdne43240:0"
 msgid "Rise/Fall"
 msgstr "crwdns39685:0crwdne39685:0"
 
-msgid "Rise/Fall contracts will be refunded at the purchase price if the following conditions occur: (1) there are less than 2 ticks between the start and end times, or (2) for contracts of tick duration, if the contract doesn't end within 5 minutes, or (3) for contracts starting in the future, if there are no ticks in the 5 minutes before the contract's start time."
-msgstr "crwdns39687:0crwdne39687:0"
+msgid "Rise/Fall contracts will be refunded if:"
+msgstr "crwdns68164:0crwdne68164:0"
 
 msgid "Rise/Fall trades"
 msgstr "crwdns39688:0crwdne39688:0"
@@ -10470,8 +10470,8 @@ msgstr "crwdns44697:0%1crwdne44697:0"
 msgid "The Company shall, in its absolute discretion, determine whether the application of the Introducing Broker has been successful. The Company's decision is final and is not subject to any appeal."
 msgstr "crwdns55392:0crwdne55392:0"
 
-msgid "The Company sources market data from prime brokers who act as liquidity providers, thus executing the client's transactions through a pool of aggregated liquidity from top tier banks. The services offered by the Company do not include physical delivery of foreign currency by the Company or the prime brokers to the client. the client acknowledges and agrees that such data is proprietary to the Company and any such provider, and the client will not retransmit, redistribute, publish, disclose, or display in whole or in part such data to third parties. The client represents and warrants that they will only use such data for purposes of facilitating their entry into transactions with the Company on the client's MT5 Real Account in accordance with this agreement and not for any other purpose. This clause does not apply to Volatility Indices."
-msgstr "crwdns56962:0crwdne56962:0"
+msgid "The Company sources market data from prime brokers who act as liquidity providers, thus executing the client's transactions through a pool of aggregated liquidity from top tier banks. The services offered by the Company do not include physical delivery of foreign currency by the Company or the prime brokers to the client. The client acknowledges and agrees that such data is proprietary to the Company and any such provider, and the client will not retransmit, redistribute, publish, disclose, or display in whole or in part such data to third parties. The client represents and warrants that they will only use such data for purposes of facilitating their entry into transactions with the Company on the client's MT5 Real Account in accordance with this agreement and not for any other purpose. This clause does not apply to Volatility Indices."
+msgstr "crwdns68166:0crwdne68166:0"
 
 msgid "The Company strives to ensure that all the orders placed are executed; however, this is not always possible due to material difficulty or unusual circumstances. In any instance that the Company is aware of any material difficulty relevant to the proper execution of an order, it promptly informs the client of the issue."
 msgstr "crwdns51536:0crwdne51536:0"
@@ -11091,6 +11091,9 @@ msgstr "crwdns55610:0crwdne55610:0"
 msgid "The content on this website is subject to change at any time without notice and is provided for the sole purpose of assisting traders in making independent investment decisions. %1 has taken reasonable measures to ensure the accuracy of the information on the website."
 msgstr "crwdns50335:0%1crwdne50335:0"
 
+msgid "The contract doesn't end within 5 minutes (for tick duration contracts)"
+msgstr "crwdns68168:0crwdne68168:0"
+
 msgid "The contract period is the timeframe of a trade. It is also called the duration."
 msgstr "crwdns40036:0crwdne40036:0"
 
@@ -11387,6 +11390,9 @@ msgstr "crwdns40110:0crwdne40110:0"
 
 msgid "There are four types of Smart FX indices that you can trade:"
 msgstr "crwdns42418:0crwdne42418:0"
+
+msgid "There are less than 2 ticks between the start and end times"
+msgstr "crwdns68170:0crwdne68170:0"
 
 msgid "There are no charges for transferring money from the client's %1 account to their MT5 Real Account."
 msgstr "crwdns56508:0%1crwdne56508:0"
