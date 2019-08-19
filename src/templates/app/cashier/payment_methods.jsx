@@ -8,8 +8,8 @@ const Button = ({ url, real, className, text }) => (
     </a>
 );
 
-const TableTitle = ({ title, className, dataShow }) => (
-    <h3 className={`gr-padding-10${className ? ` ${className}` : ''}`} data-show={dataShow}>{title}</h3>
+const TableTitle = ({ title, className, dataShow, dataAnchor }) => (
+    <h3 className={`gr-padding-10${className ? ` ${className}` : ''}`} data-show={dataShow} data-anchor={dataAnchor}>{title}</h3>
 );
 
 const PaymentLogo = ({ logo }) => (
@@ -113,7 +113,7 @@ const PaymentMethods = () => {
             </div>
 
             <div id='payment_methods' className='table-container'>
-                <TableTitle title={it.L('Bank wire/Money transfer')} className='no-margin' />
+                <TableTitle title={it.L('Bank wire/Money transfer')} className='no-margin' dataAnchor='bank' />
                 <Table
                     data={{
                         thead: [ head ],
@@ -181,7 +181,7 @@ const PaymentMethods = () => {
                     }}
                 />
 
-                <TableTitle title={it.L('Credit/Debit Card')} />
+                <TableTitle title={it.L('Credit/Debit Card')} dataAnchor='credit_debit' />
                 <Table
                     data={{
                         thead: [ head ],
@@ -251,7 +251,7 @@ const PaymentMethods = () => {
                     <p className='hint'>{it.L('Note:')} {it.L('Mastercard and Maestro withdrawals are only available for UK Clients.')}</p>
                 </div>
 
-                <TableTitle title={it.L('E-wallet')} />
+                <TableTitle title={it.L('E-wallet')} dataAnchor='ewallet' />
                 <Table
                     data={{
                         thead: [ head ],
@@ -478,6 +478,7 @@ const PaymentMethods = () => {
                     dataShow='-default, -malta, -maltainvest, -iom'
                     title={it.L('Cryptocurrencies')}
                     withdrawal={it.L('Min Withdrawal')}
+                    dataAnchor='cryptocurrency'
                 />
                 <Table
                     dataShow='-default, -malta, -maltainvest, -iom'

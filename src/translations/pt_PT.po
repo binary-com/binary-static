@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-08-06 03:28\n"
+"PO-Revision-Date: 2019-08-14 07:29\n"
 "Last-Translator: binarycom\n"
 "Language-Team: Portuguese\n"
 "MIME-Version: 1.0\n"
@@ -975,6 +975,9 @@ msgstr "Limites da Conta"
 
 msgid "Account Password"
 msgstr "Senha da conta"
+
+msgid "Account access is temporarily limited. Please check your inbox for more details."
+msgstr ""
 
 msgid "Account balance:"
 msgstr "Saldo da conta:"
@@ -10141,8 +10144,8 @@ msgstr "O Agente declara e garante que o Agente está e estará em conformidade 
 msgid "The Agent shall further undertake to perform all necessary due diligence on the Agent's clients, and the Company shall be entitled, at any time, to request the Agent to provide all information and documentation relating to their clients for the purposes of the Company's AML compliance. "
 msgstr "O Agente também se comprometerá a realizar todas as diligências necessárias nos clientes do Agente, e a Empresa terá o direito, a qualquer momento, de solicitar que o Agente forneça todas as informações e documentação relativas aos seus clientes para os propósitos de cumprimento da AML da Empresa. "
 
-msgid "The Agent shall not be authorised to offer the Agent's services, under this agreement, to the clients who reside in restricted countries outlined in the Company's terms and conditions (as amended from time to time), which are published on the Company's website, %1."
-msgstr "O Agente não estará autorizado a oferecer os serviços do Agente, nos termos deste contrato, aos clientes que residam em países restritos descritos nos termos e condições da Empresa (conforme aditados de tempos em tempos), que são publicados no site da Empresa, %1."
+msgid "The Agent shall not be authorised to offer the Agent's services, under this agreement, to the clients who reside in restricted countries outlined in the Company's terms and conditions (as amended from time to time), which are published on the Company's website, %1www.binary.com%2."
+msgstr ""
 
 msgid "The Agent shall not do the following:"
 msgstr "O Agente não fará o seguinte:"
@@ -10209,6 +10212,9 @@ msgstr "A Empresa não disponibiliza um mercado entre dois ou vários clientes p
 
 msgid "The Company does not provide and is not authorised to provide investment advice. The Company will not make personal recommendations or advise on the merits of buying and/or selling in particular investments."
 msgstr "A Empresa não fornece, nem está autorizada a fornecer, conselhos sobre investimentos. A Empresa não fará nenhumas recomendações pessoais nem prestar conselhos sobre a compra ou venda de produtos de investimento."
+
+msgid "The Company does not tolerate any form of inappropriate behaviour. This includes the usage of offensive language. The Company reserves the right to restrict or terminate the client's account if there is any form of inappropriate behaviour on the client's part."
+msgstr ""
 
 msgid "The Company endeavours to open or close the transaction to which the client's Order relates at a price reasonably available to the Company, acting in accordance with the Company's duty of best execution. Best execution means that, when executing Orders, the Company must take all sufficient steps to obtain the best possible result for the client, taking into account the price, costs, speed, likelihood of execution and settlement, size, nature, or any other consideration relevant to the execution of the Order."
 msgstr "A Empresa se esforça para abrir ou fechar a transação à qual o Pedido do cliente está relacionado a um preço razoavelmente disponível para a Empresa, agindo de acordo com o dever de execução da Empresa. Melhor execução significa que, ao executar Ordens, a Empresa deve tomar todas as medidas necessárias para obter o melhor resultado possível para o cliente, levando em consideração o preço, custos, velocidade, probabilidade de execução e liquidação, tamanho, natureza ou qualquer outra consideração. relevantes para a execução da Ordem."
@@ -11026,14 +11032,14 @@ msgstr "O patrimônio da conta do cliente menos a margem total"
 msgid "The client's Account Equity refers to the sum of their Account Balance and the net of unrealised profit and loss."
 msgstr "O Patrimônio da Conta do cliente refere-se à soma do seu Saldo da Conta e do lucro líquido não realizado."
 
-msgid "The client's MT5 Real Account as well as all payments and withdrawals therefrom must be made in the same currency as maintained in the client's %1 account."
-msgstr "A Conta Real MT5 do cliente, bem como todos os pagamentos e levantamentos, devem ser feitos na mesma moeda que é mantida na conta %1 do cliente."
-
 msgid "The client's MT5 Real Account password and login ID are unique, and passwords are hashed so that not even %1 staff can read them. This is the reason why the Company cannot retrieve the client's password and has to send a link for setting a new password to the client's email if they cannot recall their password."
 msgstr "A senha e o ID de login da conta MT5 Real do cliente são exclusivos, e as senhas são criptografadas para que nem a equipe %1 possa lê-las. Esta é a razão pela qual a empresa não pode recuperar a senha do cliente e tem que enviar um link para definir uma nova senha para o e-mail do cliente, se os mesmos não podem recuperar sua senha."
 
 msgid "The client's MT5 Real Account shall be funded by transferring funds from their %1 account, subject to the availability and sufficiency of funds in their %1 account and any daily transfer limits. No fund transfers shall be made to any other account in the name of any third party."
 msgstr "A Conta Real MT5 do cliente será financiada pela transferência de fundos de sua conta %1, sujeita à disponibilidade e suficiência de fundos em sua conta %1 e a quaisquer limites de transferência diários. Nenhuma transferência de fundos será feita para qualquer outra conta em nome de qualquer terceiro."
+
+msgid "The client's MT5 Real Account, as well as all payments and withdrawals therefrom, must be made in the same currency as maintained in the client's %1 account; otherwise, a currency conversion fee shall be applied."
+msgstr ""
 
 msgid "The client's Real Money Account opened with %1, which the client uses to trade binary options with %1 trading platform and Binary Webtrader"
 msgstr "A conta de dinheiro real do cliente aberta com %1, que o cliente usa para negociar opções binárias com a plataforma de negociação %1 e Binary Webtrader"
@@ -11325,9 +11331,6 @@ msgstr "Uma aposta é a quantia que o negociador deve pagar para iniciar uma neg
 
 msgid "The sum received in the %1 Agent Account shall be subsequently transferred by the Agent to the respective client's %1 account (hereinafter referred to as the \"%1 Client Account\")."
 msgstr "A quantia recebida na Conta do Agente %1 será subsequentemente transferida pelo Agente para a respectiva conta %1 do cliente (a seguir denominada \"Conta do Cliente %1\")."
-
-msgid "The system failed to verify your identity. Please check your email for details and the next steps."
-msgstr "O sistema não conseguiu confirmar sua identidade. Por favor, verifique seu e-mail para detalhes dos próximos passos."
 
 msgid "The system fills orders on a first-in, first-out basis, i.e. based on the sequence of the order received, and this is beyond the Company's control. As a result, the client may find it difficult or impossible to close a position at the intended price stipulated in the client's stop order during certain market conditions. The placement of stop order by the client, though useful as a risk management tool, will not necessarily limit the client's losses to the client's intended amounts in the event of highly volatile trading conditions, since market conditions may make it impossible to execute such orders, and there is uncertainty about the client's possible exit price. In short, a stop order is not guaranteed because it cannot operate in all market circumstances."
 msgstr "O sistema preenche os pedidos de primeiro a entrar, primeiro a sair, ou seja, com base na seqüência do pedido recebido, e isso está além do controle da Empresa. Como resultado, o cliente pode achar difícil ou impossível fechar uma posição pelo preço pretendido estipulado na ordem de parada do cliente durante certas condições de mercado. A colocação de ordem stop pelo cliente, apesar de útil como uma ferramenta de gerenciamento de risco, não necessariamente limitará as perdas do cliente aos valores pretendidos do cliente no caso de condições comerciais altamente voláteis, uma vez que as condições do mercado podem impossibilitar a execução de tais ordens, e há incerteza quanto ao possível preço de saída do cliente. Em suma, uma ordem de parada não é garantida porque não pode operar em todas as circunstâncias do mercado."
@@ -12652,9 +12655,6 @@ msgstr "Excluímos uma ordem com a maior margem reservada"
 
 msgid "We do it again. BetOnMarkets.com follows up our 2007 award by being voted 'Best Fixed-Odds Financial Trading Provider' for 2008."
 msgstr "Fizemos de novo. A BetOnMarkets.com segue o exemplo de 2007  e é eleita o \"Melhor Provedor de negociações financeiras de probabilidades fixas\" em 2008."
-
-msgid "We do not tolerate any form of inappropriate behaviour. This includes the usage of offensive language. We reserve the right to restrict or terminate your account if there is any form of inappropriate behaviour on your part."
-msgstr "Nós não toleramos qualquer forma de comportamento inadequado. Isso inclui o uso de linguagem ofensiva. Reservamo-nos o direito de restringir ou encerrar sua conta se houver qualquer forma de comportamento inadequado de sua parte."
 
 msgid "We have a proven track record since we launched our platform in 2000."
 msgstr "Temos um histórico comprovado desde o lançamento da nossa plataforma em 2000."

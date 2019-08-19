@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-08-06 03:29\n"
+"PO-Revision-Date: 2019-08-14 07:31\n"
 "Last-Translator: binarycom\n"
 "Language-Team: Indonesian\n"
 "MIME-Version: 1.0\n"
@@ -974,6 +974,9 @@ msgstr "Batasan rekening"
 
 msgid "Account Password"
 msgstr "Kata Sandi Akun"
+
+msgid "Account access is temporarily limited. Please check your inbox for more details."
+msgstr ""
 
 msgid "Account balance:"
 msgstr "Saldo akun:"
@@ -10138,8 +10141,8 @@ msgstr "Agen menyatakan dan menjamin bahwa Agen sedang dan akan mematuhi semua u
 msgid "The Agent shall further undertake to perform all necessary due diligence on the Agent's clients, and the Company shall be entitled, at any time, to request the Agent to provide all information and documentation relating to their clients for the purposes of the Company's AML compliance. "
 msgstr "Agen selanjutnya akan melakukan semua uji tuntas yang diperlukan pada klien Agen, dan Perusahaan berhak, kapan saja, untuk meminta Agen untuk memberikan semua informasi dan dokumentasi yang berkaitan dengan klien mereka untuk keperluan kepatuhan AML Perusahaan. "
 
-msgid "The Agent shall not be authorised to offer the Agent's services, under this agreement, to the clients who reside in restricted countries outlined in the Company's terms and conditions (as amended from time to time), which are published on the Company's website, %1."
-msgstr "Agen tidak diperkenankan untuk memberikan layanannya, berdasarkan perjanjian ini, kepada klien yang berdomisili di negara-negara terbatas yang diuraikan dalam syarat dan ketentuan Perusahaan (sebagaimana telah diubah dari waktu ke waktu), yang dipublikasikan pada situs Perusahaan, %1."
+msgid "The Agent shall not be authorised to offer the Agent's services, under this agreement, to the clients who reside in restricted countries outlined in the Company's terms and conditions (as amended from time to time), which are published on the Company's website, %1www.binary.com%2."
+msgstr ""
 
 msgid "The Agent shall not do the following:"
 msgstr "Agen tidak akan melakukan hal sebagai berikut:"
@@ -10206,6 +10209,9 @@ msgstr "Perusahaan tidak menyediakan pasar antara atau di antara klien untuk inv
 
 msgid "The Company does not provide and is not authorised to provide investment advice. The Company will not make personal recommendations or advise on the merits of buying and/or selling in particular investments."
 msgstr "Perusahaan tidak menyediakan dan tidak berwenang untuk memberikan saran investasi. Perusahaan tidak akan membuat rekomendasi pribadi atau memberi nasihat tentang manfaat membeli dan/atau menjual pada investasi tertentu."
+
+msgid "The Company does not tolerate any form of inappropriate behaviour. This includes the usage of offensive language. The Company reserves the right to restrict or terminate the client's account if there is any form of inappropriate behaviour on the client's part."
+msgstr "Perusahaan tidak mentolerir segala bentuk perilaku yang tidak pantas. Hal ini termasuk penggunaan kata kasar. Kami berhak untuk membatasi atau membatalkan akun klien jika klien tersebut terlibat atau melakukan tindakan diluar batas."
 
 msgid "The Company endeavours to open or close the transaction to which the client's Order relates at a price reasonably available to the Company, acting in accordance with the Company's duty of best execution. Best execution means that, when executing Orders, the Company must take all sufficient steps to obtain the best possible result for the client, taking into account the price, costs, speed, likelihood of execution and settlement, size, nature, or any other consideration relevant to the execution of the Order."
 msgstr "Perusahaan berupaya untuk membuka atau menutup transaksi yang terkait dengan Order klien dengan harga yang wajar tersedia bagi Perusahaan, bertindak sesuai dengan tugas Perusahaan untuk melaksanakan eksekusi terbaik. Eksekusi terbaik berarti bahwa, ketika melaksanakan Order, Perusahaan harus mengambil semua langkah yang cukup untuk mendapatkan hasil sebaik mungkin bagi klien, dengan mempertimbangkan harga, biaya, kecepatan, kemungkinan eksekusi dan penyelesaian, ukuran, sifat, atau pertimbangan lain relevan dengan pelaksanaan Order."
@@ -11024,14 +11030,14 @@ msgstr "Ekuitas Akun klien dikurangi Total Margin mereka"
 msgid "The client's Account Equity refers to the sum of their Account Balance and the net of unrealised profit and loss."
 msgstr "Ekuitas Akun klien mengacu pada jumlah Saldo Akun mereka dan laba rugi bersih yang belum direalisasikan."
 
-msgid "The client's MT5 Real Account as well as all payments and withdrawals therefrom must be made in the same currency as maintained in the client's %1 account."
-msgstr "Akun Riil MT5 klien serta semua pembayaran dan penarikan darinya harus dilakukan dalam mata uang yang sama seperti yang dimiliki pada akun %1 klien."
-
 msgid "The client's MT5 Real Account password and login ID are unique, and passwords are hashed so that not even %1 staff can read them. This is the reason why the Company cannot retrieve the client's password and has to send a link for setting a new password to the client's email if they cannot recall their password."
 msgstr "Kata sandi Akun Riil MT5 dan login ID klien adalah unik, dan kata sandi adalah disimpan dalam bentuk kode hash sehingga bahkan staf %1 tidak dapat membacanya. Ini adalah alasan mengapa Perusahaan tidak dapat memperoleh kata sandi klien dan perlu mengirimkan tautan untuk membuat kata sandi baru ke alamat email klien jika mereka tidak dapat mengingat kata sandi mereka."
 
 msgid "The client's MT5 Real Account shall be funded by transferring funds from their %1 account, subject to the availability and sufficiency of funds in their %1 account and any daily transfer limits. No fund transfers shall be made to any other account in the name of any third party."
 msgstr "Akun Riil MT5 klien akan didanai dengan mentransfer dana dari akun %1 mereka, tergantung pada ketersediaan dan kecukupan dana dalam akun %1 mereka dan batas transfer harian. Tidak ada transfer dana yang dilakukan ke akun lain atas nama pihak ketiga mana pun."
+
+msgid "The client's MT5 Real Account, as well as all payments and withdrawals therefrom, must be made in the same currency as maintained in the client's %1 account; otherwise, a currency conversion fee shall be applied."
+msgstr "Akun Riil MT5, termasuk semua transaksi dan penarikan, harus dilakukan dalam satu jenis mata uang yang sama pada akun %1 klien, jika tidak maka akan dikenakan biaya konversi."
 
 msgid "The client's Real Money Account opened with %1, which the client uses to trade binary options with %1 trading platform and Binary Webtrader"
 msgstr "Akun Uang Riil klien yang terdaftar pada %1, yang digunakan klien untuk melakukan trading opsi binary pada platform trading %1 dan Binary Webtrader"
@@ -11323,9 +11329,6 @@ msgstr "Modal adalah jumlah yang dibayarkan oleh trader pada saat membeli kontra
 
 msgid "The sum received in the %1 Agent Account shall be subsequently transferred by the Agent to the respective client's %1 account (hereinafter referred to as the \"%1 Client Account\")."
 msgstr "Jumlah yang diterima dalam Akun Agen %1 akan ditransfer oleh Agen ke dalam masing-masing Akun Klien %1 (selanjutnya disebut sebagai \"Akun Klien %1\")."
-
-msgid "The system failed to verify your identity. Please check your email for details and the next steps."
-msgstr "Sistem gagal memverifikasi identitas Anda. Silakan periksa email Anda untuk detail dan langkah selanjutnya."
 
 msgid "The system fills orders on a first-in, first-out basis, i.e. based on the sequence of the order received, and this is beyond the Company's control. As a result, the client may find it difficult or impossible to close a position at the intended price stipulated in the client's stop order during certain market conditions. The placement of stop order by the client, though useful as a risk management tool, will not necessarily limit the client's losses to the client's intended amounts in the event of highly volatile trading conditions, since market conditions may make it impossible to execute such orders, and there is uncertainty about the client's possible exit price. In short, a stop order is not guaranteed because it cannot operate in all market circumstances."
 msgstr "Sistem akan mengisi order berdasarkan order yang masuk pertama, order yang keluar pertama, yaitu berdasarkan urutan order yang diterima, dan hal ini adalah di luar kendali Perusahaan. Akibatnya, klien mungkin merasa sulit atau tidak mungkin untuk menutup posisi pada harga yang ditentukan pada stop order klien pada beberapa kondisi pasar tertentu. Penempatan stop order oleh klien, meskipun berguna sebagai alat manajemen risiko, tidak akan selalu membatasi kerugian klien ke jumlah yang dimaksudkan klien jika terjadi kondisi trading yang sangat fluktuatif, karena kondisi pasar mungkin tidak dapat mengeksekusi order tersebut, dan terdapat ketidakpastian pada harga akhir klien. Kesimpulannya, stop order tidak dapat dijamin berhubung tidak dapat beroperasi pada semua keadaan pasar."
@@ -12649,9 +12652,6 @@ msgstr "Kami akan menghapus order dengan margin terbesar"
 
 msgid "We do it again. BetOnMarkets.com follows up our 2007 award by being voted 'Best Fixed-Odds Financial Trading Provider' for 2008."
 msgstr "Kami melakukannya lagi. BetOnMarkets.com mempertahankan penghargaan 2007 dengan terpilih kembali sebagai 'Penyedia Trading Financial Fixed-Odds Terbaik' untuk 2008."
-
-msgid "We do not tolerate any form of inappropriate behaviour. This includes the usage of offensive language. We reserve the right to restrict or terminate your account if there is any form of inappropriate behaviour on your part."
-msgstr "Kami tidak mentolerir segala bentuk perilaku yang tidak pantas. Hal ini termasuk penggunaan kata kasar. Kami berhak untuk membatasi atau membatalkan akun Anda jika Anda melakukan tindakan diluar batas."
 
 msgid "We have a proven track record since we launched our platform in 2000."
 msgstr "Kami memiliki track record yang terbukti sejak diluncurkan pada tahun 2000."

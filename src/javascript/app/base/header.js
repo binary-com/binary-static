@@ -327,7 +327,7 @@ const Header = (() => {
                 document_needs_action: () => hasStatus('document_needs_action'),
                 unauthenticated      : () => hasVerification('unauthenticated'),
                 excluded_until       : () => Client.get('excluded_until'),
-                financial_limit      : () => hasStatus('ukrts_max_turnover_limit_not_set'),
+                financial_limit      : () => hasStatus('max_turnover_limit_not_set'),
                 identity             : () => hasVerification('identity'),
                 mf_retail            : () => Client.get('landing_company_shortcode') === 'maltainvest' && !hasStatus('professional'),
                 mt5_withdrawal_locked: () => hasStatus('mt5_withdrawal_locked'),
