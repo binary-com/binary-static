@@ -357,7 +357,7 @@ const Explanation = () => (
 
             <div id='note_risefall' className='invisible'>
                 <Note>
-                    {it.L('Rise/Fall contracts will be refunded if')}: <br />
+                    {it.L('Rise/Fall contracts will be refunded if:')} <br />
                     • {it.L('There are less than 2 ticks between the start and end times')} <br />
                     • {it.L('The contract doesn\'t end within 5 minutes (for tick duration contracts)')}
                 </Note>
