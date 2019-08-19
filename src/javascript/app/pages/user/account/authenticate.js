@@ -85,9 +85,10 @@ const Authenticate = (() => {
     };
 
     const handleComplete = () => {
-        BinarySocket.send({ notification_event: 1,
-            category: 'authentication',
-            event: 'poi_documents_uploaded'
+        BinarySocket.send({
+            notification_event: 1,
+            category          : 'authentication',
+            event             : 'poi_documents_uploaded'
         }).then(() => {
             onfido.tearDown();
             $('#upload_complete').setVisibility(1);
