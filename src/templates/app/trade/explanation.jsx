@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Note = ({ text }) => (
-    <p className='hint'><strong>{it.L('Note')}: </strong>{text}</p>
+const Note = ({ children, text }) => (
+    <p className='hint'><strong>{it.L('Note')}: </strong>{text || children}</p>
 );
 
 const Duration = ({ link }) => (
@@ -356,7 +356,11 @@ const Explanation = () => (
             </div>
 
             <div id='note_risefall' className='invisible'>
-                <Note text={it.L('Rise/Fall contracts will be refunded if:[_1]• There are less than 2 ticks between the start and end times [_1]• The contract doesn\'t end within 5 minutes (for tick duration contracts)', '<br />')} />
+                <Note>
+                    {it.L('Rise/Fall contracts will be refunded if')}: <br />
+                    • {it.L('There are less than 2 ticks between the start and end times')} <br />
+                    • {it.L('The contract doesn\'t end within 5 minutes (for tick duration contracts)')}
+                </Note>
             </div>
 
             <div id='note_staysinout' className='invisible'>
