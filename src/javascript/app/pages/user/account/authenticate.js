@@ -84,10 +84,11 @@ const Authenticate = (() => {
         }
     };
 
-    const handleComplete = (response) => {
-        // eslint-disable-next-line
-        console.log(response)
-        BinarySocket.send({ reset_password: 1, loginid: Client.get('loginid') }).then(() => {
+    const handleComplete = () => {
+        BinarySocket.send({ notification_event: 1,
+            category: 'authentication',
+            event: 'poi_documents_uploaded'
+        }).then(() => {
             onfido.tearDown();
             $('#upload_complete').setVisibility(1);
         });
