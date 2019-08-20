@@ -283,7 +283,7 @@ const BinaryOptions = () => {
 
                         <HeaderSecondary header={it.L('Volatility Indices')} data-anchor='volatility-indices' />
                         <p>{it.L('[_1]\'s Volatility Indices are synthetic indices that mimic real-world market volatility and are available for trading 24/7. They are based on a cryptographically secure random number generator audited for fairness by an independent third party.', it.website_name)}</p>
-                        <p>{it.L('Volatility Indices give you exclusive access to various trade types, such as Up/Down, Touch/No Touch, In/Out, Asians, Digits, Lookbacks, Reset Call/Reset Put, Call Spread/Put Spread, Run, and more.')}</p>
+                        <p>{it.L('Volatility Indices give you exclusive access to various trade types, such as Up/Down, Touch/No Touch, In/Out, Asians, Digits, Lookbacks, Reset Call/Reset Put, Call Spread/Put Spread, Only Ups/Only Downs, and more.')}</p>
                         <p>{it.L('Volatility Indices are further categorised into two classes:')}</p>
                         <ul className='bullet'>
                             <li>{it.L('Continuous Indices – Choose from the Volatility 10 Index, Volatility 25 Index, Volatility 50 Index, Volatility 75 Index, and Volatility 100 Index. These indices correspond to simulated markets with constant volatilities of 10%, 25%, 50%, 75%, and 100% respectively')}</li>
