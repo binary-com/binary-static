@@ -318,7 +318,7 @@ const Metatrader = () => (
                                 </div>
                                 <div id='view_2' className='gr-row invisible'>
                                     <div className='container gr-8 gr-12-m'>
-                                        <FormRow is_two_rows type='text'     id='txt_name'          label={it.L('Name')} attributes={{ maxLength: 30, autoComplete: 'off' }} />
+                                        <FormRow is_two_rows type='text'     id='txt_name'          label={it.L('Name')} attributes={{ maxLength: 101, autoComplete: 'off' }} />
                                         <FormRow is_two_rows type='password' id='txt_main_pass'     label={it.L('Main password')}     tooltip={it.L('Access your account with full trading permission.')}             hint={it.L('Minimum eight characters. Must contain numbers, and mix of upper and lower case letters.')} />
                                         <FormRow is_two_rows type='password' id='txt_re_main_pass'  label={it.L('Verify main password')} />
                                         <FormRow is_two_rows type='password' id='txt_investor_pass' label={it.L('Investor password')} tooltip={it.L('Share access to your account without any permission to trade.')} hint={it.L('Minimum eight characters. Must contain numbers, and mix of upper and lower case letters.')} />
