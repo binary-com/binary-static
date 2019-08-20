@@ -39,7 +39,7 @@ const GroupHistory = () => (
             <div className='timeline'>
                 <UL items={[
                     { className: 'year center-text',                                                           text: '2019' },
-                    { className: 'event right',          header: it.L('New office in Dubai, UAE'),             text: it.L('dasdsa') },
+                    { className: 'event right',          header: it.L('New office in Dubai, UAE'),             text: it.L('[_1] opens a new office at the world-class Jumeirah Lake Towers free zone to expand our reach in the region.', it.website_name) },
                     { className: 'event',                header: it.L('New office in Asunción, Paraguay'),     text: it.L('[_1] opens new hub of operations in the capital of Paraguay to drive our growth in South America.', it.website_name) },
                     { className: 'year center-text',                                                           text: '2018' },
                     { className: 'event right',          header: it.L('New office in Labuan, Malaysia'),       text: it.L('[_1] opens new office in the island of Labuan as part of our business expansion.', it.website_name) },
