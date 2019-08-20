@@ -536,7 +536,12 @@ const Authenticate = (() => {
                     $('#unverified').setVisibility(1);
                     break;
                 case 'verified':
-                    $('#verified').setVisibility(1);
+                    if (document.status === 'verified') {
+                        $('#authentication_verified').setVisibility(1);
+                        $('#authentication_tab').setVisibility(0);
+                    } else {
+                        $('#verified').setVisibility(1);
+                    }
                     break;
                 case 'suspected':
                     $('#unverified').setVisibility(1);

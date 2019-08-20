@@ -287,10 +287,10 @@ const Header = (() => {
             const hasStatus = (string) => status.findIndex(s => s === string) < 0 ? Boolean(false) : Boolean(true);
             const hasVerification = (string) => {
                 const verification_length = needs_verification.length;
+
                 if (string === 'unauthenticated') {
                     return verification_length === 2;
                 }
-                if (verification_length === 2) return false;
 
                 return needs_verification.findIndex(s => s === string) >= 0;
             };
@@ -386,7 +386,7 @@ const Header = (() => {
             } else {
                 const el_account_status = createElement('span', { class: 'authenticated', 'data-balloon': localize('Account Authenticated'), 'data-balloon-pos': 'down' });
                 BinarySocket.wait('website_status', 'get_account_status', 'get_settings', 'balance').then(() => {
-                    needs_verification = State.getResponse('get_account_status.authentication.needs_verification') || {};
+                    needs_verification = State.getResponse('get_account_status.authentication.needs_verification') || [];
                     get_account_status = State.getResponse('get_account_status') || {};
                     status             = get_account_status.status;
                     checkStatus(check_statuses_real);
