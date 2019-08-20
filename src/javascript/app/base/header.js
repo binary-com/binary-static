@@ -300,7 +300,6 @@ const Header = (() => {
             const has_no_tnc_limit = is_svg;
 
             const messages = {
-                authenticate         : () => buildMessage(localizeKeepPlaceholders('[_1]Authenticate your account[_2] now to take full advantage of all payment methods available.'),                                      'user/authenticate'),
                 cashier_locked       : () => localize('Deposits and withdrawals have been disabled on your account. Please check your email for more details.'),
                 currency             : () => buildMessage(localizeKeepPlaceholders('Please set the [_1]currency[_2] of your account.'),                                                                                    'user/set-currency'),
                 document             : () => buildMessage(localizeKeepPlaceholders('[_1]Your Proof of Address[_2] did not meet our requirements. Please check your email for further instructions.'),                      'user/authenticate', '?authentication_tab=poa'),
@@ -322,7 +321,6 @@ const Header = (() => {
             };
 
             const validations = {
-                authenticate         : () => +get_account_status.prompt_client_to_authenticate && !hasStatus('document_under_review'),
                 cashier_locked       : () => hasStatus('cashier_locked'),
                 currency             : () => !Client.get('currency'),
                 document             : () => hasVerification('document'),
@@ -350,7 +348,6 @@ const Header = (() => {
                 'risk',
                 'tax',
                 'currency',
-                'authenticate',
                 'cashier_locked',
                 'withdrawal_locked',
                 'mt5_withdrawal_locked',
