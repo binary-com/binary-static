@@ -290,6 +290,8 @@ const Header = (() => {
 
                 if (string === 'unauthenticated') {
                     return verification_length === 2;
+                } else if (verification_length === 2) {
+                    return false;
                 }
 
                 return needs_verification.findIndex(s => s === string) >= 0;
