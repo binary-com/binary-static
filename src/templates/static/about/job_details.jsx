@@ -132,7 +132,7 @@ const JobDetails = () => (
                             className='compliance'
                             sidebar_items={[
                                 { href: 'compliance_executive',            string: it.L('Compliance Executive') },
-                                { href: 'payments_and_compliance_analyst', string: it.L('Payments and Compliance Analyst') },
+                                { href: 'payments_and_compliance_analyst', string: it.L('Compliance and Payments Analyst') },
                                 { href: 'risk_management_executive',       string: it.L('Risk Management Executive') },
                             ]}
                         />
@@ -923,7 +923,7 @@ const JobDetails = () => (
                         </div>
 
                         <div className='invisible' id='payments_and_compliance_analyst'>
-                            <h1>{it.L('Payments and Compliance Analyst')}</h1>
+                            <h1>{it.L('Compliance and Payments Analyst')}</h1>
 
                             <p>{it.L('We are PayOps, part of the Compliance department. Our team emphasizes business development by implementing the payment strategy for the Binary group of companies in collaboration with the Marketing team.')}</p>
 
