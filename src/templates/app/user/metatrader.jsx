@@ -83,7 +83,7 @@ const Metatrader = () => (
                 <div id='mt_left_panel' className='gr-9 gr-12-t gr-12-p gr-12-m gr-no-gutter gr-gutter-right gr-no-gutter-p gr-no-gutter-m'>
                     <div id='account_details' className='mt-panel mt-container'>
                         <div className='gr-row'>
-                            <div className='gr-grow'>
+                            <div className='gr-9 gr-12-m gr-12-p'>
                                 <div className='gr-row'>
                                     <div className='gr-grow'>
                                         <div id='account_selector'>
@@ -102,19 +102,19 @@ const Metatrader = () => (
                                 <div className='acc-info has-account invisible'>
                                     <div className='gr-row gr-padding-10'>
                                         <div className='gr-3'>{it.L('MT5 Account:')}</div>
-                                        <div data='login' />
+                                        <div className='gr-gutter' data='login' />
                                     </div>
                                     <div className='gr-row'>
                                         <div className='gr-3'>{it.L('Name:')}</div>
-                                        <div data='name' />
+                                        <div className='gr-9' data='name' />
                                     </div>
                                     <div className='gr-row gr-padding-10 gr-hide mobile-balance'>
                                         <div className='gr-3'>{it.L('Balance:')}</div>
-                                        <div className='gr-gutter' data='balance' />
+                                        <div className='gr-9' data='balance' />
                                     </div>
                                 </div>
                             </div>
-                            <div className='gr-adapt align-end gr-hide-m gr-hide-p'>
+                            <div className='gr-3 align-end gr-hide-m gr-hide-p'>
                                 <div className='acc-info has-account invisible'>
                                     <div>{it.L('Balance')}</div>
                                     <div className='balance gr-padding-10' data='balance' />

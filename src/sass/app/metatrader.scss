@@ -172,6 +172,7 @@
 
         .acc-info {
             font-size: $FONT_SIZE_S;
+            word-wrap: break-word;
 
             .balance {
                 font-size: $FONT_SIZE_XXL;
