@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-08-14 07:29\n"
+"PO-Revision-Date: 2019-08-21 05:22\n"
 "Last-Translator: binarycom\n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -301,7 +301,7 @@ msgid "%1 may have access to information that is not available to the client, ma
 msgstr "%1 可能有权限获取客户所无法得到的信息，也可能以客户无法得到的低价获取交易头寸，并可能跟客户的利益有所不同。%1 没有义务为客户提供公司所拥有的市场或其他信息，也不会对公司自己的交易做出任何变更或限制。"
 
 msgid "%1 offers a variety of MT5 Real Accounts depending on the jurisdiction to which a client’s %1 account has been attached subject to any verification or authentication requirements."
-msgstr "％1提供各种MT5真实账户，取决于客户的％1账户所属的管辖区域以及任何验证或认证要求。"
+msgstr "%1提供各种MT5真实账户，取决于客户的%1账户所属的管辖区域以及任何验证或认证要求。"
 
 msgid "%1 offers a variety of account types to cater to the diverse needs of traders everywhere, whether you are an experienced trader or just starting out. Each account has been tailored to provide you with a unique opportunity to trade financial instruments."
 msgstr "无论您是经验丰富的交易员，还是新手，％1都能提供各种账户类型，满足各地交易者不同的需求。 每个账户都经过量身定制，为您提供独特的机会进行金融工具交易。"
@@ -326,6 +326,9 @@ msgstr "%1 提供简单、人性化的全球性金融交易平台。"
 
 msgid "%1 open-source projects"
 msgstr "%1开源项目"
+
+msgid "%1 opens a new office at the world-class Jumeirah Lake Towers free zone to expand our reach in the region."
+msgstr "%1在达国际水平的朱美拉湖塔自由区开设了新办事处，以扩大我们在该区域的影响力。"
 
 msgid "%1 opens an office in the QSentral office building in central Kuala Lumpur to further expand its IT development team."
 msgstr "%1在吉隆坡市中心QSentral 办公大楼开设办公室，进一步扩大 IT 开发团队。"
@@ -545,6 +548,9 @@ msgstr "0.25%"
 
 msgid "0.3%"
 msgstr "0.3%"
+
+msgid "0.30"
+msgstr "0.30"
 
 msgid "0.5%"
 msgstr "0.5%"
@@ -964,7 +970,7 @@ msgid "Account Deposit Currency"
 msgstr "账户存款币种"
 
 msgid "Account Equity"
-msgstr "账户权益"
+msgstr "账户资金"
 
 msgid "Account Free Margin"
 msgstr "账户可用保证金"
@@ -976,7 +982,7 @@ msgid "Account Password"
 msgstr "账户密码"
 
 msgid "Account access is temporarily limited. Please check your inbox for more details."
-msgstr ""
+msgstr "账户访问已暂时受限制。欲知详情请查看收件箱。"
 
 msgid "Account balance:"
 msgstr "账户余额："
@@ -2241,6 +2247,9 @@ msgstr "博客和视频博客"
 msgid "Boom 1000 Index"
 msgstr "Boom 1000 指数"
 
+msgid "Boom 500 Index"
+msgstr "Boom 500 指数"
+
 msgid "Both the deposit and the bonus amounts are clearly displayed when this type of promotion is available. By way of example, if the client chooses to participate in a \"Get $25 when you deposit $100\" promotion, the Company will add an additional $25 to the client's account when the client deposits $100, AND when the client has purchased at least $125 worth of trades ($25 * 5= $125). The bonus will only be credited to the client's account when both of these conditions are met."
 msgstr "开展此类促销活动时，存款和奖金数额都会清楚显示。举例来说，如果客户选择参加“存 100元 奖25元”促销活动，当客户存入 100 美元并且执行价值125 美元以上的交易后（25 *5 = 125美元），公司将添加25 美元存入客户账户。只有同时满足这两个条件，奖金才会记入客户的账户。"
 
@@ -2323,7 +2332,7 @@ msgid "By indicating acceptance of these terms and conditions and continuing wit
 msgstr "通过声明愿意接受本条款和条件并继续申请公司的联盟项目，表明联盟会员同意此协议的条款和条件。如果联盟会员不同意（或无权同意）本条款和条件，则不得继续申请。"
 
 msgid "By indicating the acceptance of the terms and conditions of this Agreement and continuing with the Introducing Broker application to join the Company's Introducing Broker programme, the Introducing Broker is hereby agreeing with all the terms and provisions stated herein."
-msgstr "通過表明接受本協議的條款和條件並繼續申請加入公司的介紹經紀計劃，介紹經紀同意以上所述的所有條款和條款。"
+msgstr "通過表明接受本协议的条款和条件並继续申請加入公司的介绍经纪计划，介绍经纪同意以上所述的所有条款。"
 
 msgid "By opening an MT5 Real Account with %1, the client represents, warrants, and undertakes the following:"
 msgstr "在%1开立MT5真实账户，客户声明、保证和承诺︰"
@@ -3168,6 +3177,9 @@ msgstr "工艺、金属、电气和电子工人"
 
 msgid "Crash 1000 Index"
 msgstr "Crash 1000 指数"
+
+msgid "Crash 500 Index"
+msgstr "Crash 500 指数"
 
 msgid "Crash/Boom Indices"
 msgstr "崩盘/兴旺指数"
@@ -5447,7 +5459,7 @@ msgid "If the client asks to be treated as a professional client, they need to m
 msgstr "如果客户要求被视为专业客户, 客户需要满足某些特定的定量和定性标准。一旦客户要求分类成为专业客户, 公司会对其专业技能、知识和经验进行评估, 以确定客户是否属于此类别, 以及其是否能够作出自己的投资决定和了解所涉及的风险。如果不符合有关标准, 公司有权选择是否根据客户所要求的分类提供服务。"
 
 msgid "If the client chooses to close the client's %1 account, the client's data will be kept only until the Company's legal and regulatory obligations on data retention are met. The Company will delete the client's data once the applicable retention period expires."
-msgstr "如果客户选择关闭其％1账户，公司将会保留客户的数据，直到已经完成履行数据保留方面的法律和监管义务。一旦适用的保留期限届满，公司将删除客户的数据。"
+msgstr "如果客户选择关闭其%1账户，公司将会保留客户的数据，直到已经完成履行数据保留方面的法律和监管义务。一旦适用的保留期限届满，公司将删除客户的数据。"
 
 msgid "If the client chooses to enter into a contract with the Company, it is important that the client remains aware of the risks involved, that the client has adequate investment resources to bear such risks, and that the client monitors the client's positions carefully."
 msgstr "如客户选择与公司共同修订合同，客户必须完全了解相关的风险，有足够投资资源能够承担这些风险，并确保将慎重地监管其头寸，这几点很重要。"
@@ -5729,7 +5741,7 @@ msgid "In any event of an error in current prices, published odds, or trading so
 msgstr "如发生任何当前价格、公布赔率或交易软件错误的事件。"
 
 msgid "In any event, an email notice shall be presumably and sufficiently served upon the completion of sending the email. Should the email be sent on a non-Business Day, it shall be presumably and sufficiently served on the next Business Day."
-msgstr "无论如何，发送电子邮件后，将会发送电子邮件通知并提供充分服务。如果电子邮件发送日是非工作日，则须于下一个工作日通知并提供充分服务。"
+msgstr "发送电子邮件后，将会发送电子邮件通知并提供充分服务。如果电子邮件发送日是非工作日，则须于下一个工作日通知并提供充分服务。"
 
 msgid "In business since 2000, %1 is the world's leading binary options company."
 msgstr "%1自2000 年以来开始运营， 是全球领先的二元期权公司。"
@@ -5797,8 +5809,8 @@ msgstr "请在“详细说明”字段指明支付方式及代理将转账的账
 msgid "In the EU, financial binary options are only available to professional investors."
 msgstr "欧盟的金融二元期权仅供专业投资者使用。"
 
-msgid "In the EU, financial products are offered by Binary Investments (Europe) Ltd., W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta, licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (licence no. IS/70156)."
-msgstr "欧盟国家的金融产品交易由Binary Investments (Europe) Ltd提供，地址为 W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta。由马耳他金融服务机构授予牌照及监管为3级投资服务提供商(牌照号码为 IS/70156)。"
+msgid "In the EU, financial products are offered by Binary Investments (Europe) Ltd., W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta, licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (%1licence no. IS/70156%2)."
+msgstr "欧盟国家的金融产品交易由Binary Investments (Europe) Ltd提供，地址为 W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta。由马耳他金融服务机构授予牌照及监管为3级投资服务提供商(%1牌照号码为 IS/70156%2)。"
 
 msgid "In the EU, financial products are offered by Binary Investments (Europe) Ltd., W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta, regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (%1licence no. IS/70156%2)."
 msgstr "欧盟国家的金融产品交易由Binary Investments (Europe) Ltd提供，地址为 W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta。由马耳他金融服务机构监管为3级投资服务提供商(%1牌照号码为 IS/70156%2)。"
@@ -5839,8 +5851,8 @@ msgstr "如公司发现联盟会员违反任何上述规定，除了拥有根据
 msgid "In the new, exciting Binary Grid, win whenever the trade ends outside your selected cell."
 msgstr "透过崭新的、令人心动的Binary Grid交易，一旦价格在您选择的单元格外结束，您就可赢取赔付。"
 
-msgid "In the rest of the EU, Volatility Indices are offered by Binary (Europe) Ltd., W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta; licensed and regulated by (1) the Malta Gaming Authority in Malta (licence no. MGA/B2C/102/2000 issued on 01 August 2018), for UK clients by (2) the UK Gambling Commission (licence %1reference no: 39495%2), and for Irish clients by (3) the Revenue Commissioners in Ireland (Remote Bookmaker's Licence no. 1010285 issued on 1 July 2017). View complete %3Regulatory Information%2."
-msgstr "欧盟其它国家的波动率指数交易由Binary (Europe) Ltd提供，地址为 W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta。由(1) 马耳他的马耳他博彩局授予牌照并受其监管（牌照号MGA/B2C/102/2000, 发照日期为2018年8月01日）。英国客户由(2) 英国博彩委员会授予牌照和监管 (牌照 %1编号: 39495%2)， 及爱尔兰客户由(3) 爱尔兰的税务局授予牌照和监管 (远程博彩公司牌照号: 1010285，发照日期为2017年7月1日)。查阅完整的%3监管信息%2。"
+msgid "In the rest of the EU, Volatility Indices are offered by Binary (Europe) Ltd., W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta; licensed and regulated by (1) the Malta Gaming Authority in Malta (%1licence no. MGA/B2C/102/2000%4 issued on 01 August 2018), for UK clients by (2) the UK Gambling Commission (licence %2reference no: 39495%4), and for Irish clients by (3) the Revenue Commissioners in Ireland (Remote Bookmaker's Licence no. 1010285 issued on 1 July 2017). View complete %3Regulatory Information%4."
+msgstr "欧盟其它国家的波动率指数交易由Binary (Europe) Ltd提供，地址为 W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta。由(1) 马耳他的马耳他博彩局授予牌照并受其监管（%1牌照号MGA/B2C/102/2000%4, 发照日期为2018年8月01日）。英国客户由(2) 英国博彩委员会授予牌照和监管 (牌照 %2编号: 39495%4)， 及爱尔兰客户由(3) 爱尔兰的税务局授予牌照和监管 (远程博彩公司牌照号: 1010285，发照日期为2017年7月1日)。查阅完整的%3监管信息%4。"
 
 msgid "In this Agreement, unless the context otherwise requires, the following definitions hold:"
 msgstr "本协议中，除非上下文另有解释，否则以下定义应适用："
@@ -6973,9 +6985,6 @@ msgstr "MetaTrader 5"
 msgid "MetaTrader 5 dashboard"
 msgstr "MetaTrader 5 仪表板"
 
-msgid "MetaTrader 5 main password"
-msgstr "MetaTrader 5 主密码"
-
 msgid "MetaTrader account management"
 msgstr "MetaTrader 账户管理"
 
@@ -7312,6 +7321,9 @@ msgstr "新账户"
 msgid "New office in Asunción, Paraguay"
 msgstr "位于巴拉圭亚松森的新办事处"
 
+msgid "New office in Dubai, UAE"
+msgstr "位于阿拉伯联合酋长国迪拜的新办事处"
+
 msgid "New office in Labuan, Malaysia"
 msgstr "马来西亚Labuan新办事处"
 
@@ -7501,8 +7513,8 @@ msgstr "十月"
 msgid "October"
 msgstr "十月"
 
-msgid "Offices in Malta and Malaysia"
-msgstr "公司位于马耳他和马来西亚"
+msgid "Offices in Malaysia, Malta, Paraguay and UAE"
+msgstr "办事处设于马来西亚、马耳他、巴拉圭和阿拉伯联合酋长国"
 
 msgid "Offline"
 msgstr "离线"
@@ -8577,7 +8589,7 @@ msgid "Provide Binary with any information that they have become aware of which 
 msgstr "向Binary 提供其获悉、可能会对Binary及其声誉造成不利或有害后果的任何信息"
 
 msgid "Provide a web-link from their own website to %1"
-msgstr "提供从其自有网站到％1的网络链接"
+msgstr "提供从其自有网站到%1的网络链接"
 
 msgid "Provide additional assistance to team when needed"
 msgstr "有需要时向团队提供额外帮助"
@@ -9053,8 +9065,8 @@ msgstr "瑞波币兑美元"
 msgid "Rise/Fall"
 msgstr "上涨/下跌"
 
-msgid "Rise/Fall contracts will be refunded at the purchase price if the following conditions occur: (1) there are less than 2 ticks between the start and end times, or (2) for contracts of tick duration, if the contract doesn't end within 5 minutes, or (3) for contracts starting in the future, if there are no ticks in the 5 minutes before the contract's start time."
-msgstr "如果出现以下情况，上涨/下跌合约购入价将全额退还：（1）开始和结束期间价格跳动次数少于2，或（2）价格跳动期类型合约，如果合约没在5分钟内结束，或（3）未来开始类型合约，如果合约开始时间前5分钟内价格没跳动。"
+msgid "Rise/Fall contracts will be refunded if:"
+msgstr "上涨/下跌合约将退款，如："
 
 msgid "Rise/Fall trades"
 msgstr "“上涨/下跌”交易"
@@ -9632,6 +9644,9 @@ msgstr "步骤 3: 如何买入第一个货币对"
 msgid "Step 3: Make your trade"
 msgstr "步骤 3：执行交易"
 
+msgid "Step Index"
+msgstr "Step 指数"
+
 msgid "Step outdoors and soak up the sun on one of Labuan's pristine beaches. There's also wreck diving, island hopping, kayaking, and deep sea fishing to look forward to."
 msgstr "踏出户外, 在Labuan的原始海滩上享受日光浴。还有沉船潜水、跳岛游、划皮艇和深海捕鱼等活动在等着您。"
 
@@ -10104,7 +10119,7 @@ msgid "The Affiliate shall not encourage the Affiliate's referrals to take out a
 msgstr "联盟会员不可鼓励其推介人以任何形式提出能够存款和/或交易的贷款。"
 
 msgid "The Affiliate shall not hold or pool the Affiliate's referrals' funds or third-party funds into the Affiliate's own account held with %1."
-msgstr "联盟会员不得将其推介人的资金或第三方资金存入或汇集到联盟成员在％1持有的账户。"
+msgstr "联盟会员不得将其推介人的资金或第三方资金存入或汇集到联盟成员在%1持有的账户。"
 
 msgid "The Affiliate shall not place trades on the Affiliate's referrals' behalf."
 msgstr "联盟会员不得代表其推介人进行交易。"
@@ -10143,7 +10158,7 @@ msgid "The Agent shall further undertake to perform all necessary due diligence 
 msgstr "代理须进一步承诺对其客户执行一切必要的尽职调查措施, 而公司有权随时要求代理提供与其客户有关的所有信息和文件, 以便执行公司的反洗钱合规性。 "
 
 msgid "The Agent shall not be authorised to offer the Agent's services, under this agreement, to the clients who reside in restricted countries outlined in the Company's terms and conditions (as amended from time to time), which are published on the Company's website, %1www.binary.com%2."
-msgstr ""
+msgstr "根据本协议，代理不被授权向居住在由刊登在公司网站%1www.binary.com%2的公司条款和条件 （经不时修订）规定的受限制的国家的客户提供服务。"
 
 msgid "The Agent shall not do the following:"
 msgstr "代理不可做以下："
@@ -10338,7 +10353,7 @@ msgid "The Company may, at its sole discretion or as required by regulations in 
 msgstr "公司可以自行决定或根据现行法规的要求，执行适当的“了解您的客户”（KYC）程序，并要求客户提供身份证明，同时暂停账户，直至已经收到齐全的身份证明和地址、资金来源和/或财富来源。"
 
 msgid "The Company may, however, withhold the client's withdrawal request from their MT5 Real Account to their %1 account, in whole or in part, in one or more of the following cases:"
-msgstr "但是，如果发生下列的一种或多种情况，公司可以将客户把资金从MT5真实账户转到其％1账户的提款请求全部或部分暂停："
+msgstr "但是，如果发生下列的一种或多种情况，公司可以将客户把资金从MT5真实账户转到其%1账户的提款请求全部或部分暂停："
 
 msgid "The Company offers binary options through its online interactive platform."
 msgstr "公司通过其在线互动平台提供二元期权交易。"
@@ -10460,7 +10475,7 @@ msgstr "公司将为您提供透过在线访问的、显示余额、保证金、
 msgid "The Company shall, in its absolute discretion, determine whether the application of the Introducing Broker has been successful. The Company's decision is final and is not subject to any appeal."
 msgstr "公司将自行确定推介经纪的申请是否成功。公司的决定具有最终性，不能提出申诉。"
 
-msgid "The Company sources market data from prime brokers who act as liquidity providers, thus executing the client's transactions through a pool of aggregated liquidity from top tier banks. The services offered by the Company do not include physical delivery of foreign currency by the Company or the prime brokers to the client. the client acknowledges and agrees that such data is proprietary to the Company and any such provider, and the client will not retransmit, redistribute, publish, disclose, or display in whole or in part such data to third parties. The client represents and warrants that they will only use such data for purposes of facilitating their entry into transactions with the Company on the client's MT5 Real Account in accordance with this agreement and not for any other purpose. This clause does not apply to Volatility Indices."
+msgid "The Company sources market data from prime brokers who act as liquidity providers, thus executing the client's transactions through a pool of aggregated liquidity from top tier banks. The services offered by the Company do not include physical delivery of foreign currency by the Company or the prime brokers to the client. The client acknowledges and agrees that such data is proprietary to the Company and any such provider, and the client will not retransmit, redistribute, publish, disclose, or display in whole or in part such data to third parties. The client represents and warrants that they will only use such data for purposes of facilitating their entry into transactions with the Company on the client's MT5 Real Account in accordance with this agreement and not for any other purpose. This clause does not apply to Volatility Indices."
 msgstr "公司市场数据源自充当流动性提供商的主要经纪人，因此通过从顶级银行获取的聚合流动性池为客户执行交易。公司提供的服务不包括由公司或主要经纪人向客户递送实物外币。客户确认并同意，此类数据由公司和任何此类提供商专有，和客户不会重传、重新分配、发布、披露、或显示此类数据的全部或部分给第三方。客户陈述并保证客户将仅按照本协议的目的而不是为了任何其他目的使用此类数据，为了便于在MT5真实账户进行交易。本条款不适用于波动率指数。"
 
 msgid "The Company strives to ensure that all the orders placed are executed; however, this is not always possible due to material difficulty or unusual circumstances. In any instance that the Company is aware of any material difficulty relevant to the proper execution of an order, it promptly informs the client of the issue."
@@ -10591,7 +10606,7 @@ msgid "The Introducing Broker agrees to indemnify Binary against any loss that B
 msgstr "推介经纪同意赔偿Binary可能因推介经纪的任何行为或疏忽或本协议下任何欺诈、疏忽、故意违约或严重违约而引起或与之相关的任何损失。"
 
 msgid "The Introducing Broker consents to the disclosure of their identity on the webpage of %1 or any publicly accessible medium managed by Binary."
-msgstr "推介经纪同意在％1的网页或Binary管理的任何可公开访问的媒体上披露他们的身份。"
+msgstr "推介经纪同意在%1的网页或Binary管理的任何可公开访问的媒体上披露他们的身份。"
 
 msgid "The Introducing Broker is responsible for the payment of their own taxes, duties, fees, or other governmental levies or charges. Any fees payable by Binary to the Introducing Broker in connection with this Agreement are exclusive of any such taxes, duties, fees, or levies."
 msgstr "推介经纪负责支付自己的税费、关税、费用或其他政府征税或收费。Binary与本协议有关的任何应付费用不包括任何此类税费、关税、费用或征税。"
@@ -10609,7 +10624,7 @@ msgid "The Introducing Broker shall immediately cease using the Marketing Materi
 msgstr "推介经纪须立即停止在任何网站上使用营销材料，无论是硬拷贝还是电子版，并将所有营销材料退还给Binary。他们也须停止提及Binary，并须从其网站和/或营销材料中删除所有Binary商标，包括徽标、品牌和其他关于Binary的引用。"
 
 msgid "The Introducing Broker shall use their experience, knowledge, and best efforts to provide IB services to Binary, and Binary shall remunerate the Introducing Broker for IB services in accordance to the Commission structure listed on %1 Introducing Broker programme."
-msgstr "推介经纪须使用他们的经验、知识和尽最大努力为Binary提供推介经纪服务，而Binary须根据％1推介经纪计划中列出的佣金结构向推介经纪支付其服务的报酬。"
+msgstr "推介经纪须使用他们的经验、知识和尽最大努力为Binary提供推介经纪服务，而Binary须根据%1推介经纪计划中列出的佣金结构向推介经纪支付其服务的报酬。"
 
 msgid "The Introducing Broker warrants to the Company at all times that"
 msgstr "推介经纪向公司保证将随时"
@@ -11082,6 +11097,9 @@ msgstr "对每一个超过12个月没有交易记录的客户账户，公司保�
 msgid "The content on this website is subject to change at any time without notice and is provided for the sole purpose of assisting traders in making independent investment decisions. %1 has taken reasonable measures to ensure the accuracy of the information on the website."
 msgstr "公司有权随时更改本网站内容, 恕不另行通知, 且其唯一目的仅为交易商在作出独立投资决定时提供协助。%1 已采取合理措施确保网站上信息的准确性。"
 
+msgid "The contract doesn't end within 5 minutes (for tick duration contracts)"
+msgstr "跳动期合约不会在五分钟内终止"
+
 msgid "The contract period is the timeframe of a trade. It is also called the duration."
 msgstr "合约期限是指交易的时间周期，即合约持续时间。"
 
@@ -11329,7 +11347,7 @@ msgid "The stake is the amount that a trader must pay to enter into a trade."
 msgstr "投注金额即交易者执行交易而必需支付的金额。"
 
 msgid "The sum received in the %1 Agent Account shall be subsequently transferred by the Agent to the respective client's %1 account (hereinafter referred to as the \"%1 Client Account\")."
-msgstr "在％1代理账户中收到的金额随后由代理转移到相应客户的％1账户（以下简称“％1客户账户”）。"
+msgstr "在%1代理账户中收到的金额随后由代理转移到相应客户的%1账户（以下简称“%1客户账户”）。"
 
 msgid "The system fills orders on a first-in, first-out basis, i.e. based on the sequence of the order received, and this is beyond the Company's control. As a result, the client may find it difficult or impossible to close a position at the intended price stipulated in the client's stop order during certain market conditions. The placement of stop order by the client, though useful as a risk management tool, will not necessarily limit the client's losses to the client's intended amounts in the event of highly volatile trading conditions, since market conditions may make it impossible to execute such orders, and there is uncertainty about the client's possible exit price. In short, a stop order is not guaranteed because it cannot operate in all market circumstances."
 msgstr "系统按先进先出的次序，即按照收到订单的顺序处理订单，这是公司无法控制的。因此，客户可能会发现很难或无法在某些市场条件下按照其止损单规定的预期价位平仓。客户设定的止损单虽然是有用的风险管理工具，却不一定能按照其原先设想的数额限制损失。在极不稳定的交易条件下，由于市场情况可能无法执行这些指令，客户的退出价格具不确定性。简而言之，止损单是无法提供保证的，因为无法在所有市场情况下运作。"
@@ -11378,6 +11396,9 @@ msgstr "然后进行交易"
 
 msgid "There are four types of Smart FX indices that you can trade:"
 msgstr "有四种类型的智能外汇指数可以交易："
+
+msgid "There are less than 2 ticks between the start and end times"
+msgstr "开始时间和终止时间之间的跳动价位少于2个"
 
 msgid "There are no charges for transferring money from the client's %1 account to their MT5 Real Account."
 msgstr "将资金从客户的%1账户转到其MT5真实账户，不必支付任何费用。"
@@ -11533,7 +11554,7 @@ msgid "This Agreement may be terminated forthwith by either party on written not
 msgstr "如果一方严重违反本协议条款，且在能够补救的情况下，在收到书面的违约通知后的十五天内未能进行相应补救，另一方可立即通过书面形式终止本协议。"
 
 msgid "This Agreement sets out the terms and conditions between %1 and the Introducing Broker in providing Introducing Broker services to the Company in accordance with the provisions and terms of this Agreement."
-msgstr "本协议规定了％1与推介经纪之间根据本协议的条规和条款向公司提供推介经纪服务的条款和条件。"
+msgstr "本协议规定了%1与推介经纪之间根据本协议的条规和条款向公司提供推介经纪服务的条款和条件。"
 
 msgid "This Agreement shall be equally terminated in the event of bankruptcy, insolvency, or liquidation of either party. "
 msgstr "如果任何一方破产、无法清还债务或清算，本协议将在平等条件下终止。 "
@@ -11644,7 +11665,7 @@ msgid "This notice does not explain all of the risks involved in investments or 
 msgstr "此通知并不解释所有投资或同类产品的风险，以及这些风险如何与客户的个人情况关联。重要的是，在决定透过公司%1交易前，客户必须对相关风险有充分的了解。如果客户对相关风险有任何疑问，应寻求专业协助%2。"
 
 msgid "This notice provides the client with information about the risks associated with the contracts the client may purchase through services provided by %1 services."
-msgstr "本通知向客户提供关于客户通过％1服务购买的合约的风险的信息。"
+msgstr "本通知向客户提供关于客户通过%1服务购买的合约的风险的信息。"
 
 msgid "This obligation encompasses the prohibition of unlawful payments or the granting of any form of unlawful benefits to public officials, business partners, employees, family members, or any other partners."
 msgstr "这项义务包括禁止非法付款或向公职人员、业务伙伴、雇员、家庭成员或任何其他伙伴提供任何形式的非法利益。"
@@ -12049,7 +12070,7 @@ msgid "Trading guru"
 msgstr "交易大师"
 
 msgid "Trading in binary options is speculative and involves a high degree of risk that can result in the loss of the client's entire investment. Therefore, trading in binary options is appropriate only for persons that understand and are willing to assume the economic, legal, and other risks involved in such transactions. The client should be satisfied that binary options trading is suitable for the client in light of the client's investment circumstances and attitude towards risk before trading. The client should not engage in speculative binary options trading unless the client understands the basic aspects of such trading and its risks. If the client is in any doubt as to whether Binary Option trading is appropriate and suitable for the client, the client should seek independent advice from an investment consulting professional. %1 does not provide such advice. It is the client's responsibility, taking into account the client's personal circumstances and investment resources, to take particular care and make careful considerations independently, both prior to applying to engage in binary options with %1 and prior to making any individual order. Where the client does not understand the risks involved in applying for a trading account with %1 or in making any individual order, the client should seek advice and consultation from an independent investment advisor. If the client continues to not understand the risks involved in trading in binary options, the client should not trade at all."
-msgstr "二元期权交易属投机行为，涉及高风险，可能导致客户损失全部投资。因此，二元期权交易仅适用于理解并愿意承担此类交易所涉及的经济、法律和其他风险的人。交易前客户须先评估其投资环境和风险，并确定自己适合二元期权交易。除非客户理解此类交易的基本情况及其风险，否则客户不应参与投机性二元期权交易。如果客户对自己是否适合二元期权交易有任何疑问，客户须寻求投资咨询专业人士的独立意见。％1不提供此类建议。在考虑客户的个人情况和投资资源时，在申请与％1进行二元期权之前以及下任何个别订单之前，客户有责任特别注意并做出慎重考虑。如果客户不了解申请％1交易账户或执行任何个别订单所涉及的风险，客户须寻求独立投资顾问的建议和咨询。如果客户仍然不了解二元期权交易所涉及的风险，客户不应该进行任何交易。"
+msgstr "二元期权交易属投机行为，涉及高风险，可能导致客户损失全部投资。因此，二元期权交易仅适用于理解并愿意承担此类交易所涉及的经济、法律和其他风险的人。交易前客户须先评估其投资环境和风险，并确定自己适合二元期权交易。除非客户理解此类交易的基本情况及其风险，否则客户不应参与投机性二元期权交易。如果客户对自己是否适合二元期权交易有任何疑问，客户须寻求投资咨询专业人士的独立意见。%1不提供此类建议。在考虑客户的个人情况和投资资源时，在申请与%1进行二元期权之前以及下任何个别订单之前，客户有责任特别注意并做出慎重考虑。如果客户不了解申请%1交易账户或执行任何个别订单所涉及的风险，客户须寻求独立投资顾问的建议和咨询。如果客户仍然不了解二元期权交易所涉及的风险，客户不应该进行任何交易。"
 
 msgid "Trading is unavailable at this time."
 msgstr "此时无法交易。"
@@ -12433,7 +12454,7 @@ msgid "Use the Marketing Materials provided by Binary solely for the purpose of 
 msgstr "Binary提供的营销材料仅用于提供IB服务并遵从Binary的指示"
 
 msgid "Use the name 'Binary' or any derivation of that name such as '%1' or the Binary Trademarks in a way that might compete with Binary's search engine optimisation without the prior written consent of Binary, which includes using the name '%1' on the title tag of the Introducing Broker's website"
-msgstr "未经Binary事先书面同意，用可能会与Binary的搜索引擎优化竞争的方式使用Binary名称或该名称的任何派生，例如'％1'或Binary商标，包括在推介经纪网站的标题标签上使用％1名称"
+msgstr "未经Binary事先书面同意，用可能会与Binary的搜索引擎优化竞争的方式使用Binary名称或该名称的任何派生，例如'%1'或Binary商标，包括在推介经纪网站的标题标签上使用%1名称"
 
 msgid "Use the opportunity provided by our website to practice for free with our virtual money account facility. This will enable you to get used to the functionalities and rules of the website."
 msgstr "利用本网站向您提供的机会，通过虚拟账户免费尝试交易并熟悉各种功能和规则。"
@@ -12596,6 +12617,9 @@ msgstr "波动率指数"
 
 msgid "Volatility Indices are further categorised into two classes:"
 msgstr "波动率指数进一步分为两种级别："
+
+msgid "Volatility Indices give you exclusive access to various trade types, such as Up/Down, Touch/No Touch, In/Out, Asians, Digits, Lookbacks, Reset Call/Reset Put, Call Spread/Put Spread, Only Ups/Only Downs, and more."
+msgstr "波动率指数为您提供各种交易类型的专用访问权限，例如上涨/下跌、触及/未触及、范围之内/之外、亚洲期权、数字期权、回顾期权、重置看涨/重置看跌、看涨期权价差/看跌期权价差、持续上涨/持续下跌、及其他。"
 
 msgid "Volume step"
 msgstr "量额步骤"
@@ -13159,7 +13183,7 @@ msgid "Withdrawal of funds from MT5 Real Account"
 msgstr "从MT5真实账户提出资金"
 
 msgid "Withdrawal of funds from the client's MT5 Real Account can be made in a different currency from the one maintained in the client's %1 account subject to a currency transfer fee charge."
-msgstr "从客户的MT5真实账户中提款时可以使用与其％1账户不相同的货币，但须支付1％的货币转账费。"
+msgstr "从客户的MT5真实账户中提款时可以使用与其%1账户不相同的货币，但须支付1％的货币转账费。"
 
 msgid "Withdrawal via payment agent is available only if you deposit exclusively via payment agent."
 msgstr "必须完全通过付款代理存款才可使用付款代理提款."
@@ -13340,9 +13364,6 @@ msgstr "如果您的余额为 %2 或更低, 您可以在模拟账户内添加 %1
 
 msgid "You can top up your virtual account with an additional %1 if your balance is %2 or less."
 msgstr "如果您的余额为 %2 或更低, 您可以在虚拟账户内添加 %1。"
-
-msgid "You can trade Volatility Indices on all three main trade types: Up/Down, Touch/No Touch, and In/Out. That's not all – Volatility Indices also give you exclusive access to two additional trade types: Asians and Digits."
-msgstr "您可以对所有三种主要交易类型进行波动率指数交易：涨/跌、触及/未触及和范围之内/范围之外。还有 - 波动率指数也让您独家获得另外两种交易类型：亚式期权和数字期权。"
 
 msgid "You can use an authorized payment agent to process deposits and withdrawals for payment methods or local currencies not supported by %1. It's easy to do."
 msgstr "对于 %1 不支持的支付方式或货币， 您可以授权给支付代理，轻松处理存款和取款。"
