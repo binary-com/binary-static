@@ -121,7 +121,7 @@ const BinaryLoader = (() => {
                     });
             }
         } else if (config.not_authenticated && Client.isLoggedIn()) {
-            if (this_page === 'home') {
+            if (this_page === 'home' || this_page === 'new-account') {
                 BinaryPjax.load(`${Client.defaultRedirectUrl()}${window.location.search}`, true);
             } else {
                 handleNotAuthenticated();
