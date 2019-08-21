@@ -409,20 +409,6 @@ const MetaTraderConfig = (() => {
                     resolve();
                 }
             }),
-            pre_submit: ($form, acc_type, displayFormMessage) => (
-                BinarySocket.send({
-                    mt5_password_check: 1,
-                    login             : accounts_info[acc_type].info.login,
-                    password          : $form.find(fields.withdrawal.txt_main_pass.id).val(),
-                }).then((response) => {
-                    if (+response.mt5_password_check === 1) {
-                        return true;
-                    } else if (response.error) {
-                        displayFormMessage(response.error.message, 'withdrawal');
-                    }
-                    return false;
-                })
-            ),
         },
     };
 
@@ -509,7 +495,6 @@ const MetaTraderConfig = (() => {
         },
         withdrawal: {
             txt_amount       : { id: '#txt_amount_withdrawal', request_field: 'amount' },
-            txt_main_pass    : { id: '#txt_main_pass_wd' },
             additional_fields:
                 acc_type => ({
                     from_mt5 : accounts_info[acc_type].info.login,
@@ -551,8 +536,7 @@ const MetaTraderConfig = (() => {
             { selector: fields.deposit.txt_amount.id, validations: [['req', { hide_asterisk: true }], ['number', { type: 'float', min: () => getMinMT5TransferValue(Client.get('currency')), max: () => Math.min(State.getResponse('get_limits.remainder') || getMaxMT5TransferValue(Client.get('currency')), getMaxMT5TransferValue(Client.get('currency'))).toFixed(Currency.getDecimalPlaces(Client.get('currency'))), decimals: Currency.getDecimalPlaces(Client.get('currency')) }], ['custom', { func: () => (Client.get('balance') && (+Client.get('balance') >= +$(fields.deposit.txt_amount.id).val())), message: localize('You have insufficient funds in your Binary account, please <a href="[_1]">add funds</a>.', urlFor('cashier')) }]] },
         ],
         withdrawal: [
-            { selector: fields.withdrawal.txt_main_pass.id, validations: [['req', { hide_asterisk: true }]] },
-            { selector: fields.withdrawal.txt_amount.id,    validations: [['req', { hide_asterisk: true }], ['number', { type: 'float', min: () => getMinMT5TransferValue(getCurrency(Client.get('mt5_account'))), max: () => getMaxMT5TransferValue(getCurrency(Client.get('mt5_account'))), decimals: 2 }]] },
+            { selector: fields.withdrawal.txt_amount.id, validations: [['req', { hide_asterisk: true }], ['number', { type: 'float', min: () => getMinMT5TransferValue(getCurrency(Client.get('mt5_account'))), max: () => getMaxMT5TransferValue(getCurrency(Client.get('mt5_account'))), decimals: 2 }]] },
         ],
     });
 
