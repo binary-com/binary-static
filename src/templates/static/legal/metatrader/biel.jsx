@@ -68,7 +68,7 @@ const BIEL = () => (
                             <li>{it.L('There is an amount outstanding from the client to BIEL.')}</li>
                             <li>{it.L('BIEL is required to do so in accordance with any relevant law or regulation.')}</li>
                         </ol>
-                        <p>{it.L('The client\'s MT5 Real Account as well as all payments and withdrawals therefrom must be made in the same currency as maintained in the client\'s [_1] account.', it.website_name)}</p>
+                        <p>{it.L('The client\'s MT5 Real Account, as well as all payments and withdrawals therefrom, must be made in the same currency as maintained in the client\'s [_1] account; otherwise, a currency conversion fee shall be applied.', it.website_name)}</p>
                     </li>
                     <li>{it.L('Negative Balance Protection')}
                         <p>{it.L('When using the MT5 trading platform, all BIEL\'s clients will be provided with Margin monitoring functionality to protect the clients from encountering negative balances when trading under normal market conditions. As a trader, the client should always maintain the appropriate levels of Margin in their trading account as the recommended method of their own risk management.')}</p>
