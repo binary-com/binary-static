@@ -20,6 +20,10 @@ const ArrowsMobile = ({ direction, parent }) => (
 
 const Authenticate = () => (
     <React.Fragment>
+        <div id='logout_title' className='invisible'>
+            <h1 className='gr-padding-10'>{it.L('Authentication')}</h1>
+        </div>
+
         <div id='authentication_verified' className='center-text gr-padding-20 invisible'>
             <img className='gr-padding-20' src={it.url_for('images/pages/authenticate/valid.svg')} />
             <h1 className='gr-padding-10'>{it.L('You have been successfully verified')}</h1>

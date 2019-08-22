@@ -510,8 +510,9 @@ const Authenticate = (() => {
     };
 
     const getAuthenticationStatus = () => new Promise((resolve) => {
-        BinarySocket.wait('get_account_status').then(() => {
-            const authentication_response = State.getResponse('get_account_status.authentication');
+        // check update account status
+        BinarySocket.send({ get_account_status: 1 }).then((response) => {
+            const authentication_response =  response.get_account_status.authentication;
             resolve(authentication_response);
         });
     });
