@@ -947,7 +947,7 @@ const JobDetails = () => (
                                 text={it.L('Minimum qualifications:')}
                                 className='bullet'
                                 items={[
-                                    { text: it.L('A bachelor\'s degree in commerce or any business-related field, IT-related field or criminology') },
+                                    { text: it.L('A bachelor\'s degree in commerce or any business-related field, IT-related field, or criminology') },
                                     { text: it.L('Good understanding of payments functionality and a keen interest in cryptocurrencies') },
                                     { text: it.L('Proficiency in Microsoft Excel') },
                                     { text: it.L('Proficiency in spoken and written English') },
