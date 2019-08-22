@@ -13,7 +13,6 @@ const toTitleCase         = require('../../../../_common/string_util').toTitleCa
 const TabSelector         = require('../../../../_common/tab_selector');
 const Url                 = require('../../../../_common/url');
 const showLoadingImage    = require('../../../../_common/utility').showLoadingImage;
-const State               = require('../../../../_common/storage').State;
 
 const Authenticate = (() => {
     let is_any_upload_failed = false;
