@@ -27,6 +27,7 @@ const Authenticate = () => (
         <div id='authentication_verified' className='center-text gr-padding-20 invisible'>
             <img className='gr-padding-20' src={it.url_for('images/pages/authenticate/valid.svg')} />
             <h1 className='gr-padding-10'>{it.L('You have been successfully verified')}</h1>
+            {it.L('You can view your [_1]trading limits here[_2].', `<a href="${it.url_for('user/security/limitsws')}">`, '</a>')}
         </div>
 
         <div id='authentication_tab'>
@@ -70,7 +71,7 @@ const Authenticate = () => (
     
                             <div id='verified' className='center-text gr-padding-20 invisible'>
                                 <img className='gr-padding-20' src={it.url_for('images/pages/authenticate/valid.svg')} />
-                                <h1 className='gr-padding-10'>{it.L('You have been successfully verified')}</h1>
+                                <h1 className='gr-padding-10'>{it.L('Your proof of identity have been successfully verified')}</h1>
                             </div>
                         </div>
                     </TabContent>
@@ -87,7 +88,7 @@ const Authenticate = () => (
     
                                 <div id='verified_poa' className='center-text gr-gutter gr-padding-20 invisible'>
                                     <img className='gr-padding-20' src={it.url_for('images/pages/authenticate/valid.svg')} />
-                                    <h1>{it.L('You have been successfully verified')}</h1>
+                                    <h1>{it.L('Your proof of address have been successfully verified')}</h1>
                                     {it.L('You can view your [_1]trading limits here[_2].', `<a href="${it.url_for('user/security/limitsws')}">`, '</a>')}
                                 </div>
     
