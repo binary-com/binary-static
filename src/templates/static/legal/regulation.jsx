@@ -128,7 +128,7 @@ const Regulation = () => {
                                     { name: 'Czech Republic', x: 238.9, y: 112.4, width: 53.2 },
                                     { name: 'Poland',         x: 258,   y: 95.3,  width: 34.2 },
                                     { name: 'Lithuania',      x: 252.9, y: 83.5,  width: 39.3,          link: 'https://www.lb.lt/en/sfi-financial-market-participants?query=binary&ff=1' },
-                                    { name: 'Latvia',         x: 258,   y: 71.7,  width: 34.2,          link: 'http://www.fktk.lv/en/market/financial-instruments-market/service-providers-from-the-eea/freedom-to-provide-services.html' },
+                                    { name: 'Latvia',         x: 258,   y: 71.7,  width: 34.2,          link: 'https://www.fktk.lv/en/market/investment-service-providers/service-providers-from-the-eea/freedom-to-provide-services/binary-investments-europe-ltd/' },
                                     { name: 'Estonia',        x: 258,   y: 60.0,  width: 34.2 },
                                     { name: 'Finland',        x: 258,   y: 13.9,  width: 34.2 },
                                 ]}
