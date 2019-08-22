@@ -108,9 +108,8 @@ const Header = (() => {
     };
 
     const metatraderMenuItemVisibility = () => {
-        BinarySocket.wait('landing_company', 'get_account_status').then(async () => {
-            const is_eligible = await MetaTrader.isEligible();
-            if (is_eligible) {
+        BinarySocket.wait('landing_company', 'get_account_status').then(() => {
+            if (MetaTrader.isEligible()) {
                 const mt_visibility = document.getElementsByClassName('mt_visibility');
                 applyToAllElements(mt_visibility, (el) => {
                     el.setVisibility(1);

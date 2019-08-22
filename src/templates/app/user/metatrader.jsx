@@ -246,7 +246,7 @@ const Metatrader = () => (
                         />
                         */}
                         <AccountDesc
-                            account_type={['svg', 'malta', 'iom']}
+                            account_type={['svg', 'malta']}
                             title={it.L('Synthetic Indices Account')}
                             description={it.L('Our Synthetic Indices account allows you to trade CFDs on Synthetic Indices - our proprietary synthetic assets that simulate market forces.')}
                             items={[
@@ -575,11 +575,6 @@ const Metatrader = () => (
                             {it.L('To perform this action, please switch to your [_1] Real Account.', it.website_name)}
                             <br />
                             {it.L('If you do not have a [_1] Real Account yet, please [_2]create one[_3].', it.website_name, `<a href="${it.url_for('new_account/realws')}">` , '</a>')}
-                        </div>
-                        <div id='msg_switch_financial'>
-                            {it.L('To perform this action, please switch to your [_1] financial account.', it.website_name)}
-                            <br />
-                            {it.L('If you do not have a [_1] financial account yet, please create one.', it.website_name)}
                         </div>
                         <div id='msg_real_financial'>
                             <span id='msg_metatrader_account' className='invisible'>{it.L('To create a MetaTrader 5 account:')}</span>

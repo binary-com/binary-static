@@ -51,9 +51,9 @@ const eu_country_rule   = 'eucountry';
 const ContentVisibility = (() => {
     const init = () => {
         let arr_mt5fin_shortcodes;
-        
+
         return new Promise(resolve => {
-            BinarySocket.wait('authorize', 'landing_company', 'website_status').then(async () => {
+            BinarySocket.wait('authorize', 'landing_company', 'website_status').then(() => {
                 const current_landing_company_shortcode = State.getResponse('authorize.landing_company_name') || 'default';
                 const mt_financial_company = State.getResponse('landing_company.mt_financial_company');
                 const mt_gaming_company    = State.getResponse('landing_company.mt_gaming_company');
@@ -65,11 +65,9 @@ const ContentVisibility = (() => {
                 arr_mt5fin_shortcodes = mt_landing_company ? Object.keys(mt_landing_company)
                     .map((key) => mt_landing_company[key].shortcode) : [];
 
-                const is_eligible_mt5 = await MetaTrader.isEligible();
-
                 controlVisibility(
                     current_landing_company_shortcode,
-                    is_eligible_mt5,
+                    MetaTrader.isEligible(),
                     // We then pass the list of found mt5fin company shortcodes as an array
                     arr_mt5fin_shortcodes
                 );
