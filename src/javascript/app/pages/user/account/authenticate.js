@@ -83,11 +83,21 @@ const Authenticate = (() => {
         }
     };
 
-    const handleComplete = () => {
+    const handleComplete = (response) => {
+        const { document_front, document_back, face } = response;
+        const document_ids = [];
+        const face_id = face.id;
+
+        if (document_front) document_ids.push(document_front.id);
+        if (document_back) document_ids.push(document_back.id);
         BinarySocket.send({
             notification_event: 1,
             category          : 'authentication',
             event             : 'poi_documents_uploaded',
+            parameters        : {
+                poi_document_id: document_ids,
+                poi_photo_photo: face_id,
+            },
         }).then(() => {
             onfido.tearDown();
             $('#upload_complete').setVisibility(1);
