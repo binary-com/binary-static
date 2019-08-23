@@ -9,8 +9,15 @@ const Settings = (() => {
             $('.real').setVisibility(!Client.get('is_virtual'));
 
             const status = State.getResponse('get_account_status.status') || [];
+            const authentication = State.getResponse('get_account_status.authentication') || {};
             if (!/social_signup/.test(status)) {
                 $('#change_password').setVisibility(1);
+            }
+
+            if (authentication.identity.status === 'verified' && authentication.document.status === 'verified') {
+                $('#authenticate').setVisibility(1);
+            } else if (!authentication.needs_verification.length) {
+                $('#authenticate').setVisibility(0);
             }
 
             // Professional Client menu should only be shown to maltainvest accounts.
