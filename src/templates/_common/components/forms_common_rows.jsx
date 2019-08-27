@@ -23,7 +23,7 @@ export const FirstName = ({ className, hint, row_class, row_id }) => (
         type='text'
         id='first_name'
         label={it.L('First name')}
-        attributes={{ maxLength: '30', className: className || undefined, 'data-lpignore': true }}
+        attributes={{ maxLength: '50', className: className || undefined, 'data-lpignore': true }}
         row_class={row_class}
         row_id={row_id}
         hint={hint}
@@ -35,7 +35,7 @@ export const LastName = ({ className, hint, row_class, row_id }) => (
         type='text'
         id='last_name'
         label={it.L('Family name')}
-        attributes={{ maxLength: '30', className: className || undefined, 'data-lpignore': true }}
+        attributes={{ maxLength: '50', className: className || undefined, 'data-lpignore': true }}
         hint={hint}
         row_id={row_id}
         row_class={row_class}
