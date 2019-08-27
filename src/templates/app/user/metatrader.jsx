@@ -83,7 +83,7 @@ const Metatrader = () => (
                 <div id='mt_left_panel' className='gr-9 gr-12-t gr-12-p gr-12-m gr-no-gutter gr-gutter-right gr-no-gutter-p gr-no-gutter-m'>
                     <div id='account_details' className='mt-panel mt-container'>
                         <div className='gr-row'>
-                            <div className='gr-grow'>
+                            <div className='gr-9 gr-12-m gr-12-p'>
                                 <div className='gr-row'>
                                     <div className='gr-grow'>
                                         <div id='account_selector'>
@@ -106,15 +106,15 @@ const Metatrader = () => (
                                     </div>
                                     <div className='gr-row'>
                                         <div className='gr-3'>{it.L('Name:')}</div>
-                                        <div data='name' />
+                                        <div className='gr-9' data='name' />
                                     </div>
                                     <div className='gr-row gr-padding-10 gr-hide mobile-balance'>
                                         <div className='gr-3'>{it.L('Balance:')}</div>
-                                        <div className='gr-gutter' data='balance' />
+                                        <div className='gr-9' data='balance' />
                                     </div>
                                 </div>
                             </div>
-                            <div className='gr-adapt align-end gr-hide-m gr-hide-p'>
+                            <div className='gr-3 align-end gr-hide-m gr-hide-p'>
                                 <div className='acc-info has-account invisible'>
                                     <div>{it.L('Balance')}</div>
                                     <div className='balance gr-padding-10' data='balance' />
@@ -318,7 +318,7 @@ const Metatrader = () => (
                                 </div>
                                 <div id='view_2' className='gr-row invisible'>
                                     <div className='container gr-8 gr-12-m'>
-                                        <FormRow is_two_rows type='text'     id='txt_name'          label={it.L('Name')} attributes={{ maxLength: 30, autoComplete: 'off' }} />
+                                        <FormRow is_two_rows type='text'     id='txt_name'          label={it.L('Name')} attributes={{ maxLength: 101, autoComplete: 'off' }} />
                                         <FormRow is_two_rows type='password' id='txt_main_pass'     label={it.L('Main password')}     tooltip={it.L('Access your account with full trading permission.')}             hint={it.L('Minimum eight characters. Must contain numbers, and mix of upper and lower case letters.')} />
                                         <FormRow is_two_rows type='password' id='txt_re_main_pass'  label={it.L('Verify main password')} />
                                         <FormRow is_two_rows type='password' id='txt_investor_pass' label={it.L('Investor password')} tooltip={it.L('Share access to your account without any permission to trade.')} hint={it.L('Minimum eight characters. Must contain numbers, and mix of upper and lower case letters.')} />
