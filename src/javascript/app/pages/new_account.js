@@ -3,7 +3,6 @@ const BinarySocket   = require('../base/socket');
 const FormManager    = require('../common/form_manager');
 const getFormRequest = require('../../app/common/verify_email');
 const Login          = require('../../_common/base/login');
-const getElementById = require('../../_common/common_functions').getElementById;
 const localize       = require('../../_common/localize').localize;
 const State          = require('../../_common/storage').State;
 const urlFor         = require('../../_common/url').urlFor;
