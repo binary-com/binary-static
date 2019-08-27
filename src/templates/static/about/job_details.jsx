@@ -132,7 +132,7 @@ const JobDetails = () => (
                             className='compliance'
                             sidebar_items={[
                                 { href: 'compliance_executive',            string: it.L('Compliance Executive') },
-                                { href: 'payments_and_compliance_analyst', string: it.L('Payments and Compliance Analyst') },
+                                { href: 'payments_and_compliance_analyst', string: it.L('Compliance and Payments Analyst') },
                                 { href: 'risk_management_executive',       string: it.L('Risk Management Executive') },
                             ]}
                         />
@@ -923,36 +923,42 @@ const JobDetails = () => (
                         </div>
 
                         <div className='invisible' id='payments_and_compliance_analyst'>
-                            <h1>{it.L('Payments and Compliance Analyst')}</h1>
+                            <h1>{it.L('Compliance and Payments Analyst')}</h1>
 
-                            <p>{it.L('You are responsible for mitigating the risks and abuse that we face from fraud and money laundering. To accomplish this, you must monitor, analyse, and conduct various anti-fraud and AML checks on client accounts and deposits. You will join us in Malta and report to our Head of Payments.')}</p>
+                            <p>{it.L('We are PayOps, part of the Compliance department. Our team emphasizes business development by implementing the payment strategy for the Binary group of companies in collaboration with the Marketing team.')}</p>
 
                             <UlText
                                 text={it.L('Responsibilities:')}
                                 className='bullet'
                                 items={[
-                                    { text: it.L('Monitor fraud and money laundering patterns in deposit and withdrawal behaviour') },
-                                    { text: it.L('Work closely with the Head of Payments to proactively suggest improvements to cashier setup, including customer activity from an AML and anti-fraud perspective and overall fraud and payment performances (card success rates, chargebacks, etc.)') },
-                                    { text: it.L('Work closely with customer support, compliance, and payment teams') },
-                                    { text: it.L('Support the payments team in certain daily analysis where needed') },
-                                    { text: it.L('Approve e-wallet payouts and withdrawal rules') },
-                                    { text: it.L('Coordinate with Payment System Service Providers in offering cryptocurrencies and digital wallets as a payment method') },
-                                    { text: it.L('Research new Payment Systems that are available in the market') },
+                                    { text: it.L('Administer overall payment systems, including monitoring and reporting clients activity as well as success rates') },
+                                    { text: it.L('Use to the utmost benefit any possible additional features that some payment processors offer') },
+                                    { text: it.L('Assist cashier providers in setting up new payment systems and risk management settings') },
+                                    { text: it.L('Negotiate competitive rates with new payment system providers') },
+                                    { text: it.L('Work closely with the Head of Payments to proactively suggest improvements to cashier setup and success rates by various strategies including monitoring customer activity and overall fraud and payment performances (card success rates, chargebacks, and the like)') },
+                                    { text: it.L('Collaborate with the Customer Support, Compliance, and Payments teams') },
+                                    { text: it.L('Support the Payments team in daily analyses when needed') },
+                                    { text: it.L('Coordinate with payment system service providers in offering cryptocurrencies and digital wallets as a payment method') },
+                                    { text: it.L('Research new payment systems that are available in the market') },
                                 ]}
                             />
 
                             <UlText
-                                text={it.L('Preferences:')}
+                                text={it.L('Minimum qualifications:')}
                                 className='bullet'
                                 items={[
-                                    { text: it.L('A bachelor\'s degree in commerce or any business-related field, IT-related field or criminology') },
-                                    { text: it.L('Good understanding of the link between payments functionality, as well as money laundering and fraud prevention') },
-                                    { text: it.L('Aptitude for working in an international environment') },
-                                    { text: it.L('Ability to acquire knowledge of varied AML matters in a multitude of international jurisdictions') },
-                                    { text: it.L('Proactive approach in problem-solving and solution delivery') },
-                                    { text: it.L('Proficiency in Microsoft Excel is required') },
-                                    { text: it.L('Excellent proficiency in spoken and written English') },
-                                    { text: it.L('Knowledge of payment transaction analysis, in particular e-wallets/cryptocurrencies will be considered an advantage') },
+                                    { text: it.L('A bachelor\'s degree in commerce or any business-related field, IT-related field, or criminology') },
+                                    { text: it.L('Good understanding of payments functionality and a keen interest in cryptocurrencies') },
+                                    { text: it.L('Proficiency in Microsoft Excel') },
+                                    { text: it.L('Proficiency in spoken and written English') },
+                                ]}
+                            />
+
+                            <UlText
+                                text={it.L('Preferred qualifications:')}
+                                className='bullet'
+                                items={[
+                                    { text: it.L('Knowledge of payment transaction analysis, in particular e-wallets and cryptocurrencies') },
                                 ]}
                             />
                         </div>

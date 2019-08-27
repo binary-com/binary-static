@@ -108,6 +108,7 @@ const AccountTransfer = (() => {
         if (/iom|malta/.test(Client.get('landing_company_shortcode'))) {
             el_transfer_fee.setVisibility(0);
         }
+        setLoadingVisibility(0);
     };
 
     const setTransferFeeAmount = () => {
@@ -128,8 +129,14 @@ const AccountTransfer = (() => {
     };
 
     const showError = () => {
+        setLoadingVisibility(0);
         getElementById(messages.parent).setVisibility(1);
         getElementById(messages.error).setVisibility(1);
+    };
+
+    const setLoadingVisibility = (is_loading_visible) => {
+        getElementById('loading').setVisibility(is_loading_visible);
+        getElementById('transfer_between_accounts').setVisibility(!is_loading_visible);
     };
 
     const showForm = () => {
@@ -161,18 +168,18 @@ const AccountTransfer = (() => {
             // Auto hide error after 5 seconds.
             setTimeout(() => el_error.setVisibility(0), 5000);
         } else {
-            BinarySocket.send({ transfer_between_accounts: 1 }).then(data => populateReceipt(response, data));
+            populateReceipt(response);
         }
     };
 
-    const populateReceipt = (response_submit_success, response) => {
+    const populateReceipt = (response) => {
         getElementById(form_id).setVisibility(0);
         response.accounts.forEach((account) => {
             if (account.loginid === client_loginid) {
                 elementTextContent(getElementById('transfer_success_from'), localize('From account: '));
                 elementTextContent(getElementById('from_loginid'), `${account.loginid} (${account.currency})`);
                 getElementById('from_current_balance').innerText = Currency.getTextFormat(account.balance, account.currency);
-            } else if (account.loginid === response_submit_success.client_to_loginid) {
+            } else if (account.loginid === response.client_to_loginid) {
                 elementTextContent(getElementById('transfer_success_to'), localize('To account: '));
                 elementTextContent(getElementById('to_loginid'), `${account.loginid} (${account.currency})`);
                 getElementById('to_current_balance').innerText = Currency.getTextFormat(account.balance, account.currency);
@@ -195,6 +202,7 @@ const AccountTransfer = (() => {
             return;
         }
 
+        setLoadingVisibility(1);
         el_transfer_fee   = getElementById('transfer_fee');
         el_fee_amount     = getElementById('transfer_fee_amount');
         el_fee_minimum    = getElementById('transfer_fee_minimum');
@@ -207,6 +215,7 @@ const AccountTransfer = (() => {
             client_currency  = Client.get('currency');
             const min_amount = Currency.getTransferLimits(client_currency, 'min');
             if (!client_balance || client_balance < +min_amount) {
+                setLoadingVisibility(0);
                 getElementById(messages.parent).setVisibility(1);
                 if (client_currency) {
                     elementTextContent(getElementById('min_required_amount'), `${client_currency} ${min_amount}`);
