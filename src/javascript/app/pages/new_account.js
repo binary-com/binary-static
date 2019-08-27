@@ -17,8 +17,6 @@ const NewAccount = (() => {
     const form_id = '#signup_form';
 
     const onLoad = () => {
-        getElementById('footer').setVisibility(0); // always hide footer in this page
-
         $login_btn    = $('#login');
         $verify_email = $('#verify_email');
 
@@ -70,13 +68,8 @@ const NewAccount = (() => {
             }));
     };
 
-    const onUnload = () => {
-        getElementById('footer').setVisibility(1);
-    };
-
     return {
         onLoad,
-        onUnload,
     };
 })();
 
