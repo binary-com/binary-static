@@ -51,6 +51,10 @@ const MetaTrader = (() => {
     };
 
     const isEligible = () => {
+        // hide MT5 dashboard for IOM
+        if (Client.get('landing_company_shortcode') === 'iom') {
+            return false;
+        }
         setMTCompanies();
         let has_mt_company = false;
         Object.keys(mt_companies).forEach((company) => {
