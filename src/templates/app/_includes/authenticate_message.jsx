@@ -1,4 +1,5 @@
 import React             from 'react';
+import { SeparatorLine } from '../../_common/components/separator_line.jsx';
 import { Table }         from '../../_common/components/elements.jsx';
 
 const FileSelector = ({
@@ -104,7 +105,82 @@ const FileSelector = ({
     </div>
 );
 
-const AuthenticateMessage = () => (
+export const UnsupportedMessage = () => (
+    <React.Fragment>
+        <p>{it.L('Authenticate your account by verifying your identity and address.')}</p>
+
+        <p>{it.L('Learn more about submitting essential documents with our handy infographic:')}</p>
+
+        <p className='learn_more'>
+            <a className='button' href='#' target='_blank'><span>{it.L('View guide')}</span></a>
+        </p>
+
+        <FileSelector
+            heading={it.L('1. Proof of identity')}
+            allowed_documents={[
+                it.L('Passport'),
+                it.L('Driving licence'),
+                it.L('National ID card, ID book or any government-issued document which contains a photo, your name, and date of birth'),
+            ]}
+            instructions={[
+                it.L('Must be a clear, colour photo or scanned image'),
+                it.L('Minimum of six months validity'),
+                it.L('Only JPG, JPEG, GIF, PNG and PDF formats are accepted'),
+                it.L('Maximum upload size for each file is [_1]', '8MB'),
+            ]}
+            type='poi'
+            accepted_documents={[
+                { name: it.L('Passport'), value: 'passport' },
+                { name: it.L('Identity card'), value: 'proofid' },
+                { name: it.L('Driving licence'), value: 'driverslicense' },
+            ]}
+        />
+
+        <SeparatorLine className='gr-padding-10' data_show='mt5fin:vanuatu, labuan' invisible />
+
+        <FileSelector
+            heading={it.L('3. Selfie with proof of ID')}
+            data_show='mt5fin:vanuatu, labuan'
+            instructions={[
+                it.L('Must be a clear, colour photo'),
+                it.L('Proof of identity in your selfie must be clear, identifiable, and same as the one you submitted previously'),
+                it.L('Only JPG, JPEG, GIF, and PNG formats are accepted'),
+                it.L('Maximum upload size for each file is [_1]', '8MB'),
+            ]}
+            type='selfie'
+            accepted_documents={[
+                { name: it.L('Selfie holding proof of identity (front)') },
+            ]}
+        />
+
+        <div className='submit-status-uns gr-centered gr-padding-30 invisible'>
+            <h2 className='center-text'>{it.L('Document submission status')}</h2>
+            <Table
+                data={{
+                    thead: [
+                        [
+                            { text: it.L('Document Type'), className: 'gr-padding-10 align-start' },
+                            { text: it.L('File Name'),     className: 'gr-padding-10 align-start' },
+                            { text: it.L('Status'),        className: 'gr-padding-10 align-start' },
+                        ],
+                    ],
+                }}
+            />
+        </div>
+
+        <div className='center-text'>
+            <div id='resolve_error_uns' className='invisible center-text'>{it.L('Please resolve all pending issues to continue')}</div>
+            <div id='msg_form_uns' className='error-msg invisible center-text' />
+            <div className='gr-padding-10'>
+                <a className='button-disabled' id='btn_submit_uns' type='submit'>
+                    <span>{it.L('Submit for review')}</span>
+                </a>
+            </div>
+        </div>
+    </React.Fragment>
+);
+
+export const AuthenticateMessage = () => (
     <React.Fragment>
         <FileSelector
             allowed_documents={[
@@ -149,5 +225,3 @@ const AuthenticateMessage = () => (
         </div>
     </React.Fragment>
 );
-
-export default AuthenticateMessage;

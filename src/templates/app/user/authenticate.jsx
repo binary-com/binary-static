@@ -1,12 +1,12 @@
-import React                        from 'react';
-import Loading                      from '../../_common/components/loading.jsx';
+import React                                       from 'react';
+import Loading                                     from '../../_common/components/loading.jsx';
 import {
     TabContainer,
     TabContent,
     TabContentContainer,
-    TabsSubtabs }                   from '../../_common/components/tabs.jsx';
-import AuthenticateMessageFinancial from '../_includes/authenticate_message_financial.jsx';
-import AuthenticateMessage          from '../_includes/authenticate_message.jsx';
+    TabsSubtabs }                                  from '../../_common/components/tabs.jsx';
+import AuthenticateMessageFinancial                from '../_includes/authenticate_message_financial.jsx';
+import { AuthenticateMessage, UnsupportedMessage } from '../_includes/authenticate_message.jsx';
 
 const ArrowsMobile = ({ direction, parent }) => (
     <div className='align-self-center gr-2 gr-hide gr-show-m gr-no-gutter'>
@@ -41,8 +41,9 @@ const Authenticate = () => (
                     id='authentication_tab'
                     className='gr-parent tab-selector-wrapper gr-hide-m'
                     items={[
-                        { id: 'poi',   text: it.L('Proof of identity') },
-                        { id: 'poa',      text: it.L('Proof of address') },
+                        { id: 'poi',      text: it.L('Proof of identity'), className: 'invisible' },
+                        { id: 'poi_uns',  text: it.L('Proof of identity'), className: 'invisible' },
+                        { id: 'poa',      text: it.L('Proof of address'),  className: 'invisible' },
                         { id: 'authentication_tab_selector', className: 'tab-selector' },
                     ]}
                 />
@@ -75,7 +76,36 @@ const Authenticate = () => (
                             </div>
                         </div>
                     </TabContent>
-                    <TabContent id='poa'>
+                    <TabContent id='poi_uns' className='selectedTab'>
+                        <div id='authentication_uns'>
+                            <div id='authentication_message_uns'>
+                                <div id='not_authenticated_uns' className='invisible'>
+                                    <UnsupportedMessage />
+                                </div>
+    
+                                <div id='verified_poi_uns' className='center-text gr-gutter gr-padding-20 invisible'>
+                                    <img className='gr-padding-20' src={it.url_for('images/pages/authenticate/valid.svg')} />
+                                    <h1>{it.L('Your proof of address have been successfully verified')}</h1>
+                                    {it.L('You can view your [_1]trading limits here[_2].', `<a href="${it.url_for('user/security/limitsws')}">`, '</a>')}
+                                </div>
+    
+                                <div id='pending_poi_uns' className='center-text gr-gutter gr-padding-20 invisible'>
+                                    <img className='gr-padding-20' src={it.url_for('images/pages/authenticate/letter.svg')} />
+                                    <h1>{it.L('Thank you')}</h1>
+                                    <p>{it.L('We will review your documents and get back to you within 3 working days.')}</p>
+                                </div>
+    
+                                <div id='unverified_poi_uns' className='center-text gr-gutter gr-padding-20 invisible'>
+                                    <img className='gr-padding-20' src={it.url_for('images/pages/authenticate/invalid.svg')} />
+                                    <h1 className='gr-padding-10'>{it.L('Sorry, the authentication was not successful.')}</h1>
+                                    <p>{it.L('Don\'t worry, we will send you an email to assist you further.')}</p>
+                                </div>
+    
+                                <p className='center-text notice-msg invisible' id='error_message_uns' />
+                            </div>
+                        </div>
+                    </TabContent>
+                    <TabContent id='poa' className='selectedTab'>
                         <div id='authentication'>
                             <div id='authentication-message'>
                                 <div id='not_authenticated' className='invisible'>
