@@ -156,6 +156,7 @@ const AccountTransfer = (() => {
         FormManager.handleSubmit({
             form_selector       : form_id_hash,
             fnc_response_handler: responseHandler,
+            enable_button       : true,
         });
     };
 
@@ -167,24 +168,18 @@ const AccountTransfer = (() => {
             // Auto hide error after 5 seconds.
             setTimeout(() => el_error.setVisibility(0), 5000);
         } else {
-            BinarySocket.send({ transfer_between_accounts: 1 }).then(data => {
-                populateReceipt(response, data);
-                // manually enable the button instead of inside form manager since the API response is slow
-                const el_button_submit = getElementById('btn_submit');
-                el_button_submit.removeAttribute('disabled');
-                el_button_submit.html(el_button_submit.getElementsByTagName('span')[0].textContent);
-            });
+            populateReceipt(response);
         }
     };
 
-    const populateReceipt = (response_submit_success, response) => {
+    const populateReceipt = (response) => {
         getElementById(form_id).setVisibility(0);
         response.accounts.forEach((account) => {
             if (account.loginid === client_loginid) {
                 elementTextContent(getElementById('transfer_success_from'), localize('From account: '));
                 elementTextContent(getElementById('from_loginid'), `${account.loginid} (${account.currency})`);
                 getElementById('from_current_balance').innerText = Currency.getTextFormat(account.balance, account.currency);
-            } else if (account.loginid === response_submit_success.client_to_loginid) {
+            } else if (account.loginid === response.client_to_loginid) {
                 elementTextContent(getElementById('transfer_success_to'), localize('To account: '));
                 elementTextContent(getElementById('to_loginid'), `${account.loginid} (${account.currency})`);
                 getElementById('to_current_balance').innerText = Currency.getTextFormat(account.balance, account.currency);
