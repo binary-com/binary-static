@@ -52,7 +52,7 @@ const MetaTrader = (() => {
 
     const isEligible = () => {
         // hide MT5 dashboard for IOM
-        if ((State.getResponse('landing_company.gaming_company') || State.getResponse('landing_company.financial_company')).shortcode === 'iom') {
+        if (Client.get('landing_company_shortcode') === 'iom' || (Client.get('is_virtual') && State.getResponse('landing_company.mt_financial_company') === 'iom')) {
             return false;
         }
         setMTCompanies();
