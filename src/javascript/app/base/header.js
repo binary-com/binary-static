@@ -1,3 +1,4 @@
+const Cookies                  = require('js-cookie');
 const BinaryPjax               = require('./binary_pjax');
 const Client                   = require('./client');
 const BinarySocket             = require('./socket');
@@ -306,7 +307,7 @@ const Header = (() => {
                 unauthenticated      : () => buildMessage(localizeKeepPlaceholders('[_1]Your Proof of Address and Proof of Identity[_2] did not meet our requirements. Please check your email for further instructions.'),'user/authenticate'),
                 excluded_until       : () => buildMessage(localizeKeepPlaceholders('Your account is restricted. Kindly [_1]contact customer support[_2] for assistance.'),                                                 'contact'),
                 financial_limit      : () => buildMessage(localizeKeepPlaceholders('Please set your [_1]30-day turnover limit[_2] to remove deposit limits.'),                                                             'user/security/self_exclusionws'),
-                identity             : () => buildMessage(localizeKeepPlaceholders('[_1]Your Proof of Identity[_2] did not meet our requirements. Please check your email for further instructions.'),                     'user/authenticate', '?authentication_tab=poi'),
+                identity             : () => buildMessage(localizeKeepPlaceholders('[_1]Your Proof of Identity[_2] did not meet our requirements. Please check your email for further instructions.'),                     'user/authenticate', `?authentication_tab=${Cookies.get('is_onfido_unsupported') ? 'poi_uns' : 'poi'}`),
                 mf_retail            : () => buildMessage(localizeKeepPlaceholders('Binary Options Trading has been disabled on your account. Kindly [_1]contact customer support[_2] for assistance.'),                   'contact'),
                 mt5_withdrawal_locked: () => localize('MT5 withdrawals have been disabled on your account. Please check your email for more details.'),
                 required_fields      : () => buildMessage(localizeKeepPlaceholders('Please complete your [_1]personal details[_2] before you proceed.'),                                                                   'user/settings/detailsws'),

@@ -1,7 +1,9 @@
+const Cookies      = require('js-cookie');
 const Client       = require('../../../base/client');
 const BinarySocket = require('../../../base/socket');
 const localize     = require('../../../../_common/localize').localize;
 const State        = require('../../../../_common/storage').State;
+const urlFor       = require('../../../../_common/url').urlFor;
 
 const Settings = (() => {
     const onLoad = () => {
@@ -14,8 +16,19 @@ const Settings = (() => {
                 $('#change_password').setVisibility(1);
             }
 
+            if (authentication.needs_verification.includes('identity')) {
+                if (Cookies.get('is_onfido_unsupported')) {
+                    $('#authenticate a').attr('href', `${urlFor('user/authenticate')}?authentication_tab=poi_uns`);
+                } else {
+                    $('#authenticate a').attr('href', `${urlFor('user/authenticate')}?authentication_tab=poi`);
+                }
+            } else {
+                $('#authenticate a').attr('href', `${urlFor('user/authenticate')}?authentication_tab=poa`);
+            }
+
             if (authentication.identity.status === 'verified' && authentication.document.status === 'verified') {
                 $('#authenticate').setVisibility(1);
+
             } else if (!authentication.needs_verification.length) {
                 $('#authenticate').setVisibility(0);
             }

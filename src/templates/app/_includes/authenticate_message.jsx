@@ -107,10 +107,7 @@ const FileSelector = ({
 
 export const UnsupportedMessage = () => (
     <React.Fragment>
-        <p>{it.L('Authenticate your account by verifying your identity and address.')}</p>
-
         <p>{it.L('Learn more about submitting essential documents with our handy infographic:')}</p>
-
         <p className='learn_more'>
             <a className='button' href='#' target='_blank'><span>{it.L('View guide')}</span></a>
         </p>
@@ -139,7 +136,7 @@ export const UnsupportedMessage = () => (
         <SeparatorLine className='gr-padding-10' data_show='mt5fin:vanuatu, labuan' invisible />
 
         <FileSelector
-            heading={it.L('3. Selfie with proof of ID')}
+            heading={it.L('2. Selfie with proof of ID')}
             data_show='mt5fin:vanuatu, labuan'
             instructions={[
                 it.L('Must be a clear, colour photo'),

@@ -26,8 +26,7 @@ const Authenticate = () => (
 
         <div id='authentication_verified' className='center-text gr-padding-20 invisible'>
             <img className='gr-padding-20' src={it.url_for('images/pages/authenticate/valid.svg')} />
-            <h1 className='gr-padding-10'>{it.L('You have been successfully verified')}</h1>
-            {it.L('You can view your [_1]trading limits here[_2].', `<a href="${it.url_for('user/security/limitsws')}">`, '</a>')}
+            <h1 className='gr-padding-10'>{it.L('Your account has been successfully verified')}</h1>
         </div>
 
         <div id='authentication_tab'>
@@ -54,8 +53,23 @@ const Authenticate = () => (
                         <div id='onfido'>
                             <div id='upload_complete' className='center-text gr-padding-20 invisible'>
                                 <img className='gr-padding-20' src={it.url_for('images/pages/authenticate/letter.svg')} />
-                                <h1 className='gr-padding-10'>{it.L('Thank you for uploading your documents!')}</h1>
-                                <p>{it.L('We will send an email after verifying your documents')}</p>
+                                <h1 className='gr-padding-10'>{it.L('Your proof of identity was submitted successfully')}</h1>
+                                <div id='redirect_poi'>
+                                    <p>{it.L('Your document is being reviewed, please check back in 1-3 days. You must also submit a proof of address.')}</p>
+                                    <div className='gr-padding-10'>
+                                        <a className='button'  type='submit'>
+                                            <span>{it.L('Submit proof of address')}</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div id='trading_poi'>
+                                    <p>{it.L('Your document is being reviewed, please check back in 1-3 days.')}</p>
+                                    <div className='gr-padding-10'>
+                                        <a className='button'  type='submit'>
+                                            <span>{it.L('Continue trading')}</span>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
     
                             <div id='error_occured' className='center-text gr-padding-20 invisible'>
@@ -66,8 +80,13 @@ const Authenticate = () => (
     
                             <div id='unverified' className='center-text gr-padding-20 invisible'>
                                 <img className='gr-padding-20' src={it.url_for('images/pages/authenticate/invalid.svg')} />
-                                <h1 className='gr-padding-10'>{it.L('Sorry, the authentication was not successful.')}</h1>
-                                <p>{it.L('Don\'t worry, we will send you an email to assist you further.')}</p>
+                                <h1 className='gr-padding-10'>{it.L('Proof of identity verification failed')}</h1>
+                                <p>{it.L('We were unable to verify your document automatically. We will try to verify your document manually. Please check back in 1-3 days.')}</p>
+                                <div className='gr-padding-10'>
+                                    <a className='button' type='submit'>
+                                        <span>{it.L('Continue trading')}</span>
+                                    </a>
+                                </div>
                             </div>
     
                             <div id='verified' className='center-text gr-padding-20 invisible'>
@@ -91,8 +110,23 @@ const Authenticate = () => (
     
                                 <div id='pending_poi_uns' className='center-text gr-gutter gr-padding-20 invisible'>
                                     <img className='gr-padding-20' src={it.url_for('images/pages/authenticate/letter.svg')} />
-                                    <h1>{it.L('Thank you')}</h1>
-                                    <p>{it.L('We will review your documents and get back to you within 3 working days.')}</p>
+                                    <h1 className='gr-padding-10'>{it.L('Your proof of identity was submitted successfully')}</h1>
+                                    <div id='redirect_poi_uns' className='invisible'>
+                                        <p>{it.L('Your document is being reviewed, please check back in 1-3 days. You must also submit a proof of address.')}</p>
+                                        <div className='gr-padding-10'>
+                                            <a className='button'  type='submit'>
+                                                <span>{it.L('Submit proof of address')}</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id='trading_poi_uns' className='invisible'>
+                                        <p>{it.L('Your document is being reviewed, please check back in 1-3 days.')}</p>
+                                        <div className='gr-padding-10'>
+                                            <a className='button'  type='submit'>
+                                                <span>{it.L('Continue trading')}</span>
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
     
                                 <div id='unverified_poi_uns' className='center-text gr-gutter gr-padding-20 invisible'>
@@ -105,7 +139,7 @@ const Authenticate = () => (
                             </div>
                         </div>
                     </TabContent>
-                    <TabContent id='poa' className='selectedTab'>
+                    <TabContent id='poa'>
                         <div id='authentication'>
                             <div id='authentication-message'>
                                 <div id='not_authenticated' className='invisible'>
@@ -119,13 +153,27 @@ const Authenticate = () => (
                                 <div id='verified_poa' className='center-text gr-gutter gr-padding-20 invisible'>
                                     <img className='gr-padding-20' src={it.url_for('images/pages/authenticate/valid.svg')} />
                                     <h1>{it.L('Your proof of address have been successfully verified')}</h1>
-                                    {it.L('You can view your [_1]trading limits here[_2].', `<a href="${it.url_for('user/security/limitsws')}">`, '</a>')}
                                 </div>
     
                                 <div id='pending_poa' className='center-text gr-gutter gr-padding-20 invisible'>
                                     <img className='gr-padding-20' src={it.url_for('images/pages/authenticate/letter.svg')} />
-                                    <h1>{it.L('Thank you')}</h1>
-                                    <p>{it.L('We will review your documents and get back to you within 3 working days.')}</p>
+                                    <h1 className='gr-padding-10'>{it.L('Your proof of address was submitted successfully')}</h1>
+                                    <div id='redirect_poa' className='o'>
+                                        <p>{it.L('Your document is being reviewed, please check back in 1-3 days. You must also submit a proof of identity.')}</p>
+                                        <div className='gr-padding-10'>
+                                            <a className='button'  type='submit'>
+                                                <span>{it.L('Submit proof of identity')}</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id='trading_poa'>
+                                        <p>{it.L('Your document is being reviewed, please check back in 1-3 days.')}</p>
+                                        <div className='gr-padding-10'>
+                                            <a className='button'  type='submit'>
+                                                <span>{it.L('Continue trading')}</span>
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
     
                                 <div id='unverified_poa' className='center-text gr-gutter gr-padding-20 invisible'>

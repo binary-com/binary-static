@@ -5,11 +5,13 @@ const BinaryPjax          = require('../../../base/binary_pjax');
 const Client              = require('../../../base/client');
 const Header              = require('../../../base/header');
 const BinarySocket        = require('../../../base/socket');
+const getElementById      = require('../../../../_common/common_functions').getElementById;
 const CompressImage       = require('../../../../_common/image_utility').compressImg;
 const ConvertToBase64     = require('../../../../_common/image_utility').convertToBase64;
 const isImageType         = require('../../../../_common/image_utility').isImageType;
 const getLanguage         = require('../../../../_common/language').get;
 const localize            = require('../../../../_common/localize').localize;
+const State               = require('../../../../_common/storage').State;
 const toTitleCase         = require('../../../../_common/string_util').toTitleCase;
 const TabSelector         = require('../../../../_common/tab_selector');
 const Url                 = require('../../../../_common/url');
@@ -18,6 +20,7 @@ const showLoadingImage    = require('../../../../_common/utility').showLoadingIm
 const Authenticate = (() => {
     let is_any_upload_failed     = false;
     let is_any_upload_failed_uns = false;
+    let onfido_unsupported       = false;
     let file_checks          = {};
     let file_checks_uns      = {};
     let onfido,
@@ -48,6 +51,25 @@ const Authenticate = (() => {
         });
 
         $('#not_authenticated .file-picker').on('change', onFileSelected);
+
+        const language            = getLanguage();
+        const language_based_link = ['ID', 'RU', 'PT'].includes(language) ? `_${language}` : '';
+        const $not_authenticated  = $('#not_authenticated');
+        let link = Url.urlForCurrentDomain(`https://marketing.binary.com/authentication/Authentication_Process${language_based_link}.pdf`);
+
+        $not_authenticated.setVisibility(1);
+
+        if (Client.isAccountOfType('financial')) {
+            $('#not_authenticated_financial').setVisibility(1);
+            link = Url.urlForCurrentDomain('https://marketing.binary.com/authentication/MF_Authentication_Process.pdf');
+        }
+
+        $not_authenticated.find('.learn_more').setVisibility(1).find('a').attr('href', link);
+
+        if (isIdentificationNoExpiry(Client.get('residence'))) {
+            $('#expiry_datepicker_proofid').setVisibility(0);
+            $('#exp_date_2').datepicker('setDate', '2099-12-31');
+        }
     };
 
     const initUnsupported = () => {
@@ -69,6 +91,23 @@ const Authenticate = (() => {
             minDate    : '+6m',
         });
         $('#not_authenticated_uns .file-picker').on('change', onFileSelectedUns);
+
+        const language            = getLanguage();
+        const language_based_link = ['ID', 'RU', 'PT'].includes(language) ? `_${language}` : '';
+        const $not_authenticated_uns  = $('#not_authenticated_uns');
+        let link = Url.urlForCurrentDomain(`https://marketing.binary.com/authentication/Authentication_Process${language_based_link}.pdf`);
+
+        if (Client.isAccountOfType('financial')) {
+            $('#not_authenticated_financial').setVisibility(1);
+            link = Url.urlForCurrentDomain('https://marketing.binary.com/authentication/MF_Authentication_Process.pdf');
+        }
+
+        $not_authenticated_uns.find('.learn_more').setVisibility(1).find('a').attr('href', link);
+
+        if (isIdentificationNoExpiry(Client.get('residence'))) {
+            $('#expiry_datepicker_proofid').setVisibility(0);
+            $('#exp_date_2').datepicker('setDate', '2099-12-31');
+        }
     };
 
     /**
@@ -736,7 +775,7 @@ const Authenticate = (() => {
             removeButtonLoading();
             $button.setVisibility(0);
             $('.submit-status').setVisibility(0);
-            $('#pending_poa').setVisibility(1);
+            showUploadCompleteMessage('pending_poa', 'poa');
         }, 3000);
     };
 
@@ -748,7 +787,7 @@ const Authenticate = (() => {
             removeButtonLoadingUns();
             $button_uns.setVisibility(0);
             $('.submit-status-uns').setVisibility(0);
-            $('#pending_poi_uns').setVisibility(1);
+            showUploadCompleteMessage('pending_poi_uns', 'poi_uns');
         }, 3000);
     };
 
@@ -781,7 +820,7 @@ const Authenticate = (() => {
     const onResponseUns = (response, is_last_upload) => {
         if (response.warning || response.error) {
             is_any_upload_failed_uns = true;
-            showError({
+            showErrorUns({
                 message: response.message || (response.error ? response.error.message : localize('Failed')),
                 class  : response.passthrough.class,
             });
@@ -800,33 +839,6 @@ const Authenticate = (() => {
             const authentication_response =  response.get_account_status.authentication;
             resolve(authentication_response);
         });
-    });
-
-    const getOnfidoServiceToken = () => new Promise((resolve) => {
-        const onfido_cookie = Cookies.get('onfido_token');
-        if (onfido_cookie) {
-            resolve(onfido_cookie);
-        } else {
-            BinarySocket.send({
-                service_token: 1,
-                service      : 'onfido',
-            }).then((response) => {
-                console.log(response); // eslint-disable-line
-                if (response.error || !response.service_token) {
-                    resolve(response.error.code);
-                    return;
-                }
-                console.log('shouldnt be going here'); //eslint-disable-line
-                const token = response.service_token.token;
-                const in_90_minutes = 1 / 16;
-                Cookies.set('onfido_token', token, {
-                    expires: in_90_minutes,
-                    secure : true,
-                });
-                resolve(token);
-            });
-
-        }
     });
 
     const initOnfido = async (sdk_token) => {
@@ -864,15 +876,72 @@ const Authenticate = (() => {
             event             : 'poi_documents_uploaded',
         }).then(() => {
             onfido.tearDown();
-            $('#upload_complete').setVisibility(1);
+
+            showUploadCompleteMessage('upload_complete', 'poi');
+        });
+    };
+
+    const showUploadCompleteMessage = (id_to_show, type) => {
+        BinarySocket.wait('get_account_status').then(() => {
+            $(`#${id_to_show}`).setVisibility(1);
+            const needs_verification = State.getResponse('get_account_status.authentication.needs_verification');
+            const needs_poa = needs_verification.includes('document');
+            const needs_poi = needs_verification.includes('identity');
+
+            switch (type) {
+                case 'poi': {
+                    if (needs_poa) {
+                        $(`#redirect_${type}`).setVisibility(1);
+                        $(`#trading_${type} .button`).on('click', () => {
+                            BinaryPjax.load(`${Url.urlFor('user/authenticate')}?authentication_tab=poa`);
+                        });
+                    } else {
+                        $(`#trading_${type}`).setVisibility(1);
+                        $(`#trading_${type} .button`).on('click', () => {
+                            BinaryPjax.load(Url.urlFor('trading'));
+                        });
+                    }
+                    break;
+                }
+                case 'poi_uns': {
+                    if (needs_poa) {
+                        $(`#redirect_${type}`).setVisibility(1);
+                        $(`#redirect_${type} .button`).on('click', () => {
+                            BinaryPjax.load(`${Url.urlFor('user/authenticate')}?authentication_tab=poa`);
+                        });
+                    } else {
+                        $(`#trading_${type}`).setVisibility(1);
+                        $(`#trading_${type} .button`).on('click', () => {
+                            BinaryPjax.load(Url.urlFor('trading'));
+                        });
+                    }
+                    break;
+                }
+                case 'poa': {
+                    if (needs_poi) {
+                        $(`#redirect_${type}`).setVisibility(1);
+                        $(`#redirect_${type} .button`).on('click', () => {
+                            BinaryPjax.load(`${Url.urlFor('user/authenticate')}?authentication_tab=${onfido_unsupported ? 'poi_uns' : 'poi'}`);
+                        });
+                    } else {
+                        $(`#trading_${type}`).setVisibility(1);
+                        $(`#trading_${type} .button`).on('click', () => {
+                            BinaryPjax.load(Url.urlFor('trading'));
+                        });
+                    }
+                    break;
+                }
+                default:
+                    break;
+
+            }
         });
     };
 
     const initAuthentication = async () => {
         const authentication_status = await getAuthenticationStatus();
-        const onfido_token = await getOnfidoServiceToken();
-        
-        console.log('should be here') //eslint-disable-line
+        const onfido_token = Cookies.get('onfido_token');
+        onfido_unsupported = Cookies.get('is_onfido_unsupported');
 
         if (!authentication_status || authentication_status.error) {
             $('#error_occured').setVisibility(1);
@@ -880,39 +949,28 @@ const Authenticate = (() => {
         }
         const { identity, document, needs_verification } = authentication_status;
 
-        if (identity.status !== 'verified' && document.status !== 'verified' && !needs_verification.length) {
+        if (!(identity.status === 'verified' && document.status === 'verified') && !needs_verification.length) {
             BinaryPjax.load(Url.urlFor('user/settingsws'));
         }
 
-        if (needs_verification.length === 2 && onfido_token !== 'UnsupportedCountry') {
+        if (needs_verification.length === 2 && !onfido_unsupported) {
             $('#poi').removeClass('invisible');
             $('#poa').removeClass('invisible');
+            TabSelector.slideSelector('authentication_tab_selector', getElementById('poi'));
+        }
+
+        if (identity.status === 'verified' && document.status === 'verified') {
+            $('#authentication_tab').setVisibility(0);
+            $('#authentication_verified').setVisibility(1);
         }
         if (needs_verification.includes('identity')) {
-            if (onfido_token === 'UnsupportedCountry') {
+            if (onfido_unsupported) {
                 $('#poi_uns').removeClass('invisible');
-                TabSelector.repositionSelector();
-
+                TabSelector.slideSelector('authentication_tab_selector', getElementById('poi_uns'));
                 switch (identity.status) {
                     case 'none': {
                         initUnsupported();
                         $('#not_authenticated_uns').setVisibility(1);
-                        const language            = getLanguage();
-                        const language_based_link = ['ID', 'RU', 'PT'].includes(language) ? `_${language}` : '';
-                        const $not_authenticated_uns  = $('#not_authenticated_uns');
-                        let link = Url.urlForCurrentDomain(`https://marketing.binary.com/authentication/Authentication_Process${language_based_link}.pdf`);
-        
-                        if (Client.isAccountOfType('financial')) {
-                            $('#not_authenticated_financial').setVisibility(1);
-                            link = Url.urlForCurrentDomain('https://marketing.binary.com/authentication/MF_Authentication_Process.pdf');
-                        }
-        
-                        $not_authenticated_uns.find('.learn_more').setVisibility(1).find('a').attr('href', link);
-        
-                        if (isIdentificationNoExpiry(Client.get('residence'))) {
-                            $('#expiry_datepicker_proofid').setVisibility(0);
-                            $('#exp_date_2').datepicker('setDate', '2099-12-31');
-                        }
                         break;
                     }
                     case 'pending':
@@ -932,8 +990,7 @@ const Authenticate = (() => {
                 }
             } else {
                 $('#poi').removeClass('invisible');
-                TabSelector.repositionSelector();
-
+                TabSelector.slideSelector('authentication_tab_selector', getElementById('poi'));
                 if (!identity.further_resubmissions_allowed) {
                     switch (identity.status) {
                         case 'none':
@@ -946,12 +1003,7 @@ const Authenticate = (() => {
                             $('#unverified').setVisibility(1);
                             break;
                         case 'verified':
-                            if (document.status === 'verified') {
-                                $('#authentication_verified').setVisibility(1);
-                                $('#authentication_tab').setVisibility(0);
-                            } else {
-                                $('#verified').setVisibility(1);
-                            }
+                            $('#verified').setVisibility(1);
                             break;
                         case 'suspected':
                             $('#unverified').setVisibility(1);
@@ -966,30 +1018,11 @@ const Authenticate = (() => {
         }
         if (needs_verification.includes('document')) {
             $('#poa').removeClass('invisible');
-            TabSelector.repositionSelector();
-
+            TabSelector.slideSelector('authentication_tab_selector', getElementById('poa'));
             switch (document.status) {
                 case 'none': {
                     init();
                     $('#not_authenticated').setVisibility(1);
-                    const language            = getLanguage();
-                    const language_based_link = ['ID', 'RU', 'PT'].includes(language) ? `_${language}` : '';
-                    const $not_authenticated  = $('#not_authenticated');
-                    let link = Url.urlForCurrentDomain(`https://marketing.binary.com/authentication/Authentication_Process${language_based_link}.pdf`);
-    
-                    $not_authenticated.setVisibility(1);
-    
-                    if (Client.isAccountOfType('financial')) {
-                        $('#not_authenticated_financial').setVisibility(1);
-                        link = Url.urlForCurrentDomain('https://marketing.binary.com/authentication/MF_Authentication_Process.pdf');
-                    }
-    
-                    $not_authenticated.find('.learn_more').setVisibility(1).find('a').attr('href', link);
-    
-                    if (isIdentificationNoExpiry(Client.get('residence'))) {
-                        $('#expiry_datepicker_proofid').setVisibility(0);
-                        $('#exp_date_2').datepicker('setDate', '2099-12-31');
-                    }
                     break;
                 }
                 case 'pending':
@@ -1009,6 +1042,7 @@ const Authenticate = (() => {
             }
         }
         $('#authentication_loading').setVisibility(0);
+        TabSelector.updateTabDisplay();
     };
 
     const onLoad = () => {
