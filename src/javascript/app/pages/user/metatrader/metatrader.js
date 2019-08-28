@@ -51,8 +51,8 @@ const MetaTrader = (() => {
     };
 
     const isEligible = () => {
-        // hide MT5 dashboard for IOM
-        if (Client.get('landing_company_shortcode') === 'iom' || (Client.get('is_virtual') && State.getResponse('landing_company.mt_financial_company') === 'iom')) {
+        // hide MT5 dashboard for IOM account or VRTC of IOM landing company
+        if (State.getResponse('landing_company.gaming_company.shortcode') === 'iom' && !Client.isAccountOfType('financial')) {
             return false;
         }
         setMTCompanies();
