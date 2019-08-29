@@ -24,7 +24,6 @@ const PaymentAgentWithdraw = (() => {
         ddl_agents: '#ddlAgents',
         txt_agents: '#txtAgents',
         txt_amount: '#txtAmount',
-        txt_desc  : '#txtDescription',
     };
 
     let $agent_error,
@@ -92,10 +91,8 @@ const PaymentAgentWithdraw = (() => {
 
             $form.find('.wrapper-row-agent').find('label').append($('<span />', { text: '*', class: 'required_field_asterisk' }));
             $form.find('label[for="txtAmount"]').text(`${localize('Amount in')} ${currency}`);
-            trimDescriptionContent();
             FormManager.init(form_id, [
                 { selector: field_ids.txt_amount, validations: ['req', ['number', { type: 'float', decimals: getDecimalPlaces(currency), min, max }], ['custom', { func: () => +Client.get('balance') >= +$txt_amount.val(), message: localize('Insufficient balance.') }]], request_field: 'amount' },
-                { selector: field_ids.txt_desc,   validations: ['general'], request_field: 'description' },
 
                 { request_field: 'currency',              value: currency },
                 { request_field: 'paymentagent_loginid',  value: getPALoginID },
@@ -151,11 +148,11 @@ const PaymentAgentWithdraw = (() => {
     );
 
     // Remove multiline and excess whitespaces from description text.
-    const trimDescriptionContent = () => {
-        document.getElementById('txtDescription').addEventListener('change', e => {
-            e.srcElement.value = e.target.value.replace(/\s+/g, ' ');
-        });
-    };
+    // const trimDescriptionContent = () => {
+    //     document.getElementById('txtDescription').addEventListener('change', e => {
+    //         e.srcElement.value = e.target.value.replace(/\s+/g, ' ');
+    //     });
+    // };
 
     const insertListOption = ($ddl_object, item_text, item_value) => {
         $ddl_object.append($('<option/>', { value: item_value, text: item_text }));
