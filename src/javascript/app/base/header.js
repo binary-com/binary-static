@@ -1,4 +1,3 @@
-const Cookies                  = require('js-cookie');
 const BinaryPjax               = require('./binary_pjax');
 const Client                   = require('./client');
 const BinarySocket             = require('./socket');
@@ -303,11 +302,11 @@ const Header = (() => {
             const messages = {
                 cashier_locked       : () => localize('Deposits and withdrawals have been disabled on your account. Please check your email for more details.'),
                 currency             : () => buildMessage(localizeKeepPlaceholders('Please set the [_1]currency[_2] of your account.'),                                                                                    'user/set-currency'),
-                document             : () => buildMessage(localizeKeepPlaceholders('[_1]Your Proof of Address[_2] did not meet our requirements. Please check your email for further instructions.'),                      'user/authenticate', '?authentication_tab=poa'),
-                unauthenticated      : () => buildMessage(localizeKeepPlaceholders('[_1]Your Proof of Address and Proof of Identity[_2] did not meet our requirements. Please check your email for further instructions.'),'user/authenticate'),
+                document             : () => buildMessage(localizeKeepPlaceholders('[_1]Your address[_2] has not been verified. Please check your email for details. '),                                                   'user/authenticate', '?authentication_tab=poa'),
+                unauthenticated      : () => buildMessage(localizeKeepPlaceholders('[_1]Your identity and address[_2] have not been verified. Please check your email for details.'),                                      'user/authenticate'),
                 excluded_until       : () => buildMessage(localizeKeepPlaceholders('Your account is restricted. Kindly [_1]contact customer support[_2] for assistance.'),                                                 'contact'),
                 financial_limit      : () => buildMessage(localizeKeepPlaceholders('Please set your [_1]30-day turnover limit[_2] to remove deposit limits.'),                                                             'user/security/self_exclusionws'),
-                identity             : () => buildMessage(localizeKeepPlaceholders('[_1]Your Proof of Identity[_2] did not meet our requirements. Please check your email for further instructions.'),                     'user/authenticate', `?authentication_tab=${Cookies.get('is_onfido_unsupported') ? 'poi_uns' : 'poi'}`),
+                identity             : () => buildMessage(localizeKeepPlaceholders('[_1]Your identity[_2] has not been verified. Please check your email for details. '),                                                  'user/authenticate'),
                 mf_retail            : () => buildMessage(localizeKeepPlaceholders('Binary Options Trading has been disabled on your account. Kindly [_1]contact customer support[_2] for assistance.'),                   'contact'),
                 mt5_withdrawal_locked: () => localize('MT5 withdrawals have been disabled on your account. Please check your email for more details.'),
                 required_fields      : () => buildMessage(localizeKeepPlaceholders('Please complete your [_1]personal details[_2] before you proceed.'),                                                                   'user/settings/detailsws'),
@@ -367,13 +366,13 @@ const Header = (() => {
                 'risk',
                 'tax',
                 'currency',
-                'cashier_locked',
-                'withdrawal_locked',
-                'mt5_withdrawal_locked',
                 'identity',
                 'document',
                 'unauthenticated',
                 'unwelcome',
+                'cashier_locked',
+                'withdrawal_locked',
+                'mt5_withdrawal_locked',
                 'mf_retail',
             ];
 
@@ -405,7 +404,7 @@ const Header = (() => {
                     needs_verification = State.getResponse('get_account_status.authentication.needs_verification') || [];
                     get_account_status = State.getResponse('get_account_status') || {};
                     status             = get_account_status.status;
-                    if (Client.get('landing_company_shortcode') === 'maltainvest') {
+                    if (Client.get('landing_company_shortcode') === 'maltainvest' || Client.get('landing_company_shortcode') === 'malta' || Client.get('landing_company_shortcode') === 'iom') {
                         checkStatus(check_statuses_mf);
                     } else {
                         checkStatus(check_statuses_real);

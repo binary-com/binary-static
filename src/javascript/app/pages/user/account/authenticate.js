@@ -5,7 +5,6 @@ const BinaryPjax          = require('../../../base/binary_pjax');
 const Client              = require('../../../base/client');
 const Header              = require('../../../base/header');
 const BinarySocket        = require('../../../base/socket');
-const getElementById      = require('../../../../_common/common_functions').getElementById;
 const CompressImage       = require('../../../../_common/image_utility').compressImg;
 const ConvertToBase64     = require('../../../../_common/image_utility').convertToBase64;
 const isImageType         = require('../../../../_common/image_utility').isImageType;
@@ -243,7 +242,7 @@ const Authenticate = (() => {
      * Disables the button if it no files are selected.
      */
     const enableDisableSubmitUns = () => {
-        const $not_authenticated = $('#authentication_message_uns > div#not_authenticated_uns');
+        const $not_authenticated = $('#not_authenticated_uns');
         const $files             = $not_authenticated.find('input[type="file"]');
         $button_uns = $not_authenticated.find('#btn_submit_uns');
 
@@ -775,7 +774,7 @@ const Authenticate = (() => {
             removeButtonLoading();
             $button.setVisibility(0);
             $('.submit-status').setVisibility(0);
-            showUploadCompleteMessage('pending_poa', 'poa');
+            $('#pending_poa').setVisibility(1);
         }, 3000);
     };
 
@@ -787,7 +786,7 @@ const Authenticate = (() => {
             removeButtonLoadingUns();
             $button_uns.setVisibility(0);
             $('.submit-status-uns').setVisibility(0);
-            showUploadCompleteMessage('pending_poi_uns', 'poi_uns');
+            $('#upload_complete').setVisibility(1);
         }, 3000);
     };
 
@@ -802,7 +801,7 @@ const Authenticate = (() => {
         if ($button_uns) {
             $button_uns.setVisibility(1);
         }
-        $('#pending_poi_uns').setVisibility(0);
+        $('#upload_complete').setVisibility(0);
     };
 
     const onResponse = (response, is_last_upload) => {
@@ -835,8 +834,8 @@ const Authenticate = (() => {
 
     const getAuthenticationStatus = () => new Promise((resolve) => {
         // check update account status
-        BinarySocket.send({ get_account_status: 1 }).then((response) => {
-            const authentication_response =  response.get_account_status.authentication;
+        BinarySocket.wait('get_account_status').then(() => {
+            const authentication_response = State.getResponse('get_account_status.authentication');
             resolve(authentication_response);
         });
     });
@@ -870,6 +869,9 @@ const Authenticate = (() => {
     };
 
     const handleComplete = () => {
+        BinarySocket.send({ get_account_status: 1 }, { forced: true }).then(() => {
+            Header.displayAccountStatus();
+        });
         BinarySocket.send({
             notification_event: 1,
             category          : 'authentication',
@@ -877,169 +879,107 @@ const Authenticate = (() => {
         }).then(() => {
             onfido.tearDown();
 
-            showUploadCompleteMessage('upload_complete', 'poi');
+            $('#upload_complete').setVisible(1);
         });
     };
 
-    const showUploadCompleteMessage = (id_to_show, type) => {
-        BinarySocket.wait('get_account_status').then(() => {
-            $(`#${id_to_show}`).setVisibility(1);
-            const needs_verification = State.getResponse('get_account_status.authentication.needs_verification');
-            const needs_poa = needs_verification.includes('document');
-            const needs_poi = needs_verification.includes('identity');
+    const getOnfidoServiceToken = () => new Promise((resolve) => {
+        const onfido_cookie = Cookies.get('onfido_token');
 
-            switch (type) {
-                case 'poi': {
-                    if (needs_poa) {
-                        $(`#redirect_${type}`).setVisibility(1);
-                        $(`#trading_${type} .button`).on('click', () => {
-                            BinaryPjax.load(`${Url.urlFor('user/authenticate')}?authentication_tab=poa`);
-                        });
-                    } else {
-                        $(`#trading_${type}`).setVisibility(1);
-                        $(`#trading_${type} .button`).on('click', () => {
-                            BinaryPjax.load(Url.urlFor('trading'));
-                        });
+        if (!onfido_cookie) {
+            BinarySocket.send({
+                service_token: 1,
+                service      : 'onfido',
+            }).then((response) => {
+                if (response.error || !response.service_token) {
+                    if (response.error.code === 'UnsupportedCountry') {
+                        onfido_unsupported = true;
                     }
-                    break;
+                    resolve();
+                    return;
                 }
-                case 'poi_uns': {
-                    if (needs_poa) {
-                        $(`#redirect_${type}`).setVisibility(1);
-                        $(`#redirect_${type} .button`).on('click', () => {
-                            BinaryPjax.load(`${Url.urlFor('user/authenticate')}?authentication_tab=poa`);
-                        });
-                    } else {
-                        $(`#trading_${type}`).setVisibility(1);
-                        $(`#trading_${type} .button`).on('click', () => {
-                            BinaryPjax.load(Url.urlFor('trading'));
-                        });
-                    }
-                    break;
-                }
-                case 'poa': {
-                    if (needs_poi) {
-                        $(`#redirect_${type}`).setVisibility(1);
-                        $(`#redirect_${type} .button`).on('click', () => {
-                            BinaryPjax.load(`${Url.urlFor('user/authenticate')}?authentication_tab=${onfido_unsupported ? 'poi_uns' : 'poi'}`);
-                        });
-                    } else {
-                        $(`#trading_${type}`).setVisibility(1);
-                        $(`#trading_${type} .button`).on('click', () => {
-                            BinaryPjax.load(Url.urlFor('trading'));
-                        });
-                    }
-                    break;
-                }
-                default:
-                    break;
-
-            }
-        });
-    };
+                const token = response.service_token.token;
+                const in_90_minutes = 1 / 16;
+                Cookies.set('onfido_token', token, {
+                    expires: in_90_minutes,
+                    secure : true,
+                });
+                resolve(token);
+            });
+        } else {
+            resolve(onfido_cookie);
+        }
+    });
 
     const initAuthentication = async () => {
         const authentication_status = await getAuthenticationStatus();
-        const onfido_token = Cookies.get('onfido_token');
-        onfido_unsupported = Cookies.get('is_onfido_unsupported');
+        const onfido_token = await getOnfidoServiceToken();
 
         if (!authentication_status || authentication_status.error) {
+            $('#authentication_tab').setVisibility(0);
             $('#error_occured').setVisibility(1);
             return;
         }
+        
         const { identity, document, needs_verification } = authentication_status;
 
-        if (!(identity.status === 'verified' && document.status === 'verified') && !needs_verification.length) {
+        if (identity.status === 'none' && document.status === 'none' && !needs_verification.length) {
             BinaryPjax.load(Url.urlFor('user/settingsws'));
-        }
-
-        if (needs_verification.length === 2 && !onfido_unsupported) {
-            $('#poi').removeClass('invisible');
-            $('#poa').removeClass('invisible');
-            TabSelector.slideSelector('authentication_tab_selector', getElementById('poi'));
         }
 
         if (identity.status === 'verified' && document.status === 'verified') {
             $('#authentication_tab').setVisibility(0);
             $('#authentication_verified').setVisibility(1);
         }
-        if (needs_verification.includes('identity')) {
-            if (onfido_unsupported) {
-                $('#poi_uns').removeClass('invisible');
-                TabSelector.slideSelector('authentication_tab_selector', getElementById('poi_uns'));
-                switch (identity.status) {
-                    case 'none': {
-                        initUnsupported();
+
+        if (!identity.further_resubmissions_allowed) {
+            switch (identity.status) {
+                case 'none':
+                    if (onfido_unsupported) {
                         $('#not_authenticated_uns').setVisibility(1);
-                        break;
+                        initUnsupported();
+                    } else {
+                        initOnfido(onfido_token);
                     }
-                    case 'pending':
-                        $('#pending_poi_uns').setVisibility(1);
-                        break;
-                    case 'rejected':
-                        $('#unverified_poi_uns').setVisibility(1);
-                        break;
-                    case 'suspected':
-                        $('#unverified_poi_uns').setVisibility(1);
-                        break;
-                    case 'verified':
-                        $('#verified_poi_uns').setVisibility(1);
-                        break;
-                    default:
-                        break;
-                }
-            } else {
-                $('#poi').removeClass('invisible');
-                TabSelector.slideSelector('authentication_tab_selector', getElementById('poi'));
-                if (!identity.further_resubmissions_allowed) {
-                    switch (identity.status) {
-                        case 'none':
-                            initOnfido(onfido_token);
-                            break;
-                        case 'pending':
-                            $('#upload_complete').setVisibility(1);
-                            break;
-                        case 'rejected':
-                            $('#unverified').setVisibility(1);
-                            break;
-                        case 'verified':
-                            $('#verified').setVisibility(1);
-                            break;
-                        case 'suspected':
-                            $('#unverified').setVisibility(1);
-                            break;
-                        default:
-                            break;
-                    }
-                } else {
-                    initOnfido();
-                }
-            }
-        }
-        if (needs_verification.includes('document')) {
-            $('#poa').removeClass('invisible');
-            TabSelector.slideSelector('authentication_tab_selector', getElementById('poa'));
-            switch (document.status) {
-                case 'none': {
-                    init();
-                    $('#not_authenticated').setVisibility(1);
                     break;
-                }
                 case 'pending':
-                    $('#pending_poa').setVisibility(1);
+                    $('#upload_complete').setVisibility(1);
                     break;
                 case 'rejected':
-                    $('#unverified_poa').setVisibility(1);
-                    break;
-                case 'suspected':
-                    $('#unverified_poa').setVisibility(1);
+                    $('#unverified').setVisibility(1);
                     break;
                 case 'verified':
-                    $('#verified_poa').setVisibility(1);
+                    $('#verified').setVisibility(1);
+                    break;
+                case 'suspected':
+                    $('#unverified').setVisibility(1);
                     break;
                 default:
                     break;
             }
+        } else {
+            initOnfido();
+        }
+        switch (document.status) {
+            case 'none': {
+                init();
+                $('#not_authenticated').setVisibility(1);
+                break;
+            }
+            case 'pending':
+                $('#pending_poa').setVisibility(1);
+                break;
+            case 'rejected':
+                $('#unverified_poa').setVisibility(1);
+                break;
+            case 'suspected':
+                $('#unverified_poa').setVisibility(1);
+                break;
+            case 'verified':
+                $('#verified_poa').setVisibility(1);
+                break;
+            default:
+                break;
         }
         $('#authentication_loading').setVisibility(0);
         TabSelector.updateTabDisplay();

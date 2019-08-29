@@ -86,7 +86,6 @@ const Page = (() => {
                     // InterviewPopup.onLoad();
                 }
             }
-            await getOnfidoServiceToken();
             Header.onLoad();
             Footer.onLoad();
             Language.setCookie();
@@ -119,32 +118,6 @@ const Page = (() => {
         }
         TrafficSource.setData();
     };
-
-    const getOnfidoServiceToken = () => new Promise((resolve) => {
-        const onfido_cookie = Cookies.get('onfido_token');
-
-        if (!onfido_cookie) {
-            BinarySocket.send({
-                service_token: 1,
-                service      : 'onfido',
-            }).then((response) => {
-                if (response.error || !response.service_token) {
-                    if (response.error.code === 'UnsupportedCountry') {
-                        Cookies.set('is_onfido_unsupported', true);
-                    }
-                    resolve();
-                    return;
-                }
-                const token = response.service_token.token;
-                const in_90_minutes = 1 / 16;
-                Cookies.set('onfido_token', token, {
-                    expires: in_90_minutes,
-                    secure : true,
-                });
-            });
-        }
-        resolve();
-    });
 
     const recordAffiliateExposure = () => {
         const token = Url.param('t');

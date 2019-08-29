@@ -1,4 +1,3 @@
-const Cookies            = require('js-cookie');
 const BinarySocket       = require('./socket');
 const RealityCheckData   = require('../pages/user/reality_check/reality_check.data');
 const ClientBase         = require('../../_common/base/client_base');
@@ -77,13 +76,12 @@ const Client = (() => {
     const doLogout = (response) => {
         if (response.logout !== 1) return;
         removeCookies('login', 'loginid', 'loginid_list', 'email', 'residence', 'settings'); // backward compatibility
-        removeCookies('reality_check', 'affiliate_token', 'affiliate_tracking');
+        removeCookies('reality_check', 'affiliate_token', 'affiliate_tracking', 'onfido_token', 'is_onfido_unsupported');
         // clear elev.io session storage
         sessionStorage.removeItem('_elevaddon-6app');
         sessionStorage.removeItem('_elevaddon-6create');
         ClientBase.clearAllAccounts();
         ClientBase.set('loginid', '');
-        Cookies.remove('onfido_token');
         SocketCache.clear();
         RealityCheckData.clear();
         const redirect_to = getPropertyValue(response, ['echo_req', 'passthrough', 'redirect_to']);

@@ -1,4 +1,3 @@
-const Cookies      = require('js-cookie');
 const Client       = require('../../../base/client');
 const BinarySocket = require('../../../base/socket');
 const localize     = require('../../../../_common/localize').localize;
@@ -17,11 +16,7 @@ const Settings = (() => {
             }
 
             if (authentication.needs_verification.includes('identity')) {
-                if (Cookies.get('is_onfido_unsupported')) {
-                    $('#authenticate a').attr('href', `${urlFor('user/authenticate')}?authentication_tab=poi_uns`);
-                } else {
-                    $('#authenticate a').attr('href', `${urlFor('user/authenticate')}?authentication_tab=poi`);
-                }
+                $('#authenticate a').attr('href', `${urlFor('user/authenticate')}?authentication_tab=poi`);
             } else {
                 $('#authenticate a').attr('href', `${urlFor('user/authenticate')}?authentication_tab=poa`);
             }
