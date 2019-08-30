@@ -200,9 +200,9 @@ const PaymentAgentWithdraw = (() => {
                 
                 // Set PA details.
                 $('#agentName').text(localize(agent_name));
-                $('#agentWebsite').text(localize('Website : [_1]', agent_website));
-                $('#agentEmail').text(localize('Email : [_1]', agent_email));
-                $('#agentTelephone').text(localize('Tel : [_1]', agent_telephone));
+                $('#agentWebsite a').attr('href', agent_website).text(localize(agent_website));
+                $('#agentEmail a').attr('href', `mailto:${agent_email}`).text(localize(agent_email));
+                $('#agentTelephone a').attr('href', `tel:${agent_telephone}`).text(localize(agent_telephone));
                 break;
             default: // error
                 if (response.echo_req.dry_run === 1) {
@@ -269,12 +269,15 @@ const PaymentAgentWithdraw = (() => {
             return false;
         }
         // else
-        setAgentName();
+        setAgentDetails();
         return true;
     };
 
-    const setAgentName = () => {
+    const setAgentDetails = () => {
         agent_name = $ddl_agents.val() ? $ddl_agents.find('option:selected').text() : $txt_agents.val();
+        agent_website = '';
+        agent_email = '';
+        agent_telephone = '';
     };
 
     const onUnload = () => {

@@ -6,8 +6,8 @@ import {
     SubmitButton }          from '../../_common/components/forms.jsx';
 import { SeparatorLine }    from '../../_common/components/separator_line.jsx';
 
-const ImportantDisclaimer = () => (
-    <p className='comment'><strong>{it.L('IMPORTANT DISCLAIMER')}</strong> - {it.L('[_1] is not affiliated with any of the Payment Agents listed above. Each Payment Agent operates as an independent service provider and is not endorsed, guaranteed or otherwise approved by [_1]. CUSTOMERS DEAL WITH PAYMENT AGENTS AT THEIR SOLE RISK AND PERIL. Customers are advised to check the credentials of Payment Agents before sending them any money. [_1] shall not in any circumstance be held responsible for transactions made between customers and Payment Agents.', it.website_name)}</p>
+const ImportantDisclaimer = ({ className }) => (
+    <p className={`comment ${className}`}><strong>{it.L('IMPORTANT DISCLAIMER')}</strong> - {it.L('[_1] is not affiliated with any of the Payment Agents listed above. Each Payment Agent operates as an independent service provider and is not endorsed, guaranteed or otherwise approved by [_1]. CUSTOMERS DEAL WITH PAYMENT AGENTS AT THEIR SOLE RISK AND PERIL. Customers are advised to check the credentials of Payment Agents before sending them any money. [_1] shall not in any circumstance be held responsible for transactions made between customers and Payment Agents.', it.website_name)}</p>
 );
 
 const PaymentAgentWithdraw = () => (
@@ -38,42 +38,48 @@ const PaymentAgentWithdraw = () => (
             <div id='viewSuccess' className='viewItem invisible'>
                 <Fieldset>
                     <div className='gr-row'>
-                        <div className='gr-8 gr-centered gr-padding-30 gr-child center-text'>
+                        <div className='gr-8 gr-12-m gr-centered gr-padding-30 gr-child center-text'>
                             <h2>Your request is being processed.</h2>
                             <p id='successMessage' />
                         </div>
                     </div>
 
                     <div className='gr-row'>
-                        <div className='gr-9 gr-centered'>
+                        <div className='gr-9 gr-12-m gr-centered'>
                             <SeparatorLine show_mobile />
                         </div>
                     </div>
 
                     <div className='gr-row'>
-                        <div className='gr-8 gr-centered gr-padding-10 gr-child center-text'>
+                        <div className='gr-8 gr-12-m gr-centered gr-padding-10 gr-child center-text'>
                             <p>Please contact your payment agent to validate your withdrawal request.</p>
                         </div>
                     </div>
 
                     <div className='gr-row'>
-                        <div className='gr-5 gr-padding-10 gr-centered'>
+                        <div className='gr-push-3 gr-push-0-m gr-9 gr-12-m gr-padding-10'>
                             <div className='gr-row'>
-                                <div className='gr-3'>
+                                <div className='gr-2 gr-3-m'>
                                     <img className='responsive' src={it.url_for('images/pages/contact/contact-icon.svg')} />
                                 </div>
-                                <div className='gr-9'>
-                                    <h4 id='agentName' />
-                                    <h4 className='gr-padding-20 gr-child' id='agentWebsite' />
-                                    <h4 className='gr-padding-20 gr-child' id='agentEmail' />
-                                    <h4 className='gr-padding-20 gr-child' id='agentTelephone' />
+                                <div className='gr-10 gr-9-m'>
+                                    <h5 id='agentName' />
+                                    <h5 className='gr-padding-20 gr-child' id='agentWebsite'>
+                                        Website : <a />
+                                    </h5>
+                                    <h5 className='gr-padding-20 gr-child' id='agentEmail'>
+                                        Email : <a />
+                                    </h5>
+                                    <h5 className='gr-padding-20 gr-child' id='agentTelephone'>
+                                        Tel : <a />
+                                    </h5>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </Fieldset>
 
-                <ImportantDisclaimer />
+                <ImportantDisclaimer className='gr-padding-30' />
             </div>
 
             <FormVerificationCode />
