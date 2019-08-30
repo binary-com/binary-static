@@ -87,6 +87,17 @@ const Careers = () => {
                 </div>
             </div>
             <div className='margin-top-100'>
+                <div className='container center-text'>
+                    <div className='gr-row gr-row-align-center'>
+                        <div className='gr-9'>
+                            <div className='video-container'>
+                                <iframe src='https://www.youtube.com/embed/M6HUEul9cI0?rel=0&showinfo=0' frameBorder='0' allow='autoplay; encrypted-media' allowFullScreen />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className='margin-top-50'>
                 <div className='container gr-row gr-padding-30'>
                     <ColumnSM header={it.L('Ideas')}    paragraph={it.L('Where new ideas trump safe, old ones. And you\'re free to work your way, free from hierarchies and red tape.')} />
                     <ColumnSM header={it.L('Freedom')}  paragraph={it.L('Where your experience, drive and talent can propel you in unknown directions. And you have the freedom to push into new frontiers.')} />
