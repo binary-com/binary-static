@@ -57,7 +57,7 @@ const PaymentAgentWithdraw = () => (
                     </div>
 
                     <div className='gr-row'>
-                        <div className='gr-push-3 gr-push-0-m gr-9 gr-12-m gr-padding-10'>
+                        <div className='gr-push-3 gr-push-0-m gr-7 gr-12-m gr-padding-10'>
                             <div className='gr-row'>
                                 <div className='gr-2 gr-3-m'>
                                     <img className='responsive' src={it.url_for('images/pages/contact/contact-icon.svg')} />
