@@ -171,7 +171,6 @@ const PaymentAgentWithdraw = (() => {
                 FormManager.init(view_ids.confirm, [
                     { request_field: 'paymentagent_loginid',  value: request.paymentagent_loginid },
                     { request_field: 'amount',                value: getNumberFormat(request.amount, request.currency) },
-                    { request_field: 'description',           value: request.description },
                     { request_field: 'currency',              value: request.currency },
                     { request_field: 'paymentagent_withdraw', value: 1 },
                 ], true);
