@@ -151,13 +151,6 @@ const PaymentAgentWithdraw = (() => {
         $ddl_agents.val() || $txt_agents.val()
     );
 
-    // Remove multiline and excess whitespaces from description text.
-    // const trimDescriptionContent = () => {
-    //     document.getElementById('txtDescription').addEventListener('change', e => {
-    //         e.srcElement.value = e.target.value.replace(/\s+/g, ' ');
-    //     });
-    // };
-
     const insertListOption = ($ddl_object, item_text, item_value) => {
         $ddl_object.append($('<option/>', { value: item_value, text: item_text }));
     };

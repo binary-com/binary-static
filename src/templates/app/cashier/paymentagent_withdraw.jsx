@@ -26,15 +26,6 @@ const PaymentAgentWithdraw = () => (
                 {it.L('Please check your email for the verification link to complete the process.')}
             </div>
 
-            {/* <div id='viewSuccess' className='viewItem invisible'>
-                <p id='successMessage' />
-                <p>
-                    <a className='button' href={it.url_for('user/statementws')}>
-                        <span className='button'>{it.L('View your statement')}</span>
-                    </a>
-                </p>
-            </div> */}
-
             <div id='viewSuccess' className='viewItem invisible'>
                 <Fieldset>
                     <div className='gr-row'>
