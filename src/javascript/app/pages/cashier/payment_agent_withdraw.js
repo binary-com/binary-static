@@ -32,6 +32,9 @@ const PaymentAgentWithdraw = (() => {
         $txt_amount,
         $views,
         agent_name,
+        agent_website,
+        agent_email,
+        agent_telephone,
         currency,
         token;
 
@@ -194,8 +197,13 @@ const PaymentAgentWithdraw = (() => {
                 $('#successMessage').css('display', '')
                     .attr('class', 'success-msg')
                     .html($('<ul/>', { class: 'checked' }).append($('<li/>', { text: localize('Your request to withdraw [_1] [_2] from your account [_3] to Payment Agent [_4] account has been successfully processed.', [request.currency, getNumberFormat(request.amount, request.currency), Client.get('loginid'), agent_name]) })));
+                
+                // Set PA details.
+                $('#agentName').text(localize(agent_name));
+                $('#agentWebsite').text(localize('Website : [_1]', agent_website));
+                $('#agentEmail').text(localize('Email : [_1]', agent_email));
+                $('#agentTelephone').text(localize('Tel : [_1]', agent_telephone));
                 break;
-
             default: // error
                 if (response.echo_req.dry_run === 1) {
                     setActiveView(view_ids.form);

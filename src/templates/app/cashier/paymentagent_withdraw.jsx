@@ -22,13 +22,52 @@ const PaymentAgentWithdraw = () => (
                 {it.L('Please check your email for the verification link to complete the process.')}
             </div>
 
-            <div id='viewSuccess' className='viewItem invisible'>
+            {/* <div id='viewSuccess' className='viewItem invisible'>
                 <p id='successMessage' />
                 <p>
                     <a className='button' href={it.url_for('user/statementws')}>
                         <span className='button'>{it.L('View your statement')}</span>
                     </a>
                 </p>
+            </div> */}
+
+            <div id='viewSuccess' className='viewItem invisible'>
+                <Fieldset>
+                    <div className='gr-row'>
+                        <div className='gr-8 gr-centered gr-padding-30 gr-child center-text'>
+                            <h2>Your request is being processed.</h2>
+                            <p id='successMessage' />
+                        </div>
+                    </div>
+
+                    <div className='gr-row'>
+                        <div className='gr-9 gr-centered'>
+                            <SeparatorLine show_mobile />
+                        </div>
+                    </div>
+
+                    <div className='gr-row'>
+                        <div className='gr-8 gr-centered gr-padding-10 gr-child center-text'>
+                            <p>Please contact your payment agent to validate your withdrawal request.</p>
+                        </div>
+                    </div>
+
+                    <div className='gr-row'>
+                        <div className='gr-5 gr-padding-10 gr-centered'>
+                            <div className='gr-row'>
+                                <div className='gr-3'>
+                                    <img className='responsive' src={it.url_for('images/pages/contact/contact-icon.svg')} />
+                                </div>
+                                <div className='gr-9'>
+                                    <h4 id='agentName' />
+                                    <h4 className='gr-padding-20 gr-child' id='agentWebsite' />
+                                    <h4 className='gr-padding-20 gr-child' id='agentEmail' />
+                                    <h4 className='gr-padding-20 gr-child' id='agentTelephone' />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </Fieldset>
             </div>
 
             <FormVerificationCode />
