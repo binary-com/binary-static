@@ -45,7 +45,7 @@ const PaymentAgentWithdraw = () => (
                     </div>
 
                     <div className='gr-row'>
-                        <div className='gr-9 gr-12-m gr-centered'>
+                        <div className='gr-11 gr-centered'>
                             <SeparatorLine show_mobile />
                         </div>
                     </div>
