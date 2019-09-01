@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-08-27 07:34\n"
+"PO-Revision-Date: 2019-09-01 05:51\n"
 "Last-Translator: binarycom\n"
 "Language-Team: Korean\n"
 "MIME-Version: 1.0\n"
@@ -20,12 +20,6 @@ msgstr "1"
 
 msgid "2"
 msgstr "2"
-
-msgid "3"
-msgstr "3"
-
-msgid "4"
-msgstr "4"
 
 msgid "5"
 msgstr "5"
@@ -126,11 +120,8 @@ msgstr ""
 msgid "$ per USD 100,000 of turnover"
 msgstr ""
 
-msgid "$0 - $10,000"
-msgstr "$0 - $10,000"
-
-msgid "$10,001 – $50,000"
-msgstr "$10,001 – $50,000"
+msgid "$0 - $20,000"
+msgstr ""
 
 msgid "$100,000 - $250,000"
 msgstr "$100,000 - $250,000"
@@ -138,11 +129,11 @@ msgstr "$100,000 - $250,000"
 msgid "$100,001 - $500,000"
 msgstr "$100,001 - $500,000"
 
-msgid "$100,001 and above"
-msgstr "$100,001 및 그 이상"
-
 msgid "$12M+"
 msgstr "$12M+"
+
+msgid "$20,001 and above"
+msgstr ""
 
 msgid "$25,000 - $50,000"
 msgstr "$25,000 - $50,000"
@@ -152,9 +143,6 @@ msgstr "$250,001 - $500,000"
 
 msgid "$50,001 - $100,000"
 msgstr "$50,001 - $100,000"
-
-msgid "$50,001 – $100,000"
-msgstr "$50,001 – $100,000"
 
 msgid "$500,001 - $1,000,000"
 msgstr "$500,001 - $1,000,000"
@@ -172,7 +160,7 @@ msgid "%1 Account %2"
 msgstr ""
 
 msgid "%1 Application Programming Interface (\"API\") terms and conditions"
-msgstr ""
+msgstr "%1 응용 프로그램 인터페이스 (\"API\") 약관"
 
 msgid "%1 Graduate Programme"
 msgstr ""
@@ -607,12 +595,6 @@ msgstr "2. 등본"
 msgid "20 – 39.999%"
 msgstr "20 – 39.999%"
 
-msgid "20%"
-msgstr "20%"
-
-msgid "25%"
-msgstr "25%"
-
 msgid "3. Selfie with proof of ID"
 msgstr ""
 
@@ -628,9 +610,6 @@ msgstr "30일 제한 손실"
 msgid "30-day turnover limit"
 msgstr ""
 
-msgid "35%"
-msgstr "35%"
-
 msgid "40 transactions or more in the past 12 months"
 msgstr ""
 
@@ -639,6 +618,9 @@ msgstr "40 – 59.999%"
 
 msgid "40K+"
 msgstr "40K+"
+
+msgid "45%"
+msgstr ""
 
 msgid "6-10 transactions in the past 12 months"
 msgstr "지난 12개월간 6-10의 거래량"
@@ -1313,7 +1295,7 @@ msgid "Always keep your web browser up-to-date. We recommend using the latest ve
 msgstr ""
 
 msgid "Amend or change all or any part of the Marketing Material without Binary's prior written consent"
-msgstr ""
+msgstr "Binary의 사전 서면 동의없이 마케팅 자료의 전부 또는 일부를 수정하거나 변경하는 행위"
 
 msgid "Amount"
 msgstr ""
@@ -1433,7 +1415,7 @@ msgid "Any notice given or made under this Agreement to the Company shall be by 
 msgstr "이 계약 아래 본 회사에게 제공되거나 제작되어지는 공지사항은 %1로의 이메일 연락으로 진행됩니다. 본 회사는 이 계약 아래 제공되거나 제작되어지는 공지를 제휴자의 신청서에 입력된 이메일 주소 또는 제휴자가 회사에 따로 알려준 이메일 주소로 보낼 것입니다."
 
 msgid "Any notice required by this Agreement shall be in writing and shall be emailed to the following addresses:"
-msgstr ""
+msgstr "이 동의문에 의해 요구되어지는 모든 공지는 서면으로 진행될 것이며 다음의 이메일 주소로 이메일이 전송되어져야 합니다:"
 
 msgid "Any other consideration relevant to the execution of the transaction"
 msgstr ""
@@ -2204,7 +2186,7 @@ msgid "Binary shall pay Commissions for any trades placed by clients prior to th
 msgstr ""
 
 msgid "Binary will pay the Commission to the Introducing Broker before or on the 15th day of the month following the calendar month in which the trades were made (Due Date)."
-msgstr ""
+msgstr "거래가 진행된 (만기일) 달력의 달을 기준으로 다음달의 15일 또는 그 이전에 Binary는 해당 브로커 소개인에게 수수료를 지불할 것입니다."
 
 msgid "Binary's Japanese subsidiary Binary KK is licensed by the KLFB as a Type 1 Financial Instruments Business in Japan."
 msgstr "Binary의 일본 자회사인 Binary KK는 KLFB에 의해 일본에서 유형 1의 금융 수단 사업으로 인가되었습니다."
@@ -2840,7 +2822,7 @@ msgid "Commission shall only be paid where the following are met cumulatively:"
 msgstr "수수료는 다음의 사항이 점증적으로 만족된 경우에만 지급될 것입니다:"
 
 msgid "Commission will not be paid for Accounts that have been opened or traded by an Associate of the Introducing Broker."
-msgstr ""
+msgstr "브로커 소개인의 동료에 의해 개설되거나 거래되는 계좌에 대해서는 수수료가 지급되지 않을 것입니다."
 
 msgid "Commission-free"
 msgstr ""
@@ -2930,7 +2912,7 @@ msgid "Compliance with and amendments to these Terms"
 msgstr "이 약관 및 개정된 약관의 준수"
 
 msgid "Comply with any Competent Authorities' requests or directions"
-msgstr ""
+msgstr "모든 관할관청의 요청 또는 지시에 준수합니다"
 
 msgid "Comprehensive"
 msgstr ""
@@ -3919,9 +3901,6 @@ msgstr ""
 msgid "Earn daily commissions on the trading activities of the clients you refer to the %1 MetaTrader 5 (MT5) platform. Your total commissions will be credited into your account by the end of the day."
 msgstr ""
 
-msgid "Earn increasingly higher payouts with tiered and laddered commission rates that reward you based on the net revenue generated by your referred clients."
-msgstr ""
-
 msgid "Earn money for any verifiable errors that you find."
 msgstr "확인 가능한 오류를 찾으시고 수익을 얻으세요."
 
@@ -3931,7 +3910,7 @@ msgstr "최대 50,000달러까지 될 수 있는 지불금을 받으세요. 손�
 msgid "Earn the same proportional return on stakes of all values"
 msgstr ""
 
-msgid "Earn up to 35% in commission by referring new clients to trade on our premier platforms for binary options. All commissions are credited into your account by the 15th of every month."
+msgid "Earn up to 45% in commission based on the total net revenue generated by your clients. Commissions are credited into your account after the 15th of every month."
 msgstr ""
 
 msgid "Easily monitor your open positions"
@@ -4031,7 +4010,7 @@ msgid "Engage in market development to grow the client base for existing product
 msgstr "본 회사의 현존하는 상품 및 플랫폼에 대한 고객 베이스를 성장시키기 위해 시장 개발에 참여"
 
 msgid "Engage in misleading or deceptive conduct or illusory or deceptive advertising"
-msgstr ""
+msgstr "오해의 소지가 있거나 기만하는 행위 또는 환상에 지나지 않거나 기만적인 광고에 관여"
 
 msgid "Engage in misleading, illusory, or deceptive advertising or promises"
 msgstr ""
@@ -4502,7 +4481,7 @@ msgid "Failed"
 msgstr ""
 
 msgid "Fairly and accurately describe Binary's business and services in a transparent manner to the clients"
-msgstr ""
+msgstr "고객에게 투명한 방법으로 Binary의 비즈니스 및 서비스에 대해 공정하고 정확하게 묘사합니다"
 
 msgid "Fairly and accurately describe the Agent's services to the clients"
 msgstr ""
@@ -5291,7 +5270,7 @@ msgid "How to use a payment agent?"
 msgstr "지불 대리인을 어떻게 이용하나요?"
 
 msgid "However, Introducing Brokers contracted with Binary Investments (Europe) Ltd shall be paid on a Cost Per Acquisition (CPA) deal only, whereby the Introducing Broker shall become eligible for payment of a set amount only upon the introduction of a client to Binary and as long as the Introducing Broker is providing an enhanced service to the clients."
-msgstr ""
+msgstr "그렇지만, Binary Investments (Europe) Ltd와 계약되어있는 브로커 소개인은 획득 당 비용 (CPA)으로만 지불될 것입니다, 이에 의하여 해당 브로커 소개인은 고객에게 더 나은 서비스를 제공하는 한 Binary로 고객을 소개함으로써 정해져 있는 금액을 지불받을 수 있는 자격이 생깁니다."
 
 msgid "However, if the asset price falls by 10 points, that represents a USD 10 loss for you."
 msgstr "하지만, 자산가격이 10포인트 떨어진다는 것은 미화 10달러의 손실을 의미합니다."
@@ -5708,7 +5687,7 @@ msgid "Imagine a workplace where your individuality, creativity and sense of adv
 msgstr "여러분의 개성과 창의성 그리고 모험의 감각의 가치가 중요하고 보상을 받을 수 있는 직장을 상상해보세요."
 
 msgid "Implement and comply with all business-related directions, policies, and procedures of Binary as enacted, amended, or replaced from time to time"
-msgstr ""
+msgstr "때때로 제정, 수정 또는 대체된 Binary의 비즈니스적으로 연관있는 모든 지침, 정책 및 절차를 따르고 수행합니다"
 
 msgid "Important"
 msgstr "중요"
@@ -5882,7 +5861,7 @@ msgid "Include a disclaimer and/or notice that any intellectual property rights,
 msgstr ""
 
 msgid "Include a disclaimer or notice that the intellectual property rights of the Trademark solely belong to Binary and any use of it is strictly prohibited unless Binary has given such authorisation."
-msgstr ""
+msgstr "Binary가 승인을 하지 않는 이상 Binary가 단독으로 소유하는 상표의 지적재산권 및 이의 사용은 엄격히 금지되어 있다는 성명 및 공지를 포함합니다."
 
 msgid "Income earning"
 msgstr ""
@@ -5900,7 +5879,7 @@ msgid "Indemnity and liability"
 msgstr "보상책임 및 손해배상책임"
 
 msgid "Indicate that Binary or the Introducing Broker and their Associates will guarantee a client's profit or loss or limit the losses of any client"
-msgstr ""
+msgstr "Binary 또는 해당 브로커 소개인 및 이들의 동료들은 고객의 이익 또는 손해를 보장하거나 또는 고객의 손실을 제한할 것을 나타내는것"
 
 msgid "Indicates required field"
 msgstr ""
@@ -5924,10 +5903,10 @@ msgid "Industry of employment"
 msgstr ""
 
 msgid "Inform any clients introduced to Binary of any matter that the Company may reasonably consider necessary in order to comply with any legal/regulatory requirements "
-msgstr ""
+msgstr "법적/규제적 요구사항을 준수하기 위해 본 회사가 필요하다고 합리적으로 여겨지는 사항에 대해 Binary에 소개되어진 모든 고객에게 공지합니다 "
 
 msgid "Inform any clients introduced to Binary that the trading services and products are offered by or through Binary and not the Introducing Broker"
-msgstr ""
+msgstr "Binary로 소개된 모든 고객에게 트레이딩 서비스 및 상품들은 브로커 소개인이 아닌 Binary에 의해 또는 Binary를 통한 것이라고 알립니다"
 
 msgid "Information & Communications Technology"
 msgstr ""
@@ -6836,10 +6815,10 @@ msgid "Margin"
 msgstr "증거금"
 
 msgid "Margin Call"
-msgstr ""
+msgstr "긴급증거금"
 
 msgid "Margin Call occurs when the Margin Level is less than the Margin Level set for the client's account."
-msgstr ""
+msgstr "긴급증거금은 마진 레벨이 고객의 계좌에 대해 설정되어진 마진 레벨보다 낮은 경우 발생됩니다."
 
 msgid "Margin Level"
 msgstr "마진 레벨"
@@ -7085,7 +7064,7 @@ msgid "Minute"
 msgstr ""
 
 msgid "Misrepresent Binary or the services that are offered by Binary"
-msgstr ""
+msgstr "Binary에 의해 제공되는 서비스 또는 Binary를 왜곡"
 
 msgid "Misrepresent the services that the Agent provides to the clients"
 msgstr ""
@@ -7771,6 +7750,9 @@ msgstr ""
 msgid "Our active client base is expected to reach over 100,000 total clients this year."
 msgstr "저희의 기반된 활동 고객님들의 숫자는 올해 총 10만 이상이 될 것으로 예상됩니다."
 
+msgid "Our commission structure is a simple 2-tiered plan."
+msgstr ""
+
 msgid "Our commitment to integrity and reliability means that we always strive to give you access to the best pricing and liquidity possible."
 msgstr ""
 
@@ -8012,7 +7994,7 @@ msgid "Perfect Money allows individuals to make instant payments and money trans
 msgstr ""
 
 msgid "Perform IB services and other obligations mentioned here at their own cost and risk"
-msgstr ""
+msgstr "자신의 비용과 위험으로 여기에서 언급된 IB 서비스 및 다른 의무사항을 수행합니다"
 
 msgid "Perform audit assignments and identify control gaps and opportunities for improvement"
 msgstr "감사사항 수행 및 발전을 위한 기회 및 컨트롤 갭을 확인"
@@ -8438,7 +8420,7 @@ msgid "Prepare and present proposals for the provisioning of IT-related systems 
 msgstr "IT와 관련된 시스템과 서비스의 공급을 위해 제안 사항들을 준비하고 표하기"
 
 msgid "Prepare and publish any content or place any advertisements that refer to Binary and its relationship with Binary without the prior written consent of Binary"
-msgstr ""
+msgstr "Binary의 사전 서면 공지 없이 Binary를 사칭하거나 Binary와의 관계를 나타내는 그 어떠한 내용 또는 광고를 게시하거나 준비하는것"
 
 msgid "Prepare and publish any material or place any advertisements that refer to the Company and the Agent's relationship with the Company without an authorisation being given by the Company"
 msgstr ""
@@ -8597,22 +8579,22 @@ msgid "Proven graphic design experience with a strong portfolio of work in brand
 msgstr "브랜딩, 광고 및 마케팅에 있어 경쟁력있는 작업 포트폴리오와 함께 검증된 그래픽 디자인 경험"
 
 msgid "Provide Binary with any information that they have become aware of which may result in an adverse or harmful consequence for Binary and its reputations"
-msgstr ""
+msgstr "Binary와 Binary의 평판에 부정적이거나 좋지 않은 결과를 초래할 수도 있는 정보에 대해 알게 되었을 때 해당되는 정보를 Binary에 제공합니다"
 
 msgid "Provide a web-link from their own website to %1"
-msgstr ""
+msgstr "해당 브로커 소개인의 웹사이트로부터 %1에 연결되는 웹링크를 제공"
 
 msgid "Provide additional assistance to team when needed"
 msgstr ""
 
 msgid "Provide any financial/investment trading advice to clients (Binary shall not be liable to the Introducing Broker and the client for any misrepresentation or fraudulent or negligent misstatement made by the Introducing Broker. The Introducing Broker shall also hold Binary harmless and shall indemnify Binary and its directors, officers, managers, employees, or agents from and against any liabilities, losses, damages, costs, and expenses, including all and any legal fees incurred arising out of the failure of the Introducing Brokers to comply with any or all of their obligations set forth in this Agreement.)"
-msgstr ""
+msgstr "고객에게 금융/투자 거래에 대한 조언을 제공하는 행위 (브로커 소개인 및 고객에게 브로커 소개인에 의해 만들어진 허위 또는 사기적 또는 잘못된 진술에 대하여 법적책임이 Binary에게 법적 책임이 없습니다. 해당 브로커 소개인은 Binary에게 손해가 없도록 해야하며 Binary 및 Binary의 임원, 관리자, 담당자, 관리자, 직원 또는 에이전트에게 이 동의문에 제시되어 있는 그 어떠한 또는 모든 의무사항을 브로커 소개인이 준수하지 못함으로써 발생되는 모든 법적책임, 손실, 손해, 비용 및 지출에 대해 배상하여야 합니다.)"
 
 msgid "Provide guidance to the Company's operational teams and act as internal second line support for AML-CTF, anti-fraud, and authentication purposes"
 msgstr ""
 
 msgid "Provide information to clients only on technical and educational matters"
-msgstr ""
+msgstr "기술 및 교육적인 사항에 관해서만 고객에게 정보를 제공합니다"
 
 msgid "Provide onsite support to all employees with the necessary hardware and software required for their jobs"
 msgstr "직원들의 업무에 요구되는 필요한 하드웨어 및 소프트웨어와 함께 모든 직원들에게 현장지원을 제공"
@@ -8801,7 +8783,7 @@ msgid "Receive quotes for a trade and countertrade, so you always get unbiased, 
 msgstr ""
 
 msgid "Receive the approval of the Company to include any information in relation to Binary"
-msgstr ""
+msgstr "Binary와 관련되어 있는 모든 정보를 포함시키기 위해 본 회사의 승인을 받습니다"
 
 msgid "Receive the approval of the Company to include any information in relation to the Company"
 msgstr ""
@@ -8822,7 +8804,7 @@ msgid "Ref."
 msgstr ""
 
 msgid "Refer clients to Binary with the knowledge, or with a reasonably expected knowledge, that these clients engage in such conduct that constitutes Malicious Activity"
-msgstr ""
+msgstr "악의적인 활동을 구성할 수 있는 행위에 고객이 관여할 수 있도록 하는 지식 또는 합리적으로 예상되는 지식이 있는 고객을 Binary에 보내는 행위"
 
 msgid "Refer new clients to our MetaTrader 5 platform and earn a commission on their Forex and CFD trading activity."
 msgstr ""
@@ -10610,16 +10592,16 @@ msgid "The Introducing Broker acknowledges that on termination, they have no cla
 msgstr ""
 
 msgid "The Introducing Broker acknowledges that the Commission received by the Introducing Broker pursuant to this Agreement fully compensates for its obligations under this Agreement."
-msgstr ""
+msgstr "브로커 소개인은 이 동의문에 따라 브로커 소개인이 받은 수수료는 이 동의문 아래 의무사항에 대하여 완전히 보상을 한다는 것에 대해 인정합니다."
 
 msgid "The Introducing Broker agrees to indemnify Binary against any loss that Binary may suffer or incur arising out of, or in connection with, any act or omission of the Introducing Broker, or as a result of any fraud, negligence, wilful default, or material breach of this Agreement."
 msgstr ""
 
 msgid "The Introducing Broker consents to the disclosure of their identity on the webpage of %1 or any publicly accessible medium managed by Binary."
-msgstr ""
+msgstr "브로커 소개인은 보로커 소개인의 신원이 %1 웹페이지 또는 Binary에 의해 관리되고 공공적으로 접근 가능한 매체에 공개되는 것에 대해 동의합니다."
 
 msgid "The Introducing Broker is responsible for the payment of their own taxes, duties, fees, or other governmental levies or charges. Any fees payable by Binary to the Introducing Broker in connection with this Agreement are exclusive of any such taxes, duties, fees, or levies."
-msgstr ""
+msgstr "브로커 소개인은 브로커 소개인 자신의 세금, 비용 또는 다른 정부적 부담금 또는 비용에 대하여 책임이 있습니다. 이 동의문과 관계하여 Binary에 의해 브로커 소개인에게 지불가능한 비용에는 이러한 세금, 비용 또는 추가 부담금이 포함되어 있지 않습니다."
 
 msgid "The Introducing Broker may not assign any or all of its rights under this Agreement without the prior written consent of Binary."
 msgstr ""
@@ -10628,7 +10610,7 @@ msgid "The Introducing Broker must notify the Company immediately if they cease 
 msgstr "지식, 전문성, 경험, 기술 및 시간의 부족에만 국한되지 않는 그 어떠한 이유로 이 동의문 아래 동의되어지고 착수되어진 모든 사항 및 의무사항을 효율적으로 수행할 능력, 적절성 또는 자격 또는 연관된 권한의 소유가 중지되는 경우 해당 브로커 소개인은 즉시 본 회사에게 공지하여야 합니다. 또한 해당 브로커 소개인은 파산, 해산 또는 청산의 절차가 시작될 시 즉시 본 회사에게 반드시 서면으로 공지하여야 합니다."
 
 msgid "The Introducing Broker pledges that they shall not at any time"
-msgstr ""
+msgstr "브로커 소개인은 언제라도 다음의 사항을 하지 않을 것을 약속합니다"
 
 msgid "The Introducing Broker shall immediately cease using the Marketing Materials whether in hard copy or electronically on any website and return all Marketing Materials to Binary. They shall also cease referring to Binary and shall remove all of the Binary Trademarks, including logos, branding, and other references to Binary from their website and/or marketing materials."
 msgstr ""
@@ -10856,7 +10838,7 @@ msgid "The clause above shall not apply to any information to the extent"
 msgstr ""
 
 msgid "The clauses above shall not apply in its entirety to any Introducing Brokers who are contracted to provide Introducing Broker services with Binary Investments (Europe) Ltd."
-msgstr ""
+msgstr "상기 조항들의 전부는 Investments (Europe) Ltd와 브로커 소개인 서비스를 제공하기로 계약되어진 브로커 소개인에게는 적용되지 않을 것입니다."
 
 msgid "The client acknowledges and accepts that a trade may be subject to market rules laid down in by-laws, rules, provisions, customs, and practices of an exchange, a market, a clearing house, a body, or any other organisation involved in the execution, clearing, and/or settlement of the said trade. Should any such organisation take decisions or measures which affect a trade or an Open Position, the Company shall be entitled to take any action (including closing any Open Position of the client) that it, at its sole discretion, considers reasonable. "
 msgstr "거래는 시장, 정산소, 기관 또는 앞서 언급된 거래의 실행, 정산, 및/또는 처리에 연관되어 있는 다른 기관의 법률로써 정해져 있는 시장규칙, 규정, 조항, 관습 및 거래의 실행에 의해 따를 수 있다는 것에 대해 고객은 인정하고 받아들입니다. 이러한 기관이 거래 또는 오픈 포지션에 영향을 줄 수 있는 결정 또는 조치를 취할 경우, 본 회사는 전적인 재량으로 합리적으로 간주되는 그 어떠한 조치 (고객의 오픈 포지션을 닫는 것을 포함)를 취할 수 있습니다."
@@ -11627,7 +11609,7 @@ msgid "This document"
 msgstr "본 문서"
 
 msgid "This document (the \"Agreement\") sets out the terms and conditions (\"Terms\") between Binary Services Ltd (“the Company”) and the person who registered for the %1 Application Programming Interface (“the Programmer”)."
-msgstr ""
+msgstr "이 문서 (본 \"동의문\")는 Binary Services Ltd (\"본 회사\")와 %1 어플리케이션 프로그래밍 인터페이스 (\"프로그래머\")에 등록한 사람간의 약관을 정리합니다."
 
 msgid "This document (the \"Agreement\") sets out the terms and conditions between \"the Company\", which is Binary Services Ltd, and the person who has applied for this programme (\"the Affiliate\"), in relation to the Affiliate's application to set up an affiliate account (and membership of the affiliate programme if the Affiliate's application is deemed successful)."
 msgstr "해당 문서 (본 \"동의문\")는 Binary Services Ltd인 \"본 회사\"와 제휴자의 제휴 계좌 (및 만약 제휴 신청이 성공적으로 이루어지는 경우 제휴 프로그램의 멤버쉽) 설정신청과 관련하는 이 프로그램에 신청한 사람 (\"제휴자\")간의 약관을 다룹니다."
@@ -12464,7 +12446,7 @@ msgid "Use the Marketing Materials provided by Binary solely for the purpose of 
 msgstr "IB 서비스를 제공할 단독적인 목적으로 그리고 Binary의 지침에 따라 Binary에 의해 제공된 마케팅 자료를 사용합니다"
 
 msgid "Use the name 'Binary' or any derivation of that name such as '%1' or the Binary Trademarks in a way that might compete with Binary's search engine optimisation without the prior written consent of Binary, which includes using the name '%1' on the title tag of the Introducing Broker's website"
-msgstr ""
+msgstr "브로커 소개인의 웹사이트의 타이틀 태그에 '%1'을 사용하는 것을 포함하는 Binary의 사전 서면 동의없이 Binary의 검색 엔진 최적화에 경쟁될 수 있는 'Binary' 명칭 또는 '%1' 또는 Binary Trademarks같은 어떠한 파생명칭을 사용"
 
 msgid "Use the opportunity provided by our website to practice for free with our virtual money account facility. This will enable you to get used to the functionalities and rules of the website."
 msgstr "우리의 가상 머니 계좌 기능과 함께 우리 웹사이트로부터 무료로 제공되는 기회를 이용하세요. 그 기회는 귀하로 하여금 본 웹사이트의 기능과 규칙에 적응하도록 해 줄 것입니다."
@@ -13043,7 +13025,7 @@ msgid "Where the Company ascertains any mistakes or flaws related to deposits or
 msgstr ""
 
 msgid "Where the Introducing Broker owns, or operates, a website and wishes to include Binary's services, the Introducing Broker shall"
-msgstr ""
+msgstr "웹사이트가 브로커 소개인의 소유이거나 브로커 소개인에 의해 운영되는 경우 및 Binary의 서비스를 포함하기를 희망하는 경우, 해당 브로커 소개인은 다음의 사항을 준수해야 합니다"
 
 msgid "Where the client's obligations to the Company are due and payable, the Company shall cease to treat as client money the amount equal to the amount of such obligations."
 msgstr ""
@@ -13865,7 +13847,7 @@ msgid "the applicant's personal details, including name, address, and contract d
 msgstr ""
 
 msgid "the currency in which the client's MT5 Real Account will be operated"
-msgstr ""
+msgstr "고객의 MT5 실계좌가 운용되는 통화"
 
 msgid "the difference between the Bid and Ask Price of a financial instrument"
 msgstr ""
