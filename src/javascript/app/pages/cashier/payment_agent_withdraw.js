@@ -192,10 +192,16 @@ const PaymentAgentWithdraw = (() => {
                     .html($('<ul/>', { class: 'checked' }).append($('<li/>', { text: localize('Your request to withdraw [_1] [_2] from your account [_3] to Payment Agent [_4] account has been successfully processed.', [request.currency, getNumberFormat(request.amount, request.currency), Client.get('loginid'), agent_name]) })));
                 
                 // Set PA details.
-                $('#agentName').text(agent_name);
-                $('#agentWebsite a').attr('href', agent_website).text(agent_website);
-                $('#agentEmail a').attr('href', `mailto:${agent_email}`).text(agent_email);
-                $('#agentTelephone a').attr('href', `tel:${agent_telephone}`).text(agent_telephone);
+                document.querySelectorAll('#agentName').innerHTML = agent_name;
+                
+                document.querySelectorAll('#agentWebsite a').innerHTML = agent_website;
+                document.querySelectorAll('#agentWebsite a').href = agent_website;
+
+                document.querySelectorAll('#agentEmail a').innerHTML = agent_email;
+                document.querySelectorAll('#agentEmail a').href = `mailto:${agent_email}`;
+
+                document.querySelectorAll('#agentTelephone a').innerHTML = agent_telephone;
+                document.querySelectorAll('#agentTelephone a').href = `tel:${agent_telephone}`;
                 break;
             default: // error
                 if (response.echo_req.dry_run === 1) {
