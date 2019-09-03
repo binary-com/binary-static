@@ -89,7 +89,7 @@ const Careers = () => {
             <div className='margin-top-100'>
                 <div className='container center-text'>
                     <div className='gr-row gr-row-align-center'>
-                        <div className='gr-9'>
+                        <div className='gr-9 gr-10-p gr-12-m'>
                             <div className='video-container'>
                                 <iframe src='https://www.youtube.com/embed/M6HUEul9cI0?rel=0&showinfo=0' frameBorder='0' allow='autoplay; encrypted-media' allowFullScreen />
                             </div>
