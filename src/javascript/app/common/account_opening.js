@@ -216,8 +216,8 @@ const AccountOpening = (() => {
     const commonValidations = () => {
         const req = [
             { selector: '#salutation',                  validations: ['req'] },
-            { selector: '#first_name',                  validations: ['req', 'letter_symbol', ['length', { min: 2, max: 30 }]] },
-            { selector: '#last_name',                   validations: ['req', 'letter_symbol', ['length', { min: 2, max: 30 }]] },
+            { selector: '#first_name',                  validations: ['req', 'letter_symbol', ['length', { min: 2, max: 50 }]] },
+            { selector: '#last_name',                   validations: ['req', 'letter_symbol', ['length', { min: 2, max: 50 }]] },
             { selector: '#date_of_birth',               validations: ['req'] },
             { selector: '#address_line_1',              validations: ['req', 'address', ['length', { min: 1, max: 70 }]] },
             { selector: '#address_line_2',              validations: ['address', ['length', { min: 0, max: 70 }]] },

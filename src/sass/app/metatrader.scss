@@ -172,7 +172,11 @@
 
         .acc-info {
             font-size: $FONT_SIZE_S;
+            word-wrap: break-word;
 
+            [data=login] {
+                margin-left: 10px;
+            }
             .balance {
                 font-size: $FONT_SIZE_XXL;
                 color: $COLOR_BLUE;

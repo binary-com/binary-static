@@ -291,7 +291,7 @@ const PersonalDetails = (() => {
                 if (['first_name', 'last_name'].includes(key)) {
                     validations.push({
                         selector,
-                        validations: ['req', 'letter_symbol', ['length', { min: 2, max: 30 }]],
+                        validations: ['req', 'letter_symbol', ['length', { min: 2, max: 50 }]],
                     });
                 }
 
