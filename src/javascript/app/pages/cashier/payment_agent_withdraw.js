@@ -192,16 +192,16 @@ const PaymentAgentWithdraw = (() => {
                     .html($('<ul/>', { class: 'checked' }).append($('<li/>', { text: localize('Your request to withdraw [_1] [_2] from your account [_3] to Payment Agent [_4] account has been successfully processed.', [request.currency, getNumberFormat(request.amount, request.currency), Client.get('loginid'), agent_name]) })));
                 
                 // Set PA details.
-                document.querySelector('#agentName').innerHTML = agent_name;
+                document.getElementById('agentName').innerHTML = agent_name;
                 
-                document.querySelector('#agentWebsite a').innerHTML = agent_website;
-                document.querySelector('#agentWebsite a').href = agent_website;
+                document.getElementById('agentWebsite').getElementsByTagName('a')[0].innerHTML = agent_website;
+                document.getElementById('agentWebsite').getElementsByTagName('a')[0].href = agent_website;
 
-                document.querySelector('#agentEmail a').innerHTML = agent_email;
-                document.querySelector('#agentEmail a').href = `mailto:${agent_email}`;
+                document.getElementById('agentEmail').getElementsByTagName('a')[0].innerHTML = agent_email;
+                document.getElementById('agentEmail').getElementsByTagName('a')[0].href = `mailto:${agent_email}`;
 
-                document.querySelector('#agentTelephone a').innerHTML = agent_telephone;
-                document.querySelector('#agentTelephone a').href = `tel:${agent_telephone}`;
+                document.getElementById('agentTelephone').getElementsByTagName('a')[0].innerHTML = agent_telephone;
+                document.getElementById('agentTelephone').getElementsByTagName('a')[0].href = `tel:${agent_telephone}`;
                 break;
             default: // error
                 if (response.echo_req.dry_run === 1) {
