@@ -30,7 +30,7 @@ const PaymentAgentWithdraw = () => (
                 <Fieldset>
                     <div className='gr-row'>
                         <div className='gr-8 gr-12-m gr-centered gr-padding-30 gr-child center-text'>
-                            <h2>Your request is being processed.</h2>
+                            <h2>{it.L('Your request is being processed.')}</h2>
                             <p id='successMessage' />
                         </div>
                     </div>
@@ -43,7 +43,7 @@ const PaymentAgentWithdraw = () => (
 
                     <div className='gr-row'>
                         <div className='gr-8 gr-12-m gr-centered gr-padding-10 gr-child center-text'>
-                            <p>Please contact your payment agent to validate your withdrawal request.</p>
+                            <p>{it.L('Please contact your payment agent to validate your withdrawal request.')}</p>
                         </div>
                     </div>
 
@@ -56,13 +56,13 @@ const PaymentAgentWithdraw = () => (
                                 <div className='gr-10 gr-9-m'>
                                     <h5 id='agentName' />
                                     <h5 className='gr-padding-20 gr-child' id='agentWebsite'>
-                                        Website : <a />
+                                        {it.L('Website :')}<a />
                                     </h5>
                                     <h5 className='gr-padding-20 gr-child' id='agentEmail'>
-                                        Email : <a />
+                                        {it.L('Email :')}<a />
                                     </h5>
                                     <h5 className='gr-padding-20 gr-child' id='agentTelephone'>
-                                        Tel : <a />
+                                        {it.L('Tel :')}<a />
                                     </h5>
                                 </div>
                             </div>
@@ -116,7 +116,7 @@ const PaymentAgentWithdraw = () => (
                         <FormRow label={it.L('Amount')} id='txtAmount' type='text' />
                         <SubmitButton msg_id='withdrawFormMessage' type='submit' text={it.L('Submit')} />
                         <div className='gr-8 gr-centered gr-padding-20'>
-                            {it.L('Notes: [_1] does not charge any transfer fees.', it.website_name)}
+                            {it.L('Note: [_1] does not charge any transfer fees.', it.website_name)}
                         </div>
                     </Fieldset>
                 </form>
