@@ -72,7 +72,7 @@ const Page = (() => {
         });
     };
 
-    const onLoad = async () => {
+    const onLoad = () => {
         if (State.get('is_loaded_by_pjax')) {
             Url.reset();
             updateLinksURL('#content');

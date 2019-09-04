@@ -86,9 +86,9 @@ const Authenticate = (() => {
         });
         $('#not_authenticated_uns .file-picker').on('change', onFileSelectedUns);
 
-        const language            = getLanguage();
-        const language_based_link = ['ID', 'RU', 'PT'].includes(language) ? `_${language}` : '';
-        const $not_authenticated_uns  = $('#not_authenticated_uns');
+        const language               = getLanguage();
+        const language_based_link    = ['ID', 'RU', 'PT'].includes(language) ? `_${language}` : '';
+        const $not_authenticated_uns = $('#not_authenticated_uns');
         const link = Url.urlForCurrentDomain(`https://marketing.binary.com/authentication/Authentication_Process${language_based_link}.pdf`);
 
         $not_authenticated_uns.find('.learn_more').setVisibility(1).find('a').attr('href', link);
@@ -834,12 +834,7 @@ const Authenticate = (() => {
             onfido = Onfido.init({
                 containerId: 'onfido',
                 language   : {
-                    locale : getLanguage().toLowerCase() || 'en',
-                    /*
-                        TODO: will move to steps after this issue resolved
-                        https://github.com/onfido/onfido-sdk-ui/issues/391
-                    */
-                    phrases: { welcome: { next_button: localize('Verify identity') } },
+                    locale: getLanguage().toLowerCase() || 'en',
                 },
                 token     : sdk_token,
                 useModal  : false,
