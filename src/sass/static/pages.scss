@@ -1081,8 +1081,24 @@ body #not_authenticated_financial ul.checked > li {
                 }
             }
         }
+        .video-container {
+            width: 100%;
+            height: 0px;
+            position: relative;
+            padding-bottom: 56.3%;
+        }
+        .video-container iframe, .video-container object, .video-container embed {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
         .center-element {
             margin: 0 auto;
+        }
+        .margin-top-50 {
+            margin-top: 50px;
         }
         .margin-top-100 {
             margin-top: 100px;
