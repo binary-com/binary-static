@@ -5,7 +5,6 @@ import {
     TabContent,
     TabContentContainer,
     TabsSubtabs }                                  from '../../_common/components/tabs.jsx';
-import AuthenticateMessageFinancial                from '../_includes/authenticate_message_financial.jsx';
 import { AuthenticateMessage, UnsupportedMessage } from '../_includes/authenticate_message.jsx';
 
 const ArrowsMobile = ({ direction, parent }) => (
@@ -30,7 +29,7 @@ const Authenticate = () => (
         </div>
 
         <div id='authentication_tab'>
-            <TabContainer className='gr-padding-30 gr-parent full-width gr-11 gr-12-m gr-centered' theme='light'>
+            <TabContainer className='gr-parent full-width gr-11 gr-12-m gr-centered' theme='light'>
                 <div className='gr-row gr-hide gr-show-m mobile-menu'>
                     <ArrowsMobile parent='authentication_tab' direction='left' />
                     <strong id='tab_mobile_header' className='align-self-center gr-8' />
@@ -65,6 +64,12 @@ const Authenticate = () => (
                             <p>{it.L('there was a connection error. Please try again later.')}</p>
                         </div>
 
+                        <div id='expired_poi' className='center-text gr-padding-20 invisible'>
+                            <img className='gr-padding-20' src={it.url_for('images/pages/authenticate/invalid.svg')} />
+                            <h1 className='gr-padding-10'>{it.L('Proof of identity has passed expiration date')}</h1>
+                            <p>{it.L('Kindly send a scan of a valid identity document to [_1]support@binary.com[_2]', '<a href="mailto:support@binary.com" target="_blank">', '</a>')}</p>
+                        </div>
+
                         <div id='unverified' className='center-text gr-padding-20 invisible'>
                             <img className='gr-padding-20' src={it.url_for('images/pages/authenticate/invalid.svg')} />
                             <h1 className='gr-padding-10'>{it.L('Proof of identity verification failed')}</h1>
@@ -83,10 +88,6 @@ const Authenticate = () => (
                                     <AuthenticateMessage />
                                 </div>
     
-                                <div id='not_authenticated_financial' className='invisible'>
-                                    <AuthenticateMessageFinancial />
-                                </div>
-    
                                 <div id='verified_poa' className='center-text gr-gutter gr-padding-20 invisible'>
                                     <img className='gr-padding-20' src={it.url_for('images/pages/authenticate/valid.svg')} />
                                     <h1>{it.L('Your proof of address have been successfully verified')}</h1>
@@ -96,6 +97,12 @@ const Authenticate = () => (
                                     <img className='gr-padding-20' src={it.url_for('images/pages/authenticate/letter.svg')} />
                                     <h1 className='gr-padding-10'>{it.L('Your proof of address was submitted successfully')}</h1>
                                     <p>{it.L('Your document is being reviewed, please check back in 1-3 days.')}</p>
+                                </div>
+
+                                <div id='expired_poa' className='center-text gr-padding-20 invisible'>
+                                    <img className='gr-padding-20' src={it.url_for('images/pages/authenticate/invalid.svg')} />
+                                    <h1 className='gr-padding-10'>{it.L('Proof of address has passed expiration date')}</h1>
+                                    <p>{it.L('Kindly send a scan of a valid address document to [_1]support@binary.com[_2]', '<a href="mailto:support@binary.com" target="_blank">', '</a>')}</p>
                                 </div>
     
                                 <div id='unverified_poa' className='center-text gr-gutter gr-padding-20 invisible'>

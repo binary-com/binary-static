@@ -107,7 +107,7 @@ const FileSelector = ({
 
 export const UnsupportedMessage = () => (
     <React.Fragment>
-        <p>{it.L('Learn more about submitting essential documents with our handy infographic:')}</p>
+        <p className='mar-top-0'>{it.L('Learn more about submitting essential documents with our handy infographic:')}</p>
         <p className='learn_more'>
             <a className='button' href='#' target='_blank'><span>{it.L('View guide')}</span></a>
         </p>
@@ -179,6 +179,11 @@ export const UnsupportedMessage = () => (
 
 export const AuthenticateMessage = () => (
     <React.Fragment>
+        <p className='mar-top-0'>{it.L('Learn more about submitting essential documents with our handy infographic:')}</p>
+        <p className='learn_more'>
+            <a className='button' href='#' target='_blank'><span>{it.L('View guide')}</span></a>
+        </p>
+
         <FileSelector
             allowed_documents={[
                 it.L('Utility bills (electricity, water, gas, broadband and landline)'),

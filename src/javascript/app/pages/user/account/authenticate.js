@@ -54,14 +54,9 @@ const Authenticate = (() => {
         const language            = getLanguage();
         const language_based_link = ['ID', 'RU', 'PT'].includes(language) ? `_${language}` : '';
         const $not_authenticated  = $('#not_authenticated');
-        let link = Url.urlForCurrentDomain(`https://marketing.binary.com/authentication/Authentication_Process${language_based_link}.pdf`);
+        const link = Url.urlForCurrentDomain(`https://marketing.binary.com/authentication/Authentication_Process${language_based_link}.pdf`);
 
         $not_authenticated.setVisibility(1);
-
-        if (Client.isAccountOfType('financial')) {
-            $('#not_authenticated_financial').setVisibility(1);
-            link = Url.urlForCurrentDomain('https://marketing.binary.com/authentication/MF_Authentication_Process.pdf');
-        }
 
         $not_authenticated.find('.learn_more').setVisibility(1).find('a').attr('href', link);
 
@@ -94,12 +89,7 @@ const Authenticate = (() => {
         const language            = getLanguage();
         const language_based_link = ['ID', 'RU', 'PT'].includes(language) ? `_${language}` : '';
         const $not_authenticated_uns  = $('#not_authenticated_uns');
-        let link = Url.urlForCurrentDomain(`https://marketing.binary.com/authentication/Authentication_Process${language_based_link}.pdf`);
-
-        if (Client.isAccountOfType('financial')) {
-            $('#not_authenticated_financial').setVisibility(1);
-            link = Url.urlForCurrentDomain('https://marketing.binary.com/authentication/MF_Authentication_Process.pdf');
-        }
+        const link = Url.urlForCurrentDomain(`https://marketing.binary.com/authentication/Authentication_Process${language_based_link}.pdf`);
 
         $not_authenticated_uns.find('.learn_more').setVisibility(1).find('a').attr('href', link);
 
@@ -769,25 +759,23 @@ const Authenticate = (() => {
     const showSuccess = () => {
         BinarySocket.send({ get_account_status: 1 }, { forced: true }).then(() => {
             Header.displayAccountStatus();
-        });
-        setTimeout(() => {
             removeButtonLoading();
             $button.setVisibility(0);
             $('.submit-status').setVisibility(0);
+            $('#not_authenticated').setVisibility(0);
             $('#pending_poa').setVisibility(1);
-        }, 3000);
+        });
     };
 
     const showSuccessUns = () => {
         BinarySocket.send({ get_account_status: 1 }, { forced: true }).then(() => {
             Header.displayAccountStatus();
-        });
-        setTimeout(() => {
             removeButtonLoadingUns();
             $button_uns.setVisibility(0);
             $('.submit-status-uns').setVisibility(0);
+            $('#not_authenticated_uns').setVisibility(0);
             $('#upload_complete').setVisibility(1);
-        }, 3000);
+        });
     };
 
     const hideSuccess = () => {
@@ -869,17 +857,20 @@ const Authenticate = (() => {
     };
 
     const handleComplete = () => {
-        BinarySocket.send({ get_account_status: 1 }, { forced: true }).then(() => {
-            Header.displayAccountStatus();
-        });
         BinarySocket.send({
             notification_event: 1,
             category          : 'authentication',
             event             : 'poi_documents_uploaded',
         }).then(() => {
             onfido.tearDown();
-
-            $('#upload_complete').setVisible(1);
+            $('#authentication_loading').setVisibility(1);
+            setTimeout(() => {
+                BinarySocket.send({ get_account_status: 1 }, { forced: true }).then(() => {
+                    $('#upload_complete').setVisibility(1);
+                    Header.displayAccountStatus();
+                    $('#authentication_loading').setVisibility(0);
+                });
+            }, 4000);
         });
     };
 
@@ -951,6 +942,9 @@ const Authenticate = (() => {
                 case 'verified':
                     $('#verified').setVisibility(1);
                     break;
+                case 'expired':
+                    $('#expired_poi').setVisibility(1);
+                    break;
                 case 'suspected':
                     $('#unverified').setVisibility(1);
                     break;
@@ -958,7 +952,7 @@ const Authenticate = (() => {
                     break;
             }
         } else {
-            initOnfido();
+            initOnfido(onfido_token);
         }
         switch (document.status) {
             case 'none': {
@@ -978,6 +972,9 @@ const Authenticate = (() => {
             case 'verified':
                 $('#verified_poa').setVisibility(1);
                 break;
+            case 'expired':
+                $('#expired_poa').setVisibility(1);
+                break;
             default:
                 break;
         }
@@ -991,6 +988,10 @@ const Authenticate = (() => {
     };
 
     const onUnload = () => {
+        if (onfido) {
+            onfido.tearDown();
+        }
+
         TabSelector.onUnload();
     };
 

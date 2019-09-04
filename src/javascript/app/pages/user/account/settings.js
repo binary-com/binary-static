@@ -2,7 +2,6 @@ const Client       = require('../../../base/client');
 const BinarySocket = require('../../../base/socket');
 const localize     = require('../../../../_common/localize').localize;
 const State        = require('../../../../_common/storage').State;
-const urlFor       = require('../../../../_common/url').urlFor;
 
 const Settings = (() => {
     const onLoad = () => {
@@ -15,17 +14,10 @@ const Settings = (() => {
                 $('#change_password').setVisibility(1);
             }
 
-            if (authentication.needs_verification.includes('identity')) {
-                $('#authenticate a').attr('href', `${urlFor('user/authenticate')}?authentication_tab=poi`);
-            } else {
-                $('#authenticate a').attr('href', `${urlFor('user/authenticate')}?authentication_tab=poa`);
-            }
-
-            if (authentication.identity.status === 'verified' && authentication.document.status === 'verified') {
-                $('#authenticate').setVisibility(1);
-
-            } else if (!authentication.needs_verification.length) {
+            if (!authentication.needs_verification.length && authentication.identity.status === 'none' && authentication.document.status === 'none') {
                 $('#authenticate').setVisibility(0);
+            } else {
+                $('#authenticate').setVisibility(1);
             }
 
             // Professional Client menu should only be shown to maltainvest accounts.
