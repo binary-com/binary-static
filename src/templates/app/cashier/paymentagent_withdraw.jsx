@@ -47,28 +47,23 @@ const PaymentAgentWithdraw = () => (
                         </div>
                     </div>
 
-                    <div className='gr-row'>
+                    <div className='gr-row invisible' id='agentDetails'>
                         <div className='gr-push-3 gr-push-0-m gr-7 gr-12-m gr-padding-10'>
                             <div className='gr-row'>
                                 <div className='gr-2 gr-3-m'>
                                     <img className='responsive' src={it.url_for('images/pages/contact/contact-icon.svg')} />
                                 </div>
                                 <div className='gr-10 gr-9-m'>
-                                    <div className='invisible' id='agentDetails'>
-                                        <h5 id='agentName' />
-                                        <h5 className='gr-padding-20 gr-child' id='agentWebsite'>
-                                            {it.L('Website:')} <a />
-                                        </h5>
-                                        <h5 className='gr-padding-20 gr-child' id='agentEmail'>
-                                            {it.L('Email:')} <a />
-                                        </h5>
-                                        <h5 className='gr-padding-20 gr-child' id='agentTelephone'>
-                                            {it.L('Tel:')} <a />
-                                        </h5>
-                                    </div>
-                                    <div className='invisible' id='noAgentDetails'>
-                                        <h5>{it.L('Please contact your payment agent to validate your withdrawal request.')}</h5>
-                                    </div>
+                                    <h5 id='agentName' />
+                                    <h5 className='gr-padding-20 gr-child' id='agentWebsite'>
+                                        {it.L('Website:')} <a />
+                                    </h5>
+                                    <h5 className='gr-padding-20 gr-child' id='agentEmail'>
+                                        {it.L('Email:')} <a />
+                                    </h5>
+                                    <h5 className='gr-padding-20 gr-child' id='agentTelephone'>
+                                        {it.L('Tel:')} <a />
+                                    </h5>
                                 </div>
                             </div>
                         </div>

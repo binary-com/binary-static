@@ -205,9 +205,6 @@ const PaymentAgentWithdraw = (() => {
                     setAgentDetail('agentTelephone', agent_telephone, `tel:${agent_telephone}`);
 
                     getElementById('agentDetails').classList.remove('invisible');
-                } else {
-                    getElementById('noAgentDetails').classList.remove('invisible');
-                    break;
                 }
                 break;
             default: // error
