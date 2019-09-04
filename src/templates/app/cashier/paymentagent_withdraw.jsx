@@ -54,16 +54,21 @@ const PaymentAgentWithdraw = () => (
                                     <img className='responsive' src={it.url_for('images/pages/contact/contact-icon.svg')} />
                                 </div>
                                 <div className='gr-10 gr-9-m'>
-                                    <h5 id='agentName' />
-                                    <h5 className='gr-padding-20 gr-child' id='agentWebsite'>
-                                        {it.L('Website:')} <a />
-                                    </h5>
-                                    <h5 className='gr-padding-20 gr-child' id='agentEmail'>
-                                        {it.L('Email:')} <a />
-                                    </h5>
-                                    <h5 className='gr-padding-20 gr-child' id='agentTelephone'>
-                                        {it.L('Tel:')} <a />
-                                    </h5>
+                                    <div className='invisible' id='agentDetails'>
+                                        <h5 id='agentName' />
+                                        <h5 className='gr-padding-20 gr-child' id='agentWebsite'>
+                                            {it.L('Website:')} <a />
+                                        </h5>
+                                        <h5 className='gr-padding-20 gr-child' id='agentEmail'>
+                                            {it.L('Email:')} <a />
+                                        </h5>
+                                        <h5 className='gr-padding-20 gr-child' id='agentTelephone'>
+                                            {it.L('Tel:')} <a />
+                                        </h5>
+                                    </div>
+                                    <div className='invisible' id='noAgentDetails'>
+                                        <h5>{it.L('Please contact your payment agent to validate your withdrawal request.')}</h5>
+                                    </div>
                                 </div>
                             </div>
                         </div>

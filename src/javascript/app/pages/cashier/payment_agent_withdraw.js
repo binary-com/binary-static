@@ -156,6 +156,11 @@ const PaymentAgentWithdraw = (() => {
         $ddl_object.append($('<option/>', { value: item_value, text: item_text }));
     };
 
+    const setAgentDetail = (id, html_value, href_value) => {
+        getElementById(id).getElementsByTagName('a')[0].innerHTML = html_value;
+        getElementById(id).getElementsByTagName('a')[0].href = href_value;
+    };
+
     // ----------------------------
     // ----- Withdraw Process -----
     // ----------------------------
@@ -191,18 +196,19 @@ const PaymentAgentWithdraw = (() => {
                 $('#successMessage').css('display', '')
                     .attr('class', 'success-msg')
                     .html($('<ul/>', { class: 'checked' }).append($('<li/>', { text: localize('Your request to withdraw [_1] [_2] from your account [_3] to Payment Agent [_4] account has been successfully processed.', [request.currency, getNumberFormat(request.amount, request.currency), Client.get('loginid'), agent_name]) })));
-                
+
                 // Set PA details.
-                getElementById('agentName').innerHTML = agent_name;
-                
-                getElementById('agentWebsite').getElementsByTagName('a')[0].innerHTML = agent_website;
-                getElementById('agentWebsite').getElementsByTagName('a')[0].href = agent_website;
+                if (agent_name && agent_website && agent_email && agent_telephone) {
+                    getElementById('agentName').innerHTML = agent_name;
+                    setAgentDetail('agentWebsite', agent_website, agent_website);
+                    setAgentDetail('agentEmail', agent_email, `mailto:${agent_email}`);
+                    setAgentDetail('agentTelephone', agent_telephone, `tel:${agent_telephone}`);
 
-                getElementById('agentEmail').getElementsByTagName('a')[0].innerHTML = agent_email;
-                getElementById('agentEmail').getElementsByTagName('a')[0].href = `mailto:${agent_email}`;
-
-                getElementById('agentTelephone').getElementsByTagName('a')[0].innerHTML = agent_telephone;
-                getElementById('agentTelephone').getElementsByTagName('a')[0].href = `tel:${agent_telephone}`;
+                    getElementById('agentDetails').classList.remove('invisible');
+                } else {
+                    getElementById('noAgentDetails').classList.remove('invisible');
+                    break;
+                }
                 break;
             default: // error
                 if (response.echo_req.dry_run === 1) {
@@ -276,7 +282,7 @@ const PaymentAgentWithdraw = (() => {
     const setAgentDetails = () => {
         agent_name = $ddl_agents.val() ? $ddl_agents.find('option:selected').text() : $txt_agents.val();
         pa_list.map(pa => {
-            if (pa.name === agent_name) {
+            if (pa.name === agent_name || pa.paymentagent_loginid === agent_name) {
                 agent_website = pa.url;
                 agent_email = pa.email;
                 agent_telephone = pa.telephone;
