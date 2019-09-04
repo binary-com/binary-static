@@ -5,6 +5,7 @@ const BinarySocket         = require('../../base/socket');
 const getDecimalPlaces     = require('../../common/currency').getDecimalPlaces;
 const getNumberFormat      = require('../../common/currency').getNumberFormat;
 const getPaWithdrawalLimit = require('../../common/currency').getPaWithdrawalLimit;
+const getElementById       = require('../../../_common/common_functions.js').getElementById;
 const FormManager          = require('../../common/form_manager');
 const Validation           = require('../../common/form_validation');
 const handleVerifyCode     = require('../../common/verification_code').handleVerifyCode;
@@ -192,16 +193,16 @@ const PaymentAgentWithdraw = (() => {
                     .html($('<ul/>', { class: 'checked' }).append($('<li/>', { text: localize('Your request to withdraw [_1] [_2] from your account [_3] to Payment Agent [_4] account has been successfully processed.', [request.currency, getNumberFormat(request.amount, request.currency), Client.get('loginid'), agent_name]) })));
                 
                 // Set PA details.
-                document.getElementById('agentName').innerHTML = agent_name;
+                getElementById('agentName').innerHTML = agent_name;
                 
-                document.getElementById('agentWebsite').getElementsByTagName('a')[0].innerHTML = agent_website;
-                document.getElementById('agentWebsite').getElementsByTagName('a')[0].href = agent_website;
+                getElementById('agentWebsite').getElementsByTagName('a')[0].innerHTML = agent_website;
+                getElementById('agentWebsite').getElementsByTagName('a')[0].href = agent_website;
 
-                document.getElementById('agentEmail').getElementsByTagName('a')[0].innerHTML = agent_email;
-                document.getElementById('agentEmail').getElementsByTagName('a')[0].href = `mailto:${agent_email}`;
+                getElementById('agentEmail').getElementsByTagName('a')[0].innerHTML = agent_email;
+                getElementById('agentEmail').getElementsByTagName('a')[0].href = `mailto:${agent_email}`;
 
-                document.getElementById('agentTelephone').getElementsByTagName('a')[0].innerHTML = agent_telephone;
-                document.getElementById('agentTelephone').getElementsByTagName('a')[0].href = `tel:${agent_telephone}`;
+                getElementById('agentTelephone').getElementsByTagName('a')[0].innerHTML = agent_telephone;
+                getElementById('agentTelephone').getElementsByTagName('a')[0].href = `tel:${agent_telephone}`;
                 break;
             default: // error
                 if (response.echo_req.dry_run === 1) {
