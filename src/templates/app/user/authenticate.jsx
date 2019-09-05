@@ -73,12 +73,12 @@ const Authenticate = () => (
                         <div id='unverified' className='center-text gr-padding-20 invisible'>
                             <img className='gr-padding-20' src={it.url_for('images/pages/authenticate/invalid.svg')} />
                             <h1 className='gr-padding-10'>{it.L('Proof of identity verification failed')}</h1>
-                            <p>{it.L('Please check your email for further verification')}</p>
+                            <p>{it.L('Please check your email for details.')}</p>
                         </div>
 
                         <div id='verified' className='center-text gr-padding-20 invisible'>
                             <img className='gr-padding-20' src={it.url_for('images/pages/authenticate/valid.svg')} />
-                            <h1 className='gr-padding-10'>{it.L('Your proof of identity have been successfully verified')}</h1>
+                            <h1 className='gr-padding-10'>{it.L('Your proof of identity has been verified successfully')}</h1>
                         </div>
                     </TabContent>
                     <TabContent id='poa'>
@@ -90,7 +90,7 @@ const Authenticate = () => (
     
                                 <div id='verified_poa' className='center-text gr-gutter gr-padding-20 invisible'>
                                     <img className='gr-padding-20' src={it.url_for('images/pages/authenticate/valid.svg')} />
-                                    <h1>{it.L('Your proof of address have been successfully verified')}</h1>
+                                    <h1>{it.L('Your proof of address has been verified successfully')}</h1>
                                 </div>
     
                                 <div id='pending_poa' className='center-text gr-gutter gr-padding-20 invisible'>
@@ -108,7 +108,7 @@ const Authenticate = () => (
                                 <div id='unverified_poa' className='center-text gr-gutter gr-padding-20 invisible'>
                                     <img className='gr-padding-20' src={it.url_for('images/pages/authenticate/invalid.svg')} />
                                     <h1 className='gr-padding-10'>{it.L('Proof of address verification failed')}</h1>
-                                    <p>{it.L('Please check your email for further verification')}</p>
+                                    <p>{it.L('Please check your email for details.')}</p>
                                 </div>
     
                                 <p className='center-text notice-msg invisible' id='error_message' />
