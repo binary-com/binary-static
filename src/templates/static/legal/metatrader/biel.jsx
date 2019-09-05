@@ -17,7 +17,7 @@ const BIEL = () => (
 
         <h2 data-anchor='risk-acknowledgement'>{it.L('Risk acknowledgement')}</h2>
         <p>{it.L('By entering into an agreement with BIEL, the client understands that CFDs are highly speculative, complex products and carry a high degree of risk, especially those traded on Margin. Whilst the client may generate profit and increase their capital, they may also expose themselves to losing the entire sum invested, and their loss may exceed their deposit. The products referred to in this agreement are not appropriate for everyone. The client acknowledges that the trading services described in this agreement are designed for clients who are knowledgeable and experienced in the types of Transactions described in this agreement, and the client fully understands the associated risks before entering into this agreement with BIEL.')}</p>
-        <p>{it.L('The  acknowledges, recognises, and understands that')}</p>
+        <p>{it.L('The client acknowledges, recognises, and understands that')}</p>
         <ol>
             <li>{it.L('Because of the leverage effect, the Margin required in Margined Transactions, and price changes in the Underlying Instruments, the client may suffer significant losses.')}</li>
             <li>{it.L('Transaction monitoring is the client\'s responsibility in its entirety. The Company shall not conduct any monitoring of the client\'s trades.')}</li>
@@ -68,7 +68,7 @@ const BIEL = () => (
                             <li>{it.L('There is an amount outstanding from the client to BIEL.')}</li>
                             <li>{it.L('BIEL is required to do so in accordance with any relevant law or regulation.')}</li>
                         </ol>
-                        <p>{it.L('The client\'s MT5 Real Account as well as all payments and withdrawals therefrom must be made in the same currency as maintained in the client\'s [_1] account.', it.website_name)}</p>
+                        <p>{it.L('The client\'s MT5 Real Account, as well as all payments and withdrawals therefrom, must be made in the same currency as maintained in the client\'s [_1] account; otherwise, a currency conversion fee shall be applied.', it.website_name)}</p>
                     </li>
                     <li>{it.L('Negative Balance Protection')}
                         <p>{it.L('When using the MT5 trading platform, all BIEL\'s clients will be provided with Margin monitoring functionality to protect the clients from encountering negative balances when trading under normal market conditions. As a trader, the client should always maintain the appropriate levels of Margin in their trading account as the recommended method of their own risk management.')}</p>

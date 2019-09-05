@@ -140,7 +140,7 @@ const Purchase = (() => {
                             if (!Client.hasAccountType('real') && Client.get('is_virtual')) {
                                 message = localize('Please complete the [_1]Real Account form[_2] to verify your age as required by the [_3]UK Gambling[_4] Commission (UKGC).', [`<a href='${urlFor('new_account/realws')}'>`, '</a>', '<strong>', '</strong>']);
                             } else if (Client.hasAccountType('real') && /^virtual|iom$/i.test(Client.get('landing_company_shortcode'))) {
-                                message = localize('The system failed to verify your identity. Please check your email for details and the next steps.');
+                                message = localize('Account access is temporarily limited. Please check your inbox for more details.');
                             } else {
                                 message = error.message;
                             }
@@ -230,18 +230,8 @@ const Purchase = (() => {
         if (show_chart && has_chart) {
             // calculate number of decimals needed to display tick-chart according to the spot
             // value of the underlying
-            let decimal_points     = 2;
-            const tick_spots       = Tick.spots();
-            const tick_spot_epochs = Object.keys(tick_spots);
-            if (tick_spot_epochs.length > 0) {
-                const last_quote = tick_spots[tick_spot_epochs[0]].toString();
-
-                if (last_quote.indexOf('.') !== -1) {
-                    decimal_points = last_quote.split('.')[1].length;
-                }
-            }
-
-            let category = sessionStorage.getItem('formname');
+            const decimal_points = Tick.pipSize();
+            let category         = sessionStorage.getItem('formname');
             if (/^(risefall|higherlower)$/.test(category)) {
                 category = 'callput';
             }
@@ -271,9 +261,8 @@ const Purchase = (() => {
                 contract_id           : receipt.contract_id,
                 subscribe             : 1,
             };
-            BinarySocket.send(request, { callback: async (response) => {
-                const mw_response = response.proposal_open_contract ?
-                    await changePocNumbersToString(response) : undefined;
+            BinarySocket.send(request, { callback: (response) => {
+                const mw_response = response.proposal_open_contract ? changePocNumbersToString(response) : undefined;
                 const contract = mw_response ? mw_response.proposal_open_contract : undefined;
                 if (contract) {
                     status = contract.status;
@@ -283,7 +272,7 @@ const Purchase = (() => {
                     }
                     if (/^digit/i.test(contract.contract_type)) {
                         if (contract.status !== 'open' || contract.is_sold || contract.is_settleable) {
-                            digitShowExitTime(contract.status, contract.exit_tick);
+                            digitShowExitTime(contract.status, contract.exit_tick_display_value);
                         }
                     }
                     if (!/^digit/i.test(contract.contract_type) && contract.exit_tick_time && +contract.exit_tick_time < contract.date_expiry) {
@@ -438,7 +427,7 @@ const Purchase = (() => {
         if (el_epoch && el_epoch.classList) {
             el_epoch.classList.add('is-visible');
             el_epoch.setAttribute('style', `position: absolute; right: ${((el_epoch.parentElement.offsetWidth - el_epoch.nextSibling.offsetWidth) / 2) + adjustment}px`);
-            const last_digit_quote = last_tick_quote ? last_tick_quote.toString().slice(-1) : '';
+            const last_digit_quote = last_tick_quote ? last_tick_quote.slice(-1) : '';
             if (contract_status === 'won') {
                 DigitTicker.markAsWon();
                 DigitTicker.markDigitAsWon(last_digit_quote);

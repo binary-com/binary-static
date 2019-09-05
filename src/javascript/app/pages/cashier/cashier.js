@@ -141,9 +141,14 @@ const Cashier = (() => {
                         }
                     });
                 }
-                $(isCryptocurrency(currency) ? '.crypto_currency' : '.normal_currency').setVisibility(1);
-                if (/^BCH/.test(currency)) {
-                    getElementById('message_bitcoin_cash').setVisibility(1);
+
+                if (isCryptocurrency(currency)) {
+                    $('.crypto_currency').setVisibility(1);
+
+                    const previous_href = $('#view_payment_methods').attr('href');
+                    $('#view_payment_methods').attr('href', previous_href.concat('?anchor=cryptocurrency'));
+                } else {
+                    $('.normal_currency').setVisibility(1);
                 }
             });
         }

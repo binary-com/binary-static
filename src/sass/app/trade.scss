@@ -1007,3 +1007,58 @@
 .show-mb {
     display: none;
 }
+
+#binary_grid_banner {
+    padding-top: 0;
+
+    h3 {
+        line-height: 1.14;
+    }
+    & > * {
+        padding: 0 !important;
+        border: solid 0.5px $COLOR_GRAY;
+    }
+    .banner-image {
+        left: -1px;
+        top: -1px;
+        margin-bottom: -1px;
+        position: relative;
+        max-height: 90px;
+
+        @media (max-width: 480px) {
+            visibility: hidden;
+            display: none;
+
+            &-m {
+                position: relative;
+                left: -1px;
+                top: -1px;
+                visibility: visible;
+                display: flex !important;
+                max-height: 90px;
+                max-width: 93px;
+            }
+        }
+    }
+    .banner-text {
+        @media (max-width: 480px) {
+            visibility: hidden;
+            display: none;
+
+            &-m {
+                visibility: visible;
+                display: flex !important;
+            }
+        }
+        @media (max-width: 768px) {
+            font-size: 18px;
+        }
+    }
+    .button {
+        margin-bottom: 0;
+
+        @media (max-width: 480px) {
+            padding: 0;
+        }
+    }
+}

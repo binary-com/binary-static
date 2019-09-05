@@ -5,9 +5,10 @@ const GetCurrency = (() => {
     const getCurrenciesOfOtherAccounts = () => {
         const all_loginids     = Client.getAllLoginids();
         const other_currencies = [];
+        const current_landing_company_shortcode = Client.get('landing_company_shortcode');
         all_loginids.forEach((loginid) => {
-            // if it's not current client or virtual client, consider the currency
-            if (Client.get('loginid') !== loginid && Client.getAccountType(loginid) !== 'virtual') {
+            // if it's not current client or under a different landing company, consider the currency
+            if (Client.get('loginid') !== loginid && current_landing_company_shortcode === Client.get('landing_company_shortcode', loginid)) {
                 const currency = Client.get('currency', loginid);
                 if (currency) {
                     other_currencies.push(currency);

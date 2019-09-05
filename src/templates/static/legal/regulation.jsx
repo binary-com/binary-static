@@ -128,7 +128,7 @@ const Regulation = () => {
                                     { name: 'Czech Republic', x: 238.9, y: 112.4, width: 53.2 },
                                     { name: 'Poland',         x: 258,   y: 95.3,  width: 34.2 },
                                     { name: 'Lithuania',      x: 252.9, y: 83.5,  width: 39.3,          link: 'https://www.lb.lt/en/sfi-financial-market-participants?query=binary&ff=1' },
-                                    { name: 'Latvia',         x: 258,   y: 71.7,  width: 34.2,          link: 'http://www.fktk.lv/en/market/financial-instruments-market/service-providers-from-the-eea/freedom-to-provide-services.html' },
+                                    { name: 'Latvia',         x: 258,   y: 71.7,  width: 34.2,          link: 'https://www.fktk.lv/en/market/investment-service-providers/service-providers-from-the-eea/freedom-to-provide-services/binary-investments-europe-ltd/' },
                                     { name: 'Estonia',        x: 258,   y: 60.0,  width: 34.2 },
                                     { name: 'Finland',        x: 258,   y: 13.9,  width: 34.2 },
                                 ]}
@@ -346,7 +346,8 @@ const Regulation = () => {
             </div>
 
             <Box header={it.L('Binary (SVG) Ltd')} >
-                <p>{it.L('Binary (SVG) Ltd is registered in St. Vincent and the Grenadines. Clients from the rest of the world (excluding certain countries such as the USA, Canada, and Hong Kong) will have their account opened with Binary (SVG) Ltd.')}</p>
+                <p>{it.L('Binary (SVG) Ltd, Hinds Buildings, Kingstown, St. Vincent and the Grenadines; company number 25299 BC 2019.')}</p>
+                <p>{it.L('Clients from the rest of the world (excluding certain countries such as the USA, Canada, and Hong Kong) will have their account opened with Binary (SVG) Ltd.')}</p>
             </Box>
 
             <Box header={it.L('Binary (V) Ltd')} >

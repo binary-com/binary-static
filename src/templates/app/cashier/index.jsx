@@ -69,12 +69,6 @@ const Cashier = () => (
     <React.Fragment>
         <h1>{it.L('Cashier')}</h1>
 
-        <div className='invisible' id='message_bitcoin_cash'>
-            <div className='notice-msg center-text'>
-                <div className='gr-padding-10'>{it.L('Please note that you are currently using your [_1]Bitcoin Cash[_2] account. You can only fund your account in [_1]Bitcoin Cash[_2], and not Bitcoin.', '<a href="https://www.bitcoincash.org" target="_blank" rel="noopener noreferrer">', '</a>')}</div>
-            </div>
-        </div>
-
         <div className='invisible' id='message_cashier_unavailable'>
             <p className='notice-msg center-text'>{it.L('Sorry, this feature is not available in your jurisdiction.')}</p>
         </div>
@@ -116,7 +110,7 @@ const Cashier = () => (
                     <span className='invisible normal_currency client_logged_out'>{it.L('Deposit or withdraw to your account via bank wire, credit card, or e-wallet.')}</span>
                     <span className='invisible crypto_currency'>{it.L('Manage the funds in your cryptocurrency account.')}</span>
                     &nbsp;
-                    <a className='invisible normal_currency client_logged_out' href={it.url_for('cashier/payment_methods')} id='view_payment_methods'>
+                    <a className='invisible normal_currency crypto_currency' href={`${it.url_for('cashier/payment_methods')}`} id='view_payment_methods'>
                         <span>{it.L('View available payment methods')}</span>
                     </a>
                     <CashierNote className='gr-hide-m gr-child' text={it.L('Please do not share your bank account, credit card, or e-wallet with another client, as this may cause delays in your withdrawals.')} />

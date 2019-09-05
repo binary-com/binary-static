@@ -8,8 +8,8 @@ const Button = ({ url, real, className, text }) => (
     </a>
 );
 
-const TableTitle = ({ title, className, dataShow }) => (
-    <h3 className={`gr-padding-10${className ? ` ${className}` : ''}`} data-show={dataShow}>{title}</h3>
+const TableTitle = ({ title, className, dataShow, dataAnchor }) => (
+    <h3 className={`gr-padding-10${className ? ` ${className}` : ''}`} data-show={dataShow} data-anchor={dataAnchor}>{title}</h3>
 );
 
 const PaymentLogo = ({ logo }) => (
@@ -113,7 +113,7 @@ const PaymentMethods = () => {
             </div>
 
             <div id='payment_methods' className='table-container'>
-                <TableTitle title={it.L('Bank wire/Money transfer')} className='no-margin' />
+                <TableTitle title={it.L('Bank wire/Money transfer')} className='no-margin' dataAnchor='bank' />
                 <Table
                     data={{
                         thead: [ head ],
@@ -181,7 +181,7 @@ const PaymentMethods = () => {
                     }}
                 />
 
-                <TableTitle title={it.L('Credit/Debit Card')} />
+                <TableTitle title={it.L('Credit/Debit Card')} dataAnchor='credit_debit' />
                 <Table
                     data={{
                         thead: [ head ],
@@ -251,7 +251,7 @@ const PaymentMethods = () => {
                     <p className='hint'>{it.L('Note:')} {it.L('Mastercard and Maestro withdrawals are only available for UK Clients.')}</p>
                 </div>
 
-                <TableTitle title={it.L('E-wallet')} />
+                <TableTitle title={it.L('E-wallet')} dataAnchor='ewallet' />
                 <Table
                     data={{
                         thead: [ head ],
@@ -421,7 +421,7 @@ const PaymentMethods = () => {
                                         { td: it.L('Jeton is an international e-wallet for money transfers and online payments. For more information, please visit [_1].', '<a href="https://www.jeton.com/" target="_blank">www.jeton.com</a>') },
                                         { td_list: [
                                             { text: 'USD EUR' },
-                                            { text: '10 - 10,000' },
+                                            { text: '5 - 10,000' },
                                             { text: 'N/A' },
                                             { text: <TableValues value={[it.L(`${deposit}${instant}`), it.L(`${withdrawal}${working_day}`, 1)]} /> },
                                             { text: <ReferenceLinks /> },
@@ -452,6 +452,25 @@ const PaymentMethods = () => {
                                     },
                                 ],
                             },
+                            {
+                                id : 'sticpay',
+                                row: [
+                                    { text: <PaymentLogo logo='sticpay' /> },
+                                    { attributes: { colSpan: 5, className: 'toggler' }, custom_td : <CustomTableData data={[
+                                        { td: it.L('Sticpay is a global e-wallet service for money transfers and online payments. For more information, please visit [_1].', '<a href="https://www.sticpay.com" target="_blank">https://www.sticpay.com</a>') },
+                                        { td_list: [
+                                            { text: 'USD GBP EUR' },
+                                            { text: '5 - 10,000' },
+                                            { text: '5 - 10,000' },
+                                            { text: <TableValues value={[it.L(`${deposit}${instant}`), it.L(`${withdrawal}${working_day}`, 1)]} /> },
+                                            { text: <ReferenceLinks /> },
+                                        ],
+                                        },
+                                    ]}
+                                    />,
+                                    },
+                                ],
+                            },
                         ],
                     }}
                 />
@@ -459,6 +478,7 @@ const PaymentMethods = () => {
                     dataShow='-default, -malta, -maltainvest, -iom'
                     title={it.L('Cryptocurrencies')}
                     withdrawal={it.L('Min Withdrawal')}
+                    dataAnchor='cryptocurrency'
                 />
                 <Table
                     dataShow='-default, -malta, -maltainvest, -iom'

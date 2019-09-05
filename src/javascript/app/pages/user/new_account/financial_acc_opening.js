@@ -12,7 +12,8 @@ const toISOFormat    = require('../../../../_common/string_util').toISOFormat;
 const FinancialAccOpening = (() => {
     const form_id = '#financial-form';
 
-    let get_settings;
+    let get_settings,
+        txt_secret_answer;
 
     const onLoad = () => {
         if (Client.hasAccountType('financial') || !Client.get('residence')) {
@@ -62,6 +63,7 @@ const FinancialAccOpening = (() => {
             FormManager.handleSubmit({
                 form_selector       : form_id,
                 obj_request         : { new_account_maltainvest: 1, accept_risk: 0 },
+                fnc_additional_check: storeSecretAnswer,
                 fnc_response_handler: handleResponse,
             });
         });
@@ -74,6 +76,12 @@ const FinancialAccOpening = (() => {
 
         AccountOpening.showHidePulser(0);
         AccountOpening.registerPepToggle();
+    };
+
+    // API won't return secret answer in echo_req, it will return <not shown> so we should store it in FE before sending it after accept_risk
+    const storeSecretAnswer = (request) => {
+        txt_secret_answer = request.secret_answer;
+        return true;
     };
 
     const getValidations = () => {
@@ -104,6 +112,7 @@ const FinancialAccOpening = (() => {
 
             const echo_req = $.extend({}, response.echo_req);
             echo_req.accept_risk = 1;
+            echo_req.secret_answer = txt_secret_answer; // update from <not shown> to the previous value stored in FE
             FormManager.handleSubmit({
                 form_selector       : risk_form_id,
                 obj_request         : echo_req,

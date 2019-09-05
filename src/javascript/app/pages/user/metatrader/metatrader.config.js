@@ -67,16 +67,20 @@ const MetaTraderConfig = (() => {
                 short_title : localize('Standard'),
             };
 
+            const has_iom_gaming = State.getResponse('landing_company.gaming_company.shortcode') === 'iom';
+
             return ({
                 // for financial mt company with shortcode maltainvest, only offer standard account with different leverage
                 financial: {
                     demo_standard: { mt5_account_type: standard_config.account_type, max_leverage: standard_config.leverage, title: localize('Demo Standard'), short_title: standard_config.short_title },
                     real_standard: { mt5_account_type: standard_config.account_type, max_leverage: standard_config.leverage, title: localize('Real Standard'), short_title: standard_config.short_title },
                 },
-                gaming: {
-                    demo_volatility: configMtCompanies.get().gaming.demo_volatility,
-                    real_volatility: configMtCompanies.get().gaming.real_volatility,
-                },
+                ...(!has_iom_gaming && {
+                    gaming: {
+                        demo_volatility: configMtCompanies.get().gaming.demo_volatility,
+                        real_volatility: configMtCompanies.get().gaming.real_volatility,
+                    },
+                }),
             });
         };
 
@@ -96,8 +100,11 @@ const MetaTraderConfig = (() => {
     const accounts_info = {};
 
     let $messages;
-    const needsRealMessage = () => $messages.find(`#msg_${Client.hasAccountType('real') ? 'switch' : 'upgrade'}`).html();
-    const needsFinancialMessage = () => $messages.find('#msg_switch_financial').html();
+    const needsRealMessage = () => {
+        const has_iom_gaming = State.getResponse('landing_company.gaming_company.shortcode') === 'iom';
+        const id_to_show = `#msg_switch${has_iom_gaming ? '_financial' : ''}`;
+        return $messages.find(id_to_show).html();
+    };
 
     // currency equivalent to 1 USD
     // or 1 of donor currency if both accounts have the same currency
@@ -173,7 +180,7 @@ const MetaTraderConfig = (() => {
 
                     if (is_maltainvest && (is_financial || is_demo_financial) && !has_financial_account) {
                         $message.find('.maltainvest').setVisibility(1);
-                        
+
                         if (Client.get('residence') === 'gb') {
                             BinarySocket.wait('get_account_status').then((response) => {
                                 if (!/age_verification/.test(response.get_account_status.status)) {
@@ -402,20 +409,6 @@ const MetaTraderConfig = (() => {
                     resolve();
                 }
             }),
-            pre_submit: ($form, acc_type, displayFormMessage) => (
-                BinarySocket.send({
-                    mt5_password_check: 1,
-                    login             : accounts_info[acc_type].info.login,
-                    password          : $form.find(fields.withdrawal.txt_main_pass.id).val(),
-                }).then((response) => {
-                    if (+response.mt5_password_check === 1) {
-                        return true;
-                    } else if (response.error) {
-                        displayFormMessage(response.error.message, 'withdrawal');
-                    }
-                    return false;
-                })
-            ),
         },
     };
 
@@ -502,7 +495,6 @@ const MetaTraderConfig = (() => {
         },
         withdrawal: {
             txt_amount       : { id: '#txt_amount_withdrawal', request_field: 'amount' },
-            txt_main_pass    : { id: '#txt_main_pass_wd' },
             additional_fields:
                 acc_type => ({
                     from_mt5 : accounts_info[acc_type].info.login,
@@ -513,13 +505,13 @@ const MetaTraderConfig = (() => {
 
     const validations = () => ({
         new_account: [
-            { selector: fields.new_account.txt_name.id,          validations: [['req', { hide_asterisk: true }], 'letter_symbol', ['length', { min: 2, max: 30 }]] },
+            { selector: fields.new_account.txt_name.id,          validations: [['req', { hide_asterisk: true }], 'letter_symbol', ['length', { min: 2, max: 101 }]] },
             { selector: fields.new_account.txt_main_pass.id,     validations: [['req', { hide_asterisk: true }], ['password', 'mt']] },
             { selector: fields.new_account.txt_re_main_pass.id,  validations: [['req', { hide_asterisk: true }], ['compare', { to: fields.new_account.txt_main_pass.id }]] },
             { selector: fields.new_account.txt_investor_pass.id, validations: [['req', { hide_asterisk: true }], ['password', 'mt'], ['not_equal', { to: fields.new_account.txt_main_pass.id, name1: localize('Main password'), name2: localize('Investor password') }]] },
         ],
         new_account_mam: [
-            { selector: fields.new_account_mam.txt_name.id,          validations: [['req', { hide_asterisk: true }], 'letter_symbol', ['length', { min: 2, max: 30 }]] },
+            { selector: fields.new_account_mam.txt_name.id,          validations: [['req', { hide_asterisk: true }], 'letter_symbol', ['length', { min: 2, max: 101 }]] },
             { selector: fields.new_account_mam.txt_manager_id.id,    validations: [['req', { hide_asterisk: true }], ['length', { min: 0, max: 15 }]] },
             { selector: fields.new_account_mam.txt_main_pass.id,     validations: [['req', { hide_asterisk: true }], ['password', 'mt']] },
             { selector: fields.new_account_mam.txt_re_main_pass.id,  validations: [['req', { hide_asterisk: true }], ['compare', { to: fields.new_account_mam.txt_main_pass.id }]] },
@@ -544,8 +536,7 @@ const MetaTraderConfig = (() => {
             { selector: fields.deposit.txt_amount.id, validations: [['req', { hide_asterisk: true }], ['number', { type: 'float', min: () => getMinMT5TransferValue(Client.get('currency')), max: () => Math.min(State.getResponse('get_limits.remainder') || getMaxMT5TransferValue(Client.get('currency')), getMaxMT5TransferValue(Client.get('currency'))).toFixed(Currency.getDecimalPlaces(Client.get('currency'))), decimals: Currency.getDecimalPlaces(Client.get('currency')) }], ['custom', { func: () => (Client.get('balance') && (+Client.get('balance') >= +$(fields.deposit.txt_amount.id).val())), message: localize('You have insufficient funds in your Binary account, please <a href="[_1]">add funds</a>.', urlFor('cashier')) }]] },
         ],
         withdrawal: [
-            { selector: fields.withdrawal.txt_main_pass.id, validations: [['req', { hide_asterisk: true }]] },
-            { selector: fields.withdrawal.txt_amount.id,    validations: [['req', { hide_asterisk: true }], ['number', { type: 'float', min: () => getMinMT5TransferValue(getCurrency(Client.get('mt5_account'))), max: () => getMaxMT5TransferValue(getCurrency(Client.get('mt5_account'))), decimals: 2 }]] },
+            { selector: fields.withdrawal.txt_amount.id, validations: [['req', { hide_asterisk: true }], ['number', { type: 'float', min: () => getMinMT5TransferValue(getCurrency(Client.get('mt5_account'))), max: () => getMaxMT5TransferValue(getCurrency(Client.get('mt5_account'))), decimals: 2 }]] },
         ],
     });
 
@@ -563,7 +554,6 @@ const MetaTraderConfig = (() => {
         fields,
         validations,
         needsRealMessage,
-        needsFinancialMessage,
         hasAccount,
         getCurrency,
         isAuthenticated,

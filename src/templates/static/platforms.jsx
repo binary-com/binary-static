@@ -59,7 +59,11 @@ const PlatformsGridApp = ({
             <p>{text}</p>
             <div className='gr-row'>
                 <div className='gr-12'>
-                    <p><a className='button-secondary download-grid-app'><span>{it.L('Download Binary Grid')}</span></a></p>
+                    <p>
+                        <a className='button-secondary android-download-grid-app download-grid-app'><span>{it.L('Download for Android')}</span></a>
+                        <span className='ios-download-grid-app invisible'>{it.L('Binary Grid is currently only available on Android devices.')}</span>
+                        <span className='divider-sm' />
+                    </p>
                 </div>
             </div>
         </div>
@@ -218,7 +222,7 @@ const Platform = () => (
                                 status='new'
                                 header={it.L('Binary Grid')}
                                 description={it.L('Micro-trading on the go')}
-                                text={it.L('Seamless trading on your mobile device, at the speed of touch.')}
+                                text={it.L('In the new, exciting Binary Grid, win whenever the trade ends outside your selected cell.')}
                             />
                             <Platforms
                                 image='tick-trade'
@@ -228,15 +232,6 @@ const Platform = () => (
                                 url='https://ticktrade.binary.com/download/ticktrade-app.apk'
                                 button_text={it.L('Download Tick Trade App')}
                                 download='true'
-                            />
-                            <Platforms
-                                image='trading-multibarrier'
-                                header={it.L('Ladders')}
-                                className='financial-only'
-                                description={it.L('Multi-barrier trading')}
-                                text={it.L('Trade FX binary options on our multi-barrier platform, Ladders.')}
-                                url={it.url_for('multi_barriers_trading')}
-                                button_text={it.L('Trade now')}
                             />
                             <PlatformsDesktop
                                 image='devices'

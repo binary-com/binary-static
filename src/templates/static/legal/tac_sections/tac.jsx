@@ -59,7 +59,7 @@ const Tac = () => (
             `<a href='${it.url_for('cashier/payment_methods')}'>`, '</a>')}
         </p>
         <p>{it.L('A client should not use the client\'s account as a banking facility, and deposits should only be made with a view to using funds to place contracts. The Company is not a financial institution, and the client will not receive interest on deposits. Should a client make repeated deposits and withdrawals without placing commensurate contracts, the Company reserves the right to pass on to the client\'s account, without prior notice, any bank charges the Company has incurred before closing the account.')}</p>
-        <p>{it.L('Internal currency transfers between accounts are allowed up to a maximum of USD 2,500.00 or equivalent. Transfers are allowed between any available currency pair but cannot be done between the Binary and MT5 accounts.')}</p>
+        <p>{it.L('Transfers between Binary fiat and cryptocurrency accounts are allowed up to a maximum of USD 2,500.00 or equivalent. Fiat and cryptocurrency transfers are also allowed between Binary and MT5 accounts. Charges may apply for every successful transaction.')}</p>
 
         <h2 data-anchor='prohibited-trades'>H. {it.L('Prohibited trades')}</h2>
         <p>{it.L('The Company reserves the right to refuse to do business with, to discontinue to do business with, and to reverse the transactions of clients who engage in any trading activity')}</p>
@@ -103,6 +103,7 @@ const Tac = () => (
         </p>
 
         <h2 data-anchor='companys-rights'>J. {it.L('Company\'s rights')}</h2>
+        <p>{it.L('The Company does not tolerate any form of inappropriate behaviour. This includes the usage of offensive language. The Company reserves the right to restrict or terminate the client\'s account if there is any form of inappropriate behaviour on the client\'s part.')}</p>
         <p>{it.L('The Company reserves the right to suspend the operation of this site or sections thereof in the following cases:')}
             <ul className='bullet'>
                 <li>{it.L('When, as a result of political, economic, military, or monetary events (including unusual market volatility or illiquidity) or any circumstances outside the control, responsibility, and power of the Company, the continued operation of this site is not reasonably practicable without materially and adversely affecting and prejudicing the interests of clients or the Company, or if, in the opinion of the Company, a price cannot be calculated for financial contracts')}</li>

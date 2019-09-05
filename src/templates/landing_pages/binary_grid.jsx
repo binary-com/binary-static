@@ -10,7 +10,7 @@ const gridLP = () => (
             'https://style.binary.com/binary.css',
         ]}
         js_files={[
-            'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js',
+            'https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js',
             'https://style.binary.com/binary.more.js',
             it.url_for('js/landing_pages/common.js'),
             it.url_for('js/landing_pages/binary_grid.js'),
@@ -27,12 +27,15 @@ const gridLP = () => (
                     </div>
                     <div className='home-header-content lg-center'>
                         <div className='gr-row gr-row-align-middle'>
-                            <div className='gr-5 gr-12-t gr-12-m gr-12-p'>
+                            <div className='gr-6 gr-12-t gr-12-m gr-12-p'>
                                 <h1 className='header-title content-inverse-color ft-300'>{('Our exciting new mobile trading app')}</h1>
                                 <span className='header-sub secondary-color'>{('Seamless trading on your smartphone.')}</span>
-                                <p><a className='button download'><span className='button-lg'>{('Get Binary Grid now')}</span></a></p>
+                                <p>
+                                    <a className='android-button invisible button download'><span className='button-lg'>{('Get Binary Grid now')}</span></a>
+                                    <span className='ios-message invisible content-inverse-color'>{('Binary Grid is currently only available on Android devices.')}</span>
+                                </p>
                             </div>
-                            <div className='gr-7 gr-12-t gr-12-m gr-12-p'><img className='phone' src={it.url_for('images/grid_lp/phone.png')} alt='seamless trading on your smartphone' /></div>
+                            <div className='gr-6 gr-12-t gr-12-m gr-12-p'><img className='phone' src={it.url_for('images/grid_lp/phone.png')} alt='seamless trading on your smartphone' /></div>
                         </div>
                     </div>
                 </div>
@@ -41,7 +44,7 @@ const gridLP = () => (
                 <div className='container'>
                     <div className='gr-row'>
                         <div className='gr-12 section-header'>
-                            <h2 className='primary-color'>{('Built for your convenience, designed by traders')}</h2>
+                            <h2 className='primary-color'>{('The all-new Binary Grid experience')}</h2>
                         </div>
                     </div>
                     <div className='gr-row gr-row-align-middle'>
@@ -80,7 +83,7 @@ const gridLP = () => (
                             </div>
                             <div className='right-col-feature'>
                                 <h3>{('Limited risks')}</h3>
-                                <p>{('Get started with stakes as low as 20¢.')}</p>
+                                <p>{('Get started with stakes as low as $1.')}</p>
                             </div>
                         </div>
                     </div>
@@ -130,7 +133,7 @@ const gridLP = () => (
                         <div className='gr-1on5 gr-12-t gr-12-m gr-12-p col-step'>
                             <div className='line-right' />
                             <div className='step icon-step-1' />
-                            <p>{('Click')} <a className='download'>{('here')}</a> {('to download Binary Grid for Android.')}</p>
+                            <p><a className='android-button download invisible'>{('Download Binary Grid')}</a><span className='ios-message invisible'>{('Download Binary Grid')}</span> {('for Android.')}</p>
                         </div>
                         <div className='gr-1on5 gr-12-t gr-12-m gr-12-p col-step'>
                             <div className='line-left' />
@@ -148,7 +151,7 @@ const gridLP = () => (
                             <div className='line-left' />
                             <div className='line-right' />
                             <div className='step icon-step-4' />
-                            <p>{('Approve the installation by clicking on')} <a className='download'>{('Install.')}</a></p>
+                            <p>{('Approve the installation by clicking on')} <a className='android-button download invisible'>{('Install.')}</a><span className='ios-message invisible'>{('Install.')}</span></p>
                         </div>
                         <div className='gr-1on5 gr-12-t gr-12-m gr-12-p col-step'>
                             <div className='line-left' />
@@ -160,7 +163,7 @@ const gridLP = () => (
                     <div className='gr-row gr-row-align-around'>
                         <div className='gr-6 gr-12-t gr-12-m gr-12-p'>
                             <div className='padding-md ft-bold'>
-                                <p>{('Only available for Android devices at the moment.')}<span className='block-element block-xs'>{('Binary Grid for iOS devices coming soon.')}</span></p>
+                                <p>{('Only available for Android devices at the moment.')}</p>
                             </div>
                         </div>
                         <div className='gr-4 gr-12-t gr-12-m gr-12-p'>
@@ -175,7 +178,7 @@ const gridLP = () => (
                     </div>
                     <div className='gr-row'>
                         <div className='gr-12 center-text'>
-                            <a className='button download'><span className='button-lg'>{('Get Binary Grid now')}</span></a>
+                            <a className='android-button invisible button download'><span className='button-lg'>{('Get Binary Grid now')}</span></a>
                         </div>
                     </div>
                 </div>

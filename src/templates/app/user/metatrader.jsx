@@ -83,7 +83,7 @@ const Metatrader = () => (
                 <div id='mt_left_panel' className='gr-9 gr-12-t gr-12-p gr-12-m gr-no-gutter gr-gutter-right gr-no-gutter-p gr-no-gutter-m'>
                     <div id='account_details' className='mt-panel mt-container'>
                         <div className='gr-row'>
-                            <div className='gr-grow'>
+                            <div className='gr-9 gr-12-m gr-12-p'>
                                 <div className='gr-row'>
                                     <div className='gr-grow'>
                                         <div id='account_selector'>
@@ -106,15 +106,15 @@ const Metatrader = () => (
                                     </div>
                                     <div className='gr-row'>
                                         <div className='gr-3'>{it.L('Name:')}</div>
-                                        <div data='name' />
+                                        <div className='gr-9' data='name' />
                                     </div>
                                     <div className='gr-row gr-padding-10 gr-hide mobile-balance'>
                                         <div className='gr-3'>{it.L('Balance:')}</div>
-                                        <div className='gr-gutter' data='balance' />
+                                        <div className='gr-9' data='balance' />
                                     </div>
                                 </div>
                             </div>
-                            <div className='gr-adapt align-end gr-hide-m gr-hide-p'>
+                            <div className='gr-3 align-end gr-hide-m gr-hide-p'>
                                 <div className='acc-info has-account invisible'>
                                     <div>{it.L('Balance')}</div>
                                     <div className='balance gr-padding-10' data='balance' />
@@ -170,12 +170,12 @@ const Metatrader = () => (
                         </div>
                         <div className='mt-sidebar-button'>
                             <div className='small-icon'>
-                                <a href='https://trade.mql5.com' target='_blank' rel='noopener noreferrer'>
+                                <a href='https://trade.mql5.com/trade?servers=Binary.com-Server&amp;trade_server=Binary.com-Server' target='_blank' rel='noopener noreferrer'>
                                     <img src={it.url_for('images/pages/metatrader/dashboard/img-app-mac@2x.png')} />
                                 </a>
                             </div>
                             <div className='mt-link'>
-                                <a href='https://trade.mql5.com' target='_blank' rel='noopener noreferrer'>
+                                <a href='https://trade.mql5.com/trade?servers=Binary.com-Server&amp;trade_server=Binary.com-Server' target='_blank' rel='noopener noreferrer'>
                                     {it.L('MT5 Web platform')}
                                 </a>
                             </div>
@@ -318,7 +318,7 @@ const Metatrader = () => (
                                 </div>
                                 <div id='view_2' className='gr-row invisible'>
                                     <div className='container gr-8 gr-12-m'>
-                                        <FormRow is_two_rows type='text'     id='txt_name'          label={it.L('Name')} attributes={{ maxLength: 30, autoComplete: 'off' }} />
+                                        <FormRow is_two_rows type='text'     id='txt_name'          label={it.L('Name')} attributes={{ maxLength: 101, autoComplete: 'off' }} />
                                         <FormRow is_two_rows type='password' id='txt_main_pass'     label={it.L('Main password')}     tooltip={it.L('Access your account with full trading permission.')}             hint={it.L('Minimum eight characters. Must contain numbers, and mix of upper and lower case letters.')} />
                                         <FormRow is_two_rows type='password' id='txt_re_main_pass'  label={it.L('Verify main password')} />
                                         <FormRow is_two_rows type='password' id='txt_investor_pass' label={it.L('Investor password')} tooltip={it.L('Share access to your account without any permission to trade.')} hint={it.L('Minimum eight characters. Must contain numbers, and mix of upper and lower case letters.')} />
@@ -553,7 +553,6 @@ const Metatrader = () => (
 
                                             <div className='form'>
                                                 <FormRow is_two_rows type='text' id='txt_amount_withdrawal' label={it.L('Amount')} attributes={{ maxLength: 10 }} hint={it.L('Subject to [_1] transfer fee or [_2], whichever is higher', '<span id="transfer_fee_amount_from"></span>', '<span id="transfer_fee_minimum_from"></span>')} />
-                                                <FormRow is_two_rows type='password' id='txt_main_pass_wd' label={it.L('MetaTrader 5 main password')} />
                                                 <SubmitButton
                                                     is_centered
                                                     is_full_width
@@ -572,9 +571,16 @@ const Metatrader = () => (
 
                     <div id='messages'>
                         <div id='msg_set_currency'>{it.L('To perform this action, please set the [_1]currency[_2] of your account.', `<a href="${it.url_for('user/set-currency')}">`, '</a>')}</div>
-                        <div id='msg_switch'>{it.L('To perform this action, please switch to your [_1] Real Account.', it.website_name)}</div>
-                        <div id='msg_switch_financial'>{it.L('To perform this action, please switch to your [_1] Financial account', it.website_name)}</div>
-                        <div id='msg_upgrade'>{it.L('To perform this action, please [_1]upgrade to [_2] Real Account[_3].', `<a href="${it.url_for('new_account/realws')}">` , it.website_name, '</a>')}</div>
+                        <div id='msg_switch'>
+                            {it.L('To perform this action, please switch to your [_1] Real Account.', it.website_name)}
+                            <br />
+                            {it.L('If you do not have a [_1] Real Account yet, please [_2]create one[_3].', it.website_name, `<a href="${it.url_for('new_account/realws')}">` , '</a>')}
+                        </div>
+                        <div id='msg_switch_financial'>
+                            {it.L('To perform this action, please switch to your [_1] financial account.', it.website_name)}
+                            <br />
+                            {it.L('If you do not have a [_1] financial account yet, please create one.', it.website_name)}
+                        </div>
                         <div id='msg_real_financial'>
                             <span id='msg_metatrader_account' className='invisible'>{it.L('To create a MetaTrader 5 account:')}</span>
                             <span id='msg_mam_account' className='invisible'>{it.L('To create a MAM real account, please:')}</span>
