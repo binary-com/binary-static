@@ -25,7 +25,7 @@ const Authenticate = () => (
 
         <div id='authentication_verified' className='center-text gr-padding-20 invisible'>
             <img className='gr-padding-20' src={it.url_for('images/pages/authenticate/valid.svg')} />
-            <h1 className='gr-padding-10'>{it.L('Your account has been successfully verified')}</h1>
+            <h1 className='gr-padding-10'>{it.L('Your account has been verified successfully')}</h1>
         </div>
 
         <div id='authentication_tab'>
@@ -55,7 +55,7 @@ const Authenticate = () => (
                         <div id='upload_complete' className='center-text gr-padding-20 invisible'>
                             <img className='gr-padding-20' src={it.url_for('images/pages/authenticate/letter.svg')} />
                             <h1 className='gr-padding-10'>{it.L('Your proof of identity was submitted successfully')}</h1>
-                            <p>{it.L('Your document is being reviewed, please check back in 1-3 days.')}</p>
+                            <p>{it.L('Your document is being reviewed, please check back in 1-3 days')}</p>
                         </div>
 
                         <div id='error_occured' className='center-text gr-padding-20 invisible'>
@@ -66,14 +66,14 @@ const Authenticate = () => (
 
                         <div id='expired_poi' className='center-text gr-padding-20 invisible'>
                             <img className='gr-padding-20' src={it.url_for('images/pages/authenticate/invalid.svg')} />
-                            <h1 className='gr-padding-10'>{it.L('Proof of identity has passed expiration date')}</h1>
-                            <p>{it.L('Kindly send a scan of a valid identity document to [_1]support@binary.com[_2]', '<a href="mailto:support@binary.com" target="_blank">', '</a>')}</p>
+                            <h1 className='gr-padding-10'>{it.L('Your proof of identity has expired')}</h1>
+                            <p>{it.L('Kindly send a scan of a valid proof of identity to [_1]support@binary.com[_2]', '<a href="mailto:support@binary.com" target="_blank">', '</a>')}</p>
                         </div>
 
                         <div id='unverified' className='center-text gr-padding-20 invisible'>
                             <img className='gr-padding-20' src={it.url_for('images/pages/authenticate/invalid.svg')} />
                             <h1 className='gr-padding-10'>{it.L('Proof of identity verification failed')}</h1>
-                            <p>{it.L('Please check your email for details.')}</p>
+                            <p>{it.L('Please check your email for details')}</p>
                         </div>
 
                         <div id='verified' className='center-text gr-padding-20 invisible'>
@@ -96,19 +96,19 @@ const Authenticate = () => (
                                 <div id='pending_poa' className='center-text gr-gutter gr-padding-20 invisible'>
                                     <img className='gr-padding-20' src={it.url_for('images/pages/authenticate/letter.svg')} />
                                     <h1 className='gr-padding-10'>{it.L('Your proof of address was submitted successfully')}</h1>
-                                    <p>{it.L('Your document is being reviewed, please check back in 1-3 days.')}</p>
+                                    <p>{it.L('Your document is being reviewed, please check back in 1-3 days')}</p>
                                 </div>
 
                                 <div id='expired_poa' className='center-text gr-padding-20 invisible'>
                                     <img className='gr-padding-20' src={it.url_for('images/pages/authenticate/invalid.svg')} />
-                                    <h1 className='gr-padding-10'>{it.L('Proof of address has passed expiration date')}</h1>
-                                    <p>{it.L('Kindly send a scan of a valid address document to [_1]support@binary.com[_2]', '<a href="mailto:support@binary.com" target="_blank">', '</a>')}</p>
+                                    <h1 className='gr-padding-10'>{it.L('Your proof of address has expired')}</h1>
+                                    <p>{it.L('Kindly send a scan of a valid proof of address to [_1]support@binary.com[_2]', '<a href="mailto:support@binary.com" target="_blank">', '</a>')}</p>
                                 </div>
     
                                 <div id='unverified_poa' className='center-text gr-gutter gr-padding-20 invisible'>
                                     <img className='gr-padding-20' src={it.url_for('images/pages/authenticate/invalid.svg')} />
                                     <h1 className='gr-padding-10'>{it.L('Proof of address verification failed')}</h1>
-                                    <p>{it.L('Please check your email for details.')}</p>
+                                    <p>{it.L('Please check your email for details')}</p>
                                 </div>
     
                                 <p className='center-text notice-msg invisible' id='error_message' />
