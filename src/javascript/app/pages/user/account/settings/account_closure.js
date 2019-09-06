@@ -1,52 +1,183 @@
-const getCurrencies       = require('../../get_currency').getCurrencies;
-const MetaTrader          = require('../../../user/metatrader/metatrader');
-const BinarySocket        = require('../../../../base/socket');
-const getCurrencyFullName = require('../../../../common/currency').getCurrencyFullName;
-const localize            = require('../../../../../_common/localize').localize;
-const Url                 = require('../../../../../_common/url');
-const isCryptocurrency    = require('../../../../../_common/base/currency_base').isCryptocurrency;
+const getCurrencies                = require('../../get_currency').getCurrencies;
+const getCurrenciesOfOtherAccounts = require('../../get_currency').getCurrenciesOfOtherAccounts;
+const BinarySocket                 = require('../../../../base/socket');
+const Client                       = require('../../../../base/client');
+const getCurrencyFullName          = require('../../../../common/currency').getCurrencyFullName;
+const localize                     = require('../../../../../_common/localize').localize;
+const Url                          = require('../../../../../_common/url');
+const isCryptocurrency             = require('../../../../../_common/base/currency_base').isCryptocurrency;
+const hasAccountType               = require('../../../../../_common/base/client_base').hasAccountType;
+const hasCurrencyType              = require('../../../../../_common/base/client_base').hasCurrencyType;
+const hasOnlyCurrencyType          = require('../../../../../_common/base/client_base').hasOnlyCurrencyType;
 
 const AccountClosure = (() => {
     const form_selector = '#form_closure';
     let $form,
         $txt_other_reason,
         $closure_loading,
+        $submit_loading,
         $closure_container,
+        $trading_limit,
+        $fiat_1,
+        $fiat_2,
+        $crypto_1,
+        $crypto_2,
+        $virtual,
         $success_msg,
-        $error_msg,
-        $crypto,
-        $fiat;
+        $error_msg;
 
     const onLoad = () => {
         $txt_other_reason  = $('#other_reason');
         $closure_loading   = $('#closure_loading');
+        $submit_loading    = $('#submit_loading');
         $closure_container = $('#closure_container');
         $success_msg       = $('#msg_main');
         $error_msg         = $('#msg_form');
-        $crypto            = $('#crypto');
-        $fiat              = $('#change-fiat');
+        $trading_limit     = $('.trading_limit');
+        $virtual           = $('.virtual');
+        $crypto_1          = $('.crypto_1');
+        $crypto_2          = $('.crypto_2');
+        $fiat_1            = $('.fiat_1');
+        $fiat_2            = $('.fiat_2');
         $form              = $(form_selector);
 
+        $closure_loading.setVisibility(1);
+
+        const is_virtual        = !hasAccountType('real');
+        const has_trading_limit = hasAccountType('real');
+        const is_fiat           = hasOnlyCurrencyType('fiat');
+        const is_crypto         = hasOnlyCurrencyType('crypto');
+        const is_both           = hasCurrencyType('fiat') && hasCurrencyType('crypto');
+        const current_email     = Client.get('email');
+        const current_currency  = Client.get('currency');
+        // CommonFunctions.getVisibleElement('currency').getAttribute('value')
+
         BinarySocket.wait('landing_company').then((response) => {
+            console.log(response.landing_company)
             const currencies = getCurrencies(response.landing_company, true);
-            if (currencies) {
+            const other_currencies = getCurrenciesOfOtherAccounts(true);
+
+            if (is_virtual) {
+                $virtual.setVisibility(1);
+                currencies.forEach((currency) => {
+                    $virtual.find('ul').append(`<li>${getCurrencyFullName(currency)}</li>`);
+                });
+                
+            }
+            if (is_fiat) {
+                $fiat_1.setVisibility(1);
+                $fiat_2.setVisibility(1);
+
+                $('#current_currency_fiat').text(current_currency);
+
                 currencies.forEach((currency) => {
                     if (isCryptocurrency(currency)) {
-                        $crypto.find('ul').append(`<li>${getCurrencyFullName(currency)}</li>`);
+                        $fiat_2.find('ul').append(`<li>${getCurrencyFullName(currency)}</li>`);
                     } else {
-                        $fiat.find('ul').append(`<li>${getCurrencyFullName(currency)}</li>`);
+                        $fiat_1.find('ul').append(`<li>${getCurrencyFullName(currency)}</li>`);
                     }
                 });
-                if (!$crypto.find('li').length) $crypto.setVisibility(0);
-                if (!$fiat.find('li').length) $fiat.setVisibility(0);
+
             }
-            if (!MetaTrader.isEligible()) {
-                $('#mt5_withdraw').setVisibility(0);
+            if (is_crypto) {
+                $crypto_1.setVisibility(1);
+                $crypto_2.setVisibility(1);
+
+                $('#current_currency_crypto').text(current_currency);
+
+                currencies.forEach((currency) => {
+                    if (isCryptocurrency(currency)) {
+                        $crypto_2.find('ul').append(`<li>${getCurrencyFullName(currency)}</li>`);
+                    } else {
+                        $crypto_1.find('ul').append(`<li>${getCurrencyFullName(currency)}</li>`);
+                    }
+                });
             }
+            if (is_both) {
+                $fiat_1.setVisibility(1);
+                $crypto_2.setVisibility(1);
+                let crypto_currencies = '';
+                console.log(currencies)
+
+                if (isCryptocurrency(current_currency)) {
+                    crypto_currencies = Client.get('currency');
+                    other_currencies.forEach(currency => {
+                        if (isCryptocurrency(currency)) {
+                            crypto_currencies += `, ${currency}`;
+                        } else {
+                            $('#current_currency_fiat').text(currency);
+                        }
+                    });
+                    $('#current_currency_crypto').text(crypto_currencies);
+                } else {
+                    // eslint-disable-next-line
+                    if (Client.get('landing_company_shortcode') === 'virtual') {
+                        let fiat_currency = '';
+                        other_currencies.forEach((currency, idx) => {
+                            if (isCryptocurrency(currency)) {
+                                if (!crypto_currencies) {
+                                    crypto_currencies += currency;
+                                } else {
+                                    crypto_currencies += `, ${currency}`;
+                                }
+                            } else {
+                                fiat_currency += currency;
+                            }
+                            $('#current_currency_fiat').text(fiat_currency);
+                            $('#current_currency_crypto').text(crypto_currencies);
+                        });
+                    } else {
+                        $('#current_currency_fiat').text(current_currency);
+                        other_currencies.forEach((currency, idx) => {
+                            if (idx === 0) {
+                                crypto_currencies += currency;
+                            } else {
+                                crypto_currencies += `, ${currency}`;
+                            }
+                        });
+                        $('#current_currency_crypto').text(crypto_currencies);
+                    }
+
+                }
+
+                currencies.forEach((currency) => {
+                    let is_allowed = true;
+                    other_currencies.forEach((other_currency) => {
+                        if (currency === other_currency) {
+                            is_allowed = false;
+                        }
+                    });
+                    if (is_allowed) {
+                        if (isCryptocurrency(currency)) {
+                            $crypto_2.find('ul').append(`<li>${getCurrencyFullName(currency)}</li>`);
+                        } else {
+                            $fiat_1.find('ul').append(`<li>${getCurrencyFullName(currency)}</li>`);
+                        }
+                    }
+
+                });
+
+            }
+            if (has_trading_limit) {
+                $trading_limit.setVisibility(1);
+                $('#closing_steps').setVisibility(1);
+            }
+            $('.current_currency').text(current_currency);
+            $('#current_email').text(current_email);
+            $closure_loading.setVisibility(0);
+
+            $closure_container.setVisibility(1);
         }).catch((error) => {
             showFormMessage(error.message);
+            $closure_loading.setVisibility(0);
+            $closure_container.setVisibility(1);
         });
-        $closure_container.setVisibility(1);
+
+        $('#closure_accordion').accordion({
+            heightStyle: 'content',
+            collapsible: true,
+            active     : true,
+        });
 
         $(form_selector).on('submit', (event) => {
             event.preventDefault();
@@ -66,17 +197,17 @@ const AccountClosure = (() => {
         const $btn_submit = $form.find('#btn_submit');
         const reason = getReason();
         if (reason) {
-            $closure_loading.setVisibility(1);
+            $submit_loading.setVisibility(1);
             $btn_submit.attr('disabled', true);
 
             const data  = { account_closure: 1, reason };
             BinarySocket.send(data).then((response) => {
                 if (response.error) {
-                    $closure_loading.setVisibility(0);
+                    $submit_loading.setVisibility(0);
                     showFormMessage(response.error.message || localize('Sorry, an error occurred while processing your request.'));
                     $btn_submit.attr('disabled', false);
                 } else {
-                    $closure_loading.setVisibility(0);
+                    $submit_loading.setVisibility(0);
                     $closure_container.setVisibility(0);
                     $success_msg.setVisibility(1);
 

@@ -2,18 +2,31 @@ const Client   = require('../../base/client');
 const Currency = require('../../common/currency');
 
 const GetCurrency = (() => {
-    const getCurrenciesOfOtherAccounts = () => {
+    const getCurrenciesOfOtherAccounts = (is_different_company = false) => {
         const all_loginids     = Client.getAllLoginids();
         const other_currencies = [];
+        // console.log(Client.get('landing_company_shortcode'))
         const current_landing_company_shortcode = Client.get('landing_company_shortcode');
+        // console.log(Client.get('loginid'))
         all_loginids.forEach((loginid) => {
             // if it's not current client or under a different landing company, consider the currency
-            if (Client.get('loginid') !== loginid && current_landing_company_shortcode === Client.get('landing_company_shortcode', loginid)) {
-                const currency = Client.get('currency', loginid);
-                if (currency) {
-                    other_currencies.push(currency);
+            if (is_different_company) {
+                if (Client.get('loginid') !== loginid) {
+                    const currency = Client.get('currency', loginid);
+                    if (currency) {
+                        other_currencies.push(currency);
+                    }
+                }
+            } else {
+                // eslint-disable-next-line
+                if (Client.get('loginid') !== loginid && current_landing_company_shortcode === Client.get('landing_company_shortcode', loginid)) {
+                    const currency = Client.get('currency', loginid);
+                    if (currency) {
+                        other_currencies.push(currency);
+                    }
                 }
             }
+
         });
         return other_currencies;
     };

@@ -112,6 +112,15 @@ const ClientBase = (() => {
             !get('is_virtual', loginid) && !isCryptocurrency(get('currency', loginid)));
     };
 
+    const hasOnlyCurrencyType = (type) => {
+        const loginids = getAllLoginids();
+        if (type === 'crypto') {
+            return loginids.every(loginid => isCryptocurrency(get('currency', loginid)));
+        }
+
+        return loginids.every(loginid => !isCryptocurrency(get('currency', loginid)));
+    };
+
     const TypesMapConfig = (() => {
         let types_map_config;
 
@@ -340,6 +349,7 @@ const ClientBase = (() => {
         getAccountOfType,
         hasAccountType,
         hasCurrencyType,
+        hasOnlyCurrencyType,
         getAccountTitle,
         responseAuthorize,
         shouldAcceptTnc,
