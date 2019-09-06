@@ -62,53 +62,42 @@ const AccountClosure = (() => {
                     $virtual.find('ul').append(`<li>${getCurrencyFullName(currency)}</li>`);
                 });
                 
-            }
-            if (is_fiat) {
-                $fiat_1.setVisibility(1);
-                $fiat_2.setVisibility(1);
+            } else {
+                if (is_fiat) {
+                    $fiat_1.setVisibility(1);
+                    $fiat_2.setVisibility(1);
 
-                $('#current_currency_fiat').text(current_currency);
+                    let fiat_currency = '';
+                    other_currencies.forEach((currency) => {
+                        if (!isCryptocurrency(currency)) {
+                            fiat_currency = currency;
+                        }
+                        $('#current_currency_fiat').text(fiat_currency);
+                        $('.current_currency').text(fiat_currency);
+                    });
 
-                currencies.forEach((currency) => {
-                    if (isCryptocurrency(currency)) {
-                        $fiat_2.find('ul').append(`<li>${getCurrencyFullName(currency)}</li>`);
-                    } else {
-                        $fiat_1.find('ul').append(`<li>${getCurrencyFullName(currency)}</li>`);
-                    }
-                });
-            }
-            if (is_crypto) {
-                $crypto_1.setVisibility(1);
-                $crypto_2.setVisibility(1);
-
-                $('#current_currency_crypto').text(current_currency);
-
-                currencies.forEach((currency) => {
-                    if (isCryptocurrency(currency)) {
-                        $crypto_2.find('ul').append(`<li>${getCurrencyFullName(currency)}</li>`);
-                    } else {
-                        $crypto_1.find('ul').append(`<li>${getCurrencyFullName(currency)}</li>`);
-                    }
-                });
-            }
-            if (is_both) {
-                $fiat_1.setVisibility(1);
-                $crypto_2.setVisibility(1);
-                let crypto_currencies = '';
-
-                if (isCryptocurrency(current_currency)) {
-                    crypto_currencies = Client.get('currency');
-                    other_currencies.forEach(currency => {
-                        if (isCryptocurrency(currency)) {
-                            crypto_currencies += `, ${currency}`;
-                        } else {
-                            $('#current_currency_fiat').text(currency);
-                            $('.current_currency').text(currency);
+                    currencies.forEach((currency) => {
+                        let is_allowed = true;
+                        other_currencies.forEach((other_currency) => {
+                            if (currency === other_currency) {
+                                is_allowed = false;
+                            }
+                        });
+                        if (is_allowed) {
+                            if (isCryptocurrency(currency)) {
+                                $fiat_2.find('ul').append(`<li>${getCurrencyFullName(currency)}</li>`);
+                            } else {
+                                $fiat_1.find('ul').append(`<li>${getCurrencyFullName(currency)}</li>`);
+                            }
                         }
                     });
-                    $('#current_currency_crypto').text(crypto_currencies);
-                } else {
-                    let fiat_currency = '';
+                }
+
+                if (is_crypto) {
+                    $crypto_1.setVisibility(1);
+                    $crypto_2.setVisibility(1);
+                    let crypto_currencies = '';
+
                     other_currencies.forEach((currency) => {
                         if (isCryptocurrency(currency)) {
                             if (!crypto_currencies) {
@@ -116,37 +105,96 @@ const AccountClosure = (() => {
                             } else {
                                 crypto_currencies += `, ${currency}`;
                             }
-                        } else {
-                            fiat_currency += currency;
                         }
-                        $('#current_currency_fiat').text(fiat_currency);
-                        $('.current_currency').text(fiat_currency);
+
+                        $('.current_currency').text(crypto_currencies);
                         $('#current_currency_crypto').text(crypto_currencies);
                     });
-                }
 
-                currencies.forEach((currency) => {
-                    let is_allowed = true;
-                    other_currencies.forEach((other_currency) => {
-                        if (currency === other_currency) {
-                            is_allowed = false;
+                    currencies.forEach((currency) => {
+                        let is_allowed = true;
+                        other_currencies.forEach((other_currency) => {
+                            if (currency === other_currency) {
+                                is_allowed = false;
+                            }
+                        });
+                        if (is_allowed) {
+                            if (isCryptocurrency(currency)) {
+                                $crypto_2.find('ul').append(`<li>${getCurrencyFullName(currency)}</li>`);
+                            } else {
+                                $crypto_1.find('ul').append(`<li>${getCurrencyFullName(currency)}</li>`);
+                            }
                         }
                     });
-                    if (is_allowed) {
-                        if (isCryptocurrency(currency)) {
-                            $crypto_2.find('ul').append(`<li>${getCurrencyFullName(currency)}</li>`);
-                        } else {
-                            $fiat_1.find('ul').append(`<li>${getCurrencyFullName(currency)}</li>`);
-                        }
+    
+                    // $('#current_currency_crypto').text(current_currency);
+    
+                    // currencies.forEach((currency) => {
+                    //     if (isCryptocurrency(currency)) {
+                    //         $crypto_2.find('ul').append(`<li>${getCurrencyFullName(currency)}</li>`);
+                    //     } else {
+                    //         $crypto_1.find('ul').append(`<li>${getCurrencyFullName(currency)}</li>`);
+                    //     }
+                    // });
+                }
+
+                if (is_both) {
+                    $fiat_1.setVisibility(1);
+                    $crypto_2.setVisibility(1);
+                    let crypto_currencies = '';
+
+                    if (isCryptocurrency(current_currency)) {
+                        crypto_currencies = Client.get('currency');
+                        other_currencies.forEach(currency => {
+                            if (isCryptocurrency(currency)) {
+                                crypto_currencies += `, ${currency}`;
+                            } else {
+                                $('#current_currency_fiat').text(currency);
+                                $('.current_currency').text(currency);
+                            }
+                        });
+                        $('#current_currency_crypto').text(crypto_currencies);
+                    } else {
+                        let fiat_currency = '';
+                        other_currencies.forEach((currency) => {
+                            if (isCryptocurrency(currency)) {
+                                if (!crypto_currencies) {
+                                    crypto_currencies += currency;
+                                } else {
+                                    crypto_currencies += `, ${currency}`;
+                                }
+                            } else {
+                                fiat_currency += currency;
+                            }
+                            $('#current_currency_fiat').text(fiat_currency);
+                            $('.current_currency').text(fiat_currency);
+                            $('#current_currency_crypto').text(crypto_currencies);
+                        });
                     }
 
-                });
+                    currencies.forEach((currency) => {
+                        let is_allowed = true;
+                        other_currencies.forEach((other_currency) => {
+                            if (currency === other_currency) {
+                                is_allowed = false;
+                            }
+                        });
+                        if (is_allowed) {
+                            if (isCryptocurrency(currency)) {
+                                $crypto_2.find('ul').append(`<li>${getCurrencyFullName(currency)}</li>`);
+                            } else {
+                                $fiat_1.find('ul').append(`<li>${getCurrencyFullName(currency)}</li>`);
+                            }
+                        }
+                    });
 
+                }
+                if (has_trading_limit) {
+                    $trading_limit.setVisibility(1);
+                    $('#closing_steps').setVisibility(1);
+                }
             }
-            if (has_trading_limit) {
-                $trading_limit.setVisibility(1);
-                $('#closing_steps').setVisibility(1);
-            }
+
             $('#current_email').text(current_email);
             $closure_loading.setVisibility(0);
 

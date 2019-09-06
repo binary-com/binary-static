@@ -114,11 +114,13 @@ const ClientBase = (() => {
 
     const hasOnlyCurrencyType = (type) => {
         const loginids = getAllLoginids();
+        const real_loginid = new RegExp('^(MX|MF|MLT|CR|FOG)[0-9]+$', 'i');
+        const only_real_loginids = loginids.filter((loginid) => real_loginid.test(loginid));
         if (type === 'crypto') {
-            return loginids.every(loginid => !get('is_virtual', loginid) && isCryptocurrency(get('currency', loginid)));
+            return only_real_loginids.every(loginid => isCryptocurrency(get('currency', loginid)));
         }
 
-        return loginids.every(loginid => !get('is_virtual', loginid) && !isCryptocurrency(get('currency', loginid)));
+        return only_real_loginids.every(loginid => !isCryptocurrency(get('currency', loginid)));
     };
 
     const TypesMapConfig = (() => {
