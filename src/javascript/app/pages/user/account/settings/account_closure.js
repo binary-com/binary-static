@@ -53,7 +53,6 @@ const AccountClosure = (() => {
         // CommonFunctions.getVisibleElement('currency').getAttribute('value')
 
         BinarySocket.wait('landing_company').then((response) => {
-            console.log(response.landing_company)
             const currencies = getCurrencies(response.landing_company, true);
             const other_currencies = getCurrenciesOfOtherAccounts(true);
 
@@ -77,7 +76,6 @@ const AccountClosure = (() => {
                         $fiat_1.find('ul').append(`<li>${getCurrencyFullName(currency)}</li>`);
                     }
                 });
-
             }
             if (is_crypto) {
                 $crypto_1.setVisibility(1);
@@ -97,7 +95,6 @@ const AccountClosure = (() => {
                 $fiat_1.setVisibility(1);
                 $crypto_2.setVisibility(1);
                 let crypto_currencies = '';
-                console.log(currencies)
 
                 if (isCryptocurrency(current_currency)) {
                     crypto_currencies = Client.get('currency');
@@ -106,38 +103,26 @@ const AccountClosure = (() => {
                             crypto_currencies += `, ${currency}`;
                         } else {
                             $('#current_currency_fiat').text(currency);
+                            $('.current_currency').text(currency);
                         }
                     });
                     $('#current_currency_crypto').text(crypto_currencies);
                 } else {
-                    // eslint-disable-next-line
-                    if (Client.get('landing_company_shortcode') === 'virtual') {
-                        let fiat_currency = '';
-                        other_currencies.forEach((currency, idx) => {
-                            if (isCryptocurrency(currency)) {
-                                if (!crypto_currencies) {
-                                    crypto_currencies += currency;
-                                } else {
-                                    crypto_currencies += `, ${currency}`;
-                                }
-                            } else {
-                                fiat_currency += currency;
-                            }
-                            $('#current_currency_fiat').text(fiat_currency);
-                            $('#current_currency_crypto').text(crypto_currencies);
-                        });
-                    } else {
-                        $('#current_currency_fiat').text(current_currency);
-                        other_currencies.forEach((currency, idx) => {
-                            if (idx === 0) {
+                    let fiat_currency = '';
+                    other_currencies.forEach((currency) => {
+                        if (isCryptocurrency(currency)) {
+                            if (!crypto_currencies) {
                                 crypto_currencies += currency;
                             } else {
                                 crypto_currencies += `, ${currency}`;
                             }
-                        });
+                        } else {
+                            fiat_currency += currency;
+                        }
+                        $('#current_currency_fiat').text(fiat_currency);
+                        $('.current_currency').text(fiat_currency);
                         $('#current_currency_crypto').text(crypto_currencies);
-                    }
-
+                    });
                 }
 
                 currencies.forEach((currency) => {
@@ -162,7 +147,6 @@ const AccountClosure = (() => {
                 $trading_limit.setVisibility(1);
                 $('#closing_steps').setVisibility(1);
             }
-            $('.current_currency').text(current_currency);
             $('#current_email').text(current_email);
             $closure_loading.setVisibility(0);
 

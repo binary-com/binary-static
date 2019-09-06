@@ -115,10 +115,10 @@ const ClientBase = (() => {
     const hasOnlyCurrencyType = (type) => {
         const loginids = getAllLoginids();
         if (type === 'crypto') {
-            return loginids.every(loginid => isCryptocurrency(get('currency', loginid)));
+            return loginids.every(loginid => !get('is_virtual', loginid) && isCryptocurrency(get('currency', loginid)));
         }
 
-        return loginids.every(loginid => !isCryptocurrency(get('currency', loginid)));
+        return loginids.every(loginid => !get('is_virtual', loginid) && !isCryptocurrency(get('currency', loginid)));
     };
 
     const TypesMapConfig = (() => {
