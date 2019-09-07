@@ -54,8 +54,6 @@ const AccountClosure = (() => {
         BinarySocket.wait('landing_company').then((response) => {
             const currencies = getAllCurrencies(response.landing_company);
             const other_currencies = getCurrenciesOfOtherAccounts(true);
-            console.log(other_currencies)
-            console.log(currencies)
 
             if (is_virtual) {
                 $virtual.setVisibility(1);

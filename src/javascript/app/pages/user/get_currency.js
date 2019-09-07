@@ -12,10 +12,8 @@ const GetCurrency = (() => {
         all_loginids.forEach((loginid) => {
             // if it's not current client or under a different landing company, consider the currency
             if (is_different_company) {
-                console.log(loginid)
                 if (Client.get('loginid') !== loginid) {
                     const currency = Client.get('currency', loginid);
-                    console.log(currency)
                     if (!Client.get('is_virtual', loginid) && currency) {
                         other_currencies.push(currency);
                     }
