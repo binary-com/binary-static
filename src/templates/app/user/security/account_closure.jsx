@@ -20,7 +20,7 @@ const ClosureDescription = ({
         <h3 className={`${id} ${id && 'invisible'}`}>{title}</h3>
         <div className={`${id} gr-padding-10 ${id && 'invisible'}`}>
             <p>{subtitle}</p>
-            {is_trading_limit && <p id='trading_limit_note' className='invisible'>{it.L('Note: These limits are only applicable to your [_1] account. To set limits for the rest of your real accounts, switch to the respective account and set your limits accordingly.', '<span class="current_currency"></span>')}</p>}
+            {is_trading_limit && <p>{it.L('Note: These limits are only applicable to your [_1] real account. To set limits, switch to the respective account and set your limits accordingly.', it.website_name)}</p>}
             {list_title && <p>{list_title}</p>}
             {list_items &&
                 <ul className='bullet'>
@@ -46,7 +46,7 @@ const AccountClosure = () => (
                 {it.L('This page will redirect to the [_1] homepage after 10 seconds.', it.website_name)}
             </p>
         </div>
-        <div id='closure_container' className='invisible'>
+        <div id='closure_container' className='account-closure invisible'>
             <div id='main_header' className='gr-padding-30'>
                 <h1 id='heading'>{it.L('Account Closure')}</h1>
                 <p>{it.L('Closing your [_1] accounts involves closing all open positions in your accounts, withdrawing your funds, and deactivating your accounts.', it.website_name)}</p>
@@ -82,8 +82,7 @@ const AccountClosure = () => (
                     <ClosureDescription
                         id='crypto_2' // only crypto
                         title={it.L('I want to open another crypto currency account instead')}
-                        subtitle={it.L('You have [_1] account/s.', '<span id="current_currency_crypto"></span>')}
-                        list_title={it.L('Choose one or more crypto currency accounts:')}
+                        subtitle={it.L('You have [_1] account/s. You may open one or [_2]more crypto currency[_3] accounts:', '<span id="current_currency_crypto"></span>', `<a href="${it.url_for('user/accounts')}">`, '</a>')}
                         list_items={[]}
                     />
                     <ClosureDescription
@@ -99,20 +98,27 @@ const AccountClosure = () => (
                     />
                 </div>
                 <SeparatorLine className='gr-padding-20' />
-                <h2 className='primary-color'>{it.L('Reason of closure')}</h2>
+                <h2 className='primary-color mar-bot-0'>{it.L('I want to close my account')}</h2>
                 <div id='closing_steps' className='gr-padding-10 invisible'>
-                    <p>{it.L('To close your account, complete the following steps:')}</p>
-                    <h3>{it.L('Step 1: Close all open positions')}</h3>
-                    <p>{it.L('Go to the [_1]portfolio page[_2] to close all your open positions.', `<a href="${it.url_for('user/portfoliows')}">`, '</a>')}</p>
-                    <h3>{it.L('Step 2: Withdraw your funds')}</h3>
-                    <p>{it.L('Go to the [_1]Cashier[_2] to withdraw funds from your [_3] accounts.', `<a href="${it.url_for('cashier')}">`, '</a>', '<span class="current_currency"></span>')}</p>
-                    <p>{it.L('Go to the [_1]MT5 dashboard[_2] to withdraw funds from your Binary.com MT5 account.', `<a href="${it.url_for('user/metatrader')}">`, '</a>')}</p>
+                    <p className='account-closure-subtitle'>{it.L('To close your account, complete the following steps:')}</p>
+                    <div className='gr-padding-10'>
+                        <h3 className='secondary-color'>{it.L('Step 1: Close all open positions')}</h3>
+                        <p>{it.L('Go to the [_1]portfolio page[_2] to close all open positions from your Binary.com accounts.', `<a href="${it.url_for('user/portfoliows')}">`, '</a>')}</p>
+                        <p>{it.L('If you have opened positions in your MT5 account, please close them too.')}</p>
+                        
+                    </div>
+                    <div className='gr-padding-10'>
+                        <h3 className='secondary-color'>{it.L('Step 2: Withdraw your funds')}</h3>
+                        <p>{it.L('Go to the [_1]Cashier[_2] to withdraw funds from your [_3] accounts.', `<a href="${it.url_for('cashier')}">`, '</a>', it.website_name)}</p>
+                        <p>{it.L('Go to the [_1]MT5 dashboard[_2] to withdraw funds from your Binary.com MT5 account.', `<a href="${it.url_for('user/metatrader')}">`, '</a>')}</p>
+                    </div>
                 </div>
+                <SeparatorLine />
                 <p>{it.L('Please tell us why you are closing your account (please select one):')}</p>
                 <FormRow
                     type='radio'
                     id='reason'
-                    className='account-closure'
+                    className='account-closure-form'
                     label_row_class='invisible'
                     options={[
                         {

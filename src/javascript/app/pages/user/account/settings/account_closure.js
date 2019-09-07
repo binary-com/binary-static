@@ -1,4 +1,4 @@
-const getCurrencies                = require('../../get_currency').getCurrencies;
+const getAllCurrencies                = require('../../get_currency').getAllCurrencies;
 const getCurrenciesOfOtherAccounts = require('../../get_currency').getCurrenciesOfOtherAccounts;
 const BinarySocket                 = require('../../../../base/socket');
 const Client                       = require('../../../../base/client');
@@ -27,19 +27,19 @@ const AccountClosure = (() => {
         $error_msg;
 
     const onLoad = () => {
-        $txt_other_reason  = $('#other_reason');
-        $closure_loading   = $('#closure_loading');
-        $submit_loading    = $('#submit_loading');
-        $closure_container = $('#closure_container');
-        $success_msg       = $('#msg_main');
-        $error_msg         = $('#msg_form');
-        $trading_limit     = $('.trading_limit');
-        $virtual           = $('.virtual');
-        $crypto_1          = $('.crypto_1');
-        $crypto_2          = $('.crypto_2');
-        $fiat_1            = $('.fiat_1');
-        $fiat_2            = $('.fiat_2');
-        $form              = $(form_selector);
+        $txt_other_reason   = $('#other_reason');
+        $closure_loading    = $('#closure_loading');
+        $submit_loading     = $('#submit_loading');
+        $closure_container  = $('#closure_container');
+        $success_msg        = $('#msg_main');
+        $error_msg          = $('#msg_form');
+        $trading_limit      = $('.trading_limit');
+        $virtual            = $('.virtual');
+        $crypto_1           = $('.crypto_1');
+        $crypto_2           = $('.crypto_2');
+        $fiat_1             = $('.fiat_1');
+        $fiat_2             = $('.fiat_2');
+        $form               = $(form_selector);
 
         $closure_loading.setVisibility(1);
 
@@ -50,11 +50,12 @@ const AccountClosure = (() => {
         const is_both           = hasCurrencyType('fiat') && hasCurrencyType('crypto');
         const current_email     = Client.get('email');
         const current_currency  = Client.get('currency');
-        // CommonFunctions.getVisibleElement('currency').getAttribute('value')
 
         BinarySocket.wait('landing_company').then((response) => {
-            const currencies = getCurrencies(response.landing_company, true);
+            const currencies = getAllCurrencies(response.landing_company);
             const other_currencies = getCurrenciesOfOtherAccounts(true);
+            console.log(other_currencies)
+            console.log(currencies)
 
             if (is_virtual) {
                 $virtual.setVisibility(1);
@@ -68,13 +69,19 @@ const AccountClosure = (() => {
                     $fiat_2.setVisibility(1);
 
                     let fiat_currency = '';
-                    other_currencies.forEach((currency) => {
-                        if (!isCryptocurrency(currency)) {
-                            fiat_currency = currency;
-                        }
-                        $('#current_currency_fiat').text(fiat_currency);
-                        $('.current_currency').text(fiat_currency);
-                    });
+
+                    if (Client.get('is_virtual')) {
+                        other_currencies.forEach((currency) => {
+                            if (!isCryptocurrency(currency)) {
+                                fiat_currency = currency;
+                            }
+                        });
+                    } else {
+                        fiat_currency = Client.get('currency');
+                    }
+
+                    $('#current_currency_fiat').text(fiat_currency);
+                    $('.current_currency').text(fiat_currency);
 
                     currencies.forEach((currency) => {
                         let is_allowed = true;
@@ -97,6 +104,11 @@ const AccountClosure = (() => {
                     $crypto_1.setVisibility(1);
                     $crypto_2.setVisibility(1);
                     let crypto_currencies = '';
+                    let has_all_crypto = true;
+
+                    if (!Client.get('is_virtual')) {
+                        crypto_currencies = Client.get('currency');
+                    }
 
                     other_currencies.forEach((currency) => {
                         if (isCryptocurrency(currency)) {
@@ -106,11 +118,10 @@ const AccountClosure = (() => {
                                 crypto_currencies += `, ${currency}`;
                             }
                         }
-
-                        $('.current_currency').text(crypto_currencies);
-                        $('#current_currency_crypto').text(crypto_currencies);
                     });
-
+                
+                    $('.current_currency').text(crypto_currencies);
+                    $('#current_currency_crypto').text(crypto_currencies);
                     currencies.forEach((currency) => {
                         let is_allowed = true;
                         other_currencies.forEach((other_currency) => {
@@ -120,28 +131,24 @@ const AccountClosure = (() => {
                         });
                         if (is_allowed) {
                             if (isCryptocurrency(currency)) {
+                                has_all_crypto = false;
                                 $crypto_2.find('ul').append(`<li>${getCurrencyFullName(currency)}</li>`);
                             } else {
                                 $crypto_1.find('ul').append(`<li>${getCurrencyFullName(currency)}</li>`);
                             }
                         }
                     });
-    
-                    // $('#current_currency_crypto').text(current_currency);
-    
-                    // currencies.forEach((currency) => {
-                    //     if (isCryptocurrency(currency)) {
-                    //         $crypto_2.find('ul').append(`<li>${getCurrencyFullName(currency)}</li>`);
-                    //     } else {
-                    //         $crypto_1.find('ul').append(`<li>${getCurrencyFullName(currency)}</li>`);
-                    //     }
-                    // });
+
+                    if (has_all_crypto) {
+                        $crypto_2.setVisibility(0);
+                    }
                 }
 
                 if (is_both) {
                     $fiat_1.setVisibility(1);
                     $crypto_2.setVisibility(1);
                     let crypto_currencies = '';
+                    let has_all_crypto = true;
 
                     if (isCryptocurrency(current_currency)) {
                         crypto_currencies = Client.get('currency');
@@ -156,20 +163,42 @@ const AccountClosure = (() => {
                         $('#current_currency_crypto').text(crypto_currencies);
                     } else {
                         let fiat_currency = '';
-                        other_currencies.forEach((currency) => {
-                            if (isCryptocurrency(currency)) {
-                                if (!crypto_currencies) {
-                                    crypto_currencies += currency;
+
+                        if (Client.get('is_virtual')) {
+                            other_currencies.forEach((currency) => {
+                                if (isCryptocurrency(currency)) {
+                                    if (!crypto_currencies) {
+                                        crypto_currencies += currency;
+                                    } else {
+                                        crypto_currencies += `, ${currency}`;
+                                    }
                                 } else {
-                                    crypto_currencies += `, ${currency}`;
+                                    fiat_currency = currency;
+                                    // eslint-disable-next-line
+                                    if (Client.get('is_virtual')) {
+                                        fiat_currency = currency;
+                                    } else {
+                                        fiat_currency = current_currency;
+                                    }
                                 }
-                            } else {
-                                fiat_currency += currency;
-                            }
-                            $('#current_currency_fiat').text(fiat_currency);
-                            $('.current_currency').text(fiat_currency);
-                            $('#current_currency_crypto').text(crypto_currencies);
-                        });
+                            });
+                        } else {
+                            other_currencies.forEach((currency) => {
+                                if (isCryptocurrency(currency)) {
+                                    if (!crypto_currencies) {
+                                        crypto_currencies += currency;
+                                    } else {
+                                        crypto_currencies += `, ${currency}`;
+                                    }
+                                }
+                            });
+
+                            fiat_currency = current_currency;
+                        }
+
+                        $('#current_currency_fiat').text(fiat_currency);
+                        $('.current_currency').text(fiat_currency);
+                        $('#current_currency_crypto').text(crypto_currencies);
                     }
 
                     currencies.forEach((currency) => {
@@ -181,12 +210,17 @@ const AccountClosure = (() => {
                         });
                         if (is_allowed) {
                             if (isCryptocurrency(currency)) {
+                                has_all_crypto = false;
                                 $crypto_2.find('ul').append(`<li>${getCurrencyFullName(currency)}</li>`);
                             } else {
                                 $fiat_1.find('ul').append(`<li>${getCurrencyFullName(currency)}</li>`);
                             }
                         }
                     });
+
+                    if (has_all_crypto) {
+                        $crypto_2.setVisibility(0);
+                    }
 
                 }
                 if (has_trading_limit) {

@@ -1563,11 +1563,20 @@ body #not_authenticated_financial ul.checked > li {
 }
 
 .account-closure {
-    text-align: left;
-    line-height: 40px;
+    &-form {
+        text-align: left;
+        line-height: 40px;
 
-    span {
-        padding-left: 15px;
+        span {
+            padding-left: 15px;
+        }
+    }
+    &-subtitle {
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+    .mar-bot-0 {
+        margin-bottom: 0;
     }
 }
 
