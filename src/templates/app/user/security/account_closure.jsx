@@ -20,7 +20,7 @@ const ClosureDescription = ({
         <h3 className={`${id} ${id && 'invisible'}`}>{title}</h3>
         <div className={`${id} gr-padding-10 ${id && 'invisible'}`}>
             <p>{subtitle}</p>
-            {is_trading_limit && <p>{it.L('Note: These limits are only applicable to your [_1] real account. To set limits, switch to the respective account and set your limits accordingly.', it.website_name)}</p>}
+            {is_trading_limit && <p>{it.L('[_1]Note[_2]: These limits are only applicable to your [_3] real account. To set limits, switch to the respective account and set your limits accordingly.', '<strong>', '</strong>', it.website_name)}</p>}
             {list_title && <p>{list_title}</p>}
             {list_items &&
                 <ul className='bullet'>
@@ -38,13 +38,17 @@ const AccountClosure = () => (
         <div className='invisible' id='closure_loading'>
             <Loading />
         </div>
-        <div id='msg_main' className='center-text gr-gutter gr-padding-10 invisible'>
-            <h1>{it.L('Your account is now closed')}</h1>
+        <div id='logged_out' className='invisible'>
+            <h1>{it.L('Account Closure')}</h1>
+        </div>
+        <div id='msg_main' className='gr-gutter gr-padding-10 invisible'>
+            <h1 className='text-bold'>{it.L('Your account is now closed')}</h1>
             <p className='notice-msg'>
-                {it.L('You’ve successfully closed your account. We’ll send a confirmation email to [_1].', '<span id="current_email"></span>')}
-                <br />
-                {it.L('This page will redirect to the [_1] homepage after 10 seconds.', it.website_name)}
+                {it.L('You’ve closed your account successfully. We’ll send a confirmation email to [_1].', '<span id="current_email"></span>')}
             </p>
+            <br />
+            <br />
+            <p className='center-text'>{it.L('This page will redirect to the [_1] homepage after 10 seconds.', it.website_name)}</p>
         </div>
         <div id='closure_container' className='account-closure invisible'>
             <div id='main_header' className='gr-padding-30'>
@@ -57,7 +61,7 @@ const AccountClosure = () => (
                     <ClosureDescription
                         id='trading_limit'
                         title={it.L('I want to limit my trading activity instead')}
-                        subtitle={it.L('You can set limits to your account and trading activities. Go to the [_1]self-exclusion[_2] page to manage your account limits.', `<a href="${it.url_for('user/security/self_exclusionws')}">`, '</a>')}
+                        subtitle={it.L('You can set limits to your account and trading activities. Go to the [_1]self-exclusion page[_2] to manage your account limits.', `<a href="${it.url_for('user/security/self_exclusionws')}">`, '</a>')}
                         is_trading_limit
                     />
                     <ClosureDescription
@@ -69,14 +73,14 @@ const AccountClosure = () => (
                     <ClosureDescription
                         id='fiat_2' // only fiat
                         title={it.L('I want to open a crypto currency account instead')}
-                        subtitle={it.L('You can open a crypto currency account without closing your fiat currency account.')}
+                        subtitle={it.L('You can [_1]open a crypto currency[_2] account without closing your fiat currency account.', `<a href="${it.url_for('user/accounts')}">`, '</a>')}
                         list_items={[]}
                     />
                     <ClosureDescription
                         id='crypto_1' // only crypto
                         title={it.L('I want to open a fiat currency account instead')}
                         subtitle={it.L('You can open a fiat currency account without closing your crypto currency account.')}
-                        list_title={it.L('Choose a currency for your fiat currency account:')}
+                        list_title={it.L('[_1]Choose a currency[_2] for your fiat currency account:', `<a href="${it.url_for('user/accounts')}">`, '</a>')}
                         list_items={[]}
                     />
                     <ClosureDescription
@@ -98,7 +102,8 @@ const AccountClosure = () => (
                     />
                 </div>
                 <SeparatorLine className='gr-padding-20' />
-                <h2 className='primary-color mar-bot-0'>{it.L('I want to close my account')}</h2>
+                <div className='gr-padding-20 gr-hide gr-show-m' />
+                <h2 className='primary-color account-closure-close-title'>{it.L('I want to close my account')}</h2>
                 <div id='closing_steps' className='gr-padding-10 invisible'>
                     <p className='account-closure-subtitle'>{it.L('To close your account, complete the following steps:')}</p>
                     <div className='gr-padding-10'>
@@ -110,7 +115,7 @@ const AccountClosure = () => (
                     <div className='gr-padding-10'>
                         <h3 className='secondary-color'>{it.L('Step 2: Withdraw your funds')}</h3>
                         <p>{it.L('Go to the [_1]Cashier[_2] to withdraw funds from your [_3] accounts.', `<a href="${it.url_for('cashier')}">`, '</a>', it.website_name)}</p>
-                        <p>{it.L('Go to the [_1]MT5 dashboard[_2] to withdraw funds from your Binary.com MT5 account.', `<a href="${it.url_for('user/metatrader')}">`, '</a>')}</p>
+                        <p id='metatrader_redirect' className='invisible'>{it.L('Go to the [_1]MT5 dashboard[_2] to withdraw funds from your Binary.com MT5 account.', `<a href="${it.url_for('user/metatrader')}">`, '</a>')}</p>
                     </div>
                 </div>
                 <SeparatorLine />
@@ -156,7 +161,6 @@ const AccountClosure = () => (
             <form id='form_closure'>
                 <SubmitButton
                     text={it.L('Close my account')}
-                    custom_msg_text={it.L('Click the button below to initiate the account closure process.')}
                     is_centered
                     type='submit'
                 />

@@ -1,5 +1,6 @@
-const getAllCurrencies                = require('../../get_currency').getAllCurrencies;
+const getAllCurrencies             = require('../../get_currency').getAllCurrencies;
 const getCurrenciesOfOtherAccounts = require('../../get_currency').getCurrenciesOfOtherAccounts;
+const Metatrader                   = require('../../metatrader/metatrader');
 const BinarySocket                 = require('../../../../base/socket');
 const Client                       = require('../../../../base/client');
 const getCurrencyFullName          = require('../../../../common/currency').getCurrencyFullName;
@@ -44,7 +45,9 @@ const AccountClosure = (() => {
         $closure_loading.setVisibility(1);
 
         const is_virtual        = !hasAccountType('real');
+        const is_svg        = Client.get('landing_company_shortcode') === 'svg';
         const has_trading_limit = hasAccountType('real');
+        const eligible_mt5      = Metatrader.isEligible();
         const is_fiat           = hasOnlyCurrencyType('fiat');
         const is_crypto         = hasOnlyCurrencyType('crypto');
         const is_both           = hasCurrencyType('fiat') && hasCurrencyType('crypto');
@@ -64,7 +67,9 @@ const AccountClosure = (() => {
             } else {
                 if (is_fiat) {
                     $fiat_1.setVisibility(1);
-                    $fiat_2.setVisibility(1);
+                    if (is_svg) {
+                        $fiat_2.setVisibility(1);
+                    }
 
                     let fiat_currency = '';
 
@@ -100,7 +105,10 @@ const AccountClosure = (() => {
 
                 if (is_crypto) {
                     $crypto_1.setVisibility(1);
-                    $crypto_2.setVisibility(1);
+                    if (is_svg) {
+                        $crypto_2.setVisibility(1);
+                    }
+
                     let crypto_currencies = '';
                     let has_all_crypto = true;
 
@@ -144,7 +152,10 @@ const AccountClosure = (() => {
 
                 if (is_both) {
                     $fiat_1.setVisibility(1);
-                    $crypto_2.setVisibility(1);
+                    if (is_svg) {
+                        $crypto_2.setVisibility(1);
+                    }
+
                     let crypto_currencies = '';
                     let has_all_crypto = true;
 
@@ -225,6 +236,9 @@ const AccountClosure = (() => {
                     $trading_limit.setVisibility(1);
                     $('#closing_steps').setVisibility(1);
                 }
+                if (eligible_mt5) {
+                    $('#metatrader_redirect').setVisibility(1);
+                }
             }
 
             $('#current_email').text(current_email);
@@ -248,10 +262,24 @@ const AccountClosure = (() => {
             submitForm();
         });
 
+        $txt_other_reason.setVisibility(0);
+
         $txt_other_reason.on('keyup', () => {
             const input = $txt_other_reason.val();
             if (input && validateReasonTextField(false)) {
                 $txt_other_reason.removeClass('error-field');
+                $error_msg.css('display', 'none');
+            }
+        });
+        $('#reason input[type=radio]').on('change', (e) => {
+            const { value } = e.target;
+
+            if (value === 'other') {
+                $txt_other_reason.setVisibility(1);
+            } else {
+                $txt_other_reason.setVisibility(0);
+                $txt_other_reason.removeClass('error-field');
+                $txt_other_reason.val('');
                 $error_msg.css('display', 'none');
             }
         });
@@ -274,6 +302,7 @@ const AccountClosure = (() => {
                     $submit_loading.setVisibility(0);
                     $closure_container.setVisibility(0);
                     $success_msg.setVisibility(1);
+                    $.scrollTo(0, 500);
 
                     setTimeout(() => window.location.href = Url.urlFor('home'), 10000);
                 }
