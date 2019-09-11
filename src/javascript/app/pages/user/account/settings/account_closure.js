@@ -45,9 +45,8 @@ const AccountClosure = (() => {
         $closure_loading.setVisibility(1);
 
         const is_virtual        = !hasAccountType('real');
-        const is_svg        = Client.get('landing_company_shortcode') === 'svg';
+        const is_svg            = Client.get('landing_company_shortcode') === 'svg';
         const has_trading_limit = hasAccountType('real');
-        const eligible_mt5      = Metatrader.isEligible();
         const is_fiat           = hasOnlyCurrencyType('fiat');
         const is_crypto         = hasOnlyCurrencyType('crypto');
         const is_both           = hasCurrencyType('fiat') && hasCurrencyType('crypto');
@@ -158,17 +157,24 @@ const AccountClosure = (() => {
 
                     let crypto_currencies = '';
                     let has_all_crypto = true;
+                    let crypto_numbers = 0;
 
                     if (isCryptocurrency(current_currency)) {
                         crypto_currencies = Client.get('currency');
                         other_currencies.forEach(currency => {
                             if (isCryptocurrency(currency)) {
                                 crypto_currencies += `, ${currency}`;
+                                crypto_numbers++;
                             } else {
                                 $('#current_currency_fiat').text(currency);
                                 $('.current_currency').text(currency);
                             }
                         });
+                        if (crypto_numbers > 1) {
+                            crypto_currencies += ` ${localize('accounts')}`;
+                        } else {
+                            crypto_currencies += ` ${localize('account')}`;
+                        }
                         $('#current_currency_crypto').text(crypto_currencies);
                     } else {
                         let fiat_currency = '';
@@ -176,6 +182,7 @@ const AccountClosure = (() => {
                         if (Client.get('is_virtual')) {
                             other_currencies.forEach((currency) => {
                                 if (isCryptocurrency(currency)) {
+                                    crypto_numbers++;
                                     if (!crypto_currencies) {
                                         crypto_currencies += currency;
                                     } else {
@@ -194,6 +201,7 @@ const AccountClosure = (() => {
                         } else {
                             other_currencies.forEach((currency) => {
                                 if (isCryptocurrency(currency)) {
+                                    crypto_numbers++;
                                     if (!crypto_currencies) {
                                         crypto_currencies += currency;
                                     } else {
@@ -203,6 +211,12 @@ const AccountClosure = (() => {
                             });
 
                             fiat_currency = current_currency;
+                        }
+
+                        if (crypto_numbers > 1) {
+                            crypto_currencies += ` ${localize('accounts')}`;
+                        } else {
+                            crypto_currencies += ` ${localize('account')}`;
                         }
 
                         $('#current_currency_fiat').text(fiat_currency);
@@ -236,9 +250,15 @@ const AccountClosure = (() => {
                     $trading_limit.setVisibility(1);
                     $('#closing_steps').setVisibility(1);
                 }
-                if (eligible_mt5) {
-                    $('#metatrader_redirect').setVisibility(1);
-                }
+                
+                BinarySocket.send({ statement: 1, limit: 1 });
+                BinarySocket.wait('landing_company', 'get_account_status', 'statement').then(async () => {
+                    const is_eligible = await Metatrader.isEligible();
+                    if (is_eligible) {
+                        $('.metatrader-link').setVisibility(1);
+                    }
+                    
+                });
             }
 
             $('#current_email').text(current_email);

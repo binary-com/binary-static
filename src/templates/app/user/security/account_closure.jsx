@@ -86,7 +86,7 @@ const AccountClosure = () => (
                     <ClosureDescription
                         id='crypto_2' // only crypto
                         title={it.L('I want to open another crypto currency account instead')}
-                        subtitle={it.L('You have [_1] account/s. You may open one or [_2]more crypto currency[_3] accounts:', '<span id="current_currency_crypto"></span>', `<a href="${it.url_for('user/accounts')}">`, '</a>')}
+                        subtitle={it.L('You have [_1]. You may open one or [_2]more crypto currency[_3] accounts:', '<span id="current_currency_crypto"></span>', `<a href="${it.url_for('user/accounts')}">`, '</a>')}
                         list_items={[]}
                     />
                     <ClosureDescription
@@ -109,13 +109,13 @@ const AccountClosure = () => (
                     <div className='gr-padding-10'>
                         <h3 className='secondary-color'>{it.L('Step 1: Close all open positions')}</h3>
                         <p>{it.L('Go to the [_1]portfolio page[_2] to close all open positions from your Binary.com accounts.', `<a href="${it.url_for('user/portfoliows')}">`, '</a>')}</p>
-                        <p>{it.L('If you have opened positions in your MT5 account, please close them too.')}</p>
+                        <p className='invisible metatrader-link'>{it.L('If you have opened positions in your MT5 account, please close them too.')}</p>
                         
                     </div>
                     <div className='gr-padding-10'>
                         <h3 className='secondary-color'>{it.L('Step 2: Withdraw your funds')}</h3>
                         <p>{it.L('Go to the [_1]Cashier[_2] to withdraw funds from your [_3] accounts.', `<a href="${it.url_for('cashier')}">`, '</a>', it.website_name)}</p>
-                        <p id='metatrader_redirect' className='invisible'>{it.L('Go to the [_1]MT5 dashboard[_2] to withdraw funds from your Binary.com MT5 account.', `<a href="${it.url_for('user/metatrader')}">`, '</a>')}</p>
+                        <p className='invisible metatrader-link'>{it.L('Go to the [_1]MT5 dashboard[_2] to withdraw funds from your Binary.com MT5 account.', `<a href="${it.url_for('user/metatrader')}">`, '</a>')}</p>
                     </div>
                 </div>
                 <SeparatorLine />
