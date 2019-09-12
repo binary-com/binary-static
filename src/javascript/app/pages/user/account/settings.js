@@ -16,7 +16,7 @@ const Settings = (() => {
             }
 
             if (identity && document && needs_verification) {
-                if (!authentication.needs_verification.length && authentication.identity.status === 'none' && authentication.document.status === 'none') {
+                if (!needs_verification.length && identity.status === 'none' && document.status === 'none') {
                     $('#authenticate').setVisibility(0);
                 } else {
                     $('#authenticate').setVisibility(1);
