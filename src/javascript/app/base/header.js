@@ -275,6 +275,9 @@ const Header = (() => {
             const hasStatus = (string) => status.findIndex(s => s === string) < 0 ? Boolean(false) : Boolean(true);
             const hasVerification = (string) => {
                 const { identity, document, needs_verification } = authentication;
+                if (!identity || !document || !needs_verification) {
+                    return false;
+                }
                 const verification_length = needs_verification.length;
                 let result = false;
 
