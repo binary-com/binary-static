@@ -110,13 +110,16 @@ const AccountClosure = (() => {
 
                     let crypto_currencies = '';
                     let has_all_crypto = true;
+                    let crypto_numbers = 0;
 
                     if (!Client.get('is_virtual')) {
                         crypto_currencies = Client.get('currency');
+                        crypto_numbers++;
                     }
 
                     other_currencies.forEach((currency) => {
                         if (isCryptocurrency(currency)) {
+                            crypto_numbers++;
                             if (!crypto_currencies) {
                                 crypto_currencies += currency;
                             } else {
@@ -124,6 +127,12 @@ const AccountClosure = (() => {
                             }
                         }
                     });
+
+                    if (crypto_numbers > 1) {
+                        crypto_currencies += ` ${localize('accounts')}`;
+                    } else {
+                        crypto_currencies += ` ${localize('account')}`;
+                    }
                 
                     $('.current_currency').text(crypto_currencies);
                     $('#current_currency_crypto').text(crypto_currencies);
@@ -161,6 +170,7 @@ const AccountClosure = (() => {
 
                     if (isCryptocurrency(current_currency)) {
                         crypto_currencies = Client.get('currency');
+                        crypto_numbers++;
                         other_currencies.forEach(currency => {
                             if (isCryptocurrency(currency)) {
                                 crypto_currencies += `, ${currency}`;
