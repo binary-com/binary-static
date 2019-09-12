@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-09-04 06:24\n"
+"PO-Revision-Date: 2019-09-12 06:41\n"
 "Last-Translator: binarycom\n"
 "Language-Team: French\n"
 "MIME-Version: 1.0\n"
@@ -442,9 +442,6 @@ msgstr "L'histoire unique de %1"
 msgid "%1's systems are now processing in excess of 1 million transactions/day (including virtual accounts)."
 msgstr "Les systèmes de %1 traitent actuellement plus d'un million de transactions par jour (comptes virtuels compris)."
 
-msgid "%1Authenticate your account%2 now to take full advantage of all payment methods available."
-msgstr "%1Authentifiez votre compte%2 maintenant profiter pleinement de toutes les possibilités de retrait disponibles."
-
 msgid "%1Contact us%2 to arrange a date and time for the video call."
 msgstr "%1Contactez nous%2 pour arranger une date et une heure pour l’appel vidéo."
 
@@ -465,9 +462,6 @@ msgstr "%1Non, changer la devise de mon compte fiat maintenant%2"
 
 msgid "%1Return to trading page%2"
 msgstr "%1Retour à la page de trading%2"
-
-msgid "%1Your Proof of Identity or Proof of Address%2 did not meet our requirements. Please check your email for further instructions."
-msgstr "%1Votre preuve d’Identité ou Preuve de Domicile%2 ne satisfont pas nos exigences. Veuillez vérifier votre email pour obtenir des instructions supplémentaires."
 
 msgid "'Best Customer Communication Firm' award by Investors Chronicle"
 msgstr "Prix de la « meilleure relation client » décerné par Investors Chronicle"
@@ -589,14 +583,11 @@ msgstr "2 * (6 000 – 5 200) = 1 600 $"
 msgid "2-way pricing"
 msgstr "Tarification bidirectionnelle"
 
-msgid "2. Proof of address"
-msgstr "2. Justificatif de Domicile"
+msgid "2. Selfie with proof of ID"
+msgstr ""
 
 msgid "20 – 39.999%"
 msgstr "20 – 39,999%"
-
-msgid "3. Selfie with proof of ID"
-msgstr "3. Une photo de vous tenant votre pièce d'identité"
 
 msgid "3.50"
 msgstr "3,50"
@@ -1519,9 +1510,6 @@ msgstr "Par conséquent, les trades du client sont exécutés au marché comme s
 msgid "As a strong proponent of open source, we encourage publication of findings, methods, and tools via GitHub and our technical blog at %1 You will also assist our developers in understanding and patching the bugs that you find."
 msgstr "Comme fervent partisan de l’open source, nous encourageons la publication des résultats, des méthodes et outils via GitHub et notre blog technique à %1. Vous aiderez également nos développeurs à comprendre et à patcher les bugs que vous trouvez."
 
-msgid "As an EU resident, you are also required to verify the above documents by %1video call%2."
-msgstr "Comme citoyen de l’UE, vous êtes également tenu de vérifier les documents ci-dessus par %1appel video%2."
-
 msgid "As an example, Expert Advisors might be able to be programmed for"
 msgstr "À titre d’exemple, Expert Advisors pourrait pouvoir être programmé pour "
 
@@ -1758,9 +1746,6 @@ msgstr "Dollar Australien vs Dollar Américain"
 
 msgid "Authenticate"
 msgstr "Authentification"
-
-msgid "Authenticate your account by verifying your identity and address."
-msgstr "Authentifier votre compte en vérifiant votre identité et votre adresse."
 
 msgid "Authenticate your account by video conference call. Follow these steps to proceed:"
 msgstr "Authentifiez votre compte par conférence vidéo. Suivez ces étapes pour continuer :"
@@ -4829,9 +4814,6 @@ msgstr "De temps à autre, BIEL peut décider de fournir au client des informati
 msgid "Front Side"
 msgstr "Face Avant"
 
-msgid "Front and reverse side photos of %1 are required."
-msgstr "Photos de côté avant et arrière de %1 sont nécessaires."
-
 msgid "Front side"
 msgstr "Face avant"
 
@@ -6211,6 +6193,12 @@ msgstr "Caractéristiques principales"
 
 msgid "Kick back with beautiful beaches, islands, and mountains just a short flight away. From Malta, you have Europe, the Mediterranean, and North Africa. And from Malaysia, the whole of Asia awaits."
 msgstr "À seulement quelques heures d'avion de votre lieu de travail, vous trouverez des plages, des îles et des montagnes magnifiques à découvrir pendant vos loisirs. Au départ de Malte, l'Europe, la Méditerranée et l'Afrique du Nord seront à votre portée. Si vous travaillez en Malaisie, vous pourrez facilement explorer certains des plus beaux paysages d'Asie."
+
+msgid "Kindly send a scan of a valid proof of address to %1support@binary.com%2"
+msgstr ""
+
+msgid "Kindly send a scan of a valid proof of identity to %1support@binary.com%2"
+msgstr ""
 
 msgid "Know how much you will win or lose before you purchase the contract"
 msgstr "Vous connaissez vos possibilités de gain ou de perte avant d'acheter le contrat"
@@ -8138,6 +8126,9 @@ msgstr "S’il vous plaît %1connectez vous%2 ou %3inscrivez vous%4 pour affiche
 msgid "Please accept the terms and conditions."
 msgstr "Veuillez accepter les conditions générales."
 
+msgid "Please check your email for details"
+msgstr ""
+
 msgid "Please check your email for further instructions."
 msgstr "Veuillez vérifier votre email pour obtenir des instructions supplémentaires."
 
@@ -8284,6 +8275,15 @@ msgstr "Veuillez indiquer la périodicité souhaitée en minutes pour les averti
 
 msgid "Please submit the above information to %1."
 msgstr "Veuillez soumettre les informations ci-dessus à %1."
+
+msgid "Please submit your %1proof of address%2."
+msgstr ""
+
+msgid "Please submit your %1proof of identity and proof of address%2."
+msgstr ""
+
+msgid "Please submit your %1proof of identity%2."
+msgstr ""
 
 msgid "Please take note that our swap rate also depends on the time and days you hold your positions open."
 msgstr "Veuillez noter que notre taux de swap dépend également de l'heure et du jour que vous maintenez vos positions ouvertes."
@@ -8549,11 +8549,23 @@ msgstr "Profits/pertes"
 msgid "Prohibited trades"
 msgstr "Trades prohibés"
 
+msgid "Proof of address"
+msgstr ""
+
+msgid "Proof of address verification failed"
+msgstr ""
+
 msgid "Proof of address – such as bank statements/ building society statement or utility bills (mobile phone bills are unacceptable)"
 msgstr "Preuve d'adresse - telle qu'un relevé bancaire, un relevé d'une société de crédit foncier ou des factures de services publics (mis à part les factures de téléphone mobile)"
 
+msgid "Proof of identity"
+msgstr ""
+
 msgid "Proof of identity in your selfie must be clear, identifiable, and same as the one you submitted previously"
 msgstr "La preuve d’identité dans votre selfie doit être claire et identifiable, et identique à celle que vous avez soumis précédemment"
+
+msgid "Proof of identity verification failed"
+msgstr ""
 
 msgid "Proof of identity – such as ID card, passport or driving licence"
 msgstr "Preuve d'identité - telle qu'une carte d'identité, un passeport ou un permis de conduire"
@@ -9467,6 +9479,9 @@ msgstr "Résoudre des problèmes commerciaux complexes à l'aide de techniques a
 msgid "Some of the things that cryptocurrencies have in common include:"
 msgstr "Certaines des choses que les crypto monnaies ont en commun incluent :"
 
+msgid "Sorry,"
+msgstr ""
+
 msgid "Sorry, account signup is not available in your country."
 msgstr "Désolé, l'ouverture de compte n’est pas disponible dans votre pays."
 
@@ -9961,9 +9976,6 @@ msgstr "Tether est une cryptodevise basée sur la blockchain dont les crypto pi�
 
 msgid "Th"
 msgstr "Je"
-
-msgid "Thank you"
-msgstr "Merci"
 
 msgid "Thank you for completing the Financial Assessment. You can now deposit funds and trade Forex with real money on MetaTrader 5."
 msgstr "Merci de remplir l’évaluation financière. Vous pouvez maintenant déposer des fonds et trader le Forex avec de l'argent réel sur MetaTrader 5."
@@ -12731,9 +12743,6 @@ msgstr "Nous apprécions les joueurs d'équipe positifs qui peuvent travailler e
 msgid "We will continue to close open positions until your margin level becomes higher than the stop out level"
 msgstr "Nous continuerons à fermer les positions ouvertes jusqu'à ce que votre niveau de marge devienne plus élevée que le niveau de stop out"
 
-msgid "We will review your documents and get back to you within 3 working days."
-msgstr "Nous passerons en revue vos documents et vous répondrons sous 3 jours ouvrables."
-
 msgid "We'd love to hear what you think."
 msgstr "Nous aimerions savoir ce que vous pensez."
 
@@ -13442,8 +13451,8 @@ msgstr "Vous ne pouvez virer des fonds qu'entre des comptes fiat et crypto devis
 msgid "You may open one account for each supported cryptocurrency."
 msgstr "Vous pouvez ouvrir un compte pour chaque cryptodevise supportée."
 
-msgid "You may proceed but please %1authenticate%2 your account within 10 days to continue trading, otherwise your account will be disabled and any open positions will be closed."
-msgstr "Vous pouvez procéder mais s'il vous plaît %1authentifier%2 votre compte dans les 10 jours pour continuer à trader, sinon votre compte sera désactivé et toute position ouverte sera fermée."
+msgid "You may proceed but please authenticate your account within 10 days to continue trading, otherwise your account will be disabled and any open positions will be closed."
+msgstr ""
 
 msgid "You may revoke the current manager's access."
 msgstr "Vous pouvez révoquer l’accès du gestionnaire actuel."
@@ -13535,11 +13544,32 @@ msgstr "Vous avez travaillé dans le secteur financier pendant au moins un an da
 msgid "Your %1 day withdrawal limit is currently %2 %3 (or equivalent in other currency)."
 msgstr "Votre limite de retrait sur %1 jours est actuellement de %3 %2 (ou équivalent dans une autre devise)."
 
+msgid "Your %1proof of address%2 has expired."
+msgstr ""
+
+msgid "Your %1proof of address%2 has not been verified. Please check your email for details."
+msgstr ""
+
+msgid "Your %1proof of identity%2 has expired."
+msgstr ""
+
+msgid "Your %1proof of identity%2 has not been verified. Please check your email for details."
+msgstr ""
+
+msgid "Your %1proof of identity%3 and %2proof of address%3 have expired."
+msgstr ""
+
+msgid "Your %1proof of identity%3 and %2proof of address%3 have not been verified. Please check your email for details."
+msgstr ""
+
 msgid "Your Client will receive an email notification informing him/her that the transfer has been processed."
 msgstr "Votre Client va recevoir un émail de notification l'informant que le transfert a été effectué."
 
 msgid "Your Existing Accounts"
 msgstr "Vos comptes existants"
+
+msgid "Your account has been verified successfully"
+msgstr ""
 
 msgid "Your account has no Login/Logout activity."
 msgstr "Votre compte n'indique aucune activité de connexion/déconnexion."
@@ -13549,9 +13579,6 @@ msgstr "Votre compte n'indique aucune activité de trading."
 
 msgid "Your account is fully authenticated and your withdrawal limits have been lifted."
 msgstr "Votre compte est entièrement authentifié et vos limites de retrait ont été levées."
-
-msgid "Your account is fully authenticated. You can view your %1trading limits here%2."
-msgstr "Votre compte est entièrement authentifié. Vous pouvez voir vos %1limites de trading ici%2."
 
 msgid "Your account is restricted. Kindly %1contact customer support%2 for assistance."
 msgstr "Votre compte est restreint. Veuillez %1contacter le Service Clientèle%2 pour obtenir de l'aide."
@@ -13601,6 +13628,9 @@ msgstr "Votre commission pour le mois civil précédent sera déposé dans votre
 msgid "Your demo account balance is currently %1 or less. You may top up your account with an additional %2."
 msgstr "Le solde de votre compte démo est actuellement inférieur ou égal à %1. Vous pouvez recharger votre compte avec %2 de plus."
 
+msgid "Your document is being reviewed, please check back in 1-3 days"
+msgstr ""
+
 msgid "Your fiat account's currency is currently set to %1."
 msgstr "La devise de votre compte fiat est actuellement en %1."
 
@@ -13627,6 +13657,24 @@ msgstr "Votre demande de client professionnel %1n'est pas approuvée%2."
 
 msgid "Your profit or loss is calculated as follows:"
 msgstr "Votre profit ou perte est calculé comme suit :"
+
+msgid "Your proof of address has been verified successfully"
+msgstr ""
+
+msgid "Your proof of address has expired"
+msgstr ""
+
+msgid "Your proof of address was submitted successfully"
+msgstr ""
+
+msgid "Your proof of identity has been verified successfully"
+msgstr ""
+
+msgid "Your proof of identity has expired"
+msgstr ""
+
+msgid "Your proof of identity was submitted successfully"
+msgstr ""
 
 msgid "Your request to be treated as a professional client is %1not approved%2."
 msgstr "Votre application pour être traité comme un client professionnel %1n'est pas approuvée%2."
@@ -13864,6 +13912,9 @@ msgstr "le droit à la portabilité des données"
 
 msgid "the underlying currency, or financial instrument, on which the price of the CFD is based"
 msgstr "la devise ou l'instrument financier sous-jacent sur lequel le prix du CFD est basé"
+
+msgid "there was a connection error. Please try again later."
+msgstr ""
 
 msgid "thousand"
 msgstr "mille"
