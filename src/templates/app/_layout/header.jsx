@@ -96,6 +96,7 @@ const Header = () => (
                                             type     : 'nested',
                                             text     : it.L('Trade'),
                                             href     : 'javascript:;',
+                                            dataShow : '-maltainvest',
                                             className: 'ico-only-hide client_logged_in nav-dropdown-toggle invisible',
                                             subitems : [
                                                 { text: it.L('SmartTrader'),  href: it.url_for('trading'),          className: 'no-capitalize' },
@@ -105,6 +106,7 @@ const Header = () => (
                                                 { text: it.L('Deriv'),        href: 'https://deriv.app/?utm_source=binary&utm_medium=referral', target: '_blank', dataShow: '-eucountry' },
                                             ],
                                         },
+                                        { text: it.L('Trade'),        href: it.url_for('user/metatrader'),     className: 'ico-only-hide client_logged_in invisible', dataShow: 'maltainvest' },
                                         { text: it.L('Portfolio'),    href: it.url_for('user/portfoliows'),    className: 'ico-only-hide client_logged_in invisible' },
                                         { text: it.L('Profit Table'), href: it.url_for('user/profit_tablews'), className: 'ico-only-hide client_logged_in invisible wordwrap' },
                                         { text: it.L('Statement'),    href: it.url_for('user/statementws'),    className: 'client_logged_in invisible' },
@@ -113,6 +115,7 @@ const Header = () => (
                                             type     : 'nested',
                                             text     : it.L('Resources'),
                                             href     : 'javascript:;',
+                                            dataShow : '-maltainvest',
                                             className: 'ico-only-hide client_logged_in nav-dropdown-toggle invisible',
                                             subitems : [
                                                 { text: it.L('Asset Index'),       href: it.url_for('resources/asset_indexws') },
