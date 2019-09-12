@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-09-04 06:27\n"
+"PO-Revision-Date: 2019-09-12 06:42\n"
 "Last-Translator: binarycom\n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -441,9 +441,6 @@ msgstr "%1的輝煌發展歷程"
 msgid "%1's systems are now processing in excess of 1 million transactions/day (including virtual accounts)."
 msgstr "%1 系統每天處理超過百萬筆交易(包括虛擬帳戶)。"
 
-msgid "%1Authenticate your account%2 now to take full advantage of all payment methods available."
-msgstr "立刻進行%1帳戶驗證%2，以獲得付款選項的所有優惠。"
-
 msgid "%1Contact us%2 to arrange a date and time for the video call."
 msgstr "%1聯繫我們%2 安排視訊通話日期和時間。"
 
@@ -464,9 +461,6 @@ msgstr "%1不, 請立刻更改我的法定帳戶的幣種%2"
 
 msgid "%1Return to trading page%2"
 msgstr "%1返回交易頁面%2"
-
-msgid "%1Your Proof of Identity or Proof of Address%2 did not meet our requirements. Please check your email for further instructions."
-msgstr "%1您的身份證明或地址證明%2 不符合我們的要求。請檢查您的電子郵件收取進一步指示。"
 
 msgid "'Best Customer Communication Firm' award by Investors Chronicle"
 msgstr "《 Investors Chronicle》頒發的「最佳客戶通訊企業」獎項"
@@ -588,14 +582,11 @@ msgstr "2 * (6,000 – 5,200) = $1600"
 msgid "2-way pricing"
 msgstr "雙向報價"
 
-msgid "2. Proof of address"
-msgstr "2. 地址證明"
+msgid "2. Selfie with proof of ID"
+msgstr ""
 
 msgid "20 – 39.999%"
 msgstr "20 – 39.999%"
-
-msgid "3. Selfie with proof of ID"
-msgstr "3. 帶 ID證件的自拍照片"
 
 msgid "3.50"
 msgstr "3.50"
@@ -1518,9 +1509,6 @@ msgstr "因此，客戶的交易在市場上的執行方式如下:"
 msgid "As a strong proponent of open source, we encourage publication of findings, methods, and tools via GitHub and our technical blog at %1 You will also assist our developers in understanding and patching the bugs that you find."
 msgstr "我們是開源的堅定支持者, 鼓勵通過 GitHub 和我們%1 的技術部落格發佈各項新發現、方法和工具。您也會幫助我們的開發員了解和修補您發現的程式漏洞。"
 
-msgid "As an EU resident, you are also required to verify the above documents by %1video call%2."
-msgstr "身為歐盟居民，您還必須通過%1視訊通話%2驗證上述文檔。"
-
 msgid "As an example, Expert Advisors might be able to be programmed for"
 msgstr "例如, 可提供專家顧問程式設計給"
 
@@ -1757,9 +1745,6 @@ msgstr "澳元兌美元"
 
 msgid "Authenticate"
 msgstr "驗證"
-
-msgid "Authenticate your account by verifying your identity and address."
-msgstr "請提交身份與地址證明，立刻進行帳戶驗證。"
 
 msgid "Authenticate your account by video conference call. Follow these steps to proceed:"
 msgstr "通過視訊會議通話驗證您的帳戶。按照以下步驟進行︰"
@@ -4827,9 +4812,6 @@ msgstr "BIEL 可能會陸續決定通過在其網站上發布或以任何其他�
 msgid "Front Side"
 msgstr "前側"
 
-msgid "Front and reverse side photos of %1 are required."
-msgstr "%1 的正面和反面相片是必需的。"
-
 msgid "Front side"
 msgstr "前側"
 
@@ -6209,6 +6191,12 @@ msgstr "關鍵功能"
 
 msgid "Kick back with beautiful beaches, islands, and mountains just a short flight away. From Malta, you have Europe, the Mediterranean, and North Africa. And from Malaysia, the whole of Asia awaits."
 msgstr "想放鬆時只需飛行很短的距離就能盡情探索美麗的海灘、島嶼和山區。您可從馬爾他輕鬆前往歐洲、地中海和北非。此外，您也可在馬來西亞飽覽亞洲最壯觀的一些美景。"
+
+msgid "Kindly send a scan of a valid proof of address to %1support@binary.com%2"
+msgstr ""
+
+msgid "Kindly send a scan of a valid proof of identity to %1support@binary.com%2"
+msgstr ""
 
 msgid "Know how much you will win or lose before you purchase the contract"
 msgstr "購入合約交易前，您已知道贏或輸的金額"
@@ -8136,6 +8124,9 @@ msgstr "請%1登入%2 或 %3註冊%4 以檢視此頁。"
 msgid "Please accept the terms and conditions."
 msgstr "請接受條款和條件。"
 
+msgid "Please check your email for details"
+msgstr ""
+
 msgid "Please check your email for further instructions."
 msgstr "請檢查您的電子郵件收取詳細說明。"
 
@@ -8282,6 +8273,15 @@ msgstr "請指定您的優選實況調查間隔時間分鐘數"
 
 msgid "Please submit the above information to %1."
 msgstr "請將以上資訊傳到%1。"
+
+msgid "Please submit your %1proof of address%2."
+msgstr ""
+
+msgid "Please submit your %1proof of identity and proof of address%2."
+msgstr ""
+
+msgid "Please submit your %1proof of identity%2."
+msgstr ""
 
 msgid "Please take note that our swap rate also depends on the time and days you hold your positions open."
 msgstr "請注意，我們的掉期率也取決於您的持倉時間和天數。"
@@ -8547,11 +8547,23 @@ msgstr "利潤/虧損"
 msgid "Prohibited trades"
 msgstr "違禁交易"
 
+msgid "Proof of address"
+msgstr ""
+
+msgid "Proof of address verification failed"
+msgstr ""
+
 msgid "Proof of address – such as bank statements/ building society statement or utility bills (mobile phone bills are unacceptable)"
 msgstr "地址證明 - 例如銀行月結單/建築協會帳單或水電煤費帳單（手機費帳單不可接受）"
 
+msgid "Proof of identity"
+msgstr ""
+
 msgid "Proof of identity in your selfie must be clear, identifiable, and same as the one you submitted previously"
 msgstr "您的自拍照片中的身份證明必須清晰、可識別, 並且與您之前提交的相同"
+
+msgid "Proof of identity verification failed"
+msgstr ""
 
 msgid "Proof of identity – such as ID card, passport or driving licence"
 msgstr "身份證明 - 如身份證、護照或駕駛執照"
@@ -9465,6 +9477,9 @@ msgstr "使用資料驅動技術解決複雜的業務問題。"
 msgid "Some of the things that cryptocurrencies have in common include:"
 msgstr "加密貨幣的一些共同點包括:"
 
+msgid "Sorry,"
+msgstr ""
+
 msgid "Sorry, account signup is not available in your country."
 msgstr "對不起，您的所在國內不可註冊帳戶。"
 
@@ -9959,9 +9974,6 @@ msgstr "Tether是基於區塊鏈的加密貨幣, 其流通由同等數量的傳�
 
 msgid "Th"
 msgstr "星期四"
-
-msgid "Thank you"
-msgstr "謝謝"
 
 msgid "Thank you for completing the Financial Assessment. You can now deposit funds and trade Forex with real money on MetaTrader 5."
 msgstr "感謝您完成財務評估。您現在可以存入資金並在 MetaTrader 5以真實資金交易外匯。"
@@ -12729,9 +12741,6 @@ msgstr "我們珍視積極的、可以共同努力、克服挑戰並實現共同
 msgid "We will continue to close open positions until your margin level becomes higher than the stop out level"
 msgstr "我們將繼續關閉未平倉合約，直到您的保證金額高於強制平倉數額"
 
-msgid "We will review your documents and get back to you within 3 working days."
-msgstr "我們將審閱您的文件，並將於三個工作日內回覆。"
-
 msgid "We'd love to hear what you think."
 msgstr "我們很想聽聽你的意見。"
 
@@ -13440,8 +13449,8 @@ msgstr "資金只可在法定帳戶和加密貨幣帳戶之間轉移."
 msgid "You may open one account for each supported cryptocurrency."
 msgstr "您可以為每種受支持的加密貨幣開立專用帳戶。"
 
-msgid "You may proceed but please %1authenticate%2 your account within 10 days to continue trading, otherwise your account will be disabled and any open positions will be closed."
-msgstr "您可以繼續操作，但請在10天內％1驗證％2您的帳戶以便繼續交易，否則您的帳戶將被停用，任何持倉頭寸將被強制平倉。"
+msgid "You may proceed but please authenticate your account within 10 days to continue trading, otherwise your account will be disabled and any open positions will be closed."
+msgstr ""
 
 msgid "You may revoke the current manager's access."
 msgstr "您可撤銷目前經理的存取權限。"
@@ -13533,11 +13542,32 @@ msgstr "您在金融業界工作至少一年, 擁有在我們平台上交易的�
 msgid "Your %1 day withdrawal limit is currently %2 %3 (or equivalent in other currency)."
 msgstr "您的 %1 天取款限額目前為 %2 %3（或其他貨幣的等值）。"
 
+msgid "Your %1proof of address%2 has expired."
+msgstr ""
+
+msgid "Your %1proof of address%2 has not been verified. Please check your email for details."
+msgstr ""
+
+msgid "Your %1proof of identity%2 has expired."
+msgstr ""
+
+msgid "Your %1proof of identity%2 has not been verified. Please check your email for details."
+msgstr ""
+
+msgid "Your %1proof of identity%3 and %2proof of address%3 have expired."
+msgstr ""
+
+msgid "Your %1proof of identity%3 and %2proof of address%3 have not been verified. Please check your email for details."
+msgstr ""
+
 msgid "Your Client will receive an email notification informing him/her that the transfer has been processed."
 msgstr "您的客戶將收到電子郵件通知，告知其轉帳交易已處理。"
 
 msgid "Your Existing Accounts"
 msgstr "您的目前帳戶"
+
+msgid "Your account has been verified successfully"
+msgstr ""
 
 msgid "Your account has no Login/Logout activity."
 msgstr "您的帳戶沒有登入/登出活動。"
@@ -13547,9 +13577,6 @@ msgstr "您的帳號沒有交易活動。"
 
 msgid "Your account is fully authenticated and your withdrawal limits have been lifted."
 msgstr "您的帳戶已經得到完全驗證，且您的取款限額已經取消。"
-
-msgid "Your account is fully authenticated. You can view your %1trading limits here%2."
-msgstr "您的帳戶已經得到完全驗證，您可%1在此檢視您的交易限額%2。"
 
 msgid "Your account is restricted. Kindly %1contact customer support%2 for assistance."
 msgstr "您的帳戶已被限制交易。請%1聯繫客服部%2，以取得協助。"
@@ -13599,6 +13626,9 @@ msgstr "您上個月的佣金將於每月15日前準時存入您的帳戶。"
 msgid "Your demo account balance is currently %1 or less. You may top up your account with an additional %2."
 msgstr "您的模擬帳戶餘額目前為 %1 或更低。您可以新增 %2補充帳戶資金。"
 
+msgid "Your document is being reviewed, please check back in 1-3 days"
+msgstr ""
+
 msgid "Your fiat account's currency is currently set to %1."
 msgstr "您的法定帳戶的幣種目前設置為 %1。"
 
@@ -13625,6 +13655,24 @@ msgstr "您申請成為專業客戶的請求%1不受批准%2。"
 
 msgid "Your profit or loss is calculated as follows:"
 msgstr "您的損益計算如下:"
+
+msgid "Your proof of address has been verified successfully"
+msgstr ""
+
+msgid "Your proof of address has expired"
+msgstr ""
+
+msgid "Your proof of address was submitted successfully"
+msgstr ""
+
+msgid "Your proof of identity has been verified successfully"
+msgstr ""
+
+msgid "Your proof of identity has expired"
+msgstr ""
+
+msgid "Your proof of identity was submitted successfully"
+msgstr ""
 
 msgid "Your request to be treated as a professional client is %1not approved%2."
 msgstr "您申請成為專業客戶的請求%1不受批准%2。"
@@ -13862,6 +13910,9 @@ msgstr "資料可攜權"
 
 msgid "the underlying currency, or financial instrument, on which the price of the CFD is based"
 msgstr "差價合約價格採用的基礎貨幣或金融工具"
+
+msgid "there was a connection error. Please try again later."
+msgstr ""
 
 msgid "thousand"
 msgstr "千"

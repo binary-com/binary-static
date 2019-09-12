@@ -950,6 +950,35 @@ body #not_authenticated_financial ul.checked > li {
 }
 
 .authenticate-content {
+    #onfido {
+        // Below styles are set according to Onfido's styles
+        // This is because binary-styles overrides Onfido's own styles
+        .onfido-sdk-ui-NavigationBar-back {
+            background: transparent;
+        }
+        .onfido-sdk-ui-Button-button-primary:hover {
+            background: rgb(53, 63, 244); // Onfido's primary color
+        }
+        .onfido-sdk-ui-Button-button-outline:hover {
+            background-color: transparent;
+        }
+        .onfido-sdk-ui-crossDevice-CrossDeviceLink-copyToClipboard {
+            background: $COLOR_WHITE;
+            color: $COLOR_BLACK;
+            border-radius: 0;
+        }
+        input, textarea {
+            &:hover, &:focus {
+                outline: 0;
+                border: none;
+            }
+        }
+        button {
+            &:hover, &:focus {
+                background-color: inherit;
+            }
+        }
+    }
     .fields > .gr-row > div {
         > .button {
             display: block;
@@ -1022,6 +1051,9 @@ body #not_authenticated_financial ul.checked > li {
     }
     #resolve_error {
         color: $COLOR_RED;
+    }
+    .mar-top-0 {
+        margin-top: 0;
     }
 }
 
