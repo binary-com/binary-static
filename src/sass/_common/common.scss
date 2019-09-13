@@ -185,7 +185,6 @@ fieldset {
 }
 
 .error-msg {
-    width: 100%;
     text-align: left;
     margin-top: 5px;
 }
@@ -575,6 +574,7 @@ ul.bullet.gr-row > li {
 
                     &, a {
                         color: $COLOR_BLUE;
+                        text-transform: initial;
                     }
                     > a, > span {
                         display: block;
