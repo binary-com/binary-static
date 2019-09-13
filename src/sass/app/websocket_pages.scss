@@ -335,6 +335,13 @@
     #txtDescription {
         width: 260px;
     }
+    #viewForm .disclaimer {
+        font-size: 1rem;
+
+        strong {
+            font-style: italic;
+        }
+    }
     .separator-line {
         border-color: $COLOR_LIGHT_GRAY;
     }

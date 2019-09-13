@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-09-04 06:27\n"
+"PO-Revision-Date: 2019-09-12 06:43\n"
 "Last-Translator: binarycom\n"
 "Language-Team: Indonesian\n"
 "MIME-Version: 1.0\n"
@@ -441,9 +441,6 @@ msgstr "Sejarah %1 yang luar biasa"
 msgid "%1's systems are now processing in excess of 1 million transactions/day (including virtual accounts)."
 msgstr "Sistem %1 telah memproses lebih dari 1 juta transaksi/hari (termasuk pada akun virtual)."
 
-msgid "%1Authenticate your account%2 now to take full advantage of all payment methods available."
-msgstr "%1Otentikasi akun Anda%2 sekarang untuk memperoleh manfaat maksimal dari semua pilihan pembayaran yang tersedia."
-
 msgid "%1Contact us%2 to arrange a date and time for the video call."
 msgstr "%1Hubungi kami%2 untuk mengatur tanggal dan waktu panggilan video."
 
@@ -464,9 +461,6 @@ msgstr "%1Tidak, rubah mata uang akun fiat saya sekarang%2"
 
 msgid "%1Return to trading page%2"
 msgstr "%1Kembali ke halaman trading%2"
-
-msgid "%1Your Proof of Identity or Proof of Address%2 did not meet our requirements. Please check your email for further instructions."
-msgstr "%1Bukti Identitas atau Bukti Alamat Anda%2 tidak memenuhi persyaratan kami. Silahkan lihat email Anda untuk petunjuk lebih lanjut."
 
 msgid "'Best Customer Communication Firm' award by Investors Chronicle"
 msgstr "'Perusahaan Komunikasi Pelanggan Terbaik’ penghargaan dari Investor Chronicle"
@@ -588,14 +582,11 @@ msgstr "2 * (6,000 – 5,200) = $1600"
 msgid "2-way pricing"
 msgstr "Harga 2-arah"
 
-msgid "2. Proof of address"
-msgstr "2. Bukti alamat"
+msgid "2. Selfie with proof of ID"
+msgstr ""
 
 msgid "20 – 39.999%"
 msgstr "20 – 39,999%"
-
-msgid "3. Selfie with proof of ID"
-msgstr "3. Selfie dengan bukti identitas"
 
 msgid "3.50"
 msgstr "3,50"
@@ -1518,9 +1509,6 @@ msgstr "Sebagai hasil, kontrak klien adalah diselesaikan pada pasar sebagai beri
 msgid "As a strong proponent of open source, we encourage publication of findings, methods, and tools via GitHub and our technical blog at %1 You will also assist our developers in understanding and patching the bugs that you find."
 msgstr "Sebagai pendukung kuat open source, kami mendorong publikasi temuan, metode, dan alat-alat melalui GitHub dan blog teknis kami di %1 Anda juga akan membantu developer kami dalam memahami dan menambal bug yang Anda temukan."
 
-msgid "As an EU resident, you are also required to verify the above documents by %1video call%2."
-msgstr "Sebagai penduduk Uni Eropa, Anda juga diminta untuk memverifikasi dokumen di atas melalui %1panggilan video%2."
-
 msgid "As an example, Expert Advisors might be able to be programmed for"
 msgstr "Sebagai contoh, Expert Advisor mungkin dapat diprogram sebagai"
 
@@ -1757,9 +1745,6 @@ msgstr "Dolar Australia vs Dolar AS"
 
 msgid "Authenticate"
 msgstr "Pembuktian"
-
-msgid "Authenticate your account by verifying your identity and address."
-msgstr "Otentikasi akun Anda dengan memverifikasi identitas dan alamat Anda."
 
 msgid "Authenticate your account by video conference call. Follow these steps to proceed:"
 msgstr "Otentikasi akun Anda melalui konferensi panggilan video. Ikuti langkah-langkah berikut untuk melanjutkan:"
@@ -4827,9 +4812,6 @@ msgstr "Dari waktu ke waktu, BIEL dapat memutuskan untuk memberikan informasi te
 msgid "Front Side"
 msgstr "Bagian Depan"
 
-msgid "Front and reverse side photos of %1 are required."
-msgstr "Foto depan dan belakang %1 diperlukan."
-
 msgid "Front side"
 msgstr "Bagian depan"
 
@@ -6211,6 +6193,12 @@ msgstr "Fitur utama"
 
 msgid "Kick back with beautiful beaches, islands, and mountains just a short flight away. From Malta, you have Europe, the Mediterranean, and North Africa. And from Malaysia, the whole of Asia awaits."
 msgstr "Nikmati keindahan pantai, pulau dan pegunungan dengan penerbangan singkat. Dari Malta, tersedia Eropa, Mediteranian dan Afrika Utara. Dan dari Malaysia, seluruh Asia menanti."
+
+msgid "Kindly send a scan of a valid proof of address to %1support@binary.com%2"
+msgstr ""
+
+msgid "Kindly send a scan of a valid proof of identity to %1support@binary.com%2"
+msgstr ""
 
 msgid "Know how much you will win or lose before you purchase the contract"
 msgstr "Ketahui berapa banyak potensi keuntungan atau kerugian sebelum melakukan pembelian kontrak"
@@ -8138,6 +8126,9 @@ msgstr "Silahkan %1masuk%2 atau %3daftar%4 untuk melihat halaman ini."
 msgid "Please accept the terms and conditions."
 msgstr "Silahkan terima syarat dan ketentuan."
 
+msgid "Please check your email for details"
+msgstr ""
+
 msgid "Please check your email for further instructions."
 msgstr "Silakan lihat email Anda untuk instruksi lebih lanjut."
 
@@ -8284,6 +8275,15 @@ msgstr "Silahkan tentukan interval cek-realitas pilihan Anda dalam menit"
 
 msgid "Please submit the above information to %1."
 msgstr "Silahkan kirim informasi diatas ke %1."
+
+msgid "Please submit your %1proof of address%2."
+msgstr ""
+
+msgid "Please submit your %1proof of identity and proof of address%2."
+msgstr ""
+
+msgid "Please submit your %1proof of identity%2."
+msgstr ""
 
 msgid "Please take note that our swap rate also depends on the time and days you hold your positions open."
 msgstr "Mohon diperhatikan bahwa nilai tukar kami juga tergantung pada waktu dan hari pada saat Anda menahan posisi."
@@ -8549,11 +8549,23 @@ msgstr "Laba/Rugi"
 msgid "Prohibited trades"
 msgstr "Trading yang dilarang"
 
+msgid "Proof of address"
+msgstr ""
+
+msgid "Proof of address verification failed"
+msgstr ""
+
 msgid "Proof of address – such as bank statements/ building society statement or utility bills (mobile phone bills are unacceptable)"
 msgstr "Bukti alamat - seperti rekening koran/tagihan kartu kredit atau debit atau tagihan utilitas (tagihan ponsel tidak dapat diterima)"
 
+msgid "Proof of identity"
+msgstr ""
+
 msgid "Proof of identity in your selfie must be clear, identifiable, and same as the one you submitted previously"
 msgstr "Bukti identitas pada selfie Anda harus jelas, dapat diidentifikasi, dan sesuai dengan yang Anda kirimkan sebelumnya"
+
+msgid "Proof of identity verification failed"
+msgstr ""
 
 msgid "Proof of identity – such as ID card, passport or driving licence"
 msgstr "Bukti identitas - seperti KTP, paspor atau SIM"
@@ -9060,7 +9072,7 @@ msgid "Rise/Fall"
 msgstr "Rise/Fall"
 
 msgid "Rise/Fall contracts will be refunded if:"
-msgstr "Kontrak Rise/Fall akan dikembalikan jika: "
+msgstr "Kontrak Rise/Fall akan dibatalkan jika: "
 
 msgid "Rise/Fall trades"
 msgstr "Kontrak Rise/Fall"
@@ -9466,6 +9478,9 @@ msgstr "Memecahkan masalah bisnis yang kompleks menggunakan teknik berbasis data
 
 msgid "Some of the things that cryptocurrencies have in common include:"
 msgstr "Beberapa hal yang mata uang kripto memiliki kesamaan meliputi:"
+
+msgid "Sorry,"
+msgstr ""
 
 msgid "Sorry, account signup is not available in your country."
 msgstr "Maaf, pendaftaran akun tidak tersedia di negara Anda."
@@ -9961,9 +9976,6 @@ msgstr "Tether adalah mata uang kripto berdasarkan blockchain dimana sirkulasi k
 
 msgid "Th"
 msgstr "Kam"
-
-msgid "Thank you"
-msgstr "Terima kasih"
 
 msgid "Thank you for completing the Financial Assessment. You can now deposit funds and trade Forex with real money on MetaTrader 5."
 msgstr "Terima kasih telah melengkapi Penilaian Keuangan. Anda sudah dapat mendeposit dana dan bertrading Forex menggunakan akun riil MetaTrader 5."
@@ -12732,9 +12744,6 @@ msgstr "Kami menghargai anggota tim yang positif yang dapat bekerja sama untuk m
 msgid "We will continue to close open positions until your margin level becomes higher than the stop out level"
 msgstr "Kami akan terus menutup open position hingga level margin Anda menjadi lebih tinggi dari level stop out"
 
-msgid "We will review your documents and get back to you within 3 working days."
-msgstr "Kami akan meninjau dokumen Anda dan menghubungi Anda kembali dalam tempo 3 hari kerja."
-
 msgid "We'd love to hear what you think."
 msgstr "Kami ingin mendengar pendapat Anda."
 
@@ -13443,8 +13452,8 @@ msgstr "Anda hanya dapat mentransfer dana antara akun fiat dan mata uang kripto.
 msgid "You may open one account for each supported cryptocurrency."
 msgstr "Anda dapat mendaftar satu akun pada masing masing mata uang kripto."
 
-msgid "You may proceed but please %1authenticate%2 your account within 10 days to continue trading, otherwise your account will be disabled and any open positions will be closed."
-msgstr "Anda dapat melanjutkan proses pendaftaran namun Anda perlu melengkapi %1otentikasi%2 akun Anda dalam waktu 10 hari untuk melanjutkan trading, jika tidak maka akun Anda akan dinonaktifkan dan open posisi manapun akan ditutup."
+msgid "You may proceed but please authenticate your account within 10 days to continue trading, otherwise your account will be disabled and any open positions will be closed."
+msgstr ""
 
 msgid "You may revoke the current manager's access."
 msgstr "Anda dapat mencabut akses manajer saat ini."
@@ -13536,11 +13545,32 @@ msgstr "Anda telah bekerja di sektor keuangan setidaknya selama satu tahun dalam
 msgid "Your %1 day withdrawal limit is currently %2 %3 (or equivalent in other currency)."
 msgstr "Batas penarikan %1 hari Anda saat ini adalah %2 %3 (atau setara dengan mata uang lainnya)."
 
+msgid "Your %1proof of address%2 has expired."
+msgstr ""
+
+msgid "Your %1proof of address%2 has not been verified. Please check your email for details."
+msgstr ""
+
+msgid "Your %1proof of identity%2 has expired."
+msgstr ""
+
+msgid "Your %1proof of identity%2 has not been verified. Please check your email for details."
+msgstr ""
+
+msgid "Your %1proof of identity%3 and %2proof of address%3 have expired."
+msgstr ""
+
+msgid "Your %1proof of identity%3 and %2proof of address%3 have not been verified. Please check your email for details."
+msgstr ""
+
 msgid "Your Client will receive an email notification informing him/her that the transfer has been processed."
 msgstr "Klien Anda akan menerima e-mail pemberitahuan bahwa transfer mereka telah diproses."
 
 msgid "Your Existing Accounts"
 msgstr "Akun Anda Sebelumnya"
+
+msgid "Your account has been verified successfully"
+msgstr ""
 
 msgid "Your account has no Login/Logout activity."
 msgstr "Akun Anda tidak memiliki aktivitas Login/Logout."
@@ -13550,9 +13580,6 @@ msgstr "Akun Anda tidak memiliki aktivitas trading."
 
 msgid "Your account is fully authenticated and your withdrawal limits have been lifted."
 msgstr "Akun Anda telah terbukti dan batasan penarikan Anda telah dihapuskan."
-
-msgid "Your account is fully authenticated. You can view your %1trading limits here%2."
-msgstr "Akun Anda telah terbukti. Anda dapat melihat %1batasan trading disini%2."
 
 msgid "Your account is restricted. Kindly %1contact customer support%2 for assistance."
 msgstr "Akun Anda memiliki akses terbatas. Silahkan %1hubungi customer support%2 untuk bantuan."
@@ -13602,6 +13629,9 @@ msgstr "Komisi Anda untuk bulan kalender sebelumnya akan dibayarkan ke dalam aku
 msgid "Your demo account balance is currently %1 or less. You may top up your account with an additional %2."
 msgstr "Saldo akun demo Anda saat ini adalah %1 atau kurang. Anda dapat mengisi ulang akun Anda dengan tambahan %2."
 
+msgid "Your document is being reviewed, please check back in 1-3 days"
+msgstr ""
+
 msgid "Your fiat account's currency is currently set to %1."
 msgstr "Mata uang akun fiat Anda saat ini adalah %1."
 
@@ -13628,6 +13658,24 @@ msgstr "Permohonan klien profesional Anda %1tidak disetujui%2."
 
 msgid "Your profit or loss is calculated as follows:"
 msgstr "Laba dan rugi Anda dihitung sebagai berikut:"
+
+msgid "Your proof of address has been verified successfully"
+msgstr ""
+
+msgid "Your proof of address has expired"
+msgstr ""
+
+msgid "Your proof of address was submitted successfully"
+msgstr ""
+
+msgid "Your proof of identity has been verified successfully"
+msgstr ""
+
+msgid "Your proof of identity has expired"
+msgstr ""
+
+msgid "Your proof of identity was submitted successfully"
+msgstr ""
 
 msgid "Your request to be treated as a professional client is %1not approved%2."
 msgstr "Permohonan Anda untuk dilayani sebagai klien profesional %1tidak disetujui%2."
@@ -13865,6 +13913,9 @@ msgstr "hak atas portabilitas data"
 
 msgid "the underlying currency, or financial instrument, on which the price of the CFD is based"
 msgstr "mata uang yang mendasari, atau instrumen keuangan, di mana harga CFD didasarkan"
+
+msgid "there was a connection error. Please try again later."
+msgstr ""
 
 msgid "thousand"
 msgstr "ribu"

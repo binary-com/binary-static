@@ -4,6 +4,7 @@ const Clock                  = require('./clock');
 const Footer                 = require('./footer');
 const Header                 = require('./header');
 const BinarySocket           = require('./socket');
+const MetaTrader             = require('../pages/user/metatrader/metatrader');
 const Dialog                 = require('../common/attach_dom/dialog');
 const createLanguageDropDown = require('../common/attach_dom/language_dropdown');
 const setCurrencies          = require('../common/currency').setCurrencies;
@@ -109,7 +110,7 @@ const BinarySocketGeneral = (() => {
             case 'landing_company':
                 Header.upgradeMessageVisibility();
                 if (!response.error) {
-                    Header.metatraderMenuItemVisibility();
+                    MetaTrader.metatraderMenuItemVisibility();
                 }
                 break;
             case 'get_self_exclusion':

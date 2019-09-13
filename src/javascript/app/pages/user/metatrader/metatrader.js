@@ -1,11 +1,12 @@
-const MetaTraderConfig = require('./metatrader.config');
-const MetaTraderUI     = require('./metatrader.ui');
-const Client           = require('../../../base/client');
-const BinarySocket     = require('../../../base/socket');
-const Validation       = require('../../../common/form_validation');
-const localize         = require('../../../../_common/localize').localize;
-const State            = require('../../../../_common/storage').State;
-const isEmptyObject    = require('../../../../_common/utility').isEmptyObject;
+const MetaTraderConfig   = require('./metatrader.config');
+const MetaTraderUI       = require('./metatrader.ui');
+const Client             = require('../../../base/client');
+const BinarySocket       = require('../../../base/socket');
+const Validation         = require('../../../common/form_validation');
+const localize           = require('../../../../_common/localize').localize;
+const State              = require('../../../../_common/storage').State;
+const isEmptyObject      = require('../../../../_common/utility').isEmptyObject;
+const applyToAllElements = require('../../../../_common/utility').applyToAllElements;
 
 const MetaTrader = (() => {
     let mt_companies;
@@ -296,6 +297,18 @@ const MetaTrader = (() => {
         });
     };
 
+    const metatraderMenuItemVisibility = () => {
+        BinarySocket.wait('landing_company', 'get_account_status').then(async () => {
+            const is_eligible = await isEligible();
+            if (is_eligible) {
+                const mt_visibility = document.getElementsByClassName('mt_visibility');
+                applyToAllElements(mt_visibility, (el) => {
+                    el.setVisibility(1);
+                });
+            }
+        });
+    };
+
     const onUnload = () => {
         MetaTraderUI.refreshAction();
     };
@@ -304,6 +317,7 @@ const MetaTrader = (() => {
         onLoad,
         onUnload,
         isEligible,
+        metatraderMenuItemVisibility,
     };
 })();
 

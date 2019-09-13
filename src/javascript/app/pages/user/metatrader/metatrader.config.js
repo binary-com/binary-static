@@ -1,5 +1,6 @@
 const BinaryPjax   = require('../../../base/binary_pjax');
 const Client       = require('../../../base/client');
+const Header       = require('../../../base/header');
 const BinarySocket = require('../../../base/socket');
 const Dialog       = require('../../../common/attach_dom/dialog');
 const Currency     = require('../../../common/currency');
@@ -307,6 +308,10 @@ const MetaTraderConfig = (() => {
             ),
             onSuccess: (response) => {
                 GTM.mt5NewAccount(response);
+
+                BinarySocket.send({ get_account_status: 1 }, { forced: true }).then(() => {
+                    Header.displayAccountStatus();
+                });
             },
         },
         new_account_mam: {
@@ -317,6 +322,10 @@ const MetaTraderConfig = (() => {
             ),
             onSuccess: (response) => {
                 GTM.mt5NewAccount(response);
+
+                BinarySocket.send({ get_account_status: 1 }, { forced: true }).then(() => {
+                    Header.displayAccountStatus();
+                });
             },
         },
         password_change: {
