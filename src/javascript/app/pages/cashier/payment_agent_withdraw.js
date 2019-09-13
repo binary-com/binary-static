@@ -8,6 +8,7 @@ const getPaWithdrawalLimit = require('../../common/currency').getPaWithdrawalLim
 const FormManager          = require('../../common/form_manager');
 const Validation           = require('../../common/form_validation');
 const handleVerifyCode     = require('../../common/verification_code').handleVerifyCode;
+const getElementById       = require('../../../_common/common_functions.js').getElementById;
 const localize             = require('../../../_common/localize').localize;
 const Url                  = require('../../../_common/url');
 const isBinaryApp          = require('../../../config').isBinaryApp;
@@ -24,7 +25,6 @@ const PaymentAgentWithdraw = (() => {
         ddl_agents: '#ddlAgents',
         txt_agents: '#txtAgents',
         txt_amount: '#txtAmount',
-        txt_desc  : '#txtDescription',
     };
 
     let $agent_error,
@@ -33,8 +33,12 @@ const PaymentAgentWithdraw = (() => {
         $txt_amount,
         $views,
         agent_name,
+        agent_website,
+        agent_email,
+        agent_telephone,
         currency,
-        token;
+        token,
+        pa_list;
 
     // -----------------------
     // ----- Agents List -----
@@ -42,22 +46,22 @@ const PaymentAgentWithdraw = (() => {
     const populateAgentsList = (response) => {
         $ddl_agents = $(field_ids.ddl_agents);
         $ddl_agents.empty();
-        const pa_list = (response.paymentagent_list || {}).list;
+        pa_list = (response.paymentagent_list || {}).list;
         if (pa_list.length > 0) {
-            checkToken(pa_list);
+            checkToken();
         } else {
             showPageError(localize('Payment Agent services are not available in your country or in your preferred currency.'));
         }
     };
 
-    const checkToken = (pa_list) => {
+    const checkToken = () => {
         token = token || Url.getHashValue('token');
         if (!token) {
             BinarySocket.send({ verify_email: Client.get('email'), type: 'paymentagent_withdraw' });
             if (isBinaryApp()) {
                 handleVerifyCode((verification_code) => {
                     token = verification_code;
-                    checkToken($ddl_agents, pa_list);
+                    checkToken($ddl_agents);
                 });
             } else {
                 setActiveView(view_ids.notice);
@@ -92,10 +96,8 @@ const PaymentAgentWithdraw = (() => {
 
             $form.find('.wrapper-row-agent').find('label').append($('<span />', { text: '*', class: 'required_field_asterisk' }));
             $form.find('label[for="txtAmount"]').text(`${localize('Amount in')} ${currency}`);
-            trimDescriptionContent();
             FormManager.init(form_id, [
                 { selector: field_ids.txt_amount, validations: ['req', ['number', { type: 'float', decimals: getDecimalPlaces(currency), min, max }], ['custom', { func: () => +Client.get('balance') >= +$txt_amount.val(), message: localize('Insufficient balance.') }]], request_field: 'amount' },
-                { selector: field_ids.txt_desc,   validations: ['general'], request_field: 'description' },
 
                 { request_field: 'currency',              value: currency },
                 { request_field: 'paymentagent_loginid',  value: getPALoginID },
@@ -150,15 +152,13 @@ const PaymentAgentWithdraw = (() => {
         $ddl_agents.val() || $txt_agents.val()
     );
 
-    // Remove multiline and excess whitespaces from description text.
-    const trimDescriptionContent = () => {
-        document.getElementById('txtDescription').addEventListener('change', e => {
-            e.srcElement.value = e.target.value.replace(/\s+/g, ' ');
-        });
-    };
-
     const insertListOption = ($ddl_object, item_text, item_value) => {
         $ddl_object.append($('<option/>', { value: item_value, text: item_text }));
+    };
+
+    const setAgentDetail = (id, html_value, href_value) => {
+        getElementById(id).getElementsByTagName('a')[0].innerHTML = html_value;
+        getElementById(id).getElementsByTagName('a')[0].href = href_value;
     };
 
     // ----------------------------
@@ -177,7 +177,6 @@ const PaymentAgentWithdraw = (() => {
                 FormManager.init(view_ids.confirm, [
                     { request_field: 'paymentagent_loginid',  value: request.paymentagent_loginid },
                     { request_field: 'amount',                value: getNumberFormat(request.amount, request.currency) },
-                    { request_field: 'description',           value: request.description },
                     { request_field: 'currency',              value: request.currency },
                     { request_field: 'paymentagent_withdraw', value: 1 },
                 ], true);
@@ -197,8 +196,17 @@ const PaymentAgentWithdraw = (() => {
                 $('#successMessage').css('display', '')
                     .attr('class', 'success-msg')
                     .html($('<ul/>', { class: 'checked' }).append($('<li/>', { text: localize('Your request to withdraw [_1] [_2] from your account [_3] to Payment Agent [_4] account has been successfully processed.', [request.currency, getNumberFormat(request.amount, request.currency), Client.get('loginid'), agent_name]) })));
-                break;
 
+                // Set PA details.
+                if (agent_name && agent_website && agent_email && agent_telephone) {
+                    getElementById('agentName').innerHTML = agent_name;
+                    setAgentDetail('agentWebsite', agent_website, agent_website);
+                    setAgentDetail('agentEmail', agent_email, `mailto:${agent_email}`);
+                    setAgentDetail('agentTelephone', agent_telephone, `tel:${agent_telephone}`);
+
+                    getElementById('agentDetails').classList.remove('invisible');
+                }
+                break;
             default: // error
                 if (response.echo_req.dry_run === 1) {
                     setActiveView(view_ids.form);
@@ -264,12 +272,19 @@ const PaymentAgentWithdraw = (() => {
             return false;
         }
         // else
-        setAgentName();
+        setAgentDetails();
         return true;
     };
 
-    const setAgentName = () => {
+    const setAgentDetails = () => {
         agent_name = $ddl_agents.val() ? $ddl_agents.find('option:selected').text() : $txt_agents.val();
+        pa_list.map(pa => {
+            if (pa.name === agent_name || pa.paymentagent_loginid === agent_name) {
+                agent_website = pa.url;
+                agent_email = pa.email;
+                agent_telephone = pa.telephone;
+            }
+        });
     };
 
     const onUnload = () => {
