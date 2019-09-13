@@ -14,8 +14,8 @@ const MobileMenu = () => (
                 <Li
                     text={it.L('Trade')}
                     href={it.url_for('trading')}
-                    dataShow='-maltainvest'
                     className='ico-only-hide client_logged_in invisible'
+                    dataShow='-maltainvest'
                     subitems={[
                         { text: it.L('SmartTrader'),  href: it.url_for('trading'), className: 'no-capitalize' },
                         { text: it.L('WebTrader'),    href: 'https://webtrader.binary.com', target: '_blank' },
