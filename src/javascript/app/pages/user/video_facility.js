@@ -1,5 +1,6 @@
 const BinaryPjax   = require('../../base/binary_pjax');
 const Client       = require('../../base/client');
+const Header       = require('../../base/header');
 const BinarySocket = require('../../base/socket');
 const localize     = require('../../../_common/localize').localize;
 
@@ -22,6 +23,7 @@ const VideoFacility = (() => {
                     }
                     $('.msg_authenticate').setVisibility(1);
                     $('#generated_token').text(Client.get('token').slice(-4)).parent().setVisibility(1);
+                    Header.displayAccountStatus();
                 } else {
                     BinaryPjax.loadPreviousUrl();
                 }
