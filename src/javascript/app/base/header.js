@@ -52,8 +52,12 @@ const Header = (() => {
     };
 
     const logoOnClick = () => {
-        const url = Client.isLoggedIn() ? Client.defaultRedirectUrl() : Url.urlFor('');
-        BinaryPjax.load(url);
+        if (Client.isLoggedIn()) {
+            const url = Client.hasMFAccount() ? Url.urlFor('user/metatrader') : Client.defaultRedirectUrl();
+            BinaryPjax.load(url);
+        } else {
+            BinaryPjax.load(Url.urlFor(''));
+        }
     };
 
     const loginOnClick = (e) => {
