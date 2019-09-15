@@ -950,6 +950,35 @@ body #not_authenticated_financial ul.checked > li {
 }
 
 .authenticate-content {
+    #onfido {
+        // Below styles are set according to Onfido's styles
+        // This is because binary-styles overrides Onfido's own styles
+        .onfido-sdk-ui-NavigationBar-back {
+            background: transparent;
+        }
+        .onfido-sdk-ui-Button-button-primary:hover {
+            background: rgb(53, 63, 244); // Onfido's primary color
+        }
+        .onfido-sdk-ui-Button-button-outline:hover {
+            background-color: transparent;
+        }
+        .onfido-sdk-ui-crossDevice-CrossDeviceLink-copyToClipboard {
+            background: $COLOR_WHITE;
+            color: $COLOR_BLACK;
+            border-radius: 0;
+        }
+        input, textarea {
+            &:hover, &:focus {
+                outline: 0;
+                border: none;
+            }
+        }
+        button {
+            &:hover, &:focus {
+                background-color: inherit;
+            }
+        }
+    }
     .fields > .gr-row > div {
         > .button {
             display: block;
@@ -1023,6 +1052,9 @@ body #not_authenticated_financial ul.checked > li {
     #resolve_error {
         color: $COLOR_RED;
     }
+    .mar-top-0 {
+        margin-top: 0;
+    }
 }
 
 #content.careers-content {
@@ -1084,8 +1116,24 @@ body #not_authenticated_financial ul.checked > li {
                 }
             }
         }
+        .video-container {
+            width: 100%;
+            height: 0px;
+            position: relative;
+            padding-bottom: 56.3%;
+        }
+        .video-container iframe, .video-container object, .video-container embed {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
         .center-element {
             margin: 0 auto;
+        }
+        .margin-top-50 {
+            margin-top: 50px;
         }
         .margin-top-100 {
             margin-top: 100px;

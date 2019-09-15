@@ -78,7 +78,7 @@ const Partners = () => (
                 />
             </div>
 
-            <div className='gr-row gr-clear'>
+            <div className='gr-row gr-clear invisible'>
 
                 <Column
                     url={it.url_for('multiple-accounts-manager')}
