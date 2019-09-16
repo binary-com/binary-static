@@ -68,20 +68,16 @@ const MetaTraderConfig = (() => {
                 short_title : localize('Standard'),
             };
 
-            const has_iom_gaming = State.getResponse('landing_company.gaming_company.shortcode') === 'iom';
-
             return ({
                 // for financial mt company with shortcode maltainvest, only offer standard account with different leverage
                 financial: {
                     demo_standard: { mt5_account_type: standard_config.account_type, max_leverage: standard_config.leverage, title: localize('Demo Standard'), short_title: standard_config.short_title },
                     real_standard: { mt5_account_type: standard_config.account_type, max_leverage: standard_config.leverage, title: localize('Real Standard'), short_title: standard_config.short_title },
                 },
-                ...(!has_iom_gaming && {
-                    gaming: {
-                        demo_volatility: configMtCompanies.get().gaming.demo_volatility,
-                        real_volatility: configMtCompanies.get().gaming.real_volatility,
-                    },
-                }),
+                gaming: {
+                    demo_volatility: configMtCompanies.get().gaming.demo_volatility,
+                    real_volatility: configMtCompanies.get().gaming.real_volatility,
+                },
             });
         };
 
@@ -101,11 +97,7 @@ const MetaTraderConfig = (() => {
     const accounts_info = {};
 
     let $messages;
-    const needsRealMessage = () => {
-        const has_iom_gaming = State.getResponse('landing_company.gaming_company.shortcode') === 'iom';
-        const id_to_show = `#msg_switch${has_iom_gaming ? '_financial' : ''}`;
-        return $messages.find(id_to_show).html();
-    };
+    const needsRealMessage = () => $messages.find('#msg_switch').html();
 
     // currency equivalent to 1 USD
     // or 1 of donor currency if both accounts have the same currency
@@ -132,19 +124,7 @@ const MetaTraderConfig = (() => {
             if (!Client.get('currency')) {
                 resolve($messages.find('#msg_set_currency').html());
             } else if (is_demo) {
-                if (Client.get('residence') === 'gb') {
-                    BinarySocket.wait('get_account_status').then((response) => {
-                        if (!/age_verification/.test(response.get_account_status.status)) {
-                            $message.find('#msg_metatrader_account').setVisibility(1);
-                            $message.find('.authenticate').setVisibility(1);
-                            resolve($message.html());
-                        }
-
-                        resolve();
-                    });
-                } else {
-                    resolve();
-                }
+                resolve();
             } else if (is_virtual) { // virtual clients can only open demo MT accounts
                 resolve(needsRealMessage());
             } else {
@@ -182,17 +162,7 @@ const MetaTraderConfig = (() => {
                     if (is_maltainvest && (is_financial || is_demo_financial) && !has_financial_account) {
                         $message.find('.maltainvest').setVisibility(1);
 
-                        if (Client.get('residence') === 'gb') {
-                            BinarySocket.wait('get_account_status').then((response) => {
-                                if (!/age_verification/.test(response.get_account_status.status)) {
-                                    $message.find('.authenticate').setVisibility(1);
-                                }
-
-                                resolveWithMessage();
-                            });
-                        } else {
-                            resolveWithMessage();
-                        }
+                        resolveWithMessage();
                     }
 
                     const response_get_settings = State.getResponse('get_settings');
@@ -217,10 +187,6 @@ const MetaTraderConfig = (() => {
                                 showCitizenshipMessage();
                                 is_ok = false;
                             }
-                            if (Client.get('residence') === 'gb' && !/age_verification/.test(response_get_account_status.status)) {
-                                $message.find('.authenticate').setVisibility(1);
-                                is_ok = false;
-                            }
                             if (is_ok && !isAuthenticated()) {
                                 $new_account_financial_authenticate_msg.setVisibility(1);
                             }
@@ -241,10 +207,6 @@ const MetaTraderConfig = (() => {
                             }
                             if (!response_get_settings.citizen && !(is_maltainvest && !has_financial_account)) {
                                 showCitizenshipMessage();
-                                is_ok = false;
-                            }
-                            if (Client.get('residence') === 'gb' && !/age_verification/.test(response_get_account_status.status)) {
-                                $message.find('.authenticate').setVisibility(1);
                                 is_ok = false;
                             }
 
