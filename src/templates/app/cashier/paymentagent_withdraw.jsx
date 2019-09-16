@@ -6,6 +6,10 @@ import {
     SubmitButton }          from '../../_common/components/forms.jsx';
 import { SeparatorLine }    from '../../_common/components/separator_line.jsx';
 
+const ImportantDisclaimer = ({ className }) => (
+    <p className={`disclaimer${ className || ''}`}><strong>{it.L('IMPORTANT DISCLAIMER')}</strong> - {it.L('[_1] is not affiliated with any of the Payment Agents listed above. Each Payment Agent operates as an independent service provider and is not endorsed, guaranteed or otherwise approved by [_1]. CUSTOMERS DEAL WITH PAYMENT AGENTS AT THEIR SOLE RISK AND PERIL. Customers are advised to check the credentials of Payment Agents before sending them any money. [_1] shall not in any circumstance be held responsible for transactions made between customers and Payment Agents.', it.website_name)}</p>
+);
+
 const PaymentAgentWithdraw = () => (
     <React.Fragment>
         <h1>{it.L('Payment Agent Withdrawal')}</h1>
@@ -23,12 +27,50 @@ const PaymentAgentWithdraw = () => (
             </div>
 
             <div id='viewSuccess' className='viewItem invisible'>
-                <p id='successMessage' />
-                <p>
-                    <a className='button' href={it.url_for('user/statementws')}>
-                        <span className='button'>{it.L('View your statement')}</span>
-                    </a>
-                </p>
+                <Fieldset>
+                    <div className='gr-row'>
+                        <div className='gr-8 gr-12-m gr-centered gr-padding-30 gr-child center-text'>
+                            <h2>{it.L('Your request is being processed.')}</h2>
+                            <p id='successMessage' />
+                        </div>
+                    </div>
+
+                    <div className='gr-row'>
+                        <div className='gr-11 gr-centered'>
+                            <SeparatorLine show_mobile />
+                        </div>
+                    </div>
+
+                    <div className='gr-row'>
+                        <div className='gr-8 gr-12-m gr-centered gr-padding-10 gr-child center-text'>
+                            <p>{it.L('Please contact your payment agent to validate your withdrawal request.')}</p>
+                        </div>
+                    </div>
+
+                    <div className='gr-row invisible' id='agentDetails'>
+                        <div className='gr-push-3 gr-push-0-m gr-7 gr-12-m gr-padding-10'>
+                            <div className='gr-row'>
+                                <div className='gr-2 gr-3-m'>
+                                    <img className='responsive' src={it.url_for('images/pages/contact/contact-icon.svg')} />
+                                </div>
+                                <div className='gr-10 gr-9-m'>
+                                    <h5 id='agentName' />
+                                    <h5 className='gr-padding-20 gr-child' id='agentWebsite'>
+                                        {it.L('Website:')} <a />
+                                    </h5>
+                                    <h5 className='gr-padding-20 gr-child' id='agentEmail'>
+                                        {it.L('Email:')} <a />
+                                    </h5>
+                                    <h5 className='gr-padding-20 gr-child' id='agentTelephone'>
+                                        {it.L('Tel:')} <a />
+                                    </h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </Fieldset>
+
+                <ImportantDisclaimer className='gr-padding-30' />
             </div>
 
             <FormVerificationCode />
@@ -72,27 +114,14 @@ const PaymentAgentWithdraw = () => (
                             <SeparatorLine className='gr-padding-10' show_mobile />
                         </div>
                         <FormRow label={it.L('Amount')} id='txtAmount' type='text' />
-                        <FormRow
-                            label={it.L('Further instructions')}
-                            id='txtDescription'
-                            type='textarea'
-                            attributes={{ rows: 4, cols: 19, maxLength: 250 }}
-                        />
                         <SubmitButton msg_id='withdrawFormMessage' type='submit' text={it.L('Submit')} />
+                        <div className='gr-8 gr-centered gr-padding-20'>
+                            {it.L('Note: [_1] does not charge any transfer fees.', it.website_name)}
+                        </div>
                     </Fieldset>
                 </form>
 
-                <div id='paymentagent_withdrawal_notes'>
-                    <div>{it.L('Notes:')}</div>
-                    <ul>
-                        <li>{it.L('[_1] does not charge any transfer fees.', it.website_name)}</li>
-                        <li>{it.L('In the \'Further Instructions\' field please specify the payment method and account number to which the Agent will send the funds to.')} {it.L('Please make sure that you first agree with the Agent on the terms of payment before submitting your request.')}</li>
-                        <li>{it.L('Once you click the \'Submit\' button the funds will be withdrawn from your account and will be sent to the Payment Agent you have chosen.')}</li>
-                        <li>{it.L('The Agent will send you the withdrawal amount (minus the commission) via your preferred payment method.')}</li>
-                    </ul>
-                </div>
-
-                <p className='comment'><strong>{it.L('IMPORTANT DISCLAIMER')}</strong> - {it.L('[_1] is not affiliated with any of the Payment Agents listed above. Each Payment Agent operates as an independent service provider and is not endorsed, guaranteed or otherwise approved by [_1]. CUSTOMERS DEAL WITH PAYMENT AGENTS AT THEIR SOLE RISK AND PERIL. Customers are advised to check the credentials of Payment Agents before sending them any money. [_1] shall not in any circumstance be held responsible for transactions made between customers and Payment Agents.', it.website_name)}</p>
+                <ImportantDisclaimer />
             </div>
         </div>
     </React.Fragment>

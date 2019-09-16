@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-09-04 06:27\n"
+"PO-Revision-Date: 2019-09-12 06:42\n"
 "Last-Translator: binarycom\n"
 "Language-Team: Vietnamese\n"
 "MIME-Version: 1.0\n"
@@ -441,9 +441,6 @@ msgstr "Lịch sử đáng ghi nhận của %1"
 msgid "%1's systems are now processing in excess of 1 million transactions/day (including virtual accounts)."
 msgstr "Hệ thống của %1 hiện tại đang vượt quá 1 triệu giao dịch một ngày ( bao gồm tài khoản ảo)."
 
-msgid "%1Authenticate your account%2 now to take full advantage of all payment methods available."
-msgstr "%1 Xác thực tài khoản %2 của bạn bây giờ để tận dụng đầy đủ của tất cả các phương thức thanh toán có sẵn."
-
 msgid "%1Contact us%2 to arrange a date and time for the video call."
 msgstr "%1Liên hệ với chúng tôi%2 để sắp xếp một ngày và thời gian cho cuộc gọi video."
 
@@ -464,9 +461,6 @@ msgstr "%1Không, thay đổi tài khoản tiền fiat bây giờ%2"
 
 msgid "%1Return to trading page%2"
 msgstr "%1Trở về trang giao dịch%2"
-
-msgid "%1Your Proof of Identity or Proof of Address%2 did not meet our requirements. Please check your email for further instructions."
-msgstr "%1Chứng minh danh tính của bạn hoặc chứng minh địa chỉ của bạn%2 không đáp ứng yêu cầu của chúng tôi. Vui lòng kiểm tra email của bạn để được hướng dẫn thêm."
 
 msgid "'Best Customer Communication Firm' award by Investors Chronicle"
 msgstr "Giải thưởng 'Công ty Truyền thông kết nối Khách hàng Tốt nhất' của Investors Chronicle"
@@ -588,14 +582,11 @@ msgstr "2 * (6,000 – 5,200) = $1600"
 msgid "2-way pricing"
 msgstr "Giá 2 chiều"
 
-msgid "2. Proof of address"
-msgstr "2. Chứng minh về địa chỉ"
+msgid "2. Selfie with proof of ID"
+msgstr ""
 
 msgid "20 – 39.999%"
 msgstr "20 – 39.999%"
-
-msgid "3. Selfie with proof of ID"
-msgstr "3. Ảnh tự chụp kèm theo giấy tờ tuỳ thân"
 
 msgid "3.50"
 msgstr "3.50"
@@ -1518,9 +1509,6 @@ msgstr "Kết quả giao dịch của khách hàng được thực hiện tạ
 msgid "As a strong proponent of open source, we encourage publication of findings, methods, and tools via GitHub and our technical blog at %1 You will also assist our developers in understanding and patching the bugs that you find."
 msgstr "Với tư cách là một bên ủng hộ mạnh mẽ của mã nguồn mở, chúng tôi khuyến khích công bố các kết quả tìm kiếm, phương pháp, và công cụ qua GitHub và qua blog kỹ thuật của chúng tôi ở %1 Bạn cũng sẽ hỗ trợ các lập trình viên của chúng tôi trong việc tìm hiểu cũng như vá các lỗi mà bạn tìm thấy."
 
-msgid "As an EU resident, you are also required to verify the above documents by %1video call%2."
-msgstr "Là một công dân EU, bạn cũng được yêu cầu để xác minh các tài liệu nêu trên bằng %1cuộc gọi video%2."
-
 msgid "As an example, Expert Advisors might be able to be programmed for"
 msgstr "Ví dụ, Chuyên Gia Tư Vấn có thể được lập trình cho"
 
@@ -1757,9 +1745,6 @@ msgstr "Đô-la Úc vs đô-la Mỹ"
 
 msgid "Authenticate"
 msgstr "Xác thực"
-
-msgid "Authenticate your account by verifying your identity and address."
-msgstr "Xác thực tài khoản của bạn bằng cách xác minh danh tính và địa chỉ của bạn."
 
 msgid "Authenticate your account by video conference call. Follow these steps to proceed:"
 msgstr "Xác thực tài khoản của bạn bằng cuộc gọi hội nghị video. Hãy làm theo các bước sau để tiến hành:"
@@ -4827,9 +4812,6 @@ msgstr "Đôi khi, BIEL có thể quyết định cung cấp cho khách hàng 
 msgid "Front Side"
 msgstr "Mặt trước"
 
-msgid "Front and reverse side photos of %1 are required."
-msgstr "%1 yêu cầu phải có ảnh mặt trước và mặt sau của chứng minh thư."
-
 msgid "Front side"
 msgstr "Mặt trước"
 
@@ -6211,6 +6193,12 @@ msgstr "Tính năng chính"
 
 msgid "Kick back with beautiful beaches, islands, and mountains just a short flight away. From Malta, you have Europe, the Mediterranean, and North Africa. And from Malaysia, the whole of Asia awaits."
 msgstr "Quay trở lại với những bãi biển đẹp, quần đảo và các dãy núi chỉ là một chuyến bay ngắn. Từ Malta, bạn có Châu Âu, Địa Trung Hải và Bắc Phi. Và từ Malaysia, cả Châu Á đang chờ đợi."
+
+msgid "Kindly send a scan of a valid proof of address to %1support@binary.com%2"
+msgstr ""
+
+msgid "Kindly send a scan of a valid proof of identity to %1support@binary.com%2"
+msgstr ""
 
 msgid "Know how much you will win or lose before you purchase the contract"
 msgstr "Biết được bạn sẽ giành chiến thắng hay thua lỗ bao nhiêu trước khi bạn mua hợp đồng"
@@ -8138,6 +8126,9 @@ msgstr "Xin vui lòng %1đăng nhập%2 hoặc %3đăng ký%4 để xem trang n�
 msgid "Please accept the terms and conditions."
 msgstr "Xin vui lòng chấp nhận các điều khoản và điều kiện."
 
+msgid "Please check your email for details"
+msgstr ""
+
 msgid "Please check your email for further instructions."
 msgstr "Vui lòng kiểm tra email của bạn để được hướng dẫn thêm."
 
@@ -8284,6 +8275,15 @@ msgstr "Hãy chỉ rõ khoảng thời gian kiểm tra thực tế ưa thích c�
 
 msgid "Please submit the above information to %1."
 msgstr "Xin vui lòng gửi thông tin trên tới %1."
+
+msgid "Please submit your %1proof of address%2."
+msgstr ""
+
+msgid "Please submit your %1proof of identity and proof of address%2."
+msgstr ""
+
+msgid "Please submit your %1proof of identity%2."
+msgstr ""
 
 msgid "Please take note that our swap rate also depends on the time and days you hold your positions open."
 msgstr "Xin hãy lưu ý rằng tỷ lệ trao đổi của chúng tôi cũng phụ thuộc vào thời gian và ngày bạn giữ mở phiên của bạn."
@@ -8549,11 +8549,23 @@ msgstr "Lợi Nhuận/Thua Lỗ"
 msgid "Prohibited trades"
 msgstr "Các giao dịch bị cấm"
 
+msgid "Proof of address"
+msgstr ""
+
+msgid "Proof of address verification failed"
+msgstr ""
+
 msgid "Proof of address – such as bank statements/ building society statement or utility bills (mobile phone bills are unacceptable)"
 msgstr "Bằng chứng xác minh địa chỉ - như là báo cáo ngân hàng/ giấy chứng nhận nhà đất hoặc các hóa đơn thiết yếu (hóa đơn điện thoại sẽ không được chấp nhận)"
 
+msgid "Proof of identity"
+msgstr ""
+
 msgid "Proof of identity in your selfie must be clear, identifiable, and same as the one you submitted previously"
 msgstr "Chứng minh danh tính bằng ảnh chân dung của bạn phải rõ ràng, có thể nhận dạng, và giống một trong những ảnh những quý vị đã nộp trước đó"
+
+msgid "Proof of identity verification failed"
+msgstr ""
 
 msgid "Proof of identity – such as ID card, passport or driving licence"
 msgstr "Bằng chứng xác minh nhận dạng - như là chứng minh thư, hộ chiếu hoặc bằng lái xe"
@@ -9467,6 +9479,9 @@ msgstr "Giải quyết các vấn đề kinh doanh phức tạp bằng cách s�
 msgid "Some of the things that cryptocurrencies have in common include:"
 msgstr "Một số đặc điểm chung của các cryptocurrency:"
 
+msgid "Sorry,"
+msgstr ""
+
 msgid "Sorry, account signup is not available in your country."
 msgstr "Rất tiếc, không thể thực hiện đăng ký tài khoản ở quốc gia của bạn."
 
@@ -9961,9 +9976,6 @@ msgstr "Tether là một loại tiền cryptocurrency dựa trên hệ thống b
 
 msgid "Th"
 msgstr "Thứ 5"
-
-msgid "Thank you"
-msgstr "Xin cảm ơn"
 
 msgid "Thank you for completing the Financial Assessment. You can now deposit funds and trade Forex with real money on MetaTrader 5."
 msgstr "Cảm ơn bạn đã hoàn tất việc đánh giá tài chính. Bây giờ bạn có thể gửi tiền quỹ và giao dịch ngoại hối với tiền thật trên MetaTrader 5."
@@ -12732,9 +12744,6 @@ msgstr "Chúng tôi coi trọng những người tích cực có thể cùng nha
 msgid "We will continue to close open positions until your margin level becomes higher than the stop out level"
 msgstr "Chúng tôi sẽ tiếp tục đóng các phiên mở cho đến khi mức ký quỹ của bạn trở nên cao hơn mức dừng"
 
-msgid "We will review your documents and get back to you within 3 working days."
-msgstr "Chúng tôi sẽ xem xét lại các tài liệu và sẽ liên lạc lại với bạn trong vòng 3 ngày làm việc."
-
 msgid "We'd love to hear what you think."
 msgstr "Chúng tôi rất muốn nghe ý kiến của bạn."
 
@@ -13443,8 +13452,8 @@ msgstr "Bạn chỉ có thể chuyển tiền giữa các tài khoản tiền th
 msgid "You may open one account for each supported cryptocurrency."
 msgstr "Bạn được phép mở một tài khoản cho mỗi đồng tiền ảo được hỗ trợ."
 
-msgid "You may proceed but please %1authenticate%2 your account within 10 days to continue trading, otherwise your account will be disabled and any open positions will be closed."
-msgstr "Bạn có thể tiếp tục nhưng vui lòng %1xác nhận%2 tài khoản của mình trong tối đa 10 ngày để có thể tiếp tục giao dịch, nếu không tài khoản của bạn sẽ bị vô hiệu hóa và bất kỳ phiên mở nào sẽ bị đóng."
+msgid "You may proceed but please authenticate your account within 10 days to continue trading, otherwise your account will be disabled and any open positions will be closed."
+msgstr ""
 
 msgid "You may revoke the current manager's access."
 msgstr "Bạn có thể thu hồi quyền truy cập của nhà quản lý hiện tại."
@@ -13536,11 +13545,32 @@ msgstr "Bạn đã làm việc trong lĩnh vực tài chính tối thiểu đư�
 msgid "Your %1 day withdrawal limit is currently %2 %3 (or equivalent in other currency)."
 msgstr "Giới hạn rút tiền ngày %1 của bạn hiện là %2 %3 (hoặc với đồng tiền tương đương khác)."
 
+msgid "Your %1proof of address%2 has expired."
+msgstr ""
+
+msgid "Your %1proof of address%2 has not been verified. Please check your email for details."
+msgstr ""
+
+msgid "Your %1proof of identity%2 has expired."
+msgstr ""
+
+msgid "Your %1proof of identity%2 has not been verified. Please check your email for details."
+msgstr ""
+
+msgid "Your %1proof of identity%3 and %2proof of address%3 have expired."
+msgstr ""
+
+msgid "Your %1proof of identity%3 and %2proof of address%3 have not been verified. Please check your email for details."
+msgstr ""
+
 msgid "Your Client will receive an email notification informing him/her that the transfer has been processed."
 msgstr "Khách Hàng của bạn sẽ nhận được một email thông báo rằng việc chuyển tiền đã được xử lý."
 
 msgid "Your Existing Accounts"
 msgstr "Tài khoản hiện tại của bạn"
+
+msgid "Your account has been verified successfully"
+msgstr ""
 
 msgid "Your account has no Login/Logout activity."
 msgstr "Không có hoạt động Đăng nhập/Đăng xuất nào trên tài khoản của bạn."
@@ -13550,9 +13580,6 @@ msgstr "Không có hoạt động giao dịch nào trên tài khoản của bạ
 
 msgid "Your account is fully authenticated and your withdrawal limits have been lifted."
 msgstr "Tài khoản của bạn được xác thực đầy đủ và mức giới hạn rút tiền của bạn đã được nâng lên."
-
-msgid "Your account is fully authenticated. You can view your %1trading limits here%2."
-msgstr "Tài khoản của bạn đã hoàn tất quá trình xác thực. Bạn có thể xem hạn %1mức giao dịch của bạn tại đây%2."
 
 msgid "Your account is restricted. Kindly %1contact customer support%2 for assistance."
 msgstr "Tài khoản của bạn bị hạn chế. %1 vui lòng liên hệ hỗ trợ khách hàng %2 để được hỗ trợ."
@@ -13602,6 +13629,9 @@ msgstr "Hoa hồng của bạn cho tháng trước đó sẽ được gửi vào
 msgid "Your demo account balance is currently %1 or less. You may top up your account with an additional %2."
 msgstr "Số dư tài khoản demo của bạn hiện nay là %1 hoặc ít hơn. Bạn có thể nạp thêm vào tài khoản demo %2."
 
+msgid "Your document is being reviewed, please check back in 1-3 days"
+msgstr ""
+
 msgid "Your fiat account's currency is currently set to %1."
 msgstr "Tài khoản của bạn có đơn vị tiền tệ hiện tại đặt là %1."
 
@@ -13628,6 +13658,24 @@ msgstr "Yêu cầu trở thành khách hàng chuyên nghiệp của bạn %1nkh�
 
 msgid "Your profit or loss is calculated as follows:"
 msgstr "Lợi nhuận hoặc thua lỗ của bạn được tính như sau:"
+
+msgid "Your proof of address has been verified successfully"
+msgstr ""
+
+msgid "Your proof of address has expired"
+msgstr ""
+
+msgid "Your proof of address was submitted successfully"
+msgstr ""
+
+msgid "Your proof of identity has been verified successfully"
+msgstr ""
+
+msgid "Your proof of identity has expired"
+msgstr ""
+
+msgid "Your proof of identity was submitted successfully"
+msgstr ""
 
 msgid "Your request to be treated as a professional client is %1not approved%2."
 msgstr "Yêu cầu của bạn để trở thành khách hàng chuyên nghiệp đã %1nkhông được chấp thuận%2."
@@ -13865,6 +13913,9 @@ msgstr "quyền chuyển đổi dữ liệu"
 
 msgid "the underlying currency, or financial instrument, on which the price of the CFD is based"
 msgstr "tiền tệ cơ bản, hoặc công cụ tài chính, từ nó giá của hợp đồng chênh lệch dựa vào"
+
+msgid "there was a connection error. Please try again later."
+msgstr ""
 
 msgid "thousand"
 msgstr "nghìn"
