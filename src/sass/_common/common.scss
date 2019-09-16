@@ -114,6 +114,7 @@ fieldset {
     border: 1px solid $COLOR_GRAY;
     padding: 5px;
     margin-bottom: 10px;
+    word-break: break-word;
 
     legend {
         color: $COLOR_DARK_GRAY;
