@@ -304,6 +304,7 @@ const Trading = () => (
         <div id='trading_init_progress'>
             <Loading />
         </div>
+        <p className='center-text notice-msg invisible' id='trading_error_msg'>{it.L('Sorry, SmartTrader is not available in your country.')}</p>
     </React.Fragment>
 );
 
