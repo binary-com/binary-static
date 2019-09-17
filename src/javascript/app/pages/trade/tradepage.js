@@ -26,10 +26,7 @@ const TradePage = (() => {
     };
 
     const init = () => {
-        if (Client.isMFAccount()) {
-            $('#trading_socket_container').empty();
-            $('#trading_init_progress').hide();
-        } else {
+        if (!Client.isMFAccount()) {
             State.set('is_trading', true);
             Price.clearFormId();
             if (events_initialized === 0) {

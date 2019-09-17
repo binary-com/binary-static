@@ -301,7 +301,7 @@ const Trading = () => (
             <div id='all_prices' />
             <Analysis />
         </div>
-        <div id='trading_init_progress'>
+        <div id='trading_init_progress' data-show='-maltainvest'>
             <Loading />
         </div>
         <p className='center-text notice-msg' data-show='maltainvest' id='trading_error_msg'>{it.L('Sorry, SmartTrader is not available in your country.')}</p>
