@@ -8,7 +8,8 @@ const getPaWithdrawalLimit = require('../../common/currency').getPaWithdrawalLim
 const FormManager          = require('../../common/form_manager');
 const Validation           = require('../../common/form_validation');
 const handleVerifyCode     = require('../../common/verification_code').handleVerifyCode;
-const getElementById       = require('../../../_common/common_functions.js').getElementById;
+const isVisible            = require('../../../_common/common_functions').isVisible;
+const getElementById       = require('../../../_common/common_functions').getElementById;
 const localize             = require('../../../_common/localize').localize;
 const Url                  = require('../../../_common/url');
 const isBinaryApp          = require('../../../config').isBinaryApp;
@@ -86,7 +87,7 @@ const PaymentAgentWithdraw = (() => {
                 }
                 return getPaWithdrawalLimit(currency, limit);
             };
-            
+
             const min = () => getAPILimit('min');
             const max = () => getAPILimit('max');
 
