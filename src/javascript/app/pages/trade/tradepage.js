@@ -26,7 +26,6 @@ const TradePage = (() => {
     };
 
     const init = () => {
-    
         State.set('is_trading', true);
         Price.clearFormId();
         if (events_initialized === 0) {
