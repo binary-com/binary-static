@@ -298,7 +298,6 @@ const Header = (() => {
                 document_needs_action: () => buildMessage(localizeKeepPlaceholders('[_1]Your Proof of Identity or Proof of Address[_2] did not meet our requirements. Please check your email for further instructions.'), 'user/authenticate'),
                 excluded_until       : () => buildMessage(localizeKeepPlaceholders('Your account is restricted. Kindly [_1]contact customer support[_2] for assistance.'),                                                 'contact'),
                 financial_limit      : () => buildMessage(localizeKeepPlaceholders('Please set your [_1]30-day turnover limit[_2] to remove deposit limits.'),                                                             'user/security/self_exclusionws'),
-                mf_retail            : () => buildMessage(localizeKeepPlaceholders('Binary Options Trading has been disabled on your account. Kindly [_1]contact customer support[_2] for assistance.'),                   'contact'),
                 mt5_withdrawal_locked: () => localize('MT5 withdrawals have been disabled on your account. Please check your email for more details.'),
                 required_fields      : () => buildMessage(localizeKeepPlaceholders('Please complete your [_1]personal details[_2] before you proceed.'),                                                                   'user/settings/detailsws'),
                 residence            : () => buildMessage(localizeKeepPlaceholders('Please set [_1]country of residence[_2] before upgrading to a real-money account.'),                                                   'user/settings/detailsws'),
@@ -318,7 +317,6 @@ const Header = (() => {
                 document_needs_action: () => hasStatus('document_needs_action'),
                 excluded_until       : () => Client.get('excluded_until'),
                 financial_limit      : () => hasStatus('max_turnover_limit_not_set'),
-                mf_retail            : () => Client.get('landing_company_shortcode') === 'maltainvest' && !hasStatus('professional'),
                 mt5_withdrawal_locked: () => hasStatus('mt5_withdrawal_locked'),
                 required_fields      : () => hasMissingRequiredField(),
                 residence            : () => !Client.get('residence'),
@@ -344,7 +342,6 @@ const Header = (() => {
                 'withdrawal_locked',
                 'mt5_withdrawal_locked',
                 'unwelcome',
-                'mf_retail',
             ];
 
             // virtual checks
@@ -355,11 +352,7 @@ const Header = (() => {
             const checkStatus = (check_statuses) => {
                 const notified = check_statuses.some((check_type) => {
                     if (validations[check_type]()) {
-                        // show MF retail message on Trading pages only
-                        if (check_type === 'mf_retail' && !State.get('is_trading')) {
-                            return false;
-                        }
-                        displayNotification(messages[check_type](), false, check_type === 'mf_retail' ? 'MF_RETAIL_MESSAGE' : '');
+                        displayNotification(messages[check_type](), false);
                         return true;
                     }
                     return false;
