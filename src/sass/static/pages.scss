@@ -580,9 +580,6 @@ body #_elev_io {
                 font-style: italic;
                 font-size: $FONT_SIZE_L;
             }
-            p.no-margin-top {
-                margin-top: 0;
-            }
             @media (max-width: 768px) {
                 p {
                     text-align: center;

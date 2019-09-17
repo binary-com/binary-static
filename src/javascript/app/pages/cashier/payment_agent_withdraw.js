@@ -8,7 +8,8 @@ const getPaWithdrawalLimit = require('../../common/currency').getPaWithdrawalLim
 const FormManager          = require('../../common/form_manager');
 const Validation           = require('../../common/form_validation');
 const handleVerifyCode     = require('../../common/verification_code').handleVerifyCode;
-const getElementById       = require('../../../_common/common_functions.js').getElementById;
+const isVisible            = require('../../../_common/common_functions').isVisible;
+const getElementById       = require('../../../_common/common_functions').getElementById;
 const localize             = require('../../../_common/localize').localize;
 const Url                  = require('../../../_common/url');
 const isBinaryApp          = require('../../../config').isBinaryApp;
@@ -86,7 +87,7 @@ const PaymentAgentWithdraw = (() => {
                 }
                 return getPaWithdrawalLimit(currency, limit);
             };
-            
+
             const min = () => getAPILimit('min');
             const max = () => getAPILimit('max');
 
@@ -144,6 +145,12 @@ const PaymentAgentWithdraw = (() => {
                 fnc_response_handler: withdrawResponse,
                 fnc_additional_check: checkAgent,
                 enable_button       : true,
+            });
+
+            $(field_ids.txt_desc).off().on('keyup', () => {
+                if (isVisible(getElementById('withdrawFormMessage'))) {
+                    $(field_ids.frm_msg).setVisibility(0);
+                }
             });
         }
     };
@@ -210,7 +217,7 @@ const PaymentAgentWithdraw = (() => {
             default: // error
                 if (response.echo_req.dry_run === 1) {
                     setActiveView(view_ids.form);
-                    $('#withdrawFormMessage').setVisibility(1).html(response.error.message);
+                    $(field_ids.frm_msg).setVisibility(1).html(response.error.message);
                 } else if (response.error.code === 'InvalidToken') {
                     showPageError(localize('Your token has expired or is invalid. Please click [_1]here[_2] to restart the verification process.', ['<a href="javascript:;" onclick="var url = location.href.split(\'#\')[0]; window.history.replaceState({ url }, document.title, url); window.location.reload();">', '</a>']));
                 } else {
