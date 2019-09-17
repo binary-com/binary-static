@@ -312,7 +312,7 @@ const ClientBase = (() => {
         return (is_from_crypto ? !is_to_crypto : is_to_crypto);
     };
 
-    const hasMFAccount = () => !!(getAllLoginids().find(loginid=> /^MF/.test(loginid)));
+    const isMFAccount = (loginid) => /^MF/.test(loginid || current_loginid);
 
     const hasSvgAccount = () => !!(getAllLoginids().find(loginid => /^CR/.test(loginid)));
 
@@ -355,7 +355,7 @@ const ClientBase = (() => {
         getLandingCompanyValue,
         getRiskAssessment,
         canTransferFunds,
-        hasMFAccount,
+        isMFAccount,
         hasSvgAccount,
         canChangeCurrency,
     };

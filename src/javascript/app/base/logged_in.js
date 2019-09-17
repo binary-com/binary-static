@@ -43,7 +43,8 @@ const LoggedInHandler = (() => {
             if (set_default) {
                 const lang_cookie = urlLang(redirect_url) || Cookies.get('language');
                 const language    = getLanguage();
-                redirect_url      = account_list.some(account => account.landing_company_name === 'maltainvest')
+                // const current_loginid = getPropertyValue(response, ['authorize', 'loginid']);
+                redirect_url      = Client.isMFAccount()
                     ? urlFor('user/metatrader')
                     : Client.defaultRedirectUrl();
                 if (lang_cookie && lang_cookie !== language) {
