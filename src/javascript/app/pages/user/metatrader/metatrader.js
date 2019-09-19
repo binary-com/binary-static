@@ -1,11 +1,12 @@
-const MetaTraderConfig = require('./metatrader.config');
-const MetaTraderUI     = require('./metatrader.ui');
-const Client           = require('../../../base/client');
-const BinarySocket     = require('../../../base/socket');
-const Validation       = require('../../../common/form_validation');
-const localize         = require('../../../../_common/localize').localize;
-const State            = require('../../../../_common/storage').State;
-const isEmptyObject    = require('../../../../_common/utility').isEmptyObject;
+const MetaTraderConfig   = require('./metatrader.config');
+const MetaTraderUI       = require('./metatrader.ui');
+const Client             = require('../../../base/client');
+const BinarySocket       = require('../../../base/socket');
+const Validation         = require('../../../common/form_validation');
+const localize           = require('../../../../_common/localize').localize;
+const State              = require('../../../../_common/storage').State;
+const isEmptyObject      = require('../../../../_common/utility').isEmptyObject;
+const applyToAllElements = require('../../../../_common/utility').applyToAllElements;
 
 const MetaTrader = (() => {
     let mt_companies;
@@ -18,9 +19,9 @@ const MetaTrader = (() => {
 
     const onLoad = () => {
         BinarySocket.send({ statement: 1, limit: 1 });
-        BinarySocket.wait('landing_company', 'get_account_status', 'statement').then(async () => {
-            const is_eligible = await isEligible();
-            if (is_eligible) {
+        BinarySocket.wait('landing_company', 'get_account_status', 'statement').then(() => {
+            setMTCompanies();
+            if (isEligible()) {
                 if (Client.get('is_virtual')) {
                     getAllAccountsInfo();
                 } else {
@@ -38,10 +39,7 @@ const MetaTrader = (() => {
 
     const setMTCompanies = () => {
         const mt_financial_company = State.getResponse('landing_company.mt_financial_company');
-
-        const has_iom_gaming_company = State.getResponse('landing_company.gaming_company.shortcode') === 'iom';
-
-        const mt_gaming_company = has_iom_gaming_company ? State.getResponse('landing_company.mt_gaming_company') : {};
+        const mt_gaming_company    = State.getResponse('landing_company.mt_gaming_company');
 
         // Check if mt_gaming_company is offered, if not found, switch to mt_financial_company
         const mt_landing_company = isEmptyObject(mt_gaming_company) ? mt_financial_company : mt_gaming_company;
@@ -53,29 +51,11 @@ const MetaTrader = (() => {
         mt_companies = mt_companies || MetaTraderConfig[is_financial ? 'configMtFinCompanies' : 'configMtCompanies']();
     };
 
-    const isEligible = () => (
-        new Promise((resolve) => {
-            const financial_company = State.getResponse('landing_company.financial_company.shortcode');
-            // client is currently IOM landing company
-            // or has IOM landing company and doesn't have a non-IOM financial company
-            const has_iom_gaming_company = Client.get('landing_company_shortcode') === 'iom' ||
-                (State.getResponse('landing_company.gaming_company.shortcode') === 'iom' && financial_company && financial_company === 'iom');
-            if (has_iom_gaming_company) {
-                if (Client.isLoggedIn()) {
-                    BinarySocket.wait('mt5_login_list').then((response_login_list) => {
-                        // don't allow account opening for IOM accounts but let them see the dashboard if they have existing MT5 accounts
-                        resolve(response_login_list.mt5_login_list.length ? hasMTCompany() : false);
-                    });
-                } else {
-                    resolve(false);
-                }
-            } else {
-                resolve(hasMTCompany());
-            }
-        })
-    );
-
-    const hasMTCompany = () => {
+    const isEligible = () => {
+        // hide MT5 dashboard for IOM account or VRTC of IOM landing company
+        if (State.getResponse('landing_company.gaming_company.shortcode') === 'iom' && !Client.isAccountOfType('financial')) {
+            return false;
+        }
         setMTCompanies();
         let has_mt_company = false;
         Object.keys(mt_companies).forEach((company) => {
@@ -296,6 +276,17 @@ const MetaTrader = (() => {
         });
     };
 
+    const metatraderMenuItemVisibility = () => {
+        BinarySocket.wait('landing_company', 'get_account_status').then(async () => {
+            if (isEligible()) {
+                const mt_visibility = document.getElementsByClassName('mt_visibility');
+                applyToAllElements(mt_visibility, (el) => {
+                    el.setVisibility(1);
+                });
+            }
+        });
+    };
+
     const onUnload = () => {
         MetaTraderUI.refreshAction();
     };
@@ -304,6 +295,7 @@ const MetaTrader = (() => {
         onLoad,
         onUnload,
         isEligible,
+        metatraderMenuItemVisibility,
     };
 })();
 

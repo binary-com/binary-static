@@ -246,7 +246,7 @@ const Metatrader = () => (
                         />
                         */}
                         <AccountDesc
-                            account_type={['svg', 'malta', 'iom']}
+                            account_type={['svg', 'malta']}
                             title={it.L('Synthetic Indices Account')}
                             description={it.L('Our Synthetic Indices account allows you to trade CFDs on Synthetic Indices - our proprietary synthetic assets that simulate market forces.')}
                             items={[
@@ -303,7 +303,7 @@ const Metatrader = () => (
                                         </TypeGroup>
                                     </div>
                                     <p id='new_account_msg' className='notice-msg center-text invisible' />
-                                    <p id='new_account_financial_authenticate_msg' className='invisible notice-msg hint'>{it.L('You may proceed but please [_1]authenticate[_2] your account within 10 days to continue trading, otherwise your account will be disabled and any open positions will be closed.', `<a href="${it.url_for('user/authenticate')}">`, '</a>')}</p>
+                                    <p id='new_account_financial_authenticate_msg' className='invisible notice-msg hint'>{it.L('You may proceed but please authenticate your account within 10 days to continue trading, otherwise your account will be disabled and any open positions will be closed.')}</p>
                                     <p id='new_account_no_deposit_bonus_msg' className='center-text hint invisible'>
                                         <strong>{it.L('Note: A no deposit bonus worth USD 10 will be credited into your account within 24 hours after registration.')}</strong>
                                     </p>
@@ -575,11 +575,6 @@ const Metatrader = () => (
                             {it.L('To perform this action, please switch to your [_1] Real Account.', it.website_name)}
                             <br />
                             {it.L('If you do not have a [_1] Real Account yet, please [_2]create one[_3].', it.website_name, `<a href="${it.url_for('new_account/realws')}">` , '</a>')}
-                        </div>
-                        <div id='msg_switch_financial'>
-                            {it.L('To perform this action, please switch to your [_1] financial account.', it.website_name)}
-                            <br />
-                            {it.L('If you do not have a [_1] financial account yet, please create one.', it.website_name)}
                         </div>
                         <div id='msg_real_financial'>
                             <span id='msg_metatrader_account' className='invisible'>{it.L('To create a MetaTrader 5 account:')}</span>

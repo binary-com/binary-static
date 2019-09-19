@@ -12,7 +12,7 @@ const FileSelector = ({
 }) => (
     <div className='gr-12 gr-no-gutter' data-show={data_show}>
         <fieldset>
-            <div className='gr-padding-30 gr-gutter-left gr-gutter-right'>
+            <div className='gr-padding-10 gr-gutter-left gr-gutter-right'>
                 <h2>{heading}</h2>
                 <div className='gr-row'>
                     <div className='gr-7 gr-12-m'>
@@ -105,12 +105,9 @@ const FileSelector = ({
     </div>
 );
 
-const AuthenticateMessage = () => (
+export const UnsupportedMessage = () => (
     <React.Fragment>
-        <p>{it.L('Authenticate your account by verifying your identity and address.')}</p>
-
-        <p>{it.L('Learn more about submitting essential documents with our handy infographic:')}</p>
-
+        <p className='mar-top-0'>{it.L('Learn more about submitting essential documents with our handy infographic:')}</p>
         <p className='learn_more'>
             <a className='button' href='#' target='_blank'><span>{it.L('View guide')}</span></a>
         </p>
@@ -136,10 +133,58 @@ const AuthenticateMessage = () => (
             ]}
         />
 
-        <SeparatorLine className='gr-padding-10' invisible />
+        <SeparatorLine className='gr-padding-10' data_show='mt5fin:vanuatu, labuan' invisible />
 
         <FileSelector
-            heading={it.L('2. Proof of address')}
+            heading={it.L('2. Selfie with proof of ID')}
+            data_show='mt5fin:vanuatu, labuan'
+            instructions={[
+                it.L('Must be a clear, colour photo'),
+                it.L('Proof of identity in your selfie must be clear, identifiable, and same as the one you submitted previously'),
+                it.L('Only JPG, JPEG, GIF, and PNG formats are accepted'),
+                it.L('Maximum upload size for each file is [_1]', '8MB'),
+            ]}
+            type='selfie'
+            accepted_documents={[
+                { name: it.L('Selfie holding proof of identity (front)') },
+            ]}
+        />
+
+        <div className='submit-status-uns gr-centered gr-padding-30 invisible'>
+            <h2 className='center-text'>{it.L('Document submission status')}</h2>
+            <Table
+                data={{
+                    thead: [
+                        [
+                            { text: it.L('Document Type'), className: 'gr-padding-10 align-start' },
+                            { text: it.L('File Name'),     className: 'gr-padding-10 align-start' },
+                            { text: it.L('Status'),        className: 'gr-padding-10 align-start' },
+                        ],
+                    ],
+                }}
+            />
+        </div>
+
+        <div className='center-text'>
+            <div id='resolve_error_uns' className='invisible center-text'>{it.L('Please resolve all pending issues to continue')}</div>
+            <div id='msg_form_uns' className='error-msg invisible center-text' />
+            <div className='gr-padding-10'>
+                <a className='button-disabled' id='btn_submit_uns' type='submit'>
+                    <span>{it.L('Submit for review')}</span>
+                </a>
+            </div>
+        </div>
+    </React.Fragment>
+);
+
+export const AuthenticateMessage = () => (
+    <React.Fragment>
+        <p className='mar-top-0'>{it.L('Learn more about submitting essential documents with our handy infographic:')}</p>
+        <p className='learn_more'>
+            <a className='button' href='#' target='_blank'><span>{it.L('View guide')}</span></a>
+        </p>
+
+        <FileSelector
             allowed_documents={[
                 it.L('Utility bills (electricity, water, gas, broadband and landline)'),
                 it.L('Latest bank statement or any government-issued letter which contains your name and address')]}
@@ -153,23 +198,6 @@ const AuthenticateMessage = () => (
             accepted_documents={[
                 { name: it.L('Utility bill'), value: 'proofaddress' },
                 { name: it.L('Bank statement'), value: 'bankstatement' },
-            ]}
-        />
-
-        <SeparatorLine className='gr-padding-10' data_show='mt5fin:vanuatu, labuan' invisible />
-
-        <FileSelector
-            heading={it.L('3. Selfie with proof of ID')}
-            data_show='mt5fin:vanuatu, labuan'
-            instructions={[
-                it.L('Must be a clear, colour photo'),
-                it.L('Proof of identity in your selfie must be clear, identifiable, and same as the one you submitted previously'),
-                it.L('Only JPG, JPEG, GIF, and PNG formats are accepted'),
-                it.L('Maximum upload size for each file is [_1]', '8MB'),
-            ]}
-            type='selfie'
-            accepted_documents={[
-                { name: it.L('Selfie holding proof of identity (front)') },
             ]}
         />
 
@@ -199,5 +227,3 @@ const AuthenticateMessage = () => (
         </div>
     </React.Fragment>
 );
-
-export default AuthenticateMessage;

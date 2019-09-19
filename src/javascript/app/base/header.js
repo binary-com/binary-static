@@ -2,7 +2,6 @@ const BinaryPjax               = require('./binary_pjax');
 const Client                   = require('./client');
 const BinarySocket             = require('./socket');
 const showHidePulser           = require('../common/account_opening').showHidePulser;
-const MetaTrader               = require('../pages/user/metatrader/metatrader');
 const getLandingCompanyValue   = require('../../_common/base/client_base').getLandingCompanyValue;
 const GTM                      = require('../../_common/base/gtm');
 const Login                    = require('../../_common/base/login');
@@ -109,18 +108,6 @@ const Header = (() => {
             el_loginid.setAttribute('disabled', 'disabled');
             switchLoginid(el_loginid.getAttribute('data-value'));
         }
-    };
-
-    const metatraderMenuItemVisibility = () => {
-        BinarySocket.wait('landing_company', 'get_account_status').then(async () => {
-            const is_eligible = await MetaTrader.isEligible();
-            if (is_eligible) {
-                const mt_visibility = document.getElementsByClassName('mt_visibility');
-                applyToAllElements(mt_visibility, (el) => {
-                    el.setVisibility(1);
-                });
-            }
-        });
     };
 
     const switchLoginid = (loginid) => {
@@ -255,8 +242,9 @@ const Header = (() => {
     };
 
     const displayAccountStatus = () => {
-        BinarySocket.wait('authorize', 'landing_company').then(() => {
-            let get_account_status,
+        BinarySocket.wait('get_account_status', 'authorize', 'landing_company').then(() => {
+            let authentication,
+                get_account_status,
                 status;
             const is_svg          = Client.get('landing_company_shortcode') === 'svg';
             const loginid         = Client.get('loginid') || {};
@@ -287,15 +275,74 @@ const Header = (() => {
             };
 
             const buildMessage = (string, path, hash = '') => template(string, [`<a href="${Url.urlFor(path)}${hash}">`, '</a>']);
+            const buildSpecificMessage = (string, additional) => template(string, [...additional]);
             const hasStatus = (string) => status.findIndex(s => s === string) < 0 ? Boolean(false) : Boolean(true);
+            const hasVerification = (string) => {
+                const { identity, document, needs_verification } = authentication;
+                if (!identity || !document || !needs_verification) {
+                    return false;
+                }
+                const verification_length = needs_verification.length;
+                let result = false;
+
+                switch (string) {
+                    case 'unsubmitted': {
+                        result = verification_length === 2 && identity.status === 'none' && document.status === 'none';
+                        break;
+                    }
+                    case 'expired': {
+                        result = verification_length === 2 && (identity.status === 'expired' && document.status === 'expired');
+                        break;
+                    }
+                    case 'expired_identity': {
+                        result = verification_length && identity.status === 'expired';
+                        break;
+                    }
+                    case 'expired_document': {
+                        result = verification_length && document.status === 'expired';
+                        break;
+                    }
+                    case 'rejected': {
+                        result = verification_length === 2 && (identity.status !== 'none' || document.status !== 'none');
+                        break;
+                    }
+                    case 'rejected_identity': {
+                        result = verification_length && (identity.status === 'rejected' || identity.status === 'suspected');
+                        break;
+                    }
+                    case 'rejected_document': {
+                        result = verification_length && (document.status === 'rejected' || document.status === 'suspected');
+                        break;
+                    }
+                    case 'identity': {
+                        result = verification_length && identity.status === 'none';
+                        break;
+                    }
+                    case 'document': {
+                        result = verification_length && document.status === 'none';
+                        break;
+                    }
+                    default:
+                        break;
+                }
+
+                return result;
+            };
 
             const has_no_tnc_limit = is_svg;
 
             const messages = {
-                authenticate         : () => buildMessage(localizeKeepPlaceholders('[_1]Authenticate your account[_2] now to take full advantage of all payment methods available.'),                                      'user/authenticate'),
                 cashier_locked       : () => localize('Deposits and withdrawals have been disabled on your account. Please check your email for more details.'),
                 currency             : () => buildMessage(localizeKeepPlaceholders('Please set the [_1]currency[_2] of your account.'),                                                                                    'user/set-currency'),
-                document_needs_action: () => buildMessage(localizeKeepPlaceholders('[_1]Your Proof of Identity or Proof of Address[_2] did not meet our requirements. Please check your email for further instructions.'), 'user/authenticate'),
+                unsubmitted          : () => buildMessage(localizeKeepPlaceholders('Please submit your [_1]proof of identity and proof of address[_2].'),                                                                  'user/authenticate'),
+                expired              : () => buildSpecificMessage(localizeKeepPlaceholders('Your [_1]proof of identity[_3] and [_2]proof of address[_3] have expired.'),                                                   [`<a href='${Url.urlFor('user/authenticate')}'>`, `<a href='${Url.urlFor('user/authenticate')}?authentication_tab=poa'>`, '</a>']),
+                expired_identity     : () => buildMessage(localizeKeepPlaceholders('Your [_1]proof of identity[_2] has expired.'),                                                                                         'user/authenticate'),
+                expired_document     : () => buildMessage(localizeKeepPlaceholders('Your [_1]proof of address[_2] has expired.'),                                                                                          'user/authenticate', '?authentication_tab=poa'),
+                rejected             : () => buildSpecificMessage(localizeKeepPlaceholders('Your [_1]proof of identity[_3] and [_2]proof of address[_3] have not been verified. Please check your email for details.'),    [`<a href='${Url.urlFor('user/authenticate')}'>`, `<a href='${Url.urlFor('user/authenticate')}?authentication_tab=poa'>`, '</a>']),
+                rejected_identity    : () => buildMessage(localizeKeepPlaceholders('Your [_1]proof of identity[_2] has not been verified. Please check your email for details.'),                                          'user/authenticate'),
+                rejected_document    : () => buildMessage(localizeKeepPlaceholders('Your [_1]proof of address[_2] has not been verified. Please check your email for details.'),                                           'user/authenticate', '?authentication_tab=poa'),
+                identity             : () => buildMessage(localizeKeepPlaceholders('Please submit your [_1]proof of identity[_2].'),                                                                                       'user/authenticate'),
+                document             : () => buildMessage(localizeKeepPlaceholders('Please submit your [_1]proof of address[_2].'),                                                                                        'user/authenticate', '?authentication_tab=poa'),
                 excluded_until       : () => buildMessage(localizeKeepPlaceholders('Your account is restricted. Kindly [_1]contact customer support[_2] for assistance.'),                                                 'contact'),
                 financial_limit      : () => buildMessage(localizeKeepPlaceholders('Please set your [_1]30-day turnover limit[_2] to remove deposit limits.'),                                                             'user/security/self_exclusionws'),
                 mt5_withdrawal_locked: () => localize('MT5 withdrawals have been disabled on your account. Please check your email for more details.'),
@@ -311,10 +358,17 @@ const Header = (() => {
             };
 
             const validations = {
-                authenticate         : () => +get_account_status.prompt_client_to_authenticate && !hasStatus('document_under_review'),
                 cashier_locked       : () => hasStatus('cashier_locked'),
                 currency             : () => !Client.get('currency'),
-                document_needs_action: () => hasStatus('document_needs_action'),
+                unsubmitted          : () => hasVerification('unsubmitted'),
+                expired              : () => hasVerification('expired'),
+                expired_identity     : () => hasVerification('expired_identity'),
+                expired_document     : () => hasVerification('expired_document'),
+                rejected             : () => hasVerification('rejected'),
+                rejected_identity    : () => hasVerification('rejected_identity'),
+                rejected_document    : () => hasVerification('rejected_document'),
+                identity             : () => hasVerification('identity'),
+                document             : () => hasVerification('document'),
                 excluded_until       : () => Client.get('excluded_until'),
                 financial_limit      : () => hasStatus('max_turnover_limit_not_set'),
                 mt5_withdrawal_locked: () => hasStatus('mt5_withdrawal_locked'),
@@ -336,12 +390,42 @@ const Header = (() => {
                 'risk',
                 'tax',
                 'currency',
-                'document_needs_action',
-                'authenticate',
                 'cashier_locked',
                 'withdrawal_locked',
                 'mt5_withdrawal_locked',
                 'unwelcome',
+                'unsubmitted',
+                'expired',
+                'expired_identity',
+                'expired_document',
+                'rejected',
+                'rejected_identity',
+                'rejected_document',
+                'identity',
+                'document',
+            ];
+
+            const check_statuses_mf_mlt = [
+                'excluded_until',
+                'tnc',
+                'required_fields',
+                'financial_limit',
+                'risk',
+                'tax',
+                'currency',
+                'unsubmitted',
+                'expired',
+                'expired_identity',
+                'expired_document',
+                'rejected',
+                'rejected_identity',
+                'rejected_document',
+                'identity',
+                'document',
+                'unwelcome',
+                'cashier_locked',
+                'withdrawal_locked',
+                'mt5_withdrawal_locked',
             ];
 
             // virtual checks
@@ -364,11 +448,15 @@ const Header = (() => {
                 checkStatus(check_statuses_virtual);
             } else {
                 const el_account_status = createElement('span', { class: 'authenticated', 'data-balloon': localize('Account Authenticated'), 'data-balloon-pos': 'down' });
-
                 BinarySocket.wait('website_status', 'get_account_status', 'get_settings', 'balance').then(() => {
+                    authentication = State.getResponse('get_account_status.authentication') || {};
                     get_account_status = State.getResponse('get_account_status') || {};
                     status             = get_account_status.status;
-                    checkStatus(check_statuses_real);
+                    if (Client.get('landing_company_shortcode') === 'maltainvest' || Client.get('landing_company_shortcode') === 'malta' || Client.get('landing_company_shortcode') === 'iom') {
+                        checkStatus(check_statuses_mf_mlt);
+                    } else {
+                        checkStatus(check_statuses_real);
+                    }
                     const is_fully_authenticated = hasStatus('authenticated') && !+get_account_status.prompt_client_to_authenticate;
                     $('.account-id')[is_fully_authenticated ? 'append' : 'remove'](el_account_status);
                 });
@@ -380,7 +468,6 @@ const Header = (() => {
         onLoad,
         populateAccountsList,
         upgradeMessageVisibility,
-        metatraderMenuItemVisibility,
         displayNotification,
         hideNotification,
         displayAccountStatus,

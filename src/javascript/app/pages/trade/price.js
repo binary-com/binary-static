@@ -56,13 +56,13 @@ const Price = (() => {
         const selected_tick = CommonFunctions.getElementById('selected_tick');
         const multiplier    = CommonFunctions.getElementById('multiplier');
 
-        if (payout && CommonFunctions.isVisible(payout) && payout.value) {
+        if (payout && CommonFunctions.isVisible(payout) && payout.value && !isLookback(type_of_contract)) {
             proposal.amount = parseFloat(payout.value);
         }
 
         if (multiplier && CommonFunctions.isVisible(multiplier) && multiplier.value) {
             const multiplier_value = parseFloat(multiplier.value);
-            proposal.amount = multiplier_value;
+            proposal.multiplier = multiplier_value;
             if (multiplier_value > 1000) {
                 proposal.error = {
                     message: localize('Maximum multiplier of 1000.'),
@@ -73,10 +73,6 @@ const Price = (() => {
         if (amount_type && CommonFunctions.isVisible(amount_type) && amount_type.value
             && !isLookback(type_of_contract)) {
             proposal.basis = amount_type.value;
-        }
-
-        if (isLookback(type_of_contract)) {
-            proposal.basis = 'multiplier';
         }
 
         if (contract_type) {
