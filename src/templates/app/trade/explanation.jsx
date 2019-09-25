@@ -324,8 +324,8 @@ const Explanation = () => (
                 <Duration link='market-commodities' />
             </div>
 
-            <div id='duration_volidx' className='invisible'>
-                <Duration link='market-volidx' />
+            <div id='duration_synthetic_index' className='invisible'>
+                <Duration link='market-synthetic_index' />
             </div>
         </div>
 
