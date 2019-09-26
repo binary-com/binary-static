@@ -913,7 +913,7 @@ const Authenticate = (() => {
         
         const { identity, document, needs_verification } = authentication_status;
 
-        const is_high_risk_client = needs_verification.length;
+        const is_high_risk_client = identity.status !== 'none' && document.status !== 'none' && needs_verification.length;
         const is_fully_authenticated = identity.status === 'verified' && document.status === 'verified';
 
         if (!is_high_risk_client) {
