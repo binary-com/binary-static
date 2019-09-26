@@ -6,6 +6,7 @@
     "test": "grunt test",
     "livereload": "sudo -p 'enter password for sudo:' grunt livereload",
     "serve": "sudo -p 'enter password for sudo:' grunt serve",
+    "start": "sudo -p 'enter password for sudo:' grunt start",
     "eslint": "eslint --fix \"src/**/*.jsx\" src/"
   },
   "repository": {
