@@ -1,7 +1,6 @@
 const DocumentUploader    = require('@binary-com/binary-document-uploader');
 const Cookies             = require('js-cookie');
 const Onfido              = require('onfido-sdk-ui');
-const BinaryPjax          = require('../../../base/binary_pjax');
 const Client              = require('../../../base/client');
 const Header              = require('../../../base/header');
 const BinarySocket        = require('../../../base/socket');
