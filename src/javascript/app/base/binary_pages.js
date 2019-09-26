@@ -24,7 +24,6 @@ const ProfitTable             = require('../pages/user/account/profit_table/prof
 const Settings                = require('../pages/user/account/settings');
 const APIToken                = require('../pages/user/account/settings/api_token');
 const AuthorisedApps          = require('../pages/user/account/settings/authorised_apps');
-const CashierPassword         = require('../pages/user/account/settings/cashier_password');
 const FinancialAssessment     = require('../pages/user/account/settings/financial_assessment');
 const IPHistory               = require('../pages/user/account/settings/iphistory/iphistory');
 const Limits                  = require('../pages/user/account/settings/limits/limits');
@@ -75,7 +74,6 @@ const pages_config = {
     authorised_appsws        : { module: AuthorisedApps,             is_authenticated: true },
     careers                  : { module: StaticPages.Careers },
     cashier                  : { module: Cashier },
-    cashier_passwordws       : { module: CashierPassword,            is_authenticated: true, only_real: true },
     cfds                     : { module: GetStarted.CFDs },
     // charity                  : { module: Charity },
     change_passwordws        : { module: ChangePassword,             is_authenticated: true },
