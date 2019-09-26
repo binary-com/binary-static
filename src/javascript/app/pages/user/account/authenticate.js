@@ -1,7 +1,6 @@
 const DocumentUploader    = require('@binary-com/binary-document-uploader');
 const Cookies             = require('js-cookie');
 const Onfido              = require('onfido-sdk-ui');
-const BinaryPjax          = require('../../../base/binary_pjax');
 const Client              = require('../../../base/client');
 const Header              = require('../../../base/header');
 const BinarySocket        = require('../../../base/socket');
@@ -914,11 +913,14 @@ const Authenticate = (() => {
         
         const { identity, document, needs_verification } = authentication_status;
 
-        if (identity.status === 'none' && document.status === 'none' && !needs_verification.length) {
-            BinaryPjax.load(Url.urlFor('user/settingsws'));
+        const is_high_risk_client = identity.status !== 'none' && document.status !== 'none' && needs_verification.length;
+        const is_fully_authenticated = identity.status === 'verified' && document.status === 'verified';
+
+        if (!is_high_risk_client) {
+            $('#not_required_msg').setVisibility(1);
         }
 
-        if (identity.status === 'verified' && document.status === 'verified') {
+        if (is_fully_authenticated) {
             $('#authentication_tab').setVisibility(0);
             $('#authentication_verified').setVisibility(1);
         }

@@ -946,7 +946,7 @@ body #not_authenticated_financial ul.checked > li {
     margin-bottom: 3px;
 }
 
-.authenticate-content {
+.authentication {
     #onfido {
         // Below styles are set according to Onfido's styles
         // This is because binary-styles overrides Onfido's own styles
@@ -1051,6 +1051,20 @@ body #not_authenticated_financial ul.checked > li {
     }
     .mar-top-0 {
         margin-top: 0;
+    }
+    @media screen and (max-width: 479px) {
+        .onfido-sdk-ui-Modal-inner {
+            position: relative !important;
+            height: 37.4em !important;
+        }
+        .mobile-menu {
+            display: flex;
+            padding: 20px 0;
+
+            strong {
+                text-align: center;
+            }
+        }
     }
 }
 
