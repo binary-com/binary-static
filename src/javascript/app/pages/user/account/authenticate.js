@@ -902,8 +902,8 @@ const Authenticate = (() => {
     });
 
     const checkRequired = async () => {
-        BinarySocket.send({ 'get_account_status': 1 }).then((authentication_status) => {
-            const { identity, document, needs_verification } = authentication_status;
+        BinarySocket.send({ 'get_account_status': 1 }).then((response) => {
+            const { identity, document, needs_verification } = response.get_account_status.authentication;
             const is_not_required = identity.status === 'none' && document.status === 'none' && !needs_verification.length;
 
             if (is_not_required) {
