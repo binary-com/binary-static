@@ -19,8 +19,8 @@ workflows:
     jobs:
       - deploy:
           filters:
-						branches:
-							only:
-								- gh-pages
-            tags:
-              only: /.*/
+            branches:
+              only:
+                - gh-pages
+              tags:
+                only: /.*/
