@@ -219,7 +219,7 @@ const DepositWithdraw = (() => {
                     id                : 'deposit_currency_change_popup_container',
                     ok_text           : localize('Yes I\'m sure'),
                     cancel_text       : localize('Cancel'),
-                    localized_title   : localize('Are you sure?'),
+                    localized_title   : localize('Are you sure you want to deposit in [_1]?', [Client.get('currency')]),
                     localized_message : localize('You will not be able to change your fiat account\'s currency after making this deposit. Are you sure you want to proceed?'),
                     localized_footnote: localize('[_1]No, change my fiat account\'s currency now[_2]', [`<a href=${Url.urlFor('user/accounts')}>`, '</a>']),
                     onAbort           : () => BinaryPjax.load(Url.urlFor('cashier')),
