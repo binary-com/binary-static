@@ -913,11 +913,14 @@ const Authenticate = (() => {
         
         const { identity, document, needs_verification } = authentication_status;
 
-        if (identity.status === 'none' && document.status === 'none' && !needs_verification.length) {
+        const is_high_risk_client = needs_verification.length;
+        const is_fully_authenticated = identity.status === 'verified' && document.status === 'verified';
+
+        if (!is_high_risk_client) {
             $('#not_required_msg').setVisibility(1);
         }
 
-        if (identity.status === 'verified' && document.status === 'verified') {
+        if (is_fully_authenticated) {
             $('#authentication_tab').setVisibility(0);
             $('#authentication_verified').setVisibility(1);
         }
