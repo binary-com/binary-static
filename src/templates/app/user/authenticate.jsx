@@ -18,9 +18,13 @@ const ArrowsMobile = ({ direction, parent }) => (
 );
 
 const Authenticate = () => (
-    <React.Fragment>
+    <div className='authentication'>
         <div id='logout_title' className='invisible'>
             <h1 className='gr-padding-10'>{it.L('Authentication')}</h1>
+        </div>
+
+        <div id='not_required_msg' className='notice-msg center-text gr-padding-10 invisible'>
+            <p>{it.L('Your account does not need authentication at this time.[_1]We will inform you if authentication is required in the future.', '<br />')}</p>
         </div>
 
         <div id='authentication_verified' className='center-text gr-padding-20 invisible'>
@@ -28,7 +32,7 @@ const Authenticate = () => (
             <h1 className='gr-padding-10'>{it.L('Your account has been verified successfully')}</h1>
         </div>
 
-        <div id='authentication_tab'>
+        <div id='authentication_tab' className='gr-padding-20'>
             <TabContainer className='gr-parent full-width gr-11 gr-12-m gr-centered' theme='light'>
                 <div className='gr-row gr-hide gr-show-m mobile-menu'>
                     <ArrowsMobile parent='authentication_tab' direction='left' />
@@ -119,7 +123,7 @@ const Authenticate = () => (
             </div>
         </div>
         <Loading id='authentication_loading' />
-    </React.Fragment>
+    </div>
 );
 
 export default Authenticate;
