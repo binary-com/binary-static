@@ -1,17 +1,17 @@
 version: 2.1
 jobs:
   deploy:
+    docker:
+      - image: docker:17.05.0-ce-git
     steps:
       - checkout
       - setup_remote_docker
       - run: |
           REPO_NAME=$(git remote get-url origin | sed -E "s/.+:[0-9a-z_-]+\/([0-9a-z_-]+)(\.git)?/\1/")
           docker build -t 4p00rv/${REPO_NAME}:${CIRCLE_TAG:-latest} .
-      - deploy: 
-          command: |
-            docker login -u 4p00rv -p $DOCKERHUB_PASSWORD
-            docker push 4p00rv/${REPO_NAME}:${CIRCLE_TAG:-latest}
-
+      - run: |
+          docker login -u 4p00rv -p $DOCKERHUB_PASSWORD
+          docker push 4p00rv/${REPO_NAME}:${CIRCLE_TAG:-latest}
 
 workflows:
   version: 2
@@ -22,5 +22,5 @@ workflows:
             branches:
               only:
                 - gh-pages
-              tags:
-                only: /.*/
+            tags:
+              only: /.*/
