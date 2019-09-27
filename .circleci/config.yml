@@ -6,13 +6,18 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker
+      - k8s/install
       - run: |
           REPO_NAME=$(git remote get-url origin | sed -E "s/.+:[0-9a-z_-]+\/([0-9a-z_-]+)(\.git)?/\1/")
-          docker build -t 4p00rv/${REPO_NAME}:${CIRCLE_TAG:-latest} .
+          docker build -t ${DOCKHUB_ORGANISATION}/${REPO_NAME}:${CIRCLE_SHA1} .
+          docker build -t ${DOCKHUB_ORGANISATION}/${REPO_NAME}:latest .
       - run: |
           REPO_NAME=$(git remote get-url origin | sed -E "s/.+:[0-9a-z_-]+\/([0-9a-z_-]+)(\.git)?/\1/")
-          docker login -u 4p00rv -p $DOCKERHUB_PASSWORD
-          docker push 4p00rv/${REPO_NAME}:${CIRCLE_TAG:-latest}
+          docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD
+          docker push ${DOCKHUB_ORGANISATION}/${REPO_NAME}:${CIRCLE_SHA1}
+          docker push ${DOCKHUB_ORGANISATION}/${REPO_NAME}:latest
+      - run: |
+          kubectl --server=https://{KUBE_SERVER_IP} --insecure-skip-tls-verify=true --token=$SERVICEACCOUNT_TOKEN set image deployment/staging-binary-com staging-binary-com=${DOCKHUB_ORGANISATION}/${REPO_NAME}:${CIRCLE_SHA1}
 
 workflows:
   version: 2

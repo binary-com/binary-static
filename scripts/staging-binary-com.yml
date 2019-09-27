@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: staging-binary-com
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: staging.binary.com
+  template:
+    metadata:
+      labels:
+        app: staging.binary.com
+    spec:
+      containers:
+      - name: staging-binary-com
+        image: 4p00rv/binary-static:latest
+        imagePullPolicy: "Always"
+        ports:
+        - containerPort: 80
