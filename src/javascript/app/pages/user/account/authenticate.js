@@ -994,7 +994,7 @@ const Authenticate = (() => {
     };
 
     const onLoad = () => {
-        if (checkIsRequired) {
+        if (checkIsRequired()) {
             initTab();
             initAuthentication();
         }
