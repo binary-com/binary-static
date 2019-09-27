@@ -901,10 +901,8 @@ const Authenticate = (() => {
         }
     });
 
-    const checkIsRequired = async () => {
-        const authentication_status = await getAuthenticationStatus();
+    const checkIsRequired = (authentication_status) => {
         const { identity, document, needs_verification } = authentication_status;
-
         const is_not_required = identity.status === 'none' && document.status === 'none' && !needs_verification.length;
 
         if (is_not_required) {
@@ -993,8 +991,11 @@ const Authenticate = (() => {
         TabSelector.updateTabDisplay();
     };
 
-    const onLoad = () => {
-        if (checkIsRequired()) {
+    const onLoad = async () => {
+        const authentication_status = await getAuthenticationStatus();
+        const is_required = checkIsRequired(authentication_status);
+
+        if (is_required) {
             initTab();
             initAuthentication();
         }
