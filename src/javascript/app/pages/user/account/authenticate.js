@@ -901,15 +901,11 @@ const Authenticate = (() => {
         }
     });
 
-    const checkRequired = async () => {
-        BinarySocket.send({ 'get_account_status': 1 }).then((response) => {
-            const { identity, document, needs_verification } = response.get_account_status.authentication;
-            const is_not_required = identity.status === 'none' && document.status === 'none' && !needs_verification.length;
+    const checkIsRequired = (authentication_status) => {
+        const { identity, document, needs_verification } = authentication_status;
+        const is_not_required = identity.status === 'none' && document.status === 'none' && !needs_verification.length;
 
-            if (is_not_required) {
-                $('#not_required_msg').setVisibility(1);
-            }
-        });
+        return !is_not_required;
     };
 
     const initAuthentication = async () => {
@@ -990,10 +986,18 @@ const Authenticate = (() => {
         TabSelector.updateTabDisplay();
     };
 
-    const onLoad = () => {
-        initTab();
-        initAuthentication();
-        checkRequired();
+    const onLoad = async () => {
+        const authentication_status = await getAuthenticationStatus();
+        const is_required = checkIsRequired(authentication_status);
+
+        if (is_required) {
+            initTab();
+            initAuthentication();
+        } else {
+            $('#authentication_tab').setVisibility(0);
+            $('#not_required_msg').setVisibility(1);
+            $('#authentication_loading').setVisibility(0);
+        }
     };
 
     const onUnload = () => {
