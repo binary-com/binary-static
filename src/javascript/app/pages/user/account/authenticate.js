@@ -901,6 +901,17 @@ const Authenticate = (() => {
         }
     });
 
+    const checkRequired = async () => {
+        BinarySocket.send({ 'get_account_status': 1 }).then((response) => {
+            const { identity, document, needs_verification } = response.get_account_status.authentication;
+            const is_not_required = identity.status === 'none' && document.status === 'none' && !needs_verification.length;
+
+            if (is_not_required) {
+                $('#not_required_msg').setVisibility(1);
+            }
+        });
+    };
+
     const initAuthentication = async () => {
         const authentication_status = await getAuthenticationStatus();
         const onfido_token = await getOnfidoServiceToken();
@@ -911,14 +922,9 @@ const Authenticate = (() => {
             return;
         }
         
-        const { identity, document, needs_verification } = authentication_status;
+        const { identity, document } = authentication_status;
 
-        const is_high_risk_client = identity.status !== 'none' && document.status !== 'none' && needs_verification.length;
         const is_fully_authenticated = identity.status === 'verified' && document.status === 'verified';
-
-        if (!is_high_risk_client) {
-            $('#not_required_msg').setVisibility(1);
-        }
 
         if (is_fully_authenticated) {
             $('#authentication_tab').setVisibility(0);
@@ -987,6 +993,7 @@ const Authenticate = (() => {
     const onLoad = () => {
         initTab();
         initAuthentication();
+        checkRequired();
     };
 
     const onUnload = () => {
