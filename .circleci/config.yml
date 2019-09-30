@@ -33,18 +33,19 @@ jobs:
           node_modules/grunt/bin/grunt releaseci
       - setup_remote_docker
       - k8s/install-kubectl
-      #- run: |
-      #    REPO_NAME=$(git remote get-url origin | sed -E "s/.+:[0-9a-z_-]+\/([0-9a-z_-]+)(\.git)?/\1/")
-      #    docker build -t ${DOCKHUB_ORGANISATION}/${REPO_NAME}:${CIRCLE_SHA1} .
-      #    docker build -t ${DOCKHUB_ORGANISATION}/${REPO_NAME}:latest .
-      #- run: |
-      #    REPO_NAME=$(git remote get-url origin | sed -E "s/.+:[0-9a-z_-]+\/([0-9a-z_-]+)(\.git)?/\1/")
-      #    docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD
-      #    docker push ${DOCKHUB_ORGANISATION}/${REPO_NAME}:${CIRCLE_SHA1}
-      #    docker push ${DOCKHUB_ORGANISATION}/${REPO_NAME}:latest
-      #- run: |
-      #    REPO_NAME=$(git remote get-url origin | sed -E "s/.+:[0-9a-z_-]+\/([0-9a-z_-]+)(\.git)?/\1/")
-      #    kubectl --server=https://${KUBE_SERVER_IP} --insecure-skip-tls-verify=true --token=$SERVICEACCOUNT_TOKEN set image deployment/staging-binary-com staging-binary-com=${DOCKHUB_ORGANISATION}/${REPO_NAME}:${CIRCLE_SHA1}
+      - working_directory: dist
+      - run: |
+          REPO_NAME=$(git remote get-url origin | sed -E "s/.+:[0-9a-z_-]+\/([0-9a-z_-]+)(\.git)?/\1/")
+          docker build -t ${DOCKHUB_ORGANISATION}/${REPO_NAME}:${CIRCLE_SHA1} .
+          docker build -t ${DOCKHUB_ORGANISATION}/${REPO_NAME}:latest .
+      - run: |
+          REPO_NAME=$(git remote get-url origin | sed -E "s/.+:[0-9a-z_-]+\/([0-9a-z_-]+)(\.git)?/\1/")
+          docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD
+          docker push ${DOCKHUB_ORGANISATION}/${REPO_NAME}:${CIRCLE_SHA1}
+          docker push ${DOCKHUB_ORGANISATION}/${REPO_NAME}:latest
+      - run: |
+          REPO_NAME=$(git remote get-url origin | sed -E "s/.+:[0-9a-z_-]+\/([0-9a-z_-]+)(\.git)?/\1/")
+          kubectl --server=https://${KUBE_SERVER_IP} --insecure-skip-tls-verify=true --token=$SERVICEACCOUNT_TOKEN set image deployment/staging-binary-com staging-binary-com=${DOCKHUB_ORGANISATION}/${REPO_NAME}:${CIRCLE_SHA1}
 
 workflows:
   version: 2
