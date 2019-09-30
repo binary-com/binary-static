@@ -33,8 +33,8 @@ jobs:
           node_modules/grunt/bin/grunt releaseci
       - setup_remote_docker
       - k8s/install-kubectl
-      - working_directory: dist
       - run: |
+          cd dist
           REPO_NAME=$(git remote get-url origin | sed -E "s/.+:[0-9a-z_-]+\/([0-9a-z_-]+)(\.git)?/\1/")
           docker build -t ${DOCKHUB_ORGANISATION}/${REPO_NAME}:${CIRCLE_SHA1} .
           docker build -t ${DOCKHUB_ORGANISATION}/${REPO_NAME}:latest .
