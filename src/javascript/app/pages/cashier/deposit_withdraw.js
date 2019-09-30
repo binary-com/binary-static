@@ -214,12 +214,13 @@ const DepositWithdraw = (() => {
         } else {
             const popup_valid_for_url = `${Url.urlFor('cashier/forwardws')}?action=deposit`;
             const popup_valid = popup_valid_for_url === window.location.href;
+            const client_currency = Client.get('currency');
             if (popup_valid && Client.canChangeCurrency(State.getResponse('statement'), State.getResponse('mt5_login_list'))) {
                 Dialog.confirm({
                     id                : 'deposit_currency_change_popup_container',
                     ok_text           : localize('Yes I\'m sure'),
                     cancel_text       : localize('Cancel'),
-                    localized_title   : localize('Are you sure?'),
+                    localized_title   : localize('Are you sure you want to deposit in [_1]?', [client_currency]),
                     localized_message : localize('You will not be able to change your fiat account\'s currency after making this deposit. Are you sure you want to proceed?'),
                     localized_footnote: localize('[_1]No, change my fiat account\'s currency now[_2]', [`<a href=${Url.urlFor('user/accounts')}>`, '</a>']),
                     onAbort           : () => BinaryPjax.load(Url.urlFor('cashier')),
@@ -228,7 +229,7 @@ const DepositWithdraw = (() => {
 
             $iframe = $(container).find('#cashier_iframe');
 
-            if (Currency.isCryptocurrency(Client.get('currency'))) {
+            if (Currency.isCryptocurrency(client_currency)) {
                 $iframe.height(default_iframe_height);
             } else {
                 // Automatically adjust iframe height based on contents
