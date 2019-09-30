@@ -30,34 +30,32 @@ jobs:
       #    paths:
       #      - "node_modules"
       - run: |
-          node_modules/grunt/bin/grunt releaseci --staging
+          RELEASE_TARGET=staging
+          if [[ $CIRCLE_TAG == production* ]]; then $RELEASE_TARGET=production; fi
+          node_modules/grunt/bin/grunt releaseci --${RELEASE_TARGET}
       - setup_remote_docker
       - run: |
           cd dist
-          REPO_NAME=$(git remote get-url origin | sed -E "s/.+:[0-9a-z_-]+\/([0-9a-z_-]+)(\.git)?/\1/")
-          docker build -t ${DOCKHUB_ORGANISATION}/${REPO_NAME}:${CIRCLE_TAG:-latest} .
+          docker build -t ${DOCKHUB_ORGANISATION}/binary-static:${CIRCLE_TAG:-latest} .
           if [[ $CIRCLE_TAG ]]; then docker build -t ${DOCKHUB_ORGANISATION}/${REPO_NAME}:latest .; fi
       - run: |
-          REPO_NAME=$(git remote get-url origin | sed -E "s/.+:[0-9a-z_-]+\/([0-9a-z_-]+)(\.git)?/\1/")
           docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD
           docker push ${DOCKHUB_ORGANISATION}/${REPO_NAME}:${CIRCLE_TAG:-latest}
-          if [[ $CIRCLE_TAG ]]; then docker push ${DOCKHUB_ORGANISATION}/${REPO_NAME}:latest; fi
+          if [[ $CIRCLE_TAG ]]; then docker push ${DOCKHUB_ORGANISATION}/binary-static:latest; fi
   deploy_staging:
     docker:
       - image: circleci/node:9.8.0-stretch
     steps:
       - k8s/install-kubectl
       - run: |
-          REPO_NAME=$(git remote get-url origin | sed -E "s/.+:[0-9a-z_-]+\/([0-9a-z_-]+)(\.git)?/\1/")
-          kubectl --server=https://${KUBE_SERVER_IP} --insecure-skip-tls-verify=true --token=$SERVICEACCOUNT_TOKEN set image deployment/staging-binary-com staging-binary-com=${DOCKHUB_ORGANISATION}/${REPO_NAME}:${CIRCLE_SHA1}
+          kubectl --server=https://${KUBE_SERVER_IP} --insecure-skip-tls-verify=true --token=$SERVICEACCOUNT_TOKEN set image deployment/staging-binary-com staging-binary-com=${DOCKHUB_ORGANISATION}/binary-static:${CIRCLE_SHA1}
   deploy_production:
     docker:
       - image: circleci/node:9.8.0-stretch
     steps:
       - k8s/install-kubectl
       - run: |
-          REPO_NAME=$(git remote get-url origin | sed -E "s/.+:[0-9a-z_-]+\/([0-9a-z_-]+)(\.git)?/\1/")
-          kubectl --server=https://${KUBE_SERVER_IP} --insecure-skip-tls-verify=true --token=$SERVICEACCOUNT_TOKEN set image deployment/production-binary-com production-binary-com=${DOCKHUB_ORGANISATION}/${REPO_NAME}:${CIRCLE_SHA1}
+          kubectl --server=https://${KUBE_SERVER_IP} --insecure-skip-tls-verify=true --token=$SERVICEACCOUNT_TOKEN set image deployment/production-binary-com production-binary-com=${DOCKHUB_ORGANISATION}/binary-static:${CIRCLE_SHA1}
 
 workflows:
   version: 2
@@ -68,11 +66,15 @@ workflows:
           requires:
             - build_push
           filters:
+            branches:
+              ignore: /.*/
             tags:
               only: /staging.*/
       - deploy_production:
           requires:
             - build_push
           filters:
+            branches:
+              ignore: /.*/
             tags:
               only: /production.*/
