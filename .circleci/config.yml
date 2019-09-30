@@ -4,35 +4,46 @@ orbs:
 jobs:
   deploy:
     docker:
-      - image: docker:18.06.3-ce-git
+      - image: circleci/node:9.8.0-stretch
     steps:
+      - restore_cache:
+          keys:
+            - source-v1-{{ .Branch }}-{{ .Revision }}
+            - source-v1-{{ .Branch }}-
+            - source-v1-
       - checkout
+      - save_cache:
+          key: source-v1-{{ .Branch }}-{{ .Revision }}
+          paths:
+            - ".git"
+      - restore_cache:
+          keys: node-{{ checksum "package-lock.json" }}
       - run: |
-          # Install curl
-          apk add curl
-      - setup_remote_docker
-      - k8s/install-kubectl
+          npm install
+          npm install -g grunt
+      - save_cache:
+          keys: node-{{ checksum "package-lock.json" }}
+          paths:
+            - "node_modules"
       - run: |
-          REPO_NAME=$(git remote get-url origin | sed -E "s/.+:[0-9a-z_-]+\/([0-9a-z_-]+)(\.git)?/\1/")
-          docker build -t ${DOCKHUB_ORGANISATION}/${REPO_NAME}:${CIRCLE_SHA1} .
-          docker build -t ${DOCKHUB_ORGANISATION}/${REPO_NAME}:latest .
-      - run: |
-          REPO_NAME=$(git remote get-url origin | sed -E "s/.+:[0-9a-z_-]+\/([0-9a-z_-]+)(\.git)?/\1/")
-          docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD
-          docker push ${DOCKHUB_ORGANISATION}/${REPO_NAME}:${CIRCLE_SHA1}
-          docker push ${DOCKHUB_ORGANISATION}/${REPO_NAME}:latest
-      - run: |
-          REPO_NAME=$(git remote get-url origin | sed -E "s/.+:[0-9a-z_-]+\/([0-9a-z_-]+)(\.git)?/\1/")
-          kubectl --server=https://${KUBE_SERVER_IP} --insecure-skip-tls-verify=true --token=$SERVICEACCOUNT_TOKEN set image deployment/staging-binary-com staging-binary-com=${DOCKHUB_ORGANISATION}/${REPO_NAME}:${CIRCLE_SHA1}
+          grunt releaseci
+      #- setup_remote_docker
+      #- k8s/install-kubectl
+      #- run: |
+      #    REPO_NAME=$(git remote get-url origin | sed -E "s/.+:[0-9a-z_-]+\/([0-9a-z_-]+)(\.git)?/\1/")
+      #    docker build -t ${DOCKHUB_ORGANISATION}/${REPO_NAME}:${CIRCLE_SHA1} .
+      #    docker build -t ${DOCKHUB_ORGANISATION}/${REPO_NAME}:latest .
+      #- run: |
+      #    REPO_NAME=$(git remote get-url origin | sed -E "s/.+:[0-9a-z_-]+\/([0-9a-z_-]+)(\.git)?/\1/")
+      #    docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD
+      #    docker push ${DOCKHUB_ORGANISATION}/${REPO_NAME}:${CIRCLE_SHA1}
+      #    docker push ${DOCKHUB_ORGANISATION}/${REPO_NAME}:latest
+      #- run: |
+      #    REPO_NAME=$(git remote get-url origin | sed -E "s/.+:[0-9a-z_-]+\/([0-9a-z_-]+)(\.git)?/\1/")
+      #    kubectl --server=https://${KUBE_SERVER_IP} --insecure-skip-tls-verify=true --token=$SERVICEACCOUNT_TOKEN set image deployment/staging-binary-com staging-binary-com=${DOCKHUB_ORGANISATION}/${REPO_NAME}:${CIRCLE_SHA1}
 
 workflows:
   version: 2
   tagged:
     jobs:
-      - deploy:
-          filters:
-            branches:
-              only:
-                - gh-pages
-            tags:
-              only: /.*/
+      - deploy
