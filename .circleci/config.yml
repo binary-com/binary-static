@@ -30,7 +30,7 @@ jobs:
       #    paths:
       #      - "node_modules"
       - run: |
-          node_modules/grunt/bin/grunt releaseci
+          node_modules/grunt/bin/grunt releaseci --staging
       - setup_remote_docker
       - k8s/install-kubectl
       - run: |
