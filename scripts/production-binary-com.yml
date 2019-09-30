@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: staging-binary-com
+  name: production-binary-com
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: staging.binary.com
+      app: www.binary.com
   template:
     metadata:
       labels:
-        app: staging.binary.com
+        app: www.binary.com
     spec:
       containers:
       - name: staging-binary-com
@@ -22,7 +22,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: staging-binary-com
+  name: production-binary-com
 spec:
   type: LoadBalancer
   ports:
