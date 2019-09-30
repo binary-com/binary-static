@@ -36,12 +36,12 @@ jobs:
           cd dist
           REPO_NAME=$(git remote get-url origin | sed -E "s/.+:[0-9a-z_-]+\/([0-9a-z_-]+)(\.git)?/\1/")
           docker build -t ${DOCKHUB_ORGANISATION}/${REPO_NAME}:${CIRCLE_TAG:-latest} .
-          if [[ $CIRCLE_TAG ]] docker build -t ${DOCKHUB_ORGANISATION}/${REPO_NAME}:latest .
+          if [[ $CIRCLE_TAG ]]; then docker build -t ${DOCKHUB_ORGANISATION}/${REPO_NAME}:latest .; fi
       - run: |
           REPO_NAME=$(git remote get-url origin | sed -E "s/.+:[0-9a-z_-]+\/([0-9a-z_-]+)(\.git)?/\1/")
           docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD
           docker push ${DOCKHUB_ORGANISATION}/${REPO_NAME}:${CIRCLE_TAG:-latest}
-          if [[ $CIRCLE_TAG ]] docker push ${DOCKHUB_ORGANISATION}/${REPO_NAME}:latest
+          if [[ $CIRCLE_TAG ]]; then docker push ${DOCKHUB_ORGANISATION}/${REPO_NAME}:latest; fi
   deploy_staging:
     docker:
       - image: circleci/node:9.8.0-stretch
