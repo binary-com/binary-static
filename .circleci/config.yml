@@ -59,15 +59,10 @@ jobs:
 
 workflows:
   version: 2
-  update_latest_image:
-    jobs:
-      - build_push
-  deploy:
+  build_push_and_deploy:
     jobs:
       - build_push:
         filters:
-          branches:
-            ignore: /.*/
           tags:
             only: /.*/
       - deploy_staging:
