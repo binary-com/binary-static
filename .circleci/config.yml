@@ -37,10 +37,10 @@ jobs:
       - run: |
           cd dist
           docker build -t ${DOCKHUB_ORGANISATION}/binary-static:${CIRCLE_TAG:-latest} .
-          if [[ $CIRCLE_TAG ]]; then docker build -t ${DOCKHUB_ORGANISATION}/${REPO_NAME}:latest .; fi
+          if [[ $CIRCLE_TAG ]]; then docker build -t ${DOCKHUB_ORGANISATION}/binary-static:latest .; fi
       - run: |
           docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD
-          docker push ${DOCKHUB_ORGANISATION}/${REPO_NAME}:${CIRCLE_TAG:-latest}
+          docker push ${DOCKHUB_ORGANISATION}/binary-static:${CIRCLE_TAG:-latest}
           if [[ $CIRCLE_TAG ]]; then docker push ${DOCKHUB_ORGANISATION}/binary-static:latest; fi
   deploy_staging:
     docker:
