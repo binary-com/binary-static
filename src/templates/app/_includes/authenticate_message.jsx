@@ -133,11 +133,11 @@ export const UnsupportedMessage = () => (
             ]}
         />
 
-        <SeparatorLine className='gr-padding-10' data_show='mt5fin:vanuatu, labuan' invisible />
+        <SeparatorLine className='gr-padding-10' data_show='mt5fin:vanuatu, labuan, svg' invisible />
 
         <FileSelector
             heading={it.L('2. Selfie with proof of ID')}
-            data_show='mt5fin:vanuatu, labuan'
+            data_show='mt5fin:vanuatu, labuan, svg'
             instructions={[
                 it.L('Must be a clear, colour photo'),
                 it.L('Proof of identity in your selfie must be clear, identifiable, and same as the one you submitted previously'),
