@@ -5,7 +5,7 @@ import Loading from '../../_common/components/loading.jsx';
 
 const Trading = () => (
     <React.Fragment>
-        <div id='trading_socket_container' data-show='-maltainvest'>
+        <div id='trading_socket_container'>
             <div id='notifications_wrapper' />
             <div id='loading_container' className='overlay_container' />
             <a id='deposit_btn_trade' className='client_real invisible gr-hide-m button' href={it.url_for('cashier/forwardws?action=deposit')}>
@@ -301,10 +301,9 @@ const Trading = () => (
             <div id='all_prices' />
             <Analysis />
         </div>
-        <div id='trading_init_progress' data-show='-maltainvest'>
+        <div id='trading_init_progress'>
             <Loading />
         </div>
-        <p className='center-text notice-msg' data-show='maltainvest' id='trading_error_msg'>{it.L('Sorry, but binary options trading is not available in your financial account.')}</p>
     </React.Fragment>
 );
 
