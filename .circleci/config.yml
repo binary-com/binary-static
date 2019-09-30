@@ -19,6 +19,7 @@ jobs:
       - restore_cache:
           keys:
             - node-{{ checksum "package-lock.json" }}
+            - node-
       - run: |
           npm install
       - save_cache:
@@ -29,9 +30,9 @@ jobs:
       #    paths:
       #      - "node_modules"
       - run: |
-          grunt releaseci
-      #- setup_remote_docker
-      #- k8s/install-kubectl
+          node_modules/grunt/bin/grunt releaseci
+      - setup_remote_docker
+      - k8s/install-kubectl
       #- run: |
       #    REPO_NAME=$(git remote get-url origin | sed -E "s/.+:[0-9a-z_-]+\/([0-9a-z_-]+)(\.git)?/\1/")
       #    docker build -t ${DOCKHUB_ORGANISATION}/${REPO_NAME}:${CIRCLE_SHA1} .
