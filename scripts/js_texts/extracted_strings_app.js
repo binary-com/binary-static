@@ -22,6 +22,7 @@ module.exports = [
     'Are you sure that you want to permanently revoke access to the application',
     'Are you sure you want to create a fiat account in [_1]?',
     'Are you sure you want to create your [_1] account now?',
+    'Are you sure you want to deposit in [_1]?',
     'Are you sure?',
     'Asian Down',
     'Asian Up',
