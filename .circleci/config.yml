@@ -10,7 +10,16 @@ commands:
             - source-v1-{{ .Branch }}-{{ .Revision }}
             - source-v1-{{ .Branch }}-
             - source-v1-
+      - run: |
+          # Fetch tags if git cache is present
+          if [ -e /home/circleci/project/.git ]
+          then
+            git fetch origin --tags
+          fi
       - checkout
+      - run: |
+          # It does something
+          git gc
       - save_cache:
           key: source-v1-{{ .Branch }}-{{ .Revision }}
           paths:
