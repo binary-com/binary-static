@@ -129,16 +129,16 @@ const MetaTraderConfig = (() => {
                 resolve(needsRealMessage());
             } else {
                 BinarySocket.wait('get_settings').then(() => {
-                    const showCitizenshipMessage = () => {
-                        $message
-                            .find('.citizen')
-                            .setVisibility(1)
-                            .find('a')
-                            .attr(
-                                'onclick',
-                                `localStorage.setItem('personal_details_redirect', '${acc_type}')`
-                            );
-                    };
+                    // const showCitizenshipMessage = () => {
+                    //     $message
+                    //         .find('.citizen')
+                    //         .setVisibility(1)
+                    //         .find('a')
+                    //         .attr(
+                    //             'onclick',
+                    //             `localStorage.setItem('personal_details_redirect', '${acc_type}')`
+                    //         );
+                    // };
                     const showAssessment = (selector) => {
                         $message
                             .find(selector)
@@ -165,28 +165,29 @@ const MetaTraderConfig = (() => {
                         resolveWithMessage();
                     }
 
-                    const response_get_settings = State.getResponse('get_settings');
                     if (is_financial) {
                         let is_ok = true;
                         BinarySocket.wait('get_account_status', 'landing_company').then(() => {
                             if (is_maltainvest && !has_financial_account) resolve();
 
                             const response_get_account_status = State.getResponse('get_account_status');
-                            if (/financial_information_not_complete/.test(response_get_account_status.status)) {
-                                showAssessment('.assessment');
-                                is_ok = false;
-                            } else if (/trading_experience_not_complete/.test(response_get_account_status.status)) {
+                            // if (/financial_information_not_complete/.test(response_get_account_status.status)) {
+                            //     showAssessment('.assessment');
+                            //     is_ok = false;
+                            // } else if
+                            
+                            if (/trading_experience_not_complete/.test(response_get_account_status.status)) {
                                 showAssessment('.trading_experience');
                                 is_ok = false;
                             }
-                            if (+State.getResponse('landing_company.config.tax_details_required') === 1 && (!response_get_settings.tax_residence || !response_get_settings.tax_identification_number)) {
-                                $message.find('.tax').setVisibility(1).find('a').attr('onclick', `localStorage.setItem('personal_details_redirect', '${acc_type}')`);
-                                is_ok = false;
-                            }
-                            if (!response_get_settings.citizen) {
-                                showCitizenshipMessage();
-                                is_ok = false;
-                            }
+                            // if (+State.getResponse('landing_company.config.tax_details_required') === 1 && (!response_get_settings.tax_residence || !response_get_settings.tax_identification_number)) {
+                            //     $message.find('.tax').setVisibility(1).find('a').attr('onclick', `localStorage.setItem('personal_details_redirect', '${acc_type}')`);
+                            //     is_ok = false;
+                            // }
+                            // if (!response_get_settings.citizen) {
+                            //     showCitizenshipMessage();
+                            //     is_ok = false;
+                            // }
                             if (is_ok && !isAuthenticated()) {
                                 $new_account_financial_authenticate_msg.setVisibility(1);
                             }
@@ -205,10 +206,10 @@ const MetaTraderConfig = (() => {
                                 showAssessment('.assessment');
                                 is_ok = false;
                             }
-                            if (!response_get_settings.citizen && !(is_maltainvest && !has_financial_account)) {
-                                showCitizenshipMessage();
-                                is_ok = false;
-                            }
+                            // if (!response_get_settings.citizen && !(is_maltainvest && !has_financial_account)) {
+                            //     showCitizenshipMessage();
+                            //     is_ok = false;
+                            // }
 
                             if (is_ok) resolve();
                             else resolveWithMessage();
