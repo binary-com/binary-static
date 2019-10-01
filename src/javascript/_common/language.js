@@ -17,7 +17,7 @@ const Language = (() => {
         PL   : 'Polish',
         PT   : 'Português',
         RU   : 'Русский',
-        TH   : 'Thai',
+        // TH   : 'Thai', // TODO: uncomment to enable Thai language
         VI   : 'Tiếng Việt',
         ZH_CN: '简体中文',
         ZH_TW: '繁體中文',
