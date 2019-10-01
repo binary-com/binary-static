@@ -20,7 +20,7 @@ commands:
           fi
       - checkout
       - run: |
-          # It does something
+          # Compress git objects
           git gc
       - save_cache:
           key: source-v1-{{ .Branch }}-{{ .Revision }}
@@ -47,12 +47,14 @@ commands:
         default: "staging"
     steps:
       - run: |
+          # Building dist for << parameters.target >>
           node_modules/grunt/bin/grunt releaseci --<< parameters.target >>
   docker_build:
     description: "Build Docker image"
     steps:
       - setup_remote_docker
       - run: |
+          # Building docker image for {{ CIRCLE_TAG }}
           cd dist
           docker build -t ${DOCKHUB_ORGANISATION}/binary-static:${CIRCLE_TAG:-latest} .
           if [[ $CIRCLE_TAG ]]; then docker build -t ${DOCKHUB_ORGANISATION}/binary-static:latest .; fi
@@ -60,6 +62,7 @@ commands:
     description: "Push image to docker hub"
     steps:
       - run: |
+          # Pushing Image to docker hub
           docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD
           docker push ${DOCKHUB_ORGANISATION}/binary-static:${CIRCLE_TAG:-latest}
           if [[ $CIRCLE_TAG ]]; then docker push ${DOCKHUB_ORGANISATION}/binary-static:latest; fi
@@ -72,6 +75,7 @@ commands:
     steps:
       - k8s/install-kubectl
       - run: |
+          # Deploying to k8s cluster for service << parameters.k8s_svc_name >>
           kubectl --server=https://${KUBE_SERVER_IP} --insecure-skip-tls-verify=true --token=$SERVICEACCOUNT_TOKEN set image deployment/<< parameters.k8s_svc_name >> << parameters.k8s_svc_name >>=${DOCKHUB_ORGANISATION}/binary-static:${CIRCLE_TAG}
 
 jobs:
