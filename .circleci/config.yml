@@ -1,10 +1,9 @@
 version: 2.1
 orbs:
   k8s: circleci/kubernetes@0.7.0
-jobs:
-  build_push:
-    docker:
-      - image: circleci/node:9.8.0-stretch
+commands:
+  git_checkout_from_cache:
+    description: "Git checkout and save cache"
     steps:
       - restore_cache:
           keys:
@@ -16,6 +15,9 @@ jobs:
           key: source-v1-{{ .Branch }}-{{ .Revision }}
           paths:
             - ".git"
+  npm_install_from_cache:
+    description: "npm install and save cache"
+    steps:
       - restore_cache:
           keys:
             - node-{{ checksum "package-lock.json" }}
@@ -26,40 +28,67 @@ jobs:
           key: node-{{ checksum "package-lock.json" }}
           paths:
             - "node_modules"
-      #- save_cache:
-      #    paths:
-      #      - "node_modules"
+  grunt_release:
+    description: "Build for release target"
+    parameters:
+      target:
+        type: string
+        default: "staging"
+    steps:
       - run: |
-          RELEASE_TARGET=staging
-          if [[ $CIRCLE_TAG == production* ]]; then $RELEASE_TARGET=production; fi
-          node_modules/grunt/bin/grunt releaseci --${RELEASE_TARGET}
+          node_modules/grunt/bin/grunt releaseci --<< parameters.target >>
+  docker_build:
+    description: "Build Docker image"
+    steps:
       - setup_remote_docker
       - run: |
           cd dist
           docker build -t ${DOCKHUB_ORGANISATION}/binary-static:${CIRCLE_TAG:-latest} .
           if [[ $CIRCLE_TAG ]]; then docker build -t ${DOCKHUB_ORGANISATION}/binary-static:latest .; fi
+  docker_push:
+    description: "Push image to docker hub"
+    steps:
       - run: |
           docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD
           docker push ${DOCKHUB_ORGANISATION}/binary-static:${CIRCLE_TAG:-latest}
           if [[ $CIRCLE_TAG ]]; then docker push ${DOCKHUB_ORGANISATION}/binary-static:latest; fi
+  k8s_deploy:
+    description: "Deploy to k8s cluster"
+    parameters:
+      k8s_svc_name:
+        type: string
+        default: "staging-binary-com"
+    steps:
+      - k8s/install-kubectl
+      - run: |
+          kubectl --server=https://${KUBE_SERVER_IP} --insecure-skip-tls-verify=true --token=$SERVICEACCOUNT_TOKEN set image deployment/<< parameters.k8s_svc_name >> << parameters.k8s_svc_name >>=${DOCKHUB_ORGANISATION}/binary-static:${CIRCLE_TAG}
+
+jobs:
+  build_push:
+    docker:
+      - image: circleci/node:9.8.0-stretch
+    steps:
+      - git_checkout_from_cache
+      - npm_install_from_cache
+      - grunt_release
+      - docker_build
+      - docker_push
+      
   deploy_staging:
     docker:
       - image: circleci/node:9.8.0-stretch
     steps:
-      - k8s/install-kubectl
-      - run: |
-          kubectl --server=https://${KUBE_SERVER_IP} --insecure-skip-tls-verify=true --token=$SERVICEACCOUNT_TOKEN set image deployment/staging-binary-com staging-binary-com=${DOCKHUB_ORGANISATION}/binary-static:${CIRCLE_SHA1}
+      - k8s_deploy
+      
   deploy_production:
     docker:
       - image: circleci/node:9.8.0-stretch
     steps:
-      - k8s/install-kubectl
-      - run: |
-          kubectl --server=https://${KUBE_SERVER_IP} --insecure-skip-tls-verify=true --token=$SERVICEACCOUNT_TOKEN set image deployment/production-binary-com production-binary-com=${DOCKHUB_ORGANISATION}/binary-static:${CIRCLE_SHA1}
-
+      - k8s_deploy:
+          k8s_svc_name: "production-binary-com"
+      
 workflows:
-  version: 2
-  build_and_push:
+  build_and_push_master:
     jobs:
       - build_push:
           filters:
@@ -68,12 +97,12 @@ workflows:
   tagged_release_staging:
     jobs:
       - build_push:
-        filters:
-          tags:
-            only: /^staging*/
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /^staging.*/
       - deploy_staging:
-          requires:
-            - build_push
           filters:
             branches:
               ignore: /.*/
@@ -82,12 +111,12 @@ workflows:
   tagged_release_production:
     jobs:
       - build_push:
-        filters:
-          tags:
-            only: /^production*/
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /^staging.*/
       - deploy_production:
-          requires:
-            - build_push
           filters:
             branches:
               ignore: /.*/
