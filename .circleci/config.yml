@@ -112,6 +112,8 @@ workflows:
             tags:
               only: /^staging.*/
       - deploy_staging:
+          requires:
+            - build_push
           filters:
             branches:
               ignore: /.*/
@@ -124,8 +126,10 @@ workflows:
             branches:
               ignore: /.*/
             tags:
-              only: /^staging.*/
+              only: /^production.*/
       - deploy_production:
+          requires:
+            - build
           filters:
             branches:
               ignore: /.*/
