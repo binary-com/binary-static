@@ -130,7 +130,7 @@ workflows:
               only: /^production.*/
       - deploy_production:
           requires:
-            - build
+            - build_push
           filters:
             branches:
               ignore: /.*/
