@@ -566,7 +566,7 @@ const MetaTraderUI = (() => {
     };
 
     const showHideFinancialAuthenticate = (acc_type) => {
-        if (MetaTraderConfig.hasAccount(acc_type) && accounts_info[acc_type].account_type === 'financial') {
+        if (MetaTraderConfig.hasAccount(acc_type)) {
             $('#financial_authenticate_msg').setVisibility(MetaTraderConfig.isAuthenticationPromptNeeded());
         }
     };
