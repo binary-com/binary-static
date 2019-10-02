@@ -519,6 +519,9 @@ const MetaTraderConfig = (() => {
     const isAuthenticated = () =>
         State.getResponse('get_account_status').status.indexOf('authenticated') !== -1;
 
+    const isAuthenticationPromptNeeded = () =>
+        State.getResponse('get_account_status').prompt_client_to_authenticate === 1;
+    
     return {
         accounts_info,
         actions_info,
@@ -529,6 +532,7 @@ const MetaTraderConfig = (() => {
         hasAccount,
         getCurrency,
         isAuthenticated,
+        isAuthenticationPromptNeeded,
         configMtCompanies   : configMtCompanies.get,
         configMtFinCompanies: configMtFinCompanies.get,
         setMessages         : ($msg) => { $messages = $msg; },

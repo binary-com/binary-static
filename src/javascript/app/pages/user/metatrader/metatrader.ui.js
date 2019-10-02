@@ -1,6 +1,5 @@
 const MetaTraderConfig = require('./metatrader.config');
 const Client           = require('../../../base/client');
-const BinarySocket     = require('../../../base/socket');
 const Dialog           = require('../../../common/attach_dom/dialog');
 const Currency         = require('../../../common/currency');
 const Validation       = require('../../../common/form_validation');
@@ -567,13 +566,9 @@ const MetaTraderUI = (() => {
     };
 
     const showHideFinancialAuthenticate = (acc_type) => {
-        BinarySocket.wait('get_account_status').then(() => {
-            const response_get_settings = State.getResponse('get_settings');
-            if (response_get_settings.authentication.needs_verification.length
-                && MetaTraderConfig.hasAccount(acc_type)) {
-                $('#financial_authenticate_msg').setVisibility(!MetaTraderConfig.isAuthenticated());
-            }
-        });
+        if (MetaTraderConfig.hasAccount(acc_type) && accounts_info[acc_type].account_type === 'financial') {
+            $('#financial_authenticate_msg').setVisibility(MetaTraderConfig.isAuthenticationPromptNeeded());
+        }
     };
 
     const setCounterpartyAndJurisdictionTooltip = ($el, acc_type) => {
