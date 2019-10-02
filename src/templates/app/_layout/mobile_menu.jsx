@@ -15,6 +15,7 @@ const MobileMenu = () => (
                     text={it.L('Trade')}
                     href={it.url_for('trading')}
                     className='ico-only-hide client_logged_in invisible'
+                    dataShow='-maltainvest'
                     subitems={[
                         { text: it.L('SmartTrader'),  href: it.url_for('trading'), className: 'no-capitalize' },
                         { text: it.L('WebTrader'),    href: 'https://webtrader.binary.com', target: '_blank' },
@@ -22,6 +23,7 @@ const MobileMenu = () => (
                         { text: it.L('MetaTrader 5'), href: it.url_for('user/metatrader'), className: 'invisible mt_visibility' },
                     ]}
                 />
+                <Li text={it.L('Trade')}        href={it.url_for('user/metatrader')}     className={'ico-only-hide client_logged_in invisible'} dataShow='maltainvest' />
                 <Li text={it.L('Portfolio')}    href={it.url_for('user/portfoliows')}    className='ico-only-hide client_logged_in invisible' />
                 <Li text={it.L('Profit Table')} href={it.url_for('user/profit_tablews')} className='ico-only-hide client_logged_in invisible' />
                 <Li text={it.L('Statement')}    href={it.url_for('user/statementws')}    className='client_logged_in invisible' />
@@ -30,6 +32,7 @@ const MobileMenu = () => (
                     text={it.L('Resources')}
                     href={it.url_for('resources')}
                     className='ico-only-hide client_logged_in invisible'
+                    dataShow='-maltainvest'
                     subitems={[
                         { text: it.L('Asset Index'),       href: it.url_for('resources/asset_indexws') },
                         { text: it.L('Trading Times'),     href: it.url_for('resources/market_timesws') },
