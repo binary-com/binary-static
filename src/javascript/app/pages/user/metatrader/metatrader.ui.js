@@ -569,7 +569,8 @@ const MetaTraderUI = (() => {
     const showHideFinancialAuthenticate = (acc_type) => {
         BinarySocket.wait('get_account_status').then(() => {
             const response_get_settings = State.getResponse('get_settings');
-            if (response_get_settings.authentication.needs_verification.length && MetaTraderConfig.hasAccount(acc_type)) {
+            if (response_get_settings.authentication.needs_verification.length
+                && MetaTraderConfig.hasAccount(acc_type)) {
                 $('#financial_authenticate_msg').setVisibility(!MetaTraderConfig.isAuthenticated());
             }
         });
