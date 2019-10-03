@@ -105,7 +105,6 @@ const MetaTrader = (() => {
                 title       : company_info.title,
             };
         });
-        console.log(accounts_info);
     };
 
     const getAllAccountsInfo = () => {
