@@ -67,26 +67,31 @@ const MetaTrader = (() => {
                 }
             });
         });
-    
+
         return has_mt_company;
     };
 
     const addAccount = (company) => {
         BinarySocket.wait('mt5_login_list').then((response) => {
-            const vanuatu_standard_account = response.mt5_login_list.find(account =>
+            const vanuatu_standard_real_account = response.mt5_login_list.find(account =>
                 Client.getMT5AccountType(account.group) === 'real_vanuatu_standard');
-            
-            if (vanuatu_standard_account) {
-                const mt5_account_type = Client.getMT5AccountType(vanuatu_standard_account.group) ;
-                const is_demo = /^demo_/.test(Client.getMT5AccountType(vanuatu_standard_account.group));
-                accounts_info[mt5_account_type] = {
-                    is_demo,
-                    mt5_account_type,
-                    account_type: is_demo ? 'demo' : MetaTraderConfig.getMTFinancialAccountType(mt5_account_type),
-                    max_leverage: 1000,
-                    short_title : localize('Standard'),
-                    title       : localize('Real Standard'),
-                };
+
+            const vanuatu_standard_demo_account = response.mt5_login_list.find(account =>
+                Client.getMT5AccountType(account.group) === 'demo_vanuatu_standard');
+
+            if (vanuatu_standard_real_account || vanuatu_standard_demo_account) {
+                [vanuatu_standard_demo_account, vanuatu_standard_real_account].forEach(account => {
+                    const mt5_account_type = Client.getMT5AccountType(account.group) ;
+                    const is_demo = /^demo_/.test(Client.getMT5AccountType(account.group));
+                    accounts_info[mt5_account_type] = {
+                        is_demo,
+                        mt5_account_type,
+                        account_type: is_demo ? 'demo' : MetaTraderConfig.getMTFinancialAccountType(mt5_account_type),
+                        max_leverage: 1000,
+                        short_title : localize('Standard'),
+                        title       : localize('Real Standard'),
+                    };
+                });
             }
         });
 

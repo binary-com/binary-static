@@ -581,7 +581,7 @@ const MetaTraderUI = (() => {
             The code below is to stop the tooltip from showing wrong
             information.
         */
-        if (/real_vanuatu_standard/.test(acc_type)) {
+        if (/vanuatu_standard/.test(acc_type)) {
             return;
         }
 
