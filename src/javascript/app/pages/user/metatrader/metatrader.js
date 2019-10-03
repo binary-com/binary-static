@@ -88,7 +88,7 @@ const MetaTrader = (() => {
                                 account_type: is_demo ? 'demo' : 'financial',
                                 max_leverage: 1000,
                                 short_title : localize('Standard'),
-                                title       : localize('Real Standard'),
+                                title       : is_demo ? localize('Demo Standard') : localize('Real Standard'),
                             };
                         }
                     });
