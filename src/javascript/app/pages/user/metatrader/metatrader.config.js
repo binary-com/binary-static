@@ -379,7 +379,11 @@ const MetaTraderConfig = (() => {
                     resolve(needsRealMessage());
                 } else if (accounts_info[acc_type].account_type === 'financial') {
                     BinarySocket.send({ get_account_status: 1 }).then(() => {
-                        resolve(isAuthenticationPromptNeeded() ? $messages.find('#msg_authenticate').html() : '');
+                        if (getMTFinancialAccountType(acc_type) === 'advanced' && isAuthenticationPromptNeeded()) {
+                            resolve($messages.find('#msg_authenticate').html());
+                        }
+
+                        resolve();
                     });
                 } else {
                     resolve();
