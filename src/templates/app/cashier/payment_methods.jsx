@@ -304,7 +304,7 @@ const PaymentMethods = () => {
                                         { td: it.L('Skrill offers global payment solutions for individuals who wish to deposit funds, shop online, and transfer money to family and friends. For more information, please visit [_1].', `${createLink('https://www.skrill.com')}`) },
                                         { td_list: [
                                             { text: 'USD GBP EUR AUD' },
-                                            { text: '5 - 10,000' },
+                                            { text: '10 - 10,000' },
                                             { text: '5 - 10,000' },
                                             { text: <TableValues value={[it.L(`${deposit}${instant}`), it.L(`${withdrawal}${working_day}`, 1)]} /> },
                                             { text: <ReferenceLinks pdf_file='Binary.com_Skrill.pdf' video_link='https://youtu.be/pQDVDC-mWuA' /> },
