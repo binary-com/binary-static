@@ -528,7 +528,7 @@ const MetaTraderConfig = (() => {
         State.getResponse('get_account_status').status.indexOf('authenticated') !== -1;
 
     const isAuthenticationPromptNeeded = () =>
-        State.getResponse('get_account_status').prompt_client_to_authenticate === 1;
+        State.getResponse('get_account_status').authentication.needs_verification.length;
     
     return {
         accounts_info,
