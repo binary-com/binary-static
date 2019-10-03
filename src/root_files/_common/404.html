@@ -40,6 +40,11 @@
     function redirect(lang) {
         var base = /^(.+?).github.io$/.test(window.location.hostname) ? window.location.origin + '/binary-static' : window.location.origin;
 
+        // TODO: REMOVE/CHANGE this if statement after addition of DE or TH languages
+        if (lang.toLowerCase() === 'de' || lang.toLowerCase() === 'th') {
+            lang = 'en'
+        }
+
         window.location.href = base + '/' + lang.toLowerCase() + '/' + '404.html';
     }
 
