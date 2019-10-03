@@ -572,6 +572,8 @@ const MetaTraderUI = (() => {
     };
 
     const setCounterpartyAndJurisdictionTooltip = ($el, acc_type) => {
+        // Stop tooltip from showing for exisiting vanuatu standard
+        // account because its showing the wrong company.
         if (/real_vanuatu_standard/.test(acc_type)) {
             return;
         }
