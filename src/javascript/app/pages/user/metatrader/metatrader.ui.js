@@ -572,6 +572,10 @@ const MetaTraderUI = (() => {
     };
 
     const setCounterpartyAndJurisdictionTooltip = ($el, acc_type) => {
+        if (/real_vanuatu_standard/.test(acc_type)) {
+            return;
+        }
+
         const mt_financial_company = State.getResponse('landing_company.mt_financial_company');
         const mt_gaming_company = State.getResponse('landing_company.mt_gaming_company');
         const account = accounts_info[acc_type];
