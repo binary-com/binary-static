@@ -474,7 +474,7 @@ const MetaTraderUI = (() => {
                 count++;
                 const $acc  = $acc_template.clone();
                 const type  = acc_type.split('_').slice(1).join('_');
-                const image = accounts_info[acc_type].mt5_account_type.replace(/mamm(_)*/, '') || 'volatility_indices'; // image name can be (advanced|standard|volatility_indices)
+                const image = accounts_info[acc_type].mt5_account_type.replace(/mamm(_)*/, '').replace(/real_vanuatu_/, '') || 'volatility_indices'; // image name can be (advanced|standard|volatility_indices)
                 $acc.find('.mt5_type_box').attr({ id: `rbtn_${type}`, 'data-acc-type': type })
                     .find('img').attr('src', urlForStatic(`/images/pages/metatrader/icons/acc_${image}.svg`));
                 $acc.find('p').text(accounts_info[acc_type].short_title);
