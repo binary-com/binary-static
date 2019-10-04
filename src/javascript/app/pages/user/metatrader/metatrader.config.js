@@ -167,6 +167,9 @@ const MetaTraderConfig = (() => {
 
                     const response_get_settings = State.getResponse('get_settings');
                     if (is_financial) {
+                        const is_svg = State.getResponse(`landing_company.mt_financial_company.${getMTFinancialAccountType(acc_type)}.shortcode`) === 'svg';
+                        if (is_svg) resolve();
+
                         let is_ok = true;
                         BinarySocket.wait('get_account_status', 'landing_company').then(() => {
                             if (is_maltainvest && !has_financial_account) resolve();
@@ -205,7 +208,9 @@ const MetaTraderConfig = (() => {
                                 showAssessment('.assessment');
                                 is_ok = false;
                             }
-                            if (!response_get_settings.citizen && !(is_maltainvest && !has_financial_account)) {
+                            if (!response_get_settings.citizen
+                                && !(is_maltainvest && !has_financial_account)
+                                && accounts_info[acc_type].mt5_account_type) {
                                 showCitizenshipMessage();
                                 is_ok = false;
                             }
@@ -374,7 +379,11 @@ const MetaTraderConfig = (() => {
                     resolve(needsRealMessage());
                 } else if (accounts_info[acc_type].account_type === 'financial') {
                     BinarySocket.send({ get_account_status: 1 }).then(() => {
-                        resolve(!isAuthenticated() ? $messages.find('#msg_authenticate').html() : '');
+                        if (!/svg_standard/.test(acc_type) && isAuthenticationPromptNeeded()) {
+                            resolve($messages.find('#msg_authenticate').html());
+                        }
+
+                        resolve();
                     });
                 } else {
                     resolve();
@@ -518,6 +527,9 @@ const MetaTraderConfig = (() => {
     const isAuthenticated = () =>
         State.getResponse('get_account_status').status.indexOf('authenticated') !== -1;
 
+    const isAuthenticationPromptNeeded = () =>
+        State.getResponse('get_account_status').authentication.needs_verification.length;
+
     return {
         accounts_info,
         actions_info,
@@ -528,6 +540,7 @@ const MetaTraderConfig = (() => {
         hasAccount,
         getCurrency,
         isAuthenticated,
+        isAuthenticationPromptNeeded,
         configMtCompanies   : configMtCompanies.get,
         configMtFinCompanies: configMtFinCompanies.get,
         setMessages         : ($msg) => { $messages = $msg; },
