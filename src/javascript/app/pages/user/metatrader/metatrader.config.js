@@ -169,7 +169,7 @@ const MetaTraderConfig = (() => {
                     if (is_financial) {
                         const is_svg = State.getResponse(`landing_company.mt_financial_company.${getMTFinancialAccountType(acc_type)}.shortcode`) === 'svg';
                         if (is_svg) resolve();
-                        
+
                         let is_ok = true;
                         BinarySocket.wait('get_account_status', 'landing_company').then(() => {
                             if (is_maltainvest && !has_financial_account) resolve();
@@ -379,7 +379,7 @@ const MetaTraderConfig = (() => {
                     resolve(needsRealMessage());
                 } else if (accounts_info[acc_type].account_type === 'financial') {
                     BinarySocket.send({ get_account_status: 1 }).then(() => {
-                        if (getMTFinancialAccountType(acc_type) === 'advanced' && isAuthenticationPromptNeeded()) {
+                        if (!/svg_standard/.test(acc_type) && isAuthenticationPromptNeeded()) {
                             resolve($messages.find('#msg_authenticate').html());
                         }
 
@@ -529,7 +529,7 @@ const MetaTraderConfig = (() => {
 
     const isAuthenticationPromptNeeded = () =>
         State.getResponse('get_account_status').authentication.needs_verification.length;
-    
+
     return {
         accounts_info,
         actions_info,
