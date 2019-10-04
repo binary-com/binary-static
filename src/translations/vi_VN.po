@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-10-03 06:22\n"
+"PO-Revision-Date: 2019-10-04 07:16\n"
 "Last-Translator: binarycom\n"
 "Language-Team: Vietnamese\n"
 "MIME-Version: 1.0\n"
@@ -1299,9 +1299,6 @@ msgstr "Một Phiên Mở có thể được đóng bằng cách nhấn
 msgid "An Open Position may be partially closed by double clicking the position, selecting the volume to be partially closed from the context menu, and then clicking \"Close\"."
 msgstr "Mộ Phiên Mở có thể được đóng một phần bằng cách click đúp vào phiên, chọn khối lượng sẽ bị đóng từ menu nội dung, sau đó chọn \"Đóng\"."
 
-msgid "An additional password can be used to restrict access to the cashier."
-msgstr "Mật khẩu phụ có thể dùng để hạn chế truy cập vào khu thu ngân."
-
 msgid "An advanced university degree in Physics, Financial Engineering or Mathematics"
 msgstr "Một văn bằng đại học cấp cao trong ngành Vật lý, Tài Chính Kỹ Thuật hoặc Toán Học"
 
@@ -2382,8 +2379,8 @@ msgstr "Có thể được sử dụng để mở tài khoản, cài đặt, qu�
 msgid "Can be used to view account activity, including settings, limits, balance sheets, trade purchase history, and more."
 msgstr "Có thể được sử dụng để xem hoạt động của tài khoản, bao gồm cài đặt, giới hạn, số dư, lịch sử giao dịch, và nhiều hơn thế nữa."
 
-msgid "Can be used to withdraw to payment agents, transfer funds between accounts, and set / clear cashier passwords."
-msgstr "Có thể được sử dụng để rút tiền ở đại lý thanh toán, chuyển tiền giữa các tài khoản và thêm/ xóa mật khẩu thu ngân."
+msgid "Can be used to withdraw to payment agents and transfer funds between accounts."
+msgstr ""
 
 msgid "Can you spare 15 minutes?"
 msgstr "Bạn có thể dành ra 15 phút không?"
@@ -2454,12 +2451,6 @@ msgstr "Các Chỉ Số Tiền Mặt"
 msgid "Cashier"
 msgstr "Thu Ngân"
 
-msgid "Cashier Password"
-msgstr "Mật Khẩu Thu Ngân"
-
-msgid "Cashier password"
-msgstr "Mật Khẩu Thu Ngân"
-
 msgid "Cashier session expired"
 msgstr "Phiên làm việc của thu ngân đã hết hạn"
 
@@ -2483,9 +2474,6 @@ msgstr "Thay đổi mật khẩu"
 
 msgid "Change the Margin rate in relation to both Open Positions and new Orders"
 msgstr "Thay đổi tỷ lệ biên liên quan đến cả Phiên Mở và Các Lệnh Mới"
-
-msgid "Change the password used for deposits and withdrawals."
-msgstr "Thay đổi mật khẩu sử dụng cho tiền gửi và rút tiền."
 
 msgid "Change your main login password."
 msgstr "Thay đổi mật khẩu đăng nhập chính của bạn."
@@ -6470,9 +6458,6 @@ msgstr "Cuộc sống ở một hòn đảo thiên đường thực là một đ
 msgid "Located 10 minutes away, Malaysia's intelligent garden city offers stunning greenery and exquisite structures."
 msgstr "Nằm cách đó 10 phút, các công viên thông minh xanh của Malaysia cung cấp cảnh quan tuyệt đẹp và các cấu trúc tinh tế."
 
-msgid "Lock Cashier"
-msgstr "Khóa quầy Thu Ngân"
-
 msgid "Log in"
 msgstr "Đăng nhập"
 
@@ -8705,9 +8690,6 @@ msgstr "Phạm vi của các thị trường"
 msgid "Re-enter password"
 msgstr "Nhập lại mật khẩu"
 
-msgid "Re-enter your password"
-msgstr "Nhập lại mật khẩu của bạn"
-
 msgid "Read"
 msgstr "Đọc"
 
@@ -9311,9 +9293,6 @@ msgstr "Thời hạn phiên:"
 msgid "Set Currency"
 msgstr "Thiết lập tiền tệ"
 
-msgid "Set a %1cashier lock password%2 to prevent unauthorised access to your cashier."
-msgstr "Đặt mật khẩu thu ngân để ngăn truy cập trái phép vào thu ngân của bạn."
-
 msgid "Set barrier(s) to define your position and trigger the payout you'll receive."
 msgstr "Thiết lập giới hạn để xác định vị trí của bạn và kích hoạt thanh toán bạn sẽ nhận được."
 
@@ -9493,9 +9472,6 @@ msgstr "Rất tiếc, tính năng này chỉ khả dụng với tài khoản ti�
 
 msgid "Sorry, this feature is not available in your jurisdiction."
 msgstr "Xin lỗi, tính năng này không có sẵn trong thẩm quyền của bạn."
-
-msgid "Sorry, you have entered an incorrect cashier password"
-msgstr "Rất tiếc, bạn đã nhập sai mật khẩu thu ngân"
 
 msgid "Source of income"
 msgstr "Nguồn thu nhập"
@@ -12369,9 +12345,6 @@ msgstr "Hệ điều hành không rõ"
 msgid "Unless otherwise advised, BIEL shall treat a client as a retail client. Clients may also request, by writing to BIEL, to change the category in which they have been classified, and this may have an effect on the level of protection afforded to them. BIEL will assess the client's knowledge and experience versus the appropriateness of the requested service/investment product."
 msgstr "Trừ phi được yêu cầu, BIEL sẽ coi khách hàng như một Khách hàng Bán lẻ. Khách hàng có thể yêu cầu, bằng cách viết cho BIEL, để thay đổi phân loại khách hàng mà họ được xếp vào và việc này sẽ có hiệu ứng phụ thuộc vào mức độ bảo vệ mà khách hàng có thể chi trả. BIEL sẽ đánh giá mức độ hiểu biết và kinh nghiệm của khách hàng có phù hợp với yêu cầu về sản phẩm dịch vụ/đầu tư của họ."
 
-msgid "Unlock Cashier"
-msgstr "Mở Khóa Thu Ngân"
-
 msgid "Up to %1"
 msgstr "Lên đến %1"
 
@@ -13598,15 +13571,6 @@ msgstr "Đơn xét duyệt để được thành một khách hàng chuyên nghi
 
 msgid "Your application will then be reviewed by our compliance and marketing departments. Once approved, we will put you live in our %1payment agent%2 list."
 msgstr "Hồ sơ đăng kí của bạn sẽ được xem xét bởi phòng pháp lý và marketing. Khi đã được duyệt, chúng tôi sẽ xếp bạn vào danh sách đại lý thanh toán của chúng tôi."
-
-msgid "Your cashier is locked as per your request - to unlock it, please click %1here%2."
-msgstr "Theo như bạn yêu cầu Thu Ngân đã được khóa - để mở khóa, xin vui lòng nhấn vào %1đây%2."
-
-msgid "Your cashier is locked as per your request - to unlock it, please click <a href=\"%1\">here</a>."
-msgstr "Thu Ngân đã bị khóa theo yêu cầu của bạn - để mở khóa, vui lòng nhấn <a href=\"%1\">vào đây </a>."
-
-msgid "Your cashier is locked as per your request - to unlock it, please enter the password."
-msgstr "Thu Ngân đã bị khóa theo yêu cầu của bạn - để mở khóa, vui lòng điền mật khẩu."
 
 msgid "Your cashier is locked."
 msgstr "Thu ngân của bạn bị khóa."

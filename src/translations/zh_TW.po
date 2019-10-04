@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-10-03 06:19\n"
+"PO-Revision-Date: 2019-10-04 07:14\n"
 "Last-Translator: binarycom\n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -1299,9 +1299,6 @@ msgstr "單擊「x」按鈕可以將持倉頭寸平倉。"
 msgid "An Open Position may be partially closed by double clicking the position, selecting the volume to be partially closed from the context menu, and then clicking \"Close\"."
 msgstr "通過雙擊頭寸，從快捷功能表中選擇要部分平倉的數量，然後單擊「平倉」，可以將持倉頭寸部分平倉。"
 
-msgid "An additional password can be used to restrict access to the cashier."
-msgstr "可使用額外密碼來限制對收銀台的存取。"
-
 msgid "An advanced university degree in Physics, Financial Engineering or Mathematics"
 msgstr "擁有物理、金融工程或數學專業的大學學位"
 
@@ -2382,8 +2379,8 @@ msgstr "可用於開帳戶、設定、代幣用法管理等。"
 msgid "Can be used to view account activity, including settings, limits, balance sheets, trade purchase history, and more."
 msgstr "可用於檢視帳戶活動，包括設定、限額、資產負債表、交易購入歷史等。"
 
-msgid "Can be used to withdraw to payment agents, transfer funds between accounts, and set / clear cashier passwords."
-msgstr "用途包括為付款代理取款、帳戶轉賬、及設定/刪除收銀台密碼。"
+msgid "Can be used to withdraw to payment agents and transfer funds between accounts."
+msgstr ""
 
 msgid "Can you spare 15 minutes?"
 msgstr "你能抽出15分鐘時間嗎？"
@@ -2454,12 +2451,6 @@ msgstr "現金指數"
 msgid "Cashier"
 msgstr "收銀台"
 
-msgid "Cashier Password"
-msgstr "收銀台密碼"
-
-msgid "Cashier password"
-msgstr "收銀台密碼"
-
 msgid "Cashier session expired"
 msgstr "收銀台時段已過期"
 
@@ -2483,9 +2474,6 @@ msgstr "更改密碼"
 
 msgid "Change the Margin rate in relation to both Open Positions and new Orders"
 msgstr "更改未平倉頭寸和新訂單的保證金率"
-
-msgid "Change the password used for deposits and withdrawals."
-msgstr "更改存款和取款密碼。"
 
 msgid "Change your main login password."
 msgstr "更改主要登入密碼。"
@@ -6468,9 +6456,6 @@ msgstr "在島嶼天堂居住有許多好處。 Labuan 像是個罕見的寶石,
 msgid "Located 10 minutes away, Malaysia's intelligent garden city offers stunning greenery and exquisite structures."
 msgstr "馬來西亞的智能花園城市僅10分鐘路程, 提供令人驚嘆的綠色環境和精緻結構。"
 
-msgid "Lock Cashier"
-msgstr "鎖定收銀台"
-
 msgid "Log in"
 msgstr "登入"
 
@@ -8703,9 +8688,6 @@ msgstr "市場範圍"
 msgid "Re-enter password"
 msgstr "重新輸入密碼"
 
-msgid "Re-enter your password"
-msgstr "重新輸入密碼"
-
 msgid "Read"
 msgstr "閱讀"
 
@@ -9309,9 +9291,6 @@ msgstr "工作階段時間："
 msgid "Set Currency"
 msgstr "設定貨幣"
 
-msgid "Set a %1cashier lock password%2 to prevent unauthorised access to your cashier."
-msgstr "設置％1收銀台鎖定密碼％2以防止有人未經授權存取收銀台。"
-
 msgid "Set barrier(s) to define your position and trigger the payout you'll receive."
 msgstr "您可設定用於確認頭寸參數以及觸發賠付的障礙水平。"
 
@@ -9491,9 +9470,6 @@ msgstr "對不起，此功能僅適用虛擬帳戶。"
 
 msgid "Sorry, this feature is not available in your jurisdiction."
 msgstr "對不起，您的管轄權內無法使用此功能。"
-
-msgid "Sorry, you have entered an incorrect cashier password"
-msgstr "對不起，您輸入的收銀台密碼不正確"
 
 msgid "Source of income"
 msgstr "收入來源"
@@ -12366,9 +12342,6 @@ msgstr "未知 OS"
 msgid "Unless otherwise advised, BIEL shall treat a client as a retail client. Clients may also request, by writing to BIEL, to change the category in which they have been classified, and this may have an effect on the level of protection afforded to them. BIEL will assess the client's knowledge and experience versus the appropriateness of the requested service/investment product."
 msgstr "除非另行通知，BIEL將視客戶為零售客戶。客戶也可通過書面要求BIEL改變其類別，這麼做可能會影響到BIEL所提供給客戶的保護級別。BIEL將對客戶的知識和經驗與所請求的服務/投資產品的適當性作出評估。"
 
-msgid "Unlock Cashier"
-msgstr "解鎖收銀台"
-
 msgid "Up to %1"
 msgstr "高達%1"
 
@@ -13595,15 +13568,6 @@ msgstr "您請求成為專業客戶的申請正在處理中。"
 
 msgid "Your application will then be reviewed by our compliance and marketing departments. Once approved, we will put you live in our %1payment agent%2 list."
 msgstr "然後我們的審核和行銷部門將審查您的申請。一旦批准，我們將把您列入%1付款代理%2清單。"
-
-msgid "Your cashier is locked as per your request - to unlock it, please click %1here%2."
-msgstr "根據您的要求，您的收銀台已被鎖定- 如需解除鎖定，請點選%1此處%2。"
-
-msgid "Your cashier is locked as per your request - to unlock it, please click <a href=\"%1\">here</a>."
-msgstr "根據您的要求，您的收銀台已被鎖定- 如需解除鎖定，請點選<a href=\"%1\">此處</a>。"
-
-msgid "Your cashier is locked as per your request - to unlock it, please enter the password."
-msgstr "根據您的請求，您的收銀台已被鎖定- 如需解除鎖定，請輸入密碼。"
 
 msgid "Your cashier is locked."
 msgstr "您的收銀台已鎖定。"

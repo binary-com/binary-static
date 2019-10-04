@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-10-03 06:20\n"
+"PO-Revision-Date: 2019-10-04 07:15\n"
 "Last-Translator: binarycom\n"
 "Language-Team: Indonesian\n"
 "MIME-Version: 1.0\n"
@@ -1299,9 +1299,6 @@ msgstr "Open Posisi dapat ditutup dengan mengklik tombol \"x\"."
 msgid "An Open Position may be partially closed by double clicking the position, selecting the volume to be partially closed from the context menu, and then clicking \"Close\"."
 msgstr "Open Posisi dapat ditutup sebagian dengan mengklik posisi dua kali, memilih volume yang akan ditutup sebagian dari menu konteks, dan kemudian klik \"Tutup\"."
 
-msgid "An additional password can be used to restrict access to the cashier."
-msgstr "Kata sandi tambahan dapat digunakan untuk membatasi akses ke kasir."
-
 msgid "An advanced university degree in Physics, Financial Engineering or Mathematics"
 msgstr "Gelar universitas lanjutan di bidang Fisika, Teknik Keuangan atau Matematika"
 
@@ -2382,8 +2379,8 @@ msgstr "Dapat digunakan untuk mendaftar akun, menyeting, mengelola penggunaan to
 msgid "Can be used to view account activity, including settings, limits, balance sheets, trade purchase history, and more."
 msgstr "Dapat digunakan untuk melihat aktivitas akun, termasuk pengaturan, batas, saldo, sejarah pembelian trading, dan banyak lagi."
 
-msgid "Can be used to withdraw to payment agents, transfer funds between accounts, and set / clear cashier passwords."
-msgstr "Dapat digunakan untuk menarik dana ke agen pembayaran, transfer dana antar akun, dan mengatur/menghapus sandi kasir."
+msgid "Can be used to withdraw to payment agents and transfer funds between accounts."
+msgstr ""
 
 msgid "Can you spare 15 minutes?"
 msgstr "Dapatkan Anda meluangkan 15 menit?"
@@ -2454,12 +2451,6 @@ msgstr "Indeks Tunai"
 msgid "Cashier"
 msgstr "Kasir"
 
-msgid "Cashier Password"
-msgstr "Kata Sandi Kasir"
-
-msgid "Cashier password"
-msgstr "Kata sandi Kasir"
-
 msgid "Cashier session expired"
 msgstr "Sesi kasir telah berakhir"
 
@@ -2483,9 +2474,6 @@ msgstr "Merubah kata sandi"
 
 msgid "Change the Margin rate in relation to both Open Positions and new Orders"
 msgstr "Mengubah tingkat Margin terkait dengan Open Posisi dan Order baru"
-
-msgid "Change the password used for deposits and withdrawals."
-msgstr "Rubah kata sandi pada bagian deposit dan penarikan."
 
 msgid "Change your main login password."
 msgstr "Rubah kata sandi untuk mengakses akun Anda."
@@ -6470,9 +6458,6 @@ msgstr "Hidup di pulau surga dengan fasilitasnya. Labuan adalah salah satu perma
 msgid "Located 10 minutes away, Malaysia's intelligent garden city offers stunning greenery and exquisite structures."
 msgstr "Terletak dalam jangkauan 10 menit, kota taman Malaysia menawarkan tanaman hijau dan indah yang menakjubkan."
 
-msgid "Lock Cashier"
-msgstr "Kunci Kasir"
-
 msgid "Log in"
 msgstr "Masuk"
 
@@ -8705,9 +8690,6 @@ msgstr "Rentang pasar"
 msgid "Re-enter password"
 msgstr "Masukkan ulang kata sandi"
 
-msgid "Re-enter your password"
-msgstr "Masukkan kembali sandi Anda"
-
 msgid "Read"
 msgstr "Baca"
 
@@ -9311,9 +9293,6 @@ msgstr "Sesi durasi:"
 msgid "Set Currency"
 msgstr "Atur Mata Uang"
 
-msgid "Set a %1cashier lock password%2 to prevent unauthorised access to your cashier."
-msgstr "Pasang %1kata sandi kasir%2 untuk mencegah akses yang tidak diinginkan pada bagian kasir Anda."
-
 msgid "Set barrier(s) to define your position and trigger the payout you'll receive."
 msgstr "Tetapkan batasan untuk menentukan posisi dan memicu hasil yang Anda akan dapatkan."
 
@@ -9493,9 +9472,6 @@ msgstr "Maaf, fasilitas ini hanya tersedia untuk rekening virtual saja."
 
 msgid "Sorry, this feature is not available in your jurisdiction."
 msgstr "Maaf, fitur ini tidak tersedia di yurisdiksi Anda."
-
-msgid "Sorry, you have entered an incorrect cashier password"
-msgstr "Maaf, kata sandi yang Anda masukkan salah"
 
 msgid "Source of income"
 msgstr "Sumber penghasilan"
@@ -12369,9 +12345,6 @@ msgstr "OS tidak diketahui"
 msgid "Unless otherwise advised, BIEL shall treat a client as a retail client. Clients may also request, by writing to BIEL, to change the category in which they have been classified, and this may have an effect on the level of protection afforded to them. BIEL will assess the client's knowledge and experience versus the appropriateness of the requested service/investment product."
 msgstr "Kecuali disarankan sebaliknya, BIEL akan memperlakukan klien sebagai klien ritel. Klien juga dapat meminta, secara tertulis kepada BIEL, untuk mengubah kategori klasifikasi mereka, dan ini mungkin berdampak pada tingkat perlindungan yang diberikan kepada mereka. BIEL akan menilai pengetahuan dan pengalaman klien versus kelayakan produk layanan/investasi yang diminta."
 
-msgid "Unlock Cashier"
-msgstr "Buka Kasir"
-
 msgid "Up to %1"
 msgstr "Hingga %1"
 
@@ -13598,15 +13571,6 @@ msgstr "Aplikasi Anda sebagai klien profesional sedang diproses."
 
 msgid "Your application will then be reviewed by our compliance and marketing departments. Once approved, we will put you live in our %1payment agent%2 list."
 msgstr "Permohonan Anda akan ditinjau oleh departemen compliance dan marketing kami. Setelah disetujui, kami akan mengaktifkan Anda di dalam daftar %1agen pembayaran%2."
-
-msgid "Your cashier is locked as per your request - to unlock it, please click %1here%2."
-msgstr "Bagian kasir akun Anda telah di batalkan - untuk membukanya, silahkan klik %1disini%2."
-
-msgid "Your cashier is locked as per your request - to unlock it, please click <a href=\"%1\">here</a>."
-msgstr "Bagian kasir akun Anda telah di batalkan - untuk membukanya, silahkan klik <a href=\"%1\">disini</a>."
-
-msgid "Your cashier is locked as per your request - to unlock it, please enter the password."
-msgstr "Kasir Anda terkunci sesuai permintaan Anda - untuk membuka kunci, masukkan kata sandi."
 
 msgid "Your cashier is locked."
 msgstr "Kasir Anda terkunci."

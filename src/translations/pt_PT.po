@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-10-03 06:21\n"
+"PO-Revision-Date: 2019-10-04 07:16\n"
 "Last-Translator: binarycom\n"
 "Language-Team: Portuguese\n"
 "MIME-Version: 1.0\n"
@@ -1301,9 +1301,6 @@ msgstr "Uma posição aberta pode ser fechada clicando no botão \"x\"."
 msgid "An Open Position may be partially closed by double clicking the position, selecting the volume to be partially closed from the context menu, and then clicking \"Close\"."
 msgstr "Uma posição aberta pode ser parcialmente fechada clicando duas vezes na posição, selecionando o volume a ser parcialmente fechado no menu de contexto e clicando em \"Fechar\"."
 
-msgid "An additional password can be used to restrict access to the cashier."
-msgstr "Uma senha adicional pode ser usada para restringir acesso ao caixa."
-
 msgid "An advanced university degree in Physics, Financial Engineering or Mathematics"
 msgstr "Para se qualificar, você necessitará ter um diploma universitário em Física, Engenharia financeira ou Matemática"
 
@@ -2384,8 +2381,8 @@ msgstr "Pode ser usado para abrir contas, definir configurações, gerir o uso d
 msgid "Can be used to view account activity, including settings, limits, balance sheets, trade purchase history, and more."
 msgstr "Pode ser usado para ver a atividade de conta, incluindo configurações, limites, balanços, o histórico de aquisições de contratos e mais."
 
-msgid "Can be used to withdraw to payment agents, transfer funds between accounts, and set / clear cashier passwords."
-msgstr "Pode ser usado para efetuar retiradas para agentes de pagamentos, transferir fundos entre contas e definir / limpar senhas do caixa."
+msgid "Can be used to withdraw to payment agents and transfer funds between accounts."
+msgstr ""
 
 msgid "Can you spare 15 minutes?"
 msgstr "Pode dispensar 15 minutos?"
@@ -2456,12 +2453,6 @@ msgstr "Índices Cash"
 msgid "Cashier"
 msgstr "Caixa"
 
-msgid "Cashier Password"
-msgstr "Senha do Caixa"
-
-msgid "Cashier password"
-msgstr "Senha do Caixa"
-
 msgid "Cashier session expired"
 msgstr "Sessão do caixa expirou"
 
@@ -2485,9 +2476,6 @@ msgstr "Alterar senha"
 
 msgid "Change the Margin rate in relation to both Open Positions and new Orders"
 msgstr "Alterar a taxa de margem em relação a posições abertas e novas ordens"
-
-msgid "Change the password used for deposits and withdrawals."
-msgstr "Altere a senha usada para depósitos e retiradas."
 
 msgid "Change your main login password."
 msgstr "Altere a sua senha de login principal."
@@ -6472,9 +6460,6 @@ msgstr "Viver em uma ilha paradisíaca tem as suas vantagens. Labuan é uma daqu
 msgid "Located 10 minutes away, Malaysia's intelligent garden city offers stunning greenery and exquisite structures."
 msgstr "Situada a 10 minutos de distância, a cidade inteligente de jardins dispõe de espaços verdes deslumbrantes e infra-estruturas excelentes."
 
-msgid "Lock Cashier"
-msgstr "Bloquear Caixa"
-
 msgid "Log in"
 msgstr "Conectar-se"
 
@@ -8707,9 +8692,6 @@ msgstr "Variedade de mercados"
 msgid "Re-enter password"
 msgstr "Redigite a senha"
 
-msgid "Re-enter your password"
-msgstr "Redigite a sua senha"
-
 msgid "Read"
 msgstr "Ler"
 
@@ -9313,9 +9295,6 @@ msgstr "Duração da sessão:"
 msgid "Set Currency"
 msgstr "Definir moeda"
 
-msgid "Set a %1cashier lock password%2 to prevent unauthorised access to your cashier."
-msgstr "Defina uma %1senha de bloqueio para o seu caixa%2 para impedir o acesso não autorizado ao seu caixa."
-
 msgid "Set barrier(s) to define your position and trigger the payout you'll receive."
 msgstr "Configure a(s) barreira(s) para definir a sua posição e acionar o prêmio que irá receber."
 
@@ -9495,9 +9474,6 @@ msgstr "Lamentamos, este recurso está disponível somente para contas virtuais.
 
 msgid "Sorry, this feature is not available in your jurisdiction."
 msgstr "Lamentamos, este recurso não está disponível na sua jurisdição."
-
-msgid "Sorry, you have entered an incorrect cashier password"
-msgstr "Lamentamos, introduziu uma senha de caixa incorreta"
 
 msgid "Source of income"
 msgstr "Fonte de renda"
@@ -12371,9 +12347,6 @@ msgstr "SO desconhecido"
 msgid "Unless otherwise advised, BIEL shall treat a client as a retail client. Clients may also request, by writing to BIEL, to change the category in which they have been classified, and this may have an effect on the level of protection afforded to them. BIEL will assess the client's knowledge and experience versus the appropriateness of the requested service/investment product."
 msgstr "Salvo indicação contrária, a BIEL deve tratar um cliente como um cliente não profissional. Os clientes também podem solicitar, por escrito à BIEL, para alterar a categoria em que foram classificados, e isso pode ter um efeito sobre o nível de proteção que lhes é concedido. A BIEL avaliará o conhecimento e a experiência do cliente versus a adequação do produto de serviço/investimento solicitado."
 
-msgid "Unlock Cashier"
-msgstr "Desbloquear o Caixa"
-
 msgid "Up to %1"
 msgstr "Até 1%"
 
@@ -13601,15 +13574,6 @@ msgstr "O seu requerimento para ser tratado como um cliente profissional está s
 
 msgid "Your application will then be reviewed by our compliance and marketing departments. Once approved, we will put you live in our %1payment agent%2 list."
 msgstr "A sua candidatura será então analisada pelos nossos departamentos de conformidade e de marketing. Uma vez aprovada, iremos pô-lo em funcionamento na nossa lista de %1agentes de pagamentos%2."
-
-msgid "Your cashier is locked as per your request - to unlock it, please click %1here%2."
-msgstr "O seu caixa está bloqueado conforme solicitado - para desbloqueá-lo, clique %1aqui%2."
-
-msgid "Your cashier is locked as per your request - to unlock it, please click <a href=\"%1\">here</a>."
-msgstr "O seu caixa está bloqueado conforme solicitado - para desbloqueá-lo, clique <a href=\"%1\">aqui</a>."
-
-msgid "Your cashier is locked as per your request - to unlock it, please enter the password."
-msgstr "O seu caixa está bloqueado conforme pedido - para desbloqueá-lo, digite a senha."
 
 msgid "Your cashier is locked."
 msgstr "O seu caixa está bloqueado."
