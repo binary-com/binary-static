@@ -344,23 +344,16 @@ const MetaTraderConfig = (() => {
                 if (Client.get('is_virtual')) {
                     resolve(needsRealMessage());
                 } else {
-                    BinarySocket.send({ cashier_password: 1 }).then((response) => {
-                        if (!response.error && response.cashier_password === 1) {
-                            resolve(localize('Your cashier is locked as per your request - to unlock it, please click <a href="[_1]">here</a>.',
-                                urlFor('user/security/cashier_passwordws')));
+                    BinarySocket.send({ get_account_status: 1 }).then((response_status) => {
+                        if (!response_status.error && /cashier_locked/.test(response_status.get_account_status.status)) {
+                            resolve(localize('Your cashier is locked.')); // Locked from BO
                         } else {
-                            BinarySocket.send({ get_account_status: 1 }).then((response_status) => {
-                                if (!response_status.error && /cashier_locked/.test(response_status.get_account_status.status)) {
-                                    resolve(localize('Your cashier is locked.')); // Locked from BO
-                                } else {
-                                    const limit = State.getResponse('get_limits.remainder');
-                                    if (typeof limit !== 'undefined' && +limit < getMinMT5TransferValue(Client.get('currency'))) {
-                                        resolve(localize('You have reached the limit.'));
-                                    } else {
-                                        resolve();
-                                    }
-                                }
-                            });
+                            const limit = State.getResponse('get_limits.remainder');
+                            if (typeof limit !== 'undefined' && +limit < getMinMT5TransferValue(Client.get('currency'))) {
+                                resolve(localize('You have reached the limit.'));
+                            } else {
+                                resolve();
+                            }
                         }
                     });
                 }
