@@ -41,8 +41,6 @@ const Security = () => (
             <div className='gr-row gr-padding-30'>
                 <Column className='invisible' id='change_password' url='change_passwordws' image='account_password' header={it.L('Account Password')} text={it.L('Change your main login password.')} />
 
-                <Column className='real invisible' url='cashier_passwordws' image='cashier_password' header={it.L('Cashier Password')} text={it.L('Change the password used for deposits and withdrawals.')} />
-
                 <Column className='real invisible' url='self_exclusionws' image='self-exclusion' header={it.L('Self Exclusion')} text={it.L('Facility that allows you to set limits on your account.')} />
 
                 <Column className='real invisible' url='limitsws' image='limits' header={it.L('Limits')} text={it.L('View your trading and withdrawal limits.')} />

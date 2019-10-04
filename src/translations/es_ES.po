@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-10-03 06:21\n"
+"PO-Revision-Date: 2019-10-04 07:16\n"
 "Last-Translator: binarycom\n"
 "Language-Team: Spanish\n"
 "MIME-Version: 1.0\n"
@@ -1300,9 +1300,6 @@ msgstr "Una Posición Abierta puede cerrarse haciendo clic en el botón \"x\"."
 msgid "An Open Position may be partially closed by double clicking the position, selecting the volume to be partially closed from the context menu, and then clicking \"Close\"."
 msgstr "Una Posición Abierta puede cerrarse parcialmente haciendo doble clic en la posición, seleccionando el volumen que desea cerrar parcialmente en el menú contextual y, a continuación, haciendo clic en \"Cerrar\"."
 
-msgid "An additional password can be used to restrict access to the cashier."
-msgstr "Se puede utilizar una contraseña adicional para restringir el acceso al cajero."
-
 msgid "An advanced university degree in Physics, Financial Engineering or Mathematics"
 msgstr "Un título universitario avanzado en Física, Ingeniería Financiera o Matemáticas"
 
@@ -2383,8 +2380,8 @@ msgstr "Se puede utilizar para abrir cuentas, configurar ajustes, administrar el
 msgid "Can be used to view account activity, including settings, limits, balance sheets, trade purchase history, and more."
 msgstr "Se puede utilizar para ver la actividad de la cuenta, incluyendo la configuración, límites, balances, historial de compras de contratos, y mucho más."
 
-msgid "Can be used to withdraw to payment agents, transfer funds between accounts, and set / clear cashier passwords."
-msgstr "Se puede utilizar para retirar fondos mediante agentes de pago, transferir fondos entre cuentas y establecer / cancelar contraseñas del cajero."
+msgid "Can be used to withdraw to payment agents and transfer funds between accounts."
+msgstr ""
 
 msgid "Can you spare 15 minutes?"
 msgstr "¿Tiene usted 15 minutos?"
@@ -2455,12 +2452,6 @@ msgstr "Índices Cash"
 msgid "Cashier"
 msgstr "Cajero"
 
-msgid "Cashier Password"
-msgstr "Contraseña de Cajero"
-
-msgid "Cashier password"
-msgstr "Contraseña de cajero"
-
 msgid "Cashier session expired"
 msgstr "Sesión de cajero expirada"
 
@@ -2484,9 +2475,6 @@ msgstr "Cambiar contraseña"
 
 msgid "Change the Margin rate in relation to both Open Positions and new Orders"
 msgstr "Cambiar la tasa de Margen en relación con las posiciones abiertas y nuevas Órdenes"
-
-msgid "Change the password used for deposits and withdrawals."
-msgstr "Cambiar la contraseña utilizada para depósitos y retiradas."
 
 msgid "Change your main login password."
 msgstr "Cambiar su contraseña de inicio de sesión principal."
@@ -6183,10 +6171,10 @@ msgid "Kick back with beautiful beaches, islands, and mountains just a short fli
 msgstr "Relájese con hermosas playas, islas y montañas a sólo un corto vuelo de distancia. Desde Malta, tendrá Europa, el Mediterráneo y el norte de África a su disposición. Y desde Malasia, toda Asia le espera."
 
 msgid "Kindly send a scan of a valid proof of address to %1support@binary.com%2"
-msgstr ""
+msgstr "Envíe escaneado un comprobante de domicilio válido a %1support@binary.com%2"
 
 msgid "Kindly send a scan of a valid proof of identity to %1support@binary.com%2"
-msgstr ""
+msgstr "Envíe escaneado un comprobante de identidad válido a %1support@binary.com%2"
 
 msgid "Know how much you will win or lose before you purchase the contract"
 msgstr "Sepa cuánto ganará o perderá antes de comprar el contrato"
@@ -6282,7 +6270,7 @@ msgid "Law"
 msgstr "Ley"
 
 msgid "Laws regarding financial contracts vary throughout the world, and it is the responsibility of clients accessing this site to ensure that they understand and fully comply with any laws or regulations relevant to themselves in their own country. This site does not constitute, and may not be used for the purposes of, an offer or solicitation to anyone in any jurisdiction in which such offer or solicitation is not authorised or to any person to whom it is unlawful to make such offer or solicitation. Access to this site and the offering of financial contracts via this site in certain jurisdictions may be restricted and, accordingly, clients accessing this site are required to inform themselves about, and to observe, such restrictions."
-msgstr "Las leyes relacionadas a los contratos financieros varían de acuerdo al país, y es responsabilidad de cada cliente que accede a este sito asegurar la comprensión y acatamiento de todas las leyes o regulaciones relevantes en su propio país. Este sitio no constituye, y no puede ser utilizado con el propósito de, hacer una oferta o solicitud a cualquier persona en cualquier jurisdicción en la que dicha oferta o solicitud no esté autorizada, o a cualquier persona a quien sea ilegal hacer dicha oferta o solicitud. El acceso a este sitio, así como la oferta de servicios financieros mediante el mismo, puede estar restringido en algunas jurisdicciones y, en consecuencia, los clientes quienes accedan de dichas jurisdicciones deben estar al tanto de y respetar tales restricciones."
+msgstr "Las leyes relacionadas a los contratos financieros varían de acuerdo al país, y es responsabilidad de cada cliente que accede a este sitio asegurar la comprensión y acatamiento de todas las leyes o regulaciones relevantes en su propio país. Este sitio no constituye, y no puede ser utilizado con el propósito de, hacer una oferta o solicitud a cualquier persona en cualquier jurisdicción en la que dicha oferta o solicitud no esté autorizada, o a cualquier persona a quien sea ilegal hacer dicha oferta o solicitud. El acceso a este sitio, así como la oferta de servicios financieros mediante el mismo, puede estar restringido en algunas jurisdicciones y, en consecuencia, los clientes quienes accedan de dichas jurisdicciones deben estar al tanto de y respetar tales restricciones."
 
 msgid "Lay out mockups and wireframes for app screens and web pages"
 msgstr "Diseñar maquetas y estructuras para pantallas de aplicaciones y páginas web"
@@ -6469,9 +6457,6 @@ msgstr "Vivir en una isla paradisíaca tiene sus ventajas. Labuan es una de esas
 
 msgid "Located 10 minutes away, Malaysia's intelligent garden city offers stunning greenery and exquisite structures."
 msgstr "Ubicada a 10 minutos de distancia, la ciudad jardín inteligente de Malasia ofrece una vegetación impresionante y exquisitas estructuras."
-
-msgid "Lock Cashier"
-msgstr "Bloquear cajero"
 
 msgid "Log in"
 msgstr "Iniciar sesión"
@@ -7401,7 +7386,7 @@ msgid "Note:"
 msgstr "Nota:"
 
 msgid "Note: %1 does not charge any transfer fees."
-msgstr ""
+msgstr "Nota: %1 no cobra ninguna tarifa de transferencia."
 
 msgid "Note: A no deposit bonus worth USD 10 will be credited into your account within 24 hours after registration."
 msgstr "Nota: Un bono de no depósito por valor de USD 10 será acreditado a su cuenta dentro de las 24 horas tras su registro."
@@ -8115,7 +8100,7 @@ msgid "Please accept the terms and conditions."
 msgstr "Por favor acepte los términos y condiciones."
 
 msgid "Please check your email for details"
-msgstr ""
+msgstr "Por favor revise su correo electrónico para más detalles"
 
 msgid "Please check your email for further instructions."
 msgstr "Por favor, revise su correo para más instrucciones."
@@ -8160,7 +8145,7 @@ msgid "Please confirm the transaction details in order to complete the transfer:
 msgstr "Confirme los detalles de la transacción para completar la transferencia:"
 
 msgid "Please contact your payment agent to validate your withdrawal request."
-msgstr ""
+msgstr "Comuníquese con su agente de pagos para validar su solicitud de retiro."
 
 msgid "Please do not share your bank account, credit card, or e-wallet with another client, as this may cause delays in your withdrawals."
 msgstr "Por favor, no comparta su cuenta bancaria, tarjeta de crédito o billetera electrónica con otro cliente, ya que esto puede causar retrasos en sus retiros."
@@ -8265,13 +8250,13 @@ msgid "Please submit the above information to %1."
 msgstr "Por favor, envíe la información anterior a %1."
 
 msgid "Please submit your %1proof of address%2."
-msgstr ""
+msgstr "Envíe su %1comprobante de dirección%2."
 
 msgid "Please submit your %1proof of identity and proof of address%2."
-msgstr ""
+msgstr "Envíe su %1comprobante de identidad y de dirección%2."
 
 msgid "Please submit your %1proof of identity%2."
-msgstr ""
+msgstr "Envíe su %1comprobante de identidad%2."
 
 msgid "Please take note that our swap rate also depends on the time and days you hold your positions open."
 msgstr "Tenga en cuenta que nuestra tasa de swap también depende de la hora y los días en que mantenga abiertas sus posiciones."
@@ -8538,28 +8523,28 @@ msgid "Prohibited trades"
 msgstr "Operaciones Prohibidas"
 
 msgid "Proof of address"
-msgstr ""
+msgstr "Comprobante de domicilio"
 
 msgid "Proof of address verification failed"
-msgstr ""
+msgstr "Prueba de verificación de dirección fallida"
 
 msgid "Proof of address – such as bank statements/ building society statement or utility bills (mobile phone bills are unacceptable)"
 msgstr "Comprobante de dirección - tales como estado de cuentas bancarios / declaración de sociedad de préstamo inmobiliario o facturas de servicios públicos (facturas de telefonía móvil no son aceptables)"
 
 msgid "Proof of identity"
-msgstr ""
+msgstr "Comprobante de identidad"
 
 msgid "Proof of identity in your selfie must be clear, identifiable, and same as the one you submitted previously"
 msgstr "La prueba de identidad en su autofoto debe ser clara, identificable, y debe ser la misma que envió previamente"
 
 msgid "Proof of identity verification failed"
-msgstr ""
+msgstr "Prueba de verificación de identidad fallida"
 
 msgid "Proof of identity – such as ID card, passport or driving licence"
 msgstr "Comprobante de identidad - tales como documento de identidad nacional, pasaporte, o licencia de conducir"
 
 msgid "Proof of wealth / Source of funds – such as payslips or bank statements"
-msgstr "Comprobantes de ingresos / recursos financieros - tales como nómina de pago o estado de cuentas bancarios"
+msgstr "Comprobantes de ingresos / recursos financieros - tales como nómina de pago o estado de cuentas bancarias"
 
 msgid "Proof of your employment"
 msgstr "Prueba de su empleo"
@@ -8704,9 +8689,6 @@ msgstr "Variedad de mercados"
 
 msgid "Re-enter password"
 msgstr "Vuelva a teclear la contraseña"
-
-msgid "Re-enter your password"
-msgstr "Vuelva a teclear su contraseña"
 
 msgid "Read"
 msgstr "Leer"
@@ -9144,7 +9126,7 @@ msgid "Scalable"
 msgstr "Escalable"
 
 msgid "Scan the QR code below with your authentication app. We recommend %1 or %2. Please note that %3 is not supported."
-msgstr "Escanee el código QR que aparece debajo con su aplicaciónd de autentiación. Recomendamos utilizar %1 o %2. Por favor, tenga en cuenta que %3 no es compatible."
+msgstr "Escanee el código QR abajo con su aplicación de autenticación. Recomendamos utilizar %1 o %2. Por favor, tenga en cuenta que %3 no es compatible."
 
 msgid "Schedule and coordinate interviews with candidates"
 msgstr "Programar y coordinar entrevistas con los candidatos"
@@ -9311,9 +9293,6 @@ msgstr "Seleccione la duración:"
 msgid "Set Currency"
 msgstr "Definir moneda"
 
-msgid "Set a %1cashier lock password%2 to prevent unauthorised access to your cashier."
-msgstr "Configure una %1contraseña para su cajero%2 para evitar el acceso no autorizado al mismo."
-
 msgid "Set barrier(s) to define your position and trigger the payout you'll receive."
 msgstr "Definir la/s barrera/s para definir su posición y activar el pago que recibirá."
 
@@ -9471,7 +9450,7 @@ msgid "Some of the things that cryptocurrencies have in common include:"
 msgstr "Algunos puntos en común entre las criptomonedas incluyen:"
 
 msgid "Sorry,"
-msgstr ""
+msgstr "Lo sentimos,"
 
 msgid "Sorry, account signup is not available in your country."
 msgstr "Lo sentimos, pero no es posible abrir una cuenta en su país."
@@ -9493,9 +9472,6 @@ msgstr "Lo sentimos, esta característica está disponible solo para cuentas vir
 
 msgid "Sorry, this feature is not available in your jurisdiction."
 msgstr "Lo sentimos, esta función no está disponible en su jurisdicción."
-
-msgid "Sorry, you have entered an incorrect cashier password"
-msgstr "Lo sentimos, ingresó una contraseña de cajero incorrecta"
 
 msgid "Source of income"
 msgstr "Fuente de ingresos"
@@ -9909,7 +9885,7 @@ msgid "Tel"
 msgstr "Tel"
 
 msgid "Tel:"
-msgstr ""
+msgstr "Tel:"
 
 msgid "Telegram Bot"
 msgstr "Bot para Telegram"
@@ -12370,9 +12346,6 @@ msgstr "Sistema Operativo Desconocido"
 msgid "Unless otherwise advised, BIEL shall treat a client as a retail client. Clients may also request, by writing to BIEL, to change the category in which they have been classified, and this may have an effect on the level of protection afforded to them. BIEL will assess the client's knowledge and experience versus the appropriateness of the requested service/investment product."
 msgstr "A menos que se indique lo contrario, BIEL tratará al cliente como un cliente minorista. Los clientes podrán también solicitar por escrito, que BIEL cambie la categoría en la que se les ha catalogado y esto podrá tener un efecto sobre el nivel de protección que se les haya ofrecido. BIEL evaluará el conocimiento y la experiencia del cliente frente la idoneidad del producto de inversión/ servicio solicitado."
 
-msgid "Unlock Cashier"
-msgstr "Desbloquear cajero"
-
 msgid "Up to %1"
 msgstr "Hasta %1"
 
@@ -12789,7 +12762,7 @@ msgid "Website URL (where applicable)"
 msgstr "URL del sitio web (si está disponible)"
 
 msgid "Website:"
-msgstr ""
+msgstr "Sitio web:"
 
 msgid "Wednesday"
 msgstr "Miércoles"
@@ -13449,7 +13422,7 @@ msgid "You may open one account for each supported cryptocurrency."
 msgstr "Puede abrir una cuenta para cada criptomoneda admitida."
 
 msgid "You may proceed but please authenticate your account within 10 days to continue trading, otherwise your account will be disabled and any open positions will be closed."
-msgstr ""
+msgstr "Puede continuar, pero por favor, autentique su cuenta dentro de los 10 días para continuar operando, de lo contrario su cuenta quedará deshabilitada y todas las posiciones abiertas se cerrarán."
 
 msgid "You may revoke the current manager's access."
 msgstr "Puede revocar el acceso del administrados actual."
@@ -13542,22 +13515,22 @@ msgid "Your %1 day withdrawal limit is currently %2 %3 (or equivalent in other c
 msgstr "Su %1 límite diario para retirar dinero es actualmente %2 %3 (o el equivalente en otra divisa)."
 
 msgid "Your %1proof of address%2 has expired."
-msgstr ""
+msgstr "Su %1prueba de dirección%2 ha caducado."
 
 msgid "Your %1proof of address%2 has not been verified. Please check your email for details."
-msgstr ""
+msgstr "Su %1prueba de dirección%2 no ha sido verificada. Por favor revise su correo electrónico para más detalles."
 
 msgid "Your %1proof of identity%2 has expired."
-msgstr ""
+msgstr "Su %1prueba de identidad%2 ha caducado."
 
 msgid "Your %1proof of identity%2 has not been verified. Please check your email for details."
-msgstr ""
+msgstr "Su %1prueba de identidad%2 no ha sido verificada. Por favor revise su correo electrónico para más detalles."
 
 msgid "Your %1proof of identity%3 and %2proof of address%3 have expired."
-msgstr ""
+msgstr "Su %1prueba de identidad%3 y %2prueba de dirección%3 han caducado."
 
 msgid "Your %1proof of identity%3 and %2proof of address%3 have not been verified. Please check your email for details."
-msgstr ""
+msgstr "Su %1prueba de identidad%3 y %2prueba de dirección%3 no se han verificado. Por favor revise su correo electrónico para más detalles."
 
 msgid "Your Client will receive an email notification informing him/her that the transfer has been processed."
 msgstr "Su Cliente recibirá una notificación por correo electrónico informándole a él/ella que la transferencia ha sido procesada."
@@ -13566,10 +13539,10 @@ msgid "Your Existing Accounts"
 msgstr "Sus Cuentas Existentes"
 
 msgid "Your account does not need authentication at this time.%1We will inform you if authentication is required in the future."
-msgstr ""
+msgstr "Su cuenta no necesita autenticación en este momento.%1Le informaremos si se requiere autenticación en el futuro."
 
 msgid "Your account has been verified successfully"
-msgstr ""
+msgstr "Su cuenta ha sido verificada exitosamente"
 
 msgid "Your account has no Login/Logout activity."
 msgstr "Su cuenta no tiene actividad de accesos/cierres de sesión."
@@ -13601,15 +13574,6 @@ msgstr "Su solicitud para ser tratado como un cliente profesional es procesada."
 msgid "Your application will then be reviewed by our compliance and marketing departments. Once approved, we will put you live in our %1payment agent%2 list."
 msgstr "Su solicitud será revisada por nuestros departamentos de cumplimiento y de marketing. Una vez aprobada, vamos a poner su información en vivo en nuestra lista de %1Agentes de Pago%2."
 
-msgid "Your cashier is locked as per your request - to unlock it, please click %1here%2."
-msgstr "Su cajero está bloqueado según su solicitud: para desbloquearlo, haga clic %1aquí%2."
-
-msgid "Your cashier is locked as per your request - to unlock it, please click <a href=\"%1\">here</a>."
-msgstr "Su cajero está bloqueado según su solicitud: para desbloquearlo, haga clic <a href=\"%1\">aquí</a>."
-
-msgid "Your cashier is locked as per your request - to unlock it, please enter the password."
-msgstr "Su cajero está bloqueado según su petición - para desbloquearlo, por favor introduzca la contraseña."
-
 msgid "Your cashier is locked."
 msgstr "Su cajero está bloqueado."
 
@@ -13629,7 +13593,7 @@ msgid "Your demo account balance is currently %1 or less. You may top up your ac
 msgstr "El saldo de su cuenta demo de momento es %1 o menos. Puede recargar su cuenta con unos %2 adicionales."
 
 msgid "Your document is being reviewed, please check back in 1-3 days"
-msgstr ""
+msgstr "Su documento se está revisado, vuelva a consultarnos en 1-3 días"
 
 msgid "Your fiat account's currency is currently set to %1."
 msgstr "La moneda de su cuenta fiat actualmente está configurada en %1."
@@ -13659,25 +13623,25 @@ msgid "Your profit or loss is calculated as follows:"
 msgstr "Su ganancia o pérdida se calcula de la siguiente manera:"
 
 msgid "Your proof of address has been verified successfully"
-msgstr ""
+msgstr "Su comprobante de domicilio ha sido verificado con éxito"
 
 msgid "Your proof of address has expired"
-msgstr ""
+msgstr "Su comprobante de domicilio ha expirado"
 
 msgid "Your proof of address was submitted successfully"
-msgstr ""
+msgstr "Su comprobante de domicilio ha sido enviado con éxito"
 
 msgid "Your proof of identity has been verified successfully"
-msgstr ""
+msgstr "Su comprobante de identidad ha sido verificado con éxito"
 
 msgid "Your proof of identity has expired"
-msgstr ""
+msgstr "Su prueba de identidad ha expirado"
 
 msgid "Your proof of identity was submitted successfully"
-msgstr ""
+msgstr "Su prueba de identidad se envió correctamente"
 
 msgid "Your request is being processed."
-msgstr ""
+msgstr "Su solicitud se está procesando."
 
 msgid "Your request to be treated as a professional client is %1not approved%2."
 msgstr "Su solicitud para ser tratado como un cliente profesional %1no es aprobada%2."
@@ -13917,7 +13881,7 @@ msgid "the underlying currency, or financial instrument, on which the price of t
 msgstr "la moneda subyacente, o instrumento financiero, en el cual se base el precio del CFD"
 
 msgid "there was a connection error. Please try again later."
-msgstr ""
+msgstr "hubo un error de conexión. Por favor, inténtelo de nuevo más tarde."
 
 msgid "thousand"
 msgstr "mil"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-10-03 06:20\n"
+"PO-Revision-Date: 2019-10-04 07:15\n"
 "Last-Translator: binarycom\n"
 "Language-Team: Korean\n"
 "MIME-Version: 1.0\n"
@@ -1300,9 +1300,6 @@ msgstr "버튼 \"x\"를 클릭함으로써 오픈 포지션은 닫길 수 있습
 msgid "An Open Position may be partially closed by double clicking the position, selecting the volume to be partially closed from the context menu, and then clicking \"Close\"."
 msgstr "오픈 포지션은 해당 포지션을 두번 클릭하고, 컨텍스트 메뉴에서 부분적으로 해지 위해 볼륨을 선택한 후, \"닫기\"를 클릭함으로써 부분적으로 닫을 수 있습니다."
 
-msgid "An additional password can be used to restrict access to the cashier."
-msgstr "캐쉬어 접근에 제한을 설정하기 위해 추가적인 비밀번호를 이용하실 수 있습니다."
-
 msgid "An advanced university degree in Physics, Financial Engineering or Mathematics"
 msgstr "물리학, 금융공학 또는 수학분야에 있어 상급의 대학 학위 소지"
 
@@ -2383,7 +2380,7 @@ msgstr ""
 msgid "Can be used to view account activity, including settings, limits, balance sheets, trade purchase history, and more."
 msgstr ""
 
-msgid "Can be used to withdraw to payment agents, transfer funds between accounts, and set / clear cashier passwords."
+msgid "Can be used to withdraw to payment agents and transfer funds between accounts."
 msgstr ""
 
 msgid "Can you spare 15 minutes?"
@@ -2455,12 +2452,6 @@ msgstr "캐쉬목록"
 msgid "Cashier"
 msgstr "캐쉬어"
 
-msgid "Cashier Password"
-msgstr "캐쉬어 비밀번호"
-
-msgid "Cashier password"
-msgstr "캐쉬어 비밀번호"
-
 msgid "Cashier session expired"
 msgstr ""
 
@@ -2484,9 +2475,6 @@ msgstr ""
 
 msgid "Change the Margin rate in relation to both Open Positions and new Orders"
 msgstr "오픈 포지션과 새로운 주문 모두에 관련된 증거금률 변경"
-
-msgid "Change the password used for deposits and withdrawals."
-msgstr "예금과 인출에 사용되는 비밀번호를 변경해주시기 바랍니다."
 
 msgid "Change your main login password."
 msgstr "귀하의 주 비밀번호를 바꾸세요."
@@ -6469,9 +6457,6 @@ msgstr ""
 msgid "Located 10 minutes away, Malaysia's intelligent garden city offers stunning greenery and exquisite structures."
 msgstr ""
 
-msgid "Lock Cashier"
-msgstr ""
-
 msgid "Log in"
 msgstr "로그인"
 
@@ -8704,9 +8689,6 @@ msgstr "다양한 시장"
 msgid "Re-enter password"
 msgstr "비밀번호를 재입력해주세요"
 
-msgid "Re-enter your password"
-msgstr "귀하의 비밀번호를 재입력해주세요"
-
 msgid "Read"
 msgstr ""
 
@@ -9310,9 +9292,6 @@ msgstr ""
 msgid "Set Currency"
 msgstr ""
 
-msgid "Set a %1cashier lock password%2 to prevent unauthorised access to your cashier."
-msgstr "귀하의 캐쉬어에 비인가된 접근을 방지하기 위해 %1캐쉬어 잠금 비밀번호%2를 설정하세요."
-
 msgid "Set barrier(s) to define your position and trigger the payout you'll receive."
 msgstr ""
 
@@ -9492,9 +9471,6 @@ msgstr ""
 
 msgid "Sorry, this feature is not available in your jurisdiction."
 msgstr ""
-
-msgid "Sorry, you have entered an incorrect cashier password"
-msgstr "죄송합니다. 잘못된 캐쉬어 비밀번호를 입력하셨습니다"
 
 msgid "Source of income"
 msgstr ""
@@ -12367,9 +12343,6 @@ msgstr ""
 msgid "Unless otherwise advised, BIEL shall treat a client as a retail client. Clients may also request, by writing to BIEL, to change the category in which they have been classified, and this may have an effect on the level of protection afforded to them. BIEL will assess the client's knowledge and experience versus the appropriateness of the requested service/investment product."
 msgstr ""
 
-msgid "Unlock Cashier"
-msgstr ""
-
 msgid "Up to %1"
 msgstr ""
 
@@ -13596,15 +13569,6 @@ msgstr ""
 
 msgid "Your application will then be reviewed by our compliance and marketing departments. Once approved, we will put you live in our %1payment agent%2 list."
 msgstr ""
-
-msgid "Your cashier is locked as per your request - to unlock it, please click %1here%2."
-msgstr ""
-
-msgid "Your cashier is locked as per your request - to unlock it, please click <a href=\"%1\">here</a>."
-msgstr ""
-
-msgid "Your cashier is locked as per your request - to unlock it, please enter the password."
-msgstr "귀하의 캐쉬어는 귀하의 요청에 의해 잠겨져 있습니다 - 제한을 푸시려면, 비밀번호를 입력해주세요."
 
 msgid "Your cashier is locked."
 msgstr ""

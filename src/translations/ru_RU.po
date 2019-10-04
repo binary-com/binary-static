@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-10-03 06:21\n"
+"PO-Revision-Date: 2019-10-04 07:16\n"
 "Last-Translator: binarycom\n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
@@ -1299,9 +1299,6 @@ msgstr "Открытую позицию можно закрыть, нажав н
 msgid "An Open Position may be partially closed by double clicking the position, selecting the volume to be partially closed from the context menu, and then clicking \"Close\"."
 msgstr "Открытую позицию можно частично закрыть, дважды кликнув на саму позицию, а затем выбрав частичное закрытие объёма в меню и нажав \"Закрыть\"."
 
-msgid "An additional password can be used to restrict access to the cashier."
-msgstr "Можно использовать дополнительный пароль для ограничения доступа к кассе."
-
 msgid "An advanced university degree in Physics, Financial Engineering or Mathematics"
 msgstr "Высшее образование в области физики, финансовой инженерии или математики"
 
@@ -2382,8 +2379,8 @@ msgstr "Может использоваться для открытия счет
 msgid "Can be used to view account activity, including settings, limits, balance sheets, trade purchase history, and more."
 msgstr "Может использоваться для просмотра активности на счету, в том числе настроек, лимитов, баланса, истории торговли и др."
 
-msgid "Can be used to withdraw to payment agents, transfer funds between accounts, and set / clear cashier passwords."
-msgstr "Может использоваться для вывода денег через платёжных агентов, перевода средств между счетами, установки / изменения паролей для Кассы."
+msgid "Can be used to withdraw to payment agents and transfer funds between accounts."
+msgstr ""
 
 msgid "Can you spare 15 minutes?"
 msgstr "Можете уделить 15 минут Вашего времени?"
@@ -2454,12 +2451,6 @@ msgstr "Расчётные индексы"
 msgid "Cashier"
 msgstr "Касса"
 
-msgid "Cashier Password"
-msgstr "Пароль Кассы"
-
-msgid "Cashier password"
-msgstr "Пароль кассы"
-
 msgid "Cashier session expired"
 msgstr "Сессия в разделе Касса истекла"
 
@@ -2483,9 +2474,6 @@ msgstr "Изменение пароля"
 
 msgid "Change the Margin rate in relation to both Open Positions and new Orders"
 msgstr "изменить уровень маржи в отношении открытых позиций и новых ордеров."
-
-msgid "Change the password used for deposits and withdrawals."
-msgstr "Изменить пароль для пополнения счёта и вывода средств."
 
 msgid "Change your main login password."
 msgstr "Изменить основной пароль."
@@ -6468,9 +6456,6 @@ msgstr "Жизнь на райском островке имеет целый р
 msgid "Located 10 minutes away, Malaysia's intelligent garden city offers stunning greenery and exquisite structures."
 msgstr "Умный малазийский город-сад, расположенный в 10 минутах езды, сочетает восхитительный зелёный пейзаж и отличную инфраструктуру."
 
-msgid "Lock Cashier"
-msgstr "Закрыть кассу паролем"
-
 msgid "Log in"
 msgstr "Вход"
 
@@ -8703,9 +8688,6 @@ msgstr "Многообразие рынков"
 msgid "Re-enter password"
 msgstr "Введите пароль заново"
 
-msgid "Re-enter your password"
-msgstr "Введите пароль заново"
-
 msgid "Read"
 msgstr "Читать"
 
@@ -9309,9 +9291,6 @@ msgstr "Длительность сессии:"
 msgid "Set Currency"
 msgstr "Укажите валюту"
 
-msgid "Set a %1cashier lock password%2 to prevent unauthorised access to your cashier."
-msgstr "Установите %1пароль для кассы%2, чтобы предотвратить несанкционированный доступ к Вашей кассе."
-
 msgid "Set barrier(s) to define your position and trigger the payout you'll receive."
 msgstr "Установите барьер(ы), чтобы определить позицию и узнать возможную выплату."
 
@@ -9491,9 +9470,6 @@ msgstr "Извините, эта опция доступна только для
 
 msgid "Sorry, this feature is not available in your jurisdiction."
 msgstr "Извините, данная функция недоступна в Вашей юрисдикции."
-
-msgid "Sorry, you have entered an incorrect cashier password"
-msgstr "Извините, Вы ввели неверный пароль для раздела Касса"
 
 msgid "Source of income"
 msgstr "Источник дохода"
@@ -12366,9 +12342,6 @@ msgstr "Незнакомая операционная система"
 msgid "Unless otherwise advised, BIEL shall treat a client as a retail client. Clients may also request, by writing to BIEL, to change the category in which they have been classified, and this may have an effect on the level of protection afforded to them. BIEL will assess the client's knowledge and experience versus the appropriateness of the requested service/investment product."
 msgstr "Если не упомянуто иначе, BIEL будет считать клиента Индивидуальным клиентом. Также клиенты могут в письменном виде запросить изменить свою категорию, что может сказаться на уровне предоставляемой им защиты. BIEL оценит знания и опыт клиента на предмет соответствия запрошенной услуги/инвестиционного продукта."
 
-msgid "Unlock Cashier"
-msgstr "Открыть кассу"
-
 msgid "Up to %1"
 msgstr "До %1"
 
@@ -13595,15 +13568,6 @@ msgstr "Ваша заявка на квалификацию профессион
 
 msgid "Your application will then be reviewed by our compliance and marketing departments. Once approved, we will put you live in our %1payment agent%2 list."
 msgstr "Затем Ваша заявка будет изучена нашими отделами соответствия и маркетинга. После одобрения мы включим Вас в список наших %1Платежных агентов%2."
-
-msgid "Your cashier is locked as per your request - to unlock it, please click %1here%2."
-msgstr "Ваша касса закрыта по Вашему запросу. Чтобы открыть кассу, пожалуйста, %1нажмите сюда%2."
-
-msgid "Your cashier is locked as per your request - to unlock it, please click <a href=\"%1\">here</a>."
-msgstr "Ваша касса закрыта по Вашему запросу - для открытия, пожалуйста, нажмите <a href=\"%1\">сюда</a>."
-
-msgid "Your cashier is locked as per your request - to unlock it, please enter the password."
-msgstr "Ваша касса закрыта по Вашему запросу – для открытия, пожалуйста, введите пароль."
 
 msgid "Your cashier is locked."
 msgstr "Ваша касса заблокирована."
