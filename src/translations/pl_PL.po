@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-10-03 06:21\n"
+"PO-Revision-Date: 2019-10-04 07:15\n"
 "Last-Translator: binarycom\n"
 "Language-Team: Polish\n"
 "MIME-Version: 1.0\n"
@@ -1299,9 +1299,6 @@ msgstr "Otwartą pozycję można zamknąć poprzez kliknięcie przycisku „x”
 msgid "An Open Position may be partially closed by double clicking the position, selecting the volume to be partially closed from the context menu, and then clicking \"Close\"."
 msgstr "Otwarta pozycja może zostać częściowo zamknięta poprzez dwukrotne kliknięcie pozycji, wybranie wolumenu, który ma być częściowo zamknięty, z menu kontekstowego, i kliknięcie opcji „Zamknij”."
 
-msgid "An additional password can be used to restrict access to the cashier."
-msgstr "Dodatkowe hasło może być wykorzystane do ograniczania dostępu do sekcji Kasjer."
-
 msgid "An advanced university degree in Physics, Financial Engineering or Mathematics"
 msgstr "Ukończone studia wyższe na kierunku Fizyka, Inżynieria finansowa lub Matematyka"
 
@@ -2382,8 +2379,8 @@ msgstr "Może być stosowany m.in. do otwierania kont, wybierania ustawień, zar
 msgid "Can be used to view account activity, including settings, limits, balance sheets, trade purchase history, and more."
 msgstr "Może być stosowany do podglądu aktywności na koncie, w tym m.in. ustawień, limitów, salda, historii zakupu kontraktów."
 
-msgid "Can be used to withdraw to payment agents, transfer funds between accounts, and set / clear cashier passwords."
-msgstr "Może być stosowany do dokonywania wypłat przetwarzanych przez pośredników płatności, przelewów środków między kontami oraz ustawiania i zmiany hasła do kasjera."
+msgid "Can be used to withdraw to payment agents and transfer funds between accounts."
+msgstr ""
 
 msgid "Can you spare 15 minutes?"
 msgstr "Masz 15 minut?"
@@ -2454,12 +2451,6 @@ msgstr "Wskaźniki gotówkowe"
 msgid "Cashier"
 msgstr "Kasjer"
 
-msgid "Cashier Password"
-msgstr "Hasło do sekcji Kasjer"
-
-msgid "Cashier password"
-msgstr "Hasło do sekcji Kasjer"
-
 msgid "Cashier session expired"
 msgstr "Twoja sesja w sekcji Kasjer wygasła"
 
@@ -2483,9 +2474,6 @@ msgstr "Zmień hasło"
 
 msgid "Change the Margin rate in relation to both Open Positions and new Orders"
 msgstr "Zmień wysokość Depozytu zabezpieczającego w odniesieniu do pozycji otwartej, jak i do nowych Zleceń"
-
-msgid "Change the password used for deposits and withdrawals."
-msgstr "Zmień hasło używane do dokonywania wpłat i wypłat."
 
 msgid "Change your main login password."
 msgstr "Zmień swoje główne hasło do logowania."
@@ -6468,9 +6456,6 @@ msgstr "Życie na rajskiej wyspie ma wiele zalet. Labuan to jedno z nielicznych 
 msgid "Located 10 minutes away, Malaysia's intelligent garden city offers stunning greenery and exquisite structures."
 msgstr "W zlokalizowanym w odległości 10 minut Intelligent Garden City w Malezji znajdziesz zdumiewającą cieplarnię i wyszukane struktury architektoniczne."
 
-msgid "Lock Cashier"
-msgstr "Zablokuj sekcję Kasjer"
-
 msgid "Log in"
 msgstr "Zaloguj się"
 
@@ -8703,9 +8688,6 @@ msgstr "Wiele rynków"
 msgid "Re-enter password"
 msgstr "Wpisz hasło ponownie"
 
-msgid "Re-enter your password"
-msgstr "Proszę ponownie wpisać hasło"
-
 msgid "Read"
 msgstr "Odczyt"
 
@@ -9309,9 +9291,6 @@ msgstr "Czas trwania sesji:"
 msgid "Set Currency"
 msgstr "Ustaw walutę"
 
-msgid "Set a %1cashier lock password%2 to prevent unauthorised access to your cashier."
-msgstr "Ustaw %1blokadę hasła do kasjera%2, aby zapobiec nieautoryzowanemu dostępowi."
-
 msgid "Set barrier(s) to define your position and trigger the payout you'll receive."
 msgstr "Ustaw limity, aby określić swoją pozycję, która inicjuje Twoją wypłatę."
 
@@ -9491,9 +9470,6 @@ msgstr "Przepraszamy, ta funkcja jest dostępna tylko dla kont wirtualnych."
 
 msgid "Sorry, this feature is not available in your jurisdiction."
 msgstr "Niestety ta funkcja jest niedostępna w Twojej jurysdykcji."
-
-msgid "Sorry, you have entered an incorrect cashier password"
-msgstr "Przepraszamy, wpisano nieprawidłowe hasło do kasjera"
 
 msgid "Source of income"
 msgstr "Źródło dochodu"
@@ -12366,9 +12342,6 @@ msgstr "Nieznany system operacyjny"
 msgid "Unless otherwise advised, BIEL shall treat a client as a retail client. Clients may also request, by writing to BIEL, to change the category in which they have been classified, and this may have an effect on the level of protection afforded to them. BIEL will assess the client's knowledge and experience versus the appropriateness of the requested service/investment product."
 msgstr "BIEL będzie traktować klienta jako Klienta detalicznego, chyba że postanowiono inaczej. Klienci mogą złożyć pisemny wniosek o zmianę kategorii, do której ich zaklasyfikowano, co może mieć wpływ na poziom oferowanej ochrony. BIEL oceni wiedzę i doświadczenie klienta i określi, czy usługa/produkt inwestycyjny, o który wnioskuje klient, jest dla niego odpowiedni."
 
-msgid "Unlock Cashier"
-msgstr "Odblokuj sekcję Kasjer"
-
 msgid "Up to %1"
 msgstr "Do %1"
 
@@ -13596,15 +13569,6 @@ msgstr "Twój wniosek o uznanie za klienta profesjonalnego jest przetwarzany."
 
 msgid "Your application will then be reviewed by our compliance and marketing departments. Once approved, we will put you live in our %1payment agent%2 list."
 msgstr "Twoja aplikacja zostanie sprawdzona przez nasz zespół ds. zgodności oraz zespół ds. marketingu. Po akceptacji umieścimy Cię na liście naszych %1pośredników płatności%2."
-
-msgid "Your cashier is locked as per your request - to unlock it, please click %1here%2."
-msgstr "Sekcja Kasjer została zablokowana na Twoją prośbę - jeśli chcesz ją odblokować, prosimy kliknąć %1tutaj%2."
-
-msgid "Your cashier is locked as per your request - to unlock it, please click <a href=\"%1\">here</a>."
-msgstr "Sekcja Kasjer została zablokowana na Twoją prośbę - jeśli chcesz ją odblokować, prosimy kliknąć <a href=\"%1\">tutaj</a>."
-
-msgid "Your cashier is locked as per your request - to unlock it, please enter the password."
-msgstr "Sekcja Kasjer została zablokowana na Twoją prośbę - jeśli chcesz ją odblokować, prosimy o podanie hasła."
 
 msgid "Your cashier is locked."
 msgstr "Twoja sekcja Kasjer jest zablokowana."
