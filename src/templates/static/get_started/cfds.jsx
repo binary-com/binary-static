@@ -145,6 +145,24 @@ const Cfds = () => (
                         }}
                     />
 
+                    <HeaderSecondary header={it.L('Step Indices')} />
+                    <Table
+                        scroll
+                        data={{
+                            thead: [[
+                                { text: it.L('Symbol'),         className: 'gr-padding-10' },
+                                { text: it.L('Lot size'),       className: 'gr-padding-10' },
+                                { text: it.L('Minimum volume'), className: 'gr-padding-10 w-80' },
+                                { text: it.L('Volume step'),    className: 'gr-padding-10 w-80' },
+                            ]],
+                            tbody: [
+                                [{ text: 'Step Index' }, { text: '10' }, { text: tenth }, { text: hundredth }],
+                                [{ text: 'Volatility 10 (1s)' }, { text: '1' }, { text: tenth }, { text: hundredth }],
+                                [{ text: 'Volatility 100 (1s)' }, { text: '1' }, { text: hundredth }, { text: hundredth }],
+                            ],
+                        }}
+                    />
+
                     <HeaderSecondary header={it.L('How to read the table above')} />
                     <p>{it.L('A Contract for Difference (CFD) is a derivative contract that allows you to profit by speculating on the rise or fall of an underlying asset. Your profit and loss is calculated through the difference in the buy and sell prices of the underlying asset.')}</p>
                     <p>{it.L('Each time you open a position on an index symbol, you can start with a minimum volume transaction as indicated in the table above.')}</p>
