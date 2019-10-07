@@ -13,7 +13,7 @@ spec:
         app: www.binary.com
     spec:
       containers:
-      - name: staging-binary-com
+      - name: production-binary-com
         image: 4p00rv/binary-static:latest
         imagePullPolicy: "Always"
         ports:
@@ -24,6 +24,8 @@ kind: Service
 metadata:
   name: production-binary-com
 spec:
+  selector:
+    app: www.binary.com
   type: LoadBalancer
   ports:
     - protocol: TCP

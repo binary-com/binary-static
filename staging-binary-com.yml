@@ -24,6 +24,8 @@ kind: Service
 metadata:
   name: staging-binary-com
 spec:
+  selector:
+    app: staging.binary.com
   type: LoadBalancer
   ports:
     - protocol: TCP
