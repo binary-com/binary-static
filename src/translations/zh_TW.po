@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-10-04 07:14\n"
+"PO-Revision-Date: 2019-10-07 04:55\n"
 "Last-Translator: binarycom\n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -278,9 +278,6 @@ msgstr "%1 是線上期權交易領域屢次獲頒大獎的領先企業。我們
 
 msgid "%1 launches an %2e-commerce site for branded merchandise%3 – enabling clients, affiliates, and developers to buy and sell %1 products."
 msgstr "%1啟動了%3品牌商品專用電子商務網站%2 – 讓客戶、聯盟會員和程式開發員買賣%1的產品。"
-
-msgid "%1 lots"
-msgstr "%1手"
 
 msgid "%1 may have access to information that is not available to the client, may have acquired trading positions at prices that are not available to the client, and may have interests different from the client's interests. %1 does not undertake any obligation to provide the client with market or other information that the Company possesses, nor to alter or refrain from the Company's own trading."
 msgstr "%1 可能有辦法存取客戶所無法得到的資訊，以客戶無法得到的低價獲取交易頭寸，或跟客戶的利益有所不同。 %1 沒有義務向客戶提供公司所擁有的市場或其它資訊，也不會對公司自己的交易做出任何變更或節制。"
@@ -2380,7 +2377,7 @@ msgid "Can be used to view account activity, including settings, limits, balance
 msgstr "可用於檢視帳戶活動，包括設定、限額、資產負債表、交易購入歷史等。"
 
 msgid "Can be used to withdraw to payment agents and transfer funds between accounts."
-msgstr ""
+msgstr "用途包括為付款代理取款和帳戶轉賬。"
 
 msgid "Can you spare 15 minutes?"
 msgstr "你能抽出15分鐘時間嗎？"
@@ -4601,9 +4598,6 @@ msgstr "一流的客戶服務。"
 
 msgid "Fixed spreads"
 msgstr "固定利差"
-
-msgid "Fixed/Variable"
-msgstr "固定/變動"
 
 msgid "Fixing problems and providing feedback for improvement."
 msgstr "解決問題並提供改進建議。"
@@ -6891,9 +6885,6 @@ msgstr "最大存款限額"
 msgid "Maximum deposit limit expiry"
 msgstr "最大存款限額到期日"
 
-msgid "Maximum leverage"
-msgstr "最大杠杆"
-
 msgid "Maximum multiplier of 1000."
 msgstr "最大乘數為1000。"
 
@@ -6905,9 +6896,6 @@ msgstr "最大未平倉頭寸數目"
 
 msgid "Maximum payout"
 msgstr "最大賠付"
-
-msgid "Maximum ticket size"
-msgstr "最大票證大小"
 
 msgid "Maximum upload size for each file is %1"
 msgstr "每個文檔的最大上載大小為%1"
@@ -6998,9 +6986,6 @@ msgstr "有效期至少六個月"
 
 msgid "Minimum qualifications:"
 msgstr "最低資格:"
-
-msgid "Minimum ticket size"
-msgstr "最小票證大小"
 
 msgid "Minimum two years experience in a software or web application testing role"
 msgstr "至少兩年軟體或 web 應用程式測試工作經驗"
@@ -8805,9 +8790,6 @@ msgstr "身份參考號"
 msgid "Referral tools"
 msgstr "推介工具"
 
-msgid "Refers to the maximum volume or lots per order. Subject to change in respect to market conditions."
-msgstr "指每個訂單的最大交易量或手量。可能會根據市場條件而發生變化。"
-
 msgid "Refuse to pay any Commission to the Introducing Broker engaged in the Malicious Activity"
 msgstr "拒絕向涉及惡意活動的推介經紀支付任何佣金"
 
@@ -9624,14 +9606,11 @@ msgstr "步驟 3：執行交易"
 msgid "Step Index"
 msgstr "Step 指數"
 
+msgid "Step Indices"
+msgstr ""
+
 msgid "Step outdoors and soak up the sun on one of Labuan's pristine beaches. There's also wreck diving, island hopping, kayaking, and deep sea fishing to look forward to."
 msgstr "踏出戶外, 在Labuan的原始海灘上享受日光浴。還有沉船潛水、跳島遊、划皮艇和深海捕魚等活動在等著您。"
-
-msgid "Step size"
-msgstr "步長"
-
-msgid "Step size is the minimum allowable increment applied to all order types. It is the volume from which the increase of the position is based. You can only trade in the minimum ticket size or its multiples."
-msgstr "步長是應用於所有訂單類型的最小允許遞增量。它是頭寸增加量所依據的交易量。您只能以最小票證大小或其倍數進行交易。"
 
 msgid "Sticpay is a global e-wallet service for money transfers and online payments. For more information, please visit %1."
 msgstr "Sticpay是用於匯款和線上支付的全球性電子錢包服務。欲瞭解詳細資訊, 請前往 %1。"
@@ -11184,9 +11163,6 @@ msgstr "已達代幣 (%1) 最大限數。"
 msgid "The minimum required amount for using the account transfer facility is %1."
 msgstr "使用帳戶資金轉移設施的最小金額為 %1。"
 
-msgid "The minimum ticket size refers to the minimum volume or number of lots."
-msgstr "最小票證大小是指最小交易量或手數。"
-
 msgid "The minimum, incremental, and maximum Order amount"
 msgstr "最小、增量和最大訂單金額"
 
@@ -11310,8 +11286,8 @@ msgstr "公司從客戶處收到的具體指示"
 msgid "The spread is the difference between the ask and bid price."
 msgstr "價差是要價和出價之間的差額。"
 
-msgid "The spread is the difference between the buy price and sell price. A fixed spread means that the spread will remain as it is no matter the market condition except in rare cases of extreme market volatility. A variable spread means that the spread is constantly changing, depending on the market condition."
-msgstr "價差是買價和賣價之間的差額。固定價差表示價差將保持不變，除非發生市場極度波動的罕見情況。可變價差表示價差會根據市場情況不斷變化。"
+msgid "The spread is the difference between the buy price and sell price. A variable spread means that the spread is constantly changing, depending on the market conditions. A fixed spread means that the spread is not affected by market conditions but it is subject to alteration at the Company's absolute discretion."
+msgstr ""
 
 msgid "The spread – why it matters"
 msgstr "為甚麼價差很重要"
@@ -12276,9 +12252,6 @@ msgstr "10 美元 x 1 手 x 125,000 美元/100,000 = 12.5 美元"
 msgid "USD Index – Measures the value of the US Dollar against a basket of five global currencies (EUR, GBP, JPY, CAD, AUD), each weighted by 20%"
 msgstr "美元 - 衡量美元相對於五種國際貨幣（歐元、英鎊、日圓、加元、澳元）的價值，各貨幣的權重均為20%。"
 
-msgid "USD/EUR"
-msgstr "美元/歐元"
-
 msgid "Ultra fast on-the-go trading"
 msgstr "超快旅途中交易服務"
 
@@ -12467,6 +12440,9 @@ msgstr "變數"
 
 msgid "Variable spreads"
 msgstr "變數點差"
+
+msgid "Variable/Fixed"
+msgstr ""
 
 msgid "Verification"
 msgstr "驗證"
@@ -13122,8 +13098,14 @@ msgstr "通過%1，您可在購入合約前了解其風險和潛在獎勵。"
 msgid "With Boom 1000 Index, there's an average of one spike in the price series that occurs at anytime within 1000 ticks."
 msgstr "Boom 1000指數的1000個價格跳動點內隨時會出現一個平均上漲價格。"
 
+msgid "With Boom 500 Index, there's an average of one spike in the price series that occurs at anytime within 500 ticks."
+msgstr ""
+
 msgid "With Crash 1000 Index, there's an average of one drop in the price series that occurs at anytime within 1000 ticks."
 msgstr "Crash 1000 指數的1000個價格跳動點內隨時會出現一個平均下跌價格。"
+
+msgid "With Crash 500 Index, there's an average of one drop in the price series that occurs at anytime within 500 ticks."
+msgstr ""
 
 msgid "With insider knowledge of any financial market or instrument"
 msgstr "對任何金融市場或工具具有內幕知識"

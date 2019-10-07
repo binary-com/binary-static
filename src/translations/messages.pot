@@ -265,9 +265,6 @@ msgstr ""
 msgid "%1 launches an %2e-commerce site for branded merchandise%3 – enabling clients, affiliates, and developers to buy and sell %1 products."
 msgstr ""
 
-msgid "%1 lots"
-msgstr ""
-
 msgid "%1 may have access to information that is not available to the client, may have acquired trading positions at prices that are not available to the client, and may have interests different from the client's interests. %1 does not undertake any obligation to provide the client with market or other information that the Company possesses, nor to alter or refrain from the Company's own trading."
 msgstr ""
 
@@ -4588,9 +4585,6 @@ msgstr ""
 msgid "Fixed spreads"
 msgstr ""
 
-msgid "Fixed/Variable"
-msgstr ""
-
 msgid "Fixing problems and providing feedback for improvement."
 msgstr ""
 
@@ -6877,9 +6871,6 @@ msgstr ""
 msgid "Maximum deposit limit expiry"
 msgstr ""
 
-msgid "Maximum leverage"
-msgstr ""
-
 msgid "Maximum multiplier of 1000."
 msgstr ""
 
@@ -6890,9 +6881,6 @@ msgid "Maximum number of open positions"
 msgstr ""
 
 msgid "Maximum payout"
-msgstr ""
-
-msgid "Maximum ticket size"
 msgstr ""
 
 msgid "Maximum upload size for each file is %1"
@@ -6983,9 +6971,6 @@ msgid "Minimum of six months validity"
 msgstr ""
 
 msgid "Minimum qualifications:"
-msgstr ""
-
-msgid "Minimum ticket size"
 msgstr ""
 
 msgid "Minimum two years experience in a software or web application testing role"
@@ -8791,9 +8776,6 @@ msgstr ""
 msgid "Referral tools"
 msgstr ""
 
-msgid "Refers to the maximum volume or lots per order. Subject to change in respect to market conditions."
-msgstr ""
-
 msgid "Refuse to pay any Commission to the Introducing Broker engaged in the Malicious Activity"
 msgstr ""
 
@@ -9610,13 +9592,10 @@ msgstr ""
 msgid "Step Index"
 msgstr ""
 
+msgid "Step Indices"
+msgstr ""
+
 msgid "Step outdoors and soak up the sun on one of Labuan's pristine beaches. There's also wreck diving, island hopping, kayaking, and deep sea fishing to look forward to."
-msgstr ""
-
-msgid "Step size"
-msgstr ""
-
-msgid "Step size is the minimum allowable increment applied to all order types. It is the volume from which the increase of the position is based. You can only trade in the minimum ticket size or its multiples."
 msgstr ""
 
 msgid "Sticpay is a global e-wallet service for money transfers and online payments. For more information, please visit %1."
@@ -11170,9 +11149,6 @@ msgstr ""
 msgid "The minimum required amount for using the account transfer facility is %1."
 msgstr ""
 
-msgid "The minimum ticket size refers to the minimum volume or number of lots."
-msgstr ""
-
 msgid "The minimum, incremental, and maximum Order amount"
 msgstr ""
 
@@ -11296,7 +11272,7 @@ msgstr ""
 msgid "The spread is the difference between the ask and bid price."
 msgstr ""
 
-msgid "The spread is the difference between the buy price and sell price. A fixed spread means that the spread will remain as it is no matter the market condition except in rare cases of extreme market volatility. A variable spread means that the spread is constantly changing, depending on the market condition."
+msgid "The spread is the difference between the buy price and sell price. A variable spread means that the spread is constantly changing, depending on the market conditions. A fixed spread means that the spread is not affected by market conditions but it is subject to alteration at the Company's absolute discretion."
 msgstr ""
 
 msgid "The spread – why it matters"
@@ -12262,9 +12238,6 @@ msgstr ""
 msgid "USD Index – Measures the value of the US Dollar against a basket of five global currencies (EUR, GBP, JPY, CAD, AUD), each weighted by 20%"
 msgstr ""
 
-msgid "USD/EUR"
-msgstr ""
-
 msgid "Ultra fast on-the-go trading"
 msgstr ""
 
@@ -12452,6 +12425,9 @@ msgid "Variable"
 msgstr ""
 
 msgid "Variable spreads"
+msgstr ""
+
+msgid "Variable/Fixed"
 msgstr ""
 
 msgid "Verification"
@@ -13108,7 +13084,13 @@ msgstr ""
 msgid "With Boom 1000 Index, there's an average of one spike in the price series that occurs at anytime within 1000 ticks."
 msgstr ""
 
+msgid "With Boom 500 Index, there's an average of one spike in the price series that occurs at anytime within 500 ticks."
+msgstr ""
+
 msgid "With Crash 1000 Index, there's an average of one drop in the price series that occurs at anytime within 1000 ticks."
+msgstr ""
+
+msgid "With Crash 500 Index, there's an average of one drop in the price series that occurs at anytime within 500 ticks."
 msgstr ""
 
 msgid "With insider knowledge of any financial market or instrument"
