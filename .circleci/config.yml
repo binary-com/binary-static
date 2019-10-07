@@ -77,7 +77,7 @@ commands:
       - k8s/install-kubectl
       - run: |
           # Deploying to k8s cluster for service << parameters.k8s_svc_name >> --- 
-          kubectl --server=https://${KUBE_SERVER_IP} --insecure-skip-tls-verify=true --token=$SERVICEACCOUNT_TOKEN set image deployment/<< parameters.k8s_svc_name >> << parameters.k8s_svc_name >>=${DOCKHUB_ORGANISATION}/binary-static:${CIRCLE_TAG}
+          kubectl --server=${KUBE_SERVER} --insecure-skip-tls-verify=true --token=$SERVICEACCOUNT_TOKEN set image deployment/<< parameters.k8s_svc_name >> << parameters.k8s_svc_name >>=${DOCKHUB_ORGANISATION}/binary-static:${CIRCLE_TAG}
 
 jobs:
   build_push:
