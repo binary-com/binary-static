@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-10-04 07:16\n"
+"PO-Revision-Date: 2019-10-07 04:56\n"
 "Last-Translator: binarycom\n"
 "Language-Team: Portuguese\n"
 "MIME-Version: 1.0\n"
@@ -278,9 +278,6 @@ msgstr "A %1 é a premiada plataforma de negociações online, pioneira desta in
 
 msgid "%1 launches an %2e-commerce site for branded merchandise%3 – enabling clients, affiliates, and developers to buy and sell %1 products."
 msgstr "A %1 lança um site de %2comércio eletrônico para produtos da marca%3 – permitindo que clientes, afiliados e desenvolvedores possam comprar e vender produtos da %1."
-
-msgid "%1 lots"
-msgstr "%1 lotes"
 
 msgid "%1 may have access to information that is not available to the client, may have acquired trading positions at prices that are not available to the client, and may have interests different from the client's interests. %1 does not undertake any obligation to provide the client with market or other information that the Company possesses, nor to alter or refrain from the Company's own trading."
 msgstr "%1 pode ter acesso a informações que não estão disponíveis para o cliente, pode ter adquirido posições de negociação a preços que não estão disponíveis para o cliente e podem ter interesses diferentes dos interesses do cliente. %1 não assume qualquer obrigação de fornecer ao cliente informações de mercado ou outras informações que a Empresa possui, nem de alterar ou evitar a negociação da própria empresa."
@@ -4604,9 +4601,6 @@ msgstr "Assistência de primeira classe a clientes."
 msgid "Fixed spreads"
 msgstr "Spreads fixos"
 
-msgid "Fixed/Variable"
-msgstr "Fixo/Variável"
-
 msgid "Fixing problems and providing feedback for improvement."
 msgstr "Corrigindo problemas e fornecendo feedback para melhorias."
 
@@ -6895,9 +6889,6 @@ msgstr "Limite máximo de depósito"
 msgid "Maximum deposit limit expiry"
 msgstr "Expiração do limite máximo de depósito"
 
-msgid "Maximum leverage"
-msgstr "Alavancagem máxima"
-
 msgid "Maximum multiplier of 1000."
 msgstr "Multiplicador máximo de 1000."
 
@@ -6909,9 +6900,6 @@ msgstr "Número máximo de posições em aberto"
 
 msgid "Maximum payout"
 msgstr "Prêmio máximo"
-
-msgid "Maximum ticket size"
-msgstr "Tamanho máximo de pedidos"
 
 msgid "Maximum upload size for each file is %1"
 msgstr "Tamanho máximo de carregamento para cada arquivo é %1"
@@ -7002,9 +6990,6 @@ msgstr "Mínimo de validade de seis meses"
 
 msgid "Minimum qualifications:"
 msgstr "Qualificações mínimas:"
-
-msgid "Minimum ticket size"
-msgstr "Tamanho mínimo de pedido"
 
 msgid "Minimum two years experience in a software or web application testing role"
 msgstr "Mínimo de dois anos de experiência em uma função de teste de software ou aplicativo da web"
@@ -8809,9 +8794,6 @@ msgstr "ID de referência"
 msgid "Referral tools"
 msgstr "Ferramentas de indicação"
 
-msgid "Refers to the maximum volume or lots per order. Subject to change in respect to market conditions."
-msgstr "Refere-se ao valor máximo de lotes por ordem. Sujeito a alterações em relação às condições do mercado."
-
 msgid "Refuse to pay any Commission to the Introducing Broker engaged in the Malicious Activity"
 msgstr "Recusar-se a pagar qualquer Comissão ao Corretor de Apresentação envolvido na Atividade Maliciosa"
 
@@ -9628,14 +9610,11 @@ msgstr "Passo 3: Faça a sua negociação"
 msgid "Step Index"
 msgstr "Índice Step"
 
+msgid "Step Indices"
+msgstr ""
+
 msgid "Step outdoors and soak up the sun on one of Labuan's pristine beaches. There's also wreck diving, island hopping, kayaking, and deep sea fishing to look forward to."
 msgstr "Saia de casa e aproveite o sol em uma das praias imaculadas de Labuan. Também há oportunidades de mergulho em naufrágios, viagens entre as ilhas, canoagem e pesca em alto mar."
-
-msgid "Step size"
-msgstr "Tamanho de intervalo"
-
-msgid "Step size is the minimum allowable increment applied to all order types. It is the volume from which the increase of the position is based. You can only trade in the minimum ticket size or its multiples."
-msgstr "Tamanho de intervalo é o incremento mínimo permissível aplicado em todos os tipos de ordens. É o volume no qual o aumento da posição se baseia. Só é possível negociar usando o tamanho de pedido mínimo ou em múltiplos deste."
 
 msgid "Sticpay is a global e-wallet service for money transfers and online payments. For more information, please visit %1."
 msgstr "O Sticpay é um serviço global de carteira eletrônica para transferências monetárias e pagamentos online. Para mais informações, visite %1."
@@ -11188,9 +11167,6 @@ msgstr "O número máximo de tokens (%1) foi atingido."
 msgid "The minimum required amount for using the account transfer facility is %1."
 msgstr "O valor mínimo necessário para se usar o recurso de transferência entre contas é %1."
 
-msgid "The minimum ticket size refers to the minimum volume or number of lots."
-msgstr "O tamanho mínimo de pedido se refere ao volume mínimo ou o número de lotes."
-
 msgid "The minimum, incremental, and maximum Order amount"
 msgstr "O valor mínimo, incremental e máximo da Ordem"
 
@@ -11314,8 +11290,8 @@ msgstr "As instruções específicas que a empresa recebe do cliente"
 msgid "The spread is the difference between the ask and bid price."
 msgstr "O spread é a diferença entre o preço de venda e o preço de compra."
 
-msgid "The spread is the difference between the buy price and sell price. A fixed spread means that the spread will remain as it is no matter the market condition except in rare cases of extreme market volatility. A variable spread means that the spread is constantly changing, depending on the market condition."
-msgstr "O spread é a diferença entre o preço de compra e de venda. Um spread fixo significa que o spread irá permanecer tal como está independentemente das condições do mercado exceto em raros casos de volatilidade de mercado extrema. Um spread variável significa que o spread está constantemente em alteração, dependendo das condições do mercado."
+msgid "The spread is the difference between the buy price and sell price. A variable spread means that the spread is constantly changing, depending on the market conditions. A fixed spread means that the spread is not affected by market conditions but it is subject to alteration at the Company's absolute discretion."
+msgstr ""
 
 msgid "The spread – why it matters"
 msgstr "O spread – por que interessa"
@@ -12281,9 +12257,6 @@ msgstr "10 USD x 1 lote de 125.000 USD/100.000 = 12,5 USD"
 msgid "USD Index – Measures the value of the US Dollar against a basket of five global currencies (EUR, GBP, JPY, CAD, AUD), each weighted by 20%"
 msgstr "Índice USD – mede o valor do dólar americano em relação a uma cesta de 5 moedas globais (EUR, GBP, JPY, CAD, AUD), cada uma ponderada em 20%"
 
-msgid "USD/EUR"
-msgstr "USD/EUR"
-
 msgid "Ultra fast on-the-go trading"
 msgstr "Negociações ultra-rápidas em qualquer lugar"
 
@@ -12472,6 +12445,9 @@ msgstr "Variável"
 
 msgid "Variable spreads"
 msgstr "Spreads variáveis"
+
+msgid "Variable/Fixed"
+msgstr ""
 
 msgid "Verification"
 msgstr "Verificação"
@@ -13128,8 +13104,14 @@ msgstr "Com a %1, você saberá o risco e o ganho potencial antes de comprar um 
 msgid "With Boom 1000 Index, there's an average of one spike in the price series that occurs at anytime within 1000 ticks."
 msgstr "Com o Boom 1000 Index, há uma média de um pico na série de preços que ocorre a qualquer momento dentro de 1.000 ticks."
 
+msgid "With Boom 500 Index, there's an average of one spike in the price series that occurs at anytime within 500 ticks."
+msgstr ""
+
 msgid "With Crash 1000 Index, there's an average of one drop in the price series that occurs at anytime within 1000 ticks."
 msgstr "Com o Crash 1000 Index, há uma média de uma queda na série de preços que ocorre a qualquer momento dentro de 1.000 ticks."
+
+msgid "With Crash 500 Index, there's an average of one drop in the price series that occurs at anytime within 500 ticks."
+msgstr ""
 
 msgid "With insider knowledge of any financial market or instrument"
 msgstr "Com conhecimentos privilegiados de qualquer mercado ou instrumento financeiro"

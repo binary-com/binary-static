@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-10-04 07:16\n"
+"PO-Revision-Date: 2019-10-07 04:56\n"
 "Last-Translator: binarycom\n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
@@ -278,9 +278,6 @@ msgstr "%1 является признанным новатором и одно�
 
 msgid "%1 launches an %2e-commerce site for branded merchandise%3 – enabling clients, affiliates, and developers to buy and sell %1 products."
 msgstr "%1 запускает %2сайт для электронной коммерции и фирменных товаров%3, позволяющий клиентам, партнёрам и разработчикам покупать и продавать продукты %1."
-
-msgid "%1 lots"
-msgstr "%1 лот."
 
 msgid "%1 may have access to information that is not available to the client, may have acquired trading positions at prices that are not available to the client, and may have interests different from the client's interests. %1 does not undertake any obligation to provide the client with market or other information that the Company possesses, nor to alter or refrain from the Company's own trading."
 msgstr "%1 может иметь доступ к информации, которая недоступна для клиента; Компания может приобретать торговые позиции по ценам, которые недоступны для клиента и может иметь интересы, отличные от интересов клиента. %1 не берет на себя обязательств предоставлять клиенту рыночную или другую информацию, которой обладает Компания, а также изменять или воздерживаться от собственной торговли."
@@ -1483,7 +1480,7 @@ msgid "Are you sure you want to create your %1 account now?"
 msgstr "Вы уверены, что хотите открыть счёт %1 сейчас?"
 
 msgid "Are you sure you want to deposit in %1?"
-msgstr ""
+msgstr "Вы уверены, что хотите внести пополнение в %1?"
 
 msgid "Are you sure?"
 msgstr "Вы уверены?"
@@ -2380,7 +2377,7 @@ msgid "Can be used to view account activity, including settings, limits, balance
 msgstr "Может использоваться для просмотра активности на счету, в том числе настроек, лимитов, баланса, истории торговли и др."
 
 msgid "Can be used to withdraw to payment agents and transfer funds between accounts."
-msgstr ""
+msgstr "Применяется для вывода средств через платёжных агентов и перевода средств между счетами."
 
 msgid "Can you spare 15 minutes?"
 msgstr "Можете уделить 15 минут Вашего времени?"
@@ -4601,9 +4598,6 @@ msgstr "Первоклассная служба поддержки клиент�
 
 msgid "Fixed spreads"
 msgstr "Фиксированные спреды"
-
-msgid "Fixed/Variable"
-msgstr "Фиксированный/переменный"
 
 msgid "Fixing problems and providing feedback for improvement."
 msgstr "Решение проблем и предоставление отзывов для улучшения рабочих процессов."
@@ -6891,9 +6885,6 @@ msgstr "Лимит на макс. пополнение"
 msgid "Maximum deposit limit expiry"
 msgstr "Истечение макс. лимита на пополнение"
 
-msgid "Maximum leverage"
-msgstr "Макс. кредитное плечо"
-
 msgid "Maximum multiplier of 1000."
 msgstr "Максимальный множитель 1000."
 
@@ -6905,9 +6896,6 @@ msgstr "Максимальное количество открытых пози�
 
 msgid "Maximum payout"
 msgstr "Макс. выплата"
-
-msgid "Maximum ticket size"
-msgstr "Макс. размер лота"
 
 msgid "Maximum upload size for each file is %1"
 msgstr "Максимальный размер каждого файла: %1"
@@ -6998,9 +6986,6 @@ msgstr "Минимальный срок действия: 6 месяцев"
 
 msgid "Minimum qualifications:"
 msgstr "Минимальные требования:"
-
-msgid "Minimum ticket size"
-msgstr "Мин. размер лота"
 
 msgid "Minimum two years experience in a software or web application testing role"
 msgstr "Минимум два года опыта тестирования программного обеспечения и веб приложений"
@@ -8641,7 +8626,7 @@ msgid "Q1 2019"
 msgstr "Q1 2019"
 
 msgid "Q2 2019"
-msgstr ""
+msgstr "Q2 2019"
 
 msgid "Q3 2018"
 msgstr "Q3 2018"
@@ -8804,9 +8789,6 @@ msgstr "Номер"
 
 msgid "Referral tools"
 msgstr "Инструменты для реферралов"
-
-msgid "Refers to the maximum volume or lots per order. Subject to change in respect to market conditions."
-msgstr "Относится к максимальному объёму лотов за каждый ордер. Подлежит изменениям, в зависимости от рыночных условий."
 
 msgid "Refuse to pay any Commission to the Introducing Broker engaged in the Malicious Activity"
 msgstr "отказаться от выплаты любых комиссионных Представляющему брокеру, занимающемуся вредоносной деятельностью,"
@@ -9460,7 +9442,7 @@ msgid "Sorry, an error occurred while processing your request."
 msgstr "Извините, при обработке Вашего запроса произошла ошибка."
 
 msgid "Sorry, but binary options trading is not available in your financial account."
-msgstr ""
+msgstr "Извините, но торговля бинарными опционами не доступна на Вашем финансовом счёте."
 
 msgid "Sorry, live chat is currently unavailable. Please email us at %1."
 msgstr "Извините, но в данное время чат недоступен. Пожалуйста, свяжитесь с нами по адресу %1."
@@ -9624,14 +9606,11 @@ msgstr "Шаг 3: Купите контракт"
 msgid "Step Index"
 msgstr "Индекс Step"
 
+msgid "Step Indices"
+msgstr ""
+
 msgid "Step outdoors and soak up the sun on one of Labuan's pristine beaches. There's also wreck diving, island hopping, kayaking, and deep sea fishing to look forward to."
 msgstr "Прогуляйтесь по округе, наслаждаясь ласковым солнцем и тихими пляжами Лабуана. Попробуйте дайвинг к затонувшим кораблям, путешествие по островам, катание на каяке и рыбалку в открытом океане."
-
-msgid "Step size"
-msgstr "Размер шага"
-
-msgid "Step size is the minimum allowable increment applied to all order types. It is the volume from which the increase of the position is based. You can only trade in the minimum ticket size or its multiples."
-msgstr "Размер шага – это минимально допустимое увеличение, применяющееся ко всем видам ордеров. Это объём, на котором основано увеличение позиции. Вы можете торговать лишь минимальным размером или кратными ему суммами."
 
 msgid "Sticpay is a global e-wallet service for money transfers and online payments. For more information, please visit %1."
 msgstr "Sticpay – это международный электронный кошелёк, предназначенный для денежных переводов и онлайн платежей. Более подробную информацию можно узнать на сайте %1."
@@ -11184,9 +11163,6 @@ msgstr "Достигнуто максимальное число ключей (%
 msgid "The minimum required amount for using the account transfer facility is %1."
 msgstr "Минимальная сумма для для перевода: %1."
 
-msgid "The minimum ticket size refers to the minimum volume or number of lots."
-msgstr "Минимальный размер билета относится к минимальному объёму или количеству лотов."
-
 msgid "The minimum, incremental, and maximum Order amount"
 msgstr "минимального, постепенно растущего и максимального размера ордера,"
 
@@ -11310,8 +11286,8 @@ msgstr "конкретными инструкциями, полученными 
 msgid "The spread is the difference between the ask and bid price."
 msgstr "Спред представляет собой разницу между ценой аск и ценой бид."
 
-msgid "The spread is the difference between the buy price and sell price. A fixed spread means that the spread will remain as it is no matter the market condition except in rare cases of extreme market volatility. A variable spread means that the spread is constantly changing, depending on the market condition."
-msgstr "Спред – это разница между ценой покупки и ценой продажи актива. Фиксированный спред означает, что он останется неизменным, независимо от условий рынка, за исключением редких случаев сильной волатильности. Переменный спред означает, что он постоянно меняется, в зависимости от условий рынка."
+msgid "The spread is the difference between the buy price and sell price. A variable spread means that the spread is constantly changing, depending on the market conditions. A fixed spread means that the spread is not affected by market conditions but it is subject to alteration at the Company's absolute discretion."
+msgstr ""
 
 msgid "The spread – why it matters"
 msgstr "Спреды и их преимущества"
@@ -12276,9 +12252,6 @@ msgstr "USD 10 x 1 лот x USD 125,000/100,000 = USD 12.5"
 msgid "USD Index – Measures the value of the US Dollar against a basket of five global currencies (EUR, GBP, JPY, CAD, AUD), each weighted by 20%"
 msgstr "Индекс USD, измеряющий значение доллара США против корзины из 5 основных мировых валют (EUR, GBP, JPY, CAD, AUD), каждая из которых взвешена на 20%"
 
-msgid "USD/EUR"
-msgstr "USD/EUR"
-
 msgid "Ultra fast on-the-go trading"
 msgstr "Мгновенная торговля на ходу"
 
@@ -12467,6 +12440,9 @@ msgstr "Переменная"
 
 msgid "Variable spreads"
 msgstr "Переменные спреды"
+
+msgid "Variable/Fixed"
+msgstr ""
 
 msgid "Verification"
 msgstr "Проверка"
@@ -13122,8 +13098,14 @@ msgstr "На %1 Вы всегда можете оценить риск и пот
 msgid "With Boom 1000 Index, there's an average of one spike in the price series that occurs at anytime within 1000 ticks."
 msgstr "В индексе Boom 1000 Index, в среднем, наблюдается один рост цены, который случается один раз на протяжении 1000 тиков."
 
+msgid "With Boom 500 Index, there's an average of one spike in the price series that occurs at anytime within 500 ticks."
+msgstr ""
+
 msgid "With Crash 1000 Index, there's an average of one drop in the price series that occurs at anytime within 1000 ticks."
 msgstr "В индексе Crash 1000 происходит, в среднем, одно падение в серии котировок, которое случается в любое время на протяжении 1000 тиков."
+
+msgid "With Crash 500 Index, there's an average of one drop in the price series that occurs at anytime within 500 ticks."
+msgstr ""
 
 msgid "With insider knowledge of any financial market or instrument"
 msgstr "имеющим доступ к внутренней информации о финансовых рынках или инструментах."
@@ -13534,7 +13516,7 @@ msgid "Your Existing Accounts"
 msgstr "Ваши текущие счета"
 
 msgid "Your account does not need authentication at this time.%1We will inform you if authentication is required in the future."
-msgstr ""
+msgstr "В данный момент Вашему счёту не требуется аутентификация.%1Мы сообщим Вам, если аутентификация потребуется в будущем."
 
 msgid "Your account has been verified successfully"
 msgstr "Проверка Вашего счёта прошла успешно"
