@@ -29,13 +29,13 @@ const gridLP = () => (
                         <div className='gr-row gr-row-align-middle'>
                             <div className='gr-6 gr-12-t gr-12-m gr-12-p'>
                                 <h1 className='header-title content-inverse-color ft-300'>{('An exciting mobile trading experience')}</h1>
-                                <span className='header-sub secondary-color'>{('Seamless trading on your smartphone.')}</span>
+                                <span className='header-sub secondary-color'>{('Action-packed trading with low stakes and short durations.')}</span>
                                 <p>
-                                    <a className='android-button invisible button download'><span className='button-lg'>{('Get Binary Grid now')}</span></a>
+                                    <a className='android-button invisible button download'><span className='button-lg'>{('Download for Android')}</span></a>
                                     <span className='ios-message invisible content-inverse-color'>{('Binary Grid is currently only available on Android devices.')}</span>
                                 </p>
                             </div>
-                            <div className='gr-6 gr-12-t gr-12-m gr-12-p'><img className='phone' src={it.url_for('images/grid_lp/phone.png')} alt='seamless trading on your smartphone' /></div>
+                            <div className='gr-6 gr-12-t gr-12-m gr-12-p'><img className='phone' src={it.url_for('images/grid_lp/android_phone.png')} alt='seamless trading on your smartphone' /></div>
                         </div>
                     </div>
                 </div>
@@ -50,15 +50,6 @@ const gridLP = () => (
                     <div className='gr-row gr-row-align-middle'>
                         <div className='gr-6 gr-12-m gr-12-p'>
                             <div className='left-col-feature'>
-                                <div className='icon-block icon-stats' />
-                            </div>
-                            <div className='right-col-feature'>
-                                <h3>{('Micro-trading on the go')}</h3>
-                                <p>{('Fast-paced, action packed trading experience at your fingertips.')}</p>
-                            </div>
-                        </div>
-                        <div className='gr-6 gr-12-m gr-12-p'>
-                            <div className='left-col-feature'>
                                 <div className='icon-block icon-touch' />
                             </div>
                             <div className='right-col-feature'>
@@ -66,8 +57,6 @@ const gridLP = () => (
                                 <p>{('Tap and swipe to easily purchase Rise/Fall, Ends Outside, and Ends Between contracts.')}</p>
                             </div>
                         </div>
-                    </div>
-                    <div className='gr-row gr-row-align-middle'>
                         <div className='gr-6 gr-12-m gr-12-p'>
                             <div className='left-col-feature'>
                                 <div className='icon-block icon-contracts' />
@@ -77,6 +66,8 @@ const gridLP = () => (
                                 <p>{('Open several positions simultaneously.')}</p>
                             </div>
                         </div>
+                    </div>
+                    <div className='gr-row gr-row-align-middle'>
                         <div className='gr-6 gr-12-m gr-12-p'>
                             <div className='left-col-feature'>
                                 <div className='icon-block icon-date-time' />
@@ -86,8 +77,6 @@ const gridLP = () => (
                                 <p>{('Trade at your convenience, 24/7.')}</p>
                             </div>
                         </div>
-                    </div>
-                    <div className='gr-row gr-row-align-middle'>
                         <div className='gr-6 gr-12-m gr-12-p'>
                             <div className='left-col-feature'>
                                 <div className='icon-block icon-wallet' />
@@ -97,6 +86,8 @@ const gridLP = () => (
                                 <p>{('Get started with stakes as low as $1.')}</p>
                             </div>
                         </div>
+                    </div>
+                    <div className='gr-row gr-row-align-middle'>
                         <div className='gr-6 gr-12-m gr-12-p'>
                             <div className='left-col-feature'>
                                 <div className='icon-block icon-risk-free-env' />
@@ -106,8 +97,6 @@ const gridLP = () => (
                                 <p>{('Refine your trading skills before switching to a real money account.')}</p>
                             </div>
                         </div>
-                    </div>
-                    <div className='gr-row gr-row-align-middle'>
                         <div className='gr-6 gr-12-m gr-12-p'>
                             <div className='left-col-feature'>
                                 <div className='icon-block icon-currencies' />
@@ -117,7 +106,6 @@ const gridLP = () => (
                                 <p>{('Other currencies coming soon.')}</p>
                             </div>
                         </div>
-                        <div className='gr-6 gr-12-m gr-12-p' />
                     </div>
                 </div>
             </div>
@@ -139,31 +127,31 @@ const gridLP = () => (
                             <div className='line-left' />
                             <div className='line-right' />
                             <div className='step icon-step-2' />
-                            <p>{('Locate the downloaded file on your device and open it to begin installation.')}</p>
+                            <p>{('Open the downloaded file.')}</p>
                         </div>
                         <div className='gr-1on5 gr-12-t gr-12-m gr-12-p col-step'>
                             <div className='line-left' />
                             <div className='line-right' />
                             <div className='step icon-step-3' />
-                            <p>{('Update your device’s security settings to allow installation from this source.')}</p>
+                            <p>{('Update your device’s security settings to allow installations from this source.')}</p>
                         </div>
                         <div className='gr-1on5 gr-12-t gr-12-m gr-12-p col-step'>
                             <div className='line-left' />
                             <div className='line-right' />
                             <div className='step icon-step-4' />
-                            <p>{('Approve the installation by clicking on')} <a className='android-button download invisible'>{('Install.')}</a><span className='ios-message invisible'>{('Install.')}</span></p>
+                            <p>{('Approve the installation.')}</p>
                         </div>
                         <div className='gr-1on5 gr-12-t gr-12-m gr-12-p col-step'>
                             <div className='line-left' />
                             <div className='step icon-step-grid-icon' />
-                            <p>{('Once installation is complete, tap on the app icon to open.')}</p>
+                            <p>{('Once the app is installed successfully, tap on the app icon to open.')}</p>
                         </div>
                     </div>
                     <div className='divider' />
                     <div className='gr-row gr-row-align-around'>
                         <div className='gr-6 gr-12-t gr-12-m gr-12-p'>
                             <div className='padding-md ft-bold'>
-                                <p>{('Only available for Android devices at the moment.')}</p>
+                                <p>{('Only available for Android devices at the moment. Binary Grid for iOS devices coming soon.')}</p>
                             </div>
                         </div>
                         <div className='gr-4 gr-12-t gr-12-m gr-12-p'>
@@ -178,7 +166,7 @@ const gridLP = () => (
                     </div>
                     <div className='gr-row'>
                         <div className='gr-12 center-text'>
-                            <a className='android-button invisible button download'><span className='button-lg'>{('Get Binary Grid now')}</span></a>
+                            <a className='android-button invisible button download'><span className='button-lg'>{('Download for Android')}</span></a>
                         </div>
                     </div>
                 </div>
