@@ -19,13 +19,17 @@ const MetaTrader = (() => {
 
     const onLoad = () => {
         BinarySocket.send({ statement: 1, limit: 1 });
-        BinarySocket.wait('landing_company', 'get_account_status', 'statement').then(() => {
+        BinarySocket.wait('landing_company', 'get_account_status', 'statement').then(async () => {
             setMTCompanies();
             if (isEligible()) {
                 if (Client.get('is_virtual')) {
+                    await addAllAccounts();
                     getAllAccountsInfo();
                 } else {
-                    BinarySocket.send({ get_limits: 1 }).then(getAllAccountsInfo);
+                    BinarySocket.send({ get_limits: 1 }).then(async () => {
+                        await addAllAccounts();
+                        getAllAccountsInfo();
+                    });
                     getExchangeRates();
                 }
             } else {
@@ -57,34 +61,70 @@ const MetaTrader = (() => {
             return false;
         }
         setMTCompanies();
-        let has_mt_company = false;
-        Object.keys(mt_companies).forEach((company) => {
-            Object.keys(mt_companies[company]).forEach((acc_type) => {
-                mt_company[company] = State.getResponse(`landing_company.mt_${company}_company.${MetaTraderConfig.getMTFinancialAccountType(acc_type)}.shortcode`);
-                if (mt_company[company]) {
-                    has_mt_company = true;
-                    addAccount(company);
-                }
-            });
-        });
-        return has_mt_company;
+        return Object.keys(mt_companies).find((company) =>
+            !!Object.keys(mt_companies[company]).find((acc_type) =>
+                !!State.getResponse(`landing_company.mt_${company}_company.${MetaTraderConfig.getMTFinancialAccountType(acc_type)}.shortcode`)
+            )
+        );
     };
 
-    const addAccount = (company) => {
+    const addAllAccounts = () => (
+        new Promise((resolve) => {
+            BinarySocket.wait('mt5_login_list').then((response) => {
+                const vanuatu_standard_real_account = response.mt5_login_list.find(account =>
+                    Client.getMT5AccountType(account.group) === 'real_vanuatu_standard');
+
+                const vanuatu_standard_demo_account = response.mt5_login_list.find(account =>
+                    Client.getMT5AccountType(account.group) === 'demo_vanuatu_standard');
+
+                if (vanuatu_standard_real_account || vanuatu_standard_demo_account) {
+                    [vanuatu_standard_demo_account, vanuatu_standard_real_account].forEach(account => {
+                        if (account) {
+                            const mt5_account_type = Client.getMT5AccountType(account.group);
+                            const is_demo = /^demo_/.test(mt5_account_type);
+                            accounts_info[mt5_account_type] = {
+                                is_demo,
+                                mt5_account_type,
+                                account_type: is_demo ? 'demo' : 'financial',
+                                max_leverage: 1000,
+                                short_title : localize('Standard'),
+                                title       : is_demo ? localize('Demo Standard') : localize('Real Standard'),
+                            };
+                        }
+                    });
+                }
+
+                Object.keys(mt_companies).forEach((company) => {
+                    Object.keys(mt_companies[company]).forEach((acc_type) => {
+                        mt_company[company] = State.getResponse(`landing_company.mt_${company}_company.${MetaTraderConfig.getMTFinancialAccountType(acc_type)}.shortcode`);
+                        if (mt_company[company]) {
+                            addAccount(company, vanuatu_standard_demo_account, vanuatu_standard_real_account);
+                        }
+                    });
+                });
+                resolve();
+            });
+        })
+    );
+
+    const addAccount = (company, vanuatu_standard_demo_account, vanuatu_standard_real_account) => {
         Object.keys(mt_companies[company]).forEach((acc_type) => {
             const company_info     = mt_companies[company][acc_type];
             const mt5_account_type = company_info.mt5_account_type;
             const is_demo          = /^demo_/.test(acc_type);
             const type             = is_demo ? 'demo' : 'real';
 
-            accounts_info[`${type}_${mt_company[company]}${mt5_account_type ? `_${mt5_account_type}` : ''}`] = {
-                is_demo,
-                mt5_account_type,
-                account_type: is_demo ? 'demo' : company,
-                max_leverage: company_info.max_leverage,
-                short_title : company_info.short_title,
-                title       : company_info.title,
-            };
+            // if have vanuatu, don't add svg anymore unless it's for volatility, meaning has mt5_account_type value
+            if (!((vanuatu_standard_demo_account || vanuatu_standard_real_account) && /svg/.test(mt_company[company]) && mt5_account_type)) {
+                accounts_info[`${type}_${mt_company[company]}${mt5_account_type ? `_${mt5_account_type}` : ''}`] = {
+                    is_demo,
+                    mt5_account_type,
+                    account_type: is_demo ? 'demo' : company,
+                    max_leverage: company_info.max_leverage,
+                    short_title : company_info.short_title,
+                    title       : company_info.title,
+                };
+            }
         });
     };
 

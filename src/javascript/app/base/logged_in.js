@@ -43,7 +43,9 @@ const LoggedInHandler = (() => {
             if (set_default) {
                 const lang_cookie = urlLang(redirect_url) || Cookies.get('language');
                 const language    = getLanguage();
-                redirect_url      = Client.defaultRedirectUrl();
+                redirect_url      = Client.isAccountOfType('financial')
+                    ? urlFor('user/metatrader')
+                    : Client.defaultRedirectUrl();
                 if (lang_cookie && lang_cookie !== language) {
                     redirect_url = redirect_url.replace(new RegExp(`/${language}/`, 'i'), `/${lang_cookie.toLowerCase()}/`);
                 }

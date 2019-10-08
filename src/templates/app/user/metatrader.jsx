@@ -199,7 +199,7 @@ const Metatrader = () => (
                             description={it.L('[_1] offers a variety of account types to cater to the diverse needs of traders everywhere, whether you\'re an experienced trader or just starting out.', it.website_name)}
                         />
                         <AccountDesc
-                            account_type={['vanuatu_standard']}
+                            account_type={['vanuatu_standard', 'svg_standard']}
                             title={it.L('Standard Account')}
                             description={it.L('Our MetaTrader 5 Standard account is suitable for both new and experienced traders.')}
                             items={[

@@ -37,7 +37,6 @@ module.exports = [
     ['user/securityws',                         'app/user/security',                           'default',    'Security'],
     ['user/security/api_tokenws',               'app/user/security/api_token',                 'default',    'API Token'],
     ['user/security/authorised_appsws',         'app/user/security/authorised_apps',           'default',    'Authorised Applications'],
-    ['user/security/cashier_passwordws',        'app/user/security/cashier_password',          'default',    'Cashier Password'],
     ['user/security/change_passwordws',         'app/user/security/change_password',           'default',    'Change Password'],
     ['user/security/iphistoryws',               'app/user/security/iphistory',                 'default',    'Login History'],
     ['user/security/limitsws',                  'app/user/security/limits',                    'default',    'Account Limits'],
