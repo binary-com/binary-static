@@ -10,19 +10,20 @@ commands:
             - source-v1-{{ .Branch }}-{{ .Revision }}
             - source-v1-{{ .Branch }}-
             - source-v1-
-      - run: |
-          # Fetch git tags --- 
-          mkdir -p ~/.ssh
-          echo 'github.com ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAq2A7hRGmdnm9tUDbO9IDSwBK6TbQa+PXYPCPy6rbTrTtw7PHkccKrpp0yVhp5HdEIcKr6pLlVDBfOLX9QUsyCOV0wzfjIJNlGEYsdlLJizHhbn2mUjvSAHQqZETYP81eFzLQNnPHt4EVVUh7VfDESU84KezmD5QlWpXLmvU31/yMf+Se8xhHTvKSCZIFImWwoG6mbUoWf9nzpIoaSjB+weqqUUmpaaasXVal72J+UX2B+2RPW3RcT0eOzQgqlJL3RKrTJvdsjE3JEAvGq3lGHSZXy28G3skua2SmVi/w4yCE6gbODqnTWlg7+wC604ydGXA8VJiS5ap43JXiUFFAaQ== ' >> ~/.ssh/known_hosts
-          # Fetch tags if git cache is present
-          if [ -e /home/circleci/project/.git ]
-          then
-            git fetch origin --tags
-          fi
+      - run: 
+          name: Fetch git tags 
+          command: |
+            mkdir -p ~/.ssh
+            echo 'github.com ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAq2A7hRGmdnm9tUDbO9IDSwBK6TbQa+PXYPCPy6rbTrTtw7PHkccKrpp0yVhp5HdEIcKr6pLlVDBfOLX9QUsyCOV0wzfjIJNlGEYsdlLJizHhbn2mUjvSAHQqZETYP81eFzLQNnPHt4EVVUh7VfDESU84KezmD5QlWpXLmvU31/yMf+Se8xhHTvKSCZIFImWwoG6mbUoWf9nzpIoaSjB+weqqUUmpaaasXVal72J+UX2B+2RPW3RcT0eOzQgqlJL3RKrTJvdsjE3JEAvGq3lGHSZXy28G3skua2SmVi/w4yCE6gbODqnTWlg7+wC604ydGXA8VJiS5ap43JXiUFFAaQ== ' >> ~/.ssh/known_hosts
+            # Fetch tags if git cache is present
+            if [ -e /home/circleci/project/.git ]
+            then
+              git fetch origin --tags
+            fi
       - checkout
-      - run: |
-          # Compress git objects ---
-          git gc
+      - run:
+          name: Compress git objects 
+          command: git gc
       - save_cache:
           key: source-v1-{{ .Branch }}-{{ .Revision }}
           paths:
@@ -34,8 +35,9 @@ commands:
           keys:
             - node-{{ checksum "package-lock.json" }}
             - node-
-      - run: |
-          npm install
+      - run:
+          name: Install npm packages
+          command: npm install
       - save_cache:
           key: node-{{ checksum "package-lock.json" }}
           paths:
@@ -47,25 +49,27 @@ commands:
         type: string
         default: "staging"
     steps:
-      - run: |
-          # Building dist for << parameters.target >> --- 
-          node_modules/grunt/bin/grunt releaseci --<< parameters.target >>
+      - run:
+          name: Building dist for << parameters.target >>
+          command: node_modules/grunt/bin/grunt releaseci --<< parameters.target >>
   docker_build:
     description: "Build Docker image"
     steps:
       - setup_remote_docker
-      - run: |
-          # Building docker image --- 
-          docker build -t ${DOCKHUB_ORGANISATION}/binary-static:${CIRCLE_TAG:-latest} .
-          if [[ $CIRCLE_TAG ]]; then docker build -t ${DOCKHUB_ORGANISATION}/binary-static:latest .; fi
+      - run: 
+          name: Building docker image
+          command: |
+            docker build -t ${DOCKHUB_ORGANISATION}/binary-static:${CIRCLE_TAG:-latest} .
+            if [[ $CIRCLE_TAG ]]; then docker build -t ${DOCKHUB_ORGANISATION}/binary-static:latest .; fi
   docker_push:
     description: "Push image to docker hub"
     steps:
-      - run: |
-          # Pushing Image to docker hub --- 
-          docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD
-          docker push ${DOCKHUB_ORGANISATION}/binary-static:${CIRCLE_TAG:-latest}
-          if [[ $CIRCLE_TAG ]]; then docker push ${DOCKHUB_ORGANISATION}/binary-static:latest; fi
+      - run: 
+          name: Pushing Image to docker hub
+          command: |
+            docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD
+            docker push ${DOCKHUB_ORGANISATION}/binary-static:${CIRCLE_TAG:-latest}
+            if [[ $CIRCLE_TAG ]]; then docker push ${DOCKHUB_ORGANISATION}/binary-static:latest; fi
   k8s_deploy:
     description: "Deploy to k8s cluster"
     parameters:
@@ -74,9 +78,9 @@ commands:
         default: "staging-binary-com"
     steps:
       - k8s/install-kubectl
-      - run: |
-          # Deploying to k8s cluster for service << parameters.k8s_svc_name >> --- 
-          kubectl --server=${KUBE_SERVER} --insecure-skip-tls-verify=true --token=$SERVICEACCOUNT_TOKEN set image deployment/<< parameters.k8s_svc_name >> << parameters.k8s_svc_name >>=${DOCKHUB_ORGANISATION}/binary-static:${CIRCLE_TAG}
+      - run: 
+          name: Deploying to k8s cluster for service << parameters.k8s_svc_name >>
+          command: kubectl --server=${KUBE_SERVER} --insecure-skip-tls-verify=true --token=$SERVICEACCOUNT_TOKEN set image deployment/<< parameters.k8s_svc_name >> << parameters.k8s_svc_name >>=${DOCKHUB_ORGANISATION}/binary-static:${CIRCLE_TAG}
 
 jobs:
   build_push:
