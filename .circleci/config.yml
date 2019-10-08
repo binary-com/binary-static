@@ -56,7 +56,6 @@ commands:
       - setup_remote_docker
       - run: |
           # Building docker image --- 
-          cd dist
           docker build -t ${DOCKHUB_ORGANISATION}/binary-static:${CIRCLE_TAG:-latest} .
           if [[ $CIRCLE_TAG ]]; then docker build -t ${DOCKHUB_ORGANISATION}/binary-static:latest .; fi
   docker_push:
