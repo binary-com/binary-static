@@ -43,6 +43,8 @@
         // TODO: REMOVE/CHANGE this if statement after addition of DE or TH languages
         if (lang.toLowerCase() === 'de' || lang.toLowerCase() === 'th') {
             lang = 'en'
+            window.location.href = base + '/' + lang.toLowerCase() + '/' + 'home.html';
+            return
         }
 
         window.location.href = base + '/' + lang.toLowerCase() + '/' + '404.html';
