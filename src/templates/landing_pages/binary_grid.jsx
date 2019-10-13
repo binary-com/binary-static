@@ -54,7 +54,7 @@ const gridLP = () => (
                             </div>
                             <div className='right-col-feature'>
                                 <h3>{('Three different trade types available')}</h3>
-                                <p>{('Tap and swipe to easily purchase Rise/Fall, Ends Outside, and Ends Between contracts.')}</p>
+                                <p>{('Tap and swipe to purchase Rise/Fall, Ends Outside, and Ends Between contracts.')}</p>
                             </div>
                         </div>
                         <div className='gr-6 gr-12-m gr-12-p'>
