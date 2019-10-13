@@ -35,7 +35,7 @@ const gridLP = () => (
                                     <span className='ios-message invisible content-inverse-color'>{('Binary Grid is currently only available on Android devices.')}</span>
                                 </p>
                             </div>
-                            <div className='gr-6 gr-12-t gr-12-m gr-12-p'><img className='phone' src={it.url_for('images/grid_lp/android_phone.png')} alt='seamless trading on your smartphone' /></div>
+                            <div className='gr-6 gr-12-t gr-12-m gr-12-p'><img className='phone' src={it.url_for('images/grid_lp/phone.png')} alt='seamless trading on your smartphone' /></div>
                         </div>
                     </div>
                 </div>
