@@ -41,11 +41,11 @@
         var base = /^(.+?).github.io$/.test(window.location.hostname) ? window.location.origin + '/binary-static' : window.location.origin;
 
         // TODO: REMOVE/CHANGE this after addition of DE or TH languages
-        var unsupported_languages = ['de', 'th']
+        var unsupported_languages = ['de', 'th'];
         if (unsupported_languages.indexOf(lang.toLowerCase()) >= 0) {
-            lang = 'en'
+            lang = 'en';
             window.location.href = base + '/' + lang.toLowerCase() + '/' + 'home.html';
-            return
+            return;
         }
 
         window.location.href = base + '/' + lang.toLowerCase() + '/' + '404.html';
