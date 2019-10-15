@@ -56,6 +56,35 @@ const TypeGroup = ({ title, children, types }) => (
     </div>
 );
 
+const TypeGroupSplit = ({
+    title,
+    children,
+    types_list,
+}) => (
+    <div className='type-group gr-row'>
+        <div className='gr-12 gr-padding-20 gr-parent'>
+            <h3>{title}</h3>
+            {children}
+        </div>
+        { types_list.map((types, types_list_index) => (
+            <React.Fragment key={types_list_index}>
+                { types.account_list.map((box, types_index) =>(
+                    <div key={types_index} className={box.title ? `gr-6 ${types.type} invisible` : `gr-3 gr-6-p gr-6-m gr-centered invisible ${types.type}`}>
+                        <div id={box.id || `rbtn_${box.type}`} className='mt5_type_box' data-acc-type={box.type}>
+                            {box.title ?
+                                <div>{box.title}</div>
+                                :
+                                <img src={it.url_for(`images/pages/metatrader/icons/acc_${box.desc.toLowerCase()}.svg`)} />
+                            }
+                        </div>
+                        <p className={`gr-padding-10 ${box.title ? 'hint' : ''}`}>{box.desc}</p>
+                    </div>
+                )) }
+            </React.Fragment>
+        ))}
+    </div>
+);
+
 const CashierDesc = ({ title, desc, arrow_direction }) => (
     <div className='center-text hint gr-padding-20 gr-parent'>
         <h3 className='secondary-color'>{title}</h3>
@@ -293,14 +322,21 @@ const Metatrader = () => (
                                     </div>
                                     <div className='step-2 invisible'>
                                         <div className='separator-line gr-padding-10' />
-                                        <TypeGroup
+                                        <TypeGroupSplit
                                             title={it.L('Step 2: Choose account type')}
-                                            types={[
-                                                { type: 'template', desc: 'standard' },
+                                            types_list={[
+                                                {
+                                                    type        : 'demo',
+                                                    account_list: [{ type: 'template_demo', desc: 'standard' }],
+                                                },
+                                                {
+                                                    type        : 'real',
+                                                    account_list: [{ type: 'template_real', desc: 'standard' }],
+                                                },
                                             ]}
                                         >
                                             <a className='hint hl-types-of-accounts' href={it.url_for('metatrader/types-of-accounts')} target='_blank'>{it.L('Which account is right for me?')}</a>
-                                        </TypeGroup>
+                                        </TypeGroupSplit>
                                     </div>
                                     <p id='new_account_msg' className='notice-msg center-text invisible' />
                                     <p id='new_account_financial_authenticate_msg' className='invisible notice-msg hint'>{it.L('You may proceed but please authenticate your account within 10 days to continue trading, otherwise your account will be disabled and any open positions will be closed.')}</p>

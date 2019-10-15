@@ -427,7 +427,16 @@ const MetaTraderUI = (() => {
             displayAccountDescription(action);
             updateAccountTypesUI(selected_acc_type);
             $form.find('#view_1 #btn_next').addClass('button-disabled');
+
             $form.find('#view_1 .step-2').setVisibility(1);
+            if (/demo/.test(selected_acc_type)) {
+                $form.find('#view_1 .step-2 .type-group .demo').removeClass('invisible');
+                $form.find('#view_1 .step-2 .type-group .real').addClass('invisible');
+            } else {
+                $form.find('#view_1 .step-2 .type-group .demo').addClass('invisible');
+                $form.find('#view_1 .step-2 .type-group .real').removeClass('invisible');
+            }
+
             displayMessage('#new_account_msg', (selected_acc_type === 'real' && Client.get('is_virtual')) ? MetaTraderConfig.needsRealMessage() : '', true);
             $form.find('#new_account_no_deposit_bonus_msg').setVisibility(0);
         } else {
@@ -458,27 +467,29 @@ const MetaTraderUI = (() => {
     };
 
     const populateAccountTypes = () => {
-        const $acc_template     = $($templates.find('#rbtn_template').parent().remove()[0]);
-        const $acc_template_mt  = $templates.find('#frm_new_account #view_1 .step-2 .type-group');
-        const $acc_template_mam = $templates.find('#frm_new_account_mam #view_1 .step-2 .type-group');
-        if (!$acc_template.length || !$acc_template_mt.length || !$acc_template_mam.length) return;
+        const $acc_template_demo = $($templates.find('#rbtn_template_demo').parent().remove()[0]);
+        const $acc_template_real = $($templates.find('#rbtn_template_real').parent().remove()[0]);
+        const $acc_template_mt   = $templates.find('#frm_new_account #view_1 .step-2 .type-group');
+        const $acc_template_mam  = $templates.find('#frm_new_account_mam #view_1 .step-2 .type-group');
+        if (!$acc_template_demo.length
+            || !$acc_template_real.length
+            || !$acc_template_mt.length
+            || !$acc_template_mam.length) return;
 
         let count = 0;
         Object.keys(accounts_info)
-            .filter(acc_type => !accounts_info[acc_type].is_demo && accounts_info[acc_type].mt5_account_type !== 'mamm') // toEnableMAM: remove second check
+            .filter(acc_type => accounts_info[acc_type].mt5_account_type !== 'mamm')  // toEnableMAM: remove second check
+            .filter(acc_type => !/labuan_standard|svg_advanced|vanuatu_advanced|maltainvest_advanced/.test(acc_type))// toEnableVanuatuAdvanced: remove vanuatu_advanced from regex
             .forEach((acc_type) => {
-                // toEnableVanuatuAdvanced: remove vanuatu_advanced from regex below
-                if (/svg_advanced|labuan_standard|vanuatu_advanced|maltainvest_advanced/.test(acc_type)) {
-                    return;
-                }
-                count++;
-                const $acc  = $acc_template.clone();
+                const $acc  = accounts_info[acc_type].is_demo ? $acc_template_demo.clone() : $acc_template_real.clone();
                 const type  = acc_type.split('_').slice(1).join('_');
-                const image = accounts_info[acc_type].mt5_account_type.replace(/mamm(_)*/, '').replace(/real_vanuatu_/, '') || 'volatility_indices'; // image name can be (advanced|standard|volatility_indices)
+                const image = accounts_info[acc_type].mt5_account_type.replace(/mamm(_)*/, '') || 'volatility_indices'; // image name can be (advanced|standard|volatility_indices)
                 $acc.find('.mt5_type_box').attr({ id: `rbtn_${type}`, 'data-acc-type': type })
                     .find('img').attr('src', urlForStatic(`/images/pages/metatrader/icons/acc_${image}.svg`));
                 $acc.find('p').text(accounts_info[acc_type].short_title);
                 (/mam/.test(acc_type) ? $acc_template_mam : $acc_template_mt).append($acc);
+
+                count++;
             });
         $templates.find('.hl-types-of-accounts').setVisibility(count > 1);
     };
