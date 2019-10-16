@@ -95,24 +95,16 @@ const MetaTrader = (() => {
                 Object.keys(mt_companies).forEach((company) => {
                     Object.keys(mt_companies[company]).forEach((acc_type) => {
                         mt_company[company] = State.getResponse(`landing_company.mt_${company}_company.${MetaTraderConfig.getMTFinancialAccountType(acc_type)}.shortcode`);
+                        
+                        // If vanuatu exists, don't add svg anymore unless it's for volatility.
+                        const should_add_svg = (
+                            (vanuatu_standard_demo_account && /demo_standard/.test(acc_type)) ||
+                            (vanuatu_standard_real_account && /real_standard/.test(acc_type))
+                        ) &&
+                        /svg/.test(mt_company[company]) &&
+                        mt_companies[company][acc_type].mt5_account_type;
 
-                        // vanuatu_standard_demo_account && (/svg/.test(mt_company[company]) && mt_companies[company][acc_type].mt5_account_type === 'demo')
-                        // vanuatu_standard_real_account && /real_svg_standard/.test(mt_company[company])
-
-                        // If real_vanuatu_standard and current is real_svg_standard, then skip.
-                        // If demo_vanuatu_standard and current is demo_svg_standard, then skip.
-
-                        const has_vanuatu_demo_or_real =
-                            /svg/.test(mt_company[company]) &&
-                            (
-                                (vanuatu_standard_demo_account && /demo_standard/.test(acc_type)) ||
-                                (vanuatu_standard_real_account && /real_standard/.test(acc_type))
-                            ) &&
-                            mt_companies[company][acc_type].mt5_account_type;
-                        // If vanuatu vanuatu, don't add svg anymore unless it's for volatility, meaning has mt5_account_type value.
-                        if (mt_company[company]) {
-                            if (!has_vanuatu_demo_or_real) addAccount(company, acc_type);
-                        }
+                        if (mt_company[company] && !should_add_svg) addAccount(company, acc_type);
                     });
                 });
                 resolve();
