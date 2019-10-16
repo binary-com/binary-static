@@ -426,7 +426,7 @@ const MetaTraderUI = (() => {
         if (/(demo|real)/.test(selected_acc_type)) {
             displayAccountDescription(action);
             updateAccountTypesUI(selected_acc_type);
-            switchAcccountTypesUI(/demo/.test(selected_acc_type), $form);
+            switchAcccountTypesUI(selected_acc_type, $form);
             $form.find('#view_1 #btn_next').addClass('button-disabled');
             $form.find('#view_1 .step-2').setVisibility(1);
             displayMessage('#new_account_msg', (selected_acc_type === 'real' && Client.get('is_virtual')) ? MetaTraderConfig.needsRealMessage() : '', true);
@@ -444,11 +444,11 @@ const MetaTraderUI = (() => {
         }
     };
 
-    const switchAcccountTypesUI = (is_demo, form) => {
+    const switchAcccountTypesUI = (type, form) => {
         const demo_btn = form.find('#view_1 .step-2 .type-group .template_demo');
         const real_btn = form.find('#view_1 .step-2 .type-group .template_real');
 
-        if (is_demo) {
+        if (/demo/.test(type)) {
             demo_btn.removeClass('invisible');
             real_btn.addClass('invisible');
         } else {

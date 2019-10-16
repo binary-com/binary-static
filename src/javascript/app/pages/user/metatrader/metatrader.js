@@ -97,14 +97,14 @@ const MetaTrader = (() => {
                         mt_company[company] = State.getResponse(`landing_company.mt_${company}_company.${MetaTraderConfig.getMTFinancialAccountType(acc_type)}.shortcode`);
                         
                         // If vanuatu exists, don't add svg anymore unless it's for volatility.
-                        const should_add_svg = (
+                        const vanuatu_and_svg_exists = (
                             (vanuatu_standard_demo_account && /demo_standard/.test(acc_type)) ||
                             (vanuatu_standard_real_account && /real_standard/.test(acc_type))
                         ) &&
                         /svg/.test(mt_company[company]) &&
                         mt_companies[company][acc_type].mt5_account_type;
 
-                        if (mt_company[company] && !should_add_svg) addAccount(company, acc_type);
+                        if (mt_company[company] && !vanuatu_and_svg_exists) addAccount(company, acc_type);
                     });
                 });
                 resolve();
