@@ -445,8 +445,8 @@ const MetaTraderUI = (() => {
     };
 
     const switchAcccountTypesUI = (is_demo, form) => {
-        const demo_btn = form.find('#view_1 .step-2 .type-group .demo');
-        const real_btn = form.find('#view_1 .step-2 .type-group .real');
+        const demo_btn = form.find('#view_1 .step-2 .type-group .template_demo');
+        const real_btn = form.find('#view_1 .step-2 .type-group .template_real');
 
         if (is_demo) {
             demo_btn.removeClass('invisible');
