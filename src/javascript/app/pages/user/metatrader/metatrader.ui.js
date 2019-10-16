@@ -426,17 +426,9 @@ const MetaTraderUI = (() => {
         if (/(demo|real)/.test(selected_acc_type)) {
             displayAccountDescription(action);
             updateAccountTypesUI(selected_acc_type);
+            switchAcccountTypesUI(/demo/.test(selected_acc_type), $form);
             $form.find('#view_1 #btn_next').addClass('button-disabled');
-
             $form.find('#view_1 .step-2').setVisibility(1);
-            if (/demo/.test(selected_acc_type)) {
-                $form.find('#view_1 .step-2 .type-group .demo').removeClass('invisible');
-                $form.find('#view_1 .step-2 .type-group .real').addClass('invisible');
-            } else {
-                $form.find('#view_1 .step-2 .type-group .demo').addClass('invisible');
-                $form.find('#view_1 .step-2 .type-group .real').removeClass('invisible');
-            }
-
             displayMessage('#new_account_msg', (selected_acc_type === 'real' && Client.get('is_virtual')) ? MetaTraderConfig.needsRealMessage() : '', true);
             $form.find('#new_account_no_deposit_bonus_msg').setVisibility(0);
         } else {
@@ -449,6 +441,19 @@ const MetaTraderUI = (() => {
             });
             // uncomment to show No Deposit Bonus note
             // $form.find('#new_account_no_deposit_bonus_msg').setVisibility(/real_svg_standard/.test(new_acc_type));
+        }
+    };
+
+    const switchAcccountTypesUI = (is_demo, form) => {
+        const demo_btn = form.find('#view_1 .step-2 .type-group .demo');
+        const real_btn = form.find('#view_1 .step-2 .type-group .real');
+
+        if (is_demo) {
+            demo_btn.removeClass('invisible');
+            real_btn.addClass('invisible');
+        } else {
+            demo_btn.addClass('invisible');
+            real_btn.removeClass('invisible');
         }
     };
 
