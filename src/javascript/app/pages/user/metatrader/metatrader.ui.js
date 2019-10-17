@@ -597,7 +597,8 @@ const MetaTraderUI = (() => {
             The code below is to stop the tooltip from showing wrong
             information.
         */
-        if (/vanuatu_standard/.test(acc_type)) {
+        if (/(demo|real)_vanuatu_standard/.test(acc_type)) {
+            $el.removeAttr('data-balloon data-balloon-length');
             return;
         }
 
