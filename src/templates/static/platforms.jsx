@@ -223,8 +223,8 @@ const Platform = () => (
                                 data_show='-eucountry'
                                 status='new'
                                 header={it.L('Binary Grid')}
-                                description={it.L('Micro-trading on the go')}
-                                text={it.L('In the new, exciting Binary Grid, win whenever the trade ends outside your selected cell.')}
+                                description={it.L('An exciting mobile trading experience')}
+                                text={it.L('Just tap or swipe to open Rise/Fall, Ends Outside, and Ends Between contracts with our fun mobile trading app.')}
                                 url={it.url_for('binary-grid')}
                                 target='_blank'
                             />

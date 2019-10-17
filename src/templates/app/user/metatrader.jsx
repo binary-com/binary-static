@@ -42,7 +42,10 @@ const TypeGroup = ({ title, children, types }) => (
             {children}
         </div>
         { types.map((box, i) => (
-            <div key={i} className={box.title ? 'gr-6' : 'gr-3 gr-6-p gr-6-m gr-centered'}>
+            <div
+                key={i}
+                className={`${box.title ? 'gr-6' : 'gr-3 gr-6-p gr-6-m gr-centered'}${/template_(demo|real)/.test(box.type) ? ` invisible ${box.type}` : ''}`}
+            >
                 <div id={box.id || `rbtn_${box.type}`} className='mt5_type_box' data-acc-type={box.type}>
                     {box.title ?
                         <div>{box.title}</div>
@@ -296,7 +299,8 @@ const Metatrader = () => (
                                         <TypeGroup
                                             title={it.L('Step 2: Choose account type')}
                                             types={[
-                                                { type: 'template', desc: 'standard' },
+                                                { type: 'template_demo', desc: 'standard' },
+                                                { type: 'template_real', desc: 'standard' },
                                             ]}
                                         >
                                             <a className='hint hl-types-of-accounts' href={it.url_for('metatrader/types-of-accounts')} target='_blank'>{it.L('Which account is right for me?')}</a>
