@@ -192,7 +192,7 @@ const MetaTraderConfig = (() => {
                             }
                             if (is_ok && !isAuthenticated()) {
                                 if (accounts_info[acc_type].mt5_account_type === 'advanced') {
-                                    $message.find('.authenticate').setVisibility(1).find('a').attr('onclick', `localStorage.setItem('personal_details_redirect', '${acc_type}')`);
+                                    $message.find('.authenticate').setVisibility(1);
                                     is_ok = false;
                                 } else {
                                     $new_account_financial_authenticate_msg.setVisibility(1);
