@@ -64,3 +64,6 @@ release:
   - 'shell:make_cname'
   - 'gh-pages:main'
   - 'shell:trigger_tests'
+releaseci:
+  - 'default'
+  - 'shell:compile_production'

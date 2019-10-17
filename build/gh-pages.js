@@ -11,7 +11,7 @@ module.exports = function (grunt) {
                     clone: global.release_info.clone_folder,
                 }),
             },
-            src: global.branch ? [global.branch_prefix + global.branch + '/**'] : ['**', '!' + (global.branch_prefix || 'br_') + '*/**']
+            src: global.branch ? [global.branch_prefix + global.branch + '/**'] : ['**', '.circleci/**', '!' + (global.branch_prefix || 'br_') + '*/**']
         },
         trigger_tests: {
             options: {
