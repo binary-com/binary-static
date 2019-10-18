@@ -102,7 +102,10 @@ const Page = (() => {
         }
         if (Client.isLoggedIn()) {
             BinarySocket.wait('authorize', 'website_status', 'get_account_status').then(() => {
-                RealityCheck.onLoad();
+                if (!Client.isAccountOfType('financial')) {
+                    RealityCheck.onLoad();
+                }
+
                 Menu.init();
             });
         } else {
