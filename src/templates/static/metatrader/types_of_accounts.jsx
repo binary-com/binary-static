@@ -102,19 +102,16 @@ const TypesOfAccounts = () => (
                                 [{ text: '' }, { text: it.L('Standard') }, { text: it.L('Advanced') }, { text: it.L('Synthetic Indices') }],
                             ],
                             tbody: [
-                                [{ text: <Row             text={it.L('Account currency')} /> },       { text: it.L('USD') },                            { text: it.L('USD') },                            { text: it.L('USD/EUR') }],
-                                [{ text: <Row number={1}  text={it.L('Maximum leverage')} /> },       { text: it.L('Up to [_1]', '1:1000') },           { text: it.L('Up to [_1]', '1:100') },            { text: it.L('Up to [_1]', '1:1000') }],
+                                [{ text: <Row             text={it.L('Account currency')} /> },       { text: it.L('USD') },                            { text: it.L('USD') },                            { text: it.L('USD') }],
+                                [{ text: <Row number={1}  text={it.L('Leverage')} /> },               { text: it.L('Up to [_1]', '1:1000') },           { text: it.L('Up to [_1]', '1:100') },            { text: it.L('Up to [_1]', '1:1000') }],
                                 [{ text: <Row number={2}  text={it.L('Order execution')} /> },        { text: it.L('Market') },                         { text: it.L('Market') },                         { text: it.L('Market') }],
-                                [{ text: <Row number={3}  text={it.L('Spread')} /> },                 { text: it.L('Variable') },                       { text: it.L('Variable') },                       { text: it.L('Fixed/Variable') }],
+                                [{ text: <Row number={3}  text={it.L('Spread')} /> },                 { text: it.L('Variable') },                       { text: it.L('Variable') },                       { text: it.L('Variable/Fixed') }],
                                 [{ text: <Row number={4}  text={it.L('Commission')} /> },             { text: it.L('No') },                             { text: it.L('No') },                             { text: it.L('No') }],
                                 [{ text: <Row             text={it.L('Minimum deposit')} /> },        { text: it.L('No') },                             { text: it.L('No') },                             { text: it.L('No') }],
                                 [{ text: <Row number={5}  text={it.L('Margin call')} /> },            { text: '150%' },                                 { text: '150%' },                                 { text: '100%' }],
                                 [{ text: <Row number={6}  text={it.L('Stop out level')} /> },         { text: '75%' },                                  { text: '75%' },                                  { text: '50%' }],
-                                [{ text: <Row             text={it.L('Number of assets')} /> },       { text: '60+' },                                  { text: '70+' },                                  { text: '8' }],
-                                [{ text: <Row number={7}  text={it.L('Maximum ticket size')} /> },    { text: it.L('[_1] lots', '10') },                { text: it.L('[_1] lots', '20') },                { text: it.L('[_1] lots', '30') }],
-                                [{ text: <Row number={8}  text={it.L('Minimum ticket size')} /> },    { text: it.L('[_1] lots', '0.01') },              { text: it.L('[_1] lots', '0.01') },              { text: it.L('[_1] lots', '0.01') }],
-                                [{ text: <Row number={9}  text={it.L('Step size')} /> },              { text: it.L('[_1] lots', '0.01') },              { text: it.L('[_1] lots', '0.01') },              { text: it.L('[_1] lots', '0.01') }],
-                                [{ text: <Row number={10} text={it.L('Cryptocurrency trading')} /> }, { text: '24/7' },                                 { text: 'N/A' },                                  { text: it.L('N/A') }],
+                                [{ text: <Row             text={it.L('Number of assets')} /> },       { text: '50+' },                                  { text: '50+' },                                  { text: '10+' }],
+                                [{ text: <Row number={7}  text={it.L('Cryptocurrency trading')} /> }, { text: '24/7' },                                 { text: 'N/A' },                                  { text: it.L('N/A') }],
                             ],
                         }}
                     />
@@ -128,18 +125,15 @@ const TypesOfAccounts = () => (
                             ],
                             tbody: [
                                 [{ text: <Row             text={it.L('Account currency')} /> },       { text: it.L('EUR/GBP') },            { text: it.L('EUR') }],
-                                [{ text: <Row number={1}  text={it.L('Maximum leverage')} /> },       { text: it.L('Up to [_1]', '1:30') }, { text: it.L('Up to [_1]', '1:1000') }],
+                                [{ text: <Row number={1}  text={it.L('Leverage')} /> },               { text: it.L('Up to [_1]', '1:30') }, { text: it.L('Up to [_1]', '1:1000') }],
                                 [{ text: <Row number={2}  text={it.L('Order execution')} /> },        { text: it.L('Market') },             { text: it.L('Market') }],
-                                [{ text: <Row number={3}  text={it.L('Spread')} /> },                 { text: it.L('Variable') },           { text: it.L('Fixed/Variable') }],
+                                [{ text: <Row number={3}  text={it.L('Spread')} /> },                 { text: it.L('Variable') },           { text: it.L('Variable/Fixed') }],
                                 [{ text: <Row number={4}  text={it.L('Commission')} /> },             { text: it.L('No') },                 { text: it.L('No') }],
                                 [{ text: <Row             text={it.L('Minimum deposit')} /> },        { text: it.L('No') },                 { text: it.L('No') }],
                                 [{ text: <Row number={5}  text={it.L('Margin call')} /> },            { text: '100%' },                     { text: '100%' }],
                                 [{ text: <Row number={6}  text={it.L('Stop out level')} /> },         { text: '50%' },                      { text: '50%' }],
-                                [{ text: <Row             text={it.L('Number of assets')} /> },       { text: '50+' },                      { text: '8' }],
-                                [{ text: <Row number={7}  text={it.L('Maximum ticket size')} /> },    { text: it.L('[_1] lots', '10') },    { text: it.L('[_1] lots', '30') }],
-                                [{ text: <Row number={8}  text={it.L('Minimum ticket size')} /> },    { text: it.L('[_1] lots', '0.01') },  { text: it.L('[_1] lots', '0.01') }],
-                                [{ text: <Row number={9}  text={it.L('Step size')} /> },              { text: it.L('[_1] lots', '0.01') },  { text: it.L('[_1] lots', '0.01') }],
-                                [{ text: <Row number={10} text={it.L('Cryptocurrency trading')} /> }, { text: '24/7' },                     { text: it.L('N/A') }],
+                                [{ text: <Row             text={it.L('Number of assets')} /> },       { text: '50+' },                      { text: '10+' }],
+                                [{ text: <Row number={7}  text={it.L('Cryptocurrency trading')} /> }, { text: '24/7' },                     { text: it.L('N/A') }],
                             ],
                         }}
                     />
@@ -166,7 +160,7 @@ const TypesOfAccounts = () => (
             <FootNote
                 number={3}
                 title={it.L('Spread')}
-                texts={[it.L('The spread is the difference between the buy price and sell price. A fixed spread means that the spread will remain as it is no matter the market condition except in rare cases of extreme market volatility. A variable spread means that the spread is constantly changing, depending on the market condition.')]}
+                texts={[it.L('The spread is the difference between the buy price and sell price. A variable spread means that the spread is constantly changing, depending on the market conditions. A fixed spread means that the spread is not affected by market conditions but it is subject to alteration at the Company\'s absolute discretion.')]}
             />
             <FootNote
                 number={4}
@@ -185,21 +179,6 @@ const TypesOfAccounts = () => (
             />
             <FootNote
                 number={7}
-                title={it.L('Maximum ticket size')}
-                texts={[it.L('Refers to the maximum volume or lots per order. Subject to change in respect to market conditions.')]}
-            />
-            <FootNote
-                number={8}
-                title={it.L('Minimum ticket size')}
-                texts={[it.L('The minimum ticket size refers to the minimum volume or number of lots.')]}
-            />
-            <FootNote
-                number={9}
-                title={it.L('Step size')}
-                texts={[it.L('Step size is the minimum allowable increment applied to all order types. It is the volume from which the increase of the position is based. You can only trade in the minimum ticket size or its multiples.')]}
-            />
-            <FootNote
-                number={10}
                 title={it.L('Cryptocurrency trading')}
                 texts={[it.L('Indicates the availability of cryptocurrency trading on a particular account.')]}
             />

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-09-17 07:04\n"
+"PO-Revision-Date: 2019-10-17 07:46\n"
 "Last-Translator: binarycom\n"
 "Language-Team: Indonesian\n"
 "MIME-Version: 1.0\n"
@@ -278,9 +278,6 @@ msgstr "%1 adalah pemenang penghargaan sebagai industri perintis opsi trading on
 
 msgid "%1 launches an %2e-commerce site for branded merchandise%3 – enabling clients, affiliates, and developers to buy and sell %1 products."
 msgstr "%1 meluncurkan sebuah %2situs e-commerce untuk barang-barang bermerek%3 – memberi kesempatan kepada klien, afiliasi, dan pengembang untuk membeli dan menjual produk %1."
-
-msgid "%1 lots"
-msgstr "%1 lot"
 
 msgid "%1 may have access to information that is not available to the client, may have acquired trading positions at prices that are not available to the client, and may have interests different from the client's interests. %1 does not undertake any obligation to provide the client with market or other information that the Company possesses, nor to alter or refrain from the Company's own trading."
 msgstr "%1 mungkin memiliki akses ke dalam informasi yang tidak tersedia untuk klien, mungkin telah memperoleh posisi trading dengan harga yang tidak tersedia untuk klien, dan mungkin memiliki minat yang berbeda dari kepentingan klien. %1 tidak melakukan kewajiban apa pun untuk menyediakan klien dengan pasar atau informasi lain yang dimiliki Perusahaan, atau untuk mengubah atau menahan diri dari trading Perusahaan sendiri."
@@ -580,7 +577,7 @@ msgid "2-way pricing"
 msgstr "Harga 2-arah"
 
 msgid "2. Selfie with proof of ID"
-msgstr ""
+msgstr "2. Foto selfie dengan memegang bukti identitas"
 
 msgid "20 – 39.999%"
 msgstr "20 – 39,999%"
@@ -1299,9 +1296,6 @@ msgstr "Open Posisi dapat ditutup dengan mengklik tombol \"x\"."
 msgid "An Open Position may be partially closed by double clicking the position, selecting the volume to be partially closed from the context menu, and then clicking \"Close\"."
 msgstr "Open Posisi dapat ditutup sebagian dengan mengklik posisi dua kali, memilih volume yang akan ditutup sebagian dari menu konteks, dan kemudian klik \"Tutup\"."
 
-msgid "An additional password can be used to restrict access to the cashier."
-msgstr "Kata sandi tambahan dapat digunakan untuk membatasi akses ke kasir."
-
 msgid "An advanced university degree in Physics, Financial Engineering or Mathematics"
 msgstr "Gelar universitas lanjutan di bidang Fisika, Teknik Keuangan atau Matematika"
 
@@ -1322,6 +1316,9 @@ msgstr "Semangat untuk manajemen risiko yang kuat untuk mengikuti kecepatan pert
 
 msgid "An excellent command of spoken and written English"
 msgstr "Memberi perintah yang baik menggunakan bahasa Inggris secara lisan dan tulisan"
+
+msgid "An exciting mobile trading experience"
+msgstr "Pengalaman trading seluler yang menarik"
 
 msgid "An intermediate understanding of the interaction of information technology and client servicing aspects within the B2B and B2C environments"
 msgstr "Pemahaman menengah tentang interaksi teknologi informasi dan aspek layanan klien dalam lingkungan B2B dan B2C"
@@ -1484,6 +1481,9 @@ msgstr "Apa Anda yakin ingin mendaftar akun fiat dalam %1?"
 
 msgid "Are you sure you want to create your %1 account now?"
 msgstr "Apa Anda yakin ingin mendaftar akun %1 Anda sekarang?"
+
+msgid "Are you sure you want to deposit in %1?"
+msgstr "Apa Anda yakin ingin mendeposit dalam %1?"
 
 msgid "Are you sure?"
 msgstr "Apa Anda yakin?"
@@ -2118,9 +2118,6 @@ msgstr "Binary Limited, yang beralamat di 47 Esplanade, St Helier, Jersey JE1 0B
 msgid "Binary Options"
 msgstr "Opsi Binary"
 
-msgid "Binary Options Trading has been disabled on your account. Kindly %1contact customer support%2 for assistance."
-msgstr "Trading Opsi Binary telah dibatalkan pada akun Anda. Silahkan %1hubungi customer support%2 untuk bantuan."
-
 msgid "Binary Shop"
 msgstr "Toko Binary"
 
@@ -2382,8 +2379,8 @@ msgstr "Dapat digunakan untuk mendaftar akun, menyeting, mengelola penggunaan to
 msgid "Can be used to view account activity, including settings, limits, balance sheets, trade purchase history, and more."
 msgstr "Dapat digunakan untuk melihat aktivitas akun, termasuk pengaturan, batas, saldo, sejarah pembelian trading, dan banyak lagi."
 
-msgid "Can be used to withdraw to payment agents, transfer funds between accounts, and set / clear cashier passwords."
-msgstr "Dapat digunakan untuk menarik dana ke agen pembayaran, transfer dana antar akun, dan mengatur/menghapus sandi kasir."
+msgid "Can be used to withdraw to payment agents and transfer funds between accounts."
+msgstr "Dapat digunakan untuk menarik dana ke agen pembayaran dan mentransfer dana antar akun."
 
 msgid "Can you spare 15 minutes?"
 msgstr "Dapatkan Anda meluangkan 15 menit?"
@@ -2454,12 +2451,6 @@ msgstr "Indeks Tunai"
 msgid "Cashier"
 msgstr "Kasir"
 
-msgid "Cashier Password"
-msgstr "Kata Sandi Kasir"
-
-msgid "Cashier password"
-msgstr "Kata sandi Kasir"
-
 msgid "Cashier session expired"
 msgstr "Sesi kasir telah berakhir"
 
@@ -2483,9 +2474,6 @@ msgstr "Merubah kata sandi"
 
 msgid "Change the Margin rate in relation to both Open Positions and new Orders"
 msgstr "Mengubah tingkat Margin terkait dengan Open Posisi dan Order baru"
-
-msgid "Change the password used for deposits and withdrawals."
-msgstr "Rubah kata sandi pada bagian deposit dan penarikan."
 
 msgid "Change your main login password."
 msgstr "Rubah kata sandi untuk mengakses akun Anda."
@@ -3502,7 +3490,7 @@ msgid "Deposits and withdrawals for your MetaTrader 5 account always pass throug
 msgstr "Deposit dan penarikan untuk akun MetaTrader 5 Anda akan selalu melewati akun opsi binary Anda."
 
 msgid "Deposits and withdrawals have been disabled on your account. Please check your email for more details."
-msgstr "Deposit dan penarikan telah dinonaktifkan pada akun Anda. Silakan periksa email Anda untuk informasi lebih lanjut."
+msgstr "Deposit dan penarikan telah dinonaktifkan pada akun Anda. Silakan periksa kotak masuk email Anda untuk rincian lebih lanjut."
 
 msgid "Deposits and/or payments due are to be made in the currency chosen by the client from the ones specified by BIEL from time to time."
 msgstr "Deposit dan/atau pembayaran harus dilakukan dalam mata uang yang dipilih oleh klien dan akan ditentukan oleh BIEL dari waktu ke waktu."
@@ -3821,9 +3809,6 @@ msgstr "Hak Pemegang Paspor Uni Eropa"
 
 msgid "EUR"
 msgstr "EUR"
-
-msgid "EUR 1 per point"
-msgstr "1 EUR per poin"
 
 msgid "EUR Index – Measures the value of the Euro against a basket of five global currencies (USD, AUD, GBP, JPY, CAD), each weighted by 20%"
 msgstr "Indeks EUR - Mengukur nilai Euro terhadap sekeranjang lima mata uang global (USD, AUD, GBP, JPY, CAD), yang masing-masing berbobot 20%"
@@ -4613,9 +4598,6 @@ msgstr "Pelayanan pelanggan kelas satu."
 
 msgid "Fixed spreads"
 msgstr "Spread tetap"
-
-msgid "Fixed/Variable"
-msgstr "Tetap/Variabel"
 
 msgid "Fixing problems and providing feedback for improvement."
 msgstr "Memperbaiki masalah dan memberikan saran untuk perbaikan."
@@ -5803,9 +5785,6 @@ msgstr "Dalam hal dimana Perusahaan tidak menerima Order dari klien untuk menutu
 msgid "In the event that the Company is aware of an Affiliate who is in breach of any of the above provisions, the Company shall have the right, in addition to any other right or remedy available to it under this Agreement or applicable law, to immediately block the Affiliate's access to this programme. The Affiliate hereby irrevocably waives their rights to, and shall indemnify the Company and any member of the Binary group of companies for, any claims or demands made against the Company or any member of the Binary group of companies, their directors, officers, shareholders, or employees or against the %1 website if the Company revokes the Affiliate's access to the programme."
 msgstr "Jika Perusahaan mengetahui dimana Afiliasi telah melanggar salah satu ketentuan di atas, Perusahaan berhak, di samping hak lain atau pemulihan yang tersedia untuknya berdasarkan Perjanjian ini atau hukum yang berlaku, untuk segera memblokir akses Afiliasi pada program ini. Afiliasi dengan demikian secara mutlak melepaskan hak mereka untuk, dan akan mengganti rugi Perusahaan dan setiap anggota kelompok perusahaan Binary pada setiap klaim atau tuntutan yang dibuat terhadap Perusahaan atau anggota kelompok perusahaan Binary, direktur, pejabat, pemegang saham, atau karyawan, atau terhadap situs web %1 jika Perusahaan mencabut akses Afiliasi pada program."
 
-msgid "In the new, exciting Binary Grid, win whenever the trade ends outside your selected cell."
-msgstr "Binary Grid baru dan menarik, keuntungan kapan saja ketika trading berakhir di luar batas yang Anda pilih."
-
 msgid "In the rest of the EU, Volatility Indices are offered by Binary (Europe) Ltd., W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta; licensed and regulated by (1) the Malta Gaming Authority in Malta (%1licence no. MGA/B2C/102/2000%4 issued on 01 August 2018), for UK clients by (2) the UK Gambling Commission (licence %2reference no: 39495%4), and for Irish clients by (3) the Revenue Commissioners in Ireland (Remote Bookmaker's Licence no. 1010285 issued on 1 July 2017). View complete %3Regulatory Information%4."
 msgstr "Di bagian Uni Eropa lainnya, Indeks Volatilitas ditawarkan oleh Binary (Europe) Ltd., beralamat di W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta; berlisensi dan diatur. Lihat selengkapnya pada %3Informasi Peraturan%4.\n\n"
 " "
@@ -6140,6 +6119,9 @@ msgstr "Yurisdiksi"
 msgid "Jurisdiction and Choice of Law"
 msgstr "Yurisdiksi dan Pilihan Hukum"
 
+msgid "Just tap or swipe to open Rise/Fall, Ends Outside, and Ends Between contracts with our fun mobile trading app."
+msgstr "Cukup ketuk atau geser untuk membuka kontrak Rise/Fall, Ends Outside, dan Ends Between menggunakan aplikasi trading seluler kami yang menyenangkan."
+
 msgid "K. Event of Default"
 msgstr "K. Pelanggaran"
 
@@ -6183,10 +6165,10 @@ msgid "Kick back with beautiful beaches, islands, and mountains just a short fli
 msgstr "Nikmati keindahan pantai, pulau dan pegunungan dengan penerbangan singkat. Dari Malta, tersedia Eropa, Mediteranian dan Afrika Utara. Dan dari Malaysia, seluruh Asia menanti."
 
 msgid "Kindly send a scan of a valid proof of address to %1support@binary.com%2"
-msgstr ""
+msgstr "Mohon kirimkan scan bukti alamat yang berlaku ke %1support@binary.com%2"
 
 msgid "Kindly send a scan of a valid proof of identity to %1support@binary.com%2"
-msgstr ""
+msgstr "Mohon kirimkan scan bukti identitas yang berlaku ke %1support@binary.com%2"
 
 msgid "Know how much you will win or lose before you purchase the contract"
 msgstr "Ketahui berapa banyak potensi keuntungan atau kerugian sebelum melakukan pembelian kontrak"
@@ -6470,9 +6452,6 @@ msgstr "Hidup di pulau surga dengan fasilitasnya. Labuan adalah salah satu perma
 msgid "Located 10 minutes away, Malaysia's intelligent garden city offers stunning greenery and exquisite structures."
 msgstr "Terletak dalam jangkauan 10 menit, kota taman Malaysia menawarkan tanaman hijau dan indah yang menakjubkan."
 
-msgid "Lock Cashier"
-msgstr "Kunci Kasir"
-
 msgid "Log in"
 msgstr "Masuk"
 
@@ -6636,7 +6615,7 @@ msgid "MT5 real-money account for Synthetic Indices only."
 msgstr "Akun riil MT5 hanya tersedia untuk Indeks Sintetis."
 
 msgid "MT5 withdrawals have been disabled on your account. Please check your email for more details."
-msgstr "Penarikan MT5 tidak tersedia pada akun Anda. Silahkan cek email untuk informasi lebih lanjut."
+msgstr "Penarikan MT5 tidak tersedia pada akun Anda. Silakan periksa kotak masuk email Anda untuk rincian lebih lanjut."
 
 msgid "Mac"
 msgstr "Mac"
@@ -6908,9 +6887,6 @@ msgstr "Batas maksimum deposit"
 msgid "Maximum deposit limit expiry"
 msgstr "Batas waktu maksimum deposit"
 
-msgid "Maximum leverage"
-msgstr "Leverage maksimal"
-
 msgid "Maximum multiplier of 1000."
 msgstr "Maksimum kelipatan 1000."
 
@@ -6922,9 +6898,6 @@ msgstr "Maksimal jumlah open posisi"
 
 msgid "Maximum payout"
 msgstr "Hasil Maksimum"
-
-msgid "Maximum ticket size"
-msgstr "Ukuran tiket maksimal"
 
 msgid "Maximum upload size for each file is %1"
 msgstr "Ukuran upload maksimal untuk setiap file adalah %1"
@@ -6977,9 +6950,6 @@ msgstr "Metode"
 msgid "Meticulous English language skills, with keen eye for detail when it comes to punctuation, spelling, grammar, and syntax"
 msgstr "Terampil berbahasa Inggris, memiliki mata yang tajam secara detail ketika mengecek tanda baca, ejaan, tata bahasa, dan sintaksis"
 
-msgid "Micro-trading on the go"
-msgstr "Trading mikro saat bepergian"
-
 msgid "Min"
 msgstr "Min"
 
@@ -7015,9 +6985,6 @@ msgstr "Minimal enam bulan validitasnya"
 
 msgid "Minimum qualifications:"
 msgstr "Kualifikasi minimum:"
-
-msgid "Minimum ticket size"
-msgstr "Ukuran tiket minimum"
 
 msgid "Minimum two years experience in a software or web application testing role"
 msgstr "Memiliki minimal dua tahun pengalaman dalam peran pengujian aplikasi perangkat lunak atau web"
@@ -7401,7 +7368,7 @@ msgid "Note:"
 msgstr "Catatan:"
 
 msgid "Note: %1 does not charge any transfer fees."
-msgstr ""
+msgstr "Catatan: %1 tidak membebankan biaya transfer."
 
 msgid "Note: A no deposit bonus worth USD 10 will be credited into your account within 24 hours after registration."
 msgstr "Catatan: Bonus tanpa deposit senilai USD 10 akan dikredtikan kedalam akun Anda dalam tempo 24 jam setelah pendaftaran."
@@ -8115,7 +8082,7 @@ msgid "Please accept the terms and conditions."
 msgstr "Silahkan terima syarat dan ketentuan."
 
 msgid "Please check your email for details"
-msgstr ""
+msgstr "Silakan cek email Anda untuk informasi lengkap"
 
 msgid "Please check your email for further instructions."
 msgstr "Silakan lihat email Anda untuk instruksi lebih lanjut."
@@ -8130,7 +8097,7 @@ msgid "Please check your email for the verification link to complete the process
 msgstr "Silakan lihat email Anda untuk melengkapi proses verifikasi."
 
 msgid "Please check your inbox for details."
-msgstr "Silahkan periksa kotak masuk email Anda untuk informasi lebih lanjut."
+msgstr "Silakan periksa kotak masuk email Anda untuk rincian lebih lanjut."
 
 msgid "Please choose a currency"
 msgstr "Silahkan pilih mata uang"
@@ -8160,7 +8127,7 @@ msgid "Please confirm the transaction details in order to complete the transfer:
 msgstr "Pastikan Anda telah memilih Agen Pembayaran yang benar, salah transfer adalah diluar tanggungjawab kami:"
 
 msgid "Please contact your payment agent to validate your withdrawal request."
-msgstr ""
+msgstr "Silakan hubungi agen pembayaran untuk memproses permintaan penarikan Anda."
 
 msgid "Please do not share your bank account, credit card, or e-wallet with another client, as this may cause delays in your withdrawals."
 msgstr "Mohon untuk tidak berbagi rekening bank, kartu kredit atau e-wallet Anda dengan klien lain, karena hal ini dapat menyebabkan penundaan proses penarikan Anda."
@@ -8265,13 +8232,13 @@ msgid "Please submit the above information to %1."
 msgstr "Silahkan kirim informasi diatas ke %1."
 
 msgid "Please submit your %1proof of address%2."
-msgstr ""
+msgstr "Silakan kirim %1bukti alamat%2 Anda."
 
 msgid "Please submit your %1proof of identity and proof of address%2."
-msgstr ""
+msgstr "Silakan kirim %1bukti identitas dan bukti alamat%2 Anda."
 
 msgid "Please submit your %1proof of identity%2."
-msgstr ""
+msgstr "Silakan kirim %1bukti identitas%2 Anda."
 
 msgid "Please take note that our swap rate also depends on the time and days you hold your positions open."
 msgstr "Mohon diperhatikan bahwa nilai tukar kami juga tergantung pada waktu dan hari pada saat Anda menahan posisi."
@@ -8538,22 +8505,22 @@ msgid "Prohibited trades"
 msgstr "Trading yang dilarang"
 
 msgid "Proof of address"
-msgstr ""
+msgstr "Bukti alamat"
 
 msgid "Proof of address verification failed"
-msgstr ""
+msgstr "Verifikasi bukti alamat gagal"
 
 msgid "Proof of address – such as bank statements/ building society statement or utility bills (mobile phone bills are unacceptable)"
 msgstr "Bukti alamat - seperti rekening koran/tagihan kartu kredit atau debit atau tagihan utilitas (tagihan ponsel tidak dapat diterima)"
 
 msgid "Proof of identity"
-msgstr ""
+msgstr "Bukti identitas"
 
 msgid "Proof of identity in your selfie must be clear, identifiable, and same as the one you submitted previously"
 msgstr "Bukti identitas pada selfie Anda harus jelas, dapat diidentifikasi, dan sesuai dengan yang Anda kirimkan sebelumnya"
 
 msgid "Proof of identity verification failed"
-msgstr ""
+msgstr "Verifikasi bukti identitas gagal"
 
 msgid "Proof of identity – such as ID card, passport or driving licence"
 msgstr "Bukti identitas - seperti KTP, paspor atau SIM"
@@ -8657,6 +8624,9 @@ msgstr "Q. Introducing Broker"
 msgid "Q1 2019"
 msgstr "Q1 2019"
 
+msgid "Q2 2019"
+msgstr "Q2 2019"
+
 msgid "Q3 2018"
 msgstr "Q3 2018"
 
@@ -8701,9 +8671,6 @@ msgstr "Rentang pasar"
 
 msgid "Re-enter password"
 msgstr "Masukkan ulang kata sandi"
-
-msgid "Re-enter your password"
-msgstr "Masukkan kembali sandi Anda"
 
 msgid "Read"
 msgstr "Baca"
@@ -8821,9 +8788,6 @@ msgstr "ID referensi"
 
 msgid "Referral tools"
 msgstr "Peralatan Referal"
-
-msgid "Refers to the maximum volume or lots per order. Subject to change in respect to market conditions."
-msgstr "Mengacu pada volume maksimum atau lot per order. Dapat berubah sesuai dengan kondisi pasar."
 
 msgid "Refuse to pay any Commission to the Introducing Broker engaged in the Malicious Activity"
 msgstr "Menolak untuk membayar Komisi apa pun kepada Introducing Broker yang terlibat dalam Aktivitas Berbahaya"
@@ -9308,9 +9272,6 @@ msgstr "Sesi durasi:"
 msgid "Set Currency"
 msgstr "Atur Mata Uang"
 
-msgid "Set a %1cashier lock password%2 to prevent unauthorised access to your cashier."
-msgstr "Pasang %1kata sandi kasir%2 untuk mencegah akses yang tidak diinginkan pada bagian kasir Anda."
-
 msgid "Set barrier(s) to define your position and trigger the payout you'll receive."
 msgstr "Tetapkan batasan untuk menentukan posisi dan memicu hasil yang Anda akan dapatkan."
 
@@ -9468,7 +9429,7 @@ msgid "Some of the things that cryptocurrencies have in common include:"
 msgstr "Beberapa hal yang mata uang kripto memiliki kesamaan meliputi:"
 
 msgid "Sorry,"
-msgstr ""
+msgstr "Maaf,"
 
 msgid "Sorry, account signup is not available in your country."
 msgstr "Maaf, pendaftaran akun tidak tersedia di negara Anda."
@@ -9479,6 +9440,9 @@ msgstr "Maaf, error terjadi ketika memproses rekening Anda."
 msgid "Sorry, an error occurred while processing your request."
 msgstr "Maaf, error terjadi ketika memproses permohonan Anda."
 
+msgid "Sorry, but binary options trading is not available in your financial account."
+msgstr "Maaf, trading opsi binary tidak tersedia pada akun finansial Anda."
+
 msgid "Sorry, live chat is currently unavailable. Please email us at %1."
 msgstr "Maaf, live chat untuk saat ini tidak tersedia. Silakan email kami di %1."
 
@@ -9487,9 +9451,6 @@ msgstr "Maaf, fasilitas ini hanya tersedia untuk rekening virtual saja."
 
 msgid "Sorry, this feature is not available in your jurisdiction."
 msgstr "Maaf, fitur ini tidak tersedia di yurisdiksi Anda."
-
-msgid "Sorry, you have entered an incorrect cashier password"
-msgstr "Maaf, kata sandi yang Anda masukkan salah"
 
 msgid "Source of income"
 msgstr "Sumber penghasilan"
@@ -9644,14 +9605,11 @@ msgstr "Langkah 3: Lakukan Trading"
 msgid "Step Index"
 msgstr "Indeks Step"
 
+msgid "Step Indices"
+msgstr "Indeks Step"
+
 msgid "Step outdoors and soak up the sun on one of Labuan's pristine beaches. There's also wreck diving, island hopping, kayaking, and deep sea fishing to look forward to."
 msgstr "Langkahkan kaki ke luar dan nikmati sinar matahari di salah satu pantai Labuan. Terdapat kegiatan menyelam, ekspedisi pulau, kayak, dan memancing di laut dalam untuk dieksplorasi."
-
-msgid "Step size"
-msgstr "Step size"
-
-msgid "Step size is the minimum allowable increment applied to all order types. It is the volume from which the increase of the position is based. You can only trade in the minimum ticket size or its multiples."
-msgstr "Step size adalah selisih minimum yang dapat diterapkan ke semua jenis order. Ini adalah volume dari mana kenaikan posisi didasarkan. Anda hanya bisa melakukan trading dengan ukuran tiket minimum atau kelipatannya."
 
 msgid "Sticpay is a global e-wallet service for money transfers and online payments. For more information, please visit %1."
 msgstr "Sticpay adalah layanan e-wallet global sebagai alat transfer dana dan pembayaran online. Untuk informasi lanjut, silakan kunjungi %1."
@@ -9903,7 +9861,7 @@ msgid "Tel"
 msgstr "Tel"
 
 msgid "Tel:"
-msgstr ""
+msgstr "Tel:"
 
 msgid "Telegram Bot"
 msgstr "Telegram Bot"
@@ -11205,9 +11163,6 @@ msgstr "Jumlah maksimum token (%1) telah tercapai."
 msgid "The minimum required amount for using the account transfer facility is %1."
 msgstr "Jumlah minimum untuk menggunakan fasilitas transfer antar akun adalah %1."
 
-msgid "The minimum ticket size refers to the minimum volume or number of lots."
-msgstr "Ukuran tiket minimum mengacu pada volume minimum atau jumlah lot."
-
 msgid "The minimum, incremental, and maximum Order amount"
 msgstr "Jumlah minimum, tambahan, dan maksimum Order"
 
@@ -11331,8 +11286,8 @@ msgstr "Instruksi spesifik yang diterima Perusahaan dari klien"
 msgid "The spread is the difference between the ask and bid price."
 msgstr "Spread adalah perbedaan antara harga jual dan beli."
 
-msgid "The spread is the difference between the buy price and sell price. A fixed spread means that the spread will remain as it is no matter the market condition except in rare cases of extreme market volatility. A variable spread means that the spread is constantly changing, depending on the market condition."
-msgstr "Spread adalah perbedaan antara harga jual dan harga beli. Spread tetap berarti bahwa spread akan tetap dalam kondisi pasar apapun kecuali dalam kasus volatilitas pasar yang ekstrim. Variabel spread berarti spread terus berubah, tergantung kondisi pasar."
+msgid "The spread is the difference between the buy price and sell price. A variable spread means that the spread is constantly changing, depending on the market conditions. A fixed spread means that the spread is not affected by market conditions but it is subject to alteration at the Company's absolute discretion."
+msgstr "Spread adalah selisih antara harga beli dan harga jual. Variabel spread berarti bahwa spread terus berubah, tergantung pada kondisi pasar. Spread tetap berarti bahwa spread tidak terpengaruh oleh kondisi pasar tetapi dapat berubah sesuai dengan kebijaksanaan mutlak Perusahaan."
 
 msgid "The spread – why it matters"
 msgstr "Spread – mengapa sangat penting"
@@ -12288,17 +12243,11 @@ msgstr "Hak Paten AS"
 msgid "USD"
 msgstr "USD"
 
-msgid "USD 1 per point"
-msgstr "1 USD per poin"
-
 msgid "USD 10 x 1 lot x USD 125,000/100,000 = USD 12.5"
 msgstr "USD 10 X 1 lot x USD 125.000/100.000 = USD 12,5"
 
 msgid "USD Index – Measures the value of the US Dollar against a basket of five global currencies (EUR, GBP, JPY, CAD, AUD), each weighted by 20%"
 msgstr "Indeks USD - Mengukur nilai Dolar AS terhadap sekeranjang lima mata uang global (EUR, GBP, JPY, CAD, AUD), masing-masing berbobot 20%"
-
-msgid "USD/EUR"
-msgstr "USD/EUR"
 
 msgid "Ultra fast on-the-go trading"
 msgstr "Trading on-the-go super cepat"
@@ -12362,9 +12311,6 @@ msgstr "OS tidak diketahui"
 
 msgid "Unless otherwise advised, BIEL shall treat a client as a retail client. Clients may also request, by writing to BIEL, to change the category in which they have been classified, and this may have an effect on the level of protection afforded to them. BIEL will assess the client's knowledge and experience versus the appropriateness of the requested service/investment product."
 msgstr "Kecuali disarankan sebaliknya, BIEL akan memperlakukan klien sebagai klien ritel. Klien juga dapat meminta, secara tertulis kepada BIEL, untuk mengubah kategori klasifikasi mereka, dan ini mungkin berdampak pada tingkat perlindungan yang diberikan kepada mereka. BIEL akan menilai pengetahuan dan pengalaman klien versus kelayakan produk layanan/investasi yang diminta."
-
-msgid "Unlock Cashier"
-msgstr "Buka Kasir"
 
 msgid "Up to %1"
 msgstr "Hingga %1"
@@ -12491,6 +12437,9 @@ msgstr "Variabel"
 
 msgid "Variable spreads"
 msgstr "Variabel spread"
+
+msgid "Variable/Fixed"
+msgstr "Variabel/Tetap"
 
 msgid "Verification"
 msgstr "Verifikasi"
@@ -12781,7 +12730,7 @@ msgid "Website URL (where applicable)"
 msgstr "Alamat situs web"
 
 msgid "Website:"
-msgstr ""
+msgstr "Situs:"
 
 msgid "Wednesday"
 msgstr "Rabu"
@@ -13143,11 +13092,14 @@ msgstr "Di %1, Anda berkesempatan untuk menutup kontrak sebelum berakhir untuk m
 msgid "With %1, you'll know the risk and potential reward before you purchase a contract."
 msgstr "Di %1, Anda akan mengetahui risiko dan potensi hasil sebelum membeli kontrak."
 
-msgid "With Boom 1000 Index, there's an average of one spike in the price series that occurs at anytime within 1000 ticks."
-msgstr "Pada Indeks Boom 1000, terdapat rata-rata satu lonjakan pada rangkaian harga yang terjadi kapan saja dalam 1000 tik."
+msgid "With Boom 1000 (500) Index, there's an average of one spike in the price series that occurs at anytime within 1000 (500) ticks."
+msgstr "Pada Indeks Boom 1000 (500), terdapat rata-rata satu lonjakan pada rangkaian harga yang terjadi kapan saja dalam 1000 (500) tik."
 
-msgid "With Crash 1000 Index, there's an average of one drop in the price series that occurs at anytime within 1000 ticks."
-msgstr "Pada Indeks Crash 1000, terdapat rata-rata satu penurunan pada rangkaian harga yang terjadi kapan saja dalam 1000 tik."
+msgid "With Crash 1000 (500) Index, there's an average of one drop in the price series that occurs at anytime within 1000 (500) ticks."
+msgstr "Pada Indeks Crash 1000 (500), terdapat rata-rata satu penurunan pada rangkaian harga yang terjadi kapan saja dalam 1000 (500) tik."
+
+msgid "With Step Index, there is equal probability of up/down movement in the price series with fixed step size of 0.1."
+msgstr "Pada Indeks Step, terdapat probabilitas yang sama dari gerakan naik/turun pada rangkaian harga dengan ukuran step tetap yaitu 0,1. "
 
 msgid "With insider knowledge of any financial market or instrument"
 msgstr "Dengan pengetahuan dalam mengenai pasar keuangan atau instrumen"
@@ -13192,7 +13144,7 @@ msgid "Withdrawal: Not applicable"
 msgstr "Penarikan: Tidak tersedia"
 
 msgid "Withdrawals have been disabled on your account. Please check your email for more details."
-msgstr "Fasilitas penarikan akun Anda dinonaktifkan. Silahkan perbarui data pribadi Anda pada bagian pengaturan profil."
+msgstr "Fasilitas penarikan akun Anda dinonaktifkan. Silakan periksa kotak masuk email Anda untuk rincian lebih lanjut."
 
 msgid "Withdrawals may only be paid to the initiator of an account. When a client maintains an account by means of telegraphic deposits, withdrawals are only paid to the holder of the originating bank account, and it is the onus of the client to ensure that account number and name accompany all transfers to the Company. When a client maintains an account by means of credit/debit card deposits, withdrawals are only paid back to the same card."
 msgstr "Penarikan hanya dapat dilakukan pada pemilik akun. Ketika klien mendanai akun menggunakan bank transfer maka pembayaran hanya dapat dilakukan menggunakan bank transfer kedalam rekening bank yang sama, dan merupakan tanggung jawab klien untuk memastikan dana rekening bank adalah benar. Ketika klien mendanai akun mereka menggunakan kartu kredit/debit, penarikan hanya dapat dikembalikan kedalam kartu yang sama."
@@ -13441,7 +13393,7 @@ msgid "You may open one account for each supported cryptocurrency."
 msgstr "Anda dapat mendaftar satu akun pada masing masing mata uang kripto."
 
 msgid "You may proceed but please authenticate your account within 10 days to continue trading, otherwise your account will be disabled and any open positions will be closed."
-msgstr ""
+msgstr "Anda dapat melanjutkan namun Anda perlu mengotentikasi akun Anda dalam tempo 10 hari untuk melanjutkan trading, jika tidak, maka akun Anda akan dinonaktifkan dan semua posisi berjalan akan ditutup."
 
 msgid "You may revoke the current manager's access."
 msgstr "Anda dapat mencabut akses manajer saat ini."
@@ -13534,22 +13486,22 @@ msgid "Your %1 day withdrawal limit is currently %2 %3 (or equivalent in other c
 msgstr "Batas penarikan %1 hari Anda saat ini adalah %2 %3 (atau setara dengan mata uang lainnya)."
 
 msgid "Your %1proof of address%2 has expired."
-msgstr ""
+msgstr "%1Bukti alamat%2 Anda telah berakhir."
 
 msgid "Your %1proof of address%2 has not been verified. Please check your email for details."
-msgstr ""
+msgstr "%1Bukti alamat%2 Anda belum diverifikasi. Silakan periksa kotak masuk email Anda untuk rincian lebih lanjut."
 
 msgid "Your %1proof of identity%2 has expired."
-msgstr ""
+msgstr "%1Bukti identitas%2 Anda telah berakhir."
 
 msgid "Your %1proof of identity%2 has not been verified. Please check your email for details."
-msgstr ""
+msgstr "%1Bukti identitas%2 Anda belum diverifikasi. Silakan periksa kotak masuk email Anda untuk rincian lebih lanjut."
 
 msgid "Your %1proof of identity%3 and %2proof of address%3 have expired."
-msgstr ""
+msgstr "%1Bukti identitas%3 dan %2bukti alamat%3 Anda telah berakhir."
 
 msgid "Your %1proof of identity%3 and %2proof of address%3 have not been verified. Please check your email for details."
-msgstr ""
+msgstr "%1Bukti identitas%3 dan %2bukti alamat%3 Anda belum diverifikasi. Silakan periksa kotak masuk email Anda untuk rincian lebih lanjut."
 
 msgid "Your Client will receive an email notification informing him/her that the transfer has been processed."
 msgstr "Klien Anda akan menerima e-mail pemberitahuan bahwa transfer mereka telah diproses."
@@ -13557,8 +13509,11 @@ msgstr "Klien Anda akan menerima e-mail pemberitahuan bahwa transfer mereka tela
 msgid "Your Existing Accounts"
 msgstr "Akun Anda Sebelumnya"
 
+msgid "Your account does not need authentication at this time.%1We will inform you if authentication is required in the future."
+msgstr "Akun Anda tidak perlu melengkapi proses otentikasi untuk saat ini.%1Kami akan menghubungi Anda kembali jika proses otentikasi tersebut diperlukan di masa yang akan datang."
+
 msgid "Your account has been verified successfully"
-msgstr ""
+msgstr "Akun Anda telah berhasil diverifikasi"
 
 msgid "Your account has no Login/Logout activity."
 msgstr "Akun Anda tidak memiliki aktivitas Login/Logout."
@@ -13590,15 +13545,6 @@ msgstr "Aplikasi Anda sebagai klien profesional sedang diproses."
 msgid "Your application will then be reviewed by our compliance and marketing departments. Once approved, we will put you live in our %1payment agent%2 list."
 msgstr "Permohonan Anda akan ditinjau oleh departemen compliance dan marketing kami. Setelah disetujui, kami akan mengaktifkan Anda di dalam daftar %1agen pembayaran%2."
 
-msgid "Your cashier is locked as per your request - to unlock it, please click %1here%2."
-msgstr "Bagian kasir akun Anda telah di batalkan - untuk membukanya, silahkan klik %1disini%2."
-
-msgid "Your cashier is locked as per your request - to unlock it, please click <a href=\"%1\">here</a>."
-msgstr "Bagian kasir akun Anda telah di batalkan - untuk membukanya, silahkan klik <a href=\"%1\">disini</a>."
-
-msgid "Your cashier is locked as per your request - to unlock it, please enter the password."
-msgstr "Kasir Anda terkunci sesuai permintaan Anda - untuk membuka kunci, masukkan kata sandi."
-
 msgid "Your cashier is locked."
 msgstr "Kasir Anda terkunci."
 
@@ -13618,7 +13564,7 @@ msgid "Your demo account balance is currently %1 or less. You may top up your ac
 msgstr "Saldo akun demo Anda saat ini adalah %1 atau kurang. Anda dapat mengisi ulang akun Anda dengan tambahan %2."
 
 msgid "Your document is being reviewed, please check back in 1-3 days"
-msgstr ""
+msgstr "Dokumen Anda sedang ditinjau, periksa kembali dalam tempo 1-3 hari"
 
 msgid "Your fiat account's currency is currently set to %1."
 msgstr "Mata uang akun fiat Anda saat ini adalah %1."
@@ -13648,25 +13594,25 @@ msgid "Your profit or loss is calculated as follows:"
 msgstr "Laba dan rugi Anda dihitung sebagai berikut:"
 
 msgid "Your proof of address has been verified successfully"
-msgstr ""
+msgstr "Bukti alamat Anda telah berhasil diverifikasi"
 
 msgid "Your proof of address has expired"
-msgstr ""
+msgstr "Bukti alamat Anda telah berakhir"
 
 msgid "Your proof of address was submitted successfully"
-msgstr ""
+msgstr "Bukti alamat Anda telah berhasil dikirim"
 
 msgid "Your proof of identity has been verified successfully"
-msgstr ""
+msgstr "Bukti identitas Anda telah berhasil diverifikasi"
 
 msgid "Your proof of identity has expired"
-msgstr ""
+msgstr "Bukti identitas Anda telah berakhir"
 
 msgid "Your proof of identity was submitted successfully"
-msgstr ""
+msgstr "Bukti identitas Anda telah berhasil dikirim"
 
 msgid "Your request is being processed."
-msgstr ""
+msgstr "Permintaan Anda sedang diproses."
 
 msgid "Your request to be treated as a professional client is %1not approved%2."
 msgstr "Permohonan Anda untuk dilayani sebagai klien profesional %1tidak disetujui%2."
@@ -13906,7 +13852,7 @@ msgid "the underlying currency, or financial instrument, on which the price of t
 msgstr "mata uang yang mendasari, atau instrumen keuangan, di mana harga CFD didasarkan"
 
 msgid "there was a connection error. Please try again later."
-msgstr ""
+msgstr "telah terjadi kesalahan koneksi. Silakan coba kembali nanti."
 
 msgid "thousand"
 msgstr "ribu"

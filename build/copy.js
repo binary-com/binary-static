@@ -5,6 +5,7 @@ module.exports ={
             ...(global.is_release ? [] : [
                 { expand: true, cwd: 'scripts', src: ['CNAME'], dest: 'dist' },
             ]),
+            { expand: true, cwd: '.circleci', src: ['**'], dest: `${global.dist}/.circleci` },
             { expand: true, cwd: 'src/root_files/_common',  src: ['**'], dest: 'dist' },
             { expand: true, cwd: 'src/images/common/logos', src: ['**'], dest: `${global.dist}/images/common/logos/` },
 

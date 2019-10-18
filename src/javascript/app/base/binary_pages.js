@@ -24,7 +24,6 @@ const ProfitTable             = require('../pages/user/account/profit_table/prof
 const Settings                = require('../pages/user/account/settings');
 const APIToken                = require('../pages/user/account/settings/api_token');
 const AuthorisedApps          = require('../pages/user/account/settings/authorised_apps');
-const CashierPassword         = require('../pages/user/account/settings/cashier_password');
 const FinancialAssessment     = require('../pages/user/account/settings/financial_assessment');
 const IPHistory               = require('../pages/user/account/settings/iphistory/iphistory');
 const Limits                  = require('../pages/user/account/settings/limits/limits');
@@ -69,13 +68,12 @@ const pages_config = {
     accounts                 : { module: Accounts,                   is_authenticated: true, needs_currency: true },
     api_tokenws              : { module: APIToken,                   is_authenticated: true },
     assessmentws             : { module: FinancialAssessment,        is_authenticated: true, only_real: true },
-    asset_indexws            : { module: AssetIndexUI },
+    asset_indexws            : { module: AssetIndexUI,               no_mf: true },
     asuncion                 : { module: StaticPages.Locations },
     authenticate             : { module: Authenticate,               is_authenticated: true, only_real: true },
     authorised_appsws        : { module: AuthorisedApps,             is_authenticated: true },
     careers                  : { module: StaticPages.Careers },
     cashier                  : { module: Cashier },
-    cashier_passwordws       : { module: CashierPassword,            is_authenticated: true, only_real: true },
     cfds                     : { module: GetStarted.CFDs },
     // charity                  : { module: Charity },
     change_passwordws        : { module: ChangePassword,             is_authenticated: true },
@@ -100,7 +98,7 @@ const pages_config = {
     lost_passwordws          : { module: LostPassword,               not_authenticated: true },
     malta                    : { module: StaticPages.Locations },
     maltainvestws            : { module: FinancialAccOpening,        is_authenticated: true },
-    market_timesws           : { module: TradingTimesUI },
+    market_timesws           : { module: TradingTimesUI,             no_mf: true },
     metals                   : { module: GetStarted.Metals },
     metatrader               : { module: MetaTrader,                 is_authenticated: true, needs_currency: true },
     payment_agent_listws     : { module: PaymentAgentList,           is_authenticated: true },
@@ -119,7 +117,7 @@ const pages_config = {
     statementws              : { module: Statement,                  is_authenticated: true, needs_currency: true },
     tnc_approvalws           : { module: TNCApproval,                is_authenticated: true, only_real: true },
     top_up_virtualws         : { module: TopUpVirtual,               is_authenticated: true, only_virtual: true },
-    trading                  : { module: TradePage,                  needs_currency: true },
+    trading                  : { module: TradePage,                  needs_currency: true,   no_mf: true },
     transferws               : { module: PaymentAgentTransfer,       is_authenticated: true, only_real: true },
     two_factor_authentication: { module: TwoFactorAuthentication,    is_authenticated: true },
     virtualws                : { module: VirtualAccOpening,          not_authenticated: true },

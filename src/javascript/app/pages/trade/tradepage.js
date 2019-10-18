@@ -26,13 +26,16 @@ const TradePage = (() => {
     };
 
     const init = () => {
+        if (Client.isAccountOfType('financial')) {
+            return;
+        }
+
         State.set('is_trading', true);
         Price.clearFormId();
         if (events_initialized === 0) {
             events_initialized = 1;
             TradingEvents.init();
         }
-
         BinarySocket.wait('authorize').then(() => {
             Header.displayAccountStatus();
             if (Client.get('is_virtual')) {
@@ -65,7 +68,6 @@ const TradePage = (() => {
                 }
             });
         });
-
         if (document.getElementById('websocket_form')) {
             commonTrading.addEventListenerForm();
         }
@@ -85,9 +87,6 @@ const TradePage = (() => {
     };
 
     const onUnload = () => {
-        if (!/trading/.test(window.location.href)) {
-            Header.hideNotification('MF_RETAIL_MESSAGE');
-        }
         State.remove('is_trading');
         events_initialized = 0;
         Process.forgetTradingStreams();

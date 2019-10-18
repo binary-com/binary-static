@@ -98,7 +98,7 @@ const Cfds = () => (
                                 { text: it.L('Volume step'),    className: 'gr-padding-10 w-80' },
                             ]],
                             tbody: [
-                                [{ text: 'DAX_30' }, { text: 'Germany 30 Cash Index' }, { text: it.L('EUR 1 per point') }, { text: tenth }, { text: tenth }],
+                                [{ text: 'DAX_30' }, { text: 'Germany 30 Cash Index' }, { text: '1' }, { text: tenth }, { text: tenth }],
                             ],
                         }}
                     />
@@ -114,14 +114,16 @@ const Cfds = () => (
                                 { text: it.L('Volume step'),    className: 'gr-padding-10 w-80' },
                             ]],
                             tbody: [
-                                [{ text: 'Volatility 10 Index'     }, { text: it.L('USD 1 per point') }, { text: two_tenth }, { text: hundredth }],
-                                [{ text: 'Volatility 25 Index'     }, { text: it.L('USD 1 per point') }, { text: five_tenth }, { text: hundredth }],
-                                [{ text: 'Volatility 50 Index'     }, { text: it.L('USD 1 per point') }, { text: three      }, { text: hundredth }],
-                                [{ text: 'Volatility 75 Index'     }, { text: it.L('USD 1 per point') }, { text: hundredth  }, { text: hundredth }],
-                                [{ text: 'Volatility 100 Index'    }, { text: it.L('USD 1 per point') }, { text: tenth      }, { text: hundredth }],
-                                [{ text: 'HF Volatility 10 Index'  }, { text: it.L('USD 1 per point') }, { text: two_tenth }, { text: hundredth }],
-                                [{ text: 'HF Volatility 50 Index'  }, { text: it.L('USD 1 per point') }, { text: three      }, { text: hundredth }],
-                                [{ text: 'HF Volatility 100 Index' }, { text: it.L('USD 1 per point') }, { text: three      }, { text: hundredth }],
+                                [{ text: 'Volatility 10 Index'       }, { text: '1' }, { text: two_tenth  }, { text: hundredth }],
+                                [{ text: 'Volatility 25 Index'       }, { text: '1' }, { text: five_tenth }, { text: hundredth }],
+                                [{ text: 'Volatility 50 Index'       }, { text: '1' }, { text: three      }, { text: hundredth }],
+                                [{ text: 'Volatility 75 Index'       }, { text: '1' }, { text: hundredth  }, { text: hundredth }],
+                                [{ text: 'Volatility 100 Index'      }, { text: '1' }, { text: tenth      }, { text: hundredth }],
+                                [{ text: 'HF Volatility 10 Index'    }, { text: '1' }, { text: two_tenth  }, { text: hundredth }],
+                                [{ text: 'HF Volatility 50 Index'    }, { text: '1' }, { text: three      }, { text: hundredth }],
+                                [{ text: 'HF Volatility 100 Index'   }, { text: '1' }, { text: three      }, { text: hundredth }],
+                                [{ text: 'Volatility 10 (1s) Index'  }, { text: '1' }, { text: tenth      }, { text: hundredth }],
+                                [{ text: 'Volatility 100 (1s) Index' }, { text: '1' }, { text: hundredth  }, { text: hundredth }],
                             ],
                         }}
                     />
@@ -138,7 +140,25 @@ const Cfds = () => (
                             ]],
                             tbody: [
                                 [{ text: 'Crash 1000 Index' }, { text: '1' }, { text: tenth }, { text: hundredth }],
-                                [{ text: 'Boom 1000 Index' }, { text: '1' }, { text: tenth }, { text: hundredth }],
+                                [{ text: 'Boom 1000 Index'  }, { text: '1' }, { text: tenth }, { text: hundredth }],
+                                [{ text: 'Crash 500 Index'  }, { text: '1' }, { text: tenth }, { text: hundredth }],
+                                [{ text: 'Boom 500 Index'   }, { text: '1' }, { text: tenth }, { text: hundredth }],
+                            ],
+                        }}
+                    />
+
+                    <HeaderSecondary header={it.L('Step Indices')} />
+                    <Table
+                        scroll
+                        data={{
+                            thead: [[
+                                { text: it.L('Symbol'),         className: 'gr-padding-10' },
+                                { text: it.L('Lot size'),       className: 'gr-padding-10' },
+                                { text: it.L('Minimum volume'), className: 'gr-padding-10 w-80' },
+                                { text: it.L('Volume step'),    className: 'gr-padding-10 w-80' },
+                            ]],
+                            tbody: [
+                                [{ text: 'Step Index' }, { text: '10' }, { text: tenth }, { text: hundredth }],
                             ],
                         }}
                     />
@@ -146,8 +166,9 @@ const Cfds = () => (
                     <HeaderSecondary header={it.L('How to read the table above')} />
                     <p>{it.L('A Contract for Difference (CFD) is a derivative contract that allows you to profit by speculating on the rise or fall of an underlying asset. Your profit and loss is calculated through the difference in the buy and sell prices of the underlying asset.')}</p>
                     <p>{it.L('Each time you open a position on an index symbol, you can start with a minimum volume transaction as indicated in the table above.')}</p>
-                    <p>{it.L('With Crash 1000 Index, there\'s an average of one drop in the price series that occurs at anytime within 1000 ticks.')}</p>
-                    <p>{it.L('With Boom 1000 Index, there\'s an average of one spike in the price series that occurs at anytime within 1000 ticks.')}</p>
+                    <p>{it.L('With Crash 1000 (500) Index, there\'s an average of one drop in the price series that occurs at anytime within 1000 (500) ticks.')}</p>
+                    <p>{it.L('With Boom 1000 (500) Index, there\'s an average of one spike in the price series that occurs at anytime within 1000 (500) ticks.')}</p>
+                    <p>{it.L('With Step Index, there is equal probability of up/down movement in the price series with fixed step size of 0.1.')}</p>
 
                     <HeaderSecondary header={it.L('Important notes on our swap rates (overnight funding)')} />
                     <p>{it.L('If you keep any positions open overnight, an interest adjustment will be made to your trading account as indication of the cost required to keep your position open.')}</p>
